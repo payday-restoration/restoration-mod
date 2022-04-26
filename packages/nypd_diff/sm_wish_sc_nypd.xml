@@ -88,6 +88,19 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_contour"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true"/>
+	
+	<!--White Gensec Guys for some scripted spawns-->
+	<object				path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1_husk" load="true"/>	
+	
+	<object				path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2_husk" load="true"/>
 
 	<!-- these are here cause fbi 1 still spawns -->		
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />

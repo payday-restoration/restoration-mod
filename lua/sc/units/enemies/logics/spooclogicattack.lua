@@ -26,7 +26,7 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	end
 
 	if not data.spooc_attack_delay_t then
-		data.spooc_attack_delay_t = focus_enemy.verified_t + 0.2
+		data.spooc_attack_delay_t = focus_enemy.verified_t + 0.8
 		return
 	elseif data.spooc_attack_delay_t > data.t then
 		return

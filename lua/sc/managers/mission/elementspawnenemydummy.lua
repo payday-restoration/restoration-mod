@@ -265,8 +265,6 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/payday2/characters/ene_prisonguard_male_1/ene_prisonguard_male_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/payday2/characters/ene_prisonguard_female_1/ene_prisonguard_female_1"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
@@ -336,8 +334,6 @@ local nypd_overkill = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/payday2/characters/ene_prisonguard_male_1/ene_prisonguard_male_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/payday2/characters/ene_prisonguard_female_1/ene_prisonguard_female_1"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
@@ -407,8 +403,6 @@ local nypd_mayhem = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/payday2/characters/ene_prisonguard_male_1/ene_prisonguard_male_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/payday2/characters/ene_prisonguard_female_1/ene_prisonguard_female_1"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
@@ -480,8 +474,6 @@ local nypd_deathwish = {
 		-- segurity :DDDD
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/payday2/characters/ene_prisonguard_male_1/ene_prisonguard_male_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/payday2/characters/ene_prisonguard_female_1/ene_prisonguard_female_1"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
@@ -556,8 +548,6 @@ local nypd_zeal = {
 		-- segurity :DDDD
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/payday2/characters/ene_prisonguard_male_1/ene_prisonguard_male_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/payday2/characters/ene_prisonguard_female_1/ene_prisonguard_female_1"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		

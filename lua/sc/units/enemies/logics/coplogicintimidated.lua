@@ -1,3 +1,7 @@
+Hooks:PostHook(CopLogicIntimidated, "enter", "fuck_enter", function(data, new_logic_name, enter_params)
+	data.unit:base():disable_asu_laser(true)
+end)
+
 function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	local my_data = data.internal_data
 	aggressor_unit = alive(aggressor_unit) and aggressor_unit

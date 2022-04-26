@@ -77,7 +77,7 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2_contour"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2_husk" load="true"/>	
 	
-	
+	<!--NYPD sec 3-->
 	<object				path="units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"/>

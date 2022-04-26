@@ -34,36 +34,16 @@
 	<object				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"	force="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3_contour" force="false"/>
 
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
 	<object				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"	force="false"/>
-	
-	<!--Red Sec for Diamond Heist-->
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1_contour"/>	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_2/ene_security_2_contour"/>	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_3/ene_security_3_contour"/>
-	
-	<object				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
-	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1" load="true"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1_contour"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1_husk" load="true"/>	
-	
-	<object				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
-	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2" load="true"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_contour"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_contour" force="false"/>
 	
 	<!--NYPD cop 1-->
 	<object				path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>

@@ -3037,8 +3037,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_titan.HEALTH_INIT = 45
 	self.boom_titan.bag_death = true
 	self.boom_titan.headshot_dmg_mul = 2.2	
-	self.boom_titan.throwable = "launcher_frag_m32"
-	self.boom_titan.throwable_on_sight = true
 	self.boom_titan.throwable_cooldown = 10		
 	
 	table.insert(self._enemy_list, "boom_titan")		
@@ -20914,7 +20912,8 @@ function CharacterTweakData:_create_table_structure()
 		"flamethrower",
 		"x_raging_bull_meme_npc",
 		"hk21_bravo_npc",
-		"m32_npc"
+		"m32",
+		"rpg7"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -20997,7 +20996,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"),
 		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc"),
 		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"),
-		Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32")
+		Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32"),
+		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7")
 	}
 end
 

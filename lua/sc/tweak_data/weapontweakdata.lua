@@ -713,7 +713,7 @@ local job = Global.level_data and Global.level_data.level_id
 		
 		--AK102
 		self.ak102_npc = deep_clone(self.amcar_npc)
-		self.ak102_npc.sounds.prefix = "ak74_npc"
+		self.ak102_npc.sounds.prefix = "ak74_npc"	
 	end
 	
 	function WeaponTweakData:_init_data_m4_yellow_npc()
@@ -827,11 +827,6 @@ local job = Global.level_data and Global.level_data.level_id
 		self.mossberg_npc.rays = 6
 		self.mossberg_npc.spread = 3
 		self.mossberg_npc.FIRE_MODE = "single"
-		
-		self.m32_npc = deep_clone(self.mossberg_npc)
-		self.m32_npc.sounds.prefix = "mgl_npc"
-		self.m32_npc.anim_usage = "is_shotgun_pump"
-		self.m32_npc.usage = "is_m32"
 	end
 	
 	function WeaponTweakData:_init_data_mp5_npc()
@@ -1478,6 +1473,24 @@ local job = Global.level_data and Global.level_data.level_id
 		self.contraband_m203_npc.hold = "rifle"
 		self.contraband_m203_npc.alert_size = 2500
 		self.contraband_m203_npc.suppression = 1
+		
+		--M32 
+		self.m32_npc = deep_clone(self.contraband_m203_npc)
+		self.m32_npc.sounds.prefix = "mgl_npc"
+		self.m32_npc.anim_usage = "is_shotgun_pump"
+		self.m32_npc.usage = "is_m32"
+		self.m32_npc.projectile = "launcher_frag_m32"
+		self.m32_npc.CLIP_AMMO_MAX = 6	
+		self.m32_npc.looped_reload_speed = nil
+		
+		--RPG-7
+		self.rpg7_npc = deep_clone(self.contraband_m203_npc)
+		self.rpg7_npc.sounds.prefix = "rpg_npc"
+		self.rpg7_npc.anim_usage = "is_rifle"
+		self.rpg7_npc.usage = "is_m32"
+		self.rpg7_npc.projectile = "rocket_frag"
+		self.rpg7_npc.CLIP_AMMO_MAX = 1
+		self.rpg7_npc.looped_reload_speed = nil		
 	end
 	
 	function WeaponTweakData:_init_data_mini_npc()

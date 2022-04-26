@@ -174,3 +174,113 @@ function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
 		self._laser_unit = nil
 	end
 end
+
+--Original weapon base made by Crackdown and all who contributed, updated/changed as necessary.
+NPCGrenadeLauncherBaseBoss = NPCGrenadeLauncherBaseBoss or class(NPCRaycastWeaponBase)
+
+function NPCGrenadeLauncherBaseBoss:init(unit)
+	NPCGrenadeLauncherBaseBoss.super.init(self, unit)
+	self._grenade_cooldown = 0
+	self._grenade_cooldown_max = 10
+	self._firing_status = 0
+	self._speaking_cooldown = 0.9
+	self._speak_cool = 0
+end
+
+function NPCGrenadeLauncherBaseBoss:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
+	local t = TimerManager:main():time()
+	--So we can use this base for several types of Grenade/Rocket Launchers
+	local projectile = tweak_data.weapon[self._name_id].projectile
+	
+	if self._grenade_cooldown > t or self._speak_cool > t then
+		return {}
+	end
+	if self._firing_status == 0 then
+		self._firing_status = 1
+		user_unit:sound():say("use_gas", true, nil, true)
+		self._speak_cool = t + self._speaking_cooldown
+		return {}
+	else
+		if not Network:is_client() then
+			local unit = nil
+			local mvec_from_pos = Vector3()
+			local mvec_direction = Vector3()
+			mvector3.set(mvec_from_pos, from_pos)
+			mvector3.set(mvec_direction, direction)
+			mvector3.multiply(mvec_direction, 100)
+			
+			mvector3.add(mvec_from_pos, mvec_direction)
+			if not self._client_authoritative then
+				unit = ProjectileBase.throw_projectile_npc(projectile, mvec_from_pos, direction)
+			end
+			self._firing_status = 0
+			self._grenade_cooldown = t + self._grenade_cooldown_max
+			self._play_fire_sound = true
+			return {}
+		end
+	end
+	return {}
+end
+
+function NPCGrenadeLauncherBaseBoss:singleshot(...)
+	local fired = self:fire(...)
+
+	if self._play_fire_sound then
+		self._play_fire_sound = nil
+		self:_sound_singleshot()
+	end
+
+	return fired
+end
+
+function NPCGrenadeLauncherBaseBoss:trigger_held(...)
+	local fired = nil
+	
+	if self._grenade_cooldown <= Application:time() then
+		fired = self:fire(...)
+	end
+
+	return fired
+end
+
+function NPCGrenadeLauncherBaseBoss:auto_trigger_held(...)
+	local fired = nil
+	
+	if self._grenade_cooldown <= Application:time() then
+		fired = self:fire(...)
+	end
+
+	return fired
+end
+
+function NPCGrenadeLauncherBaseBoss:fire(from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit)
+	local user_unit = self._setup.user_unit
+
+	self:_check_ammo_total(user_unit)
+
+	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit)
+
+	if self._play_fire_sound then 
+		if alive(self._obj_fire) then
+			self:_spawn_muzzle_effect(from_pos, direction)
+		end
+
+		self:_spawn_shell_eject_effect()
+	end
+
+	if self._alert_events and ray_res.rays then
+		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
+	end
+
+	if ray_res.enemies_in_cone then
+		for enemy_data, dis_error in pairs(ray_res.enemies_in_cone) do
+			if not enemy_data.unit:movement():cool() then
+				enemy_data.unit:character_damage():build_suppression(suppr_mul * dis_error * self._suppression, self._panic_suppression_chance)
+			end
+		end
+	end
+
+	managers.player:send_message(Message.OnWeaponFired, nil, self._unit, ray_res)
+
+	return ray_res
+end

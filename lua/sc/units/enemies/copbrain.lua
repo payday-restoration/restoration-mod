@@ -258,8 +258,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
 	CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
 	CopBrain._logic_variants.taser_titan = clone(security_variant)
-	CopBrain._logic_variants.autumn = clone(security_variant)
-	CopBrain._logic_variants.boom_titan = CopBrain._logic_variants.triad_boss
+	CopBrain._logic_variants.autumn = clone(security_variant)	
+	CopBrain._logic_variants.boom_titan = clone(security_variant)
 	
 	--Set up boss logics
 	CopBrain._logic_variants.mobster_boss = CopBrain._logic_variants.triad_boss

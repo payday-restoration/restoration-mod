@@ -12,7 +12,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="boom_titan" />
-			<var name="_default_weapon_id" value="m32_npc" />
+			<var name="_default_weapon_id" value="m32" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

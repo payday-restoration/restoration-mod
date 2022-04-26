@@ -70,7 +70,6 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.autumn = security_variant
 	CopMovement._action_variants.taser_titan = clone(security_variant)
 	CopMovement._action_variants.boom_titan = clone(security_variant)
-	CopMovement._action_variants.boom_titan.walk = TankCopActionWalk
 	
 	old_init(self, unit)		
 end
@@ -524,7 +523,7 @@ end
 local play_redirect_orig = CopMovement.play_redirect
 function CopMovement:play_redirect(redirect_name, at_time)
 	--Not pretty but groupai didn't like me checking unit slots
-	if redirect_name == "throw_grenade" and (self._unit:in_slot(16) or self._unit:in_slot(22) or self._unit:base()._tweak_table == "boom" or (self._machine:get_global("shield") or 0) == 1) then	
+	if redirect_name == "throw_grenade" and (self._unit:in_slot(16) or self._unit:in_slot(22) or self._unit:base()._tweak_table == "boom" or self._unit:base()._tweak_table == "boom_titan" or (self._machine:get_global("shield") or 0) == 1) then	
 		return
 	end
 

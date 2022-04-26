@@ -43,7 +43,7 @@ Splish: Asset and sound contributions.
 
 Rex: Asset contributions and level design.
 
-Fuglore: Doing all the crazy AI and tactic changes.
+Fuglore: Doing all the crazy AI and tactic changes, contributions to the original Grenade Launcher NPC base. 
 
 Ravicale: Major contributions to player side code and balance.
 
@@ -53,7 +53,7 @@ Nelson01023: Setting up many enemy accessories and adding support for many custo
 
 Sgt. Joe: Providing the basis for the Federales Beatcops & ze NYPD assets. Blue SWAT Goggles resource. 
 
-Iamgoofball: Creating the Voiceline Framework and contributing to the development of Captain Summers and his team.
+Iamgoofball: Creating the Voiceline Framework, contributing to the development of Captain Summers and his team, original Grenade Launcher NPC base. 
 
 Finale: Providing feedback during development.
 
@@ -81,7 +81,7 @@ Hoppip: Created the Mind Blown graze rework, the prettier laser assets used for 
 
 Baddy: Major asset contributions.
 
-Hoxi: for ungodly numbers of fixes and general code improvements. Amazing work!
+Hoxi: for ungodly numbers of fixes and general code improvements, and contributions to the original Grenade Launcher NPC base. Amazing work!
 
 Luffy: For improving the HUD/UI code and adding more HUD/UI options
 

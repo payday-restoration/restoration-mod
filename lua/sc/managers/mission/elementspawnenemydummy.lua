@@ -258,6 +258,11 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+
+		-- segurity :DDDD
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
@@ -318,6 +323,11 @@ local nypd_overkill = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+
+		-- segurity :DDDD
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
@@ -378,6 +388,11 @@ local nypd_mayhem = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+		
+		-- segurity :DDDD
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -491,9 +506,9 @@ local nypd_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 
 		--Security Guards get replaced with GenSec reds
-		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2",
-		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1",
-		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3",
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3",
 
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	

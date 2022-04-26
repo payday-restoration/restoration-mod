@@ -22,6 +22,7 @@
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"	force="false"/>
 		
+	<!--NYPD cop 1-->			
 	<object				path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
 	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>

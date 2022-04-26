@@ -165,13 +165,8 @@
 	</add>
 	<add from_db="true" path="units/payday2/characters/ene_security_6/ene_security_6" type="unit">
 		<unit path="units/payday2/characters/ene_security_6/ene_security_6"/>
-		<animation_state_machine path="anims/units/enemies/cop/cop_machine"/>
 		<animation_states path="anims/units/enemies/cop/std"/>
 		<animation_states path="anims/units/enemies/cop/civilian"/>
-		<object path="units/payday2/characters/ene_security_6/ene_security_6"/>
-		<material_config path="units/payday2/characters/ene_security_6/ene_security_6"/>
-		<sequence_manager path="units/payday2/characters/ragdoll"/>
-		<animation_def path="anims/units/enemies/cop/cop_def"/>
 		<animation_subset path="anims/units/enemies/cop/std"/>
 		<animation_subset path="anims/units/enemies/cop/neutral_legs"/>
 		<animation_subset path="anims/units/enemies/cop/neutral_rifle"/>
@@ -189,7 +184,12 @@
 		<animation_subset path="anims/units/enemies/cop/hostile_bow"/>
 		<animation_subset path="anims/units/enemies/cop/combat_bow"/>
 		<animation_subset path="anims/units/enemies/cop/combat_bullpup"/>
-		<bnk path="soundbanks/regular_vox"/>
 		<unit load="true" path="units/payday2/characters/ene_security_6/ene_security_6_husk"/>
+		<animation_def path="anims/units/enemies/cop/cop_def"/>
+		<animation_state_machine path="anims/units/enemies/cop/cop_machine"/>
+		<bnk path="soundbanks/regular_vox"/>
+		<material_config path="units/payday2/characters/ene_security_6/ene_security_6"/>
+		<object path="units/payday2/characters/ene_security_6/ene_security_6"/>
+		<sequence_manager path="units/payday2/characters/ragdoll"/>
 	</add>
 </table>

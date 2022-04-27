@@ -171,4 +171,46 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		870000
 	}
 	
+	--White House
+	self.jobs.vit.payout = {			
+		220000,
+		350000,
+		450000,
+		650000,
+		1000000,
+		1000000,
+		1000000
+	}
+	
+	self.jobs.vit.contract_cost = {			
+		750000,
+		950000,
+		1000000,
+		1250000,
+		1800000,
+		1800000,
+		1800000
+	}
+	
+	--Undercover
+	self.jobs.man.payout = {			
+		286000,
+		399990,
+		550000,
+		650000,
+		1000000,
+		1000000,
+		1000000
+	}
+	
+	self.jobs.man.contract_cost = {			
+		800000,
+		950000,
+		1000000,
+		1250000,
+		1600000,
+		1600000,
+		1600000
+	}
+	
 end)

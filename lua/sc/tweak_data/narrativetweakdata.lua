@@ -69,6 +69,7 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		600000,
 		600000
 	}	
+	
 
 	--Border Crossing
 	self.jobs.mex.payout = {			
@@ -108,6 +109,66 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000,
 		700000,
 		700000
+	}
+	
+	--Dragon Heist
+	self.jobs.chas.payout = {			
+		62500,
+		100000,
+		200000,
+		250000,
+		300000,
+		300000,
+		300000
+	}
+	self.jobs.chas.contract_cost = {			
+		100000,
+		200000,
+		400000,
+		600000,
+		800000,
+		800000,
+		800000
+	}
+	
+	--Vlad Breakout
+	self.jobs.sand.payout = {			
+		55000,
+		100000,
+		200000,
+		400000,
+		400000,
+		400000,
+		400000
+	}
+	self.jobs.sand.contract_cost = {			
+		100000,
+		200000,
+		480000,
+		650000,
+		850000,
+		850000,
+		850000
+	}
+	
+	--Mountain Master
+	self.jobs.pent.payout = {			
+		68000,
+		100000,
+		200000,
+		400000,
+		400000,
+		400000,
+		400000
+	}
+	self.jobs.pent.contract_cost = {			
+		182000,
+		308000,
+		500000,
+		600000,
+		870000,
+		870000,
+		870000
 	}
 	
 end)

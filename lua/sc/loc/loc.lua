@@ -1035,7 +1035,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 
 		--Galant--
-		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when the magazine is empty.",
+		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when its clip is empty and deals 80% of its damage through body armor.",
 
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
@@ -1074,41 +1074,58 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
 
 		--Little Friend--
-		["bm_m203_weapon_sc_desc_pc"] = "Press $BTN_BIPOD to switch to the mounted Grenade Launcher.",
-		["bm_m203_weapon_sc_desc"] = "Hold $BTN_BIPOD to switch to the mounted Grenade Launcher.",
+		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
+
+		--ASS VAL--
+		["bm_asval_sc_desc"] = "Bring truth to the phrase \"Silence is deadly\".\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
+
+		--KETCHUPKNOB--
+		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
 		--Mosin--
-		["bm_mosin_sc_desc"] = "Classic, Powerful bolt-action rifle. This weapon reloads in clips of 5 bullets at a time.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		["bm_mosin_sc_desc"] = "Classic, Powerful bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and can penetrate body armor, shields and thin walls.",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "Fires weaker tranquilizer rounds that deal damage over time and can stun enemies.\n\nFor true oblivion, The End.",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nFires weaker tranquilizer rounds that deal damage over time and can stun enemies.",
 		
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness. ",
 
 		--Broomstick--
-		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of 10 bullets at a time.",
+		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 
 		--M4/CAR-4
 		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "25% less recoil when fired from the hip.",		
+		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nHas 25% less recoil when fired from the hip.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "Can penetrate body armor, shields and thin walls.\n\nThe greatest handgun ever made.",		
+		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nCan penetrate body armor, shields and thin walls.",
+
+		--FAL
+		["bm_fal_sc_desc"] = "The Right Arm of the Free World.\n\nDeals 80% of its damage through body armor.",	
+
+		--G3
+		["bm_g3_sc_desc"] = "Like a big Compact-5\n\nDeals 80% of its damage through body armor.",	
+
+		--TTI(TTY)
+		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\nCan penetrate body armor, shields and thin walls.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_menu_weapon_movement_penalty_info"] = "MOVEMENT SPEED IS REDUCED BY ",
+		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
 		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
 		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",
+		["bm_ap_armor_80_weapon_sc_desc"] = "Deals 80% of its damage through body armor.",
 		["bm_heavy_ap_weapon_sc_desc"] = "Can penetrate body armor, shields, titan shields and thin walls.",
-		["bm_ap_2_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be restored by picking them up and range increases the longer an arrow is drawn.",
-		["bm_ap_3_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be restored by picking them up.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle the flip up sight.",
-		["bm_rocket_launcher_sc_desc"] = "Rockets fired by this weapon instantly destroy turrets.",
-		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at one, doubleing the number of pellets.",
+		["bm_ap_2_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.",
+		["bm_ap_3_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be retrieved by picking them up.",
+		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle the flip up leaf sight.\n\nThe leaf sight is zeroed to 30 meters.",
+		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon instantly destroys turrets.",
+		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubleing the number of pellets.",
 		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
 		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
@@ -1116,8 +1133,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
-		["bm_m134_rof_init_sc_desc"] = "Briefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
-				
+
+		--M134
+		["bm_m134_sc_desc"] = "The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\n\nBriefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
+
+		--AN-94/92
+		["bm_an94_rof_init_sc_desc"] = "The first 2 rounds of each trigger pull fire at 3x the rate of fire.",
+
+		--NO SUPPORT
+		["bm_do_not_use"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
+
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
@@ -1239,9 +1264,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_shotgun"] = "Shotguns",
 		["menu_akimbo_shotgun"] = "Dual Shotguns",
 		--
-		["menu_light_shot"] = "Light Shotguns",
-		["menu_heavy_shot"] = "Heavy Shotguns",
-		["menu_break_shot"] = "Break-Action Shotguns",
+		["menu_light_shot"] = "Auto Shotguns",
+		["menu_heavy_shot"] = "Light Shotguns",
+		["menu_break_shot"] = "Heavy Shotguns",
 		
 		["menu_smg"] = "SMGs",
 		["menu_akimbo_smg"] = "Dual SMGs",
@@ -1381,6 +1406,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_m_psg"] = "Präzision Magazine",
 		["bm_wp_shak12_body_vks"] = "Reinforced Frame",
 
+		--VMP HK416c Fixed Stock
+		["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
+
 		["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
 
 
@@ -1417,10 +1445,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_x_akmsu"] = "Akimbo Krinkov Rifles",
 		["bm_w_hajk"] = "CR 805B Rifle",
+		["bm_w_tti"] = "Contractor .308 Rifle",
+		["bm_w_groza"] = "KETCHNOV Byk-4 Rifle",
 		
 		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
 
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
+
+		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
@@ -1470,7 +1502,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_menu_ro_stock"] = "Revolver Ocelot",
 			["bm_menu_ro_modifier"] = "Revolver Ocelot",
 			["bm_menu_ro_charm"] = "Revolver Ocelot",
-			["bm_menu_ro_grip"] = "Revolver Ocelot"
+			["bm_menu_ro_grip"] = "Revolver Ocelot",
+
+
+			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
 		})
 	end
 	
@@ -1584,7 +1619,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_interact_gage_assignment_take"] = "PRESS $BTN_INTERACT TO PICK UP THE PACKAGE",
 
 		["far_repair_sentry_macro"] = "Sentry critically damaged, repairs needed.",
-		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
+		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT",
 		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
 		["repair_sentry_macro"] = " to start sentry auto-repair sequence",
 		["pickup_sentry_macro"] = " to retrieve sentry.\n$AMMO_LEFT ammo left. ", --Gets % health remaining appended to the end.
@@ -1970,7 +2005,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "Leadership",
-			["menu_stable_shot_beta_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs gain ##4## stability.\n\nACE: ##$pro##\nYou and your crews' stability rating for all weapons is increased by ##4.##",
+			["menu_stable_shot_beta_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs gain ##2## stability.\n\nACE: ##$pro##\nYou and your crews' stability rating for all weapons is increased by ##2.##",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "MG Handling",
@@ -2010,7 +2045,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers gain ##4## stability.\n\nACE: ##$pro##\nShotguns fire ##3## extra pellets.\n\nNote: Does not apply to slugs or explosive rounds.",
+			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers gain ##2## stability.\n\nACE: ##$pro##\nShotguns fire ##3## extra pellets.\n\nNote: Does not apply to slugs or explosive rounds.",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
@@ -2233,11 +2268,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
-		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##4## stability.\n\nACE: ##$pro##\nLethal headshots using Rifles set to semi-auto increase your rate of fire by ##20%## for ##10## seconds.",
+		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##2## stability.\n\nACE: ##$pro##\nLethal headshots using Rifles set to semi-auto increase your rate of fire by ##20%## for ##10## seconds.",
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
-		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##4## accuracy.\n\nACE: ##$pro##\nRifles reload ##25%## faster.",
+		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##2## accuracy.\n\nACE: ##$pro##\nRifles reload ##25%## faster.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
@@ -2293,7 +2328,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##4## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",
+		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##2## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",

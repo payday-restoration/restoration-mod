@@ -163,7 +163,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 
 	--Multi-pellet spread increase.
 	if self._rays and self._rays > 1 then
-		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase or 1
 	end
 
 	local pm = managers.player
@@ -218,6 +218,14 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 			moving_spread_mult = moving_spread_mult * ms_mult
 		end
 		moving_spread = moving_spread * moving_spread_mult
+		if not current_state:full_steelsight() then
+			local hipfire_moving_spread_mult = 1
+			for _, category in ipairs(self:weapon_tweak_data().categories) do
+				local hms_mult = tweak_data[category] and tweak_data[category].hipfire_moving_spread_mult or 1
+				hipfire_moving_spread_mult = hipfire_moving_spread_mult * hms_mult
+			end
+			moving_spread = moving_spread * hipfire_moving_spread_mult
+		end
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
 		spread_area = spread_area + moving_spread
@@ -261,7 +269,7 @@ RaycastWeaponBase._SPIN_DOWN_T = 0.75
 
 function RaycastWeaponBase:start_shooting(...)
 	start_shooting_original(self, ...)
-	if self._name_id == "m11134" then
+	if self._name_id == "m134" or self._name_id == "shuno" then
 		self:_start_spin()
 	end
 end
@@ -269,27 +277,27 @@ end
 function RaycastWeaponBase:stop_shooting(...)
 	stop_shooting_original(self, ...)
 	self._shots_fired = 0
-	if self._name_id == "m11134" then
-		self:_stop_spin()
+	if self._name_id == "m134" or self._name_id == "shuno" then
 		self._vulcan_firing = nil
+		self:_stop_spin()
 	end
 end
 
 function RaycastWeaponBase:_fire_sound(...)
-	if self._name_id ~= "m11134" or self._vulcan_firing then
+	if (self._name_id ~= "m134" or self._name_id ~= "shuno") or self._vulcan_firing then
 		return _fire_sound_original(self, ...)
 	end
 end
 
 function RaycastWeaponBase:trigger_held(...)
-	if self._name_id == "m11134" then
+	if self._name_id == "m134" or self._name_id == "shuno" then
 		self:update_spin()
 		local fired
 		if self._next_fire_allowed <= self._unit:timer():time() then
+			self._next_fire_allowed = self._next_fire_allowed + (tweak_data.weapon[self._name_id].fire_mode_data and tweak_data.weapon[self._name_id].fire_mode_data.fire_rate or 0) / self:fire_rate_multiplier()
 			if self._spin_done then
 				fired = self:fire(...)
 				if fired then
-					self._next_fire_allowed = self._next_fire_allowed + (tweak_data.weapon[self._name_id].fire_mode_data and tweak_data.weapon[self._name_id].fire_mode_data.fire_rate or 0) / self:fire_rate_multiplier()
 					if not self._vulcan_firing then
 						self._vulcan_firing = true
 						self:_fire_sound()
@@ -309,7 +317,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		mult = 0
 	end
 	
-	if self._name_id == "m11134" and not self._vulcan_firing then
+	if (self._name_id == "m134" or self._name_id == "shuno") and not self._vulcan_firing then
 		return 0
 	end
 
@@ -389,7 +397,7 @@ end
 
 function RaycastWeaponBase:vulcan_exit_steelsight()
 	self._in_steelsight = nil
-	if not self._shooting then
+	if not self._vulcan_firing then
 		self:_stop_spin()
 	end
 end

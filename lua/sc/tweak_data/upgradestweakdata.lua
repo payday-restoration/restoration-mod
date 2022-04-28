@@ -604,9 +604,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Assault--
 			--Leadership--
 				--Basic
-					self.values.smg.recoil_index_addend = {4}
+					self.values.smg.recoil_index_addend = {2}
 				--Ace
-					self.values.team.weapon.recoil_index_addend = {4}
+					self.values.team.weapon.recoil_index_addend = {2}
 
 			--MG Handling
 				--Basic
@@ -644,7 +644,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Shotgunner--
 			--Shotgun Impact
 				--Basic
-					self.values.shotgun.recoil_index_addend = {4}
+					self.values.shotgun.recoil_index_addend = {2}
 				--Ace
 					self.values.shotgun.extra_rays = {3}
 
@@ -855,15 +855,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Combat Engineer--
 			--Sharpshooter
 				--Basic
-					self.values.snp.recoil_index_addend = {4}
-					self.values.assault_rifle.recoil_index_addend = {4}
+					self.values.snp.recoil_index_addend = {2}
+					self.values.assault_rifle.recoil_index_addend = {2}
 				--Ace
 					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
 				
 			--Kilmer
 				--Basic
-					self.values.snp.spread_index_addend = {4}
-					self.values.assault_rifle.spread_index_addend = {4}
+					self.values.snp.spread_index_addend = {2}
+					self.values.assault_rifle.spread_index_addend = {2}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -1058,9 +1058,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--The Professional
 				--Basic
-					self.values.weapon.silencer_spread_index_addend = {4}
+					self.values.weapon.silencer_spread_index_addend = {2}
 				--Ace
-					self.values.weapon.silencer_recoil_index_addend = {4}
+					self.values.weapon.silencer_recoil_index_addend = {2}
 					self.values.player.special_double_drop = {true}
 
 			--Unseen Strike
@@ -1118,7 +1118,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Gunslinger
 			--Equilibrium
 				--Basic
-					self.values.team.pistol.recoil_index_addend = {4}
+					self.values.team.pistol.recoil_index_addend = {2}
 					self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				--Ace
 					self.values.pistol.swap_speed_multiplier = {2}

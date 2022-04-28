@@ -810,14 +810,16 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+	local damage = attack_data.damage
 
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
 		
 		--Just as a fallback, ugly as sin but whatever
 		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun and not weap_base.thrower_unit then
-			if attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
+			if not attack_data.armor_piercing and attack_data.weapon_unit:base():armor_piercing_chance() and attack_data.weapon_unit:base():armor_piercing_chance() > 0 then
 				pierce_armor = true
+				damage = damage * attack_data.weapon_unit:base():armor_piercing_chance() or 1
 			end
 		end		
 
@@ -883,7 +885,6 @@ function CopDamage:damage_bullet(attack_data)
 
 	attack_data.headshot = head
 
-	local damage = attack_data.damage
 	local headshot_by_player = false
 	local headshot_multiplier = 1
 	local distance = attack_data.col_ray and attack_data.col_ray.distance or mvector3.distance(attack_data.origin, self._unit:position()) or 0

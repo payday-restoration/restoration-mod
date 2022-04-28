@@ -21,37 +21,40 @@ tweak_data.ammo.ricochet.autohit = {
 tweak_data.pistol = {
 	swap_bonus = 1.75,
 	ads_move_speed_mult = 0.95,
-	moving_spread_mult = 0.6,
-	hipfire_spread_mult = 0.8
+	moving_spread_mult = 0.5,
+	hipfire_spread_mult = 0.75
 }
 tweak_data.akimbo = {
 	swap_bonus = 0.9
 }
 tweak_data.shotgun = {}
 tweak_data.smg = {
+	swap_bonus = 1.2,
 	ads_move_speed_mult = 0.75,
-	moving_spread_mult = 0.7,
+	moving_spread_mult = 0.66,
 	hipfire_spread_mult = 0.9
 }
 tweak_data.lmg = {
 	swap_bonus = 0.9,
-	ads_move_speed_mult = 0.35,
+	ads_move_speed_mult = 0.3,
 	moving_spread_mult = 4.28,
 	hipfire_spread_mult = 4
 }
 tweak_data.minigun = {
 	swap_bonus = 0.9,
-	ads_move_speed_mult = 0.35,
-	moving_spread_mult = 2.85,
-	hipfire_spread_mult = 3
+	ads_move_speed_mult = 0.3,
+	moving_spread_mult = 4.28,
+	hipfire_spread_mult = 4
 }
 tweak_data.snp = {
-	swap_bonus = 0.975,
+	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	moving_spread_mult = 3
+	hipfire_moving_spread_mult = 6,
+	--hipfire_spread_mult = 4,
+	--moving_spread_mult = 1.5
 }
 tweak_data.assault_rifle = {
-	swap_bonus = 0.975,
+	swap_bonus = 1,
 	ads_move_speed_mult = 0.45
 }
 
@@ -65,13 +68,19 @@ tweak_data.projectiles.launcher_rocket.range = 500
 tweak_data.projectiles.launcher_rocket.curve_pow = 0.1
 tweak_data.projectiles.launcher_rocket.turret_instakill = true
 
+--M202--
+tweak_data.projectiles.rocket_ray_frag.damage = 120
+tweak_data.projectiles.rocket_ray_frag.player_damage = 60
+tweak_data.projectiles.rocket_ray_frag.range = 500
+tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
+tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
+
 --Grenade launcher stuff--
 tweak_data.projectiles.launcher_frag.damage = 80
 tweak_data.projectiles.launcher_frag.player_damage = 40
 tweak_data.projectiles.launcher_frag.curve_pow = 1
 tweak_data.projectiles.launcher_frag.range = 500
 tweak_data.projectiles.launcher_incendiary.damage = 6
-tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
 tweak_data.projectiles.launcher_incendiary.curve_pow = 1
 tweak_data.projectiles.launcher_incendiary.player_damage = 3
 tweak_data.projectiles.launcher_incendiary.burn_duration = 5
@@ -96,23 +105,14 @@ tweak_data.projectiles.underbarrel_m203_groza.player_damage = 80
 tweak_data.projectiles.underbarrel_m203_groza.curve_pow = 1
 tweak_data.projectiles.underbarrel_m203_groza.range = 500
 
---M202--
-tweak_data.projectiles.rocket_ray_frag.damage = 120
-tweak_data.projectiles.rocket_ray_frag.player_damage = 60
-tweak_data.projectiles.rocket_ray_frag.range = 500
-tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
-tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
-
 --Arbiter--
 tweak_data.projectiles.launcher_frag_arbiter.damage = 60
 tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
-tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 2500
 tweak_data.projectiles.launcher_frag_arbiter.range = 250
 tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 
 tweak_data.projectiles.launcher_incendiary_arbiter.damage = 5
-tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 2500
 tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2.5
 tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
@@ -158,7 +158,6 @@ tweak_data.projectiles.underbarrel_electric_groza.range = 500
 --Tactical ZAPper (Arbiter)
 tweak_data.projectiles.launcher_electric_arbiter.damage = 30
 tweak_data.projectiles.launcher_electric_arbiter.player_damage = 10
-tweak_data.projectiles.launcher_electric_arbiter.launch_speed = 2500
 tweak_data.projectiles.launcher_electric_arbiter.range = 250
 tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
@@ -199,9 +198,6 @@ tweak_data.projectiles.frankish_arrow.launch_speed = 3750
 tweak_data.projectiles.long_arrow.damage = 36
 tweak_data.projectiles.long_arrow_exp.damage = 60
 tweak_data.projectiles.long_poison_arrow.damage = 30
-tweak_data.projectiles.long_arrow_exp.launch_speed = 3125
-tweak_data.projectiles.long_arrow.launch_speed = 3125
-tweak_data.projectiles.long_poison_arrow.launch_speed = 3125
 
 --le happy merchant--
 tweak_data.projectiles.ecp_arrow.damage = 18
@@ -441,6 +437,84 @@ tweak_data.projectiles.launcher_electric_osipr = {
 	sound_event = "gl_explode",
 	name_id = "bm_launcher_frag"
 }
+
+
+local velocity = {
+	'launcher_frag','launcher_incendiary','launcher_electric',
+	'launcher_frag_china','launcher_incendiary_china','launcher_electric_china',
+	'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32',
+	'launcher_m203','underbarrel_electric',
+	'underbarrel_m203_groza','underbarrel_electric_groza',
+	'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap'
+}
+local velocity_mult = 0.25
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 7500 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = 0
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+velocity = {
+	'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter',
+	'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 21000 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = 0
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
+tweak_data.projectiles.rocket_ray_frag.launch_speed = 11500 * velocity_mult
+
+velocity_mult = 0.65
+velocity = {
+	'west_arrow','bow_poison_arrow','west_arrow_exp',
+	'crossbow_arrow','crossbow_poison_arrow','crossbow_arrow_exp',
+	'frankish_arrow','frankish_poison_arrow','frankish_arrow_exp'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 3800 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+velocity = {
+	'long_arrow','long_poison_arrow','long_arrow_exp',
+	'arblast_arrow','arblast_poison_arrow','arblast_arrow_exp'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 5500 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+velocity = {
+	'elastic_arrow','elastic_arrow_poison','elastic_arrow_exp',
+	'ecp_arrow','ecp_arrow_poison','ecp_arrow_exp'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 8000 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+
+velocity = {
+	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion',
+	'dynamite','molotov'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 650
+	tweak_data.projectiles[proj_id].adjust_z = 50
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+
+velocity = {
+	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
+	'wpn_prj_hur','wpn_prj_jav'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].adjust_z = 50
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+
+
 
 
 --Hatman Molotov

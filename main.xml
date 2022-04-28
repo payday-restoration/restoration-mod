@@ -145,6 +145,7 @@
 		<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
 		<hook file="sc/units/weapons/raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 		<hook file="sc/units/weapons/sentrygunweapon.lua" source_file="lib/units/weapons/sentrygunweapon"/>
+		<hook file="sc/units/weapons/bowweaponbase.lua" source_file="lib/units/weapons/bowweaponbase"/>
 		<hook file="sc/units/weapons/projectileweaponbase.lua" source_file="lib/units/weapons/projectileweaponbase"/>
 		<hook file="sc/units/weapons/weaponunderbarrellauncher.lua" source_file="lib/units/weapons/weaponunderbarrellauncher"/>
 		<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>

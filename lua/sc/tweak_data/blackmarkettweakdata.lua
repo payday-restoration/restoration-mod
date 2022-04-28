@@ -530,6 +530,23 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 
 	self.projectiles.launcher_frag_m32.time_cheat = 0.7
 	self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
+
+	self.projectiles.rocket_ray_frag.physic_effect = nil --Idstring("physic_effects/molotov_throw")
+	self.projectiles.rocket_frag.physic_effect = nil --Idstring("physic_effects/molotov_throw")
+
+	local give_trails = {
+		'launcher_frag','launcher_incendiary','launcher_electric',
+		'launcher_frag_china','launcher_incendiary_china','launcher_electric_china',
+		'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32',
+		'launcher_m203','underbarrel_electric',
+		'underbarrel_m203_groza','underbarrel_electric_groza',
+		'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap',
+		'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter',
+		'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
+	}
+	for i, proj_id in ipairs(give_trails) do
+		self.projectiles[proj_id].add_trail_effect = true
+	end
 end
 
 --Overrides this function to allow abominations on Gold AKs

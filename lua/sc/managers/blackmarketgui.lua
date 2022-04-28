@@ -32,6 +32,7 @@ local function format_round(num, round_value)
 	return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
 end
 
+
 function BlackMarketGui:populate_mods(data)
 	local new_data = {}
 	local default_mod = data.on_create_data.default_mod
@@ -3217,7 +3218,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 end
 
 
-
 function BlackMarketGui:show_stats()
 	if not self._stats_panel or not self._rweapon_stats_panel or not self._armor_stats_panel or not self._mweapon_stats_panel then
 		return
@@ -4080,6 +4080,7 @@ function BlackMarketGui:show_stats()
 	end
 end
 
+
 function BlackMarketGui:update_info_text()
 	local slot_data = self._slot_data
 	local tab_data = self._tabs[self._selected]._data
@@ -4204,13 +4205,10 @@ function BlackMarketGui:update_info_text()
 				-- Nothing
 			end
 
-			if slot_data.last_weapon then
-				updated_texts[5].text = updated_texts[5].text .. managers.localization:to_upper_text("bm_menu_last_weapon_warning") .. "\n"
-			end
-
+			updated_texts[4].resource_color = {}
 			if slot_data.global_value and slot_data.global_value ~= "normal" then
 				updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-				updated_texts[4].resource_color = tweak_data.lootdrop.global_values[slot_data.global_value].color
+				updated_texts[4].resource_color = {tweak_data.lootdrop.global_values[slot_data.global_value].color}
 				updated_texts[4].below_stats = true
 			end
 			
@@ -4235,14 +4233,25 @@ function BlackMarketGui:update_info_text()
 				updated_texts[4].below_stats = true
 			end			
 
+			-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
 			local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 			local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
 			if movement_penalty < 1 then
-			local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
-				updated_texts[5].text = updated_texts[5].text .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2")
+				local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
+				if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+				else
+					updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+				end
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 			end
 
-			updated_texts[5].below_stats = true
+			if slot_data.last_weapon then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_last_weapon_warning") .. "##"
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			end
+
+			updated_texts[4].below_stats = true
 		elseif slot_data.locked_slot then
 			ignore_lock = true
 			updated_texts[1].text = managers.localization:to_upper_text("bm_menu_locked_weapon_slot")
@@ -5485,7 +5494,7 @@ function BlackMarketGui:update_info_text()
 
 		local scale = 1
 		local attempts = 5
-		local max_h = self._info_texts_panel:h() - info_text:top()
+		local max_h = (self._info_texts_panel:h() - info_text:top()) - 8
 
 		if not updated_texts[i].below_stats and slot_data.comparision_data and alive(self._stats_panel) then
 			max_h = self._stats_panel:world_top() - info_text:world_top()
@@ -5595,7 +5604,7 @@ function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 		
 		
 		local recategorize = weapon_data.recategorize
-		log(tostring(recategorize))
+		--log(tostring(recategorize))
 		
 		for i, gui_category in ipairs(gui_categories) do
 			if test_weapon_categories(recategorize or weapon_data.categories, gui_category) and test_weapon_available(item) then
@@ -5607,7 +5616,7 @@ function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 	for i, category in ipairs(item_categories) do
 		local category_key = table.concat(gui_categories[i], "_")
 		
-		log(tostring(item_categories[category_key]))
+		--log(tostring(item_categories[category_key]))
 		
 		item_categories[category_key] = category
 		item_categories[i] = nil

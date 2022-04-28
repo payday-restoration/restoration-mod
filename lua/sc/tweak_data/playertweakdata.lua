@@ -482,7 +482,7 @@ function PlayerTweakData:_init_par()
 	self.stances.par.bipod.shakers = {breathing = {amplitude = 0}}		
 end
 
--- KSP
+-- M60
 local default_init_m60 = PlayerTweakData._init_m60
 function PlayerTweakData:_init_m60()
 	default_init_m60(self)
@@ -500,6 +500,18 @@ function PlayerTweakData:_init_m60()
 	self.stances.m60.bipod.vel_overshot.pitch_neg = 0
 	self.stances.m60.bipod.vel_overshot.pitch_pos = 0
 	self.stances.m60.bipod.shakers = {breathing = {amplitude = 0}}		
+end
+
+-- M202
+local default_init_ray = PlayerTweakData._init_ray
+function PlayerTweakData:_init_m60()
+	default_init_ray(self)
+	local pivot_shoulder_translation = Vector3(2.48815, 7.60753, -5.20907)
+	local pivot_shoulder_rotation = Rotation(0.106386, -0.085203, 0.628541)
+	local pivot_head_translation = Vector3(0, 10, 0)
+	local pivot_head_rotation = Rotation(0.11, -0.25, 0)
+	self.stances.ray.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.ray.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
 Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	

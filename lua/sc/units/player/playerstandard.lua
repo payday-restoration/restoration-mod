@@ -988,7 +988,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_slide_locks()
 		
 	local weapon = self._unit:inventory():equipped_unit():base()
-	if weapon:get_name_id() == "m11134" then
+	if weapon:get_name_id() == "m134" or weapon:get_name_id() == "shuno" then
 		weapon:update_spin()
 	end
 	
@@ -1079,9 +1079,9 @@ end
 
 --Starts minigun spinup.
 Hooks:PostHook(PlayerStandard, "_start_action_steelsight", "ResMinigunEnterSteelsight", function(self, t, gadget_state)
-	if self._state_data.in_steelsight or self._steelsight_wanted then
+	if self._state_data.in_steelsight --[[or self._steelsight_wanted]] then
 		local weapon = self._unit:inventory():equipped_unit():base()
-		if weapon:get_name_id() == "m11134" then
+		if weapon:get_name_id() == "m134" or weapon:get_name_id() == "shuno" then
 			weapon:vulcan_enter_steelsight()
 		end
 	end
@@ -1091,7 +1091,7 @@ end)
 Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)
 	if not self._state_data.in_steelsight then
 		local weapon = self._unit:inventory():equipped_unit():base()
-		if weapon:get_name_id() == "m11134" then
+		if weapon:get_name_id() == "m134" or weapon:get_name_id() == "shuno" then
 			weapon:vulcan_exit_steelsight()
 		end
 	end

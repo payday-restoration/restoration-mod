@@ -1,3 +1,14 @@
+--Lets mollies use the "mass_look_up_modifier" stat
+function MolotovGrenade:_setup_from_tweak_data()
+	local grenade_entry = self._tweak_projectile_entry or "molotov"
+	local tweak_entry = tweak_data.projectiles[grenade_entry]
+
+	self._mass_look_up_modifier = tweak_entry.mass_look_up_modifier
+	
+	--No reason to set anything else other than mass_look_up_modifier so no return
+	--return tweak_entry
+end
+
 --Prevent grenades from being detonated by being shot.
 --TODO: Implement the ability to set whether this function should fire via tweakdata, and allow clients to trigger it without desyncing.
 function MolotovGrenade:bullet_hit()

@@ -666,7 +666,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_resmusic_doublecrossbeta"] = "Double Cross (베타 버전)",
 		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (베타 버전)",
 		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
-		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",		
+		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -1034,7 +1034,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 
 		--Galant--
-		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 빠르게 재장전합니다.\n\n탄창이 빈 상태로 재장전하면 재장전 속도가 빨라집니다.",
+		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 빠르게 재장전합니다.\n\n탄창이 빈 상태로 재장전하면 재장전 속도가 빨라지고 방탄복을 관통해 피해의 80%를 입힙니다.",
 
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "탠 바디",
@@ -1074,40 +1074,57 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "무기 스킨의 부스트를 비활성화합니다.",
 
 		--Little Friend--
-		["bm_m203_weapon_sc_desc_pc"] = "$BTN_BIPOD 키를 눌러 장착된 유탄 발사기로 전환합니다.",
-		["bm_m203_weapon_sc_desc"] = "$BTN_BIPOD 키를 길게 눌러 장착된 유탄 발사기로 전환합니다.",
+		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 
+		--ASS VAL--
+		["bm_asval_sc_desc"] = "\"침묵은 치명적이다\" 라는 명언에 진실을 세기십시오.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",
+
+		--KETCHUPKNOB--
+		["bm_groza_sc_desc_pc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_groza_sc_desc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		
 		--Mosin--
-		["bm_mosin_sc_desc"] = "고전적이고 강력한 볼트액션 소총. 이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_mosin_sc_desc"] = "고전적이고 강력한 볼트액션 소총.\n\n이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.\n\n진정한 망각을 위해, 디 엔드",				
+		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, 디 엔드\n\n시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.",				
 
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "고통과 부정으로 가득한 세상에서 어둠 속에 빛이 있다는 것을 아는 것은 결국엔 큰 위안이 될 것입니다. ",
 
 		--Broomstick--
-		["bm_c96_sc_desc"] = "독일의 혁명적인 기관권총. 완전 자동으로 미친 속도로 발사할 수 있지만 탄약 소모가 큽니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
+		["bm_c96_sc_desc"] = "완전 자동 발사가 가능하도록 개조된 혁신적인 독일 권총입니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
 
 		--M4/CAR-4
 		["bm_menu_sc_m4_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 25%만큼 감소합니다",		
+		["bm_wolf_brigade_sc_desc"] = "우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 늑대이다.\n\n비조준 상태에서 발사 시 반동이 25%만큼 감소합니다.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.\n\n인류 최고의 권총.",				
+		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",	
+
+		--FAL
+		["bm_fal_sc_desc"] = "자유 진영의 오른팔.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
+
+		--G3
+		["bm_g3_sc_desc"] = "큰 Compact-5 처럼\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
+
+		--TTI(TTY)
+		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",		
 		["bm_ap_weapon_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_armor_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다",
+		["bm_ap_armor_80_weapon_sc_desc"] = "방탄복을 관통해 피해의 80%를 입힙니다.",
 		["bm_heavy_ap_weapon_sc_desc"] = "방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_2_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.",
 		["bm_ap_3_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있습니다.",
-		["bm_40mm_weapon_sc_desc"] = "$BTN_GADGET키 를 눌러 플립 업 시점을 전환합니다.",
-		["bm_rocket_launcher_sc_desc"] = "이 무기로 발사되는 로켓은 터렛을 즉시 파괴합니다.",
+		["bm_40mm_weapon_sc_desc"] = "$BUTTON GADGET 키를 눌러 리프 조준기를 전환합니다.\n\n리프 조준기는 30미터에서 0으로 조정됩니다.",
+		["bm_rocket_launcher_sc_desc"] = "이 무기로 가한 폭발 피해는 터렛을 즉시 파괴합니다.",
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
 		["bm_hx25_buck_sc_desc"] = "12개의 펠렛을 광범위하게 발사합니다.\n\n여전히 유탄 발사기로 취급하여 관련 스킬의 효과를 받습니다.",
 		["bm_auto_generated_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.",
@@ -1116,8 +1133,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n이 무기를 들고 있는 동안 이동 속도가 25% 감소합니다.",
 		["bm_auto_generated_mod_sc_desc"] = "이 부착물의 능력치는 자동 커스텀 부착물 능력치 생성이 완료될 때까지 제거되었습니다.",
 		["bm_tranq_maxim_sc_desc"] = "소음기와 통합되었습니다.\n\n마취탄을 발사하여 시간이 지남에 따라 지속 피해를 줍니다.",
-		["bm_m134_rof_init_sc_desc"] = "방아쇠을 당길때 처음 몇 총알을 발사하는 동안 2배의 발사 속도로 짧게 발사합니다.",
 
+		--M134
+		["bm_m134_sc_desc"] = "너가 걷는 길은 끝이 없지. 내딛는 걸음마다 너의 적의 시체가 널려져있다...\n\n각 방아쇠 당김의 처음 몇 발 동안 2배의 발사 속도로 짧게 발사합니다.",
+
+		--AN-94/92
+		["bm_an94_rof_init_sc_desc"] = "각 방아쇠의 처음 2발은 발사 속도의 3배로 발사합니다.",
+
+		--NO SUPPORT
+		["bm_do_not_use"] = "인벤토리에 아직 해당 무기를 가지고 있다면 장비하지 마십시오.\n\n현재 해당 무기의 밸런스를 맞출 방법을 찾을 수 없습니다",
+		
 		--Overhaul Content Indicators--
 		["loot_sc"] = "레스트레이션 오버홀",
 		["loot_sc_desc"] = "이 상품은 레스트레이션 오버홀의 아이템입니다!",
@@ -1239,9 +1264,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_shotgun"] = "산탄총",
 		["menu_akimbo_shotgun"] = "듀얼 산탄총",
 		--
-		["menu_light_shot"] = "경산탄총",
-		["menu_heavy_shot"] = "중산탄총",
-		["menu_break_shot"] = "중절식 산탄총",
+		["menu_light_shot"] = "자동 산탄총",
+		["menu_heavy_shot"] = "경산탄총",
+		["menu_break_shot"] = "중산탄총",
 		
 		["menu_smg"] = "기관단총",
 		["menu_akimbo_smg"] = "듀얼 기관단총",
@@ -1382,6 +1407,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_short"] = "Micro 총열",
 		["bm_wp_g3_m_psg"] = "Präzision 탄창",
 		["bm_wp_shak12_body_vks"] = "강화 프레임",
+		
+		--VMP HK416c Fixed Stock
+		["bm_wp_tecci_s_minicontra_alt"] = "SG 고정형 개머리판",
 
 		["bm_w_beck_desc"] = "범죄 지하 세계에서 가장 인기 있는 산탄총이 산탄총 계층 구조에서 정당한 위치를 되찾기 위해 무덤에서 돌아왔습니다. 원래 2011 크라임 웨이브에서 사용된 이 산탄총은 거의 모든 근거리 상황에서 매우 안정적인 것으로 입증되었습니다.",
 
@@ -1419,10 +1447,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov 소총",
 		["bm_w_x_akmsu"] = "아킴보 Krinkov 소총",
 		["bm_w_hajk"] = "CR 805B 소총",
+		["bm_w_tti"] = "Contractor .308 저격소총",
+		["bm_w_groza"] = "KETCHNOV Byk-4 소총",		
 		
 		["bm_w_fmg9"] = "Wasp-DS 기관권총",
 
 		["menu_akimbo_assault_rifle"] = "아킴보 돌격소총",
+		
+		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
 		
 		["bm_w_m95"] = "Thanatos .50 cal 대물 저격소총",
 		["bm_w_m107cq"] = "Mors .50 cal 대물 저격소총",		
@@ -1472,7 +1504,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_menu_ro_stock"] = "리볼버 오셀롯",
 			["bm_menu_ro_modifier"] = "리볼버 오셀롯",
 			["bm_menu_ro_charm"] = "리볼버 오셀롯",
-			["bm_menu_ro_grip"] = "리볼버 오셀롯"			
+			["bm_menu_ro_grip"] = "리볼버 오셀롯",
+
+
+			["bm_m134_sc_desc"] = "잠긴 메타포...",
 		})
 	end	
 	
@@ -1586,7 +1621,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_interact_gage_assignment_take"] = "$BTN_INTERACT 키를 눌러 패키지를 얻기.",
 
 		["far_repair_sentry_macro"] = "센트리가 심각하게 손상되어 수리가 필요합니다.",
-		["fixing_sentry_macro"] = "수리 진행도: $AMMO_LEFT%",
+		["fixing_sentry_macro"] = "수리 진행도: $AMMO_LEFT",
 		["repair_sentry_macro"] = " 키를 길게 눌러 센트리 자동 수리 시퀀스를 시작하기",
 		["pickup_sentry_macro"] = " 키를 길게 눌러 센트리를 회수하기.\n남은 탄약 수 $AMMO_LEFT ",
 		["firemode_sentry_macro"] = " 키를 눌러 발사 모드를 변경하기.\n남은 탄약 수 $AMMO_LEFT",
@@ -1970,7 +2005,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "리더쉽",
-			["menu_stable_shot_beta_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총의 안정성을 ##4##만큼 상승합니다.\n\n에이스: ##$pro##\n당신과 동료들의 모든 무기의 안정성을 ##4##만큼 상승시켜줍니다.",
+			["menu_stable_shot_beta_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총의 안정성을 ##2##만큼 상승합니다.\n\n에이스: ##$pro##\n당신과 동료들의 모든 무기의 안정성을 ##2##만큼 상승시켜줍니다.",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "기관총 핸들링",
@@ -2010,7 +2045,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
-			["menu_shotgun_impact_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 안정성이 ##4##만큼 증가합니다\n\n에이스: ##$pro##\n산탄총은 ##3## 펠릿을 더 발사합니다.\n\n참고: 슬러그탄과 폭발탄에는 적용되지 않습니다.",
+			["menu_shotgun_impact_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 안정성이 ##2##만큼 증가합니다\n\n에이스: ##$pro##\n산탄총은 ##3## 펠릿을 더 발사합니다.\n\n참고: 슬러그탄과 폭발탄에는 적용되지 않습니다.",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
@@ -2233,11 +2268,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "명사수",
-		["menu_discipline_desc_sc"] = "베이직: ##$basic##\n소총류의 안정성이 ##4##만큼 증가합니다.\n\n에이스: ##$pro##\n반자동으로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 발사 속도를 ##20%##만큼 증가시킵니다.",
+		["menu_discipline_desc_sc"] = "베이직: ##$basic##\n소총류의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n반자동으로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 발사 속도를 ##20%##만큼 증가시킵니다.",
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "킬머",
-		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률이 ##4##만큼 증가합니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
+		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "마인드 블로우",
@@ -2293,7 +2328,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "프로페셔널",
-		["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n소음기 무기의 안정성이 ##4##만큼 증가합니다.\n\n에이스: ##$pro##\n소음기 무기로 특수 적을 처치하면 추가 탄약 상자를 떨굽니다.",
+		["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n소음기 무기의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n소음기 무기로 특수 적을 처치하면 추가 탄약 상자를 떨굽니다.",
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "기습 공격",

@@ -1123,7 +1123,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_weapon_sc_desc"] = "방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_2_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.",
 		["bm_ap_3_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있습니다.",
-		["bm_40mm_weapon_sc_desc"] = "$BUTTON GADGET 키를 눌러 리프 조준기를 전환합니다.\n\n리프 조준기는 30미터에서 0으로 조정됩니다.",
+		["bm_40mm_weapon_sc_desc"] = "$BTN_GADGET 키를 눌러 리프 조준기를 전환합니다.\n\n리프 조준기는 30미터에서 0으로 조정됩니다.",
 		["bm_rocket_launcher_sc_desc"] = "이 무기로 가한 폭발 피해는 터렛을 즉시 파괴합니다.",
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
 		["bm_hx25_buck_sc_desc"] = "12개의 펠렛을 광범위하게 발사합니다.\n\n여전히 유탄 발사기로 취급하여 관련 스킬의 효과를 받습니다.",

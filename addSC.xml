@@ -614,6 +614,8 @@
 	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>	
 	
 	
+	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_df" force="true"/>	
+	
 	<!--Biker Guard-->
 	<unit				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" load="true"/>
 	<unit 				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_husk" load="true"/>

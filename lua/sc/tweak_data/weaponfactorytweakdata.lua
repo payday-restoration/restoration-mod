@@ -6588,8 +6588,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	--Long Barrel
 	self.parts.wpn_fps_ass_famas_b_long.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_long.supported = true
-	self.parts.wpn_fps_ass_famas_b_short.stats = barrels.long_b1_stats
-	self.parts.wpn_fps_ass_famas_b_short.custom_stats = barrels.long_b1_custom_stats
+	self.parts.wpn_fps_ass_famas_b_long.stats = barrels.long_b1_stats
+	self.parts.wpn_fps_ass_famas_b_long.custom_stats = barrels.long_b1_custom_stats
 	
 	--Short Barrel
 	self.parts.wpn_fps_ass_famas_b_short.pcs = {}
@@ -6600,8 +6600,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	--Sniper Barrel
 	self.parts.wpn_fps_ass_famas_b_sniper.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_sniper.supported = true
-	self.parts.wpn_fps_ass_famas_b_short.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_ass_famas_b_short.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_ass_famas_b_sniper.stats = barrels.long_b3_stats
+	self.parts.wpn_fps_ass_famas_b_sniper.custom_stats = barrels.long_b3_custom_stats
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_ass_famas_b_suppressed.pcs = {}
@@ -13961,10 +13961,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 
 	self.wpn_fps_lmg_m60.override = {
 		wpn_fps_upg_o_specter = {
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
+			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_aimpoint = {
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
+			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_docter = {
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
@@ -13979,10 +13979,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_aimpoint_2 = {
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
+			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_cs = {
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
+			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_rx30 = {
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
@@ -13994,9 +13994,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_eotech_xps = {
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_sig = {
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_uh = {

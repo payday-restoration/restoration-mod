@@ -2639,7 +2639,7 @@ function WeaponTweakData:_init_stats()
 		moving_crouching = 2.5,
 		crouching = 2.5,
 		moving_steelsight = 0.5,
-		steelsight = 0.1,
+		steelsight = 0.125,
 		bipod = 1
 	}
 

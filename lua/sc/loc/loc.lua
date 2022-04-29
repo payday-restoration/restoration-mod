@@ -1099,7 +1099,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nHas 25% less recoil when fired from the hip.",		
+		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nWildly inaccurate but has 25% less recoil when hipfired.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
 
 		--SAA/Peacemaker
@@ -1117,6 +1117,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
+		["bm_lmg_generic_desc"] = "Wildly inaccurate when hipfired.",
 		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
 		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",
 		["bm_ap_armor_80_weapon_sc_desc"] = "Deals 80% of its damage through body armor.",
@@ -1135,7 +1136,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
 
 		--M134
-		["bm_m134_sc_desc"] = "The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\n\nBriefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
+		["bm_m134_sc_desc"] = "\"The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
+		
+		--Microgun
+		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
 
 		--AN-94/92
 		["bm_an94_rof_init_sc_desc"] = "The first 2 rounds of each trigger pull fire at 3x the rate of fire.",
@@ -2017,7 +2021,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-			["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapons' magazine sizes are increased by ##20%.##\n\nNote: Does not apply to Crossbows, Bows, Grenade Launchers, or Rocket Launchers.\n\nACE: ##$pro##\nYour weapons can be hip-fired while sprinting and their sprint-to-fire delay is removed.\n\nYour weapons' magazine sizes are increased by an additional ##30%.##",
+			["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapons' magazine sizes are increased by ##20%.##\n\nNote: Does not apply to Crossbows, Bows, Grenade Launchers, or Rocket Launchers.\n\nACE: ##$pro##\nYour weapons can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nYour weapons' magazine sizes are increased by an additional ##30%.##",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
@@ -2053,7 +2057,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
-			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers can be hip-fired while sprinting and their sprint-to-fire delay is removed.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
+			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
 
 			--Overkill
 			["menu_overkill_sc"] = "OVERKILL",
@@ -2344,7 +2348,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",
-		["menu_equilibrium_beta_desc_sc"] = "BASIC: ##$basic##\nYou and your crew's weapon stability with pistols is increased by ##4.##\n\nACE: ##$pro##\nYou draw and holster pistols ##100%## faster.",
+		["menu_equilibrium_beta_desc_sc"] = "BASIC: ##$basic##\nYou and your crew's weapon stability with pistols is increased by ##2.##\n\nACE: ##$pro##\nYou draw and holster pistols ##100%## faster.",
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Gun Nut",

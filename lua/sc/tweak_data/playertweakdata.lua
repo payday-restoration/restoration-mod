@@ -504,7 +504,7 @@ end
 
 -- M202
 local default_init_ray = PlayerTweakData._init_ray
-function PlayerTweakData:_init_m60()
+function PlayerTweakData:_init_ray()
 	default_init_ray(self)
 	local pivot_shoulder_translation = Vector3(2.48815, 7.60753, -5.20907)
 	local pivot_shoulder_rotation = Rotation(0.106386, -0.085203, 0.628541)

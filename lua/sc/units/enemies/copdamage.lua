@@ -3500,7 +3500,9 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 end
 
 function CopDamage:_comment_ai_custom_death(unit)
-	unit:sound():say("g92", true)
+	if alive(unit) then
+		unit:sound():say("g92", true)
+	end
 end
 
 function CopDamage:_on_death(variant)

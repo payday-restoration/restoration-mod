@@ -3,7 +3,7 @@
 local warned_mods = {
     ["BB"] = "Better Bots",
     ["FullSpeedSwarm"] = "Full Speed Swarm",
-    ["Iter"] = "Iter",
+    -- ["Iter"] = "Iter",
     ["SilentAssassin"] = "Silent Assassin",
     ["PD2THHSHIN"] = "Hyper Heisting",
     ["IreNFist"] = "IreNFist",

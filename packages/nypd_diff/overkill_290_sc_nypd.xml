@@ -71,8 +71,6 @@
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1" load="true"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1_contour"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1_husk" load="true"/>	
 	
 	<!--NYPD sec 2-->
@@ -80,8 +78,6 @@
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2" load="true"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_contour"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true"/>	
 	
 	<!--NYPD sec 3-->
@@ -89,8 +85,6 @@
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3" load="true"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3_contour"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true"/>	
 	
 	<!--White Gensec Guys for some scripted spawns-->
@@ -146,21 +140,6 @@
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/spook_heavy_df" />
-
-	<!-- security -->
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />	
-	<object				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<model				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_contour"  />	
-	<cooked_physics		path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk" load="true" />	
-	
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk" load="true" />		
 	
 	<!-- gensec tier -->
 	<!--city swat 1-->

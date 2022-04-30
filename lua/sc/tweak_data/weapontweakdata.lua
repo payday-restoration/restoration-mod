@@ -3235,12 +3235,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = 0.65
 	end
 	
-	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "wa2000" }
+	recat = { "winchester1874", "qbu88", "msr", "r700", "tti" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_snp" }
 	end
 	
-	recat = { "siltstone", "r93", "desertfox", "sbl", "mosin", "model70" }
+	recat = { "siltstone", "r93", "desertfox", "sbl", "mosin", "model70", "wa2000" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_snp" }
 	end
@@ -3418,11 +3418,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_maxim9.AMMO_MAX = 180
 				self.x_maxim9.kick = self.stat_info.kick_tables.even_recoil
 				self.x_maxim9.supported = true
+				self.x_maxim9.ads_speed = 0.120
+				self.x_maxim9.damage_falloff = {
+					start_dist = 2100,
+					end_dist = 4200,
+					min_mult = 0.3333
+				}
 				self.x_maxim9.stats = {
 					damage = 18,
-					spread = 76,
-					recoil = 79,
-					spread_moving = 7,
+					spread = 45,
+					recoil = 83,
+					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
 					suppression = 20,
@@ -3441,11 +3447,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_stech.kick = self.stat_info.kick_tables.moderate_kick
 				self.x_stech.CLIP_AMMO_MAX = 40
 				self.x_stech.supported = true
+				self.x_stech.ads_speed = 0.100
+				self.x_stech.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 3800,
+					min_mult = 0.25
+				}
 				self.x_stech.stats = {
 					damage = 24,
-					spread = 71,
-					recoil = 75,
-					spread_moving = 8,
+					spread = 50,
+					recoil = 71,
+					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
 					suppression = 8,
@@ -3466,15 +3478,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.jowi.single = {}
 				self.jowi.single.fire_rate = 0.08571428571
 				self.jowi.supported = true
+				self.jowi.ads_speed = 0.080
 				self.jowi.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 3000,
-					min_mult = 0.3
+					min_mult = 0.25
 				}
 				self.jowi.stats = {
-					damage = 20,
-					spread = 86,
-					recoil = 81,
+					damage = 24,
+					spread = 42,
+					recoil = 85,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 32,
@@ -3493,13 +3506,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g18c.fire_mode_data.fire_rate = 0.05454545454
 				self.x_g18c.single.fire_rate = 0.05454545454
 				self.x_g18c.CLIP_AMMO_MAX = 36
-				self.x_g18c.AMMO_MAX = 200
+				self.x_g18c.AMMO_MAX = 180
 				self.x_g18c.kick = self.stat_info.kick_tables.moderate_kick
 				self.x_g18c.supported = true
+				self.x_g18c.ads_speed = 0.100
+				self.x_g18c.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3200,
+					min_mult = 0.3
+				}
 				self.x_g18c.stats = {
-					damage = 18,
-					spread = 71,
-					recoil = 72,
+					damage = 20,
+					spread = 42,
+					recoil = 61,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
@@ -3519,11 +3538,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_czech.fire_mode_data.fire_rate = 0.06
 				self.x_czech.kick = self.stat_info.kick_tables.even_recoil
 				self.x_czech.supported = true
+				self.x_czech.ads_speed = 0.100
+				self.x_czech.damage_falloff = {
+					start_dist = 1700,
+					end_dist = 3300,
+					min_mult = 0.3
+				}
 				self.x_czech.stats = {
 					damage = 20,
-					spread = 66,
-					recoil = 74,
-					spread_moving = 5,
+					spread = 49,
+					recoil = 65,
+					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
 					suppression = 9,
@@ -3539,18 +3564,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Chimano .88
 				self.x_g17.kick = self.stat_info.kick_tables.even_recoil
 				self.x_g17.CLIP_AMMO_MAX = 36
-				self.x_g17.AMMO_MAX = 180
+				self.x_g17.AMMO_MAX = 150
 				self.x_g17.FIRE_MODE = "single"
 				self.x_g17.fire_mode_data.fire_rate = 0.08571428571
 				self.x_g17.single.fire_rate = 0.08571428571
 				self.x_g17.supported = true
+				self.x_g17.ads_speed = 0.100
+				self.x_g17.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
 				self.x_g17.stats = {
-					damage = 20,
-					spread = 76,
+					damage = 24,
+					spread = 49,
 					recoil = 79,
-					spread_moving = 7,
+					spread_moving = 9,
 					zoom = 1,
-					concealment = 30,
+					concealment = 31,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -3564,18 +3595,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Bernetti 9
 				self.x_b92fs.kick = self.stat_info.kick_tables.even_recoil
 				self.x_b92fs.CLIP_AMMO_MAX = 30
-				self.x_b92fs.AMMO_MAX = 180
+				self.x_b92fs.AMMO_MAX = 150
 				self.x_b92fs.FIRE_MODE = "single"
 				self.x_b92fs.fire_mode_data.fire_rate = 0.08571428571
 				self.x_b92fs.single.fire_rate = 0.08571428571
 				self.x_b92fs.supported = true
+				self.x_b92fs.ads_speed = 0.100
+				self.x_b92fs.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3700,
+					min_mult = 0.25
+				}
 				self.x_b92fs.stats = {
-					damage = 20,
-					spread = 81,
-					recoil = 79,
+					damage = 24,
+					spread = 51,
+					recoil = 76,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 31,
+					concealment = 30,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -3593,13 +3630,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_holt.AMMO_MAX = 150
 				self.x_holt.kick = self.stat_info.kick_tables.even_recoil
 				self.x_holt.supported = true
+				self.x_holt.ads_speed = 0.100
+				self.x_holt.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3300,
+					min_mult = 0.25
+				}
 				self.x_holt.stats = {
 					damage = 24,
-					spread = 76,
-					recoil = 78,
+					spread = 47,
+					recoil = 82,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 29,
+					concealment = 31,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -3651,7 +3694,36 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload_exit_empty = 0.9,
 					reload_exit_not_empty = 0.65
 				}
-	
+
+			--Akimbo Contractor Pistols
+				self.x_packrat.AMMO_MAX = 150
+				self.x_packrat.CLIP_AMMO_MAX = 30
+				self.x_packrat.fire_mode_data.fire_rate = 0.08571428571
+				self.x_packrat.single.fire_rate = 0.08571428571
+				self.x_packrat.kick = self.stat_info.kick_tables.even_recoil
+				self.x_packrat.panic_suppression_chance = 0.05
+				self.x_packrat.supported = true
+				self.x_packrat.ads_speed = 0.100
+				self.x_packrat.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4300,
+					min_mult = 0.25
+				}
+				self.x_packrat.stats = {
+					damage = 24,
+					spread = 49,
+					recoil = 72,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 30,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.x_packrat.stats_modifiers = nil
 
 			--Akimbo Model 54--
 				self.x_type54.CLIP_AMMO_MAX = 18
@@ -3664,10 +3736,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54.single.fire_rate = 0.08571428571
 				self.x_type54.kick = self.stat_info.kick_tables.left_recoil
 				self.x_type54.supported = true
+				self.x_type54.ads_speed = 0.120
+				self.x_type54.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4000,
+					min_mult = 0.3
+				}
 				self.x_type54.stats = {
 					damage = 30,
-					spread = 76,
-					recoil = 76,
+					spread = 66,
+					recoil = 88,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 28,
@@ -3691,10 +3769,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54_underbarrel.single.fire_rate = 0.06	
 				self.x_type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
 				self.x_type54_underbarrel.supported = true
+				self.x_type54_underbarrel.ads_speed = 0.120
+				self.x_type54_underbarrel.damage_falloff = {
+					start_dist = 800,
+					end_dist = 2500,
+					min_mult = 0.25
+				}
 				self.x_type54_underbarrel.stats = {
 					damage = 90,
-					spread = 56,
-					recoil = 78,
+					spread = 46,
+					recoil = 68,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 21,
@@ -3714,17 +3798,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Chimano Custom
 				self.x_g22c.kick = self.stat_info.kick_tables.even_recoil
 				self.x_g22c.CLIP_AMMO_MAX = 32
-				self.x_g22c.AMMO_MAX = 150
+				self.x_g22c.AMMO_MAX = 120
 				self.x_g22c.FIRE_MODE = "single"
 				self.x_g22c.fire_mode_data = {}
 				self.x_g22c.fire_mode_data.fire_rate = 0.08571428571
 				self.x_g22c.single = {}
 				self.x_g22c.single.fire_rate = 0.08571428571
 				self.x_g22c.supported = true
+				self.x_g22c.ads_speed = 0.120
+				self.x_g22c.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3200,
+					min_mult = 0.3
+				}
 				self.x_g22c.stats = {
-					damage = 24,
-					spread = 76,
-					recoil = 78,
+					damage = 30,
+					spread = 42,
+					recoil = 82,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -3798,7 +3888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.maxim9.stats = {
 					damage = 18,
-					spread = 86,
+					spread = 55,
 					recoil = 93,
 					spread_moving = 9,
 					zoom = 1,
@@ -4615,7 +4705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.c96.timers.reload_exit_empty = 0.6
 				self.c96.timers.reload_exit_not_empty = 1
 				self.c96.panic_suppression_chance = 0.05
-				self.c96.reload_speed_multiplier = 1.4
+				self.c96.reload_speed_multiplier = 1.5
 
 			--Cavity 9mm
 				self.sub2000.categories = {"pistol"}
@@ -6055,6 +6145,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_baka.stats_modifiers = nil
 				self.x_baka.panic_suppression_chance = 0.05
+				self.x_sr2.reload_speed_mult = 0.55
+				self.x_sr2.timers.reload_empty = 2.3
+				self.x_sr2.timers.reload_not_empty = 1.8
+				self.x_sr2.timers.reload_exit_empty = 0.5
+				self.x_sr2.timers.reload_exit_not_empty = 0.55
 
 			--Miyaka 10
 				--Moved to Primary slot
@@ -6089,6 +6184,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.panic_suppression_chance = 0.05
 				self.pm9.timers.reload_exit_empty = 0.55
 				self.pm9.timers.reload_exit_not_empty = 0.55
+
+			--Akimbo Heather
+				self.x_sr2.fire_mode_data.fire_rate = 0.06666666666
+				self.x_sr2.single.fire_rate = 0.06666666666
+				self.x_sr2.CLIP_AMMO_MAX = 60
+				self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
+				self.x_sr2.AMMO_MAX = 180
+				self.x_sr2.supported = true
+				self.x_sr2.ads_speed = 0.250
+				self.x_sr2.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 4200,
+					min_mult = 0.3
+				}
+				self.x_sr2.stats = {
+					damage = 20,
+					spread = 50,
+					recoil = 75,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 29,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.x_sr2.stats_modifiers = nil
+				self.x_sr2.panic_suppression_chance = 0.05
+				self.x_sr2.reload_speed_mult = 0.55
+				self.x_sr2.timers.reload_empty = 2.3
+				self.x_sr2.timers.reload_not_empty = 1.8
+				self.x_sr2.timers.reload_exit_empty = 0.5
+				self.x_sr2.timers.reload_exit_not_empty = 0.55
 
 			--AK GEN 21 Tactical
 				self.vityaz.tactical_reload = 1	
@@ -6138,7 +6268,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.25
 				}
 				self.shepheard.stats = {
-					damage = 28,
+					damage = 24,
 					spread = 61,
 					recoil = 84,
 					spread_moving = 8,
@@ -6156,6 +6286,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shepheard.timers.reload_exit_empty = 0.6
 				self.shepheard.timers.reload_exit_not_empty = 0.75
 
+			--Akimbo MP5
+				self.x_mp5.fire_mode_data.fire_rate = 0.075
+				self.x_mp5.BURST_FIRE = 6
+				self.x_mp5.FIRE_MODE = "auto"
+				self.x_mp5.ADAPTIVE_BURST_SIZE = false					
+				self.x_mp5.kick = self.stat_info.kick_tables.moderate_kick
+				self.x_mp5.AMMO_MAX = 150
+				self.x_mp5.supported = true
+				self.x_mp5.ads_speed = 0.250
+				self.x_mp5.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 4300,
+					min_mult = 0.25
+				}
+				self.x_mp5.stats = {
+					damage = 24,
+					spread = 53,
+					recoil = 79,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 22,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.x_mp5.stats_modifiers = nil
+				self.x_mp5.panic_suppression_chance = 0.05
+				self.x_mp5.reload_speed_multiplier = 0.6
+				self.x_mp5.timers.reload_empty = 2.4
+				self.x_mp5.timers.reload_not_empty = 1.7
+				self.x_mp5.timers.reload_exit_empty = 0.95
+				self.x_mp5.timers.reload_exit_not_empty = 1.1
+		
 			--MP40
 				self.erma.use_data.selection_index = 2
 				self.erma.CLIP_AMMO_MAX = 32
@@ -7300,6 +7466,36 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--PRIMARIES
 
+			--Akimbo Krinkov
+				self.x_akmsu.AMMO_MAX = 120
+				self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
+				self.x_akmsu.panic_suppression_chance = 0.05
+				self.x_akmsu.kick = self.stat_info.kick_tables.right_kick
+				self.x_akmsu.supported = true
+				self.x_akmsu.ads_speed = 0.300
+				self.x_akmsu.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 4200,
+					min_mult = 0.6
+				}
+				self.x_akmsu.stats = {
+					damage = 30,
+					spread = 61,
+					recoil = 57,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 27,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.x_akmsu.stats_modifiers = nil
+				self.x_akmsu.timers.reload_not_empty = 2.75
+				self.x_akmsu.timers.reload_empty = 3.4
+
 			--AK.762
 				self.akm.desc_id = "bm_menu_sc_akm_desc"
 				self.akm.AMMO_MAX = 120
@@ -7645,7 +7841,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--M308 (M1A SOCOM/M14)
 			self.new_m14.CLIP_AMMO_MAX = 20
 			self.new_m14.fire_mode_data.fire_rate = 0.08571428571
-			self.new_m14.single.fire_rate = 0.08571428571
+			self.new_m14.FIRE_MODE = "single"
 			self.new_m14.kick = self.stat_info.kick_tables.vertical_kick
 			self.new_m14.AMMO_MAX = 60
 			self.new_m14.supported = true
@@ -7717,11 +7913,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shak12.fire_mode_data.fire_rate = 0.08
 			self.shak12.kick = self.stat_info.kick_tables.even_recoil
 			self.shak12.AMMO_MAX = 60
-			self.shak12.sounds.fire = "akm_fire_single"
-			self.shak12.sounds.fire_single = "akm_fire_single"
-			self.shak12.sounds.fire_auto = "akm_fire"
-			self.shak12.sounds.stop_fire = "akm_stop"
-			self.shak12.sounds.dryfire = "primary_dryfire"
+			--self.shak12.sounds.fire = "akm_fire_single"
+			--self.shak12.sounds.fire_single = "akm_fire_single"
+			--self.shak12.sounds.fire_auto = "akm_fire"
+			--self.shak12.sounds.stop_fire = "akm_stop"
+			--self.shak12.sounds.dryfire = "primary_dryfire"
+			self.shak12.FIRE_MODE = "single"
 			self.shak12.tactical_reload = 1
 			self.shak12.supported = true
 			self.shak12.ads_speed = 0.300
@@ -7827,7 +8024,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband.has_description = true
 			self.contraband.AMMO_MAX = 60
 			self.contraband.tactical_reload = 1
-			self.contraband.FIRE_MODE = "auto"
+			self.contraband.FIRE_MODE = "single"
 			self.contraband.fire_mode_data.fire_rate = 0.1
 			self.contraband.CAN_TOGGLE_FIREMODE = true
 			self.contraband.auto.fire_rate = 0.1
@@ -8373,7 +8570,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tti.has_description = true
 			self.tti.desc_id = "bm_tti_sc_desc"
 			self.tti.CLIP_AMMO_MAX = 20
-			self.tti.AMMO_MAX = 80
+			self.tti.AMMO_MAX = 40
 			self.tti.FIRE_MODE = "single"
 			self.tti.fire_mode_data = {}
 			self.tti.fire_mode_data.fire_rate = 0.6
@@ -9364,7 +9561,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ecp.timers.reload_exit_empty = 0.6
 		self.ecp.timers.reload_exit_not_empty = 0.6
 		self.ecp.reload_speed_multiplier = 0.75
-		self.ecp.reload_speed_multiplier = 0.75
 
 	--Compact 40mm
 		self.slap.upgrade_blocks = {
@@ -9450,103 +9646,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 
-	--Akimbo Heather
-		self.x_sr2.fire_mode_data.fire_rate = 0.06666666666
-		self.x_sr2.single.fire_rate = 0.06666666666
-		self.x_sr2.CLIP_AMMO_MAX = 60
-		self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
-		self.x_sr2.AMMO_MAX = 180
-		self.x_sr2.supported = true
-		self.x_sr2.stats = {
-			damage = 20,
-			spread = 76,
-			recoil = 75,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 29,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_sr2.stats_modifiers = nil
-		self.x_sr2.panic_suppression_chance = 0.05
-	--Akimbo MP5
-		self.x_mp5.fire_mode_data.fire_rate = 0.075
-		self.x_mp5.BURST_FIRE = 6
-		self.x_mp5.ADAPTIVE_BURST_SIZE = false					
-		self.x_mp5.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_mp5.AMMO_MAX = 180
-		self.x_mp5.supported = true
-		self.x_mp5.stats = {
-			damage = 24,
-			spread = 71,
-			recoil = 78,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 28,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_mp5.stats_modifiers = nil
-		self.x_mp5.panic_suppression_chance = 0.05
-		self.x_mp5.timers.reload_not_empty = 1.95
-		self.x_mp5.timers.reload_empty = 2.6
-
-	--Akimbo Krinkov
-		self.x_akmsu.AMMO_MAX = 120
-		self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
-		self.x_akmsu.panic_suppression_chance = 0.05
-		self.x_akmsu.kick = self.stat_info.kick_tables.right_kick
-		self.x_akmsu.supported = true
-		self.x_akmsu.stats = {
-			damage = 30,
-			spread = 71,
-			recoil = 74,
-			spread_moving = 9,
-			zoom = 1,
-			concealment = 27,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_akmsu.stats_modifiers = nil
-		self.x_akmsu.timers.reload_not_empty = 2.75
-		self.x_akmsu.timers.reload_empty = 3.4
 
 
-	--Akimbo Contractor Pistols
-		self.x_packrat.AMMO_MAX = 180
-		self.x_packrat.CLIP_AMMO_MAX = 30
-		self.x_packrat.fire_mode_data.fire_rate = 0.08571428571
-		self.x_packrat.single.fire_rate = 0.08571428571
-		self.x_packrat.kick = self.stat_info.kick_tables.even_recoil
-		self.x_packrat.panic_suppression_chance = 0.05
-		self.x_packrat.supported = true
-		self.x_packrat.stats = {
-			damage = 20,
-			spread = 81,
-			recoil = 79,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 31,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_packrat.stats_modifiers = nil
+
+
+
 
 
 

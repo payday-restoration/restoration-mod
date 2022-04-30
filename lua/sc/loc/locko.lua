@@ -1099,7 +1099,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_m4_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 늑대이다.\n\n비조준 상태에서 발사 시 반동이 25%만큼 감소합니다.",		
+		["bm_wolf_brigade_sc_desc"] = "우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 늑대이다.\n\n지향 사격 시 명중률이 매우 감소하지만 반동이 25% 감소합니다.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
 
 		--SAA/Peacemaker
@@ -1116,7 +1116,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
-		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",		
+		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",	
+		["bm_lmg_generic_desc"] = "지향 사격 시 명중률이 매우 감소합니다.",		
 		["bm_ap_weapon_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_armor_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다",
 		["bm_ap_armor_80_weapon_sc_desc"] = "방탄복을 관통해 피해의 80%를 입힙니다.",
@@ -1135,8 +1136,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_tranq_maxim_sc_desc"] = "소음기와 통합되었습니다.\n\n마취탄을 발사하여 시간이 지남에 따라 지속 피해를 줍니다.",
 
 		--M134
-		["bm_m134_sc_desc"] = "너가 걷는 길은 끝이 없지. 내딛는 걸음마다 너의 적의 시체가 널려져있다...\n\n각 방아쇠 당김의 처음 몇 발 동안 2배의 발사 속도로 짧게 발사합니다.",
+		["bm_m134_sc_desc"] = "\"너가 걷는 길은 끝이 없지. 너가 내딛는 걸음마다 너의 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.\n지향 사격 시 명중률이 매우 감소합니다.",
 
+		--Microgun
+		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.\n지향 사격 시 명중률이 매우 감소합니다.",
+		
 		--AN-94/92
 		["bm_an94_rof_init_sc_desc"] = "각 방아쇠의 처음 2발은 발사 속도의 3배로 발사합니다.",
 
@@ -2344,7 +2348,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "이퀼리브리엄",
-		["menu_equilibrium_beta_desc_sc"] = "베이직: ##$basic##\n당신과 당신의 동료들의 권총의 안정성이 ##4##만큼 증가합니다.\n\n에이스: ##$pro##\n권총의 뽑고 넣는 시간이 ##100%##만큼 빨라집니다.",
+		["menu_equilibrium_beta_desc_sc"] = "베이직: ##$basic##\n당신과 당신의 동료들의 권총의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n권총의 뽑고 넣는 시간이 ##100%##만큼 빨라집니다.",
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "총기광",

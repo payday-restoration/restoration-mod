@@ -14227,7 +14227,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_atw_mod", "resmod_atw_mod", functi
 	self.parts.wpn_fps_ass_m14_body_ruger.custom_stats = {
 		falloff_start_mult = 0.925,
 		falloff_end_mult = 0.925,
-		ads_speed_mult = 0.975
+		ads_speed_mult = 0.9
 	}
 
 end)

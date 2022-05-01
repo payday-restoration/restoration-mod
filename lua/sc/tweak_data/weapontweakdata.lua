@@ -8640,9 +8640,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tti.can_shoot_through_shield = true
 			self.tti.can_shoot_through_wall = true
 			self.tti.supported = true
-			self.tti.ads_speed = 0.430
+			self.tti.ads_speed = 0.450
 			self.tti.damage_falloff = {
-				start_dist = 2200,
+				start_dist = 2100,
 				end_dist = 6000,
 				min_mult = 0.3333
 			}

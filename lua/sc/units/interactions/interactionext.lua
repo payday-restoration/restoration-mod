@@ -1,15 +1,3 @@
-function BaseInteractionExt:check_occlusion_state()
-	if not self._materials or not next(self._materials) or not self._tweak_data or self._tweak_data.no_contour or not self._active then
-		managers.occlusion:add_occlusion(self._unit)
-	else
-		managers.occlusion:remove_occlusion(self._unit)
-	end
-end
-
-Hooks:PostHook(BaseInteractionExt, "refresh_material", "res_refresh_material", BaseInteractionExt.check_occlusion_state)
-Hooks:PostHook(BaseInteractionExt, "set_tweak_data", "res_set_tweak_data", BaseInteractionExt.check_occlusion_state)
-Hooks:PostHook(BaseInteractionExt, "set_active", "res_set_active", BaseInteractionExt.check_occlusion_state)
-
 function GageAssignmentInteractionExt:interact(player)
 	GageAssignmentInteractionExt.super.super.interact(self, player)
 

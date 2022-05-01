@@ -12,7 +12,6 @@ function restoration:Init()
 	restoration.captain_camper = {
 		"arena", --Alesso
 		"welcome_to_the_jungle_1", --Big Oil Day 1
-		"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
 		"welcome_to_the_jungle_2", --Big Oil Day 2
 		"election_day_1", --Election Day 1
 		"election_day_2", --Election Day 2
@@ -75,6 +74,7 @@ function restoration:Init()
 	restoration.captain_stelf = {
 		"alex_1", --Rats Day 1
 		"rat",	--cook off
+		"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
 		"nightclub", --and Autumn stay off the dance floor
 		"branchbank", --well the trees are orange
 		"family", --diamond store
@@ -108,6 +108,7 @@ function restoration:Init()
 		--Autumn loses a few heists
 		restoration.captain_stelf = {
 			"alex_1", --Rats Day 1
+			"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
 			"rat",	--cook off
 			"nightclub", --and Autumn stay off the dance floor
 			"family", --diamond store

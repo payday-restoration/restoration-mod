@@ -8925,7 +8925,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.siltstone.has_description = true
 			self.siltstone.desc_id = "bm_ap_weapon_sc_desc"
 			self.siltstone.CLIP_AMMO_MAX = 10
-			self.siltstone.AMMO_MAX = 40
+			self.siltstone.AMMO_MAX = 30
 			self.siltstone.fire_mode_data.fire_rate = 0.6
 			self.siltstone.kick = self.stat_info.kick_tables.right_kick
 			self.siltstone.supported = true

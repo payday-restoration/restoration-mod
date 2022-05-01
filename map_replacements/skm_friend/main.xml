@@ -15,7 +15,7 @@
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>
 	</Localization>
-	<level ai_group_type="lapd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9">
+	<level ai_group_type="lapd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9" player_style="suit_sunny">
 		<add file="levels/skm_friend/add.xml"/>
 		<assets/>
 		<outro_event>

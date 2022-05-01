@@ -206,7 +206,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.chca.ai_group_type = lapd
 	self.chca.package = {"packages/job_chca", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
-	self.chca.player_style = "tux"
+	self.chca.player_style = "continental"
 
 	self.pent.ai_group_type = lapd
 	self.pent.package = {"packages/job_pent", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/dentist/mia/stage2/world_sounds"}
@@ -252,7 +252,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.hox_2.player_style = "slaughterhouse"
 	
-	self.hox_3.player_style = "slaughterhouse"
+	self.hox_3.player_style = "sneak_suit"
 	
 	self.rat.player_style = "suit_sunny"
 	
@@ -506,12 +506,16 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_nypd"}
 		
 	self.skm_mus.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_mus.player_style = "sneak_suit"
 	
 	self.skm_watchdogs_stage2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_murkywater"}
+	self.skm_watchdogs_stage2.player_style = "loud_suit"
 	
 	self.skm_mallcrasher.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_mallcrasher.player_style = "suit_sunny"
 	
 	self.skm_arena.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_arena.player_style = "hiphop"
 		
 	self.skm_big2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
 end)

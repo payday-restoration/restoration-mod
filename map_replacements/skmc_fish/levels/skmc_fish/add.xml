@@ -164,12 +164,6 @@
 	<texture path="levels/mods/skmc_fish/cube_lights/602707"/>
 	<texture path="levels/mods/skmc_fish/cube_lights/601414"/>
 	<texture path="levels/mods/skmc_fish/cube_lights/601305"/>
-	<add path="units/payday2/architecture/com_int_gallery/laser_detection" type="unit">
-		<unit force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-		<object force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-		<material_config force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-	</add>
 	<texture path="levels/mods/skmc_fish/cube_lights/100509"/>
 	<texture path="levels/mods/skmc_fish/cube_lights/100537"/>
 	<texture path="levels/mods/skmc_fish/cube_lights/102782"/>
@@ -322,4 +316,14 @@
 	<texture path="levels/mods/skmc_fish/cube_lights/101663"/>
 	<texture path="levels/mods/skmc_fish/cube_lights/104593"/>
 	<texture path="levels/mods/skmc_fish/cube_lights/103925"/>
+	<add from_db="true" path="core/environments/skies/sky_2100_moon/sky_2100_moon" type="scene">
+		<scene path="core/environments/skies/sky_2100_moon/sky_2100_moon"/>
+		<material_config path="core/environments/skies/sky_2100_moon/sky_2100_moon"/>
+	</add>
+	<add path="units/payday2/architecture/com_int_gallery/laser_detection" type="unit">
+		<material_config force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<object force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+	</add>
 </table>

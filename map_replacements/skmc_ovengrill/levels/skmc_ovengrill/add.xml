@@ -89,9 +89,9 @@
 		<unit force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_2" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" type="unit">
-		<unit force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" unload="true"/>
-		<object force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" unload="true"/>
 		<material_config force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_poses" unload="true"/>
+		<object force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" unload="true"/>
 	</add>
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100331"/>
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100333"/>
@@ -110,4 +110,8 @@
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100345"/>
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100323"/>
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100526"/>
+	<add from_db="true" path="core/environments/skies/default/default" type="scene">
+		<scene path="core/environments/skies/default/default"/>
+		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+	</add>
 </table>

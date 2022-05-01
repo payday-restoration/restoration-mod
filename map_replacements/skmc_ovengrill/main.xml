@@ -8,31 +8,16 @@
 		<Hooks/>
 		<add file="levels/skmc_ovengrill/add.xml"/>
 		<assets/>
-		<include directory="levels/skmc_ovengrill">
-			<file file="world.world" type="generic_xml"/>
-			<file file="continents.continents" type="custom_xml"/>
-			<file file="mission.mission" type="custom_xml"/>
-			<file file="nav_manager_data.nav_data" type="generic_xml"/>
-			<file file="world_sounds.world_sounds" type="generic_xml"/>
-			<file file="world_cameras.world_cameras" type="custom_xml"/>
-			<file file="editor_only/editor_only.continent" type="custom_xml"/>
-			<file file="editor_only/editor_only.mission" type="generic_xml"/>
-			<file file="world/world.continent" type="custom_xml"/>
-			<file file="world/world.mission" type="generic_xml"/>
-			<file file="cover_data.cover_data" type="custom_xml"/>
-			<file file="environments/ovengrill_env.environment" type="custom_xml"/>
-			<file file="environments/default.environment" type="custom_xml"/>
-		</include>
 		<outro_event>
 			<value_node value="Play_loc_skm_end_win"/>
 			<value_node value="Play_loc_skm_end_fail"/>
 		</outro_event>
 		<packages>
 			<value_node value="packages/dlcs/skm/job_skm"/>
-			<value_node value="packages/skm_sc_america"/>
 			<value_node value="levels/narratives/skm/skm_mus/world_sounds"/>
 			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
 			<value_node value="levels/narratives/e_framing_frame/stage_3/world/world"/>
+			<value_node value="packages/deathvoxclassics"/>
 			<value_node value="levels/narratives/e_election_day/stage_3/world/world"/>
 			<value_node value="levels/narratives/short2/stage1/nightclub_interior/nightclub_interior"/>
 			<value_node value="levels/narratives/bain/shadow_raid/editor_only/editor_only"/>
@@ -50,7 +35,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="" contact="skirmish" id="skmc_ovengrill" jc="50" max_mission_xp="135900" min_mission_xp="8000" region="street" icon="guis/textures/hotfix_icon" load_screen="guis/textures/hotfix_loading">
+	<narrative briefing_event="" contact="skirmish" icon="guis/textures/hotfix_icon" id="skmc_ovengrill" jc="50" load_screen="guis/textures/hotfix_loading" max_mission_xp="135900" min_mission_xp="8000" region="street">
 		<chain>
 			<table level_id="skmc_ovengrill" type="d" type_id="heist_type_assault"/>
 		</chain>
@@ -69,14 +54,14 @@
 		<crimenet_videos>
 			<value_node value="cn_branchbank2"/>
 		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
 		<debrief_event>
 			<value_node value=""/>
 		</debrief_event>
-        <date_added>
-            <value_node value="2018"/>
-            <value_node value="4"/>
-            <value_node value="23"/>
-        </date_added>
 		<experience_mul>
 			<value_node value="1"/>
 			<value_node value="1"/>

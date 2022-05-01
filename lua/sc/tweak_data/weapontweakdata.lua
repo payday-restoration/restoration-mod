@@ -2639,14 +2639,14 @@ function WeaponTweakData:_init_stats()
 		moving_crouching = 2.5,
 		crouching = 2.5,
 		moving_steelsight = 0.5,
-		steelsight = 0.125,
+		steelsight = 0.1,
 		bipod = 1
 	}
 
 	--Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
 	self.stat_info.shotgun_spread_increase = 3.5
 
-	self.stat_info.base_spread = 10 --How much spread area you have at 0 accuracy.
+	self.stat_info.base_spread = 10.25 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.1 --How much each point of accuracy reduces spread area.
 	self.stats.spread = {}
 	for i = 0, 100, 1 do
@@ -2689,7 +2689,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (10.1 + (i * -0.1)) * 0.95)
+		table.insert(self.stats.recoil, (10.25 + (i * -0.1)) * 0.95)
 	end
 
 	self.stats.value = {}
@@ -7083,7 +7083,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 86,
+					recoil = 84,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -7188,7 +7188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m4.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 85,
+					recoil = 82,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -7220,7 +7220,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.stats = {
 					damage = 24,
 					spread = 76,
-					recoil = 88,
+					recoil = 87,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -7644,7 +7644,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m16.stats = {
 					damage = 30,
 					spread = 85,
-					recoil = 88,
+					recoil = 85,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 21,

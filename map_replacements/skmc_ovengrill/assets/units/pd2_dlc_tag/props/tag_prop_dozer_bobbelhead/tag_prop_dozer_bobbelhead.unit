@@ -1,0 +1,8 @@
+<unit type="tag" slot="11">
+	<network sync="bodies"/>
+	<object file="units/pd2_dlc_tag/props/tag_prop_dozer_bobbelhead/tag_prop_dozer_bobbelhead" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

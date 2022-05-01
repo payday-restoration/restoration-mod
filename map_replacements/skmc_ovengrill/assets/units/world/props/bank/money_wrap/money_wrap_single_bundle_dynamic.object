@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/bank/money_wrap/money_wrap_single_bundle" orientation_object="rp_money_single_bundle" />
+  <sequence_manager file="units/world/props/bank/money_wrap/money_wrap_single_bundle_dynamic" />
+  <bodies>
+    <body collides_with_mover="false" name="dynamic_body" enabled="false" template="dynamic">
+      <object name="rp_money_single_bundle" />
+      <object name="c_money_single_bundle" collision_type="box" padding="-2"/>
+    </body>
+    <body collides_with_mover="false" name="static_body" enabled="true" template="static" collision_class="disabled">
+      <object name="rp_money_single_bundle" />
+      <object name="c_money_single_bundle" collision_type="box" padding="-2"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="thin_layer" static="true">
+	<decal_mesh material="thin_layer" name="c_money_single_bundle" enabled="true" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_money_single_bundle"				enabled="true" 	instance_struct="world_tm" />
+    <object name="g_money_single_bundle_outline"  enabled="false" 	instance_struct="world_tm" />
+  </graphics>
+</dynamic_object> 

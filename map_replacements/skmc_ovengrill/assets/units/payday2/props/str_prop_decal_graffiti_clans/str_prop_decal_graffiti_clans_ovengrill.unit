@@ -1,0 +1,6 @@
+<unit type="str" slot="1" >
+    <object file="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

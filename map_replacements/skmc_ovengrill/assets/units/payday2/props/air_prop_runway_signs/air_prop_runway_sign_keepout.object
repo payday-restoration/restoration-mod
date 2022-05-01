@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/air_prop_runway_signs/air_prop_runway_sign_keepout" orientation_object="rp_air_prop_runway_sign_keepout" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="box" name="c_c" padding="-2.5" />
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_dm" material="sheet_metal" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

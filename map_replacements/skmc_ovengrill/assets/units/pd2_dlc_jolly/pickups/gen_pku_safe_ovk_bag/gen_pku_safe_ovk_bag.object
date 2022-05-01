@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" orientation_object="rp_gen_pku_safe_ovk_bag" />
+	<sequence_manager file="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" />
+	<bodies>
+		<body name="hinge_body_1" enabled="true" template="small_prop" collision_class="bag" pushed_by_mover="false" friction="0.01" sweep="true" keyframed="false" tag="bag" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" restitution="0">
+			<object name="rp_gen_pku_safe_ovk_bag" />
+			<object name="c_c" collision_type="box" padding="-2.5" mass="100" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel" />
+
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

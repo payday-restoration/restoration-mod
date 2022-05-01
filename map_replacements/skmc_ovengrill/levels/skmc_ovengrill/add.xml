@@ -1,0 +1,113 @@
+<table directory="assets">
+	<add path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" type="unit">
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_tag/props/tag_prop_dozer_bobbelhead/tag_prop_dozer_bobbelhead" type="unit">
+		<material_config force="true" path="units/pd2_dlc_tag/props/tag_prop_dozer_bobbelhead/tag_prop_dozer_bobbelhead" unload="true"/>
+		<object force="true" path="units/pd2_dlc_tag/props/tag_prop_dozer_bobbelhead/tag_prop_dozer_bobbelhead" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_tag/props/tag_prop_dozer_bobbelhead/tag_prop_dozer_bobbelhead" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/bnk/bnk_int_split_connector_4m" type="unit">
+		<material_config force="true" path="units/payday2/architecture/bnk/bnk_int" unload="true"/>
+		<object force="true" path="units/payday2/architecture/bnk/bnk_int_split_connector_4m" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/bnk/bnk_int_split_connector_4m" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes_vr_headset" type="unit">
+		<material_config force="true" path="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes" unload="true"/>
+		<object force="true" path="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes_vr_headset" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes_vr_headset" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" unload="true"/>
+		<model force="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" unload="true"/>
+		<texture force="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill_df" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" unload="true"/>
+	</add>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100333"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100331"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100341"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100309"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100329"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100033"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100327"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100339"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100343"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100337"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100325"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100218"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100335"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100345"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100323"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100526"/>
+	<texture path="levels/mods/skm_ovengrill/cube_lights/100230"/>
+	<add path="units/world/props/fixtures/fixtures_lightswitch" type="unit">
+		<material_config force="true" path="units/world/props/fixtures/fixtures_lightswitch" unload="true"/>
+		<object force="true" path="units/world/props/fixtures/fixtures_lightswitch" unload="true"/>
+		<unit force="true" path="units/world/props/fixtures/fixtures_lightswitch" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" type="unit">
+		<unit force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" unload="true"/>
+		<object force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" unload="true"/>
+		<object force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/dye_pack/dye_pack_smoke" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/explosions/bag_explosion" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/explosions/burnpuff" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/explosions/burnpuff" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_02" type="unit">
+		<material_config force="true" path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_details" unload="true"/>
+		<object force="true" path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_02" unload="true"/>
+		<unit force="true" path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_02" unload="true"/>
+	</add>
+	<add path="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" type="unit">
+		<effect force="true" load="true" path="effects/payday2/economy/particles/equipment/eco_drill_sparks" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/equipment/sparks_random_slow" unload="true"/>
+		<bnk force="true" path="soundbanks/menu_cash" unload="true"/>
+		<material_config force="true" path="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" unload="true"/>
+		<object force="true" path="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" unload="true"/>
+		<sequence_manager force="true" path="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" unload="true"/>
+		<unit force="true" path="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" unload="true"/>
+	</add>
+	<add path="units/payday2/props/mcm_prop_basement_fusebox_a/mcm_prop_basement_fusebox_a" type="unit">
+		<material_config force="true" path="units/payday2/props/mcm_prop_basement_aircon/mcm_prop_basement_aircon" unload="true"/>
+		<object force="true" path="units/payday2/props/mcm_prop_basement_fusebox_a/mcm_prop_basement_fusebox_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/mcm_prop_basement_fusebox_a/mcm_prop_basement_fusebox_a" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_2" type="unit">
+		<material_config force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_poses" unload="true"/>
+		<object force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_2" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_2" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" type="unit">
+		<unit force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" unload="true"/>
+		<object force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_lie_3" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_casino/props/cas_secret_service_1_casino_poses/cas_secret_service_1_casino_dead_poses" unload="true"/>
+	</add>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100331"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100333"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100341"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100309"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100329"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100033"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100327"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100339"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100343"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100337"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100230"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100325"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100218"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100335"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100345"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100323"/>
+	<texture path="levels/mods/skmc_ovengrill/cube_lights/100526"/>
+</table>

@@ -1,0 +1,114 @@
+<materials version="3">
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" name="mat_bnk_int_wall_1">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_silver_df" type="cubemap"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material name="mat_bnk_int_ceiling_1" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_nm"/>
+        <variable value="candle" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_il"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_gold_light_df"/>
+        <variable value="0.30000001192093 0 2" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="mat_bnk_int_part_01" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_part_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_part_01_nm"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" name="mat_bnk_int_part_01_cubemap">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_part_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_part_01_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_silver_df" type="cubemap"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_bnk_int_lounge_seating">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_lounge_seating_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_lounge_seating_nm"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE_TO_SOLID" decal_material="glass_breakable" name="mat_glass" version="2">
+        <variable value="2 1 1" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_default_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_default_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_quick_diamond_ext"/>
+        <variable value="10000 10000 0" type="vector3" name="opacity_fade_to_solid"/>
+    </material>
+    <material name="glass_shattered_green" decal_material="glass_breakable" version="2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP">
+        <variable value="2 0 0" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_steel"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" name="mat_bnk_int_part_01_illum">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_part_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_part_01_nm"/>
+        <self_illumination_texture file="units/payday2/architecture/bnk/bnk_int_part_01_il"/>
+        <variable value="megatron" type="scalar" name="il_multiplier"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_bnk_ext_wall_01">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_nm"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_bnk_ext_wall_02">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01b_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01b_nm"/>
+    </material>
+    <material name="mat_bnk_int_wall_1_illum" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_nm"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_silver_df"/>
+        <self_illumination_texture file="units/payday2/architecture/bnk/bnk_int_wall_1_il"/>
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_bnk_int_ceiling">
+        <diffuse_texture file="units/payday2/architecture/bnk/bnk_int_ceiling_df"/>
+        <bump_normal_texture file="units/payday2/architecture/bnk/bnk_int_ceiling_nm"/>
+    </material>
+    <material name="mtr_lockpick_ghost" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/lockpick_ghost_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_lockpick" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/lockpick_indicator_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_saw" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/sawblade_indicator_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+        <variable value="3 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="hud_brackets_door" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_saw_door" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/sawblade_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+        <variable value="3 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="mat_contour" unique="true" version="2" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_lcm_b_ext_rooftar_a_v2">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_rooftar_a_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_rooftar_a_nm"/>
+    </material>
+</materials>

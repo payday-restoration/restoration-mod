@@ -1,0 +1,15 @@
+<dynamic_object>
+	<diesel orientation_object="rp_ind_interactable_hardcase_loot_gold" materials="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold_joke" />
+	<sequence_manager file="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold_joke" />
+	<bodies>
+		<body enabled="true" template="static" name="gold_bar" >
+			<object collision_type="box" name="c_c" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="steel" static="true">
+		<decal_mesh name="g_g" enabled="true" material="steel"/>
+	</decal_surfaces>
+	<graphics>
+		<object enabled="true" name="g_g" />
+	</graphics>
+</dynamic_object>

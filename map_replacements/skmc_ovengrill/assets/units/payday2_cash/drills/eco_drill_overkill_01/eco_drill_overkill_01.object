@@ -1,0 +1,27 @@
+<dynamic_object>
+	<diesel materials="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" orientation_object="rp_menu_drill_small" />
+	<sequence_manager file="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01" />
+	<animations>
+		<animation_group name="ag_drill_falling" enabled="false">
+			<object name="a_drill" />
+		</animation_group>
+		<animation_group name="ag_drill_move_in" enabled="false">
+				<object name="a_align_drill" />
+		</animation_group>
+		<animation_group name="ag_start_drill" enabled="false">
+				<object name="a_anim_drill_drill" />
+				<object name="a_anim_drill" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="body_collision_01" enabled="true" template="static">
+			<object name="a_drill" />
+			<object name="c_drill" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_base" enabled="true" />
+		<object name="g_drill" enabled="true" />
+		<object name="g_drill_drill" enabled="true" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,20 @@
+<unit type="gen" slot="1">
+	<object file="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" />
+	<network sync="spawn" />
+	<dependencies>
+		<depends_on unit="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="pku_safe" />
+			<var name="_remove_on_interact" value="true" />
+			<!-- <var name="_global_event" value="pku_money" /> -->
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="safe_ovk" />
+			<!-- <var name="tweak_value" value="bag_value" /> -->
+		</extension>
+	</extensions>
+</unit>

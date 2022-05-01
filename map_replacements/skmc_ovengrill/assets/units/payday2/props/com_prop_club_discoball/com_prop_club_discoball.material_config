@@ -1,0 +1,13 @@
+<materials version="3">
+    <material name="mat_discoball" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_club_discoball/com_prop_club_discoball_df"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_club_discoball/com_prop_club_discoball_nm"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_disco"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="mat_chain" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_club_discoball/com_prop_club_discoball_df"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_club_discoball/com_prop_club_discoball_nm"/>
+        <variable value="0.1630000025034" type="scalar" name="alpha_ref"/>
+    </material>
+</materials>

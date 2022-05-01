@@ -1,0 +1,6 @@
+<unit type="air" slot="1" >
+    <object file="units/payday2/props/air_prop_runway_signs/air_prop_runway_sign_keepout" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

@@ -1,0 +1,34 @@
+<table>
+	<statics>
+		<table>
+			<unit_data _prev_pos="2200 2100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_001" position="2200 2100 1000" rotation="0 0 0 -1" unit_id="200000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2200 1100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_002" position="2200 1100 1000" rotation="0 0 0 -1" unit_id="200001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2200 1100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_003" position="3200 1100 1000" rotation="0 0 0 -1" unit_id="200002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3200 2100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_004" position="3200 2100 1000" rotation="0 0 0 -1" unit_id="200003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3200 3100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="-100 -500 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_005" position="3200 3100 1000" rotation="0 0 0 -1" unit_id="200004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2200 3100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_006" position="2200 3100 1000" rotation="0 0 0 -1" unit_id="200005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1200 3100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="200 0 0" local_rot="-0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_007" position="1200 3100 1000" rotation="0 0 0 -1" unit_id="200006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2200 2100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 -1000 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_008" position="1200 2100 1000" rotation="0 0 0 -1" unit_id="200007"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2200 1100 1000" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 -2000 0" local_rot="0 0 0 1" name="units/test/jocke/plane_black_temp" name_id="plane_black_temp_009" position="1200 1100 1000" rotation="0 0 0 -1" unit_id="200008"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

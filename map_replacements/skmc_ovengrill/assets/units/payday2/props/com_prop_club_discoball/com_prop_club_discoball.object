@@ -1,0 +1,16 @@
+<dynamic_object>
+    <diesel orientation_object="rp_com_prop_club_discoball" materials="units/payday2/props/com_prop_club_discoball/com_prop_club_discoball" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="rp_com_prop_club_discoball"/>
+			<object name="c_sphere" collision_type="sphere" padding="-2.5"/>
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_glass" material="thin_layer" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_base" />
+        <object enabled="true" name="g_ball" />
+    </graphics>
+</dynamic_object>

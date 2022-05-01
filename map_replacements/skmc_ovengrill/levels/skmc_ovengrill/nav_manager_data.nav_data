@@ -1,0 +1,3055 @@
+<generic_scriptdata type="table">
+	<entry key="door_high_pos" type="table">
+		<entry index="1" type="vector3" value="-21 5 22.5"/>
+		<entry index="2" type="vector3" value="-21 11 22.5"/>
+		<entry index="3" type="vector3" value="-21 12 22.5"/>
+		<entry index="4" type="vector3" value="-19 5 22.5"/>
+		<entry index="5" type="vector3" value="-19 11 22.5"/>
+		<entry index="6" type="vector3" value="-6 39 22.5"/>
+		<entry index="7" type="vector3" value="-6 24 22.5"/>
+		<entry index="8" type="vector3" value="-6 27 22.5"/>
+		<entry index="9" type="vector3" value="-6 30 22.5"/>
+		<entry index="10" type="vector3" value="-6 39 22.5"/>
+		<entry index="11" type="vector3" value="-9 39 22.5"/>
+		<entry index="12" type="vector3" value="-15 46 22.5"/>
+		<entry index="13" type="vector3" value="-15 39 22.5"/>
+		<entry index="14" type="vector3" value="-15 41 22.5"/>
+		<entry index="15" type="vector3" value="-15 44 22.5"/>
+		<entry index="16" type="vector3" value="-15 46 22.5"/>
+		<entry index="17" type="vector3" value="-15 45 22.5"/>
+		<entry index="18" type="vector3" value="-17 46 22.5"/>
+		<entry index="19" type="vector3" value="-14 41 22.5"/>
+		<entry index="20" type="vector3" value="-13 39 22.5"/>
+		<entry index="21" type="vector3" value="-2 48 22.5"/>
+		<entry index="22" type="vector3" value="-1 48 22.5"/>
+		<entry index="23" type="vector3" value="9 48 22.5"/>
+		<entry index="24" type="vector3" value="4 48 22.5"/>
+		<entry index="25" type="vector3" value="7 48 22.5"/>
+		<entry index="26" type="vector3" value="-3 39 22.5"/>
+		<entry index="27" type="vector3" value="1 39 22.5"/>
+		<entry index="28" type="vector3" value="5 39 22.5"/>
+		<entry index="29" type="vector3" value="6 39 22.5"/>
+		<entry index="30" type="vector3" value="11 39 22.5"/>
+		<entry index="31" type="vector3" value="11 47 22.5"/>
+		<entry index="32" type="vector3" value="-6 45 22.5"/>
+		<entry index="33" type="vector3" value="-6 48 22.5238"/>
+		<entry index="34" type="vector3" value="-6 46 22.5"/>
+		<entry index="35" type="vector3" value="-9 20 22.5"/>
+		<entry index="36" type="vector3" value="-9 17 22.5"/>
+		<entry index="37" type="vector3" value="-9 20 22.5"/>
+		<entry index="38" type="vector3" value="-5 27 22.5"/>
+		<entry index="39" type="vector3" value="-3 24 22.5"/>
+		<entry index="40" type="vector3" value="-3 39 22.5"/>
+		<entry index="41" type="vector3" value="-21 26 22.5"/>
+		<entry index="42" type="vector3" value="-17 26 22.5"/>
+		<entry index="43" type="vector3" value="-25 22 22.5"/>
+		<entry index="44" type="vector3" value="-25 23 22.5"/>
+		<entry index="45" type="vector3" value="-17 48 22.5"/>
+		<entry index="46" type="vector3" value="-17 50 22.557"/>
+		<entry index="47" type="vector3" value="-21 38 22.5"/>
+		<entry index="48" type="vector3" value="-29 40 22.5"/>
+		<entry index="49" type="vector3" value="-28 40 22.5"/>
+		<entry index="50" type="vector3" value="-24 48 22.5"/>
+		<entry index="51" type="vector3" value="-6 67 23.125"/>
+		<entry index="52" type="vector3" value="-14 67 23.2857"/>
+		<entry index="53" type="vector3" value="-6 46 22.5"/>
+		<entry index="54" type="vector3" value="-15 46 22.5"/>
+		<entry index="55" type="vector3" value="-6 51 22.5595"/>
+		<entry index="56" type="vector3" value="-6 54 22.5952"/>
+		<entry index="57" type="vector3" value="-6 67 23.542"/>
+		<entry index="58" type="vector3" value="-6 61 22.6786"/>
+		<entry index="59" type="vector3" value="-17 63 22.8671"/>
+		<entry index="60" type="vector3" value="-17 67 23.0982"/>
+		<entry index="61" type="vector3" value="-17 48 22.5285"/>
+		<entry index="62" type="vector3" value="-5 51 22.5"/>
+		<entry index="63" type="vector3" value="-2 49 22.5"/>
+		<entry index="64" type="vector3" value="7 51 22.5"/>
+		<entry index="65" type="vector3" value="1 39 22.5"/>
+		<entry index="66" type="vector3" value="5 39 22.5"/>
+		<entry index="67" type="vector3" value="14 47 22.5"/>
+		<entry index="68" type="vector3" value="11 39 22.5"/>
+		<entry index="69" type="vector3" value="9 24 22.5"/>
+		<entry index="70" type="vector3" value="-3 24 22.5"/>
+		<entry index="71" type="vector3" value="-1 5 22.5"/>
+		<entry index="72" type="vector3" value="10 24 22.5"/>
+		<entry index="73" type="vector3" value="-9 9 22.5"/>
+		<entry index="74" type="vector3" value="-9 11 22.5"/>
+		<entry index="75" type="vector3" value="-9 24 22.5"/>
+		<entry index="76" type="vector3" value="-9 17 22.5"/>
+		<entry index="77" type="vector3" value="-25 22 22.5"/>
+		<entry index="78" type="vector3" value="-29 40 22.5"/>
+		<entry index="79" type="vector3" value="-2 74 27.4152"/>
+		<entry index="80" type="vector3" value="0 74 23.1864"/>
+		<entry index="81" type="vector3" value="-2 61 22.5"/>
+		<entry index="82" type="vector3" value="4 70 22.5"/>
+		<entry index="83" type="vector3" value="4 74 22.5"/>
+		<entry index="84" type="vector3" value="-6 71 24.195"/>
+		<entry index="85" type="vector3" value="-6 72 28.243"/>
+		<entry index="86" type="vector3" value="-6 74 25.9321"/>
+		<entry index="87" type="vector3" value="4 49 22.5"/>
+		<entry index="88" type="vector3" value="-8 45 22.5"/>
+		<entry index="89" type="vector3" value="-7 45 22.5"/>
+		<entry index="90" type="vector3" value="-11 45 22.5"/>
+		<entry index="91" type="vector3" value="-6 45 22.5"/>
+		<entry index="92" type="vector3" value="-9 5 22.5"/>
+		<entry index="93" type="vector3" value="-9 9 22.5"/>
+		<entry index="94" type="vector3" value="-15 9 22.5"/>
+		<entry index="95" type="vector3" value="-16 74 23.4286"/>
+		<entry index="96" type="vector3" value="-16 77 23.5"/>
+		<entry index="97" type="vector3" value="-18 9 22.5"/>
+		<entry index="98" type="vector3" value="-20 74 22.7857"/>
+		<entry index="99" type="vector3" value="-11 74 23.5"/>
+		<entry index="100" type="vector3" value="-7 74 26.9403"/>
+		<entry index="101" type="vector3" value="-10 74 31.3844"/>
+		<entry index="102" type="vector3" value="-9 74 31.3886"/>
+		<entry index="103" type="vector3" value="-14 74 23.5"/>
+		<entry index="104" type="vector3" value="-7 79 22.5"/>
+		<entry index="105" type="vector3" value="-24 63 22.5893"/>
+		<entry index="106" type="vector3" value="-28 63 22.5"/>
+		<entry index="107" type="vector3" value="-11 72 23.5"/>
+		<entry index="108" type="vector3" value="-11 74 23.5"/>
+		<entry index="109" type="vector3" value="-14 74 23.5"/>
+		<entry index="110" type="vector3" value="-28 71 22.5"/>
+		<entry index="111" type="vector3" value="-28 72 22.5"/>
+		<entry index="112" type="vector3" value="-2 75 27.6369"/>
+		<entry index="113" type="vector3" value="-7 72 34.665"/>
+		<entry index="114" type="vector3" value="-10 72 44.1408"/>
+		<entry index="115" type="vector3" value="-9 72 34.3928"/>
+		<entry index="116" type="vector3" value="-7 71 29.4456"/>
+		<entry index="117" type="vector3" value="-7 72 35.5162"/>
+		<entry index="118" type="vector3" value="7 70 22.5"/>
+		<entry index="119" type="vector3" value="7 72 22.5"/>
+		<entry index="120" type="vector3" value="9 70 22.5"/>
+		<entry index="121" type="vector3" value="14 63 22.5"/>
+		<entry index="122" type="vector3" value="-14 44 51.4018"/>
+		<entry index="123" type="vector3" value="-14 44 68.7429"/>
+		<entry index="124" type="vector3" value="-6 74 26.9953"/>
+		<entry index="125" type="vector3" value="-6 72 31.0819"/>
+		<entry index="126" type="vector3" value="-9 73 39.2774"/>
+		<entry index="127" type="vector3" value="-9 74 39.2773"/>
+		<entry index="128" type="vector3" value="-10 73 56.1503"/>
+		<entry index="129" type="vector3" value="-10 74 39.2732"/>
+		<entry index="130" type="vector3" value="-9 73 39.2774"/>
+		<entry index="131" type="vector3" value="-12 44 63.1553"/>
+		<entry index="132" type="vector3" value="-17 39 22.5"/>
+		<entry index="133" type="vector3" value="-28 71 22.5"/>
+		<entry index="134" type="vector3" value="-17 63 22.8705"/>
+		<entry index="135" type="vector3" value="-24 63 22.5893"/>
+		<entry index="136" type="vector3" value="-17 74 23.2857"/>
+		<entry index="137" type="vector3" value="-28 72 22.5"/>
+		<entry index="138" type="vector3" value="-28 71 22.5"/>
+		<entry index="139" type="vector3" value="-17 48 22.5"/>
+		<entry index="140" type="vector3" value="-21 38 22.5"/>
+		<entry index="141" type="vector3" value="-6 71 28.4534"/>
+		<entry index="142" type="vector3" value="14 63 22.5"/>
+		<entry index="143" type="vector3" value="-8 45 22.5"/>
+		<entry index="144" type="vector3" value="-7 45 22.5"/>
+		<entry index="145" type="vector3" value="-14 44 51.4018"/>
+		<entry index="146" type="vector3" value="-12 44 63.1553"/>
+		<entry index="147" type="vector3" value="30 8 22.5"/>
+		<entry index="148" type="vector3" value="30 32 22.5"/>
+		<entry index="149" type="vector3" value="30 46 22.5"/>
+		<entry index="150" type="vector3" value="18 3 22.5"/>
+		<entry index="151" type="vector3" value="30 46 22.5"/>
+		<entry index="152" type="vector3" value="11 -35 22.5494"/>
+		<entry index="153" type="vector3" value="13 -43 22.5"/>
+		<entry index="154" type="vector3" value="13 -40 22.5"/>
+		<entry index="155" type="vector3" value="6 -35 22.9791"/>
+		<entry index="156" type="vector3" value="0 -43 22.65"/>
+		<entry index="157" type="vector3" value="13 -43 22.5"/>
+		<entry index="158" type="vector3" value="6 -43 22.95"/>
+		<entry index="159" type="vector3" value="0 -60 22.5"/>
+		<entry index="160" type="vector3" value="13 -59 22.5"/>
+		<entry index="161" type="vector3" value="13 -51 22.5"/>
+		<entry index="162" type="vector3" value="13 -43 22.5"/>
+		<entry index="163" type="vector3" value="-3 -55 22.5"/>
+		<entry index="164" type="vector3" value="-3 -43 22.5"/>
+		<entry index="165" type="vector3" value="-6 -48 22.5"/>
+		<entry index="166" type="vector3" value="-3 -38 22.5"/>
+		<entry index="167" type="vector3" value="-4 -39 22.5"/>
+		<entry index="168" type="vector3" value="-4 -38 22.5"/>
+		<entry index="169" type="vector3" value="6 -30 22.716"/>
+		<entry index="170" type="vector3" value="6 -18 22.5"/>
+		<entry index="171" type="vector3" value="0 -18 22.5"/>
+		<entry index="172" type="vector3" value="0 -38 22.62"/>
+		<entry index="173" type="vector3" value="-4 -39 22.5"/>
+		<entry index="174" type="vector3" value="-5 -39 41.1745"/>
+		<entry index="175" type="vector3" value="-6 -39 62.3997"/>
+		<entry index="176" type="vector3" value="-5 -38 39.8992"/>
+		<entry index="177" type="vector3" value="-2 -5 22.5"/>
+		<entry index="178" type="vector3" value="-1 -5 22.5"/>
+		<entry index="179" type="vector3" value="0 -18 22.5"/>
+		<entry index="180" type="vector3" value="14 -6 22.5"/>
+		<entry index="181" type="vector3" value="-3 -5 22.5"/>
+		<entry index="182" type="vector3" value="-4 -20 22.5"/>
+		<entry index="183" type="vector3" value="-4 -19 22.5"/>
+		<entry index="184" type="vector3" value="-6 -39 51.1488"/>
+		<entry index="185" type="vector3" value="-2 2 22.5"/>
+		<entry index="186" type="vector3" value="-2 -2 22.5"/>
+		<entry index="187" type="vector3" value="-3 2 22.5"/>
+		<entry index="188" type="vector3" value="26 -6 22.5"/>
+		<entry index="189" type="vector3" value="30 -18 22.5"/>
+		<entry index="190" type="vector3" value="30 -6 22.5"/>
+		<entry index="191" type="vector3" value="-3 2 22.5"/>
+		<entry index="192" type="vector3" value="-9 2 22.5"/>
+		<entry index="193" type="vector3" value="-10 -13 22.5"/>
+		<entry index="194" type="vector3" value="-12 2 22.5"/>
+		<entry index="195" type="vector3" value="-4 -20 22.5"/>
+		<entry index="196" type="vector3" value="-12 2 22.5"/>
+		<entry index="197" type="vector3" value="26 2 22.5"/>
+		<entry index="198" type="vector3" value="26 -21 22.5"/>
+		<entry index="199" type="vector3" value="-10 -44 22.5"/>
+		<entry index="200" type="vector3" value="-10 -43 22.5"/>
+		<entry index="201" type="vector3" value="-15 -48 22.5"/>
+		<entry index="202" type="vector3" value="-15 -35 22.5"/>
+		<entry index="203" type="vector3" value="-15 -33 22.5"/>
+		<entry index="204" type="vector3" value="-9 -44 22.5"/>
+		<entry index="205" type="vector3" value="-6 -45 22.5"/>
+		<entry index="206" type="vector3" value="-6 -44 22.5"/>
+		<entry index="207" type="vector3" value="-15 -35 22.5"/>
+		<entry index="208" type="vector3" value="-22 -33 22.5"/>
+		<entry index="209" type="vector3" value="-6 -48 22.5"/>
+		<entry index="210" type="vector3" value="-6 -45 22.5"/>
+		<entry index="211" type="vector3" value="-23 -50 22.5"/>
+		<entry index="212" type="vector3" value="-24 -48 22.5"/>
+		<entry index="213" type="vector3" value="-24 -42 22.5"/>
+		<entry index="214" type="vector3" value="-27 -52 22.5"/>
+		<entry index="215" type="vector3" value="-24 -50 22.5"/>
+		<entry index="216" type="vector3" value="-27 -55 22.5"/>
+		<entry index="217" type="vector3" value="-11 -55 22.5"/>
+		<entry index="218" type="vector3" value="31 -38 22.5"/>
+		<entry index="219" type="vector3" value="18 -45 22.5"/>
+		<entry index="220" type="vector3" value="18 -40 22.5"/>
+		<entry index="221" type="vector3" value="18 -39 22.5"/>
+		<entry index="222" type="vector3" value="18 -45 22.5"/>
+		<entry index="223" type="vector3" value="18 -40 22.5"/>
+		<entry index="224" type="vector3" value="14 -40 22.5"/>
+		<entry index="225" type="vector3" value="33 -38 22.5"/>
+		<entry index="226" type="vector3" value="41 -23 22.5"/>
+		<entry index="227" type="vector3" value="44 -23 22.5"/>
+		<entry index="228" type="vector3" value="45 -31 22.5"/>
+		<entry index="229" type="vector3" value="45 -27 22.5"/>
+		<entry index="230" type="vector3" value="45 -26 22.5"/>
+		<entry index="231" type="vector3" value="45 -25 22.5"/>
+		<entry index="232" type="vector3" value="41 -21 22.5"/>
+		<entry index="233" type="vector3" value="41 -19 22.5"/>
+		<entry index="234" type="vector3" value="41 -17 22.5"/>
+		<entry index="235" type="vector3" value="34 -19 22.5"/>
+		<entry index="236" type="vector3" value="43 -21 22.5"/>
+		<entry index="237" type="vector3" value="47 -31 22.5"/>
+		<entry index="238" type="vector3" value="47 -27 22.5"/>
+		<entry index="239" type="vector3" value="49 -28 22.5"/>
+		<entry index="240" type="vector3" value="46 -26 22.5"/>
+		<entry index="241" type="vector3" value="42 -19 22.5"/>
+		<entry index="242" type="vector3" value="31 -19 22.5"/>
+		<entry index="243" type="vector3" value="30 -19 22.5"/>
+		<entry index="244" type="vector3" value="31 -16 22.5"/>
+		<entry index="245" type="vector3" value="30 -16 22.5"/>
+		<entry index="246" type="vector3" value="30 -18 22.5"/>
+		<entry index="247" type="vector3" value="62 -28 22.5"/>
+		<entry index="248" type="vector3" value="50 -28 22.5"/>
+		<entry index="249" type="vector3" value="62 -27 22.5"/>
+		<entry index="250" type="vector3" value="55 -27 22.5"/>
+		<entry index="251" type="vector3" value="62 -13 22.5"/>
+		<entry index="252" type="vector3" value="55 -13 22.5"/>
+		<entry index="253" type="vector3" value="55 -26 22.5"/>
+		<entry index="254" type="vector3" value="55 -25 22.5"/>
+		<entry index="255" type="vector3" value="55 -13 22.5"/>
+		<entry index="256" type="vector3" value="53 -11 22.5"/>
+		<entry index="257" type="vector3" value="53 -10 22.5"/>
+		<entry index="258" type="vector3" value="53 -16 22.5"/>
+		<entry index="259" type="vector3" value="52 -16 22.5"/>
+		<entry index="260" type="vector3" value="53 -11 22.5"/>
+		<entry index="261" type="vector3" value="55 -26 22.5"/>
+		<entry index="262" type="vector3" value="20 74 22.5"/>
+		<entry index="263" type="vector3" value="35 74 22.5"/>
+		<entry index="264" type="vector3" value="43 74 22.5"/>
+		<entry index="265" type="vector3" value="46 74 22.5"/>
+		<entry index="266" type="vector3" value="28 56 22.5"/>
+		<entry index="267" type="vector3" value="46 56 22.5"/>
+		<entry index="268" type="vector3" value="20 75 22.5"/>
+		<entry index="269" type="vector3" value="43 75 22.5"/>
+		<entry index="270" type="vector3" value="28 46 22.5"/>
+		<entry index="271" type="vector3" value="28 47 22.5"/>
+		<entry index="272" type="vector3" value="30 46 22.5"/>
+		<entry index="273" type="vector3" value="31 46 22.5"/>
+	</entry>
+	<entry key="door_high_rooms" type="table">
+		<entry index="1" type="number" value="2"/>
+		<entry index="2" type="number" value="3"/>
+		<entry index="3" type="number" value="4"/>
+		<entry index="4" type="number" value="3"/>
+		<entry index="5" type="number" value="4"/>
+		<entry index="6" type="number" value="76"/>
+		<entry index="7" type="number" value="5"/>
+		<entry index="8" type="number" value="10"/>
+		<entry index="9" type="number" value="11"/>
+		<entry index="10" type="number" value="12"/>
+		<entry index="11" type="number" value="5"/>
+		<entry index="12" type="number" value="17"/>
+		<entry index="13" type="number" value="6"/>
+		<entry index="14" type="number" value="7"/>
+		<entry index="15" type="number" value="53"/>
+		<entry index="16" type="number" value="37"/>
+		<entry index="17" type="number" value="75"/>
+		<entry index="18" type="number" value="6"/>
+		<entry index="19" type="number" value="53"/>
+		<entry index="20" type="number" value="7"/>
+		<entry index="21" type="number" value="18"/>
+		<entry index="22" type="number" value="19"/>
+		<entry index="23" type="number" value="20"/>
+		<entry index="24" type="number" value="71"/>
+		<entry index="25" type="number" value="35"/>
+		<entry index="26" type="number" value="8"/>
+		<entry index="27" type="number" value="8"/>
+		<entry index="28" type="number" value="8"/>
+		<entry index="29" type="number" value="8"/>
+		<entry index="30" type="number" value="8"/>
+		<entry index="31" type="number" value="24"/>
+		<entry index="32" type="number" value="8"/>
+		<entry index="33" type="number" value="8"/>
+		<entry index="34" type="number" value="8"/>
+		<entry index="35" type="number" value="61"/>
+		<entry index="36" type="number" value="9"/>
+		<entry index="37" type="number" value="25"/>
+		<entry index="38" type="number" value="11"/>
+		<entry index="39" type="number" value="10"/>
+		<entry index="40" type="number" value="21"/>
+		<entry index="41" type="number" value="27"/>
+		<entry index="42" type="number" value="61"/>
+		<entry index="43" type="number" value="13"/>
+		<entry index="44" type="number" value="13"/>
+		<entry index="45" type="number" value="14"/>
+		<entry index="46" type="number" value="17"/>
+		<entry index="47" type="number" value="65"/>
+		<entry index="48" type="number" value="16"/>
+		<entry index="49" type="number" value="16"/>
+		<entry index="50" type="number" value="65"/>
+		<entry index="51" type="number" value="66"/>
+		<entry index="52" type="number" value="68"/>
+		<entry index="53" type="number" value="17"/>
+		<entry index="54" type="number" value="17"/>
+		<entry index="55" type="number" value="18"/>
+		<entry index="56" type="number" value="33"/>
+		<entry index="57" type="number" value="32"/>
+		<entry index="58" type="number" value="34"/>
+		<entry index="59" type="number" value="17"/>
+		<entry index="60" type="number" value="17"/>
+		<entry index="61" type="number" value="17"/>
+		<entry index="62" type="number" value="33"/>
+		<entry index="63" type="number" value="19"/>
+		<entry index="64" type="number" value="20"/>
+		<entry index="65" type="number" value="22"/>
+		<entry index="66" type="number" value="23"/>
+		<entry index="67" type="number" value="36"/>
+		<entry index="68" type="number" value="24"/>
+		<entry index="69" type="number" value="26"/>
+		<entry index="70" type="number" value="10"/>
+		<entry index="71" type="number" value="25"/>
+		<entry index="72" type="number" value="39"/>
+		<entry index="73" type="number" value="25"/>
+		<entry index="74" type="number" value="25"/>
+		<entry index="75" type="number" value="25"/>
+		<entry index="76" type="number" value="25"/>
+		<entry index="77" type="number" value="29"/>
+		<entry index="78" type="number" value="31"/>
+		<entry index="79" type="number" value="54"/>
+		<entry index="80" type="number" value="49"/>
+		<entry index="81" type="number" value="32"/>
+		<entry index="82" type="number" value="52"/>
+		<entry index="83" type="number" value="51"/>
+		<entry index="84" type="number" value="32"/>
+		<entry index="85" type="number" value="32"/>
+		<entry index="86" type="number" value="32"/>
+		<entry index="87" type="number" value="35"/>
+		<entry index="88" type="number" value="37"/>
+		<entry index="89" type="number" value="37"/>
+		<entry index="90" type="number" value="37"/>
+		<entry index="91" type="number" value="37"/>
+		<entry index="92" type="number" value="38"/>
+		<entry index="93" type="number" value="41"/>
+		<entry index="94" type="number" value="40"/>
+		<entry index="95" type="number" value="42"/>
+		<entry index="96" type="number" value="45"/>
+		<entry index="97" type="number" value="43"/>
+		<entry index="98" type="number" value="44"/>
+		<entry index="99" type="number" value="45"/>
+		<entry index="100" type="number" value="45"/>
+		<entry index="101" type="number" value="45"/>
+		<entry index="102" type="number" value="45"/>
+		<entry index="103" type="number" value="45"/>
+		<entry index="104" type="number" value="54"/>
+		<entry index="105" type="number" value="64"/>
+		<entry index="106" type="number" value="46"/>
+		<entry index="107" type="number" value="50"/>
+		<entry index="108" type="number" value="56"/>
+		<entry index="109" type="number" value="47"/>
+		<entry index="110" type="number" value="48"/>
+		<entry index="111" type="number" value="64"/>
+		<entry index="112" type="number" value="49"/>
+		<entry index="113" type="number" value="55"/>
+		<entry index="114" type="number" value="56"/>
+		<entry index="115" type="number" value="57"/>
+		<entry index="116" type="number" value="50"/>
+		<entry index="117" type="number" value="72"/>
+		<entry index="118" type="number" value="51"/>
+		<entry index="119" type="number" value="58"/>
+		<entry index="120" type="number" value="58"/>
+		<entry index="121" type="number" value="52"/>
+		<entry index="122" type="number" value="75"/>
+		<entry index="123" type="number" value="59"/>
+		<entry index="124" type="number" value="54"/>
+		<entry index="125" type="number" value="55"/>
+		<entry index="126" type="number" value="55"/>
+		<entry index="127" type="number" value="55"/>
+		<entry index="128" type="number" value="57"/>
+		<entry index="129" type="number" value="60"/>
+		<entry index="130" type="number" value="60"/>
+		<entry index="131" type="number" value="75"/>
+		<entry index="132" type="number" value="61"/>
+		<entry index="133" type="number" value="64"/>
+		<entry index="134" type="number" value="64"/>
+		<entry index="135" type="number" value="64"/>
+		<entry index="136" type="number" value="68"/>
+		<entry index="137" type="number" value="64"/>
+		<entry index="138" type="number" value="64"/>
+		<entry index="139" type="number" value="14"/>
+		<entry index="140" type="number" value="65"/>
+		<entry index="141" type="number" value="72"/>
+		<entry index="142" type="number" value="52"/>
+		<entry index="143" type="number" value="74"/>
+		<entry index="144" type="number" value="76"/>
+		<entry index="145" type="number" value="75"/>
+		<entry index="146" type="number" value="75"/>
+		<entry index="147" type="number" value="77"/>
+		<entry index="148" type="number" value="79"/>
+		<entry index="149" type="number" value="80"/>
+		<entry index="150" type="number" value="78"/>
+		<entry index="151" type="number" value="80"/>
+		<entry index="152" type="number" value="86"/>
+		<entry index="153" type="number" value="82"/>
+		<entry index="154" type="number" value="87"/>
+		<entry index="155" type="number" value="82"/>
+		<entry index="156" type="number" value="112"/>
+		<entry index="157" type="number" value="82"/>
+		<entry index="158" type="number" value="92"/>
+		<entry index="159" type="number" value="83"/>
+		<entry index="160" type="number" value="89"/>
+		<entry index="161" type="number" value="90"/>
+		<entry index="162" type="number" value="87"/>
+		<entry index="163" type="number" value="83"/>
+		<entry index="164" type="number" value="83"/>
+		<entry index="165" type="number" value="111"/>
+		<entry index="166" type="number" value="112"/>
+		<entry index="167" type="number" value="85"/>
+		<entry index="168" type="number" value="85"/>
+		<entry index="169" type="number" value="86"/>
+		<entry index="170" type="number" value="95"/>
+		<entry index="171" type="number" value="92"/>
+		<entry index="172" type="number" value="92"/>
+		<entry index="173" type="number" value="94"/>
+		<entry index="174" type="number" value="97"/>
+		<entry index="175" type="number" value="93"/>
+		<entry index="176" type="number" value="94"/>
+		<entry index="177" type="number" value="99"/>
+		<entry index="178" type="number" value="100"/>
+		<entry index="179" type="number" value="95"/>
+		<entry index="180" type="number" value="101"/>
+		<entry index="181" type="number" value="95"/>
+		<entry index="182" type="number" value="96"/>
+		<entry index="183" type="number" value="96"/>
+		<entry index="184" type="number" value="97"/>
+		<entry index="185" type="number" value="38"/>
+		<entry index="186" type="number" value="100"/>
+		<entry index="187" type="number" value="99"/>
+		<entry index="188" type="number" value="105"/>
+		<entry index="189" type="number" value="101"/>
+		<entry index="190" type="number" value="107"/>
+		<entry index="191" type="number" value="38"/>
+		<entry index="192" type="number" value="40"/>
+		<entry index="193" type="number" value="102"/>
+		<entry index="194" type="number" value="102"/>
+		<entry index="195" type="number" value="109"/>
+		<entry index="196" type="number" value="40"/>
+		<entry index="197" type="number" value="78"/>
+		<entry index="198" type="number" value="106"/>
+		<entry index="199" type="number" value="114"/>
+		<entry index="200" type="number" value="115"/>
+		<entry index="201" type="number" value="113"/>
+		<entry index="202" type="number" value="113"/>
+		<entry index="203" type="number" value="113"/>
+		<entry index="204" type="number" value="115"/>
+		<entry index="205" type="number" value="114"/>
+		<entry index="206" type="number" value="111"/>
+		<entry index="207" type="number" value="116"/>
+		<entry index="208" type="number" value="116"/>
+		<entry index="209" type="number" value="117"/>
+		<entry index="210" type="number" value="111"/>
+		<entry index="211" type="number" value="118"/>
+		<entry index="212" type="number" value="118"/>
+		<entry index="213" type="number" value="119"/>
+		<entry index="214" type="number" value="120"/>
+		<entry index="215" type="number" value="124"/>
+		<entry index="216" type="number" value="121"/>
+		<entry index="217" type="number" value="123"/>
+		<entry index="218" type="number" value="131"/>
+		<entry index="219" type="number" value="126"/>
+		<entry index="220" type="number" value="126"/>
+		<entry index="221" type="number" value="126"/>
+		<entry index="222" type="number" value="128"/>
+		<entry index="223" type="number" value="129"/>
+		<entry index="224" type="number" value="128"/>
+		<entry index="225" type="number" value="130"/>
+		<entry index="226" type="number" value="133"/>
+		<entry index="227" type="number" value="134"/>
+		<entry index="228" type="number" value="135"/>
+		<entry index="229" type="number" value="136"/>
+		<entry index="230" type="number" value="137"/>
+		<entry index="231" type="number" value="138"/>
+		<entry index="232" type="number" value="134"/>
+		<entry index="233" type="number" value="139"/>
+		<entry index="234" type="number" value="140"/>
+		<entry index="235" type="number" value="133"/>
+		<entry index="236" type="number" value="139"/>
+		<entry index="237" type="number" value="136"/>
+		<entry index="238" type="number" value="137"/>
+		<entry index="239" type="number" value="152"/>
+		<entry index="240" type="number" value="138"/>
+		<entry index="241" type="number" value="140"/>
+		<entry index="242" type="number" value="142"/>
+		<entry index="243" type="number" value="141"/>
+		<entry index="244" type="number" value="107"/>
+		<entry index="245" type="number" value="142"/>
+		<entry index="246" type="number" value="142"/>
+		<entry index="247" type="number" value="144"/>
+		<entry index="248" type="number" value="143"/>
+		<entry index="249" type="number" value="145"/>
+		<entry index="250" type="number" value="154"/>
+		<entry index="251" type="number" value="146"/>
+		<entry index="252" type="number" value="145"/>
+		<entry index="253" type="number" value="145"/>
+		<entry index="254" type="number" value="145"/>
+		<entry index="255" type="number" value="146"/>
+		<entry index="256" type="number" value="146"/>
+		<entry index="257" type="number" value="146"/>
+		<entry index="258" type="number" value="147"/>
+		<entry index="259" type="number" value="148"/>
+		<entry index="260" type="number" value="149"/>
+		<entry index="261" type="number" value="151"/>
+		<entry index="262" type="number" value="156"/>
+		<entry index="263" type="number" value="157"/>
+		<entry index="264" type="number" value="158"/>
+		<entry index="265" type="number" value="159"/>
+		<entry index="266" type="number" value="155"/>
+		<entry index="267" type="number" value="155"/>
+		<entry index="268" type="number" value="157"/>
+		<entry index="269" type="number" value="159"/>
+		<entry index="270" type="number" value="160"/>
+		<entry index="271" type="number" value="162"/>
+		<entry index="272" type="number" value="162"/>
+		<entry index="273" type="number" value="162"/>
+	</entry>
+	<entry key="door_low_pos" type="table">
+		<entry index="1" type="vector3" value="-21 4 22.5"/>
+		<entry index="2" type="vector3" value="-21 5 22.5"/>
+		<entry index="3" type="vector3" value="-21 11 22.5"/>
+		<entry index="4" type="vector3" value="-21 5 22.5"/>
+		<entry index="5" type="vector3" value="-21 11 22.5"/>
+		<entry index="6" type="vector3" value="-7 39 22.5"/>
+		<entry index="7" type="vector3" value="-9 24 22.5"/>
+		<entry index="8" type="vector3" value="-6 24 22.5"/>
+		<entry index="9" type="vector3" value="-6 27 22.5"/>
+		<entry index="10" type="vector3" value="-6 34 22.5"/>
+		<entry index="11" type="vector3" value="-9 24 22.5"/>
+		<entry index="12" type="vector3" value="-17 46 22.5"/>
+		<entry index="13" type="vector3" value="-17 39 22.5"/>
+		<entry index="14" type="vector3" value="-15 39 22.5"/>
+		<entry index="15" type="vector3" value="-15 41 22.5"/>
+		<entry index="16" type="vector3" value="-15 45 22.5"/>
+		<entry index="17" type="vector3" value="-15 44 22.5"/>
+		<entry index="18" type="vector3" value="-17 39 22.5"/>
+		<entry index="19" type="vector3" value="-15 41 22.5"/>
+		<entry index="20" type="vector3" value="-15 39 22.5"/>
+		<entry index="21" type="vector3" value="-6 48 22.5"/>
+		<entry index="22" type="vector3" value="-2 48 22.5"/>
+		<entry index="23" type="vector3" value="7 48 22.5"/>
+		<entry index="24" type="vector3" value="3 48 22.5"/>
+		<entry index="25" type="vector3" value="4 48 22.5"/>
+		<entry index="26" type="vector3" value="-6 39 22.5"/>
+		<entry index="27" type="vector3" value="-3 39 22.5"/>
+		<entry index="28" type="vector3" value="1 39 22.5"/>
+		<entry index="29" type="vector3" value="5 39 22.5"/>
+		<entry index="30" type="vector3" value="10 39 22.5"/>
+		<entry index="31" type="vector3" value="11 39 22.5"/>
+		<entry index="32" type="vector3" value="-6 39 22.5"/>
+		<entry index="33" type="vector3" value="-6 46 22.5"/>
+		<entry index="34" type="vector3" value="-6 45 22.5"/>
+		<entry index="35" type="vector3" value="-16 20 22.5"/>
+		<entry index="36" type="vector3" value="-10 17 22.5"/>
+		<entry index="37" type="vector3" value="-9 17 22.5"/>
+		<entry index="38" type="vector3" value="-6 27 22.5"/>
+		<entry index="39" type="vector3" value="-6 24 22.5"/>
+		<entry index="40" type="vector3" value="-3 36 22.5"/>
+		<entry index="41" type="vector3" value="-25 26 22.5"/>
+		<entry index="42" type="vector3" value="-17 20 22.5"/>
+		<entry index="43" type="vector3" value="-25 20 22.5"/>
+		<entry index="44" type="vector3" value="-25 22 22.5"/>
+		<entry index="45" type="vector3" value="-21 48 22.5"/>
+		<entry index="46" type="vector3" value="-17 48 22.5285"/>
+		<entry index="47" type="vector3" value="-24 38 22.5"/>
+		<entry index="48" type="vector3" value="-30 40 22.5"/>
+		<entry index="49" type="vector3" value="-29 40 22.5"/>
+		<entry index="50" type="vector3" value="-24 40 22.5"/>
+		<entry index="51" type="vector3" value="-8 67 23.2589"/>
+		<entry index="52" type="vector3" value="-17 67 23.0982"/>
+		<entry index="53" type="vector3" value="-15 46 22.5"/>
+		<entry index="54" type="vector3" value="-17 46 22.5"/>
+		<entry index="55" type="vector3" value="-6 48 22.5238"/>
+		<entry index="56" type="vector3" value="-6 51 22.5595"/>
+		<entry index="57" type="vector3" value="-6 61 22.6786"/>
+		<entry index="58" type="vector3" value="-6 58 22.6429"/>
+		<entry index="59" type="vector3" value="-17 62 22.7279"/>
+		<entry index="60" type="vector3" value="-17 63 22.9877"/>
+		<entry index="61" type="vector3" value="-17 46 22.5"/>
+		<entry index="62" type="vector3" value="-6 51 22.5"/>
+		<entry index="63" type="vector3" value="-2 48 22.5"/>
+		<entry index="64" type="vector3" value="7 48 22.5"/>
+		<entry index="65" type="vector3" value="1 37 22.5"/>
+		<entry index="66" type="vector3" value="5 38 22.5"/>
+		<entry index="67" type="vector3" value="13 47 22.5"/>
+		<entry index="68" type="vector3" value="11 37 22.5"/>
+		<entry index="69" type="vector3" value="2 24 22.5"/>
+		<entry index="70" type="vector3" value="-6 24 22.5"/>
+		<entry index="71" type="vector3" value="-9 5 22.5"/>
+		<entry index="72" type="vector3" value="10 8 22.5"/>
+		<entry index="73" type="vector3" value="-9 5 22.5"/>
+		<entry index="74" type="vector3" value="-9 9 22.5"/>
+		<entry index="75" type="vector3" value="-9 20 22.5"/>
+		<entry index="76" type="vector3" value="-9 15 22.5"/>
+		<entry index="77" type="vector3" value="-26 22 22.5"/>
+		<entry index="78" type="vector3" value="-29 39 22.5"/>
+		<entry index="79" type="vector3" value="-6 74 26.9953"/>
+		<entry index="80" type="vector3" value="-2 74 27.4152"/>
+		<entry index="81" type="vector3" value="-6 61 22.5"/>
+		<entry index="82" type="vector3" value="4 63 22.5"/>
+		<entry index="83" type="vector3" value="4 70 22.5"/>
+		<entry index="84" type="vector3" value="-6 67 23.667"/>
+		<entry index="85" type="vector3" value="-6 71 29.3984"/>
+		<entry index="86" type="vector3" value="-6 72 28.243"/>
+		<entry index="87" type="vector3" value="4 48 22.5"/>
+		<entry index="88" type="vector3" value="-9 45 22.5"/>
+		<entry index="89" type="vector3" value="-8 45 22.5"/>
+		<entry index="90" type="vector3" value="-15 45 22.5"/>
+		<entry index="91" type="vector3" value="-7 45 22.5"/>
+		<entry index="92" type="vector3" value="-9 2 22.5"/>
+		<entry index="93" type="vector3" value="-10 9 22.5"/>
+		<entry index="94" type="vector3" value="-15 7 22.5"/>
+		<entry index="95" type="vector3" value="-17 74 23.3929"/>
+		<entry index="96" type="vector3" value="-16 74 23.5"/>
+		<entry index="97" type="vector3" value="-18 7 22.5"/>
+		<entry index="98" type="vector3" value="-25 74 22.6071"/>
+		<entry index="99" type="vector3" value="-14 74 23.5"/>
+		<entry index="100" type="vector3" value="-9 74 31.3887"/>
+		<entry index="101" type="vector3" value="-11 74 23.5"/>
+		<entry index="102" type="vector3" value="-10 74 31.3888"/>
+		<entry index="103" type="vector3" value="-16 74 23.4286"/>
+		<entry index="104" type="vector3" value="-7 74 25.5027"/>
+		<entry index="105" type="vector3" value="-28 63 22.5"/>
+		<entry index="106" type="vector3" value="-28 61 22.5"/>
+		<entry index="107" type="vector3" value="-11 71 23.5"/>
+		<entry index="108" type="vector3" value="-11 72 31.3886"/>
+		<entry index="109" type="vector3" value="-14 71 23.5"/>
+		<entry index="110" type="vector3" value="-29 71 22.5"/>
+		<entry index="111" type="vector3" value="-28 71 22.5"/>
+		<entry index="112" type="vector3" value="-2 74 30.2712"/>
+		<entry index="113" type="vector3" value="-9 72 34.3928"/>
+		<entry index="114" type="vector3" value="-11 72 31.3886"/>
+		<entry index="115" type="vector3" value="-10 72 44.1408"/>
+		<entry index="116" type="vector3" value="-8 71 28.0061"/>
+		<entry index="117" type="vector3" value="-7 71 35.5162"/>
+		<entry index="118" type="vector3" value="4 70 22.5"/>
+		<entry index="119" type="vector3" value="7 70 22.5"/>
+		<entry index="120" type="vector3" value="7 70 22.5"/>
+		<entry index="121" type="vector3" value="12 63 22.5"/>
+		<entry index="122" type="vector3" value="-15 44 22.5"/>
+		<entry index="123" type="vector3" value="-14 43 61.0358"/>
+		<entry index="124" type="vector3" value="-7 74 28.943"/>
+		<entry index="125" type="vector3" value="-7 72 34.665"/>
+		<entry index="126" type="vector3" value="-9 72 39.2775"/>
+		<entry index="127" type="vector3" value="-9 73 39.2774"/>
+		<entry index="128" type="vector3" value="-10 72 61.7775"/>
+		<entry index="129" type="vector3" value="-10 73 44.9003"/>
+		<entry index="130" type="vector3" value="-10 73 50.5275"/>
+		<entry index="131" type="vector3" value="-14 44 51.4018"/>
+		<entry index="132" type="vector3" value="-17 38 22.5"/>
+		<entry index="133" type="vector3" value="-28 63 22.5"/>
+		<entry index="134" type="vector3" value="-19 63 22.7009"/>
+		<entry index="135" type="vector3" value="-28 63 22.5"/>
+		<entry index="136" type="vector3" value="-17 67 23.0982"/>
+		<entry index="137" type="vector3" value="-28 71 22.5"/>
+		<entry index="138" type="vector3" value="-28 63 22.5"/>
+		<entry index="139" type="vector3" value="-21 48 22.5"/>
+		<entry index="140" type="vector3" value="-24 38 22.5"/>
+		<entry index="141" type="vector3" value="-7 71 29.4456"/>
+		<entry index="142" type="vector3" value="12 63 22.5"/>
+		<entry index="143" type="vector3" value="-8 44 22.5"/>
+		<entry index="144" type="vector3" value="-7 43 22.5"/>
+		<entry index="145" type="vector3" value="-15 44 22.5"/>
+		<entry index="146" type="vector3" value="-14 44 51.4018"/>
+		<entry index="147" type="vector3" value="18 8 22.5"/>
+		<entry index="148" type="vector3" value="30 16 22.5"/>
+		<entry index="149" type="vector3" value="30 40 22.5"/>
+		<entry index="150" type="vector3" value="18 2 22.5"/>
+		<entry index="151" type="vector3" value="30 40 22.5"/>
+		<entry index="152" type="vector3" value="6 -35 22.8462"/>
+		<entry index="153" type="vector3" value="6 -43 22.95"/>
+		<entry index="154" type="vector3" value="13 -43 22.5"/>
+		<entry index="155" type="vector3" value="6 -43 23.4"/>
+		<entry index="156" type="vector3" value="-3 -43 22.5"/>
+		<entry index="157" type="vector3" value="6 -43 22.95"/>
+		<entry index="158" type="vector3" value="0 -43 22.65"/>
+		<entry index="159" type="vector3" value="-3 -60 22.5"/>
+		<entry index="160" type="vector3" value="13 -60 22.5"/>
+		<entry index="161" type="vector3" value="13 -57 22.5"/>
+		<entry index="162" type="vector3" value="13 -49 22.5"/>
+		<entry index="163" type="vector3" value="-3 -59 22.5"/>
+		<entry index="164" type="vector3" value="-3 -50 22.5"/>
+		<entry index="165" type="vector3" value="-6 -50 22.5"/>
+		<entry index="166" type="vector3" value="-3 -40 22.5"/>
+		<entry index="167" type="vector3" value="-4 -40 22.5"/>
+		<entry index="168" type="vector3" value="-4 -39 22.5"/>
+		<entry index="169" type="vector3" value="6 -35 22.9791"/>
+		<entry index="170" type="vector3" value="0 -18 22.5"/>
+		<entry index="171" type="vector3" value="0 -28 22.56"/>
+		<entry index="172" type="vector3" value="0 -43 22.8"/>
+		<entry index="173" type="vector3" value="-5 -39 41.1745"/>
+		<entry index="174" type="vector3" value="-6 -39 51.1488"/>
+		<entry index="175" type="vector3" value="-6 -40 62.3997"/>
+		<entry index="176" type="vector3" value="-5 -39 39.8992"/>
+		<entry index="177" type="vector3" value="-3 -5 22.5"/>
+		<entry index="178" type="vector3" value="-2 -5 22.5"/>
+		<entry index="179" type="vector3" value="-3 -18 22.5"/>
+		<entry index="180" type="vector3" value="14 -18 22.5"/>
+		<entry index="181" type="vector3" value="-3 -13 22.5"/>
+		<entry index="182" type="vector3" value="-4 -24 22.5"/>
+		<entry index="183" type="vector3" value="-4 -20 22.5"/>
+		<entry index="184" type="vector3" value="-7 -39 39.8983"/>
+		<entry index="185" type="vector3" value="-3 2 22.5"/>
+		<entry index="186" type="vector3" value="-2 -5 22.5"/>
+		<entry index="187" type="vector3" value="-3 -5 22.5"/>
+		<entry index="188" type="vector3" value="22 -6 22.5"/>
+		<entry index="189" type="vector3" value="25 -18 22.5"/>
+		<entry index="190" type="vector3" value="30 -16 22.5"/>
+		<entry index="191" type="vector3" value="-9 2 22.5"/>
+		<entry index="192" type="vector3" value="-12 2 22.5"/>
+		<entry index="193" type="vector3" value="-12 -13 22.5"/>
+		<entry index="194" type="vector3" value="-12 -2 22.5"/>
+		<entry index="195" type="vector3" value="-5 -20 22.5"/>
+		<entry index="196" type="vector3" value="-14 2 22.5"/>
+		<entry index="197" type="vector3" value="22 2 22.5"/>
+		<entry index="198" type="vector3" value="25 -21 22.5"/>
+		<entry index="199" type="vector3" value="-10 -45 22.5"/>
+		<entry index="200" type="vector3" value="-10 -44 22.5"/>
+		<entry index="201" type="vector3" value="-15 -50 22.5"/>
+		<entry index="202" type="vector3" value="-15 -42 22.5"/>
+		<entry index="203" type="vector3" value="-15 -35 22.5"/>
+		<entry index="204" type="vector3" value="-10 -44 22.5"/>
+		<entry index="205" type="vector3" value="-7 -45 22.5"/>
+		<entry index="206" type="vector3" value="-6 -45 22.5"/>
+		<entry index="207" type="vector3" value="-16 -35 22.5"/>
+		<entry index="208" type="vector3" value="-22 -35 22.5"/>
+		<entry index="209" type="vector3" value="-7 -48 22.5"/>
+		<entry index="210" type="vector3" value="-6 -48 22.5"/>
+		<entry index="211" type="vector3" value="-24 -50 22.5"/>
+		<entry index="212" type="vector3" value="-24 -50 22.5"/>
+		<entry index="213" type="vector3" value="-31 -42 22.5"/>
+		<entry index="214" type="vector3" value="-29 -52 22.5"/>
+		<entry index="215" type="vector3" value="-24 -52 22.5"/>
+		<entry index="216" type="vector3" value="-29 -55 22.5"/>
+		<entry index="217" type="vector3" value="-11 -59 22.5"/>
+		<entry index="218" type="vector3" value="31 -47 22.5"/>
+		<entry index="219" type="vector3" value="18 -47 22.5"/>
+		<entry index="220" type="vector3" value="18 -45 22.5"/>
+		<entry index="221" type="vector3" value="18 -40 22.5"/>
+		<entry index="222" type="vector3" value="17 -45 22.5"/>
+		<entry index="223" type="vector3" value="17 -40 22.5"/>
+		<entry index="224" type="vector3" value="14 -45 22.5"/>
+		<entry index="225" type="vector3" value="33 -47 22.5"/>
+		<entry index="226" type="vector3" value="34 -23 22.5"/>
+		<entry index="227" type="vector3" value="41 -23 22.5"/>
+		<entry index="228" type="vector3" value="45 -35 22.5"/>
+		<entry index="229" type="vector3" value="45 -31 22.5"/>
+		<entry index="230" type="vector3" value="45 -27 22.5"/>
+		<entry index="231" type="vector3" value="45 -26 22.5"/>
+		<entry index="232" type="vector3" value="41 -23 22.5"/>
+		<entry index="233" type="vector3" value="41 -21 22.5"/>
+		<entry index="234" type="vector3" value="41 -19 22.5"/>
+		<entry index="235" type="vector3" value="34 -21 22.5"/>
+		<entry index="236" type="vector3" value="41 -21 22.5"/>
+		<entry index="237" type="vector3" value="45 -31 22.5"/>
+		<entry index="238" type="vector3" value="45 -27 22.5"/>
+		<entry index="239" type="vector3" value="49 -31 22.5"/>
+		<entry index="240" type="vector3" value="45 -26 22.5"/>
+		<entry index="241" type="vector3" value="41 -19 22.5"/>
+		<entry index="242" type="vector3" value="30 -19 22.5"/>
+		<entry index="243" type="vector3" value="30 -21 22.5"/>
+		<entry index="244" type="vector3" value="30 -16 22.5"/>
+		<entry index="245" type="vector3" value="30 -18 22.5"/>
+		<entry index="246" type="vector3" value="30 -19 22.5"/>
+		<entry index="247" type="vector3" value="52 -28 22.5"/>
+		<entry index="248" type="vector3" value="50 -31 22.5"/>
+		<entry index="249" type="vector3" value="55 -27 22.5"/>
+		<entry index="250" type="vector3" value="53 -27 22.5"/>
+		<entry index="251" type="vector3" value="55 -13 22.5"/>
+		<entry index="252" type="vector3" value="55 -20 22.5"/>
+		<entry index="253" type="vector3" value="55 -27 22.5"/>
+		<entry index="254" type="vector3" value="55 -26 22.5"/>
+		<entry index="255" type="vector3" value="53 -13 22.5"/>
+		<entry index="256" type="vector3" value="53 -12 22.5"/>
+		<entry index="257" type="vector3" value="53 -11 22.5"/>
+		<entry index="258" type="vector3" value="53 -19 22.5"/>
+		<entry index="259" type="vector3" value="52 -17 22.5"/>
+		<entry index="260" type="vector3" value="52 -11 22.5"/>
+		<entry index="261" type="vector3" value="54 -26 22.5"/>
+		<entry index="262" type="vector3" value="17 74 22.5"/>
+		<entry index="263" type="vector3" value="20 74 22.5"/>
+		<entry index="264" type="vector3" value="40 74 22.5"/>
+		<entry index="265" type="vector3" value="43 74 22.5"/>
+		<entry index="266" type="vector3" value="17 56 22.5"/>
+		<entry index="267" type="vector3" value="43 56 22.5"/>
+		<entry index="268" type="vector3" value="20 74 22.5"/>
+		<entry index="269" type="vector3" value="43 74 22.5"/>
+		<entry index="270" type="vector3" value="17 46 22.5"/>
+		<entry index="271" type="vector3" value="28 46 22.5"/>
+		<entry index="272" type="vector3" value="28 46 22.5"/>
+		<entry index="273" type="vector3" value="30 46 22.5"/>
+	</entry>
+	<entry key="door_low_rooms" type="table">
+		<entry index="1" type="number" value="1"/>
+		<entry index="2" type="number" value="1"/>
+		<entry index="3" type="number" value="1"/>
+		<entry index="4" type="number" value="2"/>
+		<entry index="5" type="number" value="3"/>
+		<entry index="6" type="number" value="5"/>
+		<entry index="7" type="number" value="25"/>
+		<entry index="8" type="number" value="5"/>
+		<entry index="9" type="number" value="5"/>
+		<entry index="10" type="number" value="5"/>
+		<entry index="11" type="number" value="61"/>
+		<entry index="12" type="number" value="6"/>
+		<entry index="13" type="number" value="61"/>
+		<entry index="14" type="number" value="6"/>
+		<entry index="15" type="number" value="6"/>
+		<entry index="16" type="number" value="6"/>
+		<entry index="17" type="number" value="6"/>
+		<entry index="18" type="number" value="65"/>
+		<entry index="19" type="number" value="7"/>
+		<entry index="20" type="number" value="61"/>
+		<entry index="21" type="number" value="8"/>
+		<entry index="22" type="number" value="8"/>
+		<entry index="23" type="number" value="8"/>
+		<entry index="24" type="number" value="8"/>
+		<entry index="25" type="number" value="8"/>
+		<entry index="26" type="number" value="12"/>
+		<entry index="27" type="number" value="21"/>
+		<entry index="28" type="number" value="22"/>
+		<entry index="29" type="number" value="23"/>
+		<entry index="30" type="number" value="69"/>
+		<entry index="31" type="number" value="8"/>
+		<entry index="32" type="number" value="76"/>
+		<entry index="33" type="number" value="17"/>
+		<entry index="34" type="number" value="37"/>
+		<entry index="35" type="number" value="9"/>
+		<entry index="36" type="number" value="70"/>
+		<entry index="37" type="number" value="9"/>
+		<entry index="38" type="number" value="10"/>
+		<entry index="39" type="number" value="25"/>
+		<entry index="40" type="number" value="12"/>
+		<entry index="41" type="number" value="13"/>
+		<entry index="42" type="number" value="13"/>
+		<entry index="43" type="number" value="28"/>
+		<entry index="44" type="number" value="29"/>
+		<entry index="45" type="number" value="65"/>
+		<entry index="46" type="number" value="14"/>
+		<entry index="47" type="number" value="15"/>
+		<entry index="48" type="number" value="30"/>
+		<entry index="49" type="number" value="31"/>
+		<entry index="50" type="number" value="16"/>
+		<entry index="51" type="number" value="17"/>
+		<entry index="52" type="number" value="17"/>
+		<entry index="53" type="number" value="37"/>
+		<entry index="54" type="number" value="6"/>
+		<entry index="55" type="number" value="17"/>
+		<entry index="56" type="number" value="17"/>
+		<entry index="57" type="number" value="17"/>
+		<entry index="58" type="number" value="17"/>
+		<entry index="59" type="number" value="63"/>
+		<entry index="60" type="number" value="64"/>
+		<entry index="61" type="number" value="65"/>
+		<entry index="62" type="number" value="18"/>
+		<entry index="63" type="number" value="18"/>
+		<entry index="64" type="number" value="35"/>
+		<entry index="65" type="number" value="21"/>
+		<entry index="66" type="number" value="22"/>
+		<entry index="67" type="number" value="24"/>
+		<entry index="68" type="number" value="69"/>
+		<entry index="69" type="number" value="25"/>
+		<entry index="70" type="number" value="25"/>
+		<entry index="71" type="number" value="38"/>
+		<entry index="72" type="number" value="25"/>
+		<entry index="73" type="number" value="40"/>
+		<entry index="74" type="number" value="41"/>
+		<entry index="75" type="number" value="61"/>
+		<entry index="76" type="number" value="70"/>
+		<entry index="77" type="number" value="28"/>
+		<entry index="78" type="number" value="30"/>
+		<entry index="79" type="number" value="32"/>
+		<entry index="80" type="number" value="32"/>
+		<entry index="81" type="number" value="34"/>
+		<entry index="82" type="number" value="32"/>
+		<entry index="83" type="number" value="32"/>
+		<entry index="84" type="number" value="66"/>
+		<entry index="85" type="number" value="72"/>
+		<entry index="86" type="number" value="55"/>
+		<entry index="87" type="number" value="71"/>
+		<entry index="88" type="number" value="73"/>
+		<entry index="89" type="number" value="74"/>
+		<entry index="90" type="number" value="75"/>
+		<entry index="91" type="number" value="76"/>
+		<entry index="92" type="number" value="40"/>
+		<entry index="93" type="number" value="40"/>
+		<entry index="94" type="number" value="43"/>
+		<entry index="95" type="number" value="68"/>
+		<entry index="96" type="number" value="42"/>
+		<entry index="97" type="number" value="3"/>
+		<entry index="98" type="number" value="64"/>
+		<entry index="99" type="number" value="47"/>
+		<entry index="100" type="number" value="55"/>
+		<entry index="101" type="number" value="56"/>
+		<entry index="102" type="number" value="60"/>
+		<entry index="103" type="number" value="68"/>
+		<entry index="104" type="number" value="45"/>
+		<entry index="105" type="number" value="46"/>
+		<entry index="106" type="number" value="62"/>
+		<entry index="107" type="number" value="47"/>
+		<entry index="108" type="number" value="47"/>
+		<entry index="109" type="number" value="68"/>
+		<entry index="110" type="number" value="62"/>
+		<entry index="111" type="number" value="48"/>
+		<entry index="112" type="number" value="54"/>
+		<entry index="113" type="number" value="50"/>
+		<entry index="114" type="number" value="50"/>
+		<entry index="115" type="number" value="50"/>
+		<entry index="116" type="number" value="66"/>
+		<entry index="117" type="number" value="50"/>
+		<entry index="118" type="number" value="52"/>
+		<entry index="119" type="number" value="51"/>
+		<entry index="120" type="number" value="52"/>
+		<entry index="121" type="number" value="67"/>
+		<entry index="122" type="number" value="53"/>
+		<entry index="123" type="number" value="53"/>
+		<entry index="124" type="number" value="55"/>
+		<entry index="125" type="number" value="72"/>
+		<entry index="126" type="number" value="57"/>
+		<entry index="127" type="number" value="60"/>
+		<entry index="128" type="number" value="56"/>
+		<entry index="129" type="number" value="56"/>
+		<entry index="130" type="number" value="57"/>
+		<entry index="131" type="number" value="59"/>
+		<entry index="132" type="number" value="65"/>
+		<entry index="133" type="number" value="62"/>
+		<entry index="134" type="number" value="63"/>
+		<entry index="135" type="number" value="46"/>
+		<entry index="136" type="number" value="64"/>
+		<entry index="137" type="number" value="48"/>
+		<entry index="138" type="number" value="62"/>
+		<entry index="139" type="number" value="65"/>
+		<entry index="140" type="number" value="15"/>
+		<entry index="141" type="number" value="66"/>
+		<entry index="142" type="number" value="67"/>
+		<entry index="143" type="number" value="73"/>
+		<entry index="144" type="number" value="74"/>
+		<entry index="145" type="number" value="53"/>
+		<entry index="146" type="number" value="59"/>
+		<entry index="147" type="number" value="78"/>
+		<entry index="148" type="number" value="77"/>
+		<entry index="149" type="number" value="77"/>
+		<entry index="150" type="number" value="81"/>
+		<entry index="151" type="number" value="77"/>
+		<entry index="152" type="number" value="82"/>
+		<entry index="153" type="number" value="83"/>
+		<entry index="154" type="number" value="82"/>
+		<entry index="155" type="number" value="92"/>
+		<entry index="156" type="number" value="83"/>
+		<entry index="157" type="number" value="83"/>
+		<entry index="158" type="number" value="83"/>
+		<entry index="159" type="number" value="88"/>
+		<entry index="160" type="number" value="83"/>
+		<entry index="161" type="number" value="83"/>
+		<entry index="162" type="number" value="83"/>
+		<entry index="163" type="number" value="91"/>
+		<entry index="164" type="number" value="111"/>
+		<entry index="165" type="number" value="84"/>
+		<entry index="166" type="number" value="85"/>
+		<entry index="167" type="number" value="93"/>
+		<entry index="168" type="number" value="94"/>
+		<entry index="169" type="number" value="92"/>
+		<entry index="170" type="number" value="92"/>
+		<entry index="171" type="number" value="96"/>
+		<entry index="172" type="number" value="112"/>
+		<entry index="173" type="number" value="93"/>
+		<entry index="174" type="number" value="93"/>
+		<entry index="175" type="number" value="98"/>
+		<entry index="176" type="number" value="97"/>
+		<entry index="177" type="number" value="95"/>
+		<entry index="178" type="number" value="95"/>
+		<entry index="179" type="number" value="96"/>
+		<entry index="180" type="number" value="95"/>
+		<entry index="181" type="number" value="102"/>
+		<entry index="182" type="number" value="103"/>
+		<entry index="183" type="number" value="109"/>
+		<entry index="184" type="number" value="98"/>
+		<entry index="185" type="number" value="99"/>
+		<entry index="186" type="number" value="99"/>
+		<entry index="187" type="number" value="102"/>
+		<entry index="188" type="number" value="101"/>
+		<entry index="189" type="number" value="106"/>
+		<entry index="190" type="number" value="101"/>
+		<entry index="191" type="number" value="102"/>
+		<entry index="192" type="number" value="102"/>
+		<entry index="193" type="number" value="108"/>
+		<entry index="194" type="number" value="104"/>
+		<entry index="195" type="number" value="103"/>
+		<entry index="196" type="number" value="104"/>
+		<entry index="197" type="number" value="105"/>
+		<entry index="198" type="number" value="110"/>
+		<entry index="199" type="number" value="113"/>
+		<entry index="200" type="number" value="113"/>
+		<entry index="201" type="number" value="118"/>
+		<entry index="202" type="number" value="125"/>
+		<entry index="203" type="number" value="116"/>
+		<entry index="204" type="number" value="114"/>
+		<entry index="205" type="number" value="117"/>
+		<entry index="206" type="number" value="114"/>
+		<entry index="207" type="number" value="125"/>
+		<entry index="208" type="number" value="119"/>
+		<entry index="209" type="number" value="84"/>
+		<entry index="210" type="number" value="117"/>
+		<entry index="211" type="number" value="124"/>
+		<entry index="212" type="number" value="120"/>
+		<entry index="213" type="number" value="120"/>
+		<entry index="214" type="number" value="121"/>
+		<entry index="215" type="number" value="120"/>
+		<entry index="216" type="number" value="122"/>
+		<entry index="217" type="number" value="122"/>
+		<entry index="218" type="number" value="126"/>
+		<entry index="219" type="number" value="127"/>
+		<entry index="220" type="number" value="128"/>
+		<entry index="221" type="number" value="129"/>
+		<entry index="222" type="number" value="127"/>
+		<entry index="223" type="number" value="128"/>
+		<entry index="224" type="number" value="87"/>
+		<entry index="225" type="number" value="131"/>
+		<entry index="226" type="number" value="132"/>
+		<entry index="227" type="number" value="132"/>
+		<entry index="228" type="number" value="132"/>
+		<entry index="229" type="number" value="132"/>
+		<entry index="230" type="number" value="132"/>
+		<entry index="231" type="number" value="132"/>
+		<entry index="232" type="number" value="133"/>
+		<entry index="233" type="number" value="133"/>
+		<entry index="234" type="number" value="133"/>
+		<entry index="235" type="number" value="141"/>
+		<entry index="236" type="number" value="134"/>
+		<entry index="237" type="number" value="135"/>
+		<entry index="238" type="number" value="136"/>
+		<entry index="239" type="number" value="136"/>
+		<entry index="240" type="number" value="137"/>
+		<entry index="241" type="number" value="139"/>
+		<entry index="242" type="number" value="141"/>
+		<entry index="243" type="number" value="106"/>
+		<entry index="244" type="number" value="142"/>
+		<entry index="245" type="number" value="101"/>
+		<entry index="246" type="number" value="106"/>
+		<entry index="247" type="number" value="143"/>
+		<entry index="248" type="number" value="152"/>
+		<entry index="249" type="number" value="144"/>
+		<entry index="250" type="number" value="144"/>
+		<entry index="251" type="number" value="145"/>
+		<entry index="252" type="number" value="147"/>
+		<entry index="253" type="number" value="154"/>
+		<entry index="254" type="number" value="151"/>
+		<entry index="255" type="number" value="147"/>
+		<entry index="256" type="number" value="153"/>
+		<entry index="257" type="number" value="149"/>
+		<entry index="258" type="number" value="148"/>
+		<entry index="259" type="number" value="150"/>
+		<entry index="260" type="number" value="153"/>
+		<entry index="261" type="number" value="154"/>
+		<entry index="262" type="number" value="155"/>
+		<entry index="263" type="number" value="155"/>
+		<entry index="264" type="number" value="155"/>
+		<entry index="265" type="number" value="155"/>
+		<entry index="266" type="number" value="160"/>
+		<entry index="267" type="number" value="161"/>
+		<entry index="268" type="number" value="156"/>
+		<entry index="269" type="number" value="158"/>
+		<entry index="270" type="number" value="77"/>
+		<entry index="271" type="number" value="160"/>
+		<entry index="272" type="number" value="77"/>
+		<entry index="273" type="number" value="80"/>
+	</entry>
+	<entry key="helper_blockers" type="table">
+		<entry index="100188" type="number" value="6"/>
+		<entry index="100282" type="number" value="6"/>
+		<entry index="100283" type="number" value="1"/>
+		<entry index="100285" type="number" value="7"/>
+		<entry index="100286" type="number" value="7"/>
+		<entry index="100287" type="number" value="1"/>
+		<entry index="100300" type="number" value="7"/>
+		<entry index="100301" type="number" value="7"/>
+		<entry index="100302" type="number" value="8"/>
+		<entry index="100303" type="number" value="9"/>
+		<entry index="100716" type="number" value="1"/>
+	</entry>
+	<entry key="nav_segments" type="table">
+		<entry index="1" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="2" type="table">
+					<entry index="1" type="number" value="224"/>
+				</entry>
+				<entry index="7" type="table">
+					<entry index="1" type="number" value="197"/>
+				</entry>
+				<entry index="8" type="table">
+					<entry index="1" type="number" value="185"/>
+					<entry index="2" type="number" value="191"/>
+					<entry index="3" type="number" value="192"/>
+					<entry index="4" type="number" value="196"/>
+				</entry>
+				<entry index="10" type="table">
+					<entry index="1" type="number" value="206"/>
+					<entry index="2" type="number" value="210"/>
+					<entry index="3" type="number" value="209"/>
+				</entry>
+				<entry index="12" type="table">
+					<entry index="1" type="number" value="245"/>
+					<entry index="2" type="number" value="244"/>
+					<entry index="3" type="number" value="243"/>
+					<entry index="4" type="number" value="246"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="50 -1100 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="1"/>
+			</entry>
+		</entry>
+		<entry index="2" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="1" type="table">
+					<entry index="1" type="number" value="224"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="600 -1050 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="2"/>
+			</entry>
+		</entry>
+		<entry index="6" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="7" type="table">
+					<entry index="1" type="number" value="272"/>
+					<entry index="2" type="number" value="273"/>
+					<entry index="3" type="number" value="270"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="800 1600 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="3"/>
+			</entry>
+		</entry>
+		<entry index="7" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="1" type="table">
+					<entry index="1" type="number" value="197"/>
+				</entry>
+				<entry index="6" type="table">
+					<entry index="1" type="number" value="272"/>
+					<entry index="2" type="number" value="273"/>
+					<entry index="3" type="number" value="270"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="600 800 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="4"/>
+			</entry>
+		</entry>
+		<entry index="8" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="1" type="table">
+					<entry index="1" type="number" value="185"/>
+					<entry index="2" type="number" value="191"/>
+					<entry index="3" type="number" value="192"/>
+					<entry index="4" type="number" value="196"/>
+				</entry>
+				<entry index="9" type="table">
+					<entry index="1" type="number" value="97"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="-200 800 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="5"/>
+			</entry>
+		</entry>
+		<entry index="9" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="8" type="table">
+					<entry index="1" type="number" value="97"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="-600 200 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="6"/>
+			</entry>
+		</entry>
+		<entry index="10" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="1" type="table">
+					<entry index="1" type="number" value="206"/>
+					<entry index="2" type="number" value="210"/>
+					<entry index="3" type="number" value="209"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="-300 -1100 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="7"/>
+			</entry>
+		</entry>
+		<entry index="11" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+			</entry>
+			<entry key="pos" type="vector3" value="-1911.82 1352.38 552.5"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="8"/>
+			</entry>
+		</entry>
+		<entry index="12" type="table">
+			<entry key="location_id" type="string" value="location_unknown"/>
+			<entry key="neighbours" type="table">
+				<entry index="1" type="table">
+					<entry index="1" type="number" value="245"/>
+					<entry index="2" type="number" value="244"/>
+					<entry index="3" type="number" value="243"/>
+					<entry index="4" type="number" value="246"/>
+				</entry>
+			</entry>
+			<entry key="pos" type="vector3" value="950 -800 0"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="number" value="9"/>
+			</entry>
+		</entry>
+	</entry>
+	<entry key="room_borders_x_neg" type="table">
+		<entry index="1" type="number" value="-30"/>
+		<entry index="2" type="number" value="-21"/>
+		<entry index="3" type="number" value="-21"/>
+		<entry index="4" type="number" value="-21"/>
+		<entry index="5" type="number" value="-9"/>
+		<entry index="6" type="number" value="-17"/>
+		<entry index="7" type="number" value="-15"/>
+		<entry index="8" type="number" value="-6"/>
+		<entry index="9" type="number" value="-16"/>
+		<entry index="10" type="number" value="-6"/>
+		<entry index="11" type="number" value="-6"/>
+		<entry index="12" type="number" value="-6"/>
+		<entry index="13" type="number" value="-25"/>
+		<entry index="14" type="number" value="-21"/>
+		<entry index="15" type="number" value="-24"/>
+		<entry index="16" type="number" value="-30"/>
+		<entry index="17" type="number" value="-17"/>
+		<entry index="18" type="number" value="-6"/>
+		<entry index="19" type="number" value="-2"/>
+		<entry index="20" type="number" value="7"/>
+		<entry index="21" type="number" value="-3"/>
+		<entry index="22" type="number" value="1"/>
+		<entry index="23" type="number" value="5"/>
+		<entry index="24" type="number" value="11"/>
+		<entry index="25" type="number" value="-9"/>
+		<entry index="26" type="number" value="2"/>
+		<entry index="27" type="number" value="-26"/>
+		<entry index="28" type="number" value="-30"/>
+		<entry index="29" type="number" value="-26"/>
+		<entry index="30" type="number" value="-30"/>
+		<entry index="31" type="number" value="-29"/>
+		<entry index="32" type="number" value="-6"/>
+		<entry index="33" type="number" value="-6"/>
+		<entry index="34" type="number" value="-6"/>
+		<entry index="35" type="number" value="4"/>
+		<entry index="36" type="number" value="13"/>
+		<entry index="37" type="number" value="-15"/>
+		<entry index="38" type="number" value="-9"/>
+		<entry index="39" type="number" value="10"/>
+		<entry index="40" type="number" value="-15"/>
+		<entry index="41" type="number" value="-10"/>
+		<entry index="42" type="number" value="-17"/>
+		<entry index="43" type="number" value="-18"/>
+		<entry index="44" type="number" value="-25"/>
+		<entry index="45" type="number" value="-16"/>
+		<entry index="46" type="number" value="-28"/>
+		<entry index="47" type="number" value="-14"/>
+		<entry index="48" type="number" value="-29"/>
+		<entry index="49" type="number" value="-2"/>
+		<entry index="50" type="number" value="-11"/>
+		<entry index="51" type="number" value="4"/>
+		<entry index="52" type="number" value="4"/>
+		<entry index="53" type="number" value="-15"/>
+		<entry index="54" type="number" value="-7"/>
+		<entry index="55" type="number" value="-9"/>
+		<entry index="56" type="number" value="-11"/>
+		<entry index="57" type="number" value="-10"/>
+		<entry index="58" type="number" value="7"/>
+		<entry index="59" type="number" value="-14"/>
+		<entry index="60" type="number" value="-10"/>
+		<entry index="61" type="number" value="-17"/>
+		<entry index="62" type="number" value="-30"/>
+		<entry index="63" type="number" value="-19"/>
+		<entry index="64" type="number" value="-28"/>
+		<entry index="65" type="number" value="-24"/>
+		<entry index="66" type="number" value="-8"/>
+		<entry index="67" type="number" value="12"/>
+		<entry index="68" type="number" value="-17"/>
+		<entry index="69" type="number" value="10"/>
+		<entry index="70" type="number" value="-10"/>
+		<entry index="71" type="number" value="3"/>
+		<entry index="72" type="number" value="-7"/>
+		<entry index="73" type="number" value="-9"/>
+		<entry index="74" type="number" value="-8"/>
+		<entry index="75" type="number" value="-15"/>
+		<entry index="76" type="number" value="-7"/>
+		<entry index="77" type="number" value="17"/>
+		<entry index="78" type="number" value="18"/>
+		<entry index="79" type="number" value="30"/>
+		<entry index="80" type="number" value="30"/>
+		<entry index="81" type="number" value="17"/>
+		<entry index="82" type="number" value="6"/>
+		<entry index="83" type="number" value="-3"/>
+		<entry index="84" type="number" value="-7"/>
+		<entry index="85" type="number" value="-4"/>
+		<entry index="86" type="number" value="6"/>
+		<entry index="87" type="number" value="13"/>
+		<entry index="88" type="number" value="-3"/>
+		<entry index="89" type="number" value="13"/>
+		<entry index="90" type="number" value="13"/>
+		<entry index="91" type="number" value="-7"/>
+		<entry index="92" type="number" value="0"/>
+		<entry index="93" type="number" value="-6"/>
+		<entry index="94" type="number" value="-5"/>
+		<entry index="95" type="number" value="-3"/>
+		<entry index="96" type="number" value="-4"/>
+		<entry index="97" type="number" value="-7"/>
+		<entry index="98" type="number" value="-7"/>
+		<entry index="99" type="number" value="-3"/>
+		<entry index="100" type="number" value="-2"/>
+		<entry index="101" type="number" value="14"/>
+		<entry index="102" type="number" value="-12"/>
+		<entry index="103" type="number" value="-7"/>
+		<entry index="104" type="number" value="-14"/>
+		<entry index="105" type="number" value="22"/>
+		<entry index="106" type="number" value="25"/>
+		<entry index="107" type="number" value="30"/>
+		<entry index="108" type="number" value="-12"/>
+		<entry index="109" type="number" value="-5"/>
+		<entry index="110" type="number" value="25"/>
+		<entry index="111" type="number" value="-6"/>
+		<entry index="112" type="number" value="-3"/>
+		<entry index="113" type="number" value="-15"/>
+		<entry index="114" type="number" value="-10"/>
+		<entry index="115" type="number" value="-10"/>
+		<entry index="116" type="number" value="-22"/>
+		<entry index="117" type="number" value="-7"/>
+		<entry index="118" type="number" value="-24"/>
+		<entry index="119" type="number" value="-31"/>
+		<entry index="120" type="number" value="-31"/>
+		<entry index="121" type="number" value="-29"/>
+		<entry index="122" type="number" value="-31"/>
+		<entry index="123" type="number" value="-11"/>
+		<entry index="124" type="number" value="-24"/>
+		<entry index="125" type="number" value="-16"/>
+		<entry index="126" type="number" value="18"/>
+		<entry index="127" type="number" value="17"/>
+		<entry index="128" type="number" value="14"/>
+		<entry index="129" type="number" value="17"/>
+		<entry index="130" type="number" value="33"/>
+		<entry index="131" type="number" value="31"/>
+		<entry index="132" type="number" value="34"/>
+		<entry index="133" type="number" value="34"/>
+		<entry index="134" type="number" value="41"/>
+		<entry index="135" type="number" value="45"/>
+		<entry index="136" type="number" value="45"/>
+		<entry index="137" type="number" value="45"/>
+		<entry index="138" type="number" value="45"/>
+		<entry index="139" type="number" value="41"/>
+		<entry index="140" type="number" value="41"/>
+		<entry index="141" type="number" value="30"/>
+		<entry index="142" type="number" value="30"/>
+		<entry index="143" type="number" value="50"/>
+		<entry index="144" type="number" value="52"/>
+		<entry index="145" type="number" value="55"/>
+		<entry index="146" type="number" value="53"/>
+		<entry index="147" type="number" value="53"/>
+		<entry index="148" type="number" value="52"/>
+		<entry index="149" type="number" value="49"/>
+		<entry index="150" type="number" value="51"/>
+		<entry index="151" type="number" value="54"/>
+		<entry index="152" type="number" value="49"/>
+		<entry index="153" type="number" value="52"/>
+		<entry index="154" type="number" value="53"/>
+		<entry index="155" type="number" value="17"/>
+		<entry index="156" type="number" value="17"/>
+		<entry index="157" type="number" value="20"/>
+		<entry index="158" type="number" value="40"/>
+		<entry index="159" type="number" value="43"/>
+		<entry index="160" type="number" value="17"/>
+		<entry index="161" type="number" value="43"/>
+		<entry index="162" type="number" value="28"/>
+		<entry index="163" type="number" value="-79"/>
+	</entry>
+	<entry key="room_borders_x_pos" type="table">
+		<entry index="1" type="number" value="-21"/>
+		<entry index="2" type="number" value="-19"/>
+		<entry index="3" type="number" value="-18"/>
+		<entry index="4" type="number" value="-19"/>
+		<entry index="5" type="number" value="-6"/>
+		<entry index="6" type="number" value="-15"/>
+		<entry index="7" type="number" value="-13"/>
+		<entry index="8" type="number" value="11"/>
+		<entry index="9" type="number" value="-9"/>
+		<entry index="10" type="number" value="-3"/>
+		<entry index="11" type="number" value="-5"/>
+		<entry index="12" type="number" value="-3"/>
+		<entry index="13" type="number" value="-17"/>
+		<entry index="14" type="number" value="-17"/>
+		<entry index="15" type="number" value="-21"/>
+		<entry index="16" type="number" value="-24"/>
+		<entry index="17" type="number" value="-6"/>
+		<entry index="18" type="number" value="-2"/>
+		<entry index="19" type="number" value="-1"/>
+		<entry index="20" type="number" value="9"/>
+		<entry index="21" type="number" value="1"/>
+		<entry index="22" type="number" value="5"/>
+		<entry index="23" type="number" value="6"/>
+		<entry index="24" type="number" value="14"/>
+		<entry index="25" type="number" value="10"/>
+		<entry index="26" type="number" value="9"/>
+		<entry index="27" type="number" value="-21"/>
+		<entry index="28" type="number" value="-25"/>
+		<entry index="29" type="number" value="-25"/>
+		<entry index="30" type="number" value="-29"/>
+		<entry index="31" type="number" value="-28"/>
+		<entry index="32" type="number" value="4"/>
+		<entry index="33" type="number" value="-5"/>
+		<entry index="34" type="number" value="-2"/>
+		<entry index="35" type="number" value="7"/>
+		<entry index="36" type="number" value="14"/>
+		<entry index="37" type="number" value="-6"/>
+		<entry index="38" type="number" value="-1"/>
+		<entry index="39" type="number" value="14"/>
+		<entry index="40" type="number" value="-9"/>
+		<entry index="41" type="number" value="-9"/>
+		<entry index="42" type="number" value="-16"/>
+		<entry index="43" type="number" value="-15"/>
+		<entry index="44" type="number" value="-20"/>
+		<entry index="45" type="number" value="-7"/>
+		<entry index="46" type="number" value="-24"/>
+		<entry index="47" type="number" value="-11"/>
+		<entry index="48" type="number" value="-28"/>
+		<entry index="49" type="number" value="0"/>
+		<entry index="50" type="number" value="-7"/>
+		<entry index="51" type="number" value="7"/>
+		<entry index="52" type="number" value="14"/>
+		<entry index="53" type="number" value="-14"/>
+		<entry index="54" type="number" value="-2"/>
+		<entry index="55" type="number" value="-6"/>
+		<entry index="56" type="number" value="-10"/>
+		<entry index="57" type="number" value="-9"/>
+		<entry index="58" type="number" value="9"/>
+		<entry index="59" type="number" value="-12"/>
+		<entry index="60" type="number" value="-9"/>
+		<entry index="61" type="number" value="-9"/>
+		<entry index="62" type="number" value="-28"/>
+		<entry index="63" type="number" value="-17"/>
+		<entry index="64" type="number" value="-17"/>
+		<entry index="65" type="number" value="-17"/>
+		<entry index="66" type="number" value="-6"/>
+		<entry index="67" type="number" value="14"/>
+		<entry index="68" type="number" value="-14"/>
+		<entry index="69" type="number" value="11"/>
+		<entry index="70" type="number" value="-9"/>
+		<entry index="71" type="number" value="4"/>
+		<entry index="72" type="number" value="-6"/>
+		<entry index="73" type="number" value="-8"/>
+		<entry index="74" type="number" value="-7"/>
+		<entry index="75" type="number" value="-11"/>
+		<entry index="76" type="number" value="-6"/>
+		<entry index="77" type="number" value="30"/>
+		<entry index="78" type="number" value="31"/>
+		<entry index="79" type="number" value="31"/>
+		<entry index="80" type="number" value="31"/>
+		<entry index="81" type="number" value="18"/>
+		<entry index="82" type="number" value="13"/>
+		<entry index="83" type="number" value="13"/>
+		<entry index="84" type="number" value="-6"/>
+		<entry index="85" type="number" value="-3"/>
+		<entry index="86" type="number" value="11"/>
+		<entry index="87" type="number" value="14"/>
+		<entry index="88" type="number" value="0"/>
+		<entry index="89" type="number" value="14"/>
+		<entry index="90" type="number" value="14"/>
+		<entry index="91" type="number" value="-3"/>
+		<entry index="92" type="number" value="6"/>
+		<entry index="93" type="number" value="-4"/>
+		<entry index="94" type="number" value="-4"/>
+		<entry index="95" type="number" value="14"/>
+		<entry index="96" type="number" value="0"/>
+		<entry index="97" type="number" value="-5"/>
+		<entry index="98" type="number" value="-6"/>
+		<entry index="99" type="number" value="-2"/>
+		<entry index="100" type="number" value="-1"/>
+		<entry index="101" type="number" value="30"/>
+		<entry index="102" type="number" value="-3"/>
+		<entry index="103" type="number" value="-4"/>
+		<entry index="104" type="number" value="-12"/>
+		<entry index="105" type="number" value="26"/>
+		<entry index="106" type="number" value="30"/>
+		<entry index="107" type="number" value="31"/>
+		<entry index="108" type="number" value="-10"/>
+		<entry index="109" type="number" value="-4"/>
+		<entry index="110" type="number" value="26"/>
+		<entry index="111" type="number" value="-3"/>
+		<entry index="112" type="number" value="0"/>
+		<entry index="113" type="number" value="-10"/>
+		<entry index="114" type="number" value="-6"/>
+		<entry index="115" type="number" value="-9"/>
+		<entry index="116" type="number" value="-15"/>
+		<entry index="117" type="number" value="-6"/>
+		<entry index="118" type="number" value="-15"/>
+		<entry index="119" type="number" value="-22"/>
+		<entry index="120" type="number" value="-24"/>
+		<entry index="121" type="number" value="-27"/>
+		<entry index="122" type="number" value="-11"/>
+		<entry index="123" type="number" value="-10"/>
+		<entry index="124" type="number" value="-23"/>
+		<entry index="125" type="number" value="-15"/>
+		<entry index="126" type="number" value="31"/>
+		<entry index="127" type="number" value="18"/>
+		<entry index="128" type="number" value="18"/>
+		<entry index="129" type="number" value="18"/>
+		<entry index="130" type="number" value="47"/>
+		<entry index="131" type="number" value="33"/>
+		<entry index="132" type="number" value="45"/>
+		<entry index="133" type="number" value="41"/>
+		<entry index="134" type="number" value="44"/>
+		<entry index="135" type="number" value="47"/>
+		<entry index="136" type="number" value="49"/>
+		<entry index="137" type="number" value="47"/>
+		<entry index="138" type="number" value="46"/>
+		<entry index="139" type="number" value="43"/>
+		<entry index="140" type="number" value="42"/>
+		<entry index="141" type="number" value="34"/>
+		<entry index="142" type="number" value="31"/>
+		<entry index="143" type="number" value="62"/>
+		<entry index="144" type="number" value="62"/>
+		<entry index="145" type="number" value="63"/>
+		<entry index="146" type="number" value="62"/>
+		<entry index="147" type="number" value="55"/>
+		<entry index="148" type="number" value="53"/>
+		<entry index="149" type="number" value="53"/>
+		<entry index="150" type="number" value="52"/>
+		<entry index="151" type="number" value="55"/>
+		<entry index="152" type="number" value="50"/>
+		<entry index="153" type="number" value="53"/>
+		<entry index="154" type="number" value="55"/>
+		<entry index="155" type="number" value="46"/>
+		<entry index="156" type="number" value="20"/>
+		<entry index="157" type="number" value="35"/>
+		<entry index="158" type="number" value="43"/>
+		<entry index="159" type="number" value="46"/>
+		<entry index="160" type="number" value="28"/>
+		<entry index="161" type="number" value="46"/>
+		<entry index="162" type="number" value="31"/>
+		<entry index="163" type="number" value="-74"/>
+	</entry>
+	<entry key="room_borders_y_neg" type="table">
+		<entry index="1" type="number" value="3"/>
+		<entry index="2" type="number" value="4"/>
+		<entry index="3" type="number" value="5"/>
+		<entry index="4" type="number" value="11"/>
+		<entry index="5" type="number" value="24"/>
+		<entry index="6" type="number" value="39"/>
+		<entry index="7" type="number" value="39"/>
+		<entry index="8" type="number" value="39"/>
+		<entry index="9" type="number" value="17"/>
+		<entry index="10" type="number" value="24"/>
+		<entry index="11" type="number" value="27"/>
+		<entry index="12" type="number" value="34"/>
+		<entry index="13" type="number" value="20"/>
+		<entry index="14" type="number" value="48"/>
+		<entry index="15" type="number" value="37"/>
+		<entry index="16" type="number" value="40"/>
+		<entry index="17" type="number" value="46"/>
+		<entry index="18" type="number" value="48"/>
+		<entry index="19" type="number" value="48"/>
+		<entry index="20" type="number" value="48"/>
+		<entry index="21" type="number" value="36"/>
+		<entry index="22" type="number" value="37"/>
+		<entry index="23" type="number" value="38"/>
+		<entry index="24" type="number" value="37"/>
+		<entry index="25" type="number" value="5"/>
+		<entry index="26" type="number" value="24"/>
+		<entry index="27" type="number" value="26"/>
+		<entry index="28" type="number" value="20"/>
+		<entry index="29" type="number" value="22"/>
+		<entry index="30" type="number" value="37"/>
+		<entry index="31" type="number" value="39"/>
+		<entry index="32" type="number" value="61"/>
+		<entry index="33" type="number" value="51"/>
+		<entry index="34" type="number" value="58"/>
+		<entry index="35" type="number" value="48"/>
+		<entry index="36" type="number" value="47"/>
+		<entry index="37" type="number" value="45"/>
+		<entry index="38" type="number" value="2"/>
+		<entry index="39" type="number" value="8"/>
+		<entry index="40" type="number" value="2"/>
+		<entry index="41" type="number" value="9"/>
+		<entry index="42" type="number" value="74"/>
+		<entry index="43" type="number" value="7"/>
+		<entry index="44" type="number" value="74"/>
+		<entry index="45" type="number" value="74"/>
+		<entry index="46" type="number" value="61"/>
+		<entry index="47" type="number" value="71"/>
+		<entry index="48" type="number" value="71"/>
+		<entry index="49" type="number" value="74"/>
+		<entry index="50" type="number" value="71"/>
+		<entry index="51" type="number" value="70"/>
+		<entry index="52" type="number" value="63"/>
+		<entry index="53" type="number" value="41"/>
+		<entry index="54" type="number" value="74"/>
+		<entry index="55" type="number" value="72"/>
+		<entry index="56" type="number" value="72"/>
+		<entry index="57" type="number" value="72"/>
+		<entry index="58" type="number" value="70"/>
+		<entry index="59" type="number" value="43"/>
+		<entry index="60" type="number" value="73"/>
+		<entry index="61" type="number" value="20"/>
+		<entry index="62" type="number" value="61"/>
+		<entry index="63" type="number" value="62"/>
+		<entry index="64" type="number" value="63"/>
+		<entry index="65" type="number" value="38"/>
+		<entry index="66" type="number" value="67"/>
+		<entry index="67" type="number" value="60"/>
+		<entry index="68" type="number" value="67"/>
+		<entry index="69" type="number" value="37"/>
+		<entry index="70" type="number" value="15"/>
+		<entry index="71" type="number" value="48"/>
+		<entry index="72" type="number" value="71"/>
+		<entry index="73" type="number" value="44"/>
+		<entry index="74" type="number" value="43"/>
+		<entry index="75" type="number" value="44"/>
+		<entry index="76" type="number" value="39"/>
+		<entry index="77" type="number" value="8"/>
+		<entry index="78" type="number" value="2"/>
+		<entry index="79" type="number" value="16"/>
+		<entry index="80" type="number" value="40"/>
+		<entry index="81" type="number" value="2"/>
+		<entry index="82" type="number" value="-43"/>
+		<entry index="83" type="number" value="-60"/>
+		<entry index="84" type="number" value="-50"/>
+		<entry index="85" type="number" value="-40"/>
+		<entry index="86" type="number" value="-35"/>
+		<entry index="87" type="number" value="-49"/>
+		<entry index="88" type="number" value="-63"/>
+		<entry index="89" type="number" value="-60"/>
+		<entry index="90" type="number" value="-57"/>
+		<entry index="91" type="number" value="-59"/>
+		<entry index="92" type="number" value="-43"/>
+		<entry index="93" type="number" value="-40"/>
+		<entry index="94" type="number" value="-39"/>
+		<entry index="95" type="number" value="-18"/>
+		<entry index="96" type="number" value="-28"/>
+		<entry index="97" type="number" value="-39"/>
+		<entry index="98" type="number" value="-40"/>
+		<entry index="99" type="number" value="-5"/>
+		<entry index="100" type="number" value="-5"/>
+		<entry index="101" type="number" value="-18"/>
+		<entry index="102" type="number" value="-13"/>
+		<entry index="103" type="number" value="-24"/>
+		<entry index="104" type="number" value="-2"/>
+		<entry index="105" type="number" value="-6"/>
+		<entry index="106" type="number" value="-21"/>
+		<entry index="107" type="number" value="-16"/>
+		<entry index="108" type="number" value="-14"/>
+		<entry index="109" type="number" value="-20"/>
+		<entry index="110" type="number" value="-25"/>
+		<entry index="111" type="number" value="-50"/>
+		<entry index="112" type="number" value="-43"/>
+		<entry index="113" type="number" value="-50"/>
+		<entry index="114" type="number" value="-45"/>
+		<entry index="115" type="number" value="-44"/>
+		<entry index="116" type="number" value="-35"/>
+		<entry index="117" type="number" value="-48"/>
+		<entry index="118" type="number" value="-50"/>
+		<entry index="119" type="number" value="-42"/>
+		<entry index="120" type="number" value="-52"/>
+		<entry index="121" type="number" value="-55"/>
+		<entry index="122" type="number" value="-63"/>
+		<entry index="123" type="number" value="-59"/>
+		<entry index="124" type="number" value="-52"/>
+		<entry index="125" type="number" value="-42"/>
+		<entry index="126" type="number" value="-47"/>
+		<entry index="127" type="number" value="-47"/>
+		<entry index="128" type="number" value="-45"/>
+		<entry index="129" type="number" value="-40"/>
+		<entry index="130" type="number" value="-63"/>
+		<entry index="131" type="number" value="-47"/>
+		<entry index="132" type="number" value="-35"/>
+		<entry index="133" type="number" value="-23"/>
+		<entry index="134" type="number" value="-23"/>
+		<entry index="135" type="number" value="-35"/>
+		<entry index="136" type="number" value="-31"/>
+		<entry index="137" type="number" value="-27"/>
+		<entry index="138" type="number" value="-26"/>
+		<entry index="139" type="number" value="-21"/>
+		<entry index="140" type="number" value="-19"/>
+		<entry index="141" type="number" value="-21"/>
+		<entry index="142" type="number" value="-19"/>
+		<entry index="143" type="number" value="-35"/>
+		<entry index="144" type="number" value="-28"/>
+		<entry index="145" type="number" value="-27"/>
+		<entry index="146" type="number" value="-13"/>
+		<entry index="147" type="number" value="-20"/>
+		<entry index="148" type="number" value="-19"/>
+		<entry index="149" type="number" value="-11"/>
+		<entry index="150" type="number" value="-17"/>
+		<entry index="151" type="number" value="-26"/>
+		<entry index="152" type="number" value="-31"/>
+		<entry index="153" type="number" value="-12"/>
+		<entry index="154" type="number" value="-27"/>
+		<entry index="155" type="number" value="56"/>
+		<entry index="156" type="number" value="74"/>
+		<entry index="157" type="number" value="74"/>
+		<entry index="158" type="number" value="74"/>
+		<entry index="159" type="number" value="74"/>
+		<entry index="160" type="number" value="46"/>
+		<entry index="161" type="number" value="53"/>
+		<entry index="162" type="number" value="46"/>
+		<entry index="163" type="number" value="53"/>
+	</entry>
+	<entry key="room_borders_y_pos" type="table">
+		<entry index="1" type="number" value="14"/>
+		<entry index="2" type="number" value="5"/>
+		<entry index="3" type="number" value="11"/>
+		<entry index="4" type="number" value="12"/>
+		<entry index="5" type="number" value="39"/>
+		<entry index="6" type="number" value="46"/>
+		<entry index="7" type="number" value="41"/>
+		<entry index="8" type="number" value="48"/>
+		<entry index="9" type="number" value="20"/>
+		<entry index="10" type="number" value="27"/>
+		<entry index="11" type="number" value="30"/>
+		<entry index="12" type="number" value="39"/>
+		<entry index="13" type="number" value="26"/>
+		<entry index="14" type="number" value="50"/>
+		<entry index="15" type="number" value="38"/>
+		<entry index="16" type="number" value="48"/>
+		<entry index="17" type="number" value="67"/>
+		<entry index="18" type="number" value="51"/>
+		<entry index="19" type="number" value="49"/>
+		<entry index="20" type="number" value="51"/>
+		<entry index="21" type="number" value="39"/>
+		<entry index="22" type="number" value="39"/>
+		<entry index="23" type="number" value="39"/>
+		<entry index="24" type="number" value="47"/>
+		<entry index="25" type="number" value="24"/>
+		<entry index="26" type="number" value="27"/>
+		<entry index="27" type="number" value="27"/>
+		<entry index="28" type="number" value="22"/>
+		<entry index="29" type="number" value="23"/>
+		<entry index="30" type="number" value="40"/>
+		<entry index="31" type="number" value="40"/>
+		<entry index="32" type="number" value="74"/>
+		<entry index="33" type="number" value="54"/>
+		<entry index="34" type="number" value="61"/>
+		<entry index="35" type="number" value="52"/>
+		<entry index="36" type="number" value="48"/>
+		<entry index="37" type="number" value="46"/>
+		<entry index="38" type="number" value="5"/>
+		<entry index="39" type="number" value="24"/>
+		<entry index="40" type="number" value="9"/>
+		<entry index="41" type="number" value="11"/>
+		<entry index="42" type="number" value="77"/>
+		<entry index="43" type="number" value="9"/>
+		<entry index="44" type="number" value="75"/>
+		<entry index="45" type="number" value="79"/>
+		<entry index="46" type="number" value="63"/>
+		<entry index="47" type="number" value="74"/>
+		<entry index="48" type="number" value="72"/>
+		<entry index="49" type="number" value="75"/>
+		<entry index="50" type="number" value="72"/>
+		<entry index="51" type="number" value="74"/>
+		<entry index="52" type="number" value="70"/>
+		<entry index="53" type="number" value="44"/>
+		<entry index="54" type="number" value="79"/>
+		<entry index="55" type="number" value="74"/>
+		<entry index="56" type="number" value="74"/>
+		<entry index="57" type="number" value="73"/>
+		<entry index="58" type="number" value="72"/>
+		<entry index="59" type="number" value="44"/>
+		<entry index="60" type="number" value="74"/>
+		<entry index="61" type="number" value="39"/>
+		<entry index="62" type="number" value="71"/>
+		<entry index="63" type="number" value="63"/>
+		<entry index="64" type="number" value="74"/>
+		<entry index="65" type="number" value="48"/>
+		<entry index="66" type="number" value="71"/>
+		<entry index="67" type="number" value="63"/>
+		<entry index="68" type="number" value="74"/>
+		<entry index="69" type="number" value="39"/>
+		<entry index="70" type="number" value="17"/>
+		<entry index="71" type="number" value="49"/>
+		<entry index="72" type="number" value="72"/>
+		<entry index="73" type="number" value="45"/>
+		<entry index="74" type="number" value="45"/>
+		<entry index="75" type="number" value="45"/>
+		<entry index="76" type="number" value="45"/>
+		<entry index="77" type="number" value="46"/>
+		<entry index="78" type="number" value="8"/>
+		<entry index="79" type="number" value="32"/>
+		<entry index="80" type="number" value="46"/>
+		<entry index="81" type="number" value="3"/>
+		<entry index="82" type="number" value="-35"/>
+		<entry index="83" type="number" value="-43"/>
+		<entry index="84" type="number" value="-48"/>
+		<entry index="85" type="number" value="-38"/>
+		<entry index="86" type="number" value="-30"/>
+		<entry index="87" type="number" value="-40"/>
+		<entry index="88" type="number" value="-60"/>
+		<entry index="89" type="number" value="-59"/>
+		<entry index="90" type="number" value="-51"/>
+		<entry index="91" type="number" value="-55"/>
+		<entry index="92" type="number" value="-18"/>
+		<entry index="93" type="number" value="-39"/>
+		<entry index="94" type="number" value="-38"/>
+		<entry index="95" type="number" value="-5"/>
+		<entry index="96" type="number" value="-18"/>
+		<entry index="97" type="number" value="-38"/>
+		<entry index="98" type="number" value="-39"/>
+		<entry index="99" type="number" value="2"/>
+		<entry index="100" type="number" value="-2"/>
+		<entry index="101" type="number" value="-6"/>
+		<entry index="102" type="number" value="2"/>
+		<entry index="103" type="number" value="-20"/>
+		<entry index="104" type="number" value="2"/>
+		<entry index="105" type="number" value="2"/>
+		<entry index="106" type="number" value="-18"/>
+		<entry index="107" type="number" value="-6"/>
+		<entry index="108" type="number" value="-13"/>
+		<entry index="109" type="number" value="-19"/>
+		<entry index="110" type="number" value="-21"/>
+		<entry index="111" type="number" value="-43"/>
+		<entry index="112" type="number" value="-38"/>
+		<entry index="113" type="number" value="-33"/>
+		<entry index="114" type="number" value="-44"/>
+		<entry index="115" type="number" value="-43"/>
+		<entry index="116" type="number" value="-33"/>
+		<entry index="117" type="number" value="-45"/>
+		<entry index="118" type="number" value="-48"/>
+		<entry index="119" type="number" value="-33"/>
+		<entry index="120" type="number" value="-42"/>
+		<entry index="121" type="number" value="-52"/>
+		<entry index="122" type="number" value="-55"/>
+		<entry index="123" type="number" value="-55"/>
+		<entry index="124" type="number" value="-50"/>
+		<entry index="125" type="number" value="-35"/>
+		<entry index="126" type="number" value="-36"/>
+		<entry index="127" type="number" value="-45"/>
+		<entry index="128" type="number" value="-40"/>
+		<entry index="129" type="number" value="-39"/>
+		<entry index="130" type="number" value="-38"/>
+		<entry index="131" type="number" value="-38"/>
+		<entry index="132" type="number" value="-23"/>
+		<entry index="133" type="number" value="-10"/>
+		<entry index="134" type="number" value="-21"/>
+		<entry index="135" type="number" value="-31"/>
+		<entry index="136" type="number" value="-27"/>
+		<entry index="137" type="number" value="-26"/>
+		<entry index="138" type="number" value="-25"/>
+		<entry index="139" type="number" value="-19"/>
+		<entry index="140" type="number" value="-17"/>
+		<entry index="141" type="number" value="-19"/>
+		<entry index="142" type="number" value="-16"/>
+		<entry index="143" type="number" value="-28"/>
+		<entry index="144" type="number" value="-27"/>
+		<entry index="145" type="number" value="-13"/>
+		<entry index="146" type="number" value="-10"/>
+		<entry index="147" type="number" value="-13"/>
+		<entry index="148" type="number" value="-16"/>
+		<entry index="149" type="number" value="-10"/>
+		<entry index="150" type="number" value="-16"/>
+		<entry index="151" type="number" value="-25"/>
+		<entry index="152" type="number" value="-28"/>
+		<entry index="153" type="number" value="-11"/>
+		<entry index="154" type="number" value="-26"/>
+		<entry index="155" type="number" value="74"/>
+		<entry index="156" type="number" value="75"/>
+		<entry index="157" type="number" value="78"/>
+		<entry index="158" type="number" value="77"/>
+		<entry index="159" type="number" value="75"/>
+		<entry index="160" type="number" value="56"/>
+		<entry index="161" type="number" value="56"/>
+		<entry index="162" type="number" value="47"/>
+		<entry index="163" type="number" value="63"/>
+	</entry>
+	<entry key="room_heights_xn_yn" type="table">
+		<entry index="1" type="number" value="22.5"/>
+		<entry index="2" type="number" value="22.5"/>
+		<entry index="3" type="number" value="22.5"/>
+		<entry index="4" type="number" value="22.5"/>
+		<entry index="5" type="number" value="22.5"/>
+		<entry index="6" type="number" value="22.5"/>
+		<entry index="7" type="number" value="22.5"/>
+		<entry index="8" type="number" value="22.5"/>
+		<entry index="9" type="number" value="22.5"/>
+		<entry index="10" type="number" value="22.5"/>
+		<entry index="11" type="number" value="22.5"/>
+		<entry index="12" type="number" value="22.5"/>
+		<entry index="13" type="number" value="22.5"/>
+		<entry index="14" type="number" value="22.5"/>
+		<entry index="15" type="number" value="22.5"/>
+		<entry index="16" type="number" value="22.5"/>
+		<entry index="17" type="number" value="22.5"/>
+		<entry index="18" type="number" value="22.5"/>
+		<entry index="19" type="number" value="22.5"/>
+		<entry index="20" type="number" value="22.5"/>
+		<entry index="21" type="number" value="22.5"/>
+		<entry index="22" type="number" value="22.5"/>
+		<entry index="23" type="number" value="22.5"/>
+		<entry index="24" type="number" value="22.5"/>
+		<entry index="25" type="number" value="22.5"/>
+		<entry index="26" type="number" value="22.5"/>
+		<entry index="27" type="number" value="22.5"/>
+		<entry index="28" type="number" value="22.5"/>
+		<entry index="29" type="number" value="22.5"/>
+		<entry index="30" type="number" value="22.5"/>
+		<entry index="31" type="number" value="22.5"/>
+		<entry index="32" type="number" value="22.5"/>
+		<entry index="33" type="number" value="22.5"/>
+		<entry index="34" type="number" value="22.5"/>
+		<entry index="35" type="number" value="22.5"/>
+		<entry index="36" type="number" value="22.5"/>
+		<entry index="37" type="number" value="22.5"/>
+		<entry index="38" type="number" value="22.5"/>
+		<entry index="39" type="number" value="22.5"/>
+		<entry index="40" type="number" value="22.5"/>
+		<entry index="41" type="number" value="22.5"/>
+		<entry index="42" type="number" value="23.5"/>
+		<entry index="43" type="number" value="22.5"/>
+		<entry index="44" type="number" value="22.5"/>
+		<entry index="45" type="number" value="23.5"/>
+		<entry index="46" type="number" value="22.5"/>
+		<entry index="47" type="number" value="23.5"/>
+		<entry index="48" type="number" value="22.5"/>
+		<entry index="49" type="number" value="30.2712"/>
+		<entry index="50" type="number" value="23.5"/>
+		<entry index="51" type="number" value="22.5"/>
+		<entry index="52" type="number" value="22.5"/>
+		<entry index="53" type="number" value="22.5"/>
+		<entry index="54" type="number" value="27.5054"/>
+		<entry index="55" type="number" value="39.2774"/>
+		<entry index="56" type="number" value="39.2773"/>
+		<entry index="57" type="number" value="61.7775"/>
+		<entry index="58" type="number" value="22.5"/>
+		<entry index="59" type="number" value="68.7429"/>
+		<entry index="60" type="number" value="39.2775"/>
+		<entry index="61" type="number" value="22.5"/>
+		<entry index="62" type="number" value="22.5"/>
+		<entry index="63" type="number" value="22.5"/>
+		<entry index="64" type="number" value="22.5"/>
+		<entry index="65" type="number" value="22.5"/>
+		<entry index="66" type="number" value="23.5"/>
+		<entry index="67" type="number" value="22.5"/>
+		<entry index="68" type="number" value="23.0982"/>
+		<entry index="69" type="number" value="22.5"/>
+		<entry index="70" type="number" value="22.5"/>
+		<entry index="71" type="number" value="22.5"/>
+		<entry index="72" type="number" value="35.5162"/>
+		<entry index="73" type="number" value="22.5"/>
+		<entry index="74" type="number" value="22.5"/>
+		<entry index="75" type="number" value="22.5"/>
+		<entry index="76" type="number" value="22.5"/>
+		<entry index="77" type="number" value="22.5"/>
+		<entry index="78" type="number" value="22.5"/>
+		<entry index="79" type="number" value="22.5"/>
+		<entry index="80" type="number" value="22.5"/>
+		<entry index="81" type="number" value="22.5"/>
+		<entry index="82" type="number" value="23.4"/>
+		<entry index="83" type="number" value="22.5"/>
+		<entry index="84" type="number" value="22.5"/>
+		<entry index="85" type="number" value="22.5"/>
+		<entry index="86" type="number" value="22.8462"/>
+		<entry index="87" type="number" value="22.5"/>
+		<entry index="88" type="number" value="22.5"/>
+		<entry index="89" type="number" value="22.5"/>
+		<entry index="90" type="number" value="22.5"/>
+		<entry index="91" type="number" value="22.5"/>
+		<entry index="92" type="number" value="22.8"/>
+		<entry index="93" type="number" value="62.3997"/>
+		<entry index="94" type="number" value="39.8992"/>
+		<entry index="95" type="number" value="22.5"/>
+		<entry index="96" type="number" value="22.5"/>
+		<entry index="97" type="number" value="39.8969"/>
+		<entry index="98" type="number" value="39.8997"/>
+		<entry index="99" type="number" value="22.5"/>
+		<entry index="100" type="number" value="22.5"/>
+		<entry index="101" type="number" value="22.5"/>
+		<entry index="102" type="number" value="22.5"/>
+		<entry index="103" type="number" value="22.5"/>
+		<entry index="104" type="number" value="22.5"/>
+		<entry index="105" type="number" value="22.5"/>
+		<entry index="106" type="number" value="22.5"/>
+		<entry index="107" type="number" value="22.5"/>
+		<entry index="108" type="number" value="22.5"/>
+		<entry index="109" type="number" value="22.5"/>
+		<entry index="110" type="number" value="22.5"/>
+		<entry index="111" type="number" value="22.5"/>
+		<entry index="112" type="number" value="22.5"/>
+		<entry index="113" type="number" value="22.5"/>
+		<entry index="114" type="number" value="22.5"/>
+		<entry index="115" type="number" value="22.5"/>
+		<entry index="116" type="number" value="22.5"/>
+		<entry index="117" type="number" value="22.5"/>
+		<entry index="118" type="number" value="22.5"/>
+		<entry index="119" type="number" value="22.5"/>
+		<entry index="120" type="number" value="22.5"/>
+		<entry index="121" type="number" value="22.5"/>
+		<entry index="122" type="number" value="22.5"/>
+		<entry index="123" type="number" value="22.5"/>
+		<entry index="124" type="number" value="22.5"/>
+		<entry index="125" type="number" value="22.5"/>
+		<entry index="126" type="number" value="22.5"/>
+		<entry index="127" type="number" value="22.5"/>
+		<entry index="128" type="number" value="22.5"/>
+		<entry index="129" type="number" value="22.5"/>
+		<entry index="130" type="number" value="22.5"/>
+		<entry index="131" type="number" value="22.5"/>
+		<entry index="132" type="number" value="22.5"/>
+		<entry index="133" type="number" value="22.5"/>
+		<entry index="134" type="number" value="22.5"/>
+		<entry index="135" type="number" value="22.5"/>
+		<entry index="136" type="number" value="22.5"/>
+		<entry index="137" type="number" value="22.5"/>
+		<entry index="138" type="number" value="22.5"/>
+		<entry index="139" type="number" value="22.5"/>
+		<entry index="140" type="number" value="22.5"/>
+		<entry index="141" type="number" value="22.5"/>
+		<entry index="142" type="number" value="22.5"/>
+		<entry index="143" type="number" value="22.5"/>
+		<entry index="144" type="number" value="22.5"/>
+		<entry index="145" type="number" value="22.5"/>
+		<entry index="146" type="number" value="22.5"/>
+		<entry index="147" type="number" value="22.5"/>
+		<entry index="148" type="number" value="22.5"/>
+		<entry index="149" type="number" value="22.5"/>
+		<entry index="150" type="number" value="22.5"/>
+		<entry index="151" type="number" value="22.5"/>
+		<entry index="152" type="number" value="22.5"/>
+		<entry index="153" type="number" value="22.5"/>
+		<entry index="154" type="number" value="22.5"/>
+		<entry index="155" type="number" value="22.5"/>
+		<entry index="156" type="number" value="22.5"/>
+		<entry index="157" type="number" value="22.5"/>
+		<entry index="158" type="number" value="22.5"/>
+		<entry index="159" type="number" value="22.5"/>
+		<entry index="160" type="number" value="22.5"/>
+		<entry index="161" type="number" value="22.5"/>
+		<entry index="162" type="number" value="22.5"/>
+		<entry index="163" type="number" value="575"/>
+	</entry>
+	<entry key="room_heights_xn_yp" type="table">
+		<entry index="1" type="number" value="22.5"/>
+		<entry index="2" type="number" value="22.5"/>
+		<entry index="3" type="number" value="22.5"/>
+		<entry index="4" type="number" value="22.5"/>
+		<entry index="5" type="number" value="22.5"/>
+		<entry index="6" type="number" value="22.5"/>
+		<entry index="7" type="number" value="22.5"/>
+		<entry index="8" type="number" value="22.5"/>
+		<entry index="9" type="number" value="22.5"/>
+		<entry index="10" type="number" value="22.5"/>
+		<entry index="11" type="number" value="22.5"/>
+		<entry index="12" type="number" value="22.5"/>
+		<entry index="13" type="number" value="22.5"/>
+		<entry index="14" type="number" value="22.5"/>
+		<entry index="15" type="number" value="22.5"/>
+		<entry index="16" type="number" value="22.5"/>
+		<entry index="17" type="number" value="23.0982"/>
+		<entry index="18" type="number" value="22.5"/>
+		<entry index="19" type="number" value="22.5"/>
+		<entry index="20" type="number" value="22.5"/>
+		<entry index="21" type="number" value="22.5"/>
+		<entry index="22" type="number" value="22.5"/>
+		<entry index="23" type="number" value="22.5"/>
+		<entry index="24" type="number" value="22.5"/>
+		<entry index="25" type="number" value="22.5"/>
+		<entry index="26" type="number" value="22.5"/>
+		<entry index="27" type="number" value="22.5"/>
+		<entry index="28" type="number" value="22.5"/>
+		<entry index="29" type="number" value="22.5"/>
+		<entry index="30" type="number" value="22.5"/>
+		<entry index="31" type="number" value="22.5"/>
+		<entry index="32" type="number" value="25.9321"/>
+		<entry index="33" type="number" value="22.5"/>
+		<entry index="34" type="number" value="22.5"/>
+		<entry index="35" type="number" value="22.5"/>
+		<entry index="36" type="number" value="22.5"/>
+		<entry index="37" type="number" value="22.5"/>
+		<entry index="38" type="number" value="22.5"/>
+		<entry index="39" type="number" value="22.5"/>
+		<entry index="40" type="number" value="22.5"/>
+		<entry index="41" type="number" value="22.5"/>
+		<entry index="42" type="number" value="23.5"/>
+		<entry index="43" type="number" value="22.5"/>
+		<entry index="44" type="number" value="22.5"/>
+		<entry index="45" type="number" value="23.5"/>
+		<entry index="46" type="number" value="22.5"/>
+		<entry index="47" type="number" value="23.5"/>
+		<entry index="48" type="number" value="22.5"/>
+		<entry index="49" type="number" value="22.8333"/>
+		<entry index="50" type="number" value="23.5"/>
+		<entry index="51" type="number" value="22.5"/>
+		<entry index="52" type="number" value="22.5"/>
+		<entry index="53" type="number" value="22.5"/>
+		<entry index="54" type="number" value="22.5"/>
+		<entry index="55" type="number" value="39.2774"/>
+		<entry index="56" type="number" value="23.5"/>
+		<entry index="57" type="number" value="61.7775"/>
+		<entry index="58" type="number" value="22.5"/>
+		<entry index="59" type="number" value="68.7429"/>
+		<entry index="60" type="number" value="39.2775"/>
+		<entry index="61" type="number" value="22.5"/>
+		<entry index="62" type="number" value="22.5"/>
+		<entry index="63" type="number" value="22.5"/>
+		<entry index="64" type="number" value="22.5"/>
+		<entry index="65" type="number" value="22.5"/>
+		<entry index="66" type="number" value="23.5"/>
+		<entry index="67" type="number" value="22.5"/>
+		<entry index="68" type="number" value="23.2857"/>
+		<entry index="69" type="number" value="22.5"/>
+		<entry index="70" type="number" value="22.5"/>
+		<entry index="71" type="number" value="22.5"/>
+		<entry index="72" type="number" value="35.5162"/>
+		<entry index="73" type="number" value="22.5"/>
+		<entry index="74" type="number" value="22.5"/>
+		<entry index="75" type="number" value="22.5"/>
+		<entry index="76" type="number" value="22.5"/>
+		<entry index="77" type="number" value="22.5"/>
+		<entry index="78" type="number" value="22.5"/>
+		<entry index="79" type="number" value="22.5"/>
+		<entry index="80" type="number" value="22.5"/>
+		<entry index="81" type="number" value="22.5"/>
+		<entry index="82" type="number" value="22.8462"/>
+		<entry index="83" type="number" value="22.5"/>
+		<entry index="84" type="number" value="22.5"/>
+		<entry index="85" type="number" value="22.5"/>
+		<entry index="86" type="number" value="22.5"/>
+		<entry index="87" type="number" value="22.5"/>
+		<entry index="88" type="number" value="22.5"/>
+		<entry index="89" type="number" value="22.5"/>
+		<entry index="90" type="number" value="22.5"/>
+		<entry index="91" type="number" value="22.5"/>
+		<entry index="92" type="number" value="22.5"/>
+		<entry index="93" type="number" value="62.3997"/>
+		<entry index="94" type="number" value="39.8992"/>
+		<entry index="95" type="number" value="22.5"/>
+		<entry index="96" type="number" value="22.5"/>
+		<entry index="97" type="number" value="39.8969"/>
+		<entry index="98" type="number" value="39.8997"/>
+		<entry index="99" type="number" value="22.5"/>
+		<entry index="100" type="number" value="22.5"/>
+		<entry index="101" type="number" value="22.5"/>
+		<entry index="102" type="number" value="22.5"/>
+		<entry index="103" type="number" value="22.5"/>
+		<entry index="104" type="number" value="22.5"/>
+		<entry index="105" type="number" value="22.5"/>
+		<entry index="106" type="number" value="22.5"/>
+		<entry index="107" type="number" value="22.5"/>
+		<entry index="108" type="number" value="22.5"/>
+		<entry index="109" type="number" value="22.5"/>
+		<entry index="110" type="number" value="22.5"/>
+		<entry index="111" type="number" value="22.5"/>
+		<entry index="112" type="number" value="22.5"/>
+		<entry index="113" type="number" value="22.5"/>
+		<entry index="114" type="number" value="22.5"/>
+		<entry index="115" type="number" value="22.5"/>
+		<entry index="116" type="number" value="22.5"/>
+		<entry index="117" type="number" value="22.5"/>
+		<entry index="118" type="number" value="22.5"/>
+		<entry index="119" type="number" value="22.5"/>
+		<entry index="120" type="number" value="22.5"/>
+		<entry index="121" type="number" value="22.5"/>
+		<entry index="122" type="number" value="22.5"/>
+		<entry index="123" type="number" value="22.5"/>
+		<entry index="124" type="number" value="22.5"/>
+		<entry index="125" type="number" value="22.5"/>
+		<entry index="126" type="number" value="22.5"/>
+		<entry index="127" type="number" value="22.5"/>
+		<entry index="128" type="number" value="22.5"/>
+		<entry index="129" type="number" value="22.5"/>
+		<entry index="130" type="number" value="22.5"/>
+		<entry index="131" type="number" value="22.5"/>
+		<entry index="132" type="number" value="22.5"/>
+		<entry index="133" type="number" value="22.5"/>
+		<entry index="134" type="number" value="22.5"/>
+		<entry index="135" type="number" value="22.5"/>
+		<entry index="136" type="number" value="22.5"/>
+		<entry index="137" type="number" value="22.5"/>
+		<entry index="138" type="number" value="22.5"/>
+		<entry index="139" type="number" value="22.5"/>
+		<entry index="140" type="number" value="22.5"/>
+		<entry index="141" type="number" value="22.5"/>
+		<entry index="142" type="number" value="22.5"/>
+		<entry index="143" type="number" value="22.5"/>
+		<entry index="144" type="number" value="22.5"/>
+		<entry index="145" type="number" value="22.5"/>
+		<entry index="146" type="number" value="22.5"/>
+		<entry index="147" type="number" value="22.5"/>
+		<entry index="148" type="number" value="22.5"/>
+		<entry index="149" type="number" value="22.5"/>
+		<entry index="150" type="number" value="22.5"/>
+		<entry index="151" type="number" value="22.5"/>
+		<entry index="152" type="number" value="22.5"/>
+		<entry index="153" type="number" value="22.5"/>
+		<entry index="154" type="number" value="22.5"/>
+		<entry index="155" type="number" value="22.5"/>
+		<entry index="156" type="number" value="22.5"/>
+		<entry index="157" type="number" value="22.5"/>
+		<entry index="158" type="number" value="22.5"/>
+		<entry index="159" type="number" value="22.5"/>
+		<entry index="160" type="number" value="22.5"/>
+		<entry index="161" type="number" value="22.5"/>
+		<entry index="162" type="number" value="22.5"/>
+		<entry index="163" type="number" value="575"/>
+	</entry>
+	<entry key="room_heights_xp_yn" type="table">
+		<entry index="1" type="number" value="22.5"/>
+		<entry index="2" type="number" value="22.5"/>
+		<entry index="3" type="number" value="22.5"/>
+		<entry index="4" type="number" value="22.5"/>
+		<entry index="5" type="number" value="22.5"/>
+		<entry index="6" type="number" value="22.5"/>
+		<entry index="7" type="number" value="22.5"/>
+		<entry index="8" type="number" value="22.5"/>
+		<entry index="9" type="number" value="22.5"/>
+		<entry index="10" type="number" value="22.5"/>
+		<entry index="11" type="number" value="22.5"/>
+		<entry index="12" type="number" value="22.5"/>
+		<entry index="13" type="number" value="22.5"/>
+		<entry index="14" type="number" value="22.5"/>
+		<entry index="15" type="number" value="22.5"/>
+		<entry index="16" type="number" value="22.5"/>
+		<entry index="17" type="number" value="22.5"/>
+		<entry index="18" type="number" value="22.5"/>
+		<entry index="19" type="number" value="22.5"/>
+		<entry index="20" type="number" value="22.5"/>
+		<entry index="21" type="number" value="22.5"/>
+		<entry index="22" type="number" value="22.5"/>
+		<entry index="23" type="number" value="22.5"/>
+		<entry index="24" type="number" value="22.5"/>
+		<entry index="25" type="number" value="22.5"/>
+		<entry index="26" type="number" value="22.5"/>
+		<entry index="27" type="number" value="22.5"/>
+		<entry index="28" type="number" value="22.5"/>
+		<entry index="29" type="number" value="22.5"/>
+		<entry index="30" type="number" value="22.5"/>
+		<entry index="31" type="number" value="22.5"/>
+		<entry index="32" type="number" value="22.5"/>
+		<entry index="33" type="number" value="22.5"/>
+		<entry index="34" type="number" value="22.5"/>
+		<entry index="35" type="number" value="22.5"/>
+		<entry index="36" type="number" value="22.5"/>
+		<entry index="37" type="number" value="22.5"/>
+		<entry index="38" type="number" value="22.5"/>
+		<entry index="39" type="number" value="22.5"/>
+		<entry index="40" type="number" value="22.5"/>
+		<entry index="41" type="number" value="22.5"/>
+		<entry index="42" type="number" value="23.5"/>
+		<entry index="43" type="number" value="22.5"/>
+		<entry index="44" type="number" value="22.5"/>
+		<entry index="45" type="number" value="23.5"/>
+		<entry index="46" type="number" value="22.5"/>
+		<entry index="47" type="number" value="23.5"/>
+		<entry index="48" type="number" value="22.5"/>
+		<entry index="49" type="number" value="22.5"/>
+		<entry index="50" type="number" value="35.5162"/>
+		<entry index="51" type="number" value="22.5"/>
+		<entry index="52" type="number" value="22.5"/>
+		<entry index="53" type="number" value="22.5"/>
+		<entry index="54" type="number" value="30.2712"/>
+		<entry index="55" type="number" value="31.0819"/>
+		<entry index="56" type="number" value="61.7775"/>
+		<entry index="57" type="number" value="39.2775"/>
+		<entry index="58" type="number" value="22.5"/>
+		<entry index="59" type="number" value="69.1285"/>
+		<entry index="60" type="number" value="39.2773"/>
+		<entry index="61" type="number" value="22.5"/>
+		<entry index="62" type="number" value="22.5"/>
+		<entry index="63" type="number" value="22.5"/>
+		<entry index="64" type="number" value="22.9911"/>
+		<entry index="65" type="number" value="22.5"/>
+		<entry index="66" type="number" value="23.25"/>
+		<entry index="67" type="number" value="22.5"/>
+		<entry index="68" type="number" value="23.5"/>
+		<entry index="69" type="number" value="22.5"/>
+		<entry index="70" type="number" value="22.5"/>
+		<entry index="71" type="number" value="22.5"/>
+		<entry index="72" type="number" value="33.6568"/>
+		<entry index="73" type="number" value="22.5"/>
+		<entry index="74" type="number" value="22.5"/>
+		<entry index="75" type="number" value="68.7429"/>
+		<entry index="76" type="number" value="22.5"/>
+		<entry index="77" type="number" value="22.5"/>
+		<entry index="78" type="number" value="22.5"/>
+		<entry index="79" type="number" value="22.5"/>
+		<entry index="80" type="number" value="22.5"/>
+		<entry index="81" type="number" value="22.5"/>
+		<entry index="82" type="number" value="22.5"/>
+		<entry index="83" type="number" value="22.5"/>
+		<entry index="84" type="number" value="22.5"/>
+		<entry index="85" type="number" value="22.5"/>
+		<entry index="86" type="number" value="22.5"/>
+		<entry index="87" type="number" value="22.5"/>
+		<entry index="88" type="number" value="22.5"/>
+		<entry index="89" type="number" value="22.5"/>
+		<entry index="90" type="number" value="22.5"/>
+		<entry index="91" type="number" value="22.5"/>
+		<entry index="92" type="number" value="23.4"/>
+		<entry index="93" type="number" value="22.5"/>
+		<entry index="94" type="number" value="22.5"/>
+		<entry index="95" type="number" value="22.5"/>
+		<entry index="96" type="number" value="22.5"/>
+		<entry index="97" type="number" value="39.8992"/>
+		<entry index="98" type="number" value="62.3997"/>
+		<entry index="99" type="number" value="22.5"/>
+		<entry index="100" type="number" value="22.5"/>
+		<entry index="101" type="number" value="22.5"/>
+		<entry index="102" type="number" value="22.5"/>
+		<entry index="103" type="number" value="22.5"/>
+		<entry index="104" type="number" value="22.5"/>
+		<entry index="105" type="number" value="22.5"/>
+		<entry index="106" type="number" value="22.5"/>
+		<entry index="107" type="number" value="22.5"/>
+		<entry index="108" type="number" value="22.5"/>
+		<entry index="109" type="number" value="22.5"/>
+		<entry index="110" type="number" value="22.5"/>
+		<entry index="111" type="number" value="22.5"/>
+		<entry index="112" type="number" value="22.8"/>
+		<entry index="113" type="number" value="22.5"/>
+		<entry index="114" type="number" value="22.5"/>
+		<entry index="115" type="number" value="22.5"/>
+		<entry index="116" type="number" value="22.5"/>
+		<entry index="117" type="number" value="22.5"/>
+		<entry index="118" type="number" value="22.5"/>
+		<entry index="119" type="number" value="22.5"/>
+		<entry index="120" type="number" value="22.5"/>
+		<entry index="121" type="number" value="22.5"/>
+		<entry index="122" type="number" value="22.5"/>
+		<entry index="123" type="number" value="22.5"/>
+		<entry index="124" type="number" value="22.5"/>
+		<entry index="125" type="number" value="22.5"/>
+		<entry index="126" type="number" value="22.5"/>
+		<entry index="127" type="number" value="22.5"/>
+		<entry index="128" type="number" value="22.5"/>
+		<entry index="129" type="number" value="22.5"/>
+		<entry index="130" type="number" value="22.5"/>
+		<entry index="131" type="number" value="22.5"/>
+		<entry index="132" type="number" value="22.5"/>
+		<entry index="133" type="number" value="22.5"/>
+		<entry index="134" type="number" value="22.5"/>
+		<entry index="135" type="number" value="22.5"/>
+		<entry index="136" type="number" value="22.5"/>
+		<entry index="137" type="number" value="22.5"/>
+		<entry index="138" type="number" value="22.5"/>
+		<entry index="139" type="number" value="22.5"/>
+		<entry index="140" type="number" value="22.5"/>
+		<entry index="141" type="number" value="22.5"/>
+		<entry index="142" type="number" value="22.5"/>
+		<entry index="143" type="number" value="22.5"/>
+		<entry index="144" type="number" value="22.5"/>
+		<entry index="145" type="number" value="22.5"/>
+		<entry index="146" type="number" value="22.5"/>
+		<entry index="147" type="number" value="22.5"/>
+		<entry index="148" type="number" value="22.5"/>
+		<entry index="149" type="number" value="22.5"/>
+		<entry index="150" type="number" value="22.5"/>
+		<entry index="151" type="number" value="22.5"/>
+		<entry index="152" type="number" value="22.5"/>
+		<entry index="153" type="number" value="22.5"/>
+		<entry index="154" type="number" value="22.5"/>
+		<entry index="155" type="number" value="22.5"/>
+		<entry index="156" type="number" value="22.5"/>
+		<entry index="157" type="number" value="22.5"/>
+		<entry index="158" type="number" value="22.5"/>
+		<entry index="159" type="number" value="22.5"/>
+		<entry index="160" type="number" value="22.5"/>
+		<entry index="161" type="number" value="22.5"/>
+		<entry index="162" type="number" value="22.5"/>
+		<entry index="163" type="number" value="575"/>
+	</entry>
+	<entry key="room_heights_xp_yp" type="table">
+		<entry index="1" type="number" value="22.5"/>
+		<entry index="2" type="number" value="22.5"/>
+		<entry index="3" type="number" value="22.5"/>
+		<entry index="4" type="number" value="22.5"/>
+		<entry index="5" type="number" value="22.5"/>
+		<entry index="6" type="number" value="22.5"/>
+		<entry index="7" type="number" value="22.5"/>
+		<entry index="8" type="number" value="22.5"/>
+		<entry index="9" type="number" value="22.5"/>
+		<entry index="10" type="number" value="22.5"/>
+		<entry index="11" type="number" value="22.5"/>
+		<entry index="12" type="number" value="22.5"/>
+		<entry index="13" type="number" value="22.5"/>
+		<entry index="14" type="number" value="22.5"/>
+		<entry index="15" type="number" value="22.5"/>
+		<entry index="16" type="number" value="22.5"/>
+		<entry index="17" type="number" value="23"/>
+		<entry index="18" type="number" value="22.5"/>
+		<entry index="19" type="number" value="22.5"/>
+		<entry index="20" type="number" value="22.5"/>
+		<entry index="21" type="number" value="22.5"/>
+		<entry index="22" type="number" value="22.5"/>
+		<entry index="23" type="number" value="22.5"/>
+		<entry index="24" type="number" value="22.5"/>
+		<entry index="25" type="number" value="22.5"/>
+		<entry index="26" type="number" value="22.5"/>
+		<entry index="27" type="number" value="22.5"/>
+		<entry index="28" type="number" value="22.5"/>
+		<entry index="29" type="number" value="22.5"/>
+		<entry index="30" type="number" value="22.5"/>
+		<entry index="31" type="number" value="22.5"/>
+		<entry index="32" type="number" value="22.5"/>
+		<entry index="33" type="number" value="22.5"/>
+		<entry index="34" type="number" value="22.5"/>
+		<entry index="35" type="number" value="22.5"/>
+		<entry index="36" type="number" value="22.5"/>
+		<entry index="37" type="number" value="22.5"/>
+		<entry index="38" type="number" value="22.5"/>
+		<entry index="39" type="number" value="22.5"/>
+		<entry index="40" type="number" value="22.5"/>
+		<entry index="41" type="number" value="22.5"/>
+		<entry index="42" type="number" value="23.5"/>
+		<entry index="43" type="number" value="22.5"/>
+		<entry index="44" type="number" value="22.5"/>
+		<entry index="45" type="number" value="22.5"/>
+		<entry index="46" type="number" value="22.5"/>
+		<entry index="47" type="number" value="23.5"/>
+		<entry index="48" type="number" value="22.5"/>
+		<entry index="49" type="number" value="22.5"/>
+		<entry index="50" type="number" value="35.5162"/>
+		<entry index="51" type="number" value="22.5"/>
+		<entry index="52" type="number" value="22.5"/>
+		<entry index="53" type="number" value="68.7429"/>
+		<entry index="54" type="number" value="41.1181"/>
+		<entry index="55" type="number" value="25.9321"/>
+		<entry index="56" type="number" value="39.2688"/>
+		<entry index="57" type="number" value="39.2775"/>
+		<entry index="58" type="number" value="22.5"/>
+		<entry index="59" type="number" value="69.1285"/>
+		<entry index="60" type="number" value="39.2773"/>
+		<entry index="61" type="number" value="22.5"/>
+		<entry index="62" type="number" value="22.5"/>
+		<entry index="63" type="number" value="22.75"/>
+		<entry index="64" type="number" value="23.2857"/>
+		<entry index="65" type="number" value="22.5"/>
+		<entry index="66" type="number" value="23.25"/>
+		<entry index="67" type="number" value="22.5"/>
+		<entry index="68" type="number" value="23.5"/>
+		<entry index="69" type="number" value="22.5"/>
+		<entry index="70" type="number" value="22.5"/>
+		<entry index="71" type="number" value="22.5"/>
+		<entry index="72" type="number" value="31.0819"/>
+		<entry index="73" type="number" value="22.5"/>
+		<entry index="74" type="number" value="22.5"/>
+		<entry index="75" type="number" value="22.5"/>
+		<entry index="76" type="number" value="22.5"/>
+		<entry index="77" type="number" value="22.5"/>
+		<entry index="78" type="number" value="22.5"/>
+		<entry index="79" type="number" value="22.5"/>
+		<entry index="80" type="number" value="22.5"/>
+		<entry index="81" type="number" value="22.5"/>
+		<entry index="82" type="number" value="22.5"/>
+		<entry index="83" type="number" value="22.5"/>
+		<entry index="84" type="number" value="22.5"/>
+		<entry index="85" type="number" value="22.5"/>
+		<entry index="86" type="number" value="22.5"/>
+		<entry index="87" type="number" value="22.5"/>
+		<entry index="88" type="number" value="22.5"/>
+		<entry index="89" type="number" value="22.5"/>
+		<entry index="90" type="number" value="22.5"/>
+		<entry index="91" type="number" value="22.5"/>
+		<entry index="92" type="number" value="22.5"/>
+		<entry index="93" type="number" value="22.5"/>
+		<entry index="94" type="number" value="22.5"/>
+		<entry index="95" type="number" value="22.5"/>
+		<entry index="96" type="number" value="22.5"/>
+		<entry index="97" type="number" value="39.8992"/>
+		<entry index="98" type="number" value="62.3997"/>
+		<entry index="99" type="number" value="22.5"/>
+		<entry index="100" type="number" value="22.5"/>
+		<entry index="101" type="number" value="22.5"/>
+		<entry index="102" type="number" value="22.5"/>
+		<entry index="103" type="number" value="22.5"/>
+		<entry index="104" type="number" value="22.5"/>
+		<entry index="105" type="number" value="22.5"/>
+		<entry index="106" type="number" value="22.5"/>
+		<entry index="107" type="number" value="22.5"/>
+		<entry index="108" type="number" value="22.5"/>
+		<entry index="109" type="number" value="22.5"/>
+		<entry index="110" type="number" value="22.5"/>
+		<entry index="111" type="number" value="22.5"/>
+		<entry index="112" type="number" value="22.5"/>
+		<entry index="113" type="number" value="22.5"/>
+		<entry index="114" type="number" value="22.5"/>
+		<entry index="115" type="number" value="22.5"/>
+		<entry index="116" type="number" value="22.5"/>
+		<entry index="117" type="number" value="22.5"/>
+		<entry index="118" type="number" value="22.5"/>
+		<entry index="119" type="number" value="22.5"/>
+		<entry index="120" type="number" value="22.5"/>
+		<entry index="121" type="number" value="22.5"/>
+		<entry index="122" type="number" value="22.5"/>
+		<entry index="123" type="number" value="22.5"/>
+		<entry index="124" type="number" value="22.5"/>
+		<entry index="125" type="number" value="22.5"/>
+		<entry index="126" type="number" value="22.5"/>
+		<entry index="127" type="number" value="22.5"/>
+		<entry index="128" type="number" value="22.5"/>
+		<entry index="129" type="number" value="22.5"/>
+		<entry index="130" type="number" value="22.5"/>
+		<entry index="131" type="number" value="22.5"/>
+		<entry index="132" type="number" value="22.5"/>
+		<entry index="133" type="number" value="22.5"/>
+		<entry index="134" type="number" value="22.5"/>
+		<entry index="135" type="number" value="22.5"/>
+		<entry index="136" type="number" value="22.5"/>
+		<entry index="137" type="number" value="22.5"/>
+		<entry index="138" type="number" value="22.5"/>
+		<entry index="139" type="number" value="22.5"/>
+		<entry index="140" type="number" value="22.5"/>
+		<entry index="141" type="number" value="22.5"/>
+		<entry index="142" type="number" value="22.5"/>
+		<entry index="143" type="number" value="22.5"/>
+		<entry index="144" type="number" value="22.5"/>
+		<entry index="145" type="number" value="22.5"/>
+		<entry index="146" type="number" value="22.5"/>
+		<entry index="147" type="number" value="22.5"/>
+		<entry index="148" type="number" value="22.5"/>
+		<entry index="149" type="number" value="22.5"/>
+		<entry index="150" type="number" value="22.5"/>
+		<entry index="151" type="number" value="22.5"/>
+		<entry index="152" type="number" value="22.5"/>
+		<entry index="153" type="number" value="22.5"/>
+		<entry index="154" type="number" value="22.5"/>
+		<entry index="155" type="number" value="22.5"/>
+		<entry index="156" type="number" value="22.5"/>
+		<entry index="157" type="number" value="22.5"/>
+		<entry index="158" type="number" value="22.5"/>
+		<entry index="159" type="number" value="22.5"/>
+		<entry index="160" type="number" value="22.5"/>
+		<entry index="161" type="number" value="22.5"/>
+		<entry index="162" type="number" value="22.5"/>
+		<entry index="163" type="number" value="575"/>
+	</entry>
+	<entry key="room_vis_groups" type="table">
+		<entry index="1" type="number" value="6"/>
+		<entry index="2" type="number" value="6"/>
+		<entry index="3" type="number" value="6"/>
+		<entry index="4" type="number" value="6"/>
+		<entry index="5" type="number" value="5"/>
+		<entry index="6" type="number" value="5"/>
+		<entry index="7" type="number" value="5"/>
+		<entry index="8" type="number" value="5"/>
+		<entry index="9" type="number" value="5"/>
+		<entry index="10" type="number" value="5"/>
+		<entry index="11" type="number" value="5"/>
+		<entry index="12" type="number" value="5"/>
+		<entry index="13" type="number" value="5"/>
+		<entry index="14" type="number" value="5"/>
+		<entry index="15" type="number" value="5"/>
+		<entry index="16" type="number" value="5"/>
+		<entry index="17" type="number" value="5"/>
+		<entry index="18" type="number" value="5"/>
+		<entry index="19" type="number" value="5"/>
+		<entry index="20" type="number" value="5"/>
+		<entry index="21" type="number" value="5"/>
+		<entry index="22" type="number" value="5"/>
+		<entry index="23" type="number" value="5"/>
+		<entry index="24" type="number" value="5"/>
+		<entry index="25" type="number" value="5"/>
+		<entry index="26" type="number" value="5"/>
+		<entry index="27" type="number" value="5"/>
+		<entry index="28" type="number" value="5"/>
+		<entry index="29" type="number" value="5"/>
+		<entry index="30" type="number" value="5"/>
+		<entry index="31" type="number" value="5"/>
+		<entry index="32" type="number" value="5"/>
+		<entry index="33" type="number" value="5"/>
+		<entry index="34" type="number" value="5"/>
+		<entry index="35" type="number" value="5"/>
+		<entry index="36" type="number" value="5"/>
+		<entry index="37" type="number" value="5"/>
+		<entry index="38" type="number" value="5"/>
+		<entry index="39" type="number" value="5"/>
+		<entry index="40" type="number" value="5"/>
+		<entry index="41" type="number" value="5"/>
+		<entry index="42" type="number" value="5"/>
+		<entry index="43" type="number" value="5"/>
+		<entry index="44" type="number" value="5"/>
+		<entry index="45" type="number" value="5"/>
+		<entry index="46" type="number" value="5"/>
+		<entry index="47" type="number" value="5"/>
+		<entry index="48" type="number" value="5"/>
+		<entry index="49" type="number" value="5"/>
+		<entry index="50" type="number" value="5"/>
+		<entry index="51" type="number" value="5"/>
+		<entry index="52" type="number" value="5"/>
+		<entry index="53" type="number" value="5"/>
+		<entry index="54" type="number" value="5"/>
+		<entry index="55" type="number" value="5"/>
+		<entry index="56" type="number" value="5"/>
+		<entry index="57" type="number" value="5"/>
+		<entry index="58" type="number" value="5"/>
+		<entry index="59" type="number" value="5"/>
+		<entry index="60" type="number" value="5"/>
+		<entry index="61" type="number" value="5"/>
+		<entry index="62" type="number" value="5"/>
+		<entry index="63" type="number" value="5"/>
+		<entry index="64" type="number" value="5"/>
+		<entry index="65" type="number" value="5"/>
+		<entry index="66" type="number" value="5"/>
+		<entry index="67" type="number" value="5"/>
+		<entry index="68" type="number" value="5"/>
+		<entry index="69" type="number" value="5"/>
+		<entry index="70" type="number" value="5"/>
+		<entry index="71" type="number" value="5"/>
+		<entry index="72" type="number" value="5"/>
+		<entry index="73" type="number" value="5"/>
+		<entry index="74" type="number" value="5"/>
+		<entry index="75" type="number" value="5"/>
+		<entry index="76" type="number" value="5"/>
+		<entry index="77" type="number" value="4"/>
+		<entry index="78" type="number" value="4"/>
+		<entry index="79" type="number" value="4"/>
+		<entry index="80" type="number" value="4"/>
+		<entry index="81" type="number" value="4"/>
+		<entry index="82" type="number" value="1"/>
+		<entry index="83" type="number" value="1"/>
+		<entry index="84" type="number" value="1"/>
+		<entry index="85" type="number" value="1"/>
+		<entry index="86" type="number" value="1"/>
+		<entry index="87" type="number" value="1"/>
+		<entry index="88" type="number" value="1"/>
+		<entry index="89" type="number" value="1"/>
+		<entry index="90" type="number" value="1"/>
+		<entry index="91" type="number" value="1"/>
+		<entry index="92" type="number" value="1"/>
+		<entry index="93" type="number" value="1"/>
+		<entry index="94" type="number" value="1"/>
+		<entry index="95" type="number" value="1"/>
+		<entry index="96" type="number" value="1"/>
+		<entry index="97" type="number" value="1"/>
+		<entry index="98" type="number" value="1"/>
+		<entry index="99" type="number" value="1"/>
+		<entry index="100" type="number" value="1"/>
+		<entry index="101" type="number" value="1"/>
+		<entry index="102" type="number" value="1"/>
+		<entry index="103" type="number" value="1"/>
+		<entry index="104" type="number" value="1"/>
+		<entry index="105" type="number" value="1"/>
+		<entry index="106" type="number" value="1"/>
+		<entry index="107" type="number" value="1"/>
+		<entry index="108" type="number" value="1"/>
+		<entry index="109" type="number" value="1"/>
+		<entry index="110" type="number" value="1"/>
+		<entry index="111" type="number" value="1"/>
+		<entry index="112" type="number" value="1"/>
+		<entry index="113" type="number" value="7"/>
+		<entry index="114" type="number" value="7"/>
+		<entry index="115" type="number" value="7"/>
+		<entry index="116" type="number" value="7"/>
+		<entry index="117" type="number" value="7"/>
+		<entry index="118" type="number" value="7"/>
+		<entry index="119" type="number" value="7"/>
+		<entry index="120" type="number" value="7"/>
+		<entry index="121" type="number" value="7"/>
+		<entry index="122" type="number" value="7"/>
+		<entry index="123" type="number" value="7"/>
+		<entry index="124" type="number" value="7"/>
+		<entry index="125" type="number" value="7"/>
+		<entry index="126" type="number" value="2"/>
+		<entry index="127" type="number" value="2"/>
+		<entry index="128" type="number" value="2"/>
+		<entry index="129" type="number" value="2"/>
+		<entry index="130" type="number" value="2"/>
+		<entry index="131" type="number" value="2"/>
+		<entry index="132" type="number" value="9"/>
+		<entry index="133" type="number" value="9"/>
+		<entry index="134" type="number" value="9"/>
+		<entry index="135" type="number" value="9"/>
+		<entry index="136" type="number" value="9"/>
+		<entry index="137" type="number" value="9"/>
+		<entry index="138" type="number" value="9"/>
+		<entry index="139" type="number" value="9"/>
+		<entry index="140" type="number" value="9"/>
+		<entry index="141" type="number" value="9"/>
+		<entry index="142" type="number" value="9"/>
+		<entry index="143" type="number" value="9"/>
+		<entry index="144" type="number" value="9"/>
+		<entry index="145" type="number" value="9"/>
+		<entry index="146" type="number" value="9"/>
+		<entry index="147" type="number" value="9"/>
+		<entry index="148" type="number" value="9"/>
+		<entry index="149" type="number" value="9"/>
+		<entry index="150" type="number" value="9"/>
+		<entry index="151" type="number" value="9"/>
+		<entry index="152" type="number" value="9"/>
+		<entry index="153" type="number" value="9"/>
+		<entry index="154" type="number" value="9"/>
+		<entry index="155" type="number" value="3"/>
+		<entry index="156" type="number" value="3"/>
+		<entry index="157" type="number" value="3"/>
+		<entry index="158" type="number" value="3"/>
+		<entry index="159" type="number" value="3"/>
+		<entry index="160" type="number" value="3"/>
+		<entry index="161" type="number" value="3"/>
+		<entry index="162" type="number" value="3"/>
+		<entry index="163" type="number" value="8"/>
+	</entry>
+	<entry key="version" type="number" value="5"/>
+	<entry key="vis_groups" type="table">
+		<entry index="1" type="table">
+			<entry key="pos" type="vector3" value="50 -1100 0"/>
+			<entry key="rooms" type="table">
+				<entry index="82" type="boolean" value="true"/>
+				<entry index="83" type="boolean" value="true"/>
+				<entry index="84" type="boolean" value="true"/>
+				<entry index="85" type="boolean" value="true"/>
+				<entry index="86" type="boolean" value="true"/>
+				<entry index="87" type="boolean" value="true"/>
+				<entry index="88" type="boolean" value="true"/>
+				<entry index="89" type="boolean" value="true"/>
+				<entry index="90" type="boolean" value="true"/>
+				<entry index="91" type="boolean" value="true"/>
+				<entry index="92" type="boolean" value="true"/>
+				<entry index="93" type="boolean" value="true"/>
+				<entry index="94" type="boolean" value="true"/>
+				<entry index="95" type="boolean" value="true"/>
+				<entry index="96" type="boolean" value="true"/>
+				<entry index="97" type="boolean" value="true"/>
+				<entry index="98" type="boolean" value="true"/>
+				<entry index="99" type="boolean" value="true"/>
+				<entry index="100" type="boolean" value="true"/>
+				<entry index="101" type="boolean" value="true"/>
+				<entry index="102" type="boolean" value="true"/>
+				<entry index="103" type="boolean" value="true"/>
+				<entry index="104" type="boolean" value="true"/>
+				<entry index="105" type="boolean" value="true"/>
+				<entry index="106" type="boolean" value="true"/>
+				<entry index="107" type="boolean" value="true"/>
+				<entry index="108" type="boolean" value="true"/>
+				<entry index="109" type="boolean" value="true"/>
+				<entry index="110" type="boolean" value="true"/>
+				<entry index="111" type="boolean" value="true"/>
+				<entry index="112" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="1"/>
+			<entry key="vis_groups" type="table">
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="2" type="table">
+			<entry key="pos" type="vector3" value="600 -1050 0"/>
+			<entry key="rooms" type="table">
+				<entry index="126" type="boolean" value="true"/>
+				<entry index="127" type="boolean" value="true"/>
+				<entry index="128" type="boolean" value="true"/>
+				<entry index="129" type="boolean" value="true"/>
+				<entry index="130" type="boolean" value="true"/>
+				<entry index="131" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="2"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="3" type="table">
+			<entry key="pos" type="vector3" value="800 1600 0"/>
+			<entry key="rooms" type="table">
+				<entry index="155" type="boolean" value="true"/>
+				<entry index="156" type="boolean" value="true"/>
+				<entry index="157" type="boolean" value="true"/>
+				<entry index="158" type="boolean" value="true"/>
+				<entry index="159" type="boolean" value="true"/>
+				<entry index="160" type="boolean" value="true"/>
+				<entry index="161" type="boolean" value="true"/>
+				<entry index="162" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="6"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="4" type="table">
+			<entry key="pos" type="vector3" value="600 800 0"/>
+			<entry key="rooms" type="table">
+				<entry index="77" type="boolean" value="true"/>
+				<entry index="78" type="boolean" value="true"/>
+				<entry index="79" type="boolean" value="true"/>
+				<entry index="80" type="boolean" value="true"/>
+				<entry index="81" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="7"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="5" type="table">
+			<entry key="pos" type="vector3" value="-200 800 0"/>
+			<entry key="rooms" type="table">
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+				<entry index="10" type="boolean" value="true"/>
+				<entry index="11" type="boolean" value="true"/>
+				<entry index="12" type="boolean" value="true"/>
+				<entry index="13" type="boolean" value="true"/>
+				<entry index="14" type="boolean" value="true"/>
+				<entry index="15" type="boolean" value="true"/>
+				<entry index="16" type="boolean" value="true"/>
+				<entry index="17" type="boolean" value="true"/>
+				<entry index="18" type="boolean" value="true"/>
+				<entry index="19" type="boolean" value="true"/>
+				<entry index="20" type="boolean" value="true"/>
+				<entry index="21" type="boolean" value="true"/>
+				<entry index="22" type="boolean" value="true"/>
+				<entry index="23" type="boolean" value="true"/>
+				<entry index="24" type="boolean" value="true"/>
+				<entry index="25" type="boolean" value="true"/>
+				<entry index="26" type="boolean" value="true"/>
+				<entry index="27" type="boolean" value="true"/>
+				<entry index="28" type="boolean" value="true"/>
+				<entry index="29" type="boolean" value="true"/>
+				<entry index="30" type="boolean" value="true"/>
+				<entry index="31" type="boolean" value="true"/>
+				<entry index="32" type="boolean" value="true"/>
+				<entry index="33" type="boolean" value="true"/>
+				<entry index="34" type="boolean" value="true"/>
+				<entry index="35" type="boolean" value="true"/>
+				<entry index="36" type="boolean" value="true"/>
+				<entry index="37" type="boolean" value="true"/>
+				<entry index="38" type="boolean" value="true"/>
+				<entry index="39" type="boolean" value="true"/>
+				<entry index="40" type="boolean" value="true"/>
+				<entry index="41" type="boolean" value="true"/>
+				<entry index="42" type="boolean" value="true"/>
+				<entry index="43" type="boolean" value="true"/>
+				<entry index="44" type="boolean" value="true"/>
+				<entry index="45" type="boolean" value="true"/>
+				<entry index="46" type="boolean" value="true"/>
+				<entry index="47" type="boolean" value="true"/>
+				<entry index="48" type="boolean" value="true"/>
+				<entry index="49" type="boolean" value="true"/>
+				<entry index="50" type="boolean" value="true"/>
+				<entry index="51" type="boolean" value="true"/>
+				<entry index="52" type="boolean" value="true"/>
+				<entry index="53" type="boolean" value="true"/>
+				<entry index="54" type="boolean" value="true"/>
+				<entry index="55" type="boolean" value="true"/>
+				<entry index="56" type="boolean" value="true"/>
+				<entry index="57" type="boolean" value="true"/>
+				<entry index="58" type="boolean" value="true"/>
+				<entry index="59" type="boolean" value="true"/>
+				<entry index="60" type="boolean" value="true"/>
+				<entry index="61" type="boolean" value="true"/>
+				<entry index="62" type="boolean" value="true"/>
+				<entry index="63" type="boolean" value="true"/>
+				<entry index="64" type="boolean" value="true"/>
+				<entry index="65" type="boolean" value="true"/>
+				<entry index="66" type="boolean" value="true"/>
+				<entry index="67" type="boolean" value="true"/>
+				<entry index="68" type="boolean" value="true"/>
+				<entry index="69" type="boolean" value="true"/>
+				<entry index="70" type="boolean" value="true"/>
+				<entry index="71" type="boolean" value="true"/>
+				<entry index="72" type="boolean" value="true"/>
+				<entry index="73" type="boolean" value="true"/>
+				<entry index="74" type="boolean" value="true"/>
+				<entry index="75" type="boolean" value="true"/>
+				<entry index="76" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="8"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="6" type="table">
+			<entry key="pos" type="vector3" value="-600 200 0"/>
+			<entry key="rooms" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="9"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="7" type="table">
+			<entry key="pos" type="vector3" value="-300 -1100 0"/>
+			<entry key="rooms" type="table">
+				<entry index="113" type="boolean" value="true"/>
+				<entry index="114" type="boolean" value="true"/>
+				<entry index="115" type="boolean" value="true"/>
+				<entry index="116" type="boolean" value="true"/>
+				<entry index="117" type="boolean" value="true"/>
+				<entry index="118" type="boolean" value="true"/>
+				<entry index="119" type="boolean" value="true"/>
+				<entry index="120" type="boolean" value="true"/>
+				<entry index="121" type="boolean" value="true"/>
+				<entry index="122" type="boolean" value="true"/>
+				<entry index="123" type="boolean" value="true"/>
+				<entry index="124" type="boolean" value="true"/>
+				<entry index="125" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="10"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="8" type="table">
+			<entry key="pos" type="vector3" value="-1911.82 1352.38 552.5"/>
+			<entry key="rooms" type="table">
+				<entry index="163" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="11"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="9" type="boolean" value="true"/>
+			</entry>
+		</entry>
+		<entry index="9" type="table">
+			<entry key="pos" type="vector3" value="950 -800 0"/>
+			<entry key="rooms" type="table">
+				<entry index="132" type="boolean" value="true"/>
+				<entry index="133" type="boolean" value="true"/>
+				<entry index="134" type="boolean" value="true"/>
+				<entry index="135" type="boolean" value="true"/>
+				<entry index="136" type="boolean" value="true"/>
+				<entry index="137" type="boolean" value="true"/>
+				<entry index="138" type="boolean" value="true"/>
+				<entry index="139" type="boolean" value="true"/>
+				<entry index="140" type="boolean" value="true"/>
+				<entry index="141" type="boolean" value="true"/>
+				<entry index="142" type="boolean" value="true"/>
+				<entry index="143" type="boolean" value="true"/>
+				<entry index="144" type="boolean" value="true"/>
+				<entry index="145" type="boolean" value="true"/>
+				<entry index="146" type="boolean" value="true"/>
+				<entry index="147" type="boolean" value="true"/>
+				<entry index="148" type="boolean" value="true"/>
+				<entry index="149" type="boolean" value="true"/>
+				<entry index="150" type="boolean" value="true"/>
+				<entry index="151" type="boolean" value="true"/>
+				<entry index="152" type="boolean" value="true"/>
+				<entry index="153" type="boolean" value="true"/>
+				<entry index="154" type="boolean" value="true"/>
+			</entry>
+			<entry key="seg" type="number" value="12"/>
+			<entry key="vis_groups" type="table">
+				<entry index="1" type="boolean" value="true"/>
+				<entry index="2" type="boolean" value="true"/>
+				<entry index="3" type="boolean" value="true"/>
+				<entry index="4" type="boolean" value="true"/>
+				<entry index="5" type="boolean" value="true"/>
+				<entry index="6" type="boolean" value="true"/>
+				<entry index="7" type="boolean" value="true"/>
+				<entry index="8" type="boolean" value="true"/>
+			</entry>
+		</entry>
+	</entry>
+</generic_scriptdata>

@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" orientation_object="rp_gen_pku_safe_ovk" />
+	<sequence_manager file="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk/gen_pku_safe_ovk" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_gen_pku_safe_ovk" />
+			<object name="c_c" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel" />
+
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

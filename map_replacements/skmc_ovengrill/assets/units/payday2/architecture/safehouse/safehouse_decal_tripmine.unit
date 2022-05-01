@@ -1,0 +1,6 @@
+<unit type="str" slot="1" >
+    <object file="units/payday2/architecture/safehouse/safehouse_decal_tripmine" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

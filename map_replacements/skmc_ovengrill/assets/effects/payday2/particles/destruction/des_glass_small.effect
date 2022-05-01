@@ -1,0 +1,121 @@
+<effect force_synch="false">
+    <atom name="glass_shards_small" min_size="10" max_size="10" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="world" min="0 0 5" max="0 0 5"/>
+            <boxrandomvelocity relative="world" min="-200 -200 50" max="200 200 350"/>
+            <boxrandomanglevelocity min="0" max="2"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <constantacceleration relative="world" acceleration="0 0 -930"/>
+            <anglevelocityintegrator/>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0.0071684587746859" v="5"/>
+                    <key t="0.073578596115112" v="0"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <particleworldcollision radius="1" elasticity="0"/>
+        </simulatorstack>
+        <visualizerstack>
+            <model model="units/payday2/props/dest_glass/glass_shatter_small" object="g_g" material_config="units/payday2/props/dest_glass/glass_shatter"/>
+        </visualizerstack>
+    </atom>
+    <atom name="glass_shards_medium" min_size="3" max_size="5" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="world" min="-10 -10 5" max="10 10 20"/>
+            <boxrandomvelocity relative="world" min="-90 -90 150" max="90 90 300"/>
+            <boxrandomanglevelocity min="0" max="2"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <constantacceleration relative="world" acceleration="0 0 -820"/>
+            <anglevelocityintegrator/>
+            <particleworldcollision radius="1" elasticity="0"/>
+        </simulatorstack>
+        <visualizerstack>
+            <model model="units/payday2/props/dest_glass/glass_shatter_medium" object="g_g" material_config="units/payday2/props/dest_glass/glass_shatter"/>
+        </visualizerstack>
+    </atom>
+    <atom name="Smoke - thin" min_size="4" max_size="4" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="world" min="0 0 -10" max="0 0 0"/>
+            <boxrandomvelocity relative="world" min="0 0 2" max="0 0 80"/>
+            <boxrandomangle min="-3.14" max="3.14"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0" v="8"/>
+                    <key t="0.09808811545372" v="0.18000000715256"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="false" size_input="keys" color_input="constant" color="197.00001525879 198.00001525879 187" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 1" uv_size="0.25 0.25" uv_offset_input="channel">
+                <size_keys loop="false">
+                    <key t="0" v="20 20"/>
+                    <key t="0.042553190141916" v="50 50"/>
+                    <key t="2" v="130 130"/>
+                </size_keys>
+                <opacity_keys loop="false">
+                    <key t="0.85897439718246" v="115"/>
+                    <key t="2" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="0.40000000596046"/>
+                    <key t="2" v="0"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="glass_shards_big" min_size="1" max_size="3" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="world" min="-10 -10 -10" max="10 10 10"/>
+            <boxrandomvelocity relative="world" min="-100 -100 20" max="100 100 200"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <constantacceleration relative="world" acceleration="0 0 -620"/>
+            <particleworldcollision radius="1" elasticity="0"/>
+        </simulatorstack>
+        <visualizerstack>
+            <model model="units/payday2/props/dest_glass/glass_shatter_big" object="g_g" material_config="units/payday2/props/dest_glass/glass_shatter"/>
+        </visualizerstack>
+    </atom>
+    <atom name="Dust Puff" min_size="3" max_size="3" lifetime="0.75" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 20" max="0 0 40"/>
+            <boxrandomangle min="2" max="4"/>
+            <boxrandomaspectsize size="25 25" min="0.5 " max="1.5"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="sun" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_geometry_fade_out" origo="0.5 0.5" per_particle_age="false" size_input="scaled_channel" color_input="constant" color="148 137 118.00000762939" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.25" uv_offset_input="channel">
+                <size_scale_keys loop="false">
+                    <key t="0" v="1 1"/>
+                    <key t="0.10000000149012" v="3 3"/>
+                    <key t="0.75" v="4 4"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0.14814814925194" v="25"/>
+                    <key t="0.80000001192093" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

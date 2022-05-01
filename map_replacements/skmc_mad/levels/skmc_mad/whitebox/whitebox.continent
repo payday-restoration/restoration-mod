@@ -1,0 +1,47 @@
+<table>
+	<editor_groups>
+		<table continent="whitebox" name="storage" reference="300766">
+			<units/>
+		</table>
+		<table continent="whitebox" name="labs" reference="300913">
+			<units>
+				<value_node value="300913"/>
+				<value_node value="300888"/>
+			</units>
+		</table>
+		<table continent="whitebox" name="back_area" reference="302677">
+			<units>
+				<value_node value="302677"/>
+			</units>
+		</table>
+	</editor_groups>
+	<statics>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/payday2/props/stn_prop_medic_cabinet_c/stn_prop_medic_cabinet_c" name_id="stn_prop_medic_cabinet_c_004" position="1530.93 2369.07 -800" rotation="-1.26612e-021 -8.47033e-022 0.92388 -0.382683" unit_id="300888"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/payday2/props/stn_prop_medic_cabinet_c/stn_prop_medic_cabinet_c" name_id="stn_prop_medic_cabinet_c_005" position="1460.22 2298.36 -800" rotation="-1.26612e-021 -8.47033e-022 0.92388 -0.382683" unit_id="300913"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/payday2/props/stn_prop_medic_cart/stn_prop_medic_cart" name_id="stn_prop_medic_cart_005" position="2259.1 4109.1 -600" rotation="0 0 0.382683 -0.92388" unit_id="302677"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/world/props/hotel/vent/vent_medium" name_id="vent_medium_006" position="954.555 1581.29 -775" rotation="0 0 -2.98023e-008 -1" unit_id="300113"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/world/props/hotel/vent/vent_medium" name_id="vent_medium_007" position="104.555 2568.29 -775" rotation="0 0 -0.707107 -0.707107" unit_id="300127"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/world/props/hotel/vent/vent_medium" name_id="vent_medium_008" position="954.555 2118.29 -775" rotation="0 0 2.98023e-008 -1" unit_id="300150"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/world/props/hotel/vent/vent_medium" name_id="vent_medium_010" position="1568.56 745.292 -775" rotation="0 0 -0.707107 -0.707107" unit_id="300196"/>
+		</table>
+		<table>
+			<unit_data continent="whitebox" disable_shadows="true" name="units/world/props/hotel/vent/vent_medium" name_id="vent_medium_011" position="2408.55 370.292 -775" rotation="0 0 0 -1" unit_id="300201"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

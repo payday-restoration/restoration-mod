@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/bnk/bnk_int" orientation_object="rp_bnk_int_split_connector_4m" />
+    <bodies>
+        <body name="editor_body" template="editor" enabled="true" >
+            <object name="rp_bnk_int_split_connector_4m"/>
+			<object name="c_box_editor" collision_type="box" padding="-2.5"/>
+
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="plastic" static="true">
+
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_bnk_int_split_connector_4m" />
+    </graphics>
+</dynamic_object> 

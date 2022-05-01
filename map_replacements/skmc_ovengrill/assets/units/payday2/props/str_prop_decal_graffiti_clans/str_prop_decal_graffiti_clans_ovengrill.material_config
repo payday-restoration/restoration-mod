@@ -1,0 +1,5 @@
+<materials version="3">
+	<material name="mat_heist" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill_df"/>
+    </material>
+</materials>

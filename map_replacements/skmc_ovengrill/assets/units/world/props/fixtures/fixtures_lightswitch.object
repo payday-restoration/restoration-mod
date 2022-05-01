@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/fixtures/fixtures_lightswitch" orientation_object="rp_fixtures_lightswitch" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="c_fixtures_lightswitch" collision_type="box" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="g_fixtures_lightswitch" enabled="true" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_fixtures_lightswitch" enabled="true" shadow_caster="false"  />
+  </graphics>
+</dynamic_object>

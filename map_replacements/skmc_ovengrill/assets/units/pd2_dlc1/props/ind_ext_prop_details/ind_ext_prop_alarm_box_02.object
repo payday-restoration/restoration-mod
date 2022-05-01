@@ -1,0 +1,18 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_ext_prop_alarm_box_02" materials="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_details" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_ind_ext_prop_alarm_box_02" />
+            <object collision_type="box" 	name="c_box_01" padding="-2.5" />
+            <object collision_type="box" 	name="c_box_02" padding="-2.5" />
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="plastic" />
+  
+    <graphics>
+        <object enabled="true" name="g_g" />
+        <object enabled="true" name="g_shadow" />
+		<object enabled="true" name="s_s" shadow_caster="true"/>
+    </graphics>
+</dynamic_object>

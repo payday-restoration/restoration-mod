@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<unit type="fwb" slot="1">
+  <network sync="spawn" />
+  <object file="units/world/props/bank/money_wrap/money_wrap_single_bundle_dynamic" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="base" class="SmallLootBase">
+    	<var name="small_loot" value="money_bundle" />
+    </extension>
+    <extension name="interaction" class="SmallLootInteractionExt">
+      <var name="tweak_data" value="money_wrap_single_bundle" />
+    </extension>
+  </extensions>
+</unit>

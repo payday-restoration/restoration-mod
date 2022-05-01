@@ -1,0 +1,26 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_tag/props/tag_prop_dozer_bobbelhead/tag_prop_dozer_bobbelhead" orientation_object="rp_tag_prop_dozer_bobbelhead" />
+	<bodies>
+		<body name="body_head" enabled="true" template="dynamic" collision_script_tag="large" collision_class="ragdoll" pushed_by_mover="true" lin_damping="0.9" ang_damping="2">
+			<object name="head" />
+			<object name="c_box_head" collision_type="sphere" padding="-2.5" mass="5"/>
+		</body>
+		<body name="body_body" enabled="true" template="static">
+			<object name="root" />
+			<object name="c_box_body" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+  <constraints>
+	<constraint type="ragdoll" name="bobble" enabled="true">
+		<param body_a="body_body" body_b="body_head"/>
+		<param pivot="position:head_pos"/>
+		<param twist_axis="zaxis:head_pos" twist_min="-20" twist_max="20" twist_freedom="8"/>
+		<param plane_axis="xaxis:head_pos"/>
+		<param cone_y="1" cone_z="1" cone_freedom="2"/>
+		<param damping="100" spring_constant="1900" min_restitution="0.5"/>
+	</constraint>
+  </constraints>
+	<graphics>
+		<object name="g_dozer" enabled="true" />
+	</graphics>
+</dynamic_object>

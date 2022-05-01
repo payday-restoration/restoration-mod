@@ -1,0 +1,6 @@
+<materials version="3">
+	<material name="mtr_basement" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2" >
+		<diffuse_texture file="units/payday2/props/mcm_prop_basement_aircon/mcm_prop_basement_set_df"/>
+		<bump_normal_texture file="units/payday2/props/mcm_prop_basement_aircon/mcm_prop_basement_set_nm"/>
+	</material>
+</materials>

@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes" orientation_object="rp_moo_props_store_boxes_vr_headset" />
+	<sequence_manager file="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_moo_props_store_boxes_vr_headset" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_box" enabled="true" />
+		<object name="g_box_outline" enabled="false" />
+	</graphics>
+</dynamic_object>

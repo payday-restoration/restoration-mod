@@ -1,0 +1,4 @@
+<table>
+	<editor_only base_id="200000" editor_only="true" enabled="true" enabled_in_simulation="true" locked="false" name="editor_only" visible="false"/>
+	<world base_id="100000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="world" visible="true"/>
+</table>

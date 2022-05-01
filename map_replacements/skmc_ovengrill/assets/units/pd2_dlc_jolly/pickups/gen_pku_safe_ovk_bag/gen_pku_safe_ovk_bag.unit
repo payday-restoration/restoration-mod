@@ -1,0 +1,31 @@
+<unit type="gen" slot="14">
+	<object file="units/pd2_dlc_jolly/pickups/gen_pku_safe_ovk_bag/gen_pku_safe_ovk_bag" />
+	<network sync="bodies" remote_unit=""/>
+
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/dye_pack/dye_pack_smoke" />
+		<depends_on effect="effects/payday2/particles/explosions/bag_explosion" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="safe_carry_drop" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="_ray_object_names" type="table" >
+				<var value="a_ray_object_1"/>
+				<var value="a_ray_object_2"/>
+			</var>
+		</extension>
+		<extension name="carry_data" class="CarryData"/>
+		<extension name="attention" class="AIAttentionObject" >
+			<var name="_initial_settings" value="prop_carry_bag" />
+		</extension>
+	</extensions>
+
+	<sounds>
+		<default_soundsource source="rp_gen_pku_safe_ovk_bag"/>
+		<soundsource name="sound" source="rp_gen_pku_safe_ovk_bag" />
+	</sounds>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<unit type="support_unit" slot="1">
+	<network sync="spawn"/>
+	<object file="units/dev_tools/mission_elements/point_interaction/interaction_dummy" />
+	<dependencies>
+		<depends_on sequence_manager="units/dev_tools/mission_elements/point_interaction/interaction_dummy" />
+	</dependencies>
+	<extensions>
+		<!-- <extension name="damage" class="UnitDamage" /> -->
+		<extension name="interaction" class="MissionElementInteractionExt" >
+			<var name="tweak_data" value="copy_machine_smuggle" />
+		</extension>
+	</extensions>
+</unit>

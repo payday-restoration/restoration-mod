@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_str_prop_decal_graffiti_clans_heist" materials="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_ovengrill" />
+    
+	<bodies>
+		<body name="editor_body" enabled="true" template="editor">
+			<object name="rp_str_prop_decal_graffiti_clans_heist" />
+			<object name="c_box_00" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+	
+	<graphics>
+        <object enabled="true" name="g_g"/>
+    </graphics>
+</dynamic_object>

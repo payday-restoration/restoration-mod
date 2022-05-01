@@ -1,0 +1,10 @@
+<table>
+	<art1 file="art1/art1"/>
+	<art2 file="art2/art2"/>
+	<collision file="collision/collision"/>
+	<editor_only file="editor_only/editor_only"/>
+	<lights_underground_lab file="lights_underground_lab/lights_underground_lab"/>
+	<terrain file="terrain/terrain"/>
+	<whitebox file="whitebox/whitebox"/>
+	<world file="world/world"/>
+</table>

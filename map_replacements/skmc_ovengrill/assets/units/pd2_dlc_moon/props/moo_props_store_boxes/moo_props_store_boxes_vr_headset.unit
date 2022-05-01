@@ -1,0 +1,19 @@
+<unit type="moo" slot="1">
+	<network sync="spawn"/>
+	<object file="units/pd2_dlc_moon/props/moo_props_store_boxes/moo_props_store_boxes_vr_headset" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="hold_take_vr_headset" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="_ray_object_names" type="table" >
+				<var value="a_ray_object_1"/>
+			</var>
+			<var name="_global_event" value="pku_vr_headset" />
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="vr_headset" />
+		</extension>
+	</extensions>
+</unit>

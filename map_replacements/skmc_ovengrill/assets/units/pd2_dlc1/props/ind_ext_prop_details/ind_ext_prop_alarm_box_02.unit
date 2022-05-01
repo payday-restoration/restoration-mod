@@ -1,0 +1,6 @@
+<unit type="ind" slot="1" >
+    <object file="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_02" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="fixtures" decal_material="glass_breakable" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/fixtures/fixtures_df"/>
+    </material>
+</materials>

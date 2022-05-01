@@ -1,0 +1,85 @@
+<table name="skmc_fish">
+	<Localization default="english.txt" directory="loc"/>
+	<level ai_group_type="nypd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skmc_fish" intro_event="Play_loc_skm_intro" music_ext_start="heist" narrator="locke" wave_count="9">
+		<add file="levels/skmc_fish/add.xml"/>
+		<assets/>
+		<include directory="levels/skmc_fish">
+			<file file="world.world" type="generic_xml"/>
+			<file file="continents.continents" type="custom_xml"/>
+			<file file="mission.mission" type="custom_xml"/>
+			<file file="nav_manager_data.nav_data" type="generic_xml"/>
+			<file file="world_sounds.world_sounds" type="generic_xml"/>
+			<file file="world_cameras.world_cameras" type="custom_xml"/>
+			<file file="editor_only/editor_only.continent" type="custom_xml"/>
+			<file file="editor_only/editor_only.mission" type="generic_xml"/>
+			<file file="world/world.continent" type="custom_xml"/>
+			<file file="world/world.mission" type="generic_xml"/>
+			<file file="cover_data.cover_data" type="custom_xml"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_loc_skm_end_win"/>
+			<value_node value="Play_loc_skm_end_fail"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/dlcs/skm/job_skm"/>
+			<value_node value="packages/skm_sc_nypd"/>
+			<value_node value="levels/narratives/skm/skm_mus/world_sounds"/>
+			<value_node value="packages/lvl_fish"/>		
+			<value_node value="levels/narratives/continental/fish/world"/>
+			<value_node value="levels/narratives/continental/fish/world_sounds"/>
+			<value_node value="levels/narratives/continental/fish/collision/collision"/>
+			<value_node value="levels/narratives/continental/fish/world/world"/>
+			<value_node value="levels/narratives/continental/fish/temp/temp"/>
+			<value_node value="levels/narratives/continental/fish/basement/basement"/>
+			<value_node value="levels/narratives/continental/fish/art/art"/>
+			<value_node value="levels/narratives/continental/fish/editor_only/editor_only"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<narrative briefing_event="" contact="skirmish" id="skmc_fish" jc="50" region="street" max_mission_xp="135900" min_mission_xp="8000" icon="guis/dlcs/bro/textures/pd2/crimenet/yacht" load_screen="guis/dlcs/pic/textures/loading/job_yachtheist">
+		<chain>
+			<table dlc="spa" level_id="skmc_fish" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value=""/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="contact_continental1"/>
+		</crimenet_videos>
+		<debrief_event>
+			<value_node value=""/>
+		</debrief_event>
+        <date_added>
+            <value_node value="2018"/>
+            <value_node value="4"/>
+            <value_node value="23"/>
+        </date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+</table>

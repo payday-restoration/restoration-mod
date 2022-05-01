@@ -1,0 +1,6 @@
+<unit type="bnk" slot="1" >
+    <object file="units/payday2/architecture/bnk/bnk_int_split_connector_4m" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

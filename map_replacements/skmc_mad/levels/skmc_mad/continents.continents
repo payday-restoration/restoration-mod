@@ -1,0 +1,10 @@
+<table>
+	<art1 base_id="500000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art1" visible="true"/>
+	<art2 base_id="600000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art2" visible="true"/>
+	<collision base_id="400000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="collision" visible="false"/>
+	<editor_only base_id="200000" editor_only="true" enabled="true" enabled_in_simulation="true" locked="false" name="editor_only" visible="false"/>
+	<lights_underground_lab base_id="800000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="lights_underground_lab" visible="true"/>
+	<terrain base_id="700000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="terrain" visible="true"/>
+	<whitebox base_id="300000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="whitebox" visible="true"/>
+	<world base_id="100000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="world" visible="false"/>
+</table>

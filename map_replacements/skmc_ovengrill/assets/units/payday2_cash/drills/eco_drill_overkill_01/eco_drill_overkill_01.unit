@@ -1,0 +1,15 @@
+<unit type="eco" slot="1">
+	<object file="units/payday2_cash/drills/eco_drill_overkill_01/eco_drill_overkill_01"/>
+	<dependencies>
+		<depends_on effect="effects/payday2/economy/particles/equipment/eco_drill_sparks"/>
+		<depends_on bnk="soundbanks/menu_cash" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData"/>
+		<extension name="damage" class="UnitDamage"/>
+	</extensions>
+	<sounds>
+		<default_soundsource source="e_drill_particles"/>
+		<soundsource name="sound_drill_effect" source="e_drill_particles" />
+	</sounds>
+</unit>

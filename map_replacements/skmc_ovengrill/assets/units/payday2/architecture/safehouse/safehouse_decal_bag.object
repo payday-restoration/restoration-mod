@@ -1,0 +1,12 @@
+<dynamic_object>
+    <diesel orientation_object="rp_safehouse_decal_bag" materials="units/payday2/architecture/safehouse/safehouse_decal" />
+    <graphics>
+        <object enabled="true" name="g_decal" instance_struct="world_tm" />
+    </graphics>
+	<bodies>
+		<body name="static_body" enabled="true" template="editor">
+			<object name="rp_safehouse_decal_bag" />
+			<object name="c_box" collision_type="box" />
+		</body>
+	</bodies>
+</dynamic_object>

@@ -1,0 +1,42 @@
+<generic_scriptdata type="table">
+	<entry key="ambience_enabled" type="boolean" value="true"/>
+	<entry key="default_ambience" type="string" value="ambience_ext_big_city_day"/>
+	<entry key="default_environment" type="string" value="acoustics_outdoor_medium"/>
+	<entry key="default_occasional" type="string" value="occasionals_silent"/>
+	<entry key="sound_area_emitters" type="table">
+	</entry>
+	<entry key="sound_emitters" type="table">
+		<entry index="1" type="table">
+			<entry key="emitter_event" type="string" value="emitter_electric_power_box_01"/>
+			<entry key="name" type="string" value="sound_electrical_002"/>
+			<entry key="position" type="vector3" value="-750 1925 175"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="2" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_04"/>
+			<entry key="name" type="string" value="ac_hum_03"/>
+			<entry key="position" type="vector3" value="650 -450 275"/>
+			<entry key="rotation" type="quaternion" value="0.707107 0 0 -0.707107"/>
+		</entry>
+		<entry index="3" type="table">
+			<entry key="emitter_event" type="string" value=""/>
+			<entry key="name" type="string" value="sound_electrical_001"/>
+			<entry key="position" type="vector3" value="1000 1975 75"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="4" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_04"/>
+			<entry key="name" type="string" value="ac_hum_01"/>
+			<entry key="position" type="vector3" value="-350 1550 275"/>
+			<entry key="rotation" type="quaternion" value="0.707107 0 0 -0.707107"/>
+		</entry>
+		<entry index="5" type="table">
+			<entry key="emitter_event" type="string" value=""/>
+			<entry key="name" type="string" value="ac_hum_02"/>
+			<entry key="position" type="vector3" value="-250 750 275"/>
+			<entry key="rotation" type="quaternion" value="0.707107 0 0 -0.707107"/>
+		</entry>
+	</entry>
+	<entry key="sound_environments" type="table">
+	</entry>
+</generic_scriptdata>

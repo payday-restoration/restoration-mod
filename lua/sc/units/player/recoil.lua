@@ -233,14 +233,20 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 	local equipped_weapon = self._parent_unit and self._parent_unit:inventory() and self._parent_unit:inventory():equipped_unit()
 	if alive(equipped_weapon) then
 		local weap_base = equipped_weapon:base()
-		if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
-			speed = weap_base:fire_rate_multiplier()
+		if weap_base then
+			if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
+				speed = weap_base:fire_rate_multiplier()
+
+				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().fake_semi_anims then
+					redirect_name = Idstring("recoil_exit")
+				end
+			end
+			--[[
+			if speed and weap_base:weapon_tweak_data().anim_speed_multiplier then
+				speed = speed * weap_base:weapon_tweak_data().anim_speed_multiplier
+			end
+			--]]
 		end
-		--[[
-		if speed and weap_base:weapon_tweak_data().anim_speed_multiplier then
-			speed = speed * weap_base:weapon_tweak_data().anim_speed_multiplier
-		end
-		--]]
 	end
 	
 	self._anim_empty_state_wanted = false

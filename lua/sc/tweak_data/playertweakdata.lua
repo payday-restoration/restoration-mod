@@ -514,6 +514,27 @@ function PlayerTweakData:_init_ray()
 	self.stances.ray.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+
+local default_init_x_sr2 = PlayerTweakData._init_x_sr2
+function PlayerTweakData:_init_x_sr2()
+	default_init_x_sr2(self)
+	local pivot_shoulder_translation = Vector3(10.9257, 47.3309, -0.659333)
+	local pivot_shoulder_rotation = Rotation(-7.3371e-08, -8.32429e-06, -1.70755e-06)
+	local pivot_head_translation = Vector3(10.5, 48, -5)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.x_sr2.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.x_sr2.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	local pivot_head_translation = Vector3(10.5, 66, -2)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.x_sr2.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.x_sr2.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	local pivot_head_translation = Vector3(10.5, 45, -3)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.x_sr2.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.x_sr2.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
+
 Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
 	for wep_id, i in pairs(self.stances) do
 		if self.stances[ wep_id ] and self.stances[ wep_id ].steelsight then

@@ -69,7 +69,9 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"),
 	ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk"),
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                 	
+	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
+	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),                 
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk"),                 	
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
@@ -90,6 +92,9 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                     
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),   
+	
+	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
+	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"),   
 	
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk"),

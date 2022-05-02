@@ -49,9 +49,9 @@ Ravicale: Major contributions to player side code and balance.
 
 Teacyn: Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation of multiple alternate heist environments.
 
-Nelson01023: Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Creating various Minor Heist Edits.
+Nelson01023: Setting up many enemy accessories and adding support for many custom weapons. Improving a bunch of assets & making new ones. Creating various Minor Heist Edits.
 
-Sgt. Joe: Providing the basis for the Federales Beatcops & ze NYPD assets. Blue SWAT Goggles resource. 
+Sgt. Joe: Providing base models and textures for the Federales Beatcops & ze NYPD assets. 
 
 Iamgoofball: Creating the Voiceline Framework, contributing to the development of Captain Summers and his team, original Grenade Launcher NPC base. 
 
@@ -65,7 +65,7 @@ VxWolf: Creating the custom Restoration Mod soundtrack and voicing the OMNIA LPF
 
 Skwuruhl: fixing stance modifiers and making spread work better.
 
-Major Pyatosin: voicing the Nation Guard, Murky Medic, Vet Cop and Jackal.
+Major Pyatosin: voicing the US National Guard, Murky Medic, Vet Cop and Jackal.
 
 Whurr: Major heist edits.
 
@@ -79,7 +79,7 @@ Wekk: Telling us what LPF should mean and allowing us to implement "Less Clones,
 
 Hoppip: Created the Mind Blown graze rework, the prettier laser assets used for enemy damage buffs and the Streamlined Heisting framework. 
 
-Baddy: Major asset contributions.
+Baddy: Major asset contributions. Prettier Gensec Units.
 
 Hoxi: for ungodly numbers of fixes and general code improvements, and contributions to the original Grenade Launcher NPC base. Amazing work!
 
@@ -102,6 +102,8 @@ RedFlame: Fixed some iffy scripting for Framing Frame D3, Spawn delay fix, overa
 SonicSoapyBoi: Assisted with debugging, testing, and fixes. 
 
 Dorpenka: Updated Combat Harness viewmodel, chromatic aberration and civilian kill line fixes
+
+Rickerus: Providing assets for the ASU's head.
 
 Marshie: Russian localisation
 

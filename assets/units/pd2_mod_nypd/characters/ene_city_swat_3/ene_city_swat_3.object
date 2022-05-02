@@ -191,7 +191,7 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="false" material="steel_no_decal" />
+		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
 	</decal_surfaces>
 
 	<graphics>
@@ -220,19 +220,7 @@
 					<material materials="mtr_head_lod_2" />
 				</object>
 			</lod_object>
-
-			<lod_object name="lod_helmet">
-				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_helmet" max_distance="1000" />
-					<material materials="mtr_helmet_lod_1" max_distance="1500" />
-					<material materials="mtr_helmet_lod_2" />
-				</object>
-				<object name="g_helmet_lod2" 	enabled="true" lod="1" >
-					<material materials="mtr_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_helmet_lod_2" />
-				</object>
-			</lod_object>
-			
+						
 			<lod_object name="lod_glass">
 				<object name="g_glass" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
 					<material materials="mtr_glass" max_distance="1500" />

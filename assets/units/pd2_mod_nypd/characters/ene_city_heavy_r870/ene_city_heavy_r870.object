@@ -241,23 +241,19 @@
 			
 			<lod_object name="lod_mask">
 				<object name="g_helmet_lod3" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_heavy_helmet" max_distance="1000" />
-					<material materials="mtr_heavy_helmet_lod_1" max_distance="1500" />
-					<material materials="mtr_heavy_helmet_lod_2" />
+					<material materials="mtr_mask" max_distance="1000" />
+					<material materials="mtr_mask_lod_1" max_distance="1500" />
+					<material materials="mtr_mask_lod_2" />
 				</object>
 				<object name="g_helmet_lod4" 	enabled="true" lod="1" >
-					<material materials="mtr_heavy_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_heavy_helmet_lod_2" />
+					<material materials="mtr_mask" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_mask_lod_2" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_glass">
 				<object name="g_helmet_lod5" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
 					<material materials="mtr_glass" max_distance="1500" />
-					<material materials="mtr_glass_lod" />
-				</object>
-				<object name="g_helmet_lod6" 	enabled="true" lod="1" >
-					<material materials="mtr_glass" max_distance="0" />
 					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>

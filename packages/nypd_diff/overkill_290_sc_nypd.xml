@@ -117,13 +117,9 @@
 	<!--nypd textures-->
 	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
-	<texture			path="units/payday2/characters/shared_textures/helmets_city_df" />	
 	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
-	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />		
 	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
 	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />	
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" />
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" />	
 	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
@@ -133,10 +129,11 @@
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />		
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/helmets_atlas_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_fbi_body_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_city_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_city_body_nm" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/spook_heavy_df" />

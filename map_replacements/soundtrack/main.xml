@@ -47,6 +47,12 @@
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.2"/>
 		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
 	</HeistMusic>
+	<HeistMusic directory="sounds/thetakeoriginal" id="resmusic_thetakeoriginal" volume="0.7">
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>	
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
+		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
+	</HeistMusic>
 	<HeistMusic directory="sounds/ticktockalpha" id="resmusic_ticktockalpha" volume="0.7">
 		<event name="setup" source="stealth.ogg"/>	
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>

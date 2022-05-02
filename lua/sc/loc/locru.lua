@@ -862,7 +862,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_alex_1_zipline_desc"] = "Лебедка для быстрого переноса сумок",
 		
 		--Watchdogs Holdout
-		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиента — настоящая работа, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняла склад в доках, и они используют его как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы собираемся попасть туда, схватить дурёху и взять её в заложники. Мурки не могут позволить себе потерять её, они заплатят за её освобождение, может быть, вышеупомянутой и весьма ценной добычей. Что скажете, банда?"
+		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиенте — хорошая добыча, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняли портовый склад, который они используют как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы проникнем туда и возьмём девку в заложники. Мурки не могут позволить себе потерять её и они заплатят за её освобождение, может быть даже вышеупомянутой и весьма ценной добычей. Что скажете, банда?"
 	})
 
 	local job = Global.level_data and Global.level_data.level_id
@@ -1038,7 +1038,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_thanatos_sc_desc"] = "Крупнокалиберная винтовка, обычно используется против небольшой техники. Использовать её против органических целей, вероятно, военное преступление.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ, ТИТАНОВЫЕ ЩИТЫ И ТОНКИЕ СТЕНЫ.",
 
 		--Galant--
-		["bm_galant_sc_desc"] = "Классическая винтовка времён Второй мировой. Надёжная, точная и быстро перезаряжается.\n\nПерезаряжается быстрее, если магазин пуст.",
+		["bm_galant_sc_desc"] = "Классическая винтовка времён Второй мировой. Надёжная, точная и быстро перезаряжается.\n\nПерезаряжается быстрее, если обойма пуста. Наносит 80% своего урона по броне.",
 
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Бежевый корпус",
@@ -1077,39 +1077,57 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "ИСПОЛЬЗУЙТЕ, ЧТОБЫ УБРАТЬ БОНУСЫ, ПОЛУЧЕННЫЕ ОТ СКИНОВ.",
 
 		--Little Friend--
-		["bm_m203_weapon_sc_desc_pc"] = "Нажмите $BTN_BIPOD чтобы переключиться на подствольный гранатомёт.",
-		["bm_m203_weapon_sc_desc"] = "Удерживайте $BTN_BIPOD чтобы переключиться на подствольный гранатомёт.",
+		["bm_m203_weapon_sc_desc_pc"] = "Старшая сестра личного AMR-16 Лица со шрамом.\n\nНаносит 80% урона по броне. Нажмите $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
+		["bm_m203_weapon_sc_desc"] = "Старшая сестра личного AMR-16 Лица со шрамом.\n\nНаносит 80% урона по броне. Удерживайте $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
+
+		--ASS VAL--
+		["bm_asval_sc_desc"] = "Тишина и покой.\n\nИмеет встроенный глушитель и наносит 80% урона по броне.",
+
+		--КЕПЧУК--
+		["bm_groza_sc_desc_pc"] = "Буллпап-родственник винтовки Valkyria, любящий взрывы.\n\nНаносит 80% урона по броне. Нажмите $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
+		["bm_groza_sc_desc"] = "Буллпап-родственник винтовки Valkyria, любящий взрывы.\n\nНаносит 80% урона по броне. Удерживайте $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
 
 		--Mosin--
-		["bm_mosin_sc_desc"] = "Классическая мощная винтовка со скользящим затвором. Это оружие перезаряжается обоймами по 5 патронов.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И ТОНКИЕ СТЕНЫ",
+		["bm_mosin_sc_desc"] = "Классическая мощная винтовка со скользящим затвором. Это оружие перезаряжается обоймами по 5 патронов и может пробивать броню, щиты и тонкие стены.",
 		["bm_wp_upg_a_tranq_mosin"] = "Транквилизаторы",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "Слабые патроны, которые наносят урон через время и могут отравить врагов.\n\nFor true oblivion, The End.",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nСлабые патроны, которые наносят урон через время и могут отравить врагов.",
 
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness. ",
 
 		--Broomstick--
-		["bm_c96_sc_desc"] = "Инновационный немецкий автоматический пистолет. Может вести полностью автоматический огонь с бешеной скоростью, но очень быстро опустошит ваши запасы патронов.\nЭто оружие перезаряжается обоймами по 10 патронов.",
+		["bm_c96_sc_desc"] = "Инновационный немецкий пистолет, который модифицировали под автоматический огонь.\n\nЭто оружие перезаряжается обоймами по десять патронов.",
 
 		--M4/CAR-4
 		["bm_menu_sc_m4_desc"] = "Удобная, компактная, смертоносная. Популярная у современных армий винтовка под калибр 5.56.",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 25% при стрельбе от бедра.",		
+		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nНизкая точность, но отдача уменьшена на 25% при стрельбе от бедра.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Уменьшает Скорострельность до 800",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.\n\nThe greatest handgun ever made.",		
+		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nМожет пробивать броню, щиты и тонкие стены.",		
+		
+		--FAL
+		["bm_fal_sc_desc"] = "Правая рука свободного мира.\n\nНаносит 80% урона по броне.",	
+
+		--G3
+		["bm_g3_sc_desc"] = "Старший брат Compact-5.\n\nНаносит 80% урона по броне.",	
+
+		--TTI(TTY)
+		["bm_tti_sc_desc"] = "Личное оружие Уика. Говорят, где-то в интернете можно найти видео, где он выполняет контракт с этой винтовкой.\n\nМожет пробивать броню, щиты и тонкие стены.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "СКОРОСТЬ УМЕНЬШЕНА НА ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " КОГДА ОРУЖИЕ В РУКАХ",
+		["bm_lmg_generic_desc"] = "Теряет точность при стрельбе от бедра.",
 		["bm_ap_weapon_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.",
 		["bm_ap_armor_weapon_sc_desc"] = "Может пробивать броню.",
+		["bm_ap_armor_80_weapon_sc_desc"] = "Наносит 80% урона по броне.",
 		["bm_heavy_ap_weapon_sc_desc"] = "Может пробивать броню, щиты, титановые щиты и тонкие стены.",
 		["bm_ap_2_weapon_sc_desc"] = "Может пробивать броню. Стрелы можно подобрать обратно. Чем дольше держать тетиву, тем выше будет дальность.",
 		["bm_ap_3_weapon_sc_desc"] = "Может пробивать броню. Стрелы можно подобрать обратно.",
-		["bm_40mm_weapon_sc_desc"] = "Нажмите $BTN_GADGET чтобы поднять прицел.",
+		["bm_40mm_weapon_sc_desc"] = "Нажмите $BTN_GADGET чтобы поднять прицел.\n\nПрицел выверен на 30 метров.",
 		["bm_rocket_launcher_sc_desc"] = "Ракеты мгновенно уничтожают турели.",
 		["bm_quake_shotgun_sc_desc"] = "Стреляет из двух стволов сразу, удваивая количество дробинок.",
 		["bm_hx25_buck_sc_desc"] = "Выстреливает 12 дробинок с большим разбросом.\n\nИспользует навыки гранатометов.",
@@ -1119,7 +1137,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "Характеристики этого оружия сгенерированны автоматически и могут не соответствовать видению автора или балансу.\n\nКОГДА ОРУЖИЕ В РУКАХ, ВАША СКОРОСТЬ УМЕНЬШЕНА## НА 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "Характеристики этого модуля автоматически убраны, так как генерация характеристик для модулей пока не реализована.",
 		["bm_tranq_maxim_sc_desc"] = "Имеет встроенный глушитель.\n\nСняряжен транквилизаторами, которые наносят урон через время.",
-		["bm_m134_rof_init_sc_desc"] = "Отстреливает первые несколько пуль в два раза быстрее после каждого нажатия курка.",
+		
+		--M134
+		["bm_m134_sc_desc"] = "The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\n\nРаскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.",
+		
+		--Microgun
+		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nРаскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.",
+
+		--AN-94/92
+		["bm_an94_rof_init_sc_desc"] = "Первые две пули будут отстреляны в три раза быстрее при каждом нажатии курка.",
+
+		--NO SUPPORT
+		["bm_do_not_use"] = "ЕСЛИ У ВАС ЕСТЬ ЭТО В ИНВЕНТАРЕ, НЕ ЭКИПИРУЙТЕ.\n\nНЕТ ВОЗМОЖНОСТИ ОТБАЛАНСИРОВАТЬ НА ДАННЫЙ МОМЕНТ",
 		
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
@@ -1242,9 +1271,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_shotgun"] = "Дробовики",
 		["menu_akimbo_shotgun"] = "Парные дробовики",
 		--
-		["menu_light_shot"] = "Легкие дробовики",
-		["menu_heavy_shot"] = "Тяжелые дробовики",
-		["menu_break_shot"] = "Ружья",
+		["menu_light_shot"] = "Автоматические дробовики",
+		["menu_heavy_shot"] = "Легкие дробовики",
+		["menu_break_shot"] = "Тяжелые дробовики",
 		
 		["menu_smg"] = "ПП",
 		["menu_akimbo_smg"] = "Парные ПП",
@@ -1383,6 +1412,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_short"] = "Микро-ствол",
 		["bm_wp_g3_m_psg"] = "Магазин 'Präzision'",
 		["bm_wp_shak12_body_vks"] = "Укреплённый корпус",
+		
+		--VMP HK416c Fixed Stock
+		["bm_wp_tecci_s_minicontra_alt"] = "Укрепленный приклад SG",
 
 		["bm_w_beck_desc"] = "Самый популярный дробовик в криминальном мире вернулся в погоне за былой славой. Он использовался в оригинальной волне преступности 2011-го года и доказал свою надёждность в практически любой близкой конфронтации.",
 
@@ -1420,10 +1452,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Винтовка Krinkov",
 		["bm_w_x_akmsu"] = "Парные винтовки Krinkov",
 		["bm_w_hajk"] = "Винтовка CR 805B",
+		["bm_w_tti"] = "Винтовка Contractor .308",
+		["bm_w_groza"] = "Винтовка KETCHNOV Byk-4",
 		
 		["bm_w_fmg9"] = "Автоматический пистолет Wasp-DS",
 
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
+		
+		["bm_w_contraband"] = "Винтовка Bigger Friend 7.62",
 		
 		["bm_w_m95"] = "Крупнокалиберная винтовка  Thanatos .50 cal",
 		["bm_w_m107cq"] = "Крупнокалиберная винтовка Mors .50 cal",
@@ -1474,6 +1510,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_menu_ro_modifier"] = "Revolver Ocelot",
 			["bm_menu_ro_charm"] = "Revolver Ocelot",
 			["bm_menu_ro_grip"] = "Revolver Ocelot",
+
+
+			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
 		})
 	end
 	
@@ -1587,7 +1626,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_interact_gage_assignment_take"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ЗАБРАТЬ ПОСЫЛКУ ГЕЙДЖА",
 
 		["far_repair_sentry_macro"] = "Турель критически повреждена - требуется ремонт.",
-		["fixing_sentry_macro"] = "Прогресс ремонта: $AMMO_LEFT%",
+		["fixing_sentry_macro"] = "Прогресс ремонта: $AMMO_LEFT",
 		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
 		["repair_sentry_macro"] = " чтобы начать авто-починку турели",
 		["pickup_sentry_macro"] = " чтобы забрать турель.\n$AMMO_LEFT патронов осталось. ", --Gets % health remaining appended to the end.
@@ -1973,7 +2012,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "Лидерство",
-			["menu_stable_shot_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nПистолеты-пулемёты и пулемёты получают ##4## стабильности.\n\nПИКОВЫЙ: ##$pro##\nВаша стабильность и стабильность вашей команды увеличена на ##4.##",
+			["menu_stable_shot_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nПистолеты-пулемёты и пулемёты получают ##2## стабильности.\n\nПИКОВЫЙ: ##$pro##\nВаша стабильность и стабильность вашей команды увеличена на ##2.##",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "Пулеметная хватка",
@@ -2013,7 +2052,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Ружьевой импульс",
-			["menu_shotgun_impact_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nДробовики и огнемёты получают ##4## стабильности.\n\nПИКОВЫЙ: ##$pro##\nДробивики получают ##3## дополнительные дробинки.\n\nНе работает на бронебойные и разрывные пули.",
+			["menu_shotgun_impact_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nДробовики и огнемёты получают ##2## стабильности.\n\nПИКОВЫЙ: ##$pro##\nДробивики получают ##3## дополнительные дробинки.\n\nНе работает на бронебойные и разрывные пули.",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "Охотник на голубей",
@@ -2236,11 +2275,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Меткий стрелок",
-		["menu_discipline_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВинтовки получают ##4## стабильности.\n\nПИКОВЫЙ: ##$pro##\nУбийства в голову из винтовок в режиме одиночной стрельбы увеличивают вашу скорострельность на ##20%## в течение ##10## секунд.",
+		["menu_discipline_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВинтовки получают ##2## стабильности.\n\nПИКОВЫЙ: ##$pro##\nУбийства в голову из винтовок в режиме одиночной стрельбы увеличивают вашу скорострельность на ##20%## в течение ##10## секунд.",
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "Килмер",
-		["menu_heavy_impact_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВинтовки получают ##4## точности.\n\nПИКОВЫЙ: ##$pro##\nВинтовки перезаряжаются на ##25%## быстрее.",
+		["menu_heavy_impact_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВинтовки получают ##2## точности.\n\nПИКОВЫЙ: ##$pro##\nВинтовки перезаряжаются на ##25%## быстрее.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Взрыв мозга",
@@ -2296,7 +2335,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "Профессионал",
-		["menu_silence_expert_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВы получаете ##4## точности с оружием с глушителем.\n\nПИКОВЫЙ: ##$pro##\nОсобые враги, убитые оружием с глушителем, дают дополнительную коробочку патронов.",
+		["menu_silence_expert_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВы получаете ##2## точности с оружием с глушителем.\n\nПИКОВЫЙ: ##$pro##\nОсобые враги, убитые оружием с глушителем, дают дополнительную коробочку патронов.",
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Удар исподтишка",
@@ -2312,7 +2351,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Эквилибриум",
-		["menu_equilibrium_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nСтабильность питолетов для вас и вашей команды увеличена на ##4.##\n\nПИКОВЫЙ: ##$pro##\nВы убираете и достаёте пистолеты на ##100%## быстрее.",
+		["menu_equilibrium_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nСтабильность пистолетов для вас и вашей команды увеличена на ##2.##\n\nПИКОВЫЙ: ##$pro##\nВы убираете и достаёте пистолеты на ##100%## быстрее.",
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Пистолетный маньяк",

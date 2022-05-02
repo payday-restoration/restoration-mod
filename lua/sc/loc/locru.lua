@@ -862,7 +862,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_alex_1_zipline_desc"] = "Лебедка для быстрого переноса сумок",
 		
 		--Watchdogs Holdout
-		["heist_skm_watchdogs_stage2_briefing"] = "Mia Calienté is a real piece of work, friends. For years she's been the brains behind the Murkywater's operations in DC. Not too long ago, Murkywater took over a warehouse at the docks and they've using it as an additional distribution point. Our target is there checking in on some loot recently plundered from abroard. We're going to get in there, grab the dwankie and take her hostage. The Murkies can't afford to lose her, they will pay for her release, maybe with the aforementioned and rather valuable plunder, what do you say gang?"
+		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиента — настоящая работа, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняла склад в доках, и они используют его как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы собираемся попасть туда, схватить дурёху и взять её в заложники. Мурки не могут позволить себе потерять её, они заплатят за её освобождение, может быть, вышеупомянутой и весьма ценной добычей. Что скажете, банда?"
 	})
 
 	local job = Global.level_data and Global.level_data.level_id

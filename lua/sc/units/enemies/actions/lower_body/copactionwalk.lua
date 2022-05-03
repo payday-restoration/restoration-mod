@@ -1821,7 +1821,7 @@ function CopActionWalk:on_nav_link_unregistered(element_id)
 	end
 end
 
-Hooks:PostHook(CopActionWalk, "_advance_simplified_path", "REAI_advance_simplified_path", function(self)
+Hooks:PostHook(CopActionWalk, "_advance_simplified_path", "res_advance_simplified_path", function(self)
 	if self._nav_seg and (#self._simplified_path == 2 or managers.navigation:get_nav_seg_from_pos(self._nav_point_pos(self._simplified_path[1]), false) == self._nav_seg) then
 		self._nav_seg = nil
 		self._intermediate_action_complete = true

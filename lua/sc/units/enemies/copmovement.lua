@@ -382,6 +382,7 @@ function CopMovement:do_asu(self)
 			local cops_to_buff = tweak_data.character:enemy_list()
 			local buff_range = tweak_data.asu_buff_radius or 800
 			local asu_vo = "asu_command"
+			local damage_buff = tweak_data.asu_damage_buff or 10
 						
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), buff_range, managers.slot:get_mask("enemies"))
 			if enemies then
@@ -403,7 +404,7 @@ function CopMovement:do_asu(self)
 														
 						enemy:base():enable_asu_laser(true)
 						
-						enemy:base():add_buff("base_damage", 10 * 0.01)
+						enemy:base():add_buff("base_damage", damage_buff * 0.01)
 					end
 				end
 			end

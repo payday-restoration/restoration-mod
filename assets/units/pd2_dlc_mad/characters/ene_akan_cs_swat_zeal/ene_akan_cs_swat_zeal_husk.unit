@@ -4,7 +4,6 @@
 	<object file="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" />
 
 	<dependencies>
-		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" />
 		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" />
 	</dependencies>
 
@@ -12,7 +11,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="swat" />
-			<var name="_default_weapon_id" value="ak_blue" />
+			<var name="_default_weapon_id" value="akmsu_smg" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

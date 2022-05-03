@@ -259,10 +259,6 @@ local weapons_map = {
 	[Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"):key()] = {"m1911_npc", "mp5", "m4"},
 
-	--Blue SWAT Weapon Changes (test)--
-	[Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"):key()] = "m4_blue",
-	[Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"):key()] = "m4_blue",
-
 	--Yellow Heavy SWAT Weapon Changes (test)
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"):key()] = "ak102",
 

@@ -532,7 +532,15 @@ tweak_data.medic.cooldown = 90
 tweak_data.medic.radius = 400
 tweak_data.medic.lpf_radius = 800
 
+--ASU damage bonus (Titan HRT)
 tweak_data.asu_buff_radius = 800
+if difficulty_index <= 6 then
+	tweak_data.asu_damage_buff = 10
+elseif difficulty_index == 5 then
+	tweak_data.asu_damage_buff = 15
+else
+	tweak_data.asu_damage_buff = 20
+end	
 
 if difficulty_index <= 4 then
 	tweak_data.medic.doc_radius = 1500

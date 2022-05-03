@@ -210,40 +210,8 @@ function CopDamage:_spawn_head_gadget(params)
 		--yes this is all necessary
 		sound_ext:play("knife_equip", nil, nil)
 		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
 		sound_ext:play("knife_hit_gen", nil, nil)
 		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knife_hit_air", nil, nil)
-		sound_ext:play("knife_hit_air", nil, nil)
-		sound_ext:play("knife_hit_air", nil, nil)
-		sound_ext:play("knife_hit_air", nil, nil)
-		sound_ext:play("knife_hit_air", nil, nil)
-		sound_ext:play("knife_hit_air", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
 		sound_ext:play("knuckles_hit_gen", nil, nil)
 		sound_ext:play("knuckles_hit_gen", nil, nil)
 	end
@@ -844,9 +812,8 @@ function CopDamage:damage_bullet(attack_data)
 				position = attack_data.col_ray.position,
 				normal = attack_data.col_ray.ray
 			})			
-			--Fucking loud, can be subject to change. Just the only sound ID I found on short notice
-			--new sound pls
-			--self._unit:sound():play("swatturret_weakspot_hit", nil, nil)
+			--new sound below
+			self._unit:sound():play("knife_equip", nil, nil)
 		
 			return
 		end

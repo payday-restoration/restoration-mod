@@ -18,14 +18,7 @@
 		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" target_type="sequence_manager" merge_mode="script_merge"/>	-->
-		
-		<!-- i'm not recompiling every single fucking sequence manager for these guys, fuck off i already dealt with the modded ones-->
-		
-		<!--normal bulldozers-->
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3" target_type="sequence_manager" merge_mode="script_merge"/>				
-						
+										
 		<!-- russian bulldozers-->
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" target_type="sequence_manager" merge_mode="script_merge"/>				
@@ -36,12 +29,6 @@
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" target_type="sequence_manager" merge_mode="script_merge"/>
 						
-		<!--policia federal bulldozers-->				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun" target_type="sequence_manager" merge_mode="script_merge"/>
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale" target_type="sequence_manager" merge_mode="script_merge"/>		
 	</ScriptMods>	
 	
     <Hooks directory="lua">

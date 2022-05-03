@@ -246,7 +246,7 @@ function CopActionWalk:_init()
 end
 
 function CopActionWalk:append_path(path, nav_seg)
-	if self._end_of_path and not self._next_is_nav_link or self._action_desc.path_simplified then
+	if (self._end_of_path or self._end_of_curved_path) and not self._next_is_nav_link or self._action_desc.path_simplified then
 		return
 	end
 
@@ -273,7 +273,6 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(self._simplified_path, 2, path[1])
 	end
 
-	self._end_of_curved_path = nil
 	self._nav_seg = nav_seg
 
 	self._unit:brain():add_pos_rsrv("move_dest", {

@@ -245,6 +245,45 @@ function CopActionWalk:_init()
 	return true
 end
 
+function CopActionWalk:append_path(path, nav_seg)
+	if self._end_of_path and not self._next_is_nav_link or self._action_desc.path_simplified then
+		return
+	end
+
+	-- Don't create a new table for no reason, iterate over the existing one
+	for i = 1, #path do
+		local nav_point = path[i]
+		if nav_point.x then
+			path[i] = mvec3_cpy(nav_point) -- copy the vectors here instead, so _calculate_simplified_path won't do a bunch of redundant copies past the first iteration
+		elseif alive(nav_point) then
+			path[i] = {element = nav_point:script_data().element, c_class = nav_point}
+		else
+			return false
+		end
+	end
+
+	for i = 1, #path do
+		table_insert(self._simplified_path, path[i])
+	end
+
+	self._calculate_simplified_path(nil, self._simplified_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
+
+	-- problematic if it only has 2 entries, so append the first navpoint of the added path
+	if #self._simplified_path == 2 then
+		table_insert(self._simplified_path, 2, path[1])
+	end
+
+	self._end_of_curved_path = nil
+	self._nav_seg = nav_seg
+
+	self._unit:brain():add_pos_rsrv("move_dest", {
+		radius = 30,
+		position = mvec3_cpy(path[#path]) -- last entry should never be a navlink
+	})
+
+	return true
+end
+
 local switch_table = {["stand"] = "crouch", ["crouch"] = "stand"}
 function CopActionWalk:_sanitize()
 	local anim_data = self._ext_anim
@@ -1781,6 +1820,15 @@ function CopActionWalk:on_nav_link_unregistered(element_id)
 		end
 	end
 end
+
+Hooks:PostHook(CopActionWalk, "_advance_simplified_path", "REAI_advance_simplified_path", function(self)
+	if self._nav_seg and (#self._simplified_path == 2 or managers.navigation:get_nav_seg_from_pos(self._nav_point_pos(self._simplified_path[1]), false) == self._nav_seg) then
+		self._nav_seg = nil
+		self._intermediate_action_complete = true
+		self._unit:brain():action_complete_clbk(self)
+		self._intermediate_action_complete = false
+	end
+end)
 
 function CopActionWalk:_husk_needs_speedup()
 	if self._ext_movement._queued_actions and next_g(self._ext_movement._queued_actions) then

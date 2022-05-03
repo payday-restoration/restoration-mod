@@ -40,7 +40,7 @@ end
 
 
 -- Sanity check for rare follow_unit crash
-Hooks:PreHook(CopLogicTravel, "_begin_coarse_pathing", "sh__begin_coarse_pathing", function (data)
+Hooks:PreHook(CopLogicTravel, "_begin_coarse_pathing", "sh__begin_coarse_pathing", function(data, my_data)
 	my_data.processing_coarse_path = true -- otherwise the pathing results callback will cause a stack overflow if the coarse path is returned immediately
 
 	if data.objective.follow_unit and not alive(data.objective.follow_unit) then

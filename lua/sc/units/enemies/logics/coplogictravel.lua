@@ -22,12 +22,27 @@ CopLogicTravel.on_area_safety = CopLogicIdle.on_area_safety
 Hooks:PostHook(CopLogicTravel, "enter", "sh_enter", CopLogicTravel.upd_advance)
 
 function CopLogicTravel.on_pathing_results(data)
-	CopLogicTravel.upd_advance(data)
+	local my_data = data.internal_data
+	if my_data.coarse_path and my_data.advancing then
+		CopLogicTravel._upd_pathing(data, my_data)
+
+		if my_data.advance_path and my_data.advancing:append_path(my_data.advance_path, my_data.coarse_path[my_data.coarse_path_index + 1][1]) then
+			my_data.advance_path = nil
+
+			if my_data.coarse_path_index >= #my_data.coarse_path - 2 and data.objective.rot then
+				my_data.advancing._end_rot = data.objective.rot
+			end
+		end
+	else
+		CopLogicTravel.upd_advance(data)
+	end
 end
 
 
 -- Sanity check for rare follow_unit crash
 Hooks:PreHook(CopLogicTravel, "_begin_coarse_pathing", "sh__begin_coarse_pathing", function (data)
+	my_data.processing_coarse_path = true -- otherwise the pathing results callback will cause a stack overflow if the coarse path is returned immediately
+
 	if data.objective.follow_unit and not alive(data.objective.follow_unit) then
 		data.objective.follow_unit = nil
 	end
@@ -211,89 +226,26 @@ function CopLogicTravel._get_pos_behind_unit(data, unit, min_dis, max_dis)
 	return fallback_pos or unit_pos
 end
 
-
--- Take the direct path if possible and immediately start pathing instead of waiting for the next update (thanks to RedFlame)
-function CopLogicTravel._check_start_path_ahead(data)
-	local my_data = data.internal_data
-
-	if my_data.processing_advance_path then
-		return
-	end
-
-	local coarse_path = my_data.coarse_path
-	local next_index = my_data.coarse_path_index + 2
-	local total_nav_points = #coarse_path
-
-	if next_index > total_nav_points then
-		return
-	end
-
-	local to_pos = data.logic._get_exact_move_pos(data, next_index)
-	local from_pos = data.pos_rsrv.move_dest.position
-
-	if math_abs(from_pos.z - to_pos.z) < 100 and not managers.navigation:raycast({allow_entry = false, pos_from = from_pos, pos_to = to_pos}) then
-		my_data.advance_path = {
-			mvec3_copy(from_pos),
-			to_pos
-		}
-
-		return
-	end
-
-	my_data.processing_advance_path = true
-	local prio = data.logic.get_pathing_prio(data)
-	local nav_segs = CopLogicTravel._get_allowed_travel_nav_segs(data, my_data, to_pos)
-
-	data.unit:brain():search_for_path_from_pos(my_data.advance_path_search_id, from_pos, to_pos, prio, nil, nav_segs)
-end
-
-function CopLogicTravel._chk_start_pathing_to_next_nav_point(data, my_data)
-	if not CopLogicTravel.chk_group_ready_to_move(data, my_data) then
-		return
-	end
-
-	local from_pos = data.unit:movement():nav_tracker():field_position()
-	local to_pos = CopLogicTravel._get_exact_move_pos(data, my_data.coarse_path_index + 1)
-
-	if math_abs(from_pos.z - to_pos.z) < 100 and not managers.navigation:raycast({allow_entry = false, pos_from = from_pos, pos_to = to_pos}) then
-		my_data.advance_path = {
-			mvec3_copy(from_pos),
-			to_pos
-		}
-
-		-- If we don't have to wait for the pathing results, immediately start advancing
-		CopLogicTravel._chk_begin_advance(data, my_data)
-		if my_data.advancing and my_data.path_ahead then
-			CopLogicTravel._check_start_path_ahead(data)
-		end
-
-		return
-	end
-
-	my_data.processing_advance_path = true
-	local prio = data.logic.get_pathing_prio(data)
-	local nav_segs = CopLogicTravel._get_allowed_travel_nav_segs(data, my_data, to_pos)
-
-	data.unit:brain():search_for_path(my_data.advance_path_search_id, to_pos, prio, nil, nav_segs)
-end
-
 function CopLogicTravel.action_complete_clbk(data, action)
 	local my_data = data.internal_data
 	local action_type = action:type()
 	if action_type == "walk" then
 		local update = false
+		local expired = action:expired() or action._intermediate_action_complete
 		if not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
 			update = true -- don't want to update travel logic for a walk action from a previous logic
 
-			if action:expired() then
+			if expired then
 				my_data.coarse_path_index = my_data.coarse_path_index + 1
 			end
 		end
 
-		my_data.advancing = nil
+		if not action._intermediate_action_complete then
+			my_data.advancing = nil
+		end
 
 		if my_data.moving_to_cover then
-			if action:expired() then
+			if expired then
 				if my_data.best_cover then
 					managers.navigation:release_cover(my_data.best_cover[1])
 				end
@@ -333,7 +285,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 			end
 		end
 
-		if not action:expired() then
+		if not expired then
 			if my_data.processing_advance_path then
 				local pathing_results = data.pathing_results
 
@@ -351,6 +303,8 @@ function CopLogicTravel.action_complete_clbk(data, action)
 		if update then 
 			if my_data.coarse_path_index >= #my_data.coarse_path then
 				CopLogicTravel._on_destination_reached(data) -- we're at the destination, no need to wait for cover_wait_t or other things
+			elseif action._intermediate_action_complete then
+				CopLogicTravel._check_start_path_ahead(data)
 			elseif data.logic.on_pathing_results then
 				data.logic.on_pathing_results(data) -- update the logic, can't just call upd_advance as other logics re-use action_complete_clbk
 			end
@@ -381,10 +335,6 @@ function CopLogicTravel.action_complete_clbk(data, action)
 		end
 	end
 end
-
-Hooks:PreHook(CopLogicTravel, "_begin_coarse_pathing", "res_begin_coarse_pathing", function(data, my_data)
-	my_data.processing_coarse_path = true -- otherwise the pathing results callback will cause a stack overflow if the coarse path is returned immediately
-end)
 
 --chatter below
 local killdapowa = {

@@ -236,7 +236,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 		if not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
 			update = true -- don't want to update travel logic for a walk action from a previous logic
 
-			if expired or data.unit:movement():nav_tracker():nav_segment() == my_data.coarse_path[my_data.coarse_path_index + 1][1] then
+			if expired or my_data.coarse_path_index <= #my_data.coarse_path - 2 and data.unit:movement():nav_tracker():nav_segment() == my_data.coarse_path[my_data.coarse_path_index + 1][1] then
 				my_data.coarse_path_index = my_data.coarse_path_index + 1
 			end
 		end

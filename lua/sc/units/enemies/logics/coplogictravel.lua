@@ -231,16 +231,17 @@ function CopLogicTravel.action_complete_clbk(data, action)
 	local action_type = action:type()
 	if action_type == "walk" then
 		local update = false
-		local expired = action:expired() or action._intermediate_action_complete
+		local intermediate_complete = action._intermediate_action_complete
+		local expired = action:expired() or intermediate_complete
 		if not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
 			update = true -- don't want to update travel logic for a walk action from a previous logic
 
-			if expired then
+			if expired or data.unit:movement():nav_tracker():nav_segment() == my_data.coarse_path[my_data.coarse_path_index + 1][1] then
 				my_data.coarse_path_index = my_data.coarse_path_index + 1
 			end
 		end
 
-		if not action._intermediate_action_complete then
+		if not intermediate_complete then
 			my_data.advancing = nil
 		end
 
@@ -303,7 +304,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 		if update then 
 			if my_data.coarse_path_index >= #my_data.coarse_path then
 				CopLogicTravel._on_destination_reached(data) -- we're at the destination, no need to wait for cover_wait_t or other things
-			elseif action._intermediate_action_complete then
+			elseif intermediate_complete then
 				CopLogicTravel._check_start_path_ahead(data)
 			elseif data.logic.on_pathing_results then
 				data.logic.on_pathing_results(data) -- update the logic, can't just call upd_advance as other logics re-use action_complete_clbk

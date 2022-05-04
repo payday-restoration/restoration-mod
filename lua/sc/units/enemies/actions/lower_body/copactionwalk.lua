@@ -246,8 +246,8 @@ function CopActionWalk:_init()
 end
 
 function CopActionWalk:append_path(path, nav_seg)
-	if (self._end_of_path or self._end_of_curved_path) and not self._next_is_nav_link or self._action_desc.path_simplified then
-		return
+	if self._end_of_path and not self._next_is_nav_link or self._action_desc.path_simplified then
+		return false
 	end
 
 	-- Don't create a new table for no reason, iterate over the existing one
@@ -266,6 +266,10 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(self._simplified_path, path[i])
 	end
 
+	if not self._simplified_path[1].x then -- in the middle of a navlink animation
+		self._simplified_path[1] = self._simplified_path[1].c_class:end_position()
+	end
+
 	self._calculate_simplified_path(nil, self._simplified_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
@@ -273,6 +277,12 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(self._simplified_path, 2, path[1])
 	end
 
+	-- re-add the destination of our curve path if it was removed
+	if self._curve_path and self._simplified_path[2] ~= self._curve_path[#self._curve_path] then
+		table_insert(self._simplified_path, 2, self._curve_path[#self._curve_path])
+	end
+
+	self._end_of_curved_path = nil
 	self._nav_seg = nav_seg
 
 	self._unit:brain():add_pos_rsrv("move_dest", {

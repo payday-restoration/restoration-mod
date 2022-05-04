@@ -12380,9 +12380,17 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			spawn = {
 				{
 					unit = "TIT_tank",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.TIT_tank,
+					rank = 3
+				},
+				{
+					unit = "TIT_tank",
 					freq = 0.5,
 					amount_min = 1,
-					amount_max = 2,
+					amount_max = 1,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},

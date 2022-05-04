@@ -7291,34 +7291,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		is_captain = true
 	}
-	--ASU units that spawn with Winters on DW and above
-	self.unit_categories.Phalanx_asu = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			},					
-			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			},
-			federales = {
-				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			},				
-			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			},
-			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-			}				
-		},
-		access = access_type_all,
-		is_captain = true
-	}
 	--Titan Bravo Snipers that spawn with Winters on the 9th wave in HO
 	self.unit_categories.Bravo_Sniper = {
 		unit_types = {
@@ -10828,15 +10800,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support"
-		},	
-		Cap_winters_minion_asu = { --;) 
-			"provide_coverfire",
-			"provide_support",
-			"smoke_grenade",
-			"flash_grenade",
-			"flank",
-			"shield_cover"
-		},
+		},		
 		--Old Winters
 		Phalanx_minion = {
 			"charge",
@@ -13121,7 +13085,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}					
 			}
 		}	
-	elseif difficulty_index == 6 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {5, 5},
 			spawn = {
@@ -13142,40 +13106,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}				
 			}
-		}	
-	elseif difficulty_index == 7 then
-		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {7, 7},
-			spawn = {
-				{
-					unit = "Phalanx_vip_new",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.Cap_winters,
-					rank = 1
-				},
-				{
-					unit = "Phalanx_minion_new",
-					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
-					tactics = self._tactics.Cap_winters_minion,
-					rank = 2
-				},
-				{
-					unit = "Phalanx_asu",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_winters_minion_asu,
-					rank = 2
-				}				
-			}
-		}
+		}				
 	else
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {9, 9},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -13199,14 +13133,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 2,
 					amount_max = 2,
 					tactics = self._tactics.Cap_winters_minion_sniper,
-					rank = 2
-				},
-				{
-					unit = "Phalanx_asu",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_winters_minion_asu,
 					rank = 2
 				}
 			}
@@ -15826,7 +15752,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	}	
 	
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
-			amount = {9, 9},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15850,14 +15776,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 2,
 					amount_max = 2,
 					tactics = self._tactics.Cap_winters_minion_sniper,
-					rank = 2
-				},
-				{
-					unit = "Phalanx_asu",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_winters_minion_asu,
 					rank = 2
 				}
 			}

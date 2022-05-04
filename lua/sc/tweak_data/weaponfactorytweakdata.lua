@@ -5538,7 +5538,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 	if not self.wpn_fps_lmg_m249.override then
 		self.wpn_fps_lmg_m249.override = {}
 	end
-
+	
 	self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_standard = {
 		stats = stocks.folder_to_adj_acc1_stats,
 		custom_stats = stocks.folder_to_adj_acc1_stats
@@ -5563,6 +5563,53 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 		stats = stocks.folder_to_hvy_acc2_stats,
 		custom_stats = stocks.folder_to_hvy_acc2_stats
 	}
+
+	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_specter = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_aimpoint = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_docter = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_eotech = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_t1micro = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_cmore = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_aimpoint_2 = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_cs = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_rx30 = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_rx01 = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_reflex = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_eotech_xps = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_sig = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_uh = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_fc1 = {
+		parent = "upper_reciever"
+	}
 	
 	--M249 Part Additions
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_specter")
@@ -5570,7 +5617,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
-
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_docter")	
 
@@ -5605,7 +5651,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_sig")	
 
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_uh")
-	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_uh")		
+	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_uh")
+	
 
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_fc1")		
@@ -8114,7 +8161,58 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		}
 	}
 
-		
+
+	if not self.wpn_fps_lmg_mg42.override then
+		self.wpn_fps_lmg_mg42.override = {}
+	end
+	--[[
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_specter = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_docter = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_t1micro = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cmore = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint_2 = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cs = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx30 = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx01 = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_reflex = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech_xps = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_sig = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_uh = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_fc1 = {
+		parent = "upper_reciever"
+	}
+	--]]
+	
 	--Rails
 	self.wpn_fps_lmg_mg42.adds = { 
 		wpn_fps_upg_o_specter = { "wpn_fps_snp_mosin_rail" },
@@ -10634,6 +10732,57 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	self.parts.wpn_fps_lmg_par_m_standard.bullet_objects = {
 		prefix = "g_bullet_", 
 		amount = 5
+	}
+	
+	--sorry for the pasghetti! Fix my fucking coding mess!!!!
+	if not self.wpn_fps_lmg_par.override then
+		self.wpn_fps_lmg_par.override = {}
+	end
+	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_specter = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_aimpoint = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_docter = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_eotech = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_t1micro = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_cmore = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_aimpoint_2 = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_cs = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_rx30 = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_rx01 = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_reflex = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_eotech_xps = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_sig = {
+		parent = "upper_reciever"
+	}	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_uh = {
+		parent = "upper_reciever"
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_fc1 = {
+		parent = "upper_reciever"
 	}
 	
 	--M240 Part Additions	
@@ -14320,48 +14469,61 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	}
 
 	--M60 Part Additions
-
 	self.wpn_fps_lmg_m60.override = {
 		wpn_fps_upg_o_specter = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_aimpoint = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_docter = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_eotech = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_t1micro = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_cmore = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_aimpoint_2 = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_cs = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
 		},
 		wpn_fps_upg_o_rx30 = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_rx01 = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_reflex = {
+			parent = "upper_reciever",				
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_eotech_xps = {
+			parent = "upper_reciever",		
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_uh = {
+			parent = "upper_reciever",		
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		},
 		wpn_fps_upg_o_fc1 = {
+			parent = "upper_reciever",
 			forbids = { "wpn_fps_lmg_m60_sight_standard" }
 		}
 	}
@@ -17415,10 +17577,19 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_ass_m4_m_stick.supported = true
 		self.parts.wpn_fps_ass_m4_m_stick.pcs = nil	--caliber conversions STINK	
 		table.insert(self.parts.wpn_upg_ak_s_psl.forbids, "wpn_fps_ass_flint_g_custom")			
-		table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cqb")			
-		table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_cqb")			
+		table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_cqb")	
+		self.wpn_fps_lmg_m60.override.wpn_fps_upg_o_cqb = {
+			parent = "upper_reciever"
+		}						
+		table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_cqb")		
+		self.wpn_fps_lmg_par.override.wpn_fps_upg_o_cqb = {
+			parent = "upper_reciever"
+		}				
 		table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cqb")			
-		table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_cqb")			
+		table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_cqb")		
+		self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_cqb = {
+			parent = "upper_reciever"
+		}		
 		table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_cqb")						
 		self.wpn_fps_lmg_rpk.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ak_extra_ris"} --hk21 only meme is over
 		self.wpn_fps_lmg_mg42.adds.wpn_fps_upg_o_cqb = {"wpn_fps_snp_mosin_rail"}

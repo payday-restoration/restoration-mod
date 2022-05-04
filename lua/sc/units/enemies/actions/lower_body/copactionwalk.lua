@@ -246,7 +246,7 @@ function CopActionWalk:_init()
 end
 
 function CopActionWalk:append_path(path, nav_seg)
-	if self._end_of_path and not self._next_is_nav_link or self._action_desc.path_simplified then
+	if self._end_of_path and not self._next_is_nav_link or self._action_desc.path_simplified or self:stopping() then
 		return false
 	end
 
@@ -288,8 +288,8 @@ function CopActionWalk:append_path(path, nav_seg)
 	end
 
 	self._end_of_curved_path = nil
+	self._chk_stop_dis = nil
 	self._nav_seg = nav_seg
-
 	self._unit:brain():add_pos_rsrv("move_dest", {
 		radius = 30,
 		position = mvec3_cpy(path[#path]) -- last entry should never be a navlink

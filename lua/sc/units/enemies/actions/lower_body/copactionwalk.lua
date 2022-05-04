@@ -282,6 +282,11 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(self._simplified_path, 2, self._curve_path[#self._curve_path])
 	end
 
+	-- shortcut succeeded and the next navpoint is now a navlink
+	if not self._simplified_path[2].x then
+		self._next_is_nav_link = self._simplified_path[2]
+	end
+
 	self._end_of_curved_path = nil
 	self._nav_seg = nav_seg
 

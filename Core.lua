@@ -86,6 +86,7 @@ function restoration:Init()
 		"watchdogs_1_night", --Watchdogs Day 1 Night
 		"watchdogs_2", --watch dogs 2 Night
 		"chca", --Black Cat Heist
+		"man", --Undercover
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
@@ -119,6 +120,7 @@ function restoration:Init()
 			"chca", --Black Cat Heist
 			"watchdogs_1_night", --Watchdogs Day 1 Night
 			"watchdogs_2", --watch dogs 2 Night
+			"man", --Undercover
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version

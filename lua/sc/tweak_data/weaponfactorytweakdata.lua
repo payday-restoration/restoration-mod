@@ -8165,53 +8165,52 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	if not self.wpn_fps_lmg_mg42.override then
 		self.wpn_fps_lmg_mg42.override = {}
 	end
-	--[[
+
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_specter = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_docter = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_t1micro = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cmore = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint_2 = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cs = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx30 = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx01 = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_reflex = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech_xps = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_sig = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_uh = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_fc1 = {
-		parent = "upper_reciever"
+		parent = "lower_reciever"
 	}
-	--]]
 	
 	--Rails
 	self.wpn_fps_lmg_mg42.adds = { 
@@ -17584,6 +17583,10 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_cqb")		
 		self.wpn_fps_lmg_par.override.wpn_fps_upg_o_cqb = {
 			parent = "upper_reciever"
+		}				
+		table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cqb")		
+		self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cqb = {
+			parent = "lower_reciever"
 		}				
 		table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cqb")			
 		table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_cqb")		

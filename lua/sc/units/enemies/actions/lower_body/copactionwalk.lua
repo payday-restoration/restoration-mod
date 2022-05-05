@@ -251,6 +251,7 @@ function CopActionWalk:append_path(path, nav_seg)
 	end
 
 	-- Don't create a new table for no reason, iterate over the existing one
+	local s_path = self._simplified_path
 	for i = 1, #path do
 		local nav_point = path[i]
 		if nav_point.x then
@@ -263,28 +264,45 @@ function CopActionWalk:append_path(path, nav_seg)
 	end
 
 	for i = 1, #path do
-		table_insert(self._simplified_path, path[i])
+		table_insert(s_path, path[i])
 	end
 
-	if not self._simplified_path[1].x then -- in the middle of a navlink animation
-		self._simplified_path[1] = self._simplified_path[1].c_class:end_position()
+	if s_path[1].x then
+		s_path[1] = mvec3_cpy(self._common_data.pos)
+	else -- in the middle of a navlink animation
+		s_path[1] = s_path[1].c_class:end_position()
 	end
 
-	self._calculate_simplified_path(nil, self._simplified_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
+	self._calculate_simplified_path(nil, s_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
-	if #self._simplified_path == 2 then
-		table_insert(self._simplified_path, 2, path[1])
+	if #s_path == 2 then
+		table_insert(s_path, 2, path[1])
 	end
 
-	-- re-add the destination of our curve path if it was removed
-	if self._curve_path and self._simplified_path[2] ~= self._curve_path[#self._curve_path] then
-		table_insert(self._simplified_path, 2, self._curve_path[#self._curve_path])
+	-- always recalculating because the end navpoint of the curved path may get changed by _calculate_shortened_path
+	if self._curve_path then
+		if not self._start_run_turn and self._ext_base:lod_stage() == 1 and mvec3_dis_sq_no_z(s_path[1], self._nav_point_pos(s_path[2])) > 490000 then
+			-- calculate enter_dir based off our current curve path's direction
+			mvec3_set(tmp_vec1, self._curve_path[self._curve_path_index + 1])
+			mvec3_sub(tmp_vec1, self._curve_path[self._curve_path_index])
+			mvec3_set_z(tmp_vec1, 0)
+			mvec3_norm(tmp_vec1)
+
+			self._curve_path = self:_calculate_curved_path(s_path, 1, 1, tmp_vec1)
+		else
+			self._curve_path = {
+				s_path[1],
+				self._nav_point_pos(s_path[2])
+			}
+		end
+
+		self._curve_path_index = 1
 	end
 
 	-- shortcut succeeded and the next navpoint is now a navlink
-	if not self._simplified_path[2].x then
-		self._next_is_nav_link = self._simplified_path[2]
+	if not s_path[2].x then
+		self._next_is_nav_link = s_path[2]
 	end
 
 	self._end_of_curved_path = nil
@@ -292,7 +310,7 @@ function CopActionWalk:append_path(path, nav_seg)
 	self._nav_seg = nav_seg
 	self._unit:brain():add_pos_rsrv("move_dest", {
 		radius = 30,
-		position = mvec3_cpy(path[#path]) -- last entry should never be a navlink
+		position = mvec3_cpy(s_path[#s_path]) -- last entry should never be a navlink
 	})
 
 	return true

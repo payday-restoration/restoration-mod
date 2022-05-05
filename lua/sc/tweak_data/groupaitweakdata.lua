@@ -12387,14 +12387,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 3
 				},
 				{
-					unit = "TIT_tank",
-					freq = 0.5,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.TIT_tank,
-					rank = 3
-				},
-				{
 					unit = "GS_heavy_G36_w",
 					freq = 1,
 					amount_min = 1,
@@ -12417,8 +12409,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "TIT_tank",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},

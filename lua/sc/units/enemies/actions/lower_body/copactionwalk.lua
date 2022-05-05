@@ -280,8 +280,8 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(s_path, 2, path[1])
 	end
 
-	-- always recalculating because the end navpoint of the curved path may get changed by _calculate_shortened_path
-	if self._curve_path then
+	-- always recalculating because the end navpoint of the curved path may get changed by _calculate_shortened_path unless it's not clear to the next navpoint
+	if self._curve_path and not managers.navigation:raycast({pos_from = s_path[1], pos_to = self._nav_point_pos(s_path[2])}) then
 		if not self._start_run_turn and self._ext_base:lod_stage() == 1 and mvec3_dis_sq_no_z(s_path[1], self._nav_point_pos(s_path[2])) > 490000 then
 			-- calculate enter_dir based off our current curve path's direction
 			mvec3_set(tmp_vec1, self._curve_path[self._curve_path_index + 1])

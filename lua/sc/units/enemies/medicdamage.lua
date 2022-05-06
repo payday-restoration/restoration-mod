@@ -1,5 +1,5 @@
 function MedicDamage:heal_unit(unit, override_cooldown)
-	if self._unit:anim_data() and self._unit:anim_data().act then
+	if self._unit:movement():chk_action_forbidden("action") then
 		return false
 	end
 
@@ -68,7 +68,7 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 		end
 
 		local action_data = {
-			body_part = 1,
+			body_part = 3,
 			type = "heal",
 			client_interrupt = Network:is_client()
 		}

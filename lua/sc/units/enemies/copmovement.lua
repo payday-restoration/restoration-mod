@@ -274,7 +274,7 @@ function CopMovement:_upd_actions(t)
 	self:_upd_stance(t)
 
 	if not self._need_upd then
-		if self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._ext_anim.fumble or self._stance.transition or self._suppression.transition then
+		if self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._stance.transition or self._suppression.transition then
 			self._need_upd = true
 		end
 	end

@@ -26,3 +26,5 @@ end
 
 function MedicActionHeal:on_exit()
 end
+
+MedicActionHeal.chk_block = nil

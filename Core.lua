@@ -89,6 +89,7 @@ function restoration:Init()
 		"man", --Undercover
 		--custom heists
 		"wetwork", --res map package wetworks
+		"bluewave", --res map bluewave
 		"alex_1_res", --Rats Day 1 res edit version
 		"amsdeal1", --Armsdeal Alleyway
 		"Gambling_room", --Underground Bargains
@@ -123,6 +124,7 @@ function restoration:Init()
 			"man", --Undercover
 			--custom heists
 			"wetwork", --res map package wetworks
+			"bluewave", --res map bluewave
 			"alex_1_res", --Rats Day 1 res edit version
 			"amsdeal1", --Armsdeal Alleyway
 			"lvl_fourmorestores", --four more stores

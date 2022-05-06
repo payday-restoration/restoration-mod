@@ -306,11 +306,9 @@ function CopActionHurt:init(action_desc, common_data)
 		local variant = "var"
 
 		if uses_shield_anims then
-			self._sick_time = t + 2.5
 			rnd_anim = self:_pseudorandom(4)
 			variant = "shield_var"
 		else
-			self._sick_time = t + 3
 			variant = "var"
 
 			local fwd_dot = action_desc.direction_vec:dot(common_data.fwd)
@@ -388,7 +386,7 @@ function CopActionHurt:init(action_desc, common_data)
 			return
 		end
 
-		self._sick_time = t + 2
+		self._sick_time = t + 2 -- supports varying lengths with the animation state fixes
 	else
 		local keep_checking = true
 
@@ -547,30 +545,21 @@ function CopActionHurt:init(action_desc, common_data)
 				end
 			end
 
-			local redirect = action_type
-
-			if action_type == "shield_knock" then
-				local rand = self:_pseudorandom(CopActionHurt.shield_knock_variants) - 1
-				redirect = "shield_knock_var" .. tostring(rand)
-			end
-
-			if redirect then
-				if redirect == "death" and common_data.ext_anim.bleedout_loop then
+			if action_type then
+				if action_type == "death" and common_data.ext_anim.bleedout_loop then
 					redir_res = common_data.ext_movement:play_state("std/fatal/to_dead")
 				else
-					redir_res = common_data.ext_movement:play_redirect(redirect)
+					redir_res = common_data.ext_movement:play_redirect(action_type)
 				end
-			--[[else
-				Application:stack_dump_error("There's no redirect in CopActionHurt!")]]
 			end
 
 			if not redir_res then
-				--debug_pause_unit(common_data.unit, "[CopActionHurt:init]", redirect, "redirect failed in", common_data.machine:segment_state(ids_base), common_data.unit)
-
 				return
 			end
 
-			if action_desc.variant ~= "bleeding" then
+			if action_type == "shield_knock" then
+				variant = self:_pseudorandom(self.shield_knock_variants)
+			elseif action_desc.variant ~= "bleeding" then
 				local nr_variants = common_data.ext_anim.base_nr_variants
 
 				if nr_variants then
@@ -639,7 +628,7 @@ function CopActionHurt:init(action_desc, common_data)
 						if tase_effect_table then
 							self._tased_effect = World:effect_manager():spawn(tase_effect_table)
 						end
-					elseif action_type ~= "shield_knock" and action_type ~= "taser_tased" then
+					elseif action_type ~= "taser_tased" then
 						if old_variant then
 							if old_info[dir_str] == 1 and old_info[height] == 1 and old_info.mod == 1 and action_type == "hurt" or old_info.hvy == 1 and action_type == "heavy_hurt" then
 								variant = old_variant
@@ -754,7 +743,7 @@ function CopActionHurt:init(action_desc, common_data)
 			self[preset_data.start](self)
 			self._skipped_frames = 1
 		end
-	elseif action_type == "hurt_sick" or action_type == "poison_hurt" or action_type == "concussion" then
+	elseif action_type == "hurt_sick" or action_type == "poison_hurt" then
 		self.update = self._upd_sick
 	elseif taser_tased_tasing or action_desc.variant == "tase" then
 		self.update = self._upd_tased
@@ -1453,8 +1442,13 @@ function CopActionHurt:_upd_sick(t)
 
 	self._ext_movement:set_rotation(new_rot)
 
-	if not self._sick_time or self._sick_time < t then
-		self._expired = true
+	if self._sick_time then
+		if t > self._sick_time then
+			self._ext_movement:play_redirect("idle") -- end the animation
+			self._sick_time = nil
+		end
+	elseif not self._ext_anim.hurt then
+		self._expired = true -- expire the action once the exit animation finishes
 	end
 
 	if self._ext_anim.base_need_upd then

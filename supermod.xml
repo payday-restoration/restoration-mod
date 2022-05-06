@@ -6,5 +6,7 @@
 	<tweak definition="fps_animation_state_machine.xml" />
 	<tweak definition="fps_animation_states.xml" />
 	<tweak definition="fps_animation_subset.xml" />
+	<tweak definition="std.animation_states"/>
+	<tweak definition="std.animation_subset"/>
 	<!-- <:include src="addoutfit.xml"/> -->
 </mod>

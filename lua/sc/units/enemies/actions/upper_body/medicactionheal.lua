@@ -22,10 +22,6 @@ function MedicActionHeal:update(t)
 		self._done = true
 		self._expired = true
 	end
-
-	if self._ext_anim.base_need_upd then
-		self._ext_movement:upd_m_head_pos()
-	end
 end
 
 function MedicActionHeal:on_exit()

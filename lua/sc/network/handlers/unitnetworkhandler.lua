@@ -399,11 +399,11 @@ function UnitNetworkHandler:sync_medic_heal(unit, sender)
 			unit:contour():flash("medic_show", 0.2)
 		end
 
-		if unit:anim_data() and unit:anim_data().act then
+		if unit:movement():chk_action_forbidden("action") then
 			unit:sound():say("heal")
 		else
 			local action_data = {
-				body_part = 1,
+				body_part = 3,
 				type = "heal",
 				client_interrupt = Network:is_client()
 			}

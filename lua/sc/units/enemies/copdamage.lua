@@ -921,23 +921,8 @@ function CopDamage:damage_bullet(attack_data)
 	end
 		
 	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
-	--To do: Make this less of a Yandere dev code block
-	if self._char_tweak.damage_resistance then
-		if damage_type and damage_type == "assault_rifle" then			
-			damage = damage * self._char_tweak.damage_resistance.assault_rifle 
-		elseif damage_type and damage_type == "sniper" then
-			damage = damage * self._char_tweak.damage_resistance.sniper 
-		elseif damage_type and damage_type == "anti_materiel" then
-			damage = damage * self._char_tweak.damage_resistance.anti_materiel 		
-		elseif damage_type and damage_type == "shotgun" then
-			damage = damage * self._char_tweak.damage_resistance.shotgun 
-		elseif damage_type and damage_type == "machine_gun" then
-			damage = damage * self._char_tweak.damage_resistance.machine_gun 
-		elseif damage_type and damage_type == "pistol" then
-			damage = damage * self._char_tweak.damage_resistance.pistol 
-		elseif damage_type and damage_type == "heavy_pistol" then
-			damage = damage * self._char_tweak.damage_resistance.heavy_pistol 				
-		end
+	if self._char_tweak.damage_resistance and damage_type then
+		damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
 	end		
 
 	if self._marked_dmg_mul then

@@ -810,18 +810,6 @@ function CopActionWalk:update(t)
 			end
 		end
 
-		if not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant][wanted_walk_dir] then
-			log("Something's fucked up!!!")
-			log("tweak_table: " .. tostring(self._unit:base()._tweak_table))
-			log("pose: " .. tostring(self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"))
-			log("stance: " .. tostring(self._stance.name))
-			log("haste: " .. tostring(variant))
-			log("move_dir: " .. tostring(wanted_walk_dir))
-		end
-
 		self:_adjust_move_anim(wanted_walk_dir, variant)
 		self:_adjust_walk_anim_speed(dt, real_velocity / walk_anim_velocities[variant][wanted_walk_dir])
 	end

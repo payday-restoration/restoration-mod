@@ -2500,6 +2500,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
 	self.phalanx_vip.do_omnia = true
+	self.phalanx_vip.do_asu = true
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
 	self.phalanx_vip.is_special = true

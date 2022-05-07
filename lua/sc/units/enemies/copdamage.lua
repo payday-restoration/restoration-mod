@@ -909,11 +909,34 @@ function CopDamage:damage_bullet(attack_data)
 		damage = damage * self._char_tweak.damage.bullet_damage_mul
 	end	
 	
-	if self._char_tweak.damage.non_ap_damage_mul then
-		if attack_data.armor_piercing or weap_base.thrower_unit then
-			--Nada, did consider having a damage *bonus* but we'll see
-		else
-			damage = damage * self._char_tweak.damage.non_ap_damage_mul
+	local damage_type = "normal"
+	
+	--Sentries should do machine gun damage
+	if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
+		damage_type = "machine_gun"
+	elseif weap_base.thrower_unit then
+		damage_type = "normal"
+	else 
+		damage_type = attack_data.weapon_unit:base():get_damage_type() 
+	end
+		
+	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
+	--To do: Make this less of a Yandere dev code block
+	if self._char_tweak.damage_resistance then
+		if damage_type and damage_type == "assault_rifle" then			
+			damage = damage * self._char_tweak.damage_resistance.assault_rifle 
+		elseif damage_type and damage_type == "sniper" then
+			damage = damage * self._char_tweak.damage_resistance.sniper 
+		elseif damage_type and damage_type == "anti_materiel" then
+			damage = damage * self._char_tweak.damage_resistance.anti_materiel 		
+		elseif damage_type and damage_type == "shotgun" then
+			damage = damage * self._char_tweak.damage_resistance.shotgun 
+		elseif damage_type and damage_type == "machine_gun" then
+			damage = damage * self._char_tweak.damage_resistance.machine_gun 
+		elseif damage_type and damage_type == "pistol" then
+			damage = damage * self._char_tweak.damage_resistance.pistol 
+		elseif damage_type and damage_type == "heavy_pistol" then
+			damage = damage * self._char_tweak.damage_resistance.heavy_pistol 				
 		end
 	end		
 

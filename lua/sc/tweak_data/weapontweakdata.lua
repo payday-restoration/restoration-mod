@@ -7185,6 +7185,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					end_dist = 6200,
 					min_mult = 0.4166
 				}
+				self.new_m4.damage_type = "assault_rifle"
 				self.new_m4.stats = {
 					damage = 24,
 					spread = 81,

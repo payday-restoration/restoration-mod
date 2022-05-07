@@ -4659,6 +4659,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.damage_resistance = {
 		assault_rifle = 1,
 		sniper = 1,
+		anti_materiel = 1,
 		shotgun = 1,
 		machine_gun = 1, 
 		pistol = 1, 

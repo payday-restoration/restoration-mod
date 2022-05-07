@@ -52,6 +52,10 @@ function RaycastWeaponBase:setup(...)
 	self._shots_without_releasing_trigger = 0
 end
 
+function RaycastWeaponBase:get_damage_type()
+	return self:weapon_tweak_data().damage_type
+end
+
 --Fire no longer memes on shields.
 function FlameBulletBase:bullet_slotmask()
 	return managers.slot:get_mask("bullet_impact_targets")

@@ -559,6 +559,8 @@
 	<texture			path="guis/textures/pd2/hud_buff_generic" force="false" load="false"/>  
 	<texture			path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
 	
+	<texture			path="guis/textures/pd2/hitconfirm_ineffective" force="false" load="false"/>
+	
 	<!--Taser Shotgun-->
 	<material_config	path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>

@@ -16,3 +16,11 @@ function HUDManager:show_point_of_no_return_timer(tweak_id)
 	end
 	return show_point_of_no_return_timer_orig(self, tweak_id)
 end
+
+function HUDManager:on_ineffective_hit_confirmed(damage_scale)
+	if not managers.user:get_setting("hit_indicator") then
+		return
+	end
+
+	self._hud_hit_confirm:on_ineffective_hit_confirmed(damage_scale)
+end

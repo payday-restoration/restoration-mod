@@ -861,6 +861,32 @@ function CopDamage:damage_bullet(attack_data)
 	local headshot_multiplier = 1
 	local distance = attack_data.col_ray and attack_data.col_ray.distance or mvector3.distance(attack_data.origin, self._unit:position()) or 0
 
+	if self._char_tweak.damage.bullet_damage_mul then
+		damage = damage * self._char_tweak.damage.bullet_damage_mul
+	end	
+	
+	local damage_type = "normal"
+	local ineffective_damage = false
+	
+	--Sentries should do machine gun damage
+	if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
+		damage_type = "machine_gun"
+	elseif weap_base.thrower_unit then
+		damage_type = "normal"
+	else 
+		damage_type = attack_data.weapon_unit:base():get_damage_type() 
+	end
+		
+	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
+	if self._char_tweak.damage_resistance and damage_type then
+		damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
+		
+		--Let the player know to try something different
+		if self._char_tweak.damage_resistance[damage_type] < 1 then
+			ineffective_damage = true
+		end		
+	end		
+
 	if attack_data.attacker_unit == managers.player:player_unit() then
 		attack_data.backstab = self:check_backstab(attack_data)
 		
@@ -879,6 +905,10 @@ function CopDamage:damage_bullet(attack_data)
 			if damage > 0 then
 				managers.hud:on_crit_confirmed(damage_scale)
 			end
+		elseif ineffective_damage then
+			if damage > 0 then
+				managers.hud:on_ineffective_hit_confirmed(damage_scale)
+			end			
 		else
 			if damage > 0 then
 				managers.hud:on_hit_confirmed(damage_scale)
@@ -904,27 +934,7 @@ function CopDamage:damage_bullet(attack_data)
 			damage = self._health * 10
 		end
 	end
-	
-	if self._char_tweak.damage.bullet_damage_mul then
-		damage = damage * self._char_tweak.damage.bullet_damage_mul
-	end	
-	
-	local damage_type = "normal"
-	
-	--Sentries should do machine gun damage
-	if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
-		damage_type = "machine_gun"
-	elseif weap_base.thrower_unit then
-		damage_type = "normal"
-	else 
-		damage_type = attack_data.weapon_unit:base():get_damage_type() 
-	end
 		
-	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
-	if self._char_tweak.damage_resistance and damage_type then
-		damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
-	end		
-
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
 

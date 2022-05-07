@@ -558,7 +558,7 @@ function CopActionHurt:init(action_desc, common_data)
 			end
 
 			if action_type == "shield_knock" then
-				variant = self:_pseudorandom(self.shield_knock_variants)
+				self._machine:set_parameter(redir_res, "var" .. self:_pseudorandom(self.shield_knock_variants), 1)
 			elseif action_desc.variant ~= "bleeding" then
 				local nr_variants = common_data.ext_anim.base_nr_variants
 

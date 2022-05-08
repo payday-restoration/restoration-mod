@@ -868,24 +868,34 @@ function CopDamage:damage_bullet(attack_data)
 	local damage_type = "normal"
 	local ineffective_damage = false
 	
-	--Sentries should do machine gun damage
-	if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
-		damage_type = "machine_gun"
-	elseif weap_base.thrower_unit then
-		damage_type = "normal"
-	else 
-		damage_type = attack_data.weapon_unit:base():get_damage_type() 
-	end
-		
-	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
-	if self._char_tweak.damage_resistance and damage_type then
-		damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
-		
-		--Let the player know to try something different
-		if self._char_tweak.damage_resistance[damage_type] < 1 then
-			ineffective_damage = true
+	--Saw+Throwables ignore clamps
+	if self._char_tweak.DAMAGE_CLAMP_BULLET then
+		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
+		else
+			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+			--Cease
+			ineffective_damage = true			
+		end
+	end	
+	
+	if not weap_base.thrower_unit then
+		--Sentries should do machine gun damage
+		if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
+			damage_type = "machine_gun"
+		else 
+			damage_type = attack_data.weapon_unit:base():get_damage_type() 
+		end
+			
+		--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
+		if self._char_tweak.damage_resistance and damage_type then
+			damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
+			
+			--Let the player know to try something different
+			if self._char_tweak.damage_resistance[damage_type] < 1 then
+				ineffective_damage = true
+			end		
 		end		
-	end		
+	end	
 
 	if attack_data.attacker_unit == managers.player:player_unit() then
 		attack_data.backstab = self:check_backstab(attack_data)
@@ -960,14 +970,6 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	damage = self:_apply_damage_reduction(damage)
-
-	--Saw+Throwables ignore clamps
-	if self._char_tweak.DAMAGE_CLAMP_BULLET then
-		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
-		else
-			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
-		end
-	end
 
 	attack_data.raw_damage = damage
 

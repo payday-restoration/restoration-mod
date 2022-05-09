@@ -12152,9 +12152,8 @@ function WeaponTweakData:_precalculate_values()
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
 end
 
-if SystemFS:exists("mods/CustomAttachmentPoints") then
-	--[
-	Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
+Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
+	if self.SetupAttachmentPoint then
 		--[
 		self:SetupAttachmentPoint( "par", {
 			name = "a_o", -- Name of Attachment Point ( This can be a preexisting one or a new one. )
@@ -12217,7 +12216,5 @@ if SystemFS:exists("mods/CustomAttachmentPoints") then
 			position = Vector3( 0, 0, -1.1 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
-
-	end )
-	--]]
-end	
+	end
+end)	

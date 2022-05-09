@@ -80,6 +80,11 @@ function ProjectileBase:create_sweep_data()
 	self._sweep_data.last_pos = mvector3.copy(self._sweep_data.current_pos)
 end
 
+-- Fuck it
+function ProjectileBase.check_time_cheat(projectile_type, owner_peer_id)
+	return true
+end
+
 -- Load npc throwables dynamically
 local unit_ids = Idstring("unit")
 Hooks:PreHook(ProjectileBase, "throw_projectile_npc", "sh_throw_projectile_npc", function (projectile_type)

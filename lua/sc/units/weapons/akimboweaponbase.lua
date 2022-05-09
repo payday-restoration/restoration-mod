@@ -11,11 +11,10 @@ else
 
 	function AkimboWeaponBase:init(...)
 		init_original(self, ...)
-		
 		local fire_mode_data = tweak_data.weapon[self._name_id].fire_mode_data
 		if fire_mode_data then
 			fire_mode_data.original_fire_rate = fire_mode_data.original_fire_rate or fire_mode_data.fire_rate
-			fire_mode_data.fire_rate = fire_mode_data.original_fire_rate / 2
+			fire_mode_data.fire_rate = fire_mode_data.original_fire_rate / 1.5
 		end
 	end
 

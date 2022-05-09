@@ -231,12 +231,15 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 	--Fix for fire rate speed mults not applying to anims, especially whie aiming
 	--Like fuck am I doing this fix through "PlayerStandard:_check_action_primary_attack" instead
 	local equipped_weapon = self._parent_unit and self._parent_unit:inventory() and self._parent_unit:inventory():equipped_unit()
+	local current_state = self._parent_movement_ext and self._parent_movement_ext._current_state
 	if alive(equipped_weapon) then
 		local weap_base = equipped_weapon:base()
 		if weap_base then
+			if current_state:in_steelsight() and weap_base._disable_steelsight_recoil_anim then
+				return false
+			end
 			if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
 				speed = weap_base:fire_rate_multiplier()
-
 				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().fake_semi_anims then
 					redirect_name = Idstring("recoil_exit")
 				end
@@ -262,3 +265,58 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 
 	return result
 end
+
+--[
+local bezier_values = {
+	0,
+	0,
+	1,
+	1
+}
+--Still wonky when swapping to your main optic (culls too early)
+Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", function(self, t, dt)
+	if self._shoulder_stance.transition then
+		local trans_data = self._shoulder_stance.transition
+		local elapsed_t = t - trans_data.start_t
+
+		if trans_data.duration < elapsed_t then
+			mvector3.set(self._shoulder_stance.translation, trans_data.end_translation)
+
+			self._shoulder_stance.rotation = trans_data.end_rotation
+			self._shoulder_stance.transition = nil
+			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
+
+			if in_steelsight and not self._steelsight_swap_state then
+				self:_set_steelsight_swap_state(true)
+			elseif not in_steelsight and self._steelsight_swap_state then
+				self:_set_steelsight_swap_state(false)
+			end
+		else
+			local progress = elapsed_t / trans_data.duration
+			local progress_smooth = math.bezier(bezier_values, progress)
+
+			mvector3.lerp(self._shoulder_stance.translation, trans_data.start_translation, trans_data.end_translation, progress_smooth)
+
+			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
+			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
+			local absolute_progress = nil
+			local equipped_weapon = self._parent_unit:inventory():equipped_unit()
+			if equipped_weapon and equipped_weapon:base() then
+				local in_second_sight = equipped_weapon:base():is_second_sight_on()
+			end
+
+			if in_steelsight then
+				absolute_progress = (1 - trans_data.absolute_progress) * progress_smooth + trans_data.absolute_progress
+			else
+				absolute_progress = trans_data.absolute_progress * (1 - progress_smooth)
+			end
+
+			if in_steelsight and trans_data.steelsight_swap_progress_trigger <= absolute_progress then
+				self:_set_steelsight_swap_state(true)
+			elseif (in_steelsight and in_second_sight ~= true) or (not in_steelsight and self._steelsight_swap_state and absolute_progress < trans_data.steelsight_swap_progress_trigger) then
+				self:_set_steelsight_swap_state(false)
+			end
+		end
+	end
+end)
+--]]

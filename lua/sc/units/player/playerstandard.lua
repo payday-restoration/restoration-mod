@@ -505,7 +505,7 @@ end
 function PlayerStandard:_end_action_running(t)
 	if not self._end_running_expire_t then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
-		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
+		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.3
 
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
@@ -842,6 +842,20 @@ function PlayerStandard:_start_action_jump(t, action_start_data)
 	self:_perform_jump(jump_vec)
 end		
 
+function PlayerStandard:_get_melee_charge_lerp_value(t, offset)
+	offset = offset or 0
+	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local max_charge_time = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_time
+	max_charge_time = max_charge_time * (1 + (1 - managers.player:upgrade_value("player", "melee_swing_multiplier", 1)))
+
+	if not self._state_data.melee_start_t then
+		return 0
+	end
+
+	return math.clamp(t - self._state_data.melee_start_t - offset, 0, max_charge_time) / max_charge_time
+end
+
+
 function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	self._state_data.meleeing = nil
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
@@ -849,7 +863,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local pre_calc_hit_ray = tweak_data.blackmarket.melee_weapons[melee_entry].hit_pre_calculation
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	--Lets skills give faster melee charge and swing speeds.
-	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t)
+	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t) 
 	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_start or 2 --i.e. never get the bonus
 	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_speed or 1
 	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
@@ -987,11 +1001,19 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_burst_fire(t)
 	self:_update_slide_locks()
 		
-	local weapon = self._unit:inventory():equipped_unit():base()
+	local weapon = self._equipped_unit and self._equipped_unit:base()
 	if weapon:get_name_id() == "m134" or weapon:get_name_id() == "shuno" then
 		weapon:update_spin()
 	end
 	
+	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
+	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
+	--[[
+	if weapon and weapon:in_burst_mode() then
+		managers.hud:set_teammate_weapon_firemode_burst(weapon:selection_index())
+	end
+	--]]
+
 	--Applying (and removing) the conditon for being fully ADS'd
 	if self:full_steelsight() and not self._state_data.in_full_steelsight then
 		self._state_data.in_full_steelsight = true
@@ -1099,7 +1121,7 @@ end)
 
 function PlayerStandard:_update_slide_locks()
 	local weap_base = self._equipped_unit:base()
-	if weap_base and weap_base:weapon_tweak_data().lock_slide then
+	if weap_base and weap_base:weapon_tweak_data().lock_slide and not self:_is_reloading() then
 		if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
 			weap_base:tweak_data_anim_stop("magazine_empty")
 			weap_base:tweak_data_anim_stop("reload")

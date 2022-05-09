@@ -1019,6 +1019,9 @@
 	<!--M4 Drum-->
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum"/>
 	
+	<!--M4 "A1" Kit-->
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_m4_uupg_fg_rail_m4a1"/>
+	
 	<!--Some angled grip, forgot what this one was lol-->
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg"/>
 	

@@ -947,15 +947,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
-		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.", --still need to do the one for the primary bernetti--
+		["bm_wp_upg_i_93r_desc"] = "Enables a rapid 1100RPM 3-round burst setting, at the cost of extra kick.", --still need to do the one for the primary bernetti--
 
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
-		["bm_wp_upg_i_m16a2_desc"] = "Locks your weapon to semi/burst firemodes, but increases rate of fire by 200.",
+		["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a 3-round burst setting. Burst fire rate is increased to 900RPM.",
 		
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
-		["bm_wp_upg_i_b93o_desc"] = "Replaces the 3 round burst firemode with an Auto firemode, at the cost of extra kick.",		
+		["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a full-auto setting, at the cost of extra kick.",
+
+		--2006M Hailstorm
+		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
+		["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nGives this weapon triple-chamber-stacked rounds, at the cost of less range and extra kick.",
+
+		--M32 MK32 Kit
+		["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Ghost Company.\n\nEnables and locks this weapon to fire in 2-round bursts, at the cost of extra kick.",		
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",
@@ -1003,19 +1011,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
 		["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
 
-		--Weapon Sights--
-		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies, as well as guards in Stealth, while aiming.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
-
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_tiny"] = "1.1x MAGNIFICATION.",
-		["bm_wp_upg_o_small"] = "1.2x MAGNIFICATION.",
-		["bm_wp_upg_o_cs_desc"] = "1.5x MAGNIFICATION.",
-		["bm_wp_upg_o_aim"] = "2x MAGNIFICATION.",
-		["bm_wp_upg_o_med"] = "3x MAGNIFICATION.",
-		["bm_wp_upg_o_large"] = "4x MAGNIFICATION.",
-		["bm_wp_upg_o_huge"] = "5x MAGNIFICATION.",
-		--;)
-		["bm_wp_upg_o_overkill"] = "6x MAGNIFICATION.",
+		["bm_wp_upg_o_1_1"] = "1.1x MAGNIFICATION.",
+		["bm_wp_upg_o_1_2"] = "1.2x MAGNIFICATION.",
+		["bm_wp_upg_o_1_5"] = "1.5x MAGNIFICATION.",
+		["bm_wp_upg_o_2"] = "2x MAGNIFICATION.",
+		["bm_wp_upg_o_3"] = "3x MAGNIFICATION.",
+		--["bm_wp_upg_o_3_mark"] = "3x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_4"] = "4x MAGNIFICATION.",
+		--["bm_wp_upg_o_4_mark"] = "4x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_5"] = "5x MAGNIFICATION.",
+		--["bm_wp_upg_o_5_mark"] = "5x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_6"] = "6x MAGNIFICATION.",
+		--["bm_wp_upg_o_6_mark"] = "6x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",
@@ -1043,10 +1051,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when its clip is empty and deals 80% of its damage through body armor.",
 
 		--Kobus 90--
+		["bm_w_p90"] = "Project 90 Submachine Gun",
+		["bm_p90_sc_desc"] = "A bullpup SMG. A competitor to the SpecOps SMG.",
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
+
+		["bm_mp7_sc_desc"] = "A lightweight SMG. A competitor to the Project 90 SMG.",
 
 		--Phoenix .500--
 		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
@@ -1079,48 +1091,83 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
 
 		--Little Friend--
+		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
 		--ASS VAL--
+		--["bm_w_asval"] = "Valkyria",
 		["bm_asval_sc_desc"] = "Bring truth to the phrase \"Silence is deadly\".\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 
 		--KETCHUPKNOB--
-		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_w_groza"] = "KETCHNOV Byk-4 Rifle",
+		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the VALkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
 		--Mosin--
-		["bm_mosin_sc_desc"] = "Classic, Powerful bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and can penetrate body armor, shields and thin walls.",
+		["bm_mosin_sc_desc"] = "Classic, powerful bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and can penetrate body armor, shields and thin walls.",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nFires weaker tranquilizer rounds that deal damage over time and can stun enemies.",
 		
 		--Crosskill Guard
-		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness. ",
+		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
 
 		--Broomstick--
 		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 
 		--M4/CAR-4
-		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+		["bm_m4_sc_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
+		["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. Overrides the appearance of your handguard.",
+		["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+
+		--AMR-16/M16
+		["bm_m16_sc_desc"] = "The predecessor to the CAR-4.",
+
+		--Bootleg/HK416c
+		["bm_w_tecci"] = "Bootleg Light Machine Gun",
+		--KSP/M249
+		["bm_w_m249"] = "KSP-90 Light Machine Gun",
 
 		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",
+
+		--Brenner 21/HK21
+		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
+
+		--M60
+		["bm_w_m60"] = "M60 Heavy Machine Gun",
+
+		--Ksp 58
+		["bm_w_par"] = "KSP-58B Heavy Machine Gun",	
+		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
 		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nWildly inaccurate but has 25% less recoil when hipfired.",		
-		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
+		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nCan penetrate body armor, shields and thin walls.",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nCan penetrate body armor, shields and thin walls and alt-fire allows for fanning the hammer.",
 
 		--FAL
 		["bm_fal_sc_desc"] = "The Right Arm of the Free World.\n\nDeals 80% of its damage through body armor.",	
 
 		--G3
-		["bm_g3_sc_desc"] = "Like a big Compact-5\n\nDeals 80% of its damage through body armor.",	
+		["bm_w_g3"] = "Gewehr-3",	
+		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\n\nDeals 80% of its damage through body armor.",	
+		--Compact-5/MP5
+		["bm_w_mp5"] = "Compact-5",	
+		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.",	
+
+		--WA2000
+		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
 
 		--TTI(TTY)
+		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\nCan penetrate body armor, shields and thin walls.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",
+		["bm_menu_weapon_movement_bonus_info"] = "MOVE SPEED IS INCREASED BY ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
 		["bm_lmg_generic_desc"] = "Wildly inaccurate when hipfired.",
 		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
@@ -1293,12 +1340,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_lmg"] = "Machine Guns",
 		--
 		["menu_light_mg"] = "LMGs",
-		["menu_heavy_mg"] = "HMGs",
+		["menu_heavy_mg"] = "GPMGs",
+		["menu_miniguns"] = "Gatling Guns",
 		
 		["menu_snp"] = "Snipers",
 		--
-		["menu_light_snp"] = "Light Snipers",
-		["menu_heavy_snp"] = "Heavy Snipers",
+		["menu_light_snp"] = "Light Sniper Rifles",
+		["menu_heavy_snp"] = "Heavy Sniper Rifles",
 		["menu_antim_snp"] = "Anti-Materiel Rifles",
 
 		["menu_wpn_special"] = "Specials & Unsorted",
@@ -1454,14 +1502,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_x_akmsu"] = "Akimbo Krinkov Rifles",
 		["bm_w_hajk"] = "CR 805B Rifle",
-		["bm_w_tti"] = "Contractor .308 Rifle",
-		["bm_w_groza"] = "KETCHNOV Byk-4 Rifle",
 		
 		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
 
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 
-		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
@@ -1506,15 +1551,52 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
-
 			["bm_menu_ro_barrel"] = "Revolver Ocelot",
 			["bm_menu_ro_stock"] = "Revolver Ocelot",
 			["bm_menu_ro_modifier"] = "Revolver Ocelot",
 			["bm_menu_ro_charm"] = "Revolver Ocelot",
 			["bm_menu_ro_grip"] = "Revolver Ocelot",
 
-
 			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
+
+--[[
+			["bm_w_m16"] = "Ichiroku",
+			["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
+			["bm_w_m4"] = "Em-Four",
+			["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
+			["bm_w_aug"] = "AUG",
+			["bm_aug_sc_desc"] = "\"   \"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+
+			--["bm_w_galil"] = "Galil",
+			--["bm_galil_sc_desc"] = "\"Atai!\"\n\nA middleschooler attending Seishou Academy.\nPretty dumb but very obedient.",
+
+			["bm_w_fal"] = "Faru",
+			["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nA service Seishou Academy.\nCurrently on leave from service.",
+			["bm_w_m14"] = "Ichiyon",
+			["bm_m14_sc_desc"] = "\"I have bad memories about ambushes.\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
+			["bm_w_g3"] = "Jiisuri",
+			["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
+
+			["bm_w_erma"] = "Erma-sensei",
+			["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy. Speaks with accented Japanese",
+			["bm_w_m1928"] = "Thompson-sensei",
+			["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy. Speaks with accented Japanese",
+
+			["bm_w_mp5"] = "Empi",
+			["bm_mp5_sc_desc"] = "\"If that's your hobby, you just had to say it...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the current student council president of elementary division.",
+
+			["bm_w_uzi"] = "Uzi",
+			["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nThe former student council president of the elementary division, pushed out by Empi when she arrived.",
+
+			["bm_w_siltstone"] = "Drako",
+			["bm_siltstone_sc_desc"] = "\"Do not misunderstand.\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.",
+			["bm_w_ak74"] = "Nanayon",
+			["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
+			["bm_w_mosin"] = "Mosin Nagant",
+			["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
+			["bm_w_saiga"] = "Saiga-chan",
+			["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
+--]]
 		})
 	end
 	
@@ -2050,7 +2132,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds for Shotguns and flamethrowers are ##20%## faster.\n\nACE: ##$pro##\nShotguns and flamethrowers reload ##25%## faster.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds for Shotguns and flamethrowers are ##15%## faster.\n\nACE: ##$pro##\nShotguns and flamethrowers reload ##25%## faster.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
@@ -2293,7 +2375,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Rifleman",
-		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds are ##20%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds are ##15%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",

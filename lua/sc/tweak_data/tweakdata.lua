@@ -259,25 +259,28 @@ tweak_data.blackmarket.projectiles.fir_com.impact_detonation = false
 
 --Throwing Card--
 tweak_data.projectiles.wpn_prj_ace.damage = 24
+tweak_data.projectiles.wpn_prj_ace.launch_speed = 1800
 tweak_data.projectiles.wpn_prj_ace.adjust_z = 0
 
 --Shuriken
 tweak_data.projectiles.wpn_prj_four.damage = 20
+tweak_data.projectiles.wpn_prj_four.launch_speed = 1800
+tweak_data.projectiles.wpn_prj_four.adjust_z = 0
 
 --Throwing Knife--
 tweak_data.projectiles.wpn_prj_target.damage = 24
+tweak_data.projectiles.wpn_prj_target.launch_speed = 1800
 tweak_data.projectiles.wpn_prj_target.adjust_z = 0
-tweak_data.projectiles.wpn_prj_target.launch_speed = 2000
 
 --Javelin--
 tweak_data.projectiles.wpn_prj_jav.damage = 36
-tweak_data.projectiles.wpn_prj_jav.launch_speed = 1500
-tweak_data.projectiles.wpn_prj_jav.adjust_z = 30
+tweak_data.projectiles.wpn_prj_jav.launch_speed = 1800
+tweak_data.projectiles.wpn_prj_jav.adjust_z = 0
 
 --Throwing axe--
 tweak_data.projectiles.wpn_prj_hur.damage = 36
-tweak_data.projectiles.wpn_prj_hur.launch_speed = 1000
-tweak_data.projectiles.wpn_prj_hur.adjust_z = 120
+tweak_data.projectiles.wpn_prj_hur.launch_speed = 1800
+tweak_data.projectiles.wpn_prj_hur.adjust_z = 0
 
 --ZAPper grenade
 tweak_data.projectiles.wpn_gre_electric.damage = 40
@@ -500,10 +503,11 @@ velocity = {
 	'dynamite','molotov'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 650
+	tweak_data.projectiles[proj_id].launch_speed = 750
 	tweak_data.projectiles[proj_id].adjust_z = 50
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+tweak_data.projectiles.molotov.launch_speed = 600
 
 velocity = {
 	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
@@ -675,6 +679,7 @@ end
 			
 			{ "light_mg" },
 			{ "heavy_mg" },
+			{ "miniguns" },
 			
 			{ "light_snp" },
 			{ "heavy_snp" },

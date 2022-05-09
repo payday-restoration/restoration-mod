@@ -312,16 +312,22 @@ function RaycastWeaponBase:trigger_held(...)
 end
 
 function NewRaycastWeaponBase:recoil_multiplier(...)
-	local mult = 1
-	if self._delayed_burst_recoil and self:in_burst_mode() and self:burst_rounds_remaining() then
-		mult = 0
+	local mult = recoil_multiplier_original(self, ...)
+	if self:in_burst_mode()then
+		if self._burst_fire_last_recoil_multiplier and (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
+			mult = mult * (self._burst_fire_last_recoil_multiplier or 1)
+		elseif self._burst_fire_recoil_multiplier then
+			mult = mult * (self._burst_fire_recoil_multiplier or 1)
+		--elseif self._delayed_burst_recoil and self:burst_rounds_remaining() then
+			--mult = 0
+		end
 	end
 	
 	if (self._name_id == "m134" or self._name_id == "shuno") and not self._vulcan_firing then
 		return 0
 	end
 
-	return recoil_multiplier_original(self, ...)
+	return mult
 end
 
 local on_enabled_original = NewRaycastWeaponBase.on_enabled
@@ -349,7 +355,9 @@ function RaycastWeaponBase:_start_spin()
 		if self._spin_down_start_t and RaycastWeaponBase._SPIN_DOWN_T > 0 then
 			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , RaycastWeaponBase._SPIN_DOWN_T) / RaycastWeaponBase._SPIN_DOWN_T) * RaycastWeaponBase._SPIN_UP_T
 		end
-		
+		if self:weapon_tweak_data().sounds.spin_start then
+			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_start)
+		end
 		self._next_spin_animation_t = t
 		self._spinning = true
 		self._spin_down_start_t = nil
@@ -363,7 +371,9 @@ function RaycastWeaponBase:_stop_spin()
 		if self._spin_up_start_t and RaycastWeaponBase._SPIN_UP_T > 0 then
 			self._spin_down_start_t = self._spin_down_start_t - (1 - math.clamp(t - self._spin_up_start_t, 0 , RaycastWeaponBase._SPIN_UP_T) / RaycastWeaponBase._SPIN_UP_T) * RaycastWeaponBase._SPIN_DOWN_T
 		end
-		
+		if self:weapon_tweak_data().sounds.spin_end then
+			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_end)
+		end
 		self._spinning = nil
 		self._spin_up_start_t = nil
 		self._spin_done = nil
@@ -449,7 +459,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
 		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
+		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 1
+		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
 		self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
+		self._burst_delay = self:weapon_tweak_data().BURST_DELAY
+		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
 		
 		self._burst_rounds_fired = 0
 		self._fire_rate_init_ramp_up_add = 0
@@ -510,16 +524,41 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					self:weapon_tweak_data().animations.reload_name_id = "akm"
 				end
 			end
-			
+			if stats.funco_chan then
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+			end	
+			if stats.hailstorm then
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.25
+				self:weapon_tweak_data().BURST_DELAY = 0.25
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:_set_burst_mode(true, true)
+				self:weapon_tweak_data().LOCK_BURST = true
+			end			
+			if stats.mk32 then
+				self:weapon_tweak_data().BURST_FIRE = 2
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 1
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
+				self:weapon_tweak_data().BURST_DELAY = 0.6
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:_set_burst_mode(true, true)
+				self:weapon_tweak_data().LOCK_BURST = true
+			end	
 			if stats.beretta_burst then
 				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
 			end	
 	
 			if stats.m16_burst then
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
 				self:weapon_tweak_data().FIRE_MODE = "single"	
 				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.3571428
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
 			end		
 	
@@ -528,6 +567,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = nil				
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
 				self:weapon_tweak_data().FIRE_MODE = "auto"	
+			end	
+			if stats.disable_steelsight_recoil_anim then
+				self._disable_steelsight_recoil_anim = true
 			end					
 			
 			if stats.can_shoot_through_titan_shield then
@@ -624,25 +666,30 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
 	local init_mult = self._fire_rate_init_mult
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
+	local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 
-	if self:in_burst_mode() then
+	if self:in_burst_mode() or self._macno then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
+		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
+			local delay = self._burst_delay and self._burst_delay / (fire_rate / multiplier)
+			multiplier = (self._macno and multiplier * 0.1) or (delay and multiplier / delay) or (self._burst_fire_rate_multiplier ~= 1 and 1) or (multiplier * 0.6666)
+			self._macno = nil
+		end
 	end	
-	
+	--[[
 	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
-		--[
 		if self._fire_rate_init_ramp_up then
 			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
 			init_mult =  init_ramp_up_add
 		end
-		--]]
 		multiplier = multiplier * init_mult
 	end
+	--]]
 	
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
-	
+
 	return multiplier
 end
 
@@ -667,16 +714,18 @@ end
 
 local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
 function NewRaycastWeaponBase:toggle_firemode(...)
-	return self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+	return not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
 end
 
 function NewRaycastWeaponBase:_check_toggle_burst()
-	if self:in_burst_mode() then
-		self:_set_burst_mode(false, self.AKIMBO and not self._has_auto)
-		return true
-	elseif (self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE) or (self._fire_mode == NewRaycastWeaponBase.IDSTRING_AUTO and not self:can_toggle_firemode()) then
-		self:_set_burst_mode(true, self.AKIMBO)
-		return true
+	if not self._lock_burst then
+		if self:in_burst_mode() then
+			self:_set_burst_mode(false, self.AKIMBO and not self._has_auto)
+			return true
+		elseif (self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE) or (self._fire_mode == NewRaycastWeaponBase.IDSTRING_AUTO and not self:can_toggle_firemode()) then
+			self:_set_burst_mode(true, self.AKIMBO)
+			return true
+		end
 	end
 end
 
@@ -688,7 +737,7 @@ function NewRaycastWeaponBase:_set_burst_mode(status, skip_sound)
 		self._sound_fire:post_event(status and "wp_auto_switch_on" or self._has_auto and "wp_auto_switch_on" or "wp_auto_switch_off")
 	end
 	
-	self:cancel_burst()
+	self:cancel_burst(nil, true)
 end
 
 function NewRaycastWeaponBase:can_use_burst_mode()
@@ -703,10 +752,16 @@ function NewRaycastWeaponBase:burst_rounds_remaining()
 	return self._burst_rounds_remaining > 0 and self._burst_rounds_remaining or false
 end
 
-function NewRaycastWeaponBase:cancel_burst(soft_cancel)
+function NewRaycastWeaponBase:cancel_burst(soft_cancel, macno)
 	if self._adaptive_burst_size or not soft_cancel then
+		if self._burst_rounds_remaining and self._burst_rounds_remaining > 0 and macno then
+			self._macno = true
+			if not self._i_know then
+				self._i_know = 1
+				managers.hud:show_hint( { text = "DON'T EVEN THINK ABOUT USING AUTOFIRE, OR I'LL KNOW" } )
+			end
+		end
 		self._burst_rounds_remaining = 0
-		
 		if self._delayed_burst_recoil and self._burst_rounds_fired > 0 then
 			self._setup.user_unit:movement():current_state():force_recoil_kick(self, self._burst_rounds_fired)
 		end
@@ -877,4 +932,65 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
 	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.95 / sprintout_anim_time )
 	return multiplier
+end
+
+
+local scope_colors = {
+	green = Color(0, 0.8, 0),
+	greenmid = Color(0.8, 0.5, 0),
+	greenlow = Color(0.8, 0, 0),
+	greenno = Color(0.5, 0, 0),
+	red = Color(0.8, 0, 0),
+	redmid = Color(0.65, 0, 0.5),
+	redlow = Color(0.1, 0, 0.8),
+	redno = Color(0.05, 0, 0.5),
+}
+function NewRaycastWeaponBase:set_scope_range_distance(distance)
+	if not self._assembly_complete then
+		return
+	end
+	
+	local damage_falloff = self:weapon_tweak_data().damage_falloff
+	local falloff_start = damage_falloff and damage_falloff.start_dist or 3000
+	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
+	falloff_start = falloff_start * (self._damage_near_mul or 1)
+	falloff_end = falloff_end * (self._damage_near_mul or 1)
+
+	if self._scopes and self._parts then
+		local part = nil
+
+		for i, part_id in ipairs(self._scopes) do
+			part = self._parts[part_id]   
+
+			if part and part.unit:digital_gui() then
+				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)
+				if distance then
+					if (distance * 100) < falloff_start then
+						part.unit:digital_gui()._title_text:set_color( scope_colors.red )
+					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
+						part.unit:digital_gui()._title_text:set_color( scope_colors.redmid )
+					elseif (distance * 100) > falloff_end then
+						part.unit:digital_gui()._title_text:set_color( scope_colors.redlow )
+					end
+				else
+					part.unit:digital_gui()._title_text:set_color( scope_colors.redno )
+				end
+			end
+
+			if part and part.unit:digital_gui_upper() then
+				part.unit:digital_gui_upper():number_set(distance and math.round(distance) or false, false)
+				if distance then
+					if (distance * 100) < falloff_start then
+						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.green )
+					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
+						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenmid )
+					elseif (distance * 100) > falloff_end then
+						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenlow )
+					end
+				else
+					part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenno )
+				end
+			end
+		end
+	end
 end

@@ -53,7 +53,11 @@ function RaycastWeaponBase:setup(...)
 end
 
 function RaycastWeaponBase:get_damage_type()
-	return self:weapon_tweak_data().damage_type
+	if self._rays and self._rays == 1 then
+		return self:weapon_tweak_data().damage_type_single_ray
+	else
+		return self:weapon_tweak_data().damage_type
+	end
 end
 
 --Fire no longer memes on shields.

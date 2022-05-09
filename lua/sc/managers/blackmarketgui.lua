@@ -4244,6 +4244,14 @@ function BlackMarketGui:update_info_text()
 					updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
 				end
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			elseif movement_penalty > 1 then
+				local penalty_as_string = string.format("%g%%", (movement_penalty - 1) * 100)
+				if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+				else
+					updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+				end
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
 			end
 
 			if slot_data.last_weapon then

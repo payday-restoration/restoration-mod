@@ -1361,7 +1361,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
 		translation = Vector3(0.02, -2, -3.1),
 	}
-	if SystemFS:exists("mods/CustomAttachmentPoints") then
+	if tweak_data.weapon.SetupAttachmentPoint then
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
 			translation = Vector3(-0.01, 3, -1.9),
 			rotation = Rotation(-0.062, 0.13, 0)
@@ -20719,11 +20719,8 @@ end
 
 end)
 
-
-if SystemFS:exists("mods/CustomAttachmentPoints") then
-	--[
-	Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
-
+Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
+	if tweak_data.weapon.SetupAttachmentPoint then
 		if not self.wpn_fps_lmg_hk21.override then
 			self.wpn_fps_lmg_hk21.override = {}
 		end
@@ -20763,7 +20760,5 @@ if SystemFS:exists("mods/CustomAttachmentPoints") then
 			custom_stats = stocks.folder_to_hvy_acc2_stats,
 			a_obj = "a_s_fix"
 		}
-
-	end)
-
-end
+	end
+end)

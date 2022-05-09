@@ -1361,7 +1361,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
 		translation = Vector3(0.02, -2, -3.1),
 	}
-	if tweak_data.weapon.SetupAttachmentPoint then
+	if WeaponTweakData.SetupAttachmentPoint then
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
 			translation = Vector3(-0.01, 3, -1.9),
 			rotation = Rotation(-0.062, 0.13, 0)
@@ -20720,7 +20720,7 @@ end
 end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
-	if tweak_data.weapon.SetupAttachmentPoint then
+	if WeaponTweakData.SetupAttachmentPoint then
 		if not self.wpn_fps_lmg_hk21.override then
 			self.wpn_fps_lmg_hk21.override = {}
 		end

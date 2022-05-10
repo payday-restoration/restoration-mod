@@ -1164,6 +1164,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_bonus_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",	
+		["bm_menu_weapon_movement_bonus_info_2"] = " 만큼 이동 속도가 증가합니다.",
 		["bm_lmg_generic_desc"] = "지향 사격 시 명중률이 매우 감소합니다.",		
 		["bm_ap_weapon_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_armor_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다",

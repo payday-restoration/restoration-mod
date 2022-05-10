@@ -667,6 +667,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (베타 버전)",
 		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
 		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
+		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (옛 버전)",
+		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (옛 버전)",		
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",

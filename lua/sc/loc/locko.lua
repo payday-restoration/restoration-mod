@@ -28,7 +28,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스트레이션 모드 옵션.",
 		["RestorationModUIOptionsButtonTitleID"] = "알파 UI",
 		["RestorationModUIOptionsButtonDescID"] = "알파 UI 옵션.",
-		["RestorationModTimeOfDayTitleID"] = "신규 + 랜덤 하루 중 시간",
+		["RestorationModTimeOfDayTitleID"] = "신규 + 랜덤 시간대",
 		["RestorationModTimeOfDayDescID"] = "특정 하이스트의 시간을 커스텀마이징 합니다.",
 
 		["restoration_level_data_unknown"] = "시간 불명, 위치 불명",
@@ -596,7 +596,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_rush_asset_sentrygun_desc"] = "센트리 패키지를 구매합니다",
 
 		["heist_junker_name"] = "도그하우스",
-		["heist_junker_brief"] = "이건 블라드를 위한 작업이야. 분명히, 실패한 무역 거래는 그의 부하들과 그들이 가져온 물품을 나쁜 상황에 놓이게 만들고. 연방경찰은 거의 이 상황에 직면해 있지. 너희들을 해당 위치로 데려다 줄 차량이 준비되어 있고 백업을 제공할 수 있어. 우리는 지원 헬기를 확보하고 너희들과 필수품을 그곳에서 꺼낼거야.\n\n짧을 수도 있겠지만 경찰을 과소평가하지말고. 장비를 가져가.",
+		["heist_junker_brief"] = "이건 블라드를 위한 작업이야. 분명히, 실패한 무역 거래는 그의 부하들과 그들이 가져온 물품을 나쁜 상황에 놓이게 만들고. 연방경찰은 거의 이 상황에 직면해 있지. 너희들을 해당 위치로 데려다 줄 차량이 준비되어 있고 백업을 제공할 수 있어. 우리는 지원 헬기를 확보하고 너희들과 필수품을 그곳에서 꺼낼거야.\n\n짧을 수도 있겠지만 경찰을 과소평가 하지말고. 장비를 가져가.",
 		["heist_junk_name"] = "경계하는 눈",
 		["heist_junk_brief"] = "건설 지역이 바로 앞에 있어. 경찰은 아직 도착하지 않았지만 곧 올거야. 블라드의 부하들이 백업을 제공할 거지만 너무 오래 지속되지는 않을거야.\n\n보고에 따르면 현장에 마약 제조실이 분명히 있으니 블라드의 물건을 동시에 안전하게 보관할 수 있다면 약간의 추가 돈을 자유롭게 벌 수 있을거야.",
 		["junk_01"] = "현금과 마약을 보호하라",
@@ -667,8 +667,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (베타 버전)",
 		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
 		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
-		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
-		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -862,8 +860,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "빠른 가방 운송을 위한 가방 짚라인을 삽니다",
 		
-		--Watchdogs Holdout
-		["heist_skm_watchdogs_stage2_briefing"] = "미아 칼리엔테는 진짜 물건이 될걸세. 친구들, 수년 동안 그녀는 DC에서 머키워터의 작전 뒤에 있는 두뇌 역할을 하고 있었지. 얼마 전 머키워터는 어느 부두의 창고를 인수하여 추가 유통 지점으로 사용하고 있다네, 우리의 목표는 그들이 최근 해외에서 약탈한 전리품들을 확인하는 것이지. 거기에 들어가서 그 애새끼를 잡고 인질로 삼을걸세. 머키들은 그녀를 잃을 순 없을테니 그녀를 구하기 위해 우리에게 비용을 줄 것이라네. 아마도 앞서 언급한 좀 더 가치 있는 약탈품을 줄까?, 자네들의 생각은 어떨세?"
+		["heist_skm_watchdogs_stage2_briefing"] = "미아 칼리엔테는 살아있는 물건이 될걸세. 친구들, 그녀는 수년 동안 DC에서 머키워터의 작전 뒤에 있는 두뇌 역할을 하고 있었지. 얼마 전 머키워터는 어느 부두의 창고를 인수하여 추가 유통 지점으로 사용하고 있다네, 우리의 목표는 그들이 최근 해외에서 약탈한 전리품들을 확인하는 것이지. 거기에 들어가서 그 애새끼를 잡고 인질로 삼을걸세. 머키들은 그녀를 잃을 순 없을테니 그녀를 구하기 위해 우리에게 돈을 줄 것이라네. 아마도 앞서 언급한 좀 더 가치 있는 약탈품을 줄까?, 자네들의 생각은 어떨세?"		
 	})
 
 	local job = Global.level_data and Global.level_data.level_id
@@ -946,15 +943,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Bernetti 93t 킷",
-		["bm_wp_upg_i_93r_desc"] = "추가 반동을 대가로 3발 버스트 발사 모드를 활성화합니다.", --still need to do the one for the primary bernetti--
+		["bm_wp_upg_i_93r_desc"] = "추가 반동을 대가로 발사 속도가  1100으로 증가한 3발 버스트 발사 설정을 활성화합니다.", --still need to do the one for the primary bernetti--
 
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 킷",
-		["bm_wp_upg_i_m16a2_desc"] = "무기를 반/버스트 사격 모드로 고정하지만 발사 속도를 200만큼 증가시킵니다.",
+		["bm_wp_upg_i_m16a2_desc"] = "자동 발사를 3발 버스트 설정으로 교체합니다. 버스트 발사 속도가 900으로 증가합니다.",
 		
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Bernetti 오버킬 킷",
-		["bm_wp_upg_i_b93o_desc"] = "추가 반동을 대가로 3발 버스트 발사 모드를 자동 발사 모드로 대체합니다.",		
+		["bm_wp_upg_i_b93o_desc"] = "추가 반동을 대가로 3발 버스트 발사를 자동 발사 설정으로 교체합니다.",
+
+		--2006M Hailstorm
+		["bm_wp_upg_i_iw_hailstorm"] = "헬스톰 킷",
+		["bm_wp_upg_i_iw_hailstorm_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n더 적은 사거리와 추가 반동을 대가로 이 무기에 트리플 챔버 스택탄을 제공합니다.",
+
+		--M32 MK32 Kit
+		["bm_wp_upg_i_ghosts_mk32"] = "MK32 킷",
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "고스트 컴퍼니의 프로토타입 무기 키트.\n\n추가 반동을 대가로 이 무기가 2발 버스트로 발사하도록 활성화하고 잠급니다.",
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 수평으로 퍼지도록 합니다.",
@@ -1002,19 +1007,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_fast_motor_sc_desc"] = "분당 회전 수가 15% 증가합니다.",
 		["bm_slow_motor_sc_desc"] = "분당 회전 수가 15% 감소합니다.",
 
-		--Weapon Sights--
-		["bm_wp_upg_o_leupold_desc_sc"] = "조준하는 동안 자동으로 특수 적과 스텔스 상태에서 경비원을 마킹합니다.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
-
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_tiny"] = "1.1x 배율.",
-		["bm_wp_upg_o_small"] = "1.2x 배율.",
-		["bm_wp_upg_o_cs_desc"] = "1.5x 배율.",
-		["bm_wp_upg_o_aim"] = "2x 배율.",
-		["bm_wp_upg_o_med"] = "3x 배율.",
-		["bm_wp_upg_o_large"] = "4x 배율.",
-		["bm_wp_upg_o_huge"] = "5x 배율.",
-		--;)
-		["bm_wp_upg_o_overkill"] = "6x 배율.",
+		["bm_wp_upg_o_1_1"] = "1.1x 배율.",
+		["bm_wp_upg_o_1_2"] = "1.2x 배율.",
+		["bm_wp_upg_o_1_5"] = "1.5x 배율.",
+		["bm_wp_upg_o_2"] = "2x 배율.",
+		["bm_wp_upg_o_3"] = "3x 배율.",
+		--["bm_wp_upg_o_3_mark"] = "3x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",		
+		["bm_wp_upg_o_4"] = "4x 배율.",
+		--["bm_wp_upg_o_4_mark"] = "4x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",
+		["bm_wp_upg_o_5"] = "5x 배율.",
+		--["bm_wp_upg_o_5_mark"] = "5x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",
+		["bm_wp_upg_o_6"] = "6x 배율.",
+		--["bm_wp_upg_o_6_mark"] = "6x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불을 일으키는 탄을 발사합니다. 불은 시간이 지남에 따라 피해를 입히고 적을 태우게 합니다.",
@@ -1042,10 +1047,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 빠르게 재장전합니다.\n\n탄창이 빈 상태로 재장전하면 재장전 속도가 빨라지고 방탄복을 관통해 피해의 80%를 입힙니다.",
 
 		--Kobus 90--
+		["bm_w_p90"] = "Project 90 기관탄총",
+		["bm_p90_sc_desc"] = "불펍 기관단총. SpecOps 기관단총의 경쟁자.",		
 		["bm_wp_p90_body_p90_tan"] = "탠 바디",
 		["bm_ap_weapon_mod_sc_desc"] = "방탄 관통력, 방패 관통력 및 벽 관통력을 추가합니다.",
 		["bm_wp_90_body_boxy"] = "옴니아 어썰트 프레임",
 		["bm_wp_90_body_boxy_desc"] = "오래된 옴니아 창고의 황폐한 유적에서 복구된 이 프레임은 무기의 취급이나 기능에 아무런 차이가 없지만 블록과 같은 미학은 확실히 좋은 물건입니다.",
+		
+		["bm_mp7_sc_desc"] = "가벼운 기관단총. Project 90 기관단총의 경쟁자.",		
 
 		--Phoenix .500--
 		["bm_wp_shatters_fury_desc"] = "미친 반동과 저지력을 갖춘 거대한 .500 구경 리볼버. 샤터가 선택한 무기입니다.\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
@@ -1079,14 +1088,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "무기 스킨의 부스트를 비활성화합니다.",
 
 		--Little Friend--
+		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
 		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 
 		--ASS VAL--
+		--["bm_w_asval"] = "Valkyria",		
 		["bm_asval_sc_desc"] = "\"침묵은 치명적이다\" 라는 명언에 진실을 세기십시오.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",
 
 		--KETCHUPKNOB--
-		["bm_groza_sc_desc_pc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_w_groza"] = "KETCHNOV Byk-4 소총",
+		["bm_groza_sc_desc_pc"] = "VALkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_groza_sc_desc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		
 		--Mosin--
@@ -1095,32 +1107,62 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, 디 엔드\n\n시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.",				
 
 		--Crosskill Guard
-		["bm_shrew_g_bling_sc_desc"] = "고통과 부정으로 가득한 세상에서 어둠 속에 빛이 있다는 것을 아는 것은 결국엔 큰 위안이 될 것입니다. ",
+		["bm_shrew_g_bling_sc_desc"] = "고통과 부정으로 가득한 세상에서 어둠 속에 빛이 있다는 것을 아는 것은 결국엔 큰 위안이 될 것입니다.",
 
 		--Broomstick--
 		["bm_c96_sc_desc"] = "완전 자동 발사가 가능하도록 개조된 혁신적인 독일 권총입니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
 
 		--M4/CAR-4
-		["bm_menu_sc_m4_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
+		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
+		["bm_wp_upg_fg_m4a1"] = "Em-Four 킷",
+		["bm_wp_upg_fg_m4a1_desc"] = "이 전용 세트는 애프터마켓 플립업 조준경을 보다 전통적인 설정으로 교체합니다. 총열덮개 모양을 덮어 씌웁니다.",
+		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
+
+		--AMR-16/M16
+		["bm_m16_sc_desc"] = "CAR-4의 전신입니다.",
+
+		--Bootleg/HK416c
+		["bm_w_tecci"] = "Bootleg 경기관총",
+		--KSP/M249
+		["bm_w_m249"] = "KSP-90 경기관총",
 
 		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
+
+		--Brenner 21/HK21
+		["bm_w_hk21"] = "Brenner-21 중기관총",
+
+		--M60
+		["bm_w_m60"] = "M60 중기관총",		
+
+		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
 		["bm_wolf_brigade_sc_desc"] = "우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 늑대이다.\n\n지향 사격 시 명중률이 매우 감소하지만 반동이 25% 감소합니다.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",	
+		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝할 수 있습니다.",	
 
 		--FAL
 		["bm_fal_sc_desc"] = "자유 진영의 오른팔.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
 
 		--G3
-		["bm_g3_sc_desc"] = "큰 Compact-5 처럼\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
+		["bm_w_g3"] = "Gewehr-3",
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
+		--Compact-5/MP5
+		["bm_w_mp5"] = "Compact-5",	
+		["bm_mp5_sc_desc"] = "Gewehr-3의 여동생.",
+
+		--WA2000
+		["bm_w_wa2000"] = "Lebensauger .300 저격소총",		
 
 		--TTI(TTY)
+		["bm_w_tti"] = "Contractor .308 저격소총",
 		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
+		["bm_menu_weapon_movement_bonus_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",	
 		["bm_lmg_generic_desc"] = "지향 사격 시 명중률이 매우 감소합니다.",		
 		["bm_ap_weapon_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
@@ -1214,7 +1256,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_jackal_track"] = "Special Merchandise",
 		["bm_suit_jackal_track_desc"] = "A special-made tracksuit, with both the Jackal logo, and a variation on the VERITAS logo.\n\nThe crew received them in unmarked boxes, but Jackal confirms he never sent them, or has seen them before.\nIt's unknown where they came from.\n\n\n\n...Inside the packages, was one note:\n\n''##A TOKEN OF APPRECIATION, FOR THOSE WITH DEDICATION.\nXOXO\n--S.N.##''\n\n",
 
-		["bm_suit_sunny"] = "써니사이드 로버",
+		["bm_suit_sunny"] = "써니사이드 강도",
 		["bm_suit_sunny_desc"] = "때로는 소매를 걷어붙이고 약간의 강도를 하고 싶을 때가 있습니다.",
 
 		["bm_suit_pool"] = "보디의 수영장 수리복",
@@ -1294,7 +1336,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_lmg"] = "기관총",
 		--
 		["menu_light_mg"] = "경기관총",
-		["menu_heavy_mg"] = "중기관총",
+		["menu_heavy_mg"] = "다목적 기관총",
+		["menu_miniguns"] = "개틀링 기관총",
 		
 		["menu_snp"] = "저격총",
 		--
@@ -1455,15 +1498,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_olympic"] = "Para 소총",
 		["bm_w_akmsu"] = "Krinkov 소총",
 		["bm_w_x_akmsu"] = "아킴보 Krinkov 소총",
-		["bm_w_hajk"] = "CR 805B 소총",
-		["bm_w_tti"] = "Contractor .308 저격소총",
-		["bm_w_groza"] = "KETCHNOV Byk-4 소총",		
+		["bm_w_hajk"] = "CR 805B 소총",		
 		
 		["bm_w_fmg9"] = "Wasp-DS 기관권총",
 
 		["menu_akimbo_assault_rifle"] = "아킴보 돌격소총",
-		
-		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
+			
 		
 		["bm_w_m95"] = "Thanatos .50 cal 대물 저격소총",
 		["bm_w_m107cq"] = "Mors .50 cal 대물 저격소총",		
@@ -1508,15 +1548,54 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
 			["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
 			["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯",
-
 			["bm_menu_ro_barrel"] = "리볼버 오셀롯",
 			["bm_menu_ro_stock"] = "리볼버 오셀롯",
 			["bm_menu_ro_modifier"] = "리볼버 오셀롯",
 			["bm_menu_ro_charm"] = "리볼버 오셀롯",
 			["bm_menu_ro_grip"] = "리볼버 오셀롯",
 
-
 			["bm_m134_sc_desc"] = "잠긴 메타포...",
+			
+			
+-- 씨발 이게 뭐냐 (WHAT THE FUCK IS THIS), Probably to be translated when activated 			
+--[[
+			["bm_w_m16"] = "Ichiroku",
+			["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
+			["bm_w_m4"] = "Em-Four",
+			["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
+			["bm_w_aug"] = "AUG",
+			["bm_aug_sc_desc"] = "\"   \"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+
+			--["bm_w_galil"] = "Galil",
+			--["bm_galil_sc_desc"] = "\"Atai!\"\n\nA middleschooler attending Seishou Academy.\nPretty dumb but very obedient.",
+
+			["bm_w_fal"] = "Faru",
+			["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nA service Seishou Academy.\nCurrently on leave from service.",
+			["bm_w_m14"] = "Ichiyon",
+			["bm_m14_sc_desc"] = "\"I have bad memories about ambushes.\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
+			["bm_w_g3"] = "Jiisuri",
+			["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
+
+			["bm_w_erma"] = "Erma-sensei",
+			["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy. Speaks with accented Japanese",
+			["bm_w_m1928"] = "Thompson-sensei",
+			["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy. Speaks with accented Japanese",
+
+			["bm_w_mp5"] = "Empi",
+			["bm_mp5_sc_desc"] = "\"If that's your hobby, you just had to say it...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the current student council president of elementary division.",
+
+			["bm_w_uzi"] = "Uzi",
+			["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nThe former student council president of the elementary division, pushed out by Empi when she arrived.",
+
+			["bm_w_siltstone"] = "Drako",
+			["bm_siltstone_sc_desc"] = "\"Do not misunderstand.\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.",
+			["bm_w_ak74"] = "Nanayon",
+			["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
+			["bm_w_mosin"] = "Mosin Nagant",
+			["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
+			["bm_w_saiga"] = "Saiga-chan",
+			["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
+--]]			
 		})
 	end	
 	
@@ -2050,7 +2129,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 ##15%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
@@ -2293,7 +2372,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "라이플맨",
-		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준 속도와 전력 질주 속도가 ##20%## 빨라집니다.\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
+		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준 속도와 전력 질주 속도가 ##15%## 빨라집니다.\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "공격적인 재장전",

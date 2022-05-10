@@ -11527,6 +11527,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.minibeck then --Reinbeck Auto
+		self.minibeck.recategorize = { "heavy_shot" }
+		self.minibeck.damage_type = "shotgun"
+		self.minibeck.damage_type_single_ray = "sniper"
 		self.minibeck.AMMO_MAX = 30
 		self.minibeck.supported = true
 		self.minibeck.stats = {

@@ -307,7 +307,6 @@ function RaycastWeaponBase:trigger_held(...)
 		end
 		return fired
 	end
-	
 	return trigger_held_original(self, ...)
 end
 
@@ -356,7 +355,7 @@ function RaycastWeaponBase:_start_spin()
 			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , RaycastWeaponBase._SPIN_DOWN_T) / RaycastWeaponBase._SPIN_DOWN_T) * RaycastWeaponBase._SPIN_UP_T
 		end
 		if self:weapon_tweak_data().sounds.spin_start then
-			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_start)
+			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_start or "turret_spin_start")
 		end
 		self._next_spin_animation_t = t
 		self._spinning = true
@@ -372,7 +371,7 @@ function RaycastWeaponBase:_stop_spin()
 			self._spin_down_start_t = self._spin_down_start_t - (1 - math.clamp(t - self._spin_up_start_t, 0 , RaycastWeaponBase._SPIN_UP_T) / RaycastWeaponBase._SPIN_UP_T) * RaycastWeaponBase._SPIN_DOWN_T
 		end
 		if self:weapon_tweak_data().sounds.spin_end then
-			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_end)
+			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_end or "turret_spin_end")
 		end
 		self._spinning = nil
 		self._spin_up_start_t = nil
@@ -464,6 +463,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
+		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
 		
 		self._burst_rounds_fired = 0
 		self._fire_rate_init_ramp_up_add = 0
@@ -532,8 +532,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end	
 			if stats.hailstorm then
 				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.5
-				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.25
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.33
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:weapon_tweak_data().BURST_DELAY = 0.25
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
@@ -551,6 +551,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.beretta_burst then
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
 			end	
 	
@@ -561,7 +562,14 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.3571428
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
+				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
+			end		
+
+			if stats.croon then
+				self:weapon_tweak_data().AUTO_BURST = true
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 20
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = true			
 			end		
 	
 			if stats.beer_burst then
@@ -747,7 +755,12 @@ function NewRaycastWeaponBase:can_use_burst_mode()
 end
 
 function NewRaycastWeaponBase:in_burst_mode()
-	return self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions()
+	if self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions() then
+		managers.hud:set_teammate_weapon_firemode_burst(self:selection_index())
+		return true --self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions()
+	else
+		return false --self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions()
+	end
 end
 
 function NewRaycastWeaponBase:burst_rounds_remaining()

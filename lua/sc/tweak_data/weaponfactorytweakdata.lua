@@ -4147,7 +4147,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 	self.parts.wpn_fps_smg_mac10_s_skel.custom_stats = stocks.nocheeks_to_fixed_rec3_stats
 	
 	table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_smg_mac10_s_no")
-	table.insert(self.wpn_fps_smg_mac10_npc.uses_parts, "wpn_fps_smg_mac10_s_no")		
+	table.insert(self.wpn_fps_smg_mac10_npc.uses_parts, "wpn_fps_smg_mac10_s_no")	
+	
+	--table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_upg_i_eye")
+	--table.insert(self.wpn_fps_smg_mac10_npc.uses_parts, "wpn_fps_upg_i_eye")		
 	
 	self.wpn_fps_smg_mac10_npc.uses_parts = deep_clone(self.wpn_fps_smg_mac10.uses_parts)	
 	
@@ -11061,6 +11064,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_bipods", "resmod_bipods", function
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {value = 5, zoom = 1, concealment = -2}
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.forbids = {} --g3 various attachments workaround
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.perks = {"bipod"}
+
+	self.parts.wpn_fps_lmg_hk21_fg_short.forbids = {}
 	
 end)
 
@@ -16358,6 +16363,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"
 	}
 
+	--Croon HS-10
+	self.parts.wpn_fps_upg_i_eye = {
+		pcs = nil,
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_eye",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			--croon = true
+		},
+		stats = {
+			value = 10,
+		},
+		internal_part = true,
+		dlc = "sc"
+	}
+
 	--M4A1 Kit
 	local m4a1_override = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
@@ -16374,8 +16401,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		},
 		adds = {
-			"fake_a_os",
-			"wpn_fps_m4_uupg_fg_rail_ext"
+			"fake_a_os"
 		}
 	}
 	self.parts.wpn_fps_m4_uupg_fg_rail_m4a1 = {

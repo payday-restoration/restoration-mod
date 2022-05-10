@@ -891,7 +891,7 @@ function CopDamage:damage_bullet(attack_data)
 			damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
 			
 			--Let the player know to try something different
-			if self._char_tweak.damage_resistance[damage_type] < 1 then
+			if self._char_tweak.damage_resistance[damage_type] and self._char_tweak.damage_resistance[damage_type] < 1 then
 				ineffective_damage = true
 			end		
 		end		

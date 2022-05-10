@@ -5517,6 +5517,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.spas12.CAN_TOGGLE_FIREMODE = false
 				self.spas12.single = {}
 				self.spas12.single.fire_rate = 0.13953488372
+				self.spas12.BURST_FIRE = 2
+				self.spas12.BURST_FIRE_RATE_MULTIPLIER = 5
+				self.spas12.BURST_FIRE_RECOIL_MULTIPLIER = 0.25
+				self.spas12.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
+				self.spas12.BURST_DELAY = 0.300
 				self.spas12.kick = self.stat_info.kick_tables.left_kick
 				self.spas12.supported = true
 				self.spas12.ads_speed = 0.380
@@ -8242,7 +8247,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.stats = {
 				damage = 20,
 				spread = 11,
-				recoil = 72,
+				recoil = 80,
 				spread_moving = 25,
 				zoom = 1,
 				concealment = 16,
@@ -8404,7 +8409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.stats = {
 				damage = 30,
 				spread = 11,
-				recoil = 61,
+				recoil = 70,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 14,

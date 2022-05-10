@@ -473,9 +473,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 	self._shots_fired = 0
 
-	--Set range multipliers.
-	self._damage_near_mul = 1
-	self._damage_far_mul = 1
 
 	--[[
 	if self._ammo_data then
@@ -493,6 +490,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	if not self._custom_stats_done then
+
+		--Set range multipliers.
+		self._damage_near_mul = 1
+		self._damage_far_mul = 1
+
 		for part_id, stats in pairs(custom_stats) do
 			if stats.ads_speed_mult then
 				self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
@@ -858,7 +860,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	
 	log("falloff_start_mult : " .. tostring( self._damage_near_mul ))
 	log("falloff_end_mult : " .. tostring( self._damage_far_mul ))
-	]]
+	--]]
 	
 	if current_state then
 		--Get ADS multiplier.
@@ -876,7 +878,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	--[[
 	log("falloff_start AFTER MULTS : " .. tostring( (falloff_start * self._damage_near_mul) / 100 ))
 	log("falloff_end AFTER MULTS: " .. tostring( (falloff_end * self._damage_far_mul )/ 100))
-	]]
+	--]]
 	
 	falloff_start = falloff_start * self._damage_near_mul
 	falloff_end = falloff_end * self._damage_far_mul
@@ -898,7 +900,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	log("DAMAGE MIN: " .. tostring( damage * minimum_damage * 10 ))
 	log("HIT AT: " .. tostring( distance / 100 ) .. " METERS")
 	log("DAMAGE DONE: " .. tostring( (math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end))) * damage, minimum_damage * damage)) * 10 ) .. "\n\n")
-	]]
+	--]]
 	
 	--Compute final damage.
 	return math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end))) * damage, minimum_damage * damage)

@@ -11259,7 +11259,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.beck.stats_modifiers = {damage = 1}
 		self.beck.panic_suppression_chance = 0.05
-		self.beck.timers = deep_clone(self.r870.timers)
+		self.beck.timers.shotgun_reload_enter = 0.3
+		self.beck.timers.shotgun_reload_first_shell_offset = 0.33
+		self.beck.timers.shotgun_reload_shell = 0.5666666666666667
+		self.beck.timers.shotgun_reload_exit_not_empty = 0.3
+		self.beck.timers.shotgun_reload_exit_empty = 0.7
+
 	end
 
 	if self.car9 then --Gambyt's ACAR 9

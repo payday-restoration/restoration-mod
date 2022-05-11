@@ -1173,7 +1173,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               DO  NOT  USE               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
 		["bm_menu_weapon_slot_warning_secondary"] = "WEAPON WAS MOVED TO THE SECONDARY SLOT\nWILL CRASH IF USED IN-HEIST AS A PRIMARY",
-		["bm_menu_weapon_slot_warning_disabled"] = "WEAPON WAS DISABLED BY CAPTAIN AUTUMN\nAND MAY RESULT IN CRASHING IF USED IN-HEIST",
+		["bm_menu_weapon_slot_warning_disabled"] = "WEAPON WAS DISABLED BY CAPTAIN AUTUMN\nAND WILL RESULT IN A CRASH IF USED IN-HEIST",
 		["bm_lmg_generic_desc"] = "Wildly inaccurate when hipfired.",
 		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
 		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",

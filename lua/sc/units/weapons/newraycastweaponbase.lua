@@ -276,6 +276,7 @@ end
 
 function RaycastWeaponBase:stop_shooting(...)
 	stop_shooting_original(self, ...)
+	self._shooting = nil
 	self._shots_fired = 0
 	if self._name_id == "m134" or self._name_id == "shuno" then
 		self._vulcan_firing = nil

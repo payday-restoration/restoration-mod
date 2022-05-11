@@ -703,6 +703,8 @@ end
 			{ "light_ar" },
 			{ "heavy_ar" },
 			
+			{ "heavy_mg" },
+			
 			{ "wpn_special" }
 		}
 	}

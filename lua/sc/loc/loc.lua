@@ -1340,7 +1340,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_lmg"] = "Machine Guns",
 		--
 		["menu_light_mg"] = "LMGs",
-		["menu_heavy_mg"] = "GPMGs",
+		["menu_heavy_mg"] = "HMGs",
 		["menu_miniguns"] = "Gatling Guns",
 		
 		["menu_snp"] = "Snipers",

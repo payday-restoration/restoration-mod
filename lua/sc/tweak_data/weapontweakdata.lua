@@ -3248,7 +3248,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
 	end
 	
-	recat = { "mg42", "m60", "hk21", "par" }
+	recat = { "mg42", "m60", "hk21", "par", "hk51b" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_mg" }
 		self[ wep_id ].has_description = true
@@ -8398,6 +8398,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.CAN_TOGGLE_FIREMODE = false
 			self.m134.kick = self.stat_info.kick_tables.even_recoil
 			self.m134.panic_suppression_chance = 0.05
+			self.m134.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.m134.supported = true
 			self.m134.ads_speed = 0.700
 			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
@@ -8430,148 +8431,192 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--[[     HEAVY MGs     ]]
 
-		--M60
-			self.m60.categories = {
-				"lmg",
-				"smg"
-			}
-			self.m60.CLIP_AMMO_MAX = 75
-			self.m60.AMMO_MAX = 120
-			self.m60.fire_mode_data.fire_rate = 0.10909090909
-			self.m60.auto.fire_rate = 0.10909090909
-			self.m60.kick = self.stat_info.kick_tables.horizontal_recoil
-			self.m60.supported = true
-			self.m60.ads_speed = 0.625
-			self.m60.damage_falloff = {
-				start_dist = 3200,
-				end_dist = 6700,
-				min_mult = 0.5
-			}
-			self.m60.stats = {
-				damage = 60,
-				spread = 73,
-				recoil = 66,
-				spread_moving = 5,
-				zoom = 1,
-				concealment = 17,
-				suppression = 7,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 9,
-				reload = 20
-			}
-			self.m60.stats_modifiers = nil
-			self.m60.panic_suppression_chance = 0.05
-			self.m60.reload_speed_multiplier = 0.875
-			self.m60.timers.reload_exit_empty = 1.4
-			self.m60.timers.reload_not_empty = 4.7
-			self.m60.timers.reload_exit_not_empty = 2.8
+		--PRIMARIES
+			--M60
+				self.m60.categories = {
+					"lmg",
+					"smg"
+				}
+				self.m60.CLIP_AMMO_MAX = 75
+				self.m60.AMMO_MAX = 120
+				self.m60.fire_mode_data.fire_rate = 0.10909090909
+				self.m60.auto.fire_rate = 0.10909090909
+				self.m60.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.m60.supported = true
+				self.m60.ads_speed = 0.625
+				self.m60.damage_falloff = {
+					start_dist = 3200,
+					end_dist = 6700,
+					min_mult = 0.5
+				}
+				self.m60.stats = {
+					damage = 60,
+					spread = 73,
+					recoil = 66,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 17,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.m60.stats_modifiers = nil
+				self.m60.panic_suppression_chance = 0.05
+				self.m60.reload_speed_multiplier = 0.875
+				self.m60.timers.reload_exit_empty = 1.4
+				self.m60.timers.reload_not_empty = 4.7
+				self.m60.timers.reload_exit_not_empty = 2.8
+	
+			--KSP 58
+				self.par.categories = {
+					"lmg",
+					"smg"
+				}
+				self.par.CLIP_AMMO_MAX = 50
+				self.par.fire_mode_data.fire_rate = 0.096
+				self.par.auto.fire_rate = 0.096
+				self.par.AMMO_MAX = 120
+				self.par.timers.reload_not_empty = 6.5
+				self.par.timers.reload_empty = 6.5
+				self.par.kick = {}
+				self.par.kick = self.stat_info.kick_tables.horizontal_right_recoil
+				self.par.panic_suppression_chance = 0.05
+				self.par.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.par.supported = true
+				self.par.ads_speed = 0.600
+				self.par.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 6300,
+					min_mult = 0.5
+				}
+				self.par.stats = {
+					damage = 60,
+					spread = 68,
+					recoil = 61,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 16,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.par.stats_modifiers = nil
+				self.par.timers.reload_not_empty = 6.3
+				self.par.timers.reload_empty = 6.3
+				self.par.timers.reload_exit_empty = 1.325
+				self.par.timers.reload_exit_not_empty = 1.325	
+	
+			--Buzzsaw (MG42)
+				self.mg42.categories = {
+					"lmg",
+					"smg"
+				}
+				self.mg42.CLIP_AMMO_MAX = 50
+				self.mg42.AMMO_MAX = 160
+				self.mg42.has_description = true
+				self.mg42.desc_id = "bm_wolf_brigade_sc_desc"
+				self.mg42.kick = self.stat_info.kick_tables.the_wolf_brigade
+				self.mg42.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.mg42.supported = true
+				self.mg42.ads_speed = 0.600
+				self.mg42.damage_falloff = {
+					start_dist = 2300,
+					end_dist = 5000,
+					min_mult = 0.6666
+				}
+				self.mg42.stats = {
+					damage = 45,
+					spread = 65,
+					recoil = 55,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 17,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.mg42.stats_modifiers = nil
+				self.mg42.panic_suppression_chance = 0.05
+				self.mg42.reload_speed_multiplier = 0.9
+				self.mg42.timers.reload_exit_empty = 1.65
+				self.mg42.timers.reload_exit_not_empty = 1.65
+	
+			--Brenner 21 (HK21)
+				self.hk21.categories = {
+					"lmg",
+					"smg"
+				}
+				self.hk21.CLIP_AMMO_MAX = 100
+				self.hk21.AMMO_MAX = 160
+				self.hk21.fire_mode_data.fire_rate = 0.075
+				self.hk21.CAN_TOGGLE_FIREMODE = true
+				self.hk21.fake_semi_anims = true
+				self.hk21.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.hk21.panic_suppression_chance = 0.05
+				self.hk21.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.hk21.supported = true
+				self.hk21.ads_speed = 0.575
+				self.hk21.damage_falloff = {
+					start_dist = 2800,
+					end_dist = 5500,
+					min_mult = 0.6666
+				}
+				self.hk21.stats = {
+					damage = 45,
+					spread = 66,
+					recoil = 65,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 16,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.hk21.stats_modifiers = nil
+				self.hk21.timers.reload_exit_empty = 1.3
+				self.hk21.timers.reload_exit_not_empty = 1.3
+		
+		--SECONDARIES
 
-		--KSP 58
-			self.par.categories = {
+			--SG Versteckt 51D (HK51b)
+			self.hk51b.use_data.selection_index = 1 --Like fuck are we having ANOTHER primary 7.62 HMG
+			self.hk51b.categories = {
 				"lmg",
 				"smg"
 			}
-			self.par.CLIP_AMMO_MAX = 50
-			self.par.fire_mode_data.fire_rate = 0.096
-			self.par.auto.fire_rate = 0.096
-			self.par.AMMO_MAX = 120
-			self.par.timers.reload_not_empty = 6.5
-			self.par.timers.reload_empty = 6.5
-			self.par.kick = {}
-			self.par.kick = self.stat_info.kick_tables.horizontal_right_recoil
-			self.par.panic_suppression_chance = 0.05
-			self.par.supported = true
-			self.par.ads_speed = 0.600
-			self.par.damage_falloff = {
-				start_dist = 3000,
-				end_dist = 6300,
-				min_mult = 0.5
-			}
-			self.par.stats = {
-				damage = 60,
-				spread = 68,
-				recoil = 61,
-				spread_moving = 5,
-				zoom = 1,
-				concealment = 16,
-				suppression = 9,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 9,
-				reload = 20
-			}
-			self.par.stats_modifiers = nil
-			self.par.timers.reload_not_empty = 6.3
-			self.par.timers.reload_empty = 6.3
-			self.par.timers.reload_exit_empty = 1.325
-			self.par.timers.reload_exit_not_empty = 1.325	
-
-		--Buzzsaw (MG42)
-			self.mg42.categories = {
-				"lmg",
-				"smg"
-			}
-			self.mg42.CLIP_AMMO_MAX = 50
-			self.mg42.AMMO_MAX = 160
-			self.mg42.has_description = true
-			self.mg42.desc_id = "bm_wolf_brigade_sc_desc"
-			self.mg42.kick = self.stat_info.kick_tables.the_wolf_brigade
-			self.mg42.supported = true
-			self.mg42.ads_speed = 0.600
-			self.mg42.damage_falloff = {
-				start_dist = 2300,
-				end_dist = 5000,
+			self.hk51b.CLIP_AMMO_MAX = 40
+			self.hk51b.AMMO_MAX = 80
+			self.hk51b.fire_mode_data.fire_rate = 0.063157
+			self.hk51b.CAN_TOGGLE_FIREMODE = true
+			self.hk51b.kick = self.stat_info.kick_tables.moderate_right_kick
+			self.hk51b.panic_suppression_chance = 0.05
+			self.hk51b.supported = true
+			self.hk51b.ads_speed = 0.475
+			self.hk51b.damage_falloff = {
+				start_dist = 1400,
+				end_dist = 5200,
 				min_mult = 0.6666
 			}
-			self.mg42.stats = {
+			self.hk51b.stats = {
 				damage = 45,
-				spread = 65,
-				recoil = 55,
-				spread_moving = 5,
-				zoom = 1,
-				concealment = 17,
-				suppression = 8,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 9,
-				reload = 20
-			}
-			self.mg42.stats_modifiers = nil
-			self.mg42.panic_suppression_chance = 0.05
-			self.mg42.reload_speed_multiplier = 0.9
-			self.mg42.timers.reload_exit_empty = 1.65
-			self.mg42.timers.reload_exit_not_empty = 1.65
-
-		--Brenner 21 (HK21)
-			self.hk21.categories = {
-				"lmg",
-				"smg"
-			}
-			self.hk21.CLIP_AMMO_MAX = 100
-			self.hk21.AMMO_MAX = 160
-			self.hk21.fire_mode_data.fire_rate = 0.075
-			self.hk21.CAN_TOGGLE_FIREMODE = true
-			self.hk21.fake_semi_anims = true
-			self.hk21.kick = self.stat_info.kick_tables.moderate_right_kick
-			self.hk21.panic_suppression_chance = 0.05
-			self.hk21.supported = true
-			self.hk21.ads_speed = 0.575
-			self.hk21.damage_falloff = {
-				start_dist = 2800,
-				end_dist = 5500,
-				min_mult = 0.6666
-			}
-			self.hk21.stats = {
-				damage = 45,
-				spread = 66,
-				recoil = 65,
+				spread = 60,
+				recoil = 63,
 				spread_moving = 7,
 				zoom = 1,
-				concealment = 16,
+				concealment = 18,
 				suppression = 9,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -8579,12 +8624,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 9,
 				reload = 20
 			}
-			self.hk21.stats_modifiers = nil
-			self.hk21.timers.reload_exit_empty = 1.3
-			self.hk21.timers.reload_exit_not_empty = 1.3
+			self.hk51b.stats_modifiers = nil
+			self.hk51b.timers.reload_empty = 3.3
+			self.hk51b.timers.reload_not_empty = 3
+			self.hk51b.timers.reload_exit_empty = 0.8
+			self.hk51b.timers.reload_exit_not_empty = 0.5
+			self.hk51b.reload_speed_multiplier = 0.9
 
-	
-	
+
 
 	--[[     LIGHT SNIPERS     ]]	
 

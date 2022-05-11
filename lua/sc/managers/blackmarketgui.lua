@@ -4215,48 +4215,56 @@ function BlackMarketGui:update_info_text()
 			local weapon_id = slot_data.name
 			local weapon_tweak = weapon_id and tweak_data.weapon[weapon_id]
 
-			if weapon_tweak.has_description then
+			local selection_index = tweak_data:get_raw_value("weapon", self._slot_data.name, "use_data", "selection_index") or 1
+			local category = (selection_index == 1 and "secondaries") or (selection_index == 2 and "primaries") or "disabled"
+			if category == slot_data.category then
 
-				if slot_data.global_value and slot_data.global_value ~= "normal" then
-					if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-						updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+				if weapon_tweak.has_description then
+	
+					if slot_data.global_value and slot_data.global_value ~= "normal" then
+						if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
+							updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+						else
+							updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+						end
 					else
-						updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+						if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
+							updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+						else
+							updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+						end
 					end
-				else
-					if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-						updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
-					else
-						updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
-					end
-				end
-				updated_texts[4].below_stats = true
-			end			
+					updated_texts[4].below_stats = true
+				end			
 
-			-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
-			local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
-			local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
-			if movement_penalty < 1 then
-				local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
-				if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
-				else
-					updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
+				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
+				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				if movement_penalty < 1 then
+					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+					else
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				elseif movement_penalty > 1 then
+					local penalty_as_string = string.format("%g%%", (movement_penalty - 1) * 100)
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+					else
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
 				end
+	
+				if slot_data.last_weapon then
+					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_last_weapon_warning") .. "##"
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-			elseif movement_penalty > 1 then
-				local penalty_as_string = string.format("%g%%", (movement_penalty - 1) * 100)
-				if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
-				else
-					updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
 				end
-				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
-			end
-
-			if slot_data.last_weapon then
-				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_last_weapon_warning") .. "##"
-			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			else
+				updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_1") .. ((category == "secondaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_secondary")) or (category == "primaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_primary")) or managers.localization:to_upper_text("bm_menu_weapon_slot_warning_disabled")) .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_2")
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 			end
 
 			updated_texts[4].below_stats = true

@@ -2454,9 +2454,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}	
 
 	--M4A1 sights set up
-	
 	self.parts.fake_a_os = {
-		a_obj = "a_b",
+		a_obj = "a_fg",
 		type = "foregrip",
 		name_id = "bm_wp_aug_b_medium",
 		unit = "units/payday2/weapons/wpn_fps_ass_aug_pts/wpn_fps_aug_b_medium",
@@ -2478,15 +2477,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.parts.wpn_fps_ass_m4_os_frontsight = {
 		a_obj = "a_ns",
 		parent = "foregrip",
-		type = "foregrip",
+		type = "shitass",
 		name_id = "bm_wp_m16_os_frontsight",
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_os_frontsight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_os_frontsight",
 		stats = {
 			value = 1
-		},
-		forbids = {
-			"wpn_fps_m4_uupg_fg_rail_ext"
 		}
 	}
 

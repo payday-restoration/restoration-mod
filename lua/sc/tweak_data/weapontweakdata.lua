@@ -9322,7 +9322,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.plainsrider.timers.reload_empty = self.plainsrider.timers.reload_not_empty
 		self.plainsrider.timers.reload_exit_not_empty = 0.4
 		self.plainsrider.timers.reload_exit_empty = self.plainsrider.timers.reload_exit_not_empty
-		self.plainsrider.reload_speed_multiplier = 0.75
+		self.plainsrider.bow_reload_speed_multiplier = nil
+		self.plainsrider.reload_speed_multiplier = 2.9
 
 	--Pistol Crossbow
 		self.hunter.upgrade_blocks = {
@@ -9438,7 +9439,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.long.has_description = true
 		self.long.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.long.kick = self.stat_info.kick_tables.none	
-		self.long.charge_data.max_t = 1
+		self.long.charge_data.max_t = 0.7
 		self.long.not_allowed_in_bleedout = false
 		self.long.AMMO_MAX = 20
 		self.long.panic_suppression_chance = 0.05
@@ -9464,7 +9465,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.long.timers.reload_empty = self.long.timers.reload_not_empty
 		self.long.timers.reload_exit_not_empty = 0.7
 		self.long.timers.reload_exit_empty = self.long.timers.reload_exit_not_empty
-		self.long.reload_speed_multiplier = 1.25
+		self.long.reload_speed_multiplier = 2.7
 
 	
 	--China Puff--
@@ -9720,7 +9721,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			equip = 0.85
 		}		
 		self.elastic.kick = self.stat_info.kick_tables.none			
-		self.elastic.charge_data.max_t = 1
+		self.elastic.charge_data.max_t = 0.9
 		self.elastic.not_allowed_in_bleedout = false
 		self.elastic.AMMO_MAX = 20
 		self.elastic.panic_suppression_chance = 0.05
@@ -9746,7 +9747,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.elastic.timers.reload_empty = self.elastic.timers.reload_not_empty
 		self.elastic.timers.reload_exit_not_empty = 0.6
 		self.elastic.timers.reload_exit_empty = self.elastic.timers.reload_exit_not_empty
-		self.elastic.reload_speed_multiplier = 1.25
+		self.elastic.reload_speed_multiplier = 2.3
 
 
 

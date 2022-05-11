@@ -211,7 +211,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.ai_group_type = lapd
 	self.pent.package = {"packages/job_pent", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.pent.player_style = "suit_sunny"
-
+	
+	--[[
+	self.ranc.ai_group_type = lapd
+	self.ranc.player_style = "suit_sunny"
+	--]]
 	
 	--///NEW OUTFITS\\\--
 	

@@ -780,7 +780,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "하토르 총열",
 		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "불새 총열",
 		
-		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo 손잡이",
+		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "에르고 손잡이",
 		
 		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "부드러운 실린더",
 
@@ -790,7 +790,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
 		["bm_w_socom"] = "Anubis .45 권총",
 		["bm_w_x_socom"] = "아킴보 Anubis .45 권총",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra 결합 모듈",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "라 결합 모듈",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "$BTN_GADGET를 눌러 사용합니다.",
 
 		--Ranted NMH
@@ -941,7 +941,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		----Weapons + Mods Descriptions/names----
 
 		--Reinfield--
-		["bm_wp_r870_s_folding_ext"] = "확장 Muldon 개머리판",
+		["bm_wp_r870_s_folding_ext"] = "확장 멀던 개머리판",
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Bernetti 93t 킷",
@@ -1059,7 +1059,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_mp7_sc_desc"] = "가벼운 기관단총. Project 90 기관단총의 경쟁자.",		
 
 		--Phoenix .500--
-		["bm_wp_shatters_fury_desc"] = "미친 반동과 저지력을 갖춘 거대한 .500 구경 리볼버. 샤터가 선택한 무기입니다.\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_wp_shatters_fury_desc"] = "미친 반동과 저지력을 갖춘 거대한 .500 구경 리볼버. 샤터가 선택한 무기입니다.\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. 20mm 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 늘러 유탄 발사기로 전환합니다.",
@@ -1099,12 +1099,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "\"침묵은 치명적이다\" 라는 명언에 진실을 세기십시오.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",
 
 		--KETCHUPKNOB--
-		["bm_w_groza"] = "KETCHNOV Byk-4 소총",
+		["bm_w_groza"] = "Tula-14 소총",
 		["bm_groza_sc_desc_pc"] = "VALkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_groza_sc_desc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		
 		--Mosin--
-		["bm_mosin_sc_desc"] = "고전적이고 강력한 볼트액션 소총.\n\n이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_mosin_sc_desc"] = "고전적이고 강력한 볼트액션 소총.\n\n이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, 디 엔드\n\n시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.",				
 
@@ -1116,7 +1116,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--M4/CAR-4
 		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
-		["bm_wp_upg_fg_m4a1"] = "Em-Four 킷",
+		["bm_wp_upg_fg_m4a1"] = "엠포 킷",
 		["bm_wp_upg_fg_m4a1_desc"] = "이 전용 세트는 애프터마켓 플립업 조준경을 보다 전통적인 설정으로 교체합니다. 총열덮개 모양을 덮어 씌웁니다.",
 		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
 
@@ -1143,7 +1143,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝할 수 있습니다.",	
+		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝할 수 있습니다.",	
 
 		--FAL
 		["bm_fal_sc_desc"] = "자유 진영의 오른팔.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
@@ -1160,7 +1160,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 저격소총",
-		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",		
+		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
@@ -1173,10 +1173,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_secondary"] = "해당 무기는 보조무기 슬롯으로 옮겨졌습니다.\n하이스트에서 해당 무기를 주무기로 사용하면 충돌이 발생할 것입니다.",
 		["bm_menu_weapon_slot_warning_disabled"] = "해당 무기는 캡틴 어텀에 의해 비활성화 되었습니다.\n그리고 하이스트에서 사용 시 충돌이 발생할 것입니다.",		
 		["bm_lmg_generic_desc"] = "지향 사격 시 명중률이 매우 감소합니다.",		
-		["bm_ap_weapon_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_ap_weapon_sc_desc"] = "방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_armor_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다",
 		["bm_ap_armor_80_weapon_sc_desc"] = "방탄복을 관통해 피해의 80%를 입힙니다.",
-		["bm_heavy_ap_weapon_sc_desc"] = "방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_heavy_ap_weapon_sc_desc"] = "방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_2_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.",
 		["bm_ap_3_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있습니다.",
 		["bm_40mm_weapon_sc_desc"] = "$BTN_GADGET 키를 눌러 리프 조준기를 전환합니다.\n\n리프 조준기는 30미터에서 0으로 조정됩니다.",
@@ -1184,8 +1184,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
 		["bm_hx25_buck_sc_desc"] = "12개의 펠렛을 광범위하게 발사합니다.\n\n여전히 유탄 발사기로 취급하여 관련 스킬의 효과를 받습니다.",
 		["bm_auto_generated_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.",
-		["bm_auto_generated_ap_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
-		["bm_auto_generated_sap_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_auto_generated_ap_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_auto_generated_sap_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_auto_generated_lmg_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n이 무기를 들고 있는 동안 이동 속도가 25% 감소합니다.",
 		["bm_auto_generated_mod_sc_desc"] = "이 부착물의 능력치는 자동 커스텀 부착물 능력치 생성이 완료될 때까지 제거되었습니다.",
 		["bm_tranq_maxim_sc_desc"] = "소음기와 통합되었습니다.\n\n마취탄을 발사하여 시간이 지남에 따라 지속 피해를 줍니다.",
@@ -1439,13 +1439,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		-- Renamed default weapons and mods + descriptions-- --move all these to their respective weapons--
 
-		["bm_wp_pis_usp_b_match"] = "Freeman 슬라이드",
-		["bm_wp_1911_m_big"] = "Casket 탄창",
-		["bm_wp_usp_m_big"] = "Casket 탄창",
+		["bm_wp_pis_usp_b_match"] = "프리맨 슬라이드",
+		["bm_wp_1911_m_big"] = "캐스킷 탄창",
+		["bm_wp_usp_m_big"] = "캐스킷 탄창",
 		["bm_wp_upg_ass_ak_b_zastava"] = "연장 총열",
-		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf 총열",
-		["bm_wp_p90_b_ninja"] = "Ninja 총열",
-		["bm_wp_par_b_short"] = "Comped 총열",
+		["bm_wp_upg_ass_m4_b_beowulf"] = "울프 총열",
+		["bm_wp_p90_b_ninja"] = "닌자 총열",
+		["bm_wp_par_b_short"] = "콤푸드 총열",
 
 		["menu_es_rep_upgrade"] = "",	--???--
 
@@ -1458,14 +1458,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_tec9"] = "아킴보 T3K Urban 기관단총",
 
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC 포어그립",
-		["bm_wp_hs2000_sl_long"] = "Elite 슬라이드",
-		["bm_wp_vhs_b_sniper"] = "Hyper 총열",
+		["bm_wp_hs2000_sl_long"] = "엘리트 슬라이드",
+		["bm_wp_vhs_b_sniper"] = "하이퍼 총열",
 		["bm_w_r0991"] = "AR-15 바민트 권총",
-		["bm_wp_vhs_b_silenced"] = "Bad Dragan 총열",
+		["bm_wp_vhs_b_silenced"] = "배드 드라간 총열",
 		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "붉은 몸체",
-		["bm_wp_g3_b_sniper"] = "Macro 총열",
-		["bm_wp_g3_b_short"] = "Micro 총열",
-		["bm_wp_g3_m_psg"] = "Präzision 탄창",
+		["bm_wp_g3_b_sniper"] = "매크로 총열",
+		["bm_wp_g3_b_short"] = "마이크로 총열",
+		["bm_wp_g3_m_psg"] = "프레지션 탄창",
 		["bm_wp_shak12_body_vks"] = "강화 프레임",
 		
 		--VMP HK416c Fixed Stock
@@ -1836,7 +1836,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_14"] = "버글러는 라우드용으로 사용되는 다른 덱보다 약간 약한 대가로 스텔스에 약간의 보너스를 제공하는 특성 덱입니다.",	
 		["loading_equip_skills_res_15"] = "킹핀은 다재다능한 특성 덱입니다. 주사기로 자가 유지, 높은 데미지에서 살아남거나 팀 대신 적의 사격을 맞아주는 데 사용할 수 있습니다.",	
 		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 특성 덱입니다.",	
-		["loading_equip_skills_res_17"] = "실드를 관통하는 총알은 절반의 피해를 줍니다.",	
+		["loading_equip_skills_res_17"] = "방패를 관통하는 총알은 절반의 피해를 줍니다.",	
 		["loading_equip_skills_res_18"] = "Peacemaker와 Phoenix .500 리볼버는 저격소총처럼 방탄복을 관통할 수 있습니다.",
 		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 있다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
 		["loading_equip_skills_res_20"] = "무기의 은폐가 높을수록 더 빨리 교체하거나 넣을 수 있습니다.",	

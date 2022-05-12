@@ -664,12 +664,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
 		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
 		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
-		["menu_jukebox_resmusic_doublecrossbeta"] = "Double Cross (Beta Version)",
-		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (Beta Version)",
-		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Beta Version)",
-		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Beta Version)",
-		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
-		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
+		["menu_jukebox_resmusic_doublecrossbeta"] = "Double Cross (Бета)",
+		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (Бета)",
+		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Бета)",
+		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Бета)",
+		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Старый)",
+		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Старый)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -774,7 +774,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_l_global_value_halloween_sword"] = "Это предмет из Хеллоуина 2013!",
 
 		--S&W .500
-		["bm_w_shatters_fury"] = "Феникс .500",
+		["bm_w_shatters_fury"] = "Револьвер Phoenix .500",
 
 		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Ствол 'Горус'",
 		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Ствол 'Шаттер'",
@@ -789,8 +789,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		--MK-23
 		--Semi-automatic pistol. Hold down ¦ to aim. Release to fire.
-		["bm_w_socom"] = "Анубис .45",
-		["bm_w_x_socom"] = "Парные Анубис .45",
+		["bm_w_socom"] = "Пистолет Anubis .45",
+		["bm_w_x_socom"] = "Парные Anubis .45",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Комбинированный модуль 'Ра'",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Включается на кнопку $BTN_GADGET.",
 
@@ -811,7 +811,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_nmh_new3_desc"] = "Нажмите кнопку и ожидайте лифт",	
 
 		--OICW--
-		["bm_w_osipr"] = "SABR",
+		["bm_w_osipr"] = "Винтовка SABR",
 		["bm_w_osipr_gl"] = "SABR - подствольный гранатомёт",
 
 		--GO Bank remastered
@@ -947,15 +947,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Набор Bernetti 93t",
-		["bm_wp_upg_i_93r_desc"] = "Позволяет режим стрельбы очередями по 3 патрона, но увеличивает отдачу.", --still need to do the one for the primary bernetti--
+		["bm_wp_upg_i_93r_desc"] = "Включает режим стрельбы со скоростью 1100 очередями по 3 патрона, но увеличивает отдачу.", --still need to do the one for the primary bernetti--
 				
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "Набор AMR-16 B3",
-		["bm_wp_upg_i_m16a2_desc"] = "Заменяет автоматическую стрельбу на стрельбу очередями, но увеличивает скорострельность на 200.",
+		["bm_wp_upg_i_m16a2_desc"] = "Заменяет автоматическую стрельбу на стрельбу очередями, но увеличивает скорострельность до 900.",
 
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Набор Bernetti OVERKILL",
 		["bm_wp_upg_i_b93o_desc"] = "Заменяет стрельбу очередями на автоматическую, но увеличивает отдачу.",	
+		
+		--2006M Hailstorm
+		["bm_wp_upg_i_iw_hailstorm"] = "Набор Hailstorm",
+		["bm_wp_upg_i_iw_hailstorm_desc"] = "Прототип, созданный Fujiwara Heavy Industries.\n\nУстанавливает на оружие тройные патроны, но уменьшает расстояние и увеличивает отдачу.",
+
+		--M32 MK32 Kit
+		["bm_wp_upg_i_ghosts_mk32"] = "Набор MK32",
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "Прототип, созданный Ghost Company.\n\nОружие стреляет очередями по два, но отдача увеличена.",		
 
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Дробинки будут разлетаться горизонтально, а не распыляться.",
@@ -1003,19 +1011,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_fast_motor_sc_desc"] = "Увеличивает скорость ротации на 15%.",
 		["bm_slow_motor_sc_desc"] = "Уменьшает скорость ротации на 15%.",
 
-		--Weapon Sights--
-		["bm_wp_upg_o_leupold_desc_sc"] = "Во время прицеливания автоматически помечает специальных противников и охранников.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
-
-		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_tiny"] = "УВЕЛИЧЕНИЕ 1.1x.",
-		["bm_wp_upg_o_small"] = "УВЕЛИЧЕНИЕ 1.2x.",
-		["bm_wp_upg_o_cs_desc"] = "УВЕЛИЧЕНИЕ 1.5x.",
-		["bm_wp_upg_o_aim"] = "УВЕЛИЧЕНИЕ 2x.",
-		["bm_wp_upg_o_med"] = "УВЕЛИЧЕНИЕ 3x.",
-		["bm_wp_upg_o_large"] = "УВЕЛИЧЕНИЕ 4x .",
-		["bm_wp_upg_o_huge"] = "УВЕЛИЧЕНИЕ 5x.",
-		--;)
-		["bm_wp_upg_o_overkill"] = "УВЕЛИЧЕНИЕ 6x.",
+	    --Generic Optic Zoom Descriptions--
+		["bm_wp_upg_o_1_1"] = "УВЕЛИЧЕНИЕ 1.1x.",
+		["bm_wp_upg_o_1_2"] = "УВЕЛИЧЕНИЕ 1.2x.",
+		["bm_wp_upg_o_1_5"] = "УВЕЛИЧЕНИЕ 1.5x.",
+		["bm_wp_upg_o_2"] = "УВЕЛИЧЕНИЕ 2x.",
+		["bm_wp_upg_o_3"] = "УВЕЛИЧЕНИЕ 3x.",
+		--["bm_wp_upg_o_3_mark"] = "3x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_4"] = "УВЕЛИЧЕНИЕ 4x.",
+		--["bm_wp_upg_o_4_mark"] = "4x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_5"] = "УВЕЛИЧЕНИЕ 5x.",
+		--["bm_wp_upg_o_5_mark"] = "5x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_6"] = "УВЕЛИЧЕНИЕ 6x.",
+		--["bm_wp_upg_o_6_mark"] = "6x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Выпускает заряд, который разносит огонь в точке поражения. Огонь наносит урон через время и имеет шанс останавливать врагов.",
@@ -1043,12 +1051,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_galant_sc_desc"] = "Классическая винтовка времён Второй мировой. Надёжная, точная и быстро перезаряжается.\n\nПерезаряжается быстрее, если обойма пуста. Наносит 80% своего урона по броне.",
 
 		--Kobus 90--
+		["bm_w_p90"] = "Пистолет пулемет Project 90",
+		["bm_p90_sc_desc"] = "ПП по схеме буллпап. Конкурент ПП 'SpecOps'.",
 		["bm_wp_p90_body_p90_tan"] = "Бежевый корпус",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_wp_90_body_boxy"] = "Штурмовой корпус OMNIA",
 		["bm_wp_90_body_boxy_desc"] = "Найденный на заброшенном складе корпорации OMNIA, этот корпус совершенно не влияет на функционал или удобность оружия, но его квадратный дизайн приятен глазу.",
 
-		--Raze's Fury--
+		["bm_mp7_sc_desc"] = "Лёгкий ПП. Конкурент ПП Project 90.",
+		
+		--Phoenix .500--
 		["bm_wp_shatters_fury_desc"] = "Мощный револьвер калибра .500 с сильной отдачей.\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И НЕБОЛЬШИЕ СТЕНЫ.",
 
 		--OICW--
@@ -1079,14 +1091,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "ИСПОЛЬЗУЙТЕ, ЧТОБЫ УБРАТЬ БОНУСЫ, ПОЛУЧЕННЫЕ ОТ СКИНОВ.",
 
 		--Little Friend--
+		["bm_w_contraband"] = "Винтовкка Bigger Friend 7.62",
 		["bm_m203_weapon_sc_desc_pc"] = "Старшая сестра личного AMR-16 Лица со шрамом.\n\nНаносит 80% урона по броне. Нажмите $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
 		["bm_m203_weapon_sc_desc"] = "Старшая сестра личного AMR-16 Лица со шрамом.\n\nНаносит 80% урона по броне. Удерживайте $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
 
 		--ASS VAL--
+		["bm_w_asval"] = "Винтовка ВАЛькирия",
 		["bm_asval_sc_desc"] = "Тишина и покой.\n\nИмеет встроенный глушитель и наносит 80% урона по броне.",
 
 		--КЕПЧУК--
-		["bm_groza_sc_desc_pc"] = "Буллпап-родственник винтовки Valkyria, любящий взрывы.\n\nНаносит 80% урона по броне. Нажмите $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
+		["bm_w_groza"] = "Винтовка Тула-14",
+		["bm_groza_sc_desc_pc"] = "Буллпап-родственник винтовки 'VALkyria', любящий взрывы.\n\nНаносит 80% урона по броне. Нажмите $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
 		["bm_groza_sc_desc"] = "Буллпап-родственник винтовки Valkyria, любящий взрывы.\n\nНаносит 80% урона по броне. Удерживайте $BTN_BIPOD чтобы переключиться на подствольный гранатомет.",
 
 		--Mosin--
@@ -1101,27 +1116,64 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "Инновационный немецкий пистолет, который модифицировали под автоматический огонь.\n\nЭто оружие перезаряжается обоймами по десять патронов.",
 
 		--M4/CAR-4
-		["bm_menu_sc_m4_desc"] = "Удобная, компактная, смертоносная. Популярная у современных армий винтовка под калибр 5.56.",
+		["bm_m4_sc_desc"] = "Удобная, компактная, смертоносная. Популярная у современных армий винтовка под калибр 5.56.",
+		["bm_wp_upg_fg_m4a1"] = "Набор 'Эмка'",
+		["bm_wp_upg_fg_m4a1_desc"] = "Этот набор меняет прицелы с чёрного рынка на более традиционные.",
+		["bm_wp_upg_s_fixed"] = "Фиксированный приклад",
+
+		--AMR-16/M16
+		["bm_m16_sc_desc"] = "Предок винтовки CAR-4.",
+
+		--Bootleg/HK416c
+		["bm_w_tecci"] = "Легкий пулемёт Bootleg",
+		--KSP/M249
+		["bm_w_m249"] = "Легкий пулемёт KSP-90",
 
 		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Тяжёлый пулемёт Buzzsaw-42",
+
+		--Brenner 21/HK21
+		["bm_w_hk21"] = "Тяжёлый пулемёт Brenner-21",
+
+		--M60
+		["bm_w_m60"] = "Тяжёлый пулемёт M60",
+
+		--Ksp 58
+		["bm_w_par"] = "Тяжёлый пулемёт KSP-58B",	
+		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Тяжёлый пулемёт Buzzsaw-42",	
 		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nНизкая точность, но отдача уменьшена на 25% при стрельбе от бедра.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Уменьшает Скорострельность до 800",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nМожет пробивать броню, щиты и тонкие стены.",		
+		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nМожет пробивать броню, щиты и тонкие стены. Альтернативная атака позволяет быстро разряжать обойму.",		
 		
 		--FAL
 		["bm_fal_sc_desc"] = "Правая рука свободного мира.\n\nНаносит 80% урона по броне.",	
 
 		--G3
-		["bm_g3_sc_desc"] = "Старший брат Compact-5.\n\nНаносит 80% урона по броне.",	
+		["bm_w_g3"] = "Gewehr-3",	
+		["bm_g3_sc_desc"] = "Старшая сестра Compact-5 и Brenner-21.\n\nНаносит 80% урона по броне.",	
+		--Compact-5/MP5
+		["bm_w_mp5"] = "Compact-5",	
+		["bm_mp5_sc_desc"] = "Младшая сестра Gewehr-3.",	
+
+		--WA2000
+		["bm_w_wa2000"] = "Снайперская винтовка Lebensauger .300",
 
 		--TTI(TTY)
+		["bm_w_tti"] = "Снайперская винтовка Contractor .308",
 		["bm_tti_sc_desc"] = "Личное оружие Уика. Говорят, где-то в интернете можно найти видео, где он выполняет контракт с этой винтовкой.\n\nМожет пробивать броню, щиты и тонкие стены.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "СКОРОСТЬ УМЕНЬШЕНА НА ",
+		["bm_menu_weapon_movement_bonus_info"] = "СКОРОСТЬ УВЕЛИЧЕНА НА ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " КОГДА ОРУЖИЕ В РУКАХ",
+		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               НЕ ИСПОЛЬЗОВАТЬ              //////////\n",
+		["bm_menu_weapon_slot_warning_2"] = "\n//////////               НЕ ИСПОЛЬЗОВАТЬ               //////////##",
+		["bm_menu_weapon_slot_warning_primary"] = "ОРУЖИЕ БЫЛО ПЕРЕМЕЩЕНО В ОСНОВНОЙ СЛОТ\nПРИ ИСПОЛЬЗОВАНИИ В ЭТОМ СЛОТЕ ИГРА ВЫЛЕТИТ",
+		["bm_menu_weapon_slot_warning_secondary"] = "ОРУЖИЕ БЫЛО ПЕРЕМЕЩЕНО ВО ВТОРОСТЕПЕННЫЙ СЛОТ\nПРИ ИСПОЛЬЗОВАНИИ В ЭТОМ СЛОТЕ ИГРА ВЫЛЕТИТ",
+		["bm_menu_weapon_slot_warning_disabled"] = "ОРУЖИЕ ОТКЛЮЧЕНО КАПИТАНОМ ОТЕМОМ\nИГРА ВЫЛЕТИТ ПРИ ИСПОЛЬЗОВАНИИ",
 		["bm_lmg_generic_desc"] = "Теряет точность при стрельбе от бедра.",
 		["bm_ap_weapon_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.",
 		["bm_ap_armor_weapon_sc_desc"] = "Может пробивать броню.",
@@ -1294,6 +1346,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--
 		["menu_light_mg"] = "Легкие пулеметы",
 		["menu_heavy_mg"] = "Тяжелые пулеметы",
+		["menu_miniguns"] = "Миниганы",
 		
 		["menu_snp"] = "Снайперские винтовки",
 		--
@@ -1454,14 +1507,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Винтовка Krinkov",
 		["bm_w_x_akmsu"] = "Парные винтовки Krinkov",
 		["bm_w_hajk"] = "Винтовка CR 805B",
-		["bm_w_tti"] = "Винтовка Contractor .308",
-		["bm_w_groza"] = "Винтовка KETCHNOV Byk-4",
 		
 		["bm_w_fmg9"] = "Автоматический пистолет Wasp-DS",
 
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
 		
-		["bm_w_contraband"] = "Винтовка Bigger Friend 7.62",
 		
 		["bm_w_m95"] = "Крупнокалиберная винтовка  Thanatos .50 cal",
 		["bm_w_m107cq"] = "Крупнокалиберная винтовка Mors .50 cal",
@@ -1505,16 +1555,53 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
-			
+			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",	
 			["bm_menu_ro_barrel"] = "Revolver Ocelot",
 			["bm_menu_ro_stock"] = "Revolver Ocelot",
 			["bm_menu_ro_modifier"] = "Revolver Ocelot",
 			["bm_menu_ro_charm"] = "Revolver Ocelot",
 			["bm_menu_ro_grip"] = "Revolver Ocelot",
 
-
 			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
+			
+			--ебанулся. нихуя не знаю японский, соре если не так затранскрибировал 
+			["bm_w_m16"] = "Итироку",
+			["bm_m16_sc_desc"] = "\"Я не проиграю!\"\n\nУченица средней школы в академии Сейшоу.\nЭнергичная и невоспитанная звезда школы.",
+			["bm_w_m4"] = "Эм-Фо",
+			["bm_m4_sc_desc"] = "\"Нельзя недооценивать боевую винтовку!\"\n\nУченица средней школы в академии Сейшоу.\nВице-президент совета средней школы.",
+			["bm_w_aug"] = "АГУ",
+			["bm_aug_sc_desc"] = "\"   \"\n\nУченица средней школы в академии Сейшоу.\nПрезидент совета средней школы.",
+
+			--["bm_w_galil"] = "Галил",
+			--["bm_galil_sc_desc"] = "\"Атаи!\"\n\nУченица средней школы в академии Сейшоу.\nГлупая, но послушная.",
+
+			["bm_w_fal"] = "Фару",
+			["bm_fal_sc_desc"] = "\"Твоя старшая сестричка пришла~!\"\n\nПомощница в академии Сейшоу.\nСейчас в отпуске.",
+			["bm_w_m14"] = "Итийон",
+			["bm_m14_sc_desc"] = "\"У меня плохие воспоминания с засадами .\"\n\nУченица средней школы в академии Сейшоу.\nВеселая и обладает полным боезапасом каламбуров. Сейчас у неё модный кризис.",
+			["bm_w_g3"] = "Джисури",
+			["bm_g3_sc_desc"] = "\"Разберёмся с этим!\"\n\nУченица средней школы в академии Сейшоу.\nЭлегентная, но несколько неуклюжая. Старшая среди своих сестёр.",
+
+			["bm_w_erma"] = "Эрма сенсей",
+			["bm_erma_sc_desc"] = "\"Заходим, заходим!\"\n\nНяня начальной школы в академии Сейшоу. Говорит на японском с акцентом.",
+			["bm_w_m1928"] = "Томпсон сенсей",
+			["bm_m1928_sc_desc"] = "\"Это же естественно!\"\n\nУчитель начальной школы в академии Сейшоу. Говорит на японском с акцентом.",
+
+			["bm_w_mp5"] = "Эмпи",
+			["bm_mp5_sc_desc"] = "\"Если у тебя такое хобби, могла бы просто сказать...\"\n\nУченица начальной школы в академии Сейшоу..\nОдна из многих младших сестёр Джисури и текущий президент совета начальной школы.",
+
+			["bm_w_uzi"] = "Узи",
+			["bm_uzi_sc_desc"] = "\"Жри!\"\n\nБывший президент совета начальной школы, которую вытеснила Эмпи.",
+
+			["bm_w_siltstone"] = "Драко",
+			["bm_siltstone_sc_desc"] = "\"Не понимаю.\"\n\nТрёхполосная ученица академии Красной Стали.\nСпокойная, собранная и говорит исключительно по-русски.",
+			["bm_w_ak74"] = "Нанаён",
+			["bm_ak74_sc_desc"] = "\"Если майор так приказал, то сделаю~\"\n\nДвухполосная ученица академии Красной Стали.\nКрасивая девушка не только с ушками и хвостиком лисички, но и с её характером.",
+			["bm_w_mosin"] = "Мосин",
+			["bm_mosin_sc_desc"] = "\"Пора в комнату саморефлексии...\"\n\nНастоящая царица из Российской Империи. Старая подруга Томпсон-сенсея.",
+			["bm_w_saiga"] = "Сайга-чан",
+			["bm_saiga_sc_desc"] = "\"Вы все как мышки в мышеловке, ня!\"\n\nНадменная, самоуверенная и гиперактивная, Сайга - громкая и мощная пушка.",
+--]]
 		})
 	end
 	
@@ -2293,7 +2380,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Стрелок",
-		["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВы прицеливаетесь на ##20%## быстрее.\n\nПИКОВЫЙ: ##$pro##\nТочность и дальнобойность винтовок повышена на ##30%## во время прицеливания.",
+		["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВы прицеливаетесь на ##15%## быстрее.\n\nПИКОВЫЙ: ##$pro##\nТочность и дальнобойность винтовок повышена на ##30%## во время прицеливания.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Агрессивная перезарядка",

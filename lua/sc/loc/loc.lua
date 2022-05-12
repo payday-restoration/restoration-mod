@@ -774,7 +774,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_l_global_value_halloween_sword"] = "This is a Halloween 2013 item!",
 		
 		--S&W .500
-		["bm_w_shatters_fury"] = "Phoenix .500",
+		["bm_w_shatters_fury"] = "Phoenix .500 Revolver",
 		
 		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
 		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
@@ -789,7 +789,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		--MK-23
 		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
-		["bm_w_socom"] = "Anubis .45",
+		["bm_w_socom"] = "Anubis .45 Pistol",
 		["bm_w_x_socom"] = "Akimbo Anubis .45's",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing $BTN_GADGET.",
@@ -811,7 +811,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_nmh_new3_desc"] = "Press the button and wait for the elevator",	
 		
 		--OICW--
-		["bm_w_osipr"] = "SABR",
+		["bm_w_osipr"] = "SABR Rifle",
 		["bm_w_osipr_gl"] = "SABR Grenade Launcher",
 		
 		--GO Bank remastered
@@ -1100,7 +1100,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "Bring truth to the phrase \"Silence is deadly\".\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 
 		--KETCHUPKNOB--
-		["bm_w_groza"] = "KETCHNOV Byk-4 Rifle",
+		["bm_w_groza"] = "Tula-14 Rifle",
 		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the VALkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
 

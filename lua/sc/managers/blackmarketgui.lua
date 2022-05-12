@@ -775,16 +775,16 @@ end
 			,
 			bm_modshop = {
 				prio = 5,
-				btn = "BTN_BACK",
-				pc_btn = "toggle_chat",
-				name = "gm_gms_purchase",
+				btn = "BTN_START",
+				pc_btn = "menu_respec_tree_all",
+				name = "bm_menu_btn_buy_mod",
 				callback = callback(self, self, "modshop_purchase_mask_callback")
 			},
 			mp_modshop = {
 				prio = 5,
-				btn = "BTN_BACK",
-				pc_btn = "toggle_chat",
-				name = "gm_gms_purchase",
+				btn = "BTN_START",
+				pc_btn = "menu_respec_tree_all",
+				name = "bm_menu_btn_buy_mod",
 				callback = callback(self, self, "modshop_purchase_mask_part_callback")
 			}
 ]]
@@ -2039,16 +2039,16 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			},
 			bm_modshop = {
 				prio = 5,
-				btn = "BTN_BACK",
-				pc_btn = "toggle_chat",
-				name = "gm_gms_purchase",
+				btn = "BTN_START",
+				pc_btn = "menu_respec_tree_all",
+				name = "bm_menu_btn_buy_mod",
 				callback = callback(self, self, "modshop_purchase_mask_callback")
 			},
 			mp_modshop = {
 				prio = 5,
-				btn = "BTN_BACK",
-				pc_btn = "toggle_chat",
-				name = "gm_gms_purchase",
+				btn = "BTN_START",
+				pc_btn = "menu_respec_tree_all",
+				name = "bm_menu_btn_buy_mod",
 				callback = callback(self, self, "modshop_purchase_mask_part_callback")
 			}
 		}
@@ -6283,15 +6283,15 @@ end
 function ModShop:ShowItemPurchaseMenu( purchase_data )
 
 	local currency_name = "menu_cs_coins"
-	local title = managers.localization:text("gm_gms_purchase_window_title")
-	local message = managers.localization:text("gm_gms_purchase_window_message")
-	message = message:gsub("{1}", purchase_data.name_localized)
-	message = message:gsub("{2}", tostring(purchase_data.price))
-	message = message:gsub("{3}", managers.localization:text(currency_name) .. (purchase_data.price > 1 and ""))
+	local title = managers.localization:text("dialog_bm_purchase_mod_title")
+	local message = managers.localization:text("dialog_bm_purchase_mod")
+	local message2 = managers.localization:text("dialog_bm_purchase_coins")
+	message = message:gsub("$item;", purchase_data.name_localized)
+	message2 = message2:gsub("$money;", tostring(purchase_data.price))
 
 	local dialog_data = {}
 	dialog_data.title = title
-	dialog_data.text = message
+	dialog_data.text = message .. "\n\n" .. message2
 	dialog_data.id = "gms_purchase_item_window"
 
 	local ok_button = {}
@@ -6311,11 +6311,10 @@ end
 function ModShop:ShowItemCannotAffordMenu( purchase_data )
 
 	local currency_name = "menu_cs_coins"
-	local title = managers.localization:text("gm_gms_purchase_failed")
-	local message = managers.localization:text("gm_gms_cannot_afford_message")
-	message = message:gsub("{1}", purchase_data.name_localized)
-	message = message:gsub("{2}", tostring(purchase_data.price))
-	message = message:gsub("{3}", managers.localization:text(currency_name) .. (purchase_data.price > 1 and ""))
+	local title = managers.localization:text("dialog_bm_purchase_mod_cant_afford_title")
+	local message = managers.localization:text("dialog_bm_purchase_mod_cant_afford")
+	message = message:gsub("$name;", purchase_data.name_localized)
+	message = message:gsub("$money;", tostring(purchase_data.price))
 
 	local dialog_data = {}
 	dialog_data.title = title

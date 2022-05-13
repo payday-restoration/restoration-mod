@@ -1026,10 +1026,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_6_mark"] = "6x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
 
 		--'Nade Launchers--
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",
-		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that causes an explosion at point of impact. The explosion deals 800 damage and has a radius of 5 meters.",
-		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that causes a burst of electricity at point of impact. The burst deals 400 damage, has a radius of 5 meters, and has a chance to tase enemies.",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that causes a burst of electricity at point of impact. The burst deals 300 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 7.5m, lasts 5 seconds and deals 120 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 7.5m, lasts 5 seconds and deals 80 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 7.5m, lasts 5 seconds and deals 40 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
+		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that creates an explosion at point of impact. The explosion deals 800 damage and has a radius of 5 meters.",
+		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 400 damage, has a radius of 5 meters, and has a chance to tase enemies.",
+		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 200 damage, has a radius of 5 meters, and has a chance to tase enemies.",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 300 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
+		["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6 Round",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 10 seconds, deals 600 damage over 15 seconds, and stuns most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 7.5 seconds, deals 440 damage over 11 seconds, and stuns most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 5 seconds, deals 280 damage over 7 seconds, and stuns most enemies one time when caught in it.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
@@ -1126,6 +1133,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg Light Machine Gun",
+
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 Light Machine Gun",
 
@@ -1134,6 +1142,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
+		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3.",	
+
+		--Versteckt-51/HK51B
+		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes.",	
 
 		--M60
 		["bm_w_m60"] = "M60 Heavy Machine Gun",
@@ -1146,20 +1159,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nCan penetrate body armor, shields and thin walls and alt-fire allows for fanning the hammer.",
-
+		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nCan penetrate body armor, shields and thin walls and alt-fire allows for fanning the hammer to deliver a flurry of rounds.",
+		
+		--M308
+		["bm_m14_sc_desc"] = "Can easily fire off accurate shots, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
 		--FAL
 		["bm_fal_sc_desc"] = "The Right Arm of the Free World.\n\nDeals 80% of its damage through body armor.",	
-
 		--G3
-		["bm_w_g3"] = "Gewehr-3",	
-		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\n\nDeals 80% of its damage through body armor.",	
+		["bm_w_g3"] = "Gewehr-3",
+		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\nThe roller delayed action of this rifle allows for accuracy rivalling that of snipers.\n\nDeals 80% of its damage through body armor.",	
+
 		--Compact-5/MP5
-		["bm_w_mp5"] = "Compact-5",	
-		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.",	
+		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
+		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
+
+		--3GL
+		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber, allowing for rapid follow-ups in a compact package.\nAlt-fire allows for firing off an entire stack.",
+
+
+		["bm_uzi_sc_desc"] = "While dated, the Uzi makes for a reliable, easy to control SMG.\nRechambered in .45 ACP.",	
 
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
+
+		--SVD
+		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle.\n\nCan penetrate body armor, shields and thin walls.",
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
@@ -1532,6 +1556,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wpn_prj_jav_desc"] = "Capacity: 6 \nDamage: 360 \n \nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",
 		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
 		["bm_grenade_electric_desc"] = "Capacity: 3\nDamage: 400 \nRange: 5m \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
+		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
+		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 1200 over 30s \nRange: 8m \nDuration: 20s \nFreshly poisoned enemies are stunned once\nShields, Bulldozers, and Captains are immune to its stunning effects.\nGrenadiers are completely immune to the effects of this weapon \n \nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
@@ -1564,44 +1591,55 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
 
---[[
-			["bm_w_m16"] = "Ichiroku",
-			["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
-			["bm_w_m4"] = "Em-Four",
-			["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
-			["bm_w_aug"] = "AUG",
-			["bm_aug_sc_desc"] = "\"   \"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
 
-			--["bm_w_galil"] = "Galil",
-			--["bm_galil_sc_desc"] = "\"Atai!\"\n\nA middleschooler attending Seishou Academy.\nPretty dumb but very obedient.",
-
-			["bm_w_fal"] = "Faru",
-			["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nA service Seishou Academy.\nCurrently on leave from service.",
-			["bm_w_m14"] = "Ichiyon",
-			["bm_m14_sc_desc"] = "\"I have bad memories about ambushes.\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
-			["bm_w_g3"] = "Jiisuri",
-			["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
-
-			["bm_w_erma"] = "Erma-sensei",
-			["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy. Speaks with accented Japanese",
-			["bm_w_m1928"] = "Thompson-sensei",
-			["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy. Speaks with accented Japanese",
-
-			["bm_w_mp5"] = "Empi",
-			["bm_mp5_sc_desc"] = "\"If that's your hobby, you just had to say it...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the current student council president of elementary division.",
-
-			["bm_w_uzi"] = "Uzi",
-			["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nThe former student council president of the elementary division, pushed out by Empi when she arrived.",
-
-			["bm_w_siltstone"] = "Drako",
-			["bm_siltstone_sc_desc"] = "\"Do not misunderstand.\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.",
-			["bm_w_ak74"] = "Nanayon",
-			["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
-			["bm_w_mosin"] = "Mosin Nagant",
-			["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-			["bm_w_saiga"] = "Saiga-chan",
-			["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
---]]
+			--[
+				--SEISHOU ACADEMY
+					--MIDDLE SCHOOLERS
+						["bm_w_m16"] = "Ichiroku",
+							["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
+						["bm_w_m4"] = "Em-Four",
+							["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
+						["bm_w_aug"] = "AUG",
+							["bm_aug_sc_desc"] = "\"   \"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+	
+					--HIGH SCHOOLERS
+						["bm_w_fal"] = "Faru",
+							["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nFunko's older sister.\nNot to be confused with L1A1 Faru.",
+						["bm_w_m14"] = "Ichiyon",
+							["bm_m14_sc_desc"] = "\"I have bad memories about ambushes.\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
+						["bm_w_g3"] = "Jiisuri",
+							["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
+				
+				
+					--ELEMENTARY
+						["bm_w_mp5"] = "Empi",
+							["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the current student council president of the 		elementary division.",
+						["bm_w_uzi"] = "Uzi",
+							["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nThe former self-declared leader of the elementary division, pushed out by Empi when she arrived.",
+		
+					--FACULTY
+						["bm_w_erma"] = "Erma-sensei",
+							["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy. The SMGs love her.",
+						["bm_w_m1928"] = "Thompson-sensei",
+							["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy. Speaks with accented Japanese.",
+						["bm_w_ching"] = "Garand",
+							["bm_m1928_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at Seishou Academy. Looks over the middleschoolers.",
+	
+				--RED STEEL
+					--THREE STRIPES
+						["bm_w_siltstone"] = "Drako",
+						["bm_siltstone_sc_desc"] = "\"Do not misunderstand.\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.",
+					
+					--TWO STRIPES
+						["bm_w_ak74"] = "Nanayon",
+							["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the 		cunning nature to match.",
+						["bm_w_saiga"] = "Saiga-chan",
+							["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending Red Steel Academy.\nHaughty, overconfident, and expressive, Saiga is a loud and 	boisterous 	auto-shotgun.",
+	
+					--FACULTY
+						["bm_w_mosin"] = "Mosin Nagant",
+							["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
+			--]]
 		})
 	end
 	

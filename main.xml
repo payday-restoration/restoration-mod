@@ -109,6 +109,7 @@
 		<hook file="sc/managers/dotmanager.lua" source_file="lib/managers/dotmanager"/>
 		<hook file="sc/managers/enemymanager.lua" source_file="lib/managers/enemymanager"/>
 		<hook file="sc/managers/explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
+		<hook file="sc/managers/poisongaseffect.lua" source_file="lib/managers/player/poisongaseffect"/>
 		<hook file="sc/managers/firemanager.lua" source_file="lib/managers/firemanager"/>
 		<hook file="sc/managers/statisticsmanager.lua" source_file="lib/managers/statisticsmanager"/>
 		<hook file="sc/managers/playermanager.lua" source_file="lib/managers/playermanager"/>
@@ -124,6 +125,7 @@
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 		<hook file="sc/units/weapons/smokescreengrenade.lua" source_file="lib/units/weapons/grenades/smokescreengrenade"/>
+		<hook file="sc/units/weapons/poisongasgrenade.lua" source_file="lib/units/weapons/grenades/poisongasgrenade"/>
 		<hook file="sc/units/weapons/weaponammo.lua" source_file="lib/units/weapons/weaponammo"/>		
 		<hook file="sc/units/weapons/newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
 		<hook file="sc/units/weapons/newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
@@ -245,6 +247,7 @@
 		<hook file="sc/tweak_data/moneytweakdata.lua" source_file="lib/tweak_data/moneytweakdata"/>
 		<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>
 		<hook file="sc/units/weapons/incendiaryburstgrenade.lua" source_file="lib/units/weapons/grenades/incendiaryburstgrenade"/>
+		<hook file="sc/units/weapons/incendiarygrenade.lua" source_file="lib/units/weapons/grenades/incendiarygrenade"/>
 		<hook file="sc/tweak_data/tweakdatavr.lua" source_file="lib/tweak_data/tweakdatavr"/>
 		<hook file="sc/units/player/handmelee.lua" source_file="lib/units/beings/player/handmelee"/>
 		<hook file="sc/managers/snipergrazedamage.lua" source_file="lib/managers/player/snipergrazedamage"/>

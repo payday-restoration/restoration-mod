@@ -56,8 +56,8 @@ function DOTManager:check_achievemnts(unit, t)
 	end
 end
 
-function DOTManager:add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id)
-	local dot_info = self:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id, managers.player:player_unit()) --add proper user_unit in raycastweaponbase
+function DOTManager:add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id, apply_hurt_once)
+	local dot_info = self:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id, apply_hurt_once, managers.player:player_unit()) --add proper user_unit in raycastweaponbase
 
 	local weapon = weapon_unit
 
@@ -86,50 +86,46 @@ function DOTManager:sync_add_dot_damage(enemy_unit, variant, weapon_unit, dot_le
 	end
 end
 
-function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id, user_unit)
+function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id, apply_hurt_once, user_unit)
 	local contains = false
 
-	if self._doted_enemies then
-		for _, dot_info in ipairs(self._doted_enemies) do
-			if dot_info.enemy_unit == enemy_unit then
-				if dot_info.dot_damage_received_time + dot_info.dot_length < dot_damage_received_time + dot_length then
-					dot_info.dot_damage_received_time = dot_damage_received_time
-					dot_info.dot_length = dot_length
-					dot_info.dot_damage = dot_damage
-				else
-					if dot_info.dot_damage < dot_damage then
-						dot_info.dot_damage_received_time = dot_damage_received_time
-						dot_info.dot_length = dot_length
-						dot_info.dot_damage = dot_damage
-					end
-				end
+	for _, dot_info in ipairs(self._doted_enemies) do
+		if dot_info.enemy_unit == enemy_unit then
+			local old_length = dot_info.dot_damage_received_time + dot_info.dot_length
+			local new_length = dot_damage_received_time + dot_length
 
-				dot_info.weapon_unit = weapon_unit
-				dot_info.hurt_animation = dot_info.hurt_animation or hurt_animation
-				dot_info.variant = variant
-				dot_info.weapon_id = weapon_id
-				dot_info.user_unit = user_unit
-				contains = true
+			if old_length < new_length then
+				dot_info.dot_length = dot_info.dot_length + new_length - old_length
+				dot_info.dot_damage = dot_damage
 			end
-		end
 
-		if not contains then
-			local dot_info = {
-				dot_counter = 0,
-				enemy_unit = enemy_unit,
-				dot_damage_received_time = dot_damage_received_time,
-				weapon_unit = weapon_unit,
-				dot_length = dot_length,
-				dot_damage = dot_damage,
-				hurt_animation = hurt_animation,
-				variant = variant,
-				weapon_id = weapon_id,
-				user_unit = user_unit
-			}
-			
-			table_insert(self._doted_enemies, dot_info)
-			self:check_achievemnts(enemy_unit, dot_damage_received_time)
+			dot_info.weapon_unit = weapon_unit
+			dot_info.hurt_animation = dot_info.hurt_animation or hurt_animation
+			dot_info.variant = variant
+			dot_info.weapon_id = weapon_id
+			dot_info.user_unit = user_unit
+			contains = true
+
+			break
 		end
+	end
+
+	if not contains then
+		local dot_info = {
+			dot_counter = 0,
+			enemy_unit = enemy_unit,
+			dot_damage_received_time = dot_damage_received_time,
+			weapon_unit = weapon_unit,
+			dot_length = dot_length,
+			dot_damage = dot_damage,
+			hurt_animation = hurt_animation,
+			apply_hurt_once = apply_hurt_once,
+			variant = variant,
+			weapon_id = weapon_id
+		}
+
+		table.insert(self._doted_enemies, dot_info)
+		self:check_achievemnts(enemy_unit, dot_damage_received_time)
 	end
 end
 
@@ -146,7 +142,17 @@ function DOTManager:_damage_dot(dot_info)
 
 		if dot_info.variant then
 			if dot_info.variant == "poison" then
-				PoisonBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
+				local result = PoisonBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
+		
+				if result and alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().thrower_unit then
+					local is_dead = result.type == "death"
+					--Vanilla crash from this, disabled tracking for now
+					--weapon_unit:base():_check_achievements(dot_info.enemy_unit, is_dead, result.damage_percent or 0, 1, is_dead and 1 or 0, dot_info.variant)
+				end
+		
+				if dot_info.hurt_animation and dot_info.apply_hurt_once then
+					dot_info.hurt_animation = false
+				end
 			elseif dot_info.variant == "bleed" then
 				BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
 			end

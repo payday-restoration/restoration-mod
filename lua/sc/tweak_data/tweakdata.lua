@@ -76,6 +76,8 @@ tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 
 --Grenade launcher stuff--
+--TODO: compress dupes into tables and for loops
+--M79
 tweak_data.projectiles.launcher_frag.damage = 80
 tweak_data.projectiles.launcher_frag.player_damage = 40
 tweak_data.projectiles.launcher_frag.curve_pow = 1
@@ -91,19 +93,179 @@ tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
 	dot_length = 3.1,
 	dot_tick_period = 0.5
 }
+tweak_data.projectiles.launcher_electric.damage = 40
+tweak_data.projectiles.launcher_electric.player_damage = 20
+tweak_data.projectiles.launcher_electric.curve_pow = 1
+tweak_data.projectiles.launcher_electric.range = 500
+tweak_data.projectiles.launcher_poison_gre_m79.damage = 0
+tweak_data.projectiles.launcher_poison_gre_m79.player_damage = 0
+tweak_data.projectiles.launcher_poison_gre_m79.curve_pow = 0
+tweak_data.projectiles.launcher_poison_gre_m79.range = 0
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_duration = 10
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 15.1,
+	dot_tick_period = 0.5
+}
+
+--M32--
+tweak_data.projectiles.launcher_frag_m32.damage = 80
+tweak_data.projectiles.launcher_frag_m32.player_damage = 80
+tweak_data.projectiles.launcher_frag_m32.curve_pow = 1
+tweak_data.projectiles.launcher_frag_m32.range = 500
+tweak_data.projectiles.launcher_incendiary_m32.damage = 6
+tweak_data.projectiles.launcher_incendiary_m32.curve_pow = 1
+tweak_data.projectiles.launcher_incendiary_m32.player_damage = 3
+tweak_data.projectiles.launcher_incendiary_m32.burn_duration = 5
+tweak_data.projectiles.launcher_incendiary_m32.fire_dot_data = {
+	dot_damage = 1,
+	dot_trigger_max_distance = 3000,
+	dot_trigger_chance = 50,
+	dot_length = 3.1,
+	dot_tick_period = 0.5
+}
+tweak_data.projectiles.launcher_electric_m32.damage = 40
+tweak_data.projectiles.launcher_electric_m32.player_damage = 20
+tweak_data.projectiles.launcher_electric_m32.curve_pow = 1
+tweak_data.projectiles.launcher_electric_m32.range = 500
+tweak_data.projectiles.launcher_poison_m32.damage = 0
+tweak_data.projectiles.launcher_poison_m32.player_damage = 0
+tweak_data.projectiles.launcher_poison_m32.curve_pow = 0
+tweak_data.projectiles.launcher_poison_m32.range = 0
+tweak_data.projectiles.launcher_poison_m32.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_m32.poison_gas_duration = 10
+tweak_data.projectiles.launcher_poison_m32.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_m32.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_m32.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 15.1,
+	dot_tick_period = 0.5
+}
+
+--Hong Meiling Lake--
+tweak_data.projectiles.launcher_frag_china.damage = 80
+tweak_data.projectiles.launcher_frag_china.player_damage = 80
+tweak_data.projectiles.launcher_frag_china.curve_pow = 1
+tweak_data.projectiles.launcher_frag_china.range = 500
+tweak_data.projectiles.launcher_incendiary_china.damage = 6
+tweak_data.projectiles.launcher_incendiary_china.curve_pow = 1
+tweak_data.projectiles.launcher_incendiary_china.player_damage = 3
+tweak_data.projectiles.launcher_incendiary_china.burn_duration = 5
+tweak_data.projectiles.launcher_incendiary_china.fire_dot_data = {
+	dot_damage = 1,
+	dot_trigger_max_distance = 3000,
+	dot_trigger_chance = 50,
+	dot_length = 3.1,
+	dot_tick_period = 0.5
+}
+tweak_data.projectiles.launcher_electric_china.damage = 40
+tweak_data.projectiles.launcher_electric_china.player_damage = 20
+tweak_data.projectiles.launcher_electric_china.curve_pow = 1
+tweak_data.projectiles.launcher_electric_china.range = 500
+tweak_data.projectiles.launcher_poison_china.damage = 0
+tweak_data.projectiles.launcher_poison_china.player_damage = 0
+tweak_data.projectiles.launcher_poison_china.curve_pow = 0
+tweak_data.projectiles.launcher_poison_china.range = 0
+tweak_data.projectiles.launcher_poison_china.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_china.poison_gas_duration = 10
+tweak_data.projectiles.launcher_poison_china.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_china.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_china.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 15.1,
+	dot_tick_period = 0.5
+}
+
+--Little Friend--
 tweak_data.projectiles.launcher_m203.damage = 80
 tweak_data.projectiles.launcher_m203.player_damage = 80
 tweak_data.projectiles.launcher_m203.curve_pow = 1
 tweak_data.projectiles.launcher_m203.range = 500
-tweak_data.projectiles.launcher_frag_m32.damage = 80
-tweak_data.projectiles.launcher_frag_m32.time_cheat = 0.7
-tweak_data.projectiles.launcher_incendiary_m32.time_cheat = 0.7
-tweak_data.projectiles.launcher_frag_china.damage = 80
+	--NO FIRE NADES?
+tweak_data.projectiles.underbarrel_electric.damage = 40
+tweak_data.projectiles.underbarrel_electric.player_damage = 20
+tweak_data.projectiles.underbarrel_electric.curve_pow = 1
+tweak_data.projectiles.underbarrel_electric.range = 500
+tweak_data.projectiles.launcher_poison_contraband.damage = 0
+tweak_data.projectiles.launcher_poison_contraband.player_damage = 0
+tweak_data.projectiles.launcher_poison_contraband.curve_pow = 0
+tweak_data.projectiles.launcher_poison_contraband.range = 0
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_duration = 10
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 15.1,
+	dot_tick_period = 0.5
+}
 
+--M320--
+tweak_data.projectiles.launcher_frag_slap.damage = 80
+tweak_data.projectiles.launcher_frag_slap.player_damage = 80
+tweak_data.projectiles.launcher_frag_slap.curve_pow = 1
+tweak_data.projectiles.launcher_frag_slap.range = 500
+tweak_data.projectiles.launcher_incendiary_slap.damage = 6
+tweak_data.projectiles.launcher_incendiary_slap.curve_pow = 1
+tweak_data.projectiles.launcher_incendiary_slap.player_damage = 3
+tweak_data.projectiles.launcher_incendiary_slap.burn_duration = 5
+tweak_data.projectiles.launcher_incendiary_slap.fire_dot_data = {
+	dot_damage = 1,
+	dot_trigger_max_distance = 3000,
+	dot_trigger_chance = 50,
+	dot_length = 3.1,
+	dot_tick_period = 0.5
+}
+tweak_data.projectiles.launcher_electric_slap.damage = 40
+tweak_data.projectiles.launcher_electric_slap.player_damage = 20
+tweak_data.projectiles.launcher_electric_slap.curve_pow = 1
+tweak_data.projectiles.launcher_electric_slap.range = 500
+tweak_data.projectiles.launcher_poison_slap.damage = 0
+tweak_data.projectiles.launcher_poison_slap.player_damage = 0
+tweak_data.projectiles.launcher_poison_slap.curve_pow = 0
+tweak_data.projectiles.launcher_poison_slap.range = 0
+tweak_data.projectiles.launcher_poison_slap.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_slap.poison_gas_duration = 10
+tweak_data.projectiles.launcher_poison_slap.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_slap.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_slap.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 15.1,
+	dot_tick_period = 0.5
+}
+
+--Groza--
 tweak_data.projectiles.underbarrel_m203_groza.damage = 80
 tweak_data.projectiles.underbarrel_m203_groza.player_damage = 80
 tweak_data.projectiles.underbarrel_m203_groza.curve_pow = 1
 tweak_data.projectiles.underbarrel_m203_groza.range = 500
+	--NO FIRE NADES?
+tweak_data.projectiles.underbarrel_electric_groza.damage = 40
+tweak_data.projectiles.underbarrel_electric_groza.player_damage = 20
+tweak_data.projectiles.underbarrel_electric_groza.curve_pow = 1
+tweak_data.projectiles.underbarrel_electric_groza.range = 500
+tweak_data.projectiles.launcher_poison_groza.damage = 0
+tweak_data.projectiles.launcher_poison_groza.player_damage = 0
+tweak_data.projectiles.launcher_poison_groza.curve_pow = 0
+tweak_data.projectiles.launcher_poison_groza.range = 0
+tweak_data.projectiles.launcher_poison_groza.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_groza.poison_gas_duration = 10
+tweak_data.projectiles.launcher_poison_groza.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_groza.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_groza.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 15.1,
+	dot_tick_period = 0.5
+}
 
 --Arbiter--
 tweak_data.projectiles.launcher_frag_arbiter.damage = 60
@@ -111,9 +273,8 @@ tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
 tweak_data.projectiles.launcher_frag_arbiter.range = 250
 tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
-
-tweak_data.projectiles.launcher_incendiary_arbiter.damage = 5
-tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2.5
+tweak_data.projectiles.launcher_incendiary_arbiter.damage = 4
+tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
 tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
 tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
@@ -123,76 +284,95 @@ tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 	dot_length = 3.1,
 	dot_tick_period = 0.5
 }
-
---Tactical ZAPper grenades (Grenade Launchers)
-tweak_data.projectiles.launcher_electric.damage = 40
-tweak_data.projectiles.launcher_electric.player_damage = 20
-tweak_data.projectiles.launcher_electric.curve_pow = 1
-tweak_data.projectiles.launcher_electric.range = 500
-
-tweak_data.projectiles.launcher_electric_m32.damage = 40
-tweak_data.projectiles.launcher_electric_m32.player_damage = 20
-tweak_data.projectiles.launcher_electric_m32.curve_pow = 1
-tweak_data.projectiles.launcher_electric_m32.range = 500
-
-tweak_data.projectiles.launcher_electric_china.damage = 40
-tweak_data.projectiles.launcher_electric_china.player_damage = 20
-tweak_data.projectiles.launcher_electric_china.curve_pow = 1
-tweak_data.projectiles.launcher_electric_china.range = 500
-
-tweak_data.projectiles.launcher_electric_slap.damage = 40
-tweak_data.projectiles.launcher_electric_slap.player_damage = 20
-tweak_data.projectiles.launcher_electric_slap.curve_pow = 1
-tweak_data.projectiles.launcher_electric_slap.range = 500
-
-tweak_data.projectiles.underbarrel_electric.damage = 40
-tweak_data.projectiles.underbarrel_electric.player_damage = 20
-tweak_data.projectiles.underbarrel_electric.curve_pow = 1
-tweak_data.projectiles.underbarrel_electric.range = 500
-
-tweak_data.projectiles.underbarrel_electric_groza.damage = 40
-tweak_data.projectiles.underbarrel_electric_groza.player_damage = 20
-tweak_data.projectiles.underbarrel_electric_groza.curve_pow = 1
-tweak_data.projectiles.underbarrel_electric_groza.range = 500
-
---Tactical ZAPper (Arbiter)
 tweak_data.projectiles.launcher_electric_arbiter.damage = 30
 tweak_data.projectiles.launcher_electric_arbiter.player_damage = 10
 tweak_data.projectiles.launcher_electric_arbiter.range = 250
 tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
+tweak_data.projectiles.launcher_poison_arbiter.damage = 0
+tweak_data.projectiles.launcher_poison_arbiter.player_damage = 0
+tweak_data.projectiles.launcher_poison_arbiter.curve_pow = 0
+tweak_data.projectiles.launcher_poison_arbiter.range = 0
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 7.5
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 11.1,
+	dot_tick_period = 0.5
+}
+
+--3GL
+tweak_data.projectiles.launcher_frag_ms3gl.damage = 40
+tweak_data.projectiles.launcher_frag_ms3gl.player_damage = 80
+tweak_data.projectiles.launcher_frag_ms3gl.curve_pow = 1
+tweak_data.projectiles.launcher_frag_ms3gl.range = 500
+tweak_data.projectiles.launcher_incendiary_ms3gl.damage = 2
+tweak_data.projectiles.launcher_incendiary_ms3gl.player_damage = 1
+tweak_data.projectiles.launcher_incendiary_ms3gl.burn_duration = 5
+tweak_data.projectiles.launcher_incendiary_ms3gl.fire_dot_data = {
+	dot_damage = 1,
+	dot_trigger_max_distance = 3000,
+	dot_trigger_chance = 50,
+	dot_length = 3.1,
+	dot_tick_period = 0.5
+}
+tweak_data.projectiles.launcher_electric_ms3gl.damage = 20
+tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 20
+tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1
+tweak_data.projectiles.launcher_electric_ms3gl.range = 500
+tweak_data.projectiles.launcher_poison.damage = 0
+tweak_data.projectiles.launcher_poison.player_damage = 0
+tweak_data.projectiles.launcher_poison.curve_pow = 0
+tweak_data.projectiles.launcher_poison.range = 0
+tweak_data.projectiles.launcher_poison.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison.poison_gas_duration = 5
+tweak_data.projectiles.launcher_poison.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 7.1,
+	dot_tick_period = 0.5
+}
+--Gee 3GL, why do you get to have 2 poison grenades? ( except now you don't :^) )
+--In the event you somehow manage to keep this "attached" via the exclusive kit
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.damage = 0
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.player_damage = 0
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.curve_pow = 0
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.range = 0
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_range = 600
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_duration = 5
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2,
+	dot_length = 7.1,
+	dot_tick_period = 0.5
+}
 
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
-tweak_data.projectiles.west_arrow.launch_speed = 2500
 tweak_data.projectiles.west_arrow_exp.damage = 48
-tweak_data.projectiles.west_arrow_exp.launch_speed = 2500
 tweak_data.projectiles.bow_poison_arrow.damage = 20
-tweak_data.projectiles.bow_poison_arrow.launch_speed = 2500
 
 --Hunter crossbow--
 tweak_data.projectiles.crossbow_arrow.damage = 24
-tweak_data.projectiles.crossbow_poison_arrow.damage = 20
 tweak_data.projectiles.crossbow_arrow_exp.damage = 48
-tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 3125
-tweak_data.projectiles.crossbow_arrow.launch_speed = 3125
-tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 3125
+tweak_data.projectiles.crossbow_poison_arrow.damage = 20
 
 --Arblast Heavy Crossbow--
 tweak_data.projectiles.arblast_arrow.damage = 36
 tweak_data.projectiles.arblast_arrow_exp.damage = 60
 tweak_data.projectiles.arblast_poison_arrow.damage = 30
-tweak_data.projectiles.arblast_arrow_exp.launch_speed = 4375
-tweak_data.projectiles.arblast_arrow.launch_speed = 4375
-tweak_data.projectiles.arblast_poison_arrow.launch_speed = 4375
 
 --Franken fish--
 tweak_data.projectiles.frankish_arrow.damage = 24
 tweak_data.projectiles.frankish_arrow_exp.damage = 48
 tweak_data.projectiles.frankish_poison_arrow.damage = 20
-tweak_data.projectiles.frankish_poison_arrow.launch_speed = 3750
-tweak_data.projectiles.frankish_arrow_exp.launch_speed = 3750
-tweak_data.projectiles.frankish_arrow.launch_speed = 3750
 
 --BOWMEN, FORM UP--
 tweak_data.projectiles.long_arrow.damage = 36
@@ -203,17 +383,11 @@ tweak_data.projectiles.long_poison_arrow.damage = 30
 tweak_data.projectiles.ecp_arrow.damage = 18
 tweak_data.projectiles.ecp_arrow_exp.damage = 36
 tweak_data.projectiles.ecp_arrow_poison.damage = 14
-tweak_data.projectiles.ecp_arrow_poison.launch_speed = 3125
-tweak_data.projectiles.ecp_arrow_exp.launch_speed = 3125
-tweak_data.projectiles.ecp_arrow.launch_speed = 3125	
 
 --The not longbow--
 tweak_data.projectiles.elastic_arrow.damage = 36
 tweak_data.projectiles.elastic_arrow_exp.damage = 60
 tweak_data.projectiles.elastic_arrow_poison.damage = 30
-tweak_data.projectiles.elastic_arrow_exp.launch_speed = 3125
-tweak_data.projectiles.elastic_arrow.launch_speed = 3125
-tweak_data.projectiles.elastic_arrow_poison.launch_speed = 3125	
 
 --GRENADE OUT--
 tweak_data.projectiles.frag.damage = 80
@@ -287,6 +461,23 @@ tweak_data.projectiles.wpn_gre_electric.damage = 40
 tweak_data.projectiles.wpn_gre_electric.player_damage = 20
 tweak_data.projectiles.wpn_gre_electric.curve_pow = 0.5
 tweak_data.projectiles.wpn_gre_electric.range = 500
+
+--Viper Gas
+tweak_data.projectiles.poison_gas_grenade.damage = 0
+tweak_data.projectiles.poison_gas_grenade.player_damage = 0
+tweak_data.projectiles.poison_gas_grenade.curve_pow = 0
+tweak_data.projectiles.poison_gas_grenade.range = 0
+tweak_data.projectiles.poison_gas_grenade.name_id = "bm_poison_gas_grenade"
+tweak_data.projectiles.poison_gas_grenade.poison_gas_range = 800
+tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 20
+tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 2
+tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
+tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
+	hurt_animation_chance = 1,
+	dot_damage = 2.5,
+	dot_length = 30,
+	dot_tick_period = 1
+}
 
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
@@ -443,12 +634,13 @@ tweak_data.projectiles.launcher_electric_osipr = {
 
 
 local velocity = {
-	'launcher_frag','launcher_incendiary','launcher_electric',
-	'launcher_frag_china','launcher_incendiary_china','launcher_electric_china',
-	'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32',
-	'launcher_m203','underbarrel_electric',
-	'underbarrel_m203_groza','underbarrel_electric_groza',
-	'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap'
+	'launcher_frag','launcher_incendiary','launcher_electric','launcher_poison_gre_m79', --M79
+	'launcher_frag_china','launcher_incendiary_china','launcher_electric_china', --China Lake
+	'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32', --M32
+	'launcher_m203','underbarrel_electric','launcher_poison_contraband', --HK417 UGL
+	'underbarrel_m203_groza','underbarrel_electric_groza','launcher_poison_groza', -- Groza UGL
+	'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap','launcher_poison_slap', --M320
+	'launcher_frag_ms3gl','launcher_incendiary_ms3gl','launcher_electric_ms3gl','launcher_poison_ms3gl_conversion','launcher_poison', --3GL
 }
 local velocity_mult = 0.25
 for i, proj_id in ipairs(velocity) do
@@ -457,7 +649,7 @@ for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
 velocity = {
-	'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter',
+	'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter','launcher_poison_arbiter',
 	'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
 }
 for i, proj_id in ipairs(velocity) do
@@ -499,11 +691,11 @@ for i, proj_id in ipairs(velocity) do
 end
 
 velocity = {
-	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion',
+	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade',
 	'dynamite','molotov'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 750
+	tweak_data.projectiles[proj_id].launch_speed = 700
 	tweak_data.projectiles[proj_id].adjust_z = 50
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -702,8 +894,10 @@ end
 			
 			{ "light_ar" },
 			{ "heavy_ar" },
-			
+
 			{ "heavy_mg" },
+
+			{ "light_snp" },
 			
 			{ "wpn_special" }
 		}

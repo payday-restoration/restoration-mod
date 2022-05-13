@@ -327,19 +327,23 @@ end
 
 function ShotgunBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
-	local init_mult = self._fire_rate_init_mult
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
-	local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
-
+	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	end 
 	if self:in_burst_mode() or self._macno then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
-			local delay = self._burst_delay and self._burst_delay / (fire_rate / multiplier)
-			multiplier = (self._macno and multiplier * 0.1) or (delay and multiplier / delay) or (self._burst_fire_rate_multiplier ~= 1 and 1) or (multiplier * 0.6666)
+			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
+			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
+			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / multiplier)
+			self._next_fire_allowed = math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire)
 			self._macno = nil
+			multiplier = 1
 		end
 	end	
 	--[[
+	local init_mult = self._fire_rate_init_mult
 	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
 		if self._fire_rate_init_ramp_up then
 			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
@@ -348,10 +352,6 @@ function ShotgunBase:fire_rate_multiplier()
 		multiplier = multiplier * init_mult
 	end
 	--]]
-	
-	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
-		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
-	end 
 
 	return multiplier
 end

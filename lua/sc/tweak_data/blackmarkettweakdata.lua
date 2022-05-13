@@ -404,6 +404,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
 	self.projectiles.wpn_gre_electric.max_amount = 3
+	self.projectiles.poison_gas_grenade.max_amount = 3
 	
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
@@ -422,6 +423,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.fir_com.no_cheat_count = true
 	self.projectiles.dada_com.no_cheat_count = true
 	self.projectiles.wpn_gre_electric.no_cheat_count = true
+	self.projectiles.poison_gas_grenade.no_cheat_count = true
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE
@@ -447,7 +449,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.concussion.anim_global_param = "projectile_frag_com"			--projectile_frag   
 	--Sicaro Smoke 
 	--self.projectiles.smoke_screen_grenade.animation = "throw_grenade_com"					--throw_grenade_com
-	--self.projectiles.smoke_screen_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
+	--self.projectiles.smoke_screen_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com
+	--Viper Gas
+	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
+	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
 
 	self.projectiles.bravo_frag = {}
 	self.projectiles.bravo_frag.damage = 12 --120 damage at point blank.
@@ -528,21 +533,23 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		adjust_z = 0
 	}
 
-	self.projectiles.launcher_frag_m32.time_cheat = 0.7
-	self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
+	--self.projectiles.launcher_frag_m32.time_cheat = 0.7
+	--self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 
 	self.projectiles.rocket_ray_frag.physic_effect = nil --Idstring("physic_effects/molotov_throw")
 	self.projectiles.rocket_frag.physic_effect = nil --Idstring("physic_effects/molotov_throw")
+	--self.projectiles.poison_gas_grenade.physic_effect = Idstring("physic_effects/molotov_throw")
 
 	local give_trails = {
-		'launcher_frag','launcher_incendiary','launcher_electric',
-		'launcher_frag_china','launcher_incendiary_china','launcher_electric_china',
-		'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32',
-		'launcher_m203','underbarrel_electric',
-		'underbarrel_m203_groza','underbarrel_electric_groza',
-		'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap',
-		'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter',
-		'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
+		'launcher_frag','launcher_incendiary','launcher_electric','launcher_poison_gre_m79',
+		'launcher_frag_china','launcher_incendiary_china','launcher_electric_china','launcher_poison_china',
+		'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32','launcher_poison_m32',
+		'launcher_m203','underbarrel_electric','launcher_poison_contraband',
+		'underbarrel_m203_groza','underbarrel_electric_groza','launcher_poison_groza',
+		'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap','launcher_poison_slap',
+		'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter','launcher_poison_arbiter',
+		'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr',
+		'launcher_frag_ms3gl','launcher_incendiary_ms3gl','launcher_electric_ms3gl','launcher_poison','launcher_poison_ms3gl_conversion'
 	}
 	for i, proj_id in ipairs(give_trails) do
 		self.projectiles[proj_id].add_trail_effect = true

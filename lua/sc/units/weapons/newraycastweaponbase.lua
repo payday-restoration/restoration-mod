@@ -258,23 +258,23 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	return spread_x, spread_y
 end
 
-local start_shooting_original = RaycastWeaponBase.start_shooting
-local stop_shooting_original = RaycastWeaponBase.stop_shooting
-local _fire_sound_original = RaycastWeaponBase._fire_sound
-local trigger_held_original = RaycastWeaponBase.trigger_held
+local start_shooting_original = NewRaycastWeaponBase.start_shooting
+local stop_shooting_original = NewRaycastWeaponBase.stop_shooting
+local _fire_sound_original = NewRaycastWeaponBase._fire_sound
+local trigger_held_original = NewRaycastWeaponBase.trigger_held
 local recoil_multiplier_original = NewRaycastWeaponBase.recoil_multiplier
 
-RaycastWeaponBase._SPIN_UP_T = 0.5
-RaycastWeaponBase._SPIN_DOWN_T = 0.75
+NewRaycastWeaponBase._SPIN_UP_T = 0.5
+NewRaycastWeaponBase._SPIN_DOWN_T = 0.75
 
-function RaycastWeaponBase:start_shooting(...)
+function NewRaycastWeaponBase:start_shooting(...)
 	start_shooting_original(self, ...)
 	if self._name_id == "m134" or self._name_id == "shuno" then
 		self:_start_spin()
 	end
 end
 
-function RaycastWeaponBase:stop_shooting(...)
+function NewRaycastWeaponBase:stop_shooting(...)
 	stop_shooting_original(self, ...)
 	self._shooting = nil
 	self._shots_fired = 0
@@ -284,13 +284,13 @@ function RaycastWeaponBase:stop_shooting(...)
 	end
 end
 
-function RaycastWeaponBase:_fire_sound(...)
+function NewRaycastWeaponBase:_fire_sound(...)
 	if (self._name_id ~= "m134" or self._name_id ~= "shuno") or self._vulcan_firing then
 		return _fire_sound_original(self, ...)
 	end
 end
 
-function RaycastWeaponBase:trigger_held(...)
+function NewRaycastWeaponBase:trigger_held(...)
 	if self._name_id == "m134" or self._name_id == "shuno" then
 		self:update_spin()
 		local fired
@@ -348,12 +348,12 @@ function NewRaycastWeaponBase:start_reload(...)
 	return start_reload_original(self, ...)
 end
 
-function RaycastWeaponBase:_start_spin()
+function NewRaycastWeaponBase:_start_spin()
 	if not self._spinning then
 		local t = self._unit:timer():time()
 		self._spin_up_start_t = t
-		if self._spin_down_start_t and RaycastWeaponBase._SPIN_DOWN_T > 0 then
-			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , RaycastWeaponBase._SPIN_DOWN_T) / RaycastWeaponBase._SPIN_DOWN_T) * RaycastWeaponBase._SPIN_UP_T
+		if self._spin_down_start_t and NewRaycastWeaponBase._SPIN_DOWN_T > 0 then
+			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , NewRaycastWeaponBase._SPIN_DOWN_T) / NewRaycastWeaponBase._SPIN_DOWN_T) * NewRaycastWeaponBase._SPIN_UP_T
 		end
 		if self:weapon_tweak_data().sounds.spin_start then
 			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_start or "turret_spin_start")
@@ -364,12 +364,12 @@ function RaycastWeaponBase:_start_spin()
 	end
 end
 
-function RaycastWeaponBase:_stop_spin()
+function NewRaycastWeaponBase:_stop_spin()
 	if self._spinning and not self._in_steelsight then
 		local t = self._unit:timer():time()
 		self._spin_down_start_t = t
-		if self._spin_up_start_t and RaycastWeaponBase._SPIN_UP_T > 0 then
-			self._spin_down_start_t = self._spin_down_start_t - (1 - math.clamp(t - self._spin_up_start_t, 0 , RaycastWeaponBase._SPIN_UP_T) / RaycastWeaponBase._SPIN_UP_T) * RaycastWeaponBase._SPIN_DOWN_T
+		if self._spin_up_start_t and NewRaycastWeaponBase._SPIN_UP_T > 0 then
+			self._spin_down_start_t = self._spin_down_start_t - (1 - math.clamp(t - self._spin_up_start_t, 0 , NewRaycastWeaponBase._SPIN_UP_T) / NewRaycastWeaponBase._SPIN_UP_T) * NewRaycastWeaponBase._SPIN_DOWN_T
 		end
 		if self:weapon_tweak_data().sounds.spin_end then
 			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_end or "turret_spin_end")
@@ -381,10 +381,10 @@ function RaycastWeaponBase:_stop_spin()
 	end
 end
 
-function RaycastWeaponBase:update_spin()
+function NewRaycastWeaponBase:update_spin()
 	if not self._spin_done and self._spinning then
 		local t = self._unit:timer():time()
-		if (self._spin_up_start_t + RaycastWeaponBase._SPIN_UP_T) <= t then
+		if (self._spin_up_start_t + NewRaycastWeaponBase._SPIN_UP_T) <= t then
 			self._spin_done = true
 			self._spin_up_start_t = nil
 			self._spin_down_start_t = nil
@@ -400,12 +400,12 @@ function RaycastWeaponBase:update_spin()
 	end
 end
 
-function RaycastWeaponBase:vulcan_enter_steelsight()
+function NewRaycastWeaponBase:vulcan_enter_steelsight()
 	self._in_steelsight = true
 	self:_start_spin()
 end
 
-function RaycastWeaponBase:vulcan_exit_steelsight()
+function NewRaycastWeaponBase:vulcan_exit_steelsight()
 	self._in_steelsight = nil
 	if not self._vulcan_firing then
 		self:_stop_spin()
@@ -413,7 +413,7 @@ function RaycastWeaponBase:vulcan_exit_steelsight()
 end
 
 --Returns the weapon's current concealment stat.
-function RaycastWeaponBase:get_concealment()
+function NewRaycastWeaponBase:get_concealment()
 	local result = self._current_concealment or self._concealment
 	if result then
 		return math.max(result, 0)
@@ -675,19 +675,23 @@ end
 --[[	fire rate multipler in-game stuff	]]--
 function NewRaycastWeaponBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
-	local init_mult = self._fire_rate_init_mult
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
-	local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
-
+	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	end 
 	if self:in_burst_mode() or self._macno then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
-			local delay = self._burst_delay and self._burst_delay / (fire_rate / multiplier)
-			multiplier = (self._macno and multiplier * 0.1) or (delay and multiplier / delay) or (self._burst_fire_rate_multiplier ~= 1 and 1) or (multiplier * 0.6666)
+			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
+			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
+			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / multiplier)
+			self._next_fire_allowed = math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire)
 			self._macno = nil
+			multiplier = 1
 		end
 	end	
 	--[[
+	local init_mult = self._fire_rate_init_mult
 	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
 		if self._fire_rate_init_ramp_up then
 			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
@@ -696,10 +700,6 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 		multiplier = multiplier * init_mult
 	end
 	--]]
-	
-	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
-		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
-	end 
 
 	return multiplier
 end
@@ -775,6 +775,8 @@ function NewRaycastWeaponBase:cancel_burst(soft_cancel, macno)
 			if not self._i_know then
 				self._i_know = 1
 				managers.hud:show_hint( { text = "DON'T EVEN THINK ABOUT USING AUTOFIRE, OR I'LL KNOW" } )
+			else
+				self._i_know = self._i_know + 1
 			end
 		end
 		self._burst_rounds_remaining = 0
@@ -967,6 +969,7 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 	end
 	
 	local damage_falloff = self:weapon_tweak_data().damage_falloff
+	local green_display = self:weapon_tweak_data().green_display
 	local falloff_start = damage_falloff and damage_falloff.start_dist or 3000
 	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
 	falloff_start = falloff_start * (self._damage_near_mul or 1)
@@ -982,14 +985,14 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then
-						part.unit:digital_gui()._title_text:set_color( scope_colors.red )
+						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.green or scope_colors.red )
 					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui()._title_text:set_color( scope_colors.redmid )
+						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenmid or scope_colors.redmid )
 					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui()._title_text:set_color( scope_colors.redlow )
+						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenlow or scope_colors.redlow )
 					end
 				else
-					part.unit:digital_gui()._title_text:set_color( scope_colors.redno )
+					part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenno or scope_colors.redno )
 				end
 			end
 

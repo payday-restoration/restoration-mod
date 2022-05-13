@@ -4351,7 +4351,7 @@ function BlackMarketGui:update_info_text()
 				local dlc_based = slot_data.dlc_based or tweak_data.lootdrop.global_values[slot_data.global_value] and tweak_data.lootdrop.global_values[slot_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(slot_data.global_value)
 				local skill_text_id = skill_based and (slot_data.skill_name or "bm_menu_skilltree_locked") or false
 				local level_text_id = level_based and "bm_menu_level_req" or false
-				local dlc_text_id = dlc_based and slot_data.dlc_locked or false
+				local dlc_text_id = slot_data.dlc_locked or false
 				local text = ""
 
 				if slot_data.install_lock then
@@ -4360,12 +4360,12 @@ function BlackMarketGui:update_info_text()
 					text = text .. managers.localization:to_upper_text(skill_text_id, {
 						slot_data.name_localized
 					}) .. "\n"
-				elseif dlc_text_id then
-					text = text .. managers.localization:to_upper_text(dlc_text_id, {}) .. "\n"
 				elseif level_text_id then
 					text = text .. managers.localization:to_upper_text(level_text_id, {
 						level = slot_data.level
 					}) .. "\n"
+				elseif dlc_text_id then
+					text = text .. managers.localization:to_upper_text(dlc_text_id, {}) .. "\n"
 				end
 
 				updated_texts[3].text = text
@@ -4820,18 +4820,8 @@ function BlackMarketGui:update_info_text()
 		local has_desc = part_data and part_data.has_description == true
 		updated_texts[4].resource_color = {}
 
-		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
-			local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
-			updated_texts[4].text = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
-		end
-
 		if slot_data.global_value and slot_data.global_value ~= "normal" then
-			if is_gadget or is_ammo or is_bayonet or has_desc then
-				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-			else
-				updated_texts[4].text = "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-			end
-
+			updated_texts[4].text = "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
 			table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
 		end
 
@@ -4839,6 +4829,15 @@ function BlackMarketGui:update_info_text()
 			updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_disables_cosmetic_bonus") .. "##"
 
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
+		end
+
+		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
+			local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) then
+				updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
+			else
+				updated_texts[4].text = updated_texts[4].text .. managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
+			end
 		end
 
 		updated_texts[4].below_stats = true
@@ -4957,7 +4956,13 @@ function BlackMarketGui:update_info_text()
 				end
 			end
 
-			updated_texts[5].text = text
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. text .. "##"
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			else
+				updated_texts[4].text = updated_texts[4].text .. "##" .. text .. "##"
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			end
 		end
 	elseif identifier == self.identifiers.mask_mod then
 		if not managers.blackmarket:currently_customizing_mask() then

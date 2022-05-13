@@ -4826,8 +4826,11 @@ function BlackMarketGui:update_info_text()
 		end
 
 		if perks and table.contains(perks, "bonus") then
-			updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_disables_cosmetic_bonus") .. "##"
-
+			if (slot_data.global_value and slot_data.global_value ~= "normal") then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_disables_cosmetic_bonus") .. "##"
+			else
+				updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text("bm_menu_disables_cosmetic_bonus") .. "##"
+			end
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
 		end
 
@@ -4958,11 +4961,10 @@ function BlackMarketGui:update_info_text()
 
 			if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
 				updated_texts[4].text = updated_texts[4].text .. "\n##" .. text .. "##"
-				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 			else
 				updated_texts[4].text = updated_texts[4].text .. "##" .. text .. "##"
-				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 			end
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 		end
 	elseif identifier == self.identifiers.mask_mod then
 		if not managers.blackmarket:currently_customizing_mask() then

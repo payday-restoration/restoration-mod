@@ -109,18 +109,22 @@ function TeamAILogicIdle.enter(data, new_logic_name, enter_params)
 
 				if not revive_char_dmg_ext:arrested() then
 					if revive_unit:base().is_local_player or revive_unit:base().is_husk_player then
-						local suffix = "a"
-						if revive_char_dmg_ext.get_revives then
-							local amount_revives = revive_char_dmg_ext:get_revives()
+						if revive_unit:movement():current_state_name() == "incapacitated" then --tased/cloaked
+							data.unit:sound():say("s08x_sin", true) --"let me help you up"
+						else
+							local suffix = "a"
+							if revive_char_dmg_ext.get_revives then
+								local amount_revives = revive_char_dmg_ext:get_revives()
 
-							if amount_revives == 1 then
-								suffix = "c"
-							elseif amount_revives == 2 or amount_revives < revive_char_dmg_ext:get_revives_max() - 1 then
-								suffix = "b"
+								if amount_revives == 1 then
+									suffix = "c"
+								elseif amount_revives == 2 or amount_revives < revive_char_dmg_ext:get_revives_max() - 1 then
+									suffix = "b"
+								end
 							end
-						end
 
-						data.unit:sound():say("s09" .. suffix, true)
+							data.unit:sound():say("s09" .. suffix, true)
+						end
 					else
 						data.unit:sound():say("s09b", true) --doesn't really matter for bots, but some variation could be added if desired
 					end

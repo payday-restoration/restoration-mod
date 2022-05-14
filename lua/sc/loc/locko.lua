@@ -1373,10 +1373,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_heavy_mg"] = "중기관총",
 		["menu_miniguns"] = "개틀링 기관총",
 		
-		["menu_snp"] = "저격총",
+		["menu_snp"] = "저격소총",
 		--
-		["menu_light_snp"] = "경저격총",
-		["menu_heavy_snp"] = "중저격총",
+		["menu_light_snp"] = "경저격소총",
+		["menu_heavy_snp"] = "중저격소총",
 		["menu_antim_snp"] = "대물 저격소총",
 
 		["menu_wpn_special"] = "특수 & 분류되지 않음",

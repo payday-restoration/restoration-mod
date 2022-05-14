@@ -969,12 +969,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
-		["bm_wp_upg_a_explosive_desc_sc"] = "대상을 죽이거나 기절시키고 폭발하는 고폭 슬러그 하나를 발사합니다. 헤드샷을 할 수 없습니다.",
+		["bm_wp_upg_a_explosive_desc_sc"] = "대상을 죽이거나 스턴시키고 폭발하는 고폭 슬러그 하나를 발사합니다. 헤드샷을 할 수 없습니다.",
 		["bm_wp_upg_a_custom_desc"] = "약간의 견실성과 탄약을 희생시키면서 피해를 증가시키는 더 적은 수의 더 큰 펠릿를 발사합니다.",
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 96의 피해를 입히고 3초에 걸쳐 기절시킬 수 있습니다.",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 120의 피해를 입히고 3초에 걸쳐 기절시킬 수 있습니다.",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 180의 피해를 입히고 3초에 걸쳐 기절시킬 수 있습니다.",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 240의 피해를 입히고 3초에 걸쳐 기절시킬 수 있습니다.",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 96의 피해를 입히고 3초에 걸쳐 스턴시킬 수 있습니다.",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 120의 피해를 입히고 3초에 걸쳐 스턴시킬 수 있습니다.",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 180의 피해를 입히고 3초에 걸쳐 스턴시킬 수 있습니다.",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 240의 피해를 입히고 3초에 걸쳐 스턴시킬 수 있습니다.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "3초에 걸쳐 96의 출혈 피해를 입히는 철갑 플레셰트를 발사합니다.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "3초에 걸쳐 120의 출혈 피해를 입히는 철갑 플레셰트를 발사합니다.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "3초에 걸쳐 180의 출혈 피해를 입히는 철갑 플레셰트를 발사합니다.",
@@ -1024,10 +1024,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_6_mark"] = "6x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",
 
 		--'Nade Launchers--
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불을 일으키는 탄을 발사합니다. 불은 시간이 지남에 따라 피해를 입히고 적을 태우게 합니다.",
-		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에서 폭발을 일으키는 탄을 발사합니다. 폭발은 800의 피해를 주고 범위는 5미터입니다.",
-		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "충돌 지점에 전기 폭발을 일으키는 탄을 발사합니다. 폭발은 400의 피해를 주고 범위는 5미터이며 적에게 전기 충격을 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 전기 폭발을 일으키는 탄을 발사합니다. 폭발은 300의 피해를 주고 범위는 2.5미터이며 적에게 전기 충격을 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 7.5m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 120의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 7.5m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 80의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 7.5m이며 5초 동안 지속되며 그 안에 서 있는 적에게 초당 40의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에 폭발하는 탄을 발사합니다. 폭발은 800의 피해를 주고 반경은 5미터입니다.",
+		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 400의 피해를 주고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 200의 피해를 입히고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 300의 피해를 주고 반경은 2.5미터이며 일정 확률로 적을 감전시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_poison"] = "맨티코어-6 생화학탄",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 탄을 발사합니다.\n가스는 반경 6미터, 10초 동안 머물며 15초에 걸쳐 600의 피해를 입히고 가스에 갇힌 대부분의 적을 한 번에 스턴시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 탄을 발사합니다.\n가스는 반경 6미터, 7.5초 동안 머물며 11초에 걸쳐 440의 피해를 주고, 가스에 갇힌 대부분의 적을 한 번에 스턴시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 탄을 발사합니다.\n가스는 반경 6미터, 5초 동안 머물며 7초에 걸쳐 280의 피해를 주고, 가스에 갇힌 대부분의 적을 한 번에 스턴시킵니다.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "레어",
@@ -1106,7 +1113,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosin--
 		["bm_mosin_sc_desc"] = "고전적이고 강력한 볼트액션 소총.\n\n이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, 디 엔드\n\n시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.",				
+		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, 디 엔드\n\n시간이 지남에 따라 피해를 입히고 적을 스턴시킬 수 있는 약한 마취탄를 발사합니다.",				
 
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "고통과 부정으로 가득한 세상에서 어둠 속에 빛이 있다는 것을 아는 것은 결국엔 큰 위안이 될 것입니다.",
@@ -1125,6 +1132,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg 경기관총",
+		
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 경기관총",
 
@@ -1133,6 +1141,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 중기관총",
+		["bm_hk21_sc_desc"] = "게베어-3의 제일 작은 여동생.",	
+
+		--Versteckt-51/HK51B
+		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
+		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, Compact-5 크기로 축소했습니다.",			
 
 		--M60
 		["bm_w_m60"] = "M60 중기관총",		
@@ -1143,20 +1156,33 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝할 수 있습니다.",	
+		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝하여 많은 총알을 날립니다.",
+		
+		--M308
+		["bm_m14_sc_desc"] = "정확한 샷을 쉽게 발사 할 수 있고 특히 자동 발사로 발사할 때도 반동에만 신경 쓰시면 됩니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
 
 		--FAL
 		["bm_fal_sc_desc"] = "자유 진영의 오른팔.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
 
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 언니.\n이 소총의 롤러 지연 블로우백은 저격수에 필적하는 정확도를 보여줍니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
+		
 		--Compact-5/MP5
-		["bm_w_mp5"] = "Compact-5",	
-		["bm_mp5_sc_desc"] = "Gewehr-3의 여동생.",
+		["bm_w_mp5"] = "Compact-5 기관단총",	
+		["bm_mp5_sc_desc"] = "Gewehr-3의 여동생.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
+
+		--3GL
+		["bm_ms3gl_sc_desc"] = "단일 챔버에 맞춤형 40mm 탄들을 빠르게 발사하여 작은 곳에서 후속 조치를 가능하게 합니다.\n보조 발사를 사용하면 모든 탄을 발사할 수 있습니다.",
+
+
+		["bm_uzi_sc_desc"] = "Uzi는 구식이지만 신뢰할 수 있고 제어하기 쉬운 기관단총.\n.45 ACP 쓰는 총 중 리챔버 가능.",			
 
 		--WA2000
-		["bm_w_wa2000"] = "Lebensauger .300 저격소총",		
+		["bm_w_wa2000"] = "Lebensauger .300 저격소총",
+		
+		--SVD
+		["bm_siltstone_sc_desc"] = "고성능 반자동 저격 소총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",		
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 저격소총",
@@ -1518,7 +1544,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_m200"] = "TF-141 대물 저격소총",
 
 		--Throwables--
-		["bm_concussion_desc"] = "소지 갯수: 3개 \n사거리: 10m \n최대 4초 동안 적을 기절 \n7초 동안 적 정확도 50% 감소 \n타이탄 실드, 타이탄 불도저 및 캡틴를 제외한 모든 적을 기절시킵니다. \n \n이 놀라운 작은 아름다움은 모든 사람의 숨을 죽이고 그들을 죽일 추가 순간을 제공합니다.",
+		["bm_concussion_desc"] = "소지 갯수: 3개 \n사거리: 10m \n최대 4초 동안 적을 스턴 \n7초 동안 적 정확도 50% 감소 \n타이탄 실드, 타이탄 불도저 및 캡틴를 제외한 모든 적을 스턴시킵니다. \n \n이 놀라운 작은 아름다움은 모든 사람의 숨을 죽이고 그들을 죽일 추가 순간을 제공합니다.",
 		["bm_grenade_smoke_screen_grenade_desc"] = "사거리: 8m \n지속시간: 12초 \n \n이 중 하나를 떨어뜨리면 연기 구름 속으로 사라져 적들이 당신을 조준하기 위해 고군분투하게 됩니다.",
 		["bm_grenade_frag_desc"] = "소지 갯수: 3개\n데미지: 800 \n사거리: 5m \n \n고전적인 폭발성 수류탄. 할 말이 더 있겠습니까?",
 		["bm_dynamite_desc"] = "소지 갯수: 3\n데미지: 800 \n사거리: 4m \n충돌 지점에서 튕기거나 구르지 않지만 유사한 폭발물보다 스플래시 피해가 적습니다.\n\n바위를 효과적으로 폭파하도록 설계되었고. 사람을 폭파하는 데에도 더욱 효과적입니다.",
@@ -1532,6 +1558,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wpn_prj_jav_desc"] = "소지 갯수: 6개 \n데미지: 360 \n \n흐린 선사 시대에 그 기원을 잃어버린 자벨린은 단순한 무기입니다. 결국, 그것은 누군가의 하루를 망치는 끝이 뾰족한 던질 수 있는 막대기입니다.",
 		["bm_wpn_prj_hur_desc"] = "소지 갯수: 6개 \n데미지: 360 \n \n날카로운 도끼는 절대 틀리지 않다고 합니다. 던질 수 있는 날카로운 도끼는 더 이상 옳지 않습니다.",
 		["bm_grenade_electric_desc"] = "소지 갯수: 3개\n데미지: 400 \n사거리: 5m \n \n파편은 모두 훌륭하고 좋지만 일부는 튀겨야합니다. 이 작고 아름다운 이것은 고전압으로 약간의 피해를 입히기에 다소 실용적인 짐승입니다.",
+		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 맹독 수류탄",
+		["bm_grenade_poison_gas_grenade_desc"] = "소지 갯수: 3개\n데미지: 30초 이상 1200 \n사거리: 8m \n지속시간: 20초 \n갓 중독된 적을 한 번에 스턴합니다.\n실드, 불도저, 캡틴은 스턴 효과에 면역입니다.\n척탄병은 이 무기의 효과에 완전히 면역입니다. \n \n이 실험적인 생물무기는 당신이나 당신의 팀원들에게 해를 끼치지 않도록 설계된 특정 유전자형을 표적으로 하는 독성 가스 구름을 뿜어냅니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 선택한 무기지, 페코.",
+				
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
@@ -1565,45 +1594,64 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_m134_sc_desc"] = "잠긴 메타포...",
 			
 			
--- 씨발 이게 뭐냐 (WHAT THE FUCK IS THIS), Probably to be translated when activated 			
---[[
-			["bm_w_m16"] = "Ichiroku",
-			["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
-			["bm_w_m4"] = "Em-Four",
-			["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
-			["bm_w_aug"] = "AUG",
-			["bm_aug_sc_desc"] = "\"   \"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+			--SEISHOU ACADEMY
+				--MIDDLE SCHOOLERS
+					["bm_w_m16"] = "이치로쿠",
+						["bm_m16_sc_desc"] = "\"내는 지지 않을기다!\"\n\n세이쇼 학원에 다니는 중학생.\n활기차고 입이 험한 학교의 대표.",
+					["bm_w_m4"] = "엠포",
+						["bm_m4_sc_desc"] = "\"제식 소총을 과소 평가하지 마세요!\"\n\n세이쇼 학원에 다니는 중학생.\n중학교 학생회 부회장.",
+					["bm_w_aug"] = "AUG",
+						["bm_aug_sc_desc"] = "\"도망쳐보라고! 니 목숨을 위해 간청해봐라!\"\n\n세이쇼 학원에 다니는 중학생.\n중학교 학생회장.",
+					["bm_wp_ak5_fg_fnc"] = "훈코 킷",
+						["bm_wp_ak5_fg_fnc_desc"] = "\"주인의 뜻에 응하는 것은 도구의 기쁨이다.\"\n\n세이쇼 학원에 다니는 중학생.\n이 묵직한 \"주인공의 아우라\"를 발산해보십시오.",
+	
+				--HIGH SCHOOLERS
+					["bm_w_fal"] = "파루",
+						["bm_fal_sc_desc"] = "\"언니가 왔어~!\"\n\n훈코의 큰 언니\n훈코의 다른 자매인 L1A1와 혼동하지 마십시오.",
+					["bm_w_m14"] = "이치온",
+						["bm_m14_sc_desc"] = "\"저 서양인들은 AK를 빼기고 무슨 짓거리를 하는거냐!? 분짜 배신자 녀석들 같으니!\"\n\n세이쇼 학원에 다니는 고등학생.\n느긋하고 말장난의 분필로 가득한 말장난을 합니다. 현재 패션센스 위기를 겪고 있습니다.",
+					["bm_w_g3"] = "지이쓰리",
+						["bm_g3_sc_desc"] = "\"결판을 내겠어요!\"\n\n세이쇼 학원에 다니는 고등학생.\n우아하지만 약간 덤벙거립니다. 또한 그녀의 많은 자매 중 맏이입니다.",
 
-			--["bm_w_galil"] = "Galil",
-			--["bm_galil_sc_desc"] = "\"Atai!\"\n\nA middleschooler attending Seishou Academy.\nPretty dumb but very obedient.",
+				--ELEMENTARY
+					["bm_w_mp5"] = "에무피",
+						["bm_mp5_sc_desc"] = "\"그게 취향인가요...\"\n\n세이쇼 학원에 다니는 초등학생.\n지이쓰리의 많은 자매 중 한명으로 초등학생 학생회장.",
+					["bm_w_uzi"] = "우지",
+						["bm_uzi_sc_desc"] = "\"이거나 먹어라!\"\n\n세이쇼 학원에 다니는 초등학생.\n전 자칭 초등학생 리더이었지만 에무피가 오자 그 자리에서 밀려났습니다.",
+					["bm_w_mac10"] = "라무",
+						["bm_uzi_sc_desc"] = "\"잉그램!\"\n\n세이쇼 학원에 다니는 초등학생.\n말 하는 기관단총. 또한 톱 헤비입니다.",
+		
+				--FACULTY
+					["bm_w_erma"] = "엘마 선생",
+						["bm_erma_sc_desc"] = "\"들어와! 들어와!\"\n\n세이쇼 학원에서 일하는 초등학생 기숙사 엄마.\n기관단총들은 그녀를 좋아합니다.",
+					["bm_w_m1928"] = "톰슨 선생",
+						["bm_m1928_sc_desc"] = "\"이건 상식이라고!\"\n\n세이쇼 학원에 근무하는 초등학생 교사.\n액센트가 있는 일본어로 말하고 전 FBI 요원.",
+					["bm_w_ching"] = "가란드",
+						["bm_galant_sc_desc"] = "\"나에게 실없는 말을 하는건가!?\"\n\n세이쇼 학원에 근무하는 교관 강사.\n중학생들을 관여합니다.",
+	
+			--RED STEEL ACADEMY
+				--THREE STRIPES
+					["bm_w_siltstone"] = "드라코",
+					["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\n아카가네 공고에 다니는 셋줄무늬 학생.\n조용하고 수집가이며 러시아어로만 말합니다.", --sorry about the Google/MS translate
+					["bm_w_akm"] = "AKM",
+					["bm_akm_sc_desc"] = "\"나랑 장난까지 말라고!\"\n\n아카가네 공고에 다니는 셋줄무늬 학생.\n여우의 귀와 꼬리를 가지고 키가 크고 위협적인 소녀. AK47을 능가할 수 있는 몇 안 되는 학생 중 한 명.",
+				--TWO STRIPES
+					["bm_w_ak74"] = "나나욘",
+						["bm_ak74_sc_desc"] = "\"소령의 명령이면 뭐든지~\"\n\n아카가네 공고에 다니는 두줄무늬 학생.\n여우의 귀와 꼬리뿐 아니라 교활한 성격까지 겸비한 아름다운 소녀.",
+					["bm_w_saiga"] = "사이가짱",
+						["bm_saiga_sc_desc"] = "\"너희들은 모두 덫에 걸린 쥐라고, 냐!\"\n\n아카가네 공고에 다니는 두줄무늬 학생.\n거만하고 자신감이 넘치며 표현력이 뛰어난 사이가는 시끄럽고 떠들썩한 자동 산탄총입니다.",
+				--FACULTY
+					["bm_w_mosin"] = "모신나강",
+						["bm_mosin_sc_desc"] = "\"자기 반성의 방으로 가지고...\"\n\n아카가네 공고의 교수.\n러시아 제국에서 태어난 절대적인 차리차. 톰슨 선생의 오랜 친구.",
+			
+			--ENOSHIMA
+				--MIDDLE SCHOOLERS
+					["bm_w_spas12"] = "스파스-12",
+						["bm_spas12_sc_desc"] = "\"이 바보야! 완전히 드러났잖아!\"\n\n에노시마의 공립학교에 다니는 중학생.",
+					["bm_w_benelli"] = "베넬리 M4",
+						["bm_spas12_sc_desc"] = "\"분위기를 못 읽는 건 한계가 있다고!\"\n\n에노시마의 공립학교에 다니는 중학생.",
+				
 
-			["bm_w_fal"] = "Faru",
-			["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nA service Seishou Academy.\nCurrently on leave from service.",
-			["bm_w_m14"] = "Ichiyon",
-			["bm_m14_sc_desc"] = "\"I have bad memories about ambushes.\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
-			["bm_w_g3"] = "Jiisuri",
-			["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
-
-			["bm_w_erma"] = "Erma-sensei",
-			["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy. Speaks with accented Japanese",
-			["bm_w_m1928"] = "Thompson-sensei",
-			["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy. Speaks with accented Japanese",
-
-			["bm_w_mp5"] = "Empi",
-			["bm_mp5_sc_desc"] = "\"If that's your hobby, you just had to say it...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the current student council president of elementary division.",
-
-			["bm_w_uzi"] = "Uzi",
-			["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nThe former student council president of the elementary division, pushed out by Empi when she arrived.",
-
-			["bm_w_siltstone"] = "Drako",
-			["bm_siltstone_sc_desc"] = "\"Do not misunderstand.\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.",
-			["bm_w_ak74"] = "Nanayon",
-			["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
-			["bm_w_mosin"] = "Mosin Nagant",
-			["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-			["bm_w_saiga"] = "Saiga-chan",
-			["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
---]]			
 		})
 	end	
 	
@@ -2161,7 +2209,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--{
 
 			--Stun Resistance--
-			["menu_oppressor_beta_sc"] = "기절 저항력",
+			["menu_oppressor_beta_sc"] = "스턴 저항력",
 			["menu_oppressor_beta_desc_sc"] = "베이직: ##$basic##\n당신이 가진 방어력 1점당 적의 근접 공격을 맞을때 ##0.25%##만큼 뒤로 밀려납니다.\n\n에이스: ##$pro##\n섬광탄을 비롯한 시각 교란의 지속 시간이 ##50%##만큼 감소합니다.",
 
 			--Die Hard
@@ -2676,8 +2724,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 ##50## 방어구를 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n\n\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵에 있는 적을 1초마다 기절시킬 확률을 부여합니다. 휴대용 ECM 재머에는 ##1##씩 충전되고 ##80##초의 재사용 대기시간 타이머가 있지만, 적을 죽일 때마다 재사용 대기시간이 ##3##초 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 ##20##의 체력이 회복됩니다. 피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 ##10##의 체력이 회복됩니다.\n##-##방어구 회복률이 ##10% 증가합니다.##\n##-##회피 포인트가 ##10##만큼 증가합니다.",
-		["menu_deck21_1_desc_sc"] = "##휴대용 ECM 재머##를 잠금 해제하고 장착합니다.\n\n게임 내에서 투척무기 키를 사용하여 휴대용 ECM 재머를 활성화할 수 있습니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵의 적을 1초마다 기절시킬 확률을 부여합니다.\n\n휴대용 ECM 재머에는 ##1## 충전과 ##80##초의 재사용 대기시간 타이머가 있지만 적을 처치할 때마다 재사용 대기시간이 ##3##초 단축됩니다.",
+		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n\n\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵에 있는 적을 1초마다 스턴시킬 확률을 부여합니다. 휴대용 ECM 재머에는 ##1##씩 충전되고 ##80##초의 재사용 대기시간 타이머가 있지만, 적을 죽일 때마다 재사용 대기시간이 ##3##초 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 ##20##의 체력이 회복됩니다. 피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 ##10##의 체력이 회복됩니다.\n##-##방어구 회복률이 ##10% 증가합니다.##\n##-##회피 포인트가 ##10##만큼 증가합니다.",
+		["menu_deck21_1_desc_sc"] = "##휴대용 ECM 재머##를 잠금 해제하고 장착합니다.\n\n게임 내에서 투척무기 키를 사용하여 휴대용 ECM 재머를 활성화할 수 있습니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵의 적을 1초마다 스턴시킬 확률을 부여합니다.\n\n휴대용 ECM 재머에는 ##1## 충전과 ##80##초의 재사용 대기시간 타이머가 있지만 적을 처치할 때마다 재사용 대기시간이 ##3##초 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 ##20##의 체력이 회복됩니다.",
 		["menu_deck21_7_desc_sc"] = "방어구 회복률이 ##10% 증가합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",

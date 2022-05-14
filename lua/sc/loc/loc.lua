@@ -1592,54 +1592,63 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
 
 
-			--[
-				--SEISHOU ACADEMY
-					--MIDDLE SCHOOLERS
-						["bm_w_m16"] = "Ichiroku",
-							["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
-						["bm_w_m4"] = "Em-Four",
-							["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
-						["bm_w_aug"] = "AUG",
-							["bm_aug_sc_desc"] = "\"   \"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+			--SEISHOU ACADEMY
+				--MIDDLE SCHOOLERS
+					["bm_w_m16"] = "Ichiroku",
+						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
+					["bm_w_m4"] = "Em-Four",
+						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
+					["bm_w_aug"] = "AUG",
+						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
+						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending Seishou Academy.\nGives off a heavy \"main protagonist\" aura.",
 	
-					--HIGH SCHOOLERS
-						["bm_w_fal"] = "Faru",
-							["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nFunko's older sister.\nNot to be confused with L1A1 Faru.",
-						["bm_w_m14"] = "Ichiyon",
-							["bm_m14_sc_desc"] = "\"I have bad memories about ambushes.\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
-						["bm_w_g3"] = "Jiisuri",
-							["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
-				
-				
-					--ELEMENTARY
-						["bm_w_mp5"] = "Empi",
-							["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the current student council president of the 		elementary division.",
-						["bm_w_uzi"] = "Uzi",
-							["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nThe former self-declared leader of the elementary division, pushed out by Empi when she arrived.",
+				--HIGH SCHOOLERS
+					["bm_w_fal"] = "Faru",
+						["bm_fal_sc_desc"] = "\"Your big sis arrived~!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
+					["bm_w_m14"] = "Ichiyon",
+						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
+					["bm_w_g3"] = "Jiisuri",
+						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
+
+				--ELEMENTARY
+					["bm_w_mp5"] = "Empi",
+						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
+					["bm_w_uzi"] = "Uzi",
+						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending Seishou Academy.\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
+					["bm_w_mac10"] = "Ram",
+						["bm_uzi_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending Seishou Academy.\nA machinegun with words. Also top-heavy.",
 		
-					--FACULTY
-						["bm_w_erma"] = "Erma-sensei",
-							["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy. The SMGs love her.",
-						["bm_w_m1928"] = "Thompson-sensei",
-							["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy. Speaks with accented Japanese.",
-						["bm_w_ching"] = "Garand",
-							["bm_m1928_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at Seishou Academy. Looks over the middleschoolers.",
+				--FACULTY
+					["bm_w_erma"] = "Erma-sensei",
+						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy.\nThe SMGs love her.",
+					["bm_w_m1928"] = "Thompson-sensei",
+						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy.\nSpeaks with accented Japanese. A former member of the FBI.",
+					["bm_w_ching"] = "Garand",
+						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at Seishou Academy.\nLooks over the middleschoolers.",
 	
-				--RED STEEL
-					--THREE STRIPES
-						["bm_w_siltstone"] = "Drako",
-						["bm_siltstone_sc_desc"] = "\"Do not misunderstand.\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.",
-					
-					--TWO STRIPES
-						["bm_w_ak74"] = "Nanayon",
-							["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the 		cunning nature to match.",
-						["bm_w_saiga"] = "Saiga-chan",
-							["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending Red Steel Academy.\nHaughty, overconfident, and expressive, Saiga is a loud and 	boisterous 	auto-shotgun.",
-	
-					--FACULTY
-						["bm_w_mosin"] = "Mosin Nagant",
-							["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-			--]]
+			--RED STEEL ACADEMY
+				--THREE STRIPES
+					["bm_w_siltstone"] = "Drako",
+					["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
+					["bm_w_akm"] = "AKM",
+					["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending Red Steel Academy.\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
+				--TWO STRIPES
+					["bm_w_ak74"] = "Nanayon",
+						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes~\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
+					["bm_w_saiga"] = "Saiga-chan",
+						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending Red Steel Academy.\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
+				--FACULTY
+					["bm_w_mosin"] = "Mosin Nagant",
+						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of Red Steel Academy.\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
+			
+			--ENOSHIMA
+				--MIDDLE SCHOOLERS
+					["bm_w_spas12"] = "SPAS-12",
+						["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
+					["bm_w_benelli"] = "Benelli M4",
+						["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
+				
 		})
 	end
 	

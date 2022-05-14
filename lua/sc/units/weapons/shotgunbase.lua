@@ -331,6 +331,12 @@ function ShotgunBase:fire_rate_multiplier()
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
+	--Took hipfire RoF bonus from OVK, and true to their name, it looks to be a bit overkill on the sanity checks, but w/e
+	local user_unit = self._setup and self._setup.user_unit --I'd like to know an instance where you can even shoot at all without there being a user_unit
+	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
+	if current_state and not current_state:in_steelsight() then
+		multiplier = multiplier * managers.player:upgrade_value("shotgun", "hip_rate_of_fire", 1)
+	end
 	if self:in_burst_mode() or self._macno then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
@@ -342,6 +348,7 @@ function ShotgunBase:fire_rate_multiplier()
 			multiplier = 1
 		end
 	end	
+
 	--[[
 	local init_mult = self._fire_rate_init_mult
 	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then

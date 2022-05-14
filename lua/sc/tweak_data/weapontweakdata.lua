@@ -8615,7 +8615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.hk51b.AMMO_MAX = 80
 			self.hk51b.fire_mode_data.fire_rate = 0.063157
 			self.hk51b.CAN_TOGGLE_FIREMODE = true
-			self.hk51b.BURST_FIRE = false
+			self.hk51b.BURST_FIRE = 3
 			self.hk51b.kick = self.stat_info.kick_tables.moderate_right_kick
 			self.hk51b.panic_suppression_chance = 0.05
 			self.hk51b.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"

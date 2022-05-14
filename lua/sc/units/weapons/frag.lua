@@ -33,17 +33,46 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 
 	--Do fun cluster grenade stuff.
 	local grenade_tweak = tweak_data.projectiles[self._tweak_projectile_entry]
-	if grenade_tweak and grenade_tweak.cluster then
-		for i=1, grenade_tweak.cluster_count or 1 do
-			ProjectileBase.throw_projectile(grenade_tweak.cluster, self._unit:position(), Vector3(math.random(-1, 1), math.random(-1, 1), 0.5), nil, self:thrower_unit() or self._unit, true)
+	if grenade_tweak then 
+		if grenade_tweak.cluster then
+			for i=1, grenade_tweak.cluster_count or 1 do
+				ProjectileBase.throw_projectile(grenade_tweak.cluster, self._unit:position(), Vector3(math.random(-1, 1), math.random(-1, 1), 0.5), nil, self:thrower_unit() or self._unit, true)
+			end
+		elseif grenade_tweak.incendiary then
+			self:_spawn_environment_fire(normal)
+			managers.network:session():send_to_peers_synched("sync_detonate_molotov_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonate, normal)
 		end
+	end
+
+end
+
+function FragGrenade:sync_detonate_molotov_grenade(event_id, normal)
+	if event_id == GrenadeBase.EVENT_IDS.detonate then
+		self:_detonate_on_client(normal)
 	end
 end
 
-function FragGrenade:_detonate_on_client()
-	local pos = self._unit:position()
-	local range = self._range
+function FragGrenade:_spawn_environment_fire(normal)
+	local position = self._unit:position()
+	local rotation = self._unit:rotation()
+	local data = tweak_data.env_effect:incendiary_burst_fire()
 
-	managers.explosion:give_local_player_dmg(pos, range, self._player_damage, self._user_unit) --Pass in the user unit.
-	managers.explosion:explode_on_client(pos, math.UP, nil, self._damage, range, self._curve_pow, self._custom_params)
+	EnvironmentFire.spawn(position, rotation, data, normal, self._thrower_unit, 0, 1)
+	self._unit:set_slot(0)
+end
+
+function FragGrenade:_detonate_on_client(normal)
+	if self._detonated == false then
+		self._detonated = true
+		local pos = self._unit:position()
+		local range = self._range
+	
+		managers.explosion:give_local_player_dmg(pos, range, self._player_damage, self._user_unit) --Pass in the user unit.
+		managers.explosion:explode_on_client(pos, math.UP, nil, self._damage, range, self._curve_pow, self._custom_params)
+
+		local grenade_tweak = tweak_data.projectiles[self._tweak_projectile_entry]
+		if grenade_tweak.incendiary then
+			self:_spawn_environment_fire(normal)
+		end
+	end
 end

@@ -74,6 +74,7 @@ tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
+tweak_data.projectiles.rocket_ray_frag.incendiary = true
 
 --Grenade launcher stuff--
 --TODO: compress dupes into tables and for loops

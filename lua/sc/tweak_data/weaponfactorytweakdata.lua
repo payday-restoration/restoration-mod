@@ -5873,6 +5873,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 		}
 	}
 
+	self.wpn_fps_lmg_rpk.override.wpn_upg_ak_fg_combo3 = {
+		adds = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		}
+	}
+	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_fg_tapco = {
+		adds = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		}
+	}
+	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_fg_midwest = {
+		adds = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		}
+	}
 
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_m4_s_standard = {
 		stats = stocks.fixed_to_adj_dual_stats,
@@ -5975,9 +5990,78 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_lmg_rpk_m_ban")	
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_s_skfoldable")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_s_skfoldable")			
+	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_s_skfoldable")
+
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_ak_scopemount") -- doesn't work, missing "a_o_sm"
+	--table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_ak_scopemount")	
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_fg_combo3")
+	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_fg_combo3")	
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_fg_tapco")
+	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ak_fg_tapco")	
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_fg_midwest")
+	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_fg_midwest")			
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_fg_krebs") -- Don't fit right, missing their respective unique attachment points
+	--table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ak_fg_krebs")	
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_fg_trax")
+	--table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ak_fg_trax")			
 			
 	self.wpn_fps_lmg_rpk_npc.uses_parts = deep_clone(self.wpn_fps_lmg_rpk.uses_parts)		
+
+end)
+
+
+--Versteckt-51
+Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(self)
+
+	--Kalt Barrel
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.supported = true
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.stats = barrels.long_b2_stats
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.custom_stats = barrels.long_b2_custom_stats
+
+	--Schatten Fartten
+	self.parts.wpn_fps_lmg_hk51b_fg_railed.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_fg_railed.supported = true
+	self.parts.wpn_fps_lmg_hk51b_fg_railed.stats = {
+		value = 6,
+		recoil = -2,
+		concealment = 1
+	}
+	
+	--Zittern Stock (what a fucking stupid name YOU'RE JUST EXTENDING THE FUCKING STOCK FOR FUCKS SAKE)
+	self.parts.wpn_fps_lmg_hk51b_s_extended.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_s_extended.name_id = "bm_wp_mp7_s_long" --too lazy to go into loc
+	self.parts.wpn_fps_lmg_hk51b_s_extended.supported = true
+	self.parts.wpn_fps_lmg_hk51b_s_extended.stats = stocks.unfold_nocheeks_stats
+	self.parts.wpn_fps_lmg_hk51b_s_extended.stats.value = 0
+	self.parts.wpn_fps_lmg_hk51b_s_extended.custom_stats = stocks.unfold_nocheeks_stats
+	
+	--Verdunkeln Brake
+	--Tank Comp clone
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.supported = true
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = muzzle_device.muzzle_c_stats
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = muzzle_device.muzzle_c_custom_stats
 
 end)
 

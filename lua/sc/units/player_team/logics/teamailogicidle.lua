@@ -79,21 +79,21 @@ function TeamAILogicIdle.enter(data, new_logic_name, enter_params)
 
 			local success = nil
 			local revive_unit = objective.follow_unit
-
+			local revive_char_dmg_ext = revive_unit:character_damage()
 			if revive_unit:interaction() then
 				if revive_unit:interaction():active() and data.unit:brain():action_request(objective.action) then
 					revive_unit:interaction():interact_start(data.unit)
 
 					success = true
 				end
-			elseif revive_unit:character_damage():arrested() then
+			elseif revive_char_dmg_ext:arrested() then
 				if data.unit:brain():action_request(objective.action) then
-					revive_unit:character_damage():pause_arrested_timer()
+					revive_char_dmg_ext:pause_arrested_timer()
 
 					success = true
 				end
-			elseif revive_unit:character_damage():need_revive() and data.unit:brain():action_request(objective.action) then
-				revive_unit:character_damage():pause_downed_timer()
+			elseif revive_char_dmg_ext:need_revive() and data.unit:brain():action_request(objective.action) then
+				revive_char_dmg_ext:pause_downed_timer()
 
 				success = true
 			end
@@ -107,33 +107,22 @@ function TeamAILogicIdle.enter(data, new_logic_name, enter_params)
 
 				CopLogicBase.add_delayed_clbk(my_data, my_data.revive_complete_clbk_id, callback(TeamAILogicIdle, TeamAILogicIdle, "clbk_revive_complete", data), revive_t)
 
-				local voiceline = "s09b" --usual bot revive line (should be used for players when they have 3/4 downs left)
+				if not revive_char_dmg_ext:arrested() then
+					if revive_unit:base().is_local_player or revive_unit:base().is_husk_player then
+						local suffix = "a"
+						if revive_char_dmg_ext.get_revives then
+							local amount_revives = revive_char_dmg_ext:get_revives()
 
-				if revive_unit:base().is_local_player then
-					if not revive_unit:character_damage():arrested() then
-						if revive_unit:movement():current_state_name() == "incapacitated" then --tased/cloaked
-							voiceline = "s08x_sin" --"let me help you up"
-						else
-							if revive_unit:character_damage():get_revives() == 2 then --2 downs left
-								voiceline = "s09a" --"you're really fucked up"
-							elseif revive_unit:character_damage():get_revives() == 1 then --1 down left
-								voiceline = "s09c" --usual bot revive line + last down warning
+							if amount_revives == 1 then
+								suffix = "c"
+							elseif amount_revives == 2 or amount_revives < revive_char_dmg_ext:get_revives_max() - 1 then
+								suffix = "b"
 							end
 						end
 
-						data.unit:sound():say(voiceline, true)
-					end
-				elseif revive_unit:base().is_husk_player then
-					if not revive_unit:character_damage():arrested() then --can't check for lives in vanilla, add code for this if you want to
-						if revive_unit:movement():current_state_name() == "incapacitated" then
-							voiceline = "s08x_sin" --"let me help you up"
-						end
-
-						data.unit:sound():say(voiceline, true)
-					end
-				else
-					if not revive_unit:character_damage():arrested() then
-						data.unit:sound():say(voiceline, true) --doesn't really matter for bots, but some variation could be added if desired
+						data.unit:sound():say("s09" .. suffix, true)
+					else
+						data.unit:sound():say("s09b", true) --doesn't really matter for bots, but some variation could be added if desired
 					end
 				end
 			else

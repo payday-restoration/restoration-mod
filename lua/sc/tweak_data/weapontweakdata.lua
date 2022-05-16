@@ -7074,7 +7074,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.BURST_FIRE = 3
 				self.s552.ADAPTIVE_BURST_SIZE = false															
 				self.s552.kick = self.stat_info.kick_tables.moderate_left_kick
-				self.s552.AMMO_MAX = 150
+				self.s552.AMMO_MAX = 180
 				self.s552.supported = true
 				self.s552.ads_speed = 0.300
 				self.s552.damage_falloff = {

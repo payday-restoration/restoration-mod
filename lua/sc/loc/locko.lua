@@ -1106,8 +1106,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "\"침묵은 치명적이다\" 라는 명언에 진실을 세기십시오.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",
 
 		--KETCHUPKNOB--
-		["bm_w_groza"] = "Tula-14 소총",
-		["bm_groza_sc_desc_pc"] = "VALkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_w_groza"] = "OB-14st Byk-4 소총",
+		["bm_groza_sc_desc_pc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_groza_sc_desc"] = "Valkyria의 불펍 사촌으로, 이제 많은 붐을 일으킵니다.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		
 		--Mosin--
@@ -1373,10 +1373,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_heavy_mg"] = "중기관총",
 		["menu_miniguns"] = "개틀링 기관총",
 		
-		["menu_snp"] = "저격소총",
+		["menu_snp"] = "저격총",
 		--
-		["menu_light_snp"] = "경저격소총",
-		["menu_heavy_snp"] = "중저격소총",
+		["menu_light_snp"] = "경저격총",
+		["menu_heavy_snp"] = "중저격총",
 		["menu_antim_snp"] = "대물 저격소총",
 
 		["menu_wpn_special"] = "특수 & 분류되지 않음",
@@ -1598,7 +1598,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	local cute = math.rand(1)
 	local funny = 0.10
 	if cute <= funny then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({			
+			
+			
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "이치로쿠",
@@ -1655,6 +1657,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_spas12_sc_desc"] = "\"이 바보야! 완전히 드러났잖아!\"\n\n에노시마의 공립학교에 다니는 중학생.",
 					["bm_w_benelli"] = "베넬리 M4",
 						["bm_spas12_sc_desc"] = "\"분위기를 못 읽는 건 한계가 있다고!\"\n\n에노시마의 공립학교에 다니는 중학생.",
+				
+
 		})
 	end	
 	

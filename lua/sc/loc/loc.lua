@@ -1107,8 +1107,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "Bring truth to the phrase \"Silence is deadly\".\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 
 		--KETCHUPKNOB--
-		["bm_w_groza"] = "Tula-14 Rifle",
-		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the VALkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
+		["bm_w_groza"] = "OB-14st Byk-4 Rifle", --Hopefully less silly than its Ketchup name
+		--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
+		--Although, a Russian word for "region/zone/area" followed up with a Polish word...
+		--Eh, whatever
+		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
 		--Mosin--
@@ -1573,7 +1577,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
-
 	if twirl <= shalashaska then
 		LocalizationManager:add_localized_strings({	
 			["bm_w_peacemaker"] = "Revolver Ocelot",
@@ -1590,7 +1593,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_menu_ro_grip"] = "Revolver Ocelot",
 
 			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
+		})
+	end
 
+	local cute = math.rand(1)
+	local funny = 0.10
+	if cute <= funny then
+		LocalizationManager:add_localized_strings({	
+			--It's an "Upotte!!" reference
 
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS

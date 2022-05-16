@@ -188,6 +188,12 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
 						end
 					end
 				elseif stat.name == "fire_rate" then
+					base_value = math.max(base_stats[stat.name].value, 0)
+
+					if base_stats[stat.name].index then
+						base_index = base_stats[stat.name].index
+					end
+
 					multiplier = managers.blackmarket:fire_rate_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint)
 				end
 				if modifier ~= 0 then
@@ -223,6 +229,7 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 		mods_stats[stat.name].index = 0
 		mods_stats[stat.name].value = 0
 	end
+
 	if equipped_mods then
 		local tweak_stats = tweak_data.weapon.stats
 		local tweak_factory = tweak_data.weapon.factory.parts
@@ -265,6 +272,10 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 							local mult = 1 / tweak_data.weapon.stats[stat.name][tweak_data.weapon[name].stats.reload + reload_total_index]
 							mods_stats[stat.name].value = base_stats[stat.name].value * mult
 							mods_stats[stat.name].index = reload_total_index
+						elseif stat.name == "fire_rate" then
+							if part_data.custom_stats and part_data.custom_stats.rof_mult then
+								mods_stats[stat.name].value = mods_stats[stat.name].value + part_data.custom_stats.rof_mult - 1
+							end
 						else
 							mods_stats[stat.name].index = mods_stats[stat.name].index + (part_data.stats[stat.name] or 0)
 						end
@@ -326,11 +337,175 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 					mods_stats[stat.name].value = ratio * 100
 				end
 				mods_stats[stat.name].value = mods_stats[stat.name].value - base_stats[stat.name].value
+			elseif stat.name == "fire_rate" then
+				mods_stats[stat.name].value = base_stats[stat.name].value * mods_stats[stat.name].value
 			end
 		end
 	end
 	return mods_stats
 end
+
+function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_stats, mods_stats, equipped_mods)
+	local tweak_stats = tweak_data.weapon.stats
+	local tweak_factory = tweak_data.weapon.factory.parts
+	local modifier_stats = tweak_data.weapon[weapon_name].stats_modifiers
+	local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(weapon_name)
+	local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+	local part_data = nil
+	local mod_stats = {
+		chosen = {},
+		equip = {}
+	}
+
+	for _, stat in pairs(WeaponDescription._stats_shown) do
+		mod_stats.chosen[stat.name] = 0
+		mod_stats.equip[stat.name] = 0
+	end
+
+	mod_stats.chosen.name = mod_name
+
+	if equipped_mods then
+		for _, mod in ipairs(equipped_mods) do
+			if tweak_factory[mod] and tweak_factory[mod_name].type == tweak_factory[mod].type then
+				mod_stats.equip.name = mod
+
+				break
+			end
+		end
+	end
+
+	local curr_stats = base_stats
+	local index, wanted_index = nil
+
+	for _, mod in pairs(mod_stats) do
+		part_data = nil
+
+		if mod.name then
+			if tweak_data.blackmarket.weapon_skins[mod.name] and tweak_data.blackmarket.weapon_skins[mod.name].bonus and tweak_data.economy.bonuses[tweak_data.blackmarket.weapon_skins[mod.name].bonus] then
+				part_data = {
+					stats = tweak_data.economy.bonuses[tweak_data.blackmarket.weapon_skins[mod.name].bonus].stats
+				}
+			else
+				part_data = managers.weapon_factory:get_part_data_by_part_id_from_weapon(mod.name, factory_id, default_blueprint)
+			end
+		end
+
+		for _, stat in pairs(WeaponDescription._stats_shown) do
+			if part_data and part_data.stats then
+				if stat.name == "magazine" then
+					local ammo = part_data.stats.extra_ammo
+					ammo = ammo and ammo + (tweak_data.weapon[weapon_name].stats.extra_ammo or 0)
+					mod[stat.name] = ammo and tweak_data.weapon.stats.extra_ammo[ammo] or 0
+
+					if part_data.custom_stats and part_data.custom_stats.ammo_offset then
+						mod[stat.name] = mod[stat.name] + part_data.custom_stats.ammo_offset
+					end
+				elseif stat.name == "totalammo" then
+					local chosen_index = part_data.stats.total_ammo_mod or 0
+					chosen_index = math.clamp(base_stats[stat.name].index + chosen_index, 1, #tweak_stats.total_ammo_mod)
+					mod[stat.name] = base_stats[stat.name].value * tweak_stats.total_ammo_mod[chosen_index]
+				elseif stat.name == "reload" then
+					local chosen_index = part_data.stats.reload or 0
+					chosen_index = math.clamp(base_stats[stat.name].index + chosen_index, 1, #tweak_stats[stat.name])
+					local reload_time = managers.blackmarket:get_reload_time(weapon_name) / (tweak_data.weapon[weapon_name].reload_speed_multiplier or 1)
+					local mult = 1 / tweak_data.weapon.stats[stat.name][chosen_index]
+					local mod_value = reload_time * mult
+					mod[stat.name] = mod_value - base_stats[stat.name].value
+				elseif stat.name == "fire_rate" then
+					if part_data.custom_stats and part_data.custom_stats.fire_rate_multiplier then
+						mod[stat.name] = base_stats[stat.name].value * (part_data.custom_stats.fire_rate_multiplier - 1)
+					end
+				else
+					local chosen_index = part_data.stats[stat.name] or 0
+
+					if tweak_stats[stat.name] then
+						wanted_index = curr_stats[stat.name].index + chosen_index
+						index = math.clamp(wanted_index, 1, #tweak_stats[stat.name])
+						mod[stat.name] = stat.index and index or tweak_stats[stat.name][index] * tweak_data.gui.stats_present_multiplier
+
+						if wanted_index ~= index then
+							print("[WeaponDescription._get_weapon_mod_stats] index went out of bound, estimating value", "mod_name", mod_name, "stat.name", stat.name, "wanted_index", wanted_index, "index", index)
+
+							if stat.index then
+								index = wanted_index
+								mod[stat.name] = index
+							elseif index ~= curr_stats[stat.name].index then
+								local diff_value = tweak_stats[stat.name][index] - tweak_stats[stat.name][curr_stats[stat.name].index]
+								local diff_index = index - curr_stats[stat.name].index
+								local diff_ratio = diff_value / diff_index
+								diff_index = wanted_index - index
+								diff_value = diff_index * diff_ratio
+								mod[stat.name] = mod[stat.name] + diff_value * tweak_data.gui.stats_present_multiplier
+							end
+						end
+
+						local offset = math.min(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier
+
+						if stat.offset then
+							mod[stat.name] = mod[stat.name] - offset
+						end
+
+						if stat.revert then
+							local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier
+
+							if stat.revert then
+								max_stat = max_stat - offset
+							end
+
+							mod[stat.name] = max_stat - mod[stat.name]
+						end
+
+						if modifier_stats and modifier_stats[stat.name] then
+							local mod_stat = modifier_stats[stat.name]
+
+							if stat.revert and not stat.index then
+								local real_base_value = tweak_stats[stat.name][index]
+								local modded_value = real_base_value * mod_stat
+								local offset = math.min(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]])
+
+								if stat.offset then
+									modded_value = modded_value - offset
+								end
+
+								local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]])
+
+								if stat.offset then
+									max_stat = max_stat - offset
+								end
+
+								local new_value = (max_stat - modded_value) * tweak_data.gui.stats_present_multiplier
+
+								if mod_stat ~= 0 and (tweak_stats[stat.name][1] < modded_value or modded_value < tweak_stats[stat.name][#tweak_stats[stat.name]]) then
+									new_value = (new_value + mod[stat.name] / mod_stat) / 2
+								end
+
+								mod[stat.name] = new_value
+							else
+								mod[stat.name] = mod[stat.name] * mod_stat
+							end
+						end
+
+						if stat.percent then
+							local max_stat = stat.index and #tweak_stats[stat.name] or math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier
+
+							if stat.offset then
+								max_stat = max_stat - offset
+							end
+
+							local ratio = mod[stat.name] / max_stat
+							mod[stat.name] = ratio * 100
+						end
+
+						mod[stat.name] = mod[stat.name] - curr_stats[stat.name].value
+					end
+				end
+			end
+		end
+	end
+
+	return mod_stats
+end
+
 
 function WeaponDescription._get_base_swap_speed(name, base_stats)
 	local weapon_tweak = tweak_data.weapon[name]
@@ -768,6 +943,7 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 end
 
 --Identical to vanilla function, but including it somehow fixes incorrect reload speeds showing up on the attachment selection screen for weapons with reload_speed_multiplier.
+--[[
 function WeaponDescription.get_stats_for_mod(mod_name, weapon_name, category, slot)
 	local equipped_mods = nil
 	local blueprint = managers.blackmarket:get_weapon_blueprint(category, slot)
@@ -787,3 +963,4 @@ function WeaponDescription.get_stats_for_mod(mod_name, weapon_name, category, sl
 
 	return WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_stats, mods_stats, equipped_mods)
 end
+--]]

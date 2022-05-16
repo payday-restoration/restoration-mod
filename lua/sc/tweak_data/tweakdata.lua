@@ -413,6 +413,7 @@ tweak_data.projectiles.dada_com.damage = 80
 tweak_data.projectiles.dada_com.player_damage = 40
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
+tweak_data.projectiles.dada_com.cluster = true
 
 --Molliest of tovs--
 tweak_data.projectiles.molotov.damage = 3
@@ -475,7 +476,7 @@ tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 2
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
 tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2.5,
+	dot_damage = 2,
 	dot_length = 30,
 	dot_tick_period = 1
 }
@@ -636,8 +637,8 @@ tweak_data.projectiles.launcher_electric_osipr = {
 
 local velocity = {
 	'launcher_frag','launcher_incendiary','launcher_electric','launcher_poison_gre_m79', --M79
-	'launcher_frag_china','launcher_incendiary_china','launcher_electric_china', --China Lake
-	'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32', --M32
+	'launcher_frag_china','launcher_incendiary_china','launcher_electric_china', 'launcher_poison_china', --China Lake
+	'launcher_frag_m32','launcher_incendiary_m32','launcher_electric_m32', 'launcher_poison_m32', --M32
 	'launcher_m203','underbarrel_electric','launcher_poison_contraband', --HK417 UGL
 	'underbarrel_m203_groza','underbarrel_electric_groza','launcher_poison_groza', -- Groza UGL
 	'launcher_frag_slap','launcher_incendiary_slap','launcher_electric_slap','launcher_poison_slap', --M320

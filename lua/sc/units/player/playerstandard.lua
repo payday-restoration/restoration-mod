@@ -505,7 +505,7 @@ end
 function PlayerStandard:_end_action_running(t)
 	if not self._end_running_expire_t then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
-		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.3
+		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
@@ -740,7 +740,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	--Trigger chainsaw damage and update timer.
 	if melee_weapon.chainsaw and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)
-		self._state_data.chainsaw_t = t + melee_weapon.chainsaw.tick_delay
+		self._state_data.chainsaw_t = t + (melee_weapon.chainsaw.tick_delay * (1 + (1 - managers.player:upgrade_value("player", "melee_swing_multiplier", 1))))
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
@@ -1099,7 +1099,21 @@ function PlayerStandard:force_recoil_kick(weap_base, shots_fired)
 	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
 end
 
---Starts minigun spinup.
+--delay aiming for a bit after exiting sprint
+local old_start_action_steelsight = PlayerStandard._start_action_steelsight
+function PlayerStandard:_start_action_steelsight(t, gadget_state)
+	if self._equipped_unit and self._equipped_unit:base() then
+		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
+		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
+		local orig_sprintout = sprintout_anim_time / speed_multiplier
+		if self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.25) then
+			self._steelsight_wanted = true
+			return
+		end
+	end
+	old_start_action_steelsight(self, t, gadget_state)
+end
+
 Hooks:PostHook(PlayerStandard, "_start_action_steelsight", "ResMinigunEnterSteelsight", function(self, t, gadget_state)
 	if self._state_data.in_steelsight --[[or self._steelsight_wanted]] then
 		local weapon = self._unit:inventory():equipped_unit():base()

@@ -459,10 +459,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
 		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
-		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 1
+		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.9
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
-		self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
-		self._burst_delay = self:weapon_tweak_data().BURST_DELAY
+		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
+		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or 0.12
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
 		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
 		
@@ -492,9 +492,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	if not self._custom_stats_done then
 
-		--Set range multipliers.
+		--Set range/rof multipliers to 1 to make anything else that changes them fuck off
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
+		self._rof_mult = 1
 
 		for part_id, stats in pairs(custom_stats) do
 			if stats.ads_speed_mult then
@@ -601,13 +602,19 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
 			end
 			
+			if stats.rof_mult then
+				self._rof_mult = self._rof_mult * stats.rof_mult
+			end
 			if stats.starwars then
 				self._starwars = true
 			end
 		end
+	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
 	end
-	self._custom_stats_done = true
-	
+
+	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
+	self._fire_rate_multiplier = self._fire_rate_multiplier * self._rof_mult
+
     if BeardLib and self._trail_effect_table then
         if self._starwars == true then
             self._trail_effect_table.effect = Idstring("effects/particles/weapons/sterwers_trail")
@@ -680,11 +687,12 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
 	if self:in_burst_mode() or self._macno then
+		local no_burst_mult = multiplier
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
-			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / multiplier)
+			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)
 			self._next_fire_allowed = math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire)
 			self._macno = nil
 			multiplier = 1
@@ -777,6 +785,9 @@ function NewRaycastWeaponBase:cancel_burst(soft_cancel, macno)
 				managers.hud:show_hint( { text = "DON'T EVEN THINK ABOUT USING AUTOFIRE, OR I'LL KNOW" } )
 			else
 				self._i_know = self._i_know + 1
+				if self._i_know > 4 then
+					managers.hud:show_hint( { text = "THIS GETS LONGER EACH TIME, FYI" } )
+				end
 			end
 		end
 		self._burst_rounds_remaining = 0
@@ -948,20 +959,20 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "exit_run_speed_multiplier", 1)
 
 	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
-	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.95 / sprintout_anim_time )
+	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 1 / sprintout_anim_time )
 	return multiplier
 end
 
 
 local scope_colors = {
-	green = Color(0, 0.8, 0),
-	greenmid = Color(0.8, 0.5, 0),
-	greenlow = Color(0.8, 0, 0),
-	greenno = Color(0.5, 0, 0),
-	red = Color(0.8, 0, 0),
-	redmid = Color(0.65, 0, 0.5),
-	redlow = Color(0.1, 0, 0.8),
-	redno = Color(0.05, 0, 0.5),
+	green = Color(0, 1, 0),
+	greenmid = Color(1, 0.5, 0),
+	greenlow = Color(1, 0, 0),
+	greenno = Color(1, 0, 1),
+	red = Color(1, 0, 0),
+	redmid = Color(1, 0, 1),
+	redlow = Color(0, 0, 1),
+	redno = Color(0, 1, 1),
 }
 function NewRaycastWeaponBase:set_scope_range_distance(distance)
 	if not self._assembly_complete then

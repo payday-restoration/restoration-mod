@@ -1068,8 +1068,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_large.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_large.stats = muzzle_device.supp_c_stats
-	self.parts.wpn_fps_upg_ns_ass_smg_large.custom_stats = muzzle_device.muzzle_c_custom_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_large.stats = deep_clone(muzzle_device.supp_c_stats)
+	self.parts.wpn_fps_upg_ns_ass_smg_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
 	
 	--Medium Suppressor
@@ -1080,7 +1080,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_medium.stats = muzzle_device.supp_b_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_medium.stats = deep_clone(muzzle_device.supp_b_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.perks = {"silencer"}
 	
 	--Low Profile Suppressor
@@ -1091,8 +1091,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_small.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_small.stats = muzzle_device.supp_a_stats
-	self.parts.wpn_fps_upg_ns_ass_smg_small.custom_stats = muzzle_device.muzzle_a_custom_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_small.stats = deep_clone(muzzle_device.supp_a_stats)
+	self.parts.wpn_fps_upg_ns_ass_smg_small.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_small.perks = {"silencer"}
 	
 	--Monolith Suppressor
@@ -1103,8 +1103,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_large.supported = true
-	self.parts.wpn_fps_upg_ns_pis_large.stats = muzzle_device.supp_c_stats
-	self.parts.wpn_fps_upg_ns_pis_large.custom_stats = muzzle_device.muzzle_c_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_large.stats = deep_clone(muzzle_device.supp_c_stats)
+	self.parts.wpn_fps_upg_ns_pis_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
 
 	--Standard Issue Suppressor
@@ -1115,7 +1115,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_medium.supported = true
-	self.parts.wpn_fps_upg_ns_pis_medium.stats = muzzle_device.supp_b_stats
+	self.parts.wpn_fps_upg_ns_pis_medium.stats = deep_clone(muzzle_device.supp_b_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium.perks = {"silencer"}
 
 	--Size Doesn't Matter
@@ -1126,8 +1126,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_small.supported = true
-	self.parts.wpn_fps_upg_ns_pis_small.stats = muzzle_device.supp_a_stats
-	self.parts.wpn_fps_upg_ns_pis_small.custom_stats = muzzle_device.muzzle_a_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_small.stats = deep_clone(muzzle_device.supp_a_stats)
+	self.parts.wpn_fps_upg_ns_pis_small.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_small.perks = {"silencer"}
 	
 	--Silent Killer Suppressor
@@ -1138,7 +1138,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}	
 	self.parts.wpn_fps_upg_ns_shot_thick.supported = true	
-	self.parts.wpn_fps_upg_ns_shot_thick.stats = muzzle_device.supp_b_stats
+	self.parts.wpn_fps_upg_ns_shot_thick.stats = deep_clone(muzzle_device.supp_b_stats)
 	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {}		
 	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}	
 	self.parts.wpn_fps_upg_ns_shot_thick.forbids = {
@@ -1158,7 +1158,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_firepig.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats = deep_clone(muzzle_device.muzzle_b_stats)
 		
 	--Stubby Compensator
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.pcs = {
@@ -1168,8 +1168,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = muzzle_device.muzzle_a_stats
-	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = muzzle_device.muzzle_a_custom_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzzle_a_stats)
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 		
 	--The Tank Compensator	
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.pcs = {
@@ -1179,8 +1179,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = muzzle_device.muzzle_c_stats
-	self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats = muzzle_device.muzzle_c_custom_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = deep_clone(muzzle_device.muzzle_c_stats)
+	self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 
 	--Shark Teeth
 	self.parts.wpn_fps_upg_ns_shot_shark.pcs = {
@@ -1190,7 +1190,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		40
 	}
 	self.parts.wpn_fps_upg_ns_shot_shark.supported = true
-	self.parts.wpn_fps_upg_ns_shot_shark.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_upg_ns_shot_shark.stats = deep_clone(muzzle_device.muzzle_b_stats)
 	self.parts.wpn_fps_upg_ns_shot_shark.custom_stats = {}			
 
 end)
@@ -1591,6 +1591,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_r700 = {
 		translation = Vector3(0, -31, -4.54)
 	}
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-0.001, -39.5, -0.122)
+	}
 	
 	--Vanilla Shortdot
 	self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
@@ -1903,37 +1906,37 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Competitor's Compensator
 	self.parts.wpn_fps_upg_ass_ns_jprifles.pcs = {}
 	self.parts.wpn_fps_upg_ass_ns_jprifles.supported = true
-	self.parts.wpn_fps_upg_ass_ns_jprifles.stats = muzzle_device.muzzle_c_duo_stats
-	self.parts.wpn_fps_upg_ass_ns_jprifles.custom_stats = muzzle_device.muzzle_c_duo_custom_stats
+	self.parts.wpn_fps_upg_ass_ns_jprifles.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+	self.parts.wpn_fps_upg_ass_ns_jprifles.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 	
 	--Funnel of Fun Nozzle
 	self.parts.wpn_fps_upg_ass_ns_linear.pcs = {}
 	self.parts.wpn_fps_upg_ass_ns_linear.supported = true
-	self.parts.wpn_fps_upg_ass_ns_linear.stats = muzzle_device.muzzle_c_alt_stats
+	self.parts.wpn_fps_upg_ass_ns_linear.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
 	
 	--Tactical Compensator
 	self.parts.wpn_fps_upg_ass_ns_surefire.pcs = {}
 	self.parts.wpn_fps_upg_ass_ns_surefire.supported = true
-	self.parts.wpn_fps_upg_ass_ns_surefire.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_upg_ass_ns_surefire.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_upg_ass_ns_surefire.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_upg_ass_ns_surefire.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 	--Flash Hider
 	self.parts.wpn_fps_upg_pis_ns_flash.pcs = {}
 	self.parts.wpn_fps_upg_pis_ns_flash.supported = true
-	self.parts.wpn_fps_upg_pis_ns_flash.stats = muzzle_device.muzzle_a_stats
-	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = muzzle_device.muzzle_a_custom_stats
+	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
+	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	
 	--King's Crown Compensator
 	self.parts.wpn_fps_upg_shot_ns_king.pcs = {}
 	self.parts.wpn_fps_upg_shot_ns_king.supported = true
-	self.parts.wpn_fps_upg_shot_ns_king.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_upg_shot_ns_king.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_upg_shot_ns_king.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_upg_shot_ns_king.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 		
 	--Asepsis Suppressor
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.pcs = {}
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.supported = true
-	self.parts.wpn_fps_upg_ns_pis_medium_slim.stats = muzzle_device.supp_b_alt_stats
-	self.parts.wpn_fps_upg_ns_pis_medium_slim.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_medium_slim.stats = deep_clone(muzzle_device.supp_b_alt_stats)
+	self.parts.wpn_fps_upg_ns_pis_medium_slim.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.perks = {"silencer"}
 	
 	--Military Laser Module
@@ -1947,14 +1950,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Wide Stock
 	self.parts.wpn_fps_upg_m4_s_crane.pcs = {}
 	self.parts.wpn_fps_upg_m4_s_crane.supported = true
-	self.parts.wpn_fps_upg_m4_s_crane.stats = stocks.adj_rec_stats
-	self.parts.wpn_fps_upg_m4_s_crane.custom_stats = stocks.adj_rec_stats
+	self.parts.wpn_fps_upg_m4_s_crane.stats = deep_clone(stocks.adj_rec_stats)
+	self.parts.wpn_fps_upg_m4_s_crane.custom_stats = deep_clone(stocks.adj_rec_stats)
 	
 	--War-Torn Stock
 	self.parts.wpn_fps_upg_m4_s_mk46.pcs = {}
 	self.parts.wpn_fps_upg_m4_s_mk46.supported = true
-	self.parts.wpn_fps_upg_m4_s_mk46.stats = stocks.adj_rec_stats
-	self.parts.wpn_fps_upg_m4_s_mk46.custom_stats = stocks.adj_rec_stats
+	self.parts.wpn_fps_upg_m4_s_mk46.stats = deep_clone(stocks.adj_rec_stats)
+	self.parts.wpn_fps_upg_m4_s_mk46.custom_stats = deep_clone(stocks.adj_rec_stats)
 
 	--Pistol Red Dot Sight
 	self.parts.wpn_fps_upg_o_rmr.pcs = {}
@@ -2059,8 +2062,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_uupg_b_long.supported = true
-	self.parts.wpn_fps_m4_uupg_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_m4_uupg_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_m4_uupg_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_m4_uupg_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 	--(CAR) Short Barrel
 	self.parts.wpn_fps_m4_uupg_b_short.pcs = {
@@ -2070,8 +2073,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_uupg_b_short.supported = true
-	self.parts.wpn_fps_m4_uupg_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_m4_uupg_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_m4_uupg_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_m4_uupg_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 	--(CAR) Medium Barrel
 	self.parts.wpn_fps_m4_uupg_b_medium.pcs = {
@@ -2081,8 +2084,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_uupg_b_medium.supported = true
-	self.parts.wpn_fps_m4_uupg_b_medium.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_m4_uupg_b_medium.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_m4_uupg_b_medium.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_m4_uupg_b_medium.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--(CAR) Stealth Barrel
 	self.parts.wpn_fps_m4_uupg_b_sd.pcs = {
@@ -2145,8 +2148,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_uupg_s_fold.supported = true
-	self.parts.wpn_fps_m4_uupg_s_fold.stats = stocks.adj_to_fold_stats
-	self.parts.wpn_fps_m4_uupg_s_fold.custom_stats = stocks.adj_to_fold_stats
+	self.parts.wpn_fps_m4_uupg_s_fold.stats = deep_clone(stocks.adj_to_fold_stats)
+	self.parts.wpn_fps_m4_uupg_s_fold.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 	
 	--(CAR) Ergo Grip
 	self.parts.wpn_fps_upg_m4_g_ergo.pcs = {
@@ -2244,8 +2247,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_m4_s_standard.supported = true
-	self.parts.wpn_fps_upg_m4_s_standard.stats = stocks.fixed_to_adj_dual_stats
-	self.parts.wpn_fps_upg_m4_s_standard.custom_stats = stocks.fixed_to_adj_dual_stats
+	self.parts.wpn_fps_upg_m4_s_standard.stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+	self.parts.wpn_fps_upg_m4_s_standard.custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 
 	--Tactical Stock
 	self.parts.wpn_fps_upg_m4_s_pts.pcs = {
@@ -2255,8 +2258,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_m4_s_pts.supported = true
-	self.parts.wpn_fps_upg_m4_s_pts.stats = stocks.adj_acc_stats
-	self.parts.wpn_fps_upg_m4_s_pts.custom_stats = stocks.adj_acc_stats
+	self.parts.wpn_fps_upg_m4_s_pts.stats = deep_clone(stocks.adj_acc_stats)
+	self.parts.wpn_fps_upg_m4_s_pts.custom_stats = deep_clone(stocks.adj_acc_stats)
 		
 	--Longbore (Exclusive Set)
 	self.parts.wpn_fps_m4_upg_fg_mk12.pcs = {}
@@ -2543,7 +2546,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_g18c_co_1.supported = true
-	self.parts.wpn_fps_pis_g18c_co_1.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_g18c_co_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
 	
 	--Velocity Compensator
 	self.parts.wpn_fps_pis_g18c_co_comp_2.pcs = {
@@ -2553,8 +2556,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_g18c_co_comp_2.supported = true
-	self.parts.wpn_fps_pis_g18c_co_comp_2.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_pis_g18c_co_comp_2.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_pis_g18c_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_pis_g18c_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 	--Default Mag.
 	self.parts.wpn_fps_pis_g18c_m_mag_17rnd.bullet_objects = {
@@ -2592,8 +2595,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_g18c_s_stock.supported = true
-	self.parts.wpn_fps_pis_g18c_s_stock.stats = stocks.add_adj_stats
-	self.parts.wpn_fps_pis_g18c_s_stock.custom_stats = stocks.add_adj_stats
+	self.parts.wpn_fps_pis_g18c_s_stock.stats = deep_clone(stocks.add_adj_stats)
+	self.parts.wpn_fps_pis_g18c_s_stock.custom_stats = deep_clone(stocks.add_adj_stats)
 	
 	--(STRYK 18c) Ergo Grip
 	self.parts.wpn_fps_pis_g18c_g_ergo.pcs = {
@@ -2724,40 +2727,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	self.wpn_fps_ass_m16.uses_parts[14] = "wpn_fps_m4_uupg_m_std_vanilla"
 
 	self.wpn_fps_ass_m16.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.fixed_to_adj_rec_stats,
-		custom_stats = stocks.fixed_to_adj_rec_stats
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.fixed_to_hvy_acc_stats,
-		custom_stats = stocks.fixed_to_hvy_acc_stats
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.fixed_to_hvy_rec_stats,
-		custom_stats = stocks.fixed_to_hvy_rec_stats
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_m4_uupg_s_fold = {
-		stats = stocks.fixed_to_folder_stats,
-		custom_stats = stocks.fixed_to_folder_stats
+		stats = deep_clone(stocks.fixed_to_folder_stats),
+		custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_ass_contraband_s_tecci = {
-		stats = stocks.fixed_to_nocheeks_stats,
-		custom_stats = stocks.fixed_to_nocheeks_stats
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	}
 	self.wpn_fps_ass_m16.override.wpn_fps_smg_olympic_s_short = {
-		stats = stocks.remove_fixed_stats,
-		custom_stats = stocks.remove_fixed_stats
+		stats = deep_clone(stocks.remove_fixed_stats),
+		custom_stats = deep_clone(stocks.remove_fixed_stats)
 	}
 	
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_m4_uupg_s_fold")
@@ -2804,56 +2807,56 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		40
 	}
 	self.parts.wpn_fps_smg_olympic_s_short.supported = true
-	self.parts.wpn_fps_smg_olympic_s_short.stats = stocks.remove_adj_stats
-	self.parts.wpn_fps_smg_olympic_s_short.custom_stats = stocks.remove_adj_stats
+	self.parts.wpn_fps_smg_olympic_s_short.stats = deep_clone(stocks.remove_adj_stats)
+	self.parts.wpn_fps_smg_olympic_s_short.custom_stats = deep_clone(stocks.remove_adj_stats)
 
 	if not self.wpn_fps_smg_olympic.override then
 		self.wpn_fps_smg_olympic.override = {}
 	end
 
 	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.nocheeks_to_adj_dual_stats,
-		custom_stats = stocks.nocheeks_to_adj_dual_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.nocheeks_to_adj_acc_stats,
-		custom_stats = stocks.nocheeks_to_adj_acc_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_m4_uupg_s_fold = {
-		stats = stocks.nocheeks_to_folder_stats,
-		custom_stats = stocks.nocheeks_to_folder_stats
+		stats = deep_clone(stocks.nocheeks_to_folder_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_smg_olympic_s_short = {
-		stats = stocks.remove_nocheeks_stats,
-		custom_stats = stocks.remove_nocheeks_stats
+		stats = deep_clone(stocks.remove_nocheeks_stats),
+		custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_ass_contraband_s_tecci = {
 		stats = {},
 		custom_stats = {}
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_ass_tecci_s_minicontra = {
-		stats = stocks.nocheeks_to_fixed_rec3_stats,
-		custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+		stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_ass_m16_s_fixed = {
-		stats = stocks.nocheeks_to_fixed_rec3_stats,
-		custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+		stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	}
 
 	--Para Default Blueprint, making it use the 30 rounder by default
@@ -2938,8 +2941,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		40
 	}
 	self.parts.wpn_upg_ak_s_folding.supported = true
-	self.parts.wpn_upg_ak_s_folding.stats = stocks.folder_to_nocheeks_stats
-	self.parts.wpn_upg_ak_s_folding.custom_stats = stocks.folder_to_nocheeks_stats
+	self.parts.wpn_upg_ak_s_folding.stats = deep_clone(stocks.folder_to_nocheeks_stats)
+	self.parts.wpn_upg_ak_s_folding.custom_stats = deep_clone(stocks.folder_to_nocheeks_stats)
 	
 	--Wooden Sniper Stock
 	self.parts.wpn_upg_ak_s_psl.pcs = {
@@ -2949,8 +2952,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		40
 	}
 	self.parts.wpn_upg_ak_s_psl.supported = true
-	self.parts.wpn_upg_ak_s_psl.stats = stocks.nocheeks_to_thumb_stats
-	self.parts.wpn_upg_ak_s_psl.custom_stats = stocks.nocheeks_to_thumb_stats
+	self.parts.wpn_upg_ak_s_psl.stats = deep_clone(stocks.nocheeks_to_thumb_stats)
+	self.parts.wpn_upg_ak_s_psl.custom_stats = deep_clone(stocks.nocheeks_to_thumb_stats)
 	self.parts.wpn_upg_ak_s_psl.override = {
 		wpn_fps_snp_flint_s_adapter = {
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -2981,8 +2984,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		40
 	}
 	self.parts.wpn_upg_ak_s_skfoldable.supported = true
-	self.parts.wpn_upg_ak_s_skfoldable.stats = stocks.nocheeks_to_folder_stats
-	self.parts.wpn_upg_ak_s_skfoldable.custom_stats = stocks.nocheeks_to_folder_stats
+	self.parts.wpn_upg_ak_s_skfoldable.stats = deep_clone(stocks.nocheeks_to_folder_stats)
+	self.parts.wpn_upg_ak_s_skfoldable.custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
 
 
 	--(AK) No Stock
@@ -3024,44 +3027,44 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 	}
 	
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_lmg_rpk_s_standard = {
-		stats = stocks.folder_to_fixed_acc1_rec2_stats,
-		custom_stats = stocks.folder_to_fixed_acc1_rec2_stats
+		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_solidstock = {
-		stats = stocks.folder_to_fixed_rec3_stats,
-		custom_stats = stocks.folder_to_fixed_rec3_stats
+		stats = deep_clone(stocks.folder_to_fixed_rec3_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_upg_ak_s_psl = {
-		stats = stocks.folder_to_thumb_stats,
-		custom_stats = stocks.folder_to_thumb_stats
+		stats = deep_clone(stocks.folder_to_thumb_stats),
+		custom_stats = deep_clone(stocks.folder_to_thumb_stats)
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_empty = {
-		stats = stocks.remove_folder_stats,
-		custom_stats = stocks.remove_folder_stats
+		stats = deep_clone(stocks.remove_folder_stats),
+		custom_stats = deep_clone(stocks.remove_folder_stats)
 	}
 
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_lmg_rpk_s_standard")
@@ -3088,32 +3091,32 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 	}
 
 	self.wpn_fps_ass_akm.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.nocheeks_to_adj_dual_stats,
-		custom_stats = stocks.nocheeks_to_adj_dual_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.nocheeks_to_adj_acc_stats,
-		custom_stats = stocks.nocheeks_to_adj_acc_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_lmg_rpk_s_standard = {
-		stats = stocks.nocheeks_to_fixed_acc2_rec2_stats,
-		custom_stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
 
 	--Drum Mag
@@ -3182,32 +3185,32 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	end
 
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.nocheeks_to_adj_dual_stats,
-		custom_stats = stocks.nocheeks_to_adj_dual_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.nocheeks_to_adj_acc_stats,
-		custom_stats = stocks.nocheeks_to_adj_acc_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_lmg_rpk_s_standard = {
-		stats = stocks.nocheeks_to_fixed_acc2_rec2_stats,
-		custom_stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
 
 	--table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_upg_ak_s_nostock")
@@ -3272,7 +3275,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -33,
 				damage = 15,
 				recoil = -20,
@@ -3352,32 +3355,32 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	}
 
 	self.wpn_fps_shot_saiga.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.nocheeks_to_adj_dual_stats,
-		custom_stats = stocks.nocheeks_to_adj_dual_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.nocheeks_to_adj_acc_stats,
-		custom_stats = stocks.nocheeks_to_adj_acc_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_lmg_rpk_s_standard = {
-		stats = stocks.nocheeks_to_fixed_acc2_rec2_stats,
-		custom_stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
 
 	--Izhma Part Additions
@@ -3466,28 +3469,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 	end
 
 	self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_ass_ak5.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -3617,8 +3620,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_g36_s_kv.supported = true
-	self.parts.wpn_fps_ass_g36_s_kv.stats = stocks.folder_to_adj_rec_stats
-	self.parts.wpn_fps_ass_g36_s_kv.custom_stats = stocks.folder_to_adj_rec_stats
+	self.parts.wpn_fps_ass_g36_s_kv.stats = deep_clone(stocks.folder_to_adj_rec_stats)
+	self.parts.wpn_fps_ass_g36_s_kv.custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	
 	--(JP36) Sniper Stock
 	self.parts.wpn_fps_ass_g36_s_sl8.pcs = {
@@ -3628,8 +3631,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_g36_s_sl8.supported = true
-	self.parts.wpn_fps_ass_g36_s_sl8.stats = stocks.folder_to_thumb_stats
-	self.parts.wpn_fps_ass_g36_s_sl8.custom_stats = stocks.folder_to_thumb_stats	
+	self.parts.wpn_fps_ass_g36_s_sl8.stats = deep_clone(stocks.folder_to_thumb_stats)
+	self.parts.wpn_fps_ass_g36_s_sl8.custom_stats = deep_clone(stocks.folder_to_thumb_stats)	
 
 end)
 
@@ -3644,8 +3647,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_p90_b_long.supported = true
-	self.parts.wpn_fps_smg_p90_b_long.stats = barrels.long_b1_stats
-	self.parts.wpn_fps_smg_p90_b_long.custom_stats = barrels.long_b1_custom_stats
+	self.parts.wpn_fps_smg_p90_b_long.stats = deep_clone(barrels.long_b1_stats)
+	self.parts.wpn_fps_smg_p90_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 	
 	--(Kobus 90) Tan Body
 	self.parts.wpn_fps_smg_p90_body_p90_tan = {
@@ -3685,8 +3688,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_m14_body_ebr.supported = true
-	self.parts.wpn_fps_ass_m14_body_ebr.stats = stocks.fixed_to_hvy_rec_stats
-	self.parts.wpn_fps_ass_m14_body_ebr.custom_stats = stocks.fixed_to_hvy_rec_stats
+	self.parts.wpn_fps_ass_m14_body_ebr.stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+	self.parts.wpn_fps_ass_m14_body_ebr.custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 		
 	--Jaeger Body
 	self.parts.wpn_fps_ass_m14_body_jae.pcs = {
@@ -3696,8 +3699,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_m14_body_jae.supported = true
-	self.parts.wpn_fps_ass_m14_body_jae.stats = stocks.fixed_to_thumbhole_stats
-	self.parts.wpn_fps_ass_m14_body_jae.custom_stats = stocks.fixed_to_thumbhole_stats
+	self.parts.wpn_fps_ass_m14_body_jae.stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+	self.parts.wpn_fps_ass_m14_body_jae.custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 		
 	--M308 Additional Parts	
 	--Vertical Grips
@@ -3749,8 +3752,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp9", "resmod_mp9", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp9_s_skel.supported = true
-	self.parts.wpn_fps_smg_mp9_s_skel.stats = stocks.folder_to_fixed_rec3_stats
-	self.parts.wpn_fps_smg_mp9_s_skel.custom_stats = stocks.folder_to_fixed_rec3_stats
+	self.parts.wpn_fps_smg_mp9_s_skel.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+	self.parts.wpn_fps_smg_mp9_s_skel.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 	
 	--CMP Part Table	
 	self.wpn_fps_smg_mp9.uses_parts[38] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
@@ -3771,8 +3774,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		40
 	}
 	self.parts.wpn_fps_pis_deagle_b_long.supported = true
-	self.parts.wpn_fps_pis_deagle_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_pis_deagle_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_pis_deagle_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_deagle_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 	--OVERKILL Compensator
 	self.parts.wpn_fps_pis_deagle_co_long.pcs = {
@@ -3782,8 +3785,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		40
 	}
 	self.parts.wpn_fps_pis_deagle_co_long.supported = true
-	self.parts.wpn_fps_pis_deagle_co_long.stats = muzzle_device.muzzle_c_duo_stats
-	self.parts.wpn_fps_pis_deagle_co_long.custom_stats = muzzle_device.muzzle_c_duo_custom_stats
+	self.parts.wpn_fps_pis_deagle_co_long.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+	self.parts.wpn_fps_pis_deagle_co_long.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 	
 	--La Femme Compensator
 	self.parts.wpn_fps_pis_deagle_co_short.pcs = {
@@ -3793,7 +3796,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		40
 	}
 	self.parts.wpn_fps_pis_deagle_co_short.supported = true
-	self.parts.wpn_fps_pis_deagle_co_short.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_deagle_co_short.stats = deep_clone(muzzle_device.muzzle_b_stats)
 
 	--(Deagle) Bling Grip
 	self.parts.wpn_fps_pis_deagle_g_bling.pcs = {
@@ -3865,8 +3868,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp5_fg_m5k.supported = true
-	self.parts.wpn_fps_smg_mp5_fg_m5k.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_smg_mp5_fg_m5k.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_smg_mp5_fg_m5k.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_smg_mp5_fg_m5k.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Polizei Tactical Barrel
 	self.parts.wpn_fps_smg_mp5_fg_mp5a5.pcs = {
@@ -3928,8 +3931,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp5_s_adjust.supported = true
-	self.parts.wpn_fps_smg_mp5_s_adjust.stats = stocks.fixed_to_nocheeks_stats
-	self.parts.wpn_fps_smg_mp5_s_adjust.custom_stats = stocks.fixed_to_nocheeks_stats
+	self.parts.wpn_fps_smg_mp5_s_adjust.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+	self.parts.wpn_fps_smg_mp5_s_adjust.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	
 	--(Compact-5) Bare Essentials Stock
 	self.parts.wpn_fps_smg_mp5_s_ring.pcs = {
@@ -3939,8 +3942,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp5_s_ring.supported = true
-	self.parts.wpn_fps_smg_mp5_s_ring.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_smg_mp5_s_ring.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_smg_mp5_s_ring.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_smg_mp5_s_ring.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 	self.wpn_fps_smg_mp5.stock_adapter = "wpn_fps_upg_m4_s_adapter"
 	self.wpn_fps_smg_mp5_npc.stock_adapter = "wpn_fps_upg_m4_s_adapter"
@@ -3950,28 +3953,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	end
 
 	self.wpn_fps_smg_mp5.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_smg_mp5.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.fixed_to_adj_rec_stats,
-		custom_stats = stocks.fixed_to_adj_rec_stats
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_mp5.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_smg_mp5.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_smg_mp5.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.fixed_to_hvy_acc_stats,
-		custom_stats = stocks.fixed_to_hvy_acc_stats
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
 	}
 	self.wpn_fps_smg_mp5.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.fixed_to_hvy_rec_stats,
-		custom_stats = stocks.fixed_to_hvy_rec_stats
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 	}
 
 	table.insert(self.wpn_fps_smg_mp5.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -4002,8 +4005,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		40
 	}
 	self.parts.wpn_fps_pis_1911_b_long.supported = true
-	self.parts.wpn_fps_pis_1911_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_pis_1911_b_long.custom_stats =  barrels.long_b3_custom_stats
+	self.parts.wpn_fps_pis_1911_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_1911_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 	--Vented Slide
 	self.parts.wpn_fps_pis_1911_b_vented.pcs = {
@@ -4027,7 +4030,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		40
 	}
 	self.parts.wpn_fps_pis_1911_co_1.supported = true
-	self.parts.wpn_fps_pis_1911_co_1.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_1911_co_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
 	
 	--Aggressor Compensator
 	self.parts.wpn_fps_pis_1911_co_2.pcs = {
@@ -4037,8 +4040,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		40
 	}
 	self.parts.wpn_fps_pis_1911_co_2.supported = true
-	self.parts.wpn_fps_pis_1911_co_2.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_pis_1911_co_2.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_pis_1911_co_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_pis_1911_co_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 	--Bling Grip
 	self.parts.wpn_fps_pis_1911_g_bling.pcs = {
@@ -4139,8 +4142,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 		40
 	}
 	self.parts.wpn_fps_smg_mac10_s_skel.supported = true
-	self.parts.wpn_fps_smg_mac10_s_skel.stats = stocks.nocheeks_to_fixed_rec3_stats
-	self.parts.wpn_fps_smg_mac10_s_skel.custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+	self.parts.wpn_fps_smg_mac10_s_skel.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	self.parts.wpn_fps_smg_mac10_s_skel.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	
 	table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_smg_mac10_s_no")
 	table.insert(self.wpn_fps_smg_mac10_npc.uses_parts, "wpn_fps_smg_mac10_s_no")	
@@ -4213,8 +4216,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		40
 	}
 	self.parts.wpn_fps_shot_r870_s_folding.supported = true
-	self.parts.wpn_fps_shot_r870_s_folding.stats = stocks.fixed_to_folded_stats
-	self.parts.wpn_fps_shot_r870_s_folding.custom_stats = stocks.fixed_to_folded_stats
+	self.parts.wpn_fps_shot_r870_s_folding.stats = deep_clone(stocks.fixed_to_folded_stats)
+	self.parts.wpn_fps_shot_r870_s_folding.custom_stats = deep_clone(stocks.fixed_to_folded_stats)
 	
 	--Short Enough Tactical Stock
 	self.parts.wpn_fps_shot_r870_s_nostock_big.pcs = {
@@ -4239,8 +4242,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		40
 	}
 	self.parts.wpn_fps_shot_r870_s_nostock.supported = true
-	self.parts.wpn_fps_shot_r870_s_nostock.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_shot_r870_s_nostock.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_shot_r870_s_nostock.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_shot_r870_s_nostock.custom_stats = deep_clone(stocks.remove_fixed_stats)
 	
 	--Government Issue Tactical Stock
 	self.parts.wpn_fps_shot_r870_s_solid_big.pcs = {
@@ -4283,7 +4286,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
-				concealment = -5
+				concealment = -2
 			},
 			custom_stats = {				
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
@@ -4335,7 +4338,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				recoil = -25,
 				spread = 5,
 				spread_multi = {1, 1},	
-				concealment = -7,
+				concealment = -5,
 				damage = 60
 			},
 			custom_stats = {
@@ -4413,8 +4416,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		40
 	}
 	self.parts.wpn_fps_shot_shorty_s_solid_short.supported = true
-	self.parts.wpn_fps_shot_shorty_s_solid_short.stats = stocks.nocheeks_to_fixed_rec3_stats
-	self.parts.wpn_fps_shot_shorty_s_solid_short.custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+	self.parts.wpn_fps_shot_shorty_s_solid_short.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	self.parts.wpn_fps_shot_shorty_s_solid_short.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	
 	--Vanilla No-stock
 	--self.parts.wpn_fps_shot_r870_s_nostock_vanilla.unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_solid"
@@ -4435,7 +4438,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
-				concealment = -5
+				concealment = -2
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
@@ -4487,7 +4490,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				recoil = -25,
 				spread = 5,
 				spread_multi = {1, 1},	
-				concealment = -7,
+				concealment = -5,
 				damage = 60
 			},
 			custom_stats = {
@@ -4502,16 +4505,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 	}
 
 	self.wpn_fps_shot_serbu.override.wpn_fps_shot_r870_s_solid = {
-		stats = stocks.add_fixed_stats,
-		custom_stats = stocks.add_fixed_stats
+		stats = deep_clone(stocks.add_fixed_stats),
+		custom_stats = deep_clone(stocks.add_fixed_stats)
 	}
 	self.wpn_fps_shot_serbu.override.wpn_fps_shot_r870_s_folding_ext = {
-		stats = stocks.add_nocheeks_stats,
-		custom_stats = stocks.add_nocheeks_stats
+		stats = deep_clone(stocks.add_nocheeks_stats),
+		custom_stats = deep_clone(stocks.add_nocheeks_stats)
 	}
 	self.wpn_fps_shot_serbu.override.wpn_fps_shot_r870_s_folding = {
-		stats = stocks.add_folded_stats,
-		custom_stats = stocks.add_folded_stats
+		stats = deep_clone(stocks.add_folded_stats),
+		custom_stats = deep_clone(stocks.add_folded_stats)
 	}
 	
 	self.wpn_fps_shot_serbu.uses_parts[17] = "resmod_dummy"
@@ -4560,7 +4563,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b92fs", "resmod_b92fs", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_beretta_co_co1.supported = true
-	self.parts.wpn_fps_pis_beretta_co_co1.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_beretta_co_co1.stats = deep_clone(muzzle_device.muzzle_b_stats)
 	
 	--The Competitor Compensator
 	self.parts.wpn_fps_pis_beretta_co_co2.pcs = {
@@ -4570,8 +4573,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b92fs", "resmod_b92fs", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_beretta_co_co2.supported = true
-	self.parts.wpn_fps_pis_beretta_co_co2.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_pis_beretta_co_co2.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_pis_beretta_co_co2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_pis_beretta_co_co2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 	--Ergo Grip
 	self.parts.wpn_fps_pis_beretta_g_ergo.pcs = {
@@ -4641,8 +4644,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		40
 	}
 	self.parts.wpn_fps_shot_huntsman_b_short.supported = true
-	self.parts.wpn_fps_shot_huntsman_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_shot_huntsman_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_shot_huntsman_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_shot_huntsman_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Gangsta Special Stock
 	self.parts.wpn_fps_shot_huntsman_s_short.pcs = {
@@ -4652,8 +4655,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		40
 	}
 	self.parts.wpn_fps_shot_huntsman_s_short.supported = true
-	self.parts.wpn_fps_shot_huntsman_s_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_shot_huntsman_s_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_shot_huntsman_s_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_shot_huntsman_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 	--Mosconi Override Table
 	self.wpn_fps_shot_huntsman.override = {
@@ -4663,7 +4666,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				value = 10,
 				recoil = -25,
 				spread = 5,
-				concealment = -7,
+				concealment = -5,
 				spread_multi = {1, 1},	
 				total_ammo_mod = -50,
 				damage = 90
@@ -4692,8 +4695,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 		40
 	}
 	self.parts.wpn_fps_pis_rage_b_comp1.supported = true
-	self.parts.wpn_fps_pis_rage_b_comp1.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_pis_rage_b_comp1.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_pis_rage_b_comp1.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_pis_rage_b_comp1.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 	--Ventilated Barrel
 	self.parts.wpn_fps_pis_rage_b_comp2.pcs = {
@@ -4703,8 +4706,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 		40
 	}
 	self.parts.wpn_fps_pis_rage_b_comp2.supported = true
-	self.parts.wpn_fps_pis_rage_b_comp2.stats = muzzle_device.muzzle_b_stats
-	self.parts.wpn_fps_pis_rage_b_comp2.custom_stats = muzzle_device.supp_b_stats
+	self.parts.wpn_fps_pis_rage_b_comp2.stats = deep_clone(muzzle_device.muzzle_b_stats)
+	self.parts.wpn_fps_pis_rage_b_comp2.custom_stats = deep_clone(muzzle_device.supp_b_stats)
 
 	--Overcompensating Barrel
 	self.parts.wpn_fps_pis_rage_b_long.pcs = {
@@ -4714,8 +4717,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 		40
 	}
 	self.parts.wpn_fps_pis_rage_b_long.supported = true
-	self.parts.wpn_fps_pis_rage_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_pis_rage_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_pis_rage_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_pis_rage_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Pocket Surprise Barrel
 	self.parts.wpn_fps_pis_rage_b_short.pcs = {
@@ -4725,8 +4728,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 		40
 	}
 	self.parts.wpn_fps_pis_rage_b_short.supported = true
-	self.parts.wpn_fps_pis_rage_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_pis_rage_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_pis_rage_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_pis_rage_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 	--Slimline Body
 	self.parts.wpn_fps_pis_rage_body_smooth.pcs = {
@@ -4844,7 +4847,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_usp_co_comp_1.supported = true
-	self.parts.wpn_fps_pis_usp_co_comp_1.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_usp_co_comp_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
 	
 	--Velocity .45
 	self.parts.wpn_fps_pis_usp_co_comp_2.pcs = {
@@ -4854,8 +4857,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_usp_co_comp_2.supported = true
-	self.parts.wpn_fps_pis_usp_co_comp_2.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_pis_usp_co_comp_2.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_pis_usp_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_pis_usp_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 	
 end)	
@@ -4908,7 +4911,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			recoil = -25,
 			spread = 5,
 			spread_multi = {1, 1},	
-			concealment = -7,
+			concealment = -5,
 			total_ammo_mod = -60,
 			damage = 90
 		},
@@ -4925,7 +4928,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
-			concealment = -5,
+			concealment = -2,
 			total_ammo_mod = -33,
 			damage = 30,	
 			recoil = -20,
@@ -5057,9 +5060,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_m45_s_folded.supported = true
-	self.parts.wpn_fps_smg_m45_s_folded.stats = stocks.fold_folder_stats
+	self.parts.wpn_fps_smg_m45_s_folded.stats = deep_clone(stocks.fold_folder_stats)
 	self.parts.wpn_fps_smg_m45_s_folded.stats.value = 0
-	self.parts.wpn_fps_smg_m45_s_folded.custom_stats = stocks.fold_folder_stats
+	self.parts.wpn_fps_smg_m45_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
 	
 	--Ergo Grip
 	self.parts.wpn_fps_smg_m45_g_ergo.pcs = {
@@ -5134,8 +5137,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 		40
 	}
 	self.parts.wpn_fps_ass_s552_b_long.supported = true
-	self.parts.wpn_fps_ass_s552_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_ass_s552_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_ass_s552_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_s552_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 	--Heat Treated Body
 	self.parts.wpn_fps_ass_s552_body_standard_black.pcs = {
@@ -5212,28 +5215,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	end
 
 	self.wpn_fps_ass_s552.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_ass_s552.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_ass_s552.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_s552.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_s552.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_ass_s552.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 	
 end)
@@ -5249,8 +5252,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ppk", "resmod_ppk", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_ppk_b_long.supported = true
-	self.parts.wpn_fps_pis_ppk_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_pis_ppk_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_pis_ppk_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_pis_ppk_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 	--Laser Grip
 	self.parts.wpn_fps_pis_ppk_g_laser.pcs = {
@@ -5319,9 +5322,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp7_s_long.supported = true
-	self.parts.wpn_fps_smg_mp7_s_long.stats = stocks.unfold_nocheeks_stats
+	self.parts.wpn_fps_smg_mp7_s_long.stats = deep_clone(stocks.unfold_nocheeks_stats)
 	self.parts.wpn_fps_smg_mp7_s_long.stats.value = 0
-	self.parts.wpn_fps_smg_mp7_s_long.custom_stats = stocks.unfold_nocheeks_stats
+	self.parts.wpn_fps_smg_mp7_s_long.custom_stats = deep_clone(stocks.unfold_nocheeks_stats)
 
 	--Disabling Vertical Grip Mods
 	self.wpn_fps_smg_mp7.uses_parts[8] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
@@ -5341,8 +5344,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 		40
 	}
 	self.parts.wpn_fps_ass_scar_b_long.supported = true
-	self.parts.wpn_fps_ass_scar_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_ass_scar_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_ass_scar_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_scar_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	--Short Barrel
 	self.parts.wpn_fps_ass_scar_b_short.pcs = {
 		10,
@@ -5351,8 +5354,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 		40
 	}
 	self.parts.wpn_fps_ass_scar_b_short.supported = true
-	self.parts.wpn_fps_ass_scar_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_ass_scar_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_ass_scar_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_ass_scar_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 	--Rail Extension
 	self.parts.wpn_fps_ass_scar_fg_railext.pcs = {
@@ -5376,8 +5379,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 		40
 	}
 	self.parts.wpn_fps_ass_scar_s_sniper.supported = true
-	self.parts.wpn_fps_ass_scar_s_sniper.stats = stocks.adj_to_fixed_acc_stats
-	self.parts.wpn_fps_ass_scar_s_sniper.custom_stats = stocks.adj_to_fixed_acc_stats
+	self.parts.wpn_fps_ass_scar_s_sniper.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+	self.parts.wpn_fps_ass_scar_s_sniper.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 	
 	--Disabling Vertical Grip Mods
 	self.wpn_fps_ass_scar.default_blueprint[6] = "wpn_fps_upg_m4_g_standard"	
@@ -5477,7 +5480,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_p226_co_comp_1.supported = true
-	self.parts.wpn_fps_pis_p226_co_comp_1.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_p226_co_comp_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
 	
 	--Velocity .40
 	self.parts.wpn_fps_pis_p226_co_comp_2.pcs = {
@@ -5487,8 +5490,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_p226_co_comp_2.supported = true
-	self.parts.wpn_fps_pis_p226_co_comp_2.stats = muzzle_device.muzzle_b_alt_stats
-	self.parts.wpn_fps_pis_p226_co_comp_2.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_pis_p226_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_pis_p226_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
 end)
 
@@ -5503,8 +5506,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 		40
 	}
 	self.parts.wpn_fps_lmg_hk21_b_long.supported = true
-	self.parts.wpn_fps_lmg_hk21_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_lmg_hk21_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_lmg_hk21_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_lmg_hk21_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 	--Short Foregrip
 	self.parts.wpn_fps_lmg_hk21_fg_short.pcs = {
@@ -5665,36 +5668,36 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 		40
 	}
 	self.parts.wpn_fps_lmg_m249_s_solid.supported = true
-	self.parts.wpn_fps_lmg_m249_s_solid.stats = stocks.folder_to_fixed_rec3_stats
-	self.parts.wpn_fps_lmg_m249_s_solid.custom_stats = stocks.folder_to_fixed_rec3_stats
+	self.parts.wpn_fps_lmg_m249_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+	self.parts.wpn_fps_lmg_m249_s_solid.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 
 	if not self.wpn_fps_lmg_m249.override then
 		self.wpn_fps_lmg_m249.override = {}
 	end
 	
 	self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_lmg_m249.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 
 	
@@ -5890,48 +5893,48 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	}
 
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.fixed_to_adj_rec_stats,
-		custom_stats = stocks.fixed_to_adj_rec_stats
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.fixed_to_hvy_acc_stats,
-		custom_stats = stocks.fixed_to_hvy_acc_stats
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.fixed_to_hvy_rec_stats,
-		custom_stats = stocks.fixed_to_hvy_rec_stats
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_upg_ak_s_skfoldable = {
-		stats = stocks.fixed_to_folder_stats,
-		custom_stats = stocks.fixed_to_folder_stats
+		stats = deep_clone(stocks.fixed_to_folder_stats),
+		custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_upg_ak_s_folding = {
-		stats = stocks.fixed_to_nocheeks_stats,
-		custom_stats = stocks.fixed_to_nocheeks_stats
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_s_empty = {
-		stats = stocks.remove_fixed_stats,
-		custom_stats = stocks.remove_fixed_stats
+		stats = deep_clone(stocks.remove_fixed_stats),
+		custom_stats = deep_clone(stocks.remove_fixed_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_upg_ak_s_psl = {
-		stats = stocks.fixed_to_thumbhole_stats,
-		custom_stats = stocks.fixed_to_thumbhole_stats
+		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_s_solidstock = {
-		stats = stocks.fixed_rec_stats,
-		custom_stats = stocks.fixed_rec_stats
+		stats = deep_clone(stocks.fixed_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_rec_stats)
 	}
 
 	--Disabling Vertical Grip Mods
@@ -6010,75 +6013,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 end)
 
 
---Versteckt-51
-Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(self)
-
-	--Kalt Barrel
-	self.parts.wpn_fps_lmg_hk51b_b_fluted.pcs = {
-		10,
-		20,
-		30,
-		40
-	}
-	self.parts.wpn_fps_lmg_hk51b_b_fluted.supported = true
-	self.parts.wpn_fps_lmg_hk51b_b_fluted.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_lmg_hk51b_b_fluted.custom_stats = barrels.long_b2_custom_stats
-
-	--Schatten Fartten
-	self.parts.wpn_fps_lmg_hk51b_fg_railed.pcs = {
-		10,
-		20,
-		30,
-		40
-	}
-	self.parts.wpn_fps_lmg_hk51b_fg_railed.supported = true
-	self.parts.wpn_fps_lmg_hk51b_fg_railed.stats = {
-		value = 6,
-		recoil = -2,
-		concealment = 1
-	}
-	
-	--Zittern Stock (what a fucking stupid name YOU'RE JUST EXTENDING THE FUCKING STOCK FOR FUCKS SAKE)
-	self.parts.wpn_fps_lmg_hk51b_s_extended.pcs = {
-		10,
-		20,
-		30,
-		40
-	}
-	self.parts.wpn_fps_lmg_hk51b_s_extended.name_id = "bm_wp_mp7_s_long" --too lazy to go into loc
-	self.parts.wpn_fps_lmg_hk51b_s_extended.supported = true
-	self.parts.wpn_fps_lmg_hk51b_s_extended.stats = stocks.unfold_nocheeks_stats
-	self.parts.wpn_fps_lmg_hk51b_s_extended.stats.value = 0
-	self.parts.wpn_fps_lmg_hk51b_s_extended.custom_stats = stocks.unfold_nocheeks_stats
-	
-	--Verdunkeln Brake
-	--Tank Comp clone
-	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.pcs = {
-		10,
-		20,
-		30,
-		40
-	}
-	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.supported = true
-	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = muzzle_device.muzzle_c_stats
-	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = muzzle_device.muzzle_c_custom_stats
-
-end)
-
 --Thanatos .50 cal 
 Hooks:PostHook(WeaponFactoryTweakData, "_init_m95", "resmod_m95", function(self)
 
 	--Tank Buster Barrel
 	self.parts.wpn_fps_snp_m95_barrel_long.pcs = {}
 	self.parts.wpn_fps_snp_m95_barrel_long.supported = true
-	self.parts.wpn_fps_snp_m95_barrel_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_snp_m95_barrel_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_snp_m95_barrel_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_snp_m95_barrel_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--CQB Barrel
 	self.parts.wpn_fps_snp_m95_barrel_short.pcs = {}
 	self.parts.wpn_fps_snp_m95_barrel_short.supported = true
-	self.parts.wpn_fps_snp_m95_barrel_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_snp_m95_barrel_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_snp_m95_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_snp_m95_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.pcs = {}
@@ -6138,8 +6086,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 	--Tactical Aluminium Body
 	self.parts.wpn_fps_snp_msr_body_msr.pcs = {}
 	self.parts.wpn_fps_snp_msr_body_msr.supported = true
-	self.parts.wpn_fps_snp_msr_body_msr.stats = stocks.fixed_to_folder_stats
-	self.parts.wpn_fps_snp_msr_body_msr.custom_stats = stocks.fixed_to_folder_stats
+	self.parts.wpn_fps_snp_msr_body_msr.stats = deep_clone(stocks.fixed_to_folder_stats)
+	self.parts.wpn_fps_snp_msr_body_msr.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	self.parts.wpn_fps_snp_msr_body_msr.override = {
 		wpn_fps_snp_model70_iron_sight = {
 			adds = {"wpn_fps_smg_hajk_o_standard"}
@@ -6298,8 +6246,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	--CQB Stock
 	self.parts.wpn_fps_ass_fal_s_01.pcs = {}
 	self.parts.wpn_fps_ass_fal_s_01.supported = true
-	self.parts.wpn_fps_ass_fal_s_01.stats = stocks.fixed_to_folder_stats
-	self.parts.wpn_fps_ass_fal_s_01.custom_stats = stocks.fixed_to_folder_stats
+	self.parts.wpn_fps_ass_fal_s_01.stats = deep_clone(stocks.fixed_to_folder_stats)
+	self.parts.wpn_fps_ass_fal_s_01.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	
 	--Marksman Stock
 	self.parts.wpn_fps_ass_fal_s_03.pcs = {}
@@ -6331,28 +6279,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 		adds = {}
 	}
 	self.wpn_fps_ass_fal.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_ass_fal.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.fixed_to_adj_rec_stats,
-		custom_stats = stocks.fixed_to_adj_rec_stats
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_fal.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_ass_fal.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_ass_fal.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.fixed_to_hvy_acc_stats,
-		custom_stats = stocks.fixed_to_hvy_acc_stats
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
 	}
 	self.wpn_fps_ass_fal.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.fixed_to_hvy_rec_stats,
-		custom_stats = stocks.fixed_to_hvy_rec_stats
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 	}
 
 	table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -6409,15 +6357,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	--Collapsed Stock
 	self.parts.wpn_fps_sho_ben_s_collapsed.pcs = {}
 	self.parts.wpn_fps_sho_ben_s_collapsed.supported = true
-	self.parts.wpn_fps_sho_ben_s_collapsed.stats = stocks.adj_to_folded_stats
+	self.parts.wpn_fps_sho_ben_s_collapsed.stats = deep_clone(stocks.adj_to_folded_stats)
 	self.parts.wpn_fps_sho_ben_s_collapsed.stats.value = 0
-	self.parts.wpn_fps_sho_ben_s_collapsed.custom_stats = stocks.adj_to_folded_stats
+	self.parts.wpn_fps_sho_ben_s_collapsed.custom_stats = deep_clone(stocks.adj_to_folded_stats)
 	
 	--Tactical Stock
 	self.parts.wpn_fps_sho_ben_s_solid.pcs = {}
 	self.parts.wpn_fps_sho_ben_s_solid.supported = true
-	self.parts.wpn_fps_sho_ben_s_solid.stats = stocks.adj_to_fixed_rec_stats
-	self.parts.wpn_fps_sho_ben_s_solid.custom_stats = stocks.adj_to_fixed_rec_stats
+	self.parts.wpn_fps_sho_ben_s_solid.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+	self.parts.wpn_fps_sho_ben_s_solid.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
 
 	--Override Table
 	self.wpn_fps_sho_ben.override = {
@@ -6427,7 +6375,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,
 				spread = 20,
@@ -6484,7 +6432,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				recoil = -25,
 				spread = 5,
 				total_ammo_mod = -50,
-				recoil = -5,
+				concealment = -5,
 				spread_multi = {1, 1},	
 				damage = 45
 			},
@@ -6507,8 +6455,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 	--Long Barrel
 	self.parts.wpn_fps_sho_striker_b_long.pcs = {}
 	self.parts.wpn_fps_sho_striker_b_long.supported = true
-	self.parts.wpn_fps_sho_striker_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_sho_striker_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_sho_striker_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_sho_striker_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_sho_striker_b_suppressed.pcs = {}
@@ -6543,7 +6491,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = 0,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,
 				spread = 20,
@@ -6671,7 +6619,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
-			concealment = -5
+			concealment = -2
 		},
 		custom_stats = {
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
@@ -6723,7 +6671,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			recoil = -25,
 			spread = 5,
 			spread_multi = {1, 1},	
-			concealment = -7,
+			concealment = -5,
 			damage = 60
 		},
 		custom_stats = {
@@ -6759,8 +6707,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gre_m79", "resmod_gre_m79", functi
 	--Sawed-off Stock
 	self.parts.wpn_fps_gre_m79_stock_short.pcs = {}
 	self.parts.wpn_fps_gre_m79_stock_short.supported = true
-	self.parts.wpn_fps_gre_m79_stock_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_gre_m79_stock_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_gre_m79_stock_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_gre_m79_stock_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 	self.parts.wpn_fps_gre_m79_sight_up.stance_mod = {
 		wpn_fps_gre_m79 = {
@@ -6781,8 +6729,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	--DMR Kit
 	self.parts.wpn_fps_ass_g3_b_sniper.pcs = {}
 	self.parts.wpn_fps_ass_g3_b_sniper.supported = true
-	self.parts.wpn_fps_ass_g3_b_sniper.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_ass_g3_b_sniper.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_ass_g3_b_sniper.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_g3_b_sniper.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	self.parts.wpn_fps_ass_g3_b_sniper.override = {}
 	self.parts.wpn_fps_ass_g3_b_sniper.adds = {}
 	
@@ -6794,8 +6742,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	--Assault Kit
 	self.parts.wpn_fps_ass_g3_b_short.pcs = {}
 	self.parts.wpn_fps_ass_g3_b_short.supported = true
-	self.parts.wpn_fps_ass_g3_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_ass_g3_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_ass_g3_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_ass_g3_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Precision Foregrip
 	self.parts.wpn_fps_ass_g3_fg_psg.pcs = {}
@@ -7038,20 +6986,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	--Long Barrel
 	self.parts.wpn_fps_ass_famas_b_long.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_long.supported = true
-	self.parts.wpn_fps_ass_famas_b_long.stats = barrels.long_b1_stats
-	self.parts.wpn_fps_ass_famas_b_long.custom_stats = barrels.long_b1_custom_stats
+	self.parts.wpn_fps_ass_famas_b_long.stats = deep_clone(barrels.long_b1_stats)
+	self.parts.wpn_fps_ass_famas_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 	
 	--Short Barrel
 	self.parts.wpn_fps_ass_famas_b_short.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_short.supported = true
-	self.parts.wpn_fps_ass_famas_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_ass_famas_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_ass_famas_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_ass_famas_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Sniper Barrel
 	self.parts.wpn_fps_ass_famas_b_sniper.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_sniper.supported = true
-	self.parts.wpn_fps_ass_famas_b_sniper.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_ass_famas_b_sniper.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_ass_famas_b_sniper.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_ass_famas_b_sniper.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_ass_famas_b_suppressed.pcs = {}
@@ -7121,16 +7069,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	--No Stock
 	self.parts.wpn_fps_smg_scorpion_s_nostock.pcs = {}
 	self.parts.wpn_fps_smg_scorpion_s_nostock.supported = true
-	self.parts.wpn_fps_smg_scorpion_s_nostock.stats = stocks.remove_folded_stats
+	self.parts.wpn_fps_smg_scorpion_s_nostock.stats = deep_clone(stocks.remove_folded_stats)
 	self.parts.wpn_fps_smg_scorpion_s_nostock.stats.value = 0
-	self.parts.wpn_fps_smg_scorpion_s_nostock.custom_stats = stocks.remove_folded_stats
+	self.parts.wpn_fps_smg_scorpion_s_nostock.custom_stats = deep_clone(stocks.remove_folded_stats)
 
 	--Unfolded Stock
 	self.parts.wpn_fps_smg_scorpion_s_unfolded.pcs = {}
 	self.parts.wpn_fps_smg_scorpion_s_unfolded.supported = true
-	self.parts.wpn_fps_smg_scorpion_s_unfolded.stats = stocks.unfold_folded_stats
+	self.parts.wpn_fps_smg_scorpion_s_unfolded.stats = deep_clone(stocks.unfold_folded_stats)
 	self.parts.wpn_fps_smg_scorpion_s_unfolded.stats.value = 0
-	self.parts.wpn_fps_smg_scorpion_s_unfolded.custom_stats = stocks.unfold_folded_stats
+	self.parts.wpn_fps_smg_scorpion_s_unfolded.custom_stats = deep_clone(stocks.unfold_folded_stats)
 
 	--[
 	self.wpn_fps_smg_scorpion.stock_adapter = "wpn_fps_gre_m32_stock_adapter"
@@ -7172,38 +7120,38 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_cqb = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
 
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folded_to_adj_rec2,
-		custom_stats = stocks.folded_to_adj_rec2,
+		stats = deep_clone(stocks.folded_to_adj_rec2),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec2),
 		adds = {"wpn_fps_smg_scorpion_extra_rail", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folded_to_adj_rec1,
-		custom_stats = stocks.folded_to_adj_rec1,
+		stats = deep_clone(stocks.folded_to_adj_rec1),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec1),
 		adds = {"wpn_fps_smg_scorpion_extra_rail", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folded_to_adj_rec3,
-		custom_stats = stocks.folded_to_adj_rec3,
+		stats = deep_clone(stocks.folded_to_adj_rec3),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec3),
 		adds = {"wpn_fps_smg_scorpion_extra_rail", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folded_to_adj_rec3,
-		custom_stats = stocks.folded_to_adj_rec3,
+		stats = deep_clone(stocks.folded_to_adj_rec3),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec3),
 		adds = {"wpn_fps_smg_scorpion_extra_rail", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folded_to_hvy_rec3,
-		custom_stats = stocks.folded_to_hvy_rec3,
+		stats = deep_clone(stocks.folded_to_hvy_rec3),
+		custom_stats = deep_clone(stocks.folded_to_hvy_rec3),
 		adds = {"wpn_fps_smg_scorpion_extra_rail", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_scorpion.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folded_to_hvy_rec2,
-		custom_stats = stocks.folded_to_hvy_rec2,
+		stats = deep_clone(stocks.folded_to_hvy_rec2),
+		custom_stats = deep_clone(stocks.folded_to_hvy_rec2),
 		adds = {"wpn_fps_smg_scorpion_extra_rail", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
@@ -7258,8 +7206,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	--Just Bend It
 	self.parts.wpn_fps_smg_tec9_s_unfolded.pcs = {}
 	self.parts.wpn_fps_smg_tec9_s_unfolded.supported = true
-	self.parts.wpn_fps_smg_tec9_s_unfolded.stats = stocks.add_nocheeks_stats
-	self.parts.wpn_fps_smg_tec9_s_unfolded.custom_stats = stocks.add_nocheeks_stats
+	self.parts.wpn_fps_smg_tec9_s_unfolded.stats = deep_clone(stocks.add_nocheeks_stats)
+	self.parts.wpn_fps_smg_tec9_s_unfolded.custom_stats = deep_clone(stocks.add_nocheeks_stats)
 
 	--[
 	self.wpn_fps_smg_tec9.stock_adapter = "wpn_fps_smg_shepheard_s_adapter"
@@ -7292,38 +7240,38 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_o_cqb = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
 
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.add_adj_acc2_stats,
-		custom_stats = stocks.add_adj_acc2_stats,
+		stats = deep_clone(stocks.add_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.add_adj_acc2_stats),
 		adds = { "wpn_fps_shot_r870_ris_special", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.add_adj_acc3_stats,
-		custom_stats = stocks.add_adj_acc3_stats,
+		stats = deep_clone(stocks.add_adj_acc3_stats),
+		custom_stats = deep_clone(stocks.add_adj_acc3_stats),
 		adds = { "wpn_fps_shot_r870_ris_special", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.add_adj_stats,
-		custom_stats = stocks.add_adj_stats,
+		stats = deep_clone(stocks.add_adj_stats),
+		custom_stats = deep_clone(stocks.add_adj_stats),
 		adds = { "wpn_fps_shot_r870_ris_special", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.add_adj_stats,
-		custom_stats = stocks.add_adj_stats,
+		stats = deep_clone(stocks.add_adj_stats),
+		custom_stats = deep_clone(stocks.add_adj_stats),
 		adds = { "wpn_fps_shot_r870_ris_special", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.add_hvy_rec_stats,
-		custom_stats = stocks.add_hvy_rec_stats,
+		stats = deep_clone(stocks.add_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.add_hvy_rec_stats),
 		adds = { "wpn_fps_shot_r870_ris_special", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_tec9.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.add_hvy_acc_stats,
-		custom_stats = stocks.add_hvy_acc_stats,
+		stats = deep_clone(stocks.add_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.add_hvy_acc_stats),
 		adds = { "wpn_fps_shot_r870_ris_special", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}	
@@ -7382,21 +7330,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 	--Ergonomic Stock
 	self.parts.wpn_fps_smg_uzi_s_leather.pcs = {}
 	self.parts.wpn_fps_smg_uzi_s_leather.supported = true
-	self.parts.wpn_fps_smg_uzi_s_leather.stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
-	self.parts.wpn_fps_smg_uzi_s_leather.custom_stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
+	self.parts.wpn_fps_smg_uzi_s_leather.stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+	self.parts.wpn_fps_smg_uzi_s_leather.custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	
 	--Solid Stock
 	self.parts.wpn_fps_smg_uzi_s_solid.pcs = {}
 	self.parts.wpn_fps_smg_uzi_s_solid.supported = true
-	self.parts.wpn_fps_smg_uzi_s_solid.stats = stocks.nocheeks_to_fixed_rec3_stats
-	self.parts.wpn_fps_smg_uzi_s_solid.custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+	self.parts.wpn_fps_smg_uzi_s_solid.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	self.parts.wpn_fps_smg_uzi_s_solid.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	
 	--Folded Stock
 	self.parts.wpn_fps_smg_uzi_s_standard.pcs = {}
 	self.parts.wpn_fps_smg_uzi_s_standard.supported = true
-	self.parts.wpn_fps_smg_uzi_s_standard.stats = stocks.fold_nocheeks_stats
+	self.parts.wpn_fps_smg_uzi_s_standard.stats = deep_clone(stocks.fold_nocheeks_stats)
 	self.parts.wpn_fps_smg_uzi_s_standard.stats.value = 0
-	self.parts.wpn_fps_smg_uzi_s_standard.custom_stats = stocks.fold_nocheeks_stats
+	self.parts.wpn_fps_smg_uzi_s_standard.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
 
 	--Removes reciprocating charging handle upon shooting
 	self.parts.wpn_fps_smg_uzi_body_standard.animations = {
@@ -7420,11 +7368,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
-		stats = {value = 1, concealment = 1, spread = -1},
+		stats = {value = 1, concealment = 1, recoil = -2},
 		custom_stats = { 
-			ads_speed_mult = 0.975,
-			falloff_start_mult = 0.95,
-			falloff_end_mult = 0.95
+			ads_speed_mult = 0.95
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7442,11 +7388,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
-		stats = {value = 1, concealment = 2, spread = -2},
+		stats = {value = 1, concealment = 2, recoil = -4},
 		custom_stats = { 
-			ads_speed_mult = 0.95,
-			falloff_start_mult = 0.9,
-			falloff_end_mult = 0.9
+			ads_speed_mult = 0.9
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7464,11 +7408,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc",
 		supported = true,
-		stats = {value = 1, concealment = 3, spread = -3},
+		stats = {value = 1, concealment = 3, recoil = -6},
 		custom_stats = { 
-			ads_speed_mult = 0.925,
-			falloff_start_mult = 0.85,
-			falloff_end_mult = 0.85
+			ads_speed_mult = 0.85
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7487,10 +7429,11 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc",
 		supported = true,
-		stats = {value = 1, spread = 1, recoil = -2},
+		stats = {value = 1, spread = 1, concealment = -1},
 		custom_stats = { 
-			falloff_start_mult = 1.05,
-			falloff_end_mult = 1.05
+			ads_speed_mult = 1.05,
+			falloff_start_mult = 1.1,
+			falloff_end_mult = 1.1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7509,10 +7452,11 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc",
 		supported = true,
-		stats = {value = 1, spread = 2, recoil = -4},
+		stats = {value = 1, spread = 2, concealment = -2},
 		custom_stats = { 
-			falloff_start_mult = 1.1,
-			falloff_end_mult = 1.1
+			ads_speed_mult = 1.1,
+			falloff_start_mult = 1.2,
+			falloff_end_mult = 1.2
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7531,10 +7475,11 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc",
 		supported = true,
-		stats = {value = 1, spread = 3, recoil = -6},
+		stats = {value = 1, spread = 3, concealment = -3},
 		custom_stats = { 
-			falloff_start_mult = 1.15,
-			falloff_end_mult = 1.15
+			ads_speed_mult = 1.15,
+			falloff_start_mult = 1.3,
+			falloff_end_mult = 1.3
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7552,9 +7497,10 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc",
 		supported = true,
-		stats = {value = 1, concealment = -1, recoil = 2},
-		custom_stats = { 
-			ads_speed_mult = 1.05 
+		stats = {value = 1, spread = -1, recoil = 2},
+		custom_stats = {
+			falloff_start_mult = 0.9,
+			falloff_end_mult = 0.9
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7572,9 +7518,10 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc",
 		supported = true,
-		stats = {value = 1, concealment = -2, recoil = 4},
-		custom_stats = { 
-			ads_speed_mult = 1.1 
+		stats = {value = 1, spread = -2, recoil = 4},
+		custom_stats = {
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7592,9 +7539,10 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc",
 		supported = true,
-		stats = {value = 1, concealment = -3, recoil = 6},
+		stats = {value = 1, spread = -3, recoil = 6},
 		custom_stats = { 
-			ads_speed_mult = 1.15 
+			falloff_start_mult = 0.7,
+			falloff_end_mult = 0.7
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -7731,7 +7679,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_slug.supported = true
 	self.parts.wpn_fps_upg_a_slug.stats = {
 		value = 10,
-		concealment = -5,
+		concealment = -2,
 		total_ammo_mod = -25,
 		damage = 30,	
 		recoil = -20,
@@ -7785,7 +7733,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		recoil = -25,
 		spread = 5,
 		spread_multi = {1, 1},	
-		concealment = 0,
+		concealment = -5,
 		moving_spread = 3
 	}
 	self.parts.wpn_fps_upg_a_explosive.custom_stats = {
@@ -7944,6 +7892,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.custom_stats = {
 		launcher_grenade = "launcher_poison"
 	}
+	self.parts.wpn_fps_gre_ms3gl_conversion.forbids = {
+		"wpn_fps_addon_ris"
+	}
+	self.parts.wpn_fps_gre_ms3gl_conversion.adds = {}
 
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.pcs = {}
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.has_description = true
@@ -8138,7 +8090,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_large_kac.supported = true
-	self.parts.wpn_fps_upg_ns_pis_large_kac.stats = muzzle_device.supp_c_alt_stats
+	self.parts.wpn_fps_upg_ns_pis_large_kac.stats = deep_clone(muzzle_device.supp_c_alt_stats)
 	self.parts.wpn_fps_upg_ns_pis_large_kac.perks = {"silencer"}
 	
 	--Roctec Suppressor
@@ -8149,8 +8101,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_medium_gem.supported = true
-	self.parts.wpn_fps_upg_ns_pis_medium_gem.stats = muzzle_device.supp_b_alt_stats
-	self.parts.wpn_fps_upg_ns_pis_medium_gem.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_medium_gem.stats = deep_clone(muzzle_device.supp_b_alt_stats)
+	self.parts.wpn_fps_upg_ns_pis_medium_gem.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_gem.perks = {"silencer"}
 	
 	--Facepunch Compensator
@@ -8161,7 +8113,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_meatgrinder.supported = true
-	self.parts.wpn_fps_upg_ns_pis_meatgrinder.stats = muzzle_device.muzzle_c_alt_stats
+	self.parts.wpn_fps_upg_ns_pis_meatgrinder.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
 	
 	--IPSC Compensator
 	self.parts.wpn_fps_upg_ns_pis_ipsccomp.pcs = {
@@ -8171,8 +8123,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_ipsccomp.supported = true
-	self.parts.wpn_fps_upg_ns_pis_ipsccomp.stats = muzzle_device.muzzle_c_stats
-	self.parts.wpn_fps_upg_ns_pis_ipsccomp.custom_stats = muzzle_device.muzzle_c_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_ipsccomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
+	self.parts.wpn_fps_upg_ns_pis_ipsccomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	
 	self.wpn_fps_pis_g26.override.wpn_fps_pis_g18c_m_mag_33rnd = {
 		supported = true,
@@ -8370,8 +8322,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 		40
 	}
 	self.parts.wpn_fps_sho_s_spas12_folded.supported = true
-	self.parts.wpn_fps_sho_s_spas12_folded.stats = stocks.fold_nocheeks_stats
-	self.parts.wpn_fps_sho_s_spas12_folded.custom_stats = stocks.fold_nocheeks_stats
+	self.parts.wpn_fps_sho_s_spas12_folded.stats = deep_clone(stocks.fold_nocheeks_stats)
+	self.parts.wpn_fps_sho_s_spas12_folded.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
 	
 	--No Stock
 	self.parts.wpn_fps_sho_s_spas12_nostock.pcs = {
@@ -8381,8 +8333,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 		40
 	}
 	self.parts.wpn_fps_sho_s_spas12_nostock.supported = true
-	self.parts.wpn_fps_sho_s_spas12_nostock.stats = stocks.remove_nocheeks_stats
-	self.parts.wpn_fps_sho_s_spas12_nostock.custom_stats = stocks.remove_nocheeks_stats
+	self.parts.wpn_fps_sho_s_spas12_nostock.stats = deep_clone(stocks.remove_nocheeks_stats)
+	self.parts.wpn_fps_sho_s_spas12_nostock.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 	
 	--Solid Stock
 	self.parts.wpn_fps_sho_s_spas12_solid.pcs = {
@@ -8392,8 +8344,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 		40
 	}
 	self.parts.wpn_fps_sho_s_spas12_solid.supported = true
-	self.parts.wpn_fps_sho_s_spas12_solid.stats = stocks.nocheeks_to_fixed_rec3_stats
-	self.parts.wpn_fps_sho_s_spas12_solid.custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+	self.parts.wpn_fps_sho_s_spas12_solid.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	self.parts.wpn_fps_sho_s_spas12_solid.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	
 	--Overrides
 	self.wpn_fps_sho_spas12.override = {
@@ -8403,7 +8355,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,
 				spread = 20,
@@ -8645,8 +8597,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	--Precision Barrel
 	self.parts.wpn_fps_pis_c96_b_long.pcs = {}
 	self.parts.wpn_fps_pis_c96_b_long.supported = true
-	self.parts.wpn_fps_pis_c96_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_pis_c96_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_pis_c96_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_c96_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Damper.L 44 Nozzle
 	self.parts.wpn_fps_pis_c96_nozzle.pcs = {}
@@ -8687,8 +8639,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	--Holster Stock
 	self.parts.wpn_fps_pis_c96_s_solid.pcs = {}
 	self.parts.wpn_fps_pis_c96_s_solid.supported = true
-	self.parts.wpn_fps_pis_c96_s_solid.stats = stocks.add_fixed_stats
-	self.parts.wpn_fps_pis_c96_s_solid.custom_stats = stocks.add_fixed_stats
+	self.parts.wpn_fps_pis_c96_s_solid.stats = deep_clone(stocks.add_fixed_stats)
+	self.parts.wpn_fps_pis_c96_s_solid.custom_stats = deep_clone(stocks.add_fixed_stats)
 	
 	--Extra Barrel Extensions
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
@@ -8706,14 +8658,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	--Long Barrel
 	self.parts.wpn_fps_smg_sterling_b_long.pcs = {}
 	self.parts.wpn_fps_smg_sterling_b_long.supported = true
-	self.parts.wpn_fps_smg_sterling_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_smg_sterling_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_smg_sterling_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_smg_sterling_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Short Barrel
 	self.parts.wpn_fps_smg_sterling_b_short.pcs = {}
 	self.parts.wpn_fps_smg_sterling_b_short.supported = true
-	self.parts.wpn_fps_smg_sterling_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_smg_sterling_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_smg_sterling_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_smg_sterling_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_smg_sterling_b_suppressed.pcs = {}
@@ -8761,22 +8713,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	--Folded Stock
 	self.parts.wpn_fps_smg_sterling_s_folded.pcs = {}
 	self.parts.wpn_fps_smg_sterling_s_folded.supported = true
-	self.parts.wpn_fps_smg_sterling_s_folded.stats = stocks.fold_folder_stats
+	self.parts.wpn_fps_smg_sterling_s_folded.stats = deep_clone(stocks.fold_folder_stats)
 	self.parts.wpn_fps_smg_sterling_s_folded.stats.value = 0
-	self.parts.wpn_fps_smg_sterling_s_folded.custom_stats = stocks.fold_folder_stats
+	self.parts.wpn_fps_smg_sterling_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
 	
 	--No Stock
 	self.parts.wpn_fps_smg_sterling_s_nostock.pcs = {}
 	self.parts.wpn_fps_smg_sterling_s_nostock.supported = true
-	self.parts.wpn_fps_smg_sterling_s_nostock.stats = stocks.remove_folder_stats
+	self.parts.wpn_fps_smg_sterling_s_nostock.stats = deep_clone(stocks.remove_folder_stats)
 	self.parts.wpn_fps_smg_sterling_s_nostock.stats.value = 0
-	self.parts.wpn_fps_smg_sterling_s_nostock.custom_stats = stocks.remove_folder_stats
+	self.parts.wpn_fps_smg_sterling_s_nostock.custom_stats = deep_clone(stocks.remove_folder_stats)
 	
 	--Solid Stock
 	self.parts.wpn_fps_smg_sterling_s_solid.pcs = {}
 	self.parts.wpn_fps_smg_sterling_s_solid.supported = true
-	self.parts.wpn_fps_smg_sterling_s_solid.stats = stocks.folder_to_fixed_rec3_stats
-	self.parts.wpn_fps_smg_sterling_s_solid.custom_stats = stocks.folder_to_fixed_rec3_stats
+	self.parts.wpn_fps_smg_sterling_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+	self.parts.wpn_fps_smg_sterling_s_solid.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 
 	self.parts.wpn_fps_smg_sterling_s_nostock_dummy = deep_clone(self.parts.wpn_fps_smg_sterling_s_nostock)
 	self.parts.wpn_fps_smg_sterling_s_nostock_dummy.pcs = {}
@@ -8815,38 +8767,38 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_cqb = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
 	
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats,
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats),
 		adds = {"wpn_fps_smg_sterling_s_nostock_dummy","wpn_fps_smg_sterling_o_adapter", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats,
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats),
 		adds = {"wpn_fps_smg_sterling_s_nostock_dummy","wpn_fps_smg_sterling_o_adapter", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats,
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
 		adds = {"wpn_fps_smg_sterling_s_nostock_dummy","wpn_fps_smg_sterling_o_adapter", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats,
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
 		adds = {"wpn_fps_smg_sterling_s_nostock_dummy","wpn_fps_smg_sterling_o_adapter", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats,
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
 		adds = {"wpn_fps_smg_sterling_s_nostock_dummy","wpn_fps_smg_sterling_o_adapter", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
 	self.wpn_fps_smg_sterling.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats,
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 		adds = {"wpn_fps_smg_sterling_s_nostock_dummy","wpn_fps_smg_sterling_o_adapter", "wpn_fps_gre_arbiter_o_standard" },
 		forbids = {}
 	}
@@ -8883,14 +8835,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	--Long Barrel
 	self.parts.wpn_fps_snp_mosin_b_standard.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_standard.supported = true
-	self.parts.wpn_fps_snp_mosin_b_standard.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_snp_mosin_b_standard.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_snp_mosin_b_standard.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_snp_mosin_b_standard.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Short Barrel
 	self.parts.wpn_fps_snp_mosin_b_short.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_short.supported = true
-	self.parts.wpn_fps_snp_mosin_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_snp_mosin_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_snp_mosin_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_snp_mosin_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Silenced Barrel
 	self.parts.wpn_fps_snp_mosin_b_sniper.pcs = {}
@@ -8979,8 +8931,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1928", "resmod_m1928", function(s
 		40
 	}
 	self.parts.wpn_fps_smg_thompson_barrel_long.supported = true
-	self.parts.wpn_fps_smg_thompson_barrel_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_smg_thompson_barrel_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_smg_thompson_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_smg_thompson_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Stubby Barrel
 	self.parts.wpn_fps_smg_thompson_barrel_short.pcs = {
@@ -8990,8 +8942,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1928", "resmod_m1928", function(s
 		40
 	}
 	self.parts.wpn_fps_smg_thompson_barrel_short.supported = true
-	self.parts.wpn_fps_smg_thompson_barrel_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_smg_thompson_barrel_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_smg_thompson_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_smg_thompson_barrel_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 	--Discrete Foregrip
 	self.parts.wpn_fps_smg_thompson_foregrip_discrete.pcs = {
@@ -9043,8 +8995,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1928", "resmod_m1928", function(s
 		40
 	}
 	self.parts.wpn_fps_smg_thompson_stock_nostock.supported = true
-	self.parts.wpn_fps_smg_thompson_stock_nostock.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_smg_thompson_stock_nostock.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_smg_thompson_stock_nostock.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_smg_thompson_stock_nostock.custom_stats = deep_clone(stocks.remove_fixed_stats)
 	
 end)
 
@@ -9086,8 +9038,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 		40
 	}
 	self.parts.wpn_fps_ass_l85a2_b_long.supported = true
-	self.parts.wpn_fps_ass_l85a2_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_ass_l85a2_b_long.custom_statss = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_ass_l85a2_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_l85a2_b_long.custom_statss = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Diminutive Barrel
 	self.parts.wpn_fps_ass_l85a2_b_short.pcs = {
@@ -9097,8 +9049,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 		40
 	}
 	self.parts.wpn_fps_ass_l85a2_b_short.supported = true
-	self.parts.wpn_fps_ass_l85a2_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_ass_l85a2_b_short.custom_statss = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_ass_l85a2_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_ass_l85a2_b_short.custom_statss = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Delightful Grip
 	self.parts.wpn_fps_ass_l85a2_g_worn.pcs = {
@@ -9127,8 +9079,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_vhs_b_short.supported = true
-	self.parts.wpn_fps_ass_vhs_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_ass_vhs_b_short.stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_ass_vhs_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_ass_vhs_b_short.stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Silenced Barrel
 	self.parts.wpn_fps_ass_vhs_b_silenced.pcs = {
@@ -9153,8 +9105,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_vhs_b_sniper.supported = true
-	self.parts.wpn_fps_ass_vhs_b_sniper.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_ass_vhs_b_sniper.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_ass_vhs_b_sniper.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_ass_vhs_b_sniper.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 end)
 
@@ -9169,8 +9121,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hs2000", "resmod_hs2000", function
 		40
 	}
 	self.parts.wpn_fps_pis_hs2000_sl_custom.supported = true
-	self.parts.wpn_fps_pis_hs2000_sl_custom.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_pis_hs2000_sl_custom.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_pis_hs2000_sl_custom.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_pis_hs2000_sl_custom.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Long Slide
 	self.parts.wpn_fps_pis_hs2000_sl_long.pcs = {
@@ -9180,8 +9132,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hs2000", "resmod_hs2000", function
 		40
 	}
 	self.parts.wpn_fps_pis_hs2000_sl_long.supported = true
-	self.parts.wpn_fps_pis_hs2000_sl_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_pis_hs2000_sl_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_pis_hs2000_sl_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_pis_hs2000_sl_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Extended Mag
 	self.parts.wpn_fps_pis_hs2000_m_extended.pcs = {
@@ -9223,14 +9175,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--DMR Kit
 	self.parts.wpn_fps_upg_ass_ak_b_zastava.pcs = {}
 	self.parts.wpn_fps_upg_ass_ak_b_zastava.supported = true
-	self.parts.wpn_fps_upg_ass_ak_b_zastava.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_upg_ass_ak_b_zastava.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 	--Modern Barrel
 	self.parts.wpn_fps_upg_ak_b_ak105.pcs = {}
 	self.parts.wpn_fps_upg_ak_b_ak105.supported = true
-	self.parts.wpn_fps_upg_ak_b_ak105.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_upg_ak_b_ak105.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_upg_ak_b_ak105.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_upg_ak_b_ak105.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Crabs Rail
 	self.parts.wpn_fps_upg_ak_fg_krebs.pcs = {}
@@ -9284,8 +9236,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--Classic Stock
 	self.parts.wpn_fps_upg_ak_s_solidstock.pcs = {}
 	self.parts.wpn_fps_upg_ak_s_solidstock.supported = true
-	self.parts.wpn_fps_upg_ak_s_solidstock.stats = stocks.nocheeks_to_fixed_rec3_stats
-	self.parts.wpn_fps_upg_ak_s_solidstock.custom_stats = stocks.nocheeks_to_fixed_rec3_stats
+	self.parts.wpn_fps_upg_ak_s_solidstock.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	self.parts.wpn_fps_upg_ak_s_solidstock.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	
 	--PBS Suppressor
 	self.parts.wpn_fps_upg_ns_ass_pbs1.pcs = {}
@@ -9383,8 +9335,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--2 Piece Stock
 	self.parts.wpn_fps_upg_m4_s_ubr.pcs = {}
 	self.parts.wpn_fps_upg_m4_s_ubr.supported = true
-	self.parts.wpn_fps_upg_m4_s_ubr.stats = stocks.adj_hvy_rec_stats
-	self.parts.wpn_fps_upg_m4_s_ubr.custom_stats = stocks.adj_hvy_rec_stats
+	self.parts.wpn_fps_upg_m4_s_ubr.stats = deep_clone(stocks.adj_hvy_rec_stats)
+	self.parts.wpn_fps_upg_m4_s_ubr.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
 	
 	--DMR Kit
 	self.parts.wpn_fps_upg_ass_m4_b_beowulf.pcs = {}
@@ -9395,8 +9347,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		}
 	}
 	self.parts.wpn_fps_upg_ass_m4_b_beowulf.supported = true
-	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 end)
 
@@ -9426,8 +9378,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m134", "resmod_m134", function(sel
 		40
 	}
 	self.parts.wpn_fps_lmg_m134_barrel_short.supported = true
-	self.parts.wpn_fps_lmg_m134_barrel_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_lmg_m134_barrel_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_lmg_m134_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_lmg_m134_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 	--Aerial Assault Barrel
 	self.parts.wpn_fps_lmg_m134_barrel_extreme.pcs = {
@@ -9437,8 +9389,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m134", "resmod_m134", function(sel
 		40
 	}
 	self.parts.wpn_fps_lmg_m134_barrel_extreme.supported = true
-	self.parts.wpn_fps_lmg_m134_barrel_extreme.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_lmg_m134_barrel_extreme.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_lmg_m134_barrel_extreme.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_lmg_m134_barrel_extreme.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Override
 	self.wpn_fps_lmg_m134.override = {
@@ -9518,28 +9470,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 	end
 
 	self.wpn_fps_smg_cobray.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.nocheeks_to_adj_dual_stats,
-		custom_stats = stocks.nocheeks_to_adj_dual_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 	}
 	self.wpn_fps_smg_cobray.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.nocheeks_to_adj_acc_stats,
-		custom_stats = stocks.nocheeks_to_adj_acc_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 	}
 	self.wpn_fps_smg_cobray.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_cobray.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_cobray.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 	}
 	self.wpn_fps_smg_cobray.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
 
 	--Disabling Vertical Grip Mods
@@ -9565,8 +9517,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 		40
 	}
 	self.parts.wpn_fps_shot_b682_b_short.supported = true
-	self.parts.wpn_fps_shot_b682_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_shot_b682_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_shot_b682_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_shot_b682_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 	--Standard body
 	self.parts.wpn_fps_shot_b682_body_standard.supported = true
@@ -9579,8 +9531,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 		40
 	}
 	self.parts.wpn_fps_shot_b682_s_short.supported = true
-	self.parts.wpn_fps_shot_b682_s_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_shot_b682_s_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_shot_b682_s_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_shot_b682_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 	
 	--Luxurious Ammo Pouch
 	self.parts.wpn_fps_shot_b682_s_ammopouch.pcs = {
@@ -9609,7 +9561,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 				value = 10,
 				recoil = -25,
 				spread = 5,
-				concealment = -7,
+				concealment = -5,
 				spread_multi = {1, 1},	
 				total_ammo_mod = -50,
 				damage = 90
@@ -9725,8 +9677,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Civilian Market Barrel
 	self.parts.wpn_fps_smg_p90_b_civilian.pcs = {}
 	self.parts.wpn_fps_smg_p90_b_civilian.supported = true
-	self.parts.wpn_fps_smg_p90_b_civilian.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_smg_p90_b_civilian.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_smg_p90_b_civilian.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_smg_p90_b_civilian.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Mall Ninja Barrel
 	self.parts.wpn_fps_smg_p90_b_ninja.pcs = {}
@@ -9773,8 +9725,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Ported Compensator
 	self.parts.wpn_fps_upg_ass_ns_battle.pcs = {}
 	self.parts.wpn_fps_upg_ass_ns_battle.supported = true
-	self.parts.wpn_fps_upg_ass_ns_battle.stats = muzzle_device.muzzle_rec_stats
-	self.parts.wpn_fps_upg_ass_ns_battle.custom_stats = muzzle_device.muzzle_rec_custom_stats
+	self.parts.wpn_fps_upg_ass_ns_battle.stats = deep_clone(muzzle_device.muzzle_rec_stats)
+	self.parts.wpn_fps_upg_ass_ns_battle.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
 	
 	--Budget Suppressor
 	self.parts.wpn_fps_upg_ns_ass_filter.pcs = {}
@@ -9789,15 +9741,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Jungle Ninja Suppressor
 	self.parts.wpn_fps_upg_ns_pis_jungle.pcs = {}
 	self.parts.wpn_fps_upg_ns_pis_jungle.supported = true
-	self.parts.wpn_fps_upg_ns_pis_jungle.stats = muzzle_device.supp_rec2_acc2_stats
-	self.parts.wpn_fps_upg_ns_pis_jungle.custom_stats = muzzle_device.muzzle_rec2_acc2_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_jungle.stats = deep_clone(muzzle_device.supp_rec2_acc2_stats)
+	self.parts.wpn_fps_upg_ns_pis_jungle.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_jungle.perks = {"silencer"}
 	
 	--Shh!
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.pcs = {}
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.supported = true
-	self.parts.wpn_fps_upg_ns_sho_salvo_large.stats = muzzle_device.supp_c_stats
-	self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = muzzle_device.muzzle_c_custom_stats
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.stats = deep_clone(muzzle_device.supp_c_stats)
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.perks = {"silencer"}
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.forbids = {
 		"wpn_fps_upg_a_explosive"
@@ -9991,8 +9943,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_aa12_barrel_long.supported = true
-	self.parts.wpn_fps_sho_aa12_barrel_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_sho_aa12_barrel_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_sho_aa12_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_sho_aa12_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 	--Suppressed Barrel
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.pcs = {
@@ -10050,7 +10002,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,
 				spread = 20,
@@ -10357,8 +10309,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mateba", "resmod_mateba", function
 		40
 	}
 	self.parts.wpn_fps_pis_2006m_b_long.supported = true
-	self.parts.wpn_fps_pis_2006m_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_pis_2006m_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_pis_2006m_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_pis_2006m_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Medio Barrel
 	self.parts.wpn_fps_pis_2006m_b_medium.pcs = {
@@ -10368,8 +10320,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mateba", "resmod_mateba", function
 		40
 	}
 	self.parts.wpn_fps_pis_2006m_b_medium.supported = true
-	self.parts.wpn_fps_pis_2006m_b_medium.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_pis_2006m_b_medium.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_pis_2006m_b_medium.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_pis_2006m_b_medium.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Piccolo Barrel
 	self.parts.wpn_fps_pis_2006m_b_short.pcs = {
@@ -10379,8 +10331,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mateba", "resmod_mateba", function
 		40
 	}
 	self.parts.wpn_fps_pis_2006m_b_short.supported = true
-	self.parts.wpn_fps_pis_2006m_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_pis_2006m_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_pis_2006m_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_pis_2006m_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 	--Noir Grip
 	self.parts.wpn_fps_pis_2006m_g_bling.pcs = {
@@ -10435,8 +10387,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	--Solid Stock
 	self.parts.wpn_fps_ass_asval_s_solid.pcs = {}
 	self.parts.wpn_fps_ass_asval_s_solid.supported = true
-	self.parts.wpn_fps_ass_asval_s_solid.stats = stocks.folder_to_thumb_stats
-	self.parts.wpn_fps_ass_asval_s_solid.custom_stats = stocks.folder_to_thumb_stats
+	self.parts.wpn_fps_ass_asval_s_solid.stats = deep_clone(stocks.folder_to_thumb_stats)
+	self.parts.wpn_fps_ass_asval_s_solid.custom_stats = deep_clone(stocks.folder_to_thumb_stats)
 	self.parts.wpn_fps_ass_asval_s_solid.forbids = {
 		"wpn_fps_ass_asval_g_standard",
 		"wpn_fps_upg_ak_g_rk3",
@@ -10470,48 +10422,48 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	}
 
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats,
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats,
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats,
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats,
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats,
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats,
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_lmg_rpk_s_standard = {
-		stats = stocks.folder_to_fixed_acc1_rec2_stats,
-		custom_stats = stocks.folder_to_fixed_acc1_rec2_stats,
+		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_ak_s_solidstock = {
-		stats = stocks.folder_to_fixed_rec3_stats,
-		custom_stats = stocks.folder_to_fixed_rec3_stats,
+		stats = deep_clone(stocks.folder_to_fixed_rec3_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 	self.wpn_fps_ass_asval.override.wpn_fps_upg_ak_s_empty = {
-		stats = stocks.remove_folder_stats,
-		custom_stats = stocks.remove_folder_stats,
+		stats = deep_clone(stocks.remove_folder_stats),
+		custom_stats = deep_clone(stocks.remove_folder_stats),
 		adds = { "wpn_fps_ass_asval_g_standard" }
 	}
 		
@@ -10650,8 +10602,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 		40
 	}
 	self.parts.wpn_fps_snp_wa2000_b_long.supported = true
-	self.parts.wpn_fps_snp_wa2000_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_snp_wa2000_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_snp_wa2000_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_snp_wa2000_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.pcs = {
@@ -10775,28 +10727,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 	end
 
 	self.wpn_fps_smg_polymer.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_smg_polymer.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_smg_polymer.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_polymer.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_polymer.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_smg_polymer.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 
 	--Fix for disappearing bolt
@@ -10945,9 +10897,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 		40
 	}
 	self.parts.wpn_fps_smg_baka_s_standard.supported = true
-	self.parts.wpn_fps_smg_baka_s_standard.stats = stocks.remove_folded_stats
+	self.parts.wpn_fps_smg_baka_s_standard.stats = deep_clone(stocks.remove_folded_stats)
 	self.parts.wpn_fps_smg_baka_s_standard.stats.value = 0
-	self.parts.wpn_fps_smg_baka_s_standard.custom_stats = stocks.remove_folded_stats
+	self.parts.wpn_fps_smg_baka_s_standard.custom_stats = deep_clone(stocks.remove_folded_stats)
 	
 	--Unfolded Stock
 	self.parts.wpn_fps_smg_baka_s_unfolded.pcs = {
@@ -10957,9 +10909,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 		40
 	}
 	self.parts.wpn_fps_smg_baka_s_unfolded.supported = true
-	self.parts.wpn_fps_smg_baka_s_unfolded.stats = stocks.unfold_folded_stats
+	self.parts.wpn_fps_smg_baka_s_unfolded.stats = deep_clone(stocks.unfold_folded_stats)
 	self.parts.wpn_fps_smg_baka_s_unfolded.stats.value = 0
-	self.parts.wpn_fps_smg_baka_s_unfolded.custom_stats = stocks.unfold_folded_stats
+	self.parts.wpn_fps_smg_baka_s_unfolded.custom_stats = deep_clone(stocks.unfold_folded_stats)
 
 end)
 
@@ -11054,8 +11006,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 		40
 	}
 	self.parts.wpn_fps_lmg_par_b_short.supported = true
-	self.parts.wpn_fps_lmg_par_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_lmg_par_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_lmg_par_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_lmg_par_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Plastic Stock
 	self.parts.wpn_fps_lmg_par_s_plastic.pcs = {
@@ -11077,7 +11029,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 		amount = 5
 	}
 	
+	self.wpn_fps_lmg_par.stock_adapter = "wpn_fps_smg_cobray_s_m4adapter"
+	self.wpn_fps_lmg_par_npc.stock_adapter = "wpn_fps_smg_cobray_s_m4adapter"
+
 	--sorry for the pasghetti! Fix my fucking coding mess!!!!
+	--Hey, can't be any worse than mine :^)
 	if not self.wpn_fps_lmg_par.override then
 		self.wpn_fps_lmg_par.override = {}
 	end
@@ -11127,7 +11083,36 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_fc1 = {
 		parent = "upper_reciever"
 	}
-	
+
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_standard = {
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_pts = {
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_crane = {
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_mk46 = {
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_ubr = {
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_snp_tti_s_vltor = {
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+	}
+	self.wpn_fps_lmg_par.override.wpn_fps_smg_mac10_s_no = {
+		stats = deep_clone(stocks.remove_fixed_stats),
+		custom_stats = deep_clone(stocks.remove_fixed_stats)
+	}
+
 	--M240 Part Additions	
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_o_specter")	
@@ -11174,12 +11159,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_o_fc1")
 
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_snp_tti_s_vltor")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_snp_tti_s_vltor")
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_smg_mac10_s_no")
+	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_smg_mac10_s_no")
+
+	-- what, why
+	-- pretty sure this was me (DMC) but I'm just wondering why I even did this considering I did this already a few lines above
+	--[[
 	if not self.wpn_fps_lmg_par.override then
 		self.wpn_fps_lmg_par.override = {}
 	end
+	--]]
 			
 	self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)		
-
 end)
 
 --Bipods
@@ -11339,8 +11342,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		40
 	}
 	self.parts.wpn_fps_shot_m37_b_short.supported = true
-	self.parts.wpn_fps_shot_m37_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_shot_m37_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_shot_m37_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_shot_m37_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Stakeout Stock
 	self.parts.wpn_fps_shot_m37_s_short.pcs = {
@@ -11350,8 +11353,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		40
 	}
 	self.parts.wpn_fps_shot_m37_s_short.supported = true
-	self.parts.wpn_fps_shot_m37_s_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_shot_m37_s_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_shot_m37_s_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_shot_m37_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 	
 	--Ammo overrides
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug = {
@@ -11367,7 +11370,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
-			concealment = -5
+			concealment = -2
 		},
 		custom_stats = {
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
@@ -11419,7 +11422,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			recoil = -25,
 			spread = 5,
 			spread_multi = {1, 1},	
-			concealment = -7,
+			concealment = -5,
 			damage = 60
 		},
 		custom_stats = {
@@ -11492,8 +11495,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_china", "resmod_china", function(s
 		40
 	}
 	self.parts.wpn_fps_gre_china_s_short.supported = true
-	self.parts.wpn_fps_gre_china_s_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_gre_china_s_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_gre_china_s_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_gre_china_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 end)
 
@@ -11508,9 +11511,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sr2", "resmod_sr2", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_sr2_s_unfolded.supported = true
-	self.parts.wpn_fps_smg_sr2_s_unfolded.stats = stocks.unfold_folded_stats
+	self.parts.wpn_fps_smg_sr2_s_unfolded.stats = deep_clone(stocks.unfold_folded_stats)
 	self.parts.wpn_fps_smg_sr2_s_unfolded.stats.value = 0
-	self.parts.wpn_fps_smg_sr2_s_unfolded.custom_stats = stocks.unfold_folded_stats
+	self.parts.wpn_fps_smg_sr2_s_unfolded.custom_stats = deep_clone(stocks.unfold_folded_stats)
 	
 	--Tishina Suppressor
 	self.parts.wpn_fps_smg_sr2_ns_silencer.pcs = {
@@ -11684,44 +11687,44 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tecci", "resmod_tecci", function(s
 	}
 
 	self.wpn_fps_ass_tecci.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folded_to_adj_rec2,
-		custom_stats = stocks.folded_to_adj_rec2
+		stats = deep_clone(stocks.folded_to_adj_rec2),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec2)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folded_to_adj_rec1,
-		custom_stats = stocks.folded_to_adj_rec1
+		stats = deep_clone(stocks.folded_to_adj_rec1),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec1)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folded_to_adj_rec3,
-		custom_stats = stocks.folded_to_adj_rec3
+		stats = deep_clone(stocks.folded_to_adj_rec3),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec3)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folded_to_adj_rec3,
-		custom_stats = stocks.folded_to_adj_rec3
+		stats = deep_clone(stocks.folded_to_adj_rec3),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec3)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folded_to_hvy_rec3,
-		custom_stats = stocks.folded_to_hvy_rec3
+		stats = deep_clone(stocks.folded_to_hvy_rec3),
+		custom_stats = deep_clone(stocks.folded_to_hvy_rec3)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folded_to_hvy_rec2,
-		custom_stats = stocks.folded_to_hvy_rec2
+		stats = deep_clone(stocks.folded_to_hvy_rec2),
+		custom_stats = deep_clone(stocks.folded_to_hvy_rec2)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_m4_uupg_s_fold = {
-		stats = stocks.unfold_folded_stats,
-		custom_stats = stocks.unfold_folded_stats
+		stats = deep_clone(stocks.unfold_folded_stats),
+		custom_stats = deep_clone(stocks.unfold_folded_stats)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_ass_contraband_s_tecci = {
-		stats = stocks.unfold_nocheeks_stats,
-		custom_stats = stocks.unfold_nocheeks_stats
+		stats = deep_clone(stocks.unfold_nocheeks_stats),
+		custom_stats = deep_clone(stocks.unfold_nocheeks_stats)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_smg_olympic_s_short = {
-		stats = stocks.remove_folded_stats,
-		custom_stats = stocks.remove_folded_stats
+		stats = deep_clone(stocks.remove_folded_stats),
+		custom_stats = deep_clone(stocks.remove_folded_stats)
 	}
 	self.wpn_fps_ass_tecci.override.wpn_fps_ass_tecci_s_minicontra = {
-		stats = stocks.folded_to_fixed_stats,
-		custom_stats = stocks.folded_to_fixed_stats
+		stats = deep_clone(stocks.folded_to_fixed_stats),
+		custom_stats = deep_clone(stocks.folded_to_fixed_stats)
 	}
 
 	--New parts
@@ -11753,8 +11756,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hajk", "resmod_hajk", function(sel
 		40
 	}
 	self.parts.wpn_fps_smg_hajk_b_short.supported = true
-	self.parts.wpn_fps_smg_hajk_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_smg_hajk_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_smg_hajk_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_smg_hajk_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Medium Barrel
 	self.parts.wpn_fps_smg_hajk_b_medium.pcs = {
@@ -11764,35 +11767,35 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hajk", "resmod_hajk", function(sel
 		40
 	}
 	self.parts.wpn_fps_smg_hajk_b_medium.supported = true
-	self.parts.wpn_fps_smg_hajk_b_medium.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_smg_hajk_b_medium.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_smg_hajk_b_medium.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_smg_hajk_b_medium.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 	self.wpn_fps_smg_hajk.stock_adapter = "wpn_fps_ass_s552_s_m4"
 	self.wpn_fps_smg_hajk_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
 
 	self.wpn_fps_smg_hajk.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_smg_hajk.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_smg_hajk.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_hajk.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_hajk.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_smg_hajk.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -11829,7 +11832,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 		concealment = 2,
 		extra_ammo = -2
 	}
-	self.parts.wpn_fps_sho_boot_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_sho_boot_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Long Barrel
 	self.parts.wpn_fps_sho_boot_b_long.pcs = {
@@ -11845,7 +11848,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 		concealment = -3,
 		extra_ammo = 1
 	}
-	self.parts.wpn_fps_sho_boot_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_sho_boot_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Long Stock
 	self.parts.wpn_fps_sho_boot_s_long.pcs = {
@@ -11855,8 +11858,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_boot_s_long.supported = true
-	self.parts.wpn_fps_sho_boot_s_long.stats = stocks.add_fixed_stats
-	self.parts.wpn_fps_sho_boot_s_long.custom_stats = stocks.add_fixed_stats
+	self.parts.wpn_fps_sho_boot_s_long.stats = deep_clone(stocks.add_fixed_stats)
+	self.parts.wpn_fps_sho_boot_s_long.custom_stats = deep_clone(stocks.add_fixed_stats)
 
 	--Treated Body
 	self.parts.wpn_fps_sho_boot_body_exotic.pcs = {
@@ -11880,7 +11883,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 				value = 10,
 				recoil = -25,
 				spread = 5,
-				concealment = -7,
+				concealment = -5,
 				spread_multi = {1, 1},	
 				total_ammo_mod = -50,
 				damage = 90
@@ -11944,8 +11947,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 
 	self.parts.wpn_fps_smg_schakal_b_civil.pcs = {}
 	self.parts.wpn_fps_smg_schakal_b_civil.supported = true
-	self.parts.wpn_fps_smg_schakal_b_civil.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_smg_schakal_b_civil.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_smg_schakal_b_civil.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_smg_schakal_b_civil.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Long Magazine
 	self.parts.wpn_fps_smg_schakal_m_long.pcs = {}
@@ -11986,15 +11989,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 	--Civilian Stock
 	self.parts.wpn_fps_smg_schakal_s_civil.pcs = {}
 	self.parts.wpn_fps_smg_schakal_s_civil.supported = true
-	self.parts.wpn_fps_smg_schakal_s_civil.stats = stocks.folder_to_thumb_stats
-	self.parts.wpn_fps_smg_schakal_s_civil.custom_stats = stocks.folder_to_thumb_stats
+	self.parts.wpn_fps_smg_schakal_s_civil.stats = deep_clone(stocks.folder_to_thumb_stats)
+	self.parts.wpn_fps_smg_schakal_s_civil.custom_stats = deep_clone(stocks.folder_to_thumb_stats)
 	
 	--Folded Stock
 	self.parts.wpn_fps_smg_schakal_s_folded.pcs = {}
 	self.parts.wpn_fps_smg_schakal_s_folded.supported = true
-	self.parts.wpn_fps_smg_schakal_s_folded.stats = stocks.fold_folder_stats
+	self.parts.wpn_fps_smg_schakal_s_folded.stats = deep_clone(stocks.fold_folder_stats)
 	self.parts.wpn_fps_smg_schakal_s_folded.stats.value = 0
-	self.parts.wpn_fps_smg_schakal_s_folded.custom_stats = stocks.fold_folder_stats
+	self.parts.wpn_fps_smg_schakal_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
 	
 	--Twinkle Grip
 	self.parts.wpn_fps_smg_schakal_vg_surefire.pcs = {}
@@ -12022,8 +12025,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", fu
 	--Long Barrel
 	self.parts.wpn_fps_snp_desertfox_b_long.pcs = {}
 	self.parts.wpn_fps_snp_desertfox_b_long.supported = true
-	self.parts.wpn_fps_snp_desertfox_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_snp_desertfox_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_snp_desertfox_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_snp_desertfox_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_snp_desertfox_b_silencer.pcs = {}
@@ -12086,8 +12089,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_rota_b_short.supported = true
-	self.parts.wpn_fps_sho_rota_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_sho_rota_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_sho_rota_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_sho_rota_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Silenced Barrel
 	self.parts.wpn_fps_sho_rota_b_silencer.pcs = {
@@ -12115,7 +12118,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = 0,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,
 				spread = 20,
@@ -12194,8 +12197,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Saiga Short Barrel
 	self.parts.wpn_fps_sho_saiga_b_short.pcs = {}
 	self.parts.wpn_fps_sho_saiga_b_short.supported = true
-	self.parts.wpn_fps_sho_saiga_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_sho_saiga_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_sho_saiga_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_sho_saiga_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Hollow Handle
 	self.parts.wpn_fps_sho_saiga_fg_holy.pcs = {}
@@ -12259,8 +12262,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--JP36 Long Foregrip
 	self.parts.wpn_fps_upg_g36_fg_long.pcs = {}
 	self.parts.wpn_fps_upg_g36_fg_long.supported = true
-	self.parts.wpn_fps_upg_g36_fg_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_upg_g36_fg_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_upg_g36_fg_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_upg_g36_fg_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Enlightened Foregrip
 	self.parts.wpn_fps_smg_mp5_fg_flash.pcs = {}
@@ -12275,8 +12278,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Spartan Stock
 	self.parts.wpn_fps_smg_mp5_s_folding.pcs = {}
 	self.parts.wpn_fps_smg_mp5_s_folding.supported = true
-	self.parts.wpn_fps_smg_mp5_s_folding.stats = stocks.fixed_to_folder_stats
-	self.parts.wpn_fps_smg_mp5_s_folding.custom_stats = stocks.fixed_to_folder_stats
+	self.parts.wpn_fps_smg_mp5_s_folding.stats = deep_clone(stocks.fixed_to_folder_stats)
+	self.parts.wpn_fps_smg_mp5_s_folding.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	
 	--Donald's Horizontal Leveller
 	self.parts.wpn_fps_upg_ns_duck.pcs = {}
@@ -12424,40 +12427,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_contraband", "resmod_contraband", 
 	end
 
 	self.wpn_fps_ass_contraband.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.fixed_to_adj_rec_stats,
-		custom_stats = stocks.fixed_to_adj_rec_stats
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.fixed_to_hvy_acc_stats,
-		custom_stats = stocks.fixed_to_hvy_acc_stats
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.fixed_to_hvy_rec_stats,
-		custom_stats = stocks.fixed_to_hvy_rec_stats
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_m4_uupg_s_fold = {
-		stats = stocks.fixed_to_folder_stats,
-		custom_stats = stocks.fixed_to_folder_stats
+		stats = deep_clone(stocks.fixed_to_folder_stats),
+		custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_ass_contraband_s_tecci = {
-		stats = stocks.fixed_to_nocheeks_stats,
-		custom_stats = stocks.fixed_to_nocheeks_stats
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	}
 	self.wpn_fps_ass_contraband.override.wpn_fps_smg_olympic_s_short = {
-		stats = stocks.remove_fixed_stats,
-		custom_stats = stocks.remove_fixed_stats
+		stats = deep_clone(stocks.remove_fixed_stats),
+		custom_stats = deep_clone(stocks.remove_fixed_stats)
 	}
 	
 	--So it has more than like 3 parts
@@ -12501,8 +12504,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 		40
 	}
 	self.parts.wpn_fps_snp_tti_s_vltor.supported = true
-	self.parts.wpn_fps_snp_tti_s_vltor.stats = stocks.adj_hvy_acc_stats
-	self.parts.wpn_fps_snp_tti_s_vltor.custom_stats = stocks.adj_hvy_acc_stats
+	self.parts.wpn_fps_snp_tti_s_vltor.stats = deep_clone(stocks.adj_hvy_acc_stats)
+	self.parts.wpn_fps_snp_tti_s_vltor.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 
 	--Contractor Silencer
 	self.parts.wpn_fps_snp_tti_ns_hex.pcs = {
@@ -12545,40 +12548,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 	}	
 
 	self.wpn_fps_snp_tti.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.fixed_to_adj_acc_stats,
-		custom_stats = stocks.fixed_to_adj_acc_stats
+		stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.fixed_to_adj_rec_stats,
-		custom_stats = stocks.fixed_to_adj_rec_stats
+		stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.fixed_to_adj_dual_stats,
-		custom_stats = stocks.fixed_to_adj_dual_stats
+		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.fixed_to_hvy_acc_stats,
-		custom_stats = stocks.fixed_to_hvy_acc_stats
+		stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.fixed_to_hvy_rec_stats,
-		custom_stats = stocks.fixed_to_hvy_rec_stats
+		stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+		custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_m4_uupg_s_fold = {
-		stats = stocks.fixed_to_folder_stats,
-		custom_stats = stocks.fixed_to_folder_stats
+		stats = deep_clone(stocks.fixed_to_folder_stats),
+		custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_ass_contraband_s_tecci = {
-		stats = stocks.fixed_to_nocheeks_stats,
-		custom_stats = stocks.fixed_to_nocheeks_stats
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	}
 	self.wpn_fps_snp_tti.override.wpn_fps_smg_olympic_s_short = {
-		stats = stocks.remove_fixed_stats,
-		custom_stats = stocks.remove_fixed_stats
+		stats = deep_clone(stocks.remove_fixed_stats),
+		custom_stats = deep_clone(stocks.remove_fixed_stats)
 	}
 
 	--Contractor Custom parts
@@ -12707,45 +12710,45 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coal", "resmod_coal", function(sel
 		adds = {}
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.folder_to_adj_acc1_stats,
-		custom_stats = stocks.folder_to_adj_acc1_stats
+		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.folder_to_adj_acc2_stats,
-		custom_stats = stocks.folder_to_adj_acc2_stats
+		stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.folder_to_adj_rec_stats,
-		custom_stats = stocks.folder_to_adj_rec_stats
+		stats = deep_clone(stocks.folder_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.folder_to_hvy_rec2_stats,
-		custom_stats = stocks.folder_to_hvy_rec2_stats
+		stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.folder_to_hvy_acc2_stats,
-		custom_stats = stocks.folder_to_hvy_acc2_stats
+		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_lmg_rpk_s_standard = {
-		stats = stocks.folder_to_fixed_acc1_rec2_stats,
-		custom_stats = stocks.folder_to_fixed_acc1_rec2_stats
+		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_ak_s_solidstock = {
-		stats = stocks.folder_to_fixed_rec3_stats,
-		custom_stats = stocks.folder_to_fixed_rec3_stats,
+		stats = deep_clone(stocks.folder_to_fixed_rec3_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats),
 		adds = {}
 	}
 	self.wpn_fps_smg_coal.override.wpn_upg_ak_s_psl = {
-		stats = stocks.folder_to_thumb_stats,
-		custom_stats = stocks.folder_to_thumb_stats
+		stats = deep_clone(stocks.folder_to_thumb_stats),
+		custom_stats = deep_clone(stocks.folder_to_thumb_stats)
 	}
 	self.wpn_fps_smg_coal.override.wpn_fps_upg_ak_s_empty = {
-		stats = stocks.remove_folder_stats,
-		custom_stats = stocks.remove_folder_stats
+		stats = deep_clone(stocks.remove_folder_stats),
+		custom_stats = deep_clone(stocks.remove_folder_stats)
 	}
 
 	--New Parts
@@ -12940,8 +12943,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_breech", "resmod_breech", function
 		40
 	}
 	self.parts.wpn_fps_pis_breech_b_short.supported = true
-	self.parts.wpn_fps_pis_breech_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_pis_breech_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_pis_breech_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_pis_breech_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Engraved Grip
 	self.parts.wpn_fps_pis_breech_g_custom.pcs = {
@@ -12970,8 +12973,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ching", "resmod_ching", function(s
 		40
 	}
 	self.parts.wpn_fps_ass_ching_b_short.supported = true
-	self.parts.wpn_fps_ass_ching_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_ass_ching_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_ass_ching_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_ass_ching_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Custom Foregrip
 	self.parts.wpn_fps_ass_ching_fg_railed.pcs = {
@@ -13015,9 +13018,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_erma", "resmod_erma", function(sel
 		40
 	}
 	self.parts.wpn_fps_smg_erma_s_folded.supported = true
-	self.parts.wpn_fps_smg_erma_s_folded.stats = stocks.fold_nocheeks_stats
+	self.parts.wpn_fps_smg_erma_s_folded.stats = deep_clone(stocks.fold_nocheeks_stats)
 	self.parts.wpn_fps_smg_erma_s_folded.stats.value = 0
-	self.parts.wpn_fps_smg_erma_s_folded.custom_stats = stocks.fold_nocheeks_stats
+	self.parts.wpn_fps_smg_erma_s_folded.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
 		
 	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_singlefire")
 	table.insert(self.wpn_fps_smg_erma_npc.uses_parts, "wpn_fps_upg_i_singlefire")		
@@ -13214,7 +13217,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,	
 				recoil = -20,
@@ -13310,8 +13313,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_icc", "resmod_icc", function(self)
 	--Custom Milled Barrel
 	self.parts.wpn_fps_pis_deagle_b_modern.pcs = {}
 	self.parts.wpn_fps_pis_deagle_b_modern.supported = true
-	self.parts.wpn_fps_pis_deagle_b_modern.stats = muzzle_device.muzzle_rec_stats
-	self.parts.wpn_fps_pis_deagle_b_modern.custom_stats = muzzle_device.muzzle_rec_custom_stats
+	self.parts.wpn_fps_pis_deagle_b_modern.stats = deep_clone(muzzle_device.muzzle_rec_stats)
+	self.parts.wpn_fps_pis_deagle_b_modern.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
 	self.parts.wpn_fps_pis_deagle_b_modern.forbids = {}
 	
 	--Custom Titanium Frame
@@ -13486,7 +13489,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			value = 10,
 			recoil = -25,
 			spread = 5,
-			concealment = -7,
+			concealment = -5,
 			spread_multi = {1, 1},	
 			total_ammo_mod = -62,
 			damage = 90
@@ -13504,7 +13507,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
-			concealment = -5,
+			concealment = -2,
 			total_ammo_mod = -25,
 			damage = 30,	
 			recoil = -20,
@@ -13623,7 +13626,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shuno", "resmod_shuno", function(s
 		recoil = -2,
 		concealment = 2
 	}
-	self.parts.wpn_fps_lmg_shuno_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_lmg_shuno_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--XS Heat Sink Barrel
 	self.parts.wpn_fps_lmg_shuno_b_heat_short.pcs = {
@@ -13638,7 +13641,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shuno", "resmod_shuno", function(s
 		spread = -1,
 		value = 3
 	}
-	self.parts.wpn_fps_lmg_shuno_b_heat_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_lmg_shuno_b_heat_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Heat Sink Barrel
 	self.parts.wpn_fps_lmg_shuno_b_heat_long.pcs = {
@@ -13799,36 +13802,36 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shepheard", "resmod_shepheard", fu
 		40
 	}
 	self.parts.wpn_fps_smg_shepheard_s_no.supported = true
-	self.parts.wpn_fps_smg_shepheard_s_no.stats = stocks.remove_nocheeks_stats
-	self.parts.wpn_fps_smg_shepheard_s_no.custom_stats = stocks.remove_nocheeks_stats
+	self.parts.wpn_fps_smg_shepheard_s_no.stats = deep_clone(stocks.remove_nocheeks_stats)
+	self.parts.wpn_fps_smg_shepheard_s_no.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 
 	if not self.wpn_fps_smg_shepheard.override then
 		self.wpn_fps_smg_shepheard.override = {}
 	end
 
 	self.wpn_fps_smg_shepheard.override.wpn_fps_upg_m4_s_standard = {
-		stats = stocks.nocheeks_to_adj_dual_stats,
-		custom_stats = stocks.nocheeks_to_adj_dual_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 	}
 	self.wpn_fps_smg_shepheard.override.wpn_fps_upg_m4_s_pts = {
-		stats = stocks.nocheeks_to_adj_acc_stats,
-		custom_stats = stocks.nocheeks_to_adj_acc_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 	}
 	self.wpn_fps_smg_shepheard.override.wpn_fps_upg_m4_s_crane = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_shepheard.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = stocks.nocheeks_to_adj_rec_stats,
-		custom_stats = stocks.nocheeks_to_adj_rec_stats
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 	}
 	self.wpn_fps_smg_shepheard.override.wpn_fps_upg_m4_s_ubr = {
-		stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 	}
 	self.wpn_fps_smg_shepheard.override.wpn_fps_snp_tti_s_vltor = {
-		stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-		custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
 	
 	table.insert(self.wpn_fps_smg_shepheard.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -13975,8 +13978,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 		40
 	}
 	self.parts.wpn_fps_sho_coach_b_short.supported = true
-	self.parts.wpn_fps_sho_coach_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_sho_coach_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_sho_coach_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_sho_coach_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Deadman's Stock
 	self.parts.wpn_fps_sho_coach_s_short.pcs = {
@@ -13986,8 +13989,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 		40
 	}
 	self.parts.wpn_fps_sho_coach_s_short.supported = true
-	self.parts.wpn_fps_sho_coach_s_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_sho_coach_s_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_sho_coach_s_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_sho_coach_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 	
 	--Override Table
 	self.wpn_fps_sho_coach.override = {
@@ -13998,7 +14001,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				recoil = -25,
 				spread = 5,
 				spread_multi = {1, 1},	
-				concealment = -7,
+				concealment = -5,
 				total_ammo_mod = -60,
 				damage = 90
 			},
@@ -14015,7 +14018,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 			desc_id = "bm_wp_upg_a_slug_desc",
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 30,	
 				recoil = -20,
@@ -14080,8 +14083,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_v6.supported = true
-	self.parts.wpn_fps_upg_ns_ass_smg_v6.stats = muzzle_device.muzzle_rec2_stats
-	self.parts.wpn_fps_upg_ns_ass_smg_v6.custom_stats = muzzle_device.muzzle_rec2_custom_stats
+	self.parts.wpn_fps_upg_ns_ass_smg_v6.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
+	self.parts.wpn_fps_upg_ns_ass_smg_v6.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
 	
 	--Skeletal Grip
 	self.parts.wpn_fps_upg_g_m4_surgeon.pcs = {
@@ -14230,8 +14233,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_typhoon.supported = true
-	self.parts.wpn_fps_upg_ns_pis_typhoon.stats = muzzle_device.muzzle_c_duo_stats
-	self.parts.wpn_fps_upg_ns_pis_typhoon.custom_stats = muzzle_device.muzzle_c_duo_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_typhoon.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+	self.parts.wpn_fps_upg_ns_pis_typhoon.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 
 end)
 
@@ -14320,8 +14323,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_beer", "resmod_beer", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_beer_s_std.supported = true
-	self.parts.wpn_fps_pis_beer_s_std.stats = stocks.add_folder_stats
-	self.parts.wpn_fps_pis_beer_s_std.custom_stats = stocks.add_folder_stats
+	self.parts.wpn_fps_pis_beer_s_std.stats = deep_clone(stocks.add_folder_stats)
+	self.parts.wpn_fps_pis_beer_s_std.custom_stats = deep_clone(stocks.add_folder_stats)
 	
 	--Overrides
 	self.wpn_fps_pis_beer.override.wpn_fps_pis_beretta_co_co1 = {
@@ -14356,8 +14359,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_czech", "resmod_czech", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_czech_b_long.supported = true
-	self.parts.wpn_fps_pis_czech_b_long.stats = barrels.long_b1_stats
-	self.parts.wpn_fps_pis_czech_b_long.custom_stats = barrels.long_b1_custom_stats
+	self.parts.wpn_fps_pis_czech_b_long.stats = deep_clone(barrels.long_b1_stats)
+	self.parts.wpn_fps_pis_czech_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 	
 	--Sicario Grip
 	self.parts.wpn_fps_pis_czech_g_sport.pcs = {
@@ -14411,8 +14414,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_czech", "resmod_czech", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_czech_s_standard.supported = true
-	self.parts.wpn_fps_pis_czech_s_standard.stats = stocks.add_folder_stats
-	self.parts.wpn_fps_pis_czech_s_standard.custom_stats = stocks.add_folder_stats
+	self.parts.wpn_fps_pis_czech_s_standard.stats = deep_clone(stocks.add_folder_stats)
+	self.parts.wpn_fps_pis_czech_s_standard.custom_stats = deep_clone(stocks.add_folder_stats)
 	
 	--Overrides
 	self.wpn_fps_pis_czech.override.wpn_fps_pis_g18c_co_1 = {
@@ -14541,8 +14544,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_stech_s_standard.supported = true
-	self.parts.wpn_fps_pis_stech_s_standard.stats = stocks.add_fixed_stats
-	self.parts.wpn_fps_pis_stech_s_standard.custom_stats = stocks.add_fixed_stats
+	self.parts.wpn_fps_pis_stech_s_standard.stats = deep_clone(stocks.add_fixed_stats)
+	self.parts.wpn_fps_pis_stech_s_standard.custom_stats = deep_clone(stocks.add_fixed_stats)
 
 	self.wpn_fps_pis_stech.override.wpn_fps_pis_g18c_co_1 = {
 		a_obj = "a_ns",
@@ -14952,8 +14955,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 		40
 	}
 	self.parts.wpn_fps_snp_r700_b_short.supported = true
-	self.parts.wpn_fps_snp_r700_b_short.stats = barrels.short_b3_stats
-	self.parts.wpn_fps_snp_r700_b_short.custom_stats = barrels.short_b3_custom_stats
+	self.parts.wpn_fps_snp_r700_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_snp_r700_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 	--Sniper Suppressor
 	self.parts.wpn_fps_snp_r700_b_medium.pcs = {
@@ -15038,6 +15041,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	self.wpn_fps_snp_r700_npc.uses_parts = deep_clone(self.wpn_fps_snp_r700.uses_parts)		
 
 end)
+
 
 --Bernetti Rangerhitter
 Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
@@ -15183,8 +15187,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		40	
 	}
 	self.parts.wpn_fps_shot_m1897_b_short.supported = true
-	self.parts.wpn_fps_shot_m1897_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_shot_m1897_b_short.custom_stats = barrels.short_b1_custom_stats
+	self.parts.wpn_fps_shot_m1897_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_shot_m1897_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Long barrel
 	self.parts.wpn_fps_shot_m1897_b_long.pcs = {
@@ -15194,8 +15198,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		40
 	}
 	self.parts.wpn_fps_shot_m1897_b_long.supported = true
-	self.parts.wpn_fps_shot_m1897_b_long.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_shot_m1897_b_long.custom_stats = barrels.long_b3_custom_stats
+	self.parts.wpn_fps_shot_m1897_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_shot_m1897_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Short Stock
 	self.parts.wpn_fps_shot_m1897_s_short.pcs = {
@@ -15205,8 +15209,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		40
 	}
 	self.parts.wpn_fps_shot_m1897_s_short.supported = true
-	self.parts.wpn_fps_shot_m1897_s_short.stats = stocks.remove_fixed_stats
-	self.parts.wpn_fps_shot_m1897_s_short.custom_stats = stocks.remove_fixed_stats
+	self.parts.wpn_fps_shot_m1897_s_short.stats = deep_clone(stocks.remove_fixed_stats)
+	self.parts.wpn_fps_shot_m1897_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 	--Override Table
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug = {
@@ -15222,7 +15226,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
-			concealment = -5
+			concealment = -2
 		},
 		custom_stats = {				
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
@@ -15274,7 +15278,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			recoil = -25,
 			spread = 5,
 			spread_multi = {1, 1},	
-			concealment = -7,
+			concealment = -5,
 			damage = 60
 		},
 		custom_stats = {
@@ -15333,8 +15337,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1911", "resmod_m1911", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_m1911_sl_hardballer.supported = true
-	self.parts.wpn_fps_pis_m1911_sl_hardballer.stats = barrels.long_b3_stats
-	self.parts.wpn_fps_pis_m1911_sl_hardballer.custom_stats = barrels.long_b3_custom_stats		
+	self.parts.wpn_fps_pis_m1911_sl_hardballer.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_m1911_sl_hardballer.custom_stats = deep_clone(barrels.long_b3_custom_stats)		
 	
 	self.wpn_fps_pis_m1911.override.wpn_fps_pis_1911_co_1 = {
 		a_obj = "a_ns",
@@ -15425,7 +15429,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
-				concealment = -5
+				concealment = -2
 			},
 			custom_stats = {				
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
@@ -15477,7 +15481,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 				recoil = -25,
 				spread = 5,
 				spread_multi = {1, 1},	
-				concealment = -7,
+				concealment = -5,
 				damage = 60
 			},
 			custom_stats = {
@@ -15522,8 +15526,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 		40
 	}
 	self.parts.wpn_fps_smg_vityaz_b_long.supported = true
-	self.parts.wpn_fps_smg_vityaz_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_smg_vityaz_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_smg_vityaz_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_smg_vityaz_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Short Stock
 	self.parts.wpn_fps_smg_vityaz_s_short.pcs = {
@@ -15533,8 +15537,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 		40
 	}
 	self.parts.wpn_fps_smg_vityaz_s_short.supported = true
-	self.parts.wpn_fps_smg_vityaz_s_short.stats = stocks.remove_folder_stats		
-	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = stocks.remove_folder_stats		
+	self.parts.wpn_fps_smg_vityaz_s_short.stats = deep_clone(stocks.remove_folder_stats)		
+	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = deep_clone(stocks.remove_folder_stats)		
 	
 end)
 
@@ -15564,8 +15568,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_pm9_b_short.supported = true
-	self.parts.wpn_fps_smg_pm9_b_short.stats = barrels.short_b1_stats
-	self.parts.wpn_fps_smg_pm9_b_short.custom_stats = barrels.short_b1_custom_stats		
+	self.parts.wpn_fps_smg_pm9_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_smg_pm9_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)		
 	
 	--Wood Grip
 	self.parts.wpn_fps_smg_pm9_g_wood.pcs = {
@@ -15589,8 +15593,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_pm9_s_tactical.supported = true
-	self.parts.wpn_fps_smg_pm9_s_tactical.stats = stocks.add_fixed_stats	
-	self.parts.wpn_fps_smg_pm9_s_tactical.custom_stats = stocks.add_fixed_stats	
+	self.parts.wpn_fps_smg_pm9_s_tactical.stats = deep_clone(stocks.add_fixed_stats)	
+	self.parts.wpn_fps_smg_pm9_s_tactical.custom_stats = deep_clone(stocks.add_fixed_stats)	
 		
 end)
 
@@ -15605,8 +15609,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 		40
 	}
 	self.parts.wpn_fps_snp_qbu88_b_short.supported = true
-	self.parts.wpn_fps_snp_qbu88_b_short.stats = barrels.short_b2_stats
-	self.parts.wpn_fps_snp_qbu88_b_short.custom_stats = barrels.short_b2_custom_stats
+	self.parts.wpn_fps_snp_qbu88_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_snp_qbu88_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Long Barrel
 	self.parts.wpn_fps_snp_qbu88_b_long.pcs = {
@@ -15616,8 +15620,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 		40
 	}
 	self.parts.wpn_fps_snp_qbu88_b_long.supported = true
-	self.parts.wpn_fps_snp_qbu88_b_long.stats = barrels.long_b2_stats
-	self.parts.wpn_fps_snp_qbu88_b_long.custom_stats = barrels.long_b2_custom_stats
+	self.parts.wpn_fps_snp_qbu88_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_snp_qbu88_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 		
 	--Extended Mag
 	self.parts.wpn_fps_snp_qbu88_m_extended.pcs = {
@@ -15725,8 +15729,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		40
 	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.supported = true
-	self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = muzzle_device.supp_rec2_acc2_stats
-	self.parts.wpn_fps_ass_shak12_ns_suppressor.custom_stats = muzzle_device.muzzle_rec2_acc2_custom_stats
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = deep_clone(muzzle_device.supp_rec2_acc2_stats)
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.perks = {"silencer"}
 
 	--A Burst Muzzle
@@ -15737,8 +15741,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		40
 	}
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.supported = true
-	self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = muzzle_device.muzzle_rec2_acc2_stats
-	self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats = muzzle_device.muzzle_rec2_acc2_custom_stats
+	self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
+	self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
 
 	self.parts.wpn_fps_ass_shak12_b_dummy.sound_switch = {suppressed = "regular_b"}
 
@@ -15940,8 +15944,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 		40
 	}
 	self.parts.wpn_fps_pis_maxim9_b_long.supported = true
-	self.parts.wpn_fps_pis_maxim9_b_long.stats = muzzle_device.muzzle_c_duo_stats
-	self.parts.wpn_fps_pis_maxim9_b_long.custom_stats = muzzle_device.muzzle_c_duo_custom_stats		
+	self.parts.wpn_fps_pis_maxim9_b_long.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+	self.parts.wpn_fps_pis_maxim9_b_long.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)		
 	
 	--Pinnacle Barrel
 	self.parts.wpn_fps_pis_maxim9_b_marksman.pcs = {
@@ -15951,7 +15955,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 		40
 	}
 	self.parts.wpn_fps_pis_maxim9_b_marksman.supported = true
-	self.parts.wpn_fps_pis_maxim9_b_marksman.stats = muzzle_device.muzzle_b_stats
+	self.parts.wpn_fps_pis_maxim9_b_marksman.stats = deep_clone(muzzle_device.muzzle_b_stats)
 
 	--(Maxim-9) Extended Mag.
 	self.parts.wpn_fps_pis_maxim9_m_ext.pcs = {
@@ -16139,7 +16143,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 			supported = true,
 			stats = {
 				value = 10,
-				concealment = -5,
+				concealment = -2,
 				total_ammo_mod = -25,
 				damage = 15,
 				spread = 20,
@@ -16156,8 +16160,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				can_shoot_through_wall = true,
 				falloff_start_mult = 2.00,
 				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10,
-				min_mult_override = 0.4
+				ads_speed_mult = 1.10
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -16363,8 +16366,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
 		"silencer"
 	}
-	self.parts.wpn_fps_upg_ns_pis_putnik.stats = muzzle_device.supp_rec2_stats
-	self.parts.wpn_fps_upg_ns_pis_putnik.custom_stats = muzzle_device.muzzle_rec2_custom_stats
+	self.parts.wpn_fps_upg_ns_pis_putnik.stats = deep_clone(muzzle_device.supp_rec2_stats)
+	self.parts.wpn_fps_upg_ns_pis_putnik.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
 		
 	--Medved R4 Laser Sight
 	self.parts.wpn_fps_upg_fl_pis_perst.pcs = {
@@ -16378,6 +16381,265 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		value = 4
 	}
 	
+end)
+
+--Versteckt-51
+Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(self)
+
+	--Kalt Barrel
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.supported = true
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_lmg_hk51b_b_fluted.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+	--Schatten Fartten
+	self.parts.wpn_fps_lmg_hk51b_fg_railed.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_fg_railed.supported = true
+	self.parts.wpn_fps_lmg_hk51b_fg_railed.stats = {
+		value = 6,
+		recoil = -2,
+		concealment = 1
+	}
+	
+	--Zittern Stock (what a fucking stupid name YOU'RE JUST EXTENDING THE FUCKING STOCK FOR FUCKS SAKE)
+	self.parts.wpn_fps_lmg_hk51b_s_extended.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_s_extended.name_id = "bm_wp_mp7_s_long" --too lazy to go into loc
+	self.parts.wpn_fps_lmg_hk51b_s_extended.supported = true
+	self.parts.wpn_fps_lmg_hk51b_s_extended.stats = deep_clone(stocks.unfold_nocheeks_stats)
+	self.parts.wpn_fps_lmg_hk51b_s_extended.stats.value = 0
+	self.parts.wpn_fps_lmg_hk51b_s_extended.custom_stats = deep_clone(stocks.unfold_nocheeks_stats)
+	
+	--Verdunkeln Brake
+	--Tank Comp clone
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.supported = true
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
+	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+
+end)
+
+--Pronghorn
+Hooks:PostHook(WeaponFactoryTweakData, "_init_scout", "resmod_scout", function(self)
+
+	--Speed Bolt
+	self.parts.wpn_fps_snp_scout_bolt_speed.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_bolt_speed.supported = true
+	self.parts.wpn_fps_snp_scout_bolt_speed.stats = {
+		value = 5,
+		recoil = -6,
+		spread = -3
+	}
+	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats.ads_speed_mult = 1
+	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats.rof_mult = 1.3333
+	
+	--Longshot Suppressor
+	self.parts.wpn_fps_snp_scout_ns_suppressor.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_ns_suppressor.supported = true
+	self.parts.wpn_fps_snp_scout_ns_suppressor.stats = {
+		value = 2,
+		suppression = 10,
+		alert_size = -1
+	}
+	self.parts.wpn_fps_snp_scout_ns_suppressor.perks = {"silencer"}
+
+	--Iron Sights
+	self.parts.wpn_fps_snp_scout_o_iron_up.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_o_iron_up.stats = {
+		value = 0
+	}
+
+	--Open Range Set
+	self.parts.wpn_fps_snp_scout_conversion.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_conversion.supported = true
+	self.parts.wpn_fps_snp_scout_conversion.has_description = false
+	self.parts.wpn_fps_snp_scout_conversion.stats = {
+		value = 0
+	}
+
+	--"Extended" mag
+	self.parts.wpn_fps_snp_scout_m_extended.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_m_extended.supported = true
+	self.parts.wpn_fps_snp_scout_m_extended.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 3
+	}		
+
+	--Steakout Stock
+	self.parts.wpn_fps_snp_scout_s_pads_none.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_s_pads_none.supported = true
+	self.parts.wpn_fps_snp_scout_s_pads_none.stats = {
+		value = 0,
+		spread = -1,
+		recoil = -2,
+		concealment = 2
+	}
+
+	--Marksman Stock
+	self.parts.wpn_fps_snp_scout_s_pads_one.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_scout_s_pads_one.supported = true
+	self.parts.wpn_fps_snp_scout_s_pads_one.stats = {
+		value = 0,
+		recoil = -2,
+		concealment = 1
+	}	
+
+end)
+
+--Basilisk 3V
+Hooks:PostHook(WeaponFactoryTweakData, "_init_ms3gl", "resmod_ms3gl", function(self)
+
+	--Fang Barrel
+	self.parts.wpn_fps_gre_ms3gl_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_gre_ms3gl_b_long.supported = true
+	self.parts.wpn_fps_gre_ms3gl_b_long.stats = {
+		value = 5,
+		concealment = -2,
+		spread = 2
+	}	
+
+	--Copperhead Stock
+	self.parts.wpn_fps_gre_ms3gl_s_modern.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_gre_ms3gl_s_modern.supported = true
+	self.parts.wpn_fps_gre_ms3gl_s_modern.stats = stocks.adj_to_fold_stats
+	self.parts.wpn_fps_gre_ms3gl_s_modern.custom_stats = stocks.adj_to_fold_stats
+
+	--Serpent Body
+	self.parts.wpn_fps_gre_ms3gl_body_modern.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_gre_ms3gl_body_modern.supported = true
+	self.parts.wpn_fps_gre_ms3gl_body_modern.stats = {
+		value = 4,
+		concealment = 1,
+		recoil = -2,
+	}
+
+
+	--Venomous Mod Set
+	self.parts.wpn_fps_gre_ms3gl_conversion.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_gre_ms3gl_conversion.supported = true
+	self.parts.wpn_fps_gre_ms3gl_conversion.has_description = false
+	self.parts.wpn_fps_gre_ms3gl_conversion.stats = { value = 0 }
+	self.parts.wpn_fps_gre_ms3gl_conversion.custom_stats = nil
+	self.parts.wpn_fps_gre_ms3gl_conversion.adds = {}
+	self.parts.wpn_fps_gre_ms3gl_conversion.forbids = {
+		"wpn_fps_addon_ris"
+	}
+	self.parts.wpn_fps_gre_ms3gl_conversion.override = {
+		wpn_fps_gre_ms3gl_upper_standard = {
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_upper_reciever_conv",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_venom_upper"
+		},
+		wpn_fps_gre_ms3gl_lower_standard = {
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_lower_reciever_conv",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_venom_lower"
+		},
+		wpn_fps_gre_ms3gl_s_standard = {
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_stock_conv",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_venom_stock"
+		},
+		wpn_fps_gre_ms3gl_s_modern = {
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_stock_conv",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_venom_stock"
+		},
+		wpn_fps_gre_ms3gl_b_standard = {
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_barrel_conv",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_barrel_dummy"
+		},
+		wpn_fps_gre_ms3gl_b_long = {
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_barrel_conv",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_barrel_dummy"
+		},
+		wpn_fps_gre_ms3gl_body_modern = {
+			override = {
+				wpn_fps_gre_ms3gl_upper_standard = {
+					third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_upper_reciever_conv",
+					unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_venom_upper"
+				},
+				wpn_fps_gre_ms3gl_lower_standard = {
+					third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_third_gre_3gl_lower_reciever_conv",
+					unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/wpn_fps_gre_3gl_venom_lower"
+				}
+			}
+		}
+	}
+
 end)
 
 --Resmod Custom Content					
@@ -16571,8 +16833,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_s_solid", 
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_s_solid", 
 		supported = true,
-		custom_stats = stocks.adj_to_fixed_acc_stats,
-		stats = stocks.adj_to_fixed_acc_stats,
+		custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats),
+		stats = deep_clone(stocks.adj_to_fixed_acc_stats),
 		dlc = "sc"
 	}	
 	
@@ -16667,7 +16929,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 3,
 			ads_speed_mult = 0.925
 		},		
-		custom_stats = stocks.remove_folder_stats,		
+		custom_stats = deep_clone(stocks.remove_folder_stats),		
 		dlc = "sc"			
 	}								
 	self.parts.wpn_fps_shot_r870_s_folding_ext = { -- thanks jarey_!
@@ -16679,8 +16941,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded",
 		third_unit = "units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded",			
 		supported = true,			
-		stats = stocks.fixed_to_nocheeks_stats,
-		custom_stats = stocks.fixed_to_nocheeks_stats,
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats),
 		dlc = "sc"			
 	}						
 	--Vlad's Rodina--
@@ -18149,8 +18411,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--Aftermarket Stock
 		self.parts.wpn_fps_pis_lebman_stock.supported = true
-		self.parts.wpn_fps_pis_lebman_stock.stats = stocks.add_fixed_stats
-		self.parts.wpn_fps_pis_lebman_stock.custom_stats = stocks.add_fixed_stats
+		self.parts.wpn_fps_pis_lebman_stock.stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_pis_lebman_stock.custom_stats = deep_clone(stocks.add_fixed_stats)
 
 		self.parts.wpn_fps_ass_aknato_b_long.supported = true
 		self.parts.wpn_fps_ass_aknato_b_long.stats = {
@@ -18172,8 +18434,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		--(AK) Kalashnikov Ninja Stock
 		self.parts.wpn_fps_upg_ak_s_polymerstock.pcs = nil
 		self.parts.wpn_fps_upg_ak_s_polymerstock.supported = true
-		self.parts.wpn_fps_upg_ak_s_polymerstock.stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
-		self.parts.wpn_fps_upg_ak_s_polymerstock.custom_stats = stocks.nocheeks_to_fixed_acc2_rec2_stats
+		self.parts.wpn_fps_upg_ak_s_polymerstock.stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		self.parts.wpn_fps_upg_ak_s_polymerstock.custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 
 		--(AK) Fugitive Foregrip
 		self.parts.wpn_fps_ass_amcar_fg_covers_base.supported = true
@@ -18185,8 +18447,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(AK) Wrist Breaker Stock
 		self.parts.wpn_fps_upg_ak_s_empty.supported = true
-		self.parts.wpn_fps_upg_ak_s_empty.stats = stocks.remove_nocheeks_stats
-		self.parts.wpn_fps_upg_ak_s_empty.custom_stats = stocks.remove_nocheeks_stats
+		self.parts.wpn_fps_upg_ak_s_empty.stats = deep_clone(stocks.remove_nocheeks_stats)
+		self.parts.wpn_fps_upg_ak_s_empty.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 
 		table.insert(self.wpn_fps_smg_coal.uses_parts, "wpn_fps_upg_ak_s_empty")
 		table.insert(self.wpn_fps_smg_coal_npc.uses_parts, "wpn_fps_upg_ak_s_empty")		
@@ -18268,14 +18530,14 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Commando 553) Sniper Stock		
 		self.parts.wpn_fps_ass_s552_s_sniper.supported = true		
-		self.parts.wpn_fps_ass_s552_s_sniper.stats = stocks.folder_to_fixed_acc1_rec2_stats
-		self.parts.wpn_fps_ass_s552_s_sniper.custom_stats = stocks.folder_to_fixed_acc1_rec2_stats
+		self.parts.wpn_fps_ass_s552_s_sniper.stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+		self.parts.wpn_fps_ass_s552_s_sniper.custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 
 
 		--(Goliath 12G) Long Barrel
 		self.parts.wpn_fps_sho_rota_b_longer.supported = true
-		self.parts.wpn_fps_sho_rota_b_longer.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_sho_rota_b_longer.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_sho_rota_b_longer.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_sho_rota_b_longer.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Chimano 88) Bling Slide
 		self.parts.wpn_fps_pis_g17_b_bling.supported = true
@@ -18311,18 +18573,18 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Specops) Long Barrel
 		self.parts.wpn_fps_smg_mp7_b_long.supported = true
-		self.parts.wpn_fps_smg_mp7_b_long.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_smg_mp7_b_long.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_smg_mp7_b_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_mp7_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(Uzi) Carbine Barrel
 		self.parts.wpn_fps_smg_uzi_b_carbine.supported = true
-		self.parts.wpn_fps_smg_uzi_b_carbine.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_smg_uzi_b_carbine.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_smg_uzi_b_carbine.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_smg_uzi_b_carbine.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Jacket's Piece) Clean Hit Kit
 		self.parts.wpn_fps_smg_cobray_body_upper_long.supported = true
-		self.parts.wpn_fps_smg_cobray_body_upper_long.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_smg_cobray_body_upper_long.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_smg_cobray_body_upper_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_cobray_body_upper_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(Leo Pistol) HS Convert Frame
 		self.parts.wpn_fps_pis_hs2000_body_stealth.supported = true
@@ -18338,28 +18600,28 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Jackal) Medium Barrel
 		self.parts.wpn_fps_smg_schakal_b_uncivil.supported = true
-		self.parts.wpn_fps_smg_schakal_b_uncivil.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_smg_schakal_b_uncivil.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_smg_schakal_b_uncivil.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_smg_schakal_b_uncivil.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Kross Vertex) Long Barrel
 		self.parts.wpn_fps_smg_polymer_barrel_long.supported = true
-		self.parts.wpn_fps_smg_polymer_barrel_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_smg_polymer_barrel_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_smg_polymer_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_smg_polymer_barrel_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Micro Uzi) Long Barrel
 		self.parts.wpn_fps_smg_baka_b_long.supported = true
-		self.parts.wpn_fps_smg_baka_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_smg_baka_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_smg_baka_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_smg_baka_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--Heavy Compensator
 		self.parts.wpn_fps_upg_ns_ass_smg_heavy.supported = true
-		self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = muzzle_device.muzzle_acc2_stats
-		self.parts.wpn_fps_upg_ns_ass_smg_heavy.custom_stats = muzzle_device.muzzle_acc2_custom_stats
+		self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = deep_clone(muzzle_device.muzzle_acc2_stats)
+		self.parts.wpn_fps_upg_ns_ass_smg_heavy.custom_stats = deep_clone(muzzle_device.muzzle_acc2_custom_stats)
 
 		--(Claire 12G) Huntsman Barrel
 		self.parts.wpn_fps_sho_coach_b_long.supported = true
-		self.parts.wpn_fps_sho_coach_b_long.stats = barrels.long_b3_stats
-		self.parts.wpn_fps_sho_coach_b_long.custom_stats = barrels.long_b3_custom_stats
+		self.parts.wpn_fps_sho_coach_b_long.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_sho_coach_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 		--(Lion's Roar) Urban Heat Kit
 		self.parts.wpn_fps_ass_vhs_body_camo.supported = true
@@ -18407,13 +18669,13 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		--(CAR Family) Valkyrie Stock
 		self.parts.wpn_fps_ass_m16_s_op.pcs = nil
 		self.parts.wpn_fps_ass_m16_s_op.supported = true
-		self.parts.wpn_fps_ass_m16_s_op.stats = stocks.adj_to_fixed_acc_stats
-		self.parts.wpn_fps_ass_m16_s_op.custom_stats = stocks.adj_to_fixed_acc_stats
+		self.parts.wpn_fps_ass_m16_s_op.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+		self.parts.wpn_fps_ass_m16_s_op.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 
 		--(Deagle) Steady Wooden Grip
 		self.parts.wpn_fps_pis_deagle_g_wooden.supported = true
-		self.parts.wpn_fps_pis_deagle_g_wooden.stats = stocks.add_fixed_stats
-		self.parts.wpn_fps_pis_deagle_g_wooden.custom_stats = stocks.add_fixed_stats
+		self.parts.wpn_fps_pis_deagle_g_wooden.stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_pis_deagle_g_wooden.custom_stats = deep_clone(stocks.add_fixed_stats)
 		
 		--(Peacemaker) Polymer Grip
 		self.parts.wpn_fps_pis_peacemaker_g_black.supported = true
@@ -18437,8 +18699,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Stryk) Striking Slide
 		self.parts.wpn_fps_pis_g18c_b_long.supported = true
-		self.parts.wpn_fps_pis_g18c_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_pis_g18c_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_pis_g18c_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_pis_g18c_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Bootleg) Anarchist Grip
 		self.parts.wpn_fps_ass_tecci_vg_ergo.supported = true
@@ -18462,8 +18724,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_ass_tecci_s_minicontra.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_s_standard"
 		self.parts.wpn_fps_ass_tecci_s_minicontra.name_id = "bm_wp_tecci_s_minicontra_alt"
 		self.parts.wpn_fps_ass_tecci_s_minicontra.supported = true
-		self.parts.wpn_fps_ass_tecci_s_minicontra.stats = stocks.adj_to_fixed_rec_stats
-		self.parts.wpn_fps_ass_tecci_s_minicontra.custom_stats = stocks.adj_to_fixed_rec_stats
+		self.parts.wpn_fps_ass_tecci_s_minicontra.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+		self.parts.wpn_fps_ass_tecci_s_minicontra.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
 
 		table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_tecci_s_minicontra")
 		table.insert(self.wpn_fps_ass_m4_npc.uses_parts, "wpn_fps_ass_tecci_s_minicontra")	
@@ -18532,8 +18794,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Contractor) Long Barrel
 		self.parts.wpn_fps_snp_tti_b_long.supported = true
-		self.parts.wpn_fps_snp_tti_b_long.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_snp_tti_b_long.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_snp_tti_b_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_snp_tti_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(Jacket's Piece) Overdose Magazine
 		self.parts.wpn_fps_smg_cobray_m_extended.supported = true
@@ -18582,8 +18844,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Chicago Typewriter) Folding Stock
 		self.parts.wpn_fps_smg_thompson_stock_fold.supported = true
-		self.parts.wpn_fps_smg_thompson_stock_fold.stats = stocks.fixed_to_nocheeks_stats
-		self.parts.wpn_fps_smg_thompson_stock_fold.custom_stats = stocks.fixed_to_nocheeks_stats
+		self.parts.wpn_fps_smg_thompson_stock_fold.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_smg_thompson_stock_fold.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 
 		--(GSPS 12G) Ergo Stock
 		self.parts.wpn_fps_shot_m37_s_ergo.supported = true
@@ -18651,8 +18913,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--Grievky Nozzle
 		self.parts.wpn_fps_upg_ns_ass_smg_russian.supported = true
-		self.parts.wpn_fps_upg_ns_ass_smg_russian.stats = muzzle_device.muzzle_rec2_stats
-		self.parts.wpn_fps_upg_ns_ass_smg_russian.custom_stats = muzzle_device.muzzle_rec2_custom_stats
+		self.parts.wpn_fps_upg_ns_ass_smg_russian.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
+		self.parts.wpn_fps_upg_ns_ass_smg_russian.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
 
 		--Assassin Suppressor
 		self.parts.wpn_fps_upg_ns_pis_cloth.supported = true
@@ -18664,8 +18926,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Galant) Prototype Carbine Stock
 		self.parts.wpn_fps_ass_ching_s_why.supported = true
-		self.parts.wpn_fps_ass_ching_s_why.stats = stocks.fixed_to_nocheeks_stats
-		self.parts.wpn_fps_ass_ching_s_why.custom_stats = stocks.fixed_to_nocheeks_stats
+		self.parts.wpn_fps_ass_ching_s_why.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_ass_ching_s_why.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 
 		--(GSPS 12G) Hunting Barrel
 		self.parts.wpn_fps_shot_m37_b_ridge.supported = true
@@ -18677,13 +18939,13 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(GSPS 12G) Folding Stock
 		self.parts.wpn_fps_shot_m37_s_tactical.supported = true
-		self.parts.wpn_fps_shot_m37_s_tactical.stats = stocks.fixed_to_nocheeks_stats
-		self.parts.wpn_fps_shot_m37_s_tactical.custom_stats = stocks.fixed_to_nocheeks_stats
+		self.parts.wpn_fps_shot_m37_s_tactical.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_shot_m37_s_tactical.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 
 		--Trench Sweeper Nozzle
 		self.parts.wpn_fps_upg_ns_shot_grinder.supported = true
-		self.parts.wpn_fps_upg_ns_shot_grinder.stats = muzzle_device.muzzle_c_duo_stats
-		self.parts.wpn_fps_upg_ns_shot_grinder.custom_stats = muzzle_device.muzzle_c_duo_custom_stats
+		self.parts.wpn_fps_upg_ns_shot_grinder.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+		self.parts.wpn_fps_upg_ns_shot_grinder.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 
 		--(Parabellum) Discrete Grip
 		self.parts.wpn_fps_pis_breech_g_stealth.supported = true
@@ -18720,13 +18982,13 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(AK17) Short Barrel
 		self.parts.wpn_fps_ass_flint_b_short.supported = true
-		self.parts.wpn_fps_ass_flint_b_short.stats = barrels.short_b1_stats
-		self.parts.wpn_fps_ass_flint_b_short.custom_stats = barrels.short_b1_custom_stats
+		self.parts.wpn_fps_ass_flint_b_short.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_ass_flint_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 		--(Little Friend) Skeletal Stock
 		self.parts.wpn_fps_ass_contraband_s_tecci.supported = true
-		self.parts.wpn_fps_ass_contraband_s_tecci.stats = stocks.adj_to_nocheeks_stats
-		self.parts.wpn_fps_ass_contraband_s_tecci.custom_stats = stocks.adj_to_nocheeks_stats
+		self.parts.wpn_fps_ass_contraband_s_tecci.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+		self.parts.wpn_fps_ass_contraband_s_tecci.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 		self.parts.wpn_fps_ass_contraband_s_tecci.forbids = {"wpn_fps_upg_m4_s_adapter"}
 
 		table.insert(self.wpn_fps_ass_sg416.uses_parts, "wpn_fps_ass_contraband_s_tecci")
@@ -18746,8 +19008,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(5/7 AP) Sport Barrel
 		self.parts.wpn_fps_pis_lemming_b_long.supported = true
-		self.parts.wpn_fps_pis_lemming_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_pis_lemming_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_pis_lemming_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_pis_lemming_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Crosskill Classic) Wooden Grip
 		self.parts.wpn_fps_pis_cold_g_wood.supported = true
@@ -18791,8 +19053,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Grom) Short Barrel
 		self.parts.wpn_fps_snp_siltstone_b_short.supported = true
-		self.parts.wpn_fps_snp_siltstone_b_short.stats = barrels.short_b2_stats
-		self.parts.wpn_fps_snp_siltstone_b_short.custom_stats = barrels.short_b2_custom_stats
+		self.parts.wpn_fps_snp_siltstone_b_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_snp_siltstone_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 		--(5/7 AP) Striking Kit
 		self.parts.wpn_fps_pis_lemming_body_silver.supported = true
@@ -18852,23 +19114,23 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(AK17) Marksman Stock
 		self.parts.wpn_fps_ass_flint_s_solid.supported = true
-		self.parts.wpn_fps_ass_flint_s_solid.stats = stocks.adj_to_fixed_rec_stats
-		self.parts.wpn_fps_ass_flint_s_solid.custom_stats = stocks.adj_to_fixed_rec_stats
+		self.parts.wpn_fps_ass_flint_s_solid.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+		self.parts.wpn_fps_ass_flint_s_solid.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
 
 		--(Little Friend) Long Barrel
 		self.parts.wpn_fps_ass_contraband_b_long.supported = true
-		self.parts.wpn_fps_ass_contraband_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_ass_contraband_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_ass_contraband_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_ass_contraband_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Little Friend) Short Barrel
 		self.parts.wpn_fps_ass_contraband_b_short.supported = true
-		self.parts.wpn_fps_ass_contraband_b_short.stats = barrels.short_b1_stats
-		self.parts.wpn_fps_ass_contraband_b_short.custom_stats = barrels.short_b1_custom_stats
+		self.parts.wpn_fps_ass_contraband_b_short.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_ass_contraband_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 		--(AK17) Long Barrel
 		self.parts.wpn_fps_ass_flint_b_long.supported = true
-		self.parts.wpn_fps_ass_flint_b_long.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_ass_flint_b_long.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_ass_flint_b_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_flint_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(GSPS 12G) Riot Sight 
 		self.parts.wpn_fps_shot_m37_o_expert.supported = true 
@@ -18878,8 +19140,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Predator 12G) Short Barrel
 		self.parts.wpn_fps_sho_b_spas12_small.supported = true
-		self.parts.wpn_fps_sho_b_spas12_small.stats = barrels.short_b1_stats
-		self.parts.wpn_fps_sho_b_spas12_small.custom_stats = barrels.short_b1_custom_stats
+		self.parts.wpn_fps_sho_b_spas12_small.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_sho_b_spas12_small.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 		--Modern Magazine
 		self.parts.wpn_fps_ass_ak_m_proto.supported = true
@@ -18918,8 +19180,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Spiker 7.62) Long Barrel 
 		self.parts.wpn_fps_ass_spike_b_long.supported = true 
-		self.parts.wpn_fps_ass_spike_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_ass_spike_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_ass_spike_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_ass_spike_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		if SystemFS:exists("assets/mod_overrides/AK Correct Magpul Assist Mags") then
 			if not self.wpn_fps_ass_spike.override then
@@ -18934,8 +19196,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(SG-416) Long Barrel
 		self.parts.wpn_fps_ass_sg416_b_long.supported = true
-		self.parts.wpn_fps_ass_sg416_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_ass_sg416_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_ass_sg416_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_ass_sg416_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 		self.parts.wpn_fps_ass_sg416_b_long.unit = "units/mods/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_b_long"
 		self.parts.wpn_fps_ass_sg416_b_long.a_obj = "a_fg"
 
@@ -19030,14 +19292,14 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		
 		--(Automat-5) Wrist Breaker Stock
 		self.parts.wpn_fps_smg_ak5s_nostock.supported = true
-		self.parts.wpn_fps_smg_ak5s_nostock.stats = stocks.remove_adj_stats
-		self.parts.wpn_fps_smg_ak5s_nostock.custom_stats = stocks.remove_adj_stats
+		self.parts.wpn_fps_smg_ak5s_nostock.stats = deep_clone(stocks.remove_adj_stats)
+		self.parts.wpn_fps_smg_ak5s_nostock.custom_stats = deep_clone(stocks.remove_adj_stats)
 
 
 		--(Acar-9) Steel Barrel
 		self.parts.wpn_fps_smg_car9_b_long.supported = true
-		self.parts.wpn_fps_smg_car9_b_long.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_smg_car9_b_long.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_smg_car9_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_smg_car9_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		self.parts.wpn_fps_smg_car9_b_standard.supported = true
 		self.parts.wpn_fps_smg_car9_b_standard.stats = { value = 1 }
@@ -19069,13 +19331,13 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Reinbeck) Enforcer Stock
 		self.parts.wpn_fps_shot_beck_s_tac.supported = true
-		self.parts.wpn_fps_shot_beck_s_tac.stats = stocks.fixed_to_adj_dual_stats
-		self.parts.wpn_fps_shot_beck_s_tac.custom_stats = stocks.fixed_to_adj_dual_stats
+		self.parts.wpn_fps_shot_beck_s_tac.stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+		self.parts.wpn_fps_shot_beck_s_tac.custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
 
 		--(Reinbeck) Ghost Stock
 		self.parts.wpn_fps_shot_beck_s_wrist.supported = true
-		self.parts.wpn_fps_shot_beck_s_wrist.stats = stocks.remove_fixed_stats
-		self.parts.wpn_fps_shot_beck_s_wrist.custom_stats = stocks.remove_fixed_stats
+		self.parts.wpn_fps_shot_beck_s_wrist.stats = deep_clone(stocks.remove_fixed_stats)
+		self.parts.wpn_fps_shot_beck_s_wrist.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 		--(Reinbeck) Extended Tube
 		self.parts.wpn_fps_shot_beck_ext.supported = true
@@ -19099,8 +19361,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Breaker 12G) Tactical Stock
 		self.parts.wpn_fps_sho_boot_s_black.supported = true
-		self.parts.wpn_fps_sho_boot_s_black.stats = stocks.add_nocheeks_stats
-		self.parts.wpn_fps_sho_boot_s_black.custom_stats = stocks.add_nocheeks_stats
+		self.parts.wpn_fps_sho_boot_s_black.stats = deep_clone(stocks.add_nocheeks_stats)
+		self.parts.wpn_fps_sho_boot_s_black.custom_stats = deep_clone(stocks.add_nocheeks_stats)
 
 		--(JP36) Sniper Grip
 		self.parts.wpn_fps_ass_g36_g_sniper.supported = true
@@ -19171,8 +19433,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Guerilla .308) Sniper Stock
 		self.parts.wpn_fps_snp_sgs_s_sniper.supported = true
-		self.parts.wpn_fps_snp_sgs_s_sniper.stats = stocks.folder_to_fixed_acc1_rec2_stats
-		self.parts.wpn_fps_snp_sgs_s_sniper.custom_stats = stocks.folder_to_fixed_acc1_rec2_stats
+		self.parts.wpn_fps_snp_sgs_s_sniper.stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+		self.parts.wpn_fps_snp_sgs_s_sniper.custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 
 		--(Guerilla .308) Marksman Grip
 		self.parts.wpn_fps_snp_sgs_g_black.supported = true
@@ -19184,8 +19446,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Guerilla .308) Extended Barrel
 		self.parts.wpn_fps_snp_sgs_b_long.supported = true
-		self.parts.wpn_fps_snp_sgs_b_long.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_snp_sgs_b_long.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_snp_sgs_b_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_snp_sgs_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(Guerilla .308) Suppressed Barrel
 		self.parts.wpn_fps_snp_sgs_b_sil.supported = true
@@ -19251,7 +19513,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				supported = true,
 				stats = {
 					value = 10,
-					concealment = -5,
+					concealment = -2,
 					total_ammo_mod = -25,
 					damage = 15,
 					spread = 20,
@@ -19308,6 +19570,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					total_ammo_mod = -50,
 					recoil = -25,
 					spread = 5,
+					concealment = -5,
 					spread_multi = {1, 1},	
 					damage = 30
 				},
@@ -19328,7 +19591,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					value = 10,
 					recoil = -25,
 					spread = 5,
-					concealment = -7,
+					concealment = -5,
 					spread_multi = {1, 1},	
 					total_ammo_mod = -50,
 					damage = 90
@@ -19688,8 +19951,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 	if self.parts.wpn_fps_smg_uzi_b_longue then
 		--(Uzi) Striker Barrel
 		self.parts.wpn_fps_smg_uzi_b_longue.supported = true
-		self.parts.wpn_fps_smg_uzi_b_longue.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_smg_uzi_b_longue.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_smg_uzi_b_longue.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_uzi_b_longue.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(RPK) Lightweight combo Magazine
 		self.parts.wpn_lmg_rpk_m_jungle.supported = true
@@ -19736,7 +19999,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			concealment = 1,
 			extra_ammo = -1
 		}		
-		self.parts.wpn_fps_snp_sbl_b_stub.custom_stats = barrels.short_b1_custom_stats
+		self.parts.wpn_fps_snp_sbl_b_stub.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 		--(Czech 92) Angled Grip
 		self.parts.wpn_fps_pis_czech_body_afg.pcs = nil
@@ -19747,8 +20010,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		
 		--(Cobra) Solid Wooden Stock
 		self.parts.wpn_fps_smg_scorpion_s_wood.supported = true
-		self.parts.wpn_fps_smg_scorpion_s_wood.stats = stocks.folded_to_fixed_stats		
-		self.parts.wpn_fps_smg_scorpion_s_wood.custom_stats = stocks.folded_to_fixed_stats		
+		self.parts.wpn_fps_smg_scorpion_s_wood.stats = deep_clone(stocks.folded_to_fixed_stats)		
+		self.parts.wpn_fps_smg_scorpion_s_wood.custom_stats = deep_clone(stocks.folded_to_fixed_stats)		
 
 		--(Heather) Aftermarket Vertical Grip
 		self.parts.wpn_fps_smg_sr2_vg_custom.supported = true
@@ -19760,8 +20023,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(Compact 5) Combat Stock
 		self.parts.wpn_fps_smg_mp5_s_m4.supported = true
-		self.parts.wpn_fps_smg_mp5_s_m4.stats = stocks.fixed_to_adj_rec_stats
-		self.parts.wpn_fps_smg_mp5_s_m4.custom_stats = stocks.fixed_to_adj_rec_stats
+		self.parts.wpn_fps_smg_mp5_s_m4.stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+		self.parts.wpn_fps_smg_mp5_s_m4.custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 
 		self.parts.wpn_fps_smg_mp5_s_m4_dummy = deep_clone(self.parts.wpn_fps_smg_mp5_s_m4)
 		self.parts.wpn_fps_smg_mp5_s_m4_dummy.pcs = nil		
@@ -19787,8 +20050,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 		--(Hornet .300) Wasp foregrip
 		self.parts.wpn_fps_bdgr_uupg_fg_small.supported = true
-		self.parts.wpn_fps_bdgr_uupg_fg_small.stats = barrels.short_b2_stats
-		self.parts.wpn_fps_bdgr_uupg_fg_small.custom_stats = barrels.short_b2_custom_stats
+		self.parts.wpn_fps_bdgr_uupg_fg_small.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_bdgr_uupg_fg_small.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 		self.wpn_fps_ass_bdgr.override = {
 			wpn_fps_smg_olympic_s_adjust = {
@@ -19796,36 +20059,36 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			}
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_upg_m4_s_standard = {
-			stats = stocks.nocheeks_to_adj_dual_stats,
-			custom_stats = stocks.nocheeks_to_adj_dual_stats
+			stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_upg_m4_s_pts = {
-			stats = stocks.nocheeks_to_adj_acc_stats,
-			custom_stats = stocks.nocheeks_to_adj_acc_stats
+			stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_upg_m4_s_crane = {
-			stats = stocks.nocheeks_to_adj_rec_stats,
-			custom_stats = stocks.nocheeks_to_adj_rec_stats
+			stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_upg_m4_s_mk46 = {
-			stats = stocks.nocheeks_to_adj_rec_stats,
-			custom_stats = stocks.nocheeks_to_adj_rec_stats
+			stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_upg_m4_s_ubr = {
-			stats = stocks.nocheeks_to_hvy_acc1_rec2_stats,
-			custom_stats = stocks.nocheeks_to_hvy_acc1_rec2_stats
+			stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_snp_tti_s_vltor = {
-			stats = stocks.nocheeks_to_hvy_acc2_rec1_stats,
-			custom_stats = stocks.nocheeks_to_hvy_acc2_rec1_stats
+			stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_m4_uupg_s_fold = {
-			stats = stocks.nocheeks_to_folder_stats,
-			custom_stats = stocks.nocheeks_to_folder_stats
+			stats = deep_clone(stocks.nocheeks_to_folder_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_smg_olympic_s_short = {
-			stats = stocks.remove_nocheeks_stats,
-			custom_stats = stocks.remove_nocheeks_stats
+			stats = deep_clone(stocks.remove_nocheeks_stats),
+			custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 		}
 		self.wpn_fps_ass_bdgr.override.wpn_fps_ass_contraband_s_tecci = {
 			stats = {},
@@ -19842,8 +20105,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(M60) Long Barrel
 		self.parts.wpn_fps_lmg_m60_b_longer.supported = true
-		self.parts.wpn_fps_lmg_m60_b_longer.stats = barrels.long_b3_stats
-		self.parts.wpn_fps_lmg_m60_b_longer.custom_stats = barrels.long_b3_custom_stats
+		self.parts.wpn_fps_lmg_m60_b_longer.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_lmg_m60_b_longer.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 		
 		--Wrapped Grip
 		self.parts.wpn_fps_m4_g_wrap.supported = true
@@ -19855,13 +20118,13 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--Polygonal Suppressor
 		self.parts.wpn_fps_upg_ns_shot_flat.supported = true
-		self.parts.wpn_fps_upg_ns_shot_flat.stats = muzzle_device.supp_b_alt_stats
-		self.parts.wpn_fps_upg_ns_shot_flat.custom_stats = muzzle_device.muzzle_b_alt_custom_stats
+		self.parts.wpn_fps_upg_ns_shot_flat.stats = deep_clone(muzzle_device.supp_b_alt_stats)
+		self.parts.wpn_fps_upg_ns_shot_flat.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 
 		--Professional Suppressor
 		self.parts.wpn_fps_upg_ns_ass_smg_pro.supported = true
-		self.parts.wpn_fps_upg_ns_ass_smg_pro.stats = muzzle_device.supp_c_duo_stats
-		self.parts.wpn_fps_upg_ns_ass_smg_pro.custom_stats = muzzle_device.muzzle_c_duo_custom_stats
+		self.parts.wpn_fps_upg_ns_ass_smg_pro.stats = deep_clone(muzzle_device.supp_c_duo_stats)
+		self.parts.wpn_fps_upg_ns_ass_smg_pro.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 
 		--(Jacket's Piece) Foldable Stock
 		self.parts.wpn_fps_smg_cobray_s_custom.supported = true
@@ -19879,18 +20142,18 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(Patchett L2A1) Extended Barrel
 		self.parts.wpn_fps_smg_sterling_b_poke.supported = true
-		self.parts.wpn_fps_smg_sterling_b_poke.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_smg_sterling_b_poke.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_smg_sterling_b_poke.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_sterling_b_poke.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(Parabellum) Langer Barrel
 		self.parts.wpn_fps_pis_breech_b_length.supported = true
-		self.parts.wpn_fps_pis_breech_b_length.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_pis_breech_b_length.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_pis_breech_b_length.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_pis_breech_b_length.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--Constrictor Nozzle
 		self.parts.wpn_fps_upg_ns_shot_close.supported = true
-		self.parts.wpn_fps_upg_ns_shot_close.stats = muzzle_device.muzzle_acc2_stats
-		self.parts.wpn_fps_upg_ns_shot_close.custom_stats = muzzle_device.muzzle_acc2_custom_stats
+		self.parts.wpn_fps_upg_ns_shot_close.stats = deep_clone(muzzle_device.muzzle_acc2_stats)
+		self.parts.wpn_fps_upg_ns_shot_close.custom_stats = deep_clone(muzzle_device.muzzle_acc2_custom_stats)
 
 		--(OVE9000 Saw) Ripper Blade
 		self.parts.wpn_fps_saw_m_blade_scream.supported = true
@@ -19923,14 +20186,14 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(MP40) Langer Barrel
 		self.parts.wpn_fps_smg_erma_b_langer.supported = true
-		self.parts.wpn_fps_smg_erma_b_langer.stats = barrels.long_b1_stats
-		self.parts.wpn_fps_smg_erma_b_langer.custom_stats = barrels.long_b1_custom_stats
+		self.parts.wpn_fps_smg_erma_b_langer.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_smg_erma_b_langer.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 
 		--(MP40) Kurz Barrel
 		self.parts.wpn_fps_smg_erma_b_kurz.supported = true
-		self.parts.wpn_fps_smg_erma_b_kurz.stats = barrels.short_b1_stats
-		self.parts.wpn_fps_smg_erma_b_kurz.custom_stats = barrels.short_b1_custom_stats
+		self.parts.wpn_fps_smg_erma_b_kurz.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_smg_erma_b_kurz.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 		--(Pistol Crossbow) Ergo Handle
 		self.parts.wpn_fps_bow_hunter_body_swift.supported = true
@@ -19954,8 +20217,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(Locomotive 12G) Trench Boom Barrel
 		self.parts.wpn_fps_shot_r870_b_ithaca.supported = true
-		self.parts.wpn_fps_shot_r870_b_ithaca.stats = barrels.long_b3_stats
-		self.parts.wpn_fps_shot_r870_b_ithaca.custom_stats = barrels.long_b3_custom_stats
+		self.parts.wpn_fps_shot_r870_b_ithaca.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_shot_r870_b_ithaca.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 		--(Reinbeck Auto) Shell Rack
 		self.parts.wpn_fps_shot_minibeck_shells.supported = true
@@ -20039,8 +20302,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(M1014) Wrist Remover Grip
 		self.parts.wpn_fps_sho_ben_s_fracture.supported = true
-		self.parts.wpn_fps_sho_ben_s_fracture.stats = stocks.remove_adj_stats
-		self.parts.wpn_fps_sho_ben_s_fracture.custom_stats = stocks.remove_adj_stats
+		self.parts.wpn_fps_sho_ben_s_fracture.stats = deep_clone(stocks.remove_adj_stats)
+		self.parts.wpn_fps_sho_ben_s_fracture.custom_stats = deep_clone(stocks.remove_adj_stats)
 		--Expanded Magazine
 		self.parts.wpn_fps_m4_uupg_m_extend.supported = true
 		self.parts.wpn_fps_m4_uupg_m_extend.stats = {
@@ -20104,28 +20367,28 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		--(Compact 5) Adjusted Stock
 		self.parts.wpn_fps_smg_mp5_s_adjusted.supported = true
-		self.parts.wpn_fps_smg_mp5_s_adjusted.stats = stocks.fixed_to_folded_stats
-		self.parts.wpn_fps_smg_mp5_s_adjusted.custom_stats = stocks.fixed_to_folded_stats
+		self.parts.wpn_fps_smg_mp5_s_adjusted.stats = deep_clone(stocks.fixed_to_folded_stats)
+		self.parts.wpn_fps_smg_mp5_s_adjusted.custom_stats = deep_clone(stocks.fixed_to_folded_stats)
 
 		--(Compact 5) Marksman Foregrip
 		self.parts.wpn_fps_smg_mp5_fg_long.supported = true
-		self.parts.wpn_fps_smg_mp5_fg_long.stats = barrels.long_b2_stats
-		self.parts.wpn_fps_smg_mp5_fg_long.custom_stats = barrels.long_b2_custom_stats
+		self.parts.wpn_fps_smg_mp5_fg_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_mp5_fg_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(Jackal) Solid Stock
 		self.parts.wpn_fps_smg_schakal_s_solid.supported = true
-		self.parts.wpn_fps_smg_schakal_s_solid.stats = stocks.folder_to_fixed_rec3_stats
-		self.parts.wpn_fps_smg_schakal_s_solid.custom_stats = stocks.folder_to_fixed_rec3_stats
+		self.parts.wpn_fps_smg_schakal_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+		self.parts.wpn_fps_smg_schakal_s_solid.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 
 		--(Jackal) Lightweight Stock
 		self.parts.wpn_fps_smg_schakal_s_hollow.supported = true
-		self.parts.wpn_fps_smg_schakal_s_hollow.stats = stocks.folder_acc_stats
-		self.parts.wpn_fps_smg_schakal_s_hollow.custom_stats = stocks.folder_acc_stats
+		self.parts.wpn_fps_smg_schakal_s_hollow.stats = deep_clone(stocks.folder_acc_stats)
+		self.parts.wpn_fps_smg_schakal_s_hollow.custom_stats = deep_clone(stocks.folder_acc_stats)
 
 		--(Jackal) Tactical Stock
 		self.parts.wpn_fps_smg_schakal_s_recon.supported = true
-		self.parts.wpn_fps_smg_schakal_s_recon.stats = stocks.folder_rec_stats
-		self.parts.wpn_fps_smg_schakal_s_recon.custom_stats = stocks.folder_rec_stats
+		self.parts.wpn_fps_smg_schakal_s_recon.stats = deep_clone(stocks.folder_rec_stats)
+		self.parts.wpn_fps_smg_schakal_s_recon.custom_stats = deep_clone(stocks.folder_rec_stats)
 
 		self.wpn_fps_shot_minibeck.override = {
 			wpn_fps_upg_a_slug = {
@@ -20141,7 +20404,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
-					concealment = -5
+					concealment = -2
 				},
 				custom_stats = {				
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
@@ -20193,7 +20456,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					recoil = -25,
 					spread = 5,
 					spread_multi = {1, 1},	
-					concealment = -7,
+					concealment = -5,
 					damage = 60
 				},
 				custom_stats = {
@@ -20252,7 +20515,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					value = 10,
 					recoil = -25,
 					spread = 5,
-					concealment = -7,
+					concealment = -5,
 					spread_multi = {1, 1},	
 					total_ammo_mod = -50,
 					damage = 90
@@ -20890,33 +21153,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 		self.wpn_fps_ass_ak5_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
 		self.wpn_fps_ass_ak5.override.wpn_fps_ass_s552_s_m4 = { a_obj = "a_s_fix" }
 		self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_standard = {
-			stats = stocks.folder_to_adj_acc1_stats,
-			custom_stats = stocks.folder_to_adj_acc1_stats,
+			stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats),
 			a_obj = "a_s_fix"
 		}
 		self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_pts = {
-			stats = stocks.folder_to_adj_acc2_stats,
-			custom_stats = stocks.folder_to_adj_acc2_stats,
+			stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats),
 			a_obj = "a_s_fix"
 		}
 		self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_crane = {
-			stats = stocks.folder_to_adj_rec_stats,
-			custom_stats = stocks.folder_to_adj_rec_stats,
+			stats = deep_clone(stocks.folder_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
 			a_obj = "a_s_fix"
 		}
 		self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_mk46 = {
-			stats = stocks.folder_to_adj_rec_stats,
-			custom_stats = stocks.folder_to_adj_rec_stats,
+			stats = deep_clone(stocks.folder_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
 			a_obj = "a_s_fix"
 		}
 		self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_ubr = {
-			stats = stocks.folder_to_hvy_rec2_stats,
-			custom_stats = stocks.folder_to_hvy_rec2_stats,
+			stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+			custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
 			a_obj = "a_s_fix"
 		}
 		self.wpn_fps_ass_ak5.override.wpn_fps_snp_tti_s_vltor = {
-			stats = stocks.folder_to_hvy_acc2_stats,
-			custom_stats = stocks.folder_to_hvy_acc2_stats,
+			stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+			custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 			a_obj = "a_s_fix"
 		}
 	end

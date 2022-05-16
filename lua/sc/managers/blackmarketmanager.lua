@@ -17,6 +17,7 @@ function BlackMarketManager:equipped_armor(chk_armor_kit, chk_player_state)
 end
 
 --fire rate multiplier blackmarket statchart stuff	
+--[[
 function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, detection_risk, current_state, blueprint)
 	local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name)
 	local tweak_data = tweak_data.weapon
@@ -27,7 +28,7 @@ function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, det
 	local multiplier = 1
 	local rof_multiplier = 1
 	self._block_eq_aced = nil
-
+	
 	for part_id, stats in pairs(custom_stats) do
 		if stats.rof_mult then
 			rof_multiplier = rof_multiplier * stats.rof_mult
@@ -43,6 +44,7 @@ function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, det
 								
 	return multiplier
 end
+--]]
 
 function BlackMarketManager:damage_multiplier(name, categories, silencer, detection_risk, current_state, blueprint)
 	local multiplier = 1

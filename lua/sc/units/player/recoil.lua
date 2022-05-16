@@ -172,8 +172,6 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 end
 
 
---Ripped from PlayerStandard, lol
---Will probably downsize this later if nothing other than the recoil anims are needed
 local ANIM_STATES = PlayerStandard.ANIM_STATES
 function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 	self:set_anims_enabled(true)

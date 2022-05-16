@@ -1563,7 +1563,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_menu_ro_grip"] = "Revolver Ocelot",
 
 			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
-			
+		})
+	end
+
+	local cute = math.rand(1)
+	local funny = 0.10
+	if cute <= funny then
+		LocalizationManager:add_localized_strings({	
 			--ебанулся. нихуя не знаю японский, соре если не так затранскрибировал 
 			["bm_w_m16"] = "Итироку",
 			["bm_m16_sc_desc"] = "\"Я не проиграю!\"\n\nУченица средней школы в академии Сейшоу.\nЭнергичная и невоспитанная звезда школы.",
@@ -1601,7 +1607,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_mosin_sc_desc"] = "\"Пора в комнату саморефлексии...\"\n\nНастоящая царица из Российской Империи. Старая подруга Томпсон-сенсея.",
 			["bm_w_saiga"] = "Сайга-чан",
 			["bm_saiga_sc_desc"] = "\"Вы все как мышки в мышеловке, ня!\"\n\nНадменная, самоуверенная и гиперактивная, Сайга - громкая и мощная пушка.",
---]]
 		})
 	end
 	

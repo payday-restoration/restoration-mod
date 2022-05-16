@@ -3397,7 +3397,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		tick_delay = 0.25,
 		start_delay = 0.4
 	}
-	self.melee_weapons.ostry.stats.tick_damage = 2	
 	self.melee_weapons.ostry.stats.min_damage = 6
 	self.melee_weapons.ostry.stats.max_damage = 6
 	self.melee_weapons.ostry.stats.min_damage_effect = 0.9

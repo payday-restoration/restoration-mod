@@ -1592,8 +1592,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_menu_ro_grip"] = "리볼버 오셀롯",
 
 			["bm_m134_sc_desc"] = "잠긴 메타포...",
-			
-			
+		})
+	end
+
+	local cute = math.rand(1)
+	local funny = 0.10
+	if cute <= funny then
+		LocalizationManager:add_localized_strings({	
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "이치로쿠",
@@ -1650,8 +1655,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_spas12_sc_desc"] = "\"이 바보야! 완전히 드러났잖아!\"\n\n에노시마의 공립학교에 다니는 중학생.",
 					["bm_w_benelli"] = "베넬리 M4",
 						["bm_spas12_sc_desc"] = "\"분위기를 못 읽는 건 한계가 있다고!\"\n\n에노시마의 공립학교에 다니는 중학생.",
-				
-
 		})
 	end	
 	

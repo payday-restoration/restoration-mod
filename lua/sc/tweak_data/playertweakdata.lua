@@ -534,6 +534,18 @@ function PlayerTweakData:_init_x_sr2()
 	self.stances.x_sr2.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+-- CZ92
+local default_init_czech = PlayerTweakData._init_czech
+function PlayerTweakData:_init_czech()
+	default_init_czech(self)
+	local pivot_shoulder_translation = Vector3(8.66723, 30.1231, -3.12016)
+	local pivot_shoulder_rotation = Rotation(3.37549e-05, 0.000953238, -0.000301382)
+	local pivot_head_translation = Vector3(0, 34, 0)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.czech.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.czech.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
 
 Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
 	for wep_id, i in pairs(self.stances) do

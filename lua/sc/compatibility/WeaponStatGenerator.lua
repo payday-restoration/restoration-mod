@@ -138,7 +138,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.suppression = 10
-		stats.recoil = 26 - math.max(math.floor((rpm - 600)/50), 0)
+		stats.recoil = 86 - math.max(math.floor((rpm - 600)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14},
 			{8,8.5,10,12,15,20},
@@ -151,7 +151,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 20
 		stats.AMMO_MAX = 180
 		stats.suppression = 9
-		stats.recoil = 26 - math.max(math.floor((rpm - 550)/50), 0)
+		stats.recoil = 86 - math.max(math.floor((rpm - 550)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14},
 			{8,8.5,10,12,15,20},
@@ -164,7 +164,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.suppression = 8
-		stats.recoil = 26 - math.max(math.floor((rpm - 400)/50), 0)
+		stats.recoil = 86 - math.max(math.floor((rpm - 400)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13},
 			{7.5,8,8.5,10,12,15,20},
@@ -177,7 +177,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 30
 		stats.AMMO_MAX = 120
 		stats.suppression = 7
-		stats.recoil = 26 - math.max(math.floor((rpm - 350)/50), 0)
+		stats.recoil = 86 - math.max(math.floor((rpm - 350)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13,12},
 			{7.5,8,8.5,10,12,15,20},
@@ -190,7 +190,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 45
 		stats.AMMO_MAX = 80
 		stats.suppression = 6
-		stats.recoil = 26 - math.max(math.floor((rpm - 300)/50), 0)
+		stats.recoil = 86 - math.max(math.floor((rpm - 300)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13,12,11},
 			{6,7,7.5,8,8.5,10,12,15,20},
@@ -203,7 +203,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 60
 		stats.AMMO_MAX = 60
 		stats.suppression = 5
-		stats.recoil = 26 - math.max(math.floor((rpm - 100)/50), 0)
+		stats.recoil = 86 - math.max(math.floor((rpm - 100)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{21,20,19,18,17,16,15,14,13,12},
 			{6,7,7.5,8,8.5,10,12,15,20},

@@ -1071,6 +1071,10 @@
 	<!--Test skin texture for M4 Drum, remove? I don't know how well this works.-->
 	<texture			path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum_df_cc" force="true"/>
 	
+	<!--MP5 drum-->
+	<!--I am not a texture artist, anyone else is welcome to make a better one -DMC-->
+	<texture			path="units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_drum_df_cc" force="true"/>
+	
 	<!--Not getting rid of my NPC weps dammit-->
 	<!--NPC M4-->
 	<model				path="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" force="true"/>

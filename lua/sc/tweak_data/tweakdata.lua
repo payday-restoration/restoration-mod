@@ -413,7 +413,6 @@ tweak_data.projectiles.dada_com.damage = 80
 tweak_data.projectiles.dada_com.player_damage = 40
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
-tweak_data.projectiles.dada_com.cluster = true
 
 --Molliest of tovs--
 tweak_data.projectiles.molotov.damage = 3

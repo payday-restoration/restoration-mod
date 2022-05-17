@@ -107,7 +107,7 @@
 		</stance>
 	</Weapon>
 	<Weapon>
-		<weapon id="osipr_gl" based_on="contraband_m203" CLIP_AMMO_MAX="6" NR_CLIPS_MAX="2" use_stance="osipr_gl">
+		<weapon id="osipr_gl" based_on="contraband_m203" CLIP_AMMO_MAX="6" NR_CLIPS_MAX="2" use_stance="osipr_gl" weapon_hold="osipr">
 			<stats/>
 			<animations/>
 			<sounds fire="arbiter_fire"/>
@@ -125,7 +125,6 @@
 				<shoulders rotation="-0.0704717 -0.0466794 0.00424314 -0.996412" translation="-4.248 2.504 -10.217"/>
 			</crouched>
 			<steelsight>
-				<vel_overshot yaw_neg="3" yaw_pos="-3" pitch_neg="-10" pitch_pos="2"/>
 				<shoulders rotation="-0.000745315 0.00548101 0.00093835 -0.999984" translation="-10.8 -24 -4.5"/>
 			</steelsight>
 			<standard>

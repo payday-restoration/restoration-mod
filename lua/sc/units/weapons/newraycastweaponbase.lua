@@ -932,7 +932,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	--]]
 	
 	--Compute final damage.
-	return math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end))) * damage, minimum_damage * damage)
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start))) * damage, minimum_damage * damage)
 end
 
 function NewRaycastWeaponBase:reload_exit_expire_t()

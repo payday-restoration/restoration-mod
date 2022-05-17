@@ -2934,12 +2934,15 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fairbair.stats.concealment = 29
 
 	--FREEEEEEEDOM--
+	self.melee_weapons.freedom.info_id = "bm_melee_great_info"
 	self.melee_weapons.freedom.stats.min_damage = 6
 	self.melee_weapons.freedom.stats.max_damage = 12.1
 	self.melee_weapons.freedom.stats.min_damage_effect = 1
 	self.melee_weapons.freedom.stats.max_damage_effect = 1.1
 	self.melee_weapons.freedom.stats.charge_time = 1.95
 	self.melee_weapons.freedom.stats.range = 225
+	self.melee_weapons.freedom.stats.charge_bonus_start = 0.75
+	self.melee_weapons.freedom.stats.charge_bonus_range = 100
 	self.melee_weapons.freedom.stats.concealment = 23
 
 	--Hammer Hammer Toilet Slammer--
@@ -3224,12 +3227,15 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.morning.stats.concealment = 25
 	
 	--C/C quality master race--
+	self.melee_weapons.great.info_id = "bm_melee_great_info"
 	self.melee_weapons.great.stats.min_damage = 6
 	self.melee_weapons.great.stats.max_damage = 12.1
 	self.melee_weapons.great.stats.min_damage_effect = 0.9
 	self.melee_weapons.great.stats.max_damage_effect = 1
 	self.melee_weapons.great.stats.charge_time = 1.85
 	self.melee_weapons.great.stats.range = 215
+	self.melee_weapons.great.stats.charge_bonus_start = 0.75
+	self.melee_weapons.great.stats.charge_bonus_range = 100
 	self.melee_weapons.great.stats.concealment = 24
 
 	--Selfies are probably one of the most obnoxious things to come with the new millennials--
@@ -3392,6 +3398,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--how does this spin when it has a handle--
 	self.melee_weapons.ostry.info_id = "bm_melee_ostry_info"
+	self.melee_weapons.ostry.melee_charge_shaker = ""
 	self.melee_weapons.ostry.chainsaw = {
 		tick_damage = 1.8,
 		tick_delay = 0.25,

@@ -1479,6 +1479,9 @@
 	<animation			path="anims/fps/melee/garber/melee_charge" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_charge_var2" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_start" force="true"/>
+	
+	<!-- Bat stab anims -->
+	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>
 
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>

@@ -693,7 +693,9 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
 			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)
-			self._next_fire_allowed = math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire)
+			local current_state_name = managers.player:current_state()
+			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
+			self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire))
 			self._macno = nil
 			multiplier = 1
 		end

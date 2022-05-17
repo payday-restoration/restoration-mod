@@ -864,8 +864,8 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	--Lets skills give faster melee charge and swing speeds.
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t) 
-	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_start or 2 --i.e. never get the bonus
-	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_speed or 1
+	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 2 --i.e. never get the bonus
+	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_speed or 1
 	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
 	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
 	speed = speed * anim_speed
@@ -893,7 +893,9 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		bayonet_melee = true
 	end
 	
+	self._melee_charge_bonus_range = false
 	if charge_lerp_value and charge_lerp_value > charge_bonus_start then
+		self._melee_charge_bonus_range = true
 		speed = math.max(speed, speed * (charge_lerp_value * charge_bonus_speed))
 		melee_damage_delay = math.min(melee_damage_delay, melee_damage_delay / (charge_lerp_value * charge_bonus_speed))
 		melee_expire_t = math.min(melee_expire_t, melee_expire_t / (charge_lerp_value * charge_bonus_speed))
@@ -945,7 +947,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		end
 	else
 		local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars
-		local anim_attack_charged_amount = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_amount or 0.5 --At half charge, use the charge variant
+		local anim_attack_charged_amount = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 --At half charge, use the charge variant
 		local anim_attack_charged_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_vars
 		local anim_attack_left_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_left_vars
 		local anim_attack_right_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_right_vars
@@ -995,6 +997,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		self._camera_unit:base():play_anim_melee_item(melee_item_tweak_anim)
 	end
 end
+
 
 --Updates burst fire and minigun spinup.
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
@@ -1177,6 +1180,20 @@ function PlayerStandard:_update_slide_locks()
 		end
 	end
 end	
+
+
+function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
+	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 175
+	local charge_bonus_range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_range or 0
+	if self._melee_charge_bonus_range and self._melee_charge_bonus_range == true then
+		range = range + charge_bonus_range
+	end
+	local from = self._unit:movement():m_head_pos()
+	local to = from + self._unit:movement():m_head_rot():y() * range
+
+	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
+end
 
 local melee_vars = {
 	"player_melee",

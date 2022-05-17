@@ -2,7 +2,6 @@
 	<object file="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword" />
 	<dependencies>
 		<depends_on bnk="soundbanks/melee_great"/>
-		<depends_on bnk="soundbanks/melee_morning"/>
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />

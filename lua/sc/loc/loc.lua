@@ -1266,6 +1266,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals double damage when attacking enemies from behind.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic.", -- Psycho Knife
 		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic.", -- Headless Dozer Sword
+		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharged attacks perform a thrust attack, extending range by 1 meter.", -- Great Sword
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
 		["bm_melee_iceaxe_info"] = "Deals 50% more headshot damage.", -- Icepick
 		["bm_melee_mining_pick_info"] = "Deals 50% more headshot damage.", --Gold Fever (Pickaxe)

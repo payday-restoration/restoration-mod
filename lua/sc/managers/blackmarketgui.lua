@@ -32,6 +32,10 @@ local function format_round(num, round_value)
 	return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
 end
 
+local function format_round_2(num, round_value)
+	return round_value and tostring(math.round(num)) or string.format("%.2f", num)
+end
+
 
 function BlackMarketGui:populate_mods(data)
 	local new_data = {}
@@ -2782,8 +2786,9 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					suffix = managers.localization:text("menu_seconds_suffix_short")
 				},
 				{
-					range = true,
-					name = "range"
+					name = "range",
+					num_decimals = 2,
+					suffix = "m"
 				},
 				{
 					index = true,
@@ -3690,6 +3695,9 @@ function BlackMarketGui:show_stats()
 
 			value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
 
+			if stat.name == "range" then
+				value = value / 100
+			end
 			if self._slot_data.name == equipped_item then
 				local base, base_min, base_max, skill, skill_min, skill_max = nil
 
@@ -3702,9 +3710,13 @@ function BlackMarketGui:show_stats()
 
 				base = base_stats[stat.name].value
 				skill = skill_stats[stat.name].value
+				if stat.name == "range" then
+					base = base / 100
+					skill = skill / 100
+				end
 				local format_string = "%0." .. tostring(stat.num_decimals or 0) .. "f"
-				local equip_text = value and format_round(value, stat.round_value)
-				local base_text = base and format_round(base, stat.round_value)
+				local equip_text = value and (stat.name == "range" and format_round_2(value, stat.round_value)) or format_round(value, stat.round_value)
+				local base_text = base and (stat.name == "range" and format_round_2(base, stat.round_value)) or format_round(base, stat.round_value)
 				local skill_text = skill_stats[stat.name].value and format_round(skill_stats[stat.name].value, stat.round_value)
 				local base_min_text = base_min and format_round(base_min, true)
 				local base_max_text = base_max and format_round(base_max, true)
@@ -3779,9 +3791,12 @@ function BlackMarketGui:show_stats()
 				end
 
 				equip = math.max(equip_base_stats[stat.name].value + equip_mods_stats[stat.name].value + equip_skill_stats[stat.name].value, 0)
+				if stat.name == "range" then
+					equip = equip / 100
+				end
 				local format_string = "%0." .. tostring(stat.num_decimals or 0) .. "f"
-				local equip_text = equip and format_round(equip, stat.round_value)
-				local total_text = value and format_round(value, stat.round_value)
+				local equip_text = equip and (stat.name == "range" and format_round_2(equip, stat.round_value)) or format_round(equip, stat.round_value)
+				local total_text = value and (stat.name == "range" and format_round_2(value, stat.round_value)) or format_round(value, stat.round_value)
 				local equip_min_text = equip_min and format_round(equip_min, true)
 				local equip_max_text = equip_max and format_round(equip_max, true)
 				local total_min_text = value_min and format_round(value_min, true)

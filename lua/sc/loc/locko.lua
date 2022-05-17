@@ -1299,11 +1299,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_prison"] = "교도소 복장",
 		["bm_suit_prison_desc"] = "당신은 구금되었습니다!",
 
-		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
-		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",
+		["bm_suit_var_jumpsuit_flecktarn"] = "플렉탄 카모",
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "두 유럽 국가에서 사용하는 클래식 위장으로, 숲이 우거진 환경과 쉽게 조화를 이루는 능력으로 전투 효율성이 입증되었습니다. 확실히 도시 지역에서는 효과가 없지만 시골 지역에서는 사람들의 눈을 속이는 것이 가능합니다.",
 
-		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
-		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",
+		["bm_suit_var_jumpsuit_flatgreen"] = "끈적 끈적한 녹색",
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 파괴된 쓰레기 트럭 근처에서 회수해 소유한다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭으로 파괴되고 이 죄수복만 남았기 때문에 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있습니다.",
 
 		--New menu stats--
 		["bm_menu_deflection"] = "굴절",

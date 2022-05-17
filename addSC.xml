@@ -1063,13 +1063,6 @@
 	
 	<!--Saiga Drum Mag fix-->
 	<material_config	path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq"/>
-		
-	<!--M4 Drum Mag fix (note: could probably add a proper THQ config now)-->
-	<material_config	path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
-	<model				path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
-	
-	<!--Test skin texture for M4 Drum, remove? I don't know how well this works.-->
-	<texture			path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum_df_cc" force="true"/>
 	
 	<!--MP5 drum-->
 	<!--I am not a texture artist, anyone else is welcome to make a better one -DMC-->

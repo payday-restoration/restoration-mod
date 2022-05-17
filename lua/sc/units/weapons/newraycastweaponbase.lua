@@ -928,7 +928,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	log("DAMAGE: " .. tostring( damage * 10 ))
 	log("DAMAGE MIN: " .. tostring( damage * minimum_damage * 10 ))
 	log("HIT AT: " .. tostring( distance / 100 ) .. " METERS")
-	log("DAMAGE DONE: " .. tostring( (math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end))) * damage, minimum_damage * damage)) * 10 ) .. "\n\n")
+	log("DAMAGE DONE: " .. tostring( (math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start))) * damage, minimum_damage * damage)) * 10 ) .. "\n\n")
 	--]]
 	
 	--Compute final damage.

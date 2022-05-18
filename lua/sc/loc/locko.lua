@@ -1262,6 +1262,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 두 배의 피해를 줍니다.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼뜨립니다.", -- Psycho Knife
 		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼뜨립니다..", -- Headless Dozer Sword
+		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격은 스러스트 공격을 수행하여 사거리를 1미터 확장시킵니다.", -- Great Sword
 		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.", -- Pounder
 		["bm_melee_iceaxe_info"] = "헤드샷 피해를 50% 많이 줍니다.", -- Icepick
 		["bm_melee_mining_pick_info"] = "헤드샷 피해를 50% 많이 줍니다.", --Gold Fever (Pickaxe)
@@ -1300,10 +1301,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_prison_desc"] = "당신은 구금되었습니다!",
 
 		["bm_suit_var_jumpsuit_flecktarn"] = "플렉탄 카모",
-		["bm_suit_var_jumpsuit_flecktarn_desc"] = "두 유럽 국가에서 사용하는 클래식 위장으로, 숲이 우거진 환경과 쉽게 조화를 이루는 능력으로 전투 효율성이 입증되었습니다. 확실히 도시 지역에서는 효과가 없지만 시골 지역에서는 사람들의 눈을 속이는 것이 가능합니다.",
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "두 유럽 국가에서 사용했던 클래식 위장으로, 숲이 우거진 환경과 쉽게 조화를 이루는 능력으로 전투 효율성이 입증되었습니다. 확실히 도시 지역에서는 효과가 없지만 시골 지역에서는 사람들의 눈을 속이는 것이 가능합니다.",
 
 		["bm_suit_var_jumpsuit_flatgreen"] = "끈적 끈적한 녹색",
-		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 파괴된 쓰레기 트럭 근처에서 회수해 소유한다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭으로 파괴되고 이 죄수복만 남았기 때문에 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있습니다.",
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 소유했다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭으로 파괴되고 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있지만 이 복장만은 남았기 때문에 파괴된 쓰레기 트럭 근처에서 회수 되었습니다.",
 
 		--New menu stats--
 		["bm_menu_deflection"] = "굴절",

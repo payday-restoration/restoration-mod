@@ -1838,10 +1838,7 @@ function CopDamage:die(attack_data)
 	end
 
 	if self._char_tweak.failure_on_death then
-		if managers.platform:presence() == "Playing" then
-			managers.network:session():send_to_peers("mission_ended", false)
-			game_state_machine:change_state_by_name("gameoverscreen")
-		end
+		managers.groupai:state():set_point_of_no_return_timer(5, 0)
 	end
 
 	if self._char_tweak.do_autumn_blackout then

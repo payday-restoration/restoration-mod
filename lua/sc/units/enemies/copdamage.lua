@@ -207,10 +207,7 @@ function CopDamage:_spawn_head_gadget(params)
 			effect = ids_func("effects/payday2/particles/impacts/metal_impact_pd2"),
 			parent = head_object_get		
 		})
-		--yes this is all necessary
 		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
 		sound_ext:play("knife_hit_gen", nil, nil)
 		sound_ext:play("knuckles_hit_gen", nil, nil)
 		sound_ext:play("knuckles_hit_gen", nil, nil)
@@ -813,6 +810,7 @@ function CopDamage:damage_bullet(attack_data)
 				normal = attack_data.col_ray.ray
 			})			
 			--new sound below
+			self._unit:sound():play("knuckles_hit_gen", nil, nil)
 			self._unit:sound():play("knife_equip", nil, nil)
 		
 			return

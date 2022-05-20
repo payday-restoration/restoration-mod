@@ -152,10 +152,7 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
-		10,
-		10,
-		11,
-		11,
+		12,
 		12,
 		12,
 		13,
@@ -163,7 +160,10 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 		14,
 		14,
 		15,
-		15
+		15,
+		20,
+		20,
+		25
 	}
 
 	skirmish_data.recon.force = {
@@ -474,7 +474,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_TIT_Tank[10] = 0.0
 		assault_groups.SKM_single_spooc[10] = 0.025
 	end
-
 
 	--Split assault group tweakdata into seperate groups for each wave.
 	local real_assault_groups = {}

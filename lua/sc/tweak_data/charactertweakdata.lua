@@ -2944,6 +2944,9 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.flammable = true
 	self.boom.use_animation_on_fire_damage = true
 	self.boom.damage.explosion_damage_mul = 0.5
+	self.boom.damage.dot_damage_mul = 0.5
+	self.boom.damage.fire_damage_mul = 0.5
+	self.boom.damage.fire_pool_damage_mul = 0.5
 	self.boom.damage.hurt_severity = presets.hurt_severities.boom
 	self.boom.headshot_dmg_mul = 1.5
 	self.boom.bag_dmg_mul = 6
@@ -4578,6 +4581,12 @@ function CharacterTweakData:_presets(tweak_data)
 			{none = 1}
 		}
 	}
+	presets.hurt_severities.boom.poison = {
+		health_reference = 1,
+		zones = {
+			{none = 1}
+		}
+	}
 	
 	--Titan Grenadier
 	presets.hurt_severities.boom_titan = deep_clone(presets.hurt_severities.base)
@@ -4611,6 +4620,12 @@ function CharacterTweakData:_presets(tweak_data)
 				moderate = 1,
 				heavy = 0
 			}
+		}
+	}	
+	presets.hurt_severities.boom_titan.poison = {
+		health_reference = 1,
+		zones = {
+			{none = 1}
 		}
 	}	
 	

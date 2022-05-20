@@ -1,3 +1,6 @@
+
+Month = os.date("%m")
+Day = os.date("%d")	
 --This is probs unused, but setting to DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 	self.special_unit_spawn_limits = {
@@ -402,7 +405,81 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	--This portion of the code will need to be cut and reworked once infinite is in progress.
 	--Might be ideal to use/abuse lua virtual tables and vary them based on captain type.
 	local wave_9_captain = math.random()
-
+	
+	
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+	if wave_9_captain < 0.96 then --Spooky halloween boss.
+		self.captain = "SKM_HVH_Boss_W9"
+		assault_groups.SKM_Light_Swat[10] = 0.35
+		assault_groups.SKM_Heavy_Swat[10] = 0.25
+		assault_groups.SKM_Shields[10] = 0.06
+		assault_groups.SKM_Shields_Booms[10] = 0.04
+		assault_groups.SKM_Tazers[10] = 0.06
+		assault_groups.SKM_Booms[10] = 0.04
+		assault_groups.SKM_HRTs[10] = 0.15
+		assault_groups.SKM_BLACK_Tank[10] = 0.0
+		assault_groups.SKM_GREEN_Tank[10] = 0.0
+		assault_groups.SKM_SKULL_Tank[10] = 0.0
+		assault_groups.SKM_TIT_Tank[10] = 0.0
+		assault_groups.SKM_single_spooc[10] = 0.05
+	elseif wave_9_captain < 0.24 then --autumn
+		self.captain = "SKM_Cap_Autumn_W9"
+		assault_groups.SKM_Light_Swat[10] = 0.35
+		assault_groups.SKM_Heavy_Swat[10] = 0.25
+		assault_groups.SKM_Shields[10] = 0.14
+		assault_groups.SKM_Shields_Booms[10] = 0.01
+		assault_groups.SKM_Tazers[10] = 0.09
+		assault_groups.SKM_Booms[10] = 0.01
+		assault_groups.SKM_HRTs[10] = 0.1
+		assault_groups.SKM_BLACK_Tank[10] = 0.015
+		assault_groups.SKM_GREEN_Tank[10] = 0.015
+		assault_groups.SKM_SKULL_Tank[10] = 0.015
+		assault_groups.SKM_TIT_Tank[10] = 0.005
+		assault_groups.SKM_single_spooc[10] = 0.0
+	elseif wave_9_captain < 0.48 then --summers
+		self.captain = "SKM_Cap_Summers_W9"
+		assault_groups.SKM_Light_Swat[10] = 0.37
+		assault_groups.SKM_Heavy_Swat[10] = 0.31
+		assault_groups.SKM_Shields[10] = 0.05
+		assault_groups.SKM_Shields_Booms[10] = 0.02
+		assault_groups.SKM_Tazers[10] = 0.03
+		assault_groups.SKM_Booms[10] = 0.02
+		assault_groups.SKM_HRTs[10] = 0.15
+		assault_groups.SKM_BLACK_Tank[10] = 0.0075
+		assault_groups.SKM_GREEN_Tank[10] = 0.0075
+		assault_groups.SKM_SKULL_Tank[10] = 0.0075
+		assault_groups.SKM_TIT_Tank[10] = 0.0025
+		assault_groups.SKM_single_spooc[10] = 0.025
+	elseif wave_9_captain < 0.72 then --winters
+		self.captain = "SKM_Cap_Winters_W9"
+		assault_groups.SKM_Light_Swat[10] = 0.35
+		assault_groups.SKM_Heavy_Swat[10] = 0.25
+		assault_groups.SKM_Shields[10] = 0.0
+		assault_groups.SKM_Shields_Booms[10] = 0.0
+		assault_groups.SKM_Tazers[10] = 0.06
+		assault_groups.SKM_Booms[10] = 0.04
+		assault_groups.SKM_HRTs[10] = 0.2
+		assault_groups.SKM_BLACK_Tank[10] = 0.015
+		assault_groups.SKM_GREEN_Tank[10] = 0.015
+		assault_groups.SKM_SKULL_Tank[10] = 0.015
+		assault_groups.SKM_TIT_Tank[10] = 0.005
+		assault_groups.SKM_single_spooc[10] = 0.05
+	else --spring
+		self.captain = "SKM_Cap_Spring_W9"
+		assault_groups.SKM_Light_Swat[10] = 0.35
+		assault_groups.SKM_Heavy_Swat[10] = 0.25
+		assault_groups.SKM_Shields[10] = 0.06
+		assault_groups.SKM_Shields_Booms[10] = 0.04
+		assault_groups.SKM_Tazers[10] = 0.06
+		assault_groups.SKM_Booms[10] = 0.04
+		assault_groups.SKM_HRTs[10] = 0.15
+		assault_groups.SKM_BLACK_Tank[10] = 0.0
+		assault_groups.SKM_GREEN_Tank[10] = 0.0
+		assault_groups.SKM_SKULL_Tank[10] = 0.0
+		assault_groups.SKM_TIT_Tank[10] = 0.0
+		assault_groups.SKM_single_spooc[10] = 0.05
+	end
+   else	
 	if wave_9_captain < 0.24 then --autumn
 		self.captain = "SKM_Cap_Autumn_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
@@ -474,6 +551,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_TIT_Tank[10] = 0.0
 		assault_groups.SKM_single_spooc[10] = 0.025
 	end
+  end	
 
 	--Split assault group tweakdata into seperate groups for each wave.
 	local real_assault_groups = {}

@@ -2173,7 +2173,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
-			["menu_speedy_reload_desc_sc"] = "베이직: ##$basic##\n경기관총으로 양각대를 사용하는 동안 적에게 피해를 주면 ##40%## 확률로 적을 쓰러뜨립니다.\n\n참고: 스태거 효과는 캡틴, 불도저 및 실드에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n양각대를 사용하는 동안 받는 피해가 ##50%##만큼 감소합니다.",
+			["menu_speedy_reload_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총은 ##20%##의 확률로 적을 쓰러뜨립니다.\n\n양각대 사용 시 확률이 ##40%##로 증가합니다.\n\n참고: 스태거 효과는 캡틴, 불도저 및 실드에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 받는 피해가 ##12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##50%##으로 증가합니다.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",

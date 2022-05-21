@@ -78,7 +78,7 @@ function FragGrenade:_detonate_on_client(normal)
 	managers.explosion:explode_on_client(pos, math.UP, nil, self._damage, range, self._curve_pow, self._custom_params)
 
 	local grenade_tweak = tweak_data.projectiles[self._tweak_projectile_entry]
-	if grenade_tweak and  grenade_tweak.incendiary then
+	if grenade_tweak and grenade_tweak.incendiary then
 		self:_spawn_environment_fire(normal)
 	end
 end

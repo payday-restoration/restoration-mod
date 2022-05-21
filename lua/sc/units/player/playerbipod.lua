@@ -31,7 +31,8 @@ function PlayerBipod:_enter(enter_data)
 
 		if not tweak_data.custom_bipod == true then
 			PlayerStandard.ANIM_STATES.bipod = {
-				recoil = Idstring(tweak_data.animations.bipod_recoil .. "_" .. equipped_unit_id),
+				recoil = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id),
+				recoil_steelsight = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id),
 				recoil_enter = Idstring(tweak_data.animations.bipod_recoil_enter .. "_" .. equipped_unit_id),
 				recoil_loop = Idstring(tweak_data.animations.bipod_recoil_loop .. "_" .. equipped_unit_id),
 				recoil_exit = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id)
@@ -256,5 +257,9 @@ function PlayerBipod:_update_check_actions(t, dt)
 end
 
 function PlayerBipod:get_movement_state()
-	return "bipod"
+	if self._state_data.in_steelsight and self._state_data.in_full_steelsight then
+		return self._moving and "moving_steelsight" or "steelsight"
+	else
+		return "bipod"
+	end
 end

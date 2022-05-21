@@ -662,7 +662,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.temporary.dmg_dampener_outnumbered = {{0.9, 7}}
 				
-			--Far Away
+			--Far Away / Pigeon Shooter
 				--Basic
 					self.values.player.steelsight_move_speed_multiplier = {1.6} --Movement speed while ADSing.
 				--Ace

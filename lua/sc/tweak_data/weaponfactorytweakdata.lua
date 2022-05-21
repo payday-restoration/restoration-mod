@@ -741,13 +741,20 @@ local stocks = {
 		},
 
 
-	--DEFAULT NO STOCK (AFAIK only machine pistols like the G18 and C96 are like this)
-	--No Stock > Fixed ------Con +++Acc +++Stab
-	--stocks.add_fixed_stats
-		add_fixed_stats = {
+	--DEFAULT NO STOCK
+	--No Stock > Fixed ------Con ++Acc ++++Stab
+		add_fixed_rec_stats = {
 			value = 7,
 			spread = 2,
 			recoil = 8,
+			concealment = -6,
+			ads_speed_mult = 1.15
+		},
+	--No Stock > Fixed ------Con +++Acc +++Stab
+		add_fixed_stats = {
+			value = 7,
+			spread = 3,
+			recoil = 6,
 			concealment = -6,
 			ads_speed_mult = 1.15
 		},
@@ -4416,8 +4423,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		40
 	}
 	self.parts.wpn_fps_shot_shorty_s_solid_short.supported = true
-	self.parts.wpn_fps_shot_shorty_s_solid_short.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
-	self.parts.wpn_fps_shot_shorty_s_solid_short.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	self.parts.wpn_fps_shot_shorty_s_solid_short.stats = deep_clone(stocks.add_fixed_rec_stats)
+	self.parts.wpn_fps_shot_shorty_s_solid_short.custom_stats = deep_clone(stocks.add_fixed_rec_stats)
 	
 	--Vanilla No-stock
 	--self.parts.wpn_fps_shot_r870_s_nostock_vanilla.unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_solid"

@@ -7,6 +7,11 @@ end
 --If a grenade's tweakdata has a .cluster, then spawn the referenced grenade and throw it in a random direction.
 --Use .cluster_count to determine the number spawned (defaults to 1). 
 function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position, normal, collision_velocity, velocity, other_velocity, new_velocity, direction, damage, ...)
+	if self._detonated then
+		return
+	end
+
+	self._detonated = true
 	local pos = self._unit:position()
 	local normal = math.UP
 	local range = self._range
@@ -62,17 +67,18 @@ function FragGrenade:_spawn_environment_fire(normal)
 end
 
 function FragGrenade:_detonate_on_client(normal)
-	if self._detonated == false then
-		self._detonated = true
-		local pos = self._unit:position()
-		local range = self._range
+	if self._detonated then
+		return
+	end
+	self._detonated = true
+	local pos = self._unit:position()
+	local range = self._range
 	
-		managers.explosion:give_local_player_dmg(pos, range, self._player_damage, self._user_unit) --Pass in the user unit.
-		managers.explosion:explode_on_client(pos, math.UP, nil, self._damage, range, self._curve_pow, self._custom_params)
+	managers.explosion:give_local_player_dmg(pos, range, self._player_damage, self._user_unit) --Pass in the user unit.
+	managers.explosion:explode_on_client(pos, math.UP, nil, self._damage, range, self._curve_pow, self._custom_params)
 
-		local grenade_tweak = tweak_data.projectiles[self._tweak_projectile_entry]
-		if grenade_tweak.incendiary then
-			self:_spawn_environment_fire(normal)
-		end
+	local grenade_tweak = tweak_data.projectiles[self._tweak_projectile_entry]
+	if grenade_tweak.incendiary then
+		self:_spawn_environment_fire(normal)
 	end
 end

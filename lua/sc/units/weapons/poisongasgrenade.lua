@@ -36,6 +36,7 @@ function PoisonGasGrenade:_detonate(tag, unit, body, other_unit, other_body, pos
 	local tweak_entry = tweak_data.projectiles[grenade_entry]
 
 	managers.player:spawn_poison_gas(pos, normal, tweak_entry, self._unit)
+	managers.explosion:play_sound_and_effects(pos, normal, range, self._custom_params)
 	self._unit:body("static_body"):set_fixed()
 	self._unit:set_extension_update_enabled(Idstring("base"), false)
 
@@ -45,22 +46,6 @@ function PoisonGasGrenade:_detonate(tag, unit, body, other_unit, other_body, pos
 	self:remove_trail_effect()
 
 	if Network:is_server() then
-		local slot_mask = managers.slot:get_mask("explosion_targets")
-		local hit_units, splinters = managers.explosion:detect_and_give_dmg({
-			player_damage = 0,
-			hit_pos = pos,
-			range = 0, --range,
-			collision_slotmask = slot_mask,
-			curve_pow = self._curve_pow,
-			damage = 0, --self._damage,
-			ignore_unit = self._unit,
-			alert_radius = self._alert_radius,
-			user = self:thrower_unit() or self._unit,
-			owner = self._unit
-		})
-
-		managers.explosion:give_local_player_dmg(pos, range, self._player_damage)
-		managers.explosion:play_sound_and_effects(pos, normal, range, self._custom_params)
 		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
 	end
 end

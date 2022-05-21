@@ -631,11 +631,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Heavy Impact
 				--Basic
 					self.values.weapon.knock_down = {
-						0.4, --Ace
-						0.4 --Unused
+						0.2, --Ace
+						0.2 --Unused
 					}
 				--Ace
 					self.values.player.bipod_damage_reduction = {0.5}
+					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
 				self.values.weapon.automatic_head_shot_add = {0.3, 1}
@@ -3213,6 +3214,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_crouching_damage_reduction = {
+		name_id = "menu_player_crouching_damage_reduction",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "crouching_damage_reduction",
+			category = "player"
+		}
+	}	
 	self.definitions.player_store_temp_health_1 = {
 		name_id = "menu_player_store_temp_health",
 		category = "feature",

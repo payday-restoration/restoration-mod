@@ -17,7 +17,7 @@ function RaycastWeaponBase:init(...)
 		self._bullet_slotmask = managers.mutators:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
 		self._bullet_slotmask = managers.modifiers:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
 	end
-
+	
 	self._shield_pierce_damage_mult = 0.5
 end
 
@@ -308,8 +308,14 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	if alive(weapon_unit) and hit_unit:character_damage() and hit_unit:character_damage().damage_bullet then
 		local was_alive = not hit_unit:character_damage():dead()
 		if not blank then
-			--Knock down skill now checks for whether or not a bipod is active.
-			local knock_down = weapon_unit:base()._knock_down and managers.player._current_state == "bipod" and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
+			local knock_down
+			local can_knock_down = weapon_unit:base()._knock_down
+			if managers.player._current_state == "bipod" then
+				can_knock_down = can_knock_down * 2
+			end
+			if weapon_unit:base():is_category("smg", "lmg") then
+				knock_down = can_knock_down and can_knock_down > 0 and math.random() < can_knock_down
+			end				
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, weapon_unit:base()._use_armor_piercing, false, knock_down, weapon_unit:base()._stagger, weapon_unit:base()._variant)
 		end
 

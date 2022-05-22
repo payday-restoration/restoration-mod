@@ -310,7 +310,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		if not blank then
 			local knock_down
 			local can_knock_down = weapon_unit:base()._knock_down
-			if managers.player._current_state == "bipod" then
+			if can_knock_down and managers.player._current_state == "bipod" then
 				can_knock_down = can_knock_down * 2
 			end
 			if weapon_unit:base():is_category("smg", "lmg") then

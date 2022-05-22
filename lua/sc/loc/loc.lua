@@ -2414,7 +2414,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "Cleaner",
-			["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nYou deal ##15%## more damage to special enemies.\n\nACE: ##$pro##\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.\n\nYou deal an additional ##10%## more damage to special enemies.",
+			["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nYou deal ##15%## more damage to special enemies.\n\nNote: Does not apply Grenade Launchers or Rocket Launchers.\n\nACE: ##$pro##\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.\n\nYou deal an additional ##10%## more damage to special enemies.",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "Low Blow",
@@ -2552,7 +2552,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",
-		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##150%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##75%## more damage with firearms."
+		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##150%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##75%## more damage with ranged weapons.\n\nNote: Does not apply Grenade Launchers or Rocket Launchers."
 
 	})
 end)

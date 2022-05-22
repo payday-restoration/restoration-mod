@@ -1818,7 +1818,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_28"] = "클로커는 더 높은 난이도에서 제압을 수행할 때 연막탄을 사용합니다.",
 		
 		["loading_new_units_res_title"] = "레스트레이션 유닛 팁",
-		["loading_new_units_res_1"] = "타이탄 ASU 혹은 타이탄 HRT는 녹색 레이저 부착물을 제공하는 표시가 있는 근처의 아군에게 피해 보너스를 제공합니다.",
+		["loading_new_units_res_1"] = "옴니아 ASU는 주변 아군에게 노란색 레이저 부착물을 제공하여 표시하고 피해량 보너스를 제공합니다.",
 		["loading_new_units_res_2"] = "LPF는 근접 공격에 약합니다.",
 		["loading_new_units_res_3"] = "경무장 유닛은 LPF에 의해 과치료됩니다. 과치료된 적은 보라색 테두리으로 표시됩니다.",
 		["loading_new_units_res_4"] = "타이탄 클로커는 거의 보이지 않게 만드는 고급 은폐 장비를 가지고 있지만 여전히 표준 클로커 장비의 이전 모델의 주변 소음을 가지고 있습니다.",
@@ -2307,10 +2307,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 
-			--Hardware Expert--
-			["menu_hardware_expert_beta_sc"] = "하드웨어 전문가",
-			["menu_hardware_expert_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱의 수리속도가 ##20%##증가합니다.\n\n드릴의 소음이 ##65%## 줄어듭니다.\n\n에이스: ##$pro##\n드릴과 톱의 수리속도가 추가로 ##30%##증가합니다.\n\n드릴과 톱은 무소음으로 설치됩니다. 시민과 경비원이 드릴이나 톱을 봐야 경고합니다.",
-
+			--Silent Drilling--
+			["menu_hardware_expert_beta_sc"] = "조용한 드릴링",
+			["menu_hardware_expert_beta_desc_sc"] = "베이직: ##$basic##\n이제 ##드릴은 조용해집니다##, 시민과 경비원은 경고를 받으려면 드릴을 봐야 합니다.\n\n에이스: ##$pro##\n드릴과 톱의 수리속도가 ##50%##증가합니다.",
+			
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "데인저 클로즈",
 			["menu_combat_engineering_desc_sc"] = "베이직: ##$basic##\n트립 마인의 피해범위가 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n트립 마인의 공격력이 ##50%##만큼 증가합니다.",
@@ -2380,7 +2380,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Duck and Cover--
 			["menu_sprinter_beta_sc"] = "엄폐의 중요성",
-			["menu_sprinter_beta_desc_sc"] = "베이직: ##$basic##\n스태미나의 회복 시작 시간을 ##25%##만큼 앞당기고 회복률도 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 회피 미터는 1초마다 회피의 ##5%##만큼 채워집니다.\n\n웅크리고 있을 때 이동 속도가 ##10%##만큼 증가합니다. ",
+			["menu_sprinter_beta_desc_sc"] = "베이직: ##$basic##\n스태미나의 회복 시작 시간을 ##25%##만큼 앞당기고 회복률도 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 회피 미터는 1초마다 회피의 ##6%##만큼 채워집니다.\n\n웅크리고 있을 때 이동 속도가 ##10%##만큼 증가합니다. ",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",

@@ -143,18 +143,22 @@ function DOTManager:_damage_dot(dot_info)
 	local weapon_unit = dot_info.weapon_unit
 	local weapon_id = dot_info.weapon_id
 
-	if dot_info.variant and dot_info.variant == "poison" then
-		local result = PoisonBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
-
-		if result and alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().thrower_unit then
-			local is_dead = result.type == "death"
-
-			--Vanilla crash from this when enemy/corpse with active DoT despawns, disabled tracking for now
-			--weapon_unit:base():_check_achievements(dot_info.enemy_unit, is_dead, result.damage_percent or 0, 1, is_dead and 1 or 0, dot_info.variant)
-		end
-
-		if dot_info.hurt_animation and dot_info.apply_hurt_once then
-			dot_info.hurt_animation = false
+	if dot_info.variant then
+		if dot_info.variant == "poison" then
+			local result = PoisonBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
+	
+			if result and alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().thrower_unit then
+				local is_dead = result.type == "death"
+	
+				--Vanilla crash from this when enemy/corpse with active DoT despawns, disabled tracking for now
+				--weapon_unit:base():_check_achievements(dot_info.enemy_unit, is_dead, result.damage_percent or 0, 1, is_dead and 1 or 0, dot_info.variant)
+			end
+	
+			if dot_info.hurt_animation and dot_info.apply_hurt_once then
+				dot_info.hurt_animation = false
+			end
+		elseif dot_info.variant == "bleed" then
+			BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
 		end
 	end
 end

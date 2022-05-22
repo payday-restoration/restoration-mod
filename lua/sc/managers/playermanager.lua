@@ -80,8 +80,11 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	if speed_state then
 		multiplier = multiplier + self:upgrade_value("player", speed_state .. "_speed_multiplier", 1) - 1
+		
+		--Burglar
+		multiplier = multiplier + self:upgrade_value("player", speed_state .. "_speed_multiplier_burglar", 1) - 1
 	end
-
+		
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("speed") - 1
 	multiplier = multiplier + self:upgrade_value("player", "movement_speed_multiplier", 1) - 1
 

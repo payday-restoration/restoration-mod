@@ -1820,7 +1820,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_28"] = "Cloakers will make use of smoke grenades when performing take-downs on higher difficulties.",
 		--New Units Hints
 		["loading_new_units_res_title"] = "Restoration Unit Tips",
-		["loading_new_units_res_1"] = "Titan ASUs, or Titan HRTs will provide damage bonuses to nearby allies marked by giving them Green laser attachments.",
+		["loading_new_units_res_1"] = "OMNIA ASUs will provide damage bonuses to nearby allies marked by giving them Yellow laser attachments.",
 		["loading_new_units_res_2"] = "LPFs are weak to melee.",
 		["loading_new_units_res_3"] = "Lighter units will be Overhealed by the LPF. Overhealed enemies are outlined in purple.",
 		["loading_new_units_res_4"] = "Titan Cloakers have advanced cloaking gear that renders them nearly invisible, but it still has the ambient hum of older models of standard Cloaker gear.",
@@ -2309,9 +2309,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 
-			--Hardware Expert--
-			["menu_hardware_expert_beta_sc"] = "Hardware Expert",
-			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##20%## faster.\n\nYour drill makes ##65%## less noise.\n\nACE: ##$pro##\nYou fix drills and saws an additional ##30%## faster.\n\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to be alerted.",
+			--Silent Drilling--
+			["menu_hardware_expert_beta_sc"] = "Silent Drilling",
+			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYour ##drills are now silent##, civilians and guards have to see the drills in order to get alerted.\n\nACE: ##$pro##\nYou fix drills and saws ##50%## faster.",
 
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
@@ -2361,7 +2361,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_cleaner_beta_sc"] = "ECM Overdrive",
 			["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can now be ##used to open certain electronic doors##.\n\nACE: ##$pro##\nYour ECM jammer and feedback duration is increased by ##25%.##\n\n##Pagers are delayed by the ECM jammer.##",
 
-
 			--Systems Specialist--
 			["menu_second_chances_beta_sc"] = "Systems Specialist",
 			["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou interact with all computers, hacks, cameras, and ECMs ##25%## faster.\n\nACE: ##$pro##\nYour camera loop duration is increased by ##20## seconds.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",
@@ -2381,7 +2380,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--{
 			--Duck and Cover--
 			["menu_sprinter_beta_sc"] = "Duck and Cover",
-			["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##10%## boost in your movement speed when crouching. ",
+			["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##6%## of your dodge every second while crouching.\n\nYou gain a ##10%## boost in your movement speed when crouching.",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "Moving Target",

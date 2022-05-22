@@ -967,22 +967,21 @@ function SkillTreeTweakData:init(tweak_data)
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 
-			--Hardware Expert--
+			--Silent Drilling--
 			self.skills.hardware_expert = {
 				["name_id"] = "menu_hardware_expert_beta_sc",
 				["desc_id"] = "menu_hardware_expert_beta_desc_sc",
-				["icon_xy"] = {9, 6},
+				["icon_xy"] = {2, 6},
 				[1] = {
 					upgrades = {
-						"player_drill_fix_interaction_speed_multiplier_1",
-						"player_drill_alert"
+						"player_drill_alert",
+						"player_silent_drill"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_drill_fix_interaction_speed_multiplier_2",
-						"player_silent_drill"
+						"player_drill_fix_interaction_speed_multiplier_1"
 					},
 					cost = self.costs.pro
 				}
@@ -2403,7 +2402,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
-					"player_crouch_dodge_chance_1"
+					"player_crouch_dodge_chance_burglar_1"
 				},
 				cost = 200,
 				icon_xy = {1, 2},
@@ -2425,7 +2424,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_pick_lock_speed_multiplier",
-					"player_crouch_dodge_chance_2"
+					"player_crouch_dodge_chance_burglar_2"
 				},
 				cost = 1000,
 				icon_xy = {7, 3},
@@ -2447,7 +2446,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_1",
-					"player_crouch_speed_multiplier_2",
+					"player_crouch_speed_multiplier_burglar",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

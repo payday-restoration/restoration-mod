@@ -819,15 +819,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
 			
 		--Breacher--
-			--Hardware Expert
-				self.values.player.drill_fix_interaction_speed_multiplier = {
-					0.8, --Basic
-					0.5 --Ace
-				}
+			--Silent Drilling
 				--Basic
 					self.values.player.drill_alert_rad = {900}
-				--Ace
 					self.values.player.silent_drill = {true}
+				--Ace
+				self.values.player.drill_fix_interaction_speed_multiplier = {
+					0.5, --Aced
+					0.5 --Unused
+				}				
 				
 			--Danger Close
 				--Basic
@@ -982,7 +982,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.stamina_regen_timer_multiplier = {0.75}
 					self.values.player.stamina_regen_multiplier = {1.25}
 				--Ace
-				self.values.player.crouch_dodge_chance = {0.05, 0.10}
+				self.values.player.crouch_dodge_chance = {0.06, 0.10}
 				self.values.player.crouch_speed_multiplier = {
 					1.1,
 					1.2
@@ -1275,6 +1275,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
 
 	--Burglar
+	self.values.player.crouch_speed_multiplier_burglar = {
+		1.1
+	}	
+	self.values.player.crouch_dodge_chance_burglar = {0.05, 0.10}	
 
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
@@ -1773,6 +1777,34 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_crouch_speed_multiplier_burglar = {
+		incremental = true,
+		name_id = "menu_player_crouch_speed_multiplier_burglar",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "crouch_speed_multiplier_burglar",
+			category = "player"
+		}
+	}	
+	self.definitions.player_crouch_dodge_chance_burglar_1 = {
+		name_id = "menu_player_crouch_dodge_chance_burglar",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "crouch_dodge_chance_burglar",
+			category = "player"
+		}
+	}
+	self.definitions.player_crouch_dodge_chance_burglar_2 = {
+		name_id = "menu_player_crouch_dodge_chance_burglar",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "crouch_dodge_chance_burglar",
+			category = "player"
+		}
+	}	
 	self.definitions.player_drill_deploy_speed_multiplier = {
 		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
 		category = "feature",

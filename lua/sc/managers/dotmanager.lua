@@ -5,14 +5,16 @@ function DOTManager:update(t, dt)
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
 
-		if dot_info.dot_counter >= 0.5 then
+		if t > dot_info.dot_damage_received_time + self._dot_grace_period and dot_info.dot_counter >= 0.5 then
 			self:_damage_dot(dot_info)
 
 			dot_info.dot_counter = 0
 		end
 
-		if t > dot_info.dot_damage_received_time + dot_info.dot_length then
-			table_remove(self._doted_enemies, index)
+		local enemy_alive = alive(dot_info.enemy_unit) and dot_info.enemy_unit:character_damage() and not dot_info.enemy_unit:character_damage():dead()
+
+		if t > dot_info.dot_damage_received_time + dot_info.dot_length or not enemy_alive then
+			table.remove(self._doted_enemies, index)
 		else
 			dot_info.dot_counter = dot_info.dot_counter + dt
 		end

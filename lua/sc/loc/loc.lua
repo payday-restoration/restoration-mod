@@ -1034,9 +1034,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 200 damage, has a radius of 5 meters, and has a chance to tase enemies.",
 		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 300 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
 		["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6 Round",
-		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 10 seconds, deals 600 damage over 15 seconds, and stuns most enemies one time when caught in it.",
-		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 7.5 seconds, deals 440 damage over 11 seconds, and stuns most enemies one time when caught in it.",
-		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 5 seconds, deals 280 damage over 7 seconds, and stuns most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 10 seconds, deals 450 damage over 15 seconds, and interrupts most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 7.5 seconds, deals 330 damage over 11 seconds, and interrupts most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 5 seconds, deals 210 damage over 7 seconds, and interrupts most enemies one time when caught in it.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
@@ -1258,15 +1258,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
+		["bm_melee_katana_info"] = "This is no \"tool of justice\" in your hands.\n\nFully charged attacks come out 50% faster, allowing for a faster follow-up slash.\n\nWhile playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills. Cannot parry enemy attacks.", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills. Cannot parry enemy attacks.", --Kazaguruma
+		["bm_melee_charge_info"] = "Pitch your forks and fork up some pitches.\n\nSprinting forwards starts a sprint charge that deals 45 damage every 0.25 seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains 15% of your max stamina; a killing blow only drains 5%.\n\nYou cannot parry enemy attacks, even when not sprint charging.", -- Randal Pitchfork
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.\n\nCannot parry enemy attacks.", -- ROAMING FR-
+		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.\n\nCannot parry enemy attacks.", --Kazaguruma
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals double damage when attacking enemies from behind.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic.", -- Psycho Knife
 		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic.", -- Headless Dozer Sword
-		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharged attacks perform a thrust attack, extending range by 1 meter.", -- Great Sword
+		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharging an attack by at least 75% performs a thrusting attack, extending range by 1 meter.", -- Great Sword
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
 		["bm_melee_iceaxe_info"] = "Deals 50% more headshot damage.", -- Icepick
 		["bm_melee_mining_pick_info"] = "Deals 50% more headshot damage.", --Gold Fever (Pickaxe)
@@ -1274,7 +1275,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 bleed damage over three seconds.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 bleed damage over three seconds.", --Lucille Baseball Bat
 		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a 50% chance to deal 120 fire damage and interrupt enemies over 3 seconds.", --Gold Spoon
-		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
+		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 poison damage and carries a 50% chance to interrupt every 1/2 second over 4 seconds.", --Kunai, Syringe
 		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a 5% chance to deal ten times the damage and knockdown.",
 		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal double damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
@@ -1547,22 +1548,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
 
 		--Throwables--
-		["bm_concussion_desc"] = "Capacity: 3 \nRange: 10m \nStuns enemy for up to 4s \nEnemy accuracy reduced by 50% for 7s \nStuns all enemies, excluding Titan-Shields, Titan-Bulldozers and Captains \n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
-		["bm_grenade_smoke_screen_grenade_desc"] = "Range: 8m \nDuration: 12s \n \nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
-		["bm_grenade_frag_desc"] = "Capacity: 3\nDamage: 800 \nRange: 5m \n \nThe classic explosive hand grenade. Is there any more to say?",
-		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRange: 4m \nDoes not bounce or roll from impact point, but deals less splash damage than similar explosives.\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
-		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
-		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
-		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage: 1200 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates on impact \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
-		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage: 1440 per pool over 12s \nRange: 3.75m \nDuration: 12s \nDetonates after 2.5s \n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
+		["bm_concussion_desc"] = "Capacity: 3 \nRange: 10m \n- Stuns enemies for up to 4s \n- Enemy accuracy reduced by 50% for 7s \n- Titan-Shields, Titan-Bulldozers and Captains are immune to its stunning effects\n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "Range: 8m \nDuration: 12s \nFuse: 1s after remaining stationary \n \nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
+		["bm_grenade_frag_desc"] = "Capacity: 3\nDamage: 800 \nRange: 5m \nFuse: 3s \n \nThe classic explosive hand grenade. Is there any more to say?",
+		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRange: 4m \nFuse: 3s \nDoes not bounce or roll from impact point, but deals less splash damage than similar explosives.\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
+		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \nFuse: 3s \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
+		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \nFuse: 3s \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
+		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage (Fire Pool): 1200 over 10s\nDamage (Burn): 60 over 3s \nRange: 3.75m \nDuration: 10s \nFuse: Impact detonation\n- 50% chance to ignite and burn enemies, causing most to panic.\n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
+		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage (Fire Pool): 1440 over 12s\nDamage (Burn): 60 over 3s  \nRange: 3.75m \nDuration: 12s \nFuse: 2.5s \n- 50% chance to ignite and burn enemies, causing most to panic.\n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
 		["bm_wpn_prj_ace_desc"] = "Capacity: 9 \nDamage: 240 \n \nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
-		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage: 200 (Impact) \nDamage: 200 over 5s (Poison) \nInterrupts enemy actions \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
+		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage (Impact): 200 \nDamage (Poison): 120 over 4s \n- 50% chance to stun enemies every 0.5s\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects. \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
 		["bm_wpn_prj_target_desc"] = "Capacity: 9 \nDamage: 240 \n \nA solid backup plan and a reliable tactic for a precise and silent kill.",
 		["bm_wpn_prj_jav_desc"] = "Capacity: 6 \nDamage: 360 \n \nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",
 		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
-		["bm_grenade_electric_desc"] = "Capacity: 3\nDamage: 400 \nRange: 5m \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
+		["bm_grenade_electric_desc"] = "Capacity: 3\nDamage: 400 \nRange: 5m \nFuse: 3s \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
-		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 1200 over 30s \nRange: 8m \nDuration: 20s \nFreshly poisoned enemies are stunned once\nShields, Bulldozers, Grenadiers, and Captains are immune to its stunning effects.\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 900 over 30s \nRange: 8m \nDuration: 20s \nFuse: 1s after remaining stationary \n- Each grenade stuns each enemy afflicted one time\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",

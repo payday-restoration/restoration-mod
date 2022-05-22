@@ -242,6 +242,12 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		if melee_weapon.special_weapon and melee_weapon.special_weapon == "stamina_restore" then
 			player_unit:movement():add_stamina(player_unit:movement():_max_stamina())
 		end
+		if melee_weapon.special_weapon and melee_weapon.special_weapon == "charger" then
+			local current_state = self:get_current_state()
+			if current_state and current_state._state_data and current_state._state_data._charger_melee_active then
+				player_unit:movement():add_stamina(player_unit:movement():_max_stamina() * 0.1)
+			end
+		end
 	end
 
 

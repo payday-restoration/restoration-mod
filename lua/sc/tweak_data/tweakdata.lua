@@ -108,7 +108,7 @@ tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 15.1,
 	dot_tick_period = 0.5
 }
@@ -143,7 +143,7 @@ tweak_data.projectiles.launcher_poison_m32.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_m32.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_m32.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 15.1,
 	dot_tick_period = 0.5
 }
@@ -178,7 +178,7 @@ tweak_data.projectiles.launcher_poison_china.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_china.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_china.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 15.1,
 	dot_tick_period = 0.5
 }
@@ -203,7 +203,7 @@ tweak_data.projectiles.launcher_poison_contraband.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_contraband.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_contraband.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 15.1,
 	dot_tick_period = 0.5
 }
@@ -238,7 +238,7 @@ tweak_data.projectiles.launcher_poison_slap.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_slap.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_slap.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 15.1,
 	dot_tick_period = 0.5
 }
@@ -263,7 +263,7 @@ tweak_data.projectiles.launcher_poison_groza.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_groza.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_groza.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 15.1,
 	dot_tick_period = 0.5
 }
@@ -300,7 +300,7 @@ tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 11.1,
 	dot_tick_period = 0.5
 }
@@ -334,7 +334,7 @@ tweak_data.projectiles.launcher_poison.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 7.1,
 	dot_tick_period = 0.5
 }
@@ -350,7 +350,7 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 2
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 7.1,
 	dot_tick_period = 0.5
 }
@@ -475,16 +475,16 @@ tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 2
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
 tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
-	dot_damage = 2,
+	dot_damage = 1.5,
 	dot_length = 30,
-	dot_tick_period = 1
+	dot_tick_period = 0.5
 }
 
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
-	dot_length = 3.1,
-	dot_damage = 2,
-	hurt_animation_chance = 0.75
+	dot_length = 4.1,
+	dot_damage = 1.5,
+	hurt_animation_chance = 0.5
 }
 
 tweak_data.dot_types.bleed = {
@@ -696,12 +696,11 @@ velocity = {
 	'dynamite','molotov'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 700
+	tweak_data.projectiles[proj_id].launch_speed = 900
 	tweak_data.projectiles[proj_id].adjust_z = 50
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
-tweak_data.projectiles.molotov.launch_speed = 600
-
+tweak_data.projectiles.molotov.launch_speed = 700
 velocity = {
 	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
 	'wpn_prj_hur','wpn_prj_jav'

@@ -3051,6 +3051,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
 
 	--Who's up for rockin the mic?--	
+	self.melee_weapons.microphone.special_weapon = "talk"
 	self.melee_weapons.microphone.stats.min_damage = 2
 	self.melee_weapons.microphone.stats.max_damage = 3.1
 	self.melee_weapons.microphone.stats.min_damage_effect = 7
@@ -3059,7 +3060,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.microphone.stats.range = 160
 	self.melee_weapons.microphone.stats.concealment = 29
 
-	--The safeword is police brutality--	
+	--The safeword is police brutality--
 	self.melee_weapons.oldbaton.stats.min_damage = 2.4
 	self.melee_weapons.oldbaton.stats.max_damage = 4.6
 	self.melee_weapons.oldbaton.stats.min_damage_effect = 6
@@ -3172,9 +3173,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.cqc.dot_data = {
 		type = "poison",
 		custom_data = {
-			dot_damage = 2,
-			dot_length = 3.1,
-			hurt_animation_chance = 0.75
+			dot_damage = 1.5,
+			dot_length = 4.1,
+			hurt_animation_chance = 0.5
 		}
 	}	
 	self.melee_weapons.cqc.stats.min_damage = 1
@@ -3192,6 +3193,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.sandsteel.stats.min_damage_effect = 1.1
 	self.melee_weapons.sandsteel.stats.max_damage_effect = 1.2
 	self.melee_weapons.sandsteel.stats.charge_time = 1.65
+	self.melee_weapons.sandsteel.stats.charge_bonus_start = 0.99
+	self.melee_weapons.sandsteel.stats.charge_bonus_speed = 1.5
 	self.melee_weapons.sandsteel.stats.range = 220
 	self.melee_weapons.sandsteel.attack_allowed_expire_t = 0.1
 	self.melee_weapons.sandsteel.stats.concealment = 23
@@ -3286,6 +3289,13 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.shawn.stats.concealment = 29
 
 	--Pitchfork--
+	self.melee_weapons.pitchfork.info_id = "bm_melee_charge_info" 
+	self.melee_weapons.pitchfork.special_weapon = "charger"
+	self.melee_weapons.pitchfork.chainsaw = {
+		tick_damage = 4.5,
+		tick_delay = 0.25,
+		start_delay = 0.8
+	}
 	self.melee_weapons.pitchfork.stats.min_damage = 6
 	self.melee_weapons.pitchfork.stats.max_damage = 12.1
 	self.melee_weapons.pitchfork.stats.min_damage_effect = 1
@@ -3374,6 +3384,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--Chainsaw + Gun--
 	self.melee_weapons.cs.info_id = "bm_melee_cs_info"
+	self.melee_weapons.cs.make_saw = true
 	self.melee_weapons.cs.chainsaw = {
 		tick_damage = 3,
 		tick_delay = 0.25,
@@ -3388,6 +3399,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.cs.stats.concealment = 21
 
 	--It's da hotline--
+	self.melee_weapons.brick.special_weapon = "talk"
 	self.melee_weapons.brick.stats.min_damage = 2
 	self.melee_weapons.brick.stats.max_damage = 3.1
 	self.melee_weapons.brick.stats.min_damage_effect = 8
@@ -3470,7 +3482,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.grip.stats.charge_time = 1.05
 	self.melee_weapons.grip.stats.range = 155
 	self.melee_weapons.grip.stats.concealment = 28
-	
+
 	--For that you get the belt--
 	--Fitting name, because if you actually like Duke you're a sap
 	self.melee_weapons.sap.stats.min_damage = 2
@@ -3550,9 +3562,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fear.dot_data = {
 		type = "poison",
 		custom_data = {
-			dot_damage = 2,
-			dot_length = 3.1,
-			hurt_animation_chance = 0.75
+			dot_damage = 1.5,
+			dot_length = 4.1,
+			hurt_animation_chance = 0.5
 		}
 	}
 	self.melee_weapons.fear.stats.min_damage = 1

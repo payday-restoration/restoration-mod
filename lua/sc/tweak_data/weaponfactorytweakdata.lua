@@ -8138,8 +8138,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		stats = {
 			value = 6,
 			extra_ammo = 23,
-			concealment = -2,
-			reload = -3
+			concealment = -3,
+			reload = -4
 		}
 	}
 	
@@ -8150,6 +8150,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 	table.insert(self.wpn_fps_pis_g26_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_g26_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")		
+	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_pis_g18c_m_mag_33rnd")
+	table.insert(self.wpn_fps_pis_g26_npc.uses_parts, "wpn_fps_pis_g18c_m_mag_33rnd")		
 	
 	self.wpn_fps_pis_g26_npc.uses_parts = deep_clone(self.wpn_fps_pis_g26.uses_parts)	
 
@@ -8184,9 +8186,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_jowi", "resmod_jowi", function(sel
 		supported = true,
 		stats = {
 			value = 6,
-			extra_ammo = 22,
-			concealment = -2,
-			reload = -3
+			extra_ammo = 46,
+			concealment = -3,
+			reload = -4
 		}
 	}
 	self.wpn_fps_jowi.override.wpn_fps_pis_g26_b_standard = {
@@ -8210,7 +8212,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_jowi", "resmod_jowi", function(sel
 	table.insert(self.wpn_fps_jowi.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_jowi_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_jowi.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_jowi_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")		
+	table.insert(self.wpn_fps_jowi_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
+	table.insert(self.wpn_fps_jowi.uses_parts, "wpn_fps_pis_g18c_m_mag_33rnd")
+	table.insert(self.wpn_fps_jowi_npc.uses_parts, "wpn_fps_pis_g18c_m_mag_33rnd")		
 	
 	self.wpn_fps_jowi_npc.uses_parts = deep_clone(self.wpn_fps_jowi.uses_parts)	
 

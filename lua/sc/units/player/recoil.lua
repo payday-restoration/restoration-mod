@@ -74,6 +74,21 @@ function FPCameraPlayerBase:_update_movement(t, dt)
 		mrotation.multiply(new_head_rot, self._head_stance.rotation)
 		mrotation.multiply(new_head_rot, cam_offset_rot)
 
+		if TacticalLean then
+			local current_lean = TacticalLean:GetLeanDirection()
+			local exiting_lean = TacticalLean:IsExitingLean()
+			local lean_direction = current_lean or exiting_lean
+			if current_lean or exiting_lean then
+				local lean_angle = TacticalLean:GetLeanAngle(lean_direction)
+				local lerp = TacticalLean:GetLeanLerp()
+				
+				local target_tilt = self._camera_properties.target_tilt or 0
+				self._camera_properties.current_tilt = target_tilt + (lerp * lean_angle)
+			elseif self._camera_properties.current_tilt ~= self._camera_properties.target_tilt then
+				self._camera_properties.current_tilt = math.step(self._camera_properties.current_tilt, self._camera_properties.target_tilt, 150 * dt)
+			end
+		end
+
 		data.pitch = look_polar_pitch
 		data.spin = look_polar_spin
 		self._output_data.rotation = new_head_rot or self._output_data.rotation
@@ -212,6 +227,45 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 	end
 
 	return result
+end
+
+--Fix for Kento's Tanto anims
+function FPCameraPlayerBase:play_anim_melee_item(tweak_name, speed_multiplier)
+	if not self._melee_item_units then
+		return
+	end
+
+	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local anims = tweak_data.blackmarket.melee_weapons[melee_entry].anims
+	local anim_data = anims and anims[tweak_name]
+
+	if not anim_data then
+		return
+	end
+
+	if self._melee_item_anim then
+		for _, unit in ipairs(self._melee_item_units) do
+			unit:anim_stop(self._melee_item_anim)
+		end
+
+		self._melee_item_anim = nil
+	end
+
+	local ids = anim_data.anim and Idstring(anim_data.anim)
+
+	if ids then
+		for _, unit in ipairs(self._melee_item_units) do
+			local length = unit:anim_length(ids)
+
+			if anim_data.loop then
+				unit:anim_play_loop(ids, 0, length, 1)
+			else
+				unit:anim_play_to(ids, length, speed_multiplier or 1)
+			end
+		end
+
+		self._melee_item_anim = ids
+	end
 end
 
 --[

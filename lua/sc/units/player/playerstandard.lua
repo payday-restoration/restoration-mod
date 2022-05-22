@@ -378,7 +378,16 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	local movement_speed = speed_tweak.STANDARD_MAX
 	local speed_state = "walk"
 
-	if self._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") and not _G.IS_VR then
+	if self._is_sliding then -- should be fine without having AdvMov installed since it'll return nil in you don't have it
+		movement_speed = self._slide_speed
+		speed_state = "run"
+	elseif self._is_wallrunning then -- ditto
+		movement_speed = self._wallrun_speed
+		speed_state = "run"
+	elseif self._is_wallkicking then -- ditto
+		movement_speed = speed_tweak.RUNNING_MAX * 1.5
+		speed_state = "run"
+	elseif self._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") and not _G.IS_VR then
 		movement_speed = speed_tweak.STEELSIGHT_MAX
 		if alive(self._equipped_unit) then
 			local weapon = self._equipped_unit:base()
@@ -546,11 +555,13 @@ end)
 --Effectively a slightly modified version of _do_melee_damage but without charging and certain melee gimmicks.
 function PlayerStandard:_do_chainsaw_damage(t)
 	melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local make_saw = tweak_data.blackmarket.melee_weapons[melee_entry].make_saw
+	local charger_melee = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon and tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon == "charger"
+	self._state_data._charger_melee_active = true
 
 	--Determine if attack hits.
 	local sphere_cast_radius = 20
 	local col_ray = self:_calc_melee_hit_ray(t, sphere_cast_radius)
-
 	if col_ray and alive(col_ray.unit) then
 		local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(0)
 		local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().categories and self._equipped_unit:base():weapon_tweak_data().categories[1], "melee_knockdown_mul", 1))
@@ -581,6 +592,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 				})
 			end
 
+			
 		elseif self._on_melee_restart_drill and hit_unit:base() and (hit_unit:base().is_drill or hit_unit:base().is_saw) then
 			hit_unit:base():on_melee_hit(managers.network:session():local_peer():id())
 		else
@@ -588,10 +600,11 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			self:_play_melee_sound(melee_entry, "charge", self._melee_attack_var) -- continue playing charge sound after hit instead of silence
 
 			managers.game_play_central:play_impact_sound_and_effects({
-				no_decal = true,
+				decal = make_saw and "saw",
+				no_decal = not make_saw and true,
 				no_sound = true,
 				col_ray = col_ray,
-				effect = Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")
+				effect = not make_saw and Idstring("effects/payday2/particles/impacts/fallback_impact_pd2") or nil
 			})
 		end
 
@@ -645,9 +658,14 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			local target_hostile = managers.enemy:is_enemy(character_unit) and not tweak_data.character[character_unit:base()._tweak_table].is_escort
 			local life_leach_available = managers.player:has_category_upgrade("temporary", "melee_life_leech") and not managers.player:has_activate_temporary_upgrade("temporary", "melee_life_leech")
 
-			if target_dead and target_hostile and life_leach_available then
-				managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
-				self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
+			if target_dead and target_hostile then
+				if charger_melee then
+					self._unit:movement():subtract_stamina(self._unit:movement():_max_stamina() * 0.15)
+				end
+				if life_leach_available then
+					managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
+					self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
+				end
 			end
 
 			local action_data = {}
@@ -736,9 +754,18 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
 	local instant = melee_weapon.instant
-	
+	local melee_charger = melee_weapon.special_weapon and melee_weapon.special_weapon == "charger"
+	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
+	local moving_forwards = angle and angle <= 15
+	local can_run = self._unit:movement():is_above_stamina_threshold()
+	local max_charge = self:_get_melee_charge_lerp_value(t) >= 1
+
+	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
+	if melee_charger and self._state_data.meleeing and max_charge then
+		self._unit:movement():_restart_stamina_regen_timer()
+	end
 	--Trigger chainsaw damage and update timer.
-	if melee_weapon.chainsaw and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
+	if ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)
 		self._state_data.chainsaw_t = t + (melee_weapon.chainsaw.tick_delay * (1 + (1 - managers.player:upgrade_value("player", "melee_swing_multiplier", 1))))
 	end
@@ -763,20 +790,24 @@ function PlayerStandard:_update_melee_timers(t, input)
 			self._camera_unit:base():play_anim_melee_item("charge")
 		end
 		if input.btn_meleet_state then
+			if melee_weapon.force_play_charge then
+				self:_play_melee_sound(managers.blackmarket:equipped_melee_weapon(), "equip")
+			end
 			self._state_data.melee_charge_wanted = not instant and true
 		end
 	end
-
 	if self._state_data.melee_expire_t and self._state_data.melee_expire_t <= t then
 		self._state_data.melee_expire_t = nil
 		self._state_data.melee_repeat_expire_t = nil
-		self._melee_repeat_damage_bonus = nil --Clear melee repeat bonus (from specialist knives and such) when melee is over.
 
 		self:_stance_entered()
 
 		if self._equipped_unit and input.btn_steelsight_state then
 			self._steelsight_wanted = true
 		end
+	end	
+	if self._melee_repeat_damage_bonus and not self:_is_meleeing() then --Clear melee repeat bonus (from specialist knives and such) when melee is over.
+		self._melee_repeat_damage_bonus = nil 
 	end
 end
 
@@ -994,7 +1025,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 
 		melee_item_tweak_anim = melee_item_prefix .. melee_item_tweak_anim .. melee_item_suffix
 
-		self._camera_unit:base():play_anim_melee_item(melee_item_tweak_anim)
+		self._camera_unit:base():play_anim_melee_item(melee_item_tweak_anim, speed)
 	end
 end
 
@@ -1033,14 +1064,18 @@ function PlayerStandard:full_steelsight()
 end
 
 --ADS speed stuff
-function PlayerStandard:_stance_entered(unequipped)
+function PlayerStandard:_stance_entered(unequipped, timemult)
 	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
 	local head_stance = self._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
 	local stance_id = nil
 	local stance_mod = {
-		translation = Vector3(0, 0, 0)
+		translation = Vector3(0, 0, 0),
+		rotation = Rotation(0, 0, 0)
 	}
 
+	local duration = tweak_data.player.TRANSITION_DURATION 
+	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
+	
 	if not unequipped then
 		stance_id = self._equipped_unit:base():get_stance_id()
 
@@ -1049,12 +1084,28 @@ function PlayerStandard:_stance_entered(unequipped)
 		end
 	end
 
+	if AdvMov and AdvMov.settings then
+		if self._is_sliding and not self._state_data.in_steelsight and AdvMov.settings.slidewpnangle then
+			stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
+			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, AdvMov.settings.slidewpnangle)
+		end
+		if self._is_wallrunning and not self._state_data.in_steelsight and AdvMov.settings.wallrunwpnangle then
+			stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
+			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, -1 * AdvMov.settings.wallrunwpnangle)
+		end
+		if timemult then
+			duration_multiplier = duration_multiplier * timemult
+		end
+		if AdvMov.settings.goldeneye and ((AdvMov.settings.goldeneye == 2 and self._equipped_unit:base().akimbo) or AdvMov.settings.goldeneye == 3 or self._equipped_unit:base()._use_goldeneye_reload) and self:_is_reloading() then
+			stance_mod.translation = Vector3(0, 0, -100)
+			stance_mod.rotation = Rotation(0, 0, 0)
+		end
+	end
+
 	local stances = nil
 	stances = (self:_is_meleeing() or self:_is_throwing_projectile()) and tweak_data.player.stances.default or tweak_data.player.stances[stance_id] or tweak_data.player.stances.default
 	local misc_attribs = stances.standard
 	misc_attribs = (not self:_is_using_bipod() or self:_is_throwing_projectile() or stances.bipod) and (self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard)
-	local duration = tweak_data.player.TRANSITION_DURATION 
-	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
 	local new_fov = self:get_zoom_fov(misc_attribs) + 0
 
 	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
@@ -1213,7 +1264,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
 	local special_weapon = melee_weapon.special_weapon
-	
+	self._state_data._charger_melee_active = nil
+
 	-- If true, disables the shaker when a melee weapon connects
 	if not melee_weapon.no_hit_shaker then
 		self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
@@ -1260,20 +1312,13 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			else
 				self:_play_melee_sound(melee_entry, "hit_gen")
 			end
-			if make_effect then
-				managers.game_play_central:play_impact_sound_and_effects({
-					col_ray = col_ray,
-					no_decal = not make_decal and true,
-					no_sound = true
-				})
-			else
-				managers.game_play_central:play_impact_sound_and_effects({
-					col_ray = col_ray,
-					effect = Idstring("effects/payday2/particles/impacts/fallback_impact_pd2"),
-					no_decal = not make_decal and true,
-					no_sound = true
-				})
-			end
+			managers.game_play_central:play_impact_sound_and_effects({
+				decal = make_saw and "saw",
+				col_ray = col_ray,
+				effect = (not make_effect and not make_saw and Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")) or nil,
+				no_decal = (not make_decal and not make_saw) and true,
+				no_sound = true
+			})
 		end
 
 		--Out of date syncing method, reenable in case it was load bearing.
@@ -1337,6 +1382,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 			if special_weapon == "repeat_hitter" then
 				self._melee_repeat_damage_bonus = 2.0
+			elseif special_weapon == "talk" and character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) and math.random() <= 0.2 then
+				self._unit:sound():say("f46x_any", true)
 			elseif special_weapon == "hyper_crit" and math.random() <= 0.05 then
 				dmg_multiplier = dmg_multiplier * 10
 				damage_effect = damage_effect * 10

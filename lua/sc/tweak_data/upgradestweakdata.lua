@@ -470,10 +470,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.walk_speed_multiplier = {
 		1.25
 	}
-	self.values.player.crouch_speed_multiplier = {
-		1.1,
-		1.2
-	}	
 	self.values.player.climb_speed_multiplier = {1.2, 1.75}
 	self.values.player.can_free_run = {true}
 	self.values.player.fall_health_damage_multiplier = {0}
@@ -487,6 +483,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.3,
 		1.2
 	}
+	
+	self.values.player.corpse_dispose_amount = {3, 4}
+	self.values.bodybags_bag.quantity = {1}
+	
+	self.values.player.pick_lock_easy_speed_multiplier = {
+		0.5, --Basic
+		0.25 --Ace
+	}
+	--Ace
+	self.values.player.pick_lock_hard = {true}	
 
 	--Skills--
 	--MASTERMIND--
@@ -639,7 +645,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
-				self.values.weapon.automatic_head_shot_add = {0.3, 1}
+				self.values.weapon.automatic_head_shot_add = {0.5, 1.25}
 				self.values.player.universal_body_expertise = {true}
 						
 	--ENFORCER--
@@ -919,23 +925,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--GHOST--
 		--Shinobi--
-			--Cleaner
-				self.values.weapon.special_damage_taken_multiplier = {
-					1.05, --Basic
-					1.15 --Ace
-				}
+			--Alert
 				--Basic
-					self.values.player.corpse_dispose_amount = {3, 4}
+				self.values.player.mark_enemy_time_multiplier = {2}
 				--Ace
-					self.values.bodybags_bag.quantity = {1}
-
-			--Nimble
-				self.values.player.pick_lock_easy_speed_multiplier = {
-					0.5, --Basic
-					0.25 --Ace
-				}
-				--Ace
-					self.values.player.pick_lock_hard = {true}
+				self.values.weapon.steelsight_highlight_specials = {
+					true
+				}	
 
 			--Sixth Sense
 				--Basic
@@ -943,7 +939,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.player.additional_assets = {true}
 					self.values.player.buy_bodybags_asset = {true}
-					self.values.player.buy_spotter_asset = {true}
+					self.values.player.buy_spotter_asset = {true}				
+
+			--ECM Overdrive
+			--Basic
+				self.values.ecm_jammer.can_open_sec_doors = {true}		
+			--Ace
+				self.values.ecm_jammer.affects_pagers = {true}
+				self.values.ecm_jammer.feedback_duration_boost = {1.25}
+				self.values.ecm_jammer.duration_multiplier = {1.25}
+				
+				--Unused
+				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
+				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}				
 				
 			--Systems Specialist
 				self.values.player.tape_loop_duration = {
@@ -955,7 +963,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					0.25 --Ace
 				}
 				--Ace
-					self.values.player.mark_enemy_time_multiplier = {2}
 				
 			--ECM Specialist
 				self.values.ecm_jammer.quantity = {
@@ -963,15 +970,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					2 --Ace
 				}
 				
-			--ECM Overdrive
-				--Basic
-					self.values.ecm_jammer.can_open_sec_doors = {true}		
-					self.values.ecm_jammer.feedback_duration_boost = {1.25}
-					self.values.ecm_jammer.duration_multiplier = {1.25}
-				--Ace
-					self.values.ecm_jammer.duration_multiplier_2 = {1.25}
-					self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
-					self.values.ecm_jammer.affects_pagers = {true}
+			--Spotter
+				self.values.player.marked_inc_dmg_distance = {{2000, 1.25}}		
+				self.values.player.marked_enemy_extra_damage = {true}
+				self.values.player.marked_enemy_damage_mul = 1.35					
+
 			
 		--Artful Dodger--
 			--Duck and Cover
@@ -979,8 +982,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.stamina_regen_timer_multiplier = {0.75}
 					self.values.player.stamina_regen_multiplier = {1.25}
 				--Ace
-					self.values.player.run_dodge_chance = {0.10}
-					self.values.player.zipline_dodge_chance = {0.3}
+				self.values.player.crouch_dodge_chance = {0.05, 0.10}
+				self.values.player.crouch_speed_multiplier = {
+					1.1,
+					1.2
+				}						
 
 			--Evasion
 				self.values.player.movement_speed_multiplier = {
@@ -1021,7 +1027,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				}
 				--Ace
-					self.values.player.backstab_dodge = {0.75}
+				self.values.player.run_dodge_chance = {0.12}
+				self.values.player.zipline_dodge_chance = {0.3}				
 
 			--Shockproof
 				--Basic
@@ -1087,14 +1094,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						max_duration = 5,
 						crit_chance = 1.15
 					}
-				}				
-				
-			--Spotter
-				--Basic
-					self.values.player.marked_enemy_extra_damage = {true}
-					self.values.player.marked_enemy_damage_mul = 1.15	
-				--Ace
-					self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}			
+				}					
+	
+			--Cleaner, formally spotter
+				--Basic					
+					self.values.weapon.special_damage_taken_multiplier = {
+						1.15, --Basic
+						1.25 --Ace
+					}					
+				--Ace		
+					self.values.player.backstab_dodge = {0.75}
 
 			--Low Blow
 				self.values.player.detection_risk_add_crit_chance = {
@@ -1266,7 +1275,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
 
 	--Burglar
-	self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,

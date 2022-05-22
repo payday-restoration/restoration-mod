@@ -1791,82 +1791,82 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Restoration Gameplay Hints--
 		["loading_gameplay_res_title"] = "Restoration Gameplay Tips",
 		["loading_gameplay_res_1"] = "Cloakers make a 'wheezing' sound when aggressive towards heisters. Use this to locate them.",
-		["loading_gameplay_res_2"] = "Cloakers no longer make an ambient humming sound or screech when charging. Pay attention to your surroundings, as their goggles are now always lit up.",
-		["loading_gameplay_res_3"] = "On Death Sentence, enemies may prioritize you if you reload. Make sure that you're in good cover or far from enemies. It might be better to swap weapons sometimes, especially if using a pistol as your secondary.",
-		["loading_gameplay_res_4"] = "Tasers no longer reload your weapons. Try to stay topped up when possible, or switch to a secondary if you're about to be tased.",
-		["loading_gameplay_res_5"] = "Cloakers will actively go after lone heisters, stick together or go to jail alone.",
+		["loading_gameplay_res_2"] = "Cloakers no longer make an ambient humming sound or screech when charging.",
+		["loading_gameplay_res_3"] = "Pistols are ideal secondaries for primaries with long swap times.",
+		["loading_gameplay_res_4"] = "Tasers no longer reload your weapons.",
+		["loading_gameplay_res_5"] = "Cloakers can easily counter lone or cut off heisters.",
 		["loading_gameplay_res_6"] = "Cloakers deal direct health damage when they kick you. This can be reduced with Deflection or the Counter Strike skill.",
-		["loading_gameplay_res_7"] = "Green Bulldozers will attempt to flank players and will run in, unload, and then run away. Be careful not to get overwhelmed or surprised.",
-		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers are hyper-aggressive and will charge at the player. This makes them easy to predict, but highly dangerous if you aren't prepared.",
-		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers will attempt to provide covering fire for other units, but will still charge in various circumstances and have very high DPS.",
-		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers. They only spawn in Crime Spree and alongside Captain Spring on Death Sentence. They are very, very dangerous.",
-		["loading_gameplay_res_11"] = "All Dozers will prioritize targeting players who are reloading.",
+		["loading_gameplay_res_7"] = "Green Bulldozers deal high amounts of damage and can often break even the heaviest of armors with a single shot.",
+		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine.",
+		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers lay down heavy suppressive fire and will fire until their belts are empty.",
+		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers, high rate of fire and good damage. An unholy union of Green and Black dozers.",
+		["loading_gameplay_res_11"] = "Target priority is important. A Bulldozer of any type is worth more attention than a Light SWAT.",
 		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 10%.",
-		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you, dodge to the side when you hear it.",
+		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you.",
 		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
 		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",
 		["loading_gameplay_res_16"] = "You can parry melee attacks by charging your own. This can be upgraded to work against cloaker kicks.",
-		["loading_gameplay_res_17"] = "Enemy melee attacks are vastly more effective than before. Don't expect to simply walk past a horde.",
+		["loading_gameplay_res_17"] = "Enemy melee attacks are quick and deadly. Keep your distance!",
 		["loading_gameplay_res_18"] = "You know what's better than smacking enemies with a baseball bat? Smacking them in the head with a baseball bat for headshot damage.",
-		["loading_gameplay_res_19"] = "Snipers take a brief period of time to focus before firing. You'll know when you are being focused if all of your audio begins to fade away.",
+		["loading_gameplay_res_19"] = "Snipers take a brief period of time to focus before firing. Mind their lasers!",
 		["loading_gameplay_res_20"] = "Your Jokers aren't safe from being kicked by Cloakers.",
-		["loading_gameplay_res_21"] = "Regular enemies will come at you wielding a variety of weapons. You can tell who is carrying what by watching for details in their uniforms.",
-		["loading_gameplay_res_22"] = "Shotgun-wielding enemies are deadly. Up close, they may take you down in two shots if you don't have much armor. However, they have very limited range.",
-		["loading_gameplay_res_23"] = "Enemies try to hide behind Shields on higher difficulties.",
-		["loading_gameplay_res_24"] = "Enemies will behave significantly smarter and are less predictable on higher difficulties.",
-		["loading_gameplay_res_25"] = "Death Sentence difficulty has gone through a full design overhaul from vanilla to make it harder and meaner without being unfair. Check the Guide.",
-		["loading_gameplay_res_26"] = "Pro Jobs forbid you from buying generic assets before the heist (such as the Medic Bag, Ammo Bag or the Body Bag Case), toggle friendly fire on (even with your bots) and may trigger a PONR in the final stretch of the mission with special Bravo enemies joining the ranks.",
-		["loading_gameplay_res_27"] = "Restoration Mod provides different factions, such as Murkywater mercenaries and enforcers from other states. They function the same, but add a nice flavor to heists that canonically take place away from Washington DC.",
-		["loading_gameplay_res_28"] = "Cloakers will throw smoke grenades at you before charging.",
+		["loading_gameplay_res_21"] = "Common enemies of all factions share keen details on their uniforms to warn you about their preferred weaponry.",
+		["loading_gameplay_res_22"] = "Shotgun-wielding enemies are poor at range, but make up for it in close-quarters.",
+		["loading_gameplay_res_23"] = "Enemies will make better use of Shields on higher difficulties.",
+		["loading_gameplay_res_24"] = "Enemies will have different behaviors on higher difficulties.",
+		["loading_gameplay_res_25"] = "Death Sentence difficulty brings all sorts of nasty tricks to make your life hell. Don't expect them to pull their punches.",
+		["loading_gameplay_res_26"] = "Pro Jobs offer a test of one's ability by only allowing one shot at the prize, and allows the spawning of the dreaded Bravo units.",
+		["loading_gameplay_res_27"] = "Restoration Mod provides different factions, such as Murkywater mercenaries and law enforcers from other states.",
+		["loading_gameplay_res_28"] = "Cloakers will make use of smoke grenades when performing take-downs on higher difficulties.",
 		--New Units Hints
 		["loading_new_units_res_title"] = "Restoration Unit Tips",
-		["loading_new_units_res_1"] = "Titan HRTs are lightning-fast units that will free hostages and steal loot before you know they were there. Also, they will drop a tear gas grenade when killed without a Headshot or melee.",
+		["loading_new_units_res_1"] = "Titan ASUs, or Titan HRTs will provide damage bonuses to nearby allies marked by giving them Green laser attachments.",
 		["loading_new_units_res_2"] = "LPFs are weak to melee.",
-		["loading_new_units_res_3"] = "Lighter units will be Overhealed by the LPF. Overhealed enemies are outlined in purple. Overhealed units will always survive at least one shot.",
-		["loading_new_units_res_4"] = "Titan Cloakers have advanced cloaking gear that renders them nearly invisible, but it still has the ambient hum of older models of standard Cloaker gear. Listen for them.",
-		["loading_new_units_res_5"] = "Titan Dozers will actively attempt to avoid direct combat whenever possible and lay suppressive fire on you from a safe distance.",
+		["loading_new_units_res_3"] = "Lighter units will be Overhealed by the LPF. Overhealed enemies are outlined in purple.",
+		["loading_new_units_res_4"] = "Titan Cloakers have advanced cloaking gear that renders them nearly invisible, but it still has the ambient hum of older models of standard Cloaker gear.",
+		["loading_new_units_res_5"] = "Titan Dozers prefer putting distance between them and their target to unleash the full potential of their railguns undisturbed.",
 		["loading_new_units_res_6"] = "Titan Snipers trade damage-per-shot and armor-piercing from their standard counterparts for a higher rate of fire and being able to shoot while moving.",
-		["loading_new_units_res_7"] = "Instead of using a laser sight, Titan Sniper shots leave behind purple tracers. Use these to track them down.",
+		["loading_new_units_res_7"] = "Instead of using a laser sight, Titan Sniper shots leave behind purple tracers.",
 		["loading_new_units_res_8"] = "Titan Shields can only be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic, and special AP rounds in Sentry Guns.",
 		["loading_new_units_res_9"] = "Captain Spring and Titan Dozers take bonus headshot damage at all times.",
-		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily. Your screen will glow blue when shot by one.",
-		["loading_new_units_res_11"] = "Veteran Cops have quick reflexes that limit how much damage any given shot can deal. They cannot dodge melee, fire, or explosives. Alternatively, pick something with a high rate of fire and lower damage.",
-		["loading_new_units_res_12"] = "Veteran Cops physically dodge and jump all over the place to make themselves harder to hit. They also drop smoke grenades frequently.",
-		["loading_new_units_res_13"] = "Titan SWAT are lightly resistant to melee, but it still works well as a finisher.",
+		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily, indicated by a blue UI overlay.",
+		["loading_new_units_res_11"] = "Veteran Cops have quick reflexes that make high damage and slow firing weapons ineffective making fire, explosives, and high DPS weapons ideal.",
+		["loading_new_units_res_12"] = "Veteran Cops move quickly making shots harder to land.",
+		["loading_new_units_res_13"] = "The Riot Gear clad Titan SWAT are somewhat resistant to melee.",
 		["loading_new_units_res_14"] = "Titan SWAT cannot be taken hostage or converted to fight on your side.",
-		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns. They are a major threat to your well-being.",
+		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns.",
 		["loading_new_units_res_16"] = "The dreaded Bravo units spawn on Pro Jobs only, when a PONR is triggered. They are powerful no-nonsense enemies with enhanced body armor, and more powerful weapons.",
-		["loading_new_units_res_17"] = "Bravo units can throw frag grenades. Look for the flashers and listen for the beep.",
-		["loading_new_units_res_18"] = "AKAN fields their own Titan units, which look different but behave the same way. Their overall color scheme and visual characteristics are the same, though, so that they may be easily identified.",
+		["loading_new_units_res_17"] = "Bravo units can throw frag grenades. Mind your surroundings when you see them flashing and emitting a beeping countdown.",
+		["loading_new_units_res_18"] = "AKAN fields their own Titan units, developed by their R&D firm DRAK.",
 		["loading_new_units_res_19"] = "The Grenadier launches tear gas grenades at range with his underbarrel attachment, damaging players that stand in the cloud. On Death Sentence he instead comes armed with deadlier, stamina-draining nerve gas grenades.",
 		--Captain Hints
 		["loading_captains_res_title"] = "Restoration Captain Tips",
 		["loading_captains_res_1"] = "To take Captain Summers down, target his crew first starting with Doc. He's unkillable until his entire crew is dead, and the other two are nearly invulnerable until Doc is dead.",		
-		["loading_captains_res_2"] = "Don't hug Captain Summers. He WILL melt you with his flamethrower, and he has a Buzzer that he will electrocute you with.",		
-		["loading_captains_res_3"] = "Captain Spring can take a ton of damage but will eventually go down. Watch for his grenades and try to lead him around, as he's very slow.",	
-		["loading_captains_res_4"] = "Captain Spring throws Cluster HE grenades periodically. Don't stay close to him for long.",	
+		["loading_captains_res_2"] = "Don't hug Captain Summers. He WILL melt you with his flamethrower.",		
+		["loading_captains_res_3"] = "Captain Spring can take a ton of damage but will eventually go down. Watch for his grenades and take advantage of his immobility.",	
+		["loading_captains_res_4"] = "Captain Spring throws Cluster HE grenades periodically.",	
 		["loading_captains_res_5"] = "Captain Spring may be dangerous, but he is incredibly slow and has poor range.",	
-		["loading_captains_res_6"] = "Captain Autumn will loudly taunt when he attacks. Use this to locate him.",	
+		["loading_captains_res_6"] = "Captain Autumn will loudly taunt when he attacks.",	
 		["loading_captains_res_7"] = "Unlike other Captains, the police will not announce Autumn's arrival, as to not ruin the element of surprise.",	
 		["loading_captains_res_8"] = "Captain Autumn will progressively disable your deployables if he's allowed to stay undetected in the map for a while. Disabled deployables are outlined in purple and can only be restored if Autumn is found and defeated.",	
 		["loading_captains_res_9"] = "You will probably not beat Captain Autumn in a fist fight. Don't even try.",	
 		["loading_captains_res_10"] = "Captain Winters is nearly immune to explosives and fire, and has strong bullet resistance, but is somewhat vulnerable to melee.",	
 		["loading_captains_res_11"] = "Captain Winters' shield is completely unpierceable.",	
-		["loading_captains_res_12"] = "Captain Winters has been overhauled. He now wanders around the map healing enemies in a large area around him while aggressively charging when the opportunity arises.",	
+		["loading_captains_res_12"] = "Captain Winters will wander the map, healing and overhealing nearby enemies.",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "Restoration Stealth Tips",
-		["loading_stealth_res_1"] = "Guards will no longer be instantly alerted by seeing broken cameras. A specific guard will be made to inspect the camera, allowing it to be used as a lure.",	
-		["loading_stealth_res_2"] = "Killing unalerted guards with melee or taking them hostage will not set off a pager. Melee killing a guard a split second after he was alerted will still prevent the pager from being set off.",	
-		["loading_stealth_res_3"] = "Melee killing unalerted guards or taking them hostage will still trigger guard replacements and map events.",	
+		["loading_stealth_res_1"] = "CP will send guards to investigate malfunctioning cameras, allowing it to be used as a lure.",	
+		["loading_stealth_res_2"] = "Quickly disposing of unalerted guards with a melee strike will allow you to snatch their pager.",	
+		["loading_stealth_res_3"] = "CP will likely notice guards missing and send reinforcements.",	
 		["loading_stealth_res_4"] = "Guards with no pagers do not increase suspicion when killed.",	
 		["loading_stealth_res_5"] = "All loud weapons in stealth have a fixed 25 meter noise radius.",	
 		["loading_stealth_res_6"] = "Civilians will get down in response to gunfire in both loud and stealth.",	
 		["loading_stealth_res_7"] = "Sentry Guns will pacify any civilians in a notable radius around them.",	
 		["loading_stealth_res_8"] = "While carrying any bag, you can be seen from much farther away, and will also be detected much faster while standing, sprinting, or jumping. Stay low and slow.",	
-		["loading_stealth_res_9"] = "You get up to 4 ECMs instead of 2 like in vanilla, but they have half duration. Make sure to use them for objectives.",	
+		["loading_stealth_res_9"] = "You get up to 4 ECMs instead of 2 like in vanilla, but they have half duration.",	
 		["loading_stealth_res_10"] = "Suppressed weapons generate no noise in stealth.",	
-		["loading_stealth_res_11"] = "You can take up to 4 cops hostage in stealth, just like in loud. This will NOT activate their pager or increase suspicion, but will if you later kill them.",	
-		["loading_stealth_res_12"] = "Most instant fail states for stealth (such as alerted cameras, or exceeding the maximum level of pagers) have been removed or severely toned down. Check the Guide for more detailed information.",	
+		["loading_stealth_res_11"] = "You can take up to 4 cops hostage in stealth, just like in loud.",	
+		["loading_stealth_res_12"] = "Stealth is more forgiving, allowing for more recovery.",	
 		["loading_stealth_res_13"] = "Guards will no longer instantly die from any source of damage while unalerted. Aim for the head, and bring something more damaging than your fists.",	
 		["loading_stealth_res_14"] = "When the suspicion meter is full, you have 60 seconds to finish up what you started before the alarm is raised.",	
 		["loading_stealth_res_15"] = "The higher the suspicion meter is, the easier it is to be detected by guards.",	
@@ -1878,14 +1878,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_21"] = "Pagers take longer to answer and expire faster on the ground on higher difficulties.",	
 		--Equipment/Skill Hints
 		["loading_equip_skills_res_title"] = "Restoration Equipment/Skill Tips",
-		["loading_equip_skills_res_1"] = "Shotguns lose range as their accuracy gets lower, experiment and see what works best! Be careful not to leave yourself unable to deal with snipers, though; consider a non-shotgun secondary.",	
-		["loading_equip_skills_res_2"] = "Pistols are very fast to swap to and are generally accurate and stable. They work very well as backup weapons if you aren't specialized in something else.",	
+		["loading_equip_skills_res_1"] = "Shotguns lose range as their accuracy gets lower, experiment and see what works best!",	
+		["loading_equip_skills_res_2"] = "Pistols are very fast to swap to and are generally accurate and stable.",	
 		["loading_equip_skills_res_3"] = "Weapons in Restoration fall under a variety of classes with different pros and cons. Higher damage weapons may kill enemies faster, but they may run dry on you before you know it!",	
 		["loading_equip_skills_res_4"] = "Higher-damage weapons are generally less concealable unless they have significant downsides, such as Accuracy or Rate of Fire.",	
 		["loading_equip_skills_res_5"] = "Wolf has upgraded our Sentry Guns to allow field repairs. It takes some time, but they will automatically repair once you initiate it.",	
 		["loading_equip_skills_res_6"] = "If you have Sentry AP rounds unlocked, you can choose your default ammo type in the Equipment menu.",	
-		["loading_equip_skills_res_7"] = "Perk Decks give significant damage bonuses and many of them provide rare and precious healing abilities. Make sure not to neglect upgrading them if you want to play higher difficulties.",	
-		["loading_equip_skills_res_8"] = "Crew Chief, Armorer, Muscle, Crook, Gambler, and Biker are basic but consistent perk decks. They're great first choices for a perk deck to build into.",	
+		["loading_equip_skills_res_7"] = "Perk Decks give significant damage bonuses and many of them provide rare and precious healing abilities.",	
+		["loading_equip_skills_res_8"] = "Crew Chief, Armorer, Muscle, Crook, Gambler, and Biker are basic but consistent perk decks.",	
 		["loading_equip_skills_res_9"] = "Hitman has been reworked into a low long-term survivability and consistency perk deck, but in exchange allows you to gain huge stores of 'Temporary HP' to power through tough spots.",	
 		["loading_equip_skills_res_10"] = "Crew Chief is a team-focused perk deck that grants small but useful buffs to you and your teammates and more buffs if you have multiple hostages. It pairs well with The Controller tree in Mastermind.",	
 		["loading_equip_skills_res_11"] = "Gambler is a team-focused perk deck that grants a little HP and bonus ammo to teammates when you pick ammo up. Pairs well with skills that grant extra ammo drops.",	
@@ -2175,11 +2175,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs have a ##20%## chance to knock down enemies.\n\nThis chance is raised to ##40%## when using a bipod.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.\n\nACE: ##$pro##\nYou take ##12.5%## less damage while crouched.\n\nThe effect is raised to ##50%## when using a bipod.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs have a ##20%## chance to knock down enemies.\n\nThis chance is raised to ##40%## when using a bipod.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, Snipers, and Shields.\n\nACE: ##$pro##\nYou take ##12.5%## less damage while crouched.\n\nThe effect is raised to ##50%## when using a bipod.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
-			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply ##30%## of the enemy's headshot damage multiplier to their body.\n\nNote: Does not apply to Bulldozers.\n\nACE: ##$pro##\nAll guns fired in full auto apply ##100%## of the enemy's headshot damage multiplier to their body.",
+			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply ##50%## of the enemy's headshot damage multiplier to their body.\n\nNote: Does not apply to Bulldozers.\n\nACE: ##$pro##\nAll guns fired in full auto apply ##125%## of the enemy's headshot damage multiplier to their body.",
 
 			--}
 		--}
@@ -2349,12 +2349,44 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   COVERT OPS SUBTREE   ]]--
 			--{
 
+			--Alert--
+			["menu_jail_workout_sc"] = "Alert",
+			["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nIncreases the duration of marked enemies by ##100%.##\n\nACE: ##$pro##\nYou can ##now mark specials and guards in stealth by aiming at them with any weapon.##",
+
+			--Sixth Sense--
+			["menu_chameleon_beta_sc"] = "Sixth Sense",
+			["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",
+
+			--ECM Overdrive--
+			["menu_cleaner_beta_sc"] = "ECM Overdrive",
+			["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can now be ##used to open certain electronic doors##.\n\nACE: ##$pro##\nYour ECM jammer and feedback duration is increased by ##25%.##\n\n##Pagers are delayed by the ECM jammer.##",
+
+
+			--Systems Specialist--
+			["menu_second_chances_beta_sc"] = "Systems Specialist",
+			["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou interact with all computers, hacks, cameras, and ECMs ##25%## faster.\n\nACE: ##$pro##\nYour camera loop duration is increased by ##20## seconds.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",
+
+			--ECM Specialist--
+			["menu_ecm_booster_beta_sc"] = "ECM Specialist",
+			["menu_ecm_booster_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##3## ECM jammers.\n\nACE: ##$pro##\nYou can now carry ##4## ECM jammers.",
+
+			--Spotter--
+			["menu_ecm_2x_beta_sc"] = "Spotter",
+			["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##25%## more damage when further than ##20## meters.\n\nACE: ##$pro##\nEnemies you mark take an additional ##35%## more damage from all sources at all ranges.",
+
 
 			--}
 
 			--[[   COMMANDO SUBTREE   ]]--
 			--{
-
+			--Duck and Cover--
+			["menu_sprinter_beta_sc"] = "Duck and Cover",
+			["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##10%## boost in your movement speed when crouching. ",
+			
+			--Moving Target--
+			["menu_dire_need_beta_sc"] = "Moving Target",
+			["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1.5%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1.5%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##\n\nYour dodge meter fills up by ##12%## of your dodge every second while sprinting and ##30%## of your dodge every second ziplining.",
+				
 			--Shockproof
 			["menu_insulation_beta_sc"] = "Shockproof",
 			["menu_insulation_beta_desc_sc"] = "BASIC: ##$basic##\nA Taser's shock attack has a ##15%## chance to backfire when targeted at you, knocking back the Taser in the process.\n\nACE: ##$pro##\nInteracting with an enemy Taser within ##2## seconds of him electrocuting you will counter-electrocute him, dealing ##50%## damage to his health.",
@@ -2369,6 +2401,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_scavenger_beta_sc"] = "Second Wind",
 			["menu_scavenger_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor breaks you gain ##10%## speed for ##3## seconds.\n\nACE: ##$pro##\nWhen your armor is fully depleted, the first shot on every enemy will cause them to stagger.\n\nThis effect persists for ##3## seconds after your armor has regenerated.",
 
+			--Optical Illusions--
+			["menu_optic_illusions_sc"] = "Optical Illusions",
+			["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",
+
+			--The Professional--
+			["menu_silence_expert_beta_sc"] = "The Professional",
+			["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##2## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",
+
+			--Unseen Strike, formally Dire Need--
+			["menu_backstab_beta_sc"] = "Unseen Strike",
+			["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance persists for ##4## seconds after taking damage.",
+
+			--Cleaner--
+			["menu_hitman_beta_sc"] = "Cleaner",
+			["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nYou deal ##15%## more damage to special enemies.\n\nACE: ##$pro##\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.\n\nYou deal an additional ##10%## more damage to special enemies.",
+
+			--Low Blow--
+			["menu_unseen_strike_beta_sc"] = "Low Blow",
+			["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",
 
 
 			--}
@@ -2413,10 +2464,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_thick_skin_beta_sc"] = "Deep Pockets",
 		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the armor of all ballistic vests by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
 
-		--Duck and Cover--
-		["menu_sprinter_beta_sc"] = "Duck and Cover",
-		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",
-
 		--Sneaky Bastard--
 		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nWhile your armor is broken, dodging an attack restores ##6%## of your maximum health. This can only occur once every time your armor breaks.",
 
@@ -2443,58 +2490,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",
 		["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nLethal headshots using Rifles set to semi-auto will increase your reload speed by ##25%## for ##10## seconds.\n\nACE: ##$pro##\nThe reload speed bonus increases to ##50%##, and can be triggered regardless of fire mode.",
-
-		--Cleaner--
-		["menu_jail_workout_sc"] = "Cleaner",
-		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nYou deal ##5%## more damage against special enemies.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases.\n\nYou deal an additional ##10%## damage against special enemies.",
-
-		--Nimble--
-		["menu_cleaner_beta_sc"] = "Nimble",
-		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou pick all locks and handcuffs ##50%## faster.\n\nACE: ##$pro##\nYou can now ##silently crack safes by hand.##",
-
-		--Sixth Sense--
-		["menu_chameleon_beta_sc"] = "Sixth Sense",
-		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",
-
-		--Systems Specialist--
-		["menu_second_chances_beta_sc"] = "Systems Specialist",
-		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYour camera loop duration is increased by ##20## seconds.\n\nYou interact with all computers, hacks, cameras, and ECMs ##25%## faster.\n\nACE: ##$pro##\nIncreases the duration of marked enemies by ##100%## and you can now mark specials and guards in stealth by aiming at them with any weapon.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",
-
-		--ECM Specialist--
-		["menu_ecm_booster_beta_sc"] = "ECM Specialist",
-		["menu_ecm_booster_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##3## ECM jammers instead of just two.\n\nACE: ##$pro##\nYou can now place ##4## ECM jammers instead of just three.",
-
-		--ECM Overdrive--
-		["menu_ecm_2x_beta_sc"] = "ECM Overdrive",
-		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can ##now be used to open certain electronic doors.##\n\nYour ECM jammer and feedback duration is increased by ##25%.##\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer.",
-
+		
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
 		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%##.\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.",
-
-		--Moving Target--
-		["menu_dire_need_beta_sc"] = "Moving Target",
-		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1.5%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1.5%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##\n\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.",
-
-		--Optical Illusions--
-		["menu_optic_illusions_sc"] = "Optical Illusions",
-		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",
-
-		--The Professional--
-		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##2## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",
-
-		--Unseen Strike, formally Dire Need--
-		["menu_backstab_beta_sc"] = "Unseen Strike",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance persists for ##4## seconds after taking damage.",
-
-		--Spotter--
-		["menu_hitman_beta_sc"] = "Spotter",
-		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.",
-
-		--Low Blow--
-		["menu_unseen_strike_beta_sc"] = "Low Blow",
-		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",

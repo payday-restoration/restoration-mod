@@ -1299,6 +1299,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.HEALTH_INIT = 2
 	self.sniper.headshot_dmg_mul = 2
 	self.sniper.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.sniper.immune_to_knock_down = true
 	self.sniper.allowed_poses = {stand = true}
 	self.sniper.move_speed = presets.move_speed.very_fast
 	self.sniper.shooting_death = false
@@ -1823,7 +1824,7 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors.surrender = presets.surrender.easy
 	self.bolivian_indoors.surrender_break_time = {20, 30}
 	self.bolivian_indoors.detection = presets.detection.guard
-	if job == "friend" then --stop fucking killing each other please
+	if job == "friend" or job == "pent" then --stop fucking killing each other please
 		self.bolivian_indoors.access = "gangster"
 	else
 		self.bolivian_indoors.access = "security"

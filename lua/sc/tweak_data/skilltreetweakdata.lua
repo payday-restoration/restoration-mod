@@ -1222,48 +1222,27 @@ function SkillTreeTweakData:init(tweak_data)
 			--[[   COVERT OPS SUBTREE   ]]--
 			--{
 
-			--Cleaner--
+			--Alert--
 			self.skills.jail_workout = {
 				["name_id"] = "menu_jail_workout_sc",
 				["desc_id"] = "menu_jail_workout_desc_sc",
-				["icon_xy"] = {7, 2},
+				["icon_xy"] = {5, 3},
 				[1] = {
 					upgrades = {
-						"player_corpse_dispose_amount_2",
-						"weapon_special_damage_taken_multiplier_1"			
+						"player_mark_enemy_time_multiplier"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"bodybags_bag_quantity",
-						"weapon_special_damage_taken_multiplier_2"						
+						"weapon_steelsight_highlight_specials"
 					},
 					cost = self.costs.pro
 				}
 			}
-
-			--Nimble--
-			self.skills.cleaner = {
-				["name_id"] = "menu_cleaner_beta_sc",
-				["desc_id"] = "menu_cleaner_beta_desc_sc",
-				["icon_xy"] = {10, 4},
-				[1] = {
-					upgrades = {
-						"player_pick_lock_easy_speed_multiplier_2"
-					},
-					cost = self.costs.default
-				},
-				[2] = {
-					upgrades = {
-						"player_pick_lock_hard"
-					},
-					cost = self.costs.pro
-				}
-			}
-
+			
 			--Sixth Sense--
-			self.skills.chameleon = {
+			self.skills.cleaner = {
 				["name_id"] = "menu_chameleon_beta_sc",
 				["desc_id"] = "menu_chameleon_beta_desc_sc",
 				["icon_xy"] = {6, 10},
@@ -1281,6 +1260,27 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					cost = self.costs.pro
 				}
+			}			
+
+			--ECM Overdrive--
+			self.skills.chameleon = {
+				["name_id"] = "menu_cleaner_beta_sc",
+				["desc_id"] = "menu_cleaner_beta_desc_sc",
+				["icon_xy"] = {6, 3},
+				[1] = {
+					upgrades = {
+						"ecm_jammer_can_open_sec_doors"
+					},
+					cost = self.costs.default
+				},
+				[2] = {
+					upgrades = {
+						"ecm_jammer_duration_multiplier",
+						"ecm_jammer_feedback_duration_boost",
+						"ecm_jammer_affects_pagers"
+					},
+					cost = self.costs.pro
+				}
 			}
 
 			--Systems Specialist-
@@ -1290,16 +1290,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 2},
 				[1] = {
 					upgrades = {
-						"player_tape_loop_duration_2",
 						"player_hack_fix_interaction_speed_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_mark_enemy_time_multiplier",
-						"weapon_steelsight_highlight_specials",
-						"player_hack_fix_interaction_speed_multiplier_2",
+						"player_tape_loop_duration_2",					
+						"player_hack_fix_interaction_speed_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1328,20 +1326,16 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.ecm_2x = {
 				["name_id"] = "menu_ecm_2x_beta_sc",
 				["desc_id"] = "menu_ecm_2x_beta_desc_sc",
-				["icon_xy"] = {6, 3},
+				["icon_xy"] = {8, 2},
 				[1] = {
 					upgrades = {
-						"ecm_jammer_can_open_sec_doors",
-						"ecm_jammer_duration_multiplier",
-						"ecm_jammer_feedback_duration_boost"
+						"player_marked_inc_dmg_distance_1"	
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"ecm_jammer_duration_multiplier_2",
-						"ecm_jammer_feedback_duration_boost_2",
-						"ecm_jammer_affects_pagers"
+						"player_marked_enemy_extra_damage"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1356,7 +1350,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.sprinter = {
 				["name_id"] = "menu_sprinter_beta_sc",
 				["desc_id"] = "menu_sprinter_beta_desc_sc",
-				["icon_xy"] = {7, 3},
+				["icon_xy"] = {0, 11},
 				[1] = {
 					upgrades = {
 						"player_stamina_regen_timer_multiplier",
@@ -1366,8 +1360,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_run_dodge_chance",
-						"player_on_zipline_dodge_chance"
+						"player_crouch_dodge_chance_1",
+						"player_crouch_speed_multiplier_2"
 					},
 					cost = self.costs.pro
 				}
@@ -1429,7 +1423,8 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
                    		"player_detection_risk_add_movement_speed_2",
-                   		"player_backstab_dodge"
+						"player_run_dodge_chance",
+						"player_on_zipline_dodge_chance"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1561,20 +1556,21 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Spotter--
+			--Cleaner, formally Spotter--
 			self.skills.hitman = {
 				["name_id"] = "menu_hitman_beta_sc",
 				["desc_id"] = "menu_hitman_beta_desc_sc",
-				["icon_xy"] = {8, 2},
+				["icon_xy"] = {7, 2},
 				[1] = {
 					upgrades = {
-						"player_marked_enemy_extra_damage"
+						"weapon_special_damage_taken_multiplier_1"	
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_marked_inc_dmg_distance_1"			
+						"player_backstab_dodge",	
+						"weapon_special_damage_taken_multiplier_2"	
 					},
 					cost = self.costs.hightierpro
 				}

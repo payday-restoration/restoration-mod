@@ -7879,6 +7879,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"assault_rifle"
 				}
 				self.akmsu.AMMO_MAX = 60
+				self.akmsu.has_description = true
+				self.akmsu.desc_id = "bm_akmsu_sc_desc"
 				self.akmsu.fire_mode_data.fire_rate = 0.0923076923
 				self.akmsu.auto.fire_rate = 0.0923076923
 				self.akmsu.panic_suppression_chance = 0.05

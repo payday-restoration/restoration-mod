@@ -1122,7 +1122,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m16_sc_desc"] = "This classic rifles serves as the predecessor to the CAR-4. What it lacks in concealability it makes up for in power.",
 		--AK 7.62
 		["bm_w_akm"] = "AK 7.62 Rifle",
-		["bm_akm_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+		["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.",
 		["bm_w_akm_gold"] = "Golden AK 7.62 Rifle",
 		["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
 		--ASS VAL--
@@ -1136,6 +1136,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Eh, whatever
 		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
+		--Krinkov
+		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg Light Machine Gun",

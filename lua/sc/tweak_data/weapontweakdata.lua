@@ -5486,7 +5486,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Steakout (AA-12)
 				self.aa12.rays = 9
+				self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.aa12.AMMO_MAX = 80
+				self.aa12.desc_id = "bm_aa12_sc_desc"
+				self.aa12.has_description = true
 				self.aa12.CLIP_AMMO_MAX = 8
 				self.aa12.kick = self.stat_info.kick_tables.moderate_kick
 				self.aa12.FIRE_MODE = "auto"				
@@ -5708,6 +5711,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Judge
 				--Keeping
 				self.x_judge.fire_mode_data.fire_rate = 0.272727
+				self.x_judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 				self.x_judge.rays = 9
 				self.x_judge.BURST_FIRE = 2
 				self.x_judge.AMMO_MAX = 40
@@ -7320,7 +7324,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flint.timers.reload_exit_not_empty = 0.75
 
 			--AK
-				self.ak74.desc_id = "bm_menu_sc_ak74_desc"
+				self.ak74.desc_id = "bm_ak74_sc_desc"
 				self.ak74.AMMO_MAX = 150
 				self.ak74.fire_mode_data.fire_rate = 0.0923076923
 				self.ak74.auto.fire_rate = 0.0923076923
@@ -7605,7 +7609,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_akmsu.timers.reload_empty = 3.4
 
 			--AK.762
-				self.akm.desc_id = "bm_menu_sc_akm_desc"
+				self.akm.desc_id = "bm_akm_sc_desc"
 				self.akm.AMMO_MAX = 120
 				self.akm.fire_mode_data.fire_rate = 0.1
 				self.akm.auto.fire_rate = 0.1
@@ -7638,7 +7642,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.reload_speed_multiplier = 1.1
 				self.akm.panic_suppression_chance = 0.05
 				--Gold AK
-				self.akm_gold.desc_id = "bm_menu_sc_akm_gold_desc"
+				self.akm_gold.desc_id = "bm_akm_gold_sc_desc"
 				self.akm_gold.kick = self.stat_info.kick_tables.moderate_right_kick			
 				self.akm_gold.AMMO_MAX = 120
 				self.akm_gold.fire_mode_data.fire_rate = 0.1
@@ -8097,6 +8101,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--Falcon (FAL)
 			self.fal.AMMO_MAX = 80
+			self.fal.has_description = true
+			self.fal.desc_id = "bm_fal_sc_desc"
 			self.fal.CLIP_AMMO_MAX = 30
 			self.fal.fire_mode_data.fire_rate = 0.0923076923
 			self.fal.CAN_TOGGLE_FIREMODE = true
@@ -9158,7 +9164,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Thanatos .50 cal
 			self.m95.upgrade_blocks = nil
 			self.m95.has_description = true
-			self.m95.desc_id = "bm_heavy_ap_weapon_sc_desc"
+			self.m95.desc_id = "bm_m95_sc_desc"
 			self.m95.AMMO_MAX = 20
 			self.m95.fire_mode_data.fire_rate = 1.5
 			self.m95.kick = self.stat_info.kick_tables.left_kick

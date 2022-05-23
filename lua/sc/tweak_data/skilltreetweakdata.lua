@@ -1206,7 +1206,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"snp_graze_damage_2"
+						"snp_graze_damage_2",
+						"player_headshot_no_falloff"
 					},
 					cost = self.costs.hightierpro
 				}

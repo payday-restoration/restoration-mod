@@ -1051,34 +1051,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_desc"] = "Adds a 10% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 20%.",
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 
-		--Thanatos--
-		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-
-		--Galant--
-		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when its clip is empty and deals 80% of its damage through body armor.",
-
-		--Kobus 90--
-		["bm_w_p90"] = "Project 90 Submachine Gun",
-		["bm_p90_sc_desc"] = "A bullpup SMG. A competitor to the SpecOps SMG.",
-		["bm_wp_p90_body_p90_tan"] = "Tan Body",
-		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
-		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
-
-		["bm_mp7_sc_desc"] = "A lightweight SMG. A competitor to the Project 90 SMG.",
-
 		--Phoenix .500--
 		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
-
-		--OICW--
-		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
-		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nHold $BTN_BIPOD to switch to the Grenade Launcher.",
-
-		--socom deez nuts--
-		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
-
-		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1097,101 +1071,124 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
 
-		--Little Friend--
-		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
-		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
-		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
+
+		
+		--Baby Deagle--
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
+		--socom deez nuts--
+		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
+		--Crosskill Guard
+		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
+		--Broomstick--
+		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
+		--SAA/Peacemaker
+		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\nAlt-fire allows for fanning the hammer to deliver a flurry of rounds.\n\nCan penetrate body armor, shields and thin walls",
+
+
+		--Kobus 90--
+		["bm_w_p90"] = "Project 90 Submachine Gun",
+		["bm_p90_sc_desc"] = "A bullpup SMG. A competitor to the SpecOps SMG.",
+		["bm_wp_p90_body_p90_tan"] = "Tan Body",
+		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
+		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
+		--Spec Ops
+		["bm_mp7_sc_desc"] = "A lightweight SMG. A competitor to the Project 90 SMG.",
+		--Compact-5/MP5
+		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
+		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
+		--Uzi
+		["bm_uzi_sc_desc"] = "While dated, the Uzi makes for a reliable, easy to control SMG.\nRechambered in .45 ACP.",	
+
+		--AA12
+		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
+
+		--OICW--
+		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
+		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nHold $BTN_BIPOD to switch to the Grenade Launcher.",
+		--M4/CAR-4
+		["bm_m4_sc_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
+		["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. Overrides the appearance of your handguard.",
+		["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+		--AK 5.45
+		["bm_w_ak74"] = "AK 5.45 Rifle",
+		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 counterpart, this rifle is by no means any less deadly.",
+		--UAR
+		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",
+
+		--AMR-16
+		["bm_m16_sc_desc"] = "This classic rifles serves as the predecessor to the CAR-4. What it lacks in concealability it makes up for in power.",
+		--AK 7.62
+		["bm_w_akm"] = "AK 7.62 Rifle",
+		["bm_akm_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+		["bm_w_akm_gold"] = "Golden AK 7.62 Rifle",
+		["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
 		--ASS VAL--
 		--["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "Bring truth to the phrase \"Silence is deadly\".\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
-
+		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 		--KETCHUPKNOB--
 		--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
 		["bm_w_groza"] = "OB-14st Byk-4 Rifle", --Hopefully less silly than its Ketchup name
 		--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
 		--Although, a Russian word for "region/zone/area" followed up with a Polish word...
 		--Eh, whatever
-		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and pressing $BTN_BIPOD switches to the undermounted grenade launcher.",
-		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, now with more boom.\n\nDeals 80% of its damage through body armor and holding $BTN_BIPOD switches to the undermounted grenade launcher.",
-
-		--Mosin--
-		["bm_mosin_sc_desc"] = "Classic, powerful bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and can penetrate body armor, shields and thin walls.",
-		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nFires weaker tranquilizer rounds that deal damage over time and can stun enemies.",
-		
-		--Crosskill Guard
-		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
-
-		--Broomstick--
-		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
-
-		--M4/CAR-4
-		["bm_m4_sc_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
-		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
-		["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. Overrides the appearance of your handguard.",
-		["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
-
-		--AMR-16/M16
-		["bm_m16_sc_desc"] = "The predecessor to the CAR-4.",
+		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg Light Machine Gun",
 
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 Light Machine Gun",
-
-		--Buzzsaw/Mg42
-		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",
-
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
-		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3.",	
-
-		--Versteckt-51/HK51B
-		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes.",	
-
+		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties\n\nWildly inaccurate when hipfired.",	
 		--M60
 		["bm_w_m60"] = "M60 Heavy Machine Gun",
-
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B Heavy Machine Gun",	
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
 		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nWildly inaccurate but has 25% less recoil when hipfired.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
+		--Versteckt-51/HK51B
+		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes.",	
 
-		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\n\nCan penetrate body armor, shields and thin walls and alt-fire allows for fanning the hammer to deliver a flurry of rounds.",
 		
+		--Galant--
+		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when its clip is empty and deals 80% of its damage through body armor.",
 		--M308
 		["bm_m14_sc_desc"] = "Can easily fire off accurate shots, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
 		--FAL
 		["bm_fal_sc_desc"] = "The Right Arm of the Free World.\n\nDeals 80% of its damage through body armor.",	
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\nThe roller delayed action of this rifle allows for accuracy rivalling that of snipers.\n\nDeals 80% of its damage through body armor.",	
+		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\nHas accuracy rivalling that of snipers.\n\nDeals 80% of its damage through body armor.",	
+		--Little Friend
+		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
+		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
 
-		--Compact-5/MP5
-		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
-		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
-
-		--3GL
-		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber, allowing for rapid follow-ups in a compact package.\nAlt-fire allows for firing off an entire stack.",
-
-
-		["bm_uzi_sc_desc"] = "While dated, the Uzi makes for a reliable, easy to control SMG.\nRechambered in .45 ACP.",	
-
-		--WA2000
-		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
-
-		--SVD
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle.\n\nCan penetrate body armor, shields and thin walls.",
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
-		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\nCan penetrate body armor, shields and thin walls.",		
+		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\nCan penetrate body armor, shields and thin walls.",
+		--WA2000
+		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
+		--SVD
+		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle.\n\nCan penetrate body armor, shields and thin walls.",
+		--Mosin--
+		["bm_mosin_sc_desc"] = "Classic, powerful bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and can penetrate body armor, shields and thin walls.",
+		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nFires weaker tranquilizer rounds that deal damage over time and can stun enemies.",
+		--Thanatos--
+		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
+
+		--3GL
+		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber, allowing for rapid follow-ups in a compact package.\nAlt-fire allows for firing off an entire stack.",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",
@@ -2476,7 +2473,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Rifles set to semi-auto deal ##70%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nThe radius of Mind Blown is increased by ##1## meter.\n\nFor every ##7## meters away you are from the enemy, the chaining effect deals an additional ##10%## damage; up to a total of ##110%## of the damage dealt.",
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Rifles set to semi-auto deal ##70%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nHeadshots with Rifles set to semi-auto have ##no damage falloff## and the radius of the chaining effect is increased by ##1## meter.\n\nFor every ##7## meters away you are from the enemy, the chaining effect deals an additional ##10%## damage; up to a total of ##110%## of the damage dealt.",
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",

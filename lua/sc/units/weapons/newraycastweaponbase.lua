@@ -875,6 +875,10 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 end
 
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
+	if self:is_single_shot() and self:is_category("assault_rifle", "snp") and managers.player:has_category_upgrade("player", "headshot_no_falloff") and col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name then
+		--log("hedshit")
+		return damage
+	end
 	--Initialize base info.
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local current_state = user_unit:movement()._current_state
@@ -882,6 +886,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	local falloff_start = damage_falloff and damage_falloff.start_dist or 3000
 	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
 	
+		--log("DSAFGS")
 	--[[
 	log("falloff_start : " .. tostring( falloff_start /100 ))
 	log("falloff_end : " .. tostring( falloff_end /100 ))
@@ -934,6 +939,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Compute final damage.
 	return math.lerp(damage, minimum_damage * damage, math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start)))
 end
+
 
 function NewRaycastWeaponBase:reload_exit_expire_t()
 	if not self._use_shotgun_reload then

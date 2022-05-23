@@ -53,6 +53,12 @@
 		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
 		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
 	</HeistMusic>
+	<HeistMusic directory="sounds/razormindbeta" id="resmusic_razormindbeta" volume="0.7">
+		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="control" source="control.ogg" start_source="stealthintro.ogg"/>
+	</HeistMusic>
 	<HeistMusic directory="sounds/ticktockalpha" id="resmusic_ticktockalpha" volume="0.7">
 		<event name="setup" source="stealth.ogg"/>	
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>

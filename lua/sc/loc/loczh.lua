@@ -1714,7 +1714,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_25"] = "作为联邦特警成立联邦泰坦计划的替代品，REAPER以更快更高效的执行速度，与低于OMNIA的报价，从同类竞品中脱颖而出。该集团有望使联邦特警在墨西哥与美国两地拥有接近OMNIA和黑水的势力。",
 
 		["menu_button_deploy_bipod"] = "切换为脚架/下挂榴弹",
-		["skill_stockholm_syndrome_trade"] = "倒地次数已恢复！",
 		["hint_short_max_pagers"] = "不回答对讲机将会极大地增加怀疑度。",
 
 		--And now we're doing it again--

@@ -242,7 +242,6 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-
 			--Clowns are Scary, mostly just renaming it because god damn it's stupid--
 			self.skills.cable_guy = {
 				["name_id"] = "menu_cable_guy_beta_sc",
@@ -270,14 +269,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 8},
 				[1] = {
 					upgrades = {
-						"player_civilians_dont_flee"
+						"player_civilian_reviver",
+						"player_civilian_gives_ammo"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_civilian_reviver",
-						"player_civilian_gives_ammo"
+						"team_damage_hostage_absorption"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -338,7 +337,8 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_hostage_health_regen_max_mult",
-						"team_damage_hostage_absorption"
+						"player_civilians_dont_flee",
+						"player_super_syndrome_1"
 					},
 					cost = self.costs.hightierpro
 				}

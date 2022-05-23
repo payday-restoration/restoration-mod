@@ -870,7 +870,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.uzi_npc.alert_size = 0
 		self.uzi_npc.suppression = 0.1
 		
-		--Krinkov
+		--ASVAL
 		self.asval_smg_npc = deep_clone(self.mp5_npc)		
 		self.asval_smg_npc.DAMAGE = 3
 		self.asval_smg_npc.auto.fire_rate = 0.083
@@ -880,7 +880,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_smg_npc.sounds.prefix = "akmsu_npc"
 		
 		--Tatonka
-		self.akmsu_smg_npc = deep_clone(self.ump_npc)
+		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 		self.akmsu_smg_npc.sounds.prefix = "coal_npc"
 		
 		--Autumn MPX

@@ -583,10 +583,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 				--Stockholm Syndrome
 					--Basic
-						self.values.player.civilians_dont_flee = {true}
-					--Ace
 						self.values.player.civilian_reviver = {true}
-						self.values.player.civilian_gives_ammo = {true}
+						self.values.player.civilian_gives_ammo = {true}						
+					--Ace						
+						self.values.team.damage = {
+							hostage_absorption = {0.1},
+							hostage_absorption_limit = 4
+						}						
 
 				--Partners in Crime--
 					--Basic
@@ -595,17 +598,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.hostage_health_multiplier = {1.1}
 							
 				--Hostage Taker
-					self.values.player.hostage_health_regen_addend = {
-						0.1, --Basic
-						0.2 --Unused
-					}
+						self.values.player.hostage_health_regen_addend = {
+							0.1, --Basic
+							0.2 --Unused
+						}		
 
 					--Ace
-						self.values.player.hostage_health_regen_max_mult = { 1 }
-						self.values.team.damage = {
-							hostage_absorption = {0.1},
-							hostage_absorption_limit = 4
-						}
+						self.values.player.civilians_dont_flee = {true}
+						self.values.player.super_syndrome = {
+							1
+						}						
+						self.values.player.hostage_health_regen_max_mult = { 2 }
 
 			
 		--Assault--

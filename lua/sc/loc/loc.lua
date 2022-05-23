@@ -1944,7 +1944,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_25"] = "REAPER offered a 'quick and brutal crackdown on cartels' at a price cheaper than OMNIA, which led to the Policía Federal adopting their version of TITAN units. This was a ploy to get their forces closer to OMNIA and Murky operations both in Mexico and the US.",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
-		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		["hint_short_max_pagers"] = "Neglecting pagers will significantly increase guard suspicion.",
 
 		--And now we're doing it again--
@@ -2138,7 +2137,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "Stockholm Syndrome",
-			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nYour hostages will not flee when they have been rescued by law enforcers.\n\nACE: ##$pro##\nNearby civilians and jokers have a chance of reviving you if you interact with them, and have a chance of giving you ammo.",
+			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nNearby civilians ##have a chance of reviving you if you interact with them and have a chance of giving you ammo##.\n\nACE: ##$pro##\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNote: Does not stack.",
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "Joker",
@@ -2150,7 +2149,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##1## health every ##4## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nHealth regen from Hostage Taker is increased by ##100%## when you have ##4## or more hostages.\n\nIncoming damage is reduced by ##1## point for you and your crew for each hostage up to ##4## times.\n\nNote: Hostage Taker does not stack.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##1## health every ##4## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYour ##hostages will not flee## when they have been rescued by law enforcers.\n\nWhenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only ##1## time during a heist.\n\nHealth regen from Hostage Taker is increased by ##100%## when you have ##4## or more hostages.",
 
 
 			--}

@@ -1943,7 +1943,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_25"] = "REAPER предложили 'быструю и жестокую расправу над картелями' по цене дешевле, чем OMNIA - поэтому мексиканская федеральная полиция пополнила состав русскими титановыми юнитами. На самом деле это уловка, чтобы подобраться ближе к операциям OMNIA в Мексике и США.",
 
 		["menu_button_deploy_bipod"] = "СОШКИ/АЛЬТЕРНАТИВНЫЙ ОГОНЬ",
-		["skill_stockholm_syndrome_trade"] = "Падение восстановлено!",
 		["hint_short_max_pagers"] = "Игнорирование пейджеров сильно увеличит полоску подозрения.",
 
 		--And now we're doing it again--

@@ -1201,18 +1201,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes.",	
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes.",
+		--M134
+		["bm_m134_sc_desc"] = "\"The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
+		
+		--Microgun
+		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
 
 		
 		--Galant--
 		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when its clip is empty and deals 80% of its damage through body armor.",
 		--M308
-		["bm_m14_sc_desc"] = "Can easily fire off accurate shots, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
+		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
 		--FAL
 		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\nDeals 80% of its damage through body armor.",	
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\nHas accuracy rivalling that of snipers.\n\nDeals 80% of its damage through body armor.",	
+		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\nDeals 80% of its damage through body armor.",	
 		--Little Friend
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
@@ -1231,7 +1236,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nFires weaker tranquilizer rounds that deal damage over time and can stun enemies.",
 		--Thanatos--
+		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
+		--Custom Snipers
+		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
+		["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
+		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
+		["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
 
 		--3GL
 		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber, allowing for rapid follow-ups in a compact package.\nAlt-fire allows for firing off an entire stack.",
@@ -1262,12 +1273,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
-
-		--M134
-		["bm_m134_sc_desc"] = "\"The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
-		
-		--Microgun
-		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
 
 		--AN-94/92
 		["bm_an94_rof_init_sc_desc"] = "The first 2 rounds of each trigger pull fire at 3x the rate of fire.",
@@ -1584,11 +1589,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
 
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
-
-
-		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
-		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
-		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
 
 		--Throwables--
 		["bm_concussion_desc"] = "Capacity: 3 \nRange: 10m \n- Stuns enemies for up to 4s \n- Enemy accuracy reduced by 50% for 7s \n- Titan-Shields, Titan-Bulldozers and Captains are immune to its stunning effects\n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",

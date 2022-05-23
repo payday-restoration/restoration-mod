@@ -12101,7 +12101,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.recategorize = { "antim_snp" }
 		self.m200.upgrade_blocks = nil
 		self.m200.has_description = true
-		self.m200.desc_id = "bm_heavy_ap_weapon_sc_desc"
+		self.m200.desc_id = "bm_m200_sc_desc"
 		self.m200.AMMO_MAX = 20
 		self.m200.CLIP_AMMO_MAX = 5
 		self.m200.fire_mode_data.fire_rate = 0.923076923

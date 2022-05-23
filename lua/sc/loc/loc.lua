@@ -1157,7 +1157,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m16_sc_desc"] = "This classic rifles serves as the predecessor to the CAR-4. What it lacks in concealability it makes up for in power.",
 		--AK 7.62
 		["bm_w_akm"] = "AK 7.62 Rifle",
-		["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.",
+		["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.\n\nThe Go-To for insurgents and crazy regimes throughout the world.",
 		["bm_w_akm_gold"] = "Golden AK 7.62 Rifle",
 		["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
 		--ASS VAL--
@@ -1174,14 +1174,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Krinkov
 		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 
+		--Akimbo Krinkov
+		["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg Light Machine Gun",
+		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.\n\nWildly inaccurate when hipfired.",
 
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 Light Machine Gun",
+		["bm_menu_sc_m249_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.\n\nWildly inaccurate when hipfired.",
+
+		--RPK
+		["bm_menu_sc_rpk_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.\n\nWildly inaccurate when hipfired.",
+					
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
-		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties\n\nWildly inaccurate when hipfired.",	
+		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.\n\nWildly inaccurate when hipfired.",	
 		--M60
 		["bm_w_m60"] = "M60 Heavy Machine Gun",
 		--Ksp 58
@@ -1200,7 +1209,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--M308
 		["bm_m14_sc_desc"] = "Can easily fire off accurate shots, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
 		--FAL
-		["bm_fal_sc_desc"] = "The Right Arm of the Free World.\n\nDeals 80% of its damage through body armor.",	
+		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\nDeals 80% of its damage through body armor.",	
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
 		["bm_g3_sc_desc"] = "The big sister to the Compact-5 and Brenner-21.\nHas accuracy rivalling that of snipers.\n\nDeals 80% of its damage through body armor.",	

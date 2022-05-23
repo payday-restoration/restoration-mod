@@ -177,7 +177,7 @@ function PlayerTweakData:init()
 	--Used to determine penalties for down timer when returning from custody
 	self.damage.DOWNED_TIME_DEC = 0
 	self.damage.DOWNED_TIME_MIN = 10
-	self.damage.ARRESTED_TIME = 60
+	self.damage.ARRESTED_TIME = 30
 	self.damage.INCAPACITATED_TIME = 30
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.respawn_time_penalty = 30

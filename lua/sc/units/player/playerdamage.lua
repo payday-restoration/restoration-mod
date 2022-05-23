@@ -1068,16 +1068,6 @@ function PlayerDamage:_calc_health_damage(attack_data)
 	return self:_calc_health_damage_no_deflection(attack_data)
 end
 
---Make lock picking skill affect arrested time.
-function PlayerDamage:on_arrested()
-	self._bleed_out = false
-	self._arrested_timer = tweak_data.player.damage.ARRESTED_TIME * managers.player:upgrade_value("player", "pick_lock_easy_speed_multiplier", 1)
-	self._arrested_paused_counter = 0
-
-	managers.hud:pd_start_timer({time = self._arrested_timer})
-	managers.hud:on_arrested()
-end
-
 Hooks:PostHook(PlayerDamage, "damage_tase" , "ResTaserTaunts" , function(self, attack_data)
 	if cur_state == "tased" then
 		if attack_data.attacker_unit:base()._tweak_table == "taser" or attack_data.attacker_unit:base()._tweak_table == "taser_titan" then

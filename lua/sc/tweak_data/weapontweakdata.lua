@@ -7601,6 +7601,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--PRIMARIES
 
 			--Akimbo Krinkov
+				self.x_akmsu.desc_id = "bm_x_akmsu_sc_desc"
+				self.x_akmsu.has_description = true			
 				self.x_akmsu.AMMO_MAX = 120
 				self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
 				self.x_akmsu.panic_suppression_chance = 0.05
@@ -7632,6 +7634,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--AK.762
 				self.akm.desc_id = "bm_akm_sc_desc"
+				self.akm.has_description = true
 				self.akm.AMMO_MAX = 120
 				self.akm.fire_mode_data.fire_rate = 0.1
 				self.akm.auto.fire_rate = 0.1
@@ -7665,6 +7668,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.panic_suppression_chance = 0.05
 				--Gold AK
 				self.akm_gold.desc_id = "bm_akm_gold_sc_desc"
+				self.akm_gold.has_description = true
 				self.akm_gold.kick = self.stat_info.kick_tables.moderate_right_kick			
 				self.akm_gold.AMMO_MAX = 120
 				self.akm_gold.fire_mode_data.fire_rate = 0.1
@@ -8311,6 +8315,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.sounds.spin_end = "turret_spin_stop"
 
 		--Boot (HK416c)
+			self.tecci.has_description = true
+			self.tecci.desc_id = "bm_w_tecci_desc_sc"
 			self.tecci.categories = {
 				"lmg",
 				"smg"
@@ -8352,7 +8358,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"lmg",
 				"smg"
 			}
-			--self.m249.desc_id = "bm_menu_sc_m249_desc"
+			self.m249.desc_id = "bm_menu_sc_m249_desc"
+			self.m249.has_description = true
 			self.m249.CLIP_AMMO_MAX = 200
 			self.m249.AMMO_MAX = 300
 			self.m249.fire_mode_data.fire_rate = 0.075
@@ -8387,6 +8394,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.reload_speed_multiplier = 0.75
 	
 		--RPK
+			self.rpk.desc_id = "bm_menu_sc_rpk_desc"
+			self.rpk.has_description = true		
 			self.rpk.categories = {
 				"lmg",
 				"smg"

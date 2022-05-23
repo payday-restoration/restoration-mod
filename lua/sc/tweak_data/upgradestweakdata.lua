@@ -926,7 +926,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						damage_factor_range = 0.10,
 						range_increment = 700
 					}
-				}					
+				}			
+				self.values.player.headshot_no_falloff = {true}	
 
 	--GHOST--
 		--Shinobi--
@@ -3250,6 +3251,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_headshot_no_falloff = {
+		name_id = "menu_player_headshot_no_falloff",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "headshot_no_falloff",
+			category = "player"
+		}
+	}	
 	self.definitions.player_bipod_damage_reduction = {
 		name_id = "menu_player_bipod_damage_reduction",
 		category = "feature",

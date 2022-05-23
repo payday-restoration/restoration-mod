@@ -1087,14 +1087,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--Kobus 90--
-		["bm_w_p90"] = "Project 90 Submachine Gun",
-		["bm_p90_sc_desc"] = "A bullpup SMG. A competitor to the SpecOps SMG.",
+		["bm_w_p90"] = "Project-90 Submachine Gun",
+		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG.",
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
-		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 		--Spec Ops
-		["bm_mp7_sc_desc"] = "A lightweight SMG. A competitor to the Project 90 SMG.",
+		["bm_w_mp7"] = "SpecOps-7 Submachine Gun",
+		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG.",
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
 		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
@@ -1106,15 +1106,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--S552
 		["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS.",				
-
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
-		
 		--G36
 		["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",		
-
 		--VHS/Lion's Roar
 		["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",		
+		--Olympic/Para
+		["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",		
+		--TAR-21/Para
+		["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",		
+		--Famas
+		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",		
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
@@ -1124,32 +1127,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
 		["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. Overrides the appearance of your handguard.",
 		["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
-		
 		--AK5
-		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",				
-
+		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
 		--AK17
 		["bm_flint_sc_desc"] = "The modern interpretation of the classic AK. Features a potent 2 round burst and has quite the identity crisis.",				
-		
 		--AK 5.45
 		["bm_w_ak74"] = "AK 5.45 Rifle",
 		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 counterpart, this rifle is by no means any less deadly.",
-	
 		--Union 5.56
 		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	
-
 		--UAR
-		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",
-		
-		--Olympic/Para
-		["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",		
-
-		--TAR-21/Para
-		["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",		
-
-		--Famas
-		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",		
-
+		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",	
 		--CR 805
 		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",		
 					
@@ -1173,7 +1161,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
 		--Krinkov
 		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
-
 		--Akimbo Krinkov
 		["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 
@@ -1201,10 +1188,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes.",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes while maintaining the power of a 7.62 cartridge.\n\nWildly inaccurate when hipfired.",
+
 		--M134
 		["bm_m134_sc_desc"] = "\"The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
-		
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
 

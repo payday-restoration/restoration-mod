@@ -10589,15 +10589,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 	}
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.perks = {"silencer"}
 
-
 	self.parts.wpn_fps_ass_sub2000_body_gen1.adds = {
-			"wpn_fps_ass_sub2000_dh_standard",
-			"wpn_fps_ass_sub2000_o_back"
-		}
+		"wpn_fps_ass_sub2000_dh_standard",
+		"wpn_fps_ass_sub2000_o_back"
+	}
 	self.parts.wpn_fps_ass_sub2000_body_gen2.adds = {
-			"wpn_fps_ass_sub2000_dh_standard",
-			"wpn_fps_ass_sub2000_o_back"
-		}
+		"wpn_fps_ass_sub2000_dh_standard",
+		"wpn_fps_ass_sub2000_o_back"
+	}
+	self.parts.wpn_fps_ass_sub2000_o_adapter.adds = { "wpn_fps_ass_sub2000_o_back_down" }
+	for i, part_id in pairs(self.wpn_fps_ass_sub2000.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].type == "sight" and part_id ~= "wpn_fps_ass_sub2000_o_back" then
+			table.insert(self.parts[part_id].forbids, "wpn_fps_ass_sub2000_o_back")
+		end
+	end
 
 
 end)

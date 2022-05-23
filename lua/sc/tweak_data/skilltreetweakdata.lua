@@ -1154,25 +1154,25 @@ function SkillTreeTweakData:init(tweak_data)
 					cost = self.costs.hightierpro
 				}
 			}
-
-			--Mind Blown, formerly Explosive Headshot--
+			
+			--Aggressive Reload--
 			self.skills.shock_and_awe = {
-				["name_id"] = "menu_kilmer_sc",
-				["desc_id"] = "menu_kilmer_desc_sc",
-				["icon_xy"] = {11, 9},
+				["name_id"] = "menu_engineering_beta_sc",
+				["desc_id"] = "menu_engineering_beta_desc_sc",
+				["icon_xy"] = {8, 3},
 				[1] = {
 					upgrades = {
-						"snp_graze_damage_1"
+						"temporary_single_shot_fast_reload_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"snp_graze_damage_2"
+						"temporary_single_shot_fast_reload_2"
 					},
 					cost = self.costs.hightierpro
 				}
-			}
+			}			
 
 			--Ammo Efficiency--
 			self.skills.fast_fire = {
@@ -1192,27 +1192,26 @@ function SkillTreeTweakData:init(tweak_data)
 					cost = self.costs.hightierpro
 				}
 			}
-
-			--Aggressive Reload--
+			
+			--Mind Blown, formerly Explosive Headshot--
 			self.skills.body_expertise = {
-				["name_id"] = "menu_engineering_beta_sc",
-				["desc_id"] = "menu_engineering_beta_desc_sc",
-				["icon_xy"] = {8, 3},
+				["name_id"] = "menu_kilmer_sc",
+				["desc_id"] = "menu_kilmer_desc_sc",
+				["icon_xy"] = {11, 9},
 				[1] = {
 					upgrades = {
-						"temporary_single_shot_fast_reload_1"
+						"snp_graze_damage_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"temporary_single_shot_fast_reload_2"
+						"snp_graze_damage_2"
 					},
 					cost = self.costs.hightierpro
 				}
-			}
-			
-			
+			}			
+						
 			--}
 		--}
 		

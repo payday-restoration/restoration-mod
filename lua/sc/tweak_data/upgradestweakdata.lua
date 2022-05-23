@@ -859,6 +859,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						{0, 1}, --Basic
 						{10, 1.5} --Ace
 					}
+					
+					self.values.player.no_interrupt_interaction = {true}
 			
 		--Combat Engineer--
 			--Sharpshooter
@@ -885,6 +887,26 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.assault_rifle.steelsight_range_inc = {1.3}
 					self.values.snp.steelsight_range_inc = {1.3}
 					
+			--Aggressive Reload
+				self.values.temporary.single_shot_fast_reload = {
+					{ --Basic
+						1.25,
+						10,
+						false --Whether or not to allow full-auto
+					},
+					{ --Ace
+						1.5,
+						10,
+						true
+					},
+				}				
+
+			--Ammo Efficiency
+				self.values.player.head_shot_ammo_return = {
+					{ ammo = 0.03, time = 8, headshots = 3, to_magazine = false }, --Basic
+					{ ammo = 0.03, time = 8, headshots = 2, to_magazine = true } --Ace
+				}
+				
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
 					{ --Basic
@@ -901,27 +923,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						damage_factor_range = 0.10,
 						range_increment = 700
 					}
-				}				
-
-			--Ammo Efficiency
-				self.values.player.head_shot_ammo_return = {
-					{ ammo = 0.03, time = 8, headshots = 3, to_magazine = false }, --Basic
-					{ ammo = 0.03, time = 8, headshots = 2, to_magazine = true } --Ace
-				}
-
-			--Aggressive Reload
-				self.values.temporary.single_shot_fast_reload = {
-					{ --Basic
-						1.25,
-						10,
-						false --Whether or not to allow full-auto
-					},
-					{ --Ace
-						1.5,
-						10,
-						true
-					},
-				}
+				}					
 
 	--GHOST--
 		--Shinobi--
@@ -3326,6 +3328,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_no_interrupt_interaction = {
+		name_id = "menu_player_no_interrupt_interaction",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "no_interrupt_interaction",
+			category = "player"
+		}
+	}	
 	self.definitions.player_revive_reload = {
 		name_id = "menu_player_revive_reload",
 		category = "feature",

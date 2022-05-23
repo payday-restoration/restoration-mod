@@ -1971,7 +1971,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_25"] = "리퍼는 연방 경찰에게 옴니아보다 저렴한 가격으로 '카르텔에 대한 신속하고 잔인한 단속'을 제안했으며, 이로 인해 연방 경찰은 리퍼의 타이탄 버전을 채택했습니다. 이것은 멕시코와 미국의 옴니아 및 머키워터 작전에 그들의 군대를 더 가깝게 만들기 위한 계략입니다.",
 
 		["menu_button_deploy_bipod"] = "거치/보조 공격",
-		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		["hint_short_max_pagers"] = "페이저를 무시하면 경비원의 의심이 크게 증가합니다.",
 
 		--And now we're doing it again--

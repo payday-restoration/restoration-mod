@@ -2442,7 +2442,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: ##$basic##\n특수 적에게 ##15%##만큼 피해를 더 입힙니다.\n\n에이스: ##$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 ##75%##만큼 채워집니다.\n\n특수 적에게 추가로 ##10%##만큼 피해를 더 많이 입힙니다.",
+			["menu_hitman_beta_desc_sc"] = "베이직: ##$basic##\n특수 적에게 ##15%##만큼 피해를 더 입힙니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 ##75%##만큼 채워집니다.\n\n특수 적에게 추가로 ##10%##만큼 피해를 더 많이 입힙니다.",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
@@ -2581,7 +2581,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "버서커",
-		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##150%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 총기류의 공격력이 ##75%##만큼 증가합니다."
+		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##150%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 원거리 무기류의 공격력이 ##75%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
 
 	})
 end)

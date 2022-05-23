@@ -3121,7 +3121,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
 	end
 
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal',}
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
@@ -3931,7 +3931,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fmg9.stats_modifiers = nil
 				self.fmg9.panic_suppression_chance = 0.05	
-				self.fmg9.swap_speed_multiplier = 1
+				self.fmg9.swap_speed_multiplier = 0.75
 
 		--SECONDARIES
 
@@ -4812,7 +4812,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sub2000.stats = {
 					damage = 30,
 					spread = 72,
-					recoil = 91,
+					recoil = 96,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 27,
@@ -4825,7 +4825,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sub2000.panic_suppression_chance = 0.05
 				self.sub2000.stats_modifiers = nil
-				self.sub2000.swap_speed_multiplier = 1
+				self.sub2000.swap_speed_multiplier = 0.75
 				self.sub2000.timers.reload_exit_empty = 0.85
 				self.sub2000.timers.reload_exit_not_empty = 0.95
 
@@ -4877,6 +4877,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.fire_mode_data.fire_rate = 0.1363636
 				self.x_deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.x_deagle.animations.has_steelsight_stance = true
+				self.x_deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.x_deagle.supported = true
 				self.x_deagle.ads_speed = 0.360 * 1.5
 				self.x_deagle.damage_falloff = {
@@ -5206,6 +5207,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.deagle.CLIP_AMMO_MAX = 8
 				self.deagle.AMMO_MAX = 30
+				self.deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.deagle.supported = true
 				self.deagle.ads_speed = 0.360
 				self.deagle.damage_falloff = {
@@ -5369,6 +5371,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.kick = self.stat_info.kick_tables.right_kick
 				self.peacemaker.BURST_FIRE = 6
 				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.35
+				self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.peacemaker.supported = true
 				self.peacemaker.ads_speed = 0.280
 				self.peacemaker.damage_falloff = {
@@ -6056,19 +6059,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.boot.timers = {
 					shotgun_reload_enter = 0.733,
-					shotgun_reload_exit_empty = 0.85,
-					shotgun_reload_exit_not_empty = 0.55,
+					shotgun_reload_exit_empty = 0.8,
+					shotgun_reload_exit_not_empty = 0.5,
 					shotgun_reload_shell = 0.33,
-					shotgun_reload_first_shell_offset = 0.15,
+					shotgun_reload_first_shell_offset = 0.14,
 					unequip = 0.55,
 					equip = 0.85
 				}
 				self.boot.stats_modifiers = nil
 				self.boot.panic_suppression_chance = 0.05
 				self.boot.stats_modifiers = {damage = 1}
-				self.boot.timers.shotgun_reload_first_shell_offset = 0.14
-				self.boot.timers.shotgun_reload_exit_empty = 0.8
-				self.boot.timers.shotgun_reload_exit_not_empty = 0.5
 				self.boot.reload_speed_multiplier = 0.75
 
 			--Mosconi 12G
@@ -6493,6 +6493,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.stats_modifiers = nil
 				self.mp7.timers.reload_not_empty = 1.75
 				self.mp7.timers.reload_empty = 2.4	
+				self.mp7.timers.reload_exit_empty = 0.45
+				self.mp7.timers.reload_exit_not_empty = 0.6
 				self.mp7.panic_suppression_chance = 0.05
 
 			--P90
@@ -6529,6 +6531,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.p90.stats_modifiers = nil
 				self.p90.panic_suppression_chance = 0.05
+				self.p90.timers.reload_exit_empty = 0.55
+				self.p90.timers.reload_exit_not_empty = 0.9
 
 			--Blaster 9mm (Tec 9)
 				self.tec9.AMMO_MAX = 90
@@ -6563,6 +6567,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.tec9.stats_modifiers = nil
 				self.tec9.panic_suppression_chance = 0.05
+				self.tec9.timers.reload_exit_empty = 0.7
+				self.tec9.timers.reload_exit_not_empty = 0.65
 
 			--Micro Uzi
 				self.baka.CLIP_AMMO_MAX = 32
@@ -7935,6 +7941,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akmsu.stats_modifiers = nil
 				self.akmsu.timers.reload_not_empty = 1.95 
 				self.akmsu.timers.reload_empty = 3.7
+				self.akmsu.timers.reload_exit_empty = 0.6
+				self.akmsu.timers.reload_exit_not_empty = 0.55
 
 
 
@@ -7953,6 +7961,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ching.AMMO_MAX = 60
 			self.ching.CAN_TOGGLE_FIREMODE = false
 			self.ching.kick = self.stat_info.kick_tables.vertical_kick	
+			self.ching.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.ching.supported = true
 			self.ching.ads_speed = 0.340
 			self.ching.damage_falloff = {
@@ -7987,6 +7996,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.new_m14.FIRE_MODE = "single"
 			self.new_m14.kick = self.stat_info.kick_tables.vertical_kick
 			self.new_m14.AMMO_MAX = 60
+			self.new_m14.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.new_m14.supported = true
 			self.new_m14.ads_speed = 0.460
 			self.new_m14.damage_falloff = {
@@ -8022,6 +8032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.g3.FIRE_MODE = "single"
 			self.g3.kick = self.stat_info.kick_tables.right_kick
 			self.g3.desc_id = "bm_g3_sc_desc"
+			self.g3.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.g3.supported = true
 			self.g3.ads_speed = 0.440
 			self.g3.damage_falloff = {
@@ -8099,6 +8110,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.galil.auto = {}
 			self.galil.auto.fire_rate = 0.09230769230
 			self.galil.kick = self.stat_info.kick_tables.moderate_kick	
+			self.galil.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.galil.supported = true
 			self.galil.ads_speed = 0.400
 			self.galil.damage_falloff = {
@@ -8138,6 +8150,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fal.auto = {}
 			self.fal.auto.fire_rate = 0.0923076923
 			self.fal.kick = self.stat_info.kick_tables.moderate_right_kick
+			self.fal.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.fal.supported = true
 			self.fal.ads_speed = 0.420
 			self.fal.damage_falloff = {
@@ -8175,6 +8188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband.auto.fire_rate = 0.1
 			self.contraband.panic_suppression_chance = 0.05
 			self.contraband.kick = self.stat_info.kick_tables.moderate_kick
+			self.contraband.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.contraband.supported = true
 			self.contraband.ads_speed = 0.460
 			self.contraband.damage_falloff = {
@@ -8236,6 +8250,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.scar.FIRE_MODE = "single"
 			self.scar.auto.fire_rate = 0.1
 			self.scar.kick = self.stat_info.kick_tables.moderate_right_kick		
+			self.scar.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.scar.supported = true
 			self.scar.ads_speed = 0.400
 			self.scar.damage_falloff = {
@@ -8717,6 +8732,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.winchester1874.fire_rate_multiplier = 1.7142857
 				self.winchester1874.CAN_TOGGLE_FIREMODE = false
 				self.winchester1874.kick = self.stat_info.kick_tables.left_kick
+				self.winchester1874.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.winchester1874.supported = true
 				self.winchester1874.ads_speed = 0.300
 				self.winchester1874.damage_falloff = {
@@ -8797,6 +8813,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.can_shoot_through_enemy = true
 				self.tti.can_shoot_through_shield = true
 				self.tti.can_shoot_through_wall = true
+				self.tti.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.tti.supported = true
 				self.tti.ads_speed = 0.480
 				self.tti.damage_falloff = {
@@ -8834,6 +8851,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.fire_mode_data.fire_rate = 1
 				self.msr.fire_rate_multiplier= 1.16666
 				self.msr.kick = self.stat_info.kick_tables.vertical_kick
+				self.msr.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.msr.supported = true
 				self.msr.ads_speed = 0.460
 				self.msr.damage_falloff = {
@@ -8871,6 +8889,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r700.fire_mode_data.fire_rate = 1
 				self.r700.fire_rate_multiplier = 1
 				self.r700.kick = self.stat_info.kick_tables.vertical_kick
+				self.r700.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.r700.supported = true
 				self.r700.ads_speed = 0.420
 				self.r700.damage_falloff = {
@@ -8909,6 +8928,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scout.fire_mode_data.fire_rate = 1.034482
 				self.scout.fire_rate_multiplier = 1.034482
 				self.scout.kick = self.stat_info.kick_tables.vertical_kick
+				self.scout.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.scout.supported = true
 				self.scout.ads_speed = 0.420
 				self.scout.damage_falloff = {
@@ -8949,6 +8969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.r93.AMMO_MAX = 30
 			self.r93.fire_mode_data.fire_rate = 1
 			self.r93.kick = self.stat_info.kick_tables.vertical_kick
+			self.r93.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.r93.supported = true
 			self.r93.ads_speed = 0.520
 			self.r93.damage_falloff = {
@@ -8984,6 +9005,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.desertfox.fire_mode_data.fire_rate = 1.3333
 			self.desertfox.kick = self.stat_info.kick_tables.right_kick
 			self.desertfox.panic_suppression_chance = 0.05
+			self.desertfox.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.desertfox.supported = true
 			self.desertfox.ads_speed = 0.480
 			self.desertfox.damage_falloff = {
@@ -9019,6 +9041,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.model70.CLIP_AMMO_MAX = 5
 			self.model70.fire_mode_data.fire_rate = 0.857142857
 			self.model70.kick = self.stat_info.kick_tables.vertical_kick
+			self.model70.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.model70.supported = true
 			self.model70.ads_speed = 0.460
 			self.model70.damage_falloff = {
@@ -9057,6 +9080,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.fire_mode_data.fire_rate = 0.8571428
 			self.wa2000.CAN_TOGGLE_FIREMODE = false
 			self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
+			self.wa2000.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.wa2000.supported = true
 			self.wa2000.ads_speed = 0.480
 			self.wa2000.damage_falloff = {
@@ -9093,6 +9117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mosin.fire_mode_data.fire_rate = 1.2
 			self.mosin.fire_rate_multiplier = 1.2
 			self.mosin.kick = self.stat_info.kick_tables.vertical_kick
+			self.mosin.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.mosin.supported = true
 			self.mosin.ads_speed = 0.420
 			self.mosin.damage_falloff = {
@@ -9127,6 +9152,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.siltstone.AMMO_MAX = 30
 			self.siltstone.fire_mode_data.fire_rate = 0.75
 			self.siltstone.kick = self.stat_info.kick_tables.right_kick
+			self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.siltstone.supported = true
 			self.siltstone.ads_speed = 0.480
 			self.siltstone.damage_falloff = {
@@ -9168,6 +9194,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sbl.single.fire_rate = 0.75
 			self.sbl.kick = self.stat_info.kick_tables.left_kick
 			self.sbl.tactical_reload = 1
+			self.sbl.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.sbl.supported = true
 			self.sbl.ads_speed = 0.340
 			self.sbl.damage_falloff = {

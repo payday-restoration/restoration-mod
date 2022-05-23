@@ -1191,7 +1191,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes.\n\nWildly inaccurate when hipfired.",
 
 		--M134
-		["bm_m134_sc_desc"] = "\"The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
+		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
 

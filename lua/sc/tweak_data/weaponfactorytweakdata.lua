@@ -10607,6 +10607,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 			table.insert(self.parts[part_id].forbids, "wpn_fps_ass_sub2000_o_back")
 		end
 	end
+	self.wpn_fps_ass_sub2000.override.wpn_fps_addon_ris = {
+		parent = "foregrip"
+	}
 
 
 end)
@@ -15942,11 +15945,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 		parent = "barrel", 
 		a_obj = "a_ns"
 	}	
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
+		custom_stats = {
+			hailstorm = true,
+			falloff_start_mult = 0.2,
+			falloff_end_mult = 0.4,
+			rof_mult = 3.3325
+		},
+		stats = {
+			value = 10,
+			reload = -6,
+			spread = -4,
+			recoil = -6,
+			extra_ammo = 10,
+			concealment = -6
+		}
+	}	
 	
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
+
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_i_iw_hailstorm")
+	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_upg_i_iw_hailstorm")		
 	
 	self.wpn_fps_pis_rsh12_npc.override = deep_clone(self.wpn_fps_pis_rsh12.override)
 	self.wpn_fps_pis_rsh12_npc.uses_parts = deep_clone(self.wpn_fps_pis_rsh12.uses_parts)		

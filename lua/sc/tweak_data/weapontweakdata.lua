@@ -7073,7 +7073,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	
 			
-			--Commando 553
+			--Commando 553		
+				self.s552.desc_id = "bm_s552_sc_desc"
+				self.s552.has_description = true					
 				self.s552.fire_mode_data.fire_rate = 0.08571428571
 				self.s552.auto.fire_rate = 0.08571428571
 				self.s552.BURST_FIRE = 3
@@ -7115,7 +7117,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.panic_suppression_chance = 0.05
 
 			--AMCAR (M733)
-				self.amcar.desc_id = "bm_menu_sc_amcar_desc"
+				self.amcar.desc_id = "bm_amcar_sc_desc"
+				self.amcar.has_description = true
 				self.amcar.CLIP_AMMO_MAX = 30
 				self.amcar.AMMO_MAX = 180
 				self.amcar.fire_mode_data.fire_rate = 0.075
@@ -7150,6 +7153,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.panic_suppression_chance = 0.05
 
 			--JP36
+				self.g36.desc_id = "bm_g36_sc_desc"
+				self.g36.has_description = true				
 				self.g36.BURST_FIRE = 3
 				self.g36.ADAPTIVE_BURST_SIZE = false																	
 				self.g36.auto.fire_rate = 0.08
@@ -7185,6 +7190,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36.panic_suppression_chance = 0.05
 
 			--Lion's Roar
+				self.vhs.desc_id = "bm_vhs_sc_desc"
+				self.vhs.has_description = true					
 				self.vhs.CLIP_AMMO_MAX = 30
 				self.vhs.AMMO_MAX = 180
 				self.vhs.fire_mode_data.fire_rate = 0.06976744186
@@ -7257,6 +7264,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m4.panic_suppression_chance = 0.05
 
 			--Ak5
+				self.ak5.desc_id = "bm_ak5_sc_desc"
+				self.ak5.has_description = true			
 				self.ak5.auto.fire_rate = 0.08571428571
 				self.ak5.fire_mode_data.fire_rate = 0.08571428571
 				self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -7288,6 +7297,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.panic_suppression_chance = 0.05
 
 			--Ak17
+				self.flint.desc_id = "bm_flint_sc_desc"
+				self.flint.has_description = true				
 				self.flint.AMMO_MAX = 150
 				self.flint.CLIP_AMMO_MAX = 30
 				self.flint.BURST_FIRE = 2
@@ -7325,6 +7336,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--AK
 				self.ak74.desc_id = "bm_ak74_sc_desc"
+				self.ak74.has_description = true					
 				self.ak74.AMMO_MAX = 150
 				self.ak74.fire_mode_data.fire_rate = 0.0923076923
 				self.ak74.auto.fire_rate = 0.0923076923
@@ -7357,6 +7369,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak74.timers.reload_exit_not_empty = 0.9
 
 			--Union 5.56
+				self.corgi.desc_id = "bm_corgi_sc_desc"
+				self.corgi.has_description = true			
 				self.corgi.CLIP_AMMO_MAX = 30
 				self.corgi.AMMO_MAX = 150
 				self.corgi.fire_mode_data.fire_rate = 0.07058823529
@@ -7391,6 +7405,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.timers.reload_exit_not_empty = 0.8
 
 			--UAR (AUG)
+				self.aug.desc_id = "bm_aug_sc_desc"
+				self.aug.has_description = true					
 				self.aug.AMMO_MAX = 150
 				self.aug.fire_mode_data.fire_rate = 0.08275862
 				self.aug.kick = self.stat_info.kick_tables.moderate_left_kick
@@ -7425,6 +7441,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Para
 				self.olympic.desc_id = "bm_menu_sc_olympic_desc"
+				self.olympic.has_description = true		
 				self.olympic.categories = {
 					"assault_rifle"
 				}
@@ -7461,7 +7478,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Tempest 21
 				self.komodo.use_data.selection_index = 1
-				self.komodo.desc_id = "bm_menu_sc_olympic_desc"
+				self.komodo.desc_id = "bm_menu_sc_komodo_desc"
+				self.komodo.has_description = true		
 				self.komodo.categories = {
 					"assault_rifle"
 				}
@@ -7499,6 +7517,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.komodo.timers.reload_exit_not_empty = 0.8
 
 			--Clarion (IS THAT A DEAGLE)
+				self.famas.desc_id = "bm_menu_sc_famas_desc"
+				self.famas.has_description = true					
 				self.famas.use_data.selection_index = 1
 				self.famas.AMMO_MAX = 90
 				self.famas.CLIP_AMMO_MAX = 25
@@ -7537,6 +7557,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.famas.ADAPTIVE_BURST_SIZE = false
 
 			--CR 805
+				self.hajk.desc_id = "bm_menu_sc_hajk_desc"
+				self.hajk.has_description = true				
 				self.hajk.fire_mode_data.fire_rate = 0.085714285
 				self.hajk.AMMO_MAX = 75
 				self.hajk.BURST_FIRE = 2

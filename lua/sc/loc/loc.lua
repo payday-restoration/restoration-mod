@@ -1103,6 +1103,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--AA12
 		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
+		
+		--S552
+		["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS.",				
+
+		--M733/AMCAR
+		["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
+		
+		--G36
+		["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",		
+
+		--VHS/Lion's Roar
+		["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",		
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
@@ -1112,12 +1124,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
 		["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. Overrides the appearance of your handguard.",
 		["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+		
+		--AK5
+		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",				
+
+		--AK17
+		["bm_flint_sc_desc"] = "The modern interpretation of the classic AK. Features a potent 2 round burst and has quite the identity crisis.",				
+		
 		--AK 5.45
 		["bm_w_ak74"] = "AK 5.45 Rifle",
 		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 counterpart, this rifle is by no means any less deadly.",
+	
+		--Union 5.56
+		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	
+
 		--UAR
 		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",
+		
+		--Olympic/Para
+		["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",		
 
+		--TAR-21/Para
+		["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",		
+
+		--Famas
+		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",		
+
+		--CR 805
+		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",		
+					
 		--AMR-16
 		["bm_m16_sc_desc"] = "This classic rifles serves as the predecessor to the CAR-4. What it lacks in concealability it makes up for in power.",
 		--AK 7.62

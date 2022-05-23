@@ -1285,6 +1285,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.1
 	}	
 	self.values.player.crouch_dodge_chance_burglar = {0.05, 0.10}	
+	self.values.player.pick_lock_speed_multiplier = {
+		0.8
+	}	
 
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,

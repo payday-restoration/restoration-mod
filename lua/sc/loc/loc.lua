@@ -1186,7 +1186,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking it down to Compact-5 sizes while maintaining the power of a 7.62 cartridge.\n\nWildly inaccurate when hipfired.",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes.\n\nWildly inaccurate when hipfired.",
 
 		--M134
 		["bm_m134_sc_desc"] = "\"The path you walk on has no end. Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
@@ -1241,6 +1241,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
 		["bm_menu_weapon_slot_warning_secondary"] = "WEAPON WAS MOVED TO THE SECONDARY SLOT\nWILL CRASH IF USED IN-HEIST AS A PRIMARY",
 		["bm_menu_weapon_slot_warning_disabled"] = "WEAPON WAS DISABLED BY CAPTAIN AUTUMN\nAND WILL RESULT IN A CRASH IF USED IN-HEIST",
+		["empty"] = "",
+		["missing_cap"] = "Custom Attachment Points is not installed\n\nAttachment will take on the slot's default appearance.",
 		["bm_lmg_generic_desc"] = "Wildly inaccurate when hipfired.",
 		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
 		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",

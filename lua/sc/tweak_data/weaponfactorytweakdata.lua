@@ -6828,6 +6828,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	
 	--Precision Stock
 	self.parts.wpn_fps_ass_g3_s_sniper.pcs = {}
+	self.parts.wpn_fps_ass_g3_s_sniper.has_description = true
+	self.parts.wpn_fps_ass_g3_s_sniper.desc_id = "empty"
 	self.parts.wpn_fps_ass_g3_s_sniper.supported = true
 	self.parts.wpn_fps_ass_g3_s_sniper.stats = {
 		value = 5,
@@ -6837,6 +6839,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	
 	--Wooden Stock
 	self.parts.wpn_fps_ass_g3_s_wood.pcs = {}
+	self.parts.wpn_fps_ass_g3_s_wood.has_description = true
+	self.parts.wpn_fps_ass_g3_s_wood.desc_id = "empty"
 	self.parts.wpn_fps_ass_g3_s_wood.supported = true
 	self.parts.wpn_fps_ass_g3_s_wood.stats = {
 		value = 4,
@@ -10599,7 +10603,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 	}
 	self.parts.wpn_fps_ass_sub2000_o_adapter.adds = { "wpn_fps_ass_sub2000_o_back_down" }
 	for i, part_id in pairs(self.wpn_fps_ass_sub2000.uses_parts) do
-		if self.parts[part_id] and self.parts[part_id].type == "sight" and part_id ~= "wpn_fps_ass_sub2000_o_back" then
+		if part_id ~= "wpn_fps_ass_sub2000_o_back" and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
 			table.insert(self.parts[part_id].forbids, "wpn_fps_ass_sub2000_o_back")
 		end
 	end
@@ -21197,6 +21201,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 			stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 			custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 			a_obj = "a_s_fix"
+		}
+	else
+		if not self.wpn_fps_lmg_hk21.override then
+			self.wpn_fps_lmg_hk21.override = {}
+		end
+		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_sniper = {
+			desc_id = "missing_cap",
+			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_s_standard",
+			third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_third_lmg_hk21_s_standard"
+		}
+		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_wood = {
+			desc_id = "missing_cap",
+			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_s_standard",
+			third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_third_lmg_hk21_s_standard"
 		}
 	end
 end)

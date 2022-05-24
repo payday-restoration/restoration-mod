@@ -668,7 +668,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
 		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (베타 버전)",
 		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (옛 버전)",
-		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (옛 버전)",		
+		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (옛 버전)",	
+		["menu_jukebox_resmusic_razormindbeta"] = "Razormind (베타 버전)",
+		["menu_jukebox_screen_resmusic_razormindbeta"] = "Razormind (베타 버전)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -1182,10 +1184,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
-		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, 7.62 카트리지의 성능을 유지하면서 Compact-5 크기로 축소했습니다.\n\n지향 사격 시 명중률이 매우 감소합니다.",
+		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, 이 기관총을 Compact-5 크기로 축소했습니다.\n\n지향 사격 시 명중률이 매우 감소합니다.",
 
 		--M134
-		["bm_m134_sc_desc"] = "\"너가 걷는 길은 끝이 없지. 너가 내딛는 걸음마다 너의 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.\n지향 사격 시 명중률이 매우 감소합니다.",
+		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 너의 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.\n지향 사격 시 명중률이 매우 감소합니다.",
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.\n지향 사격 시 명중률이 매우 감소합니다.",
 		
@@ -1237,7 +1239,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               사용하지 마시오               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "해당 무기는 주무기 슬롯으로 옮겨졌습니다.\n하이스트에서 해당 무기를 보조무기로 사용하면 충돌이 발생할 것입니다.",
 		["bm_menu_weapon_slot_warning_secondary"] = "해당 무기는 보조무기 슬롯으로 옮겨졌습니다.\n하이스트에서 해당 무기를 주무기로 사용하면 충돌이 발생할 것입니다.",
-		["bm_menu_weapon_slot_warning_disabled"] = "해당 무기는 캡틴 어텀에 의해 비활성화 되었습니다.\n그리고 하이스트에서 사용 시 충돌이 발생할 것입니다.",		
+		["bm_menu_weapon_slot_warning_disabled"] = "해당 무기는 캡틴 어텀에 의해 비활성화 되었습니다.\n그리고 하이스트에서 사용 시 충돌이 발생할 것입니다.",
+		["empty"] = "",
+		["missing_cap"] = "Custom Attachment Points가 설치되지 않았습니다.\n\n해당 부착물은 슬롯의 기본 모양으로 보일 것입니다.",		
 		["bm_lmg_generic_desc"] = "지향 사격 시 명중률이 매우 감소합니다.",		
 		["bm_ap_weapon_sc_desc"] = "방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_armor_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다",

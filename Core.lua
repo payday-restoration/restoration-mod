@@ -30,6 +30,7 @@ function restoration:Init()
 		--Custom Heists--
 		"office_strike", --office strike
 		"schl", --Scarlet Club House
+		"constantine_clubhouse_lvl", --Smuggler's Den 
 		"TonCont", --Armored Transport: Atrium
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
@@ -47,6 +48,7 @@ function restoration:Init()
 		"rvd1", --highland mortuary 
 		"wwh", --alaskan deal
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
+		"friend", --Scarface Mansion 
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"lit1", --California's Heat
@@ -67,6 +69,7 @@ function restoration:Init()
 		"hardware_store", --Hardware Store 
 		"nft_heist", --EN EF TEE HEIST
 		"anlh", --An End To Liang
+		"constantine_butcher_lvl", --Butcher's Bay
 		"constantine_bank_lvl", --Pacific Bank
 		"santas_hardware_store", --Santa Spring Is Coming To Town
 		"lvl_friday" --Crashing Capitol
@@ -95,6 +98,8 @@ function restoration:Init()
 		"Gambling_room", --Underground Bargains
 		"branchbank_meth", --Bank Heist: Meth
 		"lvl_fourmorestores", --four more stores
+		"constantine_apartment_lvl", --Concrete Jungle 
+		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
@@ -128,6 +133,8 @@ function restoration:Init()
 			"alex_1_res", --Rats Day 1 res edit version
 			"amsdeal1", --Armsdeal Alleyway
 			"lvl_fourmorestores", --four more stores
+			"constantine_apartment_lvl", --Concrete Jungle 
+			"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 			"Gambling_room", --Underground Bargains
 			"ukrainian_job_res", --Ukrainian Job res edit version
 			"hntn" --harvest and trustee north
@@ -147,6 +154,7 @@ function restoration:Init()
 			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"hardware_store", --Hardware Store 
 			"constantine_bank_lvl", --Pacific Bank
+			"constantine_butcher_lvl", --Butcher's Bay
 			"branchbank_meth", --Bank Heist: Meth
 			"santas_hardware_store", --Bad Xmas
 			"lvl_friday" --Crashing Capitol
@@ -175,8 +183,10 @@ function restoration:Init()
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
+		"constantine_butcher_lvl", --Butcher's Bay
 		"glb", --Golden Lotus Bank 
 		"schl", --Scarlet Club House
+		"constantine_smackdown2_lvl", --Truck Hustle
 		"nft_heist", --EN EF TEE HEIST
 		"TonCont", --Armored Transport: Atrium
 		"santas_hardware_store" --Hardware Store but Xmas
@@ -225,6 +235,9 @@ function restoration:Init()
 		"sh_raiders", --Safehouse Raiders 
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
+		"constantine_apartment_lvl", --Concrete Jungle 
+		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
+		"constantine_clubhouse_lvl", --Smuggler's Den 
 		"branchbank_meth", --Bank Heist: Meth
 		"tj_htsb", --Harvest and Trustee: Southern Branch 
 		"hntn", --harvest and trustee north
@@ -247,6 +260,7 @@ function restoration:Init()
 		--Custom Heists below--
 		"thechase",
 		"trop", --Tropical Treasure 
+		"constantine_smackdown_lvl", --Smackdown
 		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists

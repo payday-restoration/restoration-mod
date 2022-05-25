@@ -16,13 +16,27 @@
 	<model				path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" />
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" />
-    
+	
+	<!--///Prison Suit Heister Variants\\\-->
+	<unit 				path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres" />
+    <material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres" />
+	<unit 				path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket" />
+    <material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket" />
+	
 	<!--///Prison Suit Female\\\-->
 	<unit				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<object				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<model				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
+	
+	
+	<!--///Prison Suit Female Big\\\-->
+	<unit				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/res_acc_prison_suit_female_big" />
+	<object				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/res_acc_prison_suit_female_big" />
+	<model				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/res_acc_prison_suit_female_big" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/res_acc_prison_suit_female_big" />
+	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/res_acc_prison_suit_female_big" />
     
 	<!--///Prison Suit Big\\\-->
 	<unit				path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" />

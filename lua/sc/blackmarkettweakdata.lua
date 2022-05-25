@@ -335,22 +335,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		texture_bundle_folder = "mods",
 		unlocked = true,
 		global_value = "sc",
-		body_replacement = {
-			arms = false,
-			head = true,
-			armor = true,
-			body = true,
-			hands = false,
-			vest = true
-		},
-		third_body_replacement = {
-			arms = true,
-			head = false,
-			armor = false,
-			body = true,
-			hands = true,
-			vest = true
-		},
+		body_replacement = body_replacement_standard,
+		third_body_replacement = body_replacement_standard,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit",
 		characters = {}
@@ -364,14 +350,6 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	set_characters_data("suit_prison", characters_female_big, {
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
 	})
-	self.player_styles.suit_prison.characters.max = {
-		unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres",
-		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres",
-	}	
-	self.player_styles.suit_prison.characters.jacket = {
-		unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket",
-		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket",
-	}	
 end)
 
 

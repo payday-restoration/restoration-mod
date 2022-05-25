@@ -1,7 +1,7 @@
 <materials version="3" group="tux_male_average">
 	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS" version="2" unique="true">
         <bump_normal_texture file="units/pd2_dlc_pex/characters/civ_male_prisoner_pex/civ_pex_prisoner_body_nm"/>
-        <diffuse_texture file="units/pd2_dlc_glace/characters/npc_prisoner_5/npc_prisoner_5_body_df"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/npc_male_vladbroinlaw_pex_bloody/npc_male_vladbroinlaw_body_pex_bloody_df"/>
 		<variable type="vector3" name="contour_color" value="1 1 1"/>
         <variable type="scalar" name="contour_opacity" value="0"/>
 	</material>

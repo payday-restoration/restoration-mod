@@ -7278,6 +7278,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.auto.fire_rate = 0.08571428571
 				self.ak5.fire_mode_data.fire_rate = 0.08571428571
 				self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
+				if math.random() <= 0.05 then
+					--The 5 in ak5 stands for
+					self.ak5.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
+				end
 				self.ak5.supported = true
 				self.ak5.ads_speed = 0.320
 				self.ak5.damage_falloff = {
@@ -11229,7 +11233,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m1894.sounds.fire_auto = "rbull_fire"
 		self.m1894.fire_mode_data = {}
 		self.m1894.fire_mode_data.fire_rate = 0.857142857
-		self.m1894.fire_rate_multiplier = 1.7142857
+		self.m1894.fire_rate_multiplier = 1.4285714
 		self.m1894.CAN_TOGGLE_FIREMODE = false
 		self.m1894.single = {}
 		self.m1894.single.fire_rate = 0.5

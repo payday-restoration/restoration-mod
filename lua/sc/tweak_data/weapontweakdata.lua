@@ -3977,6 +3977,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571
 				self.lemming.single.fire_rate = 0.08571428571
 				self.lemming.kick = self.stat_info.kick_tables.even_recoil
+				self.lemming.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 				self.lemming.panic_suppression_chance = 0.05
 				self.lemming.can_shoot_through_enemy = false
 				self.lemming.can_shoot_through_shield = false
@@ -6670,9 +6671,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.cobray.stats_modifiers = nil
 				self.cobray.panic_suppression_chance = 0.05
-				self.cobray.timers.reload_exit_empty = 0.5
-				self.cobray.timers.reload_exit_not_empty = 0.7
-				self.cobray.reload_speed_multiplier = 1.15
+				self.cobray.timers.reload_empty = 2.6
+				self.cobray.timers.reload_not_empty = 1.9
+				self.cobray.timers.reload_exit_empty = 2.3
+				self.cobray.timers.reload_exit_not_empty = 0.6
+				self.cobray.reload_speed_multiplier = 1.2
 
 
 			--Heather (SR2M)
@@ -8742,7 +8745,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.winchester1874.stats = {
 					damage = 90,
-					spread = 81,
+					spread = 85,
 					recoil = 77,
 					spread_moving = 9,
 					zoom = 1,
@@ -11089,13 +11092,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.ks23 then --Pawcio's KS23
 		self.ks23.muzzleflash = "effects/particles/shotgun/muzzleflash"	
-		self.ks23.desc_id = "bm_40mm_weapon_sc_desc"
-		self.ks23.has_description = true
+		self.ks23.desc_id = "bm_ks23_sc_desc"
+		self.ks23.has_description = false
 		self.ks23.use_data.selection_index = 2
 		self.ks23.categories = {
 				"shotgun"
 		}		
+		self.ks23.recategorize = { "break_shot" }		
 		self.ks23.tactical_reload = 1		
+		self.ks23.sounds.fire = self.r870.sounds.fire
+		self.ks23.sounds.fire_single = self.r870.sounds.fire_single
 		self.ks23.fire_mode_data.fire_rate = 1.5
 		self.ks23.single.fire_rate = 1.5
 		self.ks23.rays = 12
@@ -11103,13 +11109,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.CLIP_AMMO_MAX = 3		
 		self.ks23.kick = self.stat_info.kick_tables.vertical_kick
 		self.ks23.supported = true
+		self.ks23.ads_speed = 0.480
+		self.ks23.damage_falloff = {
+			start_dist = 1200,
+			end_dist = 3400,
+			min_mult = 0.25
+		}
 		self.ks23.stats = {
 			damage = 120, --250,
-			spread = 76,
-			recoil = 68,
+			spread = 51,
+			recoil = 46,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 7,
+			concealment = 15,
 			suppression = 2,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -11120,9 +11132,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.armor_piercing_chance = 1
 		self.ks23.panic_suppression_chance = 0.05
 		self.ks23.stats_modifiers = {damage = 1}
+		self.ks23.timers.unequip = 0.6
+		self.ks23.timers.equip = 1
+		self.ks23.timers.shotgun_reload_first_shell_offset = 0.45
+		self.ks23.timers.shotgun_reload_exit_empty = 1.4
+		self.ks23.timers.shotgun_reload_exit_not_empty = 0.7
 	end					
 
 	if self.amr12 then --Gambyt's AMR 12G Shotgun
+		self.amr12.recategorize = { "light_shot" }	
 		self.amr12.rays = 9
 		self.amr12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.amr12.AMMO_MAX = 120
@@ -11158,92 +11176,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.reload_speed_multiplier = 1.35
 		self.amr12.timers = deep_clone(self.olympic.timers)
 	end
-
-	if self.owen then -- Silent Enforcer's Owen Gun
-		self.owen.use_data.selection_index = 2
-		self.owen.tactical_reload = 1
-		self.owen.has_description = false														
-		self.owen.categories = {
-				"smg"
-			}		
-		self.owen.fire_mode_data.fire_rate = 0.0857
-		self.owen.auto.fire_rate = 0.0857
-		self.owen.AMMO_MAX = 120
-		self.owen.CLIP_AMMO_MAX = 33
-		self.owen.kick = self.stat_info.kick_tables.even_recoil
-		self.owen.supported = true
-		self.owen.stats = {
-			damage = 30,
-			spread = 81,
-			recoil = 85,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 24,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.owen.panic_suppression_chance = 0.05
-		self.owen.stats_modifiers = nil
-	end	
-
-	if self.aek971 then --Pawcio's AEK 971
-		self.aek971.CLIP_AMMO_MAX = 30
-		self.aek971.tactical_reload = 1												
-		self.aek971.AMMO_MAX = 180
-		self.aek971.kick = self.stat_info.kick_tables.moderate_kick
-		self.aek971.supported = true
-		self.aek971.stats = {
-			damage = 20,
-			spread = 81,
-			recoil = 88,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 28,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 9,
-			reload = 20
-		}
-		self.aek971.panic_suppression_chance = 0.05
-		self.aek971.stats_modifiers = nil		
-	end			
-
-	if self.czevo then --Gambyt's Scorpion EVO
-		self.czevo.recategorize = { "light_smg" }					
-		self.czevo.has_description = false					
-		self.czevo.use_data.selection_index = 2
-		self.czevo.tactical_reload = 1
-		self.czevo.categories = {
-			"smg"
-		}
-		self.czevo.CLIP_AMMO_MAX = 30
-		self.czevo.AMMO_MAX = 180
-		self.czevo.kick = self.stat_info.kick_tables.even_recoil
-		self.czevo.supported = true
-		self.czevo.stats = {
-			damage = 20,
-			spread = 76,
-			recoil = 86,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 26,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.czevo.stats_modifiers = nil
-		self.czevo.panic_suppression_chance = 0.05
-		self.x_czevo.use_data.selection_index = 5 
-	end	
 		
 	if self.winchester1894 then --Pawcio's Winchester 1894
 		self.winchester1894.tactical_reload = 1						
@@ -11252,16 +11184,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.winchester1894.AMMO_MAX = 40
 		self.winchester1894.FIRE_MODE = "single"
 		self.winchester1894.fire_mode_data = {}
-		self.winchester1894.fire_mode_data.fire_rate = 0.5
+		self.winchester1894.fire_mode_data.fire_rate = 0.857142857
+		self.winchester1894.fire_rate_multiplier = 1.7142857
+		self.winchester1894.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 		self.winchester1894.CAN_TOGGLE_FIREMODE = false
 		self.winchester1894.single = {}
 		self.winchester1894.single.fire_rate = 0.5
 		self.winchester1894.kick = self.stat_info.kick_tables.right_kick
 		self.winchester1894.supported = true
+		self.winchester1894.ads_speed = 0.300
+		self.winchester1894.damage_falloff = {
+			start_dist = 1700,
+			end_dist = 5500,
+			min_mult = 0.2222
+		}
 		self.winchester1894.stats = {
 			damage = 90,
 			spread = 81,
-			recoil = 78,
+			recoil = 72,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 21,
@@ -11275,6 +11215,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.winchester1894.timers.shotgun_reload_first_shell_offset = 0.25		
 		self.winchester1894.stats_modifiers = nil
 		self.winchester1894.panic_suppression_chance = 0.05
+		self.winchester1894.weapon_hold = "sbl"
+	end		
+
+	if self.m1894 then --Pawcio's Marlin
+		self.m1894.tactical_reload = 1						
+		self.m1894.has_description = true
+		self.m1894.desc_id = "bm_ap_weapon_sc_desc"
+		self.m1894.AMMO_MAX = 20
+		self.m1894.CLIP_AMMO_MAX = 5
+		self.m1894.FIRE_MODE = "single"
+		self.m1894.sounds.fire_single = "rbull_fire"
+		self.m1894.sounds.fire_auto = "rbull_fire"
+		self.m1894.fire_mode_data = {}
+		self.m1894.fire_mode_data.fire_rate = 0.857142857
+		self.m1894.fire_rate_multiplier = 1.7142857
+		self.m1894.CAN_TOGGLE_FIREMODE = false
+		self.m1894.single = {}
+		self.m1894.single.fire_rate = 0.5
+		self.m1894.kick = self.stat_info.kick_tables.right_kick
+		self.m1894.supported = true
+		self.m1894.ads_speed = 0.260
+		self.m1894.damage_falloff = {
+			start_dist = 1400,
+			end_dist = 5000,
+			min_mult = 0.2222
+		}
+		self.m1894.stats = {
+			damage = 90,
+			spread = 78,
+			recoil = 69,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 25,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.m1894.timers.shotgun_reload_first_shell_offset = 0.25		
+		self.m1894.stats_modifiers = nil
+		self.m1894.panic_suppression_chance = 0.05
 	end
 
 	if self.moss464spx then --Pawcio's SPX Centerfire
@@ -11285,12 +11268,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.moss464spx.tactical_reload = 1					
 		self.moss464spx.FIRE_MODE = "single"
 		self.moss464spx.fire_mode_data = {}
-		self.moss464spx.fire_mode_data.fire_rate = 0.4
+		self.moss464spx.fire_mode_data.fire_rate = 0.857142857
+		self.moss464spx.fire_rate_multiplier = 1.7142857
+		self.moss464spx.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 		self.moss464spx.CAN_TOGGLE_FIREMODE = false
 		self.moss464spx.single = {}
 		self.moss464spx.single.fire_rate = 0.4
 		self.moss464spx.kick = self.stat_info.kick_tables.left_kick
 		self.moss464spx.supported = true
+		self.moss464spx.ads_speed = 0.340
+		self.moss464spx.damage_falloff = {
+			start_dist = 1400,
+			end_dist = 5000,
+			min_mult = 0.2222
+		}
 		self.moss464spx.stats = {
 			damage = 90,
 			spread = 86,
@@ -11308,6 +11299,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.moss464spx.timers.shotgun_reload_first_shell_offset = 0.25		
 		self.moss464spx.stats_modifiers = nil
 		self.moss464spx.panic_suppression_chance = 0.05
+		self.moss464spx.weapon_hold = "sbl"
 	end		
 		
 	if self.sg416 then --Gambyt's SG416
@@ -11316,6 +11308,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sg416.has_description = false						
 		self.sg416.tactical_reload = 1		
 		self.sg416.AMMO_MAX = 150
+		self.sg416.sounds.fire = "m16_fire_single"
+		self.sg416.sounds.fire_single = "m16_fire_single"
+		self.sg416.sounds.fire_auto = "m16_fire"
 		self.sg416.fire_mode_data.fire_rate = 0.08571428571
 		self.sg416.auto.fire_rate = 0.08571428571
 		self.sg416.kick = self.stat_info.kick_tables.moderate_kick
@@ -11379,13 +11374,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.spike.stats_modifiers = nil
 		self.spike.reload_speed_multiplier = 0.8
-		self.spike.timers.reload_exit_empty = 0.55
-		self.spike.timers.reload_exit_not_empty = 0.65
+		self.spike.timers.reload_empty = self.basset.timers.reload_empty
+		self.spike.timers.reload_not_empty = self.basset.timers.reload_not_empty
+		self.spike.timers.reload_exit_empty = self.basset.timers.reload_exit_empty
+		self.spike.timers.reload_exit_not_empty = self.basset.timers.reload_exit_not_empty
 		self.spike.panic_suppression_chance = 0.05
 	end
 
 	if self.ak5s then --Gambyt's Automat-5/AK5 SMG
-		--self.ak5s.recategorize = { "light_smg" }
+		self.ak5s.recategorize = { "light_smg" }
 		self.ak5s.desc_id = nil
 		self.ak5s.categories = {"smg"}
 		self.ak5s.tactical_reload = 1		
@@ -11413,6 +11410,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.ak5s.stats_modifiers = nil
 		self.ak5s.panic_suppression_chance = 0.05		
+		self.ak5s.timers.reload_empty = self.ak5s.timers.reload_empty
+		self.ak5s.timers.reload_not_empty = self.ak5s.timers.reload_not_empty
+		self.ak5s.timers.reload_exit_empty = self.ak5s.timers.reload_exit_empty
+		self.ak5s.timers.reload_exit_not_empty = self.ak5s.timers.reload_exit_not_empty
 	end	
 
 	if self.lebman then --Gambyt's Vendetta 38 Pistol
@@ -11446,8 +11447,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lebman.stats_modifiers = nil				
 		self.lebman.panic_suppression_chance = 0.05
 		self.lebman.reload_speed_multiplier = 1.2
-		self.lebman.timers.reload_empty = 2.5
-		self.lebman.timers.reload_not_empty = 1.8
+		self.lebman.timers.reload_empty = self.czech.timers.reload_empty
+		self.lebman.timers.reload_not_empty = self.czech.timers.reload_not_empty
+		self.lebman.timers.reload_exit_empty = self.czech.timers.reload_exit_empty
+		self.lebman.timers.reload_exit_not_empty = self.czech.timers.reload_exit_not_empty
 		--DISABLED
 		self.x_lebman.use_data.selection_index = 5
 		self.x_lebman.supported = true
@@ -11492,8 +11495,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sgs.armor_piercing_chance = 1
 		self.sgs.stats_modifiers = nil
 		self.sgs.panic_suppression_chance = 0.05
-		self.sgs.timers.reload_empty = 3.3
-		self.sgs.timers.reload_not_empty = 2.6
+		self.sgs.timers.reload_empty = self.shepheard.timers.reload_empty
+		self.sgs.timers.reload_not_empty = self.shepheard.timers.reload_not_empty
+		self.sgs.timers.reload_exit_empty = self.shepheard.timers.reload_exit_empty
+		self.sgs.timers.reload_exit_not_empty = self.shepheard.timers.reload_exit_not_empty
 	end		
 
 	if self.beck then --Gambyt's Reinbeck M1 Shotgun
@@ -11538,7 +11543,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.beck.timers.shotgun_reload_shell = 0.5666666666666667
 		self.beck.timers.shotgun_reload_exit_not_empty = 0.3
 		self.beck.timers.shotgun_reload_exit_empty = 0.7
-
 	end
 
 	if self.car9 then --Gambyt's ACAR 9
@@ -11580,119 +11584,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.car9.timers.reload_exit_not_empty = self.new_m4.timers.reload_exit_not_empty	
 		self.car9.panic_suppression_chance = 0.05
 		self.car9.stats_modifiers = nil
-	end
-
-	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
-		self.smolak.categories = {
-			"assault_rifle"
-		}
-		self.smolak.use_data.selection_index = 2
-		self.smolak.tactical_reload = 1
-		self.smolak.categories = {"pistol"}		
-		self.smolak.fire_mode_data.fire_rate = 0.0923076923
-		self.smolak.auto.fire_rate = 0.0923076923
-		self.smolak.AMMO_MAX = 80
-		self.smolak.CAN_TOGGLE_FIREMODE = true
-		self.smolak.kick = self.stat_info.kick_tables.right_kick		
-		self.smolak.supported = true
-		self.smolak.stats = {
-			damage = 45,
-			spread = 81,
-			recoil = 85,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 25,
-			suppression = 6,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 9,
-			reload = 20
-		}
-		self.smolak.stats_modifiers = nil
-		self.smolak.panic_suppression_chance = 0.05
-		self.smolak.reload_speed_multiplier = 1.2
-		self.smolak.timers.reload_not_empty = 3.5
-		self.smolak.timers.reload_empty = 4.3
-	end		
-
-	if self.x_car9 then --disabled vmp akimbos
-		self.x_car9.use_data.selection_index = 5
-		self.x_car9.supported = true
-	end	
-
-	if self.x_smolak then --disabled vmp akimbos
-		self.x_smolak.use_data.selection_index = 5
-		self.x_smolak.supported = true
-	end	
-
-	if self.x_ak5s then --disabled vmp akimbos
-		self.x_ak5s.use_data.selection_index = 5
-		self.x_ak5s.supported = true
-	end	
-
-	if self.x_cold then --disabled vmp akimbos
-		self.x_cold.use_data.selection_index = 5
-		self.x_cold.supported = true
-	end		
-
-	if self.cold then --Gambyt's VMP Crosskill Protector
-		self.cold.tactical_reload = 1											
-		self.cold.fire_mode_data.fire_rate = 0.08571428571
-		self.cold.single.fire_rate = 0.08571428571
-		self.cold.CLIP_AMMO_MAX = 8
-		self.cold.AMMO_MAX = 40
-		self.cold.kick = self.stat_info.kick_tables.even_recoil
-		self.cold.supported = true
-		self.cold.stats = {
-			damage = 45,
-			spread = 91,
-			recoil = 85,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 26,
-			suppression = 6,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.cold.stats_modifiers = nil
-		self.cold.panic_suppression_chance = 0.05
-	end
-
-	if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
-		self.aknato.tactical_reload = 1
-		self.aknato.spread = {
-			standing = 3,
-			crouching = 2,
-			steelsight = 1,
-			moving_standing = 4,
-			moving_crouching = 3,
-			moving_steelsight = 2
-		}
-		self.aknato.CLIP_AMMO_MAX = 30
-		self.aknato.AMMO_MAX = 150
-		self.aknato.FIRE_MODE = "auto"				
-		self.aknato.CAN_TOGGLE_FIREMODE = true
-		self.aknato.kick = self.stat_info.kick_tables.moderate_kick	
-		self.aknato.supported = true
-		self.aknato.stats = {
-			damage = 24,
-			spread = 86,
-			recoil = 89,
-			zoom = 1,
-			concealment = 25,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.aknato.stats_modifiers = nil
-		self.aknato.panic_suppression_chance = 0.05
 	end
 
 	if self.hpb then --Gambyt's Browning HP	
@@ -11886,100 +11777,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.bs23.panic_suppression_chance = 0.05
 		self.bs23.timers.unequip = 0.6
 		self.bs23.timers.equip = 1
-		self.bs23.timers.shotgun_reload_first_shell_offset = 0.5
+		self.bs23.timers.shotgun_reload_first_shell_offset = 0.45
 		self.bs23.timers.shotgun_reload_exit_empty = 1.4
 		self.bs23.timers.shotgun_reload_exit_not_empty = 0.7
-	end
-
-	--Silent Killer Pack
-	if self.welrod then --Welrod
-		self.welrod.AMMO_MAX = 30
-		self.welrod.supported = true
-		self.welrod.stats = {
-			damage = 60,
-			spread = 96,
-			recoil = 89,
-			concealment = 26,
-			suppression = 18,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			reload = 20,
-			value = 5
-		}
-		self.welrod.kick = self.stat_info.kick_tables.even_recoil
-		self.welrod.panic_suppression_chance = 0.05
-		self.welrod.stats_modifiers = nil
-	end
-
-	--Silent Killer Pack PB
-	if self.pb then
-		self.pb.AMMO_MAX = 75
-		self.pb.supported = true
-		self.pb.fire_mode_data.fire_rate = 0.08571428571
-		self.pb.single.fire_rate = 0.08571428571
-		self.pb.stats = {
-			damage = 24,
-			spread = 96,
-			recoil = 92,
-			concealment = 30,
-			alert_size = 2,
-			suppression = 20,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			reload = 20,
-			value = 4
-		}
-		self.pb.kick = self.stat_info.kick_tables.even_recoil
-		self.pb.panic_suppression_chance = 0.05
-		self.pb.stats_modifiers = nil
-	end
-
-	--Silent Killer Pack High Standard HDM
-	if self.hshdm then
-		self.hshdm.AMMO_MAX = 90
-		self.hshdm.supported = true
-		self.hshdm.fire_mode_data.fire_rate = 0.08571428571
-		self.hshdm.single.fire_rate = 0.08571428571
-		self.hshdm.stats = {
-			damage = 20,
-			spread = 91,
-			recoil = 93,
-			concealment = 31,
-			alert_size = 2,
-			suppression = 21,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			reload = 20,
-			value = 4
-		}
-		self.hshdm.kick = self.stat_info.kick_tables.even_recoil
-		self.hshdm.panic_suppression_chance = 0.05
-		self.hshdm.stats_modifiers = nil
-		self.x_hshdm.selection_index = 5 --No akimbos
-	end
-
-	--Silent Killer Pack Maxim 9
-	if self.max9 then
-		self.max9.AMMO_MAX = 75
-		self.max9.supported = true
-		self.max9.fire_mode_data.fire_rate = 0.08571428571
-		self.max9.single.fire_rate = 0.08571428571
-		self.max9.stats = {
-			damage = 24,
-			spread = 86,
-			recoil = 92,
-			concealment = 27,
-			alert_size = 2,
-			suppression = 20,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			reload = 20,
-			value = 5
-		}
-		self.max9.kick = self.stat_info.kick_tables.even_recoil
-		self.max9.panic_suppression_chance = 0.05
-		self.max9.stats_modifiers = nil
 	end
 
 	--Quake Weapon Pack Rocket Launcher
@@ -12063,6 +11863,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.hx25 then --Pawcio's KF2 HX-25
 		self.hx25.AMMO_MAX = 8
 		self.hx25.supported = true
+		self.hx25.ads_speed = 0.240
 		self.hx25.damage_falloff = {
 			start_dist = 1800,
 			end_dist = 3300,
@@ -12177,6 +11978,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.raygun.supported = true
 		self.raygun.fire_mode_data.fire_rate = 0.33149171270
 		self.raygun.single.fire_rate = 0.33149171270
+		self.raygun.ads_speed = 0.200
 		self.raygun.stats = {
 			damage = 18,
 			spread = 86,
@@ -12192,6 +11994,341 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.raygun.panic_suppression_chance = 0.05
 	end
+
+	if self.quadbarrel then
+		self.quadbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
+		self.quadbarrel.rays = 9
+		self.quadbarrel.kick = self.stat_info.kick_tables.vertical_kick
+		self.quadbarrel.AMMO_MAX = 20
+		self.quadbarrel.sounds.fire_single = "coach_fire"
+		self.quadbarrel.sounds.fire_auto = "coach_fire"		
+		self.quadbarrel.BURST_FIRE = 4
+		self.quadbarrel.BURST_DELAY = 1.5
+		self.quadbarrel.CAN_TOGGLE_FIREMODE = false							
+		self.quadbarrel.BURST_FIRE_RATE_MULTIPLIER = 5
+		self.quadbarrel.DELAYED_BURST_RECOIL = false
+		self.quadbarrel.ADAPTIVE_BURST_SIZE = false		
+		self.quadbarrel.fire_mode_data = {}
+		self.quadbarrel.fire_mode_data.fire_rate = 0.171428
+		self.quadbarrel.supported = true
+		self.quadbarrel.ads_speed = 0.500
+		self.quadbarrel.damage_falloff = {
+			start_dist = 900,
+			end_dist = 3000,
+			min_mult = 0.25
+		}
+		self.quadbarrel.stats = {
+			damage = 90,
+			spread = 58,
+			recoil = 43,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 21,
+			suppression = 3,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.quadbarrel.stats_modifiers = nil
+		self.quadbarrel.panic_suppression_chance = 0.05
+	end
+
+
+	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
+	-- Currently have no plans to work on these
+	if self.owen then -- Silent Enforcer's Owen Gun
+		self.owen.use_data.selection_index = 2
+		self.owen.tactical_reload = 1
+		self.owen.has_description = false														
+		self.owen.categories = {
+				"smg"
+			}		
+		self.owen.fire_mode_data.fire_rate = 0.0857
+		self.owen.auto.fire_rate = 0.0857
+		self.owen.AMMO_MAX = 120
+		self.owen.CLIP_AMMO_MAX = 33
+		self.owen.kick = self.stat_info.kick_tables.even_recoil
+		self.owen.supported = true
+		self.owen.stats = {
+			damage = 30,
+			spread = 81,
+			recoil = 85,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 24,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.owen.panic_suppression_chance = 0.05
+		self.owen.stats_modifiers = nil
+	end	
+
+	if self.aek971 then --Pawcio's AEK 971
+		self.aek971.CLIP_AMMO_MAX = 30
+		self.aek971.tactical_reload = 1												
+		self.aek971.AMMO_MAX = 180
+		self.aek971.kick = self.stat_info.kick_tables.moderate_kick
+		self.aek971.supported = true
+		self.aek971.stats = {
+			damage = 20,
+			spread = 81,
+			recoil = 88,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 28,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.aek971.panic_suppression_chance = 0.05
+		self.aek971.stats_modifiers = nil		
+	end			
+
+	if self.czevo then --Gambyt's Scorpion EVO
+		self.czevo.recategorize = { "light_smg" }					
+		self.czevo.has_description = false					
+		self.czevo.use_data.selection_index = 2
+		self.czevo.tactical_reload = 1
+		self.czevo.categories = {
+			"smg"
+		}
+		self.czevo.CLIP_AMMO_MAX = 30
+		self.czevo.AMMO_MAX = 180
+		self.czevo.kick = self.stat_info.kick_tables.even_recoil
+		self.czevo.supported = true
+		self.czevo.stats = {
+			damage = 20,
+			spread = 76,
+			recoil = 86,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.czevo.stats_modifiers = nil
+		self.czevo.panic_suppression_chance = 0.05
+		self.x_czevo.use_data.selection_index = 5 
+	end	
+
+	--Silent Killer Pack
+	if self.welrod then --Welrod
+		self.welrod.AMMO_MAX = 30
+		self.welrod.supported = true
+		self.welrod.stats = {
+			damage = 60,
+			spread = 96,
+			recoil = 89,
+			concealment = 26,
+			suppression = 18,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 5
+		}
+		self.welrod.kick = self.stat_info.kick_tables.even_recoil
+		self.welrod.panic_suppression_chance = 0.05
+		self.welrod.stats_modifiers = nil
+	end
+
+	--Silent Killer Pack PB
+	if self.pb then
+		self.pb.AMMO_MAX = 75
+		self.pb.supported = true
+		self.pb.fire_mode_data.fire_rate = 0.08571428571
+		self.pb.single.fire_rate = 0.08571428571
+		self.pb.stats = {
+			damage = 24,
+			spread = 96,
+			recoil = 92,
+			concealment = 30,
+			alert_size = 2,
+			suppression = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 4
+		}
+		self.pb.kick = self.stat_info.kick_tables.even_recoil
+		self.pb.panic_suppression_chance = 0.05
+		self.pb.stats_modifiers = nil
+	end
+
+	--Silent Killer Pack High Standard HDM
+	if self.hshdm then
+		self.hshdm.AMMO_MAX = 90
+		self.hshdm.supported = true
+		self.hshdm.fire_mode_data.fire_rate = 0.08571428571
+		self.hshdm.single.fire_rate = 0.08571428571
+		self.hshdm.stats = {
+			damage = 20,
+			spread = 91,
+			recoil = 93,
+			concealment = 31,
+			alert_size = 2,
+			suppression = 21,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 4
+		}
+		self.hshdm.kick = self.stat_info.kick_tables.even_recoil
+		self.hshdm.panic_suppression_chance = 0.05
+		self.hshdm.stats_modifiers = nil
+		self.x_hshdm.selection_index = 5 --No akimbos
+	end
+
+	--Silent Killer Pack Maxim 9
+	if self.max9 then
+		self.max9.AMMO_MAX = 75
+		self.max9.supported = true
+		self.max9.fire_mode_data.fire_rate = 0.08571428571
+		self.max9.single.fire_rate = 0.08571428571
+		self.max9.stats = {
+			damage = 24,
+			spread = 86,
+			recoil = 92,
+			concealment = 27,
+			alert_size = 2,
+			suppression = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 5
+		}
+		self.max9.kick = self.stat_info.kick_tables.even_recoil
+		self.max9.panic_suppression_chance = 0.05
+		self.max9.stats_modifiers = nil
+	end
+
+	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
+		self.smolak.categories = {
+			"assault_rifle"
+		}
+		self.smolak.use_data.selection_index = 2
+		self.smolak.tactical_reload = 1
+		self.smolak.categories = {"pistol"}		
+		self.smolak.fire_mode_data.fire_rate = 0.0923076923
+		self.smolak.auto.fire_rate = 0.0923076923
+		self.smolak.AMMO_MAX = 80
+		self.smolak.CAN_TOGGLE_FIREMODE = true
+		self.smolak.kick = self.stat_info.kick_tables.right_kick		
+		self.smolak.supported = true
+		self.smolak.stats = {
+			damage = 45,
+			spread = 81,
+			recoil = 85,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 25,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.smolak.stats_modifiers = nil
+		self.smolak.panic_suppression_chance = 0.05
+		self.smolak.reload_speed_multiplier = 1.2
+		self.smolak.timers.reload_not_empty = 3.5
+		self.smolak.timers.reload_empty = 4.3
+	end		
+
+	if self.x_car9 then --disabled vmp akimbos
+		self.x_car9.use_data.selection_index = 5
+		self.x_car9.supported = true
+	end	
+
+	if self.x_smolak then --disabled vmp akimbos
+		self.x_smolak.use_data.selection_index = 5
+		self.x_smolak.supported = true
+	end	
+
+	if self.x_ak5s then --disabled vmp akimbos
+		self.x_ak5s.use_data.selection_index = 5
+		self.x_ak5s.supported = true
+	end	
+
+	if self.x_cold then --disabled vmp akimbos
+		self.x_cold.use_data.selection_index = 5
+		self.x_cold.supported = true
+	end		
+
+	if self.cold then --Gambyt's VMP Crosskill Protector
+		self.cold.tactical_reload = 1											
+		self.cold.fire_mode_data.fire_rate = 0.08571428571
+		self.cold.single.fire_rate = 0.08571428571
+		self.cold.CLIP_AMMO_MAX = 8
+		self.cold.AMMO_MAX = 40
+		self.cold.kick = self.stat_info.kick_tables.even_recoil
+		self.cold.supported = true
+		self.cold.stats = {
+			damage = 45,
+			spread = 91,
+			recoil = 85,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 26,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.cold.stats_modifiers = nil
+		self.cold.panic_suppression_chance = 0.05
+	end
+
+	if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
+		self.aknato.tactical_reload = 1
+		self.aknato.spread = {
+			standing = 3,
+			crouching = 2,
+			steelsight = 1,
+			moving_standing = 4,
+			moving_crouching = 3,
+			moving_steelsight = 2
+		}
+		self.aknato.CLIP_AMMO_MAX = 30
+		self.aknato.AMMO_MAX = 150
+		self.aknato.FIRE_MODE = "auto"				
+		self.aknato.CAN_TOGGLE_FIREMODE = true
+		self.aknato.kick = self.stat_info.kick_tables.moderate_kick	
+		self.aknato.supported = true
+		self.aknato.stats = {
+			damage = 24,
+			spread = 86,
+			recoil = 89,
+			zoom = 1,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.aknato.stats_modifiers = nil
+		self.aknato.panic_suppression_chance = 0.05
+	end
+
+
 
 	--Automatically generate reasonableish stats for custom weapons.
 	for i, weap in pairs(self) do

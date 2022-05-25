@@ -2769,6 +2769,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		stats = deep_clone(stocks.remove_fixed_stats),
 		custom_stats = deep_clone(stocks.remove_fixed_stats)
 	}
+	self.wpn_fps_ass_m16.override.wpn_fps_ass_m16_s_op = {
+		stats = deep_clone(stocks.fixed_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_acc_stats)
+	}
 	
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_ass_m16_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
@@ -2864,6 +2868,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	self.wpn_fps_smg_olympic.override.wpn_fps_ass_m16_s_fixed = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+	}
+	self.wpn_fps_ass_m16.override.wpn_fps_ass_m16_s_op = {
+		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
 
 	--Para Default Blueprint, making it use the 30 rounder by default
@@ -3072,6 +3080,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_empty = {
 		stats = deep_clone(stocks.remove_folder_stats),
 		custom_stats = deep_clone(stocks.remove_folder_stats)
+	}
+	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_polymerstock = {
+		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 	}
 
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_lmg_rpk_s_standard")
@@ -5444,11 +5456,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_p226_b_long.supported = true
-	self.parts.wpn_fps_pis_p226_b_long.stats = {
-		value = 5,
-		spread = 1,
-		concealment = -3
-	}
+	self.parts.wpn_fps_pis_p226_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_pis_p226_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Ergo Grip
 	self.parts.wpn_fps_pis_p226_g_ergo.pcs = {
@@ -5460,8 +5469,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 	self.parts.wpn_fps_pis_p226_g_ergo.supported = true
 	self.parts.wpn_fps_pis_p226_g_ergo.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 
 	--Extended Mag.
@@ -5474,7 +5483,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 	self.parts.wpn_fps_pis_p226_m_extended.supported = true
 	self.parts.wpn_fps_pis_p226_m_extended.stats = {
 		value = 1,
-		extra_ammo = 12,
+		extra_ammo = 7,
 		reload = -2,
 		concealment = -1
 	}
@@ -5839,7 +5848,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	}
 	self.parts.wpn_fps_lmg_rpk_s_standard.supported = true
 	self.parts.wpn_fps_lmg_rpk_s_standard.stats = {
-		value = 3,
+		value = 4,
 		spread = 1,
 		recoil = -2
 	}
@@ -5942,6 +5951,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_s_solidstock = {
 		stats = deep_clone(stocks.fixed_rec_stats),
 		custom_stats = deep_clone(stocks.fixed_rec_stats)
+	}
+	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_s_polymerstock = {
+		stats = deep_clone(stocks.fixed_acc_stats),
+		custom_stats = deep_clone(stocks.fixed_acc_stats)
 	}
 
 	--Disabling Vertical Grip Mods
@@ -9095,7 +9108,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 	}
 	self.parts.wpn_fps_ass_vhs_b_short.supported = true
 	self.parts.wpn_fps_ass_vhs_b_short.stats = deep_clone(barrels.short_b1_stats)
-	self.parts.wpn_fps_ass_vhs_b_short.stats = deep_clone(barrels.short_b1_custom_stats)
+	self.parts.wpn_fps_ass_vhs_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Silenced Barrel
 	self.parts.wpn_fps_ass_vhs_b_silenced.pcs = {
@@ -9650,7 +9663,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	self.parts.wpn_fps_aug_body_f90.stats = {
 		value = 2,
 		spread = -1,
-		recoil = 1
+		recoil = 2
 	}
 	self.parts.wpn_fps_aug_body_f90.adds = {
 		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
@@ -13377,8 +13390,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_corgi", "resmod_corgi", function(s
 		40
 	}
 	self.parts.wpn_fps_ass_corgi_b_short.supported = true
-	self.parts.wpn_fps_ass_corgi_b_short.stats = short_b1_stats
-	self.parts.wpn_fps_ass_corgi_b_short.custom_stats = short_b1_custom_stats
+	self.parts.wpn_fps_ass_corgi_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_ass_corgi_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 end)	
 
@@ -16610,8 +16623,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ms3gl", "resmod_ms3gl", function(s
 		40
 	}
 	self.parts.wpn_fps_gre_ms3gl_s_modern.supported = true
-	self.parts.wpn_fps_gre_ms3gl_s_modern.stats = stocks.adj_to_fold_stats
-	self.parts.wpn_fps_gre_ms3gl_s_modern.custom_stats = stocks.adj_to_fold_stats
+	self.parts.wpn_fps_gre_ms3gl_s_modern.stats = deep_clone(stocks.adj_to_fold_stats)
+	self.parts.wpn_fps_gre_ms3gl_s_modern.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 
 	--Serpent Body
 	self.parts.wpn_fps_gre_ms3gl_body_modern.pcs = {
@@ -18283,23 +18296,17 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				ads_speed_mult = 1.10
 			}
 		self.parts.wpn_fps_upg_ks23_barrel_short.supported = true
-		self.parts.wpn_fps_upg_ks23_barrel_short.stats = {
-				value = 1,
-				recoil = -2,							
-				concealment = 2
-			}	
+		self.parts.wpn_fps_upg_ks23_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_ks23_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
 		self.parts.wpn_fps_upg_ks23_stock_pistolgrip.supported = true	
-		self.parts.wpn_fps_upg_ks23_stock_pistolgrip.stats = {
-				value = 1,
-				spread = 1,
-				recoil = -1							
-			}
+		self.parts.wpn_fps_upg_ks23_stock_pistolgrip.stats = deep_clone(stocks.remove_fixed_stats)
+		self.parts.wpn_fps_upg_ks23_stock_pistolgrip.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
 		self.parts.wpn_fps_upg_ks23_stock_pistolgrip_wire.supported = true
-		self.parts.wpn_fps_upg_ks23_stock_pistolgrip_wire.stats = {
-				value = 1,
-				spread = 1,
-				recoil = -1							
-			}
+		self.parts.wpn_fps_upg_ks23_stock_pistolgrip_wire.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_upg_ks23_stock_pistolgrip_wire.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_20pellet.pcs = nil
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.pcs = nil											
 		end
@@ -18457,24 +18464,20 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_pis_lebman_stock.custom_stats = deep_clone(stocks.add_fixed_stats)
 
 		self.parts.wpn_fps_ass_aknato_b_long.supported = true
-		self.parts.wpn_fps_ass_aknato_b_long.stats = {
-			value = 3,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
+		self.parts.wpn_fps_ass_aknato_b_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_aknato_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+		
 
 		--Reaper Custom Frame (White Streak)
 		self.parts.wpn_fps_pis_pl14_body_custom.supported = true
 		self.parts.wpn_fps_pis_pl14_body_custom.stats = {
 			value = 3,
-			spread = -1,
-			recoil = 1,
+			recoil = 2,
 			concealment = -1
 		}
 
 		--(AK) Kalashnikov Ninja Stock
-		self.parts.wpn_fps_upg_ak_s_polymerstock.pcs = nil
+		self.parts.wpn_fps_upg_ak_s_polymerstock.pcs = {}
 		self.parts.wpn_fps_upg_ak_s_polymerstock.supported = true
 		self.parts.wpn_fps_upg_ak_s_polymerstock.stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 		self.parts.wpn_fps_upg_ak_s_polymerstock.custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
@@ -18526,14 +18529,16 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		--(Czech 92) Argent Slide
 		self.parts.wpn_fps_pis_czech_sl_chrome.supported = true
 		self.parts.wpn_fps_pis_czech_sl_chrome.stats = {
-			value = 6
+			value = 3
 		}
 
 		--(Vendetta .38) Extended Magazine
+		--Visual agony
+		self.parts.wpn_fps_pis_lebman_m_extended.pcs = nil
 		self.parts.wpn_fps_pis_lebman_m_extended.supported = true
 		self.parts.wpn_fps_pis_lebman_m_extended.stats = {
 			value = 3,
-			extra_ammo = 6,
+			extra_ammo = 8,
 			concealment = -1,
 			reload = -3
 		}
@@ -18542,14 +18547,14 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_pis_lebman_body_classic.supported = true
 		self.parts.wpn_fps_pis_lebman_body_classic.stats = {
 			value = 6,
-			spread = -2,
+			spread = -1,
 			recoil = 2
 		}
 
 		--(Vendetta .38) Chrome Slide
 		self.parts.wpn_fps_pis_lebman_b_chrome.supported = true
 		self.parts.wpn_fps_pis_lebman_b_chrome.stats = {
-			value = 6
+			value = 3
 		}
 
 		--(Commando 553) Sniper Grip
@@ -18557,17 +18562,16 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_ass_s552_g_sniper.stats = {
 			value = 2,
 			spread = 1,
-			recoil = -1,
-			concealment = -1
+			recoil = 2,
+			concealment = -2
 		}
 
 		--(Commando 553) Tactical Foregrip
 		self.parts.wpn_fps_ass_s552_fg_tac.supported = true
 		self.parts.wpn_fps_ass_s552_fg_tac.stats = {
 			value = 7,
-			spread = -2,
-			recoil = 3,
-			concealment = -2
+			spread = 1,
+			concealment = -1
 		}
 
 		--(Commando 553) Sniper Stock		
@@ -18603,8 +18607,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_ass_amcar_fg_cylinder.supported = true
 		self.parts.wpn_fps_ass_amcar_fg_cylinder.stats = {
 			value = 5,
-			concealment = -3,
-			spread = 1
+			spread = 1,
+			recoil = -2
 		}
 
 		--(Matever) Spiked Grip
@@ -18709,7 +18713,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		}
 
 		--(CAR Family) Valkyrie Stock
-		self.parts.wpn_fps_ass_m16_s_op.pcs = nil
+		self.parts.wpn_fps_ass_m16_s_op.pcs = {}
 		self.parts.wpn_fps_ass_m16_s_op.supported = true
 		self.parts.wpn_fps_ass_m16_s_op.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 		self.parts.wpn_fps_ass_m16_s_op.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
@@ -18828,11 +18832,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		--(Union 5.56) Medium Barrel
 		self.parts.wpn_fps_ass_corgi_b_medium.supported = true
-		self.parts.wpn_fps_ass_corgi_b_medium.stats = {
-			value = 2,
-			concealment = 1,
-			spread = -1
-		}
+		self.parts.wpn_fps_ass_corgi_b_medium.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_ass_corgi_b_medium.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 		--(Contractor) Long Barrel
 		self.parts.wpn_fps_snp_tti_b_long.supported = true

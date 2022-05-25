@@ -959,14 +959,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
 				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}				
 				
-			--Systems Specialist
+			--Nimble
 				self.values.player.tape_loop_duration = {
 					10, --Baked in
 					30 --Basic
 				}
 				self.values.player.hack_fix_interaction_speed_multiplier = {
-					0.75, --Basic
-					0.25 --Ace
+					0.7, --Basic
+					0.2 --Ace
 				}
 				--Ace
 				

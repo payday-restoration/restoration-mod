@@ -5417,6 +5417,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--PRIMARIES
 
 			--Izhma 12G
+				self.saiga.desc_id = "bm_saiga_sc_desc"
+				self.saiga.has_description = true			
 				self.saiga.rays = 9
 				self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.saiga.CLIP_AMMO_MAX = 6
@@ -5525,7 +5527,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
 
-			--Predator 12g
+			--Predator 12g		
+				self.spas12.desc_id = "bm_spas12_sc_desc"
+				self.spas12.has_description = true					
 				self.spas12.rays = 9
 				self.spas12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.spas12.AMMO_MAX = 80
@@ -5566,6 +5570,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.spas12.stats_modifiers = {damage = 1}
 
 			--M1014
+				self.benelli.desc_id = "bm_benelli_sc_desc"
+				self.benelli.has_description = true					
 				self.benelli.AMMO_MAX = 80
 				self.benelli.CLIP_AMMO_MAX = 5
 				self.benelli.rays = 9

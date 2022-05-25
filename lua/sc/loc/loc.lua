@@ -1105,7 +1105,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--AA12
 		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
-		
+
+		--Saiga
+		["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
+
+		--Spas12
+		["bm_spas12_sc_desc"] = "A heavier and more complicated alternative to other semi-auto shotguns, features an almost alien alternative firing mode.",
+	
+		--Benelli
+		["bm_benelli_sc_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
+			
 		--S552
 		["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS.",				
 		--M733/AMCAR
@@ -1893,9 +1902,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_12"] = "Captain Winters will wander the map, healing and overhealing nearby enemies.",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "Restoration Stealth Tips",
-		["loading_stealth_res_1"] = "CP will send guards to investigate malfunctioning cameras, allowing it to be used as a lure.",	
+		["loading_stealth_res_1"] = "The security Command Post will send guards to investigate malfunctioning cameras, allowing it to be used as a lure.",	
 		["loading_stealth_res_2"] = "Quickly disposing of unalerted guards with a melee strike will allow you to snatch their pager.",	
-		["loading_stealth_res_3"] = "CP will likely notice guards missing and send reinforcements.",	
+		["loading_stealth_res_3"] = "The security Command Post will likely notice guards missing and send reinforcements.",	
 		["loading_stealth_res_4"] = "Guards with no pagers do not increase suspicion when killed.",	
 		["loading_stealth_res_5"] = "All loud weapons in stealth have a fixed 25 meter noise radius.",	
 		["loading_stealth_res_6"] = "Civilians will get down in response to gunfire in both loud and stealth.",	
@@ -2398,9 +2407,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_cleaner_beta_sc"] = "ECM Overdrive",
 			["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can now be ##used to open certain electronic doors##.\n\nACE: ##$pro##\nYour ECM jammer and feedback duration is increased by ##25%.##\n\n##Pagers are delayed by the ECM jammer.##",
 
-			--Systems Specialist--
-			["menu_second_chances_beta_sc"] = "Systems Specialist",
-			["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou interact with all computers, hacks, cameras, and ECMs ##25%## faster.\n\nACE: ##$pro##\nYour camera loop duration is increased by ##20## seconds.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",
+			--Nimble--
+			["menu_second_chances_beta_sc"] = "Nimble",
+			["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##silently crack safes by hand##.\n\nYou interact with all computers, hacks, cameras, and ECMs ##30%## faster.\n\nACE: ##$pro##\nYou pick all locks ##50%## faster.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",
 
 			--ECM Specialist--
 			["menu_ecm_booster_beta_sc"] = "ECM Specialist",
@@ -2714,7 +2723,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Anarchist--
 		["menu_st_spec_15_desc_sc"] = "The Anarchist refuses to acknowledge the arbitrary laws imposed by traditional authority. Kings, queens and presidents hold no sway over the Anarchist mind. Fly free and make your own rules is the motto. This refusal to abide by established truths enables the Anarchist to go where others cannot, employing unconventional tactics to slip through the cracks and reach seemingly impossible objectives.\n\n\nBenefits from a full perk deck:\n##-##Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n##-## ##50%## of your health is converted into ##150%## armor.\n##-##Dealing damage will grant you armor - This can only occur once every ##3## seconds. Heavier armors are granted more armor.",
-		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
+		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNote: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.",
 		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
 		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##100%## armor.",
 		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##150%## armor.",

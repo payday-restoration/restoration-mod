@@ -77,6 +77,19 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 		blackout_vulnerable = true,
 		verify_owner = true
 	}	
+	
+	--Safe cracking, now affected by lockpicking skills
+	self.pick_lock_hard.timer = 90
+	self.pick_lock_hard.upgrade_timer_multipliers = {
+		{
+			upgrade = "pick_lock_easy_speed_multiplier",
+			category = "player"
+		},
+		{
+			upgrade = "pick_lock_speed_multiplier",
+			category = "player"
+		}
+	}
 
 	--Skill based shaped charges--
 	self.shaped_sharge = {

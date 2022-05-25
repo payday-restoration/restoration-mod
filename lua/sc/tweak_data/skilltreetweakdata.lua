@@ -1282,20 +1282,21 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Systems Specialist-
+			--Nimble-
 			self.skills.second_chances = {
 				["name_id"] = "menu_second_chances_beta_sc",
 				["desc_id"] = "menu_second_chances_beta_desc_sc",
-				["icon_xy"] = {4, 2},
+				["icon_xy"] = {10, 4},
 				[1] = {
 					upgrades = {
-						"player_hack_fix_interaction_speed_multiplier_1"
+						"player_hack_fix_interaction_speed_multiplier_1",
+						"player_pick_lock_hard"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_tape_loop_duration_2",					
+						"player_pick_lock_easy_speed_multiplier_2",					
 						"player_hack_fix_interaction_speed_multiplier_2"
 					},
 					cost = self.costs.hightierpro

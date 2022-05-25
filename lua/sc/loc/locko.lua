@@ -1101,7 +1101,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--AA12
 		["bm_aa12_sc_desc"] = "박스 탄창을 사용하는 완전 자동 산탄총. 지속적인 인상을 남기기에 좋습니다.",
-		
+
+		--Saiga
+		["bm_saiga_sc_desc"] = "이 완전 자동 산탄총은 조준따윈 하고 싶지 않은 날에 적합합니다.",
+
+		--Spas12
+		["bm_spas12_sc_desc"] = "다른 반자동 산탄총에 비해 더 무겁고 복잡한 무기로 거의 외계인에 가까운 대체 발사 모드를 제공합니다.",
+	
+		--Benelli
+		["bm_benelli_sc_desc"] = "최상급 전술 산탄총. 특히 사람들이 바쁜 방을 청소하는 데 적합합니다.",
+					
 		--S552
 		["bm_s552_sc_desc"] = "다른 소형 5.56mm 소총에 대한 훌륭한 대안용 총, 국토안보부에서 선호하는 총이기도 합니다.",				
 		--M733/AMCAR
@@ -1893,9 +1902,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_12"] = "캡틴 윈터스는 맵을 돌아다니며 주변의 적들을 치료하거나 과치료합니다.",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "레스트레이션 스텔스 팁",
-		["loading_stealth_res_1"] = "CP는 오작동하는 카메라를 조사하기 위해 경비원을 보내고 이를 이용해 미끼로 사용할 수 있습니다.",	
+		["loading_stealth_res_1"] = "보안 경비 지휘소는 오작동하는 카메라를 조사하기 위해 경비원을 보내고 이를 이용해 미끼로 사용할 수 있습니다.",	
 		["loading_stealth_res_2"] = "근접 공격으로 경계하지 않은 경비원을 신속하게 처리하면 페이저가 울리지 않습니다.",	
-		["loading_stealth_res_3"] = "CP는 경비원의 실종을 알아챈다면 지원 경비를 보낼 것 입니다.",	
+		["loading_stealth_res_3"] = "보안 경비 지휘소는 경비원의 실종을 알아챈다면 지원 경비를 보낼 것 입니다.",	
 		["loading_stealth_res_4"] = "페이저가 없는 경비원은 죽여도 의심을 증가시키지 않습니다.",	
 		["loading_stealth_res_5"] = "스텔스에서 모든 시끄러운 무기는 25미터 고정 소음 반경을 가지고 있습니다.",	
 		["loading_stealth_res_6"] = "시민들은 라우드와 스텔스에서 총소리에 반응하여 눕습니다.",	
@@ -2399,9 +2408,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_cleaner_beta_desc_sc"] = "베이직: ##$basic##\nECM 재머로 ##전자보안문을 열 수 있습니다.##\n\n에이스: ##$pro##\nECM 재머와 피드백 지속 시간이 추가로 ##25%##만큼 증가합니다.\n\n##페이저는 ECM 재머에 의해 지연될 수 있습니다.##",
 
 
-			--Systems Specialist--
-			["menu_second_chances_beta_sc"] = "시스템 전문가",
-			["menu_second_chances_beta_desc_sc"] = "베이직: ##$basic##\n모든 컴퓨터, 해킹, 카메라 및 ECM을 ##25%##만큼 빠르게 상호 작용합니다.\n\n에이스: ##$pro##\n카메라 루프 지속 시간이 ##20##초만큼 증가합니다.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 추가로 ##50%##만큼 빠르게 상호 작용합니다.",
+			--Nimble--
+			["menu_second_chances_beta_sc"] = "날렵함",
+			["menu_second_chances_beta_desc_sc"] = "베이직: ##$basic##\n이제 ##손으로 조용히 금고를 딸 수 있습니다##.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 ##30%##만큼 빠르게 상호 작용합니다.\n\n에이스: ##$pro##\n모든 자물쇠를 ##50%##만큼 더 빨리 땁니다.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 추가로 ##50%##만큼 빠르게 상호 작용합니다.",
 
 			--ECM Specialist--
 			["menu_ecm_booster_beta_sc"] = "ECM 전문가",

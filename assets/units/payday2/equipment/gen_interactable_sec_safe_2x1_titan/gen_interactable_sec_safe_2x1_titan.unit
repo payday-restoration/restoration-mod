@@ -1,0 +1,20 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/equipment/gen_interactable_sec_safe_2x1_titan/gen_interactable_sec_safe_2x1_titan" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on unit="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" />
+		<depends_on unit="units/payday2/equipment/item_door_drill_small/item_door_drill_small" />
+		<depends_on unit="units/payday2/equipment/gen_interactable_sec_safe_2x1_titan/dest_sec_safe_2x1_door_titan" />
+		<depends_on physic_effect="physic_effects/push_sphere" />
+		<depends_on effect="effects/particles/explosions/explosion_grenade" />
+		<depends_on effect="effects/particles/dest/smoke_pocket_puff" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="base" class="MissionDoor" >
+			<var name="tweak_data" value="safe_deposit_titan" />
+		</extension>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

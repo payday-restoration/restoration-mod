@@ -19,6 +19,7 @@ function EquipmentsTweakData:init()
 	self.trip_mine.quantity = {3, 3}
 	self.ecm_jammer.quantity = {2}
 	self.ecm_jammer.deploy_time = 1
+	self.specials.cable_tie.quantity = 2
 	self.specials.cable_tie.max_quantity = 9
 	
 	self.sentry_gun.repair_time_init = 60
@@ -57,8 +58,8 @@ function EquipmentsTweakData:init()
 		self.specials.bank_manager_key.quantity = 1
 		self.specials.bank_manager_key.max_quantity=4
 		self.specials.thermite_paste.quantity=1
-		self.specials.cable_tie.quantity=8
-		self.specials.cable_tie.max_quantity = 36
+		self.specials.cable_tie.quantity = 4
+		self.specials.cable_tie.max_quantity = 18
 		self.specials.gas.max_quantity=4
 		self.specials.gas.quantity=1
 		self.specials.harddrive.max_quantity=4

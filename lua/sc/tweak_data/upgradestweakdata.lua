@@ -484,7 +484,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.2
 	}
 	
-	self.values.player.corpse_dispose_amount = {3, 4}
+	self.values.player.corpse_dispose_amount = {2, 3}
 	self.values.bodybags_bag.quantity = {1}
 	
 	self.values.player.pick_lock_easy_speed_multiplier = {
@@ -1269,8 +1269,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
 	if Global.game_settings and Global.game_settings.single_player then
-		self.values.cable_tie.quantity_1 = {4}
-		self.values.player.corpse_dispose_amount = {6, 8}
+		self.values.player.corpse_dispose_amount = {4, 5}
 	end
 
 	--Perk Decks--

@@ -12,7 +12,11 @@
 	<material_config	path="units/pd2_dlc_friend/nature/terrain/sfm_backdrop" force="true"/>
 	
 	<object				path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
-
+	
+	<!--Titan Safes-->	
+	<!--object				path="units/payday2/equipment/gen_interactable_sec_safe_1x1_titan/gen_interactable_sec_safe_1x1_titan" force="true"/-->
+	<!--unit				path="units/payday2/equipment/gen_interactable_sec_safe_1x1_titan/gen_interactable_sec_safe_1x1_titan" force="true"/-->
+	
 	<!--ASU Laser-->	
 	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser" />
 	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser_flare" />

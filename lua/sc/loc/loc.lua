@@ -1079,7 +1079,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Baby Deagle--
 		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
 		--socom deez nuts--
-		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
+		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
 		--Broomstick--
@@ -1090,18 +1090,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 Submachine Gun",
-		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG.",
+		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\nCan penetrate body armor.",
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7 Submachine Gun",
-		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG.",
+		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\nCan penetrate body armor.",
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
 		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 		--Uzi
-		["bm_uzi_sc_desc"] = "While dated, the Uzi makes for a reliable, easy to control SMG.\nRechambered in .45 ACP.",	
+		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .45 ACP conversion",	
+		--Chicago Typewriter
+		["bm_thompson_sc_desc"] = "Sporting a high-capacity drum magazine, you too can bring on the mobster heat as you mow down your enemies.",	
 
 		--AA12
 		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
@@ -1128,7 +1130,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--TAR-21/Para
 		["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",		
 		--Famas
-		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",		
+		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",
+		--Custom 40 damage ARs
+		--["bm_w_xeno"] = "M41A Pulse Rifle",	
+		["bm_xeno_sc_desc_pc"] = "From the \"USCM\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nPress $BTN_BIPOD to switch to the integral 30mm grenade launcher.",	
+		["bm_w_osipr_desc"] = "From \"Armat\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nHold $BTN_BIPOD to switch to the integral 30mm grenade launcher.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",

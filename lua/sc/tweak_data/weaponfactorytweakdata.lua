@@ -3888,7 +3888,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	}
 	self.parts.wpn_fps_smg_mp5_fg_m5k.supported = true
 	self.parts.wpn_fps_smg_mp5_fg_m5k.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_smg_mp5_fg_m5k.stats.recoil = -4
 	self.parts.wpn_fps_smg_mp5_fg_m5k.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+	self.parts.wpn_fps_smg_mp5_fg_m5k.custom_stats.rof_mult = 1.125
 	
 	--Polizei Tactical Barrel
 	self.parts.wpn_fps_smg_mp5_fg_mp5a5.pcs = {
@@ -7199,19 +7201,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	--Short Barrel
 	self.parts.wpn_fps_smg_tec9_b_standard.pcs = {}
 	self.parts.wpn_fps_smg_tec9_b_standard.supported = true
-	self.parts.wpn_fps_smg_tec9_b_standard.stats = {
-		value = 3,
-		spread = -1,
-		concealment = 1
-	}
+	self.parts.wpn_fps_smg_tec9_b_standard.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_smg_tec9_b_standard.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Ghetto Blaster
 	self.parts.wpn_fps_smg_tec9_ns_ext.pcs = {}
 	self.parts.wpn_fps_smg_tec9_ns_ext.supported = true
 	self.parts.wpn_fps_smg_tec9_ns_ext.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		recoil = 4,
+		concealment = -2
 	}
 	
 	--Extended Mag
@@ -8486,7 +8485,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		suppressed = "suppressed_b"
 	}
 
-	self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine"
+	self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine_extra"
 	self.parts.wpn_fps_lmg_mg42_reciever.bullet_objects = {
 		prefix = "g_bullet_", 
 		amount = 6
@@ -8498,52 +8497,52 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	end
 
 	self.wpn_fps_lmg_mg42.override.wpn_fps_snp_mosin_rail = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_specter = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_docter = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_t1micro = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cmore = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint_2 = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cs = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx30 = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx01 = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_reflex = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech_xps = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_sig = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}	
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_uh = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_fc1 = {
-		parent = "magazine"
+		parent = "magazine_extra"
 	}
 	
 	--Rails
@@ -10704,7 +10703,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 		recoil = 4,
 		concealment = -2
 	}
-	
+
+
+	self.parts.wpn_fps_snp_wa2000_body_standard.visibility = {
+		{
+			objects = {
+				g_bipod = false
+			}
+		}
+	}
 	self.wpn_fps_snp_wa2000.override = {	
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_gre_arbiter_o_standard"}
@@ -18404,7 +18411,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		}				
 		table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cqb")		
 		self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cqb = {
-			parent = "lower_reciever"
+			parent = "magazine_extra"
 		}				
 		table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cqb")			
 		table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_cqb")		

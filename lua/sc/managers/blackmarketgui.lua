@@ -793,6 +793,7 @@ end
 			}
 ]]
 -- Or just add the name = "deflection" to the table somewhere if you don't care much for a logical layout.
+
 function BlackMarketGui:_setup(is_start_page, component_data)
 	self._in_setup = true
 
@@ -2454,7 +2455,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				{
 					round = true,
 					append = "m",
-					name = "standing_range"
+					name = "standing_range" --falloff start
 				},
 				{
 					name = "damage_min"
@@ -2462,7 +2463,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				{
 					round = true,
 					append = "m",
-					name = "moving_range"
+					name = "moving_range" --falloff end
 				},
 				{
 					percent = true,
@@ -2559,7 +2560,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			local text_panel = nil
 			local text_columns = {
 				{
-					size = 100,
+					size = 250,
 					name = "name"
 				},
 				{
@@ -2610,7 +2611,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			}
 			self._stats_texts = {}
 			self._rweapon_stats_panel = self._stats_panel:panel()
-			local scale_chart = 0.85
+			local scale_chart = 0.8 -- STAT CHART SCALING
 			for i, stat in ipairs(self._stats_shown) do
 				panel = self._rweapon_stats_panel:panel({
 					name = "weapon_stats",
@@ -2630,7 +2631,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				end
 
 				x = 2
-				y = y + 18 
+				y = y + 20 * scale_chart
 				self._stats_texts[stat.name] = {}
 				for _, column in ipairs(text_columns) do
 					text_panel = panel:panel({
@@ -5506,11 +5507,12 @@ function BlackMarketGui:update_info_text()
 	end
 
 	local below_y = nil
-
+	local resmod_scale = 0.95
+	
 	for i = 2, #self._info_texts do
 		local info_text = self._info_texts[i]
 
-		info_text:set_font_size(small_font_size)
+		info_text:set_font_size(small_font_size * resmod_scale)
 		info_text:set_w(self._info_texts_panel:w())
 
 		_, _, _, th = info_text:text_rect()
@@ -5595,6 +5597,7 @@ function BlackMarketGui:update_info_text()
 		self._rename_caret:set_world_position(x + w, y)
 	end
 end
+
 
 
 function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)

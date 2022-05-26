@@ -1518,7 +1518,7 @@ function PlayerDamage:set_armor(armor)
 			self._can_dodge_heal = true
 		end
 
-		if armor == self:_max_armor() then
+		if current_armor >= self:_max_armor() then
 			managers.player:set_damage_absorption(
 				"full_armor_absorption",
 				managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor()

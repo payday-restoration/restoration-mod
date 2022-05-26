@@ -6465,7 +6465,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Spec Ops (MP7)
 				self.mp7.has_description = true
-				self.mp7.desc_id = "bm_ap_armor_weapon_sc_desc"	
+				self.mp7.desc_id = "bm_mp7_sc_desc"	
 				self.mp7.AMMO_MAX = 90
 				self.mp7.fire_mode_data.fire_rate = 0.06315789473
 				self.mp7.CAN_TOGGLE_FIREMODE = true
@@ -6506,7 +6506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--P90
 				self.p90.has_description = true
-				self.p90.desc_id = "bm_ap_armor_weapon_sc_desc"	
+				self.p90.desc_id = "bm_p90_sc_desc"	
 				self.p90.AMMO_MAX = 90
 				self.p90.fire_mode_data.fire_rate = 0.070588235
 				self.p90.armor_piercing_chance = 1
@@ -7046,6 +7046,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--chicago typewriter
 				self.m1928.use_data.selection_index = 1
+				self.m1928.desc_id = "bm_thompson_sc_desc"
+				self.m1928.has_description = true
 				self.m1928.fire_mode_data.fire_rate = 0.08571428
 				self.m1928.CAN_TOGGLE_FIREMODE = true
 				self.m1928.CLIP_AMMO_MAX = 50
@@ -12043,6 +12045,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.quadbarrel.stats_modifiers = nil
 		self.quadbarrel.panic_suppression_chance = 0.05
+	end
+
+	if self.xeno then
+		self.xeno.desc_id = "bm_xeno_sc_desc"
+		self.xeno.has_description = true
+		self.xeno.CLIP_AMMO_MAX = 40
+		self.xeno.AMMO_MAX = 120
+		self.xeno.fire_mode_data.fire_rate = 0.06666666
+		self.xeno.sounds.fire = "corgi_fire_single"
+		self.xeno.sounds.fire_single = "corgi_fire_single"
+		self.xeno.BURST_FIRE = 4
+		self.xeno.kick = self.stat_info.kick_tables.even_recoil
+		self.xeno.supported = true
+		self.xeno.ads_speed = 0.380
+		self.xeno.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 5000,
+			min_mult = 0.5
+		}
+		self.xeno.stats = {
+			damage = 20,
+			spread = 71,
+			recoil = 73,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 25,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.xeno.stats_modifiers = nil
+		self.xeno.panic_suppression_chance = 0.05
 	end
 
 

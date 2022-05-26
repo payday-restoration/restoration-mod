@@ -1168,6 +1168,19 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 
 	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
 	managers.menu:set_mouse_sensitivity(self:in_steelsight())
+	if PlayerStandard.set_ads_objects then
+		if not unequipped then
+			if self._state_data.in_steelsight then
+				DelayedCalls:Add("FancyScopeCheckDelay", 0.175, function()
+					if self._state_data.in_steelsight then
+						self:set_ads_objects(true)
+					end
+				end)
+			else
+				self:set_ads_objects(false)
+			end
+		end
+	end
 end
 
 --Deals with burst fire hud stuff when swapping from an underbarrel back to a weapon in burst fire.

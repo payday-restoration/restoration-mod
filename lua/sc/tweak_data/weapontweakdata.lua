@@ -12050,6 +12050,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.xeno then
 		self.xeno.desc_id = "bm_xeno_sc_desc"
 		self.xeno.has_description = true
+		self.xeno.armor_piercing_chance = 1
 		self.xeno.CLIP_AMMO_MAX = 40
 		self.xeno.AMMO_MAX = 120
 		self.xeno.fire_mode_data.fire_rate = 0.06666666

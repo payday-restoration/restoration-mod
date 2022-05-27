@@ -78,6 +78,16 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 		verify_owner = true
 	}	
 	
+	--Hostage moving, affected by Muscle now
+	self.hostage_move.upgrade_timer_multiplier = {
+		upgrade = "civ_move_multiplier",
+		category = "player"
+	}
+	self.hostage_stay.upgrade_timer_multiplier = {
+		upgrade = "civ_move_multiplier",
+		category = "player"
+	}
+	
 	--Safe cracking, now affected by lockpicking skills
 	self.pick_lock_hard.timer = 90
 	self.pick_lock_hard.upgrade_timer_multipliers = {

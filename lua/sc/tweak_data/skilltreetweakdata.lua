@@ -2059,7 +2059,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_health_multiplier_3",
-					"team_passive_health_multiplier"
+					"team_passive_health_multiplier",
+					"player_alarm_pager_speed_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {4, 0},
@@ -2119,7 +2120,9 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_health_multiplier_5",
-					"player_passive_health_multiplier_6"
+					"player_passive_health_multiplier_6",
+					"player_corpse_dispose_speed_multiplier",
+					"player_civ_move_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {2, 1},
@@ -2189,7 +2192,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1"
+					"player_perk_armor_regen_timer_multiplier_1",
+					"bodybags_bag_quantity"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},
@@ -2236,7 +2240,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_dodge_on_revive"
+					"player_dodge_on_revive",
+					"player_tape_loop_duration_2"
 				},
 				cost = 1000,
 				icon_xy = {2, 2},
@@ -2295,7 +2300,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_store_temp_health_2"
+					"player_store_temp_health_2",
+					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
 				icon_xy = {0, 3},
@@ -2361,7 +2367,8 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_armor_multiplier_2",
 					"player_level_3_armor_multiplier_2",
-					"player_level_4_armor_multiplier_2"				
+					"player_level_4_armor_multiplier_2",
+					"player_pick_lock_speed_multiplier"				
 				},
 				cost = 1000,
 				icon_xy = {5, 3},
@@ -2413,8 +2420,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_2",
-					"player_corpse_dispose_speed_multiplier"
+					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
 				icon_xy = {0, 4},
@@ -2424,7 +2430,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_pick_lock_speed_multiplier",
+					"player_crouch_speed_multiplier_burglar",
 					"player_crouch_dodge_chance_burglar_2"
 				},
 				cost = 1000,
@@ -2435,8 +2441,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3",
-					"player_alarm_pager_speed_multiplier"
+					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
 				icon_xy = {1, 4},
@@ -2447,7 +2452,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_1",
-					"player_crouch_speed_multiplier_burglar",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

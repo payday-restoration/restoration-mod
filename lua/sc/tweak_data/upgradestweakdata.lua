@@ -391,7 +391,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.rep_upgrades.values = {0}
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
-	self.values.player.extra_revive_health = {0.25} --Bonus health % to add when getting up. Used by Muscle and Stoic.
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
@@ -1273,15 +1272,52 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	end
 
 	--Perk Decks--
-	
+	self.values.team.player.civ_intimidation_mul = {
+		1.25
+	}		
+		
 	--Shared Perks--
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
+	
+	--Crew Chief
+	self.values.team.stamina.passive_multiplier = {
+		1.5,
+		1.3
+	}	
+	self.values.team.armor.multiplier = {1.05}
+	self.values.team.health.passive_multiplier = {1.05}
+	self.hostage_max_num = {
+		health_regen = 4,
+		health = 4,
+		stamina = 4,
+		damage_dampener = 1
+	}
+	self.values.team.health.hostage_multiplier = {1.05}
+	self.values.team.stamina.hostage_multiplier = {1.10}	
+	self.values.player.passive_intimidate_range_mul = {
+		1.25
+	}	
+	self.values.player.alarm_pager_speed_multiplier = {
+		0.75
+	}	
+	
+	--Muscle
+	self.values.player.extra_revive_health = {0.25} --Bonus health % to add when getting up. Used by Muscle and Stoic.
+	self.values.player.panic_suppression = {
+		true
+	}	
+	self.values.player.corpse_dispose_speed_multiplier = {
+		0.25
+	}
+	self.values.player.civ_move_multiplier = {
+		0.25
+	}		
 
 	--Burglar
 	self.values.player.crouch_speed_multiplier_burglar = {
-		1.1
+		1.2
 	}	
 	self.values.player.crouch_dodge_chance_burglar = {0.05, 0.10}	
 	self.values.player.pick_lock_speed_multiplier = {
@@ -1380,16 +1416,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.1
 	}	
 
-	self.values.team.armor.multiplier = {1.05}
-	self.values.team.health.passive_multiplier = {1.05}
-	self.hostage_max_num = {
-		health_regen = 4,
-		health = 4,
-		stamina = 4,
-		damage_dampener = 1
-	}
-	self.values.team.health.hostage_multiplier = {1.05}
-	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
 		0.05,
 		0.1,
@@ -1785,6 +1811,15 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_civ_move_multiplier = {
+		name_id = "menu_civ_move_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "civ_move_multiplier",
+			category = "player"
+		}
+	}	
 	self.definitions.player_crouch_speed_multiplier_burglar = {
 		incremental = true,
 		name_id = "menu_player_crouch_speed_multiplier_burglar",

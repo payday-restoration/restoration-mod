@@ -37,6 +37,11 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	}
 end)
 
+--Had to do this cause Bodybag base was being a bastard
+function PlayerManager:has_max_body_bags()
+	return false
+end
+
 --Make armor bot boost increase armor by % instead of adding.
 function PlayerManager:body_armor_skill_multiplier(override_armor)
 	local multiplier = 1

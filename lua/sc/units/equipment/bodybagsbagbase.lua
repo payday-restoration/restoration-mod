@@ -8,7 +8,8 @@ function BodyBagsBagBase:take_bodybag(unit)
 	if can_take_bodybag == 1 then
 		unit:sound():play("pickup_ammo")
 		--Guarantees a fill up
-		managers.player:add_body_bags_amount(21)
+		managers.player:add_body_bags_amount(6)
+		managers.player:add_cable_ties(18)
 		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", 1)
 
 		self._bodybag_amount = self._bodybag_amount - 1

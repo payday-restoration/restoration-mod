@@ -53,6 +53,7 @@ function restoration:Init()
 		--custom heists		
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
+		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
@@ -99,7 +100,6 @@ function restoration:Init()
 		"branchbank_meth", --Bank Heist: Meth
 		"lvl_fourmorestores", --four more stores
 		"constantine_apartment_lvl", --Concrete Jungle 
-		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north

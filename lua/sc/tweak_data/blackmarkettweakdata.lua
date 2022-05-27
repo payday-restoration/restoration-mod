@@ -365,12 +365,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
 	})
 	self.player_styles.suit_prison.characters.max = {
-		unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres",
-		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres",
+		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres"
 	}	
 	self.player_styles.suit_prison.characters.jacket = {
-		unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket",
-		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket",
+		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket"
 	}	
 end)
 

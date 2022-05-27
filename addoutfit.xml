@@ -18,9 +18,7 @@
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" />
 	
 	<!--///Prison Suit Heister Variants\\\-->
-	<unit 				path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres" />
     <material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_sangres" />
-	<unit 				path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket" />
     <material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket" />
 	
 	<!--///Prison Suit Female\\\-->

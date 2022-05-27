@@ -1133,8 +1133,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",
 		--Custom 40 damage ARs
 		--["bm_w_xeno"] = "M41A Pulse Rifle",	
-		["bm_xeno_sc_desc_pc"] = "From the \"USCM\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nPress $BTN_BIPOD to switch to the integral 30mm grenade launcher.",	
-		["bm_w_osipr_desc"] = "From \"Armat\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nHold $BTN_BIPOD to switch to the integral 30mm grenade launcher.",
+		["bm_xeno_sc_desc_pc"] = "From the \"Armat\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nPress $BTN_BIPOD to switch to the integral 30mm grenade launcher.",	
+		["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nHold $BTN_BIPOD to switch to the integral 30mm grenade launcher.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",

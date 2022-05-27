@@ -3784,7 +3784,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Model 54--
 				self.x_type54.CLIP_AMMO_MAX = 18
 				self.x_type54.AMMO_MAX = 80
-				self.x_type54.tactical_reload = 1
 				self.x_type54.FIRE_MODE = "single"
 				self.x_type54.fire_mode_data = {}
 				self.x_type54.fire_mode_data.fire_rate = 0.08571428571
@@ -7313,7 +7312,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ak5.stats_modifiers = nil
 				self.ak5.timers.reload_empty = 3.15
-				self.ak5.timers.reload_exit_empty = 1.05
+				self.ak5.timers.reload_exit_empty = 1.00
 				self.ak5.timers.reload_exit_not_empty = 0.95
 				self.ak5.panic_suppression_chance = 0.05
 
@@ -8744,15 +8743,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.winchester1874.FIRE_MODE = "single"
 				self.winchester1874.fire_mode_data = {}
 				self.winchester1874.fire_mode_data.fire_rate = 0.857142857
-				self.winchester1874.fire_rate_multiplier = 1.7142857
+				self.winchester1874.fire_rate_multiplier = 2
 				self.winchester1874.CAN_TOGGLE_FIREMODE = false
 				self.winchester1874.kick = self.stat_info.kick_tables.left_kick
-				self.winchester1874.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.winchester1874.supported = true
 				self.winchester1874.ads_speed = 0.300
 				self.winchester1874.damage_falloff = {
-					start_dist = 1700,
-					end_dist = 5500,
+					start_dist = 1500,
+					end_dist = 5700,
 					min_mult = 0.2222
 				}
 				self.winchester1874.stats = {
@@ -8769,7 +8767,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 20
 				}
-				self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25		
+				self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25
+				self.winchester1874.timers.shotgun_reload_exit_empty = 1
 				self.winchester1874.tactical_reload = 1
 				self.winchester1874.stats_modifiers = nil
 				self.winchester1874.panic_suppression_chance = 0.05
@@ -9156,8 +9155,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.mosin.stats_modifiers = nil
 			self.mosin.panic_suppression_chance = 0.05
-			self.mosin.timers.reload_exit_empty = 0.4
-			self.mosin.timers.reload_exit_not_empty = 0.4
+			self.mosin.timers.reload_empty = 3.6
+			self.mosin.timers.reload_not_empty = 3.6
+			self.mosin.timers.reload_exit_empty = 0.6
+			self.mosin.timers.reload_exit_not_empty = 0.6
+
 
 		--Grom (SVD)
 			self.siltstone.upgrade_blocks = nil
@@ -9233,6 +9235,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}	
 			self.sbl.stats_modifiers = nil
 			self.sbl.panic_suppression_chance = 0.05
+			self.sbl.timers.shotgun_reload_first_shell_offset = 0.25
+			self.sbl.timers.shotgun_reload_exit_empty = 1
 
 	--[[     ANTI-MATERIEL SNIPERS     ]]
 
@@ -10841,6 +10845,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.shatters_fury then
 		self.shatters_fury.recategorize = { "heavy_pis" }
 		self.shatters_fury.fire_mode_data.fire_rate = 0.25
+		self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"	
+		self.shatters_fury.sounds.fire_single = "rbull_fire"	
+		self.shatters_fury.sounds.stop_fire = "hajk_x_fire_single"	
 		self.shatters_fury.single.fire_rate = 0.25	
 		self.shatters_fury.weapon_hold = "model3"
 		self.shatters_fury.AMMO_MAX = 40
@@ -10870,8 +10877,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.can_shoot_through_wall = true
 		self.shatters_fury.armor_piercing_chance = 1
 		--self.shatters_fury.animations.reload_name_id = "chinchilla"
-		self.shatters_fury.timers.reload_not_empty = 2.4
-		self.shatters_fury.timers.reload_empty = 2.4
+		self.shatters_fury.timers = deep_clone(self.new_raging_bull.timers)
 		--this line doesn't do shit
 		--self.shatters_fury.custom = true
 	end
@@ -11112,8 +11118,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}		
 		self.ks23.recategorize = { "break_shot" }		
 		self.ks23.tactical_reload = 1		
-		self.ks23.sounds.fire = self.r870.sounds.fire
-		self.ks23.sounds.fire_single = self.r870.sounds.fire_single
+		self.ks23.sounds.fire_single = "saiga_fire_single"
+		self.ks23.sounds.stop_fire = "remington_fire"
 		self.ks23.fire_mode_data.fire_rate = 1.5
 		self.ks23.single.fire_rate = 1.5
 		self.ks23.rays = 12
@@ -11190,30 +11196,34 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 		
 	if self.winchester1894 then --Pawcio's Winchester 1894
+		self.winchester1894.recategorize = {"light_snp"}
 		self.winchester1894.tactical_reload = 1						
 		self.winchester1894.has_description = true
 		self.winchester1894.desc_id = "bm_ap_weapon_sc_desc"
+		self.winchester1894.sounds.fire_single = "m1873_fire"
+		self.winchester1894.sounds.stop_fire = "c45_fire"
 		self.winchester1894.AMMO_MAX = 40
 		self.winchester1894.FIRE_MODE = "single"
 		self.winchester1894.fire_mode_data = {}
 		self.winchester1894.fire_mode_data.fire_rate = 0.857142857
 		self.winchester1894.fire_rate_multiplier = 1.7142857
 		self.winchester1894.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+		self.winchester1894.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.winchester1894.CAN_TOGGLE_FIREMODE = false
 		self.winchester1894.single = {}
 		self.winchester1894.single.fire_rate = 0.5
 		self.winchester1894.kick = self.stat_info.kick_tables.right_kick
 		self.winchester1894.supported = true
-		self.winchester1894.ads_speed = 0.300
+		self.winchester1894.ads_speed = 0.320
 		self.winchester1894.damage_falloff = {
-			start_dist = 1700,
-			end_dist = 5500,
-			min_mult = 0.2222
+			start_dist = 1900,
+			end_dist = 6000,
+			min_mult = 0.3333
 		}
 		self.winchester1894.stats = {
 			damage = 90,
-			spread = 81,
-			recoil = 72,
+			spread = 86,
+			recoil = 70,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 21,
@@ -11224,21 +11234,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.winchester1894.timers.shotgun_reload_first_shell_offset = 0.25		
+		self.winchester1894.timers = deep_clone(self.sbl.timers)	
 		self.winchester1894.stats_modifiers = nil
 		self.winchester1894.panic_suppression_chance = 0.05
 		self.winchester1894.weapon_hold = "sbl"
 	end		
 
-	if self.m1894 then --Pawcio's Marlin
+	if self.m1894 then --Pawcio's Marlin 1894
+		self.m1894.recategorize = {"light_snp"}
 		self.m1894.tactical_reload = 1						
 		self.m1894.has_description = true
 		self.m1894.desc_id = "bm_ap_weapon_sc_desc"
 		self.m1894.AMMO_MAX = 20
 		self.m1894.CLIP_AMMO_MAX = 5
 		self.m1894.FIRE_MODE = "single"
-		self.m1894.sounds.fire_single = "rbull_fire"
-		self.m1894.sounds.fire_auto = "rbull_fire"
+		self.m1894.sounds.fire_single = "m1873_fire"
+		self.m1894.sounds.stop_fire = "coal_fire_single"
 		self.m1894.fire_mode_data = {}
 		self.m1894.fire_mode_data.fire_rate = 0.857142857
 		self.m1894.fire_rate_multiplier = 1.4285714
@@ -11267,14 +11278,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.m1894.timers.shotgun_reload_first_shell_offset = 0.25		
+		self.m1894.timers = deep_clone(self.sbl.timers)	
+		self.m1894.timers.shotgun_reload_shell = 0.664
+		self.m1894.timers.shotgun_reload_first_shell_offset = 0.15
+		self.m1894.timers.shotgun_reload_exit_not_empty = 0.45
 		self.m1894.stats_modifiers = nil
 		self.m1894.panic_suppression_chance = 0.05
 	end
 
 	if self.moss464spx then --Pawcio's SPX Centerfire
+		self.moss464spx.recategorize = {"light_snp"}
 		self.moss464spx.upgrade_blocks = nil
 		self.moss464spx.has_description = true
+		self.moss464spx.sounds.fire_single = "m1873_fire"
+		self.moss464spx.sounds.stop_fire = "schakal_fire_single"
 		self.moss464spx.desc_id = "bm_ap_weapon_sc_desc"
 		self.moss464spx.AMMO_MAX = 40
 		self.moss464spx.tactical_reload = 1					
@@ -11283,16 +11300,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.moss464spx.fire_mode_data.fire_rate = 0.857142857
 		self.moss464spx.fire_rate_multiplier = 1.7142857
 		self.moss464spx.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+		self.moss464spx.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.moss464spx.CAN_TOGGLE_FIREMODE = false
 		self.moss464spx.single = {}
 		self.moss464spx.single.fire_rate = 0.4
 		self.moss464spx.kick = self.stat_info.kick_tables.left_kick
 		self.moss464spx.supported = true
-		self.moss464spx.ads_speed = 0.340
+		self.moss464spx.ads_speed = 0.320
 		self.moss464spx.damage_falloff = {
-			start_dist = 1400,
-			end_dist = 5000,
-			min_mult = 0.2222
+			start_dist = 1700,
+			end_dist = 6200,
+			min_mult = 0.3333
 		}
 		self.moss464spx.stats = {
 			damage = 90,
@@ -11308,7 +11326,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.moss464spx.timers.shotgun_reload_first_shell_offset = 0.25		
+		self.moss464spx.timers = deep_clone(self.sbl.timers)	
 		self.moss464spx.stats_modifiers = nil
 		self.moss464spx.panic_suppression_chance = 0.05
 		self.moss464spx.weapon_hold = "sbl"
@@ -11473,6 +11491,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sgs.damage_type = "sniper"
 		self.sgs.upgrade_blocks = nil
 		self.sgs.has_description = true
+		self.sgs.sounds.fire_single = "model70_fire"
+		self.sgs.sounds.stop_fire = "akm_fire_single"
 		self.sgs.desc_id = "bm_ap_weapon_sc_desc"
 		self.sgs.CLIP_AMMO_MAX = 20
 		self.sgs.tactical_reload = 1		
@@ -12005,19 +12025,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 10
 		}
 		self.raygun.panic_suppression_chance = 0.05
+		self.raygun.timers.reload_exit_not_empty = 0.7
+		self.raygun.timers.reload_exit_empty = 0.7
 	end
 
 	if self.quadbarrel then
+		self.quadbarrel.recategorize = {"break_shot"}
 		self.quadbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.quadbarrel.rays = 9
 		self.quadbarrel.kick = self.stat_info.kick_tables.vertical_kick
 		self.quadbarrel.AMMO_MAX = 20
-		self.quadbarrel.sounds.fire_single = "coach_fire"
-		self.quadbarrel.sounds.fire_auto = "coach_fire"		
+		self.quadbarrel.sounds.fire_single = "remington_fire"
+		self.quadbarrel.sounds.stop_fire = "benelli_m4_fire"
 		self.quadbarrel.BURST_FIRE = 4
-		self.quadbarrel.BURST_DELAY = 1.5
-		self.quadbarrel.CAN_TOGGLE_FIREMODE = false							
-		self.quadbarrel.BURST_FIRE_RATE_MULTIPLIER = 5
+		self.quadbarrel.BURST_DELAY = 1
+		self.quadbarrel.CAN_TOGGLE_FIREMODE = false
+		self.quadbarrel.BURST_FIRE_RATE_MULTIPLIER = 6
 		self.quadbarrel.DELAYED_BURST_RECOIL = false
 		self.quadbarrel.ADAPTIVE_BURST_SIZE = false		
 		self.quadbarrel.fire_mode_data = {}
@@ -12048,21 +12071,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.xeno then
+		self.xeno.recategorize = {"light_ar"}
 		self.xeno.desc_id = "bm_xeno_sc_desc"
 		self.xeno.has_description = true
 		self.xeno.armor_piercing_chance = 1
 		self.xeno.CLIP_AMMO_MAX = 40
 		self.xeno.AMMO_MAX = 120
 		self.xeno.fire_mode_data.fire_rate = 0.06666666
-		self.xeno.sounds.fire = "corgi_fire_single"
-		self.xeno.sounds.fire_single = "corgi_fire_single"
+		self.xeno.sounds.fire = "contraband_fire_single"
+		self.xeno.sounds.fire_single = "contraband_fire_single"
 		self.xeno.BURST_FIRE = 4
 		self.xeno.kick = self.stat_info.kick_tables.even_recoil
 		self.xeno.supported = true
 		self.xeno.ads_speed = 0.380
 		self.xeno.damage_falloff = {
-			start_dist = 1500,
-			end_dist = 5000,
+			start_dist = 1600,
+			end_dist = 5100,
 			min_mult = 0.5
 		}
 		self.xeno.stats = {
@@ -12071,7 +12095,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 73,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 25,
+			concealment = 24,
 			suppression = 9,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -12081,6 +12105,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.xeno.stats_modifiers = nil
 		self.xeno.panic_suppression_chance = 0.05
+		self.xeno.timers.reload_exit_not_empty = 1.2
+		self.xeno.timers.reload_exit_empty = 1.2
 	end
 
 

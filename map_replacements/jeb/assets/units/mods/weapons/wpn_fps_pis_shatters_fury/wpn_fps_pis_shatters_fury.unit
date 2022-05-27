@@ -2,6 +2,7 @@
 	<object file="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury" />
 	<dependencies>
 		<depends_on bnk="soundbanks/weapon_rbull"/>
+		<depends_on bnk="soundbanks/weapon_hajk_x"/>
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />

@@ -77,6 +77,12 @@
 	<texture path="levels/mods/skm_cmad/cube_lights/800143"/>
 	<texture path="levels/mods/skm_cmad/cube_lights/800064"/>
 	<texture path="levels/mods/skm_cmad/cube_lights/800196"/>
+	<add path="units/payday2/architecture/com_int_gallery/laser_detection" type="unit">
+		<unit force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<object force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+	</add>
 	<texture path="levels/mods/skmc_mad/cube_lights/800263"/>
 	<texture path="levels/mods/skmc_mad/cube_lights/800599"/>
 	<texture path="levels/mods/skmc_mad/cube_lights/800075"/>
@@ -122,10 +128,4 @@
 	<texture path="levels/mods/skmc_mad/cube_lights/800174"/>
 	<texture path="levels/mods/skmc_mad/cube_lights/800152"/>
 	<texture path="levels/mods/skmc_mad/cube_lights/800276"/>
-	<add path="units/payday2/architecture/com_int_gallery/laser_detection" type="unit">
-		<material_config force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-		<object force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-		<unit force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
-	</add>
 </table>

@@ -10223,6 +10223,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_winchester1874", "resmod_wincheste
 	self.parts.wpn_fps_snp_winchester_b_long.supported = true
 	self.parts.wpn_fps_snp_winchester_b_long.stats = deep_clone(barrels.long_b3_stats)
 	self.parts.wpn_fps_snp_winchester_b_long.stats.concealment = -4
+	self.parts.wpn_fps_snp_winchester_b_long.stats.extra_ammo = 5
 	self.parts.wpn_fps_snp_winchester_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Outlaw's Silenced Barrel
@@ -19108,6 +19109,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		--(Repeater 1874) Mare's Leg Barrel
 		self.parts.wpn_fps_snp_winchester_b_short.supported = true
 		self.parts.wpn_fps_snp_winchester_b_short.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_snp_winchester_b_short.stats.extra_ammo = -3
 		self.parts.wpn_fps_snp_winchester_b_short.stats.concealment = 2
 		self.parts.wpn_fps_snp_winchester_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 

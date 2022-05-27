@@ -10854,6 +10854,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.CLIP_AMMO_MAX = 5
 		self.shatters_fury.kick = self.stat_info.kick_tables.vertical_kick
 		self.shatters_fury.supported = true
+		self.shatters_fury.ads_speed = 0.340
+		self.shatters_fury.damage_falloff = {
+			start_dist = 3500,
+			end_dist = 5600,
+			min_mult = 0.5
+		}
 		self.shatters_fury.stats = {
 			damage = 90,
 			spread = 79,

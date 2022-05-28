@@ -197,7 +197,7 @@
 	
 	<!-- sniper -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" load="true"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" load="true"/>	
+	<unit				path="units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3_husk" load="true"/>	
 	
 	<!-- gensec tier end -->		
 		

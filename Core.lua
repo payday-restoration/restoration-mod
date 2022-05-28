@@ -34,6 +34,7 @@ function restoration:Init()
 		"TonCont", --Armored Transport: Atrium
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
+		"ttr_yct_lvl", --Triad Takedown Remastered 
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_res", --firestarter day 2 res edit version
@@ -70,6 +71,7 @@ function restoration:Init()
 		"hardware_store", --Hardware Store 
 		"nft_heist", --EN EF TEE HEIST
 		"anlh", --An End To Liang
+		"hwu", --Avalon's Shadow
 		"constantine_butcher_lvl", --Butcher's Bay
 		"constantine_bank_lvl", --Pacific Bank
 		"santas_hardware_store", --Santa Spring Is Coming To Town
@@ -105,7 +107,9 @@ function restoration:Init()
 		"hntn" --harvest and trustee north
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
-		"help" --Prison Nightmare
+		"help", --Prison Nightmare
+		--custom heists
+		"funbank" --FunBank: Specials
 	}
 	
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
@@ -151,6 +155,7 @@ function restoration:Init()
 			"help", --Prison Nightmare	
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
+			"funbank", --FunBank: Specials
 			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"hardware_store", --Hardware Store 
 			"constantine_bank_lvl", --Pacific Bank
@@ -186,6 +191,7 @@ function restoration:Init()
 		"constantine_butcher_lvl", --Butcher's Bay
 		"glb", --Golden Lotus Bank 
 		"schl", --Scarlet Club House
+		"hwu", --Avalon's Shadow
 		"constantine_smackdown2_lvl", --Truck Hustle
 		"nft_heist", --EN EF TEE HEIST
 		"TonCont", --Armored Transport: Atrium
@@ -231,7 +237,6 @@ function restoration:Init()
 		"RogueCompany", --Rogue Company
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains
-		"hwu", --Avalon's Shadow
 		"sh_raiders", --Safehouse Raiders 
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office

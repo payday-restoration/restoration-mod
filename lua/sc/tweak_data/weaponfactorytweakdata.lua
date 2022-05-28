@@ -4812,16 +4812,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_usp_b_expert.supported = true
-	self.parts.wpn_fps_pis_usp_b_expert.custom_stats = {
-		falloff_start_mult = 1.075,
-		falloff_end_mult = 1.075,
-		ads_speed_mult = 1.025
-	}
-	self.parts.wpn_fps_pis_usp_b_expert.stats = {
-		value = 3,
-		spread = 1,
-		concealment = -1
-	}
+	self.parts.wpn_fps_pis_usp_b_expert.stats = deep_clone(barrels.long_b1_stats)
+	self.parts.wpn_fps_pis_usp_b_expert.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 	
 	--Match Slide
 	self.parts.wpn_fps_pis_usp_b_match.pcs = {
@@ -4831,17 +4823,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_usp_b_match.supported = true
-	self.parts.wpn_fps_pis_usp_b_match.custom_stats = {
-		falloff_start_mult = 1.225,
-		falloff_end_mult = 1.225,
-		ads_speed_mult = 1.075
-	}
-	self.parts.wpn_fps_pis_usp_b_match.stats = {
-		value = 5,
-		spread = 3,
-		concealment = -3
-	}
-	
+	self.parts.wpn_fps_pis_usp_b_match.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_usp_b_match.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+
 	--Extended Mag.
 	self.parts.wpn_fps_pis_usp_m_extended.pcs = {
 		10,
@@ -4880,8 +4864,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 	self.parts.wpn_fps_pis_usp_co_comp_2.supported = true
 	self.parts.wpn_fps_pis_usp_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
 	self.parts.wpn_fps_pis_usp_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
-	
-	
+
 end)	
 
 --Chimano Custom
@@ -12871,6 +12854,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", functi
 		gadget_zoom = 30
 	}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.perks = {"gadget"}
+
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod.wpn_fps_pis_shatters_fury = {
+		translation = Vector3(-0.05, -4, -4.65)
+	}
 	
 	--Angled Sight v2
 	self.parts.wpn_fps_upg_o_45rds_v2.pcs = {

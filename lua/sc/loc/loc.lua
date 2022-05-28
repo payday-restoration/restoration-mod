@@ -2699,7 +2699,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Sociopath--
 		["menu_st_spec_9_desc_sc"] = "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\n\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy.\n\n\nBenefits from a full perk deck:\n##-##When you are within ##18## meters of an enemy, you receive ##5%## less damage from enemies.\n##-##Killing an enemy regenerates ##40## armor. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy with a melee weapon regenerates ##5%## health. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies. Cannot occur more than once every ##2## seconds.",
 		["menu_deck9_1_sc"] = "No Talk",
-		["menu_deck9_1_desc_sc"] = "When you are surrounded by three enemies or more within ##18 meters##, you take ##5%## less damage from enemies.",
+		["menu_deck9_1_desc_sc"] = "When you are surrounded by three enemies or more within ##18## meters, you take ##5%## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##3## seconds.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##5%## health.\n\nThis cannot occur more than once every ##3## seconds.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis cannot occur more than once every ##3## seconds.",

@@ -46,7 +46,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	end
 	
 	--///MEXICAN LEVELS\\\--
-	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
+	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex2"}
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
@@ -117,6 +117,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.ai_group_type = nypd
 	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
 	self.dinner.player_style = "slaughterhouse"
+	
+	--[[
+	self.ranc.ai_group_type = nypd
+	self.ranc.player_style = "fighterpilot"
+	--]]
 	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
@@ -211,11 +216,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.ai_group_type = lapd
 	self.pent.package = {"packages/job_pent", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.pent.player_style = "enforcer"
-	
-	--[[
-	self.ranc.ai_group_type = nypd
-	self.ranc.player_style = "fighterpilot"
-	--]]
 	
 	--///NEW OUTFITS\\\--
 	
@@ -459,17 +459,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	--///REAPER LEVELS\\\--
 	self.mad.player_style = "winter_suit"
 	--We're never actually told where the forest is ;)
-	self.pines.package = {"packages/narr_pines", "packages/lvl_mad"}
 	self.pines.player_style = "loud_suit"
 	self.pines.ai_group_type = russia	
 	self.pines.flashlights_on = true
 	
 	--Bomb: Forest--
-	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/lvl_mad"}
 	self.crojob3.ai_group_type = russia			
 	self.crojob3.player_style = "loud_suit"
 
-	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/lvl_mad"}
 	self.crojob3_night.ai_group_type = russia				
 	self.crojob3_night.player_style = "loud_suit"		
 	self.crojob3_night.flashlights_on = true	

@@ -119,14 +119,21 @@ function GameSetup:load_packages()
             "levels/narratives/bain/hvh/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
-	--[[	
+
     elseif ai_type == r then
         faction_package = {
             "packages/lvl_mad",
 			"levels/narratives/elephant/mad/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
-	]]--	
+	
+	elseif ai_type == f then
+        faction_package = {
+            "packages/job_bex",
+			"levels/narratives/vlad/bex/world_sounds"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+	
     end
     if faction_package then
         if type(faction_package) == "table" then

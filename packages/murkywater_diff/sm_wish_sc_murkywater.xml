@@ -310,6 +310,7 @@
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_contour" force="false" />
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" />		
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_df"/>
 	<!-- specials end -->
 

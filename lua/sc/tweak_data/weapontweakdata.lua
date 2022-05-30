@@ -7225,7 +7225,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.stats = {
 					damage = 20,
 					spread = 91,
-					recoil = 85,
+					recoil = 82,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 28,
@@ -7340,7 +7340,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 82,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 25,
+					concealment = 24,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -7408,10 +7408,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 82,
+					recoil = 80,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 28,
+					concealment = 27,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -7472,7 +7472,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.olympic.panic_suppression_chance = 0.05
 				self.olympic.kick = self.stat_info.kick_tables.even_recoil
 				self.olympic.supported = true
-				self.olympic.ads_speed = 0.300
+				self.olympic.ads_speed = 0.280
 				self.olympic.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 5700,
@@ -7480,7 +7480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.olympic.stats = {
 					damage = 20,
-					spread = 79,
+					spread = 73,
 					recoil = 82,
 					spread_moving = 8,
 					zoom = 1,
@@ -7760,6 +7760,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m16.timers.reload_exit_not_empty = 0.95
 
 			--Queen's Wrath
+				self.l85a2.desc_id = "bm_l85a2_sc_desc"
+				self.l85a2.has_description = true
 				self.l85a2.CLIP_AMMO_MAX = 30
 				self.l85a2.AMMO_MAX = 120
 				self.l85a2.FIRE_MODE = "auto"
@@ -7862,8 +7864,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.groza_underbarrel.ads_speed = 0.360
 				self.groza_underbarrel.stats = {
 					damage = 40,
-					spread = 80,
-					recoil = 57,
+					spread = 61,
+					recoil = 51,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 18,
@@ -8177,7 +8179,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 67,
 				spread_moving = 5,
 				zoom = 1,
-				concealment = 18,
+				concealment = 19,
 				suppression = 6,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -8198,14 +8200,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.ignore_damage_upgrades = true
 			self.contraband_m203.AMMO_MAX = 6
 			self.contraband_m203.supported = true
-			self.contraband_m203.ads_speed = 0.460
+			self.contraband_m203.ads_speed = 10.460
 			self.contraband_m203.stats = {
 				damage = 80,
 				spread = 84,
 				recoil = 71,
 				spread_moving = 6,
 				zoom = 1,
-				concealment = 17,
+				concealment = 19,
 				suppression = 20,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -9776,7 +9778,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}		
 		self.arbiter.fire_mode_data.fire_rate = 0.6
 		self.arbiter.CLIP_AMMO_MAX = 6
-		self.arbiter.AMMO_MAX = 6
+		self.arbiter.tactical_reload = 1
+		self.arbiter.AMMO_MAX = 5
 		self.arbiter.supported = true
 		self.arbiter.ads_speed = 0.460
 		self.arbiter.damage_falloff = {
@@ -10932,7 +10935,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	if self.osipr_gl then
 		self.osipr_gl.AMMO_MAX = 9
-		self.osipr_gl.CLIP_AMMO_MAX = 6
+		self.osipr_gl.tactical_reload = 1
+		self.osipr_gl.CLIP_AMMO_MAX = 5
 		self.osipr_gl.fire_mode_data.fire_rate = 0.6
 		self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
 		self.osipr_gl.supported = true
@@ -10950,7 +10954,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 71,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 15,
+			concealment = 20,
 			suppression = 20,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -11364,10 +11368,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sg416.stats = {
 			damage = 24,
 			spread = 81,
-			recoil = 85,
+			recoil = 84,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 23,
+			concealment = 22,
 			suppression = 8,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -12109,7 +12113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.recategorize = {"light_ar"}
 		self.xeno.desc_id = "bm_xeno_sc_desc"
 		self.xeno.has_description = true
-		self.xeno.CLIP_AMMO_MAX = 40
+		self.xeno.CLIP_AMMO_MAX = 95
 		self.xeno.AMMO_MAX = 150
 		self.xeno.fire_mode_data.fire_rate = 0.06666666
 		self.xeno.sounds.fire = "contraband_fire_single"
@@ -12117,7 +12121,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.BURST_FIRE = 4
 		self.xeno.kick = self.stat_info.kick_tables.even_recoil
 		self.xeno.supported = true
-		self.xeno.ads_speed = 0.380
+		self.xeno.ads_speed = 0.460
 		self.xeno.damage_falloff = {
 			start_dist = 1600,
 			end_dist = 5100,
@@ -12129,7 +12133,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 73,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 24,
+			concealment = 19,
 			suppression = 9,
 			alert_size = 2,
 			extra_ammo = 101,

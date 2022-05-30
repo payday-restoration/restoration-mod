@@ -9103,7 +9103,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 	}
 	self.parts.wpn_fps_ass_l85a2_b_long.supported = true
 	self.parts.wpn_fps_ass_l85a2_b_long.stats = deep_clone(barrels.long_b2_stats)
-	self.parts.wpn_fps_ass_l85a2_b_long.custom_statss = deep_clone(barrels.long_b2_custom_stats)
+	self.parts.wpn_fps_ass_l85a2_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Diminutive Barrel
 	self.parts.wpn_fps_ass_l85a2_b_short.pcs = {
@@ -9114,7 +9114,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 	}
 	self.parts.wpn_fps_ass_l85a2_b_short.supported = true
 	self.parts.wpn_fps_ass_l85a2_b_short.stats = deep_clone(barrels.short_b2_stats)
-	self.parts.wpn_fps_ass_l85a2_b_short.custom_statss = deep_clone(barrels.short_b2_custom_stats)
+	self.parts.wpn_fps_ass_l85a2_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Delightful Grip
 	self.parts.wpn_fps_ass_l85a2_g_worn.pcs = {
@@ -21431,6 +21431,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 		self.wpn_fps_ass_groza.override.wpn_fps_upg_ak_m_quad = { a_obj = "a_m_fix" } 
 		self.wpn_fps_ass_groza.override.wpn_fps_upg_ak_m_uspalm = { a_obj = "a_m_fix" } 
 
+		if not self.wpn_fps_ass_asval.override then
+			self.wpn_fps_ass_asval.override = {}
+		end
 		self.wpn_fps_ass_asval.override.wpn_fps_ass_groza_m_speed = {
 			unit = "units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/wpn_fps_ass_groza_m_speed",
 			a_obj = "a_m_fix"
@@ -21449,6 +21452,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_s_standard",
 			third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_third_lmg_hk21_s_standard"
 		}
+
+		if not self.wpn_fps_ass_asval.override then
+			self.wpn_fps_ass_asval.override = {}
+		end
 		self.wpn_fps_ass_asval.override.wpn_fps_ass_groza_m_speed = {
 			desc_id = "missing_cap",
 			unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_m_standard"

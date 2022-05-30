@@ -1149,17 +1149,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AK5
 		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
 		--AK17
-		["bm_flint_sc_desc"] = "The modern interpretation of the classic AK. Features a potent 2 round burst and has quite the identity crisis.",				
+		["bm_flint_sc_desc"] = "The modern interpretation of the classic AK. Features a potent 2 round burst and has quite the identity crisis.",	
 		--AK 5.45
 		["bm_w_ak74"] = "AK 5.45 Rifle",
-		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 counterpart, this rifle is by no means any less deadly.",
+		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 sister, this rifle is by no means any less deadly.",
 		--Union 5.56
 		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	
 		--UAR
 		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",	
 		--CR 805
 		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",		
-					
+		-- CUSTOM 48 DAMAGE ARs
+		--AN-94/92
+		["bm_w_an94"] = "KVK-99 Rifle",
+		["bm_an94_sc_desc"] = "The first 2 rounds of each trigger pull fire at 3x the rate of fire.",
+
 		--AMR-16
 		["bm_m16_sc_desc"] = "This classic rifles serves as the predecessor to the CAR-4. What it lacks in concealability it makes up for in power.",
 		--AK 7.62
@@ -1167,6 +1171,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.\n\nThe Go-To for insurgents and crazy regimes throughout the world.",
 		["bm_w_akm_gold"] = "Golden AK 7.62 Rifle",
 		["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
+		--Queen's Wrath
+		["bm_l85a2_sc_desc"] = "Though its reputation has been marred by earlier iterations, this rifle stands to be one of the most accurate automatics ever made.\n\nStill an ergonomic nightmare though.",
 		--KETCHUPKNOB--
 		--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
 		["bm_w_groza"] = "OB-14st Byk-1 Rifle", --Hopefully less silly than its Ketchup name
@@ -1198,7 +1204,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_par"] = "KSP-58B Heavy Machine Gun",	
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
-		["bm_wolf_brigade_sc_desc"] = "We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\n\nWildly inaccurate but has 25% less recoil when hipfired.",		
+		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\"\n\nWildly inaccurate but has 25% less recoil when hipfired.",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
@@ -1259,6 +1265,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
 		["bm_menu_weapon_slot_warning_secondary"] = "WEAPON WAS MOVED TO THE SECONDARY SLOT\nWILL CRASH IF USED IN-HEIST AS A PRIMARY",
 		["bm_menu_weapon_slot_warning_disabled"] = "WEAPON WAS DISABLED BY CAPTAIN AUTUMN\nAND WILL RESULT IN A CRASH IF USED IN-HEIST",
+		["bm_menu_weapon_slot_warning_wtfdoido"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
 		["empty"] = "",
 		["missing_cap"] = "Custom Attachment Points is not installed\n\nAttachment will take on the slot's default appearance.",
 		["bm_lmg_generic_desc"] = "Wildly inaccurate when hipfired.",
@@ -1278,12 +1285,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
-
-		--AN-94/92
-		["bm_an94_rof_init_sc_desc"] = "The first 2 rounds of each trigger pull fire at 3x the rate of fire.",
-
-		--NO SUPPORT
-		["bm_do_not_use"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",

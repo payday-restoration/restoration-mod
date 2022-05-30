@@ -17,7 +17,7 @@
 	<text text="DoktorAkcel" type="name"/>
 	<text text="SC" type="name"/>
 	<text text="DMC" type="name"/>
-	<text text="Rino" type="name"/>
+	<text text="Reno" type="name"/>
 	<text text="Zdann" type="name"/>
 	<text text="Jarey" type="name"/>
 	<br/>
@@ -69,5 +69,6 @@
 	<br/>
 	<text text="MsMarshie" type="name"/>
 	<text text="LR_Daring" type="name"/>
+	<text text="GullWingdoor " type="name"/>
 	<command cmd="stop" offset="220"/>
 </table>

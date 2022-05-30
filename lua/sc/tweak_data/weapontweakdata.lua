@@ -3174,13 +3174,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 	
 		
-	local recat = { "g26", "jowi", "holt", "x_holt", "type54", "x_type54", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14", "sub2000", "c96" }	
+	local recat = { "g26", "jowi", "holt", "x_holt", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14", "sub2000" }	
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_pis" }
 		self[ wep_id ].damage_type = "pistol"
 	end
 	
-	recat = { "usp", "x_usp", "deagle", "x_deagle", "shrew", "x_shrew", "colt_1911", "x_1911", "model3", "x_model3", "rsh12", "new_raging_bull", "x_rage", "peacemaker", "mateba", "x_2006m", "chinchilla", "x_chinchilla", "m1911" }
+	recat = { "usp", "x_usp", "type54", "x_type54", "deagle", "x_deagle", "shrew", "x_shrew", "colt_1911", "x_1911", "model3", "x_model3", "rsh12", "new_raging_bull", "x_rage", "peacemaker", "mateba", "x_2006m", "chinchilla", "x_chinchilla", "m1911", "c96" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_pis" }
 		self[ wep_id ].damage_type = "heavy_pistol"
@@ -3225,13 +3225,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 	
-	recat = { "m16", "akm", "akm_gold", "asval", "groza", "l85a2", "akmsu", "x_akmsu" }
+	recat = { "m16", "akm", "akm_gold", "groza", "l85a2", "akmsu", "x_akmsu" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 	
-	recat = { "galil", "fal", "scar", "contraband" }
+	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
@@ -6365,7 +6365,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shepheard.supported = true
 				self.shepheard.ads_speed = 0.260
 				self.shepheard.damage_falloff = {
-					start_dist = 1000,
+					start_dist = 900,
 					end_dist = 4200,
 					min_mult = 0.25
 				}
@@ -6398,8 +6398,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mp5.supported = true
 				self.x_mp5.ads_speed = 0.280 * 1.5
 				self.x_mp5.damage_falloff = {
-					start_dist = 1100,
-					end_dist = 4300,
+					start_dist = 1000,
+					end_dist = 4200,
 					min_mult = 0.25
 				}
 				self.x_mp5.stats = {
@@ -6436,8 +6436,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.supported = true
 				self.erma.ads_speed = 0.260
 				self.erma.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 4500,
+					start_dist = 2000,
+					end_dist = 4800,
 					min_mult = 0.25
 				}
 				self.erma.stats = {
@@ -6761,8 +6761,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_mp5.supported = true
 				self.new_mp5.ads_speed = 0.280
 				self.new_mp5.damage_falloff = {
-					start_dist = 1100,
-					end_dist = 4300,
+					start_dist = 1000,
+					end_dist = 4200,
 					min_mult = 0.25
 				}
 				self.new_mp5.stats = {
@@ -6792,8 +6792,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m45.supported = true
 				self.m45.ads_speed = 0.260
 				self.m45.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 4500,
+					start_dist = 1800,
+					end_dist = 4800,
 					min_mult = 0.25
 				}
 				self.m45.stats = {
@@ -6828,7 +6828,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.supported = true
 				self.sterling.ads_speed = 0.260
 				self.sterling.damage_falloff = {
-					start_dist = 1700,
+					start_dist = 2000,
 					end_dist = 4800,
 					min_mult = 0.25
 				}
@@ -7687,6 +7687,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.reload_speed_multiplier = 1.1
 				self.akm.panic_suppression_chance = 0.05
 				--Gold AK
+				self.akm_gold.bmp = 500
 				self.akm_gold.desc_id = "bm_akm_gold_sc_desc"
 				self.akm_gold.has_description = true
 				self.akm_gold.kick = self.stat_info.kick_tables.moderate_right_kick			
@@ -7798,28 +7799,29 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Byk-1 (OTs-14)
 				self.groza.desc_id = "bm_groza_sc_desc"
 				self.groza.has_description = true
-				self.groza.AMMO_MAX = 60
+				self.groza.AMMO_MAX = 90
+				self.groza.CLIP_AMMO_MAX = 30
 				self.groza.tactical_reload = 1
 				self.groza.FIRE_MODE = "auto"
 				self.groza.fire_mode_data.fire_rate = 0.08571428571
 				self.groza.CAN_TOGGLE_FIREMODE = true
 				self.groza.auto.fire_rate = 0.08571428571
 				self.groza.panic_suppression_chance = 0.05
-				self.groza.kick = self.stat_info.kick_tables.moderate_kick
+				self.groza.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.groza.supported = true
-				self.groza.ads_speed = 0.340
+				self.groza.ads_speed = 0.360
 				self.groza.damage_falloff = {
-					start_dist = 1400,
-					end_dist = 4000,
-					min_mult = 0.4444
+					start_dist = 2100,
+					end_dist = 4800,
+					min_mult = 0.6
 				}
 				self.groza.stats = {
-					damage = 45,
-					spread = 83,
-					recoil = 77,
+					damage = 30,
+					spread = 82,
+					recoil = 74,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 18,
+					concealment = 19,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -7857,7 +7859,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.groza_underbarrel.ignore_damage_upgrades = true
 				self.groza_underbarrel.AMMO_MAX = 6
 				self.groza_underbarrel.supported = true
-				self.groza_underbarrel.ads_speed = 0.340
+				self.groza_underbarrel.ads_speed = 0.360
 				self.groza_underbarrel.stats = {
 					damage = 40,
 					spread = 80,
@@ -7874,49 +7876,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.groza_underbarrel.stats_modifiers = {damage = 10}
 
-	
-			--Valkyria (AS Val)
-				self.asval.desc_id = "bm_asval_sc_desc"
-				self.asval.has_description = true
-				self.asval.sounds.fire = "akm_fire_single"
-				self.asval.sounds.fire_single = "akm_fire_single"
-				self.asval.sounds.fire_auto = "akm_fire"
-				self.asval.sounds.stop_fire = "akm_stop"
-				self.asval.sounds.dryfire = "primary_dryfire"
-				self.asval.AMMO_MAX = 80
-				self.asval.CLIP_AMMO_MAX = 20
-				self.asval.FIRE_MODE = "auto"
-				self.asval.fire_mode_data = {}
-				self.asval.fire_mode_data.fire_rate = 0.06666666666
-				self.asval.CAN_TOGGLE_FIREMODE = true
-				self.asval.auto = {}
-				self.asval.auto.fire_rate = 0.06666666666
-				self.asval.kick = self.stat_info.kick_tables.moderate_kick
-				self.asval.supported = true
-				self.asval.ads_speed = 0.320
-				self.asval.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3800,
-					min_mult = 0.44444
-				}
-				self.asval.stats = {
-					damage = 45,
-					spread = 81,
-					recoil = 71,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 24,
-					suppression = 18,
-					alert_size = 1,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.asval.stats_modifiers = nil
-				self.asval.panic_suppression_chance = 0.05
-				self.asval.timers.reload_exit_empty = 0.65
-				self.asval.timers.reload_exit_not_empty = 0.85
+
+
 
 		--SECONDARIES
 
@@ -8292,6 +8253,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.scar.timers.reload_exit_not_empty = 1.3
 			self.scar.panic_suppression_chance = 0.05
 
+		--Valkyria (AS Val)
+			self.asval.desc_id = "bm_asval_sc_desc"
+			self.asval.has_description = true
+			self.asval.sounds.fire = "akm_fire_single"
+			self.asval.sounds.fire_single = "akm_fire_single"
+			self.asval.sounds.fire_auto = "akm_fire"
+			self.asval.sounds.stop_fire = "akm_stop"
+			self.asval.sounds.dryfire = "primary_dryfire"
+			self.asval.AMMO_MAX = 80
+			self.asval.CLIP_AMMO_MAX = 20
+			self.asval.FIRE_MODE = "auto"
+			self.asval.fire_mode_data = {}
+			self.asval.fire_mode_data.fire_rate = 0.06666666666
+			self.asval.CAN_TOGGLE_FIREMODE = true
+			self.asval.auto = {}
+			self.asval.auto.fire_rate = 0.06666666666
+			self.asval.kick = self.stat_info.kick_tables.moderate_kick
+			self.asval.supported = true
+			self.asval.ads_speed = 0.320
+			self.asval.damage_falloff = {
+				start_dist = 1000,
+				end_dist = 4200,
+				min_mult = 0.44444
+			}
+			self.asval.stats = {
+				damage = 45,
+				spread = 80,
+				recoil = 74,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 24,
+				suppression = 18,
+				alert_size = 1,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.asval.stats_modifiers = nil
+			self.asval.panic_suppression_chance = 0.05
+			self.asval.timers.reload_exit_empty = 0.65
+			self.asval.timers.reload_exit_not_empty = 0.85
+
 
 
 
@@ -8387,7 +8391,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"lmg",
 				"smg"
 			}
-			self.m249.desc_id = "bm_menu_sc_m249_desc"
+			self.m249.desc_id = "bm_m249_sc_desc"
 			self.m249.has_description = true
 			self.m249.CLIP_AMMO_MAX = 200
 			self.m249.AMMO_MAX = 300
@@ -8423,7 +8427,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.reload_speed_multiplier = 0.75
 	
 		--RPK
-			self.rpk.desc_id = "bm_menu_sc_rpk_desc"
+			self.rpk.desc_id = "bm_rpk_sc_desc"
 			self.rpk.has_description = true		
 			self.rpk.categories = {
 				"lmg",
@@ -8436,7 +8440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.BURST_FIRE = false
 			self.rpk.kick = self.stat_info.kick_tables.right_kick
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.440
+			self.rpk.ads_speed = 0.480
 			self.rpk.damage_falloff = {
 				start_dist = 3000,
 				end_dist = 5300,
@@ -8444,7 +8448,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.rpk.stats = {
 				damage = 30,
-				spread = 79,
+				spread = 77,
 				recoil = 76,
 				spread_moving = 5,
 				zoom = 1,
@@ -8613,10 +8617,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
-				self.mg42.ads_speed = 0.600
+				self.mg42.ads_speed = 0.640
 				self.mg42.damage_falloff = {
-					start_dist = 2300,
-					end_dist = 5000,
+					start_dist = 2800,
+					end_dist = 5500,
 					min_mult = 0.6666
 				}
 				self.mg42.stats = {
@@ -8656,10 +8660,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk21.supported = true
-				self.hk21.ads_speed = 0.580
+				self.hk21.ads_speed = 0.600
 				self.hk21.damage_falloff = {
-					start_dist = 2800,
-					end_dist = 5500,
+					start_dist = 2300,
+					end_dist = 5000,
 					min_mult = 0.6666
 				}
 				self.hk21.stats = {
@@ -8677,7 +8681,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.hk21.stats_modifiers = nil
-				self.hk21.reload_speed_multiplier = 0.95
+				self.hk21.reload_speed_multiplier = 0.9
 				self.hk21.timers.reload_exit_empty = 1.3
 				self.hk21.timers.reload_exit_not_empty = 1.3
 		
@@ -11453,10 +11457,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.lebman then --Gambyt's Vendetta 38 Pistol
+		self.lebman.recategorize = {"light_pis"}
 		self.lebman.desc_id = nil
 		self.lebman.tactical_reload = 1		
 		self.lebman.use_data.selection_index = 2
-		self.lebman.CLIP_AMMO_MAX = 8
+		self.lebman.CLIP_AMMO_MAX = 11
 		self.lebman.AMMO_MAX = 120
 		self.lebman.fire_mode_data.fire_rate = 0.06
 		self.lebman.kick = self.stat_info.kick_tables.moderate_kick
@@ -11480,7 +11485,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 1,
 			reload = 20
 		}
-		self.lebman.stats_modifiers = nil				
+		self.lebman.stats_modifiers = nil
 		self.lebman.panic_suppression_chance = 0.05
 		self.lebman.reload_speed_multiplier = 1.2
 		self.lebman.timers.reload_empty = self.czech.timers.reload_empty
@@ -11501,7 +11506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sgs.sounds.stop_fire = "akm_fire_single"
 		self.sgs.desc_id = "bm_ap_weapon_sc_desc"
 		self.sgs.CLIP_AMMO_MAX = 20
-		self.sgs.tactical_reload = 1		
+		self.sgs.tactical_reload = 1
 		self.sgs.AMMO_MAX = 40
 		self.sgs.FIRE_MODE = "single"
 		--self.sgs.fire_rate_multiplier = 0.9
@@ -11544,7 +11549,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.beck.damage_type = "shotgun"
 		self.beck.damage_type_single_ray = "sniper"
 		self.beck.has_description = true
-		self.beck.desc_id = "bm_w_beck_desc"		
+		self.beck.desc_id = "bm_w_beck_desc"
 		self.beck.tactical_reload = 1
 		self.beck.rays = 9
 		self.beck.CLIP_AMMO_MAX = 6
@@ -11591,7 +11596,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.car9.sounds.magazine_empty = "wp_pistol_slide_lock"
 		self.car9.CLIP_AMMO_MAX = 32
 		self.car9.AMMO_MAX = 90
-		self.car9.tactical_reload = 1		
+		self.car9.tactical_reload = 1
 		self.car9.fire_mode_data.fire_rate = 0.06315789473
 		self.car9.kick = self.stat_info.kick_tables.even_recoil
 		self.car9.supported = true
@@ -11625,21 +11630,28 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.hpb then --Gambyt's Browning HP	
-		self.hpb.tactical_reload = 1												
+		self.hpb.has_description = false
+		self.hpb.tactical_reload = 1
 		self.hpb.fire_mode_data.fire_rate = 0.08571428571
 		self.hpb.single.fire_rate = 0.08571428571
-		self.hpb.CLIP_AMMO_MAX = 10
-		self.hpb.AMMO_MAX = 40
+		self.hpb.CLIP_AMMO_MAX = 16
+		self.hpb.AMMO_MAX = 75
 		self.hpb.kick = self.stat_info.kick_tables.even_recoil
 		self.hpb.supported = true
+		self.hpb.ads_speed = 0.200
+		self.hpb.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 3600,
+			min_mult = 0.25
+		}
 		self.hpb.stats = {
-			damage = 45,
-			spread = 81,
-			recoil = 85,
+			damage = 24,
+			spread = 60,
+			recoil = 88,
 			spread_moving = 5,
 			zoom = 1,
-			concealment = 25,
-			suppression = 6,
+			concealment = 31,
+			suppression = 8,
 			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -11648,6 +11660,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.hpb.stats_modifiers = nil
 		self.hpb.panic_suppression_chance = 0.05
+		self.hpb.timers.reload_exit_empty = 0.5
+		self.hpb.timers.reload_exit_not_empty = 0.65
 	end	
 
 	if self.toym16 then --Gambyt's Toy M16
@@ -11872,15 +11886,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.derringer then
+		self.derringer.recategorize = {"heavy_pis"}
 		self.derringer.AMMO_MAX = 20
 		self.derringer.kick = self.stat_info.kick_tables.right_kick
+		self.derringer.sounds.fire_single = "c45_fire"
+		self.derringer.sounds.stop_fire = "pmkr45_fire"
 		self.derringer.supported = true
+		self.derringer.ads_speed = 0.200
+		self.derringer.damage_falloff = {
+			start_dist = 1100,
+			end_dist = 3200,
+			min_mult = 0.1111
+		}
 		self.derringer.stats = {
 			damage = 90,
-			spread = 86,
-			recoil = 74,
+			spread = 41,
+			recoil = 50,
 			zoom = 1,
-			concealment = 26,
+			concealment = 32,
 			suppression = 4,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -11896,6 +11919,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.derringer.can_shoot_through_shield = true
 		self.derringer.can_shoot_through_wall = true
 		self.derringer.armor_piercing_chance = 1
+		self.derringer.weapon_hold = "model3"
+		self.derringer.animations.reload_name_id = "raging_bull"
+		self.derringer.timers.reload_not_empty = 2.1
+		self.derringer.timers.reload_empty = 2.1
+		self.derringer.timers.reload_exit_empty = 0.6
+		self.derringer.timers.reload_exit_not_empty = 0.6
 	end
 
 	if self.hx25 then --Pawcio's KF2 HX-25
@@ -12042,11 +12071,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.quadbarrel.kick = self.stat_info.kick_tables.vertical_kick
 		self.quadbarrel.AMMO_MAX = 20
 		self.quadbarrel.sounds.fire_single = "remington_fire"
-		self.quadbarrel.sounds.stop_fire = "benelli_m4_fire"
-		self.quadbarrel.BURST_FIRE = 4
-		self.quadbarrel.BURST_DELAY = 1
+		self.quadbarrel.sounds.stop_fire = "keltec_fire"
+		self.quadbarrel.BURST_FIRE = 2
+		self.quadbarrel.BURST_DELAY = 0.75
 		self.quadbarrel.CAN_TOGGLE_FIREMODE = false
-		self.quadbarrel.BURST_FIRE_RATE_MULTIPLIER = 6
+		self.quadbarrel.BURST_FIRE_RATE_MULTIPLIER = 5
 		self.quadbarrel.DELAYED_BURST_RECOIL = false
 		self.quadbarrel.ADAPTIVE_BURST_SIZE = false		
 		self.quadbarrel.fire_mode_data = {}
@@ -12080,9 +12109,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.recategorize = {"light_ar"}
 		self.xeno.desc_id = "bm_xeno_sc_desc"
 		self.xeno.has_description = true
-		self.xeno.armor_piercing_chance = 1
 		self.xeno.CLIP_AMMO_MAX = 40
-		self.xeno.AMMO_MAX = 120
+		self.xeno.AMMO_MAX = 150
 		self.xeno.fire_mode_data.fire_rate = 0.06666666
 		self.xeno.sounds.fire = "contraband_fire_single"
 		self.xeno.sounds.fire_single = "contraband_fire_single"
@@ -12724,6 +12752,25 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			name = "a_s_fix",
 			base_a_obj = "a_s",
 			position = Vector3( 0, 0, -1.1 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+
+		self:SetupAttachmentPoint( "groza", {
+			name = "a_m_fix",
+			base_a_obj = "a_m",
+			position = Vector3( 0, 0.6, -0.6 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		self:SetupAttachmentPoint( "asval", {
+			name = "a_m_fix",
+			base_a_obj = "a_m",
+			part_attach_data = {
+				{"wpn_fps_ass_asval_m_standard_dummy"},
+				"g_mag"
+			},
+			position = Vector3( 0, -4, 6 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
 	end

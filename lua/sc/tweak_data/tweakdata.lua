@@ -103,13 +103,13 @@ tweak_data.projectiles.launcher_poison_gre_m79.player_damage = 0
 tweak_data.projectiles.launcher_poison_gre_m79.curve_pow = 0
 tweak_data.projectiles.launcher_poison_gre_m79.range = 0
 tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_duration = 10
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_duration = 16
+tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 15.1,
+	dot_length = 8.15,
 	dot_tick_period = 0.5
 }
 
@@ -138,13 +138,13 @@ tweak_data.projectiles.launcher_poison_m32.player_damage = 0
 tweak_data.projectiles.launcher_poison_m32.curve_pow = 0
 tweak_data.projectiles.launcher_poison_m32.range = 0
 tweak_data.projectiles.launcher_poison_m32.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_m32.poison_gas_duration = 10
-tweak_data.projectiles.launcher_poison_m32.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_m32.poison_gas_duration = 16
+tweak_data.projectiles.launcher_poison_m32.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_m32.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_m32.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 15.1,
+	dot_length = 8.15,
 	dot_tick_period = 0.5
 }
 
@@ -173,13 +173,13 @@ tweak_data.projectiles.launcher_poison_china.player_damage = 0
 tweak_data.projectiles.launcher_poison_china.curve_pow = 0
 tweak_data.projectiles.launcher_poison_china.range = 0
 tweak_data.projectiles.launcher_poison_china.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_china.poison_gas_duration = 10
-tweak_data.projectiles.launcher_poison_china.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_china.poison_gas_duration = 16
+tweak_data.projectiles.launcher_poison_china.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_china.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_china.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 15.1,
+	dot_length = 8.15,
 	dot_tick_period = 0.5
 }
 
@@ -198,13 +198,13 @@ tweak_data.projectiles.launcher_poison_contraband.player_damage = 0
 tweak_data.projectiles.launcher_poison_contraband.curve_pow = 0
 tweak_data.projectiles.launcher_poison_contraband.range = 0
 tweak_data.projectiles.launcher_poison_contraband.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_duration = 10
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_duration = 16
+tweak_data.projectiles.launcher_poison_contraband.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_contraband.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_contraband.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 15.1,
+	dot_length = 8.15,
 	dot_tick_period = 0.5
 }
 
@@ -233,13 +233,13 @@ tweak_data.projectiles.launcher_poison_slap.player_damage = 0
 tweak_data.projectiles.launcher_poison_slap.curve_pow = 0
 tweak_data.projectiles.launcher_poison_slap.range = 0
 tweak_data.projectiles.launcher_poison_slap.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_slap.poison_gas_duration = 10
-tweak_data.projectiles.launcher_poison_slap.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_slap.poison_gas_duration = 16
+tweak_data.projectiles.launcher_poison_slap.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_slap.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_slap.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 15.1,
+	dot_length = 8.15,
 	dot_tick_period = 0.5
 }
 
@@ -258,13 +258,13 @@ tweak_data.projectiles.launcher_poison_groza.player_damage = 0
 tweak_data.projectiles.launcher_poison_groza.curve_pow = 0
 tweak_data.projectiles.launcher_poison_groza.range = 0
 tweak_data.projectiles.launcher_poison_groza.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_groza.poison_gas_duration = 10
-tweak_data.projectiles.launcher_poison_groza.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_groza.poison_gas_duration = 16
+tweak_data.projectiles.launcher_poison_groza.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_groza.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_groza.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 15.1,
+	dot_length = 8.15,
 	dot_tick_period = 0.5
 }
 
@@ -295,13 +295,13 @@ tweak_data.projectiles.launcher_poison_arbiter.player_damage = 0
 tweak_data.projectiles.launcher_poison_arbiter.curve_pow = 0
 tweak_data.projectiles.launcher_poison_arbiter.range = 0
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 7.5
-tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 12
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 11.1,
+	dot_length = 6.15,
 	dot_tick_period = 0.5
 }
 
@@ -329,13 +329,13 @@ tweak_data.projectiles.launcher_poison.player_damage = 0
 tweak_data.projectiles.launcher_poison.curve_pow = 0
 tweak_data.projectiles.launcher_poison.range = 0
 tweak_data.projectiles.launcher_poison.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison.poison_gas_duration = 5
-tweak_data.projectiles.launcher_poison.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison.poison_gas_duration = 8
+tweak_data.projectiles.launcher_poison.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 7.1,
+	dot_length = 4.15,
 	dot_tick_period = 0.5
 }
 --Gee 3GL, why do you get to have 2 poison grenades? ( except now you don't :^) )
@@ -345,13 +345,13 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.player_damage = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.curve_pow = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.range = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_duration = 5
-tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 2
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_duration = 8
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 7.1,
+	dot_length = 4.1,
 	dot_tick_period = 0.5
 }
 
@@ -469,14 +469,14 @@ tweak_data.projectiles.poison_gas_grenade.player_damage = 0
 tweak_data.projectiles.poison_gas_grenade.curve_pow = 0
 tweak_data.projectiles.poison_gas_grenade.range = 0
 tweak_data.projectiles.poison_gas_grenade.name_id = "bm_poison_gas_grenade"
-tweak_data.projectiles.poison_gas_grenade.poison_gas_range = 800
+tweak_data.projectiles.poison_gas_grenade.poison_gas_range = 600
 tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 20
-tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 2
+tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 0.1
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
 tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
 	hurt_animation_chance = 1,
 	dot_damage = 1.5,
-	dot_length = 30,
+	dot_length = 10.15,
 	dot_tick_period = 0.5
 }
 
@@ -816,6 +816,15 @@ tweak_data.casino = {
 	infamous_cost = 100000,
 	infamous_chance = 3
 }	
+
+--[ Something for later
+tweak_data.money_manager.weapon_cost = {}
+local cost = 42000
+for i = 1, 1000, 1 do
+	table.insert( tweak_data.money_manager.weapon_cost, tostring(cost) )
+	cost = cost + 23000
+end
+--]]
 
 tweak_data.experience_manager.stage_failed_multiplier = 0.5
 -- From update 34

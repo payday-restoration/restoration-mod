@@ -1036,9 +1036,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 200 damage, has a radius of 5 meters, and has a chance to tase enemies.",
 		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 300 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
 		["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6 Round",
-		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 10 seconds, deals 450 damage over 15 seconds, and interrupts most enemies one time when caught in it.",
-		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 7.5 seconds, deals 330 damage over 11 seconds, and interrupts most enemies one time when caught in it.",
-		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 5 seconds, deals 210 damage over 7 seconds, and interrupts most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 16 seconds, deals 240 damage over 8 seconds, and interrupts most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 12 seconds, deals 180 damage over 6 seconds, and interrupts most enemies one time when caught in it.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "Fires a round that creates a cloud of poisonous gas at point of impact.\nThe gas has a radius of 6 meters, lingers for 8 seconds, deals 120 damage over 4 seconds, and interrupts most enemies one time when caught in it.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
@@ -1107,15 +1107,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--AA12
 		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
-
 		--Saiga
 		["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
-
 		--Spas12
 		["bm_spas12_sc_desc"] = "A heavier and more complicated alternative to other semi-auto shotguns, features an almost alien alternative firing mode.",
-	
 		--Benelli
 		["bm_benelli_sc_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
+		--Custom Shotguns
+		--Doomstick
+		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Type of pellets effective at close range.\nIncreases pellet count to 10.",
+		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\nLowers pellet count to 6.",
+		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of piercing body armor, enemies, shields, titan shields, and walls.",
 			
 		--S552
 		["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS.",				
@@ -1132,9 +1134,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Famas
 		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",
 		--Custom 40 damage ARs
-		--["bm_w_xeno"] = "M41A Pulse Rifle",	
-		["bm_xeno_sc_desc_pc"] = "From the \"Armat\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nPress $BTN_BIPOD to switch to the integral 30mm grenade launcher.",	
-		["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology.\n\nWhile its specialized 10mm cartridge lacks its explosive properties, it can still punch through armor.\nHold $BTN_BIPOD to switch to the integral 30mm grenade launcher.",
+		--["bm_w_xeno"] = "MA14 Surge Rifle",	
+		["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an integrated grenade launcher.\n\nPress $BTN_BIPOD to switch to the grenade launcher.",	
+		["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an integrated grenade launcher.\n\nHold $BTN_BIPOD to switch to the grenade launcher.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
@@ -1165,17 +1167,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.\n\nThe Go-To for insurgents and crazy regimes throughout the world.",
 		["bm_w_akm_gold"] = "Golden AK 7.62 Rifle",
 		["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
-		--ASS VAL--
-		--["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 		--KETCHUPKNOB--
 		--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
-		["bm_w_groza"] = "OB-14st Byk-4 Rifle", --Hopefully less silly than its Ketchup name
+		["bm_w_groza"] = "OB-14st Byk-1 Rifle", --Hopefully less silly than its Ketchup name
 		--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
 		--Although, a Russian word for "region/zone/area" followed up with a Polish word...
 		--Eh, whatever
-		["bm_groza_sc_desc_pc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
-		["bm_groza_sc_desc"] = "The bullpup cousin to the Valkyria, kitted out for those who want a bit more boom.\n\nDeals 80% of its damage through body armor.\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_groza_sc_desc_pc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_groza_sc_desc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
 		--Krinkov
 		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 		--Akimbo Krinkov
@@ -1186,9 +1185,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.\n\nWildly inaccurate when hipfired.",
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 Light Machine Gun",
-		["bm_menu_sc_m249_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.\n\nWildly inaccurate when hipfired.",
+		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.\n\nWildly inaccurate when hipfired.",
 		--RPK
-		["bm_menu_sc_rpk_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.\n\nWildly inaccurate when hipfired.",
+		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.\n\nWildly inaccurate when hipfired.",
 					
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
@@ -1224,7 +1223,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
-
+		--ASS VAL--
+		--["bm_w_asval"] = "Valkyria",
+		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
@@ -1595,22 +1596,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 
 		--Throwables--
-		["bm_concussion_desc"] = "Capacity: 3 \nRange: 10m \n- Stuns enemies for up to 4s \n- Enemy accuracy reduced by 50% for 7s \n- Titan-Shields, Titan-Bulldozers and Captains are immune to its stunning effects\n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
+		["bm_concussion_desc"] = "Capacity: 3 \nRadius: 10m \n- Stuns enemies for up to 4s \n- Enemy accuracy reduced by 50% for 7s \n- Titan-Shields, Titan-Bulldozers and Captains are immune to its stunning effects\n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
 		["bm_grenade_smoke_screen_grenade_desc"] = "Range: 8m \nDuration: 12s \nFuse: 1s after remaining stationary \n \nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
-		["bm_grenade_frag_desc"] = "Capacity: 3\nDamage: 800 \nRange: 5m \nFuse: 3s \n \nThe classic explosive hand grenade. Is there any more to say?",
-		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRange: 4m \nFuse: 3s \nDoes not bounce or roll from impact point, but deals less splash damage than similar explosives.\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
-		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \nFuse: 3s \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
-		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \nFuse: 3s \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
-		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage (Fire Pool): 1200 over 10s\nDamage (Burn): 60 over 3s \nRange: 3.75m \nDuration: 10s \nFuse: Impact detonation\n- 50% chance to ignite and burn enemies, causing most to panic.\n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
-		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage (Fire Pool): 1440 over 12s\nDamage (Burn): 60 over 3s  \nRange: 3.75m \nDuration: 12s \nFuse: 2.5s \n- 50% chance to ignite and burn enemies, causing most to panic.\n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
+		["bm_grenade_frag_desc"] = "Capacity: 3\nDamage: 800 \nRadius: 5m \nFuse: 3s \n \nThe classic explosive hand grenade. Is there any more to say?",
+		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRadius: 4m \nFuse: 3s \nDoes not bounce or roll from impact point, but deals less splash damage than similar explosives.\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
+		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRadius: 5m \nFuse: 3s \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
+		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRadius: 5m \nFuse: 3s \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
+		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage (Fire Pool): 1200 over 10s\nDamage (Burn): 60 over 3s \nRadius: 3.75m \nDuration (Fire Pool): 10s \nFuse: Impact detonation\n- 50% chance to ignite and burn enemies, causing most to panic.\n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
+		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage (Fire Pool): 1440 over 12s\nDamage (Burn): 60 over 3s  \nRadius: 3.75m \nDuration (Fire Pool): 12s \nFuse: 2.5s \n- 50% chance to ignite and burn enemies, causing most to panic.\n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
 		["bm_wpn_prj_ace_desc"] = "Capacity: 9 \nDamage: 240 \n \nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
 		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage (Impact): 200 \nDamage (Poison): 120 over 4s \n- 50% chance to stun enemies every 0.5s\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects. \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
 		["bm_wpn_prj_target_desc"] = "Capacity: 9 \nDamage: 240 \n \nA solid backup plan and a reliable tactic for a precise and silent kill.",
 		["bm_wpn_prj_jav_desc"] = "Capacity: 6 \nDamage: 360 \n \nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",
 		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
-		["bm_grenade_electric_desc"] = "Capacity: 3\nDamage: 400 \nRange: 5m \nFuse: 3s \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
+		["bm_grenade_electric_desc"] = "Capacity: 3\nDamage: 400 \nRadius: 5m \nFuse: 3s \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
-		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 900 over 30s \nRange: 8m \nDuration: 20s \nFuse: 1s after remaining stationary \n- Each grenade stuns each enemy afflicted one time\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 300 over 10s \nRadius: 6m \nDuration (Gas Cloud): 20s \nFuse: 1s after remaining stationary \n- Each grenade stuns each enemy afflicted one time\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",

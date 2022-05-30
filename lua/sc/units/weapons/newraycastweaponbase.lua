@@ -491,7 +491,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	if not self._custom_stats_done then
-
 		--Set range/rof multipliers to 1 to make anything else that changes them fuck off
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
@@ -612,8 +611,15 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.starwars then
 				self._starwars = true
 			end
+			if stats.muzzleflash then
+				self._muzzle_effect_pls = stats.muzzleflash
+			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
+	end
+
+	if self._ammo_data and self._ammo_data.muzzleflash == nil and self._muzzle_effect_table and self._muzzle_effect_pls then
+		self._muzzle_effect_table.effect = Idstring(self._muzzle_effect_pls)
 	end
 
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
@@ -786,13 +792,15 @@ function NewRaycastWeaponBase:cancel_burst(soft_cancel, macno)
 	if self._adaptive_burst_size or not soft_cancel then
 		if self._burst_rounds_remaining and self._burst_rounds_remaining > 0 and macno then
 			self._macno = true
+			self:play_sound("alarm_kosugi_on_slow_fade")
+			self:play_sound("alarm_kosugi_off")
 			if not self._i_know then
 				self._i_know = 1
 				managers.hud:show_hint( { text = "DON'T EVEN THINK ABOUT USING AUTOFIRE, OR I'LL KNOW" } )
 			else
 				self._i_know = self._i_know + 1
-				if self._i_know > 4 then
-					managers.hud:show_hint( { text = "THIS GETS LONGER EACH TIME, FYI" } )
+				if self._i_know == 5 then
+					managers.hud:show_hint( { text = "TRYING TO BYPASS THE BURST DELAY MAKES THIS LONGER EACH TIME, FYI" } )
 				end
 			end
 		end
@@ -1031,6 +1039,37 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 				else
 					part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenno )
 				end
+			end
+		end
+	end
+end
+
+--Fix for reload objects not appearing
+function NewRaycastWeaponBase:set_reload_objects_visible(visible, anim)
+	local data = tweak_data.weapon.factory[self._factory_id]
+	local reload_objects = anim and data.reload_objects and data.reload_objects[anim]
+	if not anim or (anim and (anim == "reload_not_empty" or anim == "reload")) then
+		if reload_objects then
+			self._reload_objects[self._name_id] = reload_objects
+		elseif self._reload_objects then
+			reload_objects = self._reload_objects[self.name_id]
+		end
+	
+		if reload_objects then
+			self:set_objects_visible(self._unit, reload_objects, visible)
+		end
+	
+		for part_id, part in pairs(self._parts) do
+			local reload_objects = anim and part.reload_objects and part.reload_objects[anim]
+	
+			if reload_objects then
+				self._reload_objects[part_id] = reload_objects
+			elseif self._reload_objects then
+				reload_objects = self._reload_objects[part_id]
+			end
+	
+			if reload_objects then
+				self:set_objects_visible(part.unit, reload_objects, visible)
 			end
 		end
 	end

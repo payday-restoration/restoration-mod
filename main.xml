@@ -109,6 +109,7 @@
 		<hook file="sc/managers/dotmanager.lua" source_file="lib/managers/dotmanager"/>
 		<hook file="sc/managers/enemymanager.lua" source_file="lib/managers/enemymanager"/>
 		<hook file="sc/managers/explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
+		<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
 		<hook file="sc/managers/poisongaseffect.lua" source_file="lib/managers/player/poisongaseffect"/>
 		<hook file="sc/managers/firemanager.lua" source_file="lib/managers/firemanager"/>
 		<hook file="sc/managers/statisticsmanager.lua" source_file="lib/managers/statisticsmanager"/>

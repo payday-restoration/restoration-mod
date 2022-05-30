@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" orientation_object="rp_ene_acc_fbi_swat_helmet" />
+	<diesel materials="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" orientation_object="rp_ene_acc_fbi_swat_helmet" />
 	
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
@@ -15,13 +15,7 @@
 	</decal_surfaces>
 
 	<graphics>
-		<lod_object name="lod_ene_acc_fbi_swat_helmet">
-			<object name="g_helmet" enabled="true" >
-				<material materials="mtr_helmet" max_distance="1000" />
-				<material materials="mtr_helmet_lod_1" max_distance="1500" />
-				<material materials="mtr_helmet_lod_2" /> 
-			</object>
-		</lod_object>
+		<object name="g_helmet" enabled="true" />
 	</graphics>
 	
 </dynamic_object>

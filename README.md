@@ -33,7 +33,7 @@ SC: Providing the vast majority of the codebase, the balancing and general desig
 
 DMC: Assisting with creation of the weapons, skill trees and helping with overall balance in the overhaul.
 
-Rino: Major asset and sound contributions. minor code contributions. Voicing Murkywater Special Forces.
+Reno: Major asset and sound contributions. minor code contributions. Voicing Murkywater Special Forces.
 
 Jarey_: Major asset contributions and voicing the Titan Sniper.
 
@@ -43,9 +43,9 @@ Splish: Asset and sound contributions.
 
 Rex: Asset contributions and level design.
 
-Fuglore: Doing all the crazy AI and tactic changes, contributions to the original Grenade Launcher NPC base. 
+Fuglore: AI and tactic changes, contributions to the original Grenade Launcher NPC base. 
 
-Ravicale: Major contributions to player side code and balance.
+Ravicale: Major contributions to code and balance.
 
 Teacyn: Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation of multiple alternate heist environments.
 
@@ -108,5 +108,7 @@ Rickerus: Providing assets for the ASU's head.
 Marshie: Russian localisation
 
 LR_Daring: Chinese localisation
+
+GullwingDoor: Korean localisation
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

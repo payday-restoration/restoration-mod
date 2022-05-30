@@ -45,12 +45,10 @@
         <bump_normal_texture file="units/payday2/textures/blank_nm"/>
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" mip="4"/>
 	</material>
-	
-	<material name="mtr_glow" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
-        <bump_normal_texture file="units/payday2/textures/blank_nm"/>
-		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
-		<self_illumination_texture 		file="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
-        <variable type="scalar" name="il_multiplier" value="megatron"/>
+
+	<material name="mtr_glow" unique="true" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
+        <variable value="megatron" type="scalar" name="intensity"/>
     </material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

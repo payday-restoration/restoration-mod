@@ -7,7 +7,23 @@
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df" mip="1"/>
 	</material>
+	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df" mip="4"/>
+	</material>
 	
+	<material name="mtr_face" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/props/mad_prop_compound_test_subject/compound_test_subject_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_mad/props/mad_prop_compound_test_subject/compound_test_subject_head_df"/>
+	</material>
+	<material name="mtr_face_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/props/mad_prop_compound_test_subject/compound_test_subject_head_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_mad/props/mad_prop_compound_test_subject/compound_test_subject_head_df" mip="1"/>
+	</material>
+	<material name="mtr_face_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/props/mad_prop_compound_test_subject/compound_test_subject_head_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_mad/props/mad_prop_compound_test_subject/compound_test_subject_head_df" mip="4"/>
+	</material>
 
 	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm"/>
@@ -17,19 +33,45 @@
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_df" mip="1"/>
 	</material>
+	<material name="mtr_swat_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_df" mip="4"/>
+	</material>
 	
     <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
-		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
-    </material>
-    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod1" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
-		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
-    </material>
-
-    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:" name="mat_light" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
         <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
     </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod1" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df" mip="1"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod2" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df" mip="4"/>
+    </material>
+
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
+	<material name="mtr_glass_lod1" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" mip="1"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
+	<material name="mtr_glass_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/textures/blank_nm"/>
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" mip="4"/>
+	</material>
+	
+    <material name="mat_light" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
+    </material>	
+	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

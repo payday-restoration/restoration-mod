@@ -235,11 +235,7 @@
 					<material materials="mtr_glass_lod" />									
 				</object>
 			</lod_object>
-			
-			<object name="s_body" enabled="true" shadow_caster="true"/>
-		</graphic_group>
 
-		<graphic_group name="head" enabled="true" culling_object="g_head">
             <lod_object name="lod_head">
                 <object name="g_head"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
                     <material materials="mtr_head" max_distance="1000" />
@@ -251,7 +247,9 @@
                     <material materials="mtr_head_lod1" />
                 </object>
             </lod_object>
-			<object name="s_head" enabled="true" shadow_caster="true"/>
+			
+			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="s_head" enabled="true" shadow_caster="true"/>			
 		</graphic_group>
 	</graphics>
 

@@ -910,7 +910,7 @@ function TeamAILogicIdle._find_intimidateable_civilians(criminal, use_default_sh
 
 					if enemy_domination ~= nil then
 						if not TeamAILogicIdle._intimidate_global_t or TeamAILogicIdle._intimidate_global_t + 2 < t then
-							if not att_char_tweak.priority_shout and att_char_tweak.surrender and not att_char_tweak.surrender.special and not att_char_tweak.surrender.never and not anim_data.hands_tied then
+							if not att_char_tweak.priority_shout and not att_char_tweak.unintimidateable and att_char_tweak.surrender and not att_char_tweak.surrender.special and not att_char_tweak.surrender.never and not anim_data.hands_tied then
 								is_enemy = true
 							end
 						end

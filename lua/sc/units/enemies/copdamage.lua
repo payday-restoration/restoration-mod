@@ -138,6 +138,11 @@ local enemies_plink = {
 	
 }
 
+local grenadier_smash = {
+	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk")               	
+}
+
 local old_init = CopDamage.init
 function CopDamage:init(...)
 	old_init(self, ...)
@@ -424,7 +429,7 @@ function CopDamage:damage_fire(attack_data)
 
 	if result.type == "death" then
 		if attack_data.variant ~= "stun" then
-			if self._unit:base()._tweak_table == "boom" then
+			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
@@ -648,7 +653,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 	if death then
 		attack_data.damage = self._health
 
-		if self._unit:base()._tweak_table == "boom" then
+		if table_contains(grenadier_smash, self._unit:name()) then
 			self._unit:damage():run_sequence_simple("grenadier_glass_break")
 		elseif self._head_body_name then
 			local body = self._unit:body(self._head_body_name)
@@ -1001,7 +1006,7 @@ function CopDamage:damage_bullet(attack_data)
 			if head then
 				managers.player:on_lethal_headshot_dealt(attack_data.attacker_unit, attack_data)
 				
-				if self._unit:base()._tweak_table == "boom" then
+				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
 				    if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
@@ -1217,7 +1222,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 		attack_data.damage = self._health
 
 		if head then
-			if self._unit:base()._tweak_table == "boom" then
+			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
 				if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
@@ -1431,7 +1436,7 @@ function CopDamage:damage_melee(attack_data)
 			self._player_damage_ratio = 0
 		else
 			if head then
-				if self._unit:base()._tweak_table == "boom" then
+				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
 					self:_spawn_head_gadget({
@@ -1708,7 +1713,7 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 		attack_data.damage_effect = self._health
 
 		if head then
-			if self._unit:base()._tweak_table == "boom" then
+			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
 				self:_spawn_head_gadget({
@@ -2180,7 +2185,7 @@ function CopDamage:damage_explosion(attack_data)
 		managers.statistics:killed_by_anyone(data)
 
 		if attack_data.variant ~= "stun" then
-			if self._unit:base()._tweak_table == "boom" then
+			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
@@ -2344,7 +2349,7 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 		attack_data.damage = self._health
 
 		if variant ~= "stun" then
-			if self._unit:base()._tweak_table == "boom" then
+			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)

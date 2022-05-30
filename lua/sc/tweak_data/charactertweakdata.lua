@@ -195,7 +195,7 @@ function CharacterTweakData:_init_security(presets)
 	self.security.weapon_voice = "3"
 	self.security.melee_weapon = "baton"
 	self.security.experience.cable_tie = "tie_swat"
-	self.security.speech_prefix_p1 = "l"
+	self.security.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
 	self.security.access = "security"
@@ -211,6 +211,8 @@ function CharacterTweakData:_init_security(presets)
 	self.security.chatter = presets.enemy_chatter.guard
 	if is_murky then
 		self.security.radio_prefix = "fri_"
+	elseif is_reaper then
+		self.security.radio_prefix = "rus_"
 	end			
 	self.security.static_dodge_preset = true
 	self.security.shooting_death = false
@@ -296,7 +298,7 @@ function CharacterTweakData:_init_gensec(presets)
 	}
 	self.gensec.weapon_voice = "3"
 	self.gensec.experience.cable_tie = "tie_swat"
-	self.gensec.speech_prefix_p1 = "l"
+	self.gensec.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.gensec.speech_prefix_p2 = "n"
 	self.gensec.speech_prefix_count = 4
 	self.gensec.access = "security"
@@ -305,6 +307,11 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.dodge = presets.dodge.athletic
 	self.gensec.deathguard = false
 	self.gensec.chatter = presets.enemy_chatter.guard
+	if is_murky then
+		self.gensec.radio_prefix = "fri_"
+	elseif is_reaper then
+		self.gensec.radio_prefix = "rus_"
+	end			
 	if job == "nmh" or job == "nmh_res" then
 		self.gensec.has_alarm_pager = false
 	else

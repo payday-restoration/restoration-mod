@@ -111,7 +111,20 @@
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100323"/>
 	<texture path="levels/mods/skmc_ovengrill/cube_lights/100526"/>
 	<add from_db="true" path="core/environments/skies/default/default" type="scene">
-		<scene path="core/environments/skies/default/default"/>
 		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+		<scene path="core/environments/skies/default/default"/>
 	</add>
+	<add from_db="true" path="effects/particles/rain/rain_glace_inside" type="effect">
+		<effect load="true" path="effects/particles/rain/rain_glace_inside"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/rain_fast_fall" type="effect">
+		<effect load="true" path="effects/payday2/environment/rain_fast_fall"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/rain_drops" type="effect">
+		<effect load="true" path="effects/payday2/environment/rain_drops"/>
+	</add>
+	<add from_db="true" path="effects/particles/rain/rain_01_a" type="effect">
+		<effect load="true" path="effects/particles/rain/rain_01_a"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_darker_df" type="texture"/>
 </table>

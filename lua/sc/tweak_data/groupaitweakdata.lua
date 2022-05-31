@@ -16047,6 +16047,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			map_scale_factor = 0.55
 		end
 	end
+		
+	--Fuck this heist
+	if job == "chew" then
+		map_scale_factor = 0.25
+	end
 
 	self.besiege.assault.force_balance_mul = {
 		0.55 * map_scale_factor,

@@ -20976,7 +20976,20 @@ if self.wpn_fps_pis_shatters_fury then
 		"wpn_fps_upg_o_sig",
 		"wpn_fps_upg_o_bmg",
 		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"		
+		"wpn_fps_upg_o_fc1",
+		--Weapon Boosts
+		"wpn_fps_upg_bonus_concealment_p1",
+		"wpn_fps_upg_bonus_concealment_p2",
+		"wpn_fps_upg_bonus_concealment_p3",
+		"wpn_fps_upg_bonus_damage_p1",
+		"wpn_fps_upg_bonus_damage_p2",
+		"wpn_fps_upg_bonus_recoil_p1",
+		"wpn_fps_upg_bonus_spread_n1",
+		"wpn_fps_upg_bonus_spread_p1",
+		"wpn_fps_upg_bonus_team_exp_money_p3",
+		"wpn_fps_upg_bonus_total_ammo_p3",
+		"wpn_fps_upg_bonus_total_ammo_p1",
+		"wpn_fps_upg_bonus_sc_none"
 	}
 end
 

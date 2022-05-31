@@ -209,7 +209,6 @@ function restoration:Init()
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
-		"born", --Biker 1
 		"flat", --Panic Room
 		"gallery", --Art Gallery
 		"framing_frame_1",  --Art Gallery but FF 
@@ -227,8 +226,7 @@ function restoration:Init()
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"fex", --Buluc's Mansion
 		"rat", --Cook Off
-		"chas", --Dragon Heist
-		"sand", --The Ukrainian Prisoner	
+		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
 		--Custom Heists below--
 		"junk", --Doghouse
@@ -261,6 +259,8 @@ function restoration:Init()
 		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
+		"born", --Biker 1		
+		"sand", --The Ukrainian Prisoner		
 		"sah", --Shacklethorne		
 		--Custom Heists below--
 		"thechase",
@@ -271,7 +271,6 @@ function restoration:Init()
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
-		"chew", --Biker day 2
 		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
 		--Custom Heists below--

@@ -8038,7 +8038,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.g3.timers.reload_exit_empty = 0.9
 			self.g3.timers.reload_exit_not_empty = 1.05
 			self.g3.reload_speed_multiplier = 1.45
-
+		
 		--KS12 Urban (ShAK-12/ASh-12.7)
 			self.shak12.CLIP_AMMO_MAX = 20
 			self.shak12.fire_mode_data.fire_rate = 0.08
@@ -12110,31 +12110,32 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.xeno then
-		self.xeno.recategorize = {"light_ar"}
+		self.xeno.recategorize = {"dmr_ar"}
 		self.xeno.desc_id = "bm_xeno_sc_desc"
 		self.xeno.has_description = true
-		self.xeno.CLIP_AMMO_MAX = 95
-		self.xeno.AMMO_MAX = 150
+		self.xeno.CLIP_AMMO_MAX = 40
+		self.xeno.AMMO_MAX = 60
 		self.xeno.fire_mode_data.fire_rate = 0.06666666
 		self.xeno.sounds.fire = "contraband_fire_single"
 		self.xeno.sounds.fire_single = "contraband_fire_single"
+		self.xeno.CAN_TOGGLE_FIREMODE = false
 		self.xeno.BURST_FIRE = 4
-		self.xeno.kick = self.stat_info.kick_tables.even_recoil
+		self.xeno.kick = self.stat_info.kick_tables.moderate_kick
 		self.xeno.supported = true
 		self.xeno.ads_speed = 0.460
 		self.xeno.damage_falloff = {
 			start_dist = 1600,
-			end_dist = 5100,
-			min_mult = 0.5
-		}
+			end_dist = 5800,
+			min_mult = 0.6666
+		}	
 		self.xeno.stats = {
-			damage = 20,
+			damage = 45,
 			spread = 71,
-			recoil = 73,
-			spread_moving = 6,
+			recoil = 74,
+			spread_moving = 5,
 			zoom = 1,
 			concealment = 19,
-			suppression = 9,
+			suppression = 6,
 			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -12142,6 +12143,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xeno.stats_modifiers = nil
+		self.xeno.armor_piercing_chance = 0.8
 		self.xeno.panic_suppression_chance = 0.05
 		self.xeno.timers.reload_exit_not_empty = 1.2
 		self.xeno.timers.reload_exit_empty = 1.2

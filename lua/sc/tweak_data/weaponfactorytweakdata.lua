@@ -20860,7 +20860,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_xeno_stock_ext.custom_stats = deep_clone(stocks.unfold_folded_stats)
 
 		self.parts.wpn_fps_ass_xeno_underbarrel_gl.supported = true
-		self.parts.wpn_fps_ass_xeno_underbarrel_gl.adds = {"wpn_fps_ass_xeno_underbarrel_gl_ammo"}
+		--self.parts.wpn_fps_ass_xeno_underbarrel_gl.adds = {"wpn_fps_ass_xeno_underbarrel_gl_ammo"}
 
 		self.parts.wpn_fps_ass_xeno_underbarrel_gl_ammo = deep_clone(self.parts.wpn_fps_ass_contraband_g_standard)
 		self.parts.wpn_fps_ass_xeno_underbarrel_gl_ammo.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"

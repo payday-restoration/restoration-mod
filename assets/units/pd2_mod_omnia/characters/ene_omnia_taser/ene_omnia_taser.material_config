@@ -35,7 +35,7 @@
 		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/taser_body_df" mip="4"/>
 	</material>
 
-	<material name="mtr_glass" unique="true" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op"/>
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df"/>
@@ -46,9 +46,10 @@
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" mip="4"/>
 	</material>
 
-	<material name="mtr_glow" unique="true" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2">
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
-        <variable value="megatron" type="scalar" name="intensity"/>
+	<material name="mtr_glow" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+        <self_illumination_texture file="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="megatron"/>
     </material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

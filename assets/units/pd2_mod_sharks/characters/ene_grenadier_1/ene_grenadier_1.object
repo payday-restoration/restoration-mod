@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	<diesel materials="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" orientation_object="root_point" />
-	<sequence_manager file="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<effects>
 		<effect_spawner name="fire_torso" enabled="false" object="Spine2" effect="effects/payday2/particles/explosions/molotov_grenade" />
@@ -241,21 +241,19 @@
                 </object>
 			</lod_object>
 			
-			<!--		
 			<lod_object name="lod_visor">
-				<object name="g_visor" 	enabled="true"  max_distance="2000"  max_draw_lod="0">
+				<object name="g_helmet_lod3" 	enabled="true"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_visor" max_distance="1500" />
 					<material materials="mtr_visor_lod" />
 				</object>
-				<object name="g_visor_lod1" 	enabled="true" lod="1" >
+				<object name="g_helmet_lod4" 	enabled="true" lod="1" >
 					<material materials="mtr_visor" max_distance="0" />
 					<material materials="mtr_visor_lod" />
 				</object>
 			</lod_object>
-			-->
 			
 			<lod_object name="lod_glass">
-				<object name="g_glass" 	enabled="true"  max_distance="1500"  max_draw_lod="0" >
+				<object name="g_helmet_lod5" enabled="true"  max_distance="1500"  max_draw_lod="0" >
 					<material materials="mtr_glass" max_distance="1500" />
 					<material materials="mtr_glass_lod" />
 				</object>

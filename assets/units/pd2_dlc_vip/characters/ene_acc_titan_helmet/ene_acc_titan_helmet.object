@@ -36,12 +36,6 @@
   </bodies>
   <decal_surfaces default_material="metal">
     <decal_mesh name="g_helmet" enabled="true" material="metal" />
-    <decal_mesh name="g_dmg1" enabled="true" material="glass_no_decal" />
-    <decal_mesh name="g_dmg2" enabled="true" material="glass_no_decal" />
-    <decal_mesh name="g_dmg3" enabled="true" material="glass_no_decal" />
-    <decal_mesh name="g_dmg4" enabled="true" material="glass_no_decal" />
-    <decal_mesh name="g_dmg5" enabled="true" material="glass_no_decal" />
-    <decal_mesh name="g_dmg6" enabled="true" material="glass_no_decal" />
   </decal_surfaces>
   <effects>
     <effect_spawner name="es_e_glass" damp_time="5" enabled="true" object="e_glass" effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
@@ -49,11 +43,5 @@
   </effects>
   <graphics>
     <object name="g_helmet" enabled="true" />
-    <object name="g_dmg1" enabled="true" />
-    <object name="g_dmg2" enabled="true" />
-    <object name="g_dmg4" enabled="true" />
-    <object name="g_dmg5" enabled="true" />
-    <object name="g_dmg6" enabled="true" />
-    <object name="g_dmg3" enabled="true" />
   </graphics>
 </dynamic_object>

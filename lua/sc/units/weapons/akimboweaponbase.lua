@@ -24,7 +24,8 @@ else
 		if not self:is_npc() then
 			self._has_burst_fire = self._has_burst_fire or ((self:weapon_tweak_data().BURST_FIRE ~= false) and (self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE))
 			
-			if self._has_burst_fire then
+			if not self._set_burst_spawn and self._has_burst_fire then
+				self._set_burst_spawn = true --fix to stop forcing burst upon switching back to the main weapon
 				self:_set_burst_mode(not self._manual_fire_second_gun, true)
 			end
 		end

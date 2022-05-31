@@ -1074,3 +1074,21 @@ function NewRaycastWeaponBase:set_reload_objects_visible(visible, anim)
 		end
 	end
 end
+
+--Fix to remember burst mode
+function NewRaycastWeaponBase:record_fire_mode()
+	self._recorded_fire_modes = self._recorded_fire_modes or {}
+	self._recorded_burst_mode = self:in_burst_mode()
+	self._recorded_fire_modes[self:_weapon_tweak_data_id()] = self._fire_mode
+end
+
+function NewRaycastWeaponBase:get_recorded_fire_mode(id)
+	if self._recorded_fire_modes and self._recorded_fire_modes[self:_weapon_tweak_data_id()] then
+		if self._recorded_burst_mode and self._recorded_burst_mode == true then
+			self:_set_burst_mode(true, true)
+		end
+		return self._recorded_fire_modes[self:_weapon_tweak_data_id()]
+	end
+
+	return nil
+end

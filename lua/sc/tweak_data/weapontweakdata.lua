@@ -8200,7 +8200,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.ignore_damage_upgrades = true
 			self.contraband_m203.AMMO_MAX = 6
 			self.contraband_m203.supported = true
-			self.contraband_m203.ads_speed = 10.460
+			self.contraband_m203.ads_speed = 0.460
 			self.contraband_m203.stats = {
 				damage = 80,
 				spread = 84,

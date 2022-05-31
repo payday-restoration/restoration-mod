@@ -12116,8 +12116,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.CLIP_AMMO_MAX = 40
 		self.xeno.AMMO_MAX = 60
 		self.xeno.fire_mode_data.fire_rate = 0.06666666
-		self.xeno.sounds.fire = "contraband_fire_single"
-		self.xeno.sounds.fire_single = "contraband_fire_single"
 		self.xeno.CAN_TOGGLE_FIREMODE = false
 		self.xeno.BURST_FIRE = 4
 		self.xeno.kick = self.stat_info.kick_tables.moderate_kick
@@ -12147,6 +12145,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.panic_suppression_chance = 0.05
 		self.xeno.timers.reload_exit_not_empty = 1.2
 		self.xeno.timers.reload_exit_empty = 1.2
+
+		self.tec9.sounds.fire = "mp9_fire_single"
+		self.tec9.sounds.fire_single = "mp9_fire_single"
 	end
 
 

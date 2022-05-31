@@ -74,8 +74,8 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),  
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk"),	
-	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
-	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk"),                 	
+	ids_func("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1"),
+	ids_func("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk"),                 	
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                 	
 	ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"),
@@ -142,7 +142,7 @@ local grenadier_smash = {
 	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk"),     	
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"),
-	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk"),     	
+	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk")    	
 }
 
 local old_init = CopDamage.init

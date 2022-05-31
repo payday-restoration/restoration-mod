@@ -35,7 +35,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="" contact="skirmish" icon="guis/textures/hotfix_icon" id="skmc_ovengrill" jc="50" load_screen="guis/textures/hotfix_loading" max_mission_xp="135900" min_mission_xp="8000" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/textures/hotfix_icon" id="skmc_ovengrill" jc="50" load_screen="guis/textures/hotfix_loading" max_mission_xp="135900" min_mission_xp="8000" region="street">
 		<chain>
 			<table level_id="skmc_ovengrill" type="d" type_id="heist_type_assault"/>
 		</chain>

@@ -13686,28 +13686,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		reload = "reload",
 		reload_not_empty = "reload"
 	}
-	self.wpn_fps_pis_x_judge.override = {
-		wpn_fps_pis_judge_body_standard = {
-			animations = {		
-				reload_left = "reload",
-				fire = "recoil",
-				fire_steelsight = "recoil",
-				reload_not_empty_left = "reload",
-				reload = "reload",
-				reload_not_empty = "reload"
-			}
-		},
-		wpn_fps_pis_judge_body_modern = {
-			animations = {
-				reload_left = "reload",
-				fire = "recoil",
-				fire_steelsight = "recoil",
-				reload_not_empty_left = "reload",
-				reload = "reload",
-				reload_not_empty = "reload"
-			}
+	
+	self.wpn_fps_pis_x_judge.override.wpn_fps_pis_judge_body_standard = {
+		animations = {		
+			reload_left = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload_not_empty_left = "reload",
+			reload = "reload",
+			reload_not_empty = "reload"
 		}
 	}
+	self.wpn_fps_pis_x_judge.override.wpn_fps_pis_judge_body_modern = {
+		animations = {
+			reload_left = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload_not_empty_left = "reload",
+			reload = "reload",
+			reload_not_empty = "reload"
+		}
+	}
+	
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 

@@ -5723,7 +5723,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 				self.x_judge.rays = 9
 				self.x_judge.BURST_FIRE = 2
-				self.x_judge.AMMO_MAX = 40
+				self.x_judge.AMMO_MAX = 60
 				self.x_judge.supported = true
 				self.x_judge.ads_speed = 0.320 * 1.5
 				self.x_judge.damage_falloff = {
@@ -8203,7 +8203,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.ads_speed = 0.460
 			self.contraband_m203.stats = {
 				damage = 80,
-				spread = 84,
+				spread = 64,
 				recoil = 71,
 				spread_moving = 6,
 				zoom = 1,
@@ -11186,8 +11186,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.supported = true
 		self.amr12.ads_speed = 0.380
 		self.amr12.damage_falloff = {
-			start_dist = 600,
-			end_dist = 2300,
+			start_dist = 900,
+			end_dist = 2800,
 			min_mult = 0.5
 		}
 		self.amr12.stats = {
@@ -11195,7 +11195,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 41,
 			recoil = 52,
 			zoom = 1,
-			concealment = 25,
+			concealment = 22,
 			suppression = 5,
 			alert_size = 2,
 			extra_ammo = 101,

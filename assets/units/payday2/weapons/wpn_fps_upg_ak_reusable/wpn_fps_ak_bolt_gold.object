@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" orientation_object="rp_wpn_fps_ak_bolt" />
+	<graphics>
+		<object name="g_bolt" enabled="true" />
+	</graphics>
+</dynamic_object>

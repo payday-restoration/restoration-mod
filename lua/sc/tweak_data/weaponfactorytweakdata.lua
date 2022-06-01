@@ -3184,6 +3184,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 	self.parts.wpn_upg_ak_m_akm_gold.cc_thq_material_config = Idstring("")
 	self.parts.wpn_upg_ak_m_akm_gold.cc_material_config = Idstring("")
 
+	self.parts.wpn_fps_ak_bolt_gold = {
+		name_id = "bm_wp_ak_s_skfoldable",
+		unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt",
+		--unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold",
+		a_obj = "a_bolt",
+		type = "drag_handle"
+	}
+	self.parts.wpn_fps_ass_ak_body_lowerreceiver_gold.adds = {
+		"wpn_fps_ak_bolt_gold"
+	}
 	--Drum Mag
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_upg_ak_m_drum")
 	table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_upg_ak_m_drum")

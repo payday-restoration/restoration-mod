@@ -2523,7 +2523,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
-		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##2## stability.\n\nACE: ##$pro##\nLethal headshots using Rifles set to semi-auto increase your rate of fire by ##20%## for ##10## seconds.",
+		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##2## stability.\n\nACE: ##$pro##\nLethal headshots using Rifles set to semi-auto or burst increase your rate of fire by ##20%## for ##10## seconds.",
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
@@ -2531,7 +2531,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Rifles set to semi-auto deal ##70%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nHeadshots with Rifles set to semi-auto have ##no damage falloff## and the radius of the chaining effect is increased by ##1## meter.\n\nFor every ##7## meters away you are from the enemy, the chaining effect deals an additional ##10%## damage; up to a total of ##110%## of the damage dealt.",
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Rifles set to semi-auto or burst deal ##70%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nHeadshots with Rifles set to semi-auto or burst have ##no damage falloff## and the radius of the chaining effect is increased by ##1## meter.\n\nFor every ##7## meters away you are from the enemy, the chaining effect deals an additional ##10%## damage; up to a total of ##110%## of the damage dealt.",
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
@@ -2543,7 +2543,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",
-		["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nLethal headshots using Rifles set to semi-auto will increase your reload speed by ##25%## for ##10## seconds.\n\nACE: ##$pro##\nThe reload speed bonus increases to ##50%##, and can be triggered regardless of fire mode.",
+		["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nLethal headshots using Rifles set to semi-auto or burst will increase your reload speed by ##25%## for ##10## seconds.\n\nACE: ##$pro##\nThe reload speed bonus increases to ##50%##, and can be triggered regardless of fire mode.",
 		
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",

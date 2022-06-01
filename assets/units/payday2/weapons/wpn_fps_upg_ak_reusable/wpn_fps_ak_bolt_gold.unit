@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1">
+	<object file="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

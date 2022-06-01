@@ -1,0 +1,8 @@
+<materials version="3" group="weapon_group">
+    <material name="ak_base" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_ass_akm_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_ass_akm_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_nm" mip="1"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_gold"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+</materials>

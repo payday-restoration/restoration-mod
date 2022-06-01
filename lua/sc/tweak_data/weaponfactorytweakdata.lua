@@ -3168,21 +3168,8 @@ end)
 --Gold AK 7.62
 Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", function(self)
 
-	--Gold AKM Overrides Table
-	self.wpn_fps_ass_akm_gold.override = {
-		wpn_fps_lmg_rpk_s_standard = {
-			adds = {
-				"wpn_upg_ak_g_standard"
-			}
-		}
-	}
-
-	self.parts.wpn_upg_ak_fg_standard_gold.cc_thq_material_config = Idstring("")
-	self.parts.wpn_upg_ak_fg_standard_gold.cc_material_config = Idstring("")
-	self.parts.wpn_upg_ak_s_folding_vanilla_gold.cc_thq_material_config = Idstring("")
-	self.parts.wpn_upg_ak_s_folding_vanilla_gold.cc_material_config = Idstring("")
-	self.parts.wpn_upg_ak_m_akm_gold.cc_thq_material_config = Idstring("")
-	self.parts.wpn_upg_ak_m_akm_gold.cc_material_config = Idstring("")
+	self.parts.wpn_upg_ak_s_folding_vanilla_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_folding_gold_thq")
+	self.parts.wpn_upg_ak_s_folding_vanilla_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_folding_gold")
 
 	self.parts.wpn_fps_ak_bolt_gold = {
 		name_id = "bm_wp_ak_s_skfoldable",
@@ -3191,12 +3178,36 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 		a_obj = "a_bolt",
 		type = "drag_handle"
 	}
-	self.parts.wpn_fps_ak_bolt_gold.material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold")
 	self.parts.wpn_fps_ak_bolt_gold.thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_thq")
+	self.parts.wpn_fps_ak_bolt_gold.material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold")
 	self.parts.wpn_fps_ak_bolt_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_thq")
 	self.parts.wpn_fps_ak_bolt_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold")
+
 	self.parts.wpn_fps_ass_ak_body_lowerreceiver_gold.adds = {
 		"wpn_fps_ak_bolt_gold"
+	}
+	self.parts.wpn_fps_ass_ak_body_lowerreceiver_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_thq")
+	self.parts.wpn_fps_ass_ak_body_lowerreceiver_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold")
+
+	self.parts.wpn_fps_ass_akm_body_upperreceiver_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_akm_body_upperreceiver_gold_thq")
+	self.parts.wpn_fps_ass_akm_body_upperreceiver_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_akm_body_upperreceiver_gold")
+
+	self.parts.wpn_upg_ak_m_akm_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_akm_gold_thq")
+	self.parts.wpn_upg_ak_m_akm_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_akm_gold")
+
+	self.parts.wpn_upg_ak_fg_standard_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_standard_gold_thq")
+	self.parts.wpn_upg_ak_fg_standard_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_standard_gold")
+
+	self.parts.wpn_fps_ass_akm_b_standard_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_akm_b_standard_gold_thq")
+	self.parts.wpn_fps_ass_akm_b_standard_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_akm_b_standard_gold")
+
+	--Gold AKM Overrides Table
+	self.wpn_fps_ass_akm_gold.override = {
+		wpn_fps_lmg_rpk_s_standard = {
+			adds = {
+				"wpn_upg_ak_g_standard"
+			}
+		}
 	}
 	--Drum Mag
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_upg_ak_m_drum")
@@ -3208,7 +3219,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 
 	--No Stock
 	--table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_upg_ak_s_nostock")
-	--table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_upg_ak_s_nostock")	
+	--table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_upg_ak_s_nostock")
 	
 	self.wpn_fps_ass_akm_gold_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm_gold.uses_parts)
 

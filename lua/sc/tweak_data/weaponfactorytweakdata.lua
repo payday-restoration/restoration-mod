@@ -3191,6 +3191,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 		a_obj = "a_bolt",
 		type = "drag_handle"
 	}
+	self.parts.wpn_fps_ak_bolt_gold.material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold")
+	self.parts.wpn_fps_ak_bolt_gold.thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_thq")
+	self.parts.wpn_fps_ak_bolt_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold_thq")
+	self.parts.wpn_fps_ak_bolt_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_ak_body_lowerreceiver_gold")
 	self.parts.wpn_fps_ass_ak_body_lowerreceiver_gold.adds = {
 		"wpn_fps_ak_bolt_gold"
 	}

@@ -6465,7 +6465,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Spec Ops (MP7)
 				self.mp7.has_description = true
 				self.mp7.desc_id = "bm_mp7_sc_desc"	
-				self.mp7.AMMO_MAX = 90
+				self.mp7.AMMO_MAX = 100
 				self.mp7.fire_mode_data.fire_rate = 0.06315789473
 				self.mp7.CAN_TOGGLE_FIREMODE = true
 				self.mp7.auto = {}
@@ -6478,12 +6478,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.supported = true
 				self.mp7.ads_speed = 0.240
 				self.mp7.damage_falloff = {
-					start_dist = 2600,
+					start_dist = 2300,
 					end_dist = 4800,
-					min_mult = 0.55555
+					min_mult = 0.666666
 				}
 				self.mp7.stats = {
-					damage = 18,
+					damage = 15,
 					spread = 72,
 					recoil = 86,
 					spread_moving = 7,
@@ -6506,7 +6506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--P90
 				self.p90.has_description = true
 				self.p90.desc_id = "bm_p90_sc_desc"	
-				self.p90.AMMO_MAX = 90
+				self.p90.AMMO_MAX = 100
 				self.p90.fire_mode_data.fire_rate = 0.070588235
 				self.p90.armor_piercing_chance = 1
 				self.p90.can_shoot_through_enemy = false
@@ -6517,12 +6517,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.supported = true
 				self.p90.ads_speed = 0.220
 				self.p90.damage_falloff = {
-					start_dist = 2900,
+					start_dist = 2800,
 					end_dist = 5200,
-					min_mult = 0.55555
+					min_mult = 0.666666
 				}
 				self.p90.stats = {
-					damage = 18,
+					damage = 15,
 					spread = 75,
 					recoil = 91,
 					spread_moving = 7,
@@ -6676,11 +6676,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.cobray.stats_modifiers = nil
 				self.cobray.panic_suppression_chance = 0.05
-				self.cobray.timers.reload_empty = 2.6
+				self.cobray.timers.reload_empty = 3.4
 				self.cobray.timers.reload_not_empty = 1.9
-				self.cobray.timers.reload_exit_empty = 2.3
+				self.cobray.timers.reload_exit_empty = 1.5
 				self.cobray.timers.reload_exit_not_empty = 0.6
-				self.cobray.reload_speed_multiplier = 1.2
+				self.cobray.reload_speed_multiplier = 1.3
 
 
 			--Heather (SR2M)
@@ -9333,82 +9333,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.saw_secondary.stats_modifiers = nil
 		self.saw_secondary.panic_suppression_chance = 0.05
 
-	--GL40
-		self.gre_m79.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}		
-		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
-		self.gre_m79.has_description = true
-		self.gre_m79.fire_mode_data.fire_rate = 1
-		self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
-		self.gre_m79.AMMO_MAX = 9
-		self.gre_m79.supported = true
-		self.gre_m79.ads_speed = 0.360
-		self.gre_m79.stats = {
-			damage = 80,
-			spread = 100,
-			recoil = 72,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 23,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.gre_m79.panic_suppression_chance = 0.05
-		self.gre_m79.stats_modifiers = {damage = 10}
-		self.gre_m79.reload_speed_multiplier = 1.25
-		self.gre_m79.timers.reload_exit_empty = 0.4
-		self.gre_m79.timers.reload_exit_not_empty = 0.4
 
-	--HRL-7
-		self.rpg7.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}		
-		self.rpg7.kick = self.stat_info.kick_tables.vertical_kick
-		self.rpg7.has_description = true
-		self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
-		self.rpg7.fire_mode_data.fire_rate = 2
-		self.rpg7.AMMO_MAX = 4
-		self.rpg7.timers.reload_not_empty = 4.7
-		self.rpg7.timers.reload_empty = 4.7
-		self.rpg7.supported = true
-		self.rpg7.ads_speed = 0.460
-		self.rpg7.damage_falloff = {
-			start_dist = 3000,
-			end_dist = 9000,
-			min_mult = 1
-		}
-		self.rpg7.stats = {
-			damage = 400,
-			spread = 76,
-			recoil = 71,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 12,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.rpg7.weapon_movement_penalty = 0.875
-		self.rpg7.panic_suppression_chance = 0.05
-		self.rpg7.stats_modifiers = {damage = 3}
-		self.rpg7.reload_speed_multiplier = 1.1
-		self.rpg7.turret_instakill = true
-		self.rpg7.timers.reload_empty = 4.1
-		self.rpg7.timers.reload_not_empty = 4.1
-		self.rpg7.timers.reload_exit_empty = 3.1
-		self.rpg7.timers.reload_exit_not_empty = 3.1
 
 	--Flamethrower Mk1
 		self.flamethrower_mk2.categories = {
@@ -9464,6 +9389,97 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.flamethrower_mk2.timers.reload_exit_empty = 1.7
 		self.flamethrower_mk2.timers.reload_exit_not_empty = 1.7
 
+	--MA-17 Flamethrower
+		self.system.categories = {
+			"flamethrower",
+			"shotgun"
+		}
+		self.system.has_description = true
+		self.system.desc_id = "bm_ap_flamethrower_sc_desc"
+		self.system.timers.reload_not_empty = 8
+		self.system.timers.reload_empty = 8
+		self.system.rays = 12
+		self.system.CLIP_AMMO_MAX = 30
+		self.system.AMMO_MAX = 60
+		self.system.fire_mode_data.fire_rate = 0.1
+		self.system.auto = {}
+		self.system.auto.fire_rate = 0.1
+		self.system.flame_max_range = 1400
+		self.system.single_flame_effect_duration = 1
+		self.system.armor_piercing_chance = 1
+		self.system.can_shoot_through_enemy = false
+		self.system.can_shoot_through_shield = false
+		self.system.can_shoot_through_wall = false
+		self.system.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.system.fire_dot_data = {
+			dot_damage = 1.6,
+			dot_trigger_chance = 60,
+			dot_length = 3.1,
+			dot_tick_period = 0.5
+		}
+		self.system.supported = true
+		self.system.ads_speed = 0.360
+		self.system.damage_falloff = {
+			start_dist = 1000,
+			end_dist = 1400,
+			min_mult = 0,
+		}
+		self.system.stats = {
+			damage = 24,
+			spread = 26,
+			recoil = 96,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 19,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.system.stats_modifiers = nil
+		self.system.panic_suppression_chance = 0.05
+		self.system.timers.reload_empty = 8.5
+		self.system.timers.reload_not_empty = 8.5
+		self.system.timers.reload_exit_empty = 1.5
+		self.system.timers.reload_exit_not_empty = 1.5
+
+
+
+	--GL40
+		self.gre_m79.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
+		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
+		self.gre_m79.has_description = true
+		self.gre_m79.fire_mode_data.fire_rate = 1
+		self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
+		self.gre_m79.AMMO_MAX = 10
+		self.gre_m79.supported = true
+		self.gre_m79.ads_speed = 0.360
+		self.gre_m79.stats = {
+			damage = 72,
+			spread = 91,
+			recoil = 72,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 23,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.gre_m79.panic_suppression_chance = 0.05
+		self.gre_m79.stats_modifiers = {damage = 10}
+		self.gre_m79.reload_speed_multiplier = 1.25
+		self.gre_m79.timers.reload_exit_empty = 0.4
+		self.gre_m79.timers.reload_exit_not_empty = 0.4
+
 	--Piglet
 		self.m32.upgrade_blocks = {
 			weapon = {
@@ -9475,7 +9491,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--self.m32.BURST_FIRE = 2
 		--self.m32.BURST_FIRE_RATE_MULTIPLIER = 3
 		--self.m32.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
-		self.m32.AMMO_MAX = 9
+		self.m32.AMMO_MAX = 10
 		self.m32.supported = true
 		self.m32.ads_speed = 0.460
 		self.m32.damage_falloff = {
@@ -9484,7 +9500,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			min_mult = 1
 		}
 		self.m32.stats = {
-			damage = 80,
+			damage = 72,
 			spread = 26,
 			recoil = 71,
 			spread_moving = 6,
@@ -9501,6 +9517,263 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m32.panic_suppression_chance = 0.05
 		self.m32.timers.shotgun_reload_first_shell_offset = 1
 		self.m32.reload_speed_multiplier = 1.25
+	
+	--Compact 40mm
+		self.slap.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
+		self.slap.desc_id = "bm_40mm_weapon_sc_desc"
+		self.slap.has_description = false
+		self.slap.fire_mode_data.fire_rate = 1.2
+		self.slap.kick = self.stat_info.kick_tables.vertical_kick
+		self.slap.AMMO_MAX = 5
+		self.slap.supported = true
+		self.slap.ads_speed = 0.360
+		self.slap.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 9000,
+			min_mult = 1
+		}
+		self.slap.stats = {
+			damage = 72,
+			spread = 91,
+			recoil = 72,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 26,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.slap.panic_suppression_chance = 0.05
+		self.slap.stats_modifiers = {damage = 10}
+		self.slap.timers.reload_empty = 3
+		self.slap.timers.reload_not_empty = 3
+		self.slap.timers.reload_exit_empty = 1.2
+		self.slap.timers.reload_exit_not_empty = 1.2
+		self.slap.reload_speed_multiplier = 1.2
+
+	--China Puff--
+		self.china.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
+		self.china.desc_id = "bm_40mm_weapon_sc_desc"
+		self.china.has_description = true
+		self.china.fire_mode_data.fire_rate = 1.3
+		self.china.fire_rate_multiplier = 0.75
+		self.china.AMMO_MAX = 5
+		self.china.kick = self.stat_info.kick_tables.vertical_kick
+		self.china.supported = true
+		self.china.ads_speed = 0.500
+		self.china.stats = {
+			damage = 72,
+			spread = 26,
+			recoil = 62,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 15,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.china.panic_suppression_chance = 0.05
+		self.china.stats_modifiers = {damage = 10}
+		self.china.reload_speed_multiplier = 0.8
+		self.china.timers.shotgun_reload_first_shell_offset = 0.5
+		self.china.timers.shotgun_reload_exit_empty = 1.4
+		self.china.timers.shotgun_reload_exit_not_empty = 0.7
+
+	--Arbiter, duh--
+		self.arbiter.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
+		self.arbiter.fire_mode_data.fire_rate = 0.6
+		self.arbiter.CLIP_AMMO_MAX = 5
+		self.arbiter.tactical_reload = 1
+		self.arbiter.AMMO_MAX = 6
+		self.arbiter.supported = true
+		self.arbiter.ads_speed = 0.460
+		self.arbiter.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 9000,
+			min_mult = 1
+		}
+		self.arbiter.stats = {
+			damage = 60,
+			spread = 26,
+			recoil = 71,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 15,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.arbiter.stats_modifiers = {damage = 10}
+		self.arbiter.panic_suppression_chance = 0.05
+		self.arbiter.kick = self.stat_info.kick_tables.vertical_kick
+		self.arbiter.reload_speed_multiplier = 0.85
+		self.arbiter.timers.reload_exit_empty = 0.84
+		self.arbiter.timers.reload_exit_not_empty = 0.9
+	
+	--3GL
+		self.ms3gl.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
+		self.ms3gl.desc_id = "bm_ms3gl_sc_desc"
+		self.ms3gl.has_description = true
+		--self.ms3gl.green_display = true
+		self.ms3gl.timers = {
+			shotgun_reload_enter = 1,
+			shotgun_reload_exit_empty = 0.9,
+			shotgun_reload_exit_not_empty = 0.9,
+			shotgun_reload_shell = 1,
+			shotgun_reload_first_shell_offset = 0.2,
+			unequip = 0.6,
+			equip = 0.75
+		}
+		self.ms3gl.FIRE_MODE = "single"
+		self.ms3gl.BURST_FIRE = 3
+		self.ms3gl.BURST_DELAY = 0.8
+		self.ms3gl.BURST_FIRE_RATE_MULTIPLIER = 3
+		self.ms3gl.BURST_COUNT = nil
+		self.ms3gl.fire_mode_data = {
+			fire_rate = 0.4
+		}
+		self.ms3gl.burst = nil
+		self.ms3gl.AMMO_MAX = 9
+		self.ms3gl.kick = self.stat_info.kick_tables.vertical_kick
+		self.ms3gl.supported = true
+		self.ms3gl.ads_speed = 0.460
+		self.ms3gl.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 9000,
+			min_mult = 1
+		}
+		self.ms3gl.stats = {
+			damage = 40,
+			spread = 18,
+			recoil = 71,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 22,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.ms3gl.panic_suppression_chance = 0.05
+		self.ms3gl.stats_modifiers = {damage = 10}
+
+
+
+	--HRL-7
+		self.rpg7.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
+		self.rpg7.kick = self.stat_info.kick_tables.vertical_kick
+		self.rpg7.has_description = true
+		self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
+		self.rpg7.fire_mode_data.fire_rate = 2
+		self.rpg7.AMMO_MAX = 4
+		self.rpg7.timers.reload_not_empty = 4.7
+		self.rpg7.timers.reload_empty = 4.7
+		self.rpg7.supported = true
+		self.rpg7.ads_speed = 0.460
+		self.rpg7.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 9000,
+			min_mult = 1
+		}
+		self.rpg7.stats = {
+			damage = 400,
+			spread = 76,
+			recoil = 71,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 12,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.rpg7.weapon_movement_penalty = 0.875
+		self.rpg7.panic_suppression_chance = 0.05
+		self.rpg7.stats_modifiers = {damage = 3}
+		self.rpg7.reload_speed_multiplier = 1.1
+		self.rpg7.turret_instakill = true
+		self.rpg7.timers.reload_empty = 4.1
+		self.rpg7.timers.reload_not_empty = 4.1
+		self.rpg7.timers.reload_exit_empty = 3.1
+		self.rpg7.timers.reload_exit_not_empty = 3.1
+
+	--Commando 101
+		self.ray.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
+		self.ray.use_data.selection_index = 2
+		self.ray.has_description = true
+		self.ray.desc_id = "bm_rocket_launcher_sc_desc"
+		self.ray.kick = self.stat_info.kick_tables.vertical_kick
+		self.ray.timers.reload_not_empty = 6
+		self.ray.timers.reload_empty = 6
+		self.ray.fire_mode_data.fire_rate = 1
+		self.ray.CLIP_AMMO_MAX = 4
+		self.ray.AMMO_MAX = 8
+		self.ray.BURST_FIRE = 4
+		self.ray.BURST_FIRE_RATE_MULTIPLIER = 6.6666
+		self.ray.supported = true
+		self.ray.shake.fire_steelsight_multiplier = -2
+		self.ray.ads_speed = 0.540
+		self.ray.stats = {
+			damage = 400,
+			spread = 76,
+			recoil = 71,
+			spread_moving = 6,
+			zoom = 5,
+			concealment = 12,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.ray.weapon_movement_penalty = 0.75
+		self.ray.panic_suppression_chance = 0.05
+		self.ray.stats_modifiers = {damage = 3}
+		self.ray.turret_instakill = true
+		self.ray.timers.reload_empty = 6
+		self.ray.timers.reload_not_empty = 6
+		self.ray.timers.reload_exit_empty = 1.9
+		self.ray.timers.reload_exit_not_empty = 1.9
+
+
 
 	--Plainsrider bow.
 		self.plainsrider.upgrade_blocks = {
@@ -9680,233 +9953,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.long.timers.reload_exit_not_empty = 0.7
 		self.long.timers.reload_exit_empty = self.long.timers.reload_exit_not_empty
 		self.long.reload_speed_multiplier = 2.7
-
 	
-	--China Puff--
-		self.china.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}		
-		self.china.desc_id = "bm_40mm_weapon_sc_desc"
-		self.china.has_description = true
-		self.china.fire_mode_data.fire_rate = 1.3
-		self.china.fire_rate_multiplier = 0.75
-		self.china.AMMO_MAX = 5
-		self.china.kick = self.stat_info.kick_tables.vertical_kick
-		self.china.supported = true
-		self.china.ads_speed = 0.500
-		self.china.stats = {
-			damage = 80,
-			spread = 26,
-			recoil = 62,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 15,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.china.panic_suppression_chance = 0.05
-		self.china.stats_modifiers = {damage = 10}
-		self.china.reload_speed_multiplier = 0.8
-		self.china.timers.shotgun_reload_first_shell_offset = 0.5
-		self.china.timers.shotgun_reload_exit_empty = 1.4
-		self.china.timers.shotgun_reload_exit_not_empty = 0.7
-
-	--3GL
-		self.ms3gl.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}		
-		self.ms3gl.desc_id = "bm_ms3gl_sc_desc"
-		self.ms3gl.has_description = true
-		--self.ms3gl.green_display = true
-		self.ms3gl.timers = {
-			shotgun_reload_enter = 1,
-			shotgun_reload_exit_empty = 0.9,
-			shotgun_reload_exit_not_empty = 0.9,
-			shotgun_reload_shell = 1,
-			shotgun_reload_first_shell_offset = 0.2,
-			unequip = 0.6,
-			equip = 0.75
-		}
-		self.ms3gl.FIRE_MODE = "single"
-		self.ms3gl.BURST_FIRE = 3
-		self.ms3gl.BURST_DELAY = 0.8
-		self.ms3gl.BURST_FIRE_RATE_MULTIPLIER = 3
-		self.ms3gl.BURST_COUNT = nil
-		self.ms3gl.fire_mode_data = {
-			fire_rate = 0.4
-		}
-		self.ms3gl.burst = nil
-		self.ms3gl.AMMO_MAX = 10
-		self.ms3gl.kick = self.stat_info.kick_tables.vertical_kick
-		self.ms3gl.supported = true
-		self.ms3gl.ads_speed = 0.460
-		self.ms3gl.damage_falloff = {
-			start_dist = 3000,
-			end_dist = 9000,
-			min_mult = 1
-		}
-		self.ms3gl.stats = {
-			damage = 40,
-			spread = 18,
-			recoil = 71,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 22,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.ms3gl.panic_suppression_chance = 0.05
-		self.ms3gl.stats_modifiers = {damage = 10}
-
-	--Arbiter, duh--
-		self.arbiter.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}		
-		self.arbiter.fire_mode_data.fire_rate = 0.6
-		self.arbiter.CLIP_AMMO_MAX = 6
-		self.arbiter.tactical_reload = 1
-		self.arbiter.AMMO_MAX = 5
-		self.arbiter.supported = true
-		self.arbiter.ads_speed = 0.460
-		self.arbiter.damage_falloff = {
-			start_dist = 3000,
-			end_dist = 9000,
-			min_mult = 1
-		}
-		self.arbiter.stats = {
-			damage = 60,
-			spread = 26,
-			recoil = 71,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 15,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.arbiter.stats_modifiers = {damage = 10}
-		self.arbiter.panic_suppression_chance = 0.05
-		self.arbiter.kick = self.stat_info.kick_tables.vertical_kick
-		self.arbiter.reload_speed_multiplier = 0.85
-		self.arbiter.timers.reload_exit_empty = 0.84
-		self.arbiter.timers.reload_exit_not_empty = 0.9
-
-	--Commando 101
-		self.ray.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}			
-		self.ray.use_data.selection_index = 2
-		self.ray.has_description = true
-		self.ray.desc_id = "bm_rocket_launcher_sc_desc"
-		self.ray.kick = self.stat_info.kick_tables.vertical_kick
-		self.ray.timers.reload_not_empty = 6
-		self.ray.timers.reload_empty = 6
-		self.ray.fire_mode_data.fire_rate = 1
-		self.ray.CLIP_AMMO_MAX = 4
-		self.ray.AMMO_MAX = 8
-		self.ray.BURST_FIRE = 4
-		self.ray.BURST_FIRE_RATE_MULTIPLIER = 6.6666
-		self.ray.supported = true
-		self.ray.shake.fire_steelsight_multiplier = -2
-		self.ray.ads_speed = 0.540
-		self.ray.stats = {
-			damage = 400,
-			spread = 76,
-			recoil = 71,
-			spread_moving = 6,
-			zoom = 5,
-			concealment = 12,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.ray.weapon_movement_penalty = 0.75
-		self.ray.panic_suppression_chance = 0.05
-		self.ray.stats_modifiers = {damage = 3}
-		self.ray.turret_instakill = true
-		self.ray.timers.reload_empty = 6
-		self.ray.timers.reload_not_empty = 6
-		self.ray.timers.reload_exit_empty = 1.9
-		self.ray.timers.reload_exit_not_empty = 1.9
-
-	--MA-17 Flamethrower
-		self.system.categories = {
-			"flamethrower",
-			"shotgun"
-		}
-		self.system.has_description = true
-		self.system.desc_id = "bm_ap_flamethrower_sc_desc"
-		self.system.timers.reload_not_empty = 8
-		self.system.timers.reload_empty = 8
-		self.system.rays = 12
-		self.system.CLIP_AMMO_MAX = 30
-		self.system.AMMO_MAX = 60
-		self.system.fire_mode_data.fire_rate = 0.1
-		self.system.auto = {}
-		self.system.auto.fire_rate = 0.1
-		self.system.flame_max_range = 1400
-		self.system.single_flame_effect_duration = 1
-		self.system.armor_piercing_chance = 1
-		self.system.can_shoot_through_enemy = false
-		self.system.can_shoot_through_shield = false
-		self.system.can_shoot_through_wall = false
-		self.system.kick = self.stat_info.kick_tables.horizontal_recoil
-		self.system.fire_dot_data = {
-			dot_damage = 1.6,
-			dot_trigger_chance = 60,
-			dot_length = 3.1,
-			dot_tick_period = 0.5
-		}
-		self.system.supported = true
-		self.system.ads_speed = 0.360
-		self.system.damage_falloff = {
-			start_dist = 1000,
-			end_dist = 1400,
-			min_mult = 0,
-		}
-		self.system.stats = {
-			damage = 24,
-			spread = 26,
-			recoil = 96,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 19,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.system.stats_modifiers = nil
-		self.system.panic_suppression_chance = 0.05
-		self.system.timers.reload_empty = 8.5
-		self.system.timers.reload_not_empty = 8.5
-		self.system.timers.reload_exit_empty = 1.5
-		self.system.timers.reload_exit_not_empty = 1.5
-
 	--Airbow
 		self.ecp.upgrade_blocks = {
 			weapon = {
@@ -9946,46 +9993,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ecp.timers.reload_exit_empty = 0.6
 		self.ecp.timers.reload_exit_not_empty = 0.6
 		self.ecp.reload_speed_multiplier = 0.75
-
-	--Compact 40mm
-		self.slap.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}			
-		self.slap.desc_id = "bm_40mm_weapon_sc_desc"
-		self.slap.has_description = false
-		self.slap.fire_mode_data.fire_rate = 1.2
-		self.slap.kick = self.stat_info.kick_tables.vertical_kick
-		self.slap.AMMO_MAX = 5
-		self.slap.supported = true
-		self.slap.ads_speed = 0.360
-		self.slap.damage_falloff = {
-			start_dist = 3000,
-			end_dist = 9000,
-			min_mult = 1
-		}
-		self.slap.stats = {
-			damage = 80,
-			spread = 91,
-			recoil = 72,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 26,
-			suppression = 20,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.slap.panic_suppression_chance = 0.05
-		self.slap.stats_modifiers = {damage = 10}
-		self.slap.timers.reload_empty = 3
-		self.slap.timers.reload_not_empty = 3
-		self.slap.timers.reload_exit_empty = 1.2
-		self.slap.timers.reload_exit_not_empty = 1.2
-		self.slap.reload_speed_multiplier = 1.2
 
 	--DECA Technologies Compound Bow
 		self.elastic.upgrade_blocks = {

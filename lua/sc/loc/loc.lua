@@ -1028,10 +1028,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_6_mark"] = "6x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
 
 		--'Nade Launchers--
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 7.5m, lasts 5 seconds and deals 120 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 7.5m, lasts 5 seconds and deals 80 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 7.5m, lasts 5 seconds and deals 40 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
-		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that creates an explosion at point of impact. The explosion deals 800 damage and has a radius of 5 meters.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 3.75m, lasts 5 seconds and deals 120 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 3.75m, lasts 5 seconds and deals 80 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "Fires a round that creates a pool of fire at point of impact.\nThe pool has a radius of 3.75m, lasts 5 seconds and deals 40 damage/sec to enemies standing in it with a chance to set them on fire, stunning most while dealing an additional 60 damage over 3 seconds.",
+		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that creates an explosion at point of impact. The explosion deals 720 damage and has a radius of 5 meters.",
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 400 damage, has a radius of 5 meters, and has a chance to tase enemies.",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 200 damage, has a radius of 5 meters, and has a chance to tase enemies.",
 		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a burst of electricity at point of impact. The burst deals 300 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
@@ -1584,7 +1584,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+5% Money reward for you and your crew.",
 
 		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
-		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO AUTO-FIRE MODE.",
+		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO FULL-AUTO.",
 
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para Rifle",
@@ -1612,7 +1612,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
 		["bm_grenade_electric_desc"] = "Capacity: 3\nDamage: 400 \nRadius: 5m \nFuse: 3s \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
-		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 300 over 10s \nRadius: 6m \nDuration (Gas Cloud): 20s \nFuse: 1s after remaining stationary \n- Each grenade stuns each enemy afflicted one time\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		["bm_grenade_poison_gas_grenade_desc"] = "Capacity: 3\nDamage: 300 over 10s \nRadius: 6m \nDuration (Gas Cloud): 20s \nFuse: 1s after remaining stationary \n- Enemies cannot be poisoned by the same gas cloud more than once\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",

@@ -7883,26 +7883,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		"wpn_fps_sho_striker_b_suppressed"
 	}
 
-	--Incendiary Round
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.pcs = {}
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.name_id = "bm_wp_upg_a_grenade_launcher_incendiary"
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.has_description = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.stats = {damage = -74}
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.custom_stats = {
-		launcher_grenade = "launcher_incendiary"
-	}
-
-	--Incendiary Round (Arbiter)
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.pcs = {}
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.stats = {damage = -56}
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.custom_stats = {
-		launcher_grenade = "launcher_incendiary_arbiter"
-	}
-	
 	--Frag Rounds (BYK-1)
 	self.parts.wpn_fps_upg_a_underbarrel_frag_groza.pcs = {}
 	self.parts.wpn_fps_upg_a_underbarrel_frag_groza.has_description = true
@@ -7912,7 +7892,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_underbarrel_frag_groza.custom_stats = {
 		launcher_grenade = "launcher_m203"
 	}	
-	
 	--Underbarrel Electric Grenades
 	self.parts.wpn_fps_upg_a_underbarrel_electric.pcs = {}
 	self.parts.wpn_fps_upg_a_underbarrel_electric.has_description = true
@@ -7922,50 +7901,87 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_underbarrel_electric.custom_stats = {
 		launcher_grenade = "underbarrel_electric"
 	}		
-	
+
+	--Incendiary Round
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.pcs = {}
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.name_id = "bm_wp_upg_a_grenade_launcher_incendiary"
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.has_description = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.supported = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.stats = { damage = -60 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.custom_stats = {
+		launcher_grenade = "launcher_incendiary"
+	}
 	--Tactical ZAPpers (Normal GLs)
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric.pcs = {}
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric.has_description = true
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric.desc_id = "bm_wp_upg_a_grenade_launcher_electric_desc_sc"
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric.stats = {damage = -40}
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric.stats = { damage = -36 }
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric.custom_stats = {
 		launcher_grenade = "launcher_electric"
 	}			
+	--Poison Gas (Normal GLs)
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison.pcs = {}
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison.has_description = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison.desc_id = "bm_wp_upg_a_grenade_launcher_poison_desc_sc"
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison.supported = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison.stats = { damage = -69 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison.custom_stats = {
+		launcher_grenade = "launcher_poison"
+	}
 	
+	
+	--Incendiary Round (Arbiter)
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.pcs = {}
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.supported = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.stats = { damage = -52 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.custom_stats = {
+		launcher_grenade = "launcher_incendiary_arbiter"
+	}
 	--Tactical ZAPpers (Arbiter)
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.pcs = {}
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.has_description = true
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.stats = {damage = -30}
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.stats = { damage = -30 }
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.custom_stats = {
 		launcher_grenade = "launcher_electric_arbiter"
 	}
-
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison.pcs = {}
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison.has_description = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison.desc_id = "bm_wp_upg_a_grenade_launcher_poison_desc_sc"
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison.stats = { damage = -78 }
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison.custom_stats = {
-		launcher_grenade = "launcher_poison"
-	}
-
+	--Poison Gas (Arbiter)
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.pcs = {}
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.has_description = true
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.stats = { damage = -58 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.stats = { damage = -57 }
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.custom_stats = {
 		launcher_grenade = "launcher_poison_arbiter"
 	}
 
+
+	--3GL Ammo
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.pcs = {}
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.has_description = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.supported = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.stats = { damage = -36 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.custom_stats = {
+		launcher_grenade = "launcher_incendiary"
+	}
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.pcs = {}
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.has_description = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.supported = true
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.stats = { damage = -20 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.custom_stats = {
+		launcher_grenade = "launcher_electric"
+	}
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.pcs = {}
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.has_description = true
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.stats = { damage = -38 }
+	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.stats = { damage = -37 }
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.custom_stats = {
 		launcher_grenade = "launcher_poison"
 	}			
@@ -7973,7 +7989,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.has_description = true
 	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.desc_id = "bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"
 	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.supported = true
-	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.stats = { damage = -38 }
+	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.stats = { damage = -37 }
 	self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.custom_stats = {
 		launcher_grenade = "launcher_poison"
 	}
@@ -7982,23 +7998,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	self.parts.wpn_fps_gre_ms3gl_conversion.adds = {}
 
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.pcs = {}
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.has_description = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.stats = {damage = -38}
-	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.custom_stats = {
-		launcher_grenade = "launcher_incendiary"
-	}
-
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.pcs = {}
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.has_description = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.stats = {damage = -20}
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.custom_stats = {
-		launcher_grenade = "launcher_electric"
-	}
 		
 	--Underbarrel Slug Single Launcher (Temporarily disabled)
 	self.parts.wpn_fps_pis_type54_underbarrel_slug.pcs = nil

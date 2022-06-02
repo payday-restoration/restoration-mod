@@ -77,196 +77,62 @@ tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 tweak_data.projectiles.rocket_ray_frag.incendiary = true
 
 --Grenade launcher stuff--
---TODO: compress dupes into tables and for loops
---M79
-tweak_data.projectiles.launcher_frag.damage = 80
-tweak_data.projectiles.launcher_frag.player_damage = 40
-tweak_data.projectiles.launcher_frag.curve_pow = 1
-tweak_data.projectiles.launcher_frag.range = 500
-tweak_data.projectiles.launcher_incendiary.damage = 6
-tweak_data.projectiles.launcher_incendiary.curve_pow = 1
-tweak_data.projectiles.launcher_incendiary.player_damage = 3
-tweak_data.projectiles.launcher_incendiary.burn_duration = 5
-tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
+local frag_40mm = {
+	'launcher_frag','launcher_frag_china','launcher_frag_m32','launcher_m203','underbarrel_m203_groza','launcher_frag_slap'
 }
-tweak_data.projectiles.launcher_electric.damage = 40
-tweak_data.projectiles.launcher_electric.player_damage = 20
-tweak_data.projectiles.launcher_electric.curve_pow = 1
-tweak_data.projectiles.launcher_electric.range = 500
-tweak_data.projectiles.launcher_poison_gre_m79.damage = 0
-tweak_data.projectiles.launcher_poison_gre_m79.player_damage = 0
-tweak_data.projectiles.launcher_poison_gre_m79.curve_pow = 0
-tweak_data.projectiles.launcher_poison_gre_m79.range = 0
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_duration = 16
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_fade_time = 0.1
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_gre_m79.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 8.15,
-	dot_tick_period = 0.5
-}
+for i, proj_id in ipairs(frag_40mm) do
+	tweak_data.projectiles[proj_id].damage = 72
+	tweak_data.projectiles[proj_id].player_damage = 36
+	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].range = 500
+end
 
---M32--
-tweak_data.projectiles.launcher_frag_m32.damage = 80
-tweak_data.projectiles.launcher_frag_m32.player_damage = 80
-tweak_data.projectiles.launcher_frag_m32.curve_pow = 1
-tweak_data.projectiles.launcher_frag_m32.range = 500
-tweak_data.projectiles.launcher_incendiary_m32.damage = 6
-tweak_data.projectiles.launcher_incendiary_m32.curve_pow = 1
-tweak_data.projectiles.launcher_incendiary_m32.player_damage = 3
-tweak_data.projectiles.launcher_incendiary_m32.burn_duration = 5
-tweak_data.projectiles.launcher_incendiary_m32.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
+local incendiary_40mm = {
+	'launcher_incendiary','launcher_incendiary_china','launcher_incendiary_m32','launcher_incendiary_slap'
 }
-tweak_data.projectiles.launcher_electric_m32.damage = 40
-tweak_data.projectiles.launcher_electric_m32.player_damage = 20
-tweak_data.projectiles.launcher_electric_m32.curve_pow = 1
-tweak_data.projectiles.launcher_electric_m32.range = 500
-tweak_data.projectiles.launcher_poison_m32.damage = 0
-tweak_data.projectiles.launcher_poison_m32.player_damage = 0
-tweak_data.projectiles.launcher_poison_m32.curve_pow = 0
-tweak_data.projectiles.launcher_poison_m32.range = 0
-tweak_data.projectiles.launcher_poison_m32.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_m32.poison_gas_duration = 16
-tweak_data.projectiles.launcher_poison_m32.poison_gas_fade_time = 0.1
-tweak_data.projectiles.launcher_poison_m32.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_m32.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 8.15,
-	dot_tick_period = 0.5
-}
+for i, proj_id in ipairs(incendiary_40mm) do
+	tweak_data.projectiles[proj_id].damage = 6
+	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].player_damage = 3
+	tweak_data.projectiles[proj_id].burn_duration = 5
+	tweak_data.projectiles[proj_id].fire_dot_data = {
+		dot_damage = 1,
+		dot_trigger_max_distance = 3000,
+		dot_trigger_chance = 50,
+		dot_length = 3.1,
+		dot_tick_period = 0.5
+	}
+end
 
---Hong Meiling Lake--
-tweak_data.projectiles.launcher_frag_china.damage = 80
-tweak_data.projectiles.launcher_frag_china.player_damage = 80
-tweak_data.projectiles.launcher_frag_china.curve_pow = 1
-tweak_data.projectiles.launcher_frag_china.range = 500
-tweak_data.projectiles.launcher_incendiary_china.damage = 6
-tweak_data.projectiles.launcher_incendiary_china.curve_pow = 1
-tweak_data.projectiles.launcher_incendiary_china.player_damage = 3
-tweak_data.projectiles.launcher_incendiary_china.burn_duration = 5
-tweak_data.projectiles.launcher_incendiary_china.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
+local electric_40mm = {
+	'launcher_electric','launcher_electric_china','launcher_electric_m32','underbarrel_electric','underbarrel_electric_groza','launcher_incendiary_slap'
 }
-tweak_data.projectiles.launcher_electric_china.damage = 40
-tweak_data.projectiles.launcher_electric_china.player_damage = 20
-tweak_data.projectiles.launcher_electric_china.curve_pow = 1
-tweak_data.projectiles.launcher_electric_china.range = 500
-tweak_data.projectiles.launcher_poison_china.damage = 0
-tweak_data.projectiles.launcher_poison_china.player_damage = 0
-tweak_data.projectiles.launcher_poison_china.curve_pow = 0
-tweak_data.projectiles.launcher_poison_china.range = 0
-tweak_data.projectiles.launcher_poison_china.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_china.poison_gas_duration = 16
-tweak_data.projectiles.launcher_poison_china.poison_gas_fade_time = 0.1
-tweak_data.projectiles.launcher_poison_china.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_china.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 8.15,
-	dot_tick_period = 0.5
-}
+for i, proj_id in ipairs(electric_40mm) do
+	tweak_data.projectiles[proj_id].damage = 40
+	tweak_data.projectiles[proj_id].player_damage = 20
+	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].range = 500
+end
 
---Little Friend--
-tweak_data.projectiles.launcher_m203.damage = 80
-tweak_data.projectiles.launcher_m203.player_damage = 80
-tweak_data.projectiles.launcher_m203.curve_pow = 1
-tweak_data.projectiles.launcher_m203.range = 500
-	--NO FIRE NADES?
-tweak_data.projectiles.underbarrel_electric.damage = 40
-tweak_data.projectiles.underbarrel_electric.player_damage = 20
-tweak_data.projectiles.underbarrel_electric.curve_pow = 1
-tweak_data.projectiles.underbarrel_electric.range = 500
-tweak_data.projectiles.launcher_poison_contraband.damage = 0
-tweak_data.projectiles.launcher_poison_contraband.player_damage = 0
-tweak_data.projectiles.launcher_poison_contraband.curve_pow = 0
-tweak_data.projectiles.launcher_poison_contraband.range = 0
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_duration = 16
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_fade_time = 0.1
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_contraband.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 8.15,
-	dot_tick_period = 0.5
+local poison_40mm = {
+	'launcher_poison_gre_m79','launcher_poison_china','launcher_poison_m32','launcher_poison_contraband','launcher_poison_groza','launcher_poison_slap'
 }
-
---M320--
-tweak_data.projectiles.launcher_frag_slap.damage = 80
-tweak_data.projectiles.launcher_frag_slap.player_damage = 80
-tweak_data.projectiles.launcher_frag_slap.curve_pow = 1
-tweak_data.projectiles.launcher_frag_slap.range = 500
-tweak_data.projectiles.launcher_incendiary_slap.damage = 6
-tweak_data.projectiles.launcher_incendiary_slap.curve_pow = 1
-tweak_data.projectiles.launcher_incendiary_slap.player_damage = 3
-tweak_data.projectiles.launcher_incendiary_slap.burn_duration = 5
-tweak_data.projectiles.launcher_incendiary_slap.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
-}
-tweak_data.projectiles.launcher_electric_slap.damage = 40
-tweak_data.projectiles.launcher_electric_slap.player_damage = 20
-tweak_data.projectiles.launcher_electric_slap.curve_pow = 1
-tweak_data.projectiles.launcher_electric_slap.range = 500
-tweak_data.projectiles.launcher_poison_slap.damage = 0
-tweak_data.projectiles.launcher_poison_slap.player_damage = 0
-tweak_data.projectiles.launcher_poison_slap.curve_pow = 0
-tweak_data.projectiles.launcher_poison_slap.range = 0
-tweak_data.projectiles.launcher_poison_slap.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_slap.poison_gas_duration = 16
-tweak_data.projectiles.launcher_poison_slap.poison_gas_fade_time = 0.1
-tweak_data.projectiles.launcher_poison_slap.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_slap.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 8.15,
-	dot_tick_period = 0.5
-}
-
---Groza--
-tweak_data.projectiles.underbarrel_m203_groza.damage = 80
-tweak_data.projectiles.underbarrel_m203_groza.player_damage = 80
-tweak_data.projectiles.underbarrel_m203_groza.curve_pow = 1
-tweak_data.projectiles.underbarrel_m203_groza.range = 500
-	--NO FIRE NADES?
-tweak_data.projectiles.underbarrel_electric_groza.damage = 40
-tweak_data.projectiles.underbarrel_electric_groza.player_damage = 20
-tweak_data.projectiles.underbarrel_electric_groza.curve_pow = 1
-tweak_data.projectiles.underbarrel_electric_groza.range = 500
-tweak_data.projectiles.launcher_poison_groza.damage = 0
-tweak_data.projectiles.launcher_poison_groza.player_damage = 0
-tweak_data.projectiles.launcher_poison_groza.curve_pow = 0
-tweak_data.projectiles.launcher_poison_groza.range = 0
-tweak_data.projectiles.launcher_poison_groza.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_groza.poison_gas_duration = 16
-tweak_data.projectiles.launcher_poison_groza.poison_gas_fade_time = 0.1
-tweak_data.projectiles.launcher_poison_groza.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_groza.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 8.15,
-	dot_tick_period = 0.5
-}
+for i, proj_id in ipairs(poison_40mm) do
+	tweak_data.projectiles[proj_id].damage = 0
+	tweak_data.projectiles[proj_id].player_damage = 0
+	tweak_data.projectiles[proj_id].curve_pow = 0
+	tweak_data.projectiles[proj_id].range = 0
+	tweak_data.projectiles[proj_id].poison_gas_range = 600
+	tweak_data.projectiles[proj_id].poison_gas_duration = 16
+	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
+	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
+	tweak_data.projectiles[proj_id].poison_gas_dot_data = {
+		hurt_animation_chance = 1,
+		dot_damage = 1.5,
+		dot_length = 8.15,
+		dot_tick_period = 0.5
+	}
+end
 
 --Arbiter--
 tweak_data.projectiles.launcher_frag_arbiter.damage = 60
@@ -286,7 +152,7 @@ tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 	dot_tick_period = 0.5
 }
 tweak_data.projectiles.launcher_electric_arbiter.damage = 30
-tweak_data.projectiles.launcher_electric_arbiter.player_damage = 10
+tweak_data.projectiles.launcher_electric_arbiter.player_damage = 15
 tweak_data.projectiles.launcher_electric_arbiter.range = 250
 tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
@@ -305,9 +171,54 @@ tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data = {
 	dot_tick_period = 0.5
 }
 
+--SABR Grenade Launcher.
+tweak_data.projectiles.launcher_frag_osipr = {
+	damage = 60,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 30,
+	range = 250,
+	init_timer = nil,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	name_id = "bm_launcher_frag"
+}
+tweak_data.projectiles.launcher_incendiary_osipr = {
+	damage = 4,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 2,
+	fire_dot_data = {
+		dot_trigger_chance = 50,
+		dot_damage = 1,
+		dot_length = 3.1,
+		dot_trigger_max_distance = 3000,
+		dot_tick_period = 0.5
+	},
+	range = 350,
+	init_timer = nil,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	sound_event_impact_duration = 0.25,
+	name_id = "bm_launcher_incendiary",
+	burn_duration = 5,
+	burn_tick_period = 0.5
+}
+tweak_data.projectiles.launcher_electric_osipr = {
+	damage = 30,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 15,
+	range = 250,
+	init_timer = nil,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	name_id = "bm_launcher_frag"
+}
+
 --3GL
-tweak_data.projectiles.launcher_frag_ms3gl.damage = 40
-tweak_data.projectiles.launcher_frag_ms3gl.player_damage = 80
+tweak_data.projectiles.launcher_frag_ms3gl.damage = 36
+tweak_data.projectiles.launcher_frag_ms3gl.player_damage = 18
 tweak_data.projectiles.launcher_frag_ms3gl.curve_pow = 1
 tweak_data.projectiles.launcher_frag_ms3gl.range = 500
 tweak_data.projectiles.launcher_incendiary_ms3gl.damage = 2
@@ -321,7 +232,7 @@ tweak_data.projectiles.launcher_incendiary_ms3gl.fire_dot_data = {
 	dot_tick_period = 0.5
 }
 tweak_data.projectiles.launcher_electric_ms3gl.damage = 20
-tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 20
+tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 10
 tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1
 tweak_data.projectiles.launcher_electric_ms3gl.range = 500
 tweak_data.projectiles.launcher_poison.damage = 0
@@ -588,52 +499,6 @@ if difficulty_index <= 4 then --Enemy grenades deal reduced damage on lower diff
 	tweak_data.projectiles.child_grenade.player_damage = 6.0
 end
 
---SABR Grenade Launcher.
-tweak_data.projectiles.launcher_frag_osipr = {
-	damage = 60,
-	launch_speed = 2500,
-	curve_pow = 1,
-	player_damage = 30,
-	range = 250,
-	init_timer = nil,
-	mass_look_up_modifier = 1,
-	sound_event = "gl_explode",
-	name_id = "bm_launcher_frag"
-}
-tweak_data.projectiles.launcher_incendiary_osipr = {
-	damage = 5,
-	launch_speed = 2500,
-	curve_pow = 1,
-	player_damage = 2.5,
-	fire_dot_data = {
-		dot_trigger_chance = 50,
-		dot_damage = 1,
-		dot_length = 3.1,
-		dot_trigger_max_distance = 3000,
-		dot_tick_period = 0.5
-	},
-	range = 350,
-	init_timer = nil,
-	mass_look_up_modifier = 1,
-	sound_event = "gl_explode",
-	sound_event_impact_duration = 0.25,
-	name_id = "bm_launcher_incendiary",
-	burn_duration = 5,
-	burn_tick_period = 0.5
-}
-tweak_data.projectiles.launcher_electric_osipr = {
-	damage = 30,
-	launch_speed = 2500,
-	curve_pow = 1,
-	player_damage = 10,
-	range = 250,
-	init_timer = nil,
-	mass_look_up_modifier = 1,
-	sound_event = "gl_explode",
-	name_id = "bm_launcher_frag"
-}
-
-
 local velocity = {
 	'launcher_frag','launcher_incendiary','launcher_electric','launcher_poison_gre_m79', --M79
 	'launcher_frag_china','launcher_incendiary_china','launcher_electric_china', 'launcher_poison_china', --China Lake
@@ -653,6 +518,7 @@ velocity = {
 	'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter','launcher_poison_arbiter',
 	'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
 }
+velocity_mult = 0.35
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 21000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = 0

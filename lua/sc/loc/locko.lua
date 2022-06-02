@@ -2525,7 +2525,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "명사수",
-		["menu_discipline_desc_sc"] = "베이직: ##$basic##\n소총류의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n반자동으로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 발사 속도를 ##20%##만큼 증가시킵니다.",
+		["menu_discipline_desc_sc"] = "베이직: ##$basic##\n소총류의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 발사 속도를 ##20%##만큼 증가시킵니다.",
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "킬머",
@@ -2533,7 +2533,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "마인드 블로우",
-		["menu_kilmer_desc_sc"] = "베이직: ##$basic##\n반자동으로 설정된 소총으로 헤드샷 할 시 ##4## 미터 반경에서 가장 가까운 적에게 입힌 피해의 ##70%##만큼 입힙니다.\n\n적에게서 ##7## 미터 떨어져 있을 때마다 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 ##4##번까지 됩니다.\n\n에이스: ##$pro##\n반자동으로 설정된 소총의 헤드샷은 ##거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 ##1##미터만큼 증가합니다.\n\n적에게서 ##7##미터 떨어져 있을 때마다 연쇄 효과가 추가로 ##10%##만큼 피해를 주고, 최대 총 ##110%##의 피해를 입힐 수 있습니다.",
+		["menu_kilmer_desc_sc"] = "베이직: ##$basic##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 ##4## 미터 반경에서 가장 가까운 적에게 입힌 피해의 ##70%##만큼 입힙니다.\n\n적에게서 ##7## 미터 떨어져 있을 때마다 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 ##4##번까지 됩니다.\n\n에이스: ##$pro##\n반자동 혹은 점사로 설정된 소총의 헤드샷은 ##거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 ##1##미터만큼 증가합니다.\n\n적에게서 ##7##미터 떨어져 있을 때마다 연쇄 효과가 추가로 ##10%##만큼 피해를 주고, 최대 총 ##110%##의 피해를 입힐 수 있습니다.",
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "효율적인 탄약 활용",
@@ -2545,7 +2545,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "공격적인 재장전",
-		["menu_engineering_beta_desc_sc"] = "베이직: ##$basic##\n반자동으로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 재장전 속도를 ##25%##만큼 증가시킵니다.\n\n에이스: ##$pro##\n재장전 속도 보너스가 ##50%##만큼 증가하며 발사 모드와 상관없이 발동할 수 있습니다.",
+		["menu_engineering_beta_desc_sc"] = "베이직: ##$basic##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 재장전 속도를 ##25%##만큼 증가시킵니다.\n\n에이스: ##$pro##\n재장전 속도 보너스가 ##50%##만큼 증가하며 발사 모드와 상관없이 발동할 수 있습니다.",
 
 		--Evasion--
 		["menu_awareness_beta_sc"] = "위기모면",

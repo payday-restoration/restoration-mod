@@ -471,6 +471,18 @@ function HUDStageEndScreen:init(hud, workspace)
 		alpha = 0.6,
 		blend_mode = "normal"
 	})
+	self._prestige_lp_circle = self._lp_backpanel:bitmap({
+		texture = "guis/textures/pd2/exp_ring_purple",
+		name = "bg_infamy_progress_circle",
+		blend_mode = "add",
+		render_template = "VertexColorTexturedRadial",
+		layer = -1,
+		x = lp_bg_circle:x(),
+		y = lp_bg_circle:y(),
+		h = lp_bg_circle:h(),
+		w = lp_bg_circle:w(),
+		color = Color(0, 1, 1)
+	})	
 	self._lp_circle = self._lp_backpanel:bitmap({
 		name = "progress_circle",
 		texture = "guis/textures/restoration/exp_ring",
@@ -643,6 +655,7 @@ function HUDStageEndScreen:init(hud, workspace)
 	if squeeze_more_pixels then
 		lp_bg_circle:move(-20, 0)
 		self._lp_circle:move(-20, 0)
+		self._prestige_lp_circle:move(-20, 0)
 		self._lp_text:move(-20, 0)
 		self._lp_curr_xp:move(-30, 0)
 		self._lp_xp_gained:move(-30, 0)

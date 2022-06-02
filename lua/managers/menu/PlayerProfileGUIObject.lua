@@ -127,7 +127,19 @@ function PlayerProfileGuiObject:init(ws)
 		level_text:set_font_size(level_text:font_size() * math.min(font_size * 2 / level_text:w(), 1))
 		player_level_panel:set_size(level_text:size())
 	end
-
+	self._prestige_lp_circle = panel:bitmap({
+		texture = "guis/textures/pd2/exp_ring_purple",
+		name = "bg_infamy_progress_circle",
+		render_template = "VertexColorTexturedRadial",
+		blend_mode = "add",
+		layer = 15,
+		x = bg_ring:x() - 5,
+		y = bg_ring:y(),
+		h = bg_ring:h(),
+		w = bg_ring:w(),
+		color = Color(managers.experience:get_prestige_xp_percentage_progress(), 1, 1),
+		alpha = managers.experience:reached_level_cap() and 1 or 0.3
+	})
 	local player_text = panel:text({
 		y = 10,
 		font = font,

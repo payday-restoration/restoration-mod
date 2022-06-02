@@ -1831,7 +1831,7 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors.surrender = presets.surrender.easy
 	self.bolivian_indoors.surrender_break_time = {20, 30}
 	self.bolivian_indoors.detection = presets.detection.guard
-	if job == "friend" or job == "pent" then --stop fucking killing each other please
+	if job == "friend" then --stop fucking killing each other please
 		self.bolivian_indoors.access = "gangster"
 	else
 		self.bolivian_indoors.access = "security"

@@ -574,7 +574,8 @@
 	<!--textures-->	
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/leaves_df" />	
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/leaves_op" />	
-	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/head_df" />	
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/body_df" />	
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/dmr_hood_df" />	
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/dmr_hood_nm" />	

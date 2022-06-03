@@ -2382,7 +2382,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Expert Hardware
 			["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
-			["menu_kick_starter_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 ##20%##만큼 증가합니다.\n\n드릴을 멈출려고 하는 적들을 ##50%## 확률로 감전시켜 방해 공작를 막습니다.",
+			["menu_kick_starter_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 ##20%##만큼 증가합니다.\n\n드릴을 멈출려고 하는 적들을 ##50%## 확률로 감전시켜 방해 공작을 막습니다.",
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",

@@ -1231,6 +1231,11 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
+
+		if self._equipped_unit:base()._disable_steelsight_recoil_anim then
+			self._unit:camera():play_redirect(self:get_animation("recoil_exit"), 2000)
+		end
+
 		if self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.25) then
 			self._steelsight_wanted = true
 			return

@@ -2941,27 +2941,6 @@ function WeaponTweakData:_init_stats()
 			}
 		},
 
-		the_wolf_brigade = {
-			standing = {
-				0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-				0.4 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-				-0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-				0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.standing
-			},
-			crouching = {
-				0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-				0.4 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-				-0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-				0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching
-			},
-			steelsight = {
-				0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-				0.4 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-				-0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-				0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
-			}
-		},
-
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
 		moderate_kick = {
 			standing = {
@@ -3023,6 +3002,27 @@ function WeaponTweakData:_init_stats()
 				0.5 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.2 * self.stat_info.stance_recoil_mults.steelsight,
 				0.6 * self.stat_info.stance_recoil_mults.steelsight
+			}
+		},
+		
+		the_wolf_brigade = {
+			standing = {
+				0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.standing
+			},
+			crouching = {
+				0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching
+			},
+			steelsight = {
+				0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
 			}
 		},
 

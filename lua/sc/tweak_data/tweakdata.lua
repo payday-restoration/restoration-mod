@@ -425,8 +425,8 @@ tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
 --Had to include this in here due to some BS with it being in upgradestweakdata
 tweak_data.upgrades.values.player.health_multiplier = {1.15, 1.4}
-tweak_data.upgrades.values.trip_mine.quantity = {3, 7}
-tweak_data.upgrades.values.shape_charge.quantity = {3, 5}
+tweak_data.upgrades.values.trip_mine.quantity = {3, 6}
+tweak_data.upgrades.values.shape_charge.quantity = {2, 4}
 
 tweak_data.interaction.drill_upgrade.timer = 3
 tweak_data.interaction.gen_int_saw_upgrade.timer = 3

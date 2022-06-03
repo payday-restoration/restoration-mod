@@ -1,3 +1,5 @@
+Drill.on_hit_autorepair_chance = 0.75
+
 Hooks:PostHook(Drill, "start", "res_start", function(self)
 	managers.groupai:state():set_area_min_police_force(self._unit:key(), 3, self._unit:position())
 end)
@@ -85,6 +87,58 @@ function Drill:_register_sabotage_SO()
 	self._sabotage_SO_id = "drill_sabotage" .. tostring(self._unit:key())
 
 	managers.groupai:state():add_special_objective(self._sabotage_SO_id, so_descriptor)
+end
+
+function Drill:on_sabotage_SO_started(saboteur)
+	if not self._saboteur or self._saboteur:key() ~= saboteur:key() then
+		debug_pause_unit(self._unit, "[Drill:on_sabotage_SO_started] wrong saboteur", self._unit, saboteur, self._saboteur)
+	end
+	
+	local can_stun = false
+	
+	if self._skill_upgrades.auto_repair_level_2 and self._skill_upgrades.auto_repair_level_2 > 0 then
+		can_stun = true
+	end	
+	
+	local stun_roll = math.rand(1)
+	local stun_chance = tweak_data.upgrades.player_drill_stun_chance or 0.5
+	
+	if can_stun and stun_roll <= stun_chance then	
+		local pos = saboteur:position()
+		local normal = math.UP
+		local range = 50
+		local slot_mask = managers.slot:get_mask("explosion_targets")
+
+		local hit_units, splinters = managers.explosion:detect_and_tase({
+			player_damage = 0,
+			tase_strength = "heavy",
+			hit_pos = pos,
+			range = range,
+			collision_slotmask = slot_mask,
+			curve_pow = 3,
+			damage = 10,
+			ignore_unit = self._unit,
+			alert_radius = 1
+		})
+		
+		saboteur:sound():play("gl_electric_explode", nil, true)
+
+		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)		
+		
+		self._saboteur = nil
+		
+		self:_register_sabotage_SO()		
+	else
+		self._saboteur = nil
+
+		self._unit:timer_gui():set_jammed(true)
+
+		if not self._bain_report_sabotage_clbk_id then
+			self._bain_report_sabotage_clbk_id = "Drill_bain_report_sabotage" .. tostring(self._unit:key())
+
+			managers.enemy:add_delayed_clbk(self._bain_report_sabotage_clbk_id, callback(self, self, "clbk_bain_report_sabotage"), TimerManager:game():time() + 2 + 4 * math.random())
+		end	
+	end
 end
 
 Hooks:PostHook(Drill, "on_sabotage_SO_completed", "RR_on_sabotage_SO_completed", function(self, saboteur)

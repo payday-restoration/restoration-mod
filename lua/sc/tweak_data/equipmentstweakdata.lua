@@ -16,7 +16,7 @@ function EquipmentsTweakData:init()
 	--Because you're not getting 6 fucking sentries--
 	self.sentry_gun.quantity = {1}
 	self.first_aid_kit.quantity = {3}
-	self.trip_mine.quantity = {3, 3}
+	self.trip_mine.quantity = {4, 4}
 	self.ecm_jammer.quantity = {2}
 	self.ecm_jammer.deploy_time = 1
 	self.specials.cable_tie.quantity = 2

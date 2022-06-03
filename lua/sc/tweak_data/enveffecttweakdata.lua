@@ -101,7 +101,7 @@ end
 function EnvEffectTweakData:trip_mine_fire()
 	local params = {
 		damage = 6,
-		player_damage = 3,
+		player_damage = 0,
 		fire_dot_data = {
 			dot_damage = 1,
 			dot_trigger_max_distance = 3000,

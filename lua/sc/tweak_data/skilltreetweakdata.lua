@@ -987,20 +987,22 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Danger Close--
+			--Demoman--
 			self.skills.combat_engineering = {
 				["name_id"] = "menu_trip_mine_expert_beta_sc",
 				["desc_id"] = "menu_combat_engineering_desc_sc",
-				["icon_xy"] = {4, 6},
+				["icon_xy"] = {9, 7},
 				[1] = {
 					upgrades = {
-						"trip_mine_explosion_size_multiplier_1"
+						"shape_charge_quantity_increase_1",
+						"player_trip_mine_deploy_time_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"trip_mine_damage_multiplier_1"
+						"shape_charge_quantity_increase_2",
+						"trip_mine_explosion_size_multiplier_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1025,53 +1027,10 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Demoman--
+			--Fire Trap--
 			self.skills.more_fire_power = {
 				["name_id"] = "menu_more_fire_power_sc",
 				["desc_id"] = "menu_more_fire_power_desc_sc",
-				["icon_xy"] = {9, 7},
-				[1] = {
-					upgrades = {
-						"shape_charge_quantity_increase_1",
-						"trip_mine_quantity_increase_1",
-						"player_trip_mine_deploy_time_multiplier_1"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"shape_charge_quantity_increase_2",
-						"trip_mine_quantity_increase_2",
-						"player_trip_mine_deploy_time_multiplier_2"
-						
-					},
-					cost = self.costs.hightierpro
-				}
-			}
-
-			--Kickstarter--
-			self.skills.kick_starter = {
-				["name_id"] = "menu_kick_starter_beta_sc",
-				["desc_id"] = "menu_kick_starter_beta_desc_sc",
-				["icon_xy"] = {9, 8},
-				[1] = {
-					upgrades = {
-						"player_drill_autorepair_1"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"player_drill_melee_hit_restart_chance_1"
-					},
-					cost = self.costs.hightierpro
-				}
-			}
-
-			--Fire Trap--
-			self.skills.fire_trap = {
-				["name_id"] = "menu_fire_trap_beta_sc",
-				["desc_id"] = "menu_fire_trap_beta_desc_sc",
 				["icon_xy"] = {9, 9},
 				[1] = {
 					upgrades = {
@@ -1081,7 +1040,47 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"trip_mine_fire_trap_2"
+						"trip_mine_quantity_increase_1",
+						"trip_mine_quantity_increase_2",
+						"trip_mine_damage_multiplier_1"
+					},
+					cost = self.costs.hightierpro
+				}
+			}
+
+			--Expert Hardware--
+			self.skills.kick_starter = {
+				["name_id"] = "menu_kick_starter_beta_sc",
+				["desc_id"] = "menu_kick_starter_beta_desc_sc",
+				["icon_xy"] = {5, 5},
+				[1] = {
+					upgrades = {
+						"player_drill_autorepair_1"
+					},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {
+						"player_drill_autorepair_2"
+					},
+					cost = self.costs.hightierpro
+				}
+			}
+
+			--Kick Starter--
+			self.skills.fire_trap = {
+				["name_id"] = "menu_fire_trap_beta_sc",
+				["desc_id"] = "menu_fire_trap_beta_desc_sc",
+				["icon_xy"] = {9, 8},
+				[1] = {
+					upgrades = {
+						"player_drill_melee_hit_restart_chance_1"
+					},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {
+						"player_no_interrupt_interaction"
 					},
 					cost = self.costs.hightierpro
 				}

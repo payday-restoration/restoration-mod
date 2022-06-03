@@ -831,11 +831,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					0.5 --Unused
 				}				
 				
-			--Danger Close
+			--Demoman
 				--Basic
-					self.values.trip_mine.explosion_size_multiplier_1 = {1.3}
+				self.values.player.trip_mine_deploy_time_multiplier = {
+					0.75, --Basic
+					0.5 --Unused
+				}					
 				--Ace
-					self.values.trip_mine.damage_multiplier = {1.5}
+				self.values.trip_mine.explosion_size_multiplier_1 = {1.3}		
+				--Shaped Charge increase amount handled in tweakdata
 
 			--Drill Sawgent
 				self.values.player.drill_speed_multiplier = {
@@ -843,26 +847,26 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					0.7 --Ace
 				}
 				
-			--Demoman
-				self.values.player.trip_mine_deploy_time_multiplier = {
-					0.8, --Basic
-					0.6 --Ace
-				}
+			--Fire Trap
+				self.values.trip_mine.fire_trap = {
+					{0, 1}, --Basic
+					{10, 1.5} --Unused
+				}				
 				--Quantity Increase Located in tweakdata.lua since their quantity is hardcoded in the exe
 
-				--Kickstarter
-					--Basic
-						self.values.player.drill_autorepair_1 = {0.3}
-					--Ace
-						self.values.player.drill_melee_hit_restart_chance = {true}
-				
-				--Fire Trap
-					self.values.trip_mine.fire_trap = {
-						{0, 1}, --Basic
-						{10, 1.5} --Ace
-					}
+			--Expert Hardware
+				--Basic
+					self.values.player.drill_autorepair_1 = {0.3}
 					
-					self.values.player.no_interrupt_interaction = {true}
+				--Ace
+					self.values.player.drill_autorepair_2 = {0.5}
+					self.player_drill_stun_chance = 0.5
+				
+			--Kick Starter
+				--Basic
+				self.values.player.drill_melee_hit_restart_chance = {true}
+				--Ace
+				self.values.player.no_interrupt_interaction = {true}
 			
 		--Combat Engineer--
 			--Sharpshooter

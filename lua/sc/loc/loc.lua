@@ -2368,25 +2368,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_hardware_expert_beta_sc"] = "Silent Drilling",
 			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYour ##drills are now silent##, civilians and guards have to see the drills in order to get alerted.\n\nACE: ##$pro##\nYou fix drills and saws ##50%## faster.",
 
-			--Danger Close
-			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
-			["menu_combat_engineering_desc_sc"] = "BASIC: ##$basic##\nThe radius of trip mine explosion is increased by ##30%.##\n\nACE: ##$pro##\nYour trip mine deals ##50%## more damage.",
+			--Demoman
+			["menu_trip_mine_expert_beta_sc"] = "Demoman",
+			["menu_combat_engineering_desc_sc"] = "BASIC: ##$basic##\nYou can now place up to ##6## shaped charges.\n\nYou deploy shaped charges and trip mines ##25%## faster.\n\nACE: ##$pro##\nYou can now place up to ##8## shaped charges.\n\nThe explosion radius of your trip mines is increased by ##30%.##",
 
 			--Drill Sawgeant
 			["menu_drill_expert_beta_sc"] = "Drill Sawgeant",
 			["menu_drill_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYour drill and saw efficiency is increased by ##10%.##\n\nACE: ##$pro##\nFurther increases your drill and saw efficency by ##20%.##",
 
-			--Demoman--
-			["menu_more_fire_power_sc"] = "Demoman",
-			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##6## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##8## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",
+			--Fire Trap--
+			["menu_more_fire_power_sc"] = "Fire Trap",
+			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYour trip mines now spread fire around the area of detonation for ##10## seconds in a ##7.5## meter radius.\n\nFire produced by trip mines do not deal self damage or friendly fire.\n\nACE: ##$pro##\nYou can now carry ##10## trip mines.\n\nYour trip mine deals ##50%## more damage.",
+
+			--Expert Hardware
+			["menu_kick_starter_beta_sc"] = "Expert Hardware",
+			["menu_kick_starter_beta_desc_sc"] = "BASIC: ##$basic##\nYour drills and saws gain a ##30%## chance to automatically restart after breaking.\n\nACE: ##$pro##\nYour drills and saws gain an additional ##20%## chance to automatically restart after jamming.\n\nEnemies that attempt to stop your drills have a ##50%## chance of being tased, stopping their sabotage attempt.",
 
 			--Kickstarter
-			["menu_kick_starter_beta_sc"] = "Kick Starter",
-			["menu_kick_starter_beta_desc_sc"] = "BASIC: ##$basic##\nYour drills and saws gain a ##30%## chance to automatically restart after breaking.\n\nACE: ##$pro##\nYou gain the ability to restart drills and saws by hitting them with a melee attack. You get ##1## chance for each time it breaks with a ##50%## success rate.",
-
-			--Fire Trap
-			["menu_fire_trap_beta_sc"] = "Fire Trap",
-			["menu_fire_trap_beta_desc_sc"] = "BASIC: ##$basic##\nYour trip mines now spread fire around the area of detonation for ##10## seconds in a ##7.5## meter radius.\n\nACE: ##$pro##\nYour trip mines now spread fire around the area of detonation for ##20## seconds in an ##11.25## meter radius.",
+			["menu_fire_trap_beta_sc"] = "Kick Starter",
+			["menu_fire_trap_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to restart a drill with a melee strike.\n\nYou get ##1## chance for each time it jams with a ##75%## success rate.\n\nACE: ##$pro##\nYou ##no longer put away your weapon while performing interactions.##",
 
 
 			--}

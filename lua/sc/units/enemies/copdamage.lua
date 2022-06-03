@@ -140,7 +140,9 @@ local enemies_plink = {
 
 local grenadier_smash = {
 	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
-	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk"),     	
+	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk"),
+	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
+	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"),     	
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk")    	
 }

@@ -993,7 +993,20 @@
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	
 	<!--Weapon Mod Trails-->
-	<effect				path="effects/particles/weapons/sterwers_trail" force="false"/>
+	<!--M249/240 casings-->
+    <effect path="_dmc/effects/shell_lmg_down" force="true" load="true" unload="true" reload="true"/>
+	<!--NATO Tracer-->
+    <effect path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
+	<!--Warsaw Tracer-->
+    <effect path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
+	<!--STERWERS Tracer-->
+    <effect path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+	<!--Large Tracer-->
+    <effect path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
 	
 	<!--Stat Boost-->
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>

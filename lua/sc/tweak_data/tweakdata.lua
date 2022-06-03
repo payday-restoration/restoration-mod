@@ -518,7 +518,7 @@ velocity = {
 	'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter','launcher_poison_arbiter',
 	'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
 }
-velocity_mult = 0.35
+--velocity_mult = 0.35
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 21000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = 0

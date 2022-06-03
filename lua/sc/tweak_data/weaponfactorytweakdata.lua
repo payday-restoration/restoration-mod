@@ -5380,7 +5380,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 
 	--Disabling Vertical Grip Mods
 	self.wpn_fps_smg_mp7.uses_parts[8] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
-	
+
 	self.wpn_fps_smg_mp7_npc.uses_parts = deep_clone(self.wpn_fps_smg_mp7.uses_parts)
 	
 end)
@@ -13153,7 +13153,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_erma", "resmod_erma", function(sel
 	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_singlefire")
 	table.insert(self.wpn_fps_smg_erma_npc.uses_parts, "wpn_fps_upg_i_singlefire")		
 	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_autofire")
-	table.insert(self.wpn_fps_smg_erma_npc.uses_parts, "wpn_fps_upg_i_autofire")	
+	table.insert(self.wpn_fps_smg_erma_npc.uses_parts, "wpn_fps_upg_i_autofire")
 
 	self.wpn_fps_smg_erma_npc.uses_parts = deep_clone(self.wpn_fps_smg_erma.uses_parts)	
 
@@ -20703,32 +20703,18 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		
 		--Hammer 23 short barrel
 		self.parts.wpn_fps_shot_bs23_barrel_short.supported = true
-		self.parts.wpn_fps_shot_bs23_barrel_short.stats = {
-			concealment = 1,
-			spread = -1
-		}
-		self.parts.wpn_fps_shot_bs23_barrel_short.custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		}
+		self.parts.wpn_fps_shot_bs23_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_shot_bs23_barrel_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 		--Hammer 23 Sturdy Wooden Stock
 		self.parts.wpn_fps_shot_bs23_stock_full.supported = true
-		self.parts.wpn_fps_shot_bs23_stock_full.stats = {
-			recoil = 1,
-			spread = -1
-		}
-		self.parts.wpn_fps_shot_bs23_stock_full.custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		}		
+		self.parts.wpn_fps_shot_bs23_stock_full.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+		self.parts.wpn_fps_shot_bs23_stock_full.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 		
 		--Hammer 23 Hazardous stock
 		self.parts.wpn_fps_shot_bs23_stock_none.supported = true
-		self.parts.wpn_fps_shot_bs23_stock_none.stats = {
-			recoil = -1,
-			concealment = 1
-		}		
+		self.parts.wpn_fps_shot_bs23_stock_none.stats = deep_clone(stocks.remove_nocheeks_stats)
+		self.parts.wpn_fps_shot_bs23_stock_none.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 		
 		self.parts.wpn_fps_shot_bs23_rec_sight_rear.stance_mod = {
 			wpn_fps_shot_bs23 = {

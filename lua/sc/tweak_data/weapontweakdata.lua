@@ -3172,13 +3172,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 		end
 	end
-	
+		
+	local faction = {
+		'p90','mp7','lemming','olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60'
+	}	
+	for i, wep_id in ipairs(faction) do
+		self[ wep_id ].nato = true
+	end
+	faction = {
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12'
+	}	
+	for i, wep_id in ipairs(faction) do
+		self[ wep_id ].warsaw = true
+	end
 		
 	local recat = { "g26", "jowi", "holt", "x_holt", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14", "sub2000" }	
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_pis" }
 		self[ wep_id ].damage_type = "pistol"
-	end
+	end	
 	
 	recat = { "usp", "x_usp", "type54", "x_type54", "deagle", "x_deagle", "shrew", "x_shrew", "colt_1911", "x_1911", "model3", "x_model3", "rsh12", "new_raging_bull", "x_rage", "peacemaker", "mateba", "x_2006m", "chinchilla", "x_chinchilla", "m1911", "c96" }
 	for i, wep_id in ipairs(recat) do
@@ -7006,7 +7018,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.has_description = true
 				self.uzi.desc_id = "bm_uzi_sc_desc"
 				self.uzi.AMMO_MAX = 60
-				self.uzi.CLIP_AMMO_MAX = 22
+				self.uzi.CLIP_AMMO_MAX = 20
 				self.uzi.FIRE_MODE = "auto"
 				self.uzi.fire_mode_data = {}
 				self.uzi.fire_mode_data.fire_rate = 0.1
@@ -7018,8 +7030,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.ads_speed = 0.240
 				self.uzi.damage_falloff = {
 					start_dist = 1800,
-					end_dist = 4200,
-					min_mult = 0.33333
+					end_dist = 4900,
+					min_mult = 0.3333333333
 				}
 				self.uzi.stats = {
 					damage = 30,
@@ -8420,6 +8432,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 9,
 				reload = 20
 			}
+			self.m249.shell_ejection = "_dmc/effects/shell_lmg_down"
 			self.m249.stats_modifiers = nil
 			self.m249.timers.equip = 1.2
 			self.m249.timers.reload_not_empty = 4.15

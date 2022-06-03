@@ -549,7 +549,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		local trail = World:effect_manager():spawn(self._trail_effect_table)
 
 		if furthest_hit then
-			World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 600) / 10000, 0, furthest_hit.distance))
+			World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 500) / 10000, 0, furthest_hit.distance))
 		end
 	end
 

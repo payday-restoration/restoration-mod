@@ -622,14 +622,28 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._muzzle_effect_table.effect = Idstring(self._muzzle_effect_pls)
 	end
 
+	self._warsaw = self:weapon_tweak_data().warsaw
+	self._nato = self:weapon_tweak_data().nato
+	
+    if self._trail_effect_table then
+		if self._starwars == true then
+		--log("STARWARS TRACERS")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail") 
+		elseif self._nato then
+		--log("NATO TRACERS")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/nato_trail")
+		elseif self._warsaw then
+		--log("WARSAW TRACERS")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/warsaw_trail")
+		elseif self._large_tracers then
+		--log("LARGE TRACERS")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/large_trail")
+		end 
+    end	
+
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
 	self._fire_rate_multiplier = self._fire_rate_multiplier * self._rof_mult
 
-    if BeardLib and self._trail_effect_table then
-        if self._starwars == true then
-            self._trail_effect_table.effect = Idstring("effects/particles/weapons/sterwers_trail")
-		end
-    end	
 
 	self:precalculate_ammo_pickup()
 end

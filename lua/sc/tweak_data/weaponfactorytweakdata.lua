@@ -8696,6 +8696,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 		recoil = 4,
 		spread = -2
 	}
+	self.parts.wpn_fps_pis_c96_nozzle.custom_stats = { starwars = true }
 	
 	--Barrel Sight 44
 	self.parts.wpn_fps_pis_c96_sight.pcs = {}

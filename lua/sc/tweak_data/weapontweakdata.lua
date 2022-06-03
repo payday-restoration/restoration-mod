@@ -8624,6 +8624,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"lmg",
 					"smg"
 				}
+				self.mg42.sounds.fire = "mg42_fire"
+				self.mg42.sounds.fire_single = "mg42_fire"
 				self.mg42.CLIP_AMMO_MAX = 50
 				self.mg42.AMMO_MAX = 160
 				self.mg42.has_description = true

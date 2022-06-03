@@ -8535,16 +8535,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.supported = true
 	self.parts.wpn_fps_lmg_mg42_b_vg38.stats = {
 		value = 2,
+		recoil = 6,
 		suppression = 10,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
-		starwars = true
+		starwars = true,
+		rof_mult = 0.5
 	}				
 	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
-	self.parts.wpn_fps_lmg_mg42_b_vg38.sound_switch = {
-		suppressed = "suppressed_b"
-	}
+
 
 	self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine_extra"
 	self.parts.wpn_fps_lmg_mg42_reciever.bullet_objects = {

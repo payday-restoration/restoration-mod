@@ -1069,12 +1069,12 @@
 	<cooked_physics		path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	>-->
 	
-	<!--Blank Statboost-->
+	<!--PEW PEW PEW-->
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>
 	<bnk				path="soundbanks/weapon_sterling" force = "true"/>
 	<bnk				path="soundbanks/weapon_mg42" force = "true"/>
 	
-	<!--PEW PEW PEW-->
+	<!--Blank Statboost-->
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>
 	
 	<!--SC Skill atlas-->

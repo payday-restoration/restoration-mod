@@ -97,6 +97,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.spa.player_style = "slaughterhouse"
 	self.spa.flashlights_on = true
 	
+	self.fish.ai_group_type = nypd
+	self.fish.player_style = "tux"
+	
 	self.brb.ai_group_type = nypd
 	self.brb.player_style = "peacoat"
 	
@@ -226,8 +229,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
     self.escape_overpass.flashlights_on = true
     self.escape_overpass_night.flashlights_on = true
     self.escape_garage.flashlights_on = true
-	
-	self.fish.player_style = "tux"
 	
 	self.arena.player_style = "hiphop"
 

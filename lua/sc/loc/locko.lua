@@ -1026,10 +1026,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_6_mark"] = "6x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",
 
 		--'Nade Launchers--
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 7.5m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 120의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 7.5m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 80의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 7.5m이며 5초 동안 지속되며 그 안에 서 있는 적에게 초당 40의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에 폭발하는 탄을 발사합니다. 폭발은 800의 피해를 주고 반경은 5미터입니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 3.75m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 120의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 3.75m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 80의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 3.75m이며 5초 동안 지속되며 그 안에 서 있는 적에게 초당 40의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에 폭발하는 탄을 발사합니다. 폭발은 720의 피해를 주고 반경은 5미터입니다.",
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 400의 피해를 주고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 200의 피해를 입히고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
 		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 300의 피해를 주고 반경은 2.5미터이며 일정 확률로 적을 감전시킵니다.",
@@ -1583,7 +1583,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "당신과 당신의 팀원은 돈 보상을 +5%만큼 받습니다.",
 
 		["bm_wp_upg_i_singlefire_desc"] = "무기를 단발 모드로 잠급니다.",
-		["bm_wp_upg_i_autofire_desc"] = "무기를 자동 발사 모드로 잠급니다.",
+		["bm_wp_upg_i_autofire_desc"] = "무기를 완전 자동 사격 모드로 잠급니다.",
 
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para 소총",
@@ -1612,7 +1612,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wpn_prj_hur_desc"] = "소지 갯수: 6개 \n데미지: 360 \n \n날카로운 도끼는 절대 틀리지 않다고 합니다. 던질 수 있는 날카로운 도끼는 더 이상 옳지 않습니다.",
 		["bm_grenade_electric_desc"] = "소지 갯수: 3개\n데미지: 400 \n범위: 5m \n기폭: 3초 \n \n파편은 모두 훌륭하고 좋지만 일부는 튀깁니다. 이 작고 아름다운 이것은 고전압으로 약간의 피해를 입히기에 다소 실용적인 짐승입니다.",
 		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 생화학 수류탄",
-		["bm_grenade_poison_gas_grenade_desc"] = "소지 갯수: 3개\n데미지: 10초당 300 \n범위: 6m \n지속시간 (가스 구름): 20초 \n기폭: 정지 상태를 유지한 후 1초 \n- 각 수류탄은 피해를 입은 적을 한 번 기절시킵니다.\n- 실드, 불도저, 척탄병, 캡틴은 스턴 효과에 면역입니다.\n\n이 실험적인 생물무기는 당신이나 당신의 팀원들에게 해를 끼치지 않도록 설계된 특정 유전자형을 표적으로 하는 독성 가스 구름을 뿜어냅니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 선택한 무기지, 페코.",
+		["bm_grenade_poison_gas_grenade_desc"] = "소지 갯수: 3개\n데미지: 10초당 300 \n범위: 6m \n지속시간 (가스 구름): 20초 \n기폭: 정지 상태를 유지한 후 1초 \n- 적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.\n- 실드, 불도저, 척탄병, 캡틴은 스턴 효과에 면역입니다.\n\n이 실험적인 생물무기는 당신이나 당신의 팀원들에게 해를 끼치지 않도록 설계된 특정 유전자형을 표적으로 하는 독성 가스 구름을 뿜어냅니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 선택한 무기지, 페코.",
 				
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
@@ -1776,7 +1776,6 @@ end
 	local lapd = tweak_data.levels.ai_groups.lapd
 	local mex = tweak_data.levels.ai_groups.federales
 	local akan = tweak_data.levels.ai_groups.russia
-	local nypd = tweak_data.levels.ai_groups.nypd
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1797,10 +1796,6 @@ end
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
-		end)
-	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
 		end)	
 	end
  end
@@ -2373,25 +2368,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_hardware_expert_beta_sc"] = "조용한 드릴링",
 			["menu_hardware_expert_beta_desc_sc"] = "베이직: ##$basic##\n이제 ##드릴은 조용해집니다##, 시민과 경비원은 경고를 받으려면 드릴을 봐야 합니다.\n\n에이스: ##$pro##\n드릴과 톱의 수리속도가 ##50%##증가합니다.",
 			
-			--Danger Close
-			["menu_trip_mine_expert_beta_sc"] = "데인저 클로즈",
-			["menu_combat_engineering_desc_sc"] = "베이직: ##$basic##\n트립 마인의 피해범위가 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n트립 마인의 공격력이 ##50%##만큼 증가합니다.",
+			--Demoman
+			["menu_trip_mine_expert_beta_sc"] = "데모맨",
+			["menu_combat_engineering_desc_sc"] = "베이직: ##$basic##\n성형작약탄을 최대 ##6##개까지 설치할 수 있습니다.\n\n성형작약탄과 트립마인을 설치하는 속도가 ##25%##만큼 빨라집니다.\n\n에이스: ##$pro##\n성형작약탄을 최대 ##8##개까지 설치할 수 있습니다.\n\n트립 마인의 폭발 반경이 ##30%##만큼 증가합니다.",
 
 			--Drill Sawgeant
 			["menu_drill_expert_beta_sc"] = "드릴 교관",
 			["menu_drill_expert_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱의 효율이 ##10%##만큼 증가합니다.\n\n에이스: ##$pro##\n드릴과 톱의 효율성을 ##20%##만큼 더 증가합니다.",
 
-			--Demoman--
-			["menu_more_fire_power_sc"] = "데모맨",
-			["menu_more_fire_power_desc_sc"] = "베이직: ##$basic##\n성형작약탄 ##6##개, 트립마인 ##6##개를 소지합니다.\n\n성형작약탄과 트립마인을 ##20%##만큼 빠르게 설치합니다.\n\n에이스: ##$pro##\n성형작약탄 ##8##개, 트립마인 ##10##개를 더 소지합니다.\n\n성형작약탄과 트립마인을 추가로 ##20%##만큼 빠르게 설치합니다.",
+			--Fire Trap--
+			["menu_more_fire_power_sc"] = "화염 함정",
+			["menu_more_fire_power_desc_sc"] = "베이직: ##$basic##\n트립마인은 이제 폭발 지역 주위에서 ##7.5##미터 반경에 ##10##초 동안 불 지대를 만듭니다.\n\n트립마인으로 생성된 불 지대는 자기 피해나 아군 피해를 가하지 않습니다.\n\n에이스: ##$pro##\n트립마인 ##10##개를 더 소지합니다.\n\n트립마인의 피해량이 ##50%##만큼 증가합니다.",
+
+			--Expert Hardware
+			["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
+			["menu_kick_starter_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 ##20%##만큼 증가합니다.\n\n드릴을 멈출려고 하는 적들을 ##50%## 확률로 감전시켜 방해 공작을 막습니다.",
 
 			--Kickstarter
-			["menu_kick_starter_beta_sc"] = "킥스타터",
-			["menu_kick_starter_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n##50%##의 확률로 드릴을 근접무기로 때려서 고칠 수 있습니다. 다만 기회는 드릴이 고장날 때마다 ##한 번##씩만 주어집니다.",
-
-			--Fire Trap
-			["menu_fire_trap_beta_sc"] = "화염 함정",
-			["menu_fire_trap_beta_desc_sc"] = "베이직: ##$basic##\n##7.5##미터 반경에 ##10##초간 화염 데미지를 입힙니다.\n\n에이스: ##$pro##\n이제 ##11.25##미터 반경에 ##20##초 동안 화염 데미지를 입힙니다.",
+			["menu_fire_trap_beta_sc"] = "킥스타터",
+			["menu_fire_trap_beta_desc_sc"] = "베이직: ##$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n##75%##의 성공률로 드릴이 고장날 때마다 기회를 ##1##번 얻습니다.\n\n에이스: ##$pro##\n상호작용을 하는 동안 ##더 이상 무기를 넣지 않습니다.##",
 
 
 			--}

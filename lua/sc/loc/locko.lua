@@ -1097,7 +1097,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mp5"] = "Compact-5 기관단총",	
 		["bm_mp5_sc_desc"] = "Gewehr-3의 여동생.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
 		--Uzi
-		["bm_uzi_sc_desc"] = "Uzi는 신뢰할 수 있고 느린 발사속도 덕분에 펀치를 날릴 수 있을 정도로 제어하기 쉬운 기관단총으로 만들어져 있습니다. 특히 현재 .45 ACP탄 변환을 감안할 때 말이죠.",
+		["bm_uzi_sc_desc"] = "Uzi는 신뢰할 수 있고 느린 발사속도 덕분에 특히 .41 AE탄으로 변환해도 펀치를 날릴 수 있을 정도로 제어하기 쉬운 기관단총으로 만들어져 있습니다.",
 		--Chicago Typewriter
 		["bm_thompson_sc_desc"] = "고용량 드럼 탄창을 사용하여 적을 쓰려트릴때 마피아의 열기를 불러일으킬 수 있습니다.",		
 
@@ -1776,7 +1776,6 @@ end
 	local lapd = tweak_data.levels.ai_groups.lapd
 	local mex = tweak_data.levels.ai_groups.federales
 	local akan = tweak_data.levels.ai_groups.russia
-	local nypd = tweak_data.levels.ai_groups.nypd
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1797,10 +1796,6 @@ end
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
-		end)	
-	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
 		end)	
 	end
  end

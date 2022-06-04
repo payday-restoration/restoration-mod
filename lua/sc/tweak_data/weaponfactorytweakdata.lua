@@ -8783,9 +8783,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
 		starwars = true,
-		rof_mult = 0.5454545,
-		falloff_start_mult = 1.5,
-		falloff_end_mult = 1.5,
+		rof_mult = 0.818181818,
+		falloff_start_mult = 1.25,
+		falloff_end_mult = 1.25,
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = {"silencer"}
 	self.parts.wpn_fps_smg_sterling_b_e11.override = {

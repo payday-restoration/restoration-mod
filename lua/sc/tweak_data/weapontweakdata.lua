@@ -6855,7 +6855,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.auto.fire_rate = 0.10909090909
 				self.sterling.kick = self.stat_info.kick_tables.right_recoil
 				self.sterling.supported = true
-				self.sterling.ads_speed = 0.260
+				self.sterling.ads_speed = 0.240
 				self.sterling.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 5200,
@@ -6877,6 +6877,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sterling.stats_modifiers = nil
 				self.sterling.panic_suppression_chance = 0.05
+				self.sterling.reload_speed_multiplier = 1.2
 				self.sterling.timers.reload_exit_empty = 0.6
 				self.sterling.timers.reload_exit_not_empty = 0.6
 

@@ -3174,13 +3174,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 		
 	local faction = {
-		'p90','mp7','lemming','olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60'
+		'p90','mp7','lemming','olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60','corgi'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].nato = true
 	end
 	faction = {
-		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12'
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].warsaw = true
@@ -10919,6 +10919,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	--OICW
 	if self.osipr then
+		self.osipr.nato = true
 		self.osipr.tactical_reload = 1		
 		self.osipr.AMMO_MAX = 120
 		self.osipr.CLIP_AMMO_MAX = 30
@@ -11113,6 +11114,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.tilt then --Gambyt's AN 92
+		self.tilt.warsaw = true
 		self.tilt.recategorize = { "light_ar" }		
 		self.tilt.has_description = false		
 		self.tilt.tactical_reload = 1
@@ -11369,6 +11371,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end		
 		
 	if self.sg416 then --Gambyt's SG416
+		self.sg416.nato = true
 		self.sg416.recategorize = { "light_ar" }
 		self.sg416.damage_type = "assault_rifle"
 		self.sg416.has_description = false						
@@ -11411,6 +11414,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.spike then --Gambyt's Spike Rifle
+		self.spike.warsaw = true
 		self.spike.recategorize = { "heavy_ar" }
 		self.spike.has_description = false						
 		self.spike.tactical_reload = 1		
@@ -11524,6 +11528,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.sgs then --Gambyt's Guerilla 308.	
+		self.sgs.nato = true
 		self.sgs.recategorize = { "light_snp" }
 		self.sgs.damage_type = "sniper"
 		self.sgs.upgrade_blocks = nil
@@ -12207,6 +12212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.aek971 then --Pawcio's AEK 971
+		self.aek971.warsaw = true
 		self.aek971.CLIP_AMMO_MAX = 30
 		self.aek971.tactical_reload = 1												
 		self.aek971.AMMO_MAX = 180
@@ -12353,6 +12359,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
+		self.smolak.warsaw = true
 		self.smolak.categories = {
 			"assault_rifle"
 		}
@@ -12433,6 +12440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
+		self.aknato.nato = true
 		self.aknato.tactical_reload = 1
 		self.aknato.spread = {
 			standing = 3,

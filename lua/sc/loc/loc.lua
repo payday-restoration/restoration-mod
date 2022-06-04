@@ -1073,9 +1073,37 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
 
-
-
+		--Gecko Pistol
+		["bm_tranq_maxim_sc_desc"] = "The world's first integrally suppressed pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\nDeals damage over time with tranquilizer rounds.",
+		["bm_tranq_x_maxim_sc_desc"] = "The world's first integrally suppressed pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\nDeals damage over time with tranquilizer rounds.",
 		
+		--Igor (APS)
+		["bm_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
+		["bm_x_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
+
+		--Chimano Compact
+		["bm_jowi_sc_desc"] = "A Chimano that's configured to take concealment to the extreme at the cost of almost everything else.\n\nRumors say that Wick used this when seeking vengeance against the Russian mob.",
+		["bm_x_jowi_sc_desc"] = "When they're this small, why not carry two? An akimbo pairing that incorrectly gets attributed to as Wick's personal choice.",
+
+		--Glock 18c
+		["bm_g18c_sc_desc"] = "Fully automatic Austrian spraygun. Difficult to control, but at close range is absolutely devastating.",
+		["bm_x_g18c_sc_desc"] = "If one was a bullet hose, carrying two may as well be a storm. Mind the recoil!",
+
+		--CZ 75
+		["bm_czech_sc_desc"] = "One of the Wonder Nines, a machine pistol with fine ergonomics and handling. Used by counter terrorist forces all over the world.",
+		["bm_x_czech_sc_desc"] = "Another example of how not to use a machine pistol. How can you even comfortably reload the things?",
+
+		--Glock 17
+		["bm_g17_sc_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
+		["bm_x_g17_sc_desc"] = "Making up for puny 9mm by sheer amount of firepower and still taking advantage of low recoil.\n\nHoxton's choice when we busted him out.",
+
+		--Bernetti 9
+		["bm_b92fs_sc_desc"] = "A popular firearm due to an impressive magazine capacity and decent damage. Especially handy for confrontations with numerous antagonists.",
+		["bm_x_b92fs_sc_desc"] = "Two pistols are better than one. Another way to turn any engagement into a 9mm party.",
+
+		--93R
+		["bm_beer_sc_desc"] = "A borderline fictional piece of select-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.",
+				
 		--Baby Deagle--
 		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
 		--socom deez nuts--
@@ -1222,6 +1250,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
 		--FAL
 		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\nDeals 80% of its damage through body armor.",	
+		--SCAR
+		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\nDeals 80% of its damage through body armor.",			
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
 		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\nDeals 80% of its damage through body armor.",	
@@ -1284,7 +1314,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
-		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
@@ -2688,50 +2717,50 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##10%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
-		["menu_st_spec_10_desc_sc"] = "Luck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\n\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big.\n\nBenefits from a full perk deck:\n##-##Ammo supplies you pick up also yield medical supplies that heal you for ##8## to ##12## health. Cannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##3## to ##5## seconds.\n##-##When you get healed from picking up ammo packs:\nYour ##teammates also gain an ammo pickup##.\nYour dodge meter is filled up by ##100%## of your dodge when healing from ammo packs.\nYour teammates get healed for ##50%## of the amount.\nYou gain ##30## armor.\n##-##You gain ##10## dodge points.",		
+		["menu_st_spec_10_desc_sc"] = "Luck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\n\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big.\n\nBenefits from a full perk deck:\n##-##Ammo supplies you pick up also yield medical supplies that heal you for ##8## to ##12## health. Cannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##3## to ##5## seconds.\n##-##When you get healed from picking up ammo packs:\nYour ##teammates also gain an ammo pickup##.\nYour dodge meter is filled up by ##100%## of your dodge when healing from ammo packs.\nYour teammates get healed for ##50%## of the amount.\n##-##You answer pagers ##25%## faster.\n##-##You gain ##30## armor.\n##-##You gain ##10## dodge points.",		
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies that heal you for ##4## to ##8## health.\n\nCannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##3## to ##5## seconds.",
 		["menu_deck10_3_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also gain an ammo pickup.\n\nYou gain ##5## dodge points.",
-		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo packs by an additional ##2##.\n\nWhen you get healed from picking up ammo packs, your dodge meter is also filled up by ##100%## of your dodge.",
+		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo packs by an additional ##2##.\n\nWhen you get healed from picking up ammo packs, your dodge meter is also filled up by ##100%## of your dodge.\n\nYou answer pagers ##25%## faster.",
 		["menu_deck10_7_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also get healed for ##50%## of the amount.\n\nYou gain ##5## dodge points.",
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##2##.\n\nWhen you get healed from picking up ammo packs, you also gain ##30## armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Infiltrator--
-		["menu_st_spec_8_desc_sc"] = "The Infiltrator is an agent hired by a government or large criminal organization to obtain information about its enemies, or by a corporation to obtain industrial secrets from its competitors.\n\nThe Infiltrator is a close combat specialist who knows how to use the environment in order to get the upper hand.\n\n\nBenefits from a full perk deck:\n##-##When you are within ##12## meters of an enemy, you receive ##20%## less damage from enemies.\n##-##Each successful melee hit grants an additional ##16%## melee damage boost for ##10## seconds and can stack up to ##5## times.\n##-##Each successful melee hit heals ##1## life point every ##1.25## seconds for ##10## seconds, stacks up to ##5## times.",
+		["menu_st_spec_8_desc_sc"] = "The Infiltrator is an agent hired by a government or large criminal organization to obtain information about its enemies, or by a corporation to obtain industrial secrets from its competitors.\n\nThe Infiltrator is a close combat specialist who knows how to use the environment in order to get the upper hand.\n\n\nBenefits from a full perk deck:\n##-##When you are within ##12## meters of an enemy, you receive ##20%## less damage from enemies.\n##-##Each successful melee hit grants an additional ##16%## melee damage boost for ##10## seconds and can stack up to ##5## times.\n##-##Your camera loop duration is increased by ##20## seconds.\n##-##Each successful melee hit heals ##1## life point every ##1.25## seconds for ##10## seconds, stacks up to ##5## times.",
 		["menu_deck8_1_desc_sc"] = "When you are within ##12## meters of an enemy, you receive ##5%## less damage from enemies.",
 		["menu_deck8_3_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##5%## less damage from enemies.",
-		["menu_deck8_5_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
+		["menu_deck8_5_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
 		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds, this effect can stack up to ##5## times.",
 		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##1## health every ##1.25## seconds for ##10## seconds, this effect can stack up to ##5## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
-		["menu_st_spec_9_desc_sc"] = "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\n\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy.\n\n\nBenefits from a full perk deck:\n##-##When you are within ##18## meters of an enemy, you receive ##5%## less damage from enemies.\n##-##Killing an enemy regenerates ##40## armor. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy with a melee weapon regenerates ##5%## health. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies. Cannot occur more than once every ##2## seconds.",
+		["menu_st_spec_9_desc_sc"] = "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\n\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy.\n\n\nBenefits from a full perk deck:\n##-##When you are within ##18## meters of an enemy, you receive ##5%## less damage from enemies.\n##-##Killing an enemy regenerates ##40## armor. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy with a melee weapon regenerates ##5%## health. Cannot occur more than once every ##3## seconds.\n##-##You carry ##1## additional body bag in your inventory.\n##-##Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies. Cannot occur more than once every ##2## seconds.",
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three enemies or more within ##18## meters, you take ##5%## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##3## seconds.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##5%## health.\n\nThis cannot occur more than once every ##3## seconds.",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##5%## health.\n\nThis cannot occur more than once every ##3## seconds.\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis cannot occur more than once every ##3## seconds.",
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_st_spec_11_desc_sc"] = "A typical grinder is a hard working individual, able to take control of difficult situations and turn them around.\n\nThe grinder relies heavily on always being in the front and dishing out punishment, being able to survive due to the fact that he does damage to the enemies regardless of how much damage he has sustained.\n\n\nBenefits from a full perk deck:\n##-##Damaging an enemy heals ##3## life point every second for ##5## seconds. This effect stacks up to ##5## times but cannot occur more than once every ##0.5## seconds and only while wearing the Flak Jacket. Damaging enemies with sentries or damage over time effects does not grant stacks.\n##-##You lose ##80## armor while wearing the Flak Jacket.\n##-##Every stack increases your movement speed by ##5%##.",
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##80## armor while wearing the Flak Jacket.",
+		["menu_st_spec_11_desc_sc"] = "A typical grinder is a hard working individual, able to take control of difficult situations and turn them around.\n\nThe grinder relies heavily on always being in the front and dishing out punishment, being able to survive due to the fact that he does damage to the enemies regardless of how much damage he has sustained.\n\n\nBenefits from a full perk deck:\n##-##Damaging an enemy heals ##3## life point every second for ##5## seconds. This effect stacks up to ##5## times but cannot occur more than once every ##0.5## seconds and only while wearing the Flak Jacket. Damaging enemies with sentries or damage over time effects does not grant stacks.\n##-##You lose ##80## armor while wearing the Flak Jacket.\n##-##You gain ##8## concealment while wearing the Flak Jacket.\n##-##Every stack increases your movement speed by ##5%##.\n##-##You gain the ability to place ##2## body bag cases.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##80## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
-		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.",
+		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.\n\nYou gain the ability to place ##2## body bag cases.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_9_desc_sc"] = "Every stack increases your movement speed by ##5%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Open your mind--
-		["menu_st_spec_13_desc_sc"] = "The Ex-Presidents are one of the most daring heisting crews out there. Great risk takers and brothers in arms. Their lack of fear for their own mortality brought them together and made them as successful as they are.\n\nAn Ex-President follows no rules and only adheres to the Ozaki 8, a set of trials to honor their nature.\n\n\nBenefits from a full perk deck:\n##-##While your armor is up, you will store ##8## health for every ##1## enemy you kill. When your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount. Maximum amount of stored health depends on your equipped armor.\n##-##Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill. Armor recovery speed is reset whenever your armor recovers.\n##-##Your dodge is increased by ##10## points.",
+		["menu_st_spec_13_desc_sc"] = "The Ex-Presidents are one of the most daring heisting crews out there. Great risk takers and brothers in arms. Their lack of fear for their own mortality brought them together and made them as successful as they are.\n\nAn Ex-President follows no rules and only adheres to the Ozaki 8, a set of trials to honor their nature.\n\n\nBenefits from a full perk deck:\n##-##While your armor is up, you will store ##8## health for every ##1## enemy you kill. When your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount. Maximum amount of stored health depends on your equipped armor.\n##-##Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill. Armor recovery speed is reset whenever your armor recovers.\n##-##Your dodge is increased by ##10## points.\n##-##Civilians intimidated by you and your crew remain intimidated ##25%## longer.",
 		["menu_deck13_1_desc_sc"] = "While your armor is up, you will store ##4## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.",
 		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYour dodge is increased by ##5## points.",
-		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",
+		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--THIS IS WAR BABY--
-		["menu_st_spec_14_desc_sc"] = "The Maniac Perk Deck is the embodiment of crazy and to never accept bad odds in moments of danger. By pushing through and constantly deal damage, your fellow heisters will be granted a temporary shield making all of you feel Jimmy's invulnerable spirit.\n\n\n\n\n\nBenefits from a full perk deck:\n##-##Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##. Hysteria Stacks: Incoming damage is reduced by ##1.5## points for every ##240## stacks of Hysteria. Hysteria Stacks decay by ##240## every ##8## seconds.\n##-##Members of your crew also gains the effect of your Hysteria Stacks.",
+		["menu_st_spec_14_desc_sc"] = "The Maniac Perk Deck is the embodiment of crazy and to never accept bad odds in moments of danger. By pushing through and constantly deal damage, your fellow heisters will be granted a temporary shield making all of you feel Jimmy's invulnerable spirit.\n\n\n\n\n\nBenefits from a full perk deck:\n##-##Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##. Hysteria Stacks: Incoming damage is reduced by ##1.5## points for every ##240## stacks of Hysteria. Hysteria Stacks decay by ##240## every ##8## seconds.\n##-##Members of your crew also gains the effect of your Hysteria Stacks.\n##-##Civilians intimidated by you and your crew remain intimidated ##25%## longer.",
 		["menu_deck14_1_desc_sc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##.\n\nHysteria Stacks:\nIncoming damage is reduced by ##1## point for every ##400## stacks of Hysteria. Hysteria Stacks decay by ##400## every ##8## seconds.",
-		["menu_deck14_5_desc_sc"] = "Changes the decay of your Hysteria Stacks to ##300## every ##8## seconds.",
+		["menu_deck14_5_desc_sc"] = "Changes the decay of your Hysteria Stacks to ##300## every ##8## seconds.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
 		["menu_deck14_7_desc_sc"] = "Incoming damage is now reduced by ##1## point for every ##300## stacks of Hysteria.",
 		["menu_deck14_9_desc_sc"] = "Hysteria stacks are ##100%## more potent for you.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
@@ -2784,10 +2813,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "Every ##25%## armor missing increases the number of health gained from kills by ##2##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "The Yakuza are one of the most feared crime syndicates in the world. Ruled by the ninkyo and lead by the Oyabun, the Yakuza are known for their strict code of conduct, organized nature and the tattoos that cover their entire bodies.\n\nAn outcast and a dropout from society, the Yakuza knows how it is to fend for himself. While he appears gentle, he is not to be taken lightly.\n\n\nBenefits from a full perk deck:\n##-##When your health is below 50%:\nYour dodge meter fills by up to ##8%## of your dodge every second.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy in melee (Stacks with effect 2).\nYou take up to ##20%## less damage.\n##-##Once per down, if you would be downed, you instead survive with ##1## life point and you regain ##50## armor.",
+		["menu_st_spec_12_desc_sc"] = "The Yakuza are one of the most feared crime syndicates in the world. Ruled by the ninkyo and lead by the Oyabun, the Yakuza are known for their strict code of conduct, organized nature and the tattoos that cover their entire bodies.\n\nAn outcast and a dropout from society, the Yakuza knows how it is to fend for himself. While he appears gentle, he is not to be taken lightly.\n\n\nBenefits from a full perk deck:\n##-##When your health is below 50%:\nYour dodge meter fills by up to ##8%## of your dodge every second.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy in melee (Stacks with effect 2).\nYou take up to ##20%## less damage.\n##-##You bag corpses and interact with hostages ##75%## faster.\n##-##Once per down, if you would be downed, you instead survive with ##1## life point and you regain ##50## armor.",
 		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills by up to ##8%## of your dodge every second.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck12_3_desc_sc"] = "The lower your health the more your dodge meter is filled when you kill an enemy. When your health is below ##50%##, your meter fills by up to ##50%## of your dodge.",
-		["menu_deck12_5_desc_sc"] = "The lower your health, the less damage you take. When your health is below ##50%##, you will take up to ##20%## less damage.",
+		["menu_deck12_5_desc_sc"] = "The lower your health, the less damage you take. When your health is below ##50%##, you will take up to ##20%## less damage.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 		["menu_deck12_7_desc_sc"] = "The lower your health the more your dodge meter is filled when you kill an enemy in melee. When your health is below ##50%##, your meter fills by up to ##50%## of your dodge.\n\nThis effect stacks with Hebi Irezumi.",
 		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\nNote: This effect does not apply to, nor is it refreshed by, downs caused by cloaker kicks and taser shocks.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 

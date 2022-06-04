@@ -3457,7 +3457,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Geck M2 (Maxim 9)
 				self.x_maxim9.has_description = true
-				self.x_maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
+				self.x_maxim9.desc_id = "bm_tranq_x_maxim_sc_desc"	
 				self.x_maxim9.fire_mode_data.fire_rate = 0.08571428571
 				self.x_maxim9.single.fire_rate = 0.08571428571
 				self.x_maxim9.CLIP_AMMO_MAX = 36
@@ -3490,6 +3490,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_maxim9.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo Igor (APS)
+				self.x_stech.has_description = true
+				self.x_stech.desc_id = "bm_x_stech_sc_desc"				
 				self.x_stech.fire_mode_data.fire_rate = 0.08
 				self.x_stech.AMMO_MAX = 150
 				self.x_stech.kick = self.stat_info.kick_tables.moderate_kick
@@ -3521,6 +3523,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_stech.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo Chimano Compact
+				self.jowi.has_description = true
+				self.jowi.desc_id = "bm_x_jowi_sc_desc"					
 				self.jowi.kick = self.stat_info.kick_tables.even_recoil
 				self.jowi.CLIP_AMMO_MAX = 20
 				self.jowi.AMMO_MAX = 180
@@ -3555,6 +3559,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Stryk18c
 				--Keeping
+				self.x_g18c.has_description = true
+				self.x_g18c.desc_id = "bm_x_g18c_sc_desc"						
 				self.x_g18c.fire_mode_data.fire_rate = 0.05454545454
 				self.x_g18c.single.fire_rate = 0.05454545454
 				self.x_g18c.CLIP_AMMO_MAX = 36
@@ -3587,6 +3593,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g18c.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo CZ 75
+				self.x_czech.has_description = true
+				self.x_czech.desc_id = "bm_x_czech_sc_desc"						
 				self.x_czech.CLIP_AMMO_MAX = 36
 				self.x_czech.AMMO_MAX = 180
 				self.x_czech.fire_mode_data.fire_rate = 0.06
@@ -3618,6 +3626,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_czech.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo Chimano .88
+				self.x_g17.has_description = true
+				self.x_g17.desc_id = "bm_x_g17_sc_desc"					
 				self.x_g17.kick = self.stat_info.kick_tables.even_recoil
 				self.x_g17.CLIP_AMMO_MAX = 36
 				self.x_g17.AMMO_MAX = 150
@@ -3651,6 +3661,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g17.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Bernetti 9
+				self.x_b92fs.has_description = true
+				self.x_b92fs.desc_id = "bm_x_b92fs_sc_desc"						
 				self.x_b92fs.kick = self.stat_info.kick_tables.even_recoil
 				self.x_b92fs.CLIP_AMMO_MAX = 30
 				self.x_b92fs.AMMO_MAX = 150
@@ -3716,6 +3728,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_holt.timers.reload_exit_not_empty = 0.65
 
 			--Beretta Auto (93R)
+				self.beer.has_description = true
+				self.beer.desc_id = "bm_beer_sc_desc"				
 				self.beer.use_data.selection_index = 2
 				self.beer.BURST_FIRE = 3
 				self.beer.BURST_FIRE_RATE_MULTIPLIER = nil
@@ -4095,6 +4109,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 	
 			--Igor
+				self.stech.has_description = true
+				self.stech.desc_id = "bm_x_stech_sc_desc"						
 				self.stech.fire_mode_data.fire_rate = 0.08
 				self.stech.AMMO_MAX = 75
 				self.stech.kick = self.stat_info.kick_tables.moderate_kick
@@ -8233,6 +8249,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.timers.reload_exit_not_empty = 0.4
 
 		--Eagle Heavy
+			self.scar.desc_id = "bm_scar_sc_desc"
+			self.scar.has_description = true		
 			self.scar.AMMO_MAX = 80
 			self.scar.CLIP_AMMO_MAX = 20
 			self.scar.fire_mode_data.fire_rate = 0.1

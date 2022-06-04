@@ -1461,6 +1461,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Hey you're getting your grinder on my grinder
 	self.values.player.level_5_armor_addend = {-8}
+	self.values.player.flak_jacket_concealment = {8}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
@@ -1815,6 +1816,15 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_flak_jacket_concealment_1 = {
+		name_id = "menu_player_flak_jacket_concealment",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "flak_jacket_concealment",
+			category = "player"
+		}
+	}	
 	self.definitions.player_civ_move_multiplier = {
 		name_id = "menu_civ_move_multiplier",
 		category = "feature",

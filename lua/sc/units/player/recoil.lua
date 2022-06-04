@@ -199,7 +199,7 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 		local weap_base = equipped_weapon:base()
 		if weap_base then
 			if current_state:in_steelsight() and weap_base._disable_steelsight_recoil_anim then
-				return self._unit:play_redirect(Idstring("recoil_exit"), 20)
+				return self._unit:play_redirect(Idstring(""), 20000)
 			end
 			if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
 				speed = weap_base:fire_rate_multiplier()

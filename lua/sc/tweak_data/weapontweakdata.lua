@@ -3126,6 +3126,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
 	end
+	self.sterling.lock_slide_alt = true
 	self.m1911.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 
@@ -6841,7 +6842,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.ads_speed = 0.260
 				self.sterling.damage_falloff = {
 					start_dist = 2000,
-					end_dist = 4800,
+					end_dist = 5200,
 					min_mult = 0.25
 				}
 				self.sterling.stats = {

@@ -8701,9 +8701,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 		starwars = true,
 		rof_mult = 0.5
 	}
-	self.parts.wpn_fps_pis_c96_nozzle.perks = { 
-		"silencer"
-	}
+	self.parts.wpn_fps_pis_c96_nozzle.sub_type = "silencer"
+	self.parts.wpn_fps_pis_c96_nozzle.perks = {"silencer"}
 	
 	--Barrel Sight 44
 	self.parts.wpn_fps_pis_c96_sight.pcs = {}
@@ -8784,9 +8783,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
 		starwars = true,
-		rof_mult = 0.5454545
+		rof_mult = 0.5454545,
+		falloff_start_mult = 1.5,
+		falloff_end_mult = 1.5,
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = {"silencer"}
+	self.parts.wpn_fps_smg_sterling_b_e11.override = {
+		wpn_fps_smg_sterling_m_long = { unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling_pts/wpn_fps_smg_sterling_m_short" },
+		wpn_fps_smg_sterling_m_medium = { unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling_pts/wpn_fps_smg_sterling_m_short" }
+	}
 	
 	--Extended Mag
 	self.parts.wpn_fps_smg_sterling_m_long.pcs = {}

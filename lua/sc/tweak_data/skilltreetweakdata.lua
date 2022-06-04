@@ -949,7 +949,9 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 4},
 				[1] = {
 					upgrades = {
-						"player_unpierceable_armor"
+						"player_unpierceable_armor",
+						"player_level_5_armor_addend",
+						"player_level_6_armor_addend"
 					},
 					cost = self.costs.hightier
 				},
@@ -1399,10 +1401,12 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
+						"player_ballistic_vest_concealment_1",
+						"player_deep_pockets_concealment_modifier_1",	
+						"player_level_1_armor_addend",
 						"player_level_2_armor_addend",
 						"player_level_3_armor_addend",
-						"player_level_4_armor_addend",
-						"player_ballistic_vest_concealment_1"
+						"player_level_4_armor_addend"
 					},
 					cost = self.costs.pro
 				}	
@@ -2648,7 +2652,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
-					"player_level_5_armor_addend",
+					"player_level_5_armor_addend_grinder",
 					"player_flak_jacket_concealment_1"
 				},
 				cost = 200,

@@ -226,17 +226,6 @@ function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)
 	return friendly_fire
 end
 
---Add the VO for being flashbanged
-function PlayerDamage:on_flashbanged(sound_eff_mul)
-	if self._downed_timer then
-		return
-	end
-	
-	PlayerStandard.say_line(self, "g41x_any")
-
-	self:_start_tinnitus(sound_eff_mul)
-end
-
 --General function to deal with god mode and stuff. Uses same checks as vanilla damage_bullet().
 --Not to be confused with vanilla function using similar name.
 function PlayerDamage:can_take_damage(attack_data, damage_info)

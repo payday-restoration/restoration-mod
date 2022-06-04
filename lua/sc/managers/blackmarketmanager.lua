@@ -51,6 +51,7 @@ function BlackMarketManager:visibility_modifiers()
 	skill_bonuses = skill_bonuses - managers.player:upgrade_value("player", "passive_concealment_modifier", 0)
 	skill_bonuses = skill_bonuses - managers.player:upgrade_value("player", "concealment_modifier", 0)
 	skill_bonuses = skill_bonuses - managers.player:upgrade_value("player", "melee_concealment_modifier", 0)
+	skill_bonuses = skill_bonuses - managers.player:upgrade_value("player", "deep_pockets_concealment_modifier", 0)
 	local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
 
 	if armor_data.upgrade_level == 2 or armor_data.upgrade_level == 3 or armor_data.upgrade_level == 4 then
@@ -73,6 +74,7 @@ function BlackMarketManager:concealment_modifier(type, upgrade_level)
 	if type == "armors" then
 		modifier = modifier + managers.player:upgrade_value("player", "passive_concealment_modifier", 0)
 		modifier = modifier + managers.player:upgrade_value("player", "concealment_modifier", 0)
+		modifier = modifier + managers.player:upgrade_value("player", "deep_pockets_concealment_modifier", 0)
 
 		if upgrade_level == 2 or upgrade_level == 3 or upgrade_level == 4 then
 			modifier = modifier + managers.player:upgrade_value("player", "ballistic_vest_concealment", 0)

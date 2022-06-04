@@ -58,10 +58,15 @@ function PlayerManager:body_armor_skill_multiplier(override_armor)
 	return multiplier
 end
 
-
 function PlayerManager:body_armor_skill_addend(override_armor)
+	local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
 	local addend = 0
 	addend = addend + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_addend", 0)
+
+	--Grinder Flak Jacket armor modifier
+	if armor_data.upgrade_level == 5 then
+		addend = addend + self:upgrade_value("player", "level_5_armor_addend_grinder", 0)
+	end
 
 	if self:has_category_upgrade("player", "armor_increase") then
 		local health_multiplier = self:health_skill_multiplier()

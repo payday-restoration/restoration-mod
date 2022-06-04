@@ -816,6 +816,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Bulletproof
 					--Basic
 						self.values.player.unpierceable_armor = {true}
+						self.values.player.level_5_armor_addend = {2}
+						self.values.player.level_6_armor_addend = {2}
 					--Ace
 						self.values.player.armor_full_damage_absorb = {0.3}
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
@@ -1012,7 +1014,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.melee_concealment_modifier = {2}
 				--Ace
-					self.values.player.ballistic_vest_concealment = {4}
+					self.values.player.deep_pockets_concealment_modifier = {2}
+					self.values.player.ballistic_vest_concealment = {2}
 					self.values.player.level_1_armor_addend = {2}
 					self.values.player.level_2_armor_addend = {2}
 					self.values.player.level_3_armor_addend = {2}
@@ -1460,7 +1463,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend = {-8}
+	self.values.player.level_5_armor_addend_grinder = {-7}
 	self.values.player.flak_jacket_concealment = {8}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
@@ -1825,6 +1828,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}	
+	self.definitions.player_deep_pockets_concealment_modifier_1 = {
+		name_id = "menu_player_deep_pockets_concealment",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "deep_pockets_concealment_modifier",
+			category = "player"
+		}
+	}		
 	self.definitions.player_civ_move_multiplier = {
 		name_id = "menu_civ_move_multiplier",
 		category = "feature",
@@ -2174,7 +2186,7 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "level_1_armor_addend",
 			category = "player"
 		}
-	}	
+	}		
 	self.definitions.player_level_5_armor_addend = {
 		category = "feature",
 		name_id = "menu_player_level_5_armor_addend",
@@ -2184,6 +2196,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_level_6_armor_addend = {
+		category = "feature",
+		name_id = "menu_player_level_6_armor_addend",
+		upgrade = {
+			category = "player",
+			upgrade = "level_6_armor_addend",
+			value = 1
+		}
+	}	
+	self.definitions.player_level_5_armor_addend_grinder = {
+		category = "feature",
+		name_id = "menu_player_level_5_armor_addend_grinder",
+		upgrade = {
+			category = "player",
+			upgrade = "level_5_armor_addend_grinder",
+			value = 1
+		}
+	}	
 	self.definitions.player_extra_revive_health = {
 		category = "feature",
 		name_id = "menu_player_panic_suppression",

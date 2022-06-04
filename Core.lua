@@ -27,6 +27,7 @@ function restoration:Init()
 		"red2", --first world bank
 		"watchdogs_1", --Watchdogs Day 1
 		"gallery", --art gallery
+		"chca", --Black Cat Heist
 		--Custom Heists--
 		"office_strike", --office strike
 		"schl", --Scarlet Club House
@@ -48,7 +49,6 @@ function restoration:Init()
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
-		"friend", --Scarface Mansion 
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"lit1", --California's Heat
@@ -90,7 +90,6 @@ function restoration:Init()
 		"ukrainian_job", --Ukrainian Job
 		"watchdogs_1_night", --Watchdogs Day 1 Night
 		"watchdogs_2", --watch dogs 2 Night
-		"chca", --Black Cat Heist
 		"man", --Undercover
 		--custom heists
 		"wetwork", --res map package wetworks
@@ -126,7 +125,6 @@ function restoration:Init()
 			"framing_frame_3", --Powerbox simulator
 			"jewelry_store", --Jewelry Store
 			"ukrainian_job", --Ukrainian Job
-			"chca", --Black Cat Heist
 			"watchdogs_1_night", --Watchdogs Day 1 Night
 			"watchdogs_2", --watch dogs 2 Night
 			"man", --Undercover

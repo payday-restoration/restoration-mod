@@ -215,7 +215,6 @@ function restoration:Init()
 		"framing_frame_3", --Framing Frame 3
 		"spa", --Brooklyn 10-10
 		"des",	--Henry's Rock
-		"chill_combat",	--Safehouse Raid
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
@@ -251,17 +250,14 @@ function restoration:Init()
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
-		"help", --Prison Nightmare
 		"pbr2", --Birth of Sky
 		"rvd2", --Resivoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
-		"nail",	--Lab Rats. Fuck this heist	
 		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
 		"born", --Biker 1		
-		"sand", --The Ukrainian Prisoner		
-		"sah", --Shacklethorne		
+		"sand", --The Ukrainian Prisoner			
 		--Custom Heists below--
 		"thechase",
 		"trop", --Tropical Treasure 
@@ -273,6 +269,10 @@ function restoration:Init()
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
+		"sah", --Shacklethorne		
+		"help", --Prison Nightmare		
+		"nail",	--Lab Rats. Fuck this heist		
+		"chill_combat",	--Safehouse Raid		
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"Victor Romeo"

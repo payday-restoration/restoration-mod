@@ -1814,6 +1814,7 @@ end
 	local lapd = tweak_data.levels.ai_groups.lapd
 	local mex = tweak_data.levels.ai_groups.federales
 	local akan = tweak_data.levels.ai_groups.russia
+	local nypd = tweak_data.levels.ai_groups.nypd
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1833,7 +1834,11 @@ end
 		end)
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
+	elseif ai_type == nypd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+		end)			
 		end)	
 	end
  end

@@ -229,7 +229,7 @@
 			</lod_object>
 			
 			<object name="g_ghillie" enabled="true" />
-			<object name="g_ghillie_head" enabled="true" />
+			<!-- <object name="g_ghillie_head" enabled="true" /> -->
 									
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 			

@@ -41,11 +41,11 @@
 	</material>
 	
 	<material name="mtr_mask" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm" />
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm" />
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
 	</material>
 	<material name="mtr_mask_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm" mip="4"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="4"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df" mip="4"/>
 	</material>
 

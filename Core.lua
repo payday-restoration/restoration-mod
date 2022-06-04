@@ -47,7 +47,6 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
-		"wwh", --alaskan deal
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"friend", --Scarface Mansion 
 		"jolly_CD", --jolly crackdown edit

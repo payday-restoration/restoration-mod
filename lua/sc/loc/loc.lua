@@ -1112,6 +1112,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
 		--Broomstick--
 		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
+		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\nAlt-fire allows for fanning the hammer to deliver a flurry of rounds.\n\nCan penetrate body armor, shields and thin walls",
 
@@ -1128,6 +1129,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
 		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
+		--Pachett/Sterling
+		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Suppressed Barrel",
 		--Uzi
 		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",	
 		--Chicago Typewriter
@@ -1146,6 +1149,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Type of pellets effective at close range.\nIncreases pellet count to 10.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\nLowers pellet count to 6.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of piercing body armor, enemies, shields, titan shields, and walls.",
+
+
 			
 		--S552
 		["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS.",				
@@ -1232,7 +1237,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_par"] = "KSP-58B Heavy Machine Gun",	
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\"\n\nWildly inaccurate but has 25% less recoil when hipfired.",		
+		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\"\n\nWildly inaccurate but has 25% less recoil when hipfired.",
+		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",

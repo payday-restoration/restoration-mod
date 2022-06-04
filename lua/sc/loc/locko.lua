@@ -1835,11 +1835,11 @@ end
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
+		end)
 	elseif ai_type == nypd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
-		end)			
-		end)	
+		end)
 	end
  end
 

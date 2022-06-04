@@ -2118,12 +2118,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		alert_size = -1
 	}
 	self.parts.wpn_fps_m4_uupg_b_sd.perks = {"silencer"}
+	--[[ 
+	-- Dunno why I added this, might've been something done during the dev for the Em-Four kit but it doesn't seem(?) to be needed now
+	-- Comment for now just in case
 	self.parts.wpn_fps_m4_uupg_b_sd.override = {
 		wpn_fps_m4_uupg_fg_rail = {
 			adds = {},
 			override = {}
 		}
 	}
+	--]]
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_m4a1")
 	

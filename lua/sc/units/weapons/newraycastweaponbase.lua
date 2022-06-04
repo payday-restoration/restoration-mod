@@ -753,7 +753,12 @@ function NewRaycastWeaponBase:fire(...)
 			end
 		end
 	end
-	
+	if self._disable_steelsight_recoil_anim then
+		local camera = self._setup.user_unit:camera() and alive(self._setup.user_unit:camera():camera_unit()) and self._setup.user_unit:camera():camera_unit()
+		if camera and managers.player:player_unit():movement():current_state():in_steelsight() then
+			camera:play_redirect(Idstring("idle"))
+		end
+	end
 	return result
 end	
 

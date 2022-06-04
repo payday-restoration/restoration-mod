@@ -2941,27 +2941,6 @@ function WeaponTweakData:_init_stats()
 			}
 		},
 
-		the_wolf_brigade = {
-			standing = {
-				0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-				0.4 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-				-0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-				0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.standing
-			},
-			crouching = {
-				0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-				0.4 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-				-0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-				0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching
-			},
-			steelsight = {
-				0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-				0.4 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-				-0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-				0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
-			}
-		},
-
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
 		moderate_kick = {
 			standing = {
@@ -3023,6 +3002,27 @@ function WeaponTweakData:_init_stats()
 				0.5 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.2 * self.stat_info.stance_recoil_mults.steelsight,
 				0.6 * self.stat_info.stance_recoil_mults.steelsight
+			}
+		},
+		
+		the_wolf_brigade = {
+			standing = {
+				0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.standing
+			},
+			crouching = {
+				0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching
+			},
+			steelsight = {
+				0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
 			}
 		},
 
@@ -3126,6 +3126,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
 	end
+	self.sterling.lock_slide_alt = true
 	self.m1911.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 
@@ -3174,13 +3175,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 		
 	local faction = {
-		'p90','mp7','lemming','olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60'
+		'p90','mp7','lemming','olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60','corgi'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].nato = true
 	end
 	faction = {
-		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12'
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].warsaw = true
@@ -3456,7 +3457,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Geck M2 (Maxim 9)
 				self.x_maxim9.has_description = true
-				self.x_maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
+				self.x_maxim9.desc_id = "bm_tranq_x_maxim_sc_desc"	
 				self.x_maxim9.fire_mode_data.fire_rate = 0.08571428571
 				self.x_maxim9.single.fire_rate = 0.08571428571
 				self.x_maxim9.CLIP_AMMO_MAX = 36
@@ -3489,6 +3490,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_maxim9.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo Igor (APS)
+				self.x_stech.has_description = true
+				self.x_stech.desc_id = "bm_x_stech_sc_desc"				
 				self.x_stech.fire_mode_data.fire_rate = 0.08
 				self.x_stech.AMMO_MAX = 150
 				self.x_stech.kick = self.stat_info.kick_tables.moderate_kick
@@ -3520,6 +3523,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_stech.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo Chimano Compact
+				self.jowi.has_description = true
+				self.jowi.desc_id = "bm_x_jowi_sc_desc"					
 				self.jowi.kick = self.stat_info.kick_tables.even_recoil
 				self.jowi.CLIP_AMMO_MAX = 20
 				self.jowi.AMMO_MAX = 180
@@ -3554,6 +3559,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Stryk18c
 				--Keeping
+				self.x_g18c.has_description = true
+				self.x_g18c.desc_id = "bm_x_g18c_sc_desc"						
 				self.x_g18c.fire_mode_data.fire_rate = 0.05454545454
 				self.x_g18c.single.fire_rate = 0.05454545454
 				self.x_g18c.CLIP_AMMO_MAX = 36
@@ -3586,6 +3593,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g18c.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo CZ 75
+				self.x_czech.has_description = true
+				self.x_czech.desc_id = "bm_x_czech_sc_desc"						
 				self.x_czech.CLIP_AMMO_MAX = 36
 				self.x_czech.AMMO_MAX = 180
 				self.x_czech.fire_mode_data.fire_rate = 0.06
@@ -3617,6 +3626,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_czech.timers.reload_exit_not_empty = 0.65	
 
 			--Akimbo Chimano .88
+				self.x_g17.has_description = true
+				self.x_g17.desc_id = "bm_x_g17_sc_desc"					
 				self.x_g17.kick = self.stat_info.kick_tables.even_recoil
 				self.x_g17.CLIP_AMMO_MAX = 36
 				self.x_g17.AMMO_MAX = 150
@@ -3650,6 +3661,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g17.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Bernetti 9
+				self.x_b92fs.has_description = true
+				self.x_b92fs.desc_id = "bm_x_b92fs_sc_desc"						
 				self.x_b92fs.kick = self.stat_info.kick_tables.even_recoil
 				self.x_b92fs.CLIP_AMMO_MAX = 30
 				self.x_b92fs.AMMO_MAX = 150
@@ -3715,6 +3728,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_holt.timers.reload_exit_not_empty = 0.65
 
 			--Beretta Auto (93R)
+				self.beer.has_description = true
+				self.beer.desc_id = "bm_beer_sc_desc"				
 				self.beer.use_data.selection_index = 2
 				self.beer.BURST_FIRE = 3
 				self.beer.BURST_FIRE_RATE_MULTIPLIER = nil
@@ -4094,6 +4109,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 	
 			--Igor
+				self.stech.has_description = true
+				self.stech.desc_id = "bm_x_stech_sc_desc"						
 				self.stech.fire_mode_data.fire_rate = 0.08
 				self.stech.AMMO_MAX = 75
 				self.stech.kick = self.stat_info.kick_tables.moderate_kick
@@ -6841,7 +6858,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.ads_speed = 0.260
 				self.sterling.damage_falloff = {
 					start_dist = 2000,
-					end_dist = 4800,
+					end_dist = 5200,
 					min_mult = 0.25
 				}
 				self.sterling.stats = {
@@ -8232,6 +8249,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.timers.reload_exit_not_empty = 0.4
 
 		--Eagle Heavy
+			self.scar.desc_id = "bm_scar_sc_desc"
+			self.scar.has_description = true		
 			self.scar.AMMO_MAX = 80
 			self.scar.CLIP_AMMO_MAX = 20
 			self.scar.fire_mode_data.fire_rate = 0.1
@@ -8624,6 +8643,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"lmg",
 					"smg"
 				}
+				self.mg42.sounds.fire = "mg42_fire"
+				self.mg42.sounds.fire_single = "mg42_fire"
 				self.mg42.CLIP_AMMO_MAX = 50
 				self.mg42.AMMO_MAX = 160
 				self.mg42.has_description = true
@@ -10917,6 +10938,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	--OICW
 	if self.osipr then
+		self.osipr.nato = true
 		self.osipr.tactical_reload = 1		
 		self.osipr.AMMO_MAX = 120
 		self.osipr.CLIP_AMMO_MAX = 30
@@ -11111,6 +11133,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.tilt then --Gambyt's AN 92
+		self.tilt.warsaw = true
 		self.tilt.recategorize = { "light_ar" }		
 		self.tilt.has_description = false		
 		self.tilt.tactical_reload = 1
@@ -11367,6 +11390,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end		
 		
 	if self.sg416 then --Gambyt's SG416
+		self.sg416.nato = true
 		self.sg416.recategorize = { "light_ar" }
 		self.sg416.damage_type = "assault_rifle"
 		self.sg416.has_description = false						
@@ -11409,6 +11433,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.spike then --Gambyt's Spike Rifle
+		self.spike.warsaw = true
 		self.spike.recategorize = { "heavy_ar" }
 		self.spike.has_description = false						
 		self.spike.tactical_reload = 1		
@@ -11522,6 +11547,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.sgs then --Gambyt's Guerilla 308.	
+		self.sgs.nato = true
 		self.sgs.recategorize = { "light_snp" }
 		self.sgs.damage_type = "sniper"
 		self.sgs.upgrade_blocks = nil
@@ -12205,6 +12231,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.aek971 then --Pawcio's AEK 971
+		self.aek971.warsaw = true
 		self.aek971.CLIP_AMMO_MAX = 30
 		self.aek971.tactical_reload = 1												
 		self.aek971.AMMO_MAX = 180
@@ -12351,6 +12378,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
+		self.smolak.warsaw = true
 		self.smolak.categories = {
 			"assault_rifle"
 		}
@@ -12431,6 +12459,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
+		self.aknato.nato = true
 		self.aknato.tactical_reload = 1
 		self.aknato.spread = {
 			standing = 3,

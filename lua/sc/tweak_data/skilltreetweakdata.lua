@@ -2489,7 +2489,8 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_damage_dampener_close_contact_3",
 					"melee_stacking_hit_expire_t",
-					"melee_stacking_hit_damage_multiplier_1"
+					"melee_stacking_hit_damage_multiplier_1",
+					"player_tape_loop_duration_2"
 				},
 				cost = 1000,
 				icon_xy = {5, 4},
@@ -2547,7 +2548,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_melee_kill_life_leech"
+					"player_melee_kill_life_leech",
+					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
 				icon_xy = {1, 5},
@@ -2605,7 +2607,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"temporary_loose_ammo_restore_health_2",
-					"player_loose_ammo_give_dodge"
+					"player_loose_ammo_give_dodge",
+					"player_alarm_pager_speed_multiplier"					
 				},
 				cost = 1000,
 				icon_xy = {7, 5},
@@ -2645,7 +2648,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
-					"player_level_5_armor_addend"
+					"player_level_5_armor_addend",
+					"player_flak_jacket_concealment_1"
 				},
 				cost = 200,
 				icon_xy = {1, 6},
@@ -2724,7 +2728,9 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_resistance_damage_health_ratio_multiplier",
-					"player_armor_regen_damage_health_ratio_threshold_multiplier"
+					"player_armor_regen_damage_health_ratio_threshold_multiplier",
+					"player_corpse_dispose_speed_multiplier",
+					"player_civ_move_multiplier"					
 				},
 				cost = 1000,
 				icon_xy = {7, 6},
@@ -2781,7 +2787,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_armor_max_health_store_multiplier"
+					"player_armor_max_health_store_multiplier",
+					"team_civ_intimidation_mul"
 				},
 				cost = 1000,
 				icon_xy = {5, 7},
@@ -2841,7 +2848,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_cocaine_stacks_decay_multiplier_1"
+					"player_cocaine_stacks_decay_multiplier_1",
+					"team_civ_intimidation_mul"
 				},
 				cost = 1000,
 				icon_xy = {2, 0},

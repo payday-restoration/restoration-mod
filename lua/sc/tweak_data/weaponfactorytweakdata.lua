@@ -8524,7 +8524,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_b_mg34.supported = true
 	self.parts.wpn_fps_lmg_mg42_b_mg34.stats = {
 		value = 1,
-		recoil = 4
+		recoil = 6
 	}
 	self.parts.wpn_fps_lmg_mg42_b_mg34.custom_stats = {rof_mult = 0.667}
 	self.parts.wpn_fps_lmg_mg42_b_mg34.has_description = true
@@ -8535,16 +8535,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.supported = true
 	self.parts.wpn_fps_lmg_mg42_b_vg38.stats = {
 		value = 2,
+		recoil = 12,
 		suppression = 10,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
-		starwars = true
+		starwars = true,
+		rof_mult = 0.5
 	}				
 	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
-	self.parts.wpn_fps_lmg_mg42_b_vg38.sound_switch = {
-		suppressed = "suppressed_b"
-	}
+
 
 	self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine_extra"
 	self.parts.wpn_fps_lmg_mg42_reciever.bullet_objects = {
@@ -8693,9 +8693,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	self.parts.wpn_fps_pis_c96_nozzle.supported = true
 	self.parts.wpn_fps_pis_c96_nozzle.stats = {
 		value = 4,
-		recoil = 4,
-		spread = -2
+		suppression = 10,
+		alert_size = -1,
+		recoil = 6
 	}
+	self.parts.wpn_fps_pis_c96_nozzle.custom_stats = { 
+		starwars = true,
+		rof_mult = 0.5
+	}
+	self.parts.wpn_fps_pis_c96_nozzle.sub_type = "silencer"
+	self.parts.wpn_fps_pis_c96_nozzle.perks = {"silencer"}
 	
 	--Barrel Sight 44
 	self.parts.wpn_fps_pis_c96_sight.pcs = {}
@@ -8771,12 +8778,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_b_e11.stats = {
 		value = 2,
 		suppression = 10,
-		alert_size = -1
+		alert_size = -1,
+		recoil = 6
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
-		starwars = true
+		starwars = true,
+		rof_mult = 0.5454545,
+		falloff_start_mult = 1.5,
+		falloff_end_mult = 1.5,
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = {"silencer"}
+	self.parts.wpn_fps_smg_sterling_b_e11.override = {
+		wpn_fps_smg_sterling_m_long = { unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling_pts/wpn_fps_smg_sterling_m_short" },
+		wpn_fps_smg_sterling_m_medium = { unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling_pts/wpn_fps_smg_sterling_m_short" }
+	}
 	
 	--Extended Mag
 	self.parts.wpn_fps_smg_sterling_m_long.pcs = {}

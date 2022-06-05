@@ -33,6 +33,7 @@
 		<packages>
 			<value_node value="packages/narr_alex2"/>
 			<value_node value="packages/job_rats"/>
+			<value_node value="packages/miscassets"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_2/world"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_2/world_sounds"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_2/pc_only/pc_only"/>

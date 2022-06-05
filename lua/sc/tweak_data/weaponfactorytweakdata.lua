@@ -8787,7 +8787,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
 		starwars = true,
-		rof_mult = 0.818181818,
+		rof_mult = 0.77272727,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25,
 	}	
@@ -8802,9 +8802,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_m_long.supported = true
 	self.parts.wpn_fps_smg_sterling_m_long.stats = {
 		value = 1,
-		extra_ammo = 10,
+		extra_ammo = 14,
 		reload = -2,
 		concealment = -1
+	}
+	self.parts.wpn_fps_smg_sterling_m_long.custom_stats = {
+		ads_speed_mult = 1.025
 	}
 	
 	--Short Mag
@@ -8812,9 +8815,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_m_short.supported = true
 	self.parts.wpn_fps_smg_sterling_m_short.stats = {
 		value = 1,
-		extra_ammo = -10,
+		extra_ammo = -5,
 		reload = 2,
 		concealment = 1
+	}
+	self.parts.wpn_fps_smg_sterling_m_short.custom_stats = { 
+		ads_speed_mult = 0.975
 	}
 	
 	--Folded Stock
@@ -12995,7 +13001,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_lemming", "resmod_lemming", functi
 		reload = -2
 	}
 	self.parts.wpn_fps_pis_lemming_m_ext.custom_stats = {
-		ads_speed_mult = 0.975
+		ads_speed_mult = 1.025
 	}
 	
 	--Override Table

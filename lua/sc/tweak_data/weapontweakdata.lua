@@ -6885,11 +6885,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sterling.stats = {
 					damage = 24,
-					spread = 58,
-					recoil = 87,
+					spread = 57,
+					recoil = 90,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 27,
+					concealment = 28,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,

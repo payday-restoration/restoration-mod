@@ -219,7 +219,6 @@ function restoration:Init()
 		"roberts", --Go Bank
 		"family", --Diamond Store
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
-		"fex", --Buluc's Mansion
 		"rat", --Cook Off
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
@@ -254,7 +253,8 @@ function restoration:Init()
 		"xmn_hox_1",
 		"bph", --Hell's Island
 		"born", --Biker 1		
-		"sand", --The Ukrainian Prisoner			
+		"sand", --The Ukrainian Prisoner	
+		"fex", --Buluc's Mansion		
 		--Custom Heists below--
 		"thechase",
 		"trop", --Tropical Treasure 

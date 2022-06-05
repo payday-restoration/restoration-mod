@@ -16,6 +16,11 @@
 	<!--Titan Safes-->	
 	<!--object				path="units/payday2/equipment/gen_interactable_sec_safe_1x1_titan/gen_interactable_sec_safe_1x1_titan" force="true"/-->
 	<!--unit				path="units/payday2/equipment/gen_interactable_sec_safe_1x1_titan/gen_interactable_sec_safe_1x1_titan" force="true"/-->
+
+	<!--object				path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
+	<!--unit				path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
+	<!--model				path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
+	<!--sequence_manager	path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
 	
 	<!--ASU Laser-->	
 	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser" />

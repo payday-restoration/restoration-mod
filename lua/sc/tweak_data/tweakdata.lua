@@ -31,27 +31,25 @@ tweak_data.shotgun = {}
 tweak_data.smg = {
 	swap_bonus = 1.2,
 	ads_move_speed_mult = 0.75,
-	moving_spread_mult = 0.66,
+	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
 }
 tweak_data.lmg = {
 	swap_bonus = 0.9,
 	ads_move_speed_mult = 0.3,
-	moving_spread_mult = 4.28,
-	hipfire_spread_mult = 4
+	moving_spread_mult = 3.3333,
+	hipfire_spread_mult = 3.3333
 }
 tweak_data.minigun = {
 	swap_bonus = 0.9,
 	ads_move_speed_mult = 0.3,
-	moving_spread_mult = 4.28,
-	hipfire_spread_mult = 4
+	moving_spread_mult = 3.3333,
+	hipfire_spread_mult = 3.3333
 }
 tweak_data.snp = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	hipfire_moving_spread_mult = 6,
-	--hipfire_spread_mult = 4,
-	--moving_spread_mult = 1.5
+	hipfire_moving_spread_mult = 6
 }
 tweak_data.assault_rifle = {
 	swap_bonus = 1,

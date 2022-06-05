@@ -20364,8 +20364,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_m4_g_wrap.supported = true
 		self.parts.wpn_fps_m4_g_wrap.stats = {
 			value = 2,
-			recoil = 4,
-			concealment = -2
+			recoil = 2,
+			concealment = -1
 		}
 
 		--Polygonal Suppressor

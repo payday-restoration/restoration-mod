@@ -1411,6 +1411,22 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.always_drop = true
 	self.gangster.heal_cooldown = 1
 	table.insert(self._enemy_list, "gangster")
+	
+	self.enforcer = deep_clone(self.gangster)
+	self.enforcer.HEALTH_INIT = 48
+	self.enforcer.headshot_dmg_mul = 4
+	self.enforcer.is_special = true
+	self.enforcer.no_limping = true
+	self.enforcer.move_speed = presets.move_speed.slow	
+	self.enforcer.melee_weapon = "fists_dozer"	
+	self.enforcer.damage.hurt_severity = presets.hurt_severities.boss
+	self.enforcer.damage.explosion_damage_mul = 1.25	
+	self.enforcer.surrender = nil	
+	self.enforcer.allowed_poses = {stand = true}
+	self.enforcer.crouch_move = false
+	self.enforcer.no_run_start = true
+	self.enforcer.no_run_stop = true
+	table.insert(self._enemy_list, "enforcer")	
 end
 
 function CharacterTweakData:_init_biker(presets)
@@ -16730,6 +16746,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_mememan_2")
 		table.insert(char_map.basic.list, "ene_bulldozer_biker_1")
 		table.insert(char_map.basic.list, "ene_guard_biker_1")
+		table.insert(char_map.basic.list, "ene_gang_black_enforcer")
 		table.insert(char_map.basic.list, "ene_veteran_lod_1")
 		table.insert(char_map.basic.list, "ene_veteran_lod_2")
 			

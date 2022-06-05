@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pent/weapons/ene_acc_mel_sandsteel/ene_acc_mel_sandsteel" orientation_object="rp_wpn_third_mel_sandsteel" />
+	<graphics>
+		<object name="g_tsuka_3rd" enabled="true" />
+	</graphics>
+</dynamic_object>

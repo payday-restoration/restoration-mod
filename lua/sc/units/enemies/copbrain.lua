@@ -235,6 +235,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.meme_man_shield.flee = nil	
 	CopBrain._logic_variants.spring = clone(security_variant)
 	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
+	CopBrain._logic_variants.enforcer = clone(security_variant)
+	CopBrain._logic_variants.enforcer.attack = TankCopLogicAttack
 	CopBrain._logic_variants.headless_hatman = clone(security_variant)
 	CopBrain._logic_variants.headless_hatman.attack = TankCopLogicAttack	
 	CopBrain._logic_variants.summers = clone(security_variant)

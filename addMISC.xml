@@ -174,6 +174,15 @@
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
 
+	<!-- cobras enforcer -->
+	<unit				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer" load="true"/>
+	<unit				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer_husk" load="true"/>
+	<model				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer" />
+	<object				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer"/>
+	<material_config	path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer"/>
+	<material_config	path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer_contour"/>
+	
+
 	<!-- ze Kung Fu Masters -->
 	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1" load="true"/>
 	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1_husk" load="true"/>
@@ -191,6 +200,9 @@
 	
 	<!-- akimbo npc miyakas -->
 	<unit_mat			path="units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc" load="false" force="false"/>
+	
+	<unit_mat			path="units/pd2_dlc_pent/weapons/ene_acc_mel_sandsteel/ene_acc_mel_sandsteel" load="false" force="false"/>
+
 	
 	<!--fuck you biker dozer armor bits-->
 	<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->

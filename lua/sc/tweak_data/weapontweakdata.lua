@@ -7674,7 +7674,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Krinkov
 				self.x_akmsu.desc_id = "bm_x_akmsu_sc_desc"
-				self.x_akmsu.has_description = true			
+				self.x_akmsu.has_description = true		
+				self.x_akmsu.sounds.fire = "akmsu_fire_single"
+				self.x_akmsu.sounds.fire_single = "akmsu_fire_single"
+				self.x_akmsu.sounds.fire_auto = "akmsu_fire"
+				self.x_akmsu.sounds.stop_fire = "akmsu_stop"
+				self.x_akmsu.sounds.dryfire = "primary_dryfire"	
 				self.x_akmsu.AMMO_MAX = 120
 				self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
 				self.x_akmsu.panic_suppression_chance = 0.05

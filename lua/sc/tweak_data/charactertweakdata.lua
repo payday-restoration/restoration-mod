@@ -2321,7 +2321,9 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster.spawn_sound_event_2 = nil
     self.spooc_gangster.spooc_sound_events = {
         detect_stop = "cloaker_detect_stop",
-        detect = "asdf"
+        detect = "asdf",
+		taunt_during_assault = "asdf",
+		taunt_after_assault = "asdf"
     }	
 	self.spooc_gangster.min_obj_interrupt_dis = 800
 	self.spooc_gangster.dodge_with_grenade = {

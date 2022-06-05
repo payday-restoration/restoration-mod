@@ -202,7 +202,6 @@ function restoration:Init()
 		"mus", --The Diamond
 		"run", --Heat Street
 		"run_res", --Whurr's Heat Street Edit
-		"bph", --Hell's Island
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
@@ -253,6 +252,7 @@ function restoration:Init()
 		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
+		"bph", --Hell's Island
 		"born", --Biker 1		
 		"sand", --The Ukrainian Prisoner			
 		--Custom Heists below--

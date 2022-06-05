@@ -572,7 +572,7 @@ local job = Global.level_data and Global.level_data.level_id
 		
 		self.x_pm9_npc = deep_clone(self.x_c45_npc)			
 		self.x_pm9_npc.categories = {"akimbo", "smg"}	
-		self.x_pm9_npc.DAMAGE = 3.0
+		self.x_pm9_npc.DAMAGE = 2
 		self.x_pm9_npc.CLIP_AMMO_MAX = 50
 		self.x_pm9_npc.NR_CLIPS_MAX = 4
 		self.x_pm9_npc.hold = "akimbo_pistol"
@@ -582,7 +582,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.x_pm9_npc.has_suppressor = "suppressed_a"
 		self.x_pm9_npc.suppression = 0.1		
 		self.x_pm9_npc.auto = {}			
-		self.x_pm9_npc.auto.fire_rate = 0.06		
+		self.x_pm9_npc.auto.fire_rate = 0.05454545454	
 	end
 	
 	function WeaponTweakData:_init_data_beretta92_npc()

@@ -1,0 +1,29 @@
+<materials version="3" group="ene_male_kungfumaster">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_diff"/>
+        <bump_normal_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_nm"/>
+        <material_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_gsma"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_diff" mip="4"/>
+        <bump_normal_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_nm" mip="4"/>
+        <material_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_gsma" mip="4"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_pent/characters/pent_acc_kungfumaster/shared_textures/acc_kungfumaster_red_df"/>
+		<bump_normal_texture file="units/pd2_dlc_pent/characters/pent_acc_kungfumaster/shared_textures/acc_kungfumaster_default_nm"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_pent/characters/pent_acc_kungfumaster/shared_textures/acc_kungfumaster_red_df" mip="4"/>
+		<bump_normal_texture file="units/pd2_dlc_pent/characters/pent_acc_kungfumaster/shared_textures/acc_kungfumaster_default_nm" mip="4"/>
+	</material>
+
+	<material name="mtr_hands" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_body/ntr_male_body_strong_01_diff"/>
+		<bump_normal_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_body/ntr_male_body_strong_01_nm"/>
+		<material_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_body/ntr_male_body_strong_01_gsma"/>
+	</material>
+	
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

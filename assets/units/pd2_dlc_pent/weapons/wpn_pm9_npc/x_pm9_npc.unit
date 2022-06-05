@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc" />
+   <dependencies>
+		<depends_on bnk="soundbanks/weapon_pm9"/>
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="EnemyAkimboWeaponBase" >
+			<var name="name_id" value="x_pm9_npc" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_miyaka11" />
+    <default_soundsource source="rp_miyaka11" />
+  </sounds>
+</unit>

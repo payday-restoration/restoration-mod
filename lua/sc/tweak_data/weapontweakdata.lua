@@ -569,6 +569,20 @@ local job = Global.level_data and Global.level_data.level_id
 		self.x_raging_bull_meme_npc.use_data.selection_index = 1
 		self.x_raging_bull_meme_npc.hold = "akimbo_pistol"
 		self.x_raging_bull_meme_npc.FIRE_MODE = "single"	
+		
+		self.x_pm9_npc = deep_clone(self.x_c45_npc)			
+		self.x_pm9_npc.categories = {"akimbo", "smg"}	
+		self.x_pm9_npc.DAMAGE = 3.0
+		self.x_pm9_npc.CLIP_AMMO_MAX = 50
+		self.x_pm9_npc.NR_CLIPS_MAX = 4
+		self.x_pm9_npc.hold = "akimbo_pistol"
+		self.x_pm9_npc.alert_size = 0
+		self.x_pm9_npc.FIRE_MODE = "auto"	
+		self.x_pm9_npc.sounds.prefix = "pm9_npc"
+		self.x_pm9_npc.has_suppressor = "suppressed_a"
+		self.x_pm9_npc.suppression = 0.1		
+		self.x_pm9_npc.auto = {}			
+		self.x_pm9_npc.auto.fire_rate = 0.06		
 	end
 	
 	function WeaponTweakData:_init_data_beretta92_npc()

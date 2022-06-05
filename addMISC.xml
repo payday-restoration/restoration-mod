@@ -173,6 +173,24 @@
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_nm"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
+
+	<!-- ze Kung Fu Masters -->
+	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1" load="true"/>
+	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1_husk" load="true"/>
+	<model				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1" />
+	<object				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1"/>
+	<material_config	path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1"/>
+	<material_config	path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1_contour"/>
+
+	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_2/ene_male_kungfumaster_2" load="true"/>
+	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_2/ene_male_kungfumaster_2_husk" load="true"/>
+	<model				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_2/ene_male_kungfumaster_2" />
+	<object				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_2/ene_male_kungfumaster_2"/>
+	<material_config	path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_2/ene_male_kungfumaster_2"/>
+	<material_config	path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_2/ene_male_kungfumaster_2_contour"/>
+	
+	<!-- akimbo npc miyakas -->
+	<unit_mat			path="units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc" load="false" force="false"/>
 	
 	<!--fuck you biker dozer armor bits-->
 	<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->

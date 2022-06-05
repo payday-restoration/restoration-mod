@@ -1,0 +1,31 @@
+<materials version="3" group="wpn_npc_pm9">
+    <material name="mtr_b_short" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_barrel_short_df" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_barrel_short_nm" />
+    </material>
+    <material name="mtr_body" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_body_df" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_body_nm" />
+    </material>
+    <material name="mtr_bolt" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_bolt_df" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_bolt_nm" />
+    </material>
+    <material name="mtr_sights" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_sights_df" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_sights_nm" />
+    </material>
+    <material name="mtr_grip" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_grip_wood_df" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_grip_wood_nm" />
+    </material>
+    <material name="mtr_mag" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_mag_df" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/third_mag_nm" />
+    </material>
+    <material name="mat_putnik" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_lawp/weapons/wpn_fps_upg_ns_pis_putnik/putnik_third_df" />
+		<bump_normal_texture file="units/pd2_dlc_lawp/weapons/wpn_fps_upg_ns_pis_putnik/putnik_third_nm" />
+    </material>
+	
+</materials>

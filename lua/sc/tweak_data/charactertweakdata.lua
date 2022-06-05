@@ -548,7 +548,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet_boss.rescue_hostages = false
 	self.fbi_vet_boss.steal_loot = false	
 	table.insert(self._enemy_list, "fbi_vet_boss")	
-	
+		
 	self.meme_man = deep_clone(self.fbi_vet)		
 	self.meme_man.tags = {"law", "tank", "special"}		
 	self.meme_man.HEALTH_INIT = 500
@@ -2283,7 +2283,63 @@ function CharacterTweakData:_init_spooc(presets)
 	end		
 	self.spooc_titan.die_sound_event_2 = "mga_death_scream"
 	self.spooc_titan.heal_cooldown = 15
-	table.insert(self._enemy_list, "spooc_titan")	
+	table.insert(self._enemy_list, "spooc_titan")
+
+	-- Kung Fu Master
+	self.spooc_gangster = deep_clone(self.spooc)	
+	self.spooc_gangster.tags = {"gangster", "spooc", "special"}	
+	self.spooc_gangster.access = "gangster"
+	self.spooc_gangster.HEALTH_INIT = 24
+	self.spooc_gangster.damage.hurt_severity = presets.hurt_severities.elite
+	self.spooc_gangster.DAMAGE_CLAMP_BULLET = 3
+	self.spooc_gangster.headshot_dmg_mul = 3.4	
+	self.spooc_gangster.no_omnia_heal = true
+	self.spooc_gangster.melee_weapon = "fists"
+	self.spooc_gangster.dodge = presets.dodge.veteran	
+	self.spooc_gangster.rescue_hostages = false
+	self.spooc_gangster.steal_loot = false	
+	self.spooc_gangster.priority_shout = nil
+	self.spooc_gangster.bot_priority_shout = nil
+	self.spooc_gangster.kick_damage = 12.0
+	self.spooc_gangster.no_arrest = true
+	self.spooc_gangster.no_retreat = true
+	self.spooc_gangster.chatter = {
+		aggressive = true,
+		retreat = true,
+		contact = true,
+		go_go = true,
+		suppress = true
+	}
+	self.spooc_gangster.speech_prefix_p1 = "lt"
+	self.spooc_gangster.speech_prefix_p2 = nil
+	self.spooc_gangster.speech_prefix_count = 2
+	self.spooc_gangster.silent_priority_shout = nil
+	self.spooc_gangster.challenges = {type = "gangster"}	
+	self.spooc_gangster.static_dodge_preset = true
+	self.spooc_gangster.special_deaths = nil
+	self.spooc_gangster.spawn_sound_event_2 = nil
+    self.spooc_gangster.spooc_sound_events = {
+        detect_stop = "cloaker_detect_stop",
+        detect = "asdf"
+    }	
+	self.spooc_gangster.min_obj_interrupt_dis = 800
+	self.spooc_gangster.dodge_with_grenade = {
+		smoke = {duration = {
+			12,
+			12
+		}},
+		check = function (t, nr_grenades_used)
+			local delay_till_next_use = 30
+			local chance = 0.05
+
+			if math.random() < chance then
+				return true, t + delay_till_next_use
+			end
+
+			return false, t + delay_till_next_use
+		end
+	}	
+	table.insert(self._enemy_list, "spooc_gangster")	
 end
 
 function CharacterTweakData:_init_shadow_spooc(presets)
@@ -15812,7 +15868,8 @@ function CharacterTweakData:_create_table_structure()
 		"x_raging_bull_meme_npc",
 		"hk21_bravo_npc",
 		"m32",
-		"rpg7"
+		"rpg7",
+		"x_pm9_enemy"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -15894,7 +15951,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc"),
 		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"),
 		Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32"),
-		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7")
+		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7"),
+		Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc")
 	}
 end
 
@@ -16674,6 +16732,9 @@ function CharacterTweakData:character_map()
 			
 	--dlc1
 		table.insert(char_map.dlc1.list, "ene_security_gensec_3")
+	--pent
+		table.insert(char_map.pent.list, "ene_kungfumaster_1")
+		table.insert(char_map.pent.list, "ene_kungfumaster_2")
 	--vip
 		char_map.vip = {
 			path = "units/pd2_dlc_vip/characters/",

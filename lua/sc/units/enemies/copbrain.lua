@@ -223,6 +223,9 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.taser_summers = clone(security_variant)
 	CopBrain._logic_variants.medic_summers = security_variant
 	CopBrain._logic_variants.fbi_vet = security_variant
+	CopBrain._logic_variants.spooc_gangster = clone(security_variant)
+	CopBrain._logic_variants.spooc_gangster.idle = SpoocLogicIdle
+	CopBrain._logic_variants.spooc_gangster.attack = SpoocLogicAttack	
 	CopBrain._logic_variants.fbi_vet_boss = security_variant
 	CopBrain._logic_variants.vetlod = security_variant	
 	CopBrain._logic_variants.meme_man = security_variant	

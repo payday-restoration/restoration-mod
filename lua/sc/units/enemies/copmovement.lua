@@ -36,6 +36,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.weekend_lmg = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
+	CopMovement._action_variants.spooc_gangster = security_variant
 	CopMovement._action_variants.fbi_vet_boss = security_variant
 	CopMovement._action_variants.vetlod = security_variant		
 	CopMovement._action_variants.meme_man = security_variant		

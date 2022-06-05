@@ -2317,6 +2317,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster.challenges = {type = "gangster"}	
 	self.spooc_gangster.static_dodge_preset = true
 	self.spooc_gangster.special_deaths = nil
+	self.spooc_gangster.unintimidateable = true		
 	self.spooc_gangster.spawn_sound_event_2 = nil
     self.spooc_gangster.spooc_sound_events = {
         detect_stop = "cloaker_detect_stop",

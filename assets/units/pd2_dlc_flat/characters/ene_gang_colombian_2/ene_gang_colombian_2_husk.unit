@@ -9,7 +9,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="bolivian" />
+			<var name="_tweak_table" value="gangster" />
 			<var name="_default_weapon_id" value="raging_bull" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

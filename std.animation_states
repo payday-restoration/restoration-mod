@@ -20,8 +20,7 @@
 			<keys/>
 			<key extension_key="base_no_reload"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -30,8 +29,7 @@
 			<keys/>
 			<key extension_key="base_no_reload"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<!-- has to be done twice -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
@@ -41,8 +39,7 @@
 			<keys/>
 			<key extension_key="base_no_reload"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -51,8 +48,7 @@
 			<keys/>
 			<key extension_key="base_no_reload"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<!-- Make medic heals an upper_body animation -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
@@ -84,8 +80,7 @@
 			<keys/>
 			<key extension_key="pose"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -94,8 +89,7 @@
 			<keys/>
 			<key extension_key="pose"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -203,8 +197,7 @@
 			<state name="std"/>
 			<to name="shield_knock_var0"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -212,8 +205,7 @@
 			<state name="std"/>
 			<to name="shield_knock_var1"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -221,8 +213,7 @@
 			<state name="std"/>
 			<to name="shield_knock_var2"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -230,8 +221,7 @@
 			<state name="std"/>
 			<to name="shield_knock_var3"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -239,48 +229,42 @@
 			<state name="std"/>
 			<to name="shield_knock_var4"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
 			<state name="std/hurt/shield_knock/var1"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
 			<state name="std/hurt/shield_knock/var2"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
 			<state name="std/hurt/shield_knock/var3"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
 			<state name="std/hurt/shield_knock/var4"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
 			<state name="std/hurt/shield_knock/var5"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<!-- ECM Feedback state fixes -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
@@ -289,8 +273,7 @@
 			<state name="std/hurt/sick/exit"/>
 			<to name="idle"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -362,8 +345,7 @@
 			<state name="std/hurt/poison/exit"/>
 			<to name="idle"/>
 		</search>
-		<target mode="replace">
-		</target>
+		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -394,7 +376,7 @@
 			<anim name="equip_akimbo_pistol"/>
 		</search>
 		<target mode="attributes">
-			<attr name="weight" value="(cop+husk1+husk2+husk3+husk4) * to_akimbo_pistol"/>
+			<attr name="weight" value="to_akimbo_pistol"/>
 		</target>
 	</tweak>
 </tweaks>

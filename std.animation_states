@@ -386,4 +386,15 @@
 			<attr name="name" value="std/stand/still/idle/look"/>
 		</target>
 	</tweak>
+	<!-- Better equip animation for enemy akimbo users -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/equip"/>
+			<anim name="equip_akimbo_pistol"/>
+		</search>
+		<target mode="attributes">
+			<attr name="weight" value="(cop+husk1+husk2+husk3+husk4) * to_akimbo_pistol"/>
+		</target>
+	</tweak>
 </tweaks>

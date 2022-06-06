@@ -181,6 +181,42 @@
 	<object				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer"/>
 	<material_config	path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer"/>
 	<material_config	path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer_contour"/>
+
+	<!-- colombians -->
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1" load="true"/>
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1_husk" load="true"/>
+	<model				path="units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1" />
+	<object				path="units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1_contour"/>
+	
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2" load="true"/>
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2_husk" load="true"/>
+	<model				path="units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2" />
+	<object				path="units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2"/>
+
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3" load="true"/>
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3_husk" load="true"/>
+	<model				path="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3" />
+	<object				path="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3_contour"/>
+	
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss" load="true"/>
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_husk" load="true"/>
+	<model				path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss" />
+	<object				path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_contour"/>
+	<texture			path="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_df"/>
+	
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer" load="true"/>
+	<unit				path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_husk" load="true"/>
+	<model				path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer" />
+	<object				path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"/>
+	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_contour"/>
+	<texture			path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_df"/>
 	
 
 	<!-- ze Kung Fu Masters -->

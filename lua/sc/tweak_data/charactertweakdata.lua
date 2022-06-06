@@ -2316,6 +2316,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster.steal_loot = false	
 	self.spooc_gangster.priority_shout = nil
 	self.spooc_gangster.bot_priority_shout = nil
+	self.spooc_gangster.melee_weapon = "kf_katana"	
 	self.spooc_gangster.kick_damage = 12.0
 	self.spooc_gangster.no_arrest = true
 	self.spooc_gangster.no_retreat = true
@@ -16752,6 +16753,14 @@ function CharacterTweakData:character_map()
 			
 	--dlc1
 		table.insert(char_map.dlc1.list, "ene_security_gensec_3")
+		
+	--flat
+		table.insert(char_map.flat.list, "ene_gang_colombian_1")
+		table.insert(char_map.flat.list, "ene_gang_colombian_2")	
+		table.insert(char_map.flat.list, "ene_gang_colombian_3")
+		table.insert(char_map.flat.list, "ene_gang_colombian_boss")
+		table.insert(char_map.flat.list, "ene_gang_colombian_enforcer")
+		
 	--pent
 		table.insert(char_map.pent.list, "ene_kungfumaster_1")
 		table.insert(char_map.pent.list, "ene_kungfumaster_2")

@@ -1,0 +1,20 @@
+<materials version="3" group="ene_gang_colombian_boss">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/mexican_1_head_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/mexican_1_head_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/mexican_1_head_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/mexican_1_head_df" mip="4"/>
+	</material>	
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_df" mip="4"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

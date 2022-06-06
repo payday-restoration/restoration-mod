@@ -494,7 +494,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.npc_melee.kf_katana = {}
 		self.npc_melee.kf_katana.unit_name = Idstring("units/pd2_dlc_pent/weapons/ene_acc_mel_sandsteel/ene_acc_mel_sandsteel")
 		self.npc_melee.kf_katana.damage = 5
-		self.npc_melee.kf_katana.animation_param = "melee_fireaxe"
+		self.npc_melee.kf_katana.animation_param = "melee_baton"
 		self.npc_melee.kf_katana.player_blood_effect = true
 		self.npc_melee.kf_katana.armor_piercing = true
 

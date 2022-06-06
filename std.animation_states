@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 <tweaks>
+	<!-- Give akimbo pistol users a neutral idle animation -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/still/idle/look"/>
+			<anim name="ntl_pistol_idle"/>
+		</search>
+		<target mode="attributes">
+			<attr name="weight" value="cop * ntl * (pistol+akimbo_pistol)"/>
+		</target>
+	</tweak>
 	<!-- Allow reloading while moving -->
 	<!-- has to be done twice -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">

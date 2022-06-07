@@ -20998,6 +20998,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_snp_mosin_b_obrez.supported = true
 		self.parts.wpn_fps_snp_mosin_b_obrez.stats = deep_clone(barrels.short_b3_stats)
 		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 	end
 
 --Resmod Custom Weapon stuff

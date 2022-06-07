@@ -1114,7 +1114,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
-		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 1.5s\nRecharge Rate: 3/s",
+		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 1.5s\nRecharge Rate: 3/s (Halfed while overheated)\nOverheat penalty: 3s",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\nAlt-fire allows for fanning the hammer to deliver a flurry of rounds.\n\nCan penetrate body armor, shields and thin walls",
 
@@ -1133,7 +1133,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Suppressed Barrel",
-		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 1s\nRecharge Rate: 5/s",
+		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 1s\nRecharge Rate: 5/s (Halfed while overheated)\nOverheat penalty: 2s",
 		--Uzi
 		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",	
 		--Chicago Typewriter
@@ -1242,7 +1242,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are wolves disguised as mere men.\"\n\nWildly inaccurate but has 25% less recoil when hipfired.",
 		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
-		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 2.5s\nRecharge Rate: 7/s",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 2.5s\nRecharge Rate: 7/s (Halfed while overheated)\nOverheat penalty: 5s",
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",

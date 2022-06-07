@@ -3220,6 +3220,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "heavy_pis" }
 		self[ wep_id ].damage_type = "heavy_pistol"
 	end
+
+	recat = { "mp7", "p90", "lemming" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].damage_type = "pdw"
+	end
 	
 	recat = { "saiga", "aa12", "benelli", "ultima", "spas12", "striker", "rota", "x_rota", "basset", "x_basset" }
 	for i, wep_id in ipairs(recat) do
@@ -4034,12 +4039,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.supported = true
 				self.lemming.ads_speed = 0.220
 				self.lemming.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 4700,
-					min_mult = 0.55555
+					start_dist = 2500,
+					end_dist = 4800,
+					min_mult = 0.666666
 				}
 				self.lemming.stats = {
-					damage = 18,
+					damage = 15,
 					spread = 66,
 					recoil = 91,
 					spread_moving = 9,
@@ -6569,7 +6574,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.ads_speed = 0.220
 				self.p90.damage_falloff = {
 					start_dist = 2800,
-					end_dist = 5200,
+					end_dist = 5400,
 					min_mult = 0.666666
 				}
 				self.p90.stats = {

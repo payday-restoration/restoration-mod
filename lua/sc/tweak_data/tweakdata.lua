@@ -67,7 +67,7 @@ tweak_data.projectiles.launcher_rocket.curve_pow = 0.1
 tweak_data.projectiles.launcher_rocket.turret_instakill = true
 
 --M202--
-tweak_data.projectiles.rocket_ray_frag.damage = 120
+tweak_data.projectiles.rocket_ray_frag.damage = 90
 tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1

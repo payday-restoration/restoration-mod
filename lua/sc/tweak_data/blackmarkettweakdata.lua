@@ -2125,7 +2125,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].expire_t = 1.45
 		self.melee_weapons[melee_id].repeat_expire_t = 1.20
 		self.melee_weapons[melee_id].melee_damage_delay = 0.6
-		self.melee_weapons[melee_id].anim_speed_mult = 1.25
+		self.melee_weapons[melee_id].anim_speed_mult = 1.3
 	end
 	
 	--melee_hockey
@@ -2641,6 +2641,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.weapon.stats.max_damage = 3
 	self.melee_weapons.weapon.stats.min_damage_effect = 5
 	self.melee_weapons.weapon.stats.max_damage_effect = 5
+	self.melee_weapons.weapon.expire_t = 1
+	self.melee_weapons.weapon.repeat_expire_t = 0.6
 	self.melee_weapons.weapon.stats.range = 150
 	self.melee_weapons.weapon.stats.concealment = 30
 

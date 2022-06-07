@@ -9815,7 +9815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ray.shake.fire_steelsight_multiplier = -2
 		self.ray.ads_speed = 0.540
 		self.ray.stats = {
-			damage = 400,
+			damage = 300,
 			spread = 76,
 			recoil = 71,
 			spread_moving = 6,

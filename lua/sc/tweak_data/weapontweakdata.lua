@@ -4024,7 +4024,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--5/7 AP (Five-seveN)
 				self.lemming.CLIP_AMMO_MAX = 20
-				self.lemming.AMMO_MAX = 90
+				self.lemming.AMMO_MAX = 100
 				self.lemming.has_description = true
 				self.lemming.desc_id = "bm_ap_armor_weapon_sc_desc"	
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571

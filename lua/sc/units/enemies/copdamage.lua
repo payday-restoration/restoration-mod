@@ -1335,53 +1335,6 @@ function CopDamage:damage_melee(attack_data)
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect
 
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		attack_data.backstab = self:check_backstab(attack_data)
-
-		if attack_data.backstab and attack_data.backstab_multiplier then
-			damage = damage * attack_data.backstab_multiplier
-			damage_effect = damage_effect * attack_data.backstab_multiplier
-		end
-
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
-		
-		if critical_hit then
-			damage = crit_damage
-
-			local critical_hits = self._char_tweak.critical_hits or {}
-			local critical_damage_mul = critical_hits.damage_mul or self._char_tweak.headshot_dmg_mul
-
-			if critical_damage_mul then
-				damage_effect = damage_effect * critical_damage_mul
-			else
-				damage_effect = self._health * 10
-			end
-
-			attack_data.critical_hit = true
-
-			if damage > 0 then
-				managers.hud:on_crit_confirmed()
-			end
-		else
-			if damage > 0 then
-				managers.hud:on_hit_confirmed()
-			end
-		end
-
-		if tweak_data.achievement.cavity.melee_type == attack_data.name_id and not is_civilian then
-			managers.achievment:award(tweak_data.achievement.cavity.award)
-		end
-
-		if self._char_tweak.priority_shout then
-			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-		end
-
-		if head then
-			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-			managers.player:on_headshot_dealt(self._unit, attack_data)
-		end
-	end
-
 	if head and not self._damage_reduction_multiplier then
 		if self._char_tweak.headshot_dmg_mul then
 			--Use math.max to cover edge cases (mostly Capt. Summers) where cleaver type weapons would deal *less* damage on a headshot than a bodyshot.
@@ -1410,6 +1363,71 @@ function CopDamage:damage_melee(attack_data)
 		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_MELEE)
 		damage_effect = math.min(damage_effect, self._char_tweak.DAMAGE_CLAMP_MELEE)
 	end
+	
+	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[attack_data.name_id]
+	local ineffective_damage = false
+	local damage_type = melee_tweak_data and melee_tweak_data.stats.weapon_type or "blunt"
+	
+	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
+	if self._char_tweak.damage_resistance and damage_type then
+		damage = damage * (self._char_tweak.damage_resistance[damage_type] or 1)
+		
+		--Let the player know to try something different
+		if self._char_tweak.damage_resistance[damage_type] and self._char_tweak.damage_resistance[damage_type] < 1 then
+			ineffective_damage = true
+		end		
+	end		
+	
+	if attack_data.attacker_unit == managers.player:player_unit() then
+		attack_data.backstab = self:check_backstab(attack_data)
+
+		if attack_data.backstab and attack_data.backstab_multiplier then
+			damage = damage * attack_data.backstab_multiplier
+			damage_effect = damage_effect * attack_data.backstab_multiplier
+		end
+
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
+		
+		if critical_hit then
+			damage = crit_damage
+
+			local critical_hits = self._char_tweak.critical_hits or {}
+			local critical_damage_mul = critical_hits.damage_mul or self._char_tweak.headshot_dmg_mul
+
+			if critical_damage_mul then
+				damage_effect = damage_effect * critical_damage_mul				
+			else
+				damage_effect = self._health * 10
+			end
+
+			attack_data.critical_hit = true
+
+			if damage > 0 then
+				managers.hud:on_crit_confirmed()
+			end
+		elseif ineffective_damage then
+			if damage > 0 then
+				managers.hud:on_ineffective_hit_confirmed(damage_scale)
+			end				
+		else
+			if damage > 0 then
+				managers.hud:on_hit_confirmed()
+			end
+		end
+
+		if tweak_data.achievement.cavity.melee_type == attack_data.name_id and not is_civilian then
+			managers.achievment:award(tweak_data.achievement.cavity.award)
+		end
+
+		if self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+		end
+
+		if head then
+			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
+		end
+	end	
 
 	attack_data.raw_damage = damage
 

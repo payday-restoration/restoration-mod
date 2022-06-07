@@ -2121,10 +2121,20 @@ function CopDamage:damage_explosion(attack_data)
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local result = nil
 	local damage = attack_data.damage
-	
-	if self._char_tweak.damage.explosion_damage_mul then
-		damage = damage * self._char_tweak.damage.explosion_damage_mul
-	end
+		
+	--Use a different damage resistance when being hit by a rocket	
+	if alive(weap_unit) then
+		local weap_base = weap_unit:base()
+		if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "rocket_ray_frag" or weap_base:get_name_id() == "rocket_frag" then
+			if self._char_tweak.damage.rocket_damage_mul then
+				damage = damage * self._char_tweak.damage.rocket_damage_mul
+			end	
+		else
+			if self._char_tweak.damage.explosion_damage_mul then
+				damage = damage * self._char_tweak.damage.explosion_damage_mul
+			end	
+		end	
+	end	
 
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul

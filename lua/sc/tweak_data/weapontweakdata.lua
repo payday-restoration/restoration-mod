@@ -3220,11 +3220,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "heavy_pis" }
 		self[ wep_id ].damage_type = "heavy_pistol"
 	end
-
-	recat = { "mp7", "p90", "lemming" }
-	for i, wep_id in ipairs(recat) do
-		self[ wep_id ].damage_type = "pdw"
-	end
 	
 	recat = { "saiga", "aa12", "benelli", "ultima", "spas12", "striker", "rota", "x_rota", "basset", "x_basset" }
 	for i, wep_id in ipairs(recat) do
@@ -3323,9 +3318,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "anti_materiel"
 	end
 	
-
-	
-	
+	recat = { "mp7", "p90", "lemming" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].damage_type = "pdw"
+	end
+		
 	--Weapon specific attachment category names
 	self.new_raging_bull.override_mod_type_name = {
 		["slide"] = "barrel",
@@ -9754,6 +9751,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 	--HRL-7
+		self.rpg7.categories = {"grenade_launcher", "rocket_launcher"}
 		self.rpg7.upgrade_blocks = {
 			weapon = {
 				"clip_ammo_increase"
@@ -9798,6 +9796,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rpg7.timers.reload_exit_not_empty = 3.1
 
 	--Commando 101
+		self.ray.categories = {"grenade_launcher", "rocket_launcher"}
 		self.ray.upgrade_blocks = {
 			weapon = {
 				"clip_ammo_increase"

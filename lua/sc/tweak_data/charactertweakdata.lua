@@ -687,6 +687,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.flammable = false
 	self.medic_summers.use_animation_on_fire_damage = false
 	self.medic_summers.damage.explosion_damage_mul = 0.25
+	self.medic_summers.damage.rocket_damage_mul = 0.5
 	self.medic_summers.damage.fire_damage_mul = 0.25
 	self.medic_summers.damage.fire_pool_damage_mul = 0.25
 	self.medic_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
@@ -1444,7 +1445,8 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer.move_speed = presets.move_speed.slow	
 	self.enforcer.melee_weapon = "fists_dozer"	
 	self.enforcer.damage.hurt_severity = presets.hurt_severities.boss
-	self.enforcer.damage.explosion_damage_mul = 1.25	
+	self.enforcer.damage.explosion_damage_mul = 1.25
+	self.enforcer.damage.rocket_damage_mul = 2.5
 	self.enforcer.surrender = nil	
 	self.enforcer.allowed_poses = {stand = true}
 	self.enforcer.crouch_move = false
@@ -1529,6 +1531,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.damage_resistance = presets.damage_resistance.boss
 	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.triad_boss.damage.explosion_damage_mul = 1.25
+	self.triad_boss.damage.rocket_damage_mul = 2.5
 	self.triad_boss.can_be_tased = false
 	self.triad_boss.suppression = nil
 	self.triad_boss.move_speed = presets.move_speed.very_slow
@@ -1661,6 +1664,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.damage_resistance = presets.damage_resistance.boss
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
+	self.mobster_boss.damage.rocket_damage_mul = 2.5
 	self.mobster_boss.move_speed = presets.move_speed.very_slow
 	self.mobster_boss.allowed_poses = {stand = true}
 	self.mobster_boss.crouch_move = false
@@ -1714,6 +1718,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.headshot_dmg_mul = 7.99425
 	self.biker_boss.damage_resistance = presets.damage_resistance.boss
 	self.biker_boss.damage.explosion_damage_mul = 1.25
+	self.biker_boss.damage.rocket_damage_mul = 2.5
 	self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.boss
 	self.biker_boss.move_speed = presets.move_speed.very_slow
 	self.biker_boss.allowed_poses = {stand = true}
@@ -1811,6 +1816,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.headshot_dmg_mul = 7.99425
 	self.chavez_boss.damage_resistance = presets.damage_resistance.boss
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
+	self.chavez_boss.damage.rocket_damage_mul = 2.5
 	self.chavez_boss.move_speed = presets.move_speed.very_slow
 	self.chavez_boss.allowed_poses = {stand = true}
 	self.chavez_boss.no_retreat = true
@@ -1928,6 +1934,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.headshot_dmg_mul = 7.99425
 	self.drug_lord_boss.damage_resistance = presets.damage_resistance.boss
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
+	self.drug_lord_boss.damage.rocket_damage_mul = 2.5
 	self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.titan
 	self.drug_lord_boss.move_speed = presets.move_speed.very_slow
 	self.drug_lord_boss.allowed_poses = {stand = true}
@@ -2048,6 +2055,7 @@ function CharacterTweakData:_init_tank(presets)
 		heavy = {tased_time = 2, down_time = 0}
 	}
 	self.tank.damage.explosion_damage_mul = 2.5
+	self.tank.damage.rocket_damage_mul = 5
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
@@ -2165,6 +2173,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
+	self.tank_titan.damage.rocket_damage_mul = 2.5
 	self.tank_titan.is_special = true
 	self.tank_titan.no_asu = true
 	self.tank_titan.heal_cooldown = 22.5
@@ -2556,6 +2565,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.HEALTH_INIT = 19.5
 	self.phalanx_minion.damage_resistance = presets.damage_resistance.shield
 	self.phalanx_minion.damage.explosion_damage_mul = 0.25
+	self.phalanx_minion.damage.rocket_damage_mul = 0.5
 	self.phalanx_minion.damage.fire_pool_damage_mul = 0.25
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
@@ -2610,6 +2620,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.headshot_dmg_mul = 2.5
 	self.phalanx_vip.damage_resistance = presets.damage_resistance.boss
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
+	self.phalanx_vip.damage.rocket_damage_mul = 0.1
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
 	self.phalanx_vip.damage.bullet_damage_mul = 0.25
 	self.phalanx_vip.damage.fire_damage_mul = 0.25
@@ -2674,6 +2685,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.damage_resistance = presets.damage_resistance.boss
 	self.spring.headshot_dmg_mul = 3.997125
 	self.spring.damage.explosion_damage_mul = 1.25
+	self.spring.damage.rocket_damage_mul = 2.5
 	self.spring.damage.bullet_damage_mul = 1
 	self.spring.damage.fire_damage_mul = 1
 	self.spring.priority_shout = "f45"
@@ -2757,6 +2769,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.use_animation_on_fire_damage = false
 	self.summers.damage.bullet_damage_mul = 0.75
 	self.summers.damage.explosion_damage_mul = 0.25
+	self.summers.damage.rocket_damage_mul = 0.5
 	self.summers.damage.fire_damage_mul = 0.25
 	self.summers.damage.fire_pool_damage_mul = 0.25
 	self.summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
@@ -2826,6 +2839,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.damage.fire_pool_damage_mul = 0.75
 	self.autumn.flammable = false
 	self.autumn.damage.explosion_damage_mul = 1
+	self.autumn.damage.rocket_damage_mul = 0.75
 	self.autumn.move_speed = presets.move_speed.lightning
 	self.autumn.can_cloak = true
 	self.autumn.no_retreat = true
@@ -2980,6 +2994,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
 	self.taser_summers.damage.explosion_damage_mul = 0.25
+	self.taser_summers.damage.rocket_damage_mul = 0.5
 	self.taser_summers.damage.fire_damage_mul = 0.25
 	self.taser_summers.damage.fire_pool_damage_mul = 0.25
 	self.taser_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
@@ -3079,6 +3094,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.flammable = true
 	self.boom.use_animation_on_fire_damage = true
 	self.boom.damage.explosion_damage_mul = 0.5
+	self.boom.damage.rocket_damage_mul = 0.5
 	self.boom.damage.dot_damage_mul = 0.5
 	self.boom.damage.fire_damage_mul = 0.5
 	self.boom.damage.fire_pool_damage_mul = 0.5
@@ -3136,6 +3152,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.flammable = false
 	self.boom_summers.use_animation_on_fire_damage = false
 	self.boom_summers.damage.explosion_damage_mul = 0.25
+	self.boom_summers.damage.rocket_damage_mul = 0.25
 	self.boom_summers.damage.fire_damage_mul = 0.25
 	self.boom_summers.damage.fire_pool_damage_mul = 0.25
 	self.boom_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
@@ -3335,6 +3352,7 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.detection = presets.detection.gang_member
 	self.old_hoxton_mission.damage = presets.gang_member_damage
 	self.old_hoxton_mission.damage.explosion_damage_mul = 0
+	self.old_hoxton_mission.damage.rocket_damage_mul = 0
 	self.old_hoxton_mission.HEALTH_INIT = 20
 	self.old_hoxton_mission.headshot_dmg_mul = 1
 	self.old_hoxton_mission.move_speed = presets.move_speed.gang_member
@@ -4956,6 +4974,7 @@ function CharacterTweakData:_presets(tweak_data)
 		sharp = 1
 	}
 	presets.base.damage.explosion_damage_mul = 1
+	presets.base.damage.rocket_damage_mul = 1
 	presets.base.overheal_mult = 1
 	presets.base.critical_hits = {
 		damage_mul = 2
@@ -4974,6 +4993,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.headshot_dmg_mul = 1
 	presets.gang_member_damage.LIVES_INIT = 4
 	presets.gang_member_damage.explosion_damage_mul = 0
+	presets.gang_member_damage.rocket_damage_mul = 0
 	presets.gang_member_damage.REGENERATE_TIME = 3
 	presets.gang_member_damage.REGENERATE_TIME_AWAY = 1.5
 	presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME

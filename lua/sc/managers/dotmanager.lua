@@ -149,9 +149,7 @@ function DOTManager:_damage_dot(dot_info)
 	
 			if result and alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().thrower_unit then
 				local is_dead = result.type == "death"
-	
-				--Vanilla crash from this when enemy/corpse with active DoT despawns, disabled tracking for now
-				--weapon_unit:base():_check_achievements(dot_info.enemy_unit, is_dead, result.damage_percent or 0, 1, is_dead and 1 or 0, dot_info.variant)
+				weapon_unit:base():_check_achievements(dot_info.enemy_unit, is_dead, result.damage_percent or 0, 1, is_dead and 1 or 0, dot_info.variant)
 			end
 	
 			if dot_info.hurt_animation and dot_info.apply_hurt_once then

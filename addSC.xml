@@ -1013,6 +1013,14 @@
 	<!--STERWERS Tracer-->
     <effect path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/parts/sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/republic_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/empire_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/techno_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/mando_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>

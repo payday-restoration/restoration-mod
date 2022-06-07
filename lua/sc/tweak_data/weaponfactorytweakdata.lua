@@ -1192,7 +1192,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.supported = true
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = deep_clone(muzzle_device.muzzle_c_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
-	self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
+	--self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
 
 	--Shark Teeth
 	self.parts.wpn_fps_upg_ns_shot_shark.pcs = {
@@ -1928,7 +1928,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ass_ns_linear.supported = true
 	self.parts.wpn_fps_upg_ass_ns_linear.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
 	self.parts.wpn_fps_upg_ass_ns_linear.custom_stats = {
-		muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		--muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 	}
 
 	--Tactical Compensator
@@ -7459,6 +7459,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, concealment = 1, recoil = -2},
 		custom_stats = { 
+			empire = true,
 			ads_speed_mult = 0.95
 		},
 		internal_part = true,
@@ -7479,6 +7480,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, concealment = 2, recoil = -4},
 		custom_stats = { 
+			empire = true,
 			ads_speed_mult = 0.9
 		},
 		internal_part = true,
@@ -7499,6 +7501,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, concealment = 3, recoil = -6},
 		custom_stats = { 
+			empire = true,
 			ads_speed_mult = 0.85
 		},
 		internal_part = true,
@@ -7520,6 +7523,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = 1, concealment = -1},
 		custom_stats = { 
+			mandalorian = true,
 			ads_speed_mult = 1.05,
 			falloff_start_mult = 1.1,
 			falloff_end_mult = 1.1
@@ -7543,6 +7547,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = 2, concealment = -2},
 		custom_stats = { 
+			empire = true,
+			mandalorian = true,
 			ads_speed_mult = 1.1,
 			falloff_start_mult = 1.2,
 			falloff_end_mult = 1.2
@@ -7566,6 +7572,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = 3, concealment = -3},
 		custom_stats = { 
+			mandalorian = true,
 			ads_speed_mult = 1.15,
 			falloff_start_mult = 1.3,
 			falloff_end_mult = 1.3
@@ -7588,6 +7595,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = -1, recoil = 2},
 		custom_stats = {
+			republic = true,
 			falloff_start_mult = 0.9,
 			falloff_end_mult = 0.9
 		},
@@ -7609,6 +7617,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = -2, recoil = 4},
 		custom_stats = {
+			republic = true,
 			falloff_start_mult = 0.8,
 			falloff_end_mult = 0.8
 		},
@@ -7630,6 +7639,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = -3, recoil = 6},
 		custom_stats = { 
+			republic = true,
 			falloff_start_mult = 0.7,
 			falloff_end_mult = 0.7
 		},
@@ -7650,7 +7660,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {exp_multiplier = 1.05, money_multiplier = 1},
+		custom_stats = {exp_multiplier = 1.05, money_multiplier = 1, techno_union = true},
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc",
 		internal_part = true,
 		has_description = true,
@@ -7672,7 +7682,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1},
 		internal_part = true,
-		custom_stats = {money_multiplier = 1.05, exp_multiplier = 1},
+		custom_stats = {money_multiplier = 1.05, exp_multiplier = 1, techno_union = true},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
 		sub_type = "bonus_team",
@@ -8537,25 +8547,70 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	--Heatsinked Suppressed Barrel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.pcs = {}
 	self.parts.wpn_fps_lmg_mg42_b_vg38.supported = true
+	self.parts.wpn_fps_lmg_mg42_b_vg38.has_description = true
+	self.parts.wpn_fps_lmg_mg42_b_vg38.desc_id = "bm_wp_mg42_b_vg38_desc_sc"
 	self.parts.wpn_fps_lmg_mg42_b_vg38.stats = {
-		value = 2,
-		recoil = 12,
-		suppression = 10,
-		alert_size = -1
-	}
+		value = 10,
+		recoil = 8,
+		extra_ammo = -10
+	}		
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
+		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		rof_mult = 0.5
-	}				
-	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
+		regen_ammo_time = 2.5, 
+		regen_rate = 7, 
+		overheat_pen = 5, 
+		regen_rate_overheat = 3.5, 
+		rof_mult = 0.5,
+		falloff_start_mult = 1.25,
+		falloff_end_mult = 1.25
+	}
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_lmg_mg42_dummy_mag")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_upg_ns_ass_filter")
+	self.parts.wpn_fps_lmg_mg42_b_vg38.sub_type = nil
+	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = nil--{"silencer"}
 
-
-	self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine_extra"
-	self.parts.wpn_fps_lmg_mg42_reciever.bullet_objects = {
+	--Bringing back my old MG42 mag/belt fix method for more accurate looking DLT-19
+	self.parts.wpn_fps_lmg_mg42_dummy_mag = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)	
+	self.parts.wpn_fps_lmg_mg42_dummy_mag.type = "magazine_extra"
+	self.parts.wpn_fps_lmg_mg42_dummy_mag.adds = nil
+	self.parts.wpn_fps_lmg_mg42_dummy_mag.bullet_objects = {
 		prefix = "g_bullet_", 
 		amount = 6
 	}
+	self.parts.wpn_fps_lmg_mg42_dummy_mag.visibility = {
+		{
+			objects = {
+				g_handle = false,
+				g_base = false,
+				g_handle_loose = false,
+				g_lid = false,
+				g_lock = false,
+			}
+		}
+	}
 
+	--Unless you rebuy, changing/reverting the "type" of an attachment for a blueprint attached item leads to a freeze, so this is staying as such
+	self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine_extra"
+	self.parts.wpn_fps_lmg_mg42_reciever.visibility = {
+		{
+			objects = {
+				g_mag = false,
+				g_mag_handle = false,
+				g_bullet_1 = false,
+				g_bullet_2 = false,
+				g_bullet_3 = false,
+				g_bullet_4 = false,
+				g_bullet_5 = false,
+				g_bullet_6 = false,
+				g_band_1 = false,
+				g_band_2 = false,
+				g_band_3 = false,
+				g_band_4 = false
+			}
+		}
+	}
+	self.parts.wpn_fps_lmg_mg42_reciever.adds = {"wpn_fps_lmg_mg42_dummy_mag"}
 
 	if not self.wpn_fps_lmg_mg42.override then
 		self.wpn_fps_lmg_mg42.override = {}
@@ -8608,6 +8663,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	}
 	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_fc1 = {
 		parent = "magazine_extra"
+	}
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_ns_ass_filter = {
+		a_obj = "a_ns",
+		parent = "barrel"
 	}
 	
 	--Rails
@@ -8677,7 +8736,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_uh")		
 
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_fc1")		
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_fc1")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_ns_ass_filter")	
 			
 	self.wpn_fps_lmg_mg42_npc.uses_parts = deep_clone(self.wpn_fps_lmg_mg42.uses_parts)			
 
@@ -8695,18 +8757,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	--Damper.L 44 Nozzle
 	self.parts.wpn_fps_pis_c96_nozzle.pcs = {}
 	self.parts.wpn_fps_pis_c96_nozzle.supported = true
+	self.parts.wpn_fps_pis_c96_nozzle.has_description = true
+	self.parts.wpn_fps_pis_c96_nozzle.desc_id = "bm_wp_c96_nozzle_desc_sc"
 	self.parts.wpn_fps_pis_c96_nozzle.stats = {
-		value = 4,
-		suppression = 10,
-		alert_size = -1,
-		recoil = 6
+		value = 6,
+		recoil = 4,
+		extra_ammo = 2
 	}
 	self.parts.wpn_fps_pis_c96_nozzle.custom_stats = { 
+		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		rof_mult = 0.5
+		regen_ammo_time = 1.5, 
+		regen_rate = 3,
+		overheat_pen = 3, 
+		regen_rate_overheat = 1.5,
+		rof_mult = 0.4,
+		falloff_start_mult = 1.25,
+		falloff_end_mult = 1.25
+
 	}
-	self.parts.wpn_fps_pis_c96_nozzle.sub_type = "silencer"
-	self.parts.wpn_fps_pis_c96_nozzle.perks = {"silencer"}
+	self.parts.wpn_fps_pis_c96_nozzle.forbids = {"wpn_fps_pis_c96_m_extended"}
+	self.parts.wpn_fps_pis_c96_nozzle.sub_type = nil--"silencer"
+	self.parts.wpn_fps_pis_c96_nozzle.perks = nil--{"silencer"}
 	
 	--Barrel Sight 44
 	self.parts.wpn_fps_pis_c96_sight.pcs = {}
@@ -8779,21 +8851,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	--Heatsinked Suppressed Barrel
 	self.parts.wpn_fps_smg_sterling_b_e11.pcs = {}
 	self.parts.wpn_fps_smg_sterling_b_e11.supported = true
+	self.parts.wpn_fps_smg_sterling_b_e11.has_description = true
+	self.parts.wpn_fps_smg_sterling_b_e11.desc_id = "bm_wp_sterling_b_e11_desc_sc"
 	self.parts.wpn_fps_smg_sterling_b_e11.stats = {
 		value = 2,
-		suppression = 10,
-		alert_size = -1,
-		recoil = 6
+		recoil = 6,
+		extra_ammo = 5
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
+		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
+		regen_ammo_time = 1, 
+		regen_rate = 5, 
+		overheat_pen = 2,
+		regen_rate_overheat = 2.5,
 		rof_mult = 0.77272727,
 		falloff_start_mult = 1.25,
-		falloff_end_mult = 1.25,
+		falloff_end_mult = 1.25
 	}	
-	self.parts.wpn_fps_smg_sterling_b_e11.perks = {"silencer"}
+	self.parts.wpn_fps_smg_sterling_b_e11.sub_type = nil
+	self.parts.wpn_fps_smg_sterling_b_e11.perks = nil --{"silencer"}
+	self.parts.wpn_fps_smg_sterling_b_e11.forbids = deep_clone(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids)
+	table.insert(self.parts.wpn_fps_smg_sterling_b_e11.forbids, "wpn_fps_smg_sterling_m_long")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_e11.forbids, "wpn_fps_smg_sterling_m_short")
 	self.parts.wpn_fps_smg_sterling_b_e11.override = {
-		wpn_fps_smg_sterling_m_long = { unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling_pts/wpn_fps_smg_sterling_m_short" },
 		wpn_fps_smg_sterling_m_medium = { unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling_pts/wpn_fps_smg_sterling_m_short" }
 	}
 	

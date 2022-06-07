@@ -542,14 +542,14 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	local furthest_hit = ray_hits[#ray_hits]
 
-	if (furthest_hit and furthest_hit.distance > 600 or not furthest_hit) and alive(self._obj_fire) then
+	if (furthest_hit and furthest_hit.distance > 200 or not furthest_hit) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
 		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
 
 		local trail = World:effect_manager():spawn(self._trail_effect_table)
 
 		if furthest_hit then
-			World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 500) / 10000, 0, furthest_hit.distance))
+			World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 100) / 10000, 0, furthest_hit.distance))
 		end
 	end
 

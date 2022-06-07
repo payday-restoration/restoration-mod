@@ -204,7 +204,11 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				return 
 			end
 			if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
-				speed = weap_base:fire_rate_multiplier()
+				if weap_base._starwars then
+					speed = 1
+				else
+					speed = weap_base:fire_rate_multiplier()
+				end
 				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().fake_semi_anims then
 					redirect_name = Idstring("recoil_exit")
 				end

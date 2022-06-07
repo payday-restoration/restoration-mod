@@ -611,6 +611,30 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.starwars then
 				self._starwars = true
 			end
+			if stats.empire then
+				self._empire = true
+			end
+			if stats.republic then
+				self._republic = true
+			end
+			if stats.techno_union then
+				self._techno_union = true
+			end
+			if stats.mandalorian then
+				self._mandalorian = true
+			end
+			if stats.regen_rate then
+				self._regen_rate = stats.regen_rate
+			end	
+			if stats.regen_rate_overheat then
+				self._regen_rate_overheat = stats.regen_rate_overheat
+			end	
+			if stats.regen_ammo_time then
+				self._regen_ammo_time = stats.regen_ammo_time
+			end	
+			if stats.overheat_pen then
+				self._overheat_pen = stats.overheat_pen
+			end	
 			if stats.muzzleflash then
 				self._muzzle_effect_pls = stats.muzzleflash
 			end
@@ -627,16 +651,22 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
     if self._trail_effect_table then
 		if self._starwars == true then
-		--log("STARWARS TRACERS")
-			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail") 
+			if self._empire then
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
+			elseif self._republic then
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_r")
+			elseif self._techno_union then
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t")
+			elseif self._mandalorian then
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m")
+			else
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
+			end
 		elseif self._nato then
-		--log("NATO TRACERS")
 			self._trail_effect_table.effect = Idstring("_dmc/effects/nato_trail")
 		elseif self._warsaw then
-		--log("WARSAW TRACERS")
 			self._trail_effect_table.effect = Idstring("_dmc/effects/warsaw_trail")
 		elseif self._large_tracers then
-		--log("LARGE TRACERS")
 			self._trail_effect_table.effect = Idstring("_dmc/effects/large_trail")
 		end 
     end	
@@ -765,6 +795,14 @@ end
 local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
 function NewRaycastWeaponBase:toggle_firemode(...)
 	return not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+end
+
+function NewRaycastWeaponBase:can_reload()
+	if self:ammo_base()._starwars then
+		return false
+	else
+		return self:ammo_base():get_ammo_remaining_in_clip() < self:ammo_base():get_ammo_total()
+	end
 end
 
 function NewRaycastWeaponBase:_check_toggle_burst()

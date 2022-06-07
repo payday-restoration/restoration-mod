@@ -1,0 +1,14 @@
+<materials version="3">
+	<material name="third_body_mtr" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/third_body_df" />
+		<bump_normal_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/third_body_nm" />
+	</material>
+	<material name="mtr_third_ubr" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_akm4_modpack/weapons/wpn_third_upg_m4_s_ubr/third_ubr_df" />
+		<bump_normal_texture file="units/pd2_dlc_akm4_modpack/weapons/wpn_third_upg_m4_s_ubr/third_ubr_nm" />
+	</material>
+	<material name="mtr_bmg" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_bmg/wpn_third_upg_o_bmg_df" />
+		<bump_normal_texture file="units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_bmg/wpn_third_upg_o_bmg_nm" />
+	</material>
+</materials>

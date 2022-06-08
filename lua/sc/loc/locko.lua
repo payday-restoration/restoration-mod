@@ -11,8 +11,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
 		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
 
-		["res_credits"] = "레스트레이션 모드 크레딧",
-		["res_credits_help"] = "레스트레이션 모드에 대한 크레딧을 확인합니다.",
+		["res_credits"] = "레스토레이션 모드 크레딧",
+		["res_credits_help"] = "레스토레이션 모드에 대한 크레딧을 확인합니다.",
 	
 		["Warning_overhaul_title"] = "WARNING: Game closing to prevent save corruption.",
 		["dialog_show_overhaul_dialog"] = "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
@@ -20,12 +20,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["res_saveboost"] = "$BTN_INTERACT 키를 길게 눌려 레벨 100으로 올리기.",
 
-		["RestorationModOptionsButtonTitleID"] = "레스트레이션 모드 옵션",
-		["RestorationModOptionsButtonDescID"] = "레스트레이션 모드의 옵션.",
-		["RestorationModHUDOptionsButtonTitleID"] = "레스트레이션 HUD & UI 옵션.",
-		["RestorationModHUDOptionsButtonDescID"] = "레스트레이션의 HUD & UI 옵션.",
-		["RestorationModOTHEROptionsButtonTitleID"] = "추가 레스트레이션 모드 옵션.",
-		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스트레이션 모드 옵션.",
+		["RestorationModOptionsButtonTitleID"] = "레스토레이션 모드 옵션",
+		["RestorationModOptionsButtonDescID"] = "레스토레이션 모드의 옵션.",
+		["RestorationModHUDOptionsButtonTitleID"] = "레스토레이션 HUD & UI 옵션.",
+		["RestorationModHUDOptionsButtonDescID"] = "레스토레이션의 HUD & UI 옵션.",
+		["RestorationModOTHEROptionsButtonTitleID"] = "추가 레스토레이션 모드 옵션.",
+		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스토레이션 모드 옵션.",
 		["RestorationModUIOptionsButtonTitleID"] = "알파 UI",
 		["RestorationModUIOptionsButtonDescID"] = "알파 UI 옵션.",
 		["RestorationModTimeOfDayTitleID"] = "신규 + 랜덤 시간대",
@@ -185,14 +185,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModDifficultyMarkersDescID"] = "출시 전 난이도 마커를 활성화 또는 비활성화합니다.",
 		["RestorationModStaminaIndicatorTitleID"] = "디버그 스태미나 표시기",
 		["RestorationModStaminaIndicatorDescID"] = "디버그 스태미나 표시기를 활성화하거나 비활성화합니다.",
-		["RestorationModBlackScreenTitleID"] = "레스트레이션 블랙 스크린",
-		["RestorationModBlackScreenDescID"] = "레스트레이션 블랙 스크린을 활성화 또는 비활성화합니다.",
+		["RestorationModBlackScreenTitleID"] = "레스토레이션 블랙 스크린",
+		["RestorationModBlackScreenDescID"] = "레스토레이션 블랙 스크린을 활성화 또는 비활성화합니다.",
 		["RestorationModLoadoutsTitleID"] = "알파 로드아웃",
 		["RestorationModLoadoutsDescID"] = "알파 로드아웃 화면을 활성화하거나 비활성화합니다.",
 		["RestorationModDistrictTitleID"] = "CRIME.NET 구역 설명",
 		["RestorationModDistrictDescID"] = "CRIME.NET에 구역 설명을 활성화 또는 비활성화합니다. 게임 플레이에 영향을 주지 않습니다.",
-		["RestorationModSCOptionsButtonTitleID"] = "레스트레이션 오버홀 옵션",
-		["RestorationModSCOptionsButtonDescID"] = "레스트레이션 오버홀 옵션",
+		["RestorationModSCOptionsButtonTitleID"] = "레스토레이션 오버홀 옵션",
+		["RestorationModSCOptionsButtonDescID"] = "레스토레이션 오버홀 옵션",
 		["RestorationModSCTitleID"] = "Complete Overhaul (DEBUG)",
 		["RestorationModSCDescID"] = "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
 		["RestorationModHolidayTitleID"] = "홀리데이 효과",
@@ -219,7 +219,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_framing_frame_3"] = "오전 2:20, 고층 아파트",
 		["restoration_level_data_election_day_1"] = "오후 12:37, 39번 부두",
 		["restoration_level_data_election_day_2"] = "오전 8:10, 저장 창고",
-		["restoration_level_data_election_day_3"] = "안녕하세요! 만약 게임 플레이 중 이 문자열을 발견하면 레스트레이션 팀에 신고하세요! 감사합니다!",
+		["restoration_level_data_election_day_3"] = "안녕하세요! 만약 게임 플레이 중 이 문자열을 발견하면 레스토레이션 팀에 신고하세요! 감사합니다!",
 		["restoration_level_data_election_day_3_skip1"] = "오후 4:25, 국회 저축은행",
 		["restoration_level_data_election_day_3_skip2"] = "오후 3:25, 국회 저축은행",
 		["restoration_level_data_watchdogs_1"] = "오후 4:10, 고기 트럭",
@@ -378,8 +378,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_shatter_true"] = "Shatter",
 		["bm_msk_shatter_true_desc"] = "The legendary mask that has only been spoken of in hushed tones.\n\nOf course, it's just a duplicate.\n\nThere's something much more special about the real one, but I think you'll like a copy just as much.\n\nThe Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.",
 
-		["menu_l_global_value_veritas"] = "레스트레이션 모드",
-		["menu_l_global_value_veritas_desc"] = "이 상품은 레스트레이션 모드 아이템입니다!",
+		["menu_l_global_value_veritas"] = "레스토레이션 모드",
+		["menu_l_global_value_veritas_desc"] = "이 상품은 레스토레이션 모드 아이템입니다!",
 
 		["menu_alex_1_zipline"] = "가방 짚라인",
 
@@ -589,7 +589,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["beta_assault"] = "알파 테이프",
 
 		["menu_ingame_manual"] = "오버홀 가이드",
-		["menu_ingame_manual_help"] = "레스트레이션의 오버홀 가이드 봅니다.",
+		["menu_ingame_manual_help"] = "레스토레이션의 오버홀 가이드 봅니다.",
 
 		["menu_asset_wet_add_saw"] = "추가 톱",
 		["menu_asset_wet_add_saw_desc"] = "추가 톱을 구매합니다",
@@ -1114,6 +1114,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "완전 자동 발사가 가능하도록 개조된 혁신적인 독일 권총입니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
 		["bm_wp_c96_nozzle"] = "블라스테크 DL-44 소음기",
+		["bm_wp_c96_nozzle_desc_sc"] = "머나먼 은하계에서 왔다고 하는 이 기술은 무기를 플라즈마를 발사하는 노리쇠로 변환하고 재충전 탄창을 사용합니다.\n\n재충전 지연: 1.5초\n재충전 속도: 3/초 (과열시 반감됨)\n과열 패널티: 3초",		
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝하여 많은 총알을 날립니다.",
 
@@ -1130,7 +1131,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mp5"] = "Compact-5 기관단총",	
 		["bm_mp5_sc_desc"] = "Gewehr-3의 여동생.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
 		--Pachett/Sterling
-		["bm_wp_sterling_b_e11"] = "블라스테크 E-11 소음 총열",		
+		["bm_wp_sterling_b_e11"] = "블라스테크 E-11 소음 총열",
+		["bm_wp_sterling_b_e11_desc_sc"] = "머나먼 은하계에서 왔다고 하는 이 기술은 무기를 플라즈마를 발사하는 노리쇠로 변환하고 재충전 탄창을 사용합니다.\n\n재충전 지연: 1초\n재충전 속도: 5/초 (과열시 반감됨)\n과열 패널티: 2초",		
 		--Uzi
 		["bm_uzi_sc_desc"] = "Uzi는 신뢰할 수 있고 느린 발사속도 덕분에 특히 .41 AE탄으로 변환해도 펀치를 날릴 수 있을 정도로 제어하기 쉬운 기관단총으로 만들어져 있습니다.",
 		--Chicago Typewriter
@@ -1239,6 +1241,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
 		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 늑대이다.\"\n\n지향 사격 시 명중률이 매우 감소하지만 반동이 25% 감소합니다.",	
 		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 소음 총열",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "머나먼 은하계에서 왔다고 하는 이 기술은 무기를 플라즈마를 발사하는 노리쇠로 변환하고 재충전 탄창을 사용합니다.\n\n재충전 지연: 2.5초\n재충전 속도: 7/초 (과열시 반감됨)\n과열 패널티: 5초",
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
@@ -1323,8 +1326,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_mod_sc_desc"] = "이 부착물의 능력치는 자동 커스텀 부착물 능력치 생성이 완료될 때까지 제거되었습니다.",
 		
 		--Overhaul Content Indicators--
-		["loot_sc"] = "레스트레이션 오버홀",
-		["loot_sc_desc"] = "이 상품은 레스트레이션 오버홀의 아이템입니다!",
+		["loot_sc"] = "레스토레이션 오버홀",
+		["loot_sc_desc"] = "이 상품은 레스토레이션 오버홀의 아이템입니다!",
 
 		["menu_l_global_value_omnia"] = "OMNIA",
 		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",
@@ -1889,7 +1892,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_risk_sm_wish"] = "데스 센텐스. 그들에게 멈출 수 없음을 보여주십시오.",
 
 
-		["loading_gameplay_res_title"] = "레스트레이션 게임플레이 팁",
+		["loading_gameplay_res_title"] = "레스토레이션 게임플레이 팁",
 		["loading_gameplay_res_1"] = "클로커는 플레이어에게 공격적일 때 '쌕쌕' 소리를 냅니다. 이것을 들어서 찾아보십시오.",
 		["loading_gameplay_res_2"] = "클로커는 더 이상 돌진할 때 주변에서 윙윙거리는 소리나 끽끽거리는 소리를 내지 않습니다.",
 		["loading_gameplay_res_3"] = "권총은 교체 시간이 긴 주무기를 쓸 때 이상적인 보조 무기입니다.",
@@ -1898,7 +1901,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_6"] = "클로커는 발로 차면 직접적인 체력 피해를 입힙니다. 이것은 굴절 또는 반격 스킬로 감소시킬 수 있습니다.",
 		["loading_gameplay_res_7"] = "그린 불도저는 많은 양의 피해량을 입히고 종종 한 발로 가장 무거운 방탄복도 부술 수 있습니다.",
 		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 피해량 대신 높은 연사력을 가지고 있으며 인상적인 드럼 탄창을 자랑합니다.",
-		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 강력한 제압 사격을 가하고 벨트가 비워질 때까지 사격합니다.",
+		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 강력한 제압 사격을 가하고 탄띠가 비워질 때까지 사격합니다.",
 		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체하며, 그린 도저와 블랙 도저의 부정한 조합하여 높은 연사력과 높은 피해량을 입힙니다.",
 		["loading_gameplay_res_11"] = "목표 우선순위가 중요합니다. 모든 유형의 불도저는 경무장 SWAT보다 더 주의할 가치가 있습니다.",
 		["loading_gameplay_res_12"] = "데스 센텐스에서 불도저는 바이저가 깨지면 버서커 분노 상태에 돌입하여 공격력을 10%만큼 증가시킵니다.",
@@ -1916,11 +1919,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_24"] = "적들은 더 높은 난이도에서 다른 행동을 보일 것입니다.",
 		["loading_gameplay_res_25"] = "데스 센텐스 난이도는 당신의 삶을 지옥으로 만들기 위해 온갖 종류의 불쾌한 속임수를 가져옵니다. 그들이 주먹부터 날릴 것이라고 기대하지 마십시오.",
 		["loading_gameplay_res_26"] = "프로 잡은 단 한 번의 기회를 주어 자신의 능력을 시험할 수 있고, 두려운 브라보 유닛의 스폰을 허용합니다.",
-		["loading_gameplay_res_27"] = "레스트레이션 모드는 머키워터 용병 및 다른 주의 법 집행자와 같은 다양한 진영을 제공합니다.",
+		["loading_gameplay_res_27"] = "레스토레이션 모드는 머키워터 용병 및 다른 주의 법 집행자와 같은 다양한 진영을 제공합니다.",
 		["loading_gameplay_res_28"] = "클로커는 더 높은 난이도에서 제압을 수행할 때 연막탄을 사용합니다.",
 		
-		["loading_new_units_res_title"] = "레스트레이션 유닛 팁",
-		["loading_new_units_res_1"] = "옴니아 ASU는 주변 아군에게 노란색 레이저 부착물을 제공하여 표시하고 피해량 보너스를 제공합니다.",
+		["loading_new_units_res_title"] = "레스토레이션 유닛 팁",
+		["loading_new_units_res_1"] = "옴니아 ASU는 주변 아군에게 노란색 레이저 부착물을 제공하여 피해량 보너스를 제공합니다.",
 		["loading_new_units_res_2"] = "LPF는 근접 공격에 약합니다.",
 		["loading_new_units_res_3"] = "경무장 유닛은 LPF에 의해 과치료됩니다. 과치료된 적은 보라색 테두리으로 표시됩니다.",
 		["loading_new_units_res_4"] = "타이탄 클로커는 거의 보이지 않게 만드는 고급 은폐 장비를 가지고 있지만 여전히 표준 클로커 장비의 이전 모델의 주변 소음을 가지고 있습니다.",
@@ -1936,11 +1939,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_14"] = "타이탄 SWAT은 인질로 잡거나 당신 편에 싸우도록 전향시킬 수도 없습니다.",
 		["loading_new_units_res_15"] = "타이탄 SWAT은 경기관총과 자동 산탄총로 무장했습니다.",
 		["loading_new_units_res_16"] = "위험한 브라보 유닛은 프로 잡에서 PONR이 트리거될 때만 생성됩니다. 그들은 강화된 방탄복과 더 강력한 무기를 갖춘 강력하고 무자비한 적입니다.",
-		["loading_new_units_res_17"] = "브라보 유닛은 파편 수류탄을 던질 수 있습니다. 주변이 깜박이고 경고음이 카운트다운되는 것을 들을 때 주의하십시오.",
+		["loading_new_units_res_17"] = "브라보 유닛은 파편 수류탄을 던질 수 있습니다. 주변이 깜박이고 경고음을 듣고 카운트다운되는 것을 주의하십시오.",
 		["loading_new_units_res_18"] = "아칸은 그들의 연구개발 회사인 DRAK에서 개발한 자체 타이탄 유닛을 배치합니다.",
 		["loading_new_units_res_19"] = "척탄병은 장착된 언더베럴을 사용하여 원거리에서 최루가스 유탄을 발사하여 구름 속에 있는 플레이어에게 피해를 줍니다. 데스 센텐스에선 대신 더 치명적이고 스태미나를 소모하는 신경가스 유탄으로 무장합니다.",
 		
-		["loading_captains_res_title"] = "레스트레이션 캡틴 팁",
+		["loading_captains_res_title"] = "레스토레이션 캡틴 팁",
 		["loading_captains_res_1"] = "캡틴 서머스를 쓰러뜨리려면 먼저 닥과 그의 팀원들부터 목표로 삼으십시오. 그는 그의 모든 팀원들이 죽을 때까지 죽일 수 없으며 다른 두 사람은 닥이 죽을 때까지는 거의 무적입니다.",		
 		["loading_captains_res_2"] = "캡틴 서머스를 안아주지 마십시오. 그는 화염 방사기로 당신을 녹일 것입니다.",		
 		["loading_captains_res_3"] = "캡틴 스프링은 엄청난 피해를 버틸 수 있지만 결국 쓰러질 것입니다. 그의 수류탄을 조심하고 느린 기동성을 이용하십시오.",	
@@ -1954,7 +1957,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_11"] = "캡틴 윈터스의 방패는 완전히 뚫을 수 없습니다.",	
 		["loading_captains_res_12"] = "캡틴 윈터스는 맵을 돌아다니며 주변의 적들을 치료하거나 과치료합니다.",	
 		--Stealth Hints
-		["loading_stealth_res_title"] = "레스트레이션 스텔스 팁",
+		["loading_stealth_res_title"] = "레스토레이션 스텔스 팁",
 		["loading_stealth_res_1"] = "보안 경비 지휘소는 오작동하는 카메라를 조사하기 위해 경비원을 보내고 이를 이용해 미끼로 사용할 수 있습니다.",	
 		["loading_stealth_res_2"] = "근접 공격으로 경계하지 않은 경비원을 신속하게 처리하면 페이저가 울리지 않습니다.",	
 		["loading_stealth_res_3"] = "보안 경비 지휘소는 경비원의 실종을 알아챈다면 지원 경비를 보낼 것 입니다.",	
@@ -1977,10 +1980,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_20"] = "허용된 한도를 초과하여 페이저에 응답하면 의심이 크게 증가하지만 페이저를 끊거나 응답하지 않는 것만큼은 아닙니다.",	
 		["loading_stealth_res_21"] = "높은 난이도에서는 페이저를 응답하는 데 더 오래 걸리고 더 빨리 사라집니다.",	
 		--Equipment/Skill Hints
-		["loading_equip_skills_res_title"] = "레스트레이션 장비/스킬 팁",
+		["loading_equip_skills_res_title"] = "레스토레이션 장비/스킬 팁",
 		["loading_equip_skills_res_1"] = "산탄총은 정확도가 낮아질수록 사거리가 줄어듭니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오!",	
-		["loading_equip_skills_res_2"] = "권총은 교체가 매우 빠르고 일반적으로 정확도와 안정성이 높습니다.",	
-		["loading_equip_skills_res_3"] = "레스트레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 데미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
+		["loading_equip_skills_res_2"] = "권총은 교체가 매우 빠르고 일반적으로 명중률과 안정성이 높습니다.",	
+		["loading_equip_skills_res_3"] = "레스토레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 데미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
 		["loading_equip_skills_res_4"] = "데미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은닉성이 낮습니다.",	
 		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 수리합니다.",	
 		["loading_equip_skills_res_6"] = "센트리 철갑탄을 잠금 해제된 경우 장비 메뉴에서 기본 탄약 유형을 선택할 수 있습니다.",	
@@ -2008,14 +2011,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_28"] = "특성 덱의 레벨을 올리면 투척물 케이스가 잠금 해제됩니다.",
 		["loading_equip_skills_res_29"] = "이제 투척물 케이스로 사용할 때마다 투척물을 보충하면 모두 채워줍니다.",	
 		["loading_equip_skills_res_30"] = "상황이 안 좋을때 인스파이어 에이스로 팀원을 구하십시오. 재사용 대기 시간이 매우 길고 시야가 필요합니다.",	
-		["loading_equip_skills_res_31"] = "레스트레이션 모드는 각각 일반 퍽만 제공하거나 퍽은 제공하지 않는 두 개의 새로운 특성 덱(와일드카드 및 백지)을 추가했습니다. 이것은 스스로 부과한 도전을 하고 싶은 사람들을 위한 특성 덱입니다.",
+		["loading_equip_skills_res_31"] = "레스토레이션 모드는 각각 일반 퍽만 제공하거나 퍽은 제공하지 않는 두 개의 새로운 특성 덱(와일드카드 및 백지)을 추가했습니다. 이것은 스스로 부과한 도전을 하고 싶은 사람들을 위한 특성 덱입니다.",
 		--Misc Hints
-		["loading_misc_res_title"] = "레스트레이션 기타 팁",
+		["loading_misc_res_title"] = "레스토레이션 기타 팁",
 		["loading_misc_res_1"] = "저희가 만든 커스텀 하이스트도 해보십시오! 블라드의 '도그하우스'뿐만 아니라 '자칼'의 계약에서 대부분 찾을 수 있습니다.",	
-		["loading_misc_res_2"] = "레스트레이션 모드에 스팀 가이드가 있습니다! 이 가이드는 더 자세한 정보를 알아가는데 유용합니다. 메인 메뉴를 확인하세요.",	
-		["loading_misc_res_3"] = "레스트레이션 모드에 디스코드 서버가 있습니다! 토론, 벨런스 피드백 및 매치 메이킹에 참여하십시오! 메인 메뉴를 확인하세요.",	
+		["loading_misc_res_2"] = "레스토레이션 모드에 스팀 가이드가 있습니다! 이 가이드는 더 자세한 정보를 알아가는데 유용합니다. 메인 메뉴를 확인하세요.",	
+		["loading_misc_res_3"] = "레스토레이션 모드에 디스코드 서버가 있습니다! 토론, 벨런스 피드백 및 매치 메이킹에 참여하십시오! 메인 메뉴를 확인하세요.",	
 		--Trivia Hints
-		["loading_fluff_res_title"] = "레스트레이션 트라비아",
+		["loading_fluff_res_title"] = "레스토레이션 트라비아",
 		["loading_fluff_res_1"] = "옴니아는 폐기된 무기 프로젝트를 복구 하기 위해 많은 돈을 씁니다.",	
 		["loading_fluff_res_2"] = "LPF는 많은 맥주를 빚지고 있습니다.",	
 		["loading_fluff_res_3"] = "LPF와 타이탄 명사수는 호주인입니다.",	
@@ -2023,7 +2026,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_5"] = "ZEAL UMP 엘리트 SWAT의 이름은 Chad입니다.",	
 		["loading_fluff_res_6"] = "타이탄 도저는 광범위한 유전 공학, 인간 실험 및 전투용 약물 덕분에 빛나는 눈을 가지고 있습니다.",	
 		["loading_fluff_res_7"] = "캡틴 스프링은 인간이 아닙니다. 아니면 아주 옛날에 인간이였을겁니다.",	
-		["loading_fluff_res_8"] = "레스트레이션 모드는 커뮤니티의 다양한 맴버와 개발 팀에 의해 'resmod','SCmod','furry mod' 및 'mememod'라는 별명이 붙었습니다.",	
+		["loading_fluff_res_8"] = "레스토레이션 모드는 커뮤니티의 다양한 맴버와 개발 팀에 의해 'resmod','SCmod','furry mod' 및 'mememod'라는 별명이 붙었습니다.",	
 		["loading_fluff_res_9"] = "옴니아는 공룡의 공격으로부터 보호하기 위해 강화된 보안문을 개발하고 있습니다.",	
 		["loading_fluff_res_10"] = "척탄병은 해충 구제에도 투입됩니다.",	
 		["loading_fluff_res_11"] = "당신은 타이탄 클로커를 본 적이 없습니다.",
@@ -2393,7 +2396,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "팔방미인",
-			["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n주 장비와 함께 보조장비를 같이 소지할 수 있습니다. 주장비와 보조장비를 교체하려면 ##'X'## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있습니다.",
+			["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n주 장비와 함께 보조장비를 같이 소지할 수 있습니다. 주장비와 보조장비를 교체하려면 ##[X]## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있습니다.",
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "타워 디펜스",

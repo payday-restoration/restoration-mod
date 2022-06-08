@@ -234,6 +234,18 @@
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/dozers_head_atlas_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas_nm" />	
 	
+	<!-- NEW BENELLI DOZER-->
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
+	<model				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<object				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
+	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
+	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
+	
+	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />
+	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
+	
 	<!--zshield-->
 	<object				path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>

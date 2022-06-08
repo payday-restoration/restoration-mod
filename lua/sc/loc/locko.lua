@@ -1293,7 +1293,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m200_sc_desc"] = "멋진 360도 노 스코프 사다리 스톨 샷을 시도할려는 사람들을 위한 총입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",		
 
 		--3GL
-		["bm_ms3gl_sc_desc"] = "단일 챔버에 맞춤형 40mm 탄들을 빠르게 발사하여 작은 곳에서 후속 조치를 가능하게 합니다.\n설정 발사를 사용하면 모든 탄을 발사할 수 있습니다.",	
+		["bm_ms3gl_sc_desc"] = "단일 챔버에 맞춤형 40mm 탄들을 빠르게 발사하여 작은 곳에서 후속 조치를 가능하게 합니다.\n설정 발사를 사용하면 모든 탄을 발사할 수 있습니다.",
+		--COMMANDO 101/M202 FLASH
+		["bm_ray_sc_desc"] = "이 4발 소이 로켓 발사기로 \"죽음의 사신\"이 되보십시오.\n\n로켓은 화염 지대를 남기고 이 무기로 가한 폭발 피해는 터렛을 즉시 파괴합니다.",		
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",

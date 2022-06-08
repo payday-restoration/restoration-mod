@@ -682,10 +682,9 @@ end
 local old_tweak_data_anim_play = NewRaycastWeaponBase.tweak_data_anim_play
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier)
 	if self._starwars then
-		local anim = "fire"
-		self:tweak_data_anim_offset("fire", 2)
 		return
 	end
+	local orig_anim = anim
 	old_tweak_data_anim_play(self, anim, speed_multiplier)
 	NewRaycastWeaponBase.super.tweak_data_anim_play(self, orig_anim, speed_multiplier)
 	return true

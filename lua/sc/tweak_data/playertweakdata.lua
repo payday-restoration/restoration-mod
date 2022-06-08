@@ -547,6 +547,50 @@ function PlayerTweakData:_init_czech()
 end
 
 
+
+if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
+	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "fnuxar15overhaul_fix", function(self)	
+		local pivot_shoulder_translation
+		local pivot_shoulder_rotation
+		local pivot_head_translation
+		local pivot_head_rotation
+		pivot_shoulder_translation = Vector3(8.3958, 23.0133, -1.675)
+		pivot_shoulder_rotation = Rotation(0.106673, -0.0849742, 0)
+		pivot_head_translation = Vector3(-0.02, 14, 0)
+		pivot_head_rotation = Rotation(0.11, -0.075, 0)
+		self.stances.amcar.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.amcar.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+		pivot_shoulder_translation = Vector3(8.4212, 23.0133, -2.1573)
+		pivot_shoulder_rotation = Rotation(0, 0, 0)
+		pivot_head_translation = Vector3(0.01, 10.01, 0)
+		pivot_head_rotation = Rotation(0.01, 0.01, 0)
+		self.stances.new_m4.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.new_m4.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+		pivot_shoulder_translation = Vector3(8.3958, 23.0133, -1.675)
+		pivot_shoulder_rotation = Rotation(0.107116, -0.0847403, 0)
+		pivot_head_translation = Vector3(-0.02, 14, 0)
+		pivot_head_rotation = Rotation(0.12, -0.05, 0)
+		self.stances.m16.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.m16.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+		self.stances.olympic.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.olympic.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+		pivot_shoulder_translation = Vector3(8.3653, 15.6166, -3.0008)
+		pivot_shoulder_rotation = Rotation(0.106298, -0.085067, 0)
+		pivot_head_translation = Vector3(-0.04, 18, -0.02)
+		pivot_head_rotation = Rotation(0.1, -0.05, 0)
+		self.stances.ak5.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.ak5.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+		pivot_shoulder_translation = Vector3(8.3653, 19.971, -3.3989)
+		pivot_shoulder_rotation = Rotation(0.10658, -0.0846555, 0)
+		pivot_head_translation = Vector3(-0.05, 15, -0.15)
+		pivot_head_rotation = Rotation(0.1, 0, 0)
+		self.stances.vityaz.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.vityaz.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+		--SCAR is aligned as far as I can tell, no changes needed
+	end)
+end
+
+
 Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
 	for wep_id, i in pairs(self.stances) do
 		if self.stances[ wep_id ] and self.stances[ wep_id ].steelsight then

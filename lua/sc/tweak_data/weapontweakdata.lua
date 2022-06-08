@@ -3222,6 +3222,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_pis" }
 		self[ wep_id ].damage_type = "heavy_pistol"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
 	recat = { "saiga", "aa12", "benelli", "ultima", "spas12", "striker", "rota", "x_rota", "basset", "x_basset" }
@@ -3229,6 +3230,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "light_shot" }
 		self[ wep_id ].damage_type = "shotgun"
 		self[ wep_id ].damage_type_single_ray = "sniper"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
 	recat = { "judge", "x_judge", "m1897", "m590", "r870", "ksg", "m37", "serbu" }
@@ -3236,6 +3238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "heavy_shot" }
 		self[ wep_id ].damage_type = "shotgun"
 		self[ wep_id ].damage_type_single_ray = "sniper"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
 	recat = { "huntsman", "b682", "boot", "coach" }
@@ -3243,41 +3246,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "break_shot" }
 		self[ wep_id ].damage_type = "shotgun"
 		self[ wep_id ].damage_type_single_ray = "sniper"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
 	recat = { "tec9", "x_tec9", "erma", "x_erma", "shepheard", "x_shepheard", "vityaz", "x_vityaz", "coal", "x_coal", "pm9", "x_pm9", "baka", "x_baka", "new_mp5", "x_mp5", "sr2", "x_sr2", "mp7", "x_mp7", "mp9", "x_mp9", "m45", "x_m45", "scorpion", "x_scorpion", "p90", "sterling", "x_sterling", "cobray", "x_cobray" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_smg" }
 		self[ wep_id ].damage_type = "machine_gun"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
 	recat = { "uzi", "x_uzi", "schakal", "x_schakal", "polymer", "x_polymer", "m1928", "x_m1928", "mac10", "x_mac10" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_smg" }
 		self[ wep_id ].damage_type = "machine_gun"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
-	recat = { "amcar", "new_m4", "ak5", "aug", "s552", "flint", "ak74", "osipr", "corgi", "vhs", "g36", "famas", "komodo", "hajk", "olympic" }
+	recat = { "amcar", "new_m4", "ak5", "aug", "s552", "flint", "ak74", "corgi", "vhs", "g36", "famas", "komodo", "hajk", "olympic" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
+		self[ wep_id ].m_add_t = 0.15
 	end
 	
 	recat = { "m16", "akm", "akm_gold", "groza", "l85a2", "akmsu", "x_akmsu" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
+		self[ wep_id ].m_add_t = 0.15
 	end
+	self.groza_underbarrel.m_add_t = 0.15
 	
 	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
+		self[ wep_id ].m_add_t = 0.2
 	end
+	self.contraband_m203.m_add_t = 0.2
+
 	recat = { "ching", "g3", "new_m14", "shak12" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "sniper"
+		self[ wep_id ].m_add_t = 0.2
 	end
 	
 	recat = { "m249", "tecci", "rpk" }
@@ -3285,6 +3298,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "light_mg" }
 		self[ wep_id ].has_description = true
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
+		self[ wep_id ].m_add_t = 0.3
 	end
 	
 	recat = { "mg42", "m60", "hk21", "par", "hk51b" }
@@ -3293,6 +3307,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].has_description = true
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
 		self[ wep_id ].weapon_movement_penalty = 0.65
+		self[ wep_id ].m_add_t = 0.3
 	end
 	self.hk51b.weapon_movement_penalty = 0.825
 	
@@ -3301,29 +3316,39 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "miniguns" }
 		self[ wep_id ].has_description = true
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
+		self[ wep_id ].m_add_t = 0.35
 	end
 	
 	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "scout" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_snp" }
 		self[ wep_id ].damage_type = "sniper"
+		self[ wep_id ].m_add_t = 0.3
 	end
 	
 	recat = { "siltstone", "r93", "desertfox", "sbl", "mosin", "model70", "wa2000" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_snp" }
 		self[ wep_id ].damage_type = "sniper"
+		self[ wep_id ].m_add_t = 0.35
 	end
 	
 	recat = { "m95" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "antim_snp" }
 		self[ wep_id ].damage_type = "anti_materiel"
+		self[ wep_id ].m_add_t = 0.35
 	end
 	
 	recat = { "mp7", "p90", "lemming" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].damage_type = "pdw"
+		self[ wep_id ].m_add_t = 0.15
+	end
+
+	recat = { "rpg7", "ray", "m32", "ms3gl", "gre_m79", "slap", "china", "arbiter", "flamethrower_mk2", "system" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].m_add_t = 0.35
 	end
 		
 	--Weapon specific attachment category names
@@ -7219,6 +7244,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.timers.reload_empty = 2.9 		
 				self.amcar.timers.reload_exit_empty = 0.4
 				self.amcar.timers.reload_exit_not_empty = 0.5
+				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
+					self.amcar.timers.reload_exit_empty = 1
+					self.amcar.timers.reload_exit_not_empty = 1
+				end
 				self.amcar.panic_suppression_chance = 0.05
 
 			--JP36
@@ -7326,10 +7355,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.new_m4.stats_modifiers = nil
-				self.new_m4.timers.reload_not_empty = 2.5
-				self.new_m4.timers.reload_empty = 3.43
-				self.new_m4.timers.reload_exit_empty = 1
-				self.new_m4.timers.reload_exit_not_empty = 0.95		
+
+				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
+					self.new_m4.timers.reload_not_empty = 1.6
+					self.new_m4.timers.reload_empty = 2.3
+					self.new_m4.timers.reload_exit_empty = 0.88
+					self.new_m4.timers.reload_exit_not_empty = 0.7
+					self.new_m4.reload_speed_multiplier = 0.71
+				else
+					self.new_m4.timers.reload_not_empty = 2.5
+					self.new_m4.timers.reload_empty = 3.43
+					self.new_m4.timers.reload_exit_empty = 1
+					self.new_m4.timers.reload_exit_not_empty = 0.95
+				end
 				self.new_m4.panic_suppression_chance = 0.05
 
 			--Ak5
@@ -10971,6 +11009,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	--OICW
 	if self.osipr then
+		self.osipr.recategorize = { "light_ar" }
+		self.osipr.damage_type = "assault_rifle"
+		self.osipr.m_add_t = 0.15
 		self.osipr.nato = true
 		self.osipr.tactical_reload = 1		
 		self.osipr.AMMO_MAX = 120
@@ -11009,6 +11050,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 	
 	if self.osipr_gl then
+		self.osipr_gl.m_add_t = 0.15
 		self.osipr_gl.AMMO_MAX = 9
 		self.osipr_gl.tactical_reload = 1
 		self.osipr_gl.CLIP_AMMO_MAX = 5
@@ -11703,7 +11745,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 1,
 			reload = 20
 		}
-		self.car9.reload_speed_multiplier = 1.25
+		self.car9.reload_speed_multiplier = 1.1
 		self.car9.timers.reload_not_empty = self.new_m4.timers.reload_not_empty
 		self.car9.timers.reload_empty = self.new_m4.timers.reload_empty
 		self.car9.timers.reload_exit_empty = self.new_m4.timers.reload_exit_empty

@@ -964,7 +964,13 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].expire_t or 0 --Add fallbacks for certain stats.
 	local melee_miss_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_expire_t or 0
 	local melee_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
+	local melee_repeat_expire_t_add = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
 	local melee_miss_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_repeat_expire_t or 0
+	local weap_base = self._equipped_unit:base():weapon_tweak_data()
+	local weap_t = weap_base.m_add_t
+	if instant_hit and weap_t then
+		melee_repeat_expire_t = melee_repeat_expire_t + weap_t
+	end
 	--So the timers play nicely with the anim speed mult
 	melee_expire_t = melee_expire_t / speed
 	melee_miss_expire_t = melee_miss_expire_t / speed
@@ -1086,7 +1092,6 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		self._camera_unit:base():play_anim_melee_item(melee_item_tweak_anim, speed)
 	end
 end
-
 
 --Updates burst fire and minigun spinup.
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)

@@ -8,14 +8,17 @@
         <diffuse_texture        file="units/pd2_dlc_mad/characters/shared_textures/head_atlas_df" mip="1"/>
 	</material>
 
-	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_nm" mip="1"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/ene_akan_fbi_1/security_winter_df"/>
-	</material>
-	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_nm" mip="2"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/ene_akan_fbi_1/security_winter_df" mip="1"/>
-	</material>
+    <material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2" >
+		<bump_normal_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_mad/characters/ene_akan_fbi_1/security_winter_df"/>
+        <material_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_gsma"/>		
+    </material>
+
+    <material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2" >
+		<bump_normal_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_mad/characters/ene_akan_fbi_1/security_winter_df"/>
+        <material_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_gsma"/>		
+    </material>
 	
 	<material name="mtr_hat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<diffuse_texture file="units/pd2_dlc_wmp/masks/wmp_01/msk_wmp_01_df" />

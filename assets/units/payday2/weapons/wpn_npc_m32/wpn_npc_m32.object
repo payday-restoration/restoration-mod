@@ -1,6 +1,11 @@
 <dynamic_object>
     <diesel orientation_object="rp_m32" materials="units/payday2/weapons/wpn_npc_m32/wpn_npc_m32" />
 	<sequence_manager file="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
+	<animations>
+		<animation_group name="recoil" enabled="false">
+			<object name="anim_mag_recoil" enabled="true"/>
+		</animation_group>
+	</animations>
   <bodies>
 	<body name="body" enabled="false" template="debris" pushed_by_mover="false">
 		<object name="rp_m32" />

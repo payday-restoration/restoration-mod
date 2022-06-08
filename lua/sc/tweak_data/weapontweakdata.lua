@@ -1505,6 +1505,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.m32_npc.projectile = "launcher_frag_m32"
 		self.m32_npc.CLIP_AMMO_MAX = 6	
 		self.m32_npc.looped_reload_speed = nil
+		self.m32_npc.has_fire_animation = true
+		self.m32_npc.animations = { fire = "recoil" }
+
 		
 		--RPG-7
 		self.rpg7_npc = deep_clone(self.contraband_m203_npc)

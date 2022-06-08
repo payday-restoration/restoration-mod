@@ -281,6 +281,10 @@ function NPCGrenadeLauncherBaseBoss:fire(from_pos, direction, dmg_mul, shoot_pla
 	end
 
 	managers.player:send_message(Message.OnWeaponFired, nil, self._unit, ray_res)
+	
+	if self:weapon_tweak_data().has_fire_animation then
+		self:tweak_data_anim_play("fire")
+	end
 
 	return ray_res
 end

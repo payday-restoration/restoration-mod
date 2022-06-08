@@ -59,6 +59,9 @@ if ai_type == b then
 	}
 elseif ai_type == r then
 	replacement_table = {
+		--Bulldozers (no ene_bulldozer_1_hard for you. Maybe in 12.5?)
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+	
 		--Reaper FBI Rifle
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass",
 		
@@ -99,7 +102,7 @@ elseif ai_type == r then
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"
 	}
 elseif ai_type == m then
-	replacement_table = {
+	replacement_table = {	
 		--Murky FBI Rifle
 		["units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		

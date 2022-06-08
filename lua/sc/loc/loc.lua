@@ -1295,6 +1295,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--3GL
 		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber, allowing for rapid follow-ups in a compact package.\nAlt-fire allows for firing off an entire stack.",
+		--COMMANDO 101/M202 FLASH
+		["bm_ray_sc_desc"] = "Become the \"Grim Reaper\" with this 4-shot incendiary rocket launcher.\n\nRockets leave behind a pool of fire and explosive damage dealt by this weapon instantly destroys turrets.",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",

@@ -9802,7 +9802,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}			
 		self.ray.use_data.selection_index = 2
 		self.ray.has_description = true
-		self.ray.desc_id = "bm_rocket_launcher_sc_desc"
+		self.ray.desc_id = "bm_ray_sc_desc"
 		self.ray.kick = self.stat_info.kick_tables.vertical_kick
 		self.ray.timers.reload_not_empty = 6
 		self.ray.timers.reload_empty = 6

@@ -7273,11 +7273,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	--Ghetto Blaster
 	self.parts.wpn_fps_smg_tec9_ns_ext.pcs = {}
 	self.parts.wpn_fps_smg_tec9_ns_ext.supported = true
-	self.parts.wpn_fps_smg_tec9_ns_ext.stats = {
-		value = 5,
-		recoil = 4,
-		concealment = -2
-	}
+	self.parts.wpn_fps_smg_tec9_ns_ext.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_smg_tec9_ns_ext.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Extended Mag
 	self.parts.wpn_fps_smg_tec9_m_extended.pcs = {}
@@ -9638,11 +9635,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 		40
 	}
 	self.parts.wpn_fps_smg_cobray_ns_barrelextension.supported = true
-	self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats = {
-		value = 5,
-		recoil = 3,
-		spread = -3
-	}
+	self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_smg_cobray_ns_barrelextension.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Werbell's Suppressor
 	self.parts.wpn_fps_smg_cobray_ns_silencer.pcs = {

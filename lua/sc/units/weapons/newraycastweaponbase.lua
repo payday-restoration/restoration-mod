@@ -651,6 +651,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
     if self._trail_effect_table then
 		if self._starwars == true then
+			self._use_shell_ejection_effect = nil
 			if self._empire then
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
 			elseif self._republic then
@@ -678,7 +679,23 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:precalculate_ammo_pickup()
 end
 
+local old_tweak_data_anim_play = NewRaycastWeaponBase.tweak_data_anim_play
+function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier)
+	if self._starwars then
+		local anim = "fire"
+		self:tweak_data_anim_offset("fire", 2)
+		return
+	end
+	old_tweak_data_anim_play(self, anim, speed_multiplier)
+	NewRaycastWeaponBase.super.tweak_data_anim_play(self, orig_anim, speed_multiplier)
+	return true
+end
+
+
 function NewRaycastWeaponBase:tweak_data_anim_offset(anim, offset, second_gun)
+	if self._starwars then
+		return
+	end
 	local unit_anim = anim
 	local data = tweak_data.weapon.factory[self._factory_id]
 	if second_gun and alive(self._second_gun) then

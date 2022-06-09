@@ -74,17 +74,19 @@
 	
 	<texture 			path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
 	
-	<!-- NEW BENELLI DOZER-->
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
-	<model				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<object				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
-	
-	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />
-	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
+	<!--Akan Benelli Dozer-->
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini_husk" load="true"/>
+	<object				path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini"/>
+	<model				path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini_contour"/>
+	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini"/>
+	<texture			path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/maska_df"/>
+	<texture			path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_bulldozer_minigun_df"/>
+
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/debris/debris"/>
+	<unit_obj			path="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/debris/plate/plate"/>	
 
 	<!--Russian FBI-->
 	<unit  				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" load="true" force="false"/>

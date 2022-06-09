@@ -17021,6 +17021,7 @@ function CharacterTweakData:character_map()
 				"ene_akan_fbi_tank_r870",
 				"ene_akan_fbi_tank_rpk_lmg",
 				"ene_akan_fbi_tank_saiga",
+				"ene_akan_dozer_mini",
 				"ene_akan_cs_cop_ak47_ass",
 				"ene_akan_cs_cop_akmsu_smg",
 				"ene_akan_cs_cop_akmsu_smg_sc",

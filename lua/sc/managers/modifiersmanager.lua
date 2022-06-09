@@ -60,7 +60,7 @@ if ai_type == b then
 elseif ai_type == r then
 	replacement_table = {
 		--Bulldozers (no ene_bulldozer_1_hard for you. Maybe in 12.5?)
-		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini",
 	
 		--Reaper FBI Rifle
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass",

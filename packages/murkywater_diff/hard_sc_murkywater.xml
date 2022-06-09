@@ -231,6 +231,9 @@
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
 	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
 
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard_husk" load="true"/>
+	
 	<!--Murky Dozer 1 Armor Bits-->
 	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_1/ene_acc_bulldozer_back_murky_1" load="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_1/ene_acc_bulldozer_back_murky_1" force="false"/>
@@ -243,6 +246,28 @@
 
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/bulldozer_df" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/bulldozer_glass_op" force="false"/>	
+	
+	<!--blackdozer -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk" load="true"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+
+	<!--Murky Dozer 2 Armor Bits-->
+	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_2/ene_acc_bulldozer_back_murky_2" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_2/ene_acc_bulldozer_back_murky_2" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_2/ene_acc_bulldozer_chest_murky_2" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_2/ene_acc_bulldozer_chest_murky_2" force="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_2/ene_acc_bulldozer_stomache_murky_2" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_2/ene_acc_bulldozer_stomache_murky_2" force="false"/>
+
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/bulldozer_saiga_df" force="false"/>
 	
 	<!-- taster -->
 	<object				path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer" force="false"/>

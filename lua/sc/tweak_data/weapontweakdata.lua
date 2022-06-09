@@ -6502,6 +6502,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mp5.timers.reload_exit_not_empty = 1.1
 		
 			--MP40
+				self.erma.has_description = true
+				self.erma.desc_id = "bm_erma_sc_desc"
 				self.erma.use_data.selection_index = 2
 				self.erma.CLIP_AMMO_MAX = 32
 				self.erma.BURST_FIRE = false

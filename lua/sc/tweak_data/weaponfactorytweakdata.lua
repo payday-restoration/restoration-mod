@@ -13249,7 +13249,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_erma", "resmod_erma", function(sel
 	self.parts.wpn_fps_smg_erma_s_folded.stats = deep_clone(stocks.fold_nocheeks_stats)
 	self.parts.wpn_fps_smg_erma_s_folded.stats.value = 0
 	self.parts.wpn_fps_smg_erma_s_folded.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
-		
+	
+	--Fix for missing anims
+	self.wpn_fps_smg_erma.animations = {
+			reload_not_empty = "reload_not_empty",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload = "reload",
+			magazine_empty = "last_recoil"
+		}
 	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_singlefire")
 	table.insert(self.wpn_fps_smg_erma_npc.uses_parts, "wpn_fps_upg_i_singlefire")		
 	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_autofire")

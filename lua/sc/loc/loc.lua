@@ -1112,7 +1112,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
 		--Broomstick--
-		["bm_c96_sc_desc"] = "A revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
+		["bm_c96_sc_desc"] = "\"...and then the wolf ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
 		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 1.5s\nRecharge Rate: 3/s (Halfed while overheated)\nOverheat penalty: 3s",
 		--SAA/Peacemaker
@@ -1138,6 +1138,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",	
 		--Chicago Typewriter
 		["bm_thompson_sc_desc"] = "Sporting a high-capacity drum magazine, you too can bring on the mobster heat as you mow down your enemies.",	
+		--MP40
+		["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 
 		--AA12
 		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
@@ -1693,7 +1695,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	if cute <= funny then
 		LocalizationManager:add_localized_strings({	
 			--It's an "Upotte!!" reference
-
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "Ichiroku",

@@ -874,6 +874,7 @@ function CopDamage:damage_bullet(attack_data)
 	
 	local damage_type = "normal"
 	local ineffective_damage = false
+	local effective_damage = false
 	
 	--Saw+Throwables ignore clamps
 	if self._char_tweak.DAMAGE_CLAMP_BULLET then
@@ -900,6 +901,8 @@ function CopDamage:damage_bullet(attack_data)
 			--Let the player know to try something different
 			if self._char_tweak.damage_resistance[damage_type] and self._char_tweak.damage_resistance[damage_type] < 1 then
 				ineffective_damage = true
+			elseif self._char_tweak.damage_resistance[damage_type] and self._char_tweak.damage_resistance[damage_type] > 1 then
+				effective_damage = true
 			end		
 		end		
 	end	
@@ -925,7 +928,11 @@ function CopDamage:damage_bullet(attack_data)
 		elseif ineffective_damage then
 			if damage > 0 then
 				managers.hud:on_ineffective_hit_confirmed(damage_scale)
-			end			
+			end		
+		elseif effective_damage then
+			if damage > 0 then
+				managers.hud:on_effective_hit_confirmed(damage_scale)
+			end				
 		else
 			if damage > 0 then
 				managers.hud:on_hit_confirmed(damage_scale)
@@ -1366,6 +1373,7 @@ function CopDamage:damage_melee(attack_data)
 	
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[attack_data.name_id]
 	local ineffective_damage = false
+	local effective_damage = false
 	local damage_type = melee_tweak_data and melee_tweak_data.stats.weapon_type or "blunt"
 	
 	--Damage multipliers for specific damage types come into play *after* the base damage type multiplier above
@@ -1375,6 +1383,8 @@ function CopDamage:damage_melee(attack_data)
 		--Let the player know to try something different
 		if self._char_tweak.damage_resistance[damage_type] and self._char_tweak.damage_resistance[damage_type] < 1 then
 			ineffective_damage = true
+		elseif self._char_tweak.damage_resistance[damage_type] and self._char_tweak.damage_resistance[damage_type] > 1 then
+			effective_damage = true
 		end		
 	end		
 	
@@ -1408,7 +1418,11 @@ function CopDamage:damage_melee(attack_data)
 		elseif ineffective_damage then
 			if damage > 0 then
 				managers.hud:on_ineffective_hit_confirmed(damage_scale)
-			end				
+			end		
+		elseif effective_damage then
+			if damage > 0 then
+				managers.hud:on_effective_hit_confirmed(damage_scale)
+			end					
 		else
 			if damage > 0 then
 				managers.hud:on_hit_confirmed()

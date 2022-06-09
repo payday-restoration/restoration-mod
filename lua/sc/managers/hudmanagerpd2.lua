@@ -24,3 +24,11 @@ function HUDManager:on_ineffective_hit_confirmed(damage_scale)
 
 	self._hud_hit_confirm:on_ineffective_hit_confirmed(damage_scale)
 end
+
+function HUDManager:on_effective_hit_confirmed(damage_scale)
+	if not managers.user:get_setting("hit_indicator") then
+		return
+	end
+
+	self._hud_hit_confirm:on_effective_hit_confirmed(damage_scale)
+end

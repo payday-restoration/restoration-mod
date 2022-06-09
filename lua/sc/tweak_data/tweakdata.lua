@@ -138,6 +138,7 @@ tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
 tweak_data.projectiles.launcher_frag_arbiter.range = 250
 tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
+tweak_data.projectiles.launcher_frag_arbiter.effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
 tweak_data.projectiles.launcher_incendiary_arbiter.damage = 4
 tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
 tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
@@ -179,7 +180,8 @@ tweak_data.projectiles.launcher_frag_osipr = {
 	init_timer = nil,
 	mass_look_up_modifier = 1,
 	sound_event = "gl_explode",
-	name_id = "bm_launcher_frag"
+	name_id = "bm_launcher_frag",
+	effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
 }
 tweak_data.projectiles.launcher_incendiary_osipr = {
 	damage = 4,
@@ -512,18 +514,19 @@ for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].adjust_z = 0
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+tweak_data.projectiles.rocket_ray_frag.launch_speed = 11500 * velocity_mult
+
 velocity = {
 	'launcher_frag_arbiter','launcher_incendiary_arbiter','launcher_electric_arbiter','launcher_poison_arbiter',
 	'launcher_frag_osipr','launcher_incendiary_osipr','launcher_electric_osipr'
 }
---velocity_mult = 0.35
+velocity_mult = 0.4
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 21000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = 0
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
-tweak_data.projectiles.rocket_ray_frag.launch_speed = 11500 * velocity_mult
 
 velocity_mult = 0.65
 velocity = {

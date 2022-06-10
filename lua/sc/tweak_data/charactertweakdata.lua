@@ -17254,6 +17254,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
+				"ene_bulldozer_minigun",
 				"ene_omnia_spook",
 				"ene_grenadier_1",
 				"ene_omnia_medic",

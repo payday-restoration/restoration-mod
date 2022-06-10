@@ -107,7 +107,7 @@ elseif ai_type == m then
 		["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"] = "units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic",
 		
-		["units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		
 		--Murky FBI Rifle
 		["units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",

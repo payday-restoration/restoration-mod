@@ -514,17 +514,25 @@
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat" load="false"/>
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>	
 
-	<!-- NEW BENELLI DOZER-->
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
-	<model				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<object				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
+	<!-- OMNIA BENELLI DOZER (don't kill me)-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
+	<model				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<object				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
+	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
 	
-	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />
-	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df" force="true"/>
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" force="true"/>	
+
+	<!--OMNIA BENELLI DOZER BITS-->	
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_neck/ene_acc_bulldozer_ben_neck" load="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_neck/ene_acc_bulldozer_ben_neck"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_throat/ene_acc_bulldozer_ben_throat" load="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_throat/ene_acc_bulldozer_ben_throat"/>	
 
 	<!--OMNIAdozer textures-->
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_df"/>

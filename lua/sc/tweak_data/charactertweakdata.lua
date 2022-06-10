@@ -16098,7 +16098,8 @@ function CharacterTweakData:_create_table_structure()
 		"hk21_bravo_npc",
 		"m32",
 		"rpg7",
-		"x_pm9_enemy"
+		"x_pm9_enemy",
+		"aa12_npc"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -16181,7 +16182,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"),
 		Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32"),
 		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7"),
-		Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc")
+		Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc"),
+		Idstring("units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12")		
 	}
 end
 

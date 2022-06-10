@@ -3782,6 +3782,39 @@ function ElementSpawnEnemyDummy:init(...)
 			self._values.enemy = nypd_zeal[self._values.enemy] or self._values.enemy							
 		end	
 	end	
+	--FBI
+	elseif ai_type == "fbi" then
+		--Very Hard			
+		if difficulty_index <= 4 then
+			if fbi_very_hard[self._values.enemy] then
+				self._values.enemy = fbi_very_hard[self._values.enemy]
+			end
+			self._values.enemy = fbi_very_hard[self._values.enemy] or self._values.enemy	
+		--Overkill
+		elseif difficulty_index == 5 then
+			if fbi_overkill[self._values.enemy] then
+				self._values.enemy = fbi_overkill[self._values.enemy]
+			end
+			self._values.enemy = fbi_overkill[self._values.enemy] or self._values.enemy
+		--Mayhem	
+		elseif difficulty_index == 6 then
+			if fbi_mayhem[self._values.enemy] then
+				self._values.enemy = lapd_mayhem[self._values.enemy]
+			end
+			self._values.enemy = fbi_mayhem[self._values.enemy] or self._values.enemy				
+		--Deathwish		
+		elseif difficulty_index == 7 then
+			if fbi_deathwish[self._values.enemy] then
+				self._values.enemy = fbi_deathwish[self._values.enemy]
+			end
+			self._values.enemy = lapd_deathwish[self._values.enemy] or self._values.enemy			
+		--deaf sentence XD						
+		elseif difficulty_index == 8 then
+			if fbi_zeal[self._values.enemy] then
+				self._values.enemy = fbi_zeal[self._values.enemy]
+			end
+			self._values.enemy = fbi_zeal[self._values.enemy] or self._values.enemy							
+		end	
 	--LAPD
 	elseif ai_type == "lapd" then
 		--Very Hard			

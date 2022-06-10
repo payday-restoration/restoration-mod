@@ -1908,7 +1908,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_4"] = "테이저는 더 이상 당신의 무기를 재장전 해주지 않습니다.",
 		["loading_gameplay_res_5"] = "클로커는 혼자 있는 하이스터 혹은 하이스터를 가로막을 때 쉽게 반격합니다.",
 		["loading_gameplay_res_6"] = "클로커는 발로 차면 직접적인 체력 피해를 입힙니다. 이것은 굴절 또는 반격 스킬로 감소시킬 수 있습니다.",
-		["loading_gameplay_res_7"] = "그린 불도저는 많은 양의 피해량을 입히고 종종 한 발로 가장 무거운 방탄복도 부술 수 있습니다.",
+		["loading_gameplay_res_7"] = "그린 불도저는 많은 양의 피해량을 입히고 종종 한 발로도 가장 무거운 방탄복을 부술 수도 있습니다.",
 		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 피해량 대신 높은 연사력을 가지고 있으며 인상적인 드럼 탄창을 자랑합니다.",
 		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 강력한 제압 사격을 가하고 탄통이 비워질 때까지 사격합니다.",
 		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체하며, 그린 도저와 블랙 도저의 부정한 조합하여 높은 연사력과 높은 피해량을 입힙니다.",

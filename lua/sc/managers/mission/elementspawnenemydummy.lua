@@ -3799,7 +3799,7 @@ function ElementSpawnEnemyDummy:init(...)
 		--Mayhem	
 		elseif difficulty_index == 6 then
 			if fbi_mayhem[self._values.enemy] then
-				self._values.enemy = lapd_mayhem[self._values.enemy]
+				self._values.enemy = fbi_mayhem[self._values.enemy]
 			end
 			self._values.enemy = fbi_mayhem[self._values.enemy] or self._values.enemy				
 		--Deathwish		
@@ -3807,7 +3807,7 @@ function ElementSpawnEnemyDummy:init(...)
 			if fbi_deathwish[self._values.enemy] then
 				self._values.enemy = fbi_deathwish[self._values.enemy]
 			end
-			self._values.enemy = lapd_deathwish[self._values.enemy] or self._values.enemy			
+			self._values.enemy = fbi_deathwish[self._values.enemy] or self._values.enemy			
 		--deaf sentence XD						
 		elseif difficulty_index == 8 then
 			if fbi_zeal[self._values.enemy] then

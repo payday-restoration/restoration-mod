@@ -4739,7 +4739,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 78,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 27,
+					concealment = 29,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4773,7 +4773,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 72,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 27,
+					concealment = 26,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4806,7 +4806,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 76,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 26,
+					concealment = 27,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4819,6 +4819,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_1911.reload_speed_multiplier = 1.05
 				self.x_1911.timers.reload_exit_empty = 0.55
 				self.x_1911.timers.reload_exit_not_empty = 0.65
+
+			--Disable Akimbo Crosskill Chunky
+				self.x_m1911.use_data.selection_index = 5
 
 			--Broomstick (C96)
 				--Moved to primary
@@ -5275,8 +5278,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.timers.reload_exit_empty = 0.5
 				self.m1911.timers.reload_exit_not_empty = 0.65
 				self.m1911.animations.reload_name_id = "sparrow"
-				--Disable Akimbo Crosskill Chunky
-				self.x_m1911.use_data.selection_index = 5
 
 			--Deagle
 				--Back to secondary
@@ -7531,7 +7532,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 7000,
-					min_mult = 0.375
+					min_mult = 0.4166
 				}
 				self.aug.stats = {
 					damage = 24,

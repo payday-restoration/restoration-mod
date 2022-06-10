@@ -666,6 +666,30 @@ function TipsTweakData:init()
 			image = "general_perks",
 			consoles = true,
 			category = "equip_skills_res"
+		},
+		{
+			cat_index = 32,
+			image = "tactics_shooting",
+			consoles = true,
+			category = "equip_skills_res"
+		},
+		{
+			cat_index = 33,
+			image = "tactics_shooting",
+			consoles = true,
+			category = "equip_skills_res"
+		},
+		{
+			cat_index = 34,
+			image = "weapon_melee",
+			consoles = true,
+			category = "equip_skills_res"
+		},	
+		{
+			cat_index = 35,
+			image = "tactics_shooting",
+			consoles = true,
+			category = "equip_skills_res"
 		},	
 		{
 			cat_index = 1,

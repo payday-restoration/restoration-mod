@@ -787,6 +787,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	if self._running and not self._end_running_expire_t and not self._state_data.meleeing and self._state_data.melee_expire_t and t >= self._state_data.melee_expire_t and not self:_is_charging_weapon() and (not self:_is_reloading() or not self.RUN_AND_RELOAD) and (instant or not self._state_data.melee_repeat_expire_t) then
 		if not self._equipped_unit:base():run_and_shoot_allowed() then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))
+			self._equipped_unit:base():tweak_data_anim_stop("equip")
 		else
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		end

@@ -19501,19 +19501,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_amr12_m_extended.supported = true
 		self.parts.wpn_fps_shot_amr12_m_extended.stats = {
 			value = 1, 
-			extra_ammo = 3, 
-			reload = -1,
-			concealment = -1
+			extra_ammo = 5, 
+			reload = -2, 
+			concealment = -2
 		}
-
+		self.parts.wpn_fps_shot_amr12_m_extended.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+	
 		--(AMR-12G) Wire Stock
 		self.parts.wpn_fps_shot_amr12_s_wire.supported = true
-		self.parts.wpn_fps_shot_amr12_s_wire.stats = {
-			value = 5,
-			spread = -1,
-			recoil = -1,
-			concealment = 2
-		}
+		self.parts.wpn_fps_shot_amr12_s_wire.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_shot_amr12_s_wire.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 
 
 		--(Spiker 7.62) Long Foregrip

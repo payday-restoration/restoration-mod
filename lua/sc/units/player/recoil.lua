@@ -277,7 +277,7 @@ end
 --[
 local bezier_values = {
 	0,
-	0,
+	0.75,
 	1,
 	1
 }

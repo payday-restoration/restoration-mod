@@ -178,7 +178,7 @@ tweak_data.projectiles.launcher_frag_osipr = {
 	player_damage = 30,
 	range = 250,
 	init_timer = nil,
-	mass_look_up_modifier = 1,
+	mass_look_up_modifier = 0,
 	sound_event = "gl_explode",
 	name_id = "bm_launcher_frag",
 	effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
@@ -197,7 +197,7 @@ tweak_data.projectiles.launcher_incendiary_osipr = {
 	},
 	range = 350,
 	init_timer = nil,
-	mass_look_up_modifier = 1,
+	mass_look_up_modifier = 0,
 	sound_event = "gl_explode",
 	sound_event_impact_duration = 0.25,
 	name_id = "bm_launcher_incendiary",
@@ -211,7 +211,7 @@ tweak_data.projectiles.launcher_electric_osipr = {
 	player_damage = 15,
 	range = 250,
 	init_timer = nil,
-	mass_look_up_modifier = 1,
+	mass_look_up_modifier = 0,
 	sound_event = "gl_explode",
 	name_id = "bm_launcher_frag"
 }

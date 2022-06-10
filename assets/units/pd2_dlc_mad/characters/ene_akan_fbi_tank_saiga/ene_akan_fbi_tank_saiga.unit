@@ -22,8 +22,8 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="saiga" />
-			<var name="_stats_name" value="tank_green" />
+			<var name="_default_weapon_id" value="aa12_npc" />
+			<var name="_stats_name" value="tank_black" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

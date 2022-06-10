@@ -1018,6 +1018,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.saiga_npc.spread = 3
 		self.saiga_npc.FIRE_MODE = "auto"
 			
+		self.aa12_npc = deep_clone(self.saiga_npc)	
+		self.aa12_npc.sounds.prefix = "aa12_npc"
+			
 		self.benelli_npc = deep_clone(self.saiga_npc)
 		self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 		self.benelli_npc.DAMAGE = 4.5

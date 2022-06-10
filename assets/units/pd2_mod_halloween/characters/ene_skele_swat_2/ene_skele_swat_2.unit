@@ -12,7 +12,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="skeleton_swat_titan" />
-			<var name="_default_weapon_id" value="saiga" />
+			<var name="_default_weapon_id" value="aa12_npc" />
 		</extension>
 		<extension name="inventory" class="CopInventory" >
 		</extension>

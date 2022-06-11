@@ -302,7 +302,7 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1_contour"/>
 	<unit				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1_husk" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale" />
+	
 	
 	<!--Debris-->
 	<object				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_head_debris"/>

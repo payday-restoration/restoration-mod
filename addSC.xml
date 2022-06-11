@@ -52,6 +52,10 @@
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
 	<texture			path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>	
+
+	<!-- hotline day 2 -->
+	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
 	
 	<!--New logo-->
 	<texture			path="guis/textures/game_small_logo" force="true"/>
@@ -585,10 +589,13 @@
 	<texture			path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df" force="true"/>	
 	<texture			path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_nm" force="true"/>
 
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale" />
+
 	<!--NPC Bronco Flashlight Fix-->
 	<object				path="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" force="true"/>
 		
 	<!--One step closer to heaven.-->	
+	
 	<unit				path="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc" load="false" force="false"/>
 	<unit				path="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc" load="false" force="false"/>
 	

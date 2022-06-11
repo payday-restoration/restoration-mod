@@ -8368,7 +8368,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Valkyria (AS Val)
 			self.asval.desc_id = "bm_asval_sc_desc"
 			self.asval.has_description = true
-			self.asval.sounds.fire = "akm_fire_single"
+			self.asval.sounds.fire = "akm_fire"
 			self.asval.sounds.fire_single = "akm_fire_single"
 			self.asval.sounds.fire_auto = "akm_fire"
 			self.asval.sounds.stop_fire = "akm_stop"
@@ -12325,6 +12325,77 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tec9.sounds.fire_single = "mp9_fire_single"
 	end
 
+	if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
+		self.aknato.nato = true
+		self.aknato.tactical_reload = 1
+		self.aknato.CLIP_AMMO_MAX = 30
+		self.aknato.AMMO_MAX = 150
+		self.aknato.FIRE_MODE = "auto"				
+		self.aknato.CAN_TOGGLE_FIREMODE = true
+		self.aknato.sounds.fire = "m4_olympic_fire_single"
+		self.aknato.sounds.fire_single = "m4_olympic_fire_single"
+		self.aknato.sounds.fire_auto = "m4_olympic_fire"
+		self.aknato.sounds.stop_fire = "m4_olympic_stop"
+		self.aknato.kick = self.stat_info.kick_tables.right_recoil	
+		self.aknato.supported = true
+		self.aknato.ads_speed = 0.320
+		self.aknato.damage_falloff = {
+			start_dist = 2600,
+			end_dist = 6200,
+			min_mult = 0.4166
+		}
+		self.aknato.stats = {
+			damage = 24,
+			spread = 81,
+			recoil = 83,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 24,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.aknato.stats_modifiers = nil
+		self.aknato.panic_suppression_chance = 0.05
+		self.aknato.timers = deep_clone(self.akm.timers)
+	end	
+
+	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
+		self.smolak.warsaw = true
+		self.smolak.categories = {"assault_rifle"}
+		self.smolak.use_data.selection_index = 2
+		self.smolak.tactical_reload = 1
+		self.smolak.fire_mode_data.fire_rate = 0.0923076923
+		self.smolak.auto.fire_rate = 0.0923076923
+		self.smolak.AMMO_MAX = 80
+		self.smolak.CAN_TOGGLE_FIREMODE = true
+		self.smolak.kick = self.stat_info.kick_tables.right_kick		
+		self.smolak.supported = true
+		self.smolak.stats = {
+			damage = 24,
+			spread = 81,
+			recoil = 85,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 25,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.smolak.stats_modifiers = nil
+		self.smolak.panic_suppression_chance = 0.05
+		self.smolak.reload_speed_multiplier = 1.2
+		self.smolak.timers.reload_not_empty = 3.5
+		self.smolak.timers.reload_empty = 4.3
+	end		
+
+
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's funtionality) then it's a no-go outright
@@ -12506,41 +12577,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.max9.stats_modifiers = nil
 	end
 
-	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
-		self.smolak.warsaw = true
-		self.smolak.categories = {
-			"assault_rifle"
-		}
-		self.smolak.use_data.selection_index = 2
-		self.smolak.tactical_reload = 1
-		self.smolak.categories = {"pistol"} --???? Which one is it ????
-		self.smolak.fire_mode_data.fire_rate = 0.0923076923
-		self.smolak.auto.fire_rate = 0.0923076923
-		self.smolak.AMMO_MAX = 80
-		self.smolak.CAN_TOGGLE_FIREMODE = true
-		self.smolak.kick = self.stat_info.kick_tables.right_kick		
-		self.smolak.supported = true
-		self.smolak.stats = {
-			damage = 45,
-			spread = 81,
-			recoil = 85,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 25,
-			suppression = 6,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 9,
-			reload = 20
-		}
-		self.smolak.stats_modifiers = nil
-		self.smolak.panic_suppression_chance = 0.05
-		self.smolak.reload_speed_multiplier = 1.2
-		self.smolak.timers.reload_not_empty = 3.5
-		self.smolak.timers.reload_empty = 4.3
-	end		
-
 	if self.x_car9 then --disabled vmp akimbos
 		self.x_car9.use_data.selection_index = 5
 		self.x_car9.supported = true
@@ -12562,6 +12598,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end		
 
 	if self.cold then --Gambyt's VMP Crosskill Protector
+		self.cold.use_data.selection_index = 5
 		self.cold.tactical_reload = 1											
 		self.cold.fire_mode_data.fire_rate = 0.08571428571
 		self.cold.single.fire_rate = 0.08571428571
@@ -12585,40 +12622,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.cold.stats_modifiers = nil
 		self.cold.panic_suppression_chance = 0.05
-	end
-
-	if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
-		self.aknato.nato = true
-		self.aknato.tactical_reload = 1
-		self.aknato.spread = {
-			standing = 3,
-			crouching = 2,
-			steelsight = 1,
-			moving_standing = 4,
-			moving_crouching = 3,
-			moving_steelsight = 2
-		}
-		self.aknato.CLIP_AMMO_MAX = 30
-		self.aknato.AMMO_MAX = 150
-		self.aknato.FIRE_MODE = "auto"				
-		self.aknato.CAN_TOGGLE_FIREMODE = true
-		self.aknato.kick = self.stat_info.kick_tables.moderate_kick	
-		self.aknato.supported = true
-		self.aknato.stats = {
-			damage = 24,
-			spread = 86,
-			recoil = 89,
-			zoom = 1,
-			concealment = 25,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.aknato.stats_modifiers = nil
-		self.aknato.panic_suppression_chance = 0.05
 	end
 
 

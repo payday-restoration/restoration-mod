@@ -50,7 +50,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///MEXICAN LEVELS\\\--
 	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex2"}
-	self.mex_cooking.ai_group_type = federales 
+	--self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
 	self.pex.player_style = "slaughterhouse"
@@ -94,43 +94,50 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.kosugi.ai_group_type = murkywater	
 	self.kosugi.player_style = "sneak_suit"	
 	
-	--///NYPD LEVELS\\\--
-	self.spa.ai_group_type = nypd
-	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
-	self.spa.player_style = "slaughterhouse"
-	self.spa.flashlights_on = true
+	--///FBI LEVELS\\\--
+	self.hox_2.player_style = "slaughterhouse"
+	self.hox_2.ai_group_type = fbi
 	
-	self.fish.ai_group_type = nypd
-	self.fish.player_style = "tux"
+	self.hox_3.player_style = "sneak_suit"
+	self.hox_3.ai_group_type = fbi
 	
-	self.brb.ai_group_type = nypd
-	self.brb.player_style = "peacoat"
+	self.watchdogs_1.player_style = "suit_sunny"
+	self.watchdogs_1.ai_group_type = fbi
+
+	self.watchdogs_2.player_style = "loud_suit"
+	self.watchdogs_2.flashlights_on = true --i think this is the night version
+	self.watchdogs_2.ai_group_type = fbi
 	
-	self.red2.ai_group_type = nypd
+	self.watchdogs_1_night.player_style = "suit_sunny"
+	self.watchdogs_1_night.flashlights_on = true
+	self.watchdogs_1_night.ai_group_type = fbi
 	
-	self.run.ai_group_type = nypd
+	self.watchdogs_2_day.player_style = "loud_suit"
+	self.watchdogs_2_day.ai_group_type = fbi
 	
-	self.flat.ai_group_type = nypd
+	self.alex_1.player_style = "suit_sunny"
+	self.alex_1.ai_group_type = fbi
 	
-	self.glace.ai_group_type = nypd
-	self.glace.package = {"packages/narr_glace"}
-	self.glace.flashlights_on = true
+	self.alex_2.player_style = "suit_sunny"
+	self.alex_2.ai_group_type = fbi
 	
-	self.dah.ai_group_type = nypd
-	self.dah.player_style = "slaughterhouse"
-	self.dah.flashlights_on = true
+	self.alex_3.player_style = "slaughterhouse"
+	self.alex_3.ai_group_type = fbi
 	
-	self.dinner.ai_group_type = nypd
-	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
-	self.dinner.player_style = "slaughterhouse"
+	self.firestarter_1.ai_group_type = fbi
+	self.firestarter_1.player_style = "loud_suit"
 	
-	--[[
-	self.ranc.ai_group_type = nypd
-	self.ranc.player_style = "fighterpilot"
-	--]]
+	self.firestarter_2.ai_group_type = fbi
+	self.firestarter_2.player_style = "sneak_suit"
+	
+	self.firestarter_3.ai_group_type = fbi
+	
+	self.rat.player_style = "suit_sunny"
+	self.rat.ai_group_type = fbi
 	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
+	self.man.ai_group_type = fbi
 	self.man.teams = {
 		criminal1 = {
 			foes = {
@@ -182,6 +189,41 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			friends = {}
 		}
 	}
+	
+	--///NYPD LEVELS\\\--
+	self.spa.ai_group_type = nypd
+	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	self.spa.player_style = "slaughterhouse"
+	self.spa.flashlights_on = true
+	
+	self.fish.ai_group_type = nypd
+	self.fish.player_style = "tux"
+	
+	self.brb.ai_group_type = nypd
+	self.brb.player_style = "peacoat"
+	
+	self.red2.ai_group_type = nypd
+	
+	self.run.ai_group_type = nypd
+	
+	self.flat.ai_group_type = nypd
+	
+	self.glace.ai_group_type = nypd
+	self.glace.package = {"packages/narr_glace"}
+	self.glace.flashlights_on = true
+	
+	self.dah.ai_group_type = nypd
+	self.dah.player_style = "slaughterhouse"
+	self.dah.flashlights_on = true
+	
+	self.dinner.ai_group_type = nypd
+	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
+	self.dinner.player_style = "slaughterhouse"
+	
+	--[[
+	self.ranc.ai_group_type = nypd
+	self.ranc.player_style = "fighterpilot"
+	--]]
 	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
@@ -258,16 +300,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.hox_1.player_style = "slaughterhouse"
 	
-	--FBI Elites on Hoxout 2
-	self.hox_2.player_style = "slaughterhouse"
-	self.hox_2.ai_group_type = fbi
-	
-	--FBI Elites on Hox Revenge
-	self.hox_3.player_style = "sneak_suit"
-	self.hox_3.ai_group_type = fbi
-	
-	self.rat.player_style = "suit_sunny"
-	
 	
 	self.election_day_1.player_style = "sneak_suit"	
 	
@@ -280,12 +312,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.framing_frame_3.player_style = "sneak_suit"
 	self.framing_frame_3.flashlights_on = false
 	
-			
-	self.alex_1.player_style = "suit_sunny"
-	self.alex_2.player_style = "suit_sunny"
-	
-	self.alex_3.player_style = "slaughterhouse"
-	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	--self.welcome_to_the_jungle_1_night.flashlights_on = true
@@ -295,14 +321,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets"}
 	self.pbr2.player_style = "loud_suit"
-	
-	self.watchdogs_1.player_style = "suit_sunny"
-	self.watchdogs_2.player_style = "loud_suit"
-	self.watchdogs_2.flashlights_on = true --i think this is the night version
-	
-	self.watchdogs_1_night.player_style = "suit_sunny"
-	self.watchdogs_1_night.flashlights_on = true
-	self.watchdogs_2_day.player_style = "loud_suit"
 	
 	self.mia_1.player_style = "miami"
 	self.mia_2.player_style = "miami"

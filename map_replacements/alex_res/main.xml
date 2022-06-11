@@ -1,5 +1,5 @@
 <table name="alex_res">
-	<level ai_group_type="america" brief_id="heist_alex_1_briefing" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist" name_id="heist_alex_1_hl">
+	<level ai_group_type="fbi" brief_id="heist_alex_1_briefing" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist"  player_style="suit_sunny" name_id="heist_alex_1_hl">
 		<add file="levels/alex_1_res/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -20,7 +20,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="america" brief_id="heist_alex_2_briefing" briefing_dialog="Play_pln_rat_stage2_brief" cube="cube_apply_heist_bank" id="alex_2_res" intro_event="Play_pln_rat_stage2_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats02" max_bags="19" music="heist" name_id="heist_alex_2_hl" repossess_bags="true">
+	<level ai_group_type="fbi" brief_id="heist_alex_2_briefing" briefing_dialog="Play_pln_rat_stage2_brief" cube="cube_apply_heist_bank" id="alex_2_res" intro_event="Play_pln_rat_stage2_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats02" max_bags="19" music="heist" player_style="suit_sunny" name_id="heist_alex_2_hl" repossess_bags="true">
 		<add file="levels/alex_2_res/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -47,7 +47,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="america" brief_id="heist_alex_3_briefing" briefing_dialog="Play_pln_rat_stage3_brief" cube="cube_apply_heist_bank" id="alex_3_res" intro_event="Play_pln_rat_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats03" max_bags="34" music="heist" name_id="heist_alex_3_hl">
+	<level ai_group_type="fbi" brief_id="heist_alex_3_briefing" briefing_dialog="Play_pln_rat_stage3_brief" cube="cube_apply_heist_bank" id="alex_3_res" intro_event="Play_pln_rat_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats03" max_bags="34" music="heist" player_style="slaughterhouse" name_id="heist_alex_3_hl">
 		<add file="levels/alex_3_res/add.xml"/>
 		<assets/>
 		<outro_event>

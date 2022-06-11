@@ -1764,6 +1764,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				
 
 		})
+	end
+
+	local big = math.rand(1)
+	local pistol = 0.05
+	if big <= pistol then
+		LocalizationManager:add_localized_strings({	
+			["bm_w_deagle"] = "큰 권총",
+		})
 	end	
 	
 end)
@@ -1990,8 +1998,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_21"] = "높은 난이도에서는 페이저를 응답하는 데 더 오래 걸리고 더 빨리 사라집니다.",	
 		--Equipment/Skill Hints
 		["loading_equip_skills_res_title"] = "레스토레이션 장비/스킬 팁",
-		["loading_equip_skills_res_1"] = "산탄총은 정확도가 낮아질수록 사거리가 줄어듭니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오!",	
-		["loading_equip_skills_res_2"] = "권총은 교체가 매우 빠르고 일반적으로 명중률과 안정성이 높습니다.",	
+		["loading_equip_skills_res_1"] = "산탄총은 명중률이 낮아 장거리에서 효율성을 잃는 반면 명중률이 높으면 여러 대상을 공격하는 능력이 저하됩니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오!",	
+		["loading_equip_skills_res_2"] = "권총은 다른 무기류에 비해 교체 속도가 빠릅니다.",	
 		["loading_equip_skills_res_3"] = "레스토레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 데미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
 		["loading_equip_skills_res_4"] = "데미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은닉성이 낮습니다.",	
 		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 수리합니다.",	
@@ -2021,6 +2029,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_29"] = "이제 투척물 케이스로 사용할 때마다 투척물을 보충하면 모두 채워줍니다.",	
 		["loading_equip_skills_res_30"] = "상황이 안 좋을때 인스파이어 에이스로 팀원을 구하십시오. 재사용 대기 시간이 매우 길고 시야가 필요합니다.",	
 		["loading_equip_skills_res_31"] = "레스토레이션 모드는 각각 일반 퍽만 제공하거나 퍽은 제공하지 않는 두 개의 새로운 특성 덱(와일드카드 및 백지)을 추가했습니다. 이것은 스스로 부과한 도전을 하고 싶은 사람들을 위한 특성 덱입니다.",
+		["loading_equip_skills_res_32"] = "조준 매커니즘은 조준할 때 명중률의 이점을 얻으려면 완전히 조준해야 효과가 증가하도록 변경되었습니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
+		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 사용하면 무기를 사용하기가 번거로워집니다.",
+		["loading_equip_skills_res_34"] = "개머리판 근접 속도는 손에 든 무기의 영향을 받습니다.",
+		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",		
 		--Misc Hints
 		["loading_misc_res_title"] = "레스토레이션 기타 팁",
 		["loading_misc_res_1"] = "저희가 만든 커스텀 하이스트도 해보십시오! 블라드의 '도그하우스'뿐만 아니라 '자칼'의 계약에서 대부분 찾을 수 있습니다.",	
@@ -2282,7 +2294,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: ##$basic##\n모든 무기의 장탄수가 ##20%##만큼 증가합니다.\n\n참고: 석궁, 활, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n모든 무기로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 지연이 제거됩니다.\n\n모든 무기의 장탄수가 추가로 ##30%##만큼 증가합니다.",
+			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: ##$basic##\n모든 무기의 장탄수가 ##20%##만큼 증가합니다.\n\n참고: 석궁, 활, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n모든 무기로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n모든 무기의 장탄수가 추가로 ##30%##만큼 증가합니다.",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
@@ -2318,7 +2330,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
-			["menu_close_by_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염 방사기는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 지연이 제거됩니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기로 지향 사걱하는 동안 발사 속도가 ##35%##만큼 증가합니다.",
+			["menu_close_by_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염 방사기는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기로 지향 사걱하는 동안 발사 속도가 ##35%##만큼 증가합니다.",
 
 			--Overkill
 			["menu_overkill_sc"] = "오버킬",

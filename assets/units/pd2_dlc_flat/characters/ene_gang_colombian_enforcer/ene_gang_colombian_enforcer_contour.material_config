@@ -34,13 +34,13 @@
    
     <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
 		<bump_normal_texture 	file="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_df"/>
+		<diffuse_texture 		file="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
     <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
 		<bump_normal_texture 	file="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01_nm" mip="4"/>
-		<diffuse_texture 		file="units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss_df" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

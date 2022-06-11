@@ -1,3 +1,3 @@
 <table>	
-	<table search="unit/sequence;name=[['leg_arm_hitbox']]/body;name=[['head']]" mode="remove" />	
+	<table search="unit/sequence;name=[['kill_tazer_headshot']]" mode="add" />	
 </table>

@@ -17322,6 +17322,7 @@ function CharacterTweakData:character_map()
 				"ene_cop_3",
 				"ene_cop_4",				
 				"ene_sniper_1",				
+				"ene_tazer_1",				
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
 				"ene_fbi_3",

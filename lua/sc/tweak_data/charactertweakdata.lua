@@ -140,6 +140,20 @@ function CharacterTweakData:_init_region_lapd()
 	self._speech_prefix_p2 = "d"
 end		
 
+function CharacterTweakData:_init_region_fbi()
+	self._default_chatter = "dispatch_generic_message"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
+	self._speech_prefix_p2 = "d"
+end
+
 function CharacterTweakData:get_ai_group_type()    
 	local bullshit = self.tweak_data.levels:get_ai_group_type()
 	if not Global.game_settings then

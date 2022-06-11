@@ -258,9 +258,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.hox_1.player_style = "slaughterhouse"
 	
+	--FBI Elites on Hoxout 2
 	self.hox_2.player_style = "slaughterhouse"
+	self.hox_2.ai_group_type = fbi
 	
+	--FBI Elites on Hox Revenge
 	self.hox_3.player_style = "sneak_suit"
+	self.hox_3.ai_group_type = fbi
 	
 	self.rat.player_style = "suit_sunny"
 	
@@ -422,7 +426,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		block_AIs = {
 			old_hoxton = true
 		},
-		ai_group_type = america,
+		ai_group_type = fbi,
 		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
 	}

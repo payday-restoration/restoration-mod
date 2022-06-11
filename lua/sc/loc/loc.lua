@@ -1760,6 +1760,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		})
 	end
 	
+	local big = math.rand(1)
+	local pistol = 0.05
+	if big <= pistol then
+		LocalizationManager:add_localized_strings({	
+			["bm_w_deagle"] = "Big Pistol",
+		})
+	end	
+	
 end)
 
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia

@@ -1510,7 +1510,11 @@ local job = Global.level_data and Global.level_data.level_id
 		self.m32_npc.looped_reload_speed = nil
 		self.m32_npc.has_fire_animation = true
 		self.m32_npc.animations = { fire = "recoil" }
-
+		
+		self.m32_boom_npc = deep_clone(self.m32_npc)
+		self.m32_boom_npc.gl_cooldown_max = 10
+		self.m32_boom_npc.gl_speaking_cooldown = 0.9
+		self.m32_boom_npc.gl_voiceline = true
 		
 		--RPG-7
 		self.rpg7_npc = deep_clone(self.contraband_m203_npc)

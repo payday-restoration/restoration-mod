@@ -1458,7 +1458,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer.no_limping = true
 	self.enforcer.move_speed = presets.move_speed.slow	
 	self.enforcer.melee_weapon = "fists_dozer"	
-	self.enforcer.damage.hurt_severity = presets.hurt_severities.boss
+	self.enforcer.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.enforcer.damage.explosion_damage_mul = 1.25
 	self.enforcer.damage.rocket_damage_mul = 2.5
 	self.enforcer.surrender = nil	
@@ -1466,6 +1466,13 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer.crouch_move = false
 	self.enforcer.no_run_start = true
 	self.enforcer.no_run_stop = true
+	self.enforcer.use_animation_on_fire_damage = false
+	self.enforcer.flammable = true
+	self.enforcer.can_be_tased = false
+	self.enforcer.immune_to_concussion = false
+	self.enforcer.no_headshot_add_mul = true
+	self.enforcer.immune_to_knock_down = true
+	self.enforcer.must_headshot = true	
 	table.insert(self._enemy_list, "enforcer")	
 end
 
@@ -6976,7 +6983,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 300,
 			acc = {0.6, 0.9},
 			dmg_mul = 1,
-			recoil = {2, 3},
+			recoil = {0.5, 1},
 			mode = {
 				1,
 				0,

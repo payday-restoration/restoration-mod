@@ -181,9 +181,9 @@ NPCGrenadeLauncherBaseBoss = NPCGrenadeLauncherBaseBoss or class(NPCRaycastWeapo
 function NPCGrenadeLauncherBaseBoss:init(unit)
 	NPCGrenadeLauncherBaseBoss.super.init(self, unit)
 	self._grenade_cooldown = 0
-	self._grenade_cooldown_max = 10
+	self._grenade_cooldown_max = tweak_data.weapon[self._name_id].gl_cooldown_max or 0
 	self._firing_status = 0
-	self._speaking_cooldown = 0.9
+	self._speaking_cooldown = tweak_data.weapon[self._name_id].gl_speaking_cooldown or 0
 	self._speak_cool = 0
 end
 
@@ -197,8 +197,10 @@ function NPCGrenadeLauncherBaseBoss:_fire_raycast(user_unit, from_pos, direction
 	end
 	if self._firing_status == 0 then
 		self._firing_status = 1
-		user_unit:sound():say("use_gas", true, nil, true)
-		self._speak_cool = t + self._speaking_cooldown
+		if tweak_data.weapon[self._name_id].gl_voiceline then
+			user_unit:sound():say("use_gas", true, nil, true)
+			self._speak_cool = t + self._speaking_cooldown
+		end
 		return {}
 	else
 		if not Network:is_client() then

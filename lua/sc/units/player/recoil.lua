@@ -313,8 +313,8 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 
 			if player_state and player_state ~= "bipod" and (in_steelsight and not self._steelsight_swap_state and trans_data.absolute_progress) then
 				local prog = 1 - trans_data.absolute_progress
-				trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.3 * prog)
-				trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.5 * prog)
+				trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.3 * prog)
+				trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
 			end
 
 			local absolute_progress = nil

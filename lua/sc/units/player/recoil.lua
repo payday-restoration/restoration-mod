@@ -277,15 +277,21 @@ end
 --[
 local bezier_values = {
 	0,
-	0.25,
+	0.4,
+	1,
+	1
+}
+local bezier_values2 = {
+	0,
+	0.4,
 	1,
 	1
 }
 --Still wonky when swapping to your main optic (culls too early)
+--Also stuff to make ADS transitions less "on-rails"
 Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", function(self, t, dt)
 	if self._shoulder_stance.transition then
 		local trans_data = self._shoulder_stance.transition
-		local was_in_steelsight = self._shoulder_stance.in_steelsight
 		local elapsed_t = t - trans_data.start_t
 		local player_state = managers.player:current_state()
 
@@ -305,29 +311,39 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			local progress = elapsed_t / trans_data.duration
 			local progress_smooth = math.bezier(bezier_values, progress)
 			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
+			local absolute_progress = nil
 
+			if in_steelsight then
+				self._shoulder_stance.was_in_steelsight = true
+				progress_smooth = math.bezier(bezier_values2, progress)
+				absolute_progress = (1 - trans_data.absolute_progress) * progress_smooth + trans_data.absolute_progress
+			else
+				absolute_progress = trans_data.absolute_progress * (1 - progress_smooth)
+			end
 
 			mvector3.lerp(self._shoulder_stance.translation, trans_data.start_translation, trans_data.end_translation, progress_smooth)
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
 
-			if player_state and player_state ~= "bipod" and (in_steelsight and not self._steelsight_swap_state and trans_data.absolute_progress) then
-				local prog = 1 - trans_data.absolute_progress
-				trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.3 * prog)
-				trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
+			if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
+				local prog = 1 - absolute_progress
+				if self._shoulder_stance.was_in_steelsight and not in_steelsight then
+					log("PENIS")
+					prog = absolute_progress
+					trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, -1 * prog, 0.6 * prog)
+					trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
+					self._shoulder_stance.was_in_steelsight = nil
+				elseif in_steelsight then
+					trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.3 * prog)
+					trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
+				end
 			end
 
-			local absolute_progress = nil
 			local equipped_weapon = self._parent_unit:inventory():equipped_unit()
 			if equipped_weapon and equipped_weapon:base() then
 				local in_second_sight = equipped_weapon:base():is_second_sight_on()
 			end
 
-			if in_steelsight then
-				absolute_progress = (1 - trans_data.absolute_progress) * progress_smooth + trans_data.absolute_progress
-			else
-				absolute_progress = trans_data.absolute_progress * (1 - progress_smooth)
-			end
 
 			if in_steelsight and trans_data.steelsight_swap_progress_trigger <= absolute_progress then
 				self:_set_steelsight_swap_state(true)

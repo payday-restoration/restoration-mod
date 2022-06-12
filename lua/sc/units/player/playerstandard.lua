@@ -1790,12 +1790,14 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 	end
 end
 
---Fixes use_shotgun_reload enabled weapons' parts still animating upon starting a reload
+--Fixes weapons with manually actuated parts (visually) like pumps and bolt-actions still animating upon starting a reload
+--Also includes fix for Bloodthirst's reload bonus
 Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimReloadFix", function(self, t)
 	local weapon = self._equipped_unit:base()
 	if weapon and weapon:can_reload() then
 		weapon:tweak_data_anim_stop("fire")
 		weapon:tweak_data_anim_stop("fire_steelsight")
+		weapon._current_reload_speed_multiplier = nil
 	end
 end)
 

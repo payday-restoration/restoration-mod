@@ -277,7 +277,7 @@ end
 --[
 local bezier_values = {
 	0,
-	0.65,
+	0.25,
 	1,
 	1
 }
@@ -285,7 +285,9 @@ local bezier_values = {
 Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", function(self, t, dt)
 	if self._shoulder_stance.transition then
 		local trans_data = self._shoulder_stance.transition
+		local was_in_steelsight = self._shoulder_stance.in_steelsight
 		local elapsed_t = t - trans_data.start_t
+		local player_state = managers.player:current_state()
 
 		if trans_data.duration < elapsed_t then
 			mvector3.set(self._shoulder_stance.translation, trans_data.end_translation)
@@ -304,13 +306,17 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			local progress_smooth = math.bezier(bezier_values, progress)
 			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
 
-			if in_steelsight and not self._steelsight_swap_state and trans_data.absolute_progress and trans_data.absolute_progress <= 0.15 then
-				trans_data.start_translation = trans_data.start_translation + Vector3(0, 0.5, -0.5)
-			end
 
 			mvector3.lerp(self._shoulder_stance.translation, trans_data.start_translation, trans_data.end_translation, progress_smooth)
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
+
+			if player_state and player_state ~= "bipod" and (in_steelsight and not self._steelsight_swap_state and trans_data.absolute_progress) then
+				local prog = 1 - trans_data.absolute_progress
+				trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.3 * prog)
+				trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.5 * prog)
+			end
+
 			local absolute_progress = nil
 			local equipped_weapon = self._parent_unit:inventory():equipped_unit()
 			if equipped_weapon and equipped_weapon:base() then

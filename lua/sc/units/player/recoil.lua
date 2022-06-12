@@ -313,9 +313,9 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
 			local absolute_progress = nil
 
-			if in_steelsight then
+			if in_steelsight or self._shoulder_stance.was_in_steelsight then
 				self._shoulder_stance.was_in_steelsight = true
-				progress_smooth = math.bezier(bezier_values2, progress)
+				--progress_smooth = math.bezier(bezier_values2, progress) --WAS gonna do something with the two beizer tables but rn it's currently nothing, leaving in so I don't have to re-implement if I do figure out somethin
 				absolute_progress = (1 - trans_data.absolute_progress) * progress_smooth + trans_data.absolute_progress
 			else
 				absolute_progress = trans_data.absolute_progress * (1 - progress_smooth)
@@ -328,13 +328,12 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
 				local prog = 1 - absolute_progress
 				if self._shoulder_stance.was_in_steelsight and not in_steelsight then
-					log("PENIS")
 					prog = absolute_progress
-					trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, -1 * prog, 0.6 * prog)
+					trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
 					trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
 					self._shoulder_stance.was_in_steelsight = nil
 				elseif in_steelsight then
-					trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.3 * prog)
+					trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
 					trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
 				end
 			end

@@ -1810,6 +1810,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1
 	}	
 	
+	--Leech
+	self.values.player.copr_teammate_heal = {
+		0.02,
+		0.04
+	}	
+	
 end)
 
 --Added new definitions--

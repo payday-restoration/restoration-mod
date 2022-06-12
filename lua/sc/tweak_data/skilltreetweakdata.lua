@@ -2916,7 +2916,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_armor_increase_2"
+					"player_armor_increase_2",
+					"team_civ_intimidation_mul"
 				},
 				cost = 1000,
 				icon_xy = {2, 0},
@@ -2983,7 +2984,9 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck16_5_desc_sc",
 				name_id = "menu_deck16_5",
 				upgrades = {
-					"player_less_armor_wild_cooldown_1"
+					"player_less_armor_wild_cooldown_1",
+					"player_corpse_dispose_speed_multiplier",
+					"player_civ_move_multiplier"	
 				},
 				icon_xy = {
 					0,
@@ -3114,7 +3117,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_bomb_cooldown_reduction"
+					"player_bomb_cooldown_reduction",
+					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
 				icon_xy = {2, 2},
@@ -3185,7 +3189,10 @@ function SkillTreeTweakData:init(tweak_data)
 				texture_bundle_folder = "myh",
 				desc_id = "menu_deck19_5_desc_sc",
 				name_id = "menu_deck19_5",
-				upgrades = {"player_damage_control_auto_shrug_1"},
+				upgrades = {
+					"player_damage_control_auto_shrug_1",
+					"player_alarm_pager_speed_multiplier"
+				},
 				icon_xy = {
 					2,
 					0
@@ -3258,7 +3265,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_5_desc_sc",
 				name_id = "menu_deck20_5",
 				upgrades = {
-					"player_tag_team_damage_absorption"
+					"player_tag_team_damage_absorption",
+					"player_tape_loop_duration_2"
 				},
 				icon_xy = {
 					2,
@@ -3381,7 +3389,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 200,
 				texture_bundle_folder = "copr",
-				desc_id = "menu_deck22_1_desc",
+				desc_id = "menu_deck22_1_desc_sc",
 				name_id = "menu_deck22_1",
 				upgrades = {
 					"temporary_copr_ability_1",
@@ -3400,11 +3408,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 400,
 				texture_bundle_folder = "copr",
-				desc_id = "menu_deck22_3_desc",
+				desc_id = "menu_deck22_3_desc_sc",
 				name_id = "menu_deck22_3",
 				upgrades = {
 					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2",
 					"player_copr_out_of_health_move_slow_1"
 				},
 				icon_xy = {
@@ -3416,12 +3423,14 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 1000,
 				texture_bundle_folder = "copr",
-				desc_id = "menu_deck22_5_desc",
+				desc_id = "menu_deck22_5_desc_sc",
 				name_id = "menu_deck22_5",
 				upgrades = {
 					"temporary_copr_ability_2",
 					"player_copr_teammate_heal_2",
-					"player_copr_speed_up_on_kill_1"
+					"player_copr_speed_up_on_kill_1",
+					"player_corpse_dispose_speed_multiplier",
+					"player_civ_move_multiplier"	
 				},
 				icon_xy = {
 					0,
@@ -3432,9 +3441,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 2400,
 				texture_bundle_folder = "copr",
-				desc_id = "menu_deck22_7_desc",
+				desc_id = "menu_deck22_7_desc_sc",
 				name_id = "menu_deck22_7",
 				upgrades = {
+					"player_passive_health_multiplier_2",
 					"player_passive_health_multiplier_3"
 				},
 				icon_xy = {
@@ -3446,13 +3456,12 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 4000,
 				texture_bundle_folder = "copr",
-				desc_id = "menu_deck22_9_desc",
+				desc_id = "menu_deck22_9_desc_sc",
 				name_id = "menu_deck22_9",
 				upgrades = {
 					"player_activate_ability_downed",
 					"player_copr_static_damage_ratio_2",
 					"player_passive_loot_drop_multiplier",
-					"player_passive_health_multiplier_4",
 					"player_copr_kill_life_leech_2"
 				},
 				icon_xy = {
@@ -3460,7 +3469,7 @@ function SkillTreeTweakData:init(tweak_data)
 					1
 				}
 			},
-			desc_id = "menu_st_spec_22_desc",
+			desc_id = "menu_st_spec_22_desc_sc",
 			name_id = "menu_st_spec_22"
 		}		
 		

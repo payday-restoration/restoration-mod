@@ -72,7 +72,11 @@ tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
-tweak_data.projectiles.rocket_ray_frag.incendiary = true
+tweak_data.projectiles.rocket_ray_frag.incendiary = {
+	burn_duration = 5,
+	damage = 4,
+	player_damage = 2
+}
 
 --Grenade launcher stuff--
 local frag_40mm = {

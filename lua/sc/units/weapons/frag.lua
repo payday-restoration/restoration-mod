@@ -45,7 +45,7 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 			end
 		elseif grenade_tweak.incendiary then
 			self:_spawn_environment_fire(normal)
-			managers.network:session():send_to_peers_synched("sync_detonate_molotov_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonate, normal)
+			managers.network:session():send_to_peers_synched("sync_detonate_incendiary_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonate, normal)
 		end
 	end
 
@@ -60,10 +60,20 @@ end
 function FragGrenade:_spawn_environment_fire(normal)
 	local position = self._unit:position()
 	local rotation = self._unit:rotation()
-	local data = tweak_data.env_effect:incendiary_burst_fire()
+	local data = tweak_data.env_effect:incendiary_fire()
+	local tweak = tweak_data.projectiles[self._tweak_projectile_entry].incendiary or {}
+
+	data.damage = tweak.damage or data.damage or 6
+	data.player_damage = tweak.player_damage or data.player_damage or 3
+	data.burn_duration = tweak.burn_duration or data.burn_duration or 10
+	data.sound_event_impact_duration = tweak.sound_event_impact_duration or data.sound_event_impact_duration or 1
 
 	EnvironmentFire.spawn(position, rotation, data, normal, self._thrower_unit, 0, 1)
-	self._unit:set_slot(0)
+	self._unit:set_visible(false)
+
+	if Network:is_server() then
+		self.burn_stop_time = TimerManager:game():time() + data.burn_duration + data.fire_dot_data.dot_length + 1
+	end
 end
 
 function FragGrenade:_detonate_on_client(normal)

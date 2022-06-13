@@ -41,7 +41,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk"/>
+	<network sync="spawn" remote_unit="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

@@ -127,8 +127,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
+		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
+		["RestorationModADSTransitionStyleDescID"] = "Change the \"animation\" style of aiming down your sights.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
+
+		["vanilla_on_rails"] = "Default/On-Rails",
+		["kf_mw_style"] = "KF1/CoD Style",
+		["tilt_in"] = "Tilted In",
 
 		["default"] = "Default",
 		["random"] = "Random",

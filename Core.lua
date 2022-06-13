@@ -540,6 +540,12 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.ads_transition_style = {
+	"vanilla_on_rails",
+	"kf_mw_style",
+	"tilt_in"
+}
+
 -- restoration.environments_choice_shadow_raid = {
 -- 	"default",
 -- 	"random",

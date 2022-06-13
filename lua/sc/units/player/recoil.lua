@@ -324,17 +324,24 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			mvector3.lerp(self._shoulder_stance.translation, trans_data.start_translation, trans_data.end_translation, progress_smooth)
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
-
-			if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
-				local prog = 1 - absolute_progress
-				if self._shoulder_stance.was_in_steelsight and not in_steelsight then
-					prog = absolute_progress
-					trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
-					trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
-					self._shoulder_stance.was_in_steelsight = nil
-				elseif in_steelsight then
-					trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
-					trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
+			
+			if restoration and restoration.Options:GetValue("OTHER/ADSTransitionStyle") then
+				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
+					local prog = 1 - absolute_progress
+					if self._shoulder_stance.was_in_steelsight and not in_steelsight then
+						prog = absolute_progress
+						trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
+						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
+						self._shoulder_stance.was_in_steelsight = nil
+					elseif in_steelsight then
+						if restoration.Options:GetValue("OTHER/ADSTransitionStyle") == 2 then
+							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
+							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
+						elseif restoration.Options:GetValue("OTHER/ADSTransitionStyle") == 3 then
+							trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
+							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
+						end
+					end
 				end
 			end
 

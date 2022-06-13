@@ -3,11 +3,11 @@
         <diffuse_texture file="units/payday2/props/shadow_mullplan/shadow_mullplan_df"/>
     </material>
     <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" name="apc" version="2">
-        <diffuse_texture file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_reaper_df"/>
+        <diffuse_texture file="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_reaper_df"/>
         <bump_normal_texture file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_fbi_nm"/>
     </material>
     <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" name="mtr_illumination" version="2">
-        <diffuse_texture file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_reaper_df"/>
+        <diffuse_texture file="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_reaper_df"/>
         <self_illumination_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_flashlight_il"/>
         <variable type="scalar" name="il_multiplier" value="searchlight"/>
     </material>

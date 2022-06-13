@@ -1,5 +1,5 @@
 <table>	
-	<table search="unit">	
+	<table search="unit">
 	    <sequence editable_state="true" name="'mat_zeals'" once="true"  triggable="true">
 	    	<material_config name="'units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_zeal'"/>
 	    </sequence>
@@ -20,29 +20,6 @@
 	    </sequence>
 	    <sequence editable_state="true" name="'mat_blueswat'" once="true"  triggable="true">
 	    	<material_config name="'units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_blue'"/>
-	    </sequence>
-	    
-	    <!-- str_versions -->
-	    <sequence editable_state="true" name="'mat_omnia_str'" once="true" triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_omnia'"/>
-	    </sequence>
-	    <sequence editable_state="true" name="'mat_murky_str'" once="true"  triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_murky'"/>
-	    </sequence>
-	    <sequence editable_state="true" name="'mat_gensec_str'" once="true"  triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_gensec'"/>
-	    </sequence>
-	    <sequence editable_state="true" name="'mat_fbi_str'" once="true"  triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_fbi'"/>
-	    </sequence>
-	    <sequence editable_state="true" name="'mat_blueswat_str'" once="true"  triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_blue'"/>
-	    </sequence>
-	    <sequence editable_state="true" name="'mat_zeals_str'" once="true"  triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_zeal'"/>
-	    </sequence>
-	    <sequence editable_state="true" name="'mat_reapers_str'" once="true"  triggable="true">
-	    	<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_reaper'"/>
 	    </sequence>
 	</table>	
 </table>

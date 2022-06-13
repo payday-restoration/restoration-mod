@@ -1,6 +1,7 @@
 <table directory="assets">
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_murky" force="false" />
 	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_murky_df" force="false"/>
+	<material_config	path="units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_murky" force="false" />
 
 	<!--NPC M60-->
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>

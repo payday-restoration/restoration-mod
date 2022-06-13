@@ -1,0 +1,109 @@
+<table>
+	<unit>
+		<sequence editable_state="true" name="'anim_police_responce'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'anim'" to="283/30"/>
+			<run_sequence name="'done_police_responce'" start_time="283/30"/>
+			<sound action="'play'" event="'bnk_vehicle_truck_police_anim_1'" source="'snd'"/>
+		</sequence>
+		<sequence editable_state="false" name="'done_police_responce'" triggable="false">
+			<body enabled="false" name="'body_anim_blocker'"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_door_right_open'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'ag_door_right'" to="15/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_door_left_open'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'ag_door_left'" to="15/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_door_right_close'" triggable="true">
+			<animation_group enabled="true" from="15/30" name="'ag_door_right'" speed="-1" to="0/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_door_left_close'" triggable="true">
+			<animation_group enabled="true" from="15/30" name="'ag_door_left'" speed="-1" to="0/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_lid_top'" triggable="true">
+			<animation_group enabled="true" name="'ag_lid_top'"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_door_right_open'" triggable="true">
+			<animation_group enabled="true" from="15/30" name="'ag_door_right'" speed="0" to="15/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_door_left_open'" triggable="true">
+			<animation_group enabled="true" from="15/30" name="'ag_door_left'" speed="0" to="15/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_door_right_close'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'ag_door_right'" speed="0" to="0/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_door_left_close'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'ag_door_left'" speed="0" to="0/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_hide'" triggable="true">
+			<body enabled="false" name="'body_body'"/>
+			<body enabled="false" name="'body_anim_blocker'"/>
+			<body enabled="false" name="'body_left_door'"/>
+			<body enabled="false" name="'body_right_door'"/>
+			<body enabled="false" name="'body_top_door'"/>
+			<body enabled="false" name="'body_wheel_rear'"/>
+			<body enabled="false" name="'body_wheel_right'"/>
+			<body enabled="false" name="'body_wheel_left'"/>
+			<body enabled="false" name="'blocker_mover'"/>
+			<body enabled="false" name="'blocker_mover_more'"/>
+			<body enabled="false" name="'bag_blocker'"/>
+			<decal_mesh enabled="false" name="'g_body'"/>
+			<decal_mesh enabled="false" name="'g_left_door'"/>
+			<decal_mesh enabled="false" name="'g_right_door'"/>
+			<decal_mesh enabled="false" name="'g_top_door'"/>
+			<decal_mesh enabled="false" name="'g_wheel_rear'"/>
+			<decal_mesh enabled="false" name="'g_wheel_right'"/>
+			<decal_mesh enabled="false" name="'g_wheel_left'"/>
+			<graphic_group name="'grp_vehicle_truck_police'" visibility="false"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_show'" triggable="true">
+			<body enabled="true" name="'body_body'"/>
+			<body enabled="true" name="'body_anim_blocker'"/>
+			<body enabled="true" name="'body_left_door'"/>
+			<body enabled="true" name="'body_right_door'"/>
+			<body enabled="true" name="'body_top_door'"/>
+			<body enabled="true" name="'body_wheel_rear'"/>
+			<body enabled="true" name="'body_wheel_right'"/>
+			<body enabled="true" name="'body_wheel_left'"/>
+			<body enabled="true" name="'blocker_mover'"/>
+			<body enabled="true" name="'blocker_mover_more'"/>
+			<body enabled="true" name="'bag_blocker'"/>
+			<decal_mesh enabled="true" name="'g_body'"/>
+			<decal_mesh enabled="true" name="'g_left_door'"/>
+			<decal_mesh enabled="true" name="'g_right_door'"/>
+			<decal_mesh enabled="true" name="'g_top_door'"/>
+			<decal_mesh enabled="true" name="'g_wheel_rear'"/>
+			<decal_mesh enabled="true" name="'g_wheel_right'"/>
+			<decal_mesh enabled="true" name="'g_wheel_left'"/>
+			<graphic_group name="'grp_vehicle_truck_police'" visibility="true"/>
+		</sequence>
+		<sequence editable_state="true" name="'turret_spawn'" triggable="true">
+			<function extension="'base'" function="'spawn_module'" param1="'units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret'" param2="'spawn_turret'" param3="'turret1'"/>
+		</sequence>
+		<sequence editable_state="true" name="'turret_activate'" triggable="true">
+			<animation_group enabled="true" from="0" name="'ag_lid_top'"/>
+			<function extension="'base'" function="'run_module_function'" param1="'turret1'" param2="'base'" param3="'activate_as_module'" param4="'combatant'" param5="'swat_van_turret_module'"/>
+		</sequence>
+	    <sequence editable_state="true" name="'mat_zeals'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_zeal'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_reapers'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_reaper'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_omnia'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_omnia'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_murky'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_murky'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_gensec'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_gensec'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_fbi'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_fbi'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_blueswat'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_van_swat_blue'"/>
+	    </sequence>
+	</unit>
+</table>

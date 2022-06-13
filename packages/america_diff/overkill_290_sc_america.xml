@@ -1,6 +1,7 @@
 <table directory="assets">	
 	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_gensec_df" force="false"/>
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_gensec" force="false" />
+	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_gensec" force="false" />
 
 	<!-- these work fine in here so i'm leaving them in here -->		
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />

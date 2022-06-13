@@ -1,0 +1,25 @@
+<table>	
+	<table search="unit">	
+	    <sequence editable_state="true" name="'mat_zeals_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_zeal'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_reapers_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_reaper'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_omnia_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_omnia'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_murky_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_murky'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_gensec_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_gensec'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_fbi_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_fbi'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_blueswat_str'" once="true"  triggable="true">
+			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_blue'"/>
+	    </sequence>
+	</table>	
+</table>

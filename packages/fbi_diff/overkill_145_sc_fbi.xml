@@ -34,21 +34,21 @@
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
 
 	<!--HoxRev Heavy FBI Swats with helmet pop-->
-	<texture			path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" force="true"/>
-	<texture			path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm" force="true"/>
+	<texture			path="units/payday2/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" force="false"/>
+	<texture			path="units/payday2/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm" force="false"/>
 	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
 	
-	<material_config	path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true" />
-	<material_config	path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="true" />
-	<model				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>
-	<object				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>	
-	<unit				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>	
-	<unit				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_husk" force="true"/>
+	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false" />
+	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="false" />
+	<model				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false"/>
+	<object				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" load="true"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_husk" load="true"/>
 		
-	<model				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>
-	<object				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>	
-	<unit				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>	
-	<unit				path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" force="true"/>		
+	<model				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="false"/>
+	<object				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="false"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" load="true"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" load="true"/>		
 	
 	<!-- blue swats here -->
 	<!--AMCAR-->	

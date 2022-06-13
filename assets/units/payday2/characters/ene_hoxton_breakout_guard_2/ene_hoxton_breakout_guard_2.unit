@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" />
+	<object file="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" />
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on effect="effects/payday2/particles/character/flashlight_ss" />

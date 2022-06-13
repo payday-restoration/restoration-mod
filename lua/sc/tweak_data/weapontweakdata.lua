@@ -8051,8 +8051,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ching.ads_speed = 0.340
 			self.ching.damage_falloff = {
 				start_dist = 3600,
-				end_dist = 7000,
-				min_mult = 0.5
+				end_dist = 6000,
+				min_mult = 0.75
 			}
 			self.ching.stats = {
 				damage = 60,

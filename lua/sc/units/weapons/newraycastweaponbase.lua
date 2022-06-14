@@ -609,7 +609,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._rof_mult = self._rof_mult * stats.rof_mult
 			end
 			if stats.starwars then
-				self._starwars = true
+				if restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC") == true then
+					self._cbfd_to_add_this_check_elsewhere = true
+				else
+					self._starwars = true
+				end
 			end
 			if stats.empire then
 				self._empire = true
@@ -640,6 +644,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
+	end
+
+	if self._cbfd_to_add_this_check_elsewhere then
+		self._sound_fire:set_switch("suppressed", "regular")
 	end
 
 	if self._ammo_data and self._ammo_data.muzzleflash == nil and self._muzzle_effect_table and self._muzzle_effect_pls then

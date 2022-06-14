@@ -129,6 +129,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
 		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
 		["RestorationModADSTransitionStyleDescID"] = "Change the \"animation\" style of aiming down your sights.",
+		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Mode",
+		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 

@@ -126,8 +126,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorDescID"] = "마지막 다운 컬러 그레이딩을 color_sin_classic으로 전환합니다.",
 		["RestorationModNoBleedoutTiltTitleID"] = "최후의 저항 카메라 기울기 비활성화",
 		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",
+		["RestorationModADSTransitionStyleTitleID"] = "ADS 스타일",
+		["RestorationModADSTransitionStyleDescID"] = "조준 할 때의 \"애니메이션\" 스타일을 변경합니다.",
+		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
+		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",		
 		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
 		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
+
+		["vanilla_on_rails"] = "기본/온레일",
+		["kf_mw_style"] = "킬링 플로어 1/콜 오브 듀티 스타일",
+		["tilt_in"] = "기울임",
 
 		["default"] = "기본",
 		["random"] = "랜덤",

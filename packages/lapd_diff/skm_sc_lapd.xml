@@ -214,8 +214,29 @@
 	<!-- city tier end -->	
 	
 	<!-- specials-->
-	<!-- cloaca -->
-	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
+	<!-- clonker -->
+	<object				path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1" force="false"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1" force="false"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1" force="false" load="true"/>
+	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1" force="false"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1" force="false"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1_contour" force="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_spook_1/ene_spook_1_husk" force="false" load="true"/>
+	<texture			path="units/pd2_mod_lapd/characters/ene_spook_1/body_df" force="false"/>
+	<texture			path="units/pd2_mod_lapd/characters/ene_spook_1/body_nm" force="false"/>
+	<texture			path="units/pd2_mod_lapd/characters/ene_spook_1/nvg_df" force="false"/>
+	
+	<!-- clonker perts -->
+	<object				path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_head_debris" force="false"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_head_debris" force="false"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_head_debris" force="false"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_head_debris" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_head_debris" force="false"/>
+	<object				path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" force="false"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" force="false"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" force="false"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" force="false" load="true"/>
 	
 	<!-- greendozer -->
     <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" load="true"/>

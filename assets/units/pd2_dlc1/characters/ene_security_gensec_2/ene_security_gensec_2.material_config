@@ -1,11 +1,11 @@
 <materials version="3" group="ene_security_gensec_3">
 	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_01_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_sec_df"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_cop_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_cop_df"/>
 	</material>
 	<material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_01_nm" mip="4"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_sec_df" mip="4"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_cop_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_cop_df" mip="4"/>
 	</material>
 	
 	<material name="mtr_head_anders" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">

@@ -75,8 +75,6 @@
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />	
 	<object				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
 	<model				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_contour"  />	
 	<cooked_physics		path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
 	
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" load="true" />

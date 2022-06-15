@@ -56,13 +56,13 @@
 		<variable value="0" type="scalar" name="contour_opacity"/>		
 	</material>
 
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_omnia">
 		<bump_normal_texture 	file="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_nm"/>
 		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_omnia_lod">
 		<bump_normal_texture 	file="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_nm" mip="4"/>
 		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df" mip="4"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>

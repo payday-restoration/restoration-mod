@@ -98,6 +98,9 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"),   
 	
+	ids_func("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"),
+	ids_func("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1_husk"),   
+	
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),
 	

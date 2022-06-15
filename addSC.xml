@@ -762,6 +762,25 @@
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>	
 
+	<!--Winter AssFuckeng Squad-->
+
+	<!--OMNIA SWAT Helmet-->
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false" load="true"/>
+	
+	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1" force="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1" force="true"/>	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1" force="true" load="true"/>	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1_husk" force="true" load="true"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_lightsout" force="false"/>	
+	<material_config	path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf"/> 	
+	
+	<df_nm				path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf" force="false"/>
+	<df_nm				path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf" force="false"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas"  force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false" load="true"/>		
+	
 	<!--Halloween Axe-->
 	<object				path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
 	<cooked_physics		path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>

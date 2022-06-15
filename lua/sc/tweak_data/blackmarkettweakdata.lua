@@ -2197,7 +2197,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].expire_t = 1.45
 		self.melee_weapons[melee_id].repeat_expire_t = 1.2
 		self.melee_weapons[melee_id].melee_damage_delay = 0.65
-		self.melee_weapons[melee_id].anim_speed_mult = 1.325
+		self.melee_weapons[melee_id].anim_speed_mult = 1.375
 	end
 	
 	--melee_knife
@@ -2963,7 +2963,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.freedom.stats.max_damage_effect = 1.1
 	self.melee_weapons.freedom.stats.charge_time = 1.95
 	self.melee_weapons.freedom.stats.range = 225
-	self.melee_weapons.freedom.stats.charge_bonus_start = 0.75
+	self.melee_weapons.freedom.stats.charge_bonus_start = 0.9
 	self.melee_weapons.freedom.stats.charge_bonus_range = 100
 	self.melee_weapons.freedom.stats.concealment = 23
 
@@ -3239,7 +3239,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.beardy.stats.min_damage_effect = 1
 	self.melee_weapons.beardy.stats.max_damage_effect = 1.1
 	self.melee_weapons.beardy.stats.charge_time = 1.95
-	self.melee_weapons.beardy.stats.range = 225
+	self.melee_weapons.beardy.stats.range = 240
 	self.melee_weapons.beardy.stats.concealment = 23
 
 	--Whose plumes are gay now Carl? Whose plumes are gay now?--
@@ -3259,7 +3259,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.great.stats.max_damage_effect = 1
 	self.melee_weapons.great.stats.charge_time = 1.85
 	self.melee_weapons.great.stats.range = 215
-	self.melee_weapons.great.stats.charge_bonus_start = 0.75
+	self.melee_weapons.great.stats.charge_bonus_start = 0.9
 	self.melee_weapons.great.stats.charge_bonus_range = 100
 	self.melee_weapons.great.stats.concealment = 24
 
@@ -3396,8 +3396,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.wing.backstab_damage_multiplier = 4
 
 	--YEAH YEAH YEAH YEAH--
-	self.melee_weapons.road.stats.min_damage = 6
-	self.melee_weapons.road.stats.max_damage = 12.1
+	self.melee_weapons.road.stats.min_damage = 4.5
+	self.melee_weapons.road.stats.max_damage = 9.1
 	self.melee_weapons.road.stats.min_damage_effect = 0.7
 	self.melee_weapons.road.stats.max_damage_effect = 0.8
 	self.melee_weapons.road.stats.charge_time = 1.65

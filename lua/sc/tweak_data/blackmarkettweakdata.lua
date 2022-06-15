@@ -2579,7 +2579,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.poker.align_objects = {"a_weapon_right"}
 	self.melee_weapons.poker.anim_attack_vars = {"var1"}
 	self.melee_weapons.poker.anim_attack_charged_vars = {"var2"}
-	self.melee_weapons.poker.anim_speed_mult = 0.76
+	self.melee_weapons.poker.anim_speed_mult = 0.8
 	
 	--melee_stab
 	melee_anim = {

@@ -51,7 +51,7 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 
 end
 
-function FragGrenade:sync_detonate_molotov_grenade(event_id, normal)
+function FragGrenade:sync_detonate_incendiary_grenade(event_id, normal)
 	if event_id == GrenadeBase.EVENT_IDS.detonate then
 		self:_detonate_on_client(normal)
 	end

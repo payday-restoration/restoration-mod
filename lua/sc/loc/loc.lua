@@ -2458,7 +2458,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "Kick Starter",
-			["menu_fire_trap_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to restart a drill with a melee strike.\n\nYou get ##1## chance for each time it jams with a ##75%## success rate.\n\nACE: ##$pro##\nYou ##no longer put away your weapon while performing interactions.##\n\nYou are able to move, aim, and use your weapon without stopping the interaction, as long as you continue to hold down the interact key.",
+			["menu_fire_trap_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to restart a drill with a melee strike.\n\nYou get ##1## chance for each time it jams with a ##75%## success rate.\n\nACE: ##$pro##\nYou ##no longer put away your weapon while performing interactions.##\n\nYou are able to look around freely, move, aim, and use your weapon without stopping the interaction, as long as you continue to hold down the interact key and remain in range for the interaction.",
 
 
 			--}

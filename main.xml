@@ -80,6 +80,7 @@
         <!--///OVERHAUL\\\-->
 		<hook file="sc/units/props/carrydata.lua" source_file="lib/units/props/carrydata"/>
 		<hook file="sc/units/props/drill.lua" source_file="lib/units/props/drill"/>
+		<hook file="sc/units/props/missiondoor.lua" source_file="lib/units/props/missiondoor"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>

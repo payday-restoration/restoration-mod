@@ -2940,6 +2940,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	--(AK) Drum Mag
 	self.parts.wpn_upg_ak_m_drum = {
 		pcs = {},
+		fps_animation_weight = "drum_mag",
 		type = "magazine",
 		name_id = "bm_wp_aa12_mag_drum",
 		a_obj = "a_m",

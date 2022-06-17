@@ -18,6 +18,10 @@
 		<animation path="anims/fps/basset/basset_reload_drum" load="true"/>
 		<animation path="anims/fps/basset/basset_reload_drum_not_empty" load="true"/>
 		
+		<!--AK Drum Mag-->
+		<animation path="anims/fps/ak47/ak47_reload_drum" load="true"/>
+		<animation path="anims/fps/ak47/ak47_reload_drum_not_empty" load="true"/>
+		
 		<!--MP5 Tweaks-->
 		<animation path="anims/fps/mp5/mp5_vg_idle" load="true"/>
 		<animation path="anims/fps/mp5/mp5_vg_equip" load="true"/>

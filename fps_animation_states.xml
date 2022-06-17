@@ -874,6 +874,83 @@
 <!--Izhma Drum Mag Reload End-->
 
 
+<!--AK Drum Mag Reload-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/ak47"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/ak47"/>
+			<anim name="ak47_rifle_reload"/>
+        </search>
+        <target mode="replace">
+			<anim name="ak47_rifle_reload" weight="ak47 * (1 - drum_mag)"/>
+			<anim name="ak47_reload_drum" weight="ak47 * drum_mag"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/ak47"/>
+            <keys/>
+            <key at="trigger" trigger="wp_clip_generic_ass_left"/>
+        </search>
+        <target mode="append">
+			<key at="trigger" trigger="wp_rpk_box_slide_in" callback="play_sound" class_name="base" param1="wp_rpk_box_slide_in"/>
+			<key at="trigger" trigger="wp_rpk_box_take_new" callback="play_sound" class_name="base" param1="wp_rpk_box_take_new"/>
+			<key at="trigger" trigger="wp_rpk_box_out" callback="play_sound" class_name="base" param1="wp_rpk_box_out"/>
+			<key at="trigger" trigger="wp_rpk_box_in_contact" callback="play_sound" class_name="base" param1="wp_rpk_box_in_contact"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/ak47"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/ak47"/>
+			<anim name="ak47_rifle_reload_not_empty"/>
+        </search>
+        <target mode="replace">
+			<anim name="ak47_rifle_reload_not_empty" weight="ak47 * (1 - drum_mag)"/>
+			<anim name="ak47_reload_drum_not_empty" weight="ak47 * drum_mag"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/ak47"/>
+            <keys/>
+            <key at="trigger" trigger="wp_clip_generic_ass_left"/>
+        </search>
+        <target mode="append">
+			<key at="trigger" trigger="wp_rpk_box_slide_in" callback="play_sound" class_name="base" param1="wp_rpk_box_slide_in"/>
+			<key at="trigger" trigger="wp_rpk_box_take_new" callback="play_sound" class_name="base" param1="wp_rpk_box_take_new"/>
+			<key at="trigger" trigger="wp_rpk_box_out" callback="play_sound" class_name="base" param1="wp_rpk_box_out"/>
+			<key at="trigger" trigger="wp_rpk_box_in_contact" callback="play_sound" class_name="base" param1="wp_rpk_box_in_contact"/>
+        </target>
+    </tweak>
+<!--AK Drum Mag Reload End-->
+
+
 <!--Compact-5 Tweaks-->
 	<!--Idle-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">

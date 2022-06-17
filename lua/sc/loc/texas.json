@@ -1,0 +1,7 @@
+{
+  "ene_nypd_swat" : "Texas SWAT",
+  "ene_nypd_heavy" : "Texas Heavy SWAT",
+  "ene_fbi_swat" : "Texas FBI SWAT",  
+  "ene_fbi_heavy" : "Texas FBI Heavy SWAT",
+  "ene_fbi_heavy_r870_sc" : "Texas FBI Heavy SWAT"
+}

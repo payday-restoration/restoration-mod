@@ -53,6 +53,7 @@ function GameSetup:load_packages()
     local la = tweak_data.levels.ai_groups.lapd
     local ny = tweak_data.levels.ai_groups.nypd
 	local feds = tweak_data.levels.ai_groups.fbi
+	local texas = tweak_data.levels.ai_groups.texas
     local ai_type = tweak_data.levels:get_ai_group_type()
 
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -103,6 +104,11 @@ function GameSetup:load_packages()
 
         load_difficulty_package(diff_package)
 		PackageManager:load("packages/sm_wish")	
+	elseif ai_type == texas then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_texas" or "normal")
+
+        load_difficulty_package(diff_package)
+		PackageManager:load("packages/sm_wish")		
 	else
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 
@@ -139,7 +145,14 @@ function GameSetup:load_packages()
 			"levels/narratives/vlad/bex/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
-	
+	--[[	
+	elseif ai_type == texas then
+        faction_package = {
+            "packages/job_ranc",
+			"levels/narratives/locke/ranc/world_sounds"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)	
+	]]--
     end
     if faction_package then
         if type(faction_package) == "table" then

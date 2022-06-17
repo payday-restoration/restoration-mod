@@ -11,7 +11,6 @@ LevelsTweakData.LevelType.Federales = "federales"
 LevelsTweakData.LevelType.NYPD = "nypd"
 LevelsTweakData.LevelType.LAPD = "lapd"
 LevelsTweakData.LevelType.FBI = "fbi"
-LevelsTweakData.LevelType.Texas = "texas"
 --///LEVELS\\\--
 Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
@@ -23,7 +22,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	local federales = LevelsTweakData.LevelType.Federales		
 	local lapd = LevelsTweakData.LevelType.LAPD
 	local fbi = LevelsTweakData.LevelType.FBI
-	local texas = LevelsTweakData.LevelType.Texas
 	self.ai_groups = {}
 	self.ai_groups.default = america
 	self.ai_groups.america = america
@@ -34,7 +32,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	self.ai_groups.fbi = fbi
-	self.ai_groups.texas = texas
 	
 	--Christmas Dozer/Cloaker jingle bells
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
@@ -193,12 +190,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		}
 	}
 	
-	--///TEXAS LEVELS\\\--
-	--[[
-	self.ranc.ai_group_type = texas
-	self.ranc.player_style = "fighterpilot"
-	--]]
-	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
 	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
@@ -228,6 +219,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.ai_group_type = nypd
 	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
 	self.dinner.player_style = "slaughterhouse"
+	
+	--[[
+	self.ranc.ai_group_type = nypd
+	self.ranc.player_style = "fighterpilot"
+	--]]
 	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil

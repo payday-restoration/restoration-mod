@@ -308,6 +308,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.explosive_bullet.camera_shake_max_mul = 4
 
 	--Weapon Based Movement Modifiers--
+	--This is overridden/ignored if a weapon in any of these categories is given its own movement penalty
 	self.weapon_movement_penalty.minigun = 0.55
 	self.weapon_movement_penalty.lmg = 0.75
 	
@@ -619,7 +620,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Handling
 				--Basic
-					self.values.smg.hip_fire_spread_multiplier = {0.8}
+					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
 					self.values.smg.reload_speed_multiplier = {1.25}
 				
@@ -1814,7 +1815,29 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.copr_teammate_heal = {
 		0.02,
 		0.04
-	}	
+	}
+
+
+
+	local editable_skill_btns = {
+		engineering = {
+			BTN_CHANGE_EQ = function ()
+				local result = managers.localization:btn_macro("change_equipment") or managers.localization:get_default_macro("BTN_CHANGE_EQ")
+				return utf8.to_upper(result)
+			end
+		}
+	}
+	self.skill_btns = {}
+
+	for skill_id, skill_btns in pairs(editable_skill_btns) do
+		self.skill_btns[skill_id] = {}
+
+		for i, desc in pairs(skill_btns) do
+			self.skill_btns[skill_id][tostring(i)] = desc
+		end
+	end
+
+
 	
 end)
 
@@ -2839,13 +2862,22 @@ function UpgradesTweakData:_smg_definitions()
 			value = 1
 		}
 	}
-	self.definitions.smg_hip_fire_spread_multiplier = {
+	self.definitions.smg_hip_fire_spread_multiplier_1 = {
 		category = "feature",
 		name_id = "menu_smg_hip_fire_spread_multiplier",
 		upgrade = {
 			category = "smg",
 			upgrade = "hip_fire_spread_multiplier",
 			value = 1
+		}
+	}
+	self.definitions.smg_hip_fire_spread_multiplier_2 = {
+		category = "feature",
+		name_id = "menu_smg_hip_fire_spread_multiplier",
+		upgrade = {
+			category = "smg",
+			upgrade = "hip_fire_spread_multiplier",
+			value = 2
 		}
 	}
 	self.definitions.smg_hip_fire_damage_multiplier = {

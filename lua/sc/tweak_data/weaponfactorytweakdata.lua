@@ -6938,46 +6938,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	--CQB Foregrip
 	self.parts.wpn_fps_ass_galil_fg_mar.pcs = {}
 	self.parts.wpn_fps_ass_galil_fg_mar.supported = true
-	self.parts.wpn_fps_ass_galil_fg_mar.stats = {
-		value = 4,
-		spread = -2,
-		recoil = -2,
-		concealment = 3
-	}
-	self.parts.wpn_fps_ass_galil_fg_mar.custom_stats = {
-		falloff_start_mult = 0.9,
-		falloff_end_mult = 0.9,
-		ads_speed_mult = 0.95
-	}
+	self.parts.wpn_fps_ass_galil_fg_mar.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_ass_galil_fg_mar.stats.recoil = -2
+	self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 3
+	self.parts.wpn_fps_ass_galil_fg_mar.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 	
 	--Light Foregrip
 	self.parts.wpn_fps_ass_galil_fg_sar.pcs = {}
 	self.parts.wpn_fps_ass_galil_fg_sar.supported = true
-	self.parts.wpn_fps_ass_galil_fg_sar.stats = {
-		value = 3,
-		spread = -1,
-		concealment = 1
-	}
-	self.parts.wpn_fps_ass_galil_fg_sar.custom_stats = {
-		falloff_start_mult = 0.925,
-		falloff_end_mult = 0.925,
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_ass_galil_fg_sar.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_ass_galil_fg_sar.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Sniper Foregrip
 	self.parts.wpn_fps_ass_galil_fg_sniper.pcs = {}
 	self.parts.wpn_fps_ass_galil_fg_sniper.supported = true
-	self.parts.wpn_fps_ass_galil_fg_sniper.stats = {
-		value = 6,
-		spread = 2,
-		recoil = 2,
-		concealment = -3
-	}
-	self.parts.wpn_fps_ass_galil_fg_sniper.custom_stats = {
-		falloff_start_mult = 1.15,
-		falloff_end_mult = 1.15,
-		ads_speed_mult = 1.05
-	}
+	self.parts.wpn_fps_ass_galil_fg_sniper.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_galil_fg_sniper.stats.recoil = 2
+	self.parts.wpn_fps_ass_galil_fg_sniper.stats.concealment = -3
+	self.parts.wpn_fps_ass_galil_fg_sniper.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--Sniper Grip
 	self.parts.wpn_fps_ass_galil_g_sniper.pcs = {}

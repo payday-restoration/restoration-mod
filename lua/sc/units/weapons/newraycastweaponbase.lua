@@ -778,7 +778,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 			multiplier = 1
 		end
 	end	
-	--[[
+	--[
 	local init_mult = self._fire_rate_init_mult
 	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
 		if self._fire_rate_init_ramp_up then
@@ -995,6 +995,10 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 				falloff_start = falloff_start * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
 				falloff_end = falloff_end * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
 			end
+		end
+		if current_state:_is_using_bipod() then
+			falloff_start = falloff_start * 1.3
+			falloff_end = falloff_end * 1.3
 		end
 	end
 	--Apply global range multipliers.

@@ -375,12 +375,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 3},
 				[1] = {
 					upgrades = {
-						"smg_hip_fire_spread_multiplier"
+						"smg_hip_fire_spread_multiplier_1"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
+						"smg_hip_fire_spread_multiplier_2",
 						"smg_reload_speed_multiplier"
 					},
 					cost = self.costs.pro

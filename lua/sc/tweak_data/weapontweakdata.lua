@@ -8903,7 +8903,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.CAN_TOGGLE_FIREMODE = false
 				self.qbu88.kick = self.stat_info.kick_tables.vertical_kick
 				self.qbu88.supported = true
-				self.qbu88.ads_speed = 0.420
+				self.qbu88.ads_speed = 0.400
 				self.qbu88.damage_falloff = {
 					start_dist = 1600,
 					end_dist = 5500,
@@ -8948,7 +8948,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.can_shoot_through_wall = true
 				self.tti.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.tti.supported = true
-				self.tti.ads_speed = 0.480
+				self.tti.ads_speed = 0.460
 				self.tti.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 6000,
@@ -8986,7 +8986,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.kick = self.stat_info.kick_tables.vertical_kick
 				self.msr.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.msr.supported = true
-				self.msr.ads_speed = 0.460
+				self.msr.ads_speed = 0.440
 				self.msr.damage_falloff = {
 					start_dist = 3800,
 					end_dist = 8200,
@@ -9104,7 +9104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.r93.kick = self.stat_info.kick_tables.vertical_kick
 			self.r93.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.r93.supported = true
-			self.r93.ads_speed = 0.520
+			self.r93.ads_speed = 0.480
 			self.r93.damage_falloff = {
 				start_dist = 4400,
 				end_dist = 11000,
@@ -9140,7 +9140,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.desertfox.panic_suppression_chance = 0.05
 			self.desertfox.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.desertfox.supported = true
-			self.desertfox.ads_speed = 0.480
+			self.desertfox.ads_speed = 0.440
 			self.desertfox.damage_falloff = {
 				start_dist = 4000,
 				end_dist = 9200,
@@ -9215,7 +9215,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
 			self.wa2000.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.wa2000.supported = true
-			self.wa2000.ads_speed = 0.480
+			self.wa2000.ads_speed = 0.460
 			self.wa2000.damage_falloff = {
 				start_dist = 3200,
 				end_dist = 8000,
@@ -9243,6 +9243,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.timers.reload_exit_not_empty = 1
 
 		--Nagant 
+			self.mosin.bmp = 1
 			self.mosin.has_description = true
 			self.mosin.desc_id = "bm_mosin_sc_desc"
 			self.mosin.CLIP_AMMO_MAX = 5
@@ -9290,7 +9291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.siltstone.kick = self.stat_info.kick_tables.right_kick
 			self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.siltstone.supported = true
-			self.siltstone.ads_speed = 0.480
+			self.siltstone.ads_speed = 0.460
 			self.siltstone.damage_falloff = {
 				start_dist = 2500,
 				end_dist = 7500,
@@ -9367,7 +9368,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.fire_mode_data.fire_rate = 1.5
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
-			self.m95.ads_speed = 0.560
+			self.m95.ads_speed = 0.500
 			self.m95.damage_falloff = {
 				start_dist = 6000,
 				end_dist = 250000,
@@ -11677,7 +11678,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sgs.can_shoot_through_shield = true
 		self.sgs.can_shoot_through_wall = true
 		self.sgs.supported = true
-		self.sgs.ads_speed = 0.460
+		self.sgs.ads_speed = 0.440
 		self.sgs.damage_falloff = {
 			start_dist = 2400,
 			end_dist = 6400,
@@ -12171,11 +12172,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.has_description = true
 		self.m200.desc_id = "bm_m200_sc_desc"
 		self.m200.AMMO_MAX = 20
-		self.m200.CLIP_AMMO_MAX = 5
+		self.m200.CLIP_AMMO_MAX = 7
+		self.m200.tactical_reload = 1
 		self.m200.fire_mode_data.fire_rate = 0.923076923
 		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.m200.supported = true
-		self.m200.ads_speed = 0.400
+		self.m200.ads_speed = 0.500
 		self.m200.damage_falloff = {
 			start_dist = 5500,
 			end_dist = 350000,

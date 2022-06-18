@@ -4945,11 +4945,11 @@ function BlackMarketGui:update_info_text()
 				end
 			end
 
-			local text = ""
+			local text = " "
 
 			for category, amount in pairs(forbids) do
 				if droppable_mods[category] then
-					if text ~= "" then
+					if text ~= " " then
 						text = text .. "\n"
 					end
 

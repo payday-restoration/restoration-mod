@@ -20981,6 +20981,62 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 	end
 
+	--Pawcio's M200
+	if self.parts.wpn_fps_snp_m200_barrel then
+		self.parts.wpn_fps_upg_m200_barrel_med.supported = true
+		self.parts.wpn_fps_upg_m200_barrel_med.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_upg_m200_barrel_med.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_m200_barrel_short.supported = true
+		self.parts.wpn_fps_upg_m200_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_m200_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.parts.wpn_fps_upg_m200_bipod.supported = true
+		self.parts.wpn_fps_upg_m200_bipod.stats = { value = 0 }
+		self.parts.wpn_fps_upg_m200_bipod.custom_stats = nil
+		self.parts.wpn_fps_upg_m200_bipod_fold.supported = true
+		self.parts.wpn_fps_upg_m200_bipod_fold.stats = { value = 0 }
+		self.parts.wpn_fps_upg_m200_bipod_fold.custom_stats = nil
+
+		self.parts.wpn_fps_upg_m200_supp.supported = true
+		self.parts.wpn_fps_upg_m200_supp.stats = {
+			value = 2,
+			suppression = 10,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_upg_m200_supp.custom_stats = nil
+		self.parts.wpn_fps_upg_m200_supp.perks = {"silencer"}
+	end
+
+	--Pawcio's M107
+	if self.parts.wpn_fps_upg_m107cq_ammo_416 then
+		self.parts.wpn_fps_upg_m107cq_ammo_416.pcs = nil
+		self.parts.wpn_fps_upg_m107cq_ammo_416.supported = true
+		self.parts.wpn_fps_upg_m107cq_ammo_416.stats = { value = 0 }
+		self.parts.wpn_fps_upg_m107cq_ammo_416.custom_stats = nil
+
+		self.parts.wpn_fps_upg_m107cq_barrel_long.supported = true
+		self.parts.wpn_fps_upg_m107cq_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_m107cq_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_m107cq_barrel_supp.supported = true
+		self.parts.wpn_fps_upg_m107cq_barrel_supp.stats = {
+			value = 2,
+			suppression = 10,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_upg_m107cq_barrel_supp.custom_stats = nil
+		self.parts.wpn_fps_upg_m107cq_barrel_supp.perks = {"silencer"}
+
+		self.parts.wpn_fps_upg_m107cq_bipod.supported = true
+		self.parts.wpn_fps_upg_m107cq_bipod.stats = { value = 0}
+		self.parts.wpn_fps_upg_m107cq_bipod.custom_stats = nil
+
+		self.parts.wpn_fps_upg_m107cq_iron_sights.supported = true
+		self.parts.wpn_fps_upg_m107cq_iron_sights.stats = { value = 0 }
+		self.parts.wpn_fps_upg_m107cq_iron_sights.custom_stats = nil
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

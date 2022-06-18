@@ -119,13 +119,15 @@
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
     <texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_fbi_body_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />				
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/spook_heavy_df" />
 	
 	<!-- blue swats here -->
@@ -198,7 +200,7 @@
     <unit				path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>	
 	<model				path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2" />	
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2" />	
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2" />		
 
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_acc_greenframe/ene_acc_greenframe" />
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_acc_greenframe/ene_acc_greenframe"/>
@@ -224,8 +226,7 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1_husk" load="true"/>
 	<object				path="units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1" />	
 	<model				path="units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1" />	
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1" />
-	
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1" />	
 	<!-- fbi tier end -->
 	
 	<!-- specials-->
@@ -274,7 +275,6 @@
 	<texture			path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_df"/>
 	<texture			path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_nm"/>
 	
-	<!-- tazer -->
 	<object				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
@@ -293,7 +293,7 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	
+
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
@@ -303,17 +303,11 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
 	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
-
-	<!--Titanshield-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-
 	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
+
     <!--Titan Taser-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
@@ -362,5 +356,5 @@
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
-    
+ 
 </table>

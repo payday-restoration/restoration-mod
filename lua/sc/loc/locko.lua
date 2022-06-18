@@ -1568,8 +1568,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_corgi_b_short"] = "MSG 총열",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "유효한 표면에서 $BTN_BIPOD키를 눌러 거치/비거치 합니다.\n\n거치 시 반동을 크게 줄입니다.",
-		["bm_sc_bipod_desc"] = "유효한 표면에서 $BTN_BIPOD키를 길게 눌러 거치/비거치 합니다.\n\n거치 시 반동을 크게 줄입니다.",
+		["bm_sc_bipod_desc_pc"] = "유효한 표면에서 $BTN_BIPOD키를 눌러 거치/비거치 합니다.\n\n거치 시 반동이 60%만큼 감소하고 사거리가 30%만큼 증가합니다.",
+		["bm_sc_bipod_desc"] = "유효한 표면에서 $BTN_BIPOD키를 길게 눌러 거치/비거치 합니다.\n\n거치 시 반동이 60%만큼 감소하고 사거리가 30%만큼 증가합니다.",
 
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "완전 충전되면 접촉하는 대상을 감전시키고 방해하는 장치입니다.",
@@ -2294,7 +2294,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Handling
 			["menu_scavenger_sc"] = "기관총 핸들링",
-			["menu_scavenger_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총의 지향 사격 명중률이 ##20%##만큼 증가합니다.\n\n에이스: ##$pro##\n기관단총과 경기관총 재장전 속도가 ##25%##만큼 빨라집니다.",
+			["menu_scavenger_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총의 지향 사격 명중률이 ##20%##만큼 증가합니다.\n\n에이스: ##$pro##\n기관단총과 경기관총의 지향 사격 명중률을 추가로 ##30%##만큼 증가합니다.\n\n기관단총과 경기관총 재장전 속도가 ##25%##만큼 빨라집니다.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "기관총 전문가",
@@ -2385,7 +2385,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "탄환폭풍",
-			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: ##$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 ##5##초까지 탄약 소모가 없어집니다.\n\n에이스: ##$pro##\n탄약 소모가 없어지는 시간이 최대 ##15##초로 늘어납니다.",
+			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: ##$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 ##5##초까지 탄약 소모가 없어집니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n에이스: ##$pro##\n탄약 소모가 없어지는 시간이 추가로 ##15##초로 증가합니다.",
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "장비 전문가",
@@ -2425,8 +2425,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "팔방미인",
-			["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n주 장비와 함께 보조장비를 같이 소지할 수 있습니다. 주장비와 보조장비를 교체하려면 ##[X]## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있습니다.",
+			--["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n주 장비와 함께 보조장비를 같이 소지할 수 있습니다. 주 장비와 보조장비를 교체하려면 ##[X]## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있습니다.",
 
+			["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n##주 장비와 함께 보조장비를 같이 소지할 수 있습니다##. 주 장비와 보조장비를 교체할 수 교체하려면 ##$BTN_CHANGE_EQ## 키를 누르십시오.\n\n참고: 보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있고 갯수도 최소 ##1##개씩 줄어듭니다.",
+			
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "타워 디펜스",
 			["menu_tower_defense_beta_desc_sc"] = "베이직: ##$basic##\n이제 센트리 건에서 철갑탄을 전환할 수 있으며 전환 시 발사 속도를 ##66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: ##$pro##\n최대 ##2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 ##35%##가 소모됩니다.",

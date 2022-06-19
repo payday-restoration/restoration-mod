@@ -9207,7 +9207,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Lebensauger .308
 			self.wa2000.upgrade_blocks = nil
 			self.wa2000.has_description = true
-			self.wa2000.desc_id = "bm_ap_weapon_sc_desc"
+			self.wa2000.desc_id = "bm_wa2000_sc_desc"
 			self.wa2000.CLIP_AMMO_MAX = 6
 			self.wa2000.AMMO_MAX = 30
 			self.wa2000.fire_mode_data.fire_rate = 0.8571428

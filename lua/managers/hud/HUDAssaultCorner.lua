@@ -187,7 +187,9 @@ function HUDAssaultCorner:init(hud, full_hud)
 	if self._hud_panel:child("wave_panel") then
 		self._hud_panel:remove(self._hud_panel:child("wave_panel"))
 	end
-	--self._completed_waves = 0
+	self._max_waves = 0
+	self._wave_number = 0
+	self._max_waves = managers.job:current_level_wave_count()
 	if self:has_waves() then
 		self._wave_panel_size = {250, 38}
 		local wave_w, wave_h = 38, 38
@@ -1156,7 +1158,7 @@ function HUDAssaultCorner:_animate_wave_completed(panel, assault_hud)
 end
 
 function HUDAssaultCorner:has_waves()
-	return managers.job:current_level_id() == "chill_combat" or managers.skirmish:is_skirmish()
+	return self._max_waves < math.huge
 end
 
 function HUDAssaultCorner:get_completed_waves_string()

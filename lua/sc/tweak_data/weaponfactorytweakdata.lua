@@ -16225,8 +16225,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 			reload = -6,
 			spread = -4,
 			recoil = -6,
-			extra_ammo = 10,
-			concealment = -6
+			extra_ammo = 10
 		}
 	}	
 	
@@ -17190,10 +17189,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		stats = {
 			value = 10,
-			spread = -2,
-			recoil = -4,
-			extra_ammo = 12,
-			concealment = -6
+			spread = -4,
+			recoil = -6,
+			extra_ammo = 12
+		},
+		internal_part = true,
+		dlc = "sc"
+	}
+	--Widowmaker
+	self.parts.wpn_fps_upg_i_iw_widowmaker = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_iw_widowmaker",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 10,
+			extra_ammo = 3,
+			reload = -2,
+			spread = -4
+		},
+		custom_stats = {
+			widowmaker = true,
+			falloff_start_mult = 0.66666,
+			falloff_end_mult = 0.025725
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -21006,6 +21030,9 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 		self.parts.wpn_fps_upg_m200_supp.custom_stats = nil
 		self.parts.wpn_fps_upg_m200_supp.perks = {"silencer"}
+		
+		table.insert(self.wpn_fps_snp_m200.uses_parts, "wpn_fps_upg_i_iw_widowmaker")	
+		table.insert(self.wpn_fps_snp_m200_npc.uses_parts, "wpn_fps_upg_i_iw_widowmaker")	
 	end
 
 	--Pawcio's M107

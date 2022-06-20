@@ -3357,6 +3357,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].m_add_t = 0.35
 	end
+
+
+	recat = { "p90", "aug", "arbiter", "komodo", "corgi", "vhs", "wa2000", "desertfox", "m95", "shak12", "l85a2", "groza", "groza_underbarrel", "ksg", "rota", "basset", "famas", "qbu88" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].is_bullpup = true
+	end
 		
 	--Weapon specific attachment category names
 	self.new_raging_bull.override_mod_type_name = {
@@ -8986,7 +8992,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.kick = self.stat_info.kick_tables.vertical_kick
 				self.msr.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.msr.supported = true
-				self.msr.ads_speed = 0.440
+				self.msr.ads_speed = 0.420
 				self.msr.damage_falloff = {
 					start_dist = 3800,
 					end_dist = 8200,
@@ -9024,7 +9030,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r700.kick = self.stat_info.kick_tables.vertical_kick
 				self.r700.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.r700.supported = true
-				self.r700.ads_speed = 0.420
+				self.r700.ads_speed = 0.400
 				self.r700.damage_falloff = {
 					start_dist = 4200,
 					end_dist = 9000,
@@ -9063,7 +9069,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scout.kick = self.stat_info.kick_tables.vertical_kick
 				self.scout.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.scout.supported = true
-				self.scout.ads_speed = 0.420
+				self.scout.ads_speed = 0.400
 				self.scout.damage_falloff = {
 					start_dist = 3500,
 					end_dist = 8000,
@@ -9104,7 +9110,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.r93.kick = self.stat_info.kick_tables.vertical_kick
 			self.r93.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.r93.supported = true
-			self.r93.ads_speed = 0.480
+			self.r93.ads_speed = 0.460
 			self.r93.damage_falloff = {
 				start_dist = 4400,
 				end_dist = 11000,
@@ -9140,7 +9146,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.desertfox.panic_suppression_chance = 0.05
 			self.desertfox.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.desertfox.supported = true
-			self.desertfox.ads_speed = 0.440
+			self.desertfox.ads_speed = 0.420
 			self.desertfox.damage_falloff = {
 				start_dist = 4000,
 				end_dist = 9200,
@@ -9176,7 +9182,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.model70.kick = self.stat_info.kick_tables.vertical_kick
 			self.model70.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.model70.supported = true
-			self.model70.ads_speed = 0.460
+			self.model70.ads_speed = 0.440
 			self.model70.damage_falloff = {
 				start_dist = 3600,
 				end_dist = 8500,
@@ -9215,7 +9221,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
 			self.wa2000.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.wa2000.supported = true
-			self.wa2000.ads_speed = 0.460
+			self.wa2000.ads_speed = 0.440
 			self.wa2000.damage_falloff = {
 				start_dist = 3200,
 				end_dist = 8000,
@@ -9253,7 +9259,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mosin.kick = self.stat_info.kick_tables.vertical_kick
 			self.mosin.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.mosin.supported = true
-			self.mosin.ads_speed = 0.420
+			self.mosin.ads_speed = 0.400
 			self.mosin.damage_falloff = {
 				start_dist = 2900,
 				end_dist = 7700,
@@ -9291,7 +9297,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.siltstone.kick = self.stat_info.kick_tables.right_kick
 			self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.siltstone.supported = true
-			self.siltstone.ads_speed = 0.460
+			self.siltstone.ads_speed = 0.440
 			self.siltstone.damage_falloff = {
 				start_dist = 2500,
 				end_dist = 7500,
@@ -9368,9 +9374,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.fire_mode_data.fire_rate = 1.5
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
-			self.m95.ads_speed = 0.500
+			self.m95.ads_speed = 0.480
 			self.m95.damage_falloff = {
-				start_dist = 6000,
+				start_dist = 5000,
 				end_dist = 250000,
 				min_mult = 0.5
 			}
@@ -11025,6 +11031,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.osipr.recategorize = { "light_ar" }
 		self.osipr.damage_type = "assault_rifle"
 		self.osipr.m_add_t = 0.15
+		self.osipr.is_bullpup = true
 		self.osipr.nato = true
 		self.osipr.tactical_reload = 1		
 		self.osipr.AMMO_MAX = 120
@@ -11066,6 +11073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.osipr_gl.m_add_t = 0.15
 		self.osipr_gl.AMMO_MAX = 9
 		self.osipr_gl.tactical_reload = 1
+		self.osipr_gl.is_bullpup = true
 		self.osipr_gl.CLIP_AMMO_MAX = 5
 		self.osipr_gl.fire_mode_data.fire_rate = 0.6
 		self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
@@ -11545,6 +11553,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.spike.warsaw = true
 		self.spike.recategorize = { "heavy_ar" }
 		self.spike.m_add_t = 0.15
+		self.spike.is_bullpup = true
 		self.spike.has_description = false						
 		self.spike.tactical_reload = 1		
 		self.spike.AMMO_MAX = 120
@@ -12140,7 +12149,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.supported = true
 		self.m107cq.ads_speed = 0.640
 		self.m107cq.damage_falloff = {
-			start_dist = 4500,
+			start_dist = 4000,
 			end_dist = 200000,
 			min_mult = 0.5
 		}
@@ -12179,7 +12188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.supported = true
 		self.m200.ads_speed = 0.500
 		self.m200.damage_falloff = {
-			start_dist = 5500,
+			start_dist = 6000,
 			end_dist = 350000,
 			min_mult = 0.33333
 		}
@@ -12203,7 +12212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload_not_empty = 2.7,
 			reload_empty = 1.65,
 			unequip = 0.7,
-			equip = 0.6,
+			equip = 0.9,
 			reload_exit_empty = 3.3,
 			reload_exit_not_empty = 0.95
 		}

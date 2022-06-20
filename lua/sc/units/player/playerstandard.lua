@@ -465,14 +465,11 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 					end
 				end
 			end
-			movement_speed = movement_speed * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
-			--bullpup bonus speed
 			if weapon_tweak.is_bullpup then 
-				--mult = mult * 1.2
+				movement_speed = movement_speed * 1.2
 			end
-			if movement_speed > base_speed then
-				movement_speed = base_speed
-			end
+			movement_speed = movement_speed * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
+			movement_speed = math.clamp(movement_speed, 0, base_speed)
 		end
 		speed_state = "steelsight"
 	elseif self:on_ladder() then
@@ -1462,7 +1459,6 @@ function PlayerStandard:_update_slide_locks()
 					weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
 				else
 					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
-						--Currently the M1 Garand is the only gun that should have the bolt/slide lock done this way due to the En-Bloc clip hovering in midair when using the "reload" animation
 						weap_base:tweak_data_anim_offset("magazine_empty", 1)
 					else 
 						weap_base:tweak_data_anim_offset("reload", 0.033)

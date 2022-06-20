@@ -970,11 +970,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
-		["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nGives this weapon triple-chamber-stacked rounds, at the cost of less range and extra kick.",
+		["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special triple-stacked munitions.",
+
+		--M200 WIDOWMAKER
+		["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",
+		["bm_wp_upg_i_iw_widowmaker_desc"] = "A prototype weapon kit manufactured by Kendall Ballistics.\n\nModifies this weapon to chamber special double-stacked munitions.",
 
 		--M32 MK32 Kit
 		["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
-		["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Ghost Company.\n\nEnables and locks this weapon to fire in 2-round bursts, at the cost of extra kick.",		
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nEnables and locks this weapon to fire in 2-round bursts.",		
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",

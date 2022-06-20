@@ -442,6 +442,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult or 1
 	self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 
+	self._warsaw = self:weapon_tweak_data().warsaw
+	self._nato = self:weapon_tweak_data().nato
+
 	if not self:is_npc() then
 		local weapon = {
 			factory_id = self._factory_id,
@@ -546,9 +549,19 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end			
 			if stats.mk32 then
 				self:weapon_tweak_data().BURST_FIRE = 2
-				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 1
-				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:weapon_tweak_data().BURST_DELAY = 0.6
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:_set_burst_mode(true, true)
+				self:weapon_tweak_data().LOCK_BURST = true
+			end			
+			if stats.widowmaker then
+				self:weapon_tweak_data().tactical_reload = nil
+				self:weapon_tweak_data().BURST_FIRE = 2
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 12
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.2
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().LOCK_BURST = true
@@ -653,9 +666,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	if self._ammo_data and self._ammo_data.muzzleflash == nil and self._muzzle_effect_table and self._muzzle_effect_pls then
 		self._muzzle_effect_table.effect = Idstring(self._muzzle_effect_pls)
 	end
-
-	self._warsaw = self:weapon_tweak_data().warsaw
-	self._nato = self:weapon_tweak_data().nato
 	
     if self._trail_effect_table then
 		if self._starwars == true then
@@ -775,7 +785,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
 			self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire))
 			self._macno = nil
-			multiplier = 1
+			multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
 		end
 	end	
 	--[

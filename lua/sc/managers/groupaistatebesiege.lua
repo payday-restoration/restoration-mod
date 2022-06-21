@@ -756,7 +756,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 		-- If we aren't moving out to an objective, approach or open fire if we have ranged_fire tactics and see an enemy
 		approach = charge or not tactics_map.ranged_fire or not tactics_map.elite_ranged_fire or in_place_duration > 10 or group.is_chasing or not self:_can_group_see_target(group)
 		open_fire = not approach and not current_objective.open_fire
-	elseif (tactics_map.ranged_fire or tactics_map.elite_ranged_fire) and not current_objective.open_fire and self:_can_group_see_target(group, true) then
+	elseif (tactics_map.ranged_fire or tactics_map.elite_ranged_fire) and not current_objective.open_fire and current_objective.coarse_path and self:_can_group_see_target(group, true) then
 		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire and stay in position for a bit
 		local forwardmost_i_nav_point = self:_get_group_forwardmost_coarse_path_index(group)
 		if forwardmost_i_nav_point then
@@ -1472,7 +1472,6 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function 
 	-- Set a cooldown before new units can be spawned via regular spawn tasks
 	self._next_group_spawn_t = self._t + spawn_task.group.size * tweak_data.group_ai.spawn_cooldown_mul
 end)
-
 
 function GroupAIStateBesiege:_voice_open_fire_start(group)
 	for u_key, unit_data in pairs(group.units) do

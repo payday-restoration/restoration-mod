@@ -68,12 +68,12 @@ tweak_data.projectiles.launcher_rocket.turret_instakill = true
 
 --M202--
 tweak_data.projectiles.rocket_ray_frag.damage = 90
-tweak_data.projectiles.rocket_ray_frag.player_damage = 60
+tweak_data.projectiles.rocket_ray_frag.player_damage = 45
 tweak_data.projectiles.rocket_ray_frag.range = 500
-tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
+tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.55
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 tweak_data.projectiles.rocket_ray_frag.incendiary = {
-	burn_duration = 5,
+	burn_duration = 10,
 	damage = 3,
 	player_damage = 1.5
 }

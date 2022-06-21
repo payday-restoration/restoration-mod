@@ -221,6 +221,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.player_style = "slaughterhouse"
 	
 	self.ranc.ai_group_type = nypd
+	self.ranc.package = {"packages/job_ranc", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.ranc.player_style = "fighterpilot"
 
 	self.nmh.ai_group_type = nypd
@@ -517,6 +518,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	--The Butcher's Heists goes here--
 	self.friend.ghost_bonus = 0.20
 	self.crojob2.ghost_bonus = 0.20
+	--Gemma McShay's Heists goes here--
+	self.ranc.ghost_bonus = 0.20
 	
 	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}

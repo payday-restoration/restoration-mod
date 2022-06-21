@@ -220,11 +220,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
 	self.dinner.player_style = "slaughterhouse"
 	
-	--[[
 	self.ranc.ai_group_type = nypd
 	self.ranc.player_style = "fighterpilot"
-	--]]
-	
+
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
 	

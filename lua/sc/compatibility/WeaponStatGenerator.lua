@@ -235,11 +235,13 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.spread = stats.spread - 1
 		stats.concealment = stats.concealment + 1
 	end
-
-	if weap.timers.reload_empty < 2.5 then
-		stats.concealment = stats.concealment - 1
-	elseif weap.timers.reload_empty > 4 then
-		stats.spread = stats.spread + 1
+	
+	if weap.timers.reload_empty then
+		if weap.timers.reload_empty < 2.5 then
+			stats.concealment = stats.concealment - 1
+		elseif weap.timers.reload_empty > 4 then
+			stats.spread = stats.spread + 1
+		end
 	end
 
 	return self:clean_stats(stats)

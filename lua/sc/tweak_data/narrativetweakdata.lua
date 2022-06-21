@@ -213,4 +213,24 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		1600000
 	}
 	
+	--Midland Ranch
+	self.jobs.ranc.payout = {			
+		79000,
+		200000,
+		500000,
+		1000000,
+		1100000,
+		1100000,
+		1100000
+	}
+	self.jobs.ranc.contract_cost = {
+		30000,
+		100000,
+		350000,
+		550000,
+		800000,
+		800000,
+		800000
+	}
+	
 end)

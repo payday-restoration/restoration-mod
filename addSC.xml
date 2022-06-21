@@ -215,6 +215,32 @@
 	<model				path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2" force="true" />
 	<material_config	path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2" force="true" />
 	
+	<!--Midland Ranch Enemies-->
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" load="true" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01_husk" load="true" force="true" />	<!--that husk cop literally had swat access and used mp5-->
+	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
+
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" load="true" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02_husk" load="true" force="true" /> <!--that husk cop literally had swat access and used mp5 as well. Thank you Denka, very cool-->	
+	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" force="true" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" force="true" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" force="true" />
+	
+	<!--this is only for giving them the bolivian_indoors preset-->
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1" load="true" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1_husk" load="true" force="true" />	
+	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1" force="true" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1" force="true" />	
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1" force="true" />	
+
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2" load="true" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2_husk" load="true" force="true" />	
+	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2" force="true" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2" force="true" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2" force="true" />
+	
 	<!--Secret Service Flashlight Sequence Kill Fix (yes I have to load all of these otherwise the game will have a seizure and crash)-->
 	<unit				path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2" load="true" force="true" />
 	<unit				path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2_husk" load="true" force="true" />

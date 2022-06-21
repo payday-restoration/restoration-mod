@@ -222,6 +222,7 @@ function restoration:Init()
 		"rat", --Cook Off
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
+		"ranc", --Midland Ranch
 		--Custom Heists below--
 		"junk", --Doghouse
 		"amsdeal1", --Armsdeal Alleyway

@@ -3120,6 +3120,27 @@ function WeaponTweakData:_init_stats()
 				-0.05 * self.stat_info.stance_recoil_mults.steelsight,
 				0.4 * self.stat_info.stance_recoil_mults.steelsight
 			}
+		},
+
+		kick_m2 = { --Why the recoil is multiplied by x10 in playerturret vs just making the kick values 0.2 instead of 0.02 I will never understand
+			standing = {
+				(0.85 * self.stat_info.stance_recoil_mults.standing) / 10,
+				(0.7 * self.stat_info.stance_recoil_mults.standing) / 10,
+				(-0.225 * self.stat_info.stance_recoil_mults.standing) / 10,
+				(0.225 * self.stat_info.stance_recoil_mults.standing) / 10
+			},
+			crouching = {
+				(0.85 * self.stat_info.stance_recoil_mults.crouching) / 10,
+				(0.7 * self.stat_info.stance_recoil_mults.crouching) / 10,
+				(-0.225 * self.stat_info.stance_recoil_mults.crouching) / 10,
+				(0.225 * self.stat_info.stance_recoil_mults.crouching) / 10
+			},
+			steelsight = {
+				(0.85 * self.stat_info.stance_recoil_mults.steelsight) / 10,
+				(0.7 * self.stat_info.stance_recoil_mults.steelsight) / 10,
+				(-0.225 * self.stat_info.stance_recoil_mults.steelsight) / 10,
+				(0.225 * self.stat_info.stance_recoil_mults.steelsight) / 10
+			}
 		}
 	}
 
@@ -9454,6 +9475,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.saw_secondary.panic_suppression_chance = 0.05
 
 
+	--M2 Emplacement		
+		self.ranc_heavy_machine_gun.upgrade_blocks = nil
+		self.ranc_heavy_machine_gun.has_description = true
+		self.ranc_heavy_machine_gun.desc_id = "bm_m95_sc_desc"
+		self.ranc_heavy_machine_gun.CLIP_AMMO_MAX  = 200
+		self.ranc_heavy_machine_gun.AMMO_MAX = 200
+		self.ranc_heavy_machine_gun.fire_mode_data.fire_rate = 0.1
+		self.ranc_heavy_machine_gun.kick = self.stat_info.kick_tables.kick_m2
+		self.ranc_heavy_machine_gun.supported = true
+		self.ranc_heavy_machine_gun.ads_speed = 0.400
+		self.ranc_heavy_machine_gun.damage_falloff = {
+			start_dist = 4000,
+			end_dist = 200000,
+			min_mult = 0.5
+		}
+		self.ranc_heavy_machine_gun.stats = {
+			damage = 180,
+			spread = 81,
+			recoil = 61,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 20,
+			suppression = 2,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.ranc_heavy_machine_gun.stats_modifiers = nil
+		self.ranc_heavy_machine_gun.armor_piercing_chance = 1
+		self.ranc_heavy_machine_gun.can_shoot_through_enemy = true
+		self.ranc_heavy_machine_gun.can_shoot_through_shield = true
+		self.ranc_heavy_machine_gun.can_shoot_through_wall = true
+		self.ranc_heavy_machine_gun.can_shoot_through_titan_shield = true
 
 	--Flamethrower Mk1
 		self.flamethrower_mk2.categories = {

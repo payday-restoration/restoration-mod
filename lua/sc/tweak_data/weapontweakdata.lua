@@ -3325,24 +3325,28 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_mg" }
 		self[ wep_id ].has_description = true
+		self[ wep_id ].damage_type = "machine_gun"
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
 		self[ wep_id ].m_add_t = 0.3
 	end
 	
-	recat = { "mg42", "m60", "hk21", "par", "hk51b" }
+	recat = { "mg42", "m60", "hk21", "par", "hk51b", "ranc_heavy_machine_gun" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_mg" }
 		self[ wep_id ].has_description = true
+		self[ wep_id ].damage_type = "machine_gun"
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
 		self[ wep_id ].weapon_movement_penalty = 0.65
 		self[ wep_id ].m_add_t = 0.3
 	end
 	self.hk51b.weapon_movement_penalty = 0.825
+	self.ranc_heavy_machine_gun.damage_type = "anti_materiel"
 	
 	recat = { "shuno", "m134" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "miniguns" }
 		self[ wep_id ].has_description = true
+		self[ wep_id ].damage_type = "machine_gun"
 		self[ wep_id ].desc_id = "bm_lmg_generic_desc"
 		self[ wep_id ].m_add_t = 0.35
 	end
@@ -3378,7 +3382,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].m_add_t = 0.35
 	end
-
 
 	recat = { "p90", "aug", "arbiter", "komodo", "corgi", "vhs", "wa2000", "desertfox", "m95", "shak12", "l85a2", "groza", "groza_underbarrel", "ksg", "rota", "basset", "famas", "qbu88" }
 	for i, wep_id in ipairs(recat) do
@@ -9475,7 +9478,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.saw_secondary.panic_suppression_chance = 0.05
 
 
-	--M2 Emplacement		
+	--M2 Emplacement					
+		self.ranc_heavy_machine_gun.categories = {
+			"lmg",
+			"smg"
+		}
 		self.ranc_heavy_machine_gun.upgrade_blocks = nil
 		self.ranc_heavy_machine_gun.has_description = true
 		self.ranc_heavy_machine_gun.desc_id = "bm_m95_sc_desc"

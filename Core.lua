@@ -50,6 +50,7 @@ function restoration:Init()
 		"rvd1", --highland mortuary 
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
+		"ranc", --Midland Ranch
 		--custom heists		
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 

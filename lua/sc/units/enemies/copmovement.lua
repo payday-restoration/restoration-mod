@@ -49,6 +49,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.headless_hatman.walk = TankCopActionWalk
 	CopMovement._action_variants.enforcer = clone(security_variant)
 	CopMovement._action_variants.enforcer.walk = TankCopActionWalk
+	CopMovement._action_variants.enforcer_assault = clone(security_variant)
+	CopMovement._action_variants.enforcer_assault.walk = TankCopActionWalk	
 	CopMovement._action_variants.summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers.heal = MedicActionHeal

@@ -259,7 +259,28 @@ function StatisticsManager:init()
 			melee = 0,
 			explosion = 0,
 			tied = 0
-		}			
+		}	
+	self._defaults.killed.spooc_gangster = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
+	self._defaults.killed.enforcer = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}	
+	self._defaults.killed.enforcer_assault = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
 		
 	--Weekend	
 	self._defaults.killed.weekend_dmr = {

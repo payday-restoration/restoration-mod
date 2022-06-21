@@ -840,7 +840,7 @@ function CopDamage:damage_bullet(attack_data)
 			return
 		end
 	end
-
+	
 	if Network:is_server() then
 		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
 			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
@@ -1050,11 +1050,7 @@ function CopDamage:damage_bullet(attack_data)
 	        sound_ext:play("expl_gen_head", nil, nil)	
 			
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
-				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)	
-			elseif Network:is_server() and self._char_tweak.bag_death then
-				self:bag_explode(attack_data)
-			elseif Network:is_server() and self._char_tweak.fire_bag_death then
-				self:bag_fire(attack_data)				
+				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)			
 			end
 
 
@@ -1266,11 +1262,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 	        sound_ext:play("expl_gen_head", nil, nil)	
 		
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
-			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
-		elseif Network:is_server() and self._char_tweak.bag_death then
-			self:bag_explode(attack_data)			
-		elseif Network:is_server() and self._char_tweak.fire_bag_death then
-			self:bag_fire(attack_data)				
+			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)		
 		end
 
 		result = {
@@ -3626,20 +3618,20 @@ function CopDamage:check_backstab(attack_data)
 	return false
 end
 
-function CopDamage:bag_explode(attack_data)
-	local pos = attack_data.pos
-
-	if not pos and alive(self._unit) then
-		pos = self._unit:get_object(Idstring("Spine2")):position() or pos
-	end
+function CopDamage:bag_explode()	
+	local pos = self._unit:get_object(Idstring("Spine2")):position()
 
 	local range = 400
 	local damage = 800
 	local ply_damage = damage * 0.5
-	local normal = attack_data.attack_dir or math.UP
+	local normal = math.UP
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 	local curve_pow = 4
+	
+	--Kill this dude if he isn't already
+	self._unit:character_damage():damage_mission({damage = 9999999})
 
+	--BOOM
 	local damage_params = {
 		no_raycast_check_characters = false,
 		hit_pos = pos,
@@ -3649,7 +3641,7 @@ function CopDamage:bag_explode(attack_data)
 		damage = damage,
 		player_damage = ply_damage,
 		ignore_unit = self._unit,
-		user = attack_data.attacker_unit
+		user = nil
 	}
 	local effect_params = {
 		sound_event = "grenade_explode",
@@ -3662,10 +3654,9 @@ function CopDamage:bag_explode(attack_data)
 	managers.explosion:give_local_player_dmg(pos, range, ply_damage)
 	managers.explosion:play_sound_and_effects(pos, normal, range, effect_params)
 	managers.explosion:detect_and_give_dmg(damage_params)
-	managers.network:session():send_to_peers_synched("sync_explosion_to_client", attack_data.attacker_unit, pos, normal, ply_damage, range, curve_pow)												
-end
+	managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)	
 
-function CopDamage:bag_fire(attack_data)
+	--Spawn some fire afterwards too
 	local position = self._unit:position()
 	local rotation = self._unit:rotation()
 	local data = {
@@ -3690,5 +3681,5 @@ function CopDamage:bag_fire(attack_data)
 		effect_name = "effects/payday2/particles/explosions/grenade_incendiary_explosion_sc"
 	}
 
-	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)											
+	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)			
 end

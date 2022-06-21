@@ -1474,6 +1474,10 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer.immune_to_knock_down = true
 	self.enforcer.must_headshot = true	
 	table.insert(self._enemy_list, "enforcer")	
+	
+	self.enforcer_assault = deep_clone(self.enforcer)
+	self.enforcer_assault.access = "swat"
+	table.insert(self._enemy_list, "enforcer_assault")	
 end
 
 function CharacterTweakData:_init_biker(presets)

@@ -28,7 +28,6 @@ function restoration:Init()
 		"watchdogs_1", --Watchdogs Day 1
 		"gallery", --art gallery
 		"chca", --Black Cat Heist
-		"ranc", --Midland Ranch
 		--Custom Heists--
 		"office_strike", --office strike
 		"schl", --Scarlet Club House

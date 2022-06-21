@@ -28,6 +28,7 @@ function restoration:Init()
 		"watchdogs_1", --Watchdogs Day 1
 		"gallery", --art gallery
 		"chca", --Black Cat Heist
+		"ranc", --Midland Ranch
 		--Custom Heists--
 		"office_strike", --office strike
 		"schl", --Scarlet Club House
@@ -50,7 +51,6 @@ function restoration:Init()
 		"rvd1", --highland mortuary 
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
-		"ranc", --Midland Ranch
 		--custom heists		
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 

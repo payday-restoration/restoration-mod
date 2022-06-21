@@ -968,11 +968,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "헬스톰 킷",
-		["bm_wp_upg_i_iw_hailstorm_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n더 적은 사거리와 추가 반동을 대가로 이 무기에 트리플 챔버 스택탄을 제공합니다.",
+		["bm_wp_upg_i_iw_hailstorm_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n이 무기를 특수 삼중 챔버 스택 탄약을 사용하도록 개조합니다.",
 
+		--M200 WIDOWMAKER
+		["bm_wp_upg_i_iw_widowmaker"] = "위도우메이커 킷",
+		["bm_wp_upg_i_iw_widowmaker_desc"] = "켄달 발리스틱에서 제조된 프로토타입 무기 키트.\n\n이 무기를 특수 이중 챔버 스택 탄약을 사용하도록 개조합니다.",
+		
 		--M32 MK32 Kit
 		["bm_wp_upg_i_ghosts_mk32"] = "MK32 킷",
-		["bm_wp_upg_i_ghosts_mk32_desc"] = "고스트 컴퍼니의 프로토타입 무기 키트.\n\n추가 반동을 대가로 이 무기가 2점사로 발사하도록 활성화하고 잠급니다.",
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "태스크 포스 스토커의 프로토타입 무기 키트.\n\n이 무기를 2점사로 발사하도록 활성화하고 잠급니다.",
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 수평으로 퍼지도록 합니다.",

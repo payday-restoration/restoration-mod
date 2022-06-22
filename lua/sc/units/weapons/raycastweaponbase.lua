@@ -472,7 +472,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		--Damage reduction when shooting through shields.
 		--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
 		if hit_through_shield and not shield_damage_reduction_applied then
-			damage = damage * self._shield_pierce_damage_mult
+			damage = damage * (self._shield_pierce_damage_mult or 0.5)
 			shield_damage_reduction_applied = true
 		end
 

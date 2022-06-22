@@ -1289,7 +1289,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2 Rifle",
-		["bm_xr2_sc_desc"] = "The most recent of the \"Experimental Rifle\" series, the XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique auto-burst trigger group.\n\nDeals 80% of its damage through body armor.",
+		["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique auto-burst that provides an increased fire rate while on burst-fire mode.\n\nDeals 80% of its damage through body armor.",
+		["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
+		["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for full-auto at the cost of no burst fire rate increase.",
+		["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
+		["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to 950 RPM at the cost of recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.",
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
@@ -1783,6 +1787,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	if big <= pistol then
 		LocalizationManager:add_localized_strings({	
 			["bm_w_deagle"] = "Big Pistol",
+			["bm_w_m16"] = "is that a clarion",
+			["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
+			["bm_w_x_type54"] = "The twin crosskills",
 		})
 	end	
 	

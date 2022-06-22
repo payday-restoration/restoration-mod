@@ -586,8 +586,19 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.croon then
 				self:weapon_tweak_data().AUTO_BURST = true
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 20
-				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = true			
+				self:weapon_tweak_data().BURST_FIRE = 1
+				self:weapon_tweak_data().BURST_DELAY = 0
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 200
+			end	
+
+			if stats.xr2_auto then
+				self:weapon_tweak_data().BURST_FIRE = false	
+				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
+				self:weapon_tweak_data().FIRE_MODE = "auto"				
+			end
+			if stats.xr2_rapidfire then
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.11764
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.95
 			end		
 	
 			if stats.beer_burst then

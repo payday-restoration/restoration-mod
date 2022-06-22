@@ -21079,43 +21079,86 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		self.parts.wpn_fps_upg_xr2_handguard_01.supported = true
 		self.parts.wpn_fps_upg_xr2_handguard_01.stats = {
+			value  = 2,
 			recoil = 2,
 			concealment = -1
 		}
 		self.parts.wpn_fps_upg_xr2_handguard_02.supported = true
 		self.parts.wpn_fps_upg_xr2_handguard_02.stats = {
+			value  = 2,
 			recoil = -2,
-			spread = 1
+			concealment = 1
 		}
 
-		self.parts.wpn_fps_upg_xr2_grip_01.supported = true
-		self.parts.wpn_fps_upg_xr2_grip_01.stats = {
+		self.parts.wpn_fps_upg_xr2_ns_01.supported = true
+		self.parts.wpn_fps_upg_xr2_ns_01.stats = {
+			value  = 2,
 			recoil = 2,
-			concealment = -1
+			spread = -1
+		}
+		self.parts.wpn_fps_upg_xr2_ns_02.supported = true
+		self.parts.wpn_fps_upg_xr2_ns_02.stats = {
+			value  = 2,
+			recoil = -2,
+			concealment = 1
+		}
+
+		self.parts.wpn_fps_upg_xr2_handle_01.supported = true
+		self.parts.wpn_fps_upg_xr2_handle_01.name_id = "bm_wp_xr2_handle_01_sc"
+		self.parts.wpn_fps_upg_xr2_handle_01.has_description = true
+		self.parts.wpn_fps_upg_xr2_handle_01.desc_id = "bm_xr2_handle_01_sc_desc"
+		self.parts.wpn_fps_upg_xr2_handle_01.stats = {
+			value  = 2,
+			recoil = 4
+		}
+		self.parts.wpn_fps_upg_xr2_handle_01.custom_stats = {
+			xr2_auto = true
+		}
+		self.parts.wpn_fps_upg_xr2_handle_02.supported = true
+		self.parts.wpn_fps_upg_xr2_handle_02.name_id = "bm_wp_xr2_handle_02_sc"
+		self.parts.wpn_fps_upg_xr2_handle_02.has_description = true
+		self.parts.wpn_fps_upg_xr2_handle_02.desc_id = "bm_xr2_handle_02_sc_desc"
+		self.parts.wpn_fps_upg_xr2_handle_02.stats = {
+			value  = 4
+		}
+		self.parts.wpn_fps_upg_xr2_handle_02.custom_stats = {
+			xr2_rapidfire = true
 		}
 
 		self.parts.wpn_fps_upg_xr2_stock_01.supported = true
 		self.parts.wpn_fps_upg_xr2_stock_01.stats = {
+			value  = 3,
 			recoil = -4,
 			concealment = 2
 		}
 
 		self.parts.wpn_fps_upg_xr2_upperrec_01.supported = true
+		self.parts.wpn_fps_upg_xr2_upperrec_01.has_description = nil
 		self.parts.wpn_fps_upg_xr2_upperrec_01.stats = {
-			recoil = 2,
-			spread = -1
-		}
-		self.parts.wpn_fps_upg_xr2_upperrec_02.perks = nil
-
-		self.parts.wpn_fps_upg_xr2_upperrec_02.supported = true
-		self.parts.wpn_fps_upg_xr2_upperrec_02.stats = {
+			value  = 3,
 			recoil = -2,
 			spread = 1
 		}
 		self.parts.wpn_fps_upg_xr2_upperrec_02.perks = nil
 
+		self.parts.wpn_fps_upg_xr2_upperrec_02.supported = true
+		self.parts.wpn_fps_upg_xr2_upperrec_02.has_description = nil
+		self.parts.wpn_fps_upg_xr2_upperrec_02.stats = {
+			value  = 3,
+			recoil = 2,
+			concealment= -1
+		}
+		self.parts.wpn_fps_upg_xr2_upperrec_02.perks = nil
+
+		self.parts.wpn_fps_upg_xr2_grip_01.supported = true
+		self.parts.wpn_fps_upg_xr2_grip_01.stats = {
+			value  = 1,
+			recoil = 2,
+			concealment = -1
+		}
 		self.parts.wpn_fps_upg_xr2_grip_02.supported = true
 		self.parts.wpn_fps_upg_xr2_grip_02.stats = {
+			value  = 1,
 			recoil = -2,
 			concealment = 1
 		}
@@ -21131,6 +21174,9 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			spread = -1,
 			concealment = -2,
 		}
+		self.parts.wpn_fps_upg_xr2_mag_ext_01.custom_stats = {
+			ads_speed_mult = 1.05
+		}
 		self.parts.wpn_fps_upg_xr2_mag_ext_02.supported = true
 		self.parts.wpn_fps_upg_xr2_mag_ext_02.has_description = nil
 		self.parts.wpn_fps_upg_xr2_mag_ext_02.stats = {
@@ -21138,6 +21184,9 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			extra_ammo = 12,
 			concealment = -1,
 			reload = -3
+		}
+		self.parts.wpn_fps_upg_xr2_mag_ext_02.custom_stats = {
+			ads_speed_mult = 1.025
 		}
 		self.parts.wpn_fps_upg_xr2_mag_fast_01.supported = true
 		self.parts.wpn_fps_upg_xr2_mag_fast_01.has_description = nil

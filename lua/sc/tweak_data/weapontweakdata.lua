@@ -12490,13 +12490,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xr2.is_bullpup = true
 		self.xr2.CLIP_AMMO_MAX = 30
 		self.xr2.AMMO_MAX = 80
-		self.xr2.fire_mode_data.fire_rate = 0.12
+		self.xr2.fire_mode_data.fire_rate = 0.13333
 		self.xr2.FIRE_MODE = "single"
 		self.xr2.CAN_TOGGLE_FIREMODE = false
 		self.xr2.BURST_FIRE = 3
 		self.xr2.BURST_DELAY = 0.2
-		self.xr2.BURST_FIRE_RATE_MULTIPLIER = 1.714
-		self.xr2.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+		self.xr2.BURST_FIRE_RATE_MULTIPLIER = 1.888888
+		self.xr2.BURST_FIRE_RECOIL_MULTIPLIER = 0.7
 		self.xr2.AUTO_BURST = true
 		self.xr2.kick = self.stat_info.kick_tables.moderate_kick
 		self.xr2.supported = true
@@ -12521,6 +12521,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xr2.stats_modifiers = nil
+		self.xr2.armor_piercing_chance = 0.8
 		self.xr2.panic_suppression_chance = 0.05
 		self.xr2.timers.reload_exit_empty = 0.6
 		self.xr2.timers.reload_not_empty = 0.8

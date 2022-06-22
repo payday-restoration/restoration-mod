@@ -269,7 +269,7 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(s_path, path[i])
 	end
 
-	--self._calculate_optimum_path(s_path)
+	self._calculate_optimum_path(s_path)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
 	if #s_path == 2 then
@@ -1100,10 +1100,10 @@ end
 
 function CopActionWalk._calculate_optimum_path(path)
 	local path_length = #path
-	for i = 1, path_length - 2 do
+	for i = 1, path_length do
 		if i > path_length then
 			path[i] = nil -- clear removed navpoints
-		else
+		elseif i <= path_length - 2 then
 			-- Reverse order to allow for breaking the loop early
 			local nav_point = path[i].x and path[i] or path[i].c_class:end_position()
 			for j = path_length, i + 2, -1 do

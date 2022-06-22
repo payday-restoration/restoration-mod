@@ -348,6 +348,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_sand"] = "10:30 PM, San Francisco - Dockyard",
 		["restoration_level_data_chca"] = "9:24 PM, San Francisco Bay - The Black Cat",
 		["restoration_level_data_pent"] = "11:30 PM, San Francisco - Yufu Wang's Penthouse",
+		["restoration_level_data_ranc"] = "6:24 PM, Texas - Midland Ranch",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",

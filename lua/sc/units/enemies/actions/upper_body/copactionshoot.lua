@@ -46,6 +46,14 @@ function CopActionShoot:init(action_desc, common_data)
 	end
 
 	self._can_reload_while_moving_tmp = common_data.char_tweak.can_reload_while_moving_tmp
+	self._miss_first_player_shot = common_data.char_tweak.misses_first_player_shot and not self._ext_movement.missed_first_shot
+	self._glint_effect = weapon_unit:effect_spawner(Idstring("glint_scope"))
+
+	if self._glint_effect then
+		self._glint_effect:activate()
+	end
+
+	
 	local weap_tweak = weapon_unit:base():weapon_tweak_data()
 	local weapon_usage_tweak = common_data.char_tweak.weapon[weap_tweak.usage]
 	self._weapon_unit = weapon_unit
@@ -59,6 +67,7 @@ function CopActionShoot:init(action_desc, common_data)
 	self._spread = weapon_usage_tweak.spread or 20
 	self._miss_dis = weapon_usage_tweak.miss_dis or 30
 	self._automatic_weap = weap_tweak.auto and weapon_usage_tweak.autofire_rounds and true or nil
+	self._glint_effect = weapon_unit:effect_spawner(Idstring("glint_scope"))
 	self._falloff = weapon_usage_tweak.FALLOFF or {
 		{
 			dmg_mul = 1,

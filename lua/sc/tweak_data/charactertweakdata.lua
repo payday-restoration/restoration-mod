@@ -1378,6 +1378,41 @@ function CharacterTweakData:_init_sniper(presets)
 	table.insert(self._enemy_list, "sniper")
 end
 
+function CharacterTweakData:_init_marshal_marksman(presets)
+	local is_murky
+	if self:get_ai_group_type() == "murkywater" then
+		is_murky = true
+	end
+	local is_reaper
+	if self:get_ai_group_type() == "russia" then
+		is_reaper = true
+	end
+	local is_zombie
+	if self:get_ai_group_type() == "zombie" then
+		is_zombie = true
+	end
+	local is_federales
+	if self:get_ai_group_type() == "federales" then
+		is_federales = true
+	end		
+	--Clones the Titan Sniper
+	self.marshal_marksman = deep_clone(self.heavy_swat_sniper)
+	self.marshal_marksman.speech_prefix_p1 = "cum"
+	self.marshal_marksman.speech_prefix_p2 = nil
+	self.marshal_marksman.speech_prefix_count = nil
+	if is_reaper then
+		self.marshal_marksman.custom_voicework = "tswat_ru"
+	elseif is_murky then
+		self.marshal_marksman.custom_voicework = "bravo_elite_murky"	
+	elseif is_federales then
+		self.marshal_marksman.custom_voicework = "bravo_elite_mex"
+	else
+		self.marshal_marksman.custom_voicework = "bravo_elite"
+	end		
+
+	table.insert(self._enemy_list, "marshal_marksman")
+end
+
 function CharacterTweakData:_init_gangster(presets)
 	self.gangster = deep_clone(presets.base)
 	self.gangster.tags = {"gangster"}
@@ -16124,7 +16159,8 @@ function CharacterTweakData:_create_table_structure()
 		"m32",
 		"rpg7",
 		"x_pm9_enemy",
-		"aa12_npc"
+		"aa12_npc",
+		"dmr"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -16208,7 +16244,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32"),
 		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7"),
 		Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc"),
-		Idstring("units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12")		
+		Idstring("units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12"),
+		Idstring("units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr")
 	}
 end
 

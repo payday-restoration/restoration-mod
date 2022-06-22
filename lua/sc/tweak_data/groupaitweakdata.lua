@@ -8033,6 +8033,37 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "medic"
 	}
 	
+	--US Marhals (Unused)
+	self.unit_categories.marshal_marksman = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},					
+			murkywater = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			}	
+		},
+		access = access_type_all
+	}	
+	
 	--Old Winters Minion
 	self.unit_categories.Phalanx_minion = {
 		unit_types = {
@@ -12122,7 +12153,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield",
 			"deathguard"
-		}
+		},
+		marshal_marksman = {
+			"ranged_fire",
+			"flank"
+		}		
 	}
 	self.enemy_spawn_groups = {}
 	self.enemy_spawn_groups.CS_defend_a = {
@@ -14335,7 +14370,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}			
 	end		
-	
+		
 	--(Old) Winters
 	self.enemy_spawn_groups.Phalanx = {
 		amount = {

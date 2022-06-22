@@ -716,6 +716,10 @@ local job = Global.level_data and Global.level_data.level_id
 		--Zeal S553
 		self.s553_zeal_npc = deep_clone(self.m4_npc)
 		self.s553_zeal_npc.sounds.prefix = "sig552_npc"		
+		
+		--AK12 
+		self.ak12_npc = deep_clone(self.m4_npc)
+		self.ak12_npc.sounds.prefix = "flint_npc"
 	
 		--Sexican New Vepom Shipment
 		self.hajk_npc = deep_clone(self.m4_npc)
@@ -799,7 +803,6 @@ local job = Global.level_data and Global.level_data.level_id
 		
 		--Zeal Sniper variant (unused)
 		self.heavy_snp_npc = deep_clone(self.m14_sniper_npc)
-		self.heavy_snp_npc.sounds.prefix = "zsniper_npc"
 		
 		--Railgun
 		self.railgun_npc = deep_clone(self.m14_sniper_npc)	
@@ -831,7 +834,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.r870_taser_npc.CLIP_AMMO_MAX = 8
 	
 		self.m500_npc = deep_clone(self.r870_npc)
-		self.m500_npc.sounds.prefix = "m590_npc"	
+		self.m500_npc.sounds.prefix = "m590_npc"
+
+		self.fort_500_npc = deep_clone(self.r870_npc)		
 	end
 	
 	function WeaponTweakData:_init_data_mossberg_npc()
@@ -1395,6 +1400,12 @@ local job = Global.level_data and Global.level_data.level_id
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
 	end
+	
+	function WeaponTweakData:_init_data_dmr_npc()
+		--US Marshal DMR
+		self.dmr_npc = deep_clone(self.scar_npc)
+		self.dmr_npc.sounds.prefix = "saint_victor_npc"
+	end	
 	
 	function WeaponTweakData:_init_data_m249_npc()
 		--M249

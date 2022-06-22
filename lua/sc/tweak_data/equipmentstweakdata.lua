@@ -85,6 +85,14 @@ function EquipmentsTweakData:init()
 		self.specials.mayan_gold_bar.quantity=4
 		self.specials.mayan_gold_bar.max_quantity=4		
 		self.specials.lance_part.quantity=4
-		self.specials.lance_part.max_quantity=4				
+		self.specials.lance_part.max_quantity=4
+		self.specials.stock.quantity=1
+		self.specials.stock.max_quantity=4	
+		self.specials.barrel.quantity=1		
+		self.specials.barrel.max_quantity=4			
+		self.specials.receiver.quantity=1		
+		self.specials.receiver.max_quantity=4		
+		self.specials.ranc_acid.quantity=1		
+		self.specials.ranc_acid.max_quantity=4				
    	end
 end

@@ -263,17 +263,13 @@ function CopActionWalk:append_path(path, nav_seg)
 		end
 	end
 
+	self._calculate_simplified_path(nil, path, 2, true, true) -- shorten and apply padding to the new path
+
 	for i = 1, #path do
 		table_insert(s_path, path[i])
 	end
 
-	if s_path[1].x then
-		s_path[1] = mvec3_cpy(self._common_data.pos)
-	else -- in the middle of a navlink animation
-		s_path[1] = s_path[1].c_class:end_position()
-	end
-
-	self._calculate_simplified_path(nil, s_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
+	self._calculate_optimum_path(s_path)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
 	if #s_path == 2 then
@@ -1097,6 +1093,32 @@ function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations,
 
 			if nr_iterations > 1 then
 				CopActionWalk._calculate_simplified_path(nil, path, nr_iterations - 1, z_test, apply_padding)
+			end
+		end
+	end
+end
+
+function CopActionWalk._calculate_optimum_path(path)
+	local path_length = #path
+	for i = 1, path_length - 2 do
+		if i > path_length then
+			path[i] = nil -- clear removed navpoints
+		else
+			-- Reverse order to allow for breaking the loop early
+			local nav_point = path[i].x and path[i] or path[i].c_class:end_position()
+			for j = path_length, i + 2, -1 do
+				local middle_nav_point = CopActionWalk._nav_point_pos(path[math.floor((j + i) / 2)])
+				local future_nav_point = CopActionWalk._nav_point_pos(path[j])
+				-- Sample z from the navpoint in the middle index between current and future
+				if math_abs(middle_nav_point.z - nav_point.z + middle_nav_point.z - future_nav_point.z) < 60 and not managers.navigation:raycast({pos_from = nav_point, pos_to = future_nav_point}) then
+					local removed_entries = (j - i) - 1
+					for k = j, path_length do
+						path[k - removed_entries] = path[k]
+					end
+
+					path_length = path_length - removed_entries
+					break
+				end
 			end
 		end
 	end

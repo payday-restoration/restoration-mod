@@ -269,7 +269,7 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(s_path, path[i])
 	end
 
-	self._calculate_optimum_path(s_path)
+	--self._calculate_optimum_path(s_path)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
 	if #s_path == 2 then

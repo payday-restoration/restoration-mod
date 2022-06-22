@@ -217,7 +217,6 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.skeleton_swat_titan = security_variant
 	CopBrain._logic_variants.weekend = security_variant
 	CopBrain._logic_variants.weekend_lmg = security_variant
-	CopBrain._logic_variants.boom = security_variant
 	CopBrain._logic_variants.boom_summers = security_variant
 	CopBrain._logic_variants.taser_summers = clone(security_variant)
 	CopBrain._logic_variants.medic_summers = security_variant
@@ -271,6 +270,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.heavy_swat_sniper.attack = MarshalLogicAttack
 	CopBrain._logic_variants.weekend_dmr = clone(security_variant)
 	CopBrain._logic_variants.weekend_dmr.attack = MarshalLogicAttack
+	CopBrain._logic_variants.boom = clone(security_variant)
+	CopBrain._logic_variants.boom.attack = MarshalLogicAttack
 	
 	--Set up boss logics
 	CopBrain._logic_variants.mobster_boss = CopBrain._logic_variants.triad_boss

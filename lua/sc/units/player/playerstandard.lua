@@ -1376,10 +1376,12 @@ function PlayerStandard:_check_action_weapon_firemode(t, input)
 	end
 end
 
---Fires next round in burst if needed.
+--Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
-	if alive(self._equipped_unit) and self._equipped_unit:base():burst_rounds_remaining() and not self._equipped_unit:base()._auto_burst then
-		self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true })
+	if alive(self._equipped_unit) then
+		if self._equipped_unit:base():burst_rounds_remaining() or (self._equipped_unit:base():in_burst_mode() and self._equipped_unit:base()._auto_burst and not self._equipped_unit:base():clip_empty() and self._controller and self._controller:get_input_bool("primary_attack")) then
+			self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true })
+		end
 	end
 end
 

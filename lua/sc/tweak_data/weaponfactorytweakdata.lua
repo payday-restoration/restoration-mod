@@ -21064,6 +21064,91 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_m107cq_iron_sights.custom_stats = nil
 	end
 
+
+	if self.parts.wpn_fps_ass_xr2_grip then
+		self.parts.wpn_fps_upg_xr2_barrel_01.supported = true
+		self.parts.wpn_fps_upg_xr2_barrel_01.has_description = nil
+		self.parts.wpn_fps_upg_xr2_barrel_01.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_xr2_barrel_01.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_xr2_barrel_02.supported = true
+		self.parts.wpn_fps_upg_xr2_barrel_02.has_description = nil
+		self.parts.wpn_fps_upg_xr2_barrel_02.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_upg_xr2_barrel_02.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+
+		self.parts.wpn_fps_upg_xr2_handguard_01.supported = true
+		self.parts.wpn_fps_upg_xr2_handguard_01.stats = {
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_xr2_handguard_02.supported = true
+		self.parts.wpn_fps_upg_xr2_handguard_02.stats = {
+			recoil = -2,
+			spread = 1
+		}
+
+		self.parts.wpn_fps_upg_xr2_grip_01.supported = true
+		self.parts.wpn_fps_upg_xr2_grip_01.stats = {
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_upg_xr2_stock_01.supported = true
+		self.parts.wpn_fps_upg_xr2_stock_01.stats = {
+			recoil = -4,
+			concealment = 2
+		}
+
+		self.parts.wpn_fps_upg_xr2_upperrec_01.supported = true
+		self.parts.wpn_fps_upg_xr2_upperrec_01.stats = {
+			recoil = 2,
+			spread = -1
+		}
+		self.parts.wpn_fps_upg_xr2_upperrec_02.perks = nil
+
+		self.parts.wpn_fps_upg_xr2_upperrec_02.supported = true
+		self.parts.wpn_fps_upg_xr2_upperrec_02.stats = {
+			recoil = -2,
+			spread = 1
+		}
+		self.parts.wpn_fps_upg_xr2_upperrec_02.perks = nil
+
+		self.parts.wpn_fps_upg_xr2_grip_02.supported = true
+		self.parts.wpn_fps_upg_xr2_grip_02.stats = {
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_xr2_grip_02.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+
+		self.parts.wpn_fps_upg_xr2_mag_ext_01.supported = true
+		self.parts.wpn_fps_upg_xr2_mag_ext_01.has_description = nil
+		self.parts.wpn_fps_upg_xr2_mag_ext_01.stats = {
+			value = 5,
+			extra_ammo = 12,
+			spread = -1,
+			concealment = -2,
+		}
+		self.parts.wpn_fps_upg_xr2_mag_ext_02.supported = true
+		self.parts.wpn_fps_upg_xr2_mag_ext_02.has_description = nil
+		self.parts.wpn_fps_upg_xr2_mag_ext_02.stats = {
+			value = 3,
+			extra_ammo = 12,
+			concealment = -1,
+			reload = -3
+		}
+		self.parts.wpn_fps_upg_xr2_mag_fast_01.supported = true
+		self.parts.wpn_fps_upg_xr2_mag_fast_01.has_description = nil
+		self.parts.wpn_fps_upg_xr2_mag_fast_01.stats = {
+			value = 1,
+			spread = -1,
+			concealment = -1,
+			reload = 3
+		}
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

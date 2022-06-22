@@ -12478,7 +12478,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.smolak.reload_speed_multiplier = 1.2
 		self.smolak.timers.reload_not_empty = 3.5
 		self.smolak.timers.reload_empty = 4.3
-	end		
+	end	
+
+
+	if self.xr2 then --KillerKrayola + Pawcio + splish's BO3 XR-2
+		self.xr2.recategorize = { "dmr_ar" }
+		self.xr2.damage_type = "assault_rifle"
+		self.xr2.m_add_t = 0.2
+		self.xr2.desc_id = "bm_xr2_sc_desc"
+		self.xr2.has_description = true
+		self.xr2.is_bullpup = true
+		self.xr2.CLIP_AMMO_MAX = 30
+		self.xr2.AMMO_MAX = 80
+		self.xr2.fire_mode_data.fire_rate = 0.12
+		self.xr2.FIRE_MODE = "single"
+		self.xr2.CAN_TOGGLE_FIREMODE = false
+		self.xr2.BURST_FIRE = 3
+		self.xr2.BURST_DELAY = 0.2
+		self.xr2.BURST_FIRE_RATE_MULTIPLIER = 1.714
+		self.xr2.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+		self.xr2.AUTO_BURST = true
+		self.xr2.kick = self.stat_info.kick_tables.moderate_kick
+		self.xr2.supported = true
+		self.xr2.ads_speed = 0.300
+		self.xr2.damage_falloff = {
+			start_dist = 3400,
+			end_dist = 6800,
+			min_mult = 0.666666
+		}
+		self.xr2.stats = {
+			damage = 45,
+			spread = 88,
+			recoil = 68,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 24,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.xr2.stats_modifiers = nil
+		self.xr2.panic_suppression_chance = 0.05
+		self.xr2.timers.reload_exit_empty = 0.6
+		self.xr2.timers.reload_not_empty = 0.8
+		self.xr2.timers.reload_not_empty = 1.9
+		self.xr2.timers.reload_exit_not_empty = 0.9
+	end
 
 
 
@@ -12708,7 +12756,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cold.stats_modifiers = nil
 		self.cold.panic_suppression_chance = 0.05
 	end
-
 
 
 	--Automatically generate reasonableish stats for custom weapons.

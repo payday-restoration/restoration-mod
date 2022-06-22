@@ -1284,9 +1284,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
-		--ASS VAL--
+		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",
 		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
+		--Custom DMRs
+		["bm_w_xr2"] = "XR-2 Rifle",
+		["bm_xr2_sc_desc"] = "The most recent of the \"Experimental Rifle\" series, the XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique auto-burst trigger group.\n\nDeals 80% of its damage through body armor.",
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",

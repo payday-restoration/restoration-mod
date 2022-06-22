@@ -346,7 +346,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_chas"] = "오후 8:30, 샌프란시스코 - 차이나타운",
 		["restoration_level_data_sand"] = "오후 10:30, 샌프란시스코 - 조선소",
 		["restoration_level_data_chca"] = "오후 9:24, 샌프란시스코 베이 - 흑묘",
-		["restoration_level_data_pent"] = "오후 11:30, 샌프란시스코 - 유후 왕의 펜트하우스",	
+		["restoration_level_data_pent"] = "오후 11:30, 샌프란시스코 - 유후 왕의 펜트하우스",
+		["restoration_level_data_ranc"] = "오후 6:24, 텍사스 - 내륙 목장",		
 		["restoration_level_data_wetwork"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_junk"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_holly"] = "오후 5:00, 로스앤젤레스 - 루카스 맨션",
@@ -1274,17 +1275,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--FAL
 		["bm_fal_sc_desc"] = "자유 진영의 오른팔. 단단한 방탄복을 입은 멍청한 놈들을 제압 할 때 이것이 당신이 의지하는 총이 될 것입니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
 		--SCAR
-		["bm_scar_sc_desc"] = "미래의 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",		
+		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",		
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
-		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 자매, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
-		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
-		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 언니.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
-		--ASS VAL--
+		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
 		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 총을 사용할 것입니다.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",	
+		--Custom DMRs
+		["bm_w_xr2"] = "XR-2 소총",
+		["bm_xr2_sc_desc"] = "가장 최근의 \"실험용 소총\" 시리즈인 XR-2는 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 고유의 자동 점사 방아쇠 그룹이 있습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 저격소총",
@@ -1309,7 +1313,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m200_sc_desc"] = "멋진 360도 노 스코프 사다리 스톨 샷을 시도할려는 사람들을 위한 총입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",		
 
 		--3GL
-		["bm_ms3gl_sc_desc"] = "특수 기술을 사용한0 단일 챔버에 쌓인 맞춤형 40mm 유탄을 발사하여 좁은 공간에서 신속한 후속 조치를 가능하게 합니다.\n\n설정 발사를 사용하면 모든 탄을 발사할 수 있습니다.",
+		["bm_ms3gl_sc_desc"] = "특수 기술을 사용한 단일 챔버에 쌓인 맞춤형 40mm 유탄을 발사하여 좁은 공간에서 신속한 후속 조치를 가능하게 합니다.\n\n설정 발사를 사용하면 모든 탄을 발사할 수 있습니다.",
 		--COMMANDO 101/M202 FLASH
 		["bm_ray_sc_desc"] = "이 4발 소이 로켓 발사기로 \"죽음의 사신\"이 되보십시오.\n\n로켓은 화염 지대를 남기고 이 무기로 가한 폭발 피해는 터렛을 즉시 파괴합니다.",		
 
@@ -1416,7 +1420,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_prison"] = "교도소 복장",
 		["bm_suit_prison_desc"] = "당신은 구금되었습니다!",
 
-		["bm_suit_var_jumpsuit_flecktarn"] = "플렉탄 카모",
+		["bm_suit_var_jumpsuit_flecktarn"] = "플렉탄 위장",
 		["bm_suit_var_jumpsuit_flecktarn_desc"] = "두 유럽 국가에서 사용했던 클래식 위장으로, 숲이 우거진 환경과 쉽게 조화를 이루는 능력으로 전투 효율성이 입증되었습니다. 확실히 도시 지역에서는 효과가 없지만 시골 지역에서는 사람들의 눈을 속이는 것이 가능합니다.",
 
 		["bm_suit_var_jumpsuit_flatgreen"] = "끈적 끈적한 녹색",
@@ -2140,7 +2144,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_fatroll"] = "팻 롤",
 		["mutator_fatroll_desc"] = "피해 유예시간을 비활성화 시킵니다.",
-		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원에 대한 피해 유예는 0으로 설정되어 피해가 들어오는 지연이 없어집니다.",
+		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원에 대한 피해 유예가 0으로 설정되어 피해가 들어오는 지연이 없어집니다.",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

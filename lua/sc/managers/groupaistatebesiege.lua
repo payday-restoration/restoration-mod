@@ -1365,63 +1365,65 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function 
 					produce_data.name = units[math.random(#units)]
 					produce_data.name = managers.modifiers:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
 					local spawned_unit = sp_data.mission_element:produce(produce_data)
-					local u_key = spawned_unit:key()
-					local objective = nil
+					if spawned_unit then
+						local u_key = spawned_unit:key()
+						local objective = nil
 
-					if spawn_task.objective then
-						objective = self.clone_objective(spawn_task.objective)
-					else
-						objective = spawn_task.group.objective.element:get_random_SO(spawned_unit)
+						if spawn_task.objective then
+							objective = self.clone_objective(spawn_task.objective)
+						else
+							objective = spawn_task.group.objective.element:get_random_SO(spawned_unit)
 
-						if not objective then
-							spawned_unit:set_slot(0)
-							return true
+							if not objective then
+								spawned_unit:set_slot(0)
+								return true
+							end
+
+							objective.grp_objective = spawn_task.group.objective
 						end
 
-						objective.grp_objective = spawn_task.group.objective
-					end
+						local u_data = self._police[u_key]
 
-					local u_data = self._police[u_key]
+						self:set_enemy_assigned(objective.area, u_key)
 
-					self:set_enemy_assigned(objective.area, u_key)
+						if spawn_entry.tactics then
+							u_data.tactics = spawn_entry.tactics
+							u_data.tactics_map = {}
 
-					if spawn_entry.tactics then
-						u_data.tactics = spawn_entry.tactics
-						u_data.tactics_map = {}
-
-						for _, tactic_name in ipairs(u_data.tactics) do
-							u_data.tactics_map[tactic_name] = true
-						end
-					end
-
-					spawned_unit:brain():set_spawn_entry(spawn_entry, u_data.tactics_map)
-
-					u_data.rank = spawn_entry.rank
-
-					self:_add_group_member(spawn_task.group, u_key)
-
-					if spawned_unit:brain():is_available_for_assignment(objective) then
-						if objective.element then
-							objective.element:clbk_objective_administered(spawned_unit)
+							for _, tactic_name in ipairs(u_data.tactics) do
+								u_data.tactics_map[tactic_name] = true
+							end
 						end
 
-						spawned_unit:brain():set_objective(objective)
-					else
-						spawned_unit:brain():set_followup_objective(objective)
+						spawned_unit:brain():set_spawn_entry(spawn_entry, u_data.tactics_map)
+
+						u_data.rank = spawn_entry.rank
+
+						self:_add_group_member(spawn_task.group, u_key)
+
+						if spawned_unit:brain():is_available_for_assignment(objective) then
+							if objective.element then
+								objective.element:clbk_objective_administered(spawned_unit)
+							end
+
+							spawned_unit:brain():set_objective(objective)
+						else
+							spawned_unit:brain():set_followup_objective(objective)
+						end
+
+						if spawn_task.ai_task then
+							spawn_task.ai_task.force_spawned = spawn_task.ai_task.force_spawned + 1
+							spawned_unit:brain()._logic_data.spawned_in_phase = spawn_task.ai_task.phase
+						end
+
+						sp_data.delay_t = self._t + sp_data.interval
+
+						if sp_data.amount then
+							sp_data.amount = sp_data.amount - 1
+						end
+
+						return true
 					end
-
-					if spawn_task.ai_task then
-						spawn_task.ai_task.force_spawned = spawn_task.ai_task.force_spawned + 1
-						spawned_unit:brain()._logic_data.spawned_in_phase = spawn_task.ai_task.phase
-					end
-
-					sp_data.delay_t = self._t + sp_data.interval
-
-					if sp_data.amount then
-						sp_data.amount = sp_data.amount - 1
-					end
-
-					return true
 				end
 			end
 		end

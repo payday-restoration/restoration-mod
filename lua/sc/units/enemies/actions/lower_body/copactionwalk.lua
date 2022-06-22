@@ -269,6 +269,12 @@ function CopActionWalk:append_path(path, nav_seg)
 		table_insert(s_path, path[i])
 	end
 
+	if s_path[1].x then
+		s_path[1] = mvec3_cpy(self._common_data.pos)
+	else -- in the middle of a navlink animation
+		s_path[1] = s_path[1].c_class:end_position()
+	end	
+
 	self._calculate_optimum_path(s_path)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path

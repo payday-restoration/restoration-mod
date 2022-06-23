@@ -1382,7 +1382,7 @@ function CopActionWalk:_adjust_move_anim(side, speed)
 	local enter_t = nil
 	local move_side = anim_data.move_side
 	if move_side and (side == move_side or self._matching_walk_anims[side][move_side]) then
-		enter_t = self._machine:segment_relative_time(idstr_base) * self._walk_anim_lengths[anim_data.pose][self._stance.name][speed][side]
+		enter_t = self._machine:segment_relative_time(idstr_base) * self._walk_anim_lengths[anim_data.pose or "stand"][self._stance.name][speed][side]
 	end
 
 	local could_freeze = anim_data.can_freeze and anim_data.upper_body_empty

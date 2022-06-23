@@ -215,7 +215,8 @@ function CopActionWalk:_init()
 	end
 
 	-- if the next navpoint is a navlink and the curved path is a straight line, set self._chk_stop_dis here otherwise it won't end up being set
-	if self._next_is_nav_link and #self._curve_path == 2 and not self._NO_RUN_STOP and self._haste == "run" and mvec3_dis_sq_no_z(self._curve_path[1], self._curve_path[2]) >= 14400 then
+	-- if the navlink doesn't require the unit being idle, skip the run_stop animation
+	if self._next_is_nav_link and self._next_is_nav_link.element:nav_link_wants_align_pos() and #self._curve_path == 2 and not self._NO_RUN_STOP and self._haste == "run" and mvec3_dis_sq_no_z(self._curve_path[1], self._curve_path[2]) >= 14400 then
 		self._chk_stop_dis = 210
 	end
 
@@ -263,8 +264,6 @@ function CopActionWalk:append_path(path, nav_seg)
 		end
 	end
 
-	self._calculate_simplified_path(nil, path, 2, true, true) -- shorten and apply padding to the new path
-
 	for i = 1, #path do
 		table_insert(s_path, path[i])
 	end
@@ -273,8 +272,9 @@ function CopActionWalk:append_path(path, nav_seg)
 		s_path[1] = mvec3_cpy(self._common_data.pos)
 	else -- in the middle of a navlink animation
 		s_path[1] = s_path[1].c_class:end_position()
-	end	
+	end
 
+	self._calculate_simplified_path(nil, s_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
 	self._calculate_optimum_path(s_path)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
@@ -500,7 +500,7 @@ function CopActionWalk:_calculate_curved_path(path, index, curvature_factor, ent
 		mvec3_add(p2, vec_out)
 	end
 
-	if p2 and path[index + 1].x and path[index + 2] then -- if the next navpoint is a navlink, a future navpoint cannot be used to create a curved path
+	if p2 and path[index + 2] then
 		nr_control_pts = nr_control_pts + 1
 
 		mvec3_set(vec_out, p4)
@@ -1091,7 +1091,7 @@ function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations,
 			path[path_size], path[path_size - offset] = nil, path[path_size] -- shift the final entry to it's proper place
 		end
 
-		if path_size - offset > 2 then -- check the path is not 2 entries
+		if path_size - offset > 2 then
 			if apply_padding then
 				CopActionWalk._apply_padding_to_simplified_path(path)
 				CopActionWalk._calculate_shortened_path(path)
@@ -1285,7 +1285,8 @@ function CopActionWalk:_nav_chk_walk(t, dt, vis_state)
 			end
 		else
 			-- only play a run_stop on clients if we're sure the path is 2 entries and won't receive more, or our next navpoint is a navlink
-			if (not self._persistent and #s_path == 2 or self._next_is_nav_link) and not self._NO_RUN_STOP and self._haste == "run" and mvec3_dis_sq_no_z(new_pos, next_pos) >= 14400 then
+			-- if the navlink doesn't require the unit being idle, skip the run_stop animation
+			if (not self._persistent and #s_path == 2 or self._next_is_nav_link and self._next_is_nav_link.element:nav_link_wants_align_pos()) and not self._NO_RUN_STOP and self._haste == "run" and mvec3_dis_sq_no_z(new_pos, next_pos) >= 14400 then
 				self._chk_stop_dis = 210
 			end
 
@@ -1396,7 +1397,12 @@ function CopActionWalk:_adjust_move_anim(side, speed)
 end
 
 function CopActionWalk:get_walk_to_pos()
-	return --[[self._simplified_path[2] and--]] self._nav_point_pos(self._simplified_path[2]) -- never called on clients so no need to account for the rare case of no 2nd entry
+	return self._nav_point_pos(self._simplified_path[2])
+end
+
+-- Helper function to get the final path position
+function CopActionWalk:get_destination_pos()
+	return self._nav_point_pos(self._simplified_path and self._simplified_path[#self._simplified_path] or self._nav_path and self._nav_path[#self._nav_path])
 end
 
 function CopActionWalk:_upd_wait(t)
@@ -1471,7 +1477,7 @@ function CopActionWalk:_upd_stop_anim(t)
 	local face_fwd = tmp_vec1
 
 	-- Rotate towards attentions if we're not stopping for a navlink or the end of the path
-	-- TODO: try switching between the run_stop animations as we rotate and see how it looks
+	-- TODO: try switching between the run_stop directions as we rotate and see how it looks
 	if not self._nav_link_rot and not self._end_rot and self._attention_pos then
 		mvec3_dir(face_fwd, self._common_data.pos, self._attention_pos) -- z doesn't matter here
 	else
@@ -1699,9 +1705,10 @@ function CopActionWalk:_upd_nav_link(t)
 
 		self._changed_driving = nil
 
+		local nav_link = self._nav_link
 		if self._sync then
-			if alive(self._nav_link.c_class) and managers.navigation:raycast({tracker_from = self._common_data.nav_tracker, pos_to = self._nav_point_pos(self._simplified_path[2])}) then
-				table_insert(self._simplified_path, 2, self._nav_link.c_class:end_position()) -- the path has already been shortcutted based off the navlink's end position, so there's no need to attempt to shortcut based off it again
+			if alive(nav_link.c_class) and managers.navigation:raycast({tracker_from = self._common_data.nav_tracker, pos_to = self._nav_point_pos(self._simplified_path[2])}) then
+				table_insert(self._simplified_path, 2, nav_link.c_class:end_position()) -- the path has already been shortcutted based off the navlink's end position, so there's no need to attempt to shortcut based off it again
 
 				self._next_is_nav_link = nil -- in case there's two navlinks in a row but we can't move directly to the second then handle it correctly
 			elseif not self._next_is_nav_link then -- next is not a navlink, another shortcut attempt is a possibility
@@ -1733,7 +1740,9 @@ function CopActionWalk:_upd_nav_link(t)
 		self:_chk_correct_pose()
 
 		if self._simplified_path[2] then
-			self:_chk_start_anim(self._nav_point_pos(self._simplified_path[2]))
+			if nav_link.element:nav_link_wants_align_pos() then
+				self:_chk_start_anim(self._nav_point_pos(self._simplified_path[2]))
+			end
 
 			if self._start_run then
 				self:_set_updator("_upd_start_anim_first_frame")
@@ -1896,9 +1905,4 @@ function CopActionWalk:_husk_needs_speedup()
 			prev_pos = next_pos
 		end
 	end
-end
-
--- Helper function to get the final path position
-function CopActionWalk:get_destination_pos()
-	return self._nav_point_pos(self._simplified_path and self._simplified_path[#self._simplified_path] or self._nav_path and self._nav_path[#self._nav_path])
 end

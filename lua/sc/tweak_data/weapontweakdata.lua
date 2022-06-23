@@ -2684,7 +2684,8 @@ function WeaponTweakData:_init_stats()
 		crouching = 2.5,
 		moving_steelsight = 0.5,
 		steelsight = 0.1,
-		bipod = 1
+		bipod = 1,
+		player_turret = 1,
 	}
 
 	--Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.

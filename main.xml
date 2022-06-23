@@ -142,6 +142,7 @@
 		<hook file="sc/units/weapons/weaponunderbarrellauncher.lua" source_file="lib/units/weapons/weaponunderbarrellauncher"/>
 		<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>
 		<hook file="sc/units/weapons/projectilebase.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
+		<hook file="sc/units/equipment/playerturretbase.lua" source_file="lib/units/equipment/player_turret/playerturretbase"/>
 		<hook file="sc/units/player/playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
 		<hook file="sc/units/player/playercarry.lua" source_file="lib/units/beings/player/states/playercarry"/>
 		<hook file="sc/units/player/playerbleedout.lua" source_file="lib/units/beings/player/states/playerbleedout"/>
@@ -154,6 +155,7 @@
 		<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>
 	    <hook file="sc/units/player/playersound.lua" source_file="lib/units/beings/player/playersound"/>
 		<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+		<hook file="sc/units/player/playerturret.lua" source_file="lib/units/beings/player/states/playerturret"/>
 		<hook file="sc/units/player/playerdriving.lua" source_file="lib/units/beings/player/states/playerdriving"/>
 		<hook file="sc/units/player/playerclean.lua" source_file="lib/units/beings/player/states/playerclean"/>
 		<hook file="sc/units/player/playercivilian.lua" source_file="lib/units/beings/player/states/playercivilian"/>

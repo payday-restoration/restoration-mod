@@ -4096,8 +4096,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.maxim9.timers.reload_exit_not_empty = 0.65
 
 			--5/7 AP (Five-seveN)
+				self.lemming.categories = {
+					"pistol",
+					"pdw"
+				}
 				self.lemming.CLIP_AMMO_MAX = 20
-				self.lemming.AMMO_MAX = 100
+				self.lemming.AMMO_MAX = 90
 				self.lemming.has_description = true
 				self.lemming.desc_id = "bm_ap_armor_weapon_sc_desc"	
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571
@@ -4114,10 +4118,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.damage_falloff = {
 					start_dist = 2500,
 					end_dist = 4800,
-					min_mult = 0.666666
+					min_mult = 0.555555
 				}
 				self.lemming.stats = {
-					damage = 15,
+					damage = 18,
 					spread = 66,
 					recoil = 91,
 					spread_moving = 9,
@@ -6591,9 +6595,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--SECONDARIES
 
 			--Spec Ops (MP7)
+				self.mp7.categories = {
+					"smg",
+					"pdw"
+				}
 				self.mp7.has_description = true
 				self.mp7.desc_id = "bm_mp7_sc_desc"	
-				self.mp7.AMMO_MAX = 100
+				self.mp7.AMMO_MAX = 90
 				self.mp7.fire_mode_data.fire_rate = 0.06315789473
 				self.mp7.CAN_TOGGLE_FIREMODE = true
 				self.mp7.auto = {}
@@ -6608,10 +6616,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.damage_falloff = {
 					start_dist = 2300,
 					end_dist = 4800,
-					min_mult = 0.666666
+					min_mult = 0.555555
 				}
 				self.mp7.stats = {
-					damage = 15,
+					damage = 18,
 					spread = 72,
 					recoil = 86,
 					spread_moving = 7,
@@ -6632,9 +6640,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.panic_suppression_chance = 0.05
 
 			--P90
+				self.p90.categories = {
+					"smg",
+					"pdw"
+				}
 				self.p90.has_description = true
 				self.p90.desc_id = "bm_p90_sc_desc"	
-				self.p90.AMMO_MAX = 100
+				self.p90.AMMO_MAX = 90
 				self.p90.fire_mode_data.fire_rate = 0.070588235
 				self.p90.armor_piercing_chance = 1
 				self.p90.can_shoot_through_enemy = false
@@ -6647,10 +6659,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.damage_falloff = {
 					start_dist = 2800,
 					end_dist = 5400,
-					min_mult = 0.666666
+					min_mult = 0.555555
 				}
 				self.p90.stats = {
-					damage = 15,
+					damage = 18,
 					spread = 75,
 					recoil = 91,
 					spread_moving = 7,
@@ -12828,8 +12840,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		smg = 1.1,
 		akimbo = 1.1,
 		saw = 1.25, --Compensate for jankiness.
-		lmg = 0.55,
-		minigun = 0.4
+		lmg = 0.6,
+		minigun = 0.4,
+		pdw = 0.6,
 	}
 
 	--Get weapon category specific pickup multipliers.

@@ -111,8 +111,7 @@ function PlayerStandard:_end_action_ladder(t, input)
 	self._unit:movement():on_exit_ladder()
 end	
 
-
---These three functions are for Breacher top off skill, allows reloading, shooting, and aiming while still interacting
+--These functions are for Breacher top off skill, allows reloading, shooting, and aiming while still interacting
 function PlayerStandard:_start_action_interact(t, input, timer, interact_object)
 	if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
 		self:_interupt_action_reload(t)
@@ -131,6 +130,7 @@ function PlayerStandard:_start_action_interact(t, input, timer, interact_object)
 		tweak_data = interact_object:interaction().tweak_data
 	}
 
+	--Here!
 	if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
 		self:_play_unequip_animation()
 	end
@@ -153,6 +153,7 @@ function PlayerStandard:_interupt_action_interact(t, input, complete)
 
 		self._interact_params = nil
 
+		--Here!
 		if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
 			self:_play_equip_animation()
 		end
@@ -161,12 +162,636 @@ function PlayerStandard:_interupt_action_interact(t, input, complete)
 	end
 end
 
-function PlayerStandard:_interacting()
-	if managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
-		return false
+function PlayerStandard:_determine_move_direction()
+	self._stick_move = self._controller:get_input_axis("move")
+
+	if self._state_data.on_zipline then
+		return
 	end
-	
-	return self._interact_expire_t
+
+	--Here!
+	if mvector3.length(self._stick_move) < PlayerStandard.MOVEMENT_DEADZONE or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_does_deploying_limit_movement() then
+		self._move_dir = nil
+		self._normal_move_dir = nil
+	else
+		local ladder_unit = self._unit:movement():ladder_unit()
+
+		if alive(ladder_unit) then
+			local ladder_ext = ladder_unit:ladder()
+			self._move_dir = mvector3.copy(self._stick_move)
+			self._normal_move_dir = mvector3.copy(self._move_dir)
+			local cam_flat_rot = Rotation(self._cam_fwd_flat, math.UP)
+
+			mvector3.rotate_with(self._normal_move_dir, cam_flat_rot)
+
+			local cam_rot = Rotation(self._cam_fwd, self._ext_camera:rotation():z())
+
+			mvector3.rotate_with(self._move_dir, cam_rot)
+
+			local up_dot = math.dot(self._move_dir, ladder_ext:up())
+			local w_dir_dot = math.dot(self._move_dir, ladder_ext:w_dir())
+			local normal_dot = math.dot(self._move_dir, ladder_ext:normal()) * -1
+			local normal_offset = ladder_ext:get_normal_move_offset(self._unit:movement():m_pos())
+
+			mvector3.set(self._move_dir, ladder_ext:up() * (up_dot + normal_dot))
+			mvector3.add(self._move_dir, ladder_ext:w_dir() * w_dir_dot)
+			mvector3.add(self._move_dir, ladder_ext:normal() * normal_offset)
+		else
+			self._move_dir = mvector3.copy(self._stick_move)
+			local cam_flat_rot = Rotation(self._cam_fwd_flat, math.UP)
+
+			mvector3.rotate_with(self._move_dir, cam_flat_rot)
+
+			self._normal_move_dir = mvector3.copy(self._move_dir)
+		end
+	end
+end
+
+function PlayerStandard:_start_action_steelsight(t, gadget_state)
+	--Here!
+	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() then
+		self._steelsight_wanted = true
+
+		return
+	end
+
+	if self._running and not self._end_running_expire_t then
+		self:_interupt_action_running(t)
+
+		self._steelsight_wanted = true
+
+		return
+	end
+
+	self:_break_intimidate_redirect(t)
+
+	self._steelsight_wanted = false
+	self._state_data.in_steelsight = true
+
+	self:_update_crosshair_offset()
+	self:_stance_entered()
+	self:_interupt_action_running(t)
+	self:_interupt_action_cash_inspect(t)
+
+	local weap_base = self._equipped_unit:base()
+
+	if gadget_state ~= nil then
+		weap_base:play_sound("gadget_steelsight_" .. (gadget_state and "enter" or "exit"))
+	else
+		weap_base:play_tweak_data_sound("enter_steelsight")
+	end
+
+	if weap_base:weapon_tweak_data().animations.has_steelsight_stance then
+		self:_need_to_play_idle_redirect()
+
+		self._state_data.steelsight_weight_target = 1
+
+		self._camera_unit:base():set_steelsight_anim_enabled(true)
+	end
+
+	self._state_data.reticle_obj = weap_base.get_reticle_obj and weap_base:get_reticle_obj()
+
+	if managers.controller:get_default_wrapper_type() ~= "pc" and managers.user:get_setting("aim_assist") then
+		local closest_ray = self._equipped_unit:base():check_autoaim(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), nil, true)
+
+		self._camera_unit:base():clbk_aim_assist(closest_ray)
+	end
+
+	self._ext_network:send("set_stance", 3, false, false)
+	managers.job:set_memory("cac_4", true)
+end
+
+function PlayerStandard:_start_action_ducking(t)
+	--Here!
+	if self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() then
+		return
+	end
+
+	self:_interupt_action_running(t)
+
+	self._state_data.ducking = true
+
+	self:_stance_entered()
+	self:_update_crosshair_offset()
+
+	local velocity = self._unit:mover():velocity()
+
+	self._unit:kill_mover()
+	self:_activate_mover(PlayerStandard.MOVER_DUCK, velocity)
+	self._ext_network:send("action_change_pose", 2, self._unit:position())
+	self:_upd_attention()
+end
+
+function PlayerStandard:_check_action_throw_projectile(t, input)
+	local projectile_entry = managers.blackmarket:equipped_projectile()
+	local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
+
+	if projectile_tweak.is_a_grenade then
+		return self:_check_action_throw_grenade(t, input)
+	elseif projectile_tweak.ability then
+		return self:_check_action_use_ability(t, input)
+	end
+
+	if self._state_data.projectile_throw_wanted then
+		if not self._state_data.projectile_throw_allowed_t then
+			self._state_data.projectile_throw_wanted = nil
+
+			self:_do_action_throw_projectile(t, input)
+		end
+
+		return
+	end
+
+	local action_wanted = input.btn_projectile_press or input.btn_projectile_release or self._state_data.projectile_idle_wanted
+
+	if not action_wanted then
+		return
+	end
+
+	if not managers.player:can_throw_grenade() then
+		self._state_data.projectile_throw_wanted = nil
+		self._state_data.projectile_idle_wanted = nil
+
+		return
+	end
+
+	if input.btn_projectile_release then
+		if self._state_data.throwing_projectile then
+			if self._state_data.projectile_throw_allowed_t then
+				self._state_data.projectile_throw_wanted = true
+
+				return
+			end
+
+			self:_do_action_throw_projectile(t, input)
+		end
+
+		return
+	end
+
+	--Here!
+	local action_forbidden = not PlayerBase.USE_GRENADES or not self:_projectile_repeat_allowed() or self:chk_action_forbidden("interact") or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_meleeing() or self:_is_using_bipod()
+
+	if action_forbidden then
+		return
+	end
+
+	self:_start_action_throw_projectile(t, input)
+
+	return true
+end
+
+function PlayerStandard:_check_action_throw_grenade(t, input)
+	local action_wanted = input.btn_throw_grenade_press
+
+	if not action_wanted then
+		return
+	end
+
+	if not managers.player:can_throw_grenade() then
+		return
+	end
+
+	--Here!
+	local action_forbidden = not PlayerBase.USE_GRENADES or self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_is_throwing_grenade() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_meleeing() or self:_is_using_bipod()
+
+	if action_forbidden then
+		return
+	end
+
+	self:_start_action_throw_grenade(t, input)
+
+	return action_wanted
+end
+
+function PlayerStandard:_action_interact_forbidden()
+	--Here!
+	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline()
+
+	return action_forbidden
+end
+
+function PlayerStandard:_check_action_melee(t, input)
+	if self._state_data.melee_attack_wanted then
+		if not self._state_data.melee_attack_allowed_t then
+			self._state_data.melee_attack_wanted = nil
+
+			self:_do_action_melee(t, input)
+		end
+
+		return
+	end
+
+	local action_wanted = input.btn_melee_press or input.btn_melee_release or self._state_data.melee_charge_wanted
+
+	if not action_wanted then
+		return
+	end
+
+	if input.btn_melee_release then
+		if self._state_data.meleeing then
+			if self._state_data.melee_attack_allowed_t then
+				self._state_data.melee_attack_wanted = true
+
+				return
+			end
+
+			self:_do_action_melee(t, input)
+		end
+		
+		self._state_data.chainsaw_t = nil
+
+		return
+	end
+
+	--Here!
+	local action_forbidden = not self:_melee_repeat_allowed() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_using_bipod() or self:is_shooting_count()
+
+	if action_forbidden then
+		return
+	end
+
+	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local instant = tweak_data.blackmarket.melee_weapons[melee_entry].instant
+
+	self:_start_action_melee(t, input, instant)
+
+	return true
+end
+
+function PlayerStandard:_check_action_reload(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_reload_press
+
+	if action_wanted then
+		--Here!
+		local action_forbidden = self:_is_reloading() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile()
+		action_forbidden = action_forbidden or self:is_shooting_count()
+
+		if not action_forbidden and self._equipped_unit and not self._equipped_unit:base():clip_full() then
+			self:_start_action_reload_enter(t)
+
+			new_action = true
+		end
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_use_item(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_use_item_press
+
+	--Here!
+	if action_wanted then
+		local action_forbidden = self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing()
+
+		if not action_forbidden and managers.player:can_use_selected_equipment(self._unit) then
+			self:_start_action_use_item(t)
+
+			new_action = true
+		end
+	end
+
+	if input.btn_use_item_release then
+		self:_interupt_action_use_item()
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_change_weapon(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_switch_weapon_press
+
+	if action_wanted then
+		local action_forbidden = self:_changing_weapon()
+		action_forbidden = action_forbidden or self:_is_meleeing() or self._use_item_expire_t or self._change_item_expire_t
+		--Here!
+		action_forbidden = action_forbidden or self._unit:inventory():num_selections() == 1 or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod()
+		action_forbidden = action_forbidden or self:is_shooting_count()
+
+		if not action_forbidden then
+			local data = {
+				next = true
+			}
+			self._change_weapon_pressed_expire_t = t + 0.33
+
+			self:_start_action_unequip_weapon(t, data)
+
+			new_action = true
+
+			managers.player:send_message(Message.OnSwitchWeapon)
+		end
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_action_equip(t, input)
+	local new_action = nil
+	local selection_wanted = input.btn_primary_choice
+
+	if selection_wanted then
+		local action_forbidden = self:chk_action_forbidden("equip")
+		--Here!
+		action_forbidden = action_forbidden or not self._ext_inventory:is_selection_available(selection_wanted) or self:_is_meleeing() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile()
+
+		if not action_forbidden then
+			local new_action = not self._ext_inventory:is_equipped(selection_wanted)
+
+			if new_action then
+				self:_start_action_unequip_weapon(t, {
+					selection_wanted = selection_wanted
+				})
+			end
+		end
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_action_jump(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_jump_press
+
+	if action_wanted then
+		local action_forbidden = self._jump_t and t < self._jump_t + 0.55
+		--Here!
+		action_forbidden = action_forbidden or self._unit:base():stats_screen_visible() or self._state_data.in_air or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() or self:_does_deploying_limit_movement() or self:_is_using_bipod()
+
+		if not action_forbidden then
+			if self._state_data.ducking then
+				self:_interupt_action_ducking(t)
+			else
+				if self._state_data.on_ladder then
+					self:_interupt_action_ladder(t)
+				end
+
+				local action_start_data = {}
+				local jump_vel_z = tweak_data.player.movement_state.standard.movement.jump_velocity.z
+				action_start_data.jump_vel_z = jump_vel_z
+
+				if self._move_dir then
+					local is_running = self._running and self._unit:movement():is_above_stamina_threshold() and t - self._start_running_t > 0.4
+					local jump_vel_xy = tweak_data.player.movement_state.standard.movement.jump_velocity.xy[is_running and "run" or "walk"]
+					action_start_data.jump_vel_xy = jump_vel_xy
+
+					if is_running then
+						self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.JUMP_STAMINA_DRAIN)
+					end
+				end
+
+				new_action = self:_start_action_jump(t, action_start_data)
+			end
+		end
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_action_primary_attack(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release
+	action_wanted = action_wanted or self:is_shooting_count()
+
+	if action_wanted then
+		local action_forbidden = self:_is_reloading() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances()
+
+		if not action_forbidden then
+			self._queue_reload_interupt = nil
+			local start_shooting = false
+
+			self._ext_inventory:equip_selected_primary(false)
+
+			if self._equipped_unit then
+				local weap_base = self._equipped_unit:base()
+				local fire_mode = weap_base:fire_mode()
+				local fire_on_release = weap_base:fire_on_release()
+
+				if weap_base:out_of_ammo() then
+					if input.btn_primary_attack_press then
+						weap_base:dryfire()
+					end
+				elseif weap_base.clip_empty and weap_base:clip_empty() then
+					if self:_is_using_bipod() then
+						if input.btn_primary_attack_press then
+							weap_base:dryfire()
+						end
+
+						self._equipped_unit:base():tweak_data_anim_stop("fire")
+					elseif fire_mode == "single" then
+						if input.btn_primary_attack_press or self._equipped_unit:base().should_reload_immediately and self._equipped_unit:base():should_reload_immediately() then
+							self:_start_action_reload_enter(t)
+						end
+					else
+						new_action = true
+
+						self:_start_action_reload_enter(t)
+					end
+				elseif self._running and not self._equipped_unit:base():run_and_shoot_allowed() then
+					self:_interupt_action_running(t)
+				else
+					if not self._shooting then
+						if weap_base:start_shooting_allowed() then
+							local start = fire_mode == "single" and input.btn_primary_attack_press
+							start = start or fire_mode == "auto" and input.btn_primary_attack_state
+							start = start or fire_mode == "burst" and input.btn_primary_attack_press
+							start = start and not fire_on_release
+							start = start or fire_on_release and input.btn_primary_attack_release
+
+							if start then
+								weap_base:start_shooting()
+								self._camera_unit:base():start_shooting()
+
+								self._shooting = true
+								self._shooting_t = t
+								start_shooting = true
+
+								if fire_mode == "auto" then
+									self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
+
+									if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) and (not weap_base.third_person_important or weap_base.third_person_important and not weap_base:third_person_important()) then
+										self._ext_network:send("sync_start_auto_fire_sound", 0)
+									end
+								end
+							end
+						else
+							self:_check_stop_shooting()
+
+							return false
+						end
+					end
+
+					local suppression_ratio = self._unit:character_damage():effective_suppression_ratio()
+					local spread_mul = math.lerp(1, tweak_data.player.suppression.spread_mul, suppression_ratio)
+					local autohit_mul = math.lerp(1, tweak_data.player.suppression.autohit_chance_mul, suppression_ratio)
+					local suppression_mul = managers.blackmarket:threat_multiplier()
+					local dmg_mul = 1
+					local weapon_tweak_data = weap_base:weapon_tweak_data()
+					local primary_category = weapon_tweak_data.categories[1]
+
+					if not weapon_tweak_data.ignore_damage_multipliers then
+						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "dmg_multiplier_outnumbered", 1)
+
+						if managers.player:has_category_upgrade("player", "overkill_all_weapons") or weap_base:is_category("shotgun", "saw") then
+							dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
+						end
+
+						local health_ratio = self._ext_damage:health_ratio()
+						local damage_health_ratio = managers.player:get_damage_health_ratio(health_ratio, primary_category)
+
+						if damage_health_ratio > 0 then
+							local upgrade_name = weap_base:is_category("saw") and "melee_damage_health_ratio_multiplier" or "damage_health_ratio_multiplier"
+							local damage_ratio = damage_health_ratio
+							dmg_mul = dmg_mul * (1 + managers.player:upgrade_value("player", upgrade_name, 0) * damage_ratio)
+						end
+
+						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "berserker_damage_multiplier", 1)
+						dmg_mul = dmg_mul * managers.player:get_property("trigger_happy", 1)
+					end
+
+					local fired = nil
+
+					if fire_mode == "single" then
+						if input.btn_primary_attack_press and start_shooting then
+							fired = weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+						elseif fire_on_release then
+							if input.btn_primary_attack_release then
+								fired = weap_base:trigger_released(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+							elseif input.btn_primary_attack_state then
+								weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+							end
+						end
+					elseif fire_mode == "auto" then
+						if input.btn_primary_attack_state then
+							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+						end
+					elseif fire_mode == "burst" then
+						fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+					end
+
+					if weap_base.manages_steelsight and weap_base:manages_steelsight() then
+						if weap_base:wants_steelsight() and not self._state_data.in_steelsight then
+							self:_start_action_steelsight(t)
+						elseif not weap_base:wants_steelsight() and self._state_data.in_steelsight then
+							self:_end_action_steelsight(t)
+						end
+					end
+
+					local charging_weapon = fire_on_release and weap_base:charging()
+
+					if not self._state_data.charging_weapon and charging_weapon then
+						self:_start_action_charging_weapon(t)
+					elseif self._state_data.charging_weapon and not charging_weapon then
+						self:_end_action_charging_weapon(t)
+					end
+
+					new_action = true
+
+					if fired then
+						managers.rumble:play("weapon_fire")
+
+						local weap_tweak_data = tweak_data.weapon[weap_base:get_name_id()]
+						local shake_multiplier = weap_tweak_data.shake[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
+
+						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
+						self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier, 1, 0.15)
+						self._equipped_unit:base():tweak_data_anim_stop("unequip")
+						self._equipped_unit:base():tweak_data_anim_stop("equip")
+
+						if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier()) then
+							weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier())
+						end
+
+						if (fire_mode == "single" or fire_mode == "burst") and weap_base:get_name_id() ~= "saw" then
+							if not self._state_data.in_steelsight then
+								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+							elseif weap_tweak_data.animations.recoil_steelsight then
+								self._ext_camera:play_redirect(weap_base:is_second_sight_on() and self:get_animation("recoil") or self:get_animation("recoil_steelsight"), 1)
+							end
+						end
+
+						local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier()
+
+						cat_print("jansve", "[PlayerStandard] Weapon Recoil Multiplier: " .. tostring(recoil_multiplier))
+
+						local up, down, left, right = unpack(weap_tweak_data.kick[self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
+
+						self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
+
+						if self._shooting_t then
+							local time_shooting = t - self._shooting_t
+							local achievement_data = tweak_data.achievement.never_let_you_go
+
+							if achievement_data and weap_base:get_name_id() == achievement_data.weapon_id and achievement_data.timer <= time_shooting then
+								managers.achievment:award(achievement_data.award)
+
+								self._shooting_t = nil
+							end
+						end
+
+						if managers.player:has_category_upgrade(primary_category, "stacking_hit_damage_multiplier") then
+							self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
+							self._state_data.stacking_dmg_mul[primary_category] = self._state_data.stacking_dmg_mul[primary_category] or {
+								nil,
+								0
+							}
+							local stack = self._state_data.stacking_dmg_mul[primary_category]
+
+							if fired.hit_enemy then
+								stack[1] = t + managers.player:upgrade_value(primary_category, "stacking_hit_expire_t", 1)
+								stack[2] = math.min(stack[2] + 1, tweak_data.upgrades.max_weapon_dmg_mul_stacks or 5)
+							else
+								stack[1] = nil
+								stack[2] = 0
+							end
+						end
+
+						if weap_base.set_recharge_clbk then
+							weap_base:set_recharge_clbk(callback(self, self, "weapon_recharge_clbk_listener"))
+						end
+
+						managers.hud:set_ammo_amount(weap_base:selection_index(), weap_base:ammo_info())
+
+						local impact = not fired.hit_enemy
+
+						if weap_base.third_person_important and weap_base:third_person_important() then
+							self._ext_network:send("shot_blank_reliable", impact, 0)
+						elseif weap_base.akimbo and not weap_base:weapon_tweak_data().allow_akimbo_autofire or fire_mode == "single" or fire_mode == "burst" then
+							self._ext_network:send("shot_blank", impact, 0)
+						end
+					elseif fire_mode == "single" then
+						new_action = false
+					elseif fire_mode == "burst" and weap_base:shooting_count() == 0 then
+						new_action = false
+					end
+				end
+			end
+		elseif self:_is_reloading() and self._equipped_unit:base():reload_interuptable() and input.btn_primary_attack_press then
+			self._queue_reload_interupt = true
+		end
+	end
+
+	if not new_action then
+		self:_check_stop_shooting()
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_action_night_vision(t, input)
+	if not input.btn_night_vision_press then
+		return
+	end
+
+	local action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:_is_reloading() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction")
+
+	if action_forbidden then
+		return
+	end
+
+	self:set_night_vision_state(not self._state_data.night_vision_active)
 end
 
 function PlayerStandard:_check_action_interact(t, input)
@@ -610,7 +1235,6 @@ Hooks:PostHook(PlayerStandard, "_check_action_melee", "ResEndChainsaw", function
 	end
 end)
 
-
 --Effectively a slightly modified version of _do_melee_damage but without charging and certain melee gimmicks.
 function PlayerStandard:_do_chainsaw_damage(t)
 	melee_entry = managers.blackmarket:equipped_melee_weapon()
@@ -945,7 +1569,6 @@ function PlayerStandard:_get_melee_charge_lerp_value(t, offset)
 
 	return math.clamp(t - self._state_data.melee_start_t - offset, 0, max_charge_time) / max_charge_time
 end
-
 
 function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	self._state_data.meleeing = nil
@@ -2095,8 +2718,8 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 		return new_action
 	end
 	
-	--Removed the ADS check so you can swap to the underbarrel while doing that
-	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:_is_reloading() or self:is_switching_stances() or self:_interacting() or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
+	--Removed the ADS check so you can swap to the underbarrel while doing that, also for Kick Starter top tier skill
+	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:_is_reloading() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
 
 	if self._running and not self._equipped_unit:base():run_and_shoot_allowed() and not self._end_running_expire_t then
 		self:_interupt_action_running(t)
@@ -2178,7 +2801,7 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 		return
 	end
 
-	local action_forbidden = self:_interacting() or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:running() or self:_is_reloading() or self:in_steelsight() or self:is_equipping() or self:shooting() or self:_is_cash_inspecting(t)
+	local action_forbidden = self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:running() or self:_is_reloading() or self:in_steelsight() or self:is_equipping() or self:shooting() or self:_is_cash_inspecting(t)
 
 	if action_forbidden then
 		return

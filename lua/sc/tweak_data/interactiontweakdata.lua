@@ -583,6 +583,14 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	self.hold_hack_server_room = deep_clone(self.hold_type_in_password)
 	self.hold_hack_server_room.text_id = "hud_int_hack_server_room"
 	self.hold_hack_server_room.action_text_id = "hud_action_hacking_server_room"	
+
+	self.ranc_hold_enter_turret = {
+		text_id = "hud_int_enter_turret",
+		action_text_id = "hud_action_enter_turret",
+		axis = "z",
+		interact_distance = 150,
+		timer = 0.5
+	}
 	
 	--PEOC Pardons
 	self.take_pardons.timer = 0

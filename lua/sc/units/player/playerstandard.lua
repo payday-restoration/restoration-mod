@@ -217,10 +217,6 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 end
 
 function PlayerStandard:_start_action_ducking(t)
-	if AdvMov then
-		self:_check_slide()
-	end
-
 	--Here!
 	if self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() then
 		return
@@ -240,7 +236,7 @@ function PlayerStandard:_start_action_ducking(t)
 	self._ext_network:send("action_change_pose", 2, self._unit:position())
 	self:_upd_attention()
 	
-	if AdvMov then
+	if AdvMov and PlayerStandard._check_slide then
 		self:_check_slide()
 	end
 end

@@ -6,14 +6,15 @@
 	<dependencies>
 		
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="city_swat" />
-			<var name="_default_weapon_id" value="ump" />
+			<var name="_tweak_table" value="shield" />
+			<var name="_default_weapon_id" value="sr2_smg" />
+			<var name="can_be_marked" value="true" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" >
 			<var name="_shield_unit_name" value="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />

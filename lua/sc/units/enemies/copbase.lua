@@ -264,6 +264,8 @@ local weapons_map = {
 	
 	--Correct Weapon for Akan DW Shield 
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"):key()] = "sr2_smg",
+	
+	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"):key()] = "fort_500",
 
 	--Biker Weapon Changes--
 	[Idstring("units/payday2/characters/ene_biker_1/ene_biker_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},

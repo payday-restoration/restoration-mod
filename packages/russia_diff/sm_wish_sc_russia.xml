@@ -58,15 +58,15 @@
 	<material_config	path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4_contour" />
 	
-	<!--Akan Bronco guy-->
+	<!--Akan Bronco guy--
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc_husk" load="true"/>
 	
-	<!--Akan Glock lad-->
+	<!--Akan Glock lad--
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc_husk" load="true"/>
 	
-	<!--Akan "SMG" cop-->
+	<!--Akan "SMG" cop--
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc_husk" load="true"/>
 
@@ -144,7 +144,6 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk"  load="true"/>	
 	<!--FBI Zeal Heavy Shotgun-->
 	<object				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<model				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"  load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"  load="true"/>
@@ -159,7 +158,6 @@
 	
 	<!--big shield acc-->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />

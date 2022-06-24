@@ -632,9 +632,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc"),
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc"),	
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870")
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1"),
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3"),	
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4")
 			},
 			zombie = {
 				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1"),
@@ -676,8 +676,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc"),
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc"),		
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1"),
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3"),		
 			},
 			zombie = {
 				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1"),
@@ -712,7 +712,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870")
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4")
 			},
 			zombie = 
 {				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
@@ -741,7 +741,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
 			},
 			russia = {	
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc")
+				Idstring("units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2")
 			},
 			zombie = {
 				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2")

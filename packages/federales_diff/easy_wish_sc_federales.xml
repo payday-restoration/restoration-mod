@@ -432,20 +432,23 @@
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_hurt_df" force="false"/>
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_hurt_nm" force="false"/>
 
-	<!--akan LPF-->
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_picklerick" force="false"/>	
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" />	
+	<!-- reaper silverman -->
+	<unit				path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer_husk" load="true"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer" />
+	<object				path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer_contour"/>
+
+	<df_nm				path="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_subject_enforcer/coat_op"/>
+
+	<unit_obj			path="units/pd2_mod_reapers/characters/ene_subject_enforcer/debris/ene_subject_enforcer_helmet_debris" load="false" force="false"/>
 	
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_il" force="false" load="true"/>	
+	<unit_obj			path="units/pd2_mod_reapers/characters/ene_subject_enforcer/debris/ene_subject_enforcer_arm_debris" load="false" force="false"/>
+	
+	<unit_obj_seq		path="units/pd2_mod_reapers/characters/ene_subject_enforcer/debris/ene_subject_enforcer_head_debris" load="false" force="false"/>
 	
 	<!--Titan Sniper Cap Accessory-->
 	<object				path="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>

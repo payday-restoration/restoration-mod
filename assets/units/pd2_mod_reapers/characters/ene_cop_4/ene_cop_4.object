@@ -197,13 +197,13 @@
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_security_body, mtr_security_head" max_distance="1000" />
-					<material materials="mtr_security_body_lod_1, mtr_security_head_lod_1" max_distance="1500" />
-					<material materials="mtr_security_body_lod_2, mtr_security_head_lod_2" />
+					<material materials="mtr_security_body" max_distance="1000" />
+					<material materials="mtr_security_body_lod_1" max_distance="1500" />
+					<material materials="mtr_security_body_lod_2" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_security_body, mtr_security_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_security_body_lod_2, mtr_security_head_lod_2" />
+					<material materials="mtr_security_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_security_body_lod_2" />
 				</object>
 			</lod_object>
 
@@ -218,6 +218,11 @@
 					<material materials="mtr_security_head_lod_2" />
 				</object>
 			</lod_object>
+
+	        <lod_object name="lod_hat" 		cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_hat_lod1" 	enabled="false"  max_distance="2000"  max_draw_lod="0" />
+				<object name="g_hat_lod2" 	enabled="false" lod="1" />
+			</lod_object>	
 			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 			

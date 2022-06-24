@@ -1,0 +1,39 @@
+<materials version="3" group="wpn_npc_c45">
+    <material name="mtr_frame" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_frame_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_frame_nm" />
+    </material>
+    <material name="mtr_b" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_barrel_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_barrel_nm" />
+    </material>
+    <material name="mtr_slide" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_slide_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_slide_nm" />
+    </material>
+    <material name="mtr_mag" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_mag_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_mag_nm" />
+    </material>
+    <material name="mtr_controls" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_fps_pis_pl14_pts/bits_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/weapons/wpn_fps_pis_pl14_pts/bits_nm" />
+    </material>	
+
+    <material name="mtr_frame_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_frame_df" mip="4"/>
+    </material>
+    <material name="mtr_b_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_barrel_df" mip="4" />
+    </material>
+    <material name="mtr_slide_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_slide_df" mip="4" />
+    </material>
+    <material name="mtr_mag_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/third_mag_df" mip="4" />
+    </material>
+    <material name="mtr_controls_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_fps_pis_pl14_pts/bits_df" mip="4" />
+    </material>	
+	
+</materials>

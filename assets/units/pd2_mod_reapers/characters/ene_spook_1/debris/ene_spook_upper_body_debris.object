@@ -116,7 +116,8 @@
 			<object name="g_body_top" 		enabled="true" shadow_caster="true" max_distance="3000" />
 			<object name="g_body_top_lod1" 	enabled="true" shadow_caster="true" />
 		</lod_object>
-			
+
+		<object name="g_nvg" enabled="true" />		
 		<object name="s_body_top" enabled="false" shadow_caster="true"/>
 	</graphics>
 

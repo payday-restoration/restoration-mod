@@ -16162,7 +16162,9 @@ function CharacterTweakData:_create_table_structure()
 		"aa12_npc",
 		"dmr",
 		"ak12",
-		"fort_500"
+		"fort_500",
+		"streak",
+		"x_streak"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -16247,9 +16249,11 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7"),
 		Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc"),
 		Idstring("units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
+		Idstring("units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500")
+		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500"),
+		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14"),		
+		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14")		
 	}
 end
 
@@ -17484,6 +17488,46 @@ function CharacterTweakData:character_map()
 				"ene_titan_taser",
 				"ene_veteran_cop_1",
 				"ene_phalanx_1_assault"
+			}
+		}
+		
+		char_map.reapers = {
+			path = "units/pd2_mod_reapers/characters/",
+			list = {
+				"ene_cop_1",
+				"ene_cop_2",
+				"ene_cop_3",
+				"ene_cop_4",
+				"ene_fbi_swat_1",
+				"ene_fbi_swat_2",
+				"ene_fbi_swat_3",
+				"ene_fbi_heavy_1",
+				"ene_fbi_heavy_r870",
+				"ene_city_heavy_g36",
+				"ene_city_heavy_r870",
+				"ene_swat_heavy_1",
+				"ene_swat_heavy_r870",
+				"ene_swat_1",
+				"ene_swat_2",
+				"ene_sniper_1",
+				"ene_sniper_2",
+				"ene_sniper_3",
+				"ene_shield_2",
+				"ene_shield_1",
+				"ene_city_shield",
+				"ene_city_swat_1",
+				"ene_city_swat_2",
+				"ene_city_swat_3",
+				"ene_akan_fbi_tank_r870_hard",
+				"ene_spook_1",
+				"ene_zeal_city_1",
+				"ene_zeal_city_2",
+				"ene_zeal_city_3",
+				"ene_zeal_swat_heavy",
+				"ene_zeal_swat_heavy_r870",
+				"ene_zeal_swat_shield",
+				"ene_zeal_sniper",
+				"ene_subject_enforcer"
 			}
 		}
 

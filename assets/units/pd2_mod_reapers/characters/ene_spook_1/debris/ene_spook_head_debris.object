@@ -10,6 +10,7 @@
 	<decal_surfaces default_material="flesh" />
 	<graphics>
 		<object name="g_head" enabled="true" />
+		<object name="g_nvg" enabled="true" />
 		<object name="s_mesh_mopp" enabled="true" shadow_caster="true" />
 	</graphics>
 </dynamic_object>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14" />
+   <dependencies>
+	<depends_on effect="effects/particles/weapons/c45/muzzleflash_3dp" />
+	<depends_on effect="effects/payday2/particles/weapons/9mm_auto" />
+	<depends_on bnk="soundbanks/weapon_pl14" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+     <extension name="base" class="EnemyAkimboWeaponBase" >
+			<var name="name_id" value="x_streak_npc" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_c45" />
+    <default_soundsource source="rp_c45" />
+  </sounds>
+</unit>

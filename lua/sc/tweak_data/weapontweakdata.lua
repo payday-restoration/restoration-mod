@@ -536,6 +536,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.c45_npc.alert_size = 2500
 		self.c45_npc.suppression = 2.4
 		self.c45_npc.FIRE_MODE = "single"
+
+		self.streak_npc = deep_clone(self.c45_npc)
+		self.streak_npc.sounds.prefix = "pl14_npc"	
 		
 		self.colt_1911_primary_npc = deep_clone(self.c45_npc)
 		self.colt_1911_primary_npc.use_data.selection_index = 2
@@ -570,6 +573,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.x_c45_npc.alert_size = 2500
 		self.x_c45_npc.suppression = 2.4
 		self.x_c45_npc.FIRE_MODE = "single"
+
+		self.x_streak_npc = deep_clone(self.x_c45_npc)
+		self.x_streak_npc.sounds.prefix = "pl14_npc"		
 		
 		self.x_raging_bull_meme_npc = deep_clone(self.x_c45_npc)		
 		self.x_raging_bull_meme_npc.sounds.prefix = "rbull_npc"

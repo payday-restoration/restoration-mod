@@ -3253,11 +3253,11 @@ function CopDamage:_on_damage_received(damage_info)
 		end
 	end
 	
-	if not self._dead and self._unit:base():has_tag("tank") and self._health > 0 then
+	--[[if not self._dead and self._unit:base():has_tag("tank") and self._health > 0 then
 	    self._unit:sound():play("fist_hit_gen", nil, nil)
 	else	
 	    self._unit:sound():play("fist_hit_body", nil, nil)
-	end
+	end]]--
 	
 end
 

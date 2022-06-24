@@ -1130,6 +1130,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from a galaxy far, far away converts this weapon to fire bolts of plasma and utilize a recharging magazine.\n\nRecharge delay: 1.5s\nRecharge Rate: 3/s (Halfed while overheated)\nOverheat penalty: 3s",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\nAlt-fire allows for fanning the hammer to deliver a flurry of rounds.\n\nCan penetrate body armor, shields and thin walls",
+		--CUSTOM HANDGUNS
+		--Colt Detective
+		["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\nDeals double damage when attacking enemies from behind.",
 
 
 		--Kobus 90--

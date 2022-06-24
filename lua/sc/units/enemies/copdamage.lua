@@ -924,7 +924,11 @@ function CopDamage:damage_bullet(attack_data)
 
 	if attack_data.attacker_unit == managers.player:player_unit() then
 		attack_data.backstab = self:check_backstab(attack_data)
-		
+
+		if attack_data.backstab == true and weap_base._autograph_multiplier then
+			damage = damage * weap_base._autograph_multiplier
+		end
+
 		local damage_scale = nil
 
 		if weap_base.near_falloff_distance and weap_base.far_falloff_distance then

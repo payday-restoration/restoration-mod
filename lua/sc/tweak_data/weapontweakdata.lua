@@ -5015,7 +5015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.AMMO_MAX = 60
 				self.x_deagle.FIRE_MODE = "single"
 				self.x_deagle.fire_mode_data = {}
-				self.x_deagle.fire_mode_data.fire_rate = 0.1363636
+				self.x_deagle.fire_mode_data.fire_rate = 0.133333
 				self.x_deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.x_deagle.animations.has_steelsight_stance = true
 				self.x_deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
@@ -5342,7 +5342,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.use_data.selection_index = 1
 				self.deagle.has_description = false
 				self.deagle.desc_id = "bm_ap_weapon_sc_desc"
-				self.deagle.fire_mode_data.fire_rate = 0.1363636
+				self.deagle.fire_mode_data.fire_rate = 0.133333
 				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.deagle.CLIP_AMMO_MAX = 8
 				self.deagle.AMMO_MAX = 30
@@ -12548,6 +12548,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xr2.timers.reload_not_empty = 0.8
 		self.xr2.timers.reload_not_empty = 1.9
 		self.xr2.timers.reload_exit_not_empty = 0.9
+	end
+
+
+	if self.coltds then --Mira's Colt Detective
+		self.coltds.recategorize = {"heavy_pis"}
+		self.coltds.damage_type = "heavy_pistol"
+		self.coltds.autograph_multiplier = 2
+		self.coltds.has_description = true
+		self.coltds.desc_id = "bm_lemon_dmc_desc"
+		self.coltds.fire_mode_data = {}
+		self.coltds.fire_mode_data.fire_rate = 0.133333
+		self.coltds.AMMO_MAX = 30
+		self.coltds.kick = self.stat_info.kick_tables.moderate_kick
+		self.coltds.supported = true
+		self.coltds.ads_speed = 0.240
+		self.coltds.damage_falloff = {
+			start_dist = 1800,
+			end_dist = 4000,
+			min_mult = 0.222222
+		}
+		self.coltds.stats = {
+			damage = 45,
+			spread = 61,
+			recoil = 51,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 28,
+			suppression = 5,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.coltds.stats_modifiers = nil
+		self.coltds.timers = deep_clone(self.chinchilla.timers)
+		self.coltds.panic_suppression_chance = 0.05
 	end
 
 

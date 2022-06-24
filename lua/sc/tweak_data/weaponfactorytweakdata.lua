@@ -21065,7 +21065,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 	end
 
 
-	if self.parts.wpn_fps_ass_xr2_grip then
+	if self.parts.wpn_fps_ass_xr2_grip then --KillerKrayola + Pawcio + splish's BO3 XR-2
 		self.parts.wpn_fps_upg_xr2_barrel_01.supported = true
 		self.parts.wpn_fps_upg_xr2_barrel_01.has_description = nil
 		self.parts.wpn_fps_upg_xr2_barrel_01.stats = deep_clone(barrels.long_b2_stats)
@@ -21196,6 +21196,76 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			concealment = -1,
 			reload = 3
 		}
+
+		self.parts.wpn_fps_ass_xr2_vertgrip.supported = true
+		self.parts.wpn_fps_ass_xr2_vertgrip.stats = { value = 0 }
+
+		self.parts.wpn_fps_upg_xr2_vg_generic_01.supported = true
+		self.parts.wpn_fps_upg_xr2_vg_generic_01.stats = {
+			value = 1,
+			reload = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_xr2_vg_xr2_02.supported = true
+		self.parts.wpn_fps_upg_xr2_vg_xr2_02.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_xr2_vg_m8a7_02.supported = true
+		self.parts.wpn_fps_upg_xr2_vg_m8a7_02.stats = {
+			value = 3,
+			recoil = 4,
+			concealment = -2
+		}
+
+		if not self.wpn_fps_ass_xr2.override then
+			self.wpn_fps_ass_xr2.override = {}
+		end
+
+		self.wpn_fps_ass_xr2.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { 
+			stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -1
+			}
+		}
+		self.wpn_fps_ass_xr2.override.wpn_fps_upg_vg_ass_smg_stubby = { 
+			stats = {
+				value = 1,
+				recoil = -2,
+				concealment = 1
+			}
+		}
+		self.wpn_fps_ass_xr2.override.wpn_fps_smg_schakal_vg_surefire = { 
+			stats = {
+				value = 5
+			}
+		}
+	end
+
+	if self.parts.wpn_fps_pis_coltds_b_std then --Mira's Colt Detective
+		self.parts.wpn_fps_pis_coltds_b_ext.supported = true
+		self.parts.wpn_fps_pis_coltds_b_ext.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_pis_coltds_b_ext.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+
+		self.parts.wpn_fps_pis_coltds_b_police.supported = true
+		self.parts.wpn_fps_pis_coltds_b_police.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_pis_coltds_b_police.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_pis_coltds_b_modern.supported = true
+		self.parts.wpn_fps_pis_coltds_b_modern.stats = {
+			value = 1,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_pis_coltds_b_modern.custom_stats = nil
+
+		self.parts.wpn_fps_pis_coltds_o_marksman.supported = true
+		self.parts.wpn_fps_pis_coltds_o_marksman.stats = {
+			value = 1
+		}
+
 	end
 
 --Resmod Custom Weapon stuff

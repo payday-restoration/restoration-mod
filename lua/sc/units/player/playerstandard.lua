@@ -239,6 +239,10 @@ function PlayerStandard:_start_action_ducking(t)
 	self:_activate_mover(PlayerStandard.MOVER_DUCK, velocity)
 	self._ext_network:send("action_change_pose", 2, self._unit:position())
 	self:_upd_attention()
+	
+	if AdvMov then
+		self:_check_slide()
+	end
 end
 
 function PlayerStandard:_check_action_throw_projectile(t, input)

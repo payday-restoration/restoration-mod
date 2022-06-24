@@ -107,6 +107,7 @@ function restoration:Init()
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"help", --Prison Nightmare
 		--custom heists
+		"daymare", --Hell's Nightmare
 		"funbank" --FunBank: Specials
 	}
 	
@@ -151,6 +152,7 @@ function restoration:Init()
 			"branchbank", --Gets Branchbank from Autumn		
 			"help", --Prison Nightmare	
 			--custom heists		
+			"daymare", --Hell's Nightmare
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"funbank", --FunBank: Specials
 			"tj_htsb", --Gets Southern Branchbank from Autumn
@@ -258,6 +260,7 @@ function restoration:Init()
 		"fex", --Buluc's Mansion		
 		--Custom Heists below--
 		"thechase",
+		"daymare", --Hell's Nightmare
 		"trop", --Tropical Treasure 
 		"constantine_smackdown_lvl", --Smackdown
 		"nmh_res" --Resmod edit of no mercy.
@@ -273,6 +276,7 @@ function restoration:Init()
 		"chill_combat",	--Safehouse Raid		
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
+		"railrun", --The Last Train
 		"Victor Romeo"
 	}	
 	--Christmas Effects Heists

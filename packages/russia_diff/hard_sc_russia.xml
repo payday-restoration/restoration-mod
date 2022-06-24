@@ -21,8 +21,8 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_heavy_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_heavy_nm" />
 	<!--cloaker texture-->
-	<object				path="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df" force="true" />
-	<object				path="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df" force="true" />
+	<texture				path="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_nm" force="true" />
+	<texture				path="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df" force="true" />
 	
 	<!--Reaper Security-->
 	<!--Glock-->

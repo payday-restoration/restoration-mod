@@ -2454,7 +2454,7 @@ local russia_very_hard = {
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1",
 		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2",
-		["units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_1",
+		["units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 		["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",		
 		["units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"] = "units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",
 		

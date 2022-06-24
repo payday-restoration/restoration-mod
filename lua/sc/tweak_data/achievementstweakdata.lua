@@ -33,4 +33,11 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
+	--Lets Titan Snipers count for Martial Law
+	self.enemy_kill_achievements.ranc_11.enemies = {
+		"marshal_marksman",
+		"heavy_swat_sniper",
+		"weekend_dmr"
+	}
+	
 end

@@ -162,51 +162,6 @@ function PlayerStandard:_interupt_action_interact(t, input, complete)
 	end
 end
 
-function PlayerStandard:_determine_move_direction()
-	self._stick_move = self._controller:get_input_axis("move")
-
-	if self._state_data.on_zipline then
-		return
-	end
-
-	--Here!
-	if mvector3.length(self._stick_move) < PlayerStandard.MOVEMENT_DEADZONE or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_does_deploying_limit_movement() then
-		self._move_dir = nil
-		self._normal_move_dir = nil
-	else
-		local ladder_unit = self._unit:movement():ladder_unit()
-
-		if alive(ladder_unit) then
-			local ladder_ext = ladder_unit:ladder()
-			self._move_dir = mvector3.copy(self._stick_move)
-			self._normal_move_dir = mvector3.copy(self._move_dir)
-			local cam_flat_rot = Rotation(self._cam_fwd_flat, math.UP)
-
-			mvector3.rotate_with(self._normal_move_dir, cam_flat_rot)
-
-			local cam_rot = Rotation(self._cam_fwd, self._ext_camera:rotation():z())
-
-			mvector3.rotate_with(self._move_dir, cam_rot)
-
-			local up_dot = math.dot(self._move_dir, ladder_ext:up())
-			local w_dir_dot = math.dot(self._move_dir, ladder_ext:w_dir())
-			local normal_dot = math.dot(self._move_dir, ladder_ext:normal()) * -1
-			local normal_offset = ladder_ext:get_normal_move_offset(self._unit:movement():m_pos())
-
-			mvector3.set(self._move_dir, ladder_ext:up() * (up_dot + normal_dot))
-			mvector3.add(self._move_dir, ladder_ext:w_dir() * w_dir_dot)
-			mvector3.add(self._move_dir, ladder_ext:normal() * normal_offset)
-		else
-			self._move_dir = mvector3.copy(self._stick_move)
-			local cam_flat_rot = Rotation(self._cam_fwd_flat, math.UP)
-
-			mvector3.rotate_with(self._move_dir, cam_flat_rot)
-
-			self._normal_move_dir = mvector3.copy(self._move_dir)
-		end
-	end
-end
-
 function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	--Here!
 	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() then
@@ -262,6 +217,10 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 end
 
 function PlayerStandard:_start_action_ducking(t)
+	if AdvMov then
+		self:_check_slide()
+	end
+
 	--Here!
 	if self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() then
 		return
@@ -511,6 +470,9 @@ function PlayerStandard:_check_action_equip(t, input)
 	return new_action
 end
 
+--[[
+Temp disabled, might revisit this?
+
 function PlayerStandard:_check_action_jump(t, input)
 	local new_action = nil
 	local action_wanted = input.btn_jump_press
@@ -549,6 +511,53 @@ function PlayerStandard:_check_action_jump(t, input)
 
 	return new_action
 end
+
+function PlayerStandard:_determine_move_direction()
+	self._stick_move = self._controller:get_input_axis("move")
+
+	if self._state_data.on_zipline then
+		return
+	end
+
+	--Here!
+	if mvector3.length(self._stick_move) < PlayerStandard.MOVEMENT_DEADZONE or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_does_deploying_limit_movement() then
+		self._move_dir = nil
+		self._normal_move_dir = nil
+	else
+		local ladder_unit = self._unit:movement():ladder_unit()
+
+		if alive(ladder_unit) then
+			local ladder_ext = ladder_unit:ladder()
+			self._move_dir = mvector3.copy(self._stick_move)
+			self._normal_move_dir = mvector3.copy(self._move_dir)
+			local cam_flat_rot = Rotation(self._cam_fwd_flat, math.UP)
+
+			mvector3.rotate_with(self._normal_move_dir, cam_flat_rot)
+
+			local cam_rot = Rotation(self._cam_fwd, self._ext_camera:rotation():z())
+
+			mvector3.rotate_with(self._move_dir, cam_rot)
+
+			local up_dot = math.dot(self._move_dir, ladder_ext:up())
+			local w_dir_dot = math.dot(self._move_dir, ladder_ext:w_dir())
+			local normal_dot = math.dot(self._move_dir, ladder_ext:normal()) * -1
+			local normal_offset = ladder_ext:get_normal_move_offset(self._unit:movement():m_pos())
+
+			mvector3.set(self._move_dir, ladder_ext:up() * (up_dot + normal_dot))
+			mvector3.add(self._move_dir, ladder_ext:w_dir() * w_dir_dot)
+			mvector3.add(self._move_dir, ladder_ext:normal() * normal_offset)
+		else
+			self._move_dir = mvector3.copy(self._stick_move)
+			local cam_flat_rot = Rotation(self._cam_fwd_flat, math.UP)
+
+			mvector3.rotate_with(self._move_dir, cam_flat_rot)
+
+			self._normal_move_dir = mvector3.copy(self._move_dir)
+		end
+	end
+end
+
+]]--
 
 function PlayerStandard:_check_action_primary_attack(t, input)
 	local new_action = nil

@@ -124,6 +124,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.alex_3.player_style = "slaughterhouse"
 	self.alex_3.ai_group_type = fbi
 	
+	self.framing_frame_3.player_style = "sneak_suit"
+	self.framing_frame_3.flashlights_on = false
+	self.framing_frame_3.ai_group_type = fbi
+	
 	self.firestarter_1.ai_group_type = fbi
 	self.firestarter_1.player_style = "loud_suit"
 	
@@ -307,9 +311,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.gallery.player_style = "sneak_suit"
 	self.framing_frame_1.player_style = "sneak_suit"
-	
-	self.framing_frame_3.player_style = "sneak_suit"
-	self.framing_frame_3.flashlights_on = false
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"

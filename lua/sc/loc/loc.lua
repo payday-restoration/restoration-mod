@@ -2055,7 +2055,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
 		["loading_equip_skills_res_32"] = "Aiming mechanics have been changed to require you to be fully aimed to reap the benefits of aimed accuracy. Keep an eye on your \"Aim Time\" stat as you mod your weapon.",
 		["loading_equip_skills_res_33"] = "Long barrels, sturdier stocks and extended magazines have their merits but they can hit swap, reload, aim and sprint-to-fire times pretty hard; using too many will leave your weapon cumbersome to use.",
-		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon in your hands.",
+		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's concealment rating.",
 		["loading_equip_skills_res_35"] = "The \"Aim Time\" stat also serves as the \"Sprint-to-Fire\" stat. \"Sprint-to-Fire\" time is the time it takes to be able to fire your weapon after you stop sprinting.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",

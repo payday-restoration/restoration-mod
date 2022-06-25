@@ -21265,7 +21265,23 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_pis_coltds_o_marksman.stats = {
 			value = 1
 		}
+	end
 
+	if self.parts.wpn_fps_gre_as24_barrel then
+		self.parts.wpn_fps_upg_as24_stock_ext.supported = true
+		self.parts.wpn_fps_upg_as24_stock_ext.stats = deep_clone(stocks.folded_to_adj_rec1)
+		self.parts.wpn_fps_upg_as24_stock_ext.custom_stats = deep_clone(stocks.folded_to_adj_rec1)
+
+		self.parts.wpn_fps_upg_as24_stock_slinghook.supported = true
+		self.parts.wpn_fps_upg_as24_stock_slinghook.stats = deep_clone(stocks.remove_folded_stats)
+		self.parts.wpn_fps_upg_as24_stock_slinghook.custom_stats = deep_clone(stocks.remove_folded_stats)
+
+		self.parts.wpn_fps_upg_as24_scope.supported = true
+		self.parts.wpn_fps_upg_as24_scope.stats = {
+			value = 8,
+			zoom = 30
+		}
+		self.parts.wpn_fps_upg_as24_scope.custom_stats = { disable_steelsight_recoil_anim = true }
 	end
 
 --Resmod Custom Weapon stuff

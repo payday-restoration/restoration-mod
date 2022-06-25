@@ -162,60 +162,6 @@ function PlayerStandard:_interupt_action_interact(t, input, complete)
 	end
 end
 
-function PlayerStandard:_start_action_steelsight(t, gadget_state)
-	--Here!
-	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() then
-		self._steelsight_wanted = true
-
-		return
-	end
-
-	if self._running and not self._end_running_expire_t then
-		self:_interupt_action_running(t)
-
-		self._steelsight_wanted = true
-
-		return
-	end
-
-	self:_break_intimidate_redirect(t)
-
-	self._steelsight_wanted = false
-	self._state_data.in_steelsight = true
-
-	self:_update_crosshair_offset()
-	self:_stance_entered()
-	self:_interupt_action_running(t)
-	self:_interupt_action_cash_inspect(t)
-
-	local weap_base = self._equipped_unit:base()
-
-	if gadget_state ~= nil then
-		weap_base:play_sound("gadget_steelsight_" .. (gadget_state and "enter" or "exit"))
-	else
-		weap_base:play_tweak_data_sound("enter_steelsight")
-	end
-
-	if weap_base:weapon_tweak_data().animations.has_steelsight_stance then
-		self:_need_to_play_idle_redirect()
-
-		self._state_data.steelsight_weight_target = 1
-
-		self._camera_unit:base():set_steelsight_anim_enabled(true)
-	end
-
-	self._state_data.reticle_obj = weap_base.get_reticle_obj and weap_base:get_reticle_obj()
-
-	if managers.controller:get_default_wrapper_type() ~= "pc" and managers.user:get_setting("aim_assist") then
-		local closest_ray = self._equipped_unit:base():check_autoaim(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), nil, true)
-
-		self._camera_unit:base():clbk_aim_assist(closest_ray)
-	end
-
-	self._ext_network:send("set_stance", 3, false, false)
-	managers.job:set_memory("cac_4", true)
-end
-
 function PlayerStandard:_start_action_ducking(t)
 	--Here!
 	if self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() then
@@ -1601,9 +1547,10 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_repeat_expire_t_add = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
 	local melee_miss_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_repeat_expire_t or 0
 	local weap_base = self._equipped_unit:base():weapon_tweak_data()
-	local weap_t = weap_base.m_add_t
+	local weap_t = 1 * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
+	weap_t = math.clamp(weap_t, 0.75, 1)
 	if instant_hit and weap_t then
-		melee_repeat_expire_t = melee_repeat_expire_t + weap_t
+		speed = speed * weap_t
 	end
 	--So the timers play nicely with the anim speed mult
 	melee_expire_t = melee_expire_t / speed
@@ -1668,12 +1615,20 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 
 	if instant_hit then
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
-
+		log(tostring(speed))
 		if hit then
-			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_bayonet") or self:get_animation("melee"))
+			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_bayonet") or self:get_animation("melee"), math.clamp(speed, 0.75, 1.1))
 		else
-			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_miss_bayonet") or self:get_animation("melee_miss"))
+			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_miss_bayonet") or self:get_animation("melee_miss"), math.clamp(speed, 0.75, 1.1))
 		end
+
+		if can_melee_miss and not hit then 
+			melee_repeat_expire_t = melee_miss_repeat_expire_t
+			melee_expire_t = melee_miss_expire_t
+		end
+		self._state_data.melee_expire_t = t + melee_expire_t
+		self._state_data.melee_repeat_expire_t = t + math.min(melee_repeat_expire_t, melee_expire_t)
+
 	else
 		local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars
 		local anim_attack_charged_amount = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 --At half charge, use the charge variant
@@ -2024,8 +1979,6 @@ function PlayerStandard:force_recoil_kick(weap_base, shots_fired)
 	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
 end
 
---delay aiming for a bit after exiting sprint
-local old_start_action_steelsight = PlayerStandard._start_action_steelsight
 function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._equipped_unit and self._equipped_unit:base() then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
@@ -2037,17 +1990,66 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 			return
 		end
 	end
-	old_start_action_steelsight(self, t, gadget_state)
-end
+	--Here!
+	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() then
+		self._steelsight_wanted = true
 
-Hooks:PostHook(PlayerStandard, "_start_action_steelsight", "ResMinigunEnterSteelsight", function(self, t, gadget_state)
+		return
+	end
+
+	if self._running and not self._end_running_expire_t then
+		self:_interupt_action_running(t)
+
+		self._steelsight_wanted = true
+
+		return
+	end
+
+	self:_break_intimidate_redirect(t)
+
+	self._steelsight_wanted = false
+	self._state_data.in_steelsight = true
+
 	if self._state_data.in_steelsight --[[or self._steelsight_wanted]] then
 		local weapon = self._unit:inventory():equipped_unit():base()
 		if weapon:get_name_id() == "m134" or weapon:get_name_id() == "shuno" then
 			weapon:vulcan_enter_steelsight()
 		end
 	end
-end)
+
+	self:_update_crosshair_offset()
+	self:_stance_entered()
+	self:_interupt_action_running(t)
+	self:_interupt_action_cash_inspect(t)
+
+	local weap_base = self._equipped_unit:base()
+
+	if gadget_state ~= nil then
+		weap_base:play_sound("gadget_steelsight_" .. (gadget_state and "enter" or "exit"))
+	else
+		weap_base:play_tweak_data_sound("enter_steelsight")
+	end
+
+	if weap_base:weapon_tweak_data().animations.has_steelsight_stance then
+		self:_need_to_play_idle_redirect()
+
+		self._state_data.steelsight_weight_target = 1
+
+		self._camera_unit:base():set_steelsight_anim_enabled(true)
+	end
+
+	self._state_data.reticle_obj = weap_base.get_reticle_obj and weap_base:get_reticle_obj()
+
+	if managers.controller:get_default_wrapper_type() ~= "pc" and managers.user:get_setting("aim_assist") then
+		local closest_ray = self._equipped_unit:base():check_autoaim(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), nil, true)
+
+		self._camera_unit:base():clbk_aim_assist(closest_ray)
+	end
+
+	self._ext_network:send("set_stance", 3, false, false)
+	managers.job:set_memory("cac_4", true)
+end
+
 
 --Ends minigun spinup.
 Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)

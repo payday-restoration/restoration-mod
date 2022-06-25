@@ -319,3 +319,12 @@ function CopLogicAttack:inform_law_enforcements(data)
 		self:start_inform_ene_cooldown(cooldown_t, msg_type)
 	end
 end
+
+-- Only return retreat pos if its different from current pos (to fix spamming of walk actions)
+local _find_retreat_position_original = CopLogicAttack._find_retreat_position
+function CopLogicAttack._find_retreat_position(from_pos, ...)
+	local pos = _find_retreat_position_original(from_pos, ...)
+	if pos and mvector3.not_equal(from_pos, pos) then
+		return pos
+	end
+end

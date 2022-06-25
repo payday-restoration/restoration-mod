@@ -127,6 +127,7 @@
 		<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
+		<hook file="sc/units/weapons/quicksmokegrenade.lua" source_file="lib/units/weapons/grenades/quicksmokegrenade"/>
 		<hook file="sc/units/weapons/smokescreengrenade.lua" source_file="lib/units/weapons/grenades/smokescreengrenade"/>
 		<hook file="sc/units/weapons/poisongasgrenade.lua" source_file="lib/units/weapons/grenades/poisongasgrenade"/>
 		<hook file="sc/units/weapons/weaponammo.lua" source_file="lib/units/weapons/weaponammo"/>		

@@ -25,27 +25,31 @@ function QuickCsGrenade:_setup_from_tweak_data()
 	end
 end
 
-
 function QuickCsGrenade:_play_sound_and_effects()
+	local body = self._unit:body(0)
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
 	if self._state == 1 then
-		local sound_source = SoundDevice:create_source("grenade_fire_source")
+		local pos = self._unit:position()
+		mvector3.set_z(pos, pos.z + 100)
+		self._unit:set_position(pos)
+		self._unit:set_rotation(Rotation(math.random(360), math.random(360), math.random(360)))
 
-		sound_source:set_position(self._shoot_position)
-		sound_source:post_event("grenade_gas_npc_fire")
+		mvector3.set(pos, math.UP)
+		mvector3.random_orthogonal(pos)
+		mvector3.multiply(pos, 200)
+		body:set_enabled(true)
+		body:push_at(body:mass(), pos, self._unit:position() + Vector3(math.rand(-10, 10), math.rand(-10, 10), math.rand(-10, 10)))
+
+		self._unit:sound_source():post_event("grenade_gas_npc_fire")
 	elseif self._state == 2 then
-		local sound_source = SoundDevice:create_source("grenade_bounce_source")
-
-		sound_source:set_position(self._unit:position())
-		sound_source:post_event("grenade_gas_bounce")
+		self._unit:sound_source():post_event("grenade_gas_bounce")
 	elseif self._state == 3 then
 		World:effect_manager():spawn({
 			effect = Idstring("effects/particles/explosions/explosion_smoke_grenade"),
 			position = self._unit:position(),
 			normal = self._unit:rotation():y()
 		})
-		self._unit:sound_source():post_event("grenade_gas_explode")
 
 		local parent = self._unit:orientation_object()
 		if difficulty_index == 8 then
@@ -59,9 +63,12 @@ function QuickCsGrenade:_play_sound_and_effects()
 				parent = parent
 			})			
 		end
-		local blurzone_radius = self._radius * self._radius_blurzone_multiplier
 
-		managers.environment_controller:set_blurzone(self._unit:key(), 1, self._unit:position(), blurzone_radius, 0, true)
+		managers.environment_controller:set_blurzone(self._unit:key(), 1, self._unit:position(), self._radius * self._radius_blurzone_multiplier, 0, true)
+
+		body:push_at(body:mass(), math.UP * 100, self._unit:position() + Vector3(math.rand(-10, 10), math.rand(-10, 10), math.rand(-10, 10)))
+
+		self._unit:sound_source():post_event("grenade_gas_explode")		
 	end
 end	
 

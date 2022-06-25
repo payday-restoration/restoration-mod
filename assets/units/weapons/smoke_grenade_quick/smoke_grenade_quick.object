@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/weapons/smoke_grenade_quick/smoke_grenade_quick" orientation_object="rp_smoke_grenade"/>
+	<bodies>
+		<body name="body" enabled="false" template="debris" pushed_by_mover="false">
+			<object name="rp_smoke_grenade"/>
+			<object name="c_smoke_grenade" collision_type="convex" mass="1"/>
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal" static="true"/>
+	<graphics>
+		<object name="g_smoke_grenade" enabled="true"/>
+	</graphics>
+</dynamic_object>

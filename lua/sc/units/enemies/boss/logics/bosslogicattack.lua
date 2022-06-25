@@ -285,6 +285,36 @@ function BossLogicAttack._upd_combat_movement(data, my_data)
 	end
 end
 
+-- Check new position for being different than the current one
+function BossLogicAttack._chk_start_action_move_out_of_the_way(data, my_data)
+	local reservation = {
+		radius = 30,
+		position = data.m_pos,
+		filter = data.pos_rsrv_id
+	}
+
+	if not managers.navigation:is_pos_free(reservation) then
+		local to_pos = CopLogicTravel._get_pos_on_wall(data.m_pos, 500, nil, nil, data.pos_rsrv_id)
+
+		if to_pos and mvec3_not_equal(data.m_pos, to_pos) then
+			my_data.advancing = data.brain:action_request({
+				variant = "run",
+				body_part = 2,
+				type = "walk",
+				nav_path = {
+					mvec3_cpy(data.m_pos),
+					to_pos
+				}
+			})
+
+			if my_data.advancing then
+				my_data.moving_out_of_the_way = my_data.advancing
+				BossLogicAttack._cancel_chase_attempt(data, my_data)
+				return true
+			end
+		end
+	end
+end
 
 -- Update logic every frame
 function BossLogicAttack.update(data)

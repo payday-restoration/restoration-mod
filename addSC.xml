@@ -268,7 +268,10 @@
 	<object				path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
 	<material_config	path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
-	<unit				path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="true" force="false"/>		
+	<unit				path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="true" force="false"/>
+
+	<!--Smoke/Gas Grenades have physics-->
+	<object				path="units/weapons/smoke_grenade_quick/smoke_grenade_quick" force="true"/>
 		
 	<unit_mat			path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle"  />
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />

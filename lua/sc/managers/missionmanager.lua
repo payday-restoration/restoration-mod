@@ -21,9 +21,20 @@ local level_mission_script_elements = {
 		}
 	},
 	sah = {
+		-- Disable instant difficulty increase
+		[100122] = {
+			values = {
+				enabled = false
+			}
+		},
 		[101400] = {
+			difficulty = 0.5,
 			reinforce = {
-				{ name = "auction_room", force = 5, position = Vector3(0, 2000, -100) }
+				{
+					name = "auction_room",
+					force = 5,
+					position = Vector3(0, 2000, -100)
+				}
 			}
 		}
 	},
@@ -45,7 +56,8 @@ local level_mission_script_elements = {
 		[101612] = {
 			enabled = false -- Sosa retreat spot SO selection
 		}
-	}
+	},
+	
 }
 local mission_script_elements = level_mission_script_elements[level_id]
 if not mission_script_elements then

@@ -1129,7 +1129,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_c96_nozzle"] = "블라스테크 DL-44 소음기",
 		["bm_wp_c96_nozzle_desc_sc"] = "머나먼 은하계에서 왔다고 하는 이 기술은 무기를 플라즈마를 발사하는 노리쇠로 변환하고 재충전 탄창을 사용합니다.\n\n재충전 지연: 1.5초\n재충전 속도: 3/초 (과열시 반감됨)\n과열 패널티: 3초",		
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 보조 발사 모드로 전환하면 해머를 패닝하여 많은 총알을 날립니다.",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 발사 모드를 전환하면 해머를 패닝하여 많은 총알을 날립니다.",
+		--CUSTOM HANDGUNS
+		--Colt Detective
+		["bm_lemon_dmc_desc"] = "숨길 수 있는 고성능 리볼버을 들고 있는 자신을 상상해 보십시오. 이제 더 이상 상상하지 마십시오. 수사관이 바로 그런 사람이기 때문입니다.\n\n적의 뒤에서 공격 시 2배의 피해를 줍니다.",		
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 기관탄총",
@@ -2040,7 +2043,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_15"] = "킹핀은 다재다능한 특성 덱입니다. 주사기로 자가 유지, 높은 데미지에서 살아남거나 팀 대신 적의 사격을 맞아주는 데 사용할 수 있습니다.",	
 		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 특성 덱입니다.",	
 		["loading_equip_skills_res_17"] = "방패를 관통하는 총알은 절반의 피해를 줍니다.",	
-		["loading_equip_skills_res_18"] = "Peacemaker와 Phoenix .500 리볼버는 저격소총처럼 방탄복을 관통할 수 있습니다.",
+		["loading_equip_skills_res_18"] = "Peacemaker 리볼버와 Phoenix .500 리볼버는 저격소총처럼 방탄복을 관통할 수 있습니다.",
 		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 있다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
 		["loading_equip_skills_res_20"] = "무기의 은폐가 높을수록 더 빨리 교체하거나 넣을 수 있습니다.",	
 		["loading_equip_skills_res_21"] = "전기톱과 카자구루마는 들고 있는 동안 전방의 적에게 피해를 줍니다.",	
@@ -2185,12 +2188,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dodgethis"] = "베테랑 경찰은 이제 모든 총알을 피합니다.",
 		["menu_cs_modifier_sniper_aim"] = "저격수는 이제 소총을 100% 더 빠르게 조준합니다.",
 		["menu_cs_modifier_health_damage_total"] = "",
-		["menu_cs_modifier_heavies"] = "모든 소총 SWAT 유닛은 15%의 추가 확률로 엘리트 UMP 유닛이 됩니다.",
+		["menu_cs_modifier_heavies"] = "경무장 소총 SWAT은 분대장 유닛과 함께 스폰될 확률이 100% 증가하며, 추가로 각 분대에 하나의 추가 분대장 유닛이 스폰됩니다.",
 		["menu_cs_modifier_heavy_sniper"] = "타이탄 명사수와 브라보 지정사수는 이제 근거리에서 완전 자동으로 소총을 발사합니다.",
 		["menu_cs_modifier_dozer_medic"] = "불도저가 생성될 때마다 메딕 불도저가 될 확률이 생깁니다. 메딕 불도저는 메딕과 불도저로 간주됩니다.",
 		["menu_cs_modifier_dozer_minigun"] = "그린 또는  블랙 불도저가 생성될 때마다 M1014를 든 불도저로 교체될 확률이 생깁니다.",
 		["menu_cs_modifier_shield_phalanx"] = "모든 일반 실드 유닛은 15%의 추가 확률로 타이탄 실드가 됩니다.",
-		["menu_cs_modifier_taser_overcharge"] = "테이저의 테이징 녹아웃 효과가 더 이상 지연되지 않습니다.",
+		["menu_cs_modifier_taser_overcharge"] = "테이저 유닛은 더 이상 플레이어를 감전시키려고 할 때 조준 지연이 없어집니다. 시도 사이의 일반 재사용 대기시간은 여전히 적용됩니다.",
 		["menu_cs_modifier_dozer_rage"] = "불도저의 안면부가 파괴되면 불도저는 버서커 분노에 빠져 기본 피해량을 10% 증가시킵니다.",
 		["menu_cs_modifier_medic_adrenaline"] = "모든 메딕 유닛은 15%의 추가 확률로 옴니아 LPF가 됩니다.",
 		["menu_cs_modifier_cloaker_arrest"] = "클로커의 근접 공격운 이제 플레이어를 수갑을 채우게합니다.",
@@ -2481,7 +2484,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",
-			["menu_fire_trap_beta_desc_sc"] = "베이직: ##$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n##75%##의 성공률로 드릴이 고장날 때마다 기회를 ##1##번 얻습니다.\n\n에이스: ##$pro##\n상호작용을 하는 동안 ##더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 이동하거나 무기를 사용 및 조준을 할 수 있습니다.",
+			["menu_fire_trap_beta_desc_sc"] = "베이직: ##$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n##75%##의 성공률로 드릴이 고장날 때마다 기회를 ##1##번 얻습니다.\n\n에이스: ##$pro##\n상호작용을 하는 동안 ##더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
 
 
 			--}

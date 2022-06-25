@@ -1486,6 +1486,7 @@ function CharacterTweakData:_init_gangster(presets)
 	table.insert(self._enemy_list, "gangster")
 	
 	self.enforcer = deep_clone(self.gangster)
+	self.enforcer.tags = {"gangster", "custom", "special"}
 	self.enforcer.HEALTH_INIT = 250
 	self.enforcer.headshot_dmg_mul = 4.4375
 	self.enforcer.damage_resistance = presets.damage_resistance.tank
@@ -1497,6 +1498,12 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer.damage.explosion_damage_mul = 1.25
 	self.enforcer.damage.rocket_damage_mul = 2.5
 	self.enforcer.surrender = nil	
+	self.enforcer.unintimidateable = nil
+	self.enforcer.priority_shout = "g29"
+	self.enforcer.bot_priority_shout = "g29"
+	self.enforcer.priority_shout_max_dis = 3000
+	self.enforcer.silent_priority_shout = nil
+	self.enforcer.custom_shout = true		
 	self.enforcer.allowed_poses = {stand = true}
 	self.enforcer.crouch_move = false
 	self.enforcer.no_run_start = true
@@ -1511,6 +1518,7 @@ function CharacterTweakData:_init_gangster(presets)
 	table.insert(self._enemy_list, "enforcer")	
 	
 	self.enforcer_assault = deep_clone(self.enforcer)
+	self.enforcer_assault.tags = {"law", "custom", "special"}
 	self.enforcer_assault.access = "swat"
 	table.insert(self._enemy_list, "enforcer_assault")	
 end

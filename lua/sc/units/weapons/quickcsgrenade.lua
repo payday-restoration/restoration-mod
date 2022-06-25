@@ -25,10 +25,17 @@ function QuickCsGrenade:_setup_from_tweak_data()
 	end
 end
 
-function QuickCsGrenade:_play_sound_and_effects()
+-- Make teargas grenades bouncy
+local _play_sound_and_effects_original = QuickCsGrenade._play_sound_and_effects
+function QuickCsGrenade:_play_sound_and_effects(...)
 	local body = self._unit:body(0)
+	if not body then
+		return _play_sound_and_effects_original(self, ...)
+	end
+	
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)		
+
 	if self._state == 1 then
 		local pos = self._unit:position()
 		mvector3.set_z(pos, pos.z + 100)
@@ -50,27 +57,26 @@ function QuickCsGrenade:_play_sound_and_effects()
 			position = self._unit:position(),
 			normal = self._unit:rotation():y()
 		})
-
-		local parent = self._unit:orientation_object()
+		
 		if difficulty_index == 8 then
 			self._smoke_effect = World:effect_manager():spawn({
 				effect = Idstring("effects/particles/explosions/cs_grenade_smoke_ds_sc"),
-				parent = parent
+				parent = self._unit:orientation_object()
 			})
 		else
 			self._smoke_effect = World:effect_manager():spawn({
 				effect = Idstring("effects/particles/explosions/cs_grenade_smoke_sc"),
-				parent = parent
-			})			
-		end
+				parent = self._unit:orientation_object()
+			})		
+		end		
 
 		managers.environment_controller:set_blurzone(self._unit:key(), 1, self._unit:position(), self._radius * self._radius_blurzone_multiplier, 0, true)
 
 		body:push_at(body:mass(), math.UP * 100, self._unit:position() + Vector3(math.rand(-10, 10), math.rand(-10, 10), math.rand(-10, 10)))
 
-		self._unit:sound_source():post_event("grenade_gas_explode")		
+		self._unit:sound_source():post_event("grenade_gas_explode")
 	end
-end	
+end
 
 function QuickCsGrenade:_do_damage()
 	local player_unit = managers.player:player_unit()

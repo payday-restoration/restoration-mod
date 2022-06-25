@@ -17506,6 +17506,10 @@ function CharacterTweakData:character_map()
 		char_map.reapers = {
 			path = "units/pd2_mod_reapers/characters/",
 			list = {
+				"ene_security_1",
+				"ene_security_2",
+				"ene_security_3",
+				"ene_security_4",
 				"ene_cop_1",
 				"ene_cop_2",
 				"ene_cop_3",

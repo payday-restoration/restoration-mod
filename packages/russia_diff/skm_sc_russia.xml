@@ -1,4 +1,6 @@
 <table directory="assets">
+	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_reaper" force="false" />
+	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_reaper_df" force="false"/>
 	<!--AK102-->	
 	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_ak102/wpn_npc_ak102" load="false" force="false"/>
 	
@@ -30,7 +32,20 @@
 	<texture				path="units/pd2_dlc_mad/characters/shared_textures/pbf_nm" force="true" />
 	<texture				path="units/pd2_dlc_mad/characters/shared_textures/pbf_df" force="true" />
 	
-	<!--Reaper Security-->
+	<!--Reaper Security, just clones of the normal 'cops' for the sake of scripted spawn access flags. They function the exact same otherwise-->
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_1/ene_security_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_1/ene_security_1_husk" force="false" load="true"/>	
+	
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_2/ene_security_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_2/ene_security_2_husk" force="false" load="true"/>	
+
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_3/ene_security_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_3/ene_security_3_husk" force="false" load="true"/>
+
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_4/ene_security_4" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_security_4/ene_security_4_husk" force="false" load="true"/>
+	
+	<!--Reaper Cops-->
 	<!--Glock-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1" load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1_husk" load="true"/>	
@@ -62,18 +77,6 @@
 	<model				path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4_contour" />
-	
-	<!--Akan Bronco guy-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc_husk" load="true"/>
-	
-	<!--Akan Glock lad-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc_husk" load="true"/>
-	
-	<!--Akan "SMG" cop-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc_husk" load="true"/>
 
 	<!--Akan HRT-->
 	<unit  				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" load="true" force="false"/>

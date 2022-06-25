@@ -1520,6 +1520,8 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer_assault = deep_clone(self.enforcer)
 	self.enforcer_assault.tags = {"law", "custom", "special"}
 	self.enforcer_assault.access = "swat"
+	self.enforcer_assault.speech_prefix_p1 = self._prefix_data_p1.cloaker()
+	self.enforcer_assault.speech_prefix_count = nil
 	table.insert(self._enemy_list, "enforcer_assault")	
 end
 

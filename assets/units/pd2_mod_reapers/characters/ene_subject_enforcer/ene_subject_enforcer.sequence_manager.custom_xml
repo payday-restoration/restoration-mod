@@ -18,7 +18,7 @@
 		<sequence editable_state="true" name="'int_seq_burn'" once="true" triggable="true">
 			<!-- todo: make custom particle effect for burning, add hissing noise when tank is on fire, set this guy on fire and play burn animations -->
 			<effect_spawner enabled="true" name="'es_fire'"/>
-			<sound action="'play'" event="'l1n_burnhurt'" object="'Hips'"/>
+			<sound action="'play'" event="'rclk_burnhurt'" object="'Hips'"/>
 			<sound action="'play'" event="'sound_methlab_stop'" object="'Hips'"/>
 			<run_sequence name="'int_seq_boom'" start_time="3"/>
 		</sequence>

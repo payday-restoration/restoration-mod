@@ -1,7 +1,7 @@
 <table>
 	<unit>
 		<sequence name="'shatter'" startup="true">
-			<sound action="'play'" event="'l1n_burndeath'" object="'c_sphere'"/>
+			<sound action="'play'" event="'rclk_burndeath'" object="'c_sphere'"/>
 		</sequence>
 	</unit>
 </table>

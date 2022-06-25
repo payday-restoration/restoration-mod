@@ -1318,6 +1318,12 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
 	
+	<!--Cap for Rappers-->
+	<unit				path="units/payday2/characters/ene_acc_red_cap_1/ene_acc_red_cap_1" force="false" load="true"/>
+	<object				path="units/payday2/characters/ene_acc_red_cap_1/ene_acc_red_cap_1" force="false"/>
+	<material_config	path="units/payday2/characters/ene_acc_red_cap_1/ene_acc_red_cap_1" force="false"/>	
+	<model				path="units/payday2/characters/ene_acc_red_cap_1/ene_acc_red_cap_1" force="false"/>
+	
 	<!--beret but green !?!??!!? this is truly awesome win core-->
 	<unit				path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false" load="false"/>
 	<object				path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false"/>

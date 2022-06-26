@@ -1169,6 +1169,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "근거리에서 효과적인 펠릿 타입.\n펠릿 수를 10개로 늘립니다.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "중거리에서 효과적인 펠릿 타입.\n펠릿 수를 6개로 줄입니다.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "원거리에서 효과적인 강력한 강철 슬러그탄.\n방탄복, 적, 방패, 타이탄 실드, 벽을 관통할 수 있습니다.",
+		--MP153
+		["bm_w_mp153"] = "Argos I 산탄총",		
 
 		
 	
@@ -2059,7 +2061,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "레스토레이션 모드는 각각 일반 퍽만 제공하거나 퍽은 제공하지 않는 두 개의 새로운 특성 덱(와일드카드 및 백지)을 추가했습니다. 이것은 스스로 부과한 도전을 하고 싶은 사람들을 위한 특성 덱입니다.",
 		["loading_equip_skills_res_32"] = "조준 매커니즘은 조준할 때 명중률의 이점을 얻으려면 완전히 조준해야 효과가 증가하도록 변경되었습니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
 		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 사용하면 무기를 사용하기가 번거로워집니다.",
-		["loading_equip_skills_res_34"] = "개머리판 근접 속도는 손에 든 무기의 영향을 받습니다.",
+		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은닉성에 영향을 받습니다.",
 		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",		
 		--Misc Hints
 		["loading_misc_res_title"] = "레스토레이션 기타 팁",

@@ -12415,7 +12415,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aknato.timers = deep_clone(self.akm.timers)
 	end	
 
-	if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
+	if self.smolak then --Gambyt's AK Dragon 5.45 Rifle
 		self.smolak.warsaw = true
 		self.smolak.categories = {"assault_rifle"}
 		self.smolak.use_data.selection_index = 2
@@ -12536,6 +12536,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.as24.fire_mode_data.fire_rate = 0.5
 		self.as24.CLIP_AMMO_MAX = 20
 		self.as24.AMMO_MAX = 20
+		self.as24.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.as24.supported = true
 		self.as24.ads_speed = 0.500
 		self.as24.damage_falloff = {
@@ -12562,6 +12563,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.as24.kick = self.stat_info.kick_tables.vertical_kick
 		self.as24.weapon_movement_penalty = 0.75
 	end
+
+	if self.mp153 then
+		self.mp153.recategorize = { "light_shot" }
+		self.mp153.damage_type = "shotgun"
+		self.mp153.damage_type_single_ray = "sniper"
+		self.mp153.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.mp153.sounds.stop_fire = "saiga_stop"
+		self.mp153.tactical_reload = 1
+		self.mp153.rays = 9
+		self.mp153.AMMO_MAX = 80
+		self.mp153.fire_mode_data.fire_rate = 0.12
+		self.mp153.kick = self.stat_info.kick_tables.moderate_kick
+		self.mp153.supported = true
+		self.mp153.ads_speed = 0.400
+		self.mp153.damage_falloff = {
+			start_dist = 1100,
+			end_dist = 3100,
+			min_mult = 0.5
+		}
+		self.mp153.stats = {
+			damage = 45,
+			spread = 31,
+			recoil = 51,
+			zoom = 1,
+			concealment = 21,
+			alert_size = 2,
+			suppression = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 7
+		}
+		self.mp153.stats_modifiers = nil
+		self.mp153.panic_suppression_chance = 0.05
+		self.mp153.reload_speed_multiplier = 1
+		self.mp153.timers.shotgun_reload_exit_empty = 1.65
+		self.mp153.timers.shotgun_reload_exit_not_empty = 0.75
+	end
+
+
+
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's funtionality) then it's a no-go outright

@@ -21284,6 +21284,148 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_as24_scope.custom_stats = { disable_steelsight_recoil_anim = true }
 	end
 
+	if self.parts.wpn_fps_shot_mp153_reciever then
+		self.parts.wpn_fps_upg_mp153_barrel_short.supported = true
+		self.parts.wpn_fps_upg_mp153_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_mp153_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+		self.parts.wpn_fps_upg_mp153_barrel_short.forbids = {}
+
+		self.parts.wpn_fps_upg_mp153_barrel_medium.supported = true
+		self.parts.wpn_fps_upg_mp153_barrel_medium.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_upg_mp153_barrel_medium.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+		self.parts.wpn_fps_upg_mp153_barrel_medium.forbids = {}
+
+		self.parts.wpn_fps_shot_mp153_tube_cap.supported = true
+		self.parts.wpn_fps_shot_mp153_tube_cap.stats = { value = 0 }
+
+		self.parts.wpn_fps_upg_mp153_tube_ext_2.supported = true
+		self.parts.wpn_fps_upg_mp153_tube_ext_2.has_description = nil
+		--self.parts.wpn_fps_upg_mp153_tube_ext_2.adds = { "wpn_fps_upg_mp153_tube_forbid_2" }
+		self.parts.wpn_fps_upg_mp153_tube_ext_2.stats = { 
+			value = 2,
+			extra_ammo = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_mp153_tube_ext_2.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+
+		self.parts.wpn_fps_upg_mp153_tube_ext_4.supported = true
+		self.parts.wpn_fps_upg_mp153_tube_ext_4.has_description = nil
+		self.parts.wpn_fps_upg_mp153_tube_ext_4.stats = { 
+			value = 4,
+			extra_ammo = 4,
+			concealment = -2
+		}
+		self.parts.wpn_fps_upg_mp153_tube_ext_4.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+
+		self.parts.wpn_fps_upg_mp153_tube_ext_6.supported = true
+		self.parts.wpn_fps_upg_mp153_tube_ext_6.has_description = nil
+		self.parts.wpn_fps_upg_mp153_tube_ext_6.stats = { 
+			value = 6,
+			extra_ammo = 6,
+			concealment = -3
+		}
+		self.parts.wpn_fps_upg_mp153_tube_ext_6.custom_stats = {
+			ads_speed_mult = 1.075
+		}
+
+		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.supported = true
+		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.desc_id = "bm_wp_upg_a_custom_desc"
+		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.stats = {
+			value = 9,
+			total_ammo_mod = -25,
+			damage = 15
+		}
+		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.custom_stats = {
+			falloff_start_mult = 0.75,
+			falloff_end_mult = 0.75,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
+			rays = 6
+		}
+		self.wpn_fps_shot_mp153.override = {
+			wpn_fps_upg_a_slug = {
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
+				supported = true,
+				stats = {
+					value = 10,
+					concealment = -2,
+					total_ammo_mod = -25,
+					damage = 15,
+					spread = 20,
+					spread_multi = {1, 1},	
+					recoil = -20,
+					moving_spread = 0
+				},
+				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
+					rays = 1,
+					armor_piercing_add = 1,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					falloff_start_mult = 2.00,
+					falloff_end_mult = 3.00,
+					ads_speed_mult = 1.10
+				}
+			},
+			wpn_fps_upg_a_custom = {
+				supported = true,
+				stats = {
+					value = 9,
+					total_ammo_mod = -25,
+					damage = 15
+				},
+				custom_stats = {
+					falloff_start_mult = 0.75,
+					falloff_end_mult = 0.75,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
+					rays = 6
+				}
+			},
+			wpn_fps_upg_a_custom_free = {
+				supported = true,
+				stats = {
+					value = 9,
+					total_ammo_mod = -25,
+					damage = 15
+				},
+				custom_stats = {
+					falloff_start_mult = 0.75,
+					falloff_end_mult = 0.75,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
+					rays = 6
+				}
+			},			
+			wpn_fps_upg_a_explosive = {
+				supported = true,
+				stats = {
+					value = 10,
+					concealment = -5,
+					total_ammo_mod = -50,
+					recoil = -25,
+					spread = 5,
+					spread_multi = {1, 1},	
+					damage = 45
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					rays = 1,
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			},
+			wpn_fps_upg_a_piercing = a_piercing_semi_override,
+			wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
+		}	
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

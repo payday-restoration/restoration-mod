@@ -1170,6 +1170,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Type of pellets effective at close range.\nIncreases pellet count to 10.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\nLowers pellet count to 6.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of piercing body armor, enemies, shields, titan shields, and walls.",
+		--MP153
+		["bm_w_mp153"] = "Argos I",
 
 
 			

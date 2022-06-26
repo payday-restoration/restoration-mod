@@ -804,7 +804,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_w_socom"] = "Пистолет Anubis .45",
 		["bm_w_x_socom"] = "Парные Anubis .45",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Комбинированный модуль 'Ра'",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Включается на кнопку $BTN_GADGET.",,
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Включается на кнопку $BTN_GADGET.",
 
 		--Ranted NMH
 		["heist_no_mercy_ranted_name"] = "Нет милосердию",
@@ -1110,7 +1110,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "TДробь, эффективная на средних дистанциях.\nКоличество дроби уменьшено до 6.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Мощная стальная пуля, эффективная на дальних дистанциях.\nПробивает броню, врагов, щиты, титановые щиты и стены.",
 		--MP153
-		["bm_w_mp153"] = "Дробовик Argos I"
+		["bm_w_mp153"] = "Дробовик Argos I",
 		
 		
 		--S552

@@ -199,7 +199,7 @@
 	</constraints>
 
 	<effects>
-		<effect_spawner name="es_fire" enabled="true" object="e_fire" effect="effects/payday2/environment/parts/thermal_fire" />
+		<effect_spawner name="es_fire" enabled="false" object="e_fire" effect="effects/payday2/environment/parts/thermal_fire" />
 	</effects>
 	
 	<decal_surfaces default_material="flesh" >

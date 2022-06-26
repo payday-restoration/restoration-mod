@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
+		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	</dependencies>
 
 	<extensions>
@@ -27,10 +28,11 @@
 			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
 			<var name="_head_gear" value="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg" />
+			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />
-			<var name="_anim_global" value="cop" />
+			<var name="_anim_global" value="shield" />
 		</extension>
 		<extension name="interaction" class="IntimitateInteractionExt" >
 			<var name="tweak_data" value="intimidate" />

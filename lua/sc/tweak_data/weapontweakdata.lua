@@ -5973,7 +5973,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksg.panic_suppression_chance = 0.05
 				self.ksg.reload_speed_multiplier = 0.9
 
-			--Reinfeld 88
+			--Reinfeld 88 (WHY IS THIS UNDER THE REMINGTON LABEL)
 				self.m1897.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.m1897.rays = 9
 				self.m1897.CLIP_AMMO_MAX = 5
@@ -6007,6 +6007,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--SECONDARIES
 
 			--Loco 12g
+				self.serbu.has_description = true
+				self.serbu.desc_id = "bm_serbu_sc_desc"
 				self.serbu.rays = 9
 				self.serbu.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.serbu.CLIP_AMMO_MAX = 4
@@ -8760,7 +8762,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Buzzsaw (MG42)
 				self.mg42.categories = {
 					"lmg",
-					"smg"
+					"smg",
+					"wolf_brigade"
 				}
 				self.mg42.sounds.fire = "mg42_fire"
 				self.mg42.sounds.fire_single = "mg42_fire"
@@ -12532,7 +12535,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.coltds.panic_suppression_chance = 0.05
 	end
 
-	if self.as24 then
+	if self.as24 then --Pawcio's A-24
 		self.as24.fire_mode_data.fire_rate = 0.5
 		self.as24.CLIP_AMMO_MAX = 20
 		self.as24.AMMO_MAX = 20
@@ -12564,7 +12567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.as24.weapon_movement_penalty = 0.75
 	end
 
-	if self.mp153 then
+	if self.mp153 then  --Pawcio's MP-153
 		self.mp153.recategorize = { "light_shot" }
 		self.mp153.damage_type = "shotgun"
 		self.mp153.damage_type_single_ray = "sniper"
@@ -12600,6 +12603,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mp153.reload_speed_multiplier = 1
 		self.mp153.timers.shotgun_reload_exit_empty = 1.65
 		self.mp153.timers.shotgun_reload_exit_not_empty = 0.75
+	end
+
+	if self.scarl then --Pawcio's SCAR-L
+		self.scarl.recategorize = { "light_ar" }
+		self.scarl.damage_type = "assault_rifle"
+		self.scarl.tactical_reload = 1
+		self.scarl.lock_slide = true
+		self.scarl.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.scarl.CLIP_AMMO_MAX = 30
+		self.scarl.AMMO_MAX = 120
+		self.scarl.FIRE_MODE = "auto"
+		self.scarl.fire_mode_data = {}
+		self.scarl.fire_mode_data.fire_rate = 0.096
+		self.scarl.CAN_TOGGLE_FIREMODE = true
+		self.scarl.kick = {}
+		self.scarl.kick = self.stat_info.kick_tables.moderate_kick
+		self.scarl.supported = true
+		self.scarl.ads_speed = 0.360
+		self.scarl.damage_falloff = {
+			start_dist = 2800,
+			end_dist = 6500,
+			min_mult = 0.3333
+		}	
+		self.scarl.stats = {
+			damage = 30,
+			spread = 86,
+			recoil = 87,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 21,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.scarl.stats_modifiers = nil
+		self.scarl.panic_suppression_chance = 0.05
+		self.scarl.timers = deep_clone(self.new_m4.timers)
 	end
 
 

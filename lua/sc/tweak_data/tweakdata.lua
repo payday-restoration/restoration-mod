@@ -40,6 +40,9 @@ tweak_data.lmg = {
 	moving_spread_mult = 3.3333,
 	hipfire_spread_mult = 3.3333
 }
+tweak_data.wolf_brigade = {
+	hipfire_spread_mult = 0.5
+}
 tweak_data.minigun = {
 	swap_bonus = 0.9,
 	ads_move_speed_mult = 0.3,

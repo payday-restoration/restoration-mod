@@ -1547,8 +1547,8 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_repeat_expire_t_add = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
 	local melee_miss_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_repeat_expire_t or 0
 	local weap_base = self._equipped_unit:base():weapon_tweak_data()
-	local weap_t = 1 * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
-	weap_t = math.clamp(weap_t, 0.75, 1)
+	local weap_t = 1 * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment()]
+	weap_t = math.clamp(weap_t, 0.7, 1.05)
 	if instant_hit and weap_t then
 		speed = speed * weap_t
 	end
@@ -1617,9 +1617,9 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
 		log(tostring(speed))
 		if hit then
-			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_bayonet") or self:get_animation("melee"), math.clamp(speed, 0.75, 1.1))
+			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_bayonet") or self:get_animation("melee"), math.clamp(speed, 0.7, 1.1))
 		else
-			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_miss_bayonet") or self:get_animation("melee_miss"), math.clamp(speed, 0.75, 1.1))
+			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_miss_bayonet") or self:get_animation("melee_miss"), math.clamp(speed, 0.7, 1.1))
 		end
 
 		if can_melee_miss and not hit then 

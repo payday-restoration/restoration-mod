@@ -1090,38 +1090,34 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Gecko Pistol
 		["bm_tranq_maxim_sc_desc"] = "The world's first integrally suppressed pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\nDeals damage over time with tranquilizer rounds.",
 		["bm_tranq_x_maxim_sc_desc"] = "The world's first integrally suppressed pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\nDeals damage over time with tranquilizer rounds.",
-		
 		--Igor (APS)
 		["bm_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
 		["bm_x_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
-
 		--Chimano Compact
 		["bm_jowi_sc_desc"] = "A Chimano that's configured to take concealment to the extreme at the cost of almost everything else.\n\nRumors say that Wick used this when seeking vengeance against the Russian mob.",
 		["bm_x_jowi_sc_desc"] = "When they're this small, why not carry two? An akimbo pairing that incorrectly gets attributed to as Wick's personal choice.",
-
 		--Glock 18c
 		["bm_g18c_sc_desc"] = "Fully automatic Austrian spraygun. Difficult to control, but at close range is absolutely devastating.",
 		["bm_x_g18c_sc_desc"] = "If one was a bullet hose, carrying two may as well be a storm. Mind the recoil!",
-
 		--CZ 75
 		["bm_czech_sc_desc"] = "One of the Wonder Nines, a machine pistol with fine ergonomics and handling. Used by counter terrorist forces all over the world.",
 		["bm_x_czech_sc_desc"] = "Another example of how not to use a machine pistol. How can you even comfortably reload the things?",
-
 		--Glock 17
 		["bm_g17_sc_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
 		["bm_x_g17_sc_desc"] = "Making up for puny 9mm by sheer amount of firepower and still taking advantage of low recoil.\n\nHoxton's choice when we busted him out.",
-
 		--Bernetti 9
 		["bm_b92fs_sc_desc"] = "A popular firearm due to an impressive magazine capacity and decent damage. Especially handy for confrontations with numerous antagonists.",
 		["bm_x_b92fs_sc_desc"] = "Two pistols are better than one. Another way to turn any engagement into a 9mm party.",
-
 		--93R
 		["bm_beer_sc_desc"] = "A borderline fictional piece of select-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.",
-				
 		--Baby Deagle--
 		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
+		--Crosskill
+		["bm_w_colt_1911"] = "Crosskill Operator Pistol",
+		--Crosskill Chunky
+		["bm_w_m1911"] = "Crosskill A1 Pistol",
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
 		--Broomstick--
@@ -1131,7 +1127,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "The greatest handgun ever made.\nAlt-fire allows for fanning the hammer to deliver a flurry of rounds.\n\nCan penetrate body armor, shields and thin walls",
 		--CUSTOM HANDGUNS
+		--Browning Hi-Power
+		["bm_w_hpb"] = "VF Hi-Power Pistol",
+		--Derringer
+		["bm_w_derringer"] = "Derringer Pistol",
+		--Automag .44
+		["bm_w_amt"] = "Automag .44 Pistol",
 		--Colt Detective
+		["bm_w_coltds"] = "Crosskill Investigator Revolver",
 		["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\nDeals double damage when attacking enemies from behind.",
 
 
@@ -1165,14 +1168,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_spas12_sc_desc"] = "A heavier and more complicated alternative to other semi-auto shotguns, features an almost alien alternative firing mode.",
 		--Benelli
 		["bm_benelli_sc_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
+		--Loco
+		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and have a desire to destroy their wrists.",
+		--Reinfeld 88
+		["bm_w_m1897"] = "Repeater 1897 Shotgun",
 		--Custom Shotguns
 		--Doomstick
+		["bm_w_quadbarrel"] = "Doomstick Shotgun",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Type of pellets effective at close range.\nIncreases pellet count to 10.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\nLowers pellet count to 6.",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of piercing body armor, enemies, shields, titan shields, and walls.",
 		--MP153
 		["bm_w_mp153"] = "Argos I Shotgun",
-
 
 			
 		--S552
@@ -1193,6 +1200,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_w_xeno"] = "MA14 Surge Rifle",	
 		["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an integrated grenade launcher.\n\nPress $BTN_BIPOD to switch to the grenade launcher.",	
 		["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an integrated grenade launcher.\n\nHold $BTN_BIPOD to switch to the grenade launcher.",
+
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
@@ -1215,10 +1223,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",	
 		--CR 805
 		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",		
-		-- CUSTOM 48 DAMAGE ARs
+		--CUSTOM 48 DAMAGE ARs
 		--AN-94/92
 		["bm_w_an94"] = "KVK-99 Rifle",
 		["bm_an94_sc_desc"] = "The first 2 rounds of each trigger pull fire at 3x the rate of fire.",
+
 
 		--AMR-16
 		["bm_m16_sc_desc"] = "This classic rifles serves as the predecessor to the CAR-4. What it lacks in concealability it makes up for in power.",
@@ -1241,6 +1250,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 		--Akimbo Krinkov
 		["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+		--CUSTOM 60 DAMAGE ARs
+		--SCAR-L
+		["bm_w_scarl"] = "Eagle Light Rifle",
+
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg Light Machine Gun",
@@ -1300,13 +1313,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
 		["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to 950 RPM at the cost of recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.",
 
+
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\nCan penetrate body armor, shields and thin walls.",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
 		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\nCan penetrate body armor, shields and thin walls.",
-
+		--Rangerhitter
+		["bm_w_sbl"] = "Rangehitter MK2 Sniper Rifle", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		--SVD
 		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle.\n\nCan penetrate body armor, shields and thin walls.",
 		--Mosin--
@@ -1321,6 +1336,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
 		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
 		["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
+		--Marlin 1894
+		["bm_w_m1894"] = "Mare's Leg Sniper Rifle",
+		--SPX Centerfire
+		["bm_w_moss464spx"] = "Mosconi SPX Sniper Rifle",
+		--Winchester 1894
+		["bm_w_winchester1894"] = "Repeater 1894 Sniper Rifle",
 
 		--3GL
 		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber using special technology, allowing for rapid follow-ups in a compact package.\n\nAlt-fire allows for firing off an entire stack.",

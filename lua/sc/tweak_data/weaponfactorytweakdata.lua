@@ -4281,6 +4281,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		concealment = -1,
 		extra_ammo = 2
 	}
+	self.parts.wpn_fps_shot_r870_m_extended.custom_stats = {
+		ads_speed_mult = 1.025
+	}
 	
 	--Muldon Stock
 	self.parts.wpn_fps_shot_r870_s_folding.pcs = {
@@ -4455,6 +4458,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		value = 1, 
 		extra_ammo = 2, 
 		concealment = -1
+	}
+	self.parts.wpn_fps_shot_shorty_m_extended_short.custom_stats = {
+		ads_speed_mult = 1.025
 	}
 
 	--Tactical Shorty Stock
@@ -15320,6 +15326,8 @@ end)
 --Bernetti Rangerhitter
 Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 
+	self.parts.wpn_fps_snp_sbl_body_standard.forbids = { "wpn_fps_addon_ris" }
+
 	--BIG Barrel
 	self.parts.wpn_fps_snp_sbl_b_long.pcs = {
 		10,
@@ -21267,7 +21275,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 	end
 
-	if self.parts.wpn_fps_gre_as24_barrel then
+	if self.parts.wpn_fps_gre_as24_barrel then  --Pawcio's A-24
 		self.parts.wpn_fps_upg_as24_stock_ext.supported = true
 		self.parts.wpn_fps_upg_as24_stock_ext.stats = deep_clone(stocks.folded_to_adj_rec1)
 		self.parts.wpn_fps_upg_as24_stock_ext.custom_stats = deep_clone(stocks.folded_to_adj_rec1)
@@ -21284,7 +21292,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_as24_scope.custom_stats = { disable_steelsight_recoil_anim = true }
 	end
 
-	if self.parts.wpn_fps_shot_mp153_reciever then
+	if self.parts.wpn_fps_shot_mp153_reciever then  --Pawcio's MP-153
 		self.parts.wpn_fps_upg_mp153_barrel_short.supported = true
 		self.parts.wpn_fps_upg_mp153_barrel_short.stats = deep_clone(barrels.short_b3_stats)
 		self.parts.wpn_fps_upg_mp153_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
@@ -21424,6 +21432,24 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			wpn_fps_upg_a_piercing = a_piercing_semi_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
 		}	
+	end
+
+
+	if self.parts.wpn_fps_ass_scarl_barrel then  --Pawcio's SCAR-L
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_straight")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_straight")
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_pmag")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_pmag")
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_ass_l85a2_m_emag")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_ass_l85a2_m_emag")
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_l5")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_l5")
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_quad")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_quad")
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_drum")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_drum")	
+		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_m4_upg_m_quick")	
+		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_m4_upg_m_quick")	
 	end
 
 --Resmod Custom Weapon stuff

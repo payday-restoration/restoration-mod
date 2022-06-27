@@ -229,8 +229,6 @@
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
 	
-	<unit				path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>	
-	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" />	
 	
 	<!--Titan HRT-->	

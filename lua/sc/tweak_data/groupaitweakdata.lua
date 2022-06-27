@@ -11442,7 +11442,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},                            
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),    
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"),    
 				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			federales = {

@@ -606,6 +606,7 @@
     <Package id="packages/skm_sc_lapd" file="packages/lapd_diff/skm_sc_lapd.xml"/>
 	<Package id="packages/skm_sc_fbi" file="packages/fbi_diff/skm_sc_fbi.xml"/>
 	<Package id="packages/skm_sc_russia" file="packages/russia_diff/skm_sc_russia.xml"/>
+	<Package id="packages/skm_sc_zombie" file="packages/zombie_diff/skm_sc_zombie.xml"/>
 	<Package id="packages/skm_sc_murkywater" file="packages/murkywater_diff/skm_sc_murkywater.xml"/>
     <Package id="packages/skm_sc_federales" file="packages/federales_diff/skm_sc_federales.xml"/>
 	

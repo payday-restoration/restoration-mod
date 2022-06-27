@@ -7978,6 +7978,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		--Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"
 	end
+	--SF heists, replace LAPD beat cops with SFPD ones
+	if job == "chas" or job == "sand" or job == "chca" or job == "pent" then
+		--Assorted Beat Cops
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[3] = "units/pd2_dlc_chas/characters/ene_male_chas_police_04/ene_male_chas_police_04"
+		--Pistol + MP5 only
+		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"
+		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03"	
+		--Shotgun 
+		self.unit_categories.CS_cop_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_04/ene_male_chas_police_04"
+		--Bronco (Heh)
+		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"
+	end
 	
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then		
 		self.unit_categories.TIT_tank = {

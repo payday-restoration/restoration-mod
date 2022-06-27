@@ -232,7 +232,25 @@
 	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03_husk" load="true"/>	
 	
 	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04" load="true"/>
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04_husk" load="true"/>		
+	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04_husk" load="true"/>	
+	<!--SFPD Beat Cops-->
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01" load="true" force="true" />
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01_husk" load="true" force="true" />	<!--that husk cop literally had swat access and used mp5-->
+	<object				path="units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01" force="true" />	
+	<model				path="units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01" force="true" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01" force="true" />	
+
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02" load="true" force="true" />
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_ranc_ranger_02_husk" load="true" force="true" /> <!--that husk cop literally had swat access and used mp5 as well. Thank you Denka, very cool-->	
+	<object				path="units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02" force="true" />	
+	<model				path="units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02" force="true" />
+	<material_config	path="units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02" force="true" />
+	
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03" load="true"/>
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03_husk" load="true"/>	
+	
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_04/ene_male_chas_police_04" load="true"/>
+	<unit				path="units/pd2_dlc_chas/characters/ene_male_chas_police_04/ene_male_chas_police_04_husk" load="true"/>
 	
 	<!--this is only for giving them the bolivian_indoors preset-->
 	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1" load="true" force="true" />

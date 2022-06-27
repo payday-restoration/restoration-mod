@@ -11,14 +11,6 @@
 	<!--PL14-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14" load="false" force="false"/>
 	
-	<!--AK12-->	
-	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12" load="false" force="false"/>	
-	<object				path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12" force="false"/>
-	<model				path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12" force="false"/>
-	<material_config	path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12" force="false"/>
-	<texture			path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_df" />
-	<texture			path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_nm" />
-	
 	<!-- textures -->
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_cop_atlas_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_cop_atlas_nm" />

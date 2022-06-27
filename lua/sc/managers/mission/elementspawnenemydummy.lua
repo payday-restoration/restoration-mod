@@ -2897,7 +2897,7 @@ local russia_zeal = {
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
-		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_reapers/characters/ene_zeal_heavy_swat/ene_zeal_heavy_swat",
+		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 		["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_reapers/characters/ene_zeal_heavy_swat_r870/ene_zeal_heavy_swat_r870",
 		["units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "units/pd2_mod_reapers/characters/ene_zeal_heavy_swat_r870/ene_zeal_heavy_swat_r870",
 		

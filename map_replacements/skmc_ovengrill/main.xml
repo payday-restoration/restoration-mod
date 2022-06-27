@@ -4,7 +4,7 @@
 		<texture load="true" path="guis/textures/hotfix_loading"/>
 	</AddFiles>
 	<Localization default="english.txt" directory="loc"/>
-	<level ai_group_type="zombie" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skmc_ovengrill" intro_event="Play_loc_skm_intro" music_ext_start="heist" narrator="locke" wave_count="9">
+	<level ai_group_type="america" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skmc_ovengrill" intro_event="Play_loc_skm_intro" music_ext_start="heist" narrator="locke" wave_count="9">
 		<Hooks/>
 		<add file="levels/skmc_ovengrill/add.xml"/>
 		<assets/>
@@ -17,7 +17,7 @@
 			<value_node value="levels/narratives/skm/skm_mus/world_sounds"/>
 			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
 			<value_node value="levels/narratives/e_framing_frame/stage_3/world/world"/>
-			<value_node value="packages/skm_sc_zombie"/>
+			<value_node value="packages/skm_sc_america"/>
 			<value_node value="levels/narratives/e_election_day/stage_3/world/world"/>
 			<value_node value="levels/narratives/short2/stage1/nightclub_interior/nightclub_interior"/>
 			<value_node value="levels/narratives/bain/shadow_raid/editor_only/editor_only"/>

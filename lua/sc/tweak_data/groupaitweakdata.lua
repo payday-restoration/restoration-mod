@@ -7980,18 +7980,18 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		
 		--US Marshals
 		if difficulty_index <= 4 then
-			self.unit_categories.FBI_heavy_R870.unit_types.nypd[20] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[20] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
 		elseif difficulty_index == 5 then
-			self.unit_categories.FBI_heavy_R870.unit_types.nypd[10] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[10] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
 		elseif difficulty_index == 6 or difficulty_index == 7 then
-			self.unit_categories.FBI_heavy_R870.unit_types.nypd[28] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
-			self.unit_categories.FBI_heavy_R870.unit_types.nypd[29] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
-			self.unit_categories.FBI_heavy_R870.unit_types.nypd[30] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
-			self.unit_categories.GS_heavy_R870.unit_types.nypd[28] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
-			self.unit_categories.GS_heavy_R870.unit_types.nypd[29] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
-			self.unit_categories.GS_heavy_R870.unit_types.nypd[30] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"			
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[28] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[29] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[30] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[28] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[29] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[30] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"		
 		else
-			self.unit_categories.GS_heavy_R870.unit_types.nypd[5] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[5] = "units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"
 		end
 	end
 	--SF heists, replace LAPD beat cops with SFPD ones

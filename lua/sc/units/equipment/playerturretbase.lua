@@ -1,5 +1,6 @@
 --Simpler spread function. Determines area bullets can hit then converts that to the max degrees by which the rays can fire.
-function PlayerTurretBase :_get_spread(user_unit)
+function PlayerTurretBase :_get_spread()
+	local user_unit = self._setup.user_unit
 	local current_state = user_unit:movement()._current_state
 	
 	if not current_state then

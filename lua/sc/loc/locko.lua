@@ -1089,39 +1089,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Gecko Pistol
 		["bm_tranq_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 잡기 편하고 쇠약하게 하는 마취탄과 함께 은닉성이 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",
-		["bm_tranq_x_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 잡기 편하고 쇠약하게 하는 마취탄과 함께 은닉성이 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",
-		
+		["bm_tranq_x_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 잡기 편하고 쇠약하게 하는 마취탄과 함께 은닉성이 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",		
 		--Igor (APS)
 		["bm_stech_sc_desc"] = "더 무겁고 느린 발사가 가능한 기관권총으로, 방해로 인해 인기를 잃었습니다. 이 무기의 무게는 은닉성을 희생시키면서 더 나은 반동 제어를 얻습니다.",
 		["bm_x_stech_sc_desc"] = "더 무겁고 느린 발사가 가능한 기관권총으로, 방해로 인해 인기를 잃었습니다. 이 무기의 무게는 은닉성을 희생시키면서 더 나은 반동 제어를 얻습니다.",
-
 		--Chimano Compact
 		["bm_jowi_sc_desc"] = "거의 모든 것을 희생시키면서 은닉성을 극도로 확보하게 구성된 Chimano 권총입니다.\n\n소문에 따르면 윅은 러시아 마피아에 대한 복수극을 할 때 이 권총을 사용했다고 합니다.",
 		["bm_x_jowi_sc_desc"] = "이렇게 작은데 어떻게 두 개씩 들고 다니지 않겠습니까? 윅 개인이 선택했지만 잘못 선택된 아킴보 쌍둥이입니다.",		
-
 		--Glock 18c
 		["bm_g18c_sc_desc"] = "오스트리아산 완전 자동 스프레이건. 반동 잡기 어렵지만 근거리에서는 절대적으로 파괴적입니다.",
 		["bm_x_g18c_sc_desc"] = "하나가 총알 호스라면 두 개를 들고 다니는 건 폭풍이 될 수 있습니다. 반동만 조심하면 됩니다!",
-
 		--CZ 75
 		["bm_czech_sc_desc"] = "인체 공학과 핸들링이 뛰어난 기관권총, 원더 나인들 중 하나입니다 또한 전 세계의 대테러군이 사용합니다.",
 		["bm_x_czech_sc_desc"] = "기관권총을 사용하지 않는 방법의 또 다른 예시입니다. 어떻게 이 권총들을 편안하게 재장전할 수 있습니까?",
-
 		--Glock 17
 		["bm_g17_sc_desc"] = "반동을 제어하기 쉽고 신뢰할 수 있는 권총입니다. 하이스트 경력을 시작하기에 완벽한 보조 무기입니다.",
 		["bm_x_g17_sc_desc"] = "9mm의 작은 화력을 만회하고 여전히 낮은 반동이 장점입니다.\n\n우리가 혹스턴을 탈옥 시켰을 때 혹스턴의 선택한 권총들입니다.",
-
 		--Bernetti 9
 		["bm_b92fs_sc_desc"] = "인상적인 탄창 용량과 어지간한 피해량으로 인해 인기 있는 총기입니다. 특히 수많은 적들과의 대결할때 유용합니다.",
 		["bm_x_b92fs_sc_desc"] = "두 개의 권총이 하나보다 낫을 수 있습니다. 교전을 9mm 파티로 바꿀때 사용되는 또 다른 방법입니다.",
-
 		--93R
-		["bm_beer_sc_desc"] = "누구의 움직임인지 알아내기 위해 소름이 돋을 것 같은 발사간 조정 하드웨어의 경계선 허구된 조각입니다. 죽든 말든 나와 함께 간다.",
-		
+		["bm_beer_sc_desc"] = "누구의 움직임인지 알아내기 위해 소름이 돋을 것 같은 발사간 조정 하드웨어의 경계선 허구된 조각입니다. 죽든 말든 나와 함께 간다.",		
 		--Baby Deagle--
 		["bm_w_sparrow_sc_g_cowboy_desc"] = "당신은 이 무게로도 들 수 있을 겁니다.",
 		--socom deez nuts--
-		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",		
+		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
+		--Crosskill
+		["bm_w_colt_1911"] = "Crosskill Operator 권총",
+		--Crosskill Chunky
+		["bm_w_m1911"] = "Crosskill A1 권총",		
 		--Crosskill Guard
 		["bm_shrew_g_bling_sc_desc"] = "고통과 부정으로 가득한 세상에서 어둠 속에 빛이 있다는 것을 아는 것은 결국엔 큰 위안이 될 것입니다.",
 		--Broomstick--
@@ -1131,7 +1127,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "인류 최고의 권총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다. 그리고 발사 모드를 전환하면 해머를 패닝하여 많은 총알을 날립니다.",
 		--CUSTOM HANDGUNS
+		--Browning Hi-Power
+		["bm_w_hpb"] = "VF Hi-Power 권총",
+		--Derringer
+		["bm_w_derringer"] = "Derringer 권총",
+		--Automag .44
+		["bm_w_amt"] = "Automag .44 권총",		
 		--Colt Detective
+		["bm_w_coltds"] = "Crosskill Investigator 리볼버",	
 		["bm_lemon_dmc_desc"] = "숨길 수 있는 고성능 리볼버을 들고 있는 자신을 상상해 보십시오. 이제 더 이상 상상하지 마십시오. 수사관이 바로 그런 사람이기 때문입니다.\n\n적의 뒤에서 공격 시 2배의 피해를 줍니다.",		
 
 		--Kobus 90--
@@ -1164,6 +1167,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_spas12_sc_desc"] = "다른 반자동 산탄총에 비해 더 무겁고 복잡한 무기로 거의 외계인에 가까운 대체 발사 모드를 제공합니다.",
 		--Benelli
 		["bm_benelli_sc_desc"] = "최상급 전술 산탄총. 특히 적들이 붐비는 방을 청소하는 데 적합합니다.",
+		--Loco
+		["bm_serbu_sc_desc"] = "크기가 축소된 Reinfeld 880 산탄총의 애프터마켓 버전. 은닉성을 원하고 손목을 파괴하고 싶은 사람들을 위한 산탄총입니다.",
+		--Reinfeld 88
+		["bm_w_m1897"] = "Repeater 1897 산탄총",		
 		--Custom Shotguns
 		--Doomstick
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "근거리에서 효과적인 펠릿 타입.\n펠릿 수를 10개로 늘립니다.",
@@ -1171,7 +1178,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "원거리에서 효과적인 강력한 강철 슬러그탄.\n방탄복, 적, 방패, 타이탄 실드, 벽을 관통할 수 있습니다.",
 		--MP153
 		["bm_w_mp153"] = "Argos I 산탄총",		
-
 		
 	
 		--S552
@@ -1192,6 +1198,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_w_xeno"] = "MA14 Surge Rifle",	
 		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. 통합 유탄 발사기가 장착되어 있습니다.\n\n$BTN_BIPOD 키를 눌러 통합 유탄 발사기로 전환합니다.",	
 		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. 통합 유탄 발사기가 장착되어 있습니다.\n\n$BTN_BIPOD 키를 꾹 눌러 통합 유탄 발사기로 전환합니다.",		
+
 			
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. 20mm 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 늘러 유탄 발사기로 전환합니다.",
@@ -1215,10 +1222,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CR 805
 		["bm_menu_sc_hajk_desc"] = "고전적고 더 젊고 현대적인 총알 호스 코브라의 사촌입니다. 이 총은 목표를 잡을 수 없다면 그걸 위한 다양한 발사 모드와 점사 전환 기능을 갖추고 있습니다.",
 
-		-- CUSTOM 48 DAMAGE ARs
+		--CUSTOM 48 DAMAGE ARs
 		--AN-94/92
 		["bm_w_an94"] = "KVK-99 소총",		
 		["bm_an94_rof_init_sc_desc"] = "각 방아쇠의 처음 2발은 발사 속도의 3배로 발사합니다.",		
+
 		
 		--AMR-16
 		["bm_m16_sc_desc"] = "CAR-4의 전신입니다.",
@@ -1237,7 +1245,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",
 		
 		--Akimbo Krinkov
-		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",		
+		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",
+		--CUSTOM 60 DAMAGE ARs
+		--SCAR-L
+		["bm_w_scarl"] = "Eagle Light 소총",
+		
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg 경기관총",
@@ -1283,7 +1295,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",		
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
-		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 자매, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 자매, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
+		
+		["bm_w_galil"] = "Defender 7.62 소총",
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
 		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
@@ -1298,6 +1312,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_xr2_handle_01_sc_desc"] = "자동 점사를 완전 자동 사격으로 바꾸는 대신 점사 발사 속도 증가가 없어집니다.",
 		["bm_wp_xr2_handle_02_sc"] = "속사 사격 노리쇠",
 		["bm_xr2_handle_02_sc_desc"] = "점사 중 반동 완화를 대가로 점사 발사 속도를 950으로 증가시킵니다.\n\n점사 지연과 반자동 발사 속도에는 영향을 받지 않습니다.",		
+		
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 저격소총",
@@ -1305,7 +1320,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 저격소총",
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총 중 불과 몇 백 개만 만들어졌습니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
-		
+		--Rangerhitter
+		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"		
 		--SVD
 		["bm_siltstone_sc_desc"] = "고성능 반자동 저격 소총.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		--Mosin--
@@ -1320,7 +1336,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m107cq_sc_desc"] = "Thanatos의 발사속도가 마음에 들지 않았다면 Mors는 당신이 원하는 것을 미세한 붉은 안개로 전달할 것입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_w_m200"] = "TF-141 대물 저격소총",
 		["bm_m200_sc_desc"] = "멋진 360도 노 스코프 사다리 스톨 샷을 시도할려는 사람들을 위한 총입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",		
-
+		--Marlin 1894
+		["bm_w_m1894"] = "Mare's Leg 저격소총",
+		--SPX Centerfire
+		["bm_w_moss464spx"] = "Mosconi SPX 저격소총",
+		--Winchester 1894
+		["bm_w_winchester1894"] = "Repeater 1894 저격소총",
+		
 		--3GL
 		["bm_ms3gl_sc_desc"] = "특수 기술을 사용한 단일 챔버에 쌓인 맞춤형 40mm 유탄을 발사하여 좁은 공간에서 신속한 후속 조치를 가능하게 합니다.\n\n설정 발사를 사용하면 모든 탄을 발사할 수 있습니다.",
 		--COMMANDO 101/M202 FLASH

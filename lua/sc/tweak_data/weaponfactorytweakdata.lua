@@ -11549,7 +11549,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 			translation = Vector3(0, -4, 1.17)
 		},
 		wpn_fps_ass_famas = {
-			translation = Vector3(0, -4, 1.17)
+			translation = Vector3(0, -6, -5.8)
 		}
 	}
 

@@ -31,6 +31,17 @@
 		</search>
 		<target mode="replace"/>
 	</tweak>
+	<!-- Dodge animation displacement fix -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/crouch/still/idle"/>
+			<from name="std/dodge"/>
+		</search>
+		<target mode="attributes">
+			<attr name="blend" value="1"/>
+		</target>
+	</tweak>
 	<!-- has to be done twice -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>

@@ -210,13 +210,10 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.fbi_female = security_variant
 	CopBrain._logic_variants.hrt = security_variant
 	CopBrain._logic_variants.fbi_swat_vet = security_variant
-	CopBrain._logic_variants.hrt_titan = security_variant
 	CopBrain._logic_variants.city_swat_guard = security_variant
-	CopBrain._logic_variants.city_swat_titan = security_variant
 	CopBrain._logic_variants.city_swat_titan_assault = security_variant
 	CopBrain._logic_variants.skeleton_swat_titan = security_variant
 	CopBrain._logic_variants.weekend = security_variant
-	CopBrain._logic_variants.weekend_lmg = security_variant
 	CopBrain._logic_variants.boom_summers = security_variant
 	CopBrain._logic_variants.taser_summers = clone(security_variant)
 	CopBrain._logic_variants.medic_summers = security_variant
@@ -251,7 +248,6 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.headless_hatman.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
-	CopBrain._logic_variants.omnia_lpf = security_variant
 	CopBrain._logic_variants.tank_biker = clone(security_variant)
 	CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
 	CopBrain._logic_variants.biker_guard = security_variant
@@ -272,6 +268,14 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.weekend_dmr.attack = MarshalLogicAttack
 	CopBrain._logic_variants.boom = clone(security_variant)
 	CopBrain._logic_variants.boom.attack = MarshalLogicAttack
+	CopBrain._logic_variants.hrt_titan = clone(security_variant)
+	CopBrain._logic_variants.hrt_titan.attack = MarshalLogicAttack	
+	CopBrain._logic_variants.omnia_lpf = clone(security_variant)
+	CopBrain._logic_variants.omnia_lpf.attack = MarshalLogicAttack		
+	CopBrain._logic_variants.city_swat_titan = clone(security_variant)
+	CopBrain._logic_variants.city_swat_titan.attack = MarshalLogicAttack
+	CopBrain._logic_variants.weekend_lmg = clone(security_variant)
+	CopBrain._logic_variants.weekend_lmg.attack = MarshalLogicAttack		
 	
 	--Set up boss logics
 	CopBrain._logic_variants.mobster_boss = CopBrain._logic_variants.triad_boss

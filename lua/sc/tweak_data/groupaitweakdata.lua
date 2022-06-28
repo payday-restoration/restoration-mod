@@ -7964,8 +7964,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	end
 	
 	--Beat Cop overrides
-	--Texas heists, replace NYPD beat cops with Texas state troopers
-	if job == "ranc" then
+	--Texas heists, replace NYPD beat cops with Texas state troopers and Titan Snipers with US Marshals
+	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
 		--Assorted Beat Cops
 		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"
 		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03"
@@ -7977,9 +7977,25 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_cop_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
 		--Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"
+		
+		--US Marshals
+		if difficulty_index <= 4 then
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[20] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+		elseif difficulty_index == 5 then
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[10] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+		elseif difficulty_index == 6 or difficulty_index == 7 then
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[28] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[29] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.FBI_heavy_R870.unit_types.nypd[30] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[28] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[29] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[30] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"			
+		else
+			self.unit_categories.GS_heavy_R870.unit_types.nypd[5] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+		end
 	end
 	--SF heists, replace LAPD beat cops with SFPD ones
-	if job == "chas" or job == "sand" or job == "chca" or job == "pent" then
+	if table.contains(restoration.needle, job) then
 		--Assorted Beat Cops
 		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"
 		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03"

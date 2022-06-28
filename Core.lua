@@ -305,6 +305,19 @@ function restoration:Init()
 		--"xmn_hox_1" --Xmas edition
 	}	
 	
+	--Sub Faction overrides
+	--Texas
+	restoration.yee_and_I_cannot_stress_this_enough_haw = {
+		"ranc"
+	}	
+	--San Francisco
+	restoration.needle = {
+		"chas",
+		"sand",
+		"chca",
+		"pent"
+	}		
+	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	
 	local environment_settings = { --edit this one

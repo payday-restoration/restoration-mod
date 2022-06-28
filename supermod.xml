@@ -8,5 +8,19 @@
 	<tweak definition="fps_animation_subset.xml" />
 	<tweak definition="std.animation_states"/>
 	<tweak definition="std.animation_subset"/>
+
+	<!-- Troublesome NPC assets go here! -->
+	<assets base_path="assets/">
+		<!-- character fixes and changes -->
+		<group name="units/" dyn_package="false">
+			<!-- yufu wang hitboxes -->
+			<group :name="pd2_dlc_pent/characters/npc_male_yufuwang_armored/">
+				<file :name="npc_male_yufuwang_armored.object"/>
+				<file :name="npc_male_yufuwang_armored.unit"/>
+				<file :name="npc_male_yufuwang_armored_husk.unit"/>
+			</group>
+		</group>
+	</assets>	
+	
 	<!-- <:include src="addoutfit.xml"/> -->
 </mod>

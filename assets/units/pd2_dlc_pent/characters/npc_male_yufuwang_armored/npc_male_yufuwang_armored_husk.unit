@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<unit type="being" slot="12">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
+	<object file="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored"/>
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx"/>
+		<depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_helmet"/>
+		<depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_neck"/>
+		<depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_rt_shldr"/>
+		<depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_lf_shldr"/>
+		<depends_on unit="units/pd2_dlc_pent/pickups/pent_pku_yufuwang_mask/pent_pku_yufuwang_mask"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData"/>
+		<extension name="base" class="HuskCopBase">
+			<var name="_tweak_table" value="triad_boss"/>
+			<var name="_default_weapon_id" value="flamethrower"/>
+			<var name="_stats_name" value="triad_boss"/>
+		</extension>
+		<extension name="inventory" class="HuskCopInventory"/>
+		<extension name="brain" class="HuskCopBrain"/>
+		<extension name="anim_data" class="PlayerAnimationData"/>
+		<extension name="character_damage" class="HuskBossDamage">
+			<var name="_head_body_name" value="head"/>
+			<var name="_health_sequences_array" type="table">
+				<var value="int_seq_shoulder_left_off"/>
+				<var value="int_seq_shoulder_right_off"/>
+				<var value="int_seq_neck_off"/>
+				<var value="int_seq_helmet_off"/>
+			</var>
+			<var name="_unique_death_req" type="table">
+				<var name="sequence" value="int_seq_mask_off"/>
+				<var name="can_fail_on_invalid_damage" value="true"/>
+				<var name="weapon_categories" type="table">
+					<var name="flamethrower" value="true"/>
+				</var>
+				<var name="damage_variants" type="table">
+					<var name="fire" value="true"/>
+				</var>
+				<var name="styles" type="table">
+					<var name="thug" value="true"/>
+				</var>
+			</var>
+		</extension>
+		<extension name="movement" class="HuskCopMovement">
+			<var name="_footwear" value="bulldozer"/>
+			<var name="_anim_global" value="tank"/>
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt">
+			<var name="tweak_data" value="intimidate"/>
+		</extension>
+		<extension name="network" class="NetworkBaseExtension"/>
+		<extension name="damage" class="UnitDamage">
+			<var name="_skip_save_anim_state_machine" value="true"/>
+		</extension>
+		<extension name="contour" class="ContourExt"/>
+		<extension name="sound" class="BossSound">
+			<var name="_prefix" value="Play_yuw_pent_"/>
+			<var name="_events_map" type="table">
+				<var name="armorbreak" type="table">
+					<var name="prio" value="1"/>
+					<var name="cooldown" value="3"/>
+				</var>
+				<var name="aoe" type="table">
+					<var name="prio" value="2"/>
+					<var name="cooldown" value="7"/>
+				</var>
+				<var name="combat" type="table">
+					<var name="prio" value="3"/>
+					<var name="cooldown" value="15"/>
+				</var>
+				<var name="Play_yuw_pent_combat" type="table">
+					<var name="prio" value="3"/>
+					<var name="cooldown" value="15"/>
+				</var>
+			</var>
+		</extension>
+	</extensions>
+	<network sync="husk" remote_unit=""/>
+	<sounds>
+		<default_soundsource source="Hips"/>
+	</sounds>
+</unit>

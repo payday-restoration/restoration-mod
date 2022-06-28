@@ -798,6 +798,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 	self.omnia_lpf.is_special = true
 	self.omnia_lpf.no_asu = true
+	self.omnia_lpf.marshal_logic = true
 	table.insert(self._enemy_list, "omnia_lpf")
 end
 
@@ -912,6 +913,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.steal_loot = true		
 	self.hrt_titan.do_asu = true
 	self.hrt_titan.no_asu = true
+	self.hrt_titan.marshal_logic = true
 	table.insert(self._enemy_list, "hrt_titan")
 end
 
@@ -1025,6 +1027,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	end		
 	self.heavy_swat_sniper.is_special = true
 	self.heavy_swat_sniper.no_asu = true
+	self.heavy_swat_sniper.marshal_logic = true
 	self.heavy_swat_sniper.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
@@ -1045,6 +1048,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.HEALTH_INIT = 24.375
 	self.weekend_dmr.headshot_dmg_mul = 4.0625
 	self.weekend_dmr.heal_cooldown = 2.5
+	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_dmr")
 end
@@ -1261,6 +1265,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")				
 	
+	--Titan SWAT (LMG)
 	self.city_swat_titan = deep_clone(self.city_swat)
 	self.city_swat_titan.can_slide_on_suppress = true
 	self.city_swat_titan.speech_prefix_p1 = "null"
@@ -1268,6 +1273,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.speech_prefix_count = nil	
 	if is_reaper or is_federales then
 		self.city_swat_titan.custom_voicework = "tswat_ru"
+	elseif is_zombie then
+		self.city_swat_titan.custom_voicework = "skeleton"
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end				
@@ -1286,15 +1293,14 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.static_melee_preset = true	
 	self.city_swat_titan.heal_cooldown = 1.875
 	self.city_swat_titan.overheal_mult = 1.25
+	self.city_swat_titan.marshal_logic = true
 	table.insert(self._enemy_list, "city_swat_titan")
 	
+	--Titan SWAT (Shotgunner)
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
+	self.city_swat_titan_assault.marshal_logic = nil
 	table.insert(self._enemy_list, "city_swat_titan_assault")
-	
-	self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
-	self.skeleton_swat_titan.custom_voicework = "skeleton"
-	table.insert(self._enemy_list, "skeleton_swat_titan")	
-	
+		
 	--Weekend LMG
 	self.weekend_lmg = deep_clone(self.city_swat_titan)		
 	if is_reaper then
@@ -3215,6 +3221,7 @@ function CharacterTweakData:_init_boom(presets)
 	end
 	self.boom.is_special = true	
 	self.boom.no_asu = true	
+	self.boom.marshal_logic = true
 	self.boom.heal_cooldown = 7.5
 	table.insert(self._enemy_list, "boom")
 	
@@ -3253,6 +3260,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.ecm_vulnerability = 0
 	self.boom_summers.ecm_hurts = {}		
 	self.boom_summers.no_omnia_heal = true
+	self.boom_summers.marshal_logic = nil
 	self.boom_summers.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "boom_summers")		
 	
@@ -3263,7 +3271,8 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_titan.HEALTH_INIT = 45
 	self.boom_titan.bag_death = true
 	self.boom_titan.headshot_dmg_mul = 2.2	
-	self.boom_titan.throwable_cooldown = 10		
+	self.boom_titan.throwable_cooldown = 10	
+	self.boom_titan.marshal_logic = nil
 	
 	table.insert(self._enemy_list, "boom_titan")		
 end
@@ -16285,7 +16294,6 @@ function CharacterTweakData:_set_easy()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
-	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0
@@ -16349,8 +16357,6 @@ function CharacterTweakData:_set_normal()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
-	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
-	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
 		
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 4.0
@@ -16415,7 +16421,6 @@ function CharacterTweakData:_set_hard()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
-	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 5.0
@@ -16444,7 +16449,6 @@ function CharacterTweakData:_set_hard()
 	self.city_swat_guard.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
-	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 		
 	self:_set_characters_dodge_preset("athletic")
@@ -16487,7 +16491,6 @@ function CharacterTweakData:_set_overkill()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
-	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -16516,7 +16519,6 @@ function CharacterTweakData:_set_overkill()
 	self.city_swat_guard.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1.5
-	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1.5
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 1.5
 							
 	self:_set_characters_dodge_preset("athletic_very_hard")
@@ -16561,7 +16563,6 @@ function CharacterTweakData:_set_overkill_145()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
-	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -16579,7 +16580,6 @@ function CharacterTweakData:_set_overkill_145()
 	self.city_swat_guard.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1.5
-	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1.5
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 1.5		
 										
 	self:_set_characters_dodge_preset("athletic_overkill")
@@ -16644,7 +16644,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_guard.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1.5
-	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1.5
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 1.5		
 				
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -16659,7 +16658,6 @@ function CharacterTweakData:_set_easy_wish()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)			
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
-	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 120
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
@@ -16713,8 +16711,6 @@ function CharacterTweakData:_set_overkill_290()
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
-	self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
-	self.skeleton_swat_titan.use_animation_on_fire_damage = false	
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 		
@@ -16822,22 +16818,6 @@ function CharacterTweakData:_set_sm_wish()
 			return false, t + delay_till_next_use
 		end
 	}	
-	self.skeleton_swat_titan.dodge_with_grenade = {
-		smoke = {duration = {
-			12,
-			12
-		}},
-		check = function (t, nr_grenades_used)
-			local delay_till_next_use = 30
-			local chance = 0.25
-
-			if math.random() < chance then
-				return true, t + delay_till_next_use
-			end
-
-			return false, t + delay_till_next_use
-		end
-	}
 	self.weekend_lmg.dodge_with_grenade = {
 		smoke = {duration = {
 			12,
@@ -16860,8 +16840,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
-	self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
-	self.skeleton_swat_titan.use_animation_on_fire_damage = false			
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	

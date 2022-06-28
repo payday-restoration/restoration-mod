@@ -1210,7 +1210,7 @@ end)
 --Vanilla Gadgets
 Hooks:PostHook(WeaponFactoryTweakData, "_init_gadgets", "resmod_gadgets", function(self)
 
-	self.parts.wpn_fps_addon_ris.unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_gadget_rail"
+	self.parts.wpn_fps_addon_ris.unit = "units/pd2_dlc_atw/weapons/wpn_fps_snp_r700_pts/wpn_fps_snp_r700_fl_rail"--"units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_gadget_rail"
 
 	--Assault Light
 	self.parts.wpn_fps_upg_fl_ass_smg_sho_surefire.pcs = {
@@ -7064,6 +7064,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 		recoil = 4
 	}
 
+	if not self.wpn_fps_ass_famas.override then
+		self.wpn_fps_ass_famas.override = {}
+	end
+
+	self.wpn_fps_ass_famas.override = {
+		wpn_fps_snp_model70_iron_sight = { 
+			adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
+		}
+	}
+
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_ass_famas_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")		
+
+	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
 end)		
 
 --Cobra 
@@ -11533,7 +11547,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 		},
 		wpn_fps_snp_wa2000 = {
 			translation = Vector3(0, -4, 1.17)
-		}	
+		},
+		wpn_fps_ass_famas = {
+			translation = Vector3(0, -4, 1.17)
+		}
 	}
 
 end)
@@ -21011,6 +21028,21 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_snp_mosin_b_obrez.stats = deep_clone(barrels.short_b3_stats)
 		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+	end
+
+	--Rex's Bubba Mosin Parts
+	if self.parts.wpn_fps_snp_mosin_barrel_bubba then
+		self.parts.wpn_fps_snp_mosin_body_bubba.supported = true
+		self.parts.wpn_fps_snp_mosin_body_bubba.stats = deep_clone(stocks.remove_fixed_stats)
+		self.parts.wpn_fps_snp_mosin_body_bubba.stats.extra_ammo = 10
+		self.parts.wpn_fps_snp_mosin_body_bubba.stats.concealment = 2
+		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats = deep_clone(stocks.remove_fixed_stats)
+		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.ads_speed_mult = 0.95
+
+		self.parts.wpn_fps_snp_mosin_barrel_bubba.supported = true
+		self.parts.wpn_fps_snp_mosin_barrel_bubba.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_snp_mosin_barrel_bubba.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+		self.parts.wpn_fps_snp_mosin_barrel_bubba.custom_stats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 	end
 
 	--Pawcio's M200

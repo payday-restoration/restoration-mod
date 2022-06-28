@@ -1299,6 +1299,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_g3"] = "Gewehr-3",
 		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\nDeals 80% of its damage through body armor.",	
 		--Little Friend
+		["bm_w_galil"] = "Defender 7.62 Rifle",
+		--Little Friend
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
 		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",

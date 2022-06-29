@@ -1,5 +1,0 @@
-{
-	"heist_skmc_ovengrill_name" : "Ovengrill Heist",
-	"heist_Holdout_Ovengrill_name" : "Ovengrill Heist",
-	"the" : "end"
-}

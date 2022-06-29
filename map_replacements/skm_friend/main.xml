@@ -12,9 +12,6 @@
 		<texture force="true" path="guis/achievements/friend_7"/>
 		<texture force="true" path="guis/achievements/friend_9"/>
 	</AddFiles>
-	<Localization default="english.txt" directory="loc">
-		<loc file="english.txt" language="english"/>
-	</Localization>
 	<level ai_group_type="lapd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9" player_style="suit_sunny">
 		<add file="levels/skm_friend/add.xml"/>
 		<assets/>
@@ -51,7 +48,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/mansion" id="skm_friend" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_mansion" max_mission_xp="135900" min_mission_xp="8000" name_id="heist_friend" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/mansion" id="skm_friend" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_mansion" max_mission_xp="135900" min_mission_xp="8000" region="street">
 		<chain>
 			<table level_id="skm_friend" type="d" type_id="heist_type_assault"/>
 		</chain>

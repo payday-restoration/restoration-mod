@@ -7226,7 +7226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.auto.fire_rate = 0.08571428571
 				self.s552.BURST_FIRE = 3
 				self.s552.ADAPTIVE_BURST_SIZE = false															
-				self.s552.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.s552.kick = self.stat_info.kick_tables.moderate_kick
 				self.s552.AMMO_MAX = 180
 				self.s552.supported = true
 				self.s552.ads_speed = 0.300
@@ -7238,7 +7238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.stats = {
 					damage = 20,
 					spread = 86,
-					recoil = 81,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -9319,9 +9319,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mosin.stats_modifiers = nil
 			self.mosin.panic_suppression_chance = 0.05
 			self.mosin.timers.reload_empty = 3.6
-			self.mosin.timers.reload_not_empty = 3.6
+			self.mosin.timers.reload_not_empty = 2.6
 			self.mosin.timers.reload_exit_empty = 0.6
-			self.mosin.timers.reload_exit_not_empty = 0.6
+			self.mosin.timers.reload_exit_not_empty = 1.6
 
 
 		--Grom (SVD)

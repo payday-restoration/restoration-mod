@@ -18527,6 +18527,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.wpn_fps_snp_m1894 then -- Pawcio's Marlin 1894
+		self.parts.wpn_fps_snp_m1894_loading_spring.supported = true
+		self.parts.wpn_fps_snp_m1894_loading_spring.adds = nil
+		
 		self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.supported = true
 		self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.stats = {
 			value = 5,

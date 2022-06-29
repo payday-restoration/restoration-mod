@@ -2922,11 +2922,33 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_9_desc_sc"] = "You can now activate the Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a Doctor Bag before the Ampule ends, you may stay alive if you are above 0 health.\n\nWhile the Leech Ampule is active your health is now divided into segments of ##10%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Blank Perk Deck--
-		["menu_st_spec_0"] = "Blank Deck",
-		["menu_st_spec_0_desc"] = "This deck has no benefits at all.",
-		["menu_st_spec_00"] = "Wildcard Deck",
-		["menu_st_spec_00_desc"] = "This deck only has the shared skills.",
-		["menu_deck0_1"] = "",
-		["menu_deck0_1_desc"] = "",
+		["menu_st_spec_0"] = "Tabula Rasa",
+		["menu_st_spec_0_desc"] = "It is hypothesized that human beings are born without inherent ideas, thoughts, or ideologies and that these are all learned behaviors from various experiences. In some ways this can cause one to have great difficulty, in other ways this can be seen as an advantage. The Tabula Rasa perk deck offers benefits that may not seem obvious at first and even detrimental, but a greater challenge can sometimes bring about other rewards.\n\n\n\n\n\nBenefits from a full perk deck:\n##-##Your purchased items on the Black Market and Assets for use in heists cost ##60%## less.\n##-##You gain ##30%## more value to loose items that you pick up.\n##-##You gain ##135%## more experience when you complete days and jobs.\n##-##Your chance of getting a higher quality item during a PAYDAY is increased by ##30%.##",
+		["menu_deck0_1"] = "Inside Man",
+		["menu_deck0_1_desc"] = "Your purchased items on the Black Market and Assets for use in heists cost ##30%## less.",		
+		["menu_deck0_2"] = "Black Marketeer",
+		["menu_deck0_2_desc"] = "Your purchased items on the Black Market and Assets for use in heists cost an additional ##30%## less.",				
+		["menu_deck0_3"] = "Dead Presidents",
+		["menu_deck0_3_desc"] = "You gain ##15%## more value to loose items that you pick up.",		
+		["menu_deck0_4"] = "Veteran's Day",
+		["menu_deck0_4_desc"] = "You gain an additional ##30%## more value to loose items that you pick up.",	
+		["menu_deck0_5"] = "Noob Lube",
+		["menu_deck0_5_desc"] = "You gain ##45%## more experience when you complete days and jobs.",	
+		["menu_deck0_6"] = "Fast Learner",
+		["menu_deck0_6_desc"] = "You gain an additional ##45%## more experience when you complete days and jobs.",		
+		["menu_deck0_7"] = "Mister Doctor Fantastic",
+		["menu_deck0_7_desc"] = "You gain an additional ##45%## more experience when you complete days and jobs.",			
+		["menu_deck0_8"] = "Four Leaf Clover",
+		["menu_deck0_8_desc"] = "Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck0_9"] = "Lucky Charm",
+		["menu_deck0_9_desc"] = "Your chance of getting a higher quality item during a PAYDAY is increased by an additional ##20%.##",		
+		
+		["menu_st_spec_00"] = "Innatae",
+		["menu_st_spec_00_desc"] = "Some others would argue that the mind has inherent instincts and knowledge, that people are indeed not a blank canvas. The Innatae has the basic abilities that every good bank robber should be expected to have, leaving only room for personal gains to be had. Such convictions, like anything, have a toll on oneself. Is this the cost of giving in to our own primal instincts?\n\n\n\n\n\nBenefits from a full perk deck:\n##-##Your purchased items on the Black Market and Assets for use in heists cost ##30%## less.\n##-##You gain ##15%## more value to loose items that you pick up.\n##-##You gain ##90%## more experience when you complete days and jobs.\n##-##Your chance of getting a higher quality item during a PAYDAY is increased by ##20%.##",
+		["menu_deck00_9_desc"] = "Your chance of getting a higher quality item during a PAYDAY is increased by ##20%.##",
+		
+		["rpd_menu_button"] = "Reset perk deck",
+		["rpd_menu_dialog_title"] = "Are you sure?",
+		["rpd_menu_dialog_text"] = "If you reset the $perk_deck_name perk deck, you will get back $points_to_refund perk points."		
 	})
 end)

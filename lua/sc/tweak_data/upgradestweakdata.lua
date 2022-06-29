@@ -464,7 +464,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.sec_camera_highlight_mask_off = {true}
 	self.values.player.special_enemy_highlight_mask_off = {true}
 	self.values.player.mask_off_pickup = {true}
-	self.values.player.small_loot_multiplier = {1.3, 1.3}
 	self.values.player.melee_kill_snatch_pager_chance = {1}
 	self.values.player.run_speed_multiplier = {1.25}
 	self.values.player.walk_speed_multiplier = {
@@ -1817,7 +1816,29 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.04
 	}
 
-
+	--Tabula Rasa/Innatae
+	self.values.player.small_loot_multiplier = {1.15, 1.3}	
+	self.values.player.assets_cost_multiplier = {
+		0.7,
+		0.4
+	}	
+	self.values.player.buy_cost_multiplier = {
+		0.7,
+		0.4
+	}	
+	self.values.player.cleaner_cost_multiplier = {
+		0
+	}
+	self.values.player.passive_xp_multiplier = {
+		1.45,
+		1.9,
+		2.35
+	}	
+	self.values.player.passive_loot_drop_multiplier = {
+		1.1,
+		1.2,
+		1.3
+	}	
 
 	local editable_skill_btns = {
 		engineering = {
@@ -1848,6 +1869,78 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_passive_loot_drop_multiplier_1 = {
+		name_id = "menu_player_passive_loot_drop_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "passive_loot_drop_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.player_passive_loot_drop_multiplier_2 = {
+		name_id = "menu_player_passive_loot_drop_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "passive_loot_drop_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_passive_loot_drop_multiplier_3 = {
+		name_id = "menu_player_passive_loot_drop_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "passive_loot_drop_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.passive_player_xp_multiplier_1 = {
+		name_id = "menu_player_xp_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "passive_xp_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.passive_player_xp_multiplier_2 = {
+		name_id = "menu_player_xp_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "passive_xp_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.passive_player_xp_multiplier_3 = {
+		name_id = "menu_player_xp_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "passive_xp_multiplier",
+			category = "player"
+		}
+	}		
+	self.definitions.player_assets_cost_multiplier_1 = {
+		name_id = "menu_player_assets_cost_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "assets_cost_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_assets_cost_multiplier_2 = {
+		name_id = "menu_player_assets_cost_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "assets_cost_multiplier",
+			category = "player"
+		}
+	}	
 	self.definitions.player_flak_jacket_concealment_1 = {
 		name_id = "menu_player_flak_jacket_concealment",
 		category = "feature",

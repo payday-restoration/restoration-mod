@@ -85,7 +85,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_sec_camera_highlight_mask_off",
 		"player_special_enemy_highlight_mask_off",
 		"player_mask_off_pickup",
-		"player_small_loot_multiplier_1",
 		"player_pick_lock_easy_speed_multiplier_1",
 		"player_counter_strike_melee",
 		"sentry_gun_silent",
@@ -1997,7 +1996,7 @@ function SkillTreeTweakData:init(tweak_data)
 	}
 	local deck4 = {
 		upgrades = {
-			"passive_player_xp_multiplier",
+			"passive_player_xp_multiplier_1",
 			"player_passive_suspicion_bonus",
 			"player_passive_armor_movement_penalty_multiplier",
 			"weapon_passive_damage_multiplier_2",
@@ -2084,7 +2083,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"team_hostage_health_multiplier",
 					"team_hostage_stamina_multiplier"
 				},
@@ -2149,7 +2148,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_health_multiplier_7",
 					"player_passive_health_multiplier_8",			
 					"player_extra_revive_health",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {4, 1},
@@ -2208,7 +2207,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_2",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {0, 2},
@@ -2265,7 +2264,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"player_dodge_stacking_heal",
 					"player_heal_over_time"
 				},
@@ -2328,7 +2327,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_temp_health_deflection",
 					"player_temp_health_speed",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {3, 3},
@@ -2394,7 +2393,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"player_level_2_armor_multiplier_3",
 					"player_level_3_armor_multiplier_3",
 					"player_level_4_armor_multiplier_3"	
@@ -2438,7 +2437,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_crouch_dodge_chance_burglar_2"
 				},
 				cost = 1000,
-				icon_xy = {7, 3},
+				icon_xy = {4, 2},
 				name_id = "menu_deck7_5",
 				desc_id = "menu_deck7_5_desc_sc"
 			},
@@ -2456,7 +2455,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_1",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {2, 4},
@@ -2517,7 +2516,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_heal_over_time",
 					"player_melee_stacking_heal",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {7, 4},
@@ -2575,7 +2574,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_killshot_close_panic_chance",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {3, 5},
@@ -2636,7 +2635,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"temporary_loose_ammo_restore_health_3",
 					"player_loose_ammo_give_armor",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {0, 6},
@@ -2695,7 +2694,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_hot_speed_bonus",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {5, 6},
@@ -2756,7 +2755,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_survive_one_hit",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {2, 7},
@@ -2815,7 +2814,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_kill_change_regenerate_speed",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {7, 7},
@@ -2877,7 +2876,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_cocaine_stack_absorption_multiplier_1",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {0, 1},
@@ -2941,7 +2940,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_armor_1",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {0, 1},
@@ -3013,7 +3012,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck16_9_desc_sc",
 				name_id = "menu_deck16_9",
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"player_less_armor_wild_health_1"
 				},
 				icon_xy = {
@@ -3080,7 +3079,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_chico_injector_health_to_speed",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {0, 1},
@@ -3140,7 +3139,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_sicario_multiplier",
-					"player_passive_loot_drop_multiplier"
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {0, 1},
@@ -3218,7 +3217,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck19_9_desc_sc",
 				name_id = "menu_deck19_9",
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"player_extra_revive_health"
 				},
 				icon_xy = {
@@ -3295,7 +3294,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_9_desc_sc",
 				name_id = "menu_deck20_9",
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"player_tag_team_cooldown_drain_2"
 				},
 				icon_xy = {
@@ -3373,7 +3372,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck21_9_desc_sc",
 				name_id = "menu_deck21_9",
 				upgrades = {
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"team_pocket_ecm_heal_on_kill_1"
 				},
 				icon_xy = {
@@ -3462,7 +3461,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_activate_ability_downed",
 					"player_copr_static_damage_ratio_2",
-					"player_passive_loot_drop_multiplier",
+					"player_passive_loot_drop_multiplier_1",
 					"player_copr_kill_life_leech_2"
 				},
 				icon_xy = {
@@ -3474,82 +3473,103 @@ function SkillTreeTweakData:init(tweak_data)
 			name_id = "menu_st_spec_22"
 		}		
 		
-	--Blank Perk Deck
+	--Tabula Rasa, blank perk deck
 	local sc_blank = {
 			name_id = "menu_st_spec_0",
 			desc_id = "menu_st_spec_0_desc",
 			{
 				upgrades = {
+					"player_buy_cost_multiplier_1",
+					"player_assets_cost_multiplier_1"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
+				texture_bundle_folder = "sc",
+				icon_xy = {7, 3},
 				name_id = "menu_deck0_1",
 				desc_id = "menu_deck0_1_desc"
 			},			
 			{
 				upgrades = {
-					},
+					"player_buy_cost_multiplier_2",
+					"player_assets_cost_multiplier_2"
+				},
 				cost = 0,
-				icon_xy = {900, 5},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_2",
+				desc_id = "menu_deck0_2_desc"
 			},
 			{
 				upgrades = {
+					"player_small_loot_multiplier_1"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_3",
+				desc_id = "menu_deck0_3_desc"
 			},
 			{
 				upgrades = {
+					"player_small_loot_multiplier_2"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_4",
+				desc_id = "menu_deck0_4_desc"
 			},
 			{
 				upgrades = {
+					"passive_player_xp_multiplier_1"
 				},
 				cost = 0,
-				icon_xy = {900, 0},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_5",
+				desc_id = "menu_deck0_5_desc"
 			},
 
 			{
 				upgrades = {
+					"passive_player_xp_multiplier_2"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_6",
+				desc_id = "menu_deck0_6_desc"
 			},
 			{
 				upgrades = {
+					"passive_player_xp_multiplier_3"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_7",
+				desc_id = "menu_deck0_7_desc"
 			},
 			{
 				upgrades = {
+					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_8",
+				desc_id = "menu_deck0_8_desc"
 			},
-					{
+			{
 				upgrades = {
+					"player_passive_loot_drop_multiplier_2",
+					"player_passive_loot_drop_multiplier_3"
 				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				texture_bundle_folder = "sc",
+				name_id = "menu_deck0_9",
+				desc_id = "menu_deck0_9_desc"
 			}
 		}		
 		
@@ -3558,43 +3578,55 @@ function SkillTreeTweakData:init(tweak_data)
 			name_id = "menu_st_spec_00",
 			desc_id = "menu_st_spec_00_desc",
 			{
-				upgrades = {},
+				upgrades = {
+					"player_buy_cost_multiplier_1",
+					"player_assets_cost_multiplier_1"
+				},
 				cost = 0,
-				icon_xy = {900, 8},
+				icon_xy = {7, 3},
 				name_id = "menu_deck0_1",
 				desc_id = "menu_deck0_1_desc"
 			},
 			deck2,
 			{
-				upgrades = {},
+				upgrades = {
+					"player_small_loot_multiplier_1"
+				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				name_id = "menu_deck0_3",
+				desc_id = "menu_deck0_3_desc"
 			},
 			deck4,
 			{
-				upgrades = {},
+				upgrades = {
+					"passive_player_xp_multiplier_1"
+				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				name_id = "menu_deck0_5",
+				desc_id = "menu_deck0_5_desc"
 			},
 			deck6,
 			{
-				upgrades = {},
+				upgrades = {
+					"passive_player_xp_multiplier_2"
+				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				name_id = "menu_deck0_6",
+				desc_id = "menu_deck0_6_desc"
 			},
 			deck8,
 			{
-				upgrades = {},
+				upgrades = {
+					"player_passive_loot_drop_multiplier_2",
+					"player_passive_loot_drop_multiplier_3"					
+				},
 				cost = 0,
-				icon_xy = {900, 8},
-				name_id = "menu_deck0_1",
-				desc_id = "menu_deck0_1_desc"
+				icon_xy = {7, 3},
+				name_id = "menu_deck0_8",
+				desc_id = "menu_deck00_9_desc"
 			}
 		}		
 

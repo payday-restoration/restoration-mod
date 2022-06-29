@@ -287,6 +287,7 @@ function CopBrain:init(unit)
 	
 end
 
+--[[
 --Thanks Rokk--
 Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(self)
 	
@@ -300,6 +301,7 @@ Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(
 	table.insert(SC._converts, self._unit)
 	
 end)
+]]--
 
 -- Update immediately once we have our pathing results instead of waiting for the next update
 -- Not posthooking _add_pathing_result instead of these two just in case the path gets modified before navlink delays are applied in clbk_pathing_results

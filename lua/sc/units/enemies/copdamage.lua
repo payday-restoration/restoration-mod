@@ -3568,6 +3568,7 @@ function CopDamage:_on_death(variant)
 		managers.enemy:end_autumn_blackout()
 	end
 
+	--[[
 	if self._unit:unit_data().is_convert and SC._converts then
 		for i, unit in pairs(SC._converts) do
 			if unit == self._unit then
@@ -3575,6 +3576,7 @@ function CopDamage:_on_death(variant)
 			end
 		end
 	end
+	]]--
 end
 
 function CopDamage.is_hrt(type)

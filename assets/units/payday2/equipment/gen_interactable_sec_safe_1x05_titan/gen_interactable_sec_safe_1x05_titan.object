@@ -34,12 +34,12 @@
 	</decal_surfaces>
 
 	<graphics>
-		<!-- <graphic_group name="ghosticongroup" 	enabled="true" culling_object="g_lockpick_ghost">
+		<graphic_group name="ghosticongroup" 	enabled="true" culling_object="g_lockpick_ghost">
 			<lod_object name="ghost_icon">
 					<object name="g_lockpick_ghost" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
 					<object name="g_lockpick_ghost_lod1" 	enabled="true"  lod="1" />
 			</lod_object>
-		</graphic_group> -->
+		</graphic_group>
 		<graphic_group name="safe" enabled="true" culling_object="co_door">
 			<object name="g_safe" 		enabled="true" 	shadow_caster="false"/>
 			<object name="g_door" 		enabled="true" 	shadow_caster="false"/>

@@ -16,5 +16,9 @@
 		</extension>
 		<extension class="ScriptUnitData" name="unit_data" />
 		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="pick_lock_hard" />
+			<var name="_interact_object" value="a_interaction_point"/>
+		</extension>		
 	</extensions>
 </unit>

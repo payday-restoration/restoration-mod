@@ -1,7 +1,8 @@
 <unit type="gen" slot="1" >
-	<object file="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan_custom/gen_interactable_sec_safe_05x05_titan" />
+	<object file="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" />
 	<network sync="spawn"/>
 	<dependencies>
+		<depends_on unit="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" />
 		<depends_on unit="units/payday2/equipment/item_door_drill_small/item_door_drill_small" />
 		<depends_on unit="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/dest_sec_safe_05x05_door_titan" />
 		<depends_on physic_effect="physic_effects/push_sphere" />
@@ -14,10 +15,10 @@
 			<var name="tweak_data" value="safe_small_titan" />
 		</extension>
 		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
 		<extension name="interaction" class="UseInteractionExt">
 			<var name="tweak_data" value="pick_lock_hard" />
 			<var name="_interact_object" value="a_interaction_point"/>
-		</extension>
-		<extension name="damage" class="UnitDamage" />
+		</extension>		
 	</extensions>
 </unit>

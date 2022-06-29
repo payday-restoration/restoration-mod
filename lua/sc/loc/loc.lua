@@ -947,11 +947,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skm_mus_h1"] = "Andersonian Museum",
 		["heist_skm_run"] = "Uptown - Inkwell Industrial",
 		["heist_skm_run_h1"] = "Uptown - Inkwell Industrial",
-
+		["heist_skmc_fish_name"] = "Lethe Yacht",
+		["heist_skmc_ovengrill_name"] = "Ovengrill Hardware",
+		["heist_skmc_mad_name"] = "DRAK R&D Laboratories",
+		["heist_skm_friend_name"] = "El Fureidis Mansion",
 
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.\n\nNOTE FROM JACKAL:\nThe explosion from that crash alerted nearby Reaper teams. Don't expect a police response.",
 
+		----Custom Achievements----
+				
+		--Scarface Mansion--
+		["skm_friend_name"] = "Holdout: El Fureidis Mansion",
+		["friend_3"] = "Fuckin' With the Best",
+		["friend_3_desc"] = "Having started from wave 1, beat wave 3 of Holdout on the El Fureidis Mansion heist.",
+		["friend_3_obj"] = "Having started from wave 1, beat wave 3 of Holdout on the El Fureidis Mansion heist.",
+		["friend_5"] = "The Hostage is Yours",
+		["friend_5_desc"] = "Having started from wave 1, beat wave 5 of Holdout on the El Fureidis Mansion heist.",
+		["friend_5_obj"] = "Having started from wave 1, beat wave 5 of Holdout on the El Fureidis Mansion heist.",
+		["friend_7"] = "You Think You Kill Me With Bullets?",
+		["friend_7_desc"] = "Having started from wave 1, beat wave 7 of Holdout on the El Fureidis Mansion heist.",
+		["friend_7_obj"] = "Having started from wave 1, beat wave 7 of Holdout on the El Fureidis Mansion heist.",
+		["friend_9"] = "Look at 'em Run!",
+		["friend_9_desc"] = "Having started from wave 1, beat wave 9 of Holdout on the El Fureidis Mansion heist.",
+		["friend_9_obj"] = "Having started from wave 1, beat wave 9 of Holdout on the El Fureidis Mansion heist.",
+				
 		----Weapons + Mods Descriptions/names----
 
 		--Reinfield--

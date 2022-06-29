@@ -12,7 +12,7 @@ function ProjectileWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 
 	mvector3.set(mvec_spread_direction, direction)
 	mvector3.add(mvec_spread_direction, right * ax)
-	mvector3.add(mvec_spread_direction, up * y)
+	mvector3.add(mvec_spread_direction, up * ay)
 
 	local projectile_type = self._projectile_type or tweak_data.blackmarket:get_projectile_name_from_index(2)
 

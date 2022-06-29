@@ -553,12 +553,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		adjust_z = 0
 	}
 
-	--self.projectiles.launcher_frag_m32.time_cheat = 0.7
-	--self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
-
 	self.projectiles.rocket_ray_frag.physic_effect = nil --Idstring("physic_effects/molotov_throw")
 	self.projectiles.rocket_frag.physic_effect = nil --Idstring("physic_effects/molotov_throw")
-	--self.projectiles.poison_gas_grenade.physic_effect = Idstring("physic_effects/molotov_throw")
 
 	local give_trails = {
 		'launcher_frag','launcher_incendiary','launcher_electric','launcher_poison_gre_m79',

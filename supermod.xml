@@ -19,6 +19,22 @@
 				<file :name="npc_male_yufuwang_armored.unit"/>
 				<file :name="npc_male_yufuwang_armored_husk.unit"/>
 			</group>
+			<group :name="payday2/characters/ene_secret_service_2/">
+				<file :name="ene_secret_service_2.unit"/>
+				<file :name="ene_secret_service_2_husk.unit"/>
+			</group>
+			<group :name="pd2_dlc_pent/characters/">
+				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1.unit"/>
+				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>
+				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
+				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
+			</group>
+			<group :name="pd2_dlc_ranc/characters/">
+				<file :name="ene_male_ranc_security_1/ene_male_ranc_security_1.unit"/>
+				<file :name="ene_male_ranc_security_1/ene_male_ranc_security_1_husk.unit"/>
+				<file :name="ene_male_ranc_security_2/ene_male_ranc_security_2.unit"/>
+				<file :name="ene_male_ranc_security_2/ene_male_ranc_security_2_husk.unit"/>
+			</group>
 			<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
 				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>

@@ -19,6 +19,7 @@
 				<file :name="npc_male_yufuwang_armored.unit"/>
 				<file :name="npc_male_yufuwang_armored_husk.unit"/>
 			</group>
+			<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
 				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>
 				<file :name="gen_interactable_sec_safe_1x1_titan.unit"/>
@@ -39,6 +40,7 @@
 				<file :name="gen_interactable_sec_safe_05x05_titan.object"/>
 				<file :name="gen_interactable_sec_safe_05x05_titan.unit"/>
 			</group>			
+					-->
 		</group>
 	</assets>	
 	

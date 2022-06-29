@@ -27,7 +27,6 @@ function restoration:Init()
 		"red2", --first world bank
 		"watchdogs_1", --Watchdogs Day 1
 		"gallery", --art gallery
-		"chca", --Black Cat Heist
 		--Custom Heists--
 		"office_strike", --office strike
 		"schl", --Scarlet Club House

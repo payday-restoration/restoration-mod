@@ -1,5 +1,0 @@
-{
-	"heist_skmc_mad_name" : "Boiling Point",
-	"heist_Holdout_BoilingPoint_name" : "Boiling Point",
-	"the" : "end"
-}

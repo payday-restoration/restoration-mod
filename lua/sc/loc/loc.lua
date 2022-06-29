@@ -2077,7 +2077,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_28"] = "Leveling up perk decks unlocks the Throwables Case.",
 		["loading_equip_skills_res_29"] = "Replenishing your throwables in the Equipment Case now refills your entire stock with each use.",	
 		["loading_equip_skills_res_30"] = "Save Inspire ace for when things have really gone sideways, it has a very long cooldown and requires line of sight.",	
-		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
+		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks which provide increased money and XP gain at the cost of disabling your perks. Challenge yourself for better rewards!",
 		["loading_equip_skills_res_32"] = "Aiming mechanics have been changed to require you to be fully aimed to reap the benefits of aimed accuracy. Keep an eye on your \"Aim Time\" stat as you mod your weapon.",
 		["loading_equip_skills_res_33"] = "Long barrels, sturdier stocks and extended magazines have their merits but they can hit swap, reload, aim and sprint-to-fire times pretty hard; using too many will leave your weapon cumbersome to use.",
 		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's concealment rating.",

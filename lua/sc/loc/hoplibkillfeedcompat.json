@@ -141,5 +141,13 @@
   "ene_headless_hatman" : "Horseless Hatless Headless Titan Dozer from Hell",
   "ene_city_guard" : "FTSU Field Agent",
   "ene_hoxton_breakout_guard" : "FBI Ready Team Agent",
-  "ene_male_security_penthouse" : "Penthouse Security"
+  "ene_male_security_penthouse" : "Penthouse Security",
+  "ene_male_kungfumaster" : "Yufu Wang's Personal Bodyguard",
+  "ene_gang_colombian" : "Colombian Thug",
+  "ene_gang_colombian_boss" : "Colombian Boss",
+  "ene_gang_colombian_enforcer" : "Colombian Enforcer",
+  "ene_gang_black_enforcer" : "Cobra Enforcer",
+  "ene_gang_mobster_enforcer" : "Mobster Grenadier",
+  "ene_bulldozer_biker_1" : "Bikerdozer",
+  "ene_male_ranc_security" : "Security Ranch Guard"
 }

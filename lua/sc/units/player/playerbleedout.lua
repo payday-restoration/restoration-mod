@@ -45,7 +45,7 @@ function PlayerBleedOut:enter(state_data, enter_data)
 	managers.groupai:state():report_criminal_downed(self._unit)
 	managers.network:session():send_to_peers_synched("sync_contour_state", self._unit, -1, table.index_of(ContourExt.indexed_types, "teammate_downed"), true, 1)
 end
---[[
+
 --Allow converts and tied civs to revive you
 function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO_data)
 	if not managers.player:has_category_upgrade("player", "civilian_reviver") or revive_SO_data and revive_SO_data.sympathy_civ then
@@ -53,7 +53,7 @@ function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO
 	end
 	local detect_only = false
 	local voice_type, plural, prime_target = self:_get_unit_intimidation_action(false, true, false, false, false, 0, true, detect_only)
-	if prime_target then
+	if prime_target and not prime_target.unit:base():char_tweak().is_escort then
 		if detect_only then
 			if not prime_target.unit:sound():speaking(t) then
 				prime_target.unit:sound():say("_a01x_any", true)
@@ -204,7 +204,7 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 	local prime_target = self:_get_interaction_target(char_table, my_head_pos, cam_fwd)
 	return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only)
 end
-]]--
+
 local update_orig = PlayerBleedOut.update
 function PlayerBleedOut:update(t, dt)
 	if restoration.Options:GetValue("OTHER/NoBleedoutTilt") then

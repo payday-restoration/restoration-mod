@@ -21,9 +21,6 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/helmets_atlas_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_nm" />
-	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_df" />
-	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_nm" />
-	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_heavy_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_heavy_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_heavy_nm" />
 	<!--cloaker texture-->
@@ -168,6 +165,9 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet"  load="true"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour" />
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_df" />
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_nm" />
+	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_heavy_df" />
 	
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />

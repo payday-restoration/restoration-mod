@@ -17,7 +17,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="spooc" />
-			<var name="_default_weapon_id" value="asval_smg" />
+			<var name="_default_weapon_id" value="akmsu_smg_tactical" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

@@ -11,7 +11,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="fbi_swat" />
-			<var name="_default_weapon_id" value="asval_smg_elite" />
+			<var name="_default_weapon_id" value="aksu_smg" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

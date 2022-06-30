@@ -16183,7 +16183,9 @@ function CharacterTweakData:_create_table_structure()
 		"ak12",
 		"fort_500",
 		"streak",
-		"x_streak"
+		"x_streak",
+		"akmsu_smg_tactical",
+		"aksu_smg"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -16272,7 +16274,9 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14"),		
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14")		
+		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14"),		
+		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical"),
+		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_aksu/wpn_npc_aksu")
 	}
 end
 

@@ -912,10 +912,16 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_smg_npc.alert_size = 2500
 		self.asval_smg_npc.sounds.prefix = "akmsu_npc"
 		
-		--Tatonka
+		--vityaz
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
-		self.akmsu_smg_npc.sounds.prefix = "coal_npc"
+		self.akmsu_smg_npc.sounds.prefix = "vityaz_npc"
+
+		self.aksu_smg_npc = deep_clone(self.ump_npc)
+		self.aksu_smg_npc.sounds.prefix = "akmsu_npc"
 		
+		self.akmsu_tactical_smg_npc = deep_clone(self.mp5_tactical_npc)
+		self.akmsu_tactical_smg_npc.has_suppressor = "suppressed_c"
+	
 		--Autumn MPX
 		self.mpx_npc = deep_clone(self.mp5_tactical_npc)
 		self.mpx_npc.auto.fire_rate = 0.07058823529

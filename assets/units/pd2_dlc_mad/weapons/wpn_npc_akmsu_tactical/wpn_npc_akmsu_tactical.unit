@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-	<object file="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" />
+	<object file="units/pd2_dlc_mad/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical" />
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 	</extensions>  
@@ -13,7 +13,7 @@
   
   	<extension name="unit_data" class="ScriptUnitData" />
     <extension name="base" class="NPCRaycastWeaponBase" >
-			<var name="name_id" value="akmsu_smg_npc" />
+			<var name="name_id" value="akmsu_tactical_smg_npc" />
 			<var name="_multivoice" value="true" />
     </extension>
     <extension name="damage" class="UnitDamage" />

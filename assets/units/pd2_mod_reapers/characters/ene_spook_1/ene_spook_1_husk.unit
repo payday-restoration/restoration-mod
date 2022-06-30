@@ -15,7 +15,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="spooc" />
-			<var name="_default_weapon_id" value="asval_smg" />
+			<var name="_default_weapon_id" value="akmsu_smg_tactical" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

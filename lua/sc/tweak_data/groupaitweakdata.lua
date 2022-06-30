@@ -9768,10 +9768,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")						
 			},
 			lapd = {
-				Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-				Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-				Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-				Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),					
+				Idstring("units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"),					
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
 			},
 			fbi = {

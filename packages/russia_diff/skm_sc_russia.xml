@@ -30,6 +30,8 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_nm" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_nm" />
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/drak_atlas_df" />
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/drak_atlas_nm" />
 	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/swat_city_heavy_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_heavy_df" />
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/swat_fbi_heavy_nm" />

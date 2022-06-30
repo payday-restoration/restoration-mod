@@ -17044,8 +17044,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.chas.list, "ene_male_chas_police_03")
 		table.insert(char_map.chas.list, "ene_male_chas_police_04")
 	--pent
-		table.insert(char_map.pent.list, "ene_kungfumaster_1")
-		table.insert(char_map.pent.list, "ene_kungfumaster_2")
+		table.insert(char_map.pent.list, "ene_male_kungfumaster_1")
+		table.insert(char_map.pent.list, "ene_male_kungfumaster_2")
 	--ranc
 		table.insert(char_map.ranc.list, "ene_male_ranc_ranger_03")
 		table.insert(char_map.ranc.list, "ene_male_ranc_ranger_04")	
@@ -17529,6 +17529,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
 				"ene_zeal_swat_shield",
+				"ene_drak_medic",
 				"ene_zeal_sniper",
 				"ene_subject_enforcer"
 			}

@@ -79,7 +79,8 @@
 	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5_contour" />
 	
 	<!--lapd textures-->
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_nm" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/ene_city_heavy_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/ene_city_heavy_nm" />			
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	

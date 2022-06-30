@@ -17297,6 +17297,7 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_2",
 				"ene_city_swat_3",
 				"ene_murky_fbi_tank_m249",
+				"ene_murky_fbi_tank_benelli",
 				"ene_murky_fbi_tank_medic",
 				"ene_murky_fbi_tank_saiga",
 				"ene_murky_fbi_tank_r870",

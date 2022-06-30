@@ -284,6 +284,29 @@
 
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/bulldozer_saiga_df" force="false"/>
 	
+	<!-- bendozer -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+
+	<!--Murky Dozer 4 Armor Bits-->
+	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_4/ene_acc_bulldozer_back_murky_4" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_4/ene_acc_bulldozer_back_murky_4" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_4/ene_acc_bulldozer_chest_murky_4" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_4/ene_acc_bulldozer_chest_murky_4" force="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_4/ene_acc_bulldozer_stomache_murky_4" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_4/ene_acc_bulldozer_stomache_murky_4" force="false"/>
+
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/bulldozer_minigun_df" force="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/bulldozer_minigun_nm" force="false"/>
+	
 	<!-- taster -->
 	<object				path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer" force="false"/>

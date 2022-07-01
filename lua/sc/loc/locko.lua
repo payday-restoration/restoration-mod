@@ -781,7 +781,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		-- ///Stuff ripped from the various locale files we had ///
 		
 		--Halloween Dozer Sword
-		["bm_melee_halloween_sword"] = "목 없는 불도저의 검",
+		["bm_melee_halloween_sword"] = "머리 없는 불도저의 검",
 		["menu_l_global_value_halloween_sword"] = "이 상품은 할로윈 2013 아이템입니다!",
 		
 		--S&W .500
@@ -802,7 +802,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
 		["bm_w_socom"] = "Anubis .45 권총",
 		["bm_w_x_socom"] = "아킴보 Anubis .45 권총",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "라 결합 모듈",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra 결합 모듈",
 		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "$BTN_GADGET를 눌러 사용합니다.",
 
 		--Ranted NMH
@@ -1061,17 +1061,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_6_mark"] = "6x 배율.\n이 광학 조준기로 조준하는 동안 특수 적과 스텔스 상태에서 경비원을 마킹합니다.",
 
 		--'Nade Launchers--
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 3.75m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 120의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 3.75m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 80의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 불 지대를 생성하는 탄을 발사합니다.\n지대의 반경은 3.75m이며 5초 동안 지속되며 그 안에 서 있는 적에게 초당 40의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에 폭발하는 탄을 발사합니다. 폭발은 720의 피해를 주고 반경은 5미터입니다.",
-		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 400의 피해를 주고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
-		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 200의 피해를 입히고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 탄을 발사합니다. 폭발은 300의 피해를 주고 반경은 2.5미터이며 일정 확률로 적을 감전시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 불 지대를 생성하는 유탄을 발사합니다.\n지대의 반경은 3.75m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 120의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 불 지대를 생성하는 유탄을 발사합니다.\n지대의 반경은 3.75m이고 5초 동안 지속되며 그 안에 서 있는 적에게 초당 80의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 불 지대를 생성하는 유탄을 발사합니다.\n지대의 반경은 3.75m이며 5초 동안 지속되며 그 안에 서 있는 적에게 초당 40의 피해를 입히고 일정 확률로 불을 붙이고 스턴시키며 3초에 걸쳐 추가로 60의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에 폭발하는 유탄을 발사합니다. 폭발은 720의 피해를 주고 반경은 5미터입니다.",
+		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 유탄을 발사합니다. 폭발은 400의 피해를 주고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 유탄을 발사합니다. 폭발은 200의 피해를 입히고 반경 5미터를 가지며 일정 확률로 적을 감전시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 전기 폭발을 생성하는 유탄을 발사합니다. 폭발은 300의 피해를 주고 반경은 2.5미터이며 일정 확률로 적을 감전시킵니다.",
 		["bm_wp_upg_a_grenade_launcher_poison"] = "맨티코어-6 생화학탄",
-		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 탄을 발사합니다.\n가스는 반경 6미터, 16초 동안 머물며 8초에 걸쳐 240의 피해를 입히고 가스에 갇힌 대부분의 적을 한 번에 방해시킵니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 탄을 발사합니다.\n가스는 반경 6미터, 12초 동안 머물며 6초에 걸쳐 180의 피해를 주고, 가스에 갇힌 대부분의 적을 한 번에 방해시킵니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 탄을 발사합니다.\n가스는 반경 6미터, 8초 동안 머물며 4초에 걸쳐 120의 피해를 주고, 가스에 갇힌 대부분의 적을 한 번에 방해시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 유탄을 발사합니다.\n가스는 반경 6미터, 16초 동안 머물며 8초에 걸쳐 240의 피해를 입히고 가스에 갇힌 대부분의 적을 한 번에 스턴시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 유탄을 발사합니다.\n가스는 반경 6미터, 12초 동안 머물며 6초에 걸쳐 180의 피해를 주고, 가스에 갇힌 대부분의 적을 한 번에 스턴시킵니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 맹독 가스 구름을 생성하는 유탄을 발사합니다.\n가스는 반경 6미터, 8초 동안 머물며 4초에 걸쳐 120의 피해를 주고, 가스에 갇힌 대부분의 적을 한 번에 스턴시킵니다.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "레어",
@@ -1083,8 +1083,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "날 크게 늘려줘!", -- lol
 		["bm_wp_m134_body_upper_light"] = "경량 몸체",
-		["bm_wp_upg_a_halfthatkit_desc"] = "무기 들고 있을 때 이동 속도 10% 패널티를 추가합니다.\n\n무기의 탄약 획득량이 20% 증가합니다.",
-		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "무기 들고 있을 때 이동 속도 25% 패널티를 추가합니다.\n\n무기의 탄약 획득량이 50% 증가합니다.",
+		["bm_wp_upg_a_halfthatkit_desc"] = "무기 들고 있을 때 이동 속도 패널티를 10% 더 추가합니다.\n\n무기의 탄약 획득량이 20% 증가합니다.",
+		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "무기 들고 있을 때 이동 속도 패널티를 25% 더 추가합니다.\n\n무기의 탄약 획득량이 50% 증가합니다.",
 
 		--Phoenix .500--
 		["bm_wp_shatters_fury_desc"] = "미친 반동과 저지력을 갖춘 거대한 .500 구경 리볼버. 샤터가 선택한 무기입니다.\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
@@ -1096,8 +1096,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_legendary_deagle"] = "Midas Touch",
 		["bm_menu_sc_legendary_m134"] = "The Gimp",
 		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
-		["bm_wskn_ak74_rodina_desc_sc"] = "전쟁과 범죄에서 피에 대한 끝없는 갈증을 보여준 특별한 AK 소총입니다.",
-		["bm_wskn_deagle_bling_desc_sc"] = "직접 만들어진 이 Deagle은 세계 최고의 게임 훈련을 받은 명사수의 증거로 제작되었습니다.",
+		["bm_wskn_ak74_rodina_desc_sc"] = "전쟁과 범죄에서 피에 대한 끝없는 갈증을 보여준 특별 AK 소총입니다.",
+		["bm_wskn_deagle_bling_desc_sc"] = "직접 만들어진 이 Deagle 권총은 세계 최고의 게임 훈련을 받은 명사수의 증거로 제작되었습니다.",
 
 		--Exclusive Sets--
 		["bm_wp_upg_ultima_body_kit_desc_sc"] = "이 전용 세트는 다른 장치와 함께 사용할 수 없는 독특한 '트리플 트리트' 레이저 조준기가 추가합니다.",
@@ -1109,26 +1109,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "무기 스킨의 부스트를 비활성화합니다.",
 		
 		--Gecko Pistol
-		["bm_tranq_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 잡기 편하고 쇠약하게 하는 마취탄과 함께 은닉성이 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",
-		["bm_tranq_x_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 잡기 편하고 쇠약하게 하는 마취탄과 함께 은닉성이 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",		
+		["bm_tranq_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 핸들링이 편하고 쇠약하게 만드는 마취탄과 함께 은닉성에 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",
+		["bm_tranq_x_maxim_sc_desc"] = "세계 최초의 완전 통합 소음 권총, 핸들링이 편하고 쇠약하게 만드는 마취탄과 함께 은닉성에 효과적입니다.\n\n시간이 지남에 따라 피해를 입히는 마취탄를 발사합니다.",		
 		--Igor (APS)
 		["bm_stech_sc_desc"] = "더 무겁고 느린 발사가 가능한 기관권총으로, 방해로 인해 인기를 잃었습니다. 이 무기의 무게는 은닉성을 희생시키면서 더 나은 반동 제어를 얻습니다.",
 		["bm_x_stech_sc_desc"] = "더 무겁고 느린 발사가 가능한 기관권총으로, 방해로 인해 인기를 잃었습니다. 이 무기의 무게는 은닉성을 희생시키면서 더 나은 반동 제어를 얻습니다.",
 		--Chimano Compact
-		["bm_jowi_sc_desc"] = "거의 모든 것을 희생시키면서 은닉성을 극도로 확보하게 구성된 Chimano 권총입니다.\n\n소문에 따르면 윅은 러시아 마피아에 대한 복수극을 할 때 이 권총을 사용했다고 합니다.",
-		["bm_x_jowi_sc_desc"] = "이렇게 작은데 어떻게 두 개씩 들고 다니지 않겠습니까? 윅 개인이 선택했지만 잘못 선택된 아킴보 쌍둥이입니다.",		
+		["bm_jowi_sc_desc"] = "거의 모든 것을 희생시키면서 은닉성을 극도로 확보하도록 구성된 Chimano 권총입니다.\n\n소문에 따르면 윅은 러시아 마피아에 대한 복수극을 할 때 이 권총을 사용했다고 합니다.",
+		["bm_x_jowi_sc_desc"] = "이렇게 작은데 어떻게 두 개씩 들고 다니지 않겠습니까? 윅이 개인적으로 선택했지만 잘못 선택된 아킴보 쌍둥이입니다.",		
 		--Glock 18c
-		["bm_g18c_sc_desc"] = "오스트리아산 완전 자동 스프레이건. 반동 잡기 어렵지만 근거리에서는 절대적으로 파괴적입니다.",
-		["bm_x_g18c_sc_desc"] = "하나가 총알 호스라면 두 개를 들고 다니는 건 폭풍이 될 수 있습니다. 반동만 조심하면 됩니다!",
+		["bm_g18c_sc_desc"] = "오스트리아산 완전 자동 스프레이건. 반동 잡기는 어렵지만 근거리에서는 절대적으로 파괴적입니다.",
+		["bm_x_g18c_sc_desc"] = "하나가 총알 호스라면 두 개를 들고 다니는 것은 폭풍이 될 수도 있습니다. 그저 반동만 조심하면 됩니다!",
 		--CZ 75
 		["bm_czech_sc_desc"] = "인체 공학과 핸들링이 뛰어난 기관권총, 원더 나인들 중 하나입니다 또한 전 세계의 대테러군이 사용합니다.",
-		["bm_x_czech_sc_desc"] = "기관권총을 사용하지 않는 방법의 또 다른 예시입니다. 어떻게 이 권총들을 편안하게 재장전할 수 있습니까?",
+		["bm_x_czech_sc_desc"] = "기관권총을 사용하지 않는 방법의 또 다른 예시입니다. 어떻게 이 권총들을 편안하게 재장전할 수 있겠습니까?",
 		--Glock 17
 		["bm_g17_sc_desc"] = "반동을 제어하기 쉽고 신뢰할 수 있는 권총입니다. 하이스트 경력을 시작하기에 완벽한 보조 무기입니다.",
-		["bm_x_g17_sc_desc"] = "9mm의 작은 화력을 만회하고 여전히 낮은 반동이 장점입니다.\n\n우리가 혹스턴을 탈옥 시켰을 때 혹스턴의 선택한 권총들입니다.",
+		["bm_x_g17_sc_desc"] = "9mm탄의 적은 화력을 만회하고 여전히 낮은 반동이 장점입니다.\n\n우리가 혹스턴을 탈옥 시켰을 때 혹스턴이 선택한 권총들입니다.",
 		--Bernetti 9
-		["bm_b92fs_sc_desc"] = "인상적인 탄창 용량과 어지간한 피해량으로 인해 인기 있는 총기입니다. 특히 수많은 적들과의 대결할때 유용합니다.",
-		["bm_x_b92fs_sc_desc"] = "두 개의 권총이 하나보다 낫을 수 있습니다. 교전을 9mm 파티로 바꿀때 사용되는 또 다른 방법입니다.",
+		["bm_b92fs_sc_desc"] = "인상적인 탄창 용량과 어지간한 피해량으로 인해 인기 있는 권총입니다. 특히 수많은 적들을 상대할때 유용합니다.",
+		["bm_x_b92fs_sc_desc"] = "두 개의 권총이 하나보다 낫을 수 있습니다. 교전을 9mm탄 파티로 바꿀때 사용되는 또 다른 방법입니다.",
 		--93R
 		["bm_beer_sc_desc"] = "누구의 움직임인지 알아내기 위해 소름이 돋을 것 같은 발사간 조정 하드웨어의 경계선 허구된 조각입니다. 죽든 말든 나와 함께 간다.",		
 		--Baby Deagle--
@@ -1156,7 +1156,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_amt"] = "Automag .44 권총",		
 		--Colt Detective
 		["bm_w_coltds"] = "Crosskill Investigator 리볼버",	
-		["bm_lemon_dmc_desc"] = "숨길 수 있는 고성능 리볼버을 들고 있는 자신을 상상해 보십시오. 이제 더 이상 상상하지 마십시오. 수사관이 바로 그런 사람이기 때문입니다.\n\n적의 뒤에서 공격 시 2배의 피해를 줍니다.",		
+		["bm_lemon_dmc_desc"] = "숨길 수 있는 고성능 리볼버을 들고 있는 자신을 상상해 보십시오. 이제 더 이상 상상하지 마십시오. 수사관이 바로 당신이기 때문입니다.\n\n적의 뒤에서 공격 시 2배의 피해를 줍니다.",		
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 기관탄총",
@@ -1169,12 +1169,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_mp7_sc_desc"] = "경량 기관탄총이자 Project-90 기관탄총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달고 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n방탄복을 관통할 수 있습니다.",				
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 기관단총",	
-		["bm_mp5_sc_desc"] = "Gewehr-3의 여동생.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
+		["bm_mp5_sc_desc"] = "Gewehr-3의 자매.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "블라스테크 E-11 소음 총열",
 		["bm_wp_sterling_b_e11_desc_sc"] = "머나먼 은하계에서 왔다고 하는 이 기술은 무기를 플라즈마를 발사하는 노리쇠로 변환하고 재충전 탄창을 사용합니다.\n\n재충전 지연: 1초\n재충전 속도: 5/초 (과열시 반감됨)\n과열 패널티: 2초",		
 		--Uzi
-		["bm_uzi_sc_desc"] = "Uzi는 신뢰할 수 있고 느린 발사속도 덕분에 특히 .41 AE탄으로 변환해도 펀치를 날릴 수 있을 정도로 제어하기 쉬운 기관단총으로 만들어져 있습니다.",
+		["bm_uzi_sc_desc"] = "Uzi 기관단총은 신뢰할 수 있고 느린 발사속도 덕분에 특히 .41 AE탄으로 변환해도 펀치를 날릴 수 있을 정도로 제어하기 쉬운 기관단총으로 만들어져 있습니다.",
 		--Chicago Typewriter
 		["bm_thompson_sc_desc"] = "고용량 드럼 탄창을 사용하여 적을 쓰려트릴때 마피아의 열기를 불러일으킬 수 있습니다.",
 		--MP40
@@ -1202,19 +1202,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 	
 		--S552
-		["bm_s552_sc_desc"] = "다른 소형 5.56mm 소총에 대한 훌륭한 대안용 총, 국토감시부에서 선호하는 총이기도 합니다.",				
+		["bm_s552_sc_desc"] = "다른 5.56mm탄을 사용하는 소형 소총에 대한 훌륭한 대안용 소총, 국토감시부에서 선호하는 소총이기도 합니다.",				
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "세계에서 가장 많이 생산된 .223탄을 사용하는 훌륭한 다목적 소총.",
 		--G36
 		["bm_g36_sc_desc"] = "'최고의 플라스틱 소총' 상을 위한 또 다른 최고 순위 경쟁자.",		
 		--VHS/Lion's Roar
-		["bm_vhs_sc_desc"] = "유능한 자의 손에서 인상적인 성능을 자랑하고 다루기 힘든 무기.\n\n전투에서 드라간의 분노의 영혼을 널리 알린다고 합니다.",
+		["bm_vhs_sc_desc"] = "유능한 자의 손에서 인상적인 성능을 자랑하고 다루기 힘든 소총.\n\n전투에서 드라간의 분노의 영혼을 널리 알린다고 합니다.",
 		--Olympic/Para
 		["bm_menu_sc_olympic_desc"] = "완전 자동 방식으로 소총탄을 발사하고 엄청나게 큰 권총. 이 총은 총알을 쏘는 실존적 위기입니다.",		
 		--TAR-21/Para
 		["bm_menu_sc_komodo_desc"] = "심각하게 컴팩트한 패키지에 많은 피해를 줍니다. 근거리 전투 또는 원거리 조우에 좋습니다.",		
 		--Famas
-		["bm_menu_sc_famas_desc"] = "이 무기는 탄창 용량을 발사 속도와 명중률로 바꿉니다. 사람들의 머리에서 사과를 쏘는 데 매우 효과적인 총입니다.",
+		["bm_menu_sc_famas_desc"] = "이 무기는 탄창 용량을 발사 속도와 명중률로 바꿉니다. 사람들의 머리에 있는 사과를 쏘는 데 매우 효과적인 총입니다.",
 		--Custom 40 damage ARs
 		--["bm_w_xeno"] = "MA14 Surge Rifle",	
 		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. 통합 유탄 발사기가 장착되어 있습니다.\n\n$BTN_BIPOD 키를 눌러 통합 유탄 발사기로 전환합니다.",	
@@ -1222,26 +1222,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 			
 		--OICW--
-		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. 20mm 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 늘러 유탄 발사기로 전환합니다.",
-		["bm_w_osipr_desc"] = "X세대 무기 기술. 20mm 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 꾹 눌러 유탄 발사기로 전환합니다.",
+		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. 20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 늘러 유탄 발사기로 전환합니다.",
+		["bm_w_osipr_desc"] = "X세대 무기 기술. 20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 꾹 눌러 유탄 발사기로 전환합니다.",
 		--M4/CAR-4
-		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
+		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있으며 5.56mm탄을 사용하는 소총입니다.",
 		["bm_wp_upg_fg_m4a1"] = "엠포 킷",
 		["bm_wp_upg_fg_m4a1_desc"] = "이 전용 세트는 애프터마켓 플립업 조준경을 보다 전통적인 설정으로 교체합니다. 총열덮개 모양을 덮어 씌웁니다.",
 		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
 		--AK5
 		["bm_ak5_sc_desc"] = "은행 강도와 총알 크기에 대해 정보를 모르는 사람들을 혼란스럽게 만드는 유명하고 좋은 다목적 소총입니다.",
 		--AK17
-		["bm_flint_sc_desc"] = "클래식 AK의 현대적 해석. 강력한 2점사가 특징이며 정체성 위기가 있습니다.",
+		["bm_flint_sc_desc"] = "클래식 AK 소총의 현대적 해석. 강력한 2점사가 특징이며 정체성 위기가 있습니다.",
 		--AK 5.45
 		["bm_w_ak74"] = "AK 5.45 소총",
-		["bm_ak74_sc_desc"] = "7.62 자매보다 작은 탄을 발사하지만 이게 덜 치명적인 것이라는 건 아닙니다.",	
+		["bm_ak74_sc_desc"] = "7.62 자매보다 작은 탄을 발사하지만 이 소총이 덜 치명적인 것이라는 건 아닙니다.",	
 		--Union 5.56
 		["bm_corgi_sc_desc"] = "이 불펍 소총은 명성에도 불구하고 바다에 갈 가치가 전혀 없습니다.",				
 		--UAR
 		["bm_aug_sc_desc"] = "클래식 불펍 소총. 죽은 나쁜 사람들을 더 죽이기 위한 훌륭한 만능 도구입니다.",
 		--CR 805
-		["bm_menu_sc_hajk_desc"] = "고전적고 더 젊고 현대적인 총알 호스 코브라의 사촌입니다. 이 총은 목표를 잡을 수 없다면 그걸 위한 다양한 발사 모드와 점사 전환 기능을 갖추고 있습니다.",
+		["bm_menu_sc_hajk_desc"] = "고전적고 더 젊고 현대적인 총알 호스 코브라의 사촌입니다. 이 소총은 목표를 잡을 수 없다면 그걸 위한 다양한 발사 모드와 점사 전환 기능을 갖추고 있습니다.",
 
 		--CUSTOM 48 DAMAGE ARs
 		--AN-94/92
@@ -1253,7 +1253,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m16_sc_desc"] = "CAR-4의 전신입니다.",
 		--AK 7.62
 		["bm_w_akm"] = "AK 7.62 소총",
-		["bm_akm_sc_desc"] = "이 소총은 방탄복이 DC에서 인기를 끌기 시작할 때 가지고 다니는 편리한 총.\n\n전 세계의 반군과 미친 정권이 항상 이용하는 총.",
+		["bm_akm_sc_desc"] = "이 소총은 방탄복이 DC에서 인기를 끌기 시작할 때 가지고 다니는 편리한 소총.\n\n전 세계의 반군과 미친 정권이 항상 이용하는 소총.",
 		["bm_w_akm_gold"] = "황금 AK 7.62 소총",
 		["bm_akm_gold_sc_desc"] = "강도, 멕시코 마약왕, 과대망상 독재자의 공통점은? 금도금 소총에 대한 매력이죠, 물론이고 말고요.",
 		--Queen's Wrath
@@ -1280,11 +1280,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_m249"] = "KSP-90 경기관총",
 		["bm_m249_sc_desc"] = "재장전 할 때 골치가 아프지만 재장전이 필요하기도 전에 모두를 죽일 가능성이 있습니다.\n\n지향 사격 시 명중률이 매우 감소합니다.",
 		--RPK
-		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 총을 고르는게 좋은 선택입니다.\n\n지향 사격 시 명중률이 매우 감소합니다.",							
+		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.\n\n지향 사격 시 명중률이 매우 감소합니다.",							
 
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 중기관총",
-		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 여동생. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다\n\n지향 사격 시 명중률이 매우 감소합니다.",		
+		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.\n\n지향 사격 시 명중률이 매우 감소합니다.",		
 
 		--M60
 		["bm_w_m60"] = "M60 중기관총",		
@@ -1311,7 +1311,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--M308
 		["bm_m14_sc_desc"] = "빠르게 발사하고 정확하며 반동만 신경 쓰시면 됩니다, 특히 완전 사격으로 했을때 말이죠.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",	
 		--FAL
-		["bm_fal_sc_desc"] = "자유 진영의 오른팔. 단단한 방탄복을 입은 멍청한 놈들을 제압 할 때 이것이 당신이 의지하는 총이 될 것입니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
+		["bm_fal_sc_desc"] = "자유 진영의 오른팔. 단단한 방탄복을 입은 멍청한 놈들을 제압 할 때 이것이 당신이 의지하는 소총이 될 것입니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
 		--SCAR
 		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",		
 		--G3
@@ -1325,7 +1325,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
-		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 총을 사용할 것입니다.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",	
+		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",	
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 점사 발사 모드 동안 증가된 발사 속도를 제공하는 고유한 자동 점사가 특징입니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
@@ -1340,7 +1340,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 저격소총",
-		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총 중 불과 몇 백 개만 만들어졌습니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"		
 		--SVD
@@ -1354,7 +1354,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m95_sc_desc"] = "소형 차량과의 전투에 사용되는 대물 저격소총. 이것을 유기적 표적에 사용하는 것은 아마도 전쟁 범죄일겁니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		--Custom Snipers
 		["bm_w_m107cq"] = "Mors .50 cal 대물 저격소총",
-		["bm_m107cq_sc_desc"] = "Thanatos의 발사속도가 마음에 들지 않았다면 Mors는 당신이 원하는 것을 미세한 붉은 안개로 전달할 것입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_m107cq_sc_desc"] = "Thanatos 대물 저격소총의 발사속도가 마음에 들지 않았다면 Mors 대물 저격소총은 당신이 원하는 것을 미세한 붉은 안개로 전달할 것입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_w_m200"] = "TF-141 대물 저격소총",
 		["bm_m200_sc_desc"] = "멋진 360도 노 스코프 사다리 스톨 샷을 시도할려는 사람들을 위한 총입니다.\n\n방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",		
 		--Marlin 1894
@@ -1373,7 +1373,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_bonus_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",	
-		["bm_menu_weapon_movement_bonus_info_2"] = " 만큼 이동 속도가 증가합니다.",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               사용하지 마시오              //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               사용하지 마시오               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "해당 무기는 주무기 슬롯으로 옮겨졌습니다.\n하이스트에서 해당 무기를 보조무기로 사용하면 충돌이 발생할 것입니다.",
@@ -1455,16 +1454,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Player Outfits--
 		["bm_suit_two_piece_sc"] = "투피스 정장",
-		["bm_suit_two_piece_desc_sc"] = "강도에 대한 세련된 접근 방식. 소리를 지를 때 날카롭게 보이는 것이 결코 아프지 않죠, '땅에 엎드려!'\n\n이 옵션을 선택하면 습격의 복장과 상관없이 기본 복장을 착용하게 됩니다.",
+		["bm_suit_two_piece_desc_sc"] = "하이스트를 할 때 세련된 접근 방식. '땅에 엎드려!' 소리를 지를 때 날카롭게 보이는 것이 결코 아프지 않죠.\n\n이 옵션을 선택하면 습격의 복장과 상관없이 기본 복장을 착용하게 됩니다.",
 
 		["bm_suit_loud_suit"] = "전투용 하네스",
-		["bm_suit_loud_suit_desc"] = "더위가 싫을 때 입기 좋은 옷입니다. 가볍고 이동이 쉬우며 유틸리티용으로 제작되었습니다. 부수고 줍기 하기 위한 좋은 선택, 또는 강력하게 요새화된 용병 시설을 공격할 때 좋은 선택입니다.",
+		["bm_suit_loud_suit_desc"] = "열기 따위에 신경쓰지 않을 때 입기 좋은 옷입니다. 가볍고 이동이 쉬우며 유틸리티용으로 제작되었습니다. 부수고 줍기 하기 위한 좋은 선택, 또는 강력하게 요새화된 용병 시설을 공격할 때 좋은 선택입니다.",
 
 		["bm_suit_jackal_track"] = "Special Merchandise",
 		["bm_suit_jackal_track_desc"] = "A special-made tracksuit, with both the Jackal logo, and a variation on the VERITAS logo.\n\nThe crew received them in unmarked boxes, but Jackal confirms he never sent them, or has seen them before.\nIt's unknown where they came from.\n\n\n\n...Inside the packages, was one note:\n\n''##A TOKEN OF APPRECIATION, FOR THOSE WITH DEDICATION.\nXOXO\n--S.N.##''\n\n",
 
 		["bm_suit_sunny"] = "써니사이드 강도",
-		["bm_suit_sunny_desc"] = "때로는 소매를 걷어붙이고 약간의 강도를 하고 싶을 때가 있습니다.",
+		["bm_suit_sunny_desc"] = "때로는 소매를 걷어붙이고 약간의 하이스트를 하고 싶을 때가 있습니다.",
 
 		["bm_suit_pool"] = "보디의 수영장 수리복",
 		["bm_suit_pool_desc"] = "수영장 수리공을 위한 날카로운 실...",
@@ -1475,8 +1474,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flecktarn"] = "플렉탄 위장",
 		["bm_suit_var_jumpsuit_flecktarn_desc"] = "두 유럽 국가에서 사용했던 클래식 위장으로, 숲이 우거진 환경과 쉽게 조화를 이루는 능력으로 전투 효율성이 입증되었습니다. 확실히 도시 지역에서는 효과가 없지만 시골 지역에서는 사람들의 눈을 속이는 것이 가능합니다.",
 
-		["bm_suit_var_jumpsuit_flatgreen"] = "끈적 끈적한 녹색",
-		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 소유했다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭으로 파괴되고 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있지만 이 복장만은 남았기 때문에 파괴된 쓰레기 트럭 근처에서 회수 되었습니다.",
+		["bm_suit_var_jumpsuit_flatgreen"] = "끈적끈적한 녹색",
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 소유했다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭에서 인멸되었고 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있지만 이 복장만은 파괴된 쓰레기 트럭 근처에 남았기 때문에 회수 되었습니다.",
 
 		--New menu stats--
 		["bm_menu_deflection"] = "굴절",
@@ -1692,8 +1691,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
 		["bm_menu_concealment"] = "은닉성\n",
-		["bm_menu_bonus_spread_p2_mod"] = "많은 정확도 수정치",
-		["bm_menu_bonus_spread_p3_mod"] = "대규모 정확도 수정치",
+		["bm_menu_bonus_spread_p2_mod"] = "많은 명중률 수정치",
+		["bm_menu_bonus_spread_p3_mod"] = "대규모 명중률 수정치",
 		["bm_menu_bonus_recoil_p2_mod"] = "많은 안정성 수정치",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "돈 부스트",
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "당신과 당신의 팀원은 돈 보상을 +5%만큼 받습니다.",
@@ -1842,7 +1841,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		LocalizationManager:add_localized_strings({	
 			["bm_w_deagle"] = "큰 권총",
 			["bm_w_m16"] = "이게 클라리온인가",
-			["bm_m16_sc_desc"] = "데미지를 더 증가시킬 수 있도록 탄 클립을 줄거임",
+			["bm_m16_sc_desc"] = "대미지를 더 증가시킬 수 있도록 탄 클립을 줄거임",
 			["bm_w_x_type54"] = "크로스킬 쌍둥이들",			
 		})
 	end	
@@ -1869,8 +1868,8 @@ elseif ai_type == z then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "겨차 타겨어대에 지행 주",
-			["hud_assault_cover"] = "STYA IN COVRE...FLESH",
-			["hud_assault_alpha"] = "PCILOE ASUASLT"
+			["hud_assault_cover"] = "어페무에 머무러라...살덩이",
+			["hud_assault_alpha"] = "겨차 타겨어대"
 		})
 	end)
 elseif ai_type == f then
@@ -2156,7 +2155,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["hud_instruct_mask_on_alpha"] = "$BTN_USE_ITEM 키를 눌러 마스크 착용",
 
 		--Default Suit String
-		["bm_suit_none_desc"] = "이것은 선택한 갑옷을 입은 하이스터의 기본 복장입니다. 선택한 습격에 따라 투피스 정장에서 자동으로 변경됩니다!",
+		["bm_suit_none_desc"] = "이것은 선택한 방탄복을 입은 하이스터의 기본 복장입니다. 선택한 하이스트에 따라 투피스 정장에서 자동으로 변경됩니다!",
 
 		-- Ad Banner Change
 		["menu_changelog"] = "Latest Changelog",
@@ -2167,7 +2166,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_content_updates_previous"] = "",
 
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 경험치와 획득한 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
+		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 획득한 경험치와 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
 		
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "척탄병",
@@ -2181,9 +2180,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans_desc"] = "타이탄 유닛을 비활성화합니다.",
 		["mutator_notitans_longdesc"] = "타이탄 유닛의 모든 스폰 인스턴스가 비활성화됩니다.",
 
-		["mutator_mememanonly"] = "님들아 그걸 믿었음?",
-		["mutator_mememanonly_desc"] = "정신나갈거같애",
-		["mutator_mememanonly_longdesc"] = "정신나갈거같애정신나갈거같애정신나갈거같애\n\n 경고: 해당 뮤테이터는 일부 맵에서 충돌을 일으킬 수 있습니다.",
+		["mutator_mememanonly"] = "라이라이차차차",
+		["mutator_mememanonly_desc"] = "새끼...기열!",
+		["mutator_mememanonly_longdesc"] = "아쎄이! 이 뮤테이터를 활성화시켰다면 희망을 버려라!\n\n 경고: 해당 뮤테이터는 일부 맵에서 충돌을 일으킬 수 있습니다.",
 
 		["MutatorMoreDonutsPlus"] = "많은 도넛+",
 		["MutatorMoreDonutsPlus_desc"] = "모든 일반 적은 NYPD 브롱코 경찰로 대체되고 모든 특수 적은 옴니아 LPF로 대체됩니다.",

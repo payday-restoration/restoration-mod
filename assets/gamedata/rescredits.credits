@@ -69,6 +69,6 @@
 	<br/>
 	<text text="MsMarshie" type="name"/>
 	<text text="LR_Daring" type="name"/>
-	<text text="GullWingdoor " type="name"/>
+	<text text="Gullwingdoor " type="name"/>
 	<command cmd="stop" offset="220"/>
 </table>

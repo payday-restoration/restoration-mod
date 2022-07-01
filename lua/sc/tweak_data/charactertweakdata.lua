@@ -4902,7 +4902,7 @@ function CharacterTweakData:_presets(tweak_data)
 		anti_materiel = 1,
 		shotgun = 0.75,
 		machine_gun = 0.75, 
-		pdw = 1.25,
+		pdw = 1.125,
 		pistol = 0.75, 
 		heavy_pistol = 1,
 		blunt = 1.25,

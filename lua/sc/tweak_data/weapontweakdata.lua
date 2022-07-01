@@ -4094,7 +4094,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.CLIP_AMMO_MAX = 20
 				self.lemming.AMMO_MAX = 90
 				self.lemming.has_description = true
-				self.lemming.desc_id = "bm_ap_armor_weapon_sc_desc"	
+				self.lemming.desc_id = "bm_ap_armor_80_weapon_sc_desc"	
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571
 				self.lemming.single.fire_rate = 0.08571428571
 				self.lemming.kick = self.stat_info.kick_tables.even_recoil
@@ -4103,7 +4103,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.can_shoot_through_enemy = false
 				self.lemming.can_shoot_through_shield = false
 				self.lemming.can_shoot_through_wall = false
-				self.lemming.armor_piercing_chance = 1
+				self.lemming.armor_piercing_chance = 0.8
 				self.lemming.supported = true
 				self.lemming.ads_speed = 0.220
 				self.lemming.damage_falloff = {
@@ -6604,7 +6604,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.can_shoot_through_enemy = false
 				self.mp7.can_shoot_through_shield = false
 				self.mp7.can_shoot_through_wall = false
-				self.mp7.armor_piercing_chance = 1
+				self.mp7.armor_piercing_chance = 0.8
 				self.mp7.kick = self.stat_info.kick_tables.even_recoil
 				self.mp7.supported = true
 				self.mp7.ads_speed = 0.240
@@ -6643,7 +6643,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.desc_id = "bm_p90_sc_desc"	
 				self.p90.AMMO_MAX = 90
 				self.p90.fire_mode_data.fire_rate = 0.070588235
-				self.p90.armor_piercing_chance = 1
+				self.p90.armor_piercing_chance = 0.8
 				self.p90.can_shoot_through_enemy = false
 				self.p90.can_shoot_through_shield = false
 				self.p90.can_shoot_through_wall = false
@@ -12989,7 +12989,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		saw = 1.25, --Compensate for jankiness.
 		lmg = 0.6,
 		minigun = 0.4,
-		pdw = 0.6,
+		pdw = 0.4,
 	}
 
 	--Get weapon category specific pickup multipliers.

@@ -663,7 +663,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							if not self._state_data.in_steelsight then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then
-								self._ext_camera:play_redirect(weap_base:is_second_sight_on() and self:get_animation("recoil") or self:get_animation("recoil_steelsight"), 1)
+								self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
 							end
 						end
 
@@ -1035,21 +1035,20 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 			local weapon = self._equipped_unit:base()
 			local weapon_tweak = weapon:weapon_tweak_data()
 			local base_speed = ( (self:on_ladder() and speed_tweak.CLIMBING_MAX ) or (self._state_data.ducking and speed_tweak.CROUCHING_MAX) or (self._state_data.in_air and speed_tweak.INAIR_MAX) or speed_tweak.STANDARD_MAX )
-			if weapon_tweak.steelsight_movement_speed then
-				movement_speed = base_speed * weapon_tweak.steelsight_movement_speed
-			else
-				for _, category in ipairs(weapon_tweak.categories) do
-					if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
-						movement_speed = base_speed * tweak_data[category].ads_move_speed_mult
-						break --hopefully this only grabs first category that has this stat
-					end
+			local speed_mult = 1
+			local has_ads_move_speed_mult = nil
+			for _, category in ipairs(weapon_tweak.categories) do
+				if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
+					speed_mult = speed_mult * tweak_data[category].ads_move_speed_mult
+					has_ads_move_speed_mult = true
 				end
 			end
 			if weapon_tweak.is_bullpup then 
-				movement_speed = movement_speed * 1.2
+				speed_mult = speed_mult * 1.2
 			end
-			movement_speed = movement_speed * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
-			movement_speed = math.clamp(movement_speed, 0, base_speed)
+			speed_mult = speed_mult * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
+			movement_speed = base_speed * ((not has_ads_move_speed_mult and 0.45) or 1)
+			movement_speed = math.clamp(movement_speed * speed_mult, 0, base_speed)
 		end
 		speed_state = "steelsight"
 	elseif self:on_ladder() then
@@ -1893,6 +1892,11 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 		if self._state_data.in_steelsight and self._equipped_unit:base().stance_mod then
 			stance_mod = self._equipped_unit:base():stance_mod() or stance_mod
 		end
+
+		if self._equipped_unit:base()._has_big_scope and not self._state_data.in_steelsight then
+			stance_mod.translation = stance_mod.translation + Vector3(1, 0, -2)
+			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, 3)
+		end
 	end
 
 	if AdvMov and AdvMov.settings then
@@ -1935,7 +1939,6 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 		end
 	end
 end
-
 --Deals with burst fire hud stuff when swapping from an underbarrel back to a weapon in burst fire.
 local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel	
 function PlayerStandard:_check_action_deploy_underbarrel(...)
@@ -1985,7 +1988,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
 
-		if self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.25) then
+		if self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.3) then
 			self._steelsight_wanted = true
 			return
 		end

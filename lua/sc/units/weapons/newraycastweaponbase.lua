@@ -278,6 +278,10 @@ function NewRaycastWeaponBase:stop_shooting(...)
 	stop_shooting_original(self, ...)
 	self._shooting = nil
 	self._shots_fired = 0
+	if self._fire_rate_init_progress then
+		self._fire_rate_init_progress = nil
+		--self._fire_rate_init_cancel = true
+	end
 	if self._name_id == "m134" or self._name_id == "shuno" then
 		self._vulcan_firing = nil
 		self:_stop_spin()
@@ -438,6 +442,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
 		
 	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
+	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
 	
 	self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
 	self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult or 1
@@ -667,6 +672,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.muzzleflash then
 				self._muzzle_effect_pls = stats.muzzleflash
 			end
+			if stats.big_scope then
+				self._has_big_scope = true
+			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
 	end
@@ -797,19 +805,24 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
 			self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire))
 			self._macno = nil
+			self._fire_rate_init_cancel = nil
 			multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
 		end
 	end	
-	--[
+
 	local init_mult = self._fire_rate_init_mult
-	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
-		if self._fire_rate_init_ramp_up then
-			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
-			init_mult =  init_ramp_up_add
+	if self._fire_rate_init_count and self:fire_mode() ~= "single" and not self:in_burst_mode() then
+		if (self._fire_rate_init_count > self._shots_fired) then
+			self._fire_rate_init_progress = true
+			if self._fire_rate_init_ramp_up then
+				local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
+				init_mult =  init_ramp_up_add
+			end
+			multiplier = multiplier * init_mult
+		elseif (self._fire_rate_init_count < self._shots_fired) then
+			self._fire_rate_init_progress = nil
 		end
-		multiplier = multiplier * init_mult
 	end
-	--]]
 
 	return multiplier
 end
@@ -1000,7 +1013,6 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	local falloff_start = damage_falloff and damage_falloff.start_dist or 3000
 	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
 	
-		--log("DSAFGS")
 	--[[
 	log("falloff_start : " .. tostring( falloff_start /100 ))
 	log("falloff_end : " .. tostring( falloff_end /100 ))

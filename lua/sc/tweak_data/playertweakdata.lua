@@ -338,7 +338,7 @@ function PlayerTweakData:init()
 	self.movement_state.standard.movement.speed.STANDARD_MAX = 350
 	self.movement_state.standard.movement.speed.RUNNING_MAX = 575
 	self.movement_state.standard.movement.speed.CROUCHING_MAX = 225
-	self.movement_state.standard.movement.speed.STEELSIGHT_MAX = 185
+	self.movement_state.standard.movement.speed.STEELSIGHT_MAX = 185 --Isn't used anymore since ADS speed is now a speed mult applied to w/e state you're in now
 	self.movement_state.standard.movement.speed.INAIR_MAX = 185
 	self.movement_state.standard.movement.speed.CLIMBING_MAX = 200
 	self.movement_state.standard.movement.jump_velocity.z = 470

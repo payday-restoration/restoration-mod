@@ -466,10 +466,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.mask_off_pickup = {true}
 	self.values.player.melee_kill_snatch_pager_chance = {1}
 	self.values.player.run_speed_multiplier = {1.25}
-	self.values.player.walk_speed_multiplier = {
-		1.25
-	}
-	self.values.player.climb_speed_multiplier = {1.2, 1.75}
+	self.values.player.walk_speed_multiplier = {1.25}
+	self.values.player.steelsight_speed_multiplier = {1.25}
+	self.values.player.climb_speed_multiplier = {1.25, 1.8}
 	self.values.player.can_free_run = {true}
 	self.values.player.fall_health_damage_multiplier = {0}
 	self.values.player.counter_strike_melee = {true}
@@ -995,8 +994,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 				self.values.player.crouch_dodge_chance = {0.06, 0.10}
 				self.values.player.crouch_speed_multiplier = {
-					1.1,
-					1.2
+					1.25,
+					1.35
 				}						
 
 			--Evasion
@@ -1869,6 +1868,15 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_steelsight_speed_multiplier = {
+		name_id = "menu_player_steelsight_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_speed_multiplier",
+			category = "player"
+		}
+	}
 	self.definitions.player_passive_loot_drop_multiplier_1 = {
 		name_id = "menu_player_passive_loot_drop_multiplier",
 		category = "feature",

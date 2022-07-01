@@ -1673,11 +1673,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Accuracy/Stability penalty",
+		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Stability penalty",
 		["bm_menu_bonus_concealment_p1_mod"] = "Small Concealment Modifier",
-		["bm_menu_bonus_concealment_p2"] = "Large Concealment bonus and Accuracy/Stability penalty",
+		["bm_menu_bonus_concealment_p2"] = "Large Concealment bonus and Stability penalty",
 		["bm_menu_bonus_concealment_p2_mod"] = "Large Concealment Modifier",
-		["bm_menu_bonus_concealment_p3"] = "Massive Concealment bonus and Accuracy/Stability penalty",
+		["bm_menu_bonus_concealment_p3"] = "Massive Concealment bonus and Stability penalty",
 		["bm_menu_bonus_concealment_p3_mod"] = "Massive Concealment Modifier",
 		["bm_menu_bonus_spread_p1"] = "Small Accuracy bonus and Stability penalty",
 		["bm_menu_bonus_spread_p1_mod"] = "Small Accuracy Modifier",
@@ -1761,7 +1761,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end
 
 	local cute = math.rand(1)
-	local funny = 0.10
+	local funny = 0.05
 	if cute <= funny then
 		LocalizationManager:add_localized_strings({	
 			--It's an "Upotte!!" reference
@@ -1782,7 +1782,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m14"] = "Ichiyon",
 						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
 					["bm_w_g3"] = "Jiisuri",
-						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters.",
+						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",

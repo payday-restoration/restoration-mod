@@ -76,6 +76,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_intimidate_enemies",
 		"player_walk_speed_multiplier",
 		"player_crouch_speed_multiplier",
+		"player_steelsight_speed_multiplier",
 		"player_flashbang_multiplier_1",
 		"player_fall_health_damage_multiplier",
 		"player_melee_kill_snatch_pager_chance",

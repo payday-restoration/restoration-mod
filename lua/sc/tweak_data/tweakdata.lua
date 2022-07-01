@@ -20,43 +20,58 @@ tweak_data.ammo.ricochet.autohit = {
 --TODO: Move to stat_info
 tweak_data.pistol = {
 	swap_bonus = 1.75,
-	ads_move_speed_mult = 0.95,
+	ads_move_speed_mult = 0.9,
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.75
 }
-tweak_data.akimbo = {
-	swap_bonus = 0.9
+
+tweak_data.shotgun = {
+	ads_move_speed_mult = 0.6,
 }
-tweak_data.shotgun = {}
+
 tweak_data.smg = {
-	swap_bonus = 1.2,
+	swap_bonus = 1.25,
 	ads_move_speed_mult = 0.75,
 	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
 }
-tweak_data.lmg = {
-	swap_bonus = 0.9,
-	ads_move_speed_mult = 0.3,
-	moving_spread_mult = 3.3333,
-	hipfire_spread_mult = 3.3333
-}
-tweak_data.wolf_brigade = {
-	hipfire_spread_mult = 0.5
-}
-tweak_data.minigun = {
-	swap_bonus = 0.9,
-	ads_move_speed_mult = 0.3,
-	moving_spread_mult = 3.3333,
-	hipfire_spread_mult = 3.3333
-}
+	tweak_data.lmg = {
+		swap_bonus = 0.8,
+		ads_move_speed_mult = 0.4,
+		moving_spread_mult = 3.3333,
+		hipfire_spread_mult = 3.3333
+	}
+	tweak_data.wolf_brigade = {
+		hipfire_spread_mult = 0.5
+	}
+	tweak_data.minigun = {
+		swap_bonus = 0.8,
+		ads_move_speed_mult = 0.4,
+		moving_spread_mult = 3.3333,
+		hipfire_spread_mult = 3.3333
+	}
+
 tweak_data.snp = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	hipfire_moving_spread_mult = 6
+	hipfire_moving_spread_mult = 2
 }
+	tweak_data.semi_snp = {
+		swap_bonus = 0.8,
+		ads_move_speed_mult = 0.5,
+		hipfire_spread_mult = 4,
+		hipfire_moving_spread_mult = 1
+	}
+
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45
+}
+
+tweak_data.akimbo = {
+	swap_bonus = 0.8,
+	ads_move_speed_mult = 0.8,
+	hipfire_spread_mult = 1.5
 }
 
 --Max concealment for guns.

@@ -324,13 +324,12 @@ function ShotgunBase:run_and_shoot_allowed()
 	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot") and self._is_real_shotgun
 end
 
-
 function ShotgunBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
-	end 
+	end
 	--Took hipfire RoF bonus from OVK, and true to their name, it looks to be a bit overkill on the sanity checks, but w/e
 	local user_unit = self._setup and self._setup.user_unit --I'd like to know an instance where you can even shoot at all without there being a user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
@@ -338,29 +337,34 @@ function ShotgunBase:fire_rate_multiplier()
 		multiplier = multiplier * managers.player:upgrade_value("shotgun", "hip_rate_of_fire", 1)
 	end
 	if self:in_burst_mode() or self._macno then
+		local no_burst_mult = multiplier
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
-			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / multiplier)
+			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)
 			local current_state_name = managers.player:current_state()
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
 			self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire))
 			self._macno = nil
-			multiplier = 1
+			self._fire_rate_init_cancel = nil
+			multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
 		end
 	end	
 
-	--[[
 	local init_mult = self._fire_rate_init_mult
-	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
-		if self._fire_rate_init_ramp_up then
-			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
-			init_mult =  init_ramp_up_add
+	if self._fire_rate_init_count and self:fire_mode() ~= "single" and not self:in_burst_mode() then
+		if (self._fire_rate_init_count > self._shots_fired) then
+			self._fire_rate_init_progress = true
+			if self._fire_rate_init_ramp_up then
+				local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
+				init_mult =  init_ramp_up_add
+			end
+			multiplier = multiplier * init_mult
+		elseif (self._fire_rate_init_count < self._shots_fired) then
+			self._fire_rate_init_progress = nil
 		end
-		multiplier = multiplier * init_mult
 	end
-	--]]
 
 	return multiplier
 end

@@ -3,34 +3,42 @@ function EconomyTweakData:init(tweak_data)
 	old_eco_init(self, tweak_data)
 
 	--Modifiers are neat I guess--
+
+	--DMC can't figure out how to get custom_stats working on skin-given boosts
+	--Concealment Bonuses
 	self.bonuses.concealment_p1.name_id = "bm_menu_bonus_concealment_p1"
-	self.bonuses.concealment_p1.stats = {concealment = 1, spread = -1}
-	self.bonuses.concealment_p1.damage_near_mul = -100
-	self.bonuses.concealment_p1.damage_far_mul = -200
+	self.bonuses.concealment_p1.stats = {concealment = 1, recoil = -2}
+	--self.bonuses.concealment_p1.damage_near_mul = -100
+	--self.bonuses.concealment_p1.damage_far_mul = -200
 	self.bonuses.concealment_p2.name_id = "bm_menu_bonus_concealment_p2"
-	self.bonuses.concealment_p2.stats = {concealment = 2, spread = -2}
-	self.bonuses.concealment_p2.damage_near_mul = -200
-	self.bonuses.concealment_p2.damage_far_mul = -400
+	self.bonuses.concealment_p2.stats = {concealment = 2, recoil = -4}
+	--self.bonuses.concealment_p2.damage_near_mul = -200
+	--self.bonuses.concealment_p2.damage_far_mul = -400
 	self.bonuses.concealment_p3.name_id = "bm_menu_bonus_concealment_p3"
-	self.bonuses.concealment_p3.stats = {concealment = 3, spread = -3}
-	self.bonuses.concealment_p3.damage_near_mul = -300
-	self.bonuses.concealment_p3.damage_far_mul = -600
+	self.bonuses.concealment_p3.stats = {concealment = 3, recoil = -6}
+	--self.bonuses.concealment_p3.damage_near_mul = -300
+	--self.bonuses.concealment_p3.damage_far_mul = -600
+
+	--The one Accuracy Bonus
 	self.bonuses.spread_p1.name_id = "bm_menu_bonus_spread_p1"
-	self.bonuses.spread_p1.stats = {spread = 1, recoil = -1}
-	self.bonuses.spread_p1.damage_near_mul = 100
-	self.bonuses.spread_p1.damage_far_mul = 200
+	self.bonuses.spread_p1.stats = {spread = 1, concealment = -1}
+	--self.bonuses.spread_p1.damage_near_mul = 100
+	--self.bonuses.spread_p1.damage_far_mul = 200
+
+	--Stability Bonuses
+	--This one is effectively a stabilty bonus, shush
 	self.bonuses.spread_n1.name_id = "bm_menu_bonus_spread_n1"
 	self.bonuses.spread_n1.stats = {spread = -3, recoil = 3}
-	self.bonuses.spread_n1.damage_near_mul = -300
-	self.bonuses.spread_n1.damage_far_mul = -600
+	--self.bonuses.spread_n1.damage_near_mul = -300
+	--self.bonuses.spread_n1.damage_far_mul = -600
 	self.bonuses.recoil_p1.name_id = "bm_menu_bonus_recoil_p1"
 	self.bonuses.recoil_p1.stats = {spread = -1, recoil = 1}
-	self.bonuses.recoil_p1.damage_near_mul = -100
-	self.bonuses.recoil_p1.damage_far_mul = -200
+	--self.bonuses.recoil_p1.damage_near_mul = -100
+	--self.bonuses.recoil_p1.damage_far_mul = -200
 	self.bonuses.recoil_p2.name_id = "bm_menu_bonus_recoil_p2"
 	self.bonuses.recoil_p2.stats = {spread = -2, recoil = 2}
-	self.bonuses.recoil_p2.damage_near_mul = -200
-	self.bonuses.recoil_p2.damage_far_mul = -400
+	--self.bonuses.recoil_p2.damage_near_mul = -200
+	--self.bonuses.recoil_p2.damage_far_mul = -400
 
 	--Essentially disabling these for the time being because they're kinda gay--
 	self.bonuses.damage_p1 = deep_clone(self.bonuses.concealment_p1)

@@ -214,9 +214,9 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local r_value = 0
 
 	if self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
-		local degrees_to_move = 80 * dt --Move camera 40 degrees per second, just like vanilla, but in a less fucky way.
+		local degrees_to_move = 90 * dt --Move camera 90 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
 		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
-		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value --
+		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value
 	elseif self._recoil_wait then
 		self._recoil_wait = self._recoil_wait - dt
 

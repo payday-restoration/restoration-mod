@@ -1192,6 +1192,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and have a desire to destroy their wrists.",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897 Shotgun",
+		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.",
+		--Mosconi 12g
+		["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
+		--R870
+		["bm_menu_sc_r870_desc"] = "Long arm of the law and freedom. Now freedom has a shotgun and shells with your name on it.",		
+		--KSG
+		["bm_menu_sc_ksg_desc"] = "Everything is plastic in the future! Bullpup shotgun with questionable craftsmanship, an LWI specialty.",		
+		--Breaker 10g
+		["bm_menu_sc_boot"] = "Breaker 10g",		
+		["bm_menu_sc_boot_desc"] = "An antique shotgun sporting a powerful 10g shotgun shell and an even more potent badass factor. Come with me if you want to live.",	
+		--Mosconi
+		["bm_menu_sc_huntsman_desc"] = "Double the barrels, double the fun. While limited when it comes to magazine size, two triggers allows you to unleash a ragnarok of buckshot on any unfortunate SOB in the same room as you.",		
 		--Custom Shotguns
 		--Doomstick
 		["bm_w_quadbarrel"] = "Doomstick Shotgun",
@@ -1319,7 +1331,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_g3"] = "Gewehr-3",
 		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\nDeals 80% of its damage through body armor.",	
 		--Little Friend
-		["bm_w_galil"] = "Defender 7.62 Rifle",
 		--Little Friend
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
@@ -1327,6 +1338,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",
 		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
+		--Galil
+		["bm_w_galil"] = "Defender 7.62 Rifle",
+		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\nDeals 80% of its damage through body armor.",		
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2 Rifle",
 		["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique auto-burst that provides an increased fire rate while on burst-fire mode.\n\nDeals 80% of its damage through body armor.",

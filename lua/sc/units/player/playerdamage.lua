@@ -285,7 +285,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 		self:_hit_direction(attacker_unit:position())
 	end
 	
-	self._last_received_dmg = attack_data.damage --Raw damage taken before (most) modifiers is used to calculate grace period.
+	self._last_received_dmg = math.huge --As opposed to raw damage (attack_data.damage), just an idea to see if the game feels better without grace piercing
 	self._next_allowed_dmg_t = Application:digest_value(t + self._dmg_interval, true)
 
 	--Perform overall damage reduction calcs.

@@ -5882,6 +5882,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_judge.timers.reload_exit_not_empty = 1.3
 
 			--Mosconi 12G Tactical (Mossberg 590)
+				self.m590.desc_id = "bm_menu_sc_m590_desc"
+				self.m590.has_description = true
 				self.m590.tactical_reload = 1	
 				self.m590.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.m590.rays = 9
@@ -5915,6 +5917,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Reinfeld 880 (R870)
 				self.r870.desc_id = "bm_menu_sc_r870_desc"
+				self.r870.has_description = true
 				self.r870.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.r870.rays = 9
 				self.r870.CLIP_AMMO_MAX = 8
@@ -5947,6 +5950,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r870.panic_suppression_chance = 0.05
 	
 			--Raven (KSG)
+				self.ksg.desc_id = "bm_menu_sc_ksg_desc"
+				self.ksg.has_description = true			
 				self.ksg.rays = 9
 				self.ksg.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.ksg.AMMO_MAX = 60
@@ -5980,6 +5985,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksg.reload_speed_multiplier = 0.9
 
 			--Reinfeld 88 (WHY IS THIS UNDER THE REMINGTON LABEL)
+				self.m1897.desc_id = "bm_menu_sc_m1897_desc"
+				self.m1897.has_description = true				
 				self.m1897.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.m1897.rays = 9
 				self.m1897.CLIP_AMMO_MAX = 5
@@ -6159,6 +6166,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b682.timers.reload_exit_not_empty = 0.9
 
 			--Breaker 12g (Model 1887)
+				self.boot.name_id = "bm_menu_sc_boot"
+				self.boot.desc_id = "bm_menu_sc_boot_desc"
+				self.boot.has_description = true
 				self.boot.AMMO_MAX = 40
 				self.boot.CLIP_AMMO_MAX = 6
 				self.boot.tactical_reload = 1
@@ -6203,6 +6213,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.boot.reload_speed_multiplier = 0.75
 
 			--Mosconi 12G
+				self.huntsman.desc_id = "bm_menu_sc_huntsman_desc"
+				self.huntsman.has_description = true		
 				self.huntsman.rays = 9
 				self.huntsman.muzzleflash = "effects/particles/shotgun/muzzleflash"
 				self.huntsman.AMMO_MAX = 40
@@ -8234,6 +8246,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shak12.timers.reload_exit_not_empty = 0.65
 
 		--Gecko 7.62 (Galil ARM 7.62)
+			self.galil.has_description = true
+			self.galil.desc_id = "bm_galil_sc_desc"
 			self.galil.AMMO_MAX = 80
 			self.galil.CLIP_AMMO_MAX = 25
 			self.galil.FIRE_MODE = "single"

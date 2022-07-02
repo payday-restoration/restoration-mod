@@ -2324,7 +2324,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "케이블 가이",
-			["menu_triathlete_beta_desc_sc"] = "베이직: ##$basic##\n케이블 타이 공급량이 ##3##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 ##30%###로 증가합니다.##\n\n케이블 타이 공급량이 추가로 ##3##만큼 증가합니다.",
+			["menu_triathlete_beta_desc_sc"] = "베이직: ##$basic##\n케이블 타이 소지량이 ##3##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 ##30%##로 증가합니다.##\n\n케이블 타이 소지량이 추가로 ##3##만큼 증가합니다.",
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "광대는 무섭다",

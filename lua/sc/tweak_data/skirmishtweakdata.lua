@@ -1,7 +1,7 @@
 
 Month = os.date("%m")
 Day = os.date("%d")	
---This is probs unused, but setting to DS values to be on the safe side.
+--This is probs unused, but setting to scaled DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 	self.special_unit_spawn_limits = {
 		{

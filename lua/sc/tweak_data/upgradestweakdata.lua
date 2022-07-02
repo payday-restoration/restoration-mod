@@ -551,9 +551,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Controller--
 			--Cable Guy
 				--Basic
-					self.values.cable_tie.quantity_1 = {4}
+					self.values.cable_tie.quantity_1 = {3}
 				--Ace
-					self.values.cable_tie.quantity_2 = {4}
+					self.values.cable_tie.quantity_2 = {3}
 					self.values.cable_tie.pickup_chance = {true}
 
 				--Clowns are Scary

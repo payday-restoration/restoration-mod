@@ -1300,3 +1300,37 @@ function PlayerManager:get_value_from_risk_upgrade(risk_upgrade, detection_risk)
 
     return risk_value
 end
+
+--Changed so cable tie max quantity properly scales
+function PlayerManager:add_cable_ties(amount)
+	local name = "cable_tie"
+	local equipment = tweak_data.equipments.specials[name]
+	local special_equipment = self._equipment.specials[name]
+	local new_amount = 0
+	local max_cable_ties = equipment.max_quantity
+	
+	--So this is properly taken into account
+	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2")
+
+	if special_equipment then
+		local current_amount = Application:digest_value(special_equipment.amount, false)
+		new_amount = math.min(current_amount + amount, max_cable_ties)
+
+		managers.hud:set_cable_ties_amount(HUDManager.PLAYER_PANEL, new_amount)
+
+		special_equipment.amount = Application:digest_value(new_amount, true)
+	else
+		new_amount = math.min(amount, max_cable_ties)
+		self._equipment.specials[name] = {
+			is_cable_tie = true,
+			amount = new_amount and Application:digest_value(new_amount, true) or nil
+		}
+
+		managers.hud:set_cable_tie(HUDManager.PLAYER_PANEL, {
+			icon = equipment.icon,
+			amount = new_amount
+		})
+	end
+
+	self:update_synced_cable_ties_to_peers(new_amount)
+end

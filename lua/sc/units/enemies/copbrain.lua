@@ -287,22 +287,6 @@ function CopBrain:init(unit)
 	
 end
 
---[[
---Thanks Rokk--
-Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(self)
-	
-	self._unit:unit_data().is_convert = true
-	
-	--Ugly hack to be able to call converts
-	--Kill me now
-	if not SC._converts then
-		SC._converts = {}
-	end   
-	table.insert(SC._converts, self._unit)
-	
-end)
-]]--
-
 -- Update immediately once we have our pathing results instead of waiting for the next update
 -- Not posthooking _add_pathing_result instead of these two just in case the path gets modified before navlink delays are applied in clbk_pathing_results
 Hooks:PostHook(CopBrain, "clbk_pathing_results", "res_clbk_pathing_results", function(self, search_id, path)
@@ -390,6 +374,14 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 	managers.groupai:state():add_alert_listener(self._alert_listen_key, callback(self, self, "on_alert"), alert_listen_filter, alert_types, self._unit:movement():m_head_pos())
 
 	self._logic_data.is_converted = true
+	self._unit:unit_data().is_convert = true
+	
+	--Ugly hack to be able to call converts
+	--Kill me now
+	if not SC._converts then
+		SC._converts = {}
+	end   
+	table.insert(SC._converts, self._unit)	
 	self._logic_data.group = nil
 	local mover_col_body = self._unit:body("mover_blocker")
 

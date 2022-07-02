@@ -5,7 +5,6 @@ Hooks:PostHook(GroupAITweakData, "init", "sh_init", function (self)
 	self.ai_tick_rate = 1 / 90
 end)
 
-
 function GroupAITweakData:_init_chatter_data()
 	self.enemy_chatter = {}
 	--[[

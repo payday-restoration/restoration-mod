@@ -236,7 +236,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"cable_tie_pickup_chance"
+						"cable_tie_pickup_chance",
+						"cable_tie_quantity_2"
 					},
 					cost = self.costs.pro
 				}

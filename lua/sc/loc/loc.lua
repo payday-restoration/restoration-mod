@@ -2321,7 +2321,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "Cable Guy",
-			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4.##\n\nACE: ##$pro##\nYour chance to pick up cable ties from ammo boxes is increased to ##30%.##\n\nIncreases your maximum cable ties by ##3.##",
+			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nYour supply of cable ties is increased by ##3##.\n\nACE: ##$pro##\nYour chance to pick up cable ties from ammo boxes is increased to ##30%.##\n\nYour supply of cable ties is increased by an additional ##3##.",
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "Clowns are Scary",
@@ -2329,7 +2329,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "Stockholm Syndrome",
-			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nNearby civilians ##have a chance of reviving you if you interact with them and have a chance of giving you ammo.##\n\nACE: ##$pro##\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNOTE: This effect does not stack with multiple crew members using this skill.",
+			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nNearby civilians and jokers will ##revive you when you go down when called over## and will give you an ammo box.\n\nACE: ##$pro##\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNOTE: This effect does not stack with multiple crew members using this skill.",
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "Joker",

@@ -307,7 +307,8 @@ function restoration:Init()
 	--Sub Faction overrides
 	--Texas
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
-		"ranc"
+		"ranc",
+		"dinner"
 	}	
 	--San Francisco
 	restoration.needle = {

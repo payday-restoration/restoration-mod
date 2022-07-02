@@ -1,6 +1,8 @@
 {
   "ene_security" : "White GenSec Guard",
   "ene_security_gensec" : "Red GenSec Guard",  
+  "ene_male_ranc_ranger" : "DPD Cop",
+  "ene_cop" : "NYPD Cop",
   "ene_fbi_swat" : "NYPD FBI SWAT",  
   "ene_fbi_heavy" : "NYPD FBI Heavy SWAT",
   "ene_fbi_heavy_r870_sc" : "NYPD FBI Heavy SWAT"

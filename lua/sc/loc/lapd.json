@@ -1,5 +1,7 @@
 {
   "ene_lapd_veteran_cop" : "SWAT Chief Mardo",
+  "ene_cop" : "LAPD Cop",  
+  "ene_male_chas_police" : "SFPD Cop",
   "ene_swat" : "LAPD SWAT",  
   "ene_swat_heavy" : "LAPD Heavy SWAT",
   "ene_fbi_swat" : "LAPD FBI SWAT",  

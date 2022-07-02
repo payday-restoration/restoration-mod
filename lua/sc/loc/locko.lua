@@ -1160,13 +1160,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 기관탄총",
-		["bm_p90_sc_desc"] = "불펍식 기관단총이자 SpecOps-7 기관단총의 경쟁자. 미래형 우주총처럼 생겼다는 평을 자주 받습니다.\n\n방탄복을 관통할 수 있습니다.",		
+		["bm_p90_sc_desc"] = "불펍식 기관단총이자 SpecOps-7 기관단총의 경쟁자. 미래형 우주총처럼 생겼다는 평을 자주 받습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",		
 		["bm_wp_p90_body_p90_tan"] = "탠 바디",
 		["bm_wp_90_body_boxy"] = "옴니아 어썰트 프레임",
 		["bm_wp_90_body_boxy_desc"] = "오래된 옴니아 창고의 황폐한 유적에서 복구된 이 프레임은 무기의 취급이나 기능에 아무런 차이가 없지만 블록과 같은 미학은 확실히 좋은 물건입니다.",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7 기관탄총",
-		["bm_mp7_sc_desc"] = "경량 기관탄총이자 Project-90 기관탄총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달고 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n방탄복을 관통할 수 있습니다.",				
+		["bm_mp7_sc_desc"] = "경량 기관탄총이자 Project-90 기관탄총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달고 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",				
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 기관단총",	
 		["bm_mp5_sc_desc"] = "Gewehr-3의 자매.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
@@ -1674,11 +1674,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-		["bm_menu_bonus_concealment_p1"] = "적은 은닉성 보너스 및 명중률/안정성 패널티",
+		["bm_menu_bonus_concealment_p1"] = "적은 은닉성 보너스 및 안정성 패널티",
 		["bm_menu_bonus_concealment_p1_mod"] = "적은 은닉성 수정치",
-		["bm_menu_bonus_concealment_p2"] = "많은 은닉성 보너스 및 명중률/안정성 패널티",
+		["bm_menu_bonus_concealment_p2"] = "많은 은닉성 보너스 및 안정성 패널티",
 		["bm_menu_bonus_concealment_p2_mod"] = "많은 은닉성 수정치",
-		["bm_menu_bonus_concealment_p3"] = "대규모 은닉성 보너스 및 명중률/안정성 패널티",
+		["bm_menu_bonus_concealment_p3"] = "대규모 은닉성 보너스 및 안정성 패널티",
 		["bm_menu_bonus_concealment_p3_mod"] = "대규모 은닉성 수정치",
 		["bm_menu_bonus_spread_p1"] = "적은 명중률 보너스 및 안정성 패널티",
 		["bm_menu_bonus_spread_p1_mod"] = "적은 명중률 수정치",
@@ -1764,7 +1764,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end
 
 	local cute = math.rand(1)
-	local funny = 0.10
+	local funny = 0.05
 	if cute <= funny then
 		LocalizationManager:add_localized_strings({			
 			
@@ -1786,7 +1786,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m14"] = "이치온",
 						["bm_m14_sc_desc"] = "\"저 서양인들은 AK를 빼기고 무슨 짓거리를 하는거냐!? 분짜 배신자 녀석들 같으니!\"\n\n세이쇼 학원에 다니는 고등학생.\n느긋하고 말장난의 분필로 가득한 말장난을 합니다. 현재 패션센스 위기를 겪고 있습니다.",
 					["bm_w_g3"] = "지이쓰리",
-						["bm_g3_sc_desc"] = "\"결판을 내겠어요!\"\n\n세이쇼 학원에 다니는 고등학생.\n우아하지만 약간 덤벙거립니다. 또한 그녀의 많은 자매 중 맏이입니다.",
+						["bm_g3_sc_desc"] = "\"결판을 내겠어요!\"\n\n세이쇼 학원에 다니는 고등학생.\n우아하지만 약간 덤벙거립니다. 또한 그녀의 많은 자매 중 맏이이고 DMC의 소총입니다.",
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "에무피",
@@ -2324,7 +2324,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "케이블 가이",
-			["menu_triathlete_beta_desc_sc"] = "베이직: ##$basic##\n케이블 타이의 소지량이 ##4##개 증가합니다.\n\n에이스: ##$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 ##30%##만큼 증가합니다\n\n최대 케이블 타이가 추가로 ##3##개 증가합니다.",
+			["menu_triathlete_beta_desc_sc"] = "베이직: ##$basic##\n케이블 타이 공급량이 ##3##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 ##30%###로 증가합니다.##\n\n케이블 타이 공급량이 추가로 ##3##만큼 증가합니다.",
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "광대는 무섭다",
@@ -2332,7 +2332,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "스톡홀름 증후군",
-			["menu_joker_beta_desc_sc"] = "베이직: ##$basic##\n다운된 상태에서 근처에 붙잡힌 민간인이 있고 ##그들과 상호 작용하면 일정 확률로 당신을 소생시키고 탄약을 줍니다.##\n\n에이스: ##$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 ##4##번까지 피해 흡수를 ##1##씩 얻습니다.\n\n참고: 이 효과는 이 스킬을 사용하는 팀원들의 효과와 중첩되지 않습니다.",
+			["menu_joker_beta_desc_sc"] = "베이직: ##$basic##\n근처에 있는 민간인과 조커들을 ##쓰려진 상태에서 부르면 당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: ##$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 ##4##번까지 피해 흡수를 ##1##씩 얻습니다.\n\n참고: 이 효과는 이 스킬을 사용하는 팀원들의 효과와 중첩되지 않습니다.",
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "조커",

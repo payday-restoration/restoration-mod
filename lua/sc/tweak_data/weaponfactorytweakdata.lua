@@ -1393,6 +1393,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.05, -10, -4.65)
 	}	
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m107cq = {
+		translation = Vector3(-0.02, 5, -4.02)
+	}
+
+
 	--Military Red Dot
 	self.parts.wpn_fps_upg_o_aimpoint.pcs = {
 		10, 
@@ -1609,6 +1614,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_scout = {
 		translation = Vector3(-0.001, -39.5, -0.122)
 	}
+
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m200 = {
+		translation = Vector3(0.005, -28, -4.792)
+	}
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m107cq = {
+		translation = Vector3(-0.015, -18, -4.778)
+	}
+
+
 	
 	--Vanilla Shortdot
 	self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
@@ -12458,6 +12472,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		value = 8,
 		zoom = 20
 	}
+	self.parts.wpn_fps_upg_o_spot.custom_stats = { big_scope = true }
 	self.parts.wpn_fps_upg_o_spot.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	
@@ -14392,6 +14407,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		zoom = 30,
 		value = 6
 	}
+	self.parts.wpn_fps_upg_o_bmg.custom_stats = { big_scope = true }
 	self.parts.wpn_fps_upg_o_bmg.perks = {
 		"scope"
 	}
@@ -19679,14 +19695,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_ak5s_m_new.supported = true
 		self.parts.wpn_fps_smg_ak5s_m_new.stats = {
 			value = 1,
-			reload = 1,
-			recoil = -1
+			spread = 1,
+			recoil = -2
 		}
 
 		--(Automat-5) Curved Magazine
 		self.parts.wpn_fps_smg_ak5s_m_curve.supported = true
 		self.parts.wpn_fps_smg_ak5s_m_curve.stats = {
-			value = 1
+			value = 2,
+			reload = 3,
+			spread = -1,
+			concealment = -1
 		}
 
 		--(Automat-5) Match Magazine
@@ -21514,6 +21533,32 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_drum")	
 		table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_m4_upg_m_quick")	
 		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_m4_upg_m_quick")	
+	end
+
+	if self.parts.wpn_fps_ass_tingledingle_b_standard then
+
+		self.parts.wpn_fps_ass_tingledingle_b_long.supported = true
+		self.parts.wpn_fps_ass_tingledingle_b_long.stats = {
+			value = 99,
+			spread = 6,
+			concealment = -6
+		}
+		self.parts.wpn_fps_ass_tingledingle_b_long.custom_stats = {
+			falloff_start_mult = 1.45,
+			falloff_end_mult = 1.45,
+			ads_speed_mult = 1.15
+		}
+		self.parts.wpn_fps_ass_tingledingle_m_extended.supported = true
+		self.parts.wpn_fps_ass_tingledingle_m_extended.stats = {
+			value = 99,
+			extra_ammo = 60,
+			spread = -1,
+			concealment = -5
+		}
+		self.parts.wpn_fps_ass_tingledingle_m_extended.custom_stats = {
+			ads_speed_mult = 1.125
+		}
+
 	end
 
 --Resmod Custom Weapon stuff

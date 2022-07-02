@@ -41,9 +41,9 @@ tweak_data.smg = {
 		moving_spread_mult = 3.3333,
 		hipfire_spread_mult = 3.3333
 	}
-	tweak_data.wolf_brigade = {
-		hipfire_spread_mult = 0.5
-	}
+		tweak_data.wolf_brigade = {
+			hipfire_spread_mult = 0.5
+		}
 	tweak_data.minigun = {
 		swap_bonus = 0.8,
 		ads_move_speed_mult = 0.4,
@@ -59,7 +59,7 @@ tweak_data.snp = {
 	tweak_data.semi_snp = {
 		swap_bonus = 0.8,
 		ads_move_speed_mult = 0.5,
-		hipfire_spread_mult = 4,
+		hipfire_spread_mult = 12,
 		hipfire_moving_spread_mult = 1
 	}
 
@@ -708,7 +708,7 @@ tweak_data.casino = {
 
 tweak_data.money_manager.weapon_cost = {}
 local cost = 42000
-for i = 1, 1000, 1 do
+for i = 1, 10000, 1 do
 	table.insert( tweak_data.money_manager.weapon_cost, tostring(cost) )
 	cost = cost + 23000
 end

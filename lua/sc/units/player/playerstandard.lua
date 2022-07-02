@@ -563,7 +563,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								self._shooting_t = t
 								start_shooting = true
 
-								if fire_mode == "auto" then
+								if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
 									self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
 
 									if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) and (not weap_base.third_person_important or weap_base.third_person_important and not weap_base:third_person_important()) then
@@ -659,7 +659,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier())
 						end
 
-						if (fire_mode == "single" or fire_mode == "burst") and weap_base:get_name_id() ~= "saw" then
+						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
 							if not self._state_data.in_steelsight then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then
@@ -733,6 +733,28 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 	end
 
 	return new_action
+end
+
+function PlayerStandard:_check_stop_shooting()
+	if self._shooting then
+		self._equipped_unit:base():stop_shooting()
+		self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
+
+		local weap_base = self._equipped_unit:base()
+		local fire_mode = weap_base:fire_mode()
+		local is_auto_fire_mode = fire_mode == "auto"
+
+		if is_auto_fire_mode and (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) then
+			self._ext_network:send("sync_stop_auto_fire_sound", 0)
+		end
+
+		if is_auto_fire_mode and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
+			self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
+		end
+
+		self._shooting = false
+		self._shooting_t = nil
+	end
 end
 
 function PlayerStandard:_check_action_night_vision(t, input)

@@ -1191,7 +1191,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Loco
 		["bm_serbu_sc_desc"] = "크기가 축소된 Reinfeld 880 산탄총의 애프터마켓 버전. 은닉성을 원하고 손목을 파괴하고 싶은 사람들을 위한 산탄총입니다.",
 		--Reinfeld 88
-		["bm_w_m1897"] = "Repeater 1897 산탄총",		
+		["bm_w_m1897"] = "Repeater 1897 산탄총",
+		["bm_menu_sc_m1897_desc"] = "상징적이고 역사적인 이 작품은 진흙 투성이의 참호에서 치열한 태평양 섬 정글에 이르기까지 모든 것을 보았고 꽤 효과적인 발화점이라는 나쁜 평판을 받았습니다.",
+		--Mosconi 12g
+		["bm_menu_sc_m590_desc"] = "오래된 고전 산탄총의 개선된 버전이고, LEO, 군인, 민간인, 은행 강도 모두에게 괜찮은 선택을 할 수 있는 산탄총입니다.",
+		--R870
+		["bm_menu_sc_r870_desc"] = "법률과 자유의 긴 팔. 이제 자유에는 당신의 이름이 적힌 산탄총과 탄이 있습니다.",		
+		--KSG
+		["bm_menu_sc_ksg_desc"] = "미래의 모든 것은 플라스틱입니다! 의심스러운 장인 정신이 담긴 불펍 산탄총이자, LWI 특산품입니다.",		
+		--Breaker 10g
+		["bm_menu_sc_boot"] = "Breaker 10 게이지 산탄총",		
+		["bm_menu_sc_boot_desc"] = "강력한 10 게이지 산탄총 탄과 훨씬 더 강력한 악당 요소를 자랑하는 골동품 산탄총. 살고 싶다면 나와 함께 와라.",	
+		--Mosconi
+		["bm_menu_sc_huntsman_desc"] = "배럴이 두 배, 재미가 두 배. 탄창 크기는 제한적이지만 두 개의 방아쇠를 사용하면 같은 방에 있는 불행한 개새끼들에게 대해 벅샷이 가득한 라그나로크를 보여줄 수 있습니다.",				
 		--Custom Shotguns
 		--Doomstick
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "근거리에서 효과적인 펠릿 타입.\n펠릿 수를 10개로 늘립니다.",
@@ -1318,14 +1330,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_g3"] = "Gewehr-3 소총",
 		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 자매, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",
 		
-		["bm_w_galil"] = "Defender 7.62 소총",
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
 		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n방탄복을 관통해 피해의 80%를 입하고 $BTN_BIPOD 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
-		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",	
+		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n소음기와 완전 통합되었고 방탄복을 관통해 피해의 80%를 입힙니다.",
+		--Galil
+		["bm_w_galil"] = "Defender 7.62 소총",
+		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다."		
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 점사 발사 모드 동안 증가된 발사 속도를 제공하는 고유한 자동 점사가 특징입니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.",

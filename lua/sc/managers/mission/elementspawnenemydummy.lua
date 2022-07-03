@@ -618,9 +618,9 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 
 		--Custom Heist Stuff
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
+		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 		
 	}	
 local nypd_overkill = {

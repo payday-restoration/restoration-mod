@@ -38,7 +38,8 @@ function restoration:Init()
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_res", --firestarter day 2 res edit version
-		"tRain_returns" --wip rant-man heist
+		"tRain_returns", --wip rant-man heist
+		"constantine_policestation_lvl" --Constantine Scores (precinct raid)
 	}
 	restoration.captain_teamwork = {
 		"pal", --counterfeit
@@ -101,7 +102,8 @@ function restoration:Init()
 		"constantine_apartment_lvl", --Concrete Jungle 
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
-		"hntn" --harvest and trustee north
+		"hntn", --harvest and trustee north
+		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"help", --Prison Nightmare
@@ -193,7 +195,8 @@ function restoration:Init()
 		"constantine_smackdown2_lvl", --Truck Hustle
 		"nft_heist", --EN EF TEE HEIST
 		"TonCont", --Armored Transport: Atrium
-		"santas_hardware_store" --Hardware Store but Xmas
+		"santas_hardware_store", --Hardware Store but Xmas
+		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {

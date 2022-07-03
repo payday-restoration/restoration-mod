@@ -864,23 +864,20 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 			local used_grenade
 
 			if push then
-				-- Put a soft cap on how many enemies can push into one area
-				if table.size(assault_area.police.units) < (1 + table.size(assault_area.criminal.units)) * 4 then
-					local detonate_pos
-					local c_key = charge and table.random_key(assault_area.criminal.units)
-					if c_key then
-						detonate_pos = assault_area.criminal.units[c_key].unit:movement():m_pos()
-					end
+				local detonate_pos
+				local c_key = charge and table.random_key(assault_area.criminal.units)
+				if c_key then
+					detonate_pos = assault_area.criminal.units[c_key].unit:movement():m_pos()
+				end
 
-					-- Check which grenade to use to push, grenade use is required for the push to be initiated
-					-- If grenade isn't available, push regardless anyway after a short delay
-					used_grenade = self:_chk_group_use_grenade(group, detonate_pos) or group.ignore_grenade_check_t and group.ignore_grenade_check_t <= self._t
+				-- Check which grenade to use to push, grenade use is required for the push to be initiated
+				-- If grenade isn't available, push regardless anyway after a short delay
+				used_grenade = self:_chk_group_use_grenade(group, detonate_pos) or group.ignore_grenade_check_t and group.ignore_grenade_check_t <= self._t
 
-					if used_grenade then
-						self:_voice_move_in_start(group)
-					elseif not group.ignore_grenade_check_t then
-						group.ignore_grenade_check_t = self._t + 6
-					end
+				if used_grenade then
+					self:_voice_move_in_start(group)
+				elseif not group.ignore_grenade_check_t then
+					group.ignore_grenade_check_t = self._t + 4 / math.max(1, table.size(assault_area.criminal.units))
 				end
 			else
 				-- If we aren't pushing, we go to one area before the criminal area
@@ -908,26 +905,10 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 
 				self:_set_objective_to_enemy_group(group, grp_objective)
 			end
-		elseif in_place_duration > 5 then
-			-- If no assault path was found, check if the group is stuck, which can happen when certain units are not allowed to use navlinks
-			-- Ultimately this should be fixed per map that has these issues, this is a temporary solution that removes stuck groups
-			for _, u_data in pairs(group.units) do
-				if u_data.unit:brain()._current_logic_name ~= "idle" then
-					return
-				end
-			end
-
-			for _, other_area in pairs(objective_area.neighbours) do
-				local path = managers.navigation:search_coarse({
-					id = "GroupAI_assault",
-					from_seg = objective_area.pos_nav_seg,
-					to_seg = other_area.pos_nav_seg,
-					access_pos = group_access_mask
-				})
-				if path then
-					return
-				end
-			end
+		elseif in_place_duration > 10 and not self:_can_group_see_target(group) then
+			-- Log and remove groups that get stuck
+			local element_id = group.spawn_group_element and group.spawn_group_element._id or 0
+			local element_name = group.spawn_group_element and group.spawn_group_element._editor_name or ""
 
 			for _, u_data in pairs(group.units) do
 				u_data.unit:brain():set_active(false)
@@ -978,7 +959,6 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 		end
 	end
 end)
-
 
 -- Helper to check if any group member has visuals on their focus target
 function GroupAIStateBesiege:_can_group_see_target(group, limit_range)
@@ -1088,8 +1068,7 @@ end
 function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 	local task_data = self._task_data.assault
 	if not task_data.use_smoke then
-		-- If a grenade was previously used within a certain timeframe, count that as a successful current use
-		return task_data.use_smoke_push_t and task_data.use_smoke_push_t <= self._t
+		return
 	end
 
 	local grenade_types = {
@@ -1153,10 +1132,10 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 		return
 	end
 
-	--[[If players camp a specific area for too long, turn the originally chosen grenade into a teargas grenade instead
+	-- If players camp a specific area for too long, turn a smoke grenade into a teargas grenade instead
 	local use_teargas
-	local can_use_teargas = not task_data.cs_grenade_next_t or task_data.cs_grenade_next_t < self._t
-	if can_use_teargas and area and area.criminal_entered_t and table.size(area.neighbours) <= 2 and math_random() < (self._t - area.criminal_entered_t - 60) / 180 then
+	local can_use_teargas = false --grenade_type == "smoke_grenade" and area and area.criminal_entered_t and table.size(area.neighbours) <= 2
+	if can_use_teargas and math_random() < (self._t - area.criminal_entered_t - 60) / 180 then
 		-- Check if a player actually currently is in this area
 		local num_player_criminals = 0
 		detonate_pos = tmp_vec1
@@ -1173,14 +1152,16 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 			-- If detonate pos is a roofed area, use teargas
 			use_teargas = World:raycast("ray", detonate_pos, detonate_pos + math.UP * 1000, "slot_mask", managers.slot:get_mask("world_geometry"), "report")
 		end
-	end]]--
+	end
 
-	--[[if use_teargas then
+	local timeout
+	if use_teargas then
 		area.criminal_entered_t = nil
-		grenade_type = "cs_grenade"
 
-		self:detonate_cs_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)]]--
-	--else
+		self:detonate_cs_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)
+
+		timeout = tweak_data.group_ai.cs_grenade_timeout or tweak_data.group_ai.smoke_and_flash_grenade_timeout
+	else
 		if grenade_type == "flash_grenade" and grenade_user.char_tweak.chatter.flash_grenade then
 			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "flash_grenade")
 		elseif grenade_type == "smoke_grenade" and grenade_user.char_tweak.chatter.smoke then
@@ -1188,20 +1169,18 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 		end
 
 		self:detonate_smoke_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai[grenade_type .. "_lifetime"] or 10, grenade_type == "flash_grenade")
-	--end
+
+		timeout = tweak_data.group_ai[grenade_type .. "_timeout"] or tweak_data.group_ai.smoke_and_flash_grenade_timeout
+	end
 
 	task_data.use_smoke = false
-	task_data.use_smoke_push_t = self._t + 2
 	-- Minimum grenade cooldown
 	task_data.use_smoke_timer = self._t + 10
-
 	-- Individual grenade cooldowns
-	local timeout = tweak_data.group_ai[grenade_type .. "_timeout"] or tweak_data.group_ai.smoke_and_flash_grenade_timeout
 	task_data[grenade_type .. "_next_t"] = self._t + math_lerp(timeout[1], timeout[2], math_random())
 
 	return true
 end
-
 
 -- Keep recon groups around during anticipation
 -- Making them retreat only afterwards gives them more time to complete their objectives

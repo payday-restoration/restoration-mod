@@ -164,6 +164,35 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list[fbi_shield] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
 
 --[[ City Tier ]]--
+	--City Heavy Rifle SWAT become light City SWAT with rifles or UMPs
+	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = {city_swat_rifle, city_swat_ump}	
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = {city_swat_rifle, city_swat_ump}	
+	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"] = {city_swat_rifle, city_swat_ump}	
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list[city_heavy_swat_rifle] = {city_swat_rifle, city_swat_ump}
+
+	--City Heavy Shotgun SWAT become light City SWAT with shotguns 
+	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list[city_heavy_swat_r870] = {city_swat_ben, city_swat_r870}
+
 	--City Shields becomes City Heavies
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_shield_gensec/ene_shield_gensec"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield"] = {city_heavy_swat_rifle, city_heavy_swat_r870}

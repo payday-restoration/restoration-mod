@@ -17,7 +17,7 @@ function CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, ..
 
 	local record = attention_data.criminal_record
 	if not record or not attention_data.is_person then
-		return REACT_COMBAT
+		return attention_data.verified and REACT_COMBAT or attention_reaction
 	end
 
 	if record.status == "dead" or record.being_arrested then
@@ -33,13 +33,13 @@ function CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, ..
 
 	local can_arrest = not record.status and record.arrest_timeout < data.t and CopLogicBase._can_arrest(data)
 	if not can_arrest or record.assault_t and attention_data.unit:base():arrest_settings().aggression_timeout > data.t - record.assault_t then
-		return REACT_COMBAT
+		return attention_data.verified and REACT_COMBAT or attention_reaction
 	end
 
 	for u_key, other_crim_rec in pairs(managers.groupai:state():all_criminals()) do
 		local other_crim_attention_info = data.detected_attention_objects[u_key]
 		if other_crim_attention_info and (other_crim_attention_info.is_deployable or other_crim_attention_info.verified and other_crim_rec.assault_t and data.t - other_crim_rec.assault_t < other_crim_rec.unit:base():arrest_settings().aggression_timeout) then
-			return REACT_COMBAT
+			return attention_data.verified and REACT_COMBAT or attention_reaction
 		end
 	end
 
@@ -153,6 +153,22 @@ function CopLogicIdle._chk_relocate(data, ...)
 		objective.path_data = nil
 		objective.area = target_area
 		objective.nav_seg = target_area.pos_nav_seg
+
+		data.logic._exit(data.unit, "travel")
+
+		return true
+	elseif objective_type == "defend_area" then
+		-- Move back to objective area if reenforce group member left it
+		if not objective.grp_objective or objective.grp_objective.type ~= "reenforce_area" then
+			return
+		end
+
+		if not objective.in_place or not objective.area or objective.area.nav_segs[data.unit:movement():nav_tracker():nav_segment()] then
+			return
+		end
+
+		objective.in_place = nil
+		objective.path_data = nil
 
 		data.logic._exit(data.unit, "travel")
 

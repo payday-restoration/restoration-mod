@@ -17424,6 +17424,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.flash_grenade_timeout = {8, 7}
 	end
 	
+	self.cs_grenade_timeout = { 60, 90 }
 	self.smoke_grenade_lifetime = 12
 	self.flash_grenade_lifetime = 7.5
 	self.flash_grenade = {

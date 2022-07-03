@@ -1655,6 +1655,10 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.no_omnia_heal = true	
 	self.triad_boss.can_reload_while_moving_tmp = true
 	self.triad_boss.throwable = "molotov"
+	self.triad_boss.invulnerable_to_slotmask = {
+		"enemies",
+		17
+	}	
 	table.insert(self._enemy_list, "triad_boss")
 
 	self.triad_boss_no_armor = deep_clone(self.gangster)

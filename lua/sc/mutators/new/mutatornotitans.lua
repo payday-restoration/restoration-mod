@@ -801,7 +801,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2")							

@@ -6901,7 +6901,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")	
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870_hard/ene_akan_fbi_tank_r870_hard")
 				},
 				zombie = {
@@ -6938,7 +6938,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
@@ -6969,7 +6969,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
@@ -7000,7 +7000,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
@@ -7031,7 +7031,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2")							
@@ -7063,7 +7063,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
@@ -7094,7 +7094,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
@@ -7125,7 +7125,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
@@ -7156,7 +7156,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
@@ -7187,7 +7187,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3")							
@@ -7219,7 +7219,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")							
@@ -7250,7 +7250,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")							
@@ -7281,7 +7281,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")							
@@ -7312,7 +7312,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")							
@@ -7343,7 +7343,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc")								
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")								
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer")							
@@ -8562,7 +8562,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
 				},					
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini")
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini")
 				},
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli")
@@ -8594,7 +8594,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
 				},					
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini")
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini")
 				},
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
@@ -10859,7 +10859,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc")								
 			},
 			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+				Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 			},
 			zombie = {
 				Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
@@ -11463,8 +11463,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini")
+				Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"),
+				Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini")
 			},
 			zombie = {
 				Idstring("units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"), 
@@ -11501,7 +11501,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini")
+				Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini")
 			},
 			zombie = {
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")

@@ -60,8 +60,8 @@ if ai_type == b then
 elseif ai_type == r then
 	replacement_table = {
 		--Bulldozers 
-		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870_hard/ene_akan_fbi_tank_r870_hard"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga",
-		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870_hard/ene_akan_fbi_tank_r870_hard"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
 	
 		--Reaper FBI Rifle
 		["units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",

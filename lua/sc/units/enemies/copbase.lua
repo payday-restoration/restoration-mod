@@ -259,14 +259,6 @@ local weapons_map = {
 	[Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"):key()] = {"m1911_npc", "mp5", "m4"},
 
-	--Yellow Heavy SWAT Weapon Changes (test)
-	[Idstring("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1"):key()] = "ak102",
-	
-	--Correct Weapon for Akan DW Shield 
-	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"):key()] = "sr2_smg",
-	
-	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"):key()] = "fort_500",
-
 	--Biker Weapon Changes--
 	[Idstring("units/payday2/characters/ene_biker_1/ene_biker_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_biker_2/ene_biker_2"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},

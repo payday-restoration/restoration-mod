@@ -1,0 +1,6 @@
+<materials version="3" group="ene_acc_k63">
+	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/shared_textures/helmets_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_reapers/characters/shared_textures/helmets_atlas_df"/>
+	</material>
+</materials>

@@ -1043,7 +1043,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	elseif is_federales then
 		self.weekend_dmr.custom_voicework = "bravo_elite_mex"
 	else
-		self.weekend_dmr.custom_voicework = "bravo_elite"
+		self.weekend_dmr.custom_voicework = "bravo_dmr"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 24.375
 	self.weekend_dmr.headshot_dmg_mul = 4.0625
@@ -1413,7 +1413,7 @@ function CharacterTweakData:_init_marshal_marksman(presets)
 	elseif is_federales then
 		self.marshal_marksman.custom_voicework = "bravo_elite_mex"
 	else
-		self.marshal_marksman.custom_voicework = "bravo_elite"
+		self.marshal_marksman.custom_voicework = "bravo_dmr"
 	end		
 
 	table.insert(self._enemy_list, "marshal_marksman")

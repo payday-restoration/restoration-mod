@@ -6621,17 +6621,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.supported = true
 				self.mp7.ads_speed = 0.240
 				self.mp7.damage_falloff = {
-					start_dist = 2300,
-					end_dist = 4800,
+					start_dist = 1800,
+					end_dist = 4400,
 					min_mult = 0.555555
 				}
 				self.mp7.stats = {
 					damage = 18,
-					spread = 72,
-					recoil = 86,
+					spread = 71,
+					recoil = 84,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 27,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -6664,14 +6664,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.supported = true
 				self.p90.ads_speed = 0.220
 				self.p90.damage_falloff = {
-					start_dist = 2800,
+					start_dist = 2200,
 					end_dist = 5400,
 					min_mult = 0.555555
 				}
 				self.p90.stats = {
 					damage = 18,
-					spread = 75,
-					recoil = 91,
+					spread = 76,
+					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -13055,7 +13055,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		saw = 1.25, --Compensate for jankiness.
 		lmg = 0.6,
 		minigun = 0.4,
-		pdw = 0.4,
+		pdw = 0.45,
 	}
 
 	--Get weapon category specific pickup multipliers.

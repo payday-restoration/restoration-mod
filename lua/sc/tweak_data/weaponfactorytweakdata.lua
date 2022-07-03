@@ -1,6 +1,7 @@
 --Overrides for shotgun ammo types that vary per damage tier.
 	--Indented to make for easy code folding in most editors.
 	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
+
 	--Flechettes
 	local a_piercing_auto_override = {
 		desc_id = "bm_wp_upg_a_piercing_auto_desc_sc",
@@ -134,6 +135,198 @@
 		}
 	}
 
+	--00 Buck
+	local a_custom_auto_override = {
+		supported = true,
+		stats = {
+			value = 9,
+			total_ammo_mod = -33,
+			damage = 15
+		},
+		custom_stats = {
+			falloff_start_mult = 0.75,
+			falloff_end_mult = 0.75,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
+			rays = 6
+		}
+	}
+
+	local a_custom_semi_override = {
+		supported = true,
+		stats = {
+			value = 9,
+			total_ammo_mod = -25,
+			damage = 15
+		},
+		custom_stats = {
+			falloff_start_mult = 0.75,
+			falloff_end_mult = 0.75,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
+			rays = 6
+		}
+	}
+
+	local a_custom_pump_override = {
+		supported = true,
+		stats = {
+			value = 9,
+			total_ammo_mod = -33,
+			damage = 30
+		},
+		custom_stats = {
+			falloff_start_mult = 0.75,
+			falloff_end_mult = 0.75,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
+			rays = 6
+		}
+	}
+
+	--Slugs
+	local a_slug_auto_override = {
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
+		supported = true,
+		stats = {
+			value = 10,
+			concealment = -2,
+			total_ammo_mod = -25,
+			damage = 15,	
+			recoil = -20,
+			spread = 20,
+			spread_multi = {1, 1},	
+			suppression = -1,
+			moving_spread = 0
+		},
+		custom_stats = {
+			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
+			rays = 1,
+			armor_piercing_add = 1,
+			can_shoot_through_enemy = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_wall = true,
+			falloff_start_mult = 2.00,
+			falloff_end_mult = 3.00,
+			ads_speed_mult = 1.10
+		}
+	}
+
+	local a_slug_semi_override = {
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
+		supported = true,
+		stats = {
+			value = 10,
+			concealment = -2,
+			total_ammo_mod = -25,
+			damage = 15,
+			spread = 20,
+			spread_multi = {1, 1},	
+			recoil = -20,
+			moving_spread = 0
+		},
+		custom_stats = {
+			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
+			rays = 1,
+			armor_piercing_add = 1,
+			can_shoot_through_enemy = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_wall = true,
+			falloff_start_mult = 2.00,
+			falloff_end_mult = 3.00,
+			ads_speed_mult = 1.10
+		}
+	}
+	
+	local a_slug_pump_override = {
+		supported = true,
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
+		stats = {
+			value = 10,
+			total_ammo_mod = -33,
+			damage = 30,
+			recoil = -20,
+			spread = 20,
+			spread_multi = {1, 1},	
+			moving_spread = 0,
+			suppression = -1,
+			concealment = -2
+		},
+		custom_stats = {				
+			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
+			rays = 1,
+			armor_piercing_add = 1,
+			can_shoot_through_enemy = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_wall = true,
+			falloff_start_mult = 2.00,
+			falloff_end_mult = 3.00,
+			ads_speed_mult = 1.10
+		}
+	}
+
+	--FRAG-12
+	local a_explosive_auto_override = {
+		supported = true,
+		stats = {
+			value = 10,
+			total_ammo_mod = -50,
+			recoil = -25,
+			spread = 5,
+			concealment = -5,
+			spread_multi = {1, 1},	
+			damage = 30
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			block_b_storm = true,
+			rays = 1,
+			bullet_class = "InstantExplosiveBulletBase"
+		}
+	}
+
+	local a_explosive_semi_override = {
+		supported = true,
+		stats = {
+			value = 10,
+			recoil = -25,
+			spread = 5,
+			total_ammo_mod = -50,
+			concealment = -5,
+			spread_multi = {1, 1},	
+			damage = 45
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			block_b_storm = true,
+			rays = 1,
+			bullet_class = "InstantExplosiveBulletBase"
+		}
+	}
+
+	local a_explosive_pump_override = {
+		desc_id = "bm_wp_upg_a_explosive_desc_sc",
+		supported = true,
+		stats = {
+			value = 10,
+			total_ammo_mod = -50,
+			recoil = -25,
+			spread = 5,
+			spread_multi = {1, 1},	
+			concealment = -5,
+			damage = 60
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			block_b_storm = true,
+			rays = 1,
+			bullet_class = "InstantExplosiveBulletBase"
+		}
+	}
+
 --[[
 	
 	General stat logic:
@@ -179,7 +372,7 @@
 		+/-1 Accuracy = +/-0.05 falloff_start/end_mult
 		NO +CONCEALMENT MODS WITH +ACCURACY OR +STABILITY
 		ONLY FOR -CONCEALMENT MODS WITH BOTH +ACCURACY AND +STABILITY
-			+/-1 Concealment = -/+0.025 ads_speed_mult
+			-1 Concealment = +0.025 ads_speed_mult
 	
 	Pistol grip logic:
 		+1 Concealment = -0.025 ads_speed_mult
@@ -3355,83 +3548,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			forbids = table.list_add(self.parts.wpn_upg_o_marksmansight_rear_vanilla.forbids, {"wpn_fps_upg_o_ak_scopemount"})
 		},
 		wpn_upg_o_marksmansight_front = {a_obj = "a_of"},
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -33,
-				damage = 15,
-				recoil = -20,
-				spread = 20,
-				suppression = -1,
-				spread_multi = {1, 1},	
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",					
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				concealment = -5,
-				spread_multi = {1, 1},	
-				damage = 30
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_auto_override,
+		wpn_fps_upg_a_custom = a_custom_auto_override,
+		wpn_fps_upg_a_custom_free = a_custom_auto_override,
+		wpn_fps_upg_a_explosive = a_explosive_auto_override,
 		wpn_fps_upg_a_piercing = a_piercing_auto_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override,
 		wpn_fps_ass_akm_body_upperreceiver_vanilla = {
@@ -4369,81 +4489,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 	
 	--Override Table
 	self.wpn_fps_shot_r870.override = {
-		wpn_fps_upg_a_slug = {
-			supported = true,
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			stats = {
-				value = 10,
-				total_ammo_mod = -33,
-				damage = 30,
-				recoil = -20,
-				spread = 20,
-				spread_multi = {1, 1},	
-				moving_spread = 0,
-				suppression = -1,
-				concealment = -2
-			},
-			custom_stats = {				
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},	
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				concealment = -5,
-				damage = 60
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_pump_override,
+		wpn_fps_upg_a_custom = a_custom_pump_override,	
+		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
+		wpn_fps_upg_a_explosive = a_explosive_pump_override,
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	}
@@ -4524,81 +4573,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 
 	--Locomotive 12g override table
 	self.wpn_fps_shot_serbu.override = {
-		wpn_fps_upg_a_slug = {
-			supported = true,
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			stats = {
-				value = 10,
-				total_ammo_mod = -33,
-				damage = 30,
-				recoil = -20,
-				spread = 20,
-				spread_multi = {1, 1},	
-				moving_spread = 0,
-				suppression = -1,
-				concealment = -2
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},	
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				concealment = -5,
-				damage = 60
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_pump_override,
+		wpn_fps_upg_a_custom = a_custom_pump_override,	
+		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
+		wpn_fps_upg_a_explosive = a_explosive_pump_override,
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 	}
@@ -6442,80 +6420,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 
 	--Override Table
 	self.wpn_fps_sho_ben.override = {
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				recoil = -25,
-				spread = 5,
-				total_ammo_mod = -50,
-				concealment = -5,
-				spread_multi = {1, 1},	
-				damage = 45
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_semi_override,
+		wpn_fps_upg_a_custom = a_custom_semi_override,
+		wpn_fps_upg_a_custom_free = a_custom_semi_override,			
+		wpn_fps_upg_a_explosive = a_explosive_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
@@ -6558,82 +6466,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 	self.wpn_fps_sho_striker.override = {
 		wpn_upg_o_marksmansight_rear_vanilla = {a_obj = "a_o_r"},
 		wpn_upg_o_marksmansight_front = {a_obj = "a_o_f"},
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				falloff_start_mult = 1,
-				falloff_end_mult = 1,
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},	
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},				
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -5,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				damage = 45
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_semi_override,
+		wpn_fps_upg_a_custom = a_custom_semi_override,	
+		wpn_fps_upg_a_custom_free = a_custom_semi_override,				
+		wpn_fps_upg_a_explosive = a_explosive_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override	
 	}
@@ -6679,81 +6515,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	self.parts.wpn_fps_upg_o_mbus_rear.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 
 	--Ammunition Overrides
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug = {
-		supported = true,
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
-		stats = {
-			value = 10,
-			total_ammo_mod = -33,
-			damage = 30,
-			recoil = -20,
-			spread = 20,
-			spread_multi = {1, 1},	
-			moving_spread = 0,
-			suppression = -1,
-			concealment = -2
-		},
-		custom_stats = {
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-			rays = 1,
-			armor_piercing_add = 1,
-			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
-			ads_speed_mult = 1.10
-		}
-	}
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}			
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = {
-		supported = true,
-		stats = {
-			value = 10,
-			total_ammo_mod = -50,
-			recoil = -25,
-			spread = 5,
-			spread_multi = {1, 1},	
-			concealment = -5,
-			damage = 60
-		},
-		custom_stats = {
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
-		}
-	}
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug = a_slug_pump_override
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom = a_custom_pump_override
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = a_custom_pump_override			
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 end)	
@@ -8458,80 +8223,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 	
 	--Overrides
 	self.wpn_fps_sho_spas12.override = {
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},		
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},				
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -5,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				damage = 45
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_semi_override,
+		wpn_fps_upg_a_custom = a_custom_semi_override,		
+		wpn_fps_upg_a_custom_free = a_custom_semi_override,				
+		wpn_fps_upg_a_explosive = a_explosive_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 	}
@@ -10194,80 +9889,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	
 	--Override tables
 	self.wpn_fps_sho_aa12.override = {
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -5,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				damage = 45
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_semi_override,
+		wpn_fps_upg_a_custom = a_custom_semi_override,
+		wpn_fps_upg_a_custom_free = a_custom_semi_override,			
+		wpn_fps_upg_a_explosive = a_explosive_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 	}
@@ -11592,81 +11217,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	self.parts.wpn_fps_shot_m37_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 	
 	--Ammo overrides
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug = {
-		supported = true,
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
-		stats = {
-			value = 10,
-			total_ammo_mod = -33,
-			damage = 30,
-			recoil = -20,
-			spread = 20,
-			spread_multi = {1, 1},	
-			moving_spread = 0,
-			suppression = -1,
-			concealment = -2
-		},
-		custom_stats = {
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-			rays = 1,
-			armor_piercing_add = 1,
-			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
-			ads_speed_mult = 1.10
-		}
-	}
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}		
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = {
-		supported = true,
-		stats = {
-			value = 10,
-			total_ammo_mod = -50,
-			recoil = -25,
-			spread = 5,
-			spread_multi = {1, 1},	
-			concealment = -5,
-			damage = 60
-		},
-		custom_stats = {
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
-		}
-	}
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug = a_slug_pump_override
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom = a_custom_pump_override
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 	
@@ -12361,80 +11915,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 	self.parts.wpn_fps_sho_rota_b_silencer.perks = {"silencer"}
 	
 	self.wpn_fps_sho_rota.override = {
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},	
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},				
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -5,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				damage = 45
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_semi_override,
+		wpn_fps_upg_a_custom = a_custom_semi_override,	
+		wpn_fps_upg_a_custom_free = a_custom_semi_override,				
+		wpn_fps_upg_a_explosive = a_explosive_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
@@ -13483,81 +12967,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 	}
 
 	self.wpn_fps_sho_basset.override = {
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,	
-				recoil = -20,
-				spread = 20,
-				spread_multi = {1, 1},	
-				suppression = -1,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},					
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				concealment = -5,
-				spread_multi = {1, 1},	
-				damage = 30
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_auto_override,
+		wpn_fps_upg_a_custom = a_custom_auto_override,
+		wpn_fps_upg_a_custom_free = a_custom_auto_override,					
+		wpn_fps_upg_a_explosive = a_explosive_auto_override,
 		wpn_fps_upg_a_piercing = a_piercing_auto_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
 	}
@@ -15546,81 +14959,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	self.parts.wpn_fps_shot_m1897_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 	--Override Table
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug = {
-		supported = true,
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
-		stats = {
-			value = 10,
-			total_ammo_mod = -33,
-			damage = 30,
-			recoil = -20,
-			spread = 20,
-			spread_multi = {1, 1},	
-			moving_spread = 0,
-			suppression = -1,
-			concealment = -2
-		},
-		custom_stats = {				
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
-			rays = 1,
-			armor_piercing_add = 1,
-			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
-			ads_speed_mult = 1.10
-		}
-	}
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}		
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = {
-		supported = true,
-		stats = {
-			value = 10,
-			total_ammo_mod = -50,
-			recoil = -25,
-			spread = 5,
-			spread_multi = {1, 1},	
-			concealment = -5,
-			damage = 60
-		},
-		custom_stats = {
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
-		}
-	}
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug = a_slug_pump_override
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom = a_custom_pump_override
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 
@@ -15749,84 +15091,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 	
 	--Override Table
 	self.wpn_fps_sho_m590.override = {
-		wpn_fps_upg_a_slug = {
-			supported = true,
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			stats = {
-				value = 10,
-				total_ammo_mod = -33,
-				damage = 30,
-				recoil = -20,
-				spread = 20,
-				spread_multi = {1, 1},	
-				moving_spread = 0,
-				suppression = -1,
-				concealment = -2
-			},
-			custom_stats = {				
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},	
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				concealment = -5,
-				damage = 60
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_pump_override,
+		wpn_fps_upg_a_custom = a_custom_pump_override,	
+		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
+		wpn_fps_upg_a_explosive = a_explosive_pump_override,
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
-	}	
+	}
+
+	self.wpn_fps_sho_m590.override.wpn_fps_addon_ris = {
+		unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_gadget_rail"
+	}
 
 end)
 
@@ -16505,80 +15780,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 	
 	--Override Table
 	self.wpn_fps_sho_ultima.override = {
-		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -2,
-				total_ammo_mod = -25,
-				damage = 15,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				rays = 1,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -25,
-				damage = 15
-			},
-			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				rays = 6
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				concealment = -5,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
-				damage = 45
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
+		wpn_fps_upg_a_slug = a_slug_semi_override,
+		wpn_fps_upg_a_custom = a_custom_semi_override,
+		wpn_fps_upg_a_custom_free = a_custom_semi_override,			
+		wpn_fps_upg_a_explosive = a_explosive_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
 	}		
@@ -19926,102 +19131,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_amr12_b_standard.custom_stats = nil
 
 		self.wpn_fps_shot_amr12.override = {
-			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug",
-				desc_id = "bm_wp_upg_a_slug_desc",
-				supported = true,
-				stats = {
-					value = 10,
-					concealment = -2,
-					total_ammo_mod = -25,
-					damage = 15,
-					spread = 20,
-					spread_multi = {1, 1},	
-					recoil = -20,
-					moving_spread = 0
-				},
-				custom_stats = {
-					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					falloff_start_mult = 2.00,
-					falloff_end_mult = 3.00,
-					ads_speed_mult = 1.10
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 15
-				},
-				custom_stats = {
-					falloff_start_mult = 0.75,
-					falloff_end_mult = 0.75,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 6
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 15
-				},
-				custom_stats = {
-					falloff_start_mult = 0.75,
-					falloff_end_mult = 0.75,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 6
-				}
-			},			
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					total_ammo_mod = -50,
-					recoil = -25,
-					spread = 5,
-					concealment = -5,
-					spread_multi = {1, 1},	
-					damage = 30
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
+			wpn_fps_upg_a_slug = a_slug_auto_override,
+			wpn_fps_upg_a_custom = a_custom_auto_override,
+			wpn_fps_upg_a_custom_free = a_custom_auto_override,			
+			wpn_fps_upg_a_explosive = a_explosive_auto_override,
 			wpn_fps_upg_a_piercing = a_piercing_auto_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
 		}
 		self.wpn_fps_shot_beck.override = {
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					recoil = -25,
-					spread = 5,
-					concealment = -5,
-					spread_multi = {1, 1},	
-					total_ammo_mod = -50,
-					damage = 90
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			}
+			wpn_fps_upg_a_slug = a_slug_pump_override,
+			wpn_fps_upg_a_custom = a_custom_pump_override,
+			wpn_fps_upg_a_custom_free = a_custom_pump_override,			
+			wpn_fps_upg_a_explosive = a_explosive_pump_override,
+			wpn_fps_upg_a_piercing = a_piercing_pump_override,
+			wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 		}
 
 		--(KSP 58) Aftermarket Rail
@@ -20810,81 +19933,12 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_smg_schakal_s_recon.custom_stats = deep_clone(stocks.folder_rec_stats)
 
 		self.wpn_fps_shot_minibeck.override = {
-			wpn_fps_upg_a_slug = {
-				supported = true,
-				name_id = "bm_wp_upg_a_slug",
-				desc_id = "bm_wp_upg_a_slug_desc",
-				stats = {
-					value = 10,
-					total_ammo_mod = -33,
-					damage = 30,
-					spread = 20,
-					spread = 20,
-					spread_multi = {1, 1},	
-					moving_spread = 0,
-					suppression = -1,
-					concealment = -2
-				},
-				custom_stats = {				
-					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					falloff_start_mult = 2.00,
-					falloff_end_mult = 3.00,
-					ads_speed_mult = 1.10
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 30
-				},
-				custom_stats = {
-					falloff_start_mult = 0.75,
-					falloff_end_mult = 0.75,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 6
-				}
-			},	
-			wpn_fps_upg_a_custom_free = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 30
-				},
-				custom_stats = {
-					falloff_start_mult = 0.75,
-					falloff_end_mult = 0.75,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 6
-				}
-			},			
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					total_ammo_mod = -50,
-					recoil = -25,
-					spread = 5,
-					spread_multi = {1, 1},	
-					concealment = -5,
-					damage = 60
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			}
+			wpn_fps_upg_a_slug = a_slug_semi_override,
+			wpn_fps_upg_a_custom = a_custom_semi_override,
+			wpn_fps_upg_a_custom_free = a_custom_semi_override,			
+			wpn_fps_upg_a_explosive = a_explosive_semi_override,
+			wpn_fps_upg_a_piercing = a_piercing_semi_override,
+			wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 		}
 		
 		--Hammer 23 short barrel

@@ -311,7 +311,9 @@ function restoration:Init()
 	--Texas
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
-		"dinner"
+		"dinner",
+		--Custom Heists--
+		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
 	}	
 	--San Francisco
 	restoration.needle = {

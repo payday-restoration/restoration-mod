@@ -40,7 +40,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-  <network sync="husk" remote_unit="units/pd2_dlc_mad/characters/ene_akan_dozer_mini/ene_akan_dozer_mini_husk"/>
+  <network sync="husk" remote_unit=""/>
 
   <sounds>
 		<default_soundsource source="Hips"/>

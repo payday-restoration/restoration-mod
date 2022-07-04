@@ -203,8 +203,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"vit",
 		"arm_for",
 		"crojob2",
-		"mex",
-		"mex_cooking"
+		"mex"
 		--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
 	}		
 	self.risk_zombie.stages = {
@@ -216,7 +215,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	self.risk_bexico.stages = {
 		"bex",
 		"pex",
-		"fex"
+		"fex",
+		"mex_cooking"
 	}			
 	
 	--[[

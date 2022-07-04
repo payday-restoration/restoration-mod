@@ -227,6 +227,9 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"  load="true"/>	
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1_husk"  load="true"/>	
 	
+	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"  load="true"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk"  load="true"/>	
+	
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/bulldozer_df" />	
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/bulldozer_nm" />	
 

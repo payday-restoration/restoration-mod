@@ -230,6 +230,9 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"  load="true"/>	
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1_husk"  load="true"/>	
 	
+	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"  load="true"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk"  load="true"/>
+	
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/bulldozer_df" />	
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/bulldozer_nm" />	
 
@@ -254,6 +257,28 @@
 	
 	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
 	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
+	
+	<!-- saigadozer -->
+	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />
+	<model				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<object				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2"  load="true"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2_husk"  load="true"/>	
+	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/bulldozer_saiga_df" />	
+
+	<!--black Acc-->
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+		
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
 	
 	<!--Cloaker-->
 	<object				path="units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1"/>

@@ -17526,7 +17526,7 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_akan_fbi_tank_r870_hard",
+				"ene_bulldozer_1_hard",
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",

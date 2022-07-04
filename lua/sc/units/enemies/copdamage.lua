@@ -1043,9 +1043,6 @@ function CopDamage:damage_bullet(attack_data)
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
-				    if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
-				    	self._unit:damage():run_sequence_simple("squelch")
-				    end	
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
@@ -1056,6 +1053,21 @@ function CopDamage:damage_bullet(attack_data)
 			local my_unit = self._unit	
 	        local sound_ext = my_unit:sound()	
 	        sound_ext:play("expl_gen_head", nil, nil)	
+
+			local head_obj = ids_func("Head")
+			local head_object_get = my_unit:get_object(head_obj)
+
+			if not head_object_get then
+				return
+			end
+
+			local world_g = World		
+			local sound_ext = my_unit:sound()	
+
+			world_g:effect_manager():spawn({
+				effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
+				parent = head_object_get		
+			})
 			
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)			
@@ -1255,9 +1267,6 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
-				if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
-					self._unit:damage():run_sequence_simple("squelch")
-				end	
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),
@@ -1268,7 +1277,22 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			local my_unit = self._unit	
 	        local sound_ext = my_unit:sound()	
 	        sound_ext:play("expl_gen_head", nil, nil)	
-		
+
+			local head_obj = ids_func("Head")
+			local head_object_get = my_unit:get_object(head_obj)
+
+			if not head_object_get then
+				return
+			end
+
+			local world_g = World		
+			local sound_ext = my_unit:sound()	
+
+			world_g:effect_manager():spawn({
+				effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
+				parent = head_object_get		
+			})
+			
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)		
 		end

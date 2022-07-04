@@ -95,10 +95,6 @@
 					</sequence>		
 				<!-- security guard sequences: the end -->					
 			<!-- da end -->
-						
-			<sequence editable_state="true" name="'squelch'" once="true" triggable="true">
-				<effect name="'effects/payday2/particles/impacts/blood/brain_splat'" parent="object( 'Head' )" position="v()"/>	
-			</sequence>
 			
 			<sequence editable_state="true" name="'switch_sniper_to_lapd'" once="true" triggable="true">
 				<material_config name="'units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3'"/>

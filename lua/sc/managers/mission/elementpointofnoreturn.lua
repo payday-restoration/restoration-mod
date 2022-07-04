@@ -68,10 +68,8 @@ function ElementPointOfNoReturn:on_executed(instigator)
 	elseif job == "red2" and not pro then 
 		--Disabled
 		return		
-	--Because does it really need one?
 	elseif job == "vit" then 
-		--Disabled
-		return
+		managers.groupai:state():set_point_of_no_return_timer(240, self._id, self._values.tweak_id)
 	--Everything else, just uses what's defined in the mapdata
 	else
 		if diff == "easy" then

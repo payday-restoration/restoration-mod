@@ -216,6 +216,11 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 	if time == nil or setup:has_queued_exec() then
 		return
 	end
+	
+	--No PONRs during stealth
+	if managers.groupai:state():whisper_mode() then
+		return
+	end
 
 	self._forbid_drop_in = true
 	self._ponr_is_on = true

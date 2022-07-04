@@ -36,6 +36,10 @@ if ai_type == b then
 		["units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",
 		["units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",
 		["units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",		
+
+		["units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",
+		["units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",
+		["units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",
 		
 		--Mex Bravo Shotgun
 		["units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex",
@@ -51,11 +55,7 @@ if ai_type == b then
 		["units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"] = "units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex",
 		
 		--Mex Bravo DMR
-		["units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex",
-		
-		["units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex",
-		["units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex",
-		["units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"
+		["units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"
 	}
 elseif ai_type == r then
 	replacement_table = {
@@ -83,6 +83,10 @@ elseif ai_type == r then
 		["units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		
+		["units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
+		["units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
+		["units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",	
+		
 		["units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
@@ -90,7 +94,7 @@ elseif ai_type == r then
 		--Reaper Bravo Shotgun
 		["units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		["units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
-		["units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
+		["units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		
 		["units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		["units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
@@ -101,11 +105,7 @@ elseif ai_type == r then
 		["units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"] = "units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru",
 	
     	--Reaper Bravo DMR
-		["units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru",
-
-		["units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru",
-		["units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru",
-		["units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"
+		["units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"
 	}
 elseif ai_type == m then
 	replacement_table = {	
@@ -137,6 +137,10 @@ elseif ai_type == m then
 		
 		["units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",	
 		["units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",	
+		
+		["units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",	
+		["units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",
+		["units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",		
 	
 	    --Murky Bravo Shotgun
 		["units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky",
@@ -151,11 +155,7 @@ elseif ai_type == m then
 		["units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"] = "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky",	
 		
 		--Murky Bravo DMR
-		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky",	
-		
-		["units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky",	
-		["units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky",
-		["units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"	
+		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"
 	}
 elseif ai_type == z then
 	replacement_table = {
@@ -188,6 +188,10 @@ elseif ai_type == z then
 		["units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		
+		["units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",		
+		
 		--Undead Bravo Shotgun
 		["units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
 		["units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
@@ -202,11 +206,7 @@ elseif ai_type == z then
 		["units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg",	
 		
 		--Undead Bravo DMR
-		["units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-
-		["units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
+		["units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
 	}	
 else
 	replacement_table = {
@@ -253,6 +253,14 @@ else
 		["units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		
+		["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
+		["units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",	
+		
 		["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
@@ -284,14 +292,6 @@ else
 		
 		--Bravo DMR
 		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		
-		["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
 	}	
 end
 --this table is for robots. don't edit this one

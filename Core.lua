@@ -227,6 +227,7 @@ function restoration:Init()
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
 		"ranc", --Midland Ranch
+		"mad", --Boiling Point
 		--Custom Heists below--
 		"junk", --Doghouse
 		"amsdeal1", --Armsdeal Alleyway

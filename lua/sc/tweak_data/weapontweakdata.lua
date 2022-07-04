@@ -686,9 +686,13 @@ local job = Global.level_data and Global.level_data.level_id
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
 		self.m4_secondary_npc.use_data.selection_index = 1
 		
-		--AK 101 used by Reapers
+		--AKS 74 used by Reapers
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
 		self.ak47_ass_npc.sounds.prefix = "ak74_npc"
+		
+		--AK 103 used by Reapers
+		self.ak103_npc = deep_clone(self.m4_npc)
+		self.ak103_npc.sounds.prefix = "akm_npc"
 		
 		--AK 101+GP25 used by Reaper Grenadier
 		self.ak47_ass_boom_npc = deep_clone(self.ak47_ass_npc)

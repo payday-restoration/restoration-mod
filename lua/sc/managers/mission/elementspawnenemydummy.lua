@@ -1676,6 +1676,8 @@ local federales_very_hard = {
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", 
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -1771,6 +1773,8 @@ local federales_overkill = {
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", 
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -1869,6 +1873,8 @@ local federales_mayhem = {
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", 
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -1964,6 +1970,8 @@ local federales_deathwish = {
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
@@ -2061,6 +2069,8 @@ local federales_zeal = {
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",

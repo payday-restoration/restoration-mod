@@ -5,12 +5,12 @@ Day = os.date("%d")
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 	self.special_unit_spawn_limits = {
 		{
-			tank = 3,
-			taser = 4,
-			boom = 2,
+			tank = 4,
+			taser = 5,
+			boom = 3,
 			spooc = 4,
 			shield = 5,
-			medic = 3,
+			medic = 4,
 			spring = 1,
 			autumn = 1,
 			summers = 1,
@@ -357,7 +357,21 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.05,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
-		},		
+		},
+		SKM_FBI_spoocs = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.05,
+			0.05,
+			0.05,
+			0.05,
+			0.05,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
 		SKM_Shields_Booms = {
 			0, --Unused
 			0, --Wave 1
@@ -422,6 +436,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
 		assault_groups.SKM_single_spooc[10] = 0.05
+		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	elseif wave_9_captain < 0.24 then --autumn
 		self.captain = "SKM_Cap_Autumn_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
@@ -436,6 +451,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
 		assault_groups.SKM_single_spooc[10] = 0.0
+		assault_groups.SKM_FBI_spoocs[10] = 0.0
 	elseif wave_9_captain < 0.48 then --summers
 		self.captain = "SKM_Cap_Summers_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.37
@@ -450,6 +466,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.0075
 		assault_groups.SKM_TIT_Tank[10] = 0.0025
 		assault_groups.SKM_single_spooc[10] = 0.025
+		assault_groups.SKM_FBI_spoocs[10] = 0.025
 	elseif wave_9_captain < 0.72 then --winters
 		self.captain = "SKM_Cap_Winters_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
@@ -464,6 +481,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
 		assault_groups.SKM_single_spooc[10] = 0.05
+		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	else --spring
 		self.captain = "SKM_Cap_Spring_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
@@ -478,6 +496,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
 		assault_groups.SKM_single_spooc[10] = 0.05
+		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	end
    else	
 	if wave_9_captain < 0.24 then --autumn
@@ -494,6 +513,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
 		assault_groups.SKM_single_spooc[10] = 0.0
+		assault_groups.SKM_FBI_spoocs[10] = 0.0
 	elseif wave_9_captain < 0.48 then --summers
 		self.captain = "SKM_Cap_Summers_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.37
@@ -508,6 +528,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.0075
 		assault_groups.SKM_TIT_Tank[10] = 0.0025
 		assault_groups.SKM_single_spooc[10] = 0.025
+		assault_groups.SKM_FBI_spoocs[10] = 0.025
 	elseif wave_9_captain < 0.72 then --winters
 		self.captain = "SKM_Cap_Winters_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
@@ -522,6 +543,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
 		assault_groups.SKM_single_spooc[10] = 0.05
+		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	elseif wave_9_captain < 0.96 then --spring
 		self.captain = "SKM_Cap_Spring_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
@@ -550,6 +572,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
 		assault_groups.SKM_single_spooc[10] = 0.025
+		assault_groups.SKM_FBI_spoocs[10] = 0.025
 	end
   end	
 

@@ -15583,6 +15583,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	
+	self.enemy_spawn_groups.SKM_FBI_spoocs_W5 = {
+			amount = {2, 2},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}
+	
 	--Wave 6, more or less just normal DS now
 	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
 		amount = {3, 4},
@@ -15959,7 +15973,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}		
+	}	
+
+	self.enemy_spawn_groups.SKM_FBI_spoocs_W6 = {
+			amount = {2, 2},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}	
 	
 	--Wave 7, more or less just normal DS now WITH Bravo support
 	self.enemy_spawn_groups.SKM_Light_Swat_W7 = {
@@ -16337,7 +16365,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}			
+	}	
+
+	self.enemy_spawn_groups.SKM_FBI_spoocs_W7 = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}
 	
 	--Wave 8, DS but only Bravos
 	self.enemy_spawn_groups.SKM_Light_Swat_W8 = {
@@ -16717,6 +16759,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}
 	
+	self.enemy_spawn_groups.SKM_FBI_spoocs_W8 = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}
+	
 	--Wave 9
 	self.enemy_spawn_groups.SKM_Light_Swat_W9 = {
 		amount = {3, 4},
@@ -17094,6 +17150,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	
+	self.enemy_spawn_groups.SKM_FBI_spoocs_W9 = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}
 	
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = {7, 7},

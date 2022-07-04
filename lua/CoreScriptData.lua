@@ -309,7 +309,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 			--if rnd == 1 or rnd == 2 then
 			--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--if rnd == 3 then
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1_sunset_noaff.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
 				--end
 			--end

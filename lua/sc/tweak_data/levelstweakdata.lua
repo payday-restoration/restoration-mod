@@ -50,7 +50,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///MEXICAN LEVELS\\\--
 	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex2"}
-	--self.mex_cooking.ai_group_type = federales 
+	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
 	self.pex.player_style = "slaughterhouse"

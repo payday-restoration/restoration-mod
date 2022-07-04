@@ -163,7 +163,8 @@ function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
 		spawn_pos = spawn_pos - spawn_rot:y() * 8 + spawn_rot:z() * 2 - spawn_rot:x() * 1.5
 		self._laser_unit = World:spawn_unit(Idstring("units/payday2/weapons/wpn_asu_laser/wpn_asu_laser"), spawn_pos, spawn_rot)
 
-		self._unit:link(self._obj_fire:name(), self._laser_unit)
+		local attachment_point = self._unit:get_object(Idstring("a_laser")) and Idstring("a_laser") or self._obj_fire:name()
+		self._unit:link(attachment_point, self._laser_unit)
 		self._laser_unit:base():set_npc()
 		self._laser_unit:base():set_on()
 		self._laser_unit:base():set_color_by_theme("asu_laser")

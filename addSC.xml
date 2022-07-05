@@ -727,7 +727,7 @@
 	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
 		
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_df"  load="true"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_cloaked_df" load="true"/> 
+	<texture			path="units/payday2/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
 	<texture			path="units/payday2/characters/shared_textures/nvg_df" load="true"/>
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm" load="true"/>
 		
@@ -836,7 +836,7 @@
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_df" load="true"/>
-	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_cloaked_df" load="true"/>
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" load="true"/>
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" />
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>

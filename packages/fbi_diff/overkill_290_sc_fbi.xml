@@ -142,9 +142,6 @@
 	<!-- Sniper -->	
 	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3" load="true" />
 	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3_husk" load="true" />
-	<object				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"  />		
-	<model				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"  />	
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"  />		
 	<!-- city tier end -->	
 	
 	<!-- specials-->

@@ -1031,7 +1031,7 @@ function CopMovement:sync_net_event(event_id)
 end
 
 function CopMovement:set_cloaked(state, sync)
-	if self._cloaked == state then
+	if not self._tweak_data.can_cloak or self._cloaked == state then
 		return
 	end
 

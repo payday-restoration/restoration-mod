@@ -488,16 +488,3 @@ end
 Hooks:PostHook(CopBase, "init", "res_init", function(self)
 	self.voice_end_t = 0
 end)
-
-function CopBase:play_voiceline(buffer, force)
-	local t = TimerManager:game():time()
-	if buffer and (force or t > self.voice_end_t) then
-		if self.my_voice and not self.my_voice:is_closed() then
-			self.my_voice:stop()
-			self.my_voice:close()
-		end
-
-		self.my_voice = XAudio.UnitSource:new(self._unit, buffer)
-		self.voice_end_t = t + buffer:get_length()
-	end
-end

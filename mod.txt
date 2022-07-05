@@ -13,6 +13,9 @@
 		{ "hook_id" : "lib/entry", "script_path" : "Corepre.lua" }
     ],
 	"hooks" : [
+		{ 	"hook_id" : "lib/setups/setup",
+			"script_path" : "lua/sc/utils/restorationvoicelinesloadinghandler.lua"
+		},
 		{ 	"hook_id" : "lib/tweak_data/weaponfactorytweakdata",
 			"script_path" : "lua/sc/tweak_data/weaponfactorytweakdata.lua"
 		},
@@ -21,9 +24,6 @@
 		},
 		{ 	"hook_id" : "lib/tweak_data/skilltreetweakdata",
 			"script_path" : "lua/sc/tweak_data/skilltreetweakdata.lua"
-		},
-		{ 	"hook_id" : "lib/entry",
-			"script_path" : "core_voice.lua"
 		},
 		{ 	"hook_id" : "lib/utils/levelloadingscreenguiscript",
 			"script_path" : "lua/levelloadingscreenguiscript.lua"

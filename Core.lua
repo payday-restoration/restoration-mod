@@ -9,162 +9,149 @@ Day = os.date("%d")
 restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
-	restoration.captain_camper = {
-		"arena", --Alesso
-		"welcome_to_the_jungle_1", --Big Oil Day 1
-		"welcome_to_the_jungle_2", --Big Oil Day 2
-		"election_day_1", --Election Day 1
-		"election_day_2", --Election Day 2
-		"election_day_3", --Election Day 3
-		"election_day_3_skip1", --Election Day 3 (Skipped 1)
-		"election_day_3_skip2", --Election Day 3 (Skipped 2)
-		"firestarter_2", --firestarter day 2
-		"four_stores", --Gee, I wonder what this could be.
-		"hox_3", --hoxton revenge
-		"moon", --Stealing Xmas
-		"born", --biker heist day 1
-		"mus",	--the diamond
-		"red2", --first world bank
-		"watchdogs_1", --Watchdogs Day 1
-		"gallery", --art gallery
+	restoration.captain_types = {
+		winter = {
+			spawn_group = "Cap_Winters",
+			icon = "guis/textures/pd2/hud_buff_shield",
+			vs_line = "hud_assault_vip_winters"
+		},
+		spring = {
+			spawn_group = "Cap_Spring",
+			icon = "guis/textures/pd2/hud_buff_skull",
+			vs_line = "hud_assault_vip_spring"
+		},
+		summer = {
+			spawn_group = "Cap_Summers",
+			icon = "guis/textures/pd2/hud_buff_fire",
+			vs_line = "hud_assault_vip_summers"
+		},
+		autumn = {
+			spawn_group = "Cap_Autumn",
+			icon = "guis/textures/pd2/hud_buff_spooc",
+			vs_line = "hud_assault_vip_autumn"
+		},
+		hvh = {
+			spawn_group = "HVH_Boss",
+			icon = "guis/textures/pd2/hud_buff_halloween",
+			vs_line = "hud_assault_vip_hvh",
+			captain_warn = "hud_assault_vip_hvhwarn"
+		}
+	}	
+		--Defines what captains spawn on what heists.
+	restoration.captain_spawns = {
+	    --Winters
+		arena = restoration.captain_types.winter, --Alesso
+		welcome_to_the_jungle_1 = restoration.captain_types.winter, --Big Oil Day 1
+		welcome_to_the_jungle_1_night = restoration.captain_types.winter, --Big Oil Day 1 Night
+		stage_1 = restoration.captain_types.winter, --Big Oil Day 1 EDIT
+		welcome_to_the_jungle_2 = restoration.captain_types.winter, --Big Oil Day 2
+		stage_2 = restoration.captain_types.winter, --Big Oil Day 2 EDIT
+		election_day_1 = restoration.captain_types.winter, --Election Day 1
+		election_day_2 = restoration.captain_types.winter, --Election Day 2
+		election_day_3 = restoration.captain_types.winter, --Election Day 3
+		election_day_3_skip1 = restoration.captain_types.winter, --Election Day 3 (Skipped 1)
+		election_day_3_skip2 = restoration.captain_types.winter, --Election Day 3 (Skipped 2)
+		firestarter_2 = restoration.captain_types.winter, --firestarter day 2
+		four_stores = restoration.captain_types.winter, --Four Stores
+		hox_3 = restoration.captain_types.winter, --Hoxton Revenge
+		moon = restoration.captain_types.winter, --Stealing Xmas
+		born = restoration.captain_types.winter, --Biker Heist
+		mus = restoration.captain_types.winter,	--the diamond
+		gallery = restoration.captain_types.winter, --art gallery
+		red2 = restoration.captain_types.winter, --fwb
+		watchdogs_1 = restoration.captain_types.winter, --Watchdogs Day 1
 		--Custom Heists--
-		"office_strike", --office strike
-		"schl", --Scarlet Club House
-		"constantine_clubhouse_lvl", --Smuggler's Den 
-		"TonCont", --Armored Transport: Atrium
-		"gallery_v2", --Art Gallery Remastered 
-		"Skyscraper", --The Skyscraper Heist
-		"ttr_yct_lvl", --Triad Takedown Remastered 
-		"tj_af22_kitteh_level", --The Greatest Bank Of All time
-		"bookmakers_office", --Bookmaker's Office
-		"firestarter_2_res", --firestarter day 2 res edit version
-		"tRain_returns", --wip rant-man heist
-		"constantine_policestation_lvl" --Constantine Scores (precinct raid)
-	}
-	restoration.captain_teamwork = {
-		"pal", --counterfeit
-		"mia_1", --Hotline Day 1
-		"crojob2", --bomb dockyard
-		"firestarter_3", --firestarter day 3
-		"jolly", --aftershock
-		"rvd1", --highland mortuary 
-		"watchdogs_2_day", --Watchdogs Day 2 Daytime
-		"jolly_CD", --jolly crackdown edit
-		--custom heists		
-		"lit1", --California's Heat
-		"glb", --Golden Lotus Bank 
-		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
-		"constantine_harbor_lvl", --Harboring a Grudge
-		"firestarter_3_res" --firestarter day 3 res edit version
-	}
-	restoration.captain_murderdozer = {
-		"dah", --diamond heist
-		"hox_2", --Hoxout Day 2
-		"xmn_hox_2", --Hoxout Day 2, christmas
-		"firestarter_1", --firestarter day 1
-		"kenaz", --golden grin casino 
-		"big", --big bank
-		"dinner", --Slaughterhouse
-		--custom heists		
-		"firestarter_1_res", --firestarter day 1 res edit version
-		"hardware_store", --Hardware Store 
-		"nft_heist", --EN EF TEE HEIST
-		"anlh", --An End To Liang
-		"hwu", --Avalon's Shadow
-		"constantine_butcher_lvl", --Butcher's Bay
-		"constantine_bank_lvl", --Pacific Bank
-		"santas_hardware_store", --Santa Spring Is Coming To Town
-		"lvl_friday" --Crashing Capitol
-	}
-	restoration.captain_stelf = {
-		"alex_1", --Rats Day 1
-		"rat",	--cook off
-		"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
-		"nightclub", --and Autumn stay off the dance floor
-		"branchbank", --well the trees are orange
-		"family", --diamond store
-		"framing_frame_1", --art gallery but ff
-		"framing_frame_3", --Powerbox simulator
-		"glace", --Green Bridge
-		"jewelry_store", --Jewelry Store
-		"ukrainian_job", --Ukrainian Job
-		"watchdogs_1_night", --Watchdogs Day 1 Night
-		"watchdogs_2", --watch dogs 2 Night
-		"man", --Undercover
-		--custom heists
-		"wetwork", --res map package wetworks
-		"bluewave", --res map bluewave
-		"alex_1_res", --Rats Day 1 res edit version
-		"amsdeal1", --Armsdeal Alleyway
-		"Gambling_room", --Underground Bargains
-		"branchbank_meth", --Bank Heist: Meth
-		"lvl_fourmorestores", --four more stores
-		"constantine_apartment_lvl", --Concrete Jungle 
-		"tj_htsb", --harvest and trustee - southern branch
-		"ukrainian_job_res", --Ukrainian Job res edit version
-		"hntn", --harvest and trustee north
-		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
-	}
-	restoration.what_a_horrible_heist_to_have_a_curse = {
-		"help", --Prison Nightmare
-		--custom heists
-		"daymare", --Hell's Nightmare
-		"funbank" --FunBank: Specials
+		office_strike = restoration.captain_types.winter, --office strike
+		schl = restoration.captain_types.winter, --Scarlet Club House
+		firestarter_2_res = restoration.captain_types.winter, --firestarter day 2 edit
+		constantine_clubhouse_lvl = restoration.captain_types.winter, --Smuggler's Den 
+		TonCont = restoration.captain_types.winter, --Armored Transport: Atrium 
+		gallery_v2 = restoration.captain_types.winter, --Art Gallery Remastered 
+		Skyscraper = restoration.captain_types.winter, --The Skyscraper Heist
+		ttr_yct_lvl = restoration.captain_types.winter, --Triad Takedown Remastered 
+		tj_af22_kitteh_level = restoration.captain_types.winter, --The Greatest Bank Of All time
+		bookmakers_office = restoration.captain_types.winter, --Bookmaker's Office
+		tRain_returns = restoration.captain_types.winter, --wip rant-man heist
+		constantine_policestation_lvl = restoration.captain_types.winter, --Constantine Scores (precinct raid)
+		
+		--Summers
+		pal = restoration.captain_types.summer, --counterfeit
+		mia_1 = restoration.captain_types.summer, --Hotline Day 1
+		crojob2 = restoration.captain_types.summer, --bomb dockyard
+		firestarter_3 = restoration.captain_types.summer, --firestarter day 3
+		jolly = restoration.captain_types.summer, --aftershock
+		rvd1 = restoration.captain_types.summer, --highland mortuary 
+		watchdogs_2_day = restoration.captain_types.summer, --Watchdogs Day 2 Daytime
+		jolly_CD = restoration.captain_types.summer, --jolly crackdown edit
+		--Custom Heists--	
+		lit1 = restoration.captain_types.summer, --California's Heat
+		glb = restoration.captain_types.summer, --Golden Lotus Bank 
+		constantine_mobsterclub_lvl = restoration.captain_types.summer, --Aurora (Borealis?!) Club
+		constantine_harbor_lvl = restoration.captain_types.summer, --Harboring a Grudge
+		firestarter_3_res = restoration.captain_types.summer, --firestarter day 3 res edit version
+		
+		--Spring
+		xmn_hox_2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
+		firestarter_1 = restoration.captain_types.spring, --firestarter day 1
+		arm_for = restoration.captain_types.spring, --train heist
+		arm_for_restoration = restoration.captain_types.spring,	--train heist restoration edit
+		big = restoration.captain_types.spring, --big bank
+		kenaz = restoration.captain_types.spring, --ggc
+		dinner = restoration.captain_types.spring, --Slaughterhouse
+		dah = restoration.captain_types.spring, --diamond heist
+		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
+		--Custom Heists--
+		firestarter_1_res = restoration.captain_types.spring, --firestarter day 1 res edit version
+		hardware_store = restoration.captain_types.spring, --Hardware Store 
+		nft_heist = restoration.captain_types.spring, --EN EF TEE HEIST
+		anlh = restoration.captain_types.spring, --An End To Liang
+		hwu = restoration.captain_types.spring, --hwUwU (Avalon's Shadow)
+		constantine_butcher_lvl = restoration.captain_types.spring, --Butcher's Bay
+		constantine_bank_lvl = restoration.captain_types.spring, --Pacific Bank
+		santas_hardware_store = restoration.captain_types.spring, --Santa Spring Is Coming To Town
+		lvl_friday = restoration.captain_types.spring, --Crashing Capitol
+		
+		--Autumn
+		alex_1 = restoration.captain_types.autumn, --Rats Day 1
+		rat = restoration.captain_types.autumn,	--cook off
+		welcome_to_the_jungle_1_night = restoration.captain_types.autumn, --Big Oil Day 1 Night
+		nightclub = restoration.captain_types.autumn, --Night Club
+		branchbank = restoration.captain_types.autumn, --Bank Heist
+		family = restoration.captain_types.autumn, --diamond store
+		framing_frame_1 = restoration.captain_types.autumn, --art gallery but ff
+		framing_frame_3 = restoration.captain_types.autumn, --Powerbox simulator
+		glace = restoration.captain_types.autumn, --Green Bridge
+		jewelry_store = restoration.captain_types.autumn, --Jewelry Store
+		ukrainian_job = restoration.captain_types.autumn, --Ukrainian Job
+		man = restoration.captain_types.autumn, --undercover--
+		--Custom Heists--
+		alex_1_res = restoration.captain_types.autumn, --Rats Day 1 edit
+		lvl_fourmorestores = restoration.captain_types.autumn, --four more stores
+		ukrainian_job_res = restoration.captain_types.autumn, --Ukrainian Job res edit version
+		hntn = restoration.captain_types.autumn, --harvest and trustee north
+		wetwork = restoration.captain_types.autumn,  --res map package wetworks
+		bluewave = restoration.captain_types.autumn,  --res map bluewave
+		amsdeal1 = restoration.captain_types.autumn,  --Armsdeal Alleyway
+		Gambling_room = restoration.captain_types.autumn,  --Underground Bargains
+		branchbank_meth = restoration.captain_types.autumn,  --Bank Heist: Meths
+		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
+		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
+		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.autumn, --Constantine Scores (gunrunner)
+		
+		--I'm not typing out the whole name
+		help = restoration.captain_types.hvh, --Prison Nightmare
+		nail = restoration.captain_types.hvh, --lab rats
+		--Custom Heists--
+		daymare = restoration.captain_types.hvh, --Hell's Nightmare
+		funbank = restoration.captain_types.hvh --FunBank: Specials	
 	}
 	
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
-	
-		--No Spring During holidays
-		restoration.captain_murderdozer = {}
-		--Autumn loses a few heists
-		restoration.captain_stelf = {
-			"alex_1", --Rats Day 1
-			"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
-			"rat",	--cook off
-			"nightclub", --and Autumn stay off the dance floor
-			"family", --diamond store
-			"framing_frame_1", --art gallery but ff
-			"framing_frame_3", --Powerbox simulator
-			"jewelry_store", --Jewelry Store
-			"ukrainian_job", --Ukrainian Job
-			"watchdogs_1_night", --Watchdogs Day 1 Night
-			"watchdogs_2", --watch dogs 2 Night
-			"man", --Undercover
-			--custom heists
-			"wetwork", --res map package wetworks
-			"bluewave", --res map bluewave
-			"alex_1_res", --Rats Day 1 res edit version
-			"amsdeal1", --Armsdeal Alleyway
-			"lvl_fourmorestores", --four more stores
-			"constantine_apartment_lvl", --Concrete Jungle 
-			"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
-			"Gambling_room", --Underground Bargains
-			"ukrainian_job_res", --Ukrainian Job res edit version
-			"hntn" --harvest and trustee north
-		}		
-		restoration.what_a_horrible_heist_to_have_a_curse = {
-			"dah", --diamond heist
-			"hox_2", --Hoxout Day 2
-			"xmn_hox_2", --Hoxout Day 2, christmas
-			"firestarter_1", --firestarter day 1
-			"big", --big bank
-			"kenaz", --golden grin casino 
-			"dinner", --Slaughterhouse
-			"branchbank", --Gets Branchbank from Autumn		
-			"help", --Prison Nightmare	
-			--custom heists		
-			"daymare", --Hell's Nightmare
-			"firestarter_1_res", --firestarter day 1 res edit version
-			"funbank", --FunBank: Specials
-			"tj_htsb", --Gets Southern Branchbank from Autumn
-			"hardware_store", --Hardware Store 
-			"constantine_bank_lvl", --Pacific Bank
-			"constantine_butcher_lvl", --Butcher's Bay
-			"branchbank_meth", --Bank Heist: Meth
-			"santas_hardware_store", --Bad Xmas
-			"lvl_friday" --Crashing Capitol
-		}		
-	
+		for heist, captain in pairs(restoration.captain_spawns) do
+			if captain == restoration.captain_types.spring then
+				restoration.captain_spawns[heist] = restoration.captain_types.hvh
+			end
+		end		
 	end
 	
 	--[[restoration.captain_viper = {
@@ -182,8 +169,8 @@ function restoration:Init()
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
-		"lit1", --California's Heat
-		"lit2", --California's Heat but Payday 3
+		"lit1", --California's restoration
+		"lit2", --California's restoration but Payday 3
 		"Skyscraper", --The Skyscraper Heist
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
@@ -364,43 +351,6 @@ function restoration:Init()
 		SC._data.sc_player_weapon_toggle = true
 	end
 
-	local C = blt_class()
-	VoicelineFramework = C
-	VoicelineFramework.BufferedSounds = {}
-
-	function C:register_unit(unit_name)
-		--log("VF: Registering Unit, " .. unit_name)
-		if _G.voiceline_framework then
-			_G.voiceline_framework.BufferedSounds[unit_name] = {}
-		end
-	end
-
-	function C:register_line_type(unit_name, line_type)
-		if _G.voiceline_framework then
-			if _G.voiceline_framework.BufferedSounds[unit_name] then
-				--log("VF: Registering Type, " .. line_type .. " for Unit " .. unit_name)
-				local fuck = _G.voiceline_framework.BufferedSounds[unit_name]
-				fuck[line_type] = {}
-			end
-		end
-	end
-
-	function C:register_voiceline(unit_name, line_type, path)
-		if _G.voiceline_framework then
-			if _G.voiceline_framework.BufferedSounds[unit_name] then
-				local fuck = _G.voiceline_framework.BufferedSounds[unit_name]
-				if fuck[line_type] then
-					--log("VF: Registering Path, " .. path .. " for Unit " .. unit_name)
-					table.insert(fuck[line_type], XAudio.Buffer:new(path))
-				end
-			end
-		end
-	end
-
-	if not _G.voiceline_framework then
-		blt.xaudio.setup()
-		_G.voiceline_framework = VoicelineFramework:new()
-	end
 end
 
 function restoration:all_enabled(...)

@@ -363,6 +363,8 @@
 		<hook file="sc/compatibility/HUDHitman.lua" source_file="lib/managers/hud/HUDTeammate"/>
 		<hook file="sc/compatibility/WeaponStatGenerator.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/compatibility/ModStatGenerator.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+		<!--Voiceline Shit-->
+		<hook file="sc/utils/restorationvoicelines.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<!--///MOD SAVE DATA\\\-->
 		<!--DO NOT MODIFY-->
 		<hook file="sc/managers/savefilemanager.lua" source_file="lib/managers/savefilemanager"/>

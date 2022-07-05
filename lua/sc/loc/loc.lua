@@ -880,14 +880,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	})
 
 	local job = Global.level_data and Global.level_data.level_id
-	for _,j4 in ipairs(restoration.what_a_horrible_heist_to_have_a_curse) do
-		if job == j4 then
-			log("Spooky!")
-			LocalizationManager:add_localized_strings({	
-				["hud_assault_vip"] = "FACE YOUR NIGHTMARES AND WAKE UP",
-			})
-			break
-		end
+	local captain_type = job and restoration.captain_spawns[job]
+	if captain_type == restoration.captain_types.hvh then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "FACE YOUR NIGHTMARES AND WAKE UP",
+		})
 	end			
 	
 end)

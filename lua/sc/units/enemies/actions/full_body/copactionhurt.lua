@@ -871,59 +871,17 @@ function CopActionHurt:init(action_desc, common_data)
 
 	if not common_data.ext_base.nick_name then
 		if action_desc.variant == "fire" then
-			local fire_variant = alive(action_desc.weapon_unit) and (tweak_data.weapon[action_desc.weapon_unit:base():get_name_id()] or tweak_data.weapon.amcar).fire_variant or "fire"
-
 			if action_type == "fire_hurt" then
-				common_data.unit:sound():say(fire_variant == "money" and "moneythrower_hurt" or "burnhurt", nil, fire_variant == "money")
+				common_data.unit:sound():say("burnhurt")
 			elseif action_type == "death" then
-				local plays_custom_vo = nil
-
-				if common_data.char_tweak["custom_voicework"] then
-					local voicelines = _G.voiceline_framework.BufferedSounds[common_data.char_tweak.custom_voicework]
-
-					if voicelines and voicelines["burndeath"] then
-						plays_custom_vo = true
-
-						local line_to_use = voicelines.burndeath[math_random(#voicelines.burndeath)]
-
-						if common_data.unit:sound()._last_speech then
-							common_data.unit:sound()._last_speech:stop()
-						end
-
-						common_data.ext_base:play_voiceline(line_to_use, true, true)
-					end
-				end
-
-				if not plays_custom_vo then
-					if common_data.ext_base:has_tag("tank") then
-						common_data.unit:sound():say("x02a_any_3p")
-					else
-						common_data.unit:sound():say(fire_variant == "money" and "moneythrower_death" or "burndeath", nil, fire_variant == "money")
-					end
+				if common_data.ext_base:has_tag("tank") then
+					common_data.unit:sound():say("x02a_any_3p")
+				else
+					common_data.unit:sound():say("burndeath")
 				end
 			end
 		elseif action_type == "death" then
-			local plays_custom_vo = nil
-
-			if common_data.char_tweak["custom_voicework"] then
-				local voicelines = _G.voiceline_framework.BufferedSounds[common_data.char_tweak.custom_voicework]
-
-				if voicelines and voicelines["death"] then
-					plays_custom_vo = true
-
-					local line_to_use = voicelines.death[math_random(#voicelines.death)]
-
-					if common_data.unit:sound()._last_speech then
-						common_data.unit:sound()._last_speech:stop()
-					end
-
-					common_data.ext_base:play_voiceline(line_to_use, true, true)
-				end
-			end
-
-			if not plays_custom_vo then
-				common_data.unit:sound():say("x02a_any_3p")
-			end
+			common_data.unit:sound():say("x02a_any_3p")
 		elseif action_type == "counter_tased" or action_type == "taser_tased" or action_desc.variant == "tase" then
 			if common_data.ext_base:has_tag("taser") or common_data.ext_base:has_tag("taser_titan") then
 				common_data.unit:sound():say("tasered")

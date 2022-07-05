@@ -84,13 +84,7 @@ function CopSound:init(unit)
 		self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. (char_tweak.speech_prefix_p2 or "") .. "_"
 	end
 
-	if self._unit:base():char_tweak()["custom_voicework"] then
-		local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
-		if voicelines and voicelines["spawn"] then
-			local line_to_use = voicelines.spawn[math.random(#voicelines.spawn)]
-			self._unit:base():play_voiceline(line_to_use, true)
-		end
-	elseif self._unit:base():char_tweak().spawn_sound_event then
+ 	if not restoration.Voicelines:say(self._unit, "spawn") then
 		self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event, nil, nil)
 	end
 	
@@ -110,105 +104,101 @@ end
 
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 
-	local line_array = { c01 = "contact",
-		c01x = "contact",
-		burnhurt = "burnhurt",
-		burndeath = "burndeath",
-		rrl = "reload",
-		gr1a = "spawn",
-		gr1b = "spawn",
-		gr1c = "spawn",
-		gr1d = "spawn",
-		gr2a = "spawn",
-		gr2b = "spawn",
-		gr2c = "spawn",
-		gr2d = "spawn",
-		a05 = "clear_stelf",
-		a06 = "clear_stelf",
-		e01 = "disabled_gear", --look into restoring this chatter in general
-		e02 = "disabled_gear",
-		e03 = "disabled_gear",
-		e04 = "disabled_gear",
-		e05 = "disabled_gear",
-		e06 = "disabled_gear",
-		i01 = "contact",
-		i02 = "gogo",
-		i03 = "kill",
-		lk3a = "buddy_died",  
-		lk3b = "cover_me",  --could use this to add calmer panic between assaults
-		mov = "gogo",
-		med = "buddy_died",
-		amm = "buddy_died",
-		ch1 = "trip_mines",--
-		ch2 = "sentry",--
-		ch3 = "ecm", --
-		ch4 = "saw", -- could add these lines to our units
-		t01 = "flank",
-		pus = "gogo",
-		g90 = "buddy_died",
-		civ = "hostage",
-		bak = "ready",
-		p01 = "hostage",
-		p02 = "hostage",
-		p03 = "gogo",
-		m01 = "retreat",
-		h01 = "rescue_civ",
-		cr1 = "hostage",
-		rdy = "ready",
-		r01 = "ready",
-		clr = "clear",
-		att = "gogo",
-		a08 = "gogo",
-		prm = "ready",
-		pos = "ready",
-		d01 = "ready",
-		d02 = "ready",
-		x01a_any_3p = "pain",
-		x01a_any_3p_01 = "pain",
-		x01a_any_3p_02 = "pain",
-		x02a_any_3p = "death",
-		x02a_any_3p_01 = "death",
-		x02a_any_3p_02 = "death",
-		hlp = "buddy_died",
-		buddy_died = "buddy_died",
-		s01x = "surrender",
-		cn1 = "joker",
-		use_gas = "use_gas",
-		buff = "buff",
-		spawn = "spawn",
-		tasing = "tasing",
-		heal = "heal",
-		tsr_x02a_any_3p = "death",
-		tsr_x01a_any_3p = "pain",
-		tsr_post_tasing_taunt = "tasing",
-		post_tasing_taunt = "tasing",
-		tsr_g90 = "contact",
-		tsr_entrance = "gogo",
-		tsr_c01 = "contact",
-		bdz_c01 = "contact",
-		bdz_entrance = "spawn",
-		bdz_entrance_elite = "spawn",
-		bdz_g90 = "gogo",
-		bdz_post_kill_taunt = "gogo",
-		bdz_visor_lost = "visor_lost",
-		visor_lost = "visor_lost",
-		cloaker_taunt_after_assault = "kill",
-		cloaker_taunt_during_assault = "kill",
-		cpa_taunt_after_assault = "kill",
-		cpa_taunt_during_assault = "kill",
-		police_radio = "radio", -- doesnt work :<
-		clk_x02a_any_3p = "death"
-	}
+	local line_array = {
+	c01 =       {line = "contact"},
+	c01x =      {line = "contact"},
+	burnhurt =  {line = "burnhurt",  force = true},
+	burndeath = {line = "burndeath", force = true},
+	rrl =       {line = "reload"},
+	gr1a =      {line = "spawn"},
+	gr1b =      {line = "spawn"},
+	gr1c =      {line = "spawn"},
+	gr1d =      {line = "spawn"},
+	gr2a =      {line = "spawn"},
+	gr2b =      {line = "spawn"},
+	gr2c =      {line = "spawn"},
+	gr2d =      {line = "spawn"},
+	a05 =       {line = "clear_stelf"},
+	a06 =       {line = "clear_stelf"},
+	e01 =       {line = "disabled_gear", force = true}, 
+	e02 =       {line = "disabled_gear", force = true},
+	e03 =       {line = "disabled_gear", force = true},
+	e04 =       {line = "disabled_gear", force = true},
+	e05 =       {line = "disabled_gear", force = true},
+	e06 =       {line = "disabled_gear", force = true},
+	i01 =       {line = "contact"},
+	i02 =       {line = "gogo"},
+	i03 =       {line = "kill"},
+	lk3a =      {line = "buddy_died"},
+	lk3b =      {line = "buddy_died"}, 
+	mov =       {line = "gogo"},
+	med =       {line = "buddy_died"},
+	amm =       {line = "buddy_died"},
+	ch1 =       {line = "buddy_died"},
+	ch2 =       {line = "buddy_died"},
+	ch3 =       {line = "burnhurt"}, --close enough just ignore that they sometimes scream fire
+	ch4 =       {line = "buddy_died"},
+	t01 =       {line = "flank"},
+	pus =       {line = "gogo"},
+	g90 =       {line = "buddy_died"},
+	civ =       {line = "hostage"},
+	bak =       {line = "ready"},
+	p01 =       {line = "hostage"},
+	p02 =       {line = "hostage"},
+	p03 =       {line = "gogo"},
+	m01 =       {line = "retreat"},
+	h01 =       {line = "rescue_civ"},
+	h10 =       {line = "rescue_civ"},
+	cr1 =       {line = "hostage"},
+	rdy =       {line = "ready"},
+	r01 =       {line = "ready"},
+	clr =       {line = "clear"},
+	att =       {line = "gogo"},
+	a08 =       {line = "gogo"},
+	prm =       {line = "ready"},
+	pos =       {line = "ready"},
+	d01 =       {line = "ready"},
+	d02 =       {line = "ready"},
+	x01a_any_3p =    {line = "pain",  force = true},
+	x01a_any_3p_01 = {line = "pain",  force = true},
+	x01a_any_3p_02 = {line = "pain",  force = true},
+	x02a_any_3p =    {line = "death", force = true},
+	x02a_any_3p_01 = {line = "death", force = true},
+	x02a_any_3p_02 = {line = "death", force = true},
+	hlp =            {line = "buddy_died"},
+	buddy_died =     {line = "buddy_died"},
+	s01x =           {line = "surrender"},
+	cn1 =            {line = "joker"},
+	use_gas =        {line = "use_gas"},
+	spawn =          {line = "spawn"},
+	tasing =         {line = "tasing"},
+	heal =           {line = "heal"},
+	tsr_x02a_any_3p = {line = "death", force = true},
+	tsr_x01a_any_3p = {line = "pain",  force = true},
+	tsr_post_tasing_taunt = {line = "tasing"},
+	post_tasing_taunt =     {line = "tasing"},
+	tsr_g90 =               {line = "contact"},
+	tsr_entrance =          {line = "gogo"},
+	tsr_c01 =               {line = "contact"},
+	bdz_c01 =               {line = "contact"},
+	bdz_entrance =          {line = "spawn"},
+	bdz_entrance_elite =    {line = "spawn"},
+	bdz_g90 =               {line = "gogo"},
+	bdz_post_kill_taunt =   {line = "gogo"},
+	dz_visor_lost =         {line = "visor_lost"},
+	visor_lost =            {line = "visor_lost"},
+	cloaker_taunt_after_assault =  {line = "kill"},
+	cloaker_taunt_during_assault = {line = "kill"},
+	cpa_taunt_after_assault =      {line = "kill"},
+	cpa_taunt_during_assault =     {line = "kill"},
+	police_radio =                 {line = "radio"}, -- doesnt work :<
+	clk_x02a_any_3p =              {line = "death", force = true}
+    }
+
+
 	local line_to_check = line_array[sound_name]
-	if self._unit:base():char_tweak()["custom_voicework"] then
-		if line_to_check then
-			local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
-			if voicelines and voicelines[line_to_check] then
-				local line_to_use = voicelines[line_to_check][math.random(#voicelines[line_to_check])]
-				self._unit:base():play_voiceline(line_to_use, important)
-				return
-			end
-		end
+    if line_to_check and restoration.Voicelines:say(self._unit, line_to_check.line, line_to_check.force) then
+		return
 	end
 	
 	if self._last_speech then

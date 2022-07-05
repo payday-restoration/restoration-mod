@@ -20,8 +20,9 @@
 	</material>
 	
 	<material name="mtr_armor" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
-        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <variable value="2 1 1" type="vector3" name="fresnel_settings"/>
 	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <opacity_texture file="units/pd2_mod_reapers/characters/ene_subject_enforcer/coat_op"/>
 		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer_nm"/>		
         <diffuse_texture file="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer_df"/>
 	</material>

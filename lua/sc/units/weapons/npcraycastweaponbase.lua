@@ -61,6 +61,11 @@ Hooks:PostHook(NPCRaycastWeaponBase, "destroy", "res_destroy", function(self)
 	if alive(self._light) then
 		World:delete_light(self._light)
 	end
+
+	if alive(self._asu_laser_unit) then
+		self._asu_laser_unit:set_slot(0)
+		self._asu_laser_unit = nil
+	end
 end)
 
 function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)
@@ -154,7 +159,7 @@ end
 
 function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
 	if state then
-		if alive(self._laser_unit) then
+		if alive(self._asu_laser_unit) then
 			return
 		end
 
@@ -165,17 +170,17 @@ function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
 			spawn_pos = spawn_pos - spawn_rot:y() * 8 + spawn_rot:z() * 2 - spawn_rot:x() * 1.5
 		end
 
-		self._laser_unit = World:spawn_unit(Idstring("units/payday2/weapons/wpn_asu_laser/wpn_asu_laser"), spawn_pos, spawn_rot)
+		self._asu_laser_unit = World:spawn_unit(Idstring("units/payday2/weapons/wpn_asu_laser/wpn_asu_laser"), spawn_pos, spawn_rot)
 		
-		self._unit:link(attachment_point:name(), self._laser_unit)
-		self._laser_unit:base():set_npc()
-		self._laser_unit:base():set_on()
-		self._laser_unit:base():set_color_by_theme("asu_laser")
-		self._laser_unit:base():set_max_distace(0)
-	elseif alive(self._laser_unit) then
-		self._laser_unit:set_slot(0)
+		self._unit:link(attachment_point:name(), self._asu_laser_unit)
+		self._asu_laser_unit:base():set_npc()
+		self._asu_laser_unit:base():set_on()
+		self._asu_laser_unit:base():set_color_by_theme("asu_laser")
+		self._asu_laser_unit:base():set_max_distace(0)
+	elseif alive(self._asu_laser_unit) then
+		self._asu_laser_unit:set_slot(0)
 
-		self._laser_unit = nil
+		self._asu_laser_unit = nil
 	end
 end
 

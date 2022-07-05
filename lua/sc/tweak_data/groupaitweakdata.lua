@@ -13431,7 +13431,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--These guys shouldn't exist on lower difficulties
 	if difficulty_index == 5 or difficulty_index == 6 then
 		self.enemy_spawn_groups.titan_snipers = {
-			spawn_cooldown = 60,
+			spawn_cooldown = 75,
 			max_nr_simultaneous_groups = 2,
 			initial_spawn_delay = 90,
 			amount = {
@@ -13440,7 +13440,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			spawn = {
 				{
-					respawn_cooldown = 30,
+					respawn_cooldown = 45,
 					amount_min = 1,
 					amount_max = 1,
 					rank = 1,
@@ -13456,7 +13456,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	elseif difficulty_index == 7 or difficulty_index == 8 then
 		self.enemy_spawn_groups.titan_snipers = {
-			spawn_cooldown = 30,
+			spawn_cooldown = 60,
 			max_nr_simultaneous_groups = 3,
 			initial_spawn_delay = 45,
 			amount = {
@@ -13465,7 +13465,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			spawn = {
 				{
-					respawn_cooldown = 15,
+					respawn_cooldown = 30,
 					amount_min = 1,
 					amount_max = 2,
 					rank = 1,

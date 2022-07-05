@@ -1799,7 +1799,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.pocket_ecm_jammer_base = {
 		{
 			cooldown_drain = 3,
-			duration = 12
+			duration = 10
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
@@ -1810,6 +1810,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}	
 	
 	--Leech
+	self.values.player.copr_static_damage_ratio = {
+		0.1,
+		0.05
+	}	
 	self.values.player.copr_activate_bonus_health_ratio = {
 		0.1
 	}	
@@ -1818,8 +1822,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.02
 	}
 	self.values.player.copr_kill_life_leech = {
-		4,
-		4
+		3,
+		3
 	}	
 	self.values.player.copr_speed_up_on_kill = {
 		1

@@ -27,12 +27,12 @@
     </material>
 	
     <material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/pd2_mod_reapers/characters/shared_textures/swat_city_nm"/>
-		<diffuse_texture file="units/pd2_mod_reapers/characters/shared_textures/swat_city_df"/>
+		<bump_normal_texture file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_nm"/>
+		<diffuse_texture file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df"/>
     </material>
     <material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/pd2_mod_reapers/characters/shared_textures/swat_city_nm" mips="4"/>
-		<diffuse_texture file="units/pd2_mod_reapers/characters/shared_textures/swat_city_df" mips="4"/>
+		<bump_normal_texture file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_nm" mips="4"/>
+		<diffuse_texture file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df" mips="4"/>
     </material>
 	
     <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">

@@ -1,3 +1,5 @@
+local math_random = math.random
+
 local mvec_1 = Vector3()
 local mvec_2 = Vector3()
 local ids_func = Idstring

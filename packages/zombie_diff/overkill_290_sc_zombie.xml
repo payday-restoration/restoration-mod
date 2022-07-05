@@ -23,6 +23,7 @@
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/helmet_shotgun_df"  />	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_city_heavy_df"  />	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df" />
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />
 	
 	<!--zombie city 1-->
 	<object				path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>

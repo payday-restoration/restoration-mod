@@ -124,7 +124,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")					
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
+					Idstring("units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1")
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1")							
@@ -155,7 +155,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")							
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")					
+					Idstring("units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1")					
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer")							

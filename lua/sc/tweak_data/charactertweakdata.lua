@@ -17190,6 +17190,7 @@ function CharacterTweakData:character_map()
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_sniper_1",
+				"ene_tazer_1",
 				"ene_sniper_2",
 				"ene_sniper_3",
 				"ene_shield_2",

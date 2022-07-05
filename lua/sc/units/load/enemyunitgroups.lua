@@ -50,7 +50,7 @@ EnemyUnitGroups[LevelsTweakData.LevelType.Murkywater] = function()
 		Idstring("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
 		Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
 		Idstring("units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2"),
-		Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+		Idstring("units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"),
 		Idstring("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 		Idstring("units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1"),
 		Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1"),

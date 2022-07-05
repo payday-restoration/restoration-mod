@@ -285,7 +285,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 
 	--Taser become Medics
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"] = {medic}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"] = {medic}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"] = {medic}

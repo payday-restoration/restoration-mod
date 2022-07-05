@@ -2557,8 +2557,10 @@ local russia_very_hard = {
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",									
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1",
@@ -2596,7 +2598,7 @@ local russia_very_hard = {
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",
 		
 		--FSB Replacers 
-		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
@@ -2660,8 +2662,10 @@ local russia_overkill = {
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",							
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1",
@@ -2703,7 +2707,7 @@ local russia_overkill = {
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",
 		
 		--FSB Replacers
-		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
@@ -2768,8 +2772,10 @@ local russia_mayhem = {
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",							
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1",
@@ -2811,7 +2817,7 @@ local russia_mayhem = {
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp"] = "units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2",
 		
 		--FSB Replacers
-		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
@@ -2878,8 +2884,10 @@ local russia_deathwish = {
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",			
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1",
@@ -2923,7 +2931,7 @@ local russia_deathwish = {
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp"] = "units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3",
 		
 		--FSB Replacers
-		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
@@ -2993,8 +3001,10 @@ local russia_zeal = {
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini", --I want this benelli boy to spawn so badly
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",	
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1",
@@ -3042,7 +3052,7 @@ local russia_zeal = {
 		["units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp"] = "units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 		
 		--FSB Replacers
-		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass",
+		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",

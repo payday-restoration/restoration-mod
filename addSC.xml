@@ -91,6 +91,8 @@
 	<mission			path="levels/narratives/classics/dinner/world/world" force="true" />  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
 	<continent			path="levels/narratives/classics/dinner/world/world" force="true" />
 	
+	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> <!--camera guard in front has a shotgun-->
+	
 	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	

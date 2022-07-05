@@ -1048,7 +1048,7 @@ function CopMovement:set_cloaked(state, sync)
 		self._cloaked = state
 
 		if sync then
-			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "movement", self._NET_EVENTS[state and "cloak" or "uncloak")
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "movement", self._NET_EVENTS[state and "cloak" or "uncloak"])
 		end
 	end
 end

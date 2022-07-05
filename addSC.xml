@@ -703,7 +703,7 @@
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_contour" force="false"/>	
-	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_decloak" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_cloaked" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
@@ -723,11 +723,11 @@
 	<sequence_manager	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<cooked_physics		path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
 	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
 		
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_df"  load="true"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
+	<texture			path="units/payday2/characters/shared_textures/spook_cloak_cloaked_df" load="true"/> 
 	<texture			path="units/payday2/characters/shared_textures/nvg_df" load="true"/>
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm" load="true"/>
 		
@@ -737,7 +737,7 @@
 	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
 	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
 	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 	
@@ -751,7 +751,7 @@
 	<model				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<object				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
-	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_autumn_dead"/>	
+	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_autumn_cloaked"/>	
 	<sequence_manager	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<unit				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
 
@@ -831,12 +831,12 @@
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_df" load="true"/>
-	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" load="true"/>
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_cloaked_df" load="true"/>
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" />
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
@@ -1264,7 +1264,7 @@
 	<object				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 	<unit				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" load="false"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_dead"/>
+	<material_config	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_cloaked"/>
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 				

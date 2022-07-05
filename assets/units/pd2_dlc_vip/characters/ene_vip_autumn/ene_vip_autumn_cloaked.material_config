@@ -1,0 +1,24 @@
+<materials version="3" group="civ_male_des">
+	<material name="mtr_head" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_head_glow_df"/>
+        <variable name="uv0_speed" value="0 1 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+	</material>
+	<material name="mtr_head_lod" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_cloak_glow_df" mip="1"/>
+        <variable name="uv0_speed" value="0 1 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+	</material>
+
+	<material name="mtr_body" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_glow_df"/>
+        <variable name="uv0_speed" value="0 1 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+	</material>
+	<material name="mtr_body_lod" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_cloak_glow_df" mip="1"/>
+        <variable name="uv0_speed" value="0 1 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

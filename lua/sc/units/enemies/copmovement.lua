@@ -1037,11 +1037,11 @@ function CopMovement:set_cloaked(state, sync)
 
 	local sequence_name = state and "cloak_engaged" or "decloak"
 	local weapon_unit = self._unit:inventory():equipped_unit()
-	if self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") and (not weapon_unit or weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged")) then
-		self._unit:damage():run_sequence_simple("cloak_engaged")
+	if self._unit:damage() and self._unit:damage():has_sequence(sequence_name) and (not weapon_unit or weapon_unit:damage() and weapon_unit:damage():has_sequence(sequence_name)) then
+		self._unit:damage():run_sequence_simple(sequence_name)
 
 		if weapon_unit then
-			weapon_unit:damage():run_sequence_simple("cloak_engaged")
+			weapon_unit:damage():run_sequence_simple(sequence_name)
 			weapon_unit:base():set_flashlight_enabled(state) -- disable the flashlight upon cloaking
 		end
 

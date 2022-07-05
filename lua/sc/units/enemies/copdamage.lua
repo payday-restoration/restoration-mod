@@ -267,25 +267,8 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 
-	if Network:is_server() then
-		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
-			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-				local recloak_roll = math.rand(1, 100)
-				local chance_recloak = 75
-
-				if recloak_roll <= chance_recloak then
-					self._unit:damage():run_sequence_simple("cloak_engaged")
-
-					local weapon_unit = self._unit:inventory():equipped_unit()
-
-					if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-						weapon_unit:damage():run_sequence_simple("cloak_engaged")
-					end
-
-					self._unit:movement():set_uncloaked(false)
-				end
-			end
-		end
+	if not self._unit:movement():cloaked() and math_random() < 0.75 then
+		self._unit:movement():set_cloaked(true, true)
 	end
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
@@ -599,27 +582,6 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 		return
 	end
 
-	if Network:is_server() then
-		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
-			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-				local recloak_roll = math.rand(1, 100)
-				local chance_recloak = 75
-
-				if recloak_roll <= chance_recloak then
-					self._unit:damage():run_sequence_simple("cloak_engaged")
-
-					local weapon_unit = self._unit:inventory():equipped_unit()
-
-					if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-						weapon_unit:damage():run_sequence_simple("cloak_engaged")
-					end
-
-					self._unit:movement():set_uncloaked(false)
-				end
-			end
-		end
-	end
-
 	local variant = "fire"
 	local attack_data = {
 		variant = variant,
@@ -845,25 +807,8 @@ function CopDamage:damage_bullet(attack_data)
 		end
 	end
 	
-	if Network:is_server() then
-		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
-			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-				local recloak_roll = math.rand(1, 100)
-				local chance_recloak = 75
-
-				if recloak_roll <= chance_recloak then
-					self._unit:damage():run_sequence_simple("cloak_engaged")
-
-					local weapon_unit = self._unit:inventory():equipped_unit()
-
-					if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-						weapon_unit:damage():run_sequence_simple("cloak_engaged")
-					end
-
-					self._unit:movement():set_uncloaked(false)
-				end
-			end
-		end
+	if not self._unit:movement():cloaked() and math_random() < 0.75 then
+		self._unit:movement():set_cloaked(true, true)
 	end
 
 	local result = nil
@@ -1212,27 +1157,6 @@ end
 function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, i_result, death)
 	if self._dead then
 		return
-	end
-
-	if Network:is_server() then
-		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
-			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-				local recloak_roll = math.rand(1, 100)
-				local chance_recloak = 75
-
-				if recloak_roll <= chance_recloak then
-					self._unit:damage():run_sequence_simple("cloak_engaged")
-
-					local weapon_unit = self._unit:inventory():equipped_unit()
-
-					if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-						weapon_unit:damage():run_sequence_simple("cloak_engaged")
-					end
-
-					self._unit:movement():set_uncloaked(false)
-				end
-			end
-		end
 	end
 
 	local attack_data = {
@@ -2150,25 +2074,8 @@ function CopDamage:damage_explosion(attack_data)
 		end
 	end
 
-	if Network:is_server() then
-		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
-			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-				local recloak_roll = math.rand(1, 100)
-				local chance_recloak = 75
-
-				if recloak_roll <= chance_recloak then
-					self._unit:damage():run_sequence_simple("cloak_engaged")
-
-					local weapon_unit = self._unit:inventory():equipped_unit()
-
-					if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-						weapon_unit:damage():run_sequence_simple("cloak_engaged")
-					end
-
-					self._unit:movement():set_uncloaked(false)
-				end
-			end
-		end
+	if not self._unit:movement():cloaked() and math_random() < 0.75 then
+		self._unit:movement():set_cloaked(true, true)
 	end
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
@@ -2346,27 +2253,6 @@ end
 function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack_variant, death, direction, weapon_unit)
 	if self._dead then
 		return
-	end
-
-	if Network:is_server() then
-		if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
-			if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-				local recloak_roll = math.rand(1, 100)
-				local chance_recloak = 75
-
-				if recloak_roll <= chance_recloak then
-					self._unit:damage():run_sequence_simple("cloak_engaged")
-
-					local weapon_unit = self._unit:inventory():equipped_unit()
-
-					if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-						weapon_unit:damage():run_sequence_simple("cloak_engaged")
-					end
-
-					self._unit:movement():set_uncloaked(false)
-				end
-			end
-		end
 	end
 
 	local variant = CopDamage._ATTACK_VARIANTS[i_attack_variant]

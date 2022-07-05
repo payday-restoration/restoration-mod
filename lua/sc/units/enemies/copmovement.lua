@@ -1,24 +1,11 @@
-local old_init = CopMovement.init
-local action_variants = {
-	security = {
-		idle = CopActionIdle,
-		act = CopActionAct,
-		walk = CopActionWalk,
-		turn = CopActionTurn,
-		hurt = CopActionHurt,
-		stand = CopActionStand,
-		crouch = CopActionCrouch,
-		shoot = CopActionShoot,
-		reload = CopActionReload,
-		spooc = ActionSpooc,
-		tase = CopActionTase,
-		dodge = CopActionDodge,
-		warp = CopActionWarp,
-		healed = CopActionHealed
-	}
+CopMovement._NET_EVENTS = {
+	cloak = 1,
+	uncloak = 2
 }
-local security_variant = action_variants.security
-function CopMovement:init(unit)
+
+Hooks:PostHook(CopMovement, "init", "res_init", function(self)
+	local security_variant = CopMovement._action_variants.security
+
 	CopMovement._action_variants.dave = security_variant
 	CopMovement._action_variants.cop_civ = security_variant
 	CopMovement._action_variants.cop_forest = security_variant
@@ -74,10 +61,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.spooc_titan = security_variant
 	CopMovement._action_variants.autumn = security_variant
 	CopMovement._action_variants.taser_titan = clone(security_variant)
-	CopMovement._action_variants.boom_titan = clone(security_variant)
-	
-	old_init(self, unit)		
-end
+	CopMovement._action_variants.boom_titan = clone(security_variant)	
+end)
 
 function CopMovement:post_init()
 	local unit = self._unit
@@ -189,11 +174,14 @@ function CopMovement:post_init()
 	self:_post_init()
 	self._omnia_cooldown = 0
 	self._asu_cooldown = 0
-	self._aoe_blackout_cooldown = 0		
+	self._aoe_blackout_cooldown = 0	
+	self._cloaked = false
 	
 	if self._tweak_data.do_autumn_blackout then 
 		managers.groupai:state():register_blackout_source(self._unit)
 	end
+	
+	self:set_cloaked(true)
 end	
 
 function CopMovement:_upd_actions(t)
@@ -1034,23 +1022,40 @@ function CopMovement:anim_clbk_reload_exit()
 	self:anim_clbk_hide_magazine_in_hand()
 end
 
-function CopMovement:set_uncloaked(state)
-	if state then
-		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.uncloak)
-	else
-		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.cloak)
+function CopMovement:sync_net_event(event_id)
+	if event_id == self._NET_EVENTS.cloak then
+		self:set_cloaked(true)
+	elseif event_id == self._NET_EVENTS.uncloak then
+		self:set_cloaked(false)
+	end
+end
+
+function CopMovement:set_cloaked(state, sync)
+	if not self._tweak_data.can_cloak or self._cloaked == state then
+		return
 	end
 
-	if self._ext_inventory:equipped_unit() then
-		self._ext_inventory:equipped_unit():base():set_flashlight_enabled(state) -- disable the flashlight upon cloaking
-	end
+	local sequence_name = state and "cloak_engaged" or "decloak"
+	local weapon_unit = self._unit:inventory():equipped_unit()
+	if self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") and (not weapon_unit or weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged")) then
+		self._unit:damage():run_sequence_simple("cloak_engaged")
 
-	self._uncloaked = state
+		if weapon_unit then
+			weapon_unit:damage():run_sequence_simple("cloak_engaged")
+			weapon_unit:base():set_flashlight_enabled(state) -- disable the flashlight upon cloaking
+		end
+
+		self._cloaked = state
+
+		if sync then
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "movement", self._NET_EVENTS[state and "cloak" or "uncloak"])
+		end
+	end
 end
 
 --used for Titan Spoocs and Autumn
-function CopMovement:is_uncloaked()
-	return self._uncloaked
+function CopMovement:cloaked()
+	return self._cloaked
 end
 
 --syncing stuff

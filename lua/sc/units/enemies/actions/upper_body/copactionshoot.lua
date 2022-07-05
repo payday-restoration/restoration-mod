@@ -718,7 +718,7 @@ function CopActionShoot:update(t)
 
 					local is_autumn = self._ext_base._tweak_table == "autumn"
 					if math_random() < (is_autumn and 0.2 or 0.4) then
-						self._unit:movement():set_cloaked(false)
+						self._unit:movement():set_cloaked(false, true)
 					end
 
 					if is_autumn then

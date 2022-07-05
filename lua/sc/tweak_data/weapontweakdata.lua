@@ -12245,6 +12245,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hx25.ignore_rays = true --Flag to ignore the default explosive rounds getting hit with a min-damage mult in the menus
 		self.hx25.stats_modifiers = {damage = 10}
 		self.hx25.reload_speed_multiplier = 1.25
+		self.hx25.timers.reload_not_empty = 2.1
+		self.hx25.timers.reload_empty = 2.1
+		self.hx25.timers.reload_exit_not_empty = 0.6
+		self.hx25.timers.reload_exit_empty = 0.6
 	end
 	
 	if self.m107cq then --Pawcio's M107
@@ -12290,6 +12294,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.timers.reload_empty = 5.4
 		self.m107cq.timers.reload_exit_not_empty = 1.4
 		self.m107cq.timers.reload_exit_empty = 0.7
+	end
+
+	if self.musket then --Pawcio's Musket
+		self.musket.categories = {
+			"snp"
+		}
+		self.musket.recategorize = { "antim_snp" }
+		self.musket.damage_type = "anti_materiel"
+		self.musket.upgrade_blocks = nil
+		self.musket.has_description = true
+		self.musket.desc_id = "bm_heavy_ap_weapon_sc_desc"
+		self.musket.CLIP_AMMO_MAX = 1
+		self.musket.AMMO_MAX = 20
+		self.musket.fire_mode_data.fire_rate = 1.5
+		self.musket.lock_slide = true
+		self.musket.sounds.magazine_empty = "shotgun_dryfire"
+		self.musket.sounds.stop_fire = "saiga_stop"
+		self.musket.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.musket.supported = true
+		self.musket.ads_speed = 0.280
+		self.musket.damage_falloff = {
+			start_dist = 2200,
+			end_dist = 6500,
+			min_mult = 0.16666
+		}
+		self.musket.stats = {
+			damage = 180,
+			spread = 61,
+			recoil = 76,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 18,
+			suppression = 2,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.musket.armor_piercing_chance = 1
+		self.musket.can_shoot_through_titan_shield = true
+		self.musket.stats_modifiers = nil
+		self.musket.panic_suppression_chance = 0.05
+		self.musket.reload_speed_multiplier = 1.2
+		self.musket.timers.reload_exit_not_empty = 0.9
+		self.musket.timers.reload_exit_empty = 0.9
+
 	end
 
 	if self.m200 then --Pawcio's Intervention

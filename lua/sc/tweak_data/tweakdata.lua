@@ -20,21 +20,34 @@ tweak_data.ammo.ricochet.autohit = {
 --TODO: Move to stat_info
 tweak_data.pistol = {
 	swap_bonus = 1.75,
-	ads_move_speed_mult = 0.9,
+	ads_move_speed_mult = 0.8,
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.75
 }
 
+tweak_data.grenade_launcher = {
+	ads_move_speed_mult = 0.45,
+}
+	tweak_data.rocket_launcher = {
+		ads_move_speed_mult = 0.5,
+	}
+
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.6,
 }
+	tweak_data.flamethrower = {
+		ads_move_speed_mult = 1,
+	}
 
 tweak_data.smg = {
 	swap_bonus = 1.25,
-	ads_move_speed_mult = 0.75,
+	ads_move_speed_mult = 0.7,
 	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
 }
+	tweak_data.pdw = {
+		ads_move_speed_mult = 0.6428,
+	}
 	tweak_data.lmg = {
 		swap_bonus = 0.8,
 		ads_move_speed_mult = 0.4,
@@ -58,7 +71,7 @@ tweak_data.snp = {
 }
 	tweak_data.semi_snp = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.5,
+		ads_move_speed_mult = 0.6666,
 		hipfire_spread_mult = 12,
 		hipfire_moving_spread_mult = 1
 	}
@@ -70,7 +83,7 @@ tweak_data.assault_rifle = {
 
 tweak_data.akimbo = {
 	swap_bonus = 0.8,
-	ads_move_speed_mult = 0.8,
+	ads_move_speed_mult = 0.75,
 	hipfire_spread_mult = 1.5
 }
 

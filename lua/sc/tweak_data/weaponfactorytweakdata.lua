@@ -1589,6 +1589,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m107cq = {
 		translation = Vector3(-0.02, 5, -4.02)
 	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_musket = {
+		translation = Vector3(0, -15, -4.34)
+	}
 
 
 	--Military Red Dot
@@ -1837,6 +1840,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_leupold.custom_stats = { big_scope = true }
 	self.parts.wpn_fps_upg_o_leupold.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_m107cq = {
+		translation = Vector3(-0.015, -15, -4.879)
+	}
 
 end)
 
@@ -1987,6 +1993,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2_dec16", "resmod_conte
 	}		
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_winchester = { 
 		translation = Vector3(0, -7, -3.3)
+	}	
+
+	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_musket = {
+		translation = Vector3(0, -15, -4.34)
 	}
 
 end)
@@ -11186,6 +11196,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 		},
 		wpn_fps_ass_famas = {
 			translation = Vector3(0, -6, -5.8)
+		},
+		
+		wpn_fps_snp_musket = {
+			translation = Vector3(0, -6, -3.9)
 		}
 	}
 
@@ -11946,6 +11960,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		gadget_zoom = 2
 	}
 	self.parts.wpn_fps_upg_o_45rds.perks = {"gadget"}
+
+	self.parts.wpn_fps_upg_o_45rds.stance_mod.wpn_fps_snp_m107cq = {
+		translation = Vector3(-0.75, 0, -12.8),
+		rotation = Rotation(0, 0, -45)
+	}
 	
 	--Reconnaissance Sight/NcSTAR Advance Dual Optic
 	self.parts.wpn_fps_upg_o_spot.pcs = {}
@@ -20207,6 +20226,87 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_m107cq_iron_sights.supported = true
 		self.parts.wpn_fps_upg_m107cq_iron_sights.stats = { value = 0 }
 		self.parts.wpn_fps_upg_m107cq_iron_sights.custom_stats = nil
+	end
+
+	--Pawcio's Musket
+	if self.parts.wpn_fps_snp_musket_lead then
+		self.parts.wpn_fps_snp_musket_lead.pcs = nil
+		self.parts.wpn_fps_snp_musket_lead.supported = true
+		self.parts.wpn_fps_snp_musket_lead.stats = { value = 0 }
+		self.parts.wpn_fps_snp_musket_lead.custom_stats = nil
+
+		self.wpn_fps_snp_musket.adds = { 
+			wpn_fps_upg_o_specter = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_aimpoint = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_docter = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_eotech = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_t1micro = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_cmore = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_acog = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_cs = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_eotech_xps = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_reflex = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_rx01 = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_rx30 = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_spot = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_bmg = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_uh = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_fc1 = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_tf90 = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_upg_o_poe = { "wpn_fps_snp_model70_o_rail" },
+			wpn_fps_snp_model70_iron_sight = { "wpn_fps_snp_model70_o_rail", "wpn_fps_gre_arbiter_o_standard" }
+		}
+		self.wpn_fps_snp_musket_npc.adds = deep_clone(self.wpn_fps_snp_musket.adds)
+
+		if not self.wpn_fps_snp_musket.override then
+			self.wpn_fps_snp_musket.override = {}
+		end
+		self.wpn_fps_snp_musket.override.wpn_fps_snp_model70_iron_sight = {
+			forbids = {}
+		}
+
+
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_snp_model70_iron_sight")	
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_specter")	
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_aimpoint")	
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_docter")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_eotech")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_t1micro")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_rx30")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_rx01")	
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_reflex")	
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_eotech_xps")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_cmore")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_acog")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_cs")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_spot")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_bmg")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_uh")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_fc1")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_tf90")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_o_poe")
+
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_peqbox")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_surefire")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_fl_ass_utg")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_fl_ass_peq15")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_fl_ass_laser")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_fl_ass_laser")
+
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ass_ns_battle")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ass_ns_jprifles")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ass_ns_linear")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ass_ns_surefire")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_firepig")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_stubby")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_tank")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_v6")
+		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_lmg_hk51b_ns_jcomp")
+
+		self.wpn_fps_snp_musket_npc.uses_parts = deep_clone(self.wpn_fps_snp_musket.uses_parts)
 	end
 
 

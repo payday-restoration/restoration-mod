@@ -456,7 +456,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 								if att_base.has_tag then
 									if att_base:has_tag("spooc") then
 										if att_base._tweak_table == "spooc_titan" then
-											if att_unit:movement():is_uncloaked() then
+											if not att_unit:movement():cloaked() then
 												local trying_to_kick_criminal = att_unit:brain()._logic_data and att_unit:brain()._logic_data.internal_data and att_unit:brain()._logic_data.internal_data.spooc_attack
 
 												if trying_to_kick_criminal then
@@ -555,7 +555,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 										target_priority_slot = too_close and 4 or near and 6 or is_marked and 7 or has_damaged and has_alerted and 9 or has_alerted and 10 or 11
 										keep_checking = nil
 									elseif att_tweak_table == "autumn" then
-										if att_unit:movement():is_uncloaked() then
+										if not att_unit:movement():cloaked() then
 											local trying_to_kick_criminal = att_unit:brain()._logic_data and att_unit:brain()._logic_data.internal_data and att_unit:brain()._logic_data.internal_data.spooc_attack
 
 											if trying_to_kick_criminal then

@@ -9,10 +9,8 @@ local REACT_SCARED = AIAttentionObject.REACT_SCARED
 local REACT_SUSPICIOUS = AIAttentionObject.REACT_SUSPICIOUS
 
 HuskCopBrain._NET_EVENTS = {
-	cloak = 4,
-	uncloak = 3,
-	weapon_laser_off = 2,
-	weapon_laser_on = 1
+	weapon_laser_on = 1,
+	weapon_laser_off = 2
 }
 
 function HuskCopBrain:post_init()
@@ -121,42 +119,6 @@ function HuskCopBrain:sync_converted()
 	self._SO_access_str = SO_access_str
 	self._SO_access = managers.navigation:convert_access_flag(SO_access_str)
 	self._enemy_slotmask = managers.slot:get_mask("enemies")
-end
-
-function HuskCopBrain:sync_net_event(event_id)
-	if event_id == self._NET_EVENTS.cloak then
-		if self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-			self._unit:damage():run_sequence_simple("cloak_engaged")
-
-			local weapon_unit = self._unit:inventory():equipped_unit()
-
-			if weapon_unit then 
-				weapon_unit:base():set_flashlight_enabled(false)
-
-				if weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-					weapon_unit:damage():run_sequence_simple("cloak_engaged")
-				end
-			end
-		end
-	elseif event_id == self._NET_EVENTS.uncloak then
-		if self._unit:damage() and self._unit:damage():has_sequence("decloak") then
-			self._unit:damage():run_sequence_simple("decloak")
-
-			local weapon_unit = self._unit:inventory():equipped_unit()
-
-			if weapon_unit then 
-				weapon_unit:base():set_flashlight_enabled(true)
-
-				if weapon_unit:damage() and weapon_unit:damage():has_sequence("decloak") then
-					weapon_unit:damage():run_sequence_simple("decloak")
-				end
-			end
-		end
-	elseif event_id == self._NET_EVENTS.weapon_laser_on then
-		self._add_laser_t = HuskCopBrain._ENABLE_LASER_TIME
-	elseif event_id == self._NET_EVENTS.weapon_laser_off then
-		self:disable_weapon_laser()
-	end
 end
 
 function HuskCopBrain:update(unit, t, dt)

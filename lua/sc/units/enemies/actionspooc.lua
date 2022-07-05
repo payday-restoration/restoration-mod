@@ -333,16 +333,8 @@ function ActionSpooc:on_exit()
 		self._unit:sound():say(self._taunt_after_assault, true, true)
 	end
 
-	if self._is_server and self._ext_movement.is_uncloaked and self._ext_movement:is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
-		self._unit:damage():run_sequence_simple("cloak_engaged")
-
-		local weapon_unit = self._common_data.ext_inventory:equipped_unit()
-
-		if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-			weapon_unit:damage():run_sequence_simple("cloak_engaged")
-		end
-
-		self._ext_movement:set_uncloaked(false)
+	if self._is_server or self._expired then
+		self._ext_movement:set_cloaked(true)
 	end
 
 	if self._root_blend_disabled then
@@ -469,17 +461,7 @@ function ActionSpooc:_start_sprint()
 			end
 		end
 
-		if self._is_server and self._ext_movement.is_uncloaked and not self._ext_movement:is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
-			self._unit:damage():run_sequence_simple("decloak")
-
-			local weapon_unit = self._common_data.ext_inventory:equipped_unit()
-
-			if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("decloak") then
-				weapon_unit:damage():run_sequence_simple("decloak")
-			end
-
-			self._ext_movement:set_uncloaked(true)
-		end
+		self._ext_movement:set_cloaked(false)
 	end
 
 	CopActionWalk._chk_start_anim(self, self._nav_path[self._nav_index + 1])
@@ -1726,17 +1708,7 @@ function ActionSpooc:_upd_flying_strike_first_frame(t)
 			self._unit:sound():play(detect_sound)
 		end
 
-		if self._is_server and self._ext_movement.is_uncloaked and not self._ext_movement:is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
-			self._unit:damage():run_sequence_simple("decloak")
-
-			local weapon_unit = self._common_data.ext_inventory:equipped_unit()
-
-			if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("decloak") then
-				weapon_unit:damage():run_sequence_simple("decloak")
-			end
-
-			self._ext_movement:set_uncloaked(true)
-		end
+		self._ext_movement:set_cloaked(false)
 	end
 
 	self._ext_movement:spawn_wanted_items()

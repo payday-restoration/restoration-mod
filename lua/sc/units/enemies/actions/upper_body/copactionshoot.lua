@@ -717,20 +717,8 @@ function CopActionShoot:update(t)
 					self._ext_brain._uncloak_t = t + 10
 
 					local is_autumn = self._ext_base._tweak_table == "autumn"
-
-					if not self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
-						local roll_chance = is_autumn and 0.2 or 0.4
-						local uncloak_roll = math_random() <= roll_chance
-
-						if uncloak_roll then
-							self._unit:damage():run_sequence_simple("decloak")
-
-							if self._weapon_unit:damage() and self._weapon_unit:damage():has_sequence("decloak") then
-								self._weapon_unit:damage():run_sequence_simple("decloak")
-							end
-
-							self._unit:movement():set_uncloaked(true)
-						end
+					if math_random() < (is_autumn and 0.2 or 0.4) then
+						self._unit:movement():set_cloaked(false)
 					end
 
 					if is_autumn then

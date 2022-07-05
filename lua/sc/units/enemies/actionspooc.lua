@@ -1389,7 +1389,7 @@ function ActionSpooc:anim_act_clbk(anim_act)
 				attacker_unit = self._unit,
 				push_vel = push_vec:with_z(0.1) * 600,
 				col_ray = {
-					position = mvec_copy(player_head_pos),
+					position = mvec3_copy(player_head_pos),
 					unit = self._strike_unit,
 					ray = mvec3_copy(attack_dir)
 				}

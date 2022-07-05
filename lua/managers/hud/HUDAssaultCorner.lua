@@ -342,36 +342,21 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	buffs_panel:set_top(0)
 	buffs_panel:set_right(self._hud_panel:w())
-	self.buff_icon = "guis/textures/pd2/hud_buff_shield"
-	local job = Global.level_data and Global.level_data.level_id        
-	for _,j in ipairs(restoration.captain_teamwork) do
-		if job == j then
-			self.buff_icon = "guis/textures/pd2/hud_buff_fire"
-			break
-		end
-	end
-	for _,j2 in ipairs(restoration.captain_murderdozer) do
-		if job == j2 then
-			self.buff_icon = "guis/textures/pd2/hud_buff_skull"
-			break
-		end
-	end
-	for _,j3 in ipairs(restoration.captain_stelf) do
-		if job == j3 then
-			self.buff_icon = "guis/textures/pd2/hud_buff_spooc"
-			break
-		end
-	end
-	for _,j4 in ipairs(restoration.what_a_horrible_heist_to_have_a_curse) do
-		if job == j4 then
-			self.buff_icon = "guis/textures/pd2/hud_buff_halloween"
-			break
-		end
-	end	
+	
+	local buff_icon = "guis/textures/pd2/hud_buff_generic"
+	local job = Global.level_data and Global.level_data.level_id
 
-	--Skirmish exclusive stuff
-	if managers.skirmish:is_skirmish() then
-		self.buff_icon = "guis/textures/pd2/hud_buff_generic"
+	self._captain = restoration.captain_spawns[job]
+	if self._captain and self._captain.icon then
+		buff_icon = self._captain.icon
+	end
+
+	if managers.skirmish:is_skirmish() then		
+		buff_icon = "guis/textures/pd2/hud_buff_generic"
+	end
+
+	if alive(self._vip_bg_box) and alive(self._vip_bg_box:child("vip_icon")) then
+		self._vip_bg_box:child("vip_icon"):set_image(buff_icon)
 	end
 	
 	local buffs_pad_panel = self._hud_panel:panel({

@@ -131,12 +131,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModADSTransitionStyleDescID"] = "Change the \"animation\" style of aiming down your sights.",
 		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Mode",
 		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
+		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
+		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires reload.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 
 		["vanilla_on_rails"] = "Default/On-Rails",
 		["kf_mw_style"] = "KF1/CoD Style",
 		["tilt_in"] = "Tilted In",
+
+		["base_wpn_cat"] = "Divide by base categories",
+		["sub_wpn_cat"] = "Divide by sub-categories",
 
 		["default"] = "Default",
 		["random"] = "Random",

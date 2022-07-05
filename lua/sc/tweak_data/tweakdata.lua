@@ -761,9 +761,41 @@ if Global.game_settings and Global.game_settings.one_down then
 	tweak_data.experience_manager.pro_job_new = 1.2
 end
 
-	tweak_data.gui.buy_weapon_categories = {
+local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
+	[1] = {
 		primaries = {
-		
+			{ "pistol" },
+
+			{ "shotgun" },
+
+			{ "smg" },
+
+			{ "assault_rifle" },
+
+			{ "lmg" },
+
+			{ "snp" },
+
+			{ "wpn_special" }
+		},
+		secondaries = {
+			{ "pistol" },
+
+			{ "shotgun" },
+
+			{ "smg" },
+
+			{ "assault_rifle" },
+
+			{ "lmg" },
+
+			{ "snp" },
+
+			{ "wpn_special" }
+		}
+	},
+	[2] = {
+		primaries = {
 			{ "light_pis" },
 			{ "heavy_pis" },
 			
@@ -787,10 +819,8 @@ end
 			{ "antim_snp" },
 		
 			{ "wpn_special" }
-			
 		},
 		secondaries = {
-		
 			{ "light_pis" },
 			{ "heavy_pis" },
 			
@@ -811,6 +841,11 @@ end
 			{ "wpn_special" }
 		}
 	}
+}
+
+if restoration.Options:GetValue("OTHER/WpnCat") then
+	tweak_data.gui.buy_weapon_categories = dyslexia[restoration.Options:GetValue("OTHER/WpnCat")]
+end
 
 --[[
 	if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") or SystemFS:exists("assets/mod_overrides/Mosin Nagant M9130 Obrez/main.xml") then

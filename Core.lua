@@ -520,6 +520,11 @@ restoration.ads_transition_style = {
 	"tilt_in"
 }
 
+restoration.weapon_categories = {
+	"base_wpn_cat",
+	"sub_wpn_cat"
+}
+
 -- restoration.environments_choice_shadow_raid = {
 -- 	"default",
 -- 	"random",

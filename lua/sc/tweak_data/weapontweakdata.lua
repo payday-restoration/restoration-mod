@@ -13048,6 +13048,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			-- roughly normalizes swap speeds before additional modifiers are in play
 			weap.desired_swap_time = 1.75
+
+			if restoration.Options:GetValue("OTHER/WpnCat") and restoration.Options:GetValue("OTHER/WpnCat") ~= 2 then
+				weap.recategorize = nil
+				if weap.categories[1] == "akimbo" then
+					weap.recategorize = { weap.categories[2] }
+				end
+			end
 			--[[
 			if weap.ads_speed then
 				weap.ads_speed = weap.ads_speed + 0.150

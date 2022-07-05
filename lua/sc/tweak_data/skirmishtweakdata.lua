@@ -1,16 +1,16 @@
 
 Month = os.date("%m")
 Day = os.date("%d")	
---This is probs unused, but setting to scaled DS values to be on the safe side.
+--This is probs unused, but setting to scaled (for the average skirmish map size) DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 	self.special_unit_spawn_limits = {
 		{
-			tank = 4,
-			taser = 5,
-			boom = 3,
+			tank = 3,
+			taser = 4,
+			boom = 2,
 			spooc = 4,
-			shield = 5,
-			medic = 4,
+			shield = 4,
+			medic = 3,
 			spring = 1,
 			autumn = 1,
 			summers = 1,
@@ -229,7 +229,6 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 	}
 end
 
-
 function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	local assault_groups = {
 		SKM_Light_Swat = {
@@ -344,20 +343,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
-		SKM_single_spooc = {
-			0, --Unused
-			0, --Wave 1
-			0, --Wave 2
-			0, --...
-			0,
-			0.05,
-			0.05,
-			0.05,
-			0.05,
-			0.05,
-			0, --"Wave 10" (Inactive, needs map edits)
-			0  --Scales ever closer to over time post wave 10.
-		},
+		--Since the Cloaker spawn task doesn't even seem to work correctly in Skirmish, just gonna repurpose this to instead be the FBI Spoocs group for the same effect.
 		SKM_FBI_spoocs = {
 			0, --Unused
 			0, --Wave 1
@@ -435,7 +421,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
-		assault_groups.SKM_single_spooc[10] = 0.05
 		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	elseif wave_9_captain < 0.24 then --autumn
 		self.captain = "SKM_Cap_Autumn_W9"
@@ -450,7 +435,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.015
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
-		assault_groups.SKM_single_spooc[10] = 0.0
 		assault_groups.SKM_FBI_spoocs[10] = 0.0
 	elseif wave_9_captain < 0.48 then --summers
 		self.captain = "SKM_Cap_Summers_W9"
@@ -465,7 +449,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0075
 		assault_groups.SKM_SKULL_Tank[10] = 0.0075
 		assault_groups.SKM_TIT_Tank[10] = 0.0025
-		assault_groups.SKM_single_spooc[10] = 0.025
 		assault_groups.SKM_FBI_spoocs[10] = 0.025
 	elseif wave_9_captain < 0.72 then --winters
 		self.captain = "SKM_Cap_Winters_W9"
@@ -480,7 +463,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.015
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
-		assault_groups.SKM_single_spooc[10] = 0.05
 		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	else --spring
 		self.captain = "SKM_Cap_Spring_W9"
@@ -495,7 +477,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
-		assault_groups.SKM_single_spooc[10] = 0.05
 		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	end
    else	
@@ -512,7 +493,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.015
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
-		assault_groups.SKM_single_spooc[10] = 0.0
 		assault_groups.SKM_FBI_spoocs[10] = 0.0
 	elseif wave_9_captain < 0.48 then --summers
 		self.captain = "SKM_Cap_Summers_W9"
@@ -527,7 +507,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0075
 		assault_groups.SKM_SKULL_Tank[10] = 0.0075
 		assault_groups.SKM_TIT_Tank[10] = 0.0025
-		assault_groups.SKM_single_spooc[10] = 0.025
 		assault_groups.SKM_FBI_spoocs[10] = 0.025
 	elseif wave_9_captain < 0.72 then --winters
 		self.captain = "SKM_Cap_Winters_W9"
@@ -542,7 +521,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.015
 		assault_groups.SKM_SKULL_Tank[10] = 0.015
 		assault_groups.SKM_TIT_Tank[10] = 0.005
-		assault_groups.SKM_single_spooc[10] = 0.05
 		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	elseif wave_9_captain < 0.96 then --spring
 		self.captain = "SKM_Cap_Spring_W9"
@@ -557,7 +535,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
-		assault_groups.SKM_single_spooc[10] = 0.05
+		assault_groups.SKM_FBI_spoocs[10] = 0.05
 	else --Spooky halloween boss.
 		self.captain = "SKM_HVH_Boss_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.325
@@ -571,7 +549,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
-		assault_groups.SKM_single_spooc[10] = 0.025
 		assault_groups.SKM_FBI_spoocs[10] = 0.025
 	end
   end	

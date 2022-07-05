@@ -3398,8 +3398,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"copr_ability",
 					"player_copr_static_damage_ratio_1",
 					"player_copr_kill_life_leech_1",
-					"player_copr_activate_bonus_health_ratio_1",
-					"player_copr_teammate_heal_1"
+					"player_copr_activate_bonus_health_ratio_1"
 				},
 				icon_xy = {
 					0,
@@ -3413,12 +3412,11 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck22_3_desc_sc",
 				name_id = "menu_deck22_3",
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_copr_out_of_health_move_slow_1"
+					"player_copr_teammate_heal_1"		
 				},
 				icon_xy = {
 					1,
-					0
+					1
 				}
 			},
 			deck4,
@@ -3429,7 +3427,6 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck22_5",
 				upgrades = {
 					"temporary_copr_ability_2",
-					"player_copr_teammate_heal_2",
 					"player_copr_speed_up_on_kill_1",
 					"player_corpse_dispose_speed_multiplier",
 					"player_civ_move_multiplier"	
@@ -3446,8 +3443,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck22_7_desc_sc",
 				name_id = "menu_deck22_7",
 				upgrades = {
-					"player_passive_health_multiplier_2",
-					"player_passive_health_multiplier_3"
+					"player_copr_static_damage_ratio_2",
+					"player_copr_kill_life_leech_2"
 				},
 				icon_xy = {
 					3,
@@ -3462,9 +3459,8 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck22_9",
 				upgrades = {
 					"player_activate_ability_downed",
-					"player_copr_static_damage_ratio_2",
 					"player_passive_loot_drop_multiplier_1",
-					"player_copr_kill_life_leech_2"
+					"player_copr_teammate_heal_2"
 				},
 				icon_xy = {
 					1,

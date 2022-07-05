@@ -1810,10 +1810,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}	
 	
 	--Leech
+	self.values.player.copr_activate_bonus_health_ratio = {
+		0.1
+	}	
 	self.values.player.copr_teammate_heal = {
-		0.02,
-		0.04
+		0.01,
+		0.02
 	}
+	self.values.player.copr_kill_life_leech = {
+		4,
+		4
+	}	
+	self.values.player.copr_speed_up_on_kill = {
+		1
+	}	
+	self.copr_ability_cooldown = 40
+	self.copr_risen_cooldown_add = 30
 
 	--Tabula Rasa/Innatae
 	self.values.player.small_loot_multiplier = {1.15, 1.3}	

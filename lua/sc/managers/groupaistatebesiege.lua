@@ -597,6 +597,10 @@ function GroupAIStateBesiege:_upd_assault_task()
 			if next(self._spawning_groups) then
 				-- Nothing
 			else
+				if not managers.skirmish:is_skirmish() then
+					self:_check_spawn_timed_groups(primary_target_area, task_data)
+				end			
+			
 				local spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
 
 				if spawn_group then
@@ -663,7 +667,6 @@ function GroupAIStateBesiege:_assign_enemy_groups_to_assault(phase)
 		end
 	end
 end
-
 
 -- Improve and heavily simplify objective assignment code, fix pull back and open fire objectives
 -- Basically, a lot of this function was needlessly complex and had oversights or incorrect conditions
@@ -745,7 +748,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 		if phase_is_anticipation then
 			-- If we run into enemies during anticipation, pull back
 			pull_back = true
-		elseif current_objective.moving_out and (tactics_map.ranged_fire or tactics_map.elite_ranged_fire) then
+		elseif current_objective.moving_out and tactics_map.ranged_fire then
 			-- If we run into enemies while moving out, open fire (if we aren't already doing that)
 			open_fire = not current_objective.open_fire
 		elseif not current_objective.pushed or charge and not current_objective.charge then
@@ -754,9 +757,9 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 		end
 	elseif not current_objective.moving_out then
 		-- If we aren't moving out to an objective, approach or open fire if we have ranged_fire tactics and see an enemy
-		approach = charge or not tactics_map.ranged_fire or not tactics_map.elite_ranged_fire or in_place_duration > 10 or group.is_chasing or not self:_can_group_see_target(group)
+		approach = charge or not tactics_map.ranged_fire or in_place_duration > 10 or group.is_chasing or not self:_can_group_see_target(group)
 		open_fire = not approach and not current_objective.open_fire
-	elseif (tactics_map.ranged_fire or tactics_map.elite_ranged_fire) and not current_objective.open_fire and current_objective.coarse_path and self:_can_group_see_target(group, true) then
+	elseif tactics_map.ranged_fire and not current_objective.open_fire and self:_can_group_see_target(group, true) then
 		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire and stay in position for a bit
 		local forwardmost_i_nav_point = self:_get_group_forwardmost_coarse_path_index(group)
 		if forwardmost_i_nav_point then
@@ -1265,7 +1268,6 @@ function GroupAIStateBesiege:_find_spawn_group_near_area(target_area, allowed_gr
 
 	return self:_choose_best_group(candidate_groups, total_weight)
 end
-
 
 -- Reorder task updates so groups that have finished spawning immediately get their objectives instead of waiting for the next update
 function GroupAIStateBesiege:_upd_police_activity()

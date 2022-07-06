@@ -243,6 +243,8 @@
 	<!--reaper city shield-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield_husk" load="true"/>	
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield" load="true"/>	
+	<object				path="units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield" />
+	<model				path="units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield" />
 	
 	<!--big shield acc-->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />

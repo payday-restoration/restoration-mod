@@ -4354,7 +4354,8 @@ function BlackMarketGui:update_info_text()
 
 		updated_texts[4].below_stats = true
 	elseif identifier == self.identifiers.grenade then
-		updated_texts[1].text = self._slot_data.name_localized
+		local amount = Global.blackmarket_manager.grenades[slot_data.name].amount
+		updated_texts[1].text = self._slot_data.name_localized .. " (x" .. tostring(amount) .. ")"
 
 		if not slot_data.unlocked then
 			local grenade_tweak = tweak_data.blackmarket.projectiles[slot_data.name]

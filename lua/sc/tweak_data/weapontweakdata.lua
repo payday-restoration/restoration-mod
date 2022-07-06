@@ -8845,7 +8845,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.ads_speed = 0.600
 				self.hk21.damage_falloff = {
 					start_dist = 2300,
-					end_dist = 5000,
+					end_dist = 7100,
 					min_mult = 0.6666
 				}
 				self.hk21.stats = {
@@ -8899,7 +8899,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 65,
 				spread_moving = 7,
 				zoom = 1,
-				concealment = 18,
+				concealment = 20,
 				suppression = 9,
 				alert_size = 2,
 				extra_ammo = 101,

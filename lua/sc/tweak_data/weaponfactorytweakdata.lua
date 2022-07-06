@@ -5585,9 +5585,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	}
 	self.parts.wpn_fps_lmg_hk21_fg_short.supported = true
 	self.parts.wpn_fps_lmg_hk21_fg_short.stats = deep_clone(barrels.short_b3_stats)
-	self.parts.wpn_fps_lmg_hk21_fg_short.stats.recoil = -6
-	self.parts.wpn_fps_lmg_hk21_fg_short.stats.concealment = 6
+	self.parts.wpn_fps_lmg_hk21_fg_short.stats.spread = -1
 	self.parts.wpn_fps_lmg_hk21_fg_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+	self.parts.wpn_fps_lmg_hk21_fg_short.custom_stats.falloff_start_mult = 0.5
 	self.parts.wpn_fps_lmg_hk21_fg_short.custom_stats.rof_mult = 1.1875
 	
 	--Ergo Grip
@@ -11197,7 +11197,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 		wpn_fps_ass_famas = {
 			translation = Vector3(0, -6, -5.8)
 		},
-		
+
 		wpn_fps_snp_musket = {
 			translation = Vector3(0, -6, -3.9)
 		}

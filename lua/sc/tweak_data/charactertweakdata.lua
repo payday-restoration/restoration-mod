@@ -2354,7 +2354,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.experience = {}
 	self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 	self.phalanx_minion.detection = presets.detection.normal
-	self.phalanx_minion.headshot_dmg_mul = 2.2
+	self.phalanx_minion.headshot_dmg_mul = 2.0
 	self.phalanx_minion.HEALTH_INIT = 19.5
 	self.phalanx_minion.damage_resistance = presets.damage_resistance.shield
 	self.phalanx_minion.damage.explosion_damage_mul = 0.25
@@ -2409,8 +2409,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.damage.immune_to_knockback = true
 	self.phalanx_vip.immune_to_knock_down = true
-	self.phalanx_vip.HEALTH_INIT = 80
-	self.phalanx_vip.headshot_dmg_mul = 2.5
+	self.phalanx_vip.HEALTH_INIT = 130
+	self.phalanx_vip.headshot_dmg_mul = 1.5
 	self.phalanx_vip.damage_resistance = presets.damage_resistance.boss
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.damage.rocket_damage_mul = 0.1
@@ -16435,6 +16435,10 @@ function CharacterTweakData:_set_sm_wish()
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0
 	self.taser.shock_damage = 8.0
+	
+	
+	--Titan Shields gets overhealed
+	self.phalanx_minion.overheal_mult = 3.0
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil

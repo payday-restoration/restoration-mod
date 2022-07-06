@@ -14098,7 +14098,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		amount = {3, 4},
 		spawn = {
 			{
-				unit = "BLACK_tank",
+				unit = "SKM_BLACK_tank_W4",
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,

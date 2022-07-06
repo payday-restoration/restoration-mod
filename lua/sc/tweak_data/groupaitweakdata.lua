@@ -13429,18 +13429,18 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	
 	--Titan Snipers/US Marshal squads
 	--These guys shouldn't exist on lower difficulties
-	if difficulty_index == 5 or difficulty_index == 6 then
+	if difficulty_index == 5 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 75,
-			max_nr_simultaneous_groups = 2,
-			initial_spawn_delay = 90,
+			max_nr_simultaneous_groups = 1,
+			initial_spawn_delay = 0,
 			amount = {
 				1,
 				1
 			},
 			spawn = {
 				{
-					respawn_cooldown = 45,
+					respawn_cooldown = 30,
 					amount_min = 1,
 					amount_max = 1,
 					rank = 1,
@@ -13450,18 +13450,85 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			},
 			spawn_point_chk_ref = table.list_to_set({
+				"FBI_Booms",
+				"FBI_defend_a",
+				"FBI_defend_b",
+				"FBI_defend_c",
+				"FBI_defend_d",
+				"FBI_stealth_a",
+				"FBI_stealth_a_boom",
+				"FBI_stealth_b",
+				"FBI_stealth_c",
+				"FBI_swats",
 				"FBI_heavys",
-				"GS_Heavys"
+				"FBI_heavys_boom",
+				"FBI_shields",
+				"FBI_shields_boom",
+				"GS_defend_b",
+				"GS_defend_c",
+				"GS_defend_d",
+				"GS_swats",
+				"GS_Heavys",
+				"GS_heavys_boom",
+				"GS_shields",
+				"GS_shields_boom",
+				"GS_Booms"
 			})
 		}
-	elseif difficulty_index == 7 or difficulty_index == 8 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 60,
-			max_nr_simultaneous_groups = 3,
-			initial_spawn_delay = 45,
+			max_nr_simultaneous_groups = 2,
+			initial_spawn_delay = 0,
 			amount = {
 				1,
 				1
+			},
+			spawn = {
+				{
+					respawn_cooldown = 30,
+					amount_min = 1,
+					amount_max = 1,
+					rank = 1,
+					freq = 1,
+					unit = "titan_sniper",
+					tactics = self._tactics.marshal_marksman
+				}
+			},
+			spawn_point_chk_ref = table.list_to_set({
+				"FBI_Booms",
+				"FBI_defend_a",
+				"FBI_defend_b",
+				"FBI_defend_c",
+				"FBI_defend_d",
+				"FBI_stealth_a",
+				"FBI_stealth_a_boom",
+				"FBI_stealth_b",
+				"FBI_stealth_c",
+				"FBI_swats",
+				"FBI_heavys",
+				"FBI_heavys_boom",
+				"FBI_shields",
+				"FBI_shields_boom",
+				"GS_defend_b",
+				"GS_defend_c",
+				"GS_defend_d",
+				"GS_swats",
+				"GS_Heavys",
+				"GS_heavys_boom",
+				"GS_shields",
+				"GS_shields_boom",
+				"GS_Booms"
+			})
+		}	
+	elseif difficulty_index == 8 then
+		self.enemy_spawn_groups.titan_snipers = {
+			spawn_cooldown = 45,
+			max_nr_simultaneous_groups = 3,
+			initial_spawn_delay = 0,
+			amount = {
+				1,
+				2
 			},
 			spawn = {
 				{
@@ -13475,8 +13542,29 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			},
 			spawn_point_chk_ref = table.list_to_set({
+				"FBI_Booms",
+				"FBI_defend_a",
+				"FBI_defend_b",
+				"FBI_defend_c",
+				"FBI_defend_d",
+				"FBI_stealth_a",
+				"FBI_stealth_a_boom",
+				"FBI_stealth_b",
+				"FBI_stealth_c",
+				"FBI_swats",
 				"FBI_heavys",
-				"GS_Heavys"
+				"FBI_heavys_boom",
+				"FBI_shields",
+				"FBI_shields_boom",
+				"GS_defend_b",
+				"GS_defend_c",
+				"GS_defend_d",
+				"GS_swats",
+				"GS_Heavys",
+				"GS_heavys_boom",
+				"GS_shields",
+				"GS_shields_boom",
+				"GS_Booms"
 			})
 		}
 	end	
@@ -15874,7 +15962,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		--1 eventually
 	}
 	
-	self.spawn_cooldown_mul = math.lerp(3, 2, f)
+	self.spawn_cooldown_mul = math.lerp(2, 1, f)
 
 	if difficulty_index <= 2 then
 		self.smoke_grenade_timeout = {20, 20}

@@ -14106,7 +14106,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 3
 			},
 			{
-				unit = "CS_tazer",
+				unit = "SKM_Tazer_W2",
 				freq = 0.5,
 				amount_max = 1,
 				tactics = self._tactics.DW_tazer,
@@ -14119,7 +14119,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			},
 			{
-				unit = "medic_M4",
+				unit = "SKM_medic_W3",
 				freq = 0.25,
 				amount_max = 1,
 				tactics = self._tactics.FBI_medic_flank,

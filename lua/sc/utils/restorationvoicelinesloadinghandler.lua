@@ -23,7 +23,7 @@ Hooks:PostHook(Setup, "load_packages", "restorationVoicelineLoad", function (sel
 					end
 				elseif not projob_only_voicelines[data.custom_voicework] then
 					load_list[#load_list + 1] = data.custom_voicework
-				elseif Global.game_settings and Global.game_settings.one_down then
+				 elseif Global.game_settings and Global.game_settings.one_down or managers.skirmish and managers.skirmish:is_skirmish() then 
 					load_list[#load_list + 1] = data.custom_voicework
 				end
 			end

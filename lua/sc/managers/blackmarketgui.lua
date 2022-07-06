@@ -4354,7 +4354,8 @@ function BlackMarketGui:update_info_text()
 
 		updated_texts[4].below_stats = true
 	elseif identifier == self.identifiers.grenade then
-		local amount = Global.blackmarket_manager.grenades[slot_data.name].amount
+		local is_perk_throwable = tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown
+		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[slot_data.name].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))
 		updated_texts[1].text = self._slot_data.name_localized .. " (x" .. tostring(amount) .. ")"
 
 		if not slot_data.unlocked then

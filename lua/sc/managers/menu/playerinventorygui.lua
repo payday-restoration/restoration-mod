@@ -554,6 +554,9 @@ function PlayerInventoryGui:_update_info_throwable(name)
 	local text_string = ""
 
 	if projectile_data then
+		local is_perk_throwable = tweak_data.blackmarket.projectiles[throwable_id].base_cooldown
+		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[throwable_id].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))
+
 		text_string = text_string .. managers.localization:text(projectile_data.name_id) .. " (x" .. tostring(amount) .. ")" .. "\n\n"
 
 		if self:_should_show_description() then

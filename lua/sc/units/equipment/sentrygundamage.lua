@@ -566,7 +566,7 @@ function SentryGunDamage:damage_explosion(attack_data)
 	end
 	
 	--Hack to let rocket launchers instagib turrets.
-	if damage > 100 then
+	if managers.player:get_current_state()._equipped_unit:base():weapon_tweak_data().turret_instakill then
 		self._shield_health = 0
 		damage = math.huge
 	elseif self._char_tweak.EXPLOSION_DMG_MUL then

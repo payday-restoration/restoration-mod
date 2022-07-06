@@ -751,7 +751,7 @@
 	<model				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<object				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
-	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_autumn_cloaked"/>	
+	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_cloaked"/>	
 	<sequence_manager	path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<unit				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
 

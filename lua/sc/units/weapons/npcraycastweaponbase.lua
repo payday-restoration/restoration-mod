@@ -184,6 +184,33 @@ function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
 	end
 end
 
+function NPCRaycastWeaponBase:set_laser_enabled(state)
+	if state then
+		if alive(self._laser_unit) then
+			return
+		end
+
+		local attachment_point = self._unit:get_object(Idstring("a_laser")) or self._obj_fire
+		local spawn_rot = attachment_point:rotation()
+		local spawn_pos = attachment_point:position()
+		if attachment_point == self._obj_fire then
+			spawn_pos = spawn_pos - spawn_rot:y() * 8 + spawn_rot:z() * 2 - spawn_rot:x() * 1.5
+		end
+
+		self._laser_unit = World:spawn_unit(Idstring("units/payday2/weapons/wpn_npc_upg_fl_ass_smg_sho_peqbox/wpn_npc_upg_fl_ass_smg_sho_peqbox"), spawn_pos, spawn_rot)
+		
+		self._unit:link(attachment_point:name(), self._laser_unit)
+		self._laser_unit:base():set_npc()
+		self._laser_unit:base():set_on()
+		self._laser_unit:base():set_color_by_theme("cop_sniper")
+		self._laser_unit:base():set_max_distace(_asu_laser_unit)
+	elseif alive(self._laser_unit) then
+		self._laser_unit:set_slot(0)
+
+		self._laser_unit = nil
+	end
+end
+
 --Original weapon base made by Crackdown and all who contributed, updated/changed as necessary.
 NPCGrenadeLauncherBaseBoss = NPCGrenadeLauncherBaseBoss or class(NPCRaycastWeaponBase)
 

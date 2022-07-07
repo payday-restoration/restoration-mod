@@ -1223,10 +1223,7 @@
 	<unit				path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" force="true"/>
 	
 	<!--russian-->
-	<!--material_config	path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd_contour" force="true"-->
-	<material_config	path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>
-	<model				path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>
-	<object				path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>		
+	<unit_mat			path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>
 	<!--glint texture-->
 	<texture			path="units/payday2/weapons/wpn_npc_sniper/material_flare_il"/>
 	

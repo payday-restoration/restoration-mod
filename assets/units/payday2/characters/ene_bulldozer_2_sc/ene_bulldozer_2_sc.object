@@ -235,7 +235,7 @@
 	<decal_surfaces default_material="cloth_no_decal" >
 		<decal_mesh name="dm_helmet_plate" 		enabled="true" material="steel_no_decal" />
 		<decal_mesh name="dm_helmet_glass" 		enabled="false" material="glass_no_decal" />
-		<decal_mesh name="g_head" 				enabled="true" 	material="flesh" />
+		<decal_mesh name="dm_head" 				enabled="true" 	material="flesh" />
 		<decal_mesh name="dm_armor_chest" 		enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_stomache" 	enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_back" 		enabled="true" 	material="steel_no_decal" />
@@ -380,6 +380,7 @@
 			</lod_object>
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_helmet_glass_contour" enabled="true" />
 
 		</graphic_group>
 	</graphics>

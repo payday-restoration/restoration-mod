@@ -811,6 +811,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.svdsil_snp_npc = deep_clone(self.m14_sniper_npc)
 		self.svdsil_snp_npc.has_suppressor = "suppressed_a"
 		
+		self.asval_snp_npc = deep_clone(self.m14_sniper_npc)
+		self.asval_snp_npc.has_suppressor = "suppressed_a"
+		
 		--Zeal Sniper variant (unused)
 		self.heavy_snp_npc = deep_clone(self.m14_sniper_npc)
 		
@@ -906,7 +909,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.uzi_npc.has_suppressor = "suppressed_c"
 		self.uzi_npc.alert_size = 0
 		self.uzi_npc.suppression = 0.1
-		
+	
 		--ASVAL
 		self.asval_smg_npc = deep_clone(self.mp5_npc)		
 		self.asval_smg_npc.DAMAGE = 3
@@ -914,7 +917,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_smg_npc.CLIP_AMMO_MAX = 25
 		self.asval_smg_npc.suppression = 2.8		
 		self.asval_smg_npc.alert_size = 2500
-		self.asval_smg_npc.sounds.prefix = "akmsu_npc"
+		self.asval_smg_npc.sounds.prefix = "akmsu_npc"		
 		
 		--vityaz
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)

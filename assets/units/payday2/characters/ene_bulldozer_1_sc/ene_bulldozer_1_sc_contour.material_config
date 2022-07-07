@@ -33,6 +33,12 @@
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df" mip="4"/>
     </material>
+    <material name="mtr_glass_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

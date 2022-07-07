@@ -321,8 +321,6 @@
 	<!--Corrected NPC Weapon Sounds-->	
 	<unit				path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" load="true" />		
 	<unit				path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true" load="true"/>	
-	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" load="true"/>			
-	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" load="true"/>	
 	<unit				path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>		
 
 	<!--Cops for the Bomb: Forest heist-->
@@ -540,12 +538,17 @@
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/akmsu_df" force="true"/>
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/akmsu_nm" force="true"/>	
 	
-	<model				path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" force="true"/>		
-	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" force="true"/>		
+	<!--SR2-->	
+	<unit_mat			path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" load="true" force="true"/>
+	<material_config	path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true"/>
+	
+	<!--ASVAL DMR-->	
+	<unit_mat			path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" load="true" force="true"/>
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_asval/asval_df" force="true"/>
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_asval/asval_nm" force="true"/>	
 	
-	<model				path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true"/>		
+	<!--RPK-->	
+	<unit_mat			path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" load="true" force="true"/>
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk_df" force="true"/>
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk_nm" force="true"/>
 	

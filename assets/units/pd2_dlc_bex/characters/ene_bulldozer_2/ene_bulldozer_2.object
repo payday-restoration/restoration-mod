@@ -235,7 +235,7 @@
 	<decal_surfaces default_material="cloth_no_decal" >
 		<decal_mesh name="dm_helmet_plate" 		enabled="true" material="steel_no_decal" />
 		<decal_mesh name="dm_helmet_glass" 		enabled="false" material="glass_no_decal" />
-		<decal_mesh name="g_head" 				enabled="true" 	material="flesh" />
+		<decal_mesh name="dm_head" 				enabled="true" 	material="flesh" />
 		<decal_mesh name="dm_armor_chest" 		enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_stomache" 	enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_back" 		enabled="true" 	material="steel_no_decal" />
@@ -356,30 +356,29 @@
 			<lod_object name="lod_helmet_glass">
 				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_bulldozer" max_distance="0" />
-					<material materials="mtr_glass" max_distance="1000" />
-					<material materials="mtr_glass_lod1" max_distance="1500" />
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_glass_lod1" 		enabled="true" lod="1" >
 					<material materials="mtr_bulldozer" max_distance="0" />
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
 				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_bulldozer" max_distance="0" />
-					<material materials="mtr_glass" max_distance="1000" />
-					<material materials="mtr_glass_lod1" max_distance="1500" />
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_glass_crk_lod1" 	enabled="false" lod="1" >
 					<material materials="mtr_bulldozer" max_distance="0" />
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_helmet_glass_contour" enabled="true" />
 
 		</graphic_group>
 	</graphics>

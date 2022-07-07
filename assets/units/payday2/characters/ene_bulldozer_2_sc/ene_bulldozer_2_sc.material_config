@@ -27,5 +27,10 @@
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_saiga_df" mip="4"/>
     </material>
+    <material name="mtr_glass_contour" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE">
+        <diffuse_texture file="units/white_df"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>		
+	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

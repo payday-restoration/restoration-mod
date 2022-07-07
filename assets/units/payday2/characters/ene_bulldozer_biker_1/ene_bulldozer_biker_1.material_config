@@ -32,7 +32,14 @@
 		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
     </material>
     <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2" name="mtr_glass_lod">
+        <bump_normal_texture file="units/payday2/textures/blank_nm"/>		
         <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df" mip="4"/>
     </material>		
+
+    <material name="mtr_glass_contour" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE">
+        <diffuse_texture file="units/white_df"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

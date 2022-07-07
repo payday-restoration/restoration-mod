@@ -1,3 +1,6 @@
 <table>	
-	<table search="unit/sequence;name=[['kill_tazer_headshot']]" mode="add" />	
+	<table search="unit/sequence;name=[['int_seq_helmet_glass_02']]" mode="insert">
+		<object enabled="false" name="'g_helmet_glass_contour'"/>
+		<decal_mesh enabled="true" name="'dm_head'"/>
+	</table>
 </table>

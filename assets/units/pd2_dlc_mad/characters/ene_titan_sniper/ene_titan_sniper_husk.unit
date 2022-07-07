@@ -6,7 +6,7 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
-		<depends_on unit="units/pd2_dlc_drm/weapons/wpn_npc_heavy_zeal_sniper/wpn_npc_heavy_zeal_sniper" />
+		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" />
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" />		
 	</dependencies>
 
@@ -15,7 +15,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true"/>
 			<var name="_tweak_table" value="heavy_swat_sniper" />
-			<var name="_default_weapon_id" value="heavy_zeal_sniper" />
+			<var name="_default_weapon_id" value="asval_smg_elite" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

@@ -355,32 +355,31 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass">
-				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_bulldozer" max_distance="0" />
-					<material materials="mtr_glass" max_distance="1000" />
-					<material materials="mtr_glass_lod1" max_distance="1500" />
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_glass_lod1" 		enabled="true" lod="1" >
-					<material materials="mtr_bulldozer_lod" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_bulldozer" max_distance="0" />
+					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
-				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_bulldozer" max_distance="0" />
-					<material materials="mtr_glass" max_distance="1000" />
-					<material materials="mtr_glass_lod1" max_distance="1500" />
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_glass_crk_lod1" 	enabled="false" lod="1" >
-					<material materials="mtr_bulldozer_lod" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_glass_lod2" />
+					<material materials="mtr_bulldozer" max_distance="0" />
+					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_helmet_glass_contour" enabled="true" />
 
 		</graphic_group>
 	</graphics>

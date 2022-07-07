@@ -125,10 +125,9 @@ function GameSetup:load_packages()
             "levels/narratives/bain/hvh/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
-
-    elseif ai_type == r then
+		
+    elseif ai_type == r then --see if we can get away with making the jsut .units load their vo :)
         faction_package = {
-            "packages/lvl_mad",
 			"levels/narratives/elephant/mad/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)

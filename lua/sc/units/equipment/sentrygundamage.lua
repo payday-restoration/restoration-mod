@@ -535,15 +535,19 @@ function SentryGunDamage:damage_fire(attack_data)
 	return result
 end
 
+
 function SentryGunDamage:damage_explosion(attack_data)
 	if self._dead or self._invulnerable or attack_data.variant == "stun" then
 		return
 	end
 
 	local attacker_unit = attack_data.attacker_unit
+	local weap_unit = attack_data.weapon_unit
+
 
 	if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
 		attacker_unit = attacker_unit:base():thrower_unit()
+		weap_unit = attack_data.attacker_unit
 	end
 
 	if attacker_unit and PlayerDamage.is_friendly_fire(self, attacker_unit) then
@@ -564,9 +568,13 @@ function SentryGunDamage:damage_explosion(attack_data)
 			end
 		end
 	end
-	
+
+	local weap_base = alive(weap_unit) and weap_unit:base()
+	local proj_id = weap_base and weap_base._tweak_projectile_entry
+	local turret_instakill = proj_id and tweak_data.projectiles[proj_id].turret_instakill
+
 	--Hack to let rocket launchers instagib turrets.
-	if damage > 100 then
+	if turret_instakill then
 		self._shield_health = 0
 		damage = math.huge
 	elseif self._char_tweak.EXPLOSION_DMG_MUL then
@@ -659,6 +667,7 @@ function SentryGunDamage:damage_explosion(attack_data)
 
 	return result
 end
+
 
 function SentryGunDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, i_result, death)
 	if self._dead then

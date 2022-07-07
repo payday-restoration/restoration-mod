@@ -1769,7 +1769,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_shortdot.supported = true
 	self.parts.wpn_fps_upg_o_shortdot.stats = {value = 1, zoom = 40}
 	self.parts.wpn_fps_upg_o_shortdot.custom_stats = { big_scope = true }
-	self.parts.wpn_fps_upg_o_shortdot.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_shortdot.perks = {"scope",
+			"highlight"}
 	self.parts.wpn_fps_upg_o_shortdot.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m95 = {
 		translation = Vector3(-0.0, -21.5, -4.58)
@@ -3860,6 +3861,10 @@ end)
 --Kobus 90
 Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 
+
+	--Stop rail-on-rail action
+	self.parts.wpn_fps_smg_p90_body_p90.forbids = { "wpn_fps_addon_ris" }
+
 	--(Kobus 90) Long Barrel
 	self.parts.wpn_fps_smg_p90_b_long.pcs = {
 		10,
@@ -3868,8 +3873,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_p90_b_long.supported = true
-	self.parts.wpn_fps_smg_p90_b_long.stats = deep_clone(barrels.long_b1_stats)
-	self.parts.wpn_fps_smg_p90_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+	self.parts.wpn_fps_smg_p90_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_smg_p90_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--(Kobus 90) Tan Body
 	self.parts.wpn_fps_smg_p90_body_p90_tan = {
@@ -3885,7 +3890,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 		animations = {
 			reload = "reload",
 			reload_not_empty = "reload_not_empty"
-		}
+		},
+		forbids = { "wpn_fps_addon_ris" }
 	}
 	self.parts.wpn_fps_smg_p90_body_p90_tan.third_unit = "units/payday2/weapons/wpn_third_smg_p90_pts/wpn_third_smg_p90_body_p90"
 	
@@ -7030,6 +7036,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 
 end)
 
+--Akimbo Cobra 
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_scorpion", "resmod_x_scorpion", function(self)
+
+	if not self.wpn_fps_smg_x_scorpion.override then
+		self.wpn_fps_smg_x_scorpion.override = {}
+	end
+
+	self.wpn_fps_smg_x_scorpion.override.wpn_fps_smg_scorpion_m_extended = nil
+
+
+	self.wpn_fps_smg_x_scorpion.uses_parts[18] = "resmod_dummy"
+	self.wpn_fps_smg_x_scorpion.uses_parts[19] = "resmod_dummy"
+	self.wpn_fps_smg_x_scorpion.uses_parts[20] = "resmod_dummy"	
+	self.wpn_fps_smg_x_scorpion_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_scorpion.uses_parts)
+
+end)
+
+
 Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_scorpion_rail", function(self)
 	--Won't apply to all gadgets for some reason unless I hook into the main init func, whatever
 	for i, part_id in pairs(self.wpn_fps_smg_scorpion.uses_parts) do
@@ -7044,6 +7068,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_scorpion_rail", function(
 		end
 	end	
 	self.wpn_fps_smg_scorpion_npc.override = deep_clone(self.wpn_fps_smg_scorpion.override)
+	for i, part_id in pairs(self.wpn_fps_smg_x_scorpion.uses_parts) do
+		if self.parts and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "gadget" and not self.parts[part_id].depends_on then
+			if not self.wpn_fps_smg_x_scorpion.adds then
+				self.wpn_fps_smg_x_scorpion.adds = {}
+			end
+			if not self.wpn_fps_smg_x_scorpion.adds[part_id] then
+				self.wpn_fps_smg_x_scorpion.adds[part_id] = {}
+			end
+			table.insert(self.wpn_fps_smg_x_scorpion.adds[part_id], "wpn_fps_smg_scorpion_body_standard_rail")
+		end
+	end	
 end)
 
 --Blaster 9mm, now the T3K Urban
@@ -13008,6 +13043,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_icc", "resmod_icc", function(self)
 	self.parts.wpn_fps_smg_p90_body_boxy.pcs = {}
 	self.parts.wpn_fps_smg_p90_body_boxy.supported = true
 	self.parts.wpn_fps_smg_p90_body_boxy.stats = {value = 0}
+	self.parts.wpn_fps_smg_p90_body_boxy.forbids = { "wpn_fps_addon_ris" }
 	
 	--Custom Built Frame
 	self.parts.wpn_fps_smg_mac10_body_modern.pcs = {}

@@ -61,7 +61,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"hajk",
 					"spoon",
 					"x_mac10",
-					"x_packrat"
+					"x_packrat",
+					"x_scorpion",
 				}
 			},	
 		l10 = {

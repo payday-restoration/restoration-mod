@@ -3267,7 +3267,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].nato = true
 	end
 	faction = {
-		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech'
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech','scorpion','x_scorpion'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].warsaw = true
@@ -3607,7 +3607,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 71,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 30,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -3677,7 +3677,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 61,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 30,
 					suppression = 10,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -3707,10 +3707,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_czech.stats = {
 					damage = 20,
 					spread = 49,
-					recoil = 65,
+					recoil = 70,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 29,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4156,7 +4156,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 71,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 30,
 					suppression = 10,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4188,10 +4188,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.czech.stats = {
 					damage = 20,
 					spread = 59,
-					recoil = 75,
+					recoil = 80,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 29,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4230,7 +4230,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 81,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 30,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -6427,16 +6427,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.timers.reload_exit_not_empty = 0.55
 
 			--Akimbo Heather
-				self.x_sr2.fire_mode_data.fire_rate = 0.06666666666
-				self.x_sr2.single.fire_rate = 0.06666666666
+				self.x_sr2.fire_mode_data.fire_rate = 0.063157894
 				self.x_sr2.CLIP_AMMO_MAX = 60
 				self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
+				self.x_sr2.sounds.fire = "sr2_fire_single"
+				self.x_sr2.sounds.fire_single = "sr2_fire_single"
+				self.x_sr2.sounds.fire_auto = "sr2_fire"
+				self.x_sr2.sounds.stop_fire = "sr2_stop"
 				self.x_sr2.AMMO_MAX = 180
 				self.x_sr2.supported = true
 				self.x_sr2.ads_speed = 0.280
 				self.x_sr2.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 4200,
+					start_dist = 1400,
+					end_dist = 4000,
 					min_mult = 0.3
 				}
 				self.x_sr2.stats = {
@@ -6456,10 +6459,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sr2.stats_modifiers = nil
 				self.x_sr2.panic_suppression_chance = 0.05
 				self.x_sr2.reload_speed_multiplier = 0.75
+				self.x_sr2.timers.reload_not_empty = 2.1
+				self.x_sr2.timers.reload_exit_not_empty = 1.5
 				self.x_sr2.timers.reload_empty = 3
-				self.x_sr2.timers.reload_not_empty = 2
-				self.x_sr2.timers.reload_exit_empty = 0.95
-				self.x_sr2.timers.reload_exit_not_empty = 1.3
+				self.x_sr2.timers.reload_exit_empty = 0.9
 				self.x_sr2.weapon_hold = "x_akmsu"
 				self.x_sr2.animations.reload_name_id = "x_akmsu"
 				self.x_sr2.animations.second_gun_versions = self.x_sr2.animations.second_gun_versions or {}
@@ -6531,6 +6534,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shepheard.panic_suppression_chance = 0.05
 				self.shepheard.timers.reload_exit_empty = 0.6
 				self.shepheard.timers.reload_exit_not_empty = 0.75
+
+			--Akimbo Cobra
+				self.x_scorpion.CLIP_AMMO_MAX = 40
+				self.x_scorpion.AMMO_MAX = 150
+				self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
+				self.x_scorpion.single.fire_rate = 0.07058823529
+				self.x_scorpion.kick = self.stat_info.kick_tables.even_recoil
+				self.x_scorpion.supported = true
+				self.x_scorpion.ads_speed = 0.220
+				self.x_scorpion.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
+				self.x_scorpion.stats = {
+					damage = 24,
+					spread = 46,
+					recoil = 75,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 30,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 7,
+					reload = 20
+				}
+				self.x_scorpion.stats_modifiers = nil
+				self.x_scorpion.panic_suppression_chance = 0.05	
+				self.x_scorpion.reload_speed_multiplier = 0.75
+				self.x_scorpion.timers.reload_not_empty = 2.1
+				self.x_scorpion.timers.reload_exit_not_empty = 1.5
+				self.x_scorpion.timers.reload_empty = 3
+				self.x_scorpion.timers.reload_exit_empty = 0.9
+
 
 			--Akimbo MP5
 				self.x_mp5.fire_mode_data.fire_rate = 0.075
@@ -6766,41 +6805,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baka.timers.reload_exit_empty = 0.55
 				self.baka.timers.reload_exit_not_empty = 0.55
 
-			--Cobra
-				self.scorpion.AMMO_MAX = 90
-				self.scorpion.FIRE_MODE = "auto"
-				self.scorpion.fire_mode_data = {}
-				self.scorpion.fire_mode_data.fire_rate = 0.07058823529
-				self.scorpion.CAN_TOGGLE_FIREMODE = true
-				self.scorpion.auto = {}
-				self.scorpion.auto.fire_rate = 0.07058823529
-				self.scorpion.kick = self.stat_info.kick_tables.even_recoil
-				self.scorpion.supported = true
-				self.scorpion.ads_speed = 0.220
-				self.scorpion.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 3500,
-					min_mult = 0.3
-				}
-				self.scorpion.stats = {
-					damage = 20,
-					spread = 56,
-					recoil = 85,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 30,
-					suppression = 9,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 7,
-					reload = 20
-				}
-				self.scorpion.stats_modifiers = nil
-				self.scorpion.timers.reload_exit_empty = 0.6
-				self.scorpion.timers.reload_exit_not_empty = 0.65	
-				self.scorpion.panic_suppression_chance = 0.05
-
 			--Jacket's Piece (M11/9)
 				self.cobray.CLIP_AMMO_MAX = 32
 				self.cobray.AMMO_MAX = 90
@@ -6838,8 +6842,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 			--Heather (SR2M)
-				self.sr2.auto.fire_rate = 0.06666666666
-				self.sr2.fire_mode_data.fire_rate = 0.06666666666
+				self.sr2.fire_mode_data.fire_rate = 0.063157894
 				self.sr2.CLIP_AMMO_MAX = 30
 				self.sr2.AMMO_MAX = 90
 				self.sr2.kick = {}
@@ -6847,8 +6850,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sr2.supported = true
 				self.sr2.ads_speed = 0.280
 				self.sr2.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 4200,
+					start_dist = 1400,
+					end_dist = 4000,
 					min_mult = 0.3
 				}
 				self.sr2.stats = {
@@ -6902,6 +6905,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mp9.stats_modifiers = nil
 				self.mp9.panic_suppression_chance = 0.05
+
+			--Cobra
+				self.scorpion.AMMO_MAX = 75
+				self.scorpion.FIRE_MODE = "auto"
+				self.scorpion.fire_mode_data = {}
+				self.scorpion.fire_mode_data.fire_rate = 0.07058823529
+				self.scorpion.CAN_TOGGLE_FIREMODE = true
+				self.scorpion.auto = {}
+				self.scorpion.auto.fire_rate = 0.07058823529
+				self.scorpion.kick = self.stat_info.kick_tables.even_recoil
+				self.scorpion.supported = true
+				self.scorpion.ads_speed = 0.220
+				self.scorpion.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
+				self.scorpion.stats = {
+					damage = 24,
+					spread = 56,
+					recoil = 85,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 30,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 7,
+					reload = 20
+				}
+				self.scorpion.stats_modifiers = nil
+				self.scorpion.timers.reload_exit_empty = 0.6
+				self.scorpion.timers.reload_exit_not_empty = 0.65	
+				self.scorpion.panic_suppression_chance = 0.05
 
 			--Compact-5
 				self.new_mp5.fire_mode_data.fire_rate = 0.075
@@ -7822,8 +7860,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.x_akmsu.stats_modifiers = nil
-				self.x_akmsu.timers.reload_not_empty = 2.75
-				self.x_akmsu.timers.reload_empty = 3.4
+				self.x_akmsu.reload_speed_multiplier = 0.75
+				self.x_akmsu.timers.reload_not_empty = 2.1
+				self.x_akmsu.timers.reload_exit_not_empty = 1.5
+				self.x_akmsu.timers.reload_empty = 3
+				self.x_akmsu.timers.reload_exit_empty = 0.9
 
 			--AK.762
 				self.akm.desc_id = "bm_akm_sc_desc"
@@ -10663,32 +10704,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_mp9.stats_modifiers = nil
 			self.x_mp9.panic_suppression_chance = 0.05
 	
-		--Akimbo Cobra
-		--DISABLED--	
-			self.x_scorpion.use_data.selection_index = 5				
-			self.x_scorpion.CLIP_AMMO_MAX = 40
-			self.x_scorpion.AMMO_MAX = 180
-			self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
-			self.x_scorpion.single.fire_rate = 0.07058823529
-			self.x_scorpion.kick = self.stat_info.kick_tables.even_recoil
-			self.x_scorpion.supported = true
-			self.x_scorpion.stats = {
-			damage = 20,
-			spread = 61,
-			recoil = 76,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 29,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 7,
-			reload = 20
-			}
-			self.x_scorpion.stats_modifiers = nil
-			self.x_scorpion.panic_suppression_chance = 0.05	
-	
 		--Akimbo Patchett
 		--DISABLED--	
 			self.x_sterling.use_data.selection_index = 5				
@@ -11960,6 +11975,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toym16.CLIP_AMMO_MAX = 150
 		self.toym16.AMMO_MAX = 900
 		self.toym16.supported = true
+		self.toym16.ads_speed = 0.200
+		self.toym16.damage_falloff = {
+			start_dist = 500,
+			end_dist = 3000,
+			min_mult = 0.05
+		}
 		self.toym16.stats = {
 			damage = 4,
 			spread = 100,
@@ -11985,6 +12006,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toy1911.CLIP_AMMO_MAX = 90
 		self.toy1911.AMMO_MAX = 450
 		self.toy1911.supported = true
+		self.toy1911.ads_speed = 0.200
+		self.toy1911.damage_falloff = {
+			start_dist = 250,
+			end_dist = 1500,
+			min_mult = 0.05
+		}
 		self.toy1911.stats = {
 			damage = 4,
 			spread = 100,

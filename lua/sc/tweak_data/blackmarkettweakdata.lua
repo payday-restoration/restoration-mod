@@ -473,6 +473,17 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--Viper Gas
 	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
 	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
+	
+	if SystemFS:exists("assets/mod_overrides/CoD Inspired Flashbang Animation") then
+		self.projectiles.concussion.animation = "throw_concussion"
+		self.projectiles.concussion.anim_global_param = "projectile_frag"
+		self.projectiles.fir_com.animation = "throw_concussion"
+		self.projectiles.fir_com.anim_global_param = "projectile_frag"
+		self.projectiles.smoke_screen_grenade.animation = "throw_concussion"
+		self.projectiles.smoke_screen_grenade.anim_global_param = "projectile_frag"
+		self.projectiles.poison_gas_grenade.animation = "throw_concussion"
+		self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag"
+	end	
 
 	self.projectiles.bravo_frag = {}
 	self.projectiles.bravo_frag.damage = 12 --120 damage at point blank.

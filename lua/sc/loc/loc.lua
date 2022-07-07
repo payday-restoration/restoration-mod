@@ -2478,7 +2478,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
-			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%.##\n\nACE: ##$pro##\nYou pick up ##50%## more ammo.\n\nYou gain a ##5%## chance to get a throwable from an ammo box. This increases by an additional ##1%## every time you do not get a throwable until you get one.",
+			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%.##\n\nACE: ##$pro##\nYou pick up ##50%## more ammo from ammo boxes.\n\nYou gain a base chance of ##5%## to pick up a throwable when you're able to pick up ammo boxes; chance is increased by an additional ##1%## each time you don't find one and will reset to base when you do.\n\nNOTE: You cannot pick up perk deck throwables.",
 
 			--}
 		--}

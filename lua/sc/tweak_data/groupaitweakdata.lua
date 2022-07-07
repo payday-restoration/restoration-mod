@@ -13528,13 +13528,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			initial_spawn_delay = 0,
 			amount = {
 				1,
-				2
+				1
 			},
 			spawn = {
 				{
 					respawn_cooldown = 30,
 					amount_min = 1,
-					amount_max = 2,
+					amount_max = 1,
 					rank = 1,
 					freq = 1,
 					unit = "titan_sniper",

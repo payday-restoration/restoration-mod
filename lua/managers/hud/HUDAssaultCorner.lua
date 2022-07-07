@@ -342,7 +342,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	buffs_panel:set_top(0)
 	buffs_panel:set_right(self._hud_panel:w())
-	
+
 	local buff_icon = "guis/textures/pd2/hud_buff_generic"
 	local job = Global.level_data and Global.level_data.level_id
 
@@ -353,10 +353,6 @@ function HUDAssaultCorner:init(hud, full_hud)
 
 	if managers.skirmish:is_skirmish() then		
 		buff_icon = "guis/textures/pd2/hud_buff_generic"
-	end
-
-	if alive(self._vip_bg_box) and alive(self._vip_bg_box:child("vip_icon")) then
-		self._vip_bg_box:child("vip_icon"):set_image(buff_icon)
 	end
 	
 	local buffs_pad_panel = self._hud_panel:panel({
@@ -372,7 +368,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		name = "vip_icon_pad",
 		blend_mode = "add",
 		layer = 3,
-		texture = self.buff_icon,
+		texture = buff_icon,
 		w = 38,
 		h = 38
 	})
@@ -386,7 +382,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		name = "vip_icon_tape",
 		blend_mode = "add",
 		layer = 3,
-		texture = self.buff_icon,
+		texture = buff_icon,
 		visible = false,
 		x = 0,
 		y = 0,

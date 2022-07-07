@@ -1,7 +1,23 @@
-Hooks:PostHook(SkirmishManager, "init_finalize", "ResInitKillCounter", function(self)
-	self._required_kills = 0 --Prevents potential nil crash.
-	log("Finalizing")
-end)
+local orig_init_finalize = SkirmishManager.init_finalize
+function SkirmishManager:init_finalize()
+	orig_init_finalize(self)
+	if self:is_skirmish() then
+		self._required_kills = 0 --Prevents potential nil crash.
+
+		local load_list = {}
+		for unit, data in pairs(tweak_data.character) do
+			if type(data) == "table" and data.custom_voicework then
+				if data.captain_type and data.captain_type == tweak_data.skirmish.captain then
+					load_list[#load_list + 1] = data.custom_voicework
+				elseif restoration.projob_only_voicelines[data.custom_voicework] then
+					load_list[#load_list + 1] = data.custom_voicework
+				end
+			end
+		end
+
+		restoration.Voicelines:load(load_list)
+	end
+end
 
 --Refresh kill count required to end new assault.
 Hooks:PostHook(SkirmishManager, "on_start_assault", "ResUpdateKillCounter", function(self)
@@ -17,7 +33,7 @@ function SkirmishManager:do_kill()
 
 		if self._required_kills <= 0 then
 			if self:current_wave_number() == 9 then
-				groupai:force_spawn_group_hard(tweak_data.skirmish.captain)
+				groupai:force_spawn_group_hard(tweak_data.skirmish.captain.spawn_group)
 				self._captain_active = true
 			else
 				groupai:force_end_assault_phase(true)

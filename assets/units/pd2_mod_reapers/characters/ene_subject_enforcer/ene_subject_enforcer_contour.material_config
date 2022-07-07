@@ -7,7 +7,7 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 	
-	<material name="mtr_fueltank" render_template="generic:contour:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+	<material name="mtr_fueltank" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
 		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer_nm"/>
 		<diffuse_texture 		file="units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer_df"/>
 	</material>

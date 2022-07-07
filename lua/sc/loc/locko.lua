@@ -2480,7 +2480,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "완전무장",
-			["menu_bandoliers_desc_sc"] = "베이직: ##$basic##\n소지 탄약이 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 수급율이 ##50%##만큼 증가합니다.\n\n##5%## 확률로 탄약 상자에서 투척물을 회수할 수 있으며, 투척물을 얻을 때까지 얻지 못할 때마다 추가로 ##1%##씩 증가합니다.",
+			["menu_bandoliers_desc_sc"] = "베이직: ##$basic##\n소지 탄약이 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자로 획득하는 탄약 수급율이 ##50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 ##5%##이고, 하나도 획득하지 못할 때마다 확률이 추가로 ##1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n참고: 특성 덱의 투척물은 해당 스킬로도 획득할 수 없습니다.",
 
 			--}
 		--}

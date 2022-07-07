@@ -3,12 +3,12 @@
 --Only loads a captain's lines if the current map spawns that captain.
 --bravo dmr not included because marshals use it 
 local projob_only_voicelines = {
-	bravo = true,
-	bravo_elite = true,
-	bravo_mex = true,
-	bravo_elite_mex = true,
-	bravo_murky = true,
-	bravo_elite_murky = true
+	bravowo = true,
+	bravowo_elite = true,
+	bravowo_mex = true,
+	bravowo_elite_mex = true,
+	bravowo_murky = true,
+	bravowo_elite_murky = true
 }
 Hooks:PostHook(Setup, "load_packages", "restorationVoicelineLoad", function (self)
 	local job = Global.level_data and Global.level_data.level_id

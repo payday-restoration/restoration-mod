@@ -16805,6 +16805,7 @@ function CharacterTweakData:character_map()
 				"ene_akan_fbi_3",
 				"ene_akan_veteran_1",
 				"ene_akan_veteran_2",
+				"ene_akan_veteran_subject",
 				"ene_akan_grenadier_1",
 				"ene_akan_medic_bob",
 				"ene_akan_medic_zdann",	

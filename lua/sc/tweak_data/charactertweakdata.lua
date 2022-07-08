@@ -2868,7 +2868,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.speech_prefix_count = nil
 	self.boom.access = "taser"
 	self.boom.dodge = presets.dodge.athletic
-	self.boom.use_gas = true
 	self.boom.can_deploy_tear_gas = true
 	self.boom.chance_use_gas = 0.5
 	self.boom.priority_shout = "g29"
@@ -16392,7 +16391,10 @@ function CharacterTweakData:_set_overkill_290()
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
-	self.weekend_lmg.use_animation_on_fire_damage = false				
+	self.weekend_lmg.use_animation_on_fire_damage = false		
+
+	--Grenadier pre-emptive gas deployment
+	self.boom.use_gas = true
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 140
@@ -16438,7 +16440,7 @@ function CharacterTweakData:_set_sm_wish()
 	
 	
 	--Titan Shields gets overhealed
-	self.phalanx_minion.overheal_mult = 3.0
+	self.phalanx_minion.overheal_mult = 2
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
@@ -16468,6 +16470,9 @@ function CharacterTweakData:_set_sm_wish()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 160
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
+	
+	--Grenadier pre-emptive gas deployment
+	self.boom.use_gas = true	
 	
 	--Titan SWAT smoke dodging
 	self.city_swat_titan.dodge_with_grenade = {

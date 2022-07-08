@@ -880,7 +880,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 				if used_grenade then
 					self:_voice_move_in_start(group)
 				elseif not group.ignore_grenade_check_t then
-					group.ignore_grenade_check_t = self._t + 4 / math.max(1, table.size(assault_area.criminal.units))
+					group.ignore_grenade_check_t = self._t + tweak_data.group_ai.ignore_grenade_time / math.max(1, table.size(assault_area.criminal.units))
 				end
 			else
 				-- If we aren't pushing, we go to one area before the criminal area
@@ -1137,7 +1137,7 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 
 	-- If players camp a specific area for too long, turn a smoke grenade into a teargas grenade instead
 	local use_teargas
-	local can_use_teargas = false --grenade_type == "smoke_grenade" and area and area.criminal_entered_t and table.size(area.neighbours) <= 2
+	local can_use_teargas = grenade_user and grenade_user.char_tweak and grenade_user.char_tweak.use_gas and grenade_type == "smoke_grenade" and area and area.criminal_entered_t and table.size(area.neighbours) <= 2
 	if can_use_teargas and math_random() < (self._t - area.criminal_entered_t - 60) / 180 then
 		-- Check if a player actually currently is in this area
 		local num_player_criminals = 0
@@ -1166,7 +1166,7 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 		timeout = tweak_data.group_ai.cs_grenade_timeout or tweak_data.group_ai.smoke_and_flash_grenade_timeout
 	else
 		if grenade_type == "flash_grenade" and grenade_user.char_tweak.chatter.flash_grenade then
-			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "flash_grenade")
+			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "flash_grenade")		
 		elseif grenade_type == "smoke_grenade" and grenade_user.char_tweak.chatter.smoke then
 			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "smoke")
 		end

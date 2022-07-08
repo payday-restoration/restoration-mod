@@ -328,3 +328,34 @@ function CopLogicAttack._find_retreat_position(from_pos, ...)
 		return pos
 	end
 end
+
+-- Make moving back during combat depend on weapon range
+function CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, engage)
+	local weapon_range = my_data.weapon_range or { close = 500 }
+	local close_range = weapon_range.close * 0.5
+	if focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.dis < close_range and CopLogicAttack._can_move(data) then
+		local from_pos = mvector3.copy(data.m_pos)
+		local threat_tracker = focus_enemy.nav_tracker
+		local threat_head_pos = focus_enemy.m_head_pos
+		local retreat_to = CopLogicAttack._find_retreat_position(from_pos, focus_enemy.m_pos, threat_head_pos, threat_tracker, 400, engage)
+
+		if retreat_to then
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+
+			my_data.advancing = data.unit:brain():action_request({
+				type = "walk",
+				variant = "walk",
+				body_part = 2,
+				nav_path = {
+					from_pos,
+					retreat_to
+				}
+			})
+
+			if my_data.advancing then
+				my_data.surprised = true
+				return true
+			end
+		end
+	end
+end

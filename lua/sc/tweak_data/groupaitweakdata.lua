@@ -15962,31 +15962,32 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		--1 eventually
 	}
 	
-	self.spawn_cooldown_mul = math.lerp(2, 1, f)
+	self.spawn_cooldown_mul = math.lerp(2.5, 1, f)
 
 	if difficulty_index <= 2 then
 		self.smoke_grenade_timeout = {20, 20}
 		self.flash_grenade_timeout = {10, 10}
 	elseif difficulty_index == 3 then
 		self.smoke_grenade_timeout = {19, 19}
-		self.flash_grenade_timeout = {10, 9}
+		self.flash_grenade_timeout = {9, 9}
 	elseif difficulty_index == 4 then
 		self.smoke_grenade_timeout = {18, 18}
 		self.flash_grenade_timeout = {9, 9}
 	elseif difficulty_index == 5 then
 		self.smoke_grenade_timeout = {17, 17}
-		self.flash_grenade_timeout = {9, 8}
+		self.flash_grenade_timeout = {8, 8}
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		self.smoke_grenade_timeout = {16, 16}
 		self.flash_grenade_timeout = {8, 8}
 	else
 		self.smoke_grenade_timeout = {15, 15}
-		self.flash_grenade_timeout = {8, 7}
+		self.flash_grenade_timeout = {7, 7}
 	end
 	
-	self.cs_grenade_timeout = { 60, 90 }
+	self.cs_grenade_timeout = { 30, 45 }
 	self.smoke_grenade_lifetime = 12
 	self.flash_grenade_lifetime = 7.5
+	self.ignore_grenade_time = 8
 	self.flash_grenade = {
 		timer = 2.5,
 		light_range = 300,
@@ -16767,13 +16768,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	--Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type then
-		if difficulty_index == 4 then
-			self.besiege.assault.groups[captain_type.spawn_group] = {0,0.05, 0.1}
-		elseif difficulty_index == 5 then
-			self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.1,0.15}
-		else
-			self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.1, 0.2}
-		end
+		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.5, 1}
 	end		
 	self.besiege.reenforce.interval = {
 		60,

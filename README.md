@@ -29,7 +29,7 @@ Rhynne: Helped in development of the Restoration HUD and was the original projec
 
 DoktorAkcel: Majority of the HUD and UI setup, asset work, incredibly useful research to help with mod development.
 
-SC: Providing the vast majority of the codebase, the balancing and general design of the overhaul.
+SC: Providing the vast majority of the codebase, the balancing and the truly awesome general design of the overhaul.
 
 DMC: Assisting with creation of the weapons, skill trees and helping with overall balance in the overhaul.
 
@@ -51,11 +51,11 @@ Teacyn: Writing the overhaul steam guide and providing valuable feedback to over
 
 Nelson01023: Setting up many enemy accessories and adding support for many custom weapons. Improving a bunch of assets & making new ones. Creating various Minor Heist Edits.
 
-Sgt. Joe: Providing base models and textures for the Federales Beatcops & ze NYPD assets. 
+Sgt. Joe: Providing base models and textures for the Federales Beatcops & ze NYPD assets + ze Russians Very big asset contributions very nice very awesome. Awesomeness!
 
-Iamgoofball: Creating the Voiceline Framework, contributing to the development of Captain Summers and his team, original Grenade Launcher NPC base. 
+Iamgoofball: Birthed the Voiceline Framework, contributing to the development of Captain Summers and his team, original Grenade Launcher NPC base. So much win!
 
-Finale: Providing feedback during development.
+Finale: Truly amazing and Insightful feedback with startling levels of accuracy during development.
 
 Offyerrocker: Helping redesign Sentries. Making Autumn's special abilities work, and other assorted code things.
 
@@ -65,7 +65,11 @@ VxWolf: Creating the custom Restoration Mod soundtrack and voicing the OMNIA LPF
 
 Skwuruhl: fixing stance modifiers and making spread work better.
 
-Major Pyatosin: voicing the US National Guard, Murky Medic, Vet Cop and Jackal.
+R_Populik: Original Fort 500 asset.
+
+GSC Game World: Inventors of the STALKER Gauss Gun and Ecologist suit
+
+Major Pyatosin: voicing the US National Guard, Murky Medic, Vet Cop and Jackal. Various asset contributions.
 
 Whurr: Major heist edits.
 
@@ -77,17 +81,17 @@ Porky da Corgi: creating the base textures for the grenadier and OMNIA Light
 
 Wekk: Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" into the mod.
 
-Hoppip: Created the Mind Blown graze rework, the prettier laser assets used for enemy damage buffs and the Streamlined Heisting framework. 
+Hoppip: Manufactured the Mind Blown graze rework, the insane laser assets used for enemy damage buffs and the Streamlined Heisting framework. 
 
-Baddy: Major asset contributions. Prettier Gensec Units.
+Baddy: Quite big asset contributions. Prettier Gensec Units.
 
-Hoxi: for ungodly numbers of fixes and general code improvements, and contributions to the original Grenade Launcher NPC base. Amazing work!
+Hoxi: for deafening numbers of fixes and general code improvements, and contributions to the original Grenade Launcher NPC base. Amazing work!
 
 Luffy: For improving the HUD/UI code and adding more HUD/UI options
 
-KLEITON and Tom Blaine: taking on the huge task of translating the steam guide into Russian.
+KLEITON and Tom Blaine: taking on the enormous task of translating the gotovitʹ na paru's guide into Russian.
 
-DryBittenCuticles: voicing the Policía Federal Grenadier
+DryBittenCuticles: vocalizing the Policía Federal Grenadier
 
 MarioInATopHat: voicing Big Dave
 
@@ -99,7 +103,7 @@ Marcel Kamisso: For the multicam used on Murky units
 
 RedFlame: Fixed some iffy scripting for Framing Frame D3, Spawn delay fix, overall improvements and fixes to AI logics and other issues. 
 
-SonicSoapyBoi: Assisted with debugging, testing, and fixes. 
+SonicSoapyBoi: Dapamoga for adjustment, tessiravannem and bug fix.
 
 Dorpenka: Updated Combat Harness viewmodel, chromatic aberration and civilian kill line fixes
 
@@ -112,3 +116,5 @@ LR_Daring: Chinese localisation
 GullwingDoor: Korean localisation
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale
+
+AND YOU, THE RESMOD GAMERS!

@@ -5,6 +5,8 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />		
+
 		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12" />
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_drak/ene_acc_drak" />
 	</dependencies>

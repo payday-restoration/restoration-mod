@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_mod_reaper/weapons/wpn_npc_basscannon/wpn_npc_basscannon" />
+  <dependencies>
+ 	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
+	<depends_on bnk="soundbanks/weapon_keltec" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCShotgunBase" >
+		<var name="name_id" value="r870_taser_npc" />
+    </extension>
+  <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+		<soundsource name="root" source="rp_m4" />
+		<default_soundsource source="rp_m4" />
+  </sounds>
+</unit>

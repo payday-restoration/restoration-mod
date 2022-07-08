@@ -15859,7 +15859,8 @@ function CharacterTweakData:_create_table_structure()
 		"x_streak",
 		"akmsu_smg_tactical",
 		"aksu_smg",
-		"ak47_yellow"
+		"ak47_yellow",
+		"gauss_gun"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -15951,7 +15952,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14"),		
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical"),
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_aksu/wpn_npc_aksu"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47_taser/wpn_npc_ak47_taser")
+		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47_taser/wpn_npc_ak47_taser"),
+		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon")
 	}
 end
 

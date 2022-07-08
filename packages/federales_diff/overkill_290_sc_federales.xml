@@ -428,8 +428,8 @@
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_taser_df" force="false"/>
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/act_stalker_freedom_1_head_glass" force="false"/>		
 
-	<unit_mat			path="units/pd2_dlc_mad/weapons/wpn_npc_basscannon/wpn_npc_basscannon" load="false" />
-	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_basscannon/wpn_npc_basscannon_df" force="false"/>
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon" load="false" />
+	<texture			path="units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon_df" force="false"/>
 
 	
 	<!--Veteran Cop-->	

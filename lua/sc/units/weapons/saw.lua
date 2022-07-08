@@ -126,6 +126,10 @@ function SawWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, sh
 	return result, valid_hit
 end
 
+-- no clicking on empty
+function SawWeaponBase:dryfire()
+end
+
 SawHit = SawHit or class(InstantBulletBase)
 
 function SawHit:on_collision(col_ray, weapon_unit, user_unit, damage)

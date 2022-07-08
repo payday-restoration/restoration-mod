@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <unit slot="12" type="being">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
-	<object file="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"/>
+	<object file="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03"/>
 	<dependencies/>
 	<extensions>
 		<extension class="ScriptUnitData" name="unit_data"/>
@@ -14,6 +14,9 @@
 		<extension class="PlayerAnimationData" name="anim_data"/>
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_hat_lod" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" />
 		</extension>
 		<extension class="CopMovement" name="movement">
 			<var name="_footwear" value="hardsole"/>

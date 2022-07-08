@@ -219,7 +219,6 @@
 				</object>
 			</lod_object>
 
-			<!-- i fucking hate these material swap workarounds cause that fuckwad kyria doesnt wanna make the ui for the gltf tool more accessible idk how bad this shit is even -->
 			<lod_object name="lod_head_var_2">
 				<object name="g_head_var_2" enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_body" max_distance="0" />				

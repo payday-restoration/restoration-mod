@@ -11,28 +11,18 @@
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
-		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>	
+		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>
+		<!-- fix this before release
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1" target_type="sequence_manager" merge_mode="script_merge"/>	
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" target_type="sequence_manager" merge_mode="script_merge"/>	
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3" target_type="sequence_manager" merge_mode="script_merge"/>	
-
+		-->
 		<!--swat vans-->
-		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" target_type="sequence_manager" merge_mode="script_merge"/>
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/pd2_dlc2/vehicles/str_vehicle_truck_swat_csgo_1/str_vehicle_truck_swat_csgo_1" target_type="sequence_manager" merge_mode="script_merge"/>
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" target_type="sequence_manager" merge_mode="script_merge"/>			
-		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" target_type="sequence_manager" merge_mode="script_merge"/>				
-		
-		<!-- russian bulldozers-->
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" target_type="sequence_manager" merge_mode="script_merge"/>	
-		
-		<!--zombie bulldozers-->		
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" target_type="sequence_manager" merge_mode="script_merge"/>
-						
+		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" target_type="sequence_manager" merge_mode="script_merge"/>
 	</ScriptMods>	
 	
     <Hooks directory="lua">

@@ -12,7 +12,9 @@
 		<extension class="HuskCopInventory" name="inventory"/>
 		<extension class="HuskCopBrain" name="brain"/>
 		<extension class="PlayerAnimationData" name="anim_data"/>
-		<extension class="HuskCopDamage" name="character_damage"/>
+		<extension name="character_damage" class="HuskCopDamage" >
+			<var name="_head_body_name" value="head" />
+		</extension>
 		<extension class="HuskCopMovement" name="movement">
 			<var name="_footwear" value="hardsole"/>
 			<var name="_anim_global" value="cop"/>

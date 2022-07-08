@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" orientation_object="rp_ene_acc_fbi_cap" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_fbi_cap" />
+			<object name="c_convex" collision_type="convex" mass="1.5" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="cloth">
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_ene_acc_fbi_cap" enabled="true" culling_object="c_convex">
+				<object name="g_hat_lod0" enabled="true" />
+		</graphic_group>
+	</graphics>
+	
+</dynamic_object>

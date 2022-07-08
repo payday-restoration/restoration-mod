@@ -128,7 +128,6 @@ function GameSetup:load_packages()
 		
     elseif ai_type == r then 
         faction_package = {
-			"packages/lvl_mad",
 			"levels/narratives/elephant/mad/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)

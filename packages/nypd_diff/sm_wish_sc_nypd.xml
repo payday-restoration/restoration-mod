@@ -10,38 +10,38 @@
 	<material_config	path="units/vehicles/animated_cars/police_ny_noinstance" force="true" />
 	<material_config	path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
 	
-	<!--Midland Ranch Enemies-->
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" load="true" force="true" />
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01_husk" load="true" force="true" />	<!--that husk cop literally had swat access and used mp5-->
-	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
-	<sequence_manager	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01" force="true" />	
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01_contour" force="true" />	
+	<!--Texas Cops-->
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" load="true" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_husk" load="true" force="true" />	
+	<object				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="true" />	
+	<sequence_manager	path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="true" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="true" />	
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="true" />	
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_contour" force="true" />	
 
 	<unit_mat			path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" load="true" />
 	<cooked_physics		path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" />
 	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" load="true" force="true" />
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02_husk" load="true" force="true" /> <!--that husk cop literally had swat access and used mp5 as well. Thank you Denka, very cool-->	
-	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" force="true" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" force="true" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02" force="true" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02_contour" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" load="true" force="true" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_husk" load="true" force="true" /> 	
+	<object				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" force="true" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" force="true" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" force="true" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_contour" force="true" />
 	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03" load="true"/>
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03_husk" load="true"/>	
-	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03" force="false" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03" force="false" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03" force="false" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03_contour" force="false" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3" load="true"/>
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3_husk" load="true"/>	
+	<object				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3" force="false" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3" force="false" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3" force="false" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3_contour" force="false" />
 	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04" load="true"/>
-	<unit				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04_husk" load="true"/>	
-	<object				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04" force="false" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04" force="false" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04" force="false" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04_contour" force="false" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4" load="true"/>
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4_husk" load="true"/>	
+	<object				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4" force="false" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4" force="false" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4" force="false" />
+	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4_contour" force="false" />
 	
 	<!--nypd textures-->			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />

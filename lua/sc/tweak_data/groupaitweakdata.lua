@@ -6999,16 +6999,16 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	--Texas heists, replace NYPD beat cops with Texas state troopers and Titan Snipers with US Marshals
 	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
 		--Assorted Beat Cops
-		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"
-		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03"
-		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[3] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
+		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"
+		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[3] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		--Pistol + MP5 only
-		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"
-		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_03/ene_male_ranc_ranger_03"	
+		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
+		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"	
 		--Shotgun 
-		self.unit_categories.CS_cop_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_04/ene_male_ranc_ranger_04"
+		self.unit_categories.CS_cop_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		--Bronco (Heh)
-		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"
+		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
 		
 		--Have US Marshals on Texas heists instead of regular Titan Snipers
 		self.unit_categories.titan_sniper = deep_clone(self.unit_categories.marshal_marksman)
@@ -7016,16 +7016,16 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	--SF heists, replace LAPD beat cops with SFPD ones
 	if table.contains(restoration.needle, job) then
 		--Assorted Beat Cops
-		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"
-		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03"
-		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[3] = "units/pd2_dlc_chas/characters/ene_male_chas_police_04/ene_male_chas_police_04"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[3] = "units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"
 		--Pistol + MP5 only
-		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"
-		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_male_chas_police_03/ene_male_chas_police_03"	
+		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"
+		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"	
 		--Shotgun 
-		self.unit_categories.CS_cop_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_04/ene_male_chas_police_04"
+		self.unit_categories.CS_cop_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"
 		--Bronco (Heh)
-		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"
+		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"
 	end
 	
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then		

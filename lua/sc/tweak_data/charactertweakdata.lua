@@ -16738,14 +16738,18 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.flat.list, "ene_gang_colombian_boss")
 		table.insert(char_map.flat.list, "ene_gang_colombian_enforcer")
 	--chas
-		table.insert(char_map.chas.list, "ene_male_chas_police_03")
-		table.insert(char_map.chas.list, "ene_male_chas_police_04")
+		table.insert(char_map.chas.list, "ene_cop_1")
+		table.insert(char_map.chas.list, "ene_cop_2")
+		table.insert(char_map.chas.list, "ene_cop_3")
+		table.insert(char_map.chas.list, "ene_cop_4")
 	--pent
 		table.insert(char_map.pent.list, "ene_male_kungfumaster_1")
 		table.insert(char_map.pent.list, "ene_male_kungfumaster_2")
 	--ranc
-		table.insert(char_map.ranc.list, "ene_male_ranc_ranger_03")
-		table.insert(char_map.ranc.list, "ene_male_ranc_ranger_04")	
+		table.insert(char_map.ranc.list, "ene_cop_1")
+		table.insert(char_map.ranc.list, "ene_cop_2")	
+		table.insert(char_map.ranc.list, "ene_cop_3")
+		table.insert(char_map.ranc.list, "ene_cop_4")
 	--vip
 		char_map.vip = {
 			path = "units/pd2_dlc_vip/characters/",

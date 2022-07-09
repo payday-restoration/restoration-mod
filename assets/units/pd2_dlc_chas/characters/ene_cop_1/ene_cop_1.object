@@ -1,0 +1,241 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" orientation_object="root_point"/>
+	
+
+	<sequence_manager file="units/payday2/characters/ragdoll"/>
+	 
+	<animation_def name="anims/units/enemies/cop/cop_def"/>
+	
+
+	<bodies>
+		
+
+		<body collision_class="ragdoll" enabled="true" keyframed="true" name="mover_blocker" template="mover_blocker">
+			<object name="root_point"/>
+			<object collision_type="capsule" name="c_capsule_mover_blocker"/>
+		</body>
+		
+
+		<body collision_class="ragdoll" enabled="true" friction="0.6" name="body" template="character">
+			<object name="Spine1"/>
+			<object collision_type="capsule" name="c_capsule_body"/>
+		</body>
+		
+
+		<body collision_class="ragdoll" enabled="true" friction="0.6" name="head" template="character">
+			<object name="Head"/>
+			<object collision_type="sphere" name="c_sphere_head"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="0" collision_class="ragdoll" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.01" keyframed="false" lin_damping="0.6" name="rag_Head" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="Neck"/>
+			<object collision_type="sphere" mass="4" name="c_sphere_head_ragdoll" padding="-15"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="0" collision_class="ragdoll" collision_group="1" collision_script_quiet_time="0.5" collision_script_tag="large" enabled="false" friction="0.6" keyframed="false" lin_damping="0.4" name="rag_Hips" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="Hips"/>
+			<object collision_type="capsule" mass="22" name="c_sphere_Hips" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="4 6" collision_class="ragdoll" collision_group="8" collision_script_quiet_time="0.5" collision_script_tag="large" enabled="false" friction="0.6" keyframed="false" lin_damping="0.4" name="rag_Spine" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="Spine"/>
+			<object collision_type="capsule" mass="18" name="c_sphere_Spine" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="4 6" collision_class="ragdoll" collision_group="8" collision_script_quiet_time="0.5" collision_script_tag="large" enabled="false" enter_water_script_tag="medium" friction="0.6" keyframed="false" lin_damping="0.4" name="rag_Spine1" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="Spine1"/>
+			<object collision_type="capsule" mass="18" name="c_sphere_Spine1" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="4 6" collision_class="ragdoll" collision_group="8" collision_script_quiet_time="0.5" collision_script_tag="large" enabled="false" enter_water_script_tag="medium" friction="0.6" keyframed="false" lin_damping="0.4" name="rag_Spine2" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="Spine2"/>
+			<object collision_type="capsule" mass="17" name="c_sphere_Spine2" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="30" collision_class="ragdoll" collision_group="20" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.01" keyframed="false" lin_damping="0.4" name="rag_RightUpLeg" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="RightUpLeg"/>
+			<object collision_type="capsule" mass="22" name="c_capsule_RightUpLeg" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="20" collision_class="ragdoll" collision_group="30" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.01" keyframed="false" lin_damping="0.4" name="rag_LeftUpLeg" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="LeftUpLeg"/>
+			<object collision_type="capsule" mass="22" name="c_capsule_LeftUpLeg" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="1" collision_class="ragdoll" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.01" keyframed="false" lin_damping="0.4" name="rag_RightArm" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="RightArm"/>
+			<object collision_type="capsule" mass="4" name="c_capsule_RightArm" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="1" collision_class="ragdoll" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.01" keyframed="false" lin_damping="0.4" name="rag_LeftArm" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="LeftArm"/>
+			<object collision_type="capsule" mass="4" name="c_capsule_LeftArm" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="8" collision_class="ragdoll" collision_group="4" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.02" keyframed="false" lin_damping="0" name="rag_RightForeArm" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="RightForeArm"/>
+			<object collision_type="capsule" mass="3" name="c_capsule_RightForeArm" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="8" collision_class="ragdoll" collision_group="6" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.02" keyframed="false" lin_damping="0" name="rag_LeftForeArm" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="LeftForeArm"/>
+			<object collision_type="capsule" mass="3" name="c_capsule_LeftForeArm" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="31" collision_class="ragdoll" collision_group="21" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.03" keyframed="false" lin_damping="1" name="rag_RightLeg" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="RightLeg"/>
+			<object collision_type="capsule" mass="6" name="c_capsule_RightLeg" padding="-5"/>
+		</body>
+		
+
+		<body ang_damping="20" collides_with="21" collision_class="ragdoll" collision_group="31" collision_script_quiet_time="0.5" collision_script_tag="small" enabled="false" friction="0.03" keyframed="false" lin_damping="1" name="rag_LeftLeg" ray="block" restitution="0" sweep="true" tag="flesh" template="corpse">
+			<object name="LeftLeg"/>
+			<object collision_type="capsule" mass="6" name="c_capsule_LeftLeg" padding="-5"/>
+		</body>
+	</bodies>
+	
+
+	<constraints>
+		<constraint enabled="false" name="RightArm" type="ragdoll">
+			<param body_a="rag_Spine2" body_b="rag_RightArm"/>
+			<param pivot="position:RightArm"/>
+			<param twist_axis="yaxis:RightArm" twist_freedom="20" twist_max="70" twist_min="-60"/>
+			<param plane_axis="xaxis:RightArm"/>
+			<param cone_freedom="10" cone_y="35" cone_z="40"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="RightForeArm" type="limited_hinge">
+			<param body_a="rag_RightArm" body_b="rag_RightForeArm"/>
+			<param pivot="position:RightForeArm"/>
+			<param axis="yaxis:RightForeArm" max_angle="60" min_angle="-60" twist_freedom="5"/>
+			<param plane_axis="xaxis:RightForeArm"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="LeftArm" type="ragdoll">
+			<param body_a="rag_Spine2" body_b="rag_LeftArm"/>
+			<param pivot="position:LeftArm"/>
+			<param twist_axis="yaxis:LeftArm" twist_freedom="20" twist_max="70" twist_min="-60"/>
+			<param plane_axis="xaxis:LeftArm"/>
+			<param cone_freedom="10" cone_y="35" cone_z="40"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="LeftForeArm" type="limited_hinge">
+			<param body_a="rag_LeftArm" body_b="rag_LeftForeArm"/>
+			<param pivot="position:LeftForeArm"/>
+			<param axis="yaxis:LeftForeArm" max_angle="60" min_angle="-60" twist_freedom="5"/>
+			<param plane_axis="xaxis:LeftForeArm"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="Spine" type="ragdoll">
+			<param body_a="rag_Hips" body_b="rag_Spine"/>
+			<param pivot="position:Spine"/>
+			<param twist_axis="yaxis:Spine" twist_freedom="5" twist_max="5" twist_min="-2"/>
+			<param plane_axis="xaxis:Spine"/>
+			<param cone_freedom="5" cone_y="5" cone_z="3"/>
+			<param damping="1" min_restitution="0" spring_constant="600"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="Spine1" type="ragdoll">
+			<param body_a="rag_Spine1" body_b="rag_Spine"/>
+			<param pivot="position:Spine1"/>
+			<param twist_axis="yaxis:Spine1" twist_freedom="5" twist_max="5" twist_min="-2"/>
+			<param plane_axis="xaxis:Spine1"/>
+			<param cone_freedom="5" cone_y="5" cone_z="5"/>
+			<param damping="1" min_restitution="0" spring_constant="600"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="Spine2" type="ragdoll">
+			<param body_a="rag_Spine2" body_b="rag_Spine1"/>
+			<param pivot="position:Spine2"/>
+			<param twist_axis="yaxis:Spine2" twist_freedom="5" twist_max="5" twist_min="-2"/>
+			<param plane_axis="xaxis:Spine2"/>
+			<param cone_freedom="5" cone_y="5" cone_z="5"/>
+			<param damping="1" min_restitution="0" spring_constant="600"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="Head" type="ragdoll">
+			<param body_a="rag_Spine2" body_b="rag_Head"/>
+			<param pivot="position:Neck"/>
+			<param twist_axis="yaxis:Neck" twist_freedom="40" twist_max="40" twist_min="-40"/>
+			<param plane_axis="xaxis:Neck"/>
+			<param cone_freedom="3" cone_y="25" cone_z="25"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="RightUpLeg" type="ragdoll">
+			<param body_a="rag_Hips" body_b="rag_RightUpLeg"/>
+			<param pivot="position:RightUpLeg"/>
+			<param twist_axis="yaxis:RightUpLeg" twist_freedom="5" twist_max="10" twist_min="-10"/>
+			<param plane_axis="xaxis:RightUpLeg"/>
+			<param cone_freedom="5" cone_y="15" cone_z="15"/>
+			<param damping="1" min_restitution="0" spring_constant="350"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="LeftUpLeg" type="ragdoll">
+			<param body_a="rag_Hips" body_b="rag_LeftUpLeg"/>
+			<param pivot="position:LeftUpLeg"/>
+			<param twist_axis="yaxis:LeftUpLeg" twist_freedom="5" twist_max="10" twist_min="-10"/>
+			<param plane_axis="xaxis:LeftUpLeg"/>
+			<param cone_freedom="5" cone_y="15" cone_z="15"/>
+			<param damping="1" min_restitution="0" spring_constant="350"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="RightLeg" type="limited_hinge">
+			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
+			<param pivot="position:RightLeg"/>
+			<param axis="xaxis:RightLeg" max_angle="60" min_angle="-40" twist_freedom="5"/>
+			<param plane_axis="yaxis:RightLeg"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+		
+
+		<constraint enabled="false" name="LeftLeg" type="limited_hinge">
+			<param body_a="rag_LeftUpLeg" body_b="rag_LeftLeg"/>
+			<param pivot="position:LeftLeg"/>
+			<param axis="xaxis:LeftLeg" max_angle="60" min_angle="-40" twist_freedom="5"/>
+			<param plane_axis="yaxis:LeftLeg"/>
+			<param damping="1" min_restitution="0" spring_constant="200"/>
+		</constraint>
+	</constraints>
+	
+
+	<decal_surfaces default_material="flesh"/>
+	
+
+	<graphics>
+		<graphic_group culling_object="co_box" enabled="true" name="character">
+			<object enabled="true" name="s_body" shadow_caster="true"/>
+			<object enabled="true" name="g_arms"/>
+			<object enabled="true" name="g_body"/>
+			<object enabled="true" name="g_hair"/>
+			<object enabled="true" name="g_head"/>
+		</graphic_group>
+	</graphics>
+</dynamic_object>

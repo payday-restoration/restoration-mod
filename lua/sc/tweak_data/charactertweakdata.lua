@@ -2827,6 +2827,14 @@ function CharacterTweakData:_init_taser(presets)
 		taunt = true
 	}
 	table.insert(self._enemy_list, "taser_titan")
+	
+	self.taser_titan_reaper = deep_clone(self.taser_titan)
+	self.taser_titan_reaper.marshal_logic = true
+	self.taser_titan_reaper.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		taunt = true
+	}	
 end
 
 function CharacterTweakData:_init_boom(presets)		

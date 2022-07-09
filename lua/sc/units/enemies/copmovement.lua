@@ -61,6 +61,7 @@ action_variants.phalanx_minion_assault.walk = ShieldCopActionWalk
 action_variants.spooc_titan = security_variant
 action_variants.autumn = security_variant
 action_variants.taser_titan = clone(security_variant)
+action_variants.taser_titan_reaper = clone(security_variant)
 action_variants.boom_titan = clone(security_variant)
 
 function CopMovement:post_init()

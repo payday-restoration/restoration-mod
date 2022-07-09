@@ -378,7 +378,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5	
 	
 		--Sniper Trail for Snipers
-		self.m14_sniper_npc.sniper_trail = true		
+		self.m14_sniper_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")
 	end
 	
 	function WeaponTweakData:_set_sm_wish()
@@ -420,7 +420,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = 3
 	
 		--Sniper Trail for Snipers
-		self.m14_sniper_npc.sniper_trail = true
+		self.m14_sniper_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")
 	end
 	
 	function WeaponTweakData:_init_data_npc_melee()
@@ -1413,7 +1413,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.scar_npc.alert_size = 2500
 		self.scar_npc.suppression = 2.8
 		self.scar_npc.FIRE_MODE = "single"
-		self.scar_npc.titan_trail = true
+		self.scar_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")
 		self.scar_npc.usage = "is_dmr"
 		self.scar_npc.anim_usage = "is_rifle"	
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
@@ -1424,8 +1424,17 @@ local job = Global.level_data and Global.level_data.level_id
 		--US Marshal DMR
 		self.dmr_npc = deep_clone(self.scar_npc)
 		self.dmr_npc.sounds.prefix = "saint_victor_npc"
-		self.dmr_npc.titan_trail = true
+		self.dmr_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")
 		self.dmr_npc.trail = nil
+		
+		--Type-7
+		self.type_7_npc = deep_clone(self.scar_npc)		
+		self.type_7_npc.DAMAGE = 1
+		self.type_7_npc.CLIP_AMMO_MAX = 10
+		self.type_7_npc.sounds.prefix = "saint_victor_npc"		
+		--Needs a new muzzleflash + Trail effect pls
+		--self.type_7_npc.muzzleflash =  Idstring("effects/payday2/particles/character/taser_hittarget")
+		self.type_7_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")
 	end	
 	
 	function WeaponTweakData:_init_data_m249_npc()

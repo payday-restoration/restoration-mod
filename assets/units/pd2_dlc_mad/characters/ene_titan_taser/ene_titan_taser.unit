@@ -15,7 +15,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="taser_titan" />
+			<var name="_tweak_table" value="taser_titan_reaper" />
 			<var name="_default_weapon_id" value="gauss_gun" />
 		</extension>
 		<extension name="inventory" class="CopInventory" >

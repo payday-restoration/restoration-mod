@@ -12,13 +12,8 @@ Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 		self._use_armor_piercing = true
 	end
 
-	local trail = Idstring("effects/particles/weapons/weapon_trail")
-	if weapon_tweak and weapon_tweak.sniper_trail then
-		trail = Idstring("effects/particles/weapons/sniper_trail_sc")
-	elseif weapon_tweak and weapon_tweak.titan_trail then
-		trail = Idstring("effects/particles/weapons/titan_trail_sc")
-	end
-
+	local trail = weapon_tweak.trail_effect or Idstring("effects/particles/weapons/weapon_trail")
+	
 	self._trail_effect_table = {
 		effect = trail,
 		position = Vector3(),

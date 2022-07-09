@@ -276,6 +276,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.city_swat_titan.attack = MarshalLogicAttack
 	CopBrain._logic_variants.weekend_lmg = clone(security_variant)
 	CopBrain._logic_variants.weekend_lmg.attack = MarshalLogicAttack		
+	CopBrain._logic_variants.taser_titan_reaper = clone(security_variant)
+	CopBrain._logic_variants.taser_titan_reaper.attack = MarshalLogicAttack			
 	
 	--Set up boss logics
 	CopBrain._logic_variants.mobster_boss = CopBrain._logic_variants.triad_boss

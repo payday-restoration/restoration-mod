@@ -37,6 +37,7 @@ StatisticsManager.special_unit_ids = {
 	"phalanx_minion_assault",
 	"spooc_titan",
 	"taser_titan",
+	"taser_titan_reaper",
 	"autumn"
 }
 
@@ -239,6 +240,13 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}	
+	self._defaults.killed.taser_titan_reaper = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}			
 	self._defaults.killed.autumn = {
 			count = 0,
 			head_shots = 0,

@@ -2,17 +2,42 @@
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_reaper" force="false" />
 	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_reaper_df" force="false"/>
 	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_reaper" force="false" />
+	
 	<!--AK103-->	
-	<unit_obj			path="units/pd2_dlc_mad/weapons/wpn_npc_ak103/wpn_npc_ak103" load="true" force="false"/>
+	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_ak103/wpn_npc_ak103" load="true" force="false"/>
+	
+	<!--Russian AK101+GP for Grenadier-->	
+	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" force="false"/>
+	
+	<!--Taser AK47-->	
+	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_ak47_taser/wpn_npc_ak47_taser" force="false"/>	
+
+	<!--Sniper-->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" force="false"/>	
+	
+	<!--AK102-->	
+	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_ak102/wpn_npc_ak102" load="false" force="false"/>
 	
 	<!--Fort 500-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500" load="false" force="false"/>
-
+	
 	<!--AKS 74U-->	
-	<unit_obj			path="units/pd2_dlc_mad/weapons/wpn_npc_aksu/wpn_npc_aksu" load="false" force="false"/>
+	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu" load="false" force="false"/>
+	
+	<!--SR2-->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc" load="false" force="false"/>
+
+	<!--RPK-->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc" load="false" force="false"/>
+	
+	<!--ASVAL -->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" load="false" force="false"/>
+	
+	<!--Vityaz -->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" load="false" force="false"/>
 	
 	<!--Vityaz Tactical-->	
-	<unit_obj			path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical" load="false" force="false"/>
+	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical" load="false" force="false"/>
 	
 	<!--PL14-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14" load="false" force="false"/>
@@ -476,6 +501,19 @@
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2_husk" force="false" load="true"/>
 	
 	<df_nm				path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_veteran_2" force="false"/>
+
+	<!-- test subject -->
+	<object				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<model				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false" load="true"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject_contour" force="false"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject_husk" force="false" load="true"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_df" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_head_df" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_nm" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_head_nm" force="false"/>
 	
 	<!--Titan HRT-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
@@ -495,7 +533,7 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>	
 	
 	<!--Titan HRT SR2-->	
-	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="true" force="false"/>			
+	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="true" force="false"/>			
 		
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
 	

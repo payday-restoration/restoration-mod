@@ -183,111 +183,91 @@ function CopBrain:sync_net_event(event_id, peer)
 	end
 end
 
-local old_init = CopBrain.init
-local old_update = CopBrain.update
-local logic_variants = {
-	security = {
-		idle = CopLogicIdle,
-		attack = CopLogicAttack,
-		travel = CopLogicTravel,
-		inactive = CopLogicInactive,
-		intimidated = CopLogicIntimidated,
-		arrest = CopLogicArrest,
-		guard = CopLogicGuard,
-		flee = CopLogicFlee,
-		sniper = CopLogicSniper,
-		trade = CopLogicTrade,
-		phalanx = CopLogicPhalanxMinion
-	}
-}
+local logic_variants = CopBrain._logic_variants
 local security_variant = logic_variants.security
-function CopBrain:init(unit)
-	old_init(self, unit)
-	CopBrain._logic_variants.dave = security_variant
-	CopBrain._logic_variants.cop_civ = security_variant
-	CopBrain._logic_variants.cop_forest = security_variant
-	CopBrain._logic_variants.gensec_guard = security_variant
-	CopBrain._logic_variants.fbi_female = security_variant
-	CopBrain._logic_variants.hrt = security_variant
-	CopBrain._logic_variants.fbi_swat_vet = security_variant
-	CopBrain._logic_variants.city_swat_guard = security_variant
-	CopBrain._logic_variants.city_swat_titan_assault = security_variant
-	CopBrain._logic_variants.skeleton_swat_titan = security_variant
-	CopBrain._logic_variants.weekend = security_variant
-	CopBrain._logic_variants.boom_summers = security_variant
-	CopBrain._logic_variants.taser_summers = clone(security_variant)
-	CopBrain._logic_variants.medic_summers = security_variant
-	CopBrain._logic_variants.fbi_vet = security_variant
-	CopBrain._logic_variants.spooc_gangster = clone(security_variant)
-	CopBrain._logic_variants.spooc_gangster.idle = SpoocLogicIdle
-	CopBrain._logic_variants.spooc_gangster.attack = SpoocLogicAttack	
-	CopBrain._logic_variants.fbi_vet_boss = security_variant
-	CopBrain._logic_variants.vetlod = security_variant	
-	CopBrain._logic_variants.meme_man = security_variant	
-	CopBrain._logic_variants.meme_man_shield = clone(security_variant)
-	CopBrain._logic_variants.meme_man_shield.attack = ShieldLogicAttack
-	CopBrain._logic_variants.meme_man_shield.intimidated = nil
-	CopBrain._logic_variants.meme_man_shield.flee = nil	
-	CopBrain._logic_variants.spring = clone(security_variant)
-	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
-	CopBrain._logic_variants.enforcer = clone(security_variant)
-	CopBrain._logic_variants.enforcer.attack = TankCopLogicAttack
-	CopBrain._logic_variants.enforcer_assault = clone(security_variant)
-	CopBrain._logic_variants.enforcer_assault.attack = TankCopLogicAttack	
-	CopBrain._logic_variants.headless_hatman = clone(security_variant)
-	CopBrain._logic_variants.headless_hatman.attack = TankCopLogicAttack	
-	CopBrain._logic_variants.summers = clone(security_variant)
-	CopBrain._logic_variants.summers.attack = TankCopLogicAttack
-	CopBrain._logic_variants.tank_hw_black = clone(security_variant)
-	CopBrain._logic_variants.tank_hw_black.attack = TankCopLogicAttack	
-	CopBrain._logic_variants.tank_titan = clone(security_variant)
-	CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
-	CopBrain._logic_variants.tank_titan_assault = clone(security_variant)
-	CopBrain._logic_variants.tank_titan_assault.attack = TankCopLogicAttack
-	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
-	CopBrain._logic_variants.headless_hatman.phalanx = CopLogicPhalanxVip
-	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
-	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
-	CopBrain._logic_variants.tank_biker = clone(security_variant)
-	CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
-	CopBrain._logic_variants.biker_guard = security_variant
-	CopBrain._logic_variants.phalanx_minion_assault = clone(security_variant)
-	CopBrain._logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack
-	CopBrain._logic_variants.phalanx_minion_assault.intimidated = nil
-	CopBrain._logic_variants.phalanx_minion_assault.flee = nil
-	CopBrain._logic_variants.spooc_titan = clone(security_variant)
-	CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
-	CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
-	CopBrain._logic_variants.taser_titan = clone(security_variant)
-	CopBrain._logic_variants.autumn = clone(security_variant)	
-	CopBrain._logic_variants.boom_titan = clone(security_variant)
-	
-	CopBrain._logic_variants.heavy_swat_sniper = clone(security_variant)
-	CopBrain._logic_variants.heavy_swat_sniper.attack = MarshalLogicAttack
-	CopBrain._logic_variants.weekend_dmr = clone(security_variant)
-	CopBrain._logic_variants.weekend_dmr.attack = MarshalLogicAttack
-	CopBrain._logic_variants.boom = clone(security_variant)
-	CopBrain._logic_variants.boom.attack = MarshalLogicAttack
-	CopBrain._logic_variants.hrt_titan = clone(security_variant)
-	CopBrain._logic_variants.hrt_titan.attack = MarshalLogicAttack	
-	CopBrain._logic_variants.omnia_lpf = clone(security_variant)
-	CopBrain._logic_variants.omnia_lpf.attack = MarshalLogicAttack		
-	CopBrain._logic_variants.city_swat_titan = clone(security_variant)
-	CopBrain._logic_variants.city_swat_titan.attack = MarshalLogicAttack
-	CopBrain._logic_variants.weekend_lmg = clone(security_variant)
-	CopBrain._logic_variants.weekend_lmg.attack = MarshalLogicAttack		
-	CopBrain._logic_variants.taser_titan_reaper = clone(security_variant)
-	CopBrain._logic_variants.taser_titan_reaper.attack = MarshalLogicAttack			
-	
-	--Set up boss logics
-	CopBrain._logic_variants.mobster_boss = CopBrain._logic_variants.triad_boss
-	CopBrain._logic_variants.chavez_boss = CopBrain._logic_variants.triad_boss
-	CopBrain._logic_variants.hector_boss = CopBrain._logic_variants.triad_boss
-	CopBrain._logic_variants.drug_lord_boss = CopBrain._logic_variants.triad_boss
-	CopBrain._logic_variants.biker_boss = CopBrain._logic_variants.triad_boss
 
-	
-end
+logic_variants.dave = security_variant
+logic_variants.cop_civ = security_variant
+logic_variants.cop_forest = security_variant
+logic_variants.gensec_guard = security_variant
+logic_variants.fbi_female = security_variant
+logic_variants.hrt = security_variant
+logic_variants.fbi_swat_vet = security_variant
+logic_variants.city_swat_guard = security_variant
+logic_variants.city_swat_titan_assault = security_variant
+logic_variants.skeleton_swat_titan = security_variant
+logic_variants.weekend = security_variant
+logic_variants.boom_summers = security_variant
+logic_variants.taser_summers = clone(security_variant)
+logic_variants.medic_summers = security_variant
+logic_variants.fbi_vet = security_variant
+logic_variants.spooc_gangster = clone(security_variant)
+logic_variants.spooc_gangster.idle = SpoocLogicIdle
+logic_variants.spooc_gangster.attack = SpoocLogicAttack	
+logic_variants.fbi_vet_boss = security_variant
+logic_variants.vetlod = security_variant	
+logic_variants.meme_man = security_variant	
+logic_variants.meme_man_shield = clone(security_variant)
+logic_variants.meme_man_shield.attack = ShieldLogicAttack
+logic_variants.meme_man_shield.intimidated = nil
+logic_variants.meme_man_shield.flee = nil	
+logic_variants.spring = clone(security_variant)
+logic_variants.spring.attack = TankCopLogicAttack
+logic_variants.enforcer = clone(security_variant)
+logic_variants.enforcer.attack = TankCopLogicAttack
+logic_variants.enforcer_assault = clone(security_variant)
+logic_variants.enforcer_assault.attack = TankCopLogicAttack	
+logic_variants.headless_hatman = clone(security_variant)
+logic_variants.headless_hatman.attack = TankCopLogicAttack	
+logic_variants.summers = clone(security_variant)
+logic_variants.summers.attack = TankCopLogicAttack
+logic_variants.tank_hw_black = clone(security_variant)
+logic_variants.tank_hw_black.attack = TankCopLogicAttack	
+logic_variants.tank_titan = clone(security_variant)
+logic_variants.tank_titan.attack = TankCopLogicAttack
+logic_variants.tank_titan_assault = clone(security_variant)
+logic_variants.tank_titan_assault.attack = TankCopLogicAttack
+logic_variants.spring.phalanx = CopLogicPhalanxVip
+logic_variants.headless_hatman.phalanx = CopLogicPhalanxVip
+logic_variants.summers.phalanx = CopLogicPhalanxVip
+logic_variants.taser_summers.attack = TaserLogicAttack
+logic_variants.tank_biker = clone(security_variant)
+logic_variants.tank_biker.attack = TankCopLogicAttack
+logic_variants.biker_guard = security_variant
+logic_variants.phalanx_minion_assault = clone(security_variant)
+logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack
+logic_variants.phalanx_minion_assault.intimidated = nil
+logic_variants.phalanx_minion_assault.flee = nil
+logic_variants.spooc_titan = clone(security_variant)
+logic_variants.spooc_titan.idle = SpoocLogicIdle
+logic_variants.spooc_titan.attack = SpoocLogicAttack
+logic_variants.taser_titan = clone(security_variant)
+logic_variants.autumn = clone(security_variant)	
+logic_variants.boom_titan = clone(security_variant)
+
+logic_variants.heavy_swat_sniper = clone(security_variant)
+logic_variants.heavy_swat_sniper.attack = MarshalLogicAttack
+logic_variants.weekend_dmr = clone(security_variant)
+logic_variants.weekend_dmr.attack = MarshalLogicAttack
+logic_variants.boom = clone(security_variant)
+logic_variants.boom.attack = MarshalLogicAttack
+logic_variants.hrt_titan = clone(security_variant)
+logic_variants.hrt_titan.attack = MarshalLogicAttack	
+logic_variants.omnia_lpf = clone(security_variant)
+logic_variants.omnia_lpf.attack = MarshalLogicAttack		
+logic_variants.city_swat_titan = clone(security_variant)
+logic_variants.city_swat_titan.attack = MarshalLogicAttack
+logic_variants.weekend_lmg = clone(security_variant)
+logic_variants.weekend_lmg.attack = MarshalLogicAttack		
+logic_variants.taser_titan_reaper = clone(security_variant)
+logic_variants.taser_titan_reaper.attack = MarshalLogicAttack			
+
+--Set up boss logics
+logic_variants.mobster_boss = logic_variants.triad_boss
+logic_variants.chavez_boss = logic_variants.triad_boss
+logic_variants.hector_boss = logic_variants.triad_boss
+logic_variants.drug_lord_boss = logic_variants.triad_boss
+logic_variants.biker_boss = logic_variants.triad_boss
 
 -- Update immediately once we have our pathing results instead of waiting for the next update
 -- Not posthooking _add_pathing_result instead of these two just in case the path gets modified before navlink delays are applied in clbk_pathing_results

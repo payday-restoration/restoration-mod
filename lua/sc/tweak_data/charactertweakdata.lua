@@ -2835,6 +2835,7 @@ function CharacterTweakData:_init_taser(presets)
 		power = 1,
 		taunt = true
 	}	
+	table.insert(self._enemy_list, "taser_titan_reaper")
 end
 
 function CharacterTweakData:_init_boom(presets)		

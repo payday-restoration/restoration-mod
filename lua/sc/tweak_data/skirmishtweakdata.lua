@@ -8,7 +8,7 @@ function SkirmishTweakData:_init_special_unit_spawn_limits()
 			tank = 3,
 			taser = 4,
 			boom = 2,
-			spooc = 4,
+			spooc = 3,
 			shield = 4,
 			medic = 3,
 			spring = 1,
@@ -155,18 +155,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
+		10,
+		10,
+		10,
+		10,
+		11,
+		11,
+		11,
 		12,
 		12,
-		12,
-		13,
-		13,
-		14,
-		14,
-		15,
-		15,
-		20,
-		20,
-		25
+		17,
+		17,
+		17
 	}
 
 	skirmish_data.recon.force = {

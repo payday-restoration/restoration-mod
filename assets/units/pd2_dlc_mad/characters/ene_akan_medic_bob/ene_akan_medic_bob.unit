@@ -8,7 +8,7 @@
         <depends_on bnk="soundbanks/regular_vox" />
         <depends_on bnk="soundbanks/special_medic" />
         <depends_on unit="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet" />
-		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" />
     </dependencies>
 
     <extensions>

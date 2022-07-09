@@ -5,7 +5,7 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" />
 	</dependencies>
 
 	<extensions>

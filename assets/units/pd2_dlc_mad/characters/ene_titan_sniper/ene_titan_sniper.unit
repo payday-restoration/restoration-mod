@@ -7,7 +7,7 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
-		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" />
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" />		
 	</dependencies>
 

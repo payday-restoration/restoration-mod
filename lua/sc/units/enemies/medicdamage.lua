@@ -88,14 +88,6 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 	MedicActionHeal:check_achievements()
 
-	if self._unit:base():char_tweak()["custom_voicework"] then
-		local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
-		if voicelines and voicelines["heal"] then
-			local line_to_use = voicelines.heal[math.random(#voicelines.heal)]
-			self._unit:base():play_voiceline(line_to_use)
-		end
-	end
-
 	return true
 
 end

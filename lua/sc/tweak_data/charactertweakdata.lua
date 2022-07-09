@@ -93,8 +93,7 @@ function CharacterTweakData:_init_region_murkywater()
 		taser = "tsr",
 		cloaker = "clk",
 		bulldozer = "bdz",
-		medic = "mdc"
-		--medic = "nothing"
+		medic = "nothing"
 	}
 	self._speech_prefix_p2 = "n"
 end
@@ -577,13 +576,12 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.deathguard = true
 	self.medic.rescue_hostages = false
 	self.medic.no_arrest = true
-	--[[
 	if self:get_ai_group_type() == "murkywater" then
 	    self.medic.custom_voicework = "murky_medic"
 	else	
 	    self.medic.custom_voicework = nil
 	end	
-	--]]
+	
 	self.medic.chatter = {
 		aggressive = true,
 		retreat = true,

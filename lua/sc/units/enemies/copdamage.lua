@@ -1922,16 +1922,6 @@ function CopDamage:heal_unit(unit, override_cooldown)
 			self._unit:contour():flash("medic_show", 0.2)
 		end
 
-		if my_tweak_table.custom_voicework then
-			local voicelines = _G.restoration.BufferedSounds[my_tweak_table.custom_voicework]
-
-			if voicelines["heal"] then
-				local line_to_use = voicelines.heal[math.random(#voicelines.heal)]
-
-				self._unit:base():play_voiceline(line_to_use)
-			end
-		end
-
 		local action_data = {
 			body_part = 1,
 			type = "heal",

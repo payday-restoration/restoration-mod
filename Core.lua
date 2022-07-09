@@ -110,6 +110,7 @@ function restoration:Init()
 		constantine_bank_lvl = restoration.captain_types.spring, --Pacific Bank
 		santas_hardware_store = restoration.captain_types.spring, --Santa Spring Is Coming To Town
 		lvl_friday = restoration.captain_types.spring, --Crashing Capitol
+		bnktower = restoration.captain_types.spring, --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -158,7 +159,11 @@ function restoration:Init()
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	--Increased spawns, should only be reserved for larger maps.
-	restoration.very_large_levels = {}
+	restoration.very_large_levels = {
+		--Custom Heists below--
+		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
+		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
+	}
 	--Increased spawns, slightly less. Ditto
 	restoration.large_levels = {
 		"crojob2", --Bomb Dockyard
@@ -168,10 +173,8 @@ function restoration:Init()
 		"peta", --Goatsim 1
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
-		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"lit1", --California's restoration
 		"lit2", --California's restoration but Payday 3
-		"Skyscraper", --The Skyscraper Heist
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
@@ -180,10 +183,8 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"hwu", --Avalon's Shadow
 		"constantine_smackdown2_lvl", --Truck Hustle
-		"nft_heist", --EN EF TEE HEIST
 		"TonCont", --Armored Transport: Atrium
-		"santas_hardware_store", --Hardware Store but Xmas
-		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
+		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
@@ -225,9 +226,9 @@ function restoration:Init()
 		"sh_raiders", --Safehouse Raiders 
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
-		"constantine_apartment_lvl", --Concrete Jungle 
 		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"constantine_clubhouse_lvl", --Smuggler's Den 
+		"nft_heist", --EN EF TEE HEIST
 		"branchbank_meth", --Bank Heist: Meth
 		"tj_htsb", --Harvest and Trustee: Southern Branch 
 		"hntn", --harvest and trustee north
@@ -252,6 +253,7 @@ function restoration:Init()
 		"thechase",
 		"daymare", --Hell's Nightmare
 		"trop", --Tropical Treasure 
+		"constantine_apartment_lvl", --Concrete Jungle 
 		"constantine_smackdown_lvl", --Smackdown
 		"nmh_res" --Resmod edit of no mercy.
 	}	

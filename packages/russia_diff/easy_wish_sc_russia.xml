@@ -231,7 +231,6 @@
 	
 	<!--City UMP-->
 	<object				path="units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3" />
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3" />
 	<model				path="units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>
@@ -274,7 +273,6 @@
 	<!-- specials-->
 	<!--Taser-->
 	<object				path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1" load="true"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>

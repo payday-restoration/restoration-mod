@@ -54,6 +54,8 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
 	ids_func("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),
+	ids_func("units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2"),
+	ids_func("units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
 	ids_func("units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_husk"),	
 	ids_func("units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_r870"),

@@ -236,7 +236,6 @@
 	<!-- specials-->
 	<!--Taser-->
 	<object				path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1" load="true"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1"/>

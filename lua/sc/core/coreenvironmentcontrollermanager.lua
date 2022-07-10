@@ -42,8 +42,14 @@ function CoreEnvironmentControllerManager:set_post_composite(t, dt)
 	end
 end
 
-local init_orig = CoreEnvironmentControllerManager.init
 function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)
 	self._chromatic_enabled = enabled
 
+	if self._material then
+		if self._chromatic_enabled then
+			self._material:set_variable(Idstring("chromatic_amount"), self._base_chromatic_amount)
+		else
+			self._material:set_variable(Idstring("chromatic_amount"), 0)
+		end
+	end
 end

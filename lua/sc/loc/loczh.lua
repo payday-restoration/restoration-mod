@@ -1,3 +1,13 @@
+--[[
+This code is to detect one of my mods, which helps me keep up the translation of restoration mod when I'm not able to pull a request on github.
+Or The update is so less that I should not bother you guys in that case.
+I tried to make my mod have a lower priorty, but it didn't work, so I can only do something here.
+THIS CAN RLY MAKES MY WORK MUCH MORE CONVENIENT, so PLZ don't delete it since it only affects Chinese.  --]]
+if ChinStringFixes and ChinStringFixes.settings and ChinStringFixes.settings.Resmod_Compat then
+	return
+end
+
+
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
@@ -16,8 +26,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["res_credits_help"] = "查看恢复MOD的制作人员",
 
 		["Warning_overhaul_title"] = "警告: 游戏正在关闭以保存数据",
-		["dialog_show_overhaul_dialog"] = "你正在关闭恢复MOD。 一般不推荐这样做，如果你不想继续体验大修，正确的做法是把恢复MOD移出你的mods文件夹。\n\n你的游戏将会在 $TIME 秒后自动关闭，或在你点击\"确认\"时关闭。",
-		["dialog_enable_overhaul_dialog"] = "你正在启用恢复MOD。 恢复MOD在安装后通常是永远启用的，它只能通过被移除你的mods文件夹来关闭。\n\n你的游戏将会在 $TIME 秒后自动关闭，或在你点击\"确认\"时关闭。",
+		["dialog_show_overhaul_dialog"] = "你正在关闭恢复MOD。一般不推荐这样做，如果你不想继续体验大修，正确的做法是把恢复MOD移出你的mods文件夹。\n\n你的游戏将会在 $TIME 秒后自动关闭，或在你点击\"确认\"时关闭。",
+		["dialog_enable_overhaul_dialog"] = "你正在启用恢复MOD。恢复MOD在安装后通常是永远启用的，它只能通过被移除你的mods文件夹来关闭。\n\n你的游戏将会在 $TIME 秒后自动关闭，或在你点击\"确认\"时关闭。",
 
 		["res_saveboost"] = "按住 $BTN_INTERACT 以一键升到100级",
 
@@ -74,7 +84,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModEnv_FRIENDTitleID"] = "疤面山庄",
 		["RestorationModEnv_FRIENDDescID"] = "为 疤面山庄 选择一种环境",
 		["RestorationModINFOHUDOptionsButtonTitleID"] = "Buff追踪器",
-		["RestorationModINFOHUDOptionsButtonDescID"] = "在屏幕左侧显示当前技能及其具体信息数据。 不需要启用 Alpha UI。",
+		["RestorationModINFOHUDOptionsButtonDescID"] = "在屏幕左侧显示当前技能及其具体信息数据。不需要启用 Alpha UI。",
 		["RestorationModInfo_HudTitleID"] = "启用 Buff追踪器",
 		["RestorationModInfo_HudDescID"] = "启用或停用 Buff追踪器 的UI界面",
 		["RestorationModInfo_SizeTitleID"] = "图标大小",
@@ -127,12 +137,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorDescID"] = "将被逮捕前最后一次倒地时角色边框的颜色设置为 color_sin_classic*.",
 		["RestorationModNoBleedoutTiltTitleID"] = "取消倒地视角的倾斜",
 		["RestorationModNoBleedoutTiltDescID"] = "倒地后玩家的视角将不再倾斜",
-		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
-		["RestorationModADSTransitionStyleDescID"] = "Change the \"animation\" style of aiming down your sights.",
-		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Mode",
-		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
-		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
-		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires reload.",
+		["RestorationModADSTransitionStyleTitleID"] = "机瞄风格",
+		["RestorationModADSTransitionStyleDescID"] = "改变你使用机瞄的动作风格。",
+		["RestorationModGCGPYPMMSACTitleID"] = "绝对原始模式",  --may need improved
+		["RestorationModGCGPYPMMSACDescID"] = "关闭来自遥远银河系的武器配件。重启劫案生效。",  --may need improved
+		["RestorationModWpnCatTitleID"] = "购买菜单分类方式",
+		["RestorationModWpnCatDescID"] = "改变武器在购买菜单的分类方式。重启游戏生效。",
 		["RestorationModClassicMoviesTitleID"] = "PD:TH经典界面",
 		["RestorationModClassicMoviesDescID"] = "选择是否在任务简报界面采用PD:TH的经典页面(仅适用于经典劫案)",
 		
@@ -140,12 +150,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQuietRainTitleID"] = "减轻雨声",
 		["RestorationModQuietRainDescID"] = "在下雨的劫案中雨声不会那么嘈杂",
 		
-		["vanilla_on_rails"] = "Default/On-Rails",
-		["kf_mw_style"] = "KF1/CoD Style",
-		["tilt_in"] = "Tilted In",
+		["vanilla_on_rails"] = "默认/原版",
+		["kf_mw_style"] = "杀戮间1/使命召唤",
+		["tilt_in"] = "Tilted体感控制器",
 
-		["base_wpn_cat"] = "Divide by base categories",
-		["sub_wpn_cat"] = "Divide by sub-categories",
+		["base_wpn_cat"] = "基本分类方式",
+		["sub_wpn_cat"] = "细节分类方式",
 
 		["default"] = "默认",
 		["random"] = "随机",
@@ -176,7 +186,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["wheresthevan"] = "Where's The Van",
 		["menu_jukebox_heist_ponr"] = "Point Of No Return",
 		["RestorationModPaintingsTitleID"] = "生成未被使用的画",
-		["RestorationModPaintingsDescID"] = "允许或禁止在 美术馆-画廊 中生成原版未被使用的画作。 仅作为房主时有效。",
+		["RestorationModPaintingsDescID"] = "允许或禁止在 美术馆-画廊 中生成原版未被使用的画作。仅作为房主时有效。",
 		["RestorationModMainHUDTitleID"] = "启用 Alpha HUD",
 		["RestorationModMainHUDDescID"] = "完全启用或停用 Alpha HUD",
 		["RestorationModWaypointsTitleID"] = "Alpha路径点",
@@ -212,7 +222,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSCOptionsButtonTitleID"] = "恢复大修设置",
 		["RestorationModSCOptionsButtonDescID"] = "恢复MOD的大修的设置",
 		["RestorationModSCTitleID"] = "完全大修(DEBUG)",
-		["RestorationModSCDescID"] = "启用或禁用恢复mod的完全游戏更改。切换此选项将自动退出游戏，以防止存档损坏。 ",
+		["RestorationModSCDescID"] = "启用或禁用恢复mod的完全游戏更改。切换此选项将自动退出游戏，以防止存档损坏。",
 		["RestorationModHolidayTitleID"] = "节日活动",
 		["RestorationModHolidayDescID"] = "开启或关闭 节日活动 对大修的影响",
 		["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
@@ -693,6 +703,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
 		["menu_jukebox_resmusic_razormindbeta"] = "Razormind (Beta Version)",
 		["menu_jukebox_screen_resmusic_razormindbeta"] = "Razormind (Beta Version)",
+		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
+		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
+		["menu_jukebox_resmusic_doublecrossbeta"] = "Double Cross (Beta Version)",
+		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (Beta Version)",
+		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Beta Version)",
+		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Beta Version)",
+		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
+		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Old Version)",
+		["menu_jukebox_resmusic_razormindbeta"] = "Razormind (Beta Version)",
+		["menu_jukebox_screen_resmusic_razormindbeta"] = "Razormind (Beta Version)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -908,7 +928,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Xmas Hoxout and Breaking Feds
 		["heist_xmn_hox"] = "霍斯顿越狱记圣诞版",
 		["heist_xmn_hox1"] = "越狱圣诞版",
-		["heist_xmn_hox_1_brief"] = "牙医为霍斯顿安排了一次重新审判。呃，不是你，小霍，我是说老的那个……嗯，名字的事以后再说。审判会很快的。按他的犯罪记录来看他就甭想再出来了，不过这不是关键。关键是他现在要被转监，而我们可以在听证会结束之后的半路上把他救出来，就当是对联邦法律系统说句小小的\"去你妈的\"。 $NL;$NL;计划听起来就很火爆：我们把法院的墙炸开，带上老霍撤退。$NL;$NL;整个区域都被封锁了。他们肯定知道事情会有变故。都给我备好家伙，再另外多带点弹药。",
+		["heist_xmn_hox_1_brief"] = "牙医为霍斯顿安排了一次重新审判。呃，不是你，小霍，我是说老的那个……嗯，名字的事以后再说。审判会很快的。按他的犯罪记录来看他就甭想再出来了，不过这不是关键。关键是他现在要被转监，而我们可以在听证会结束之后的半路上把他救出来，就当是对联邦法律系统说句小小的\"去你妈的\"。$NL;$NL;计划听起来就很火爆：我们把法院的墙炸开，带上老霍撤退。$NL;$NL;整个区域都被封锁了。他们肯定知道事情会有变故。都给我备好家伙，再另外多带点弹药。",
 		["heist_xmn_hox2"] = "证物搜寻圣诞版",
 		["heist_xmn_hox_2_brief"] = "好啊，姑娘小伙们，感谢你们把爷从那救出来，但打一开始老子就不该进去。是有人下了套，我非常肯定。他们不应该会了解那么多，傻帽条子做事不可能有那么精明。我们中有内鬼，有人想搞死我。而我一定要找出来是谁。这可不是简单的活，但不入虎穴焉得虎子对吧？别跟我说什么要靠秘密交易或者合约之类的废话，我们要直捣黄龙，去联邦干预局最大的安乐窝。老子要看看到底是谁搞的我。",
 		["heist_xmn_hox_brief"] = "牙医为霍斯顿安排了一次重新审判，而我们可以在听证会结束之后的半路上把他救出来。计划听起来就很火爆：我们把法院的墙炸开，带上老霍撤退。$NL;$NL;»救出霍斯顿$NL;$NL;»将霍斯顿带上武装卡车$NL;$NL;»护送武装卡车前进$NL;$NL;»与霍斯顿一同撤离",
@@ -1156,7 +1176,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_w_socom_desc"] = "Jackal的专属武器，经典.45 ACP口径与时尚设计的完美结合。",
 		
 		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",		
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "欲擎此枪必承其重。",		
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "弗拉德的母国",
@@ -1180,32 +1200,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_m203_weapon_sc_desc"] = "按住 $BTN_BIPOD 切换到榴弹发射器。",
 
 		--Gecko Pistol
-		["bm_tranq_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出麻醉弹虚弱目标。\n\n这把枪使用麻醉弹造成持续伤害。",
-		["bm_tranq_x_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出麻醉弹虚弱目标。\n\n这把枪使用麻醉弹造成持续伤害。",
+		["bm_tranq_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用镇静弹造成持续伤害。",
+		["bm_tranq_x_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用镇静弹造成持续伤害。",
 		--Igor (APS)
-		["bm_stech_sc_desc"] = "由于这款冲锋手枪相对更重，射速也更慢使其不幸失宠。 它的笨重使其以隐蔽性为代价换来了更好的可控性。",
-		["bm_x_stech_sc_desc"] = "由于这款冲锋手枪相对更重，射速也更慢使其不幸失宠。 它们的笨重使其以隐蔽性为代价换来了更好的可控性。",
+		["bm_stech_sc_desc"] = "由于这款冲锋手枪相对更重，射速也更慢使其不幸失宠。它的笨重使其以隐蔽性为代价换来了更好的可控性。",
+		["bm_x_stech_sc_desc"] = "由于这款冲锋手枪相对更重，射速也更慢使其不幸失宠。它们的笨重使其以隐蔽性为代价换来了更好的可控性。",
 		--Chimano Compact
 		["bm_jowi_sc_desc"] = "一款为了极致的隐蔽性几乎牺牲了其余一切性能的芝加哥手枪。\n\n有传言道威克曾手持这把枪向俄罗斯黑帮寻仇。",
 		["bm_x_jowi_sc_desc"] = "既然都这么小只了，为什么不干脆双持呢？虽然双持是种致敬威克个人偏好的错误选择。",
 		--Glock 18c
-		["bm_g18c_sc_desc"] = "全自动澳洲滋水枪。 虽然难于操控，但在近距离作战极具杀伤力。",
-		["bm_x_g18c_sc_desc"] = "单持火力爽，双持火葬场。 小心后坐力！",
+		["bm_g18c_sc_desc"] = "全自动澳洲滋水枪。虽然难于操控，但在近距离作战极具杀伤力。",
+		["bm_x_g18c_sc_desc"] = "单持火力爽，双持火葬场。小心后坐力！",
 		--CZ 75
-		["bm_czech_sc_desc"] = "曾被誉为“奇迹之九”, 一种有着优秀的人体工程学设计与良好手感的手枪。 广泛应用于世界各大反恐组织。",
-		["bm_x_czech_sc_desc"] = "又一个劝退冲锋手枪的例子。 你怎么可能轻松给这俩玩意换弹？",
+		["bm_czech_sc_desc"] = "曾被誉为“奇迹之九”, 一种有着优秀的人体工程学设计与良好手感的手枪。广泛应用于世界各大反恐组织。",
+		["bm_x_czech_sc_desc"] = "又一个劝退冲锋手枪的例子。你怎么可能轻松给这俩玩意换弹？",
 		--Glock 17
-		["bm_g17_sc_desc"] = "控制后坐力十分轻松且可靠。 是能助你踏上劫匪生涯的完美配枪。",
+		["bm_g17_sc_desc"] = "控制后坐力十分轻松且可靠。是能助你踏上劫匪生涯的完美配枪。",
 		["bm_x_g17_sc_desc"] = "以绝对的数量来弥补9毫米的弱小火力，并且依然占有低后坐力的优势\n\n在我们捞霍斯顿出来那段时间里是他的爱枪。",
 		--Bernetti 9
-		["bm_b92fs_sc_desc"] = "一款因其弹容出色且伤害像样而流行的武器。 尤其在与众多敌人对峙时十分便利。",
-		["bm_x_b92fs_sc_desc"] = "两把总比一把强。 以一种不同的方式将战斗化为9毫米手枪的派对。",
+		["bm_b92fs_sc_desc"] = "一款因其弹容出色且伤害像样而流行的武器。尤其在与众多敌人对峙时十分便利。",
+		["bm_x_b92fs_sc_desc"] = "两把总比一把强。以一种不同的方式将战斗化为9毫米手枪的派对。",
 		--93R
-		["bm_beer_sc_desc"] = "一块临界于幻想之间的全自动武器，使得它的子弹们争先恐后地从枪口里爬出来去寻找它们的目标。 是死是活，你我来定。",
+		["bm_beer_sc_desc"] = "一块临界于幻想之间的全自动武器，使得它的子弹们争先恐后地从枪口里爬出来去寻找它们的目标。是死是活，你我来定。",
 		--Baby Deagle--
 		["bm_w_sparrow_sc_g_cowboy_desc"] = "欲擎此枪必承其重。",
 		--socom deez nuts--
-		["bm_w_socom_desc"] = "豺狼的配枪选择。 一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
+		["bm_w_socom_desc"] = "豺狼的配枪选择。一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
 		--Crosskill
 		["bm_w_colt_1911"] = "Crosskill Operator手枪",
 		--Crosskill Chunky
@@ -1215,9 +1235,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"…然后狼吃掉了小红帽\"\n\n具有革命性的德国手枪，尤其这一款被改装成了全自动开火模式。\n\n这把枪一次装填10颗子弹",
 		["bm_wp_c96_nozzle"] = "爆能DL-44消音器",
-		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.5秒\n充能速率: 3秒(过热时减半)\n过热惩罚: 3秒",
+		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.5秒\n充能速率: 3发/秒(过热时减半)\n过热惩罚: 3秒",
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够穿透防弹衣，防爆护盾以及薄墙",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够穿透护甲，盾牌以及薄墙壁。",
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "VF大威力手枪",
@@ -1257,7 +1277,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Saiga
 		["bm_saiga_sc_desc"] = "这把全自动霰弹枪正适合你懒得去瞄准的时候用。",
 		--Spas12
-		["bm_spas12_sc_desc"] = "更重且更复杂的另类半自动霰弹枪，具有一种几乎异类的射击模式",
+		["bm_spas12_sc_desc"] = "更重且更复杂的另类半自动霰弹枪，具有一种几乎异类的射击模式。",
 		--Benelli
 		["bm_benelli_sc_desc"] = "顶级战术霰弹枪。适合用来清理人堆。",
 		--Loco
@@ -1281,7 +1301,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_quadbarrel"] = "Doomstick 霰弹枪",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "适合近距离的弹种。\n单发弹丸数量提升至10颗。",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "适合中距离的弹种。\n单发弹丸数量降低至6颗。",
-		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "强力的钢弹头，长距离作战十分有效\n能够穿透防弹衣，复数敌人，盾牌，泰坦盾牌和墙体。",
+		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "强力的钢弹头，长距离作战十分有效\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
 		--MP153
 		["bm_w_mp153"] = "Argos I 霰弹枪",
 
@@ -1303,7 +1323,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Custom 40 damage ARs
 		--["bm_w_xeno"] = "MA14 Surge Rifle",	
 		["bm_xeno_sc_desc_pc"] = "从 \"Armat\" 变为了具备异常先进的科技的奇怪玩意。配备有下挂榴弹发射器。\n\n按下 $BTN_BIPOD 切换到榴弹发射器。",	
-		["bm_xeno_sc_desc"] = "从 \"Armat\" 变为了具备异常先进的科技的奇怪玩意。 配备有下挂榴弹发射器\n\n按住 $BTN_BIPOD 切换到榴弹发射器。",
+		["bm_xeno_sc_desc"] = "从 \"Armat\" 变为了具备异常先进的科技的奇怪玩意。配备有下挂榴弹发射器\n\n按住 $BTN_BIPOD 切换到榴弹发射器。",
 
 
 		--OICW--
@@ -1363,7 +1383,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_tecci"] = "Bootleg轻机枪",
 		["bm_w_tecci_desc_sc"] = "一款活塞操作被指出像步枪的轻机枪，能相对精准地倾泻子弹。\n\n腰射时精准度极大降低。",
 		--KSP/M249
-		["bm_w_m249"] = "KSP-90倾泻子弹",
+		["bm_w_m249"] = "KSP-90轻机枪",
 		["bm_m249_sc_desc"] = "换弹十分蛋疼，那么只要换弹前把人杀干净就有机会了。\n\n腰射时精准度极大降低。",
 		--RPK
 		["bm_rpk_sc_desc"] = "这把枪是你想要枪管既达标又更显苏系的好选择。\n\n腰射时精准度极大降低。",
@@ -1382,114 +1402,114 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_vg38_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能延迟: 2.5s\n充能速率: 7/s (过热时减半)\n过热惩罚: 5s",
 		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的射速降低到800RPM",
 		--Versteckt-51/HK51B
-		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes.\n\nWildly inaccurate when hipfired.",
+		["bm_w_hk51b"] = "Versteckt-51B重机枪",
+		["bm_hk51b_sc_desc"] = "Brenner-21的售后版本，这把轻机枪缩小到了Compact-5的大小。\n\n腰射时精准度极大降低。",
 
 		--M134
-		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
+		["bm_m134_sc_desc"] = "\"你走的每一步都在踏过敌人的尸体……\"\n\n开火前有预转前摇；瞄准时保持旋转。\n腰射时精准度极大降低。",
 		--Microgun
-		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\nHas a brief spin-up period before firing; aiming keeps the weapon spun-up.\nWildly inaccurate when hipfired.",
+		["bm_shuno_sc_desc"] = "\"这是你的道路。当你到来，你将以孤独为伴。\"\n\n开火前有预转前摇；瞄准时保持旋转。\n腰射时精准度极大降低。",
 
 		
 		--Galant--
-		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when its clip is empty and deals 80% of its damage through body armor.",
+		["bm_galant_sc_desc"] = "经典二战作战步枪。可靠，精准，换弹迅速。\n\n空仓换弹速度更快并且可穿透护甲造成80%伤害。",
 		--M308
-		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\nDeals 80% of its damage through body armor.",
+		["bm_m14_sc_desc"] = "快速且精准，只要确保控制住后坐力，尤其是全自动开火的时候。\n\n可穿透护甲造成80%伤害。",
 		--FAL
-		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\nDeals 80% of its damage through body armor.",	
+		["bm_fal_sc_desc"] = "自由世界的正当武装。当你不得不干掉一些重甲混蛋的时候，你求助于这把枪。\n\n可穿透护甲造成80%伤害。",	
 		--SCAR
-		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\nDeals 80% of its damage through body armor.",			
+		["bm_scar_sc_desc"] = "未来战斗步枪。依托着在手感和弹道伤害上有着良好的平衡，在美国海军陆战队和特种力量中应用广泛。\n\n可穿透护甲造成80%伤害。",			
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\nDeals 80% of its damage through body armor.",	
+		["bm_g3_sc_desc"] = "作为Compact-5和Brenner-21的大姐头，这把枪的精准度可与狙击枪一较高下。\n\n可穿透护甲造成80%伤害。",	
 		--Little Friend
 		--Little Friend
-		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
-		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nPressing $BTN_BIPOD switches to the undermounted grenade launcher.",
-		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\nDeals 80% of its damage through body armor\nHolding $BTN_BIPOD switches to the undermounted grenade launcher.",
+		["bm_w_contraband"] = "Bigger Friend 7.62步枪",
+		["bm_m203_weapon_sc_desc_pc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可穿透护甲造成80%伤害\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
+		["bm_m203_weapon_sc_desc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可穿透护甲造成80%伤害\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes integrally suppressed and deals 80% of its damage through body armor.",
+		["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n完全消音并且穿透护甲造成80%伤害。",
 		--Galil
-		["bm_w_galil"] = "Defender 7.62 Rifle",
-		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\nDeals 80% of its damage through body armor.",		
+		["bm_w_galil"] = "Defender 7.62步枪",
+		["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可穿透护甲造成80%伤害。",		
 		--Custom DMRs
-		["bm_w_xr2"] = "XR-2 Rifle",
-		["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique auto-burst that provides an increased fire rate while on burst-fire mode.\n\nDeals 80% of its damage through body armor.",
-		["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
-		["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for full-auto at the cost of no burst fire rate increase.",
-		["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
-		["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to 950 RPM at the cost of recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.",
+		["bm_w_xr2"] = "XR-2步枪",
+		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能提升射速的独特自动式爆发射击模式。\n\n可穿透护甲造成80%伤害。",
+		["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
+		["bm_xr2_handle_01_sc_desc"] = "以爆发式射击的射速提升为代价改为全自动射击。",
+		["bm_wp_xr2_handle_02_sc"] = "快速开火枪闩",
+		["bm_xr2_handle_02_sc_desc"] = "以射击时缓解爆发后坐力为代价将爆发式开火射速提升到950RPM。\n\n爆发开火延迟和半自动射击射速不受影响。",
 
 
 		--TTI(TTY)
-		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
-		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\nCan penetrate body armor, shields and thin walls.",
+		["bm_w_tti"] = "Contractor .308狙击步枪",
+		["bm_tti_sc_desc"] = "威克的私人武器之一。据说网上有个地方有他练习这把枪莫桑比克射击法的片段。\n\n能够穿透护甲，盾牌以及薄墙壁。",
 		--WA2000
-		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
-		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\nCan penetrate body armor, shields and thin walls.",
+		["bm_w_wa2000"] = "Lebensauger .300狙击步枪",
+		["bm_wa2000_sc_desc"] = "这个最负盛名的枪世上只做了几百把；一把专适合顶尖杀手的狙击步枪。\n\n能够穿透护甲，盾牌以及薄墙壁。",
 		--Rangerhitter
-		["bm_w_sbl"] = "Rangehitter MK2 Sniper Rifle", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
+		["bm_w_sbl"] = "Rangehitter MK2狙击步枪", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		--SVD
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle.\n\nCan penetrate body armor, shields and thin walls.",
+		["bm_siltstone_sc_desc"] = "高威力半自动狙击步枪。\n\n能够穿透护甲，盾牌以及薄墙壁。",
 
 		--Mosin--
-		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and can penetrate body armor, shields and thin walls.",
-		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\nFires weaker tranquilizer rounds that deal damage over time and can stun enemies.",
+		["bm_mosin_sc_desc"] = "当你食不果腹而仍然需要一把枪，这把廉价又经典的栓动式步枪便应召而来。\n\n这把枪一次装填满5颗子弹，并且能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_wp_upg_a_tranq_mosin"] = "镇静弹",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "忘却，结束。\n\n发射伤害更低的镇静弹造成持续伤害并且能够硬直敌人。",
 		--Thanatos--
-		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
-		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
+		["bm_w_m95"] = "Thanatos .50 cal 反器材狙击步枪",
+		["bm_m95_sc_desc"] = "被用于对小型载具作战的反器材步枪。把它用到生物目标的人几乎是战争犯。\n\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
 		--Custom Snipers
-		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
-		["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
-		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
-		["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\nCan penetrate body armor, shields, titan-shields and thin walls.",
+		["bm_w_m107cq"] = "Mors .50 cal反器材步枪",
+		["bm_m107cq_sc_desc"] = "如果Thanatos跟不上进度，那么Mors能如你所愿让他们死无全尸。\n\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
+		["bm_w_m200"] = "TF-141反器材步枪",
+		["bm_m200_sc_desc"] = "为那些想要愉悦的做到楼梯间360°不开镜单杀的人设计。\n\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
 		--Marlin 1894
-		["bm_w_m1894"] = "Mare's Leg Sniper Rifle",
+		["bm_w_m1894"] = "Mare's Leg 狙击步枪",
 		--SPX Centerfire
-		["bm_w_moss464spx"] = "Mosconi SPX Sniper Rifle",
+		["bm_w_moss464spx"] = "Mosconi SPX 狙击步枪",
 		--Winchester 1894
-		["bm_w_winchester1894"] = "Repeater 1894 Sniper Rifle",
+		["bm_w_winchester1894"] = "Repeater 1894 狙击步枪",
 
 		--3GL
-		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber using special technology, allowing for rapid follow-ups in a compact package.\n\nAlt-fire allows for firing off an entire stack.",
+		["bm_ms3gl_sc_desc"] = "发射通过黑科技自制的集束40mm榴弹，可以造成快速后续冲击伤害。\n\n辅助射击允许一次性全部射出。",
 		--COMMANDO 101/M202 FLASH
-		["bm_ray_sc_desc"] = "Become the \"Grim Reaper\" with this 4-shot incendiary rocket launcher.\n\nRockets leave behind a pool of fire and explosive damage dealt by this weapon instantly destroys turrets.",
+		["bm_ray_sc_desc"] = "这个四联装燃烧火箭使你成为\"死神\"。\n\n火箭爆炸后留下持续地火，并且直接爆炸伤害可以秒杀警察炮台。",
 		
 		--M4/CAR-4
-		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+		["bm_menu_sc_m4_desc"] = "可靠，紧凑，且致命。在现代部队广泛使用的5.56mm步枪。",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "25% less recoil when fired from the hip.",		
+		["bm_wolf_brigade_sc_desc"] = "腰射后坐力降低25%。",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟800发",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。\n\nThe greatest handgun ever made.",				
+		["bm_ap_weapon_peacemaker_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。\n\n有史以来做的最好的手枪。",				
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",
-		["bm_menu_weapon_movement_bonus_info"] = "MOVE SPEED IS INCREASED BY ",
-		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
-		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               DO  NOT  USE               //////////\n",
-		["bm_menu_weapon_slot_warning_2"] = "\n//////////               DO  NOT  USE               //////////##",
-		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
-		["bm_menu_weapon_slot_warning_secondary"] = "WEAPON WAS MOVED TO THE SECONDARY SLOT\nWILL CRASH IF USED IN-HEIST AS A PRIMARY",
-		["bm_menu_weapon_slot_warning_disabled"] = "WEAPON WAS DISABLED BY CAPTAIN AUTUMN\nAND WILL RESULT IN A CRASH IF USED IN-HEIST",
-		["bm_menu_weapon_slot_warning_wtfdoido"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
+		["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
+		["bm_menu_weapon_movement_bonus_info"] = "移动速度提升 ",
+		["bm_menu_weapon_movement_penalty_info_2"] = "手持时",
+		["bm_menu_weapon_slot_warning_1"] = "\n##//////////             无 法 使 用             //////////\n",
+		["bm_menu_weapon_slot_warning_2"] = "\n//////////             无 法 使 用             //////////##",
+		["bm_menu_weapon_slot_warning_primary"] = "该武器已被移动到主武器栏\n在劫案内以副手使用将会崩溃",
+		["bm_menu_weapon_slot_warning_secondary"] = "该武器已被移动到副武器栏\n在劫案内以主手使用将会崩溃",
+		["bm_menu_weapon_slot_warning_disabled"] = "武器已被秋日队长禁用\n在劫案内使用将导致崩溃",
+		["bm_menu_weapon_slot_warning_wtfdoido"] = "如果物品栏还有这把枪务必不要使用。\n\n目前依然没有平衡方式。",
 		["empty"] = "",
-		["missing_cap"] = "Custom Attachment Points is not installed\n\nAttachment will take on the slot's default appearance.",
-		["bm_lmg_generic_desc"] = "Wildly inaccurate when hipfired.",
-		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
-		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",
-		["bm_ap_armor_80_weapon_sc_desc"] = "Deals 80% of its damage through body armor.",
-		["bm_heavy_ap_weapon_sc_desc"] = "Can penetrate body armor, shields, titan shields and thin walls.",
-		["bm_ap_2_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.",
-		["bm_ap_3_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be retrieved by picking them up.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle the flip up leaf sight.\n\nThe leaf sight is zeroed to 30 meters.",
-		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon instantly destroys turrets.",
-		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubleing the number of pellets.",
-		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",
+		["missing_cap"] = "自定义附加未安装\n\n附加品将使用该栏默认外观。",
+		["bm_lmg_generic_desc"] = "腰射大幅降低后坐力",
+		["bm_ap_weapon_sc_desc"] = "能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_ap_armor_weapon_sc_desc"] = "能够穿透护甲。",
+		["bm_ap_armor_80_weapon_sc_desc"] = "可穿透护甲造成80%伤害。",
+		["bm_heavy_ap_weapon_sc_desc"] = "能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
+		["bm_ap_2_weapon_sc_desc"] = "能够穿透护甲。箭矢可以捡起回收，并且射程随拉弓时间提升而加长。",
+		["bm_ap_3_weapon_sc_desc"] = "能够穿透护甲。箭矢可以捡起回收。",
+		["bm_40mm_weapon_sc_desc"] = "按下 $BTN_GADGET 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
+		["bm_rocket_launcher_sc_desc"] = "该武器造成的爆炸伤害能够秒杀警察炮台。",
+		["bm_quake_shotgun_sc_desc"] = "一次射击两个枪管，弹丸数量也翻倍。",
+		["bm_hx25_buck_sc_desc"] = "发射散布广的12颗弹丸。\n\n只受榴弹相关技能加成。",
 		["bm_auto_generated_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。",
 		["bm_auto_generated_ap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以穿透护甲，盾牌及薄墙壁。",
 		["bm_auto_generated_sap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以穿透护甲，盾牌，泰坦盾牌及薄墙壁。",
@@ -1527,7 +1547,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_buck_info"] = "对抗现代武器仍然十分有效。\n蓄力时减少10%的远程伤害。", --Buckler Shield
 		["bm_melee_charge_info"] = "Pitch your forks and fork up some pitches.\n\nSprinting forwards starts a sprint charge that deals 45 damage every 0.25 seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains 15% of your max stamina; a killing blow only drains 5%.\n\nYou cannot parry enemy attacks, even when not sprint charging.", -- Randal Pitchfork
 		["bm_melee_cs_info"] = "撕裂吧！毁灭吧！\n蓄力时对你面前的敌人每0.25秒造成30点伤害。此属性受到相关技能影响。\n\n无法格挡敌人攻击。", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "车专口阿车专口阿车专。\n蓄力时对你面前的敌人每0.25秒造成18点伤害。 此属性受到相关技能影响。\n\n无法格挡敌人攻击。", --Kazaguruma
+		["bm_melee_ostry_info"] = "车专口阿车专口阿车专。\n蓄力时对你面前的敌人每0.25秒造成18点伤害。此属性受到相关技能影响。\n\n无法格挡敌人攻击。", --Kazaguruma
 		["bm_melee_wing_info"] = "配合伪装一起使用效果更佳。\n从背后攻击敌人造成4倍伤害。",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "暴力与致命是我的信条。\n从背后攻击敌人造成2倍伤害。",-- Switchblade Knife
 		["bm_melee_chef_info"] = "不太确定能不能用来切超市的肉。\n完全蓄力时攻击会造成恐慌效果。", -- Psycho Knife
@@ -1589,9 +1609,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_damage_min"] = "最小伤害",
 
 		--Attachment type names--
-		["bm_menu_barrel_ext"] = "Muzzle",
-		["bm_menu_foregrip"] = "Handguard",
-		["bm_menu_vertical_grip"] = "Foregrip",
+		["bm_menu_barrel_ext"] = "枪口",
+		["bm_menu_foregrip"] = "护木",
+		["bm_menu_vertical_grip"] = "前握把",
 		--Spoof types--
 		["bm_menu_frame"] = "Frame",
 		["bm_menu_whole_receiver"] = "Receiver",
@@ -1611,45 +1631,45 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_ro_grip"] = "Grip",
 		
 		--Weapon categories--
-		["menu_pistol"] = "Pistols",
-		["menu_akimbo_pistol"] = "Dual Pistols",
+		["menu_pistol"] = "手枪",
+		["menu_akimbo_pistol"] = "双持手枪",
 		--
-		["menu_light_pis"] = "Light Pistols",
-		["menu_heavy_pis"] = "Heavy Pistols",
+		["menu_light_pis"] = "轻型手枪",
+		["menu_heavy_pis"] = "重型手枪",
 		
-		["menu_shotgun"] = "Shotguns",
-		["menu_akimbo_shotgun"] = "Dual Shotguns",
+		["menu_shotgun"] = "霰弹枪",
+		["menu_akimbo_shotgun"] = "双持霰弹枪",
 		--
-		["menu_light_shot"] = "Auto Shotguns",
-		["menu_heavy_shot"] = "Light Shotguns",
-		["menu_break_shot"] = "Heavy Shotguns",
+		["menu_light_shot"] = "全自动霰弹枪",
+		["menu_heavy_shot"] = "轻型霰弹枪",
+		["menu_break_shot"] = "重型霰弹枪",
 		
-		["menu_smg"] = "SMGs",
-		["menu_akimbo_smg"] = "Dual SMGs",
+		["menu_smg"] = "冲锋枪",
+		["menu_akimbo_smg"] = "双持冲锋枪",
 		--
-		["menu_light_smg"] = "Light SMGs",
-		["menu_heavy_smg"] = "Heavy SMGs",
+		["menu_light_smg"] = "轻型冲锋枪",
+		["menu_heavy_smg"] = "重型冲锋枪",
 		
-		["menu_assault_rifle"] = "Rifles",
-		["menu_akimbo_assault_rifle"] = "Dual Rifles",
+		["menu_assault_rifle"] = "突击步枪",
+		["menu_akimbo_assault_rifle"] = "双持突击步枪",
 		--
-		["menu_light_ar"] = "Light Rifles",
-		["menu_heavy_ar"] = "Heavy Rifles",
-		["menu_dmr_ar"] = "Marksman Rifles",
+		["menu_light_ar"] = "轻型突击步枪",
+		["menu_heavy_ar"] = "重型突击步枪",
+		["menu_dmr_ar"] = "神枪手突击步枪",
 		
-		["menu_lmg"] = "Machine Guns",
+		["menu_lmg"] = "机枪",
 		--
-		["menu_light_mg"] = "LMGs",
-		["menu_heavy_mg"] = "HMGs",
-		["menu_miniguns"] = "Gatling Guns",
+		["menu_light_mg"] = "轻机枪",
+		["menu_heavy_mg"] = "重机枪",
+		["menu_miniguns"] = "加特林机枪",
 		
-		["menu_snp"] = "Snipers",
+		["menu_snp"] = "狙击步枪",
 		--
-		["menu_light_snp"] = "Light Sniper Rifles",
-		["menu_heavy_snp"] = "Heavy Sniper Rifles",
-		["menu_antim_snp"] = "Anti-Materiel Rifles",
+		["menu_light_snp"] = "轻型狙击步枪",
+		["menu_heavy_snp"] = "重型狙击步枪",
+		["menu_antim_snp"] = "反器材狙击步枪",
 
-		["menu_wpn_special"] = "Specials & Unsorted",
+		["menu_wpn_special"] = "特殊武器",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "无政府主义者每次回复的护甲值: $passive_armor_regen",
@@ -1677,7 +1697,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Triad Chi-Revolver [Custom]--
 		["bm_wp_wpn_fps_upg_triad_bullets_44normal_desc"] = "为什么你要用过时的普通弹药来装备真气左轮枪？\n弹药拾取量变为133%。",
 		["bm_wp_wpn_fps_upg_triad_bullets_44ap_desc"] = "用真气来炸穿护甲，盾牌与墙壁的感觉，真爽。\n以减少伤害为代价来获取穿甲，穿盾及穿墙的能力。",
-		["bm_wp_wpn_fps_upg_triad_bullets_44hollow_desc"] = "从未知来源获取的真气空尖弹。 你唯一要知道的是这种弹药让你的后座力大增，然而基本上神挡杀神佛挡杀佛。\n该弹药类型极难通过捡弹补充。\n提高伤害，降低所有其他属性。\n弹药拾取量变为33%。",
+		["bm_wp_wpn_fps_upg_triad_bullets_44hollow_desc"] = "从未知来源获取的真气空尖弹。你唯一要知道的是这种弹药让你的后座力大增，然而基本上神挡杀神佛挡杀佛。\n该弹药类型极难通过捡弹补充。\n提高伤害，降低所有其他属性。\n弹药拾取量变为33%。",
 
 		--DECK-ARD [Custom]--
 		["bm_wp_wpn_fps_upg_deckard_ammo_damage_high_desc"] = "射击他们直到死透为止。\n最大化伤害的同时降低所有其他属性。\n可以击穿护甲，盾牌与墙壁。\n该弹药类型极难通过捡弹补充。\n弹药拾取量变为33%。",
@@ -2048,7 +2068,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_equipment_armor_kit"] = "手雷箱",
 		["bm_equipment_armor_kit"] = "手雷箱",
 		["debug_equipment_armor_kit"] = "手雷箱",
-		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你必须先按住 $BTN_USE_ITEM 将其放下。 手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住 $BTN_INTERACT 来补充投掷物。 手雷箱只能被使用三次。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能补满你的投掷物。",
+		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你必须先按住 $BTN_USE_ITEM 将其放下。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住 $BTN_INTERACT 来补充投掷物。手雷箱只能被使用三次。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能补满你的投掷物。",
 
 		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈有几率使半径25米内的敌人失去行动能力，反馈持续10秒且可以在4分钟的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
 		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以回复150点血量。急救包只能使用一次。\n\n急救包可以在紧急情况下快速进行急救。",
@@ -2148,7 +2168,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_3"] = "安保指挥部发现警卫失踪后，可能会派出增援。就算你使用不用回答对讲机的方式，也还是会触发潜入中的保安增援事件。",	
 		["loading_stealth_res_4"] = "潜入中，保安会在巡逻时闲聊或吹口哨，这有助于你确定保安的位置。",	
 		["loading_stealth_res_5"] = "不同难度下，对讲机操作员可以被说服的次数上限也不同，6头为2次，5头为3次，其余为4次。超过上限的对讲机回答将大幅度增加怀疑度。",	
-		["loading_stealth_res_6"] = "现在你不需要技能也能用枪声控制平民趴下了，潜入和强攻均有效。 ",	
+		["loading_stealth_res_6"] = "现在你不需要技能也能用枪声控制平民趴下了，潜入和强攻均有效。",	
 		["loading_stealth_res_7"] = "哨戒机枪能控制住它周围的平民，使平民保持趴下的状态。",	
 		["loading_stealth_res_8"] = "携带战利品包时，NPC能从更远的位置看见你，并且你在站立、奔跑和跳跃时的暴露条增长速度大幅度加快。尽可能保持蹲伏的姿态来移动，不要急，慢慢来......",	
 		["loading_stealth_res_9"] = "你最多能同时携带4个ECM，但每个ECM只有原版一半的持续时间，尽可能保证你的每个ECM都用对了地方。",	
@@ -2161,7 +2181,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_16"] = "恢复MOD中，你可以携带更多的尸体袋。如果你玩的是单潜，你可以携带的尸体袋要更多。",	
 		["loading_stealth_res_17"] = "在Crime.net离线模式游戏中，你将获得额外的绑带用于弥补缺少的玩家，即使你已经有了增加绑带的技能。",	
 		["loading_stealth_res_18"] = "被枪械击杀的保安会触发对讲机，在有限次数内回答对讲机不会增加怀疑度，无视对讲机很显然会。杀死没有对讲机的保安不会增加怀疑度。",	
-		["loading_stealth_res_19"] = "更高的难度下，对讲机操作员可不会过分地相信你说的话。 对讲机操作员最后一次听信你时会用特别的语音提示你。",	
+		["loading_stealth_res_19"] = "更高的难度下，对讲机操作员可不会过分地相信你说的话。对讲机操作员最后一次听信你时会用特别的语音提示你。",	
 		["loading_stealth_res_20"] = "超出对讲机次数上限的回答会大幅度增加怀疑度，但不回答或中断回答增加的怀疑度要更多。",	
 		["loading_stealth_res_21"] = "更高的难度下，给你接对讲机的时间更短，且回答对讲机所需的时间更长。",	
 		--Equipment/Skill Hints
@@ -2923,7 +2943,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deckall_8_desc_sc"] = "你使用医疗箱的速度加快##20%##\n\n你造成的伤害再次额外增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒",
 	
 		--Crook--
-		["menu_st_spec_6_desc_sc"] = "骗术师是一个多面手，他和犯罪这个词一样古老。\n\n说真的，骗术师是无所不能的。他能偷会盗、花言巧语，一两句话就能将一个滔天大罪瞒天过海。他一生都以欺骗和犯罪为活。 \n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##5##。\n##-##防弹背心的闪避点数额外增加##10##。\n##-##防弹背心的护甲量提高##50%##。\n##-##撬锁速度加快##20%##。",
+		["menu_st_spec_6_desc_sc"] = "骗术师是一个多面手，他和犯罪这个词一样古老。\n\n说真的，骗术师是无所不能的。他能偷会盗、花言巧语，一两句话就能将一个滔天大罪瞒天过海。他一生都以欺骗和犯罪为活。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##5##。\n##-##防弹背心的闪避点数额外增加##10##。\n##-##防弹背心的护甲量提高##50%##。\n##-##撬锁速度加快##20%##。",
 		["menu_st_spec_6_desc_sc_short"] = "骗术师是一个多面手，他和犯罪这个词一样古老。\n\n说真的，骗术师是无所不能的。他能偷会盗、花言巧语，一两句话就能将一个滔天大罪瞒天过海。他一生都以欺骗和犯罪为活。",
 		["menu_deck6_1_desc_sc"] = "你的闪避点数增加##5##\n\n防弹背心的护甲值提高##15%##",
 		["menu_deck6_3_desc_sc"] = "防弹背心的闪避点数增加##5##",
@@ -2990,8 +3010,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "你的护甲恢复速率增加##10%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Gambler--
-		["menu_st_spec_10_desc_sc"] = "幸运的本质难以捉摸。 古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。 这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。\n\n完成全部牌组后的效果：\n##-##拾取的子弹盒可以让你回复 ##8## 点到 ##12## 点血量。每 ##10## 秒只可触发一次。但是每拾取一盒子弹会减少 ##3## to ##5## 秒该技能的冷却时间。\n##-##当你通过拾取子弹盒回复血量的同时：\n你的 ##团队成员会获得相当于1个子弹盒的弹药补充##.\n当你通过拾取子弹盒回复血量的时候，你的闪避点数将会充满至 ##100%## 。\n你的团队成员回复你所回复的血量的 ##50%## 。\n你获得 ##30## 点额外护甲。\n##-##你获得 ##10## 点闪避点数。\n##-##你回答对讲机所需的时间减少##25%##。",		
-		["menu_st_spec_10_desc_sc_short"] = "幸运的本质难以捉摸。 古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。 这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。",
+		["menu_st_spec_10_desc_sc"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。\n\n完成全部牌组后的效果：\n##-##拾取的子弹盒可以让你回复 ##8## 点到 ##12## 点血量。每 ##10## 秒只可触发一次。但是每拾取一盒子弹会减少 ##3## to ##5## 秒该技能的冷却时间。\n##-##当你通过拾取子弹盒回复血量的同时：\n你的 ##团队成员会获得相当于1个子弹盒的弹药补充##.\n当你通过拾取子弹盒回复血量的时候，你的闪避点数将会充满至 ##100%## 。\n你的团队成员回复你所回复的血量的 ##50%## 。\n你获得 ##30## 点额外护甲。\n##-##你获得 ##10## 点闪避点数。\n##-##你回答对讲机所需的时间减少##25%##。",		
+		["menu_st_spec_10_desc_sc_short"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。",
 		["menu_deck10_1_desc_sc"] = "你捡起一个弹药盒会回复##4~8##点血量\n\n冷却时间为##10##秒，每捡起一个弹药盒会减少冷却时间##3~5##秒",
 		["menu_deck10_3_desc_sc"] = "当你触发捡弹回血时，你的队友也获得捡起一个弹药盒所获得的弹药量",
 		["menu_deck10_5_desc_sc"] = "你捡起一个弹药盒回复的血量额外增加##2##\n\n你回答对讲机所需的时间减少##25%##",
@@ -3018,7 +3038,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "击杀一名距你##18##米内的敌人将有##25%##的几率在敌人中##散播恐慌##\n\n恐慌会使敌人短暂地失去行动能力\n\n该效果的冷却时间为##2##秒\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Grinder--
-		["menu_st_spec_11_desc_sc"] = "一个典型的冲锋手是属于闷声干实事的那种类型，他们可以控制现场的突发状况并扭转不利局面。\n\n冲锋手顾名思义就是永远冲在最前面，承担最多的那个人。他是那种能对敌人造成大量的伤害同时也能承担大量的伤害的狠角色。\n\n\n完成全部牌组后的效果：\n##-##对敌人造成伤害将会在 ##5## 秒内每秒恢复 ##3## 点血量。该技能最多叠加##5## 次， 但是每 ##0.5## 秒内最多触发1次，并且只在装备防爆弹甲时有效。哨戒机枪和持续型伤害（例如火焰）不会触发此效果。\n##-##当你装备防爆弹甲的时候减少 ##80## 点护甲。 \n##-##每层叠加的回血效果可以提高 ##5%## 你的移动速度。\n##-##你可以放置##2##个尸体袋箱。",
+		["menu_st_spec_11_desc_sc"] = "一个典型的冲锋手是属于闷声干实事的那种类型，他们可以控制现场的突发状况并扭转不利局面。\n\n冲锋手顾名思义就是永远冲在最前面，承担最多的那个人。他是那种能对敌人造成大量的伤害同时也能承担大量的伤害的狠角色。\n\n\n完成全部牌组后的效果：\n##-##对敌人造成伤害将会在 ##5## 秒内每秒恢复 ##3## 点血量。该技能最多叠加##5## 次， 但是每 ##0.5## 秒内最多触发1次，并且只在装备防爆弹甲时有效。哨戒机枪和持续型伤害（例如火焰）不会触发此效果。\n##-##当你装备防爆弹甲的时候减少 ##80## 点护甲。\n##-##每层叠加的回血效果可以提高 ##5%## 你的移动速度。\n##-##你可以放置##2##个尸体袋箱。",
 		["menu_st_spec_11_desc_sc_short"] = "一个典型的冲锋手是属于闷声干实事的那种类型，他们可以控制现场的突发状况并扭转不利局面。\n\n冲锋手顾名思义就是永远冲在最前面，承担最多的那个人。他是那种能对敌人造成大量的伤害同时也能承担大量的伤害的狠角色。",
 		["menu_deck11_1_desc_sc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##1##点血量\n\n该效果可以被叠加，但每##0.5##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你防爆弹衣的护甲值##下降70点##。",
 		["menu_deck11_3_desc_sc"] = "每层增益中每秒回复的血量额外增加##1##点",
@@ -3027,7 +3047,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_9_desc_sc"] = "每层增益将使你的移动速度加快##5%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Open your mind--
-		["menu_st_spec_13_desc_sc"] = "前总统帮是最勇敢无畏的帮会之一。一群热爱挑战极限的人们组成了这个帮会。同样的理想使得帮会成员之间亲如手足。\n\n前总统帮的成员们的最高信条是完成尾崎八项挑战，通过完成一系列最高难度的极限挑战来达到自然与天性的平衡。\n\n\n完成全部牌组后的效果：\n##-##当你拥有护甲时每击杀 ##1## 名敌人可以储存  ##8## 点血量。 当你的护甲被打空后，回复护甲的同时你将会得到等于你所储存的血量的治疗，储存的血量数值与你的所装备的护甲有关。 \n##-##击杀1名敌人可以加快你的护甲回复速度，速度的快慢取决于你所装备的护甲。 护甲值越高，你通过击杀增加的护甲回复速度越少。护甲完全回复后护甲回复速度将会重置。n##-##你的闪避点数增加 ##10## 点。\n##-##你和你队友控制的平民趴下的时间延长##25%##。",
+		["menu_st_spec_13_desc_sc"] = "前总统帮是最勇敢无畏的帮会之一。一群热爱挑战极限的人们组成了这个帮会。同样的理想使得帮会成员之间亲如手足。\n\n前总统帮的成员们的最高信条是完成尾崎八项挑战，通过完成一系列最高难度的极限挑战来达到自然与天性的平衡。\n\n\n完成全部牌组后的效果：\n##-##当你拥有护甲时每击杀 ##1## 名敌人可以储存  ##8## 点血量。当你的护甲被打空后，回复护甲的同时你将会得到等于你所储存的血量的治疗，储存的血量数值与你的所装备的护甲有关。\n##-##击杀1名敌人可以加快你的护甲回复速度，速度的快慢取决于你所装备的护甲。护甲值越高，你通过击杀增加的护甲回复速度越少。护甲完全回复后护甲回复速度将会重置。n##-##你的闪避点数增加 ##10## 点。\n##-##你和你队友控制的平民趴下的时间延长##25%##。",
 		["menu_st_spec_13_desc_sc_short"] = "前总统帮是最勇敢无畏的帮会之一。一群热爱挑战极限的人们组成了这个帮会。同样的理想使得帮会成员之间亲如手足。\n\n前总统帮的成员们的最高信条是完成尾崎八项挑战，通过完成一系列最高难度的极限挑战来达到自然与天性的平衡。",
 		["menu_deck13_1_desc_sc"] = "当你有护甲时，每击杀一名敌人将为你储存##4##点血量。\n\n当你的护甲完全被破坏后，回复护甲的同时也会将你储存的血量用于一等一回复你的血量。\n\n最多能储存多少血取决于你穿的是什么护甲，更轻的护甲能储存更多的血量。",
 		["menu_deck13_3_desc_sc"] = "每次杀敌储存的血量增加##2##点。\n\n你的闪避点数增加##5##。",
@@ -3036,7 +3056,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck13_9_desc_sc"] = "每击杀一名敌人都可以加快你的护甲恢复速度，加快的程度取决于你穿的是什么护甲，更轻的护甲能获得更快的恢复速度。护甲成功恢复后该效果需要重新叠加。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--THIS IS WAR BABY--
-		["menu_st_spec_14_desc_sc"] = "瘾君子是一群不知危险为何物的人物。在勇往直前大杀四方的时候，所有的团队成员都会受到瘾君子的影响而获得一层临时护盾。\n\n\n完成全部牌组后的效果：\n##-##你所造成的伤害将会转化为狂乱度，狂乱度最高可以达到 ##2400##点。 狂乱度： 每 ##240## 点狂乱度将会减少 ##1.5## 点受到的伤害。狂乱度每 ##8## 秒衰减 ##240## 点。\n##-##你的所有团队成员都会获得狂乱度带来的伤害减少效果。\n##-##你和你队友控制的平民趴下的时间延长##25%##。",
+		["menu_st_spec_14_desc_sc"] = "瘾君子是一群不知危险为何物的人物。在勇往直前大杀四方的时候，所有的团队成员都会受到瘾君子的影响而获得一层临时护盾。\n\n\n完成全部牌组后的效果：\n##-##你所造成的伤害将会转化为狂乱度，狂乱度最高可以达到 ##2400##点。狂乱度： 每 ##240## 点狂乱度将会减少 ##1.5## 点受到的伤害。狂乱度每 ##8## 秒衰减 ##240## 点。\n##-##你的所有团队成员都会获得狂乱度带来的伤害减少效果。\n##-##你和你队友控制的平民趴下的时间延长##25%##。",
 		["menu_st_spec_14_desc_sc_short"] = "瘾君子是一群不知危险为何物的人物。在勇往直前大杀四方的时候，所有的团队成员都会受到瘾君子的影响而获得一层临时护盾。",
 		["menu_deck14_1_desc_sc"] = "你所造成伤害的100%将会转化为狂乱度，狂乱度最多可以叠##2400##层。你的队友也可以享受通过狂乱度获得的减伤效果。\n\n关于狂乱度：\n每累积##400##点狂乱度，你受到的伤害就减少##1##点。狂乱度每##8##秒减少##400##层。",
 		["menu_deck14_5_desc_sc"] = "你的狂乱度现在每##8##秒只减少##300##层。\n\n你和你队友控制的平民趴下的时间延长##25%##。",
@@ -3044,9 +3064,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck14_9_desc_sc"] = "现在每累积##240##层狂乱度，你受到的伤害就减少##1.5##点。你的狂乱度现在每##8##秒减少##240##层。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Anarchist--
-		["menu_st_spec_15_desc_sc"] = "无政府主义者一直都在与极权统治对抗。他们对国王，女王或总统都嗤之以鼻。无拘无束是他们的座右铭。无政府主义者不相信那些被他们称之为被操纵的真相的东西，他们走自己的非常规路线，用他们自己的方法来完成那些几乎不可能完成的任务。 \n\n\n完成全部牌组后的效果：\n##-##他们在离开战斗后护甲不会直接回满，取而代之的是默认每秒回复 ##8## 点护甲。 装备的护甲越厚重，每秒回复的护甲值越多，但是每次回复护甲的间隔更长。\n##-##你的 ##50%## 血量将会转化为 ##150%## 的护甲值。\n##-##对敌人造成伤害会回复护甲，该技能 ##3## 秒内最多触发1次。装备的护甲越厚重，每次回复的护甲值越多。\n##-##你和你队友控制的平民趴下的时间延长##25%##。",
-		["menu_st_spec_15_desc_sc_short"] = "无政府主义者一直都在与极权统治对抗。他们对国王，女王或总统都嗤之以鼻。无拘无束是他们的座右铭。无政府主义者不相信那些被他们称之为被操纵的真相的东西，他们走自己的非常规路线，用他们自己的方法来完成那些几乎不可能完成的任务。 ",
-		["menu_deck15_1_desc_sc"] = "你的护甲不再是一次性回满，而是每段时间回复一次。 回复量取决于积累的量，每秒会积累##8##点护甲值；两次回复的时间间隔取决于你穿的护甲，更厚重的防弹背心回复间隔更长。\n\n提示：加快护甲回复速率的技能效果将对此天赋无效",
+		["menu_st_spec_15_desc_sc"] = "无政府主义者一直都在与极权统治对抗。他们对国王，女王或总统都嗤之以鼻。无拘无束是他们的座右铭。无政府主义者不相信那些被他们称之为被操纵的真相的东西，他们走自己的非常规路线，用他们自己的方法来完成那些几乎不可能完成的任务。\n\n\n完成全部牌组后的效果：\n##-##他们在离开战斗后护甲不会直接回满，取而代之的是默认每秒回复 ##8## 点护甲。装备的护甲越厚重，每秒回复的护甲值越多，但是每次回复护甲的间隔更长。\n##-##你的 ##50%## 血量将会转化为 ##150%## 的护甲值。\n##-##对敌人造成伤害会回复护甲，该技能 ##3## 秒内最多触发1次。装备的护甲越厚重，每次回复的护甲值越多。\n##-##你和你队友控制的平民趴下的时间延长##25%##。",
+		["menu_st_spec_15_desc_sc_short"] = "无政府主义者一直都在与极权统治对抗。他们对国王，女王或总统都嗤之以鼻。无拘无束是他们的座右铭。无政府主义者不相信那些被他们称之为被操纵的真相的东西，他们走自己的非常规路线，用他们自己的方法来完成那些几乎不可能完成的任务。",
+		["menu_deck15_1_desc_sc"] = "你的护甲不再是一次性回满，而是每段时间回复一次。回复量取决于积累的量，每秒会积累##8##点护甲值；两次回复的时间间隔取决于你穿的护甲，更厚重的防弹背心回复间隔更长。\n\n提示：加快护甲回复速率的技能效果将对此天赋无效",
 		["menu_deck15_3_desc_sc"] = "你##50%##的血量转化为##50%##的护甲值",
 		["menu_deck15_5_desc_sc"] = "你##50%##的血量转化为##100%##的护甲值\n\n你和你队友控制的平民趴下的时间延长##25%##",
 		["menu_deck15_7_desc_sc"] = "你##50%##的血量转化为##150%##的护甲值",
@@ -3062,16 +3082,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "注射器生效期间，每获得##5##点血量的过量治疗将减少注射器冷却时间##2##秒\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--10 feet higher--
-		["menu_st_spec_18_desc_sc"] = "刺客是每一个贩毒团伙中必不可少的一份子。 刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。\n\n\n完成全部牌组后的效果：\n##-##解锁并装备烟雾弹。投掷后会发散出一片持续 ##12## 秒的烟雾。 你和你的团队成员当站在烟雾当中时可以增加 ##100%## 的护甲回复速度。 任何站在烟雾当中的敌人射击精准度都会降低 ##75%##。当烟雾散去后，烟雾弹有 ##40## 秒的冷却时间。 但是每击杀1名敌人可以减少该技能 ##1## 秒的冷却时间。\n##-##成功闪避敌人的攻击将会减少烟雾弹技能 ##1## 秒的冷却时间。\n##-## 当你站在烟雾当中时你的闪避计数器每秒增加 ##40%## 。\n##-##你的闪避点数增加 ##15## 点。\n##-##你初始携带的尸体袋数量增加##1##。",
-		["menu_st_spec_18_desc_sc_short"] = "刺客是每一个贩毒团伙中必不可少的一份子。 刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。",
-		["menu_deck18_1_desc_sc"] = "你的闪避点数增加##5##\n\n解锁投掷物——##烟雾弹##以供你使用\n\n烟雾弹扔出后，它会制造一片持续##12##秒的烟幕。 处于烟幕中的你和你队友回复护甲的速度加快##100%##。 烟幕中的敌人精准度降低##75%##.\n\n烟雾弹的冷却时间为##40##秒，击杀一名敌人将使冷却时间减少##1##",
+		["menu_st_spec_18_desc_sc"] = "刺客是每一个贩毒团伙中必不可少的一份子。刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。\n\n\n完成全部牌组后的效果：\n##-##解锁并装备烟雾弹。投掷后会发散出一片持续 ##12## 秒的烟雾。你和你的团队成员当站在烟雾当中时可以增加 ##100%## 的护甲回复速度。任何站在烟雾当中的敌人射击精准度都会降低 ##75%##。当烟雾散去后，烟雾弹有 ##40## 秒的冷却时间。但是每击杀1名敌人可以减少该技能 ##1## 秒的冷却时间。\n##-##成功闪避敌人的攻击将会减少烟雾弹技能 ##1## 秒的冷却时间。\n##-## 当你站在烟雾当中时你的闪避计数器每秒增加 ##40%## 。\n##-##你的闪避点数增加 ##15## 点。\n##-##你初始携带的尸体袋数量增加##1##。",
+		["menu_st_spec_18_desc_sc_short"] = "刺客是每一个贩毒团伙中必不可少的一份子。刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。",
+		["menu_deck18_1_desc_sc"] = "你的闪避点数增加##5##\n\n解锁投掷物——##烟雾弹##以供你使用\n\n烟雾弹扔出后，它会制造一片持续##12##秒的烟幕。处于烟幕中的你和你队友回复护甲的速度加快##100%##。烟幕中的敌人精准度降低##75%##.\n\n烟雾弹的冷却时间为##40##秒，击杀一名敌人将使冷却时间减少##1##",
 		["menu_deck18_3_desc_sc"] = "你的闪避点数额外增加##5##",
 		["menu_deck18_5_desc_sc"] = "成功闪避一次敌人的攻击将减少烟雾弹的冷却时间##1##秒\n\n你初始携带的尸体袋数量增加##1##",
 		["menu_deck18_7_desc_sc"] = "你的闪避点数再额外增加##5##",
 		["menu_deck18_9_desc_sc"] = "当你在烟雾弹产生的烟幕中时，你的闪避条每秒增加##40%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Sweet liquor eases the pain--
-		["menu_st_spec_19_desc_sc"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。\n\n完成全部牌组后的效果：\n##-##解锁并装备修士酒壶。受到伤害的 ##30%## 会在 ##8## 秒内逐渐承担。激活修士酒壶可以立刻抵消所有逐渐承担的伤害。当逐渐承担的伤害被抵消后，你会在时间内回复相当于 ##250%## 剩余逐渐承担伤害的血量。 修士酒壶有 ##30## 秒的冷却时间。\n##-##你的全部护甲值将转化为 ##50%## 血量。\n##-##你每击杀1名敌人都会减少 ##1## 秒的酒壶冷却时间。\n##-##如果在 ##4## 秒内未受到任何伤害你的逐渐承担的伤害将会被自动抵消。\n##-##当你的血量低于 ##50%##，你每击杀1名敌人都会减少 ##6## 秒的酒壶冷却时间。\n##-##当你倒地起身时你会获得最大生命值的 ##25%## 的血量。\n##-##你回答对讲机所需的时间减少##25%##。",
+		["menu_st_spec_19_desc_sc"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。\n\n完成全部牌组后的效果：\n##-##解锁并装备修士酒壶。受到伤害的 ##30%## 会在 ##8## 秒内逐渐承担。激活修士酒壶可以立刻抵消所有逐渐承担的伤害。当逐渐承担的伤害被抵消后，你会在时间内回复相当于 ##250%## 剩余逐渐承担伤害的血量。修士酒壶有 ##30## 秒的冷却时间。\n##-##你的全部护甲值将转化为 ##50%## 血量。\n##-##你每击杀1名敌人都会减少 ##1## 秒的酒壶冷却时间。\n##-##如果在 ##4## 秒内未受到任何伤害你的逐渐承担的伤害将会被自动抵消。\n##-##当你的血量低于 ##50%##，你每击杀1名敌人都会减少 ##6## 秒的酒壶冷却时间。\n##-##当你倒地起身时你会获得最大生命值的 ##25%## 的血量。\n##-##你回答对讲机所需的时间减少##25%##。",
 		["menu_st_spec_19_desc_sc_short"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。",
 		["menu_deck19_1_desc_sc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的伤害中的##30%##不会立刻使你丢失血量，而是变成虚血在##8##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##300%##的血量。修士酒壶的冷却时间为##30##秒。\n\n##你所有的护甲量将转变为护甲量50%的血量##。",
 		["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##1##秒。",
@@ -3080,7 +3100,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_9_desc_sc"] = "你倒地被救起后的剩余血量提高##25%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--it's not a war crime if they're not people--
-		["menu_st_spec_20_desc_sc"] = "一个好汉三个帮，好东西需要分享！比如能增强属性的电子烟！让你与你的朋友联系更加紧密，无论是在抢劫银行还是在大杀四方。\n\n\n完成全部牌组后的效果：\n##-##解锁电子烟作为随身装备。激活电子烟你必须瞄准一名 ##18## 米视野内无阻挡的队友并按下投掷武器键来标记他。 标记后你或被你标记的队友每击杀1名敌人都会给你回复 ##15## 点血量同时给你的被标记的队友回复 ##7.5## 点血量。 在电子烟生效时间内你每击杀一名敌人都会延长电子烟的效果 ##2## 秒。电子烟效果维持 ##12## 秒且有 ##60## 秒冷却时间。\n##-##你或被你标记的队友每击杀1名敌人都会给你提供 ##1## 点伤害减少，最高 ##20## 点。 该效果会一直持续直到电子烟冷却结束。\n##-##你每击杀1名敌人都会减少 ##2## 秒电子烟的冷却时间。\n##-##在电子烟效果时间内被你标记的队友每击杀1名敌人都会减少 ##2## 秒电子烟冷却时间，直到电子烟效果结束为止。\n##-##你回路的摄像头，失效的时间增加##20##秒。",
+		["menu_st_spec_20_desc_sc"] = "一个好汉三个帮，好东西需要分享！比如能增强属性的电子烟！让你与你的朋友联系更加紧密，无论是在抢劫银行还是在大杀四方。\n\n\n完成全部牌组后的效果：\n##-##解锁电子烟作为随身装备。激活电子烟你必须瞄准一名 ##18## 米视野内无阻挡的队友并按下投掷武器键来标记他。标记后你或被你标记的队友每击杀1名敌人都会给你回复 ##15## 点血量同时给你的被标记的队友回复 ##7.5## 点血量。在电子烟生效时间内你每击杀一名敌人都会延长电子烟的效果 ##2## 秒。电子烟效果维持 ##12## 秒且有 ##60## 秒冷却时间。\n##-##你或被你标记的队友每击杀1名敌人都会给你提供 ##1## 点伤害减少，最高 ##20## 点。该效果会一直持续直到电子烟冷却结束。\n##-##你每击杀1名敌人都会减少 ##2## 秒电子烟的冷却时间。\n##-##在电子烟效果时间内被你标记的队友每击杀1名敌人都会减少 ##2## 秒电子烟冷却时间，直到电子烟效果结束为止。\n##-##你回路的摄像头，失效的时间增加##20##秒。",
 		["menu_st_spec_20_desc_sc_short"] = "一个好汉三个帮，好东西需要分享！比如能增强属性的电子烟！让你与你的朋友联系更加紧密，无论是在抢劫银行还是在大杀四方。",
 		["menu_deck20_1_desc_sc"] = "解锁##电子烟##以供你使用。\n\n要使用电子烟，你需要看向一名没有视野遮挡的##18##米内的队友并按下使用投掷物的按键标记他。\n\n你和你标记的队友每击杀一名敌人都会为你回复##8##点血量，并且为你标记的队友回复##5##点血量。\n\n电子烟的持续时间为##11##秒，冷却时间为##80##秒。",
 		["menu_deck20_3_desc_sc"] = "你和你标记的队友每击杀一名敌人都会延长电子烟的持续时间##2##秒。每次杀敌将减少下次杀敌延长时间的##0.2##秒。",
@@ -3089,7 +3109,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "你每击杀一名敌人都会减少电子烟的冷却时间##2##秒。\n\n电子烟效果持续时间，你标记的队友击杀敌人也能为你减少电子烟的冷却时间##2##秒。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Biker--
-		["menu_st_spec_16_desc_sc"] = "在世界范围内，飞车党都家喻户晓和臭名远扬。想成为飞车党的一员你必须忠诚且强硬，并且全面遵守飞车党的规定。飞车党是一群冷血且暴力的恶棍，敢于挑战拦在他们路上的一切。\n\n完成全部牌组后的效果：\n##-##你和你的团队成员每击杀1名敌人都能给你回复 ##2## 点血量，每 ##2## 秒只能触发一次。\n##-##你每 ##3## 秒回复 ##10## 点护甲值。\n##-##每损失 ##25%## 的护甲值都能减少击杀回血技能的冷却 ##0.5## 秒并且增加 ##2## 点击杀敌人所回复的血量。\n##-##你每 ##2.5## 秒回复 ##10## 点护甲值。用近战武器击杀敌人将立即触发此效果同时减少 ##1##  秒下次触发此效果的时间。 \n##-##你打包尸体和与人质互动的速度加快##75%##。",
+		["menu_st_spec_16_desc_sc"] = "在世界范围内，飞车党都家喻户晓和臭名远扬。想成为飞车党的一员你必须忠诚且强硬，并且全面遵守飞车党的规定。飞车党是一群冷血且暴力的恶棍，敢于挑战拦在他们路上的一切。\n\n完成全部牌组后的效果：\n##-##你和你的团队成员每击杀1名敌人都能给你回复 ##2## 点血量，每 ##2## 秒只能触发一次。\n##-##你每 ##3## 秒回复 ##10## 点护甲值。\n##-##每损失 ##25%## 的护甲值都能减少击杀回血技能的冷却 ##0.5## 秒并且增加 ##2## 点击杀敌人所回复的血量。\n##-##你每 ##2.5## 秒回复 ##10## 点护甲值。用近战武器击杀敌人将立即触发此效果同时减少 ##1##  秒下次触发此效果的时间。\n##-##你打包尸体和与人质互动的速度加快##75%##。",
 		["menu_st_spec_16_desc_sc_short"] = "在世界范围内，飞车党都家喻户晓和臭名远扬。想成为飞车党的一员你必须忠诚且强硬，并且全面遵守飞车党的规定。飞车党是一群冷血且暴力的恶棍，敢于挑战拦在他们路上的一切。",
 		["menu_deck16_1_desc_sc"] = "每当你或你队友击杀一名敌人时，你获得##2##点血量。冷却时间为##2##秒。",
 		["menu_deck16_3_desc_sc"] = "你每##3##秒恢复##10##点护甲值",
@@ -3098,8 +3118,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "每减少##25%##的护甲值都将使杀敌回血量增加##2##点\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "极道是世界上最恶名昭著的犯罪团伙。 由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。\n\n作为社会的边缘人群，极道了解如何生存下去。尽管他彬彬有礼，却千万不能小觑他。\n\n\n完成全部牌组后的效果：\n##-##当你的血量低于50%:\n你的闪避条每秒最多增加闪避点数的##8%##；\n当你击杀一名敌人时，你的闪避计数器最高增加闪避点数的##50%##；\n当你近战击杀一名敌人时，你的闪避条最高增加闪避点数的##50%##；\n你最多减少 ##20%## 所受到的伤害。\n##-##受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数\n\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n##-##你打包尸体和与人质互动的速度加快##75%##",
-		["menu_st_spec_12_desc_sc_short"] = "极道是世界上最恶名昭著的犯罪团伙。 由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。",
+		["menu_st_spec_12_desc_sc"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。\n\n作为社会的边缘人群，极道了解如何生存下去。尽管他彬彬有礼，却千万不能小觑他。\n\n\n完成全部牌组后的效果：\n##-##当你的血量低于50%:\n你的闪避条每秒最多增加闪避点数的##8%##；\n当你击杀一名敌人时，你的闪避计数器最高增加闪避点数的##50%##；\n当你近战击杀一名敌人时，你的闪避条最高增加闪避点数的##50%##；\n你最多减少 ##20%## 所受到的伤害。\n##-##受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数\n\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n##-##你打包尸体和与人质互动的速度加快##75%##",
+		["menu_st_spec_12_desc_sc_short"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。",
 		["menu_deck12_1_desc_sc"] = "你的血量低于##50%##时，血量越少，你的闪避条被动增长的速度越快，最快可以达到每秒增加闪避点数的##8%##\n\n你的闪避点数增加##5##",	
 		["menu_deck12_3_desc_sc"] = "你的血量低于##50%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##",
 		["menu_deck12_5_desc_sc"] = "你的血量低于##50%##时，血量越少，你受到的伤害越少，最多可以获得##20%##的伤害减免\n\n你打包尸体和与人质互动的速度加快##75%##",
@@ -3128,24 +3148,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_spec_0"] = "Tabula Rasa",
 		["menu_st_spec_0_desc"] = "It is hypothesized that human beings are born without inherent ideas, thoughts, or ideologies and that these are all learned behaviors from various experiences. In some ways this can cause one to have great difficulty, in other ways this can be seen as an advantage. The Tabula Rasa perk deck offers benefits that may not seem obvious at first and even detrimental, but a greater challenge can sometimes bring about other rewards.\n\nBenefits from a full perk deck:\n##-##Your purchased items on the Black Market and Assets for use in heists cost ##60%## less.\n##-##You gain ##30%## more value to loose items that you pick up.\n##-##You gain ##135%## more experience when you complete days and jobs.\n##-##Your chance of getting a higher quality item during a PAYDAY is increased by ##30%.##",
 		["menu_st_spec_0_desc_short"] = "It is hypothesized that human beings are born without inherent ideas, thoughts, or ideologies and that these are all learned behaviors from various experiences. In some ways this can cause one to have great difficulty, in other ways this can be seen as an advantage. The Tabula Rasa perk deck offers benefits that may not seem obvious at first and even detrimental, but a greater challenge can sometimes bring about other rewards.",
-		["menu_deck0_1"] = "Inside Man",
-		["menu_deck0_1_desc"] = "Your purchased items on the Black Market and Assets for use in heists cost ##30%## less.",		
-		["menu_deck0_2"] = "Black Marketeer",
-		["menu_deck0_2_desc"] = "Your purchased items on the Black Market and Assets for use in heists cost an additional ##30%## less.",				
-		["menu_deck0_3"] = "Dead Presidents",
-		["menu_deck0_3_desc"] = "You gain ##15%## more value to loose items that you pick up.",		
-		["menu_deck0_4"] = "Veteran's Day",
-		["menu_deck0_4_desc"] = "You gain an additional ##30%## more value to loose items that you pick up.",	
-		["menu_deck0_5"] = "Noob Lube",
-		["menu_deck0_5_desc"] = "You gain ##45%## more experience when you complete days and jobs.",	
-		["menu_deck0_6"] = "Fast Learner",
-		["menu_deck0_6_desc"] = "You gain an additional ##45%## more experience when you complete days and jobs.",		
-		["menu_deck0_7"] = "Mister Doctor Fantastic",
-		["menu_deck0_7_desc"] = "You gain an additional ##45%## more experience when you complete days and jobs.",			
-		["menu_deck0_8"] = "Four Leaf Clover",
-		["menu_deck0_8_desc"] = "Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-		["menu_deck0_9"] = "Lucky Charm",
-		["menu_deck0_9_desc"] = "Your chance of getting a higher quality item during a PAYDAY is increased by an additional ##20%.##",		
+		["menu_deck0_1"] = "内应",
+		["menu_deck0_1_desc"] = "你购买武器和有利条件的花费减少##30%##。",		
+		["menu_deck0_2"] = "黑市商人",
+		["menu_deck0_2_desc"] = "你购买武器和有利条件的花费额外减少##30%##。",				
+		["menu_deck0_3"] = "为钱卖命",
+		["menu_deck0_3_desc"] = "你捡起的零散物品的价值提高##15%##。",		
+		["menu_deck0_4"] = "老兵节",
+		["menu_deck0_4_desc"] = "你捡起的零散物品的价值额外提高##30%##。",	
+		["menu_deck0_5"] = "萌新上路",
+		["menu_deck0_5_desc"] = "你完成劫案获得的经验奖励增加##45%##。",	
+		["menu_deck0_6"] = "快速入门",
+		["menu_deck0_6_desc"] = "你完成劫案获得的经验奖励额外增加##45%##。",		
+		["menu_deck0_7"] = "神奇博士",
+		["menu_deck0_7_desc"] = "你完成劫案获得的经验奖励再额外增加##45%##。",			
+		["menu_deck0_8"] = "四叶草",
+		["menu_deck0_8_desc"] = "你结束劫案后翻牌获得稀有物品的概率增加##10%##。",
+		["menu_deck0_9"] = "幸运挂件",
+		["menu_deck0_9_desc"] = "你结束劫案后翻牌获得稀有物品的概率额外增加##20%##。",		
 		
 		["menu_st_spec_00"] = "Innatae",
 		["menu_st_spec_00_desc"] = "Some others would argue that the mind has inherent instincts and knowledge, that people are indeed not a blank canvas. The Innatae has the basic abilities that every good bank robber should be expected to have, leaving only room for personal gains to be had. Such convictions, like anything, have a toll on oneself. Is this the cost of giving in to our own primal instincts?\n\nBenefits from a full perk deck:\n##-##Your purchased items on the Black Market and Assets for use in heists cost ##30%## less.\n##-##You gain ##15%## more value to loose items that you pick up.\n##-##You gain ##90%## more experience when you complete days and jobs.\n##-##Your chance of getting a higher quality item during a PAYDAY is increased by ##20%.##",

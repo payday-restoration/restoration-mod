@@ -633,10 +633,10 @@ local nypd_overkill = {
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 		
 		--cops
-		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
-		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
-		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3",
-		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4",
+		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
+		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
+		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
 		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
 

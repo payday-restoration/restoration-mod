@@ -4236,18 +4236,24 @@ function BlackMarketGui:update_info_text()
 			if category == slot_data.category then
 
 				if weapon_tweak.has_description then
+					local has_pc_desc = managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc")
+					local description = has_pc_desc and managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros) or managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					for color_id in string.gmatch(description, "#%{(.-)%}#") do
+						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+					end
+					description = description:gsub("#%{(.-)%}#", "##")
 	
 					if slot_data.global_value and slot_data.global_value ~= "normal" then
 						if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-							updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+							updated_texts[4].text = updated_texts[4].text .. "\n" .. description
 						else
-							updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+							updated_texts[4].text = updated_texts[4].text .. "\n" .. description
 						end
 					else
 						if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-							updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+							updated_texts[4].text = updated_texts[4].text .. description
 						else
-							updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+							updated_texts[4].text = updated_texts[4].text .. description
 						end
 					end
 					updated_texts[4].below_stats = true
@@ -4836,6 +4842,7 @@ function BlackMarketGui:update_info_text()
 		local is_bayonet = part_data and part_data.type == "bayonet" or perks and table.contains(perks, "bayonet")
 		local is_bipod = part_data and part_data.type == "bipod" or perks and table.contains(perks, "bipod")
 		local has_desc = part_data and part_data.has_description == true
+		local desc_color_info = part_data and part_data.desc_color_info
 		updated_texts[4].resource_color = {}
 
 		if slot_data.global_value and slot_data.global_value ~= "normal" then
@@ -4854,12 +4861,20 @@ function BlackMarketGui:update_info_text()
 
 		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
 			local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
-			if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) then
-				updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
-			else
-				updated_texts[4].text = updated_texts[4].text .. managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
+			local description = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
+			description = description:gsub("#%{(.-)%}#", "##")
+
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) then
+				updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+			else
+				updated_texts[4].text = updated_texts[4].text .. description
+			end
+
 		end
+
 
 		updated_texts[4].below_stats = true
 		local weapon_id = managers.weapon_factory:get_factory_id_by_weapon_id(prev_data.name)
@@ -4932,10 +4947,17 @@ function BlackMarketGui:update_info_text()
 			end
 
 			if #removed_mods > 0 then
-				updated_texts[5].text = managers.localization:to_upper_text("bm_mod_equip_remove", {
-					mod = removed_mods
-				})
+				if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
+					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_mod_equip_remove", {
+						mod = removed_mods
+					}) .. "##"
+				else
+					updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text("bm_mod_equip_remove", {
+						mod = removed_mods
+					}) .. "##"
+				end
 			end
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 		elseif forbidden_parts and #forbidden_parts > 0 then
 			local forbids = {}
 
@@ -4977,7 +4999,7 @@ function BlackMarketGui:update_info_text()
 				end
 			end
 
-			if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
 				updated_texts[4].text = updated_texts[4].text .. "\n##" .. text .. "##"
 			else
 				updated_texts[4].text = updated_texts[4].text .. "##" .. text .. "##"

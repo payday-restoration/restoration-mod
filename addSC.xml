@@ -998,7 +998,7 @@
 	
 	<!--Weapon Mod Trails-->
 	<!--M249/240 casings-->
-    <effect path="_dmc/effects/shell_lmg_down" force="true" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
 	<!--NATO Tracer-->
     <effect path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
@@ -1007,15 +1007,15 @@
     <effect path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--STERWERS Tracer-->
     <effect path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/republic_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/empire_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/techno_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/mando_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>

@@ -1371,6 +1371,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.supported = true
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.desc_id = "bm_wp_upg_flash_hider"
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.has_description = true
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
@@ -2160,6 +2163,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Flash Hider
 	self.parts.wpn_fps_upg_pis_ns_flash.pcs = {}
 	self.parts.wpn_fps_upg_pis_ns_flash.supported = true
+	self.parts.wpn_fps_upg_pis_ns_flash.has_description = true
+	self.parts.wpn_fps_upg_pis_ns_flash.desc_id = "bm_wp_upg_flash_hider"
+	self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
 	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
@@ -6906,7 +6912,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 		ads_speed_mult = 0.975
 	}
 	
-	--Extended Mag
+	--Extended Mag (Fucking channelling the "extended" mag of the MP40 in CoD:WaW, lmao)
 	self.parts.wpn_fps_smg_scorpion_m_extended.pcs = {}
 	self.parts.wpn_fps_smg_scorpion_m_extended.supported = true
 	self.parts.wpn_fps_smg_scorpion_m_extended.stats = {
@@ -8288,8 +8294,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		recoil = 6
 	}
 	self.parts.wpn_fps_lmg_mg42_b_mg34.custom_stats = {rof_mult = 0.667}
-	self.parts.wpn_fps_lmg_mg42_b_mg34.has_description = true
-	self.parts.wpn_fps_lmg_mg42_b_mg34.desc_id = "bm_wp_mg42_b_mg34_desc_sc"
+	--self.parts.wpn_fps_lmg_mg42_b_mg34.has_description = true
+	--self.parts.wpn_fps_lmg_mg42_b_mg34.desc_id = "bm_wp_mg42_b_mg34_desc_sc"
 	
 	--Heatsinked Suppressed Barrel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.pcs = {}
@@ -12761,6 +12767,61 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_breech", "resmod_breech", function
 		spread = 1,
 		concealment = -1
 	}
+
+	if not self.wpn_fps_pis_breech.override then
+		self.wpn_fps_pis_breech.override = {}
+	end
+
+	--[[
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_small = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_medium = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_medium_gem = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_medium_slim = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_large = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_large_kac = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	--]]
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_pis_ns_flash = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_typhoon = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+
+	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_small")
+	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium")
+	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_gem")
+	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_slim")
+	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_large")
+	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_large_kac")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_pis_ns_flash")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_typhoon")
+
+	self.wpn_fps_pis_breech_npc.uses_parts = deep_clone(self.wpn_fps_pis_breech.uses_parts)	
 	
 end)
 

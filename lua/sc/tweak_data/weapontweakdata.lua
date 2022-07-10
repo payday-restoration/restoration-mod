@@ -4146,7 +4146,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.timers.reload_exit_not_empty = 0.45
 
 			--Stryk 18c (Glock 18)
-				self.glock_18c.desc_id = "bm_menu_sc_glock18c_desc"
+				self.glock_18c.desc_id = "bm_g18c_sc_desc"
+				self.glock_18c.has_description = true
 				self.glock_18c.fire_mode_data.fire_rate = 0.05454545454
 				self.glock_18c.auto.fire_rate = 0.05454545454
 				self.glock_18c.CLIP_AMMO_MAX = 18
@@ -7626,7 +7627,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 80,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 27,
+					concealment = 25,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -13156,7 +13157,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		saw = 1.25, --Compensate for jankiness.
 		lmg = 0.6,
 		minigun = 0.4,
-		pdw = 0.45,
+		pdw = 0.5,
 	}
 
 	--Get weapon category specific pickup multipliers.

@@ -2176,8 +2176,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_baseballbat
 	melee_anim = {
-		'stick','hockey','dingdong','alien_maul','baseballbat','spoon','spoon_gold',
-		'freedom','barbedwire'
+		'stick','hockey','dingdong','alien_maul','spoon','spoon_gold',
+		'freedom'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
@@ -2195,7 +2195,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_beardy
 	melee_anim = {
-		'beardy'
+		'beardy','baseballbat','barbedwire'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
@@ -2204,7 +2204,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].expire_t = 1.45
 		self.melee_weapons[melee_id].repeat_expire_t = 1.2
 		self.melee_weapons[melee_id].melee_damage_delay = 0.65
-		self.melee_weapons[melee_id].anim_speed_mult = 1.375
+		self.melee_weapons[melee_id].anim_speed_mult = 1.33333
 	end
 	
 	--melee_knife
@@ -2218,9 +2218,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].expire_t = 1.1
 		self.melee_weapons[melee_id].repeat_expire_t = 0.8
 		self.melee_weapons[melee_id].melee_damage_delay = 0.1
-		self.melee_weapons[melee_id].anim_speed_mult = 1.2
+		self.melee_weapons[melee_id].anim_speed_mult = 1.25
 	end	
-	self.melee_weapons.bowie.anim_attack_vars = {"var1","var2"} --Removes the awkward blunt side strike attack variant
+	self.melee_weapons.bowie.anim_attack_vars = {"var1","var2"} --Removes the awkward blunt side strike attack variants
 	
 	--melee_knife2
 	melee_anim = {
@@ -2457,7 +2457,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_twins
 	melee_anim = {
-		'twins'
+		'twins','poker'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_twins"
@@ -2480,7 +2480,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].expire_t = 0.4
 		self.melee_weapons[melee_id].repeat_expire_t = 0.3
 		self.melee_weapons[melee_id].melee_damage_delay = 0.1
-		self.melee_weapons[melee_id].anim_speed_mult = 0.525 --Still a bit faster than it was originally, even with this heavy of a slowdown
+		self.melee_weapons[melee_id].anim_speed_mult = 0.5 --Still a bit faster than it was originally, even with this heavy of a slowdown
 	end
 	
 	--melee_psycho
@@ -2572,7 +2572,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_ballistic
 	melee_anim = {
-		'ballistic','poker'
+		'ballistic'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_ballistic"

@@ -1153,9 +1153,11 @@ function PlayerStandard:_start_action_running(t)
 
 	self._end_running_expire_t = nil
 	self._start_running_t = t
+
+	local cancel_sprint = restoration.Options:GetValue("OTHER/SprintCancel")
 	
 	--Skip sprinting animations of player is doing melee things.
-	if not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or not self.RUN_AND_RELOAD) then
+	if not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) then
 		if not self._equipped_unit:base():run_and_shoot_allowed() then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))	
 		else
@@ -1163,7 +1165,7 @@ function PlayerStandard:_start_action_running(t)
 		end	
 	end
 	
-	if not self.RUN_AND_RELOAD then
+	if not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true) then
 		self:_interupt_action_reload(t)
 	end
 				

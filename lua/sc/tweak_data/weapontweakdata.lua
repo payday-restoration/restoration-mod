@@ -3276,7 +3276,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].nato = true
 	end
 	faction = {
-		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech','scorpion','x_scorpion'
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].warsaw = true
@@ -8082,6 +8082,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						"clip_ammo_increase"
 					}
 				}		
+				self.groza_underbarrel.fire_mode_data.fire_rate = 1.2
 				self.groza_underbarrel.kick = self.stat_info.kick_tables.moderate_kick
 				self.groza_underbarrel.panic_suppression_chance = 0.05
 				self.groza_underbarrel.ignore_damage_upgrades = true
@@ -8390,7 +8391,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband.FIRE_MODE = "single"
 			self.contraband.fire_mode_data.fire_rate = 0.1
 			self.contraband.CAN_TOGGLE_FIREMODE = true
-			self.contraband.auto.fire_rate = 0.1
 			self.contraband.panic_suppression_chance = 0.05
 			self.contraband.kick = self.stat_info.kick_tables.moderate_kick
 			self.contraband.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -8423,6 +8423,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"clip_ammo_increase"
 				}
 			}		
+			self.contraband_m203.fire_mode_data.fire_rate = 1.2
 			self.contraband_m203.kick = self.stat_info.kick_tables.vertical_kick
 			self.contraband_m203.panic_suppression_chance = 0.05
 			self.contraband_m203.ignore_damage_upgrades = true
@@ -9747,7 +9748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}		
 		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
 		self.gre_m79.has_description = true
-		self.gre_m79.fire_mode_data.fire_rate = 1
+		self.gre_m79.fire_mode_data.fire_rate = 1.2
 		self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
 		self.gre_m79.AMMO_MAX = 10
 		self.gre_m79.supported = true
@@ -9988,7 +9989,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rpg7.kick = self.stat_info.kick_tables.vertical_kick
 		self.rpg7.has_description = true
 		self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
-		self.rpg7.fire_mode_data.fire_rate = 2
+		self.rpg7.fire_mode_data.fire_rate = 3
 		self.rpg7.AMMO_MAX = 4
 		self.rpg7.timers.reload_not_empty = 4.7
 		self.rpg7.timers.reload_empty = 4.7
@@ -10036,11 +10037,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ray.kick = self.stat_info.kick_tables.vertical_kick
 		self.ray.timers.reload_not_empty = 6
 		self.ray.timers.reload_empty = 6
-		self.ray.fire_mode_data.fire_rate = 1
+		self.ray.fire_mode_data.fire_rate = 1.2
 		self.ray.CLIP_AMMO_MAX = 4
 		self.ray.AMMO_MAX = 8
 		self.ray.BURST_FIRE = 4
-		self.ray.BURST_FIRE_RATE_MULTIPLIER = 6.6666
+		self.ray.BURST_DELAY = 0.75
+		self.ray.BURST_FIRE_RATE_MULTIPLIER = 8
 		self.ray.supported = true
 		self.ray.shake.fire_steelsight_multiplier = -2
 		self.ray.ads_speed = 0.540

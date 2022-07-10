@@ -133,6 +133,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
 		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
 		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires reload.",
+		["RestorationModSprintCancelTitleID"] = "Evasion Aced Reload Cancel",
+		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 
@@ -1009,7 +1011,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
 		--["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		--["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fire a #{important_1}#single## lead slug that #{skill_color}#penetrates body armor, enemies, shields, titan shields, and walls.##", --For shotguns that can hit Heavy Sniper damage tier--
-		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies, shields, titan shields, and walls.##",
+		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#2.5## meters. #{important_1}#Cannot headshot.##",
 		["bm_wp_upg_a_custom_desc"] = "Fire bigger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, range, pickup and total ammo.##",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor##.\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#96## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
@@ -2704,7 +2706,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
-		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%.##\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.",
+		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%.##\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.\n\nA setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options",
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",

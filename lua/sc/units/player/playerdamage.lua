@@ -978,6 +978,10 @@ function PlayerDamage:revive(silent)
 		"down_absorption",
 		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
 	)
+	
+	if MusicManager.set_volume_multiplier then
+		managers.music:set_volume_multiplier("downed", 1, 1)
+	end
 end
 
 --First Aid Kit healing.

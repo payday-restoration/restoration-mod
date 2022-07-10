@@ -15892,7 +15892,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_g36/wpn_npc_g36"),
 		Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump"),
 		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc"),
+		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc"),

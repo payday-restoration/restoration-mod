@@ -935,7 +935,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 			end
 		end
 
-		if not retreat_area and current_objective.coarse_path then
+		if not retreat_area then
 			local forwardmost_i_nav_point = self:_get_group_forwardmost_coarse_path_index(group)
 			if forwardmost_i_nav_point then
 				retreat_area = self:get_area_from_nav_seg_id(current_objective.coarse_path[forwardmost_i_nav_point][1])
@@ -1455,6 +1455,14 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function 
 	-- Set a cooldown before new units can be spawned via regular spawn tasks
 	self._next_group_spawn_t = self._t + spawn_task.group.size * tweak_data.group_ai.spawn_cooldown_mul
 end)
+
+-- Fix for potential crash when a group objective does not have a coarse path
+local _get_group_forwardmost_coarse_path_index_original = GroupAIStateBesiege._get_group_forwardmost_coarse_path_index
+function GroupAIStateBesiege:_get_group_forwardmost_coarse_path_index(group, ...)
+	if group.objective and group.objective.coarse_path then
+		return _get_group_forwardmost_coarse_path_index_original(self, group, ...)
+	end
+end
 
 function GroupAIStateBesiege:_voice_open_fire_start(group)
 	for u_key, unit_data in pairs(group.units) do

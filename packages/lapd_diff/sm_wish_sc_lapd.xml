@@ -17,19 +17,19 @@
 	<material_config	path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />	
 
 	<!--SFPD Beat Cops-->
-	<unit				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" load="true" force="true" />
-	<unit				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1_husk" load="true" force="true" />
-	<object				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" force="true" />	
-	<model				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" force="true" />	
-	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" force="true" />	
-	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1_contour" force="true" />
+	<unit				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" load="true" />
+	<unit				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1_husk" load="true" />
+	<object				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />	
+	<model				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1_contour" />
 
-	<unit				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" load="true" force="true" />
-	<unit				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2_husk" load="true" force="true" />	
-	<object				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" force="true" />	
-	<model				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" force="true" />
-	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" force="true" />
-	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2_contour" force="true" />
+	<unit				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" load="true" />
+	<unit				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2_husk" load="true" />	
+	<object				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" />	
+	<model				path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" />
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2" />
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2_contour" />
 	
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3" load="true"/>
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3_husk" load="true"/>	

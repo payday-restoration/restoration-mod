@@ -6,6 +6,9 @@
 	<!--SR2-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc" load="false" force="false"/>
 	
+	<!--ASVAL -->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" load="false" force="false"/>
+	
 	<!--bravo g3-->
 	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo" />
 	<cooked_physics		path="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo" force="false"/>

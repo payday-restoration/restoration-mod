@@ -9,6 +9,9 @@
 	<unit_mat			path="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo" />
 	<cooked_physics		path="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo" force="false"/>
 	
+	<!--ASVAL -->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" load="false" force="false"/>
+	
 	<df_nm				path="units/pd2_dlc_bex/weapons/wpn_npc_hk33/hk33" force="false"/>
 	
 	<!--normal ass g3-->

@@ -1042,7 +1042,7 @@ function CopMovement:set_cloaked(state, sync)
 
 		if weapon_unit then
 			weapon_unit:damage():run_sequence_simple(sequence_name)
-			weapon_unit:base():set_flashlight_enabled(state) -- disable the flashlight upon cloaking
+			weapon_unit:base():set_flashlight_enabled(not state) -- disable the flashlight upon cloaking
 		end
 
 		self._cloaked = state

@@ -29,6 +29,7 @@ function MutatorsManager:init()
 		MutatorMoreDonutsPlus:new(self),
 		MutatorJungleInferno:new(self),
 		MutatorNoTitans:new(self),
+		--MutatorSpawnMult:new(self),
 		--MutatorFactionsReplacer:new(self),
 		--MutatorZombieOutbreak:new(self)
 	}

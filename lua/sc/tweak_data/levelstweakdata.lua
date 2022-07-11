@@ -478,6 +478,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.help.player_style = "suit_prison"
 	--///SAFEHOUSE\\\--
 	self.chill.ghost_bonus = nil
+	self.chill_combat.disable_mutators = false
 	
 	self.cage.ghost_bonus = nil
 	

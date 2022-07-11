@@ -4764,7 +4764,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.ARRESTED_TIME = 30
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
-	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.6
+	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
 	presets.gang_member_damage.respawn_time_penalty = 0
 	presets.gang_member_damage.base_respawn_time_penalty = 5
 	presets.weapon = {}
@@ -16012,7 +16012,7 @@ function CharacterTweakData:_set_easy()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 20
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
 	self.old_hoxton_mission.HEALTH_INIT = 20
 	self.spa_vip.HEALTH_INIT = 20
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 20
@@ -16081,7 +16081,7 @@ function CharacterTweakData:_set_normal()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 40
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 40
 	self.spa_vip.HEALTH_INIT = 40
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 40
@@ -16150,7 +16150,7 @@ function CharacterTweakData:_set_hard()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 60
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 60
 	self.spa_vip.HEALTH_INIT = 60
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 60
@@ -16220,7 +16220,7 @@ function CharacterTweakData:_set_overkill()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 80
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.old_hoxton_mission.HEALTH_INIT = 80
 	self.spa_vip.HEALTH_INIT = 80
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
@@ -16287,7 +16287,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
@@ -16351,7 +16351,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 120
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 120
 	self.spa_vip.HEALTH_INIT = 120
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 120
@@ -16410,7 +16410,7 @@ function CharacterTweakData:_set_overkill_290()
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 140
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 140
 	self.spa_vip.HEALTH_INIT = 140
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
@@ -16476,7 +16476,7 @@ function CharacterTweakData:_set_sm_wish()
 		
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 160
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 160
 	self.spa_vip.HEALTH_INIT = 160
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 160

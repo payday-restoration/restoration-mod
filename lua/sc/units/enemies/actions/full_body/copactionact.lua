@@ -34,7 +34,7 @@ local _play_anim_orig = CopActionAct._play_anim
 function CopActionAct:_play_anim()
 	local result = _play_anim_orig(self)
 	-- act actions disable the flashlight if it needs to be done from idle, which generally means specialobjectives
-	if result and self._action_desc.needs_full_blend and self._unit:inventory():equipped_unit() then
+	if result and self._action_desc.needs_full_blend and self._unit:inventory():equipped_unit() and not self._ext_movement:cloaked() then
 		self._flashlight_disabled = true
 		self._unit:inventory():equipped_unit():base():set_flashlight_enabled(false)
 	end
@@ -47,9 +47,3 @@ Hooks:PostHook(CopActionAct, "on_exit", "res_on_exit", function(self)
 		self._unit:inventory():equipped_unit():base():set_flashlight_enabled(true)
 	end
 end)
-
--- Fix enemies that were in panic state getting stuck
-local need_upd_original = CopActionAct.need_upd
-function CopActionAct:need_upd(...)
-	return self._ext_anim.fumble or need_upd_original(self, ...)
-end

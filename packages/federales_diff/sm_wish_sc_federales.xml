@@ -492,7 +492,7 @@
 	<!--Titan HRT SR2-->	
 	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="true" force="false"/>			
 		
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
+		
 	
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	

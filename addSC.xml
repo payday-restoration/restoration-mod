@@ -205,11 +205,8 @@
 	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_contour"  />	
 
 	<!--NPC DS Police Sniper-->
-	<unit				path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<model				path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<object				path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<unit_mat			path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<material_config	path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />	
 
 	<!--Unshootable Flashbangs-->
 	<sequence_manager	path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
@@ -586,9 +583,6 @@
 	<model				path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun" force="true"/>	
 	<texture			path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/sawnoff_df" force="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/sawnoff_nm" force="true"/>
-
-	<!--Fixed Sniper-->
-	<object				path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 
 	<!--Unshootable Flashbangs-->
 	<sequence_manager	path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
@@ -1128,6 +1122,7 @@
 	
 	<!--NPC Mp5-->
 	<model				path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
+	<object				path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
 
 	<!--NPC UMP-->
 	<model				path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true"/>
@@ -1169,22 +1164,7 @@
 	
 	<!--glint texture-->
 	<texture			path="units/payday2/weapons/wpn_npc_sniper/material_flare_il"/>
-	
-	<!--NPC DS Police Sniper
-	<unit				path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<model				path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<object				path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<material_config	path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />	-->
-	
-	<!--NPC DS Merc Sniper
-	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
-	<model				path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
-	<object				path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
-	<cooked_physics		path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
-	<material_config	path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
-	<material_config	path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc_contour" />-->
-	
+			
 	<!--P90 Tan Body-->
 	<texture			path="units/payday2/weapons/wpn_fps_smg_p90_pts/body_tan_df"/>
 	<unit				path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan" load="false"/>

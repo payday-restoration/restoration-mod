@@ -83,6 +83,7 @@ function PlayerInventory:_do_feedback()
 	if not alive(self._unit) or not self._jammer_data or t > self._jammer_data.t - 0.1 then
 		self:stop_feedback_effect()
 
+		return
 	end
 
 	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, 2500)

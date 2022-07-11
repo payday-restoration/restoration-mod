@@ -76,15 +76,27 @@
 	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>	
 	
 	<!--swat cloaker-->	
-	<unit				path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"  load="true"/>
-	<unit				path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_husk"  load="true"/>
-	<model				path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"  />
-	<cooked_physics		path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"  />
-	<material_config	path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"  />
-	<material_config	path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_contour"  />
-	<object				path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"  />	
+	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_hvh_1_husk"  load="true"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1_contour"  />
+	<object				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />	
 	
-	<texture			path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df"  />	
+	<texture			path="units/pd2_mod_halloween/characters/ene_spook_1/spook_hvh_df"  />	
+	
+	<!--taser-->
+	<unit				path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"  load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1_husk"  load="true"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"  />
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"  />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"  />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1_contour"  />
+	<object				path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"  />
+	
+	<texture			path="units/pd2_mod_halloween/characters/ene_tazer_1/taser_body_hvh_df"  />
+	<texture			path="units/pd2_mod_halloween/characters/ene_tazer_1/helmet_heavy_taser_df"  />	
 
 	<!--zombie med mp5-->
     <object				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
@@ -94,15 +106,6 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_contour"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_husk" load="true"/>
-	
-	<!--taser-->
-	<unit				path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"  load="true"/>
-	<unit				path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1_husk"  load="true"/>
-	<model				path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"  />
-	<cooked_physics		path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"  />
-	<material_config	path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"  />
-	<material_config	path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1_contour"  />
-	<object				path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"  />
 	
 	<!--Grenadier-->
 	<object				path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"/>

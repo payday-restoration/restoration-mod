@@ -4333,8 +4333,10 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 		self._values.interval = element.interval
 		self._values.preferred_spawn_groups = element.preferred_spawn_groups
 	elseif groups and (#groups > #exclude_spawngroups or not table.contains_all(exclude_spawngroups, groups)) then
+		self._values.preferred_spawn_groups = {}
+
 		for name in pairs(tweak_data.group_ai.enemy_spawn_groups) do
-			if not table.contains(groups, name) then
+			if not table.contains(exclude_spawngroups, name) then
 				table.insert(groups, name)
 			end
 		end

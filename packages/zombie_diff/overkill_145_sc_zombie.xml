@@ -36,8 +36,6 @@
 	<unit				path="units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"  load="true"/>
 	<model				path="units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"  />
 	<object				path="units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"  />
-	<material_config	path="units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"  />
-	<material_config	path="units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_contour"  />
 		
 	<unit				path="units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1" load="true"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1_husk" load="true"/>

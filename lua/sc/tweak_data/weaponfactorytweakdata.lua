@@ -18062,23 +18062,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_winchester1894_stock_shellholder.override_weapon_add = nil
 	end										
 
-	if self.wpn_fps_pis_amt then -- Matthelzor, Gambyt, >:3, and Alcat's Automag .44				
-			self.parts.wpn_fps_upg_amt_visionking.supported = true				
-			self.parts.wpn_fps_upg_amt_visionking.stats = {
-				value = 8,
-				zoom = 6,
-				concealment = -3
-			}
-			self.parts.wpn_fps_pis_amt_m_short.supported = true
-			self.parts.wpn_fps_pis_amt_m_short.stats = {
+	if self.wpn_fps_pis_amt then -- Matthelzor, Gambyt, >:3, and Alcat's Automag .44
+			self.parts.wpn_fps_pis_amt_a_357.pcs = nil
+			self.parts.wpn_fps_pis_amt_a_357.supported = true	
+			self.parts.wpn_fps_pis_amt_a_357.stats = { value = 0 }
+			self.parts.wpn_fps_pis_amt_a_357.custom_stats = nil
+
+			self.parts.wpn_fps_pis_amt_a_44.pcs = nil
+			self.parts.wpn_fps_pis_amt_a_44.supported = true	
+			self.parts.wpn_fps_pis_amt_a_44.stats = { value = 0 }
+			self.parts.wpn_fps_pis_amt_a_44.custom_stats = nil
+
+			self.parts.wpn_fps_pis_amt_m_extended.supported = true		
+			self.parts.wpn_fps_pis_amt_m_extended.stats = {
 				value = 5,
-				concealment = -1,
-				reload = -2,
-				extra_ammo = 4
-			}			
-			self.parts.wpn_fps_pis_amt_b_long.supported = true			
-			self.parts.wpn_fps_pis_amt_b_long.stats = deep_clone(barrels.long_b1_stats)
-			self.parts.wpn_fps_pis_amt_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+				concealment = -3,
+				reload = -4,
+				extra_ammo = 6
+			}
+			self.parts.wpn_fps_pis_amt_m_extended.custom_stats = {
+				ads_speed_mult = 1.075
+			}	
+
+			self.parts.wpn_fps_pis_amt_b_long.supported = true
+			self.parts.wpn_fps_pis_amt_b_long.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_pis_amt_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 			self.parts.wpn_fps_pis_amt_g_smooth.supported = true	
 			self.parts.wpn_fps_pis_amt_g_smooth.stats = {
@@ -18086,12 +18094,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = -2,
 				concealment = 1
 			}		
+			self.parts.wpn_fps_pis_amt_g_smooth.custom_stats = {
+				ads_speed_mult = 0.975
+			}		
+
 			self.parts.wpn_fps_pis_amt_g_rosewood.supported = true		
 			self.parts.wpn_fps_pis_amt_g_rosewood.stats = {
 				value = 10,
 				recoil = 2,
 				spread = -1
-			}																				
+			}																					
 	end
 
 	--Gambyt's Toy M16

@@ -4991,7 +4991,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 38,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 23,
+					concealment = 25,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5033,7 +5033,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 25,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 22,
+					concealment = 23,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5104,7 +5104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 41,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5179,7 +5179,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 41,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 21,
+					concealment = 22,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5361,7 +5361,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 35,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 22,
+					concealment = 23,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5395,7 +5395,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 51,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5428,7 +5428,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 48,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 23,
+					concealment = 25,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5525,7 +5525,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 60,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 22,
+					concealment = 23,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -11352,19 +11352,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amt.tactical_reload = 1									
 		self.amt.use_data.selection_index = 2
 		self.amt.has_description = false
-		self.amt.fire_mode_data.fire_rate = 0.1
-		self.amt.single.fire_rate = 0.1
-		self.amt.kick = self.stat_info.kick_tables.even_recoil
+		self.amt.fire_mode_data.fire_rate = 0.133333
+		self.amt.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.amt.CLIP_AMMO_MAX = 8
 		self.amt.AMMO_MAX = 60
+		self.amt.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.amt.supported = true
+		self.amt.ads_speed = 0.360
+		self.amt.damage_falloff = {
+			start_dist = 2200,
+			end_dist = 5400,
+			min_mult = 0.3
+		}
 		self.amt.stats = {
 			damage = 60,
-			spread = 86,
-			recoil = 82,
+			spread = 63,
+			recoil = 32,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 24,
+			concealment = 23,
 			suppression = 5,
 			alert_size = 2,
 			extra_ammo = 101,

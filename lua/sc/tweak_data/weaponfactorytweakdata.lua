@@ -1582,6 +1582,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			rotation = Rotation(-0.062, 0.13, 0)
 		}
 	end
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk51b = {
+		translation = Vector3(-0.025, 0, -2.82),
+		rotation = Rotation(0.0, -0.1, -0.625)
+	}
+
+
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
 		translation = Vector3(0, -7, -3.35)
 	}	
@@ -1998,6 +2004,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2_dec16", "resmod_conte
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_winchester = { 
 		translation = Vector3(0, -7, -3.3)
 	}	
+	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_lmg_hk51b = {
+		translation = Vector3(-0.025, 5, -2.82),
+		rotation = Rotation(0.0, -0.1, -0.625)
+	}
 
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_musket = {
 		translation = Vector3(0, -15, -4.34)
@@ -16228,7 +16238,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scout", "resmod_scout", function(s
 		value = 0,
 		recoil = -2,
 		concealment = 1
-	}	
+	}
+
+	--Irons
+	self.parts.wpn_fps_snp_scout_o_iron_up.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(0.01, -12, 2.55),
+		rotation = Rotation(0.05, 0, 0)
+	}
 
 end)
 

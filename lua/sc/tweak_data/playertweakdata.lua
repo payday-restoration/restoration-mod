@@ -548,6 +548,18 @@ function PlayerTweakData:_init_czech()
 	self.stances.czech.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+-- HK51b
+local default_init_hk51b = PlayerTweakData._init_hk51b
+function PlayerTweakData:_init_hk51b()
+	default_init_hk51b(self)
+	local pivot_shoulder_translation = Vector3(8.545, 11.3934, -3.33201)
+	local pivot_shoulder_rotation = Rotation(4.78916e-05, 0.00548037, -0.00110991)
+	local pivot_head_translation = Vector3(-2.15, 5, -0)
+	local pivot_head_rotation = Rotation(-0.1, 0.2, 0)
+	self.stances.hk51b.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.hk51b.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
 
 
 if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then

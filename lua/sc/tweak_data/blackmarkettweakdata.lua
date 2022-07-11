@@ -2457,7 +2457,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_twins
 	melee_anim = {
-		'twins','poker'
+		'twins'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_twins"
@@ -2572,7 +2572,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_ballistic
 	melee_anim = {
-		'ballistic'
+		'ballistic','poker'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_ballistic"

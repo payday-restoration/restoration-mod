@@ -1,8 +1,11 @@
 <table>	
 	<table search="unit">	
+		<sequence name="'enable'" startup="true" reset_editable_state="true">
+			<function extension="'base'" function="'set_enabled'"/>		
+		</sequence>	
 	    <sequence editable_state="true" name="'mat_zeals'" once="true"  triggable="true">
 			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_zeal'"/>
-	    </sequence>
+	    </sequence>	
 	    <sequence editable_state="true" name="'mat_reapers'" once="true"  triggable="true">
 			<material_config name="'units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_reaper'"/>
 	    </sequence>

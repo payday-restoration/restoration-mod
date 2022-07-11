@@ -131,7 +131,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
 		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
 		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
-		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",		
+		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
+		["RestorationModSprintCancelTitleID"] = "위기모면 에이스 효과 재장전 취소",
+		["RestorationModSprintCancelDescID"] = "\"회피\" 스킬를 에이스 찍었을 때 전력 질주 시작이 진행 중일때 재장전을 취소할지 여부를 정합니다.",		
 		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
 		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
 
@@ -1007,7 +1009,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
 		--["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		--["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
-		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복, 적, 방패, 타이탄 실드, 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",		
+		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복, 적, 방패, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",		
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2.5## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다. #{important_1}#헤드샷을 할 수 없습니다.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#펠릿 수, 사거리, 탄약 획득량 및 총 탄약량을 줄이는 대신## #{skill_color}#피해를 증가시키는## 더 큰 펠릿을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = " #{heat_warm_color}#방탄복을 관통하여 불태우는## 펠릿을 발사합니다.\n\n일정 확률로 근거리에서 #{heat_warm_color}#적을 불태워## #{heat_warm_color}#96##의 피해를 입히고 #{skill_color}#3초에 걸쳐 대상을 패닉을 일으킬 수 있습니다.##",
@@ -2708,7 +2710,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Evasion--
 		["menu_awareness_beta_sc"] = "위기모면",
-		["menu_awareness_beta_desc_sc"] = "베이직: ##$basic##\n이동 속도가 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: ##$pro##\n달리면서 재장전할 수 있습니다.",
+		["menu_awareness_beta_desc_sc"] = "베이직: ##$basic##\n이동 속도가 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: ##$pro##\n달리면서 재장전할 수 있습니다.\n\n전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.",
 		
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "이퀼리브리엄",

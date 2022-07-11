@@ -2,6 +2,9 @@
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_murky" force="false" />
 	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_murky_df" force="false"/>
 	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_murky" force="false" />
+	
+	<!--Sniper-->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" force="false"/>
 
 	<!-- feds n cops     -->
 	<!--FBI 1-->

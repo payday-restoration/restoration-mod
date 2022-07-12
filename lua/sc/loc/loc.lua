@@ -2218,6 +2218,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0, meaning that there is no delay on instances of damage.",
 
 		["mutator_spawn_mult"] = "Amplified Response",
+		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",
 		["mutator_spawn_mult_desc"] = "Increased enemy spawns.",
 		["mutator_spawn_mult_longdesc"] = "More enemies will spawn during assault phases. The Overkill™ way!",
 

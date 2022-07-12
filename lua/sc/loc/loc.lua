@@ -360,6 +360,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
 		["restoration_level_data_lvl_friday"] = "5:00 PM, Shield Mall",
+		["restoration_level_data_skm_nightmare_lvl"] = "A laundromat? Are you here to wash away your sins?",
 
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
@@ -955,6 +956,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skmc_ovengrill_name"] = "Ovengrill Hardware",
 		["heist_skmc_mad_name"] = "DRAK R&D Laboratories",
 		["heist_skm_friend_name"] = "El Fureidis Mansion",
+		["heist_skm_nightmare_name"] = "The Old Safehouse",
+		["heist_skm_nightmare_lvl_name"] = "The Safehouse?",
 
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.\n\nNOTE FROM JACKAL:\nThe explosion from that crash alerted nearby Reaper teams. Don't expect a police response.",
@@ -975,6 +978,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["friend_9"] = "Look at 'em Run!",
 		["friend_9_desc"] = "Having started from wave 1, beat wave 9 of Holdout on the El Fureidis Mansion heist.",
 		["friend_9_obj"] = "Having started from wave 1, beat wave 9 of Holdout on the El Fureidis Mansion heist.",
+
+		--Safehouse Nightmare--
+		["skm_nightmare_name"] = "Holdout: The Old Safehouse",
+		["nightmare_3"] = "I believe in everything until it's disproved.",
+		["nightmare_3_desc"] = "Having started from wave 1, beat wave 3 of Holdout on the Old Safehouse heist.",
+		["nightmare_3_obj"] = "Having started from wave 1, beat wave 3 of Holdout on the Old Safehouse heist.",
+		["nightmare_5"] = "So I believe in fairies, the myths, dragons.",
+		["nightmare_5_desc"] = "Having started from wave 1, beat wave 5 of Holdout on the Old Safehouse heist.",
+		["nightmare_5_obj"] = "Having started from wave 1, beat wave 5 of Holdout on the Old Safehouse heist.",
+		["nightmare_7"] = "It all exists, even if it's in your mind.",
+		["nightmare_7_desc"] = "Having started from wave 1, beat wave 7 of Holdout on the Old Safehouse heist.",
+		["nightmare_7_obj"] = "Having started from wave 1, beat wave 7 of Holdout on the Old Safehouse heist.",
+		["nightmare_9"] = "Who's to say that dreams and nightmares aren't as real as the here and now?",
+		["nightmare_9_desc"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
+		["nightmare_9_obj"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 				
 		----Weapons + Mods Descriptions/names----
 

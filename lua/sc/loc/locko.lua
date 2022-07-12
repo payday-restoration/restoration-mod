@@ -359,6 +359,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_junk"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_holly"] = "오후 5:00, 로스앤젤레스 - 루카스 맨션",
 		["restoration_level_data_lvl_friday"] = "오후 5:00, 실드 쇼핑몰",
+		["restoration_level_data_skm_nightmare_lvl"] = "세탁소? 너는 너의 죄를 씻기 위해 여기에 있는가?",
 		
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
@@ -952,7 +953,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skmc_ovengrill_name"] = "오븐그릴 하드웨어",
 		["heist_skmc_mad_name"] = "DRAK 연구개발 연구소",
 		["heist_skm_friend_name"] = "엘 푸레이디스 맨션",		
-
+		["heist_skm_nightmare_name"] = "옛 세이프하우스",
+		["heist_skm_nightmare_lvl_name"] = "세이프하우스?",
 
 		--Heist Breifings--
 		["heist_pines_briefing"] = "너희들은 빨리 장소에 도착해야해, 하지만 장소가 숲속이다 보니까 낙하산으로 가야할꺼야. 조송사를 찾아봐 - 아마 사고지점 근처에 있을거야 - 그리고 탈출시킬 헬리콥터를 호출해. 그리고, 블라드가 말하길 그 비행기에 많은 상품이 있었다고 하더군, 숲을 수색해서 가지고 올 수 있는만큼 가지고와, 크리스마스에서 돈을 버는게 나쁘지는 않잖아?\n\n자칼의 충고:\n그 충돌로 인한 폭발은 인근 리퍼 팀을 건들었나봐. 경찰의 대응을 기대하지말라고.",
@@ -973,7 +975,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["friend_9"] = "저 새끼들이 도망치는 꼴을 보라고!",
 		["friend_9_desc"] = "엘 푸레이디스 맨션 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 9까지 버티기.",
 		["friend_9_obj"] = "엘 푸레이디스 맨션 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 9까지 버티기.",
-	
+
+		--Safehouse Nightmare--
+		["skm_nightmare_name"] = "홀드아웃: 옛 세이프하우스",
+		["nightmare_3"] = "난 그것이 반증될 때까지 모든 것을 믿는다.",
+		["nightmare_3_desc"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 3까지 버티기.",
+		["nightmare_3_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 3까지 버티기..",
+		["nightmare_5"] = "그래서 난 요정, 신화, 용을 믿는다.",
+		["nightmare_5_desc"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 5까지 버티기.",
+		["nightmare_5_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 5까지 버티기.",
+		["nightmare_7"] = "비록 그것이 너의 마음에 있더라도 그것은 모두 존재한다.",
+		["nightmare_7_desc"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 7까지 버티기.",
+		["nightmare_7_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 7까지 버티기.",
+		["nightmare_9"] = "꿈과 악몽이 지금처럼 현실적이지 않다고 누가 말할 수 있는가?",
+		["nightmare_9_desc"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 9까지 버티기.",
+		["nightmare_9_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 9까지 버티기.",
+		
 		----Weapons + Mods Descriptions/names----
 
 		--Reinfield--
@@ -1406,7 +1423,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##", --just in case
 		["bm_ap_2_weapon_sc_desc"] = "화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
-		["bm_ap_3_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
+		["bm_ap_3_weapon_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 전환합니다.\n\n#{risk}#리프 조준기는 30미터에서 0으로 조정됩니다.##",
 		["bm_rocket_launcher_sc_desc"] = "이 무기로 가한 폭발 피해는 #{skill_color}#터렛을 즉시 파괴합니다.##",
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
@@ -1952,11 +1969,11 @@ end
 	elseif ai_type == fbi then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
-		end)		
+		end)
 	elseif ai_type == breins then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
-		end)	
+		end)		
 	end
  end
 
@@ -2223,6 +2240,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll"] = "팻 롤",
 		["mutator_fatroll_desc"] = "피해 유예시간을 비활성화 시킵니다.",
 		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원에 대한 피해 유예가 0으로 설정되어 피해가 들어오는 지연이 없어집니다.",
+		
+		["mutator_spawn_mult"] = "증폭된 대응",
+		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",
+		["menu_mutator_enemy_spawn"] = "적 스폰량 배율",
+		["mutator_spawn_mult_longdesc"] = "어썰트 단계 중에서 더 많은 적들이 스폰합니다. 오버킬™이 써먹는 방식이기도 하죠!",		
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

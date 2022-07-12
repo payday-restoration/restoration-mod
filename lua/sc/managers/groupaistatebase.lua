@@ -6,6 +6,17 @@ local mvec3_dir = mvector3.direction
 local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
 
+-- Megaphone events must be appended to this table in order for them to be synced to clients
+GroupAIStateBase.MEGAPHONE_EVENTS = {
+	"mga_killed_civ_1st",
+	"mga_killed_civ_2nd",
+	"mga_hostage_assault_delay",
+	"mga_generic_c",
+	"mga_robbers_clever",
+	"mga_leave"
+}
+table.list_append(GroupAIStateBase.EVENT_SYNC, GroupAIStateBase.MEGAPHONE_EVENTS)
+
 function GroupAIStateBase:_calculate_difficulty_ratio()
 	local ramp = tweak_data.group_ai.difficulty_curve_points
 
@@ -36,25 +47,21 @@ function GroupAIStateBase:_check_assault_panic_chatter()
 	return
 end
 
-function GroupAIStateBase:_get_megaphone_sound_source()
-	local level_id = Global.level_data.level_id
-	local pos = nil
-
-	if not level_id then
-		pos = Vector3(0, 0, 0)
-
-		Application:error("[TradeManager:_get_megaphone_sound_source] This level has no megaphone position!")
-	elseif not tweak_data.levels[level_id].megaphone_pos then
-		pos = Vector3(0, 0, 0)
-	else
-		pos = tweak_data.levels[level_id].megaphone_pos
-	end
-
+function GroupAIStateBase:_post_megaphone_event(event)
+	local pos = tweak_data.levels[Global.level_data.level_id].megaphone_pos or Vector3(0, 0, 0)
 	local sound_source = SoundDevice:create_source("megaphone")
 
 	sound_source:set_position(pos)
-
-	return sound_source
+	sound_source:post_event(event)
+	
+	if self._is_server then
+		local event_id = self:get_sync_event_id(event)
+		if event_id then
+			managers.network:session():send_to_peers_synched("group_ai_event", event_id, 0)
+		else
+			log("[RESTORATION] GroupAIStateBase:_post_megaphone_event: Tried to sync an inexistent event ID: " .. tostring(event))
+		end
+	end
 end
 
 local sc_group_misc_data = GroupAIStateBase._init_misc_data
@@ -451,24 +458,6 @@ function GroupAIStateBase:has_room_for_police_hostage()
 	local nr_hostages_allowed = 4
 
 	return nr_hostages_allowed > self._police_hostage_headcount
-end
-
-function GroupAIStateBase:sync_event(event_id, blame_id)
-	local event_name = self.EVENT_SYNC[event_id]
-	local blame_name = self.BLAME_SYNC[blame_id]
-	if event_name == "police_called" then
-		self._police_called = true
-		self:_call_listeners("police_called")
-	elseif event_name == "enemy_weapons_hot" then
-		self._police_called = true
-		self._enemy_weapons_hot = true
-		managers.music:post_event(tweak_data.levels:get_music_event("control"))
-		self:_call_listeners("enemy_weapons_hot")
-		managers.enemy:add_delayed_clbk("notify_bain_weapons_hot", callback(self, self, "notify_bain_weapons_hot", blame_name), Application:time() + 0)
-		managers.enemy:set_corpse_disposal_enabled(true)
-	elseif event_name == "phalanx_spawned" then
-		managers.game_play_central:announcer_say("cpa_a02_01")
-	end
 end
 
 function GroupAIStateBase:propagate_alert(alert_data)
@@ -1390,9 +1379,9 @@ if Network:is_server() then
 			self._megaphone_hostages_killed = (self._megaphone_hostages_killed or 0) + 1 -- have to track separately to self._hostages_killed because some may be killed before going loud
 
 			if self._megaphone_hostages_killed == 1 then
-				self:_get_megaphone_sound_source():post_event("mga_killed_civ_1st")
+				self:_post_megaphone_event("mga_killed_civ_1st")
 			elseif self._megaphone_hostages_killed == 4 then
-				self:_get_megaphone_sound_source():post_event("mga_killed_civ_2nd")
+				self:_post_megaphone_event("mga_killed_civ_2nd")
 			end
 		end
 	end)
@@ -1647,6 +1636,16 @@ function GroupAIStateBase:is_nav_seg_safe(nav_seg)
 	end
 
 	return true
+end
+
+local sync_event_orig = GroupAIStateBase.sync_event
+function GroupAIStateBase:sync_event(event_id, ...)
+	local event_name = self.EVENT_SYNC[event_id]
+	if table.contains(self.MEGAPHONE_EVENTS, event_name) then
+		self:_post_megaphone_event(event_name)
+	elseif event_name ~= "cloaker_spawned" then
+		return sync_event_orig(self, event_id, ...)
+	end
 end
 
 -- Fix this function doing nothing

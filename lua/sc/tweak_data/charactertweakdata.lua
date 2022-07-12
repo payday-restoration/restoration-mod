@@ -17243,6 +17243,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
 				"ene_bulldozer_mini",
+				"ene_bulldozer_medic",
 				"ene_spook_1",
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",

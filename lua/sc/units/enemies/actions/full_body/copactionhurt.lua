@@ -2105,7 +2105,9 @@ function CopActionHurt:_upd_ragdolled(t)
 end
 
 function CopActionHurt:chk_block(action_type, t)
-	if action_type == "death" then
+	if self._hurt_type == "death" then
+		return true
+	elseif action_type == "death" then
 		return false
 	elseif action_type == "turn" or CopActionAct.chk_block(self, action_type, t) then
 		return true

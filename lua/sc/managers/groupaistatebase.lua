@@ -57,7 +57,7 @@ function GroupAIStateBase:_post_megaphone_event(event)
 	if self._is_server then
 		local event_id = self:get_sync_event_id(event)
 		if event_id then
-			managers.network:session():send_to_peers_synched("group_ai_event", self:get_sync_event_id(event), 0)
+			managers.network:session():send_to_peers_synched("group_ai_event", event, 0)
 		else
 			log("[RESTORATION] GroupAIStateBase:_post_megaphone_event: Tried to sync an inexistent event ID: " .. tostring(event))
 		end

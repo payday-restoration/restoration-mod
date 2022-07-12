@@ -1001,25 +1001,20 @@ function CopDamage:damage_bullet(attack_data)
 					})
 				end
 			
-			local my_unit = self._unit	
-	        local sound_ext = my_unit:sound()	
-	        sound_ext:play("expl_gen_head", nil, nil)	
+				local my_unit = self._unit	
+				local sound_ext = my_unit:sound()	
+				sound_ext:play("expl_gen_head", nil, nil)	
 
-			local head_obj = ids_func("Head")
-			local head_object_get = my_unit:get_object(head_obj)
+				local head_obj = ids_func("Head")
+				local head_object_get = my_unit:get_object(head_obj)
 
-			if not head_object_get then
-				return
-			end
-
-			local world_g = World		
-			local sound_ext = my_unit:sound()	
-
-			world_g:effect_manager():spawn({
-				effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
-				parent = head_object_get		
-			})
-			
+				if head_object_get then
+					local world_g = World		
+					world_g:effect_manager():spawn({
+						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
+						parent = head_object_get		
+					})
+				end
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)			
 			end
@@ -1205,24 +1200,19 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			end
 			
 			local my_unit = self._unit	
-	        local sound_ext = my_unit:sound()	
-	        sound_ext:play("expl_gen_head", nil, nil)	
+			local sound_ext = my_unit:sound()	
+			sound_ext:play("expl_gen_head", nil, nil)	
 
 			local head_obj = ids_func("Head")
 			local head_object_get = my_unit:get_object(head_obj)
 
-			if not head_object_get then
-				return
+			if head_object_get then
+				local world_g = World		
+				world_g:effect_manager():spawn({
+					effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
+					parent = head_object_get		
+				})
 			end
-
-			local world_g = World		
-			local sound_ext = my_unit:sound()	
-
-			world_g:effect_manager():spawn({
-				effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
-				parent = head_object_get		
-			})
-			
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)		
 		end

@@ -460,24 +460,6 @@ function GroupAIStateBase:has_room_for_police_hostage()
 	return nr_hostages_allowed > self._police_hostage_headcount
 end
 
-function GroupAIStateBase:sync_event(event_id, blame_id)
-	local event_name = self.EVENT_SYNC[event_id]
-	local blame_name = self.BLAME_SYNC[blame_id]
-	if event_name == "police_called" then
-		self._police_called = true
-		self:_call_listeners("police_called")
-	elseif event_name == "enemy_weapons_hot" then
-		self._police_called = true
-		self._enemy_weapons_hot = true
-		managers.music:post_event(tweak_data.levels:get_music_event("control"))
-		self:_call_listeners("enemy_weapons_hot")
-		managers.enemy:add_delayed_clbk("notify_bain_weapons_hot", callback(self, self, "notify_bain_weapons_hot", blame_name), Application:time() + 0)
-		managers.enemy:set_corpse_disposal_enabled(true)
-	elseif event_name == "phalanx_spawned" then
-		managers.game_play_central:announcer_say("cpa_a02_01")
-	end
-end
-
 function GroupAIStateBase:propagate_alert(alert_data)
 	if managers.network:session() and Network and not Network:is_server() then
 		managers.network:session():send_to_host("propagate_alert", alert_data[1], alert_data[2], alert_data[3], alert_data[4], alert_data[5], alert_data[6])
@@ -1661,7 +1643,7 @@ function GroupAIStateBase:sync_event(event_id, ...)
 	local event_name = self.EVENT_SYNC[event_id]
 	if table.contains(self.MEGAPHONE_EVENTS, event_name) then
 		self:_post_megaphone_event(event_name)
-	else
+	elseif event_name ~= "cloaker_spawned" then
 		return sync_event_orig(self, event_id, ...)
 	end
 end

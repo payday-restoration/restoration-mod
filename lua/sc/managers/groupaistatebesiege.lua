@@ -54,27 +54,6 @@ function GroupAIStateBesiege:_voice_groupentry(group, recon)
 	end
 end
 
---Exactly the same as the _get_megaphone_sound_source in TradeManager (without application error calls).
---Used to play voice lines to correspond to specific spawn groups.
-function GroupAIStateBesiege:_get_megaphone_sound_source()
-	local level_id = Global.level_data.level_id
-	local pos = nil
-
-	if not level_id then
-		pos = Vector3(0, 0, 0)
-	elseif not tweak_data.levels[level_id].megaphone_pos then
-		pos = Vector3(0, 0, 0)
-	else
-		pos = tweak_data.levels[level_id].megaphone_pos
-	end
-
-	local sound_source = SoundDevice:create_source("megaphone")
-
-	sound_source:set_position(pos)
-
-	return sound_source
-end
-
 --Ensured PONR flag is set to nil.
 Hooks:PostHook(GroupAIStateBesiege, "init", "ResInit", function(self, group_ai_state)
 	self._ponr_is_on = nil
@@ -398,8 +377,8 @@ function GroupAIStateBesiege:_begin_assault_task(...)
 		assault_task.phase_end_t = self._t + anticipation_duration + hesitation_delay * hostage_multiplier
 		assault_task.is_hesitating = true
 		assault_task.voice_delay = self._t + (assault_task.phase_end_t - self._t) / 2
-				
-		self:_get_megaphone_sound_source():post_event("mga_hostage_assault_delay")
+
+		self:_post_megaphone_event("mga_hostage_assault_delay")
 	end
 end
 
@@ -441,7 +420,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 		elseif task_data.phase_end_t < t then
 			self._assault_number = self._assault_number + 1
 			
-			self:_get_megaphone_sound_source():post_event("mga_generic_c")
+			self:_post_megaphone_event("mga_generic_c")
 
 			managers.mission:call_global_event("start_assault")
 			managers.hud:start_assault(self._assault_number)
@@ -513,7 +492,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			if not task_data.said_retreat then
 				task_data.said_retreat = true
 				self:_police_announce_retreat()
-				self:_get_megaphone_sound_source():post_event("mga_robbers_clever")
+				self:_post_megaphone_event("mga_robbers_clever")
 			elseif task_data.phase_end_t < self._t then
 				local drama_pass = self._drama_data.amount < tweak_data.drama.assault_fade_end
 				local engagement_pass = self:_count_criminals_engaged_force(11) <= 10
@@ -529,7 +508,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			task_data.force_end = nil
 			local force_regroup = task_data.force_regroup
 			task_data.force_regroup = nil
-			self:_get_megaphone_sound_source():post_event("mga_leave")
+			self:_post_megaphone_event("mga_leave")
 
 			if self._draw_drama then
 				self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = self._t

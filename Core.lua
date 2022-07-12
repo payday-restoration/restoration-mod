@@ -159,6 +159,9 @@ function restoration:Init()
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
+
+	restoration.global_spawn_multiplier = 1
+	
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {
 		--Custom Heists below--

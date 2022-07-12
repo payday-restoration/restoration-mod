@@ -2217,6 +2217,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll_desc"] = "Damage Grace disabled.",
 		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0, meaning that there is no delay on instances of damage.",
 
+		["mutator_spawn_mult"] = "Amplified Response",
+		["mutator_spawn_mult_desc"] = "Increased enemy spawns.",
+		["mutator_spawn_mult_longdesc"] = "More enemies will spawn during assault phases. The Overkill™ way!",
+
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
 		["mutator_zombie_outbreak_longdesc"] = "The dead have risen! Replaces all enemies with Zombie units",
@@ -2994,7 +2998,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck0_3"] = "Dead Presidents",
 		["menu_deck0_3_desc"] = "You gain ##15%## more value to loose items that you pick up.",		
 		["menu_deck0_4"] = "Veteran's Day",
-		["menu_deck0_4_desc"] = "You gain an additional ##30%## more value to loose items that you pick up.",	
+		["menu_deck0_4_desc"] = "You gain an additional ##15%## more value to loose items that you pick up.",	
 		["menu_deck0_5"] = "Noob Lube",
 		["menu_deck0_5_desc"] = "You gain ##45%## more experience when you complete days and jobs.",	
 		["menu_deck0_6"] = "Fast Learner",

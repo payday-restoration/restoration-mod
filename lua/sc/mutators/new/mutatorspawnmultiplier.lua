@@ -22,7 +22,9 @@ function MutatorSpawnMult:register_values(mutator_manager)
 end
 
 function MutatorSpawnMult:setup()
-	self:modify_group_tweak_data(tweak_data, self:get_spawn_multiplier())
+	if restoration then
+		restoration.global_spawn_multiplier = restoration.global_spawn_multiplier * self:get_spawn_multiplier()
+	end
 end
 
 function MutatorSpawnMult:name()
@@ -37,17 +39,6 @@ end
 
 function MutatorSpawnMult:get_spawn_multiplier()
 	return self:value("spawn_multiplier")
-end
-
-function MutatorSpawnMult:modify_group_tweak_data(tweak_data, multiplier)
-	log("[Mutators] Mutating character spawns: ")
-	if tweak_data then
-		multiplier = multiplier or self:get_spawn_multiplier()
-		
-		log("[Mutators] Actually did stuff! ")
-
-		--Tried all sorts of BS to make this work from directly manipulating the groupai state to even fucking with tweakdata, everything else seemed to work tho
-	end
 end
 
 function MutatorSpawnMult:_min_mult()

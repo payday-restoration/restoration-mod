@@ -387,6 +387,8 @@ function GroupAIStateBesiege:_begin_assault_task(...)
 	self._task_data.assault.was_first = self._task_data.assault.is_first
 
 	_begin_assault_task_original(self, ...)
+	
+	self._task_data.assault.force = math.ceil(self:_get_difficulty_dependent_value(self._tweak_data.assault.force) * self:_get_balancing_multiplier(self._tweak_data.assault.force_balance_mul) * restoration.global_spawn_multiplier)
 
 	if self._hostage_headcount > 0 then
 		local assault_task = self._task_data.assault
@@ -426,7 +428,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 	
 	self:_assign_recon_groups_to_retire()
 
-	local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
+	local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul) * restoration.global_spawn_multiplier
 	local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
 
 	if task_data.phase == "anticipation" then

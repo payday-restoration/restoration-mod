@@ -1885,6 +1885,24 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_small_loot_multiplier_1 = {
+		name_id = "menu_player_small_loot_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "small_loot_multiplier",
+			category = "player"
+		}
+	}		
+	self.definitions.player_small_loot_multiplier_2 = {
+		name_id = "menu_player_small_loot_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "small_loot_multiplier",
+			category = "player"
+		}
+	}	
 	self.definitions.player_steelsight_speed_multiplier = {
 		name_id = "menu_player_steelsight_speed_multiplier",
 		category = "feature",

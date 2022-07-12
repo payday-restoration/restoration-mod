@@ -1799,7 +1799,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Hacker
 	self.values.player.pocket_ecm_jammer_base = {
 		{
-			cooldown_drain = 3.5,
+			cooldown_drain = 3,
 			duration = 10
 		}
 	}	

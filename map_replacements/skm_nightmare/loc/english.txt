@@ -1,0 +1,18 @@
+{
+	"heist_skm_nightmare_name" : "The Safehouse",
+	"heist_skm_nightmare_lvl_name" : "The Safehouse?",
+	"restoration_level_data_skm_nightmare_lvl":"A laundromat? Are you here to wash away your sins?",
+	"skm_nightmare_name":"Holdout: The Safehouse",
+	"nightmare_3":"I believe in everything until it's disproved.",
+	"nightmare_3_desc":"Having started from wave 1, beat wave 3 of Holdout on the Safehouse heist.",
+	"nightmare_3_obj":"Having started from wave 1, beat wave 3 of Holdout on the Safehouse heist.",
+	"nightmare_5":"So I believe in fairies, the myths, dragons.",
+	"nightmare_5_desc":"Having started from wave 1, beat wave 5 of Holdout on the Safehouse heist.",
+	"nightmare_5_obj":"Having started from wave 1, beat wave 5 of Holdout on the Safehouse heist.",
+	"nightmare_7":"It all exists, even if it's in your mind.",
+	"nightmare_7_desc":"Having started from wave 1, beat wave 7 of Holdout on the Safehouse heist.",
+	"nightmare_7_obj":"Having started from wave 1, beat wave 7 of Holdout on the Safehouse heist.",
+	"nightmare_9":"Who's to say that dreams and nightmares aren't as real as the here and now?",
+	"nightmare_9_desc":"Having started from wave 1, beat wave 9 of Holdout on the Safehouse heist.",
+	"nightmare_9_obj":"Having started from wave 1, beat wave 9 of Holdout on the Safehouse heist."
+}

@@ -343,7 +343,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
       ["restoration_level_data_chill"] = "下午1:00 , 安全屋",
       ["restoration_level_data_chill_combat"] = "下午1:00 , 安全屋-警方突袭！",
       ["restoration_level_data_help"] = "别 碰 那 个 表 盘 ， 我 们 才 刚 刚 开 始 呢 ！",
-      ["restoration_level_data_friend"] = "下午4:30 , 迈阿密-El Fureidis庄园",
+      ["restoration_level_data_friend"] = "下午4:30 , 迈阿密-疤面庄园",
       ["restoration_level_data_fish"] = "傍晚7:30 , 纽约市外围-'Lethe'游艇",
       ["restoration_level_data_spa"] = "傍晚7:00 , 纽约市-埋伏！",
       ["restoration_level_data_moon"] = "晚上11:00 , 穆里卡购物中心",
@@ -375,6 +375,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
       ["restoration_level_data_junk"] = "秘密的时间, 秘密的地点",
       ["restoration_level_data_holly"] = "下午5:00 , 洛杉矶-卢卡斯的庄园",
       ["restoration_level_data_lvl_friday"] = "下午5:00 , 大型购物中心",
+	  ["restoration_level_data_skm_nightmare_lvl"] = "一家洗衣店？你是来洗脱你的罪恶的吗？",
 
 
 		["heist_greattrain_name"] = "Time Window",
@@ -999,10 +1000,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skm_mus_h1"] = "钻石魅影",
 		["heist_skm_run"] = "热火街头",
 		["heist_skm_run_h1"] = "热火街头",
-		["heist_skmc_fish_name"] = "Lethe Yacht",
-		["heist_skmc_ovengrill_name"] = "Ovengrill Hardware",
-		["heist_skmc_mad_name"] = "DRAK R&D Laboratories",
-		["heist_skm_friend_name"] = "El Fureidis Mansion",
+		["heist_skmc_fish_name"] = "游艇劫案",
+		["heist_skmc_ovengrill_name"] = "Ovengrill硬件公司",
+		["heist_skmc_mad_name"] = "DRAK R&D实验室",
+		["heist_skm_friend_name"] = "疤面庄园",
+		["heist_skm_nightmare_name"] = "老安全屋",
+		["heist_skm_nightmare_lvl_name"] = "我们的安全屋？",
 
 
 		--Heist Breifings--
@@ -1011,19 +1014,34 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		----Custom Achievements----
 				
 		--Scarface Mansion--
-		["skm_friend_name"] = "坚守模式：El Fureidis庄园",
+		["skm_friend_name"] = "坚守模式：疤面庄园",
 		["friend_3"] = "来碰硬骨头",
-		["friend_3_desc"] = "从第1波开始，完成坚守模式El Fureidis庄园的第3波。",
-		["friend_3_obj"] = "从第1波开始，完成坚守模式El Fureidis庄园的第3波。",
+		["friend_3_desc"] = "从第1波开始，完成坚守模式疤面庄园的第3波。",
+		["friend_3_obj"] = "从第1波开始，完成坚守模式疤面庄园的第3波。",
 		["friend_5"] = "人质属于你",
-		["friend_5_desc"] = "从第1波开始，完成坚守模式El Fureidis庄园的第5波。",
-		["friend_5_obj"] = "从第1波开始，完成坚守模式El Fureidis庄园的第5波。",
+		["friend_5_desc"] = "从第1波开始，完成坚守模式疤面庄园的第5波。",
+		["friend_5_obj"] = "从第1波开始，完成坚守模式疤面庄园的第5波。",
 		["friend_7"] = "区区子弹焉能伤我？",
-		["friend_7_desc"] = "从第1波开始，完成坚守模式El Fureidis庄园的第7波。",
-		["friend_7_obj"] = "从第1波开始，完成坚守模式El Fureidis庄园的第7波。",
+		["friend_7_desc"] = "从第1波开始，完成坚守模式疤面庄园的第7波。",
+		["friend_7_obj"] = "从第1波开始，完成坚守模式疤面庄园的第7波。",
 		["friend_9"] = "看他们抱头鼠窜！",
-		["friend_9_desc"] = "从第1波开始，完成坚守模式El Fureidis庄园的第9波。",
-		["friend_9_obj"] = "从第1波开始，完成坚守模式El Fureidis庄园的第9波。",
+		["friend_9_desc"] = "从第1波开始，完成坚守模式疤面庄园的第9波。",
+		["friend_9_obj"] = "从第1波开始，完成坚守模式疤面庄园的第9波。",
+
+		--Safehouse Nightmare--
+		["skm_nightmare_name"] = "坚守模式：老安全屋",
+		["nightmare_3"] = "我否认一切虚幻物",
+		["nightmare_3_desc"] = "从第1波开始，完成坚守模式老安全屋的第3波。",
+		["nightmare_3_obj"] = "从第1波开始，完成坚守模式老安全屋的第3波。",
+		["nightmare_5"] = "我置信龙诗与神话",
+		["nightmare_5_desc"] = "从第1波开始，完成坚守模式老安全屋的第5波。",
+		["nightmare_5_obj"] = "从第1波开始，完成坚守模式老安全屋的第5波。",
+		["nightmare_7"] = "我深信所思即所在",
+		["nightmare_7_desc"] = "从第1波开始，完成坚守模式老安全屋的第7波。",
+		["nightmare_7_obj"] = "从第1波开始，完成坚守模式老安全屋的第7波。",
+		["nightmare_9"] = "梦境噩梦，此刻谁言无妄？",
+		["nightmare_9_desc"] = "从第1波开始，完成坚守模式老安全屋的第9波。",
+		["nightmare_9_obj"] = "从第1波开始，完成坚守模式老安全屋的第9波。",
 
 		----Weapons + Mods Descriptions/names----
 
@@ -1076,6 +1094,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_afg"] = "水平前握把",
 		["bm_wp_upg_vg_stubby"] = "短型垂直握把",
 		["bm_wp_upg_vg_tac"] = "TAC 战术前握把",
+
+		["bm_wp_upg_ns_ass_smg_stubby"] = "短粗枪火消除器",
+		["bm_wp_upg_flash_hider"] = "消除枪口火焰。\n#{ghost_color}#吃消音器技能##，但#{important_1}#不会使你的武器消音##。",
 
 		["bm_wp_upg_vintage_sc"] = "复古弹匣",
 		["bm_wp_upg_mil_sc"] = "军标弹匣",
@@ -1154,12 +1175,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Kobus 90--
 		--["bm_wp_p90_body_p90_tan"] = "泥色枪身",
-		--["bm_ap_weapon_mod_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。",
+		--["bm_ap_weapon_mod_sc_desc"] = "可以#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--["bm_wp_90_body_boxy"] = "OMNIA突击枪身",
 		--["bm_wp_90_body_boxy_desc"] = "从荒无人烟的OMNIA仓库劫掠得到的枪身改装件。虽然不增加任何的属性，但是这个独特的造型收到众多武器收藏家的青睐。",
 
 		--Phoenix .500--
-		["bm_wp_shatters_fury_desc"] = "一把.500超大号口径，同时拥有超强后坐力和停止力的左轮手枪，Shatter的最爱。\n可以穿透护甲，盾牌及薄墙壁。",
+		["bm_wp_shatters_fury_desc"] = "一把.500超大号口径，同时拥有超强后坐力和停止力的左轮手枪，Shatter的最爱。\n可以#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 
 		--OICW--
 		--["bm_w_osipr_desc_pc"] = "次世代高科技武器，配备20毫米空爆榴弹发射器。\n按下 $BTN_BIPOD 切换榴弹发射器。",
@@ -1227,7 +1248,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_c96_nozzle"] = "爆能DL-44消音器",
 		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.5秒\n充能速率: 3发/秒(过热时减半)\n过热惩罚: 3秒",
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "VF大威力手枪",
@@ -1242,13 +1263,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90冲锋枪",
-		["bm_p90_sc_desc"] = "又称斗牛犬冲锋枪，同时是SpecOps-7冲锋枪的竞争对手，由于外形经常被评价为未来感十足的空间枪。\n\n可穿透护甲造成80%伤害。",
+		["bm_p90_sc_desc"] = "又称斗牛犬冲锋枪，同时是SpecOps-7冲锋枪的竞争对手，由于外形经常被评价为未来感十足的空间枪。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		["bm_wp_p90_body_p90_tan"] = "棕褐枪身",
 		["bm_wp_90_body_boxy"] = "OMNIA突击框架",
 		["bm_wp_90_body_boxy_desc"] = "从一个老旧的OMNIA仓库废址里找回的，这个框架无论对性能还是手感都没有影响，不过它体现的块状美使得它适合被拥有。",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7冲锋枪",
-		["bm_mp7_sc_desc"] = "一款轻型冲锋枪，同时是Project-90冲锋枪的竞争对手。并不像某些人期待的那样具备下挂榴弹。\n\n可穿透护甲造成80%伤害。",
+		["bm_mp7_sc_desc"] = "一款轻型冲锋枪，同时是Project-90冲锋枪的竞争对手。并不像某些人期待的那样具备下挂榴弹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5冲锋枪",	
 		["bm_mp5_sc_desc"] = "Gewehr-3的小妹妹\n射击快速，精准同时操控简单，你还指望冲锋枪能比这更好吗？",
@@ -1402,30 +1423,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		
 		--Galant--
-		["bm_galant_sc_desc"] = "经典二战作战步枪。可靠，精准，换弹迅速。\n\n空仓换弹速度更快并且可穿透护甲造成80%伤害。",
+		["bm_galant_sc_desc"] = "经典二战作战步枪。可靠，精准，换弹迅速。\n\n空仓换弹速度更快并且可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		--M308
-		["bm_m14_sc_desc"] = "快速且精准，只要确保控制住后坐力，尤其是全自动开火的时候。\n\n可穿透护甲造成80%伤害。",
+		["bm_m14_sc_desc"] = "快速且精准，只要确保控制住后坐力，尤其是全自动开火的时候。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		--FAL
-		["bm_fal_sc_desc"] = "自由世界的正当武装。当你不得不干掉一些重甲混蛋的时候，你求助于这把枪。\n\n可穿透护甲造成80%伤害。",	
+		["bm_fal_sc_desc"] = "自由世界的正当武装。当你不得不干掉一些重甲混蛋的时候，你求助于这把枪。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",	
 		--SCAR
-		["bm_scar_sc_desc"] = "未来战斗步枪。依托着在手感和弹道伤害上有着良好的平衡，在美国海军陆战队和特种力量中应用广泛。\n\n可穿透护甲造成80%伤害。",			
+		["bm_scar_sc_desc"] = "未来战斗步枪。依托着在手感和弹道伤害上有着良好的平衡，在美国海军陆战队和特种力量中应用广泛。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",			
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "作为Compact-5和Brenner-21的大姐头，这把枪的精准度可与狙击枪一较高下。\n\n可穿透护甲造成80%伤害。",	
+		["bm_g3_sc_desc"] = "作为Compact-5和Brenner-21的大姐头，这把枪的精准度可与狙击枪一较高下。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",	
 		--Little Friend
 		--Little Friend
 		["bm_w_contraband"] = "Bigger Friend 7.62步枪",
-		["bm_m203_weapon_sc_desc_pc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可穿透护甲造成80%伤害\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
-		["bm_m203_weapon_sc_desc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可穿透护甲造成80%伤害\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
+		["bm_m203_weapon_sc_desc_pc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
+		["bm_m203_weapon_sc_desc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n完全消音并且穿透护甲造成80%伤害。",
+		["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n完全消音并且#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62步枪",
-		["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可穿透护甲造成80%伤害。",		
+		["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",		
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2步枪",
-		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能提升射速的独特自动式爆发射击模式。\n\n可穿透护甲造成80%伤害。",
+		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能提升射速的独特自动式爆发射击模式。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
 		["bm_xr2_handle_01_sc_desc"] = "以爆发式射击的射速提升为代价改为全自动射击。",
 		["bm_wp_xr2_handle_02_sc"] = "快速开火枪闩",
@@ -1434,19 +1455,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308狙击步枪",
-		["bm_tti_sc_desc"] = "威克的私人武器之一。据说网上有个地方有他练习这把枪莫桑比克射击法的片段。\n\n能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_tti_sc_desc"] = "威克的私人武器之一。据说网上有个地方有他练习这把枪莫桑比克射击法的片段。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300狙击步枪",
-		["bm_wa2000_sc_desc"] = "这个最负盛名的枪世上只做了几百把；一把专适合顶尖杀手的狙击步枪。\n\n能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_wa2000_sc_desc"] = "这个最负盛名的枪世上只做了几百把；一把专适合顶尖杀手的狙击步枪。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2狙击步枪", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		--SVD
-		["bm_siltstone_sc_desc"] = "高威力半自动狙击步枪。\n\n能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_siltstone_sc_desc"] = "高威力半自动狙击步枪。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 
 		--Mosin--
-		["bm_mosin_sc_desc"] = "当你食不果腹而仍然需要一把枪，这把廉价又经典的栓动式步枪便应召而来。\n\n这把枪一次装填满5颗子弹，并且能够穿透护甲，盾牌以及薄墙壁。",
+		["bm_mosin_sc_desc"] = "当你食不果腹而仍然需要一把枪，这把廉价又经典的栓动式步枪便应召而来。\n\n这把枪一次装填满5颗子弹，并且能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		["bm_wp_upg_a_tranq_mosin"] = "镇静弹",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "忘却，结束。\n\n发射伤害更低的镇静弹造成持续伤害并且能够硬直敌人。",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "忘却，#{item_stage_3}#结束##。\n\n发射伤害更低的#{stats_positive}#镇静弹##造成#{stats_positive}#持续伤害##并且能够#{stats_positive}#硬直敌人##。",
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal 反器材狙击步枪",
 		["bm_m95_sc_desc"] = "被用于对小型载具作战的反器材步枪。把它用到生物目标的人几乎是战争犯。\n\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
@@ -1463,9 +1484,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_winchester1894"] = "Repeater 1894 狙击步枪",
 
 		--3GL
-		["bm_ms3gl_sc_desc"] = "发射通过黑科技自制的集束40mm榴弹，可以造成快速后续冲击伤害。\n\n辅助射击允许一次性全部射出。",
+		["bm_ms3gl_sc_desc"] = "发射通过黑科技自制的集束40mm榴弹，可以造成快速后续冲击伤害。\n\n辅助射击允许一次性#{skill_color}#射出三发榴弹##。",
 		--COMMANDO 101/M202 FLASH
-		["bm_ray_sc_desc"] = "这个四联装燃烧火箭使你成为\"死神\"。\n\n火箭爆炸后留下持续地火，并且直接爆炸伤害可以秒杀警察炮台。",
+		["bm_ray_sc_desc"] = "这个四联装#{heat_warm_color}#燃烧火箭##使你成为\"#{risk}#死神##\"。\n\n火箭爆炸后#{heat_warm_color}#留下持续地火##，并且直接爆炸伤害可以#{skill_color}#秒杀警察炮台##。",
 		
 		--M4/CAR-4
 		["bm_menu_sc_m4_desc"] = "可靠，紧凑，且致命。在现代部队广泛使用的5.56mm步枪。",
@@ -1475,7 +1496,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟800发",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。\n\n有史以来做的最好的手枪。",				
+		["bm_ap_weapon_peacemaker_sc_desc"] = "可以#{skill_color}#穿透护甲，盾牌以及薄墙壁##。\n\n有史以来做的最好的手枪。",				
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
@@ -1488,21 +1509,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_disabled"] = "武器已被秋日队长禁用\n在劫案内使用将导致崩溃",
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "如果物品栏还有这把枪务必不要使用。\n\n目前依然没有平衡方式。",
 		["empty"] = "",
-		["missing_cap"] = "自定义附加未安装\n\n附加品将使用该栏默认外观。",
-		["bm_lmg_generic_desc"] = "腰射大幅降低后坐力",
-		["bm_ap_weapon_sc_desc"] = "能够穿透护甲，盾牌以及薄墙壁。",
-		["bm_ap_armor_weapon_sc_desc"] = "能够穿透护甲。",
-		["bm_ap_armor_80_weapon_sc_desc"] = "可穿透护甲造成80%伤害。",
-		["bm_heavy_ap_weapon_sc_desc"] = "能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
-		["bm_ap_2_weapon_sc_desc"] = "能够穿透护甲。箭矢可以捡起回收，并且射程随拉弓时间提升而加长。",
-		["bm_ap_3_weapon_sc_desc"] = "能够穿透护甲。箭矢可以捡起回收。",
+		["missing_cap"] = "#{risk}#自定义附件###{important_1}#未安装##\n\n附件将使用该栏默认外观。",
+		["bm_lmg_generic_desc"] = "#{important_1}#腰射时大幅降低精准度##",
+		["bm_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
+		["bm_ap_armor_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。",
+		["bm_ap_armor_80_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成80%伤害。",
+		["bm_heavy_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
+		["bm_ap_2_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以捡起回收，并且射程随拉弓时间提升而加长。",
+		["bm_ap_3_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以捡起回收。",
 		["bm_40mm_weapon_sc_desc"] = "按下 $BTN_GADGET 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
 		["bm_rocket_launcher_sc_desc"] = "该武器造成的爆炸伤害能够秒杀警察炮台。",
 		["bm_quake_shotgun_sc_desc"] = "一次射击两个枪管，弹丸数量也翻倍。",
 		["bm_hx25_buck_sc_desc"] = "发射散布广的12颗弹丸。\n\n只受榴弹相关技能加成。",
 		["bm_auto_generated_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。",
-		["bm_auto_generated_ap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以穿透护甲，盾牌及薄墙壁。",
-		["bm_auto_generated_sap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以穿透护甲，盾牌，泰坦盾牌及薄墙壁。",
+		["bm_auto_generated_ap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
+		["bm_auto_generated_sap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以#{skill_color}#穿透护甲，盾牌，泰坦盾牌及薄墙壁##。",
 		["bm_auto_generated_lmg_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n装备该武器时，你的移速会减慢##25%##。",
 		["bm_auto_generated_mod_sc_desc"] = "该配件的属性将暂时被移除，直至自制配件的属性生成完毕。", -- The stats on this attachment have been removed until automatic custom attachment stat generation is finished.
 		--["bm_tranq_maxim_sc_desc"] = "使用镇静子弹随时间对敌人造成伤害并且是消音的。",
@@ -1535,7 +1556,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "你的手中并无\"正义之器\"。\n\n蓄力完全时出刀速度加快50%，允许快速进行后续挥砍。\n\n当扮演治郎时，用此武器蓄力击杀幻影特工可以触发一个独特动画效果。",
 		["bm_melee_buck_info"] = "对抗现代武器仍然十分有效。\n蓄力时减少10%的远程伤害。", --Buckler Shield
-		["bm_melee_charge_info"] = "用力叉，再用力叉！\n\n蓄力向前冲锋对前方目标造成每0.25秒45点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗15%的耐力；致命一击只消耗5%。\n\n任何时候都无法格挡敌人攻击。", -- Randal Pitchfork
+		["bm_melee_charge_info"] = "用力叉，再用力叉！\n\n蓄力向前冲锋对前方目标造成每0.25秒45点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗15%的耐力；致命一击只消耗10%。\n\n任何时候都无法格挡敌人攻击。", -- Randal Pitchfork
 		["bm_melee_cs_info"] = "撕裂吧！毁灭吧！\n蓄力时对你面前的敌人每0.25秒造成30点伤害。此属性受到相关技能影响。\n\n无法格挡敌人攻击。", -- ROAMING FR-
 		["bm_melee_ostry_info"] = "车专口阿车专口阿车专。\n蓄力时对你面前的敌人每0.25秒造成18点伤害。此属性受到相关技能影响。\n\n无法格挡敌人攻击。", --Kazaguruma
 		["bm_melee_wing_info"] = "配合伪装一起使用效果更佳。\n从背后攻击敌人造成4倍伤害。",-- Wing Butterfly Knife
@@ -1877,62 +1898,81 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "Ichiroku",
 						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
+						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
 					["bm_w_m4"] = "Em-Four",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
+						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
 					["bm_w_aug"] = "AUG",
 						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
+						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
 					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending Seishou Academy.\nGives off a heavy \"main protagonist\" aura.",
-	
+						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
+
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "Faru",
 						["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
 					["bm_w_m14"] = "Ichiyon",
 						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
+						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
 					["bm_w_g3"] = "Jiisuri",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
+						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",
 						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
+						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
 					["bm_w_uzi"] = "Uzi",
 						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending Seishou Academy.\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
+						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
 					["bm_w_mac10"] = "Ram",
 						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending Seishou Academy.\nA machinegun with words. Also rather top-heavy.",
-		
+						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nA machinegun with words. Also rather top-heavy.",
+
 				--FACULTY
 					["bm_w_erma"] = "Erma-sensei",
 						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy.\nThe SMGs love her.",
+						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at #{stats_positive}#Seishou Academy.##\nThe SMGs love her.",
 					["bm_w_m1928"] = "Thompson-sensei",
 						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy.\nSpeaks with accented Japanese. A former member of the FBI.",
+						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at #{stats_positive}#Seishou Academy.##\nSpeaks with accented Japanese. A former member of the FBI.",
 					["bm_w_ching"] = "Garand",
 						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at Seishou Academy.\nLooks over the middleschoolers.",
-	
+						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at #{stats_positive}#Seishou Academy.##\nLooks over the middleschoolers.",
+
 			--RED STEEL ACADEMY
 				--THREE STRIPES
 					["bm_w_siltstone"] = "Drako",
 						["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
+						["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
 					["bm_w_akm"] = "AKM",
 						["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending Red Steel Academy.\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
+						["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
 					--["bm_w_rpk"] = "RPK",
 						["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending Red Steel Academy.\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
+						["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
 				--TWO STRIPES
 					["bm_w_ak74"] = "Nanayon",
 						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
+						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
 					["bm_w_saiga"] = "Saiga-chan",
 						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending Red Steel Academy.\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
+						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
 				--ONE STRIPE
 					["bm_w_coal"] = "Bizon",
 						["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending Red Steel Academy.\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
+						["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending #{stats_negative}#Red Steel Academy.##\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
 				--FACULTY
 					["bm_w_mosin"] = "Mosin Nagant",
 						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of Red Steel Academy.\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-			
+						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of #{stats_negative}#Red Steel Academy.##\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
+
 			--ENOSHIMA
 				--MIDDLE SCHOOLERS
-					["bm_w_spas12"] = "SPAS-12",
+					["bm_w_spas12"] = "Supasu",  --SPAS-12
 						["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
-					["bm_w_benelli"] = "Benelli M4",
+					["bm_w_benelli"] = "Beneri",  --Benelli M4
 						["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
 				
 		})
@@ -2070,7 +2110,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以立即回复血量上限20%的血量，然后在3分钟内每4秒回复血量上限4%的血量。医疗箱在无技能时可以使用两次。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
 		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住 $BTN_USE_ITEM 将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住 $BTN_INTERACT 使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
 		["bm_equipment_sentry_gun_silent_desc"] = "要使用消音哨戒机枪，你需要按住 $BTN_USE_ITEM 将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住 $BTN_INTERACT 使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n这个消音的哨戒机枪与普通的不同，它更多地被用于消灭敌人，而不是分散注意力。",
-		["bm_equipment_bodybags_bag_desc"] = "To use the Body Bag Case, you place it by holding $BTN_USE_ITEM. Once placed, it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your body bags and cable ties.\n\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags and cable ties, used for the transportation of corpses during stealth and controlling civilian crowds.",
+		["bm_equipment_bodybags_bag_desc"] = "要使用尸体袋盒，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，但是你和你的队友可以按住 $BTN_INTERACT 来补充尸体袋盒绑带。\n\n尸体袋盒只能被使用三次，你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。这个盒子携带有额外的尸体袋和绑带，用于在潜入中搬运尸体和控制平民。",
 
 		["hud_int_hold_take_pardons"] = "按下 $BTN_INTERACT 拿走特赦令",
 		["debug_interact_gage_assignment_take"] = "按下 $BTN_INTERACT 捡起盖奇包裹",
@@ -2310,6 +2350,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll"] = "死亡翻滚",
 		["mutator_fatroll_desc"] = "取消无敌帧。",
 		["mutator_fatroll_longdesc"] = "玩家和AI队友的受击无敌时间都会被设置为0，这将意味着你被击中多少枪就会受到多少伤害，且AI队友将难以生存。",
+
+		["mutator_spawn_mult"] = "犯罪响应增幅",
+		["menu_mutator_enemy_spawn"] = "刷兵倍率",
+		["mutator_spawn_mult_desc"] = "增加刷兵量。",
+		["mutator_spawn_mult_longdesc"] = "突击进行中会刷出更多的敌人。Overkill™ 经典操作！",
 
 		["mutator_zombie_outbreak"] = "行尸走肉",
 		["mutator_zombie_outbreak_desc"] = "所有敌军都将被替换为丧尸单位。",
@@ -3122,9 +3167,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数\n\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",	
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。\n\n完成全部牌组后的效果：\n##-##解锁并装备便携式电子干扰器。在警报触发前使用便携式电子干扰器将激活干扰效果，干扰所有电子设备及对讲机 ##12## 秒。在警报触发后使用便携式电子干扰器将激活啸叫效果，每秒均有几率晕眩地图上的所有敌人，持续 ##12## 秒。便携式电子干扰器有 ##1## 次充能且有 ##80## 秒冷却时间，然而在冷却时间内击杀的每1名敌人都会减少 ##3## 秒的冷却时间。\n##-##啸叫效果激活时你每击杀1名敌人都会让你回复 ##20## 点血量。团队成员在啸叫效果激活时每击杀一名敌人都会让他回复 ##10## 点血量。\n##-##你的护甲回复速度加快 ##10%##\n##-##你的闪避点数增加 ##10%## 。",
+		["menu_st_spec_21_desc_sc"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。\n\n完成全部牌组后的效果：\n##-##解锁并装备便携式电子干扰器。在警报触发前使用便携式电子干扰器将激活干扰效果，干扰所有电子设备及对讲机 ##12## 秒。在警报触发后使用便携式电子干扰器将激活啸叫效果，每秒均有几率晕眩地图上的所有敌人，持续 ##12## 秒。便携式电子干扰器有 ##1## 次充能且有 ##80## 秒冷却时间，然而在冷却时间内击杀的每1名敌人都会减少 ##3.5## 秒的冷却时间。\n##-##啸叫效果激活时你每击杀1名敌人都会让你回复 ##20## 点血量。团队成员在啸叫效果激活时每击杀一名敌人都会让他回复 ##10## 点血量。\n##-##你的护甲回复速度加快 ##10%##\n##-##你的闪避点数增加 ##10%## 。",
 		["menu_st_spec_21_desc_sc_short"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。",
-		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用\n\n游戏中你可以按[使用投掷物]键激活便携式ECM干扰器\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，持续##12##秒\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，附近的警察将可能受到眩晕效果，持续##12##秒\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##3##秒",
+		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用\n\n游戏中你可以按[使用投掷物]键激活便携式ECM干扰器\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，持续##12##秒\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，附近的警察将可能受到眩晕效果，持续##12##秒\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##3.5##秒",
 		["menu_deck21_3_desc_sc"] = "你的闪避点数增加##5##",
 		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##20##点血量",
 		["menu_deck21_7_desc_sc"] = "你的护甲回复速率增加##10%##\n\n你的闪避点数额外增加##5##",
@@ -3150,7 +3195,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck0_3"] = "为钱卖命",
 		["menu_deck0_3_desc"] = "你捡起的零散物品的价值提高##15%##。",		
 		["menu_deck0_4"] = "老兵节",
-		["menu_deck0_4_desc"] = "你捡起的零散物品的价值额外提高##30%##。",	
+		["menu_deck0_4_desc"] = "你捡起的零散物品的价值额外提高##15%##。",	
 		["menu_deck0_5"] = "萌新上路",
 		["menu_deck0_5_desc"] = "你完成劫案获得的经验奖励增加##45%##。",	
 		["menu_deck0_6"] = "快速入门",

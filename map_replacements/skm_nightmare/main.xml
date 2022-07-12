@@ -1,7 +1,4 @@
 <table min_lib_ver="4.5" name="skm_nightmare">
-	<Localization default="english.txt" directory="loc">
-		<loc file="english.txt" language="english"/>
-	</Localization>
 	<Achievements icon="guis/achievements/nightmare" id="skm_nightmare">
 		<achievement desc_id="nightmare_9_desc" icon="guis/achievements/nightmare_9" id="nightmare_9" name_id="nightmare_9" objective_id="nightmare_9_obj" rank="4"/>
 		<achievement desc_id="nightmare_7_desc" icon="guis/achievements/nightmare_7" id="nightmare_7" name_id="nightmare_7" objective_id="nightmare_7_obj" rank="3"/>

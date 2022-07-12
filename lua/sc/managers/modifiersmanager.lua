@@ -176,7 +176,7 @@ elseif ai_type == z then
 		["units/pd2_mod_halloween/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
 		--Zombie FBI Shield
-		["units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_hvh_1/ene_shield_hvh_1",
+		["units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		
 		--Normal Bravo Units as a placeholder 
 		--Undead Bravo Rifle

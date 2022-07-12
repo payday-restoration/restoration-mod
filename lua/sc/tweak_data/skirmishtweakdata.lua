@@ -14,7 +14,8 @@ function SkirmishTweakData:_init_special_unit_spawn_limits()
 			spring = 1,
 			autumn = 1,
 			summers = 1,
-			phalanx_vip = 1
+			phalanx_vip = 1,
+			headless_hatman = 1
 		}
 	}
 end

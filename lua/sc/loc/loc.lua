@@ -1937,6 +1937,7 @@ end
 	local akan = tweak_data.levels.ai_groups.russia
 	local nypd = tweak_data.levels.ai_groups.nypd
 	local fbi = tweak_data.levels.ai_groups.fbi
+	local breins = tweak_data.levels.ai_groups.zombie
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1965,6 +1966,10 @@ end
 	elseif ai_type == fbi then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+		end)
+	elseif ai_type == breins then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
 		end)	
 	end
  end

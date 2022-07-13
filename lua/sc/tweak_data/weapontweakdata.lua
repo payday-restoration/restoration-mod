@@ -9944,7 +9944,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.ms3gl.FIRE_MODE = "single"
 		self.ms3gl.BURST_FIRE = 3
-		self.ms3gl.BURST_DELAY = 0.8
+		self.ms3gl.BURST_DELAY = 1.25
 		self.ms3gl.BURST_FIRE_RATE_MULTIPLIER = 3
 		self.ms3gl.BURST_COUNT = nil
 		self.ms3gl.fire_mode_data = {

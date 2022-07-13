@@ -10041,7 +10041,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ray.CLIP_AMMO_MAX = 4
 		self.ray.AMMO_MAX = 8
 		self.ray.BURST_FIRE = 4
-		self.ray.BURST_DELAY = 0.75
+		self.ray.BURST_DELAY = 2
 		self.ray.BURST_FIRE_RATE_MULTIPLIER = 8
 		self.ray.supported = true
 		self.ray.shake.fire_steelsight_multiplier = -2

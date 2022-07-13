@@ -1014,6 +1014,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
 		["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions.##",
+		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## and #{important_1}#loses all penetration capabilites.##",
 
 		--M200 WIDOWMAKER
 		["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",

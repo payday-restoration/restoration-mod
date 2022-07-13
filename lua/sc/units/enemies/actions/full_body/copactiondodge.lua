@@ -11,6 +11,7 @@ function CopActionDodge:init(action_desc, common_data)
 	self._unit = common_data.unit
 	self._timeout = action_desc.timeout
 	self._machine = common_data.machine
+	self._ids_base = Idstring("base")
 
 	local redir_res = common_data.ext_movement:play_redirect("dodge")
 	if redir_res then

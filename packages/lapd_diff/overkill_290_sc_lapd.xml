@@ -34,6 +34,7 @@
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1_husk" load="true" />
 	<object				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />	
 	<model				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />	
+	<sequence_manager	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />
 	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" />	
 	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1_contour" />
 
@@ -46,9 +47,17 @@
 	
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3" load="true"/>
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3_husk" load="true"/>	
+	<object				path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3" />	
+	<model				path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3_contour" />
 	
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4" load="true"/>
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4_husk" load="true"/>
+	<object				path="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4" />	
+	<model				path="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4" />	
+	<material_config	path="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4_contour" />
 
 	<!--LAPD FBI/HRTs-->
 	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	

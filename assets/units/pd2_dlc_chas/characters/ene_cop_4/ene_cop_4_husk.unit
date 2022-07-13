@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <unit slot="12" type="being">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
-	<object file="units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"/>
+	<object file="units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"/>
 	<dependencies/>
 	<extensions>
 		<extension class="ScriptUnitData" name="unit_data"/>

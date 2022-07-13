@@ -21,11 +21,8 @@ function GamePlayCentralManager:_do_shotgun_push(unit, hit_pos, dir, distance, a
 		unit:movement()._active_actions[1]:force_ragdoll(true)
 	end
 
-	local scale = math.clamp(1 - distance / self:get_shotgun_push_range(), 0.5, 1)
+	local scale = math.clamp(1 - distance / self:get_shotgun_push_range(), 0.1, 0.35)
 	local height = mvec3_dist(hit_pos, unit:position()) - 100
-	local twist_dir = math.random(2) == 1 and 1 or -1
-	local rot_acc = (dir:cross(math.UP) + math.UP * 0.5 * twist_dir) * -1000 * math.sign(height)
-	local rot_time = 1 + math.rand(2)
 	local nr_u_bodies = unit:num_bodies()
 	local i_u_body = 0
 
@@ -35,7 +32,7 @@ function GamePlayCentralManager:_do_shotgun_push(unit, hit_pos, dir, distance, a
 		if u_body:enabled() and u_body:dynamic() then
 			local body_mass = u_body:mass()
 
-			World:play_physic_effect(Idstring("physic_effects/shotgun_hit"), u_body, Vector3(dir.x, dir.y, dir.z + 0.5) * 600 * scale, 4 * body_mass / math.random(2), rot_acc, rot_time)
+			World:play_physic_effect(Idstring("physic_effects/shotgun_hit"), u_body, Vector3(dir.x, dir.y, dir.z + 0.5) * 1200 * scale, 4 * body_mass / math.random(2))
 			managers.mutators:notify(Message.OnShotgunPush, unit, hit_pos, dir, distance, attacker)
 		end
 

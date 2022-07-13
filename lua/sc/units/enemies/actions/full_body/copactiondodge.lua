@@ -1,9 +1,6 @@
-local ids_base = Idstring("base")
 local math_clamp = math.clamp
 local math_floor = math.floor
-local math_min = math.min
 local math_up = math.UP
-local mrot_set = mrotation.set_yaw_pitch_roll
 
 function CopActionDodge:init(action_desc, common_data)
 	self._common_data = common_data
@@ -14,25 +11,21 @@ function CopActionDodge:init(action_desc, common_data)
 	self._unit = common_data.unit
 	self._timeout = action_desc.timeout
 	self._machine = common_data.machine
-	self._descriptor = action_desc
 
 	local redir_res = common_data.ext_movement:play_redirect("dodge")
-
 	if redir_res then
+		self._descriptor = action_desc
 		self._last_vel_z = 0
 
 		self:_determine_rotation_transition()
 		self._ext_movement:set_root_blend(false)
-		self._unit:set_driving("animation")
-		self._machine:set_parameter(redir_res, action_desc.side, 1)
 		self._machine:set_parameter(redir_res, action_desc.variation, 1)
 
 		if action_desc.speed then
 			self._machine:set_speed(redir_res, action_desc.speed)
 		end
 
-		CopActionAct._create_blocks_table(self, action_desc.blocks)
-		self._ext_movement:enable_update()
+		self._machine:set_parameter(redir_res, action_desc.side, 1)
 
 		if Network:is_server() then
 			local i_variation = CopActionDodge._get_variation_index(action_desc.variation)
@@ -44,53 +37,10 @@ function CopActionDodge:init(action_desc, common_data)
 			common_data.ext_network:send("action_dodge_start", action_desc.body_part, i_variation, i_side, dir, speed, sync_accuracy)
 		end
 
+		CopActionAct._create_blocks_table(self, action_desc.blocks)
+		self._ext_movement:enable_update()
+
 		return true
-	end
-end
-
-function CopActionDodge:on_exit()
-	self._unit:set_driving("script")
-
-	if Network:is_client() then
-		self._ext_movement:set_m_host_stop_pos(self._ext_movement:m_pos())
-	elseif not self._expired then
-		self._common_data.ext_network:send("action_dodge_end")
-	end
-end
-
-function CopActionDodge:update(t)
-	if self._ext_anim.dodge then
-		self._last_pos = CopActionHurt._get_pos_clamped_to_graph(self)
-
-		local new_rot = nil
-
-		if self._rot_transition then
-			local anim_rel_t = self._machine:segment_relative_time(ids_base)
-			local rot_prog = anim_rel_t / self._rot_transition.end_anim_t
-
-			if rot_prog > 1 then
-				new_rot = self._rot_transition.end_rot
-				self._rot_transition = nil
-			else
-				new_rot = self._rot_transition.start_rot:slerp(self._rot_transition.end_rot, rot_prog)
-			end
-		else
-			new_rot = self._unit:get_animation_delta_rotation()
-			new_rot = self._common_data.rot * new_rot
-
-			mrot_set(new_rot, new_rot:yaw(), 0, 0)
-		end
-
-		self._ext_movement:set_rotation(new_rot)
-
-		local dt = TimerManager:game():delta_time()
-		CopActionWalk._set_new_pos(self, dt)
-
-		if self._ext_anim.base_need_upd then
-			self._ext_movement:upd_m_head_pos()
-		end
-	else
-		self._expired = true
 	end
 end
 

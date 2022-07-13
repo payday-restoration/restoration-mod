@@ -15686,6 +15686,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 		a_obj = "a_ns"
 	}	
 	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
+		desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",
 		custom_stats = {
 			hailstorm = true,
 			falloff_start_mult = 0.2,

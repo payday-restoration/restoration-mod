@@ -27,8 +27,18 @@ function CopActionDodge:init(action_desc, common_data)
 		self._machine:set_parameter(redir_res, action_desc.side, 1)
 		self._machine:set_parameter(redir_res, action_desc.variation, 1)
 
-		if action_desc.speed then
-			self._machine:set_speed(redir_res, action_desc.speed)
+		local speed = action_desc.speed or 1
+
+		if speed ~= 1 then
+			if action_desc.variation == "side_step" then
+				speed = math_min(speed, 1.2)
+			elseif action_desc.variation == "wheel" then
+				speed = math_min(speed, 1.4)
+			else
+				speed = math_min(speed, 1.6)
+			end
+
+			self._machine:set_speed(redir_res, speed)
 		end
 
 		CopActionAct._create_blocks_table(self, action_desc.blocks)

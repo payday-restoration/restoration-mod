@@ -76,19 +76,55 @@ Hooks:PostHook(PlayerInventory, "set_visibility_state", "res_set_visibility_stat
 	end
 end)
 
+
+
+function PlayerInventory:_start_feedback_effect(end_time, interval, range)
+	end_time = end_time or self:get_jammer_time() + TimerManager:game():time()
+	self._jammer_data = {
+		effect = "feedback",
+		t = end_time + 0.3,
+		interval = interval or 2.5,
+		range = range or 1000,
+		sound = self._unit:sound_source():post_event("ecm_jammer_puke_signal")
+	}
+	local is_player = managers.player:player_unit() == self._unit
+	local dodge = is_player and self._unit:base():upgrade_value("temporary", "pocket_ecm_kill_dodge")
+	local heal = is_player and self._unit:base():upgrade_value("player", "pocket_ecm_heal_on_kill") or self._unit:base():upgrade_value("team", "pocket_ecm_heal_on_kill")
+
+	if heal then
+		self._jammer_data.heal = heal
+		self._jammer_data.heal_listener_key = "feedback_heal" .. tostring(self._unit:key())
+
+		managers.player:register_message(Message.OnEnemyKilled, self._jammer_data.heal_listener_key, callback(self, self, "_feedback_heal_on_kill"))
+	end
+
+	if dodge then
+		self._jammer_data.dodge_kills = dodge[3]
+		self._jammer_data.dodge_listener_key = "jamming_dodge" .. tostring(self._unit:key())
+
+		managers.player:register_message(Message.OnEnemyKilled, self._jammer_data.dodge_listener_key, callback(self, self, "_jamming_kill_dodge"))
+	end
+
+	if Network:is_server() then
+		self._jammer_data.feedback_callback_key = "feedback" .. tostring(self._unit:key())
+
+		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), TimerManager:game():time() + 0.25)
+	end
+end
+
 --Fix PECM feedback not coming out in waves as described
 function PlayerInventory:_do_feedback()
 	local t = TimerManager:game():time()
 
-	if not alive(self._unit) or not self._jammer_data or t > self._jammer_data.t - 0.1 then
+	if not alive(self._unit) or not self._jammer_data or t > self._jammer_data.t then
 		self:stop_feedback_effect()
 
 		return
 	end
 
-	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, 2500)
+	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, self._jammer_data.range)
 
-	if self._jammer_data.t - 0.1 > t + self._jammer_data.interval then
+	if self._jammer_data.t > t + self._jammer_data.interval then
 		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), t + self._jammer_data.interval)
 	else
 		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "stop_feedback_effect"), self._jammer_data.t)

@@ -1611,11 +1611,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		40	
 	}
 	self.parts.wpn_fps_upg_o_aimpoint.has_description = true
-	self.parts.wpn_fps_upg_o_aimpoint.desc_id = "bm_wp_upg_o_1_2"		
+	self.parts.wpn_fps_upg_o_aimpoint.desc_id = "bm_wp_upg_o_1_8"		
 	self.parts.wpn_fps_upg_o_aimpoint.supported = true		
 	self.parts.wpn_fps_upg_o_aimpoint.stats = {
 		value = 8,
-		zoom = 2
+		zoom = 8
 	}
 	self.parts.wpn_fps_upg_o_aimpoint.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -1628,11 +1628,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		40	
 	}
 	self.parts.wpn_fps_upg_o_aimpoint_2.has_description = true
-	self.parts.wpn_fps_upg_o_aimpoint_2.desc_id = "bm_wp_upg_o_1_2"		
+	self.parts.wpn_fps_upg_o_aimpoint_2.desc_id = "bm_wp_upg_o_1_8"		
 	self.parts.wpn_fps_upg_o_aimpoint_2.supported = true		
 	self.parts.wpn_fps_upg_o_aimpoint_2.stats = {
 		value = 8,
-		zoom = 2
+		zoom = 8
 	}
 	self.parts.wpn_fps_upg_o_aimpoint_2.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -1737,6 +1737,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 
 	--Angled Sight
 	self.parts.wpn_fps_upg_o_45iron.pcs = {}
+	self.parts.wpn_fps_upg_o_45iron.desc_id = "bm_wp_upg_o_angled_desc"
+	self.parts.wpn_fps_upg_o_45iron.has_description = true
 	self.parts.wpn_fps_upg_o_45iron.supported = true
 	self.parts.wpn_fps_upg_o_45iron.stats = {value = 1, gadget_zoom = 1}
 	self.parts.wpn_fps_upg_o_45iron.perks = {"gadget"}
@@ -1775,11 +1777,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_sub2000 = { translation = Vector3( -4.25,-2, -10.8 ),rotation = Rotation(0, 0.1, -45)}
 
 	--Shortdot Sight (Base Sniper Scope)
+	self.parts.wpn_fps_upg_o_shortdot.has_description = true
 	self.parts.wpn_fps_upg_o_shortdot.supported = true
-	self.parts.wpn_fps_upg_o_shortdot.stats = {value = 1, zoom = 40}
+	self.parts.wpn_fps_upg_o_shortdot.stats = {value = 0, zoom = 40}
 	self.parts.wpn_fps_upg_o_shortdot.custom_stats = { big_scope = true }
-	self.parts.wpn_fps_upg_o_shortdot.perks = {"scope",
-			"highlight"}
+	self.parts.wpn_fps_upg_o_shortdot.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_shortdot.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m95 = {
 		translation = Vector3(-0.0, -21.5, -4.58)
@@ -1833,14 +1835,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	--Vanilla Shortdot
 	self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
 	self.parts.wpn_fps_upg_o_shortdot_vanilla.supported = true
-	self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {value = 1, zoom = 40}
+	self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {value = 0, zoom = 40}
 	self.parts.wpn_fps_upg_o_shortdot_vanilla.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_shortdot_vanilla.dlc = nil
-	self.parts.wpn_fps_upg_o_shortdot_vanilla.pcs = nil	
 
 	--Theia Magnified Scope
 	self.parts.wpn_fps_upg_o_leupold.pcs = {}
-	self.parts.wpn_fps_upg_o_leupold.desc_id = "bm_wp_upg_o_6"
+	self.parts.wpn_fps_upg_o_leupold.desc_id = "bm_wp_upg_o_6_range"
 	self.parts.wpn_fps_upg_o_leupold.has_description = true
 	self.parts.wpn_fps_upg_o_leupold.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_leupold.supported = true
@@ -2255,11 +2256,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Trigonom Sight
 	self.parts.wpn_fps_upg_o_rx01.pcs = {}
 	self.parts.wpn_fps_upg_o_rx01.has_description = true
-	self.parts.wpn_fps_upg_o_rx01.desc_id = "bm_wp_upg_o_1_2"
+	self.parts.wpn_fps_upg_o_rx01.desc_id = "bm_wp_upg_o_1_1"
 	self.parts.wpn_fps_upg_o_rx01.supported = true
 	self.parts.wpn_fps_upg_o_rx01.stats = {
 		value = 5,
-		zoom = 2
+		zoom = 1
 	}
 	self.parts.wpn_fps_upg_o_rx01.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -2267,11 +2268,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Solar Sight
 	self.parts.wpn_fps_upg_o_rx30.pcs = {}
 	self.parts.wpn_fps_upg_o_rx30.has_description = true
-	self.parts.wpn_fps_upg_o_rx30.desc_id = "bm_wp_upg_o_1_2"
+	self.parts.wpn_fps_upg_o_rx30.desc_id = "bm_wp_upg_o_1_1"
 	self.parts.wpn_fps_upg_o_rx30.supported = true
 	self.parts.wpn_fps_upg_o_rx30.stats = {
 		value = 5,
-		zoom = 2
+		zoom = 1
 	}
 	self.parts.wpn_fps_upg_o_rx30.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -2279,12 +2280,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Combat Sight
 	self.parts.wpn_fps_upg_o_cs.pcs = {}
 	self.parts.wpn_fps_upg_o_cs.has_description = true
-	self.parts.wpn_fps_upg_o_cs.desc_id = "bm_wp_upg_o_1_5"		
+	self.parts.wpn_fps_upg_o_cs.desc_id = "bm_wp_upg_o_1_8"		
 	self.parts.wpn_fps_upg_o_cs.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_cs.supported = true
 	self.parts.wpn_fps_upg_o_cs.stats = {
 		value = 3,
-		zoom = 5
+		zoom = 8
 	}
 	self.parts.wpn_fps_upg_o_cs.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -12005,6 +12006,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	
 	--45 RDS
 	self.parts.wpn_fps_upg_o_45rds.pcs = {}
+	self.parts.wpn_fps_upg_o_45rds.desc_id = "bm_wp_upg_o_angled_1_1_desc"
+	self.parts.wpn_fps_upg_o_45rds.has_description = true
 	self.parts.wpn_fps_upg_o_45rds.supported = true
 	self.parts.wpn_fps_upg_o_45rds.stats = {
 		value = 1,
@@ -12020,7 +12023,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Reconnaissance Sight/NcSTAR Advance Dual Optic
 	self.parts.wpn_fps_upg_o_spot.pcs = {}
 	self.parts.wpn_fps_upg_o_spot.has_description = true
-	self.parts.wpn_fps_upg_o_spot.desc_id = "bm_wp_upg_o_3"	
+	self.parts.wpn_fps_upg_o_spot.desc_id = "bm_wp_upg_o_3_range"	
 	self.parts.wpn_fps_upg_o_spot.supported = true
 	self.parts.wpn_fps_upg_o_spot.stats = {
 		value = 8,
@@ -12032,7 +12035,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	
 	--Box Buddy Sight/Pulsar Digisight LRF
 	self.parts.wpn_fps_upg_o_box.pcs = {}
-	self.parts.wpn_fps_upg_o_box.desc_id = "bm_wp_upg_o_4"
+	self.parts.wpn_fps_upg_o_box.desc_id = "bm_wp_upg_o_4_range"
 	self.parts.wpn_fps_upg_o_box.has_description = true
 	self.parts.wpn_fps_upg_o_box.supported = true
 	self.parts.wpn_fps_upg_o_box.stats = {
@@ -12050,7 +12053,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Vintage Sight
 	self.parts.wpn_fps_ass_g36_o_vintage.pcs = {}
 	self.parts.wpn_fps_ass_g36_o_vintage.has_description = true
-	self.parts.wpn_fps_ass_g36_o_vintage.desc_id = "bm_wp_upg_o_1_5"	
+	self.parts.wpn_fps_ass_g36_o_vintage.desc_id = "bm_wp_upg_o_1_8"	
 	self.parts.wpn_fps_ass_g36_o_vintage.reticle_obj = nil
 	self.parts.wpn_fps_ass_g36_o_vintage.supported = true
 	self.parts.wpn_fps_ass_g36_o_vintage.stance_mod = {
@@ -12058,9 +12061,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 			translation = Vector3(-0.02, 5, -2.35)
 		}
 	}
+	self.parts.wpn_fps_ass_g36_o_vintage.custom_stats = { big_scope = true }
 	self.parts.wpn_fps_ass_g36_o_vintage.stats = {
 		value = 1,
-		zoom = 5
+		zoom = 8
 	}
 	self.parts.wpn_fps_ass_g36_o_vintage.perks = {"scope"}
 	
@@ -12607,9 +12611,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", functi
 		40
 	}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.supported = true
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.desc_id = "bm_wp_upg_o_magnifier_desc"
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.has_description = true
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats = {
 		value = 1,
-		gadget_zoom = 30
+		gadget_zoom = 21
 	}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.perks = {"gadget"}
 
@@ -12625,9 +12631,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", functi
 		40
 	}
 	self.parts.wpn_fps_upg_o_45rds_v2.supported = true
+	self.parts.wpn_fps_upg_o_45rds_v2.desc_id = "bm_wp_upg_o_angled_1_2_desc"
+	self.parts.wpn_fps_upg_o_45rds_v2.has_description = true
 	self.parts.wpn_fps_upg_o_45rds_v2.stats = {
 		value = 1,
-		gadget_zoom = 2
+		gadget_zoom = 3
 	}
 	self.parts.wpn_fps_upg_o_45rds_v2.perks = {"gadget"}
 	self.parts.wpn_fps_upg_o_45rds_v2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_45rds.stance_mod)
@@ -13922,9 +13930,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_o_sig.supported = true
+	self.parts.wpn_fps_upg_o_sig.desc_id = "bm_wp_upg_o_magnifier_desc"
+	self.parts.wpn_fps_upg_o_sig.has_description = true
 	self.parts.wpn_fps_upg_o_sig.stats = {
 		value = 2,
-		gadget_zoom = 30
+		gadget_zoom = 21
 	}
 	self.parts.wpn_fps_upg_o_sig.perks = {
 		"gadget"
@@ -13934,7 +13944,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	--Advanced Combat/Trijicon ACOG 6x48
 	self.parts.wpn_fps_upg_o_bmg.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_bmg.has_description = true
-	self.parts.wpn_fps_upg_o_bmg.desc_id = "bm_wp_upg_o_4"
+	self.parts.wpn_fps_upg_o_bmg.desc_id = "bm_wp_upg_o_6"
 	self.parts.wpn_fps_upg_o_bmg.pcs = {
 		10,
 		20,
@@ -13943,7 +13953,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	}
 	self.parts.wpn_fps_upg_o_bmg.supported = true
 	self.parts.wpn_fps_upg_o_bmg.stats = {
-		zoom = 30,
+		zoom = 50,
 		value = 6
 	}
 	self.parts.wpn_fps_upg_o_bmg.custom_stats = { big_scope = true }
@@ -14005,7 +14015,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	
 	--Compact Profile/DI Optical FC1 Sight
 	self.parts.wpn_fps_upg_o_fc1.has_description = true
-	self.parts.wpn_fps_upg_o_fc1.desc_id = "bm_wp_upg_o_1_2"
+	self.parts.wpn_fps_upg_o_fc1.desc_id = "bm_wp_upg_o_1_5_pris"
 	self.parts.wpn_fps_upg_o_fc1.pcs = {
 		10,
 		20,
@@ -14014,8 +14024,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	}
 	self.parts.wpn_fps_upg_o_fc1.supported = true
 	self.parts.wpn_fps_upg_o_fc1.stats = {
-		zoom = 2,
-		value = 6
+		value = 3,
+		zoom = 4
 	}
 	self.parts.wpn_fps_upg_o_fc1.perks = {
 		"scope"
@@ -14029,6 +14039,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_o_45steel.supported = true
+	self.parts.wpn_fps_upg_o_45steel.desc_id = "bm_wp_upg_o_angled_desc"
+	self.parts.wpn_fps_upg_o_45steel.has_description = true
 	self.parts.wpn_fps_upg_o_45steel.stats = {
 		value = 1,
 		gadget_zoom = 2
@@ -16484,6 +16496,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		internal_part = true,
 		dlc = "sc"
 	}
+
+	--Default Sniper Scope
+	self.parts.wpn_fps_upg_o_shortdot_dmc = deep_clone(self.parts.wpn_fps_upg_o_shortdot_vanilla)
+	self.parts.wpn_fps_upg_o_shortdot_dmc.pcs = {}
+	self.parts.wpn_fps_upg_o_shortdot_dmc.is_a_unlockable = true
+	self.parts.wpn_fps_upg_o_shortdot_dmc.name_id = "bm_wp_upg_o_shortdot_dmc"
+	self.parts.wpn_fps_upg_o_shortdot_dmc.desc_id = "bm_wp_upg_o_5_default"
+	self.parts.wpn_fps_upg_o_shortdot_dmc.has_description = true
+	self.parts.wpn_fps_upg_o_shortdot_dmc.alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight"
+	self.parts.wpn_fps_upg_o_shortdot_dmc.supported = true
+	self.parts.wpn_fps_upg_o_shortdot_dmc.dlc = "sc"
+
+	for factory_id, i in pairs(self) do
+		if self[factory_id] and self[factory_id].uses_parts and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot_dmc") and (table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot") or table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot_vanilla")) then
+			table.insert(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot_dmc")
+		end
+	end
 
 	--M4A1 Kit
 	local m4a1_override = {
@@ -20014,6 +20043,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 
 		--Point Shoot Module
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.desc_id = "bm_wp_upg_o_angled_laser_desc"
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.has_description = true
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.supported = true
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stats = {
 			value = 5,

@@ -687,6 +687,12 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	local is_player = self._setup.user_unit == managers.player:player_unit()
 	local consume_ammo = not managers.player:has_active_temporary_property("bullet_storm") and (not managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier") or not managers.player:has_category_upgrade("player", "berserker_no_ammo_cost")) or not is_player
+	
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		if category == "grenade_launcher" or category == "rocket_launcher" then
+			--consume_ammo = true
+		end
+	end
 
 	--MG Specialist Skill
 	if is_player and self._shots_without_releasing_trigger then

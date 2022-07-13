@@ -1032,7 +1032,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#2.5## meters. #{important_1}#Cannot headshot.##",
 		["bm_wp_upg_a_custom_desc"] = "Fire bigger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, range, pickup and total ammo.##",
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor##.\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#96## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#96## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#120## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#180## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#240## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
@@ -1070,18 +1070,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_1_1"] = "1.1x MAGNIFICATION.",
-		["bm_wp_upg_o_1_2"] = "1.2x MAGNIFICATION.",
-		["bm_wp_upg_o_1_5"] = "1.5x MAGNIFICATION.",
-		["bm_wp_upg_o_2"] = "2x MAGNIFICATION.",
-		["bm_wp_upg_o_3"] = "3x MAGNIFICATION.",
-		--["bm_wp_upg_o_3_mark"] = "3x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
-		["bm_wp_upg_o_4"] = "4x MAGNIFICATION.",
-		--["bm_wp_upg_o_4_mark"] = "4x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
-		["bm_wp_upg_o_5"] = "5x MAGNIFICATION.",
-		--["bm_wp_upg_o_5_mark"] = "5x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
-		["bm_wp_upg_o_6"] = "6x MAGNIFICATION.",
-		--["bm_wp_upg_o_6_mark"] = "6x MAGNIFICATION.\nWhile aiming this optic marks special enemies, as well as guards in stealth.",
+		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{skill_color}#1.2x magnification.##",
+		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{skill_color}#1.5x magnification.##",
+		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{skill_color}#1.5x magnification.##",
+		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{skill_color}#1.8x magnification.##",
+		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{skill_color}#3x magnification.##",
+		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#3x magnification.##",
+		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{skill_color}#4x magnification.##",
+		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#4x magnification.##",
+		["bm_wp_upg_o_5"] = "Long-range scope.\n#{skill_color}#5x magnification.##",
+		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#5x magnification.##",
+		["bm_wp_upg_o_6"] = "Long-range scope.\n#{skill_color}#6x magnification.##",
+		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#6x magnification.##",
+		["bm_wp_upg_o_8"] = "Long-range scope.\n#{skill_color}#8x magnification.##",
+		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#8x magnification.##",
+
+		["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
+		["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
+
+		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled iron sights.",
+		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
+		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the laser sight.", --VMP Point Shoot Laser
+
+		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
+
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#120## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",
@@ -1165,7 +1179,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
-		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine##.\n\nRecharge delay: #{skill_color}#1.5s##\nRecharge Rate: #{skill_color}#3/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#3s##",
+		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.5s##\nRecharge Rate: #{skill_color}#3/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#3s##",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan penetrate body armor, shields and thin walls.##",
 		--CUSTOM HANDGUNS
@@ -1196,7 +1210,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Suppressed Barrel",
-		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine##.\n\nRecharge delay: #{skill_color}#1s##\nRecharge Rate: #{skill_color}#5/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
+		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1s##\nRecharge Rate: #{skill_color}#5/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 		--Uzi
 		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",	
 		--Chicago Typewriter
@@ -1331,7 +1345,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
 		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
-		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine##.\n\nRecharge delay: #{skill_color}#2.5s##\nRecharge Rate: #{skill_color}#7/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#5s##",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2.5s##\nRecharge Rate: #{skill_color}#7/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#5s##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
@@ -1427,7 +1441,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_weapon_sc_desc"] = "Can penetrate body armor, shields, titan shields and thin walls.",
 		["bm_ap_2_weapon_sc_desc"] = "Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.\n\n#{skill_color}#Can penetrate body armor.##",
 		["bm_ap_3_weapon_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can penetrate body armor.##",
-		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to toggle the flip up leaf sight.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
+		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the leaf sight up/down.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
 		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubling the number of pellets.",
 		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",
@@ -1994,7 +2008,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_equipment_armor_kit"] = "Throwable Case",
 		["bm_equipment_armor_kit_desc"] = "To use the throwable case, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your throwables. It can only be used three times.\n\nYou can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.",
 
-		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 10 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
+		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback loop will stun enemies every 1.5 seconds within a 25 meter radius. Feedback lasts for 10 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
 		["bm_equipment_first_aid_kit_desc"] = "To use the first aid kit, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 150 health. First aid kits can only be used once.\n\nThe first aid kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
 		["bm_equipment_doctor_bag_desc"] = "To use the doctor bag, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 20% of their maximum health and 4% maximum health every 4 seconds for 3 minutes. Doctor bags can be used twice.\n\nThe doctor dag is a portable bag, usually used by a physician or other medical professional to transport medical supplies and medicine.",
 		["bm_equipment_sentry_gun_desc"] = "To use the sentry gun, you need to place it by holding $BTN_USE_ITEM. Upon deployment it will use 40% of your maximum ammo. Upon taking too much damage, it will shut off. While in this state, interacting with it by holding $BTN_INTERACT will place it into an automatic repair mode. Picking up sentries will refund their remaining ammo and repair them. Sentry guns terrify civilians, forcing them to the ground.\n\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention away from you and your team.",
@@ -2593,11 +2607,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Alert--
 			["menu_jail_workout_sc"] = "Alert",
-			["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nIncreases the duration of marked enemies by ##100%.##\n\nACE: ##$pro##\nYou can ##now mark specials and guards in stealth by aiming at them with any weapon.##",
+			["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nIncreases the duration of enemy marking by ##100%.##\n\nACE: ##$pro##\nYou will ##automatically mark## guards and special enemies within ##40## meters of you when you aim at them.\n\nNOTE: Guards can only be marked during stealth.",
 
 			--Sixth Sense--
 			["menu_chameleon_beta_sc"] = "Sixth Sense",
-			["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",
+			["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to ##automatically mark## enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",
 
 			--ECM Overdrive--
 			["menu_cleaner_beta_sc"] = "ECM Overdrive",
@@ -2994,9 +3008,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\nNOTE: This effect does not apply to, nor is it refreshed by, downs caused by cloaker kicks and taser shocks.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening.\n\nBenefits from a full perk deck:\n##-##Unlocks and equips the Pocket ECM Device. Activating the Pocket ECM device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration. Activating the Pocket ECM after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a ##10## second duration. The Pocket ECM device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3.5## seconds.\n##-##Killing an enemy while the feedback effect is active will regenerate ##20## health. Crew members killing enemies while the feedback effect is active will regenerate ##10## health.\n##-##Your armor recovery rate is increased by ##10%.##\n##-##Your dodge is increased by ##10## points.",
+		["menu_st_spec_21_desc_sc"] = "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening.\n\nBenefits from a full perk deck:\n##-##Unlocks and equips the Pocket ECM Device. Activating the Pocket ECM device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration. Activating the Pocket ECM after the alarm is raised will trigger the feedback effect, stunning enemies in a ##10## meter radius every ##2.5## seconds for a ##10## second duration. The Pocket ECM device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3## seconds.\n##-##Killing an enemy while the feedback effect is active will regenerate ##20## health. Crew members killing enemies while the feedback effect is active will regenerate ##10## health.\n##-##Your armor recovery rate is increased by ##10%.##\n##-##Your dodge is increased by ##10## points.",
 		["menu_st_spec_21_desc_sc_short"] = "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening.",
-		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device.##\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a ##10## second duration.\n\nThe Pocket ECM Device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3.5## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device.##\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, stunning enemies in a ##10## meter radius every ##2.5## seconds for a ##10## second duration.\n\nThe Pocket ECM Device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##20## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",

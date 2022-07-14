@@ -23,7 +23,9 @@ function MutatorMoreDonutsPlus:setup(data)
 
 	self:modify_unit_categories(tweak_data.group_ai, difficulty_index)	
 end
-
+if not PackageManager:loaded("packages/miscassetsmutators") then
+		PackageManager:load("packages/miscassetsmutators")
+	end
 function MutatorMoreDonutsPlus:modify_unit_categories(group_ai_tweak, difficulty_index)	
 	group_ai_tweak.special_unit_spawn_limits = {
 	tank = 0,

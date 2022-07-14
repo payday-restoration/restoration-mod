@@ -1,102 +1,23 @@
 <table directory="assets">
 	<!--RAPHAEL CHRIST IS EVILBOBARINO-->	
 
-	<!--Classic Medic Dozer-->
-	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic" load="true"/>
-	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_husk" load="true"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic" />
-	<object				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_contour"/>
-	<sequence_manager	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic"/> 
 	
-	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
+	<!--NYPD cop for da Donuts-->
+	<object				path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2" load="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_contour"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_husk" load="true"/>
 
-	<!--Classic Medic Dozer Armor Pieces-->
-	<unit				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back" load="false"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back" />
-	<object				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back"/>
-	
-	<unit				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_chest/ene_acc_bulldozer_medic_classic_chest" load="false"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_chest/ene_acc_bulldozer_medic_classic_chest"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_chest/ene_acc_bulldozer_medic_classic_chest" />
-	<object				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_chest/ene_acc_bulldozer_medic_classic_chest"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_chest/ene_acc_bulldozer_medic_classic_chest"/>
-	
-	<unit				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_helmet_plate/ene_acc_bulldozer_medic_classic_helmet_plate" load="false"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_helmet_plate/ene_acc_bulldozer_medic_classic_helmet_plate"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_helmet_plate/ene_acc_bulldozer_medic_classic_helmet_plate" />
-	<object				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_helmet_plate/ene_acc_bulldozer_medic_classic_helmet_plate"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_helmet_plate/ene_acc_bulldozer_medic_classic_helmet_plate"/>
-	
-	<unit				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_neck/ene_acc_bulldozer_medic_classic_neck" load="false"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_neck/ene_acc_bulldozer_medic_classic_neck"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_neck/ene_acc_bulldozer_medic_classic_neck" />
-	<object				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_neck/ene_acc_bulldozer_medic_classic_neck"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_neck/ene_acc_bulldozer_medic_classic_neck"/>
-	
-	<unit				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_stomache/ene_acc_bulldozer_medic_classic_stomache" load="false"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_stomache/ene_acc_bulldozer_medic_classic_stomache"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_stomache/ene_acc_bulldozer_medic_classic_stomache" />
-	<object				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_stomache/ene_acc_bulldozer_medic_classic_stomache"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_stomache/ene_acc_bulldozer_medic_classic_stomache"/>
-	
-	<unit				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_throat/ene_acc_bulldozer_medic_classic_throat" load="false"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_throat/ene_acc_bulldozer_medic_classic_throat"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_throat/ene_acc_bulldozer_medic_classic_throat" />
-	<object				path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_throat/ene_acc_bulldozer_medic_classic_throat"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_throat/ene_acc_bulldozer_medic_classic_throat"/>
-	<!--eskreco-->	
-	
-	<!--medic dosr-->
-	<object				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>	
-	<model				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>	
-	<sequence_manager	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>	
-			
+	<!--Omnia LPF for da Donuts too-->
+	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
 
-	<!--MEME MAN-->
-	<object				path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
-	<sequence_manager	path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
-	<model				path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
-	<unit				path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false" load="true"/>
-	<material_config	path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
-	<material_config	path="units/payday2/characters/ene_mememan_1/ene_mememan_1_contour" force="false"/>
-	<unit				path="units/payday2/characters/ene_mememan_1/ene_mememan_1_husk" force="false" load="true"/>
-
-	<!--MEME MAN 2 ELECTRIC BOOGALOO-->
-	<object				path="units/payday2/characters/ene_mememan_2/ene_mememan_2" force="false"/>
-	<sequence_manager	path="units/payday2/characters/ene_mememan_2/ene_mememan_2" force="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_mememan_2/ene_mememan_2" force="false"/>
-	<model				path="units/payday2/characters/ene_mememan_2/ene_mememan_2" force="false"/>
-	<unit				path="units/payday2/characters/ene_mememan_2/ene_mememan_2" force="false" load="true"/>
-	<material_config	path="units/payday2/characters/ene_mememan_2/ene_mememan_2" force="false"/>
-	<material_config	path="units/payday2/characters/ene_mememan_2/ene_mememan_2_contour" force="false"/>
-	<unit				path="units/payday2/characters/ene_mememan_2/ene_mememan_2_husk" force="false" load="true"/>	
-	
-	<unit				path="units/payday2/weapons/wpn_npc_mini/x_mini_npc" load="true" force="false"/>
-
-	<!--MemeMan2 Mod-->	
-	<unit				path="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat"/>
-	<model				path="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat" />
-	<object				path="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat"/>
-	<material_config	path="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat"/>
-	
-	<unit				path="units/payday2/characters/ene_acc_mememan_2_neck/ene_acc_mememan_2_neck" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_mememan_2_neck/ene_acc_mememan_2_neck"/>
-	<model				path="units/payday2/characters/ene_acc_mememan_2_neck/ene_acc_mememan_2_neck" />
-	<object				path="units/payday2/characters/ene_acc_mememan_2_neck/ene_acc_mememan_2_neck"/>
-	<material_config	path="units/payday2/characters/ene_acc_mememan_2_neck/ene_acc_mememan_2_neck"/>
-	
-	<unit				path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate"/>
-	<model				path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate" />
-	<object				path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate"/>
-	<material_config	path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate"/>
-	<!--MemeMan2 Mod-->		
+	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
 	
 </table>

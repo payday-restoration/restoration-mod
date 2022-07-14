@@ -10115,6 +10115,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.plainsrider.reload_speed_multiplier = 2.9
 
 	--Pistol Crossbow
+		self.hunter.categories = {
+			"crossbow",
+			"crossbow_pistol"
+		}
 		self.hunter.upgrade_blocks = {
 			weapon = {
 				"clip_ammo_increase"

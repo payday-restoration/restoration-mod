@@ -25,6 +25,20 @@ tweak_data.pistol = {
 	hipfire_spread_mult = 0.75
 }
 
+tweak_data.bow = {
+	swap_bonus = 1,
+	ads_move_speed_mult = 0.6
+}
+
+tweak_data.crossbow = {
+	swap_bonus = 1,
+	ads_move_speed_mult = 0.45
+}
+	tweak_data.crossbow_pistol = {
+		ads_move_speed_mult = 1.7777,
+		swap_bonus = 1.75
+	}
+
 tweak_data.grenade_launcher = {
 	ads_move_speed_mult = 0.45,
 }

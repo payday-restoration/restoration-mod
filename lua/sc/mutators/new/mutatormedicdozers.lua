@@ -27,55 +27,55 @@ function MutatorMedicdozers:setup(data)
 
 	if difficulty_index <= 7 then 
 		table.insert(unit_types.america, classic_medic_unit_name)
-		table.insert(unit_types.russia, classic_medic_unit_name)
+		table.insert(unit_types.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
 		table.insert(unit_types.zombie, classic_medic_unit_name)
-		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
-		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale")) --replace that fucker with better model
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic")) 
 		table.insert(unit_types.nypd, classic_medic_unit_name)
 		table.insert(unit_types.lapd, classic_medic_unit_name)
 		table.insert(unit_types.fbi, classic_medic_unit_name)
 		
 		table.insert(unit_types_black.america, classic_medic_unit_name)
-		table.insert(unit_types_black.russia, classic_medic_unit_name)
+		table.insert(unit_types_black.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
 		table.insert(unit_types_black.zombie, classic_medic_unit_name)
-		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale")) --replace that fucker with better model
 		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_black.nypd, classic_medic_unit_name)
 		table.insert(unit_types_black.lapd, classic_medic_unit_name)
 		table.insert(unit_types_black.fbi, classic_medic_unit_name)
 
 		table.insert(unit_types_skull.america, classic_medic_unit_name)
-		table.insert(unit_types_skull.russia, classic_medic_unit_name)
+		table.insert(unit_types_skull.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
 		table.insert(unit_types_skull.zombie, classic_medic_unit_name)
-		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale")) --replace that fucker with better model
 		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_skull.nypd, classic_medic_unit_name)
 		table.insert(unit_types_skull.lapd, classic_medic_unit_name)	
 		table.insert(unit_types_skull.fbi, classic_medic_unit_name)
 	else
 		table.insert(unit_types.america, medic_unit_name)
-		table.insert(unit_types.russia, medic_unit_name)
+		table.insert(unit_types.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
 		table.insert(unit_types.zombie, medic_unit_name)
-		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
-		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale")) --replace that fucker with better model
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic")) --Replace him with OMNIA Medicdozer
 		table.insert(unit_types.nypd, medic_unit_name)
 		table.insert(unit_types.lapd, medic_unit_name)
 		table.insert(unit_types.fbi, medic_unit_name)
 		
 		table.insert(unit_types_black.america, medic_unit_name)
-		table.insert(unit_types_black.russia, medic_unit_name)
+		table.insert(unit_types_black.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
 		table.insert(unit_types_black.zombie, medic_unit_name)
-		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
-		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale")) --replace that fucker with better model
+		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic")) --Replace him with OMNIA Medicdozer
 		table.insert(unit_types_black.nypd, medic_unit_name)
 		table.insert(unit_types_black.lapd, medic_unit_name)
 		table.insert(unit_types_black.fbi, medic_unit_name)
 
 		table.insert(unit_types_skull.america, medic_unit_name)
-		table.insert(unit_types_skull.russia, medic_unit_name)
+		table.insert(unit_types_skull.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
 		table.insert(unit_types_skull.zombie, medic_unit_name)
-		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
-		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale")) --replace that fucker with better model
+		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic")) --Replace him with OMNIA Medicdozer
 		table.insert(unit_types_skull.nypd, medic_unit_name)
 		table.insert(unit_types_skull.lapd, medic_unit_name)
 		table.insert(unit_types_skull.fbi, medic_unit_name)	

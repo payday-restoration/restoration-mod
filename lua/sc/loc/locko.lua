@@ -1451,8 +1451,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["loot_sc"] = "레스토레이션 오버홀",
 		["loot_sc_desc"] = "이 상품은 레스토레이션 오버홀의 아이템입니다!",
 
-		["menu_l_global_value_omnia"] = "OMNIA",
-		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",
+		["menu_l_global_value_omnia"] = "옴니아",
+		["menu_l_global_value_omnia_desc"] = "이 상품은 옴니아의 아이템입니다!",
 
 		["menu_rifle"] = "RIFLES",
 		["menu_jowi"] = "윅",
@@ -1508,8 +1508,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_loud_suit"] = "전투용 하네스",
 		["bm_suit_loud_suit_desc"] = "열기 따위에 신경쓰지 않을 때 입기 좋은 옷입니다. 가볍고 이동이 쉬우며 유틸리티용으로 제작되었습니다. 부수고 줍기 하기 위한 좋은 선택, 또는 강력하게 요새화된 용병 시설을 공격할 때 좋은 선택입니다.",
 
-		["bm_suit_jackal_track"] = "Special Merchandise",
-		["bm_suit_jackal_track_desc"] = "A special-made tracksuit, with both the Jackal logo, and a variation on the VERITAS logo.\n\nThe crew received them in unmarked boxes, but Jackal confirms he never sent them, or has seen them before.\nIt's unknown where they came from.\n\n\n\n...Inside the packages, was one note:\n\n''##A TOKEN OF APPRECIATION, FOR THOSE WITH DEDICATION.\nXOXO\n--S.N.##''\n\n",
+		["bm_suit_jackal_track"] = "특별 상품 복장",
+		["bm_suit_jackal_track_desc"] = "자칼 로고와 베니타스 로고 변형이 있는 특수 제작 운동복.\n\n동료들은 표시가 없는 상자 안에서 이걸 발견했지만 자칼은 그걸 보낸 적이 없거나 전에 본 적이 있었다고 합니다.\n이 복장이 어디에서 왔는지는 알려져 있지 않았지만\n\n\n\n...패키지 안에는 한 가지 메모가 이렇게 서져있습니다.\n\n''##헌신적인 사람들을 위한 감사의 표시\nXOXO\n--S.N.##''\n\n",
 
 		["bm_suit_sunny"] = "써니사이드 강도",
 		["bm_suit_sunny_desc"] = "때로는 소매를 걷어붙이고 약간의 하이스트를 하고 싶을 때가 있습니다.",

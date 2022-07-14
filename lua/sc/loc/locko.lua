@@ -392,8 +392,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		["heist_contact_akashic_description"] = "이전에 헥터 모랄레스 아래에서 속해있는 고위 간부였던 니콜라스 '니코' 르네는 현재 미국에서 시날론 카르텔의 잔당을 지휘하고 있습니다.\n한때 그들의 인원은 적었고 더 큰 콜롬비아 카르텔은 그들을 돕거나 Crime.net과의 관계를 회복할 의도가 없었지만.\n\n동부 해안에서 활동하는 다양한 소규모 갱단들을 흡수하고 Crime.net과 동맹을 맺은 그는 서비스에 대한 대가로 자원을 제공합니다.",
 
-		["bm_msk_shatter_true"] = "Shatter",
-		["bm_msk_shatter_true_desc"] = "The legendary mask that has only been spoken of in hushed tones.\n\nOf course, it's just a duplicate.\n\nThere's something much more special about the real one, but I think you'll like a copy just as much.\n\nThe Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.",
+		["bm_msk_shatter_true"] = "샤터",
+		["bm_msk_shatter_true_desc"] = "은밀한 어조로만 말했던 전설의 마스크입니다.\n\n물론, 이건 단지 복제품일 뿐입니다.\n\n실제보다 훨씬 더 특별한 것이 있지만 진짜도 그만큼 좋아할 거라 생각됩니다.\n\n불사조는 진정으로 죽일 수 없는 영원한 존재인 재생을 상징합니다. 하나를 내리치려고 하면 화염과 연소의 멋진 쇼로 반격합니다.",
 
 		["menu_l_global_value_veritas"] = "레스토레이션 모드",
 		["menu_l_global_value_veritas_desc"] = "이 상품은 레스토레이션 모드 아이템입니다!",
@@ -483,8 +483,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_secret_bonnie"] = "시크릿 보니",
 		["bm_msk_secret_bonnie_desc"] = "베인에게 비밀을 들은 보니는 자신이 가장 좋아하는 위스키를 한 모금 마시고 카타루를 엿먹이러 갔습니다.",
 
-		["bm_msk_secret_syndey"] = "시크릿 시드니",
-		["bm_msk_secret_syndey_desc"] = "베인에게 비밀을 들었을 때 시드니는 고대 세력에 대한 이야기를 믿지 않았습니다. 알려지지 않았지만 그럼에도 불구하고 가장 중요한 권위에 도전할 기회는 그녀를 승선시키기에 충분했습니다.",
+		["bm_msk_secret_sydney"] = "시크릿 시드니",
+		["bm_msk_secret_sydney_desc"] = "베인에게 비밀을 들었을 때 시드니는 고대 세력에 대한 이야기를 믿지 않았습니다. 알려지지 않았지만 그럼에도 불구하고 가장 중요한 권위에 도전할 기회는 그녀를 승선시키기에 충분했습니다.",
 
 		["bm_msk_secret_richard"] = "시크릿 리차드",
 		["bm_msk_secret_richard_desc"] = "범죄 지하 세계를 돌고 있는 소문은 알려지지 않은 조직의 손에 끔찍한 최후를 맞이한 살인자 자켓에게 영감을 준 살인자에 대해 이야기합니다. 자켓이 베인한테 비밀에 대해 들었을 때, 그는 나중에 그의 가장 큰 영감의 가면처럼 보이는 것을 가지고 나타났습니다.",

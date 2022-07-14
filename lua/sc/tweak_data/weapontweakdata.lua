@@ -9602,16 +9602,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"smg"
 		}
 		self.ranc_heavy_machine_gun.upgrade_blocks = nil
-		self.ranc_heavy_machine_gun.has_description = true
-		self.ranc_heavy_machine_gun.desc_id = "bm_m95_sc_desc"
-		self.ranc_heavy_machine_gun.CLIP_AMMO_MAX  = 200
-		self.ranc_heavy_machine_gun.AMMO_MAX = 200
+		self.ranc_heavy_machine_gun.CLIP_AMMO_MAX  = 100
+		self.ranc_heavy_machine_gun.AMMO_MAX = 100
 		self.ranc_heavy_machine_gun.fire_mode_data.fire_rate = 0.1
 		self.ranc_heavy_machine_gun.kick = self.stat_info.kick_tables.kick_m2
 		self.ranc_heavy_machine_gun.supported = true
-		self.ranc_heavy_machine_gun.ads_speed = 0.400
+		self.ranc_heavy_machine_gun.ads_speed = 0.600
 		self.ranc_heavy_machine_gun.damage_falloff = {
-			start_dist = 4000,
+			start_dist = 3000,
 			end_dist = 100000,
 			min_mult = 0.5
 		}

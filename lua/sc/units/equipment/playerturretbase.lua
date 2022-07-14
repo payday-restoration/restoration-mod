@@ -36,3 +36,23 @@ function PlayerTurretBase :_get_spread()
 
 	return spread_x, spread_y
 end
+
+
+function PlayerTurretBase:replenish()
+	local ammo_max_multiplier = 1
+
+	ammo_max_multiplier = ammo_max_multiplier + ammo_max_multiplier * (self._total_ammo_mod or 0)
+	ammo_max_multiplier = managers.modifiers:modify_value("WeaponBase:GetMaxAmmoMultiplier", ammo_max_multiplier)
+	local ammo_max_per_clip = self:calculate_ammo_max_per_clip()
+	local ammo_max = math.round((tweak_data.weapon[self._name_id].AMMO_MAX + managers.player:upgrade_value(self._name_id, "clip_amount_increase") * ammo_max_per_clip) * ammo_max_multiplier)
+	ammo_max_per_clip = math.min(ammo_max_per_clip, ammo_max)
+
+	self:set_ammo_max_per_clip(ammo_max_per_clip)
+	self:set_ammo_max(ammo_max)
+	self:set_ammo_total(ammo_max)
+	self:set_ammo_remaining_in_clip(ammo_max_per_clip)
+
+	self._ammo_pickup = tweak_data.weapon[self._name_id].AMMO_PICKUP
+
+	self:update_damage()
+end

@@ -80,7 +80,7 @@
 			
 	<!--swat cloaker-->	
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  load="true"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_hvh_1_husk"  load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1_husk"  load="true"/>
 	<model				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />
 	<material_config	path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  />

@@ -470,3 +470,41 @@ function UnitNetworkHandler:sync_explosion_to_client(unit, position, normal, dam
 	managers.explosion:give_local_player_dmg(position, range, damage, nil, unit)
 	managers.explosion:explode_on_client(position, normal, unit, damage, range, curve_pow)
 end 
+
+
+-- Ignore duplicate grenade sync
+function UnitNetworkHandler:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
+	if not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+		return
+	end
+
+	local t = TimerManager:game():time()
+	local last_t = self._last_grenade_t
+	self._last_grenade_t = t
+
+	if last_t and last_t + 4 > t and mvector3.equal(self._last_grenade_pos, detonate_pos) then
+		return
+	end
+
+	self._last_grenade_pos = mvector3.copy(detonate_pos)
+
+	managers.groupai:state():sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
+end
+
+function UnitNetworkHandler:sync_cs_grenade(detonate_pos, shooter_pos, duration)
+	if not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+		return
+	end
+
+	local t = TimerManager:game():time()
+	local last_t = self._last_grenade_t
+	self._last_grenade_t = t
+
+	if last_t and last_t + 4 > t and mvector3.equal(self._last_grenade_pos, detonate_pos) then
+		return
+	end
+
+	self._last_grenade_pos = mvector3.copy(detonate_pos)
+
+	managers.groupai:state():sync_cs_grenade(detonate_pos, shooter_pos, duration)
+end

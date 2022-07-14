@@ -2400,7 +2400,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
 			self._state_data.reload_expire_t = nil	
 			local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
-			if not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t() then
+			if (not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or (self._equipped_unit:base():weapon_tweak_data().empty_use_mag and is_reload_not_empty == false) then
 				if not interupt then
 					self._equipped_unit:base():on_reload()
 				end

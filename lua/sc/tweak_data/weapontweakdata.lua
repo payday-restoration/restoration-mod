@@ -12815,7 +12815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.scarl.timers = deep_clone(self.new_m4.timers)
 	end
 
-	if self.tingledingle then
+	if self.tingledingle then --Zdanns's TBP
 		self.tingledingle.bmp = 999
 		self.tingledingle.no_auto_anims = true		
 		self.tingledingle.recategorize = { "light_ar" }
@@ -12856,6 +12856,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tingledingle.timers = deep_clone(self.ecp.timers)
 	end
 
+
+
+	if self.k31 then
+		self.k31.CLIP_AMMO_MAX = 6
+		self.k31.AMMO_MAX = 30
+		self.k31.fire_mode_data.fire_rate = 0.9375
+		self.k31.fire_rate_multiplier = 1.171875
+		self.k31.kick = self.stat_info.kick_tables.vertical_kick
+		self.k31.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.k31.supported = true
+		self.k31.ads_speed = 0.360
+		self.k31.damage_falloff = {
+			start_dist = 3400,
+			end_dist = 9000,
+			min_mult = 0.375
+		}
+		self.k31.stats = {
+			damage = 120,
+			spread = 96,
+			recoil = 51,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 22,
+			suppression = 3,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.k31.stats_modifiers = nil
+		self.k31.panic_suppression_chance = 0.05
+		self.k31.empty_use_mag = true
+		self.k31.timers.shotgun_reload_exit_empty = 0.6
+		self.k31.timers.shotgun_reload_exit_not_empty = 1.2
+	end
 
 
 

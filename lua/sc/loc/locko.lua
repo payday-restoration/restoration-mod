@@ -1011,6 +1011,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "헬스톰 킷",
 		["bm_wp_upg_i_iw_hailstorm_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n이 무기를 특수 #{skill_color}#삼중 챔버 스택 탄약을 사용하도록 개조합니다.##",
+		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n이 무기를 특수 #{skill_color}#삼중 챔버 스택 탄약을 사용하도록 개조하는 대신## #{important_1}#모든 관통 능력을 잃습니다.##",
 
 		--M200 WIDOWMAKER
 		["bm_wp_upg_i_iw_widowmaker"] = "위도우메이커 킷",

@@ -5669,7 +5669,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
 
-			--Predator 12g		
+			--Predator 12G
 				self.spas12.desc_id = "bm_spas12_sc_desc"
 				self.spas12.has_description = true					
 				self.spas12.rays = 9
@@ -5710,6 +5710,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.spas12.stats_modifiers = nil
 				self.spas12.panic_suppression_chance = 0.05
 				self.spas12.stats_modifiers = {damage = 1}
+				self.spas12.timers.shotgun_reload_exit_empty = 1.5
+				self.spas12.timers.shotgun_reload_exit_not_empty = 0.2
 
 			--M1014
 				self.benelli.desc_id = "bm_benelli_sc_desc"
@@ -5746,12 +5748,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.benelli.stats_modifiers = nil
 				self.benelli.panic_suppression_chance = 0.05
+				self.benelli.timers.shotgun_reload_exit_empty = 1.5
+				self.benelli.timers.shotgun_reload_exit_not_empty = 0.2
 
 
 
 		--SECONDARIES
 
-			--Grimm 12g
+			--Grimm 12G
 				self.basset.rays = 9
 				self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.basset.CLIP_AMMO_MAX = 6
@@ -6036,6 +6040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.m1897.stats_modifiers = nil
 				self.m1897.panic_suppression_chance = 0.05
+				self.m1897.timers.shotgun_reload_exit_not_empty = 0.9
 		
 		--SECONDARIES
 
@@ -12119,15 +12124,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.minibeck.stats_modifiers = nil
 		self.minibeck.rays = 9
 		self.minibeck.reload_speed_multiplier = 0.9
-		self.minibeck.timers = {
-			shotgun_reload_enter = 0.54,
-			shotgun_reload_exit_empty = 1.3,
-			shotgun_reload_exit_not_empty = 0.4,
-			shotgun_reload_shell = 0.5,
-			shotgun_reload_first_shell_offset = 0.33666667,
-			unequip = 0.85,
-			equip = 0.85
-		}
+		self.minibeck.timers = deep_clone(self.benelli.timers)
 
 	end
 	

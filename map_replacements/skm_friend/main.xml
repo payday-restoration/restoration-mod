@@ -48,7 +48,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/mansion" id="skm_friend" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_mansion" max_mission_xp="135900" min_mission_xp="8000" briefing_id = "heist_skm_mus_briefing" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/mansion" id="skm_friend" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_mansion" max_mission_xp="135900" min_mission_xp="8000" briefing_id = "heist_skm_mallcrasher_briefing" region="street">
 		<chain>
 			<table level_id="skm_friend" type="d" type_id="heist_type_assault"/>
 		</chain>

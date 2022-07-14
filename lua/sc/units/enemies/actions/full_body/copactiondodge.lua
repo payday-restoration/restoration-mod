@@ -22,8 +22,17 @@ function CopActionDodge:init(action_desc, common_data)
 		self._ext_movement:set_root_blend(false)
 		self._machine:set_parameter(redir_res, action_desc.variation, 1)
 
-		if action_desc.speed then
-			self._machine:set_speed(redir_res, math.min(action_desc.speed, 1.6))
+		local speed = action_desc.speed or 1
+		if speed ~= 1 then
+			if action_desc.variation == "side_step" then
+				speed = math_min(speed, 1.2)
+			elseif action_desc.variation == "wheel" then
+				speed = math_min(speed, 1.4)
+			else
+				speed = math_min(speed, 1.6)
+			end
+
+			self._machine:set_speed(redir_res, speed)
 		end
 
 		self._machine:set_parameter(redir_res, action_desc.side, 1)

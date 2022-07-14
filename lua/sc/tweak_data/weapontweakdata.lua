@@ -813,16 +813,18 @@ local job = Global.level_data and Global.level_data.level_id
 		
 		self.asval_snp_npc = deep_clone(self.m14_sniper_npc)
 		self.asval_snp_npc.has_suppressor = "suppressed_a"
-		
-		--Zeal Sniper variant (unused)
-		self.heavy_snp_npc = deep_clone(self.m14_sniper_npc)
-		
+				
 		--Railgun
 		self.railgun_npc = deep_clone(self.m14_sniper_npc)	
 		self.railgun_npc.CLIP_AMMO_MAX = 4
 		self.railgun_npc.DAMAGE = 18
 		--self.railgun_npc.sounds.prefix = "barrett_npc"
 	end
+	
+	function WeaponTweakData:_init_data_heavy_snp_npc()
+		--Zeal Sniper variant (unused)
+		self.heavy_snp_npc = deep_clone(self.m14_sniper_npc)	
+	end	
 	
 	function WeaponTweakData:_init_data_r870_npc()
 		self.r870_npc.categories = clone(self.r870.categories)
@@ -1614,6 +1616,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.flamethrower_npc.flame_effect = "effects/payday2/particles/explosions/flamethrower_cheap"
 		self.flamethrower_npc.bullet_class = "FlameBulletBase"
 		self.flamethrower_npc.flame_max_range = 1400
+		self.flamethrower_npc.extra_flames_offset = 0.05
 		self.flamethrower_npc.sounds.prefix = "flamethrower_npc"
 		self.flamethrower_npc.sounds.fire = "flamethrower_npc_fire"
 		self.flamethrower_npc.sounds.stop_fire = "flamethrower_npc_fire_stop"

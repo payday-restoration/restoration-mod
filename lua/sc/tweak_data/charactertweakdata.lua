@@ -1782,6 +1782,13 @@ function CharacterTweakData:_init_bolivians(presets)
 	table.insert(self._enemy_list, "bolivian_indoors_mex")		
 end
 
+function CharacterTweakData:_init_ranchmanager(presets)
+	self.ranchmanager = deep_clone(self.bolivian)
+	self.ranchmanager.access = "security_patrol"
+	
+	table.insert(self._enemy_list, "ranchmanager")	
+end
+
 function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss = deep_clone(presets.base)
 	self.drug_lord_boss.experience = {}

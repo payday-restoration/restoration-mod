@@ -1,5 +1,6 @@
 local math_clamp = math.clamp
 local math_floor = math.floor
+local math_min = math.min
 local math_up = math.UP
 
 function CopActionDodge:init(action_desc, common_data)

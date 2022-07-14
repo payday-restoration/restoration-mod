@@ -23,7 +23,7 @@ function CopActionDodge:init(action_desc, common_data)
 		self._machine:set_parameter(redir_res, action_desc.variation, 1)
 
 		if action_desc.speed then
-			self._machine:set_speed(redir_res, action_desc.speed)
+			self._machine:set_speed(redir_res, math.min(action_desc.speed, 1.6))
 		end
 
 		self._machine:set_parameter(redir_res, action_desc.side, 1)

@@ -42,7 +42,7 @@ function CoreEnvironmentControllerManager:set_post_composite(t, dt)
 	end
 end
 
-function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)
+--[[function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)
 	self._chromatic_enabled = enabled
 
 	if self._material then
@@ -52,4 +52,4 @@ function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)
 			self._material:set_variable(Idstring("chromatic_amount"), 0)
 		end
 	end
-end
+end]]--

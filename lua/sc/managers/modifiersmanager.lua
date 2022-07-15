@@ -321,6 +321,8 @@ function ModifiersManager:modify_value(id, value, ...)
 --				log("Did not find " .. value,{color = Color(1,0.6,0.6)})
 --			end
 		return self._unit_table[value] or result 
+	elseif id == "GroupAIStateBesiege:SpawningUnit" and restoration and restoration.always_bravos then 
+		return self._unit_table[value] or result 
 	end
 	return result
 end

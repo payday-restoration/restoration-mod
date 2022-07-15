@@ -11,7 +11,7 @@ MutatorMinidozers.disables_achievements = false
 MutatorMinidozers.categories = {"enemies"}
 MutatorMinidozers.icon_coords = {
 	6,
-	1
+	3
 }
 
 function MutatorMinidozers:setup(data)

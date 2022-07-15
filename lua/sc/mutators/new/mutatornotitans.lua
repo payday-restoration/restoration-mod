@@ -10,8 +10,8 @@ MutatorNoTitans.reductions = {
 MutatorNoTitans.disables_achievements = true
 MutatorNoTitans.categories = {"enemies"}
 MutatorNoTitans.icon_coords = {
-	6,
-	1
+	4,
+	3
 }	
 
 function MutatorNoTitans:setup(data)
@@ -572,98 +572,6 @@ function MutatorNoTitans:setup(data)
 			access = access_type_all
 		}
 	end		
-	
-	--Titan Snipers--
-	tweak_data.group_ai.unit_categories.FBI_heavy_R870 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc")
-			},
-			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc")
-			},							
-			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
-			},
-			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
-			},					
-			nypd = {
-				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
-			},
-			lapd = {
-				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
-			},
-			fbi = {
-				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc")
-			}				
-		},
-		access = access_type_all
-	}					
-	if difficulty_index <= 7 then
-		tweak_data.group_ai.unit_categories.GS_heavy_R870 = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-				},
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-				},
-				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc")
-				},							
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-				},										
-				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-				},
-				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-				},	
-				fbi = {
-					Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-				}					
-			},
-			access = access_type_all
-		}			
-	else
-		tweak_data.group_ai.unit_categories.GS_heavy_R870 = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
-				},
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870")
-				},
-				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870")
-				},							
-				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870")
-				},															
-				nypd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
-				}				
-			},
-			access = access_type_all
-		}
-	end			
 
 	--Titan Shields--
 	tweak_data.group_ai.unit_categories.FBI_shield = {
@@ -987,5 +895,8 @@ function MutatorNoTitans:setup(data)
 		    special_type = "boom"
 	    }
 	end	
+	
+	--Titan Snipers
+	tweak_data.group_ai.enemy_spawn_groups.titan_snipers = {}
 	
 end	

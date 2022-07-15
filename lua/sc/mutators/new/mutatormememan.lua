@@ -12,8 +12,8 @@ MutatorMememanOnly.incompatibility_tags = {
 MutatorMememanOnly.disables_achievements = true
 MutatorMememanOnly.categories = {"enemies"}
 MutatorMememanOnly.icon_coords = {
-	6,
-	1
+	8,
+	3
 }	
 
 function MutatorMememanOnly:setup(data)

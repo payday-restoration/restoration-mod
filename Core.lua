@@ -161,6 +161,7 @@ function restoration:Init()
 	}]]--
 
 	restoration.global_spawn_multiplier = 1
+	restoration.always_bravos = false
 	
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {

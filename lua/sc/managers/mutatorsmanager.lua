@@ -18,18 +18,21 @@ function MutatorsManager:init()
 		MutatorExplodingEnemies:new(self),
 		MutatorHydra:new(self),
 		MutatorEnemyReplacer:new(self),
-		MutatorMedicdozers:new(self),
+		MutatorMediDozer:new(self),
 		MutatorCloakerEffect:new(self),
 		MutatorShieldDozers:new(self),
 		MutatorTitandozers:new(self),
 		-- MutatorBirthday:new(self),
+		--New Mutators below
 		MutatorMinidozers:new(self),
+		MutatorMedicdozers:new(self),
 		MutatorFatRoll:new(self),
 		MutatorMememanOnly:new(self),	
 		MutatorMoreDonutsPlus:new(self),
 		MutatorJungleInferno:new(self),
 		MutatorNoTitans:new(self),
 		MutatorSpawnMult:new(self),
+		MutatorBravosOnly:new(self),
 		--MutatorFactionsReplacer:new(self),
 		--MutatorZombieOutbreak:new(self)
 	}

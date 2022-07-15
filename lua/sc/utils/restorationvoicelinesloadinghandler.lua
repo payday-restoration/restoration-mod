@@ -2,6 +2,7 @@
 --Only loads bravo lines if pro job is enabled.
 --Only loads a captain's lines if the current map spawns that captain.
 --bravo dmr not included because marshals use it 
+--[[
 restoration.projob_only_voicelines = {
 	bravo = true,
 	bravo_elite = true,
@@ -10,6 +11,9 @@ restoration.projob_only_voicelines = {
 	bravo_murky = true,
 	bravo_elite_murky = true
 }
+]]--
+restoration.projob_only_voicelines = {}
+
 Hooks:PostHook(Setup, "load_packages", "restorationVoicelineLoad", function (self)
 	local job = Global.level_data and Global.level_data.level_id
 	if job then

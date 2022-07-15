@@ -10,8 +10,8 @@ MutatorMedicdozers.reductions = {
 MutatorMedicdozers.disables_achievements = false
 MutatorMedicdozers.categories = {"enemies"}
 MutatorMedicdozers.icon_coords = {
-	6,
-	1
+	7,
+	3
 }
 
 function MutatorMedicdozers:setup(data)

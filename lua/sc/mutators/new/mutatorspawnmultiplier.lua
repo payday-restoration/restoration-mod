@@ -13,8 +13,8 @@ MutatorSpawnMult.categories = {
 	"enemies"
 }
 MutatorSpawnMult.icon_coords = {
-	4,
-	1
+	3,
+	3
 }
 
 function MutatorSpawnMult:register_values(mutator_manager)

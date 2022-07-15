@@ -12,8 +12,8 @@ MutatorFatRoll.reductions = {
 MutatorFatRoll.disables_achievements = false
 MutatorFatRoll.categories = {"gameplay"}
 MutatorFatRoll.icon_coords = {
-	5,
-	1
+	2,
+	3
 }
 
 function MutatorFatRoll:setup(data)

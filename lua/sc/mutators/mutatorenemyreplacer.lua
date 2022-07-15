@@ -12,8 +12,8 @@ MutatorMoreDonutsPlus.incompatibility_tags = {
 	"replaces_units"
 }
 MutatorMoreDonutsPlus.icon_coords = {
-	6,
-	1
+	1,
+	4
 }	
 
 function MutatorMoreDonutsPlus:setup(data)
@@ -62,8 +62,8 @@ MutatorJungleInferno.incompatibility_tags = {
 MutatorJungleInferno.disables_achievements = true
 MutatorJungleInferno.categories = {"enemies"}
 MutatorJungleInferno.icon_coords = {
-	6,
-	1
+	2,
+	4
 }	
 
 function MutatorJungleInferno:setup(data)

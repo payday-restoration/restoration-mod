@@ -16460,6 +16460,7 @@ function CharacterTweakData:_set_sm_wish()
 	
 	--Titan Shields gets overhealed
 	self.phalanx_minion.overheal_mult = 2
+	self.phalanx_minion_assault.overheal_mult = 2
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil

@@ -17181,6 +17181,8 @@ function CharacterTweakData:character_map()
 				"ene_sniper_1",
 				"ene_sniper_2",
 				"ene_sniper_3",
+				"ene_shield_1",
+				"ene_shield_2",
 				"ene_medic_mp5",
 				"ene_zeal_fbi_m4",
 				"ene_zeal_fbi_mp5",

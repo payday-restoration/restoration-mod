@@ -772,6 +772,17 @@ function PlayerStandard:_check_action_night_vision(t, input)
 end
 
 function PlayerStandard:_check_action_interact(t, input)
+	if restoration.Options:GetValue("OTHER/SevenHold") then 
+		if self:_interacting() then
+			if input.btn_interact_press then
+				self:_interupt_action_interact()
+				return false
+			elseif input.btn_interact_release then
+				return false
+			end
+		end
+	end
+
 	local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
 	local new_action, timer, interact_object = nil
 

@@ -135,6 +135,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires reload.",
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Reload Cancel",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill.",
+		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
+		["RestorationModSevenHoldDescID"] = "Toggle whether or not the interact key acts as a toggle.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 

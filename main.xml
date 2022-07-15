@@ -473,19 +473,24 @@
 			<option_group name="OTHER">
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
-				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>		
-				<option type="multichoice" default_value="2" name="WpnCat" values_tbl="restoration.weapon_categories"/>						
+				<option type="bool" default_value="false" name="RestoreHitFlash"/>
+				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 				<option type="bool" default_value="false" name="SprintCancel"/>
-				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
+				<option type="bool" default_value="false" name="SevenHold"/>
+				<divider name="tod_divider" size="15"/>
+				<option type="bool" default_value="true" name="Holiday"/>
+				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
+				<divider name="tod_divider" size="15"/>
+				<option type="multichoice" default_value="2" name="WpnCat" values_tbl="restoration.weapon_categories"/>
+				<option type="bool" default_value="false" name="ClassicMovies"/>
+				<divider name="tod_divider" size="15"/>
 				<!-- <option type="multichoice" default_value="1" name="PONRTracks" values_tbl="restoration.ponrtracks"/> -->
 				<option type="bool" default_value="true" name="PONRTrack"/>
 				<option type="bool" default_value="false" name="MusicShuffle"/>
-				<option type="bool" default_value="true" name="TimeOfDay"/>
-				<option type="bool" default_value="true" name="Holiday"/>
-				<option type="bool" default_value="false" name="ClassicMovies"/>
-				<option type="bool" default_value="false" name="RestoreHitFlash"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
+				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>

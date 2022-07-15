@@ -5593,7 +5593,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.saiga.stats_modifiers = nil
 				self.saiga.panic_suppression_chance = 0.05
-				self.saiga.reload_speed_multiplier = 1.25
+				self.saiga.reload_speed_multiplier = 1.3
 				self.saiga.timers.reload_exit_empty = 0.75
 				self.saiga.timers.reload_exit_not_empty = 0.875
 
@@ -5665,7 +5665,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.aa12.stats_modifiers = nil
 				self.aa12.panic_suppression_chance = 0.05
-				self.aa12.reload_speed_multiplier = 1.1
+				self.aa12.reload_speed_multiplier = 1.2
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
 
@@ -5786,7 +5786,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					concealment = 25
 				}		
 				self.basset.stats_modifiers = nil
-				self.basset.reload_speed_multiplier = 0.8
+				self.basset.reload_speed_multiplier = 0.925
 				self.basset.sounds.fire_single = "basset_x_fire_single"
 				self.basset.timers.reload_exit_empty = 0.55
 				self.basset.timers.reload_exit_not_empty = 0.65

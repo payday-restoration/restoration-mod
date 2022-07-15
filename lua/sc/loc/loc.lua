@@ -1188,6 +1188,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "VF Hi-Power Pistol",
+		--Walther P99
+		["bm_w_p99"] = "Gruber 988",
 		--Derringer
 		["bm_w_derringer"] = "Derringer Pistol",
 		--Automag .44

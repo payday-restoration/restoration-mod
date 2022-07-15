@@ -20872,6 +20872,47 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 	end
 
+
+	if self.parts.wpn_fps_upg_p99_sight_tritium then
+
+		--No
+		self.parts.wpn_fps_upg_p99_ammo_40sw.supported = true
+		self.parts.wpn_fps_upg_p99_ammo_40sw.pcs = nil
+		self.parts.wpn_fps_upg_p99_ammo_40sw.stats = { value = 0 }
+		self.parts.wpn_fps_upg_p99_ammo_40sw.custom_stats = nil
+
+		--Ported Barrel
+		self.parts.wpn_fps_upg_p99_barrel_ported.supported = true
+		self.parts.wpn_fps_upg_p99_barrel_ported.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+		--Threaded Barrel
+		self.parts.wpn_fps_upg_p99_barrel_threaded.supported = true
+		self.parts.wpn_fps_upg_p99_barrel_threaded.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_upg_p99_barrel_threaded.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+		
+		--Extendo Clipazine
+		self.parts.wpn_fps_upg_p99_mag_ext.supported = true
+		self.parts.wpn_fps_upg_p99_mag_ext.stats = {
+			value = 5,
+			extra_ammo = 5,
+			reload = -1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_p99_mag_ext.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+
+		self.parts.wpn_fps_upg_p99_sight_tritium.supported = true
+		self.parts.wpn_fps_upg_p99_sight_tritium.stats = { value = 1 }
+
+		self.parts.wpn_fps_upg_p99_sight_rail.supported = true
+		self.parts.wpn_fps_upg_p99_sight_rail.stats = { value = 5 }
+
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

@@ -12896,6 +12896,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 
+	if self.p99 then -->:3's P99
+		self.p99.recategorize = {"light_pis"}
+		self.p99.damage_type = "pistol"
+		self.p99.lock_slide = true
+		self.p99.fire_mode_data.fire_rate = 0.08571428571
+		self.p99.single.fire_rate = 0.08571428571
+		self.p99.CLIP_AMMO_MAX = 15
+		self.p99.AMMO_MAX = 75
+		self.p99.kick = self.stat_info.kick_tables.left_recoil
+		self.p99.supported = true
+		self.p99.ads_speed = 0.200
+		self.p99.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 3500,
+			min_mult = 0.25
+		}
+		self.p99.stats = {
+			damage = 24,
+			spread = 58,
+			recoil = 89,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 30,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.p99.stats_modifiers = nil
+		self.p99.timers = {
+			reload_not_empty = 1.47,
+			reload_empty = 2.12,
+			unequip = 0.5,
+			equip = 0.35
+		}		
+		self.p99.panic_suppression_chance = 0.05
+		self.p99.timers.reload_exit_empty = 0.5
+		self.p99.timers.reload_exit_not_empty = 0.65
+	end
+
+
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's funtionality) then it's a no-go outright

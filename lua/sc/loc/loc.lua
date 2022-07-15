@@ -2755,7 +2755,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
-		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%.##\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.\n\nA setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options",
+		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%.##\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.\n\nA setting to allow for sprint canceling reloads can be found in Restoration Mod's extra options.",
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",

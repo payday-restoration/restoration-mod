@@ -12,8 +12,13 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_l/ene_acc_bulldozer_leg_l" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_r/ene_acc_bulldozer_leg_r" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
-		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />		
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />	
 		<depends_on unit="units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500" />
 	</dependencies>
 

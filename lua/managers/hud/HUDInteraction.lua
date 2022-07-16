@@ -1,3 +1,6 @@
+if _G.IS_VR then
+	return
+end
 if not restoration:all_enabled("HUD/MainHUD", "HUD/Interaction") then
 	return
 end

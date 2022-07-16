@@ -1,3 +1,6 @@
+if _G.IS_VR then
+	return
+end
 if restoration.Options:GetValue("HUD/Extra/RealAmmo") then
 	local set_teammate_ammo_amount_original = HUDManager.set_teammate_ammo_amount
 	function HUDManager:set_teammate_ammo_amount(id, selection_index, max_clip, current_clip, current_left, max)

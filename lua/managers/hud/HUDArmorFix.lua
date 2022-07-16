@@ -1,3 +1,6 @@
+if _G.IS_VR then
+	return
+end
 if not restoration.Options:GetValue("HUD/Extra/ArmorFix") and not restoration:all_enabled("HUD/MainHUD", "HUD/Teammate") then return end
 
 RestorationCoreHooks:Post(HUDTeammate, "init", function(self)

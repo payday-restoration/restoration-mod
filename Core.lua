@@ -145,7 +145,8 @@ function restoration:Init()
 		nail = restoration.captain_types.hvh, --lab rats
 		--Custom Heists--
 		daymare = restoration.captain_types.hvh, --Hell's Nightmare
-		funbank = restoration.captain_types.hvh --FunBank: Specials	
+		funbank = restoration.captain_types.hvh, --FunBank: Specials	
+		crash_course = restoration.captain_types.hvh --REDACTED
 	}
 	
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then

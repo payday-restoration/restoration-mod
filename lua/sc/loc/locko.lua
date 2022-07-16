@@ -2325,7 +2325,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "척탄병",
 
-		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
+		["mutator_medidozer_longdesc"] = "어썰트 웨이브 중 일반 적들은 모두 메딕으로, 모든 특수 적들은 불도저로 대체됩니다.",
 		["mutator_medicdozers"] = "메딕 도저",
 		["mutator_medicdozers_desc"] = "이제 메딕 도저가 생성됩니다.",
 		["mutator_medicdozers_longdesc"] = "다양한 종류의 불도저가 생성될 때마다 50%의 확률로 메딕 도저로 교체됩니다. \n\n참고: 반자동 산탄총 불도저 뮤테이터도 활성화된 경우 메딕 도저는 33.3%의 확률로 블랙 도저를 교체합니다.",

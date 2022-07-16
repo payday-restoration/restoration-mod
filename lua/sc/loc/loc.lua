@@ -2248,8 +2248,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["MutatorMoreDonutsPlus_longdesc"] = "All common enemies are replaced by NYPD Bronco Cops, and all specials are replaced with OMNIA LPFs. \n\nWARNING: By enabling this mutator, you are committing an atrocity.",
 
 		["MutatorJungleInferno"] = "Jungle Inferno",
-		["MutatorJungleInferno_desc"] = "All enemies are replaced by Captain Summers.",
-		["MutatorJungleInferno_longdesc"] = "All non-scripted spawn enemies are replaced by clones of Captain Summers.",
+		["MutatorJungleInferno_desc"] = "All enemies now spawn with flamethrowers.",
+		["MutatorJungleInferno_longdesc"] = "All enemies have their standard weapons replaced with Flamethrowers.\n\nNote: Snipers and Shield enemies will still spawn with their normal weapons.",
 
 		["mutator_minidozers"] = "Semi-Auto Shotgun Bulldozers",
 		["mutator_minidozers_desc"] = "Semi-Auto Shotgun Bulldozers can now spawn.",

@@ -1175,6 +1175,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.die_sound_event = "mga_death_scream"
 	self.sniper.spawn_sound_event = "mga_deploy_snipers"
 	self.sniper.do_not_drop_ammo = true
+	self.sniper.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "sniper")
 end
 
@@ -2353,6 +2354,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.no_asu = true
 	self.shield.heal_cooldown = 5
 	self.shield.min_obj_interrupt_dis = 300
+	self.shield.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "shield")
 end
 
@@ -2404,6 +2406,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 		self.phalanx_minion.custom_voicework = "tsniper"
 	end		
 	self.phalanx_minion.heal_cooldown = 7.5
+	self.phalanx_minion.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_minion")
 	
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
@@ -2463,6 +2466,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	}		
 	self.phalanx_vip.no_omnia_heal = true	
 	self.phalanx_vip.captain_type = restoration.captain_types.winter
+	self.phalanx_vip.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_vip")
 end
 
@@ -2607,6 +2611,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.no_omnia_heal = true
 	self.summers.min_obj_interrupt_dis = 300
 	self.summers.captain_type = restoration.captain_types.summer
+	self.summers.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "summers")
 end
 

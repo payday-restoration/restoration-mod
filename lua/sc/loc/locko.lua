@@ -1047,7 +1047,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_tac"] = "TAC 수직 손잡이",
 
 		["bm_wp_upg_ns_ass_smg_stubby"] = "단축형 소염기",
-		["bm_wp_upg_flash_hider"] = "총구 플래시를 숨겨줍니다.\n #{ghost_color}#소음기로 간주하여 소음기 관련 스킬의 영향을 받지만## 무기를 #{important_1}#조용하게 만들지는 않습니다.##",
+		["bm_wp_upg_flash_hider"] = "총구 플래시를 숨겨줍니다.\n#{ghost_color}#소음기로 간주하여 소음기 관련 스킬의 영향을 받지만## 무기를 #{important_1}#조용하게 만들지는 않습니다.##",
 
 		["bm_wp_upg_vintage_sc"] = "빈티지 탄창",
 		["bm_wp_upg_mil_sc"] = "밀스펙 탄창",
@@ -1186,6 +1186,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "VF Hi-Power 권총",
+		--Walther P99
+		["bm_w_p99"] = "Gruber 988 권총",		
 		--Derringer
 		["bm_w_derringer"] = "Derringer 권총",
 		--Automag .44
@@ -1821,7 +1823,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	if cute <= funny then
 		LocalizationManager:add_localized_strings({			
 			
-		--tbh, I want change this easter egg
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "이치로쿠",
@@ -1912,26 +1913,48 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_benelli_sc_desc"] = "\"으헤.. 귀찮아..\"\n\n#{skill_color}#호시노##가 애용하는 심플한 디자인의 산탄총.\n게으름 부리길 좋아하는 호시노이지만 총기의 상태만큼은 언제나 완벽하다.",
 			["bm_w_m134"] = "미니 No.5",
 			["bm_m134_sc_desc"] = "\"노노미 갑니다!\"\n\n#{skill_color}#노노미##가 사용하는 기관총.\n#{skill_color}#'미니 No.5'##라는 이름과 어울리지 않게 그 무게는 절대 가볍지 않다.",
+			["bm_w_p226"] = "커먼 센스",
+			--["bm_w_p226_desc"] = "\"제발! 제대로 된 대안을 내주세요!\"\n\n#{skill_color}#아야네##가 귀여운 디자인의 권총.\n아야네 앞에서 상식적인 말과 행동만 한다면 볼 일은 거의 없다.",
+			
 		-- Gehenna
 			-- Prefect Team
 			["bm_w_mg42"] = "종막: 디스트로이어",
 			["bm_wolf_brigade_sc_desc"] = "\"정말... 해도해도 끝이 없어.\"\n\n#{skill_color}#히나##가 마치 자신의 수족처럼 다루는 기관총.\n교칙을 위반하거나 풍기를 어지럽히는 사람은 그 무자비한 파괴력에 날아가 버리고 만다.",	
 			["bm_w_c96"] = "서포트 포인터",
 			["bm_c96_sc_desc"] = "\"포기하지 말아주세요.\"\n\n#{skill_color}#치나츠##가 애용하는 권총.\n누군가를 쏠 때보다 뭔가를 가리킬 때 사용하는 경우가 더 많다.",
+			["bm_w_breech"] = "핫 샷",
+			--["bm_w_breech_desc"] = "\"분석 완료. 약점은 파악됐습니다.\"\n\n#{skill_color}#아코##가 휴대하고 있는 권총.\n#{skill_color}#아코##가 뼈를 깎는 노력을 거듭해 행정관의 자리에 올랐을 때 건네받은 소중한 것. 언제나 가지고 다니면서 몹시 귀중하게 다루고 있다.",			
 			-- School Lunch Club
 			["bm_w_mp7"] = "급식부 호신용 총 type A",
-			["bm_mp7_sc_desc"] = "\"한 번만이라도 평안한 하루를...\"\n\n#{skill_color}#후우카##가 항상 휴대하는 기관단총.\n가끔 식당에서 날뛰는 문제아들을 제압하기 위해서도 사용하려 하지만, 대부분의 경우 사용하기 전에 상대가 온순해지므로 별로 사용할 일은 없는 모양.",			
+			["bm_mp7_sc_desc"] = "\"한 번만이라도 평안한 하루를...\"\n\n#{skill_color}#후우카##가 항상 휴대하는 기관단총.\n가끔 식당에서 날뛰는 문제아들을 제압하기 위해서도 사용하려 하지만, 대부분의 경우 사용하기 전에 상대가 온순해지므로 별로 사용할 일은 없는 모양.",
+			-- Emergency Medicine Club
+			["bm_w_gre_m79"] = "구급용 돌입 키트",
+			--["bm_w_gre_m79_desc"] = "\"출동합니다.\"\n\n#{skill_color}#세나##가 사용하는 유탄발사기.\n구급 출동 시 빠르게 장애물을 제거하는 도구. 장애물 중에는 일을 방해하는 상대도 포함된다.",
+			
 		-- Millennium
+			-- Seminar
+			["bm_w_shepheard"] = "로직 & 리즌",
+			--["bm_w_shepheard_desc"] = "\"현재 상황과 조건. 좋아, 이건 승리야!\"\n\n#{skill_color}#유우카##가 사용하는 2정의 기관단총.\n중요한 타이밍이나 적절한 대처가 필요 할 때 유우카가 합리적이고 이성적인 판단을 내릴 수 있도록 도와준다.",
+			-- Veritas
+			["bm_w_glock_17"] = "에코링크",
+			--["bm_menu_sc_glock17_desc"] = "\"감청 개시.\"\n\n#{skill_color}#코타마##가 항상 휴대하는 권총.\n도청의 방해가 되지 않도록, 발사음이 최소화 된 모델을 사용하고 있다.",			
 			-- Cleaning&Clearing
 			["bm_w_famas"] = "서프라이즈 파티",
 			["bm_menu_sc_famas_desc"] = "\"아스나! 여기에 등장!\"\n\n#{skill_color}#아스나##가 사용하는 돌격소총.\n떠들썩한 장소에 어울리는 이름이지만 늘 그렇듯 본인은 잊어버린다.",
+			-- Engineering Department
+			["bm_w_mac10"] = "마이스터 제로",
+			--["bm_w_mac10_desc"] = "\"아스나! 여기에 등장!\"\n\n#{skill_color}#우타하##가 직접 개조한 심플한 디자인의 기관단총.\n튼튼한 내구성 덕분에 망치와 같은 공구 대용으로도 사용할 수 있다.",
 			-- Game Development Department
 			["bm_w_g3"] = "유니크 아이디어/플래시 인스피레이션",
-			["bm_g3_sc_desc"] = "\"우리들의 승리!/클리어, 다음 스테이지로 이동하죠.\"\n\n#{skill_color}#사이바 자매##가 사용하는 소총.\n성격과 총의 겉모습이 살짝 다르더라도 함께라면 어떤 위협이든 무찌를 수 있을 정도의 자매력을 보여준다.",			
+			["bm_g3_sc_desc"] = "\"우리들의 승리!/클리어, 다음 스테이지로 이동하죠.\"\n\n#{skill_color}#사이바 자매##가 사용하는 소총.\n성격과 총의 겉모습이 살짝 다르더라도 함께라면 어떤 위협이든 무찌를 수 있을 정도의 자매력을 보여준다.",	
+			["bm_w_slap"] = "냥즈 대쉬",
+			--["bm_w_slap_desc"] = "\"레트로여...영원하라!\"\n\n#{skill_color}#유즈##가 사용하는 유탄발사기.\n몸체의 측면에는 귀여운 고양이가 달려 나가는 영상이 계속 출력되고 있다.",			
 			-- Paranormal Affairs Department
 			["bm_w_spas12"] = "멀티 택티컬",
-			["bm_spas12_sc_desc"] = "\"여기서라면 옷을 벗어도...안돼?\"\n\n#{skill_color}#에이미##가 애용하는 샷건.\n그 이름대로 강행돌파에서 초상현상에의 대응까지 다양한 상황을 상정해두고 제작되었다.",			
+			["bm_spas12_sc_desc"] = "\"여기서라면 옷을 벗어도...안돼?\"\n\n#{skill_color}#에이미##가 애용하는 샷건.\n그 이름대로 강행돌파에서 초상현상에의 대응까지 다양한 상황을 상정해두고 제작되었다.",
+			
 		-- Trinity
+		
 			-- Supplementary Lesson Department
 			["bm_w_l85a2"] = "마이 네세시티",
 			["bm_l85a2_sc_desc"] = "\"페로로님은 어디에?\"\n\n#{skill_color}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
@@ -1940,9 +1963,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			-- After-School Sweets Club
 			["bm_w_scar"] = "스위트 드라이버",
 			["bm_scar_sc_desc"] = "\"작다고 얕보지 마!\"\n\n#{skill_color}#요시미##의 전용 라이플.\n키보토스의 스위츠 쟁탈전에서 이기기 위해서는 우선 전투력이 필요하다.",
+			["bm_w_mp5"] = "상큼 민트초코",
+			["bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
+			["bm_w_baka"] = "비욘드 더 루미네이션",
+			--["bm_w_baka_desc"] = "\"감사!\"\n\n#{skill_color}#나츠##의 기관단총.\n사색하는 것을 즐기는 나츠가 마지막 수단으로 꺼내드는 도구이다.",			
 			-- Justice Realization Committee
 			["bm_menu_sc_boot"] = "블러드&건파우더",
-			["bm_menu_sc_boot_desc"] = "\"캬하하하하하!!!\"\n\n#{skill_color}#츠루기##가 사용하는 두 자루의 산탄총.\n한 쪽이 #{important_1}#'블러드'##고 다른 한 쪽이 #{item_stage_3}#'건파우더'##다. 똑같이 무시무시하며 딱히 구분하지는 않는다.",			
+			["bm_menu_sc_boot_desc"] = "\"캬하하하하하!!!\"\n\n#{skill_color}#츠루기##가 사용하는 두 자루의 산탄총.\n한 쪽이 #{important_1}#'블러드'##고 다른 한 쪽이 #{item_stage_3}#'건파우더'##다. 똑같이 무시무시하며 딱히 구분하지는 않는다.",
+			-- Sisterhood
+			["bm_w_deagle"] = "파이에티",
+			--["bm_w_deagle_desc"] = "\"안식이 있기를.\"\n\n#{skill_color}#마리##가 소지하고 다니는 권총.\n늘 지니고 다니긴 하지만, 실제로 쏘는 것을 본 사람은 거의 없다.",
+			
+		-- Hyakkiyako
+		
+			-- Festival Management Committee
+			["bm_w_m37"] = "사쿠라 봉봉",
+			--["bm_w_m37_desc"] = "\"앍! 센세!\"\n\n#{skill_color}#시즈코##가 사용하는 펌프 액션식 샷건.\n시즈코가 말하길 "백야당 명물인 팥꿀의 향기가 은은하게 나는, 이 세상에 단 하나의 일품" 이라고..",
+			-- Yin-Yang Club
+			["bm_w_m32"] = "575식 유탄발사기",
+			--["bm_w_m32_desc"] = "\"악령퇴산, 악령퇴산.\"\n\n#{skill_color}#치세##가 가지고 있는 다연발 유탄발사기.\n탄환 하나하나에 치세가 고심해서 지은 하이쿠 구절이 쓰여져 있다.\n음양부의 굿즈로 판매중.",
+			-- Etiquette Training Society
+			["bm_w_scorpion"] = "숙면 도우미 Ⅱ",
+			--["bm_w_scorpion_desc"] = "\"아프지 않아... 아프지 않아...\"\n\n#{skill_color}#츠바키##가 사용하는 기관단총.\n평소 하는 수행에 방해되지 않도록 작고 아담한 물건을 골랐다. 참고로 숙면 도우미 Ⅰ은 방패 안에 들어 있는 베개.",
+			
+		-- Shanhaijing
+			-- Chinese Alchemy Study Club
+			["bm_w_b92fs"] = "나님의 특제 권총",
+			--["bm_w_b92fs_desc"] = "\"나님 등장! 이번 실험의 표본은 어딨느냐?\"\n\n#{skill_color}#사야##가 곳곳을 개조한 특제 권총.\n#{skill_color}#네즈스케##에 주사를 할 때에도 사용되고 있는 것 같다...",
+			-- Training Support Department
+			["bm_w_qbu88"] = "사랑의 매",
+			--["bm_w_qbu88_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
 		})
 	end		
 end)
@@ -2275,7 +2325,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "척탄병",
 
-		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
+		["mutator_medidozer_longdesc"] = "어썰트 웨이브 중 일반 적들은 모두 메딕으로, 모든 특수 적들은 불도저로 대체됩니다.",
 		["mutator_medicdozers"] = "메딕 도저",
 		["mutator_medicdozers_desc"] = "이제 메딕 도저가 생성됩니다.",
 		["mutator_medicdozers_longdesc"] = "다양한 종류의 불도저가 생성될 때마다 50%의 확률로 메딕 도저로 교체됩니다. \n\n참고: 반자동 산탄총 불도저 뮤테이터도 활성화된 경우 메딕 도저는 33.3%의 확률로 블랙 도저를 교체합니다.",

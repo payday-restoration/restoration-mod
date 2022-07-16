@@ -241,7 +241,6 @@
 	<!-- fbi tier end -->
 	
 	<!-- specials-->
-	
 	<!-- greendozer -->
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />
@@ -255,33 +254,42 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"  load="true"/>	
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk"  load="true"/>	
 	
-	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_akan_dozer_policia_federale_body_df" />	
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/bulldozer_nm" />	
 
 	<!--Green Acc-->
-	<unit_mat				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
-	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	
 	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
-	<!--blackdozer for ponr-->
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_l/ene_acc_bulldozer_leg_l" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_r/ene_acc_bulldozer_leg_r" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
+	
+	<!--blackdozer -->
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />
 	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
-	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2"  load="true"/>	
-	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_husk"  load="true"/>
-	
-	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_akan_dozer_policia_federale_body_black_df"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_husk"  load="true"/>	
+		
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/bulldozer_saiga_df" />	
 
-	<!--blackdozer accs-->	
-	<unit_mat				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
-	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<!--black Acc-->
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	
 	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
 	
 	<!--benellidozer for ponr-->
 	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	

@@ -1,5 +1,5 @@
 <materials version="3">
-	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+	<material name="mtr_ene_acc_security_cap" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_body_nm"/>
 		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/ene_titan_fbi_df"/>
 	</material>

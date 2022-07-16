@@ -331,12 +331,13 @@ function MutatorTitandozers:_get_unit_group_titandozer(difficulty_index)
 				fbi = {
 					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
 				}
-			}
+			},
 			access = access_type_all
 		}
 	end
 
 	return self._groups.tank
+
 end
 
 MutatorEnemyReplacer = MutatorEnemyReplacer or class(BaseMutator)
@@ -1173,8 +1174,8 @@ function MutatorEnemyReplacer:_get_unit_group_taser(difficulty_index)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				},
-			}
+				}
+			},
 			access = access_type_all
 		}
 	end

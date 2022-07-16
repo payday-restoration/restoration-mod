@@ -820,7 +820,7 @@ function HUDAssaultCorner:_end_assault()
 		self:_update_assault_hud_color(self._assault_survived_color)
 		self:_set_text_list(self:_get_survived_assault_strings())
 		text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
-		self._hud_panel:child("wave_panel"):set_visible(false)		
+		self._hud_panel:child("wave_panel"):set_visible(true)		
 		wave_panel:animate(callback(self, self, "_animate_wave_completed"), self)
 		if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
 			corner_panel:child( "corner" ):set_color(self._wave_corner_color)

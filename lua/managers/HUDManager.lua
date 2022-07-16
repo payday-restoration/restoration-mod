@@ -599,6 +599,9 @@ if restoration.Options:GetValue("HUD/Waypoints") then
 end
 
 if restoration:all_enabled("HUD/MainHUD", "HUD/Teammate") then
+	if _G.IS_VR then
+		return
+	end
 	function HUDManager:_create_teammates_panel(hud)
 		HUDManager.PLAYER_PANEL = _G.BigLobbyGlobals and BigLobbyGlobals:num_player_slots() or 4
 		hud = hud or managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)

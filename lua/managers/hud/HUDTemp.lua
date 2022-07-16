@@ -1,3 +1,6 @@
+if _G.IS_VR then
+	return
+end
 if restoration.Options:GetValue("HUD/MainHUD") then
 	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
 		if restoration.Options:GetValue("HUD/Bag") then

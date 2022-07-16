@@ -17003,6 +17003,7 @@ function CharacterTweakData:character_map()
 				"ene_swat_heavy_r870",
 				"ene_murky_shield_yellow",
 				"ene_murky_shield_fbi",
+				"ene_murky_shield_city",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",

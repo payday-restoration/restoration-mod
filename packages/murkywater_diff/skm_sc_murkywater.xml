@@ -149,6 +149,9 @@
 	<model				path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3_husk" force="false" load="true"/>	
+	<!-- shield -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city_husk" force="false" load="true"/>
 	<!-- gensec tier end -->	
 	
 	<!-- specials-->

@@ -1072,6 +1072,9 @@
 	<!--Large Tracer-->
     <effect path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
+	<!--Plasma Tracer-->
+    <effect path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
 	
 	<!--Stat Boost-->
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>

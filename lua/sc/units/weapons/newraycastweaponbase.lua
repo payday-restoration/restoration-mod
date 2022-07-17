@@ -450,6 +450,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato
+	self._plasma_b = self:weapon_tweak_data().plasma_b
 
 	if not self:is_npc() then
 		local weapon = {
@@ -701,6 +702,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			else
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
 			end
+		elseif self._plasma_b then
+			self._trail_effect_table.effect = Idstring("_dmc/effects/plasma_b_trail")
 		elseif self._nato then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/nato_trail")
 		elseif self._warsaw then

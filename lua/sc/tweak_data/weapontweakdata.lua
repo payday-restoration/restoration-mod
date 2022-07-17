@@ -3219,7 +3219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
 	end
 
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7'}
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
@@ -3228,7 +3228,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1911.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 
-	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','contraband','fal','scar','m249','par','m60','osipr_gl','osipr'}
+	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','contraband','fal','scar','m249','par','m60','osipr_gl','osipr','aa12'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_rifle_slide_lock"
@@ -7847,10 +7847,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Krinkov
 				self.x_akmsu.desc_id = "bm_x_akmsu_sc_desc"
 				self.x_akmsu.has_description = true		
-				self.x_akmsu.sounds.fire = "akmsu_fire_single"
-				self.x_akmsu.sounds.fire_single = "akmsu_fire_single"
-				self.x_akmsu.sounds.fire_auto = "akmsu_fire"
-				self.x_akmsu.sounds.stop_fire = "akmsu_stop"
+				self.x_akmsu.sounds.fire = "akm_fire_single"
+				self.x_akmsu.sounds.fire_single = "akm_fire_single"
+				self.x_akmsu.sounds.fire_auto = "akm_fire"
+				self.x_akmsu.sounds.stop_fire = "akm_stop"
 				self.x_akmsu.sounds.dryfire = "primary_dryfire"	
 				self.x_akmsu.AMMO_MAX = 120
 				self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
@@ -10083,6 +10083,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"clip_ammo_increase"
 			}
 		}		
+		self.plainsrider.damage_type = "sniper"
 		self.plainsrider.has_description = true
 		self.plainsrider.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.plainsrider.kick = self.stat_info.kick_tables.none
@@ -10124,6 +10125,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"clip_ammo_increase"
 			}
 		}		
+		self.hunter.damage_type = "sniper"
 		self.hunter.has_description = true
 		self.hunter.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.hunter.AMMO_MAX = 15
@@ -10158,6 +10160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"clip_ammo_increase"
 			}
 		}			
+		self.arblast.damage_type = "anti_materiel"
 		self.arblast.has_description = true
 		self.arblast.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.arblast.AMMO_MAX = 20
@@ -10194,6 +10197,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"clip_ammo_increase"
 			}
 		}
+		self.frankish.damage_type = "sniper"
 		self.frankish.has_description = true
 		self.frankish.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.frankish.fire_mode_data.fire_rate = 1
@@ -10229,6 +10233,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"clip_ammo_increase"
 			}
 		}
+		self.long.damage_type = "anti_materiel"
 		self.long.has_description = true
 		self.long.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.long.kick = self.stat_info.kick_tables.none	
@@ -10266,6 +10271,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"clip_ammo_increase"
 			}
 		}		
+		self.ecp.damage_type = "sniper"
 		self.ecp.has_description = true
 		self.ecp.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.ecp.kick = self.stat_info.kick_tables.right_kick
@@ -10307,6 +10313,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"enter_steelsight_speed_multiplier"
 			}
 		}
+		self.elastic.damage_type = "anti_materiel"
 		self.elastic.has_description = true
 		self.elastic.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.elastic.timers = {
@@ -12268,6 +12275,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.hx25 then --Pawcio's KF2 HX-25
+		self.hx25.categories = {
+			"grenade_launcher",
+			"gl_pistol"
+		}
 		self.hx25.AMMO_MAX = 8
 		self.hx25.supported = true
 		self.hx25.ads_speed = 0.240
@@ -12314,7 +12325,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.tactical_reload = 1
 		self.m107cq.AMMO_MAX = 20
 		self.m107cq.fire_mode_data.fire_rate = 0.6
-		self.m107cq.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.m107cq.kick = deep_clone(self.stat_info.kick_tables.right_kick)
+		self.m107cq.kick.crouching = self.m107cq.kick.standing
+		self.m107cq.kick.steelsight = self.m107cq.kick.standing
 		self.m107cq.supported = true
 		self.m107cq.ads_speed = 0.640
 		self.m107cq.damage_falloff = {
@@ -12443,6 +12456,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 	
 	if self.raygun then --Leather Dann's CoD:Zombies Raygun
+		self.raygun.categories = {
+			"grenade_launcher",
+			"gl_pistol"
+		}
 		self.raygun.use_data.selection_index = 2
 		self.raygun.AMMO_MAX = 40
 		self.raygun.supported = true
@@ -12783,6 +12800,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.scarl.tactical_reload = 1
 		self.scarl.lock_slide = true
 		self.scarl.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.scarl.sounds.stop_fire = "scar_stop"
 		self.scarl.CLIP_AMMO_MAX = 30
 		self.scarl.AMMO_MAX = 120
 		self.scarl.FIRE_MODE = "auto"
@@ -12861,6 +12879,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 	if self.k31 then
+		self.k31.recategorize = {"heavy_snp"}
+		self.k31.damage_type = "sniper"
 		self.k31.CLIP_AMMO_MAX = 6
 		self.k31.AMMO_MAX = 30
 		self.k31.fire_mode_data.fire_rate = 0.9375
@@ -12902,8 +12922,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.p99.lock_slide = true
 		self.p99.fire_mode_data.fire_rate = 0.08571428571
 		self.p99.single.fire_rate = 0.08571428571
+		self.p99.tactical_reload = 1
 		self.p99.CLIP_AMMO_MAX = 15
 		self.p99.AMMO_MAX = 75
+		self.p99.sounds.stop_fire = "mp9_stop"
 		self.p99.kick = self.stat_info.kick_tables.left_recoil
 		self.p99.supported = true
 		self.p99.ads_speed = 0.200
@@ -12936,6 +12958,82 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.p99.panic_suppression_chance = 0.05
 		self.p99.timers.reload_exit_empty = 0.5
 		self.p99.timers.reload_exit_not_empty = 0.65
+	end
+
+	if self.owlfbullpup then
+		self.owlfbullpup.recategorize = { "heavy_ar" }
+		self.owlfbullpup.damage_type = "assault_rifle"
+		self.owlfbullpup.tactical_reload = 1
+		self.owlfbullpup.CLIP_AMMO_MAX = 30
+		self.owlfbullpup.AMMO_MAX = 120
+		self.owlfbullpup.FIRE_MODE = "auto"
+		self.owlfbullpup.CAN_TOGGLE_FIREMODE = true
+		self.owlfbullpup.kick = {}
+		self.owlfbullpup.kick = self.stat_info.kick_tables.moderate_kick
+		self.owlfbullpup.supported = true
+		self.owlfbullpup.ads_speed = 0.340
+		self.owlfbullpup.damage_falloff = {
+			start_dist = 2500,
+			end_dist = 6600,
+			min_mult = 0.3333
+		}
+		self.owlfbullpup.stats = {
+			damage = 30,
+			spread = 86,
+			recoil = 82,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 21,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.owlfbullpup.stats_modifiers = nil
+		self.owlfbullpup.panic_suppression_chance = 0.05
+		self.owlfbullpup.timers.reload_exit_empty = 0.55
+		self.owlfbullpup.timers.reload_exit_not_empty = 0.7
+	end
+
+	if self.plasmaproto then
+		self.plasmaproto.recategorize = { "dmr_ar" }
+		self.plasmaproto.damage_type = "sniper"
+		self.plasmaproto.plasma_b = true
+		self.plasmaproto.CLIP_AMMO_MAX = 25
+		self.plasmaproto.AMMO_MAX = 60
+		self.plasmaproto.FIRE_MODE = "auto"
+		self.plasmaproto.CAN_TOGGLE_FIREMODE = true
+		self.plasmaproto.sounds.stop_fire = "g36_stop"
+		self.plasmaproto.kick = {}
+		self.plasmaproto.kick = self.stat_info.kick_tables.right_kick
+		self.plasmaproto.supported = true
+		self.plasmaproto.ads_speed = 0.440
+		self.plasmaproto.damage_falloff = {
+			start_dist = 3200,
+			end_dist = 8000,
+			min_mult = 0.6666
+		}	
+		self.plasmaproto.stats = {
+			damage = 60,
+			spread = 71,
+			recoil = 86,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 20,
+			suppression = 5,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.plasmaproto.stats_modifiers = nil
+		self.plasmaproto.panic_suppression_chance = 0.05
+		self.plasmaproto.armor_piercing_chance = 0.8
+		self.plasmaproto.timers.reload_exit_empty = 0.9
+		self.plasmaproto.timers.reload_exit_not_empty = 0.65
 	end
 
 

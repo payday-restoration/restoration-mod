@@ -42,6 +42,10 @@ tweak_data.crossbow = {
 tweak_data.grenade_launcher = {
 	ads_move_speed_mult = 0.45,
 }
+	tweak_data.gl_pistol = {
+		ads_move_speed_mult = 1.7777,
+		swap_bonus = 1.75
+	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.5,
 	}

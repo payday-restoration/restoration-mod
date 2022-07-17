@@ -7331,7 +7331,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_uzi_b_suppressed.perks = {"silencer"}
-	
+
+	--Standard Foregrip
+	self.parts.wpn_fps_smg_uzi_fg_standard.forbids = {
+		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
+		"wpn_fps_smg_schakal_vg_surefire",
+		"wpn_fps_upg_vg_ass_smg_stubby",
+	}
+
 	--Tactical Foregrip
 	self.parts.wpn_fps_smg_uzi_fg_rail.pcs = {}
 	self.parts.wpn_fps_smg_uzi_fg_rail.supported = true
@@ -7368,6 +7375,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 		reload_not_empty = "reload_not_empty",
 		reload = "reload"
 	}	
+
+	if not self.wpn_fps_smg_uzi.override then
+		self.wpn_fps_smg_uzi.override = {}
+	end
+
+	self.wpn_fps_smg_uzi.override.wpn_fps_upg_vg_ass_smg_stubby = {
+		stats = {
+			concealment = 1,
+			recoil = -2
+		},
+		forbids = { "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla" }
+	}
+	self.wpn_fps_smg_uzi.override.wpn_fps_smg_schakal_vg_surefire = {
+		forbids = { "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla" }
+	}
+
+	table.insert(self.wpn_fps_smg_uzi.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_smg_uzi.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+
+	self.wpn_fps_smg_uzi_npc.uses_parts = deep_clone(self.wpn_fps_smg_uzi.uses_parts)
 	
 end)
 
@@ -8972,7 +8999,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.wpn_fps_snp_mosin.override.wpn_fps_addon_ris = {
 		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fl_adapter"
 	}
-	
+
 	
 	table.insert(self.wpn_fps_snp_mosin.uses_parts, "wpn_fps_snp_mosin_a_tranq")
 	table.insert(self.wpn_fps_snp_mosin_npc.uses_parts, "wpn_fps_snp_mosin_a_tranq")		
@@ -11199,8 +11226,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_snp_tti_s_vltor")
 	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_snp_tti_s_vltor")
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_smg_mac10_s_no")
-	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_smg_mac10_s_no")
 
 	-- what, why
 	-- pretty sure this was me (DMC) but I'm just wondering why I even did this considering I did this already a few lines above

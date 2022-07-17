@@ -2343,8 +2343,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["MutatorMoreDonutsPlus_longdesc"] = "모든 일반 적들은 NYPD 브롱코 경찰로 대체되고 모든 특수 적들은 옴니아 LPF로 대체됩니다. \n\n경고: 해당 뮤테이터를 활성화하면 잔학 행위를 저지르는 것입니다.",
 
 		["MutatorJungleInferno"] = "정글 인페르노",
-		["MutatorJungleInferno_desc"] = "모든 적들이 캡틴 서머스로 대체됩니다.",
-		["MutatorJungleInferno_longdesc"] = "스크립트로 스폰되지 않는 모든 적들은 캡틴 서머스의 클론으로 대체됩니다.",
+		["MutatorJungleInferno_desc"] = "이제 모든 적들이 화염 방사기를 든 채 스폰됩니다.",
+		["MutatorJungleInferno_longdesc"] = "모든 적의 기본 무기가 화염방사기로 대체됩니다.\n\n참고: 저격수와 실드는 여전히 일반 무기 든 채 스폰됩니다.",
 
 		["mutator_minidozers"] = "반자동 산탄총 불도저",
 		["mutator_minidozers_desc"] = "이제 반자동 산탄총 불도저가 생성될 수 있습니다.",

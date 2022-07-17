@@ -1899,8 +1899,10 @@ function PlayerStandard:secondary_add_ammo(value)
 end
 
 function PlayerStandard:_is_reloading()
-	local primary = self._unit:inventory():unit_by_selection(2):base()
-	local secondary = self._unit:inventory():unit_by_selection(1):base()
+	if self._unit and alive(self._unit) then
+		local primary = self._unit:inventory():unit_by_selection(2):base()
+		local secondary = self._unit:inventory():unit_by_selection(1):base()
+	end
 	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1) or self._state_data.reload_expire_t or self._state_data.reload_enter_expire_t or self._state_data.reload_exit_expire_t
 end
 

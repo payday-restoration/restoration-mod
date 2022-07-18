@@ -1042,7 +1042,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#180## bleed damage over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires a#{skill_color}#rmor piercing## flechettes that inflict #{skill_color}#240## bleed damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#240## bleed damage over #{skill_color}#3## seconds.",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",
@@ -2226,9 +2226,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",
+		["menu_mutators_category_holiday"] = "HOLIDAYS",
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "Grenadiers",
+		
+		["mutator_titandozers_desc"] = "Halloween Holiday Effects",
+		["mutator_titandozers_longdesc"] = "The Headless Bulldozers have escaped from Wolf's nightmares and become reality! Regular Bulldozers will now be their Headless Bulldozer variants and other Halloween effects will now be active!",
 
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
 		["mutator_medicdozers"] = "Medic Dozers",

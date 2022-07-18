@@ -6,13 +6,14 @@ local spot_angle = 65 --default 60
 local haunted_range = 10000 --default 10000
 local normal_range = 2000 --default 1000
 
+--Halloween Flashlight
 function WeaponFlashLight:is_haunted()
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
 		local job_id = managers.job and managers.job:current_job_id()
 		local tweak = job_id and tweak_data.narrative.jobs[job_id]
 		Month = os.date("%m")
 		
-		if Month == "10" then
+		if Month == "10" or restoration.force_halloween then
 			return true
 		end
 		

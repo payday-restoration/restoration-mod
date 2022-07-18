@@ -91,7 +91,7 @@ function restoration:Init()
 		firestarter_3_res = restoration.captain_types.summer, --firestarter day 3 res edit version
 		
 		--Spring
-		xmn_hox_2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
+		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
 		firestarter_1 = restoration.captain_types.spring, --firestarter day 1
 		arm_for = restoration.captain_types.spring, --train heist
 		arm_for_restoration = restoration.captain_types.spring,	--train heist restoration edit

@@ -96,7 +96,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 				table.insert(hit_objects[col_ray.unit:key()], col_ray)
 			else
-				self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage)
+				self._bullet_class:on_collision(col_ray, self._unit, user_unit, (self._bullet_class.id and self._bullet_class.id == "explosive" and damage / (self._rays or 1)) or damage)
 			end
 		end
 	end
@@ -317,7 +317,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	return result
 end
 
---Stops XM25 from working with this skill.
+--Stops Hx25 from working with this skill.
 function ShotgunBase:run_and_shoot_allowed()
 	local allowed = ShotgunBase.super.run_and_shoot_allowed(self)
 

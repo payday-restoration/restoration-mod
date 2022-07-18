@@ -139,7 +139,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1")						
 				},
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1")					
+					Idstring("units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1")					
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")					

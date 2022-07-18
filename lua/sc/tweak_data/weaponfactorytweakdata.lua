@@ -5509,6 +5509,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 			"wpn_fps_upg_vg_ass_smg_stubby_vanilla"
 		}
 	}
+	self.wpn_fps_smg_mp7.override.wpn_fps_ass_tecci_vg_ergo = {
+		stats = {
+			recoil = -2,
+			concealment = 1
+		},
+		forbids = {
+			"wpn_fps_upg_vg_ass_smg_stubby_vanilla"
+		}
+	}
 
 	--Disabling default VFG stats
 	self.wpn_fps_smg_mp7.uses_parts[8] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
@@ -9112,6 +9121,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 		40
 	}
 	self.parts.wpn_fps_ass_l85a2_fg_short.supported = true
+	self.parts.wpn_fps_ass_l85a2_fg_short.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_fg_long" --better normal smoothing
 	self.parts.wpn_fps_ass_l85a2_fg_short.stats = {
 		value = 5,
 		spread = 1,
@@ -11777,18 +11787,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hajk", "resmod_hajk", function(sel
 		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 
+	self.wpn_fps_smg_hajk.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+		stats = {
+			recoil = 2,
+			concealment = -1
+		}
+	}
+	self.wpn_fps_smg_hajk.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = {
+			recoil = 2,
+			concealment = -1
+		}
+	}
+	self.wpn_fps_smg_hajk.override.wpn_fps_upg_vg_ass_smg_stubby = {
+		stats = {
+			value = 1
+		}
+	}
+
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_m4_s_standard")
-	table.insert(self.wpn_fps_smg_hajk_npc.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_m4_s_pts")
-	table.insert(self.wpn_fps_smg_hajk_npc.uses_parts, "wpn_fps_upg_m4_s_pts")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_m4_s_crane")
-	table.insert(self.wpn_fps_smg_hajk_npc.uses_parts, "wpn_fps_upg_m4_s_crane")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_m4_s_mk46")
-	table.insert(self.wpn_fps_smg_hajk_npc.uses_parts, "wpn_fps_upg_m4_s_mk46")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_m4_s_ubr")
-	table.insert(self.wpn_fps_smg_hajk_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_snp_tti_s_vltor")
-	table.insert(self.wpn_fps_smg_hajk_npc.uses_parts, "wpn_fps_snp_tti_s_vltor")
+	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_smg_hajk_npc.uses_parts = deep_clone(self.wpn_fps_smg_hajk.uses_parts)
 
@@ -12129,6 +12154,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
+	self.wpn_fps_sho_rota.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+		stats = {
+			recoil = 2,
+			concealment = -1
+		}
+	}
+	self.wpn_fps_sho_rota.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = {
+			recoil = 2,
+			concealment = -1
+		}
+	}
+	self.wpn_fps_sho_rota.override.wpn_fps_upg_vg_ass_smg_stubby = {
+		stats = {
+			value = 1
+		}
+	}
+	table.insert(self.wpn_fps_sho_rota.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+	table.insert(self.wpn_fps_sho_rota.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_sho_rota.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+
+	self.wpn_fps_sho_rota_npc.override = deep_clone(self.wpn_fps_sho_rota.override)		
+	self.wpn_fps_sho_rota_npc.uses_parts = deep_clone(self.wpn_fps_sho_rota.uses_parts)		
+
 end)
 
 --Spec Ops Pack
@@ -18332,6 +18381,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			"wpn_fps_vg_vmp_stubby",
 			"wpn_fps_vg_vmp_stable",
 			"wpn_fps_vg_vmp_medium",
+			"wpn_fps_vg_vmp_cheems",
 			"wpn_fps_vg_vmp_pod",
 			"wpn_fps_vg_vmp_vert"
 		}
@@ -18703,6 +18753,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = -1,
 			concealment = 1
 		}
+		table.insert(self.wpn_fps_smg_mp7.uses_parts, "wpn_fps_ass_tecci_vg_ergo")
+		table.insert(self.wpn_fps_smg_mp7_npc.uses_parts, "wpn_fps_ass_tecci_vg_ergo")	
 
 		--(Loco) Railed Pump
 		self.parts.wpn_fps_shot_shorty_fg_rail.supported = true

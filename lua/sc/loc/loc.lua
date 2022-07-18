@@ -1042,7 +1042,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#180## bleed damage over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires a#{skill_color}#rmor piercing## flechettes that inflict #{skill_color}#240## bleed damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#240## bleed damage over #{skill_color}#3## seconds.",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",

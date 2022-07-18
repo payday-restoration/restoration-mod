@@ -7,11 +7,10 @@ function SkirmishManager:init_finalize()
 		local load_list = {}
 		for unit, data in pairs(tweak_data.character) do
 			if type(data) == "table" and data.custom_voicework then
-				if data.captain_type and data.captain_type == tweak_data.skirmish.captain then
-					load_list[#load_list + 1] = data.custom_voicework
-				elseif restoration.projob_only_voicelines[data.custom_voicework] then
+				if restoration.projob_only_voicelines[data.custom_voicework] then
 					load_list[#load_list + 1] = data.custom_voicework
 				end
+				--Just load every captain since the selected one is not synced!
 			end
 		end
 

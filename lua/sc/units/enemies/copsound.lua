@@ -102,9 +102,7 @@ function CopSound:chk_voice_prefix()
 	end
 end	
 
-function CopSound:say(sound_name, sync, skip_prefix, important, callback)
-
-	local line_array = {
+local line_array = {
 	c01 =       {line = "contact"},
 	c01x =      {line = "contact"},
 	burnhurt =  {line = "burnhurt",  force = true},
@@ -193,11 +191,14 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	cpa_taunt_during_assault =     {line = "kill"},
 	police_radio =                 {line = "radio"}, -- doesnt work :<
 	clk_x02a_any_3p =              {line = "death", force = true}
-    }
-
-
+}
+function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local line_to_check = line_array[sound_name]
     if line_to_check and restoration.Voicelines:say(self._unit, line_to_check.line, line_to_check.force) then
+    	if sync then
+			self._unit:network():send("say", sound_name)
+		end
+
 		return
 	end
 	

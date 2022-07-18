@@ -10035,6 +10035,15 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.BLACK_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		self.unit_categories.BLACK_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		self.unit_categories.BLACK_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		
+		self.unit_categories.TIT_tank.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.zombie[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.murkywater[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.federales[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		self.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"		
 	end
 
 end

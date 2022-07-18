@@ -79,3 +79,12 @@ function MutatorsManager:init()
 		mutator:setup(self)
 	end
 end
+
+function MutatorsManager:categories()
+	return {
+		"all",
+		"enemies",
+		"gameplay",
+		"holiday"
+	}
+end

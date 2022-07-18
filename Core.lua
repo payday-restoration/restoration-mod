@@ -149,14 +149,15 @@ function restoration:Init()
 		crash_course = restoration.captain_types.hvh --REDACTED
 	}
 	
+	--HVH replaces Spring during the month of Halloween
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 		for heist, captain in pairs(restoration.captain_spawns) do
 			if captain == restoration.captain_types.spring then
 				restoration.captain_spawns[heist] = restoration.captain_types.hvh
 			end
 		end		
-	end
-	
+	end		
+		
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
@@ -164,7 +165,8 @@ function restoration:Init()
 	restoration.global_spawn_multiplier = 1
 	restoration.always_bravos = false
 	restoration.disco_inferno = false
-	
+	restoration.force_halloween = false
+		
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {
 		--Custom Heists below--

@@ -350,6 +350,11 @@ function HUDAssaultCorner:init(hud, full_hud)
 	if self._captain and self._captain.icon then
 		buff_icon = self._captain.icon
 	end
+	
+	--Always gonna be HVH now
+	if restoration.force_halloween then
+		buff_icon = "guis/textures/pd2/hud_buff_halloween"
+	end	
 
 	if managers.skirmish:is_skirmish() then		
 		buff_icon = "guis/textures/pd2/hud_buff_generic"

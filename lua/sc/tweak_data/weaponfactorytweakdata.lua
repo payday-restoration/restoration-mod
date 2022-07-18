@@ -11724,11 +11724,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tecci", "resmod_tecci", function(s
 
 	--New parts
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_m4_s_standard")
-	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_smg_olympic_s_short")
-	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_smg_olympic_s_short")		
 	--table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_ammo_half_that")
-	--table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_ammo_half_that")		
 	
 	self.wpn_fps_ass_tecci_npc.uses_parts = deep_clone(self.wpn_fps_ass_tecci.uses_parts)	
 
@@ -11972,7 +11969,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 	self.parts.wpn_fps_smg_schakal_m_short.supported = true
 	self.parts.wpn_fps_smg_schakal_m_short.stats = {
 		value = 1,
-		extra_ammo = -15,
+		extra_ammo = -10,
 		reload = 3,
 		concealment = 2,
 	}
@@ -20475,45 +20472,33 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_hx25_buckshot_ammo.desc_id = "bm_hx25_buck_sc_desc"
 		self.parts.wpn_fps_upg_hx25_buckshot_ammo.pcs = nil
 
-		self.wpn_fps_gre_hx25.override = {
-			wpn_fps_upg_hx25_buckshot_ammo = {
-				supported = true,
-				stats = {
-					value = 10
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 7,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
+		if not self.wpn_fps_gre_hx25.override then
+			self.wpn_fps_gre_hx25.override = {}
+		end
+
+		self.wpn_fps_gre_hx25.override.wpn_fps_upg_hx25_buckshot_ammo = {
+			supported = true,
+			stats = {
+				value = 10
 			},
-			--[[
-			wpn_fps_upg_hx25_buckshot_ammo = {
-				supported = true,
-				stats = {
-					value = 9,
-					spread = -4,
-					alert_size = -19,
-					suppression = -19
-				},
-					custom_stats = {
-					rays = 12,
-					dont_ignore_rays = true
-				}
+			custom_stats = {
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 7,
+				bullet_class = "InstantExplosiveBulletBase"
+			}
+		}
+		
+		self.wpn_fps_gre_hx25.override.wpn_fps_gre_hx25_explosive_ammo = {
+			supported = true,
+			stats = {
+				value = 10
 			},
-			--]]
-			wpn_fps_gre_hx25_explosive_ammo = {
-				supported = true,
-				stats = {
-					value = 10
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 7,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
+			custom_stats = {
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 7,
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	end

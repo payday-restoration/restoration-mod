@@ -28,6 +28,16 @@ Hooks:PostHook(AnimatedVehicleBase, "set_enabled", "woohoo_wow", function(self, 
         elseif self._unit:damage():has_sequence("mat_zeals") and difficulty == 8 then
             self._unit:damage():run_sequence_simple("mat_zeals")    
         end
+	elseif faction == "fbi" then	 
+        if self._unit:damage():has_sequence("mat_blueswat") and difficulty < 6 then
+            self._unit:damage():run_sequence_simple("mat_blueswat")
+        elseif self._unit:damage():has_sequence("mat_fbi")and difficulty == 6  then
+            self._unit:damage():run_sequence_simple("mat_fbi")
+        elseif self._unit:damage():has_sequence("mat_fbi") and difficulty == 7  then
+            self._unit:damage():run_sequence_simple("mat_fbi")    
+        elseif self._unit:damage():has_sequence("mat_zeals") and difficulty == 8 then
+            self._unit:damage():run_sequence_simple("mat_zeals")    
+        end
 	elseif faction == "murkywater" then
         if self._unit:damage():has_sequence("mat_murky") and difficulty < 8 then
             self._unit:damage():run_sequence_simple("mat_murky")

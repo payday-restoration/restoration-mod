@@ -2321,9 +2321,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 획득한 경험치와 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
+		["menu_mutators_category_holiday"] = "홀리데이",
 		
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "척탄병",
+		
+		["mutator_titandozers_desc"] = "할로윈 홀리데이 효과",
+		["mutator_titandozers_longdesc"] = "머리 없는 불도저가 울프의 악몽에서 빠져나와 현실이 되었습니다! 이제 일반 불도저가 머리 없는 불도저 변형으로 변경되고 다른 할로윈 효과가 활성화됩니다!",		
 
 		["mutator_medidozer_longdesc"] = "어썰트 웨이브 중 일반 적들은 모두 메딕으로, 모든 특수 적들은 불도저로 대체됩니다.",
 		["mutator_medicdozers"] = "메딕 도저",

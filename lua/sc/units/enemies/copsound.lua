@@ -196,7 +196,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local line_to_check = line_array[sound_name]
     if line_to_check and restoration.Voicelines:say(self._unit, line_to_check.line, line_to_check.force) then
     	if sync then
-			self._unit:network():send("say", sound_name)
+			self._unit:network():send("say", SoundDevice:string_to_id(sound_name))
 		end
 
 		return

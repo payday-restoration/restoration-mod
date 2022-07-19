@@ -1303,11 +1303,11 @@ function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)
 						Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 					},
 					russia = {
-						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
-						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
-						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
-						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
-						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
 						Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
 					},
 					zombie = {

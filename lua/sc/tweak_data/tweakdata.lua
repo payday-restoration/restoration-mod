@@ -642,7 +642,7 @@ tweak_data.team_ai.stop_action.delay = 0.8
 tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
 --Mutator tweak vars, makes it easier to toggle stuff on/off as needed
-tweak_data.disable_shotgun_push = true
+tweak_data.disable_shotgun_push = false
 
 tweak_data.medic.cooldown = 90
 tweak_data.medic.radius = 400

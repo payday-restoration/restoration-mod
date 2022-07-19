@@ -8,7 +8,6 @@ ModifierMedicAdrenaline.medics = {
 
 ModifierMedicAdrenaline.reapermedic = {
 	Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
-	Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
 	Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
 }	
 

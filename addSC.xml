@@ -1054,30 +1054,32 @@
 	
 	<!--Weapon Mod Trails-->
 	<!--M249/240 casings-->
-    <effect path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
 	<!--NATO Tracer-->
-    <effect path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Warsaw Tracer-->
-    <effect path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--STERWERS Tracer-->
-    <effect path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
-    <effect path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Plasma Tracer-->
-    <effect path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
+	<!--Cloud-->
+	<effect				path="effects/payday2/particles/explosions/red_mist" load="false"/>
 	
 	<!--Stat Boost-->
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>

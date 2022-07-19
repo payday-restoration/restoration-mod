@@ -1014,6 +1014,12 @@ function CopDamage:damage_bullet(attack_data)
 						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 						parent = head_object_get		
 					})
+					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							parent = head_object_get		
+						})
+					end
 				end
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)			
@@ -1212,6 +1218,14 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 					effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 					parent = head_object_get		
 				})
+
+				--local damage_type = attack_data.weapon_unit:base():get_damage_type() 
+				if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+					world_g:effect_manager():spawn({
+						effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+						parent = head_object_get		
+					})
+				end
 			end
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)		

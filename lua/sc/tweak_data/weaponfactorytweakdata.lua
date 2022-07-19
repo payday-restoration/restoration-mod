@@ -21055,7 +21055,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 	end
 
 
-	if self.parts.wpn_fps_ass_scarl_barrel then  --Pawcio's SCAR-L
+	if self.parts.wpn_fps_upg_scarl_barrel_cqc then  --Pawcio's SCAR-L
 		self.parts.wpn_fps_upg_scarl_barrel_cqc.supported = true
 		self.parts.wpn_fps_upg_scarl_barrel_cqc.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_upg_scarl_barrel_cqc.custom_stats = deep_clone(barrels.short_b2_custom_stats)

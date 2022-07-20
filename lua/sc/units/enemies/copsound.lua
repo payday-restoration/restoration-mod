@@ -103,16 +103,17 @@ function CopSound:chk_voice_prefix()
 end	
 
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
+	if self._last_speech then
+		self._last_speech:stop()
+	end
+
     if restoration.Voicelines:say_id(self._unit, sound_name) then
     	if sync then
 			self._unit:network():send("say", SoundDevice:string_to_id(sound_name))
 		end
 
+		self._speak_expire_t = TimerManager:game():time() + 2
 		return
-	end
-	
-	if self._last_speech then
-		self._last_speech:stop()
 	end
 	
 	local full_sound = nil

@@ -120,6 +120,7 @@
 	<texture path="levels/mods/firestarter_1_res/cube_lights/300579"/>
 	<texture path="levels/mods/firestarter_1_res/cube_lights/302178"/>
 	<texture path="levels/mods/firestarter_1_res/cube_lights/304261"/>
+	<texture path="levels/mods/firestarter_1_res/cubemaps/40"/>
 	<add path="units/vehicles/apartment_ford/vehicle_apartment_ford" type="unit">
 		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
 		<material_config force="true" path="units/vehicles/apartment_ford/vehicle_apartment_ford" unload="true"/>
@@ -356,4 +357,458 @@
 	<add from_db="true" path="environments/cubemaps/cubemap_diamond_01" type="texture"/>
 	<add from_db="true" path="environments/cubemaps/cubemap_gold" type="texture"/>
 	<add from_db="true" path="environments/cubemaps/cubemap_gold_strong_df" type="texture"/>
+	<add from_db="true" path="core/environments/skies/sky_2335_night_moon/sky_2335_night_moon" type="scene">
+		<material_config path="core/environments/skies/sky_2335_night_moon/sky_2335_night_moon"/>
+		<scene load="true" path="core/environments/skies/sky_2335_night_moon/sky_2335_night_moon"/>
+	</add>
+	<add from_db="true" path="units/world/props/container/container_blue" type="material_config">
+		<material_config path="units/world/props/container/container_blue"/>
+	</add>
+	<add from_db="true" path="units/world/props/container/container_green" type="material_config">
+		<material_config path="units/world/props/container/container_green"/>
+	</add>
+	<add from_db="true" path="units/world/props/container/container_orange" type="material_config">
+		<material_config path="units/world/props/container/container_orange"/>
+	</add>
+	<add from_db="true" path="units/world/props/container/container_red" type="material_config">
+		<material_config path="units/world/props/container/container_red"/>
+	</add>
+	<add from_db="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" type="unit">
+		<material_config path="units/payday2/architecture/air_backdrop/air_backdrop"/>
+		<object path="units/payday2/architecture/air_backdrop/air_backdrop_v2"/>
+		<unit path="units/payday2/architecture/air_backdrop/air_backdrop_v2"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_grass_03/fst_brush_grass_03" type="unit">
+		<material_config path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_grass_01/fst_brush_grass"/>
+		<object path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_grass_03/fst_brush_grass_03"/>
+		<unit path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_grass_03/fst_brush_grass_03"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_d" type="unit">
+		<material_config path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_a"/>
+		<object path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_d"/>
+		<unit path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_d"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_fife_01" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_fife_01"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_fife_01"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_02" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_02"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_02"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_aeyrs_big" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_aeyrs_big"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_aeyrs_big"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ansfer_02" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ansfer_02"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ansfer_02"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ycone" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ycone"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ycone"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_eye" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_eye"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_eye"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/grafitti_tag_1" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<unit path="units/world/brushes/grafitti/grafitti_tag_1"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/grafitti_tag_6" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/grafitti_tag_6"/>
+		<unit path="units/world/brushes/grafitti/grafitti_tag_6"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/grafitti_tag_4" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/grafitti_tag_4"/>
+		<unit path="units/world/brushes/grafitti/grafitti_tag_4"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/grafitti_tag_3" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/grafitti_tag_3"/>
+		<unit path="units/world/brushes/grafitti/grafitti_tag_3"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/grafitti_tag_5" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/grafitti_tag_5"/>
+		<unit path="units/world/brushes/grafitti/grafitti_tag_5"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_12" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_12"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_12"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/str_brush_trash/str_brush_trash_03" type="unit">
+		<material_config path="units/payday2/brushes/str_brush_trash/str_brush_trash"/>
+		<object path="units/payday2/brushes/str_brush_trash/str_brush_trash_03"/>
+		<unit path="units/payday2/brushes/str_brush_trash/str_brush_trash_03"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/str_brush_trash/str_brush_trash_02" type="unit">
+		<material_config path="units/payday2/brushes/str_brush_trash/str_brush_trash"/>
+		<object path="units/payday2/brushes/str_brush_trash/str_brush_trash_02"/>
+		<unit path="units/payday2/brushes/str_brush_trash/str_brush_trash_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/trash/trash_brush_04" type="unit">
+		<material_config path="units/world/brushes/trash/trash_brush"/>
+		<object path="units/world/brushes/trash/trash_brush_04"/>
+		<unit path="units/world/brushes/trash/trash_brush_04"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/str_brush_trash/str_brush_trash_04" type="unit">
+		<material_config path="units/payday2/brushes/str_brush_trash/str_brush_trash"/>
+		<object path="units/payday2/brushes/str_brush_trash/str_brush_trash_04"/>
+		<unit path="units/payday2/brushes/str_brush_trash/str_brush_trash_04"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/str_brush_trash/str_brush_trash_05" type="unit">
+		<material_config path="units/payday2/brushes/str_brush_trash/str_brush_trash"/>
+		<object path="units/payday2/brushes/str_brush_trash/str_brush_trash_05"/>
+		<unit path="units/payday2/brushes/str_brush_trash/str_brush_trash_05"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/trash/trash_brush_05" type="unit">
+		<material_config path="units/world/brushes/trash/trash_brush"/>
+		<object path="units/world/brushes/trash/trash_brush_05"/>
+		<unit path="units/world/brushes/trash/trash_brush_05"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/trash/trash_brush_01" type="unit">
+		<material_config path="units/world/brushes/trash/trash_brush_io"/>
+		<object path="units/world/brushes/trash/trash_brush_01"/>
+		<unit path="units/world/brushes/trash/trash_brush_01"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/str_brush_trash/str_brush_trash_01" type="unit">
+		<material_config path="units/payday2/brushes/str_brush_trash/str_brush_trash"/>
+		<object path="units/payday2/brushes/str_brush_trash/str_brush_trash_01"/>
+		<unit path="units/payday2/brushes/str_brush_trash/str_brush_trash_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/desk_pencil/desk_pencil" type="unit">
+		<material_config path="units/world/props/office/desk_accessories/desk_accessories"/>
+		<object path="units/world/brushes/desk_pencil/desk_pencil"/>
+		<unit path="units/world/brushes/desk_pencil/desk_pencil"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_mushrooms_05/fst_brush_mushrooms_05" type="unit">
+		<material_config path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_mushrooms_05/fst_brush_mushrooms_05"/>
+		<object path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_mushrooms_05/fst_brush_mushrooms_05"/>
+		<unit path="units/world/vegetation/forest/zones/forest/brushes/fst_brush_mushrooms_05/fst_brush_mushrooms_05"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_1x2_01" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_1x2_01"/>
+		<unit path="units/world/brushes/tags/brush_tags_1x2_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_3x1_5_01" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_3x1_5_01"/>
+		<unit path="units/world/brushes/tags/brush_tags_3x1_5_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_fat_panda" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_fat_panda"/>
+		<unit path="units/world/brushes/tags/brush_tags_fat_panda"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/shoe_marks/shoe_marks_03" type="unit">
+		<material_config path="units/payday2/brushes/shoe_marks/shoe_marks"/>
+		<object path="units/payday2/brushes/shoe_marks/shoe_marks_03"/>
+		<unit path="units/payday2/brushes/shoe_marks/shoe_marks_03"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_candywrapping" type="unit">
+		<material_config path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garbage"/>
+		<object path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_candywrapping"/>
+		<unit path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_candywrapping"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_buds" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_buds"/>
+		<unit path="units/world/brushes/litter/litter_buds"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_cup" type="unit">
+		<material_config path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garbage"/>
+		<object path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_cup"/>
+		<unit path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_cup"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/shoe_marks/shoe_marks_02" type="unit">
+		<material_config path="units/payday2/brushes/shoe_marks/shoe_marks"/>
+		<object path="units/payday2/brushes/shoe_marks/shoe_marks_02"/>
+		<unit path="units/payday2/brushes/shoe_marks/shoe_marks_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_09" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_09"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_09"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/skidmark/skidmark_curve_tight" type="unit">
+		<material_config path="units/world/brushes/skidmark/skidmark"/>
+		<object path="units/world/brushes/skidmark/skidmark_curve_tight"/>
+		<unit path="units/world/brushes/skidmark/skidmark_curve_tight"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed_b" type="unit">
+		<material_config path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed"/>
+		<object path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed_b"/>
+		<unit path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed_b"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass_5d" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass_5d"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass_5d"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/bushes/bush_05_small" type="unit">
+		<material_config path="units/payday2/brushes/bushes/bushes"/>
+		<object path="units/payday2/brushes/bushes/bush_05_small"/>
+		<unit path="units/payday2/brushes/bushes/bush_05_small"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/jungle/brushes/brush_grass_dry_03" type="unit">
+		<material_config path="units/world/vegetation/jungle/brushes/brush_grass"/>
+		<object path="units/world/vegetation/jungle/brushes/brush_grass_dry_01"/>
+		<unit path="units/world/vegetation/jungle/brushes/brush_grass_dry_03"/>
+	</add>
+	<add from_db="true" path="units/world/props/moneyprinter/money_brush3" type="unit">
+		<material_config path="units/world/props/moneyprinter/moneyprinter"/>
+		<object path="units/world/props/moneyprinter/money_brush3_instanced"/>
+		<unit path="units/world/props/moneyprinter/money_brush3"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_ilija" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_ilija"/>
+		<unit path="units/world/brushes/tags/brush_tags_ilija"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_10" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_10"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_10"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_10" type="unit">
+		<material_config path="units/world/architecture/secret_stash/brushes/secret_stash_brushes"/>
+		<object path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_10"/>
+		<unit path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_10"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/shoe_marks/shoe_marks_01" type="unit">
+		<material_config path="units/payday2/brushes/shoe_marks/shoe_marks"/>
+		<object path="units/payday2/brushes/shoe_marks/shoe_marks_01"/>
+		<unit path="units/payday2/brushes/shoe_marks/shoe_marks_01"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_aluminiumfoi" type="unit">
+		<material_config path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garbage"/>
+		<object path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_aluminiumfoi"/>
+		<unit path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_aluminiumfoi"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_asphalt2" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_asphalt2"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_asphalt2"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_asphalt2"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/trash/trash_brush_03" type="unit">
+		<material_config path="units/world/brushes/trash/trash_brush"/>
+		<object path="units/world/brushes/trash/trash_brush_03"/>
+		<unit path="units/world/brushes/trash/trash_brush_03"/>
+	</add>
+	<add from_db="true" path="units/world/props/diamond_heist/party/confetti_brush_2" type="unit">
+		<material_config path="units/world/props/diamond_heist/party/confetti_brush"/>
+		<object path="units/world/props/diamond_heist/party/confetti_brush_2"/>
+		<unit path="units/world/props/diamond_heist/party/confetti_brush_2"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01" type="unit">
+		<material_config path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01"/>
+		<object path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01"/>
+		<unit path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/secret_stash/props/secret_stash_props_trash_3" type="unit">
+		<material_config path="units/world/architecture/secret_stash/secret_stash_trash"/>
+		<object path="units/world/architecture/secret_stash/props/secret_stash_props_trash_3"/>
+		<unit path="units/world/architecture/secret_stash/props/secret_stash_props_trash_3"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_13" type="unit">
+		<material_config path="units/world/architecture/secret_stash/brushes/secret_stash_brushes"/>
+		<object path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_13"/>
+		<unit path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_13"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/cocaine/cokeplane_big" type="unit">
+		<material_config path="units/world/brushes/cocaine/cokeplane_big"/>
+		<object path="units/world/brushes/cocaine/cokeplane_big"/>
+		<unit path="units/world/brushes/cocaine/cokeplane_big"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_bin" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_bin"/>
+		<unit path="units/world/brushes/litter/litter_bin"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/grafitti_tag_7" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/grafitti_tag_7"/>
+		<unit path="units/world/brushes/grafitti/grafitti_tag_7"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_02" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_02"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/card_deck/card_deck" type="unit">
+		<material_config path="units/world/brushes/card_deck/card_deck"/>
+		<object path="units/world/brushes/card_deck/card_deck"/>
+		<unit path="units/world/brushes/card_deck/card_deck"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_1x2_02" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_1x2_02"/>
+		<unit path="units/world/brushes/tags/brush_tags_1x2_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_was_here" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_was_here"/>
+		<unit path="units/world/brushes/tags/brush_tags_was_here"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_3x1_5_02" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_3x1_5_02"/>
+		<unit path="units/world/brushes/tags/brush_tags_3x1_5_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/trash/trash_brush_02" type="unit">
+		<material_config path="units/world/brushes/trash/trash_brush"/>
+		<object path="units/world/brushes/trash/trash_brush_02"/>
+		<unit path="units/world/brushes/trash/trash_brush_02"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_pocketbook" type="unit">
+		<material_config path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garbage"/>
+		<object path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_pocketbook"/>
+		<unit path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_pocketbook"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bank_papers/bank_paper_pile_2" type="unit">
+		<material_config path="units/world/brushes/bank_papers/bank_papers"/>
+		<object path="units/world/brushes/bank_papers/bank_paper_pile_2"/>
+		<unit path="units/world/brushes/bank_papers/bank_paper_pile_2"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_blom" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_blom"/>
+		<unit path="units/world/brushes/tags/brush_tags_blom"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_big" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_big"/>
+		<unit path="units/world/brushes/litter/litter_big"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_kandis_waow" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_kandis_waow"/>
+		<unit path="units/world/brushes/tags/brush_tags_kandis_waow"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_tire2" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_tire2"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_tire2"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_tire2"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_plate2" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_plate2"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_plate2"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_plate2"/>
+	</add>
+	<add from_db="true" path="units/world/props/nick/nick_speedrun" type="unit">
+		<material_config path="units/world/props/nick/nick_speedrun"/>
+		<object path="units/world/props/nick/nick_speedrun"/>
+		<unit path="units/world/props/nick/nick_speedrun"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/postits/post_its_02" type="unit">
+		<material_config path="units/world/brushes/postits/post_its"/>
+		<object path="units/world/brushes/postits/post_its_02"/>
+		<unit path="units/world/brushes/postits/post_its_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_2x1_01" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_2x1_01"/>
+		<unit path="units/world/brushes/tags/brush_tags_2x1_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_02" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_02"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/silverware/fork" type="unit">
+		<material_config path="units/world/brushes/silverware/silverware"/>
+		<object path="units/world/brushes/silverware/fork"/>
+		<unit path="units/world/brushes/silverware/fork"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_06" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_06"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_06"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_metalbar4" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_metalbar4"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_metalbar4"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_metalbar4"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_anssvd" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_anssvd"/>
+		<unit path="units/world/brushes/tags/brush_tags_anssvd"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_tecci_b" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_tecci_b"/>
+		<unit path="units/world/brushes/tags/brush_tags_tecci_b"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/container_logos/logo_05" type="unit">
+		<material_config path="units/world/brushes/container_logos/container_logos"/>
+		<object path="units/world/brushes/container_logos/logo_05"/>
+		<unit path="units/world/brushes/container_logos/logo_05"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/postits/post_its_01" type="unit">
+		<material_config path="units/world/brushes/postits/post_its"/>
+		<object path="units/world/brushes/postits/post_its_01"/>
+		<unit path="units/world/brushes/postits/post_its_01"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/flower_calendula_officinalis/flower_calendula_officinalis" type="unit">
+		<material_config path="units/payday2/brushes/flower_calendula_officinalis/flower_calendula_officinalis"/>
+		<object path="units/payday2/brushes/flower_calendula_officinalis/flower_calendula_officinalis"/>
+		<unit path="units/payday2/brushes/flower_calendula_officinalis/flower_calendula_officinalis"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_08" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_08"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_08"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_1" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_1"/>
+		<unit path="units/world/brushes/litter/litter_1"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_06" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_06"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_06"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_01" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_01"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/container_logos/logo_03" type="unit">
+		<material_config path="units/world/brushes/container_logos/container_logos"/>
+		<object path="units/world/brushes/container_logos/logo_03"/>
+		<unit path="units/world/brushes/container_logos/logo_03"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_jerry/terrain/jry_rock_03" type="unit">
+		<material_config path="units/pd2_dlc_jerry/terrain/jry_terrain"/>
+		<object path="units/pd2_dlc_jerry/terrain/jry_rock_03"/>
+		<unit path="units/pd2_dlc_jerry/terrain/jry_rock_03"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/brush_guts/brush_guts_1" type="unit">
+		<material_config path="units/world/brushes/brush_guts/brush_guts"/>
+		<object path="units/world/brushes/brush_guts/brush_guts_1"/>
+		<unit path="units/world/brushes/brush_guts/brush_guts_1"/>
+	</add>
+	<add from_db="true" path="environments/cubemaps/cubemap_greenbridge_wet_df" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_garage" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_hair_3" type="texture"/>
+	<add from_db="true" path="units/payday2/cubemaps/cubemap_gold_light_df" type="texture"/>
+	<add from_db="true" path="units/payday2/cubemaps/cubemap_gold_strong_df" type="texture"/>
+	<add from_db="true" path="units/pd2_dlc_sah/environments/cubemaps/white_plasma" type="texture"/>
+	<add from_db="true" path="units/pd2_dlc_peta/cubemaps/cubemap_street_wet_v2" type="texture"/>
+	<add from_db="true" path="units/pd2_dlc_dah/environments/cubemaps/cubemap_night_sky" type="texture"/>
 </table>

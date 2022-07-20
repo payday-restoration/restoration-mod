@@ -574,12 +574,4 @@
 		<scene path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
 		<material_config path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
 	</add>
-	<add>
-		<cooked_physics path="units/payday2/props/tire_pile_05/tire_pile_05"/>
-		<material_config path="units/payday2/props/tire_pile_05/tire_pile_05"/>
-		<model path="units/payday2/props/tire_pile_05/tire_pile_05"/>
-		<texture path="units/payday2/props/tire_pile_05/tire_pile_05"/>
-		<object path="units/payday2/props/tire_pile_05/tire_pile_05"/>
-		<unit load="true" path="units/payday2/props/tire_pile_05/tire_pile_05"/>
-	</add>
 </table>

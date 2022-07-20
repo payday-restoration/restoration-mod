@@ -9,7 +9,6 @@
 		<packages>
 			<value_node value="packages/narr_firestarter1"/>
 			<value_node value="packages/job_firestarter"/>
-			<value_node value="packages/miscassets"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/world_sounds"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/world/world"/>
@@ -57,7 +56,6 @@
 		<packages>
 			<value_node value="packages/narr_firestarter3"/>
 			<value_node value="packages/job_firestarter"/>
-			<value_node value="packages/miscassets"/>			
 			<value_node value="levels/narratives/h_firestarter/stage_3/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world_sounds"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>

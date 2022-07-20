@@ -17,6 +17,9 @@ end
 if not PackageManager:loaded("packages/addhudmisc") then
 	PackageManager:load("packages/addhudmisc")
 end
+if not PackageManager:loaded("packages/envcore") then
+	PackageManager:load("packages/envcore")
+end
 
 -- Needed to prevent a crash when the game language is set to another language
 if not PackageManager:loaded("core/packages/language_schinese") then

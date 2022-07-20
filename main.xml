@@ -536,6 +536,7 @@
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
+	<Package id="packages/envcore" file="environments.xml"/>
 
     <!-- ///DIFF PACKAGES AMERICA\\\ -->
     <Package id="packages/normal_sc_america" file="packages/america_diff/normal_sc_america.xml"/>

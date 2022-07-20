@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<underlay>
+	<load_scene file="core/environments/skies/sky_2003_dusk_blue_high_color_scale/sky_2003_dusk_blue_high_color_scale" materials="core/environments/skies/sky_2003_dusk_blue_high_color_scale/sky_2003_dusk_blue_high_color_scale">
+		<object name="g_sky" enabled="true" force_sort_depth="100000"/>
+	</load_scene>
+</underlay>

@@ -150,4 +150,27 @@
 		<object path="units/payday2/characters/ene_security_6/ene_security_6"/>
 		<sequence_manager path="units/payday2/characters/ragdoll"/>
 	</add>
+	<add from_db="true" path="units/pd2_dlc_dinner/props/tires/tire_pile_medium" type="unit">
+		<material_config path="units/world/props/slaughterhouse/tires/tire_fire_pile"/>
+		<object path="units/pd2_dlc_dinner/props/tires/tire_pile_medium"/>
+		<unit path="units/pd2_dlc_dinner/props/tires/tire_pile_medium"/>
+	</add>
+	<add from_db="true" path="units/world/props/slaughterhouse/tires/tire_pile_high" type="unit">
+		<material_config path="units/world/props/slaughterhouse/tires/tire_fire_pile"/>
+		<object path="units/world/props/slaughterhouse/tires/tire_pile_high"/>
+		<unit path="units/world/props/slaughterhouse/tires/tire_pile_high"/>
+	</add>
+	<add from_db="true" path="units/world/props/slaughterhouse/tires/tire_pile_medium" type="unit">
+		<material_config path="units/world/props/slaughterhouse/tires/tire_fire_pile"/>
+		<object path="units/world/props/slaughterhouse/tires/tire_pile_medium"/>
+		<unit path="units/world/props/slaughterhouse/tires/tire_pile_medium"/>
+	</add>
+	<add>
+		<cooked_physics path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<material_config path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<model path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<texture path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<object path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<unit load="true" path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+	</add>
 </table>

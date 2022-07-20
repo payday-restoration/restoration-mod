@@ -2,8 +2,9 @@
     
 	<!--///Prison Suit FPS\\\-->
 	<unit				path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
+	<object				path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
+	<model				path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
-	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_akan" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_df" />
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm" />

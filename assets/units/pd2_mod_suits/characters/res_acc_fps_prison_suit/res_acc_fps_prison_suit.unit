@@ -1,5 +1,5 @@
 <unit type="trd" slot="1">
-	<object file="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit" />
+	<object file="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />

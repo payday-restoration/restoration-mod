@@ -127,6 +127,14 @@ function restorationVoiceline:say(unit, line, force)
 				if not existing_source then
 					--Ensure that the audio source reference for this unit gets cleaned up when they're cleaned up.
 					unit:base():add_destroy_listener("restorationRemoveAudioSource", function()
+						local unit_source = self._active_sources[unit_key]
+						--XAudio's promise to auto close these when finished is neat
+						--but it's possible that unload could be called in the very brief window before this finishes.
+						--So ensure that the source is closed when the unit dies.
+						if unit_source and not unit_source:is_closed() then
+							unit_source:stop()
+							unit_source:close()
+						end
 						self._active_sources[unit_key] = nil
 					end)
 				elseif force and not existing_source:is_closed() then

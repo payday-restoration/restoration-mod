@@ -3,7 +3,7 @@
 	<diesel materials="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" orientation_object="root_point" />
 
 <graphics>
-		<object name="g_body_female_thin" enabled="true" />
+		<object name="g_body" enabled="true" />
 	</graphics>
 
 </dynamic_object>

@@ -2,9 +2,8 @@
     
 	<!--///Prison Suit FPS\\\-->
 	<unit				path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
-	<object				path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
-	<model				path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_akan" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_df" />
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm" />
@@ -27,7 +26,6 @@
 	<model				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
-	
 	
 	<!--///Prison Suit Female Big\\\-->
 	<unit				path="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/res_acc_prison_suit_female_big" />
@@ -83,7 +81,24 @@
 	<!--///Sunny-Side Robber Joy\\\-->
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/joy/res_acc_sunny_suit_female_joy" />
     
-   
+	
+	<!--///Loud/Combat Suit Heister Variants\\\-->
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_chains" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_02" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_bodhi" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_sangres" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_sydney" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_joy" />
+	
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_female" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_chains" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_bodhi" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_02" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_sangres" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_sydney" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_joy" />
+	
+	
 	<!--///COMBAT OUTFIT\\\-->
 	<unit				path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" />
 	<object				path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" />
@@ -123,6 +138,13 @@
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" />
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_contour" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" />
+	
+	<unit				path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin" />
+	<object				path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin" />
+	<model				path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin" />
+	<material_config	path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin_contour" />
+	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin" />
 
 	<unit				path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />
 	<object				path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />

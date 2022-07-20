@@ -46,7 +46,7 @@ function restorationVoiceline:init()
 	self._line_id_data.amm =       {line = "buddy_died"}
 	self._line_id_data.ch1 =       {line = "trip_mines"}
 	self._line_id_data.ch2 =       {line = "sentry"}
-	self._line_id_data.ch3 =       {line = "ecm"}
+	self._line_id_data.ch3 =       {line = "pain", force = true} --use the pain lines when getting affected by the feedback for now
 	self._line_id_data.ch4 =       {line = "saw"}
 	self._line_id_data.t01 =       {line = "flank"}
 	self._line_id_data.pus =       {line = "gogo"}

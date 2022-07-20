@@ -6,6 +6,102 @@ function restorationVoiceline:init()
 	self._loaded = {} --Currently loaded buffers. All of them need to be close(true)'d at heist exit or you'll leak memory.
 	self._load_queue = {} --Queue of unit lists to load voicelines for.
 	self._load_coroutine = nil --The current loading coroutine. Usually nil except for heist start.
+
+	self._line_id_data = {}
+	local line_id_data_meta = {
+		__newindex = function(t, k, v)
+			rawset(t, k, v) --String used for local voicelines.
+			rawset(t, tostring(SoundDevice:string_to_id(k)), v) --Float used for synced voicelines.
+		end
+	}
+	setmetatable(self._line_id_data, line_id_data_meta)
+	self._line_id_data.c01 =       {line = "contact"}
+	self._line_id_data.c01x =      {line = "contact"}
+	self._line_id_data.burnhurt =  {line = "burnhurt",  force = true}
+	self._line_id_data.burndeath = {line = "burndeath", force = true}
+	self._line_id_data.rrl =       {line = "reload"}
+	self._line_id_data.gr1a =      {line = "spawn"}
+	self._line_id_data.gr1b =      {line = "spawn"}
+	self._line_id_data.gr1c =      {line = "spawn"}
+	self._line_id_data.gr1d =      {line = "spawn"}
+	self._line_id_data.gr2a =      {line = "spawn"}
+	self._line_id_data.gr2b =      {line = "spawn"}
+	self._line_id_data.gr2c =      {line = "spawn"}
+	self._line_id_data.gr2d =      {line = "spawn"}
+	self._line_id_data.a05 =       {line = "clear_stelf"}
+	self._line_id_data.a06 =       {line = "clear_stelf"}
+	self._line_id_data.e01 =       {line = "disabled_gear", force = true} --look into restoring this chatter in general
+	self._line_id_data.e02 =       {line = "disabled_gear", force = true}
+	self._line_id_data.e03 =       {line = "disabled_gear", force = true}
+	self._line_id_data.e04 =       {line = "disabled_gear", force = true}
+	self._line_id_data.e05 =       {line = "disabled_gear", force = true}
+	self._line_id_data.e06 =       {line = "disabled_gear", force = true}
+	self._line_id_data.i01 =       {line = "contact"}
+	self._line_id_data.i02 =       {line = "gogo"}
+	self._line_id_data.i03 =       {line = "kill"}
+	self._line_id_data.lk3a =      {line = "buddy_died"}
+	self._line_id_data.lk3b =      {line = "cover_me"}  --could use this to add calmer panic between assaults
+	self._line_id_data.mov =       {line = "gogo"}
+	self._line_id_data.med =       {line = "buddy_died"}
+	self._line_id_data.amm =       {line = "buddy_died"}
+	self._line_id_data.ch1 =       {line = "trip_mines"}
+	self._line_id_data.ch2 =       {line = "sentry"}
+	self._line_id_data.ch3 =       {line = "ecm"}
+	self._line_id_data.ch4 =       {line = "saw"}
+	self._line_id_data.t01 =       {line = "flank"}
+	self._line_id_data.pus =       {line = "gogo"}
+	self._line_id_data.g90 =       {line = "buddy_died"}
+	self._line_id_data.civ =       {line = "hostage"}
+	self._line_id_data.bak =       {line = "ready"}
+	self._line_id_data.p01 =       {line = "hostage"}
+	self._line_id_data.p02 =       {line = "hostage"}
+	self._line_id_data.p03 =       {line = "gogo"}
+	self._line_id_data.m01 =       {line = "retreat"}
+	self._line_id_data.h01 =       {line = "rescue_civ"}
+	self._line_id_data.cr1 =       {line = "hostage"}
+	self._line_id_data.rdy =       {line = "ready"}
+	self._line_id_data.r01 =       {line = "ready"}
+	self._line_id_data.clr =       {line = "clear"}
+	self._line_id_data.att =       {line = "gogo"}
+	self._line_id_data.a08 =       {line = "gogo"}
+	self._line_id_data.prm =       {line = "ready"}
+	self._line_id_data.pos =       {line = "ready"}
+	self._line_id_data.d01 =       {line = "ready"}
+	self._line_id_data.d02 =       {line = "ready"}
+	self._line_id_data.x01a_any_3p =    {line = "pain",  force = true}
+	self._line_id_data.x01a_any_3p_01 = {line = "pain",  force = true}
+	self._line_id_data.x01a_any_3p_02 = {line = "pain",  force = true}
+	self._line_id_data.x02a_any_3p =    {line = "death", force = true}
+	self._line_id_data.x02a_any_3p_01 = {line = "death", force = true}
+	self._line_id_data.x02a_any_3p_02 = {line = "death", force = true}
+	self._line_id_data.hlp =            {line = "buddy_died"}
+	self._line_id_data.buddy_died =     {line = "buddy_died"}
+	self._line_id_data.s01x =           {line = "surrender"}
+	self._line_id_data.cn1 =            {line = "joker"}
+	self._line_id_data.use_gas =        {line = "use_gas"}
+	self._line_id_data.spawn =          {line = "spawn"}
+	self._line_id_data.tasing =         {line = "tasing"}
+	self._line_id_data.heal =           {line = "heal"}
+	self._line_id_data.tsr_x02a_any_3p = {line = "death", force = true}
+	self._line_id_data.tsr_x01a_any_3p = {line = "pain",  force = true}
+	self._line_id_data.tsr_post_tasing_taunt = {line = "tasing"}
+	self._line_id_data.post_tasing_taunt =     {line = "tasing"}
+	self._line_id_data.tsr_g90 =               {line = "contact"}
+	self._line_id_data.tsr_entrance =          {line = "gogo"}
+	self._line_id_data.tsr_c01 =               {line = "contact"}
+	self._line_id_data.bdz_c01 =               {line = "contact"}
+	self._line_id_data.bdz_entrance =          {line = "spawn"}
+	self._line_id_data.bdz_entrance_elite =    {line = "spawn"}
+	self._line_id_data.bdz_g90 =               {line = "gogo"}
+	self._line_id_data.bdz_post_kill_taunt =   {line = "gogo"}
+	self._line_id_data.dz_visor_lost =         {line = "visor_lost"}
+	self._line_id_data.visor_lost =            {line = "visor_lost"}
+	self._line_id_data.cloaker_taunt_after_assault =  {line = "kill"}
+	self._line_id_data.cloaker_taunt_during_assault = {line = "kill"}
+	self._line_id_data.cpa_taunt_after_assault =      {line = "kill"}
+	self._line_id_data.cpa_taunt_during_assault =     {line = "kill"}
+	self._line_id_data.police_radio =                 {line = "radio"} -- doesnt work :<
+	self._line_id_data.clk_x02a_any_3p =              {line = "death", force = true}
 end
 
 --Attempts to 'make a given unit say' a voice line.
@@ -44,6 +140,20 @@ function restorationVoiceline:say(unit, line, force)
 	end
 	
 	return true
+end
+
+--Version of say() that takes in a vanilla-style line id.
+--What vanilla IDs correspond to what lines are defined inside of the _line_id_data table.
+--Note that multiple lines inside the same folder will result in a random one of those playing.
+--Meaning that peers will hear the same 'type' of line, but not the same exact line.
+--Unless each vanilla style line ID only corresponds to one voiceline file.
+function restorationVoiceline:say_id(unit, line_id)
+	local line_data = self._line_id_data[tostring(line_id)]
+	if line_data then
+		return self:say(unit, line_data.line, line_data.force)
+	else
+		return false
+	end
 end
 
 --Enqueues the voice lines related to a list of units to be loaded.

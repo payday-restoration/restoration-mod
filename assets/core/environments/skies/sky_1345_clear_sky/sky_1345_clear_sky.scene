@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<underlay>
+	<load_scene file="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky" materials="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky">
+		<object name="g_sky" enabled="true" force_sort_depth="100000"/>
+	</load_scene>
+</underlay>
+                              

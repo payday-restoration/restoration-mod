@@ -3,8 +3,9 @@
 	<diesel materials="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" orientation_object="root_point" />
 
 <graphics>
-	<graphic_group name="GraphicGroupName" enabled="true" culling_object="c_cull">
+	<graphic_group culling_object="co_box" enabled="true" name="suit">
 		<object name="g_arms" enabled="true" />
+		<object name="g_body" enabled="true" />
 	</graphic_group>
 </graphics>
 

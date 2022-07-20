@@ -358,36 +358,6 @@ end)
 Hooks:Add("BeardLibCreateScriptDataMods", "ResCreditsCallBeardLibSequenceFuncs", function()
 	BeardLib:ReplaceScriptData(mod_path .. "assets/gamedata/rescredits.credits", "custom_xml", "gamedata/rescredits", "credits", true)
 end)
-
---Environment skies loader
-	
-Hooks:Add("BeardLibPreProcessScriptData", "RestorationCreateEnvironment", function(PackManager, path, raw_data)
-    if managers.dyn_resource then
-        local skies = {
-            "sky_1930_twillight",
-			"sky_1930_sunset_heavy_clouds",
-            "sky_1846_low_sun_nice_clouds",
-            "sky_0902_overcast",
-			"sky_1345_clear_sky",
-			"sky_0200_night_moon_stars",
-			"sky_2000_twilight_mad",
-			"sky_2100_moon",
-			"sky_1008_cloudy",
-			"sky_0927_whispy_clouds",
-			"sky_2335_night_moon",
-			"sky_2100_moon",
-			"sky_1313_cloudy_dark",
-			"sky_2003_dusk_blue_high_color_scale"
-			
-        }
-        for _, sky in ipairs(skies) do
-            if not managers.dyn_resource:has_resource(Idstring("scene"), Idstring("core/environments/skies/" .. sky .. "/" .. sky), managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
-                restoration.log_shit("not loaded")
-                managers.dyn_resource:load(Idstring("scene"), Idstring("core/environments/skies/" .. sky .. "/" .. sky), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
-            end
-        end
-    end
-end)
 	
 --Paintings
 if restoration.Options:GetValue("OTHER/Paintings") then	

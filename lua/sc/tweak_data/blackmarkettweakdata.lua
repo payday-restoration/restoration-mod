@@ -1,7 +1,7 @@
 Hooks:PostHook(BlackMarketTweakData, "_init_gloves", "ResGloves", function(self, tweak_data)
 	table.insert(self.glove_adapter.player_style_exclude_list, "two_piece_suit")
+	table.insert(self.glove_adapter.player_style_exclude_list, "loud_suit")
 	table.insert(self.glove_adapter.player_style_exclude_list, "suit_sunny")
-	table.insert(self.glove_adapter.player_style_exclude_list, "suit_prison")
 	self.suit_default_gloves.suit_sunny = "heist_default"
 	self.suit_default_gloves.loud_suit = "heist_default"
 	self.suit_default_gloves.poggers = "esport"
@@ -195,7 +195,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flatgreen",
 		desc_id = "bm_suit_var_jumpsuit_flatgreen_desc"
 	}
-	
+
 	--Fixed Raincoat
 	self.player_styles.raincoat.third_body_replacement = {
 		arms = true,
@@ -243,31 +243,53 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		characters = {}
 	}
 	set_characters_data("loud_suit", characters_male_big, {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2"
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit"
 	})
 	set_characters_data("loud_suit", characters_female, {
-		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female"
+		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_female"
 	})
 	set_characters_data("loud_suit", characters_female_big, {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big"
 	})
-	self.player_styles.loud_suit.characters.jimmy = {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2"
+	self.player_styles.loud_suit.characters.chains = {
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_chains",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_chains"
 	}
-	self.player_styles.loud_suit.characters.jacket = {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2"
+	self.player_styles.loud_suit.characters.bodhi = {
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_bodhi",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_bodhi"
+	}	
+	self.player_styles.loud_suit.characters.dragon = {
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_02",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_02"
+	}	
+	self.player_styles.loud_suit.characters.chico = {
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_02",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_02"
 	}
+	self.player_styles.loud_suit.characters.max = {
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit_sangres",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_sangres"
+	}	
 	self.player_styles.loud_suit.characters.ecp_male = {
 		third_body_replacement = body_replacement_standard,
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
 	}
 	self.player_styles.loud_suit.characters.sydney = {
-		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_sydney",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_sydney"
 	}
 	self.player_styles.loud_suit.characters.joy = {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
+		third_material = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_joy",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin",
+		material = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_joy"
+	}
+	self.player_styles.loud_suit.characters.ecp_female = {
+		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin"
+	
 	}
 	
 	--Resmod Sunny-Side Robber

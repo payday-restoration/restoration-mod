@@ -466,7 +466,46 @@
 	<texture path="levels/mods/run_res/cube_lights/100714"/>
 	<texture path="levels/mods/run_res/cube_lights/100762"/>
 	<add from_db="true" path="core/environments/skies/default/default" type="scene">
-		<scene path="core/environments/skies/default/default"/>
 		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+		<scene path="core/environments/skies/default/default"/>
+	</add>
+	<add>
+		<cooked_physics path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<material_config path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<model path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<object path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<texture path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+		<unit load="true" path="units/payday2/props/tire_pile_05/tire_pile_05"/>
+	</add>
+	<add from_db="true" path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" type="unit">
+		<unit path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van"/>
+		<object path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van"/>
+		<material_config path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van"/>
+		<sequence_manager path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van"/>
+		<effect load="true" path="effects/payday2/particles/flares/scene_flare_small_01"/>
+		<effect load="true" path="effects/payday2/particles/spotlight/scene_spotlight_01"/>
+		<unit path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret"/>
+		<object path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret"/>
+		<material_config path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret"/>
+		<sequence_manager path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret"/>
+		<unit path="units/payday2/vehicles/gen_vehicle_turret/spawn_turret_debris"/>
+		<object path="units/payday2/vehicles/gen_vehicle_turret/spawn_turret_debris"/>
+		<unit path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_front"/>
+		<object path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_front"/>
+		<effect load="true" path="effects/payday2/particles/explosions/sentry_aftersmoke"/>
+		<effect load="true" path="effects/payday2/particles/explosions/sentry_damage_smoke"/>
+		<effect load="true" path="effects/payday2/particles/explosions/sentry_damage_smoke_med"/>
+		<effect load="true" path="effects/payday2/particles/explosions/sentry_damage_smoke_large"/>
+		<effect load="true" path="effects/payday2/particles/explosions/sparks/sparks_loop"/>
+		<effect load="true" path="effects/payday2/particles/weapons/big_762_auto"/>
+		<effect load="true" path="effects/payday2/particles/weapons/parts/combo_light_all"/>
+		<effect load="true" path="effects/payday2/particles/weapons/parts/distance_halo_big"/>
+		<effect load="true" path="effects/payday2/particles/weapons/shells/shell_556_lmg"/>
+		<effect load="true" path="effects/payday2/particles/weapons/shells/shell_link"/>
+		<effect load="true" path="effects/payday2/particles/explosions/sentry_explosion"/>
+		<unit path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper"/>
+		<object path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper"/>
+		<physic_effect path="physic_effects/push_sphere"/>
+		<bnk path="soundbanks/weapon_swatturret"/>
 	</add>
 </table>

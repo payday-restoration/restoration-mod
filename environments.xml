@@ -1,0 +1,55 @@
+<table directory="assets">
+
+	<scene force="true" load="true" path="core/environments/skies/sky_1930_twillight/sky_1930_twillight"/>
+	<model force="true" path="core/environments/skies/sky_1930_twillight/sky_1930_twillight"/>
+	<material_config force="true" path="core/environments/skies/sky_1930_twillight/sky_1930_twillight"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_1930_sunset_heavy_clouds/sky_1930_sunset_heavy_clouds"/>
+	<model force="true" path="core/environments/skies/sky_1930_sunset_heavy_clouds/sky_1930_sunset_heavy_clouds"/>
+	<material_config force="true" path="core/environments/skies/sky_1930_sunset_heavy_clouds/sky_1930_sunset_heavy_clouds"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+	<model force="true" path="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+	<material_config force="true" path="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_0902_overcast/sky_0902_overcast"/>
+	<model force="true" path="core/environments/skies/sky_0902_overcast/sky_0902_overcast"/>
+	<material_config force="true" path="core/environments/skies/sky_0902_overcast/sky_0902_overcast"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky"/>
+	<model force="true" path="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky"/>
+	<material_config force="true" path="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+	<model force="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+	<material_config force="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_2000_twilight_mad/sky_2000_twilight_mad"/>
+	<model force="true" path="core/environments/skies/sky_2000_twilight_mad/sky_2000_twilight_mad"/>
+	<material_config force="true" path="core/environments/skies/sky_2000_twilight_mad/sky_2000_twilight_mad"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_2100_moon/sky_2100_moon"/>
+	<model force="true" path="core/environments/skies/sky_2100_moon/sky_2100_moon"/>
+	<material_config force="true" path="core/environments/skies/sky_2100_moon/sky_2100_moon"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_1008_cloudy/sky_1008_cloudy"/>
+	<model force="true" path="core/environments/skies/sky_1008_cloudy/sky_1008_cloudy"/>
+	<material_config force="true" path="core/environments/skies/sky_1008_cloudy/sky_1008_cloudy"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_0927_whispy_clouds/sky_0927_whispy_clouds"/>
+	<model force="true" path="core/environments/skies/sky_0927_whispy_clouds/sky_0927_whispy_clouds"/>
+	<material_config force="true" path="core/environments/skies/sky_0927_whispy_clouds/sky_0927_whispy_clouds"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_2335_night_moon/sky_2335_night_moon"/>
+	<model force="true" path="core/environments/skies/sky_2335_night_moon/sky_2335_night_moon"/>
+	<material_config force="true" path="core/environments/skies/sky_2335_night_moon/sky_2335_night_moon"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_dark"/>
+	<model force="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_dark"/>
+	<material_config force="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy"/>
+
+	<scene force="true" load="true" path="core/environments/skies/sky_2003_dusk_blue_high_color_scale/sky_2003_dusk_blue_high_color_scale"/>
+	<model force="true" path="core/environments/skies/sky_2003_dusk_blue_high_color_scale/sky_2003_dusk_blue_high_color_scale"/>
+	<material_config force="true" path="core/environments/skies/sky_2003_dusk_blue_high_color_scale/sky_2003_dusk_blue_high_color_scale"/>
+
+</table>

@@ -257,8 +257,6 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
 	<model				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
-	<material_config	path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
-	<material_config	path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870_contour" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"  load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"  load="true"/>
 	
@@ -270,7 +268,6 @@
 	
 	<!--big shield acc-->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />

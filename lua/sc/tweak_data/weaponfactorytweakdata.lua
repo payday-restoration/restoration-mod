@@ -195,7 +195,7 @@
 			total_ammo_mod = -25,
 			damage = 15,	
 			recoil = -20,
-			spread = 20,
+			spread = 12,
 			spread_multi = {1, 1},	
 			suppression = -1,
 			moving_spread = 0
@@ -207,8 +207,8 @@
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
+			falloff_start_mult = 1.5,
+			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		}
 	}
@@ -222,7 +222,7 @@
 			concealment = -2,
 			total_ammo_mod = -25,
 			damage = 15,
-			spread = 20,
+			spread = 12,
 			spread_multi = {1, 1},	
 			recoil = -20,
 			moving_spread = 0
@@ -234,8 +234,8 @@
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
+			falloff_start_mult = 1.5,
+			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		}
 	}
@@ -249,7 +249,7 @@
 			total_ammo_mod = -33,
 			damage = 30,
 			recoil = -20,
-			spread = 20,
+			spread = 12,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
@@ -3542,7 +3542,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		supported = true,
 		stats = {
 			value = 1, 
-			extra_ammo = 14,
+			extra_ammo = 15,
 			reload = -7, 
 			concealment = -4
 		},
@@ -4122,7 +4122,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		value = 5,
 		concealment = -2,
 		reload = -3,
-		extra_ammo = 4
+		extra_ammo = 6
 	}
 	self.parts.wpn_fps_pis_deagle_m_extended.custom_stats = {
 		ads_speed_mult = 1.05
@@ -4132,8 +4132,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	--Extra Barrel Extensions
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	--table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_pis_g18c_co_1")
-	--table.insert(self.wpn_fps_pis_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
 	self.wpn_fps_pis_deagle_npc.uses_parts = deep_clone(self.wpn_fps_pis_deagle.uses_parts)
 
@@ -7746,7 +7744,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		total_ammo_mod = -25,
 		damage = 30,	
 		recoil = -20,
-		spread = 20,
+		spread = 12,
 		spread_multi = {1, 1},	
 		suppression = -1,
 		moving_spread = 0
@@ -7758,8 +7756,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		can_shoot_through_enemy = true,
 		can_shoot_through_shield = true,
 		can_shoot_through_wall = true,
-		falloff_start_mult = 2.00,
-		falloff_end_mult = 3.00,
+		falloff_start_mult = 1.5,
+		falloff_end_mult = 2.0,
 		ads_speed_mult = 1.10
 	}
 	
@@ -8349,15 +8347,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_deagle", "resmod_x_deagle", func
 			value = 5,
 			concealment = -1,
 			reload = -1,
-			extra_ammo = 4
+			extra_ammo = 12
 		}
 	}
 	
 	--Extra Barrel Extensions
 	table.insert(self.wpn_fps_x_deagle.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_x_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_x_deagle.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_x_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
 	self.wpn_fps_x_deagle_npc.uses_parts = deep_clone(self.wpn_fps_x_deagle.uses_parts)	
 
@@ -13281,7 +13277,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 	}
 	self.parts.wpn_fps_sho_basset_m_extended.stats = {
 		value = 1, 
-		extra_ammo = 4, 
+		extra_ammo = 5, 
 		reload = -2, 
 		concealment = -2
 	}
@@ -20187,16 +20183,12 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			value = 3,
 			extra_ammo = 1,
 			concealment = -1,
-			reload = -1
 		}
 
 		--(Reinbeck Auto) Solid Stock
 		self.parts.wpn_fps_shot_minibeck_s_solid.supported = true
-		self.parts.wpn_fps_shot_minibeck_s_solid.stats = {
-			value = 5,
-			recoil = 2,
-			concealment = -4
-		}
+		self.parts.wpn_fps_shot_minibeck_s_solid.stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_shot_minibeck_s_solid.custom_stats = deep_clone(stocks.add_fixed_stats)
 
 		--(Holt 9mm) Silver Slide
 		self.parts.wpn_fps_pis_holt_b_silver.supported = true

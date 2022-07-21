@@ -1235,7 +1235,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897 Shotgun",
-		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.",
+		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nAlt-fire allows for #{skill_color}#slam-firing for an increase in fire rate## at the cost of #{important_1}#more recoil and spread as well as the inabilty to aim down your sights.##",
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
 		--R870
@@ -1328,6 +1328,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM 60 DAMAGE ARs
 		--SCAR-L
 		["bm_w_scarl"] = "Eagle Light Rifle",
+		--Valmet Rk.62
+		["bm_w_rk62"] = "Velmer Rifle",
 
 
 		--Bootleg/HK416c
@@ -1439,6 +1441,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points## is #{important_1}#not installed.##\n\nAttachment will take on the slot's default appearance.",
+		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing for an increase in fire rate## at the cost of #{important_1}#more recoil and spread as well as the inabilty to aim down your sights.##",
 		["bm_lmg_generic_desc"] = "#{important_1}#Wildly inaccurate when hipfired.##",
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor, shields and thin walls.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor.##",
@@ -1832,6 +1835,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
 					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
+					["bm_w_l85a2"] = "Eru",
+						["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
+					["bm_w_rk62"] = "Sako",
+						["bm_rk62_sc_desc"] = "\"What wonderful squeals! You sound like you're about to die!\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
 	
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "Faru",

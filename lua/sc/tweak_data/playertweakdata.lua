@@ -249,7 +249,7 @@ function PlayerTweakData:init()
 			}
 		}
 	}
-	self.stances.default.standard.head.translation = Vector3(0, 0, 145)
+	self.stances.default.standard.head.translation = Vector3(0, 0, 153)
 	self.stances.default.standard.head.rotation = Rotation()
 	self.stances.default.standard.shakers = {}
 	self.stances.default.standard.shakers.breathing = {}
@@ -261,7 +261,7 @@ function PlayerTweakData:init()
 	self.stances.default.steelsight.shakers.breathing = {}
 	self.stances.default.steelsight.shakers.breathing.amplitude = 0.025
 	self.stances.default.mask_off = deep_clone(self.stances.default.standard)
-	self.stances.default.mask_off.head.translation = Vector3(0, 0, 160)
+	self.stances.default.mask_off.head.translation = Vector3(0, 0, 169)
 	self.stances.default.clean = deep_clone(self.stances.default.mask_off)
 	local pivot_head_translation = Vector3()
 	local pivot_head_rotation = Rotation()
@@ -558,6 +558,22 @@ function PlayerTweakData:_init_hk51b()
 	local pivot_head_rotation = Rotation(-0.1, 0.2, 0)
 	self.stances.hk51b.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.hk51b.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
+-- HK51b
+local default_init_aa12 = PlayerTweakData._init_aa12
+function PlayerTweakData:_init_aa12()
+	default_init_aa12(self)	
+	local pivot_shoulder_translation = Vector3(11.2307, 17.5519, -1.27527)
+	local pivot_shoulder_rotation = Rotation(6.51011e-06, -0.000117821, -8.70849e-05)
+	local pivot_head_translation = Vector3(10, 20, -2)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.aa12.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.aa12.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	local pivot_head_translation = Vector3(9, 18, -2)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.aa12.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.aa12.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
 

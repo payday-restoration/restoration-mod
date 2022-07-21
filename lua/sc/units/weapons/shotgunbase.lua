@@ -339,7 +339,7 @@ function ShotgunBase:fire_rate_multiplier()
 	if self:in_burst_mode() or self._macno then
 		local no_burst_mult = multiplier
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
-		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
+		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) and not self:weapon_tweak_data().BURST_SLAM then
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
 			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)

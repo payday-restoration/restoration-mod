@@ -505,6 +505,7 @@ end
 
 ]]--
 
+
 function PlayerStandard:_check_action_primary_attack(t, input)
 	local new_action = nil
 	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release
@@ -649,14 +650,16 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						local weap_tweak_data = tweak_data.weapon[weap_base:get_name_id()]
 						local shake_multiplier = weap_tweak_data.shake[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
+						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
+						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 
 						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
 						self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier, 1, 0.15)
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
 						self._equipped_unit:base():tweak_data_anim_stop("equip")
 
-						if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier()) then
-							weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier())
+						if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2) then
+							weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2)
 						end
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
@@ -1650,7 +1653,6 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 
 	if instant_hit then
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
-		log(tostring(speed))
 		if hit then
 			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_bayonet") or self:get_animation("melee"), math.clamp(speed, 0.7, 1.1))
 		else
@@ -1992,6 +1994,13 @@ end
 --Adds burst fire check.
 function PlayerStandard:_check_action_weapon_firemode(t, input)
 	local wbase = self._equipped_unit:base()
+	local is_slamfiring = self._equipped_unit:base():weapon_tweak_data().BURST_SLAM and self._equipped_unit:base():in_burst_mode()
+	if is_slamfiring then
+		self:_interupt_action_steelsight(t)
+		if input.btn_steelsight_state then
+			self._steelsight_wanted = true
+		end
+	end
 	if input.btn_weapon_firemode_press and wbase.toggle_firemode then
 		self:_check_stop_shooting()
 		if wbase:toggle_firemode() then
@@ -2006,7 +2015,11 @@ end
 
 --Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
-	if alive(self._equipped_unit) then
+	if alive(self._equipped_unit) and self._equipped_unit:base() then
+		local is_slamfiring = self._equipped_unit:base():weapon_tweak_data().BURST_SLAM and self._equipped_unit:base():in_burst_mode()
+		if is_slamfiring then
+			self:_interupt_action_steelsight(t)
+		end
 		if self._equipped_unit:base():burst_rounds_remaining() or (self._equipped_unit:base():in_burst_mode() and self._equipped_unit:base()._auto_burst and not self._equipped_unit:base():clip_empty() and self._controller and self._controller:get_input_bool("primary_attack")) then
 			self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true })
 		end
@@ -2025,8 +2038,9 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
+		local is_slamfiring = self._equipped_unit:base():weapon_tweak_data().BURST_SLAM and self._equipped_unit:base():in_burst_mode()
 
-		if self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.3) then
+		if is_slamfiring or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.3)) then
 			self._steelsight_wanted = true
 			return
 		end
@@ -2107,8 +2121,12 @@ function PlayerStandard:_update_slide_locks()
 	if weap_base and weap_base:weapon_tweak_data().lock_slide and not self:_is_reloading() then
 		if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
 			weap_base:tweak_data_anim_stop("magazine_empty")
-			weap_base:tweak_data_anim_stop("reload")
-			weap_base:tweak_data_anim_stop("reload_left")
+			if weap_base:weapon_tweak_data().open_bolt_offset then
+				weap_base:tweak_data_anim_offset("reload", weap_base:weapon_tweak_data().open_bolt_offset or 5)
+			else
+				weap_base:tweak_data_anim_stop("reload")
+				weap_base:tweak_data_anim_stop("reload_left")
+			end
 			if weap_base.AKIMBO then
 				weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
 				weap_base._second_gun:base():tweak_data_anim_stop("reload")
@@ -2117,7 +2135,7 @@ function PlayerStandard:_update_slide_locks()
 		end
 		if --[[not weap_base._starwars and]] not self:_is_reloading() then
 			if weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() == 1 then
-				weap_base:tweak_data_anim_stop("fire")
+				--weap_base:tweak_data_anim_stop("fire")
 				weap_base:tweak_data_anim_stop("magazine_empty")
 				weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty") 
 				if weap_base._fire_second_gun_next == false then
@@ -2144,7 +2162,7 @@ function PlayerStandard:_update_slide_locks()
 			end
 		end
 	end
-end	
+end
 
 
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
@@ -2402,6 +2420,12 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 	
 	if self._state_data.reload_expire_t then
 		local interupt = nil
+		local reload_fix_offset = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset
+		local reload_fix_offset2 = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset2
+		local always_use_empty_reload = self._equipped_unit:base():weapon_tweak_data().always_use_empty_reload
+		if reload_fix_offset then
+			self._equipped_unit:base():tweak_data_anim_stop("reload")
+		end
 		if self._equipped_unit:base():update_reloading(t, dt, self._state_data.reload_expire_t - t) then
 			managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
 			if self._queue_reload_interupt then
@@ -2411,26 +2435,32 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		end
 		if self._state_data.reload_expire_t <= t or interupt then
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
-			self._state_data.reload_expire_t = nil	
-			local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
+			self._state_data.reload_expire_t = nil
+
 			if (not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or (self._equipped_unit:base():weapon_tweak_data().empty_use_mag and is_reload_not_empty == false) then
+				local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
 				if not interupt then
 					self._equipped_unit:base():on_reload()
 				end
 				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
-				
+				log("1")
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
 			elseif self._equipped_unit:base():reload_exit_expire_t() then
 				local is_reload_not_empty = not self._equipped_unit:base():started_reload_empty()
-				local animation_name = is_reload_not_empty and "reload_not_empty_exit" or "reload_exit"
+				local animation_name = (not always_use_empty_reload and is_reload_not_empty and "reload_not_empty_exit") or "reload_exit"
 				local animation = self:get_animation(animation_name)
 				
 				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
 
 				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
 				
-				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier)
+				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier, nil, nil)
+
+				if reload_fix_offset then
+					local reload_anim = is_reload_not_empty and "reload_not_empty" or "reload"
+					self._equipped_unit:base():tweak_data_anim_play(reload_anim, speed_multiplier, nil)
+				end
 				
 				
 			elseif self._state_data.reload_expire_t and self._state_data.reload_expire_t <= t then --Update timers in case player total ammo changes to allow for more to be reloaded.

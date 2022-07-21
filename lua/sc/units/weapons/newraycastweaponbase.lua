@@ -243,6 +243,10 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		multiplier = multiplier * hipfire_spread_mult
 	end
 
+	if self:in_burst_mode() then
+		multiplier = multiplier * (self._burst_fire_spread_multiplier or 1)
+	end
+
 	spread_area = spread_area * multiplier
 
 	--Convert spread area to degrees.
@@ -317,7 +321,7 @@ end
 
 function NewRaycastWeaponBase:recoil_multiplier(...)
 	local mult = recoil_multiplier_original(self, ...)
-	if self:in_burst_mode()then
+	if self:in_burst_mode() then
 		if self._burst_fire_last_recoil_multiplier and (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
 			mult = mult * (self._burst_fire_last_recoil_multiplier or 1)
 		elseif self._burst_fire_recoil_multiplier then
@@ -471,6 +475,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
 		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.9
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
+		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.06) or 0.12
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
@@ -720,14 +725,84 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:precalculate_ammo_pickup()
 end
 
-local old_tweak_data_anim_play = NewRaycastWeaponBase.tweak_data_anim_play
-function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier)
+function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
 	if self._starwars then
 		return
 	end
 	local orig_anim = anim
-	old_tweak_data_anim_play(self, anim, speed_multiplier)
+	local unit_anim = self:_get_tweak_data_weapon_animation(orig_anim)
+	local effect_manager = World:effect_manager()
+
+	if self._active_animation_effects[anim] then
+		for _, effect in ipairs(self._active_animation_effects[anim]) do
+			World:effect_manager():kill(effect)
+		end
+	end
+
+	self._active_animation_effects[anim] = {}
+	local data = tweak_data.weapon.factory[self._factory_id]
+
+	if data.animations and data.animations[unit_anim] then
+		local anim_name = data.animations[unit_anim]
+		local ids_anim_name = Idstring(anim_name)
+		local length = self._unit:anim_length(ids_anim_name)
+		speed_multiplier = speed_multiplier or 1
+
+		self._unit:anim_stop(ids_anim_name)
+		self._unit:anim_play_to(ids_anim_name, length, speed_multiplier)
+
+		local offset = self:_get_anim_start_offset(anim_name) or set_offset2
+
+		if offset then
+			self._unit:anim_set_time(ids_anim_name, offset)
+		end
+	end
+
+	if data.animation_effects and data.animation_effects[unit_anim] then
+		local effect_table = data.animation_effects[unit_anim]
+
+		if effect_table then
+			effect_table = clone(effect_table)
+			effect_table.parent = effect_table.parent and self._unit:get_object(effect_table.parent)
+			local effect = effect_manager:spawn(effect_table)
+
+			table.insert(self._active_animation_effects[anim], effect)
+		end
+	end
+
+	for part_id, data in pairs(self._parts) do
+		if data.unit and data.animations and data.animations[unit_anim] then
+			local anim_name = data.animations[unit_anim]
+			local ids_anim_name = Idstring(anim_name)
+			local length = data.unit:anim_length(ids_anim_name)
+			speed_multiplier = speed_multiplier or 1
+
+			data.unit:anim_stop(ids_anim_name)
+			data.unit:anim_play_to(ids_anim_name, length, speed_multiplier)
+
+			local offset = self:_get_anim_start_offset(anim_name) or set_offset
+
+			if offset then
+				data.unit:anim_set_time(ids_anim_name, offset)
+			end
+		end
+
+		if data.unit and data.animation_effects and data.animation_effects[unit_anim] then
+			local effect_table = data.animation_effects[unit_anim]
+
+			if effect_table then
+				effect_table = clone(effect_table)
+				effect_table.parent = effect_table.parent and data.unit:get_object(effect_table.parent)
+				local effect = effect_manager:spawn(effect_table)
+
+				table.insert(self._active_animation_effects[anim], effect)
+			end
+		end
+	end
+
+	self:set_reload_objects_visible(true, anim)
 	NewRaycastWeaponBase.super.tweak_data_anim_play(self, orig_anim, speed_multiplier)
+
 	return true
 end
 
@@ -1213,4 +1288,22 @@ function NewRaycastWeaponBase:get_recorded_fire_mode(id)
 	end
 
 	return nil
+end
+
+--Maybe hopefully fix the ammo eff. aced skill crash
+function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
+	if self._bullet_objects then
+		for i, objects in pairs(self._bullet_objects) do
+			if objects and type(objects) == "table" then --added this to make sure "objects" is even a table as I'm pretty sure the next for loop is what shits the bed
+				for _, object in ipairs(objects) do
+					if object[1] then
+						local ammo_base = self:ammo_base()
+						local ammo = ammo_base[ammo_func](ammo_base)
+	
+						object[1]:set_visibility(i <= ammo)
+					end
+				end
+			end
+		end
+	end
 end

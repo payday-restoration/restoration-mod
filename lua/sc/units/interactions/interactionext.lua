@@ -141,7 +141,7 @@ function SentryGunInteractionExt:_add_string_macros(macros)
 		local ammo_ratio = Network:is_server() and self._unit:weapon():ammo_ratio() or self._unit:weapon():get_virtual_ammo_ratio()
 		sentry_gun_interaction_add_string_macros(macros, ammo_ratio)
 		local health_ratio = math.floor(100 * sentry._unit:character_damage():health_ratio()) --% of health remaining.
-		local new_macro = "Hold " .. macros.BTN_INTERACT .. managers.localization:text("pickup_sentry_macro") .. tostring(health_ratio) .. "%% Health Remaining."
+		local new_macro = "Hold " .. macros.BTN_INTERACT .. managers.localization:text("pickup_sentry_macro") .. tostring(health_ratio) .. "% Health Remaining."
 		new_macro = string.gsub(new_macro,"$AMMO_LEFT",macros.AMMO_LEFT) --# of bullets remaining.
 		--new_macro = string.gsub(new_macro,"$BTN_INTERACT",macros.BTN_INTERACT) --Using macros to add the health_ratio ate the entire string. Will investigate later.
 		macros.AMMO_LEFT = new_macro

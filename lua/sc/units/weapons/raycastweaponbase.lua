@@ -889,6 +889,37 @@ function RaycastWeaponBase:remove_ammo(percent)
 	return total_ammo - ammo
 end
 
+function RaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
+	local animation = self:_get_tweak_data_weapon_animation(anim)
+	if animation then
+		self:anim_play(animation, speed_multiplier, set_offset, set_offset2)
+
+		return true
+	end
+
+	return false
+end
+
+function RaycastWeaponBase:anim_play(anim, speed_multiplier, set_offset, set_offset2)
+	if anim then
+		local length = self._unit:anim_length(Idstring(anim))
+		local reload_fix_mult2 = self:weapon_tweak_data().reload_fix_mult2
+		speed_multiplier = speed_multiplier or 1
+		if reload_fix_mult2 then
+			speed_multiplier = speed_multiplier * (reload_fix_mult2 * (1 / speed_multiplier))
+		end
+
+		self._unit:anim_stop(Idstring(anim))
+		self._unit:anim_play_to(Idstring(anim), length, speed_multiplier)
+
+		local offset = self:_get_anim_start_offset(anim) or set_offset2
+
+		if offset then
+			self._unit:anim_set_time(Idstring(anim), offset)
+		end
+	end
+end
+
 BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
 BleedBulletBase.VARIANT = "bleed"
 ProjectilesBleedBulletBase = ProjectilesBleedBulletBase or class(BleedBulletBase)

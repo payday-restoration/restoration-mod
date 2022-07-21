@@ -23,6 +23,7 @@
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" target_type="sequence_manager" merge_mode="script_merge"/>			
 		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="blackhawks.xml" type="custom_xml" target_file="units/payday2/vehicles/air_vehicle_blackhawk/vehicle_blackhawk" target_type="sequence_manager" merge_mode="script_merge"/>
 	</ScriptMods>	
 	
     <Hooks directory="lua">

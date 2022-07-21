@@ -1,0 +1,64 @@
+<materials version="3" group="bex_heli">    
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material name="blackhawk_interior1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/interior_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/air_vehicle_blackhawk/interior_nm"/>
+    </material>
+    <material name="blackhawk_chassi1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_blackhawk_prop_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/air_vehicle_blackhawk/blackhawk_prop_nm"/>
+    </material>
+    <material name="mtr_pilot" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_pilot_unmarked_df"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="mtr_glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE">
+        <variable value="0 1 0.58999997377396" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="0 3659 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="blackhawk_fuelrod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_blackhawk_fuelrod_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/air_vehicle_blackhawk/blackhawk_fuelrod_nm"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE" decal_material="glass_breakable" version="2" name="mtr_glass_breakable_dark">
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_dark_b_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="2 1 0.59999001026154" type="vector3" name="environment_settings"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" decal_material="sheet_metal" version="2" name="light_cone">
+        <diffuse_texture file="units/world/street/street_lights/cone_light_df"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" decal_material="sheet_metal" version="2" name="blue_diod">
+        <diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/light_glow_blue_df"/>
+        <variable value="9.9900999069214" type="scalar" name="falloff_exp"/>
+        <variable value="desklight" type="scalar" name="intensity"/>
+        <variable value="-0 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" decal_material="sheet_metal" version="2" name="red_diod">
+        <diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/light_glow_df"/>
+        <variable value="9.9900999069214" type="scalar" name="falloff_exp"/>
+        <variable value="neonsign" type="scalar" name="intensity"/>
+        <variable value="0 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" decal_material="sheet_metal" version="2" name="red_diod_blink">
+        <diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/light_glow_df"/>
+        <variable value="8" type="scalar" name="falloff_exp"/>
+        <variable value="desklight" type="scalar" name="intensity"/>
+        <variable value="1 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" decal_material="sheet_metal" version="2" name="white_diod_blink">
+        <diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/light_glow_white_df"/>
+        <variable value="7" type="scalar" name="falloff_exp"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="0.43300008773804 5 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material version="2" name="rotor_blade" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE1_TEXTURE">
+        <diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/police_rotor_blur_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <detail_diffuse_texture file="units/payday2/vehicles/air_vehicle_blackhawk/police_rotor_blur_df"/>
+    </material>
+</materials>

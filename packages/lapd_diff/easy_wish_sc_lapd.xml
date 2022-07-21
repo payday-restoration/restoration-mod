@@ -124,8 +124,7 @@
 	<!--lapd textures-->
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_nm" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/ene_city_heavy_df" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/ene_city_heavy_nm" />			
+	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/spook_heavy_df" />	
@@ -234,8 +233,6 @@
     <object				path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
 	<model				path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<material_config	path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<material_config	path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour"/>
 	
 	<!--City Heavy r870-->
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>

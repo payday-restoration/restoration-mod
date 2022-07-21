@@ -303,7 +303,7 @@
 				<object name="g_helmet_plate" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 
 				</object>
-				<object name="g_helmet_plate_lod" 		enabled="false" lod="1" >
+				<object name="g_helmet_plate_lod1" 		enabled="false" lod="1" >
 
 				</object>
 			</lod_object>
@@ -394,14 +394,14 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass">
-				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000" >
 				</object>
 				<object name="g_helmet_glass_lod1" 		enabled="true" lod="1" >
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
-				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0" >
 				</object>
 				<object name="g_helmet_glass_crk_lod1" 	enabled="false" lod="1" >
 				</object>

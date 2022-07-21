@@ -82,7 +82,7 @@
 	<model				path="units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/genshill_helm_df"  />	
-	<texture			path="units/payday2/characters/shared_textures/genshill_helm_nm"  />		
+			
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df"  />
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/helmet_shotgun_df"  />		
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_city_heavy_df"  />	
@@ -112,7 +112,6 @@
 	<unit				path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>	
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc"  />	
-	<texture			path="units/payday2/characters/shared_textures/mask_df" />
 		
 	<!--swat cloaker-->	
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  load="true"/>

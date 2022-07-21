@@ -83,7 +83,7 @@ function PlayerInventory:_start_feedback_effect(end_time, interval, range)
 	self._jammer_data = {
 		effect = "feedback",
 		t = end_time + 0.3,
-		interval = interval or 2.5,
+		interval = interval or 1.5,
 		range = range or 1200,
 		sound = self._unit:sound_source():post_event("ecm_jammer_puke_signal")
 	}

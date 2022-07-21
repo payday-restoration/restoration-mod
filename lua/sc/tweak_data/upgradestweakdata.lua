@@ -1804,10 +1804,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
-		2
+		1.2
 	}	
 	self.values.team.pocket_ecm_heal_on_kill = {
-		1
+		0.6
 	}	
 	
 	--Leech

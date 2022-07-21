@@ -2455,11 +2455,11 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 
 				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
 				
-				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier, nil, nil)
+				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier, nil, reload_fix_offset2)
 
 				if reload_fix_offset then
 					local reload_anim = is_reload_not_empty and "reload_not_empty" or "reload"
-					self._equipped_unit:base():tweak_data_anim_play(reload_anim, speed_multiplier, nil)
+					self._equipped_unit:base():tweak_data_anim_play(reload_anim, speed_multiplier, reload_fix_offset)
 				end
 				
 				

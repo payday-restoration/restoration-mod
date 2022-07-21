@@ -1232,7 +1232,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "크기가 축소된 Reinfeld 880 산탄총의 애프터마켓 버전. 은닉성을 원하고 손목을 파괴하고 싶은 사람들을 위한 산탄총입니다.",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897 산탄총",
-		["bm_menu_sc_m1897_desc"] = "상징적이고 역사적인 이 작품은 진흙 투성이의 참호에서 치열한 태평양 섬 정글에 이르기까지 모든 것을 보았고 꽤 효과적인 발화점이라는 나쁜 평판을 받았습니다.",
+		["bm_menu_sc_m1897_desc"] = "상징적이고 역사적인 이 작품은 진흙 투성이의 참호에서 치열한 태평양 섬 정글에 이르기까지 모든 것을 보았고 꽤 효과적인 발화점이라는 나쁜 평판을 받았습니다.\n\n대체 발사 모드는 #{important_1}#더 많은 반동과 범위를 희생하는 대신 #{skill_color}#슬램 발사로 연사력을 증가시킵니다.##",
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "오래된 고전 산탄총의 개선된 버전이고, LEO, 군인, 민간인, 은행 강도 모두에게 괜찮은 선택을 할 수 있는 산탄총입니다.",
 		--R870
@@ -1322,7 +1322,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM 60 DAMAGE ARs
 		--SCAR-L
 		["bm_w_scarl"] = "Eagle Light 소총",
-		
+		--Valmet Rk.62
+		["bm_w_rk62"] = "Velmer 소총",		
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg 경기관총",
@@ -1434,7 +1435,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_disabled"] = "해당 무기는 캡틴 어텀에 의해 비활성화 되었습니다.\n그리고 하이스트에서 사용 시 충돌이 발생할 것입니다.",
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "인벤토리에 아직 해당 무기를 가지고 있다면 장비하지 마십시오.\n\n현재 해당 무기의 밸런스를 맞출 방법을 찾을 수 없습니다",		
 		["empty"] = "",
-		["missing_cap"] = "#{risk}#Custom Attachment Points가## #{important_1}#설치되지 않았습니다.##\n\n해당 부착물은 슬롯의 기본 모양으로 보일 것입니다.",		
+		["missing_cap"] = "#{risk}#Custom Attachment Points가## #{important_1}#설치되지 않았습니다.##\n\n해당 부착물은 슬롯의 기본 모양으로 보일 것입니다.",
+		["bm_slamfire_generic_desc"] = "대체 발사 모드는 #{important_1}#더 많은 반동과 범위를 희생하는 대신 #{skill_color}#슬램 발사로 연사력을 증가시킵니다.##",		
 		["bm_lmg_generic_desc"] = "#{important_1}#지향 사격 시 명중률이 매우 감소합니다.##",		
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통할 수 있습니다.##",
@@ -1833,6 +1835,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_aug_sc_desc"] = "\"도망쳐보라고! 니 목숨을 위해 간청해봐라!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n중학교 학생회장.",
 					["bm_wp_ak5_fg_fnc"] = "훈코 킷",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"주인의 뜻에 응하는 것은 도구의 기쁨이다.\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n이 묵직한 \"주인공의 아우라\"를 발산해보십시오.",
+					["bm_w_l85a2"] = "에루",
+						["bm_l85a2_sc_desc"] = "\"...\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n수줍음이 많고 서투른 그녀는 믿을 수 없는 성격과 많이 깨는 버릇이 있습니다.",
+					["bm_w_rk62"] = "사코",
+						["bm_rk62_sc_desc"] = "\"얼마나 멋진 비명은 뭘까! 너희가 죽는 소리일까!\"\n\n#{stats_positive}#세이쇼 학원##에 재학중인 편입생.\n그녀가 다니는 모든 학교의 \"알파\"가 되려는 충동을 가진 엘프 귀가 달린 새디스트입니다. 또한 훈코를 좋아하는듯합니다.",						
 	
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "파루",
@@ -1901,6 +1907,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end	
 	
 	-- DON'T ADD THIS AT OTHER LANGUAGE
+	-- I want to write it as a own descriptions, but I don't know what to write
+	-- also why overkill not add ~ font, I hate it >:(
 	-- most of the descriptions and names is taken from the wiki
 	local blue = math.rand(1)
 	local archive = 0.05

@@ -8,7 +8,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="NPCRaycastWeaponBase" >
-			<var name="name_id" value="m4_npc" />
+			<var name="name_id" value="swamp_npc" />
 			<var name="_multivoice" value="true" />
 		</extension>
 		<extension name="damage" class="UnitDamage" />

@@ -1,77 +1,67 @@
-<materials version="3" group="ene_zeal_swat_heavy">
-    <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_nm"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_df"/>
+<materials version="3" group="ene_akan_fbi_heavy_g36">
+	<material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_cop_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_cop_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material name="mtr_body_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_nm" mip="1"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_cop_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_cop_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material name="mtr_body_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_df" mip="4"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_head_nm"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_head_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material name="mtr_head_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_head_nm" mip="1"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_head_df" mip="1"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material name="mtr_head_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_head_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_head_df" mip="4"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-
-    <material name="mtr_ene_acc_swat_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
-        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_nm"/>
-        <diffuse_texture        file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-    
-    <material name="mtr_ene_acc_swat_helmet_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
-        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_nm" mip="1"/>
-        <diffuse_texture        file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df" mip="1"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material name="mtr_ene_acc_swat_helmet_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
-        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_nm" mip="4"/>
-        <diffuse_texture        file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df" mip="4"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-
-	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
-        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
-        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
-        <diffuse_texture file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df"/>
-        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
-    </material>
-
-	<material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df" mip="4"/>
 	</material>
 	
+	<material name="mtr_balaclava" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_balaclava_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_1_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/ene_zeal_city_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_1_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/ene_zeal_city_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	
+	<material name="mtr_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	
+	<material name="mtr_helmet_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+		
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/bulldozer_glass_op"/>
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
+	
+	<material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" mip="4"/>
+	</material>	
+
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

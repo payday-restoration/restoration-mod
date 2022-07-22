@@ -139,8 +139,8 @@
 	<model				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" />	
 	<cooked_physics		path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" />
 	
-	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
-	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />				
+	
+					
 	<!-- fbi tier end -->
 	
 	<!-- specials-->

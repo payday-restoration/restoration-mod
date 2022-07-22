@@ -370,8 +370,8 @@ local weapons_map = {
 	
 	[Idstring("units/pd2_dlc_casino/characters/ene_secret_service_1_casino/ene_secret_service_1_casino"):key()] = {"m1911_npc", "mp5", "m4"},
 	
-	[Idstring("units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew"):key()] = {"deagle", "ump", "oicw"},
-	[Idstring("units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2"):key()] = {"deagle", "ump", "oicw"},
+	[Idstring("units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew"):key()] = {"deagle", "ump", "m4"},
+	[Idstring("units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2"):key()] = {"deagle", "ump", "m4"},
 	
 	[Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1"):key()] = {"m1911_npc", "c45", "ump", "m4"},
 	[Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"):key()] = {"m1911_npc", "c45", "ump", "m4"},

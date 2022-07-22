@@ -545,13 +545,7 @@ function CopActionHurt:init(action_desc, common_data)
 				end
 			end
 
-			if action_type then
-				if action_type == "death" and common_data.ext_anim.bleedout_loop then
-					redir_res = common_data.ext_movement:play_state("std/fatal/to_dead")
-				else
-					redir_res = common_data.ext_movement:play_redirect(action_type)
-				end
-			end
+			redir_res = common_data.ext_movement:play_redirect(action_type)
 
 			if not redir_res then
 				return

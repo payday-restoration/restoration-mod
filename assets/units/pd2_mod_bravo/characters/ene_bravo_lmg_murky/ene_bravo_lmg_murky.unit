@@ -7,7 +7,6 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" />
-		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo" />			
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" />			
 	</dependencies>
@@ -16,7 +15,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="weekend_lmg" />
-			<var name="_default_weapon_id" value="m60_bravo" />
+			<var name="_default_weapon_id" value="m60_om" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

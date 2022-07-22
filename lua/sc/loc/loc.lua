@@ -133,10 +133,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
 		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
 		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires reload.",
-		["RestorationModSprintCancelTitleID"] = "Evasion Aced Reload Cancel",
-		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill.",
+		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
+		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
-		["RestorationModSevenHoldDescID"] = "Toggle whether or not the interact key acts as a toggle.",
+		["RestorationModSevenHoldDescID"] = "Enable/disable whether or not the interact key acts as a toggle.",
+		["RestorationModSevenHoldDeployCancelTitleID"] = "Deployable Cancels Interact",
+		["RestorationModSevenHoldDeployCancelDescID"] = "Enable/disable whether or not the deployable key is what's used to cancel an active toggle interaction. Requires Toggle Interactions to be enabled to have any effect.",
+		["RestorationModAimDeploysBipodTitleID"] = "ADS Deploys Bipod",
+		["RestorationModAimDeploysBipodDescID"] = "Enable/disable bipods auto-mounting when ADSing over a valid surface.",
+		["RestorationModMoveCancelBipodTitleID"] = "Movement Dismounts Bipod",
+		["RestorationModMoveCancelBipodDescID"] = "Enable/disable basic movement inputs dismounting bipods.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 
@@ -1688,8 +1694,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_corgi_b_short"] = "MSG Barrel",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "Deploy/Undeploy by pressing $BTN_BIPOD on a valid surface.\n\nReduces recoil by 60% and increases range by 30%  while deployed.",
-		["bm_sc_bipod_desc"] = "Deploy/Undeploy by holding $BTN_BIPOD on a valid surface.\n\nReduces recoil by 60% and increases range by 30% while deployed.",
+		["bm_sc_bipod_desc_pc"] = "Mount by pressing #{skill_color}#$BTN_BIPOD## over a valid surface. Press again to dismount.\n\nReduces recoil by #{skill_color}#60%## and increases range by #{skill_color}#30%## while mounted.\n\n#{item_stage_2}#Additional options for mounting can be found in Restoration Mod's extra options menu.##",
+		["bm_sc_bipod_desc"] = "Mount by holding #{skill_color}#$BTN_BIPOD## over a valid surface. Hold again to dismount.\n\nReduces recoil by #{skill_color}#60%## and increases range by #{skill_color}#30%## while mounted.\n\n#{item_stage_2}#Additional options for mounting can be found in Restoration Mod's extra options menu.##",
+		["hud_hint_bipod_moving"] = "Cannot mount while moving",
+		["hud_hint_bipod_slide"] = "Cannot mount while sliding",
+		["hud_hint_bipod_air"] = "Cannot mount while airborne",
+		["hud_hint_bipod_lean"] = "Cannot mount while leaning",
 
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",

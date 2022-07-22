@@ -8462,7 +8462,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 
 	--Bringing back my old MG42 mag/belt fix method for more accurate looking DLT-19
 	self.parts.wpn_fps_lmg_mg42_dummy_mag = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)	
-	self.parts.wpn_fps_lmg_mg42_dummy_mag.type = "magazine_extra"
+	self.parts.wpn_fps_lmg_mg42_dummy_mag.type = "ammo"
 	self.parts.wpn_fps_lmg_mg42_dummy_mag.adds = nil
 	self.parts.wpn_fps_lmg_mg42_dummy_mag.bullet_objects = {
 		prefix = "g_bullet_", 
@@ -13106,6 +13106,30 @@ end)
 --Airbow
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 
+	self.parts.wpn_fps_bow_ecp_s_standard.a_obj = "a_g"
+	self.parts.wpn_fps_bow_ecp_s_standard.forbids = {
+		"wpn_fps_upg_m4_g_ergo",
+		"wpn_fps_upg_m4_g_sniper",
+		"wpn_fps_upg_m4_g_hgrip",
+		"wpn_fps_upg_m4_g_mgrip",
+		"wpn_fps_snp_tti_g_grippy",
+		"wpn_fps_upg_g_m4_surgeon"
+	}
+
+
+	self.parts.wpn_fps_bow_ecp_s_bare_grip = deep_clone(self.parts.wpn_fps_bow_ecp_s_bare)
+	self.parts.wpn_fps_bow_ecp_s_bare_grip.pcs = nil
+	self.parts.wpn_fps_bow_ecp_s_bare_grip.a_obj = "a_g"
+	self.parts.wpn_fps_bow_ecp_s_bare_grip.supported = true
+	self.parts.wpn_fps_bow_ecp_s_bare_grip.stats = { value = 1 }
+	self.parts.wpn_fps_bow_ecp_s_bare_grip.visibility = {
+		{
+			objects = {
+				g_stock_bare = false
+			}
+		}
+	}
+
 	--Light Stock
 	self.parts.wpn_fps_bow_ecp_s_bare.pcs = {
 		10,
@@ -13113,12 +13137,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 		30,
 		40
 	}
+	self.parts.wpn_fps_bow_ecp_s_bare.a_obj = "a_g"
+	self.parts.wpn_fps_bow_ecp_s_bare.adds = { "wpn_fps_bow_ecp_s_bare_grip" }
 	self.parts.wpn_fps_bow_ecp_s_bare.supported = true
 	self.parts.wpn_fps_bow_ecp_s_bare.stats = {
 		value = 3,
-		concealment = 1,
-		recoil = -1
+		spread = -1,
+		recoil = -4,
+		concealment = 3,
 	}
+	self.parts.wpn_fps_bow_ecp_s_bare.custom_stats = {
+		ads_speed_mult = 0.925
+	}
+	self.parts.wpn_fps_bow_ecp_s_bare.visibility = {
+		{
+			objects = {
+				g_grip = false
+			}
+		}
+	}
+
 	
 	--Explosive Arrows
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.is_a_unlockable = true
@@ -13146,6 +13184,63 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 			custom_data = {}
 		}
 	}
+
+
+	if not self.wpn_fps_bow_ecp.override then
+		self.wpn_fps_bow_ecp.override = {}
+	end
+
+	self.wpn_fps_bow_ecp.override.wpn_fps_upg_m4_g_ergo = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_upg_m4_g_sniper = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_upg_m4_g_hgrip = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_upg_m4_g_mgrip = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_snp_tti_g_grippy = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_upg_g_m4_surgeon = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_ass_m4_g_fancy = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+
+	table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_ergo")
+	table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_sniper")
+	table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_hgrip")
+	table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_mgrip")
+	table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_snp_tti_g_grippy")
+	table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_g_m4_surgeon")
+
+	self.wpn_fps_bow_ecp_npc.uses_parts = deep_clone(self.wpn_fps_bow_ecp.uses_parts)	
 
 end)
 
@@ -19129,11 +19224,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		--Sport Grip
+		self.parts.wpn_fps_bow_ecp_s_bare.adds = { "wpn_fps_upg_m4_g_standard_vanilla" }
 		self.parts.wpn_fps_ass_m4_g_fancy.supported = true
+		self.parts.wpn_fps_ass_m4_g_fancy.unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_s_bare"
+		self.parts.wpn_fps_ass_m4_g_fancy.visibility = {
+			{
+				objects = {
+					g_stock_bare = false
+				}
+			}
+		}
 		self.parts.wpn_fps_ass_m4_g_fancy.stats = {
 			value = 1,
-			recoil = 4,
-			concealment = -2
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_m4_g_fancy.custom_stats = {
+			ads_speed_mult = 0.975
 		}
 
 		--(AMR-16) Aftermarket Marksman Foregrip

@@ -776,8 +776,9 @@ end
 
 function PlayerStandard:_check_action_interact(t, input)
 	if restoration.Options:GetValue("OTHER/SevenHold") then 
+		local deploy_cancel = restoration.Options:GetValue("OTHER/SevenHoldDeployCancel")
 		if self:_interacting() then
-			if input.btn_interact_press then
+			if (not deploy_cancel and input.btn_interact_press) or (deploy_cancel and input.btn_use_item_press) then
 				self:_interupt_action_interact()
 				return false
 			elseif input.btn_interact_release then
@@ -1940,16 +1941,18 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	end
 
 	if AdvMov and AdvMov.settings then
-		if self._is_sliding and not self._state_data.in_steelsight and AdvMov.settings.slidewpnangle then
-			stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
-			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, AdvMov.settings.slidewpnangle)
-		end
-		if self._is_wallrunning and not self._state_data.in_steelsight and AdvMov.settings.wallrunwpnangle then
-			stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
-			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, -1 * AdvMov.settings.wallrunwpnangle)
-		end
-		if timemult then
-			duration_multiplier = duration_multiplier * timemult
+		if not self._state_data.in_steelsight then
+			if self._is_sliding and AdvMov.settings.slidewpnangle then
+				stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
+				stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, AdvMov.settings.slidewpnangle)
+			end
+			if self._is_wallrunning and AdvMov.settings.wallrunwpnangle then
+				stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
+				stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, -1 * AdvMov.settings.wallrunwpnangle)
+			end
+			if timemult then
+				duration_multiplier = duration_multiplier * timemult
+			end
 		end
 		if AdvMov.settings.goldeneye and ((AdvMov.settings.goldeneye == 2 and self._equipped_unit:base().akimbo) or AdvMov.settings.goldeneye == 3 or self._equipped_unit:base()._use_goldeneye_reload) and self:_is_reloading() then
 			stance_mod.translation = Vector3(0, 0, -100)
@@ -2033,6 +2036,97 @@ function PlayerStandard:force_recoil_kick(weap_base, shots_fired)
 	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
 end
 
+function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
+	local new_action = nil
+	local action_forbidden = false
+
+	if not input.btn_deploy_bipod then
+		return
+	end
+	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
+
+	action_forbidden = self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
+
+	if not action_forbidden then
+		local weapon = self._equipped_unit:base()
+		local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", weapon._parts)
+
+		if bipod_part and bipod_part[1] then
+			local bipod_unit = bipod_part[1].unit:base()
+
+			bipod_unit:check_state(autodeploy)
+
+			new_action = true
+		end
+	else
+		if not autodeploy then
+			if self._state_data.in_air then
+				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_air") })
+			elseif self._is_sliding then
+				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_slide") })
+			elseif is_leaning then
+				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_lean") })
+			end
+		end
+	end
+
+	return new_action
+end
+
+function PlayerStandard:_check_action_steelsight(t, input)
+	local new_action = nil
+
+	if alive(self._equipped_unit) then
+		local result = nil
+		local weap_base = self._equipped_unit:base()
+
+		if weap_base.manages_steelsight and weap_base:manages_steelsight() then
+			if input.btn_steelsight_press and weap_base.steelsight_pressed then
+				result = weap_base:steelsight_pressed()
+			elseif input.btn_steelsight_release and weap_base.steelsight_released then
+				result = weap_base:steelsight_released()
+			end
+
+			if result then
+				if result.enter_steelsight and not self._state_data.in_steelsight then
+					self:_start_action_steelsight(t)
+
+					new_action = true
+				elseif result.exit_steelsight and self._state_data.in_steelsight then
+					self:_end_action_steelsight(t)
+
+					new_action = true
+				end
+			end
+
+			return new_action
+		end
+	end
+
+	if managers.user:get_setting("hold_to_steelsight") and input.btn_steelsight_release then
+		self._steelsight_wanted = false
+
+		if self._state_data.in_steelsight then
+			self:_end_action_steelsight(t)
+
+			new_action = true
+		end
+	elseif input.btn_steelsight_press or self._steelsight_wanted then
+
+		if self._state_data.in_steelsight then
+			self:_end_action_steelsight(t)
+
+			new_action = true
+		elseif not self._state_data.in_steelsight then
+			self:_start_action_steelsight(t)
+
+			new_action = true
+		end
+	end
+
+	return new_action
+end
+
 function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._equipped_unit and self._equipped_unit:base() then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
@@ -2058,6 +2152,10 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		self._steelsight_wanted = true
 
 		return
+	end
+
+	if not self:_is_using_bipod() and restoration.Options:GetValue("OTHER/AimDeploysBipod") and not self._moving then
+		self:_check_action_deploy_bipod(t, {btn_deploy_bipod = true}, true)
 	end
 
 	self:_break_intimidate_redirect(t)

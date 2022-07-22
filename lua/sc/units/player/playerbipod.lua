@@ -15,12 +15,16 @@ function PlayerBipod:_enter(enter_data)
 		PlayerBipod.super:start_deploying_bipod((tweak_data.timers.deploy_bipod or 1)/speed_multiplier)
 		self._equipped_unit:base():tweak_data_anim_stop("undeploy")
 
+		local require_optic = tweak_data.bipod_req_scope
+		local has_optic = self._equipped_unit:base()._has_scope
+		local disable_bipod_anims = tweak_data.no_bipod_anims or (require_optic and not has_optic) or nil
+
 		if self._equipped_unit:base()._deploy_anim_override then
 			equipped_unit_id = self._equipped_unit:base()._deploy_anim_override
 		end
 
 		if not tweak_data.custom_bipod == true then
-			local result = self._ext_camera:play_redirect(Idstring(tweak_data.animations.bipod_enter .. "_" .. equipped_unit_id), speed_multiplier)
+			local result = not disable_bipod_anims and self._ext_camera:play_redirect(Idstring(tweak_data.animations.bipod_enter .. "_" .. equipped_unit_id), speed_multiplier)
 			local result_deploy = self._equipped_unit:base():tweak_data_anim_play("deploy", speed_multiplier)
 		end
 		self._headbob = 0
@@ -28,27 +32,27 @@ function PlayerBipod:_enter(enter_data)
 
 		self._ext_camera:set_shaker_parameter("headbob", "amplitude", 0)
 
-
-		if not tweak_data.custom_bipod == true then
-			PlayerStandard.ANIM_STATES.bipod = {
-				recoil = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id),
-				recoil_steelsight = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id),
-				recoil_enter = Idstring(tweak_data.animations.bipod_recoil_enter .. "_" .. equipped_unit_id),
-				recoil_loop = Idstring(tweak_data.animations.bipod_recoil_loop .. "_" .. equipped_unit_id),
-				recoil_exit = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id)
-			}
+		if not disable_bipod_anims then
+			if not tweak_data.custom_bipod == true then
+				PlayerStandard.ANIM_STATES.bipod = {
+					recoil = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id),
+					recoil_steelsight = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id),
+					recoil_enter = Idstring(tweak_data.animations.bipod_recoil_enter .. "_" .. equipped_unit_id),
+					recoil_loop = Idstring(tweak_data.animations.bipod_recoil_loop .. "_" .. equipped_unit_id),
+					recoil_exit = Idstring(tweak_data.animations.bipod_recoil_exit .. "_" .. equipped_unit_id)
+				}
+			end
+			if tweak_data.use_custom_anim_state then
+				PlayerStandard.ANIM_STATES.bipod = {
+					recoil = Idstring("recoil_steelsight"),
+					recoil_steelsight = Idstring("recoil_steelsight"),
+					recoil_enter = Idstring("recoil_enter"),
+					recoil_loop = Idstring("recoil_loop"),
+					recoil_exit = Idstring("recoil_exit")
+				}
+			end
+			self:set_animation_state("bipod")
 		end
-		if tweak_data.use_custom_anim_state then
-			PlayerStandard.ANIM_STATES.bipod = {
-				recoil = Idstring("recoil_steelsight"),
-				recoil_steelsight = Idstring("recoil_steelsight"),
-				recoil_enter = Idstring("recoil_enter"),
-				recoil_loop = Idstring("recoil_loop"),
-				recoil_exit = Idstring("recoil_exit")
-			}
-		end
-
-		self:set_animation_state("bipod")
 		self._unit:sound_source():post_event("wp_steady_in")
 		self:_stance_entered()
 		self:_husk_bipod_data()
@@ -69,10 +73,14 @@ function PlayerBipod:exit(state_data, new_state_name)
 
 	self._equipped_unit:base():tweak_data_anim_stop("deploy")
 
-if not tweak_data.custom_bipod == true then
-	local result = self._ext_camera:play_redirect(Idstring(tweak_data.animations.bipod_exit .. "_" .. equipped_unit_id), speed_multiplier)
-	local result_deploy = self._equipped_unit:base():tweak_data_anim_play("undeploy", speed_multiplier)
-end
+	local require_optic = tweak_data.anim_req_scope
+	local has_optic = self._equipped_unit:base()._has_scope
+	local disable_bipod_anims = tweak_data.no_bipod_anims or (require_optic and not has_optic) or nil
+
+	if not tweak_data.custom_bipod == true then
+		local result = not disable_bipod_anims and self._ext_camera:play_redirect(Idstring(tweak_data.animations.bipod_exit .. "_" .. equipped_unit_id), speed_multiplier)
+		local result_deploy = self._equipped_unit:base():tweak_data_anim_play("undeploy", speed_multiplier)
+	end
 
 	self._unit:camera():camera_unit():base():remove_limits()
 
@@ -170,17 +178,17 @@ function PlayerBipod:_stance_entered(unequipped)
 
 	misc_attribs = (not self:_is_using_bipod() or self:_is_throwing_projectile() or stances.bipod) and (self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard)
 	if self:_is_using_bipod() then
-		misc_attribs = stances.bipod
+		misc_attribs = (self._state_data.in_steelsight and stances.steelsight) or stances.bipod
 	end
 
 	if not misc_attribs then
 		stances = self._equipped_unit:base():weapon_tweak_data().stances
-		misc_attribs = stances.bipod
+		misc_attribs = (self._state_data.in_steelsight and stances.steelsight) or stances.bipod
 	end
 
 	local duration = tweak_data.player.TRANSITION_DURATION + (self._equipped_unit:base():transition_duration() or 0)
 	local duration_multiplier = self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
-	local new_fov = self:get_zoom_fov(misc_attribs) + 0
+	local new_fov = self:get_zoom_fov(stances.standard) + 0
 
 	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
 	managers.menu:set_mouse_sensitivity(self:in_steelsight())
@@ -209,6 +217,15 @@ function PlayerBipod:update(t, dt)
 	if not managers.player:player_unit():mover():standing() or movement_distance > 10 or not deploy_valid then
 		self:exit(nil, "standard")
 		managers.player:set_player_state("standard")
+	end
+end
+
+function PlayerBipod:_update_movement(t, dt)
+	if restoration.Options:GetValue("OTHER/MoveCancelBipod") then
+		local current_state = managers.player:get_current_state()
+		if self._move_dir then
+			self:_unmount_bipod()
+		end
 	end
 end
 

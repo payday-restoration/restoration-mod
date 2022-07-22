@@ -6025,8 +6025,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksg.stats_modifiers = nil
 				self.ksg.panic_suppression_chance = 0.05
 				self.ksg.fire_anim_offset2 = 0.03
-				self.ksg.reload_fix_offset2 = 0.008
-				self.ksg.reload_fix_mult2 = 1.077
+				self.ksg.reload_fix_offset2 = 0.025
+				self.ksg.reload_fix_mult2 = 1.08
 				self.ksg.reload_speed_multiplier = 0.9
 				self.ksg.timers.shotgun_reload_exit_not_empty = 0.9
 				self.ksg.timers.shotgun_reload_exit_empty = 0.9
@@ -8640,7 +8640,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"lmg",
 				"smg"
 			}
-			self.tecci.kick = self.stat_info.kick_tables.horizontal_right_recoil
+			self.tecci.kick = self.stat_info.kick_tables.right_recoil
 			self.tecci.CLIP_AMMO_MAX = 100
 			self.tecci.AMMO_MAX = 360
 			self.tecci.fire_mode_data.fire_rate = 0.08
@@ -8651,7 +8651,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.ads_speed = 0.440
 			self.tecci.damage_falloff = {
 				start_dist = 2000,
-				end_dist = 6500,
+				end_dist = 6000,
 				min_mult = 0.5
 			}
 			self.tecci.stats = {
@@ -8681,8 +8681,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.has_description = true
 			self.m249.CLIP_AMMO_MAX = 200
 			self.m249.AMMO_MAX = 300
-			self.m249.fire_mode_data.fire_rate = 0.075
-			self.m249.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.m249.fire_mode_data.fire_rate = 0.08
+			self.m249.kick = self.stat_info.kick_tables.even_recoil
 			self.m249.supported = true
 			self.m249.ads_speed = 0.540
 			self.m249.damage_falloff = {
@@ -8749,6 +8749,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.rpk.stats_modifiers = nil
 			self.rpk.panic_suppression_chance = 0.055
+			self.rpk.bipod_req_scope = true
 			self.rpk.timers.reload_exit_empty = 1.45
 			self.rpk.timers.reload_exit_not_empty = 0.85
 			self.rpk.reload_speed_multiplier = 0.95
@@ -8816,8 +8817,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.CLIP_AMMO_MAX = 75
 				self.m60.AMMO_MAX = 120
 				self.m60.fire_mode_data.fire_rate = 0.10909090909
-				self.m60.auto.fire_rate = 0.10909090909
-				self.m60.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.m60.kick = self.stat_info.kick_tables.moderate_kick
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
@@ -8855,12 +8855,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.par.CLIP_AMMO_MAX = 50
 				self.par.fire_mode_data.fire_rate = 0.096
-				self.par.auto.fire_rate = 0.096
 				self.par.AMMO_MAX = 120
 				self.par.timers.reload_not_empty = 6.5
 				self.par.timers.reload_empty = 6.5
 				self.par.kick = {}
-				self.par.kick = self.stat_info.kick_tables.horizontal_right_recoil
+				self.par.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.par.panic_suppression_chance = 0.05
 				self.par.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
@@ -8886,6 +8885,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.par.stats_modifiers = nil
+				self.par.no_bipod_anims = true
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
 				self.par.timers.reload_exit_empty = 1.325
@@ -8907,7 +8907,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
-				self.mg42.ads_speed = 0.640
+				self.mg42.ads_speed = 0.620
 				self.mg42.damage_falloff = {
 					start_dist = 2800,
 					end_dist = 5500,
@@ -8945,12 +8945,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.fire_mode_data.fire_rate = 0.075
 				self.hk21.CAN_TOGGLE_FIREMODE = true
 				self.hk21.fake_semi_anims = true
-				self.hk21.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.hk21.kick = self.stat_info.kick_tables.right_kick
 				self.hk21.panic_suppression_chance = 0.05
 				self.hk21.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk21.supported = true
-				self.hk21.ads_speed = 0.600
+				self.hk21.ads_speed = 0.640
 				self.hk21.damage_falloff = {
 					start_dist = 2300,
 					end_dist = 7100,
@@ -8972,6 +8972,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hk21.stats_modifiers = nil
 				self.hk21.reload_speed_multiplier = 0.9
+				self.hk21.bipod_req_scope = true
+				self.hk21.animations.ignore_nonemptyreload = true
+				self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
 				self.hk21.timers.reload_exit_empty = 1.3
 				self.hk21.timers.reload_exit_not_empty = 1.3
 		
@@ -8990,7 +8993,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.hk51b.fire_mode_data.fire_rate = 0.063157
 			self.hk51b.CAN_TOGGLE_FIREMODE = true
 			self.hk51b.BURST_FIRE = 3
-			self.hk51b.kick = self.stat_info.kick_tables.moderate_right_kick
+			self.hk51b.kick = self.stat_info.kick_tables.right_kick
 			self.hk51b.panic_suppression_chance = 0.05
 			self.hk51b.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.hk51b.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
@@ -11728,7 +11731,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sg416.sounds.fire_single = "m16_fire_single"
 		self.sg416.sounds.fire_auto = "m16_fire"
 		self.sg416.fire_mode_data.fire_rate = 0.08571428571
-		self.sg416.auto.fire_rate = 0.08571428571
 		self.sg416.kick = self.stat_info.kick_tables.moderate_kick
 		self.sg416.supported = true
 		self.sg416.ads_speed = 0.340
@@ -13325,6 +13327,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if not weap.supported then
 				self:generate_custom_weapon_stats(weap)	
 			end
+			if weap.bipod_camera_spin_limit then
+				weap.bipod_camera_spin_limit = 65
+				weap.bipod_camera_pitch_limit = 20
+				weap.bipod_deploy_multiplier = 1.5
+			end
 			-- roughly normalizes swap speeds before additional modifiers are in play
 			weap.desired_swap_time = 1.75
 
@@ -13389,14 +13396,14 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		shotgun = 0.7, --Compensate for ease of aim+multikills and/or versatility.
 		bow = 0.7, --Compensate for picking arrows back up.
-		crossbow = 0.7,
 		pistol = 1.15, --Compensate for low range.
+		crossbow = 0.7,
 		smg = 1.1,
+			pdw = 0.5,
+			lmg = 0.6,
+			minigun = 0.4,
 		akimbo = 1.1,
 		saw = 1.25, --Compensate for jankiness.
-		lmg = 0.6,
-		minigun = 0.4,
-		pdw = 0.5,
 	}
 
 	--Get weapon category specific pickup multipliers.

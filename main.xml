@@ -479,9 +479,12 @@
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="RestoreHitFlash"/>
 				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
+				<option type="bool" default_value="false" name="AimDeploysBipod"/>
+				<option type="bool" default_value="false" name="MoveCancelBipod"/>
 				<option type="bool" default_value="false" name="SprintCancel"/>
-				<option type="bool" default_value="false" name="StopAllBots"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
+				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>
+				<option type="bool" default_value="false" name="StopAllBots"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>

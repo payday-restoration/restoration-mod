@@ -489,18 +489,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 	self._shots_fired = 0
 
-
-	--[[
-	if self._ammo_data then
-		if self._ammo_data.damage_near_mul ~= nil then
-			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
-		end
-		if self._ammo_data.damage_far_mul ~= nil then
-			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
-		end
-	end
-	--]]
-
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
 	self._movement_penalty = self:weapon_tweak_data().weapon_movement_penalty or tweak_data.upgrades.weapon_movement_penalty[primary_category] or 1
 	
@@ -721,6 +709,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
 	self._fire_rate_multiplier = self._fire_rate_multiplier * self._rof_mult
 
+
+	self._has_scope = managers.weapon_factory:has_perk("scope", self._factory_id, self._blueprint)
 
 	self:precalculate_ammo_pickup()
 end

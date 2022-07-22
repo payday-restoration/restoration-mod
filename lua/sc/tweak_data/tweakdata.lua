@@ -69,8 +69,8 @@ tweak_data.smg = {
 	tweak_data.lmg = {
 		swap_bonus = 0.8,
 		ads_move_speed_mult = 0.4,
-		moving_spread_mult = 3.3333,
-		hipfire_spread_mult = 3.3333
+		moving_spread_mult = 5,
+		hipfire_spread_mult = 4.4444
 	}
 		tweak_data.wolf_brigade = {
 			hipfire_spread_mult = 0.5
@@ -78,8 +78,8 @@ tweak_data.smg = {
 	tweak_data.minigun = {
 		swap_bonus = 0.8,
 		ads_move_speed_mult = 0.4,
-		moving_spread_mult = 3.3333,
-		hipfire_spread_mult = 3.3333
+		moving_spread_mult = 5,
+		hipfire_spread_mult = 4.4444
 	}
 
 tweak_data.snp = {

@@ -74,3 +74,34 @@ function WeaponLionGadget1:_shoot_bipod_rays2(debug_draw)
 
 	return {forward = result.forward or nil, center = result.down or nil}
 end
+
+function WeaponLionGadget1:check_state( autodeploy )
+	if self._is_npc then
+		return false
+	end
+
+	local bipod_deployable = self:_is_deployable()
+
+	if not bipod_deployable and not self:is_deployed() and not autodeploy then
+		managers.hud:show_hint({
+			time = 2,
+			text = managers.localization:text("hud_hint_bipod_nomount")
+		})
+	end
+
+	self._deployed = false
+
+	if not self._is_npc then
+		if managers.player:current_state() ~= "bipod" and bipod_deployable then
+			self._previous_state = managers.player:current_state()
+
+			managers.player:set_player_state("bipod")
+
+			self._deployed = true
+		elseif managers.player:current_state() == "bipod" then
+			self:_unmount()
+		end
+	end
+
+	self._unit:set_extension_update_enabled(Idstring("base"), self._deployed)
+end

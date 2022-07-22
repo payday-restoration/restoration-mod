@@ -176,8 +176,8 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk" force="false" load="true"/>	
 	
 	<!-- shield -->
-	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city" force="false" load="true"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city_husk" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" force="false" load="true"/>
 
 	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>

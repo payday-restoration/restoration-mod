@@ -5874,6 +5874,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Judge
 				--Keeping
+				self.x_judge.categories = {
+					"akimbo",
+					"shotgun",
+					"shotgun_pistol"
+				}
 				self.x_judge.fire_mode_data.fire_rate = 0.272727
 				self.x_judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 				self.x_judge.rays = 9
@@ -6159,6 +6164,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m37.timers.shotgun_reload_exit_empty = 0.9
 
 			--Judge
+				self.judge.categories = {
+					"shotgun",
+					"shotgun_pistol"
+				}
 				self.judge.fire_mode_data.fire_rate = 0.272727
 				self.judge.rays = 9
 				self.judge.kick = self.stat_info.kick_tables.left_kick

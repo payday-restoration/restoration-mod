@@ -29,7 +29,6 @@ tweak_data.bow = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.6
 }
-
 tweak_data.crossbow = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45
@@ -53,6 +52,10 @@ tweak_data.grenade_launcher = {
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.6,
 }
+	tweak_data.shotgun_pistol = {
+		ads_move_speed_mult = 1.3333,
+		swap_bonus = 1.75
+	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
 	}

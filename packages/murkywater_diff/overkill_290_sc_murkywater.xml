@@ -608,6 +608,7 @@
 	
 	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df" force="true"/>
 	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" force="true"/>	
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_omnia_helmet_nm" force="false"/>	
 
 	<!--OMNIA BENELLI DOZER BITS-->	
 	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_neck/ene_acc_bulldozer_ben_neck" load="false"/>

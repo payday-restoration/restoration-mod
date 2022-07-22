@@ -40,7 +40,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

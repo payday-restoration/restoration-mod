@@ -424,4 +424,15 @@
 			<attr name="name" value="std/stand/still/idle/look"/>
 		</target>
 	</tweak>
+	<!-- Bleedout state fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/bleedout"/>
+			<to name="death"/>
+		</search>
+		<target mode="attributes">
+			<attr name="redirect" value="std/fatal/to_dead"/>
+		</target>
+	</tweak>
 </tweaks>

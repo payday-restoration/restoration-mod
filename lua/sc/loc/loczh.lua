@@ -11,6 +11,9 @@ end
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
+		["menu_st_spec_23"] = "白板",
+		["menu_st_spec_24"] = "先天异禀",
+
 		["menu_es_boost"] = "最佳数据",
 		["menu_es_crew"] = "全队数据",
 		["menu_es_personal"] = "个人数据",
@@ -145,6 +148,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModWpnCatDescID"] = "改变武器在购买菜单的分类方式。重启游戏生效。",
 		["RestorationModSprintCancelTitleID"] = "紧急回避专精起跑打断换弹",
 		["RestorationModSprintCancelDescID"] = "选择在你专精了\"紧急回避\"技能后，跑步是否会打断换弹。\n勾选以打断换弹来应对按R召唤敌人的情况。",
+		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
+		["RestorationModSevenHoldDescID"] = "Toggle whether or not the interact key acts as a toggle.",
 		["RestorationModClassicMoviesTitleID"] = "PD:TH经典界面",
 		["RestorationModClassicMoviesDescID"] = "选择是否在任务简报界面采用PD:TH的经典页面(仅适用于经典劫案)",
 		
@@ -1004,7 +1009,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skmc_ovengrill_name"] = "Ovengrill硬件公司",
 		["heist_skmc_mad_name"] = "DRAK R&D实验室",
 		["heist_skm_friend_name"] = "疤面庄园",
-		["heist_skm_nightmare_name"] = "老安全屋",
+		["heist_skm_nightmare_name"] = "安全屋梦魇",
 		["heist_skm_nightmare_lvl_name"] = "我们的安全屋？",
 
 
@@ -1029,19 +1034,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["friend_9_obj"] = "从第1波开始，完成坚守模式疤面庄园的第9波。",
 
 		--Safehouse Nightmare--
-		["skm_nightmare_name"] = "坚守模式：老安全屋",
+		["skm_nightmare_name"] = "坚守模式：安全屋梦魇",
 		["nightmare_3"] = "我否认一切虚幻物",
-		["nightmare_3_desc"] = "从第1波开始，完成坚守模式老安全屋的第3波。",
-		["nightmare_3_obj"] = "从第1波开始，完成坚守模式老安全屋的第3波。",
+		["nightmare_3_desc"] = "从第1波开始，完成坚守模式安全屋梦魇的第3波。",
+		["nightmare_3_obj"] = "从第1波开始，完成坚守模式安全屋梦魇的第3波。",
 		["nightmare_5"] = "我置信龙诗与神话",
-		["nightmare_5_desc"] = "从第1波开始，完成坚守模式老安全屋的第5波。",
-		["nightmare_5_obj"] = "从第1波开始，完成坚守模式老安全屋的第5波。",
+		["nightmare_5_desc"] = "从第1波开始，完成坚守模式安全屋梦魇的第5波。",
+		["nightmare_5_obj"] = "从第1波开始，完成坚守模式安全屋梦魇的第5波。",
 		["nightmare_7"] = "我深信所思即所在",
-		["nightmare_7_desc"] = "从第1波开始，完成坚守模式老安全屋的第7波。",
-		["nightmare_7_obj"] = "从第1波开始，完成坚守模式老安全屋的第7波。",
+		["nightmare_7_desc"] = "从第1波开始，完成坚守模式安全屋梦魇的第7波。",
+		["nightmare_7_obj"] = "从第1波开始，完成坚守模式安全屋梦魇的第7波。",
 		["nightmare_9"] = "梦境噩梦，此刻谁言无妄？",
-		["nightmare_9_desc"] = "从第1波开始，完成坚守模式老安全屋的第9波。",
-		["nightmare_9_obj"] = "从第1波开始，完成坚守模式老安全屋的第9波。",
+		["nightmare_9_desc"] = "从第1波开始，完成坚守模式安全屋梦魇的第9波。",
+		["nightmare_9_obj"] = "从第1波开始，完成坚守模式安全屋梦魇的第9波。",
 
 		----Weapons + Mods Descriptions/names----
 
@@ -1063,6 +1068,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm改装套件",
 		["bm_wp_upg_i_iw_hailstorm_desc"] = "一个由Fujiwara重工制造的原型武器套件。\n\n将该枪改装为特殊的三重堆叠弹药。",
+		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## and #{important_1}#loses all penetration capabilites.##",
 
 		--M200 WIDOWMAKER
 		["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker改装套件",
@@ -1126,6 +1132,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_leupold_desc_sc"] = "开镜时自动标记特殊敌人，潜入时则会标记警卫。", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
 
 		--Generic Optic Zoom Descriptions--
+		--[[
 		["bm_wp_upg_o_1_1"] = "1.1倍放大倍率。",
 		["bm_wp_upg_o_1_2"] = "1.2倍放大倍率。",
 		["bm_wp_upg_o_1_5"] = "1.5倍放大倍率。",
@@ -1137,7 +1144,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_5"] = "5倍放大倍率。",
 		--["bm_wp_upg_o_5_mark"] = "5倍放大倍率。\n开镜时自动标记特殊敌人，潜入时则会标记警卫。",
 		["bm_wp_upg_o_6"] = "6倍放大倍率。",
-		--["bm_wp_upg_o_6_mark"] = "6倍放大倍率。\n开镜时自动标记特殊敌人，潜入时则会标记警卫。",
+		--["bm_wp_upg_o_6_mark"] = "6倍放大倍率。\n开镜时自动标记特殊敌人，潜入时则会标记警卫。", --]]
+		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{skill_color}#1.2x magnification.##",
+		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{skill_color}#1.5x magnification.##",
+		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{skill_color}#1.5x magnification.##",
+		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{skill_color}#1.8x magnification.##",
+		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{skill_color}#3x magnification.##",
+		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#3x magnification.##",
+		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{skill_color}#4x magnification.##",
+		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#4x magnification.##",
+		["bm_wp_upg_o_5"] = "Long-range scope.\n#{skill_color}#5x magnification.##",
+		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#5x magnification.##",
+		["bm_wp_upg_o_6"] = "Long-range scope.\n#{skill_color}#6x magnification.##",
+		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#6x magnification.##",
+		["bm_wp_upg_o_8"] = "Long-range scope.\n#{skill_color}#8x magnification.##",
+		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#8x magnification.##",
+
+		["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
+		["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
+
+		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled iron sights.",
+		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
+		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the laser sight.", --VMP Point Shoot Laser
+
+		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "受到撞击时释放半径为3.75m的火焰，持续5秒。火焰上的敌人每秒受到120点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在3秒内受到额外60点伤害。",
@@ -1252,6 +1284,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "VF大威力手枪",
+		--Walther P99
+		["bm_w_p99"] = "Gruber 988",
 		--Derringer
 		["bm_w_derringer"] = "Derringer手枪",
 		--Automag .44
@@ -1295,7 +1329,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "缩小后的售后市场版Reinfeld 880；给那些想要隐蔽性和渴望搞残手腕的人。",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897霰弹枪",
-		["bm_menu_sc_m1897_desc"] = "这件标志性的历史名枪见证了太平洋岛屿上从泥沟到茂密丛林的几乎一切战斗，也因其火力汹涌而久誉恶名。",
+		["bm_menu_sc_m1897_desc"] = "这件标志性的历史名枪见证了太平洋岛屿上从泥沟到茂密丛林的几乎一切战斗，也因其火力汹涌而久誉恶名。\n\nAlt-fire allows for #{skill_color}#slam-firing for an increase in fire rate## at the cost of #{important_1}#more recoil and spread as well as the inabilty to aim down your sights.##",
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "老式经典升级款。是敢死队，士兵们，公民以及银行劫匪这类人好选择。",
 		--R870
@@ -1388,6 +1422,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM 60 DAMAGE ARs
 		--SCAR-L
 		["bm_w_scarl"] = "Eagle轻型步枪",
+		--Valmet Rk.62
+		["bm_w_rk62"] = "Velmer Rifle",
 
 
 		--Bootleg/HK416c
@@ -1510,6 +1546,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "如果物品栏还有这把枪务必不要使用。\n\n目前依然没有平衡方式。",
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#自定义附件###{important_1}#未安装##\n\n附件将使用该栏默认外观。",
+		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing for an increase in fire rate## at the cost of #{important_1}#more recoil and spread as well as the inabilty to aim down your sights.##",
 		["bm_lmg_generic_desc"] = "#{important_1}#腰射时大幅降低精准度##",
 		["bm_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		["bm_ap_armor_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。",
@@ -1897,77 +1934,62 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "Ichiroku",
-						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending Seishou Academy.\nThe energetic and foul-mouthed figurehead of the school.",
 						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
 					["bm_w_m4"] = "Em-Four",
-						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending Seishou Academy.\nVice-president of the middleschool student council.",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
 					["bm_w_aug"] = "AUG",
-						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending Seishou Academy.\nPresident of the middleschool student council.",
 						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
 					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
-						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending Seishou Academy.\nGives off a heavy \"main protagonist\" aura.",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
-
+					["bm_w_l85a2"] = "Eru",
+						["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
+					["bm_w_rk62"] = "Sako",
+						["bm_rk62_sc_desc"] = "\"What wonderful squeals! You sound like you're about to die!\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
+	
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "Faru",
 						["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
 					["bm_w_m14"] = "Ichiyon",
-						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending Seishou Academy.\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
 						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
 					["bm_w_g3"] = "Jiisuri",
-						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending Seishou Academy.\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",
-						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending Seishou Academy.\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
 						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
 					["bm_w_uzi"] = "Uzi",
-						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending Seishou Academy.\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
 						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
 					["bm_w_mac10"] = "Ram",
-						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending Seishou Academy.\nA machinegun with words. Also rather top-heavy.",
 						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nA machinegun with words. Also rather top-heavy.",
-
+		
 				--FACULTY
 					["bm_w_erma"] = "Erma-sensei",
-						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at Seishou Academy.\nThe SMGs love her.",
 						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at #{stats_positive}#Seishou Academy.##\nThe SMGs love her.",
 					["bm_w_m1928"] = "Thompson-sensei",
-						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at Seishou Academy.\nSpeaks with accented Japanese. A former member of the FBI.",
 						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at #{stats_positive}#Seishou Academy.##\nSpeaks with accented Japanese. A former member of the FBI.",
 					["bm_w_ching"] = "Garand",
-						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at Seishou Academy.\nLooks over the middleschoolers.",
 						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at #{stats_positive}#Seishou Academy.##\nLooks over the middleschoolers.",
-
+	
 			--RED STEEL ACADEMY
 				--THREE STRIPES
 					["bm_w_siltstone"] = "Drako",
-						["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending Red Steel Academy.\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
 						["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
 					["bm_w_akm"] = "AKM",
-						["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending Red Steel Academy.\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
 						["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
 					--["bm_w_rpk"] = "RPK",
-						["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending Red Steel Academy.\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
 						["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
 				--TWO STRIPES
 					["bm_w_ak74"] = "Nanayon",
-						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending Red Steel Academy.\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
 						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
 					["bm_w_saiga"] = "Saiga-chan",
-						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending Red Steel Academy.\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
 						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
 				--ONE STRIPE
 					["bm_w_coal"] = "Bizon",
-						["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending Red Steel Academy.\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
 						["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending #{stats_negative}#Red Steel Academy.##\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
 				--FACULTY
 					["bm_w_mosin"] = "Mosin Nagant",
-						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of Red Steel Academy.\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
 						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of #{stats_negative}#Red Steel Academy.##\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-
+			
 			--ENOSHIMA
 				--MIDDLE SCHOOLERS
 					["bm_w_spas12"] = "Supasu",  --SPAS-12
@@ -2105,7 +2127,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_equipment_armor_kit"] = "手雷箱",
 		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你必须先按住 $BTN_USE_ITEM 将其放下。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住 $BTN_INTERACT 来补充投掷物。手雷箱只能被使用三次。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能补满你的投掷物。",
 
-		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈有几率使半径25米内的敌人失去行动能力，反馈持续10秒且可以在4分钟的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
+		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈每1.5秒有几率使半径25米内的敌人失去行动能力，反馈持续10秒且可以在4分钟的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
 		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以回复150点血量。急救包只能使用一次。\n\n急救包可以在紧急情况下快速进行急救。",
 		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以立即回复血量上限20%的血量，然后在3分钟内每4秒回复血量上限4%的血量。医疗箱在无技能时可以使用两次。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
 		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住 $BTN_USE_ITEM 将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住 $BTN_INTERACT 使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
@@ -2318,9 +2340,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
+		["menu_mutators_category_holiday"] = "节日活动",
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "掷弹兵",
+
+		["mutator_titandozers_desc"] = "Halloween Holiday Effects",
+		["mutator_titandozers_longdesc"] = "The Headless Bulldozers have escaped from Wolf's nightmares and become reality! Regular Bulldozers will now be their Headless Bulldozer variants and other Halloween effects will now be active!",
 
 		["mutator_medidozer_longdesc"] = "所有水军都将被替换为医疗兵，所有的特殊单位都将被替换为熊。",
 		["mutator_medicdozers"] = "医疗熊",
@@ -2337,11 +2363,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["MutatorMoreDonutsPlus"] = "我要甜甜圈",
 		["MutatorMoreDonutsPlus_desc"] = "所有的水军都将被替换为纽约警察局的便衣警察，所有的特殊单位都被替换为OMNIA维生部队。",
-		["MutatorMoreDonutsPlus_longdesc"] = "所有的水军都将被替换为纽约警察局的便衣警察，所有的特殊单位都被替换为OMNIA维生部队。\n\n警告：你玩这个突变模式就是在犯罪！\"太坏惹，准备拿手铐去抓。\"",
+		["MutatorMoreDonutsPlus_longdesc"] = "所有的水军都将被替换为纽约警察局的便衣警察，所有的特殊单位都被替换为OMNIA维生部队。\n\n警告：你玩这个突变模式就是在犯罪！\n\n\"太坏惹，准备拿手铐去抓。\"",
 
 		["MutatorJungleInferno"] = "丛林地狱",
-		["MutatorJungleInferno_desc"] = "所有敌人都被替换为夏日队长。",
-		["MutatorJungleInferno_longdesc"] = "所有非地图脚本生成的敌人都将被替换为夏日队长。",
+		["MutatorJungleInferno_desc"] = "所有敌人使用喷火器。",
+		["MutatorJungleInferno_longdesc"] = "所有非地图脚本生成的敌人都将使用喷火器。\n\n狙击手和盾兵依然会使用默认武器。",
 
 		["mutator_minidozers"] = "半自动喷子熊",
 		["mutator_minidozers_desc"] = "在任意难度下生成半自动喷子熊。",
@@ -2355,6 +2381,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_enemy_spawn"] = "刷兵倍率",
 		["mutator_spawn_mult_desc"] = "增加刷兵量。",
 		["mutator_spawn_mult_longdesc"] = "突击进行中会刷出更多的敌人。Overkill™ 经典操作！",
+
+		["mutator_bravos_only"] = "Hardline",
+		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",
+		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
 
 		["mutator_zombie_outbreak"] = "行尸走肉",
 		["mutator_zombie_outbreak_desc"] = "所有敌军都将被替换为丧尸单位。",
@@ -2706,7 +2736,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Sixth Sense--
 			["menu_chameleon_beta_sc"] = "第六感",
-			["menu_chameleon_beta_desc_sc"] = "掌握: ##$basic##\n原地不动##3.5##秒后，你会自动标记半径##10##米内的所有单位。\n\n专精: ##$pro##\n你现在可以##解锁所有的内应有利条件##了。",
+			["menu_chameleon_beta_desc_sc"] = "掌握: ##$basic##\n原地不动##3.5##秒后，你会##自动标记##半径##10##米内的所有单位。\n\n专精: ##$pro##\n你现在可以##解锁所有的内应有利条件##了。",
 
 			--ECM Overdrive--
 			["menu_cleaner_beta_sc"] = "ECM过载",
@@ -3167,13 +3197,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数\n\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",	
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。\n\n完成全部牌组后的效果：\n##-##解锁并装备便携式电子干扰器。在警报触发前使用便携式电子干扰器将激活干扰效果，干扰所有电子设备及对讲机 ##12## 秒。在警报触发后使用便携式电子干扰器将激活啸叫效果，每秒均有几率晕眩地图上的所有敌人，持续 ##12## 秒。便携式电子干扰器有 ##1## 次充能且有 ##80## 秒冷却时间，然而在冷却时间内击杀的每1名敌人都会减少 ##3.5## 秒的冷却时间。\n##-##啸叫效果激活时你每击杀1名敌人都会让你回复 ##20## 点血量。团队成员在啸叫效果激活时每击杀一名敌人都会让他回复 ##10## 点血量。\n##-##你的护甲回复速度加快 ##10%##\n##-##你的闪避点数增加 ##10%## 。",
+		["menu_st_spec_21_desc_sc"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。\n\n完成全部牌组后的效果：\n##-##解锁并装备便携式电子干扰器。在警报触发前使用便携式电子干扰器将激活干扰效果，干扰所有电子设备及对讲机 ##10## 秒。在警报触发后使用便携式电子干扰器将激活反馈效果，每##1.5##秒均有几率晕眩##12##米内的敌人，反馈持续 ##10## 秒。便携式电子干扰器有 ##1## 次充能且有 ##80## 秒冷却时间，然而在冷却时间内击杀的每1名敌人都会减少 ##3.5## 秒的冷却时间。\n##-##反馈效果激活时你每击杀1名敌人都会让你回复 ##20## 点血量。团队成员在反馈效果激活时每击杀一名敌人都会让他回复 ##10## 点血量。\n##-##你的护甲回复速度加快 ##10%##\n##-##你的闪避点数增加 ##10%## 。",
 		["menu_st_spec_21_desc_sc_short"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。",
-		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用\n\n游戏中你可以按[使用投掷物]键激活便携式ECM干扰器\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，持续##12##秒\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，附近的警察将可能受到眩晕效果，持续##12##秒\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##3.5##秒",
+		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用\n\n游戏中你可以按[使用投掷物]键激活便携式ECM干扰器\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，每##1.5##秒都有几率使附近##12##米的警察失去行动能力，反馈持续##10##秒\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##3##秒",
 		["menu_deck21_3_desc_sc"] = "你的闪避点数增加##5##",
-		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##20##点血量",
+		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##12##点血量",
 		["menu_deck21_7_desc_sc"] = "你的护甲回复速率增加##10%##\n\n你的闪避点数额外增加##5##",
-		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##10##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##6##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Leech
 		["menu_st_spec_22_desc_sc"] = "你在战斗中是个有选择的寄生虫，吸收敌人的力量来强化你和你的队友。不过，你对砖厕里的玩意可不屑一顾。你能够发泄你的痛苦并且将这份斗气加强到你的队友身上。\n\n完成全部牌组后的效果：\n##-##解锁并装备水蛭安瓶，能够持续##10##秒钟并且有##40##秒冷却，每击杀1人减少##1##秒冷却。生效时恢复你总血量的##10%##并且取消你的全部护甲。与此同时你的血量以每##5%##来被分割成小格，每受任意一次伤害移除整个格，同时每击杀##3##名敌人回复一格且免伤##1##秒。受到任何伤害会恢复你队友其总血量的##2%##。倒地时启用水蛭安瓶能立即起身，但是会增加额外的##30##秒冷却时间。\n##-##你打包尸体和与人质互动的速度加快##75%##。",

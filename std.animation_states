@@ -324,6 +324,17 @@
 		<search>
 			<xml/>
 			<state name="std/hurt/sick/exit"/>
+			<keys/>
+		</search>
+		<target mode="attach">
+			<key at="enter" set_extension="anim_data" extension_key="to_idle" extension_value="true"/>
+			<key at="exit" set_extension="anim_data" extension_key="to_idle" extension_value="false"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/sick/exit"/>
 			<exit/>
 		</search>
 		<target mode="attributes">
@@ -396,10 +407,32 @@
 		<search>
 			<xml/>
 			<state name="std/hurt/poison/exit"/>
+			<keys/>
+		</search>
+		<target mode="attach">
+			<key at="enter" set_extension="anim_data" extension_key="to_idle" extension_value="true"/>
+			<key at="exit" set_extension="anim_data" extension_key="to_idle" extension_value="false"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/exit"/>
 			<exit/>
 		</search>
 		<target mode="attributes">
 			<attr name="name" value="std/stand/still/idle/look"/>
+		</target>
+	</tweak>
+	<!-- Bleedout state fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/bleedout"/>
+			<to name="death"/>
+		</search>
+		<target mode="attributes">
+			<attr name="redirect" value="std/fatal/to_dead"/>
 		</target>
 	</tweak>
 </tweaks>

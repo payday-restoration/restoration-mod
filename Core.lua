@@ -73,7 +73,9 @@ function restoration:Init()
 		bookmakers_office = restoration.captain_types.winter, --Bookmaker's Office
 		tRain_returns = restoration.captain_types.winter, --wip rant-man heist
 		constantine_policestation_lvl = restoration.captain_types.winter, --Constantine Scores (precinct raid)
-		
+		battlearena = restoration.captain_types.winter, --Five-G
+		tonisl1 = restoration.captain_types.winter, --Grand Harvest
+
 		--Summers
 		pal = restoration.captain_types.summer, --counterfeit
 		mia_1 = restoration.captain_types.summer, --Hotline Day 1
@@ -89,7 +91,9 @@ function restoration:Init()
 		constantine_mobsterclub_lvl = restoration.captain_types.summer, --Aurora (Borealis?!) Club
 		constantine_harbor_lvl = restoration.captain_types.summer, --Harboring a Grudge
 		firestarter_3_res = restoration.captain_types.summer, --firestarter day 3 res edit version
-		
+		bag_sim_2 = restoration.captain_types.summer, --Bag Simulator 2
+		RogueCompany = restoration.captain_types.summer, --Rogue Company
+
 		--Spring
 		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
 		firestarter_1 = restoration.captain_types.spring, --firestarter day 1
@@ -111,7 +115,9 @@ function restoration:Init()
 		santas_hardware_store = restoration.captain_types.spring, --Santa Spring Is Coming To Town
 		lvl_friday = restoration.captain_types.spring, --Crashing Capitol
 		bnktower = restoration.captain_types.spring, --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
-		
+		mansion_stage1 = restoration.captain_types.spring, --Elmsworth Mansion
+		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
+
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
 		rat = restoration.captain_types.autumn,	--cook off
@@ -139,14 +145,16 @@ function restoration:Init()
 		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
 		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.autumn, --Constantine Scores (gunrunner)
-		
+		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
+
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
 		nail = restoration.captain_types.hvh, --lab rats
 		--Custom Heists--
 		daymare = restoration.captain_types.hvh, --Hell's Nightmare
 		funbank = restoration.captain_types.hvh, --FunBank: Specials	
-		crash_course = restoration.captain_types.hvh --REDACTED
+		crash_course = restoration.captain_types.hvh, --REDACTED
+		ascension_III = restoration.captain_types.hvh --Ascension (project eclipse 3)	
 	}
 	
 	--HVH replaces Spring during the month of Halloween
@@ -171,7 +179,10 @@ function restoration:Init()
 	restoration.very_large_levels = {
 		--Custom Heists below--
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
-		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
+		"constantine_gunrunnerclubhouse_lvl", --Constantine Scores (gunrunner)
+		"bag_sim_2", --Bag Simulator 2
+		"finsternis", --Projekt Finsternis
+		"battlearena" --Five-G
 	}
 	--Increased spawns, slightly less. Ditto
 	restoration.large_levels = {
@@ -193,7 +204,9 @@ function restoration:Init()
 		"hwu", --Avalon's Shadow
 		"constantine_smackdown2_lvl", --Truck Hustle
 		"TonCont", --Armored Transport: Atrium
-		"santas_hardware_store" --Hardware Store but Xmas
+		"santas_hardware_store", --Hardware Store but Xmas
+		"ascension_III", --Ascension (project eclipse 3)
+		"RogueCompany" --Rogue Company
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
@@ -232,7 +245,6 @@ function restoration:Init()
 		"RogueCompany", --Rogue Company
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains
-		"sh_raiders", --Safehouse Raiders 
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
@@ -244,7 +256,10 @@ function restoration:Init()
 		"ttr_yct_lvl", --Triad Takedown Remastered 
 		"modders_devmap", --Proving Grounds
 		"gallery_v2", --Art Gallery Remastered 
-		"wetwork_burn" --Burnout
+		"wetwork_burn", --Burnout
+		"brb_rant", --Brooklyn Bank: Ranted
+		"hidden_vault", --Hidden Vault
+		"cshr" --Old Safehouse Raid
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
@@ -278,6 +293,7 @@ function restoration:Init()
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"railrun", --The Last Train
+		"highrise_stage1", --Out of Frame
 		"Victor Romeo"
 	}	
 	--Christmas Effects Heists

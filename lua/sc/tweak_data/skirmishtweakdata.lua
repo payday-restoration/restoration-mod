@@ -200,11 +200,39 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 		5
 	}
 
+	--So now Skirmish maps can be properly scaled
+	local map_scale_factor = 1
+	for _,vl in pairs(restoration.very_large_levels) do
+		if job == vl then
+			map_scale_factor = 1.3
+		end
+	end		
+	for _,l in pairs(restoration.large_levels) do
+		if job == l then
+			map_scale_factor = 1.15
+		end
+	end	
+	for _,t in pairs(restoration.tiny_levels) do
+		if job == t then
+			map_scale_factor = 0.85
+		end
+	end
+	for _,vt in pairs(restoration.very_tiny_levels) do
+		if job == vt then
+			map_scale_factor = 0.7
+		end
+	end
+	for _,et in pairs(restoration.extremely_tiny_levels) do
+		if job == et then
+			map_scale_factor = 0.55
+		end
+	end
+
 	skirmish_data.assault.force_balance_mul = {
-		0.55,
-		0.7,
-		0.85,
-		1
+		0.55 * map_scale_factor,
+		0.7 * map_scale_factor,
+		0.85 * map_scale_factor,
+		1 * map_scale_factor
 	}
 
 	skirmish_data.assault.force_pool_balance_mul = {

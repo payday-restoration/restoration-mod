@@ -31,7 +31,7 @@
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df"/>
 	</material>
 
-	<material name="mtr_helmet_lod0" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" />
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/helmets_atlas_df" />
 	</material>

@@ -6992,7 +6992,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scorpion.damage_falloff = {
 					start_dist = 1300,
 					end_dist = 3500,
-					min_mult = 0.25
+					min_mult = 0.2083
 				}
 				self.scorpion.stats = {
 					damage = 24,

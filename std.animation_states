@@ -38,7 +38,9 @@
 			<state name="std/crouch/still/idle"/>
 			<from name="std/dodge"/>
 		</search>
-		<target mode="replace"/>
+		<target mode="attributes">
+			<attr name="blend" value="3"/>
+		</target>
 	</tweak>
 	<!-- has to be done twice -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">

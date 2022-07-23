@@ -3401,8 +3401,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 
 	self.parts.wpn_fps_ak_bolt_gold = {
 		name_id = "bm_wp_ak_s_skfoldable",
-		unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt",
-		--unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold",
+		--unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt",
+		unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold",
 		a_obj = "a_bolt",
 		type = "drag_handle"
 	}

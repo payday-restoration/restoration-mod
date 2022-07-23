@@ -63,5 +63,10 @@
 		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" mip="4"/>
 	</material>	
 
+	<material name="mtr_extras" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df"/>
+	</material>	
+
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

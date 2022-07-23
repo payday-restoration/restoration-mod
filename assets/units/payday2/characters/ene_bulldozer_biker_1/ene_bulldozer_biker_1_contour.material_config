@@ -17,32 +17,6 @@
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
-
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head">
-        <bump_normal_texture file="units/payday2/characters/shared_textures/merit_head_nm"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/merit_head_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod">
-        <bump_normal_texture file="units/payday2/characters/shared_textures/merit_head_nm" mip="4"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/merit_head_df" mip="4"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_body_static">
-        <bump_normal_texture 	file="units/payday2/textures/blank_nm"/>
-        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df" />
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_body_static_lod">
-        <bump_normal_texture 	file="units/payday2/textures/blank_nm"/>
-        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df" mip="4"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
 	
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_helmet">
         <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
@@ -63,19 +37,6 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_fueltank">
-        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_nm"/>
-        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_fueltank_lod_1">
-        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_nm" mip="4"/>
-        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_df" mip="4"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
     <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2" name="mtr_glass">
 	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
         <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>

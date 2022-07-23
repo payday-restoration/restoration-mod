@@ -2531,7 +2531,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",
-			["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: ##$basic##\nAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to ##5## seconds after interacting with it.\n\nThe more ammo players replenish, the longer the duration of the effect.\n\nACE: ##$pro##\nIncreases the maximum possible duration of the effect by an additional ##15## seconds.",
+			["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: ##$basic##\nAmmo bags placed by you grant players the ability to shoot without depleting their non-explosive ammunition for up to ##5## seconds after interacting with it.\n\nThe more ammo players replenish, the longer the duration of the effect.\n\nACE: ##$pro##\nIncreases the maximum possible duration of the effect by an additional ##15## seconds.",
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "Specialist Equipment",

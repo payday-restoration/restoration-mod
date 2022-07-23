@@ -2085,10 +2085,10 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 	
 end
 
+
 local melee_weapons_old = BlackMarketTweakData._init_melee_weapons
-function BlackMarketTweakData:_init_melee_weapons(...)
-   	melee_weapons_old(self, ...)
-	
+function BlackMarketTweakData:_init_melee_weapons(tweak_data)
+   	melee_weapons_old(self, tweak_data)	
 	local melee_anim = {}
 	
 	--melee_nin
@@ -2275,6 +2275,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].expire_t = 0.9
 		self.melee_weapons[melee_id].repeat_expire_t = 0.75
 		self.melee_weapons[melee_id].melee_damage_delay = 0.215
+		self.melee_weapons[melee_id].anim_speed_mult = 1
 	end	
 	
 	--melee_boxcutter
@@ -3684,11 +3685,44 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	}
 	self.melee_weapons.halloween_sword.dlc = "rest"
 	self.melee_weapons.halloween_sword.stats.concealment = 23
-	self.melee_weapons.halloween_sword.stats.min_damage_effect = 1.9
-	self.melee_weapons.halloween_sword.stats.max_damage_effect = 2
 	self.melee_weapons.halloween_sword.stats.charge_time = 5
 	self.melee_weapons.halloween_sword.free = true
 	self.melee_weapons.halloween_sword.stats.custom = true
 	]]--
 
 end
+
+Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak_data)	
+	local melee_anim = {}
+	
+	--melee_sandsteel
+	melee_anim = {
+		'hfblade','murasama'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].anim_global_param = "melee_sandsteel"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].timing_fix = {"var3"}
+			self.melee_weapons[melee_id].timing_fix_speed_mult = 0.75
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
+			self.melee_weapons[melee_id].anim_attack_left_vars = {"var2"}
+			self.melee_weapons[melee_id].anim_attack_right_vars = {"var1"}
+			self.melee_weapons[melee_id].expire_t = 0.9
+			self.melee_weapons[melee_id].repeat_expire_t = 0.75
+			self.melee_weapons[melee_id].melee_damage_delay = 0.215
+			self.melee_weapons[melee_id].anim_speed_mult = 1
+		end
+	end	
+
+	if self.melee_weapons.hfblade then
+		self.melee_weapons.hfblade.info_id = "bm_melee_katana_info"	
+		self.melee_weapons.hfblade.stats = deep_clone(self.melee_weapons.sandsteel.stats)
+	end
+
+	if self.melee_weapons.murasama then
+		self.melee_weapons.murasama.info_id = "bm_melee_katana_info"	
+		self.melee_weapons.murasama.stats = deep_clone(self.melee_weapons.sandsteel.stats)
+	end
+
+end)

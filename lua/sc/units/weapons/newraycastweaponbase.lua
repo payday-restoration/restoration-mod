@@ -507,11 +507,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._flame_max_range = stats.flame_max_range_set
 				NewRaycastWeaponBase.flame_max_range = stats.flame_max_range_set
 			end
-			if stats.block_b_storm then
-				if not self:weapon_tweak_data().sub_category then
-					self:weapon_tweak_data().sub_category = {}
-				end
-				self:weapon_tweak_data().sub_category = "grenade_launcher"
+			if stats.block_b_storm or (stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase") then
+				self._no_bulletstorm = true
 			end
 			if stats.disable_steelsight_stance then
 				if self:weapon_tweak_data().animations then

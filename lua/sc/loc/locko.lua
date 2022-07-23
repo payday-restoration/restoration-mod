@@ -2047,18 +2047,11 @@ elseif ai_type == f then
 			["hud_assault_alpha"] = "ASALTO FEDERAL"
 		})
 	end)
-elseif ai_type == m and difficulty_index <= 7 then
+elseif ai_type == m then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "머키워터 타격대 돌입 중",
 			["hud_assault_alpha"] = "머키워터 타격대"
-		})
-	end)
-elseif ai_type == m then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "옴니아 침공 돌입 중",
-			["hud_assault_alpha"] = "옴니아 침공"
 		})
 	end)
 end

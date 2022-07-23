@@ -1923,18 +1923,11 @@ elseif ai_type == f then
 			["hud_assault_alpha"] = "ASALTO FEDERAL"
 		})
 	end)
-elseif ai_type == m and difficulty_index <= 7 then
+elseif ai_type == m then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Идёт штурм Murkywater",
 			["hud_assault_alpha"] = "ШТУРМ MURKYWATER"
-		})
-	end)
-elseif ai_type == m then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Идёт рейд OMNIA",
-			["hud_assault_alpha"] = "РЕЙД OMNIA"
 		})
 	end)
 end

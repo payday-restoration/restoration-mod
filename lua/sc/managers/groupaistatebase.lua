@@ -327,7 +327,9 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 			nr_players = nr_players + 1
 		end
 	end
-	nr_players = math.clamp(nr_players, 1, 4)
+	nr_players = math.clamp(nr_players, 1, 22)
+	--log("SC: Balance set for player count of = " .. tostring(nr_players))
+	
 	return balance_multipliers[nr_players]
 end
 

@@ -13487,7 +13487,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 60,
-			max_nr_simultaneous_groups = 2,
+			max_nr_simultaneous_groups = 1,
 			initial_spawn_delay = 60,
 			amount = {
 				1,
@@ -13532,8 +13532,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	elseif difficulty_index == 8 then
 		self.enemy_spawn_groups.titan_snipers = {
-			spawn_cooldown = 60,
-			max_nr_simultaneous_groups = 3,
+			spawn_cooldown = 45,
+			max_nr_simultaneous_groups = 2,
 			initial_spawn_delay = 30,
 			amount = {
 				1,
@@ -13541,7 +13541,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			spawn = {
 				{
-					respawn_cooldown = 60,
+					respawn_cooldown = 45,
 					amount_min = 1,
 					amount_max = 1,
 					rank = 1,
@@ -13575,7 +13575,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				"GS_shields_boom",
 				"GS_Booms"
 			})
-		}
+		}	
 	end	
 
 	--Skirmish Spawngroups Below
@@ -16075,7 +16075,25 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		1,
 		1.1,
 		1.2,
-		1.3
+		1.3,
+		1.4,
+		1.5,
+		1.6,
+		1.7,
+		1.8,
+		1.9,
+		2,
+		2.1,
+		2.2,
+		2.3,
+		2.4,
+		2.5,
+		2.6,
+		2.7,
+		2.8,
+		2.9,
+		3,
+		3.1
 	}
 	self.besiege.assault.fade_duration = 35
 	self.besiege.assault.fade_settings = {
@@ -16170,13 +16188,49 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0.55 * map_scale_factor,
 		0.7 * map_scale_factor,
 		0.85 * map_scale_factor,
-		1.0 * map_scale_factor
+		1.0 * map_scale_factor,
+		1.15 * map_scale_factor,
+		1.3 * map_scale_factor,
+		1.45 * map_scale_factor,
+		1.6 * map_scale_factor,
+		1.75 * map_scale_factor,
+		1.9 * map_scale_factor,
+		2.05 * map_scale_factor,
+		2.2 * map_scale_factor,
+		2.35 * map_scale_factor,
+		2.35 * map_scale_factor,
+		2.5 * map_scale_factor,
+		2.65 * map_scale_factor,
+		2.8 * map_scale_factor,
+		2.95 * map_scale_factor,
+		3.1 * map_scale_factor,
+		3.25 * map_scale_factor,
+		3.4 * map_scale_factor,
+		3.55 * map_scale_factor
 	}
 	self.besiege.assault.force_pool_balance_mul = {
 		0.55 * map_scale_factor,
 		0.7 * map_scale_factor,
 		0.85 * map_scale_factor,
-		1.0 * map_scale_factor
+		1.0 * map_scale_factor,
+		1.15 * map_scale_factor,
+		1.3 * map_scale_factor,
+		1.45 * map_scale_factor,
+		1.6 * map_scale_factor,
+		1.75 * map_scale_factor,
+		1.9 * map_scale_factor,
+		2.05 * map_scale_factor,
+		2.2 * map_scale_factor,
+		2.35 * map_scale_factor,
+		2.35 * map_scale_factor,
+		2.5 * map_scale_factor,
+		2.65 * map_scale_factor,
+		2.8 * map_scale_factor,
+		2.95 * map_scale_factor,
+		3.1 * map_scale_factor,
+		3.25 * map_scale_factor,
+		3.4 * map_scale_factor,
+		3.55 * map_scale_factor
 	}
 
 	if difficulty_index <= 2 then

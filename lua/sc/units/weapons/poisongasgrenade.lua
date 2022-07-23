@@ -50,6 +50,14 @@ function PoisonGasGrenade:_detonate(tag, unit, body, other_unit, other_body, pos
 	end
 end
 
+function PoisonGasGrenade:_detonate_on_client()
+	if self._detonated then
+		return
+	end
+
+	self:_detonate()
+end
+
 --[[
 local mvec1 = Vector3()
 local mvec2 = Vector3()

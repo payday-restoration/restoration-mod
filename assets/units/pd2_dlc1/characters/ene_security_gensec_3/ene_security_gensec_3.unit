@@ -19,8 +19,8 @@
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_hat_lod" />
-			<var name="_nr_head_gear_objects" value="3" />
-			<var name="_head_gear" value="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="units/payday2/characters/ene_acc_red_cap_1/ene_acc_red_cap_1" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

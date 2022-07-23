@@ -21,13 +21,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["res_saveboost"] = "$BTN_INTERACT 키를 길게 눌려 레벨 100으로 올리기.",
 
 		["RestorationModOptionsButtonTitleID"] = "레스토레이션 모드 옵션",
-		["RestorationModOptionsButtonDescID"] = "레스토레이션 모드의 옵션.",
-		["RestorationModHUDOptionsButtonTitleID"] = "레스토레이션 HUD & UI 옵션.",
-		["RestorationModHUDOptionsButtonDescID"] = "레스토레이션의 HUD & UI 옵션.",
-		["RestorationModOTHEROptionsButtonTitleID"] = "추가 레스토레이션 모드 옵션.",
-		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스토레이션 모드 옵션.",
+		["RestorationModOptionsButtonDescID"] = "레스토레이션 모드의 옵션",
+		["RestorationModHUDOptionsButtonTitleID"] = "레스토레이션 HUD & UI 옵션",
+		["RestorationModHUDOptionsButtonDescID"] = "레스토레이션의 HUD & UI 옵션",
+		["RestorationModOTHEROptionsButtonTitleID"] = "추가 레스토레이션 모드 옵션",
+		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스토레이션 모드 옵션",
 		["RestorationModUIOptionsButtonTitleID"] = "알파 UI",
-		["RestorationModUIOptionsButtonDescID"] = "알파 UI 옵션.",
+		["RestorationModUIOptionsButtonDescID"] = "알파 UI 옵션",
 		["RestorationModTimeOfDayTitleID"] = "신규 + 랜덤 시간대",
 		["RestorationModTimeOfDayDescID"] = "특정 하이스트의 시간을 커스텀마이징 합니다.",
 
@@ -133,9 +133,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
 		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
 		["RestorationModSprintCancelTitleID"] = "위기모면 에이스 효과 재장전 취소",
-		["RestorationModSprintCancelDescID"] = "\"회피\" 스킬를 에이스 찍었을 때 전력 질주 시작이 진행 중일때 재장전을 취소할지 여부를 정합니다.",	
+		["RestorationModSprintCancelDescID"] = "\"회피\" 스킬를 에이스 찍었을 때 '전력 질주 시작'이 진행 중일때 재장전을 취소할지 여부를 정합니다. 전력 질주하는 동안의 재장전은 영향을 받지 않습니다.",	
 		["RestorationModSevenHoldTitleID"] = "토클 상호작용 (Press2Hold)",
-		["RestorationModSevenHoldDescID"] = "상호작용 키가 토글 역할을 하는지 여부를 토클합니다.",		
+		["RestorationModSevenHoldDescID"] = "상호 작용 키가 토글 역할을 하는지 여부를 활성화하거나 비활성화합니다.",
+		["RestorationModSevenHoldDeployCancelTitleID"] = "배치물 취소 상호 작용",
+		["RestorationModSevenHoldDeployCancelDescID"] = "배치물 키가 토글 상호 작용을 취소하는 데 사용되는지 여부를 활성화하거나 비활성화합니다. 효과를 보려면 토클 상호작용을 활성화해야 합니다.",
+		["RestorationModAimDeploysBipodTitleID"] = "정조준 상태에서 거치대 펼치기",
+		["RestorationModAimDeploysBipodDescID"] = "유효한 표면 위에 정조준을 할 때 거치대 자동 거치을 활성화하거나 비활성화합니다.",
+		["RestorationModMoveCancelBipodTitleID"] = "움직일때 거치대 분리",
+		["RestorationModMoveCancelBipodDescID"] = "움직일때 거치대를 분리하는걸 활성화하거나 비활성화합니다.",		
 		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
 		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
 
@@ -980,9 +986,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Safehouse Nightmare--
 		["skm_nightmare_name"] = "홀드아웃: 옛 세이프하우스",
-		["nightmare_3"] = "난 그것이 반증될 때까지 모든 것을 믿는다.",
+		["nightmare_3"] = "그것이 반증될 때까지 모든 것을 믿는다.",
 		["nightmare_3_desc"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 3까지 버티기.",
-		["nightmare_3_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 3까지 버티기..",
+		["nightmare_3_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 3까지 버티기.",
 		["nightmare_5"] = "그래서 난 요정, 신화, 용을 믿는다.",
 		["nightmare_5_desc"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 5까지 버티기.",
 		["nightmare_5_obj"] = "옛 세이프하우스 하이스트에서의 홀드아웃을 웨이브 1부터 웨이브 5까지 버티기.",
@@ -1685,8 +1691,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_corgi_b_short"] = "MSG 총열",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "유효한 표면에서 $BTN_BIPOD키를 눌러 거치/비거치 합니다.\n\n거치 시 반동이 60%만큼 감소하고 사거리가 30%만큼 증가합니다.",
-		["bm_sc_bipod_desc"] = "유효한 표면에서 $BTN_BIPOD키를 길게 눌러 거치/비거치 합니다.\n\n거치 시 반동이 60%만큼 감소하고 사거리가 30%만큼 증가합니다.",
+		["bm_sc_bipod_desc_pc"] = "유효한 표면 위에 #{skill_color}#$BTN_BIPOD## 키를 눌러 거치하고 다시 누르면 분리합니다.\n\n거치 시 반동이 #{skill_color}#60%##만큼 감소하고 사거리가 #{skill_color}#30%##만큼 증가합니다.\n\n#{item_stage_2}거치에 대한 추가 옵션은 레스토레이션 모드의 추가 옵션 메뉴에서 확인할 수 있습니다.##",
+		["bm_sc_bipod_desc"] = "유효한 표면 위에 #{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 거치하고 다시 꾹 누르면 분리합니다.\n\n거치 시 반동이 #{skill_color}#60%##만큼 감소하고 사거리가 #{skill_color}#30%##만큼 증가합니다.\n\n#{item_stage_2}거치에 대한 추가 옵션은 레스토레이션 모드의 추가 옵션 메뉴에서 확인할 수 있습니다.##\n\n#{item_stage_2}거치에 대한 추가 옵션은 레스토레이션 모드의 추가 옵션 메뉴에서 확인할 수 있습니다.##",
+		["hud_hint_bipod_moving"] = "움직이는 동안 거치할 수 없습니다.",
+		["hud_hint_bipod_slide"] = "슬라이딩 하는 동안 거치할 수 없습니다.",
+		["hud_hint_bipod_air"] = "공중에 떠 있을동안 거치할 수 없습니다. ",
+		["hud_hint_bipod_lean"] = "기대는 동안 거치할 수 없습니다.",
 
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "완전 충전되면 접촉하는 대상을 감전시키고 방해하는 장치입니다.",

@@ -23,6 +23,9 @@
 				<file :name="ene_secret_service_2.unit"/>
 				<file :name="ene_secret_service_2_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
+				<file :name="ene_sniper_3_husk.unit"/>
+			</group>
 			<group :name="pd2_dlc_pent/characters/">
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1.unit"/>
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>

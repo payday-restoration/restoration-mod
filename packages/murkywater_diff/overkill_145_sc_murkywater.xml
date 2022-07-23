@@ -233,7 +233,7 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk" force="false" load="true"/>	
 
 	<!--Keeping those helmets flying again and again and again;)-->	
-	<unit_obj			path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
+	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
 	
 	<!-- disktrasa -->
@@ -582,8 +582,7 @@
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
 	
 	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df" force="true"/>
-	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" force="true"/>
-	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_omnia_helmet_nm" force="false"/>		
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" force="true"/>	
 
 	<!--OMNIA BENELLI DOZER BITS-->	
 	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_neck/ene_acc_bulldozer_ben_neck" load="false"/>

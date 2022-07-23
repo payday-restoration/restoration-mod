@@ -19,15 +19,19 @@
 
 		<body name="body_helmet" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
+			<object name="c_helmet" collision_type="convex" />
 		</body>
 		<body name="body_helmet_plate" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_helmet_plate" collision_type="convex"/>
 		</body>
-		<body name="body_helmet_glass" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet_glass_l" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_glass" collision_type="convex"/>
+			<object name="c_helmet_glass_l" collision_type="convex"/>
+		</body>
+		<body name="body_helmet_glass_r" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Head"/>
+			<object name="c_helmet_glass_r" collision_type="convex"/>
 		</body>
 
 		<body name="body_armor_chest" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -52,6 +56,15 @@
 			<object name="c_throat3" collision_type="convex"/>
 		</body>
 
+		<body name="body_armor_left_shoulderpad" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="LeftArm"/>
+			<object name="g_shoulderpad_l_lod1" collision_type="convex"/>
+		</body>
+		<body name="body_armor_right_shoulderpad" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="RightArm"/>
+			<object name="g_shoulderpad_r_lod1" collision_type="convex"/>
+		</body>
+		
 		<body name="body_armor_neck" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine2"/>
 			<object name="c_neck1" collision_type="convex"/>
@@ -218,7 +231,7 @@
 		<constraint type="limited_hinge" name="RightLeg" enabled="false">
 			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
 			<param pivot="position:RightLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+			<param min_angle="20" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:RightLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -226,7 +239,7 @@
 		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
 			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
 			<param pivot="position:LeftLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+			<param min_angle="20" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:LeftLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -234,7 +247,8 @@
 
 	<decal_surfaces default_material="cloth_no_decal" >
 		<decal_mesh name="dm_helmet_plate" 		enabled="true" material="steel_no_decal" />
-		<decal_mesh name="dm_helmet_glass" 		enabled="false" material="glass_no_decal" />
+		<decal_mesh name="dm_helmet_glass_l" 		enabled="false" material="glass_no_decal" />
+		<decal_mesh name="dm_helmet_glass_r" 		enabled="false" material="glass_no_decal" />
 		<decal_mesh name="dm_head" 				enabled="true" 	material="flesh" />
 		<decal_mesh name="dm_armor_chest" 		enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_stomache" 	enabled="true" 	material="steel_no_decal" />
@@ -242,6 +256,10 @@
 		<decal_mesh name="dm_helmet" 			enabled="true" 	material="steel_no_decal" />
 	</decal_surfaces>
 
+	<effects>
+		<effect_spawner name="es_fire" enabled="false" object="e_fire" effect="effects/payday2/environment/parts/thermal_fire" />
+	</effects>
+	
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
@@ -259,13 +277,23 @@
 
 			<lod_object name="lod_head">
 				<object name="g_head" 					enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_bulldozer" max_distance="1000" />
-					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
-					<material materials="mtr_bulldozer_lod_2" />
+					<material materials="mtr_head" max_distance="1500" />
+					<material materials="mtr_head_lod" />
 				</object>
 				<object name="g_head_lod1" 				enabled="true" lod="1" >
-					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_bulldozer_lod_2" />
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_head">
+				<object name="g_head_shocked" 			enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1500" />
+					<material materials="mtr_head_lod" />
+				</object>
+				<object name="g_head_shocked_lod1" 		enabled="false" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod" />
 				</object>
 			</lod_object>
 
@@ -353,33 +381,37 @@
 				</object>
 			</lod_object>
 
-			<lod_object name="lod_helmet_glass">
-				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
-					<material materials="mtr_helmet" max_distance="0"/>
+			<lod_object name="lod_helmet_glass_l">
+				<object name="g_helmet_glass_l" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_glass" max_distance="1500" />
-					<material materials="mtr_glass_lod" />
-				</object>
-				<object name="g_helmet_glass_lod1" 		enabled="true" lod="1" >
-					<material materials="mtr_helmet" max_distance="0"/>
 					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
-			<lod_object name="lod_helmet_glass_crk">
-				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
-					<material materials="mtr_helmet" max_distance="0"/>
+			<lod_object name="lod_helmet_glass_r">
+				<object name="g_helmet_glass_r" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
 					<material materials="mtr_glass" max_distance="1500" />
 					<material materials="mtr_glass_lod" />
 				</object>
-				<object name="g_helmet_glass_crk_lod1" 	enabled="false" lod="1" >
-					<material materials="mtr_helmet" max_distance="0"/>
+			</lod_object>
+
+			<lod_object name="lod_helmet_glass_l_crk">
+				<object name="g_helmet_glass_l_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_helmet_glass_r_crk">
+				<object name="g_helmet_glass_r_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
+					<material materials="mtr_glass" max_distance="1500" />
 					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-			<object name="g_helmet_glass_contour" enabled="true" />
-
+			<object name="g_helmet_glass_l_contour" enabled="true"/>
+			<object name="g_helmet_glass_r_contour" enabled="true"/>
 		</graphic_group>
 	</graphics>
 

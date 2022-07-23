@@ -1130,17 +1130,14 @@
 	<texture			path="units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_drum_df_cc" force="true"/>
 	
 	<!--Gold AK shit-->
-	<!--Bulltshit garbage won't load properly despite everything that's needed being here (don't need cc matconfigs)
-	either causes infinite loading, missing textures (it supposed to use the ak's lower receiver textures) or a crash. 
-	Maybe I missed something and my borderline blind ass didn't see it but I'm way out of my element here anyways -DMC-->
-	<!--
+	<!--KILL ME -DMC-->
 	<material_config	path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<material_config	path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold_thq" load="false"/>
 	<unit				path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<model				path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<object				path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
-	>-->
+	
 	
 	<!--PEW PEW PEW-->
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>
@@ -1148,7 +1145,7 @@
 	<bnk				path="soundbanks/weapon_mg42" force = "true"/>
 	
 	<!--Blank Statboost-->
-	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>	
 	
 	<!--SC Skill atlas-->
 	<texture			path="guis/textures/pd2/skilltree/icons_atlas_sc"/>

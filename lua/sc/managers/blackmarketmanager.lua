@@ -256,3 +256,42 @@ end
 		managers.challenges_res:load(data)
 	end)
 -- end
+
+
+
+function BlackMarketManager:get_real_mask_id(mask_id, peer_id, char)
+	if not tweak_data.blackmarket.masks[mask_id] then
+		Application:error("[BlackMarketManager:get_real_mask_id] Missing mask:" .. mask_id .. ". Using dallas mask!")
+
+		return "dallas"
+	end
+
+	local i_just_drank_my_toilet_water = not peer_id and math.rand(1)
+	if char and char == "wild" and i_just_drank_my_toilet_water and i_just_drank_my_toilet_water <= 0.2 then
+		local how_does_that_make_you_feel_lil_donnie = math.rand(1)
+		return how_does_that_make_you_feel_lil_donnie <= 0.2 and "win_donald_mega" or "win_donald"
+	end
+
+	if tweak_data.blackmarket.masks[mask_id].characters then
+		local character = self:get_real_character(char, peer_id)
+		if not tweak_data.blackmarket.masks[mask_id].characters[character] and not Application:production_build() then
+			for index, _ in pairs(tweak_data.blackmarket.masks[mask_id].characters) do
+				character = index
+
+				break
+			end
+		end
+
+		print("[BlackMarketManager].get_real_mask_id", mask_id, character, tweak_data.blackmarket.masks[mask_id].characters[character])
+
+		return tweak_data.blackmarket.masks[mask_id].characters[character] or "dallas"
+	end
+
+	if mask_id ~= "character_locked" then
+		return mask_id
+	end
+
+	local character = self:get_real_character(char, peer_id)
+
+	return tweak_data.blackmarket.masks[mask_id][character] or "dallas"
+end

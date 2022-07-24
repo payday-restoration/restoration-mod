@@ -310,7 +310,7 @@ function PlayerStandard:_check_action_melee(t, input)
 	end
 
 	--Here!
-	local action_forbidden = not self:_melee_repeat_allowed() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_using_bipod() or self:is_shooting_count()
+	local action_forbidden = not self:_melee_repeat_allowed() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_using_bipod() or self:is_shooting_count() or self:_in_burst()
 
 	if action_forbidden then
 		return
@@ -331,7 +331,7 @@ function PlayerStandard:_check_action_reload(t, input)
 	if action_wanted then
 		--Here!
 		local action_forbidden = self:_is_reloading() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile()
-		action_forbidden = action_forbidden or self:is_shooting_count()
+		action_forbidden = action_forbidden or self:is_shooting_count() or self:_in_burst()
 
 		if not action_forbidden and self._equipped_unit and not self._equipped_unit:base():clip_full() then
 			self:_start_action_reload_enter(t)
@@ -374,7 +374,7 @@ function PlayerStandard:_check_change_weapon(t, input)
 		action_forbidden = action_forbidden or self:_is_meleeing() or self._use_item_expire_t or self._change_item_expire_t
 		--Here!
 		action_forbidden = action_forbidden or self._unit:inventory():num_selections() == 1 or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod()
-		action_forbidden = action_forbidden or self:is_shooting_count()
+		action_forbidden = action_forbidden or self:is_shooting_count() or self:_in_burst()
 
 		if not action_forbidden then
 			local data = {
@@ -400,7 +400,7 @@ function PlayerStandard:_check_action_equip(t, input)
 	if selection_wanted then
 		local action_forbidden = self:chk_action_forbidden("equip")
 		--Here!
-		action_forbidden = action_forbidden or not self._ext_inventory:is_selection_available(selection_wanted) or self:_is_meleeing() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile()
+		action_forbidden = action_forbidden or not self._ext_inventory:is_selection_available(selection_wanted) or self:_is_meleeing() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_in_burst()
 
 		if not action_forbidden then
 			local new_action = not self._ext_inventory:is_equipped(selection_wanted)
@@ -1150,7 +1150,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or self:_changing_weapon() or self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self._state_data.ducking and not self:_can_stand() then
+	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or self:_changing_weapon() or self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
 		self._running_wanted = true
 		return
 	end
@@ -1907,6 +1907,12 @@ function PlayerStandard:_is_reloading()
 	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1) or self._state_data.reload_expire_t or self._state_data.reload_enter_expire_t or self._state_data.reload_exit_expire_t
 end
 
+function PlayerStandard:_in_burst()
+	local in_burst = alive(self._equipped_unit) and self._equipped_unit:base():burst_rounds_remaining()
+	return in_burst
+end
+
+
 --Check for being fully ADS'd
 function PlayerStandard:full_steelsight()
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
@@ -2231,7 +2237,7 @@ function PlayerStandard:_update_slide_locks()
 		end
 		if --[[not weap_base._starwars and]] not self:_is_reloading() then
 			if weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() == 1 then
-				--weap_base:tweak_data_anim_stop("fire")
+				weap_base:tweak_data_anim_stop("fire")
 				weap_base:tweak_data_anim_stop("magazine_empty")
 				weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty") 
 				if weap_base._fire_second_gun_next == false then

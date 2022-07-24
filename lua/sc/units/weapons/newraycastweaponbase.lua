@@ -1286,8 +1286,10 @@ function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
 					if object[1] then
 						local ammo_base = self:ammo_base()
 						local ammo = ammo_base[ammo_func](ammo_base)
-	
-						object[1]:set_visibility(i <= ammo)
+						
+						if ammo then
+							object[1]:set_visibility(i <= ammo)
+						end
 					end
 				end
 			end

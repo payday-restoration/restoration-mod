@@ -240,6 +240,19 @@
 	<material_config	path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_contour"/>
 	<texture			path="units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer_df"/>
 	
+	<!-- test subject -->
+	<object				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<model				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false" load="true"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject" force="false"/>
+	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject_contour" force="false"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject_husk" force="false" load="true"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_df" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_head_df" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_nm" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_head_nm" force="false"/>
+	
 	<!-- ze Kung Fu Masters -->
 	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1" load="true"/>
 	<unit				path="units/pd2_dlc_pent/characters/ene_male_kungfumaster_1/ene_male_kungfumaster_1_husk" load="true"/>

@@ -486,6 +486,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///REAPER LEVELS\\\--
 	self.mad.player_style = "winter_suit"
+	self.mad.package = {"packages/lvl_mad", "packages/miscassets"}
 	--We're never actually told where the forest is ;)
 	self.pines.player_style = "loud_suit"
 	self.pines.ai_group_type = russia	

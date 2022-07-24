@@ -7028,6 +7028,25 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"
 	end
 	
+	--Test Subjects in Boiling Point (Fighting them is now an option)
+	if table.contains(restoration.shadow_androids, job) then
+	if difficulty_index <= 3 then
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[39] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+	elseif difficulty_index == 4 then	
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[18] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+	elseif difficulty_index == 5 then	
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[34] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[36] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[38] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+	elseif difficulty_index == 6 then
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[9] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+	elseif difficulty_index == 7 then
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[9] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+	else
+		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[7] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+	end
+end
+	
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then		
 		self.unit_categories.TIT_tank = {
 			unit_types = {
@@ -13318,7 +13337,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.Cap_Autumn = {
-			amount = {4, 4},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -13331,8 +13350,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Titan_Spooc",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}					

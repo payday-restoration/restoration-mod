@@ -336,7 +336,12 @@ function restoration:Init()
 		"sand",
 		"chca",
 		"pent"
-	}		
+	}	
+	--Test Subjects replacing Akan Vets
+	restoration.shadow_androids = {
+		"mad",
+		"skmc_mad"
+	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	

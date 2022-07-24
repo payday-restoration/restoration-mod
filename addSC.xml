@@ -1517,18 +1517,6 @@
  	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
 	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	 
 	
-	<!--Alpha blood effects improved-->
-	<texture			path="effects/particles/bullet_hit/flesh/textures/e_bullet_impact_blood_01_df" force="true"/>
-	<texture			path="effects/particles/bullet_hit/flesh/textures/e_bullet_impact_blood_02_df" force="true"/>
-	<texture			path="effects/particles/bullet_hit/flesh/textures/e_head_chunks_01_df" force="true"/>
-	<effect				path="effects/particles/bullet_hit/flesh/bullet_hit_blood" force="true"/>
-	<effect				path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_01" force="true"/>
-	<effect				path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_02" force="true"/>
-	<effect				path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_03" force="true"/>
-	<effect				path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_04" force="true"/>	
-	<effect				path="effects/payday2/particles/impacts/blood/blood_collection_a" force="true"/>	
-	<effect				path="effects/payday2/particles/impacts/blood/blood_impact_a" force="true"/>	
-	<effect				path="effects/payday2/particles/impacts/blood/blood_impact_b" force="true"/>		
 	<!--Headshot effect-->
 	<effect				path="effects/payday2/particles/impacts/blood/brain_splat" />		
 	<texture			path="effects/textures/brain_impacts_df" />

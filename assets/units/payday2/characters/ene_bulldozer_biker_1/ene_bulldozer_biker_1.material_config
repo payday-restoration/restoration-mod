@@ -12,6 +12,33 @@
         <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df" mip="4"/>
     </material>
 	
+    <material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/merit_head_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/merit_head_df"/>
+    </material>	
+    <material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/merit_head_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/merit_head_df" mip="4"/>
+    </material>
+	
+    <material name="mtr_body_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture 	file="units/payday2/textures/blank_nm"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df"/>
+    </material>	
+    <material name="mtr_body_static_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture 	file="units/payday2/textures/blank_nm"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df" mip="4"/>
+    </material>
+
+    <material name="mtr_fueltank" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_nm"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_df"/>
+    </material>
+    <material name="mtr_fueltank_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/leflamer_df" mip="4"/>
+    </material>
+	
     <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
         <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
@@ -23,6 +50,11 @@
     <material name="mtr_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm" mip="4"/>
         <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df" mip="4"/>
+    </material>
+
+    <material name="mtr_helmet_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
     </material>
 	
     <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2" name="mtr_glass">

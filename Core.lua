@@ -245,7 +245,6 @@ function restoration:Init()
 		"RogueCompany", --Rogue Company
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains
-		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"constantine_clubhouse_lvl", --Smuggler's Den 

@@ -192,10 +192,29 @@
 	<sequence_manager	path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"/> <!--i hope this doesn't break-->
 	
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df"/>
+	<df_nm				path="units/payday2/characters/ene_bulldozer_biker_1/leflamer"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_nm"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
 
+	<!--fuck you biker dozer armor bits-->
+	<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+	
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" load="false"/>
+	
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" load="false"/>
+	
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>	
+	<!--end armor bits-->	
+	
+	
 	<!-- cobras enforcer -->
 	<unit				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer" load="true"/>
 	<unit				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer_husk" load="true"/>
@@ -287,24 +306,4 @@
 
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df"/>
 		
-	<!--fuck you biker dozer armor bits-->
-	<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->
-	<unit_mat			path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1"/>
-	
-	<unit_obj			path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1"/>
-	
-	<unit_obj			path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1"/>
-	
-	<unit_obj			path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1"/>
-	
-	<unit_obj			path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1"/>
-	
-	<unit_obj			path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1" load="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
-	<!--end armor bits-->	
 </table>

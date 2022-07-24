@@ -84,6 +84,17 @@
 			<from_group name="std/crouch/still" blend="3"/>
 		</target>
 	</tweak>
+	<!-- Slide exit state fix -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/nav_link/e_nl_slide_fwd_4m"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/crouch/still/idle"/>
+		</target>
+	</tweak>
 	<!-- Make medic heals an upper_body animation -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>

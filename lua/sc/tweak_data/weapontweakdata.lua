@@ -9585,7 +9585,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 13,
 				spread_moving = 8,
 				zoom = 1,
-				concealment = 15,
+				concealment = 16,
 				suppression = 2,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -12392,7 +12392,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.kick.crouching = self.m107cq.kick.standing
 		self.m107cq.kick.steelsight = self.m107cq.kick.standing
 		self.m107cq.supported = true
-		self.m107cq.ads_speed = 0.640
+		self.m107cq.ads_speed = 0.620
 		self.m107cq.damage_falloff = {
 			start_dist = 4000,
 			end_dist = 200000,
@@ -12481,7 +12481,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.fire_mode_data.fire_rate = 0.923076923
 		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.m200.supported = true
-		self.m200.ads_speed = 0.500
+		self.m200.ads_speed = 0.560
 		self.m200.damage_falloff = {
 			start_dist = 6000,
 			end_dist = 350000,
@@ -12493,7 +12493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 13,
 			spread_moving = 8,
 			zoom = 1,
-			concealment = 16,
+			concealment = 15,
 			suppression = 2,
 			alert_size = 2,
 			extra_ammo = 101,

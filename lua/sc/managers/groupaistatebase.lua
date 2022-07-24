@@ -954,7 +954,7 @@ function GroupAIStateBase:criminal_spotted(unit)
 	u_sighting.undetected = nil
 	u_sighting.det_t = self._t
 
-	u_sighting.tracker:m_position(u_sighting.pos)
+	mvector3.set(u_sighting.pos, u_sighting.m_det_pos)
 
 	local seg = u_sighting.tracker:nav_segment()
 	u_sighting.seg = seg

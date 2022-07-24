@@ -31,6 +31,16 @@
 		</search>
 		<target mode="replace"/>
 	</tweak>
+	<!-- Navlink to crouch exit displacement fix -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/crouch"/>
+		</search>
+		<target mode="attach">
+			<from_group name="std/stand/nav_link" blend="7"/>
+		</target>
+	</tweak>
 	<!-- Dodge animation displacement fix -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -84,7 +94,27 @@
 			<from_group name="std/crouch/still" blend="3"/>
 		</target>
 	</tweak>
-	<!-- Slide exit state fix -->
+	<!-- Navlink exit state fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/nav_link/fwd_2m"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/crouch/still/idle"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/nav_link/fwd_4m"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/crouch/still/idle"/>
+		</target>
+	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>

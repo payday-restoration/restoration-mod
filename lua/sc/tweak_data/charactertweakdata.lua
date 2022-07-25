@@ -2181,22 +2181,35 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.heal_cooldown = 15
 	table.insert(self._enemy_list, "spooc_titan")
 
-	-- Kung Fu Master
+	--Kung Fu Master/Test Subject
 	self.spooc_gangster = deep_clone(self.spooc)	
 	self.spooc_gangster.tags = {"gangster", "spooc", "special"}	
+	if job == "mad" or job == "skmc_mad" then
+	self.spooc_gangster.speech_prefix_p1 = "android"
+	self.spooc_gangster.speech_prefix_p2 = nil
+	self.spooc_gangster.speech_prefix_count = nil
+	self.spooc_gangster.access = "spooc"
+	else
+	self.spooc_gangster.speech_prefix_p1 = "lt"
+	self.spooc_gangster.speech_prefix_p2 = nil
+	self.spooc_gangster.speech_prefix_count = 2
 	self.spooc_gangster.access = "gangster"
+end	
 	self.spooc_gangster.HEALTH_INIT = 24
 	self.spooc_gangster.damage.hurt_severity = presets.hurt_severities.elite
 	self.spooc_gangster.DAMAGE_CLAMP_BULLET = 3
 	self.spooc_gangster.headshot_dmg_mul = 3.4	
 	self.spooc_gangster.no_omnia_heal = true
-	self.spooc_gangster.melee_weapon = "fists"
 	self.spooc_gangster.dodge = presets.dodge.veteran	
 	self.spooc_gangster.rescue_hostages = false
 	self.spooc_gangster.steal_loot = false	
 	self.spooc_gangster.priority_shout = nil
 	self.spooc_gangster.bot_priority_shout = nil
+	if job == "pent" then
 	self.spooc_gangster.melee_weapon = "kf_katana"	
+	else 
+	self.spooc_gangster.melee_weapon = "fists"
+end
 	self.spooc_gangster.kick_damage = 12.0
 	self.spooc_gangster.no_arrest = true
 	self.spooc_gangster.no_retreat = true

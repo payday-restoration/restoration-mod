@@ -2434,7 +2434,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.immune_to_knockback = true
 	self.phalanx_vip.immune_to_knock_down = true
 	self.phalanx_vip.HEALTH_INIT = 130
-	self.phalanx_vip.headshot_dmg_mul = 1.5
+	self.phalanx_vip.headshot_dmg_mul = 2.0
 	self.phalanx_vip.damage_resistance = presets.damage_resistance.boss
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.damage.rocket_damage_mul = 0.1

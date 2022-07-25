@@ -55,7 +55,6 @@ function restoration:Init()
 		four_stores = restoration.captain_types.winter, --Four Stores
 		hox_3 = restoration.captain_types.winter, --Hoxton Revenge
 		moon = restoration.captain_types.winter, --Stealing Xmas
-		born = restoration.captain_types.winter, --Biker Heist
 		mus = restoration.captain_types.winter,	--the diamond
 		gallery = restoration.captain_types.winter, --art gallery
 		red2 = restoration.captain_types.winter, --fwb

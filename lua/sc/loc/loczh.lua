@@ -3,7 +3,7 @@ This code is to detect one of my mods, which helps me keep up the translation of
 Or The update is so less that I should not bother you guys in that case.
 I tried to make my mod have a lower priorty, but it didn't work, so I can only do something here.
 THIS CAN RLY MAKES MY WORK MUCH MORE CONVENIENT, so PLZ don't delete it since it only affects Chinese.  --]]
-if ChinStringFixes and ChinStringFixes.settings and ChinStringFixes.settings.Resmod_Compat then
+if ChinStringFixes and ChinStringFixes.settings and ChinStringFixes.settings.Resmod_Compat and ChinStringFixes.settings.Enable_String then
 	return
 end
 
@@ -148,8 +148,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModWpnCatDescID"] = "改变武器在购买菜单的分类方式。重启游戏生效。",
 		["RestorationModSprintCancelTitleID"] = "紧急回避专精起跑打断换弹",
 		["RestorationModSprintCancelDescID"] = "选择在你专精了\"紧急回避\"技能后，跑步是否会打断换弹。\n勾选以打断换弹来应对按R召唤敌人的情况。",
-		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
-		["RestorationModSevenHoldDescID"] = "Toggle whether or not the interact key acts as a toggle.",
+		["RestorationModSevenHoldTitleID"] = "轻按互动切换 (Press2Hold)",
+		["RestorationModSevenHoldDescID"] = "只需要按一下互动键，就会自动保持互动。\n再按一次互动键取消互动。",
+		["RestorationModSevenHoldDeployCancelTitleID"] = "用放置随身装备键取消互动",
+		["RestorationModSevenHoldDeployCancelDescID"] = "勾选以使用放置随身装备的按键取消互动。需要先开启轻按互动切换。",
+		["RestorationModAimDeploysBipodTitleID"] = "瞄准时自动用脚架",
+		["RestorationModAimDeploysBipodDescID"] = "勾选以在一个可用平面瞄准时自动架起脚架。",
+		["RestorationModMoveCancelBipodTitleID"] = "移动时自动收脚架",
+		["RestorationModMoveCancelBipodDescID"] = "勾选以在你移动时自动收起脚架。",
 		["RestorationModClassicMoviesTitleID"] = "PD:TH经典界面",
 		["RestorationModClassicMoviesDescID"] = "选择是否在任务简报界面采用PD:TH的经典页面(仅适用于经典劫案)",
 		
@@ -1145,31 +1151,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_5_mark"] = "5倍放大倍率。\n开镜时自动标记特殊敌人，潜入时则会标记警卫。",
 		["bm_wp_upg_o_6"] = "6倍放大倍率。",
 		--["bm_wp_upg_o_6_mark"] = "6倍放大倍率。\n开镜时自动标记特殊敌人，潜入时则会标记警卫。", --]]
-		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{skill_color}#1.1x magnification.##",
-		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{skill_color}#1.2x magnification.##",
-		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{skill_color}#1.5x magnification.##",
-		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{skill_color}#1.5x magnification.##",
-		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{skill_color}#1.8x magnification.##",
-		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{skill_color}#3x magnification.##",
-		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#3x magnification.##",
-		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{skill_color}#4x magnification.##",
-		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#4x magnification.##",
-		["bm_wp_upg_o_5"] = "Long-range scope.\n#{skill_color}#5x magnification.##",
-		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#5x magnification.##",
-		["bm_wp_upg_o_6"] = "Long-range scope.\n#{skill_color}#6x magnification.##",
-		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#6x magnification.##",
-		["bm_wp_upg_o_8"] = "Long-range scope.\n#{skill_color}#8x magnification.##",
-		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{skill_color}#8x magnification.##",
+		["bm_wp_upg_o_1_1"] = "反射式瞄具。\n#{skill_color}#1.1倍放大倍率##",
+		["bm_wp_upg_o_1_2"] = "红点瞄准镜。\n#{skill_color}#1.2倍放大倍率##",
+		["bm_wp_upg_o_1_5"] = "全息瞄准镜。\n#{skill_color}#1.5倍放大倍率##",
+		["bm_wp_upg_o_1_5_pris"] = "棱镜瞄准具\n#{skill_color}#1.5倍放大倍率##",
+		["bm_wp_upg_o_1_8"] = "红点瞄准镜。\n#{skill_color}#1.8倍放大倍率##",
+		["bm_wp_upg_o_3"] = "中距瞄准仪。\n#{skill_color}#3倍放大倍率##",
+		["bm_wp_upg_o_3_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{skill_color}#3倍放大倍率##",
+		["bm_wp_upg_o_4"] = "中距瞄准仪。\n#{skill_color}#4倍放大倍率##",
+		["bm_wp_upg_o_4_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{skill_color}#4倍放大倍率##",
+		["bm_wp_upg_o_5"] = "长距瞄准仪。\n#{skill_color}#5倍放大倍率##",
+		["bm_wp_upg_o_5_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{skill_color}#5倍放大倍率##",
+		["bm_wp_upg_o_6"] = "长距瞄准仪。\n#{skill_color}#6倍放大倍率##",
+		["bm_wp_upg_o_6_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{skill_color}#6倍放大倍率##",
+		["bm_wp_upg_o_8"] = "长距瞄准仪。\n#{skill_color}#8倍放大倍率##",
+		["bm_wp_upg_o_8_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{skill_color}#8倍放大倍率##",
 
 		["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
-		["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
+		["bm_wp_upg_o_5_default"] = "长距瞄准仪。\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5倍放大倍率##",
 
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled iron sights.",
-		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
-		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
+		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1倍放大倍率##",
+		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2倍放大倍率##",
 		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the laser sight.", --VMP Point Shoot Laser
 
-		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
+		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the magnifier up/down.\n#{skill_color}#3倍放大倍率##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "受到撞击时释放半径为3.75m的火焰，持续5秒。火焰上的敌人每秒受到120点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在3秒内受到额外60点伤害。",
@@ -1791,9 +1797,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_corgi_b_short"] = "MSG枪管",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "在可用平面按 $BTN_BIPOD 键放置/取消放置。\n放置后减小60%的后座力并增加30%的射程。",
-		["bm_sc_bipod_desc"] = "在可用平面按 $BTN_BIPOD 键放置/取消放置。\n放置后减小60%的后座力并增加30%的射程。",
-
+		["bm_sc_bipod_desc_pc"] = "在可用平面按 #{skill_color}#$BTN_BIPOD## 键放置/取消放置。\n放置后减小#{skill_color}#60%##的后座力并增加#{skill_color}#30%##的射程。\n\n额外选项可在恢复MOD#{item_stage_2}#其它设置##菜单中找到。",
+		["bm_sc_bipod_desc"] = "在可用平面按 #{skill_color}#$BTN_BIPOD## 键放置/取消放置。\n放置后减小#{skill_color}#60%##的后座力并增加#{skill_color}#30%##的射程。\n\n额外选项可在恢复MOD#{item_stage_2}#其它设置##菜单中找到。",
+		["hud_hint_bipod_moving"] = "移动时无法放置",
+		["hud_hint_bipod_slide"] = "滑行时无法放置",
+		["hud_hint_bipod_air"] = "在空中无法放置",
+		["hud_hint_bipod_lean"] = "探头时无法放置",
+		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "完全蓄力后可以释放高压电击晕敌人。",
 
@@ -2338,8 +2348,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "掷弹兵",
 
-		["mutator_titandozers_desc"] = "Halloween Holiday Effects",
-		["mutator_titandozers_longdesc"] = "The Headless Bulldozers have escaped from Wolf's nightmares and become reality! Regular Bulldozers will now be their Headless Bulldozer variants and other Halloween effects will now be active!",
+		["mutator_titandozers_desc"] = "万圣节派对",
+		["mutator_titandozers_longdesc"] = "无头熊从沃尔夫的噩梦中逃出来进入了现实世界！一般的熊将变种成他们的无头版本，其它的万圣节效果也会启用！",
 
 		["mutator_medidozer_longdesc"] = "所有水军都将被替换为医疗兵，所有的特殊单位都将被替换为熊。",
 		["mutator_medicdozers"] = "医疗熊",
@@ -2375,9 +2385,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_spawn_mult_desc"] = "增加刷兵量。",
 		["mutator_spawn_mult_longdesc"] = "突击进行中会刷出更多的敌人。Overkill™ 经典操作！",
 
-		["mutator_bravos_only"] = "Hardline",
-		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["mutator_bravos_only"] = "死亡地带",
+		["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
+		["mutator_bravos_only_longdesc"] = "所有非地图脚本生成的敌人都被替换成专家模式有去无回里的同类别单位。FBI SWAT将替代蓝皮SWAT，并且FBI SWAT会被替换成Bravo临界反应部队。",
 
 		["mutator_zombie_outbreak"] = "行尸走肉",
 		["mutator_zombie_outbreak_desc"] = "所有敌军都将被替换为丧尸单位。",
@@ -2627,7 +2637,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "子弹风暴",
-			["menu_ammo_reservoir_beta_desc_sc"] = "掌握: ##$basic##\n任何玩家使用你放置的弹药袋将获得##无限弹药##的增益，持续时间取决于补充的弹药数量，最多持续##5##秒\n\n专精: ##$pro##\n该技能的最长持续时间额外延长##15##秒",																								
+			["menu_ammo_reservoir_beta_desc_sc"] = "掌握: ##$basic##\n任何玩家使用你放置的弹药袋将获得##无限弹药##的增益，持续时间取决于补充的弹药数量，最多持续##5##秒。\n\n提示：榴弹发射器、火箭发射器和任何其它使用爆炸类型弹药的武器都不受此技能的增益。\n\n专精: ##$pro##\n该技能的最长持续时间额外延长##15##秒。",																								
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "专业配备",

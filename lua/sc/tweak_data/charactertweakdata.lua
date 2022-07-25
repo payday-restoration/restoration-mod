@@ -3410,9 +3410,8 @@ function CharacterTweakData:_init_jacket(presets)
 		"wpn_fps_ass_amcar_npc",
 		"wpn_fps_ass_m16_npc"
 	}
-	local rand_num = math.random(#rand_weap)
 	self.jacket.weapon.weapons_of_choice = {
-		primary = tostring(rand_weap[rand_num]),
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jacket.detection = presets.detection.gang_member

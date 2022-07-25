@@ -7045,6 +7045,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	else
 		self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[7] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
 	end
+		self.unit_categories.fbi_vet.unit_types.russia[1] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+		self.unit_categories.SKM_FBI_suit_M4_MP5_W2.unit_types.russia[9] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
+		self.unit_categories.SKM_FBI_suit_M4_MP5_W3.unit_types.russia[9] = "units/pd2_dlc_mad/characters/ene_akan_veteran_subject/ene_akan_veteran_subject"
 end
 	
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then		

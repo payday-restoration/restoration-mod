@@ -5955,7 +5955,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_o_fc1")
 			
-	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)		
+	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)	
+
+	self.wpn_fps_lmg_hk21_pdth = deep_clone(self.wpn_fps_lmg_hk21)
+	self.wpn_fps_lmg_hk21_pdth.real_factory_id = "wpn_fps_lmg_hk21"
+	self.wpn_fps_lmg_hk21_pdth.default_blueprint = {
+		"wpn_fps_lmg_hk21_b_short",
+		"wpn_fps_lmg_hk21_body_lower",
+		"wpn_fps_lmg_hk21_body_upper",
+		"wpn_fps_lmg_hk21_fg_short",
+		"wpn_fps_lmg_hk21_g_standard",
+		"wpn_fps_lmg_hk21_m_standard",
+		"wpn_fps_lmg_hk21_s_standard",
+		"wpn_fps_upg_bp_lmg_lionbipod",
+		"wpn_fps_upg_o_docter"
+	}
+	self.wpn_fps_lmg_hk21_pdth_npc = deep_clone(self.wpn_fps_lmg_hk21_pdth)
+	self.wpn_fps_lmg_hk21_pdth_npc.unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21/wpn_fps_lmg_hk21_npc"	
 		
 end)
 
@@ -12770,8 +12786,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 	}
 	self.wpn_fps_snp_tti_wick_npc = deep_clone(self.wpn_fps_snp_tti_wick)
 	self.wpn_fps_snp_tti_wick_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
-
-
 end)
 
 --Grom

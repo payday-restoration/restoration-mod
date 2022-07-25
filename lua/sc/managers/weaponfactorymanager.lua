@@ -16,8 +16,10 @@ end
 
 
 function WeaponFactoryManager:get_weapon_id_by_factory_id(factory_id)
-	if tweak_data.weapon.factory[factory_id].real_factory_id then
-		factory_id = tweak_data.weapon.factory[factory_id].real_factory_id
+	local factory = tweak_data.weapon.factory
+	local real_factory_id = factory[factory_id] and factory[factory_id].real_factory_id
+	if real_factory_id then
+		factory_id = real_factory_id
 	end
 
 	local upgrade = managers.upgrades:weapon_upgrade_by_factory_id(factory_id)

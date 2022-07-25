@@ -3255,8 +3255,13 @@ function CharacterTweakData:_init_spanish(presets)
 	self.spanish.flammable = false
 	self.spanish.damage = presets.gang_member_damage
 	self.spanish.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_lmg_hk21_pdth_npc",
+		"wpn_fps_lmg_m249_npc",
+		"wpn_fps_lmg_m249_npc"
+	}
 	self.spanish.weapon.weapons_of_choice = {
-		primary = "wpn_fps_lmg_m249_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.spanish.detection = presets.detection.gang_member
@@ -3504,8 +3509,15 @@ function CharacterTweakData:_init_dragon(presets)
 	self.dragon.no_run_stop = true
 	self.dragon.damage = presets.gang_member_damage
 	self.dragon.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_snp_wa2000_npc",
+		"wpn_fps_snp_r700_npc",
+		"wpn_fps_snp_r700_npc",
+		"wpn_fps_snp_r700_npc",
+		"wpn_fps_snp_r700_npc"
+	}
 	self.dragon.weapon.weapons_of_choice = {
-		primary = "wpn_fps_snp_wa2000_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.dragon.detection = presets.detection.gang_member

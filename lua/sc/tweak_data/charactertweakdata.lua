@@ -2188,12 +2188,10 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster.speech_prefix_p1 = "android"
 	self.spooc_gangster.speech_prefix_p2 = nil
 	self.spooc_gangster.speech_prefix_count = nil
-	self.spooc_gangster.access = "spooc"
 	else
 	self.spooc_gangster.speech_prefix_p1 = "lt"
 	self.spooc_gangster.speech_prefix_p2 = nil
 	self.spooc_gangster.speech_prefix_count = 2
-	self.spooc_gangster.access = "gangster"
 end	
 	self.spooc_gangster.HEALTH_INIT = 24
 	self.spooc_gangster.damage.hurt_severity = presets.hurt_severities.elite
@@ -2203,6 +2201,7 @@ end
 	self.spooc_gangster.dodge = presets.dodge.veteran	
 	self.spooc_gangster.rescue_hostages = false
 	self.spooc_gangster.steal_loot = false	
+	self.spooc_gangster.access = "gangster"
 	self.spooc_gangster.priority_shout = nil
 	self.spooc_gangster.bot_priority_shout = nil
 	if job == "pent" then

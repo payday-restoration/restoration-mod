@@ -3400,8 +3400,19 @@ function CharacterTweakData:_init_jacket(presets)
 	self.jacket.no_run_stop = true
 	self.jacket.damage = presets.gang_member_damage
 	self.jacket.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_ass_74_npc",
+		"wpn_fps_ass_74_npc",
+		"wpn_fps_ass_akm_npc",
+		"wpn_fps_ass_akm_npc",
+		"wpn_fps_ass_akm_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_m16_npc"
+	}
+	local rand_num = math.random(#rand_weap)
 	self.jacket.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_74_npc",
+		primary = tostring(rand_weap[rand_num]),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jacket.detection = presets.detection.gang_member

@@ -10,7 +10,7 @@
 			damage = -6
 		},
 		custom_stats = {
-			falloff_start_mult = 1.25,
+			falloff_start_mult = 1.00,
 			falloff_end_mult = 1.25,
 			armor_piercing_add = 1,			
 			bullet_class = "BleedBulletBase",
@@ -32,7 +32,7 @@
 			damage = -15
 		},
 		custom_stats = {
-			falloff_start_mult = 1.25,
+			falloff_start_mult = 1.00,
 			falloff_end_mult = 1.25,
 			armor_piercing_add = 1,				
 			bullet_class = "BleedBulletBase",
@@ -55,7 +55,7 @@
 		},
 		custom_stats = {
 			desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
-			falloff_start_mult = 1.25,
+			falloff_start_mult = 1.00,
 			falloff_end_mult = 1.25,
 			armor_piercing_add = 1,		
 			bullet_class = "BleedBulletBase",
@@ -144,8 +144,8 @@
 			damage = 15
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -160,8 +160,8 @@
 			damage = 15
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -176,8 +176,8 @@
 			damage = 30
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -191,8 +191,8 @@
 		supported = true,
 		stats = {
 			value = 10,
-			concealment = -2,
-			total_ammo_mod = -25,
+			concealment = -3,
+			total_ammo_mod = -33,
 			damage = 15,	
 			recoil = -20,
 			spread = 12,
@@ -204,10 +204,12 @@
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 			rays = 1,
 			armor_piercing_add = 1,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 1.5,
+			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		}
@@ -219,7 +221,7 @@
 		supported = true,
 		stats = {
 			value = 10,
-			concealment = -2,
+			concealment = -3,
 			total_ammo_mod = -25,
 			damage = 15,
 			spread = 12,
@@ -231,10 +233,12 @@
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 			rays = 1,
 			armor_piercing_add = 1,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 1.5,
+			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		}
@@ -246,24 +250,26 @@
 		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
+			concealment = -3,
 			total_ammo_mod = -33,
 			damage = 30,
 			recoil = -20,
 			spread = 12,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
-			suppression = -1,
-			concealment = -2
+			suppression = -1
 		},
 		custom_stats = {				
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 			rays = 1,
 			armor_piercing_add = 1,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
+			falloff_start_mult = 1.25,
+			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		}
 	}
@@ -281,6 +287,8 @@
 			damage = 30
 		},
 		custom_stats = {
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
@@ -300,6 +308,8 @@
 			damage = 45
 		},
 		custom_stats = {
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
@@ -320,6 +330,8 @@
 			damage = 60
 		},
 		custom_stats = {
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
@@ -361,7 +373,7 @@
 			Stabilty modifiers are okay in these cases
 
 	Handguard logic:
-		No custom_stats modifiers
+		No custom_stats modifiers UNLESS
 
 		Barrel/Handguard hybrid logic:
 			Some handguards affect barrel length (HK21, G3, G36, Galil, FAL, MP5)
@@ -3390,10 +3402,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 	--table.insert(self.wpn_fps_ass_akm_npc.uses_parts, "wpn_upg_ak_s_nostock")
 
 	self.wpn_fps_ass_akm_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm.uses_parts)
-	
 end)
 
---Gold AK 7.62
+--Gold AK 7.62)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", function(self)
 
 	self.parts.wpn_upg_ak_s_folding_vanilla_gold.cc_thq_material_config = Idstring("units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_folding_gold_thq")
@@ -5071,6 +5082,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			damage = 90
 		},
 		custom_stats = {
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
@@ -5083,7 +5096,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
-			concealment = -2,
+			concealment = -3,
 			total_ammo_mod = -33,
 			damage = 30,	
 			recoil = -20,
@@ -5095,11 +5108,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
 			rays = 1,
 			armor_piercing_add = 1,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
+			falloff_start_mult = 1.25,
+			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		},
 	}
@@ -5111,8 +5126,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			damage = 30
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -5126,8 +5141,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			damage = 30
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -7740,7 +7755,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_slug.supported = true
 	self.parts.wpn_fps_upg_a_slug.stats = {
 		value = 10,
-		concealment = -2,
+		concealment = -3,
 		total_ammo_mod = -25,
 		damage = 30,	
 		recoil = -20,
@@ -7753,10 +7768,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
 		rays = 1,
 		armor_piercing_add = 1,
+		ammo_pickup_max_mul = 0.8,
+		ammo_pickup_min_mul = 0.8,
 		can_shoot_through_enemy = true,
 		can_shoot_through_shield = true,
 		can_shoot_through_wall = true,
-		falloff_start_mult = 1.5,
+		falloff_start_mult = 1.25,
 		falloff_end_mult = 2.0,
 		ads_speed_mult = 1.10
 	}
@@ -7770,8 +7787,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage = 30
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
-		falloff_start_mult = 0.75,
-		falloff_end_mult = 0.75,
+		falloff_start_mult = 0.8,
+		falloff_end_mult = 0.8,
 		ammo_pickup_max_mul = 0.8,
 		ammo_pickup_min_mul = 0.8,
 		rays = 6
@@ -7798,6 +7815,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		moving_spread = 3
 	}
 	self.parts.wpn_fps_upg_a_explosive.custom_stats = {
+		ammo_pickup_max_mul = 0.8,
+		ammo_pickup_min_mul = 0.8,
 		ignore_statistic = true,
 		rays = 1,
 		block_b_storm = true,	
@@ -7815,7 +7834,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage = -30
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
-		falloff_start_mult = 1.25,
+		falloff_start_mult = 1.00,
 		falloff_end_mult = 1.25,
 		armor_piercing_add = 1,
 		bullet_class = "BleedBulletBase",
@@ -8584,53 +8603,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 
 	--Buzzsaw Part Additions
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_specter")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_specter")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_aimpoint")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_docter")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_docter")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_eotech")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_eotech")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_t1micro")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cmore")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_cmore")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_aimpoint_2")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cs")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_cs")		
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_rx30")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_rx30")	
-
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_rx01")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_rx01")		
-	
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_reflex")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_reflex")		
-	
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_rx01")	
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_reflex")	
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_sig")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_sig")	
-
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_uh")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_uh")		
-
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_uh")	
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_fc1")	
-
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_ns_ass_filter")	
 			
+	self.wpn_fps_lmg_mg42_npc.adds = deep_clone(self.wpn_fps_lmg_mg42.adds)			
+	self.wpn_fps_lmg_mg42_npc.override = deep_clone(self.wpn_fps_lmg_mg42.override)			
 	self.wpn_fps_lmg_mg42_npc.uses_parts = deep_clone(self.wpn_fps_lmg_mg42.uses_parts)			
 
 end)
@@ -13609,6 +13599,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			damage = 90
 		},
 		custom_stats = {
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
@@ -13621,7 +13613,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
-			concealment = -2,
+			concealment = -3,
 			total_ammo_mod = -25,
 			damage = 30,	
 			recoil = -20,
@@ -13634,11 +13626,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 			rays = 1,
 			armor_piercing_add = 1,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			falloff_start_mult = 2.00,
-			falloff_end_mult = 3.00,
+			falloff_start_mult = 1.25,
+			falloff_end_mult = 2.0,
 			ads_speed_mult = 1.10
 		}
 	}
@@ -13650,8 +13644,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			damage = 30
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -13665,23 +13659,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			damage = 30
 		},
 		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -25,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -14132,7 +14111,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 			desc_id = "bm_wp_upg_a_slug_desc",
 			stats = {
 				value = 10,
-				concealment = -2,
+				concealment = -3,
 				total_ammo_mod = -25,
 				damage = 30,	
 				recoil = -20,
@@ -14144,11 +14123,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
 				rays = 1,
 				armor_piercing_add = 1,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
+				falloff_start_mult = 1.25,
+				falloff_end_mult = 2.0,
 				ads_speed_mult = 1.10
 			},
 		},
@@ -14160,8 +14141,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				damage = 30
 			},
 			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.8,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
 				rays = 6
@@ -14175,8 +14156,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				damage = 30
 			},
 			custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75,
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.8,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
 				rays = 6
@@ -18346,12 +18327,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
 				rays = 1,
 				armor_piercing_add = 1,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true,
 				can_shoot_through_titan_shield = true,
-				falloff_start_mult = 2.00,
-				falloff_end_mult = 3.00,
+				falloff_start_mult = 1.25,
+				falloff_end_mult = 2.00,
 				ads_speed_mult = 1.10
 			}
 		self.parts.wpn_fps_upg_ks23_barrel_short.supported = true
@@ -21080,7 +21063,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				supported = true,
 				stats = {
 					value = 10,
-					concealment = -2,
+					concealment = -3,
 					total_ammo_mod = -25,
 					damage = 15,
 					spread = 20,
@@ -21092,11 +21075,13 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					rays = 1,
 					armor_piercing_add = 1,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
-					falloff_start_mult = 2.00,
-					falloff_end_mult = 3.00,
+					falloff_start_mult = 1.25,
+					falloff_end_mult = 2.0,
 					ads_speed_mult = 1.10
 				}
 			},
@@ -21108,8 +21093,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage = 15
 				},
 				custom_stats = {
-					falloff_start_mult = 0.75,
-					falloff_end_mult = 0.75,
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.8,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
 					rays = 6
@@ -21123,8 +21108,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage = 15
 				},
 				custom_stats = {
-					falloff_start_mult = 0.75,
-					falloff_end_mult = 0.75,
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.8,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
 					rays = 6
@@ -21142,6 +21127,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage = 45
 				},
 				custom_stats = {
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,

@@ -310,6 +310,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.gallery.player_style = "sneak_suit"
+	self.gallery.flashlights_on = true
 	self.framing_frame_1.player_style = "sneak_suit"
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"

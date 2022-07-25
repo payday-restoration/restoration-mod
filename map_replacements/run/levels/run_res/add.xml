@@ -505,7 +505,7 @@
 		<effect load="true" path="effects/payday2/particles/explosions/sentry_explosion"/>
 		<unit path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper"/>
 		<object path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper"/>
-		<physic_effect path="physic_effects/push_sphere"/>
 		<bnk path="soundbanks/weapon_swatturret"/>
+		<physic_effect path="physic_effects/push_sphere"/>
 	</add>
 </table>

@@ -5261,6 +5261,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.rsh12.stats_modifiers = nil
+				self.rsh12.reload_speed_multiplier = 0.9
 				self.rsh12.timers.reload_not_empty = 2.1
 				self.rsh12.timers.reload_empty = 2.1
 				self.rsh12.timers.reload_exit_empty = 0.6
@@ -5478,6 +5479,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mateba.stats_modifiers = nil
 				self.mateba.panic_suppression_chance = 0.05
+				self.mateba.reload_speed_multiplier = 1.1
 				self.mateba.timers.reload_exit_empty = 0.55
 				self.mateba.timers.reload_exit_not_empty = 0.55
 
@@ -5510,6 +5512,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.model3.stats_modifiers = nil
+				self.model3.reload_speed_multiplier = 0.85
 				self.model3.timers.reload_not_empty = 2.4
 				self.model3.timers.reload_empty = 2.4		
 				self.model3.panic_suppression_chance = 0.05	
@@ -5543,6 +5546,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.new_raging_bull.stats_modifiers = nil
+				self.new_raging_bull.reload_speed_multiplier = 0.9
 				self.new_raging_bull.timers.reload_not_empty = 2.1
 				self.new_raging_bull.timers.reload_empty = 2.1
 				self.new_raging_bull.timers.reload_exit_empty = 0.6
@@ -5576,6 +5580,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.chinchilla.stats_modifiers = nil
+				self.chinchilla.reload_speed_multiplier = 1.1
 				self.chinchilla.timers.reload_exit_empty = 0.5
 				self.chinchilla.timers.reload_exit_not_empty = 0.5
 			
@@ -6263,12 +6268,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.judge.stats_modifiers = nil
+				self.judge.reload_speed_multiplier = 0.9
 				self.judge.timers.reload_not_empty = 2.1
 				self.judge.timers.reload_empty = 2.1
 				self.judge.timers.reload_exit_empty = 0.6
 				self.judge.timers.reload_exit_not_empty = 0.6
 				self.judge.panic_suppression_chance = 0.05
-				self.judge.reload_speed_multiplier = 0.85
 
 	--[[     BREAK-ACTION SHOTGUNS     ]]
 
@@ -11310,6 +11315,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.can_shoot_through_wall = true
 		self.shatters_fury.armor_piercing_chance = 1
 		--self.shatters_fury.animations.reload_name_id = "chinchilla"
+		self.shatters_fury.reload_speed_multiplier = 0.9
 		self.shatters_fury.timers = deep_clone(self.new_raging_bull.timers)
 		--this line doesn't do shit
 		--self.shatters_fury.custom = true

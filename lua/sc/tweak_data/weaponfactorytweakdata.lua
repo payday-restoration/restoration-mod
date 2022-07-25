@@ -12874,11 +12874,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 		40
 	}
 	self.parts.wpn_fps_pis_chinchilla_b_satan.supported = true
-	self.parts.wpn_fps_pis_chinchilla_b_satan.stats = {
-		value = 5, 
-		spread = 1, 
-		concealment = -3
-	}
+	self.parts.wpn_fps_pis_chinchilla_b_satan.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_chinchilla_b_satan.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Carnival Grip
 	self.parts.wpn_fps_pis_chinchilla_g_black.pcs = {
@@ -12890,8 +12887,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 	self.parts.wpn_fps_pis_chinchilla_g_black.supported = true
 	self.parts.wpn_fps_pis_chinchilla_g_black.stats = {
 		value = 3, 
-		recoil = -1, 
+		recoil = -2, 
 		concealment = 1
+	}
+	self.parts.wpn_fps_pis_chinchilla_g_black.custom_stats = {
+		ads_speed_mult = 0.975
 	}
 	
 	--Cruz Grip
@@ -12904,8 +12904,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 	self.parts.wpn_fps_pis_chinchilla_g_death.supported = true
 	self.parts.wpn_fps_pis_chinchilla_g_death.stats = {
 		value = 2, 
-		recoil = 1, 
-		concealment = -2
+		recoil = 2, 
+		concealment = -1
 	}
 
 end)
@@ -18774,12 +18774,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		--(Castigo) Largo Barrel
 		self.parts.wpn_fps_pis_chinchilla_b_longboy.supported = true
-		self.parts.wpn_fps_pis_chinchilla_b_longboy.stats = {
-			value = 5,
-			spread = 2,
-			recoil = -2,
-			concealment = -2
-		}
+		self.parts.wpn_fps_pis_chinchilla_b_longboy.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_pis_chinchilla_b_longboy.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 		--(CAR Family) Valkyrie Stock
 		self.parts.wpn_fps_ass_m16_s_op.pcs = {}
@@ -18872,12 +18868,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		--(Castigo) Corto Barrel
 		self.parts.wpn_fps_pis_chinchilla_b_short.supported = true
-		self.parts.wpn_fps_pis_chinchilla_b_short.stats = {
-			value = 1,
-			spread = -1,
-			recoil = -1,				
-			concealment = 2
-		}
+		self.parts.wpn_fps_pis_chinchilla_b_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_pis_chinchilla_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
 
 		--(Castigo) Pearl Grip
 		self.parts.wpn_fps_pis_chinchilla_g_pearl.supported = true
@@ -20314,7 +20307,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_pis_chinchilla_b_rage.supported = true
 		self.parts.wpn_fps_pis_chinchilla_b_rage.stats = {
 			value = 4,
-			recoil = 1,
+			recoil = 2,
 			spread = -1
 		}
 

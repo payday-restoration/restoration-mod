@@ -265,9 +265,9 @@ function BlackMarketManager:get_real_mask_id(mask_id, peer_id, char)
 	end
 
 	local i_just_drank_my_toilet_water = not peer_id and math.rand(1) or 10
-	if char and char == "wild" and i_just_drank_my_toilet_water <= 0.2 then
+	if char and char == "wild" and i_just_drank_my_toilet_water <= 0.05 then
 		local how_does_that_make_you_feel_lil_donnie = math.rand(1)
-		return how_does_that_make_you_feel_lil_donnie <= 0.2 and "win_donald_mega" or "win_donald"
+		return how_does_that_make_you_feel_lil_donnie <= 0.01 and "win_donald_mega" or "win_donald"
 	end
 
 	if tweak_data.blackmarket.masks[mask_id].characters then

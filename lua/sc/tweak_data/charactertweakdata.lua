@@ -3197,8 +3197,14 @@ function CharacterTweakData:_init_russian(presets)
 	self.russian.flammable = false
 	self.russian.damage = presets.gang_member_damage
 	self.russian.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_ass_amcar_pdth_npc",
+		"wpn_fps_ass_74_pdth_npc",
+		"wpn_fps_ass_74_pdth_npc",
+		"wpn_fps_ass_74_pdth_npc"
+	}
 	self.russian.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_74_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.russian.detection = presets.detection.gang_member
@@ -3276,7 +3282,7 @@ function CharacterTweakData:_init_american(presets)
 	self.american.damage = presets.gang_member_damage
 	self.american.weapon = deep_clone(presets.weapon.gang_member)
 	self.american.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_m14_npc",
+		primary = "wpn_fps_ass_m14_pdth_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.american.detection = presets.detection.gang_member
@@ -3300,8 +3306,14 @@ function CharacterTweakData:_init_jowi(presets)
 	self.jowi.no_run_stop = true
 	self.jowi.damage = presets.gang_member_damage
 	self.jowi.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_snp_desertfox_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc"
+	}
 	self.jowi.weapon.weapons_of_choice = {
-		primary = "wpn_fps_snp_tti_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jowi.detection = presets.detection.gang_member
@@ -3401,14 +3413,21 @@ function CharacterTweakData:_init_jacket(presets)
 	self.jacket.damage = presets.gang_member_damage
 	self.jacket.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_ass_74_npc",
-		"wpn_fps_ass_74_npc",
-		"wpn_fps_ass_akm_npc",
-		"wpn_fps_ass_akm_npc",
-		"wpn_fps_ass_akm_npc",
+		"wpn_fps_ass_m16_a1_npc",
+		"wpn_fps_ass_akm_solid_npc",
+		"wpn_fps_ass_akm_solid_npc",
+		"wpn_fps_ass_akm_solid_npc",
+		"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_m16_a3_npc",
 		"wpn_fps_ass_amcar_npc",
 		"wpn_fps_ass_amcar_npc",
-		"wpn_fps_ass_m16_npc"
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc"
 	}
 	self.jacket.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),
@@ -3536,7 +3555,7 @@ function CharacterTweakData:_init_jimmy(presets)
 	self.jimmy.damage = presets.gang_member_damage
 	self.jimmy.weapon = deep_clone(presets.weapon.gang_member)
 	self.jimmy.weapon.weapons_of_choice = {
-		primary = "wpn_fps_sho_ben_npc",
+		primary = "wpn_fps_sho_ben_jim_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jimmy.detection = presets.detection.gang_member
@@ -3684,8 +3703,12 @@ function CharacterTweakData:_init_ecp(presets)
 		damage = presets.gang_member_damage,
 		weapon = deep_clone(presets.weapon.gang_member)
 	}
+	local rand_weap = {
+		"wpn_fps_ass_m16_idf_npc",
+		"wpn_fps_ass_amcar_idf_npc"
+	}
 	self.ecp_female.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_m4_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.ecp_female.always_face_enemy = true

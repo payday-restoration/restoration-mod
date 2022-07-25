@@ -5479,7 +5479,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mateba.stats_modifiers = nil
 				self.mateba.panic_suppression_chance = 0.05
-				self.mateba.reload_speed_multiplier = 1.1
+				self.mateba.reload_speed_multiplier = 1.3
 				self.mateba.timers.reload_exit_empty = 0.55
 				self.mateba.timers.reload_exit_not_empty = 0.55
 
@@ -5512,7 +5512,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.model3.stats_modifiers = nil
-				self.model3.reload_speed_multiplier = 0.85
+				self.model3.reload_speed_multiplier = 0.95
 				self.model3.timers.reload_not_empty = 2.4
 				self.model3.timers.reload_empty = 2.4		
 				self.model3.panic_suppression_chance = 0.05	
@@ -5580,7 +5580,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.chinchilla.stats_modifiers = nil
-				self.chinchilla.reload_speed_multiplier = 1.1
+				self.chinchilla.reload_speed_multiplier = 1.2
 				self.chinchilla.timers.reload_exit_empty = 0.5
 				self.chinchilla.timers.reload_exit_not_empty = 0.5
 			
@@ -11597,8 +11597,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.supported = true
 		self.ks23.ads_speed = 0.480
 		self.ks23.damage_falloff = {
-			start_dist = 1200,
-			end_dist = 3400,
+			start_dist = 1000,
+			end_dist = 3200,
 			min_mult = 0.25
 		}
 		self.ks23.stats = {
@@ -12033,8 +12033,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.beck.supported = true
 		self.beck.ads_speed = 0.420
 		self.beck.damage_falloff = {
-			start_dist = 1200,
-			end_dist = 3300,
+			start_dist = 1000,
+			end_dist = 3200,
 			min_mult = 0.3333
 		}
 		self.beck.stats = {
@@ -12242,8 +12242,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.minibeck.supported = true
 		self.minibeck.ads_speed = 0.360
 		self.minibeck.damage_falloff = {
-			start_dist = 1200,
-			end_dist = 3700,
+			start_dist = 900,
+			end_dist = 3000,
 			min_mult = 0.5
 		}
 		self.minibeck.stats = {

@@ -13,3 +13,21 @@ function WeaponFactoryManager:get_animation_weights_from_weapon(factory_id, blue
 
 	return t
 end
+
+
+function WeaponFactoryManager:get_weapon_id_by_factory_id(factory_id)
+	if tweak_data.weapon.factory[factory_id].real_factory_id then
+		factory_id = tweak_data.weapon.factory[factory_id].real_factory_id
+	end
+
+	local upgrade = managers.upgrades:weapon_upgrade_by_factory_id(factory_id)
+
+
+	if not upgrade then
+		Application:error("[WeaponFactoryManager:get_weapon_id_by_factory_id] Found no upgrade for factory id", factory_id)
+
+		return
+	end
+
+	return upgrade.weapon_id
+end

@@ -197,24 +197,12 @@
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body" max_distance="1000" />
-					<material materials="mtr_body_lod" />
+					<material materials="mtr_body, mtr_extras" max_distance="1000" />
+					<material materials="mtr_body_lod, mtr_extras_lod" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod" />
-				</object>
-			</lod_object>
-
-			<!-- extras -->
-			<lod_object name="lod_extras">
-				<object name="g_extras" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_extras" max_distance="1500" />
-					<material materials="mtr_extras_lod"/>
-				</object>
-				<object name="g_extras_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_extras" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_extras_lod" />
 				</object>
 			</lod_object>
 

@@ -53,14 +53,14 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-    <material name="mtr_hat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+    <material name="mtr_hat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/gangmember_1_nm" />
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/gangmember_1_df" />
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>		
     </material>	
 
-    <material name="mtr_hat_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+    <material name="mtr_hat_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/gangmember_1_nm" mip="4"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/gangmember_1_df" mip="4"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>

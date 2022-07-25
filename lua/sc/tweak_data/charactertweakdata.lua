@@ -2184,7 +2184,7 @@ function CharacterTweakData:_init_spooc(presets)
 	--Kung Fu Master/Test Subject
 	self.spooc_gangster = deep_clone(self.spooc)	
 	self.spooc_gangster.tags = {"gangster", "spooc", "special"}	
-	if job == "mad" or job == "skmc_mad" then
+	if job == "mad" then
 	self.spooc_gangster.speech_prefix_p1 = "android"
 	self.spooc_gangster.speech_prefix_p2 = nil
 	self.spooc_gangster.speech_prefix_count = nil

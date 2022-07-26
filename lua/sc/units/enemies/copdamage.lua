@@ -179,17 +179,7 @@ local grenadier_smash = {
 local old_init = CopDamage.init
 function CopDamage:init(...)
 	old_init(self, ...)
-	
-	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
-end
 
-function CopDamage:_spawn_head_gadget(params)
-	local unit_name = self._unit:name()
-	local my_unit = self._unit
-
-	if not self._head_gear then
-		return
-	end
 		--Replace head hitbox with a smaller one for non-dozer enemies.	
 	if self._head_body_name and not self._char_tweak.big_head_mode then	
 		local my_unit = self._unit
@@ -204,6 +194,17 @@ function CopDamage:_spawn_head_gadget(params)
 		
 			managers.enemy:add_delayed_clbk("hitboxes" .. tostring(my_unit:key()), f, TimerManager:game():time())
 		end
+	end
+	
+	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
+end
+
+function CopDamage:_spawn_head_gadget(params)
+	local unit_name = self._unit:name()
+	local my_unit = self._unit
+
+	if not self._head_gear then
+		return
 	end
 
 	if self._head_gear_object then

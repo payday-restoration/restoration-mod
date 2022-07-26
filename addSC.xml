@@ -205,7 +205,19 @@
 	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" />	
 	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_contour"  />	
 	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2" />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_contour"  />	
+	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_contour"  />
+
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" load="true" />
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />	
+	<object				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
+	<model				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
+	<cooked_physics		path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
+	
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" load="true" />
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk" load="true" />	
+	
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2" load="true" />
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk" load="true" />
 
 	<!--NPC DS Police Sniper-->
 	<unit_mat			path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />

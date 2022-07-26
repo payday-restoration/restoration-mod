@@ -55,19 +55,7 @@
 	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>	
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
-	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
-
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />	
-	<object				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<model				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<cooked_physics		path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk" load="true" />	
-	
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk" load="true" />		
+	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>		
 	
 	<!-- gensec tier -->
 	<!--city swat 1-->

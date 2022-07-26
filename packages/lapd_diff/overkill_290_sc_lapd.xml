@@ -10,20 +10,7 @@
 	<object				path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
 	<object				path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
 	<object				path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
-	<object				path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
-
-	<!-- gensec security guys i keep forgetting -->
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />	
-	<object				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<model				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	<cooked_physics		path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"  />	
-	
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk" load="true" />	
-	
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk" load="true" />		
+	<object				path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />		
 
 	<!--Pensacola / LAPD Tinted Windows-->
 	<material_config	path="units/pd2_dlc_pal/vehicles/str_vehicle_car_police_pensacola/str_vehicle_car_police_pensacola" force="true" />

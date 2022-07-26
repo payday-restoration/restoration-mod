@@ -3484,8 +3484,17 @@ function CharacterTweakData:_init_sokol(presets)
 	self.sokol.no_run_stop = true
 	self.sokol.damage = presets.gang_member_damage
 	self.sokol.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_ass_asval_npc",
+		"wpn_fps_ass_asval_npc",
+		"wpn_fps_ass_asval_npc",
+		"wpn_fps_ass_asval_npc",
+		"wpn_fps_ass_asval_vss_npc",
+		"wpn_fps_ass_asval_vss_npc",
+		"wpn_fps_ass_shak12_supp_npc"
+	}
 	self.sokol.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_asval_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.sokol.detection = presets.detection.gang_member

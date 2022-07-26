@@ -10744,6 +10744,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	self.wpn_fps_ass_asval_npc.override = deep_clone(self.wpn_fps_ass_asval.override)		
 	self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)		
 
+	self.wpn_fps_ass_asval_vss = deep_clone(self.wpn_fps_ass_asval)
+	self.wpn_fps_ass_asval_vss.real_factory_id = "wpn_fps_ass_asval"
+	self.wpn_fps_ass_asval_vss.default_blueprint = {
+		"wpn_fps_ass_asval_b_standard",
+		"wpn_fps_ass_asval_body_standard",
+		"wpn_fps_ass_asval_fg_standard",
+		"wpn_fps_ass_asval_m_standard",
+		"wpn_fps_upg_o_poe",
+		"wpn_fps_ass_asval_s_solid"
+	}
+	self.wpn_fps_ass_asval_vss_npc = deep_clone(self.wpn_fps_ass_asval_vss)
+	self.wpn_fps_ass_asval_vss_npc.unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval/wpn_fps_ass_asval_npc"
+
 end)
 
 --Sub2000
@@ -15981,6 +15994,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
 
 	self.parts.wpn_fps_ass_shak12_b_dummy.sound_switch = {suppressed = "regular_b"}
+
+	if not self.wpn_fps_ass_shak12.override then
+		self.wpn_fps_ass_shak12.override = {}
+	end
+	
+	self.wpn_fps_ass_shak12_npc.uses_parts = deep_clone(self.wpn_fps_ass_shak12.uses_parts)	
+
+	self.wpn_fps_ass_shak12_supp = deep_clone(self.wpn_fps_ass_shak12)
+	self.wpn_fps_ass_shak12_supp.real_factory_id = "wpn_fps_ass_shak12"
+	self.wpn_fps_ass_shak12_supp.default_blueprint = {
+		"wpn_fps_ass_shak12_body_lower",
+		"wpn_fps_ass_shak12_body_upper",
+		"wpn_fps_ass_shak12_b_dummy",
+		"wpn_fps_ass_shak12_dh_vks",
+		"wpn_fps_ass_shak12_fg_rail",
+		"wpn_fps_ass_shak12_ejector_standard",
+		"wpn_fps_ass_shak12_m_magazine25",
+		"wpn_fps_ass_shak12_o_sight",
+		"wpn_fps_ass_shak12_ns_suppressor",
+		"wpn_fps_ass_shak12_o_carry_dummy",
+		"wpn_fps_upg_o_poe"
+	}
+	self.wpn_fps_ass_shak12_supp_npc = deep_clone(self.wpn_fps_ass_shak12_supp)
+	self.wpn_fps_ass_shak12_supp_npc.unit = "units/pd2_dlc_tawp/weapons/wpn_fps_ass_shak12/wpn_fps_ass_shak12_npc"
 
 end)
 

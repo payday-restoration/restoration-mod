@@ -47,3 +47,29 @@ function TeamAIMovement:throw_bag(...)
 	end
 	return old_throw(self, ...)
 end
+
+--Can't really find anything that'd make bots use their secondary beyond the off chance they spawn in steath with their pistol or something
+--[[  
+function TeamAIMovement:add_weapons()
+	if Network:is_server() then
+		local char_name = self._ext_base._tweak_table
+		local loadout = managers.criminals:get_loadout_for(char_name)
+		local crafted = managers.blackmarket:get_crafted_category_slot("primaries", loadout.primary_slot)
+
+		if crafted then
+			self._unit:inventory():add_unit_by_factory_blueprint(loadout.primary, false, false, crafted.blueprint, crafted.cosmetics)
+		elseif loadout.primary then
+			self._unit:inventory():add_unit_by_factory_name(loadout.primary, false, false, nil, "")
+		else
+			local weapon = self._ext_base:default_weapon_name("primary")
+			local _ = weapon and self._unit:inventory():add_unit_by_factory_name(weapon, false, false, nil, "")
+		end
+
+		local sec_weap_name = self._ext_base:default_weapon_name("secondary")
+		local is_factory_id = tweak_data.weapon.factory[sec_weap_name]
+		local _ = sec_weap_name and (is_factory_id and self._unit:inventory():add_unit_by_factory_name(sec_weap_name, false, false, nil, "") or self._unit:inventory():add_unit_by_name(sec_weap_name))
+	else
+		TeamAIMovement.super.add_weapons(self)
+	end
+end
+]]

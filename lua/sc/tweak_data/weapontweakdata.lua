@@ -2111,7 +2111,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_crew.pull_magazine_during_reload = "rifle"
 		self.asval_crew.auto.fire_rate = 0.08571428571
 		self.asval_crew.hold = "rifle"
-		self.asval_crew.alert_size = 0
+		self.asval_crew.alert_size = 2500
 		self.asval_crew.suppression = 3.4
 		self.asval_crew.FIRE_MODE = "auto"
 	end
@@ -5591,7 +5591,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.35
 				self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.peacemaker.supported = true
-				self.peacemaker.ads_speed = 0.280
+				self.peacemaker.ads_speed = 0.240
 				self.peacemaker.damage_falloff = {
 					start_dist = 3300,
 					end_dist = 5200,
@@ -5718,7 +5718,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.FIRE_MODE = "auto"				
 				self.aa12.CAN_TOGGLE_FIREMODE = false
 				self.aa12.supported = true
-				self.aa12.ads_speed = 0.460
+				self.aa12.ads_speed = 0.440
 				self.aa12.damage_falloff = {
 					start_dist = 900,
 					end_dist = 2900,
@@ -5883,7 +5883,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.striker.CLIP_AMMO_MAX = 12
 				self.striker.kick = self.stat_info.kick_tables.right_kick
 				self.striker.supported = true
-				self.striker.ads_speed = 0.440
+				self.striker.ads_speed = 0.420
 				self.striker.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3000,
@@ -5917,7 +5917,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rota.single.fire_rate = 0.13953488372
 				self.rota.panic_suppression_chance = 0.05
 				self.rota.supported = true
-				self.rota.ads_speed = 0.380
+				self.rota.ads_speed = 0.360
 				self.rota.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3500,
@@ -6041,7 +6041,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r870.fire_mode_data.fire_rate = 0.5
 				self.r870.AMMO_MAX = 60
 				self.r870.supported = true
-				self.r870.ads_speed = 0.420
+				self.r870.ads_speed = 0.400
 				self.r870.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3000,
@@ -6330,7 +6330,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.boot.muzzleflash = "effects/particles/shotgun/muzzleflash"
 				self.boot.kick = self.stat_info.kick_tables.right_kick
 				self.boot.supported = true
-				self.boot.ads_speed = 0.430
+				self.boot.ads_speed = 0.420
 				self.boot.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3000,
@@ -6381,7 +6381,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.huntsman.fire_mode_data.fire_rate = 0.171428
 				self.huntsman.kick = self.stat_info.kick_tables.vertical_kick
 				self.huntsman.supported = true
-				self.huntsman.ads_speed = 0.460
+				self.huntsman.ads_speed = 0.440
 				self.huntsman.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3100,
@@ -6426,7 +6426,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coach.fire_mode_data = {}
 				self.coach.fire_mode_data.fire_rate = 0.171428
 				self.coach.supported = true
-				self.coach.ads_speed = 0.460
+				self.coach.ads_speed = 0.440
 				self.coach.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3100,
@@ -8301,7 +8301,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ching.kick = self.stat_info.kick_tables.vertical_kick	
 			self.ching.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.ching.supported = true
-			self.ching.ads_speed = 0.340
+			self.ching.ads_speed = 0.320
 			self.ching.damage_falloff = {
 				start_dist = 3400,
 				end_dist = 5800,
@@ -8336,7 +8336,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.new_m14.AMMO_MAX = 60
 			self.new_m14.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.new_m14.supported = true
-			self.new_m14.ads_speed = 0.460
+			self.new_m14.ads_speed = 0.440
 			self.new_m14.damage_falloff = {
 				start_dist = 3200,
 				end_dist = 8200,
@@ -8372,7 +8372,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.g3.desc_id = "bm_g3_sc_desc"
 			self.g3.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.g3.supported = true
-			self.g3.ads_speed = 0.440
+			self.g3.ads_speed = 0.420
 			self.g3.damage_falloff = {
 				start_dist = 3000,
 				end_dist = 7800,
@@ -8529,7 +8529,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband.kick = self.stat_info.kick_tables.moderate_kick
 			self.contraband.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.contraband.supported = true
-			self.contraband.ads_speed = 0.460
+			self.contraband.ads_speed = 0.440
 			self.contraband.damage_falloff = {
 				start_dist = 2000,
 				end_dist = 5200,
@@ -8563,7 +8563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.ignore_damage_upgrades = true
 			self.contraband_m203.AMMO_MAX = 6
 			self.contraband_m203.supported = true
-			self.contraband_m203.ads_speed = 0.460
+			self.contraband_m203.ads_speed = 0.440
 			self.contraband_m203.stats = {
 				damage = 80,
 				spread = 64,
@@ -8594,7 +8594,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.scar.kick = self.stat_info.kick_tables.moderate_right_kick		
 			self.scar.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.scar.supported = true
-			self.scar.ads_speed = 0.400
+			self.scar.ads_speed = 0.380
 			self.scar.damage_falloff = {
 				start_dist = 2800,
 				end_dist = 6300,
@@ -8687,7 +8687,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.kick = self.stat_info.kick_tables.right_kick
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
-			self.shuno.ads_speed = 0.640
+			self.shuno.ads_speed = 0.600
 			self.shuno.damage_falloff = {
 				start_dist = 1800,
 				end_dist = 4500,
@@ -8765,7 +8765,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.fire_mode_data.fire_rate = 0.08
 			self.m249.kick = self.stat_info.kick_tables.even_recoil
 			self.m249.supported = true
-			self.m249.ads_speed = 0.540
+			self.m249.ads_speed = 0.520
 			self.m249.damage_falloff = {
 				start_dist = 2500,
 				end_dist = 7000,
@@ -8858,7 +8858,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 			self.m134.supported = true
-			self.m134.ads_speed = 0.700
+			self.m134.ads_speed = 0.660
 			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
 			self.m134.damage_falloff = {
 				start_dist = 2000,
@@ -8902,7 +8902,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
-				self.m60.ads_speed = 0.640
+				self.m60.ads_speed = 0.620
 				self.m60.damage_falloff = {
 					start_dist = 3200,
 					end_dist = 6700,
@@ -8945,7 +8945,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.par.supported = true
-				self.par.ads_speed = 0.620
+				self.par.ads_speed = 0.600
 				self.par.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 6300,
@@ -8988,7 +8988,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
-				self.mg42.ads_speed = 0.620
+				self.mg42.ads_speed = 0.600
 				self.mg42.damage_falloff = {
 					start_dist = 2800,
 					end_dist = 5500,
@@ -9031,7 +9031,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk21.supported = true
-				self.hk21.ads_speed = 0.640
+				self.hk21.ads_speed = 0.620
 				self.hk21.damage_falloff = {
 					start_dist = 2300,
 					end_dist = 7100,
@@ -9215,7 +9215,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.can_shoot_through_wall = true
 				self.tti.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.tti.supported = true
-				self.tti.ads_speed = 0.560
+				self.tti.ads_speed = 0.540
 				self.tti.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 6000,
@@ -9374,7 +9374,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.r93.kick = self.stat_info.kick_tables.vertical_kick
 			self.r93.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.r93.supported = true
-			self.r93.ads_speed = 0.440
+			self.r93.ads_speed = 0.420
 			self.r93.damage_falloff = {
 				start_dist = 4800,
 				end_dist = 9200,
@@ -9410,7 +9410,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.desertfox.panic_suppression_chance = 0.05
 			self.desertfox.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.desertfox.supported = true
-			self.desertfox.ads_speed = 0.380
+			self.desertfox.ads_speed = 0.360
 			self.desertfox.damage_falloff = {
 				start_dist = 5000,
 				end_dist = 10000,
@@ -9489,7 +9489,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
 			self.wa2000.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.wa2000.supported = true
-			self.wa2000.ads_speed = 0.500
+			self.wa2000.ads_speed = 0.480
 			self.wa2000.damage_falloff = {
 				start_dist = 3000,
 				end_dist = 6800,
@@ -9527,7 +9527,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mosin.kick = self.stat_info.kick_tables.vertical_kick
 			self.mosin.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.mosin.supported = true
-			self.mosin.ads_speed = 0.360
+			self.mosin.ads_speed = 0.340
 			self.mosin.damage_falloff = {
 				start_dist = 3000,
 				end_dist = 8500,
@@ -9569,7 +9569,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.siltstone.kick = self.stat_info.kick_tables.right_kick
 			self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			self.siltstone.supported = true
-			self.siltstone.ads_speed = 0.540
+			self.siltstone.ads_speed = 0.520
 			self.siltstone.damage_falloff = {
 				start_dist = 2400,
 				end_dist = 6500,
@@ -9645,7 +9645,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.fire_mode_data.fire_rate = 1.5
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
-			self.m95.ads_speed = 0.500
+			self.m95.ads_speed = 0.480
 			self.m95.damage_falloff = {
 				start_dist = 5000,
 				end_dist = 250000,

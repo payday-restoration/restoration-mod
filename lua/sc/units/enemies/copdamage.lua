@@ -177,12 +177,10 @@ local grenadier_smash = {
 }
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
-	call_on_next_update(function()
-		if not self._char_tweak.big_head_mode and not unit:base():has_tag("tank") then
-			local head = self._head_body_name and unit:body(self._head_body_name)
-			if head then
-				head:set_sphere_radius(16)
-			end
+	if not self._char_tweak.big_head_mode and not unit:base():has_tag("tank") then
+		local head = self._head_body_name and unit:body(self._head_body_name)
+		if head then
+			head:set_sphere_radius(16)
 		end
 	end
 

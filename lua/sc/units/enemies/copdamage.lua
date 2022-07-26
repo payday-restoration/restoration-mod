@@ -190,6 +190,21 @@ function CopDamage:_spawn_head_gadget(params)
 	if not self._head_gear then
 		return
 	end
+		--Replace head hitbox with a smaller one for non-dozer enemies.	
+	if self._head_body_name and not self._char_tweak.big_head_mode then	
+		local my_unit = self._unit
+		local base_ext = my_unit:base()
+
+		if not base_ext.has_tag or not base_ext:has_tag("tank") then
+			local function f()
+				if alive(my_unit) then
+					my_unit:body("head"):set_sphere_radius(16)
+				end
+			end
+		
+			managers.enemy:add_delayed_clbk("hitboxes" .. tostring(my_unit:key()), f, TimerManager:game():time())
+		end
+	end
 
 	if self._head_gear_object then
 		if self._nr_head_gear_objects then

@@ -176,28 +176,16 @@ local grenadier_smash = {
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk")    	
 }
 
-local old_init = CopDamage.init
-function CopDamage:init(...)
-	old_init(self, ...)
-
-		--Replace head hitbox with a smaller one for non-dozer enemies.	
-	if self._head_body_name and not self._char_tweak.big_head_mode then	
-		local my_unit = self._unit
-		local base_ext = my_unit:base()
-
-		if not base_ext.has_tag or not base_ext:has_tag("tank") then
-			local function f()
-				if alive(my_unit) then
-					my_unit:body("head"):set_sphere_radius(16)
-				end
-			end
-		
-			managers.enemy:add_delayed_clbk("hitboxes" .. tostring(my_unit:key()), f, TimerManager:game():time())
+Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
+	if not self._char_tweak.big_head_mode and not unit:base():has_tag("tank") then
+		local head = self._head_body_name and unit:body(self._head_body_name)
+		if head then
+			head:set_sphere_radius(16)
 		end
 	end
-	
+
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
-end
+end)
 
 function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()

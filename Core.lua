@@ -239,10 +239,8 @@ function restoration:Init()
 		"mad", --Boiling Point
 		--Custom Heists below--
 		"junk", --Doghouse
-		"amsdeal1", --Armsdeal Alleyway
 		"knk_jwl", --Knockover: Jewerly Store
 		"RogueCompany", --Rogue Company
-		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
@@ -276,6 +274,9 @@ function restoration:Init()
 		"daymare", --Hell's Nightmare
 		"trop", --Tropical Treasure 
 		"constantine_apartment_lvl", --Concrete Jungle 
+		"constantine_harbor_lvl", --Harboring a Grudge
+		"crimepunishlvl", --Crime And Punshiment
+		"amsdeal1", --Armsdeal Alleyway
 		"constantine_smackdown_lvl", --Smackdown
 		"nmh_res" --Resmod edit of no mercy.
 	}	

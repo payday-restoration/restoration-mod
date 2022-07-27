@@ -3697,7 +3697,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	
 	--melee_sandsteel
 	melee_anim = {
-		'hfblade','murasama','invincible'
+		'hfblade','murasama'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
@@ -3715,14 +3715,43 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end	
 
+	melee_anim = {
+		'invincible'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
+			self.melee_weapons[melee_id].expire_t = 1.05
+			self.melee_weapons[melee_id].repeat_expire_t = 0.8
+			self.melee_weapons[melee_id].melee_damage_delay = 0.1
+			self.melee_weapons[melee_id].anim_speed_mult = 1
+		end
+	end
+
 	if self.melee_weapons.hfblade then
 		self.melee_weapons.hfblade.info_id = "bm_melee_katana_info"	
 		self.melee_weapons.hfblade.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 	end
 
 	if self.melee_weapons.murasama then
-		self.melee_weapons.murasama.info_id = "bm_melee_katana_info"	
+		self.melee_weapons.murasama.info_id = "bm_melee_thejobissnotyours_info"	
 		self.melee_weapons.murasama.stats = deep_clone(self.melee_weapons.sandsteel.stats)
+	end
+
+	if self.melee_weapons.invincible then
+		self.melee_weapons.invincible.info_id = "bm_melee_inner_child_info"	
+		self.melee_weapons.invincible.stats = deep_clone(self.melee_weapons.barbedwire.stats)
+		self.melee_weapons.invincible.dot_data = {
+			type = "bleed",
+			custom_data = {
+				dot_damage = 2,
+				dot_length = 3.1,
+				hurt_animation_chance = 0.0
+			}
+		}
+		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
 
 end)

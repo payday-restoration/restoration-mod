@@ -1491,7 +1491,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_katana_info"] = "This is no \"tool of justice\" in your hands.\n\nFully charged attacks come out 50% faster, allowing for a faster follow-up slash.\n\nWhile playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
+		["bm_melee_katana_info"] = "This is no \"tool of justice\" in your hands.\n\nFully charged attacks come out 50% faster, allowing for a faster follow-up slash.",
+		["bm_melee_thejobissnotyours_info"] = "This isn't even your sword.\n\nFully charged attacks come out 50% faster, allowing for a faster follow-up slash.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
 		["bm_melee_charge_info"] = "Pitch your forks and fork up some pitches.\n\nSprinting forwards starts a sprint charge that deals 45 damage every 0.25 seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains 15% of your max stamina; a killing blow gives back 10%.\n\nYou cannot parry enemy attacks, even when not sprint charging.", -- Randal Pitchfork
 		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.\n\nCannot parry enemy attacks.", -- ROAMING FR-
@@ -1507,6 +1508,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves instantly refill your stamina.", -- OVERKILL Boxing Gloves
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 bleed damage over three seconds.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 bleed damage over three seconds.", --Lucille Baseball Bat
+		["bm_melee_inner_child_info"] = "Get in touch with your inner child.\n\nDeals 120 bleed damage over three seconds.",
 		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a 50% chance to deal 120 fire damage and interrupt enemies over 3 seconds.", --Gold Spoon
 		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 poison damage and carries a 50% chance to interrupt every 1/2 second over 4 seconds.", --Kunai, Syringe
 		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata

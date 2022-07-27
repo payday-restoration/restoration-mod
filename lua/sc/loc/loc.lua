@@ -2456,7 +2456,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
-			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply ##50%## of the enemy's headshot damage multiplier to their body.\n\nNOTE: Does not apply to Bulldozers.\n\nACE: ##$pro##\nAll guns fired in full auto apply ##125%## of the enemy's headshot damage multiplier to their body.",
+			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply ##30%## of the enemy's headshot damage multiplier to their body.\n\nNOTE: Does not apply to Bulldozers.\n\nACE: ##$pro##\nAll guns fired in full auto apply ##60%## of the enemy's headshot damage multiplier to their body.",
 
 			--}
 		--}
@@ -2693,7 +2693,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "Unseen Strike",
-			["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance persists for ##4## seconds after taking damage.",
+			["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##50%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance persists for ##4## seconds after taking damage.",
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "Cleaner",
@@ -2701,7 +2701,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "Low Blow",
-			["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",
+			["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##50%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",
 
 
 			--}
@@ -2831,7 +2831,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",
-		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##150%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##75%## more damage with ranged weapons.\n\nNOTE: Does not apply Grenade Launchers or Rocket Launchers."
+		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##50%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##50%## more damage with ranged weapons.\n\nNOTE: Does not apply Grenade Launchers or Rocket Launchers."
 
 	})
 end)

@@ -647,7 +647,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
-				self.values.weapon.automatic_head_shot_add = {0.5, 1.25}
+				self.values.weapon.automatic_head_shot_add = {0.3, 0.6}
 				self.values.player.universal_body_expertise = {true}
 						
 	--ENFORCER--
@@ -1269,9 +1269,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Berserker (Frenzy)
 				--Basic
-					self.values.player.melee_damage_health_ratio_multiplier = {1.50}
+					self.values.player.melee_damage_health_ratio_multiplier = {0.5}
 				--Aced
-					self.values.player.damage_health_ratio_multiplier = {0.75}
+					self.values.player.damage_health_ratio_multiplier = {0.5}
 
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
 	if Global.game_settings and Global.game_settings.single_player then

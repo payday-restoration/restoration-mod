@@ -177,13 +177,6 @@ local grenadier_smash = {
 }
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
-	if not self._char_tweak.big_head_mode and not unit:base():has_tag("tank") then
-		local head = self._head_body_name and unit:body(self._head_body_name)
-		if head then
-			head:set_sphere_radius(16)
-		end
-	end
-
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 end)
 
@@ -3450,7 +3443,9 @@ function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 end
 
 function CopDamage:_comment_custom_death(attacker)
-	PlayerStandard.say_line(attacker:sound(), "g92")
+	if alive(attacker) then
+		PlayerStandard.say_line(attacker:sound(), "g92")
+	end
 end
 
 function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)

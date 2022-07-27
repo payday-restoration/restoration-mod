@@ -31,7 +31,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "disable_asu_laser"))
+	}, callback(self, self, "disable_asu_laser"))	
 end)
 
 --Yufu Wang Hitbox fix
@@ -56,6 +56,14 @@ Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
 		self._unit:body("rag_RightUpLeg"):set_sphere_radius(10)
 		self._unit:body("rag_RightLeg"):set_sphere_radius(7)
 	end
+	
+	if not self._char_tweak.big_head_mode and not self._unit:base():has_tag("tank") then
+		local head = self._head_body_name and self._unit:body(self._head_body_name)
+		if head then
+			head:set_sphere_radius(16)
+		end
+	end
+	
 end)
 
 function CopBase:random_mat_seq_initialization()
@@ -486,5 +494,5 @@ function CopBase:set_visibility_state(stage)
 end
 
 Hooks:PostHook(CopBase, "init", "res_init", function(self)
-	self.voice_end_t = 0
+	self.voice_end_t = 0	
 end)

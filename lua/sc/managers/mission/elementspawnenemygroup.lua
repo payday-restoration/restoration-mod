@@ -4330,15 +4330,7 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 	local groups = self._values.preferred_spawn_groups
 	local element = spawnpoint_delays[level] and spawnpoint_delays[level][self._id]
 	if element then
-		local interval_delay = element.interval
-		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-		local difficulty_index = tweak_data:difficulty_to_index(difficulty)		
-	
-		if difficulty_index == 8 then
-			interval_delay = 0
-		end
-	
-		self._values.interval = interval_delay
+		self._values.interval = element.interval
 		self._values.preferred_spawn_groups = element.preferred_spawn_groups
 	elseif groups and #groups > 0 and not table.contains_all(exclude_spawngroups, groups) then
 		self._values.preferred_spawn_groups = {}

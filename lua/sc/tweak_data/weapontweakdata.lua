@@ -3421,7 +3421,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = { "ching", "g3", "new_m14", "shak12" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "dmr_ar" }
-		self[ wep_id ].damage_type = "sniper"
+		self[ wep_id ].damage_type = "assault_rifle"
 	end
 	
 	recat = { "m249", "tecci", "rpk" }
@@ -3469,6 +3469,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "anti_materiel"
 	end
 	
+	recat = { "qbu88", "tti", "siltstone", "wa2000" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].damage_type = "assault_rifle"
+	end
+	
+
 	recat = { "mp7", "p90", "lemming" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].damage_type = "pdw"
@@ -11972,7 +11978,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"semi_snp"
 		}
 		self.sgs.recategorize = { "light_snp" }
-		self.sgs.damage_type = "sniper"
+		self.sgs.damage_type = "assault_rifle"
 		self.sgs.upgrade_blocks = nil
 		self.sgs.has_description = true
 		self.sgs.sounds.fire_single = "model70_fire"

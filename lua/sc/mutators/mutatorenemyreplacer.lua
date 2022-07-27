@@ -479,7 +479,7 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 						Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2"),
 						Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),
-						Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"), --I can't believe I have to use that vanilla fucker (MAKE HIM LOOK BETTER FFS)
+						Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
 						Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2")
 					},
 					nypd = {

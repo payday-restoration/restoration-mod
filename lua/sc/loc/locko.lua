@@ -900,7 +900,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["hud_assault_vip"] = "악몽을 마주하고 잠에서 깨어나라",
 		})
 	end
-	
+
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
@@ -1054,7 +1054,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_tac"] = "TAC 수직 손잡이",
 
 		["bm_wp_upg_ns_ass_smg_stubby"] = "단축형 소염기",
-		["bm_wp_upg_flash_hider"] = "총구 플래시를 숨겨줍니다.\n#{ghost_color}#소음기로 간주하여 소음기 관련 스킬의 영향을 받지만## 무기를 #{important_1}#조용하게 만들지는 않습니다.##",
+		["bm_wp_upg_flash_hider"] = "총구 플래시를 숨겨줍니다.",
 
 		["bm_wp_upg_vintage_sc"] = "빈티지 탄창",
 		["bm_wp_upg_mil_sc"] = "밀스펙 탄창",
@@ -2553,7 +2553,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: ##$basic##\n총알은 ##이제 방탄복을 관통할 수 있습니다.##\n\n자동으로 사격하는 기관단총와 경기관총은 적의 헤드샷 배율의 ##50%##가 몸통 사격에 적용됩니다.\n\n참고: 불도저에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n자동으로 사격하는 모든 총은 적의 헤드샷 배율의 ##125%##가 몸통 사격에 적용됩니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: ##$basic##\n총알은 ##이제 방탄복을 관통할 수 있습니다.##\n\n자동으로 사격하는 기관단총와 경기관총은 적의 헤드샷 배율의 ##30%##가 몸통 사격에 적용됩니다.\n\n참고: 불도저에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n자동으로 사격하는 모든 총은 적의 헤드샷 배율의 ##60%##가 몸통 사격에 적용됩니다.",
 
 			--}
 		--}
@@ -2628,7 +2628,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "탄환폭풍",
-			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: ##$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 ##5##초까지 탄약 소모가 없어집니다.\n\n참고: 유탄 발사기, 로켓 발사기 및 폭발발 탄약을 사용하는 무기들은 이 스킬의 효과를 받지 않습니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n에이스: ##$pro##\n탄약 소모가 없어지는 시간이 추가로 ##15##초로 증가합니다.",
+			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: ##$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 ##5##초까지 탄약 소모가 없어집니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n참고: 유탄 발사기, 로켓 발사기 및 폭발발 탄약을 사용하는 무기들은 이 스킬의 효과를 받지 않습니다.\n\n에이스: ##$pro##\n탄약 소모가 없어지는 시간이 추가로 ##15##초로 증가합니다.",
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "장비 전문가",
@@ -2783,15 +2783,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n소음기를 낀 무기의 은닉성이 ##1##만큼 증가합니다.\n\n에이스: ##$pro##\n소음기를 낀 무기의 은닉성이 추가로 ##1##만큼 증가합니다.\n\n소음기를 낀 무기의 꺼내고 넣는 속도가 ##25%##만큼 증가합니다",
+			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n무기를 꺼내고 넣는 속도가 ##15%##만큼 증가합니다\n\n에이스: ##$pro##\n\n모든 무기의 은닉성이 ##2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n소음기를 낀 무기의 명중률이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n특수 적이 소음기를 낀 무기에 죽으면 추가 탄약 상자를 떨굽니다.",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n조준 속도와 전력 질주 후 발사가 ##5%##만큼 빨라집니다.\n\n에이스: ##$pro##\n조준 속도와 전력 질주 후 발사가 추가로 ##10%##만큼 더 빨라집니다.\n\n특수 적을 표준 총알 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
-			["menu_backstab_beta_desc_sc"] = "베이직: ##$basic##\n##3##초 동안 피해를 입지 않는다면, 피해를 입을 때까지 치명타 확률을 ##15%##만큼 얻습니다.\n\n치명타 피해가 추가로 ##100%##만큼 증가합니다.\n\n에이스: ##$pro##\n기습 공격의 치명타 확률이 피해를 입은 후 ##4##초 동안 지속됩니다.",
+			["menu_backstab_beta_desc_sc"] = "베이직: ##$basic##\n##3##초 동안 피해를 입지 않는다면, 피해를 입을 때까지 치명타 확률을 ##15%##만큼 얻습니다.\n\n치명타 피해가 추가로 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n기습 공격의 치명타 확률이 피해를 입은 후 ##4##초 동안 지속됩니다.",
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
@@ -2799,7 +2799,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
-			["menu_unseen_strike_beta_desc_sc"] = "베이직: ##$basic##\n은닉성이 ##35##에서 ##3##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n치명타 피해가 추가로 ##100%##만큼 증가합니다.\n\n에이스: ##$pro##\n은닉성이 ##35##에서 ##1##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 ##50%##만큼 증가합니다.",
+			["menu_unseen_strike_beta_desc_sc"] = "베이직: ##$basic##\n은닉성이 ##35##에서 ##3##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n치명타 피해가 추가로 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n은닉성이 ##35##에서 ##1##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 ##50%##만큼 증가합니다.",
 
 
 
@@ -2850,7 +2850,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "킬머",
-		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
+		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률에 대한 이동 패널티가 ##60%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "마인드 블로우",
@@ -2862,7 +2862,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "라이플맨",
-		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준 속도와 전력 질주 속도가 ##15%## 빨라집니다.\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
+		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n소총으로 조준하는 동안 소총의 명중률과 사거리가 ##15%##만큼 증가합니다.\n\n에이스: ##$pro##\n소총으로 조준하는 동안 소총의 명중률과 사거리가 추가로 ##15%##만큼 더 증가합니다.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "공격적인 재장전",
@@ -2930,7 +2930,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "버서커",
-		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##150%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 원거리 무기류의 공격력이 ##75%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
+		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 원거리 무기류의 공격력이 ##50%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
 
 	})
 end)
@@ -3127,7 +3127,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때 회피 미터가 채워집니다. 체력이 ##50%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##50%## 미만일 때 받는 피해가 최대 ##20%## 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때 회피 미터가 채워집니다. 체력이 ##50%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n\n이 효과는 뱀 문신과 중첩이 됩니다.",
-		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 ##50## 방탄복를 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Hacker--
 		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##12##미터 반경의 적을 스턴시킵니다. 휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##3##초씩 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##12##만큼 회복되고 팀원이 적을 죽이면 ##6##만큼 회복됩니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",

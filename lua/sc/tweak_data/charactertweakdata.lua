@@ -17009,6 +17009,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
 				"ene_bulldozer_minigun",
+				"ene_bulldozer_medic",
 				"ene_fbi_heavy_1",
 				"ene_fbi_heavy_r870",
 				"ene_city_heavy_g36",

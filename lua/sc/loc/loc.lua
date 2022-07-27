@@ -2763,7 +2763,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Rifleman",
-		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##15%## more accuracy and range while aiming down sights.\n\nACE: ##$pro##\nRifles gain and additional ##15%## more accuracy and range while aiming down sights.",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##15%## more accuracy and range while aiming down sights.\n\nACE: ##$pro##\nRifles gain an additional ##15%## more accuracy and range while aiming down sights.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",

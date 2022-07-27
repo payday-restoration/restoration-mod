@@ -33,7 +33,7 @@
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="TankCopDamage">
+		<extension name="character_damage" class="TankMedicCopDamage">
 			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="CopMovement" >

@@ -1236,9 +1236,7 @@
 	<model				path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	<object				path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>
-	
-	<unit				path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" force="true"/>
-	
+		
 	<!--glint texture-->
 	<texture			path="units/payday2/weapons/wpn_npc_sniper/material_flare_il"/>
 			

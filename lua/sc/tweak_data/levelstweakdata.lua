@@ -221,7 +221,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dah.flashlights_on = true
 	
 	self.dinner.ai_group_type = nypd
-	self.dinner.package = {"packages/narr_dinner", "packages/job_ranc", "packages/miscassets"}
+	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
 	self.dinner.player_style = "slaughterhouse"
 	
 	self.ranc.ai_group_type = nypd

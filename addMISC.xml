@@ -197,6 +197,10 @@
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
 	<texture			path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
 
+	<add from_db="true" path="effects/payday2/environment/parts/thermal_fire" type="effect">
+		<effect load="true" path="effects/payday2/environment/parts/thermal_fire" unload="true"/>
+	</add>
+	
 	<!--fuck you biker dozer armor bits-->
 	<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->
 	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>

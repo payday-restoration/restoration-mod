@@ -39,5 +39,11 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 
+	<material name="mtr_glow" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+        <self_illumination_texture file="units/pd2_dlc_infamy/masks/msk_ghost/eyes_il"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="megatron"/>
+    </material>
+	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

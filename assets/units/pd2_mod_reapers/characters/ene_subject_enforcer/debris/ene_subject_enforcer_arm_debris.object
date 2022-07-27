@@ -50,7 +50,8 @@
 
 	<graphics>
 		<graphic_group name="arm" enabled="true" culling_object="co_culling">
-			<object name="g_body_top" enabled="true" shadow_caster="true" />
+			<object name="g_body_top" enabled="true" />
+			<object name="s_body_top" enabled="true" shadow_caster="true"/>						
 		</graphic_group>	
 	</graphics>
 

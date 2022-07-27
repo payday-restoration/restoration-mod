@@ -2663,7 +2663,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "Deep Pockets",
-			["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the concealment of all ballistic vests by ##4##, and all other armors by ##2.##\n\nIncreases the armor of all ballistic vests and the suit by ##20.##",
+			["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the concealment of all ballistic vests by ##2##, and all other armors by ##1.##\n\nIncreases the armor of all ballistic vests and the suit by ##20.##",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "Moving Target",

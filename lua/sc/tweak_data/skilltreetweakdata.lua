@@ -1122,8 +1122,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 9},
 				[1] = {
 					upgrades = {
-						"assault_rifle_spread_index_addend",
-						"snp_spread_index_addend"
+						"assault_rifle_move_spread_multiplier",
+						"snp_move_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
@@ -1143,16 +1143,19 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 5},
 				[1] = {
 					upgrades = {
-						"weapon_enter_steelsight_speed_multiplier"
+						"assault_rifle_steelsight_accuracy_inc_1",
+						"snp_steelsight_accuracy_inc_1",
+						"assault_rifle_steelsight_range_inc_1",
+						"snp_steelsight_range_inc_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"assault_rifle_steelsight_accuracy_inc_1",
-						"snp_steelsight_accuracy_inc_1",
-						"assault_rifle_steelsight_range_inc_1",
-						"snp_steelsight_range_inc_1"
+						"assault_rifle_steelsight_accuracy_inc_2",
+						"snp_steelsight_accuracy_inc_2",
+						"assault_rifle_steelsight_range_inc_2",
+						"snp_steelsight_range_inc_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1508,14 +1511,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 10},
 				[1] = {
 					upgrades = {
-						"player_silencer_concealment_increase_1"
+						"weapon_swap_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_silencer_concealment_increase_2",
-						"player_silencer_swap_increase"
+						"player_weapon_concealment_increase_2",
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1528,12 +1530,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 4},
 				[1] = {
 					upgrades = {
-						"weapon_silencer_spread_index_addend"
+						"weapon_enter_steelsight_speed_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
+						"weapon_enter_steelsight_speed_multiplier_2",
 						"player_special_double_drop"
 					},
 					cost = self.costs.hightierpro

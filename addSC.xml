@@ -1161,6 +1161,7 @@
 	
 	<!--SC Skill atlas-->
 	<texture			path="guis/textures/pd2/skilltree/icons_atlas_sc"/>
+	<texture			path="guis/textures/pd2/skilltree_2/icons_atlas_2" force="true"/>
 	
 	<!--I LOVE TO RELOAD DURING A HEIST-->
 	<unit				path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>

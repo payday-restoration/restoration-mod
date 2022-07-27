@@ -178,8 +178,8 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
 				elseif stat.name == "suppression" then
 					multiplier = managers.blackmarket:threat_multiplier(name, weapon_tweak.categories, silencer)
 				elseif stat.name == "concealment" then
-					if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_increase") then
-						modifier = managers.player:upgrade_value("player", "silencer_concealment_increase", 0)
+					if managers.player:has_category_upgrade("player", "weapon_concealment_increase") then
+						modifier = managers.player:upgrade_value("player", "weapon_concealment_increase", 0)
 					end
 					if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_penalty_decrease") then
 						local stats = managers.weapon_factory:get_perk_stats("silencer", factory_id, blueprint)

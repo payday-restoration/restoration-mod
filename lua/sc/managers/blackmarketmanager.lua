@@ -59,7 +59,7 @@ function BlackMarketManager:visibility_modifiers()
 	elseif armor_data.upgrade_level == 5 then 
 		skill_bonuses = skill_bonuses - managers.player:upgrade_value("player", "flak_jacket_concealment", 0)
 	end
-
+	
 	local silencer_bonus = 0
 	silencer_bonus = silencer_bonus + self:get_silencer_concealment_modifiers(self:equipped_primary())
 	silencer_bonus = silencer_bonus + self:get_silencer_concealment_modifiers(self:equipped_secondary())
@@ -156,12 +156,20 @@ function BlackMarketManager:get_silencer_concealment_modifiers(weapon)
 		return 0
 	end
 
+
 	local silencer = managers.weapon_factory:has_perk("silencer", weapon.factory_id, blueprint)
 	local current_concealment = self:calculate_weapon_concealment(weapon)
-
+	
+	--[[
 	if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_increase") then
 		bonus = managers.player:upgrade_value("player", "silencer_concealment_increase", 0)
 	end
+	--]]
+	
+	if managers.player:has_category_upgrade("player", "weapon_concealment_increase") then
+		bonus = managers.player:upgrade_value("player", "weapon_concealment_increase", 0)
+	end
+
 
 	if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_penalty_decrease") then
 		local stats = managers.weapon_factory:get_perk_stats("silencer", factory_id, blueprint)

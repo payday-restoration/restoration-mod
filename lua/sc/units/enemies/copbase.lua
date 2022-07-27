@@ -37,7 +37,7 @@ end)
 --Yufu Wang Hitbox fix
 Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
 	if self._tweak_table == "triad_boss" then
-		self._unit:body("head"--[[self._unit:character_damage()._head_body_name--]]):set_sphere_radius(15)
+		self._unit:body("head"--[[self._unit:character_damage()._head_body_name--]]):set_sphere_radius(16)
 		self._unit:body("body"):set_sphere_radius(22)	
 
 		self._unit:body("rag_LeftArm"):set_enabled(true)
@@ -58,10 +58,7 @@ Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
 	end
 	
 	if not self._char_tweak.big_head_mode and not self._unit:base():has_tag("tank") then
-		local head = self._head_body_name and self._unit:body(self._head_body_name)
-		if head then
-			head:set_sphere_radius(16)
-		end
+		self._unit:body("head"):set_sphere_radius(16)
 	end
 	
 end)

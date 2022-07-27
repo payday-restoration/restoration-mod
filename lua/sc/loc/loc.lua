@@ -2685,11 +2685,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "Optical Illusions",
-			["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",
+			["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nYou draw and holster weapons ##15%## faster.\n\nACE: ##$pro##\nIncreases the concealment of all guns by ##2.##",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "The Professional",
-			["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##2## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",
+			["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds are ##5%## faster.\n\nACE: ##$pro##\nYour aim down sights and sprint-to-fire speeds are an additional ##10%## faster.\n\nKilling special enemies with standard ballistic munitions provides an extra ammo drop.",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "Unseen Strike",
@@ -2751,7 +2751,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
-		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##2## accuracy.\n\nACE: ##$pro##\nRifles reload ##25%## faster.",
+		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##60%## for rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nRifles reload ##25%## faster.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
@@ -2763,7 +2763,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Rifleman",
-		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds are ##15%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##15%## more accuracy and range while aiming down sights.\n\nACE: ##$pro##\nRifles gain and additional ##15%## more accuracy and range while aiming down sights.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",

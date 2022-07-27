@@ -1021,9 +1021,9 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 	end
 end
 
---Professional aced extra ammo when killing specials while using silenced weapons.
+--Professional aced extra ammo when killing specials.
 function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
-	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
+	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and variant == "bullet" then
 		local tracker = killed_unit:movement():nav_tracker()
 	    local position = tracker:lost() and tracker:field_position() or tracker:position()
 	    local rotation = killed_unit:rotation()

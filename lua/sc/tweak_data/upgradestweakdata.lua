@@ -880,20 +880,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Kilmer
 				--Basic
-					self.values.snp.spread_index_addend = {2}
-					self.values.assault_rifle.spread_index_addend = {2}
+					self.values.snp.move_spread_multiplier = {0.4}
+					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
 
 			--Rifleman
-				--Basic
-					self.values.weapon.enter_steelsight_speed_multiplier = {1.15}
-				--Ace
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
-					self.values.snp.steelsight_accuracy_inc = {0.7}
-					self.values.assault_rifle.steelsight_range_inc = {1.3}
-					self.values.snp.steelsight_range_inc = {1.3}
+				--Basic/Aced
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.85, 0.7}
+					self.values.snp.steelsight_accuracy_inc = {0.85, 0.7}
+					self.values.assault_rifle.steelsight_range_inc = {1.15, 1.3}
+					self.values.snp.steelsight_range_inc = {1.15, 1.3}
 					
 			--Aggressive Reload
 				self.values.temporary.single_shot_fast_reload = {
@@ -1070,19 +1068,23 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_depleted_stagger_shot = {0, 3}
 
 			--Optical Illusions
-					self.values.player.silencer_concealment_increase = {
-						1, --Basic
+				--Basic
+					self.values.weapon.swap_speed_multiplier = {1.15}
+				--Ace
+					self.values.player.weapon_concealment_increase = {
+						1,--Unused
 						2 --Ace
 					}
-					--Ace
-					self.values.player.silencer_swap_increase = {1.25}
 
 			--The Professional
 				--Basic
-					self.values.weapon.silencer_spread_index_addend = {2}
+					self.values.weapon.enter_steelsight_speed_multiplier = {
+						1.05,
+						1.15
+					}
 				--Ace
-					self.values.weapon.silencer_recoil_index_addend = {2}
 					self.values.player.special_double_drop = {true}
+
 
 			--Unseen Strike
 				self.values.temporary.unseen_strike = {
@@ -2542,21 +2544,21 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
-	self.definitions.player_silencer_concealment_increase_1 = {
-		name_id = "menu_player_silencer_concealment_increase_1",
+	self.definitions.player_weapon_concealment_increase_1 = {
+		name_id = "menu_player_weapon_concealment_increase_1",
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "silencer_concealment_increase",
+			upgrade = "weapon_concealment_increase",
 			category = "player"
 		}
 	}
-	self.definitions.player_silencer_concealment_increase_2 = {
-		name_id = "menu_player_silencer_concealment_increase_2",
+	self.definitions.player_weapon_concealment_increase_2 = {
+		name_id = "menu_player_weapon_concealment_increase_2",
 		category = "feature",
 		upgrade = {
 			value = 2,
-			upgrade = "silencer_concealment_increase",
+			upgrade = "weapon_concealment_increase",
 			category = "player"
 		}
 	}
@@ -3517,6 +3519,15 @@ function UpgradesTweakData:_saw_definitions()
 			upgrade = "headshot_no_falloff",
 			category = "player"
 		}
+	}
+	self.definitions.weapon_swap_speed_multiplier = {
+		name_id = "menu_weapon_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "swap_speed_multiplier",
+			category = "weapon"
+		}
 	}	
 	self.definitions.player_bipod_damage_reduction = {
 		name_id = "menu_player_bipod_damage_reduction",
@@ -3628,12 +3639,30 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			upgrade = "steelsight_accuracy_inc",
 			category = "snp"
 		}
+	}	
+	self.definitions.snp_steelsight_accuracy_inc_2 = {
+		name_id = "menu_snp_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "steelsight_accuracy_inc",
+			category = "snp"
+		}
 	}
 	self.definitions.assault_rifle_steelsight_accuracy_inc_1 = {
 		name_id = "menu_assault_rifle_steelsight_accuracy_inc",
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "steelsight_accuracy_inc",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.assault_rifle_steelsight_accuracy_inc_2 = {
+		name_id = "menu_assault_rifle_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 2,
 			upgrade = "steelsight_accuracy_inc",
 			category = "assault_rifle"
 		}
@@ -3647,11 +3676,29 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			category = "snp"
 		}
 	}
+	self.definitions.snp_steelsight_range_inc_2 = {
+		name_id = "menu_snp_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "steelsight_range_inc",
+			category = "snp"
+		}
+	}
 	self.definitions.assault_rifle_steelsight_range_inc_1 = {
 		name_id = "menu_assault_rifle_steelsight_range_inc",
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "steelsight_range_inc",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.assault_rifle_steelsight_range_inc_2 = {
+		name_id = "menu_assault_rifle_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 2,
 			upgrade = "steelsight_range_inc",
 			category = "assault_rifle"
 		}
@@ -3672,6 +3719,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 1,
 			upgrade = "pick_up_multiplier",
 			category = "akimbo"
+		}
+	}
+	self.definitions.weapon_enter_steelsight_speed_multiplier_1 = {
+		name_id = "menu_weapon_enter_steelsight_speed_multiplier_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "enter_steelsight_speed_multiplier",
+			category = "weapon"
+		}
+	}
+	self.definitions.weapon_enter_steelsight_speed_multiplier_2 = {
+		name_id = "menu_weapon_enter_steelsight_speed_multiplier_2",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "enter_steelsight_speed_multiplier",
+			category = "weapon"
 		}
 	}
 end)

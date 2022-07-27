@@ -3697,7 +3697,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	
 	--melee_sandsteel
 	melee_anim = {
-		'hfblade','murasama'
+		'hfblade','murasama','invincible'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then

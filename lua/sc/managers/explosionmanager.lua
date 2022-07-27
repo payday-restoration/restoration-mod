@@ -440,7 +440,7 @@ function ExplosionManager:client_damage_and_push(from_pos, normal, user_unit, dm
 	self:units_to_push(units_to_push, from_pos, range)
 end
 
-function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit)
+function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit, curve_pow)
 	local player = managers.player:player_unit()
 
 	if player then
@@ -449,7 +449,8 @@ function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit)
 			position = pos,
 			range = range,
 			damage = damage,
-			attacker_unit = user_unit
+			attacker_unit = user_unit,
+			curve_pow = curve_pow
 		})
 	end
 end

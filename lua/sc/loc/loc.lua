@@ -1056,7 +1056,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
 
 		["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
-		["bm_wp_upg_flash_hider"] = "Hides muzzle flash.\n#{ghost_color}#Counts as a silencer for silencer skills## but #{important_1}#does not silence## your weapon.",
+		["bm_wp_upg_flash_hider"] = "Hides muzzle flash.",
 
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 		["bm_wp_upg_mil_sc"] = "Milspec Mag",

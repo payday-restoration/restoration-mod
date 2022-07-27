@@ -635,7 +635,7 @@ function PlayerDamage:damage_explosion(attack_data)
 	
 	--Explosions have some special case damage calc stuff that other damage types don't have.
 	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage) --Gage explosion immunity bonus sets explosive damage to 0, which causes an early return.
-	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range) --Outside of that, apply falloff to the explosion damage.
+	attack_data.damage = attack_data.damage * math.pow((1 - distance / attack_data.range), attack_data.curve_pow or 1) --Outside of that, apply falloff to the explosion damage.
 
 	local t = managers.player:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "explosion", t, distance) then

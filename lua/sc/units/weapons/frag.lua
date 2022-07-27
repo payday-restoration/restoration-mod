@@ -17,7 +17,7 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 	local range = self._range
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 
-	managers.explosion:give_local_player_dmg(pos, range, self._player_damage, self:thrower_unit() or self._unit) --Pass in the user unit.
+	managers.explosion:give_local_player_dmg(pos, range, self._damage, self:thrower_unit() or self._unit, self._curve_pow) --Pass in the user unit.
 	managers.explosion:play_sound_and_effects(pos, normal, range, self._custom_params)
 
 	local hit_units, splinters = managers.explosion:detect_and_give_dmg({
@@ -84,7 +84,7 @@ function FragGrenade:_detonate_on_client(normal)
 	local pos = self._unit:position()
 	local range = self._range
 	
-	managers.explosion:give_local_player_dmg(pos, range, self._player_damage, self._user_unit) --Pass in the user unit.
+	managers.explosion:give_local_player_dmg(pos, range, self._damage, self._user_unit, self._curve_pow) --Pass in the user unit.
 	managers.explosion:explode_on_client(pos, math.UP, nil, self._damage, range, self._curve_pow, self._custom_params)
 
 	local grenade_tweak = tweak_data.projectiles[self._tweak_projectile_entry]

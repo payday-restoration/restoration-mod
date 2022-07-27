@@ -1385,7 +1385,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.supported = true
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.desc_id = "bm_wp_upg_flash_hider"
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.has_description = true
-	self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
+	--self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
@@ -2196,7 +2196,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_pis_ns_flash.supported = true
 	self.parts.wpn_fps_upg_pis_ns_flash.has_description = true
 	self.parts.wpn_fps_upg_pis_ns_flash.desc_id = "bm_wp_upg_flash_hider"
-	self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
+	--self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
 	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
@@ -3675,10 +3675,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			value = 1, 
 			extra_ammo = 15,
 			reload = -7, 
-			concealment = -4
+			concealment = -5
 		},
 		custom_stats = {
-			ads_speed_mult = 1.1
+			ads_speed_mult = 1.125
 		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -12359,8 +12359,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Saiga Short Barrel
 	self.parts.wpn_fps_sho_saiga_b_short.pcs = {}
 	self.parts.wpn_fps_sho_saiga_b_short.supported = true
-	self.parts.wpn_fps_sho_saiga_b_short.stats = deep_clone(barrels.short_b1_stats)
-	self.parts.wpn_fps_sho_saiga_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+	self.parts.wpn_fps_sho_saiga_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_sho_saiga_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	
 	--Hollow Handle
 	self.parts.wpn_fps_sho_saiga_fg_holy.pcs = {}

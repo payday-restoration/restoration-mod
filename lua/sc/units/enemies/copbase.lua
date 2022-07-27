@@ -58,7 +58,10 @@ Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
 	end
 	
 	if not self._char_tweak.big_head_mode and not self._unit:base():has_tag("tank") then
-		self._unit:body("head"):set_sphere_radius(16)
+		local head = self._unit:character_damage()._head_body_name and self._unit:body(self._unit:character_damage()._head_body_name)
+		if head then
+			head:set_sphere_radius(16)
+		end
 	end
 	
 end)

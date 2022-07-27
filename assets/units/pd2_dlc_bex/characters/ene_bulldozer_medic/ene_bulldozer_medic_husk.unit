@@ -1,13 +1,24 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<object file="units/pd2_dlc_bex/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
 
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
-		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_l/ene_acc_bulldozer_leg_l" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_r/ene_acc_bulldozer_leg_r" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />	
+		<depends_on unit="units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500" />
 	</dependencies>
 
 	<extensions>
@@ -15,13 +26,13 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_medic" />
-			<var name="_default_weapon_id" value="akmsu_smg" />
+			<var name="_default_weapon_id" value="mp5" />
 			<var name="_stats_name" value="medic" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="HuskTankMedicCopDamage" >
+		<extension name="character_damage" class="HuskTankCopDamage" >
 			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

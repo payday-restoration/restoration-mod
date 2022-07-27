@@ -84,8 +84,6 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk"),
 	ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
 	ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk"),
-	ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"),
-	ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"),
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
 	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
@@ -144,6 +142,8 @@ local enemies_plink = {
 	
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),   	
+	ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"),
+	ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"),
 	
 	ids_func("units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),

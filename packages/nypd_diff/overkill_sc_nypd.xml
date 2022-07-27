@@ -373,7 +373,7 @@
 		<effect load="true" path="effects/particles/weapons/rifle/muzzleflash_3dp"/>
 		<effect load="true" path="effects/particles/weapons/sniper_trail_marshal"/>
 		
-		<unit path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
+		
 		<object path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
 		<material_config path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
 		<sequence_manager path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>

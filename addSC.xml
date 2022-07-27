@@ -1001,6 +1001,8 @@
 	<material_config	path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate"/>
 	<!--MemeMan2 Mod-->	
 
+	<unit path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" force="true" />
+	
 	<!--Big Dave-->
 	<object				path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
 	<cooked_physics		path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>

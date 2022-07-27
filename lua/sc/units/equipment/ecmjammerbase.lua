@@ -9,18 +9,12 @@ function ECMJammerBase._detect_and_give_dmg(hit_pos, device_unit, user_unit, ran
 
 	local enemies_in_range = World:find_units_quick("sphere", hit_pos, range, managers.slot:get_mask("enemies"))
 	local enemies_to_stun = {}
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)        
 
 	if #enemies_in_range > 0 then
 		for _, enemy in ipairs(enemies_in_range) do
 			if not table.contains(enemies_to_stun, enemy) and enemy:character_damage() and enemy:character_damage().damage_explosion and not enemy:character_damage():dead() then
 				if enemy:base():char_tweak().ecm_vulnerability then
 					local stun = true
-
-					if difficulty_index == 8 then
-						stun = false -- :^)
-					end
 
 					if enemy:brain() then
 						if enemy:brain().is_hostage and enemy:brain():is_hostage() or enemy:brain().surrendered and enemy:brain():surrendered() then

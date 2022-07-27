@@ -39,10 +39,10 @@ Hooks:PostHook(AnimatedVehicleBase, "set_enabled", "woohoo_wow", function(self, 
             self._unit:damage():run_sequence_simple("mat_zeals")    
         end
 	elseif faction == "murkywater" then
-        if self._unit:damage():has_sequence("mat_murky") and difficulty < 8 then
+        if self._unit:damage():has_sequence("mat_murky") then
             self._unit:damage():run_sequence_simple("mat_murky")
-        elseif self._unit:damage():has_sequence("mat_omnia") and difficulty == 8 then
-            self._unit:damage():run_sequence_simple("mat_omnia") 
+       --[[ elseif self._unit:damage():has_sequence("mat_omnia") and difficulty == 8 then
+            self._unit:damage():run_sequence_simple("mat_omnia")--]] 
         end 
 	elseif faction == "russia" then
         if self._unit:damage():has_sequence("mat_reapers") then

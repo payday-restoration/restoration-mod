@@ -3,5 +3,11 @@
 	    <sequence editable_state="true" name="'mat_reapers'" once="true"  triggable="true">
 	    	<material_config name="'units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_vehicle_blackhawk'"/>
 	    </sequence>
+	    <sequence editable_state="true" name="'mat_gensec'" once="true"  triggable="true">
+	    	<material_config name="'units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_vehicle_blackhawk'"/>
+	    </sequence>
+	    <sequence editable_state="true" name="'mat_zeals'" once="true"  triggable="true">
+	    	<material_config name="'units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_vehicle_blackhawk'"/>
+	    </sequence>
 	</table>	
 </table>

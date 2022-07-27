@@ -104,8 +104,6 @@ function CopActionHurt:init(action_desc, common_data)
 	local is_civilian = CopDamage.is_civilian(common_data.ext_base._tweak_table)
 	local is_female, uses_shield_anims, taser_tased_tasing = nil
 	local is_stealth = managers.groupai:state():whisper_mode()
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)        
 
 	if common_data.machine:get_global("female") == 1 then
 		is_female = true
@@ -153,10 +151,6 @@ function CopActionHurt:init(action_desc, common_data)
 
 		managers.hud:set_mugshot_tased(common_data.unit:unit_data().mugshot_id)
 	elseif action_type == "fire_hurt" or action_type == "light_hurt" and action_desc.variant == "fire" then
-
-		if difficulty_index == 8 then
-			return
-		end
 		--[[local use_animation_on_fire_damage = nil
 
 		if common_data.char_tweak.use_animation_on_fire_damage == nil then
@@ -174,7 +168,6 @@ function CopActionHurt:init(action_desc, common_data)
 		if not start_dot_dance_antimation then
 			return
 		end]]
-
 
 		redir_res = common_data.ext_movement:play_redirect("fire_hurt")
 
@@ -206,9 +199,6 @@ function CopActionHurt:init(action_desc, common_data)
 	elseif action_type == "taser_tased" then
 		local can_be_tased = nil
 
-		if difficulty_index == 8 then
-			return
-		end
 		--[[if common_data.char_tweak.can_be_tased == nil then
 			can_be_tased = true
 		else
@@ -305,9 +295,6 @@ function CopActionHurt:init(action_desc, common_data)
 
 		return true
 	elseif action_type == "concussion" then
-		if difficulty_index == 8 then
-			return
-		end
 		redir_res = common_data.ext_movement:play_redirect("concussion_stun")
 
 		if not redir_res then

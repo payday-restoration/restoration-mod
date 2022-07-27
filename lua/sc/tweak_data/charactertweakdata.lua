@@ -16502,9 +16502,9 @@ function CharacterTweakData:_set_sm_wish()
 	--	PackageManager:load("packages/zealassets")
 	--end
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(3, 0.75)
+		self:_multiply_all_hp(3, 0.8)
 	else
-		self:_multiply_all_hp(3, 0.75)
+		self:_multiply_all_hp(3, 0.8)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)

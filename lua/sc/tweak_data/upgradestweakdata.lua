@@ -1271,7 +1271,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Berserker (Frenzy)
 				--Basic
-					self.values.player.melee_damage_health_ratio_multiplier = {0.5}
+					self.values.player.melee_damage_health_ratio_multiplier = {1.0}
 				--Aced
 					self.values.player.damage_health_ratio_multiplier = {0.5}
 

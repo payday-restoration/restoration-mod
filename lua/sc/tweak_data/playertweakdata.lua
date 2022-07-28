@@ -157,7 +157,7 @@ function PlayerTweakData:init()
 		0.99
 	}
 	self.damage.HEALTH_INIT = 20
-	self.damage.LIVES_INIT = 6
+	self.damage.LIVES_INIT = 4
 	self.damage.REGENERATE_TIME = 3
 	self.damage.REVIVE_HEALTH_STEPS = {
 		1.00,
@@ -166,7 +166,7 @@ function PlayerTweakData:init()
 		0.45,
 		0.30
 	}
-	self.damage.CUSTODY_LIVES = 3 --Number of lives left when leaving custody. (downs = lives - 1)
+	self.damage.CUSTODY_LIVES = 2 --Number of lives left when leaving custody. (downs = lives - 1)
 	self.damage.custody_ammo_drained = 0 --% of ammo confiscated when leaving custody.
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.TASED_TIME = 10

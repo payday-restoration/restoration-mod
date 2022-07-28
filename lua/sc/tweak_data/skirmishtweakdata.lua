@@ -192,18 +192,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
+		18,
+		18,
+		18,
+		18,
+		20,
+		20,
+		20,
+		20,
 		23,
 		23,
 		23,
-		34,
-		34,
-		34,
-		34,
-		45,
-		45,
-		45,
-		45,
-		45
+		23
 	}
 
 	skirmish_data.recon.force = {

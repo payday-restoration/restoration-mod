@@ -237,6 +237,8 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		"ranc", --Midland Ranch
 		"mad", --Boiling Point
+		--Skirmish heists below
+		"skmc_mad",
 		--Custom Heists below--
 		"junk", --Doghouse
 		"knk_jwl", --Knockover: Jewerly Store

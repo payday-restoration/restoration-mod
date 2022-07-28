@@ -16235,9 +16235,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
+			10,
 			13,
-			15,
-			17
+			16
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -16259,9 +16259,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
+			10,
 			13,
-			15,
-			17
+			16
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -16283,9 +16283,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
+			12,
 			15,
-			18,
-			21
+			18
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -16307,9 +16307,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
+			12,
 			15,
-			18,
-			21
+			18
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -16331,9 +16331,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
+			14,
 			17,
-			21,
-			24
+			20
 		}
 		self.besiege.assault.force_pool = {
 			100,
@@ -16355,9 +16355,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
+			14,
 			17,
-			21,
-			24
+			20
 		}
 		self.besiege.assault.force_pool = {
 			100,
@@ -16380,13 +16380,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	else
 		self.besiege.assault.force = {
 			17,
-			21,
-			24
+			20,
+			23
 		}
 		self.besiege.assault.force_pool = {
-			105,
-			140,
-			175
+			150,
+			175,
+			200
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(4 * map_scale_factor), 1),
@@ -16827,9 +16827,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.5, 1}
 	end		
 	self.besiege.reenforce.interval = {
-		60,
-		45,
-		30
+		30,
+		20,
+		10
 	}
 	if difficulty_index <= 2 then
 		self.besiege.reenforce.groups = {
@@ -16963,15 +16963,15 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	self.besiege.recon.interval_variation = 40
 	if difficulty_index <= 5 then
 		self.besiege.recon.force = {
-			3,
+			2,
 			4,
-			5
+			6
 		}
 	else
 		self.besiege.recon.force = {
-			4,
+			3,
 			5,
-			6
+			7
 		}	
 	end
 	if difficulty_index <= 2 then

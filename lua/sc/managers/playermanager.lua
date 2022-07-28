@@ -881,7 +881,7 @@ function PlayerManager:_internal_load()
 	--Removed armor kit weirdness.
 
 	--Fully loaded aced checks
-	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0.01, chance_inc = 0})
 	self._throwable_chance = self._throwable_chance_data.chance
 
 	--Reset when players are spawned, just in case.

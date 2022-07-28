@@ -2479,7 +2479,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 			concealment = -5
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125
+			ads_speed_mult = 1.125,
+			sms = 0.75
 		}
 	}
 	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
@@ -3309,7 +3310,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 			reload = -6
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125
+			ads_speed_mult = 1.125,
+			sms = 0.75
 		}
 	}
 	self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
@@ -3678,7 +3680,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			concealment = -5
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125
+			ads_speed_mult = 1.125,
+			sms = 0.75
 		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -4345,7 +4348,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 			reload = -3
 		},
 		custom_stats = {
-			ads_speed_mult = 1.1
+			ads_speed_mult = 1.1,
+			sms = 0.75
 		}
 	}
 	self.parts.wpn_fps_smg_mp5_m_drum.third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_m_drum"
@@ -10236,8 +10240,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
 	self.parts.wpn_fps_sho_aa12_mag_drum.custom_stats = {
-			ads_speed_mult = 1.1
-		}
+		ads_speed_mult = 1.1,
+		sms = 0.75
+	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
 		extra_ammo = 12,
@@ -21547,7 +21552,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			reload = -3
 		}
 		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.custom_stats = {
-			ads_speed_mult = 1.1
+			ads_speed_mult = 1.1,
+			sms = 0.75
 		}
 	end
 

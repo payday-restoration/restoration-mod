@@ -130,3 +130,18 @@ function PlayerInventory:_do_feedback()
 		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "stop_feedback_effect"), self._jammer_data.t)
 	end
 end
+
+function PlayerInventory:_feedback_heal_on_kill()
+	local unit = managers.player:player_unit()
+	local is_downed = game_state_machine:verify_game_state(GameStateFilters.downed)
+	local swan_song_active = managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier")
+
+	if is_downed or swan_song_active then
+		return
+	end
+
+	if alive(self._unit) and unit and self._jammer_data then
+		local heal = self._jammer_data.heal * managers.player:upgrade_value("player", "healing_reduction", 1)
+		unit:character_damage():change_health(self._jammer_data.heal)
+	end
+end

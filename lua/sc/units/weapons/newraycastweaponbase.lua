@@ -487,6 +487,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	
+	self._hs_mult = self:weapon_tweak_data().hs_mult
+
 	self._shots_fired = 0
 
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
@@ -498,6 +500,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
 		self._rof_mult = 1
+		self._sms = self:weapon_tweak_data().sms
+		self._smt = self._sms and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
 
 		for part_id, stats in pairs(custom_stats) do
 			if stats.ads_speed_mult then
@@ -665,6 +669,14 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.big_scope then
 				self._has_big_scope = true
+			end
+			if stats.sms then
+				if not self._sms then
+					self._sms = stats.sms
+				else
+					self._sms = self._sms * stats.sms
+				end
+				self._smt = self:weapon_tweak_data().fire_mode_data.fire_rate * 2
 			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats

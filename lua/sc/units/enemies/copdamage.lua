@@ -922,13 +922,16 @@ function CopDamage:damage_bullet(attack_data)
 
 		if head then
 			managers.player:on_headshot_dealt(self._unit, attack_data)
-
 			headshot_by_player = true
 			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
 		end
 	end
 
 	if not self._damage_reduction_multiplier and head then
+		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult
+		if weapon_hs_mult then
+			damage = damage * weapon_hs_mult
+		end
 		if self._char_tweak.headshot_dmg_mul then
 			damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
 		else
@@ -1018,6 +1021,10 @@ function CopDamage:damage_bullet(attack_data)
 						parent = head_object_get		
 					})
 					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							parent = head_object_get		
+						})
 						world_g:effect_manager():spawn({
 							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
 							parent = head_object_get		
@@ -1224,6 +1231,10 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 
 				--local damage_type = attack_data.weapon_unit:base():get_damage_type() 
 				if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+					world_g:effect_manager():spawn({
+						effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+						parent = head_object_get		
+					})
 					world_g:effect_manager():spawn({
 						effect = ids_func("effects/payday2/particles/explosions/red_mist"),
 						parent = head_object_get		

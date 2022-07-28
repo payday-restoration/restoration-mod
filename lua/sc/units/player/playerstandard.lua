@@ -1128,6 +1128,10 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 			multiplier = multiplier * managers.player:upgrade_value("player", "copr_out_of_health_move_slow", 1)
 		end
 	end
+	
+	if self._shooting_move_speed_t then
+		multiplier = multiplier * self._shooting_move_speed_mult
+	end
 
 	local final_speed = movement_speed * multiplier
 	self._cached_final_speed = self._cached_final_speed or 0
@@ -1741,6 +1745,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 			self:_secondary_regen_ammo(t, dt)
 		end
 	end
+	self:_shooting_move_speed_timer(t, dt)
 
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
 	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
@@ -1759,6 +1764,29 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	
 end)
+
+function PlayerStandard:_shooting_move_speed_timer(t, dt)
+	local weapon = self._equipped_unit and self._equipped_unit:base()
+	if self._shooting and weapon._sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
+		self._shooting_move_speed_t = weapon._smt * 0.6
+		--self._shooting_move_speed_wait = weapon._smt * 0.15
+		self._shooting_move_speed_mult = weapon._sms
+	end
+	if self._shooting_move_speed_wait then
+		self._shooting_move_speed_wait = self._shooting_move_speed_wait - dt
+		if self._shooting_move_speed_wait < 0 then
+			self._shooting_move_speed_wait = nil
+		end
+	elseif self._shooting_move_speed_t then
+		self._shooting_move_speed_t = self._shooting_move_speed_t - dt
+		--self._shooting_move_speed_mult = self._shooting_move_speed_mult --too stupid to figure out the math to make 'self._shooting_move_speed_mult' transition to 1 as 'self._shooting_move_speed_t' counts down, pls help 
+		if self._shooting_move_speed_t < 0 then
+			self._shooting_move_speed_t = nil
+			self._shooting_move_speed_mult = nil
+		end
+	end
+end
+
 
 function PlayerStandard:_primary_regen_ammo(t, dt)
 	local primary = self._unit:inventory():unit_by_selection(2):base()
@@ -2874,7 +2902,7 @@ end
 function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
 	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
-	local may_find_grenade = not grenade_tweak.base_cooldown and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
+	local may_find_grenade = not grenade_tweak.base_cooldown --and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
 
 	for _, pickup in ipairs(pickups) do
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then

@@ -190,6 +190,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.mad_russian_merc_cameras.stages, "crojob3")
 	table.insert(self.mad_russian_merc_cameras.stages, "crojob3_night")
 			
+	self.risk_death_squad.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_3_sc"
 	self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 	self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
 	self.risk_sm_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc"

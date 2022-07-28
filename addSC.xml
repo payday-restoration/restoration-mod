@@ -429,6 +429,7 @@
 	
 
 	<!--Risk Level-->
+	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_3_sc" force="false"/>
 	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
 	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc" force="false"/>

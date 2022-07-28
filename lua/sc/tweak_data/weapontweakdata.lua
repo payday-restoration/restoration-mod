@@ -9745,11 +9745,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ranc_heavy_machine_gun.ads_speed = 0.600
 		self.ranc_heavy_machine_gun.damage_falloff = {
 			start_dist = 3000,
-			end_dist = 100000,
-			min_mult = 0.5
+			end_dist = 7500,
+			min_mult = 0.75
 		}
 		self.ranc_heavy_machine_gun.stats = {
-			damage = 180,
+			damage = 120,
 			spread = 81,
 			recoil = 81,
 			spread_moving = 8,

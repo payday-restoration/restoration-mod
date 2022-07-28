@@ -276,7 +276,6 @@
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" />
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_nm" force="false"/>
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/lycan_il" />
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/lycan_df" />

@@ -1414,7 +1414,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosin--
 		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can penetrate body armor, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_3}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{stats_positive}#deal damage over time and can stun enemies.##",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 40 damage/sec over 3 seconds and can stun enemies.##",
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",

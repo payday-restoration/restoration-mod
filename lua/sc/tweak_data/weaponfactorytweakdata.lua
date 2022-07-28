@@ -9077,8 +9077,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	--Long Barrel
 	self.parts.wpn_fps_snp_mosin_b_standard.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_standard.supported = true
-	self.parts.wpn_fps_snp_mosin_b_standard.stats = deep_clone(barrels.long_b2_stats)
-	self.parts.wpn_fps_snp_mosin_b_standard.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+	self.parts.wpn_fps_snp_mosin_b_standard.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_snp_mosin_b_standard.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Short Barrel
 	self.parts.wpn_fps_snp_mosin_b_short.pcs = {}

@@ -2216,9 +2216,6 @@ end
 		go_go = true,
 		suppress = true
 	}
-	self.spooc_gangster.speech_prefix_p1 = "lt"
-	self.spooc_gangster.speech_prefix_p2 = nil
-	self.spooc_gangster.speech_prefix_count = 2
 	self.spooc_gangster.silent_priority_shout = nil
 	self.spooc_gangster.challenges = {type = "gangster"}	
 	self.spooc_gangster.static_dodge_preset = true

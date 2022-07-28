@@ -1012,8 +1012,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.melee_concealment_modifier = {2}
 				--Ace
-					self.values.player.deep_pockets_concealment_modifier = {1}
-					self.values.player.ballistic_vest_concealment = {1}
+					self.values.player.deep_pockets_concealment_modifier = {2}
+					self.values.player.ballistic_vest_concealment = {2}
 					self.values.player.level_1_armor_addend = {2}
 					self.values.player.level_2_armor_addend = {2}
 					self.values.player.level_3_armor_addend = {2}

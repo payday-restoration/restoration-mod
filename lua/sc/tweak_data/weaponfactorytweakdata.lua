@@ -2480,7 +2480,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.75
+			sms = 0.7
 		}
 	}
 	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
@@ -3311,7 +3311,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.75
+			sms = 0.7
 		}
 	}
 	self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
@@ -3681,7 +3681,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.75
+			sms = 0.7
 		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -4349,7 +4349,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		},
 		custom_stats = {
 			ads_speed_mult = 1.1,
-			sms = 0.75
+			sms = 0.7
 		}
 	}
 	self.parts.wpn_fps_smg_mp5_m_drum.third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_m_drum"
@@ -10241,7 +10241,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
 	self.parts.wpn_fps_sho_aa12_mag_drum.custom_stats = {
 		ads_speed_mult = 1.1,
-		sms = 0.75
+		sms = 0.7
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
@@ -12804,6 +12804,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 	}
 	self.wpn_fps_snp_tti_wick_npc = deep_clone(self.wpn_fps_snp_tti_wick)
 	self.wpn_fps_snp_tti_wick_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
+
+	self.wpn_fps_snp_tti_wick_bubba = deep_clone(self.wpn_fps_snp_tti)
+	self.wpn_fps_snp_tti_wick_bubba.real_factory_id = "wpn_fps_snp_tti"
+	self.wpn_fps_snp_tti_wick_bubba.default_blueprint = {
+		"wpn_fps_smg_schakal_vg_surefire",
+		"wpn_fps_snp_tti_ns_standard",
+		"wpn_fps_upg_m4_m_drum",
+		"wpn_fps_upg_ass_m16_fg_stag",
+		"wpn_fps_snp_tti_dhs_switch",
+		"wpn_fps_snp_tti_dh_standard",
+		"wpn_fps_snp_tti_bolt_standard",
+		"wpn_fps_snp_tti_body_receiverupper",
+		"wpn_fps_snp_tti_body_receiverlower",
+		"wpn_fps_snp_tti_b_standard",
+		"wpn_fps_upg_o_leupold",
+		"wpn_fps_upg_o_45rds",
+		"wpn_fps_upg_m4_s_mk46",
+		"wpn_fps_upg_fl_ass_utg",	
+		"wpn_fps_ass_shak12_ns_muzzle",
+		"wpn_fps_upg_m4_g_standard_vanilla"
+	}
+	self.wpn_fps_snp_tti_wick_bubba_npc = deep_clone(self.wpn_fps_snp_tti_wick_bubba)
+	self.wpn_fps_snp_tti_wick_bubba_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
 end)
 
 --Grom
@@ -15998,12 +16021,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
 
-	self.parts.wpn_fps_ass_shak12_b_dummy.sound_switch = {suppressed = "regular_b"}
+	--self.parts.wpn_fps_ass_shak12_b_dummy.sound_switch = {suppressed = "regular_b"}
 
 	if not self.wpn_fps_ass_shak12.override then
 		self.wpn_fps_ass_shak12.override = {}
 	end
 	
+	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_singlefire")
+	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_autofire")
+
 	self.wpn_fps_ass_shak12_npc.uses_parts = deep_clone(self.wpn_fps_ass_shak12.uses_parts)	
 
 	self.wpn_fps_ass_shak12_supp = deep_clone(self.wpn_fps_ass_shak12)
@@ -21553,7 +21579,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.custom_stats = {
 			ads_speed_mult = 1.1,
-			sms = 0.75
+			sms = 0.7
 		}
 	end
 

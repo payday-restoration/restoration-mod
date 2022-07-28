@@ -3303,7 +3303,17 @@ function CharacterTweakData:_init_jowi(presets)
 	self.jowi.damage = presets.gang_member_damage
 	self.jowi.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
+		"wpn_fps_snp_tti_wick_bubba_npc",
 		"wpn_fps_snp_desertfox_wick_npc",
+		"wpn_fps_snp_desertfox_wick_npc",
+		"wpn_fps_snp_desertfox_wick_npc",
+		"wpn_fps_snp_desertfox_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
+		"wpn_fps_snp_tti_wick_npc",
 		"wpn_fps_snp_tti_wick_npc",
 		"wpn_fps_snp_tti_wick_npc",
 		"wpn_fps_snp_tti_wick_npc"

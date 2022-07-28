@@ -2176,6 +2176,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_33"] = "Long barrels, sturdier stocks and extended magazines have their merits but they can hit swap, reload, aim and sprint-to-fire times pretty hard; using too many will leave your weapon cumbersome to use.",
 		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's concealment rating.",
 		["loading_equip_skills_res_35"] = "The \"Aim Time\" stat also serves as the \"Sprint-to-Fire\" stat. \"Sprint-to-Fire\" time is the time it takes to be able to fire your weapon after you stop sprinting.",
+		["loading_equip_skills_res_36"] = "During combat, silencers reduce the likelihood of enemies evading your aim. Just be aware that the time they spend not dodging you is likely going to be put towards shooting you instead.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
 		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal' Contractor, as well as 'Doghouse' under Vlad.",	
@@ -2665,7 +2666,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "Deep Pockets",
-			["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the concealment of all ballistic vests by ##2##, and all other armors by ##1.##\n\nIncreases the armor of all ballistic vests and the suit by ##20.##",
+			["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the concealment of all ballistic vests by ##4##, and all other armors by ##2.##\n\nIncreases the armor of all ballistic vests and the suit by ##20.##",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "Moving Target",

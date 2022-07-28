@@ -71,7 +71,7 @@ tweak_data.smg = {
 	}
 	tweak_data.lmg = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.4,
+		ads_move_speed_mult = 0.6428,
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
@@ -80,7 +80,7 @@ tweak_data.smg = {
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.4,
+		ads_move_speed_mult = 0.6428,
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
@@ -91,10 +91,8 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.6666,
-		hipfire_spread_mult = 12,
-		hipfire_moving_spread_mult = 1
+		hipfire_spread_mult = 1.5,
+		hipfire_moving_spread_mult = 1.5
 	}
 
 tweak_data.assault_rifle = {

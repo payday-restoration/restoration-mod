@@ -451,9 +451,7 @@ function CopBase:set_visibility_state(stage)
 
 	if weapon then
 		-- flashlight enables if the unit is visible and in LOD stage 1/2 instead of only LOD stage 2
-		if weapon:base().set_flashlight_light_lod_enabled then
-			weapon:base():set_flashlight_light_lod_enabled(stage and stage <= 2)
-		end
+		weapon:base():set_flashlight_light_lod_enabled(stage and stage <= 2)
 	end
 
 	if self._visibility_state ~= state then

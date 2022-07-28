@@ -30,8 +30,6 @@ local idstr_material = Idstring("material")
 local idstr_contour_color = Idstring("contour_color")
 local idstr_contour_opacity = Idstring("contour_opacity")
 
-local zero_vec = Vector3()
-
 local tmp_vec1 = Vector3()
 
 function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
@@ -301,7 +299,8 @@ function ContourExt:_upd_color(is_retry, opacity)
 	opacity = opacity or 1
 	local color = tmp_vec1
 
-	mvector3.lerp(color, zero_vec, contour_color, opacity)
+	mvector3.set(color, contour_color)
+	mvector3.multiply(color, opacity)
 
 	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
 

@@ -283,7 +283,7 @@ function ContourExt:update(unit, t, dt)
 	end
 end
 
-Hooks:PostHook(ContourExt, "_upd_opacity", "fixmod_upd_opacity", function(self, opacity)
+Hooks:PostHook(ContourExt, "_upd_opacity", "res_upd_opacity", function(self, opacity)
 	-- opacity doesn't actually do anything unless it's 1/0, but i'm still updating it just in case
 	self:_upd_color(false, opacity)
 end)

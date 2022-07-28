@@ -594,7 +594,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Basic
 						self.values.player.hostage_speed_multiplier = {1.03}
 					--Ace
-						self.values.player.hostage_health_multiplier = {1.1}
+						self.values.player.hostage_health_multiplier = {1.05}
 							
 				--Hostage Taker
 						self.values.player.hostage_health_regen_addend = {
@@ -607,7 +607,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.super_syndrome = {
 							1
 						}						
-						self.values.player.hostage_health_regen_max_mult = { 2 }
+						self.values.player.hostage_health_regen_max_mult = { 1.5 }
 
 			
 		--Assault--
@@ -643,7 +643,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.2 --Unused
 					}
 				--Ace
-					self.values.player.bipod_damage_reduction = {0.5}
+					self.values.player.bipod_damage_reduction = {0.75}
 					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
@@ -714,8 +714,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 				--More Blood To Bleed
 					self.values.player.health_multiplier = {
-						1.15, --Basic
-						1.4 --Ace
+						1.1, --Basic
+						1.25 --Ace
 					}
 
 				--Bullseye
@@ -723,7 +723,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.5, --Basic
 						3.5 --Ace
 					}
-					self.on_headshot_dealt_cooldown = 3
+					self.on_headshot_dealt_cooldown = 5
 
 				--Iron Man
 					--Basic
@@ -1614,24 +1614,24 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.body_armor.skill_max_health_store = {
-		6.4,
-		6.0,
-		5.6,
-		5.2,
 		4.8,
 		4.4,
-		4.0
+		4.0,
+		3.6,
+		3.2,
+		2.8,
+		2.4
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		1.40,
-		1.35,
-		1.30,
-		1.25,
 		1.20,
+		1.175,
 		1.15,
-		1.10
-	}	
+		1.125,
+		1.10,
+		1.075,
+		1.05	
+	}
 
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
@@ -1809,10 +1809,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
-		1.5
+		1.2
 	}	
 	self.values.team.pocket_ecm_heal_on_kill = {
-		0.75
+		0.6
 	}	
 	
 	--Leech

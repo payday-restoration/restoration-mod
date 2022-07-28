@@ -2425,11 +2425,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime
 			["menu_control_freak_beta_sc"] = "Partners in Crime",
-			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nEach hostage increases your movement speed by ##3%##, up to ##4## times.\n\nACE: ##$pro##\nEach hostage increases your health by ##10%##, up to ##4## times.",
+			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nEach hostage increases your movement speed by ##3%##, up to ##4## times.\n\nACE: ##$pro##\nEach hostage increases your health by an additional ##5%##, up to ##4## times.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##1## health every ##4## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYour ##hostages will not flee## when they have been rescued by law enforcers.\n\nWhenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only ##1## time during a heist.\n\nHealth regen from Hostage Taker is increased by ##100%## when you have ##4## or more hostages.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##1## health every ##4## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYour ##hostages will not flee## when they have been rescued by law enforcers.\n\nWhenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only ##1## time during a heist.\n\nHealth regen from Hostage Taker is increased by ##50%## when you have ##4## or more hostages.",
 
 
 			--}
@@ -2455,7 +2455,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs have a ##20%## chance to knock down enemies.\n\nThis chance is raised to ##40%## when using a bipod.\n\nNOTE: Stagger effects do not apply to Captains, Bulldozers, Snipers, and Shields.\n\nACE: ##$pro##\nYou take ##12.5%## less damage while crouched.\n\nThe effect is raised to ##50%## when using a bipod.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs have a ##20%## chance to knock down enemies.\n\nThis chance is raised to ##40%## when using a bipod.\n\nNOTE: Stagger effects do not apply to Captains, Bulldozers, Snipers, and Shields.\n\nACE: ##$pro##\nYou take ##12.5%## less damage while crouched.\n\nThe effect is raised to ##25%## when using a bipod.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
@@ -2512,11 +2512,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "More Blood to Bleed",
-			["menu_iron_man_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##15%## extra health.\n\nACE: ##$pro##\nYou gain an additional ##25%## extra health.",
+			["menu_iron_man_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##10%## extra health.\n\nACE: ##$pro##\nYou gain an additional ##15%## extra health.",
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "Bullseye",
-			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nHeadshots regenerate ##5## armor once every ##3## seconds.\n\nACE: ##$pro##\nHeadshots regenerate an additional ##30## armor once every ##3## seconds.",
+			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nHeadshots regenerate ##5## armor once every ##5## seconds.\n\nACE: ##$pro##\nHeadshots regenerate an additional ##30## armor once every ##5## seconds.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
@@ -2837,6 +2837,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##100%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##50%## more damage with ranged weapons.\n\nNOTE: Does not apply Grenade Launchers or Rocket Launchers."
 
 	})
+
+	local butt = math.rand(1)
+	local frame = 0.01
+	if butt <= frame then
+		LocalizationManager:add_localized_strings({	
+			["menu_difficulty_sm_wish"] = "The Steel Path",
+			["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
+		})
+	end
+
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
@@ -3034,13 +3044,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\nNOTE: This effect does not apply to, nor is it refreshed by, downs caused by cloaker kicks and taser shocks.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening.\n\nBenefits from a full perk deck:\n##-##Unlocks and equips the Pocket ECM Device. Activating the Pocket ECM device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration. Activating the Pocket ECM after the alarm is raised will trigger the feedback effect, stunning enemies in a ##12## meter radius every ##1.5## seconds for a ##10## second duration. The Pocket ECM device has ##1## charge with an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3## seconds.\n##-##Killing an enemy while the feedback effect is active will regenerate ##15## health. Crew members killing enemies while the feedback effect is active will regenerate ##7.5## health.\n##-##Your armor recovery rate is increased by ##10%.##\n##-##Your dodge is increased by ##10## points.",
+		["menu_st_spec_21_desc_sc"] = "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening.\n\nBenefits from a full perk deck:\n##-##Unlocks and equips the Pocket ECM Device. Activating the Pocket ECM device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration. Activating the Pocket ECM after the alarm is raised will trigger the feedback effect, stunning enemies in a ##12## meter radius every ##1.5## seconds for a ##10## second duration. The Pocket ECM device has ##1## charge with an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3## seconds.\n##-##Killing an enemy while the feedback effect is active will regenerate ##12## health. Crew members killing enemies while the feedback effect is active will regenerate ##6## health.\n##-##Your armor recovery rate is increased by ##10%.##\n##-##Your dodge is increased by ##10## points.",
 		["menu_st_spec_21_desc_sc_short"] = "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening.",
 		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device.##\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, stunning enemies in a ##15## meter radius every ##1.5## seconds for a ##10## second duration.\n\nThe Pocket ECM Device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##12## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##7.5## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##6## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Leech
 		["menu_st_spec_22_desc_sc"] = "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team.\n\nBenefits from a full perk deck:\n##-##Unlocks and equips the Leech Ampule, which lasts ##10## seconds and has a ##40## second cooldown, and the cooldown is reduced by ##1## second when killing enemies. When activated, restores ##10%## of your maximum health and disables armor during the Ampule's duration. It also divides your health into segments of ##5%## and any damage taken removes an entire segment which can be restored by killing ##3## enemies as well as blocking damage for ##1## second. Any damage taken restores ##2%## of your teammates maximum health. The Leech Ampule can be activated while downed to temporarily revive you, but will add an additional ##30## seconds to the Leech Ampule cooldown.\n##-##You bag corpses and interact with hostages ##75%## faster.",

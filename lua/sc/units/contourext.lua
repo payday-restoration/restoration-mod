@@ -30,6 +30,10 @@ local idstr_material = Idstring("material")
 local idstr_contour_color = Idstring("contour_color")
 local idstr_contour_opacity = Idstring("contour_opacity")
 
+local zero_vec = Vector3()
+
+local tmp_vec1 = Vector3()
+
 function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
 	if Global.debug_contour_enabled then
 		return
@@ -233,4 +237,87 @@ function ContourExt:_remove(index, sync)
 			self._unit:unit_data().mission_element:event("unmarked", self._unit)
 		end
 	end
+end
+
+function ContourExt:update(unit, t, dt)
+	local index = 1
+	while self._contour_list and index <= #self._contour_list do
+		local setup = self._contour_list[index]
+		if setup.fadeout_t and setup.fadeout_t < t then
+			self:_remove(index)
+			self:_chk_update_state()
+		else
+			local data = self._types[setup.type]
+			local is_current = index == 1
+			if data.ray_check and unit:movement() and is_current then
+				local turn_on = nil
+				local cam_pos = managers.viewport:get_current_camera_position()
+				if cam_pos then
+					turn_on = mvector3.distance_sq(cam_pos, unit:movement():m_com()) > 16000000 or unit:raycast("ray", unit:movement():m_com(), cam_pos, "slot_mask", self._slotmask_world_geometry, "report")
+				end
+
+				local target_opacity = turn_on and 1 or 0
+				if self._last_opacity ~= target_opacity then
+					local opacity = math.step(self._last_opacity, target_opacity, dt / data.persistence)
+
+					self:_upd_opacity(opacity)
+				end
+			end
+
+			if setup.flash_t then
+				if setup.flash_t < t then
+					setup.flash_t = t + setup.flash_frequency
+					setup.flash_on = not setup.flash_on
+				end
+
+				if is_current then
+					local opacity = (setup.flash_t - t) / setup.flash_frequency
+					opacity = setup.flash_on and opacity or 1 - opacity
+
+					self:_upd_opacity(opacity)
+				end
+			end
+
+			index = index + 1
+		end
+	end
+end
+
+Hooks:PostHook(ContourExt, "_upd_opacity", "fixmod_upd_opacity", function(self, opacity)
+	-- opacity doesn't actually do anything unless it's 1/0, but i'm still updating it just in case
+	self:_upd_color(false, opacity)
+end)
+
+function ContourExt:_upd_color(is_retry, opacity)
+	if not self._contour_list then
+		return
+	end
+
+	local contour_color = self._contour_list[1].color or self._types[self._contour_list[1].type].color
+	if not contour_color then
+		return
+	end
+
+	opacity = opacity or 1
+	local color = tmp_vec1
+
+	mvector3.lerp(color, zero_vec, contour_color, opacity)
+
+	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
+
+	for _, material in ipairs(self._materials) do
+		if not alive(material) then
+			self:update_materials()
+
+			if not is_retry then
+				self:_upd_color(true, opacity)
+			end
+
+			break
+		end
+
+		material:set_variable(idstr_contour_color, color)
+	end
+
+	self:apply_to_linked("_upd_color", is_retry, opacity)
 end

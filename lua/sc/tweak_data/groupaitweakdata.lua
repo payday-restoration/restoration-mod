@@ -15978,7 +15978,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.smoke_grenade_timeout = {20, 40}
 		self.flash_grenade_timeout = {20, 40}
 	elseif difficulty_index == 7 then
-		self.ignore_grenade_time = 8
+		self.ignore_grenade_time = 6
 		self.smoke_grenade_timeout = {10, 20}
 		self.flash_grenade_timeout = {10, 20}
 	else
@@ -16355,9 +16355,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
-			14,
-			17,
-			20
+			16,
+			19,
+			22
 		}
 		self.besiege.assault.force_pool = {
 			100,

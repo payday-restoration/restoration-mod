@@ -500,8 +500,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
 		self._rof_mult = 1
-		self._sms = self:weapon_tweak_data().sms
-		self._smt = self._sms and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
+
+		if not self:is_npc() then
+			self._sms = self:weapon_tweak_data().sms
+			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
+		end
 
 		for part_id, stats in pairs(custom_stats) do
 			if stats.ads_speed_mult then
@@ -670,13 +673,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.big_scope then
 				self._has_big_scope = true
 			end
-			if stats.sms then
-				if not self._sms then
-					self._sms = stats.sms
-				else
-					self._sms = self._sms * stats.sms
+
+			if not self:is_npc() then
+				if stats.sms then
+					if not self._sms then
+						self._sms = stats.sms
+					else
+						self._sms = self._sms * stats.sms
+					end
+					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
 				end
-				self._smt = self:weapon_tweak_data().fire_mode_data.fire_rate * 2
 			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats

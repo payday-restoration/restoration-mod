@@ -893,14 +893,32 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_watchdogs_stage2_briefing"] = "미아 칼리엔테는 살아있는 물건이 될걸세. 친구들, 그녀는 수년 동안 DC에서 머키워터의 작전 뒤에 있는 두뇌 역할을 하고 있었지. 얼마 전 머키워터는 어느 부두의 창고를 인수하여 추가 유통 지점으로 사용하고 있다네, 우리의 목표는 그들이 최근 해외에서 약탈한 전리품들을 확인하는 것이지. 거기에 들어가서 그 애새끼를 잡고 인질로 삼을걸세. 머키들은 그녀를 잃을 순 없을테니 그녀를 구하기 위해 우리에게 돈을 줄 것이라네. 아마도 앞서 언급한 좀 더 가치 있는 약탈품을 줄까?, 자네들의 생각은 어떨세?"		
 	})
 
+
+	-- can be added to other languages or change, if you want
+	-- but, it can be deleted
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
-	if captain_type == restoration.captain_types.hvh then
+	if captain_type == restoration.captain_types.winter then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴 윈터스 분대 돌입 중",
+		})
+	elseif captain_type == restoration.captain_types.summer then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴 서머스 팀 돌입 중",
+		})
+	elseif captain_type == restoration.captain_types.spring then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴 스프링 분대 돌입 중",
+		})
+	elseif captain_type == restoration.captain_types.autumn then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴 어텀 분대 돌입 중",
+		})
+	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "악몽을 마주하고 잠에서 깨어나라",
 		})
 	end
-
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
@@ -1487,22 +1505,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_katana_info"] = "이건 너의 손에 있는 \"정의의 도구\"가 아닐세.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.\n\n지로로 플레이하는 동안 충전 공격으로 클로커를 죽이면 특수 킬 애니메이션이 발동됩니다.",
+		["bm_melee_katana_info"] = "이건 너의 손에 있는 \"정의의 도구\"가 아닐세.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",
+		["bm_melee_thejobissnotyours_info"] = "이건 너의 검 따위가 아니지.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",		
 		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 10% 감소합니다.", --Buckler Shield
 		["bm_melee_charge_info"] = "당신의 포크를 피치하고 약간의 피치들을 포크하십시오.\n\n앞으로 전진하면 전방의 대상에게 0.25초마다 45의 피해를 입히는 전력 질주를 시작합니다. 이것은 스킬로 늘릴 수 있습니다.\n\n전력 질주 충전 중 적을 명중하면 최대 스태미나의 15%가 소모됩니다. 마무리 일격을 가했다면 스테미나를 10%만큼 회복합니다.\n\n전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.", -- Randal Pitchfork		
 		["bm_melee_cs_info"] = "찢고 죽여라, 모두 끝날때 까지.\n\n충전하는 동안 전방의 대상에게 0.25초마다 30의 피해를 줍니다. 이것은 스킬로 늘릴 수 있습니다.\n\n적의 근접 공격을 반격할 수 없습니다.", -- ROAMING FR-
 		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 전방의 대상에게 0.25초마다 18의 피해를 줍니다. 이것은 스킬로 늘릴 수 있습니다.\n\n적의 근접 공격을 반격할 수 없습니다.", --Kazaguruma
-		["bm_melee_wing_info"] = "변장 도구와 잘 어울립니다!\n\n뒤에서 적을 공격하면 4배의 피해를 줍니다.",-- Wing Butterfly Knife
+		["bm_melee_wing_info"] = "변장 도구와 잘 어울릴거 같습니다!\n\n뒤에서 적을 공격하면 4배의 피해를 줍니다.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 두 배의 피해를 줍니다.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼트립니다.", -- Psycho Knife
 		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼트립니다..", -- Headless Dozer Sword
 		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 90% 이상 충전하면 찌르기 공격을 수행하여 사거리를 1미터 확장합니다.", -- Great Sword
 		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.", -- Pounder
-		["bm_melee_iceaxe_info"] = "헤드샷 피해를 50% 많이 줍니다.", -- Icepick
-		["bm_melee_mining_pick_info"] = "헤드샷 피해를 50% 많이 줍니다.", --Gold Fever (Pickaxe)
+		["bm_melee_iceaxe_info"] = "헤드샷 피해를 50%만큼 많이 줍니다.", -- Icepick
+		["bm_melee_mining_pick_info"] = "헤드샷 피해를 50%만큼 많이 줍니다.", --Gold Fever (Pickaxe)
 		["bm_melee_boxing_gloves_info"] = "난 벨을 울린걸 들은 적 없는데.\n\nOVERKILL 권투 글러브로 적을 처치하면 즉시 스태미나가 채워집니다.", -- OVERKILL Boxing Gloves
 		["bm_melee_clean_info"] = "경찰이 필요로 하는 깨끗한 면도를 제공하십시오.\n\n3초 동안 120의 출혈 피해를 입힙니다.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "여생에서 불쌍한 놈을 기다리지 않아... 그리고 난 그냥... 망할 야구 방망이와 이야기하고 있잖아!\n\n3초 동안 120의 출혈 피해를 입힙니다.", --Lucille Baseball Bat
+		["bm_melee_inner_child_info"] = "내면의 아이와 소통해보십시오.\n\n3초 동안 120의 출혈 피해를 입힙니다.",		
 		["bm_melee_spoon_gold_info"] = "먹어버려, 먹어버려, 먹어버려, 먹어버려! \n\n50% 확률로 120의 화염 피해를 입히고 3초에 걸쳐 적을 방해합니다.", --Gold Spoon
 		["bm_melee_cqc_info"] = "120의 독 피해를 입히고 50% 확률로 4초에 걸쳐 1/2초마다 방해시키는 이국적인 독이 들어 있습니다.", --Kunai, Syringe
 		["bm_melee_fight_info"] = "물 처럼 되어라, 친구여.\n\n적의 근접 공격을 반격하면 120의 근접 피해를 입힙니다. 이것은 스킬로 늘릴 수 있습니다.", --Empty Palm Kata
@@ -2762,7 +2782,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
-			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은닉성을 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은닉성 ##4##만큼, 다른 모든 방탄복의 은닉성을 ##2##만큼 증가합니다.\n\n모든 방탄 조끼의 은닉성을 ##4##만큼 증가합니다.",
+			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은닉성을 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은닉성 ##2##만큼, 다른 모든 방탄복의 은닉성을 ##1##만큼 증가합니다.\n\n모든 방탄 조끼의 은닉성을 ##4##만큼 증가합니다.",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
@@ -2783,7 +2803,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n무기를 꺼내고 넣는 속도가 ##15%##만큼 증가합니다\n\n에이스: ##$pro##\n\n모든 무기의 은닉성이 ##2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n무기를 꺼내고 넣는 속도가 ##15%##만큼 증가합니다\n\n에이스: ##$pro##\n모든 무기의 은닉성이 ##2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
@@ -2930,7 +2950,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "버서커",
-		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 원거리 무기류의 공격력이 ##50%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
+		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##100%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 원거리 무기류의 공격력이 ##50%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
 
 	})
 end)

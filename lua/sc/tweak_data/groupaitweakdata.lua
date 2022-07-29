@@ -15973,10 +15973,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	
 	self.spawn_cooldown_mul = math.lerp(2.5, 1, f)
 
-	if difficulty_index <= 6 then
+	if difficulty_index <= 5 then
 		self.ignore_grenade_time = 10
 		self.smoke_grenade_timeout = {20, 40}
 		self.flash_grenade_timeout = {20, 40}
+	elseif difficulty_index == 6 then
+		self.ignore_grenade_time = 8
+		self.smoke_grenade_timeout = {20, 40}
+		self.flash_grenade_timeout = {20, 40}	
 	elseif difficulty_index == 7 then
 		self.ignore_grenade_time = 6
 		self.smoke_grenade_timeout = {10, 20}
@@ -16235,9 +16239,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
-			10,
-			13,
-			16
+			11,
+			14,
+			17
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -16259,9 +16263,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
-			10,
-			13,
-			16
+			12,
+			15,
+			18
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -16283,9 +16287,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
-			12,
-			15,
-			18
+			13,
+			16,
+			19
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -16307,9 +16311,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			12,
-			15,
-			18
+			14,
+			17,
+			20
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -16331,9 +16335,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
-			14,
-			17,
-			20
+			15,
+			18,
+			21
 		}
 		self.besiege.assault.force_pool = {
 			100,

@@ -239,7 +239,7 @@
 	<!-- disktrasa -->
 	<material_config	path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa_contour" force="false"/>
-	<!-- fbi tier end -->
+	<!-- fbi tier end -->	
 	
 	<!-- specials-->
 	<!-- greendozer -->
@@ -268,8 +268,8 @@
 	<!--blackdozer -->
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk" load="true"/>
-	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk" load="true"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
 	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_contour" force="false"/>
@@ -409,8 +409,8 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>		
 	<!-- specials end -->
-	
-	<!--Shared textures-->	
+
+	<!--Shared textures-->
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_nm" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_heads_atlas_df" force="false"/>	
@@ -423,7 +423,6 @@
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/swat_helmets_atlas_df" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/swat_heavy_df" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" />	
-	
 	
 	<!-- titans	 -->	
 	<!--Titan Shotgunner-->	

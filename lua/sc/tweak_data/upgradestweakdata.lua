@@ -713,6 +713,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.carry.movement_penalty_nullifier = {true}
 
 				--More Blood To Bleed
+					--HARDCODED COCKSUCKING BULLSHIT
+					--Go to tweakdata.lua
 					self.values.player.health_multiplier = {
 						1.1, --Basic
 						1.25 --Ace

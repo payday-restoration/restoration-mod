@@ -1,0 +1,13 @@
+{
+  "ene_lapd_veteran_cop" : "SWAT 마르도 준위",
+  "ene_swat" : "LAPD SWAT",  
+  "ene_swat_heavy" : "LAPD 중무장 SWAT",
+  "ene_fbi_swat" : "LAPD FBI SWAT",  
+  "ene_fbi_heavy" : "LAPD FBI 중무장 SWAT",
+  "ene_fbi_heavy_r870_sc" : "LAPD FBI 중무장 SWAT",
+  "ene_city_swat" : "FBI SWAT 경무장 엘리트",
+  "ene_city_heavy" : "FBI SWAT 중무장 엘리트",
+  "ene_city_heavy_r870_sc" : "FBI SWAT 중무장 엘리트",
+  "ene_city_shield" : "실드",
+  "ene_bulldozer_3" : "스컬 도저"
+}

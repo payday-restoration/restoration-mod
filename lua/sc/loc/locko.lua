@@ -894,8 +894,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	})
 
 
-	-- can be added to other languages or change, if you want
-	-- but, it can be deleted
+	-- maybe need change banner descriptions, but i can't think it
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
@@ -1428,15 +1427,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosin--
 		["bm_mosin_sc_desc"] = "음식은 사치품이지만 여전히 총이 필요할 때 이 저렴하고 고전적인 볼트액션 소총이 있습니다.\n\n이 무기는 한 번에 5발의 탄환으로 재장전되고 #{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, #{item_stage_3}#디 엔드##\n\n#{stats_positive}#시간이 지남에 따라 피해를 입히고 적을 스턴시킬 수 있는 마취탄##를 발사합니다.",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, #{item_stage_2}#디 엔드##\n\n#{skill_color}#3초에 걸쳐 초당 40의 피해를 입히고 적을 스턴시킬 수 있는## #{stats_positive}#마취탄##을 발사합니다.",
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal 대물 저격소총",
-		["bm_m95_sc_desc"] = "소형 차량과의 전투에 사용되는 대물 저격소총. 이것을 유기적 표적에 사용하는 것은 아마도 전쟁 범죄일겁니다.\n\n#{skill_color}#방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_m95_sc_desc"] = "소형 차량과의 전투에 사용되는 대물 저격소총. 이것을 유기적 표적에 사용하는 것은 아마도 전쟁 범죄일겁니다.\n\n#{skill_color}#헤드샷 피해를 50%만큼 더 입히고 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
 		--Custom Snipers
 		["bm_w_m107cq"] = "Mors .50 cal 대물 저격소총",
-		["bm_m107cq_sc_desc"] = "Thanatos 대물 저격소총의 발사속도가 마음에 들지 않았다면 Mors 대물 저격소총은 당신이 원하는 것을 미세한 붉은 안개로 전달할 것입니다.\n\n#{skill_color}#방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_m107cq_sc_desc"] = "Thanatos 대물 저격소총의 발사속도가 마음에 들지 않았다면 Mors 대물 저격소총은 당신이 원하는 것을 미세한 붉은 안개로 전달할 것입니다.\n\n#{skill_color}#헤드샷 피해를 50%만큼 더 입히고 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_w_m200"] = "TF-141 대물 저격소총",
-		["bm_m200_sc_desc"] = "멋진 360도 노 스코프 사다리 스톨 샷을 시도할려는 사람들을 위한 총입니다.\n\n#{skill_color}#방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",		
+		["bm_m200_sc_desc"] = "멋진 360도 노 스코프 사다리 스톨 샷을 시도할려는 사람들을 위한 총입니다.\n\n#{skill_color}#헤드샷 피해를 50%만큼 더 입히고 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",		
 		--Marlin 1894
 		["bm_w_m1894"] = "Mare's Leg 저격소총",
 		--SPX Centerfire
@@ -1466,7 +1465,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
-		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##", --just in case
+		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#헤드샷 피해를 50%만큼 더 입히고 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##", --just in case
 		["bm_ap_2_weapon_sc_desc"] = "화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_ap_3_weapon_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 위/아래로 올리거나 내립니다.\n\n#{risk}#리프 조준기는 30미터에서 0으로 조정됩니다.##",
@@ -1948,7 +1947,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		-- Abydos 
 			["bm_w_s552"] = "WHITE FANG 465",
 			["bm_s552_sc_desc"] = "\"응...은행 털기...\"\n\n#{skill_color}#시로코##가 애용하는 돌격소총.\n늘 꼼꼼하게 정비해 두기 때문에 어떤 상황에서도 준비만전이다.",	
-			["bm_w_benelli"] = "Eye of Horus",
+			["bm_w_benelli"] = "호루스의 눈",
 			["bm_benelli_sc_desc"] = "\"으헤.. 귀찮아..\"\n\n#{skill_color}#호시노##가 애용하는 심플한 디자인의 산탄총.\n게으름 부리길 좋아하는 호시노이지만 총기의 상태만큼은 언제나 완벽하다.",
 			["bm_w_m134"] = "미니 No.5",
 			["bm_m134_sc_desc"] = "\"노노미 갑니다!\"\n\n#{skill_color}#노노미##가 사용하는 기관총.\n#{skill_color}#'미니 No.5'##라는 이름과 어울리지 않게 그 무게는 절대 가볍지 않다.",
@@ -2088,36 +2087,36 @@ end
 	local breins = tweak_data.levels.ai_groups.zombie
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
+		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat_ko.json")
 	end)
 
 	if ai_type == murkywetew then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
+			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew_ko.json")
 		end)
 	elseif ai_type == lapd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd_ko.json")
 		end)
 	elseif ai_type == mex then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex_ko.json")
 		end)
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan_ko.json")
 		end)
 	elseif ai_type == nypd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd_ko.json")		
 		end)
 	elseif ai_type == fbi then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi_ko.json")		
 		end)
 	elseif ai_type == breins then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins_ko.json")		
 		end)		
 	end
  end
@@ -2290,7 +2289,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_32"] = "조준 매커니즘은 조준할 때 명중률의 이점을 얻으려면 완전히 조준해야 효과가 증가하도록 변경되었습니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
 		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 사용하면 무기를 사용하기가 번거로워집니다.",
 		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은닉성에 영향을 받습니다.",
-		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",		
+		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",
+		["loading_equip_skills_res_36"] = "전투 중 소음기는 당신이 적을 조준할때 적이 회피할 가능성을 줄입니다. 그들이 당신을 피하지 않고 보내는 시간을 대신 당신을 쏘는 데 쓰일 가능성이 있음을 명심하십시오.",
+		
 		--Misc Hints
 		["loading_misc_res_title"] = "레스토레이션 기타 팁",
 		["loading_misc_res_1"] = "저희가 만든 커스텀 하이스트도 해보십시오! 블라드의 '도그하우스'뿐만 아니라 '자칼'의 계약에서 대부분 찾을 수 있습니다.",	
@@ -2539,11 +2540,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime
 			["menu_control_freak_beta_sc"] = "공범",
-			["menu_control_freak_beta_desc_sc"] = "베이직: ##$basic##\n당신은 인질 당 최대 ##4##명까지 당신의 이동 속도가 ##3%##만큼 상승합니다.\n\n에이스: ##$pro##\n당신은 인질 당 최대 ##4##명까지 당신의 최대 체력이 ##10%##씩 상승합니다.",
+			["menu_control_freak_beta_desc_sc"] = "베이직: ##$basic##\n당신은 인질 당 최대 ##4##명까지 당신의 이동 속도가 ##3%##만큼 상승합니다.\n\n에이스: ##$pro##\n당신은 인질 당 최대 ##4##명까지 최대 체력이 추가로 ##5%##씩 상승합니다.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "인질범",
-			["menu_black_marketeer_beta_desc_sc"] = "베이직: ##$basic##\n당신은 인질 당 최대 ##4##명까지 매 ##4##초마다 당신의 체력의 ##1##만큼 체력을 회복합니다.\n\n에이스: ##$pro##\n당신의 ##인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 ##1##번만 발생합니다.\n\n##4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 ##100%##만큼 증가합니다.",
+			["menu_black_marketeer_beta_desc_sc"] = "베이직: ##$basic##\n당신은 인질 당 최대 ##4##명까지 매 ##4##초마다 당신의 체력의 ##1##만큼 체력을 회복합니다.\n\n에이스: ##$pro##\n당신의 ##인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 ##1##번만 발생합니다.\n\n##4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 ##50%##만큼 증가합니다.",
 
 
 			--}
@@ -2569,7 +2570,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
-			["menu_speedy_reload_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총은 ##20%##의 확률로 적을 쓰러뜨립니다.\n\n양각대 사용 시 확률이 ##40%##로 증가합니다.\n\n참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 받는 피해가 ##12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##50%##으로 증가합니다.",
+			["menu_speedy_reload_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총은 ##20%##의 확률로 적을 쓰러뜨립니다.\n\n양각대 사용 시 확률이 ##40%##로 증가합니다.\n\n참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 받는 피해가 ##12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##25%##으로 증가합니다.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
@@ -2626,11 +2627,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "더 많은 피, 더 많은 출혈",
-			["menu_iron_man_beta_desc_sc"] = "베이직: ##$basic##\n추가 체력을 ##15%##만큼 얻습니다.\n\n에이스: ##$pro##\n추가로 ##25%##만큼의 추가 체력을 얻습니다.",
+			["menu_iron_man_beta_desc_sc"] = "베이직: ##$basic##\n추가 체력을 ##10%##만큼 얻습니다.\n\n에이스: ##$pro##\n추가로 ##15%##만큼의 추가 체력을 얻습니다.",
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "불스아이",
-			["menu_prison_wife_beta_desc_sc"] = "베이직: ##$basic##\n헤드샷 성공시 ##3##초마다 ##5##씩 방탄력을 회복합니다.\n\n에이스: ##$pro##\n헤드샷 성공시 ##3##초마다 추가로 ##30##씩 방탄력을 회복합니다.",
+			["menu_prison_wife_beta_desc_sc"] = "베이직: ##$basic##\n헤드샷 성공시 ##5##초마다 ##5##씩 방탄력을 회복합니다.\n\n에이스: ##$pro##\n헤드샷 성공시 ##5##초마다 추가로 ##30##씩 방탄력을 회복합니다.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
@@ -2664,7 +2665,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "완전무장",
-			["menu_bandoliers_desc_sc"] = "베이직: ##$basic##\n소지 탄약이 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자로 획득하는 탄약 수급율이 ##50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 ##5%##이고, 하나도 획득하지 못할 때마다 확률이 추가로 ##1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n참고: 특성 덱의 투척물은 해당 스킬로도 획득할 수 없습니다.",
+			["menu_bandoliers_desc_sc"] = "베이직: ##$basic##\n소지 탄약이 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자로 획득하는 탄약 수급율이 ##50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 ##5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 ##1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n참고: 특성 덱의 투척물은 해당 스킬로도 획득할 수 없습니다.",
 
 			--}
 		--}
@@ -2782,7 +2783,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
-			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은닉성을 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은닉성 ##2##만큼, 다른 모든 방탄복의 은닉성을 ##1##만큼 증가합니다.\n\n모든 방탄 조끼의 은닉성을 ##4##만큼 증가합니다.",
+			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은닉성을 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은닉성 ##4##만큼, 다른 모든 방탄복의 은닉성을 ##2##만큼 증가합니다.\n\n모든 방탄 조끼의 은닉성을 ##4##만큼 증가합니다.",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
@@ -2953,6 +2954,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 근접 공격과 톱의 공격력이 ##100%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##50%## 미만일 때 원거리 무기류의 공격력이 ##50%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
 
 	})
+	
+	local butt = math.rand(1)
+	local frame = 0.01
+	if butt <= frame then
+		LocalizationManager:add_localized_strings({	
+			["menu_difficulty_sm_wish"] = "강철의 길",
+			["menu_risk_sm_wish"] = "강철의 길. 콘클레이브를 마스터하고 도전을 원하는 사람들을 위한 난이도입니다."
+		})
+	end
+	
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
@@ -3051,14 +3062,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "근접 공격이 적중할 때마다 ##10##초 동안 ##1.25##초마다 체력이 ##1##씩 회복되며 최대 ##5##번 중첩됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sociopath--
-		["menu_st_spec_9_desc_sc"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.\n\n전체 특성 덱의 이점:\n##-##적과 ##18##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.\n##-##적을 죽이면 방탄력이 ##40##만큼 재생됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-##근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-##인벤토리에 시체가방을 ##1##개를 추가로 가집니다.\n##-## ##18## 미터 이내의 적을 죽이면 ##25%## 확률로 적들에게 퍼뜨립니다. 매 ##2##초마다 한 번만 일어납니다.",
+		["menu_st_spec_9_desc_sc"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.\n\n전체 특성 덱의 이점:\n##-##적과 ##18##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.\n##-##적을 죽이면 방탄력이 ##40##만큼 재생됩니다. 매 ##5##초마다 한 번만 일어납니다.\n##-##근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다. 매 ##5##초마다 한 번만 일어납니다.\n##-##인벤토리에 시체가방을 ##1##개를 추가로 가집니다.\n##-## ##18## 미터 이내의 적을 죽이면 ##25%## 확률로 적들에게 퍼뜨립니다. 매 ##5##초마다 한 번만 일어납니다.",
 		["menu_st_spec_9_desc_sc_short"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.",		
 		["menu_deck9_1_sc"] = "말 없는",
 		["menu_deck9_1_desc_sc"] = "##18미터## 내에 3명 이상의 적에게 둘러싸여 있을 때 적에게 받는 피해가 ##5%## 감소합니다.",
-		["menu_deck9_3_desc_sc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n매 ##3##초마다 한 번만 일어납니다.",
-		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다.\n\n매 ##3##초마다 한 번만 일어납니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
-		["menu_deck9_7_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 방탄복가 ##20##만큼 재생됩니다.\n\n매 ##3##초마다 한 번만 일어납니다.",
-		["menu_deck9_9_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n매 ##2##초마다 한 번만 일어납니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
+		["menu_deck9_3_desc_sc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n매 ##5##초마다 한 번만 일어납니다.",
+		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다.\n\n매 ##5##초마다 한 번만 일어납니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
+		["menu_deck9_7_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 방탄복가 ##20##만큼 재생됩니다.\n\n매 ##5##초마다 한 번만 일어납니다.",
+		["menu_deck9_9_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n매 ##5##초마다 한 번만 일어납니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
 
 		--Grinder--
 		["menu_st_spec_11_desc_sc"] = "전형적인 그라인더는 열심히 일하고, 어려운 상황들 속에서도 흔들리지 않고 상황을 해결할 수 있습니다. \n\n그라인더는 항상 전방에 서고, 여러 처벌들을 이겨내 가며, 그가 얼마나 피해를 받든지 간에 적에게 피해를 줘 살아날수 있는 점에 크게 의존하고 있습니다.\n\n전체 특성 덱의 이점:\n##-##적에게 피해를 입히면 ##5##초 동안 매 초마다 체력이 ##3##씩 회복됩니다. 이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 방편복을 착용한 상태에서만 발생합니다. 또한 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n##-##방편복을 착용하는 동안 방탄력을 ##70##만큼 잃습니다.\n##-##방편복을 착용하는 동안 은닉성을 ##8##만큼 얻습니다.\n##-##각 중첩마다 이동 속도를 ##5%##만큼 증가시킵니다.\n##-##시체가방 케이스가 ##2##개로 증가합니다.",
@@ -3150,7 +3161,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##12##미터 반경의 적을 스턴시킵니다. 휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##3##초씩 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##12##만큼 회복되고 팀원이 적을 죽이면 ##6##만큼 회복됩니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
+		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##15##미터 반경의 적을 스턴시킵니다. 휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##3##초씩 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##12##만큼 회복되고 팀원이 적을 죽이면 ##6##만큼 회복됩니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
 		["menu_st_spec_21_desc_sc_short"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.",		
 		["menu_deck21_1_desc_sc"] = "##휴대용 ECM 재머##를 잠금 해제하고 장착합니다.\n\n게임 내에서 투척무기 키를 사용하여 휴대용 ECM 재머를 활성화할 수 있습니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##12##미터 반경의 적을 스턴시킵니다.\n\n휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##3##초씩 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",

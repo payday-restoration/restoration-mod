@@ -721,7 +721,7 @@ function CopActionWalk:update(t)
 			mvec3_set(wanted_u_fwd, move_dir_norm)
 			mvec3_rot(wanted_u_fwd, self._walk_side_rot[wanted_walk_dir])
 			mrot_lookat(rot_new, wanted_u_fwd, math_up)
-			mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 5))
+			mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 3))
 		end
 
 		self._ext_movement:set_rotation(rot_new)
@@ -905,7 +905,7 @@ function CopActionWalk:_upd_start_anim(t)
 				mvec3_dir(wanted_u_fwd, self._common_data.pos, self._curve_path[self._curve_path_index + 1])
 				mvec3_rot(wanted_u_fwd, self._walk_side_rot[self._start_run_straight])
 				mrot_lookat(tmp_rot1, wanted_u_fwd, math_up) -- don't think z matters here at all
-				mrot_slerp(tmp_rot1, self._common_data.rot, tmp_rot1, math_min(1, dt * 5))
+				mrot_slerp(tmp_rot1, self._common_data.rot, tmp_rot1, math_min(1, dt * 3))
 
 				self._ext_movement:set_rotation(tmp_rot1)
 			end
@@ -1458,7 +1458,7 @@ function CopActionWalk:_upd_stop_anim(t)
 	end
 
 	mrot_lookat(rot_new, face_fwd, math_up)
-	mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 5))
+	mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 3))
 
 	self._ext_movement:set_rotation(rot_new)
 

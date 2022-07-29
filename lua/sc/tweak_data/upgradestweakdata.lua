@@ -1071,6 +1071,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Optical Illusions
 				--Basic
+				--Hardcoded, go to tweakdata.lua
 					self.values.weapon.swap_speed_multiplier = {1.15}
 				--Ace
 					self.values.player.weapon_concealment_increase = {
@@ -1570,7 +1571,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.killshot_close_regen_armor_bonus = {2}
 	self.values.player.killshot_close_panic_chance = {0.25}
 	self.values.player.melee_kill_life_leech = {0.05}
-	self.on_killshot_cooldown = 3
+	self.on_killshot_cooldown = 5
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
@@ -1595,13 +1596,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.damage_to_armor = {
 		{
-			{2.1, 3},
-			{2.4, 3},
-			{2.7, 3},
-			{3.0, 3},
-			{3.2, 3},
-			{3.4, 3},
-			{3.6, 3}
+			{2.1, 5},
+			{2.4, 5},
+			{2.7, 5},
+			{3.0, 5},
+			{3.2, 5},
+			{3.4, 5},
+			{3.6, 5}
 		}
 	}
 	
@@ -1724,7 +1725,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Fat benis :DDDDD
 	--biker?
-	self.wild_trigger_time = 2
+	self.wild_trigger_time = 5
 	self.wild_max_triggers_per_time = 1
 	self.values.player.wild_health_amount = {0.2}
 	self.values.player.wild_armor_amount = {0.0}
@@ -1747,8 +1748,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.biker_armor_regen = {
 		--Amount regenerated per tick, time between ticks, time fast forwarded when melee kills are done.
-		{1.0, 3.0, 0.0},
-		{2.0, 2.5, 3.5} 
+		{1.0, 5.0, 0.0},
+		{2.0, 5.0, 1.0} 
 	}
 
 	--Tag Team--

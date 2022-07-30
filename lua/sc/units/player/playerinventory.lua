@@ -122,7 +122,8 @@ function PlayerInventory:_do_feedback()
 		return
 	end
 
-	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, self._jammer_data.range)
+	local activation = self._jammer_data.t - t > self:get_jammer_time() * 0.975
+	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, self._jammer_data.range, activation)
 
 	if self._jammer_data.t > t + self._jammer_data.interval then
 		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), t + self._jammer_data.interval)

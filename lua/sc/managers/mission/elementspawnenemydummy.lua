@@ -200,7 +200,7 @@ local america_deathwish = {
 local america_zeal = {
 	   --scripted spawns for death sentence
 		--fbi
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2",
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
@@ -484,7 +484,7 @@ local fbi_deathwish = {
 local fbi_zeal = {
 	   --scripted spawns for death sentence
 		--fbi
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2",
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
@@ -873,7 +873,7 @@ local nypd_deathwish = {
 local nypd_zeal = {
 	   --scripted spawns for death sentence
 		-- fbi
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 	   
@@ -1245,7 +1245,7 @@ local nypd_pr_deathwish = {
 local nypd_pr_zeal = {
 	   --scripted spawns for death sentence
 		-- fbi
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 	   
@@ -1577,7 +1577,7 @@ local lapd_deathwish = {
 local lapd_zeal = {
 	   --scripted spawns for death sentence
 		-- hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -2045,7 +2045,7 @@ local federales_zeal = {
 		
 		--America Faction (just in case if we replace the America faction with Federales)
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -2429,7 +2429,7 @@ local murkywater_omnia = {
 		--elites introduced
 		
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
 		

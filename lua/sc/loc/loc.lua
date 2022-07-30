@@ -895,9 +895,26 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_watchdogs_stage2_briefing"] = "Mia Calienté is a real piece of work, friends. For years she's been the brains behind the Murkywater's operations in DC. Not too long ago, Murkywater took over a warehouse at the docks and they've using it as an additional distribution point. Our target is there checking in on some loot recently plundered from abroard. We're going to get in there, grab the dwankie and take her hostage. The Murkies can't afford to lose her, they will pay for her release, maybe with the aforementioned and rather valuable plunder, what do you say gang?"
 	})
 
+	-- maybe need change banner descriptions
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
-	if captain_type == restoration.captain_types.hvh then
+	if captain_type == restoration.captain_types.winter then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "INCOMING CAPTAIN WINTERS'S SQUAD",
+		})
+	elseif captain_type == restoration.captain_types.summer then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "INCOMING CAPTAIN SUMMERS TEAM",
+		})
+	elseif captain_type == restoration.captain_types.spring then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "INCOMING CAPTAIN SPRING'S SQUAD",
+		})
+	elseif captain_type == restoration.captain_types.autumn then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN SQUAD",
+		})	
+	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "FACE YOUR NIGHTMARES AND WAKE UP",
 		})

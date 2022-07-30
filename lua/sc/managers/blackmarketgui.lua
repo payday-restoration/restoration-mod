@@ -4320,24 +4320,58 @@ function BlackMarketGui:update_info_text()
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
 				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
+				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
+				local sms = weapon_tweak.sms or 1
+				local stat_sms = nil
+				if custom_stats then
+					for part_id, stats in pairs(custom_stats) do
+						if stats.sms then
+							sms = sms + (1 * (stats.sms - 1))
+							stat_sms = true
+						end
+					end
+				end
+
 				if movement_penalty < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. (sms < 1 and ";" or ".")  .. "##"
 					else
-						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. (sms < 1 and ";" or ".") .. "##"
+						log(tostring( updated_texts[4].text ))
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				elseif movement_penalty > 1 then
 					local penalty_as_string = string.format("%g%%", (movement_penalty - 1) * 100)
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. "##"
 					else
-						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. "##"
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
 				end
+				
+				if sms < 1 then
+					local penalty_as_string = string.format("%d%%", math.round((1 - sms) * 100))
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						if movement_penalty < 1 then
+							updated_texts[4].text = updated_texts[4].text .. " ##" .. managers.localization:text("bm_menu_sms_info_cont") .. "##"
+						else
+							updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+						end
+					else
+						if movement_penalty < 1 then
+							updated_texts[4].text = updated_texts[4].text .. " ##" .. managers.localization:text("bm_menu_sms_info_cont") .. "##"
+						else
+							updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+						end
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				end
 	
+	
+
 				if slot_data.last_weapon then
 					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_last_weapon_warning") .. "##"
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
@@ -4900,6 +4934,7 @@ function BlackMarketGui:update_info_text()
 		local is_bayonet = part_data and part_data.type == "bayonet" or perks and table.contains(perks, "bayonet")
 		local is_bipod = part_data and part_data.type == "bipod" or perks and table.contains(perks, "bipod")
 		local has_desc = part_data and part_data.has_description == true
+		local has_sms = part_data and part_data.custom_stats and part_data.custom_stats.sms
 		local desc_color_info = part_data and part_data.desc_color_info
 		updated_texts[4].resource_color = {}
 
@@ -4917,8 +4952,8 @@ function BlackMarketGui:update_info_text()
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
 		end
 
+		local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
-			local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 			local description = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
@@ -4930,7 +4965,16 @@ function BlackMarketGui:update_info_text()
 			else
 				updated_texts[4].text = updated_texts[4].text .. description
 			end
+		end
 
+		if has_sms then
+			local penalty_as_string = string.format("%d%%", math.round((1 - has_sms) * 100))
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc or (perks and table.contains(perks, "bonus")) then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+			else
+				updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+			end
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 		end
 
 

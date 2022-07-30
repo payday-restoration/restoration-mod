@@ -187,7 +187,7 @@
 	--Slugs
 	local a_slug_auto_override = {
 		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
+		desc_id = "bm_wp_upg_a_slug_spam_desc",
 		supported = true,
 		stats = {
 			value = 10,
@@ -207,7 +207,6 @@
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
 			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
@@ -217,7 +216,7 @@
 
 	local a_slug_semi_override = {
 		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
+		desc_id = "bm_wp_upg_a_slug_spam_desc",
 		supported = true,
 		stats = {
 			value = 10,
@@ -236,7 +235,6 @@
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
 			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
@@ -292,7 +290,8 @@
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
+			bullet_class = "InstantExplosiveBulletBase",
+			sms = 0.85
 		}
 	}
 
@@ -313,7 +312,8 @@
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
+			bullet_class = "InstantExplosiveBulletBase",
+			sms = 0.85
 		}
 	}
 
@@ -335,7 +335,8 @@
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
+			bullet_class = "InstantExplosiveBulletBase",
+			sms = 0.85
 		}
 	}
 
@@ -2073,7 +2074,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_m4_m_quad.pcs = {}
 	self.parts.wpn_fps_upg_m4_m_quad.supported = true
 	self.parts.wpn_fps_upg_m4_m_quad.custom_stats = {
-		ads_speed_mult = 1.1
+		ads_speed_mult = 1.1,
+		sms = 0.9
 	}
 	self.parts.wpn_fps_upg_m4_m_quad.stats = {
 		value = 3,
@@ -2124,7 +2126,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		reload = -3
 	}
 	self.parts.wpn_fps_upg_ak_m_quad.custom_stats = {
-		ads_speed_mult = 1.1
+		ads_speed_mult = 1.1,
+		sms = 0.9
 	}
 	
 	--AK Rubber Grip
@@ -2480,7 +2483,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.7
+			sms = 0.8
 		}
 	}
 	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
@@ -3311,7 +3314,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.7
+			sms = 0.8
 		}
 	}
 	self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
@@ -3676,12 +3679,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		stats = {
 			value = 1, 
 			extra_ammo = 15,
-			reload = -7, 
-			concealment = -5
+			reload = -5, 
+			concealment = -4
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.7
+			sms = 0.9
 		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -4343,13 +4346,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		supported = true,
 		stats = {
 			value = 9,
-			extra_ammo = 20,
-			concealment = -4,
-			reload = -3
+			extra_ammo = 40,
+			concealment = -5,
+			reload = -6
 		},
 		custom_stats = {
-			ads_speed_mult = 1.1,
-			sms = 0.7
+			ads_speed_mult = 1.125
 		}
 	}
 	self.parts.wpn_fps_smg_mp5_m_drum.third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_m_drum"
@@ -4996,7 +4998,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
 			}
 		}
 	}
@@ -5225,7 +5228,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
+			bullet_class = "InstantExplosiveBulletBase",
+			sms = 0.85
 		}
 	}
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = {
@@ -7399,13 +7403,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	self.parts.wpn_fps_smg_tec9_m_extended.pcs = {}
 	self.parts.wpn_fps_smg_tec9_m_extended.supported = true
 	self.parts.wpn_fps_smg_tec9_m_extended.custom_stats = {
-		ads_speed_mult = 1.1
+		ads_speed_mult = 1.075
 	}
 	self.parts.wpn_fps_smg_tec9_m_extended.stats = {
 		value = 4,
 		extra_ammo = 18,
-		reload = -3,
-		concealment = -4
+		reload = -4,
+		concealment = -3
 	}
 	
 	--Just Bend It
@@ -7986,7 +7990,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		ignore_statistic = true,
 		rays = 1,
 		block_b_storm = true,	
-		bullet_class = "InstantExplosiveBulletBase"
+		bullet_class = "InstantExplosiveBulletBase",
+		sms = 0.85
 	}
 	
 	--Flechettes
@@ -8628,17 +8633,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.desc_id = "bm_wp_mg42_b_vg38_desc_sc"
 	self.parts.wpn_fps_lmg_mg42_b_vg38.stats = {
 		value = 10,
-		recoil = 8,
+		recoil = 4,
 		extra_ammo = -10
 	}		
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		regen_ammo_time = 2.5, 
-		regen_rate = 7, 
-		overheat_pen = 5, 
-		regen_rate_overheat = 3.5, 
-		rof_mult = 0.5,
+		regen_ammo_time = 2, 
+		regen_rate = 9, 
+		overheat_pen = 4, 
+		regen_rate_overheat = 4.5, 
+		rof_mult = 0.52083,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25
 	}
@@ -8815,11 +8820,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	self.parts.wpn_fps_pis_c96_nozzle.custom_stats = { 
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		regen_ammo_time = 1.5, 
-		regen_rate = 3,
-		overheat_pen = 3, 
-		regen_rate_overheat = 1.5,
-		rof_mult = 0.4,
+		regen_ammo_time = 1.25, 
+		regen_rate = 4,
+		overheat_pen = 2, 
+		regen_rate_overheat = 2,
+		rof_mult = 0.5,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25
 
@@ -8903,19 +8908,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_b_e11.desc_id = "bm_wp_sterling_b_e11_desc_sc"
 	self.parts.wpn_fps_smg_sterling_b_e11.stats = {
 		value = 2,
-		recoil = 6,
+		recoil = 4,
 		extra_ammo = 5
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
 		regen_ammo_time = 1, 
-		regen_rate = 5, 
+		regen_rate = 6, 
 		overheat_pen = 2,
-		regen_rate_overheat = 2.5,
-		rof_mult = 0.77272727,
+		regen_rate_overheat = 3,
+		rof_mult = 0.8181818,
 		falloff_start_mult = 1.25,
-		falloff_end_mult = 1.25
+		falloff_end_mult = 1.25,
+		armor_piercing_add = 0.5
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.sub_type = nil
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = nil --{"silencer"}
@@ -9821,7 +9827,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
 			}
 		}
 	}	
@@ -10241,7 +10248,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
 	self.parts.wpn_fps_sho_aa12_mag_drum.custom_stats = {
 		ads_speed_mult = 1.1,
-		sms = 0.7
+		sms = 0.9
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
@@ -11758,9 +11765,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_mp5", "resmod_x_mp5", function(s
 		supported = true,
 		stats = {
 			value = 9,
-			extra_ammo = 40,
-			reload = -4,
-			concealment = -3
+			extra_ammo = 80,
+			reload = -6,
+			concealment = -5
 		},
 	}
 	self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_straight = {
@@ -12061,7 +12068,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
 			}
 		}
 	}	
@@ -13842,7 +13850,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase"
+			bullet_class = "InstantExplosiveBulletBase",
+			sms = 0.85
 		}
 	}
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = {
@@ -14340,7 +14349,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase"
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
 			}
 		},
 		wpn_fps_upg_a_slug = {
@@ -20735,7 +20745,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase"
+					bullet_class = "InstantExplosiveBulletBase",
+					sms = 0.85
 				}
 			}
 		}		
@@ -20883,6 +20894,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_snp_mosin_body_bubba.stats.concealment = 2
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats = deep_clone(stocks.remove_fixed_stats)
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.ads_speed_mult = 0.95
+		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.sms = 0.8
 
 		self.parts.wpn_fps_snp_mosin_barrel_bubba.supported = true
 		self.parts.wpn_fps_snp_mosin_barrel_bubba.stats = deep_clone(barrels.short_b3_stats)
@@ -21390,7 +21402,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase"
+					bullet_class = "InstantExplosiveBulletBase",
+					sms = 0.85
 				}
 			},
 			wpn_fps_upg_a_piercing = a_piercing_semi_override,
@@ -21579,7 +21592,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.custom_stats = {
 			ads_speed_mult = 1.1,
-			sms = 0.7
+			sms = 0.9
 		}
 	end
 

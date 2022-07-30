@@ -310,8 +310,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Weapon Based Movement Modifiers--
 	--This is overridden/ignored if a weapon in any of these categories is given its own movement penalty
-	self.weapon_movement_penalty.minigun = 0.55
-	self.weapon_movement_penalty.lmg = 0.75
+	self.weapon_movement_penalty.minigun = 0.6
+	self.weapon_movement_penalty.lmg = 0.8
 	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.

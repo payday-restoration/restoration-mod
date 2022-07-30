@@ -452,7 +452,7 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
 
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_rifle_df" force="false"/>
+	
 
     <!--Titan Sniper-->	
 	<unit				path="units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>

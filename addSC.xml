@@ -1381,7 +1381,8 @@
 	
 	<!--vanilla unit texture overrides and other new stuff-->
 	<texture			path="units/payday2/characters/shared_textures/helmets_atlas_df" force="true"/>
-			
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_acc_phalanx_helmet_df" force="true"/>	
+	
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"  load="true"/>
 	<!-- bravos m4 -->
 	<object				path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>

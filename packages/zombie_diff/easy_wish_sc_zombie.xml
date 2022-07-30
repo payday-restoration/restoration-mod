@@ -185,17 +185,11 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
 	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" force="false"/>	
+		
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_snp_df" force="false"/>			
 
-	<!--gnarly ass titan sniper hat-->
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>	
 	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" force="false"/>	
+		
 	
 	<!--skeleton SWAT m4-->
     <object				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>

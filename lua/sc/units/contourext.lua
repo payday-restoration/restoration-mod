@@ -256,7 +256,7 @@ function ContourExt:update(unit, t, dt)
 
 				local target_opacity = turn_on and 1 or 0
 				if self._last_opacity ~= target_opacity then
-					local opacity = math.step(self._last_opacity, target_opacity, dt / data.persistence)
+					local opacity = math.step(self._last_opacity or 0, target_opacity, dt / data.persistence)
 
 					self:_upd_opacity(opacity)
 				end

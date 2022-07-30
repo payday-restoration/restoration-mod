@@ -4023,7 +4023,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Model 54 Underbarrel
 				self.x_type54_underbarrel.rays = 8
 				self.x_type54_underbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.x_type54_underbarrel.AMMO_MAX = 40
+				self.x_type54_underbarrel.AMMO_MAX = 30
 				self.x_type54_underbarrel.BURST_FIRE = 2
 				self.x_type54_underbarrel.tactical_reload = nil
 				self.x_type54_underbarrel.CLIP_AMMO_MAX = 2
@@ -4642,7 +4642,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.g22c.fire_mode_data.fire_rate = 0.08571428571
 				self.g22c.single.fire_rate = 0.08571428571
-				self.g22c.AMMO_MAX = 75
+				self.g22c.AMMO_MAX = 60
 				self.g22c.kick = self.stat_info.kick_tables.left_recoil
 				self.g22c.CLIP_AMMO_MAX = 15
 				self.g22c.supported = true
@@ -4673,7 +4673,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Baby Deagle
 				self.sparrow.CLIP_AMMO_MAX = 12
-				self.sparrow.AMMO_MAX = 75
+				self.sparrow.AMMO_MAX = 60
 				self.sparrow.kick = {}
 				self.sparrow.kick = self.stat_info.kick_tables.even_recoil
 				self.sparrow.fire_mode_data.fire_rate = 0.08571428571
@@ -4743,7 +4743,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Model 54 Underbarrel
 				self.type54_underbarrel.rays = 8
 				self.type54_underbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.type54_underbarrel.AMMO_MAX = 20
+				self.type54_underbarrel.AMMO_MAX = 15
 				self.type54_underbarrel.CLIP_AMMO_MAX = 1
 				self.type54_underbarrel.fire_mode_data = {}
 				self.type54_underbarrel.fire_mode_data.fire_rate = 0.06
@@ -4780,7 +4780,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54_underbarrel.timers.reload_exit_not_empty = 0.35
 
 			--Signature .40 (P226)
-				self.p226.AMMO_MAX = 75
+				self.p226.AMMO_MAX = 60
 				self.p226.CLIP_AMMO_MAX = 15
 				self.p226.fire_mode_data.fire_rate = 0.08571428571
 				self.p226.single.fire_rate = 0.08571428571

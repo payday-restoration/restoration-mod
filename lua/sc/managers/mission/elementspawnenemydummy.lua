@@ -199,7 +199,8 @@ local america_deathwish = {
 	}		
 local america_zeal = {
 	   --scripted spawns for death sentence
-		
+		--fbi
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1",
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
@@ -482,7 +483,8 @@ local fbi_deathwish = {
 	}		
 local fbi_zeal = {
 	   --scripted spawns for death sentence
-		
+		--fbi
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1",
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
@@ -871,6 +873,7 @@ local nypd_deathwish = {
 local nypd_zeal = {
 	   --scripted spawns for death sentence
 		-- fbi
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 	   
@@ -1006,11 +1009,6 @@ local nypd_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1", 
 		
-		
-		--Murky bois
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
-		
 		--Panic Room Gangsters
 		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
 		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
@@ -1076,11 +1074,7 @@ local nypd_pr_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1", 
-
-		--Murky bois
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 	
 		--Panic Room Gangsters
 		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
@@ -1153,10 +1147,6 @@ local nypd_pr_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-		
-		--Murky bois
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Panic Room Gangsters
 		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
@@ -1238,10 +1228,6 @@ local nypd_pr_deathwish = {
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3",
 
-		--Murky bois
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
-
 		--Panic Room Gangsters
 		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
 		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
@@ -1259,6 +1245,7 @@ local nypd_pr_deathwish = {
 local nypd_pr_zeal = {
 	   --scripted spawns for death sentence
 		-- fbi
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 	   
@@ -1312,10 +1299,6 @@ local nypd_pr_zeal = {
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",
 
-		--Murky bois
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
-
 		--Panic Room Gangsters
 		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
 		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
@@ -1348,8 +1331,8 @@ local lapd_very_hard = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
-		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",  --get the fuck out or i'm gonna shoot SFPD vanilla fucker in his fucking face. I do it you BITCH! GET OUT!!!!!
-		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",  --you too
+		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -1594,6 +1577,7 @@ local lapd_deathwish = {
 local lapd_zeal = {
 	   --scripted spawns for death sentence
 		-- hrt
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -2061,7 +2045,7 @@ local federales_zeal = {
 		
 		--America Faction (just in case if we replace the America faction with Federales)
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -2445,7 +2429,7 @@ local murkywater_omnia = {
 		--elites introduced
 		
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -3056,7 +3040,7 @@ local russia_zeal = {
 		--["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4",
 		
 		--hrt  
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3",
 	
@@ -3395,7 +3379,7 @@ local zombie_deathwish = {
 local zombie_zeal = {
 	   --scripted spawns for death sentence
 		-- fbi/cops
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3",					
 		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",
@@ -3715,7 +3699,7 @@ local zombie_nail_deathwish = {
 local zombie_nail_zeal = {
 	   --scripted spawns for death sentence
 		-- fbi/cops
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3",					
 		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",

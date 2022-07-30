@@ -1036,11 +1036,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to #{risk}#spread horizontally## instead of clustering.",
 		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
-		--["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
-		--["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fire a #{important_1}#single## lead slug that #{skill_color}#penetrates body armor, enemies, shields, titan shields, and walls.##", --For shotguns that can hit Heavy Sniper damage tier--
 		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies, shields and thin walls.##",
-		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#2.5## meters. #{important_1}#Cannot headshot.##",
-		["bm_wp_upg_a_custom_desc"] = "Fire bigger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, range, pickup and total ammo.##",
+		["bm_wp_upg_a_slug_spam_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies and thin walls.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#2.5## meters.\nRounds #{important_1}#cannot headshot.##",
+		["bm_wp_upg_a_custom_desc"] = "Fire larger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, range, pickup and total ammo.##",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#96## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#120## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#180## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
@@ -1104,7 +1103,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the laser sight.", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
-
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#120## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",
@@ -1188,7 +1186,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
-		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.5s##\nRecharge Rate: #{skill_color}#3/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#3s##",
+		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.25s##\nRecharge rate: #{skill_color}#4/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan penetrate body armor, shields and thin walls.##",
 		--CUSTOM HANDGUNS
@@ -1207,21 +1205,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 Submachine Gun",
-		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
+		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 11% more damage.##",
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7 Submachine Gun",
-		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
+		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 11% more damage.##",
 		--Cobra/Skorpion
 		["bm_wp_scorpion_m_extended"] = "Dual Magazines",
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 Submachine Gun",	
 		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 		--Pachett/Sterling
-		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Suppressed Barrel",
-		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1s##\nRecharge Rate: #{skill_color}#5/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
+		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1s##\nRecharge rate: #{skill_color}#6/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 		--Uzi
 		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",	
 		--Chicago Typewriter
@@ -1241,7 +1239,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897 Shotgun",
-		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nAlt-fire allows for #{skill_color}#slam-firing for an increase in fire rate## at the cost of #{important_1}#more recoil and spread as well as the inabilty to aim down your sights.##",
+		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nAlt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
 		--R870
@@ -1340,16 +1338,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg Light Machine Gun",
-		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.\n\n#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 Light Machine Gun",
-		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.\n\n#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
 		--RPK
-		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.\n\n#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
 					
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
-		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.\n\n#{important_1}#Wildly inaccurate when hipfired.##",	
+		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",	
 		--M60
 		["bm_w_m60"] = "M60 Heavy Machine Gun",
 		--Ksp 58
@@ -1358,16 +1356,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
 		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
-		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2.5s##\nRecharge Rate: #{skill_color}#7/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#5s##",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes.\n\n#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes.",
 
 		--M134
-		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##\n#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
 		--Microgun
-		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##\n#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
 
 		
 		--Galant--
@@ -1436,9 +1434,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_menu_weapon_movement_penalty_info"] = "MOVE SPEED IS REDUCED BY ",
-		["bm_menu_weapon_movement_bonus_info"] = "MOVE SPEED IS INCREASED BY ",
-		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
+		["bm_menu_weapon_movement_penalty_info"] = "Slows movement speed by ",
+		["bm_menu_weapon_movement_bonus_info"] = "Raises movement speed by ",
+		["bm_menu_weapon_movement_penalty_info_2"] = " while drawn",
+		["bm_menu_sms_info_cont"] = "penalty is doubled while shooting.",
+		["bm_menu_sms_info_2"] = " while shooting.",
+		["bm_menu_stat_sms_info_2"] = " while shooting due to current attachments.",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               DO  NOT  USE               //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               DO  NOT  USE               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
@@ -1447,11 +1448,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points## is #{important_1}#not installed.##\n\nAttachment will take on the slot's default appearance.",
-		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing for an increase in fire rate## at the cost of #{important_1}#more recoil and spread as well as the inabilty to aim down your sights.##",
-		["bm_lmg_generic_desc"] = "#{important_1}#Wildly inaccurate when hipfired.##",
+		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor, shields and thin walls.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor.##",
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor.##",
+		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 11% more damage.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
 		["bm_ap_2_weapon_sc_desc"] = "Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.\n\n#{skill_color}#Can penetrate body armor.##",
 		["bm_ap_3_weapon_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can penetrate body armor.##",

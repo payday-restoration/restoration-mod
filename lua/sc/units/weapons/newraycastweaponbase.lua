@@ -679,7 +679,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					if not self._sms then
 						self._sms = stats.sms
 					else
-						self._sms = self._sms * stats.sms
+						self._sms = self._sms + (1 * (stats.sms - 1))
 					end
 					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
 				end

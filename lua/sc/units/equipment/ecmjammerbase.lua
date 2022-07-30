@@ -1,4 +1,4 @@
-function ECMJammerBase._detect_and_give_dmg(hit_pos, device_unit, user_unit, range)
+function ECMJammerBase._detect_and_give_dmg(hit_pos, device_unit, user_unit, range, activation)
 	--[[local enemies_in_range = nil
 
 	if device_unit then
@@ -25,7 +25,7 @@ function ECMJammerBase._detect_and_give_dmg(hit_pos, device_unit, user_unit, ran
 					if stun then
 						if enemy:anim_data() and enemy:anim_data().act then
 							stun = false
-						elseif enemy:base():char_tweak().ecm_vulnerability <= math.random() then
+						elseif enemy:base():char_tweak().ecm_vulnerability <= math.random() and not activation then
 							stun = false
 						end
 					end
@@ -57,5 +57,44 @@ function ECMJammerBase._detect_and_give_dmg(hit_pos, device_unit, user_unit, ran
 		}
 
 		enemy:character_damage():damage_explosion(attack_data)
+	end
+end
+
+function ECMJammerBase:clbk_feedback(activation)
+	local t = TimerManager:game():time()
+	self._feedback_clbk_id = "ecm_feedback" .. tostring(self._unit:key())
+
+	if not managers.groupai:state():enemy_weapons_hot() then
+		managers.groupai:state():propagate_alert({
+			"vo_cbt",
+			self._position,
+			10000,
+			self._alert_filter,
+			self._unit
+		})
+	end
+
+	print("PUKING!!!!!")
+	self._detect_and_give_dmg(self._position + self._unit:rotation():y() * 15, self._unit, self:owner(), self._feedback_range, activation)
+
+	if self._feedback_expire_t < t then
+		self._feedback_clbk_id = nil
+
+		self:_set_feedback_active(false)
+	else
+		if self._feedback_expire_t - t < self._feedback_duration * 0.1 then
+			self._g_glow_feedback_red:set_visibility(true)
+			self._g_glow_feedback_green:set_visibility(false)
+
+			if not self._unit:contour():is_flashing() then
+				self._unit:contour():flash("deployable_active", 0.15)
+
+				if Network:is_server() then
+					self:_send_net_event(self._NET_EVENTS.feedback_flash)
+				end
+			end
+		end
+
+		managers.enemy:add_delayed_clbk(self._feedback_clbk_id, callback(self, self, "clbk_feedback"), t + self._feedback_interval)
 	end
 end

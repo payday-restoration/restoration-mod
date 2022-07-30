@@ -91,8 +91,8 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1.5,
-		hipfire_moving_spread_mult = 1.5
+		hipfire_spread_mult = 1,
+		hipfire_moving_spread_mult = 1.2
 	}
 
 tweak_data.assault_rifle = {
@@ -786,9 +786,9 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		primaries = {
 			{ "pistol" },
 
-			{ "shotgun" },
-
 			{ "smg" },
+
+			{ "shotgun" },
 
 			{ "assault_rifle" },
 
@@ -801,13 +801,11 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		secondaries = {
 			{ "pistol" },
 
-			{ "shotgun" },
-
 			{ "smg" },
 
-			{ "assault_rifle" },
+			{ "shotgun" },
 
-			{ "lmg" },
+			{ "assault_rifle" },
 
 			{ "snp" },
 
@@ -819,24 +817,24 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 			{ "light_pis" },
 			{ "heavy_pis" },
 			
+			{ "light_smg" },
+			{ "heavy_smg" },
+
 			{ "light_shot" },
 			{ "heavy_shot" },
 			{ "break_shot" },
 			
-			{ "light_smg" },
-			{ "heavy_smg" },
-			
 			{ "light_ar" },
 			{ "heavy_ar" },
 			{ "dmr_ar" },
+
+			{ "light_snp" },
+			{ "heavy_snp" },
+			{ "antim_snp" },
 			
 			{ "light_mg" },
 			{ "heavy_mg" },
 			{ "miniguns" },
-			
-			{ "light_snp" },
-			{ "heavy_snp" },
-			{ "antim_snp" },
 		
 			{ "wpn_special" }
 		},
@@ -844,17 +842,15 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 			{ "light_pis" },
 			{ "heavy_pis" },
 			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
 			{ "light_shot" },
 			{ "heavy_shot" },
 			{ "break_shot" },
 			
-			{ "light_smg" },
-			{ "heavy_smg" },
-			
 			{ "light_ar" },
 			{ "heavy_ar" },
-
-			{ "heavy_mg" },
 
 			{ "light_snp" },
 			

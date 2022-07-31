@@ -13,7 +13,7 @@ function ECMJammerBase._detect_and_give_dmg(hit_pos, device_unit, user_unit, ran
 	if #enemies_in_range > 0 then
 		for _, enemy in ipairs(enemies_in_range) do
 			if not table.contains(enemies_to_stun, enemy) and enemy:character_damage() and enemy:character_damage().damage_explosion and not enemy:character_damage():dead() then
-				if enemy:base():char_tweak().ecm_vulnerability then
+				if enemy:base():char_tweak().ecm_vulnerability and enemy:base():char_tweak().ecm_vulnerability > 0 then
 					local stun = true
 
 					if enemy:brain() then

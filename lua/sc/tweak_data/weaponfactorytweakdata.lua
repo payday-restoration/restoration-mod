@@ -5227,87 +5227,14 @@ end)
 --The Judge
 Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(self)
 	--Judge Override Table
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = {
-		supported = true,
-		stats = {
-			value = 10,
-			recoil = -25,
-			spread = 5,
-			spread_multi = {1, 1},	
-			concealment = -5,
-			total_ammo_mod = -60,
-			damage = 90
-		},
-		custom_stats = {
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase",
-			sms = 0.85
-		}
+	self.wpn_fps_pis_judge.override = {
+		wpn_fps_upg_a_slug = a_slug_pump_override,
+		wpn_fps_upg_a_custom = a_custom_pump_override,	
+		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
+		wpn_fps_upg_a_explosive = a_explosive_pump_override,
+		wpn_fps_upg_a_piercing = a_piercing_pump_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 	}
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = {
-		supported = true,
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
-		stats = {
-			value = 10,
-			concealment = -3,
-			total_ammo_mod = -33,
-			damage = 30,	
-			recoil = -20,
-			spread = 20,
-			spread_multi = {1, 1},	
-			suppression = -1
-		},
-		custom_stats = {
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
-			rays = 1,
-			armor_piercing_add = 1,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 1.25,
-			falloff_end_mult = 2.0,
-			ads_speed_mult = 1.10
-		},
-	}
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -25,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -25,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}			
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	
 end)	
 
@@ -13861,87 +13788,6 @@ end)
 --Akimbo Judge
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", function(self)
 
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = {
-		supported = true,
-		stats = {
-			value = 10,
-			recoil = -25,
-			spread = 5,
-			concealment = -5,
-			spread_multi = {1, 1},	
-			total_ammo_mod = -62,
-			damage = 90
-		},
-		custom_stats = {
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase",
-			sms = 0.85
-		}
-	}
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = {
-		supported = true,
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
-		stats = {
-			value = 10,
-			concealment = -3,
-			total_ammo_mod = -25,
-			damage = 30,	
-			recoil = -20,
-			spread = 20,
-			spread_multi = {1, 1},	
-			suppression = -1,
-			moving_spread = 0
-		},
-		custom_stats = {
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-			rays = 1,
-			armor_piercing_add = 1,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 1.25,
-			falloff_end_mult = 2.0,
-			ads_speed_mult = 1.10
-		}
-	}
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -25,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -25,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-
 	self.wpn_fps_pis_x_judge.animations = {
 		reload_left = "reload",
 		fire = "recoil",
@@ -13950,7 +13796,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		reload = "reload",
 		reload_not_empty = "reload"
 	}
-	
+
+	self.wpn_fps_pis_x_judge.override = {
+		wpn_fps_upg_a_slug = a_slug_pump_override,
+		wpn_fps_upg_a_custom = a_custom_pump_override,	
+		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
+		wpn_fps_upg_a_explosive = a_explosive_pump_override,
+		wpn_fps_upg_a_piercing = a_piercing_pump_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
+	}
+
 	self.wpn_fps_pis_x_judge.override.wpn_fps_pis_judge_body_standard = {
 		animations = {		
 			reload_left = "reload",
@@ -13972,8 +13827,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		}
 	}
 	
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 
 end)
 
@@ -15465,6 +15318,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	
 	--Override Table
 	self.wpn_fps_snp_r700.override = {}
+	self.wpn_fps_snp_r700.override.wpn_fps_upg_o_acog = {
+		desc_id = "bm_wp_upg_o_4_cod",
+		stats = {
+			value = 8,
+			zoom = 30,
+			damage = 30,
+			recoil = -6,
+			concealment = -3,
+			total_ammo_mod = -25,
+			suppression = -1
+		},
+		custom_stats = {
+			rof_mult = 0.7647058,
+			alt_ammo_pickup_max_mul = 0.675,
+			alt_ammo_pickup_min_mul = 0.675
+		}
+	}
+
 	self.wpn_fps_snp_r700.adds.wpn_fps_snp_model70_iron_sight = {
 		"wpn_fps_snp_r700_o_rail"
 	}
@@ -17134,7 +17005,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 				stance_mod = {
 				wpn_fps_ass_m4 = {
-						translation = Vector3(0, -4, -0.45)
+						translation = Vector3(0, -3, -0.45)
 					}
 				}
 			}

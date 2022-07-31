@@ -1056,6 +1056,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	local speed_tweak = self._tweak_data.movement.speed
 	local movement_speed = speed_tweak.STANDARD_MAX
 	local speed_state = "walk"
+	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
 
 	if self._is_sliding then -- should be fine without having AdvMov installed since it'll return nil in you don't have it
 		movement_speed = self._slide_speed
@@ -1091,7 +1092,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	elseif self:on_ladder() then
 		movement_speed = speed_tweak.CLIMBING_MAX
 		speed_state = "climb"
-	elseif self._state_data.ducking then
+	elseif self._state_data.ducking or is_leaning then
 		movement_speed = speed_tweak.CROUCHING_MAX
 		speed_state = "crouch"
 	elseif self._state_data.in_air then

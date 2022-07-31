@@ -578,10 +578,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end	
 	
 			if stats.m16_burst then
+				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.066666) or 1
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
 				self:weapon_tweak_data().FIRE_MODE = "single"	
 				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.3571428
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = burst_mult
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:_set_burst_mode(true, true)

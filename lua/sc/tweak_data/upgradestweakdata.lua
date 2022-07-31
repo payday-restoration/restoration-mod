@@ -1338,10 +1338,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
-		0.8,
-		0.7,
-		0.65,
-		0.6
+		0.85, --Armorer Exclusive
+		0.8, --Unused
+		0.75, --Unused
+		0.7 --Unused
 	}
 
 	--Hitman

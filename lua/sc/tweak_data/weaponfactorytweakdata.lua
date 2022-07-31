@@ -2326,6 +2326,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_upper_reciever_edge.supported = true
+	self.parts.wpn_fps_m4_upper_reciever_edge.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_m4_upper_reciever_edge.override.wpn_fps_amcar_uupg_body_upperreciever = {
+		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
+		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
+		a_obj = "a_o"
+	}
 	self.parts.wpn_fps_m4_upper_reciever_edge.stats = {
 		value = 3,
 		recoil = -2,
@@ -2935,6 +2941,10 @@ end)
 --AMCAR
 Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(self)
 
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever.stance_mod = {
+		wpn_fps_ass_amcar = { translation = Vector3(0, -7, 0) }
+	}
+
 	--AMCAR Override Tables
 	--[[
 	self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_s_standard_vanilla = {
@@ -2946,10 +2956,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 
 	--AMCAR Add Tables
 	self.wpn_fps_ass_amcar.adds.wpn_fps_m4_upper_reciever_edge = {
-		"wpn_fps_m4_uupg_o_flipup",
+		"wpn_fps_m4_uupg_draghandle",
 		"wpn_fps_m4_uupg_fg_rail_ext"
 	}
-				
+	self.wpn_fps_ass_amcar.adds.wpn_fps_upg_ass_m4_upper_reciever_ballos = {
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_m4_uupg_fg_rail_ext"
+	}
+	self.wpn_fps_ass_amcar.adds.wpn_fps_upg_ass_m4_upper_reciever_core = {
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_m4_uupg_fg_rail_ext"
+	}
+
 	--AMCAR Default Blueprint, making it use the 30 rounder by default
 	self.wpn_fps_ass_amcar.default_blueprint[5] = "wpn_fps_m4_uupg_m_std_vanilla"	
 	
@@ -2958,22 +2976,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	self.wpn_fps_ass_amcar.uses_parts[50] = "wpn_fps_upg_m4_m_straight"
 	
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_m4_uupg_s_fold")
-	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
-	
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_ass_m16_s_fixed")
-	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_ass_m16_s_fixed")	
-
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_m4_s_pts")
-	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_m4_s_pts")	
-
-	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_smg_olympic_s_short")
-	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_smg_olympic_s_short")			
-	
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_smg_olympic_s_short")	
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_lower_reciever_core")
-	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_ass_m4_lower_reciever_core")	
-	
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_m4_m_drum")
-	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_m4_m_drum")	
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_m4_upper_reciever_edge")
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_ballos")
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_core")
 	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
 
@@ -3043,6 +3053,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		value = 3,
 		recoil = -4,
 		concealment = 2
+	}
+
+	self.parts.wpn_fps_ass_m16_o_handle_sight.stance_mod = {
+		wpn_fps_ass_m16 = { translation = Vector3(0, -7, 0) },
+		wpn_fps_ass_amcar = { translation = Vector3(0, -7, 0) },
+		wpn_fps_smg_olympic = { translation = Vector3(0, -7, 0) }
 	}
 
 	--Overriding these
@@ -9561,6 +9577,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--LW Upper Receiver
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.supported = true
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.override.wpn_fps_amcar_uupg_body_upperreciever = {
+		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
+		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
+		a_obj = "a_o"
+	}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.stats = {
 		value = 5,
 		recoil = -2,
@@ -9570,6 +9592,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--THRUST Upper Receiver
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.supported = true
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.override.wpn_fps_amcar_uupg_body_upperreciever = {
+		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
+		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
+		a_obj = "a_o"
+	}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.stats = {
 		value = 1,
 		recoil = 2,
@@ -17106,7 +17134,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 				stance_mod = {
 				wpn_fps_ass_m4 = {
-						translation = Vector3(0, 0, -0.45)
+						translation = Vector3(0, -4, -0.45)
 					}
 				}
 			}

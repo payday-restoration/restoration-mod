@@ -2929,13 +2929,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNOTE: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
-		["menu_st_spec_3_desc_sc"] = "The Armorer was formerly a profession within the military. The armorer's job is to maintain, repair and improve armors and equipment.\n\nAny self-respecting crime syndicate needs someone who can make sure the soldiers have the necessary protection and tools to do their jobs.\n\nBenefits from a full perk deck:\n##-##You gain ##25%## more armor.\n##-##You gain the ability to place ##2## body bag cases.\n##-##Your armor recovery rate is increased by ##20%.##",
+		["menu_st_spec_3_desc_sc"] = "The Armorer was formerly a profession within the military. The armorer's job is to maintain, repair and improve armors and equipment.\n\nAny self-respecting crime syndicate needs someone who can make sure the soldiers have the necessary protection and tools to do their jobs.\n\nBenefits from a full perk deck:\n##-##You gain ##25%## more armor.\n##-##You gain the ability to place ##2## body bag cases.\n##-##Your armor recovery rate is increased by ##15%.##",
 		["menu_st_spec_3_desc_sc_short"] = "The Armorer was formerly a profession within the military. The armorer's job is to maintain, repair and improve armors and equipment.\n\nAny self-respecting crime syndicate needs someone who can make sure the soldiers have the necessary protection and tools to do their jobs.",
 		["menu_deck3_1_desc_sc"] = "You gain ##10%## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.\n\nYou gain the ability to place ##2## body bag cases.",
 		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##",
-		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Burglar--
 		["menu_st_spec_7_desc_sc"] = "The natural dexterity of the Burglar has benefits beyond merely breaking and entering. Being nimble allows the Burglar to move faster while staying low.\n\nThey are also harder to hit in combat. They stay alive by staying out of the way.\n\nBenefits from a full perk deck:\n##-##Your dodge is increased by ##15## points.\n##-##Your dodge meter fills up by ##10%## of your dodge every second while crouching.\n##-##You gain a ##20%## boost in your movement speed when crouching.\n##-##Your armor recovery rate is increased by ##10%.##",		

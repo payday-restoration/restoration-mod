@@ -103,6 +103,7 @@ function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
 		ref_c = 1,
 		type = type,
 		fadeout_t = fadeout and TimerManager:game():time() + fadeout or nil,
+		fadeout_start_t = fadeout and TimerManager:game():time() + fadeout * 0.8 or nil,
 		sync = sync,
 		color = override_color
 	}
@@ -238,6 +239,8 @@ function ContourExt:_remove(index, sync)
 end
 
 function ContourExt:update(unit, t, dt)
+	self._materials = nil -- lod changes seem to break the material cache, so i'm just refreshing it every frame
+
 	local index = 1
 	while self._contour_list and index <= #self._contour_list do
 		local setup = self._contour_list[index]
@@ -274,6 +277,10 @@ function ContourExt:update(unit, t, dt)
 
 					self:_upd_opacity(opacity)
 				end
+			elseif setup.fadeout_start_t and setup.fadeout_start_t < t then
+				local opacity = (t - setup.fadeout_start_t) / (setup.fadeout_t - setup.fadeout_start_t)
+
+				self:_upd_opacity(1 - opacity)
 			end
 
 			index = index + 1

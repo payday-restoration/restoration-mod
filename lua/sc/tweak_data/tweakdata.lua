@@ -99,6 +99,10 @@ tweak_data.assault_rifle = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45
 }
+	tweak_data.crb = {
+		swap_bonus = 1.1,
+		ads_move_speed_mult = 1.111111
+	}
 
 tweak_data.akimbo = {
 	swap_bonus = 0.8,

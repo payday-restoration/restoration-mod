@@ -3400,13 +3400,26 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "machine_gun"
 	end
 	
-	recat = { "amcar", "new_m4", "ak5", "aug", "s552", "flint", "ak74", "corgi", "vhs", "g36", "famas", "komodo", "hajk", "olympic" }
+	recat = { "amcar", "s552", "g36", "olympic" }
+	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "crb")
+		self[ wep_id ].recategorize = { "light_ar" }
+		self[ wep_id ].damage_type = "assault_rifle"
+	end
+
+	recat = { "new_m4", "ak5", "aug", "flint", "ak74", "corgi", "vhs", "famas", "komodo", "hajk" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 	
-	recat = { "m16", "akm", "akm_gold", "groza", "l85a2", "akmsu", "x_akmsu" }
+	recat = { "akmsu", "x_akmsu" }
+	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "crb")
+		self[ wep_id ].recategorize = { "heavy_ar" }
+		self[ wep_id ].damage_type = "assault_rifle"
+	end
+	recat = { "m16", "akm", "akm_gold", "groza", "l85a2"}
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
@@ -5628,831 +5641,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 
-	--[[     LIGHT SHOTGUNS     ]]
-
-		--PRIMARIES
-
-			--Izhma 12G
-				self.saiga.desc_id = "bm_saiga_sc_desc"
-				self.saiga.has_description = true			
-				self.saiga.rays = 8
-				self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.saiga.CLIP_AMMO_MAX = 5
-				self.saiga.AMMO_MAX = 120
-				self.saiga.fire_mode_data.fire_rate = 0.1
-				self.saiga.auto.fire_rate = 0.1
-				self.saiga.shake.fire_multiplier = 1
-				self.saiga.shake.fire_steelsight_multiplier = -1
-				self.saiga.kick = self.stat_info.kick_tables.right_kick
-				self.saiga.supported = true
-				self.saiga.ads_speed = 0.380
-				self.saiga.damage_falloff = {
-					start_dist = 600,
-					end_dist = 2200,
-					min_mult = 0.5
-				}
-				self.saiga.stats = {
-					damage = 30,
-					spread = 31,
-					recoil = 49,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 25,
-					suppression = 7,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.saiga.stats_modifiers = nil
-				self.saiga.panic_suppression_chance = 0.05
-				self.saiga.reload_speed_multiplier = 1.3
-				self.saiga.timers.reload_exit_empty = 0.75
-				self.saiga.timers.reload_exit_not_empty = 0.875
-
-			--Argos III (Ultima)
-				self.ultima.rays = 8
-				self.ultima.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.ultima.CLIP_AMMO_MAX = 7
-				self.ultima.AMMO_MAX = 80
-				self.ultima.use_data.selection_index = 2
-				self.ultima.fire_mode_data.fire_rate = 0.12
-				self.ultima.kick = self.stat_info.kick_tables.moderate_kick
-				self.ultima.supported = true
-				self.ultima.ads_speed = 0.340
-				self.ultima.damage_falloff = {
-					start_dist = 800,
-					end_dist = 2600,
-					min_mult = 0.5
-				}
-				self.ultima.stats = {
-					damage = 45,
-					spread = 26,
-					recoil = 45,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 24,
-					suppression = 6,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}	
-				self.ultima.stats_modifiers = nil
-				self.ultima.panic_suppression_chance = 0.05	
-				self.ultima.reload_speed_multiplier = 0.75
-				self.ultima.timers.shotgun_reload_exit_not_empty = 0.7
-				self.ultima.timers.shotgun_reload_exit_empty = 0.3
-
-			--Steakout (AA-12)
-				self.aa12.rays = 8
-				self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.aa12.AMMO_MAX = 80
-				self.aa12.desc_id = "bm_aa12_sc_desc"
-				self.aa12.has_description = true
-				self.aa12.CLIP_AMMO_MAX = 8
-				self.aa12.kick = self.stat_info.kick_tables.moderate_kick
-				self.aa12.FIRE_MODE = "auto"				
-				self.aa12.CAN_TOGGLE_FIREMODE = false
-				self.aa12.supported = true
-				self.aa12.ads_speed = 0.440
-				self.aa12.damage_falloff = {
-					start_dist = 900,
-					end_dist = 2900,
-					min_mult = 0.5
-				}
-				self.aa12.stats = {
-					damage = 45,
-					spread = 39,
-					recoil = 66,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 20,
-					suppression = 6,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.aa12.stats_modifiers = nil
-				self.aa12.panic_suppression_chance = 0.05
-				self.aa12.reload_speed_multiplier = 1.2
-				self.aa12.timers.reload_exit_empty = 1.1
-				self.aa12.timers.reload_exit_not_empty = 0.9
-
-			--Predator 12G
-				self.spas12.desc_id = "bm_spas12_sc_desc"
-				self.spas12.has_description = true					
-				self.spas12.rays = 8
-				self.spas12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.spas12.AMMO_MAX = 80
-				self.spas12.CLIP_AMMO_MAX = 6
-				self.spas12.CAN_TOGGLE_FIREMODE = false
-				self.spas12.fire_mode_data.fire_rate = 0.13953488372
-				self.spas12.BURST_FIRE = 2
-				self.spas12.BURST_FIRE_RATE_MULTIPLIER = 5
-				self.spas12.BURST_FIRE_RECOIL_MULTIPLIER = 0.25
-				self.spas12.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.35
-				self.spas12.BURST_FIRE_SPREAD_MULTIPLIER = 3
-				self.spas12.BURST_DELAY = 0.250
-				self.spas12.kick = self.stat_info.kick_tables.left_kick
-				self.spas12.supported = true
-				self.spas12.ads_speed = 0.400
-				self.spas12.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3200,
-					min_mult = 0.5
-				}
-				self.spas12.stats = {
-					damage = 45,
-					spread = 35,
-					recoil = 52,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 24,
-					suppression = 6,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.spas12.stats_modifiers = nil
-				self.spas12.panic_suppression_chance = 0.05
-				self.spas12.reload_fix_offset = 0.25
-				self.spas12.timers.shotgun_reload_enter = 0.3
-				self.spas12.timers.shotgun_reload_first_shell_offset = 0.33
-				self.spas12.timers.shotgun_reload_shell = 0.5666666666666667
-				self.spas12.timers.shotgun_reload_exit_not_empty = 0.2
-				self.spas12.timers.shotgun_reload_exit_empty = 1.5
-
-			--M1014
-				self.benelli.desc_id = "bm_benelli_sc_desc"
-				self.benelli.has_description = true					
-				self.benelli.AMMO_MAX = 80
-				self.benelli.CLIP_AMMO_MAX = 5
-				self.benelli.rays = 8
-				self.benelli.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.benelli.fire_mode_data.fire_rate = 0.13953488372
-				self.benelli.CAN_TOGGLE_FIREMODE = false
-				self.benelli.single = {}
-				self.benelli.single.fire_rate = 0.13953488372
-				self.benelli.kick = self.stat_info.kick_tables.moderate_kick
-				self.benelli.supported = true
-				self.benelli.ads_speed = 0.380
-				self.benelli.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 3400,
-					min_mult = 0.5
-				}
-				self.benelli.stats = {
-					damage = 45,
-					spread = 40,
-					recoil = 46,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 22,
-					suppression = 6,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.benelli.stats_modifiers = nil
-				self.benelli.panic_suppression_chance = 0.05
-				self.benelli.reload_fix_offset = 0.25
-				self.benelli.timers.shotgun_reload_enter = 0.3
-				self.benelli.timers.shotgun_reload_first_shell_offset = 0.33
-				self.benelli.timers.shotgun_reload_shell = 0.5666666666666667
-				self.benelli.timers.shotgun_reload_exit_not_empty = 0.2
-				self.benelli.timers.shotgun_reload_exit_empty = 1.5
-
-
-
-		--SECONDARIES
-
-			--Grimm 12G
-				self.basset.rays = 8
-				self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.basset.CLIP_AMMO_MAX = 5
-				self.basset.AMMO_MAX = 60
-				self.basset.fire_mode_data = {fire_rate = 0.1}
-				self.basset.auto = {fire_rate = 0.1}
-				self.basset.kick = self.stat_info.kick_tables.moderate_left_kick
-				self.basset.panic_suppression_chance = 0.05
-				self.basset.supported = true
-				self.basset.ads_speed = 0.360
-				self.basset.damage_falloff = {
-					start_dist = 800,
-					end_dist = 2500,
-					min_mult = 0.5
-				}
-				self.basset.stats = {
-					zoom = 1,
-					total_ammo_mod = 100,
-					damage = 30,
-					alert_size = 2,
-					spread = 31,
-					spread_moving = 8,
-					recoil = 50,
-					value = 1,
-					extra_ammo = 101,
-					reload = 20,
-					suppression = 6,
-					concealment = 25
-				}		
-				self.basset.stats_modifiers = nil
-				self.basset.reload_speed_multiplier = 0.925
-				self.basset.sounds.fire_single = "basset_x_fire_single"
-				self.basset.timers.reload_exit_empty = 0.55
-				self.basset.timers.reload_exit_not_empty = 0.65
-
-			--Street Sweeper
-				self.striker.rays = 8
-				self.striker.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.striker.AMMO_MAX = 40
-				self.striker.fire_mode_data.fire_rate = 0.13953488372
-				self.striker.CAN_TOGGLE_FIREMODE = false
-				self.striker.single = {}
-				self.striker.single.fire_rate = 0.13953488372
-				self.striker.CLIP_AMMO_MAX = 12
-				self.striker.kick = self.stat_info.kick_tables.right_kick
-				self.striker.supported = true
-				self.striker.ads_speed = 0.420
-				self.striker.damage_falloff = {
-					start_dist = 800,
-					end_dist = 3000,
-					min_mult = 0.5
-				}
-				self.striker.stats = {
-					damage = 45,
-					spread = 31,
-					recoil = 43,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 23,
-					suppression = 6,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.striker.stats_modifiers = nil
-				self.striker.panic_suppression_chance = 0.05
-				self.striker.timers.shotgun_reload_first_shell_offset = 0.03333333
-
-			--Goliath 12G
-				self.rota.upgrade_blocks = nil
-				self.rota.AMMO_MAX = 40
-				self.rota.rays = 8
-				self.rota.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.rota.kick = self.stat_info.kick_tables.vertical_kick
-				self.rota.fire_mode_data.fire_rate = 0.13953488372
-				self.rota.single.fire_rate = 0.13953488372
-				self.rota.panic_suppression_chance = 0.05
-				self.rota.supported = true
-				self.rota.ads_speed = 0.360
-				self.rota.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3500,
-					min_mult = 0.5
-				}
-				self.rota.stats = {
-					damage = 45,
-					spread = 36,
-					recoil = 41,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 25,
-					suppression = 6,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.rota.stats_modifiers = nil
-				self.rota.timers.reload_exit_empty = 0.5
-				self.rota.timers.reload_exit_not_empty = 0.5
-
-	--[[     HEAVY SHOTGUNS     ]]
-
-		--PRIMARIES
-
-			--Akimbo Judge
-				--Keeping
-				self.x_judge.categories = {
-					"akimbo",
-					"shotgun",
-					"shotgun_pistol"
-				}
-				self.x_judge.fire_mode_data.fire_rate = 0.272727
-				self.x_judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.x_judge.rays = 8
-				self.x_judge.BURST_FIRE = 2
-				self.x_judge.AMMO_MAX = 60
-				self.x_judge.supported = true
-				self.x_judge.ads_speed = 0.320
-				self.x_judge.damage_falloff = {
-					start_dist = 600,
-					end_dist = 2400,
-					min_mult = 0.3333
-				}
-				self.x_judge.stats = {
-					damage = 60,
-					spread = 23,
-					recoil = 52,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 25,
-					suppression = 4,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.x_judge.stats_modifiers = nil
-				self.x_judge.panic_suppression_chance = 0.05
-				self.x_judge.kick = self.stat_info.kick_tables.vertical_kick
-				self.x_judge.reload_speed_multiplier = 0.9
-				self.x_judge.weapon_hold = "jowi_pistol"
-				self.x_judge.animations.reload_name_id = "x_judge"
-				self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
-				self.x_judge.animations.second_gun_versions.reload = "reload"
-				self.x_judge.timers.reload_empty = 3.1
-				self.x_judge.timers.reload_not_empty = 3.1
-				self.x_judge.timers.reload_exit_empty = 1.3
-				self.x_judge.timers.reload_exit_not_empty = 1.3
-
-			--Mosconi 12G Tactical (Mossberg 590)
-				self.m590.desc_id = "bm_menu_sc_m590_desc"
-				self.m590.has_description = true
-				self.m590.tactical_reload = 1	
-				self.m590.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.m590.rays = 8
-				self.m590.CLIP_AMMO_MAX = 7
-				self.m590.kick = self.stat_info.kick_tables.vertical_kick
-				self.m590.AMMO_MAX = 60
-				self.m590.supported = true
-				self.m590.ads_speed = 0.380
-				self.m590.damage_falloff = {
-					start_dist = 900,
-					end_dist = 2800,
-					min_mult = 0.3333
-				}
-				self.m590.stats = {
-					damage = 60,
-					spread = 40,
-					recoil = 45,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 23,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}		
-				self.m590.stats_modifiers = nil
-				self.m590.panic_suppression_chance = 0.05
-				self.m590.timers.shotgun_reload_enter = 0.3
-				self.m590.timers.shotgun_reload_first_shell_offset = 0.33
-				self.m590.timers.shotgun_reload_shell = 0.5666666666666667
-				self.m590.timers.shotgun_reload_exit_not_empty = 0.3
-				self.m590.timers.shotgun_reload_exit_empty = 0.7
-
-
-			--Reinfeld 880 (R870)
-				self.r870.desc_id = "bm_menu_sc_r870_desc"
-				self.r870.has_description = true
-				self.r870.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.r870.rays = 8
-				self.r870.CLIP_AMMO_MAX = 8
-				self.r870.kick = self.stat_info.kick_tables.vertical_kick
-				self.r870.single.fire_rate = 0.5
-				self.r870.fire_mode_data.fire_rate = 0.5
-				self.r870.AMMO_MAX = 60
-				self.r870.supported = true
-				self.r870.ads_speed = 0.400
-				self.r870.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3000,
-					min_mult = 0.3333
-				}
-				self.r870.stats = {
-					damage = 60,
-					spread = 42,
-					recoil = 51,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 21,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}		
-				self.r870.stats_modifiers = nil
-				self.r870.panic_suppression_chance = 0.05
-				self.r870.timers.shotgun_reload_enter = 0.3
-				self.r870.timers.shotgun_reload_first_shell_offset = 0.33
-				self.r870.timers.shotgun_reload_shell = 0.5666666666666667
-				self.r870.timers.shotgun_reload_exit_not_empty = 0.3
-				self.r870.timers.shotgun_reload_exit_empty = 0.7
-	
-			--Raven (KSG)
-				self.ksg.desc_id = "bm_menu_sc_ksg_desc"
-				self.ksg.has_description = true			
-				self.ksg.rays = 8
-				self.ksg.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.ksg.AMMO_MAX = 60
-				self.ksg.CLIP_AMMO_MAX = 14
-				self.ksg.fire_mode_data.fire_rate = 0.5
-				self.ksg.fire_rate_multiplier = 0.83333
-				self.ksg.kick = self.stat_info.kick_tables.vertical_kick		
-				self.ksg.supported = true
-				self.ksg.ads_speed = 0.380
-				self.ksg.damage_falloff = {
-					start_dist = 1100,
-					end_dist = 3200,
-					min_mult = 0.3333
-				}
-				self.ksg.stats = {
-					damage = 60,
-					spread = 45,
-					recoil = 40,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 23,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.ksg.stats_modifiers = nil
-				self.ksg.panic_suppression_chance = 0.05
-				self.ksg.fire_anim_offset2 = 0.03
-				self.ksg.reload_fix_offset2 = 0.025
-				self.ksg.reload_fix_mult2 = 1.08
-				self.ksg.reload_speed_multiplier = 0.9
-				self.ksg.timers.shotgun_reload_exit_not_empty = 0.9
-				self.ksg.timers.shotgun_reload_exit_empty = 0.9
-
-			--Reinfeld 88 (WHY IS THIS UNDER THE REMINGTON LABEL)
-				self.m1897.desc_id = "bm_menu_sc_m1897_desc"
-				self.m1897.has_description = true				
-				self.m1897.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.m1897.rays = 8
-				self.m1897.CLIP_AMMO_MAX = 5
-				self.m1897.kick = self.stat_info.kick_tables.vertical_kick
-				self.m1897.fire_mode_data.fire_rate = 0.6
-				self.m1897.fire_rate_multiplier = 1.1
-				self.m1897.BURST_FIRE = 1
-				self.m1897.BURST_FIRE_RATE_MULTIPLIER = 1.5
-				self.m1897.BURST_SLAM = true
-				self.m1897.AUTO_BURST = true
-				self.m1897.BURST_FIRE_RECOIL_MULTIPLIER = 1.1
-				self.m1897.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
-				self.m1897.BURST_FIRE_SPREAD_MULTIPLIER = 3
-				self.m1897.AMMO_MAX = 60
-				self.m1897.supported = true
-				self.m1897.ads_speed = 0.380
-				self.m1897.damage_falloff = {
-					start_dist = 1300,
-					end_dist = 3400,
-					min_mult = 0.3333
-				}
-				self.m1897.stats = {
-					damage = 60,
-					spread = 51,
-					recoil = 41,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 22,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}		
-				self.m1897.stats_modifiers = nil
-				self.m1897.panic_suppression_chance = 0.05
-				self.m1897.timers.shotgun_reload_exit_not_empty = 0.9
-				self.m1897.timers.shotgun_reload_exit_empty = 0.9
-		
-		--SECONDARIES
-
-			--Loco 12g
-				self.serbu.has_description = true
-				self.serbu.desc_id = "bm_serbu_sc_desc"
-				self.serbu.rays = 8
-				self.serbu.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.serbu.CLIP_AMMO_MAX = 4
-				self.serbu.AMMO_MAX = 30
-				self.serbu.fire_mode_data.fire_rate = 0.5
-				self.serbu.single.fire_rate = 0.5
-				self.serbu.kick = self.stat_info.kick_tables.moderate_kick
-				self.serbu.supported = true
-				self.serbu.ads_speed = 0.360
-				self.serbu.damage_falloff = {
-					start_dist = 900,
-					end_dist = 2400,
-					min_mult = 0.3333
-				}
-				self.serbu.stats = {
-					damage = 60,
-					spread = 36,
-					recoil = 40,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 25,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.serbu.stats_modifiers = nil
-				self.serbu.panic_suppression_chance = 0.05
-				self.serbu.timers.shotgun_reload_enter = 0.3
-				self.serbu.timers.shotgun_reload_first_shell_offset = 0.33
-				self.serbu.timers.shotgun_reload_shell = 0.5666666666666667
-				self.serbu.timers.shotgun_reload_exit_not_empty = 0.3
-				self.serbu.timers.shotgun_reload_exit_empty = 0.7
-
-			--GSPS (Ithaca Model 37)
-				self.m37.desc_id = "bm_slamfire_generic_desc"
-				self.m37.has_description = true				
-				self.m37.rays = 8
-				self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-				self.m37.CLIP_AMMO_MAX = 5
-				self.m37.AMMO_MAX = 30
-				self.m37.fire_mode_data.fire_rate = 0.6
-				self.m37.fire_rate_multiplier = 1.1
-				self.m37.BURST_FIRE = 1
-				self.m37.BURST_FIRE_RATE_MULTIPLIER = 1.5
-				self.m37.BURST_SLAM = true
-				self.m37.AUTO_BURST = true
-				self.m37.BURST_FIRE_RECOIL_MULTIPLIER = 1.1
-				self.m37.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
-				self.m37.BURST_FIRE_SPREAD_MULTIPLIER = 3
-				self.m37.kick = self.stat_info.kick_tables.right_kick
-				self.m37.panic_suppression_chance = 0.05
-				self.m37.supported = true
-				self.m37.ads_speed = 0.380
-				self.m37.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3000,
-					min_mult = 0.3333
-				}
-				self.m37.stats = {
-					damage = 60,
-					spread = 43,
-					recoil = 51,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 21,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.m37.stats_modifiers = nil
-				self.m37.timers.shotgun_reload_exit_not_empty = 0.9
-				self.m37.timers.shotgun_reload_exit_empty = 0.9
-
-			--Judge
-				self.judge.categories = {
-					"shotgun",
-					"shotgun_pistol"
-				}
-				self.judge.fire_mode_data.fire_rate = 0.272727
-				self.judge.rays = 8
-				self.judge.kick = self.stat_info.kick_tables.left_kick
-				self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.judge.AMMO_MAX = 30
-				self.judge.supported = true
-				self.judge.ads_speed = 0.320
-				self.judge.damage_falloff = {
-					start_dist = 600,
-					end_dist = 2400,
-					min_mult = 0.3333
-				}
-				self.judge.stats = {
-					damage = 60,
-					spread = 33,
-					recoil = 62,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 25,
-					suppression = 4,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.judge.stats_modifiers = nil
-				self.judge.reload_speed_multiplier = 0.9
-				self.judge.timers.reload_not_empty = 2.1
-				self.judge.timers.reload_empty = 2.1
-				self.judge.timers.reload_exit_empty = 0.6
-				self.judge.timers.reload_exit_not_empty = 0.6
-				self.judge.panic_suppression_chance = 0.05
-
-	--[[     BREAK-ACTION SHOTGUNS     ]]
-
-		--PRIMARIES
-
-			--Joceline O/U 12G (Beretta 682 Hybrid)
-				self.b682.rays = 8
-				self.b682.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.b682.AMMO_MAX = 40
-				self.b682.fire_mode_data = {}
-				self.b682.CAN_TOGGLE_FIREMODE = false
-				self.b682.fire_mode_data.fire_rate = 0.171428
-				self.b682.sounds.fire_single = "b682_fire"
-				self.b682.sounds.fire_auto = "b682_fire"		
-				self.b682.kick = self.stat_info.kick_tables.vertical_kick
-				self.b682.supported = true
-				self.b682.ads_speed = 0.480
-				self.b682.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 3500,
-					min_mult = 0.25
-				}
-				self.b682.stats = {
-					damage = 90,
-					spread = 61,
-					recoil = 41,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 20,
-					suppression = 3,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.b682.stats_modifiers = nil
-				self.b682.panic_suppression_chance = 0.05
-				self.b682.stats_modifiers = {damage = 1}
-				self.b682.reload_speed_multiplier = 1.2
-				self.b682.timers.reload_exit_empty = 0.5
-				self.b682.timers.reload_exit_not_empty = 0.9
-
-			--Breaker 12g (Model 1887)
-				self.boot.name_id = "bm_menu_sc_boot"
-				self.boot.desc_id = "bm_menu_sc_boot_desc"
-				self.boot.has_description = true
-				self.boot.AMMO_MAX = 40
-				self.boot.CLIP_AMMO_MAX = 6
-				self.boot.tactical_reload = 1
-				self.boot.fire_mode_data.fire_rate = 1
-				self.boot.single.fire_rate = 0.85
-				self.boot.rays = 8
-				self.boot.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.boot.kick = self.stat_info.kick_tables.right_kick
-				self.boot.supported = true
-				self.boot.ads_speed = 0.420
-				self.boot.damage_falloff = {
-					start_dist = 800,
-					end_dist = 3000,
-					min_mult = 0.25
-				}
-				self.boot.stats = {
-					damage = 90,
-					spread = 44,
-					recoil = 33,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 26,
-					suppression = 4,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.boot.timers = {
-					shotgun_reload_enter = 0.733,
-					shotgun_reload_exit_empty = 0.8,
-					shotgun_reload_exit_not_empty = 0.5,
-					shotgun_reload_shell = 0.33,
-					shotgun_reload_first_shell_offset = 0.14,
-					unequip = 0.55,
-					equip = 0.85
-				}
-				self.boot.stats_modifiers = nil
-				self.boot.panic_suppression_chance = 0.05
-				self.boot.stats_modifiers = {damage = 1}
-				self.boot.reload_speed_multiplier = 0.75
-
-			--Mosconi 12G
-				self.huntsman.desc_id = "bm_menu_sc_huntsman_desc"
-				self.huntsman.has_description = true		
-				self.huntsman.rays = 8
-				self.huntsman.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.huntsman.AMMO_MAX = 40
-				self.huntsman.sounds.fire_single = "huntsman_fire"
-				self.huntsman.sounds.fire_auto = "huntsman_fire"
-				self.huntsman.BURST_FIRE = 2
-				self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 5
-				self.huntsman.ADAPTIVE_BURST_SIZE = false	
-				self.huntsman.CAN_TOGGLE_FIREMODE = false			
-				self.huntsman.DELAYED_BURST_RECOIL = false
-				self.huntsman.fire_mode_data = {}
-				self.huntsman.fire_mode_data.fire_rate = 0.171428
-				self.huntsman.kick = self.stat_info.kick_tables.vertical_kick
-				self.huntsman.supported = true
-				self.huntsman.ads_speed = 0.440
-				self.huntsman.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3100,
-					min_mult = 0.25
-				}
-				self.huntsman.stats = {
-					damage = 90,
-					spread = 58,
-					recoil = 43,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 21,
-					suppression = 3,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.huntsman.stats_modifiers = nil
-				self.huntsman.timers.reload_not_empty = 2.3
-				self.huntsman.timers.reload_empty = 2.3
-				self.huntsman.timers.reload_exit_empty = 0.3
-				self.huntsman.timers.reload_exit_not_empty = 0.3
-				self.huntsman.reload_speed_multiplier = 1.2
-				self.huntsman.panic_suppression_chance = 0.05
-			
-		--SECONDARIES
-
-			--Claire 12G
-				self.coach.muzzleflash = "effects/particles/shotgun/muzzleflash"
-				self.coach.rays = 8
-				self.coach.kick = self.stat_info.kick_tables.vertical_kick
-				self.coach.AMMO_MAX = 20
-				self.coach.sounds.fire_single = "coach_fire"
-				self.coach.sounds.fire_auto = "coach_fire"		
-				self.coach.BURST_FIRE = 2
-				self.coach.CAN_TOGGLE_FIREMODE = false							
-				self.coach.BURST_FIRE_RATE_MULTIPLIER = 5
-				self.coach.DELAYED_BURST_RECOIL = false
-				self.coach.ADAPTIVE_BURST_SIZE = false		
-				self.coach.fire_mode_data = {}
-				self.coach.fire_mode_data.fire_rate = 0.171428
-				self.coach.supported = true
-				self.coach.ads_speed = 0.440
-				self.coach.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3100,
-					min_mult = 0.25
-				}
-				self.coach.stats = {
-					damage = 90,
-					spread = 58,
-					recoil = 43,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 21,
-					suppression = 3,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.coach.stats_modifiers = nil
-				self.coach.panic_suppression_chance = 0.05
-				self.coach.timers.reload_exit_empty = 0.3
-				self.coach.timers.reload_exit_not_empty = 0.3
-				self.coach.reload_speed_multiplier = 1.2
-
-
-
 
 	--[[     LIGHT SMGs     ]]
 
@@ -7419,13 +6607,878 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 
+
+	--[[     LIGHT SHOTGUNS     ]]
+
+		--PRIMARIES
+
+			--Izhma 12G
+				self.saiga.desc_id = "bm_saiga_sc_desc"
+				self.saiga.has_description = true			
+				self.saiga.rays = 8
+				self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.saiga.CLIP_AMMO_MAX = 5
+				self.saiga.AMMO_MAX = 120
+				self.saiga.fire_mode_data.fire_rate = 0.1
+				self.saiga.auto.fire_rate = 0.1
+				self.saiga.shake.fire_multiplier = 1
+				self.saiga.shake.fire_steelsight_multiplier = -1
+				self.saiga.kick = self.stat_info.kick_tables.right_kick
+				self.saiga.supported = true
+				self.saiga.ads_speed = 0.380
+				self.saiga.damage_falloff = {
+					start_dist = 600,
+					end_dist = 2200,
+					min_mult = 0.5
+				}
+				self.saiga.stats = {
+					damage = 30,
+					spread = 31,
+					recoil = 49,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 25,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.saiga.stats_modifiers = nil
+				self.saiga.panic_suppression_chance = 0.05
+				self.saiga.reload_speed_multiplier = 1.3
+				self.saiga.timers.reload_exit_empty = 0.75
+				self.saiga.timers.reload_exit_not_empty = 0.875
+
+			--Argos III (Ultima)
+				self.ultima.rays = 8
+				self.ultima.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.ultima.CLIP_AMMO_MAX = 7
+				self.ultima.AMMO_MAX = 80
+				self.ultima.use_data.selection_index = 2
+				self.ultima.fire_mode_data.fire_rate = 0.12
+				self.ultima.kick = self.stat_info.kick_tables.moderate_kick
+				self.ultima.supported = true
+				self.ultima.ads_speed = 0.340
+				self.ultima.damage_falloff = {
+					start_dist = 800,
+					end_dist = 2600,
+					min_mult = 0.5
+				}
+				self.ultima.stats = {
+					damage = 45,
+					spread = 26,
+					recoil = 45,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}	
+				self.ultima.stats_modifiers = nil
+				self.ultima.panic_suppression_chance = 0.05	
+				self.ultima.reload_speed_multiplier = 0.75
+				self.ultima.timers.shotgun_reload_exit_not_empty = 0.7
+				self.ultima.timers.shotgun_reload_exit_empty = 0.3
+
+			--Steakout (AA-12)
+				self.aa12.rays = 8
+				self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.aa12.AMMO_MAX = 80
+				self.aa12.desc_id = "bm_aa12_sc_desc"
+				self.aa12.has_description = true
+				self.aa12.CLIP_AMMO_MAX = 8
+				self.aa12.kick = self.stat_info.kick_tables.moderate_kick
+				self.aa12.FIRE_MODE = "auto"				
+				self.aa12.CAN_TOGGLE_FIREMODE = false
+				self.aa12.supported = true
+				self.aa12.ads_speed = 0.440
+				self.aa12.damage_falloff = {
+					start_dist = 900,
+					end_dist = 2900,
+					min_mult = 0.5
+				}
+				self.aa12.stats = {
+					damage = 45,
+					spread = 39,
+					recoil = 66,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 20,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.aa12.stats_modifiers = nil
+				self.aa12.panic_suppression_chance = 0.05
+				self.aa12.reload_speed_multiplier = 1.2
+				self.aa12.timers.reload_exit_empty = 1.1
+				self.aa12.timers.reload_exit_not_empty = 0.9
+
+			--Predator 12G
+				self.spas12.desc_id = "bm_spas12_sc_desc"
+				self.spas12.has_description = true					
+				self.spas12.rays = 8
+				self.spas12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.spas12.AMMO_MAX = 80
+				self.spas12.CLIP_AMMO_MAX = 6
+				self.spas12.CAN_TOGGLE_FIREMODE = false
+				self.spas12.fire_mode_data.fire_rate = 0.13953488372
+				self.spas12.BURST_FIRE = 2
+				self.spas12.BURST_FIRE_RATE_MULTIPLIER = 5
+				self.spas12.BURST_FIRE_RECOIL_MULTIPLIER = 0.25
+				self.spas12.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.35
+				self.spas12.BURST_FIRE_SPREAD_MULTIPLIER = 3
+				self.spas12.BURST_DELAY = 0.250
+				self.spas12.kick = self.stat_info.kick_tables.left_kick
+				self.spas12.supported = true
+				self.spas12.ads_speed = 0.400
+				self.spas12.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3200,
+					min_mult = 0.5
+				}
+				self.spas12.stats = {
+					damage = 45,
+					spread = 35,
+					recoil = 52,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.spas12.stats_modifiers = nil
+				self.spas12.panic_suppression_chance = 0.05
+				self.spas12.reload_fix_offset = 0.25
+				self.spas12.timers.shotgun_reload_enter = 0.3
+				self.spas12.timers.shotgun_reload_first_shell_offset = 0.33
+				self.spas12.timers.shotgun_reload_shell = 0.5666666666666667
+				self.spas12.timers.shotgun_reload_exit_not_empty = 0.2
+				self.spas12.timers.shotgun_reload_exit_empty = 1.5
+
+			--M1014
+				self.benelli.desc_id = "bm_benelli_sc_desc"
+				self.benelli.has_description = true					
+				self.benelli.AMMO_MAX = 80
+				self.benelli.CLIP_AMMO_MAX = 5
+				self.benelli.rays = 8
+				self.benelli.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.benelli.fire_mode_data.fire_rate = 0.13953488372
+				self.benelli.CAN_TOGGLE_FIREMODE = false
+				self.benelli.single = {}
+				self.benelli.single.fire_rate = 0.13953488372
+				self.benelli.kick = self.stat_info.kick_tables.moderate_kick
+				self.benelli.supported = true
+				self.benelli.ads_speed = 0.380
+				self.benelli.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3400,
+					min_mult = 0.5
+				}
+				self.benelli.stats = {
+					damage = 45,
+					spread = 40,
+					recoil = 46,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.benelli.stats_modifiers = nil
+				self.benelli.panic_suppression_chance = 0.05
+				self.benelli.reload_fix_offset = 0.25
+				self.benelli.timers.shotgun_reload_enter = 0.3
+				self.benelli.timers.shotgun_reload_first_shell_offset = 0.33
+				self.benelli.timers.shotgun_reload_shell = 0.5666666666666667
+				self.benelli.timers.shotgun_reload_exit_not_empty = 0.2
+				self.benelli.timers.shotgun_reload_exit_empty = 1.5
+
+
+
+		--SECONDARIES
+
+			--Grimm 12G
+				self.basset.rays = 8
+				self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.basset.CLIP_AMMO_MAX = 5
+				self.basset.AMMO_MAX = 60
+				self.basset.fire_mode_data = {fire_rate = 0.1}
+				self.basset.auto = {fire_rate = 0.1}
+				self.basset.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.basset.panic_suppression_chance = 0.05
+				self.basset.supported = true
+				self.basset.ads_speed = 0.360
+				self.basset.damage_falloff = {
+					start_dist = 800,
+					end_dist = 2500,
+					min_mult = 0.5
+				}
+				self.basset.stats = {
+					zoom = 1,
+					total_ammo_mod = 100,
+					damage = 30,
+					alert_size = 2,
+					spread = 31,
+					spread_moving = 8,
+					recoil = 50,
+					value = 1,
+					extra_ammo = 101,
+					reload = 20,
+					suppression = 6,
+					concealment = 25
+				}		
+				self.basset.stats_modifiers = nil
+				self.basset.reload_speed_multiplier = 0.925
+				self.basset.sounds.fire_single = "basset_x_fire_single"
+				self.basset.timers.reload_exit_empty = 0.55
+				self.basset.timers.reload_exit_not_empty = 0.65
+
+			--Street Sweeper
+				self.striker.rays = 8
+				self.striker.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.striker.AMMO_MAX = 40
+				self.striker.fire_mode_data.fire_rate = 0.13953488372
+				self.striker.CAN_TOGGLE_FIREMODE = false
+				self.striker.single = {}
+				self.striker.single.fire_rate = 0.13953488372
+				self.striker.CLIP_AMMO_MAX = 12
+				self.striker.kick = self.stat_info.kick_tables.right_kick
+				self.striker.supported = true
+				self.striker.ads_speed = 0.420
+				self.striker.damage_falloff = {
+					start_dist = 800,
+					end_dist = 3000,
+					min_mult = 0.5
+				}
+				self.striker.stats = {
+					damage = 45,
+					spread = 31,
+					recoil = 43,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 23,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.striker.stats_modifiers = nil
+				self.striker.panic_suppression_chance = 0.05
+				self.striker.timers.shotgun_reload_first_shell_offset = 0.03333333
+
+			--Goliath 12G
+				self.rota.upgrade_blocks = nil
+				self.rota.AMMO_MAX = 40
+				self.rota.rays = 8
+				self.rota.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.rota.kick = self.stat_info.kick_tables.vertical_kick
+				self.rota.fire_mode_data.fire_rate = 0.13953488372
+				self.rota.single.fire_rate = 0.13953488372
+				self.rota.panic_suppression_chance = 0.05
+				self.rota.supported = true
+				self.rota.ads_speed = 0.360
+				self.rota.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3500,
+					min_mult = 0.5
+				}
+				self.rota.stats = {
+					damage = 45,
+					spread = 36,
+					recoil = 41,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 25,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.rota.stats_modifiers = nil
+				self.rota.timers.reload_exit_empty = 0.5
+				self.rota.timers.reload_exit_not_empty = 0.5
+
+	--[[     HEAVY SHOTGUNS     ]]
+
+		--PRIMARIES
+
+			--Akimbo Judge
+				--Keeping
+				self.x_judge.categories = {
+					"akimbo",
+					"shotgun",
+					"shotgun_pistol"
+				}
+				self.x_judge.fire_mode_data.fire_rate = 0.272727
+				self.x_judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
+				self.x_judge.rays = 8
+				self.x_judge.BURST_FIRE = 2
+				self.x_judge.AMMO_MAX = 60
+				self.x_judge.supported = true
+				self.x_judge.ads_speed = 0.320
+				self.x_judge.damage_falloff = {
+					start_dist = 600,
+					end_dist = 2400,
+					min_mult = 0.3333
+				}
+				self.x_judge.stats = {
+					damage = 60,
+					spread = 23,
+					recoil = 52,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 25,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.x_judge.stats_modifiers = nil
+				self.x_judge.panic_suppression_chance = 0.05
+				self.x_judge.kick = self.stat_info.kick_tables.vertical_kick
+				self.x_judge.reload_speed_multiplier = 0.9
+				self.x_judge.weapon_hold = "jowi_pistol"
+				self.x_judge.animations.reload_name_id = "x_judge"
+				self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
+				self.x_judge.animations.second_gun_versions.reload = "reload"
+				self.x_judge.timers.reload_empty = 3.1
+				self.x_judge.timers.reload_not_empty = 3.1
+				self.x_judge.timers.reload_exit_empty = 1.3
+				self.x_judge.timers.reload_exit_not_empty = 1.3
+
+			--Mosconi 12G Tactical (Mossberg 590)
+				self.m590.desc_id = "bm_menu_sc_m590_desc"
+				self.m590.has_description = true
+				self.m590.tactical_reload = 1	
+				self.m590.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.m590.rays = 8
+				self.m590.CLIP_AMMO_MAX = 7
+				self.m590.kick = self.stat_info.kick_tables.vertical_kick
+				self.m590.AMMO_MAX = 60
+				self.m590.supported = true
+				self.m590.ads_speed = 0.380
+				self.m590.damage_falloff = {
+					start_dist = 900,
+					end_dist = 2800,
+					min_mult = 0.3333
+				}
+				self.m590.stats = {
+					damage = 60,
+					spread = 40,
+					recoil = 45,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}		
+				self.m590.stats_modifiers = nil
+				self.m590.panic_suppression_chance = 0.05
+				self.m590.timers.shotgun_reload_enter = 0.3
+				self.m590.timers.shotgun_reload_first_shell_offset = 0.33
+				self.m590.timers.shotgun_reload_shell = 0.5666666666666667
+				self.m590.timers.shotgun_reload_exit_not_empty = 0.3
+				self.m590.timers.shotgun_reload_exit_empty = 0.7
+
+
+			--Reinfeld 880 (R870)
+				self.r870.desc_id = "bm_menu_sc_r870_desc"
+				self.r870.has_description = true
+				self.r870.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.r870.rays = 8
+				self.r870.CLIP_AMMO_MAX = 8
+				self.r870.kick = self.stat_info.kick_tables.vertical_kick
+				self.r870.single.fire_rate = 0.5
+				self.r870.fire_mode_data.fire_rate = 0.5
+				self.r870.AMMO_MAX = 60
+				self.r870.supported = true
+				self.r870.ads_speed = 0.400
+				self.r870.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3000,
+					min_mult = 0.3333
+				}
+				self.r870.stats = {
+					damage = 60,
+					spread = 42,
+					recoil = 51,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 21,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}		
+				self.r870.stats_modifiers = nil
+				self.r870.panic_suppression_chance = 0.05
+				self.r870.timers.shotgun_reload_enter = 0.3
+				self.r870.timers.shotgun_reload_first_shell_offset = 0.33
+				self.r870.timers.shotgun_reload_shell = 0.5666666666666667
+				self.r870.timers.shotgun_reload_exit_not_empty = 0.3
+				self.r870.timers.shotgun_reload_exit_empty = 0.7
+	
+			--Raven (KSG)
+				self.ksg.desc_id = "bm_menu_sc_ksg_desc"
+				self.ksg.has_description = true			
+				self.ksg.rays = 8
+				self.ksg.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.ksg.AMMO_MAX = 60
+				self.ksg.CLIP_AMMO_MAX = 14
+				self.ksg.fire_mode_data.fire_rate = 0.5
+				self.ksg.fire_rate_multiplier = 0.83333
+				self.ksg.kick = self.stat_info.kick_tables.vertical_kick		
+				self.ksg.supported = true
+				self.ksg.ads_speed = 0.380
+				self.ksg.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3200,
+					min_mult = 0.3333
+				}
+				self.ksg.stats = {
+					damage = 60,
+					spread = 45,
+					recoil = 40,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 23,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.ksg.stats_modifiers = nil
+				self.ksg.panic_suppression_chance = 0.05
+				self.ksg.fire_anim_offset2 = 0.03
+				self.ksg.reload_fix_offset2 = 0.025
+				self.ksg.reload_fix_mult2 = 1.08
+				self.ksg.reload_speed_multiplier = 0.9
+				self.ksg.timers.shotgun_reload_exit_not_empty = 0.9
+				self.ksg.timers.shotgun_reload_exit_empty = 0.9
+
+			--Reinfeld 88 (WHY IS THIS UNDER THE REMINGTON LABEL)
+				self.m1897.desc_id = "bm_menu_sc_m1897_desc"
+				self.m1897.has_description = true				
+				self.m1897.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.m1897.rays = 8
+				self.m1897.CLIP_AMMO_MAX = 5
+				self.m1897.kick = self.stat_info.kick_tables.vertical_kick
+				self.m1897.fire_mode_data.fire_rate = 0.6
+				self.m1897.fire_rate_multiplier = 1.1
+				self.m1897.BURST_FIRE = 1
+				self.m1897.BURST_FIRE_RATE_MULTIPLIER = 1.5
+				self.m1897.BURST_SLAM = true
+				self.m1897.AUTO_BURST = true
+				self.m1897.BURST_FIRE_RECOIL_MULTIPLIER = 1.1
+				self.m1897.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+				self.m1897.BURST_FIRE_SPREAD_MULTIPLIER = 3
+				self.m1897.AMMO_MAX = 60
+				self.m1897.supported = true
+				self.m1897.ads_speed = 0.380
+				self.m1897.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3400,
+					min_mult = 0.3333
+				}
+				self.m1897.stats = {
+					damage = 60,
+					spread = 51,
+					recoil = 41,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 22,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}		
+				self.m1897.stats_modifiers = nil
+				self.m1897.panic_suppression_chance = 0.05
+				self.m1897.timers.shotgun_reload_exit_not_empty = 0.9
+				self.m1897.timers.shotgun_reload_exit_empty = 0.9
+		
+		--SECONDARIES
+
+			--Loco 12g
+				self.serbu.has_description = true
+				self.serbu.desc_id = "bm_serbu_sc_desc"
+				self.serbu.rays = 8
+				self.serbu.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.serbu.CLIP_AMMO_MAX = 4
+				self.serbu.AMMO_MAX = 30
+				self.serbu.fire_mode_data.fire_rate = 0.5
+				self.serbu.single.fire_rate = 0.5
+				self.serbu.kick = self.stat_info.kick_tables.moderate_kick
+				self.serbu.supported = true
+				self.serbu.ads_speed = 0.360
+				self.serbu.damage_falloff = {
+					start_dist = 900,
+					end_dist = 2400,
+					min_mult = 0.3333
+				}
+				self.serbu.stats = {
+					damage = 60,
+					spread = 36,
+					recoil = 40,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.serbu.stats_modifiers = nil
+				self.serbu.panic_suppression_chance = 0.05
+				self.serbu.timers.shotgun_reload_enter = 0.3
+				self.serbu.timers.shotgun_reload_first_shell_offset = 0.33
+				self.serbu.timers.shotgun_reload_shell = 0.5666666666666667
+				self.serbu.timers.shotgun_reload_exit_not_empty = 0.3
+				self.serbu.timers.shotgun_reload_exit_empty = 0.7
+
+			--GSPS (Ithaca Model 37)
+				self.m37.desc_id = "bm_slamfire_generic_desc"
+				self.m37.has_description = true				
+				self.m37.rays = 8
+				self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+				self.m37.CLIP_AMMO_MAX = 5
+				self.m37.AMMO_MAX = 30
+				self.m37.fire_mode_data.fire_rate = 0.6
+				self.m37.fire_rate_multiplier = 1.1
+				self.m37.BURST_FIRE = 1
+				self.m37.BURST_FIRE_RATE_MULTIPLIER = 1.5
+				self.m37.BURST_SLAM = true
+				self.m37.AUTO_BURST = true
+				self.m37.BURST_FIRE_RECOIL_MULTIPLIER = 1.1
+				self.m37.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+				self.m37.BURST_FIRE_SPREAD_MULTIPLIER = 3
+				self.m37.kick = self.stat_info.kick_tables.right_kick
+				self.m37.panic_suppression_chance = 0.05
+				self.m37.supported = true
+				self.m37.ads_speed = 0.380
+				self.m37.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3000,
+					min_mult = 0.3333
+				}
+				self.m37.stats = {
+					damage = 60,
+					spread = 43,
+					recoil = 51,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 21,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.m37.stats_modifiers = nil
+				self.m37.timers.shotgun_reload_exit_not_empty = 0.9
+				self.m37.timers.shotgun_reload_exit_empty = 0.9
+
+			--Judge
+				self.judge.categories = {
+					"shotgun",
+					"shotgun_pistol"
+				}
+				self.judge.fire_mode_data.fire_rate = 0.272727
+				self.judge.rays = 8
+				self.judge.kick = self.stat_info.kick_tables.left_kick
+				self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
+				self.judge.AMMO_MAX = 30
+				self.judge.supported = true
+				self.judge.ads_speed = 0.320
+				self.judge.damage_falloff = {
+					start_dist = 600,
+					end_dist = 2400,
+					min_mult = 0.3333
+				}
+				self.judge.stats = {
+					damage = 60,
+					spread = 33,
+					recoil = 62,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 25,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.judge.stats_modifiers = nil
+				self.judge.reload_speed_multiplier = 0.9
+				self.judge.timers.reload_not_empty = 2.1
+				self.judge.timers.reload_empty = 2.1
+				self.judge.timers.reload_exit_empty = 0.6
+				self.judge.timers.reload_exit_not_empty = 0.6
+				self.judge.panic_suppression_chance = 0.05
+
+	--[[     BREAK-ACTION SHOTGUNS     ]]
+
+		--PRIMARIES
+
+			--Joceline O/U 12G (Beretta 682 Hybrid)
+				self.b682.rays = 8
+				self.b682.muzzleflash = "effects/particles/shotgun/muzzleflash"
+				self.b682.AMMO_MAX = 40
+				self.b682.fire_mode_data = {}
+				self.b682.CAN_TOGGLE_FIREMODE = false
+				self.b682.fire_mode_data.fire_rate = 0.171428
+				self.b682.sounds.fire_single = "b682_fire"
+				self.b682.sounds.fire_auto = "b682_fire"		
+				self.b682.kick = self.stat_info.kick_tables.vertical_kick
+				self.b682.supported = true
+				self.b682.ads_speed = 0.480
+				self.b682.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
+				self.b682.stats = {
+					damage = 90,
+					spread = 61,
+					recoil = 41,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 20,
+					suppression = 3,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.b682.stats_modifiers = nil
+				self.b682.panic_suppression_chance = 0.05
+				self.b682.stats_modifiers = {damage = 1}
+				self.b682.reload_speed_multiplier = 1.2
+				self.b682.timers.reload_exit_empty = 0.5
+				self.b682.timers.reload_exit_not_empty = 0.9
+
+			--Breaker 12g (Model 1887)
+				self.boot.name_id = "bm_menu_sc_boot"
+				self.boot.desc_id = "bm_menu_sc_boot_desc"
+				self.boot.has_description = true
+				self.boot.AMMO_MAX = 40
+				self.boot.CLIP_AMMO_MAX = 6
+				self.boot.tactical_reload = 1
+				self.boot.fire_mode_data.fire_rate = 1
+				self.boot.single.fire_rate = 0.85
+				self.boot.rays = 8
+				self.boot.muzzleflash = "effects/particles/shotgun/muzzleflash"
+				self.boot.kick = self.stat_info.kick_tables.right_kick
+				self.boot.supported = true
+				self.boot.ads_speed = 0.420
+				self.boot.damage_falloff = {
+					start_dist = 800,
+					end_dist = 3000,
+					min_mult = 0.25
+				}
+				self.boot.stats = {
+					damage = 90,
+					spread = 44,
+					recoil = 33,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 26,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.boot.timers = {
+					shotgun_reload_enter = 0.733,
+					shotgun_reload_exit_empty = 0.8,
+					shotgun_reload_exit_not_empty = 0.5,
+					shotgun_reload_shell = 0.33,
+					shotgun_reload_first_shell_offset = 0.14,
+					unequip = 0.55,
+					equip = 0.85
+				}
+				self.boot.stats_modifiers = nil
+				self.boot.panic_suppression_chance = 0.05
+				self.boot.stats_modifiers = {damage = 1}
+				self.boot.reload_speed_multiplier = 0.75
+
+			--Mosconi 12G
+				self.huntsman.desc_id = "bm_menu_sc_huntsman_desc"
+				self.huntsman.has_description = true		
+				self.huntsman.rays = 8
+				self.huntsman.muzzleflash = "effects/particles/shotgun/muzzleflash"
+				self.huntsman.AMMO_MAX = 40
+				self.huntsman.sounds.fire_single = "huntsman_fire"
+				self.huntsman.sounds.fire_auto = "huntsman_fire"
+				self.huntsman.BURST_FIRE = 2
+				self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 5
+				self.huntsman.ADAPTIVE_BURST_SIZE = false	
+				self.huntsman.CAN_TOGGLE_FIREMODE = false			
+				self.huntsman.DELAYED_BURST_RECOIL = false
+				self.huntsman.fire_mode_data = {}
+				self.huntsman.fire_mode_data.fire_rate = 0.171428
+				self.huntsman.kick = self.stat_info.kick_tables.vertical_kick
+				self.huntsman.supported = true
+				self.huntsman.ads_speed = 0.440
+				self.huntsman.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3100,
+					min_mult = 0.25
+				}
+				self.huntsman.stats = {
+					damage = 90,
+					spread = 58,
+					recoil = 43,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 21,
+					suppression = 3,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.huntsman.stats_modifiers = nil
+				self.huntsman.timers.reload_not_empty = 2.3
+				self.huntsman.timers.reload_empty = 2.3
+				self.huntsman.timers.reload_exit_empty = 0.3
+				self.huntsman.timers.reload_exit_not_empty = 0.3
+				self.huntsman.reload_speed_multiplier = 1.2
+				self.huntsman.panic_suppression_chance = 0.05
+			
+		--SECONDARIES
+
+			--Claire 12G
+				self.coach.muzzleflash = "effects/particles/shotgun/muzzleflash"
+				self.coach.rays = 8
+				self.coach.kick = self.stat_info.kick_tables.vertical_kick
+				self.coach.AMMO_MAX = 20
+				self.coach.sounds.fire_single = "coach_fire"
+				self.coach.sounds.fire_auto = "coach_fire"		
+				self.coach.BURST_FIRE = 2
+				self.coach.CAN_TOGGLE_FIREMODE = false							
+				self.coach.BURST_FIRE_RATE_MULTIPLIER = 5
+				self.coach.DELAYED_BURST_RECOIL = false
+				self.coach.ADAPTIVE_BURST_SIZE = false		
+				self.coach.fire_mode_data = {}
+				self.coach.fire_mode_data.fire_rate = 0.171428
+				self.coach.supported = true
+				self.coach.ads_speed = 0.440
+				self.coach.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3100,
+					min_mult = 0.25
+				}
+				self.coach.stats = {
+					damage = 90,
+					spread = 58,
+					recoil = 43,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 21,
+					suppression = 3,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.coach.stats_modifiers = nil
+				self.coach.panic_suppression_chance = 0.05
+				self.coach.timers.reload_exit_empty = 0.3
+				self.coach.timers.reload_exit_not_empty = 0.3
+				self.coach.reload_speed_multiplier = 1.2
+
+
+
+
+
 	--[[     LIGHT ARs     ]]
 
 		--PRIMARIES
 	
-	
+			--AMCAR (M733)
+				self.amcar.desc_id = "bm_amcar_sc_desc"
+				self.amcar.has_description = true
+				self.amcar.CLIP_AMMO_MAX = 30
+				self.amcar.AMMO_MAX = 180
+				self.amcar.fire_mode_data.fire_rate = 0.075
+				self.amcar.kick = self.stat_info.kick_tables.even_recoil
+				self.amcar.supported = true
+				self.amcar.ads_speed = 0.320
+				self.amcar.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.amcar.stats = {
+					damage = 20,
+					spread = 75,
+					recoil = 83,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.amcar.stats_modifiers = nil
+				self.amcar.timers.reload_not_empty = 2.10
+				self.amcar.timers.reload_empty = 2.9 		
+				self.amcar.timers.reload_exit_empty = 0.4
+				self.amcar.timers.reload_exit_not_empty = 0.5
+				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
+					self.amcar.timers.reload_exit_empty = 1
+					self.amcar.timers.reload_exit_not_empty = 1
+				end
+				self.amcar.panic_suppression_chance = 0.05
 			
-			--Commando 553		
+			--Commando 553
 				self.s552.desc_id = "bm_s552_sc_desc"
 				self.s552.has_description = true					
 				self.s552.fire_mode_data.fire_rate = 0.08571428571
@@ -7468,46 +7521,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.timers.reload_exit_not_empty = 0.75
 				self.s552.panic_suppression_chance = 0.05
 
-			--AMCAR (M733)
-				self.amcar.desc_id = "bm_amcar_sc_desc"
-				self.amcar.has_description = true
-				self.amcar.CLIP_AMMO_MAX = 30
-				self.amcar.AMMO_MAX = 180
-				self.amcar.fire_mode_data.fire_rate = 0.075
-				self.amcar.auto.fire_rate = 0.075
-				self.amcar.kick = self.stat_info.kick_tables.even_recoil
-				self.amcar.supported = true
-				self.amcar.ads_speed = 0.320
-				self.amcar.damage_falloff = {
-					start_dist = 2500,
-					end_dist = 6000,
-					min_mult = 0.5
-				}
-				self.amcar.stats = {
-					damage = 20,
-					spread = 75,
-					recoil = 83,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 25,
-					suppression = 9,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.amcar.stats_modifiers = nil
-				self.amcar.timers.reload_not_empty = 2.10
-				self.amcar.timers.reload_empty = 2.9 		
-				self.amcar.timers.reload_exit_empty = 0.4
-				self.amcar.timers.reload_exit_not_empty = 0.5
-				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
-					self.amcar.timers.reload_exit_empty = 1
-					self.amcar.timers.reload_exit_not_empty = 1
-				end
-				self.amcar.panic_suppression_chance = 0.05
-
 			--JP36
 				self.g36.desc_id = "bm_g36_sc_desc"
 				self.g36.has_description = true				
@@ -7549,7 +7562,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.desc_id = "bm_vhs_sc_desc"
 				self.vhs.has_description = true					
 				self.vhs.CLIP_AMMO_MAX = 30
-				self.vhs.AMMO_MAX = 180
+				self.vhs.AMMO_MAX = 150
 				self.vhs.fire_mode_data.fire_rate = 0.06976744186
 				self.vhs.CAN_TOGGLE_FIREMODE = true
 				self.vhs.auto = {}
@@ -7560,10 +7573,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 7200,
-					min_mult = 0.5
+					min_mult = 0.4166
 				}
 				self.vhs.stats = {
-					damage = 20,
+					damage = 24,
 					spread = 91,
 					recoil = 82,
 					spread_moving = 6,
@@ -7586,9 +7599,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Car 4
 				self.new_m4.desc_id = "bm_m4_sc_desc"
 				self.new_m4.has_description = true
-				self.new_m4.AMMO_MAX = 150
 				self.new_m4.CLIP_AMMO_MAX = 30
-				self.new_m4.fire_mode_data.fire_rate = 0.08571428
+				self.new_m4.AMMO_MAX = 150
+				self.new_m4.fire_mode_data.fire_rate = 0.08
 				self.new_m4.kick = self.stat_info.kick_tables.moderate_kick
 				self.new_m4.supported = true
 				self.new_m4.ads_speed = 0.340
@@ -7597,7 +7610,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					end_dist = 6200,
 					min_mult = 0.4166
 				}
-				self.new_m4.damage_type = "assault_rifle"
 				self.new_m4.stats = {
 					damage = 24,
 					spread = 81,
@@ -7613,18 +7625,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.new_m4.stats_modifiers = nil
-
 				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 					self.new_m4.timers.reload_not_empty = 1.6
 					self.new_m4.timers.reload_empty = 2.3
 					self.new_m4.timers.reload_exit_empty = 0.88
 					self.new_m4.timers.reload_exit_not_empty = 0.7
-					self.new_m4.reload_speed_multiplier = 0.71
+					self.new_m4.reload_speed_multiplier = 0.7455
 				else
 					self.new_m4.timers.reload_not_empty = 2.5
 					self.new_m4.timers.reload_empty = 3.43
 					self.new_m4.timers.reload_exit_empty = 1
 					self.new_m4.timers.reload_exit_not_empty = 0.95
+					self.new_m4.reload_speed_multiplier = 1.05
 				end
 				self.new_m4.panic_suppression_chance = 0.05
 
@@ -7664,6 +7676,75 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.timers.reload_exit_empty = 1.00
 				self.ak5.timers.reload_exit_not_empty = 0.95
 				self.ak5.panic_suppression_chance = 0.05
+
+			--Union 5.56
+				self.corgi.desc_id = "bm_corgi_sc_desc"
+				self.corgi.has_description = true			
+				self.corgi.CLIP_AMMO_MAX = 30
+				self.corgi.AMMO_MAX = 180
+				self.corgi.fire_mode_data.fire_rate = 0.07058823529
+				self.corgi.CAN_TOGGLE_FIREMODE = true
+				self.corgi.auto = {}
+				self.corgi.auto.fire_rate = 0.07058823529
+				self.corgi.kick = self.stat_info.kick_tables.moderate_kick
+				self.corgi.supported = true
+				self.corgi.ads_speed = 0.300
+				self.corgi.damage_falloff = {
+					start_dist = 2800,
+					end_dist = 6800,
+					min_mult = 0.4166
+				}
+				self.corgi.stats = {
+					damage = 20,
+					spread = 86,
+					recoil = 76,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.corgi.stats_modifiers = nil
+				self.corgi.panic_suppression_chance = 0.05
+				self.corgi.timers.reload_exit_empty = 0.6
+				self.corgi.timers.reload_exit_not_empty = 0.8
+
+			--UAR (AUG)
+				self.aug.desc_id = "bm_aug_sc_desc"
+				self.aug.has_description = true					
+				self.aug.AMMO_MAX = 150
+				self.aug.fire_mode_data.fire_rate = 0.08275862
+				self.aug.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.aug.supported = true
+				self.aug.ads_speed = 0.300
+				self.aug.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 7000,
+					min_mult = 0.4166
+				}
+				self.aug.stats = {
+					damage = 24,
+					spread = 88,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 26,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.aug.stats_modifiers = nil
+				self.aug.timers.reload_exit_empty = 1.05
+				self.aug.timers.reload_exit_not_empty = 1.7
+				self.aug.panic_suppression_chance = 0.05
+				self.aug.CLIP_AMMO_MAX = 30
 
 			--Ak17
 				self.flint.desc_id = "bm_flint_sc_desc"
@@ -7737,75 +7818,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak74.timers.reload_exit_empty = 0.55
 				self.ak74.timers.reload_exit_not_empty = 0.9
 
-			--Union 5.56
-				self.corgi.desc_id = "bm_corgi_sc_desc"
-				self.corgi.has_description = true			
-				self.corgi.CLIP_AMMO_MAX = 30
-				self.corgi.AMMO_MAX = 150
-				self.corgi.fire_mode_data.fire_rate = 0.07058823529
-				self.corgi.CAN_TOGGLE_FIREMODE = true
-				self.corgi.auto = {}
-				self.corgi.auto.fire_rate = 0.07058823529
-				self.corgi.kick = self.stat_info.kick_tables.moderate_kick
-				self.corgi.supported = true
-				self.corgi.ads_speed = 0.300
-				self.corgi.damage_falloff = {
-					start_dist = 2800,
-					end_dist = 6800,
-					min_mult = 0.4166
-				}
-				self.corgi.stats = {
-					damage = 24,
-					spread = 81,
-					recoil = 80,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 25,
-					suppression = 9,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 9,
-					reload = 20
-				}
-				self.corgi.stats_modifiers = nil
-				self.corgi.panic_suppression_chance = 0.05
-				self.corgi.timers.reload_exit_empty = 0.6
-				self.corgi.timers.reload_exit_not_empty = 0.8
-
-			--UAR (AUG)
-				self.aug.desc_id = "bm_aug_sc_desc"
-				self.aug.has_description = true					
-				self.aug.AMMO_MAX = 150
-				self.aug.fire_mode_data.fire_rate = 0.08275862
-				self.aug.kick = self.stat_info.kick_tables.moderate_left_kick
-				self.aug.supported = true
-				self.aug.ads_speed = 0.300
-				self.aug.damage_falloff = {
-					start_dist = 3000,
-					end_dist = 7000,
-					min_mult = 0.4166
-				}
-				self.aug.stats = {
-					damage = 24,
-					spread = 81,
-					recoil = 86,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 26,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.aug.stats_modifiers = nil
-				self.aug.timers.reload_exit_empty = 1.05
-				self.aug.timers.reload_exit_not_empty = 1.7
-				self.aug.panic_suppression_chance = 0.05
-				self.aug.CLIP_AMMO_MAX = 30
-
 		--SECONDARIES
 
 			--Para
@@ -7867,8 +7879,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.komodo.stats = {
 					damage = 20,
-					spread = 85,
-					recoil = 83,
+					spread = 81,
+					recoil = 82,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -7905,8 +7917,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.famas.stats = {
 					damage = 20,
-					spread = 81,
-					recoil = 78,
+					spread = 85,
+					recoil = 80,
 					spread_moving = 4,
 					zoom = 1,
 					concealment = 28,
@@ -7964,10 +7976,87 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hajk.timers.reload_exit_empty = 0.35
 				self.hajk.timers.reload_exit_not_empty = 0.65
 
-
 	--[[     HEAVY ARs     ]]
 
 		--PRIMARIES
+
+			--AMR-16
+				self.m16.desc_id = "bm_m16_sc_desc"
+				self.m16.has_description = true
+				self.m16.fire_mode_data.fire_rate = 0.08571428571
+				self.m16.auto.fire_rate = 0.08571428571
+				self.m16.CLIP_AMMO_MAX = 30
+				self.m16.AMMO_MAX = 120
+				self.m16.FIRE_MODE = "auto"				
+				self.m16.CAN_TOGGLE_FIREMODE = true
+				self.m16.kick = self.stat_info.kick_tables.moderate_kick		
+				self.m16.supported = true
+				self.m16.ads_speed = 0.360
+				self.m16.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 6200,
+					min_mult = 0.3333
+				}
+				self.m16.stats = {
+					damage = 30,
+					spread = 83,
+					recoil = 85,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 21,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.m16.stats_modifiers = nil
+				self.m16.panic_suppression_chance = 0.05
+				self.m16.reload_speed_multiplier = 1.1
+				self.m16.timers.reload_exit_empty = 0.7
+				self.m16.timers.reload_exit_not_empty = 0.95
+
+			--Queen's Wrath
+				self.l85a2.desc_id = "bm_l85a2_sc_desc"
+				self.l85a2.has_description = true
+				self.l85a2.CLIP_AMMO_MAX = 30
+				self.l85a2.AMMO_MAX = 120
+				self.l85a2.FIRE_MODE = "auto"
+				self.l85a2.fire_mode_data = {}
+				self.l85a2.fire_mode_data.fire_rate = 0.096
+				self.l85a2.sounds.enter_steelsight = "lmg_steelsight_enter"
+				self.l85a2.sounds.leave_steelsight = "lmg_steelsight_exit"
+				self.l85a2.CAN_TOGGLE_FIREMODE = true
+				self.l85a2.kick = {}
+				self.l85a2.kick = self.stat_info.kick_tables.moderate_kick
+				self.l85a2.supported = true
+				self.l85a2.ads_speed = 0.420
+				self.l85a2.damage_falloff = {
+					start_dist = 3200,
+					end_dist = 7800,
+					min_mult = 0.3333
+				}	
+				self.l85a2.stats = {
+					damage = 30,
+					spread = 91,
+					recoil = 90,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 19,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.l85a2.stats_modifiers = nil
+				self.l85a2.timers.reload_not_empty = 3
+				self.l85a2.timers.reload_empty = 4	
+				self.l85a2.timers.reload_exit_empty = 0.75
+				self.l85a2.timers.reload_exit_not_empty = 1.05
+				self.l85a2.panic_suppression_chance = 0.05
 
 			--Akimbo Krinkov
 				self.x_akmsu.desc_id = "bm_x_akmsu_sc_desc"
@@ -8078,84 +8167,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.akm_gold.stats_modifiers = nil
 				self.akm_gold.panic_suppression_chance = 0.05
-
-			--AMR-16
-				self.m16.desc_id = "bm_m16_sc_desc"
-				self.m16.has_description = true
-				self.m16.fire_mode_data.fire_rate = 0.08571428571
-				self.m16.auto.fire_rate = 0.08571428571
-				self.m16.CLIP_AMMO_MAX = 30
-				self.m16.AMMO_MAX = 120
-				self.m16.FIRE_MODE = "auto"				
-				self.m16.CAN_TOGGLE_FIREMODE = true
-				self.m16.kick = self.stat_info.kick_tables.moderate_kick		
-				self.m16.supported = true
-				self.m16.ads_speed = 0.360
-				self.m16.damage_falloff = {
-					start_dist = 2200,
-					end_dist = 6200,
-					min_mult = 0.3333
-				}
-				self.m16.stats = {
-					damage = 30,
-					spread = 83,
-					recoil = 85,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 21,
-					suppression = 7,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.m16.stats_modifiers = nil
-				self.m16.panic_suppression_chance = 0.05
-				self.m16.reload_speed_multiplier = 1.1
-				self.m16.timers.reload_exit_empty = 0.7
-				self.m16.timers.reload_exit_not_empty = 0.95
-
-			--Queen's Wrath
-				self.l85a2.desc_id = "bm_l85a2_sc_desc"
-				self.l85a2.has_description = true
-				self.l85a2.CLIP_AMMO_MAX = 30
-				self.l85a2.AMMO_MAX = 120
-				self.l85a2.FIRE_MODE = "auto"
-				self.l85a2.fire_mode_data = {}
-				self.l85a2.fire_mode_data.fire_rate = 0.096
-				self.l85a2.sounds.enter_steelsight = "lmg_steelsight_enter"
-				self.l85a2.sounds.leave_steelsight = "lmg_steelsight_exit"
-				self.l85a2.CAN_TOGGLE_FIREMODE = true
-				self.l85a2.kick = {}
-				self.l85a2.kick = self.stat_info.kick_tables.moderate_kick
-				self.l85a2.supported = true
-				self.l85a2.ads_speed = 0.420
-				self.l85a2.damage_falloff = {
-					start_dist = 3200,
-					end_dist = 7800,
-					min_mult = 0.3333
-				}	
-				self.l85a2.stats = {
-					damage = 30,
-					spread = 91,
-					recoil = 90,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 19,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 9,
-					reload = 20
-				}
-				self.l85a2.stats_modifiers = nil
-				self.l85a2.timers.reload_not_empty = 3
-				self.l85a2.timers.reload_empty = 4	
-				self.l85a2.timers.reload_exit_empty = 0.75
-				self.l85a2.timers.reload_exit_not_empty = 1.05
-				self.l85a2.panic_suppression_chance = 0.05
 
 			--Byk-1 (OTs-14)
 				self.groza.desc_id = "bm_groza_sc_desc"
@@ -8280,9 +8291,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akmsu.timers.reload_empty = 3.7
 				self.akmsu.timers.reload_exit_empty = 0.6
 				self.akmsu.timers.reload_exit_not_empty = 0.55
-
-
-
 
 	--[[     DMRs     ]]
 
@@ -8664,6 +8672,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 
+
 	--[[     LIGHT SNIPERS     ]]	
 		
 		--PRIMARIES
@@ -8915,9 +8924,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scout.reload_speed_multiplier = 1.25
 				self.scout.timers.reload_exit_empty = 0.5
 				self.scout.timers.reload_exit_not_empty = 0.95
-
-
-
 
 	--[[     HEAVY SNIPERS     ]]
 
@@ -9195,9 +9201,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.desertfox.timers.reload_exit_empty = 0.7
 			self.desertfox.timers.reload_exit_not_empty = 0.75
 
-
-
-
 	--[[     ANTI-MATERIEL SNIPERS     ]]
 
 		--Thanatos .50 cal
@@ -9236,6 +9239,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.timers.reload_exit_empty = 0.85
 			self.m95.timers.reload_exit_not_empty = 1.1
 			self.m95.timers.reload_exit_not_empty = 1.1
+
 
 
 
@@ -9460,9 +9464,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.timers.reload_exit_not_empty = 2
 			self.m134.sounds.spin_start = "swatturret_spin_start"
 			self.m134.sounds.spin_end = "swatturret_spin_stop"
-
-
-
 
 	--[[     HEAVY MGs     ]]
 

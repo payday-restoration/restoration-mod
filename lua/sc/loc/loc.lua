@@ -1419,6 +1419,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		--Scunt
+		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
 		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",

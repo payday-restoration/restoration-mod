@@ -16699,6 +16699,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
 	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 
+	if not self.wpn_fps_lmg_hk51b.override then
+		self.wpn_fps_lmg_hk51b.override = {}
+	end
+
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_smg_mp5_s_ring = {
+		stats = deep_clone(stocks.remove_folded_stats),
+		custom_stats = deep_clone(stocks.remove_folded_stats)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_smg_mp5_s_folding = {
+		stats = deep_clone(stocks.unfold_folded_stats),
+		custom_stats = deep_clone(stocks.unfold_folded_stats)
+	}
+
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_ring")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_folding")
+			
+	self.wpn_fps_lmg_hk51b_npc.override = deep_clone(self.wpn_fps_lmg_hk51b.override)		
+	self.wpn_fps_lmg_hk51b_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk51b.uses_parts)		
+
 end)
 
 --Pronghorn

@@ -19,7 +19,7 @@
 
 		<body name="body_helmet" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
+			<object name="c_helmet" collision_type="sphere" />
 		</body>
 		<body name="body_helmet_glass" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -228,7 +228,7 @@
 
 	<decal_surfaces default_material="steel_no_decal" >
 		<decal_mesh name="dm_helmet_glass" 		enabled="true" 	material="glass_no_decal" />
-
+		<decal_mesh name="dm_head" 				enabled="false" material="flesh" />
 		<decal_mesh name="dm_armor_chest" 		enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_stomache" 	enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_back" 		enabled="true" 	material="steel_no_decal" />
@@ -335,24 +335,16 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass">
-				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
-					<material materials="mtr_bulldozer" max_distance="0"/>
-					<material materials="mtr_glass" />
+				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000" >
 				</object>
 				<object name="g_helmet_glass_lod1" 		enabled="true" lod="1" >
-					<material materials="mtr_bulldozer" max_distance="0"/>
-					<material materials="mtr_glass" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
-				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
-					<material materials="mtr_bulldozer" max_distance="0"/>
-					<material materials="mtr_glass" />
+				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0" >
 				</object>
 				<object name="g_helmet_glass_crk_lod1" 	enabled="false" lod="1" >
-					<material materials="mtr_bulldozer" max_distance="0"/>
-					<material materials="mtr_glass" />
 				</object>
 			</lod_object>
 

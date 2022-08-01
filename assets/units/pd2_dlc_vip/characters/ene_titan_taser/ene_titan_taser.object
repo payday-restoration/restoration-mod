@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" orientation_object="root_point" />
-	<sequence_manager file="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -259,21 +259,7 @@
 		</graphic_group>
 		
 		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
-
-		<lod_object name="lod_headmeat">
-			<object name="g_headmeat"       enabled="false"  max_distance="2000"  max_draw_lod="0">
-				<material materials="mtr_ene_acc_swat_helmet" max_distance="0" />
-				<material materials="mtr_gore" />
-			</object>
-		</lod_object>
-		<lod_object name="lod_headmeat2">
-			<object name="g_headmeat2"       enabled="false"  max_distance="2000">
-				<material materials="mtr_ene_acc_swat_helmet_lod" max_distance="0" />
-				<material materials="mtr_gore" />
-			</object>
-		</lod_object>				
-		
+		<object name="g_head_gore2" enabled="false" />		
 	</graphics>
 
 </dynamic_object>

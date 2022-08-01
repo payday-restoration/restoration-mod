@@ -661,10 +661,17 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_contour" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
-	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" load="true" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
+
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="true" force="false"/>
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="true" force="false"/>
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="true" force="false"/>
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="true" force="false"/>
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="true" force="false"/>
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="true" force="false"/>
+	
 	<texture			path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_il" force="false"/>	   

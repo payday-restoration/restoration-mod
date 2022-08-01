@@ -164,7 +164,12 @@ function restoration:Init()
 			end
 		end		
 	end		
-		
+	
+	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
+	restoration.disable_natural_captain = {	
+		--Fill her up!
+	}
+			
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--

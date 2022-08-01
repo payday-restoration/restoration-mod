@@ -1041,7 +1041,7 @@ local muzzle_device = {
 			concealment = 1
 		},
 		supp_a_stats = {
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1,
 			value = 3,
 			spread = -1,
@@ -1058,7 +1058,7 @@ local muzzle_device = {
 			concealment = 1
 		},
 		supp_a_alt_stats = {
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1,
 			value = 3,
 			recoil = -2,
@@ -1073,7 +1073,7 @@ local muzzle_device = {
 			recoil = 2
 		},
 		supp_rec_stats = {
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1,
 			value = 3,
 			spread = -1,
@@ -1090,7 +1090,7 @@ local muzzle_device = {
 			recoil = -2
 		},
 		supp_acc_stats = {
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1,
 			value = 3,
 			spread = 1,
@@ -1109,7 +1109,7 @@ local muzzle_device = {
 			concealment = -1
 		},
 		supp_b_stats = {
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			value = 2,
 			recoil = 2,
@@ -1122,7 +1122,7 @@ local muzzle_device = {
 			concealment = -1
 		},
 		supp_b_alt_stats = {
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			value = 2,
 			spread = 1,
@@ -1281,6 +1281,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_large.supported = true
+	self.parts.wpn_fps_upg_ns_ass_smg_large.has_description = true
+	self.parts.wpn_fps_upg_ns_ass_smg_large.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_ass_smg_large.stats = deep_clone(muzzle_device.supp_c_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
@@ -1293,6 +1295,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.supported = true
+	self.parts.wpn_fps_upg_ns_ass_smg_medium.has_description = true
+	self.parts.wpn_fps_upg_ns_ass_smg_medium.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.stats = deep_clone(muzzle_device.supp_b_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.perks = {"silencer"}
 	
@@ -1304,6 +1308,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_small.supported = true
+	self.parts.wpn_fps_upg_ns_ass_smg_small.has_description = true
+	self.parts.wpn_fps_upg_ns_ass_smg_small.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_ass_smg_small.stats = deep_clone(muzzle_device.supp_a_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_small.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_small.perks = {"silencer"}
@@ -1316,6 +1322,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_large.supported = true
+	self.parts.wpn_fps_upg_ns_pis_large.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_large.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_large.stats = deep_clone(muzzle_device.supp_c_stats)
 	self.parts.wpn_fps_upg_ns_pis_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
@@ -1328,6 +1336,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_medium.supported = true
+	self.parts.wpn_fps_upg_ns_pis_medium.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_medium.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_medium.stats = deep_clone(muzzle_device.supp_b_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium.perks = {"silencer"}
 
@@ -1339,6 +1349,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_small.supported = true
+	self.parts.wpn_fps_upg_ns_pis_small.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_small.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_small.stats = deep_clone(muzzle_device.supp_a_stats)
 	self.parts.wpn_fps_upg_ns_pis_small.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_small.perks = {"silencer"}
@@ -1351,6 +1363,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		40
 	}	
 	self.parts.wpn_fps_upg_ns_shot_thick.supported = true	
+	self.parts.wpn_fps_upg_ns_shot_thick.has_description = true
+	self.parts.wpn_fps_upg_ns_shot_thick.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_shot_thick.stats = deep_clone(muzzle_device.supp_b_stats)
 	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {}		
 	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}	
@@ -1388,6 +1402,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.has_description = true
 	--self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzzle_a_stats)
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.suppression = 12
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		
@@ -2201,6 +2216,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_pis_ns_flash.desc_id = "bm_wp_upg_flash_hider"
 	--self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
 	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
+	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 	
@@ -2213,6 +2229,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Asepsis Suppressor
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.pcs = {}
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.supported = true
+	self.parts.wpn_fps_upg_ns_pis_medium_slim.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_medium_slim.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.stats = deep_clone(muzzle_device.supp_b_alt_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.perks = {"silencer"}
@@ -2378,9 +2396,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_uupg_b_sd.supported = true
+	self.parts.wpn_fps_m4_uupg_b_sd.has_description = true
+	self.parts.wpn_fps_m4_uupg_b_sd.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_m4_uupg_b_sd.stats = {
 		value = 3,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_m4_uupg_b_sd.perks = {"silencer"}
@@ -4342,9 +4362,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp5_fg_mp5sd.supported = true
+	self.parts.wpn_fps_smg_mp5_fg_mp5sd.has_description = true
+	self.parts.wpn_fps_smg_mp5_fg_mp5sd.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_mp5_fg_mp5sd.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_mp5_fg_mp5sd.perks = {"silencer"}
@@ -5562,9 +5584,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp7_b_suppressed.supported = true
+	self.parts.wpn_fps_smg_mp7_b_suppressed.has_description = true
+	self.parts.wpn_fps_smg_mp7_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_mp7_b_suppressed.stats = {
 		value = 3,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_mp7_b_suppressed.perks = {"silencer"}
@@ -6339,10 +6363,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m95", "resmod_m95", function(self)
 	
 	--Suppressed Barrel
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.pcs = {}
+	self.parts.wpn_fps_snp_m95_barrel_suppressed.has_description = true
+	self.parts.wpn_fps_snp_m95_barrel_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.supported = true
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.stats = {
 		value = 5,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.perks = {"silencer"}
@@ -6377,9 +6403,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 	--Sniper Suppressor
 	self.parts.wpn_fps_snp_msr_ns_suppressor.pcs = {}
 	self.parts.wpn_fps_snp_msr_ns_suppressor.supported = true
+	self.parts.wpn_fps_snp_msr_ns_suppressor.has_description = true
+	self.parts.wpn_fps_snp_msr_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_msr_ns_suppressor.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_msr_ns_suppressor.perks = {"silencer"}
@@ -6432,9 +6460,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r93", "resmod_r93", function(self)
 	--Compensated Suppressor
 	self.parts.wpn_fps_snp_r93_b_suppressed.pcs = {}
 	self.parts.wpn_fps_snp_r93_b_suppressed.supported = true
+	self.parts.wpn_fps_snp_r93_b_suppressed.has_description = true
+	self.parts.wpn_fps_snp_r93_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_r93_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_r93_b_suppressed.perks = {"silencer"}
@@ -6704,9 +6734,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 	--Suppressed Barrel
 	self.parts.wpn_fps_sho_striker_b_suppressed.pcs = {}
 	self.parts.wpn_fps_sho_striker_b_suppressed.supported = true
+	self.parts.wpn_fps_sho_striker_b_suppressed.has_description = true
+	self.parts.wpn_fps_sho_striker_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_sho_striker_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_sho_striker_b_suppressed.custom_stats = {
@@ -7086,9 +7118,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	--Suppressed Barrel
 	self.parts.wpn_fps_ass_famas_b_suppressed.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_suppressed.supported = true
+	self.parts.wpn_fps_ass_famas_b_suppressed.has_description = true
+	self.parts.wpn_fps_ass_famas_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_ass_famas_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_famas_b_suppressed.perks = {"silencer"}
@@ -7124,9 +7158,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	--Suppressor
 	self.parts.wpn_fps_smg_scorpion_b_suppressed.pcs = {}
 	self.parts.wpn_fps_smg_scorpion_b_suppressed.supported = true
+	self.parts.wpn_fps_smg_scorpion_b_suppressed.has_description = true
+	self.parts.wpn_fps_smg_scorpion_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_scorpion_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_scorpion_b_suppressed.perks = {"silencer"}
@@ -7460,9 +7496,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 	--Silent Death
 	self.parts.wpn_fps_smg_uzi_b_suppressed.pcs = {}
 	self.parts.wpn_fps_smg_uzi_b_suppressed.supported = true
+	self.parts.wpn_fps_smg_uzi_b_suppressed.has_description = true
+	self.parts.wpn_fps_smg_uzi_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_uzi_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_uzi_b_suppressed.perks = {"silencer"}
@@ -8285,6 +8323,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_large_kac.supported = true
+	self.parts.wpn_fps_upg_ns_pis_large_kac.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_large_kac.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_large_kac.stats = deep_clone(muzzle_device.supp_c_alt_stats)
 	self.parts.wpn_fps_upg_ns_pis_large_kac.perks = {"silencer"}
 	
@@ -8296,6 +8336,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_medium_gem.supported = true
+	self.parts.wpn_fps_upg_ns_pis_medium_gem.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_medium_gem.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_medium_gem.stats = deep_clone(muzzle_device.supp_b_alt_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_gem.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_gem.perks = {"silencer"}
@@ -8837,9 +8879,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	--Suppressed Barrel
 	self.parts.wpn_fps_smg_sterling_b_suppressed.pcs = {}
 	self.parts.wpn_fps_smg_sterling_b_suppressed.supported = true
+	self.parts.wpn_fps_smg_sterling_b_suppressed.has_description = true
+	self.parts.wpn_fps_smg_sterling_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_sterling_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_sterling_b_suppressed.perks = {"silencer"}
@@ -9038,9 +9082,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	--Silenced Barrel
 	self.parts.wpn_fps_snp_mosin_b_sniper.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_sniper.supported = true
+	self.parts.wpn_fps_snp_mosin_b_sniper.has_description = true
+	self.parts.wpn_fps_snp_mosin_b_sniper.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_mosin_b_sniper.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_mosin_b_sniper.perks = {"silencer"}
@@ -9291,9 +9337,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_vhs_b_silenced.supported = true
+	self.parts.wpn_fps_ass_vhs_b_silenced.has_description = true
+	self.parts.wpn_fps_ass_vhs_b_silenced.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_ass_vhs_b_silenced.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_vhs_b_silenced.perks = {"silencer"}
@@ -9442,10 +9490,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	
 	--PBS Suppressor
 	self.parts.wpn_fps_upg_ns_ass_pbs1.pcs = {}
+	self.parts.wpn_fps_upg_ns_ass_pbs1.has_description = true
+	self.parts.wpn_fps_upg_ns_ass_pbs1.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_ass_pbs1.supported = true
 	self.parts.wpn_fps_upg_ns_ass_pbs1.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_upg_ns_ass_pbs1.perks = {"silencer"}
@@ -9670,9 +9720,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 		40
 	}
 	self.parts.wpn_fps_smg_cobray_ns_silencer.supported = true
+	self.parts.wpn_fps_smg_cobray_ns_silencer.has_description = true
+	self.parts.wpn_fps_smg_cobray_ns_silencer.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_cobray_ns_silencer.stats = {
 		value = 3,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_cobray_ns_silencer.perks = {"silencer"}
@@ -9884,9 +9936,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Tactical Suppressor
 	self.parts.wpn_fps_smg_mp9_b_suppressed.pcs = {}
 	self.parts.wpn_fps_smg_mp9_b_suppressed.supported = true
+	self.parts.wpn_fps_smg_mp9_b_suppressed.has_description = true
+	self.parts.wpn_fps_smg_mp9_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_mp9_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_mp9_b_suppressed.perks = {"silencer"}
@@ -9900,9 +9954,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Mall Ninja Barrel
 	self.parts.wpn_fps_smg_p90_b_ninja.pcs = {}
 	self.parts.wpn_fps_smg_p90_b_ninja.supported = true
+	self.parts.wpn_fps_smg_p90_b_ninja.has_description = true
+	self.parts.wpn_fps_smg_p90_b_ninja.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_p90_b_ninja.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_p90_b_ninja.perks = {"silencer"}
@@ -9948,9 +10004,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Budget Suppressor
 	self.parts.wpn_fps_upg_ns_ass_filter.pcs = {}
 	self.parts.wpn_fps_upg_ns_ass_filter.supported = true
+	self.parts.wpn_fps_upg_ns_ass_filter.has_description = true
+	self.parts.wpn_fps_upg_ns_ass_filter.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_ass_filter.stats = {
 		value = 0,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_upg_ns_ass_filter.perks = {"silencer"}
@@ -9958,6 +10016,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Jungle Ninja Suppressor
 	self.parts.wpn_fps_upg_ns_pis_jungle.pcs = {}
 	self.parts.wpn_fps_upg_ns_pis_jungle.supported = true
+	self.parts.wpn_fps_upg_ns_pis_jungle.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_jungle.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_jungle.stats = deep_clone(muzzle_device.supp_rec2_acc2_stats)
 	self.parts.wpn_fps_upg_ns_pis_jungle.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_jungle.perks = {"silencer"}
@@ -9965,6 +10025,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Shh!
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.pcs = {}
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.supported = true
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.has_description = true
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.stats = deep_clone(muzzle_device.supp_c_stats)
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.perks = {"silencer"}
@@ -10171,9 +10233,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.supported = true
+	self.parts.wpn_fps_sho_aa12_barrel_silenced.has_description = true
+	self.parts.wpn_fps_sho_aa12_barrel_silenced.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.custom_stats = {
@@ -10322,9 +10386,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_winchester1874", "resmod_wincheste
 		40
 	}
 	self.parts.wpn_fps_snp_winchester_b_suppressed.supported = true
+	self.parts.wpn_fps_snp_winchester_b_suppressed.has_description = true
+	self.parts.wpn_fps_snp_winchester_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_winchester_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_winchester_b_suppressed.perks = {"silencer"}
@@ -10499,7 +10565,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	self.parts.wpn_fps_ass_asval_b_proto.supported = true
 	self.parts.wpn_fps_ass_asval_b_proto.stats = {
 		value = 2,
-		suppression = -10,
+		suppression = -13,
 		alert_size = 1
 	}
 	self.parts.wpn_fps_ass_asval_b_proto.sound_switch = nil
@@ -10750,9 +10816,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 	--Tooth Fairy Suppressor
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.pcs = {}
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.supported = true
+	self.parts.wpn_fps_ass_sub2000_fg_suppressed.has_description = true
+	self.parts.wpn_fps_ass_sub2000_fg_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.perks = {"silencer"}
@@ -10800,9 +10868,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 		40
 	}
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.supported = true
+	self.parts.wpn_fps_snp_wa2000_b_suppressed.has_description = true
+	self.parts.wpn_fps_snp_wa2000_b_suppressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.perks = {"silencer"}
@@ -10910,9 +10980,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 		40
 	}
 	self.parts.wpn_fps_smg_polymer_ns_silencer.supported = true
+	self.parts.wpn_fps_smg_polymer_ns_silencer.has_description = true
+	self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_polymer_ns_silencer.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_polymer_ns_silencer.perks = {"silencer"}
@@ -11052,7 +11124,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	self.parts.wpn_fps_smg_baka_b_midsupp.supported = true
 	self.parts.wpn_fps_smg_baka_b_midsupp.stats = {
 		value = 2,
-		suppression = 11,
+		suppression = 12,
 		alert_size = -1
 	}
 	
@@ -11066,7 +11138,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	self.parts.wpn_fps_smg_baka_b_smallsupp.supported = true
 	self.parts.wpn_fps_smg_baka_b_smallsupp.stats = {
 		value = 3,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	
@@ -11488,7 +11560,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 	self.parts.wpn_fps_snp_model70_ns_suppressor.supported = true
 	self.parts.wpn_fps_snp_model70_ns_suppressor.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	
@@ -11652,9 +11724,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sr2", "resmod_sr2", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_sr2_ns_silencer.supported = true
+	self.parts.wpn_fps_smg_sr2_ns_silencer.has_description = true
+	self.parts.wpn_fps_smg_sr2_ns_silencer.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_sr2_ns_silencer.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_sr2_ns_silencer.perks = {"silencer"}
@@ -12111,9 +12185,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 	--Silentgear Silencer
 	self.parts.wpn_fps_smg_schakal_ns_silencer.pcs = {}
 	self.parts.wpn_fps_smg_schakal_ns_silencer.supported = true
+	self.parts.wpn_fps_smg_schakal_ns_silencer.has_description = true
+	self.parts.wpn_fps_smg_schakal_ns_silencer.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_schakal_ns_silencer.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_schakal_ns_silencer.perks = {"silencer"}
@@ -12194,7 +12270,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", fu
 	self.parts.wpn_fps_snp_desertfox_b_silencer.supported = true
 	self.parts.wpn_fps_snp_desertfox_b_silencer.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_desertfox_b_silencer.override = {
@@ -12276,9 +12352,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_rota_b_silencer.supported = true
+	self.parts.wpn_fps_sho_rota_b_silencer.has_description = true
+	self.parts.wpn_fps_sho_rota_b_silencer.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_sho_rota_b_silencer.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_sho_rota_b_silencer.custom_stats = {
@@ -12661,9 +12739,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 		40
 	}
 	self.parts.wpn_fps_snp_tti_ns_hex.supported = true
+	self.parts.wpn_fps_snp_tti_ns_hex.has_description = true
+	self.parts.wpn_fps_snp_tti_ns_hex.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_tti_ns_hex.stats = {
 		value = 3,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_tti_ns_hex.perks = {"silencer"}
@@ -12803,12 +12883,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_siltstone", "resmod_siltstone", fu
 		40
 	}
 	self.parts.wpn_fps_snp_siltstone_b_silenced.supported = true
+	self.parts.wpn_fps_snp_siltstone_b_silenced.has_description = true
+	self.parts.wpn_fps_snp_siltstone_b_silenced.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_siltstone_b_silenced.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
-	perks = {"silencer"}
+	self.parts.wpn_fps_snp_siltstone_b_silenced.perks = {"silencer"}
 	
 	--Grievky Compensator
 	self.parts.wpn_fps_snp_siltstone_ns_variation_b.pcs = {
@@ -15256,10 +15338,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	self.parts.wpn_fps_snp_r700_b_medium.supported = true
 	self.parts.wpn_fps_snp_r700_b_medium.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_r700_b_medium.perks = {"silencer"}
+	self.parts.wpn_fps_snp_r700_b_medium.has_description = true
+	self.parts.wpn_fps_snp_r700_b_medium.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_r700_b_medium.override = {
 		wpn_fps_bow_ecp_o_iron = {
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_o_standard", 
@@ -15380,11 +15464,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 		40	
 	}
 	self.parts.wpn_fps_snp_sbl_b_short.supported = true
+	self.parts.wpn_fps_snp_sbl_b_short.has_description = true
+	self.parts.wpn_fps_snp_sbl_b_short.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_sbl_b_short.stats = {
 		value = 2,
 		extra_ammo = -1,
 		concealment = 1,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
@@ -15607,9 +15693,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_m590_b_suppressor.supported = true
+	self.parts.wpn_fps_sho_m590_b_suppressor.has_description = true
+	self.parts.wpn_fps_sho_m590_b_suppressor.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_sho_m590_b_suppressor.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_sho_m590_b_suppressor.perks = {
@@ -15677,9 +15765,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 		40
 	}
 	self.parts.wpn_fps_smg_vityaz_b_supressed.supported = true
+	self.parts.wpn_fps_smg_vityaz_b_supressed.has_description = true
+	self.parts.wpn_fps_smg_vityaz_b_supressed.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_vityaz_b_supressed.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_vityaz_b_supressed.perks = {
@@ -15834,9 +15924,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 		40
 	}
 	self.parts.wpn_fps_ass_groza_b_supressor.supported = true
+	self.parts.wpn_fps_ass_groza_b_supressor.has_description = true
+	self.parts.wpn_fps_ass_groza_b_supressor.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_ass_groza_b_supressor.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_groza_b_supressor.perks = {"silencer"}
@@ -15914,6 +16006,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		40
 	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.supported = true
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.has_description = true
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = deep_clone(muzzle_device.supp_rec2_acc2_stats)
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.perks = {"silencer"}
@@ -16524,7 +16618,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		40
 	}
 	self.parts.wpn_fps_upg_ns_pis_putnik.supported = true
-	self.parts.wpn_fps_upg_ns_pis_putnik.has_description = false
+	self.parts.wpn_fps_upg_ns_pis_putnik.has_description = true
+	self.parts.wpn_fps_upg_ns_pis_putnik.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
 		"silencer"
 	}
@@ -16647,9 +16742,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scout", "resmod_scout", function(s
 		40
 	}
 	self.parts.wpn_fps_snp_scout_ns_suppressor.supported = true
+	self.parts.wpn_fps_snp_scout_ns_suppressor.has_description = true
+	self.parts.wpn_fps_snp_scout_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_scout_ns_suppressor.stats = {
 		value = 2,
-		suppression = 10,
+		suppression = 12,
 		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_scout_ns_suppressor.perks = {"silencer"}
@@ -18239,7 +18336,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup1.supported = true
 		self.parts.wpn_fps_ass_ns_g_sup1.stats = { 
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1,
@@ -18248,7 +18345,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup2.supported = true	
 		self.parts.wpn_fps_ass_ns_g_sup2.stats = { 
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1,
@@ -18257,7 +18354,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup3.supported = true			
 		self.parts.wpn_fps_ass_ns_g_sup3.stats = { 
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1,
@@ -18275,7 +18372,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup5.supported = true		
 		self.parts.wpn_fps_ass_ns_g_sup5.stats = { 
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1,
@@ -18284,7 +18381,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup6.supported = true		
 		self.parts.wpn_fps_ass_ns_g_sup6.stats = { 
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1,
@@ -18293,7 +18390,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup7.supported = true							
 		self.parts.wpn_fps_ass_ns_g_sup7.stats = { 
 			value = 10,
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1,
 			spread = -1,
 			recoil = 1
@@ -18301,7 +18398,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ns_g_sup8.supported = true
 		self.parts.wpn_fps_ass_ns_g_sup8.stats = { 
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1,
@@ -18393,7 +18490,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_moss464spx_supp_maxim.supported = true
 		self.parts.wpn_fps_snp_moss464spx_supp_maxim.stats = {
 			value = 5,
-			suppression = 13,
+			suppression = 12,
 			alert_size = -1
 		}				
 		self.parts.wpn_fps_snp_moss464spx_supp_maxim.custom_stats = nil
@@ -18417,7 +18514,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.supported = true
 		self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.stats = {
 			value = 5,
-			suppression = 13,
+			suppression = 12,
 			alert_size = -1
 		}				
 		self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.custom_stats = nil
@@ -19229,7 +19326,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ns_pis_cloth.supported = true
 		self.parts.wpn_fps_upg_ns_pis_cloth.stats = {
 			value = 7,
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1
 		}
 
@@ -19759,7 +19856,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_sgs_b_sil.supported = true
 		self.parts.wpn_fps_snp_sgs_b_sil.stats = { 
 			value = 5,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1
 		}
 
@@ -19908,7 +20005,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_aek971_supp_tgp_a.supported = true	
 		self.parts.wpn_fps_upg_aek971_supp_tgp_a.stats = {
 			value = 2,
-			suppression = 11,
+			suppression = 12,
 			alert_size = -1,
 			recoil = 1,
 			concealment = -2
@@ -19967,13 +20064,13 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 	self.parts.wpn_fps_smg_czevo_barrel_silenced.supported = true
 	self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
 				value = 10,
-				suppression = 13,
+				suppression = 12,
 				alert_size = -1,
 				concealment = -4,
 				spread = 2,
 				recoil = -1
 			}
-		end		
+		end	
 
 	if self.parts.wpn_fps_upg_o_prismatic then --Pawcio's SIGtac CP1
 		self.parts.wpn_fps_upg_o_prismatic.supported = true
@@ -20837,10 +20934,12 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_m200_bipod_fold.stats = { value = 0 }
 		self.parts.wpn_fps_upg_m200_bipod_fold.custom_stats = nil
 
+		self.parts.wpn_fps_upg_m200_supp.has_description = true
+		self.parts.wpn_fps_upg_m200_supp.desc_id = "bm_wp_upg_suppressor"
 		self.parts.wpn_fps_upg_m200_supp.supported = true
 		self.parts.wpn_fps_upg_m200_supp.stats = {
 			value = 2,
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1
 		}
 		self.parts.wpn_fps_upg_m200_supp.custom_stats = nil
@@ -20861,10 +20960,12 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_m107cq_barrel_long.stats = deep_clone(barrels.long_b2_stats)
 		self.parts.wpn_fps_upg_m107cq_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
+		self.parts.wpn_fps_upg_m107cq_barrel_supp.has_description = true
+		self.parts.wpn_fps_upg_m107cq_barrel_supp.desc_id = "bm_wp_upg_suppressor"
 		self.parts.wpn_fps_upg_m107cq_barrel_supp.supported = true
 		self.parts.wpn_fps_upg_m107cq_barrel_supp.stats = {
 			value = 2,
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1
 		}
 		self.parts.wpn_fps_upg_m107cq_barrel_supp.custom_stats = nil
@@ -21526,10 +21627,12 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			value = 0
 		}
 
+		self.parts.wpn_fps_upg_k31_supp.has_description = true
+		self.parts.wpn_fps_upg_k31_supp.desc_id = "bm_wp_upg_suppressor"
 		self.parts.wpn_fps_upg_k31_supp.supported = true
 		self.parts.wpn_fps_upg_k31_supp.stats = {
 			value = 2,
-			suppression = 10,
+			suppression = 12,
 			alert_size = -1
 		}
 		self.parts.wpn_fps_upg_k31_supp.perks = {"silencer"}

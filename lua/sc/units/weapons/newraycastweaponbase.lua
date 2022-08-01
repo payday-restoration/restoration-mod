@@ -731,6 +731,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:precalculate_ammo_pickup()
 end
 
+
+function NewRaycastWeaponBase:should_reload_immediately()
+	return self:weapon_tweak_data().should_reload_immediately
+end
+
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
 	if self._starwars then
 		return

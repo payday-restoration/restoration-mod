@@ -920,7 +920,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN",
 		})
-	elseif captain_type == restoration.captain_types.spring then
+	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN SQUAD",
 		})		

@@ -448,10 +448,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
-	
-	self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
-	self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult or 1
-	self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato
@@ -473,8 +469,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
-		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.9
+		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.01 or 1
+		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
 		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
@@ -483,6 +479,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
 		
 		self._burst_rounds_fired = 0
+	
+		self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
+		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
+		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse

@@ -371,6 +371,8 @@ function PlayerDamage:damage_bullet(attack_data)
 	end
 
 	local pm = managers.player
+	local t = pm:player_timer():time()
+	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -378,6 +380,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
+				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * ( 1 + (0.5 * armor_dodge_mult) ) , true))
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -402,7 +405,6 @@ function PlayerDamage:damage_bullet(attack_data)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
 		return
 	end
@@ -443,6 +445,8 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	end
 
 	local pm = managers.player
+	local t = pm:player_timer():time()
+	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -450,6 +454,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
+				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * ( 1 + (0.5 * armor_dodge_mult) ) , true))
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -474,7 +479,6 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "fire", t) then
 		return
 	end

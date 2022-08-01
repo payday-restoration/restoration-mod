@@ -15989,6 +15989,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		can_shoot_through_shield = true,
 		rof_mult = 0.666666,
 		ads_speed_mult = 1.15,
+		sms = 0.9,
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
 	

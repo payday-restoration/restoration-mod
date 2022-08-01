@@ -7630,7 +7630,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m16.desc_id = "bm_m16_sc_desc"
 				self.m16.has_description = true
 				self.m16.fire_mode_data.fire_rate = 0.08571428571
-				self.m16.auto.fire_rate = 0.08571428571
 				self.m16.CLIP_AMMO_MAX = 30
 				self.m16.AMMO_MAX = 120
 				self.m16.FIRE_MODE = "auto"				
@@ -8166,7 +8165,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			
 			--KS12 Urban (ShAK-12/ASh-12.7)
 				self.shak12.CLIP_AMMO_MAX = 20
-				self.shak12.fire_mode_data.fire_rate = 0.08
+				self.shak12.fire_mode_data.fire_rate = 0.12
+				self.shak12.fire_rate_multiplier = 1.5
 				self.shak12.kick = self.stat_info.kick_tables.even_recoil
 				self.shak12.AMMO_MAX = 60
 				--self.shak12.sounds.fire = "akm_fire_single"
@@ -8336,13 +8336,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.desc_id = "bm_ap_weapon_sc_desc"
 				self.qbu88.CLIP_AMMO_MAX = 10
 				self.qbu88.AMMO_MAX = 60
-				self.qbu88.fire_mode_data.fire_rate = 0.2
+				self.qbu88.fire_mode_data.fire_rate = 0.1956521
 				self.qbu88.fire_rate_multiplier = 1.5
 				self.qbu88.sms = 0.9
 				self.qbu88.CAN_TOGGLE_FIREMODE = false
 				self.qbu88.kick = self.stat_info.kick_tables.vertical_kick
 				self.qbu88.supported = true
-				self.qbu88.ads_speed = 0.480
+				self.qbu88.ads_speed = 0.460
 				self.qbu88.damage_falloff = {
 					start_dist = 1800,
 					end_dist = 6800,
@@ -8384,7 +8384,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.AMMO_MAX = 60
 				self.tti.FIRE_MODE = "single"
 				self.tti.fire_mode_data = {}
-				self.tti.fire_mode_data.fire_rate = 0.146341
+				self.tti.fire_mode_data.fire_rate = 0.1411764
 				self.tti.sms = 0.9
 				self.tti.kick = self.stat_info.kick_tables.vertical_kick
 				self.tti.can_shoot_through_enemy = true
@@ -12077,17 +12077,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.tactical_reload = 1
 			self.sgs.AMMO_MAX = 60
 			self.sgs.FIRE_MODE = "single"
-			self.sgs.fire_mode_data.fire_rate = 0.214285
+			self.sgs.fire_mode_data.fire_rate = 0.15
 			self.sgs.sms = 0.9
 			self.sgs.kick = self.stat_info.kick_tables.vertical_kick
 			self.sgs.can_shoot_through_enemy = true
 			self.sgs.can_shoot_through_shield = true
 			self.sgs.can_shoot_through_wall = true
 			self.sgs.supported = true
-			self.sgs.ads_speed = 0.500
+			self.sgs.ads_speed = 0.480
 			self.sgs.damage_falloff = {
 				start_dist = 2600,
-				end_dist = 6800,
+				end_dist = 7000,
 				min_mult = 0.5
 			}
 			self.sgs.stats = {
@@ -12106,6 +12106,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.armor_piercing_chance = 1
 			self.sgs.stats_modifiers = nil
 			self.sgs.panic_suppression_chance = 0.05
+			self.sgs.timers.equip = self.shepheard.timers.equip
+			self.sgs.timers.unequip = self.shepheard.timers.unequip
 			self.sgs.timers.reload_empty = self.shepheard.timers.reload_empty
 			self.sgs.timers.reload_not_empty = self.shepheard.timers.reload_not_empty
 			self.sgs.timers.reload_exit_empty = self.shepheard.timers.reload_exit_empty

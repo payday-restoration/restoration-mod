@@ -3754,4 +3754,15 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
 
+	local blanket_mult = 1.2
+	for melee_id, _ in pairs(self.melee_weapons) do
+		if self.melee_weapons[melee_id] and not self.melee_weapons[melee_id].instant then
+			if self.melee_weapons[melee_id].anim_speed_mult then
+				self.melee_weapons[melee_id].anim_speed_mult = self.melee_weapons[melee_id].anim_speed_mult * blanket_mult
+			else
+				self.melee_weapons[melee_id].anim_speed_mult = blanket_mult
+			end
+		end
+	end
+
 end)

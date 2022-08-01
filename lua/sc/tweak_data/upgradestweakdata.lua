@@ -343,6 +343,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		-0.15,
 		-0.25
 	}
+	self.values.player.body_armor.dodge_grace = {
+		1,
+		0.85,
+		0.7,
+		0.55,
+		0.25,
+		0.1,
+		0.0
+	}
 	self.values.player.body_armor.concealment = {
 		30,
 		25,
@@ -1596,13 +1605,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.damage_to_armor = {
 		{
-			{2.1, 5},
-			{2.4, 5},
-			{2.7, 5},
-			{3.0, 5},
-			{3.2, 5},
-			{3.4, 5},
-			{3.6, 5}
+			{3.5, 5},
+			{4.0, 5},
+			{4.5, 5},
+			{5.0, 5},
+			{5.3, 5},
+			{5.7, 5},
+			{6.0, 5}
 		}
 	}
 	

@@ -1588,6 +1588,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4 = {
 		translation = Vector3(0, 4, -0.56)
 	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_l85a2 = {
+		translation = Vector3(0, 11, 1.85)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m249 = {
 		translation = Vector3(0, -3, -3.4),
 	}
@@ -15978,12 +15981,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		40
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.supported = true
+	self.parts.wpn_fps_ass_shak12_body_vks.has_description = true
+	self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
-		value = 2,
-		concealment = -2,
-		recoil = 4
+		value = 9,
+		recoil = -14
 	}
-	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = nil
+	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
+		can_shoot_through_shield = true,
+		rof_mult = 0.666666,
+		ads_speed_mult = 1.15,
+	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
 	
 	--Carry Handle Sight
@@ -21576,6 +21584,69 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 	end
 
+	if self.parts.wpn_fps_snp_l115_stock then
+		self.parts.wpn_fps_upg_l115_barrel_medsupp.supported = true
+		self.parts.wpn_fps_upg_l115_barrel_medsupp.stats = {
+			value = 3,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_upg_l115_barrel_medsupp.custom_stats = nil
+		self.parts.wpn_fps_upg_l115_barrel_medsupp.perks = { "silencer" }
+
+		self.parts.wpn_fps_upg_l115_barrel_short.supported = true
+		self.parts.wpn_fps_upg_l115_barrel_short.has_description = true
+		self.parts.wpn_fps_upg_l115_barrel_short.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_upg_l115_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_l115_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.parts.wpn_fps_upg_l115_barrel_med.supported = true
+		self.parts.wpn_fps_upg_l115_barrel_med.has_description = true
+		self.parts.wpn_fps_upg_l115_barrel_med.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_upg_l115_barrel_med.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_upg_l115_barrel_med.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+
+		self.parts.wpn_fps_upg_l115_stock_aw.supported = true
+		self.parts.wpn_fps_upg_l115_stock_aw.stats = {
+			value = 2,
+			recoil = 4,
+			concealment = -2
+		}
+		self.parts.wpn_fps_upg_l115_stock_aw.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+
+		self.parts.wpn_fps_upg_l115_stock_awext.supported = true
+		self.parts.wpn_fps_upg_l115_stock_awext.stats = {
+			value = 2,
+			spread = 1,
+			recoil = 2,
+			concealment = -2
+		}
+		self.parts.wpn_fps_upg_l115_stock_aw.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+
+		self.parts.wpn_fps_upg_l115_stock_awmext.supported = true
+		self.parts.wpn_fps_upg_l115_stock_awmext.stats = {
+			value = 0,
+			spread = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_upg_l115_stock_awmext.custom_stats = nil
+
+		self.parts.wpn_fps_upg_l115_stock_ax.supported = true
+		self.parts.wpn_fps_upg_l115_stock_ax.stats = {
+			value = 3,
+			concealment = 2,
+			recoil = -4
+		}
+		self.parts.wpn_fps_upg_l115_stock_ax.custom_stats = {
+			ads_speed_mult = 0.95
+		}
+
+
+	end
 
 	if self.parts.wpn_fps_ass_plasmaproto_mag then
 		self.parts.wpn_fps_ass_plasmaproto_mag.supported = true
@@ -21657,7 +21728,6 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			recoil = -2,
 			reload = 5
 		}
-
 	end
 
 	if self.parts.wpn_fps_upg_p99_sight_tritium then

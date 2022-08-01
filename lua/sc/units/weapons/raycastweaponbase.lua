@@ -180,6 +180,7 @@ end
 function RaycastWeaponBase:_collect_hits(from, to)
 	local can_shoot_through = self._can_shoot_through_wall or self._can_shoot_through_shield or self._can_shoot_through_enemy
 	local hit_enemy = false
+	local has_hit_wall = false
 	local enemy_mask = managers.slot:get_mask("enemies")
 	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
 	local shield_mask = managers.slot:get_mask("enemy_shield_check")
@@ -209,7 +210,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 				break						
 			end
 			
-			local has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)				
+			has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)				
 		end
 	end
 

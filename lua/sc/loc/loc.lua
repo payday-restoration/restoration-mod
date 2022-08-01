@@ -1410,7 +1410,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 80% of its damage through body armor.##",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 Rifle",
-		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",		
+		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
+		--ShAK-12
+		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",		
+		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",		
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2 Rifle",
 		["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
@@ -1759,7 +1762,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",
 		["bm_wp_g3_b_short"] = "Micro Barrel",
 		["bm_wp_g3_m_psg"] = "Präzision Magazine",
-		["bm_wp_shak12_body_vks"] = "Reinforced Frame",
 
 		--VMP HK416c Fixed Stock
 		["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",

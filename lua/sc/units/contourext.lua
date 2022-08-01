@@ -33,7 +33,9 @@ local idstr_contour_opacity = Idstring("contour_opacity")
 local tmp_vec1 = Vector3()
 
 Hooks:PostHook(ContourExt, "init", "res_init", function(self)
-	self._contour_list = nil -- why define this as an empty table when every function checks it's not nil to figure out if there's a contour active...
+	if self._contour_list and not next(self._contour_list) then
+		self._contour_list = nil -- why define this as an empty table when every function checks it's not nil to figure out if there's a contour active...
+	end
 end)
 
 function ContourExt:add(type, sync, multiplier, override_color, add_as_child)

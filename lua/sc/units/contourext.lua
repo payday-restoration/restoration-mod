@@ -285,10 +285,13 @@ function ContourExt:update(unit, t, dt)
 
 					self:_upd_opacity(opacity)
 				end
-			elseif setup.fadeout_start_t and setup.fadeout_start_t < t then
+			elseif setup.fadeout_start_t and is_current then
 				local opacity = (t - setup.fadeout_start_t) / (setup.fadeout_t - setup.fadeout_start_t)
+				opacity = 1 - math.max(opacity, 0)
 
-				self:_upd_opacity(1 - opacity)
+				if self._last_opacity ~= opacity then
+					self:_upd_opacity(opacity)
+				end
 			end
 
 			index = index + 1

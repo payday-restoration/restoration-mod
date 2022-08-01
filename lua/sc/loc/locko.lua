@@ -1290,7 +1290,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 	
 		--S552
-		["bm_s552_sc_desc"] = "다른 5.56mm탄을 사용하는 소형 소총에 대한 훌륭한 대안용 소총, 국토감시부에서 선호하는 소총이기도 합니다.",				
+		["bm_s552_sc_desc"] = "다른 5.56mm탄을 사용하는 소형 소총에 대한 훌륭한 대안용 소총, 국토감시부에서 선호하는 소총이기도 합니다. 또한 더 나은 사거리를 제공하는 특수 스위스제 5.56mm탄을 사용합니다.",				
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "세계에서 가장 많이 생산된 .223탄을 사용하는 훌륭한 다목적 소총.",
 		--G36
@@ -1312,7 +1312,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. #{skill_color}#20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.##\n#{skill_color}#$BTN_BIPOD## 키를 늘러 유탄 발사기로 전환합니다.",
 		["bm_w_osipr_desc"] = "X세대 무기 기술. #{skill_color}#20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.##\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",
 		--M4/CAR-4
-		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고, AMCAR 소총에서 따와 개발된 CAR-4 소총은 현대 군대에서 인기 있는 5.56mm 소총입니다.",
+		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고, AMCAR 소총을 개량해 더 제어 가능한 발사 속도를 자랑하는 CAR-4 소총은 현대 군대에서 인기 있는 5.56mm 소총입니다.",
 		["bm_wp_upg_fg_m4a1"] = "엠포 킷",
 		["bm_wp_upg_fg_m4a1_desc"] = "이 전용 세트는 애프터마켓 플립업 조준경을 보다 전통적인 설정으로 교체합니다. #{risk}#총열덮개 모양을 덮어 씌웁니다.##",
 		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
@@ -1870,7 +1870,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end
 
 	local cute = math.rand(1)
-	local funny = 0.05
+	local funny = 0.02
 	if cute <= funny then
 		LocalizationManager:add_localized_strings({			
 			
@@ -1945,7 +1945,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end
 
 	local big = math.rand(1)
-	local pistol = 0.05
+	local pistol = 0.02
 	if big <= pistol then
 		LocalizationManager:add_localized_strings({	
 			["bm_w_deagle"] = "큰 권총",
@@ -1960,7 +1960,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	-- also why overkill not add ~ font, I hate it >:(
 	-- most of the descriptions and names is taken from the wiki
 	local blue = math.rand(1)
-	local archive = 0.05
+	local archive = 0.02
 	if blue <= archive then
 		LocalizationManager:add_localized_strings({
 		-- Abydos 

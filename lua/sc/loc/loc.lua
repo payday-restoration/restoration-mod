@@ -896,6 +896,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	})
 
 	-- maybe need change banner descriptions
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
@@ -906,14 +908,22 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN SUMMERS TEAM",
 		})
-	elseif captain_type == restoration.captain_types.spring then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "INCOMING CAPTAIN SPRING",
+		})
+	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN SPRING'S SQUAD",
+		})		
+	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 6 then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN",
 		})
-	elseif captain_type == restoration.captain_types.autumn then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN SQUAD",
-		})	
+		})		
 	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "FACE YOUR NIGHTMARES AND WAKE UP",

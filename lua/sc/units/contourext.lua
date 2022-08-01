@@ -83,7 +83,7 @@ function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
 		if setup.type == type then
 			if fadeout then
 				setup.fadeout_t = TimerManager:game():time() + fadeout
-				setup.fadeout_start_t = TimerManager:game():time() + fadeout * 0.8,
+				setup.fadeout_start_t = TimerManager:game():time() + fadeout * 0.8
 			elseif not self._types[setup.type].unique then
 				setup.ref_c = (setup.ref_c or 0) + 1
 			end

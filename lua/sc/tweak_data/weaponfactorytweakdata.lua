@@ -5252,14 +5252,13 @@ end)
 --The Judge
 Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(self)
 	--Judge Override Table
-	self.wpn_fps_pis_judge.override = {
-		wpn_fps_upg_a_slug = a_slug_pump_override,
-		wpn_fps_upg_a_custom = a_custom_pump_override,	
-		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
-		wpn_fps_upg_a_explosive = a_explosive_pump_override,
-		wpn_fps_upg_a_piercing = a_piercing_pump_override,
-		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
-	}
+
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = a_slug_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = a_custom_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = a_custom_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	
 end)	
 
@@ -13882,14 +13881,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		reload_not_empty = "reload"
 	}
 
-	self.wpn_fps_pis_x_judge.override = {
-		wpn_fps_upg_a_slug = a_slug_pump_override,
-		wpn_fps_upg_a_custom = a_custom_pump_override,	
-		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
-		wpn_fps_upg_a_explosive = a_explosive_pump_override,
-		wpn_fps_upg_a_piercing = a_piercing_pump_override,
-		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
-	}
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = a_slug_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = a_custom_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 
 	self.wpn_fps_pis_x_judge.override.wpn_fps_pis_judge_body_standard = {
 		animations = {		

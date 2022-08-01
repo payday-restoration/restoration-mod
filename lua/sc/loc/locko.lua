@@ -895,29 +895,40 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 
 	-- maybe need change banner descriptions, but i can't think it
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 윈터스 분대 돌입 중",
+			["hud_assault_vip"] = "캡틴 윈터스 분대 접근 중",
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 서머스 팀 돌입 중",
+			["hud_assault_vip"] = "캡틴 서머스 팀 접근 중",
 		})
-	elseif captain_type == restoration.captain_types.spring then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 스프링 분대 돌입 중",
+			["hud_assault_vip"] = "캡틴 스프링 접근 중",
 		})
-	elseif captain_type == restoration.captain_types.autumn then --Originally, I tried to do it differently by using difficulty_index separately, but it failed. well, I have never learned to lua. xd
+	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 어텀 분대 돌입 중",
+			["hud_assault_vip"] = "캡틴 스프링 분대 접근 중",
+		})
+	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 6 then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴 어텀 접근 중",
+		})		
+	elseif captain_type == restoration.captain_types.autumn then
+		LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴 어텀 분대 접근 중",
 		})
 	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "악몽을 마주하고 잠에서 깨어나라",
 		})
 	end
+	
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
@@ -1028,7 +1039,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 킷",
-		["bm_wp_upg_i_m16a2_desc"] = "자동 발사를 #{skill_color}#3점사 설정으로 교체합니다##. #{risk}#점사 발사 속도가## #{skill_color}#900으로 증가합니다.##",
+		["bm_wp_upg_i_m16a2_desc"] = "자동 발사를 #{skill_color}#3점사 설정으로 교체합니다##. #{risk}#점사 발사 속도가## #{skill_color}#950으로 증가합니다.##",
 		
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Bernetti 오버킬 킷",
@@ -1070,7 +1081,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_tac"] = "TAC 수직 손잡이",
 
 		["bm_wp_upg_ns_ass_smg_stubby"] = "단축형 소염기",
-		["bm_wp_upg_flash_hider"] = "총구 플래시를 숨겨줍니다.",
+		
+		["bm_wp_upg_flash_hider"] = "#{skill_color}#총구 플래시를 숨겨주고## #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",
+		["bm_wp_upg_suppressor"] = "#{skill_color}#총소리를 조용하게 만들고## #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",		
 
 		["bm_wp_upg_vintage_sc"] = "빈티지 탄창",
 		["bm_wp_upg_mil_sc"] = "밀스펙 탄창",
@@ -1093,21 +1106,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_slow_motor_sc_desc"] = "분당 회전 수가 15% 감소합니다.",
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_1_1"] = "반사식 조준기.\n#{skill_color}#1.1x 배율.##",
-		["bm_wp_upg_o_1_2"] = "레드 닷 조준기.\n#{skill_color}#1.2x 배율.##",
-		["bm_wp_upg_o_1_5"] = "홀로그램 조준기.\n#{skill_color}#1.5x 배율.##",
-		["bm_wp_upg_o_1_5_pris"] = "프리즘형 조준기.\n#{skill_color}#1.5x 배율.##",
-		["bm_wp_upg_o_1_8"] = "레드 닷 조준기.\n#{skill_color}#1.8x 배율.##",
-		["bm_wp_upg_o_3"] = "중거리 조준경.\n#{skill_color}#3x 배율.##",
-		["bm_wp_upg_o_3_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{skill_color}#3x 배율.##",
-		["bm_wp_upg_o_4"] = "중거리 조준경.\n#{skill_color}#4x 배율.##",
-		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{skill_color}#4x 배율.##",
-		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{skill_color}#5x 배율.##",
-		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{skill_color}#5x 배율.##",
-		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{skill_color}#6x 배율.##",
-		["bm_wp_upg_o_6_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{skill_color}#6x 배율.##",
-		["bm_wp_upg_o_8"] = "원거리 조준경.\n#{skill_color}#8x 배율.##",
-		["bm_wp_upg_o_8_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{skill_color}#8x 배율.##",
+		["bm_wp_upg_o_1_1"] = "반사식 조준기.\n#{risk}#1.1x 배율.##",
+		["bm_wp_upg_o_1_2"] = "레드 닷 조준기.\n#{risk}#1.2x 배율.##",
+		["bm_wp_upg_o_1_5"] = "홀로그램 조준기.\n#{risk}#1.5x 배율.##",
+		["bm_wp_upg_o_1_5_pris"] = "프리즘형 조준기.\n#{risk}#1.5x 배율.##",
+		["bm_wp_upg_o_1_8"] = "레드 닷 조준기.\n#{risk}#1.8x 배율.##",
+		["bm_wp_upg_o_3"] = "중거리 조준경.\n#{risk}#3x 배율.##",
+		["bm_wp_upg_o_3_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#3x 배율.##",
+		["bm_wp_upg_o_4"] = "중거리 조준경.\n#{risk}#4x 배율.##",
+		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#4x 배율.##",
+		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{risk}#5x 배율.##",
+		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#5x 배율.##",
+		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{risk}#6x 배율.##",
+		["bm_wp_upg_o_6_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#6x 배율.##",
+		["bm_wp_upg_o_8"] = "원거리 조준경.\n#{risk}#8x 배율.##",
+		["bm_wp_upg_o_8_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#8x 배율.##",
 
 		["bm_wp_upg_o_shortdot_dmc"] = "숏닷 조준경",
 		["bm_wp_upg_o_5_default"] = "원거리 조준경.\n기본 저격소총의 조준경 십자선을 수정할 수 있도록 부착합니다.\n#{skill_color}#5x 배율.##",
@@ -1285,7 +1298,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--VHS/Lion's Roar
 		["bm_vhs_sc_desc"] = "유능한 자의 손에서 인상적인 성능을 자랑하고 다루기 힘든 소총.\n\n전투에서 드라간의 분노의 영혼을 널리 알린다고 합니다.",
 		--Olympic/Para
-		["bm_menu_sc_olympic_desc"] = "완전 자동 방식으로 소총탄을 발사하고 엄청나게 큰 권총. 이 총은 총알을 쏘는 실존적 위기입니다.",		
+		["bm_menu_sc_olympic_desc"] = "완전 자동 방식으로 소총탄을 발사하고 엄청나게 큰 권총. 이 총은 총알을 쏘는 실존적 위기입니다.",	
 		--TAR-21/Para
 		["bm_menu_sc_komodo_desc"] = "심각하게 컴팩트한 패키지에 많은 피해를 줍니다. 근거리 전투 또는 원거리 조우에 좋습니다.",		
 		--Famas
@@ -1295,26 +1308,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
 		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",		
 
-			
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. #{skill_color}#20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.##\n#{skill_color}#$BTN_BIPOD## 키를 늘러 유탄 발사기로 전환합니다.",
 		["bm_w_osipr_desc"] = "X세대 무기 기술. #{skill_color}#20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.##\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",
 		--M4/CAR-4
-		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있으며 5.56mm탄을 사용하는 소총입니다.",
+		["bm_m4_sc_desc"] = "안정적이고 컴팩트하며 치명적이고, AMCAR 소총에서 따와 개발된 CAR-4 소총은 현대 군대에서 인기 있는 5.56mm 소총입니다.",
 		["bm_wp_upg_fg_m4a1"] = "엠포 킷",
 		["bm_wp_upg_fg_m4a1_desc"] = "이 전용 세트는 애프터마켓 플립업 조준경을 보다 전통적인 설정으로 교체합니다. #{risk}#총열덮개 모양을 덮어 씌웁니다.##",
 		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
 		--AK5
 		["bm_ak5_sc_desc"] = "은행 강도와 총알 크기에 대해 정보를 모르는 사람들을 혼란스럽게 만드는 유명하고 좋은 다목적 소총입니다.",
+		--Union 5.56
+		["bm_corgi_sc_desc"] = "이 불펍 소총은 명성에도 불구하고 바다에 갈 가치가 전혀 없습니다.",				
+		--UAR
+		["bm_aug_sc_desc"] = "클래식 불펍 소총. 죽은 나쁜 사람들을 더 죽이기 위한 훌륭한 만능 도구입니다.",		
 		--AK17
 		["bm_flint_sc_desc"] = "클래식 AK 소총의 현대적 해석. 강력한 #{skill_color}#2점사##가 특징이며 정체성 위기가 있습니다.",
 		--AK 5.45
 		["bm_w_ak74"] = "AK 5.45 소총",
 		["bm_ak74_sc_desc"] = "7.62 자매보다 작은 탄을 발사하지만 이 소총이 덜 치명적인 것이라는 건 아닙니다.",	
-		--Union 5.56
-		["bm_corgi_sc_desc"] = "이 불펍 소총은 명성에도 불구하고 바다에 갈 가치가 전혀 없습니다.",				
-		--UAR
-		["bm_aug_sc_desc"] = "클래식 불펍 소총. 죽은 나쁜 사람들을 더 죽이기 위한 훌륭한 만능 도구입니다.",
 		--CR 805
 		["bm_menu_sc_hajk_desc"] = "고전적고 더 젊고 현대적인 총알 호스 코브라의 사촌입니다. 이 소총은 목표를 잡을 수 없다면 그걸 위한 다양한 발사 모드와 점사 전환 기능을 갖추고 있습니다.",
 
@@ -1325,14 +1337,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		
 		--AMR-16
-		["bm_m16_sc_desc"] = "CAR-4의 전신입니다.",
+		["bm_m16_sc_desc"] = "이 클래식 라이플은 AMCAR의 후속작으로 만들어졌으며, 은닉성과 연사력이 부족하지만 사정거리와 위력가 부족한 부분을 보충합니다.",
+		--Queen's Wrath
+		["bm_l85a2_sc_desc"] = "이 소총의 명성은 초기에 반복적인 고장으로 인해 나락으로 갔지만 지금까지 만들어진 가장 정확한 자동 소총 중 하나입니다.\n\n그래도 여전히 인체공학적인 악몽을 가지고 있습니다.",		
 		--AK 7.62
 		["bm_w_akm"] = "AK 7.62 소총",
 		["bm_akm_sc_desc"] = "이 소총은 방탄복이 DC에서 인기를 끌기 시작할 때 가지고 다니는 편리한 소총.\n\n전 세계의 반군과 미친 정권이 항상 이용하는 소총.",
 		["bm_w_akm_gold"] = "황금 AK 7.62 소총",
-		["bm_akm_gold_sc_desc"] = "강도, 멕시코 마약왕, 과대망상 독재자의 공통점은? 금도금 소총에 대한 매력이죠, 물론이고 말고요.",
-		--Queen's Wrath
-		["bm_l85a2_sc_desc"] = "이 소총의 명성은 초기에 반복적인 고장으로 인해 나락으로 갔지만 지금까지 만들어진 가장 정확한 자동 소총 중 하나입니다.\n\n그래도 여전히 인체공학적인 악몽을 가지고 있습니다.",		
+		["bm_akm_gold_sc_desc"] = "강도, 멕시코 마약왕, 과대망상 독재자의 공통점은? 금도금 소총에 대한 매력이죠, 물론이고 말고요.",		
 		--KETCHUPKNOB--
 		["bm_w_groza"] = "OB-14st Byk-1 소총",
 		["bm_groza_sc_desc_pc"] = "AK 가족의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
@@ -1403,7 +1415,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}#소음기와 완전 통합되었고## #{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 소총",
-		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",	
+		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
+		--ShAK-12
+		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
+		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",		
 		--Custom DMRs
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
@@ -1416,6 +1431,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 저격소총",
 		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		--Scunt
+		["bm_wp_scout_m_extended"] = "스탠드오프 신속 장전 탄창",		
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 저격소총",
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -3028,13 +3045,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck1_9_desc_sc"] = "각 인질이 있을 때마다 당신과 당신의 팀원은 ##5%## 최대 체력과 ##10%## 스태미나를 최대 ##4##번 얻습니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		
 		--Armorer--
-		["menu_st_spec_3_desc_sc"] = "아머러는 군대에 있었던 직책이었습니다. 아머러는 갑옷과 장비를 유지, 보수, 개량하는것이 자신의 일입니다.\n\n어느 범죄조직이라도 모두가 효율적인 일처리를 수행할 수 있게끔 충분한 보호구와 도구를 제공해 줄 수 있는 사람이 필요할 것입니다.\n\n전체 특성 덱의 이점:\n##-##방탄력을 ##25%##만큼 얻습니다.\n##-##시체가방 케이스가 ##2##개로 증가합니다.\n##-##방탄복 회복 속도가 ##20%##만큼 증가합니다.",
+		["menu_st_spec_3_desc_sc"] = "아머러는 군대에 있었던 직책이었습니다. 아머러는 갑옷과 장비를 유지, 보수, 개량하는것이 자신의 일입니다.\n\n어느 범죄조직이라도 모두가 효율적인 일처리를 수행할 수 있게끔 충분한 보호구와 도구를 제공해 줄 수 있는 사람이 필요할 것입니다.\n\n전체 특성 덱의 이점:\n##-##방탄력을 ##25%##만큼 얻습니다.\n##-##시체가방 케이스가 ##2##개로 증가합니다.\n##-##방탄복 회복 속도가 ##15%##만큼 증가합니다.",
 		["menu_st_spec_3_desc_sc_short"] = "아머러는 군대에 있었던 직책이었습니다. 아머러는 갑옷과 장비를 유지, 보수, 개량하는것이 자신의 일입니다.\n\n어느 범죄조직이라도 모두가 효율적인 일처리를 수행할 수 있게끔 충분한 보호구와 도구를 제공해 줄 수 있는 사람이 필요할 것입니다.",		
 		["menu_deck3_1_desc_sc"] = "방탄력을 ##10%##만큼 얻습니다.",
 		["menu_deck3_3_desc_sc"] = "방탄력을 추가로 ##10%##만큼 얻습니다.",
 		["menu_deck3_5_desc_sc"] = "방탄력을 추가로 ##5%##만큼 얻습니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
 		["menu_deck3_7_desc_sc"] = "방탄복 회복률이 ##10%##만큼 증가합니다.",
-		["menu_deck3_9_desc_sc"] = "방탄복 회복률이 추가로 ##10%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck3_9_desc_sc"] = "방탄복 회복률이 추가로 ##5%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Burglar--
 		["menu_st_spec_7_desc_sc"] = "버글러의 타고난 민첩함은 단순히 쳐부수고 들어가는 것을 넘어섭니다. 버글러의 재빠름은 앉았을 때 빠르게 이동합니다.\n\n또한 그들은 전투에서 피격되기 힘듭니다. 그들은 대개 싸움에서 벗어나는 방법으로 살아남습니다.\n\n전체 특성 덱의 이점:\n##-##회피 포인트가 ##15##만큼 증가합니다.\n##-##웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##10%##만큼 채워집니다.\n##-##웅크리고 있을 때 이동 속도가 ##20%##만큼 증가합니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.",
@@ -3163,9 +3180,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##15##미터 반경의 적을 스턴시킵니다. 휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##3##초씩 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##12##만큼 회복되고 팀원이 적을 죽이면 ##6##만큼 회복됩니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
+		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##15##미터 반경의 적을 스턴시킵니다. 휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##12##만큼 회복되고 팀원이 적을 죽이면 ##6##만큼 회복됩니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
 		["menu_st_spec_21_desc_sc_short"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.",		
-		["menu_deck21_1_desc_sc"] = "##휴대용 ECM 재머##를 잠금 해제하고 장착합니다.\n\n게임 내에서 투척무기 키를 사용하여 휴대용 ECM 재머를 활성화할 수 있습니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##12##미터 반경의 적을 스턴시킵니다.\n\n휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##3##초씩 단축됩니다.",
+		["menu_deck21_1_desc_sc"] = "##휴대용 ECM 재머##를 잠금 해제하고 장착합니다.\n\n게임 내에서 투척무기 키를 사용하여 휴대용 ECM 재머를 활성화할 수 있습니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##12##미터 반경의 적을 스턴시킵니다.\n\n휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##12##만큼 회복됩니다.",
 		["menu_deck21_7_desc_sc"] = "방탄복 회복률이 ##10% 증가합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",

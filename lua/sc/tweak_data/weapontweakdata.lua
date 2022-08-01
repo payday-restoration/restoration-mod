@@ -7096,17 +7096,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.supported = true
 				self.amcar.ads_speed = 0.320
 				self.amcar.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2200,
 					end_dist = 6000,
 					min_mult = 0.5
 				}
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 83,
+					recoil = 82,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 25,
+					concealment = 24,
 					suppression = 10,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -7138,8 +7138,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.ads_speed = 0.300
 				self.s552.damage_falloff = {
 					start_dist = 3000,
-					end_dist = 6800,
-					min_mult = 0.5
+					end_dist = 7200,
+					min_mult = 0.6
 				}
 				self.s552.stats = {
 					damage = 20,
@@ -7182,7 +7182,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36.ads_speed = 0.300
 				self.g36.damage_falloff = {
 					start_dist = 2800,
-					end_dist = 6200,
+					end_dist = 6300,
 					min_mult = 0.5
 				}
 				self.g36.stats = {
@@ -7200,6 +7200,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.g36.stats_modifiers = nil
+				self.g36.reload_speed_multiplier = 1.2
 				self.g36.timers.reload_not_empty = 2.4
 				self.g36.timers.reload_exit_empty = 0.7
 				self.g36.timers.reload_exit_not_empty = 0.8
@@ -7238,7 +7239,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.vhs.stats_modifiers = nil
 				self.vhs.panic_suppression_chance = 0.05
-				self.vhs.reload_speed_multiplier = 1.25
+				self.vhs.reload_speed_multiplier = 1.45
 				self.vhs.timers.reload_empty = 4.6
 				self.vhs.timers.reload_exit_empty = 0.6
 				self.vhs.timers.reload_exit_not_empty = 1

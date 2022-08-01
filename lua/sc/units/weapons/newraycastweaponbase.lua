@@ -633,7 +633,18 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.falloff_end_mult then
 				self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
 			end
-			
+			if stats.can_shoot_through_wall then
+				self:weapon_tweak_data().can_shoot_through_wall = true
+				self._can_shoot_through_wall = true
+			end
+			if stats.can_shoot_through_enemy then
+				self:weapon_tweak_data().can_shoot_through_enemy = true
+				self._can_shoot_through_enemy = true
+			end
+			if stats.can_shoot_through_shield then
+				self._can_shoot_through_shield = true
+				self:weapon_tweak_data().can_shoot_through_shield = true
+			end
 			if stats.rof_mult then
 				self._rof_mult = self._rof_mult * stats.rof_mult
 			end

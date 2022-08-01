@@ -12232,11 +12232,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tilt.warsaw = true
 		self.tilt.recategorize = { "light_ar" }	
 		self.tilt.damage_type = "assault_rifle"
+		self.tilt.has_description = true
+		self.tilt.desc_id = "bm_tilt_sc_desc"
 		self.tilt.sounds.fire = "flint_fire_single"
 		self.tilt.sounds.fire_single = "flint_fire_single"
 		self.tilt.sounds.fire_auto = "flint_fire"
-		self.tilt.sounds.stop_fire = "flint_stop"
-		self.tilt.has_description = false		
+		self.tilt.sounds.stop_fire = "flint_stop"		
 		self.tilt.tactical_reload = 1
 		self.tilt.AMMO_MAX = 150
 		self.tilt.BURST_FIRE = 2

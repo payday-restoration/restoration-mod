@@ -284,7 +284,8 @@ function NewRaycastWeaponBase:stop_shooting(...)
 	self._shots_fired = 0
 	if self._fire_rate_init_progress then
 		self._fire_rate_init_progress = nil
-		--self._fire_rate_init_cancel = true
+		self._fire_rate_init_cancel = true
+		self._next_fire_allowed = self._next_fire_allowed + self._burst_delay
 	end
 	if self._name_id == "m134" or self._name_id == "shuno" then
 		self._vulcan_firing = nil

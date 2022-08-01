@@ -1333,8 +1333,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",		
 		--CUSTOM 48 DAMAGE ARs
 		--AN-94/92
-		["bm_w_an94"] = "KVK-99 Rifle",
-		["bm_an94_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
+		["bm_w_tilt"] = "KVK-99 Rifle",
+		["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
 
 
 		--AMR-16

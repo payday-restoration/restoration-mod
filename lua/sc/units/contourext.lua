@@ -32,7 +32,7 @@ local idstr_contour_opacity = Idstring("contour_opacity")
 
 local tmp_vec1 = Vector3()
 
-Hooks:PostHook(ContourExt, "init", "smooth_contours_init", function(self)
+Hooks:PostHook(ContourExt, "init", "res_init", function(self)
 	self._contour_list = nil -- why define this as an empty table when every function checks it's not nil to figure out if there's a contour active...
 end)
 

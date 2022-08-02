@@ -300,10 +300,32 @@ function ContourExt:update(unit, t, dt)
 	end
 end
 
-Hooks:PostHook(ContourExt, "_upd_opacity", "res_upd_opacity", function(self, opacity)
-	-- opacity doesn't actually do anything unless it's 1/0, but i'm still updating it just in case
+function ContourExt:_upd_opacity(opacity, is_retry)
+	if opacity == self._last_opacity then
+		return
+	end
+
+	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
+
+	for _, material in ipairs(self._materials) do
+		if not alive(material) then
+			self:update_materials()
+
+			if not is_retry then
+				self:_upd_opacity(opacity, true)
+			end
+
+			return
+		end
+
+		material:set_variable(idstr_contour_opacity, opacity)
+	end
+
+	self._last_opacity = opacity
 	self:_upd_color(false, opacity)
-end)
+
+	self:apply_to_linked("_upd_opacity", opacity)
+end
 
 function ContourExt:_upd_color(is_retry, opacity)
 	if not self._contour_list then
@@ -337,5 +359,5 @@ function ContourExt:_upd_color(is_retry, opacity)
 		material:set_variable(idstr_contour_color, color)
 	end
 
-	self:apply_to_linked("_upd_color", is_retry, opacity)
+	self:apply_to_linked("_upd_color", false, opacity)
 end

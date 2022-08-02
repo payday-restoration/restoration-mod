@@ -9,6 +9,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 
 ]]--
 
+local job = Global.level_data and Global.level_data.level_id
 function UpgradesTweakData:_init_value_tables()
 	self.values = {
 		player = {},
@@ -1290,6 +1291,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
 	if Global.game_settings and Global.game_settings.single_player then
 		self.values.player.corpse_dispose_amount = {4, 5}
+	end
+	
+	--Just to stop a softlock
+	if job == "short1_stage1" or job == "short1_stage2" then
+		self.values.player.corpse_dispose_amount = {1, 1}
 	end
 
 	--Perk Decks--

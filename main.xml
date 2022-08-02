@@ -299,6 +299,7 @@
 		<hook file="sc/managers/hud/hudhitconfirm.lua" source_file="lib/managers/hud/hudhitconfirm"/>
 		<hook file="sc/units/enemies/zombie/zombielogicattack.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/enemies/zombie/zombieactionshoot.lua" source_file="lib/units/enemies/cop/copmovement"/>
+		<hook file="sc/managers/menu/items/contractbrokerheistitem.lua" source_file="lib/managers/menu/items/contractbrokerheistitem"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

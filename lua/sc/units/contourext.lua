@@ -357,3 +357,16 @@ function ContourExt:_upd_color(is_retry, opacity)
 
 	self:apply_to_linked("_upd_color", false, opacity)
 end
+
+function ContourExt:update_materials()
+	if self._contour_list and next(self._contour_list) then
+		self._materials = nil
+
+		self:_upd_color()
+
+		local opacity = self._last_opacity or 1
+		self._last_opacity = nil
+
+		self:_upd_opacity(opacity)
+	end
+end

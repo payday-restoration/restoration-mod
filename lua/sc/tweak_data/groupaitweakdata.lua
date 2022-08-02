@@ -16383,9 +16383,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	else
 		self.besiege.assault.force = {
+			18,
 			21,
-			24,
-			28
+			24
 		}
 		self.besiege.assault.force_pool = {
 			150,

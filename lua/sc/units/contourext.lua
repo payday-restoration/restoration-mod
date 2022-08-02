@@ -202,11 +202,7 @@ function ContourExt:_remove(index, sync)
 			self._unit:base():set_material_state(true)
 			self._unit:base():set_allow_invisible(true)
 		else
-			self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
-
-			for _, material in ipairs(self._materials) do
-				material:set_variable(idstr_contour_opacity, 0)
-			end
+			self:_upd_opacity(0)
 		end
 	end
 

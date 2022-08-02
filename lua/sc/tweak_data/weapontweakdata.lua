@@ -5533,8 +5533,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Bronco
 				self.new_raging_bull.fire_mode_data = {}
 				self.new_raging_bull.fire_mode_data.fire_rate = 0.19047619047
-				self.new_raging_bull.single = {}
-				self.new_raging_bull.single.fire_rate = 0.19047619047
 				self.new_raging_bull.AMMO_MAX = 30
 				self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
 				self.new_raging_bull.supported = true
@@ -12322,23 +12320,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.raygun then --Leather Dann's CoD:Zombies Raygun
 		self.raygun.categories = {
 			"grenade_launcher",
-			"gl_pistol"
+			"gl_pistol",
+			"raygun"
 		}
 		self.raygun.use_data.selection_index = 2
 		self.raygun.AMMO_MAX = 40
 		self.raygun.supported = true
 		self.raygun.fire_mode_data.fire_rate = 0.33149171270
-		self.raygun.single.fire_rate = 0.33149171270
-		self.raygun.sounds.stop_fire = "saiga_stop"
 		self.raygun.ads_speed = 0.200
 		self.raygun.stats = {
 			damage = 18,
 			spread = 86,
 			recoil = 85,
 			zoom = 1,
-			concealment = 17,
+			concealment = 18,
 			alert_size = 2,
-			suppression = 2,
+			suppression = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			reload = 20,
@@ -12972,7 +12969,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"grenade_launcher",
 			"gl_pistol"
 		}
-		self.hx25.AMMO_MAX = 8
+		self.hx25.AMMO_MAX = 10
+		self.hx25.rays = 7
 		self.hx25.supported = true
 		self.hx25.sms = 0.85
 		self.hx25.ads_speed = 0.240
@@ -12982,13 +12980,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			min_mult = 0.05
 		}
 		self.hx25.stats = {
-			damage = 48,
+			damage = 36,
 			spread = 41,
 			recoil = 69,
 			zoom = 1,
 			concealment = 26,
 			alert_size = 2,
-			suppression = 1,
+			suppression = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			reload = 20,
@@ -13038,6 +13036,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.as24.weapon_movement_penalty = 0.8
 	end
 
+	if self.deckard then 
+		self.deckard.recategorize = {"heavy_pis"}
+		self.deckard.plasma_b = true
+		self.deckard.fire_mode_data = {}
+		self.deckard.fire_mode_data.fire_rate = 0.19047619047
+		self.deckard.AMMO_MAX = 30
+		self.deckard.kick = self.stat_info.kick_tables.moderate_kick
+		self.deckard.supported = true
+		self.deckard.ads_speed = 0.300
+		self.deckard.damage_falloff = {
+			start_dist = 2000,
+			end_dist = 5000,
+			min_mult = 0.3333
+		}
+		self.deckard.stats = {
+			damage = 60,
+			spread = 71,
+			recoil = 51,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 23,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.deckard.stats_modifiers = nil
+		self.deckard.reload_speed_multiplier = 0.9
+		self.deckard.timers.reload_not_empty = 2.1
+		self.deckard.timers.reload_empty = 2.1
+		self.deckard.timers.reload_exit_empty = 0.6
+		self.deckard.timers.reload_exit_not_empty = 0.6
+		self.deckard.panic_suppression_chance = 0.05
+	end
 
 
 	if self.coltds then --Mira's Colt Detective
@@ -13550,7 +13584,10 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			minigun = 0.4,
 		akimbo = 1.1,
 		saw = 1.25, --Compensate for jankiness.
-		semi_snp = 0.8, --0.6075,
+		--snp = 1, 
+			semi_snp = 0.8, --0.6075,
+		--Custom weapon pickup
+		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
 	}
 
 	--Get weapon category specific pickup multipliers.

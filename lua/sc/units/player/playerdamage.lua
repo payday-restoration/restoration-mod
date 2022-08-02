@@ -380,7 +380,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
-				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * ( 1 + (0.5 * armor_dodge_mult))), true)
+				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * armor_dodge_mult), true)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -454,7 +454,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
-				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * ( 1 + (0.5 * armor_dodge_mult))), true)
+				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * armor_dodge_mult), true)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)

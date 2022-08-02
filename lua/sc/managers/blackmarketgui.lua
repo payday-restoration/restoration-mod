@@ -4512,7 +4512,17 @@ function BlackMarketGui:update_info_text()
 		armor_equipped:set_top(armor_name_text:bottom())
 		armor_image:set_image(self._slot_data.bitmap_texture)
 		self._armor_info_panel:set_h(armor_image:bottom())
-
+		updated_texts[4].resource_color = {}
+		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
+		local upgrade_level = bm_armor_tweak.upgrade_level
+		local dodge_grace = tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] and (tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] - 1) * 100
+		local description = managers.localization:to_upper_text("bm_menu_dodge_grace", {grace_bonus = dodge_grace})
+		for color_id in string.gmatch(description, "#%{(.-)%}#") do
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+		end
+		description = description:gsub("#%{(.-)%}#", "##")
+		updated_texts[4].text = description
+		updated_texts[4].below_stats = true
 		if not self._slot_data.unlocked then
 			updated_texts[3].text = utf8.to_upper(managers.localization:text(slot_data.level == 0 and (slot_data.skill_name or "bm_menu_skilltree_locked") or "bm_menu_level_req", {
 				level = slot_data.level,
@@ -4528,27 +4538,29 @@ function BlackMarketGui:update_info_text()
 			local amount = managers.player:body_armor_value("skill_max_health_store", upgrade_level, 1)
 			local multiplier = managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
 			local regen_speed = format_round((managers.player:body_armor_value("skill_kill_change_regenerate_speed", upgrade_level, 1) - 1) * 100)
-			if managers.player:has_category_upgrade("player", "skill_kill_change_regenerate_speed") then
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", 
-					{health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)})
-			else
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", 
-					{health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})
+			local description = (managers.player:has_category_upgrade("player", "skill_kill_change_regenerate_speed") and 
+								managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)})) or 
+								managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
-			updated_texts[2].below_stats = true
+			description = description:gsub("#%{(.-)%}#", "##")
+			updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+			updated_texts[4].below_stats = true
 		elseif managers.player:has_category_upgrade("player", "armor_grinding") then --Add Anarchist per-armor skill information.
 			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
 			local upgrade_level = bm_armor_tweak.upgrade_level
 			local passive_regen = format_round(10 * tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][1])
 			local active_regen = format_round(10 * tweak_data.upgrades.values.player.damage_to_armor[1][upgrade_level][1])
-			if managers.player:has_category_upgrade("player", "damage_to_armor") then
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding_2", 
-					{passive_armor_regen = passive_regen, active_armor_regen = active_regen})
-			else
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding_1", 
-					{passive_armor_regen = passive_regen})
+			local description = (managers.player:has_category_upgrade("player", "damage_to_armor") and 
+								managers.localization:to_upper_text("bm_menu_armor_grinding_2", {passive_armor_regen = passive_regen, active_armor_regen = active_regen})) or
+								managers.localization:to_upper_text("bm_menu_armor_grinding_1", {passive_armor_regen = passive_regen})
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
-			updated_texts[2].below_stats = true
+			description = description:gsub("#%{(.-)%}#", "##")
+			updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+			updated_texts[4].below_stats = true
 		end
 	elseif identifier == self.identifiers.armor_skins then
 		local skin_tweak = tweak_data.economy.armor_skins[self._slot_data.name]

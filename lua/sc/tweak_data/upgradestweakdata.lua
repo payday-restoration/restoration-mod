@@ -303,9 +303,9 @@ end)
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 1
-	self.explosive_bullet.player_dmg_mul = 0.5
-	self.explosive_bullet.range = 250
+	self.explosive_bullet.curve_pow = 0.0001
+	self.explosive_bullet.player_dmg_mul = 1
+	self.explosive_bullet.range = 100
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -345,13 +345,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		-0.25
 	}
 	self.values.player.body_armor.dodge_grace = {
-		1,
-		0.85,
-		0.7,
-		0.55,
-		0.25,
-		0.1,
-		0.0
+		1.50,
+		1.425,
+		1.35,
+		1.275,
+		1.125,
+		1.05,
+		1.0
 	}
 	self.values.player.body_armor.concealment = {
 		30,

@@ -242,8 +242,6 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		"ranc", --Midland Ranch
 		"mad", --Boiling Point
-		--Skirmish heists below
-		"skmc_mad",
 		--Custom Heists below--
 		"junk", --Doghouse
 		"knk_jwl", --Knockover: Jewerly Store
@@ -275,7 +273,10 @@ function restoration:Init()
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"sand", --The Ukrainian Prisoner	
-		"fex", --Buluc's Mansion		
+		"fex", --Buluc's Mansion	
+		--Skirmish heists below
+		"skmc_mad",
+		"skm_red2",
 		--Custom Heists below--
 		"thechase",
 		"daymare", --Hell's Nightmare

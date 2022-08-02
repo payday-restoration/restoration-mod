@@ -2879,6 +2879,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.move_speed = presets.move_speed.fast
 	self.boom.no_retreat = true
 	self.boom.no_arrest = true
+	self.boom.use_gas = true
 	self.boom.surrender = nil
 	self.boom.ecm_vulnerability = 0.75
 	self.boom.ecm_hurts = {
@@ -16357,6 +16358,7 @@ function CharacterTweakData:_set_overkill_145()
 	--Weekend LMG Variants
 	self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
 	
+	
 	--Melee Mults
 	self.city_swat.melee_weapon_dmg_multiplier = 1.5
 	self.city_swat_guard.melee_weapon_dmg_multiplier = 1.5
@@ -16495,9 +16497,9 @@ function CharacterTweakData:_set_overkill_290()
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
-
-	--Grenadier pre-emptive gas deployment
-	self.boom.use_gas = true
+	
+	--Benellidozers use frag grenades
+	self.tank_mini.can_throw_frag = true
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 140
@@ -16575,8 +16577,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	
-	--Grenadier pre-emptive gas deployment
-	self.boom.use_gas = true	
+	--Benellidozers use frag grenades
+	self.tank_mini.can_throw_frag = true
 	
 	--Titan SWAT smoke dodging
 	self.city_swat_titan.dodge_with_grenade = {

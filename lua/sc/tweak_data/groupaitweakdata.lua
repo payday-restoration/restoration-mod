@@ -12420,7 +12420,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "TIT_tank",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 1,
+					amount_max = 2,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},
@@ -14749,7 +14749,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 1,
+				amount_max = 2,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -15126,7 +15126,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 1,
+				amount_max = 2,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -15503,7 +15503,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 1,
+				amount_max = 2,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -15880,7 +15880,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 1,
+				amount_max = 2,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -16383,9 +16383,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	else
 		self.besiege.assault.force = {
-			18,
 			21,
-			24
+			24,
+			28
 		}
 		self.besiege.assault.force_pool = {
 			150,

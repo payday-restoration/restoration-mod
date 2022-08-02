@@ -16006,7 +16006,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),
 		Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"),
 		Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"),
-		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
+		Idstring("units/pd2_dlc_vip/weapons/wpn_npc_hmg_spring/wpn_npc_hmg_spring"),
 		Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak103/wpn_npc_ak103"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc"),

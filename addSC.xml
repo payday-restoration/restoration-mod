@@ -500,7 +500,7 @@
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<unit				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc" load="false"/>
-	<!--Dozer Akan helm-->
+	<!--Dozer Eggman Emp--- I mean Akan helm-->
 	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
@@ -664,6 +664,8 @@
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" load="true" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
+	
+	<unit_mat_seq		path="units/pd2_dlc_vip/weapons/wpn_npc_hmg_spring/wpn_npc_hmg_spring" load="true"/>
 
 	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="true" force="false"/>
 	<unit_obj			path="units/pd2_dlc_vip/characters/ene_spring/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="true" force="false"/>

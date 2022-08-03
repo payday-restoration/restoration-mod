@@ -12523,7 +12523,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.scarl then --Pawcio's SCAR-L
-		self.scarl.recategorize = { "light_ar" }
+		self.scarl.recategorize = { "heavy_ar" }
 		self.scarl.damage_type = "assault_rifle"
 		self.scarl.tactical_reload = 1
 		self.scarl.lock_slide = true

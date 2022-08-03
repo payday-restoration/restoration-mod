@@ -6825,6 +6825,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--PRIMARIES
 			--M60
+				self.m60.has_description = true
+				self.m60.desc_id = "bm_m60_sc_desc"		
 				self.m60.categories = {
 					"lmg",
 					"smg"
@@ -6864,6 +6866,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.timers.reload_exit_not_empty = 2.8
 	
 			--KSP 58
+				self.par.has_description = true
+				self.par.desc_id = "bm_par_sc_desc"				
 				self.par.categories = {
 					"lmg",
 					"smg"
@@ -8162,6 +8166,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband_m203.timers.reload_exit_not_empty = 0.4
 			
 			--KS12 Urban (ShAK-12/ASh-12.7)
+				self.shak12.desc_id = "bm_shak12_sc_desc"
+				self.shak12.has_description = true				
 				self.shak12.CLIP_AMMO_MAX = 20
 				self.shak12.fire_mode_data.fire_rate = 0.12
 				self.shak12.fire_rate_multiplier = 1.5
@@ -8325,13 +8331,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--PRIMARIES
 
 			--Kang Arms X1 (QBU-88)
+				self.qbu88.desc_id = "bm_qbu88_sc_desc"
+				self.qbu88.has_description = true				
 				self.qbu88.categories = {
 					"snp",
 					"semi_snp"
 				}
 				self.qbu88.upgrade_blocks = nil
-				self.qbu88.has_description = true
-				self.qbu88.desc_id = "bm_ap_weapon_sc_desc"
 				self.qbu88.CLIP_AMMO_MAX = 10
 				self.qbu88.AMMO_MAX = 60
 				self.qbu88.fire_mode_data.fire_rate = 0.1956521
@@ -8419,9 +8425,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.panic_suppression_chance = 0.05
 
 			--Repeater 1874
-				self.winchester1874.upgrade_blocks = nil
 				self.winchester1874.has_description = true
-				self.winchester1874.desc_id = "bm_ap_weapon_sc_desc"
+				self.winchester1874.desc_id = "bm_winchester1874_sc_desc"			
+				self.winchester1874.upgrade_blocks = nil
 				self.winchester1874.AMMO_MAX = 40
 				self.winchester1874.CLIP_AMMO_MAX = 10
 				self.winchester1874.FIRE_MODE = "single"
@@ -8458,9 +8464,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.winchester1874.panic_suppression_chance = 0.05
 	
 			--Rattlesnake
+				self.msr.desc_id = "bm_msr_sc_desc"
+				self.msr.has_description = true					
 				self.msr.upgrade_blocks = nil
-				self.msr.has_description = true
-				self.msr.desc_id = "bm_ap_weapon_sc_desc"
 				self.msr.CLIP_AMMO_MAX = 10
 				self.msr.NR_CLIPS_MAX = 5
 				self.msr.AMMO_MAX = 40
@@ -8497,9 +8503,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.timers.reload_exit_not_empty = 0.75
 	
 			--R700
+				self.r700.desc_id = "bm_r700_sc_desc"
+				self.r700.has_description = true				
 				self.r700.upgrade_blocks = nil
-				self.r700.has_description = true
-				self.r700.desc_id = "bm_ap_weapon_sc_desc"
 				self.r700.CLIP_AMMO_MAX = 5
 				self.r700.AMMO_MAX = 40
 				self.r700.fire_mode_data.fire_rate = 1
@@ -8664,7 +8670,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Bernetti Rangehitter
 				self.sbl.upgrade_blocks = nil
 				self.sbl.has_description = true
-				self.sbl.desc_id = "bm_ap_weapon_sc_desc"
+				self.sbl.desc_id = "bm_sbl_sc_desc"
 				self.sbl.CLIP_AMMO_MAX = 6
 				self.sbl.AMMO_MAX = 30
 				self.sbl.FIRE_MODE = "single"
@@ -8742,7 +8748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Platypus 70
 				self.model70.upgrade_blocks = nil
 				self.model70.has_description = true
-				self.model70.desc_id = "bm_ap_weapon_sc_desc"
+				self.model70.desc_id = "bm_model70_sc_desc"
 				self.model70.AMMO_MAX = 30
 				self.model70.CLIP_AMMO_MAX = 5
 				self.model70.fire_mode_data.fire_rate = 1
@@ -8778,9 +8784,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model70.timers.reload_exit_not_empty = 0.95
 
 			--R93 (Blaser R93)
-				self.r93.upgrade_blocks = nil
 				self.r93.has_description = true
-				self.r93.desc_id = "bm_ap_weapon_sc_desc"
+				self.r93.desc_id = "bm_r93_sc_desc"					
+				self.r93.upgrade_blocks = nil
 				self.r93.CLIP_AMMO_MAX = 5
 				self.r93.AMMO_MAX = 30
 				self.r93.fire_mode_data.fire_rate = 1.2
@@ -8816,7 +8822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Desert Fox (Desert Tech SRS)
 				self.desertfox.has_description = true
-				self.desertfox.desc_id = "bm_ap_weapon_sc_desc"
+				self.desertfox.desc_id = "bm_desertfox_sc_desc"				
 				self.desertfox.CLIP_AMMO_MAX = 5
 				self.desertfox.AMMO_MAX = 30
 				self.desertfox.fire_mode_data.fire_rate = 1.3333
@@ -8935,6 +8941,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saiga.timers.reload_exit_not_empty = 0.875
 
 			--Argos III (Ultima)
+				self.ultima.desc_id = "bm_ultima_sc_desc"
+				self.ultima.has_description = true					
 				self.ultima.rays = 8
 				self.ultima.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.ultima.CLIP_AMMO_MAX = 7
@@ -9207,6 +9215,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Judge
 				--Keeping
+				self.x_judge.desc_id = "bm_x_judge_sc_desc"
+				self.x_judge.has_description = true							
 				self.x_judge.categories = {
 					"akimbo",
 					"shotgun",
@@ -9539,6 +9549,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--PRIMARIES
 
 			--Joceline O/U 12G (Beretta 682 Hybrid)
+				self.b682.desc_id = "bm_b682_sc_desc"
+				self.b682.has_description = true						
 				self.b682.rays = 8
 				self.b682.muzzleflash = "effects/particles/shotgun/muzzleflash"
 				self.b682.AMMO_MAX = 40

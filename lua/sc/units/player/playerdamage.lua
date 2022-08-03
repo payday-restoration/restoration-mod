@@ -357,6 +357,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	return true
 end
 
+
 --All damage_x functions have been rewritten.
 function PlayerDamage:damage_bullet(attack_data)
 	local attacker_unit = attack_data.attacker_unit
@@ -373,6 +374,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -380,7 +382,9 @@ function PlayerDamage:damage_bullet(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
-				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * armor_dodge_mult), true)
+				if grace_bonus then
+					self._next_allowed_dmg_t = Application:digest_value(t + grace_bonus, true)
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -447,6 +451,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -454,7 +459,9 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
-				self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * armor_dodge_mult), true)
+				if grace_bonus then
+					self._next_allowed_dmg_t = Application:digest_value(t + grace_bonus, true)
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -1066,6 +1073,9 @@ function PlayerDamage:_calc_health_damage(attack_data)
 	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
 
 	if not self._ally_attack then
+		if self:get_real_armor() <= 0 then
+			self:fill_dodge_meter(self._dodge_points * 0.5)
+		end
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data) --Stoic damage delay. Done here so it applies to all health damage taken.
 	end
 
@@ -1281,6 +1291,48 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 		end
 	end
 end)
+
+
+function PlayerDamage:_calc_armor_damage(attack_data)
+	local health_subtracted = 0
+
+	if self:get_real_armor() > 0 then
+		health_subtracted = self:get_real_armor()
+
+		self:change_armor(-attack_data.damage)
+
+		health_subtracted = health_subtracted - self:get_real_armor()
+
+		self:_damage_screen()
+		SoundDevice:set_rtpc("shield_status", self:armor_ratio() * 100)
+		self:_send_set_armor()
+
+		if self:get_real_armor() <= 0 then
+			if not self._ally_attack then
+				self:fill_dodge_meter(self._dodge_points)
+			end
+			self._unit:sound():play("player_armor_gone_stinger")
+
+			if attack_data.armor_piercing then
+				self._unit:sound():play("player_sniper_hit_armor_gone")
+			end
+
+			local pm = managers.player
+
+			self:_start_regen_on_the_side(pm:upgrade_value("player", "passive_always_regen_armor", 0))
+
+			if pm:has_inactivate_temporary_upgrade("temporary", "armor_break_invulnerable") then
+				pm:activate_temporary_upgrade("temporary", "armor_break_invulnerable")
+
+				self._can_take_dmg_timer = pm:temporary_upgrade_value("temporary", "armor_break_invulnerable", 0)
+			end
+		end
+	end
+
+	managers.hud:damage_taken()
+
+	return health_subtracted
+end
 
 --Starts biker regen when there is missing armor. Also notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
 Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)

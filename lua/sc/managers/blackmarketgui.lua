@@ -4513,16 +4513,7 @@ function BlackMarketGui:update_info_text()
 		armor_image:set_image(self._slot_data.bitmap_texture)
 		self._armor_info_panel:set_h(armor_image:bottom())
 		updated_texts[4].resource_color = {}
-		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
-		local upgrade_level = bm_armor_tweak.upgrade_level
-		local dodge_grace = tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] and (tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] - 1) * 100
-		local description = managers.localization:to_upper_text("bm_menu_dodge_grace", {grace_bonus = dodge_grace})
-		for color_id in string.gmatch(description, "#%{(.-)%}#") do
-			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
-		end
-		description = description:gsub("#%{(.-)%}#", "##")
-		updated_texts[4].text = description
-		updated_texts[4].below_stats = true
+		updated_texts[4].text = ""
 		if not self._slot_data.unlocked then
 			updated_texts[3].text = utf8.to_upper(managers.localization:text(slot_data.level == 0 and (slot_data.skill_name or "bm_menu_skilltree_locked") or "bm_menu_level_req", {
 				level = slot_data.level,
@@ -4545,7 +4536,7 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
 			description = description:gsub("#%{(.-)%}#", "##")
-			updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+			updated_texts[4].text = description .. "\n\n"
 			updated_texts[4].below_stats = true
 		elseif managers.player:has_category_upgrade("player", "armor_grinding") then --Add Anarchist per-armor skill information.
 			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
@@ -4559,9 +4550,19 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
 			description = description:gsub("#%{(.-)%}#", "##")
-			updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+			updated_texts[4].text = description .. "\n\n"
 			updated_texts[4].below_stats = true
 		end
+		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
+		local upgrade_level = bm_armor_tweak.upgrade_level
+		local dodge_grace = tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] and (tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] - 1) * 100
+		local description = managers.localization:text("bm_menu_dodge_grace", {grace_bonus = dodge_grace})
+		for color_id in string.gmatch(description, "#%{(.-)%}#") do
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+		end
+		description = description:gsub("#%{(.-)%}#", "##")
+		updated_texts[4].text = updated_texts[4].text .. description
+		updated_texts[4].below_stats = true
 	elseif identifier == self.identifiers.armor_skins then
 		local skin_tweak = tweak_data.economy.armor_skins[self._slot_data.name]
 		updated_texts[1].text = self._slot_data.name_localized

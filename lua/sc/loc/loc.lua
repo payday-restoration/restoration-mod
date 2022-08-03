@@ -1662,7 +1662,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 
 		--Blackmarket gui per-armor skill descriptions.
-		["bm_menu_dodge_grace"] = "Bonus damage grace on dodge: #{skill_color}#$grace_bonus%##",
+		["bm_menu_dodge_grace"] = "Dodging grants a #{skill_color}#$grace_bonus%## longer grace period, up to a maximum of #{skill_color}#300ms.##\n\nA grace period is the amount of time needed to pass until your dodge meter can be drained or you can take damage again; grace periods get shorter with greater risk levels.",
 
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen## \nArmor regenerated when damaging enemies: #{skill_color}#$active_armor_regen##",

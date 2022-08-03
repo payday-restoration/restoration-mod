@@ -1085,7 +1085,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.weapon.swap_speed_multiplier = {1.15}
 				--Ace
 					self.values.player.weapon_concealment_increase = {
-						1,--Unused
+						0,--Unused
 						2 --Ace
 					}
 

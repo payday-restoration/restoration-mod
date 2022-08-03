@@ -21768,6 +21768,32 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_p99_sight_rail.stats = { value = 5 }
 	end
 
+	if self.parts.wpn_fps_upg_g3hk79_sight_rail_low then
+		self.parts.wpn_fps_upg_g3hk79_sight_rail_low.supported = true
+		self.parts.wpn_fps_upg_g3hk79_sight_rail_low.stats = {
+			value = 1
+		}
+
+		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.supported = true
+		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.stats = {
+			value = 5,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+
+		self.parts.wpn_fps_upg_g3hk79_barrel_long.supported = true
+		self.parts.wpn_fps_upg_g3hk79_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_upg_g3hk79_barrel_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+
+		self.parts.wpn_fps_upg_g3hk79_stock_sliding.supported = true
+		self.parts.wpn_fps_upg_g3hk79_stock_sliding.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_upg_g3hk79_stock_sliding.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+	end
+
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

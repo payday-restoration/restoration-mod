@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_vip/characters/ene_spring/ene_spring" orientation_object="rp_ene_acc_bulldozer_back" />
+	<diesel materials="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" orientation_object="rp_ene_acc_bulldozer_back" />
 	
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

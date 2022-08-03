@@ -10490,10 +10490,30 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--slightly more passive than the other dozers will stand his ground if charged
+		--Greendozers, basically the same tactics but they can use smoke/flash grenades now :>>>>>>
+		GREEN_tank_DW = {
+			"flank",
+			"murder",
+			"provide_coverfire",
+			"provide_support",
+			"smoke_grenade",
+			"flash_grenade",
+			"shield"
+		},
+		--Blackdozers, ditto
+		BLACK_tank_DW = {
+			"murder",
+			"charge",
+			"smoke_grenade",
+			"flash_grenade",
+			"shield"
+		},
+		--Skulldozers, slightly more passive than the other dozers will stand his ground if charged
 		SKULL_tank = { 
 			"ranged_fire",
 			"murder",
+			"smoke_grenade",
+			"flash_grenade",
 			"shield"
 		},
 		--funny railgun dozer
@@ -12009,7 +12029,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	end
 
-	if difficulty_index <= 6 then
+	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.GREEN_tanks = {
 			amount = {2, 3},
 			spawn = {
@@ -12058,7 +12078,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 1,
-					tactics = self._tactics.GREEN_tank,
+					tactics = self._tactics.GREEN_tank_DW,
 					rank = 3
 				},
 				{
@@ -12092,7 +12112,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.GREEN_tank,
+					tactics = self._tactics.GREEN_tank_DW,
 					rank = 3
 				},
 				{
@@ -12119,7 +12139,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	end
 
-	if difficulty_index <= 6 then
+	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.BLACK_tanks = {
 			amount = {2, 3},
 			spawn = {
@@ -12168,7 +12188,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 1,
-					tactics = self._tactics.BLACK_tank,
+					tactics = self._tactics.BLACK_tank_DW,
 					rank = 3
 				},
 				{
@@ -12202,7 +12222,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.BLACK_tank,
+					tactics = self._tactics.BLACK_tank_DW,
 					rank = 3
 				},
 				{
@@ -12228,9 +12248,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
-
-	if difficulty_index <= 6 then
-		self.enemy_spawn_groups.SKULL_tanks = {
+	--Unused on Overkill/Mayhem
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.SKULL_tanks = { 
 			amount = {2, 3},
 			spawn = {
 				{
@@ -12342,6 +12362,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
+	--Unused on Overkill
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.TIT_tanks = {
 			amount = {2, 3},
@@ -14650,7 +14671,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.BLACK_tank,
+				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
 			{
@@ -14683,7 +14704,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.GREEN_tank,
+				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
 			{
@@ -15027,7 +15048,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.BLACK_tank,
+				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
 			{
@@ -15060,7 +15081,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.GREEN_tank,
+				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
 			{
@@ -15404,7 +15425,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.BLACK_tank,
+				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
 			{
@@ -15437,7 +15458,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.GREEN_tank,
+				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
 			{
@@ -15781,7 +15802,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.BLACK_tank,
+				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
 			{
@@ -15814,7 +15835,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.GREEN_tank,
+				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
 			{

@@ -12575,7 +12575,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.BURST_FIRE = 4
 		self.xeno.kick = self.stat_info.kick_tables.moderate_kick
 		self.xeno.supported = true
-		self.xeno.ads_speed = 0.460
+		self.xeno.ads_speed = 0.440
 		self.xeno.damage_falloff = {
 			start_dist = 1600,
 			end_dist = 5100,
@@ -12604,6 +12604,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tec9.sounds.fire = "mp9_fire_single"
 		self.tec9.sounds.fire_single = "mp9_fire_single"
 	end	
+
+	if self.g3hk79 then
+		self.g3hk79.recategorize = {"dmr_ar"}
+		self.g3hk79.damage_type = "sniper"
+		self.g3hk79.AMMO_MAX = 40
+		self.g3hk79.CLIP_AMMO_MAX = 20
+		self.g3hk79.fire_mode_data.fire_rate = 0.12
+		self.g3hk79.CAN_TOGGLE_FIREMODE = true
+		self.g3hk79.sounds.fire = "g3_fire_single"
+		self.g3hk79.sounds.fire_single = "g3_fire_single"
+		self.g3hk79.sounds.fire_auto = "g3_fire"
+		self.g3hk79.sounds.stop_fire = "g3_stop"
+		self.g3hk79.FIRE_MODE = "single"
+		self.g3hk79.kick = self.stat_info.kick_tables.right_kick
+		self.g3hk79.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.g3hk79.supported = true
+		self.g3hk79.ads_speed = 0.440
+		self.g3hk79.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 7800,
+			min_mult = 0.5
+		}
+		self.g3hk79.stats = {
+			damage = 60,
+			spread = 89,
+			recoil = 63,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 21,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 20
+		}
+		self.g3hk79.stats_modifiers = nil
+		self.g3hk79.panic_suppression_chance = 0.05
+		self.g3hk79.can_shoot_through_enemy = true
+		self.g3hk79.can_shoot_through_wall = true
+		self.g3hk79.timers.reload_exit_empty = 0.9
+		self.g3hk79.timers.reload_exit_not_empty = 1
+		self.g3hk79.reload_speed_multiplier = 1
+	end
 				
 	if self.moss464spx then --Pawcio's SPX Centerfire
 		self.moss464spx.recategorize = {"light_snp"}
@@ -13519,6 +13563,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.recategorize = nil
 				if weap.categories[1] == "akimbo" then
 					weap.recategorize = { weap.categories[2] }
+				end
+				if weap.categories[1] == "snp" then
+					weap.recategorize = { "assault_rifle" }
+				end
+				if weap.categories[1] == "minigun" or weap.categories[1] == "lmg" then
+					weap.recategorize = { "smg" }
 				end
 			end
 			--[[

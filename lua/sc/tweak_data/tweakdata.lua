@@ -796,10 +796,6 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 
 			{ "assault_rifle" },
 
-			{ "lmg" },
-
-			{ "snp" },
-
 			{ "wpn_special" }
 		},
 		secondaries = {
@@ -810,8 +806,6 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 			{ "shotgun" },
 
 			{ "assault_rifle" },
-
-			{ "snp" },
 
 			{ "wpn_special" }
 		}

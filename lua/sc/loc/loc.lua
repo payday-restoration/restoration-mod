@@ -150,8 +150,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["kf_mw_style"] = "KF1/CoD Style",
 		["tilt_in"] = "Tilted In",
 
-		["base_wpn_cat"] = "Divide by base categories",
-		["sub_wpn_cat"] = "Divide by sub-categories",
+		["base_wpn_cat"] = "Divide by base/skill category",
+		["sub_wpn_cat"] = "Divide by sub-category + damage tier",
 
 		["default"] = "Default",
 		["random"] = "Random",
@@ -1277,7 +1277,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--KSG
 		["bm_menu_sc_ksg_desc"] = "Everything is plastic in the future! Bullpup shotgun with questionable craftsmanship, an LWI specialty.",		
 		--Breaker 10g
-		["bm_menu_sc_boot"] = "Breaker 10g",		
+		["bm_menu_sc_boot"] = "Breaker 10G Shotgun",		
 		["bm_menu_sc_boot_desc"] = "An antique shotgun sporting a powerful 10g shotgun shell and an even more potent badass factor. Come with me if you want to live.",	
 		--Mosconi
 		["bm_menu_sc_huntsman_desc"] = "Double the barrels, double the fun. While limited when it comes to magazine size, #{skill_color}#two triggers## allows you to unleash a ragnarok of buckshot on any unfortunate SOB in the same room as you.",		
@@ -1368,30 +1368,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--Bootleg/HK416c
-		["bm_w_tecci"] = "Bootleg Light Machine Gun",
+		["bm_w_tecci"] = "Bootleg LMG",
 		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
 		--KSP/M249
-		["bm_w_m249"] = "KSP-90 Light Machine Gun",
+		["bm_w_m249"] = "KSP-90 LMG",
 		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
 		--RPK
+		["bm_w_rpk"] = "RPK LMG",
 		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
 					
 		--Brenner 21/HK21
-		["bm_w_hk21"] = "Brenner-21 Heavy Machine Gun",
+		["bm_w_hk21"] = "Brenner-21 MMG",
 		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",	
 		--M60
-		["bm_w_m60"] = "M60 Heavy Machine Gun",
+		["bm_w_m60"] = "M60 MMG",
 		--Ksp 58
-		["bm_w_par"] = "KSP-58B Heavy Machine Gun",	
+		["bm_w_par"] = "KSP-58B MMG",	
 		--Buzzsaw/Mg42
-		["bm_w_mg42"] = "Buzzsaw-42 Heavy Machine Gun",	
+		["bm_w_mg42"] = "Buzzsaw-42 MMG",	
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
 		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
-		["bm_w_hk51b"] = "Versteckt-51B Heavy Machine Gun",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes.",
+		["bm_w_hk51b"] = "Versteckt-51B MMG",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further.",
 
 		--M134
 		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
@@ -1425,6 +1426,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",		
 		--Custom DMRs
+		["bm_w_g3hk79"] = "Gewehr-A3 GL79",
 		["bm_w_xr2"] = "XR-2 Rifle",
 		["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
 		["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
@@ -1619,44 +1621,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "Pistols",
-		["menu_akimbo_pistol"] = "Dual Pistols",
-		--
-		["menu_light_pis"] = "Light Pistols",
-		["menu_heavy_pis"] = "Heavy Pistols",
+			["menu_light_pis"] = "Light Pistols",
+			["menu_heavy_pis"] = "Heavy Pistols",
 		
 		["menu_shotgun"] = "Shotguns",
-		["menu_akimbo_shotgun"] = "Dual Shotguns",
-		--
-		["menu_light_shot"] = "Auto Shotguns",
-		["menu_heavy_shot"] = "Light Shotguns",
-		["menu_break_shot"] = "Heavy Shotguns",
+			["menu_light_shot"] = "Auto Shotguns",
+			["menu_heavy_shot"] = "Light Shotguns",
+			["menu_break_shot"] = "Heavy Shotguns",
 		
-		["menu_smg"] = "SMGs",
-		["menu_akimbo_smg"] = "Dual SMGs",
-		--
-		["menu_light_smg"] = "Light SMGs",
-		["menu_heavy_smg"] = "Heavy SMGs",
-		
-		["menu_assault_rifle"] = "Rifles",
-		["menu_akimbo_assault_rifle"] = "Dual Rifles",
-		--
-		["menu_light_ar"] = "Light Rifles",
-		["menu_heavy_ar"] = "Heavy Rifles",
-		["menu_dmr_ar"] = "Marksman Rifles",
-		
-		["menu_lmg"] = "Machine Guns",
-		--
-		["menu_light_mg"] = "LMGs",
-		["menu_heavy_mg"] = "HMGs",
-		["menu_miniguns"] = "Gatling Guns",
-		
-		["menu_snp"] = "Snipers",
-		--
-		["menu_light_snp"] = "Light Sniper Rifles",
-		["menu_heavy_snp"] = "Heavy Sniper Rifles",
-		["menu_antim_snp"] = "Anti-Materiel Rifles",
+		["menu_smg"] = "Machine Guns",
+			["menu_light_smg"] = "Light SMGs",
+			["menu_heavy_smg"] = "Heavy SMGs",
+			["menu_light_mg"] = "LMGs",
+			["menu_heavy_mg"] = "MMGs",
+			["menu_miniguns"] = "Gatling Guns",
 
-		["menu_wpn_special"] = "Specials & Unsorted",
+		["menu_assault_rifle"] = "Rifles",
+			["menu_light_ar"] = "Light Rifles",
+			["menu_heavy_ar"] = "Heavy Rifles",
+			["menu_dmr_ar"] = "Marksman Rifles",
+			["menu_light_snp"] = "Light Sniper Rifles",
+			["menu_heavy_snp"] = "Heavy Sniper Rifles",
+			["menu_antim_snp"] = "Anti-Materiel Rifles",
+
+		["menu_wpn_special"] = "Specials",
 		
 		
 		

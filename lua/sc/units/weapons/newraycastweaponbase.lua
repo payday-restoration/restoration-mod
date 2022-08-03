@@ -1326,7 +1326,7 @@ function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
 						local ammo_base = self:ammo_base()
 						local ammo = ammo_base[ammo_func](ammo_base)
 						
-						if ammo then
+						if ammo and object[1].set_visibility then --if this doesn't fix that fucking crash then I don't know what will
 							object[1]:set_visibility(i <= ammo)
 						end
 					end

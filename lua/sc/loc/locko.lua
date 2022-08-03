@@ -149,8 +149,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["kf_mw_style"] = "킬링 플로어 1/콜 오브 듀티 스타일",
 		["tilt_in"] = "기울임",
 
-		["base_wpn_cat"] = "기본 카테고리로 나누기",
-		["sub_wpn_cat"] = "하위 카테고리로 나누기",
+		["base_wpn_cat"] = "기본/스킬 카테고리로 나누기",
+		["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",
 		
 		["default"] = "기본",
 		["random"] = "랜덤",
@@ -1368,6 +1368,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_m249"] = "KSP-90 경기관총",
 		["bm_m249_sc_desc"] = "재장전 할 때 골치가 아프지만 재장전이 필요하기도 전에 모두를 죽일 가능성이 있습니다.",
 		--RPK
+		["bm_w_rpk"] = "RPK 경기관총",
 		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
 
 		--Brenner 21/HK21
@@ -1420,6 +1421,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",		
 		--Custom DMRs
+		["bm_w_g3hk79"] = "Gewehr-A3 GL79 소총"
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		["bm_wp_xr2_handle_01_sc"] = "완전 자동 사격 노리쇠",

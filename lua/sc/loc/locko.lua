@@ -1421,7 +1421,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",		
 		--Custom DMRs
-		["bm_w_g3hk79"] = "Gewehr-A3 GL79 소총"
+		["bm_w_g3hk79"] = "Gewehr-A3 GL79 소총",
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		["bm_wp_xr2_handle_01_sc"] = "완전 자동 사격 노리쇠",
@@ -1616,45 +1616,34 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "권총",
-		["menu_akimbo_pistol"] = "듀얼 권총",
-		--
 		["menu_light_pis"] = "경권총",
 		["menu_heavy_pis"] = "중권총",
 		
 		["menu_shotgun"] = "산탄총",
-		["menu_akimbo_shotgun"] = "듀얼 산탄총",
-		--
 		["menu_light_shot"] = "자동 산탄총",
 		["menu_heavy_shot"] = "경산탄총",
 		["menu_break_shot"] = "중산탄총",
 		
 		["menu_smg"] = "기관단총",
-		["menu_akimbo_smg"] = "듀얼 기관단총",
-		--
 		["menu_light_smg"] = "경기관단총",
 		["menu_heavy_smg"] = "중기관단총",
 		
 		["menu_assault_rifle"] = "소총",
-		["menu_akimbo_assault_rifle"] = "듀얼 소총",
-		
-		--
 		["menu_light_ar"] = "경소총",
 		["menu_heavy_ar"] = "중소총",
 		["menu_dmr_ar"] = "저정사수 소총",
 		
 		["menu_lmg"] = "기관총",
-		--
 		["menu_light_mg"] = "경기관총",
 		["menu_heavy_mg"] = "중기관총",
 		["menu_miniguns"] = "개틀링 기관총",
 		
 		["menu_snp"] = "저격총",
-		--
 		["menu_light_snp"] = "경저격소총",
 		["menu_heavy_snp"] = "중저격소총",
 		["menu_antim_snp"] = "대물 저격소총",
 
-		["menu_wpn_special"] = "특수 & 분류되지 않음",
+		["menu_wpn_special"] = "특수",
 
 
 

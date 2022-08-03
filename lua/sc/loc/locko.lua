@@ -2048,12 +2048,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end		
 end)
 
+local a = tweak_data.levels.ai_groups.america
 local r = tweak_data.levels.ai_groups.russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater
 local z = tweak_data.levels.ai_groups.zombie
 local f = tweak_data.levels.ai_groups.federales
+local n = tweak_data.levels.ai_groups.nypd
+local l = tweak_data.levels.ai_groups.lapd
+local fbi = tweak_data.levels.ai_groups.fbi
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -2087,6 +2091,41 @@ elseif ai_type == m then
 			["hud_assault_alpha"] = "머키워터 작전대"
 		})
 	end)
+elseif ai_type == n and difficulty_index <= 7 then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "NYPD 경찰 타격대 진행 중",
+			["hud_assault_alpha"] = "NYPD 경찰 타격대"
+		})
+	end)
+elseif ai_type == l and difficulty_index <= 7 then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "LAPD 경찰 타격대 진행 중",
+			["hud_assault_alpha"] = "LAPD 경찰 타격대"
+		})
+	end)
+elseif ai_type == fbi and difficulty_index <= 7 then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "FBI 작전 진행 중",
+			["hud_assault_alpha"] = "FBI 작전"
+		})
+	end)
+elseif ai_type == a and difficulty_index <= 7 then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "경찰 타격대 진행 중",
+			["hud_assault_alpha"] = "경찰 타격대"
+		})
+	end)	
+elseif ai_type == a or ai_type == n or ai_type == l or ai_type == fbi and difficulty_index <= 8 then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "ZEAL 팀 타격대 진행 중",
+			["hud_assault_alpha"] = "ZEAL 팀 타격대"
+		})
+	end)	
 end
 
  if _G.HopLib then
@@ -2108,7 +2147,7 @@ end
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew_ko.json")
 		end)
 	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_lapd", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd_ko.json")
 		end)
 	elseif ai_type == mex then

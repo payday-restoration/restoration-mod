@@ -1947,16 +1947,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	
 end)
 
-local a = tweak_data.levels.ai_groups.america
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local f = tweak_data.levels.ai_groups.federales
-local n = tweak_data.levels.ai_groups.nypd
-local l = tweak_data.levels.ai_groups.lapd
-local fbi = tweak_data.levels.ai_groups.fbi
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -1978,9 +1974,9 @@ elseif ai_type == z then
 elseif ai_type == f then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Asalto Federal En Marcha",
+			["hud_assault_assault"] = "Asalto En Marcha",
 			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
-			["hud_assault_alpha"] = "ASALTO FEDERAL"
+			["hud_assault_alpha"] = "ASALTO"
 		})
 	end)
 elseif ai_type == m then
@@ -1990,41 +1986,6 @@ elseif ai_type == m then
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
 		})
 	end)
-elseif ai_type == n and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "NYPD Police Assault in Progress",
-			["hud_assault_alpha"] = "NYPD POLICE ASSAULT"
-		})
-	end)
-elseif ai_type == l and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "LAPD Police Assault in Progress",
-			["hud_assault_alpha"] = "LAPD POLICE ASSAULT"
-		})
-	end)
-elseif ai_type == fbi and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "FBI Operation in Progress",
-			["hud_assault_alpha"] = "FBI OPERATION"
-		})
-	end)
-elseif ai_type == a and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Police Assault in Progress",
-			["hud_assault_alpha"] = "POLICE ASSAULT"
-		})
-	end)	
-elseif ai_type == a or ai_type == n or ai_type == l or ai_type == fbi and difficulty_index <= 8 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ZEAL Team Operation in Progress",
-			["hud_assault_alpha"] = "ZEAL TEAM OPERATION"
-		})
-	end)	
 end
 
  if _G.HopLib then

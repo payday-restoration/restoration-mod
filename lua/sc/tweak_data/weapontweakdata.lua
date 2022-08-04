@@ -4857,9 +4857,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54_underbarrel.tactical_reload = nil
 				self.x_type54_underbarrel.CLIP_AMMO_MAX = 2
 				self.x_type54_underbarrel.fire_mode_data = {}
-				self.x_type54_underbarrel.fire_mode_data.fire_rate = 0.06
-				self.x_type54_underbarrel.single = {}
-				self.x_type54_underbarrel.single.fire_rate = 0.06	
+				self.x_type54_underbarrel.fire_mode_data.fire_rate = 0.24
 				self.x_type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
 				self.x_type54_underbarrel.supported = true
 				self.x_type54_underbarrel.ads_speed = 0.220
@@ -5254,9 +5252,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54_underbarrel.AMMO_MAX = 15
 				self.type54_underbarrel.CLIP_AMMO_MAX = 1
 				self.type54_underbarrel.fire_mode_data = {}
-				self.type54_underbarrel.fire_mode_data.fire_rate = 0.06
-				self.type54_underbarrel.single = {}
-				self.type54_underbarrel.single.fire_rate = 0.06	
+				self.type54_underbarrel.fire_mode_data.fire_rate = 0.24
 				self.type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
 				self.type54_underbarrel.supported = true
 				self.type54_underbarrel.ads_speed = 0.220

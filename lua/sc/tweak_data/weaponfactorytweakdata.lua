@@ -4043,8 +4043,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 	self.parts.wpn_fps_ass_g36_s_sl8.stats = deep_clone(stocks.folder_to_thumb_stats)
 	self.parts.wpn_fps_ass_g36_s_sl8.custom_stats = deep_clone(stocks.folder_to_thumb_stats)
 
+	if not self.wpn_fps_ass_g36.override then
+		self.wpn_fps_ass_g36.override = {}
+	end
+
 	--table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_m4_m_drum")
-	--table.insert(self.wpn_fps_ass_g36_npc.uses_parts, "wpn_fps_upg_m4_m_drum")
 
 	--self.wpn_fps_ass_g36_npc.uses_parts = deep_clone(self.wpn_fps_ass_g36.uses_parts)
 
@@ -9316,6 +9319,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 		concealment = -1
 	}
 		
+	self.wpn_fps_ass_l85a2_mil = deep_clone(self.wpn_fps_ass_l85a2)
+	self.wpn_fps_ass_l85a2_mil.real_factory_id = "wpn_fps_ass_l85a2"
+	self.wpn_fps_ass_l85a2_mil.default_blueprint = {
+		"wpn_fps_ass_l85a2_body_standard",
+		"wpn_fps_ass_l85a2_m_emag",
+		"wpn_fps_ass_l85a2_fg_short",
+		"wpn_fps_ass_l85a2_b_medium",
+		"wpn_fps_ass_l85a2_g_standard",
+		"wpn_fps_ass_l85a2_ns_standard",
+		"wpn_fps_upg_o_specter"
+	}
+	self.wpn_fps_ass_l85a2_mil_npc = deep_clone(self.wpn_fps_ass_l85a2_mil)
+	self.wpn_fps_ass_l85a2_mil_npc.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2/wpn_fps_ass_l85a2_npc"
+
 end)
 
 --Lion's Roar

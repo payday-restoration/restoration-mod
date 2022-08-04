@@ -2210,8 +2210,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons[melee_id].melee_damage_delay = 0.275
 		self.melee_weapons[melee_id].anim_speed_mult = 0.95
 	end
-	self.melee_weapons.barbedwire.anim_speed_mult = 0.9
-	self.melee_weapons.freedom.anim_speed_mult = 0.9
+	self.melee_weapons.freedom.anim_speed_mult = 0.85
 	self.melee_weapons.freedom.anim_attack_vars = {"var1","var2","var4"}
 	self.melee_weapons.freedom.anim_attack_charged_vars = {"var3"} --This however, is not blunt and very capable of stabbing :^)
 	
@@ -2994,8 +2993,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.freedom.stats.max_damage = 12.1
 	self.melee_weapons.freedom.stats.min_damage_effect = 1
 	self.melee_weapons.freedom.stats.max_damage_effect = 1.1
-	self.melee_weapons.freedom.stats.charge_time = 1.95
-	self.melee_weapons.freedom.stats.range = 225
+	self.melee_weapons.freedom.stats.charge_time = 2.1
+	self.melee_weapons.freedom.stats.range = 215
 	self.melee_weapons.freedom.stats.charge_bonus_start = 0.9
 	self.melee_weapons.freedom.stats.charge_bonus_range = 100
 	self.melee_weapons.freedom.stats.concealment = 23
@@ -3271,7 +3270,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.beardy.stats.max_damage = 12.1
 	self.melee_weapons.beardy.stats.min_damage_effect = 1
 	self.melee_weapons.beardy.stats.max_damage_effect = 1.1
-	self.melee_weapons.beardy.stats.charge_time = 1.95
+	self.melee_weapons.beardy.stats.charge_time = 2
 	self.melee_weapons.beardy.stats.range = 240
 	self.melee_weapons.beardy.stats.concealment = 23
 
@@ -3290,7 +3289,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.great.stats.max_damage = 12.1
 	self.melee_weapons.great.stats.min_damage_effect = 0.9
 	self.melee_weapons.great.stats.max_damage_effect = 1
-	self.melee_weapons.great.stats.charge_time = 1.85
+	self.melee_weapons.great.stats.charge_time = 2.1
 	self.melee_weapons.great.stats.range = 215
 	self.melee_weapons.great.stats.charge_bonus_start = 0.9
 	self.melee_weapons.great.stats.charge_bonus_range = 100
@@ -3355,8 +3354,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.pitchfork.stats.max_damage = 12.1
 	self.melee_weapons.pitchfork.stats.min_damage_effect = 1
 	self.melee_weapons.pitchfork.stats.max_damage_effect = 1.1
-	self.melee_weapons.pitchfork.stats.charge_time = 1.95
-	self.melee_weapons.pitchfork.stats.range = 225
+	self.melee_weapons.pitchfork.stats.charge_time = 2.25
+	self.melee_weapons.pitchfork.stats.range = 200
 	self.melee_weapons.pitchfork.stats.concealment = 23
 
 	--Shephard's cane--
@@ -3512,7 +3511,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.agave.stats.min_damage_effect = 1
 	self.melee_weapons.agave.stats.max_damage_effect = 1.1
 	self.melee_weapons.agave.stats.charge_time = 1.55
-	self.melee_weapons.agave.stats.range = 210
+	self.melee_weapons.agave.stats.range = 205
 	self.melee_weapons.agave.attack_allowed_expire_t = 0.1
 	self.melee_weapons.agave.stats.concealment = 24
 
@@ -3754,7 +3753,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
 
-	local blanket_mult = 1.2
+	local blanket_mult = 1.15
 	for melee_id, _ in pairs(self.melee_weapons) do
 		if self.melee_weapons[melee_id] and not self.melee_weapons[melee_id].instant then
 			if self.melee_weapons[melee_id].anim_speed_mult then

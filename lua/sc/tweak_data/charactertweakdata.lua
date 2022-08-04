@@ -3370,8 +3370,12 @@ function CharacterTweakData:_init_clover(presets)
 	self.female_1.no_run_stop = true
 	self.female_1.damage = presets.gang_member_damage
 	self.female_1.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_ass_l85a2_mil_npc",
+		"wpn_fps_ass_l85a2_npc"
+	}
 	self.female_1.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_l85a2_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.female_1.detection = presets.detection.gang_member

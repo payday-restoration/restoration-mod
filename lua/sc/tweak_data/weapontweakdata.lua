@@ -7098,14 +7098,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.supported = true
 				self.amcar.ads_speed = 0.320
 				self.amcar.damage_falloff = {
-					start_dist = 2200,
-					end_dist = 6000,
+					start_dist = 2100,
+					end_dist = 5800,
 					min_mult = 0.5
 				}
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 82,
+					recoil = 80,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -7139,9 +7139,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.supported = true
 				self.s552.ads_speed = 0.300
 				self.s552.damage_falloff = {
-					start_dist = 3000,
+					start_dist = 3300,
 					end_dist = 7200,
-					min_mult = 0.6
+					min_mult = 0.5
 				}
 				self.s552.stats = {
 					damage = 20,
@@ -7212,21 +7212,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.desc_id = "bm_vhs_sc_desc"
 				self.vhs.has_description = true					
 				self.vhs.CLIP_AMMO_MAX = 30
-				self.vhs.AMMO_MAX = 150
+				self.vhs.AMMO_MAX = 180
 				self.vhs.fire_mode_data.fire_rate = 0.06976744186
 				self.vhs.CAN_TOGGLE_FIREMODE = true
-				self.vhs.auto = {}
-				self.vhs.auto.fire_rate = 0.06976744186
-				self.vhs.kick = self.stat_info.kick_tables.even_recoil
+				self.vhs.kick = self.stat_info.kick_tables.moderate_kick
 				self.vhs.supported = true
 				self.vhs.ads_speed = 0.300
 				self.vhs.damage_falloff = {
 					start_dist = 3000,
-					end_dist = 7200,
-					min_mult = 0.4166
+					end_dist = 7000,
+					min_mult = 0.5
 				}
 				self.vhs.stats = {
-					damage = 24,
+					damage = 20,
 					spread = 91,
 					recoil = 82,
 					spread_moving = 6,
@@ -7338,14 +7336,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.supported = true
 				self.corgi.ads_speed = 0.300
 				self.corgi.damage_falloff = {
-					start_dist = 2800,
+					start_dist = 2500,
 					end_dist = 6800,
 					min_mult = 0.4166
 				}
 				self.corgi.stats = {
 					damage = 24,
-					spread = 86,
-					recoil = 76,
+					spread = 85,
+					recoil = 74,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -13606,19 +13604,20 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.059, 0.029}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.057, 0.028}},
-		{damage = 24,  pickup = {0.055, 0.028}},
-		{damage = 30,  pickup = {0.052, 0.027}},
+		{damage = 18,  pickup = {0.061, 0.035}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.058, 0.032}},
+		{damage = 24,  pickup = {0.056, 0.030}},
+		{damage = 30,  pickup = {0.053, 0.028}},
 		{damage = 45,  pickup = {0.050, 0.026}},
 		{damage = 60,  pickup = {0.048, 0.025}},
 		{damage = 90,  pickup = {0.044, 0.023}},
 		{damage = 120, pickup = {0.040, 0.022}},
 		{damage = 180, pickup = {0.036, 0.020}},
-		{damage = 240, pickup = {0.031, 0.018}}, --All guns above here.
-		{damage = 360, pickup = {0.029, 0.017}}, --Heavy bows.
+		{damage = 240, pickup = {0.031, 0.018}},
+		{damage = 360, pickup = {0.029, 0.017}},
 		{damage = 600, pickup = {0.026, 0.016}}, --Light GLs
-		{damage = 800, pickup = {0.021, 0.013}}, --Heavy GLs
+		{damage = 720, pickup = {0.021, 0.013}}, --Heavy GLs
+		{damage = 900, pickup = {0.015, 0.010}}, --Rocket Launchers
 		{damage = 1200, pickup = {0.012, 0.009}} --Rocket Launchers
 	}
 
@@ -13636,18 +13635,18 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Determine how much to multiply things by.
 	local pickup_multiplier = weapon.AMMO_MAX
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
-		shotgun = 0.7, --Compensate for ease of aim+multikills and/or versatility.
-		bow = 0.7, --Compensate for picking arrows back up.
+		akimbo = 1.1,
 		pistol = 1.15, --Compensate for low range.
-		crossbow = 0.7,
 		smg = 1.1,
 			pdw = 0.65,
 			lmg = 0.6,
 			minigun = 0.4,
-		akimbo = 1.1,
-		saw = 1.25, --Compensate for jankiness.
+		shotgun = 0.7, --Compensate for ease of aim+multikills and/or versatility.
 		--snp = 1, 
 			semi_snp = 0.8, --0.6075,
+		saw = 1.25, --Compensate for jankiness.
+		bow = 0.7, --Compensate for picking arrows back up.
+		crossbow = 0.7,
 		--Custom weapon pickup
 		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
 	}
@@ -13664,7 +13663,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * 1.125
+	pickup_multiplier = pickup_multiplier * 1.1
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

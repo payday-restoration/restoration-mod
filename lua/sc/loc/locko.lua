@@ -1264,6 +1264,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_spas12_sc_desc"] = "다른 반자동 산탄총에 비해 더 무겁고 복잡한 무기로 거의 외계인에 가까운 대체 발사 모드를 제공합니다.",
 		--Benelli
 		["bm_benelli_sc_desc"] = "최상급 전술 산탄총. 특히 적들이 붐비는 방을 청소하는 데 적합합니다.",
+		--Argos III
+		["bm_ultima_sc_desc"] = "플라스틱과 알루미늄만큼 현대적인 것은 없으며 휴대폰 충전을 위한 USB 슬롯도 제공됩니다.\n\n한 번에 #{skill_color}#2##발씩 재장전합니다.",				
 		--Loco
 		["bm_serbu_sc_desc"] = "크기가 축소된 Reinfeld 880 산탄총의 애프터마켓 버전. 은닉성을 원하고 손목을 파괴하고 싶은 사람들을 위한 산탄총입니다.",
 		--Reinfeld 88
@@ -1279,7 +1281,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_boot"] = "Breaker 10 게이지 산탄총",		
 		["bm_menu_sc_boot_desc"] = "강력한 10 게이지 산탄총 탄과 훨씬 더 강력한 악당 요소를 자랑하는 골동품 산탄총. 살고 싶다면 나와 함께 와라.",	
 		--Mosconi
-		["bm_menu_sc_huntsman_desc"] = "배럴이 두 배, 재미가 두 배. 탄창 크기는 제한적이지만 #{skill_color}#두 개의 방아쇠##를 사용하면 같은 방에 있는 불행한 개새끼들에게 벅샷이 가득한 라그나로크를 보여줄 수 있습니다.",				
+		["bm_menu_sc_huntsman_desc"] = "배럴이 두 배, 재미가 두 배. 탄창 크기는 제한적이지만 #{skill_color}#두 개의 방아쇠##를 사용하면 같은 방에 있는 불행한 개새끼들에게 벅샷이 가득한 라그나로크를 보여줄 수 있습니다.",
+		--Akimbo Judge
+		["bm_x_judge_sc_desc"] = "재판과 배심, 그리고 두 개의 휴대용 방 청소기를 사용하면 당신은 사형집행자가 될 수 있습니다.",
+		--Joceline
+		["bm_b682_sc_desc"] = "일반적으로 스포츠 경기를 위한 모델로 제작된 이 상하쌍대식 산탄총은 클레이 접시 대신 헬멧을 날리는 데 사용할 것입니다.",		
 		--Custom Shotguns
 		--Doomstick
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "근거리에서 효과적인 펠릿 타입.\n#{skill_color}#펠릿 수를 10개로 늘립니다.##",
@@ -1347,8 +1353,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akm_gold_sc_desc"] = "강도, 멕시코 마약왕, 과대망상 독재자의 공통점은? 금도금 소총에 대한 매력이죠, 물론이고 말고요.",		
 		--KETCHUPKNOB--
 		["bm_w_groza"] = "OB-14st Byk-1 소총",
-		["bm_groza_sc_desc_pc"] = "AK 가족의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
-		["bm_groza_sc_desc"] = "AK 가족의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_groza_sc_desc_pc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_groza_sc_desc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--Krinkov
 		["bm_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",
 		
@@ -1376,9 +1382,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
 
 		--M60
-		["bm_w_m60"] = "M60 중기관총",		
+		["bm_w_m60"] = "M60 중기관총",
+		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관이 될 것입니다.",		
 		--Ksp 58
-		["bm_w_par"] = "KSP-58B 중기관총",	
+		["bm_w_par"] = "KSP-58B 중기관총",
+		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
 		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향 사격 시 반동이 25% 감소합니다.##",	
@@ -1417,6 +1425,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 소총",
 		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
+		--KS12
+		["bm_shak12_sc_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",		
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",		
@@ -1430,6 +1440,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_xr2_handle_02_sc_desc"] = "#{important_1}#점사 중 반동 완화를 대가로## 점사 발사 속도를 #{skill_color}#950##으로 증가시킵니다.\n\n점사 지연과 반자동 발사 속도에는 영향을 받지 않습니다.",		
 		
 
+
+		--MSR
+		["bm_msr_sc_desc"] = "미군이 선택한 저격소총. 우수한 명중률과 핸들링 그리고 은닉성으로 인해 다목적 저격소총에 좋습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		--R700
+		["bm_r700_sc_desc"] = "Rattlesnake 저격소총의 후속작. 명중률와 핸들링이 좋고 사거리가 전작보다 좋습니다. 단점은? 망할 5발 탄창이죠.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		--QBU88
+		["bm_qbu88_sc_desc"] = "동부 블록에서 영감을 얻은 불펍 저격소총 플랫폼. 많은 사람들처럼, 당신의 의지를 다른 사람들에게 강요하는 데 좋습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		--Winchester 1874
+		["bm_winchester1874_sc_desc"] = "서부시대를 이긴 총. 총기들 중 성스러운 유물이지만 강력한 .44-40 탄약을 사용하므로 덜 치명적인 소총은 아닙니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308 저격소총",
 		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1439,13 +1458,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_wa2000"] = "Lebensauger .300 저격소총",
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--Rangerhitter
-		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"		
+		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
+		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 제공하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가 죽은 돼지놈들을 기대해보십시오.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		--Model 70
+		["bm_model70_sc_desc"] = "라이플맨의 소총. Repeater 1874 소총을 제작한 디자이너가 만든 초기 볼트 액션 디자인 소총입니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SVD
-		["bm_siltstone_sc_desc"] = "고성능 반자동 저격 소총.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_siltstone_sc_desc"] = "AK 계열에 속하는 고성능 반자동 저격소총. 대부분의 동부 블록 무기와 마찬가지로 평판이 좋습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--Mosin--
 		["bm_mosin_sc_desc"] = "음식은 사치품이지만 여전히 총이 필요할 때 이 저렴하고 고전적인 볼트액션 소총이 있습니다.\n\n이 무기는 한 번에 5발의 탄환으로 재장전되고 #{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, #{item_stage_2}#디 엔드##\n\n#{skill_color}#3초에 걸쳐 초당 40의 피해를 입히고 적을 스턴시킬 수 있는## #{stats_positive}#마취탄##을 발사합니다.",
+		--Desert Fox
+		["bm_desertfox_sc_desc"] = "윅이 러시아 마피아 세이프하우스를 공격할 때 사용한 소형 불펍 저격 플랫폼입니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		--R93
+		["bm_r93_sc_desc"] = "큰 총알을 가진 이 독일제 저격소총은 거물을 저지하기 위한 것입니다. 전 세계 경찰 및 대테러 준군사부대에서 선택하는 저격소총이기도 하죠.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal 대물 저격소총",
 		["bm_m95_sc_desc"] = "소형 차량과의 전투에 사용되는 대물 저격소총. 이것을 유기적 표적에 사용하는 것은 아마도 전쟁 범죄일겁니다.\n\n#{skill_color}#헤드샷 피해를 50%만큼 더 입히고 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
@@ -2043,21 +2069,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--["bm_w_b92fs_desc"] = "\"나님 등장! 이번 실험의 표본은 어딨느냐?\"\n\n#{skill_color}#사야##가 곳곳을 개조한 특제 권총.\n#{skill_color}#네즈스케##에 주사를 할 때에도 사용되고 있는 것 같다...",
 			-- Training Support Department
 			["bm_w_qbu88"] = "사랑의 매",
-			--["bm_w_qbu88_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
+			["bm_qbu88_sc_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
 		})
 	end		
 end)
 
-local a = tweak_data.levels.ai_groups.america
 local r = tweak_data.levels.ai_groups.russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater
 local z = tweak_data.levels.ai_groups.zombie
 local f = tweak_data.levels.ai_groups.federales
-local n = tweak_data.levels.ai_groups.nypd
-local l = tweak_data.levels.ai_groups.lapd
-local fbi = tweak_data.levels.ai_groups.fbi
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -2091,41 +2113,6 @@ elseif ai_type == m then
 			["hud_assault_alpha"] = "머키워터 작전대"
 		})
 	end)
-elseif ai_type == n and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "NYPD 경찰 타격대 진행 중",
-			["hud_assault_alpha"] = "NYPD 경찰 타격대"
-		})
-	end)
-elseif ai_type == l and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "LAPD 경찰 타격대 진행 중",
-			["hud_assault_alpha"] = "LAPD 경찰 타격대"
-		})
-	end)
-elseif ai_type == fbi and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "FBI 작전 진행 중",
-			["hud_assault_alpha"] = "FBI 작전"
-		})
-	end)
-elseif ai_type == a and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "경찰 타격대 진행 중",
-			["hud_assault_alpha"] = "경찰 타격대"
-		})
-	end)	
-elseif ai_type == a or ai_type == n or ai_type == l or ai_type == fbi and difficulty_index <= 8 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ZEAL 팀 타격대 진행 중",
-			["hud_assault_alpha"] = "ZEAL 팀 타격대"
-		})
-	end)	
 end
 
  if _G.HopLib then

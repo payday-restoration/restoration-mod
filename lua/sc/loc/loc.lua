@@ -1265,6 +1265,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_spas12_sc_desc"] = "A heavier and more complicated alternative to other semi-auto shotguns, features an almost alien alternative firing mode.",
 		--Benelli
 		["bm_benelli_sc_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
+		--Argos III
+		["bm_ultima_sc_desc"] = "Nothing says modern like plastic and aluminum, it even comes with a USB slot to charge your phone.\n\nReloads #{skill_color}#2## shells at a time.",		
 		--Loco
 		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
 		--Reinfeld 88
@@ -1281,6 +1283,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_boot_desc"] = "An antique shotgun sporting a powerful 10g shotgun shell and an even more potent badass factor. Come with me if you want to live.",	
 		--Mosconi
 		["bm_menu_sc_huntsman_desc"] = "Double the barrels, double the fun. While limited when it comes to magazine size, #{skill_color}#two triggers## allows you to unleash a ragnarok of buckshot on any unfortunate SOB in the same room as you.",		
+		--Akimbo Judge
+		["bm_x_judge_sc_desc"] = "Judge and Jury, and with two of these portable room-clearers, you're the executioner.",
+		--Joceline
+		["bm_b682_sc_desc"] = "A competition over-under typically reserved for sporting events, only instead of clay pigeons you'll be using it for popping helmets.",		
 		--Custom Shotguns
 		--Doomstick
 		["bm_w_quadbarrel"] = "Doomstick Shotgun",
@@ -1382,8 +1388,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",	
 		--M60
 		["bm_w_m60"] = "M60 MMG",
+		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.",	
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B MMG",	
+		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",	
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 MMG",	
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
@@ -1422,6 +1430,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 Rifle",
 		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
+		--KS12
+		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",	
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",		
@@ -1434,8 +1444,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
 		["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
 
-
-		--TTI(TTY)
+		--MSR
+		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		--R700
+		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		--QBU88
+		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		--Winchester 1874
+		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		--TTI(TTY)		
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
 		--Scunt
@@ -1445,12 +1462,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 Sniper Rifle", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
+		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		--Model 70
+		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
 		--SVD
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
 		--Mosin--
 		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can penetrate body armor, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 40 damage/sec over 3 seconds and can stun enemies.##",
+		--Desert Fox
+		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
+		--R93
+		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
@@ -1947,16 +1971,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	
 end)
 
-local a = tweak_data.levels.ai_groups.america
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local f = tweak_data.levels.ai_groups.federales
-local n = tweak_data.levels.ai_groups.nypd
-local l = tweak_data.levels.ai_groups.lapd
-local fbi = tweak_data.levels.ai_groups.fbi
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -1978,9 +1998,9 @@ elseif ai_type == z then
 elseif ai_type == f then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Asalto Federal En Marcha",
+			["hud_assault_assault"] = "Asalto En Marcha",
 			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
-			["hud_assault_alpha"] = "ASALTO FEDERAL"
+			["hud_assault_alpha"] = "ASALTO"
 		})
 	end)
 elseif ai_type == m then
@@ -1990,41 +2010,6 @@ elseif ai_type == m then
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
 		})
 	end)
-elseif ai_type == n and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "NYPD Police Assault in Progress",
-			["hud_assault_alpha"] = "NYPD POLICE ASSAULT"
-		})
-	end)
-elseif ai_type == l and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "LAPD Police Assault in Progress",
-			["hud_assault_alpha"] = "LAPD POLICE ASSAULT"
-		})
-	end)
-elseif ai_type == fbi and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "FBI Operation in Progress",
-			["hud_assault_alpha"] = "FBI OPERATION"
-		})
-	end)
-elseif ai_type == a and difficulty_index <= 7 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Police Assault in Progress",
-			["hud_assault_alpha"] = "POLICE ASSAULT"
-		})
-	end)	
-elseif ai_type == a or ai_type == n or ai_type == l or ai_type == fbi and difficulty_index <= 8 then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ZEAL Team Operation in Progress",
-			["hud_assault_alpha"] = "ZEAL TEAM OPERATION"
-		})
-	end)	
 end
 
  if _G.HopLib then

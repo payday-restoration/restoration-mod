@@ -618,14 +618,20 @@
 		<object force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
 		<unit force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
 	</add>
-	<cooked_physics path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
-	<material_config path="units/world/props/red_diamond_room/big_red_diamond_stand" unload="true"/>
-	<model path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
-	<object path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
-	<sequence_manager path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<texture path="levels/mods/firestarter_3_res/cube_lights/101797"/>
 	<texture path="levels/mods/firestarter_3_res/cube_lights/101948"/>
 	<texture path="levels/mods/firestarter_3_res/cube_lights/100042"/>
 	<texture path="levels/mods/firestarter_3_res/cube_lights/100132"/>
 	<texture path="levels/mods/firestarter_3_res/cube_lights/102206"/>
+	<add from_db="true" path="units/payday2/vehicles/str_vehicle_van_dest/str_vehicle_van_dest_crashed" type="unit">
+		<unit path="units/payday2/vehicles/str_vehicle_van_dest/str_vehicle_van_dest_crashed"/>
+		<object path="units/payday2/vehicles/str_vehicle_van_dest/str_vehicle_van_dest_crashed"/>
+		<material_config path="units/payday2/vehicles/str_vehicle_van_dest/str_vehicle_van_dest_crashed"/>
+		<sequence_manager path="units/payday2/vehicles/str_vehicle_van_dest/str_vehicle_van_dest_crashed"/>
+	</add>
+	<cooked_physics path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
+	<material_config path="units/world/props/red_diamond_room/big_red_diamond_stand" unload="true"/>
+	<model path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
+	<object path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
+	<sequence_manager path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 </table>

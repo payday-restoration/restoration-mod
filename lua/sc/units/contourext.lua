@@ -304,26 +304,21 @@ function ContourExt:_upd_opacity(opacity, is_retry)
 	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
 
 	for _, material in ipairs(self._materials) do
-		if not alive(material) then
-			self:update_materials()
-
-			if not is_retry then
-				self:_upd_opacity(opacity, true)
-			end
-
-			return
+		if alive(material) then
+			material:set_variable(idstr_contour_opacity, opacity)
+		elseif not is_retry then
+			self._last_opacity = opacity
+			return self:update_materials()
 		end
-
-		material:set_variable(idstr_contour_opacity, opacity)
 	end
 
 	self._last_opacity = opacity
-	self:_upd_color(false, opacity)
+	self:_upd_color(opacity, is_retry) -- pass is_retry so it doesn't waste time invalidating the cache if it didn't fix itself here
 
 	self:apply_to_linked("_upd_opacity", opacity)
 end
 
-function ContourExt:_upd_color(is_retry, opacity)
+function ContourExt:_upd_color(opacity, is_retry)
 	if not self._contour_list then
 		return
 	end
@@ -342,31 +337,23 @@ function ContourExt:_upd_color(is_retry, opacity)
 	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
 
 	for _, material in ipairs(self._materials) do
-		if not alive(material) then
-			self:update_materials()
-
-			if not is_retry then
-				self:_upd_color(true, opacity)
-			end
-
-			break
+		if alive(material) then
+			material:set_variable(idstr_contour_color, color)
+		elseif not is_retry then
+			return self:update_materials()
 		end
-
-		material:set_variable(idstr_contour_color, color)
 	end
 
-	self:apply_to_linked("_upd_color", false, opacity)
+	self:apply_to_linked("_upd_color", opacity)
 end
 
 function ContourExt:update_materials()
-	if self._contour_list and next(self._contour_list) then
+	if self._contour_list then
 		self._materials = nil
-
-		self:_upd_color()
 
 		local opacity = self._last_opacity or 1
 		self._last_opacity = nil
 
-		self:_upd_opacity(opacity)
+		self:_upd_opacity(opacity, true) -- opacity also updates colour
 	end
 end

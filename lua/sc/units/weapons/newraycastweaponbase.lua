@@ -1320,16 +1320,11 @@ end
 function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
 	if self._bullet_objects and not self:is_npc() then
 		for i, objects in pairs(self._bullet_objects) do
-			if objects and type(objects) == "table" then --added this to make sure "objects" is even a table as I'm pretty sure the next for loop is what shits the bed
-				for _, object in ipairs(objects) do
-					if object[1] then
-						local ammo_base = self:ammo_base()
-						local ammo = ammo_base[ammo_func](ammo_base)
-						
-						if ammo then
-							object[1]:set_visibility(i <= ammo)
-						end
-					end
+			for _, object in ipairs(objects) do
+				local ammo_base = self:ammo_base()
+				local ammo = ammo_base[ammo_func](ammo_base)
+				if alive(object[1]) then
+					object[1]:set_visibility(i <= ammo)
 				end
 			end
 		end

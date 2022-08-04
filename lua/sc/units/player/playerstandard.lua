@@ -32,7 +32,7 @@ function PlayerStandard:set_night_vision_state(state)
 	local ambient_color_key = CoreEnvironmentFeeder.PostAmbientColorFeeder.DATA_PATH_KEY
 	--Use a proper fallback env instead of whatever vanilla does if there's an issue.
 	local level_id = Global.game_settings.level_id
-	local env_setting = tweak_data.levels[level_id].env_params and tweak_data.levels[level_id].env_params.color_grading
+	local env_setting = level_id and tweak_data.levels[level_id].env_params and tweak_data.levels[level_id].env_params.color_grading
 	local level_check = env_setting or managers.user:get_setting("video_color_grading")
 	local effect = state and night_vision.effect or level_check
 

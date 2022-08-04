@@ -1014,7 +1014,9 @@ function CopDamage:damage_bullet(attack_data)
 				local head_obj = ids_func("Head")
 				local head_object_get = my_unit:get_object(head_obj)
 
-				if head_object_get then
+				local is_spring = my_unit:base()._tweak_table == "spring"
+
+				if head_object_get and not is_spring then
 					local world_g = World		
 					world_g:effect_manager():spawn({
 						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
@@ -1222,13 +1224,14 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			local head_obj = ids_func("Head")
 			local head_object_get = my_unit:get_object(head_obj)
 
-			if head_object_get then
+			local is_spring = my_unit:base()._tweak_table == "spring"
+
+			if head_object_get and not is_spring then
 				local world_g = World		
 				world_g:effect_manager():spawn({
 					effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 					parent = head_object_get		
 				})
-
 				--local damage_type = attack_data.weapon_unit:base():get_damage_type() 
 				if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
 					world_g:effect_manager():spawn({

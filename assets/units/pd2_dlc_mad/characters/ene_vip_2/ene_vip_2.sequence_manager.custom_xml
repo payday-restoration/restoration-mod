@@ -1,11 +1,9 @@
 <table>
 	<unit>
 		<variables>
-			<var_neck 		  value="'units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck'"/>
-			<var_throat 	  value="'units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat'"/>
-			<var_chest 		  value="'units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
-			<var_stomache 	  value="'units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
-			<var_back 		  value="'units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
+			<var_chest 		  value="'units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
+			<var_stomache 	  value="'units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
+			<var_back 		  value="'units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
 		</variables>		
 		<sequence name="'int_seq_armor_chest'" once="true">
 			<body enabled="false" name="'body_armor_chest'"/>
@@ -31,34 +29,18 @@
 			<spawn_unit name="vars.var_stomache"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>
 		</sequence>					
-		<sequence name="'int_seq_armor_throat'" once="true">
-			<body enabled="false" name="'body_armor_throat'"/>
-			<object enabled="false" name="'g_throat'"/>
-			<object enabled="false" name="'g_throat_lod1'"/>
-			<spawn_unit name="vars.var_throat" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
-			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
+		<sequence name="'bloodyhead'" once="true">
+			<sound action="'play'" event="'l1n_x02a_any_3p'" object="'Head'"/>
+			<object enabled="false" name="'g_head'"/>
+			<object enabled="false" name="'g_head_lod1'"/>
+			<object enabled="true" name="'g_head_robit'"/>
+			<object enabled="true" name="'g_head_robit_lod1'"/>
+			<effect damp_time="4" name="'effects/payday2/particles/impacts/blood/blood_impact_katana'" parent="object( 'Head' )" position="v()"/>
+			<effect damp_time="5" name="'effects/payday2/particles/impacts/blood/blood_impact_katana'" parent="object( 'Head' )" position="v()"/>
 		</sequence>
-		<sequence name="'int_seq_armor_neck'" once="true">
-			<body enabled="false" name="'body_armor_neck'"/>
-			<object enabled="false" name="'g_neck'"/>
-			<object enabled="false" name="'g_neck_lod1'"/>
-			<spawn_unit name="vars.var_neck" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
-			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
-		</sequence>	
-		<sequence name="'int_seq_helmet_glass_shatter'" once="true">
-			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>
-			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>
-			<object enabled="false" name="'g_helmet_glass'"/>
-			<object enabled="false" name="'g_helmet_glass_lod1'"/>
-			<object enabled="true" name="'g_helmet_glass_crk'"/>
-			<object enabled="true" name="'g_helmet_glass_crk_lod1'"/>
-			<decal_mesh enabled="true" name="'dm_head'"/>
-			<effect damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'e_glass' )" position="v()"/>
-			<effect damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'e_glass' )" position="v()"/>
-		</sequence>
-		<body name="'body_helmet_glass'">
+		<body name="'head'">
 			<endurance damage="100">
-				<run_sequence name="'int_seq_helmet_glass_shatter'"/>
+				<run_sequence name="'bloodyhead'"/>
 			</endurance>
 		</body>
 		<body name="'body_armor_chest'">
@@ -76,16 +58,6 @@
 				<run_sequence name="'int_seq_armor_back'"/>
 			</endurance>
 		</body>
-		<body name="'body_armor_throat'">
-			<endurance damage="328.1" explosion="374">
-				<run_sequence name="'int_seq_armor_throat'"/>
-			</endurance>
-		</body>
-		<body name="'body_armor_neck'">
-			<endurance bullet="291.6" explosion="922">
-				<run_sequence name="'int_seq_armor_neck'"/>
-			</endurance>
-		</body>		
 		<sequence editable_state="true" name="'leg_arm_hitbox'" triggable="true">
 			<body enabled="true" name="'body'"/>
 			<body enabled="false" motion="'keyframed'" name="'rag_Hips'"/>

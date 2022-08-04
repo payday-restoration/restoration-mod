@@ -13663,6 +13663,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		pickup_multiplier = pickup_multiplier * 2
 	end
 
+	--Blanket pickup
+	pickup_multiplier = pickup_multiplier * 1.125
+
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier
 	weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * pickup_multiplier

@@ -38,6 +38,10 @@ Hooks:PostHook(ContourExt, "init", "res_init", function(self)
 	end
 end)
 
+function ContourExt:contour_list()
+	return self._contour_list or {}
+end
+
 function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
 	if Global.debug_contour_enabled then
 		return

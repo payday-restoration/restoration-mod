@@ -342,22 +342,22 @@ local job = Global.level_data and Global.level_data.level_id
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
-		self.swat_van_turret_module.BAG_DMG_MUL = 10
+		self.swat_van_turret_module.BAG_DMG_MUL = 14.58375
 	
 		self.ceiling_turret_module.HEALTH_INIT = 787.5
-		self.ceiling_turret_module.BAG_DMG_MUL = 10
+		self.ceiling_turret_module.BAG_DMG_MUL = 14.58375
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
 		self.ceiling_turret_module_no_idle.HEALTH_INIT = 787.5
-		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
+		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 14.58375
 		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
 		self.ceiling_turret_module_longer_range.HEALTH_INIT = 787.5
-		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
+		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 14.58375
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105
 		self.aa_turret_module.HEALTH_INIT = 787.5
-		self.aa_turret_module.BAG_DMG_MUL = 10
+		self.aa_turret_module.BAG_DMG_MUL = 14.58375
 		self.aa_turret_module.SHIELD_HEALTH_INIT = 105
 		self.crate_turret_module.HEALTH_INIT = 393.75
-		self.crate_turret_module.BAG_DMG_MUL = 10
+		self.crate_turret_module.BAG_DMG_MUL = 14.58375
 		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5			
 	end
 	

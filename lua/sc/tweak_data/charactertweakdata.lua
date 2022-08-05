@@ -16418,9 +16418,9 @@ end
 
 function CharacterTweakData:_set_easy_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(1.75, 1.1667)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(1.75, 1.1667)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)

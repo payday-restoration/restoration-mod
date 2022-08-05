@@ -2056,7 +2056,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"team_passive_stamina_multiplier_1",
-					"player_passive_intimidate_range_mul"
+					"player_passive_intimidate_range_mul",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {2, 0},
@@ -2140,7 +2141,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_panic_suppression"
+					"player_panic_suppression",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 2400,
 				icon_xy = {3, 1},

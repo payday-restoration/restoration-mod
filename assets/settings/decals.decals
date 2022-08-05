@@ -1,9 +1,9 @@
 <!--stonecold decals file-->
 <decals>
   <pools>
-    <pool name="small" memory="200"/>
-    <pool name="big" memory="200"/>
-    <pool name="permanent" memory="200"/>
+    <pool name="small" memory="800"/>
+    <pool name="big" memory="800"/>
+    <pool name="permanent" memory="800"/>
     <pool name="none" memory="0"/>
   </pools>
 

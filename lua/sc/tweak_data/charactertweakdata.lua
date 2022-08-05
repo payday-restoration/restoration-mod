@@ -679,6 +679,9 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
 	end			
+	if self:get_ai_group_type() ~= "russia" and self:get_ai_group_type() ~= "zombie" then
+		self.omnia_lpf.yellow_blood = true
+	end
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
@@ -780,6 +783,9 @@ function CharacterTweakData:_init_swat(presets)
 	    self.hrt_titan.speech_prefix_p2 = nil
 	    self.hrt_titan.speech_prefix_count = nil
 	end	
+	if self:get_ai_group_type() ~= "russia" and self:get_ai_group_type() ~= "zombie" then
+		self.hrt_titan.yellow_blood = true
+	end
 	self.hrt_titan.static_dodge_preset = true
 	self.hrt_titan.heal_cooldown = 1.875
 	self.hrt_titan.overheal_mult = 1
@@ -882,7 +888,10 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
 		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
-	end		
+	end
+	if self:get_ai_group_type() ~= "russia" and self:get_ai_group_type() ~= "zombie" then
+		self.heavy_swat_sniper.yellow_blood = true
+	end
 	self.heavy_swat_sniper.is_special = true
 	self.heavy_swat_sniper.no_asu = true
 	self.heavy_swat_sniper.marshal_logic = true
@@ -1087,7 +1096,10 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.custom_voicework = "skeleton"
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
-	end				
+	end
+	if self:get_ai_group_type() ~= "russia" and self:get_ai_group_type() ~= "zombie" then
+		self.city_swat_titan.yellow_blood = true
+	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
 	self.city_swat_titan.headshot_dmg_mul = 2.2
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
@@ -1097,7 +1109,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
-	-- self.city_swat_titan.yellow_blood = true
 	self.city_swat_titan.unintimidateable = true
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
@@ -1186,6 +1197,7 @@ function CharacterTweakData:_init_marshal_marksman(presets)
 	self.marshal_marksman.speech_prefix_p1 = "cum"
 	self.marshal_marksman.speech_prefix_p2 = nil
 	self.marshal_marksman.speech_prefix_count = nil
+	self.marshal_marksman.yellow_blood = nil
 	if self:get_ai_group_type() == "russia" then
 		self.marshal_marksman.custom_voicework = "tswat_ru"
 	elseif self:get_ai_group_type() == "murkywater" then
@@ -2018,6 +2030,9 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.speech_prefix_p1 = "heck"
 		self.tank_titan.speech_prefix_count = nil	
 	end				
+	if self:get_ai_group_type() ~= "russia" and self:get_ai_group_type() ~= "zombie" then
+		self.tank_titan.yellow_blood = true
+	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
@@ -2411,7 +2426,10 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 		self.phalanx_minion.custom_voicework = "tshield_ru"
 	else
 		self.phalanx_minion.custom_voicework = "tsniper"
-	end		
+	end
+	if self:get_ai_group_type() ~= "russia" and self:get_ai_group_type() ~= "zombie" then
+		self.phalanx_minion.yellow_blood = true
+	end
 	self.phalanx_minion.heal_cooldown = 7.5
 	self.phalanx_minion.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_minion")

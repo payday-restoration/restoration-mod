@@ -6642,6 +6642,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.timers.equip = 2.35
 			self.shuno.timers.reload_exit_empty = 5
 			self.shuno.timers.reload_exit_not_empty = 5
+			self.shuno.sounds.no_fix = true
 			self.shuno.sounds.spin_start = "turret_spin_start"
 			self.shuno.sounds.spin_end = "turret_spin_stop"
 
@@ -6815,6 +6816,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.timers.reload_not_empty = 7
 			self.m134.timers.reload_exit_empty = 2
 			self.m134.timers.reload_exit_not_empty = 2
+			self.m134.sounds.no_fix = true
 			self.m134.sounds.spin_start = "swatturret_spin_start"
 			self.m134.sounds.spin_end = "swatturret_spin_stop"
 

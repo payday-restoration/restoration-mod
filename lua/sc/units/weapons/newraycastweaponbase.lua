@@ -294,7 +294,7 @@ function NewRaycastWeaponBase:stop_shooting(...)
 end
 
 function NewRaycastWeaponBase:_fire_sound(...)
-	if (self._name_id ~= "m134" or self._name_id ~= "shuno") or self._vulcan_firing then
+	if (self._name_id ~= "m134" and self._name_id ~= "shuno") or self._vulcan_firing then
 		return _fire_sound_original(self, ...)
 	end
 end

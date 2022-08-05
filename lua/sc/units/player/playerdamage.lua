@@ -1074,7 +1074,7 @@ function PlayerDamage:_calc_health_damage(attack_data)
 
 	if not self._ally_attack then
 		if self:get_real_armor() <= 0 then
-			self:fill_dodge_meter(self._dodge_points * 0.5)
+			self:fill_dodge_meter(self._dodge_points * 0.25)
 		end
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data) --Stoic damage delay. Done here so it applies to all health damage taken.
 	end
@@ -1309,7 +1309,7 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 
 		if self:get_real_armor() <= 0 then
 			if not self._ally_attack then
-				self:fill_dodge_meter(self._dodge_points)
+				self:fill_dodge_meter(self._dodge_points * 0.5)
 			end
 			self._unit:sound():play("player_armor_gone_stinger")
 

@@ -830,6 +830,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.railgun_npc = deep_clone(self.m14_sniper_npc)	
 		self.railgun_npc.CLIP_AMMO_MAX = 4
 		self.railgun_npc.DAMAGE = 18
+		self.railgun_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")		
 		--self.railgun_npc.sounds.prefix = "barrett_npc"
 	end
 	

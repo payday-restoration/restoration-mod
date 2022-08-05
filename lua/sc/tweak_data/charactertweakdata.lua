@@ -1097,6 +1097,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
+	-- self.city_swat_titan.yellow_blood = true
 	self.city_swat_titan.unintimidateable = true
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true

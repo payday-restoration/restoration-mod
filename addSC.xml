@@ -1553,6 +1553,22 @@
 	<!--fixed male suit heister faces and necks-->
  	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
 	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	 
+
+	<!--yellow blood-->
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_collection_a" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_impact_a" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_light_yellow" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_light_red" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_small_dust" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_distance_dust" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_distance_dust_med" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_empty" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_distance_dust_combo" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_tendrils" />		
+
+	<texture			path="effects/payday2/particles/impacts/blood/yellow/textures/e_bullet_impact_blood_01_yellow_df" />
+	<texture			path="effects/payday2/particles/impacts/blood/yellow/textures/yellow_splatter" />
 	
 	<!--Headshot effect-->
 	<effect				path="effects/payday2/particles/impacts/blood/brain_splat" />		

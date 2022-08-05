@@ -180,6 +180,14 @@ local grenadier_smash = {
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
+
+	
+	-- i don't want to sift through every single .object file in the game to do this so
+	if self._head_gear_decal_mesh then
+		local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
+
+		self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("helmet"))
+	end	
 end)
 
 function CopDamage:_spawn_head_gadget(params)

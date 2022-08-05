@@ -11,7 +11,10 @@
 
 	<!-- Troublesome NPC assets go here! -->
 	<assets base_path="assets/">
-		<!-- character fixes and changes -->
+		<!-- decal mesh shit -->
+		<file name="settings/decals.decals" force="true"/>	
+		
+		<!-- character fixes and changes -->		
 		<group name="units/" dyn_package="false">
 			<!-- yufu wang hitboxes -->
 			<group :name="pd2_dlc_pent/characters/npc_male_yufuwang_armored/">

@@ -8,6 +8,98 @@ Hooks:PostHook(BlackMarketTweakData, "_init_gloves", "ResGloves", function(self,
 	self.suit_default_gloves.suit_prison = "heist_default"
 end)
 
+Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMaskFixes", function(self, tweak_data)	
+	self.masks.almirs_beard.offsets = {
+		female_1 = {
+			Vector3(0.1, 0, -1.2),
+			Rotation(0, 0, 2)
+		},
+		jowi = {
+			Vector3(-0.1, 1, -0.8),
+			Rotation(1, 6, 2)
+		},
+		dallas = {
+			Vector3(-0.2, -0.4, -0.8),
+			Rotation(1, -1, 2)
+		},
+		wolf = {
+			Vector3(-0.1, -0.4, -0.1),
+			Rotation(0.9, -1, 2)
+		},
+		chains = {
+			Vector3(-0.1, -0.2, -0.8),
+			Rotation(0.4, -1, 2)
+		},
+		hoxton = {
+			Vector3(-0.1, -0.2, -0.8),
+			Rotation(0.4, -1, 2)
+		},
+		old_hoxton = {
+			Vector3(-0.1, -0.7, -0.8),
+			Rotation(0, -1, 2)
+		},
+		bodhi = {
+			Vector3(-0.2, 0.4, -0.9),
+			Rotation(0, 2, 2)
+		},
+		jimmy = {
+			Vector3(-0.2, -0, -0.9),
+			Rotation(0, 0, 2)
+		},
+		sokol = {
+			Vector3(-0.2, -0.2, -0.4),
+			Rotation(0, 0, 2)
+		},
+		sydney = {
+			Vector3(-0.2, -0.4, -0.4),
+			Rotation(0, 0, 2)
+		},
+		dragan = {
+			Vector3(-0.2, 0.2, -0.8),
+			Rotation(0, 0, 2)
+		},
+		wild = {
+			Vector3(-0.4, 0.1, -0.5),
+			Rotation(-0.8, 2, 3)
+		},
+		chico = {
+			Vector3(-0.2, 0.9, -1),
+			Rotation(0.7, 6, 3)
+		},
+		dragon = {
+			Vector3(-0.2, 0.7, -0.9),
+			Rotation(0.7, 0, 3)
+		},
+		max = {
+			Vector3(-0.2, -0.3, -1),
+			Rotation(0.7, 0, 3)
+		},
+		joy = {
+			Vector3(-0.2, -0.3, -0.7),
+			Rotation(0.2, 0, 3)
+		},
+		myh = {
+			Vector3(-0.2, -0.3, -1.2),
+			Rotation(0.2, 0, 3)
+		},
+		ecp_male = {
+			Vector3(-0.2, -0.7, -0.8),
+			Rotation(0, 0, 2)
+		},
+		jacket = {
+			Vector3(-0.2, 0, -0.3),
+			Rotation(0, 0, 2)
+		},
+		bonnie = {
+			Vector3(-0.2, 1, -0.3),
+			Rotation(0, 0, 2)
+		}
+	}
+
+end)
+
+
+
 --This is a helmet, not a mask--
 Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, tweak_data)	
 	--Classic Helmet

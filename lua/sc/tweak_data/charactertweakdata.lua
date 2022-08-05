@@ -889,7 +889,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
 	end
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
+	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" or self:get_ai_group_type() ~= "murkywater" then
 		self.heavy_swat_sniper.yellow_blood = true
 	end
 	self.heavy_swat_sniper.is_special = true
@@ -1097,7 +1097,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
+	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" or self:get_ai_group_type() ~= "murkywater" then
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5

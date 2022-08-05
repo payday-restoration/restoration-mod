@@ -8,10 +8,12 @@
 	<tweak definition="fps_animation_subset.xml" />
 	<tweak definition="std.animation_states"/>
 	<tweak definition="std.animation_subset"/>
-	<tweak definition="assets/settings/decals.decals"/>	
 
 	<!-- Troublesome NPC assets go here! -->
 	<assets base_path="assets/">
+		<!-- decal mesh shit -->
+		<file name="settings/decals.decals" force="true"/>	
+		
 		<!-- character fixes and changes -->		
 		<group name="units/" dyn_package="false">
 			<!-- yufu wang hitboxes -->

@@ -1023,22 +1023,41 @@ function CopDamage:damage_bullet(attack_data)
 				local head_object_get = my_unit:get_object(head_obj)
 
 				local is_spring = my_unit:base()._tweak_table == "spring"
+				--local accelerated_training_program = "?????"
 
 				if head_object_get and not is_spring then
-					local world_g = World		
-					world_g:effect_manager():spawn({
-						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
-						parent = head_object_get		
-					})
-					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+					local world_g = World
+					if accelerated_training_program then
 						world_g:effect_manager():spawn({
-							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 							parent = head_object_get		
 						})
+						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/explosions/yellow_mist"),
+								parent = head_object_get		
+							})
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/explosions/yellow_mist"),
+								parent = head_object_get		
+							})
+						end
+
+					else
 						world_g:effect_manager():spawn({
-							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 							parent = head_object_get		
 						})
+						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+								parent = head_object_get		
+							})
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+								parent = head_object_get		
+							})
+						end
 					end
 				end
 			elseif Network:is_server() and self._char_tweak.gas_on_death then

@@ -2066,7 +2066,6 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 	self.tank_mini.can_throw_frag = true
-	self.tank_mini.chance_can_throw_frag = 0.4
 	table.insert(self._enemy_list, "tank_mini")	
 end
 

@@ -2066,6 +2066,7 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 	self.tank_mini.can_throw_frag = true
+	self.tank_mini.chance_can_throw_frag = 0.4
 	table.insert(self._enemy_list, "tank_mini")	
 end
 
@@ -2079,7 +2080,6 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.access = "gangster"
 	self.tank_biker.custom_voicework = "tank_biker"
 	self.tank_biker.use_radio = nil
-	self.tank_biker.can_throw_frag = true
 	self.tank_biker.no_omnia_heal = true
 	self.tank_biker.no_asu = true	
 end

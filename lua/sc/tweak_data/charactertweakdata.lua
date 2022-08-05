@@ -783,9 +783,6 @@ function CharacterTweakData:_init_swat(presets)
 	    self.hrt_titan.speech_prefix_p2 = nil
 	    self.hrt_titan.speech_prefix_count = nil
 	end	
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
-		self.hrt_titan.yellow_blood = true
-	end
 	self.hrt_titan.static_dodge_preset = true
 	self.hrt_titan.heal_cooldown = 1.875
 	self.hrt_titan.overheal_mult = 1

@@ -2749,7 +2749,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_melee_kill_dodge_regen"
+					"player_melee_kill_dodge_regen",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {1, 7},

@@ -12512,14 +12512,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		translation = Vector3(-0.001, -15.95, -4.68)
 	}
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0, -36, -0.22),
+		translation = Vector3(-0.002, -35.1, -0.21),
 		rotation = Rotation(0, 0, 0)
 	}
-	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_ass_shak12 = {
-		translation = Vector3(-0, -34, 0.3),
-		rotation = Rotation(0, 0, 0)
-	}
-
 
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_k31 = {
 		translation = Vector3(-0.0125, -20.9, -4.899)

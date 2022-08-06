@@ -12475,10 +12475,66 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_upg_o_box.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_box.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_qbu88 = {
-		translation = Vector3(-0, -34, -0.555),
+		translation = Vector3(-0, -32.5, -0.56),
 		rotation = Rotation(0, 0, 0)
 	}
-	
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_tti = {
+		translation = Vector3(0, -16.2, -0.955)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_r700 = {
+		translation = Vector3(0, -25.8, -4.65)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_msr = {
+		translation = Vector3(0, -27, -4.3951)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_siltstone = {
+		translation = Vector3(0, -10.65, -4.872)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_wa2000 = {
+		translation = Vector3(0, -21, -0.1)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_sbl = {
+		translation = Vector3(-0.01, -25.9, -4.68)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_mosin = {
+		translation = Vector3(-0.002, -45.1, -5.135)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_model70 = {
+		translation = Vector3(0, -24.75, -4.89)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_desertfox = {
+		translation = Vector3(0, -32.3, -4.8)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_r93 = {
+		translation = Vector3(-0.002, -23.2, -4.622)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_m95 = {
+		translation = Vector3(-0.001, -15.95, -4.68)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-0, -36, -0.22),
+		rotation = Rotation(0, 0, 0)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_ass_shak12 = {
+		translation = Vector3(-0, -34, 0.3),
+		rotation = Rotation(0, 0, 0)
+	}
+
+
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_k31 = {
+		translation = Vector3(-0.0125, -20.9, -4.899)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_l115 = {
+		translation = Vector3(-0.0175, -26, -4.375)
+	}
+
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_m200 = {
+		translation = Vector3(0.0035, -23.3, -4.895)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_m107cq = {
+		translation = Vector3(-0.016, -12.6, -4.882)
+	}
+
 	--Vintage Sight
 	self.parts.wpn_fps_ass_g36_o_vintage.pcs = {}
 	self.parts.wpn_fps_ass_g36_o_vintage.has_description = true

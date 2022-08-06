@@ -70,11 +70,11 @@ end
 function HUDDodgeMeter:unhide_dodge_panel(dodge_points)
 	self._dodge_panel:set_alpha(1)
 	self._dodge_points = dodge_points
-	self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0 - dodge_points) / (1.5 - dodge_points))) * self._dodge_panel:h())
+	self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0 - dodge_points) / (1.5 --[[- dodge_points]]))) * self._dodge_panel:h())
 end
 
 function HUDDodgeMeter:set_dodge_value(value)
-	self._dodge_panel:child("dodge_bar"):set_h(self._dodge_panel:h() * value / (1.5 - self._dodge_points))
+	self._dodge_panel:child("dodge_bar"):set_h(self._dodge_panel:h() * value / (1.5 --[[- self._dodge_points]]))
 	self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
 	if value >= 1.0 - self._dodge_points then
 		self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))

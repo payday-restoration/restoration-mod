@@ -745,11 +745,11 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	local weapon_tweak = tweak_data.weapon[name]
 	local damage_base = base_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
-
+	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or false
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if weapon_tweak.rays and weapon_tweak.rays > 1 then
+	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
 		damage_min_mult = 0.05
 	end
 
@@ -770,7 +770,7 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 	local damage_base = base_stats.damage.value 
 	local damage_mods = mods_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
-	local ignore_rays = weapon_tweak.ignore_rays or false
+	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
 
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
@@ -814,10 +814,10 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	local damage_mods = mods_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
-	local ignore_rays = weapon_tweak.ignore_rays or false
+	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
 		damage_min_mult = 0.05
 	end
 

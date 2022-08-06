@@ -1160,7 +1160,10 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	
 	--Have a harsher falloff for Shotguns
 	if self._rays and self._rays > 1 then
-		minimum_damage = 0.05
+		if damage_falloff and damage_falloff.ignore_rays then
+		else
+			minimum_damage = 0.05
+		end
 	end
 	
 	--[[

@@ -21810,6 +21810,15 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_g3hk79_stock_sliding.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	end
 
+	if self.parts.wpn_fps_smg_crysis3_typhoon_body then
+		self.wpn_fps_smg_crysis3_typhoon.uses_parts[21] = "resmod_dummy"
+		self.wpn_fps_smg_crysis3_typhoon.uses_parts[22] = "resmod_dummy"
+		self.wpn_fps_smg_crysis3_typhoon.uses_parts[44] = "resmod_dummy"
+		self.wpn_fps_smg_crysis3_typhoon.uses_parts[45] = "resmod_dummy"
+		self.wpn_fps_smg_crysis3_typhoon.uses_parts[46] = "resmod_dummy"
+		self.wpn_fps_smg_crysis3_typhoon.uses_parts[47] = "resmod_dummy"
+	end
+
 
 --Resmod Custom Weapon stuff
 

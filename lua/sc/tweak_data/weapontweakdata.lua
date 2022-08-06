@@ -13324,6 +13324,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xr2.timers.reload_exit_not_empty = 0.9
 	end
 
+	if self.crysis3_typhoon then
+		self.crysis3_typhoon.recategorize = { "light_smg" } --"Light" SMG
+		self.crysis3_typhoon.use_data.selection_index = 2
+		self.crysis3_typhoon.has_description = true
+		self.crysis3_typhoon.rays = 5
+		self.crysis3_typhoon.CLIP_AMMO_MAX = 144
+		self.crysis3_typhoon.AMMO_MAX = 180
+		self.crysis3_typhoon.FIRE_MODE = "auto"
+		self.crysis3_typhoon.fire_mode_data = {}
+		self.crysis3_typhoon.fire_mode_data.fire_rate = 0.02
+		self.crysis3_typhoon.CAN_TOGGLE_FIREMODE = false
+		self.crysis3_typhoon.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.crysis3_typhoon.kick = self.stat_info.kick_tables.moderate_kick
+		self.crysis3_typhoon.supported = true
+		self.crysis3_typhoon.ads_speed = 0.300
+		self.crysis3_typhoon.damage_falloff = {
+			start_dist = 1000,
+			end_dist = 3500,
+			min_mult = 0.5,
+			ignore_rays = true
+		}
+		self.crysis3_typhoon.stats = {
+			damage = 10,
+			spread = 16,
+			recoil = 86,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 17,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}		
+		self.crysis3_typhoon.stats_modifiers = nil
+		self.crysis3_typhoon.panic_suppression_chance = 0.05
+		self.crysis3_typhoon.reload_speed_multiplier = 0.9
+		self.crysis3_typhoon.timers.reload_exit_empty = 0.5
+		self.crysis3_typhoon.timers.reload_not_empty = 5
+		self.crysis3_typhoon.timers.reload_exit_not_empty = 2.1
+		self.crysis3_typhoon.sounds.no_fix = true
+		self.crysis3_typhoon.sounds.fire = "typhoon_fire"
+		self.crysis3_typhoon.sounds.fire_single = "typhoon_fire_single"
+		self.crysis3_typhoon.sounds.fire_auto = "typhoon_fire"
+		self.crysis3_typhoon.sounds.stop_fire = "typhoon_fire_stop"
+	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's funtionality) then it's a no-go outright

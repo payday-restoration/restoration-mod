@@ -534,7 +534,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					6 --Ace
 				}
 				--Ace
-					self.values.first_aid_kit.uppers_cooldown = 30
+					self.values.first_aid_kit.uppers_cooldown = 60
 
 			--Combat Doctor
 				--Basic
@@ -831,7 +831,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.level_5_armor_addend = {2}
 						self.values.player.level_6_armor_addend = {2}
 					--Ace
-						self.values.player.armor_full_damage_absorb = {0.3}
+						self.values.player.armor_full_damage_absorb = {0.15}
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
 			
 		--Breacher--
@@ -1070,7 +1070,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Sneaky Bastard
 				--Concealment stuff same as vanilla.
 				--Ace
-					self.values.player.dodge_heal_no_armor = {0.06}
+					self.values.player.dodge_heal_no_armor = {0.02}
 			
 		--Silent Killer--
 			--Second Wind--
@@ -1126,7 +1126,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Cleaner, formally spotter
 				--Basic					
 					self.values.weapon.special_damage_taken_multiplier = {
-						1.15, --Basic
+						1.1, --Basic
 						1.25 --Ace
 					}					
 				--Ace		

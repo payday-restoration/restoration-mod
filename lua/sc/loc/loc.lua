@@ -2443,7 +2443,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "Uppers",
-			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##3## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##3## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##30## seconds individually for each player.\n\nNOTE: Does not apply to Swan Song.",
+			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##3## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##3## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##60## seconds individually for each player.\n\nNOTE: Does not apply to Swan Song.",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
@@ -2636,7 +2636,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
-			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYour armor cannot be pierced.\n\nIncreases the armor of the Flak Jacket and Combined Tactical Vest by ##20.##\n\nACE: ##$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to ##30%## of your maximum armor.\n\nYour armor recovers ##15%## faster.",
+			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYour armor cannot be pierced.\n\nIncreases the armor of the Flak Jacket and Combined Tactical Vest by ##20.##\n\nACE: ##$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to ##15%## of your maximum armor.\n\nYour armor recovers ##15%## faster.",
 
 			--}
 
@@ -2752,7 +2752,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "Cleaner",
-			["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nYou deal ##15%## more damage to special enemies.\n\nNOTE: Does not apply Grenade Launchers or Rocket Launchers.\n\nACE: ##$pro##\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.\n\nYou deal an additional ##10%## more damage to special enemies.",
+			["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nYou deal ##10%## more damage to special enemies.\n\nNOTE: Does not apply Grenade Launchers or Rocket Launchers.\n\nACE: ##$pro##\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.\n\nYou deal an additional ##15%## more damage to special enemies.",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "Low Blow",
@@ -2798,7 +2798,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	--}
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10.##\n\nWhile your armor is broken, dodging an attack restores ##6%## of your maximum health. This can only occur once every time your armor breaks.",
+		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10.##\n\nWhile your armor is broken, dodging an attack restores ##2%## of your maximum health. This can only occur once every time your armor breaks.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",

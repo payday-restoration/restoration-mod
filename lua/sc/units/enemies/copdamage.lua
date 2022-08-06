@@ -779,7 +779,7 @@ function CopDamage:damage_bullet(attack_data)
 			local roll = math.rand(1, 100)
 
 			if roll <= dodge_chance then
-				self._unit:sound():play("pickup_fak_skill", nil, nil)
+				self._unit:sound():play("bullet_whizby_medium", nil, nil)
 
 				return
 			end

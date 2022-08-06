@@ -13330,7 +13330,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.has_description = true
 		self.crysis3_typhoon.rays = 5
 		self.crysis3_typhoon.CLIP_AMMO_MAX = 144
-		self.crysis3_typhoon.AMMO_MAX = 180
+		self.crysis3_typhoon.AMMO_MAX = 360
 		self.crysis3_typhoon.FIRE_MODE = "auto"
 		self.crysis3_typhoon.fire_mode_data = {}
 		self.crysis3_typhoon.fire_mode_data.fire_rate = 0.02

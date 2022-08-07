@@ -11,8 +11,6 @@ end
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_st_spec_23"] = "白板",
-		["menu_st_spec_24"] = "先天异禀",
 
 		["menu_es_boost"] = "最佳数据",
 		["menu_es_crew"] = "全队数据",
@@ -1358,7 +1356,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Benelli
 		["bm_benelli_sc_desc"] = "顶级战术霰弹枪。适合用来清理人堆。",
 		--Argos III
-		["bm_ultima_sc_desc"] = "Nothing says modern like plastic and aluminum, it even comes with a USB slot to charge your phone.\n\nReloads #{skill_color}#2## shells at a time.",
+		["bm_ultima_sc_desc"] = "没有什么更能比铝和塑料更能表达现代的，这枪甚至有个给你手机充电的USB口。\n\n一次装填#{skill_color}#2##发子弹。",
 		--Loco
 		["bm_serbu_sc_desc"] = "缩小后的售后市场版Reinfeld 880；给那些想要隐蔽性和渴望搞残手腕的人。",
 		--Reinfeld 88
@@ -1376,9 +1374,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosconi
 		["bm_menu_sc_huntsman_desc"] = "双重枪管，双倍快乐。即便弹夹尺寸受限，双板机的设计也能让你对同一屋的倒霉蛋施放毁灭铅弹打击。",		
 		--Akimbo Judge
-		["bm_x_judge_sc_desc"] = "Judge and Jury, and with two of these portable room-clearers, you're the executioner.",
+		["bm_x_judge_sc_desc"] = "判官和陪审团，再有这两把便携的清场工具，你就是刽子手。",
 		--Joceline
-		["bm_b682_sc_desc"] = "A competition over-under typically reserved for sporting events, only instead of clay pigeons you'll be using it for popping helmets.",
+		["bm_b682_sc_desc"] = "通常是一种用在运动场合的竞技性上下排列式双管霰弹枪，除非你不是拿来射爆飞盘而是拿来射爆头盔。",
 		--Custom Shotguns
 		--Doomstick
 		["bm_w_quadbarrel"] = "Doomstick 霰弹枪",
@@ -1478,10 +1476,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "Gewehr-3家族的大妹。更高的射速带来了更大的压制力。",	
 		--M60
 		["bm_w_m60"] = "M60重机枪",
-		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.",
+		["bm_m60_sc_desc"] = "因为对子弹十分饥渴并且极其笨重，所以有个绰号'小猪'。期待任何顺向子弹的人都会变成一口封闭的棺材。",
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B重机枪",	
-		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",
+		["bm_par_sc_desc"] = "相对KSP-90更重，通常架设在载具上的机枪弟妹。用机动性换来了更大的口径。",
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42重机枪",	
 		["bm_wolf_brigade_sc_desc"] = "\"我们不是人模狗样。\n我们是人中之狼。\"\n\n腰射时精准度极大降低且后坐力降低20%。",
@@ -1521,7 +1519,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_galil"] = "Defender 7.62步枪",
 		["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",		
 		--KS12
-		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
+		["bm_shak12_sc_desc"] = "一款故意凸显其强大无比的12.7x55mm弹筒的无托式设计战斗步枪。极其紧凑的包装蕴含极其凶残的屠杀。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\"枪托",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "装载大威力弹#{skill_color}#允许达到全面护甲穿透和穿盾能力##。 枪托和枪闩用了更敦实的材料加固使 #{important_1}#射速降低##。",
@@ -1536,13 +1534,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--MSR
-		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_msr_sc_desc"] = "美国军方钦定的狙击枪。良好的精准度，操控性，甚至隐蔽性使得它成为令人满意的多用途狙击步枪。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",	
 		--R700
-		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_r700_sc_desc"] = "响尾蛇的老前任。良好的精准度，操控性，甚至有着比他后辈更远的射程。缺点呢？稀烂的五发弹夹。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",	
 		--QBU88
-		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_qbu88_sc_desc"] = "从东欧集团得到灵感而做出的无托狙击枪，和大多数一样，适合用来强加你的意志给别人。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",	
 		--Winchester 1874
-		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_winchester1874_sc_desc"] = "打下了美国西部的枪。热兵器中的圣遗物，但并不意味着其致死性不足，只因它强力的.44-40供弹。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--TTI(TTY)
 		["bm_w_tti"] = "Contractor .308狙击步枪",
 		["bm_tti_sc_desc"] = "威克的私人武器之一。据说网上有个地方有他练习这把枪莫桑比克射击法的片段。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
@@ -1553,9 +1551,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "这个最负盛名的枪世上只做了几百把；一把专适合顶尖杀手的狙击步枪。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2狙击步枪", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_sbl_sc_desc"] = "二十世纪的杠杆设计使其相对十九世纪能供应更大号的枪弹。期待你这边的.45-70子弹带来额外的乐趣和额外的死仔吧。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",	
 		--Model 70
-		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_model70_sc_desc"] = "神枪手的神枪。早期由Repeater 1874的同一批设计师手下做出的栓动式设计。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--SVD
 		["bm_siltstone_sc_desc"] = "AK家族的高威力半自动狙击步枪。像许多东方武器一样声名显赫。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 
@@ -1564,9 +1562,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_tranq_mosin"] = "镇静弹",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "忘却，#{item_stage_2}#结束##。\n\n发射伤害更低的#{stats_positive}#镇静弹##造成#{stats_positive}#持续伤害##并且能够#{stats_positive}#硬直敌人##。",
 		--Desert Fox
-		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
+		["bm_desertfox_sc_desc"] = "威克突击俄罗斯黑帮安全屋时用的紧凑型无托狙击步枪。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",			
 		--R93
-		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_r93_sc_desc"] = "大口径德国狙击步枪，为停阻大家伙而准备。是全球警察和反恐准军事力量的首选狙击枪。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal 反器材狙击步枪",
 		["bm_m95_sc_desc"] = "被用于对小型载具作战的反器材步枪。把它用到生物目标的人几乎是战争犯。\n\n爆头多造成#{skill_color}#50%##伤害。\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
@@ -2561,7 +2559,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "兴奋剂",
-			["menu_tea_cookies_beta_desc_sc"] = "掌握: ##$basic##\n你可以多携带##3##个 急救包。\n\n专精: ##$pro##\n你可以再多携带##3##个 急救包\n\n你放置的急救包将会自动被##5##米范围内受到致命伤害的玩家使用\n\n每位玩家在##30##秒内只能触发一次。\n\n提示：进入 天鹅绝唱 时不可用",
+			["menu_tea_cookies_beta_desc_sc"] = "掌握: ##$basic##\n你可以多携带##3##个 急救包。\n\n专精: ##$pro##\n你可以再多携带##3##个 急救包\n\n你放置的急救包将会自动被##5##米范围内受到致命伤害的玩家使用\n\n每位玩家在##60##秒内只能触发一次。\n\n提示：进入 天鹅绝唱 时不可用",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "战地医师",
@@ -2752,7 +2750,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "刀枪不入",
-			["menu_iron_man_desc_sc"] = "掌握: ##$basic##\n你的护甲现在##不能被穿透##\n\n防爆弹衣和复合战术背心的护甲量增加##20##点\n\n专精: ##$pro##\n当你的护甲值为满时，你将获得减伤，减伤的量等于你护甲值上限的##30%##\n\n你的护甲恢复速度加快##15%##",																																																																																																																																																																																																																									
+			["menu_iron_man_desc_sc"] = "掌握: ##$basic##\n你的护甲现在##不能被穿透##\n\n防爆弹衣和复合战术背心的护甲量增加##20##点\n\n专精: ##$pro##\n当你的护甲值为满时，你将获得减伤，减伤的量等于你护甲值上限的##15%##\n\n你的护甲恢复速度加快##15%##",																																																																																																																																																																																																																									
 
 			--}
 
@@ -2870,7 +2868,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "清道夫",
-			["menu_hitman_beta_desc_sc"] = "掌握: ##$basic##\n你对特殊敌人造成的伤害增加##15%##。\n\n提示：该效果不适用于榴弹发射器和火箭发射器。\n\n专精: ##$pro##\n使用枪械或近战武器从背后击杀一名敌人将使你的闪避条增加闪避点数的##75%##。\n\n你对特殊敌人造成的伤害额外增加##10%##。",
+			["menu_hitman_beta_desc_sc"] = "掌握: ##$basic##\n你对特殊敌人造成的伤害增加##10%##。\n\n提示：该效果不适用于榴弹发射器和火箭发射器。\n\n专精: ##$pro##\n使用枪械或近战武器从背后击杀一名敌人将使你的闪避条增加闪避点数的##75%##。\n\n你对特殊敌人造成的伤害额外增加##15%##。",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "下作手段",
@@ -2926,7 +2924,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--]]
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "掌握: ##$basic##\n当你的暴露风险低于##35##时，每降低##3##点暴露风险都将获得##1##点闪避点数，最多增加##10##点\n\n专精: ##$pro##\n当你的暴露风险低于##35##时，每降低##1##点暴露风险都将获得##1##点闪避点数，最多增加##10##点\n\n你的护甲被破坏时，每次闪避成功都将恢复你血量上限##6%##的血量",
+		["menu_jail_diet_beta_desc_sc"] = "掌握: ##$basic##\n当你的暴露风险低于##35##时，每降低##3##点暴露风险都将获得##1##点闪避点数，最多增加##10##点\n\n专精: ##$pro##\n当你的暴露风险低于##35##时，每降低##1##点暴露风险都将获得##1##点闪避点数，最多增加##10##点\n\n你的护甲被破坏时，每次闪避成功都将恢复你血量上限##2%##的血量",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "神枪手",

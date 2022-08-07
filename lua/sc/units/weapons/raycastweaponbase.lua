@@ -673,6 +673,9 @@ local orig_fire_sound = RaycastWeaponBase._fire_sound
 function RaycastWeaponBase:_fire_sound(...)
 	if self:_soundfix_should_play_normal() then
 		orig_fire_sound(self,...)
+		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2") then
+			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2")
+		end
 	end
 end
 
@@ -786,6 +789,9 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single then
 				self:play_tweak_data_sound("stop_fire")
 				self:play_tweak_data_sound("fire_auto", "fire")
+				if self:_get_sound_event("fire_auto2", "fire2") then
+					self:play_tweak_data_sound("fire_auto2", "fire2")
+				end
 			end
 			self._bullets_fired = self._bullets_fired + 1
 		end
@@ -806,7 +812,10 @@ function RaycastWeaponBase:stop_shooting(...)
 	if self._shots_without_releasing_trigger then
 		self._shots_without_releasing_trigger = 0
 	end
-
+	if self:_get_sound_event("stop_fire2") then
+		--self._sound_fire:stop()
+		self:play_tweak_data_sound("stop_fire2")
+	end
 	if self:_soundfix_should_play_normal() then
 		orig_stop_shooting(self,...)
 	end

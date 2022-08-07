@@ -3434,6 +3434,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	recat = { "ching", "g3", "new_m14", "shak12" }
 	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "semi_snp")
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "sniper"
 	end
@@ -7104,7 +7105,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 80,
+					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -7139,7 +7140,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.ads_speed = 0.300
 				self.s552.damage_falloff = {
 					start_dist = 3300,
-					end_dist = 7200,
+					end_dist = 8000,
 					min_mult = 0.5
 				}
 				self.s552.stats = {
@@ -7189,7 +7190,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36.stats = {
 					damage = 20,
 					spread = 79,
-					recoil = 84,
+					recoil = 86,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 26,
@@ -7225,7 +7226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.stats = {
 					damage = 20,
 					spread = 91,
-					recoil = 82,
+					recoil = 86,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 28,
@@ -7238,7 +7239,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.vhs.stats_modifiers = nil
 				self.vhs.panic_suppression_chance = 0.05
-				self.vhs.reload_speed_multiplier = 1.45
+				self.vhs.reload_speed_multiplier = 1.4
 				self.vhs.timers.reload_empty = 4.6
 				self.vhs.timers.reload_exit_empty = 0.6
 				self.vhs.timers.reload_exit_not_empty = 1
@@ -7951,14 +7952,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.asval.fire_mode_data = {}
 				self.asval.fire_mode_data.fire_rate = 0.06666666666
 				self.asval.CAN_TOGGLE_FIREMODE = true
-				self.asval.auto = {}
-				self.asval.auto.fire_rate = 0.06666666666
 				self.asval.kick = self.stat_info.kick_tables.moderate_kick
 				self.asval.supported = true
 				self.asval.ads_speed = 0.320
 				self.asval.damage_falloff = {
 					start_dist = 1000,
-					end_dist = 4200,
+					end_dist = 5200,
 					min_mult = 0.44444
 				}
 				self.asval.stats = {
@@ -7976,6 +7975,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.asval.stats_modifiers = nil
+				self.asval.can_shoot_through_enemy = true
+				self.asval.can_shoot_through_wall = true
 				self.asval.panic_suppression_chance = 0.05
 				self.asval.timers.reload_exit_empty = 0.65
 				self.asval.timers.reload_exit_not_empty = 0.85
@@ -7994,8 +7995,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.supported = true
 				self.scar.ads_speed = 0.380
 				self.scar.damage_falloff = {
-					start_dist = 2800,
-					end_dist = 6300,
+					start_dist = 3200,
+					end_dist = 7000,
 					min_mult = 0.6666
 				}
 				self.scar.stats = {
@@ -8013,10 +8014,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.scar.stats_modifiers = nil
+				self.scar.panic_suppression_chance = 0.05
+				self.scar.can_shoot_through_enemy = true
+				self.scar.can_shoot_through_wall = true
 				self.scar.timers.reload_exit_empty = 0.7
 				self.scar.timers.reload_not_empty = 1.75
 				self.scar.timers.reload_exit_not_empty = 1.3
-				self.scar.panic_suppression_chance = 0.05
 		
 			--Gecko 7.62 (Galil ARM 7.62)
 				self.galil.has_description = true
@@ -8034,8 +8037,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.supported = true
 				self.galil.ads_speed = 0.400
 				self.galil.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 5800,
+					start_dist = 3000,
+					end_dist = 6600,
 					min_mult = 0.6666
 				}
 				self.galil.stats = {
@@ -8053,11 +8056,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.galil.stats_modifiers = nil
+				self.galil.panic_suppression_chance = 0.05
+				self.galil.can_shoot_through_enemy = true
+				self.galil.can_shoot_through_wall = true
 				self.galil.timers.reload_empty = 3.9
 				self.galil.timers.reload_exit_empty = 0.325
 				self.galil.timers.reload_not_empty = 2.7
 				self.galil.timers.reload_exit_not_empty = 0.75
-				self.galil.panic_suppression_chance = 0.05
 
 			--Falcon (FAL)
 				self.fal.AMMO_MAX = 80
@@ -8074,8 +8079,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.supported = true
 				self.fal.ads_speed = 0.420
 				self.fal.damage_falloff = {
-					start_dist = 3000,
-					end_dist = 6200,
+					start_dist = 3500,
+					end_dist = 72000,
 					min_mult = 0.6666
 				}
 				self.fal.stats = {
@@ -8094,6 +8099,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fal.stats_modifiers = nil
 				self.fal.panic_suppression_chance = 0.05
+				self.fal.can_shoot_through_enemy = true
+				self.fal.can_shoot_through_wall = true
 				self.fal.timers.reload_exit_empty = 0.75
 				self.fal.timers.reload_exit_not_empty = 0.75
 
@@ -8105,14 +8112,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.FIRE_MODE = "single"
 				self.contraband.fire_mode_data.fire_rate = 0.1
 				self.contraband.CAN_TOGGLE_FIREMODE = true
-				self.contraband.panic_suppression_chance = 0.05
 				self.contraband.kick = self.stat_info.kick_tables.moderate_kick
 				self.contraband.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.contraband.supported = true
 				self.contraband.ads_speed = 0.440
 				self.contraband.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 5200,
+					start_dist = 2200,
+					end_dist = 6200,
 					min_mult = 0.6666
 				}	
 				self.contraband.stats = {
@@ -8130,6 +8136,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.contraband.stats_modifiers = nil
+				self.contraband.panic_suppression_chance = 0.05
+				self.contraband.can_shoot_through_enemy = true
+				self.contraband.can_shoot_through_wall = true
 				self.contraband.timers.reload_exit_empty = 0.725
 				self.contraband.timers.reload_exit_not_empty = 0.8
 				self.contraband_m203.upgrade_blocks = {
@@ -12615,6 +12624,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.g3hk79 then
+		self.g3hk79.categories = { 
+			"assault_rifle",
+			"semi_snp",
+		}
 		self.g3hk79.recategorize = {"dmr_ar"}
 		self.g3hk79.damage_type = "sniper"
 		self.g3hk79.AMMO_MAX = 40
@@ -13203,6 +13216,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 
 		if self.plasmaproto then
+			self.plasmaproto.categories = { 
+				"assault_rifle",
+				"semi_snp",
+			}
 			self.plasmaproto.recategorize = { "dmr_ar" }
 			self.plasmaproto.damage_type = "sniper"
 			self.plasmaproto.plasma_b = true
@@ -13325,6 +13342,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.crysis3_typhoon then
+		self.crysis3_typhoon.categories = { 
+			"smg",
+			"typh"
+		}
 		self.crysis3_typhoon.recategorize = { "light_smg" } --"Light" SMG
 		self.crysis3_typhoon.use_data.selection_index = 2
 		self.crysis3_typhoon.has_description = true
@@ -13334,21 +13355,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.FIRE_MODE = "auto"
 		self.crysis3_typhoon.fire_mode_data = {}
 		self.crysis3_typhoon.fire_mode_data.fire_rate = 0.02
+		self.crysis3_typhoon.sms = 0.6
 		self.crysis3_typhoon.CAN_TOGGLE_FIREMODE = false
 		self.crysis3_typhoon.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.crysis3_typhoon.kick = self.stat_info.kick_tables.moderate_kick
 		self.crysis3_typhoon.supported = true
 		self.crysis3_typhoon.ads_speed = 0.300
 		self.crysis3_typhoon.damage_falloff = {
-			start_dist = 1000,
-			end_dist = 3500,
+			start_dist = 700,
+			end_dist = 2600,
 			min_mult = 0.5,
 			ignore_rays = true
 		}
 		self.crysis3_typhoon.stats = {
 			damage = 10,
 			spread = 16,
-			recoil = 86,
+			recoil = 81,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 17,
@@ -13361,19 +13383,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}		
 		self.crysis3_typhoon.stats_modifiers = nil
 		self.crysis3_typhoon.panic_suppression_chance = 0.05
-		self.crysis3_typhoon.reload_speed_multiplier = 0.9
 		self.crysis3_typhoon.timers.reload_exit_empty = 0.5
 		self.crysis3_typhoon.timers.reload_not_empty = 5
-		self.crysis3_typhoon.timers.reload_exit_not_empty = 2.1
+		self.crysis3_typhoon.timers.reload_exit_not_empty = 2.2
 		self.crysis3_typhoon.sounds.no_fix = true
 		self.crysis3_typhoon.sounds.fire = "typhoon_fire"
 		self.crysis3_typhoon.sounds.fire_single = "typhoon_fire_single"
 		self.crysis3_typhoon.sounds.fire_auto = "typhoon_fire"
 		self.crysis3_typhoon.sounds.stop_fire = "typhoon_fire_stop"
+		--Use akimbo P90 sounds as source for reflections
+		--Provided there isn't another weapon that uses this soundbank, this should only ever play reflections
+		self.crysis3_typhoon.sounds.fire2 = "p90_x_stop"
+		self.crysis3_typhoon.sounds.fire_single2 = "p90_x_stop"
+		self.crysis3_typhoon.sounds.fire_auto2 = "p90_x_fire"
+		self.crysis3_typhoon.sounds.stop_fire2 = "p90_x_stop"
 	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
-	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's funtionality) then it's a no-go outright
+	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality) then it's a no-go outright
 	if self.owen then -- Silent Enforcer's Owen Gun
 		self.owen.use_data.selection_index = 2
 		self.owen.tactical_reload = 1
@@ -13615,6 +13642,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			-- roughly normalizes swap speeds before additional modifiers are in play
 			weap.desired_swap_time = 1.75
 
+			if restoration.Options:GetValue("OTHER/AutoDMRs") then
+				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
+					weap.FIRE_MODE = "auto"
+				end
+			end
 			if restoration.Options:GetValue("OTHER/WpnCat") and restoration.Options:GetValue("OTHER/WpnCat") ~= 2 then
 				weap.recategorize = nil
 				if weap.categories[1] == "akimbo" then
@@ -13650,14 +13682,14 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.061, 0.035}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.058, 0.032}},
+		{damage = 18,  pickup = {0.059, 0.033}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.057, 0.031}},
 		{damage = 24,  pickup = {0.056, 0.030}},
 		{damage = 30,  pickup = {0.053, 0.028}},
 		{damage = 45,  pickup = {0.050, 0.026}},
-		{damage = 60,  pickup = {0.048, 0.025}},
+		{damage = 60,  pickup = {0.047, 0.025}},
 		{damage = 90,  pickup = {0.044, 0.023}},
-		{damage = 120, pickup = {0.040, 0.022}},
+		{damage = 120, pickup = {0.039, 0.022}},
 		{damage = 180, pickup = {0.036, 0.020}},
 		{damage = 240, pickup = {0.031, 0.018}},
 		{damage = 360, pickup = {0.029, 0.017}},
@@ -13695,6 +13727,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		crossbow = 0.7,
 		--Custom weapon pickup
 		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
+		typh = 0.8,
 	}
 
 	--Get weapon category specific pickup multipliers.

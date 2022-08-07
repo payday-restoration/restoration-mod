@@ -459,6 +459,7 @@
 				<option type="bool" default_value="true" name="ObjectivesPanel"/>
 				<option type="bool" default_value="true" name="AssaultPanel"/>
 				<option type="multichoice" default_value="1" name="AssaultStyle" values_tbl="restoration.assault_style"/>
+				<option type="multichoice" default_value="1" name="DodgeDisplay" values_tbl="restoration.dodge_display"/>
 				<option type="bool" default_value="true" name="StaminaIndicator"/>
 				<option type="bool" default_value="true" name="Waypoints"/>
 				<option type="bool" default_value="true" name="NameLabels"/>
@@ -485,6 +486,7 @@
 				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 				<option type="bool" default_value="false" name="AimDeploysBipod"/>
 				<option type="bool" default_value="false" name="MoveCancelBipod"/>
+				<option type="bool" default_value="false" name="AutoDMRs"/>
 				<option type="bool" default_value="false" name="SprintCancel"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
 				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>

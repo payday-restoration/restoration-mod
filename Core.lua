@@ -423,6 +423,12 @@ restoration.assault_style = {
 	"alpha_assault"
 }
 
+restoration.dodge_display = {
+	"dd_scale",
+	"dd_150",
+	"dd_100"
+}
+
 restoration.environments_choice_bank = {
 	"default",
 	"random",

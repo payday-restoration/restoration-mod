@@ -133,6 +133,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
 		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
 		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires reload.",
+		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
+		["RestorationModAutoDMRsDescID"] = "Toggle whether or not Marksmen Rifles start off on full-auto.",
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
@@ -614,6 +616,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["alpha_assault"] = "Early Alpha Corner",
 		["beta_assault"] = "Alpha Tape",
 
+		["RestorationModDodgeDisplayTitleID"] = "Dodge Meter Readout",
+		["RestorationModDodgeDisplayDescID"] = "Change what the dodge meter's maximum value *displays*. Requires restart.",
+		["dd_scale"] = "150 -Dodge rating",
+		["dd_150"] = "150",
+		["dd_100"] = "100",
+
 		["menu_ingame_manual"] = "Overhaul Guide",
 		["menu_ingame_manual_help"] = "View the guide for Restoration's Overhaul.",
 
@@ -1065,7 +1073,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
 		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_slug_spam_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies and thin walls.##",
-		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1## meter.\nRounds #{important_1}#cannot headshot.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nRounds #{important_1}#cannot headshot.##",
 		["bm_wp_upg_a_custom_desc"] = "Fire larger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, range, pickup and total ammo.##",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#96## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#120## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
@@ -1220,17 +1228,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan penetrate body armor, shields and thin walls.##",
 		--CUSTOM HANDGUNS
-		--Browning Hi-Power
-		["bm_w_hpb"] = "VF Hi-Power Pistol",
-		--Walther P99
-		["bm_w_p99"] = "Gruber 988",
-		--Derringer
-		["bm_w_derringer"] = "Derringer Pistol",
-		--Automag .44
-		["bm_w_amt"] = "Automag .44 Pistol",
-		--Colt Detective
-		["bm_w_coltds"] = "Crosskill Investigator Revolver",
-		["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
+			--Browning Hi-Power
+			["bm_w_hpb"] = "VF Hi-Power Pistol",
+			--Walther P99
+			["bm_w_p99"] = "Gruber 988",
+			--Derringer
+			["bm_w_derringer"] = "Derringer Pistol",
+			--Automag .44
+			["bm_w_amt"] = "Automag .44 Pistol",
+			--Colt Detective
+			["bm_w_coltds"] = "Crosskill Investigator Revolver",
+			["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n	#{skill_color}#Deals double damage when attacking enemies from behind.##",
+
 
 
 		--Kobus 90--
@@ -1251,11 +1260,54 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
 		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1s##\nRecharge rate: #{skill_color}#6/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 		--Uzi
-		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",	
+		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",
 		--Chicago Typewriter
 		["bm_thompson_sc_desc"] = "Sporting a high-capacity drum magazine, you too can bring on the mobster heat as you mow down your enemies.",	
 		--MP40
 		["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
+		
+		--CUSTOM SMGs
+			--Typhoon
+			["bm_w_crysis3_typhoon"] = "Typhoon Submachine Gun",
+			["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now I've got a lot to say.\"\n\nUtilizing superposed loading technology, this 10-barrelled SMG spits lead out at blisteringly high speeds.",
+
+
+		--Bootleg/HK416c
+		["bm_w_tecci"] = "Bootleg LMG",
+		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
+		--KSP/M249
+		["bm_w_m249"] = "KSP-90 LMG",
+		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
+		--RPK
+		["bm_w_rpk"] = "RPK LMG",
+		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
+		--Brenner 21/HK21
+		["bm_w_hk21"] = "Brenner-21 MMG",
+		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",	
+		--M60
+		["bm_w_m60"] = "M60 MMG",
+		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.",	
+		--Ksp 58
+		["bm_w_par"] = "KSP-58B MMG",	
+		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",	
+		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Buzzsaw-42 MMG",	
+		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
+		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
+		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
+		--Versteckt-51/HK51B
+		["bm_w_hk51b"] = "Versteckt-51B MMG",
+		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further.",
+		--M134
+		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
+		--Microgun
+		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
+
+
+
+
+
 
 		--AA12
 		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
@@ -1311,11 +1363,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",		
 		--Famas
 		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",
-		--Custom 40 damage ARs
-		--["bm_w_xeno"] = "MA14 Surge Rifle",	
-		["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",	
-		["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
-
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nPress #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
 		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nHold #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
@@ -1336,13 +1383,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_ak74"] = "AK 5.45 Rifle",
 		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 sister, this rifle is by no means any less deadly.",
 		--CR 805
-		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",		
-		--CUSTOM 48 DAMAGE ARs
-		--AN-94/92
-		["bm_w_tilt"] = "KVK-99 Rifle",
-		["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
-
-
+		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",
 		--AMR-16
 		["bm_m16_sc_desc"] = "This classic rifle serves as the predecessor to the AMCAR. What it lacks in concealability and rate of fire it makes up for in range and power.",
 		--Queen's Wrath
@@ -1366,48 +1407,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 		--Akimbo Krinkov
 		["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
-		--CUSTOM 60 DAMAGE ARs
-		--SCAR-L
-		["bm_w_scarl"] = "Eagle Light Rifle",
-		--Valmet Rk.62
-		["bm_w_rk62"] = "Velmer Rifle",
+			
+		--CUSTOM ARs
+			--AN-94/92
+			["bm_w_tilt"] = "KVK-99 Rifle",
+			["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
+			--SCAR-L
+			["bm_w_scarl"] = "Eagle Light Rifle",
+			--Valmet Rk.62
+			["bm_w_rk62"] = "Velmer Rifle",
 
-
-		--Bootleg/HK416c
-		["bm_w_tecci"] = "Bootleg LMG",
-		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
-		--KSP/M249
-		["bm_w_m249"] = "KSP-90 LMG",
-		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
-		--RPK
-		["bm_w_rpk"] = "RPK LMG",
-		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
-					
-		--Brenner 21/HK21
-		["bm_w_hk21"] = "Brenner-21 MMG",
-		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",	
-		--M60
-		["bm_w_m60"] = "M60 MMG",
-		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.",	
-		--Ksp 58
-		["bm_w_par"] = "KSP-58B MMG",	
-		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",	
-		--Buzzsaw/Mg42
-		["bm_w_mg42"] = "Buzzsaw-42 MMG",	
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
-		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
-		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
-		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
-		--Versteckt-51/HK51B
-		["bm_w_hk51b"] = "Versteckt-51B MMG",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further.",
-
-		--M134
-		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
-		--Microgun
-		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
-
-		
+	
 		--Galant--
 		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor.##",
 		--M308
@@ -1419,7 +1429,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
 		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor.##",	
-		--Little Friend
 		--Little Friend
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
 		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
@@ -1435,14 +1444,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",		
+		
 		--Custom DMRs
-		["bm_w_g3hk79"] = "Gewehr-A3 GL79",
-		["bm_w_xr2"] = "XR-2 Rifle",
-		["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
-		["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
-		["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
-		["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
-		["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
+			--["bm_w_xeno"] = "MA14 Surge Rifle",	
+			["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\n	Press #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",	
+			["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold 	#{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+			--G3 HK79
+			["bm_w_g3hk79"] = "Gewehr-A3 GL79",
+			--BO3 XR2
+			["bm_w_xr2"] = "XR-2 Rifle",
+			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides 	an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor.##",
+			["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
+			["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
+			["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
+			["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
 
 		--MSR
 		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
@@ -1479,16 +1494,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
 		--Custom Snipers
-		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
-		["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
-		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
-		["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
-		--Marlin 1894
-		["bm_w_m1894"] = "Mare's Leg Sniper Rifle",
-		--SPX Centerfire
-		["bm_w_moss464spx"] = "Mosconi SPX Sniper Rifle",
-		--Winchester 1894
-		["bm_w_winchester1894"] = "Repeater 1894 Sniper Rifle",
+			["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
+			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 50% more 	damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
+			["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
+			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
+			--Marlin 1894
+			["bm_w_m1894"] = "Mare's Leg Sniper Rifle",
+			--SPX Centerfire
+			["bm_w_moss464spx"] = "Mosconi SPX Sniper Rifle",
+			--Winchester 1894
+			["bm_w_winchester1894"] = "Repeater 1894 Sniper Rifle",
 
 		--3GL
 		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber using special technology, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
@@ -1623,8 +1638,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",
+		["bm_menu_barrel_ext_plural"] = "Muzzles",
 		["bm_menu_foregrip"] = "Handguard",
+		["bm_menu_foregrip_plural"] = "Handguards",
 		["bm_menu_vertical_grip"] = "Foregrip",
+		["bm_menu_vertical_grip_plural"] = "Foregrips",
 		--Spoof types--
 		["bm_menu_frame"] = "Frame",
 		["bm_menu_whole_receiver"] = "Receiver",

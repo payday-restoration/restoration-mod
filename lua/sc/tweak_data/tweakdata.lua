@@ -91,8 +91,8 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1,
-		hipfire_moving_spread_mult = 1.2
+		hipfire_spread_mult = 1.25,
+		hipfire_moving_spread_mult = 1.5
 	}
 
 tweak_data.assault_rifle = {

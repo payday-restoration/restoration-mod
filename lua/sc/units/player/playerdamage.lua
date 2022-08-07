@@ -378,7 +378,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-			self._unit:sound():play("bullet_whizby_medium")
+			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
@@ -455,7 +455,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-			self._unit:sound():play("pickup_fak_skill") --PLEASE PLEASE PLEASE REPLACE WITH BETTER SOUND IN THE FUTURE!!!
+			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
@@ -1074,7 +1074,7 @@ function PlayerDamage:_calc_health_damage(attack_data)
 
 	if not self._ally_attack then
 		if self:get_real_armor() <= 0 then
-			self:fill_dodge_meter(self._dodge_points * 0.25)
+			self:fill_dodge_meter(self._dodge_points * 0.5)
 		end
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data) --Stoic damage delay. Done here so it applies to all health damage taken.
 	end
@@ -1308,8 +1308,8 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 		self:_send_set_armor()
 
 		if self:get_real_armor() <= 0 then
-			if not self._ally_attack then
-				self:fill_dodge_meter(self._dodge_points * 0.5)
+			if not self._ally_attack and attack_data.attacker_unit then
+				self:fill_dodge_meter(self._dodge_points * 0.25)
 			end
 			self._unit:sound():play("player_armor_gone_stinger")
 

@@ -12515,14 +12515,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		translation = Vector3(-0.002, -35.1, -0.21),
 		rotation = Rotation(0, 0, 0)
 	}
-
+	--Custom wep alignment
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_k31 = {
 		translation = Vector3(-0.0125, -20.9, -4.899)
 	}
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_l115 = {
 		translation = Vector3(-0.0175, -26, -4.375)
 	}
-
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_m200 = {
 		translation = Vector3(0.0035, -23.3, -4.895)
 	}

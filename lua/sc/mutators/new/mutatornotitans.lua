@@ -210,8 +210,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")						
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
@@ -283,7 +283,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")						
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3")						
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")							
@@ -811,7 +811,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic")						
 				},					
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")						
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")						
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5")

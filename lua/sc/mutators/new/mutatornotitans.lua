@@ -610,28 +610,28 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.GS_shield = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec")								
+					Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec")							
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield")								
+					Idstring("units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield")									
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec")							
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")								
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")							
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec")								
+					Idstring("units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec")							
 				},						
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec")							
+					Idstring("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec")								
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")								
 				},
 				fbi = {
-					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")							
 				}				
 			},
 			access = access_type_all,
@@ -650,7 +650,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
 				},								
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+					Idstring("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
@@ -663,7 +663,7 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
-				}				
+				}			
 			},
 			access = access_type_all,
 			special_type = "shield"

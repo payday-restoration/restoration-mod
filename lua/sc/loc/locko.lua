@@ -1357,7 +1357,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--TAR-21/Para
 		["bm_menu_sc_komodo_desc"] = "심각하게 컴팩트한 패키지에 많은 피해를 줍니다. 근거리 전투 또는 원거리 조우에 좋습니다.",		
 		--Famas
-		["bm_menu_sc_famas_desc"] = "이 무기는 탄창 용량을 발사 속도와 명중률로 바꿉니다. 사람들의 머리에 있는 사과를 쏘는 데 매우 효과적인 총입니다.",		
+		["bm_menu_sc_famas_desc"] = "이 무기는 탄창 용량을 발사 속도와 명중률로 바꿨습니다. 사람들의 머리에 있는 사과를 쏘는 데 매우 효과적인 총이기도 하죠.",		
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. #{skill_color}#20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.##\n#{skill_color}#$BTN_BIPOD## 키를 늘러 유탄 발사기로 전환합니다.",

@@ -132,6 +132,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
 		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
 		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
+		["RestorationModAutoDMRsTitleID"] = "지정사수 소총 항상 완전 자동 사격으로 시작",
+		["RestorationModAutoDMRsDescID"] = "지정사수 소총이 완전 자동 사격으로 시작할지 여부를 토글합니다.",		
 		["RestorationModSprintCancelTitleID"] = "위기모면 에이스 효과 재장전 취소",
 		["RestorationModSprintCancelDescID"] = "\"회피\" 스킬를 에이스 찍었을 때 '전력 질주 시작'이 진행 중일때 재장전을 취소할지 여부를 정합니다. 전력 질주하는 동안의 재장전은 영향을 받지 않습니다.",	
 		["RestorationModSevenHoldTitleID"] = "토클 상호작용 (Press2Hold)",
@@ -612,6 +614,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	    ["RestorationModVoiceIconDescID"] = "플레이어가 게임 내에서 음성 채팅을 사용할 때 표시합니다.",
 		["alpha_assault"] = "초기 알파 코너",
 		["beta_assault"] = "알파 테이프",
+		
+		["RestorationModDodgeDisplayTitleID"] = "회피 미터 판독 값",
+		["RestorationModDodgeDisplayDescID"] = "회피 미터의 최대값 *표시*를 변경합니다. 재시작이 필요합니다.",
+		["dd_scale"] = "150 - 회피율",
+		["dd_150"] = "150",
+		["dd_100"] = "100",		
 
 		["menu_ingame_manual"] = "오버홀 가이드",
 		["menu_ingame_manual_help"] = "레스토레이션의 오버홀 가이드 봅니다.",
@@ -1064,7 +1072,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복, 적, 방패, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",	
 		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복, 적, 방패, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",		
-		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 탄으로 #{important_1}#헤드샷을 할 수 없습니다.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 탄으로 #{important_1}#헤드샷을 할 수 없습니다.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#펠릿 수, 사거리, 탄약 획득량 및 총 탄약량을 줄이는 대신## #{skill_color}#피해를 증가시키는## 더 큰 펠릿을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = " #{heat_warm_color}#방탄복을 관통하여 불태우는## 펠릿을 발사합니다.\n\n일정 확률로 근거리에서 #{heat_warm_color}#적을 불태워## #{heat_warm_color}#96##의 피해를 입히고 #{skill_color}#3초에 걸쳐 대상을 패닉을 일으킬 수 있습니다.##",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{heat_warm_color}#방탄복을 관통하여 불태우는## 탄환을 발사합니다.\n\n일정 확률로 근거리에서 #{heat_warm_color}#적을 불태워## #{heat_warm_color}#120##의 피해를 입히고 #{skill_color}#3##초에 걸쳐 #{skill_color}#대상을 패닉에 빠트릴 수 있습니다.##",
@@ -1254,7 +1262,48 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Chicago Typewriter
 		["bm_thompson_sc_desc"] = "고용량 드럼 탄창을 사용하여 적을 쓰려트릴때 마피아의 열기를 불러일으킬 수 있습니다.",
 		--MP40
-		["bm_erma_sc_desc"] = "제 2차 세계 대전동안 보병의 손에 널리 사용되었던 상당히 안정적인 기관단총으로, 그저 탄창을 손잡이로 사용하지 마십시오.",		
+		["bm_erma_sc_desc"] = "제 2차 세계 대전동안 보병의 손에 널리 사용되었던 상당히 안정적인 기관단총으로, 그저 탄창을 손잡이로 사용하지 마십시오.",	
+
+		--CUSTOM SMGs
+		--Typhoon
+		["bm_w_crysis3_typhoon"] = "Typhoon 기관단총",
+		["bm_w_crysis3_typhoon_desc"] = "\"가장 순수한 형태의 표현인데 지금은 할 말이 많아.\"\n\n중첩 장전 기술을 사용하는 이 10연장 기관단총의 총알들은 엄청나게 빠른 속도로 발사됩니다.",
+
+		--Bootleg/HK416c
+		["bm_w_tecci"] = "Bootleg 경기관총",
+		["bm_w_tecci_desc_sc"] = "정확하게 납들을 뿌릴 수 있는 경기관총처럼 생긴 피스톤식 소총.",		
+		--KSP/M249
+		["bm_w_m249"] = "KSP-90 경기관총",
+		["bm_m249_sc_desc"] = "재장전 할 때 골치가 아프지만 재장전이 필요하기도 전에 모두를 죽일 가능성이 있습니다.",
+		--RPK
+		["bm_w_rpk"] = "RPK 경기관총",
+		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
+		--Brenner 21/HK21
+		["bm_w_hk21"] = "Brenner-21 중기관총",
+		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
+		--M60
+		["bm_w_m60"] = "M60 중기관총",
+		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관이 될 것입니다.",		
+		--Ksp 58
+		["bm_w_par"] = "KSP-58B 중기관총",
+		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
+		--Buzzsaw/Mg42
+		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
+		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향 사격 시 반동이 25% 감소합니다.##",	
+		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 소음 총열",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#2초##\n재충전 속도: #{skill_color}#9초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#4초##",
+		--["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
+		--Versteckt-51/HK51B
+		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
+		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, 이 기관총을 Compact-5 크기로 축소했습니다.",
+		--M134
+		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
+		--Microgun
+		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
+
+
+
+
 
 		--AA12
 		["bm_aa12_sc_desc"] = "박스 탄창을 사용하는 완전 자동 산탄총. 지속적인 인상을 남기기에 좋습니다.",
@@ -1308,11 +1357,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--TAR-21/Para
 		["bm_menu_sc_komodo_desc"] = "심각하게 컴팩트한 패키지에 많은 피해를 줍니다. 근거리 전투 또는 원거리 조우에 좋습니다.",		
 		--Famas
-		["bm_menu_sc_famas_desc"] = "이 무기는 탄창 용량을 발사 속도와 명중률로 바꿉니다. 사람들의 머리에 있는 사과를 쏘는 데 매우 효과적인 총입니다.",
-		--Custom 40 damage ARs
-		--["bm_w_xeno"] = "MA14 Surge Rifle",	
-		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
-		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",		
+		["bm_menu_sc_famas_desc"] = "이 무기는 탄창 용량을 발사 속도와 명중률로 바꿉니다. 사람들의 머리에 있는 사과를 쏘는 데 매우 효과적인 총입니다.",		
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X세대 무기 기술. #{skill_color}#20mm탄을 사용하는 공중 폭발 유탄 발사기가 장착되어있습니다.##\n#{skill_color}#$BTN_BIPOD## 키를 늘러 유탄 발사기로 전환합니다.",
@@ -1335,12 +1380,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ak74_sc_desc"] = "7.62 자매보다 작은 탄을 발사하지만 이 소총이 덜 치명적인 것이라는 건 아닙니다.",	
 		--CR 805
 		["bm_menu_sc_hajk_desc"] = "고전적고 더 젊고 현대적인 총알 호스 코브라의 사촌입니다. 이 소총은 목표를 잡을 수 없다면 그걸 위한 다양한 발사 모드와 점사 전환 기능을 갖추고 있습니다.",
-
-		--CUSTOM 48 DAMAGE ARs
-		--AN-94/92
-		["bm_w_tilt"] = "KVK-99 소총",		
-		["bm_tilt_sc_desc"] = "#{risk}#각 방아쇠의 처음 2발은## #{skill_color}#발사 속도의 3배로 발사합니다.##",		
-
 		
 		--AMR-16
 		["bm_m16_sc_desc"] = "이 클래식 라이플은 AMCAR의 후속작으로 만들어졌으며, 은닉성과 연사력이 부족하지만 사정거리와 위력가 부족한 부분을 보충합니다.",
@@ -1348,7 +1387,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_l85a2_sc_desc"] = "이 소총의 명성은 초기에 반복적인 고장으로 인해 나락으로 갔지만 지금까지 만들어진 가장 정확한 자동 소총 중 하나입니다.\n\n그래도 여전히 인체공학적인 악몽을 가지고 있습니다.",		
 		--AK 7.62
 		["bm_w_akm"] = "AK 7.62 소총",
-		["bm_akm_sc_desc"] = "이 소총은 방탄복이 DC에서 인기를 끌기 시작할 때 가지고 다니는 편리한 소총.\n\n전 세계의 반군과 미친 정권이 항상 이용하는 소총.",
+		["bm_akm_sc_desc"] = "이 소총은 방탄복이 DC에서 인기를 끌기 시작할 때 가지고 다니는 편리한 소총.\n\n전 세계의 반군과 미친 정권이 항상 이용하는 소총이기도 하죠.",
 		["bm_w_akm_gold"] = "황금 AK 7.62 소총",
 		["bm_akm_gold_sc_desc"] = "강도, 멕시코 마약왕, 과대망상 독재자의 공통점은? 금도금 소총에 대한 매력이죠, 물론이고 말고요.",		
 		--KETCHUPKNOB--
@@ -1360,48 +1399,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Akimbo Krinkov
 		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",
-		--CUSTOM 60 DAMAGE ARs
+		
+		--CUSTOM ARs
+		--AN-94/92
+		["bm_w_tilt"] = "KVK-99 소총",
+		["bm_tilt_sc_desc"] = "#{risk}#각 방아쇠의 처음 2발은## #{skill_color}#발사 속도의 3배로 발사합니다.##",		
 		--SCAR-L
 		["bm_w_scarl"] = "Eagle Light 소총",
 		--Valmet Rk.62
 		["bm_w_rk62"] = "Velmer 소총",		
 
-		--Bootleg/HK416c
-		["bm_w_tecci"] = "Bootleg 경기관총",
-		["bm_w_tecci_desc_sc"] = "정확하게 납들을 뿌릴 수 있는 경기관총처럼 생긴 피스톤식 소총.",		
-		
-		--KSP/M249
-		["bm_w_m249"] = "KSP-90 경기관총",
-		["bm_m249_sc_desc"] = "재장전 할 때 골치가 아프지만 재장전이 필요하기도 전에 모두를 죽일 가능성이 있습니다.",
-		--RPK
-		["bm_w_rpk"] = "RPK 경기관총",
-		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
-
-		--Brenner 21/HK21
-		["bm_w_hk21"] = "Brenner-21 중기관총",
-		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
-
-		--M60
-		["bm_w_m60"] = "M60 중기관총",
-		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관이 될 것입니다.",		
-		--Ksp 58
-		["bm_w_par"] = "KSP-58B 중기관총",
-		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
-		--Buzzsaw/Mg42
-		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
-		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향 사격 시 반동이 25% 감소합니다.##",	
-		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 소음 총열",
-		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#2초##\n재충전 속도: #{skill_color}#9초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#4초##",
-		--["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
-		--Versteckt-51/HK51B
-		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
-		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, 이 기관총을 Compact-5 크기로 축소했습니다.",
-
-		--M134
-		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
-		--Microgun
-		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
-		
 
 		--Galant--
 		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 #{skill_color}#탄창이 비었을때 빠르게 재장전합니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.##",				
@@ -1429,9 +1436,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_shak12_sc_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",		
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
-		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",		
+		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",
+		
 		--Custom DMRs
+		--["bm_w_xeno"] = "MA14 Surge Rifle",	
+		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
+		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",
+		--G3 HK79
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79 소총",
+		--BO3 XR2
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		["bm_wp_xr2_handle_01_sc"] = "완전 자동 사격 노리쇠",
@@ -1620,8 +1633,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "머즐",
+		["bm_menu_barrel_ext_plural"] = "머즐",
 		["bm_menu_foregrip"] = "총열덮개",
-		["bm_menu_vertical_grip"] = "포어그립",
+		["bm_menu_foregrip_plural"] = "총열덮개",
+		["bm_menu_vertical_grip"] = "수직 손잡이",
+		["bm_menu_vertical_grip_plural"] = "수직 손잡이",
 		--Spoof types--
 		["bm_menu_frame"] = "프레임",
 		["bm_menu_whole_receiver"] = "리시버",

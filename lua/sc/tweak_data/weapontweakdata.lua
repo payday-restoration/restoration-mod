@@ -12014,7 +12014,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.spike.tactical_reload = 1		
 			self.spike.AMMO_MAX = 120
 			self.spike.fire_mode_data.fire_rate = 0.1
-			self.spike.auto.fire_rate = 0.1
 			self.spike.kick = self.stat_info.kick_tables.right_kick		
 			self.spike.supported = true
 			self.spike.ads_speed = 0.300
@@ -12630,6 +12629,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.g3hk79.recategorize = {"dmr_ar"}
 		self.g3hk79.damage_type = "sniper"
+		self.g3hk79.has_description = true
+		self.g3hk79.desc_id = "bm_g3hk79_sc_desc"
 		self.g3hk79.AMMO_MAX = 40
 		self.g3hk79.CLIP_AMMO_MAX = 20
 		self.g3hk79.fire_mode_data.fire_rate = 0.12

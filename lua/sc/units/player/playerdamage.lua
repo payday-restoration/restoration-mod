@@ -80,6 +80,7 @@ function PlayerDamage:init(unit)
 	if self._can_survive_one_hit then
 		managers.hud:add_skill("survive_one_hit")
 	end
+	self._yakuza_bonus_grace = nil
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
@@ -375,6 +376,15 @@ function PlayerDamage:damage_bullet(attack_data)
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	if self._yakuza_bonus_grace then
+		self._yakuza_bonus_grace = nil
+		local yakuza_grace_ratio = 4 * (1 - self:health_ratio())
+		if grace_bonus then
+			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 1.2)
+		else 
+			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 1.2)
+		end
+	end
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -452,6 +462,15 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	if self._yakuza_bonus_grace then
+		self._yakuza_bonus_grace = nil
+		local yakuza_grace_ratio = 4 * (1 - self:health_ratio())
+		if grace_bonus then
+			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 1.2)
+		else 
+			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 1.2)
+		end
+	end
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -1148,6 +1167,14 @@ end
 --Adjusts dodge meter fill based on health ratio, used for Yakuza stuff.
 function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 	self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
+end
+
+--Adjusts dodge meter fill based on health ratio, used for Yakuza stuff.
+function PlayerDamage:give_yakuza_bonus_grace()
+	local pm = managers.player
+	if pm:has_category_upgrade("player", "melee_double_interval") then
+		self._yakuza_bonus_grace = true
+	end
 end
 
 --Called when players get kicked/tased. Applies damage and sets flag to true.

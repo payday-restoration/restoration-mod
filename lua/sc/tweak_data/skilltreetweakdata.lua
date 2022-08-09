@@ -2752,6 +2752,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_melee_kill_dodge_regen",
+					"player_melee_double_interval",
 					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,

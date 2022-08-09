@@ -237,8 +237,14 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if damage_ext:health_ratio() < 0.5 then
 		if variant == "melee" then
 			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0) + self:upgrade_value("player", "kill_dodge_regen"))
+			damage_ext:give_yakuza_bonus_grace()
 		else
 			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
+		end
+	else
+		if variant == "melee" then
+			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0))
+			damage_ext:give_yakuza_bonus_grace()
 		end
 	end
 

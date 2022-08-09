@@ -1719,6 +1719,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Yakuza--
+	self.values.player.melee_double_interval = {true}
 	self.values.player.survive_one_hit = {true}
 	self.values.survive_one_hit_armor = {5.0}
 
@@ -1731,7 +1732,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
-		0.75
+		1.00
 	}
 
 	self.values.player.kill_dodge_regen = {
@@ -3265,6 +3266,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "survive_one_hit",
+			category = "player"
+		}
+	}
+	self.definitions.player_melee_double_interval = {
+		name_id = "menu_player_melee_double_interval",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "melee_double_interval",
 			category = "player"
 		}
 	}

@@ -1308,10 +1308,20 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 		SoundDevice:set_rtpc("shield_status", self:armor_ratio() * 100)
 		self:_send_set_armor()
 
+		--Starts biker regen when there is missing armor. 
+		if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
+			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+		end
+
 		if self:get_real_armor() <= 0 then
-			if not self._ally_attack and attack_data.attacker_unit and not self._armor_broken then
-				--Will look into tying this to Yakuza later if needed
-				--self:fill_dodge_meter(self._dodge_points * 0.5)
+			if not self._ally_attack then
+				if not self._armor_broken then
+					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
+					if attack_data.attacker_unit then
+					--Will look into tying this to Yakuza later if needed
+					--self:fill_dodge_meter(self._dodge_points * 0.5)
+					end
+				end
 			end
 			self._unit:sound():play("player_armor_gone_stinger")
 
@@ -1336,16 +1346,7 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 	return health_subtracted
 end
 
---Starts biker regen when there is missing armor. Also notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
-Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
-	if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
-		self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
-	end
 
-	if self:get_real_armor() == 0 and not self._ally_attack then
-		self._armor_broken = true
-	end
-end)
 
 --Whether the player can proc Sneaky Bastard.
 function PlayerDamage:can_dodge_heal()

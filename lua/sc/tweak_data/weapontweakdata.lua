@@ -11289,7 +11289,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.fire_mode_data.fire_rate = 0.25
 		self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"	
 		self.shatters_fury.sounds.fire_single = "rbull_fire"	
-		self.shatters_fury.sounds.stop_fire = "hajk_x_fire_single"	
+		self.shatters_fury.sounds.stop_fire = "remington_fire" --"hajk_x_fire_single"	
 		self.shatters_fury.single.fire_rate = 0.25	
 		self.shatters_fury.weapon_hold = "model3"
 		self.shatters_fury.AMMO_MAX = 40
@@ -13742,7 +13742,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * 1.1
+	pickup_multiplier = pickup_multiplier * 1.15
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

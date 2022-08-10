@@ -259,7 +259,8 @@ end
 --Special function to handle damage dealt to players in bleedout.
 function PlayerDamage:_bleed_out_damage(attack_data)
 	self._unit:sound():play("player_hit_permadamage")
-	attack_data.damage = attack_data.damage * self._deflection
+	local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
+	attack_data.damage = attack_data.damage * deflection
 	local health_subtracted = Application:digest_value(self._bleed_out_health, false)
 	self._bleed_out_health = Application:digest_value(math.max(0, health_subtracted - attack_data.damage), true)
 	health_subtracted = health_subtracted - Application:digest_value(self._bleed_out_health, false)
@@ -911,7 +912,8 @@ function PlayerDamage:_check_chico_heal(attack_data)
 		local health_received = attack_data.damage * dmg_to_hp_ratio
 
 		if self._armor_broken then
-			health_received = health_received * self._deflection
+			local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
+			health_received = health_received * deflection
 		end
 
 		if managers.player:has_category_upgrade("player", "chico_injector_health_to_speed") and self:_max_health_orig() < self:get_real_health() + health_received then
@@ -1084,7 +1086,7 @@ end
 
 --Applies deflection and stoic effects.
 function PlayerDamage:_calc_health_damage(attack_data)
-	local deflection = self._deflection
+	local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
 	if self:has_temp_health() then --Hitman deflection bonus.
 		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
 	end
@@ -1169,7 +1171,7 @@ function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 	self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 end
 
---Adjusts dodge meter fill based on health ratio, used for Yakuza stuff.
+--Sets flag for bonus grace time, used for Yakuza.
 function PlayerDamage:give_yakuza_bonus_grace()
 	local pm = managers.player
 	if pm:has_category_upgrade("player", "melee_double_interval") then
@@ -1185,7 +1187,7 @@ function PlayerDamage:cloak_or_shock_incap(damage)
 		damage = math.max(0.1, damage - damage_absorption)
 	end
 	
-	local deflection = self._deflection
+	local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
 	if self:has_temp_health() then --Hitman deflection bonus.
 		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
 	end
@@ -1215,7 +1217,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	local passive_dodge = pm:upgrade_value("team", "crew_add_dodge", 0)
 
 	--Yakuza capstone skill.
-	if self:health_ratio() < 0.5 then
+	if self:health_ratio() < 1 then
 		passive_dodge = passive_dodge + (1 - self:health_ratio()) * pm:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
 	end
 

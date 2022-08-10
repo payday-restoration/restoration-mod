@@ -483,8 +483,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.can_free_run = {true}
 	self.values.player.fall_health_damage_multiplier = {0}
 	self.values.player.counter_strike_melee = {true}
-	self.player_damage_health_ratio_threshold = 0.5
-	self.player_damage_health_ratio_threshold_2 = 0.5
+	self.player_damage_health_ratio_threshold = 1
+	self.player_damage_health_ratio_threshold_2 = 1 --Unused?
 
 	--Allegedly used somewhere???
 	self.values.akimbo.recoil_multiplier = {
@@ -1278,9 +1278,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.deflect_ranged = {0.9}
 
 			--Frenzy (Berserker)
-				self.values.player.max_health_reduction = {0.25}
-				self.values.player.healing_reduction = {0.00, 0.25}
-				self.values.player.frenzy_deflection = {0.20, 0.45}
+				self.values.player.max_health_reduction = {1} --disable base hp loss
+				self.values.player.healing_reduction = {1, 1} --disable healing reduction
+				self.values.player.frenzy_deflection = {0.3, 0.6}
 				
 			--Berserker (Frenzy)
 				--Basic

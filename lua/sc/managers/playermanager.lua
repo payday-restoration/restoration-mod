@@ -234,17 +234,12 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	end	
 
 	--Yakuza dodge meter generation.
-	if damage_ext:health_ratio() < 0.5 then
+	if damage_ext:health_ratio() < 1 then
 		if variant == "melee" then
 			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0) + self:upgrade_value("player", "kill_dodge_regen"))
 			damage_ext:give_yakuza_bonus_grace()
 		else
 			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
-		end
-	else
-		if variant == "melee" then
-			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0))
-			damage_ext:give_yakuza_bonus_grace()
 		end
 	end
 
@@ -739,9 +734,7 @@ end
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
-	return 
-		  self:upgrade_value("player", "deflection_addend", 0)
-		+ self:upgrade_value("player", "frenzy_deflection", 0)
+	return self:upgrade_value("player", "deflection_addend", 0)
 end
 
 function PlayerManager:get_max_grenades(grenade_id)

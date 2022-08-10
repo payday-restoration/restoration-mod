@@ -1945,15 +1945,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {11, 8},
 				[1] = {
 					upgrades = {
-						"player_healing_reduction_1",
+						--"player_max_health_reduction_1"
+						--"player_healing_reduction_1",
 						"player_frenzy_deflection_1",
-						"player_max_health_reduction_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_healing_reduction_2",
+						--"player_healing_reduction_2",
 						"player_frenzy_deflection_2"
 					},
 					cost = self.costs.hightierpro

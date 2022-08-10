@@ -1,5 +1,8 @@
 {
   "ene_lapd_veteran_cop" : "SWAT Chief Mardo",
+  "ene_sniper_1" : "LAPD FBI SWAT Sniper",
+  "ene_sniper_2" : "LAPD SWAT Sniper",
+  "ene_sniper_3" : "FBI SWAT Elite Sniper",
   "ene_swat" : "LAPD SWAT",  
   "ene_swat_heavy" : "LAPD Heavy SWAT",
   "ene_fbi_swat" : "LAPD FBI SWAT",  
@@ -8,6 +11,6 @@
   "ene_city_swat" : "Light FBI SWAT Elite",
   "ene_city_heavy" : "Heavy FBI SWAT Elite",
   "ene_city_heavy_r870_sc" : "Heavy FBI SWAT Elite",
-  "ene_city_shield" : "Shield",
+  "ene_city_shield" : "FBI SWAT Elite Shield",
   "ene_bulldozer_3" : "Skulldozer"
 }

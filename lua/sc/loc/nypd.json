@@ -1,6 +1,10 @@
 {
   "ene_security" : "White GenSec Guard",
-  "ene_security_gensec" : "Red GenSec Guard",  
+  "ene_security_gensec" : "Red GenSec Guard",
+  "ene_nypd_shield"  : "NYPD SWAT Shield",
+  "ene_shield_1" : "NYPD FBI SWAT Shield",
+  "ene_sniper_1" : "NYPD SWAT Sniper",
+  "ene_sniper_2_sc" : "NYPD FBI SWAT Sniper",
   "ene_fbi_swat" : "NYPD FBI SWAT",  
   "ene_fbi_heavy" : "NYPD FBI Heavy SWAT",
   "ene_fbi_heavy_r870_sc" : "NYPD FBI Heavy SWAT"

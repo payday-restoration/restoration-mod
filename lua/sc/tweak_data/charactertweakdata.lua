@@ -3218,10 +3218,11 @@ function CharacterTweakData:_init_russian(presets)
 	self.russian.damage = presets.gang_member_damage
 	self.russian.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_ass_amcar_pdth_npc",
-		"wpn_fps_ass_74_pdth_npc",
-		"wpn_fps_ass_74_pdth_npc",
-		"wpn_fps_ass_74_pdth_npc"
+		"wpn_fps_ass_amcar_npc",
+		--"wpn_fps_ass_amcar_pdth_npc",
+		--"wpn_fps_ass_74_pdth_npc",
+		--"wpn_fps_ass_74_pdth_npc",
+		--"wpn_fps_ass_74_pdth_npc"
 	}
 	self.russian.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),
@@ -3276,7 +3277,7 @@ function CharacterTweakData:_init_spanish(presets)
 	self.spanish.damage = presets.gang_member_damage
 	self.spanish.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_lmg_hk21_pdth_npc",
+		--"wpn_fps_lmg_hk21_pdth_npc",
 		"wpn_fps_lmg_m249_npc",
 		"wpn_fps_lmg_m249_npc"
 	}
@@ -3306,8 +3307,13 @@ function CharacterTweakData:_init_american(presets)
 	self.american.flammable = false
 	self.american.damage = presets.gang_member_damage
 	self.american.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		--"wpn_fps_ass_m14_pdth_npc",
+		"wpn_fps_ass_m14_npc",
+		"wpn_fps_ass_m14_npc"
+	}
 	self.american.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_m14_pdth_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.american.detection = presets.detection.gang_member
@@ -3332,20 +3338,21 @@ function CharacterTweakData:_init_jowi(presets)
 	self.jowi.damage = presets.gang_member_damage
 	self.jowi.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_snp_tti_wick_bubba_npc",
-		"wpn_fps_snp_desertfox_wick_npc",
-		"wpn_fps_snp_desertfox_wick_npc",
-		"wpn_fps_snp_desertfox_wick_npc",
-		"wpn_fps_snp_desertfox_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc",
-		"wpn_fps_snp_tti_wick_npc"
+		"wpn_fps_snp_tti_npc",
+		--"wpn_fps_snp_tti_wick_bubba_npc",
+		--"wpn_fps_snp_desertfox_wick_npc",
+		--"wpn_fps_snp_desertfox_wick_npc",
+		--"wpn_fps_snp_desertfox_wick_npc",
+		--"wpn_fps_snp_desertfox_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc",
+		--"wpn_fps_snp_tti_wick_npc"
 	}
 	self.jowi.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),
@@ -3398,7 +3405,7 @@ function CharacterTweakData:_init_clover(presets)
 	self.female_1.damage = presets.gang_member_damage
 	self.female_1.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_ass_l85a2_mil_npc",
+		--"wpn_fps_ass_l85a2_mil_npc",
 		"wpn_fps_ass_l85a2_npc"
 	}
 	self.female_1.weapon.weapons_of_choice = {
@@ -3452,14 +3459,14 @@ function CharacterTweakData:_init_jacket(presets)
 	self.jacket.damage = presets.gang_member_damage
 	self.jacket.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_ass_m16_a1_npc",
-		"wpn_fps_ass_akm_solid_npc",
-		"wpn_fps_ass_akm_solid_npc",
-		"wpn_fps_ass_akm_solid_npc",
-		"wpn_fps_ass_m16_a3_npc",
-		"wpn_fps_ass_m16_a3_npc",
-		"wpn_fps_ass_m16_a3_npc",
-		"wpn_fps_ass_m16_a3_npc",
+		--"wpn_fps_ass_m16_a1_npc",
+		--"wpn_fps_ass_akm_solid_npc",
+		--"wpn_fps_ass_akm_solid_npc",
+		--"wpn_fps_ass_akm_solid_npc",
+		--"wpn_fps_ass_m16_a3_npc",
+		--"wpn_fps_ass_m16_a3_npc",
+		--"wpn_fps_ass_m16_a3_npc",
+		--"wpn_fps_ass_m16_a3_npc",
 		"wpn_fps_ass_amcar_npc",
 		"wpn_fps_ass_amcar_npc",
 		"wpn_fps_ass_amcar_npc",
@@ -3523,9 +3530,9 @@ function CharacterTweakData:_init_sokol(presets)
 		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_npc",
-		"wpn_fps_ass_asval_vss_npc",
-		"wpn_fps_ass_asval_vss_npc",
-		"wpn_fps_ass_shak12_supp_npc"
+		--"wpn_fps_ass_asval_vss_npc",
+		--"wpn_fps_ass_asval_vss_npc",
+		--"wpn_fps_ass_shak12_supp_npc"
 	}
 	self.sokol.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),
@@ -3759,8 +3766,9 @@ function CharacterTweakData:_init_ecp(presets)
 		weapon = deep_clone(presets.weapon.gang_member)
 	}
 	local rand_weap = {
-		"wpn_fps_ass_m16_idf_npc",
-		"wpn_fps_ass_amcar_idf_npc"
+		"wpn_fps_ass_m16_npc",
+		--"wpn_fps_ass_m16_idf_npc",
+		--"wpn_fps_ass_amcar_idf_npc"
 	}
 	self.ecp_female.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),

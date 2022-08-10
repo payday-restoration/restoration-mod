@@ -3009,42 +3009,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_core")
 	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
-
-
-	self.wpn_fps_ass_amcar_idf = deep_clone(self.wpn_fps_ass_amcar)
-	self.wpn_fps_ass_amcar_idf.real_factory_id = "wpn_fps_ass_amcar"
-	self.wpn_fps_ass_amcar_idf.default_blueprint = {
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_ass_m4_os_frontsight",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_round_vanilla",
-		"wpn_fps_amcar_uupg_fg_amcar",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_s_standard_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_amcar_bolt_standard"
-	}
-	self.wpn_fps_ass_amcar_idf_npc = deep_clone(self.wpn_fps_ass_amcar_idf)
-	self.wpn_fps_ass_amcar_idf_npc.unit = "units/payday2/weapons/wpn_fps_ass_amcar/wpn_fps_ass_amcar_npc"
-
-	self.wpn_fps_ass_amcar_pdth = deep_clone(self.wpn_fps_ass_amcar)
-	self.wpn_fps_ass_amcar_pdth.real_factory_id = "wpn_fps_ass_amcar"
-	self.wpn_fps_ass_amcar_pdth.default_blueprint = {
-		"wpn_fps_m4_uupg_b_long",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_ass_m4_os_frontsight",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_round_vanilla",
-		"wpn_fps_m4_uupg_fg_rail",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_s_standard_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_amcar_bolt_standard"
-	}
-	self.wpn_fps_ass_amcar_pdth_npc = deep_clone(self.wpn_fps_ass_amcar_pdth)
-	self.wpn_fps_ass_amcar_pdth_npc.unit = "units/payday2/weapons/wpn_fps_ass_amcar/wpn_fps_ass_amcar_npc"
-
 end)
 
 --AMR-16 
@@ -3156,51 +3120,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	
 	self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
 
-
-	self.wpn_fps_ass_m16_a3 = deep_clone(self.wpn_fps_ass_m16)
-	self.wpn_fps_ass_m16_a3.real_factory_id = "wpn_fps_ass_m16"
-	self.wpn_fps_ass_m16_a3.default_blueprint = {
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_amcar_uupg_body_upperreciever",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_m16_fg_standard",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_ass_contraband_s_standard",
-		"wpn_fps_amcar_bolt_standard"
-	}
-	self.wpn_fps_ass_m16_a3_npc = deep_clone(self.wpn_fps_ass_m16_a3)
-	self.wpn_fps_ass_m16_a3_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
-
-	self.wpn_fps_ass_m16_a1 = deep_clone(self.wpn_fps_ass_m16)
-	self.wpn_fps_ass_m16_a1.real_factory_id = "wpn_fps_ass_m16"
-	self.wpn_fps_ass_m16_a1.default_blueprint = {
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_amcar_uupg_body_upperreciever",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_m16_fg_vietnam",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_ass_contraband_s_standard",
-		"wpn_fps_amcar_bolt_standard"
-	}
-	self.wpn_fps_ass_m16_a1_npc = deep_clone(self.wpn_fps_ass_m16_a1)
-	self.wpn_fps_ass_m16_a1_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
-
-	self.wpn_fps_ass_m16_idf = deep_clone(self.wpn_fps_ass_m16)
-	self.wpn_fps_ass_m16_idf.real_factory_id = "wpn_fps_ass_m16"
-	self.wpn_fps_ass_m16_idf.default_blueprint = {
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_amcar_uupg_body_upperreciever",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_m16_fg_standard",
-		"wpn_fps_m4_uupg_b_long",
-		"wpn_fps_ass_contraband_s_standard",
-		"wpn_fps_amcar_bolt_standard"
-	}
-	self.wpn_fps_ass_m16_idf_npc = deep_clone(self.wpn_fps_ass_m16_idf)
-	self.wpn_fps_ass_m16_idf_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
 
 end)
 
@@ -3483,21 +3402,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 
 	self.wpn_fps_ass_74_npc.uses_parts = deep_clone(self.wpn_fps_ass_74.uses_parts)	
 
-	self.wpn_fps_ass_74_pdth = deep_clone(self.wpn_fps_ass_74)
-	self.wpn_fps_ass_74_pdth.real_factory_id = "wpn_fps_ass_74"
-	self.wpn_fps_ass_74_pdth.default_blueprint = {
-		"wpn_fps_ass_74_b_standard",
-		"wpn_fps_ass_akm_body_upperreceiver_vanilla",
-		"wpn_fps_ass_ak_body_lowerreceiver",
-		"wpn_fps_ass_74_m_standard",
-		"wpn_upg_ak_fg_combo2",
-		"wpn_upg_ak_s_skfoldable_vanilla",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_ak_scopemount"
-	}
-	self.wpn_fps_ass_74_pdth_npc = deep_clone(self.wpn_fps_ass_74_pdth)
-	self.wpn_fps_ass_74_pdth_npc.unit = "units/payday2/weapons/wpn_fps_ass_74/wpn_fps_ass_74_npc"
-
 end)
 
 --AK 7.62
@@ -3552,20 +3456,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 	--table.insert(self.wpn_fps_ass_akm_npc.uses_parts, "wpn_upg_ak_s_nostock")
 
 	self.wpn_fps_ass_akm_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm.uses_parts)
-
-	self.wpn_fps_ass_akm_solid = deep_clone(self.wpn_fps_ass_akm)
-	self.wpn_fps_ass_akm_solid.real_factory_id = "wpn_fps_ass_akm"
-	self.wpn_fps_ass_akm_solid.default_blueprint = {
-		"wpn_fps_upg_ak_s_solidstock",
-		"wpn_upg_ak_fg_standard",
-		"wpn_upg_ak_m_akm",
-		"wpn_upg_ak_g_standard",
-		"wpn_fps_ass_akm_b_standard",
-		"wpn_fps_ass_akm_body_upperreceiver_vanilla",
-		"wpn_fps_ass_ak_body_lowerreceiver"
-	}
-	self.wpn_fps_ass_akm_solid_npc = deep_clone(self.wpn_fps_ass_akm_solid)
-	self.wpn_fps_ass_akm_solid_npc.unit = "units/payday2/weapons/wpn_fps_ass_akm/wpn_fps_ass_akm_npc"
 end)
 
 --Gold AK 7.62)
@@ -4142,21 +4032,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 	]]--
 	
 	self.wpn_fps_ass_m14_npc.uses_parts = deep_clone(self.wpn_fps_ass_m14.uses_parts)
-
-	self.wpn_fps_ass_m14_pdth = deep_clone(self.wpn_fps_ass_m14)
-	self.wpn_fps_ass_m14_pdth.real_factory_id = "wpn_fps_ass_m14"
-	self.wpn_fps_ass_m14_pdth.default_blueprint = {
-		"wpn_fps_ass_m14_b_standard",
-		"wpn_fps_ass_m14_body_lower",
-		"wpn_fps_ass_m14_body_upper",
-		"wpn_fps_ass_m14_body_dmr",
-		"wpn_fps_upg_o_m14_scopemount",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_ass_m14_m_standard"
-	}
-	self.wpn_fps_ass_m14_pdth_npc = deep_clone(self.wpn_fps_ass_m14_pdth)
-	self.wpn_fps_ass_m14_pdth_npc.unit = "units/payday2/weapons/wpn_fps_ass_m14/wpn_fps_ass_m14_npc"
-
 end)
 
 --CMP
@@ -5904,22 +5779,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_smg_mp5_s_adjust")
 	
 	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)	
-
-	self.wpn_fps_lmg_hk21_pdth = deep_clone(self.wpn_fps_lmg_hk21)
-	self.wpn_fps_lmg_hk21_pdth.real_factory_id = "wpn_fps_lmg_hk21"
-	self.wpn_fps_lmg_hk21_pdth.default_blueprint = {
-		"wpn_fps_lmg_hk21_b_short",
-		"wpn_fps_lmg_hk21_body_lower",
-		"wpn_fps_lmg_hk21_body_upper",
-		"wpn_fps_lmg_hk21_fg_short",
-		"wpn_fps_lmg_hk21_g_standard",
-		"wpn_fps_lmg_hk21_m_standard",
-		"wpn_fps_lmg_hk21_s_standard",
-		"wpn_fps_upg_bp_lmg_lionbipod",
-		"wpn_fps_upg_o_docter"
-	}
-	self.wpn_fps_lmg_hk21_pdth_npc = deep_clone(self.wpn_fps_lmg_hk21_pdth)
-	self.wpn_fps_lmg_hk21_pdth_npc.unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21/wpn_fps_lmg_hk21_npc"	
 		
 end)
 
@@ -6682,16 +6541,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	}
 
 
-	self.wpn_fps_sho_ben_jim = deep_clone(self.wpn_fps_sho_ben)
-	self.wpn_fps_sho_ben_jim.real_factory_id = "wpn_fps_sho_ben"
-	self.wpn_fps_sho_ben_jim.default_blueprint = {
-		"wpn_fps_sho_ben_b_short",
-		"wpn_fps_sho_ben_body_standard",
-		"wpn_fps_sho_ben_fg_standard",
-		"wpn_fps_sho_ben_s_collapsed"
-	}
-	self.wpn_fps_sho_ben_jim_npc = deep_clone(self.wpn_fps_sho_ben_jim)
-	self.wpn_fps_sho_ben_jim_npc.unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben/wpn_fps_sho_ben_npc"
 
 end)	
 
@@ -9287,19 +9136,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 		concealment = -1
 	}
 		
-	self.wpn_fps_ass_l85a2_mil = deep_clone(self.wpn_fps_ass_l85a2)
-	self.wpn_fps_ass_l85a2_mil.real_factory_id = "wpn_fps_ass_l85a2"
-	self.wpn_fps_ass_l85a2_mil.default_blueprint = {
-		"wpn_fps_ass_l85a2_body_standard",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_ass_l85a2_fg_short",
-		"wpn_fps_ass_l85a2_b_medium",
-		"wpn_fps_ass_l85a2_g_standard",
-		"wpn_fps_ass_l85a2_ns_standard",
-		"wpn_fps_upg_o_specter"
-	}
-	self.wpn_fps_ass_l85a2_mil_npc = deep_clone(self.wpn_fps_ass_l85a2_mil)
-	self.wpn_fps_ass_l85a2_mil_npc.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2/wpn_fps_ass_l85a2_npc"
 
 end)
 
@@ -10764,20 +10600,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 
 	self.wpn_fps_ass_asval_npc.override = deep_clone(self.wpn_fps_ass_asval.override)		
 	self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)		
-
-	self.wpn_fps_ass_asval_vss = deep_clone(self.wpn_fps_ass_asval)
-	self.wpn_fps_ass_asval_vss.real_factory_id = "wpn_fps_ass_asval"
-	self.wpn_fps_ass_asval_vss.default_blueprint = {
-		"wpn_fps_ass_asval_b_standard",
-		"wpn_fps_ass_asval_body_standard",
-		"wpn_fps_ass_asval_fg_standard",
-		"wpn_fps_ass_asval_m_standard",
-		"wpn_fps_upg_o_poe",
-		"wpn_fps_ass_asval_s_solid"
-	}
-	self.wpn_fps_ass_asval_vss_npc = deep_clone(self.wpn_fps_ass_asval_vss)
-	self.wpn_fps_ass_asval_vss_npc.unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval/wpn_fps_ass_asval_npc"
-
 end)
 
 --Sub2000
@@ -12276,17 +12098,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", fu
 	
 	self.wpn_fps_snp_desertfox_npc.uses_parts = deep_clone(self.wpn_fps_snp_desertfox.uses_parts)
 
-	self.wpn_fps_snp_desertfox_wick = deep_clone(self.wpn_fps_snp_desertfox)
-	self.wpn_fps_snp_desertfox_wick.real_factory_id = "wpn_fps_snp_desertfox"
-	self.wpn_fps_snp_desertfox_wick.default_blueprint = {
-		"wpn_fps_snp_desertfox_b_long",
-		"wpn_fps_snp_desertfox_body",
-		"wpn_fps_snp_desertfox_dh_standard",
-		"wpn_fps_snp_desertfox_mag",
-		"wpn_fps_upg_o_shortdot"
-	}
-	self.wpn_fps_snp_desertfox_wick_npc = deep_clone(self.wpn_fps_snp_desertfox_wick)
-	self.wpn_fps_snp_desertfox_wick_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox/wpn_fps_snp_desertfox_npc"
 
 
 end)
@@ -12864,50 +12675,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 	
 	self.wpn_fps_snp_tti_npc.override = deep_clone(self.wpn_fps_snp_tti.override)
 	self.wpn_fps_snp_tti_npc.uses_parts = deep_clone(self.wpn_fps_snp_tti.uses_parts)
-
-	self.wpn_fps_snp_tti_wick = deep_clone(self.wpn_fps_snp_tti)
-	self.wpn_fps_snp_tti_wick.real_factory_id = "wpn_fps_snp_tti"
-	self.wpn_fps_snp_tti_wick.default_blueprint = {
-		"wpn_fps_smg_hajk_vg_moe",
-		"wpn_fps_snp_tti_ns_standard",
-		"wpn_fps_snp_tti_m_standard",
-		"wpn_fps_snp_tti_fg_standard",
-		"wpn_fps_snp_tti_dhs_switch",
-		"wpn_fps_snp_tti_dh_standard",
-		"wpn_fps_snp_tti_bolt_standard",
-		"wpn_fps_snp_tti_body_receiverupper",
-		"wpn_fps_snp_tti_body_receiverlower",
-		"wpn_fps_snp_tti_b_standard",
-		"wpn_fps_upg_o_shortdot",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_upg_m4_g_standard_vanilla"
-	}
-	self.wpn_fps_snp_tti_wick_npc = deep_clone(self.wpn_fps_snp_tti_wick)
-	self.wpn_fps_snp_tti_wick_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
-
-	self.wpn_fps_snp_tti_wick_bubba = deep_clone(self.wpn_fps_snp_tti)
-	self.wpn_fps_snp_tti_wick_bubba.real_factory_id = "wpn_fps_snp_tti"
-	self.wpn_fps_snp_tti_wick_bubba.default_blueprint = {
-		"wpn_fps_smg_schakal_vg_surefire",
-		"wpn_fps_snp_tti_ns_standard",
-		"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_ass_m16_fg_stag",
-		"wpn_fps_snp_tti_dhs_switch",
-		"wpn_fps_snp_tti_dh_standard",
-		"wpn_fps_snp_tti_bolt_standard",
-		"wpn_fps_snp_tti_body_receiverupper",
-		"wpn_fps_snp_tti_body_receiverlower",
-		"wpn_fps_snp_tti_b_standard",
-		"wpn_fps_upg_o_leupold",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_fl_ass_utg",	
-		"wpn_fps_ass_shak12_ns_muzzle",
-		"wpn_fps_upg_m4_g_standard_vanilla"
-	}
-	self.wpn_fps_snp_tti_wick_bubba_npc = deep_clone(self.wpn_fps_snp_tti_wick_bubba)
-	self.wpn_fps_snp_tti_wick_bubba_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
 end)
 
 --Grom
@@ -16078,23 +15845,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 
 	self.wpn_fps_ass_shak12_npc.uses_parts = deep_clone(self.wpn_fps_ass_shak12.uses_parts)	
 
-	self.wpn_fps_ass_shak12_supp = deep_clone(self.wpn_fps_ass_shak12)
-	self.wpn_fps_ass_shak12_supp.real_factory_id = "wpn_fps_ass_shak12"
-	self.wpn_fps_ass_shak12_supp.default_blueprint = {
-		"wpn_fps_ass_shak12_body_lower",
-		"wpn_fps_ass_shak12_body_upper",
-		"wpn_fps_ass_shak12_b_dummy",
-		"wpn_fps_ass_shak12_dh_vks",
-		"wpn_fps_ass_shak12_fg_rail",
-		"wpn_fps_ass_shak12_ejector_standard",
-		"wpn_fps_ass_shak12_m_magazine25",
-		"wpn_fps_ass_shak12_o_sight",
-		"wpn_fps_ass_shak12_ns_suppressor",
-		"wpn_fps_ass_shak12_o_carry_dummy",
-		"wpn_fps_upg_o_poe"
-	}
-	self.wpn_fps_ass_shak12_supp_npc = deep_clone(self.wpn_fps_ass_shak12_supp)
-	self.wpn_fps_ass_shak12_supp_npc.unit = "units/pd2_dlc_tawp/weapons/wpn_fps_ass_shak12/wpn_fps_ass_shak12_npc"
 
 end)
 
@@ -22439,3 +22189,258 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 		}
 	end
 end)
+
+--[[ NPC weaps
+Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_npc_weaps", function(self)
+
+	self.wpn_fps_ass_shak12_supp = deep_clone(self.wpn_fps_ass_shak12)
+	self.wpn_fps_ass_shak12_supp.real_factory_id = "wpn_fps_ass_shak12"
+	self.wpn_fps_ass_shak12_supp.default_blueprint = {
+		"wpn_fps_ass_shak12_body_lower",
+		"wpn_fps_ass_shak12_body_upper",
+		"wpn_fps_ass_shak12_b_dummy",
+		"wpn_fps_ass_shak12_dh_vks",
+		"wpn_fps_ass_shak12_fg_rail",
+		"wpn_fps_ass_shak12_ejector_standard",
+		"wpn_fps_ass_shak12_m_magazine25",
+		"wpn_fps_ass_shak12_o_sight",
+		"wpn_fps_ass_shak12_ns_suppressor",
+		"wpn_fps_ass_shak12_o_carry_dummy",
+		"wpn_fps_upg_o_poe"
+	}
+	self.wpn_fps_ass_shak12_supp_npc = deep_clone(self.wpn_fps_ass_shak12_supp)
+	self.wpn_fps_ass_shak12_supp_npc.unit = "units/pd2_dlc_tawp/weapons/wpn_fps_ass_shak12/wpn_fps_ass_shak12_npc"
+	
+	self.wpn_fps_snp_desertfox_wick = deep_clone(self.wpn_fps_snp_desertfox)
+	self.wpn_fps_snp_desertfox_wick.real_factory_id = "wpn_fps_snp_desertfox"
+	self.wpn_fps_snp_desertfox_wick.default_blueprint = {
+		"wpn_fps_snp_desertfox_b_long",
+		"wpn_fps_snp_desertfox_body",
+		"wpn_fps_snp_desertfox_dh_standard",
+		"wpn_fps_snp_desertfox_mag",
+		"wpn_fps_upg_o_shortdot"
+	}
+	self.wpn_fps_snp_desertfox_wick_npc = deep_clone(self.wpn_fps_snp_desertfox_wick)
+	self.wpn_fps_snp_desertfox_wick_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox/wpn_fps_snp_desertfox_npc"
+
+	self.wpn_fps_ass_asval_vss = deep_clone(self.wpn_fps_ass_asval)
+	self.wpn_fps_ass_asval_vss.real_factory_id = "wpn_fps_ass_asval"
+	self.wpn_fps_ass_asval_vss.default_blueprint = {
+		"wpn_fps_ass_asval_b_standard",
+		"wpn_fps_ass_asval_body_standard",
+		"wpn_fps_ass_asval_fg_standard",
+		"wpn_fps_ass_asval_m_standard",
+		"wpn_fps_upg_o_poe",
+		"wpn_fps_ass_asval_s_solid"
+	}
+	self.wpn_fps_ass_asval_vss_npc = deep_clone(self.wpn_fps_ass_asval_vss)
+	self.wpn_fps_ass_asval_vss_npc.unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval/wpn_fps_ass_asval_npc"
+
+	self.wpn_fps_ass_l85a2_mil = deep_clone(self.wpn_fps_ass_l85a2)
+	self.wpn_fps_ass_l85a2_mil.real_factory_id = "wpn_fps_ass_l85a2"
+	self.wpn_fps_ass_l85a2_mil.default_blueprint = {
+		"wpn_fps_ass_l85a2_body_standard",
+		"wpn_fps_ass_l85a2_m_emag",
+		"wpn_fps_ass_l85a2_fg_short",
+		"wpn_fps_ass_l85a2_b_medium",
+		"wpn_fps_ass_l85a2_g_standard",
+		"wpn_fps_ass_l85a2_ns_standard",
+		"wpn_fps_upg_o_specter"
+	}
+	self.wpn_fps_ass_l85a2_mil_npc = deep_clone(self.wpn_fps_ass_l85a2_mil)
+	self.wpn_fps_ass_l85a2_mil_npc.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2/wpn_fps_ass_l85a2_npc"
+
+	self.wpn_fps_sho_ben_jim = deep_clone(self.wpn_fps_sho_ben)
+	self.wpn_fps_sho_ben_jim.real_factory_id = "wpn_fps_sho_ben"
+	self.wpn_fps_sho_ben_jim.default_blueprint = {
+		"wpn_fps_sho_ben_b_short",
+		"wpn_fps_sho_ben_body_standard",
+		"wpn_fps_sho_ben_fg_standard",
+		"wpn_fps_sho_ben_s_collapsed"
+	}
+	self.wpn_fps_sho_ben_jim_npc = deep_clone(self.wpn_fps_sho_ben_jim)
+	self.wpn_fps_sho_ben_jim_npc.unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben/wpn_fps_sho_ben_npc"
+
+	self.wpn_fps_lmg_hk21_pdth = deep_clone(self.wpn_fps_lmg_hk21)
+	self.wpn_fps_lmg_hk21_pdth.real_factory_id = "wpn_fps_lmg_hk21"
+	self.wpn_fps_lmg_hk21_pdth.default_blueprint = {
+		"wpn_fps_lmg_hk21_b_short",
+		"wpn_fps_lmg_hk21_body_lower",
+		"wpn_fps_lmg_hk21_body_upper",
+		"wpn_fps_lmg_hk21_fg_short",
+		"wpn_fps_lmg_hk21_g_standard",
+		"wpn_fps_lmg_hk21_m_standard",
+		"wpn_fps_lmg_hk21_s_standard",
+		"wpn_fps_upg_bp_lmg_lionbipod",
+		"wpn_fps_upg_o_docter"
+	}
+	self.wpn_fps_lmg_hk21_pdth_npc = deep_clone(self.wpn_fps_lmg_hk21_pdth)
+	self.wpn_fps_lmg_hk21_pdth_npc.unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21/wpn_fps_lmg_hk21_npc"	
+
+	self.wpn_fps_ass_amcar_idf = deep_clone(self.wpn_fps_ass_amcar)
+	self.wpn_fps_ass_amcar_idf.real_factory_id = "wpn_fps_ass_amcar"
+	self.wpn_fps_ass_amcar_idf.default_blueprint = {
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_upg_o_acog",
+		"wpn_fps_ass_m4_os_frontsight",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_upper_reciever_round_vanilla",
+		"wpn_fps_amcar_uupg_fg_amcar",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_upg_m4_s_standard_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_amcar_bolt_standard"
+	}
+	self.wpn_fps_ass_amcar_idf_npc = deep_clone(self.wpn_fps_ass_amcar_idf)
+	self.wpn_fps_ass_amcar_idf_npc.unit = "units/payday2/weapons/wpn_fps_ass_amcar/wpn_fps_ass_amcar_npc"
+
+	self.wpn_fps_ass_amcar_pdth = deep_clone(self.wpn_fps_ass_amcar)
+	self.wpn_fps_ass_amcar_pdth.real_factory_id = "wpn_fps_ass_amcar"
+	self.wpn_fps_ass_amcar_pdth.default_blueprint = {
+		"wpn_fps_m4_uupg_b_long",
+		"wpn_fps_upg_o_eotech",
+		"wpn_fps_ass_m4_os_frontsight",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_upper_reciever_round_vanilla",
+		"wpn_fps_m4_uupg_fg_rail",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_upg_m4_s_standard_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_amcar_bolt_standard"
+	}
+	self.wpn_fps_ass_amcar_pdth_npc = deep_clone(self.wpn_fps_ass_amcar_pdth)
+	self.wpn_fps_ass_amcar_pdth_npc.unit = "units/payday2/weapons/wpn_fps_ass_amcar/wpn_fps_ass_amcar_npc"
+
+	self.wpn_fps_ass_m16_a3 = deep_clone(self.wpn_fps_ass_m16)
+	self.wpn_fps_ass_m16_a3.real_factory_id = "wpn_fps_ass_m16"
+	self.wpn_fps_ass_m16_a3.default_blueprint = {
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_amcar_uupg_body_upperreciever",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_m16_fg_standard",
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_ass_contraband_s_standard",
+		"wpn_fps_amcar_bolt_standard"
+	}
+	self.wpn_fps_ass_m16_a3_npc = deep_clone(self.wpn_fps_ass_m16_a3)
+	self.wpn_fps_ass_m16_a3_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
+
+	self.wpn_fps_ass_m16_a1 = deep_clone(self.wpn_fps_ass_m16)
+	self.wpn_fps_ass_m16_a1.real_factory_id = "wpn_fps_ass_m16"
+	self.wpn_fps_ass_m16_a1.default_blueprint = {
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_amcar_uupg_body_upperreciever",
+		"wpn_fps_upg_m4_m_straight",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_m16_fg_vietnam",
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_ass_contraband_s_standard",
+		"wpn_fps_amcar_bolt_standard"
+	}
+	self.wpn_fps_ass_m16_a1_npc = deep_clone(self.wpn_fps_ass_m16_a1)
+	self.wpn_fps_ass_m16_a1_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
+
+	self.wpn_fps_ass_m16_idf = deep_clone(self.wpn_fps_ass_m16)
+	self.wpn_fps_ass_m16_idf.real_factory_id = "wpn_fps_ass_m16"
+	self.wpn_fps_ass_m16_idf.default_blueprint = {
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_amcar_uupg_body_upperreciever",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_m16_fg_standard",
+		"wpn_fps_m4_uupg_b_long",
+		"wpn_fps_ass_contraband_s_standard",
+		"wpn_fps_amcar_bolt_standard"
+	}
+	self.wpn_fps_ass_m16_idf_npc = deep_clone(self.wpn_fps_ass_m16_idf)
+	self.wpn_fps_ass_m16_idf_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
+
+	self.wpn_fps_ass_74_pdth = deep_clone(self.wpn_fps_ass_74)
+	self.wpn_fps_ass_74_pdth.real_factory_id = "wpn_fps_ass_74"
+	self.wpn_fps_ass_74_pdth.default_blueprint = {
+		"wpn_fps_ass_74_b_standard",
+		"wpn_fps_ass_akm_body_upperreceiver_vanilla",
+		"wpn_fps_ass_ak_body_lowerreceiver",
+		"wpn_fps_ass_74_m_standard",
+		"wpn_upg_ak_fg_combo2",
+		"wpn_upg_ak_s_skfoldable_vanilla",
+		"wpn_fps_upg_o_cmore",
+		"wpn_fps_upg_o_ak_scopemount"
+	}
+	self.wpn_fps_ass_74_pdth_npc = deep_clone(self.wpn_fps_ass_74_pdth)
+	self.wpn_fps_ass_74_pdth_npc.unit = "units/payday2/weapons/wpn_fps_ass_74/wpn_fps_ass_74_npc"
+
+	self.wpn_fps_ass_akm_solid = deep_clone(self.wpn_fps_ass_akm)
+	self.wpn_fps_ass_akm_solid.real_factory_id = "wpn_fps_ass_akm"
+	self.wpn_fps_ass_akm_solid.default_blueprint = {
+		"wpn_fps_upg_ak_s_solidstock",
+		"wpn_upg_ak_fg_standard",
+		"wpn_upg_ak_m_akm",
+		"wpn_upg_ak_g_standard",
+		"wpn_fps_ass_akm_b_standard",
+		"wpn_fps_ass_akm_body_upperreceiver_vanilla",
+		"wpn_fps_ass_ak_body_lowerreceiver"
+	}
+	self.wpn_fps_ass_akm_solid_npc = deep_clone(self.wpn_fps_ass_akm_solid)
+	self.wpn_fps_ass_akm_solid_npc.unit = "units/payday2/weapons/wpn_fps_ass_akm/wpn_fps_ass_akm_npc"
+
+	self.wpn_fps_ass_m14_pdth = deep_clone(self.wpn_fps_ass_m14)
+	self.wpn_fps_ass_m14_pdth.real_factory_id = "wpn_fps_ass_m14"
+	self.wpn_fps_ass_m14_pdth.default_blueprint = {
+		"wpn_fps_ass_m14_b_standard",
+		"wpn_fps_ass_m14_body_lower",
+		"wpn_fps_ass_m14_body_upper",
+		"wpn_fps_ass_m14_body_dmr",
+		"wpn_fps_upg_o_m14_scopemount",
+		"wpn_fps_upg_o_aimpoint_2",
+		"wpn_fps_ass_m14_m_standard"
+	}
+	self.wpn_fps_ass_m14_pdth_npc = deep_clone(self.wpn_fps_ass_m14_pdth)
+	self.wpn_fps_ass_m14_pdth_npc.unit = "units/payday2/weapons/wpn_fps_ass_m14/wpn_fps_ass_m14_npc"
+
+	self.wpn_fps_snp_tti_wick = deep_clone(self.wpn_fps_snp_tti)
+	self.wpn_fps_snp_tti_wick.real_factory_id = "wpn_fps_snp_tti"
+	self.wpn_fps_snp_tti_wick.default_blueprint = {
+		"wpn_fps_smg_hajk_vg_moe",
+		"wpn_fps_snp_tti_ns_standard",
+		"wpn_fps_snp_tti_m_standard",
+		"wpn_fps_snp_tti_fg_standard",
+		"wpn_fps_snp_tti_dhs_switch",
+		"wpn_fps_snp_tti_dh_standard",
+		"wpn_fps_snp_tti_bolt_standard",
+		"wpn_fps_snp_tti_body_receiverupper",
+		"wpn_fps_snp_tti_body_receiverlower",
+		"wpn_fps_snp_tti_b_standard",
+		"wpn_fps_upg_o_shortdot",
+		"wpn_fps_upg_o_45rds",
+		"wpn_fps_snp_tti_s_vltor",
+		"wpn_fps_upg_m4_g_standard_vanilla"
+	}
+	self.wpn_fps_snp_tti_wick_npc = deep_clone(self.wpn_fps_snp_tti_wick)
+	self.wpn_fps_snp_tti_wick_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
+
+	self.wpn_fps_snp_tti_wick_bubba = deep_clone(self.wpn_fps_snp_tti)
+	self.wpn_fps_snp_tti_wick_bubba.real_factory_id = "wpn_fps_snp_tti"
+	self.wpn_fps_snp_tti_wick_bubba.default_blueprint = {
+		"wpn_fps_smg_schakal_vg_surefire",
+		"wpn_fps_snp_tti_ns_standard",
+		"wpn_fps_upg_m4_m_drum",
+		"wpn_fps_upg_ass_m16_fg_stag",
+		"wpn_fps_snp_tti_dhs_switch",
+		"wpn_fps_snp_tti_dh_standard",
+		"wpn_fps_snp_tti_bolt_standard",
+		"wpn_fps_snp_tti_body_receiverupper",
+		"wpn_fps_snp_tti_body_receiverlower",
+		"wpn_fps_snp_tti_b_standard",
+		"wpn_fps_upg_o_leupold",
+		"wpn_fps_upg_o_45rds",
+		"wpn_fps_upg_m4_s_mk46",
+		"wpn_fps_upg_fl_ass_utg",	
+		"wpn_fps_ass_shak12_ns_muzzle",
+		"wpn_fps_upg_m4_g_standard_vanilla"
+	}
+	self.wpn_fps_snp_tti_wick_bubba_npc = deep_clone(self.wpn_fps_snp_tti_wick_bubba)
+	self.wpn_fps_snp_tti_wick_bubba_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
+end)
+--]]

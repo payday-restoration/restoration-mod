@@ -821,6 +821,7 @@ function CopActionWalk:update(t)
 			log("stance: " .. tostring(self._stance.name))
 			log("haste: " .. tostring(variant))
 			log("move_dir: " .. tostring(wanted_walk_dir))
+			return
 		end
 
 		self:_adjust_move_anim(wanted_walk_dir, variant)

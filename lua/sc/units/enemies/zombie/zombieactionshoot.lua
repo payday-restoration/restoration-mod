@@ -2,8 +2,8 @@
 
 ZombieActionShoot = ZombieActionShoot or class(CopActionShoot)
 
-CopMovement._action_variants.zombie = clone(CopMovement._action_variants.security)
-CopMovement._action_variants.zombie.shoot = ZombieActionShoot
+CopMovement._action_variants.zombie_light = clone(CopMovement._action_variants.security)
+CopMovement._action_variants.zombie_light.shoot = ZombieActionShoot
 
 
 -- Redirects to make melee charge work

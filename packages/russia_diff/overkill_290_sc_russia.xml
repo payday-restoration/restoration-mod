@@ -22,6 +22,9 @@
 	<!--Fort 500-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500" load="false" force="false"/>
 	
+	<!--Dozer NPC Fort 500-->
+	<unit				path="units/payday2/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer" load="false"/>		
+	
 	<!--AKS 74U-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu" load="false" force="false"/>
 	
@@ -30,6 +33,9 @@
 
 	<!--RPK-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc" load="false" force="false"/>
+	
+	<!--RPK Dozer-->
+	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer" load="false"/>		
 	
 	<!--ASVAL -->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" load="false" force="false"/>

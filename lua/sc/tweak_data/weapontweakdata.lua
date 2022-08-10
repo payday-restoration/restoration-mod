@@ -61,6 +61,8 @@ local job = Global.level_data and Global.level_data.level_id
 		self.polymer_crew.DAMAGE = 1.8		
 		self.pm9_crew.DAMAGE = 1.8		
 		self.coal_crew.DAMAGE = 1.8		
+		self.schakal_crew.DAMAGE = 1.8
+		self.vityaz_crew.DAMAGE = 1.8
 		
 		self.akm_gold_crew.DAMAGE = 1.8
 		self.amcar_crew.DAMAGE = 1.8
@@ -90,6 +92,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.b682_crew.DAMAGE = 12
 		self.r870_crew.DAMAGE = 12
 		self.saiga_crew.DAMAGE = 4.5
+		self.ultima_crew.DAMAGE = 4.5
 		self.huntsman_crew.DAMAGE = 12
 		self.ben_crew.DAMAGE = 4.5
 		self.ksg_crew.DAMAGE = 12
@@ -125,7 +128,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.erma_crew.DAMAGE = 1.8
 		self.polymer_crew.DAMAGE = 1.8				
 		self.pm9_crew.DAMAGE = 1.8				
-		self.coal_crew.DAMAGE = 1.8				
+		self.coal_crew.DAMAGE = 1.8		
+		self.schakal_crew.DAMAGE = 1.8
+		self.vityaz_crew.DAMAGE = 1.8
 		
 		self.akm_gold_crew.DAMAGE = 1.8
 		self.amcar_crew.DAMAGE = 1.8
@@ -155,6 +160,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.b682_crew.DAMAGE = 12
 		self.r870_crew.DAMAGE = 12
 		self.saiga_crew.DAMAGE = 4.5
+		self.ultima_crew.DAMAGE = 4.5
 		self.huntsman_crew.DAMAGE = 12
 		self.ben_crew.DAMAGE = 4.5
 		self.ksg_crew.DAMAGE = 12
@@ -190,7 +196,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.erma_crew.DAMAGE = 2.8
 		self.polymer_crew.DAMAGE = 2.8				
 		self.pm9_crew.DAMAGE = 2.8				
-		self.coal_crew.DAMAGE = 2.8				
+		self.coal_crew.DAMAGE = 2.8			
+		self.schakal_crew.DAMAGE = 2.8
+		self.vityaz_crew.DAMAGE = 2.8
 		
 		self.akm_gold_crew.DAMAGE = 2.8
 		self.amcar_crew.DAMAGE = 2.8
@@ -220,6 +228,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.b682_crew.DAMAGE = 13
 		self.r870_crew.DAMAGE = 13
 		self.saiga_crew.DAMAGE = 5.5
+		self.ultima_crew.DAMAGE = 5.5
 		self.huntsman_crew.DAMAGE = 13
 		self.ben_crew.DAMAGE = 5.5
 		self.ksg_crew.DAMAGE = 13
@@ -255,7 +264,9 @@ local job = Global.level_data and Global.level_data.level_id
 		self.erma_crew.DAMAGE = 3.8
 		self.polymer_crew.DAMAGE = 3.8			
 		self.pm9_crew.DAMAGE = 3.8			
-		self.coal_crew.DAMAGE = 3.8			
+		self.coal_crew.DAMAGE = 3.8	
+		self.schakal_crew.DAMAGE = 3.8
+		self.vityaz_crew.DAMAGE = 3.8
 		
 		self.akm_gold_crew.DAMAGE = 3.8
 		self.amcar_crew.DAMAGE = 3.8
@@ -285,6 +296,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.b682_crew.DAMAGE = 14
 		self.r870_crew.DAMAGE = 14
 		self.saiga_crew.DAMAGE = 6.5
+		self.ultima_crew.DAMAGE = 6.5
 		self.huntsman_crew.DAMAGE = 14
 		self.ben_crew.DAMAGE = 6.5
 		self.ksg_crew.DAMAGE = 14
@@ -441,7 +453,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--Police Baton
 		self.npc_melee.baton = {}
 		self.npc_melee.baton.unit_name = Idstring("units/payday2/characters/ene_acc_baton/ene_acc_baton")
-		self.npc_melee.baton.damage = 3
+		self.npc_melee.baton.damage = 4.5
 		self.npc_melee.baton.animation_param = "melee_baton"
 		self.npc_melee.baton.player_blood_effect = true
 		self.npc_melee.baton.armor_piercing = true
@@ -449,7 +461,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--KABAR knife
 		self.npc_melee.knife_1 = {}
 		self.npc_melee.knife_1.unit_name = Idstring("units/payday2/characters/ene_acc_knife_1/ene_acc_knife_1")
-		self.npc_melee.knife_1.damage = 3
+		self.npc_melee.knife_1.damage = 4.5
 		self.npc_melee.knife_1.animation_param = "melee_knife"
 		self.npc_melee.knife_1.player_blood_effect = true
 		self.npc_melee.knife_1.armor_piercing = true
@@ -457,7 +469,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--Fists
 		self.npc_melee.fists = {}
 		self.npc_melee.fists.unit_name = nil
-		self.npc_melee.fists.damage = 3
+		self.npc_melee.fists.damage = 4.5
 		self.npc_melee.fists.animation_param = "melee_fist"
 		self.npc_melee.fists.player_blood_effect = true
 		self.npc_melee.fists.armor_piercing = true
@@ -465,7 +477,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--Dozer Fists
 		self.npc_melee.fists_dozer = {}
 		self.npc_melee.fists_dozer.unit_name = nil
-		self.npc_melee.fists_dozer.damage = 3
+		self.npc_melee.fists_dozer.damage = 4.5
 		self.npc_melee.fists_dozer.animation_param = "melee_fist"
 		self.npc_melee.fists_dozer.player_blood_effect = true
 		self.npc_melee.fists_dozer.armor_piercing = true
@@ -473,7 +485,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--Halloween Dozer Hammer
 		self.npc_melee.helloween = {}
 		self.npc_melee.helloween.unit_name = Idstring("units/pd2_halloween/weapons/wpn_mel_titan_hammer/wpn_mel_titan_hammer")
-		self.npc_melee.helloween.damage = 3
+		self.npc_melee.helloween.damage = 4.5
 		self.npc_melee.helloween.animation_param = "melee_fireaxe"
 		self.npc_melee.helloween.player_blood_effect = true
 		self.npc_melee.helloween.armor_piercing = true
@@ -481,7 +493,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--Halloween Dozer Sword
 		self.npc_melee.helloween_sword = {}
 		self.npc_melee.helloween_sword.unit_name = Idstring("units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword")
-		self.npc_melee.helloween_sword.damage = 5
+		self.npc_melee.helloween_sword.damage = 4.5
 		self.npc_melee.helloween_sword.animation_param = "melee_fireaxe"
 		self.npc_melee.helloween_sword.player_blood_effect = true
 		self.npc_melee.helloween_sword.armor_piercing = true
@@ -489,7 +501,7 @@ local job = Global.level_data and Global.level_data.level_id
 		--Halloween Dozer Axe
 		self.npc_melee.helloween_axe = {}
 		self.npc_melee.helloween_axe.unit_name = Idstring("units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe")
-		self.npc_melee.helloween_axe.damage = 5
+		self.npc_melee.helloween_axe.damage = 4.5
 		self.npc_melee.helloween_axe.animation_param = "melee_fireaxe"
 		self.npc_melee.helloween_axe.player_blood_effect = true
 		self.npc_melee.helloween_axe.armor_piercing = true	
@@ -510,15 +522,15 @@ local job = Global.level_data and Global.level_data.level_id
 		self.npc_melee.kf_katana.player_blood_effect = true
 		self.npc_melee.kf_katana.armor_piercing = true
 
-		--Zombie Claws (unused)
+		--Zombie Claws
 		self.npc_melee.claws = {}
 		self.npc_melee.claws.unit_name = nil
-		self.npc_melee.claws.damage = 3
+		self.npc_melee.claws.damage = 4.5
 		self.npc_melee.claws.animation_param = "melee_fist"
 		self.npc_melee.claws.player_blood_effect = true
 		self.npc_melee.claws.armor_piercing = true	
 		
-		--Zombie Bite (unused)
+		--Zombie Bite
 		self.npc_melee.bite = {}
 		self.npc_melee.bite.unit_name = nil
 		self.npc_melee.bite.damage = 22 * 10
@@ -1704,6 +1716,26 @@ local job = Global.level_data and Global.level_data.level_id
 		self.erma_crew.FIRE_MODE = "auto"
 	end	
 	
+	function WeaponTweakData:_init_data_vityaz_crew()
+		self.vityaz_crew.categories = clone(self.new_mp5.categories)
+		self.vityaz_crew.sounds.prefix = "vityaz_npc"
+		self.vityaz_crew.use_data.selection_index = 2
+		self.vityaz_crew.DAMAGE = 4.8
+		self.vityaz_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.vityaz_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.vityaz_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+		self.vityaz_crew.CLIP_AMMO_MAX = 60
+		self.vityaz_crew.NR_CLIPS_MAX = 5
+		self.vityaz_crew.pull_magazine_during_reload = "smg"
+		self.vityaz_crew.auto.fire_rate = 0.08571428571
+		self.vityaz_crew.hold = "rifle"
+		self.vityaz_crew.alert_size = 2500
+		self.vityaz_crew.suppression = 2.2
+		self.vityaz_crew.FIRE_MODE = "auto"
+		self.vityaz_primary_crew = deep_clone(self.vityaz_crew)
+		self.vityaz_primary_crew.use_data.selection_index = 2
+	end	
+	
 	function WeaponTweakData:_init_data_polymer_crew()
 		self.polymer_crew.categories = clone(self.polymer.categories)
 		self.polymer_crew.sounds.prefix = "polymer_npc"
@@ -1725,6 +1757,28 @@ local job = Global.level_data and Global.level_data.level_id
 		self.polymer_crew.suppression = 2.2
 		self.polymer_crew.FIRE_MODE = "auto"
 	end
+	
+	function WeaponTweakData:_init_data_schakal_crew()
+		self.schakal_crew.categories = clone(self.schakal.categories)
+		self.schakal_crew.sounds.prefix = "schakal_npc"
+		self.schakal_crew.use_data.selection_index = 2
+		self.schakal_crew.DAMAGE = 4.8
+		self.schakal_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.schakal_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.schakal_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.schakal_crew.CLIP_AMMO_MAX = 60
+		self.schakal_crew.NR_CLIPS_MAX = 5
+		self.schakal_crew.pull_magazine_during_reload = "pistol"
+		self.schakal_crew.auto.fire_rate = 0.08571428571
+		self.schakal_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.schakal_crew.hold = "rifle"
+		self.schakal_crew.alert_size = 2500
+		self.schakal_crew.suppression = 2.2
+		self.schakal_crew.FIRE_MODE = "auto"
+	end	
 
 	function WeaponTweakData:_init_data_pm9_crew()
 		self.pm9_crew.categories = clone(self.pm9.categories)
@@ -2333,6 +2387,24 @@ local job = Global.level_data and Global.level_data.level_id
 		self.ben_crew.rays = 8
 		self.ben_crew.FIRE_MODE = "auto"
 	end
+	
+	function WeaponTweakData:_init_data_ultima_crew()
+		self.ultima_crew.categories = clone(self.ultima.categories)
+		self.ultima_crew.sounds.prefix = "ultima_npc"
+		self.ultima_crew.use_data.selection_index = 2
+		self.ultima_crew.DAMAGE = 7.5
+		self.ultima_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.ultima_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
+		self.ultima_crew.auto.fire_rate = 0.1
+		self.ultima_crew.CLIP_AMMO_MAX = 20
+		self.ultima_crew.NR_CLIPS_MAX = 6
+		self.ultima_crew.looped_reload_speed = 0.7
+		self.ultima_crew.hold = "rifle"
+		self.ultima_crew.alert_size = 2500
+		self.ultima_crew.suppression = 3.4
+		self.ultima_crew.FIRE_MODE = "auto"
+		self.ultima_crew.is_shotgun = true
+	end	
 	
 	function WeaponTweakData:_init_data_ksg_crew()
 		self.ksg_crew.categories = clone(self.ksg.categories)
@@ -13743,7 +13815,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * 1.15
+	pickup_multiplier = pickup_multiplier * 1.2
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

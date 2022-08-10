@@ -2,8 +2,8 @@
 
 ZombieLogicAttack = ZombieLogicAttack or class(TankCopLogicAttack)
 
-CopBrain._logic_variants.zombie = clone(CopBrain._logic_variants.security)
-CopBrain._logic_variants.zombie.attack = ZombieLogicAttack
+CopBrain._logic_variants.zombie_light = clone(CopBrain._logic_variants.security)
+CopBrain._logic_variants.zombie_light.attack = ZombieLogicAttack
 
 function ZombieLogicAttack.enter(data, new_logic_name, enter_params)
 	CopLogicBase.enter(data, new_logic_name, enter_params)

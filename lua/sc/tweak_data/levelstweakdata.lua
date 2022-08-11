@@ -228,6 +228,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ranc.package = {"packages/job_ranc", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.ranc.player_style = "fighterpilot"
 
+        --[[
+        self.trai.ai_group_type = nypd
+        self.trai.player_style = "fighterpilot"
+        --]]
+
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
 	

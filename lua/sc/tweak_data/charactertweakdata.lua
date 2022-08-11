@@ -3617,7 +3617,7 @@ function CharacterTweakData:_init_jimmy(presets)
 	self.jimmy.damage = presets.gang_member_damage
 	self.jimmy.weapon = deep_clone(presets.weapon.gang_member)
 	self.jimmy.weapon.weapons_of_choice = {
-		primary = "wpn_fps_sho_ben_jim_npc",
+		primary = "wpn_fps_sho_ben_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jimmy.detection = presets.detection.gang_member

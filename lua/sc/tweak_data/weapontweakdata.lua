@@ -13464,12 +13464,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.sounds.fire_single = "typhoon_fire_single"
 		self.crysis3_typhoon.sounds.fire_auto = "typhoon_fire"
 		self.crysis3_typhoon.sounds.stop_fire = "typhoon_fire_stop"
+		self.crysis3_typhoon.sounds.spin_start2 = "typhoon_wind_up"
+		self.crysis3_typhoon.sounds.spin_end2 = "typhoon_wind_down"
 		--Use akimbo P90 sounds as source for reflections
 		--Provided there isn't another weapon that uses this soundbank, this should only ever play reflections
 		self.crysis3_typhoon.sounds.fire2 = "p90_x_stop"
-		self.crysis3_typhoon.sounds.fire_single2 = "p90_x_stop"
+		self.crysis3_typhoon.sounds.fire_single2 = "typhoon_wind_up"
 		self.crysis3_typhoon.sounds.fire_auto2 = "p90_x_fire"
 		self.crysis3_typhoon.sounds.stop_fire2 = "p90_x_stop"
+		self.crysis3_typhoon.sounds.stop_fire3 = "typhoon_wind_down"
 	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

@@ -3151,9 +3151,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	self.parts.wpn_fps_smg_olympic_s_short.stats = deep_clone(stocks.remove_adj_stats)
 	self.parts.wpn_fps_smg_olympic_s_short.custom_stats = deep_clone(stocks.remove_adj_stats)
 
-	if not self.wpn_fps_smg_olympic.override then
-		self.wpn_fps_smg_olympic.override = {}
-	end
+	self.wpn_fps_smg_olympic.override = self.wpn_fps_smg_olympic.override or {}
 
 	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
@@ -3535,9 +3533,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 		concealment = -2
 	}
 
-	if not self.wpn_fps_smg_akmsu.override then
-		self.wpn_fps_smg_akmsu.override = {}
-	end
+	self.wpn_fps_smg_akmsu.override = self.wpn_fps_smg_akmsu.override or {}
 
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),

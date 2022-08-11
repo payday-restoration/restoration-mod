@@ -816,6 +816,10 @@ function RaycastWeaponBase:stop_shooting(...)
 		--self._sound_fire:stop()
 		self:play_tweak_data_sound("stop_fire2")
 	end
+	if self:_get_sound_event("stop_fire3") then
+		--self._sound_fire:stop()
+		self:play_tweak_data_sound("stop_fire3")
+	end
 	if self:_soundfix_should_play_normal() then
 		orig_stop_shooting(self,...)
 	end

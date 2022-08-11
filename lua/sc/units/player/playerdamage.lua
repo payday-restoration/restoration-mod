@@ -379,11 +379,11 @@ function PlayerDamage:damage_bullet(attack_data)
 	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
-		local yakuza_grace_ratio = 4 * (1 - self:health_ratio())
+		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
 		if grace_bonus then
-			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 1.2)
+			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
 		else 
-			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 1.2)
+			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
 		end
 	end
 	if attack_data.damage > 0 then
@@ -465,11 +465,11 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
-		local yakuza_grace_ratio = 4 * (1 - self:health_ratio())
+		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
 		if grace_bonus then
-			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 1.2)
-		else 
-			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 1.2)
+			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
+		else
+			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
 		end
 	end
 	if attack_data.damage > 0 then

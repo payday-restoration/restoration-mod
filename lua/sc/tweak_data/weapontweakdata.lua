@@ -5243,16 +5243,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.panic_suppression_chance = 0.05
 		
 			--RUS-12 Angry Tiger
-				self.rsh12.fire_mode_data.fire_rate = 0.15
-				self.rsh12.single.fire_rate = 0.15
+				self.rsh12.fire_mode_data.fire_rate = 0.1935
 				self.rsh12.AMMO_MAX = 40
 				self.rsh12.CLIP_AMMO_MAX = 5
 				self.rsh12.use_data.selection_index = 2
 				self.rsh12.kick = self.stat_info.kick_tables.vertical_kick
 				self.rsh12.supported = true
-				self.rsh12.ads_speed = 0.320
+				self.rsh12.ads_speed = 0.300
 				self.rsh12.damage_falloff = {
-					start_dist = 3100,
+					start_dist = 3000,
 					end_dist = 5200,
 					min_mult = 0.5
 				}
@@ -8995,7 +8994,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saiga.ads_speed = 0.380
 				self.saiga.damage_falloff = {
 					start_dist = 600,
-					end_dist = 2200,
+					end_dist = 2900,
 					min_mult = 0.5
 				}
 				self.saiga.stats = {
@@ -9032,7 +9031,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ultima.ads_speed = 0.340
 				self.ultima.damage_falloff = {
 					start_dist = 800,
-					end_dist = 2600,
+					end_dist = 2900,
 					min_mult = 0.5
 				}
 				self.ultima.stats = {
@@ -9069,7 +9068,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.ads_speed = 0.440
 				self.aa12.damage_falloff = {
 					start_dist = 900,
-					end_dist = 2900,
+					end_dist = 3100,
 					min_mult = 0.5
 				}
 				self.aa12.stats = {
@@ -9194,8 +9193,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.basset.supported = true
 				self.basset.ads_speed = 0.360
 				self.basset.damage_falloff = {
-					start_dist = 800,
-					end_dist = 2500,
+					start_dist = 700,
+					end_dist = 3000,
 					min_mult = 0.5
 				}
 				self.basset.stats = {
@@ -9232,7 +9231,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.striker.ads_speed = 0.420
 				self.striker.damage_falloff = {
 					start_dist = 800,
-					end_dist = 3000,
+					end_dist = 3200,
 					min_mult = 0.5
 				}
 				self.striker.stats = {
@@ -9266,7 +9265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rota.ads_speed = 0.360
 				self.rota.damage_falloff = {
 					start_dist = 1000,
-					end_dist = 3500,
+					end_dist = 3600,
 					min_mult = 0.5
 				}
 				self.rota.stats = {
@@ -9309,7 +9308,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_judge.ads_speed = 0.320
 				self.x_judge.damage_falloff = {
 					start_dist = 600,
-					end_dist = 2400,
+					end_dist = 2600,
 					min_mult = 0.3333
 				}
 				self.x_judge.stats = {
@@ -9597,7 +9596,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.judge.ads_speed = 0.320
 				self.judge.damage_falloff = {
 					start_dist = 600,
-					end_dist = 2400,
+					end_dist = 2600,
 					min_mult = 0.3333
 				}
 				self.judge.stats = {
@@ -11369,11 +11368,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.shatters_fury then
 		self.shatters_fury.recategorize = { "heavy_pis" }
 		self.shatters_fury.damage_type = "heavy_pistol"
-		self.shatters_fury.fire_mode_data.fire_rate = 0.25
+		self.shatters_fury.fire_mode_data.fire_rate = 0.1935
 		self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"	
-		self.shatters_fury.sounds.fire_single = "rbull_fire"	
-		self.shatters_fury.sounds.stop_fire = "remington_fire" --"hajk_x_fire_single"	
-		self.shatters_fury.single.fire_rate = 0.25	
+		self.shatters_fury.sounds.fire_single = "pmkr45_fire"
+		self.shatters_fury.sounds.stop_fire = "b682_fire" --"hajk_x_fire_single"
 		self.shatters_fury.weapon_hold = "model3"
 		self.shatters_fury.AMMO_MAX = 40
 		self.shatters_fury.CLIP_AMMO_MAX = 5
@@ -11382,16 +11380,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.ads_speed = 0.340
 		self.shatters_fury.damage_falloff = {
 			start_dist = 3500,
-			end_dist = 5600,
+			end_dist = 6000,
 			min_mult = 0.5
 		}
 		self.shatters_fury.stats = {
 			damage = 90,
-			spread = 79,
-			recoil = 25,
+			spread = 81,
+			recoil = 38,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 21,
+			concealment = 22,
 			suppression = 7,
 			alert_size = 2,
 			extra_ammo = 101,

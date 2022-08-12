@@ -4296,9 +4296,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	self.wpn_fps_smg_mp5.stock_adapter = "wpn_fps_upg_m4_s_adapter"
 	self.wpn_fps_smg_mp5_npc.stock_adapter = "wpn_fps_upg_m4_s_adapter"
 
-	if not self.wpn_fps_smg_mp5.override then
-		self.wpn_fps_smg_mp5.override = {}
-	end
+	self.wpn_fps_smg_mp5.override = self.wpn_fps_smg_mp5.override or {}
 
 	self.wpn_fps_smg_mp5.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.fixed_to_adj_dual_stats),
@@ -4503,15 +4501,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 	self.parts.wpn_fps_smg_mac10_s_skel.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	self.parts.wpn_fps_smg_mac10_s_skel.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 
-	if not self.wpn_fps_smg_mac10.override then
-		self.wpn_fps_smg_mac10.override = {}
-	end
+	self.wpn_fps_smg_mac10.override = self.wpn_fps_smg_mac10.override or {}
+
 	self.wpn_fps_smg_mac10.override.wpn_fps_smg_pm9_fl_adapter = { a_obj = "a_vg" }
 	self.wpn_fps_smg_mac10.override.wpn_fps_smg_schakal_vg_surefire = { stats = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip.stats) }
 
-	if not self.wpn_fps_smg_mac10.adds then
-		self.wpn_fps_smg_mac10.adds = {}
-	end
+	self.wpn_fps_smg_mac10.adds = self.wpn_fps_smg_mac10.adds or {}
+
 	self.wpn_fps_smg_mac10.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_smg_pm9_fl_adapter" }
 	self.wpn_fps_smg_mac10.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_smg_pm9_fl_adapter" }
 	self.wpn_fps_smg_mac10.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_smg_pm9_fl_adapter" }
@@ -4997,16 +4993,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 		recoil = 2,
 		concealment = -1
 	}
+
+	self.wpn_fps_pis_rage.override = self.wpn_fps_pis_rage.override or {}
 	
 	--Bronco .44 Part Additions
 	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_rage_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	
 	--table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_pis_g18c_co_1")
-	--table.insert(self.wpn_fps_pis_rage_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	
 	--table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_ns_pis_meatgrinder")
-	--table.insert(self.wpn_fps_pis_rage_npc.uses_parts, "wpn_fps_upg_ns_pis_meatgrinder")		
 	
 	self.wpn_fps_pis_rage_npc.uses_parts = deep_clone(self.wpn_fps_pis_rage.uses_parts)	
 
@@ -5363,9 +5358,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 		recoil = -2
 	}
 
-	if not self.wpn_fps_ass_s552.override then
-		self.wpn_fps_ass_s552.override = {}
-	end
+	self.wpn_fps_ass_s552.override = self.wpn_fps_ass_s552.override or {}
 
 	self.wpn_fps_ass_s552.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
@@ -5485,9 +5478,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 		"wpn_fps_upg_vg_ass_smg_stubby_vanilla"
 	}
 
-	if not self.wpn_fps_smg_mp7.override then
-		self.wpn_fps_smg_mp7.override = {}
-	end
+	self.wpn_fps_smg_mp7.override = self.wpn_fps_smg_mp7.override or {}
 
 	self.wpn_fps_smg_mp7.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
 		stats = {
@@ -8304,6 +8295,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_1911", "resmod_x_1911", function
 		}
 	}
 
+	self.wpn_fps_x_1911_npc.override = deep_clone(self.wpn_fps_x_1911.override)	
+	self.wpn_fps_x_1911_npc.uses_parts = deep_clone(self.wpn_fps_x_1911.uses_parts)	
 end)
 
 --Akimbo Bernetti 9s
@@ -8326,6 +8319,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_b92fs", "resmod_x_b92fs", functi
 		}
 	}
 
+	self.wpn_fps_x_b92fs_npc.override = deep_clone(self.wpn_fps_x_b92fs.override)	
+	self.wpn_fps_x_b92fs_npc.uses_parts = deep_clone(self.wpn_fps_x_b92fs.uses_parts)	
 end)
 
 --Akimbo Deagles
@@ -8349,10 +8344,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_deagle", "resmod_x_deagle", func
 	
 	--Extra Barrel Extensions
 	table.insert(self.wpn_fps_x_deagle.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_x_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	
+	self.wpn_fps_x_deagle_npc.override = deep_clone(self.wpn_fps_x_deagle.override)	
 	self.wpn_fps_x_deagle_npc.uses_parts = deep_clone(self.wpn_fps_x_deagle.uses_parts)	
-
 end)
 
 --Predator 12G
@@ -8406,14 +8400,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 	self.parts.wpn_fps_sho_s_spas12_solid.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	
 	--Overrides
-	self.wpn_fps_sho_spas12.override = {
-		wpn_fps_upg_a_slug = a_slug_semi_override,
-		wpn_fps_upg_a_custom = a_custom_semi_override,		
-		wpn_fps_upg_a_custom_free = a_custom_semi_override,				
-		wpn_fps_upg_a_explosive = a_explosive_semi_override,
-		wpn_fps_upg_a_piercing = a_piercing_semi_override,
-		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
-	}
+	self.wpn_fps_sho_spas12.override = self.wpn_fps_sho_spas12.override or {}
+
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug = a_slug_semi_override
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom = a_custom_semi_override
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free = a_custom_semi_override		
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive = a_explosive_semi_override
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 end)
 
 --Buzzsaw 42
@@ -8498,9 +8492,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	}
 	self.parts.wpn_fps_lmg_mg42_reciever.adds = {"wpn_fps_lmg_mg42_dummy_mag"}
 
-	if not self.wpn_fps_lmg_mg42.override then
-		self.wpn_fps_lmg_mg42.override = {}
-	end
+	self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
 
 	self.wpn_fps_lmg_mg42.override.wpn_fps_snp_mosin_rail = {
 		parent = "magazine_extra"
@@ -8794,9 +8786,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.wpn_fps_smg_sterling.stock_adapter = "wpn_fps_smg_shepheard_s_adapter"
 	self.wpn_fps_smg_sterling_npc.stock_adapter = "wpn_fps_smg_shepheard_s_adapter"
 
-	if not self.wpn_fps_smg_sterling.override then
-		self.wpn_fps_smg_sterling.override = {}
-	end
+	self.wpn_fps_smg_sterling.override = self.wpn_fps_smg_sterling.override or {}
 	
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_specter = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
 	self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_aimpoint = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }

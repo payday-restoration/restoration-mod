@@ -334,6 +334,7 @@ function restoration:Init()
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
 		"dinner",
+                "trai",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
 	}	

@@ -244,7 +244,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork_burn" id="int_dock_burn" jc="50">
+	<narrative briefing_event="" contact="shatter" hide_from_crimenet="true" icon="guis/textures/customheist_gui/wetwork_burn" id="int_dock_burn" jc="50">
 		<chain>
 			<table level_id="wetwork_burn" type="d" type_id="heist_type_assault"/>
 		</chain>

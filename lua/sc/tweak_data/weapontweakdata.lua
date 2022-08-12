@@ -11301,26 +11301,26 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--DISABLED--	
 			self.x_pm9.use_data.selection_index = 5	
 		
-		--Cash Blaster, rip
-		--DISABLED--	
-			--[[
+		--Cash Blaster
+		if self.money then			
+			self.money.fire_variant = "money"
 			self.money.categories = {
 				"flamethrower",
 				"shotgun"
 			}
+			self.money.use_data.selection_index = 2
 			self.money.has_description = true
 			self.money.desc_id = "bm_ap_money_sc_desc"
 			self.money.timers.reload_not_empty = 8
 			self.money.timers.reload_empty = 8
-			self.money.rays = 8
-			self.money.CLIP_AMMO_MAX = 35
-			self.money.AMMO_MAX = 60
+			self.money.rays = 18
+			self.money.CLIP_AMMO_MAX = 45
+			self.money.AMMO_MAX = 120
 			self.money.fire_mode_data.fire_rate = 0.1
 			self.money.auto = {}
 			self.money.auto.fire_rate = 0.1
 			self.money.flame_max_range = 1400
 			self.money.single_flame_effect_duration = 1
-			self.money.fire_variant = "money"
 			self.money.armor_piercing_chance = 1
 			self.money.can_shoot_through_enemy = false
 			self.money.can_shoot_through_shield = false
@@ -11333,10 +11333,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				dot_tick_period = 0.5
 			}
 			self.money.supported = true
+			self.money.ads_speed = 0.360
+			self.money.damage_falloff = {
+				start_dist = 1100,
+				end_dist = 1400,
+				min_mult = 0,
+			}
 			self.money.stats = {
 				damage = 24,
-				spread = 26,
-				recoil = 86,
+				spread = 31,
+				recoil = 96,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 19,
@@ -11348,8 +11354,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.money.stats_modifiers = nil
-			self.money.panic_suppression_chance = 0.05	
-			]]--
+			self.money.panic_suppression_chance = 0.05
+			self.money.reload_speed_multiplier = 1.2
+			self.money.timers.reload_empty = 8.5
+			self.money.timers.reload_not_empty = 8.5
+			self.money.timers.reload_exit_empty = 1.5
+			self.money.timers.reload_exit_not_empty = 1.5			
+		end
 	
 	
 	--[[     Restoration Weapons     ]]--

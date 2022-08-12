@@ -1215,6 +1215,8 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
 	local hit_pos = mvector3.copy(body:position())
 	attack_data.pos = hit_pos
+	attack_data.headshot = head
+	attack_data.weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()	
 
 	if attacker_unit then
 		from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()

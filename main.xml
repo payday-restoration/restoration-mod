@@ -293,7 +293,6 @@
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="sc/managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 		<hook file="sc/tweak_data/eventjobstweakdata.lua" source_file="lib/tweak_data/eventjobstweakdata"/>
-		<hook file="sc/managers/sidejobeventmanager.lua" source_file="lib/managers/sidejobeventmanager"/>
 		<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
 		<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
 		<hook file="sc/managers/missionmanager.lua" source_file="lib/managers/missionmanager"/>
@@ -339,6 +338,7 @@
 		<hook file="sc/mutators/mutatorexplodingenemies.lua" source_file="lib/mutators/mutatorexplodingenemies"/>
 		<hook file="sc/mutators/mutatorshotguntweak.lua" source_file="lib/mutators/mutatorshotguntweak"/>
 		<hook file="sc/mutators/mutatortitandozers.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
+		<hook file="sc/mutators/mutatorpiggybank.lua" source_file="lib/mutators/mutatorpiggybank"/>
 		<!--///NEW MUTATORS GO HERE\\\-->
 		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfatroll.lua" source_file="lib/mutators/basemutator"/>

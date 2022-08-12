@@ -627,7 +627,13 @@ function PlayerManager:check_skills()
 	else
 		self._super_syndrome_count = 0
 	end
-
+	
+	if managers.mutators:is_mutator_active(MutatorPiggyBank) then
+		self._message_system:register(Message.OnLethalHeadShot, "play_pda9_headshot", callback(self, self, "_play_pda9_headshot_event"))
+	else
+		self._message_system:unregister(Message.OnLethalHeadShot, "play_pda9_headshot")
+	end
+	
 	--New resmod skills for dodge.
 	if self:has_category_upgrade("player", "dodge_stacking_heal") then
 		self:register_message(Message.OnPlayerDodge, "dodge_stack_health_regen", callback(self, self, "_dodge_stack_health_regen"))

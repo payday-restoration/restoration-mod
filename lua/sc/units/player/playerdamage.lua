@@ -365,7 +365,9 @@ function PlayerDamage:damage_bullet(attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local damage_info = {
 		result = {type = "hurt", variant = "bullet"},
-		attacker_unit = attacker_unit
+		attacker_unit = attacker_unit,
+		attack_dir = attack_data.attacker_unit and attack_data.attacker_unit:movement():m_pos() - self._unit:movement():m_pos() or Vector3(1, 0, 0),
+		pos = mvector3.copy(self._unit:movement():m_head_pos())
 	}
 
 	--Vanilla checks just encased into a function for reuse.

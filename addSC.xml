@@ -1786,5 +1786,78 @@
 	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false" load="true"/>
 	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
 	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_contour" force="false"/>
-	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>	
+	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>
+
+
+	<!--Payday 10th Anniversary-->	
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_stars_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_stripes_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_stripes_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_polkal_df"/>
+	<texture			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_diamonds_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_zigzag_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_nm"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_stars_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_diamonds_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_polkas_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_polkal_df"/>
+	<sequence_manager 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_shared"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_polkas_df"/>
+	<texture 			path="units/pd2_dlc_a10th/props/a10th_gifts/gifts_zigzag_df"/>
+	<sequence_manager 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkal"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_diamonds"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_diamonds"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkas"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stars"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stripes"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkal"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_zigzag"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_zigzag"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkas"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stars"/>
+	<cooked_physics 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stripes"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_diamonds"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkas"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_diamonds"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_zigzag"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stripes"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stars"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stripes"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_zigzag"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stars"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkas"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkal"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon"/>
+	<model 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkal"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stars"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_zigzag"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stripes"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkal"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkas"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stripes"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkas"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stars"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkal"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_diamonds"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_zigzag"/>
+	<object 			path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_diamonds"/>
+	<material_config 	path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_shared"/>
+	<material_config 	path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_zigzag"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_diamonds"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_zigzag"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkas"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkas"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_polkal"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stripes"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_stars"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stars"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_stripes"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_polkal"/>
+	<unit 				path="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_diamonds"/>	
 </table>

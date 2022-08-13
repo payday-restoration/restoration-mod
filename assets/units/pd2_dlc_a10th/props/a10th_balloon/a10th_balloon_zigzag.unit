@@ -1,0 +1,25 @@
+<unit type="gen" slot="1">
+	<object file="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_zigzag" />
+  <network sync="spawn"/>
+  <movers />
+    <dependencies>
+		<depends_on effect="effects/payday2/particles/explosions/balloon_pop_purple" />
+		<depends_on effect="effects/payday2/particles/explosions/balloon_pop_blue" />
+		<depends_on effect="effects/payday2/particles/explosions/balloon_pop_orange" />
+		<depends_on effect="effects/payday2/particles/explosions/balloon_pop_green" />
+		<depends_on effect="effects/payday2/particles/explosions/balloon_pop_red" />
+		<depends_on effect="effects/payday2/particles/explosions/balloon_pop_white" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+    <extensions>
+    	<extension name="base" class="BuffBalloon" />
+        <extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="BalloonDamage" />
+    </extensions>
+    <sounds>
+	<soundsource name="snd_01" source="e_effect_01" />
+	<soundsource name="snd_02" source="e_effect_02" />
+	<soundsource name="snd_03" source="e_effect_03" />
+	<soundsource name="snd_04" source="e_effect_04" />
+</sounds>
+</unit>

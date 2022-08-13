@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon" orientation_object="rp_a10th_balloon_zigzag" />
+	<sequence_manager file="units/pd2_dlc_a10th/props/a10th_balloon/a10th_balloon_shared" />
+	<bodies>
+		<body name="body_static" enabled="true" template="dynamic">
+			<object name="rp_a10th_balloon_zigzag" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

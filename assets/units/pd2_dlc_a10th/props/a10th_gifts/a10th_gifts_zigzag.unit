@@ -1,0 +1,6 @@
+<unit type="gen" slot="1">
+	<object file="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_zigzag" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

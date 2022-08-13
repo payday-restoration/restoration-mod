@@ -2312,6 +2312,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",
 		["menu_mutators_category_holiday"] = "HOLIDAYS",
+		["menu_mutators_category_old_event"] = "EVENTS",
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "Grenadiers",
@@ -2352,6 +2353,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",
 		["mutator_spawn_mult_desc"] = "Increased enemy spawns.",
 		["mutator_spawn_mult_longdesc"] = "More enemies will spawn during assault phases. The Overkill™ way!",
+		
+		["mutator_birthday"] = "Balloon Poppers",
+		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
+		["mutator_birthday_longdesc"] = "PAYDAY 10th Anniversary event:\n\nKilling special units will spawn balloons which you can shoot to give buffs to the entire team that will either be a direct bonus or timed depending on the unit killed. Some units spawn balloons more frequently than others and several buffs can be active at the same time.",		
 		
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",

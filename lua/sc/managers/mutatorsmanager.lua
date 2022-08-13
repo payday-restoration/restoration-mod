@@ -11,6 +11,7 @@ function MutatorsManager:init()
 	table.insert(self._mutators, MutatorNoTitans:new(self))
 	table.insert(self._mutators, MutatorSpawnMult:new(self))
 	table.insert(self._mutators, MutatorBravosOnly:new(self))
+	table.insert(self._mutators, MutatorBirthday:new(self))
 	--table.insert(self._mutators, MutatorFactionsReplacer:new(self))
 	--table.insert(self._mutators, MutatorZombieOutbreak:new(self))
 	
@@ -66,6 +67,7 @@ function MutatorsManager:categories()
 		"all",
 		"enemies",
 		"gameplay",
-		"holiday"
+		"holiday",
+		"old_event"
 	}
 end

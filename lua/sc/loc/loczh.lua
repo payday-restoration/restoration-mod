@@ -2409,6 +2409,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
 		["menu_mutators_category_holiday"] = "节日活动",
+		["menu_mutators_category_old_event"] = "EVENTS",
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "掷弹兵",
@@ -2449,6 +2450,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_enemy_spawn"] = "刷兵倍率",
 		["mutator_spawn_mult_desc"] = "增加刷兵量。",
 		["mutator_spawn_mult_longdesc"] = "突击进行中会刷出更多的敌人。Overkill™ 经典操作！",
+		
+		["mutator_birthday"] = "Balloon Poppers",
+		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
+		["mutator_birthday_longdesc"] = "PAYDAY 10th Anniversary event:\n\nKilling special units will spawn balloons which you can shoot to give buffs to the entire team that will either be a direct bonus or timed depending on the unit killed. Some units spawn balloons more frequently than others and several buffs can be active at the same time.",			
 
 		["mutator_bravos_only"] = "死亡地带",
 		["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",

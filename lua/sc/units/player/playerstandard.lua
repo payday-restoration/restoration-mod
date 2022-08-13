@@ -1092,7 +1092,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	elseif self:on_ladder() then
 		movement_speed = speed_tweak.CLIMBING_MAX
 		speed_state = "climb"
-	elseif self._state_data.ducking or is_leaning then
+	elseif self._state_data.ducking then
 		movement_speed = speed_tweak.CROUCHING_MAX
 		speed_state = "crouch"
 	elseif self._state_data.in_air then

@@ -13727,6 +13727,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			-- roughly normalizes swap speeds before additional modifiers are in play
 			weap.desired_swap_time = 1.75
 
+			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
+
 			if restoration.Options:GetValue("OTHER/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
 					weap.FIRE_MODE = "auto"

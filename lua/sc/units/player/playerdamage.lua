@@ -84,7 +84,7 @@ function PlayerDamage:init(unit)
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
-	self._deflection = 1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
+	self._deflection = math.min(1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills(), 0.05) --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
 	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
@@ -259,7 +259,7 @@ end
 --Special function to handle damage dealt to players in bleedout.
 function PlayerDamage:_bleed_out_damage(attack_data)
 	self._unit:sound():play("player_hit_permadamage")
-	local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
+	local deflection = math.min(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), 0.05)
 	attack_data.damage = attack_data.damage * deflection
 	local health_subtracted = Application:digest_value(self._bleed_out_health, false)
 	self._bleed_out_health = Application:digest_value(math.max(0, health_subtracted - attack_data.damage), true)
@@ -914,7 +914,7 @@ function PlayerDamage:_check_chico_heal(attack_data)
 		local health_received = attack_data.damage * dmg_to_hp_ratio
 
 		if self._armor_broken then
-			local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
+			local deflection = math.min(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), 0.05)
 			health_received = health_received * deflection
 		end
 
@@ -1088,9 +1088,9 @@ end
 
 --Applies deflection and stoic effects.
 function PlayerDamage:_calc_health_damage(attack_data)
-	local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
+	local deflection = math.min(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), 0.05)
 	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+		deflection = math.min(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), 0.05)
 	end
 
 	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
@@ -1189,9 +1189,9 @@ function PlayerDamage:cloak_or_shock_incap(damage)
 		damage = math.max(0.1, damage - damage_absorption)
 	end
 	
-	local deflection = self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()))
+	local deflection = math.min(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), 0.05)
 	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+		deflection = math.min(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), 0.05)
 	end
 
 	self:change_health(-1.0 * deflection * damage or 0.0)

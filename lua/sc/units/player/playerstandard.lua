@@ -1448,7 +1448,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		self._unit:movement():_restart_stamina_regen_timer()
 	end
 	--Trigger chainsaw damage and update timer.
-	if ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
+	if self:_is_meleeing() and ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)
 		self._state_data.chainsaw_t = t + (melee_weapon.chainsaw.tick_delay * (1 + (1 - managers.player:upgrade_value("player", "melee_swing_multiplier", 1))))
 	end

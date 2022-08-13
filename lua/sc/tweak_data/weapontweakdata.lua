@@ -11358,7 +11358,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.money.timers.reload_empty = 8.5
 			self.money.timers.reload_not_empty = 8.5
 			self.money.timers.reload_exit_empty = 1.5
-			self.money.timers.reload_exit_not_empty = 1.5			
+			self.money.timers.reload_exit_not_empty = 1.5	
+			self.money.sounds.no_fix = true		
 		end
 	
 	
@@ -12858,8 +12859,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m1894.fire_mode_data.fire_rate = 0.857142857
 		self.m1894.fire_rate_multiplier = 1.4285714
 		self.m1894.CAN_TOGGLE_FIREMODE = false
-		self.m1894.single = {}
-		self.m1894.single.fire_rate = 0.5
 		self.m1894.kick = self.stat_info.kick_tables.right_kick
 		self.m1894.supported = true
 		self.m1894.ads_speed = 0.260

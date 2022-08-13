@@ -13769,10 +13769,10 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.059, 0.033}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.057, 0.031}},
-		{damage = 24,  pickup = {0.056, 0.030}},
-		{damage = 30,  pickup = {0.053, 0.028}},
+		{damage = 18,  pickup = {0.059, 0.030}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.057, 0.029}},
+		{damage = 24,  pickup = {0.056, 0.028}},
+		{damage = 30,  pickup = {0.053, 0.027}},
 		{damage = 45,  pickup = {0.050, 0.026}},
 		{damage = 60,  pickup = {0.047, 0.025}},
 		{damage = 90,  pickup = {0.044, 0.023}},
@@ -13806,7 +13806,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			pdw = 0.65,
 			lmg = 0.6,
 			minigun = 0.4,
-		shotgun = 0.7, --Compensate for ease of aim+multikills and/or versatility.
+		shotgun = 0.8, --Compensate for ease of aim+multikills and/or versatility.
 		--snp = 1, 
 			semi_snp = 0.8, --0.6075,
 		saw = 1.25, --Compensate for jankiness.

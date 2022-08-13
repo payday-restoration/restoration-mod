@@ -2794,7 +2794,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.brass_knuckles.stats.concealment = 29
 
 	--ONE Knife--
-	self.melee_weapons.kabartanto.stats.min_damage = 6
+	self.melee_weapons.kabartanto.stats.min_damage = 4.5
 	self.melee_weapons.kabartanto.stats.max_damage = 9.01
 	self.melee_weapons.kabartanto.stats.min_damage_effect = 0.6
 	self.melee_weapons.kabartanto.stats.max_damage_effect = 0.7
@@ -3373,7 +3373,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 	--Whose plumes are gay now Carl? Whose plumes are gay now?--
 	self.melee_weapons.morning.stats.min_damage = 6
-	self.melee_weapons.morning.stats.max_damage = 9.01
+	self.melee_weapons.morning.stats.max_damage = 12.01
 	self.melee_weapons.morning.stats.min_damage_effect = 3.5
 	self.melee_weapons.morning.stats.max_damage_effect = 4
 	self.melee_weapons.morning.stats.charge_time = 1.9

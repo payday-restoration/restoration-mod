@@ -1771,7 +1771,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 0.5,
+			kill_health_gain = 0.4,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 0,
@@ -1781,7 +1781,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			tagged_health_gain_ratio = 0.5
 		},
 		{
-			kill_health_gain = 0.5,
+			kill_health_gain = 0.4,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 2,
@@ -1791,7 +1791,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			tagged_health_gain_ratio = 0.5
 		},
 		{
-			kill_health_gain = 1.0,
+			kill_health_gain = 0.8,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 2,

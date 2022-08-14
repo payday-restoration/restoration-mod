@@ -6852,22 +6852,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 		concealment = -1
 	}
 	
-	--Fabulous Stock
-	self.parts.wpn_fps_ass_galil_s_fab.pcs = {}
-	self.parts.wpn_fps_ass_galil_s_fab.supported = true
-	self.parts.wpn_fps_ass_galil_s_fab.stats = {
-		value = 5,
-		spread = 1,
-		concealment = -1
-	}
-	--Light Stock
-	self.parts.wpn_fps_ass_galil_s_light.pcs = {}
-	self.parts.wpn_fps_ass_galil_s_light.supported = true
-	self.parts.wpn_fps_ass_galil_s_light.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
+	--Skeletal Stock
+	self.parts.wpn_fps_ass_galil_s_skeletal.pcs = {}
+	self.parts.wpn_fps_ass_galil_s_skeletal.supported = true
+	self.parts.wpn_fps_ass_galil_s_skeletal.stats = deep_clone(stocks.folder_to_nocheeks_stats)
+	self.parts.wpn_fps_ass_galil_s_skeletal.custom_stats = deep_clone(stocks.folder_to_nocheeks_stats)
 	--Plastic Stock
 	self.parts.wpn_fps_ass_galil_s_plastic.pcs = {}
 	self.parts.wpn_fps_ass_galil_s_plastic.supported = true
@@ -6876,20 +6865,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 		recoil = -2,
 		spread = 1
 	}
-	--Skeletal Stock
-	self.parts.wpn_fps_ass_galil_s_skeletal.pcs = {}
-	self.parts.wpn_fps_ass_galil_s_skeletal.supported = true
-	self.parts.wpn_fps_ass_galil_s_skeletal.stats = {
-		value = 4,
-		recoil = -4,
-		concealment = 2
-	}
-	--Sniper Stock
-	self.parts.wpn_fps_ass_galil_s_sniper.pcs = {}
-	self.parts.wpn_fps_ass_galil_s_sniper.supported = true
-	self.parts.wpn_fps_ass_galil_s_sniper.stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
-	self.parts.wpn_fps_ass_galil_s_sniper.custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
-
 	--Wooden Stock
 	self.parts.wpn_fps_ass_galil_s_wood.pcs = {}
 	self.parts.wpn_fps_ass_galil_s_wood.supported = true
@@ -6898,6 +6873,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 		recoil = 2,
 		spread = -1
 	}
+	--Light Stock
+	self.parts.wpn_fps_ass_galil_s_light.pcs = {}
+	self.parts.wpn_fps_ass_galil_s_light.supported = true
+	self.parts.wpn_fps_ass_galil_s_light.stats = deep_clone(stocks.folder_to_adj_acc1_stats)
+	self.parts.wpn_fps_ass_galil_s_light.custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
+	--Fabulous Stock
+	self.parts.wpn_fps_ass_galil_s_fab.pcs = {}
+	self.parts.wpn_fps_ass_galil_s_fab.supported = true
+	self.parts.wpn_fps_ass_galil_s_fab.stats = deep_clone(stocks.folder_to_adj_rec_stats)
+	self.parts.wpn_fps_ass_galil_s_fab.custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+	--Sniper Stock
+	self.parts.wpn_fps_ass_galil_s_sniper.pcs = {}
+	self.parts.wpn_fps_ass_galil_s_sniper.supported = true
+	self.parts.wpn_fps_ass_galil_s_sniper.stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+	self.parts.wpn_fps_ass_galil_s_sniper.custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+
 
 end)	
 

@@ -1714,8 +1714,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 1},
-		{50, 6}
+		{ 0, 1.5},
+		{50, 3}
 	}
 	
 	--Yakuza--
@@ -1771,34 +1771,34 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 0.8,
+			kill_health_gain = 0.5,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 0,
 			kill_duration = 0,
 			kill_dropoff = 0,
 			duration = 11,
-			tagged_health_gain_ratio = 0.625
+			tagged_health_gain_ratio = 0.5
 		},
 		{
-			kill_health_gain = 0.8,
+			kill_health_gain = 0.5,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 2,
 			kill_duration = 2,
 			kill_dropoff = 0.2,
 			duration = 11,
-			tagged_health_gain_ratio = 0.625
+			tagged_health_gain_ratio = 0.5
 		},
 		{
-			kill_health_gain = 1.6,
+			kill_health_gain = 1.0,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 2,
 			kill_duration = 2,
 			kill_dropoff = 0.2,
 			duration = 11,
-			tagged_health_gain_ratio = 0.625
+			tagged_health_gain_ratio = 0.5
 		}
 	}
 

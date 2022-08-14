@@ -2408,7 +2408,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 획득한 경험치와 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
 		["menu_mutators_category_holiday"] = "홀리데이",
-		["menu_mutators_category_old_event"] = "EVENTS",
+		["menu_mutators_category_old_event"] = "이벤트",
 		
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "척탄병",
@@ -2450,10 +2450,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_enemy_spawn"] = "적 스폰량 배율",
 		["mutator_spawn_mult_longdesc"] = "어썰트 단계 중에서 더 많은 적들이 스폰합니다. 오버킬™이 써먹는 방식이기도 하죠!",
 		
-		["mutator_birthday"] = "Balloon Poppers",
-		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
-		["mutator_birthday_longdesc"] = "PAYDAY 10th Anniversary event:\n\nKilling special units will spawn balloons which you can shoot to give buffs to the entire team that will either be a direct bonus or timed depending on the unit killed. Some units spawn balloons more frequently than others and several buffs can be active at the same time.",		
-						
+		["mutator_birthday"] = "풍선 터트리기",
+		["mutator_birthday_desc"] = "특수 적 처치 시 버프를 주는 풍선을 생성합니다.",
+		["mutator_birthday_longdesc"] = "페이데이 10주년 이벤트:\n\n특수 적을 처치 시 죽인 적에 따라 풍선이 생성됩니다. 풍선을 쏠 시 시간이 초과되는 버프 보너스가 전체 팀에 제공합니다. 일부 유닛은 다른 유닛보다 풍선을 더 자주 생성하며 여러 버프가 동시에 활성화될 수 있습니다.",		
+		
 		["mutator_bravos_only"] = "하드라인",
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",
 		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",		

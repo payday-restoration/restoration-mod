@@ -3005,7 +3005,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "광분",
-		["menu_wolverine_beta_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 더 많은 굴절을 얻습니다.\n\n체력이 ##100%## 이하일 때 굴절을 최대 ##30##만큼 얻습니다.\n\n각 굴절 포인트는 받는 피해를 ##1%## 적게 하며 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: ##$pro##\n체력이 ##100%## 이하일 때 굴절을 최대 ##60##만큼 얻습니다.",
+		["menu_wolverine_beta_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 더 많은 굴절을 얻습니다.\n\n체력이 ##100%## 이하일 때 굴절을 최대 ##20##만큼 얻습니다.\n\n각 굴절 포인트는 받는 피해를 ##1%## 적게 하며 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: ##$pro##\n체력이 ##100%## 이하일 때 굴절을 최대 ##50##만큼 얻습니다.",
 
 		--Berserker--
 		["menu_frenzy_sc"] = "버서커",

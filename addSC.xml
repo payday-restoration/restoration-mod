@@ -1,4 +1,9 @@
-<table directory="assets">			
+<table directory="assets">		
+    <!--Heavy Shotgunner Helmet Plink-->
+	<add from_db="true" path="soundbanks/weapon_swatturret" type="bnk">
+		<bnk load="true" path="soundbanks/weapon_swatturret" unload="true"/>
+	</add>
+	
 	<!--Updated Assets-->	
 	<environment		path="environments/pd2_env_night/pd2_env_night" force="true"/>
 	<environment		path="environments/pd2_env_mid_day/pd2_env_mid_day" force="true"/>

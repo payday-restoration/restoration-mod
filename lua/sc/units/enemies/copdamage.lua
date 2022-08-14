@@ -247,15 +247,13 @@ function CopDamage:_spawn_head_gadget(params)
 			parent = head_object_get		
 		})
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
+		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
 	elseif smashablefuckers_hsg then
 		world_g:effect_manager():spawn({
 			effect = ids_func("effects/payday2/particles/impacts/metal_impact_pd2"),
 			parent = head_object_get		
 		})
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)
 	end
 
 	self._head_gear = false

@@ -33,6 +33,7 @@ end
 ]]
 
 --Debug stuff
+--[[
 function WeaponFactoryManager:unpack_blueprint_from_string(factory_id, blueprint_string)
 	local factory = tweak_data.weapon.factory
 	local index_table = string.split(blueprint_string, " ")
@@ -50,3 +51,4 @@ function WeaponFactoryManager:unpack_blueprint_from_string(factory_id, blueprint
 	end
 	return blueprint
 end
+--]]

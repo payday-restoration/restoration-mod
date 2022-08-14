@@ -1280,7 +1280,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {1} --disable base hp loss
 				self.values.player.healing_reduction = {1, 1} --disable healing reduction
-				self.values.player.frenzy_deflection = {0.3, 0.6}
+				self.values.player.frenzy_deflection = {0.2, 0.5}
 				
 			--Berserker (Frenzy)
 				--Basic

@@ -3218,9 +3218,13 @@ function CharacterTweakData:_init_russian(presets)
 	self.russian.damage = presets.gang_member_damage
 	self.russian.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_ass_amcar_npc",
 		--"wpn_fps_ass_amcar_pdth_npc",
-		--"wpn_fps_ass_74_pdth_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_74_npc",
+		"wpn_fps_ass_74_npc",
+		"wpn_fps_ass_74_npc",
+		"wpn_fps_ass_74_npc",
 		--"wpn_fps_ass_74_pdth_npc",
 		--"wpn_fps_ass_74_pdth_npc"
 	}

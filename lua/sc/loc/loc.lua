@@ -2907,7 +2907,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
-		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more deflection you have.\n\nWhen your health is below ##100%##, you will gain up to ##30## deflection.\n\nEach point of deflection makes you take ##1%## less health damage and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nWhen your health is below ##100%##, you will instead gain up to ##60## deflection.",
+		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more deflection you have.\n\nWhen your health is below ##100%##, you will gain up to ##20## deflection.\n\nEach point of deflection makes you take ##1%## less health damage and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nWhen your health is below ##100%##, you will instead gain up to ##50## deflection.",
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",

@@ -3008,6 +3008,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_ballos")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_core")
 	
+	self.wpn_fps_ass_amcar_npc.default_blueprint = deep_clone(self.wpn_fps_ass_amcar.default_blueprint)	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
 end)
 
@@ -6886,12 +6887,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	--Sniper Stock
 	self.parts.wpn_fps_ass_galil_s_sniper.pcs = {}
 	self.parts.wpn_fps_ass_galil_s_sniper.supported = true
-	self.parts.wpn_fps_ass_galil_s_sniper.stats = {
-		value = 5,
-		recoil = 4,
-		spread = 1,
-		concealment = -3
-	}
+	self.parts.wpn_fps_ass_galil_s_sniper.stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+	self.parts.wpn_fps_ass_galil_s_sniper.custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+
 	--Wooden Stock
 	self.parts.wpn_fps_ass_galil_s_wood.pcs = {}
 	self.parts.wpn_fps_ass_galil_s_wood.supported = true
@@ -6945,19 +6943,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 		recoil = 4
 	}
 
-	if not self.wpn_fps_ass_famas.override then
-		self.wpn_fps_ass_famas.override = {}
-	end
-
-	self.wpn_fps_ass_famas.override = {
-		wpn_fps_snp_model70_iron_sight = { 
-			adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
-		}
+	self.wpn_fps_ass_famas.override = self.wpn_fps_ass_famas.override or {}
+	self.wpn_fps_ass_famas.override.wpn_fps_snp_model70_iron_sight = { 
+		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
 	}
 
 	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_ass_famas_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")		
 
+	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)	
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
 end)		
 
@@ -7130,16 +7124,14 @@ end)
 --Akimbo Cobra 
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_scorpion", "resmod_x_scorpion", function(self)
 
-	if not self.wpn_fps_smg_x_scorpion.override then
-		self.wpn_fps_smg_x_scorpion.override = {}
-	end
-
+	self.wpn_fps_smg_x_scorpion.override = self.wpn_fps_smg_x_scorpion.override or {}
 	self.wpn_fps_smg_x_scorpion.override.wpn_fps_smg_scorpion_m_extended = nil
-
 
 	self.wpn_fps_smg_x_scorpion.uses_parts[18] = "resmod_dummy"
 	self.wpn_fps_smg_x_scorpion.uses_parts[19] = "resmod_dummy"
 	self.wpn_fps_smg_x_scorpion.uses_parts[20] = "resmod_dummy"	
+
+	self.wpn_fps_smg_x_scorpion_npc.override = deep_clone(self.wpn_fps_smg_x_scorpion.override)
 	self.wpn_fps_smg_x_scorpion_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_scorpion.uses_parts)
 
 end)
@@ -7210,10 +7202,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	self.wpn_fps_smg_tec9.stock_adapter = "wpn_fps_smg_shepheard_s_adapter"
 	self.wpn_fps_smg_tec9_npc.stock_adapter = "wpn_fps_smg_shepheard_s_adapter"
 	
-	if not self.wpn_fps_smg_tec9.override then
-		self.wpn_fps_smg_tec9.override = {}
-	end
-
+	self.wpn_fps_smg_tec9.override = self.wpn_fps_smg_tec9.override or {}
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_o_specter = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_o_aimpoint = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
 	self.wpn_fps_smg_tec9.override.wpn_fps_upg_o_aimpoint_2 = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
@@ -7281,17 +7270,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	}
 
 	table.insert(self.wpn_fps_smg_tec9.uses_parts, "wpn_fps_upg_m4_s_standard")
-	table.insert(self.wpn_fps_smg_tec9_npc.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_smg_tec9.uses_parts, "wpn_fps_upg_m4_s_pts")
-	table.insert(self.wpn_fps_smg_tec9_npc.uses_parts, "wpn_fps_upg_m4_s_pts")
 	table.insert(self.wpn_fps_smg_tec9.uses_parts, "wpn_fps_upg_m4_s_crane")
-	table.insert(self.wpn_fps_smg_tec9_npc.uses_parts, "wpn_fps_upg_m4_s_crane")
 	table.insert(self.wpn_fps_smg_tec9.uses_parts, "wpn_fps_upg_m4_s_mk46")
-	table.insert(self.wpn_fps_smg_tec9_npc.uses_parts, "wpn_fps_upg_m4_s_mk46")
 	table.insert(self.wpn_fps_smg_tec9.uses_parts, "wpn_fps_upg_m4_s_ubr")
-	table.insert(self.wpn_fps_smg_tec9_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_smg_tec9.uses_parts, "wpn_fps_snp_tti_s_vltor")
-	table.insert(self.wpn_fps_smg_tec9_npc.uses_parts, "wpn_fps_snp_tti_s_vltor")
 
 	self.wpn_fps_smg_tec9_npc.override = deep_clone(self.wpn_fps_smg_tec9.override)
 	self.wpn_fps_smg_tec9_npc.uses_parts = deep_clone(self.wpn_fps_smg_tec9.uses_parts)
@@ -7358,9 +7341,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 		reload = "reload"
 	}	
 
-	if not self.wpn_fps_smg_uzi.override then
-		self.wpn_fps_smg_uzi.override = {}
-	end
+	self.wpn_fps_smg_uzi.override = self.wpn_fps_smg_uzi.override or {}
 
 	self.wpn_fps_smg_uzi.override.wpn_fps_upg_vg_ass_smg_stubby = {
 		stats = {
@@ -7376,6 +7357,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 	table.insert(self.wpn_fps_smg_uzi.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_smg_uzi.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
+	self.wpn_fps_smg_uzi_npc.override = deep_clone(self.wpn_fps_smg_uzi.override)
 	self.wpn_fps_smg_uzi_npc.uses_parts = deep_clone(self.wpn_fps_smg_uzi.uses_parts)
 	
 end)

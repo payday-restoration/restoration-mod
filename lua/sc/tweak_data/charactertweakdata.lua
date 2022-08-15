@@ -920,6 +920,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
+	self.weekend_dmr.yellow_blood = nil
 	table.insert(self._enemy_list, "weekend_dmr")
 end
 
@@ -1144,6 +1145,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.headshot_dmg_mul = 2.75	
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
+	self.weekend_lmg.yellow_blood = nil
 	table.insert(self._enemy_list, "weekend_lmg")
 	
 end

@@ -15925,7 +15925,9 @@ function CharacterTweakData:_presets(tweak_data)
 	return presets
 end
 
-function CharacterTweakData:_create_table_structure()
+Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_table_structure", function(self)
+	self.weap_ids_orig = deep_clone(self.weap_ids)
+	self.weap_unit_names_orig = deep_clone(self.weap_unit_names)
 	self.weap_ids = {
 		"beretta92",
 		"c45",
@@ -16126,7 +16128,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer")
 	}
-end
+end)
 
 function CharacterTweakData:_set_easy()
 	self:_multiply_all_hp(0.75, 1)

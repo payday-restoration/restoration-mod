@@ -146,3 +146,23 @@ function PlayerInventory:_feedback_heal_on_kill()
 		unit:character_damage():change_health(self._jammer_data.heal)
 	end
 end
+
+--Dangerous territory
+function PlayerInventory._get_weapon_sync_index(wanted_weap_name)
+    if type_name(wanted_weap_name) == "Idstring" then
+        for i, test_weap_name in ipairs(tweak_data.character.weap_unit_names) do
+            if test_weap_name == wanted_weap_name then
+                return i
+            end
+        end
+    end
+
+    PlayerInventory._chk_create_w_factory_indexes()
+
+    local start_index = #tweak_data.character.weap_unit_names_orig
+    for i, factory_id in ipairs(PlayerInventory._weapon_factory_indexed) do
+        if wanted_weap_name == factory_id then
+            return start_index + i
+        end
+    end
+end

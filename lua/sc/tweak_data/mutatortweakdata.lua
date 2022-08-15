@@ -242,7 +242,7 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				position = Vector3(587.78, -1303.05, -30.0338),
 				rotation = Rotation(87.9926, 0, 0)
 			},
-			roberts = {
+			roberts_v2 = {
 				position = Vector3(1862.43, -341.785, -76.7702),
 				rotation = Rotation(122.244, 0, -0)
 			},
@@ -254,7 +254,7 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				position = Vector3(-26.96, 1537.23, -5.18682),
 				rotation = Rotation(-88.8213, 0, 0)
 			},
-			run = {
+			run_res = {
 				position = Vector3(-2829.11, -9281.92, 2044.81),
 				rotation = Rotation(173.33, 0, -0)
 			},
@@ -306,10 +306,10 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				position = Vector3(2425.23, -5667.32, -80.1866),
 				rotation = Rotation(87.6614, 0, 0)
 			},
-			ukrainian_job = {
+			ukrainian_job_res = {
 				position = Vector3(-20.6412, 3653.49, 19.8175),
 				rotation = Rotation(179.94, 0, -0)
-			},
+			},			
 			mex = {
 				position = Vector3(3804.28, -9322.23, -3205.19),
 				rotation = Rotation(-165.413, 0, -0)

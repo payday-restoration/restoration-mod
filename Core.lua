@@ -228,7 +228,6 @@ function restoration:Init()
 		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
 		"spa", --Brooklyn 10-10
-		"des",	--Henry's Rock
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
@@ -242,6 +241,9 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		"ranc", --Midland Ranch
 		"mad", --Boiling Point
+		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
+		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
+		"crojob3_night", --Ditto
 		--Custom Heists below--
 		"junk", --Doghouse
 		"knk_jwl", --Knockover: Jewerly Store
@@ -265,7 +267,7 @@ function restoration:Init()
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
 		"pbr2", --Birth of Sky
-		"rvd2", --Resivoir Dogs 2, has very aggressive scripted spawns.
+		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
 		"hox_1",
@@ -293,7 +295,8 @@ function restoration:Init()
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
-		"sah", --Shacklethorne		
+		"sah", --Shacklethorne	
+		"des",	--Henry's Rock		
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid		

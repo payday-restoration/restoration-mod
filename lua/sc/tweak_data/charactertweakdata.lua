@@ -920,6 +920,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
+	if self:get_ai_group_type() ~= "murkywater" then
+		self.weekend_dmr.yellow_blood = true
+	else	
+		self.weekend_dmr.yellow_blood = nil
+	end
 	table.insert(self._enemy_list, "weekend_dmr")
 end
 
@@ -1144,6 +1149,12 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.headshot_dmg_mul = 2.75	
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
+	self.weekend_lmg.yellow_blood = nil
+	if self:get_ai_group_type() ~= "murkywater" then
+		self.weekend_lmg.yellow_blood = true
+	else	
+		self.weekend_lmg.yellow_blood = nil
+	end
 	table.insert(self._enemy_list, "weekend_lmg")
 	
 end
@@ -15914,7 +15925,9 @@ function CharacterTweakData:_presets(tweak_data)
 	return presets
 end
 
-function CharacterTweakData:_create_table_structure()
+Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_table_structure", function(self)
+	self.weap_ids_orig = deep_clone(self.weap_ids)
+	self.weap_unit_names_orig = deep_clone(self.weap_unit_names)
 	self.weap_ids = {
 		"beretta92",
 		"c45",
@@ -16115,79 +16128,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer"),
 		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer")
 	}
-
-
-	self.weap_ids_orig = {
-		"beretta92",
-		"c45",
-		"raging_bull",
-		"m4",
-		"m4_yellow",
-		"ak47",
-		"r870",
-		"mossberg",
-		"mp5",
-		"mp5_tactical",
-		"mp9",
-		"mac11",
-		"m14_sniper_npc",
-		"saiga",
-		"m249",
-		"benelli",
-		"g36",
-		"ump",
-		"scar_murky",
-		"rpk_lmg",
-		"svd_snp",
-		"akmsu_smg",
-		"asval_smg",
-		"sr2_smg",
-		"ak47_ass",
-		"x_c45",
-		"sg417",
-		"svdsil_snp",
-		"mini",
-		"heavy_zeal_sniper",
-		"smoke",
-		"flamethrower",
-		"dmr"
-	}
-	self.weap_unit_names_orig = {
-		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_c45"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull"),
-		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-		Idstring("units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow"),
-		Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
-		Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical"),
-		Idstring("units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9"),
-		Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11"),
-		Idstring("units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper"),
-		Idstring("units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga"),
-		Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
-		Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli"),
-		Idstring("units/payday2/weapons/wpn_npc_g36/wpn_npc_g36"),
-		Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45"),
-		Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
-		Idstring("units/pd2_dlc_spa/weapons/wpn_npc_svd_silenced/wpn_npc_svd_silenced"),
-		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
-		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_heavy_zeal_sniper/wpn_npc_heavy_zeal_sniper"),
-		Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
-		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"),
-		Idstring("units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr")
-	}
-end
+end)
 
 function CharacterTweakData:_set_easy()
 	self:_multiply_all_hp(0.75, 1)

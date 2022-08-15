@@ -187,8 +187,8 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				rotation = Rotation(-89.9757, 0, 0)
 			},
 			firestarter_3_res = {
-				position = Vector3(-2421, 367, 400),
-				rotation = Rotation(178, 0, -0)
+				position = Vector3(-403, 4507, 0),
+				rotation = Rotation(-180, 0, -0)
 			},
 			jewelry_store = {
 				position = Vector3(-20.6412, 3653.49, 19.8175),
@@ -327,8 +327,8 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				rotation = Rotation(90, 0, 0)
 			},
 			chill_combat = {
-				position = Vector3(-773, 1071, -3),
-				rotation = Rotation(-45, 0, 0)
+				position = Vector3(-934, 1149, 0),
+				rotation = Rotation(-69, 0, 0)
 			},
 			arena = {
 				position = Vector3(-300, 550, 0),
@@ -395,16 +395,16 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				rotation = Rotation(-180, 0, -0)
 			},
 			help = {
-				position = Vector3(-1885, -4591, -38),
-				rotation = Rotation(135, 0, -0)
+				position = Vector3(428, 600, -100),
+				rotation = Rotation(180, 0, -0)
 			},
 			alex_1_res = {
 				position = Vector3(2423, -1421, 875),
 				rotation = Rotation(119, 0, 0)
 			},
 			alex_2_res = {
-				position = Vector3(94, 3594, -600),
-				rotation = Rotation(-122, 0, -0)
+				position = Vector3(-277, 3728, -600),
+				rotation = Rotation(-90, 0, -0)
 			},
 			alex_3_res = {
 				position = Vector3(10179, 24575, 1917),

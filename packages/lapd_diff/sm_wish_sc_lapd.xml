@@ -123,8 +123,7 @@
 	<!--textures-->			
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_nm" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_1_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_1_df" />
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" />
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_head_df" />	

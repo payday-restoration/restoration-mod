@@ -39,12 +39,6 @@
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
 			</group>
-			<group :name="pd2_dlc_ranc/characters/">
-				<file :name="ene_male_ranc_security_1/ene_male_ranc_security_1.unit"/>
-				<file :name="ene_male_ranc_security_1/ene_male_ranc_security_1_husk.unit"/>
-				<file :name="ene_male_ranc_security_2/ene_male_ranc_security_2.unit"/>
-				<file :name="ene_male_ranc_security_2/ene_male_ranc_security_2_husk.unit"/>
-			</group>
 			<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
 				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>

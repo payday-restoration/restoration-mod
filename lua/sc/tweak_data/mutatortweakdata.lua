@@ -187,8 +187,8 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				rotation = Rotation(-89.9757, 0, 0)
 			},
 			firestarter_3_res = {
-				position = Vector3(-3965.54, 3311.53, -5.18584),
-				rotation = Rotation(-177.786, 0, -0)
+				position = Vector3(-2421, 367, 400),
+				rotation = Rotation(178, 0, -0)
 			},
 			jewelry_store = {
 				position = Vector3(-20.6412, 3653.49, 19.8175),
@@ -317,6 +317,230 @@ function MutatorTweakData:init_piggybank(tweak_data)
 			des = {
 				position = Vector3(-180, -2700, 100),
 				rotation = Rotation(0, 0, 0)
+			},
+			rat = {
+				position = Vector3(3329, -713, 872),
+				rotation = Rotation(90, -0, -0)
+			},
+			family = {
+				position = Vector3(3821, -2167, -25),
+				rotation = Rotation(90, 0, 0)
+			},
+			chill_combat = {
+				position = Vector3(-773, 1071, -3),
+				rotation = Rotation(-45, 0, 0)
+			},
+			arena = {
+				position = Vector3(-300, 550, 0),
+				rotation = Rotation(0, 0, -0)
+			},
+			arm_cro = {
+				position = Vector3(-2064, 1391, 400),
+				rotation = Rotation(180, 0, -0)
+			},
+			arm_hcm = {
+				position = Vector3(2761, 5842, 1425),
+				rotation = Rotation(90, 0, 0)
+			},
+			arm_fac = {
+				position = Vector3(-1753, -2004, 210),
+				rotation = Rotation(0, 0, -0)
+			},
+			arm_par = {
+				position = Vector3(1023, 500, -400),
+				rotation = Rotation(-180, 0, -0)
+			},
+			arm_for = {
+				position = Vector3(2954, 2763, 449),
+				rotation = Rotation(-135, 0, -0)
+			},
+			arm_und = {
+				position = Vector3(-5194, -1455, 374),
+				rotation = Rotation(-90, 0, -0)
+			},
+			dah = {
+				position = Vector3(-5147, -4493, 449),
+				rotation = Rotation(-90, 0, -0)
+			},
+			glace = {
+				position = Vector3(-931, -24726, 5759),
+				rotation = Rotation(90, -0, -0)
+			},
+			flat = {
+				position = Vector3(-3339, -19, -19),
+				rotation = Rotation(-90, 0, -0)
+			},
+			dinner = {
+				position = Vector3(-17385, 8228, -69),
+				rotation = Rotation(120, 0, -0)
+			},
+			man = {
+				position = Vector3(-768, -772, 1708),
+				rotation = Rotation(-90, 0, -0)
+			},
+			cane = {
+				position = Vector3(4616, 55, -20),
+				rotation = Rotation(90, 0, 0)
+			},
+			xmn_hox1 = {
+				position = Vector3(10185, 7877, -2252),
+				rotation = Rotation(-90, 6, -4.26887e-007)
+			},
+			xmn_hox2 = {
+				position = Vector3(-189, 3191, -500),
+				rotation = Rotation(0, 0, -0)
+			},
+			nail = {
+				position = Vector3(2039, 834, 6),
+				rotation = Rotation(-180, 0, -0)
+			},
+			help = {
+				position = Vector3(-1885, -4591, -38),
+				rotation = Rotation(135, 0, -0)
+			},
+			alex_1_res = {
+				position = Vector3(2423, -1421, 875),
+				rotation = Rotation(119, 0, 0)
+			},
+			alex_2_res = {
+				position = Vector3(94, 3594, -600),
+				rotation = Rotation(-122, 0, -0)
+			},
+			alex_3_res = {
+				position = Vector3(10179, 24575, 1917),
+				rotation = Rotation(-91, 0, -0)
+			},
+			watchdogs_1 = {
+				position = Vector3(-2046, 1566, -20),
+				rotation = Rotation(-180, 0, -0)
+			},
+			watchdogs_2 = {
+				position = Vector3(-1042, 3328, 0),
+				rotation = Rotation(100, 0, 0)
+			},
+			wetwork = {
+				position = Vector3(937, 1831, 0),
+				rotation = Rotation(-180, 0, -0)
+			},
+			pbr = {
+				position = Vector3(-8588, -1147, -900),
+				rotation = Rotation(90, 0, 0)
+			},
+			pbr2 = {
+				position = Vector3(-56, 1515, 5),
+				rotation = Rotation(143, 0, -0)
+			},
+			mex_cooking = {
+				position = Vector3(3804.28, -9322.23, -3205.19),
+				rotation = Rotation(-165.413, 0, -0)
+			},
+			vit = {
+				position = Vector3(-9, 636, 3),
+				rotation = Rotation(180, 0, -0)
+			},
+			moon = {
+				position = Vector3(-2974, 248, 1),
+				rotation = Rotation(-90, 0, -0)
+			},
+			pines = {
+				position = Vector3(-8032, 11960, 4086),
+				rotation = Rotation(-89, 1.06868e-007, 3)
+			},
+			crojob3 = {
+				position = Vector3(7984, -8343, 575),
+				rotation = Rotation(0, 0, -0)
+			},
+			crojob3_night = {
+				position = Vector3(7984, -8343, 575),
+				rotation = Rotation(0, 0, -0)
+			},
+			spa = {
+				position = Vector3(7791, 3934, 100)
+				rotation = Rotation(90, 0, 0)
+			},
+			kenaz = {
+				position = Vector3(-1, -6498, 0),
+				rotation = Rotation(-180, 0, -0)
+			},
+			mia_1 = {
+				position = Vector3(1721, 278, -20),
+				rotation = Rotation(180, 0, -0)
+			},
+			mia_2 = {
+				position = Vector3(163, -168, -4),
+				rotation = Rotation(48, 0, 0)
+			},
+			hox_1 = {
+				position = Vector3(10185, 7877, -2252),
+				rotation = Rotation(-90, 6, -4.26887e-007)
+			},
+			hox_2 = {
+				position = Vector3(-189, 3191, -500),
+				rotation = Rotation(0, 0, -0)
+			},
+			welcome_to_the_jungle_1 = {
+				position = Vector3(5959, -3502, -17),
+				rotation = Rotation(90, 0, 0)
+			},
+			welcome_to_the_jungle_1_night = {
+				position = Vector3(5959, -3502, -17),
+				rotation = Rotation(90, 0, 0)
+			},
+			welcome_to_the_jungle_2 = {
+				position = Vector3(-1600, 2900, -2),
+				rotation = Rotation(180, 0, -0)
+			},
+			election_day_1 = {
+				position = Vector3(2742, 1120, 272),
+				rotation = Rotation(90, 0, 0)
+			},
+			election_day_2 = {
+				position = Vector3(516, -435, 0),
+				Rotation(0, 0, -0)
+			},
+			election_day_3 = {
+				position = Vector3(-434, -2347, 0),
+				rotation = Rotation(0, 0, -0)
+			},
+			election_day_3_skip1 = {
+				position = Vector3(-434, -2347, 0),
+				rotation = Rotation(0, 0, -0)
+			},
+			election_day_3_skip2 = {
+				position = Vector3(-434, -2347, 0),
+				rotation = Rotation(0, 0, -0)
+			},
+			framing_frame_1 = {
+				position = Vector3(3238.55, -1577.97, -124.998),
+				rotation = Rotation(-13.4452, 0, 0)
+			},
+			framing_frame_2 = {
+				position = Vector3(5793, 58, -22),
+				rotation = RRotation(90, -0, -0)
+			},
+			framing_frame_3 = {
+				position = Vector3(-4107, 1303, 3000),
+				rotation = Rotation(0, 0, -0)
+			},
+			junk = {
+				position = Vector3(-678, -1950, 3),
+				rotation = Rotation(0, 0, -0)
+			},
+			peta = {
+				position = Vector3(455, 258, 274),
+				rotation = Rotation(-90, 0, -0)
+			},
+			peta2 = {
+				position = Vector3(13453, -18628, -11),
+				rotation = Rotation(-132, 0, -0)
+			},
+			shoutout_raid = {
+				position = Vector3(-2619, -2508, 975),
+				rotation = Rotation(-90, 0, -0)
+			},
+			bex = {
+				position = Vector3(-8, 3144, -13),
+				rotation = Rotation(-180, 0, -0)
 			}
 		},
 		event_jobs_from_level = {}

@@ -455,7 +455,7 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				rotation = Rotation(0, 0, -0)
 			},
 			spa = {
-				position = Vector3(7791, 3934, 100)
+				position = Vector3(7791, 3934, 100),
 				rotation = Rotation(90, 0, 0)
 			},
 			kenaz = {
@@ -496,7 +496,7 @@ function MutatorTweakData:init_piggybank(tweak_data)
 			},
 			election_day_2 = {
 				position = Vector3(516, -435, 0),
-				Rotation(0, 0, -0)
+				rotation = Rotation(0, 0, -0)
 			},
 			election_day_3 = {
 				position = Vector3(-434, -2347, 0),
@@ -516,7 +516,7 @@ function MutatorTweakData:init_piggybank(tweak_data)
 			},
 			framing_frame_2 = {
 				position = Vector3(5793, 58, -22),
-				rotation = RRotation(90, -0, -0)
+				rotation = Rotation(90, -0, -0)
 			},
 			framing_frame_3 = {
 				position = Vector3(-4107, 1303, 3000),

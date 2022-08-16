@@ -705,7 +705,7 @@ function BlackMarketGui:_get_armor_stats(name)
 			base_stats[stat.name] = {value = (base + mod) * 100}
 			skill_stats[stat.name] = {value = managers.player:get_deflection_from_skills() * 100}
 		elseif stat.name == "regen_time" then
-			local base = tweak_data.player.damage.REGENERATE_TIME
+			local base = managers.player:body_armor_value("regen_delay", upgrade_level, 0)
 			base_stats[stat.name] = {value = base}
 			if managers.player:has_category_upgrade("player", "armor_grinding") then
 				skill_stats[stat.name] = {value = tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][2] - base}

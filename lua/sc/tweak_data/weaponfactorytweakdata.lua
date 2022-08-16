@@ -16524,7 +16524,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scout", "resmod_scout", function(s
 	}
 	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats.ads_speed_mult = 1
-	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats.rof_mult = 1.3333
+	self.parts.wpn_fps_snp_scout_bolt_speed.custom_stats.rof_mult = 1.18181
 	
 	--Longshot Suppressor
 	self.parts.wpn_fps_snp_scout_ns_suppressor.pcs = {

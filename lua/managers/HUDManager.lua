@@ -218,7 +218,8 @@ core:import("CoreEvent")
 			if restoration.Options:GetValue("HUD/Extra/StealthOrigPos") then 
 				
 			else
-				level_suspicion_panel:move(0,20)  --this is not the right way to do it but by god i'm doing it
+				level_suspicion_panel:move(21,30)  --this is not the right way to do it but by god i'm doing it
+	--			level_suspicion_panel:move(0,20) Offset to account for mutator changes
 	--			level_suspicion_panel:set_center(managers.hud._hud_suspicion._suspicion_panel:center())
 			end
 		end

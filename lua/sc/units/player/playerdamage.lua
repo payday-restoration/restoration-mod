@@ -1140,6 +1140,16 @@ function PlayerDamage:_update_regenerate_timer(t, dt)
 	end
 end
 
+function PlayerDamage:set_regenerate_timer_to_max()
+	local mul = managers.player:body_armor_regen_multiplier(alive(self._unit) and self._unit:movement():current_state()._moving, self:health_ratio())
+	local armor_regen_time = managers.player:body_armor_value("regen_delay", nil, 0) or tweak_data.player.damage.REGENERATE_TIME or 4
+	self._regenerate_timer = armor_regen_time * mul
+	self._regenerate_timer = self._regenerate_timer * managers.player:upgrade_value("player", "armor_regen_time_mul", 1)
+	self._regenerate_speed = self._regenerate_speed or 1
+	self._current_state = self._update_regenerate_timer
+end
+
+
 --Init function for dodge points to cache the value.
 function PlayerDamage:set_dodge_points()
 	self._dodge_points = (tweak_data.player.damage.DODGE_INIT 

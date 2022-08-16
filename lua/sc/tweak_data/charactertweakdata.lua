@@ -15925,280 +15925,299 @@ function CharacterTweakData:_presets(tweak_data)
 	return presets
 end
 
-function CharacterTweakData:_create_table_structure()
-	self.weap_ids = {
-		"beretta92",
-		"c45",
-		"raging_bull",
-		"m4",
-		"m4_yellow",
-		"ak47",
-		"r870",
-		"mossberg",
-		"mp5",
-		"mp5_tactical",
-		"mp9",
-		"mac11",
-		"m14_sniper_npc",
-		"saiga",
-		"m249",
-		"benelli",
-		"g36",
-		"ump",
-		"scar_murky",
-		"rpk_lmg",
-		"svd_snp",
-		"akmsu_smg",
-		"asval_smg",
-		"sr2_smg",
-		"ak47_ass",
-		"peacemaker",
-		"x_akmsu",
-		"x_c45",
-		"sg417",
-		"svdsil_snp",
-		"mini",
-		"heavy_zeal_sniper",
-		"m4_boom",
-		"hk21_sc",
-		"mp5_zeal",
-		"shotgun_summer",
-		"m16_summer",
-		"mp5_cloak",
-		"s552_sc",
-		"r870_taser",
-		"oicw",
-		"hmg_spring",
-		"smoke",
-		"ak47_ass_elite",
-		"asval_smg_elite",
-		"ak47_ass_boom",
-		"autumn_smg",
-		"s553_zeal",
-		"lmg_titan",
-		"x_mini_npc",
-		"x_raging_bull_npc",
-		"bravo_rifle",
-		"bravo_shotgun",
-		"bravo_lmg",
-		"bravo_dmr",
-		"flamethrower_mk2_flamer_summers",
-		"scar_npc",
-		"m1911_npc",
-		"vet_cop_boss_pistol",
-		"m60",
-		"m60_bravo",
-		"m60_om",
-		"deagle",
-		"mp9_titan",
-		"sr2_titan",
-		"beretta92_titan",
-		"hajk_cop",
-		"uzi_cop",
-		"amcar",
-		"ak102",
-		"m416_npc",
-		"railgun_npc",
-		"hk33",
-		"hk33_bravo",
-		"m500",
-		"flamethrower",
-		"x_raging_bull_meme_npc",
-		"hk21_bravo_npc",
-		"m32",
-		"rpg7",
-		"x_pm9_enemy",
-		"aa12_npc",
-		"dmr",
-		"ak12",
-		"fort_500",
-		"streak",
-		"x_streak",
-		"akmsu_smg_tactical",
-		"aksu_smg",
-		"ak47_yellow",
-		"gauss_gun",
-		"m32_large",
-		"r870_dozer",
-		"saiga_dozer",
-		"m249_dozer",
-		"fort_500_dozer",
-		"aa12_dozer",
-		"rpk_dozer"
-	}
-	self.weap_unit_names = {
-		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_c45"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull"),
-		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-		Idstring("units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow"),
-		Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
-		Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical"),
-		Idstring("units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9"),
-		Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11"),
-		Idstring("units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper"),
-		Idstring("units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga"),
-		Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
-		Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli"),
-		Idstring("units/payday2/weapons/wpn_npc_g36/wpn_npc_g36"),
-		Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_x_akmsu"),
-		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45"),
-		Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
-		Idstring("units/pd2_dlc_spa/weapons/wpn_npc_svd_silenced/wpn_npc_svd_silenced"),
-		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
-		Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
-		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"),
-		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"),
-		Idstring("units/pd2_dlc_vip/weapons/wpn_npc_hmg_spring/wpn_npc_hmg_spring"),
-		Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak103/wpn_npc_ak103"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom"),
-		Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"),
-		Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"),
-		Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-		Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light"),
-		Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
-		Idstring("units/payday2/weapons/wpn_npc_m60/wpn_npc_m60"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"),
-		Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om"),
-		Idstring("units/payday2/weapons/wpn_npc_degle/wpn_npc_degle"),
-		Idstring("units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan"),
-		Idstring("units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan"),
-		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk"),
-		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi"),
-		Idstring("units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak102/wpn_npc_ak102"),
-		Idstring("units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"),
-		Idstring("units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun"),
-		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33"),
-		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo"),
-		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500"),
-		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"),
-		Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32"),
-		Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7"),
-		Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc"),
-		Idstring("units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12"),
-		Idstring("units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14"),		
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14"),		
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_taser/wpn_npc_ak47_taser"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large"),
-		Idstring("units/payday2/weapons/wpn_npc_r870_dozer/wpn_npc_r870_dozer"),
-		Idstring("units/payday2/weapons/wpn_npc_saiga_dozer/wpn_npc_saiga_dozer"),
-		Idstring("units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer"),
-		Idstring("units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer"),
-		Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer")
-	}
+Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_table_structure", function(self)
 
+	--Vanilla Murky Scar-H turns into Scar-L
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light")
+	
+	--Vanilla RPK SC'd
+	self.weap_unit_names[20] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc")
+	
+	--Vanilla SVD SC'd
+	self.weap_unit_names[21] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")	
+	
+	--Vanilla AKMSU SC'd
+	self.weap_unit_names[22] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc")
+	
+	--Vanilla Cloaker Asval SC'd
+	self.weap_unit_names[23] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc")
+	
+	--Vanilla SR2 SC'd
+	self.weap_unit_names[24] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc")
+	
+	--Vanilla AK101 SC'd
+	self.weap_unit_names[25] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
+	
+	--Vanilla Minigun becomes Benelli to make Benelli Dozers
+	self.weap_unit_names[29] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 
-	self.weap_ids_orig = {
-		"beretta92",
-		"c45",
-		"raging_bull",
-		"m4",
-		"m4_yellow",
-		"ak47",
-		"r870",
-		"mossberg",
-		"mp5",
-		"mp5_tactical",
-		"mp9",
-		"mac11",
-		"m14_sniper_npc",
-		"saiga",
-		"m249",
-		"benelli",
-		"g36",
-		"ump",
-		"scar_murky",
-		"rpk_lmg",
-		"svd_snp",
-		"akmsu_smg",
-		"asval_smg",
-		"sr2_smg",
-		"ak47_ass",
-		"x_c45",
-		"sg417",
-		"svdsil_snp",
-		"mini",
-		"heavy_zeal_sniper",
-		"smoke",
-		"flamethrower",
-		"dmr"
-	}
-	self.weap_unit_names_orig = {
-		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_c45"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull"),
-		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-		Idstring("units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow"),
-		Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
-		Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical"),
-		Idstring("units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9"),
-		Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11"),
-		Idstring("units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper"),
-		Idstring("units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga"),
-		Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
-		Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli"),
-		Idstring("units/payday2/weapons/wpn_npc_g36/wpn_npc_g36"),
-		Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump"),
-		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2"),
-		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45"),
-		Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
-		Idstring("units/pd2_dlc_spa/weapons/wpn_npc_svd_silenced/wpn_npc_svd_silenced"),
-		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
-		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_heavy_zeal_sniper/wpn_npc_heavy_zeal_sniper"),
-		Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
-		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"),
-		Idstring("units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr")
-	}
-end
+	--Vanilla Zeal Sniper made M14/SCAR-H DMR
+	self.weap_unit_names[30] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
+
+	--Peacemaker
+	table.insert(self.weap_ids, "peacemaker")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker"))
+	
+	--Akimbo AKMSUs
+	table.insert(self.weap_ids, "x_akmsu")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_x_akmsu"))	
+	
+	--Grenadier M4
+	table.insert(self.weap_ids, "m4_boom")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"))	
+
+	--HK21
+	table.insert(self.weap_ids, "hk21_sc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"))		
+	
+	--Zeal Mp5s
+	table.insert(self.weap_ids, "mp5_zeal")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"))
+
+	--Doc Shotgun
+	table.insert(self.weap_ids, "shotgun_summer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"))	
+
+	--Elektra Rifle
+	table.insert(self.weap_ids, "m16_summer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"))		
+	
+	--Cloaker Cloaker MP5
+	table.insert(self.weap_ids, "mp5_cloak")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))
+
+	--LPF S552 
+	table.insert(self.weap_ids, "s552_sc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"))	
+
+	--Titan Taser Shotgun
+	table.insert(self.weap_ids, "r870_taser")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"))
+
+	--Titan Taser Shotgun
+	table.insert(self.weap_ids, "oicw")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"))		
+	
+	--Spring HMG
+	table.insert(self.weap_ids, "hmg_spring")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_vip/weapons/wpn_npc_hmg_spring/wpn_npc_hmg_spring"))	
+
+	--AK103 Elite
+	table.insert(self.weap_ids, "ak47_ass_elite")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak103/wpn_npc_ak103"))		
+	
+	--ASVAL Elite
+	table.insert(self.weap_ids, "asval_smg_elite")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc"))	
+	
+	--AK101 Grenadier
+	table.insert(self.weap_ids, "ak47_ass_boom")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom"))	
+
+	--Autumn SMG
+	table.insert(self.weap_ids, "autumn_smg")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"))	
+	
+	--Zeal S553
+	table.insert(self.weap_ids, "s553_zeal")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"))	
+	
+	--HK23
+	table.insert(self.weap_ids, "lmg_titan")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"))	
+
+	--Akimbo Miniguns
+	table.insert(self.weap_ids, "x_mini_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"))	
+
+	--Akimbo Raging Bulls
+	table.insert(self.weap_ids, "x_raging_bull_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"))	
+	
+	--Bravo Rifle
+	table.insert(self.weap_ids, "bravo_rifle")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"))		
+	
+	--Bravo Shotgun
+	table.insert(self.weap_ids, "bravo_shotgun")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou"))	
+	
+	--Bravo LMG
+	table.insert(self.weap_ids, "bravo_lmg")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"))
+
+	--Bravo DMR
+	table.insert(self.weap_ids, "bravo_dmr")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"))	
+	
+	--Summers Flamethrower
+	table.insert(self.weap_ids, "flamethrower_mk2_flamer_summers")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"))	
+
+	--SCAR-L
+	table.insert(self.weap_ids, "scar_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light"))		
+	
+	--Crosskill .45 
+	table.insert(self.weap_ids, "m1911_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911"))	
+
+	--Vet Cop Boss Pistols (Akimbo Raging Bulls)
+	table.insert(self.weap_ids, "vet_cop_boss_pistol")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"))		
+	
+	--M60
+	table.insert(self.weap_ids, "m60")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m60/wpn_npc_m60"))	
+
+	--Bravo M60
+	table.insert(self.weap_ids, "m60_bravo")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"))	
+
+	--OMNIA M60
+	table.insert(self.weap_ids, "m60_om")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om"))	
+
+	--Deagle
+	table.insert(self.weap_ids, "deagle")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_degle/wpn_npc_degle"))	
+
+	--ASU MP9
+	table.insert(self.weap_ids, "mp9_titan")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan"))	
+	
+	--ASU SR2
+	table.insert(self.weap_ids, "sr2_titan")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan"))
+
+	--Titanshield M9
+	table.insert(self.weap_ids, "beretta92_titan")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan"))	
+
+	--CR 805B 
+	table.insert(self.weap_ids, "hajk_cop")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk"))	
+	
+	--Uzi
+	table.insert(self.weap_ids, "uzi_cop")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi"))		
+	
+	--AMCAR
+	table.insert(self.weap_ids, "amcar")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar"))		
+	
+	--AK102
+	table.insert(self.weap_ids, "ak102")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak102/wpn_npc_ak102"))	
+
+	--HK416
+	table.insert(self.weap_ids, "m416_npc")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"))
+
+	--Railgun
+	table.insert(self.weap_ids, "railgun_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun"))	
+	
+	--HK33
+	table.insert(self.weap_ids, "hk33")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33"))		
+	
+	--Bravo HK33
+	table.insert(self.weap_ids, "hk33_bravo")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo"))	
+
+	--M500
+	table.insert(self.weap_ids, "m500")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500"))	
+
+	--Meme Akimbo Raging Bulls
+	table.insert(self.weap_ids, "x_raging_bull_meme_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc"))	
+
+	--Bravo HK21
+	table.insert(self.weap_ids, "hk21_bravo_npc")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"))	
+	
+	--M32
+	table.insert(self.weap_ids, "m32")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m32/wpn_npc_m32"))
+
+	--RPG7
+	table.insert(self.weap_ids, "rpg7")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7"))		
+	
+	--Akimbo PM9s
+	table.insert(self.weap_ids, "x_pm9_enemy")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc"))
+
+	--AA12
+	table.insert(self.weap_ids, "aa12_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12"))		
+	
+	--AK12
+	table.insert(self.weap_ids, "ak12")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12"))		
+	
+	--Fort 500
+	table.insert(self.weap_ids, "fort_500")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500"))	
+
+	--White Streak
+	table.insert(self.weap_ids, "streak")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14"))	
+
+	--Akimbo White Streak
+	table.insert(self.weap_ids, "x_streak")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14"))
+
+	--Tactical AKMSU
+	table.insert(self.weap_ids, "akmsu_smg_tactical")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical"))	
+	
+	--AKSU SMG
+	table.insert(self.weap_ids, "aksu_smg")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu"))	
+	
+	--Taser AK101
+	table.insert(self.weap_ids, "ak47_yellow")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_taser/wpn_npc_ak47_taser"))		
+	
+	--DRAK Titan Taser Gauss Rifle
+	table.insert(self.weap_ids, "gauss_gun")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"))			
+	
+	--For some reason, once this hits 92 entries the third person husk used by players breaks the Akimbo 1911s. Fix pls
+	--Also it seems each entry after it can change the gun to be everything from SVDs to Reapeter rifles. 
+	
+	--Titandozer M32
+	table.insert(self.weap_ids, "m32_large")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large"))		
+	
+	--Dozer R870
+	table.insert(self.weap_ids, "r870_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_r870_dozer/wpn_npc_r870_dozer"))		
+		
+	--Dozer Saiga
+	table.insert(self.weap_ids, "saiga_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_saiga_dozer/wpn_npc_saiga_dozer"))	
+
+	--Dozer M249
+	table.insert(self.weap_ids, "m249_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer"))	
+	
+	--Dozer Fort 500
+	table.insert(self.weap_ids, "fort_500_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer"))	
+
+	--Dozer AA12
+	table.insert(self.weap_ids, "aa12_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer"))	
+
+	--Dozer RPK
+	table.insert(self.weap_ids, "rpk_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer"))	
+
+end)
 
 function CharacterTweakData:_set_easy()
 	self:_multiply_all_hp(0.75, 1)
@@ -16253,12 +16272,6 @@ function CharacterTweakData:_set_easy()
 	self.spa_vip.HEALTH_INIT = 20
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 20
 	self:_multiply_all_speeds(1, 1)
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end
 end
 
 function CharacterTweakData:_set_normal()
@@ -16325,12 +16338,6 @@ function CharacterTweakData:_set_normal()
 	self.spa_vip.HEALTH_INIT = 40
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 40
 	self:_multiply_all_speeds(1, 1)
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
 end
 
 function CharacterTweakData:_set_hard()
@@ -16397,13 +16404,6 @@ function CharacterTweakData:_set_hard()
 	self.spa_vip.HEALTH_INIT = 60
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 60
 	self:_multiply_all_speeds(1, 1)
-	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
 end
 
 function CharacterTweakData:_set_overkill()
@@ -16469,13 +16469,7 @@ function CharacterTweakData:_set_overkill()
 	self.old_hoxton_mission.HEALTH_INIT = 80
 	self.spa_vip.HEALTH_INIT = 80
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
-	self:_multiply_all_speeds(1, 1)
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
+	self:_multiply_all_speeds(1, 1)	
 end
 
 function CharacterTweakData:_set_overkill_145()
@@ -16541,12 +16535,6 @@ function CharacterTweakData:_set_overkill_145()
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self:_multiply_all_speeds(1, 1)
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
 end
 
 function CharacterTweakData:_set_easy_wish()
@@ -16610,12 +16598,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1)
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
 end
 
 function CharacterTweakData:_set_overkill_290()
@@ -16667,12 +16649,6 @@ function CharacterTweakData:_set_overkill_290()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1.05)
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
 end
 
 function CharacterTweakData:_set_sm_wish()
@@ -16709,6 +16685,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	
+	--No Glint versions of weapons
 	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc")		
 	self.weap_unit_names[21] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc/wpn_npc_svd_noglint_sc")		
 	
@@ -16797,14 +16774,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
-	self.autumn.damage.bullet_damage_mul = 0.4
-					
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" or job == "xmn_tag" then
-		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
-	end		
+	self.autumn.damage.bullet_damage_mul = 0.4	
 end
 
 function CharacterTweakData:is_special_unit(enemy_tweak)

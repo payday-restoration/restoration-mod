@@ -12881,7 +12881,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.m1894.timers = deep_clone(self.sbl.timers)	
 		self.m1894.timers.shotgun_reload_shell = 0.664
 		self.m1894.timers.shotgun_reload_first_shell_offset = 0.15
 		self.m1894.timers.shotgun_reload_exit_not_empty = 0.45
@@ -13768,10 +13767,10 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.059, 0.030}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.057, 0.029}},
-		{damage = 24,  pickup = {0.056, 0.028}},
-		{damage = 30,  pickup = {0.053, 0.027}},
+		{damage = 18,  pickup = {0.055, 0.028}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.054, 0.027}},
+		{damage = 24,  pickup = {0.053, 0.027}},
+		{damage = 30,  pickup = {0.052, 0.026}},
 		{damage = 45,  pickup = {0.050, 0.026}},
 		{damage = 60,  pickup = {0.047, 0.025}},
 		{damage = 90,  pickup = {0.044, 0.023}},
@@ -13780,7 +13779,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 240, pickup = {0.031, 0.018}},
 		{damage = 360, pickup = {0.029, 0.017}},
 		{damage = 600, pickup = {0.026, 0.016}}, --Light GLs
-		{damage = 720, pickup = {0.021, 0.013}}, --Heavy GLs
+		{damage = 800, pickup = {0.021, 0.013}}, --Heavy GLs
 		{damage = 900, pickup = {0.015, 0.010}}, --Rocket Launchers
 		{damage = 1200, pickup = {0.012, 0.009}} --Rocket Launchers
 	}

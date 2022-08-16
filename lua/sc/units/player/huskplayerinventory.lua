@@ -1,4 +1,5 @@
 --Dangerous territory
+--[[
 function HuskPlayerInventory._get_weapon_name_from_sync_index(w_index)
 	if w_index <= #tweak_data.character.weap_unit_names_orig then
 		return tweak_data.character.weap_unit_names_orig[w_index]
@@ -15,3 +16,4 @@ function HuskPlayerInventory._get_weapon_name_from_sync_index(w_index)
 		return fps_id
 	end
 end
+--]]

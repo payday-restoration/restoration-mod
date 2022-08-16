@@ -148,6 +148,7 @@ function PlayerInventory:_feedback_heal_on_kill()
 end
 
 --Dangerous territory
+--[[
 function PlayerInventory._get_weapon_sync_index(wanted_weap_name)
 	local function get_weapon_index(wanted_weap_name)
 		if type_name(wanted_weap_name) == "Idstring" then
@@ -170,3 +171,4 @@ function PlayerInventory._get_weapon_sync_index(wanted_weap_name)
 
 	return get_weapon_index(wanted_weap_name) or -1
 end
+--]]

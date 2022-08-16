@@ -3407,13 +3407,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 
 	--AKM Overrides Table
-	self.wpn_fps_ass_akm.override = {
-		wpn_fps_lmg_rpk_s_standard = {
-			adds = {
-				"wpn_upg_ak_g_standard"
-			}
-		}
-	}
+	self.wpn_fps_ass_akm.override = self.wpn_fps_ass_akm.override or {}
 
 	self.wpn_fps_ass_akm.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
@@ -3494,12 +3488,35 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 	self.parts.wpn_fps_ass_akm_b_standard_gold.cc_material_config = Idstring("units/payday2/weapons/wpn_fps_ass_akm_gold_pts/wpn_fps_ass_akm_b_standard_gold")
 
 	--Gold AKM Overrides Table
-	self.wpn_fps_ass_akm_gold.override = {
-		wpn_fps_lmg_rpk_s_standard = {
-			adds = {
-				"wpn_upg_ak_g_standard"
-			}
-		}
+	self.wpn_fps_ass_akm_gold.override = self.wpn_fps_ass_akm_gold.override or {}
+
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_upg_m4_s_standard = {
+		stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
+	}
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_upg_m4_s_pts = {
+		stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
+	}
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_upg_m4_s_crane = {
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
+	}
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_upg_m4_s_mk46 = {
+		stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
+	}
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_upg_m4_s_ubr = {
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
+	}
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_snp_tti_s_vltor = {
+		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
+	}
+	self.wpn_fps_ass_akm_gold.override.wpn_fps_lmg_rpk_s_standard = {
+		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
 	--Drum Mag
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_upg_ak_m_drum")

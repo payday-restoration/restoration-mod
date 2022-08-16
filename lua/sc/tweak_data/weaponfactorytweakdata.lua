@@ -2857,6 +2857,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.wpn_fps_ass_m4_npc.override = deep_clone(self.wpn_fps_ass_m4.override)
 	self.wpn_fps_ass_m4_npc.uses_parts = deep_clone(self.wpn_fps_ass_m4.uses_parts)
 
+	self.wpn_fps_ass_m4_secondary = nil
+	self.wpn_fps_ass_m4_secondary_npc = nil
 end)
 
 --STRYK 18c
@@ -2958,6 +2960,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 	]]--
 	
 	self.wpn_fps_pis_g18c_npc.uses_parts = deep_clone(self.wpn_fps_pis_g18c.uses_parts)
+
+	self.wpn_fps_pis_g18c_primary = nil
+	self.wpn_fps_pis_g18c_primary_npc = nil
 
 end)
 
@@ -3218,6 +3223,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	self.wpn_fps_smg_olympic_npc.override = deep_clone(self.wpn_fps_smg_olympic.override)
 	self.wpn_fps_smg_olympic_npc.uses_parts = deep_clone(self.wpn_fps_smg_olympic.uses_parts)
 
+	self.wpn_fps_smg_olympic_primary = nil
+	self.wpn_fps_smg_olympic_primary_npc = nil
 end)
 
 --Shared AK Parts
@@ -3401,6 +3408,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 
 	self.wpn_fps_ass_74_npc.uses_parts = deep_clone(self.wpn_fps_ass_74.uses_parts)	
 
+	self.wpn_fps_ass_74_secondary = nil
+	self.wpn_fps_ass_74_secondary_npc = nil
 end)
 
 --AK 7.62
@@ -3585,6 +3594,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	--table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_upg_ak_s_nostock")
 	--table.insert(self.wpn_fps_smg_akmsu_npc.uses_parts, "wpn_upg_ak_s_nostock")	
 
+	self.wpn_fps_smg_akmsu_primary = nil
+	self.wpn_fps_smg_akmsu_primary_npc = nil
 end)
 
 --Izhma 12g
@@ -3886,7 +3897,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	self.wpn_fps_ass_aug.uses_parts[20] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
 	
 	self.wpn_fps_ass_aug_npc.uses_parts = deep_clone(self.wpn_fps_ass_aug.uses_parts)
-	
+
+	self.wpn_fps_ass_aug_secondary = nil
+	self.wpn_fps_ass_aug_secondary_npc = nil
 end)
 
 --JP36
@@ -4217,6 +4230,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	
 	self.wpn_fps_pis_deagle_npc.uses_parts = deep_clone(self.wpn_fps_pis_deagle.uses_parts)
 
+	self.wpn_fps_pis_deagle_primary = nil
+	self.wpn_fps_pis_deagle_primary_npc = nil
 end)
 
 --Compact-5
@@ -4470,6 +4485,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		magazine_empty = "last_recoil"
 	}
 
+	self.wpn_fps_pis_1911_primary = nil
+	self.wpn_fps_pis_1911_primary_npc = nil
 end)
 
 --Mark 10
@@ -4883,6 +4900,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b92fs", "resmod_b92fs", function(s
 	
 	self.wpn_fps_pis_beretta_npc.uses_parts = deep_clone(self.wpn_fps_pis_beretta.uses_parts)
 		
+	self.wpn_fps_pis_beretta_primary = nil
+	self.wpn_fps_pis_beretta_primary_npc = nil
 end)
 
 --Mosconi 12G
@@ -5023,6 +5042,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 	
 	self.wpn_fps_pis_rage_npc.uses_parts = deep_clone(self.wpn_fps_pis_rage.uses_parts)	
 
+	self.wpn_fps_pis_rage_primary = nil
+	self.wpn_fps_pis_rage_primary_npc = nil
 end)
 
 --OVE9000 SAW
@@ -5403,6 +5424,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 	
+	self.wpn_fps_ass_s552_secondary = nil
+	self.wpn_fps_ass_s552_secondary_npc = nil
 end)
 
 --Gruber Kurz

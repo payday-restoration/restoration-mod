@@ -15958,10 +15958,13 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	table.insert(self.weap_ids, "peacemaker")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker"))
 	
+	--[[
+	--Unused, commenting out
 	--Akimbo AKMSUs
 	table.insert(self.weap_ids, "x_akmsu")
-	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_x_akmsu"))	
-	
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_x_akmsu"))		
+	]]--
+		
 	--Grenadier M4
 	table.insert(self.weap_ids, "m4_boom")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"))	
@@ -15969,19 +15972,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--HK21
 	table.insert(self.weap_ids, "hk21_sc")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"))		
-	
-	--Zeal Mp5s
-	table.insert(self.weap_ids, "mp5_zeal")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"))
-
-	--Doc Shotgun
-	table.insert(self.weap_ids, "shotgun_summer")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"))	
-
-	--Elektra Rifle
-	table.insert(self.weap_ids, "m16_summer")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"))		
-	
+		
 	--Cloaker Cloaker MP5
 	table.insert(self.weap_ids, "mp5_cloak")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))
@@ -15994,7 +15985,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	table.insert(self.weap_ids, "r870_taser")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"))
 
-	--Titan Taser Shotgun
+	--OICW
 	table.insert(self.weap_ids, "oicw")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"))		
 	
@@ -16061,10 +16052,6 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Crosskill .45 
 	table.insert(self.weap_ids, "m1911_npc")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911"))	
-
-	--Vet Cop Boss Pistols (Akimbo Raging Bulls)
-	table.insert(self.weap_ids, "vet_cop_boss_pistol")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"))		
 	
 	--M60
 	table.insert(self.weap_ids, "m60")
@@ -16186,8 +16173,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	table.insert(self.weap_ids, "gauss_gun")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"))			
 	
-	--For some reason, once this hits 92 entries the third person husk used by players breaks the Akimbo 1911s. Fix pls
-	--Also it seems each entry after it can change the gun to be everything from SVDs to Reapeter rifles. 
+	--For some reason, once this hits 92 entries the third person husk used by players breaks. Look into solutions
 	
 	--Titandozer M32
 	table.insert(self.weap_ids, "m32_large")

@@ -3633,12 +3633,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		stats = {
 			value = 1, 
 			extra_ammo = 15,
-			reload = -5, 
-			concealment = -4
+			reload = -6, 
+			concealment = -5
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125,
-			sms = 0.9
+			sms = 0.8
 		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -10089,14 +10089,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
 	self.parts.wpn_fps_sho_aa12_mag_drum.custom_stats = {
-		ads_speed_mult = 1.1,
-		sms = 0.9
+		ads_speed_mult = 1.125,
+		sms = 0.8
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
 		extra_ammo = 12,
-		reload = -5,
-		concealment = -4
+		reload = -6,
+		concealment = -5
 	}
 	
 	--Override tables

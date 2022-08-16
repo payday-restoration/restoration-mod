@@ -216,7 +216,7 @@ core:import("CoreEvent")
 		})
 		if restoration:all_enabled("HUD/MainHUD", "HUD/Stealth") then 
 			if restoration.Options:GetValue("HUD/Extra/StealthOrigPos") then 
-				
+				level_suspicion_panel:move(21,30)
 			else
 				level_suspicion_panel:move(21,30)  --this is not the right way to do it but by god i'm doing it
 	--			level_suspicion_panel:move(0,20) Offset to account for mutator changes

@@ -418,9 +418,9 @@ function PlayerDamage:damage_bullet(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.05, 5) * shake_armor_multiplier
-	self._unit:camera():play_shaker("player_land", 1 * shake_multiplier)
-	self._unit:camera():play_shaker("player_bullet_damage", 0.5 * shake_multiplier)
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 5) * shake_armor_multiplier
+	self._unit:camera():play_shaker("player_land", 0.3 * shake_multiplier)
+	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
 	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
@@ -505,9 +505,9 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.05, 5) * shake_armor_multiplier
-	self._unit:camera():play_shaker("player_land", 1 * shake_multiplier)
-	self._unit:camera():play_shaker("player_bullet_damage", 0.5 * shake_multiplier)
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 5) * shake_armor_multiplier
+	self._unit:camera():play_shaker("player_land", 0.3 * shake_multiplier)
+	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
 	if not self:_apply_damage(attack_data, damage_info, "fire", t) then
@@ -1672,5 +1672,18 @@ if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 			end
 		end
 		return _hit_direction_actual(self, position_vector, ...)
+	end
+end
+
+function PlayerDamage:play_whizby(position)
+	self._unit:sound():play_whizby({
+		position = position
+	})
+	local pm = managers.player
+	local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)
+	self._unit:camera():play_shaker("whizby", 0.1 * shake_armor_multiplier)
+
+	if not _G.IS_VR then
+		managers.rumble:play("bullet_whizby")
 	end
 end

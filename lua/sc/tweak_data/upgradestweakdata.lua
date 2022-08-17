@@ -1111,11 +1111,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Unseen Strike
 				self.values.temporary.unseen_strike = {
 					{ --Basic
-						1.9915,
+						1.15,
 						0.01 --Workaround for Buff Tracker sanity checks.
 					},
 					{ --Ace
-						1.9915,
+						1.15,
 						4
 					}
 				}

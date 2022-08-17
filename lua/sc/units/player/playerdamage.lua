@@ -618,7 +618,7 @@ function PlayerDamage:damage_melee(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 1) * shake_armor_multiplier
 	managers.rumble:play("damage_bullet")
 	
 	local t = pm:player_timer():time()
@@ -631,8 +631,8 @@ function PlayerDamage:damage_melee(attack_data)
 		"melee_hit",
 		"melee_hit_var2"
 	}
-	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(1 * self._melee_push_multiplier, 0.2))
-
+	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * self._melee_push_multiplier, 0.2))
+	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
 	if not self._bleed_out then
 		mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)

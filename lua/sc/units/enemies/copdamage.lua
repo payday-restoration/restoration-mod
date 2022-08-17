@@ -304,55 +304,17 @@ function CopDamage:damage_fire(attack_data)
 	local damage = attack_data.damage
 	local distance = 1000
 	local hit_pos = attack_data.col_ray.hit_position
+	local is_player = attack_data.attacker_unit == managers.player:player_unit()
+	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_FIRE
 
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		if hit_pos then
-			distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
+	if is_player then
+		if self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 		end
 
-		if weap_unit and alive(weap_unit) and attack_data.variant ~= "stun" then
-			local weap_base = weap_unit:base()
-			local is_grenade_or_ground_fire = nil
-
-			if weap_base then
-				if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
-					is_grenade_or_ground_fire = true
-				end
-			end
-
-			if is_grenade_or_ground_fire then
-				if attack_data.is_fire_dot_damage and self._char_tweak.priority_shout then
-					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-				end
-			else
-				if head then
-					headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-					managers.player:on_headshot_dealt(self._unit, attack_data)
-				end
-
-				local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
-
-				if critical_hit then
-					damage = crit_damage
-				end
-
-				if self._char_tweak.priority_shout then
-					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-				end
-
-				local damage_scale = nil
-				if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
-					damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
-				end		
-
-				if not attack_data.is_fire_dot_damage and damage > 0 then
-					if critical_hit then
-						managers.hud:on_crit_confirmed(damage_scale)
-					else
-						managers.hud:on_hit_confirmed(damage_scale)
-					end
-				end
-			end
+		if head then
+			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
 		end
 	end
 
@@ -393,8 +355,50 @@ function CopDamage:damage_fire(attack_data)
 
 	damage = self:_apply_damage_reduction(damage)
 
-	if self._char_tweak.DAMAGE_CLAMP_FIRE then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_FIRE)
+	if damage_clamp then
+		damage = math.min(damage, damage_clamp)
+	end
+
+	if is_player then
+		if hit_pos then
+			distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
+		end
+
+		if weap_unit and alive(weap_unit) and attack_data.variant ~= "stun" then
+			local weap_base = weap_unit:base()
+			local is_grenade_or_ground_fire = nil
+
+			if weap_base then
+				if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
+					is_grenade_or_ground_fire = true
+				end
+			end
+
+			if is_grenade_or_ground_fire then
+				if attack_data.is_fire_dot_damage and self._char_tweak.priority_shout then
+					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+				end
+			else
+				local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage, damage_clamp)
+
+				if critical_hit then
+					damage = crit_damage
+				end
+
+				local damage_scale = nil
+				if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
+					damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
+				end		
+
+				if not attack_data.is_fire_dot_damage and damage > 0 then
+					if critical_hit then
+						managers.hud:on_crit_confirmed(damage_scale)
+					else
+						managers.hud:on_hit_confirmed(damage_scale)
+					end
+				end
+			end
+		end
 	end
 
 	attack_data.raw_damage = damage
@@ -854,17 +858,21 @@ function CopDamage:damage_bullet(attack_data)
 	local damage_type = "normal"
 	local ineffective_damage = false
 	local effective_damage = false
+	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
+	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_BULLET
 	
-	--Saw+Throwables ignore clamps
-	if self._char_tweak.DAMAGE_CLAMP_BULLET then
-		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
-		else
-			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
-			--Cease
-			ineffective_damage = true			
+	if is_player then
+		if  self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 		end
-	end	
 	
+		if head then
+			managers.player:on_headshot_dealt(self._unit, attack_data)
+			headshot_by_player = true
+			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+		end
+	end
+
 	if not weap_base.thrower_unit then
 		--Sentries should do machine gun damage
 		if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
@@ -885,53 +893,6 @@ function CopDamage:damage_bullet(attack_data)
 			end		
 		end		
 	end	
-
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		attack_data.backstab = self:check_backstab(attack_data)
-
-		if attack_data.backstab == true and weap_base._autograph_multiplier then
-			damage = damage * weap_base._autograph_multiplier
-		end
-
-		local damage_scale = nil
-
-		if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
-			damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
-		end		
-		
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
-
-		if critical_hit then
-			damage = crit_damage
-			attack_data.critical_hit = true
-
-			if damage > 0 then
-				managers.hud:on_crit_confirmed(damage_scale)
-			end
-		elseif ineffective_damage then
-			if damage > 0 then
-				managers.hud:on_ineffective_hit_confirmed(damage_scale)
-			end		
-		elseif effective_damage then
-			if damage > 0 then
-				managers.hud:on_effective_hit_confirmed(damage_scale)
-			end				
-		else
-			if damage > 0 then
-				managers.hud:on_hit_confirmed(damage_scale)
-			end
-		end
-
-		if self._char_tweak.priority_shout then
-			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-		end
-
-		if head then
-			managers.player:on_headshot_dealt(self._unit, attack_data)
-			headshot_by_player = true
-			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-		end
-	end
 
 	if not self._damage_reduction_multiplier and head then
 		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult
@@ -970,6 +931,56 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	damage = self:_apply_damage_reduction(damage)
+
+	--Saw+Throwables ignore clamps
+	if damage_clamp then
+		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
+			damage_clamp = nil
+		else
+			damage = math.min(damage, damage_clamp)
+			--Cease
+			ineffective_damage = true			
+		end
+	end	
+
+	--Crits need to be the last calcuation to alter damage else Pocohud's crit damage pop-ups print wrong
+	if is_player then
+		attack_data.backstab = self:check_backstab(attack_data)
+
+		if attack_data.backstab == true and weap_base._autograph_multiplier then
+			damage = damage * weap_base._autograph_multiplier
+		end
+
+		local damage_scale = nil
+
+		if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
+			damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
+		end		
+		
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage, damage_clamp)
+
+		if critical_hit then
+			damage = crit_damage
+			attack_data.critical_hit = true
+
+			if damage > 0 then
+				managers.hud:on_crit_confirmed(damage_scale)
+			end
+		elseif ineffective_damage then
+			if damage > 0 then
+				managers.hud:on_ineffective_hit_confirmed(damage_scale)
+			end		
+		elseif effective_damage then
+			if damage > 0 then
+				managers.hud:on_effective_hit_confirmed(damage_scale)
+			end				
+		else
+			if damage > 0 then
+				managers.hud:on_hit_confirmed(damage_scale)
+			end
+		end
+
+	end
 
 	attack_data.raw_damage = damage
 
@@ -1377,6 +1388,26 @@ function CopDamage:damage_melee(attack_data)
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect
+	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
+	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
+
+	if is_player then
+		if self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+		end
+
+		if head then
+			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
+		end
+
+		attack_data.backstab = self:check_backstab(attack_data)
+
+		if attack_data.backstab and attack_data.backstab_multiplier then
+			damage = damage * attack_data.backstab_multiplier
+			damage_effect = damage_effect * attack_data.backstab_multiplier
+		end
+	end
 
 	if self._char_tweak.damage.melee_damage_mul then
 		damage = damage * self._char_tweak.damage.melee_damage_mul
@@ -1387,14 +1418,18 @@ function CopDamage:damage_melee(attack_data)
 		damage_effect = damage_effect * self._marked_dmg_mul
 	end
 
-	damage = self:_apply_damage_reduction(damage)
-	damage_effect = self:_apply_damage_reduction(damage_effect)
-
-	if self._char_tweak.DAMAGE_CLAMP_MELEE then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_MELEE)
-		damage_effect = math.min(damage_effect, self._char_tweak.DAMAGE_CLAMP_MELEE)
+	if head and not self._damage_reduction_multiplier then
+		if self._char_tweak.headshot_dmg_mul then
+			--Use math.max to cover edge cases (mostly Capt. Summers) where cleaver type weapons would deal *less* damage on a headshot than a bodyshot.
+			headshot_multiplier = math.max(self._char_tweak.headshot_dmg_mul * headshot_multiplier, 1)
+			damage = damage * headshot_multiplier
+			damage_effect = damage_effect * headshot_multiplier
+		else
+			damage = self._health * 10
+			damage_effect = self._health * 10
+		end
 	end
-	
+
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[attack_data.name_id]
 	local ineffective_damage = false
 	local effective_damage = false
@@ -1411,16 +1446,17 @@ function CopDamage:damage_melee(attack_data)
 			effective_damage = true
 		end		
 	end		
+
+	damage = self:_apply_damage_reduction(damage)
+	damage_effect = self:_apply_damage_reduction(damage_effect)
+
+	if damage_clamp then
+		damage = math.min(damage, damage_clamp)
+		damage_effect = math.min(damage_effect, damage_clamp)
+	end
 	
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		attack_data.backstab = self:check_backstab(attack_data)
-
-		if attack_data.backstab and attack_data.backstab_multiplier then
-			damage = damage * attack_data.backstab_multiplier
-			damage_effect = damage_effect * attack_data.backstab_multiplier
-		end
-
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
+	if is_player then
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage, damage_clamp)
 		
 		if critical_hit then
 			damage = crit_damage
@@ -1455,27 +1491,6 @@ function CopDamage:damage_melee(attack_data)
 
 		if tweak_data.achievement.cavity.melee_type == attack_data.name_id and not is_civilian then
 			managers.achievment:award(tweak_data.achievement.cavity.award)
-		end
-
-		if self._char_tweak.priority_shout then
-			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-		end
-
-		if head then
-			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-			managers.player:on_headshot_dealt(self._unit, attack_data)
-		end
-	end
-	
-	if head and not self._damage_reduction_multiplier then
-		if self._char_tweak.headshot_dmg_mul then
-			--Use math.max to cover edge cases (mostly Capt. Summers) where cleaver type weapons would deal *less* damage on a headshot than a bodyshot.
-			headshot_multiplier = math.max(self._char_tweak.headshot_dmg_mul * headshot_multiplier, 1)
-			damage = damage * headshot_multiplier
-			damage_effect = damage_effect * headshot_multiplier
-		else
-			damage = self._health * 10
-			damage_effect = self._health * 10
 		end
 	end
 
@@ -3560,7 +3575,7 @@ function CopDamage.is_hrt(type)
 	return type == "swat" or type == "fbi" or type == "cop" or type == "security"
 end
 
-function CopDamage:roll_critical_hit(attack_data, damage)
+function CopDamage:roll_critical_hit(attack_data, damage, damage_clamp)
 	local damage = damage or attack_data.damage
 	if not self:can_be_critical(attack_data) then
 		return false, damage
@@ -3591,6 +3606,10 @@ function CopDamage:roll_critical_hit(attack_data, damage)
 		end
 	end
 
+	if damage_clamp then
+		damage = math.min(damage, damage_clamp)
+	end
+	
 	return critical_hit, damage
 end
 

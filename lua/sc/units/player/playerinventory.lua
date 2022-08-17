@@ -84,7 +84,7 @@ function PlayerInventory:_start_feedback_effect(end_time, interval, range)
 		effect = "feedback",
 		t = end_time + 0.3,
 		interval = interval or 1.5,
-		range = range or 1200,
+		range = range or 1500,
 		sound = self._unit:sound_source():post_event("ecm_jammer_puke_signal")
 	}
 	local is_player = managers.player:player_unit() == self._unit

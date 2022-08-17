@@ -713,12 +713,12 @@ function BlackMarketGui:_get_armor_stats(name)
 				skill_stats[stat.name] = {value = base * managers.player:body_armor_regen_multiplier(false, 0) - base}
 			end
 		elseif stat.name == "damage_shake" then
-			local base = tweak_data.gui.armor_damage_shake_base
+			local base = 10--tweak_data.gui.armor_damage_shake_base
 			local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)
 			local skill = math.max(managers.player:upgrade_value("player", "damage_shake_multiplier", 1), 0.01)
 			local base_value = base
-			local mod_value = base / mod - base_value
-			local skill_value = ((base / mod) / skill - base_value) - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
+			local mod_value = base * mod - base_value
+			local skill_value = ((base * mod) / skill - base_value) - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
 			base_stats[stat.name] = {value = (base_value + mod_value) * tweak_data.gui.stats_present_multiplier}
 			skill_stats[stat.name] = {value = skill_value * tweak_data.gui.stats_present_multiplier}
 		elseif stat.name == "stamina" then
@@ -2724,7 +2724,13 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "health"
 				},
 				{
-					name = "deflection"
+					name = "deflection",
+					append = "%"
+				},
+				{
+					name = "damage_shake",
+					inverted = true,
+					append = "%"
 				},
 				{
 					revert = true,
@@ -2742,7 +2748,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					name = "regen_time",
-					inverted = true
+					inverted = true,
+					append = "s"
 				}
 			}
 			local x = 0
@@ -3636,16 +3643,16 @@ function BlackMarketGui:show_stats()
 
 		for _, stat in ipairs(self._armor_stats_shown) do
 			self._armor_stats_texts[stat.name].name:set_text(utf8.to_upper(managers.localization:text("bm_menu_" .. stat.name)))
-
 			value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
+			local append = stat.append or ""
 
 			if self._slot_data.name == equipped_slot then
 				local base = base_stats[stat.name].value
 
 				self._armor_stats_texts[stat.name].equip:set_alpha(1)
-				self._armor_stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value))
-				self._armor_stats_texts[stat.name].base:set_text(format_round(base, stat.round_value))
-				self._armor_stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) or "")
+				self._armor_stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value) .. append)
+				self._armor_stats_texts[stat.name].base:set_text(format_round(base, stat.round_value) .. append)
+				self._armor_stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) .. append or "")
 				self._armor_stats_texts[stat.name].total:set_text("")
 				self._armor_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.text)
 
@@ -3663,10 +3670,10 @@ function BlackMarketGui:show_stats()
 				local equip = math.max(equip_base_stats[stat.name].value + equip_mods_stats[stat.name].value + equip_skill_stats[stat.name].value, 0)
 
 				self._armor_stats_texts[stat.name].equip:set_alpha(0.75)
-				self._armor_stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value))
+				self._armor_stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value) .. append)
 				self._armor_stats_texts[stat.name].base:set_text("")
 				self._armor_stats_texts[stat.name].skill:set_text("")
-				self._armor_stats_texts[stat.name].total:set_text(format_round(value, stat.round_value))
+				self._armor_stats_texts[stat.name].total:set_text(format_round(value, stat.round_value) .. append)
 
 				--Allow armor stats with "inverted" flag to have inverted green/red colors.
 				if equip < value then

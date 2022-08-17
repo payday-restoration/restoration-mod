@@ -363,13 +363,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0
 	}
 	self.values.player.body_armor.damage_shake = { 
-		1.5, 
-		1.375, 
-		1.25, 
-		1.125, 
-		0.875, 
-		0.75, 
-		0.5 
+		1.0, 
+		0.9, 
+		0.8, 
+		0.7, 
+		0.5, 
+		0.4, 
+		0.2 
 	}
 	self.values.player.body_armor.stamina = {
 		1,

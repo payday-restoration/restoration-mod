@@ -419,7 +419,8 @@ function PlayerDamage:damage_bullet(attack_data)
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
 	local shake_multiplier = math.clamp(attack_data.damage, 0.05, 5) * shake_armor_multiplier
-	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
+	self._unit:camera():play_shaker("player_land", 1 * shake_multiplier)
+	self._unit:camera():play_shaker("player_bullet_damage", 0.5 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
 	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
@@ -504,8 +505,9 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
-	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
+	local shake_multiplier = math.clamp(attack_data.damage, 0.05, 5) * shake_armor_multiplier
+	self._unit:camera():play_shaker("player_land", 1 * shake_multiplier)
+	self._unit:camera():play_shaker("player_bullet_damage", 0.5 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
 	if not self:_apply_damage(attack_data, damage_info, "fire", t) then

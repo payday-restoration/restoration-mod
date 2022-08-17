@@ -638,28 +638,6 @@
 	<model				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"  load="true"/>
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk"  load="true"/>
-
-	<!-- OMNIA BENELLI DOZER (don't kill me)-->
-	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
-	<model				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<object				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
-	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
-	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet" force="true"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" force="true"/>	
-
-	<!--OMNIA BENELLI DOZER BITS-->	
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
-		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
-		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
-		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	<!--textures-->
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>

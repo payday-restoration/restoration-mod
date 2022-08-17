@@ -679,7 +679,29 @@
 	<texture			path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_il" force="false"/>	   
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/spring_glass_op" force="false" load="true"/>    
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/spring_glass_op" force="false" load="true"/>
+
+	<!--Spring's Ben Boi-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
+	<model				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<object				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
+	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet" force="true"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" force="true"/>	
+
+	<!--OMNIA BENELLI DOZER BITS-->	
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	<!--Autumn-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>

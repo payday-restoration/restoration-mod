@@ -1457,7 +1457,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--MSR
-		["bm_msr_sc_desc"] = "미군이 선택한 저격소총. 우수한 명중률과 핸들링 그리고 은닉성으로 인해 다목적 저격소총에 좋습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		["bm_msr_sc_desc"] = "미군이 선택한 저격소총. 우수한 명중률과 핸들링 그리고 은페도로 인해 다목적 저격소총에 좋습니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
 		--R700
 		["bm_r700_sc_desc"] = "Rattlesnake 저격소총의 후속작. 명중률와 핸들링이 좋고 사거리가 전작보다 좋습니다. 단점은? 망할 5발 탄창이죠.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
 		--QBU88
@@ -1622,6 +1622,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 소유했다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭에서 인멸되었고 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있지만 이 복장만은 파괴된 쓰레기 트럭 근처에 남았기 때문에 회수 되었습니다.",
 
 		--New menu stats--
+		["bm_menu_damage_shake"] = "흔들림",
 		["bm_menu_deflection"] = "굴절",
 		["bm_menu_regen_time"] = "재생 지연",
 		["bm_menu_swap_speed"] = "스왑 시간",
@@ -1818,12 +1819,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-		["bm_menu_bonus_concealment_p1"] = "적은 은닉성 보너스 및 안정성 패널티",
-		["bm_menu_bonus_concealment_p1_mod"] = "적은 은닉성 수정치",
-		["bm_menu_bonus_concealment_p2"] = "많은 은닉성 보너스 및 안정성 패널티",
-		["bm_menu_bonus_concealment_p2_mod"] = "많은 은닉성 수정치",
-		["bm_menu_bonus_concealment_p3"] = "대규모 은닉성 보너스 및 안정성 패널티",
-		["bm_menu_bonus_concealment_p3_mod"] = "대규모 은닉성 수정치",
+		["bm_menu_bonus_concealment_p1"] = "적은 은페도 보너스 및 안정성 패널티",
+		["bm_menu_bonus_concealment_p1_mod"] = "적은 은페도 수정치",
+		["bm_menu_bonus_concealment_p2"] = "많은 은페도 보너스 및 안정성 패널티",
+		["bm_menu_bonus_concealment_p2_mod"] = "많은 은페도 수정치",
+		["bm_menu_bonus_concealment_p3"] = "대규모 은페도 보너스 및 안정성 패널티",
+		["bm_menu_bonus_concealment_p3_mod"] = "대규모 은페도 수정치",
 		["bm_menu_bonus_spread_p1"] = "적은 명중률 보너스 및 안정성 패널티",
 		["bm_menu_bonus_spread_p1_mod"] = "적은 명중률 수정치",
 		["bm_menu_bonus_spread_n1"] = "대규모 안정성 보너스 및 명중률 패널티",
@@ -1834,7 +1835,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "당신과 당신의 팀원은 경험치 보상을 +5%만큼 받습니다.",
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
-		["bm_menu_concealment"] = "은닉성\n",
+		["bm_menu_concealment"] = "은페도\n",
 		["bm_menu_bonus_spread_p2_mod"] = "많은 명중률 수정치",
 		["bm_menu_bonus_spread_p3_mod"] = "대규모 명중률 수정치",
 		["bm_menu_bonus_recoil_p2_mod"] = "많은 안정성 수정치",
@@ -2192,7 +2193,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_equipment_armor_kit"] = "투척물 가방",
 		["bm_equipment_armor_kit"] = "투척물 가방",
 		["debug_equipment_armor_kit"] = "투척물 가방",
-		["bm_equipment_armor_kit_desc"] = "투척물 가방을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 투척물을 보충할 수  있습니다. 세 번만 사용할 수 있습니다.\n\n당신은 가방을 보고 얼마나 남았는지 짐작할 수 있습니다.\n\n투척물 가방는 상황이 위험할때 특수 무기를 휴대하기 위해 일반적으로 군인이나 용병이 사용하는 은닉성 케이스입니다.",
+		["bm_equipment_armor_kit_desc"] = "투척물 가방을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 투척물을 보충할 수  있습니다. 세 번만 사용할 수 있습니다.\n\n당신은 가방을 보고 얼마나 남았는지 짐작할 수 있습니다.\n\n투척물 가방는 상황이 위험할때 특수 무기를 휴대하기 위해 일반적으로 군인이나 용병이 사용하는 은페용 케이스입니다.",
 
 		["bm_equipment_ecm_jammer_desc"] = "ECM 재머를 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 10초 동안 활성화됩니다.\n\nECM 재머를 상호 작용하여 피드백 기능을 킬 수 있습니다. 피드백 루프는 1.5초마다 적을 기절시킵니다. 피드백은 10초 동안 지속되며 4분 후에 재충전됩니다.\n\nECM 재머는 ATM 기계를 열 수 있고 휴대폰, 카메라 및 기타 탐지 시스템과 같은 전자 장치를 일시적으로 중지시키며 목표를 쉽게 달성할 수 있도록 합니다.",
 		["bm_equipment_first_aid_kit_desc"] = "구급 키트를 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 150 체력을 회복합니다. 한 번만 사용할 수 있습니다.\n\n구급 키트는 긴급 상황에서 신속하게 응급 처치를 제공하는 데 사용되는 소모품 및 장비입니다.",
@@ -2311,7 +2312,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_1"] = "산탄총은 명중률이 낮아 장거리에서 효율성을 잃는 반면 명중률이 높으면 여러 대상을 공격하는 능력이 저하됩니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오!",	
 		["loading_equip_skills_res_2"] = "권총은 다른 무기류에 비해 교체 속도가 빠릅니다.",	
 		["loading_equip_skills_res_3"] = "레스토레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 대미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
-		["loading_equip_skills_res_4"] = "대미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은닉성이 낮습니다.",	
+		["loading_equip_skills_res_4"] = "대미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은페도가 낮습니다.",	
 		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 수리합니다.",	
 		["loading_equip_skills_res_6"] = "센트리 철갑탄을 잠금 해제된 경우 장비 메뉴에서 기본 탄약 유형을 선택할 수 있습니다.",	
 		["loading_equip_skills_res_7"] = "특성 덱은 상당한 대미지 보너스를 제공하며 그 중 다수는 희귀하고 귀중한 치유 능력을 제공합니다.",	
@@ -2341,7 +2342,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "레스토레이션 모드는 특성 효과를 비활성화하는 대가로 돈과 경험치 획득을 더욱 증가하는 2개의 새로운 특성 덱을 추가합니다. 더 나은 보상을 위해 도전해보십시오!",
 		["loading_equip_skills_res_32"] = "조준 매커니즘은 조준할 때 명중률의 이점을 얻으려면 완전히 조준해야 효과가 증가하도록 변경되었습니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
 		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 사용하면 무기를 사용하기가 번거로워집니다.",
-		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은닉성에 영향을 받습니다.",
+		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은페도에 영향을 받습니다.",
 		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",
 		["loading_equip_skills_res_36"] = "전투 중 소음기는 당신이 적을 조준할때 적이 회피할 가능성을 줄입니다. 그들이 당신을 피하지 않고 보내는 시간을 대신 당신을 쏘는 데 쓰일 가능성이 있음을 명심하십시오.",
 		
@@ -2841,11 +2842,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
-			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은닉성을 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은닉성 ##4##만큼, 다른 모든 방탄복의 은닉성을 ##2##만큼 증가합니다.\n\n모든 방탄 조끼의 은닉성을 ##4##만큼 증가합니다.",
+			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은페도를 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은페도를 ##4##만큼, 다른 모든 방탄복의 은페도를 ##2##만큼 증가합니다.\n\n모든 방탄 조끼의 은페도를 ##4##만큼 증가합니다.",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
-			["menu_dire_need_beta_desc_sc"] = "베이직: ##$basic##\n은닉성이 ##35##에서 ##3##씩 낮아질 수록 최대 ##15%##까지 이동 속도가 ##1.5%##만큼 증가합니다.\n\n에이스: ##$pro##\n은닉성이 ##35##에서 ##1##씩 낮아질 수록 최대 ##15%##까지 이동 속도가 ##1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 ##12%##만큼, 집라인을 타는 동안 1초마다 회피의 ##30%##만큼 채워집니다.",
+			["menu_dire_need_beta_desc_sc"] = "베이직: ##$basic##\n은페도가 ##35##에서 ##3##씩 낮아질 수록 최대 ##15%##까지 이동 속도가 ##1.5%##만큼 증가합니다.\n\n에이스: ##$pro##\n은페도가 ##35##에서 ##1##씩 낮아질 수록 최대 ##15%##까지 이동 속도가 ##1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 ##12%##만큼, 집라인을 타는 동안 1초마다 회피의 ##30%##만큼 채워집니다.",
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",
@@ -2862,7 +2863,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n무기를 꺼내고 넣는 속도가 ##15%##만큼 증가합니다\n\n에이스: ##$pro##\n모든 무기의 은닉성이 ##2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n무기를 꺼내고 넣는 속도가 ##15%##만큼 증가합니다\n\n에이스: ##$pro##\n모든 무기의 은페도가 ##2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
@@ -2878,7 +2879,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
-			["menu_unseen_strike_beta_desc_sc"] = "베이직: ##$basic##\n은닉성이 ##35##에서 ##3##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n치명타 피해가 추가로 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n은닉성이 ##35##에서 ##1##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 ##50%##만큼 증가합니다.",
+			["menu_unseen_strike_beta_desc_sc"] = "베이직: ##$basic##\n은페도가 ##35##에서 ##3##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n치명타 피해가 추가로 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n은페도가 ##35##에서 ##1##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 ##50%##만큼 증가합니다.",
 
 
 
@@ -2921,7 +2922,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	--}
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "베이직: ##$basic##\n은닉성이 ##35##에서 ##3##씩 낮아질 수록 ##1%##만큼의 회피 포인트를 최대 ##10%##만큼까지 얻습니다.\n\n에이스: ##$pro##\n은닉성이 ##35##에서 ##1##씩 낮아질 수록 ##1%##만큼의 회피 포인트를 최대 ##10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 ##2%##만큼 회복됩니다. 이것은 방탄복이 부서질 때마다 한 번만 발생합니다.",
+		["menu_jail_diet_beta_desc_sc"] = "베이직: ##$basic##\n은페도가 ##35##에서 ##3##씩 낮아질 수록 ##1%##만큼의 회피 포인트를 최대 ##10%##만큼까지 얻습니다.\n\n에이스: ##$pro##\n은페도가 ##35##에서 ##1##씩 낮아질 수록 ##1%##만큼의 회피 포인트를 최대 ##10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 ##2%##만큼 회복됩니다. 이것은 방탄복이 부서질 때마다 한 번만 발생합니다.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "명사수",
@@ -3038,7 +3039,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "헤드샷 대미지가 ##25%만큼 증가합니다.##\n\n##25%##만큼 많은 피해를 입힙니다. 투척 무기, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.",
-		["menu_deckall_4_desc_sc"] = "은닉성이 ##+1##만큼 증가합니다.\n\n방탄복 착용 시 이동 속도 저하가 ##15%## 감소합니다.\n\n일차와 작업을 완료하면 경험치를 ##45%##만큼 얻습니다.\n\n##25%##만큼 많은 피해를 입힙니다. 투척 무기, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.",
+		["menu_deckall_4_desc_sc"] = "은페도가 ##+1##만큼 증가합니다.\n\n방탄복 착용 시 이동 속도 저하가 ##15%## 감소합니다.\n\n일차와 작업을 완료하면 경험치를 ##45%##만큼 얻습니다.\n\n##25%##만큼 많은 피해를 입힙니다. 투척 무기, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.",
 		["menu_deckall_6_desc_sc"] = "당신과 당신의 팀원이 사용할 수 있는 투척 무기 케이스 장비를 잠금 해제합니다. 투척 무기 케이스는 하이스트 중에 투척 무기를 보충하는 데 사용할 수 있습니다.\n\n##25%##만큼 많은 피해를 입힙니다. 투척 무기, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.",
 		["menu_deckall_8_desc_sc"] = "의료 가방의 상호 작용 속도가 ##20%만큼 빨라집니다.##\n\n##25%## 더 많은 피해를 입힙니다. 투척 무기, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.",
 
@@ -3138,9 +3139,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n매 ##5##초마다 한 번만 일어납니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
 
 		--Grinder--
-		["menu_st_spec_11_desc_sc"] = "전형적인 그라인더는 열심히 일하고, 어려운 상황들 속에서도 흔들리지 않고 상황을 해결할 수 있습니다. \n\n그라인더는 항상 전방에 서고, 여러 처벌들을 이겨내 가며, 그가 얼마나 피해를 받든지 간에 적에게 피해를 줘 살아날수 있는 점에 크게 의존하고 있습니다.\n\n전체 특성 덱의 이점:\n##-##적에게 피해를 입히면 ##5##초 동안 매 초마다 체력이 ##3##씩 회복됩니다. 이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 방편복을 착용한 상태에서만 발생합니다. 또한 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n##-##방편복을 착용하는 동안 방탄력을 ##70##만큼 잃습니다.\n##-##방편복을 착용하는 동안 은닉성을 ##8##만큼 얻습니다.\n##-##각 중첩마다 이동 속도를 ##5%##만큼 증가시킵니다.\n##-##시체가방 케이스가 ##2##개로 증가합니다.",
+		["menu_st_spec_11_desc_sc"] = "전형적인 그라인더는 열심히 일하고, 어려운 상황들 속에서도 흔들리지 않고 상황을 해결할 수 있습니다. \n\n그라인더는 항상 전방에 서고, 여러 처벌들을 이겨내 가며, 그가 얼마나 피해를 받든지 간에 적에게 피해를 줘 살아날수 있는 점에 크게 의존하고 있습니다.\n\n전체 특성 덱의 이점:\n##-##적에게 피해를 입히면 ##5##초 동안 매 초마다 체력이 ##3##씩 회복됩니다. 이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 방편복을 착용한 상태에서만 발생합니다. 또한 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n##-##방편복을 착용하는 동안 방탄력을 ##70##만큼 잃습니다.\n##-##방편복을 착용하는 동안 은페도를 ##8##만큼 얻습니다.\n##-##각 중첩마다 이동 속도를 ##5%##만큼 증가시킵니다.\n##-##시체가방 케이스가 ##2##개로 증가합니다.",
 		["menu_st_spec_11_desc_sc_short"] = "전형적인 그라인더는 열심히 일하고, 어려운 상황들 속에서도 흔들리지 않고 상황을 해결할 수 있습니다. \n\n그라인더는 항상 전방에 서고, 여러 처벌들을 이겨내 가며, 그가 얼마나 피해를 받든지 간에 적에게 피해를 줘 살아날수 있는 점에 크게 의존하고 있습니다.",		
-		["menu_deck11_1_desc_sc"] = "적에게 피해를 입히면 ##3##초 동안 1초마다 체력이 ##3##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복을 착용하는 동안 방탄력을 ##80##만큼 잃습니다.\n\n방편복을 착용하는 동안 은닉성을 ##8##만큼 얻습니다.",
+		["menu_deck11_1_desc_sc"] = "적에게 피해를 입히면 ##3##초 동안 1초마다 체력이 ##3##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복을 착용하는 동안 방탄력을 ##80##만큼 잃습니다.\n\n방편복을 착용하는 동안 은페도를 ##8##만큼 얻습니다.",
 		["menu_deck11_3_desc_sc"] = "중첩이 1초마다 ##1## 체력을 추가로 회복합니다.",
 		["menu_deck11_5_desc_sc"] = "중첩이 ##2##초 동안 추가로 지속됩니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
 		["menu_deck11_7_desc_sc"] = "중첩이 1초마다 ##1## 체력을 추가로 회복합니다.",

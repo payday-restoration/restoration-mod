@@ -15951,6 +15951,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Vanilla Minigun becomes Benelli to make Benelli Dozers
 	self.weap_unit_names[29] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 
+
 	--Vanilla Zeal Sniper made M14/SCAR-H DMR
 	self.weap_unit_names[30] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
 
@@ -16178,6 +16179,10 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Titandozer M32
 	table.insert(self.weap_ids, "m32_large")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large"))		
+
+	--Dozer Benelli
+	table.insert(self.weap_ids, "benelli_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_benelli_dozer/wpn_npc_benelli_dozer"))		
 	
 	--Dozer R870
 	table.insert(self.weap_ids, "r870_dozer")
@@ -16194,7 +16199,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Dozer Fort 500
 	table.insert(self.weap_ids, "fort_500_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer"))	
-
+		
 	--Dozer AA12
 	table.insert(self.weap_ids, "aa12_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer"))	
@@ -17347,6 +17352,7 @@ function CharacterTweakData:character_map()
 				"ene_bravo_dmr",
 				"ene_bravo_lmg",
 				"ene_bravo_rifle",
+				"ene_bravo_bulldozer",
 				"ene_bravo_shotgun",
 				"ene_bravo_dmr_ru",
 				"ene_bravo_lmg_ru",

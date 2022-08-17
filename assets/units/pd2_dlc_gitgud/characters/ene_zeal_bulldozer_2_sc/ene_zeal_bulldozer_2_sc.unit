@@ -14,7 +14,7 @@
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870_dozer/wpn_npc_r870_dozer" />
 	</dependencies>
 
 	<extensions>
@@ -22,7 +22,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="r870" />
+			<var name="_default_weapon_id" value="r870_dozer" />
 			<var name="_stats_name" value="tank_green" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />

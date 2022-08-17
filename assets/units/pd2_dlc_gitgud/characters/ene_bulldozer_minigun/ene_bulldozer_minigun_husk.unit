@@ -13,7 +13,7 @@
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_neck/ene_acc_bulldozer_minigun_neck" />
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_stomache/ene_acc_bulldozer_minigun_stomache" />
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_throat/ene_acc_bulldozer_minigun_throat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_benelli_dozer/wpn_npc_benelli_dozer" />
 	</dependencies>
 
 	<extensions>
@@ -21,7 +21,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_mini" />
-			<var name="_default_weapon_id" value="benelli" />
+			<var name="_default_weapon_id" value="benelli_dozer" />
 			<var name="_stats_name" value="tank_skull" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

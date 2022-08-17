@@ -4,6 +4,11 @@
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df"/>
     </material>    
 	
+    <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df"/>
+    </material>    
+	
     <material name="mtr_bulldozer_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <bump_normal_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm"/>
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df"/>

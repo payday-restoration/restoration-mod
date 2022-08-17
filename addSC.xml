@@ -633,9 +633,6 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" load="false"/>
 	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>	
 	
-	
-	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_df" force="true"/>	
-	
 	<!--Biker Guard-->
 	<unit				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" load="true"/>
 	<unit 				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_husk" load="true"/>
@@ -1242,7 +1239,7 @@
 	<texture			path="units/payday2/weapons/wpn_npc_r870/r870_nm" force="true"/>	
 	
 	<!--Dozer NPC R870-->
-	<unit				path="units/payday2/weapons/wpn_npc_r870_dozer/wpn_npc_r870_dozer" load="false"/>
+	<unit_obj			path="units/payday2/weapons/wpn_npc_r870_dozer/wpn_npc_r870_dozer" load="false"/>
 			
 	<!--NPC Saiga-->
 	<model				path="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" force="true"/>
@@ -1250,20 +1247,23 @@
 	<texture			path="units/payday2/weapons/wpn_npc_saiga/saiga_nm" force="true"/>
 	
 	<!--Dozer NPC Saiga-->
-	<unit				path="units/payday2/weapons/wpn_npc_saiga_dozer/wpn_npc_saiga_dozer" load="false"/>	
+	<unit_obj				path="units/payday2/weapons/wpn_npc_saiga_dozer/wpn_npc_saiga_dozer" load="false"/>	
 	
 	<!--Dozer NPC M249-->
-	<unit				path="units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer" load="false"/>	
+	<unit_obj				path="units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer" load="false"/>	
 	
 	<!--NPC aa12-->
 	<unit_obj			path="units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12" force="true"/>
 	
 	<!--Dozer NPC AA12-->
-	<unit				path="units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer" load="false"/>		
+	<unit_obj			path="units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer" load="false"/>		
 
 	<!--NPC M1014 Benelli-->
 	<model				path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+	
+	<!--Dozer NPC Benelli-->
+	<unit_obj			path="units/payday2/weapons/wpn_npc_benelli_dozer/wpn_npc_benelli_dozer" load="false"/>		
 	
 	<!--NPC M308 again? Might need to look into that other texture-->
 	<model				path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>

@@ -4,6 +4,13 @@
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>  
+	
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_helmet">
+        <bump_normal_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
     </material>   
 	
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_1">

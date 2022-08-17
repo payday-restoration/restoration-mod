@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-  <object file="units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249" />
+  <object file="units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer" />
   <dependencies>
  	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
 		<depends_on bnk="soundbanks/weapon_m249" />

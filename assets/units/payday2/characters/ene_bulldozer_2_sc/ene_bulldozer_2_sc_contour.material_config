@@ -5,6 +5,12 @@
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
+    <material name="mtr_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_saiga_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+    </material>		
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_1">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_saiga_df" mip="1"/>

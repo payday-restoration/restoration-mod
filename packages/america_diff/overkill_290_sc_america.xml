@@ -332,6 +332,7 @@
 	<!-- titans end -->
 
 	<!-- bravos	 -->
+	<!-- bravos	 -->
 	<!--bravo dmr-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
 	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
@@ -340,6 +341,28 @@
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>
+
+	<!-- bravo benellier -->
+	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_contour" />
+	<model				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<sequence_manager	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<object				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"  load="true"/>	
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_husk"  load="true"/>	
+
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />	
+
+	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_df"/>
+	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_nm"/>
 	
 	<!--bravo shotgun-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />

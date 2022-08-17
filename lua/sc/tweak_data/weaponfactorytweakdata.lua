@@ -7969,7 +7969,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_gre_ms3gl_conversion.adds = {}
 
 		
-	--[[
+	-- [[
 	--Underbarrel Slug Single Launcher (Temporarily disabled)
 	self.parts.wpn_fps_pis_type54_underbarrel_slug.pcs = nil
 	self.parts.wpn_fps_pis_type54_underbarrel_slug.supported = true

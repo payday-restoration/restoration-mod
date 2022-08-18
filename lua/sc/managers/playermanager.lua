@@ -263,6 +263,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 
 	if self._on_killshot_t and t < self._on_killshot_t then
+		self._on_killshot_t = self._on_killshot_t - (tweak_data.upgrades.on_killshot_cooldown_reduction or 0)
 		return
 	end
 

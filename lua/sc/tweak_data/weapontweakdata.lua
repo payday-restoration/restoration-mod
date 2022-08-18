@@ -8995,8 +8995,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saiga.supported = true
 				self.saiga.ads_speed = 0.380
 				self.saiga.damage_falloff = {
-					start_dist = 600,
-					end_dist = 2900,
+					start_dist = 700,
+					end_dist = 2800,
 					min_mult = 0.5
 				}
 				self.saiga.stats = {
@@ -9196,7 +9196,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.basset.ads_speed = 0.360
 				self.basset.damage_falloff = {
 					start_dist = 700,
-					end_dist = 3000,
+					end_dist = 2800,
 					min_mult = 0.5
 				}
 				self.basset.stats = {
@@ -11827,15 +11827,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.amr12.tactical_reload = 1		
 			self.amr12.CLIP_AMMO_MAX = 5
 			self.amr12.fire_mode_data.fire_rate = 0.08571428571
-			self.amr12.CAN_TOGGLE_FIREMODE = false
-			self.amr12.single = {}
-			self.amr12.single.fire_rate = 0.08571428571
+			self.amr12.FIRE_MODE = "auto"		
+			self.amr12.CAN_TOGGLE_FIREMODE = true
+			self.amr12.BURST_FIRE = false
 			self.amr12.kick = self.stat_info.kick_tables.vertical_kick
 			self.amr12.supported = true
 			self.amr12.ads_speed = 0.380
 			self.amr12.damage_falloff = {
-				start_dist = 900,
-				end_dist = 2800,
+				start_dist = 600,
+				end_dist = 2500,
 				min_mult = 0.5
 			}
 			self.amr12.stats = {
@@ -11843,7 +11843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				spread = 41,
 				recoil = 52,
 				zoom = 1,
-				concealment = 22,
+				concealment = 21,
 				suppression = 8,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -11853,7 +11853,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.amr12.panic_suppression_chance = 0.05
 			self.amr12.stats_modifiers = {damage = 1}
-			self.amr12.reload_speed_multiplier = 1.35
+			self.amr12.reload_speed_multiplier = 1.3
+			self.amr12.sounds.stop_fire = "contraband_fire_single"
 			self.amr12.timers = deep_clone(self.olympic.timers)
 		end
 	
@@ -12146,8 +12147,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bdgr.supported = true
 			self.bdgr.ads_speed = 0.300
 			self.bdgr.damage_falloff = {
-				start_dist = 1800,
-				end_dist = 4800,
+				start_dist = 1200,
+				end_dist = 5000,
 				min_mult = 0.4
 			}
 			self.bdgr.stats = {

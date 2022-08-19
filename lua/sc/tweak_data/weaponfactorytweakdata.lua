@@ -19944,7 +19944,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 2
 		}		
 		self.parts.wpn_fps_smg_czevo_vg_ptk.supported = true		
-		rts.wpn_fps_smg_czevo_vg_ptk.stats = {
+		self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
 			value = 1,
 			spread = 1,
 			concealment = -2

@@ -20335,6 +20335,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		--(Hornet .300) Wasp foregrip
 		self.parts.wpn_fps_bdgr_uupg_fg_small.supported = true
+		self.parts.wpn_fps_bdgr_uupg_fg_small.adds = nil
 		self.parts.wpn_fps_bdgr_uupg_fg_small.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_bdgr_uupg_fg_small.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 

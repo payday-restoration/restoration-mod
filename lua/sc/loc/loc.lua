@@ -2583,7 +2583,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "Die Hard",
-			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## deflection.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou gain an additional ##5## deflection.",
+			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## deflection.\n\nDeflection reduces the amount of health damage you take and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou gain an additional ##5%## deflection.",
 
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "Transporter",
@@ -2909,7 +2909,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
-		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more deflection you gain.\n\nWhen your health is below ##100%##, you will gain up to ##20%## deflection.\n\nEach point of deflection makes you take ##1%## less health damage and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nWhen your health is below ##100%##, you will instead gain up to ##50%## deflection.",
+		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nThe higher your health is, the less you heal, up to ##20%.##\n\nIn exchange, the lower your health is the more deflection you gain, up to ##20%.##\n\nDeflection reduces the amount of health damage you take and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou now heal up to ##50%## less but gain up to ##50%## deflection.",
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",
@@ -2968,7 +2968,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_3_desc_sc"] = "Your dodge meter fills up by ##100%## of your dodge when your armor is restored.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_5_desc_sc"] = "You store ##60%## more health.\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck5_7_desc_sc"] = "You gain ##120## temporary health when you are revived.\n\nYou gain an additional ##5## dodge points.",
-		["menu_deck5_9_desc_sc"] = "While you have temporary health, you gain ##10## deflection and ##20%## additional movement speed.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck5_9_desc_sc"] = "While you have temporary health, you gain ##10%## deflection and ##20%## additional movement speed.\n\nDeflection reduces the amount of health damage you take and is applied after other forms of damage reduction.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Muscle
 		["menu_st_spec_2_desc_sc"] = "The Muscle is a tough guy who uses violence to send messages from his Mafia superiors. They are the backbone of any criminal organization.\n\nThe muscle is called in whenever you need to rough someone up, break some legs, crush a skull or remind people who's boss.\n\nBenefits from a full perk deck:\n##-##You gain ##40%## more health.\n##-##You bag corpses and interact with hostages ##75%## faster.\n##-##You can now use your guns to ##spread panic among your enemies.##\n##-##Your dodge is increased by ##10## points.\n##-##You gain ##25%## of your maximum health after reviving.",

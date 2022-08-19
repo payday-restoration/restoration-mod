@@ -274,7 +274,6 @@ function restoration:Init()
 		"xmn_hox_1",
 		"bph", --Hell's Island
 		"born", --Biker 1		
-		"sand", --The Ukrainian Prisoner	
 		"fex", --Buluc's Mansion	
 		--Skirmish heists below
 		"skmc_mad",
@@ -299,7 +298,8 @@ function restoration:Init()
 		"des",	--Henry's Rock		
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		
-		"chill_combat",	--Safehouse Raid		
+		"chill_combat",	--Safehouse Raid	
+		"sand", --The Ukrainian Prisoner			
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"railrun", --The Last Train

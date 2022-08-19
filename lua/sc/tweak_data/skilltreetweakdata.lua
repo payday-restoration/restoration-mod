@@ -2079,7 +2079,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_1"
+					"player_tier_armor_multiplier_1",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 0},
@@ -2488,7 +2489,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_2"
+					"player_damage_dampener_close_contact_2",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {4, 4},
@@ -2511,7 +2513,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"melee_stacking_hit_damage_multiplier_2"
+					"melee_stacking_hit_damage_multiplier_2",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 4},
@@ -2549,7 +2552,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_killshot_regen_armor_bonus"
+					"player_killshot_regen_armor_bonus",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {0, 5},
@@ -2570,7 +2574,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_killshot_close_regen_armor_bonus"
+					"player_killshot_close_regen_armor_bonus",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {2, 5},
@@ -2659,7 +2664,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
-					"player_level_5_armor_addend_grinder",
 					"player_flak_jacket_concealment_1"
 				},
 				cost = 200,

@@ -115,6 +115,7 @@ function restoration:Init()
 		lvl_friday = restoration.captain_types.spring, --Crashing Capitol
 		bnktower = restoration.captain_types.spring, --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		mansion_stage1 = restoration.captain_types.spring, --Elmsworth Mansion
+		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.spring, --Constantine Scores (gunrunner)
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
 
 		--Autumn
@@ -143,7 +144,6 @@ function restoration:Init()
 		branchbank_meth = restoration.captain_types.autumn,  --Bank Heist: Meths
 		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
-		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.autumn, --Constantine Scores (gunrunner)
 		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 
 		--I'm not typing out the whole name
@@ -167,7 +167,7 @@ function restoration:Init()
 	
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
-		--Fill her up!
+		"constantine_gunrunnerclubhouse_lvl"
 	}
 			
 	--[[restoration.captain_viper = {
@@ -183,7 +183,6 @@ function restoration:Init()
 	restoration.very_large_levels = {
 		--Custom Heists below--
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
-		"constantine_gunrunnerclubhouse_lvl", --Constantine Scores (gunrunner)
 		"bag_sim_2", --Bag Simulator 2
 		"finsternis", --Projekt Finsternis
 		"battlearena" --Five-G
@@ -207,6 +206,7 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"hwu", --Avalon's Shadow
 		"constantine_smackdown2_lvl", --Truck Hustle
+		"constantine_gunrunnerclubhouse_lvl", --Constantine Scores (gunrunner)
 		"TonCont", --Armored Transport: Atrium
 		"santas_hardware_store", --Hardware Store but Xmas
 		"ascension_III", --Ascension (project eclipse 3)
@@ -337,9 +337,7 @@ function restoration:Init()
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
 		"dinner",
-                "trai",
-		--Custom Heists--
-		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
+        "trai"
 	}	
 	--San Francisco
 	restoration.needle = {

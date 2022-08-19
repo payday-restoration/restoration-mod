@@ -677,6 +677,9 @@ function RaycastWeaponBase:_fire_sound(...)
 		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2") then
 			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2")
 		end
+		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3") then
+			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3")
+		end
 	end
 end
 
@@ -789,9 +792,18 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		if self._bullets_fired then
 			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single then
 				self:play_tweak_data_sound("stop_fire")
+				if self:_get_sound_event("stop_fire2") then
+					self:play_tweak_data_sound("stop_fire2")
+				end
+				if self:_get_sound_event("stop_fire3") then
+					self:play_tweak_data_sound("stop_fire3")
+				end
 				self:play_tweak_data_sound("fire_auto", "fire")
 				if self:_get_sound_event("fire_auto2", "fire2") then
 					self:play_tweak_data_sound("fire_auto2", "fire2")
+				end
+				if self:_get_sound_event("fire_auto3", "fire3") then
+					self:play_tweak_data_sound("fire_auto3", "fire3")
 				end
 			end
 			self._bullets_fired = self._bullets_fired + 1
@@ -802,7 +814,19 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
 	if ray_res and self._setup.user_unit == managers.player:player_unit() and not tweak_data.weapon[name_id].sounds.no_fix then
 		self:play_tweak_data_sound("fire_single","fire")
+		if self:_get_sound_event("fire_single2", "fire2") then
+			self:play_tweak_data_sound("fire_single2", "fire2")
+		end
+		if self:_get_sound_event("fire_single3", "fire3") then
+			self:play_tweak_data_sound("fire_single3", "fire3")
+		end
 		self:play_tweak_data_sound("stop_fire")
+		if self:_get_sound_event("stop_fire2") then
+			self:play_tweak_data_sound("stop_fire2")
+		end
+		if self:_get_sound_event("stop_fire3") then
+			self:play_tweak_data_sound("stop_fire3")
+		end
 	end
 	
 	return ray_res

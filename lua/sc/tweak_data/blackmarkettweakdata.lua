@@ -2763,6 +2763,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	end
 
 	--Weapon butt--
+	self.melee_weapons.weapon.info_id = "bm_melee_weapon_info"
 	self.melee_weapons.weapon.stats.min_damage = 4.5
 	self.melee_weapons.weapon.stats.max_damage = 4.5
 	self.melee_weapons.weapon.stats.min_damage_effect = 2

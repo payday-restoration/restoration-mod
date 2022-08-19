@@ -1622,6 +1622,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.025, 0, -2.82),
 		rotation = Rotation(0.0, -0.1, -0.625)
 	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-0.005, -18, 0.6),
+		rotation = Rotation(0, 0, 0)
+	}
 
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
@@ -2047,6 +2051,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2_dec16", "resmod_conte
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_lmg_hk51b = {
 		translation = Vector3(-0.025, 5, -2.82),
 		rotation = Rotation(0.0, -0.1, -0.625)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-0.005, -13, 0.6),
+		rotation = Rotation(0, 0, 0)
 	}
 
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_musket = {
@@ -3020,6 +3028,9 @@ end)
 --AMR-16 
 Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 
+
+	self.parts.wpn_fps_m16_fg_standard.adds = { "wpn_fps_ass_m4_os_frontsight" }
+
 	--(AMR-16) Tactical Handguard
 	self.parts.wpn_fps_m16_fg_railed.pcs = {
 		10,
@@ -3028,6 +3039,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		40
 	}
 	self.parts.wpn_fps_m16_fg_railed.supported = true
+	self.parts.wpn_fps_m16_fg_railed.adds = { "wpn_fps_ass_m4_os_frontsight" }
 	self.parts.wpn_fps_m16_fg_railed.stats = {
 		value = 2,
 		recoil = 2,
@@ -3042,6 +3054,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		40
 	}
 	self.parts.wpn_fps_m16_fg_vietnam.supported = true
+	self.parts.wpn_fps_m16_fg_vietnam.adds = { "wpn_fps_ass_m4_os_frontsight" }
 	self.parts.wpn_fps_m16_fg_vietnam.stats = {
 		value = 3,
 		recoil = -4,
@@ -5789,7 +5802,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 		wpn_fps_upg_o_rx30 = { "wpn_fps_ass_g3_body_rail" },
 		wpn_fps_upg_o_45iron = { "wpn_fps_ass_g3_body_rail" },
 		wpn_fps_upg_o_leupold = { "wpn_fps_ass_g3_body_rail" },
-		wpn_fps_upg_o_sig = { "wpn_fps_ass_g3_body_rail" },
 		wpn_fps_upg_o_bmg = { "wpn_fps_ass_g3_body_rail" },
 		wpn_fps_upg_o_uh = { "wpn_fps_ass_g3_body_rail" },
 		wpn_fps_upg_o_fc1 = { "wpn_fps_ass_g3_body_rail" },		
@@ -5810,7 +5822,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_rx01")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_reflex")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_sig")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_uh")		
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_smg_mp5_s_adjust")
@@ -5976,10 +5987,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_reflex")		
 	
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
-
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_sig")
-	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_sig")	
+	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
 
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_uh")
@@ -6177,10 +6185,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_reflex")		
 	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
-
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_sig")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_sig")	
+	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_uh")		
@@ -8610,7 +8615,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_rx01")	
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_reflex")	
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_sig")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_uh")	
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
@@ -8907,18 +8911,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.parts.wpn_fps_snp_mosin_b_standard.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_standard.supported = true
 	self.parts.wpn_fps_snp_mosin_b_standard.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_snp_mosin_b_standard.stats.bayonet_range = 50
 	self.parts.wpn_fps_snp_mosin_b_standard.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Short Barrel
 	self.parts.wpn_fps_snp_mosin_b_short.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_short.supported = true
 	self.parts.wpn_fps_snp_mosin_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_snp_mosin_b_short.stats.bayonet_range = -20
 	self.parts.wpn_fps_snp_mosin_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 	
 	--Silenced Barrel
 	self.parts.wpn_fps_snp_mosin_b_sniper.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_sniper.supported = true
 	self.parts.wpn_fps_snp_mosin_b_sniper.has_description = true
+	self.parts.wpn_fps_snp_mosin_b_sniper.forbids = {"wpn_fps_snp_mosin_ns_bayonet"}
 	self.parts.wpn_fps_snp_mosin_b_sniper.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_mosin_b_sniper.stats = {
 		value = 2,
@@ -8941,11 +8948,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.parts.wpn_fps_snp_mosin_ns_bayonet.supported = true
 	self.parts.wpn_fps_snp_mosin_ns_bayonet.stats = {
 		value = 5,
-		concealment = 0,
-		min_damage = 5,
-		max_damage = 5,
-		min_damage_effect = 2,
-		max_damage_effect = 2
+		concealment = -5,
+		max_damage = 6,
+		min_damage = 6,
+		max_damage_effect = 1,
+		min_damage_effect = 1,
+		bayonet_range = 50
+	}
+	self.parts.wpn_fps_snp_mosin_ns_bayonet.custom_stats = {
+		ads_speed_mult = 1.125
 	}
 		
 	--Iron Sight
@@ -9373,6 +9384,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--Long Ergo Foregrip
 	self.parts.wpn_fps_upg_ass_m16_fg_stag.pcs = {}
 	self.parts.wpn_fps_upg_ass_m16_fg_stag.supported = true
+	self.parts.wpn_fps_upg_ass_m16_fg_stag.adds = { "wpn_fps_ass_m4_os_frontsight" }
+	self.parts.wpn_fps_upg_ass_m16_fg_stag.override.wpn_fps_ass_m4_os_frontsight = { a_obj = "a_os_stag" }
 	self.parts.wpn_fps_upg_ass_m16_fg_stag.stats = {
 		value = 5,
 		recoil = -1,
@@ -9481,6 +9494,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m134", "resmod_m134", function(sel
 	}
 	self.parts.wpn_fps_lmg_m134_barrel_short.supported = true
 	self.parts.wpn_fps_lmg_m134_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_lmg_m134_barrel_short.stats.jab_range = -50
 	self.parts.wpn_fps_lmg_m134_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 	--Aerial Assault Barrel
@@ -9492,6 +9506,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m134", "resmod_m134", function(sel
 	}
 	self.parts.wpn_fps_lmg_m134_barrel_extreme.supported = true
 	self.parts.wpn_fps_lmg_m134_barrel_extreme.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_lmg_m134_barrel_extreme.stats.jab_range = 50
 	self.parts.wpn_fps_lmg_m134_barrel_extreme.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Override
@@ -11240,9 +11255,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_eotech_xps")
 	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
 
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_sig")
-	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_o_sig")	
-
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_par_npc.uses_parts, "wpn_fps_upg_o_uh")		
 
@@ -11493,10 +11505,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_reflex")		
 	
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
-
-	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_sig")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_sig")	
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
 
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_uh")		
@@ -12901,8 +12910,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", functi
 	}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.perks = {"gadget"}
 
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-0.005, -20, 0.6),
+		rotation = Rotation(0, 0, 0)
+	}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod.wpn_fps_pis_shatters_fury = {
-		translation = Vector3(-0.05, -4, -4.65)
+		translation = Vector3(-0.035, -4, -4.57),
+		rotation = Rotation(0, 0, 0)
 	}
 	
 	--Angled Sight v2
@@ -15120,10 +15134,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_reflex")		
 	
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
-
-	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_sig")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_sig")	
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
 
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_uh")		
@@ -19325,6 +19336,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		--(AMR-16) Aftermarket Marksman Foregrip
 		self.parts.wpn_fps_ass_m16_fg_smooth.supported = true
+		self.parts.wpn_fps_ass_m16_fg_smooth.adds = { "wpn_fps_ass_m4_os_frontsight" }
 		self.parts.wpn_fps_ass_m16_fg_smooth.stats = {
 			value = 5,
 			concealment = 1,
@@ -19904,64 +19916,64 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				
 	end						
 
-if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
-	self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
-	self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil	
-	table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
-		"wpn_fps_upg_i_slower_rof"
-	})
-	table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
-		"wpn_fps_upg_i_faster_rof"
-	})		
-	self.parts.wpn_fps_smg_czevo_barrel_long.supported = true		
-	self.parts.wpn_fps_smg_czevo_barrel_long.stats = {
-				value = 1,
-				spread = 1,
-				concealment = -1
-			}	
-	self.parts.wpn_fps_smg_czevo_vg_tti.supported = true	
-	self.parts.wpn_fps_smg_czevo_vg_tti.stats = {
-				value = 1,
-				recoil = 1,
-				concealment = -2
-			}					
-	self.parts.wpn_fps_smg_czevo_vg_handstop.supported = true					
-	self.parts.wpn_fps_smg_czevo_vg_handstop.stats = {
-				value = 1,
-				recoil = -1,
-				concealment = 2
-			}		
-	self.parts.wpn_fps_smg_czevo_vg_ptk.supported = true		
-	self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
-				value = 1,
-				spread = 1,
-				concealment = -2
-			}		
-	self.parts.wpn_fps_smg_czevo_vg_angled.supported = true		
-	self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
-				value = 1,
-				recoil = -1,
-				concealment = 2
-			}																	
-	self.parts.wpn_fps_smg_czevo_sight_troy.supported = true																	
-	self.parts.wpn_fps_smg_czevo_sight_troy.stats = {
-				value = 1
-			}			
-	self.parts.wpn_fps_smg_czevo_vg_cover.supported = true			
-	self.parts.wpn_fps_smg_czevo_vg_cover.stats = {
-				value = 1
-			}					
-	self.parts.wpn_fps_smg_czevo_mag_speed.pcs = nil
-	self.parts.wpn_fps_smg_czevo_barrel_silenced.supported = true
-	self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
-				value = 10,
-				suppression = 12,
-				alert_size = -1,
-				concealment = -4,
-				spread = 2,
-				recoil = -1
-			}
-		end	
+	if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
+		self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
+		self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil	
+		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
+			"wpn_fps_upg_i_slower_rof"
+		})
+		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
+			"wpn_fps_upg_i_faster_rof"
+		})		
+		self.parts.wpn_fps_smg_czevo_barrel_long.supported = true		
+		self.parts.wpn_fps_smg_czevo_barrel_long.stats = {
+			value = 1,
+			spread = 1,
+			concealment = -1
+		}	
+		self.parts.wpn_fps_smg_czevo_vg_tti.supported = true	
+		self.parts.wpn_fps_smg_czevo_vg_tti.stats = {
+			value = 1,
+			recoil = 1,
+			concealment = -2
+		}					
+		self.parts.wpn_fps_smg_czevo_vg_handstop.supported = true					
+		self.parts.wpn_fps_smg_czevo_vg_handstop.stats = {
+			value = 1,
+			recoil = -1,
+			concealment = 2
+		}		
+		self.parts.wpn_fps_smg_czevo_vg_ptk.supported = true		
+		rts.wpn_fps_smg_czevo_vg_ptk.stats = {
+			value = 1,
+			spread = 1,
+			concealment = -2
+		}		
+		self.parts.wpn_fps_smg_czevo_vg_angled.supported = true		
+		self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
+			value = 1,
+			recoil = -1,
+			concealment = 2
+		}																	
+		self.parts.wpn_fps_smg_czevo_sight_troy.supported = true																	
+		self.parts.wpn_fps_smg_czevo_sight_troy.stats = {
+			value = 1
+		}			
+		self.parts.wpn_fps_smg_czevo_vg_cover.supported = true			
+		self.parts.wpn_fps_smg_czevo_vg_cover.stats = {
+			value = 1
+		}					
+		self.parts.wpn_fps_smg_czevo_mag_speed.pcs = nil
+		self.parts.wpn_fps_smg_czevo_barrel_silenced.supported = true
+		self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
+			value = 10,
+			suppression = 12,
+			alert_size = -1,
+			concealment = -4,
+			spread = 2,
+			recoil = -1
+		}
+	end	
 
 	if self.parts.wpn_fps_upg_o_prismatic then --Pawcio's SIGtac CP1
 		self.parts.wpn_fps_upg_o_prismatic.supported = true
@@ -20158,6 +20170,65 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			zoom = 30
 			}															
 		end	
+
+	--Silent Killer Pack Welrod
+	if self.parts.wpn_fps_pis_welrod_a_ap then
+		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
+
+		--Short barrel
+		self.parts.wpn_fps_pis_welrod_b_short.supported = true
+		self.parts.wpn_fps_pis_welrod_b_short.stats = {
+			value = 3,
+			suppression = -1,
+			spread = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
+
+		--Trigger Guard
+		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
+		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
+			value = 1
+		}
+
+		--Illuminated Iron Sights
+		self.parts.wpn_fps_pis_welrod_glow.supported = true
+	end
+
+	--Silent Killer Pack PB
+	if self.parts.wpn_fps_pis_pb_ns_std then
+		self.parts.wpn_fps_pis_pb_ns_std.supported = true
+		self.parts.wpn_fps_pis_pb_ns_std.stats = {
+			value = 4,
+			suppression = 1,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+	end
+
+	--Silent Killer Pack Max9
+	if self.parts.wpn_fps_pis_max9_b_short then
+		self.parts.wpn_fps_pis_max9_b_short.supported = true
+		self.parts.wpn_fps_pis_max9_b_short.stats = {
+			value = 5,
+			suppression = -1,
+			recoil = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
+
+		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
+		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
+			value = 5,
+			alert_size = 1,
+			suppression = -12,
+			recoil = -1,
+			spread = -1,
+			concealment = 2
+		}
+		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
+	end
 
 	--Vanilla Mod Pack Volume 2 Support
 	if self.parts.wpn_fps_smg_uzi_b_longue then
@@ -20664,65 +20735,6 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		
 	end
 
-	--Silent Killer Pack Welrod
-	if self.parts.wpn_fps_pis_welrod_a_ap then
-		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
-
-		--Short barrel
-		self.parts.wpn_fps_pis_welrod_b_short.supported = true
-		self.parts.wpn_fps_pis_welrod_b_short.stats = {
-			value = 3,
-			suppression = -1,
-			spread = -1,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
-
-		--Trigger Guard
-		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
-		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
-			value = 1
-		}
-
-		--Illuminated Iron Sights
-		self.parts.wpn_fps_pis_welrod_glow.supported = true
-	end
-
-	--Silent Killer Pack PB
-	if self.parts.wpn_fps_pis_pb_ns_std then
-		self.parts.wpn_fps_pis_pb_ns_std.supported = true
-		self.parts.wpn_fps_pis_pb_ns_std.stats = {
-			value = 4,
-			suppression = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
-	end
-
-	--Silent Killer Pack Max9
-	if self.parts.wpn_fps_pis_max9_b_short then
-		self.parts.wpn_fps_pis_max9_b_short.supported = true
-		self.parts.wpn_fps_pis_max9_b_short.stats = {
-			value = 5,
-			suppression = -1,
-			recoil = -1,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
-
-		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
-		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
-			value = 5,
-			alert_size = 1,
-			suppression = -12,
-			recoil = -1,
-			spread = -1,
-			concealment = 2
-		}
-		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
-	end
-
 	--HX25 Grenade Launcher
 	if self.parts.wpn_fps_upg_hx25_sight_iron_il then
 		self.parts.wpn_fps_upg_hx25_sight_iron_il.supported = true
@@ -20793,6 +20805,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		self.parts.wpn_fps_snp_mosin_b_obrez.supported = true
 		self.parts.wpn_fps_snp_mosin_b_obrez.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_snp_mosin_b_obrez.stats.bayonet_range = -50
 		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 		self.parts.wpn_fps_snp_mosin_b_obrez.custom_stats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 	end
@@ -20807,8 +20820,23 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.ads_speed_mult = 0.95
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.sms = 0.8
 
+		self.parts.wpn_fps_snp_mosin_bayonet_bubba.supported = true
+		self.parts.wpn_fps_snp_mosin_bayonet_bubba.stats = {
+			value = 5,
+			concealment = -5,
+			max_damage = 6,
+			min_damage = 6,
+			max_damage_effect = 1,
+			min_damage_effect = 1,
+			bayonet_range = 50
+		}
+		self.parts.wpn_fps_snp_mosin_bayonet_bubba.custom_stats = {
+			ads_speed_mult = 1.125
+		}
+
 		self.parts.wpn_fps_snp_mosin_barrel_bubba.supported = true
 		self.parts.wpn_fps_snp_mosin_barrel_bubba.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_snp_mosin_barrel_bubba.stats.bayonet_range = -50
 		self.parts.wpn_fps_snp_mosin_barrel_bubba.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 		self.parts.wpn_fps_snp_mosin_barrel_bubba.custom_stats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 	end
@@ -20956,7 +20984,6 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		self.wpn_fps_snp_musket_npc.uses_parts = deep_clone(self.wpn_fps_snp_musket.uses_parts)
 	end
-
 
 	if self.parts.wpn_fps_ass_xr2_grip then --KillerKrayola + Pawcio + splish's BO3 XR-2
 		self.parts.wpn_fps_upg_xr2_barrel_01.supported = true
@@ -21326,7 +21353,6 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}	
 	end
 
-
 	if self.parts.wpn_fps_upg_scarl_barrel_cqc then  --Pawcio's SCAR-L
 		self.parts.wpn_fps_upg_scarl_barrel_cqc.supported = true
 		self.parts.wpn_fps_upg_scarl_barrel_cqc.stats = deep_clone(barrels.short_b2_stats)
@@ -21447,8 +21473,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_m4_upg_m_quick")	
 	end
 
-	if self.parts.wpn_fps_ass_tingledingle_b_standard then
-
+	if self.parts.wpn_fps_ass_tingledingle_b_standard then --Zdann's TPB
 		self.parts.wpn_fps_ass_tingledingle_b_long.supported = true
 		self.parts.wpn_fps_ass_tingledingle_b_long.stats = {
 			value = 99,
@@ -21472,7 +21497,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 	end
 
-	if self.parts.wpn_fps_snp_l115_stock then
+	if self.parts.wpn_fps_snp_l115_stock then --Pawcio's L115
 		self.parts.wpn_fps_upg_l115_barrel_medsupp.supported = true
 		self.parts.wpn_fps_upg_l115_barrel_medsupp.stats = {
 			value = 3,
@@ -21532,16 +21557,33 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_l115_stock_ax.custom_stats = {
 			ads_speed_mult = 0.95
 		}
-
-
 	end
 
+	if self.parts.wpn_fps_shot_super_body then --Pawcio's Super Shotgun
+		self.parts.wpn_fps_upg_super_meathook.supported = true
+		self.parts.wpn_fps_upg_super_meathook.stats = {
+			concealment = -5,
+			max_damage = 6,
+			min_damage = 6,
+			max_damage_effect = 1,
+			min_damage_effect = 1
+		}
+		self.parts.wpn_fps_upg_super_meathook.custom_stats = {
+			ads_speed_mult = 1.125
+		}
+
+		self.parts.wpn_fps_upg_super_body_burst.pcs = nil
+		self.parts.wpn_fps_upg_super_body_burst.supported = true
+		self.parts.wpn_fps_upg_super_body_burst.stats = { value = 0 }
+		self.parts.wpn_fps_upg_super_body_burst.custom_stats = nil
+	end
+
+	--Predator Pack
 	if self.parts.wpn_fps_ass_plasmaproto_mag then
 		self.parts.wpn_fps_ass_plasmaproto_mag.supported = true
 		self.parts.wpn_fps_ass_plasmaproto_mag.stats = { value = 0}
 		self.parts.wpn_fps_ass_plasmaproto_mag.custom_stats = nil
 	end
-
 	if self.parts.wpn_fps_upg_owlfbullpup_mag_drum then
 		self.parts.wpn_fps_upg_owlfbullpup_scope.supported = true
 		self.parts.wpn_fps_upg_owlfbullpup_scope.desc_id = "bm_wp_upg_o_3"
@@ -21574,7 +21616,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 	end
 
-	if self.parts.wpn_fps_snp_k31_scope then
+	if self.parts.wpn_fps_snp_k31_scope then --Pawcio's K31
 		self.parts.wpn_fps_snp_k31_scope.supported = true
 		self.parts.wpn_fps_snp_k31_scope.stats = { zoom = 15 }
 
@@ -21595,6 +21637,20 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			alert_size = -1
 		}
 		self.parts.wpn_fps_upg_k31_supp.perks = {"silencer"}
+
+		self.parts.wpn_fps_upg_k31_bayonet.supported = true
+		self.parts.wpn_fps_upg_k31_bayonet.stats = {
+			value = 5,
+			concealment = -5,
+			max_damage = 6,
+			min_damage = 6,
+			max_damage_effect = 1,
+			min_damage_effect = 1,
+			bayonet_range = 50
+		}
+		self.parts.wpn_fps_upg_k31_bayonet.custom_stats = {
+			ads_speed_mult = 1.125
+		}
 
 		self.parts.wpn_fps_upg_k31_stock_cheekpad.supported = true
 		self.parts.wpn_fps_upg_k31_stock_cheekpad.stats = {
@@ -21618,7 +21674,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 	end
 
-	if self.parts.wpn_fps_upg_p99_sight_tritium then
+	if self.parts.wpn_fps_upg_p99_sight_tritium then --Pawcio's P99
 		--No
 		self.parts.wpn_fps_upg_p99_ammo_40sw.supported = true
 		self.parts.wpn_fps_upg_p99_ammo_40sw.pcs = nil
@@ -21656,7 +21712,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_p99_sight_rail.stats = { value = 5 }
 	end
 
-	if self.parts.wpn_fps_upg_g3hk79_sight_rail_low then
+	if self.parts.wpn_fps_upg_g3hk79_sight_rail_low then --Pawcio's G3 w/HK79
 		self.parts.wpn_fps_upg_g3hk79_sight_rail_low.supported = true
 		self.parts.wpn_fps_upg_g3hk79_sight_rail_low.stats = {
 			value = 1
@@ -21681,7 +21737,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_upg_g3hk79_stock_sliding.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	end
 
-	if self.parts.wpn_fps_smg_crysis3_typhoon_body then
+	if self.parts.wpn_fps_smg_crysis3_typhoon_body then --KillerKrayola + splish + RJC9000's Crysis 3 Typhoon
 		self.wpn_fps_smg_crysis3_typhoon.uses_parts[21] = "resmod_dummy"
 		self.wpn_fps_smg_crysis3_typhoon.uses_parts[22] = "resmod_dummy"
 		self.wpn_fps_smg_crysis3_typhoon.uses_parts[44] = "resmod_dummy"

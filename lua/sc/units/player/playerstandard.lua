@@ -2298,7 +2298,14 @@ end
 
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
-	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 175
+	local weap_base = self._equipped_unit:base()
+	local wtd = weap_base:weapon_tweak_data()
+	local wtd_base_range = wtd and math.max(wtd.jab_range or 0, 0)
+	local active_weapon = self._unit:inventory():equipped_selection() == 1 and managers.blackmarket:equipped_secondary() or managers.blackmarket:equipped_primary()
+	local active_weapon_stats = active_weapon and melee_entry == "weapon" and managers.weapon_factory:get_stats(active_weapon.factory_id, active_weapon.blueprint)
+	local active_weapon_range = math.max((active_weapon_stats and active_weapon_stats.jab_range or active_weapon_stats.bayonet_range) or 0, 0)
+	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 150
+	range = range + wtd_base_range + active_weapon_range
 	local charge_bonus_range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_range or 0
 	if self._melee_charge_bonus_range and self._melee_charge_bonus_range == true then
 		range = range + charge_bonus_range
@@ -2308,6 +2315,7 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 
 	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
 end
+
 
 local melee_vars = {
 	"player_melee",

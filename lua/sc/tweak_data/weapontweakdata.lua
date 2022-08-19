@@ -6683,10 +6683,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.AMMO_MAX = 600
 			self.shuno.FIRE_MODE = "auto"
 			self.shuno.fire_mode_data = {}
-			self.shuno.fire_mode_data.fire_rate = 0.024
+			self.shuno.fire_mode_data.fire_rate = 0.03
 			self.shuno.CAN_TOGGLE_FIREMODE = false
-			self.shuno.auto = {}
-			self.shuno.auto.fire_rate = 0.048
 			self.shuno.kick = self.stat_info.kick_tables.right_kick
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
@@ -6851,7 +6849,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.AMMO_MAX = 400
 			self.m134.FIRE_MODE = "auto"
 			self.m134.fire_mode_data = {}
-			self.m134.fire_mode_data.fire_rate = 0.024
+			self.m134.fire_mode_data.fire_rate = 0.03
 			--self.m134.fire_rate_init_count = 20
 			--self.m134.fire_rate_init_mult = 2
 			--self.m134.fire_rate_init_ramp_up = true
@@ -6884,6 +6882,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.m134.stats_modifiers = {}
+			self.m134.jab_range = 50
 			self.m134.timers.reload_empty = 7
 			self.m134.timers.reload_not_empty = 7
 			self.m134.timers.reload_exit_empty = 2
@@ -12631,6 +12630,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.timers.shotgun_reload_exit_not_empty = 0.7
 	end	
 
+	if self.super then --Pawcio's D
+		self.super.muzzleflash = "effects/particles/shotgun/muzzleflash"
+		self.super.rays = 10
+		self.super.kick = self.stat_info.kick_tables.vertical_kick
+		self.super.AMMO_MAX = 20
+		self.super.CAN_TOGGLE_FIREMODE = false							
+		self.super.BURST_FIRE = false
+		self.super.fire_mode_data.fire_rate = 0.171428
+		self.super.supported = true
+		self.super.ads_speed = 0.400
+		self.super.damage_falloff = {
+			start_dist = 1000,
+			end_dist = 3100,
+			min_mult = 0.25
+		}
+		self.super.stats = {
+			damage = 90,
+			spread = 44,
+			recoil = 41,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 23,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.super.stats_modifiers = nil
+		self.super.panic_suppression_chance = 0.05
+		self.super.timers.reload_exit_empty = 0.4
+		self.super.timers.reload_exit_not_empty = 0.4
+	end
+
 	if self.scarl then --Pawcio's SCAR-L
 		self.scarl.recategorize = { "heavy_ar" }
 		self.scarl.damage_type = "assault_rifle"
@@ -13736,6 +13770,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			weap.desired_swap_time = 1.75
 
 			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
+			weap.shake = {
+				fire_multiplier = 0.75,
+				fire_steelsight_multiplier = -0.5
+			}
 
 			if restoration.Options:GetValue("OTHER/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then

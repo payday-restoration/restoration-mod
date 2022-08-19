@@ -289,8 +289,8 @@ tweak_data.projectiles.launcher_incendiary_ms3gl.fire_dot_data = {
 	dot_length = 3.1,
 	dot_tick_period = 0.5
 }
-tweak_data.projectiles.launcher_electric_ms3gl.damage = 180
-tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 10
+tweak_data.projectiles.launcher_electric_ms3gl.damage = 18
+tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 6
 tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1.5
 tweak_data.projectiles.launcher_electric_ms3gl.range = 500
 tweak_data.projectiles.launcher_poison.damage = 0

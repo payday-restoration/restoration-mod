@@ -390,6 +390,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.1,
 		1.12
 	}
+	self.max_deflection = 0.60
 	self.values.player.body_armor.deflection = {
 		0.00,
 		0.05,
@@ -1729,6 +1730,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Yakuza--
+	self.values.player.max_deflection_add = {0.2}
 	self.values.player.melee_double_interval = {true}
 	self.values.player.survive_one_hit = {true}
 	self.values.survive_one_hit_armor = {5.0}
@@ -3285,6 +3287,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "melee_double_interval",
+			category = "player"
+		}
+	}
+	self.definitions.player_max_deflection_add = {
+		name_id = "menu_player_max_deflection_add",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "max_deflection_add",
 			category = "player"
 		}
 	}

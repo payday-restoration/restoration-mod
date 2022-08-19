@@ -18429,29 +18429,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ks23_ammo_slug.supported = true	
 		self.parts.wpn_fps_upg_ks23_ammo_slug.desc_id = "bm_wp_upg_a_slug_heavy_desc_sc"
 		self.parts.wpn_fps_upg_ks23_ammo_slug.stats = {
-				value = 10,
-				concealment = -5,
-				total_ammo_mod = -33,
-				damage = 60,
-				spread = 20,
-				spread_multi = {1, 1},	
-				recoil = -20,
-				moving_spread = 0
-			}
+			value = 10,
+			concealment = -3,
+			total_ammo_mod = -25,
+			damage = 30,	
+			recoil = -20,
+			spread = 12,
+			spread_multi = {1, 1},	
+			suppression = -1,
+			moving_spread = 0
+		}
 		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
-				rays = 1,
-				armor_piercing_add = 1,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				can_shoot_through_titan_shield = true,
-				falloff_start_mult = 1.25,
-				falloff_end_mult = 2.00,
-				ads_speed_mult = 1.10
-			}
+			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
+			rays = 1,
+			armor_piercing_add = 1,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
+			can_shoot_through_enemy = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_wall = true,
+			can_shoot_through_titan_shield = true,
+			falloff_start_mult = 1.25,
+			falloff_end_mult = 2.00,
+			ads_speed_mult = 1.10
+		}
+
 		self.parts.wpn_fps_upg_ks23_barrel_short.supported = true
 		self.parts.wpn_fps_upg_ks23_barrel_short.stats = deep_clone(barrels.short_b3_stats)
 		self.parts.wpn_fps_upg_ks23_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
@@ -21572,10 +21574,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ads_speed_mult = 1.125
 		}
 
+		self.parts.wpn_fps_shot_super_body.supported = true
+		self.parts.wpn_fps_shot_super_body.stats = { 
+			spread_multi = {2, 0.75}
+		}
+
 		self.parts.wpn_fps_upg_super_body_burst.pcs = nil
 		self.parts.wpn_fps_upg_super_body_burst.supported = true
 		self.parts.wpn_fps_upg_super_body_burst.stats = { value = 0 }
 		self.parts.wpn_fps_upg_super_body_burst.custom_stats = nil
+		self.parts.wpn_fps_upg_super_body_burst.perks = nil
 	end
 
 	--Predator Pack

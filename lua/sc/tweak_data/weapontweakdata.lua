@@ -11956,7 +11956,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bs23.muzzleflash = "effects/particles/shotgun/muzzleflash"
 			self.bs23.kick = self.stat_info.kick_tables.right_kick
 			self.bs23.supported = true
-			self.bs23.ads_speed = 0.480
+			self.bs23.ads_speed = 0.440
 			self.bs23.damage_falloff = {
 				start_dist = 1000,
 				end_dist = 3100,
@@ -12581,34 +12581,34 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.ks23 then --Pawcio's KS23
-		self.ks23.muzzleflash = "effects/particles/shotgun/muzzleflash"	
+		self.ks23.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.ks23.desc_id = "bm_ks23_sc_desc"
 		self.ks23.has_description = false
 		self.ks23.use_data.selection_index = 2
 		self.ks23.categories = {
 				"shotgun"
-		}		
-		self.ks23.recategorize = { "break_shot" }	
+		}
+		self.ks23.recategorize = { "break_shot" }
 		self.ks23.damage_type = "shotgun"
 		self.ks23.damage_type_single_ray = "anti_materiel"
-		self.ks23.tactical_reload = 1		
-		self.ks23.sounds.stop_fire = "saiga_stop"
-		self.ks23.fire_mode_data.fire_rate = 1.5
-		self.ks23.single.fire_rate = 1.5
-		self.ks23.rays = 12
-		self.ks23.AMMO_MAX = 30
+		self.ks23.tactical_reload = 1
+		self.ks23.reload_speed_multiplier = 1.3
+		self.ks23.fire_rate_multiplier = 1.20
+		self.ks23.fire_mode_data.fire_rate = 1.3
+		self.ks23.rays = 8
+		self.ks23.AMMO_MAX = 40
 		self.ks23.CLIP_AMMO_MAX = 3		
 		self.ks23.kick = self.stat_info.kick_tables.vertical_kick
 		self.ks23.supported = true
 		self.ks23.ads_speed = 0.480
 		self.ks23.damage_falloff = {
 			start_dist = 1000,
-			end_dist = 3200,
+			end_dist = 3100,
 			min_mult = 0.25
 		}
 		self.ks23.stats = {
-			damage = 120, --250,
-			spread = 51,
+			damage = 90,
+			spread = 52,
 			recoil = 46,
 			spread_moving = 6,
 			zoom = 1,
@@ -12622,7 +12622,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.ks23.armor_piercing_chance = 1
 		self.ks23.panic_suppression_chance = 0.05
-		self.ks23.stats_modifiers = {damage = 1}
+		self.ks23.stats_modifiers = nil
 		self.ks23.timers.unequip = 0.6
 		self.ks23.timers.equip = 1
 		self.ks23.timers.shotgun_reload_first_shell_offset = 0.45
@@ -12631,24 +12631,29 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.super then --Pawcio's D
+		self.super.recategorize = { "break_shot" }	
+		self.super.damage_type = "shotgun"
+		self.super.damage_type_single_ray = "anti_materiel"
+		self.super.should_reload_immediately = true
 		self.super.muzzleflash = "effects/particles/shotgun/muzzleflash"
-		self.super.rays = 10
+		self.super.rays = 16
 		self.super.kick = self.stat_info.kick_tables.vertical_kick
-		self.super.AMMO_MAX = 20
+		self.super.CLIP_AMMO_MAX = 1
+		self.super.AMMO_MAX = 30
 		self.super.CAN_TOGGLE_FIREMODE = false							
 		self.super.BURST_FIRE = false
-		self.super.fire_mode_data.fire_rate = 0.171428
+		self.super.fire_mode_data.fire_rate = 0.5
 		self.super.supported = true
 		self.super.ads_speed = 0.400
 		self.super.damage_falloff = {
-			start_dist = 1000,
-			end_dist = 3100,
+			start_dist = 1100,
+			end_dist = 2800,
 			min_mult = 0.25
 		}
 		self.super.stats = {
-			damage = 90,
-			spread = 44,
-			recoil = 41,
+			damage = 120,
+			spread = 36,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 23,
@@ -12661,6 +12666,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.super.stats_modifiers = nil
 		self.super.panic_suppression_chance = 0.05
+		self.super.reload_speed_multiplier = 1.5
 		self.super.timers.reload_exit_empty = 0.4
 		self.super.timers.reload_exit_not_empty = 0.4
 	end

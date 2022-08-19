@@ -2768,6 +2768,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_survive_one_hit",
+					"player_max_deflection_add",
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,

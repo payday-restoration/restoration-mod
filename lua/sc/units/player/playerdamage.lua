@@ -1227,7 +1227,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		end
 	end
 
-	self._healing_reduction = 1 * ( 1 - (pm:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio()) ) )
+	self._healing_reduction = 1 * 1 - ( pm:upgrade_value("player", "frenzy_deflection", 0) * (self:health_ratio()) )
 	
 	--Add passive dodge increases. Start with bot dodge boost.
 	local passive_dodge = pm:upgrade_value("team", "crew_add_dodge", 0)

@@ -13301,7 +13301,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	end	
 	
 	--Captain Autumn
-	if difficulty_index <= 6 then
+	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {1, 1},
 			spawn = {
@@ -13315,6 +13315,28 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
+	elseif difficulty_index == 6 then
+		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
 	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {4, 4},

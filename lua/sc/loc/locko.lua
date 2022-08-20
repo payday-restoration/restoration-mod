@@ -923,7 +923,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "캡틴 스프링 분대 접근 중",
 		})
-	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 6 then
+	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "캡틴 어텀 접근 중",
 		})		

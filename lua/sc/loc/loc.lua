@@ -910,7 +910,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN WINTERS'S SQUAD",
+			["hud_assault_vip"] = "INCOMING CAPTAIN WINTERS SQUAD",
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
@@ -924,7 +924,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN SPRING'S SQUAD",
 		})		
-	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 6 then
+	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN",
 		})

@@ -2544,97 +2544,85 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_eager"] = "가속자",
 		["menu_crew_eager_desc"] = "플레이어의 장전 속도가 10%만큼 빨라집니다.",
 
---[[   SKILLTREES   ]]--
-	--{
+	--[[   SKILLTREES   ]]--
+
 
 		--[[   MASTERMIND   ]]--
-		--{
+		
 			--[[   MEDIC SUBTREE   ]]--
-			--{
-
 			--Combat Medic
 			["menu_combat_medic_beta_sc"] = "의무병",
-			["menu_combat_medic_beta_desc_sc"] = "베이직: ##$basic##\n당신이 팀원을 되살리는 동안과 그 이후 ##5##초간 ##10%##만큼의 피해 감소 효과를 받습니다.\n\n에이스: ##$pro##\n팀원을 되살릴때 ##30%##만큼 더 많은 체력을 추가로 회복시켜서 되살립니다.",
+			["menu_combat_medic_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신이 팀원을 되살리는 동안과 그 이후 #{skill_color}#5##초간 #{skill_color}#10%##만큼의 피해 감소 효과를 받습니다.\n\n에이스: #{owned}#$pro##\n팀원을 되살릴때 #{skill_color}#30%##만큼 더 많은 체력을 추가로 회복시켜서 되살립니다.",
 
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "응급 치료",
-			["menu_tea_time_beta_desc_sc"] = "베이직: ##$basic##\n당신의 구급 키트와 의료 가방의 배치시간이 ##50%##만큼 감소합니다.\n\n에이스: ##$pro##\n당신의 구급 키트을 사용한 사람은 ##5##초간 ##50%##만큼의 피해 감소를 받습니다.",
+			["menu_tea_time_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 구급 키트와 의료 가방의 배치시간이 #{skill_color}#50%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n당신의 구급 키트을 사용한 사람은 #{skill_color}#5##초간 #{skill_color}#50%##만큼의 피해 감소를 받습니다.",
 
 			--Pain Killers
 			["menu_fast_learner_beta_sc"] = "진통제",
-			["menu_fast_learner_beta_desc_sc"] = "베이직: ##$basic##\n당신이 되살린 팀원은 ##5##초간 피해 감소 효과 ##25%##만큼 받습니다.\n\n에이스: ##$pro##\n피해 감소량이 추가로 ##25%##만큼 늘어납니다.",
+			["menu_fast_learner_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신이 되살린 팀원은 #{skill_color}#5##초간 피해 감소 효과 #{skill_color}#25%##만큼 받습니다.\n\n에이스: #{owned}#$pro##\n피해 감소량이 추가로 #{skill_color}#25%##만큼 늘어납니다.",
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "각성제",
-			["menu_tea_cookies_beta_desc_sc"] = "베이직: ##$basic##\n구급 키트의 소지량이 ##3##개 늘어납니다.\n\n에이스: ##$pro##\n구급 키트의 소지량이 ##3##개 더 늘어납니다.\n\n당신이 배치한 구급 키트는 구급 키트로부터 반경 ##5##미터 안에 플레이어가 다운된경우 자동으로 사용되어 다운을 방지합니다.\n\n이 효과는 플레이어마다 매 ##60##초당 한 번만 발동합니다.\n\n참고: 스완송에는 적용되지 않습니다",
+			["menu_tea_cookies_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구급 키트의 소지량이 #{skill_color}#3##개 늘어납니다.\n\n에이스: #{owned}#$pro##\n구급 키트의 소지량이 #{skill_color}#3##개 더 늘어납니다.\n\n당신이 배치한 구급 키트는 구급 키트로부터 반경 #{skill_color}#5##미터 안에 플레이어가 다운된경우 자동으로 사용되어 다운을 방지합니다.\n\n이 효과는 플레이어마다 매 #{skill_color}#60##초당 한 번만 발동합니다.\n\n#{risk}#참고: 스완송에는 적용되지 않습니다.##",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "군의관",
-			["menu_medic_2x_beta_desc_sc"] = "베이직: ##$basic##\n의료 가방의 사용 횟수를 ##1##번 더 늘려줍니다\n\n에이스: ##$pro##\n의료 가방의 소지 개수를 ##2##개로 늘려줍니다.",
+			["menu_medic_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n의료 가방의 사용 횟수를 #{skill_color}#1##번 더 늘려줍니다\n\n에이스: ##$pro##\n의료 가방의 소지 개수를 #{skill_color}#2##개로 늘려줍니다.",
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "인스파이어",
-			["menu_inspire_beta_desc_sc"] = "베이직: ##$basic##\n팀원을 되살리는 속도가 ##50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 ##10##초간 ##20%##만큼 상습합니다.\n\n에이스: ##$pro##\n최대 ##9미터 안##에 ##시야를 확보한 상태##에서 다운된 팀원에게 소리치면 팀원을 되살립니다. 이 효과는 매 ##90##초 마다 한 번만 일어납니다.",
-
-
-			--}
+			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상습합니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#9미터 안##에 #{skill_color}#시야를 확보한 상태##에서 다운된 팀원에게 소리치면 팀원을 되살립니다. 이 효과는 매 #{skill_color}#90##초 마다 한 번만 일어납니다.",
 
 			--[[   CONTROLLER SUBTREE   ]]--
-			--{
-
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "케이블 가이",
-			["menu_triathlete_beta_desc_sc"] = "베이직: ##$basic##\n케이블 타이 소지량이 ##3##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 ##30%##로 증가합니다.\n\n케이블 타이 소지량이 추가로 ##3##만큼 증가합니다.",
+			["menu_triathlete_beta_desc_sc"] = "베이직: #{owned}#$basic##\n케이블 타이 소지량이 #{skill_color}#3##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 #{skill_color}#30%##로 증가합니다.\n\n케이블 타이 소지량이 추가로 #{skill_color}#3##만큼 증가합니다.",
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "광대는 무섭다",
-			["menu_cable_guy_beta_desc_sc"] = "베이직: ##$basic##\n시민들은 ##50%##만큼 더 오래 겁을 먹습니다.\n\n에이스: ##$pro##\n당신의 제압의 범위와 제압력이 ##50%##만큼 상승합니다.",
+			["menu_cable_guy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n시민들은 #{skill_color}#50%##만큼 더 오래 겁을 먹습니다.\n\n에이스: #{owned}#$pro##\n당신의 제압의 범위와 제압력이 #{skill_color}#50%##만큼 상승합니다.",
 
 			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "스톡홀름 증후군",
-			["menu_joker_beta_desc_sc"] = "베이직: ##$basic##\n근처에 있는 민간인과 조커들을 ##쓰려진 상태에서 부르면 당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: ##$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 ##4##번까지 피해 흡수를 ##1##씩 얻습니다.\n\n참고: 이 효과는 이 스킬을 사용하는 팀원들의 효과와 중첩되지 않습니다.",
+			["menu_joker_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근처에 있는 민간인과 조커들을 #{skill_color}#쓰려진 상태에서 부르면 당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: #{owned}#$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 #{skill_color}#4##번까지 피해 흡수를 #{skill_color}#1##씩 얻습니다.\n\n#{risk}#참고: 이 효과는 이 스킬을 사용하는 팀원들의 효과와 중첩되지 않습니다.##",
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "조커",
-			["menu_stockholm_syndrome_beta_desc_sc"] = "베이직: ##$basic##\n일반 경찰이 당신을 위해 싸우게 만들 수 있습니다. 스텔스 도중에는 할 수 없고, 상대는 당신에게 제압당한 상태여야 합니다. 당신은 한 번에 한 명의 경찰만 전환시킬 수 있습니다.\n\n전환된 적은 받는 피해가 ##60%##만큼 감소합니다.\n\n스킬의 목적과 구금된 플레이어를 거래하기 위해 전환된 적은 인질로 간주됩니다.\n\n에이스: ##$pro##\n당신은 동시에 ##2##명의 전환된 적을 데리고 다닐 수 있습니다.\n\n전환된 적은 추가로 받는 피해가 ##20%##만큼 감소합니다.",
+			["menu_stockholm_syndrome_beta_desc_sc"] = "베이직: #{owned}#$basic##\n일반 경찰이 당신을 위해 싸우게 만들 수 있습니다. 스텔스 도중에는 할 수 없고, 상대는 당신에게 제압당한 상태여야 합니다. 당신은 한 번에 한 명의 경찰만 전환시킬 수 있습니다.\n\n전환된 적은 받는 피해가 #{skill_color}#60%##만큼 감소합니다.\n\n스킬의 목적과 구금된 플레이어를 거래하기 위해 전환된 적은 인질로 간주됩니다.\n\n에이스: #{owned}#$pro##\n당신은 동시에 #{skill_color}#2##명의 전환된 적을 데리고 다닐 수 있습니다.\n\n전환된 적은 추가로 받는 피해가 #{skill_color}#20%##만큼 감소합니다.",
 
 			--Partners in Crime
 			["menu_control_freak_beta_sc"] = "공범",
-			["menu_control_freak_beta_desc_sc"] = "베이직: ##$basic##\n당신은 인질 당 최대 ##4##명까지 당신의 이동 속도가 ##3%##만큼 상승합니다.\n\n에이스: ##$pro##\n당신은 인질 당 최대 ##4##명까지 최대 체력이 추가로 ##5%##씩 상승합니다.",
+			["menu_control_freak_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신은 인질 당 최대 #{skill_color}#4##명까지 당신의 이동 속도가 #{skill_color}#3%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신은 인질 당 최대 #{skill_color}#4##명까지 최대 체력이 추가로 #{skill_color}#5%##씩 상승합니다.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "인질범",
-			["menu_black_marketeer_beta_desc_sc"] = "베이직: ##$basic##\n당신은 인질 당 최대 ##4##명까지 매 ##4##초마다 당신의 체력의 ##1##만큼 체력을 회복합니다.\n\n에이스: ##$pro##\n당신의 ##인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 ##1##번만 발생합니다.\n\n##4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 ##50%##만큼 증가합니다.",
+			["menu_black_marketeer_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신은 인질 당 최대 #{skill_color}#4##명까지 매 #{skill_color}#4##초마다 당신의 체력의 #{skill_color}#1##만큼 체력을 회복합니다.\n\n에이스: #{owned}#$pro##\n당신의 #{skill_color}#인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 #{skill_color}#1##번만 발생합니다.\n\n#{skill_color}#4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 #{skill_color}#50%##만큼 증가합니다.",
 
-
-			--}
-
-			--[[   ASSAULT SUBTREE, FORMERLY SHARPSHOOTER   ]]--
-			--{
-
+			--[[   ASSAULT SUBTREE   ]]--
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "리더쉽",
-			["menu_stable_shot_beta_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총의 안정성을 ##2##만큼 상승합니다.\n\n에이스: ##$pro##\n당신과 동료들의 모든 무기의 안정성을 ##2##만큼 상승시켜줍니다.",
+			["menu_stable_shot_beta_desc_sc"] = "베이직: #{owned}#$basic##\n기관단총과 경기관총의 안정성을 #{skill_color}#2##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신과 동료들의 모든 무기의 안정성을 #{skill_color}#2##만큼 상승시켜줍니다.",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "기관총 핸들링",
-			["menu_scavenger_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총의 지향 사격 명중률이 ##20%##만큼 증가합니다.\n\n에이스: ##$pro##\n기관단총과 경기관총의 지향 사격 명중률을 추가로 ##30%##만큼 증가합니다.\n\n기관단총과 경기관총 재장전 속도가 ##25%##만큼 빨라집니다.",
+			["menu_scavenger_desc_sc"] = "베이직: #{owned}#$basic##\n기관단총과 경기관총의 지향 사격 명중률이 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n기관단총과 경기관총의 지향 사격 명중률을 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n기관단총과 경기관총 재장전 속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "기관총 전문가",
-			["menu_sharpshooter_desc_sc"] = "베이직: ##$basic##\n기관단총 및 경기관총의 이동 패널티에 대한 명중률이 ##60%##만큼 감소합니다.\n\n이동 패널티에 대한 명중률은 안정성에 따라 결정됩니다.\n\n에이스: ##$pro##\n기관단총와 경기관총의 발사 속도가 ##15%##만큼 빨라집니다.\n\n기관단총이나 경기관총으로 방아쇠를 놓지 않고 발사하면 ##5번째## 총알은 탄약을 소모하지 않습니다.",
+			["menu_sharpshooter_desc_sc"] = "베이직: #{owned}#$basic##\n기관단총 및 경기관총의 이동 패널티에 대한 명중률이 #{skill_color}#60%##만큼 감소합니다.\n\n이동 패널티에 대한 명중률은 안정성에 따라 결정됩니다.\n\n에이스: #{owned}#$pro##\n기관단총와 경기관총의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n기관단총이나 경기관총으로 방아쇠를 놓지 않고 발사하면 #{skill_color}#5번째## 총알은 탄약을 소모하지 않습니다.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: ##$basic##\n모든 무기의 장탄수가 ##20%##만큼 증가합니다.\n\n참고: 석궁, 활, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n모든 무기로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n모든 무기의 장탄수가 추가로 ##30%##만큼 증가합니다.",
+			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: #{owned}#$basic##\n모든 무기의 장탄수가 #{skill_color}#20%##만큼 증가합니다.\n\n#{risk}#참고: 석궁, 활, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n모든 무기로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n모든 무기의 장탄수가 추가로 #{skill_color}#30%##만큼 증가합니다.",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
-			["menu_speedy_reload_desc_sc"] = "베이직: ##$basic##\n기관단총과 경기관총은 ##20%##의 확률로 적을 쓰러뜨립니다.\n\n양각대 사용 시 확률이 ##40%##로 증가합니다.\n\n참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 받는 피해가 ##12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##25%##으로 증가합니다.",
+			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n기관단총과 경기관총은 #{skill_color}#20%##의 확률로 적을 쓰러뜨립니다.\n\n양각대 사용 시 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##25%##으로 증가합니다.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: ##$basic##\n총알은 ##이제 방탄복을 관통할 수 있습니다.##\n\n자동으로 사격하는 기관단총와 경기관총은 적의 헤드샷 배율의 ##30%##가 몸통 사격에 적용됩니다.\n\n참고: 불도저에게는 적용되지 않습니다.\n\n에이스: ##$pro##\n자동으로 사격하는 모든 총은 적의 헤드샷 배율의 ##60%##가 몸통 사격에 적용됩니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n총알은 #{skill_color}#이제 방탄복을 관통할 수 있습니다.##\n\n자동으로 사격하는 기관단총와 경기관총은 적의 헤드샷 배율의 #{skill_color}#30%##가 몸통 사격에 적용됩니다.\n\n#{risk}#참고: 불도저에게는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n자동으로 사격하는 모든 총은 적의 헤드샷 배율의 #{skill_color}#60%##가 몸통 사격에 적용됩니다.",
 
 			--}
 		--}
@@ -2646,27 +2634,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Underdog--
 			["menu_underdog_beta_sc"] = "언더독",
-			["menu_underdog_beta_desc_sc"] = "베이직: ##$basic##\n반경 ##18##미터 이내에 적이 세 명 이상 있을 경우, ##7##초 동안 공격력이 ##10%## 증가합니다.\n\n에이스: ##$pro##\n반경 ##18##미터 이내에 적이 세 명 이상 있을 경우, ##7##초 동안 입는 피해가 ##10%## 감소합니다.",
+			["menu_underdog_beta_desc_sc"] = "베이직: #{owned}#$basic##\n반경 #{skill_color}#18##미터 이내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 공격력이 #{skill_color}#10%## 증가합니다.\n\n에이스: #{owned}#$pro##\n반경 #{skill_color}#18##미터 이내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 입는 피해가 #{skill_color}#10%## 감소합니다.",
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 ##15%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n산탄총과 화염방사기의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
-			["menu_shotgun_impact_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 안정성이 ##2##만큼 증가합니다\n\n에이스: ##$pro##\n산탄총은 ##3## 펠릿을 더 발사합니다.\n\n참고: 슬러그탄과 폭발탄에는 적용되지 않습니다.",
+			["menu_shotgun_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n산탄총과 화염방사기의 안정성이 #{skill_color}#2##만큼 증가합니다\n\n에이스: #{owned}#$pro##\n산탄총은 #{skill_color}#3## 펠릿을 더 발사합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄에는 적용되지 않습니다.##",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
-			["menu_far_away_beta_desc_sc"] = "베이직: ##$basic##\n조준하는 동안 이동 속도가 ##60%##만큼 빨라집니다.\n\n참고: 속도는 현재 위치의 최대 속도로 제한됩니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 명중률와 사거리가 정조준하는 동안 ##30%##만큼 증가합니다.",
+			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준하는 동안 이동 속도가 ##60%##만큼 빨라집니다.\n\n#{risk}#참고: 속도는 현재 위치의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n산탄총과 화염방사기의 명중률와 사거리가 정조준하는 동안 ##30%##만큼 증가합니다.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
-			["menu_close_by_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염 방사기는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기로 지향 사걱하는 동안 발사 속도가 ##35%##만큼 증가합니다.",
+			["menu_close_by_beta_desc_sc"] = "베이직: #{owned}#$basic##\n산탄총과 화염 방사기는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n산탄총과 화염방사기로 지향 사걱하는 동안 발사 속도가 #{skill_color}#35%##만큼 증가합니다.",
 
 			--Overkill
 			["menu_overkill_sc"] = "오버킬",
-			["menu_overkill_desc_sc"] = "베이직: ##$basic##\n산탄총이나 화염방사기, 휴대용 톱으로 적을 처치할 경우, ##2##초 동안 산탄총과 휴대용 톱의 공격력이 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n산탄총이나 휴대용 톱으로 적을 처치할 경우, ##10##초 동안 모든 무기의 공격력이 ##50%##만큼 증가합니다.\n\n참고: 유탄 발사기에는 적용되지 않습니다.\n\n산탄총과 톱의 교체 속도가 ##50%##만큼 빨라집니다.",
+			["menu_overkill_desc_sc"] = "베이직: #{owned}#$basic##\n산탄총이나 화염방사기, 휴대용 톱으로 적을 처치할 경우, #{skill_color}#2##초 동안 산탄총과 휴대용 톱의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n산탄총이나 휴대용 톱으로 적을 처치할 경우, #{skill_color}#10##초 동안 모든 무기의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 유탄 발사기에는 적용되지 않습니다.##\n\n산탄총과 톱의 교체 속도가 #{skill_color}#50%##만큼 빨라집니다.",
 
 			--}
 
@@ -2675,343 +2663,282 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stun Resistance--
 			["menu_oppressor_beta_sc"] = "스턴 저항력",
-			["menu_oppressor_beta_desc_sc"] = "베이직: ##$basic##\n당신이 가진 방탄력 1점당 적의 근접 공격을 맞을때 ##0.25%##만큼 뒤로 밀려납니다.\n\n에이스: ##$pro##\n섬광탄을 비롯한 시각 교란의 지속 시간이 ##50%##만큼 감소합니다.",
+			["menu_oppressor_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신이 가진 방탄력 1점당 적의 근접 공격을 맞을때 #{skill_color}#0.25%##만큼 뒤로 밀려납니다.\n\n에이스: #{owned}#$pro##\n섬광탄을 비롯한 시각 교란의 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "다이 하드",
-			["menu_show_of_force_desc_sc"] = "베이직: ##$basic##\n굴절을 ##5%##만큼 얻습니다.\n\n각 굴절 포인트마다 받는 체력 피해를 ##1%## 적게 하며 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: ##$pro##\n추가로 굴절을 ##5%##만큼 얻습니다.",
+			["menu_show_of_force_desc_sc"] = "베이직: #{owned}#$basic##\n굴절을 #{skill_color}#5%##만큼 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: #{owned}#$pro##\n추가로 굴절을 #{skill_color}#5%##만큼 얻습니다.",
 
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "트랜스포터",
-			["menu_transporter_beta_desc_sc"] = "베이직: ##$basic##\n방탄력 ##10##마다 가방의 이동속도 패널티가 ##0.5%##씩 감소합니다.\n\n에이스: ##$pro##\n이제 아무 가방을 들어도 질주할 수 있습니다.\n\n참고: 가방의 이동 패널티는 여전히 적용됩니다.",
+			["menu_transporter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n방탄력 #{skill_color}#10##마다 가방의 이동속도 패널티가 #{skill_color}#0.5%##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n이제 아무 가방을 들어도 질주할 수 있습니다.\n\n#{risk}#참고: 가방의 이동 패널티는 여전히 적용됩니다.##",
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "더 많은 피, 더 많은 출혈",
-			["menu_iron_man_beta_desc_sc"] = "베이직: ##$basic##\n추가 체력을 ##10%##만큼 얻습니다.\n\n에이스: ##$pro##\n추가로 ##15%##만큼의 추가 체력을 얻습니다.",
+			["menu_iron_man_beta_desc_sc"] = "베이직: #{owned}#$basic##\n추가 체력을 #{skill_color}##10%##만큼 얻습니다.\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}##15%##만큼의 추가 체력을 얻습니다.",
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "불스아이",
-			["menu_prison_wife_beta_desc_sc"] = "베이직: ##$basic##\n헤드샷 성공시 ##5##초마다 ##5##씩 방탄력을 회복합니다.\n\n에이스: ##$pro##\n헤드샷 성공시 ##5##초마다 추가로 ##30##씩 방탄력을 회복합니다.",
+			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 #{skill_color}##5##초마다 ##5##씩 방탄력을 회복합니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 #{skill_color}##5##초마다 추가로 #{skill_color}##30##씩 방탄력을 회복합니다.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
-			["menu_juggernaut_beta_desc_sc"] = "베이직: ##$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n에이스: ##$pro##\n실드를 근접 공격하면 넘어뜨립니다.\n\n원거리 무기로 실드을 공격할 때 일정 확률로 넘어뜨릴 수 있습니다. 무기의 총 대미지가 높을수록 넉백 확률이 증가합니다.\n\n방탄력이 ##10%##만큼 더 빨리 회복됩니다.",
+			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n에이스: #{owned}#$pro##\n실드를 근접 공격하면 넘어뜨립니다.\n\n원거리 무기로 실드을 공격할 때 일정 확률로 넘어뜨릴 수 있습니다. 무기의 총 대미지가 높을수록 넉백 확률이 증가합니다.\n\n방탄력이 #{skill_color}##10%##만큼 더 빨리 회복됩니다.",
 
-
-			--}
-
-			--[[   AMMO SPECIALIST SUBTREE   ]]--
-			--{
-
+			--[[   SUPPORT SUBTREE   ]]--
 			--Scavenger
 			["menu_scavenging_sc"] = "수색자",
-			["menu_scavenging_desc_sc"] = "베이직: ##$basic##\n탄약 상자를 수급하는 범위가 ##50%##만큼 커집니다.\n\n에이스: ##$pro##\n매 ##5##번째로 죽인 적마다 하나의 탄약 상자가 추가로 생성됩니다.",
+			["menu_scavenging_desc_sc"] = "베이직: #{owned}#$basic##\n탄약 상자를 수급하는 범위가 #{skill_color}#50%##만큼 커집니다.\n\n에이스: #{owned}#$pro##\n매 #{skill_color}#5##번째로 죽인 적마다 하나의 탄약 상자가 추가로 생성됩니다.",
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "탄환폭풍",
-			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: ##$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 ##5##초까지 탄약 소모가 없어집니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n참고: 유탄 발사기, 로켓 발사기 및 폭발발 탄약을 사용하는 무기들은 이 스킬의 효과를 받지 않습니다.\n\n에이스: ##$pro##\n탄약 소모가 없어지는 시간이 추가로 ##15##초로 증가합니다.",
+			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 #{skill_color}#5##초까지 탄약 소모가 없어집니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n#{risk}#참고: 유탄 발사기, 로켓 발사기 및 폭발발 탄약을 사용하는 무기들은 이 스킬의 효과를 받지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄약 소모가 없어지는 시간이 추가로 #{skill_color}#15##초로 증가합니다.",
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "장비 전문가",
-			["menu_portable_saw_beta_desc_sc"] = "베이직: ##$basic##\n톱으로 적을 공격할 때 톱날의 내구도가 ##50%##만큼 덜 감소됩니다.\n\n에이스: ##$pro##\n톱, 석궁, 활, 유탄 발사기 및 로켓 발사기의 재장전 속도가 ##25%##만큼 늘어납니다.",
+			["menu_portable_saw_beta_desc_sc"] = "베이직: #{owned}#$basic##\n톱으로 적을 공격할 때 톱날의 내구도가 #{skill_color}#50%##만큼 덜 감소됩니다.\n\n에이스: #{owned}#$pro##\n톱, 석궁, 활, 유탄 발사기 및 로켓 발사기의 재장전 속도가 #{skill_color}#25%##만큼 늘어납니다.",
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "추가 탄약통",
-			["menu_ammo_2x_beta_desc_sc"] = "베이직: ##$basic##\n탄약 가방의 용량이 ##200%## 늘어납니다.\n\n에이스: ##$pro##\n탄약 가방의 휴대량이 ##2##개로 늘어납니다.",
+			["menu_ammo_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n탄약 가방의 용량이 #{skill_color}#200%## 늘어납니다.\n\n에이스: #{owned}#$pro##\n탄약 가방의 휴대량이 #{skill_color}#2##개로 늘어납니다.",
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "찢고 죽인다",
-			["menu_carbon_blade_beta_desc_sc"] = "베이직: ##$basic##\nOVE9000 전동톱이 실드의 방어를 관통하여 공격할 수 있습니다.\n\n에이스: ##$pro##\n적을 톱, 석궁, 활, 유탄 발사기 또는 로켓 발사기로 죽일 경우, 주변 ##10##m 이내의 적에게 ##50%## 확률로 패닉을 일으킵니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.",
+			["menu_carbon_blade_beta_desc_sc"] = "베이직: #{owned}#$basic##\nOVE9000 전동톱이 실드의 방어를 관통하여 공격할 수 있습니다.\n\n에이스: #{owned}#$pro##\n적을 톱, 석궁, 활, 유탄 발사기 또는 로켓 발사기로 죽일 경우, 주변 #{skill_color}#10##m 이내의 적에게 #{skill_color}#50%## 확률로 패닉을 일으킵니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.",
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "완전무장",
-			["menu_bandoliers_desc_sc"] = "베이직: ##$basic##\n소지 탄약이 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n탄약 상자로 획득하는 탄약 수급율이 ##50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 ##5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 ##1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n참고: 특성 덱의 투척물은 해당 스킬로도 획득할 수 없습니다.",
-
-			--}
-		--}
+			["menu_bandoliers_desc_sc"] = "베이직: #{owned}#$basic##\n소지 탄약이 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자로 획득하는 탄약 수급율이 #{skill_color}#50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 #{skill_color}#5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 #{skill_color}#1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n#{risk}#참고: 특성 덱의 투척물은 해당 스킬로도 획득할 수 없습니다.##",
 
 		--[[   TECHNICIAN   ]]--
-		--{
+		
 			--[[   ENGINEER SUBTREE   ]]--
-			--{
-
 			--Logistician
 			["menu_defense_up_beta_sc"] = "로지스티션",
-			["menu_defense_up_beta_desc_sc"] = "베이직: ##$basic##\n도구와의 상호작용, 설치속도 ##25%##만큼 향상합니다.\n\n에이스: ##$pro##\n당신과 둉료들은 도구와의 상호작용, 설치속도 ##50%##만큼 향상합니다.",
+			["menu_defense_up_beta_desc_sc"] = "베이직: #{owned}#$basic##\n도구와의 상호작용, 설치속도 #{skill_color}#25%##만큼 향상합니다.\n\n에이스: #{owned}#$pro##\n당신과 둉료들은 도구와의 상호작용, 설치속도 #{skill_color}#50%##만큼 향상합니다.",
 
 			--Nerves of Steel--
 			["menu_fast_fire_beta_sc"] = "강인한 정신",
-			["menu_fast_fire_beta_desc_sc"] = "베이직: ##$basic##\n다운 상태에서 ##정조준을 할 수 있게 됩니다##.\n\n에이스: ##$pro##\n상호작용 중 입는 피해가 ##50%##만큼 감소합니다.",
+			["menu_fast_fire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n다운 상태에서 #{skill_color}#정조준을 할 수 있게 됩니다##.\n\n에이스: #{owned}#$pro##\n상호작용 중 입는 피해가 #{skill_color}#50%##만큼 감소합니다.",
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "엔지니어링",
-			["menu_eco_sentry_beta_desc_sc"] = "베이직: ##$basic##\n센트리 건의 체력이 ##40%##만큼 증가합니다.\n\n에이스: ##$pro##\n센트리 건의 체력이 추가로 ##60%##만큼 증가합니다.",
+			["menu_eco_sentry_beta_desc_sc"] = "베이직: #{owned}#$basic##\n센트리 건의 체력이 #{skill_color}#40%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n센트리 건의 체력이 추가로 #{skill_color}#60%##만큼 증가합니다.",
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "팔방미인",
-			--["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n주 장비와 함께 보조장비를 같이 소지할 수 있습니다. 주 장비와 보조장비를 교체하려면 ##[X]## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있습니다.",
+			--["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: #{owned}#$basic##\n투척무기를 #{skill_color}#50%##만큼 소지 할 수 있습니다.\n\n에이스: #{owned}#$pro##\n주 장비와 함께 보조장비를 같이 소지할 수 있습니다. 주 장비와 보조장비를 교체하려면 #{skill_color}#[X]## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있습니다.",
 
-			["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: ##$basic##\n투척무기를 ##50%##만큼 소지 할 수 있습니다.\n\n에이스: ##$pro##\n##주 장비와 함께 보조장비를 같이 소지할 수 있습니다##. 주 장비와 보조장비를 교체할 수 교체하려면 ##$BTN_CHANGE_EQ## 키를 누르십시오.\n\n참고: 보조장비로 설정하여 가지고 온 장비는 ##50%##만 가지고 올 수 있고 갯수도 최소 ##1##개씩 줄어듭니다.",
+			["menu_jack_of_all_trades_beta_desc_sc"] = "베이직: #{owned}#$basic##\n투척무기를 #{skill_color}#50%##만큼 소지 할 수 있습니다.\n\n에이스: #{owned}#$pro##\n##주 장비와 함께 보조장비를 같이 소지할 수 있습니다##. 주 장비와 보조장비를 교체할 수 교체하려면 #{skill_color}#$BTN_CHANGE_EQ## 키를 누르십시오.\n\n보조장비로 설정하여 가지고 온 장비는 #{important_1}#50%##만 가지고 올 수 있고 갯수도 최소 #{skill_color}#1##개씩 줄어듭니다.",
 			
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "타워 디펜스",
-			["menu_tower_defense_beta_desc_sc"] = "베이직: ##$basic##\n이제 센트리 건에서 철갑탄을 전환할 수 있으며 전환 시 발사 속도를 ##66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: ##$pro##\n최대 ##2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 ##35%##가 소모됩니다.",
+			["menu_tower_defense_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 센트리 건에서 철갑탄을 전환할 수 있으며 전환 시 발사 속도를 #{skill_color}#66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 #{skill_color}#35%##가 소모됩니다.",
 
 			--Bulletproof--
 			["menu_iron_man_sc"] = "방탄",
-			["menu_iron_man_desc_sc"] = "베이직: ##$basic##\n방탄복가 뚫리지 않습니다.\n\n방편복과 복합 전술 조끼의 방탄력을 ##20##만큼 증가시킵니다.\n\n에이스: ##$pro##\n방탄복가 가득 차 있는 동안 받는 피해가 최대 방탄력의 ##15%##만큼 감소합니다.\n\n방탄복가 ##15%## 더 빨리 회복됩니다.",
-
-			--}
+			["menu_iron_man_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복가 뚫리지 않습니다.\n\n방편복과 복합 전술 조끼의 방탄력을 #{skill_color}#20##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n방탄복가 가득 차 있는 동안 받는 피해가 최대 방탄력의 #{skill_color}#15%##만큼 감소합니다.\n\n방탄복이 #{skill_color}#15%## 더 빨리 회복됩니다.",
 
 			--[[   BREACHER SUBTREE   ]]--
-			--{
-
 			--Silent Drilling--
 			["menu_hardware_expert_beta_sc"] = "조용한 드릴링",
-			["menu_hardware_expert_beta_desc_sc"] = "베이직: ##$basic##\n이제 ##드릴은 조용해집니다##, 시민과 경비원은 경고를 받으려면 드릴을 봐야 합니다.\n\n에이스: ##$pro##\n드릴과 톱의 수리속도가 ##50%##증가합니다.",
+			["menu_hardware_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 #{skill_color}#드릴은 조용해집니다##, 시민과 경비원은 경고를 받으려면 드릴을 봐야 합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱의 수리속도가 #{skill_color}#50%##만큼 증가합니다.",
 			
 			--Demoman
 			["menu_trip_mine_expert_beta_sc"] = "데모맨",
-			["menu_combat_engineering_desc_sc"] = "베이직: ##$basic##\n성형작약탄을 최대 ##6##개까지 설치할 수 있습니다.\n\n성형작약탄과 트립마인을 설치하는 속도가 ##25%##만큼 빨라집니다.\n\n에이스: ##$pro##\n성형작약탄을 최대 ##8##개까지 설치할 수 있습니다.\n\n트립 마인의 폭발 반경이 ##30%##만큼 증가합니다.",
+			["menu_combat_engineering_desc_sc"] = "베이직: #{owned}#$basic##\n성형작약탄을 최대 #{skill_color}#6##개까지 설치할 수 있습니다.\n\n성형작약탄과 트립마인을 설치하는 속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n성형작약탄을 최대 #{skill_color}#8##개까지 설치할 수 있습니다.\n\n트립 마인의 폭발 반경이 #{skill_color}#30%##만큼 증가합니다.",
 
 			--Drill Sawgeant
 			["menu_drill_expert_beta_sc"] = "드릴 교관",
-			["menu_drill_expert_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱의 효율이 ##10%##만큼 증가합니다.\n\n에이스: ##$pro##\n드릴과 톱의 효율성을 ##20%##만큼 더 증가합니다.",
+			["menu_drill_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n드릴과 톱의 효율이 #{skill_color}#10%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱의 효율성을 #{skill_color}#20%##만큼 더 증가합니다.",
 
 			--Fire Trap--
 			["menu_more_fire_power_sc"] = "화염 함정",
-			["menu_more_fire_power_desc_sc"] = "베이직: ##$basic##\n트립마인은 이제 폭발 지역 주위에서 ##7.5##미터 반경에 ##10##초 동안 불 지대를 만듭니다.\n\n트립마인으로 생성된 불 지대는 자기 피해나 아군 피해를 가하지 않습니다.\n\n에이스: ##$pro##\n트립마인 ##10##개를 더 소지합니다.\n\n트립마인의 피해량이 ##50%##만큼 증가합니다.",
+			["menu_more_fire_power_desc_sc"] = "베이직: #{owned}#$basic##\n트립마인은 이제 폭발 지역 주위에서 #{skill_color}#7.5##미터 반경에 ##10##초 동안 불 지대를 만듭니다.\n\n트립마인으로 생성된 불 지대는 자기 피해나 아군 피해를 가하지 않습니다.\n\n에이스: #{owned}#$pro##\n트립마인 #{skill_color}#10##개를 더 소지합니다.\n\n트립마인의 피해량이 #{skill_color}#50%##만큼 증가합니다.",
 
 			--Expert Hardware
 			["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
-			["menu_kick_starter_beta_desc_sc"] = "베이직: ##$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 ##30%##만큼 증가합니다.\n\n에이스: ##$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 ##20%##만큼 증가합니다.\n\n드릴을 멈출려고 하는 적들을 ##50%## 확률로 감전시켜 방해 공작을 막습니다.",
+			["menu_kick_starter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 #{skill_color}#30%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 #{skill_color}#20%##만큼 증가합니다.\n\n드릴을 멈출려고 하는 적들을 #{skill_color}#50%## 확률로 감전시켜 방해 공작을 막습니다.",
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",
-			["menu_fire_trap_beta_desc_sc"] = "베이직: ##$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n##75%##의 성공률로 드릴이 고장날 때마다 기회를 ##1##번 얻습니다.\n\n에이스: ##$pro##\n상호작용을 하는 동안 ##더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
+			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n#{skill_color}#75%##의 성공률로 드릴이 고장날 때마다 기회를 #{skill_color}#1##번 얻습니다.\n\n에이스: #{owned}#$pro##\n상호작용을 하는 동안 #{skill_color}#더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
 
+			--[[  COMBAT ENGINEER SUBTREE   ]]--
+			--Rifleman
+			["menu_rifleman_sc"] = "라이플맨",
+			["menu_rifleman_desc_sc"] = "베이직: #{owned}#$basic##\n소총으로 조준하는 동안 소총의 명중률과 사거리가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n소총으로 조준하는 동안 소총의 명중률과 사거리가 추가로 #{skill_color}#15%##만큼 더 증가합니다.",			
+			
+			--Sharpshooter--
+			["menu_discipline_sc"] = "명사수",
+			["menu_discipline_desc_sc"] = "베이직: #{owned}#$basic##\n소총류의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 #{skill_color}#10##초 동안 발사 속도를 #{skill_color}#20%##만큼 증가시킵니다.",
 
-			--}
+			--Kilmer--
+			["menu_heavy_impact_beta_sc"] = "킬머",
+			["menu_heavy_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n소총류의 명중률에 대한 이동 패널티가 #{skill_color}#60%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n소총류의 재장전 속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
-			--[[  BATTLE SAPPER  SUBTREE   ]]--
-			--{
+			--Ammo Efficiency--
+			["menu_single_shot_ammo_return_sc"] = "효율적인 탄약 활용",
+			["menu_single_shot_ammo_return_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#8##초안에 헤드샷을 #{skill_color}#3##번 성공하면 사용한 무기에 #{skill_color}#1##발을 혹은 #{skill_color}#3%##만큼의 총 탄약을 되돌려줍니다.\n\n에이스: #{owned}#$pro##\n이제 이 효과는 헤드샷을 #{skill_color}#2##번 맞힐 때 발동되며 가능할 때마다 탄약이 탄창으로 되돌립니다.",
 
-
-
-			--}
-		--}
+			--Aggressive Reload
+			["menu_engineering_beta_sc"] = "공격적인 재장전",
+			["menu_engineering_beta_desc_sc"] = "베이직: #{owned}#$basic##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 #{skill_color}#10##초 동안 재장전 속도를 #{skill_color}#25%##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n재장전 속도 보너스가 #{skill_color}#50%##만큼 증가하며 발사 모드와 상관없이 발동할 수 있습니다.",
+			
+			--Mind Blown, formerly Explosive Headshot--
+			["menu_kilmer_sc"] = "마인드 블로우",
+			["menu_kilmer_desc_sc"] = "베이직: #{owned}#$basic##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 #{skill_color}#4##미터 반경에서 가장 가까운 적에게 입힌 피해의 #{skill_color}#70%##만큼 입힙니다.\n\n적에게서 #{skill_color}#7##미터 떨어져 있을 때 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 #{skill_color}#4##번까지 됩니다.\n\n에이스: #{owned}#$pro##\n반자동 혹은 점사로 설정된 소총의 헤드샷은 #{skill_color}#거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 #{skill_color}#1##미터만큼 증가합니다.\n\n적에게서 #{skill_color}#7##미터 떨어져 있을 때 연쇄 효과가 추가로 #{skill_color}#10%##만큼 피해를 주고, 최대 총 #{skill_color}#110%##의 피해를 입힐 수 있습니다.",			
 
 		--[[   GHOST   ]]--
-		--{
-			--[[   COVERT OPS SUBTREE   ]]--
-			--{
-
+		
+			--[[   SHINOBI SUBTREE   ]]--
 			--Alert--
 			["menu_jail_workout_sc"] = "경계",
-			["menu_jail_workout_desc_sc"] = "베이직: ##$basic##\n적 마킹 지속시간을 ##100%##만큼 증가시킵니다.\n\n에이스: ##$pro##\n경비원과 특수 적을 향해 조준하면 ##40## 미터 이내에 있는 경비원과 특수 적을 ##자동으로 마킹합니다.##\n\n참고: 경비원은 스텔스 도중에만 마킹할 수 있습니다.",
+			["menu_jail_workout_desc_sc"] = "베이직: #{owned}#$basic##\n적 마킹 지속시간을 #{skill_color}#100%##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n경비원과 특수 적을 향해 조준하면 #{skill_color}#40##미터 이내에 있는 경비원과 특수 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 도중에만 마킹할 수 있습니다.##",
 
 			--Sixth Sense--
 			["menu_chameleon_beta_sc"] = "식스 센스",
-			["menu_chameleon_beta_desc_sc"] = "베이직: ##$basic##\n##3.5##초 동안 가만히 서 있으면 주변 ##10##미터 반경 내에 있는 적을 ##자동으로 마킹합니다.##\n\n에이스: ##$pro##\n사전계획 요소들을 ##모두 언락합니다.##",
+			["menu_chameleon_beta_desc_sc"] = "베이직: #{owned}#$basic##\n##3.5##초 동안 가만히 서 있으면 주변 #{skill_color}#10##미터 반경 내에 있는 적을 #{skill_color}#자동으로 마킹합니다.##\n\n에이스: #{owned}#$pro##\n사전계획 요소들을 #{skill_color}#모두 언락합니다.##",
 
 			--ECM Overdrive--
 			["menu_cleaner_beta_sc"] = "ECM 오버드라이브",
-			["menu_cleaner_beta_desc_sc"] = "베이직: ##$basic##\nECM 재머로 ##전자보안문을 열 수 있습니다.##\n\n에이스: ##$pro##\nECM 재머와 피드백 지속 시간이 추가로 ##25%##만큼 증가합니다.\n\n##페이저는 ECM 재머에 의해 지연될 수 있습니다.##",
-
+			["menu_cleaner_beta_desc_sc"] = "베이직: #{owned}#$basic##\nECM 재머로 #{skill_color}#전자보안문을 열 수 있습니다.##\n\n에이스: #{owned}#$pro##\nECM 재머와 피드백 지속 시간이 추가로 #{skill_color}#25%##만큼 증가합니다.\n\n##페이저는 ECM 재머에 의해 지연될 수 있습니다.##",
 
 			--Nimble--
 			["menu_second_chances_beta_sc"] = "날렵함",
-			["menu_second_chances_beta_desc_sc"] = "베이직: ##$basic##\n이제 ##손으로 조용히 금고를 딸 수 있습니다##.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 ##30%##만큼 빠르게 상호 작용합니다.\n\n에이스: ##$pro##\n모든 자물쇠를 ##50%##만큼 더 빨리 땁니다.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 추가로 ##50%##만큼 빠르게 상호 작용합니다.",
+			["menu_second_chances_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 #{skill_color}#손으로 조용히 금고를 딸 수 있습니다##.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 #{skill_color}#30%##만큼 빠르게 상호 작용합니다.\n\n에이스: #{owned}#$pro##\n모든 자물쇠를 #{skill_color}#50%##만큼 더 빨리 땁니다.\n\n모든 컴퓨터, 해킹, 카메라 및 ECM을 추가로 #{skill_color}#50%##만큼 빠르게 상호 작용합니다.",
 
 			--ECM Specialist--
 			["menu_ecm_booster_beta_sc"] = "ECM 전문가",
-			["menu_ecm_booster_beta_desc_sc"] = "베이직: ##$basic##\nECM가 ##3##개로 증가합니다.\n\n에이스: ##$pro##\nECM가 ##4##개로 증가합니다.",
+			["menu_ecm_booster_beta_desc_sc"] = "베이직: #{owned}#$basic##\nECM가 #{skill_color}#3##개로 증가합니다.\n\n에이스: #{owned}#$pro##\nECM가 #{skill_color}#4##개로 증가합니다.",
 
 			--Spotter--
 			["menu_ecm_2x_beta_sc"] = "스포터",
-			["menu_ecm_2x_beta_desc_sc"] = "베이직: ##$basic##\n마킹된 적이 ##20## 미터 이상 있을 때 피해를 추가로 ##25%##만큼 입습니다.\n\n에이스: ##$pro##\n미킹된 적은 모든 범위에서 모든 공격 속성으로부터 추가로 피해를 ##35%##만큼 입습니다.",
-
-
-			--}
-
-			--[[   COMMANDO SUBTREE   ]]--
-			--{
-
+			["menu_ecm_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n마킹된 적이 #{skill_color}#20##미터 이상 있을 때 피해를 추가로 #{skill_color}#25%##만큼 입습니다.\n\n에이스: #{owned}#$pro##\n미킹된 적은 모든 사거리에서 모든 공격 속성으로부터 추가로 피해를 #{skill_color}#35%##만큼 입습니다.",
+			
+			--[[   ARTFUL DODGER SUBTREE  ]]--
 			--Duck and Cover--
 			["menu_sprinter_beta_sc"] = "엄폐의 중요성",
-			["menu_sprinter_beta_desc_sc"] = "베이직: ##$basic##\n스태미나의 회복 시작 시간을 ##25%##만큼 앞당기고 회복률도 ##25%##만큼 증가합니다.\n\n에이스: ##$pro##\n웅크리고 있는 동안 회피 미터는 1초마다 회피의 ##6%##만큼 채워집니다.\n\n웅크리고 있을 때 이동 속도가 ##10%##만큼 증가합니다. ",
+			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}##25%##만큼 앞당기고 회복률도 #{skill_color}##25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}##6%##만큼씩 채워집니다.\n\n웅크리고 있을 때 이동 속도가 #{skill_color}##10%##만큼 증가합니다. ",
+
+			--Evasion--
+			["menu_awareness_beta_sc"] = "위기모면",
+			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n달리면서 재장전할 수 있습니다.\n\n전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.",			
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
-			["menu_thick_skin_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기의 은페도를 ##2##만큼 증가시킵니다.\n\n에이스: ##$pro##\n모든 방탄 조끼의 은페도를 ##4##만큼, 다른 모든 방탄복의 은페도를 ##2##만큼 증가합니다.\n\n모든 방탄 조끼의 은페도를 ##4##만큼 증가합니다.",
+			["menu_thick_skin_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접 무기의 은페도를 #{skill_color}#2##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n모든 방탄 조끼의 은페도를 #{skill_color}#4##만큼, 다른 모든 방탄복의 은페도를 #{skill_color}#2##만큼 증가합니다.\n\n모든 방탄 조끼의 은페도를 #{skill_color}#4##만큼 증가합니다.",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
-			["menu_dire_need_beta_desc_sc"] = "베이직: ##$basic##\n은페도가 ##35##에서 ##3##씩 낮아질 수록 최대 ##15%##까지 이동 속도가 ##1.5%##만큼 증가합니다.\n\n에이스: ##$pro##\n은페도가 ##35##에서 ##1##씩 낮아질 수록 최대 ##15%##까지 이동 속도가 ##1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 ##12%##만큼, 집라인을 타는 동안 1초마다 회피의 ##30%##만큼 채워집니다.",
+			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#12%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",
-			["menu_insulation_beta_desc_sc"] = "베이직: ##$basic##\n테이저의 전기 공격에 당하면 ##15%## 확률로 테이저를 넉백시킵니다.\n\n에이스: ##$pro##\n테이저의 전기 공격에 당한 직후 ##2##초 안에 상호작용 키를 누르면 감전시킨 테이저를 넉백 시키고 ##50##만큼 대미지를 줍니다.",
-
-			--}
+			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n테이저의 전기 공격에 당하면 #{skill_color}#15%## 확률로 테이저를 넉백시킵니다.\n\n에이스: #{owned}#$pro##\n테이저의 전기 공격에 당한 직후 #{skill_color}#2##초 안에 상호작용 키를 누르면 감전시킨 테이저를 넉백 시키고 #{skill_color}#50##만큼 대미지를 줍니다.",
+			
+			--Sneaky Bastard--
+			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이것은 방탄복이 부서질 때마다 한 번만 발생합니다.",			
 
 			--[[   SILENT KILLER SUBTREE   ]]--
-			--{
-
 			--Second Wind
 			["menu_scavenger_beta_sc"] = "새로운 활력",
-			["menu_scavenger_beta_desc_sc"] = "베이직: ##$basic##\n방탄복이 부서지면 ##3##초 동안 이동속도가 ##10%##만큼 빨라집니다.\n\n에이스: ##$pro##\n방탄복이 완전히 부서진 상태로 첫 번째 공격을 가하면 근처에 있는 적이 비틀거리게 됩니다.\n\n이 효과는 방탄복이 재생된 후 ##3##초 동안 지속됩니다.",
+			["menu_scavenger_beta_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 부서지면 #{skill_color}#3##초 동안 이동속도가 #{skill_color}#10%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n방탄복이 완전히 부서진 상태로 첫 번째 공격을 가하면 근처에 있는 적이 비틀거리게 됩니다.\n\n이 효과는 방탄복이 재생된 후 #{skill_color}#3##초 동안 지속됩니다.",
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: ##$basic##\n무기를 꺼내고 넣는 속도가 ##15%##만큼 증가합니다\n\n에이스: ##$pro##\n모든 무기의 은페도가 ##2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기를 꺼내고 넣는 속도가 #{skill_color}#15%##만큼 증가합니다\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n조준 속도와 전력 질주 후 발사가 ##5%##만큼 빨라집니다.\n\n에이스: ##$pro##\n조준 속도와 전력 질주 후 발사가 추가로 ##10%##만큼 더 빨라집니다.\n\n특수 적을 표준 총알 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 적을 표준 총알 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
-			["menu_backstab_beta_desc_sc"] = "베이직: ##$basic##\n##3##초 동안 피해를 입지 않는다면, 피해를 입을 때까지 치명타 확률을 ##15%##만큼 얻습니다.\n\n치명타 피해가 추가로 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n기습 공격의 치명타 확률이 피해를 입은 후 ##4##초 동안 지속됩니다.",
+			["menu_backstab_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#3##초 동안 피해를 입지 않는다면, 피해를 입을 때까지 치명타 확률을 #{skill_color}#15%##만큼 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n기습 공격의 치명타 확률이 피해를 입은 후 #{skill_color}#4##초 동안 지속됩니다.",
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: ##$basic##\n특수 적에게 ##10%##만큼 피해를 더 입힙니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 ##75%##만큼 채워집니다.\n\n특수 적에게 추가로 ##15%##만큼 피해를 더 많이 입힙니다.",
+			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 #{skill_color}#75%##만큼 채워집니다.\n\n특수 적에게 추가로 #{skill_color}#15%##만큼 피해를 더 많이 입힙니다.",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
-			["menu_unseen_strike_beta_desc_sc"] = "베이직: ##$basic##\n은페도가 ##35##에서 ##3##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n치명타 피해가 추가로 ##50%##만큼 증가합니다.\n\n에이스: ##$pro##\n은페도가 ##35##에서 ##1##씩 낮아질 수록 ##3%##의 치명타 확률을 최대 ##30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 ##50%##만큼 증가합니다.",
-
-
-
-			--}
-		--}
+			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#50%##만큼 증가합니다.",
 
 		--[[   FUGITIVE   ]]--
-		--{
 			--[[   GUNSLINGER SUBTREE   ]]--
-			--{
+			--Equilibrium--
+			["menu_equilibrium_beta_sc"] = "이퀼리브리엄",
+			["menu_equilibrium_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신과 당신의 동료들의 권총의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n권총의 뽑고 넣는 시간이 #{skill_color}#100%##만큼 빨라집니다.",
 
+			--Gun Nut--
+			["menu_dance_instructor_sc"] = "총기광",
+			["menu_dance_instructor_desc_sc"] = "베이직: #{owned}#$basic##\n권총의 지향 사격 명중률을 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n권총의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n권총은 #{skill_color}#이제 방탄복을 관통할 수 있습니다.##",
 
+			--Over Pressurized/Gunfighter--
+			["menu_gun_fighter_sc"] = "총잡이",
+			["menu_gun_fighter_desc_sc"] = "베이직: #{owned}#$basic##\n권총의 장전 속도가 #{skill_color}#5%##만큼 빨라집니다.\n\n권총의 명중률에 대한 이동 패널티가 #{skill_color}#40%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n권총의 장전 속도가 추가로 #{skill_color}#25%##만큼 빨라집니다.",
 
-			--}
+			--Akimbo--
+			["menu_akimbo_skill_sc"] = "아킴보",
+			["menu_akimbo_skill_desc_sc"] = "베이직: #{owned}#$basic##\n아킴보 총기의 안정성이 #{skill_color}#10##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n아킴보 총기의 총 탄약량과 탄약 흭득량가 #{skill_color}#25%##만큼 증가합니다",
 
-			--[[   RELENTLESS SUBTREE   ]]--
-			--{
+			--Desperado--
+			["menu_expert_handling_sc"] = "데스페라도",
+			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n권총으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다. 이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 권총 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명줄률 및 사거리 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
 
+			--Trigger Happy--
+			["menu_trigger_happy_beta_sc"] = "난사광",
+			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n권총으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지를 #{skill_color}#10%##만큼 증가시킵니다. 이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 권총으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
+
+			--[[   REVENANT SUBTREE  ]]--
+			--Running From Death--
+			["menu_nine_lives_beta_sc"] = "죽음으로부터의 도주",
+			["menu_nine_lives_beta_desc_sc"] = "베이직: #{owned}#$basic##\n일어난 뒤 #{skill_color}#10##초 동안 이동속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n일어난 뒤 #{skill_color}#10##초 동안 대미지 감소 효과를 #{skill_color}#20%##만큼 얻습니다.\n\n일어난 뒤 무기가 즉시 재장전됩니다.",
+
+			--Undying--
+			["menu_running_from_death_beta_sc"] = "불사",
+			["menu_running_from_death_beta_desc_sc"] = "베이직: #{owned}#$basic##\n출혈 체력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n출혈 체력이 추가로 #{skill_color}#100%##만큼 증가합니다.\n\n출혈 상태에서 주 무기를 사용할 수 있습니다.",
+
+			--What Doesn't Kill You Only Makes You Stronger--
+			["menu_what_doesnt_kill_beta_sc"] = "죽지 않는 것",
+			["menu_what_doesnt_kill_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구금에 가까워질 때마다 받는 피해가 #{skill_color}#1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n받는 피해가 추가로 #{skill_color}#3##만큼 감소합니다.",
+			
 			--Swan Song
-			["menu_perseverance_desc_sc"] = "베이직: ##$basic##\n체력이 다 떨어졌을때 바로 쓰러지지 않고, ##3##초 동안 이동 속도 패널티를 ##60%##만큼 받으며 전투를 속행합니다.\n\n에이스: ##$pro##\n추가로 ##6##초 동안 전투를 속행할 수 있습니다.",
+			["menu_perseverance_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 다 떨어졌을때 바로 쓰러지지 않고, #{skill_color}#3##초 동안 이동 속도 패널티를 #{skill_color}#60%##만큼 받으며 전투를 속행합니다.\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}#6##초 동안 전투를 속행할 수 있습니다.",
 
-
-
-			--}
+			--Haunt--
+			["menu_haunt_sc"] = "저주",
+			["menu_haunt_desc_sc"] = "베이직: #{owned}#$basic##\n구금에 가까워질 때마다 #{skill_color}#18## 미터 내의 적을 죽이면 #{skill_color}#5%## 확률로 패닉을 퍼트립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n에이스: #{owned}#$pro##\n패닉 확률이 추가로 #{skill_color}#15%##만큼 증가합니다.",
+			
+			--Messiah--
+			["menu_pistol_beta_messiah_sc"] = "구세주",
+			["menu_pistol_beta_messiah_desc_sc"] = "베이직: #{owned}#$basic##\n쓰러질 동안 적을 사살하면 바로 일어날 수 있습니다. #{skill_color}#1##번의 기회만 주어지고 구금 상태에서 풀릴 때 다시 채워집니다.\n\n처음으로 구금되기 전까진 추가로 #{skill_color}#한 번## 더 다운될 수 있습니다.\n\n에이스: #{owned}#$pro##\n이제 구세주를 제한 없이 사용 가능하지만 #{skill_color}#120##초의 재사용 대기시간이 생깁니다. 쓰러진 상태에서 적을 처치하면 재사용 대기시간이 #{skill_color}#10##초 만큼 감소합니다.",			
 
 			--[[   BRAWLER SUBTREE   ]]--
-			--{
-
+			--Martial Arts--
+			["menu_martial_arts_beta_sc"] = "무술의 달인",
+			["menu_martial_arts_beta_desc_sc"] = "베이직: #{owned}#$basic##\n훈련의 성과로, 모든 근접 공격으로 입는 피해가 #{skill_color}#50%##만큼 줄어듭니다.\n\n에이스: #{owned}#$pro##\n훈련의 성과로, 근접 공격으로 적을 쓰러뜨릴 확률이 ##50%##만큼 늘어납니다.",
+			
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "카운터 스트라이크",
-			["menu_drop_soap_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 뽑은 상태에서 클로커 킥을 막아내서 쓰러뜨릴 수 있습니다.\n\n클로커 킥과 테이저 전기 충격으로 인한 피해가 ##20%##만큼 감소합니다.\n\n에이스: ##$pro##\n근접 무기를 충전하는 동안 원거리 피해가 ##10%## 감소합니다.\n\n클로커 킥과 테이저 전기 충격으로 인한 피해가 추가로 ##30%##만큼 감소합니다.",
-
+			["menu_drop_soap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접 무기를 뽑은 상태에서 클로커 킥을 막아내서 쓰러뜨릴 수 있습니다.\n\n클로커 킥과 테이저 전기 충격으로 인한 피해가 ##20%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n근접 무기를 충전하는 동안 원거리 피해를 #{skill_color}#10%##만큼 감소시킵니다.\n\n클로커 킥과 테이저 전기 충격으로 인한 피해가 추가로 #{skill_color}#30%##만큼 감소합니다.",
+			
+			--Pumping Iron--
+			["menu_steroids_beta_sc"] = "펌핑 아이언",
+			["menu_steroids_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접 무기를 휘두르고 충전하는 속도가 #{skill_color}#20%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n근접 무기를 휘두르고 충전하는 속도가 추가로 #{skill_color}#30%##만큼 빨라집니다.",
+			
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "피의 갈증",
-			["menu_bloodthirst_desc_sc"] = "베이직: ##$basic##\n근접 공격으로 적을 죽이면 ##10##초 동안 장전 속도가 ##25%##만큼 빨라집니다.\n\n에이스: ##$pro##\n적을 처치할 때마다 다음 근접 공격 피해가 ##25%##씩 증가하고, 최대 ##100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 공격하면 초기화됩니다.",
+			["menu_bloodthirst_desc_sc"] = "베이직: #{owned}#$basic##\n근접 공격으로 적을 죽이면 #{skill_color}#10##초 동안 장전 속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n적을 처치할 때마다 다음 근접 공격 피해가 #{skill_color}#25%##씩 증가하고, 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 공격하면 초기화됩니다.",
 
+			--Frenzy--
+			["menu_wolverine_beta_sc"] = "광분",
+			["menu_wolverine_beta_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 높을수록 치유량이 최대 #{skill_color}#20%##까지 줄어듭니다.\n\n그 대신 체력이 낮을수록 굴절을 최대 #{skill_color}#20%##까지 더 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: #{owned}#$pro##\n이제 최대 #{skill_color}#50%##만큼 덜 치료되지만 굴절을 최대 #{skill_color}#50%##만큼 얻습니다.",
 
-			--}
-		--}
-	--}
-
-		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "베이직: ##$basic##\n은페도가 ##35##에서 ##3##씩 낮아질 수록 ##1%##만큼의 회피 포인트를 최대 ##10%##만큼까지 얻습니다.\n\n에이스: ##$pro##\n은페도가 ##35##에서 ##1##씩 낮아질 수록 ##1%##만큼의 회피 포인트를 최대 ##10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 ##2%##만큼 회복됩니다. 이것은 방탄복이 부서질 때마다 한 번만 발생합니다.",
-
-		--Sharpshooter--
-		["menu_discipline_sc"] = "명사수",
-		["menu_discipline_desc_sc"] = "베이직: ##$basic##\n소총류의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 발사 속도를 ##20%##만큼 증가시킵니다.",
-
-		--Kilmer--
-		["menu_heavy_impact_beta_sc"] = "킬머",
-		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률에 대한 이동 패널티가 ##60%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
-
-		--Mind Blown, formerly Explosive Headshot--
-		["menu_kilmer_sc"] = "마인드 블로우",
-		["menu_kilmer_desc_sc"] = "베이직: ##$basic##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 ##4## 미터 반경에서 가장 가까운 적에게 입힌 피해의 ##70%##만큼 입힙니다.\n\n적에게서 ##7## 미터 떨어져 있을 때마다 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 ##4##번까지 됩니다.\n\n에이스: ##$pro##\n반자동 혹은 점사로 설정된 소총의 헤드샷은 ##거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 ##1##미터만큼 증가합니다.\n\n적에게서 ##7##미터 떨어져 있을 때마다 연쇄 효과가 추가로 ##10%##만큼 피해를 주고, 최대 총 ##110%##의 피해를 입힐 수 있습니다.",
-
-		--Ammo Efficiency--
-		["menu_single_shot_ammo_return_sc"] = "효율적인 탄약 활용",
-		["menu_single_shot_ammo_return_desc_sc"] = "베이직: ##$basic##\n##8##초안에 헤드샷을 ##3##번 성공하면 사용한 무기에 ##1##발을 혹은 ##3%##만큼의 총 탄약을 되돌려줍니다.\n\n에이스: ##$pro##\n이제 이 효과는 헤드샷을 ##2##번 맞힐 때 발동되며 가능할 때마다 탄약이 탄창으로 되돌립니다.",
-
-		--Rifleman
-		["menu_rifleman_sc"] = "라이플맨",
-		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n소총으로 조준하는 동안 소총의 명중률과 사거리가 ##15%##만큼 증가합니다.\n\n에이스: ##$pro##\n소총으로 조준하는 동안 소총의 명중률과 사거리가 추가로 ##15%##만큼 더 증가합니다.",
-
-		--Aggressive Reload
-		["menu_engineering_beta_sc"] = "공격적인 재장전",
-		["menu_engineering_beta_desc_sc"] = "베이직: ##$basic##\n반자동 혹은 점사로 설정된 소총으로 헤드샷 할 시 ##10##초 동안 재장전 속도를 ##25%##만큼 증가시킵니다.\n\n에이스: ##$pro##\n재장전 속도 보너스가 ##50%##만큼 증가하며 발사 모드와 상관없이 발동할 수 있습니다.",
-
-		--Evasion--
-		["menu_awareness_beta_sc"] = "위기모면",
-		["menu_awareness_beta_desc_sc"] = "베이직: ##$basic##\n이동 속도가 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: ##$pro##\n달리면서 재장전할 수 있습니다.\n\n전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.",
-		
-		--Equilibrium--
-		["menu_equilibrium_beta_sc"] = "이퀼리브리엄",
-		["menu_equilibrium_beta_desc_sc"] = "베이직: ##$basic##\n당신과 당신의 동료들의 권총의 안정성이 ##2##만큼 증가합니다.\n\n에이스: ##$pro##\n권총의 뽑고 넣는 시간이 ##100%##만큼 빨라집니다.",
-
-		--Gun Nut--
-		["menu_dance_instructor_sc"] = "총기광",
-		["menu_dance_instructor_desc_sc"] = "베이직: ##$basic##\n권총의 지향 사격 명중률을 ##20%##만큼 증가합니다.\n\n에이스: ##$pro##\n권총의 발사 속도가 ##15%##만큼 빨라집니다.\n\n권총은 ##이제 방탄복을 관통할 수 있습니다.##",
-
-		--Over Pressurized/Gunfighter--
-		["menu_gun_fighter_sc"] = "총잡이",
-		["menu_gun_fighter_desc_sc"] = "베이직: ##$basic##\n권총의 장전 속도가 ##5%##만큼 빨라집니다.\n\n권총의 명중률에 대한 이동 패널티가 ##40%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: ##$pro##\n권총의 장전 속도가 추가로 ##25%##만큼 빨라집니다.",
-
-		--Akimbo--
-		["menu_akimbo_skill_sc"] = "아킴보",
-		["menu_akimbo_skill_desc_sc"] = "베이직: ##$basic##\n아킴보 총기의 안정성이 ##10##만큼 증가합니다.\n\n에이스: ##$pro##\n아킴보 총기의 총 탄약량과 탄약 흭득량가 ##25%##만큼 증가합니다",
-
-		--Desperado--
-		["menu_expert_handling_sc"] = "데스페라도",
-		["menu_expert_handling_desc_sc"] = "베이직: ##$basic##\n권총으로 헤드샷 할 시 ##4##초 동안 무기의 명중률과 사거리를 ##8%##만큼 증가시킵니다. 이 효과는 ##5##번 중첩될 수 있으며 각 중첩의 지속 시간은 권총 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: ##$pro##\n명줄률 및 사거리 증가 지속 시간이 ##10##초로 증가합니다.",
-
-		--Trigger Happy--
-		["menu_trigger_happy_beta_sc"] = "난사광",
-		["menu_trigger_happy_beta_desc_sc"] = "베이직: ##$basic##\n권총으로 헤드샷 할 시 ##4##초 동안 대미지를 ##10%##만큼 증가시킵니다. 이 효과는 ##5##번 중첩될 수 있으며 각 중첩의 지속 시간은 권총으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: ##$pro##\n대미지 증가 지속 시간이 ##10##초로 증가합니다.",
-
-		--Running From Death--
-		["menu_nine_lives_beta_sc"] = "죽음으로부터의 도주",
-		["menu_nine_lives_beta_desc_sc"] = "베이직: ##$basic##\n일어난 뒤 ##10##초 동안 이동속도가 ##25%##만큼 빨라집니다.\n\n에이스: ##$pro##\n일어난 뒤 ##10##초 동안 대미지 감소 효과를 ##20%##만큼 얻습니다.\n\n무기가 일어난 뒤 즉시 재장전됩니다.",
-
-		--Undying--
-		["menu_running_from_death_beta_sc"] = "불사",
-		["menu_running_from_death_beta_desc_sc"] = "베이직: ##$basic##\n출혈 체력이 ##100%##만큼 증가합니다.\n\n에이스: ##$pro##\n출혈 체력이 추가로 ##100%##만큼 증가합니다.\n\n출혈 상태에서 주 무기를 사용할 수 있습니다.",
-
-		--What Doesn't Kill You Only Makes You Stronger--
-		["menu_what_doesnt_kill_beta_sc"] = "죽지 않는 것",
-		["menu_what_doesnt_kill_beta_desc_sc"] = "베이직: ##$basic##\n구금에 가까워질 때마다 받는 피해가 ##1##만큼 감소합니다.\n\n에이스: ##$pro##\n받는 피해가 추가로 ##3##만큼 감소합니다.",
-
-		--Haunt--
-		["menu_haunt_sc"] = "저주",
-		["menu_haunt_desc_sc"] = "베이직: ##$basic##\n구금에 가까워질 때마다 ##18## 미터 내의 적을 죽이면 ##5%## 확률로 패닉을 퍼트립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n에이스: ##$pro##\n패닉 확률이 추가로 ##15%##만큼 증가합니다.",
-
-		--Messiah--
-		["menu_pistol_beta_messiah_sc"] = "구세주",
-		["menu_pistol_beta_messiah_desc_sc"] = "베이직: ##$basic##\n쓰러질 동안 적을 사살하면 바로 일어날 수 있습니다. ##1##번의 기회만 주어지고 구금 상태에서 풀릴 때 다시 채워집니다.\n\n처음으로 구금되기 전까진 추가로 ##한 번## 더 다운될 수 있습니다.\n\n에이스: ##$pro##\n이제 구세주를 제한 없이 사용 가능하지만 ##120##초의 재사용 대기시간이 생깁니다. 쓰러진 상태에서 적을 처치하면 재사용 대기시간이 ##10##초 만큼 감소합니다.",
-
-		--Martial Arts--
-		["menu_martial_arts_beta_sc"] = "무술의 달인",
-		["menu_martial_arts_beta_desc_sc"] = "베이직: ##$basic##\n훈련의 성과로, 모든 근접 공격으로 입는 피해가 ##50%##만큼 줄어듭니다.\n\n에이스: ##$pro##\n훈련의 성과로, 근접 공격으로 적을 쓰러뜨릴 확률이 ##50%##만큼 늘어납니다.",
-
-		--Pumping Iron--
-		["menu_steroids_beta_sc"] = "펌핑 아이언",
-		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 충전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
-
-		--Frenzy--
-		["menu_wolverine_beta_sc"] = "광분",
-		["menu_wolverine_beta_desc_sc"] = "베이직: ##$basic##\n체력이 높을수록 치유량이 최대 ##20%##까지 줄어듭니다.\n\n그 대신 체력이 낮을수록 굴절을 최대 ##20%##까지 더 얻습니다.\n\n굴절은 체력 피해의 받는 양을 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: ##$pro##\n이제 최대 ##50%##만큼 덜 치료되지만 굴절을 최대 ##50%##만큼 얻습니다.",
-
-		--Berserker--
-		["menu_frenzy_sc"] = "버서커",
-		["menu_frenzy_desc_sc"] = "베이직: ##$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##100%## 미만일 때 근접 공격과 톱의 공격력이 ##100%##만큼 증가합니다.\n\n에이스: ##$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 ##100%## 미만일 때 원거리 무기류의 공격력이 ##50%##만큼 증가합니다.\n\n참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다."
+			--Berserker--
+			["menu_frenzy_sc"] = "버서커",
+			["menu_frenzy_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 근접 공격과 톱의 공격력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 원거리 무기류의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.##"
 
 	})
 	
@@ -3068,13 +2995,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "연필과 함께",
 		["menu_deck5_7_sc"] = "전문 암살자",
 
-		["menu_st_spec_5_desc_sc"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.\n\n전체 특성 덱의 이점:\n##-##근접 무기 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##120##까지 임시 체력을 저장할 수 있습니다. 근접 공격으로 적을 죽이면 저장된 임시 체력이 초당 ##5##씩 감소하는 임시 체력으로 바뀝니다. 임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.\n##-##방탄력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.\n##-##인벤토리에 시체가방을 ##1##개를 추가로 가집니다.\n##-##임시 체력이 있는 동안 굴절이 ##10## 증가하고 이동 속도가 ##20%## 증가합니다.",
+		["menu_st_spec_5_desc_sc"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.\n\n전체 특성 덱의 이점:\n##-##근접 무기 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##120##까지 임시 체력을 저장할 수 있습니다. 근접 공격으로 적을 죽이면 저장된 임시 체력이 초당 ##5##씩 감소하는 임시 체력으로 바뀝니다. 임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.\n##-##방탄력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.\n##-##인벤토리에 시체가방을 ##1##개를 추가로 가집니다.\n##-##임시 체력이 있는 동안 굴절이 ##10%##만큼 증가하고 이동 속도가 ##20%##만큼 증가합니다.",
 		["menu_st_spec_5_desc_sc_short"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.",		
 		["menu_deck5_1_desc_sc"] = "근접 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##75##의 체력을 저장할 수 있습니다.\n\n근접 공격으로 적을 죽이면 저장된 체력이 초당 ##5##의 속도로 감소하는 임시 체력으로 바뀝니다.\n\n임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.",
 		["menu_deck5_3_desc_sc"] = "방탄력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n\n회피 포인트를 추가로 ##5##만큼 더 얻습니다.",
 		["menu_deck5_5_desc_sc"] = "임시 체력을 ##60%##만큼 더 저장합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 		["menu_deck5_7_desc_sc"] = "일어나면 임시 체력을 ##120##만큼 얻습니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck5_9_desc_sc"] = "임시 체력이 있는 동안 ##10%## 굴절 및 ##20%## 추가 이동 속도를 얻습니다.\n\n굴절은 체력 피해의 받는 양을 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck5_9_desc_sc"] = "임시 체력이 있는 동안 ##10%## 굴절 및 ##20%## 추가 이동 속도를 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Muscle
 		["menu_st_spec_2_desc_sc"] = "머슬은 자신의 마피아 간부들의 말을 폭력으로 전하는 터프가이입니다. 그들은 모든 범죄조직의 중심입니다.\n\n누군가가 다른사람을 때리고, 다리를 부러트리고, 머리를 박살내고, 누가 짱인지를 보여줘야할때, 머슬이 제 역할을 할 것입니다.\n\n전체 특성 덱의 이점:\n##-##체력을 ##40%## 더 얻습니다.\n##-##시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.\n##-##총을 사용하여 ##적들 사이에 패닉을 퍼뜨릴 수 있습니다.##\n##-##회피 포인트가 ##10##만큼 증가합니다.\n##-##일어난 후 최대 체력의 ##25%##를 얻습니다.",
@@ -3220,13 +3147,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "방탄력을 ##25%##만큼 손실될 때마다 처치로 얻는 체력 수가 ##2##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.\n\n전체 특성 덱의 이점:\n##-체력이 100% 이하일 때##:\n근접 무기로 적을 죽이면 회피 미터가 최대 ##150%##만큼 채워집니다.\n그외 무기로 적을 죽이면 회피 미터를 최대 ##50%##만큼 채웁니다.\n근접 무기로 적을 죽일 시 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##900ms##초만큼 증가합니다.\n받는 피해가 최대 ##20%## 감소합니다.\n##-##시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.\n##-##다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복를 ##50##만큼 회복합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
+		["menu_st_spec_12_desc_sc"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.\n\n전체 특성 덱의 이점:\n##-##시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.\n##-##다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복를 ##50##만큼 회복합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.\n##-##얻을 수 있는 최대 굴절량이 ##80%##만큼 증가합니다.\n##-체력이 100% 이하일 때##:\n근접 무기로 적을 죽이면 회피 미터가 최대 ##150%##만큼 채워집니다.\n그외 무기로 적을 죽이면 회피 미터를 최대 ##50%##만큼 채웁니다.\n근접 무기로 적을 죽일 시 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##900ms##초만큼 증가합니다.\n받는 피해가 최대 ##20%## 감소합니다.",
 		["menu_st_spec_12_desc_sc_short"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.",		
 		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다.\n\n체력이 ##100%## 이하일 때 회피 미터가 초당 회피의 최대 ##10%##씩 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##100%## 이하일 때 받는 피해가 최대 ##20%## 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%## 이하일 때 적을 근접 무기로 죽일 시 회피 미터가 최대 ##150%##만큼 채워지며 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##900ms##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
-		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 굴절량이 ##80%##만큼 증가합니다.\n\n다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 
 		--Hacker--
 		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##10##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##10##초 동안 ##1.5##초마다 ##15##미터 반경의 적을 스턴시킵니다. 휴대용 ECM 재머는 ##1##회 충전과 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##5##만큼 회복되고 팀원이 적을 죽이면 ##2.5##만큼 회복됩니다.\n##-##방탄복 회복률이 ##10%##만큼 증가합니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",

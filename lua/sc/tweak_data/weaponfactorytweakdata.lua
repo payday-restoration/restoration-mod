@@ -20326,9 +20326,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.wpn_fps_smg_mp5_npc.override = deep_clone(self.wpn_fps_smg_mp5.override)
 		
+		self.parts.wpn_fps_bdgr_covers.adds = {}
+
 		--(Hornet .300) Bumblebee Foregrip
 		self.parts.wpn_fps_bdgr_uupg_fg_railed.supported = true
 		self.parts.wpn_fps_bdgr_uupg_fg_railed.adds = {"wpn_fps_bdgr_covers"}
+		self.parts.wpn_fps_bdgr_uupg_fg_railed.override.wpn_fps_bdgr_b_sd = {
+			unit = "units/mods/weapons/wpn_fps_ass_bdgr_pts/wpn_fps_bdgr_b_sd_railed",
+			third_unit = "units/mods/weapons/wpn_third_ass_bdgr_pts/wpn_third_bdgr_b_sd_railed",
+			a_obj = "a_fg"
+		}
 		self.parts.wpn_fps_bdgr_uupg_fg_railed.stats = {
 			value = 4,
 			recoil = 2,
@@ -20338,6 +20345,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_bdgr_uupg_fg_small.supported = true
 		self.parts.wpn_fps_bdgr_uupg_fg_small.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_bdgr_uupg_fg_small.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+		self.parts.wpn_fps_bdgr_uupg_fg_small.unit = "units/payday2/weapons/wpn_fps_smg_olympic_pts/wpn_fps_smg_olympic_fg_railed"
+		self.parts.wpn_fps_bdgr_uupg_fg_small.third_unit = "units/payday2/weapons/wpn_third_smg_olympic_pts/wpn_third_smg_olympic_fg_railed"
+		self.parts.wpn_fps_bdgr_uupg_fg_small.override.wpn_fps_bdgr_b_sd = {
+			unit = "units/mods/weapons/wpn_fps_ass_bdgr_pts/wpn_fps_bdgr_b_sd_small",
+			third_unit = "units/mods/weapons/wpn_third_ass_bdgr_pts/wpn_third_bdgr_b_sd_small",
+			a_obj = "a_fg"
+		}
+
+		self.parts.wpn_fps_bdgr_uupg_fg_std.unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail"
+		self.parts.wpn_fps_bdgr_uupg_fg_std.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail"
+		self.parts.wpn_fps_bdgr_uupg_fg_std.override = {
+			wpn_fps_bdgr_b_sd = {
+				a_obj = "a_fg"
+			}
+		}
 
 		self.wpn_fps_ass_bdgr.override = {
 			wpn_fps_smg_olympic_s_adjust = {

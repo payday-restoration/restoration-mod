@@ -10317,7 +10317,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.ray.weapon_movement_penalty = 0.8
+				self.ray.weapon_movement_penalty = 1
 				self.ray.sms = 0.8
 				self.ray.panic_suppression_chance = 0.05
 				self.ray.stats_modifiers = {damage = 3}
@@ -10511,7 +10511,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rpg7.has_description = true
 				self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
 				self.rpg7.fire_mode_data.fire_rate = 3
-				self.rpg7.AMMO_MAX = 4
+				self.rpg7.AMMO_MAX = 3
 				self.rpg7.supported = true
 				self.rpg7.ads_speed = 0.460
 				self.rpg7.damage_falloff = {
@@ -10533,7 +10533,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.rpg7.weapon_movement_penalty = 0.8
+				self.rpg7.weapon_movement_penalty = 1
 				self.rpg7.sms = 0.8
 				self.rpg7.panic_suppression_chance = 0.05
 				self.rpg7.stats_modifiers = {damage = 3}

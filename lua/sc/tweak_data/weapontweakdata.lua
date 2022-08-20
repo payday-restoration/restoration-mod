@@ -3409,7 +3409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self[ wep_id ].ads_speed = 0.169
 			self[ wep_id ].damage_falloff = {
 				start_dist = 690,
-				end_dist = 690,
+				end_dist = 6900,
 				min_mult = 0.069,
 			}
 		end
@@ -12382,6 +12382,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tilt.panic_suppression_chance = 0.05
 	end
 
+	if self.czevo then --Carl's Scorpion EVO
+		self.czevo.recategorize = { "light_smg" }					
+		self.czevo.has_description = false					
+		self.czevo.use_data.selection_index = 2
+		self.czevo.tactical_reload = 1
+		self.czevo.categories = {
+			"smg"
+		}
+		self.czevo.CLIP_AMMO_MAX = 30
+		self.czevo.AMMO_MAX = 180
+		self.czevo.kick = self.stat_info.kick_tables.even_recoil
+		self.czevo.supported = true
+		self.czevo.ads_speed = 0.240
+		self.czevo.damage_falloff = {
+			start_dist = 1000,
+			end_dist = 3800,
+			min_mult = 0.3
+		}
+		self.czevo.stats = {
+			damage = 20,
+			spread = 56,
+			recoil = 86,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 26,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.czevo.stats_modifiers = nil
+		self.czevo.panic_suppression_chance = 0.05
+		self.x_czevo.use_data.selection_index = 5 
+	end	
+
 
 	
 	if self.tingledingle then --Zdanns's TBP
@@ -13589,37 +13626,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aek971.panic_suppression_chance = 0.05
 		self.aek971.stats_modifiers = nil		
 	end			
-
-	if self.czevo then --Gambyt's Scorpion EVO
-		self.czevo.recategorize = { "light_smg" }					
-		self.czevo.has_description = false					
-		self.czevo.use_data.selection_index = 2
-		self.czevo.tactical_reload = 1
-		self.czevo.categories = {
-			"smg"
-		}
-		self.czevo.CLIP_AMMO_MAX = 30
-		self.czevo.AMMO_MAX = 180
-		self.czevo.kick = self.stat_info.kick_tables.even_recoil
-		self.czevo.supported = true
-		self.czevo.stats = {
-			damage = 20,
-			spread = 76,
-			recoil = 86,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 26,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.czevo.stats_modifiers = nil
-		self.czevo.panic_suppression_chance = 0.05
-		self.x_czevo.use_data.selection_index = 5 
-	end	
 
 	--Silent Killer Pack
 	if self.welrod then --Welrod

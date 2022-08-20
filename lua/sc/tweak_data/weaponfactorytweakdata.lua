@@ -19928,34 +19928,32 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			"wpn_fps_upg_i_faster_rof"
 		})		
 		self.parts.wpn_fps_smg_czevo_barrel_long.supported = true		
-		self.parts.wpn_fps_smg_czevo_barrel_long.stats = {
-			value = 1,
-			spread = 1,
-			concealment = -1
-		}	
+		self.parts.wpn_fps_smg_czevo_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_czevo_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
 		self.parts.wpn_fps_smg_czevo_vg_tti.supported = true	
 		self.parts.wpn_fps_smg_czevo_vg_tti.stats = {
 			value = 1,
-			recoil = 1,
-			concealment = -2
+			concealment = -2,
+			recoil = 4,
 		}					
 		self.parts.wpn_fps_smg_czevo_vg_handstop.supported = true					
 		self.parts.wpn_fps_smg_czevo_vg_handstop.stats = {
 			value = 1,
-			recoil = -1,
-			concealment = 2
+			concealment = -1,
+			recoil = 2,
 		}		
 		self.parts.wpn_fps_smg_czevo_vg_ptk.supported = true		
 		self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
 			value = 1,
 			spread = 1,
-			concealment = -2
+			concealment = -1
 		}		
 		self.parts.wpn_fps_smg_czevo_vg_angled.supported = true		
 		self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
 			value = 1,
-			recoil = -1,
-			concealment = 2
+			spread = 1,
+			concealment = -1
 		}																	
 		self.parts.wpn_fps_smg_czevo_sight_troy.supported = true																	
 		self.parts.wpn_fps_smg_czevo_sight_troy.stats = {
@@ -19970,10 +19968,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
 			value = 10,
 			suppression = 12,
-			alert_size = -1,
-			concealment = -4,
-			spread = 2,
-			recoil = -1
+			alert_size = -1
 		}
 	end	
 

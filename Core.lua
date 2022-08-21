@@ -117,6 +117,7 @@ function restoration:Init()
 		mansion_stage1 = restoration.captain_types.spring, --Elmsworth Mansion
 		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.spring, --Constantine Scores (gunrunner)
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
+		dwn1 = restoration.captain_types.spring, --Deep Inside
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -167,7 +168,8 @@ function restoration:Init()
 	
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
-		"constantine_gunrunnerclubhouse_lvl"
+		"constantine_gunrunnerclubhouse_lvl",
+		"constantine_policestation_lvl"
 	}
 			
 	--[[restoration.captain_viper = {
@@ -184,8 +186,7 @@ function restoration:Init()
 		--Custom Heists below--
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"bag_sim_2", --Bag Simulator 2
-		"finsternis", --Projekt Finsternis
-		"battlearena" --Five-G
+		"finsternis" --Projekt Finsternis
 	}
 	--Increased spawns, slightly less. Ditto
 	restoration.large_levels = {
@@ -210,7 +211,8 @@ function restoration:Init()
 		"TonCont", --Armored Transport: Atrium
 		"santas_hardware_store", --Hardware Store but Xmas
 		"ascension_III", --Ascension (project eclipse 3)
-		"RogueCompany" --Rogue Company
+		"RogueCompany", --Rogue Company
+		"battlearena" --Five-G
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {

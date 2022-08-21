@@ -1,4 +1,18 @@
 <table min_lib_ver="4.5" name="skm_nightmare">
+	<instance id="obj_skm_001">
+		<packages>
+			<value_node value="levels/instances/shared/obj_skm/world"/>
+			<value_node value="levels/instances/shared/obj_skm/world_sounds"/>
+			<value_node value="levels/instances/shared/obj_skm/world/world"/>
+		</packages>
+	</instance>
+	<instance id="skm_negotiator_001">
+		<packages>
+			<value_node value="levels/instances/shared/skm_negotiator/world"/>
+			<value_node value="levels/instances/shared/skm_negotiator/world_sounds"/>
+			<value_node value="levels/instances/shared/skm_negotiator/world/world"/>
+		</packages>
+	</instance>
 	<Achievements icon="guis/achievements/nightmare" id="skm_nightmare">
 		<achievement desc_id="nightmare_9_desc" icon="guis/achievements/nightmare_9" id="nightmare_9" name_id="nightmare_9" objective_id="nightmare_9_obj" rank="4"/>
 		<achievement desc_id="nightmare_7_desc" icon="guis/achievements/nightmare_7" id="nightmare_7" name_id="nightmare_7" objective_id="nightmare_7_obj" rank="3"/>
@@ -12,8 +26,7 @@
 		<texture force="true" path="guis/achievements/nightmare_7"/>
 		<texture force="true" path="guis/achievements/nightmare_9"/>
 	</AddFiles>
-	<level ai_group_type="zombie" cube="cube_apply_heist_bank" id="skm_nightmare_lvl" intro_event="Play_loc_skm_intro" load_screen="guis/dlcs/pic/textures/loading/old_safehouse_halloween_df" briefing_dialog="Play_loc_skm_brf" narrator="locke" group_ai_state="skirmish" wave_count="9" player_style="suit_prison">
-		<assets/>
+	<level ai_group_type="zombie" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_nightmare_lvl" intro_event="Play_loc_skm_intro" load_screen="guis/dlcs/pic/textures/loading/old_safehouse_halloween_df" narrator="locke" player_style="suit_prison" wave_count="9">
 		<outro_event>
 			<value_node value="Play_loc_skm_end_win"/>
 			<value_node value="Play_loc_skm_end_fail"/>
@@ -25,8 +38,9 @@
 			<value_node value="levels/instances/shared/obj_skm/world_sounds"/>
 			<value_node value="levels/instances/shared/skm_negotiator/world_sounds"/>
 			<value_node value="levels/instances/shared/skm_negotiator/world"/>
-			<value_node value="packages/skm_sc_zombie"/>
 			<value_node value="packages/narr_haunted"/>
+			<value_node value="packages/narr_hvh"/>
+			<value_node value="levels/narratives/bain/hvh/world_sounds"/>
 			<value_node value="levels/narratives/haunted_safehouse/world"/>
 			<value_node value="levels/narratives/haunted_safehouse/world_sounds"/>
 			<value_node value="levels/narratives/haunted_safehouse/pc_only/pc_only"/>
@@ -36,6 +50,8 @@
 			<value_node value="levels/narratives/haunted_safehouse/world/world"/>
 			<value_node value="levels/narratives/haunted_safehouse/hell/hell"/>
 			<value_node value="levels/narratives/haunted_safehouse/editor_only/editor_only"/>
+			<value_node value="levels/narratives/bain/help/world_sounds"/>
+			<value_node value="packages/skm_sc_zombie"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
@@ -43,7 +59,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative icon="guis/dlcs/bro/textures/pd2/crimenet/safehouse_old" briefing_event="pln_fwb_cbf_01" contact="skirmish" id="skm_nightmare" is_halloween_level="true" jc="10" load_screen="" max_mission_xp="135900" min_mission_xp="8000" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/safehouse_old" id="skm_nightmare" is_halloween_level="true" jc="10" load_screen="" max_mission_xp="135900" min_mission_xp="8000" region="street">
 		<chain>
 			<table level_id="skm_nightmare_lvl" type="d" type_id="heist_type_assault"/>
 		</chain>
@@ -64,8 +80,8 @@
 		</crimenet_videos>
 		<date_added>
 			<value_node value="2022"/>
+			<value_node value="8"/>
 			<value_node value="7"/>
-			<value_node value="11"/>
 		</date_added>
 		<debrief_event>
 			<value_node value="Play_btc_fri_end_a"/>

@@ -1024,16 +1024,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Safehouse Nightmare--
 		["skm_nightmare_name"] = "Holdout: The Old Safehouse",
-		["nightmare_3"] = "I believe in everything until it's disproved.",
+		["nightmare_3"] = "Is it really that time again?", --translation note: quote from HL2 ending gman speech
 		["nightmare_3_desc"] = "Having started from wave 1, beat wave 3 of Holdout on the Old Safehouse heist.",
 		["nightmare_3_obj"] = "Having started from wave 1, beat wave 3 of Holdout on the Old Safehouse heist.",
-		["nightmare_5"] = "So I believe in fairies, the myths, dragons.",
+		["nightmare_5"] = "As long as nothing supernatural happens, this should be easy.", --translation note: quote from TF2 spy (Helltower event)
 		["nightmare_5_desc"] = "Having started from wave 1, beat wave 5 of Holdout on the Old Safehouse heist.",
 		["nightmare_5_obj"] = "Having started from wave 1, beat wave 5 of Holdout on the Old Safehouse heist.",
-		["nightmare_7"] = "It all exists, even if it's in your mind.",
+		["nightmare_7"] = "No matter how dark the night, the morning always comes.", --translation note: quote from Lulu (Final Fantasy X)
 		["nightmare_7_desc"] = "Having started from wave 1, beat wave 7 of Holdout on the Old Safehouse heist.",
 		["nightmare_7_obj"] = "Having started from wave 1, beat wave 7 of Holdout on the Old Safehouse heist.",
-		["nightmare_9"] = "Who's to say that dreams and nightmares aren't as real as the here and now?",
+		["nightmare_9"] = "Wake up, Mister Steele. Wake up and smell the ashes.", --translation note: quote from HL2 intro gman speech + Dallas' alias
 		["nightmare_9_desc"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 		["nightmare_9_obj"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 				

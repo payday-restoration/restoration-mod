@@ -1493,7 +1493,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend_grinder = {-7}
+	self.values.player.level_5_armor_addend_grinder = {-3}
 	self.values.player.flak_jacket_concealment = {8}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
@@ -1517,10 +1517,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
-		0.1,
 		0.2,
 		0.3,
-		0.4
+		0.4,
+		0.5 --Unused
 	}	
 	self.values.player.damage_to_hot_extra_ticks = {2}
 	self.values.player.hot_speed_bonus = {0.05}
@@ -1665,15 +1665,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		400,
-		300
+		40,
+		30
 	}	
 	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
-	self.max_cocaine_stacks_per_tick = 2400
-	self.max_total_cocaine_stacks = 2400
+	self.max_cocaine_stacks_per_tick = 240
+	self.max_total_cocaine_stacks = 240
 	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 400
+	self.cocaine_stacks_decay_amount_per_tick = 40
 	self.cocaine_stacks_decay_percentage_per_tick = 0
 	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}

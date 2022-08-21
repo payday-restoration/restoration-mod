@@ -2664,6 +2664,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
+					"player_level_5_armor_addend_grinder",
 					"player_flak_jacket_concealment_1"
 				},
 				cost = 200,
@@ -2855,13 +2856,14 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_sync_cocaine_stacks"
+					"player_sync_cocaine_stacks",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
 				texture_bundle_folder = "coco",
 				name_id = "menu_deck14_3",
-				desc_id = "menu_deck14_3_desc"
+				desc_id = "menu_deck14_3_desc_sc"
 			},
 			deck4,
 			{
@@ -2878,7 +2880,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_sync_cocaine_upgrade_level_1"
+					"player_sync_cocaine_upgrade_level_1",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {3, 0},

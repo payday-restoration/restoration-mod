@@ -150,11 +150,12 @@ function restoration:Init()
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
 		nail = restoration.captain_types.hvh, --lab rats
+		skm_nightmare_lvl = restoration.captain_types.hvh, --Safehouse Nightmare SKM (for flavour text)
 		--Custom Heists--
 		daymare = restoration.captain_types.hvh, --Hell's Nightmare
 		funbank = restoration.captain_types.hvh, --FunBank: Specials	
 		crash_course = restoration.captain_types.hvh, --REDACTED
-		ascension_III = restoration.captain_types.hvh --Ascension (project eclipse 3)	
+		ascension_III = restoration.captain_types.hvh --Ascension (project eclipse 3)
 	}
 	
 	--HVH replaces Spring during the month of Halloween
@@ -169,7 +170,8 @@ function restoration:Init()
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
 		"constantine_gunrunnerclubhouse_lvl",
-		"constantine_policestation_lvl"
+		"constantine_policestation_lvl",
+		"skm_nightmare_lvl"
 	}
 			
 	--[[restoration.captain_viper = {
@@ -302,6 +304,8 @@ function restoration:Init()
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
 		"sand", --The Ukrainian Prisoner			
+		--Skirmish heists below
+		"skm_nightmare_lvl", --Safehouse Nightmare SKM
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"railrun", --The Last Train

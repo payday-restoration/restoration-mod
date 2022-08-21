@@ -1,0 +1,83 @@
+<table directory="assets">
+	<add from_db="true" path="effects/payday2/environment/green_fire" type="effect">
+		<effect load="true" path="effects/payday2/environment/green_fire"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/green_fire_large" type="effect">
+		<effect load="true" path="effects/payday2/environment/green_fire_large"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_help/props/hlp_prop_white_glow/hlp_white_glow" type="unit">
+		<effect load="true" path="effects/payday2/particles/flares/street_light_flare_blueish_big"/>
+		<material_config path="units/pd2_dlc_help/props/hlp_prop_white_glow/hlp_white_glow"/>
+		<object path="units/pd2_dlc_help/props/hlp_prop_white_glow/hlp_white_glow"/>
+		<sequence_manager path="units/pd2_dlc_help/props/hlp_prop_white_glow/hlp_white_glow"/>
+		<unit path="units/pd2_dlc_help/props/hlp_prop_white_glow/hlp_white_glow"/>
+	</add>
+	<add from_db="true" path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_005x2x2m" type="unit">
+		<material_config path="core/material_configs/hub_elements"/>
+		<object path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_005x2x2m"/>
+		<sequence_manager path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_005x2x2m"/>
+		<unit path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_005x2x2m"/>
+	</add>
+	<add from_db="true" path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_001x2x2m" type="unit">
+		<material_config path="core/material_configs/hub_elements"/>
+		<object path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_001x2x2m"/>
+		<sequence_manager path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_001x2x2m"/>
+		<unit path="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_001x2x2m"/>
+	</add>
+	<add from_db="true" path="environments/pd2_env_help/pd2_env_help_smoke" type="environment">
+		<environment path="environments/pd2_env_help/pd2_env_help_smoke"/>
+		<material_config path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+		<scene load="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/props/dah_prop_bkdrp_light_decals/dah_prop_bkdrp_light_decal_v3_green" type="unit">
+		<material_config path="units/pd2_dlc_dah/props/dah_prop_bkdrp_light_decals/dah_prop_bkdrp_light_decal_v1"/>
+		<object path="units/pd2_dlc_dah/props/dah_prop_bkdrp_light_decals/dah_prop_bkdrp_light_decal_v3_green"/>
+		<unit path="units/pd2_dlc_dah/props/dah_prop_bkdrp_light_decals/dah_prop_bkdrp_light_decal_v3_green"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_fish/props/lxy_prop_glow_01_blink/lxy_prop_glow_01_blink" type="unit">
+		<effect load="true" path="effects/payday2/particles/flares/red_flare_blinking"/>
+		<effect load="true" path="effects/payday2/particles/flares/red_flare_static"/>
+		<effect load="true" path="effects/payday2/particles/flares/blue_flare_static"/>
+		<effect load="true" path="effects/payday2/particles/flares/blue_flare_blinking"/>
+		<material_config path="units/payday2/props/gen_prop_glow/gen_prop_glow"/>
+		<object path="units/pd2_dlc_fish/props/lxy_prop_glow_01_blink/lxy_prop_glow_01_blink"/>
+		<sequence_manager path="units/pd2_dlc_fish/props/lxy_prop_glow_01_blink/lxy_prop_glow_01_blink"/>
+		<unit path="units/pd2_dlc_fish/props/lxy_prop_glow_01_blink/lxy_prop_glow_01_blink"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/nail_green_smoke" type="effect">
+		<effect load="true" path="effects/payday2/environment/nail_green_smoke"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/nail_green_intro_fog" type="effect">
+		<effect load="true" path="effects/payday2/environment/nail_green_intro_fog"/>
+	</add>
+	<add from_db="true" path="effects/particles/explosions/poison_gas" type="effect">
+		<effect load="true" path="effects/particles/explosions/poison_gas"/>
+	</add>
+	<add from_db="true" path="effects/payday2/particles/character/smoking_head" type="effect">
+		<effect load="true" path="effects/payday2/particles/character/smoking_head"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/nail_green_smoke_explosion" type="effect">
+		<effect load="true" path="effects/payday2/environment/nail_green_smoke_explosion"/>
+	</add>
+	<add from_db="true" path="effects/particles/dest/bridge_heli_smoke" type="effect">
+		<effect load="true" path="effects/particles/dest/bridge_heli_smoke"/>
+		<effect load="true" path="effects/particles/dest/circle_puffs"/>
+	</add>
+	<add from_db="true" path="effects/particles/environment/black_smoke_01" type="effect">
+		<effect load="true" path="effects/particles/environment/black_smoke_01"/>
+	</add>
+	<add from_db="true" path="environments/env_forest_fog/env_forest_fog" type="environment">
+		<environment path="environments/env_forest_fog/env_forest_fog"/>
+		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+		<scene load="true" path="core/environments/skies/default/default"/>
+	</add>
+	<add from_db="true" path="environments/pd2_env_foggy_bright/pd2_env_foggy_bright" type="environment">
+		<environment path="environments/pd2_env_foggy_bright/pd2_env_foggy_bright"/>
+		<material_config path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
+		<scene load="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark" type="scene">
+		<scene load="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
+		<material_config path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
+	</add>
+</table>

@@ -33,9 +33,9 @@ local map_scale_factor = 1
 			tank = math.max(math.round(3 * map_scale_factor), 1),
 			taser = math.max(math.round(4 * map_scale_factor), 1),
 			boom = math.max(math.round(2 * map_scale_factor), 1),
-			spooc = math.max(math.round(3 * map_scale_factor), 1),
+			spooc = math.max(math.round(4 * map_scale_factor), 1),
 			shield = math.max(math.round(4 * map_scale_factor), 1),
-			medic = math.max(math.round(3 * map_scale_factor), 1),
+			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
 			spring = 1,
 			headless_hatman = 1,
@@ -217,18 +217,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
-		20,
-		20,
-		20,
-		21,
-		21,
-		21,
+		16,
+		16,
+		16,
+		16,
+		19,
+		19,
+		19,
+		19,
 		22,
 		22,
 		22,
-		24,
-		24,
-		24
+		22
 	}
 
 	skirmish_data.recon.force = {

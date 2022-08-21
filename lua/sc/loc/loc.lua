@@ -1057,7 +1057,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
 		["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions.##",
-		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## and #{important_1}#loses all penetration capabilites.##",
+		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## but #{important_1}#damage though armor is reduced by 50% and can no longer pierce shields.##",
 
 		--M200 WIDOWMAKER
 		["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",
@@ -1225,6 +1225,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
 		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.25s##\nRecharge rate: #{skill_color}#4/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
+		--FMG-9
+		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
+		--Sub 2000
+		["bm_w_sub2000"] = "Cavity 10mm Pistol-Carbine",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan penetrate body armor, shields and thin walls.##",
 		--CUSTOM HANDGUNS
@@ -1494,12 +1498,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
-		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
+		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
 		--Custom Snipers
 			["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
-			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 50% more 	damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
+			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
 			["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
-			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
+			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
 			--Marlin 1894
 			["bm_w_m1894"] = "Mare's Leg Sniper Rifle",
 			--SPX Centerfire
@@ -1530,9 +1534,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor, shields and thin walls.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor.##",
+		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 20% of its damage through body armor.##",
+		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can punch through multiple enemies.##",
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 11% more damage.##",
-		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 50% more damage and shots can penetrate body armor, shields, titan-shields and thin walls.##",
+		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
 		["bm_ap_2_weapon_sc_desc"] = "Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.\n\n#{skill_color}#Can penetrate body armor.##",
 		["bm_ap_3_weapon_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can penetrate body armor.##",
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the leaf sight up/down.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
@@ -1849,8 +1855,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_akmsu"] = "Akimbo Krinkov Rifles",
 		["bm_w_hajk"] = "CR 805B Rifle",
 		
-		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
-
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 
 		--Throwables--
@@ -2828,7 +2832,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Frenzy--
 				["menu_wolverine_beta_sc"] = "Frenzy",
-				["menu_wolverine_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHealing is reduced by up to #{important_1}#20%## the closer you are to full health.\n\nDeflection is increased by up to #{skill_color}#20%## the closer you are to getting downed.\n\nDeflection reduces the amount of health damage you take, to a maximum of #{skill_color}#$deflection##, and is applied after other forms of damage reduction.\n\nACE: #{owned}#$pro##\nHealing is instead reduced by up to #{important_1}#50%## while deflection can be increased by up to #{skill_color}#50%.##",
+				["menu_wolverine_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHealing is reduced by up to #{important_1}#30%## the closer you are to full health.\n\nDeflection is increased by up to #{skill_color}#20%## the closer you are to getting downed.\n\nDeflection reduces the amount of health damage you take, to a maximum of #{skill_color}#$deflection##, and is applied after other forms of damage reduction.\n\nACE: #{owned}#$pro##\nHealing is instead reduced by up to #{important_1}#75%## while deflection can be increased by up to #{skill_color}#50%.##",
 
 				--Berserker--
 				["menu_frenzy_sc"] = "Berserker",
@@ -2925,13 +2929,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
-		["menu_st_spec_10_desc_sc"] = "Luck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\n\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big.\n\nBenefits from a full perk deck:\n##-##Ammo supplies you pick up also yield medical supplies that heal you for ##6## health. Cannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##2## seconds.\n##-##When you get healed from picking up ammo packs:\nYour dodge meter is filled up by ##100%## of your dodge.\nYou gain ##30## armor.\nYour ##teammates also gain an ammo pickup.##\nYour teammates get healed for ##50%## of the amount.\n##-##You answer pagers ##25%## faster.\n##-##You gain ##10## dodge points.",		
+		["menu_st_spec_10_desc_sc"] = "Luck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\n\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big.\n\nBenefits from a full perk deck:\n##-##You answer pagers ##25%## faster.\n##-##You gain ##10## dodge points.\n##-##You share ##50%## of the ammo you pick up with the rest of your crew.\n##-##Ammo supplies you pick up also yield medical supplies that heal you for ##4 to 8## health. Healing has an ##8## second cooldown, but every ammo pack you pick up reduces it by ##1 to 3## seconds.\n##-When you get healed from picking up ammo packs:##\nYour crew gets healed for ##50%## of the amount.\nYour dodge meter is filled up by ##100%## of your dodge.\nYou gain ##30## armor.",		
 		["menu_st_spec_10_desc_sc_short"] = "Luck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\n\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big.",		
-		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies that heal you for ##4## health.\n\nCannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##2## seconds.",
-		["menu_deck10_3_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also gain an ammo pickup.\n\nYou gain ##5## dodge points.",
+		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##6## health.\n\nHealing has an ##8## second cooldown, but every ammo pack you pick up reduces it by ##2## seconds.",
+		["menu_deck10_3_desc_sc"] = "You share ##50%## of the ammo you pick up with the rest of your crew.\n\nYou gain ##5## dodge points.",
 		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo packs by an additional ##1## point.\n\nWhen you get healed from picking up ammo packs, your dodge meter is also filled up by ##100%## of your dodge.\n\nYou answer pagers ##25%## faster.",
 		["menu_deck10_7_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also get healed for ##50%## of the amount.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##1## point.\n\nWhen you get healed from picking up ammo packs, you also gain ##30## armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck10_7"] = "Dodgy Medicine",
+		["menu_deck10_9"] = "Locked-Up Medicine",
 
 		--Infiltrator--
 		["menu_st_spec_8_desc_sc"] = "The Infiltrator is an agent hired by a government or large criminal organization to obtain information about its enemies, or by a corporation to obtain industrial secrets from its competitors.\n\nThe Infiltrator is a close combat specialist who knows how to use the environment in order to get the upper hand.\n\nBenefits from a full perk deck:\n##-##When you are within ##12## meters of an enemy, you receive ##20%## less damage from enemies.\n##-##Each successful melee hit grants an additional ##16%## melee damage boost for ##10## seconds and can stack up to ##5## times.\n##-##Your camera loop duration is increased by ##20## seconds.\n##-##Each successful melee hit heals ##1## life point every ##2## seconds for ##10## seconds, stacks up to ##5## times.\n##-##You gain ##10## dodge points.",

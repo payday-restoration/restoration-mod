@@ -1291,6 +1291,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.max_health_reduction = {1} --disable base hp loss
 				self.values.player.healing_reduction = {1, 1} --disable healing reduction
 				self.values.player.frenzy_deflection = {0.2, 0.5}
+				self.frenzy_healing_reduction_ratio = 1.5
 				
 			--Berserker (Frenzy)
 				--Basic
@@ -1562,7 +1563,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
- 		cd = 10, --Cooldown
+ 		cd = 8, --Cooldown
  		cdr = {2 , 2}, --Amount cooldown is reduced on ammo box pickup.
 		{4, 4}, --Amounts healed per level
 		{5, 5},
@@ -1587,9 +1588,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.temporary.loose_ammo_give_team = {{
 		true,
-		7
+		0 --Ammo sharing cooldown
 	}}
-	self.loose_ammo_give_team_ratio = 1 --% of ammo given to team.
+	self.loose_ammo_give_team_ratio = 0.5 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2}

@@ -1196,6 +1196,8 @@
 	<object				path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	
+	<!--Weapon Unit Overrides-->
+	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
 	
 	<!--PEW PEW PEW-->
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>

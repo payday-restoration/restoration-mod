@@ -547,10 +547,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().LOCK_BURST = true
-				self:weapon_tweak_data().can_shoot_through_wall = false
-				self:weapon_tweak_data().can_shoot_through_enemy = false
 				self:weapon_tweak_data().can_shoot_through_shield = false
-				self:weapon_tweak_data().armor_piercing_chance = 0
+				self:weapon_tweak_data().armor_piercing_chance = 0.5
 			end			
 			if stats.mk32 then
 				self:weapon_tweak_data().BURST_FIRE = 2

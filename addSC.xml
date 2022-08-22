@@ -1607,6 +1607,8 @@
 	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_distance_dust_combo" />		
 	<effect				path="effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist" />		
 	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_tendrils" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_tendrils_b" />		
+	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_tendrils_c" />		
 
 	<texture			path="effects/payday2/particles/impacts/blood/yellow/textures/e_bullet_impact_blood_01_yellow_df" />
 	<texture			path="effects/payday2/particles/impacts/blood/yellow/textures/yellow_splatter" />

@@ -15,14 +15,18 @@
             <rotationbyvelocity velocity="5000"/>
         </simulatorstack>
         <visualizerstack>
-            <billboard texture="effects/payday2/particles/impacts/blood/yellow/textures/e_bullet_impact_blood_01_yellow_df" intensity="identity" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="add" render_template="effect_op" origo="0.5 1" per_particle_age="false" size_input="keys" color_input="constant" color="255 255 0" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+            <billboard texture="effects/payday2/particles/impacts/blood/yellow/textures/e_bullet_impact_blood_01_yellow_df" intensity="identity" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="add" render_template="effect_op" origo="0.5 1" per_particle_age="false" size_input="keys" color_input="keys" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
                 <size_keys loop="false">
-                    <key t="0" v="0 0"/>
-                    <key t="0.21658205986023" v="70 300"/>
+                    <key t="0" v="20 0"/>
+                    <key t="0.19289299845695" v="100 300"/>
                 </size_keys>
+                <color_keys loop="false">
+                    <key t="0.12521150708199" v="255 255 0"/>
+                    <key t="0.20981387794018" v="255 255 0"/>
+                </color_keys>
                 <opacity_keys loop="false">
-                    <key t="0.11464968323708" v="255"/>
-                    <key t="0.29299363493919" v="0"/>
+                    <key t="0.13536378741264" v="255"/>
+                    <key t="0.29780033230782" v="0"/>
                 </opacity_keys>
             </billboard>
         </visualizerstack>

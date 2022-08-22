@@ -424,6 +424,15 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
+	
+	<!--titandozer accs-->	
+	<unit_obj				path="units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large" />
+
+	<unit_obj				path="units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+	
+	<unit_obj				path="units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+	
+	<unit_obj				path="units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 	<!--textures-->
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/vip_2_body_df" force="false"/>
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_il" force="false"/>
@@ -497,6 +506,16 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1_contour" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1_husk"  load="true"/>	
+	
+	<!--for scripted spawns-->	
+	<object				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
+	<model				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_husk"  load="true"/>	
+	
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/vet_df" force="false"/>
 	
 	<!--MARIACHI HAT-->	
 	<unit_mat			path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>

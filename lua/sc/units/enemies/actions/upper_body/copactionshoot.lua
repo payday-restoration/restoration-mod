@@ -658,15 +658,19 @@ function CopActionShoot:update(t)
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
 			
 			if self._throw_frag and self._ext_brain._throw_frag_t < t and 2000 >= target_dis and 500 <= target_dis then
-				local is_spring = self._ext_base._tweak_table == "spring"
-				local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.
-				if is_spring then
-					frag_cooldown = 12
-				end
-				
-				local frag_roll_chance = is_spring and 1 or 0.1
-				local frag_roll = math_random() <= frag_roll_chance	
-				local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
+                local is_spring = self._ext_base._tweak_table == "spring"
+                local is_tank_mini = self._ext_base._tweak_table == "tank_mini"
+                local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.
+                if is_spring then
+                    frag_cooldown = 12
+                end
+                
+                local frag_roll_chance = is_spring and 1 or 0.1
+                if is_tank_mini then
+                    frag_roll_chance = 0.4
+                end            
+                local frag_roll = math_random() <= frag_roll_chance    
+                local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
 									
 				
 				self._ext_brain._throw_frag_t = t + frag_cooldown

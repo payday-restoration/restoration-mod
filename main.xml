@@ -74,6 +74,8 @@
         <!--///OVERHAUL\\\-->
 		<hook file="sc/units/props/carrydata.lua" source_file="lib/units/props/carrydata"/>
 		<hook file="sc/units/props/drill.lua" source_file="lib/units/props/drill"/>
+		<hook file="sc/units/props/buffballoon.lua" source_file="lib/units/props/drill"/>
+		<hook file="sc/units/props/balloondamage.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/units/props/missiondoor.lua" source_file="lib/units/props/missiondoor"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
@@ -113,6 +115,7 @@
 		<hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"/>
 		<hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
 		<hook file="sc/managers/blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
+		<hook file="sc/managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
 		<hook file="sc/tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
@@ -146,6 +149,7 @@
 	    <hook file="sc/units/beings/player/huskplayerbase.lua" source_file="lib/units/beings/player/huskplayerbase"/>
 		<hook file="sc/units/player/huskplayermovement.lua" source_file="lib/units/beings/player/huskplayermovement"/>
 		<hook file="sc/units/player/huskplayerdamage.lua" source_file="lib/units/beings/player/huskplayerdamage"/>
+		<hook file="sc/units/player/huskplayerinventory.lua" source_file="lib/units/beings/player/huskplayerinventory"/>
 		<hook file="sc/units/player/playerbipod.lua" source_file="lib/units/beings/player/states/playerbipod"/>
 		<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>
 	    <hook file="sc/units/player/playersound.lua" source_file="lib/units/beings/player/playersound"/>
@@ -194,6 +198,7 @@
 		<hook file="sc/tweak_data/enveffecttweakdata.lua" source_file="lib/tweak_data/enveffecttweakdata"/>
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
+	    	<hook file="sc/units/enemies/copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 		<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="sc/units/enemies/copbrain.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/enemies/huskcopbrain.lua" source_file="lib/units/enemies/cop/huskcopbrain"/>
@@ -212,11 +217,13 @@
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
 		<hook file="sc/player_actions/skills/playeractionunseenstrike.lua" source_file="lib/player_actions/skills/playeractionunseenstrike"/>
 		<hook file="sc/player_actions/skills/playeractiontagteam.lua" source_file="lib/player_actions/skills/playeractiontagteam"/>
+		<hook file="sc/units/equipment/ammobagbase.lua" source_file="lib/units/equipment/ammo_bag/ammobagbase"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
 		<hook file="sc/units/enemies/securitycamera.lua" source_file="lib/units/props/securitycamera"/>
 		<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
+		<hook file="sc/managers/hud/hudmutator.lua" source_file="lib/managers/hudmanagerpd2"/>
 		<hook file="sc/tweak_data/dramatweakdata.lua" source_file="lib/tweak_data/dramatweakdata"/>
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
 		<hook file="sc/managers/mission/elementareatrigger.lua" source_file="lib/managers/mission/elementareatrigger"/>
@@ -292,11 +299,13 @@
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="sc/managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 		<hook file="sc/tweak_data/eventjobstweakdata.lua" source_file="lib/tweak_data/eventjobstweakdata"/>
-		<hook file="sc/managers/sidejobeventmanager.lua" source_file="lib/managers/sidejobeventmanager"/>
 		<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
 		<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
 		<hook file="sc/managers/missionmanager.lua" source_file="lib/managers/missionmanager"/>
 		<hook file="sc/managers/hud/hudhitconfirm.lua" source_file="lib/managers/hud/hudhitconfirm"/>
+		<hook file="sc/units/enemies/zombie/zombielogicattack.lua" source_file="lib/units/enemies/cop/copbrain"/>
+		<hook file="sc/units/enemies/zombie/zombieactionshoot.lua" source_file="lib/units/enemies/cop/copmovement"/>
+		<hook file="sc/managers/menu/items/contractbrokerheistitem.lua" source_file="lib/managers/menu/items/contractbrokerheistitem"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -335,6 +344,8 @@
 		<hook file="sc/mutators/mutatorexplodingenemies.lua" source_file="lib/mutators/mutatorexplodingenemies"/>
 		<hook file="sc/mutators/mutatorshotguntweak.lua" source_file="lib/mutators/mutatorshotguntweak"/>
 		<hook file="sc/mutators/mutatortitandozers.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
+		<hook file="sc/mutators/mutatorbirthday.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/mutatorpiggybank.lua" source_file="lib/mutators/mutatorpiggybank"/>
 		<!--///NEW MUTATORS GO HERE\\\-->
 		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfatroll.lua" source_file="lib/mutators/basemutator"/>
@@ -455,6 +466,7 @@
 				<option type="bool" default_value="true" name="ObjectivesPanel"/>
 				<option type="bool" default_value="true" name="AssaultPanel"/>
 				<option type="multichoice" default_value="1" name="AssaultStyle" values_tbl="restoration.assault_style"/>
+				<option type="multichoice" default_value="1" name="DodgeDisplay" values_tbl="restoration.dodge_display"/>
 				<option type="bool" default_value="true" name="StaminaIndicator"/>
 				<option type="bool" default_value="true" name="Waypoints"/>
 				<option type="bool" default_value="true" name="NameLabels"/>
@@ -481,6 +493,7 @@
 				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 				<option type="bool" default_value="false" name="AimDeploysBipod"/>
 				<option type="bool" default_value="false" name="MoveCancelBipod"/>
+				<option type="bool" default_value="false" name="AutoDMRs"/>
 				<option type="bool" default_value="false" name="SprintCancel"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
 				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>

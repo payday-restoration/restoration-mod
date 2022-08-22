@@ -1,0 +1,26 @@
+<materials version="3">
+    <material name="mat_polkal" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_polkal_df"/>
+        <bump_normal_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+    </material>
+        <material name="mat_polkas" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_polkas_df"/>
+        <bump_normal_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+    </material>
+        <material name="mat_stripes" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_stripes_df"/>
+        <bump_normal_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+    </material>
+        <material name="mat_stars" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_stars_df"/>
+        <bump_normal_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+    </material>
+        <material name="mat_diamonds" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_diamonds_df"/>
+        <bump_normal_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+    </material>
+        <material name="mat_zigzag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_zigzag_df"/>
+        <bump_normal_texture file="units/pd2_dlc_a10th/props/a10th_balloon/balloon_nm"/>
+    </material>
+</materials>

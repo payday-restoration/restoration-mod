@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" orientation_object="rp_ene_acc_bulldozer_helmet" />
+	
+	<bodies>
+	<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_bulldozer_helmet" />
+			<object name="c_sphere_front" 	collision_type="sphere" mass="0.6" />
+			<object name="c_sphere_rear" 	collision_type="sphere" mass="0.6" />
+			<object name="c_box_1" 			collision_type="box" 	mass="0.3" />
+			<object name="c_box_2" 			collision_type="box" 	mass="0.3" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal">
+	</decal_surfaces>
+
+	<graphics>
+			<lod_object name="bulldozer_helmet">
+				<object name="g_helmet" enabled="true" />
+			</lod_object>
+	</graphics>
+	
+</dynamic_object>

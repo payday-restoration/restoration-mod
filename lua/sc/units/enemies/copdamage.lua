@@ -180,6 +180,14 @@ local grenadier_smash = {
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
+
+	
+	-- i don't want to sift through every single .object file in the game to do this so
+	if self._head_gear_decal_mesh then
+		local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
+
+		self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("helmet"))
+	end	
 end)
 
 function CopDamage:_spawn_head_gadget(params)
@@ -239,15 +247,13 @@ function CopDamage:_spawn_head_gadget(params)
 			parent = head_object_get		
 		})
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
+		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
 	elseif smashablefuckers_hsg then
 		world_g:effect_manager():spawn({
 			effect = ids_func("effects/payday2/particles/impacts/metal_impact_pd2"),
 			parent = head_object_get		
 		})
-		sound_ext:play("knife_equip", nil, nil)
-		sound_ext:play("knife_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
-		sound_ext:play("knuckles_hit_gen", nil, nil)
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)
 	end
 
 	self._head_gear = false
@@ -298,55 +304,17 @@ function CopDamage:damage_fire(attack_data)
 	local damage = attack_data.damage
 	local distance = 1000
 	local hit_pos = attack_data.col_ray.hit_position
+	local is_player = attack_data.attacker_unit == managers.player:player_unit()
+	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_FIRE
 
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		if hit_pos then
-			distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
+	if is_player then
+		if self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 		end
 
-		if weap_unit and alive(weap_unit) and attack_data.variant ~= "stun" then
-			local weap_base = weap_unit:base()
-			local is_grenade_or_ground_fire = nil
-
-			if weap_base then
-				if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
-					is_grenade_or_ground_fire = true
-				end
-			end
-
-			if is_grenade_or_ground_fire then
-				if attack_data.is_fire_dot_damage and self._char_tweak.priority_shout then
-					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-				end
-			else
-				if head then
-					headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-					managers.player:on_headshot_dealt(self._unit, attack_data)
-				end
-
-				local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
-
-				if critical_hit then
-					damage = crit_damage
-				end
-
-				if self._char_tweak.priority_shout then
-					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-				end
-
-				local damage_scale = nil
-				if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
-					damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
-				end		
-
-				if not attack_data.is_fire_dot_damage and damage > 0 then
-					if critical_hit then
-						managers.hud:on_crit_confirmed(damage_scale)
-					else
-						managers.hud:on_hit_confirmed(damage_scale)
-					end
-				end
-			end
+		if head then
+			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
 		end
 	end
 
@@ -387,8 +355,50 @@ function CopDamage:damage_fire(attack_data)
 
 	damage = self:_apply_damage_reduction(damage)
 
-	if self._char_tweak.DAMAGE_CLAMP_FIRE then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_FIRE)
+	if damage_clamp then
+		damage = math.min(damage, damage_clamp)
+	end
+
+	if is_player then
+		if hit_pos then
+			distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
+		end
+
+		if weap_unit and alive(weap_unit) and attack_data.variant ~= "stun" then
+			local weap_base = weap_unit:base()
+			local is_grenade_or_ground_fire = nil
+
+			if weap_base then
+				if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
+					is_grenade_or_ground_fire = true
+				end
+			end
+
+			if is_grenade_or_ground_fire then
+				if attack_data.is_fire_dot_damage and self._char_tweak.priority_shout then
+					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+				end
+			else
+				local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage, damage_clamp)
+
+				if critical_hit then
+					damage = crit_damage
+				end
+
+				local damage_scale = nil
+				if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
+					damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
+				end		
+
+				if not attack_data.is_fire_dot_damage and damage > 0 then
+					if critical_hit then
+						managers.hud:on_crit_confirmed(damage_scale)
+					else
+						managers.hud:on_hit_confirmed(damage_scale)
+					end
+				end
+			end
+		end
 	end
 
 	attack_data.raw_damage = damage
@@ -771,7 +781,7 @@ function CopDamage:damage_bullet(attack_data)
 			local roll = math.rand(1, 100)
 
 			if roll <= dodge_chance then
-				self._unit:sound():play("pickup_fak_skill", nil, nil)
+				self._unit:sound():play("bullet_whizby_medium", nil, nil)
 
 				return
 			end
@@ -848,17 +858,21 @@ function CopDamage:damage_bullet(attack_data)
 	local damage_type = "normal"
 	local ineffective_damage = false
 	local effective_damage = false
+	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
+	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_BULLET
 	
-	--Saw+Throwables ignore clamps
-	if self._char_tweak.DAMAGE_CLAMP_BULLET then
-		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
-		else
-			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
-			--Cease
-			ineffective_damage = true			
+	if is_player then
+		if  self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 		end
-	end	
 	
+		if head then
+			managers.player:on_headshot_dealt(self._unit, attack_data)
+			headshot_by_player = true
+			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+		end
+	end
+
 	if not weap_base.thrower_unit then
 		--Sentries should do machine gun damage
 		if attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
@@ -880,55 +894,11 @@ function CopDamage:damage_bullet(attack_data)
 		end		
 	end	
 
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		attack_data.backstab = self:check_backstab(attack_data)
-
-		if attack_data.backstab == true and weap_base._autograph_multiplier then
-			damage = damage * weap_base._autograph_multiplier
-		end
-
-		local damage_scale = nil
-
-		if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
-			damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
-		end		
-		
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
-
-		if critical_hit then
-			damage = crit_damage
-			attack_data.critical_hit = true
-
-			if damage > 0 then
-				managers.hud:on_crit_confirmed(damage_scale)
-			end
-		elseif ineffective_damage then
-			if damage > 0 then
-				managers.hud:on_ineffective_hit_confirmed(damage_scale)
-			end		
-		elseif effective_damage then
-			if damage > 0 then
-				managers.hud:on_effective_hit_confirmed(damage_scale)
-			end				
-		else
-			if damage > 0 then
-				managers.hud:on_hit_confirmed(damage_scale)
-			end
-		end
-
-		if self._char_tweak.priority_shout then
-			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-		end
-
-		if head then
-			managers.player:on_headshot_dealt(self._unit, attack_data)
-
-			headshot_by_player = true
-			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-		end
-	end
-
 	if not self._damage_reduction_multiplier and head then
+		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult
+		if weapon_hs_mult then
+			damage = damage * weapon_hs_mult
+		end
 		if self._char_tweak.headshot_dmg_mul then
 			damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
 		else
@@ -961,6 +931,56 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	damage = self:_apply_damage_reduction(damage)
+
+	--Saw+Throwables ignore clamps
+	if damage_clamp then
+		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
+			damage_clamp = nil
+		else
+			damage = math.min(damage, damage_clamp)
+			--Cease
+			ineffective_damage = true			
+		end
+	end	
+
+	--Crits need to be the last calcuation to alter damage else Pocohud's crit damage pop-ups print wrong
+	if is_player then
+		attack_data.backstab = self:check_backstab(attack_data)
+
+		if attack_data.backstab == true and weap_base._autograph_multiplier then
+			damage = damage * weap_base._autograph_multiplier
+		end
+
+		local damage_scale = nil
+
+		if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
+			damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
+		end		
+		
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage, damage_clamp)
+
+		if critical_hit then
+			damage = crit_damage
+			attack_data.critical_hit = true
+
+			if damage > 0 then
+				managers.hud:on_crit_confirmed(damage_scale)
+			end
+		elseif ineffective_damage then
+			if damage > 0 then
+				managers.hud:on_ineffective_hit_confirmed(damage_scale)
+			end		
+		elseif effective_damage then
+			if damage > 0 then
+				managers.hud:on_effective_hit_confirmed(damage_scale)
+			end				
+		else
+			if damage > 0 then
+				managers.hud:on_hit_confirmed(damage_scale)
+			end
+		end
+
+	end
 
 	attack_data.raw_damage = damage
 
@@ -1011,17 +1031,42 @@ function CopDamage:damage_bullet(attack_data)
 				local head_obj = ids_func("Head")
 				local head_object_get = my_unit:get_object(head_obj)
 
-				if head_object_get then
-					local world_g = World		
-					world_g:effect_manager():spawn({
-						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
-						parent = head_object_get		
-					})
-					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+				local is_spring = my_unit:base()._tweak_table == "spring"
+				local accelerated_training_program = self._char_tweak.yellow_blood
+
+				if head_object_get and not is_spring then
+					local world_g = World
+					if accelerated_training_program then
 						world_g:effect_manager():spawn({
-							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"), --need yellow brains
 							parent = head_object_get		
 						})
+						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"),
+								parent = head_object_get		
+							})
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"),
+								parent = head_object_get		
+							})
+						end
+
+					else
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
+							parent = head_object_get		
+						})
+						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+								parent = head_object_get		
+							})
+							world_g:effect_manager():spawn({
+								effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+								parent = head_object_get		
+							})
+						end
 					end
 				end
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
@@ -1179,6 +1224,8 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
 	local hit_pos = mvector3.copy(body:position())
 	attack_data.pos = hit_pos
+	attack_data.headshot = head
+	attack_data.weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()	
 
 	if attacker_unit then
 		from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
@@ -1215,19 +1262,43 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			local head_obj = ids_func("Head")
 			local head_object_get = my_unit:get_object(head_obj)
 
-			if head_object_get then
-				local world_g = World		
-				world_g:effect_manager():spawn({
-					effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
-					parent = head_object_get		
-				})
+			local is_spring = my_unit:base()._tweak_table == "spring"
+			local accelerated_training_program = self._char_tweak.yellow_blood
 
-				--local damage_type = attack_data.weapon_unit:base():get_damage_type() 
-				if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+			local damage_type = (alive(attack_data.weapon_unit) and attack_data.weapon_unit.base and attack_data.weapon_unit:base():get_damage_type()) or "normal"
+			if head_object_get and not is_spring then
+				local world_g = World
+				if accelerated_training_program then
 					world_g:effect_manager():spawn({
-						effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"), --need yellow brains
 						parent = head_object_get		
 					})
+					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"),
+							parent = head_object_get		
+						})
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"),
+							parent = head_object_get		
+						})
+					end
+
+				else
+					world_g:effect_manager():spawn({
+						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
+						parent = head_object_get		
+					})
+					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							parent = head_object_get		
+						})
+						world_g:effect_manager():spawn({
+							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
+							parent = head_object_get		
+						})
+					end
 				end
 			end
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
@@ -1317,6 +1388,35 @@ function CopDamage:damage_melee(attack_data)
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect
+	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
+	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
+
+	if is_player then
+		if self._char_tweak.priority_shout then
+			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+		end
+
+		if head then
+			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
+		end
+
+		attack_data.backstab = self:check_backstab(attack_data)
+
+		if attack_data.backstab and attack_data.backstab_multiplier then
+			damage = damage * attack_data.backstab_multiplier
+			damage_effect = damage_effect * attack_data.backstab_multiplier
+		end
+	end
+
+	if self._char_tweak.damage.melee_damage_mul then
+		damage = damage * self._char_tweak.damage.melee_damage_mul
+	end		
+
+	if self._marked_dmg_mul then
+		damage = damage * self._marked_dmg_mul
+		damage_effect = damage_effect * self._marked_dmg_mul
+	end
 
 	if head and not self._damage_reduction_multiplier then
 		if self._char_tweak.headshot_dmg_mul then
@@ -1329,24 +1429,7 @@ function CopDamage:damage_melee(attack_data)
 			damage_effect = self._health * 10
 		end
 	end
-	
-	if self._char_tweak.damage.melee_damage_mul then
-		damage = damage * self._char_tweak.damage.melee_damage_mul
-	end		
 
-	if self._marked_dmg_mul then
-		damage = damage * self._marked_dmg_mul
-		damage_effect = damage_effect * self._marked_dmg_mul
-	end
-
-	damage = self:_apply_damage_reduction(damage)
-	damage_effect = self:_apply_damage_reduction(damage_effect)
-
-	if self._char_tweak.DAMAGE_CLAMP_MELEE then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_MELEE)
-		damage_effect = math.min(damage_effect, self._char_tweak.DAMAGE_CLAMP_MELEE)
-	end
-	
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[attack_data.name_id]
 	local ineffective_damage = false
 	local effective_damage = false
@@ -1363,16 +1446,17 @@ function CopDamage:damage_melee(attack_data)
 			effective_damage = true
 		end		
 	end		
+
+	damage = self:_apply_damage_reduction(damage)
+	damage_effect = self:_apply_damage_reduction(damage_effect)
+
+	if damage_clamp then
+		damage = math.min(damage, damage_clamp)
+		damage_effect = math.min(damage_effect, damage_clamp)
+	end
 	
-	if attack_data.attacker_unit == managers.player:player_unit() then
-		attack_data.backstab = self:check_backstab(attack_data)
-
-		if attack_data.backstab and attack_data.backstab_multiplier then
-			damage = damage * attack_data.backstab_multiplier
-			damage_effect = damage_effect * attack_data.backstab_multiplier
-		end
-
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
+	if is_player then
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage, damage_clamp)
 		
 		if critical_hit then
 			damage = crit_damage
@@ -1408,16 +1492,7 @@ function CopDamage:damage_melee(attack_data)
 		if tweak_data.achievement.cavity.melee_type == attack_data.name_id and not is_civilian then
 			managers.achievment:award(tweak_data.achievement.cavity.award)
 		end
-
-		if self._char_tweak.priority_shout then
-			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
-		end
-
-		if head then
-			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
-			managers.player:on_headshot_dealt(self._unit, attack_data)
-		end
-	end	
+	end
 
 	attack_data.raw_damage = damage
 
@@ -3500,8 +3575,8 @@ function CopDamage.is_hrt(type)
 	return type == "swat" or type == "fbi" or type == "cop" or type == "security"
 end
 
-function CopDamage:roll_critical_hit(attack_data, damage)
-	local damage = attack_data.damage
+function CopDamage:roll_critical_hit(attack_data, damage, damage_clamp)
+	local damage = damage or attack_data.damage
 	if not self:can_be_critical(attack_data) then
 		return false, damage
 	end
@@ -3531,6 +3606,10 @@ function CopDamage:roll_critical_hit(attack_data, damage)
 		end
 	end
 
+	if damage_clamp then
+		damage = math.min(damage, damage_clamp)
+	end
+	
 	return critical_hit, damage
 end
 

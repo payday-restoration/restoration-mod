@@ -35,19 +35,19 @@ function MutatorNoTitans:setup(data)
 				},
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
-				},
+				},	
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
-				},										
+				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
+					Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
-				}				
+				}						
 			},
 			access = access_type_all,
 			special_type = "spooc"
@@ -59,17 +59,17 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1")							
+					Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
-				},					
+				},
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
-				},															
+				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 				},
@@ -78,7 +78,7 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
-				}			
+				}				
 			},
 			access = access_type_all,
 			special_type = "spooc"
@@ -89,28 +89,28 @@ function MutatorNoTitans:setup(data)
 	tweak_data.group_ai.unit_categories.CS_heavy_R870 = {
 		unit_types = {
 			america = {
-				Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")					
+				Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc")				
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")					
+				Idstring("units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")						
 			},
 			zombie = {
 				Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc")						
 			},					
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")			
+				Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")		
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")			
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")					
 			},				
 			nypd = {
 				Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870")					
 			},
 			lapd = {
-				Idstring("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")				
+				Idstring("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")					
 			},
 			fbi = {
-				Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")					
+				Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc")				
 			}			
 		},
 		access = access_type_all
@@ -121,29 +121,29 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.CS_tazer = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")					
+					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")						
 				},
 				russia = {
 					Idstring("units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1")						
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")						
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1")			
-				},									
+					Idstring("units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1")						
+				},					
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1")						
-				},
+					Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1")					
+				},	
 				lapd = {
 					Idstring("units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1")					
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")					
-				}			
+				}				
 			},
 			access = access_type_all,
 			special_type = "taser"
@@ -152,28 +152,28 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.CS_tazer = {
 			unit_types = {
 				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")							
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")						
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1")					
+					Idstring("units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1")						
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer")							
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer")								
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")						
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")						
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1")		
-				},																								
+					Idstring("units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1")					
+				},										
 				nypd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")								
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")						
 				},	
 				lapd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")								
 				},
 				fbi = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")							
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")					
 				}				
 			},
 			access = access_type_all,
@@ -190,16 +190,16 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")						
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")					
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2")							
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")								
-				},						
+				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")						
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
@@ -207,16 +207,16 @@ function MutatorNoTitans:setup(data)
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")						
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")						
-				}				
+					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")							
+				}			
 			},
 			access = access_type_all
 		}
@@ -228,32 +228,32 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")								
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2")								
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")							
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")							
 				},							
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2")					
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")						
-				},										
+					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
+				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")							
 				},	
 				lapd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")							
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")					
 				}				
 			},
 			access = access_type_all
@@ -268,26 +268,26 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")						
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")							
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")								
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")							
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
+					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")						
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
-				},	
+				},
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")						
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3")						
 				},
 				fbi = {
-					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")							
-				}			
+					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")						
+				}				
 			},
 			access = access_type_all
 		}		
@@ -301,14 +301,14 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1")
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
-				},										
+					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")
+				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 				},
@@ -333,7 +333,7 @@ function MutatorNoTitans:setup(data)
 				},
 				russia = {
 					Idstring("units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1")					
+					Idstring("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1")							
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"),		
@@ -341,11 +341,11 @@ function MutatorNoTitans:setup(data)
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1")										
+					Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1")								
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1")							
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1")										
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
@@ -353,12 +353,12 @@ function MutatorNoTitans:setup(data)
 				},	
 				lapd = {
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1")							
-				},	
+					Idstring("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1")								
+				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"),	
-					Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")						
-				}					
+					Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")										
+				}				
 			},
 			access = access_type_all
 		}
@@ -366,29 +366,29 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.FBI_swat_M4 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")									
+					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1")			
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1")						
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1")
-				},										
+				},					
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1")								
-				},	
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1")
+				},
 				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1")							
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1")
 				},
 				fbi = {
-					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")									
-				}				
+					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")
+				},				
 			},
 			access = access_type_all
 		}			
@@ -411,7 +411,7 @@ function MutatorNoTitans:setup(data)
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1")
-				},																				
+				},						
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1")
 				},	
@@ -420,7 +420,7 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1")
-				}				
+				}					
 			},
 			access = access_type_all
 		}	
@@ -437,11 +437,11 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city")
+					Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1")
-				},																									
+				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
 				},	
@@ -461,36 +461,36 @@ function MutatorNoTitans:setup(data)
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"),
-				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
+				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")				
 			},
 			russia = {
 				Idstring("units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3")								
+				Idstring("units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3")							
 			},
 			zombie = {
 				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3")							
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3")						
 			},						
 			murkywater = {
 				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3")						
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3")
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3")				
 			},					
 			nypd = {
 				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
-			},
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3")				
+			},	
 			lapd = {
 				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3")			
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
 			},
 			fbi = {
 				Idstring("units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"),
 				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
-			}			
+			}				
 		},
 		access = access_type_all
 	}			
@@ -504,7 +504,7 @@ function MutatorNoTitans:setup(data)
 				},
 				russia = {
 					Idstring("units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3")							
+					Idstring("units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
@@ -516,19 +516,19 @@ function MutatorNoTitans:setup(data)
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3")
+					Idstring("units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3")					
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3")		
+					Idstring("units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3")					
 				},	
 				lapd = {
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")			
-				},	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")					
+				},
 				fbi = {
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")			
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")		
 				}					
 			},
 			access = access_type_all
@@ -549,13 +549,13 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3")
+					Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2"),
 					Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3")
-				},										
+				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
@@ -563,7 +563,7 @@ function MutatorNoTitans:setup(data)
 				lapd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
-				},	
+				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
@@ -590,7 +590,7 @@ function MutatorNoTitans:setup(data)
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1")
-			},																				
+			},					
 			nypd = {
 				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1")
 			},		
@@ -613,25 +613,25 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec")								
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield")								
+					Idstring("units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield")									
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec")							
+					Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec")								
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")								
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")								
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec")								
 				},						
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec")							
+					Idstring("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec")								
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")								
 				},
 				fbi = {
-					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")							
 				}				
 			},
 			access = access_type_all,
@@ -650,7 +650,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
 				},								
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+					Idstring("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
@@ -663,7 +663,7 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
-				}				
+				}			
 			},
 			access = access_type_all,
 			special_type = "shield"
@@ -675,7 +675,7 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.TIT_tank = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")								
+					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
 				},
 				russia = {
 					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
@@ -688,7 +688,7 @@ function MutatorNoTitans:setup(data)
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
-				},				
+				},						
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1")							
 				},
@@ -715,7 +715,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2")							
 				},							
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1")					
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")						
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
@@ -735,7 +735,7 @@ function MutatorNoTitans:setup(data)
 		}	
 	end
 	
-	--OMNIA LPF--
+	--OMNIA LPF/DRAK Enforcer--
 	if difficulty_index <= 6 then
 		tweak_data.group_ai.unit_categories.medic_M4 = {
 			unit_types = {
@@ -758,11 +758,11 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
+					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				}			
+				}				
 			},
 			access = access_type_all,
 			special_type = "medic"
@@ -777,19 +777,19 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5")							
+					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5")						
 				},					
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")						
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")					
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5")
-				},										
+					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5")					
+				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
-				},	
+				},
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
+					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
@@ -805,17 +805,17 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic")
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic")						
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic")							
 				},					
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")						
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")						
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5")
-				},										
+					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5")						
+				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				},
@@ -824,7 +824,7 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
-				}				
+				}			
 			},
 			access = access_type_all,
 			special_type = "medic"
@@ -858,7 +858,7 @@ function MutatorNoTitans:setup(data)
 			    },
 			    fbi = {
 			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
-			    }				
+			    }			
 		    },
 		    access = access_type_all,
 		    special_type = "boom"
@@ -876,7 +876,7 @@ function MutatorNoTitans:setup(data)
 			    	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
 			    },				
 			    murkywater = {
-			    	Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			    	Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
 			    },
 			    federales = {
 			    	Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
@@ -889,7 +889,7 @@ function MutatorNoTitans:setup(data)
 			    },
 			    fbi = {
 			    	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
-			    }				
+			    }			
 		    },
 		    access = access_type_all,
 		    special_type = "boom"

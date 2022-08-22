@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_a10th/props/a10th_gifts/a10th_gifts_shared" orientation_object="rp_a10th_gifts_stars" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_a10th_gifts_stars" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

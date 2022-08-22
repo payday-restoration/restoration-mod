@@ -47,7 +47,6 @@
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />
 	
 	<!--NYPD FBI/HRTs-->
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
@@ -472,6 +471,17 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	
+	<!--titandozer accs-->	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
 	
@@ -504,6 +514,8 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
@@ -516,7 +528,7 @@
 		<effect load="true" path="effects/particles/weapons/rifle/muzzleflash_3dp"/>
 		<effect load="true" path="effects/particles/weapons/sniper_trail_marshal"/>
 		
-		<unit path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
+		
 		<object path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
 		<material_config path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
 		<sequence_manager path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
@@ -531,12 +543,6 @@
 		<unit load="true" path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_husk"/>
 	</add>
 	
-	<!--gnarly ass titan sniper hat-->
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>	
 	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
@@ -586,12 +592,17 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1_husk" force="false" load="true"/>
 	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
-
-	<!--Dozer Zeal helm-->
-	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
-	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
-	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
-	<unit				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc" load="false"/>	
+	
+	<!--for scripted spawns-->	
+	<object				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_contour" force="false"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_husk" force="false" load="true"/>
+	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" force="false"/>
 	
 	<!--Omnia LPF-->
 	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
@@ -614,19 +625,13 @@
 	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_nm" force="false"/>	
 
-	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
-
-	<!--gnarly ass titan sniper hat-->
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>	
+	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>
 	
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
 
+	<!-- bravos	 -->
 	<!-- bravos	 -->
 	<!--bravo dmr-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
@@ -636,6 +641,27 @@
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>
+
+	<!-- bravo benellier -->
+	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_contour" />
+	<model				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<sequence_manager	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<object				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"  load="true"/>	
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_husk"  load="true"/>		
+
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />	
+	<unit_obj			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />	
+
+	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_df"/>
+	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_nm"/>
 	
 	<!--bravo shotgun-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />

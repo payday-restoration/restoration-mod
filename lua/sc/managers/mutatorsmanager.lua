@@ -1,41 +1,20 @@
+local orig_init = MutatorsManager.init
 function MutatorsManager:init()
-	managers.mutators = self
-	self._message_system = MessageSystem:new()
-	self._lobby_delay = -1
-
-	if not Global.mutators then
-		Global.mutators = {
-			mutator_values = {},
-			active_on_load = {}
-		}
-	end
-
-	self._mutators = {
-		MutatorEnemyHealth:new(self),
-		MutatorEnemyDamage:new(self),
-		MutatorFriendlyFire:new(self),
-		MutatorShotgunTweak:new(self),
-		MutatorExplodingEnemies:new(self),
-		MutatorHydra:new(self),
-		MutatorEnemyReplacer:new(self),
-		MutatorMediDozer:new(self),
-		MutatorCloakerEffect:new(self),
-		MutatorShieldDozers:new(self),
-		MutatorTitandozers:new(self),
-		-- MutatorBirthday:new(self),
-		--New Mutators below
-		MutatorMinidozers:new(self),
-		MutatorMedicdozers:new(self),
-		MutatorFatRoll:new(self),
-		MutatorMememanOnly:new(self),	
-		MutatorMoreDonutsPlus:new(self),
-		MutatorJungleInferno:new(self),
-		MutatorNoTitans:new(self),
-		MutatorSpawnMult:new(self),
-		MutatorBravosOnly:new(self),
-		--MutatorFactionsReplacer:new(self),
-		--MutatorZombieOutbreak:new(self)
-	}
+	orig_init(self)
+		
+	table.insert(self._mutators, MutatorMinidozers:new(self))
+	table.insert(self._mutators, MutatorMedicdozers:new(self))
+	table.insert(self._mutators, MutatorFatRoll:new(self))
+	table.insert(self._mutators, MutatorMememanOnly:new(self))
+	table.insert(self._mutators, MutatorMoreDonutsPlus:new(self))
+	table.insert(self._mutators, MutatorJungleInferno:new(self))
+	table.insert(self._mutators, MutatorNoTitans:new(self))
+	table.insert(self._mutators, MutatorSpawnMult:new(self))
+	table.insert(self._mutators, MutatorBravosOnly:new(self))
+	table.insert(self._mutators, MutatorBirthday:new(self))
+	--table.insert(self._mutators, MutatorFactionsReplacer:new(self))
+	--table.insert(self._mutators, MutatorZombieOutbreak:new(self))
+	
 	self._active_mutators = {}
 	local activate = Global.mutators and Global.mutators.active_on_load
 
@@ -50,7 +29,9 @@ function MutatorsManager:init()
 			local mutator = self:get_mutator_from_id(id)
 
 			if mutator then
-				table.insert(self:active_mutators(), {mutator = mutator})
+				table.insert(self:active_mutators(), {
+					mutator = mutator
+				})
 				cat_print("jamwil", "[Mutators] Activated mutator: ", id)
 			else
 				cat_print("jamwil", "[Mutators] No mutator with id: ", id)
@@ -77,7 +58,8 @@ function MutatorsManager:init()
 	for _, mutator in pairs(setup_mutators) do
 		cat_print("jamwil", "[Mutators] Setting up active mutator: ", mutator:id())
 		mutator:setup(self)
-	end
+	end	
+
 end
 
 function MutatorsManager:categories()
@@ -85,6 +67,7 @@ function MutatorsManager:categories()
 		"all",
 		"enemies",
 		"gameplay",
-		"holiday"
+		"holiday",
+		"old_event"
 	}
 end

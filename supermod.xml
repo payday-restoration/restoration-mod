@@ -11,7 +11,10 @@
 
 	<!-- Troublesome NPC assets go here! -->
 	<assets base_path="assets/">
-		<!-- character fixes and changes -->
+		<!-- decal mesh shit -->
+		<file name="settings/decals.decals" force="true"/>	
+		
+		<!-- character fixes and changes -->		
 		<group name="units/" dyn_package="false">
 			<!-- yufu wang hitboxes -->
 			<group :name="pd2_dlc_pent/characters/npc_male_yufuwang_armored/">
@@ -23,6 +26,9 @@
 				<file :name="ene_secret_service_2.unit"/>
 				<file :name="ene_secret_service_2_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
+				<file :name="civ_male_locke_escort_contour.material_config"/>
+			</group>
 			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
 				<file :name="ene_sniper_3.unit"/>
 				<file :name="ene_sniper_3_husk.unit"/>
@@ -32,12 +38,6 @@
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
-			</group>
-			<group :name="pd2_dlc_ranc/characters/">
-				<file :name="ene_male_ranc_security_1/ene_male_ranc_security_1.unit"/>
-				<file :name="ene_male_ranc_security_1/ene_male_ranc_security_1_husk.unit"/>
-				<file :name="ene_male_ranc_security_2/ene_male_ranc_security_2.unit"/>
-				<file :name="ene_male_ranc_security_2/ene_male_ranc_security_2_husk.unit"/>
 			</group>
 			<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">

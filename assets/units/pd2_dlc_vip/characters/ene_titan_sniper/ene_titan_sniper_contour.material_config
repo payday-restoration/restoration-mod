@@ -5,13 +5,13 @@
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod_1">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod1">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="1"/>
 		<diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df" mip="1"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod_2">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod2">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="4"/>
 		<diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df" mip="4"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
@@ -19,19 +19,19 @@
 	</material>
 
 
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_city_swat">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_body">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm"/>
 		<diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_city_swat_lod_1">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_body_lod1">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="1"/>
 		<diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" mip="1"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_city_swat_lod_2">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_body_lod2">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="4"/>
 		<diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" mip="4"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
@@ -52,28 +52,28 @@
 	<material name="mtr_eyes" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" />
 		<diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df" />
-        <self_illumination_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_titan_sniper_head_il" />
+        <self_illumination_texture file="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" />
         <variable type="scalar" name="il_bloom" value="10"/>
         <variable type="scalar" name="il_multiplier" value="reddot"/>						
 	</material>
 	
 	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df"/>
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/ene_acc_phalanx_helmet_df"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod_1">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod1">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="1"/>
-		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/ene_acc_phalanx_helmet_df" mip="1"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod_2">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="4"/>
-		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/ene_acc_phalanx_helmet_df" mip="4"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
-	</material> mip="1"
+	</material> 
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

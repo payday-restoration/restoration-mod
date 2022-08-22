@@ -1564,10 +1564,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Gambler
  	self.loose_ammo_restore_health_values = {
  		cd = 8, --Cooldown
- 		cdr = {2 , 2}, --Amount cooldown is reduced on ammo box pickup.
-		{4, 4}, --Amounts healed per level
-		{5, 5},
-		{6, 6}
+ 		cdr = {1 , 3}, --Amount cooldown is reduced on ammo box pickup.
+		{3, 5}, --Amounts healed per level
+		{4, 6},
+		{5, 7}
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	

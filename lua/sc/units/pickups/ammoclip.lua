@@ -80,11 +80,6 @@ function AmmoClip:_pickup(unit)
 								unit:sound():play("pickup_ammo_health_boost", nil, true)
 							end
 
-							--Give team ammo, no reason to have this use an independently tracked cooldown.
-							if player_manager:has_category_upgrade("temporary", "loose_ammo_give_team") then
-								managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "pickup", AmmoClip.EVENT_IDS.bonnie_share_ammo)
-							end
-
 							--Apply team healing.
 							if player_manager:has_category_upgrade("player", "loose_ammo_restore_health_give_team") then
 								local sync_value = heal_amount --Make 100% sure that, if you change the values on Gambler that this remains between 2 and 15 such that it never triggers the other Event_IDS.
@@ -94,6 +89,10 @@ function AmmoClip:_pickup(unit)
 					elseif player_manager:has_activate_temporary_upgrade("temporary", "loose_ammo_restore_health") then --Cooldown reduction
 						local cooldown_reduction = -math.random(tweak_data.upgrades.loose_ammo_restore_health_values.cdr[1], tweak_data.upgrades.loose_ammo_restore_health_values.cdr[2]) --Gambler gotta gamble.
 						player_manager:extend_temporary_upgrade("temporary", "loose_ammo_restore_health", cooldown_reduction)
+					end
+
+					if player_manager:has_category_upgrade("temporary", "loose_ammo_give_team") then
+						managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "pickup", AmmoClip.EVENT_IDS.bonnie_share_ammo)
 					end
 				end
 			elseif self._projectile_id then

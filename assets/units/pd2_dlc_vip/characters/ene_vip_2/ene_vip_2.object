@@ -19,15 +19,15 @@
 
 		<body name="body_helmet" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet1" collision_type="convex" />
-			<object name="c_helmet2" collision_type="convex" />
-			<object name="c_helmet3" collision_type="convex" />
-			<object name="c_helmet4" collision_type="convex" />
+			<object name="c_helmet1" collision_type="convex" padding="-2"/>
+			<object name="c_helmet2" collision_type="convex" padding="-2"/>
+			<object name="c_helmet3" collision_type="convex" padding="-2"/>
+			<object name="c_helmet4" collision_type="convex" padding="-2"/>
 		</body>
 		
 		<body name="body_helmet_glass" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_glass" collision_type="convex"/>
+			<object name="c_helmet_glass" collision_type="convex" padding="-2"/>
 		</body>
 
 		<body name="body_armor_chest" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -48,6 +48,8 @@
 		<body name="body_armor_throat" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine2"/>
 			<object name="c_throat1" collision_type="convex"/>
+			<object name="c_throat2" collision_type="convex"/>
+			<object name="c_throat3" collision_type="convex"/>
 		</body>
 
 		<body name="body_armor_neck" enabled="true" template="character" friction="0.6" collision_class="ragdoll">

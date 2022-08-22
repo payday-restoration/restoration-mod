@@ -56,12 +56,12 @@
 			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
 		</sequence>
 		<body name="'body_helmet_plate'">
-			<endurance damage="1" explosion="9999999999">
+			<endurance damage="1">
 				<run_sequence name="'int_seq_helmet_plate'"/>
 			</endurance>
 		</body>
 		<body name="'head'">
-			<endurance damage="150" explosion="9999999999">
+			<endurance damage="150">
 				<run_sequence name="'int_seq_helmet_glass_01'"/>
 			</endurance>
 		</body>

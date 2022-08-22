@@ -4,7 +4,7 @@
     <bodies>
         <body name="body" enabled="false" template="debris" pushed_by_mover="false" >
         	<object name="rp_wpn_npc_saiga" />
-            <object name="c_box" collision_type="box" mass="3" />
+            <object name="c_box_1" collision_type="box" mass="3" />
         </body>
     </bodies>
 	<effects>

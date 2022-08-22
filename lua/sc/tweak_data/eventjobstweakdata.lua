@@ -3,7 +3,6 @@ function EventJobsTweakData:init(tweak_data)
 	self.challenges = {}
 
 	self:_init_pda8_challenges(tweak_data)
-	self:_init_pda9_challenges(tweak_data)
 	
 	self.event_info = {
 		pda8 = {
@@ -14,8 +13,7 @@ function EventJobsTweakData:init(tweak_data)
 				"pda_stat_c",
 				"pda_stat_d"
 			}
-		},
-		pda9 = {}
+		}
 	}
 
 	self.collective_stats = {
@@ -28,32 +26,8 @@ function EventJobsTweakData:init(tweak_data)
 				"pda8_item_7",
 				"pda8_item_8"
 			}
-		},
-		pda9_collective_1 = {
-			found = {},
-			all = {}
-		},
-		pda9_collective_2 = {
-			found = {},
-			all = {}
-		},
-		pda9_collective_3 = {
-			found = {},
-			all = {}
-		},
-		pda9_collective_4 = {
-			found = {},
-			all = {}
-		}	
+		}
 	}
-
-	for _, job_id in ipairs(tweak_data.mutators.piggybank.event_jobs_from_level) do
-		table.insert(self.collective_stats.pda9_collective_1.all, "pda9_collective_1_" .. job_id)
-		table.insert(self.collective_stats.pda9_collective_2.all, "pda9_collective_2_" .. job_id)
-		table.insert(self.collective_stats.pda9_collective_3.all, "pda9_collective_3_" .. job_id)
-		table.insert(self.collective_stats.pda9_collective_4.all, "pda9_collective_4_" .. job_id)
-	end	
-	
 	self.pda_base = 0
 end
 

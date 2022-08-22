@@ -91,12 +91,11 @@
 
     <AddFiles directory="assets">
     <!-- main section -->
-        <!-- <bnk path="soundbanks/weapon_hajk_x" force = "true"/> -->
+        <bnk path="soundbanks/weapon_hajk_x" force = "true"/>
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
         <model path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
         <object path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
-        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury_npc"/>
         
     <!-- Textures -->
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_df"/>

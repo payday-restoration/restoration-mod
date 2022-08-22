@@ -862,18 +862,16 @@ function CopActionHurt:init(action_desc, common_data)
 			end
 		end
 	end
-	
-	local fire_variant = alive(action_desc.weapon_unit) and (tweak_data.weapon[action_desc.weapon_unit:base():get_name_id()] or tweak_data.weapon.amcar).fire_variant or "fire"
 
 	if not common_data.ext_base.nick_name then
 		if action_desc.variant == "fire" then
 			if action_type == "fire_hurt" then
-				common_data.unit:sound():say(fire_variant == "money" and "moneythrower_hurt" or "burnhurt", nil, fire_variant == "money")
+				common_data.unit:sound():say("burnhurt")
 			elseif action_type == "death" then
 				if common_data.ext_base:has_tag("tank") then
 					common_data.unit:sound():say("x02a_any_3p")
 				else
-					common_data.unit:sound():say(fire_variant == "money" and "moneythrower_death" or "burndeath", nil, fire_variant == "money")
+					common_data.unit:sound():say("burndeath")
 				end
 			end
 		elseif action_type == "death" then

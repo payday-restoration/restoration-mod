@@ -9,7 +9,6 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 
 ]]--
 
-local job = Global.level_data and Global.level_data.level_id
 function UpgradesTweakData:_init_value_tables()
 	self.values = {
 		player = {},
@@ -303,16 +302,16 @@ end)
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 0.0005
-	self.explosive_bullet.player_dmg_mul = 1
-	self.explosive_bullet.range = 150
+	self.explosive_bullet.curve_pow = 1
+	self.explosive_bullet.player_dmg_mul = 0.5
+	self.explosive_bullet.range = 250
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
 	--Weapon Based Movement Modifiers--
 	--This is overridden/ignored if a weapon in any of these categories is given its own movement penalty
-	self.weapon_movement_penalty.minigun = 0.6
-	self.weapon_movement_penalty.lmg = 0.8
+	self.weapon_movement_penalty.minigun = 0.55
+	self.weapon_movement_penalty.lmg = 0.75
 	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.
@@ -344,15 +343,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		-0.15,
 		-0.25
 	}
-	self.values.player.body_armor.dodge_grace = {
-		1.50,
-		1.425,
-		1.35,
-		1.275,
-		1.125,
-		1.05,
-		1.0
-	}
 	self.values.player.body_armor.concealment = {
 		30,
 		25,
@@ -363,13 +353,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0
 	}
 	self.values.player.body_armor.damage_shake = { 
-		1.0, 
+		1, 
+		0.95, 
 		0.9, 
-		0.8, 
+		0.85, 
+		0.75, 
 		0.7, 
-		0.5, 
-		0.4, 
-		0.2
+		0.6 
 	}
 	self.values.player.body_armor.stamina = {
 		1,
@@ -390,7 +380,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.1,
 		1.12
 	}
-	self.max_deflection = 0.60
 	self.values.player.body_armor.deflection = {
 		0.00,
 		0.05,
@@ -399,15 +388,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.20,
 		0.15,
 		0.10
-	}
-	self.values.player.body_armor.regen_delay = {
-		2.00,
-		2.25,
-		2.50,
-		2.75,
-		3.25,
-		3.50,
-		4.00
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -493,8 +473,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.can_free_run = {true}
 	self.values.player.fall_health_damage_multiplier = {0}
 	self.values.player.counter_strike_melee = {true}
-	self.player_damage_health_ratio_threshold = 1
-	self.player_damage_health_ratio_threshold_2 = 1 --Unused?
+	self.player_damage_health_ratio_threshold = 0.5
+	self.player_damage_health_ratio_threshold_2 = 0.5
 
 	--Allegedly used somewhere???
 	self.values.akimbo.recoil_multiplier = {
@@ -544,7 +524,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					6 --Ace
 				}
 				--Ace
-					self.values.first_aid_kit.uppers_cooldown = 60
+					self.values.first_aid_kit.uppers_cooldown = 30
 
 			--Combat Doctor
 				--Basic
@@ -614,7 +594,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Basic
 						self.values.player.hostage_speed_multiplier = {1.03}
 					--Ace
-						self.values.player.hostage_health_multiplier = {1.05}
+						self.values.player.hostage_health_multiplier = {1.1}
 							
 				--Hostage Taker
 						self.values.player.hostage_health_regen_addend = {
@@ -627,7 +607,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.super_syndrome = {
 							1
 						}						
-						self.values.player.hostage_health_regen_max_mult = { 1.5 }
+						self.values.player.hostage_health_regen_max_mult = { 2 }
 
 			
 		--Assault--
@@ -663,7 +643,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.2 --Unused
 					}
 				--Ace
-					self.values.player.bipod_damage_reduction = {0.75}
+					self.values.player.bipod_damage_reduction = {0.5}
 					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
@@ -733,11 +713,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.carry.movement_penalty_nullifier = {true}
 
 				--More Blood To Bleed
-					--HARDCODED COCKSUCKING BULLSHIT
-					--Go to tweakdata.lua
 					self.values.player.health_multiplier = {
-						1.1, --Basic
-						1.25 --Ace
+						1.15, --Basic
+						1.4 --Ace
 					}
 
 				--Bullseye
@@ -745,7 +723,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.5, --Basic
 						3.5 --Ace
 					}
-					self.on_headshot_dealt_cooldown = 5
+					self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
 					--Basic
@@ -841,7 +819,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.level_5_armor_addend = {2}
 						self.values.player.level_6_armor_addend = {2}
 					--Ace
-						self.values.player.armor_full_damage_absorb = {0.15}
+						self.values.player.armor_full_damage_absorb = {0.3}
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
 			
 		--Breacher--
@@ -1080,7 +1058,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Sneaky Bastard
 				--Concealment stuff same as vanilla.
 				--Ace
-					self.values.player.dodge_heal_no_armor = {0.02}
+					self.values.player.dodge_heal_no_armor = {0.06}
 			
 		--Silent Killer--
 			--Second Wind--
@@ -1091,11 +1069,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Optical Illusions
 				--Basic
-				--Hardcoded, go to tweakdata.lua
 					self.values.weapon.swap_speed_multiplier = {1.15}
 				--Ace
 					self.values.player.weapon_concealment_increase = {
-						0,--Unused
+						1,--Unused
 						2 --Ace
 					}
 
@@ -1136,7 +1113,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Cleaner, formally spotter
 				--Basic					
 					self.values.weapon.special_damage_taken_multiplier = {
-						1.1, --Basic
+						1.15, --Basic
 						1.25 --Ace
 					}					
 				--Ace		
@@ -1288,25 +1265,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.deflect_ranged = {0.9}
 
 			--Frenzy (Berserker)
-				self.values.player.max_health_reduction = {1} --disable base hp loss
-				self.values.player.healing_reduction = {1, 1} --disable healing reduction
-				self.values.player.frenzy_deflection = {0.2, 0.5}
-				self.frenzy_healing_reduction_ratio = 1.5
+				self.values.player.max_health_reduction = {0.25}
+				self.values.player.healing_reduction = {0.00, 0.25}
+				self.values.player.frenzy_deflection = {0.20, 0.45}
 				
 			--Berserker (Frenzy)
 				--Basic
-					self.values.player.melee_damage_health_ratio_multiplier = {1.0}
+					self.values.player.melee_damage_health_ratio_multiplier = {0.5}
 				--Aced
 					self.values.player.damage_health_ratio_multiplier = {0.5}
 
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
 	if Global.game_settings and Global.game_settings.single_player then
 		self.values.player.corpse_dispose_amount = {4, 5}
-	end
-	
-	--Just to stop a softlock
-	if job == "short1_stage1" or job == "short1_stage2" then
-		self.values.player.corpse_dispose_amount = {1, 1}
 	end
 
 	--Perk Decks--
@@ -1364,10 +1335,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
-		0.85, --Armorer Exclusive
-		0.8, --Unused
-		0.75, --Unused
-		0.7 --Unused
+		0.8,
+		0.7,
+		0.65,
+		0.6
 	}
 
 	--Hitman
@@ -1379,7 +1350,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.temp_health_max = 24
 	self.values.player.revive_temp_health = { 12 }
 	self.values.player.temp_health_speed = { 1.1 }
-	self.values.player.temp_health_deflection = { 0.1 }
+	self.values.player.temp_health_deflection = { 0.2 }
 	self.values.player.armor_regen_dodge = { 1 }
 
 	self.values.player.level_2_dodge_addend = {
@@ -1432,8 +1403,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.melee_to_hot_data = {
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
-		tick_time = 2,
-		total_ticks = 5,
+		tick_time = 1.25,
+		total_ticks = 8,
 		max_stacks = 5,
 		stacking_cooldown = 0.1,
 		add_stack_sources = {
@@ -1494,7 +1465,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend_grinder = {-3}
+	self.values.player.level_5_armor_addend_grinder = {-7}
 	self.values.player.flak_jacket_concealment = {8}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
@@ -1518,10 +1489,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
+		0.1,
 		0.2,
 		0.3,
-		0.4,
-		0.5 --Unused
+		0.4
 	}	
 	self.values.player.damage_to_hot_extra_ticks = {2}
 	self.values.player.hot_speed_bonus = {0.05}
@@ -1537,8 +1508,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.dodge_to_hot_data = {
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
-		tick_time = 2,
-		total_ticks = 5,
+		tick_time = 2.0,
+		total_ticks = 10.0,
 		max_stacks = 67,
 		stacking_cooldown = 0.0,
 		add_stack_sources = {
@@ -1563,11 +1534,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
- 		cd = 8, --Cooldown
- 		cdr = {1 , 3}, --Amount cooldown is reduced on ammo box pickup.
-		{3, 5}, --Amounts healed per level
-		{4, 6},
-		{5, 7}
+ 		cd = 10, --Cooldown
+ 		cdr = {3 , 5}, --Amount cooldown is reduced on ammo box pickup.
+		{4, 8}, --Amounts healed per level
+		{6, 10},
+		{8, 12}
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
@@ -1588,17 +1559,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.temporary.loose_ammo_give_team = {{
 		true,
-		0 --Ammo sharing cooldown
+		7
 	}}
-	self.loose_ammo_give_team_ratio = 0.5 --% of ammo given to team.
+	self.loose_ammo_give_team_ratio = 1 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2}
 	self.values.player.killshot_close_regen_armor_bonus = {2}
 	self.values.player.killshot_close_panic_chance = {0.25}
-	self.values.player.melee_kill_life_leech = {0.02}
-	self.on_killshot_cooldown = 5
-	self.on_killshot_cooldown_reduction = 0.5
+	self.values.player.melee_kill_life_leech = {0.05}
+	self.on_killshot_cooldown = 3
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
@@ -1623,13 +1593,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.damage_to_armor = {
 		{
-			{3.5, 5},
-			{4.0, 5},
-			{4.5, 5},
-			{5.0, 5},
-			{5.3, 5},
-			{5.7, 5},
-			{6.0, 5}
+			{2.1, 3},
+			{2.4, 3},
+			{2.7, 3},
+			{3.0, 3},
+			{3.2, 3},
+			{3.4, 3},
+			{3.6, 3}
 		}
 	}
 	
@@ -1644,37 +1614,37 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.body_armor.skill_max_health_store = {
+		6.4,
+		6.0,
+		5.6,
+		5.2,
 		4.8,
 		4.4,
-		4.0,
-		3.6,
-		3.2,
-		2.8,
-		2.4
+		4.0
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
+		1.40,
+		1.35,
+		1.30,
+		1.25,
 		1.20,
-		1.175,
 		1.15,
-		1.125,
-		1.10,
-		1.075,
-		1.05	
-	}
+		1.10
+	}	
 
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		40,
-		30
+		400,
+		300
 	}	
 	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
-	self.max_cocaine_stacks_per_tick = 240
-	self.max_total_cocaine_stacks = 240
+	self.max_cocaine_stacks_per_tick = 2400
+	self.max_total_cocaine_stacks = 2400
 	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 40
+	self.cocaine_stacks_decay_amount_per_tick = 400
 	self.cocaine_stacks_decay_percentage_per_tick = 0
 	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}
@@ -1726,13 +1696,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 1.5},
-		{50, 3}
+		{ 0, 1},
+		{50, 6}
 	}
 	
 	--Yakuza--
-	self.values.player.max_deflection_add = {0.2}
-	self.values.player.melee_double_interval = {true}
 	self.values.player.survive_one_hit = {true}
 	self.values.survive_one_hit_armor = {5.0}
 
@@ -1741,11 +1709,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
-		0.10
+		0.08
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
-		1.00
+		0.5
 	}
 
 	self.values.player.kill_dodge_regen = {
@@ -1754,7 +1722,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Fat benis :DDDDD
 	--biker?
-	self.wild_trigger_time = 5
+	self.wild_trigger_time = 2
 	self.wild_max_triggers_per_time = 1
 	self.values.player.wild_health_amount = {0.2}
 	self.values.player.wild_armor_amount = {0.0}
@@ -1777,31 +1745,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.biker_armor_regen = {
 		--Amount regenerated per tick, time between ticks, time fast forwarded when melee kills are done.
-		{1.0, 5.0, 0.0},
-		{2.0, 5.0, 1.0} 
+		{1.0, 3.0, 0.0},
+		{2.0, 2.5, 3.5} 
 	}
 
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 0.4,
+			kill_health_gain = 0.8,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 0,
 			kill_duration = 0,
 			kill_dropoff = 0,
 			duration = 11,
-			tagged_health_gain_ratio = 0.5
-		},
-		{
-			kill_health_gain = 0.4,
-			radius = 0.6,
-			distance = 18,
-			kill_extension = 2,
-			kill_duration = 2,
-			kill_dropoff = 0.2,
-			duration = 11,
-			tagged_health_gain_ratio = 0.5
+			tagged_health_gain_ratio = 0.625
 		},
 		{
 			kill_health_gain = 0.8,
@@ -1811,7 +1769,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			kill_duration = 2,
 			kill_dropoff = 0.2,
 			duration = 11,
-			tagged_health_gain_ratio = 0.5
+			tagged_health_gain_ratio = 0.625
+		},
+		{
+			kill_health_gain = 1.6,
+			radius = 0.6,
+			distance = 18,
+			kill_extension = 2,
+			kill_duration = 2,
+			kill_dropoff = 0.2,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
 		}
 	}
 
@@ -1836,15 +1804,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Hacker
 	self.values.player.pocket_ecm_jammer_base = {
 		{
-			cooldown_drain = 2,
+			cooldown_drain = 3,
 			duration = 10
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
-		0.5
+		1.2
 	}	
 	self.values.team.pocket_ecm_heal_on_kill = {
-		0.25
+		0.6
 	}	
 	
 	--Leech
@@ -3279,24 +3247,6 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "survive_one_hit",
-			category = "player"
-		}
-	}
-	self.definitions.player_melee_double_interval = {
-		name_id = "menu_player_melee_double_interval",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "melee_double_interval",
-			category = "player"
-		}
-	}
-	self.definitions.player_max_deflection_add = {
-		name_id = "menu_player_max_deflection_add",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "max_deflection_add",
 			category = "player"
 		}
 	}

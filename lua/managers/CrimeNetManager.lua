@@ -2169,11 +2169,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		local _, _, w, h = one_down_label:text_rect()
 
 		one_down_label:set_size(w, h - 4)
-		if got_heat_text then
-			one_down_label:set_top(heat_name:bottom() - 4)
-		else
-			one_down_label:set_top(difficulty_name:bottom() - 4)
-		end
+		one_down_label:set_top(difficulty_name:bottom() - 4)
 		one_down_label:set_right(0)
 	end
 

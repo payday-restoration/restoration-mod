@@ -19,9 +19,6 @@
 	<!--Fort 500-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500" load="false" force="false"/>
 	
-	<!--Dozer NPC Fort 500-->
-	<unit				path="units/payday2/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer" load="false"/>		
-	
 	<!--AKS 74U-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu" load="false" force="false"/>
 	
@@ -30,9 +27,6 @@
 	
 	<!--RPK-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc" load="false" force="false"/>
-	
-	<!--RPK Dozer-->
-	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer" load="false"/>		
 	
 	<!--ASVAL -->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" load="false" force="false"/>
@@ -554,15 +548,6 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
-	
-	<!--titandozer accs-->	
-	<unit_obj				path="units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large" />
-
-	<unit_obj				path="units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
-	
-	<unit_obj				path="units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
-	
-	<unit_obj				path="units/pd2_dlc_mad/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 	<!--textures-->
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/vip_2_body_df" force="false"/>
 	

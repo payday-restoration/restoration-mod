@@ -32,7 +32,7 @@ function PlayerStandard:set_night_vision_state(state)
 	local ambient_color_key = CoreEnvironmentFeeder.PostAmbientColorFeeder.DATA_PATH_KEY
 	--Use a proper fallback env instead of whatever vanilla does if there's an issue.
 	local level_id = Global.game_settings.level_id
-	local env_setting = level_id and tweak_data.levels[level_id].env_params and tweak_data.levels[level_id].env_params.color_grading
+	local env_setting = tweak_data.levels[level_id].env_params and tweak_data.levels[level_id].env_params.color_grading
 	local level_check = env_setting or managers.user:get_setting("video_color_grading")
 	local effect = state and night_vision.effect or level_check
 
@@ -607,7 +607,6 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						dmg_mul = dmg_mul * managers.player:get_property("trigger_happy", 1)
 					end
 
-					dmg_mul = dmg_mul * managers.player:get_temporary_property("birthday_multiplier", 1)
 					local fired = nil
 
 					if fire_mode == "single" then
@@ -655,7 +654,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 
 						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
-						self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.2 or 1) , 1, 0.15)
+						self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier, 1, 0.15)
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
 						self._equipped_unit:base():tweak_data_anim_stop("equip")
 
@@ -1057,7 +1056,6 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	local speed_tweak = self._tweak_data.movement.speed
 	local movement_speed = speed_tweak.STANDARD_MAX
 	local speed_state = "walk"
-	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
 
 	if self._is_sliding then -- should be fine without having AdvMov installed since it'll return nil in you don't have it
 		movement_speed = self._slide_speed
@@ -1129,10 +1127,6 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 		if out_of_health then
 			multiplier = multiplier * managers.player:upgrade_value("player", "copr_out_of_health_move_slow", 1)
 		end
-	end
-	
-	if self._shooting_move_speed_t then
-		multiplier = multiplier * self._shooting_move_speed_mult
 	end
 
 	local final_speed = movement_speed * multiplier
@@ -1449,7 +1443,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		self._unit:movement():_restart_stamina_regen_timer()
 	end
 	--Trigger chainsaw damage and update timer.
-	if self:_is_meleeing() and ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
+	if ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)
 		self._state_data.chainsaw_t = t + (melee_weapon.chainsaw.tick_delay * (1 + (1 - managers.player:upgrade_value("player", "melee_swing_multiplier", 1))))
 	end
@@ -1747,7 +1741,6 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 			self:_secondary_regen_ammo(t, dt)
 		end
 	end
-	self:_shooting_move_speed_timer(t, dt)
 
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
 	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
@@ -1766,29 +1759,6 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	
 end)
-
-function PlayerStandard:_shooting_move_speed_timer(t, dt)
-	local weapon = self._equipped_unit and self._equipped_unit:base()
-	if self._shooting and weapon._sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
-		self._shooting_move_speed_t = math.min(0.8, weapon._smt)
-		--self._shooting_move_speed_wait = weapon._smt * 0.15
-		self._shooting_move_speed_mult = weapon._sms
-	end
-	if self._shooting_move_speed_wait then
-		self._shooting_move_speed_wait = self._shooting_move_speed_wait - dt
-		if self._shooting_move_speed_wait < 0 then
-			self._shooting_move_speed_wait = nil
-		end
-	elseif self._shooting_move_speed_t then
-		self._shooting_move_speed_t = self._shooting_move_speed_t - dt
-		--self._shooting_move_speed_mult = self._shooting_move_speed_mult --too stupid to figure out the math to make 'self._shooting_move_speed_mult' transition to 1 as 'self._shooting_move_speed_t' counts down, pls help 
-		if self._shooting_move_speed_t < 0 then
-			self._shooting_move_speed_t = nil
-			self._shooting_move_speed_mult = nil
-		end
-	end
-end
-
 
 function PlayerStandard:_primary_regen_ammo(t, dt)
 	local primary = self._unit:inventory():unit_by_selection(2):base()
@@ -2081,9 +2051,10 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 
 	action_forbidden = self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
 
-	local weapon = self._equipped_unit:base()
-	local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", weapon._parts)
 	if not action_forbidden then
+		local weapon = self._equipped_unit:base()
+		local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", weapon._parts)
+
 		if bipod_part and bipod_part[1] then
 			local bipod_unit = bipod_part[1].unit:base()
 
@@ -2092,7 +2063,7 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 			new_action = true
 		end
 	else
-		if bipod_part and bipod_part [1] and not autodeploy then
+		if not autodeploy then
 			if self._state_data.in_air then
 				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_air") })
 			elseif self._is_sliding then
@@ -2298,14 +2269,7 @@ end
 
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
-	local weap_base = self._equipped_unit:base()
-	local wtd = weap_base:weapon_tweak_data()
-	local wtd_base_range = wtd and math.max(wtd.jab_range or 0, 0)
-	local active_weapon = self._unit:inventory():equipped_selection() == 1 and managers.blackmarket:equipped_secondary() or managers.blackmarket:equipped_primary()
-	local active_weapon_stats = active_weapon and melee_entry == "weapon" and managers.weapon_factory:get_stats(active_weapon.factory_id, active_weapon.blueprint)
-	local active_weapon_range = active_weapon_stats and math.max((active_weapon_stats and active_weapon_stats.jab_range or active_weapon_stats.bayonet_range) or 0, 0) or 0
-	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 150
-	range = range + wtd_base_range + active_weapon_range
+	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 175
 	local charge_bonus_range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_range or 0
 	if self._melee_charge_bonus_range and self._melee_charge_bonus_range == true then
 		range = range + charge_bonus_range
@@ -2315,7 +2279,6 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 
 	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
 end
-
 
 local melee_vars = {
 	"player_melee",
@@ -2576,12 +2539,13 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
 			self._state_data.reload_expire_t = nil
 
-			if (self._equipped_unit:base():weapon_tweak_data().empty_use_mag and self._equipped_unit:base():clip_empty()) or (not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t()) then
+			if (not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or (self._equipped_unit:base():weapon_tweak_data().empty_use_mag and is_reload_not_empty == false) then
 				local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
 				if not interupt then
 					self._equipped_unit:base():on_reload()
 				end
-				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or (self._equipped_unit:base():reload_exit_expire_t() or empty_use_mag_timer)) / speed_multiplier
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
+				log("1")
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
 			elseif self._equipped_unit:base():reload_exit_expire_t() then
@@ -2910,7 +2874,7 @@ end
 function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
 	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
-	local may_find_grenade = not grenade_tweak.base_cooldown --and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
+	local may_find_grenade = not grenade_tweak.base_cooldown and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
 
 	for _, pickup in ipairs(pickups) do
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then

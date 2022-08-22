@@ -7,8 +7,6 @@
 	<world_cameras path="world_cameras" script_data_type="binary"/>
 	<continent path="pc_only/pc_only" script_data_type="binary"/>
 	<mission path="pc_only/pc_only" script_data_type="binary"/>
-	<continent path="coverpoints/coverpoints" script_data_type="binary"/>
-	<mission path="coverpoints/coverpoints" script_data_type="binary"/>
 	<continent path="world/world" script_data_type="binary"/>
 	<mission path="world/world" script_data_type="binary"/>
 	<continent path="background/background" script_data_type="binary"/>

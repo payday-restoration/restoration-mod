@@ -14,17 +14,6 @@
 		<search>
 			<network/>
 			<rpc/>
-			<message name="set_equipped_weapon"/>
-			<param type="int" min="1" max="512"/>			
-		</search>
-		<target mode="attributes">
-			<attr name="max" value="1024"/>
-		</target>
-	</tweak>
-	<tweak name="settings/network" extension="network_settings">
-		<search>
-			<network/>
-			<rpc/>
 			<message name="sync_smoke_grenade_kill"/>
 		</search>
 		<target mode="attributes">

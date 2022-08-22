@@ -228,24 +228,10 @@ function GameSetup:load_packages()
 		end
 	end
 
-	if Global.mutators and Global.mutators.active_on_load and table.size(Global.mutators.active_on_load) > 0 then
-		self._mutators_packages = {}
+	if Global.mutators and Global.mutators.active_on_load and table.size(Global.mutators.active_on_load) > 0 and PackageManager:package_exists(MutatorsManager.package) and not PackageManager:loaded(MutatorsManager.package) then
+		self._mutators_package = MutatorsManager.package
 
-		if PackageManager:package_exists(MutatorsManager.package) and not PackageManager:loaded(MutatorsManager.package) then
-			table.insert(self._mutators_packages, MutatorsManager.package)
-		end
-
-		for id, data in pairs(Global.mutators.active_on_load) do
-			local package = _G[id] and _G[id].package
-
-			if package and PackageManager:package_exists(package) and not PackageManager:loaded(package) then
-				table.insert(self._mutators_packages, package)
-			end
-		end
-
-		for _, package in ipairs(self._mutators_packages) do
-			PackageManager:load(package)
-		end
+		PackageManager:load(MutatorsManager.package)
 	end
 end
 
@@ -323,13 +309,9 @@ function GameSetup:gather_packages_to_unload()
 		self._loaded_faction_packages = {}
 	end
 
-	if self._mutators_packages then
-		for i, package in ipairs(self._mutators_packages) do
-			if PackageManager:loaded(package) then
-				table.insert(self._packages_to_unload, package)
-			end
-		end
+	if self._mutators_package and PackageManager:loaded(self._mutators_package) then
+		table.insert(self._packages_to_unload, self._mutators_package)
 
-		self._mutators_packages = {}
+		self._mutators_package = nil
 	end
 end

@@ -284,8 +284,7 @@ function NewRaycastWeaponBase:stop_shooting(...)
 	self._shots_fired = 0
 	if self._fire_rate_init_progress then
 		self._fire_rate_init_progress = nil
-		self._fire_rate_init_cancel = true
-		self._next_fire_allowed = self._next_fire_allowed + self._burst_delay
+		--self._fire_rate_init_cancel = true
 	end
 	if self._name_id == "m134" or self._name_id == "shuno" then
 		self._vulcan_firing = nil
@@ -294,7 +293,7 @@ function NewRaycastWeaponBase:stop_shooting(...)
 end
 
 function NewRaycastWeaponBase:_fire_sound(...)
-	if (self._name_id ~= "m134" and self._name_id ~= "shuno") or self._vulcan_firing then
+	if (self._name_id ~= "m134" or self._name_id ~= "shuno") or self._vulcan_firing then
 		return _fire_sound_original(self, ...)
 	end
 end
@@ -448,6 +447,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
+	
+	self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
+	self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult or 1
+	self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato
@@ -469,8 +472,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.01 or 1
-		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
+		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
+		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.9
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
 		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
@@ -479,17 +482,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
 		
 		self._burst_rounds_fired = 0
-	
-		self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
-		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
-		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	
-	self._hs_mult = self:weapon_tweak_data().hs_mult
-
 	self._shots_fired = 0
 
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
@@ -501,11 +498,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
 		self._rof_mult = 1
-
-		if not self:is_npc() then
-			self._sms = self:weapon_tweak_data().sms
-			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
-		end
 
 		for part_id, stats in pairs(custom_stats) do
 			if stats.ads_speed_mult then
@@ -547,8 +539,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().LOCK_BURST = true
+				self:weapon_tweak_data().can_shoot_through_wall = false
+				self:weapon_tweak_data().can_shoot_through_enemy = false
 				self:weapon_tweak_data().can_shoot_through_shield = false
-				self:weapon_tweak_data().armor_piercing_chance = 0.5
+				self:weapon_tweak_data().armor_piercing_chance = 0
 			end			
 			if stats.mk32 then
 				self:weapon_tweak_data().BURST_FIRE = 2
@@ -577,11 +571,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end	
 	
 			if stats.m16_burst then
-				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.066666) or 1
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
 				self:weapon_tweak_data().FIRE_MODE = "single"	
 				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = burst_mult
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.3571428
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:_set_burst_mode(true, true)
@@ -632,21 +625,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.falloff_end_mult then
 				self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
 			end
-			if stats.can_shoot_through_wall then
-				self:weapon_tweak_data().can_shoot_through_wall = true
-				self._can_shoot_through_wall = true
-			end
-			if stats.can_shoot_through_enemy then
-				self:weapon_tweak_data().can_shoot_through_enemy = true
-				self._can_shoot_through_enemy = true
-			end
-			if stats.can_shoot_through_shield then
-				self._can_shoot_through_shield = true
-				self:weapon_tweak_data().can_shoot_through_shield = true
-			end
-			if stats.armor_piercing_add then
-				self:weapon_tweak_data().armor_piercing_chance = 1
-			end
+			
 			if stats.rof_mult then
 				self._rof_mult = self._rof_mult * stats.rof_mult
 			end
@@ -686,17 +665,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.big_scope then
 				self._has_big_scope = true
-			end
-
-			if not self:is_npc() then
-				if stats.sms then
-					if not self._sms then
-						self._sms = stats.sms
-					else
-						self._sms = self._sms + (1 * (stats.sms - 1))
-					end
-					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
-				end
 			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
@@ -742,11 +710,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._has_scope = managers.weapon_factory:has_perk("scope", self._factory_id, self._blueprint)
 
 	self:precalculate_ammo_pickup()
-end
-
-
-function NewRaycastWeaponBase:should_reload_immediately()
-	return self:weapon_tweak_data().should_reload_immediately
 end
 
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
@@ -1158,10 +1121,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	
 	--Have a harsher falloff for Shotguns
 	if self._rays and self._rays > 1 then
-		if damage_falloff and damage_falloff.ignore_rays then
-		else
-			minimum_damage = 0.05
-		end
+		minimum_damage = 0.05
 	end
 	
 	--[[
@@ -1319,14 +1279,17 @@ end
 
 --Maybe hopefully fix the ammo eff. aced skill crash
 function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
-	if self._bullet_objects and not self:is_npc() then
+	if self._bullet_objects then
 		for i, objects in pairs(self._bullet_objects) do
-			for _, object in ipairs(objects) do
-				local ammo_base = self:ammo_base()
-				local ammo = ammo_base[ammo_func](ammo_base)
-				if alive(object[1]) then
-					if object[1].set_visibility then
-						object[1]:set_visibility(i <= ammo)
+			if objects and type(objects) == "table" then --added this to make sure "objects" is even a table as I'm pretty sure the next for loop is what shits the bed
+				for _, object in ipairs(objects) do
+					if object[1] then
+						local ammo_base = self:ammo_base()
+						local ammo = ammo_base[ammo_func](ammo_base)
+						
+						if ammo then
+							object[1]:set_visibility(i <= ammo)
+						end
 					end
 				end
 			end

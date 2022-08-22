@@ -365,11 +365,3 @@ function EnemyManager:chk_any_unit_in_slotmask_visible(slotmask, cam_pos, cam_na
 		end
 	end
 end
-
-Hooks:PostHook(EnemyManager, "on_enemy_died", "ResOnEnemyDied", function(self, dead_unit)
-	if Network:is_server() and managers.mutators:is_mutator_active(MutatorBirthday) and dead_unit:base():has_tag("special") and managers.mutators:is_mutator_active(MutatorBirthday) then
-		local birthday_mutator = managers.mutators:get_mutator(MutatorBirthday)
-
-		birthday_mutator:on_special_killed(dead_unit)
-	end
-end)

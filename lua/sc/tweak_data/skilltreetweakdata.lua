@@ -1945,15 +1945,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {11, 8},
 				[1] = {
 					upgrades = {
-						--"player_max_health_reduction_1"
-						--"player_healing_reduction_1",
+						"player_healing_reduction_1",
 						"player_frenzy_deflection_1",
+						"player_max_health_reduction_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						--"player_healing_reduction_2",
+						"player_healing_reduction_2",
 						"player_frenzy_deflection_2"
 					},
 					cost = self.costs.hightierpro
@@ -2056,8 +2056,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"team_passive_stamina_multiplier_1",
-					"player_passive_intimidate_range_mul",
-					"player_passive_dodge_chance_1"
+					"player_passive_intimidate_range_mul"
 				},
 				cost = 400,
 				icon_xy = {2, 0},
@@ -2079,8 +2078,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_1",
-					"player_passive_dodge_chance_2"
+					"player_tier_armor_multiplier_1"
 				},
 				cost = 2400,
 				icon_xy = {6, 0},
@@ -2142,8 +2140,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_panic_suppression",
-					"player_passive_dodge_chance_1"
+					"player_panic_suppression"
 				},
 				cost = 2400,
 				icon_xy = {3, 1},
@@ -2489,8 +2486,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_2",
-					"player_passive_dodge_chance_1"
+					"player_damage_dampener_close_contact_2"
 				},
 				cost = 400,
 				icon_xy = {4, 4},
@@ -2513,8 +2509,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"melee_stacking_hit_damage_multiplier_2",
-					"player_passive_dodge_chance_2"
+					"melee_stacking_hit_damage_multiplier_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 4},
@@ -2552,8 +2547,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_killshot_regen_armor_bonus",
-					"player_passive_dodge_chance_1"
+					"player_killshot_regen_armor_bonus"
 				},
 				cost = 400,
 				icon_xy = {0, 5},
@@ -2574,8 +2568,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_killshot_close_regen_armor_bonus",
-					"player_passive_dodge_chance_2"
+					"player_killshot_close_regen_armor_bonus"
 				},
 				cost = 2400,
 				icon_xy = {2, 5},
@@ -2756,9 +2749,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_melee_kill_dodge_regen",
-					"player_melee_double_interval",
-					"player_passive_dodge_chance_2"
+					"player_melee_kill_dodge_regen"
 				},
 				cost = 2400,
 				icon_xy = {1, 7},
@@ -2769,7 +2760,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_survive_one_hit",
-					"player_max_deflection_add",
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
@@ -2856,14 +2846,13 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_sync_cocaine_stacks",
-					"player_passive_dodge_chance_1"
+					"player_sync_cocaine_stacks"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
 				texture_bundle_folder = "coco",
 				name_id = "menu_deck14_3",
-				desc_id = "menu_deck14_3_desc_sc"
+				desc_id = "menu_deck14_3_desc"
 			},
 			deck4,
 			{
@@ -2880,8 +2869,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_sync_cocaine_upgrade_level_1",
-					"player_passive_dodge_chance_2"
+					"player_sync_cocaine_upgrade_level_1"
 				},
 				cost = 2400,
 				icon_xy = {3, 0},

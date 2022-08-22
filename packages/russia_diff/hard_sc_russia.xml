@@ -16,9 +16,6 @@
 	<!--Fort 500-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500" load="false" force="false"/>
 	
-	<!--Dozer NPC Fort 500-->
-	<unit				path="units/payday2/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer" load="false"/>		
-	
 	<!--AKS 74U-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu" load="false" force="false"/>
 
@@ -426,18 +423,5 @@
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
-		
-	<!--bravo lmg-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_husk"  load="true"/>	
-
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
 	
 </table>

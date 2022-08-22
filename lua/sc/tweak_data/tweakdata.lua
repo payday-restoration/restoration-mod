@@ -71,7 +71,7 @@ tweak_data.smg = {
 	}
 	tweak_data.lmg = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.55,
+		ads_move_speed_mult = 0.4,
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
@@ -80,7 +80,7 @@ tweak_data.smg = {
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.55,
+		ads_move_speed_mult = 0.4,
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
@@ -91,18 +91,16 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1.25,
-		hipfire_moving_spread_mult = 1.5
+		swap_bonus = 0.8,
+		ads_move_speed_mult = 0.6666,
+		hipfire_spread_mult = 12,
+		hipfire_moving_spread_mult = 1
 	}
 
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45
 }
-	tweak_data.crb = {
-		swap_bonus = 1.1,
-		ads_move_speed_mult = 1.111111
-	}
 
 tweak_data.akimbo = {
 	swap_bonus = 0.8,
@@ -289,8 +287,8 @@ tweak_data.projectiles.launcher_incendiary_ms3gl.fire_dot_data = {
 	dot_length = 3.1,
 	dot_tick_period = 0.5
 }
-tweak_data.projectiles.launcher_electric_ms3gl.damage = 18
-tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 6
+tweak_data.projectiles.launcher_electric_ms3gl.damage = 20
+tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 10
 tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1.5
 tweak_data.projectiles.launcher_electric_ms3gl.range = 500
 tweak_data.projectiles.launcher_poison.damage = 0
@@ -482,7 +480,7 @@ tweak_data.projectiles.concussion.range = 1000
 tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
 --Had to include this in here due to some BS with it being in upgradestweakdata
-tweak_data.upgrades.values.player.health_multiplier = {1.1, 1.25}
+tweak_data.upgrades.values.player.health_multiplier = {1.15, 1.4}
 tweak_data.upgrades.values.trip_mine.quantity = {3, 6}
 tweak_data.upgrades.values.shape_charge.quantity = {2, 4}
 tweak_data.upgrades.values.weapon.swap_speed_multiplier = {1.15}
@@ -790,22 +788,30 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		primaries = {
 			{ "pistol" },
 
-			{ "smg" },
-
 			{ "shotgun" },
 
+			{ "smg" },
+
 			{ "assault_rifle" },
+
+			{ "lmg" },
+
+			{ "snp" },
 
 			{ "wpn_special" }
 		},
 		secondaries = {
 			{ "pistol" },
 
-			{ "smg" },
-
 			{ "shotgun" },
 
+			{ "smg" },
+
 			{ "assault_rifle" },
+
+			{ "lmg" },
+
+			{ "snp" },
 
 			{ "wpn_special" }
 		}
@@ -815,24 +821,24 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 			{ "light_pis" },
 			{ "heavy_pis" },
 			
-			{ "light_smg" },
-			{ "heavy_smg" },
-
 			{ "light_shot" },
 			{ "heavy_shot" },
 			{ "break_shot" },
 			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
 			{ "light_ar" },
 			{ "heavy_ar" },
 			{ "dmr_ar" },
-
-			{ "light_snp" },
-			{ "heavy_snp" },
-			{ "antim_snp" },
 			
 			{ "light_mg" },
 			{ "heavy_mg" },
 			{ "miniguns" },
+			
+			{ "light_snp" },
+			{ "heavy_snp" },
+			{ "antim_snp" },
 		
 			{ "wpn_special" }
 		},
@@ -840,15 +846,17 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 			{ "light_pis" },
 			{ "heavy_pis" },
 			
-			{ "light_smg" },
-			{ "heavy_smg" },
-			
 			{ "light_shot" },
 			{ "heavy_shot" },
 			{ "break_shot" },
 			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
 			{ "light_ar" },
 			{ "heavy_ar" },
+
+			{ "heavy_mg" },
 
 			{ "light_snp" },
 			

@@ -205,13 +205,9 @@
 		<unit force="true" path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" type="unit">
-		<material_config force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
-		<object force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
 		<unit force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
-	</add>
-	<add from_db="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars" type="scene">
-		<scene load="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
-		<material_config path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+		<object force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
 	</add>
 	<texture path="levels/mods/alex_1_res/cube_lights/dome_occlusion"/>
 </table>

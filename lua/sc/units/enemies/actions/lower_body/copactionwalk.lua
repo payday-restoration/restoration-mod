@@ -275,6 +275,7 @@ function CopActionWalk:append_path(path, nav_seg)
 	end
 
 	self._calculate_simplified_path(nil, s_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
+	self._calculate_optimum_path(s_path)
 
 	-- problematic if it only has 2 entries, so append the first navpoint of the added path
 	if #s_path == 2 then
@@ -721,7 +722,7 @@ function CopActionWalk:update(t)
 			mvec3_set(wanted_u_fwd, move_dir_norm)
 			mvec3_rot(wanted_u_fwd, self._walk_side_rot[wanted_walk_dir])
 			mrot_lookat(rot_new, wanted_u_fwd, math_up)
-			mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 3))
+			mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 5))
 		end
 
 		self._ext_movement:set_rotation(rot_new)
@@ -809,19 +810,6 @@ function CopActionWalk:update(t)
 			elseif not self._no_walk then
 				variant = "walk"
 			end
-		end
-
-		if not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant][wanted_walk_dir] then
-			log("Something's fucked up!!!")
-			log("tweak_table: " .. tostring(self._unit:base()._tweak_table))
-			log("pose: " .. tostring(self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"))
-			log("stance: " .. tostring(self._stance.name))
-			log("haste: " .. tostring(variant))
-			log("move_dir: " .. tostring(wanted_walk_dir))
-			return
 		end
 
 		self:_adjust_move_anim(wanted_walk_dir, variant)
@@ -918,7 +906,7 @@ function CopActionWalk:_upd_start_anim(t)
 				mvec3_dir(wanted_u_fwd, self._common_data.pos, self._curve_path[self._curve_path_index + 1])
 				mvec3_rot(wanted_u_fwd, self._walk_side_rot[self._start_run_straight])
 				mrot_lookat(tmp_rot1, wanted_u_fwd, math_up) -- don't think z matters here at all
-				mrot_slerp(tmp_rot1, self._common_data.rot, tmp_rot1, math_min(1, dt * 3))
+				mrot_slerp(tmp_rot1, self._common_data.rot, tmp_rot1, math_min(1, dt * 5))
 
 				self._ext_movement:set_rotation(tmp_rot1)
 			end
@@ -1111,6 +1099,32 @@ function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations,
 
 			if nr_iterations > 1 then
 				CopActionWalk._calculate_simplified_path(nil, path, nr_iterations - 1, z_test, apply_padding)
+			end
+		end
+	end
+end
+
+function CopActionWalk._calculate_optimum_path(path)
+	local path_length = #path
+	for i = 1, path_length do
+		if i > path_length then
+			path[i] = nil -- clear removed navpoints
+		elseif i <= path_length - 2 then
+			-- Reverse order to allow for breaking the loop early
+			local nav_point = path[i].x and path[i] or path[i].c_class:end_position()
+			for j = path_length, i + 2, -1 do
+				local middle_nav_point = CopActionWalk._nav_point_pos(path[math.floor((j + i) / 2)])
+				local future_nav_point = CopActionWalk._nav_point_pos(path[j])
+				-- Sample z from the navpoint in the middle index between current and future
+				if math_abs(middle_nav_point.z - nav_point.z + middle_nav_point.z - future_nav_point.z) < 60 and not managers.navigation:raycast({pos_from = nav_point, pos_to = future_nav_point}) then
+					local removed_entries = (j - i) - 1
+					for k = j, path_length do
+						path[k - removed_entries] = path[k]
+					end
+
+					path_length = path_length - removed_entries
+					break
+				end
 			end
 		end
 	end
@@ -1372,7 +1386,7 @@ function CopActionWalk:_adjust_move_anim(side, speed)
 		enter_t = self._machine:segment_relative_time(idstr_base) * self._walk_anim_lengths[anim_data.pose or "stand"][self._stance.name][speed][side]
 	end
 
-	local could_freeze = anim_data.can_freeze and (not anim_data.upper_body_active or anim_data.upper_body_empty)
+	local could_freeze = anim_data.can_freeze and anim_data.upper_body_empty
 	local redir_res = self._ext_movement:play_redirect(speed .. "_" .. side, enter_t)
 
 	if could_freeze then
@@ -1471,7 +1485,7 @@ function CopActionWalk:_upd_stop_anim(t)
 	end
 
 	mrot_lookat(rot_new, face_fwd, math_up)
-	mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 3))
+	mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 5))
 
 	self._ext_movement:set_rotation(rot_new)
 

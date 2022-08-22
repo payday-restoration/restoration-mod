@@ -40,24 +40,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_pd.exclude_stages, "welcome_to_the_jungle_2")	
 	table.insert(self.risk_pd.exclude_stages, "pex")	
 	table.insert(self.risk_pd.exclude_stages, "fex")
-	table.insert(self.risk_pd.exclude_stages, "ahopl")
-	table.insert(self.risk_pd.exclude_stages, "ascension_III")
-	table.insert(self.risk_pd.exclude_stages, "hwu")
-	table.insert(self.risk_pd.exclude_stages, "rusdl")
-	table.insert(self.risk_pd.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_pd.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_pd.exclude_stages, "the_factory")
-	table.insert(self.risk_pd.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_pd.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_pd.exclude_stages, "daymare")
-	table.insert(self.risk_pd.exclude_stages, "hidden_vault")
-	table.insert(self.risk_pd.exclude_stages, "hunter_party")
-	table.insert(self.risk_pd.exclude_stages, "hunter_departure")
-	table.insert(self.risk_pd.exclude_stages, "finsternis")
-	table.insert(self.risk_pd.exclude_stages, "ruswl")
-	table.insert(self.risk_pd.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_pd.exclude_stages, "Tonis2")
-	table.insert(self.risk_pd.exclude_stages, "trop")
 
 	--SWAT--		
 	table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -82,24 +64,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_swat.exclude_stages, "welcome_to_the_jungle_2")	
 	table.insert(self.risk_swat.exclude_stages, "pex")
 	table.insert(self.risk_swat.exclude_stages, "fex")
-	table.insert(self.risk_swat.exclude_stages, "ahopl")
-	table.insert(self.risk_swat.exclude_stages, "ascension_III")
-	table.insert(self.risk_swat.exclude_stages, "hwu")
-	table.insert(self.risk_swat.exclude_stages, "rusdl")
-	table.insert(self.risk_swat.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_swat.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_swat.exclude_stages, "the_factory")
-	table.insert(self.risk_swat.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_swat.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_swat.exclude_stages, "daymare")
-	table.insert(self.risk_swat.exclude_stages, "hidden_vault")
-	table.insert(self.risk_swat.exclude_stages, "hunter_party")
-	table.insert(self.risk_swat.exclude_stages, "hunter_departure")
-	table.insert(self.risk_swat.exclude_stages, "finsternis")
-	table.insert(self.risk_swat.exclude_stages, "ruswl")
-	table.insert(self.risk_swat.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_swat.exclude_stages, "Tonis2")
-	table.insert(self.risk_swat.exclude_stages, "trop")
 	
 	--FBI--		
 	table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -124,24 +88,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_fbi.exclude_stages, "welcome_to_the_jungle_2")	
 	table.insert(self.risk_fbi.exclude_stages, "pex")
 	table.insert(self.risk_fbi.exclude_stages, "fex")
-	table.insert(self.risk_fbi.exclude_stages, "ahopl")
-	table.insert(self.risk_fbi.exclude_stages, "ascension_III")
-	table.insert(self.risk_fbi.exclude_stages, "hwu")
-	table.insert(self.risk_fbi.exclude_stages, "rusdl")
-	table.insert(self.risk_fbi.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_fbi.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_fbi.exclude_stages, "the_factory")
-	table.insert(self.risk_fbi.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_fbi.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_fbi.exclude_stages, "daymare")
-	table.insert(self.risk_fbi.exclude_stages, "hidden_vault")
-	table.insert(self.risk_fbi.exclude_stages, "hunter_party")
-	table.insert(self.risk_fbi.exclude_stages, "hunter_departure")
-	table.insert(self.risk_fbi.exclude_stages, "finsternis")
-	table.insert(self.risk_fbi.exclude_stages, "ruswl")
-	table.insert(self.risk_fbi.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_fbi.exclude_stages, "Tonis2")
-	table.insert(self.risk_fbi.exclude_stages, "trop")
 
 	--Overkill--		
 	table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -166,24 +112,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_squad.exclude_stages, "welcome_to_the_jungle_2")
 	table.insert(self.risk_death_squad.exclude_stages, "pex")
 	table.insert(self.risk_death_squad.exclude_stages, "fex")
-	table.insert(self.risk_death_squad.exclude_stages, "ahopl")
-	table.insert(self.risk_death_squad.exclude_stages, "ascension_III")
-	table.insert(self.risk_death_squad.exclude_stages, "hwu")
-	table.insert(self.risk_death_squad.exclude_stages, "rusdl")
-	table.insert(self.risk_death_squad.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_death_squad.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_death_squad.exclude_stages, "the_factory")
-	table.insert(self.risk_death_squad.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_death_squad.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_death_squad.exclude_stages, "daymare")
-	table.insert(self.risk_death_squad.exclude_stages, "hidden_vault")
-	table.insert(self.risk_death_squad.exclude_stages, "hunter_party")
-	table.insert(self.risk_death_squad.exclude_stages, "hunter_departure")
-	table.insert(self.risk_death_squad.exclude_stages, "finsternis")
-	table.insert(self.risk_death_squad.exclude_stages, "ruswl")
-	table.insert(self.risk_death_squad.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_death_squad.exclude_stages, "Tonis2")
-	table.insert(self.risk_death_squad.exclude_stages, "trop")
 
 	--Mayhem--		
 	table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -208,24 +136,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_easy_wish.exclude_stages, "welcome_to_the_jungle_2")
 	table.insert(self.risk_easy_wish.exclude_stages, "pex")
 	table.insert(self.risk_easy_wish.exclude_stages, "fex")
-	table.insert(self.risk_easy_wish.exclude_stages, "ahopl")
-	table.insert(self.risk_easy_wish.exclude_stages, "ascension_III")
-	table.insert(self.risk_easy_wish.exclude_stages, "hwu")
-	table.insert(self.risk_easy_wish.exclude_stages, "rusdl")
-	table.insert(self.risk_easy_wish.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_easy_wish.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_easy_wish.exclude_stages, "the_factory")
-	table.insert(self.risk_easy_wish.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_easy_wish.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_easy_wish.exclude_stages, "daymare")
-	table.insert(self.risk_easy_wish.exclude_stages, "hidden_vault")
-	table.insert(self.risk_easy_wish.exclude_stages, "hunter_party")
-	table.insert(self.risk_easy_wish.exclude_stages, "hunter_departure")
-	table.insert(self.risk_easy_wish.exclude_stages, "finsternis")
-	table.insert(self.risk_easy_wish.exclude_stages, "ruswl")
-	table.insert(self.risk_easy_wish.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_easy_wish.exclude_stages, "Tonis2")
-	table.insert(self.risk_easy_wish.exclude_stages, "trop")
 
 	--Deathwish--		
 	table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -250,26 +160,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_wish.exclude_stages, "welcome_to_the_jungle_2")
 	table.insert(self.risk_death_wish.exclude_stages, "pex")
 	table.insert(self.risk_death_wish.exclude_stages, "fex")
-	table.insert(self.risk_death_wish.exclude_stages, "ahopl")
-	table.insert(self.risk_death_wish.exclude_stages, "ascension_III")
-	table.insert(self.risk_death_wish.exclude_stages, "hwu")
-	table.insert(self.risk_death_wish.exclude_stages, "rusdl")
-	table.insert(self.risk_death_wish.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_death_wish.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_death_wish.exclude_stages, "the_factory")
-	table.insert(self.risk_death_wish.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_death_wish.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_death_wish.exclude_stages, "daymare")
-	table.insert(self.risk_death_wish.exclude_stages, "hidden_vault")
-	table.insert(self.risk_death_wish.exclude_stages, "hunter_party")
-	table.insert(self.risk_death_wish.exclude_stages, "hunter_departure")
-	table.insert(self.risk_death_wish.exclude_stages, "finsternis")
-	table.insert(self.risk_death_wish.exclude_stages, "ruswl")
-	table.insert(self.risk_death_wish.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_death_wish.exclude_stages, "Tonis2")
-	table.insert(self.risk_death_wish.exclude_stages, "trop")
 	
-	--Death Sentence--		
+	--One Down--		
 	table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
 	table.insert(self.risk_sm_wish.exclude_stages, "pbr")
 	table.insert(self.risk_sm_wish.exclude_stages, "wetwork")	
@@ -292,40 +184,12 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_sm_wish.exclude_stages, "welcome_to_the_jungle_2")
 	table.insert(self.risk_sm_wish.exclude_stages, "pex")
 	table.insert(self.risk_sm_wish.exclude_stages, "fex")
-	table.insert(self.risk_sm_wish.exclude_stages, "ahopl")
-	table.insert(self.risk_sm_wish.exclude_stages, "ascension_III")
-	table.insert(self.risk_sm_wish.exclude_stages, "hwu")
-	table.insert(self.risk_sm_wish.exclude_stages, "rusdl")
-	table.insert(self.risk_sm_wish.exclude_stages, "constantine_gunrunnerclubhouse_lvl")
-	table.insert(self.risk_sm_wish.exclude_stages, "crimepunishlvl")
-	table.insert(self.risk_sm_wish.exclude_stages, "the_factory")
-	table.insert(self.risk_sm_wish.exclude_stages, "constantine_mex_level")
-	table.insert(self.risk_sm_wish.exclude_stages, "flatline_lvl")
-	table.insert(self.risk_sm_wish.exclude_stages, "daymare")
-	table.insert(self.risk_sm_wish.exclude_stages, "hidden_vault")
-	table.insert(self.risk_sm_wish.exclude_stages, "hunter_party")
-	table.insert(self.risk_sm_wish.exclude_stages, "hunter_departure")
-	table.insert(self.risk_sm_wish.exclude_stages, "finsternis")
-	table.insert(self.risk_sm_wish.exclude_stages, "ruswl")
-	table.insert(self.risk_sm_wish.exclude_stages, "ttr_yct_lvl")
-	table.insert(self.risk_sm_wish.exclude_stages, "Tonis2")
-	table.insert(self.risk_sm_wish.exclude_stages, "trop")
 	
 	-- Reaper Risk Asset
 	table.insert(self.mad_russian_merc_cameras.stages, "pines")
 	table.insert(self.mad_russian_merc_cameras.stages, "crojob3")
 	table.insert(self.mad_russian_merc_cameras.stages, "crojob3_night")
-	table.insert(self.mad_russian_merc_cameras.stages, "ahopl")
-	table.insert(self.mad_russian_merc_cameras.stages, "rusdl")
-	table.insert(self.mad_russian_merc_cameras.stages, "crimepunishlvl")
-	table.insert(self.mad_russian_merc_cameras.stages, "the_factory")
-	table.insert(self.mad_russian_merc_cameras.stages, "flatline_lvl")
-	table.insert(self.mad_russian_merc_cameras.stages, "hunter_party")
-	table.insert(self.mad_russian_merc_cameras.stages, "hunter_departure")
-	table.insert(self.mad_russian_merc_cameras.stages, "finsternis")
-	table.insert(self.mad_russian_merc_cameras.stages, "ruswl")
-
-	self.risk_death_squad.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_3_sc"
+			
 	self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 	self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
 	self.risk_sm_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc"
@@ -339,29 +203,20 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"vit",
 		"arm_for",
 		"crojob2",
-		"mex",
-		"hwu",
-		"constantine_gunrunnerclubhouse_lvl",
-		"hidden_vault",
-		"ttr_yct_lvl",
-		"Tonis2",
-		"trop"
+		"mex"
 		--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
 	}		
 	self.risk_zombie.stages = {
 		"haunted",
 		"nail",
 		"help",
-		"hvh",
-		"ascension_III",
-		"daymare"
+		"hvh"
 	}		
 	self.risk_bexico.stages = {
 		"bex",
 		"pex",
 		"fex",
-		"mex_cooking",
-		"constantine_mex_level"
+		"mex_cooking"
 	}			
 	
 	--[[

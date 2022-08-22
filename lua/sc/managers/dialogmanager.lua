@@ -1180,17 +1180,17 @@ function DialogManager:queue_dialog(id, ...)
         --Harboring a Grudge (custom)--
         if id == "charbor_secure" then
             if difficulty_index <= 2 then
-                escape_time = 750
+                escape_time = 630
             elseif difficulty_index == 3 then
-                escape_time = 720
-            elseif difficulty_index == 4 then
-                escape_time = 690
-            elseif difficulty_index == 5 then
-                escape_time = 660    
-            elseif difficulty_index == 6 or difficulty_index == 7 then
-                escape_time = 630                        
-            else
                 escape_time = 600
+            elseif difficulty_index == 4 then
+                escape_time = 570
+            elseif difficulty_index == 5 then
+                escape_time = 540    
+            elseif difficulty_index == 6 or difficulty_index == 7 then
+                escape_time = 510                        
+            else
+                escape_time = 480
             end        
         end
 
@@ -1225,23 +1225,6 @@ function DialogManager:queue_dialog(id, ...)
                 escape_time = 630                        
             else
                 escape_time = 600
-            end        
-        end
-
-		--Constantine Scores: Gunrunner's Clubhouse (custom)--
-        if id == "gunrunner_obj3" then
-            if difficulty_index <= 2 then
-                escape_time = 510
-            elseif difficulty_index == 3 then
-                escape_time = 480
-            elseif difficulty_index == 4 then
-                escape_time = 450
-            elseif difficulty_index == 5 then
-                escape_time = 420    
-            elseif difficulty_index == 6 or difficulty_index == 7 then
-                escape_time = 390                        
-            else
-                escape_time = 360
             end        
         end
 		

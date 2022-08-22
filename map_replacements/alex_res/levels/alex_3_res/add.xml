@@ -85,12 +85,8 @@
 		<unit force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" unload="true"/>
 	</add>
 	<add path="units/payday2/architecture/air_backdrop/air_backdrop_v2" type="unit">
-		<material_config force="true" path="units/payday2/architecture/air_backdrop/air_backdrop" unload="true"/>
-		<object force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
-	</add>
-	<add from_db="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars" type="scene">
-		<material_config path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
-		<scene load="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+		<object force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/air_backdrop/air_backdrop" unload="true"/>
 	</add>
 </table>

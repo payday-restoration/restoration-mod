@@ -700,15 +700,6 @@ function WeaponDescription._get_mods_pickup(weapon, name, base_stats)
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1)
 	local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1)
-	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	for part_id, stats in pairs(custom_data) do
-		if stats.alt_ammo_pickup_min_mul then
-			min_pickup = min_pickup * stats.alt_ammo_pickup_min_mul
-		end
-		if stats.alt_ammo_pickup_max_mul then
-			max_pickup = max_pickup * stats.alt_ammo_pickup_max_mul
-		end
-	end
 	local average_pickup = (min_pickup + max_pickup) * 0.5
 	return average_pickup - base_stats.pickup.value
 end
@@ -725,15 +716,6 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1) * pickup_multiplier
 		local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1) * pickup_multiplier
-		local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-		for part_id, stats in pairs(custom_data) do
-			if stats.alt_ammo_pickup_min_mul then
-				min_pickup = min_pickup * stats.alt_ammo_pickup_min_mul
-			end
-			if stats.alt_ammo_pickup_max_mul then
-				max_pickup = max_pickup * stats.alt_ammo_pickup_max_mul
-			end
-		end
 		local average_pickup = (min_pickup + max_pickup) * 0.5
 		return true, average_pickup - mods_stats.pickup.value - base_stats.pickup.value
 	else
@@ -745,11 +727,11 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	local weapon_tweak = tweak_data.weapon[name]
 	local damage_base = base_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
-	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or false
+
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
+	if weapon_tweak.rays and weapon_tweak.rays > 1 then
 		damage_min_mult = 0.05
 	end
 
@@ -770,7 +752,7 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 	local damage_base = base_stats.damage.value 
 	local damage_mods = mods_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
-	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
+	local ignore_rays = weapon_tweak.ignore_rays or false
 
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
@@ -814,10 +796,10 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	local damage_mods = mods_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
-	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
+	local ignore_rays = weapon_tweak.ignore_rays or false
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
 		damage_min_mult = 0.05
 	end
 

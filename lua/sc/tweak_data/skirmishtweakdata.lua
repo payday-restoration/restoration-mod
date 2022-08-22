@@ -1,46 +1,21 @@
+
 Month = os.date("%m")
 Day = os.date("%d")	
 --This is probs unused, but setting to scaled (for the average skirmish map size) DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
-local map_scale_factor = 1
-	for _,vl in pairs(restoration.very_large_levels) do
-		if job == vl then
-			map_scale_factor = 1.3
-		end
-	end		
-	for _,l in pairs(restoration.large_levels) do
-		if job == l then
-			map_scale_factor = 1.15
-		end
-	end	
-	for _,t in pairs(restoration.tiny_levels) do
-		if job == t then
-			map_scale_factor = 0.85
-		end
-	end
-	for _,vt in pairs(restoration.very_tiny_levels) do
-		if job == vt then
-			map_scale_factor = 0.7
-		end
-	end
-	for _,et in pairs(restoration.extremely_tiny_levels) do
-		if job == et then
-			map_scale_factor = 0.55
-		end
-	end
 	self.special_unit_spawn_limits = {
 		{
-			tank = math.max(math.round(3 * map_scale_factor), 1),
-			taser = math.max(math.round(4 * map_scale_factor), 1),
-			boom = math.max(math.round(2 * map_scale_factor), 1),
-			spooc = math.max(math.round(4 * map_scale_factor), 1),
-			shield = math.max(math.round(4 * map_scale_factor), 1),
-			medic = math.max(math.round(4 * map_scale_factor), 1),
-			phalanx_vip = 1,
+			tank = 3,
+			taser = 4,
+			boom = 2,
+			spooc = 3,
+			shield = 4,
+			medic = 3,
 			spring = 1,
-			headless_hatman = 1,
 			autumn = 1,
-			summers = 1
+			summers = 1,
+			phalanx_vip = 1,
+			headless_hatman = 1
 		}
 	}
 end
@@ -217,18 +192,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
-		16,
-		16,
-		16,
-		16,
-		19,
-		19,
-		19,
-		19,
-		22,
-		22,
-		22,
-		22
+		23,
+		23,
+		23,
+		34,
+		34,
+		34,
+		34,
+		45,
+		45,
+		45,
+		45,
+		45
 	}
 
 	skirmish_data.recon.force = {

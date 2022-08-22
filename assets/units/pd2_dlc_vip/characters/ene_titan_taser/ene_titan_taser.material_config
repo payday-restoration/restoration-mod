@@ -44,7 +44,7 @@
         <diffuse_texture        file="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" mip="4"/>
 	</material>
 	
-	<material name="mtr_gore" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_gore" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
     </material>

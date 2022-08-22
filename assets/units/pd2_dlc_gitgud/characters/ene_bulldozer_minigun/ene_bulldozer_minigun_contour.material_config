@@ -18,13 +18,6 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_helmet">
-        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_nm"/>
-        <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-	
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_head">
         <bump_normal_texture file="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas_nm"/>
         <diffuse_texture file="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas_df"/>
@@ -52,17 +45,16 @@
         <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df"/>
 		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
     </material>
-    <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+    <material name="mtr_glass_lod1" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
+	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" mip="1"/>
+		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+    </material>
+    <material name="mtr_glass_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" mip="4"/>
-    </material>
-
-    <material name="mtr_glass_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
-        <diffuse_texture file="units/white_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-        <opacity_texture file="units/transparent_op"/>
-    </material>		
+    </material>	
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

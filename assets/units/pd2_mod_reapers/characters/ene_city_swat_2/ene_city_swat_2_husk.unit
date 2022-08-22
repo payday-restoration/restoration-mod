@@ -12,7 +12,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="city_swat" />
-			<var name="_default_weapon_id" value="benelli" />
+			<var name="_default_weapon_id" value="fort_500" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

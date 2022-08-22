@@ -8,6 +8,9 @@
 		<object name="c_convex" collision_type="convex" padding="-2.5" mass="3"/>
     </body>
   </bodies>
+  <effects>
+  	<effect_spawner name="flashlight" object="a_effect_flashlight" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
+  </effects>
   <graphics>
 	<graphic_group name="lod_group" enabled="true" culling_object="co_weapon">
       <lod_object name="weapon_lod">

@@ -410,10 +410,10 @@ function MenuCallbackHandler:accept_skirmish_contract(item)
 
     local job_id = (node:parameters().menu_component_data or {}).job_id
     local job_data = {
-        difficulty = "overkill_290",
+        difficulty = "sm_wish",
         customize_contract = true,
         job_id = job_id or managers.skirmish:random_skirmish_job_id(),
-        difficulty_id = tweak_data:difficulty_to_index("overkill_290")
+        difficulty_id = tweak_data:difficulty_to_index("sm_wish")
     }
 
     managers.job:on_buy_job(job_data.job_id, job_data.difficulty_id)
@@ -431,7 +431,7 @@ function MenuCallbackHandler:accept_skirmish_weekly_contract(item)
 
     local weekly_skirmish = managers.skirmish:active_weekly()
     local job_data = {
-        difficulty = "overkill_290",
+        difficulty = "sm_wish",
         weekly_skirmish = true,
         job_id = weekly_skirmish.id
     }

@@ -1265,7 +1265,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.melee_damage_dampener = {0.50}
 				--Ace
-					self.values.player.melee_knockdown_mul = {1.5}
+					self.values.player.melee_knockdown_mul = {2.0}
 				
 			--Bloodthirst
 				--Basic
@@ -1510,7 +1510,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			taser_tased = true,
 			poison = false,
 			bleed = false,
-			fire = true,
+			fire = true, --only direct fire damage
 			projectile = true,
 			swat_van = true,
 			sentry_gun = false,

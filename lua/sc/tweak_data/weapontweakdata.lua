@@ -9843,7 +9843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.flamethrower_mk2.has_description = true
 				self.flamethrower_mk2.desc_id = "bm_ap_flamethrower_sc_desc"
-				self.flamethrower_mk2.rays = 18
+				self.flamethrower_mk2.rays = 20
 				self.flamethrower_mk2.CLIP_AMMO_MAX = 60
 				self.flamethrower_mk2.AMMO_MAX = 120
 				self.flamethrower_mk2.fire_mode_data.fire_rate = 0.1
@@ -9900,7 +9900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.desc_id = "bm_ap_flamethrower_sc_desc"
 				self.system.timers.reload_not_empty = 8
 				self.system.timers.reload_empty = 8
-				self.system.rays = 18
+				self.system.rays = 20
 				self.system.CLIP_AMMO_MAX = 45
 				self.system.AMMO_MAX = 120
 				self.system.fire_mode_data.fire_rate = 0.1
@@ -11350,7 +11350,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.money.desc_id = "bm_ap_money_sc_desc"
 			self.money.timers.reload_not_empty = 8
 			self.money.timers.reload_empty = 8
-			self.money.rays = 18
+			self.money.rays = 20
 			self.money.CLIP_AMMO_MAX = 45
 			self.money.AMMO_MAX = 120
 			self.money.fire_mode_data.fire_rate = 0.1

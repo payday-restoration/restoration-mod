@@ -337,7 +337,7 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 		return
 	end
 
-	if damage_info.is_fire_dot_damage then
+	if damage_info.is_fire_dot_damage or damage_info.is_fire_pool_damage then
 		return
 	end
 

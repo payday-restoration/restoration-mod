@@ -3853,13 +3853,20 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
 
-	local blanket_mult = 1.15
+	local blanket_speed_mult = 1.15
+	local blanket_knockdown_mult = 0.5
 	for melee_id, _ in pairs(self.melee_weapons) do
-		if self.melee_weapons[melee_id] and not self.melee_weapons[melee_id].instant then
-			if self.melee_weapons[melee_id].anim_speed_mult then
-				self.melee_weapons[melee_id].anim_speed_mult = self.melee_weapons[melee_id].anim_speed_mult * blanket_mult
-			else
-				self.melee_weapons[melee_id].anim_speed_mult = blanket_mult
+		if self.melee_weapons[melee_id] then
+			if not self.melee_weapons[melee_id].instant then
+				if self.melee_weapons[melee_id].anim_speed_mult then
+					self.melee_weapons[melee_id].anim_speed_mult = self.melee_weapons[melee_id].anim_speed_mult * blanket_speed_mult
+				else
+					self.melee_weapons[melee_id].anim_speed_mult = blanket_speed_mult
+				end
+			end
+			if self.melee_weapons[melee_id].stats then
+				self.melee_weapons[melee_id].stats.min_damage_effect = self.melee_weapons[melee_id].stats.min_damage_effect * blanket_knockdown_mult
+				self.melee_weapons[melee_id].stats.max_damage_effect = self.melee_weapons[melee_id].stats.max_damage_effect * blanket_knockdown_mult
 			end
 		end
 	end

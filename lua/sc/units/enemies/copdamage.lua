@@ -330,6 +330,7 @@ function CopDamage:damage_fire(attack_data)
 	if alive(weap_unit) then
 		local weap_base = weap_unit:base()
 		if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
+			attack_data.is_fire_pool_damage = true
 			if self._char_tweak.damage.fire_pool_damage_mul then
 				damage = damage * self._char_tweak.damage.fire_pool_damage_mul
 			end	

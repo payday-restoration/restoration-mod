@@ -1071,18 +1071,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to #{risk}#spread horizontally## instead of clustering.",
 		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
-		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies, shields and thin walls.##",
-		["bm_wp_upg_a_slug_spam_desc"] = "Fire a lead slug that #{skill_color}#penetrates body armor, enemies and thin walls.##",
-		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nRounds #{important_1}#cannot headshot.##",
-		["bm_wp_upg_a_custom_desc"] = "Fire larger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, range, pickup and total ammo.##",
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#96## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#120## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#180## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires pellets that #{heat_warm_color}#burn through body armor.##\n\nHas a chance to #{heat_warm_color}#set enemies on fire## at close range, dealing #{heat_warm_color}#240## damage and #{skill_color}#cause panic## over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#180## bleed damage over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#240## bleed damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_slug_desc"] = "Fire a lead slug that #{skill_color}#pierces body armor, enemies, shields and thin walls.##",
+		["bm_wp_upg_a_slug_spam_desc"] = "Fire a lead slug that #{skill_color}#deals 80% of its damage through body armor and pierces enemies and thin walls.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "Fire an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nRounds have #{skill_color}#no falloff## but #{important_1}#cannot headshot.##",
+		["bm_wp_upg_a_custom_desc"] = "Fire larger pellets that #{skill_color}#increase## damage at the cost of a #{important_1}#reduction in pellet count, effectiveness at range, pickup and total ammo.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that have a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, potentially stunning them and dealing #{heat_warm_color}#96## damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that have a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, potentially stunning them and dealing #{heat_warm_color}#120## damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires pellets that have a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, potentially stunning them and dealing #{heat_warm_color}#180## damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires pellets that have a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, potentially stunning them and dealing #{heat_warm_color}#240## damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#6## seconds.",
+		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#120## bleed damage over #{skill_color}#6## seconds.",
+		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#180## bleed damage over #{skill_color}#6## seconds.",
+		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#240## bleed damage over #{skill_color}#6## seconds.",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",
@@ -1169,7 +1169,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 
 		--Phoenix .500--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1230,7 +1230,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Sub 2000
 		["bm_w_sub2000"] = "Cavity 10mm Pistol-Carbine",
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan penetrate body armor, shields and thin walls.##",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan pierce body armor, shields and thin walls.##",
 		--CUSTOM HANDGUNS
 			--Browning Hi-Power
 			["bm_w_hpb"] = "VF Hi-Power Pistol",
@@ -1466,44 +1466,44 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
 
 		--MSR
-		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
 		--R700
-		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
 		--QBU88
-		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
 		--Winchester 1874
-		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
 		--TTI(TTY)		
 		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
-		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
 		--Scunt
 		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
-		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 Sniper Rifle", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",	
+		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
 		--Model 70
-		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
+		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",			
 		--SVD
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",
+		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
 		--Mosin--
-		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can penetrate body armor, shields and thin walls.##",
+		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 40 damage/sec over 3 seconds and can stun enemies.##",
 		--Desert Fox
-		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
+		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",			
 		--R93
-		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can penetrate body armor, shields and thin walls.##",			
+		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",			
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
-		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
+		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		--Custom Snipers
 			["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
-			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
+			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 			["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
-			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
+			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 			--Marlin 1894
 			["bm_w_m1894"] = "Mare's Leg Sniper Rifle",
 			--SPX Centerfire
@@ -1532,22 +1532,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points## is #{important_1}#not installed.##\n\nAttachment will take on the slot's default appearance.",
 		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
-		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor, shields and thin walls.##",
-		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can penetrate body armor.##",
+		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 20% of its damage through body armor.##",
-		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can punch through multiple enemies.##",
-		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",
+		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 11% more damage.##",
-		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage.\nCan penetrate body armor, enemies, shields, titan-shields and thin walls.##",
-		["bm_ap_2_weapon_sc_desc"] = "Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.\n\n#{skill_color}#Can penetrate body armor.##",
-		["bm_ap_3_weapon_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can penetrate body armor.##",
+		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_ap_2_weapon_sc_desc"] = "Arrows can be retrieved by picking them up and range increases the longer an arrow is drawn.\n\n#{skill_color}#Can pierce body armor.##",
+		["bm_ap_3_weapon_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the leaf sight up/down.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
 		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubling the number of pellets.",
 		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
-		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\n#{skill_color}#Can penetrate body armor, shields, and thin walls.##",
-		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\n#{skill_color}#Can penetrate body armor, shields, titan-shields and thin walls.##",
+		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\n#{skill_color}#Can pierce body armor, shields, and thin walls.##",
+		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\n#{skill_color}#Can pierce body armor, shields, titan-shields and thin walls.##",
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 
@@ -1748,7 +1748,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extend-o Magazine",
 
 		--Jackal SMG(these are unused though)--
-		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can penetrate both armor and walls.",
+		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can pierce both armor and walls.",
 
 		--Unknown weapon--
 		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",
@@ -2816,7 +2816,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BRAWLER SUBTREE   ]]--
 				--Martial Arts--
 				["menu_martial_arts_beta_sc"] = "Martial Arts",
-				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#50%## less damage from all melee attacks because of training.\n\nACE: #{owned}#$pro##\nYou are #{skill_color}#50%## more likely to knock down enemies with a melee strike because of training.",
+				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#50%## less damage from all melee attacks because of training.\n\nACE: #{owned}#$pro##\nThe knockdown effects of your melee strikes are #{skill_color}#100%## stronger because of training.",
 
 				--Counter-Strike--
 				["menu_drop_soap_beta_sc"] = "Counter Strike",
@@ -2836,7 +2836,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Berserker--
 				["menu_frenzy_sc"] = "Berserker",
-				["menu_frenzy_desc_sc"] = "BASIC: #{owned}#$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#100%## more melee and saw damage.\n\nACE: #{owned}#$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#50%## more damage with ranged weapons.\n\n#{important_1}#NOTE: Does not apply Grenade Launchers or Rocket Launchers.##"
+				["menu_frenzy_desc_sc"] = "BASIC: #{owned}#$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#100%## more melee and saw damage.\n\nACE: #{owned}#$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#50%## more damage with ranged weapons.\n\n#{risk}#NOTE: Does not apply Grenade Launchers or Rocket Launchers.##"
 
 	})
 

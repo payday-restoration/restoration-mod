@@ -10,15 +10,14 @@
 			damage = -6
 		},
 		custom_stats = {
-			falloff_start_mult = 1.00,
 			falloff_end_mult = 1.25,
 			armor_piercing_add = 1,			
 			bullet_class = "BleedBulletBase",
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = 1.6,
-					dot_length = 3.1,
+					dot_damage = 0.8,
+					dot_length = 6.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -32,15 +31,14 @@
 			damage = -15
 		},
 		custom_stats = {
-			falloff_start_mult = 1.00,
 			falloff_end_mult = 1.25,
 			armor_piercing_add = 1,				
 			bullet_class = "BleedBulletBase",
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = 2,
-					dot_length = 3.1,
+					dot_damage = 1,
+					dot_length = 6.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -55,15 +53,14 @@
 		},
 		custom_stats = {
 			desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
-			falloff_start_mult = 1.00,
 			falloff_end_mult = 1.25,
 			armor_piercing_add = 1,		
 			bullet_class = "BleedBulletBase",
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = 3,
-					dot_length = 3.1,
+					dot_damage = 1.5,
+					dot_length = 6.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -80,14 +77,15 @@
 		custom_stats = {
 			ignore_statistic = true,
 			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 1,								
+			armor_piercing_add = 0.01,								
 			can_shoot_through_shield = false,
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = 1.6,
 				dot_trigger_chance = 60,
 				dot_length = 3.1,
-				dot_tick_period = 0.5
+				dot_tick_period = 0.5,
+				rays = 16
 			}
 		}
 	}
@@ -101,14 +99,15 @@
 		custom_stats = {
 			ignore_statistic = true,
 			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 1,									
+			armor_piercing_add = 0.01,								
 			can_shoot_through_shield = false,
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = 3,
 				dot_trigger_chance = 60,
 				dot_length = 3.1,
-				dot_tick_period = 0.5
+				dot_tick_period = 0.5,
+				rays = 16
 			}
 		}
 	}
@@ -123,14 +122,15 @@
 		custom_stats = {
 			ignore_statistic = true,
 			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 1,						
+			armor_piercing_add = 0.01,							
 			can_shoot_through_shield = false,
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = 3,
 				dot_trigger_chance = 60,
 				dot_length = 3.1,
-				dot_tick_period = 0.5
+				dot_tick_period = 0.5,
+				rays = 16
 			}
 		}
 	}
@@ -144,8 +144,8 @@
 			damage = 15
 		},
 		custom_stats = {
-			falloff_start_mult = 0.8,
 			falloff_end_mult = 0.8,
+			armor_piercing_add = 0.20,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -160,8 +160,8 @@
 			damage = 15
 		},
 		custom_stats = {
-			falloff_start_mult = 0.8,
 			falloff_end_mult = 0.8,
+			armor_piercing_add = 0.20,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -176,8 +176,8 @@
 			damage = 30
 		},
 		custom_stats = {
-			falloff_start_mult = 0.8,
 			falloff_end_mult = 0.8,
+			armor_piercing_add = 0.20,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6
@@ -203,14 +203,14 @@
 		custom_stats = {
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 			rays = 1,
-			armor_piercing_add = 1,
+			armor_piercing_add = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_wall = true,
 			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
-			ads_speed_mult = 1.10
+			ads_speed_mult = 1
 		}
 	}
 
@@ -231,14 +231,14 @@
 		custom_stats = {
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 			rays = 1,
-			armor_piercing_add = 1,
+			armor_piercing_add = 0.8,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			can_shoot_through_enemy = true,
 			can_shoot_through_wall = true,
 			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
-			ads_speed_mult = 1.10
+			ads_speed_mult = 1
 		}
 	}
 	
@@ -268,7 +268,7 @@
 			can_shoot_through_wall = true,
 			falloff_start_mult = 1.25,
 			falloff_end_mult = 2.0,
-			ads_speed_mult = 1.10
+			ads_speed_mult = 1
 		}
 	}
 
@@ -7842,7 +7842,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		can_shoot_through_wall = true,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 2.0,
-		ads_speed_mult = 1.10
+		ads_speed_mult = 1.0
 	}
 	
 	--000 Buck
@@ -7854,8 +7854,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage = 30
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
-		falloff_start_mult = 0.8,
 		falloff_end_mult = 0.8,
+		armor_piercing_add = 0.20,
 		ammo_pickup_max_mul = 0.8,
 		ammo_pickup_min_mul = 0.8,
 		rays = 6
@@ -7902,15 +7902,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage = -30
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
-		falloff_start_mult = 1.00,
 		falloff_end_mult = 1.25,
 		armor_piercing_add = 1,
 		bullet_class = "BleedBulletBase",
 		dot_data = { 
 			type = "bleed",
 			custom_data = {
-				dot_damage = 4,
-				dot_length = 3.1,
+				dot_damage = 2,
+				dot_length = 6.1,
 				dot_tick_period = 0.5
 			}
 		}
@@ -7929,14 +7928,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
 		ignore_statistic = true,
 		bullet_class = "FlameBulletBase",
-		armor_piercing_add = 1,		
+		armor_piercing_add = 0.01,				
 		can_shoot_through_shield = false,
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
 			dot_damage = 4,
 			dot_trigger_chance = 60,
 			dot_length = 3.1,
-			dot_tick_period = 0.5
+			dot_tick_period = 0.5,
+			rays = 16
 		}
 	}
 	self.parts.wpn_fps_upg_a_dragons_breath.forbids = {

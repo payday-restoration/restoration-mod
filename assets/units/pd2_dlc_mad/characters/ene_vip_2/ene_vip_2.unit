@@ -22,7 +22,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_titan_assault" />
-			<var name="_default_weapon_id" value="m32" />
+			<var name="_default_weapon_id" value="m32_large" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

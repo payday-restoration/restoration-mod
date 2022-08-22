@@ -3,4 +3,5 @@
 		<object enabled="false" name="'g_helmet_glass_contour'"/>
 		<decal_mesh enabled="true" name="'dm_head'"/>
 	</table>
+	<table search="unit/sequence;name=[['leg_arm_hitbox']]/;name=[['head']]" mode="remove"/>
 </table>

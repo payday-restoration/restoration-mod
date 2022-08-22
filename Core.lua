@@ -115,7 +115,9 @@ function restoration:Init()
 		lvl_friday = restoration.captain_types.spring, --Crashing Capitol
 		bnktower = restoration.captain_types.spring, --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		mansion_stage1 = restoration.captain_types.spring, --Elmsworth Mansion
+		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.spring, --Constantine Scores (gunrunner)
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
+		dwn1 = restoration.captain_types.spring, --Deep Inside
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -143,17 +145,17 @@ function restoration:Init()
 		branchbank_meth = restoration.captain_types.autumn,  --Bank Heist: Meths
 		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
-		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.autumn, --Constantine Scores (gunrunner)
 		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
 		nail = restoration.captain_types.hvh, --lab rats
+		skm_nightmare_lvl = restoration.captain_types.hvh, --Safehouse Nightmare SKM (for flavour text)
 		--Custom Heists--
 		daymare = restoration.captain_types.hvh, --Hell's Nightmare
 		funbank = restoration.captain_types.hvh, --FunBank: Specials	
 		crash_course = restoration.captain_types.hvh, --REDACTED
-		ascension_III = restoration.captain_types.hvh --Ascension (project eclipse 3)	
+		ascension_III = restoration.captain_types.hvh --Ascension (project eclipse 3)
 	}
 	
 	--HVH replaces Spring during the month of Halloween
@@ -164,7 +166,14 @@ function restoration:Init()
 			end
 		end		
 	end		
-		
+	
+	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
+	restoration.disable_natural_captain = {	
+		"constantine_gunrunnerclubhouse_lvl",
+		"constantine_policestation_lvl",
+		"skm_nightmare_lvl"
+	}
+			
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
@@ -178,10 +187,8 @@ function restoration:Init()
 	restoration.very_large_levels = {
 		--Custom Heists below--
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
-		"constantine_gunrunnerclubhouse_lvl", --Constantine Scores (gunrunner)
 		"bag_sim_2", --Bag Simulator 2
-		"finsternis", --Projekt Finsternis
-		"battlearena" --Five-G
+		"finsternis" --Projekt Finsternis
 	}
 	--Increased spawns, slightly less. Ditto
 	restoration.large_levels = {
@@ -202,10 +209,12 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"hwu", --Avalon's Shadow
 		"constantine_smackdown2_lvl", --Truck Hustle
+		"constantine_gunrunnerclubhouse_lvl", --Constantine Scores (gunrunner)
 		"TonCont", --Armored Transport: Atrium
 		"santas_hardware_store", --Hardware Store but Xmas
 		"ascension_III", --Ascension (project eclipse 3)
-		"RogueCompany" --Rogue Company
+		"RogueCompany", --Rogue Company
+		"battlearena" --Five-G
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
@@ -223,7 +232,6 @@ function restoration:Init()
 		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
 		"spa", --Brooklyn 10-10
-		"des",	--Henry's Rock
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
@@ -237,6 +245,9 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		"ranc", --Midland Ranch
 		"mad", --Boiling Point
+		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
+		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
+		"crojob3_night", --Ditto
 		--Custom Heists below--
 		"junk", --Doghouse
 		"knk_jwl", --Knockover: Jewerly Store
@@ -260,15 +271,17 @@ function restoration:Init()
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
 		"pbr2", --Birth of Sky
-		"rvd2", --Resivoir Dogs 2, has very aggressive scripted spawns.
+		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
 		"bph", --Hell's Island
 		"born", --Biker 1		
-		"sand", --The Ukrainian Prisoner	
-		"fex", --Buluc's Mansion		
+		"fex", --Buluc's Mansion	
+		--Skirmish heists below
+		"skmc_mad",
+		"skm_red2",
 		--Custom Heists below--
 		"thechase",
 		"daymare", --Hell's Nightmare
@@ -285,10 +298,14 @@ function restoration:Init()
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
-		"sah", --Shacklethorne		
+		"sah", --Shacklethorne	
+		"des",	--Henry's Rock		
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		
-		"chill_combat",	--Safehouse Raid		
+		"chill_combat",	--Safehouse Raid	
+		"sand", --The Ukrainian Prisoner			
+		--Skirmish heists below
+		"skm_nightmare_lvl", --Safehouse Nightmare SKM
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"railrun", --The Last Train
@@ -326,8 +343,7 @@ function restoration:Init()
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
 		"dinner",
-		--Custom Heists--
-		"constantine_gunrunnerclubhouse_lvl" --Constantine Scores (gunrunner)
+        "trai"
 	}	
 	--San Francisco
 	restoration.needle = {
@@ -413,6 +429,12 @@ end
 restoration.assault_style = {
 	"beta_assault",
 	"alpha_assault"
+}
+
+restoration.dodge_display = {
+	"dd_scale",
+	"dd_150",
+	"dd_100"
 }
 
 restoration.environments_choice_bank = {

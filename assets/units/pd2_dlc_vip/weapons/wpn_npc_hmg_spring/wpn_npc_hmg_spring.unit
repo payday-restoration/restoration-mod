@@ -1,0 +1,14 @@
+<unit type="wpn" slot="1" >
+    <object file="units/pd2_dlc_vip/weapons/wpn_npc_hmg_spring/wpn_npc_hmg_spring" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_minigun"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NPCRaycastWeaponBase" >
+			<var name="name_id" value="mini_npc" />
+			<var name="_multivoice" value="true" />
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

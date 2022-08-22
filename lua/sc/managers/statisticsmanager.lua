@@ -373,8 +373,8 @@ end)
 
 function StatisticsManager:_bullet_challenges( data )
 	local success, err = pcall(function()
-		managers.challenges_res:count_up( data.type.."_kill" )
-		managers.challenges_res:count_up( data.name.."_kill" )
+		managers.challenges_res:count_up( data.type )
+		managers.challenges_res:count_up( data.name )
 		if data.head_shot then
 			managers.challenges_res:count_up( data.type.."_head_shot" )
 		else

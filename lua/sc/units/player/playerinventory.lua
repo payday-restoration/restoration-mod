@@ -84,7 +84,7 @@ function PlayerInventory:_start_feedback_effect(end_time, interval, range)
 		effect = "feedback",
 		t = end_time + 0.3,
 		interval = interval or 1.5,
-		range = range or 1200,
+		range = range or 1500,
 		sound = self._unit:sound_source():post_event("ecm_jammer_puke_signal")
 	}
 	local is_player = managers.player:player_unit() == self._unit
@@ -122,7 +122,8 @@ function PlayerInventory:_do_feedback()
 		return
 	end
 
-	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, self._jammer_data.range)
+	local activation = self._jammer_data.t - t > self:get_jammer_time() * 0.975
+	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, self._jammer_data.range, activation)
 
 	if self._jammer_data.t > t + self._jammer_data.interval then
 		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), t + self._jammer_data.interval)
@@ -130,3 +131,44 @@ function PlayerInventory:_do_feedback()
 		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "stop_feedback_effect"), self._jammer_data.t)
 	end
 end
+
+function PlayerInventory:_feedback_heal_on_kill()
+	local unit = managers.player:player_unit()
+	local is_downed = game_state_machine:verify_game_state(GameStateFilters.downed)
+	local swan_song_active = managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier")
+
+	if is_downed or swan_song_active then
+		return
+	end
+
+	if alive(self._unit) and unit and self._jammer_data then
+		local heal = self._jammer_data.heal * managers.player:upgrade_value("player", "healing_reduction", 1)
+		unit:character_damage():change_health(self._jammer_data.heal)
+	end
+end
+
+--Dangerous territory
+--[[
+function PlayerInventory._get_weapon_sync_index(wanted_weap_name)
+	local function get_weapon_index(wanted_weap_name)
+		if type_name(wanted_weap_name) == "Idstring" then
+			for i, test_weap_name in ipairs(tweak_data.character.weap_unit_names) do
+				if test_weap_name == wanted_weap_name then
+					return i
+				end
+			end
+		end
+	
+		PlayerInventory._chk_create_w_factory_indexes()
+	
+		local start_index = #tweak_data.character.weap_unit_names_orig
+		for i, factory_id in ipairs(PlayerInventory._weapon_factory_indexed) do
+			if wanted_weap_name == factory_id then
+				return start_index + i
+			end
+		end
+	end
+
+	return get_weapon_index(wanted_weap_name) or -1
+end
+--]]

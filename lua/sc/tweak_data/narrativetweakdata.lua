@@ -10,6 +10,10 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 	self.jobs.mex.jc = 60
 	self.jobs.mex_cooking.jc = 60
 	
+	--Heat multipliers, set to be consistent with each other
+	self.HEATED_MAX_XP_MUL = 1.3
+	self.FREEZING_MAX_XP_MUL = 0.7	
+	
 	--Golden Grin Casino
 	self.jobs.kenaz.payout = {			
 		250000,
@@ -234,3 +238,23 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 	}
 	
 end)
+
+local create_job_name=NarrativeTweakData.create_job_name
+function NarrativeTweakData:create_job_name(job_id, ...)
+	local text_string, color_ranges=create_job_name(self, job_id, ...)
+	local job_heat_mul=managers.job:heat_to_experience_multiplier(
+		managers.job:get_job_heat(job_id)
+		)*20-20
+	if job_heat_mul~=0 then
+		local prev_len=utf8.len(text_string)
+		text_string=text_string.." "..(
+			job_heat_mul>0 and ("+"):rep(math.ceil(job_heat_mul)) or ("-"):rep(-math.floor(job_heat_mul))
+			)
+		table.insert(color_ranges, {
+			start=prev_len,
+			stop=utf8.len(text_string),
+			color=managers.job:get_job_heat_color(job_id)
+			})
+		end
+	return text_string, color_ranges
+end

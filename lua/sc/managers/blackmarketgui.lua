@@ -35,6 +35,9 @@ end
 local function format_round_2(num, round_value)
 	return round_value and tostring(math.round(num)) or string.format("%.2f", num)
 end
+local function format_round_3(num, round_value)
+	return round_value and tostring(math.round(num)) or string.format("%.2f", num):gsub("%.?0+$", "")
+end
 
 function BlackMarketGui:set_info_text(id, new_string, resource_color)
 	local info_text = self._info_texts[id]
@@ -656,6 +659,162 @@ function BlackMarketGui:choose_weapon_mods_callback(data)
 end
 
 
+
+function BlackMarketGui:_get_melee_weapon_stats(name)
+	local base_stats = {}
+	local mods_stats = {}
+	local skill_stats = {}
+	local stats_data = managers.blackmarket:get_melee_weapon_stats(name)
+	local multiple_of = {}
+	local has_non_special = managers.player:has_category_upgrade("player", "non_special_melee_multiplier")
+	local has_special = managers.player:has_category_upgrade("player", "melee_damage_multiplier")
+	local non_special = managers.player:upgrade_value("player", "non_special_melee_multiplier", 1) - 1
+	local special = managers.player:upgrade_value("player", "melee_damage_multiplier", 1) - 1
+
+	for i, stat in ipairs(self._mweapon_stats_shown) do
+		local skip_rounding = stat.num_decimals
+		base_stats[stat.name] = {
+			value = 0,
+			max_value = 0,
+			min_value = 0
+		}
+		mods_stats[stat.name] = {
+			value = 0,
+			max_value = 0,
+			min_value = 0
+		}
+		skill_stats[stat.name] = {
+			value = 0,
+			max_value = 0,
+			min_value = 0
+		}
+
+		if stat.name == "damage" then
+			local base_min = stats_data.min_damage * tweak_data.gui.stats_present_multiplier
+			local base_max = stats_data.max_damage * tweak_data.gui.stats_present_multiplier
+			local dmg_mul = managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[name].stats.weapon_type) .. "_damage_multiplier", 1)
+			local skill_mul = dmg_mul * ((has_non_special and has_special and math.max(non_special, special) or 0) + 1) - 1
+			local skill_min = skill_mul
+			local skill_max = skill_mul
+			base_stats[stat.name] = {
+				min_value = base_min,
+				max_value = base_max,
+				value = (base_min + base_max) / 2
+			}
+			skill_stats[stat.name] = {
+				min_value = skill_min,
+				max_value = skill_max,
+				value = (skill_min + skill_max) / 2,
+				skill_in_effect = skill_min > 0 or skill_max > 0
+			}
+		elseif stat.name == "damage_effect" then
+			local base_min = stats_data.min_damage_effect
+			local base_max = stats_data.max_damage_effect
+			base_stats[stat.name] = {
+				min_value = base_min,
+				max_value = base_max,
+				value = (base_min + base_max) / 2
+			}
+			local dmg_mul = managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[name].stats.weapon_type) .. "_damage_multiplier", 1) - 1
+			local gst_skill = managers.player:upgrade_value("player", "melee_knockdown_mul", 1) - 1
+			local skill_mul = (1 + dmg_mul) * (1 + gst_skill) - 1
+			local skill_min = skill_mul
+			local skill_max = skill_mul
+			skill_stats[stat.name] = {
+				skill_min = skill_min,
+				skill_max = skill_max,
+				min_value = skill_min,
+				max_value = skill_max,
+				value = (skill_min + skill_max) / 2,
+				skill_in_effect = skill_min > 0 or skill_max > 0
+			}
+		elseif stat.name == "charge_time" then
+			local base = stats_data.charge_time
+			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
+			base_stats[stat.name] = {
+				value = base,
+				min_value = base,
+				max_value = base
+			}
+			skill_stats[stat.name] = {
+				min_value = -skill,
+				max_value = -skill,
+				value = -skill,
+				skill_in_effect = base > 0 and skill > 0
+			}
+		elseif stat.name == "range" then
+			local base_min = stats_data.range
+			local base_max = stats_data.range
+			base_stats[stat.name] = {
+				min_value = base_min,
+				max_value = base_max,
+				value = (base_min + base_max) / 2
+			}
+		elseif stat.name == "concealment" then
+			local base = managers.blackmarket:_calculate_melee_weapon_concealment(name)
+			local skill = managers.blackmarket:concealment_modifier("melee_weapons")
+			base_stats[stat.name] = {
+				min_value = base,
+				max_value = base,
+				value = base
+			}
+			skill_stats[stat.name] = {
+				min_value = skill,
+				max_value = skill,
+				value = skill,
+				skill_in_effect = skill > 0
+			}
+		end
+
+		if stat.multiple_of then
+			table.insert(multiple_of, {
+				stat.name,
+				stat.multiple_of
+			})
+		end
+
+		base_stats[stat.name].real_value = base_stats[stat.name].value
+		mods_stats[stat.name].real_value = mods_stats[stat.name].value
+		skill_stats[stat.name].real_value = skill_stats[stat.name].value
+		base_stats[stat.name].real_min_value = base_stats[stat.name].min_value
+		mods_stats[stat.name].real_min_value = mods_stats[stat.name].min_value
+		skill_stats[stat.name].real_min_value = skill_stats[stat.name].min_value
+		base_stats[stat.name].real_max_value = base_stats[stat.name].max_value
+		mods_stats[stat.name].real_max_value = mods_stats[stat.name].max_value
+		skill_stats[stat.name].real_max_value = skill_stats[stat.name].max_value
+	end
+
+	for i, data in ipairs(multiple_of) do
+		local multiplier = data[1]
+		local stat = data[2]
+		base_stats[multiplier].min_value = base_stats[stat].real_min_value * base_stats[multiplier].real_min_value
+		base_stats[multiplier].max_value = base_stats[stat].real_max_value * base_stats[multiplier].real_max_value
+		base_stats[multiplier].value = (base_stats[multiplier].min_value + base_stats[multiplier].max_value) / 2
+	end
+
+	for i, stat in ipairs(self._mweapon_stats_shown) do
+		if not stat.index then
+			if skill_stats[stat.name].value and base_stats[stat.name].value then
+				skill_stats[stat.name].value = base_stats[stat.name].value * skill_stats[stat.name].value
+				base_stats[stat.name].value = base_stats[stat.name].value
+			end
+
+			if skill_stats[stat.name].min_value and base_stats[stat.name].min_value then
+				skill_stats[stat.name].min_value = base_stats[stat.name].min_value * skill_stats[stat.name].min_value
+				base_stats[stat.name].min_value = base_stats[stat.name].min_value
+			end
+
+			if skill_stats[stat.name].max_value and base_stats[stat.name].max_value then
+				skill_stats[stat.name].max_value = base_stats[stat.name].max_value * skill_stats[stat.name].max_value
+				base_stats[stat.name].max_value = base_stats[stat.name].max_value
+			end
+		end
+	end
+
+	return base_stats, mods_stats, skill_stats
+end
+
+
 function BlackMarketGui:_get_armor_stats(name)
 	local base_stats = {}
 	local mods_stats = {}
@@ -705,7 +864,7 @@ function BlackMarketGui:_get_armor_stats(name)
 			base_stats[stat.name] = {value = (base + mod) * 100}
 			skill_stats[stat.name] = {value = managers.player:get_deflection_from_skills() * 100}
 		elseif stat.name == "regen_time" then
-			local base = tweak_data.player.damage.REGENERATE_TIME
+			local base = managers.player:body_armor_value("regen_delay", upgrade_level, 0)
 			base_stats[stat.name] = {value = base}
 			if managers.player:has_category_upgrade("player", "armor_grinding") then
 				skill_stats[stat.name] = {value = tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][2] - base}
@@ -713,12 +872,12 @@ function BlackMarketGui:_get_armor_stats(name)
 				skill_stats[stat.name] = {value = base * managers.player:body_armor_regen_multiplier(false, 0) - base}
 			end
 		elseif stat.name == "damage_shake" then
-			local base = tweak_data.gui.armor_damage_shake_base
+			local base = 10--tweak_data.gui.armor_damage_shake_base
 			local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)
 			local skill = math.max(managers.player:upgrade_value("player", "damage_shake_multiplier", 1), 0.01)
 			local base_value = base
-			local mod_value = base / mod - base_value
-			local skill_value = ((base / mod) / skill - base_value) - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
+			local mod_value = base * mod - base_value
+			local skill_value = ((base * mod) / skill - base_value) - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
 			base_stats[stat.name] = {value = (base_value + mod_value) * tweak_data.gui.stats_present_multiplier}
 			skill_stats[stat.name] = {value = skill_value * tweak_data.gui.stats_present_multiplier}
 		elseif stat.name == "stamina" then
@@ -2724,7 +2883,13 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "health"
 				},
 				{
-					name = "deflection"
+					name = "deflection",
+					append = "%"
+				},
+				{
+					name = "damage_shake",
+					inverted = true,
+					append = "%"
 				},
 				{
 					revert = true,
@@ -2742,7 +2907,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					name = "regen_time",
-					inverted = true
+					inverted = true,
+					append = "s"
 				}
 			}
 			local x = 0
@@ -3636,16 +3802,16 @@ function BlackMarketGui:show_stats()
 
 		for _, stat in ipairs(self._armor_stats_shown) do
 			self._armor_stats_texts[stat.name].name:set_text(utf8.to_upper(managers.localization:text("bm_menu_" .. stat.name)))
-
 			value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
+			local append = stat.append or ""
 
 			if self._slot_data.name == equipped_slot then
 				local base = base_stats[stat.name].value
 
 				self._armor_stats_texts[stat.name].equip:set_alpha(1)
-				self._armor_stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value))
-				self._armor_stats_texts[stat.name].base:set_text(format_round(base, stat.round_value))
-				self._armor_stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) or "")
+				self._armor_stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value) .. append)
+				self._armor_stats_texts[stat.name].base:set_text(format_round(base, stat.round_value) .. append)
+				self._armor_stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) .. append or "")
 				self._armor_stats_texts[stat.name].total:set_text("")
 				self._armor_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.text)
 
@@ -3663,10 +3829,10 @@ function BlackMarketGui:show_stats()
 				local equip = math.max(equip_base_stats[stat.name].value + equip_mods_stats[stat.name].value + equip_skill_stats[stat.name].value, 0)
 
 				self._armor_stats_texts[stat.name].equip:set_alpha(0.75)
-				self._armor_stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value))
+				self._armor_stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value) .. append)
 				self._armor_stats_texts[stat.name].base:set_text("")
 				self._armor_stats_texts[stat.name].skill:set_text("")
-				self._armor_stats_texts[stat.name].total:set_text(format_round(value, stat.round_value))
+				self._armor_stats_texts[stat.name].total:set_text(format_round(value, stat.round_value) .. append)
 
 				--Allow armor stats with "inverted" flag to have inverted green/red colors.
 				if equip < value then
@@ -3774,9 +3940,9 @@ function BlackMarketGui:show_stats()
 					skill = skill / 100
 				end
 				local format_string = "%0." .. tostring(stat.num_decimals or 0) .. "f"
-				local equip_text = value and (stat.name == "range" and format_round_2(value, stat.round_value)) or format_round(value, stat.round_value)
-				local base_text = base and (stat.name == "range" and format_round_2(base, stat.round_value)) or format_round(base, stat.round_value)
-				local skill_text = skill_stats[stat.name].value and format_round(skill_stats[stat.name].value, stat.round_value)
+				local equip_text = value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(value, stat.round_value)) or format_round(value, stat.round_value)
+				local base_text = base and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(base, stat.round_value)) or format_round(base, stat.round_value)
+				local skill_text = skill_stats[stat.name].value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(skill_stats[stat.name].value, stat.round_value)) or format_round(skill_stats[stat.name].value, stat.round_value)
 				local base_min_text = base_min and format_round(base_min, true)
 				local base_max_text = base_max and format_round(base_max, true)
 				local value_min_text = value_min and format_round(value_min, true)
@@ -3854,8 +4020,8 @@ function BlackMarketGui:show_stats()
 					equip = equip / 100
 				end
 				local format_string = "%0." .. tostring(stat.num_decimals or 0) .. "f"
-				local equip_text = equip and (stat.name == "range" and format_round_2(equip, stat.round_value)) or format_round(equip, stat.round_value)
-				local total_text = value and (stat.name == "range" and format_round_2(value, stat.round_value)) or format_round(value, stat.round_value)
+				local equip_text = equip and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(equip, stat.round_value)) or format_round(equip, stat.round_value)
+				local total_text = value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(value, stat.round_value)) or format_round(value, stat.round_value)
 				local equip_min_text = equip_min and format_round(equip_min, true)
 				local equip_max_text = equip_max and format_round(equip_max, true)
 				local total_min_text = value_min and format_round(value_min, true)
@@ -4320,24 +4486,58 @@ function BlackMarketGui:update_info_text()
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
 				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
+				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
+				local sms = weapon_tweak.sms or 1
+				local stat_sms = nil
+				if custom_stats then
+					for part_id, stats in pairs(custom_stats) do
+						if stats.sms then
+							sms = sms + (1 * (stats.sms - 1))
+							stat_sms = true
+						end
+					end
+				end
+
 				if movement_penalty < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. (sms < 1 and ";" or ".")  .. "##"
 					else
-						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. (sms < 1 and ";" or ".") .. "##"
+						log(tostring( updated_texts[4].text ))
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				elseif movement_penalty > 1 then
 					local penalty_as_string = string.format("%g%%", (movement_penalty - 1) * 100)
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. "##"
 					else
-						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_movement_bonus_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_movement_penalty_info_2") .. "##"
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
 				end
+				
+				if sms < 1 then
+					local penalty_as_string = string.format("%d%%", math.round((1 - sms) * 100))
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						if movement_penalty < 1 then
+							updated_texts[4].text = updated_texts[4].text .. " ##" .. managers.localization:text("bm_menu_sms_info_cont") .. "##"
+						else
+							updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+						end
+					else
+						if movement_penalty < 1 then
+							updated_texts[4].text = updated_texts[4].text .. " ##" .. managers.localization:text("bm_menu_sms_info_cont") .. "##"
+						else
+							updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+						end
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				end
 	
+	
+
 				if slot_data.last_weapon then
 					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text("bm_menu_last_weapon_warning") .. "##"
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
@@ -4377,6 +4577,29 @@ function BlackMarketGui:update_info_text()
 			updated_texts[2].below_stats = true
 		end
 
+		local factory_stats = managers.weapon_factory:get_stats(managers.blackmarket:equipped_primary().factory_id, managers.blackmarket:equipped_primary().blueprint)
+		local wtd_range = tweak_data.weapon[managers.blackmarket:equipped_primary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_primary().weapon_id].jab_range or 0
+		local bayonet_damage = factory_stats.max_damage and (factory_stats.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local skill_damage = bayonet_damage and (bayonet_damage * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage
+		local damage_total = bayonet_damage and bayonet_damage + (skill_damage or 0)
+		local bayonet_range = bayonet_damage and (factory_stats.bayonet_range and factory_stats.bayonet_range / 100)
+		local jab_range = factory_stats.jab_range and factory_stats.jab_range / 100
+		local range = (jab_range or bayonet_range or 0) + (wtd_range / 100)
+
+		-- [[
+		if slot_data.name == "weapon" and (bayonet_damage or (range and range > 0)) then
+			updated_texts[2].resource_color = tweak_data.screen_colors.skill_color
+			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
+				"STATS FROM PRIMARY:" .. 
+				(damage_total and "\nADDITIONAL DAMAGE: ##+" .. tostring(damage_total) .. "##" or "") .. 
+				(bayonet_damage and skill_damage and skill_damage > 0 and "\n-BASE: ##" .. tostring(bayonet_damage) .. "##" or "") .. 
+				(bayonet_damage and skill_damage and skill_damage > 0 and "\n-SKILL: ##+" .. tostring(skill_damage) .. "##" or "") .. 
+				(range and range > 0 and "\nADDITIONAL RANGE: ##+" .. tostring(range) .. "m##" or "")
+
+			updated_texts[2].below_stats = true
+		end
+		--]]
+
 		if not slot_data.unlocked then
 			local skill_based = slot_data.skill_based
 			local level_based = slot_data.level and slot_data.level > 0
@@ -4409,6 +4632,7 @@ function BlackMarketGui:update_info_text()
 
 		updated_texts[4].resource_color = {}
 		local desc_text = managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].desc_id)
+
 
 		if slot_data.global_value and slot_data.global_value ~= "normal" then
 			updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
@@ -4478,7 +4702,8 @@ function BlackMarketGui:update_info_text()
 		armor_equipped:set_top(armor_name_text:bottom())
 		armor_image:set_image(self._slot_data.bitmap_texture)
 		self._armor_info_panel:set_h(armor_image:bottom())
-
+		updated_texts[4].resource_color = {}
+		updated_texts[4].text = ""
 		if not self._slot_data.unlocked then
 			updated_texts[3].text = utf8.to_upper(managers.localization:text(slot_data.level == 0 and (slot_data.skill_name or "bm_menu_skilltree_locked") or "bm_menu_level_req", {
 				level = slot_data.level,
@@ -4494,28 +4719,42 @@ function BlackMarketGui:update_info_text()
 			local amount = managers.player:body_armor_value("skill_max_health_store", upgrade_level, 1)
 			local multiplier = managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
 			local regen_speed = format_round((managers.player:body_armor_value("skill_kill_change_regenerate_speed", upgrade_level, 1) - 1) * 100)
-			if managers.player:has_category_upgrade("player", "skill_kill_change_regenerate_speed") then
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", 
-					{health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)})
-			else
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", 
-					{health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})
+			local description = (managers.player:has_category_upgrade("player", "skill_kill_change_regenerate_speed") and 
+								managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)})) or 
+								managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
-			updated_texts[2].below_stats = true
+			description = description:gsub("#%{(.-)%}#", "##")
+			updated_texts[4].text = description .. "\n\n"
+			updated_texts[4].below_stats = true
 		elseif managers.player:has_category_upgrade("player", "armor_grinding") then --Add Anarchist per-armor skill information.
 			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
 			local upgrade_level = bm_armor_tweak.upgrade_level
 			local passive_regen = format_round(10 * tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][1])
 			local active_regen = format_round(10 * tweak_data.upgrades.values.player.damage_to_armor[1][upgrade_level][1])
-			if managers.player:has_category_upgrade("player", "damage_to_armor") then
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding_2", 
-					{passive_armor_regen = passive_regen, active_armor_regen = active_regen})
-			else
-				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding_1", 
-					{passive_armor_regen = passive_regen})
+			local description = (managers.player:has_category_upgrade("player", "damage_to_armor") and 
+								managers.localization:to_upper_text("bm_menu_armor_grinding_2", {passive_armor_regen = passive_regen, active_armor_regen = active_regen})) or
+								managers.localization:to_upper_text("bm_menu_armor_grinding_1", {passive_armor_regen = passive_regen})
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
-			updated_texts[2].below_stats = true
+			description = description:gsub("#%{(.-)%}#", "##")
+			updated_texts[4].text = description .. "\n\n"
+			updated_texts[4].below_stats = true
 		end
+		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
+		local upgrade_level = bm_armor_tweak.upgrade_level
+		local dodge_grace = tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] and (tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] - 1) * 100
+		if dodge_grace and dodge_grace > 0 then
+			local description = managers.localization:text("bm_menu_dodge_grace", {grace_bonus = dodge_grace})
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+			end
+			description = description:gsub("#%{(.-)%}#", "##")
+			updated_texts[4].text = updated_texts[4].text .. description
+		end
+		updated_texts[4].below_stats = true
 	elseif identifier == self.identifiers.armor_skins then
 		local skin_tweak = tweak_data.economy.armor_skins[self._slot_data.name]
 		updated_texts[1].text = self._slot_data.name_localized
@@ -4900,6 +5139,7 @@ function BlackMarketGui:update_info_text()
 		local is_bayonet = part_data and part_data.type == "bayonet" or perks and table.contains(perks, "bayonet")
 		local is_bipod = part_data and part_data.type == "bipod" or perks and table.contains(perks, "bipod")
 		local has_desc = part_data and part_data.has_description == true
+		local has_sms = part_data and part_data.custom_stats and part_data.custom_stats.sms
 		local desc_color_info = part_data and part_data.desc_color_info
 		updated_texts[4].resource_color = {}
 
@@ -4917,8 +5157,8 @@ function BlackMarketGui:update_info_text()
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
 		end
 
+		local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
-			local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 			local description = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
@@ -4930,7 +5170,16 @@ function BlackMarketGui:update_info_text()
 			else
 				updated_texts[4].text = updated_texts[4].text .. description
 			end
+		end
 
+		if has_sms then
+			local penalty_as_string = string.format("%d%%", math.round((1 - has_sms) * 100))
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc or (perks and table.contains(perks, "bonus")) then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+			else
+				updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
+			end
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 		end
 
 

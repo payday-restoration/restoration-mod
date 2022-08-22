@@ -180,6 +180,7 @@ end
 function RaycastWeaponBase:_collect_hits(from, to)
 	local can_shoot_through = self._can_shoot_through_wall or self._can_shoot_through_shield or self._can_shoot_through_enemy
 	local hit_enemy = false
+	local has_hit_wall = false
 	local enemy_mask = managers.slot:get_mask("enemies")
 	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
 	local shield_mask = managers.slot:get_mask("enemy_shield_check")
@@ -209,7 +210,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 				break						
 			end
 			
-			local has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)				
+			has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)				
 		end
 	end
 
@@ -653,6 +654,7 @@ local afsf_blacklist = {
 	["saw"] = true,
 	["saw_secondary"] = true,
 	["flamethrower_mk2"] = true,
+	["money"] = true,
 	["system"] = true
 }
 
@@ -660,7 +662,7 @@ function RaycastWeaponBase:_soundfix_should_play_normal()
 	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
 	if not self._setup.user_unit == managers.player:player_unit() then
 		return true
-	elseif afsf_blacklist[name_id] then
+	elseif afsf_blacklist[name_id] or tweak_data.weapon[name_id].sounds.no_fix then
 		return true
 	elseif not tweak_data.weapon[name_id].sounds.fire_single then
 		return true
@@ -672,6 +674,12 @@ local orig_fire_sound = RaycastWeaponBase._fire_sound
 function RaycastWeaponBase:_fire_sound(...)
 	if self:_soundfix_should_play_normal() then
 		orig_fire_sound(self,...)
+		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2") then
+			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2")
+		end
+		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3") then
+			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3")
+		end
 	end
 end
 
@@ -696,7 +704,6 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	if self._no_bulletstorm then
 		consume_ammo = true
 	end
-
 	--MG Specialist Skill
 	if is_player and self._shots_without_releasing_trigger then
 		self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
@@ -782,12 +789,44 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	--Autofire soundfix integration.
 	if self:_soundfix_should_play_normal() then
+		if self._bullets_fired then
+			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single then
+				self:play_tweak_data_sound("stop_fire")
+				if self:_get_sound_event("stop_fire2") then
+					self:play_tweak_data_sound("stop_fire2")
+				end
+				if self:_get_sound_event("stop_fire3") then
+					self:play_tweak_data_sound("stop_fire3")
+				end
+				self:play_tweak_data_sound("fire_auto", "fire")
+				if self:_get_sound_event("fire_auto2", "fire2") then
+					self:play_tweak_data_sound("fire_auto2", "fire2")
+				end
+				if self:_get_sound_event("fire_auto3", "fire3") then
+					self:play_tweak_data_sound("fire_auto3", "fire3")
+				end
+			end
+			self._bullets_fired = self._bullets_fired + 1
+		end
 		return ray_res
 	end
-
-	if ray_res and self._setup.user_unit == managers.player:player_unit() then
+	
+	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
+	if ray_res and self._setup.user_unit == managers.player:player_unit() and not tweak_data.weapon[name_id].sounds.no_fix then
 		self:play_tweak_data_sound("fire_single","fire")
+		if self:_get_sound_event("fire_single2", "fire2") then
+			self:play_tweak_data_sound("fire_single2", "fire2")
+		end
+		if self:_get_sound_event("fire_single3", "fire3") then
+			self:play_tweak_data_sound("fire_single3", "fire3")
+		end
 		self:play_tweak_data_sound("stop_fire")
+		if self:_get_sound_event("stop_fire2") then
+			self:play_tweak_data_sound("stop_fire2")
+		end
+		if self:_get_sound_event("stop_fire3") then
+			self:play_tweak_data_sound("stop_fire3")
+		end
 	end
 	
 	return ray_res
@@ -798,7 +837,14 @@ function RaycastWeaponBase:stop_shooting(...)
 	if self._shots_without_releasing_trigger then
 		self._shots_without_releasing_trigger = 0
 	end
-
+	if self:_get_sound_event("stop_fire2") then
+		--self._sound_fire:stop()
+		self:play_tweak_data_sound("stop_fire2")
+	end
+	if self:_get_sound_event("stop_fire3") then
+		--self._sound_fire:stop()
+		self:play_tweak_data_sound("stop_fire3")
+	end
 	if self:_soundfix_should_play_normal() then
 		orig_stop_shooting(self,...)
 	end
@@ -1073,4 +1119,8 @@ end
 function InstantExplosiveBulletBase:on_collision_client(position, normal, damage, user_unit)
 	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Passes in the unit that actually made the attack.
 	managers.explosion:explode_on_client(position, normal, user_unit, damage, self.RANGE, self.CURVE_POW, self.EFFECT_PARAMS)
+end
+
+function InstantExplosiveBulletBase:get_damage_falloff(damage, col_ray, user_unit)
+	return damage
 end

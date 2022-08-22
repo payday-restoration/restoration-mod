@@ -80,10 +80,12 @@ function PlayerDamage:init(unit)
 	if self._can_survive_one_hit then
 		managers.hud:add_skill("survive_one_hit")
 	end
+	self._yakuza_bonus_grace = nil
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
-	self._deflection = 1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
+	self._max_deflection = (1 - tweak_data.upgrades.max_deflection) - player_manager:upgrade_value("player", "max_deflection_add", 0)
+	self._deflection = math.max(1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills(), self._max_deflection) --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
 	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
@@ -258,7 +260,8 @@ end
 --Special function to handle damage dealt to players in bleedout.
 function PlayerDamage:_bleed_out_damage(attack_data)
 	self._unit:sound():play("player_hit_permadamage")
-	attack_data.damage = attack_data.damage * self._deflection
+	local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
+	attack_data.damage = attack_data.damage * deflection
 	local health_subtracted = Application:digest_value(self._bleed_out_health, false)
 	self._bleed_out_health = Application:digest_value(math.max(0, health_subtracted - attack_data.damage), true)
 	health_subtracted = health_subtracted - Application:digest_value(self._bleed_out_health, false)
@@ -357,12 +360,15 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	return true
 end
 
+
 --All damage_x functions have been rewritten.
 function PlayerDamage:damage_bullet(attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local damage_info = {
 		result = {type = "hurt", variant = "bullet"},
-		attacker_unit = attacker_unit
+		attacker_unit = attacker_unit,
+		attack_dir = attack_data.attacker_unit and attack_data.attacker_unit:movement():m_pos() - self._unit:movement():m_pos() or Vector3(1, 0, 0),
+		pos = mvector3.copy(self._unit:movement():m_head_pos())
 	}
 
 	--Vanilla checks just encased into a function for reuse.
@@ -371,13 +377,28 @@ function PlayerDamage:damage_bullet(attack_data)
 	end
 
 	local pm = managers.player
+	local t = pm:player_timer():time()
+	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	if self._yakuza_bonus_grace then
+		self._yakuza_bonus_grace = nil
+		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
+		if grace_bonus then
+			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
+		else 
+			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
+		end
+	end
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-			self._unit:sound():play("pickup_fak_skill") --PLEASE PLEASE PLEASE REPLACE WITH BETTER SOUND IN THE FUTURE!!!
+			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
+				if grace_bonus then
+					self._next_allowed_dmg_t = Application:digest_value(t + grace_bonus, true)
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -398,11 +419,11 @@ function PlayerDamage:damage_bullet(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 5) * shake_armor_multiplier
+	self._unit:camera():play_shaker("player_land", 0.3 * shake_multiplier)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
 		return
 	end
@@ -443,13 +464,28 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	end
 
 	local pm = managers.player
+	local t = pm:player_timer():time()
+	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	if self._yakuza_bonus_grace then
+		self._yakuza_bonus_grace = nil
+		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
+		if grace_bonus then
+			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
+		else
+			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
+		end
+	end
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-			self._unit:sound():play("pickup_fak_skill") --PLEASE PLEASE PLEASE REPLACE WITH BETTER SOUND IN THE FUTURE!!!
+			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
+				if grace_bonus then
+					self._next_allowed_dmg_t = Application:digest_value(t + grace_bonus, true)
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -470,11 +506,11 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 5) * shake_armor_multiplier
+	self._unit:camera():play_shaker("player_land", 0.3 * shake_multiplier)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "fire", t) then
 		return
 	end
@@ -583,7 +619,7 @@ function PlayerDamage:damage_melee(attack_data)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
-	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 1) * shake_armor_multiplier
 	managers.rumble:play("damage_bullet")
 	
 	local t = pm:player_timer():time()
@@ -596,8 +632,8 @@ function PlayerDamage:damage_melee(attack_data)
 		"melee_hit",
 		"melee_hit_var2"
 	}
-	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(1 * self._melee_push_multiplier, 0.2))
-
+	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * self._melee_push_multiplier, 0.2))
+	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
 	if not self._bleed_out then
 		mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)
@@ -881,7 +917,8 @@ function PlayerDamage:_check_chico_heal(attack_data)
 		local health_received = attack_data.damage * dmg_to_hp_ratio
 
 		if self._armor_broken then
-			health_received = health_received * self._deflection
+			local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
+			health_received = health_received * deflection
 		end
 
 		if managers.player:has_category_upgrade("player", "chico_injector_health_to_speed") and self:_max_health_orig() < self:get_real_health() + health_received then
@@ -1054,14 +1091,17 @@ end
 
 --Applies deflection and stoic effects.
 function PlayerDamage:_calc_health_damage(attack_data)
-	local deflection = self._deflection
+	local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
 	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+		deflection = math.max(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), self._max_deflection)
 	end
-
 	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
 
 	if not self._ally_attack then
+		if self:get_real_armor() <= 0 then
+			--Will look into tying this to Yakuza later if needed
+			--self:fill_dodge_meter(self._dodge_points * 0.25)
+		end
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data) --Stoic damage delay. Done here so it applies to all health damage taken.
 	end
 
@@ -1102,6 +1142,16 @@ function PlayerDamage:_update_regenerate_timer(t, dt)
 	end
 end
 
+function PlayerDamage:set_regenerate_timer_to_max()
+	local mul = managers.player:body_armor_regen_multiplier(alive(self._unit) and self._unit:movement():current_state()._moving, self:health_ratio())
+	local armor_regen_time = managers.player:body_armor_value("regen_delay", nil, 0) or tweak_data.player.damage.REGENERATE_TIME or 4
+	self._regenerate_timer = armor_regen_time * mul
+	self._regenerate_timer = self._regenerate_timer * managers.player:upgrade_value("player", "armor_regen_time_mul", 1)
+	self._regenerate_speed = self._regenerate_speed or 1
+	self._current_state = self._update_regenerate_timer
+end
+
+
 --Init function for dodge points to cache the value.
 function PlayerDamage:set_dodge_points()
 	self._dodge_points = (tweak_data.player.damage.DODGE_INIT 
@@ -1135,6 +1185,14 @@ function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 	self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 end
 
+--Sets flag for bonus grace time, used for Yakuza.
+function PlayerDamage:give_yakuza_bonus_grace()
+	local pm = managers.player
+	if pm:has_category_upgrade("player", "melee_double_interval") then
+		self._yakuza_bonus_grace = true
+	end
+end
+
 --Called when players get kicked/tased. Applies damage and sets flag to true.
 function PlayerDamage:cloak_or_shock_incap(damage)
 	damage = damage * managers.player:damage_reduction_skill_multiplier("kick_or_shock")
@@ -1143,9 +1201,9 @@ function PlayerDamage:cloak_or_shock_incap(damage)
 		damage = math.max(0.1, damage - damage_absorption)
 	end
 	
-	local deflection = self._deflection
+	local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
 	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+		deflection = math.max(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), self._max_deflection)
 	end
 
 	self:change_health(-1.0 * deflection * damage or 0.0)
@@ -1169,11 +1227,15 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		end
 	end
 
+	--Frenzy inverse healing
+	local healing_reduction_ratio = tweak_data.upgrades.frenzy_healing_reduction_ratio or 1
+	self._healing_reduction = 1 * 1 - ( (pm:upgrade_value("player", "frenzy_deflection", 0) * healing_reduction_ratio) * (self:health_ratio()) )
+
 	--Add passive dodge increases. Start with bot dodge boost.
 	local passive_dodge = pm:upgrade_value("team", "crew_add_dodge", 0)
 
 	--Yakuza capstone skill.
-	if self:health_ratio() < 0.5 then
+	if self:health_ratio() < 1 then
 		passive_dodge = passive_dodge + (1 - self:health_ratio()) * pm:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
 	end
 
@@ -1278,16 +1340,60 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 	end
 end)
 
---Starts biker regen when there is missing armor. Also notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
-Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
-	if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
-		self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+
+function PlayerDamage:_calc_armor_damage(attack_data)
+	local health_subtracted = 0
+
+	if self:get_real_armor() > 0 then
+		health_subtracted = self:get_real_armor()
+
+		self:change_armor(-attack_data.damage)
+
+		health_subtracted = health_subtracted - self:get_real_armor()
+
+		self:_damage_screen()
+		SoundDevice:set_rtpc("shield_status", self:armor_ratio() * 100)
+		self:_send_set_armor()
+
+		--Starts biker regen when there is missing armor. 
+		if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
+			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+		end
+
+		if self:get_real_armor() <= 0 then
+			if not self._ally_attack then
+				if not self._armor_broken then
+					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
+					if attack_data.attacker_unit then
+					--Will look into tying this to Yakuza later if needed
+					--self:fill_dodge_meter(self._dodge_points * 0.5)
+					end
+				end
+			end
+			self._unit:sound():play("player_armor_gone_stinger")
+
+			if attack_data.armor_piercing then
+				self._unit:sound():play("player_sniper_hit_armor_gone")
+			end
+
+			local pm = managers.player
+
+			self:_start_regen_on_the_side(pm:upgrade_value("player", "passive_always_regen_armor", 0))
+
+			if pm:has_inactivate_temporary_upgrade("temporary", "armor_break_invulnerable") then
+				pm:activate_temporary_upgrade("temporary", "armor_break_invulnerable")
+
+				self._can_take_dmg_timer = pm:temporary_upgrade_value("temporary", "armor_break_invulnerable", 0)
+			end
+		end
 	end
 
-	if self:get_real_armor() == 0 and not self._ally_attack then
-		self._armor_broken = true
-	end
-end)
+	managers.hud:damage_taken()
+
+	return health_subtracted
+end
+
+
 
 --Whether the player can proc Sneaky Bastard.
 function PlayerDamage:can_dodge_heal()
@@ -1570,5 +1676,18 @@ if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 			end
 		end
 		return _hit_direction_actual(self, position_vector, ...)
+	end
+end
+
+function PlayerDamage:play_whizby(position)
+	self._unit:sound():play_whizby({
+		position = position
+	})
+	local pm = managers.player
+	local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)
+	self._unit:camera():play_shaker("whizby", 0.1 * shake_armor_multiplier)
+
+	if not _G.IS_VR then
+		managers.rumble:play("bullet_whizby")
 	end
 end

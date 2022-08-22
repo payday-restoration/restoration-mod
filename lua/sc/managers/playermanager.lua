@@ -234,9 +234,10 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	end	
 
 	--Yakuza dodge meter generation.
-	if damage_ext:health_ratio() < 0.5 then
+	if damage_ext:health_ratio() < 1 then
 		if variant == "melee" then
 			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0) + self:upgrade_value("player", "kill_dodge_regen"))
+			damage_ext:give_yakuza_bonus_grace()
 		else
 			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
 		end
@@ -262,6 +263,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 
 	if self._on_killshot_t and t < self._on_killshot_t then
+		self._on_killshot_t = self._on_killshot_t - (tweak_data.upgrades.on_killshot_cooldown_reduction or 0)
 		return
 	end
 
@@ -626,7 +628,13 @@ function PlayerManager:check_skills()
 	else
 		self._super_syndrome_count = 0
 	end
-
+	
+	if managers.mutators:is_mutator_active(MutatorPiggyBank) then
+		self._message_system:register(Message.OnLethalHeadShot, "play_pda9_headshot", callback(self, self, "_play_pda9_headshot_event"))
+	else
+		self._message_system:unregister(Message.OnLethalHeadShot, "play_pda9_headshot")
+	end
+	
 	--New resmod skills for dodge.
 	if self:has_category_upgrade("player", "dodge_stacking_heal") then
 		self:register_message(Message.OnPlayerDodge, "dodge_stack_health_regen", callback(self, self, "_dodge_stack_health_regen"))
@@ -733,9 +741,7 @@ end
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
-	return 
-		  self:upgrade_value("player", "deflection_addend", 0)
-		+ self:upgrade_value("player", "frenzy_deflection", 0)
+	return self:upgrade_value("player", "deflection_addend", 0)
 end
 
 function PlayerManager:get_max_grenades(grenade_id)
@@ -881,7 +887,7 @@ function PlayerManager:_internal_load()
 	--Removed armor kit weirdness.
 
 	--Fully loaded aced checks
-	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0.01, chance_inc = 0})
 	self._throwable_chance = self._throwable_chance_data.chance
 
 	--Reset when players are spawned, just in case.

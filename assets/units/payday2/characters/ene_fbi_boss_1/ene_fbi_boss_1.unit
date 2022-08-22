@@ -13,7 +13,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="false" />
 			<var name="_tweak_table" value="fbi_vet_boss" />
-			<var name="_default_weapon_id" value="vet_cop_boss_pistol" />
+			<var name="_default_weapon_id" value="x_raging_bull_npc" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

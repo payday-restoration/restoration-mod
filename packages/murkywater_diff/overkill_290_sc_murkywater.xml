@@ -452,7 +452,7 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
 
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_rifle_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>
 
     <!--Titan Sniper-->	
 	<unit				path="units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
@@ -498,6 +498,17 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	
+	<!--titandozer accs-->	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
@@ -599,28 +610,6 @@
 	<model				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"  load="true"/>
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk"  load="true"/>
-
-	<!-- OMNIA BENELLI DOZER (don't kill me)-->
-	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
-	<model				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<object				path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
-	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
-	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet" force="true"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" force="true"/>	
-
-	<!--OMNIA BENELLI DOZER BITS-->	
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
-		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
-		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
-		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	<!--textures-->
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>

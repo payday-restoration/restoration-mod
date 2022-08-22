@@ -326,7 +326,7 @@ function NewFlamethrowerBase:_fire_raycast(user_unit, from_pos, direction, dmg_m
 				my_result = self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage)
 			end
 			if my_result and my_result.type == "death" then
-				managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance)
+				--managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance)
 			end
 		end
 	end

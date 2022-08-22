@@ -1,6 +1,6 @@
 function PlayerTweakData:_set_easy()
 	self.damage.automatic_respawn_time = 120
-	self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.damage.MIN_DAMAGE_INTERVAL = 0.55
 	self.suspicion.max_value = 6
 	self.suspicion.range_mul = 0.8
 	self.suspicion.buildup_mul = 0.8
@@ -8,7 +8,7 @@ end
 
 function PlayerTweakData:_set_normal()
 	self.damage.automatic_respawn_time = 175
-	self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.damage.MIN_DAMAGE_INTERVAL = 0.5
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
@@ -16,14 +16,14 @@ end
 
 function PlayerTweakData:_set_hard()
 	self.damage.automatic_respawn_time = 220
-	self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
 end
 
 function PlayerTweakData:_set_overkill()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -31,7 +31,7 @@ function PlayerTweakData:_set_overkill()
 end
 
 function PlayerTweakData:_set_overkill_145()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -49,7 +49,7 @@ function PlayerTweakData:_set_easy_wish()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
-	self.damage.MIN_DAMAGE_INTERVAL = 0.25
+	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.custody_ammo_drained  = 0.75
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.70,
@@ -157,7 +157,7 @@ function PlayerTweakData:init()
 		0.99
 	}
 	self.damage.HEALTH_INIT = 20
-	self.damage.LIVES_INIT = 6
+	self.damage.LIVES_INIT = 4
 	self.damage.REGENERATE_TIME = 3
 	self.damage.REVIVE_HEALTH_STEPS = {
 		1.00,
@@ -166,7 +166,7 @@ function PlayerTweakData:init()
 		0.45,
 		0.30
 	}
-	self.damage.CUSTODY_LIVES = 3 --Number of lives left when leaving custody. (downs = lives - 1)
+	self.damage.CUSTODY_LIVES = 2 --Number of lives left when leaving custody. (downs = lives - 1)
 	self.damage.custody_ammo_drained = 0 --% of ammo confiscated when leaving custody.
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.TASED_TIME = 10

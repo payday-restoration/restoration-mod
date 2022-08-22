@@ -692,6 +692,12 @@ function TipsTweakData:init()
 			category = "equip_skills_res"
 		},	
 		{
+			cat_index = 36,
+			image = "weapon_silencer",
+			consoles = true,
+			category = "equip_skills_res"
+		},	
+		{
 			cat_index = 1,
 			image = "crimenet_heists",
 			consoles = true,

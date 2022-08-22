@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
@@ -193,7 +193,7 @@
         </constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" >
+	<decal_surfaces default_material="flesh_yellow" >
 		<decal_mesh name="dm_helmet" 				enabled="true" material="steel_no_decal" />
 		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>
@@ -227,28 +227,24 @@
 
 			<lod_object name="lod_helmet">
 				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_helmet_atlas_lod0" max_distance="1000"/>
-					<material materials="mtr_helmet_atlas_lod1" max_distance="1500"/>
-					<material materials="mtr_helmet_atlas_lod2"/>
+					<material materials="mtr_helmet" max_distance="1000"/>
+					<material materials="mtr_helmet_lod1" max_distance="1500"/>
+					<material materials="mtr_helmet_lod2"/>
 				</object>
 				<object name="g_helmet_lod2" 	enabled="true" lod="1" >
-					<material materials="mtr_helmet_atlas_lod1" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_helmet_atlas_lod2"/>
+					<material materials="mtr_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_helmet_lod2"/>
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_glass">
-				<object name="g_helmet_lod3" 	enabled="true"  max_distance="3000"  max_draw_lod="0" >
-					<material materials="mtr_glass" />
-				</object>
-				<object name="g_helmet_lod4" enabled="true" lod="1" >
-					<material materials="mtr_glass" max_distance="0" />
-					<material materials="mtr_glass_lod" />				
-				</object>
+				<object name="g_helmet_lod3" 	enabled="true"  max_distance="3000"  max_draw_lod="0" />
+				<object name="g_helmet_lod4" enabled="true" lod="1" />
 			</lod_object>
 			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-			<!-- <object name="g_eyes" enabled="false" /> -->
+			
+			<!-- <object name="g_eyes" enabled="true" /> more trouble than it's worth -->
 			
 		</graphic_group>
 	</graphics>

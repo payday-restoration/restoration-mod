@@ -619,5 +619,19 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	self.gage_assignment.sound_start = "money_grab"	
 	self.gage_assignment.sound_event = "money_grab"	
 	self.gage_assignment.sound_done = "money_grab"	
+	
+	--Golden Grin keypad, used on a few heists. Increased interaction distance to play it safe
+	self.cas_button_01.interact_distance = 75
+	self.cas_button_02.interact_distance = 75
+	self.cas_button_03.interact_distance = 75
+	self.cas_button_04.interact_distance = 75
+	self.cas_button_05.interact_distance = 75
+	self.cas_button_06.interact_distance = 75
+	self.cas_button_07.interact_distance = 75
+	self.cas_button_08.interact_distance = 75
+	self.cas_button_09.interact_distance = 75
+	self.cas_button_0.interact_distance = 75
+	self.cas_button_clear.interact_distance = 75
+	self.cas_button_enter.interact_distance = 75
 
 end)

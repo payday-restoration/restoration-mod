@@ -5,7 +5,6 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_phalanx_helmet/ene_acc_phalanx_helmet" />
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan" />
 	</dependencies>
@@ -25,8 +24,8 @@
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
+			<var name="_nr_head_gear_objects" value="3" />
+			<var name="_head_gear" value="units/payday2/characters/ene_acc_fbi_swat_helmet/ene_acc_fbi_swat_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

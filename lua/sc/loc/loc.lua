@@ -1423,28 +1423,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 	
 		--Galant--
-		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can punch through enemies and thin walls.##",
+		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		--M308
-		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",
+		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		--FAL
-		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",	
+		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
 		--SCAR
-		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",			
+		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",			
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",	
+		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
 		--Little Friend
 		["bm_w_contraband"] = "Bigger Friend 7.62 Rifle",
-		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",
+		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 Rifle",
-		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",
+		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		--KS12
-		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",	
+		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",		
@@ -1459,7 +1459,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_g3hk79_sc_desc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			--BO3 XR2
 			["bm_w_xr2"] = "XR-2 Rifle",
-			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides 	an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor and can punch through enemies and thin walls.##",
+			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides 	an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 			["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
 			["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
 			["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",

@@ -8104,7 +8104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.stats = {
 					damage = 45,
 					spread = 86,
-					recoil = 72,
+					recoil = 73,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 21,
@@ -8146,7 +8146,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 65,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -8188,7 +8188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.stats = {
 					damage = 45,
 					spread = 83,
-					recoil = 68,
+					recoil = 71,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -8226,7 +8226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.stats = {
 					damage = 45,
 					spread = 84,
-					recoil = 67,
+					recoil = 68,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 18,
@@ -8297,7 +8297,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.stats = {
 					damage = 60,
 					spread = 80,
-					recoil = 62,
+					recoil = 66,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -8334,7 +8334,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.stats = {
 					damage = 60,
 					spread = 90,
-					recoil = 57,
+					recoil = 61,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 19,
@@ -8372,7 +8372,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.stats = {
 					damage = 60,
 					spread = 94,
-					recoil = 61,
+					recoil = 66,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -8415,7 +8415,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 70,
+					recoil = 72,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,

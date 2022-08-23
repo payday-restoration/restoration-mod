@@ -284,6 +284,7 @@ function restoration:Init()
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
+		"skm_watchdogs_stage2",
 		--Custom Heists below--
 		"thechase",
 		"daymare", --Hell's Nightmare

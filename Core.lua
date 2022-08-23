@@ -94,6 +94,7 @@ function restoration:Init()
 		RogueCompany = restoration.captain_types.summer, --Rogue Company
 
 		--Spring
+		alex_2 = restoration.captain_types.spring, --Rats Day 2
 		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
 		firestarter_1 = restoration.captain_types.spring, --firestarter day 1
 		arm_for = restoration.captain_types.spring, --train heist
@@ -104,6 +105,7 @@ function restoration:Init()
 		dah = restoration.captain_types.spring, --diamond heist
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
 		--Custom Heists--
+		alex_2_res = restoration.captain_types.spring, --Rats Day 2 edit
 		firestarter_1_res = restoration.captain_types.spring, --firestarter day 1 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
 		nft_heist = restoration.captain_types.spring, --EN EF TEE HEIST

@@ -354,6 +354,8 @@
 	<model				path="units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk" force="false" load="true"/>	
+	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_zeal_city_df" force="false"/>
 
 	
 	<!--heavy swat -->

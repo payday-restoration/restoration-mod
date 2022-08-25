@@ -2363,6 +2363,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_birthday"] = "Balloon Poppers",
 		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
 		["mutator_birthday_longdesc"] = "PAYDAY 10th Anniversary event:\n\nKilling special units will spawn balloons which you can shoot to give buffs to the entire team that will either be a direct bonus or timed depending on the unit killed. Some units spawn balloons more frequently than others and several buffs can be active at the same time.",		
+
+		["mutator_piggybank"] = "Feed the Pig",
+		["mutator_piggybank_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig.",
+		["mutator_piggybank_longdesc"] = "PAYDAY 2 9th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy on certain heists, and the bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
 		
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",

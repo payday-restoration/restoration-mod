@@ -2460,6 +2460,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_birthday"] = "풍선 터트리기",
 		["mutator_birthday_desc"] = "특수 적 처치 시 버프를 주는 풍선을 생성합니다.",
 		["mutator_birthday_longdesc"] = "페이데이 10주년 이벤트:\n\n특수 적을 처치 시 죽인 적에 따라 풍선이 생성됩니다. 풍선을 쏠 시 시간이 초과되는 버프 보너스가 전체 팀에 제공합니다. 일부 유닛은 다른 유닛보다 풍선을 더 자주 생성하며 여러 버프가 동시에 활성화될 수 있습니다.",		
+
+		["mutator_piggybank"] = "Feed the Pig",
+		["mutator_piggybank_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig.",
+		["mutator_piggybank_longdesc"] = "PAYDAY 2 9th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy on certain heists, and the bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",	
 		
 		["mutator_bravos_only"] = "하드라인",
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",

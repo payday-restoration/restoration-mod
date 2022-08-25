@@ -1798,7 +1798,10 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors.static_dodge_preset = false
 	self.bolivian_indoors.unintimidateable = false
 	table.insert(self._enemy_list, "bolivian_indoors")
-	
+end
+
+
+function CharacterTweakData:_init_bolivian_indoors_mex(presets)
 	self.bolivian_indoors_mex = deep_clone(self.bolivian_indoors)
 	self.bolivian_indoors_mex.has_alarm_pager = true
 	if job == "mex" then
@@ -1807,7 +1810,7 @@ function CharacterTweakData:_init_bolivians(presets)
 		self.bolivian_indoors_mex.access = "gangster"
 	end				
 
-	table.insert(self._enemy_list, "bolivian_indoors_mex")		
+	table.insert(self._enemy_list, "bolivian_indoors_mex")
 end
 
 function CharacterTweakData:_init_ranchmanager(presets)

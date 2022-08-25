@@ -1,98 +1,28 @@
 --Killing the ones you just genuinely *cannot* get in resmod
-function EventJobsTweakData:init(tweak_data)
-	self.challenges = {}
+Hooks:PostHook( EventJobsTweakData, "init", "SC_eventstweak_init", function(self)
 
-	self:_init_pda8_challenges(tweak_data)
-	self:_init_pda9_challenges(tweak_data)
-	
-	self.event_info = {
-		pda8 = {
-			steam_stages = {
-				false,
-				"pda_stat_a",
-				"pda_stat_b",
-				"pda_stat_c",
-				"pda_stat_d"
-			}
-		},
-		pda9 = {}
+	self.collective_stats.pda8_collective = {
+		found = {},
+		all = {
+			"pda8_item_1",
+			"pda8_item_3",
+			"pda8_item_4",
+			"pda8_item_7",
+			"pda8_item_8"
+		}
 	}
 
-	self.collective_stats = {
-		pda8_collective = {
-			found = {},
-			all = {
-				"pda8_item_1",
-				"pda8_item_3",
-				"pda8_item_4",
-				"pda8_item_7",
-				"pda8_item_8"
-			}
-		},
-		pda9_collective_1 = {
-			found = {},
-			all = {}
-		},
-		pda9_collective_2 = {
-			found = {},
-			all = {}
-		},
-		pda9_collective_3 = {
-			found = {},
-			all = {}
-		},
-		pda9_collective_4 = {
-			found = {},
-			all = {}
-		}	
-	}
-
-	for _, job_id in ipairs(tweak_data.mutators.piggybank.event_jobs_from_level) do
-		table.insert(self.collective_stats.pda9_collective_1.all, "pda9_collective_1_" .. job_id)
-		table.insert(self.collective_stats.pda9_collective_2.all, "pda9_collective_2_" .. job_id)
-		table.insert(self.collective_stats.pda9_collective_3.all, "pda9_collective_3_" .. job_id)
-		table.insert(self.collective_stats.pda9_collective_4.all, "pda9_collective_4_" .. job_id)
-	end	
-	
-	self.pda_base = 0
-end
+end)
 
 function EventJobsTweakData:_init_pda8_challenges(tweak_data)
-	--Commenting out for now, until we figure this BS out
-	--[[
-	table.insert(self.challenges, {
-		reward_id = "menu_pda8_1_reward",
-		name_id = "menu_pda8_1",
-		is_active_func = "is_event_active",
-		desc_id = "menu_pda8_1_desc",
-		show_progress = true,
-		locked_id = "bm_menu_locked_pda8_1",
-		id = "pda8_1",
-		objectives = {
-			self:_collective("pda8_collective", 2, {
-				name_id = "menu_pda8_1_prog_obj",
-				desc_id = "menu_pda8_1_prog_obj_desc"
-			})
-		},
-		rewards = {
-			{
-				item_entry = "money",
-				type_items = "upgrades"
-			},
-			{
-				item_entry = "cash60",
-				type_items = "offshore"
-			}
-		}
-	})
-	]]--
 	table.insert(self.challenges, {
 		reward_id = "menu_pda8_2_reward",
-		locked_id = "bm_menu_locked_pda8_2",
-		id = "pda8_2",
+		global_value = "pda8",
 		name_id = "menu_pda8_2",
 		desc_id = "menu_pda8_2_desc",
 		show_progress = true,
+		locked_id = "bm_menu_locked_pda8_2",
+		id = "pda8_2",
 		objectives = {
 			self:_collective("pda8_collective", 3, {
 				name_id = "menu_pda8_2_prog_obj",
@@ -118,11 +48,12 @@ function EventJobsTweakData:_init_pda8_challenges(tweak_data)
 	})
 	table.insert(self.challenges, {
 		reward_id = "menu_pda8_3_reward",
-		locked_id = "bm_menu_locked_pda8_3",
-		id = "pda8_3",
+		global_value = "pda8",
 		name_id = "menu_pda8_3",
 		desc_id = "menu_pda8_3_desc",
 		show_progress = true,
+		locked_id = "bm_menu_locked_pda8_3",
+		id = "pda8_3",
 		objectives = {
 			self:_collective("pda8_collective", 4, {
 				name_id = "menu_pda8_3_prog_obj",
@@ -147,11 +78,12 @@ function EventJobsTweakData:_init_pda8_challenges(tweak_data)
 	})
 	table.insert(self.challenges, {
 		reward_id = "menu_pda8_4_reward",
-		locked_id = "bm_menu_locked_pda8_4",
-		id = "pda8_4",
+		global_value = "pda8",
 		name_id = "menu_pda8_4",
 		desc_id = "menu_pda8_4_desc",
 		show_progress = true,
+		locked_id = "bm_menu_locked_pda8_4",
+		id = "pda8_4",
 		objectives = {
 			tweak_data.safehouse:_progress("pda8_item_1", 1, {
 				name_id = "menu_pda8_item_1",

@@ -41,6 +41,13 @@
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" load="true"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" load="true"/>		
 	
+	<!--for scripted spawns and such-->
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1" load="true"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1_husk" load="true"/>
+	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2" load="true"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2_husk" load="true"/>
+	
 	<!--vanilla unit texture overrides-->	
 	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
 	<texture			path="units/payday2/characters/shared_textures/swat_body_df" />

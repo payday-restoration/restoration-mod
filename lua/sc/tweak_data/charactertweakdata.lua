@@ -16931,6 +16931,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_veteran_lod_2")
 		table.insert(char_map.basic.list, "ene_hoxton_breakout_guard_1")
 		table.insert(char_map.basic.list, "ene_hoxton_breakout_guard_2")
+		table.insert(char_map.basic.list, "ene_hoxton_breakout_responder_1")
+		table.insert(char_map.basic.list, "ene_hoxton_breakout_responder_2")
 		table.insert(char_map.basic.list, "ene_cop_1_forest")
 		table.insert(char_map.basic.list, "ene_cop_2_forest")
 			

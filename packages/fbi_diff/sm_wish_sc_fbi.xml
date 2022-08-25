@@ -43,6 +43,13 @@
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" load="true"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" load="true"/>		
 	
+	<!--for scripted spawns and such-->
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1" load="true"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1_husk" load="true"/>
+	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2" load="true"/>	
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2_husk" load="true"/>
+	
 	<!--Zeal Riot Shield-->
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->	
 	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />

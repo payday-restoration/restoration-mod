@@ -2163,11 +2163,6 @@ local federales_zeal = {
 local murkywater_normal_overkill = {
         --swat tier are always loaded for scripted guard stuff and fbi tier are loaded for ponrs meaning these can be lumped into one replacer
 		
-		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
-		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
@@ -2269,11 +2264,6 @@ local murkywater_normal_overkill = {
 local murkywater_mayhem = {
         --swat tier are always loaded for scripted guard stuff
 		--elites introduced
-		
-		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
@@ -2378,11 +2368,6 @@ local murkywater_deathwish = {
         --bye bye fbi lights
 		--elites introduced
 		
-		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
-		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
@@ -2484,11 +2469,6 @@ local murkywater_deathwish = {
 local murkywater_omnia = {
         --bye bye fbi lights
 		--elites introduced
-		
-		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
-		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",

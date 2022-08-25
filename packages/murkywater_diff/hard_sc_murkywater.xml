@@ -7,48 +7,6 @@
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" force="false"/>
 
 	<!-- feds n cops     -->
-	<!-- LAPD COPS -->
-	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_4" />	
-	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_3" />	
-	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" load="true" />	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_husk" load="true" />
-	<object				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />	
-	<model				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />	
-	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_contour" />
-
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" load="true" />	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_husk" load="true" />
-	<object				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />	
-	<model				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />	
-	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_contour" />
-	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" load="true" />	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3_husk" load="true" />
-	<object				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" />	
-	<model				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" />	
-	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" load="true" />	
-	<unit				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4_husk" load="true" />
-	<object				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />	
-	<model				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />	
-	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4_contour" />
-	
-	<!-- la cop .mat configs-->	
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1_contour" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2_contour" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3_contour" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4_contour" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5" />
-	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5_contour" />
-	
 	<!--FBI 1-->
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1" force="false"/>

@@ -115,9 +115,6 @@
 	
 	<mission			path="levels/narratives/bain/revenge/world/world" force="true" unload="true"/>
 	
-	<mission			path="levels/narratives/bain/rvd/stage1/world/world" force="true" unload="true"/> <!--made cops be hostile to anyone-->
-	<mission			path="levels/narratives/bain/rvd/stage2/world/world" force="true" unload="true"/> <!--"Wait? Why there are Murky mercs?!"-->
-	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	
 	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->

@@ -269,6 +269,18 @@
 	
 	<!-- M60 TROPICAL FOREGRIP FIX -->
 	<model				path="units/pd2_dlc_atw/weapons/wpn_fps_lmg_m60_pts/wpn_fps_lmg_m60_fg_tropical" force="true"/>
+	
+	<!-- Vanilla Flamethrower -->
+	<add from_db="true" path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower" type="unit">
+		<effect load="true" path="effects/payday2/particles/weapons/heat/overheat"/>
+		<effect load="true" path="effects/payday2/particles/explosions/flamethrower_cheap"/>
+		
+		
+		<object path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>
+		<material_config path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>
+		<sequence_manager path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>
+		<unit path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>	
+	</add>
 
 	<!--NPC Railgun-->
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>

@@ -1771,12 +1771,8 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors.surrender = presets.surrender.easy
 	self.bolivian_indoors.surrender_break_time = {20, 30}
 	self.bolivian_indoors.detection = presets.detection.guard
-	if job == "friend" then --stop fucking killing each other please
-		self.bolivian_indoors.access = "gangster"
-	else
-		self.bolivian_indoors.access = "security"
-	end	
 	self.bolivian_indoors.HEALTH_INIT = 6
+	self.bolivian_indoors.access = "security"
 	self.bolivian_indoors.headshot_dmg_mul = 3.4
 	self.bolivian_indoors.damage_resistance = presets.damage_resistance.none
 	self.bolivian_indoors.move_speed = presets.move_speed.very_fast

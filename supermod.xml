@@ -39,6 +39,10 @@
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_friend/characters/ene_security_manager/">
+				<file :name="ene_security_manager.unit"/>
+				<file :name="ene_security_manager_husk.unit"/>
+			</group>
 			<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
 				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>

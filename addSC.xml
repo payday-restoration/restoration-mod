@@ -111,6 +111,8 @@
 	
 	<mission			path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->
 	
+	<mission			path="levels/narratives/locke/mex/world/world" force="true" unload="true"/> <!--Adds biker guards, made the mex security not kill their men-->
+	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	
 	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->

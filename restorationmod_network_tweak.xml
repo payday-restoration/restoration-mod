@@ -17,8 +17,7 @@
 			<message name="set_equipped_weapon"/>
 			<param type="int" min="1" max="512"/>			
 		</search>
-		<target mode="attributes">
-			<attr name="min" value="512"/>		
+		<target mode="attributes">	
 			<attr name="max" value="1024"/>
 		</target>
 	</tweak>

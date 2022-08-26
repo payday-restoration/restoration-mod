@@ -1358,17 +1358,132 @@ end
 end
 
 function MutatorEnemyReplacer:_get_unit_group_boom(difficulty_index)  
-	if not self._groups.boom then  
+	if not self._groups.boom then
+		if difficulty_index <= 5 then  
+			self._groups.boom = {
+				special_type = "boom",
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					nypd = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					lapd = { 
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					fbi = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					}
+				},
+				access = access_type_all
+		  }	
+		elseif difficulty_index <= 6 then
+			self._groups.boom = { 
+				special_type = "boom",
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					nypd = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					lapd = { 
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					fbi = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					}
+				},
+				access = access_type_all
+		  }			
+		elseif difficulty_index <= 7 then
+			self._groups.boom = {
+				special_type = "boom",
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					nypd = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					lapd = { 
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					fbi = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					}
+				},
+				access = access_type_all
+		  }	
+		else
 		self._groups.boom = {
 			special_type = "boom",
 			unit_types = {
-				america = {
-						Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
+					america = {
+						Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					nypd = {
+						Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					lapd = { 
+						Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
+					},
+					fbi = {
+						Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
 					}
 				},
 				access = access_type_all
 		  }
 	end
-
+end
 	return self._groups.boom
 end

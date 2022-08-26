@@ -367,16 +367,18 @@
 	<!-- titans end -->
 	
 	<!--bravo lmg-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_husk"  load="true"/>	
-
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
+	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
+	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
+	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex"  load="true"/>
+	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
+	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex_contour" />
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex_husk"  load="true"/>	
+	
+	
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_elite_df"/>
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df"/>
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm"/>
 	
 </table>

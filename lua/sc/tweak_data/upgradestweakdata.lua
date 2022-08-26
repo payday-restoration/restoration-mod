@@ -1588,9 +1588,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.temporary.loose_ammo_give_team = {{
 		true,
-		0 --Ammo sharing cooldown
+		0 --Ammo sharing cooldown, not in use
 	}}
-	self.loose_ammo_give_team_ratio = 0.25 --% of ammo given to team.
+	self.loose_ammo_give_team_ratio = 0.15 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2}

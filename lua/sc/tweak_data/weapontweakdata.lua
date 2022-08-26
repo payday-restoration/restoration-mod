@@ -10281,6 +10281,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}				
 				self.m32.kick = self.stat_info.kick_tables.right_kick
 				self.m32.fire_mode_data.fire_rate = 0.6
+				self.m32.fire_rate_multiplier = 1.5
 				--self.m32.BURST_FIRE = 2
 				--self.m32.BURST_FIRE_RATE_MULTIPLIER = 3
 				--self.m32.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
@@ -10310,7 +10311,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m32.sms = 0.85
 				self.m32.panic_suppression_chance = 0.05
 				self.m32.timers.shotgun_reload_first_shell_offset = 1
-				self.m32.reload_speed_multiplier = 1.25
+				self.m32.reload_speed_multiplier = 1.5
 	
 			--Commando 101
 				self.ray.categories = {"grenade_launcher", "rocket_launcher"}

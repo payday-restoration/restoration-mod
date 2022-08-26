@@ -182,6 +182,10 @@ MutatorEnemyReplacer.icon_coords = {
 	1
 }
 
+if not PackageManager:loaded("packages/miscassetsmutators") then
+		PackageManager:load("packages/miscassetsmutators")
+	end
+	
 function MutatorEnemyReplacer:register_values(mutator_manager)
 	self:register_value("override_enemy", self:default_override_enemy(), "oe")
 end

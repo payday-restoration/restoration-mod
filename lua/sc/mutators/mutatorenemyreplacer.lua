@@ -246,6 +246,11 @@ function MutatorEnemyReplacer:setup_options_gui(node)
 			text_id = "mutator_specials_override_medic",
 			_meta = "option"
 		},
+		{
+			value = "boom",
+			text_id = "mutator_specials_override_boom",
+			_meta = "option"
+		},		
 		type = "MenuItemMultiChoice"
 	}
 	local new_item = node:create_item(data_node, params)
@@ -274,25 +279,10 @@ function MutatorEnemyReplacer:reset_to_default()
 	end
 end
 
-function MutatorEnemyReplacer:modify_unit_categories(group_ai_tweak, difficulty_index)
-	for key, value in pairs(group_ai_tweak.special_unit_spawn_limits) do
-		if key == self:get_override_enemy() then
-			group_ai_tweak.special_unit_spawn_limits[key] = math.huge
-		end
-	end
-
-	local unit_group = self["_get_unit_group_" .. self:get_override_enemy()](self, difficulty_index)
-
-	for group, units in pairs(group_ai_tweak.unit_categories) do
-		if not table.contains(ignored_groups, group) then
-			--print("[Mutators] Replacing unit group:", group)
-
-			group_ai_tweak.unit_categories[group] = unit_group
-		else
-			--print("[Mutators] Ignoring unit group:", group)
-		end
-	end
-end
+local access_type_all = {
+	acrobatic = true,
+	walk = true
+}
 
 function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 	if not self._groups.tank then
@@ -1365,4 +1355,20 @@ function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)
 	end
 end
 	return self._groups.medic
+end
+
+function MutatorEnemyReplacer:_get_unit_group_boom(difficulty_index)  
+	if not self._groups.boom then  
+		self._groups.boom = {
+			special_type = "boom",
+			unit_types = {
+				america = {
+						Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
+					}
+				},
+				access = access_type_all
+		  }
+	end
+
+	return self._groups.boom
 end

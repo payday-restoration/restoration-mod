@@ -2424,7 +2424,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
 		["menu_mutators_category_holiday"] = "节日活动",
-		["menu_mutators_category_old_event"] = "活动",
+		["menu_mutators_category_old_event"] = "活动事件",
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "掷弹兵",
@@ -2443,7 +2443,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_mememanonly"] = "哈哈哈哈，你们一帮傻逼！",
 		["mutator_mememanonly_desc"] = "受苦吧......",
-		["mutator_mememanonly_longdesc"] = "有去无回...无路可逃...救命救命救命救命救命救命救命救命救命救命救命救命救命救命\n\n 警告：此突变可能在某些地图导致闪退。",
+		["mutator_mememanonly_longdesc"] = "有去无回...无路可逃...救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命救命\n\n 警告：此突变可能在某些地图导致闪退。",
 
 		["MutatorMoreDonutsPlus"] = "我要甜甜圈",
 		["MutatorMoreDonutsPlus_desc"] = "所有的水军都将被替换为纽约警察局的便衣警察，所有的特殊单位都被替换为OMNIA维生部队。",
@@ -2470,9 +2470,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_birthday_desc"] = "击杀特殊敌人将生成能提供增益的气球。",
 		["mutator_birthday_longdesc"] = "收获日十周年活动事件：\n\n击杀特殊敌人将生成一个气球，射爆气球将能为全队带来增益效果，不同的单位会生成不同增益的气球。有些单位会更频繁地生成气球，不同种气球增益效果可以同时触发。",
 
-		["mutator_piggybank"] = "Feed the Pig",
-		["mutator_piggybank_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig.",
-		["mutator_piggybank_longdesc"] = "PAYDAY 2 9th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy on certain heists, and the bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",	
+		["mutator_piggybank"] = "小猪小猪快长大",
+		["mutator_piggybank_desc"] = "警察爆金币啦！用小猪钞票喂饱金猪存钱罐吧！",
+		["mutator_piggybank_longdesc"] = "收获日2九周年活动事件：\n\n特定劫案内，被击杀的敌人有几率掉落小猪钞票，每包小猪钞票只会暂时留在地上，你需要在它们消失前拿起并丢给巨大的金色小猪存钱罐，将存钱罐喂得越来越胖，然后打碎它。打碎小猪存钱罐时，小猪存钱罐越大，你在劫案结束时获得的经验和钱也越多。",
 
 		["mutator_bravos_only"] = "死亡地带",
 		["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
@@ -2631,15 +2631,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "领导风范",	
-			["menu_stable_shot_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻机枪的稳定性增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n全队的武器稳定性额外增加#{skill_color}#2##点。",
+			["menu_stable_shot_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪的稳定性增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n全队的武器稳定性额外增加#{skill_color}#2##点。",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "控枪达人",	
-			["menu_scavenger_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻机枪的腰射精准度提高#{skill_color}#20%##。\n\n专精: #{risk}#$pro##\n冲锋枪和轻机枪的腰射精准度额外提高#{skill_color}#30%##。\n\n冲锋枪和轻机枪的换弹速度提高#{skill_color}#25%##。",
+			["menu_scavenger_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪的腰射精准度提高#{skill_color}#20%##。\n\n专精: #{risk}#$pro##\n冲锋枪和轻重机枪的腰射精准度额外提高#{skill_color}#30%##。\n\n冲锋枪和轻重机枪的换弹速度提高#{skill_color}#25%##。",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "机枪专家",	
-			["menu_sharpshooter_desc_sc"] = "掌握: #{risk}#$basic##\n在移动时，冲锋枪和轻机枪受到的精准度惩罚减少#{skill_color}#60%##。\n\n移动时的精准度惩罚程度取决于稳定性。\n\n专精: #{risk}#$pro##\n冲锋枪和轻机枪增加#{skill_color}#15%##的射速。\n\n冲锋枪和轻机枪不松扳机连续射击每五发中的#{skill_color}#第五发##不会消耗弹药。",
+			["menu_sharpshooter_desc_sc"] = "掌握: #{risk}#$basic##\n在移动时，冲锋枪和轻重机枪受到的精准度惩罚减少#{skill_color}#60%##。\n\n移动时的精准度惩罚程度取决于稳定性。\n\n专精: #{risk}#$pro##\n冲锋枪和轻重机枪增加#{skill_color}#15%##的射速。\n\n冲锋枪和轻重机枪不松扳机连续射击每五发中的#{skill_color}#第五发##不会消耗弹药。",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "来势汹汹",
@@ -2647,11 +2647,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "沉重打击",
-			["menu_speedy_reload_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻机枪有有#{skill_color}#20%##的概率击倒敌人，轻机枪使用脚架时概率增加至#{skill_color}#40%##。\n\n#{important_1}#提示：该效果不适用于队长、熊、狙击手和盾兵##\n\n专精: #{risk}#$pro##\n你蹲下时获得#{skill_color}#12.5%##的伤害减免，轻机枪使用脚架时伤害减免增加至#{skill_color}#25%##。",
+			["menu_speedy_reload_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪有#{skill_color}#20%##的概率击倒敌人，轻机枪使用脚架时概率增加至#{skill_color}#40%##。\n\n#{important_1}#提示：该效果不适用于队长、熊、狙击手和盾兵##\n\n专精: #{risk}#$pro##\n你蹲下时获得#{skill_color}#12.5%##的伤害减免，轻机枪使用脚架时伤害减免增加至#{skill_color}#25%##。",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "人体解析",
-			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的子弹可以#{skill_color}#射穿敌人的护甲##。\n\n射击敌人的身体能造成原定爆头所造成的伤害的#{skill_color}#30%##，该效果只能被#{skill_color}#连发模式##的冲锋枪和轻机枪触发。\n\n#{important_1}#提示：该技能不适用于熊##\n\n专精: #{risk}#$pro##\n射击敌人的身体能造成原定爆头所造成伤害的#{skill_color}#60%##，该效果现在#{skill_color}#适用于所有武器##。",
+			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的子弹可以#{skill_color}#射穿敌人的护甲##。\n\n射击敌人的身体能造成原定爆头所造成的伤害的#{skill_color}#30%##，该效果只能被#{skill_color}#连发模式##的冲锋枪和轻重机枪触发。\n\n#{important_1}#提示：该技能不适用于熊##\n\n专精: #{risk}#$pro##\n射击敌人的身体能造成原定爆头所造成伤害的#{skill_color}#60%##，该效果现在#{skill_color}#适用于所有武器##。",
 
 			--}
 		--}
@@ -3122,10 +3122,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "你的护甲恢复速率增加##10%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Gambler--
-		["menu_st_spec_10_desc_sc"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##拾取的子弹盒可以让你回复##5##至##7##点血量，每##8##秒只可触发一次，但是每拾取一盒子弹会减少##1##至##3##秒该技能的冷却时间。\n##-##你从敌人掉落的弹药盒中获得弹药时，你的##团队成员会获得半个弹药盒的弹药补充##。\n##-##当你通过拾取子弹盒回复血量的同时：\n你的闪避条增加你闪避点数的##100%##；\n你的团队成员回复你所回复的血量的##50%##。\n##-##你获得##30##点额外护甲。\n##-##你回答对讲机所需的时间减少##25%##。",		
+		["menu_st_spec_10_desc_sc"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##拾取的子弹盒可以让你回复##5##至##7##点血量，每##8##秒只可触发一次，但是每拾取一盒子弹会减少##1##至##3##秒该技能的冷却时间。\n##-##你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##四分之一##个弹药盒的弹药补充。\n##-##当你通过拾取子弹盒回复血量的同时：\n你的闪避条增加你闪避点数的##100%##；\n你的团队成员回复你所回复的血量的##50%##。\n##-##你获得##30##点额外护甲。\n##-##你回答对讲机所需的时间减少##25%##。",		
 		["menu_st_spec_10_desc_sc_short"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。",
 		["menu_deck10_1_desc_sc"] = "你捡起一个弹药盒会回复##3##至##5##点血量。\n\n冷却时间为##8##秒，每捡起一个弹药盒会减少冷却时间##1##至##3##秒。",
-		["menu_deck10_3_desc_sc"] = "你从敌人掉落的弹药盒中获得弹药时，你的##团队成员会获得半个弹药盒的弹药补充##。\n\n你的闪避点数增加##5##。",
+		["menu_deck10_3_desc_sc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##四分之一##个弹药盒的弹药补充。\n\n你的闪避点数增加##5##。",
 		["menu_deck10_5_desc_sc"] = "你捡起一个弹药盒回复的血量额外增加##1##。\n\n你回答对讲机所需的时间减少##25%##。",
 		["menu_deck10_7_desc_sc"] = "当你触发捡弹回血时，你的队友也回复你回血量##50%##的血量。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck10_9_desc_sc"] = "你捡起一个弹药盒回复的血量再额外增加##1##。\n\n当你触发捡弹回血时，你的护甲值也回复##30##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",

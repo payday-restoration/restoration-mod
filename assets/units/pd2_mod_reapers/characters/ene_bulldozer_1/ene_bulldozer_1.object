@@ -10,7 +10,7 @@
 		</body>
 		<body name="head" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-12" />
+			<object name="c_sphere_head" collision_type="sphere" padding="-8" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -19,15 +19,18 @@
 
 		<body name="body_helmet" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
+			<object name="c_helmet1" collision_type="convex" padding="-2" />
+			<object name="c_helmet2" collision_type="convex" padding="-2" />
+			<object name="c_helmet3" collision_type="convex" padding="-2" />
+			<object name="c_helmet4" collision_type="convex" padding="-2" />
 		</body>
 		<body name="body_helmet_plate" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_plate" collision_type="convex"/>
+			<object name="c_helmet_plate" collision_type="convex" padding ="-2"/>
 		</body>
 		<body name="body_helmet_glass" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_glass" collision_type="convex"/>
+			<object name="c_helmet_glass" collision_type="convex" padding ="-2"/>
 		</body>
 
 		<body name="body_armor_chest" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -294,8 +297,8 @@
 
 			<lod_object name="lod_thigh_l">
 				<object name="g_thigh_l" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body_static" max_distance="1500" />
-					<material materials="mtr_body_static_lod" />
+					<material materials="mtr_bulldozer" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
 				</object>
 				<object name="g_thigh_l_lod1" 			enabled="true" lod="1" >
 					<material materials="mtr_body_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
@@ -305,8 +308,8 @@
 
 			<lod_object name="lod_thigh_r">
 				<object name="g_thigh_r" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body_static" max_distance="1500" />
-					<material materials="mtr_body_static_lod" />
+					<material materials="mtr_bulldozer" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
 				</object>
 				<object name="g_thigh_r_lod1" 			enabled="true" lod="1" >
 					<material materials="mtr_body_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
@@ -316,8 +319,8 @@
 
 			<lod_object name="lod_shoulderpad_l">
 				<object name="g_shoulderpad_l" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body_static" max_distance="1500" />
-					<material materials="mtr_body_static_lod" />
+					<material materials="mtr_bulldozer" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
 				</object>
 				<object name="g_shoulderpad_l_lod1" 		enabled="true" lod="1" >
 					<material materials="mtr_body_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
@@ -327,8 +330,8 @@
 
 			<lod_object name="lod_shoulderpad_r">
 				<object name="g_shoulderpad_r" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body_static" max_distance="1500" />
-					<material materials="mtr_body_static_lod" />
+					<material materials="mtr_bulldozer" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
 				</object>
 				<object name="g_shoulderpad_r_lod1" 		enabled="true" lod="1" >
 					<material materials="mtr_body_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
@@ -397,24 +400,22 @@
 
 			<lod_object name="lod_helmet_glass">
 				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
-					<material materials="mtr_helmet" max_distance="0"/>
 					<material materials="mtr_glass" max_distance="1500" />
 					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_glass_lod1" 		enabled="true" lod="1" >
-					<material materials="mtr_helmet" max_distance="0"/>
+					<material materials="mtr_glass" max_distance="0"/>
 					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
 				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
-					<material materials="mtr_helmet" max_distance="0"/>
 					<material materials="mtr_glass" max_distance="1500" />
 					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_glass_crk_lod1" 	enabled="false" lod="1" >
-					<material materials="mtr_helmet" max_distance="0"/>
+					<material materials="mtr_glass" max_distance="0"/>
 					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>

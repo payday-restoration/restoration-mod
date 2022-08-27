@@ -1,14 +1,14 @@
 <table>
 	<unit>
 		<variables>
-			<var_helmet value="'units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63'"/>
+			<var_helmet value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet'"/>
 			<var_helmet_plate value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate'"/>
 			<var_neck value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck'"/>
 			<var_throat value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat'"/>
-			<var_chest value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
-			<var_back value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
-			<var_shoulderpad_l value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l'"/>
-			<var_shoulderpad_r value="'units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r'"/>
+			<var_chest 		  value="'units/pd2_mod_reapers/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
+			<var_back 		  value="'units/pd2_mod_reapers/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
+			<var_shoulderpad_l  value="'units/pd2_mod_reapers/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l'"/>
+			<var_shoulderpad_r  value="'units/pd2_mod_reapers/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r'"/>
 		</variables>
 		<sequence name="'int_seq_helmet_plate'" once="true">
 			<body enabled="false" name="'body_helmet_plate'"/>

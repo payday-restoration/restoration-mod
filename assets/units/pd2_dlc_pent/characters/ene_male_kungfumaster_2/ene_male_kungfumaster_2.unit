@@ -12,7 +12,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="spooc_gangster" />
-			<var name="_default_weapon_id" value="x_pm9_enemy" />
+			<var name="_default_weapon_id" value="r870" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

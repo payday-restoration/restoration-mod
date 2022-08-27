@@ -16198,6 +16198,14 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Dozer Fort 500
 	table.insert(self.weap_ids, "fort_500_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer"))	
+	
+	--Dozer Vityaz
+	table.insert(self.weap_ids, "akmsu_smg_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer"))	
+	
+	--[[Dozer MP5
+	table.insert(self.weap_ids, "mp5_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_dozer/wpn_npc_mp5_dozer"))--]]	
 		
 	--Dozer AA12
 	table.insert(self.weap_ids, "aa12_dozer")

@@ -17,7 +17,7 @@
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500" load="false" force="false"/>
 	
 	<!--Dozer NPC Fort 500-->
-	<unit_obj				path="units/payday2/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer" load="false"/>		
+	<unit_obj				path="units/pd2_mod_reapers/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer" load="false"/>		
 	
 	<!--AKS 74U-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu" load="false" force="false"/>
@@ -353,32 +353,27 @@
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic"  load="true"/>	
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk"  load="true"/>	
+
+	<unit_obj				path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer"  load="false"/>	
+
 	
 	<texture			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/bulldozer_medic_df" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/maska_df" />
-	<texture			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/tank_glass_df" />
+	
 
 	<!--Medicdozer Acc-->
 	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+
+
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
+
 	
 	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+
 		
 	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+
 	
-	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
-	
-	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
-		
-	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_shoulderpad_l/ene_acc_bulldozer_shoulderpad_l" />
-	
-	<unit_obj				path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
-	<cooked_physics			path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_shoulderpad_r/ene_acc_bulldozer_shoulderpad_r" />
 	
 	<!--Russian Medic bob-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" load="true"/>

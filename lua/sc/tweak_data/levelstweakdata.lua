@@ -75,9 +75,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.wwh.ai_group_type = murkywater 
 	
-	self.rvd1.ai_group_type = murkywater
-	self.rvd1.player_style = "suit_sunny"
-	
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
@@ -255,11 +252,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.kenaz.ai_group_type = lapd
 	self.kenaz.package = {"packages/kenaz", "packages/rex_gold"}	
-	self.kenaz.player_style = "continental"						
+	self.kenaz.player_style = "continental"		
+
+	self.rvd1.ai_group_type = lapd
+	self.rvd1.player_style = "suit_sunny"
 	
 	self.rvd2.ai_group_type = lapd
-	self.rvd2.package = {"packages/job_rvd2", "packages/miscassets"}
 	self.rvd2.player_style = "suit_sunny"
+	
 	
 	self.chas.ai_group_type = lapd
 	self.chas.package = {"packages/job_chas", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}

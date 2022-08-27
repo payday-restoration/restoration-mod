@@ -3506,7 +3506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	recat = { "ching", "g3", "new_m14", "shak12" }
 	for i, wep_id in ipairs(recat) do
-		table.insert(self[ wep_id ].categories, "semi_snp")
+		table.insert(self[ wep_id ].categories, "dmr")
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "sniper"
 	end
@@ -12828,7 +12828,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.g3hk79 then
 		self.g3hk79.categories = { 
 			"assault_rifle",
-			"semi_snp",
+			"dmr",
 		}
 		self.g3hk79.recategorize = {"dmr_ar"}
 		self.g3hk79.damage_type = "sniper"
@@ -13425,7 +13425,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		if self.plasmaproto then
 			self.plasmaproto.categories = { 
 				"assault_rifle",
-				"semi_snp",
+				"dmr",
 			}
 			self.plasmaproto.recategorize = { "dmr_ar" }
 			self.plasmaproto.damage_type = "sniper"
@@ -13822,7 +13822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.bipod_deploy_multiplier = 1.5
 			end
 			-- roughly normalizes swap speeds before additional modifiers are in play
-			weap.desired_swap_time = 1.75
+			weap.desired_swap_time = 1.5
 
 			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
 			weap.shake = {
@@ -13860,8 +13860,8 @@ end)
 
 function WeaponTweakData:get_swap_speed_multiplier(weapon)
 	local swap_speed_mult = 1
-	swap_speed_mult = swap_speed_mult / ( weapon.desired_swap_time / (weapon.timers.unequip + weapon.timers.equip) )
 	if not weapon.swap_speed_multiplier then
+		swap_speed_mult = swap_speed_mult / ( weapon.desired_swap_time / (weapon.timers.unequip + weapon.timers.equip) )
 		weapon.swap_speed_multiplier = swap_speed_mult
 	end
 end
@@ -13877,7 +13877,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 45,  pickup = {0.050, 0.026}},
 		{damage = 60,  pickup = {0.047, 0.025}},
 		{damage = 90,  pickup = {0.044, 0.023}},
-		{damage = 120, pickup = {0.039, 0.022}},
+		{damage = 120, pickup = {0.040, 0.022}},
 		{damage = 180, pickup = {0.036, 0.020}},
 		{damage = 240, pickup = {0.031, 0.018}},
 		{damage = 360, pickup = {0.029, 0.017}},

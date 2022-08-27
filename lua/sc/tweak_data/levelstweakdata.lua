@@ -144,6 +144,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.rat.player_style = "suit_sunny"
 	self.rat.ai_group_type = fbi
 	
+	self.chill_combat.ai_group_type = fbi
+	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
 	self.man.ai_group_type = fbi

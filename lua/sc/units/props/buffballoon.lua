@@ -49,9 +49,6 @@ function BuffBalloon:on_balloon_shot()
 end
 
 function BuffBalloon:on_balloon_server_damage(attack_unit)
-	Telemetry:on_player_game_event_action(Telemetry.event_actions.balloon_popped, {
-		balloon_type = tweak_data.mutators:get_birthday_unit_from_id(self._buff_id)
-	})
 end
 
 function BuffBalloon:self_destruct()

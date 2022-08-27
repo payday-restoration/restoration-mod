@@ -262,7 +262,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.chas.ai_group_type = lapd
-	self.chas.package = {"packages/job_chas", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
+	self.chas.package = {"packages/job_chas", "packages/miscassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.chas.player_style = "suit_sunny"
 	
 	self.sand.ai_group_type = lapd

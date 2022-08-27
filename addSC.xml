@@ -120,6 +120,8 @@
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers and biker guard as the camera man-->
 	
+	<mission			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!--Adds Kung Fu Masters, more beat cops responding and possible captain encounter on Mayhem and above-->
+	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	
 	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->

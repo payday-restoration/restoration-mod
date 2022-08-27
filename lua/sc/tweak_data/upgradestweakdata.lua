@@ -880,10 +880,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Expert Hardware
 				--Basic
-					self.values.player.drill_autorepair_1 = {0.3}
+					self.values.player.drill_autorepair_1 = {0.1}
 					
 				--Ace
-					self.values.player.drill_autorepair_2 = {0.5}
+					self.values.player.drill_autorepair_2 = {0.2}
 					self.player_drill_stun_chance = 0.5
 				
 			--Kick Starter

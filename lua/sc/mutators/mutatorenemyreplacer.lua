@@ -1,3 +1,5 @@
+--[[
+
 MutatorZombieOutbreak = MutatorZombieOutbreak or class(BaseMutator)
 MutatorZombieOutbreak._type = "MutatorZombieOutbreak"
 MutatorZombieOutbreak.name_id = "mutator_zombie_outbreak"
@@ -161,6 +163,8 @@ function MutatorFactionsReplacer:reset_to_default()
 	end
 end
 
+]]--
+
 MutatorEnemyReplacer = MutatorEnemyReplacer or class(BaseMutator)
 MutatorEnemyReplacer._type = "MutatorEnemyReplacer"
 MutatorEnemyReplacer.name_id = "mutator_specials_override"
@@ -288,9 +292,67 @@ local access_type_all = {
 	walk = true
 }
 
+local ignored_groups = {
+	"Phalanx_minion",
+	"Phalanx_vip"
+}
+
+function MutatorEnemyReplacer:modify_unit_categories(group_ai_tweak, difficulty_index)
+	for key, value in pairs(group_ai_tweak.special_unit_spawn_limits) do
+		if key == self:get_override_enemy() then
+			group_ai_tweak.special_unit_spawn_limits[key] = math.huge
+		end
+	end
+
+	local unit_group = self["_get_unit_group_" .. self:get_override_enemy()](self, difficulty_index)
+
+	for group, units in pairs(group_ai_tweak.unit_categories) do
+		if not table.contains(ignored_groups, group) then
+			print("[Mutators] Replacing unit group:", group)
+
+			group_ai_tweak.unit_categories[group] = unit_group
+		else
+			print("[Mutators] Ignoring unit group:", group)
+		end
+	end
+end
+
 function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 	if not self._groups.tank then
-		if difficulty_index < 5 then
+		--Greendozers only
+		if difficulty_index <= 4 then
+			self._groups.tank = {
+				special_type = "tank",
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")
+					},
+					russia = {
+						Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")	
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")	
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
+					},
+					nypd = {
+						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1")
+					},
+					lapd = {
+						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")
+					},
+					fbi = {
+						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")
+					}
+				},
+				access = access_type_all
+			}	
+		--Greendozers + Blackdozers
+		elseif difficulty_index == 5 then
 			self._groups.tank = {
 				special_type = "tank",
 				unit_types = {
@@ -329,7 +391,7 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 				},
 				access = access_type_all
 			}
-		elseif difficulty_index <= 7 then
+		elseif difficulty_index == 6 or difficulty_index == 7 then
 			self._groups.tank = {  --Introduce Titandozers and Benellidozers from now on 
 				special_type = "tank",
 				unit_types = {

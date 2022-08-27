@@ -285,6 +285,7 @@
 		<hook file="sc/units/player/playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
 		<hook file="sc/managers/modifiersmanager.lua" source_file="lib/managers/modifiersmanager"/>
 		<hook file="sc/managers/menu/skilltreeguinew.lua" source_file="lib/managers/menu/skilltreeguinew"/>
+		<hook file="sc/managers/menu/stageendscreentabcrimespree.lua" source_file="lib/managers/menu/stageendscreentabcrimespree"/>
 		<hook file="sc/managers/menu/skilltreegui.lua" source_file="lib/managers/menu/skilltreegui"/>
 		<hook file="sc/units/weapons/weaponliongadget1.lua" source_file="lib/units/weapons/weaponliongadget1"/>
 		<hook file="sc/units/enemies/logics/coplogicsniper.lua" source_file="lib/units/enemies/cop/logics/coplogicsniper"/>	

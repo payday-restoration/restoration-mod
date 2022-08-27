@@ -2119,7 +2119,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4"
+					"player_passive_health_multiplier_4",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {1, 1},
@@ -2143,7 +2144,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_panic_suppression",
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {3, 1},

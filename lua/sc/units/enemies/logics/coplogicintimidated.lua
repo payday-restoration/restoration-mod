@@ -178,6 +178,15 @@ function CopLogicIntimidated._unregister_rescue_SO(data, my_data)
 	end
 end
 
+-- Only allow hostage rescue if it's part of our tactics (or if we don't have any tactics to allow scripted cop/security spawns to rescue hostages)
+local rescue_SO_verification_original = CopLogicIntimidated.rescue_SO_verification
+function CopLogicIntimidated.rescue_SO_verification(ignore_this, data, unit, ...)
+	local logic_data = unit:brain()._logic_data
+	if not logic_data or not logic_data.tactics or logic_data.tactics.rescue_hostages or logic_data.objective and logic_data.objective.grp_objective == "recon_area" then
+		return rescue_SO_verification_original(ignore_this, data, unit, ...)
+	end
+end
+
 function CopLogicIntimidated.on_rescue_SO_failed(ignore_this, data)
 	local my_data = data.internal_data
 

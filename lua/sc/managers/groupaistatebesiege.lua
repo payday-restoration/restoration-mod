@@ -1,11 +1,14 @@
 local math_min = math.min
 local math_lerp = math.lerp
+local math_map_range = math.map_range
 local math_random = math.random
 local table_insert = table.insert
 local table_remove = table.remove
 local mvec_add = mvector3.add
+local mvec_cpy = mvector3.copy
 local mvec_dis = mvector3.distance
 local mvec_dis_sq = mvector3.distance_sq
+local mvec_mul = mvector3.multiply
 local mvec_set = mvector3.set
 local mvec_set_l = mvector3.set_length
 local mvec_set_z = mvector3.set_z
@@ -729,19 +732,22 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 		if phase_is_anticipation then
 			-- If we run into enemies during anticipation, pull back
 			pull_back = true
-		elseif current_objective.moving_out and tactics_map.ranged_fire then
-			-- If we run into enemies while moving out, open fire (if we aren't already doing that)
-			open_fire = not current_objective.open_fire
+		elseif current_objective.moving_out then
+			-- If we run into enemies while moving out, open fire
+			if not current_objective.open_fire then
+				open_fire = true
+				objective_area = obstructed_area
+			end
 		elseif not current_objective.pushed or charge and not current_objective.charge then
-			-- If we run into enemies and haven't pushed yet, approach
-			approach = true
+			-- If we've been in position for a while or haven't seen enemies, approach
+			approach = not self:_can_group_see_target(group)
 		end
 	elseif not current_objective.moving_out then
-		-- If we aren't moving out to an objective, approach or open fire if we have ranged_fire tactics and see an enemy
-		approach = charge or not tactics_map.ranged_fire or in_place_duration > 10 or group.is_chasing or not self:_can_group_see_target(group)
+		-- If we aren't moving out to an objective, open fire if we have ranged_fire tactics and see an enemy, otherwise approach
+		approach = charge or group.is_chasing or not tactics_map.ranged_fire or not self:_can_group_see_target(group)
 		open_fire = not approach and not current_objective.open_fire
 	elseif tactics_map.ranged_fire and not current_objective.open_fire and self:_can_group_see_target(group, true) then
-		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire and stay in position for a bit
+		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire
 		local forwardmost_i_nav_point = self:_get_group_forwardmost_coarse_path_index(group)
 		if forwardmost_i_nav_point then
 			open_fire = true
@@ -750,7 +756,6 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 	end
 
 	if open_fire then
-		objective_area = obstructed_area or objective_area
 		local grp_objective = {
 			attitude = "engage",
 			pose = "stand",
@@ -856,7 +861,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 
 				-- Check which grenade to use to push, grenade use is required for the push to be initiated
 				-- If grenade isn't available, push regardless anyway after a short delay
-				used_grenade = self:_chk_group_use_grenade(group, detonate_pos) or group.ignore_grenade_check_t and group.ignore_grenade_check_t <= self._t
+				used_grenade = self:_chk_group_use_grenade(assault_area, group, detonate_pos) or group.ignore_grenade_check_t and group.ignore_grenade_check_t <= self._t
 
 				if used_grenade then
 					self:_voice_move_in_start(group)
@@ -889,7 +894,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 
 				self:_set_objective_to_enemy_group(group, grp_objective)
 			end
-		elseif in_place_duration > 10 and not self:_can_group_see_target(group) then
+		elseif in_place_duration > 15 and not self:_can_group_see_target(group) then
 			-- Log and remove groups that get stuck
 			local element_id = group.spawn_group_element and group.spawn_group_element._id or 0
 			local element_name = group.spawn_group_element and group.spawn_group_element._editor_name or ""
@@ -901,25 +906,20 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 		end
 	elseif pull_back then
 		local retreat_area
-
 		for _, u_data in pairs(group.units) do
 			local nav_seg_id = u_data.tracker:nav_segment()
-
-			if current_objective.area.nav_segs[nav_seg_id] then
-				retreat_area = current_objective.area
-				break
-			end
-
 			if self:is_nav_seg_safe(nav_seg_id) then
 				retreat_area = self:get_area_from_nav_seg_id(nav_seg_id)
 				break
 			end
 		end
 
-		if not retreat_area then
+		if not retreat_area and current_objective.coarse_path then
 			local forwardmost_i_nav_point = self:_get_group_forwardmost_coarse_path_index(group)
 			if forwardmost_i_nav_point then
-				retreat_area = self:get_area_from_nav_seg_id(current_objective.coarse_path[forwardmost_i_nav_point][1])
+				-- Try retreating to the previous coarse path nav point
+				local nav_point = current_objective.coarse_path[forwardmost_i_nav_point - 1] or current_objective.coarse_path[forwardmost_i_nav_point]
+				retreat_area = self:get_area_from_nav_seg_id(nav_point[1])
 			end
 		end
 
@@ -1047,9 +1047,8 @@ function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, deto
 	end
 end
 
-
 -- Add custom grenade usage function
-function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
+function GroupAIStateBesiege:_chk_group_use_grenade(assault_area, group, detonate_pos)
 	local task_data = self._task_data.assault
 	if not task_data.use_smoke then
 		return
@@ -1076,30 +1075,14 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 	local grenade_type = candidate[1]
 	local grenade_user = candidate[2]
 
-	local area
 	local detonate_offset, detonate_offset_pos = tmp_vec1, tmp_vec2
 	if detonate_pos then
-		-- Offset grenade a bit to avoid spawning exactly on the player
 		mvec_set(detonate_offset, grenade_user.m_pos)
 		mvec_sub(detonate_offset, detonate_pos)
-		mvec_set_z(detonate_offset, 0)
-		mvec_set_l(detonate_offset, math.random(100, 300))
-		mvec_set(detonate_offset_pos, detonate_pos)
-		mvec_add(detonate_offset_pos, detonate_offset)
-
-		local ray = World:raycast("ray", detonate_pos, detonate_offset_pos, "slot_mask", managers.slot:get_mask("world_geometry"))
-		if ray then
-			mvec_set_l(detonate_offset, math.max(0, ray.distance - 50))
-			mvec_set(detonate_offset_pos, detonate_pos)
-			mvec_add(detonate_offset_pos, detonate_offset)
-		end
-
-		detonate_pos = detonate_offset_pos
-		area = self:get_area_from_nav_seg_id(managers.navigation:get_nav_seg_from_pos(detonate_pos, true))
 	else
 		local nav_seg = managers.navigation._nav_segments[grenade_user.tracker:nav_segment()]
 		for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
-			area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
+			local area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
 			if task_data.target_areas[1].nav_segs[neighbour_nav_seg_id] or next(area.criminal.units) then
 				local random_door_id = door_list[math_random(#door_list)]
 				if type(random_door_id) == "number" then
@@ -1110,49 +1093,69 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 				break
 			end
 		end
+
+		if not detonate_pos then
+			return
+		end
+
+		mvec_set(detonate_offset, assault_area.pos)
+		mvec_sub(detonate_offset, detonate_pos)
 	end
 
-	if not detonate_pos then
-		return
-	end
+	local ray_mask = managers.slot:get_mask("world_geometry")
 
 	-- If players camp a specific area for too long, turn a smoke grenade into a teargas grenade instead
 	local use_teargas
 	local can_use_teargas = grenade_user and grenade_user.char_tweak and grenade_user.char_tweak.use_gas and grenade_type == "smoke_grenade" and area and area.criminal_entered_t and table.size(area.neighbours) <= 2
-	if can_use_teargas and math_random() < (self._t - area.criminal_entered_t - 60) / 180 then
-		-- Check if a player actually currently is in this area
-		local num_player_criminals = 0
-		detonate_pos = tmp_vec1
-		for _, c_data in pairs(area.criminal.units) do
-			if not c_data.ai then
-				num_player_criminals = num_player_criminals + 1
-				mvector3.add(detonate_pos, c_data.m_pos)
-			end
-		end
-		if num_player_criminals > 0 then
-			mvector3.divide(detonate_pos, num_player_criminals)
-			mvector3.lerp(detonate_pos, detonate_pos, area.pos, 0.5)
-			mvector3.set_z(detonate_pos, area.pos.z)
-			-- If detonate pos is a roofed area, use teargas
-			use_teargas = World:raycast("ray", detonate_pos, detonate_pos + math.UP * 1000, "slot_mask", managers.slot:get_mask("world_geometry"), "report")
+	if can_use_teargas and math_random() < (self._t - assault_area.criminal_entered_t - 60) / 180 then
+		mvec_set(detonate_offset_pos, math.UP)
+		mvec_mul(detonate_offset_pos, 1000)
+		mvec_add(detonate_offset_pos, assault_area.pos)
+		if World:raycast("ray", assault_area.pos, detonate_offset_pos, "slot_mask", ray_mask, "report") then
+			mvec_set(detonate_offset_pos, assault_area.pos)
+			mvec_set_z(detonate_offset_pos, detonate_offset_pos.z + 100)
+			use_teargas = true
 		end
 	end
 
+	if not use_teargas then
+		-- Offset grenade a bit to avoid spawning exactly on the player/door
+		mvec_set_z(detonate_offset, math.max(detonate_offset.z, 0))
+		mvec_set_l(detonate_offset, math_random(100, 300))
+		mvec_set(detonate_offset_pos, detonate_pos)
+		mvec_add(detonate_offset_pos, detonate_offset)
+
+		local ray = World:raycast("ray", detonate_pos, detonate_offset_pos, "slot_mask", ray_mask)
+		if ray then
+			mvec_set_l(detonate_offset, math.max(0, ray.distance - 50))
+			mvec_set(detonate_offset_pos, detonate_pos)
+			mvec_add(detonate_offset_pos, detonate_offset)
+		end
+	end
+
+	-- Raycast down to place grenade on ground
+	mvec_set(detonate_offset, math.DOWN)
+	mvec_mul(detonate_offset, 1000)
+	mvec_add(detonate_offset, detonate_offset_pos)
+
+	local ground_ray = World:raycast("ray", detonate_offset_pos, detonate_offset, "slot_mask", ray_mask)
+	detonate_pos = ground_ray and ground_ray.hit_position or detonate_offset_pos
+
 	local timeout
 	if use_teargas then
-		area.criminal_entered_t = nil
+		assault_area.criminal_entered_t = nil
 
-		self:detonate_cs_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)
+		self:detonate_cs_grenade(detonate_pos, mvec_cpy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)
 
 		timeout = tweak_data.group_ai.cs_grenade_timeout or tweak_data.group_ai.smoke_and_flash_grenade_timeout
 	else
 		if grenade_type == "flash_grenade" and grenade_user.char_tweak.chatter.flash_grenade then
-			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "flash_grenade")		
+			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "flash_grenade")
 		elseif grenade_type == "smoke_grenade" and grenade_user.char_tweak.chatter.smoke then
 			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "smoke")
 		end
 
-		self:detonate_smoke_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai[grenade_type .. "_lifetime"] or 10, grenade_type == "flash_grenade")
+		self:detonate_smoke_grenade(detonate_pos, mvec_cpy(grenade_user.m_pos), tweak_data.group_ai[grenade_type .. "_lifetime"] or 10, grenade_type == "flash_grenade")
 
 		timeout = tweak_data.group_ai[grenade_type .. "_timeout"] or tweak_data.group_ai.smoke_and_flash_grenade_timeout
 	end
@@ -1176,16 +1179,17 @@ function GroupAIStateBesiege:_assign_recon_groups_to_retire(...)
 	return _assign_recon_groups_to_retire_original(self, ...)
 end
 
-
--- Reduce the importance of spawn group distance in spawn group weight to encourage enemies spawning from more directions
+-- Tweak importance of spawn group distance in spawn group weight based on the groups to spawn
 -- Also slightly optimized this function to properly check all areas
 function GroupAIStateBesiege:_find_spawn_group_near_area(target_area, allowed_groups, target_pos, max_dis, verify_clbk)
 	target_pos = target_pos or target_area.pos
-	max_dis = max_dis and max_dis * max_dis
+	max_dis = max_dis or math.huge
 
 	local t = self._t
 	local valid_spawn_groups = {}
 	local valid_spawn_group_distances = {}
+	local shortest_dis = math.huge
+	local longest_dis = -math.huge
 
 	for _, area in pairs(self._area_data) do
 		local spawn_groups = area.spawn_groups
@@ -1218,10 +1222,16 @@ function GroupAIStateBesiege:_find_spawn_group_near_area(target_area, allowed_gr
 
 					if self._graph_distance_cache[dis_id] then
 						local my_dis = self._graph_distance_cache[dis_id]
-						if not max_dis or my_dis < max_dis then
+						if my_dis < max_dis then
 							local spawn_group_id = spawn_group.mission_element:id()
 							valid_spawn_groups[spawn_group_id] = spawn_group
 							valid_spawn_group_distances[spawn_group_id] = my_dis
+							if my_dis < shortest_dis then
+								shortest_dis = my_dis
+							end
+							if my_dis > longest_dis then
+								longest_dis = my_dis
+							end
 						end
 					end
 				end
@@ -1235,8 +1245,9 @@ function GroupAIStateBesiege:_find_spawn_group_near_area(target_area, allowed_gr
 
 	local total_weight = 0
 	local candidate_groups = {}
+	local low_weight = allowed_groups == self._tweak_data.reenforce.groups and 0.25 or allowed_groups == self._tweak_data.recon.groups and 0.5 or 0.75
 	for i, dis in pairs(valid_spawn_group_distances) do
-		local my_wgt = math_lerp(1, 0.75, math_min(1, dis / 5000))
+		local my_wgt = math_map_range(dis, shortest_dis, longest_dis, 1, low_weight)
 		local my_spawn_group = valid_spawn_groups[i]
 		local my_group_types = my_spawn_group.mission_element:spawn_groups()
 		my_spawn_group.distance = dis

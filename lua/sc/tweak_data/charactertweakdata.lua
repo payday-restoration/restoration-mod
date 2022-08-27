@@ -2340,6 +2340,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.static_weapon_preset = true
 	self.shield.detection = presets.detection.normal
 	self.shield.HEALTH_INIT = 13
 	self.shield.headshot_dmg_mul = 2.2
@@ -2398,6 +2399,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.tags = {"law", "shield", "special", "shield_titan"}
 	self.phalanx_minion.experience = {}
 	self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
+	self.phalanx_minion.static_weapon_preset = true
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 2.0
 	self.phalanx_minion.HEALTH_INIT = 19.5
@@ -2492,6 +2494,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
         duration = 1.5,
         power = 0.75
     }	
+	self.phalanx_vip.static_weapon_preset = false
 	--self.phalanx_vip.death_animation = "death_run" 
 	--self.phalanx_vip.death_animation_vars = {"var3", "heavy", "fwd", "high"}
 	self.phalanx_vip.chatter = {
@@ -4895,7 +4898,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.static_dodge_preset = false
 	presets.base.static_melee_preset = false
 	presets.gang_member_damage = {}
-	presets.gang_member_damage.HEALTH_INIT = 20
+	presets.gang_member_damage.HEALTH_INIT = 25
 	presets.gang_member_damage.no_run_start = true
 	presets.gang_member_damage.no_run_stop = true
 	presets.gang_member_damage.headshot_dmg_mul = 1
@@ -16264,11 +16267,11 @@ function CharacterTweakData:_set_easy()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 20
+	self.presets.gang_member_damage.HEALTH_INIT = 25
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
-	self.old_hoxton_mission.HEALTH_INIT = 20
-	self.spa_vip.HEALTH_INIT = 20
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 20
+	self.old_hoxton_mission.HEALTH_INIT = 25
+	self.spa_vip.HEALTH_INIT = 25
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
 	self:_multiply_all_speeds(1, 1)
 end
 
@@ -16330,11 +16333,11 @@ function CharacterTweakData:_set_normal()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 40
+	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
-	self.old_hoxton_mission.HEALTH_INIT = 40
-	self.spa_vip.HEALTH_INIT = 40
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 40
+	self.old_hoxton_mission.HEALTH_INIT = 50
+	self.spa_vip.HEALTH_INIT = 50
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
 	self:_multiply_all_speeds(1, 1)
 end
 
@@ -16396,11 +16399,11 @@ function CharacterTweakData:_set_hard()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 60
+	self.presets.gang_member_damage.HEALTH_INIT = 75
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
-	self.old_hoxton_mission.HEALTH_INIT = 60
-	self.spa_vip.HEALTH_INIT = 60
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 60
+	self.old_hoxton_mission.HEALTH_INIT = 75
+	self.spa_vip.HEALTH_INIT = 75
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
 	self:_multiply_all_speeds(1, 1)
 end
 
@@ -16462,11 +16465,11 @@ function CharacterTweakData:_set_overkill()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 80
+	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
-	self.old_hoxton_mission.HEALTH_INIT = 80
-	self.spa_vip.HEALTH_INIT = 80
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
+	self.old_hoxton_mission.HEALTH_INIT = 100
+	self.spa_vip.HEALTH_INIT = 100
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self:_multiply_all_speeds(1, 1)	
 end
 
@@ -16527,11 +16530,11 @@ function CharacterTweakData:_set_overkill_145()
 		
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 100
+	self.presets.gang_member_damage.HEALTH_INIT = 125
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-	self.old_hoxton_mission.HEALTH_INIT = 100
-	self.spa_vip.HEALTH_INIT = 100
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
+	self.old_hoxton_mission.HEALTH_INIT = 125
+	self.spa_vip.HEALTH_INIT = 125
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 	self:_multiply_all_speeds(1, 1)
 end
 
@@ -16588,11 +16591,11 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)			
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.autumn.damage.bullet_damage_mul = 0.5
-	self.presets.gang_member_damage.HEALTH_INIT = 120
+	self.presets.gang_member_damage.HEALTH_INIT = 150
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.old_hoxton_mission.HEALTH_INIT = 120
-	self.spa_vip.HEALTH_INIT = 120
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 120
+	self.old_hoxton_mission.HEALTH_INIT = 150
+	self.spa_vip.HEALTH_INIT = 150
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1)
@@ -16639,11 +16642,11 @@ function CharacterTweakData:_set_overkill_290()
 	
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
-	self.presets.gang_member_damage.HEALTH_INIT = 140
+	self.presets.gang_member_damage.HEALTH_INIT = 175
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
-	self.old_hoxton_mission.HEALTH_INIT = 140
-	self.spa_vip.HEALTH_INIT = 140
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
+	self.old_hoxton_mission.HEALTH_INIT = 175
+	self.spa_vip.HEALTH_INIT = 175
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1.05)
@@ -16701,11 +16704,11 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat_guard.can_shoot_while_dodging = true	
 		
 	self:_multiply_all_speeds(1.05, 1.1)
-	self.presets.gang_member_damage.HEALTH_INIT = 160
+	self.presets.gang_member_damage.HEALTH_INIT = 200
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.15
-	self.old_hoxton_mission.HEALTH_INIT = 160
-	self.spa_vip.HEALTH_INIT = 160
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 160
+	self.old_hoxton_mission.HEALTH_INIT = 200
+	self.spa_vip.HEALTH_INIT = 200
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	

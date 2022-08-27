@@ -2659,7 +2659,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "Expert Hardware",
-				["menu_kick_starter_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour drills and saws gain a #{skill_color}#30%## chance to automatically restart after breaking.\n\nACE: #{owned}#$pro##\nYour drills and saws gain an additional #{skill_color}#20%## chance to automatically restart after jamming.\n\nEnemies that attempt to stop your drills have a #{skill_color}#50%## chance of being tased, stopping their sabotage attempt.",
+				["menu_kick_starter_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour drills and saws gain a #{skill_color}#10%## chance to automatically restart after breaking.\n\nACE: #{owned}#$pro##\nYour drills and saws gain an additional #{skill_color}#15%## chance to automatically restart after jamming.\n\nEnemies that attempt to stop your drills have a #{skill_color}#50%## chance of being tased, stopping their sabotage attempt.",
 	
 				--Kickstarter
 				["menu_fire_trap_beta_sc"] = "Kick Starter",

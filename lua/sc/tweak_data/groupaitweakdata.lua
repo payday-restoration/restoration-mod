@@ -11074,6 +11074,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--shield_cover
 	--Unit attempts to place leader between self and player, stays close to leader. Can be employed for non-shield units.
 	
+	--rescue_hostages
+	--Unit will make attempts to rescue hostages, even if their tweak_data isn't flagged for it. Use only for recon units!
+	
 	self._tactics = {
 		--Cloaker tactics, static. Tries to avoid confrontation
 		spooc = {
@@ -11114,7 +11117,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"provide_coverfire",
 			"provide_support",
-			"grouphrtr"
+			"grouphrtr",
+			"rescue_hostages"
 		},
 		--Standard Blue SWAT, upgraded from Beat Cops and will now use smoke grenades. 
 		CS_swat_rifle = {
@@ -11229,7 +11233,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"flash_grenade",
 			"ranged_fire",
-			"grouphrtr"
+			"grouphrtr",
+			"rescue_hostages"
 		},
 		--FBI Rifle SWATs, can now use flash grenades
 		FBI_swat_rifle = { 
@@ -11539,7 +11544,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"grouphrtr"
+			"grouphrtr",
+			"rescue_hostages"
 		},
 		ELITE_swat_rifle = {
 			"ranged_fire",	

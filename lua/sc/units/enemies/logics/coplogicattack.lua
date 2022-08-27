@@ -359,3 +359,53 @@ function CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, 
 		end
 	end
 end
+
+-- Fix reinforce groups relocating due to using covers outside of their nav segments
+local _update_cover_original = CopLogicAttack._update_cover
+function CopLogicAttack._update_cover(data, ...)
+	if not data.objective or not data.objective.grp_objective or data.objective.grp_objective.type ~= "reenforce_area" then
+		return _update_cover_original(data, ...)
+	end
+
+	local my_data = data.internal_data
+	local best_cover = my_data.best_cover
+
+	my_data.flank_cover = nil
+
+	if not data.attention_obj or data.attention_obj.reaction < AIAttentionObject.REACT_COMBAT then
+		if best_cover and mvector3.distance_sq(best_cover[1][1], data.m_pos) > 10000 then
+			CopLogicAttack._set_best_cover(data, my_data, nil)
+		end
+		return
+	end
+
+	local taking_cover = not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos and not my_data.surprised
+	local can_take_cover = not my_data.surprised and not my_data.processing_cover_path and not my_data.charge_path_search_id
+	if not taking_cover and can_take_cover then
+		local threat_pos = data.attention_obj.m_pos
+		if not best_cover or not CopLogicAttack._verify_cover(best_cover[1], threat_pos, nil, nil) then
+			local dir = threat_pos - data.m_pos
+			mvector3.normalize(dir)
+			local found_cover = managers.navigation:find_cover_in_nav_seg_2(data.objective.area.nav_segs, data.m_pos, dir)
+			if found_cover and (not best_cover or CopLogicAttack._verify_cover(found_cover, threat_pos, nil, nil)) then
+				local better_cover = {
+					found_cover
+				}
+
+				CopLogicAttack._set_best_cover(data, my_data, better_cover)
+
+				local offset_pos, yaw = CopLogicAttack._get_cover_offset_pos(data, better_cover, threat_pos)
+				if offset_pos then
+					better_cover[5] = offset_pos
+					better_cover[6] = yaw
+				end
+			end
+		end
+	end
+
+	local in_cover = my_data.in_cover
+	if in_cover then
+		local threat_pos = data.attention_obj.verified_pos
+		in_cover[3], in_cover[4] = CopLogicAttack._chk_covered(data, data.m_pos, threat_pos, data.visibility_slotmask)
+	end
+end

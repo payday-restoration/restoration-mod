@@ -92,7 +92,6 @@ function CopLogicTravel.chk_group_ready_to_move(data, my_data)
 	return true
 end
 
-
 -- Find a random fallback position in the nav segment if no covers are available
 -- This is done to prevent enemies stacking in one spot if no positions next to walls are available
 -- Also add different positioning for shield_cover groups, sticking close to and behind their follow units
@@ -109,23 +108,20 @@ function CopLogicTravel._get_exact_move_pos(data, nav_index, ...)
 		return CopLogicTravel._get_pos_behind_unit(data, data.objective.shield_cover_unit, 50, 300)
 	end
 
-	local to_pos = nil
 	local coarse_path = my_data.coarse_path
-	local total_nav_points = #coarse_path
-
-	if total_nav_points <= nav_index then
+	if nav_index >= #coarse_path or data.objective.follow_unit then
 		return _get_exact_move_pos_original(data, nav_index, ...)
 	end
-
-	local nav_seg = coarse_path[nav_index][1]
-	local area = managers.groupai:state():get_area_from_nav_seg_id(nav_seg)
-	local cover = managers.navigation:find_cover_in_nav_seg_1(area.nav_segs)
 
 	if my_data.moving_to_cover then
 		managers.navigation:release_cover(my_data.moving_to_cover[1])
 		my_data.moving_to_cover = nil
 	end
 
+	local to_pos
+	local nav_seg = coarse_path[nav_index][1]
+	local area = managers.groupai:state():get_area_from_nav_seg_id(nav_seg)
+	local cover = managers.navigation:find_cover_in_nav_seg_1(area.nav_segs)
 	if cover then
 		managers.navigation:reserve_cover(cover, data.pos_rsrv_id)
 		my_data.moving_to_cover = {

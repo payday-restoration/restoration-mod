@@ -17,7 +17,7 @@ function CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, ..
 
 	local record = attention_data.criminal_record
 	if not record or not attention_data.is_person then
-		return attention_data.verified and REACT_COMBAT or attention_reaction
+		return attention_reaction
 	end
 
 	if record.status == "dead" or record.being_arrested then
@@ -312,22 +312,6 @@ function CopLogicIdle._chk_relocate(data, ...)
 		objective.path_data = nil
 		objective.area = target_area
 		objective.nav_seg = target_area.pos_nav_seg
-
-		data.logic._exit(data.unit, "travel")
-
-		return true
-	elseif objective_type == "defend_area" then
-		-- Move back to objective area if reenforce group member left it
-		if not objective.grp_objective or objective.grp_objective.type ~= "reenforce_area" then
-			return
-		end
-
-		if not objective.in_place or not objective.area or objective.area.nav_segs[data.unit:movement():nav_tracker():nav_segment()] then
-			return
-		end
-
-		objective.in_place = nil
-		objective.path_data = nil
 
 		data.logic._exit(data.unit, "travel")
 

@@ -1474,7 +1474,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Winchester 1874
 		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
 		--TTI(TTY)		
-		["bm_w_tti"] = "Contractor .308 Sniper Rifle",
+		["bm_w_tti"] = "Tecci .308 Sniper Rifle",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
 		--Scunt
 		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",

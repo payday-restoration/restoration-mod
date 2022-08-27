@@ -12571,6 +12571,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.p99.timers.reload_exit_not_empty = 0.65
 	end
 
+	if self.ppsh then --Pawcio's PPSH
+		self.ppsh.recategorize = {"heavy_smg"}
+		self.ppsh.damage_type = "machine_gun"
+		self.ppsh.lock_slide = true
+		self.ppsh.sounds.magazine_empty = "wp_pistol_slide_lock"
+		self.ppsh.use_data.selection_index = 2
+		self.ppsh.fire_mode_data.fire_rate = 0.054545
+		self.ppsh.CAN_TOGGLE_FIREMODE = true
+		self.ppsh.CLIP_AMMO_MAX = 71
+		self.ppsh.AMMO_MAX = 120
+		self.ppsh.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.ppsh.panic_suppression_chance = 0.05
+		self.ppsh.supported = true
+		self.ppsh.ads_speed = 0.460
+		self.ppsh.damage_falloff = {
+			start_dist = 1600,
+			end_dist = 3900,
+			min_mult = 0.3333
+		}
+		self.ppsh.stats = {
+			damage = 30,
+			spread = 52,
+			recoil = 78,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 18,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.ppsh.stats_modifiers = nil
+		self.ppsh.panic_suppression_chance = 0.05
+		self.ppsh.timers.reload_not_empty = 3.3
+		self.ppsh.timers.reload_exit_not_empty = 1.05
+		self.ppsh.timers.reload_empty = 3.78
+		self.ppsh.timers.reload_exit_empty = 1
+		self.ppsh.sounds.fire_single = "mac10_fire_single"
+		self.ppsh.sounds.fire_single2 = "ppsh41_fire"
+	end
+
 	if self.mp153 then  --Pawcio's MP-153
 		self.mp153.recategorize = { "light_shot" }
 		self.mp153.damage_type = "shotgun"
@@ -12701,7 +12744,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.timers.shotgun_reload_exit_not_empty = 0.7
 	end	
 
-	if self.super then --Pawcio's D
+	if self.super then --Pawcio's DOOM Super Shotgun
 		self.super.recategorize = { "break_shot" }	
 		self.super.damage_type = "shotgun"
 		self.super.damage_type_single_ray = "anti_materiel"
@@ -12748,6 +12791,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.scarl.tactical_reload = 1
 		self.scarl.lock_slide = true
 		self.scarl.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.scarl.sounds.fire_single = "m4_olympic_fire_single"
 		self.scarl.sounds.stop_fire = "scar_stop"
 		self.scarl.CLIP_AMMO_MAX = 30
 		self.scarl.AMMO_MAX = 120

@@ -91,7 +91,7 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1.25,
+		hipfire_spread_mult = 1.5,
 		hipfire_moving_spread_mult = 1.5
 	}
 
@@ -139,7 +139,7 @@ local frag_40mm = {
 for i, proj_id in ipairs(frag_40mm) do
 	tweak_data.projectiles[proj_id].damage = 72
 	tweak_data.projectiles[proj_id].player_damage = 36
-	tweak_data.projectiles[proj_id].curve_pow = 3
+	tweak_data.projectiles[proj_id].curve_pow = 1.5
 	tweak_data.projectiles[proj_id].range = 500
 end
 
@@ -148,7 +148,7 @@ local incendiary_40mm = {
 }
 for i, proj_id in ipairs(incendiary_40mm) do
 	tweak_data.projectiles[proj_id].damage = 6
-	tweak_data.projectiles[proj_id].curve_pow = 3
+	tweak_data.projectiles[proj_id].curve_pow = 1.5
 	tweak_data.projectiles[proj_id].player_damage = 3
 	tweak_data.projectiles[proj_id].burn_duration = 5
 	tweak_data.projectiles[proj_id].fire_dot_data = {
@@ -166,7 +166,7 @@ local electric_40mm = {
 for i, proj_id in ipairs(electric_40mm) do
 	tweak_data.projectiles[proj_id].damage = 40
 	tweak_data.projectiles[proj_id].player_damage = 20
-	tweak_data.projectiles[proj_id].curve_pow = 3
+	tweak_data.projectiles[proj_id].curve_pow = 1.5
 	tweak_data.projectiles[proj_id].range = 500
 end
 
@@ -277,7 +277,7 @@ tweak_data.projectiles.launcher_electric_osipr = {
 --3GL
 tweak_data.projectiles.launcher_frag_ms3gl.damage = 36
 tweak_data.projectiles.launcher_frag_ms3gl.player_damage = 18
-tweak_data.projectiles.launcher_frag_ms3gl.curve_pow = 1.5
+tweak_data.projectiles.launcher_frag_ms3gl.curve_pow = 1
 tweak_data.projectiles.launcher_frag_ms3gl.range = 500
 tweak_data.projectiles.launcher_incendiary_ms3gl.damage = 2
 tweak_data.projectiles.launcher_incendiary_ms3gl.player_damage = 1
@@ -291,7 +291,7 @@ tweak_data.projectiles.launcher_incendiary_ms3gl.fire_dot_data = {
 }
 tweak_data.projectiles.launcher_electric_ms3gl.damage = 18
 tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 6
-tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1.5
+tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1
 tweak_data.projectiles.launcher_electric_ms3gl.range = 500
 tweak_data.projectiles.launcher_poison.damage = 0
 tweak_data.projectiles.launcher_poison.player_damage = 0

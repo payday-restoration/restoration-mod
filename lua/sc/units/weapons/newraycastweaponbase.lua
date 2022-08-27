@@ -1106,6 +1106,9 @@ end
 
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	if managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name then
+		
+	end
+	if self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase") then
 		return damage
 	end
 	--Initialize base info.

@@ -1121,6 +1121,3 @@ function InstantExplosiveBulletBase:on_collision_client(position, normal, damage
 	managers.explosion:explode_on_client(position, normal, user_unit, damage, self.RANGE, self.CURVE_POW, self.EFFECT_PARAMS)
 end
 
-function InstantExplosiveBulletBase:get_damage_falloff(damage, col_ray, user_unit)
-	return damage
-end

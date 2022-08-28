@@ -1,5 +1,3 @@
---[[
-
 MutatorZombieOutbreak = MutatorZombieOutbreak or class(BaseMutator)
 MutatorZombieOutbreak._type = "MutatorZombieOutbreak"
 MutatorZombieOutbreak.name_id = "mutator_zombie_outbreak"
@@ -162,8 +160,6 @@ function MutatorFactionsReplacer:reset_to_default()
 		end
 	end
 end
-
-]]--
 
 MutatorEnemyReplacer = MutatorEnemyReplacer or class(BaseMutator)
 MutatorEnemyReplacer._type = "MutatorEnemyReplacer"

@@ -1169,7 +1169,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 
 		--Phoenix .500--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1230,7 +1230,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Sub 2000
 		["bm_w_sub2000"] = "Cavity 10mm Pistol-Carbine",
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan pierce body armor, shields and thin walls.##",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan pierce body armor, enemies, shields and thin walls.##",
 		--CUSTOM HANDGUNS
 			--Browning Hi-Power
 			["bm_w_hpb"] = "VF Hi-Power Pistol",
@@ -1466,36 +1466,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
 
 		--MSR
-		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
+		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--R700
-		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
+		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--QBU88
-		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
+		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--Winchester 1874
-		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
+		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--TTI(TTY)		
 		["bm_w_tti"] = "Tecci .308 Sniper Rifle",
-		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Scunt
 		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 Sniper Rifle",
-		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 Sniper Rifle", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",	
+		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--Model 70
-		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",			
+		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",			
 		--SVD
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Mosin--
-		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 40 damage/sec over 3 seconds and can stun enemies.##",
 		--Desert Fox
-		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",			
+		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",			
 		--R93
-		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",			
+		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",			
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
 		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
@@ -1532,7 +1532,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points## is #{important_1}#not installed.##\n\nAttachment will take on the slot's default appearance.",
 		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
-		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields and thin walls.##",
+		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 20% of its damage through body armor.##",
 		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",

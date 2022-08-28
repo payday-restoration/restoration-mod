@@ -6807,7 +6807,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.stats = {
 				damage = 24,
 				spread = 63,
-				recoil = 71,
+				recoil = 74,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 17,
@@ -12569,6 +12569,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.p99.panic_suppression_chance = 0.05
 		self.p99.timers.reload_exit_empty = 0.5
 		self.p99.timers.reload_exit_not_empty = 0.65
+	end
+
+	if self.fp45 then --Pawcio's FP45 Liberator
+		self.fp45.recategorize = {"heavy_pis"}
+		self.fp45.damage_type = "heavy_pistol"
+		self.fp45.has_description = true
+		self.fp45.desc_id = "bm_ap_weapon_sc_desc"
+		self.fp45.lock_slide = true
+		self.fp45.fire_mode_data.fire_rate = 0.08571428571
+		self.fp45.single.fire_rate = 0.08571428571
+		self.fp45.CLIP_AMMO_MAX = 1
+		self.fp45.AMMO_MAX = 20
+		self.fp45.kick = self.stat_info.kick_tables.left_recoil
+		self.fp45.supported = true
+		self.fp45.ads_speed = 0.200
+		self.fp45.damage_falloff = {
+			start_dist = 1000,
+			end_dist = 3000,
+			min_mult = 0.25
+		}
+		self.fp45.stats = {
+			damage = 90,
+			spread = 51,
+			recoil = 86,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 32,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.fp45.stats_modifiers = nil
+		self.fp45.panic_suppression_chance = 0.05
+		self.fp45.armor_piercing_chance = 1
+		self.fp45.can_shoot_through_enemy = true
+		self.fp45.can_shoot_through_wall = true
+		self.fp45.can_shoot_through_shield = true
+		self.fp45.reload_speed_multiplier = 1.1
+		self.fp45.timers.reload_not_empty = 6.4
+		self.fp45.timers.reload_exit_not_empty = 1.3
+		self.fp45.timers.reload_empty = 6.4
+		self.fp45.timers.reload_exit_empty = 1.3
 	end
 
 	if self.ppsh then --Pawcio's PPSH

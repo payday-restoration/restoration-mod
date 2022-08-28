@@ -1579,6 +1579,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nSwing speed is determined by the used weapon's concealment rating.",
 		["bm_melee_katana_info"] = "This is no \"tool of justice\" in your hands.\n\nFully charged attacks come out 50% faster, allowing for a faster follow-up slash.",
+		["bm_melee_thebestweapon_info"] = "The best weapon in the game.",
 		["bm_melee_thejobissnotyours_info"] = "This isn't even your sword.\n\nFully charged attacks come out 50% faster, allowing for a faster follow-up slash.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
 		["bm_melee_charge_info"] = "Pitch your forks and fork up some pitches.\n\nSprinting forwards starts a sprint charge that deals 45 damage every 0.25 seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains 15% of your max stamina; a killing blow gives back 10%.\n\nYou cannot parry enemy attacks, even when not sprint charging.", -- Randal Pitchfork

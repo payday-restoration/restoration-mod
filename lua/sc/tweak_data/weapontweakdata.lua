@@ -3422,7 +3422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].nato = true
 	end
 	faction = {
-		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech'
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech','type54','x_type54','qbu88'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].warsaw = true
@@ -12620,6 +12620,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ppsh.recategorize = {"heavy_smg"}
 		self.ppsh.damage_type = "machine_gun"
 		self.ppsh.lock_slide = true
+		self.ppsh.warsaw = true
 		self.ppsh.sounds.magazine_empty = "wp_pistol_slide_lock"
 		self.ppsh.use_data.selection_index = 2
 		self.ppsh.fire_mode_data.fire_rate = 0.054545

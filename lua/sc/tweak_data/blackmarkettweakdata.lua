@@ -3829,6 +3829,45 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
+	--melee_nin
+	melee_anim = {
+		'melee_g36'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		self.melee_weapons[melee_id].anim_global_param = "melee_nin_res"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
+		self.melee_weapons[melee_id].expire_t = 1.0
+		self.melee_weapons[melee_id].repeat_expire_t = 0.65
+		self.melee_weapons[melee_id].can_melee_miss = true
+		self.melee_weapons[melee_id].miss_repeat_expire_t = 0.005
+		self.melee_weapons[melee_id].miss_expire_t = 0.45
+		self.melee_weapons[melee_id].miss_anim_speed_mult = nil
+		self.melee_weapons[melee_id].melee_damage_delay = 0.015
+		self.melee_weapons[melee_id].anim_speed_mult = 0.8
+		self.melee_weapons[melee_id].melee_charge_shaker = ""
+		self.melee_weapons[melee_id].no_hit_shaker = true
+		self.melee_weapons[melee_id].sounds.hit_air = ""
+		self.melee_weapons[melee_id].sounds.charge = ""
+		self.melee_weapons[melee_id].make_effect = true
+		self.melee_weapons[melee_id].make_decal = true 
+	end
+
+	if self.melee_weapons.melee_g36 then
+		self.melee_weapons.melee_g36.info_id = "bm_melee_thebestweapon_info"	
+		self.melee_weapons.melee_g36.hit_pre_calculation = true
+		self.melee_weapons.melee_g36.stats = deep_clone(self.melee_weapons.nin.stats)
+		self.melee_weapons.melee_g36.stats.min_damage = 2
+		self.melee_weapons.melee_g36.stats.max_damage = 2
+		self.melee_weapons.melee_g36.stats.max_damage_effect = 1
+		self.melee_weapons.melee_g36.stats.min_damage_effect = 1
+		self.melee_weapons.melee_g36.stats.range = 2800
+		self.melee_weapons.melee_g36.sounds = deep_clone(self.melee_weapons.nin.sounds)
+		self.melee_weapons.melee_g36.sounds.hit_body = "g36_fire_single"
+		self.melee_weapons.melee_g36.sounds.hit_gen = "g36_fire_single"
+		self.melee_weapons.melee_g36.sounds.hit_air = "primary_dryfire"
+	end
+
 	if self.melee_weapons.hfblade then
 		self.melee_weapons.hfblade.info_id = "bm_melee_katana_info"	
 		self.melee_weapons.hfblade.stats = deep_clone(self.melee_weapons.sandsteel.stats)
@@ -3852,6 +3891,8 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		}
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
+
+
 
 	local blanket_speed_mult = 1.15
 	local blanket_knockdown_mult = 0.5

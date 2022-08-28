@@ -21855,7 +21855,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_ass_g36k_stockadapter then
-
 		self.parts.wpn_fps_upg_g36k_mag20.supported = true
 		self.parts.wpn_fps_upg_g36k_mag20.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
 		self.parts.wpn_fps_upg_g36k_mag20.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
@@ -21892,6 +21891,45 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_g36k_mag_dual30")	
 		table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_g36k_mag_cmag")	
 		self.wpn_fps_ass_g36_npc.uses_parts = deep_clone(self.wpn_fps_ass_g36.uses_parts)
+	end
+
+	if self.parts.wpn_fps_pis_fp45_barrel then
+		--Pain :^)
+		self.wpn_fps_pis_fp45.override.wpn_fps_upg_pis_ns_flash = {
+			a_obj = "a_ns",
+			parent = "barrel"
+		}
+		self.wpn_fps_pis_fp45.override.wpn_fps_pis_g18c_co_comp_2 = {
+			a_obj = "a_ns",
+			parent = "barrel"
+		}
+		self.wpn_fps_pis_fp45.override.wpn_fps_upg_ns_pis_typhoon = {
+			a_obj = "a_ns",
+			parent = "barrel"
+		}
+		table.insert(self.wpn_fps_pis_fp45.uses_parts, "wpn_fps_upg_pis_ns_flash")
+		table.insert(self.wpn_fps_pis_fp45.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+		table.insert(self.wpn_fps_pis_fp45.uses_parts, "wpn_fps_upg_ns_pis_typhoon")
+		self.wpn_fps_pis_fp45_npc.uses_parts = deep_clone(self.wpn_fps_pis_fp45.uses_parts)
+	end
+
+	if self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp then
+		self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp.supported = true
+		self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp.stats = {
+			value = 3,
+			concealment = 1,
+			recoil = -2,
+		}
+		self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ppsh_barrel_k50m.supported = true
+		self.parts.wpn_fps_upg_ppsh_barrel_k50m.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_upg_ppsh_barrel_k50m.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+		
+		self.parts.wpn_fps_upg_ppsh_stock_k50m.supported = true
+		self.parts.wpn_fps_upg_ppsh_stock_k50m.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_upg_ppsh_stock_k50m.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		
 	end
 
 --Resmod Custom Weapon stuff

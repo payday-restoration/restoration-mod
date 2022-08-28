@@ -3963,6 +3963,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_b92fs.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Holt 9mm
+				self.x_holt.has_description = true
+				self.x_holt.desc_id = "bm_x_holt_sc_desc"					
 				self.x_holt.fire_mode_data.fire_rate = 0.08571428571
 				self.x_holt.single.fire_rate = 0.08571428571
 				self.x_holt.CLIP_AMMO_MAX = 20
@@ -3995,6 +3997,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_holt.timers.reload_exit_not_empty = 0.65
 
 			--Wasp-DS (FMG-9)
+				self.fmg9.has_description = true
+				self.fmg9.desc_id = "bm_fmg9_sc_desc"				
 				self.fmg9.categories = {"pistol"}
 				self.fmg9.fire_mode_data.fire_rate = 0.05454545454
 				self.fmg9.auto.fire_rate = 0.05454545454
@@ -4085,6 +4089,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 
 			--Akimbo Contractor Pistols
+				self.x_packrat.has_description = true
+				self.x_packrat.desc_id = "bm_x_packrat_sc_desc"				
 				self.x_packrat.AMMO_MAX = 150
 				self.x_packrat.CLIP_AMMO_MAX = 30
 				self.x_packrat.fire_mode_data.fire_rate = 0.08571428571
@@ -4117,6 +4123,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_packrat.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Chimano Custom
+				self.x_g22c.has_description = true
+				self.x_g22c.desc_id = "bm_x_g22c_sc_desc"					
 				self.x_g22c.kick = self.stat_info.kick_tables.even_recoil
 				self.x_g22c.CLIP_AMMO_MAX = 32
 				self.x_g22c.AMMO_MAX = 120
@@ -4189,14 +4197,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.maxim9.timers.reload_exit_not_empty = 0.65
 
 			--5/7 AP (Five-seveN)
+				self.lemming.has_description = true
+				self.lemming.desc_id = "bm_lemming_sc_desc"			
 				self.lemming.categories = {
 					"pistol",
 					"pdw"
 				}
 				self.lemming.CLIP_AMMO_MAX = 20
 				self.lemming.AMMO_MAX = 90
-				self.lemming.has_description = true
-				self.lemming.desc_id = "bm_pdw_gen_sc_desc"	
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571
 				self.lemming.single.fire_rate = 0.08571428571
 				self.lemming.kick = self.stat_info.kick_tables.even_recoil
@@ -4267,6 +4275,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_18c.timers.reload_exit_not_empty = 0.65
 
 			--CZ 75
+				self.czech.has_description = true
+				self.czech.desc_id = "bm_czech_sc_desc"				
 				self.czech.CLIP_AMMO_MAX = 18
 				self.czech.AMMO_MAX = 90
 				self.czech.fire_mode_data.fire_rate = 0.06
@@ -4341,6 +4351,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stech.timers.reload_exit_not_empty = 0.6
 			
 			--Gruber Kurz (PPK)
+				self.ppk.has_description = true
+				self.ppk.desc_id = "bm_ppk_sc_desc"					
 				self.ppk.AMMO_MAX = 75
 				self.ppk.CLIP_AMMO_MAX = 7
 				self.ppk.fire_mode_data.fire_rate = 0.08571428571
@@ -4377,6 +4389,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ppk.weapon_movement_penalty = 1.025
 
 			--Chimano Compact (Glock 26)
+				self.g26.has_description = true
+				self.g26.desc_id = "bm_jowi_sc_desc"				
 				self.g26.CLIP_AMMO_MAX = 10
 				self.g26.AMMO_MAX = 75
 				self.g26.kick = self.stat_info.kick_tables.even_recoil
@@ -4409,6 +4423,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g26.timers.reload_exit_not_empty = 0.65
 
 			--M13
+				self.legacy.has_description = true
+				self.legacy.desc_id = "bm_legacy_sc_desc"				
 				self.legacy.fire_mode_data.fire_rate = 0.08571428571
 				self.legacy.single.fire_rate = 0.08571428571
 				self.legacy.CLIP_AMMO_MAX = 13
@@ -4447,6 +4463,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.legacy.timers.reload_exit_not_empty = 0.65
 
 			--Holt 9mm (Hudson H9)
+				self.holt.has_description = true
+				self.holt.desc_id = "bm_holt_sc_desc"				
 				self.holt.fire_mode_data.fire_rate = 0.08571428571
 				self.holt.single.fire_rate = 0.08571428571
 				self.holt.CLIP_AMMO_MAX = 15
@@ -4479,7 +4497,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.holt.timers.reload_exit_not_empty = 0.65
 
 			--Chimano 88 (Glock 17)
-				self.glock_17.desc_id = "bm_menu_sc_glock17_desc"
+				self.glock_17.has_description = true
+				self.glock_17.desc_id = "bm_g17_sc_desc"
 				self.glock_17.fire_mode_data.fire_rate = 0.08571428571
 				self.glock_17.single.fire_rate = 0.08571428571
 				self.glock_17.AMMO_MAX = 75
@@ -4512,6 +4531,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_17.timers.reload_exit_not_empty = 0.65
 
 			--Bernetti 9 (M92FS)
+				self.b92fs.has_description = true
+				self.b92fs.desc_id = "bm_b92fs_sc_desc"			
 				self.b92fs.CLIP_AMMO_MAX = 15
 				self.b92fs.AMMO_MAX = 75
 				self.b92fs.fire_mode_data.fire_rate = 0.08571428571
@@ -4544,6 +4565,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b92fs.timers.reload_exit_not_empty = 0.65
 
 			--White Streak
+				self.pl14.has_description = true
+				self.pl14.desc_id = "bm_pl14_sc_desc"				
 				self.pl14.fire_mode_data.fire_rate = 0.08571428571
 				self.pl14.single.fire_rate = 0.08571428571
 				self.pl14.CLIP_AMMO_MAX = 15
@@ -4576,6 +4599,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pl14.timers.reload_exit_not_empty = 0.65
 		
 			--Contractor Pistol
+				self.packrat.has_description = true
+				self.packrat.desc_id = "bm_packrat_sc_desc"			
 				self.packrat.AMMO_MAX = 75
 				self.packrat.CLIP_AMMO_MAX = 15
 				self.packrat.fire_mode_data.fire_rate = 0.08571428571
@@ -4609,6 +4634,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.packrat.timers.reload_exit_not_empty = 0.65
 
 			--Parabellum (Luger)
+				self.breech.has_description = true
+				self.breech.desc_id = "bm_breech_sc_desc"				
 				self.breech.timers = {
 					reload_not_empty = 1.55,
 					reload_empty = 2.1,
@@ -4649,6 +4676,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.timers.reload_exit_not_empty = 0.2
 
 			--Chimano Custom (Glock 22)
+				self.g22c.has_description = true
+				self.g22c.desc_id = "bm_g22c_sc_desc"			
 				self.g22c.timers = {
 					reload_not_empty = 1.47,
 					reload_empty = 2.12,
@@ -4687,6 +4716,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g22c.timers.reload_exit_not_empty = 0.65
 
 			--Baby Deagle
+				self.sparrow.has_description = true
+				self.sparrow.desc_id = "bm_sparrow_sc_desc"				
 				self.sparrow.CLIP_AMMO_MAX = 12
 				self.sparrow.AMMO_MAX = 60
 				self.sparrow.kick = {}
@@ -4720,6 +4751,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sparrow.timers.reload_exit_not_empty = 0.65
 
 			--Signature .40 (P226)
+				self.p226.has_description = true
+				self.p226.desc_id = "bm_p226_sc_desc"					
 				self.p226.AMMO_MAX = 60
 				self.p226.CLIP_AMMO_MAX = 15
 				self.p226.fire_mode_data.fire_rate = 0.08571428571
@@ -4752,6 +4785,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p226.timers.reload_exit_not_empty = 0.65
 	
 			--Leo (HS2000)
+				self.hs2000.has_description = true
+				self.hs2000.desc_id = "bm_hs2000_sc_desc"						
 				self.hs2000.CLIP_AMMO_MAX = 16
 				self.hs2000.AMMO_MAX = 60
 				self.hs2000.tactical_reload = 1
@@ -4792,6 +4827,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--PRIMARIES
 
 			--Akimbo Crosskill Guard
+				self.x_shrew.has_description = true
+				self.x_shrew.desc_id = "bm_x_shrew_sc_desc"				
 				self.x_shrew.fire_mode_data.fire_rate = 0.08571428571
 				self.x_shrew.single.fire_rate = 0.08571428571
 				self.x_shrew.CLIP_AMMO_MAX = 12
@@ -4825,6 +4862,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_shrew.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Interceptor .45
+				self.x_usp.has_description = true
+				self.x_usp.desc_id = "bm_x_usp_sc_desc"					
 				self.x_usp.kick = self.stat_info.kick_tables.right_recoil
 				self.x_usp.CLIP_AMMO_MAX = 24
 				self.x_usp.AMMO_MAX = 80
@@ -4858,6 +4897,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_usp.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Crosskill
+				self.x_1911.has_description = true
+				self.x_1911.desc_id = "bm_x_1911_sc_desc"					
 				self.x_1911.CLIP_AMMO_MAX = 16
 				self.x_1911.AMMO_MAX = 80
 				self.x_1911.fire_mode_data.fire_rate = 0.08571428571
@@ -4891,7 +4932,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_1911.timers.reload_exit_empty = 0.55
 				self.x_1911.timers.reload_exit_not_empty = 0.65
 
-			--Akimbo Model 54--
+			--Akimbo Model 54--		
+				self.x_type54.has_description = true
+				self.x_type54.desc_id = "bm_x_type54_sc_desc"			
 				self.x_type54.CLIP_AMMO_MAX = 18
 				self.x_type54.AMMO_MAX = 80
 				self.x_type54.FIRE_MODE = "single"
@@ -5015,6 +5058,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.c96.reload_speed_multiplier = 1.5
 
 			--Cavity 9mm
+				self.sub2000.has_description = true
+				self.sub2000.desc_id = "bm_sub2000_sc_desc"			
 				self.sub2000.categories = {"pistol"}
 				self.sub2000.CLIP_AMMO_MAX = 22
 				self.sub2000.AMMO_MAX = 80
@@ -5059,9 +5104,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Deagle
 				self.x_deagle.has_description = true
-				self.x_deagle.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.x_deagle.desc_id = "bm_x_deagle_sc_desc"					
 				self.x_deagle.use_data.selection_index = 2
-				self.x_deagle.has_description = false
 				self.x_deagle.CLIP_AMMO_MAX = 14
 				self.x_deagle.AMMO_MAX = 60
 				self.x_deagle.FIRE_MODE = "single"
@@ -5101,7 +5145,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Matever
 				--Keeping
 				self.x_2006m.has_description = true
-				self.x_2006m.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.x_2006m.desc_id = "bm_x_2006m_sc_desc"
 				self.x_2006m.fire_mode_data.fire_rate = 0.15789473684
 				self.x_2006m.AMMO_MAX = 60
 				self.x_2006m.kick = self.stat_info.kick_tables.vertical_kick
@@ -5142,7 +5186,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Model 87
 				self.x_model3.has_description = true
-				self.x_model3.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.x_model3.desc_id = "bm_x_model3_sc_desc"			
 				self.x_model3.fire_mode_data.fire_rate = 0.15789473684
 				self.x_model3.AMMO_MAX = 60
 				self.x_model3.kick = self.stat_info.kick_tables.moderate_kick
@@ -5182,7 +5226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Broncos
 				--Keeping
 				self.x_rage.has_description = true
-				self.x_rage.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.x_rage.desc_id = "bm_x_rage_sc_desc"					
 				self.x_rage.fire_mode_data.fire_rate = 0.19047619047
 				self.x_rage.AMMO_MAX = 60
 				self.x_rage.kick = self.stat_info.kick_tables.vertical_kick
@@ -5223,7 +5267,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Castigo
 				self.x_chinchilla.has_description = true
-				self.x_chinchilla.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.x_chinchilla.desc_id = "bm_x_chinchilla_sc_desc"				
 				self.x_chinchilla.panic_suppression_chance = 0.05
 				self.x_chinchilla.fire_mode_data.fire_rate = 0.19047619
 				self.x_chinchilla.AMMO_MAX = 60
@@ -5259,6 +5303,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.panic_suppression_chance = 0.05
 		
 			--RUS-12 Angry Tiger
+				self.rsh12.has_description = true
+				self.rsh12.desc_id = "bm_rsh12_sc_desc"				
 				self.rsh12.fire_mode_data.fire_rate = 0.1935
 				self.rsh12.AMMO_MAX = 40
 				self.rsh12.CLIP_AMMO_MAX = 5
@@ -5304,6 +5350,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--SECONDARIES
 
 			--Model 54--
+				self.type54.has_description = true
+				self.type54.desc_id = "bm_type54_sc_desc"					
 				self.type54.CLIP_AMMO_MAX = 9
 				self.type54.AMMO_MAX = 40
 				self.type54.tactical_reload = 1
@@ -5377,6 +5425,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54_underbarrel.timers.reload_exit_not_empty = 0.35
 
 			--Crosskill Guard
+				self.shrew.has_description = true
+				self.shrew.desc_id = "bm_shrew_sc_desc"			
 				self.shrew.fire_mode_data.fire_rate = 0.08571428571
 				self.shrew.single.fire_rate = 0.08571428571
 				self.shrew.CLIP_AMMO_MAX = 6
@@ -5408,6 +5458,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shrew.reload_speed_multiplier = 1.1
 
 			--Interceptor .45
+				self.usp.has_description = true
+				self.usp.desc_id = "bm_usp_sc_desc"			
 				self.usp.timers = {
 					reload_not_empty = 1.47,
 					reload_empty = 2.12,
@@ -5447,6 +5499,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.usp.timers.reload_exit_not_empty = 0.65
 
 			--Crosskill (1911)
+				self.colt_1911.has_description = true
+				self.colt_1911.desc_id = "bm_1911_sc_desc"				
 				self.colt_1911.fire_mode_data.fire_rate = 0.08571428571
 				self.colt_1911.single.fire_rate = 0.08571428571
 				self.colt_1911.CLIP_AMMO_MAX = 8
@@ -5480,6 +5534,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.colt_1911.timers.reload_exit_not_empty = 0.65
 
 			--Crosskill Chunky (M1911)
+				self.m1911.has_description = true
+				self.m1911.desc_id = "bm_m1911_sc_desc"				
 				self.m1911.tactical_reload = 1	
 				self.m1911.fire_mode_data.fire_rate = 0.08571428571
 				self.m1911.single.fire_rate = 0.08571428571
@@ -5516,9 +5572,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Deagle
 				--Back to secondary
-				self.deagle.use_data.selection_index = 1
 				self.deagle.has_description = true
-				self.deagle.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.deagle.desc_id = "bm_deagle_sc_desc"						
+				self.deagle.use_data.selection_index = 1
 				self.deagle.fire_mode_data.fire_rate = 0.133333
 				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.deagle.CLIP_AMMO_MAX = 7
@@ -5554,7 +5610,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Matever .357
 				self.mateba.has_description = true
-				self.mateba.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.mateba.desc_id = "bm_2006m_sc_desc"					
 				self.mateba.fire_mode_data.fire_rate = 0.15789474
 				self.mateba.AMMO_MAX = 30
 				self.mateba.timers.reload_not_empty = 3.6
@@ -5591,7 +5647,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Frenchman Model 87
 				self.model3.has_description = true
-				self.model3.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.model3.desc_id = "bm_model3_sc_desc"			
 				self.model3.fire_mode_data.fire_rate = 0.15789473684
 				self.model3.AMMO_MAX = 30
 				self.model3.kick = self.stat_info.kick_tables.moderate_kick
@@ -5626,7 +5682,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Bronco
 				self.new_raging_bull.has_description = true
-				self.new_raging_bull.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.new_raging_bull.desc_id = "bm_rage_sc_desc"				
 				self.new_raging_bull.fire_mode_data.fire_rate = 0.19047619047
 				self.new_raging_bull.AMMO_MAX = 30
 				self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
@@ -5663,7 +5719,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Castigo
 				self.chinchilla.has_description = true
-				self.chinchilla.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.chinchilla.desc_id = "bm_chinchilla_sc_desc"			
 				self.chinchilla.fire_mode_data.fire_rate = 0.19047619
 				self.chinchilla.AMMO_MAX = 30
 				self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick

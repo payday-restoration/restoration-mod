@@ -3844,7 +3844,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons[melee_id].melee_damage_delay = 0.6
 		self.melee_weapons[melee_id].anim_speed_mult = 1.2631
 	end
---]]
+
 	--melee_nin
 	melee_anim = {
 		'melee_g36'
@@ -3883,6 +3883,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.melee_g36.sounds.hit_gen = "g36_fire_single"
 		self.melee_weapons.melee_g36.sounds.hit_air = "primary_dryfire"
 	end
+	--]]
 
 	if self.melee_weapons.hfblade then
 		self.melee_weapons.hfblade.info_id = "bm_melee_katana_info"	

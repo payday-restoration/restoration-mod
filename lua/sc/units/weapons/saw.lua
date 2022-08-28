@@ -33,6 +33,11 @@ function SawWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spread_m
 		else
 			ammo_usage = 2
 		end
+		
+		if ray_res.hit_enemy then
+			ammo_usage = 1
+		end
+		
 		self:set_ammo_remaining_in_clip(math.max(self:get_ammo_remaining_in_clip() - ammo_usage, 0))
 		self:set_ammo_total(math.max(self:get_ammo_total() - ammo_usage, 0))
 		self:_check_ammo_total(user_unit)

@@ -3829,6 +3829,22 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
+	melee_anim = {
+		'dragon_slayer'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		self.melee_weapons[melee_id].anim_global_param = "melee_great"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"}
+		self.melee_weapons[melee_id].anim_attack_left_vars = {"var1"}
+		self.melee_weapons[melee_id].anim_attack_right_vars = {"var2"}
+		self.melee_weapons[melee_id].anim_attack_charged_vars = {"var3"}
+		self.melee_weapons[melee_id].expire_t = 1.45
+		self.melee_weapons[melee_id].repeat_expire_t = 1.20
+		self.melee_weapons[melee_id].melee_damage_delay = 0.6
+		self.melee_weapons[melee_id].anim_speed_mult = 1.2631
+	end
+
 	--melee_nin
 	melee_anim = {
 		'melee_g36'
@@ -3890,6 +3906,13 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			}
 		}
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
+	end
+
+	if self.melee_weapons.dragon_slayer then
+		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
+		self.melee_weapons.dragon_slayer.sounds = deep_clone(self.melee_weapons.halloween_sword.sounds)
+		self.melee_weapons.dragon_slayer.sounds.hit_body = "cash_loot_drop_reveal"
+		self.melee_weapons.dragon_slayer.sounds.hit_gen = "cash_loot_drop_reveal"
 	end
 
 

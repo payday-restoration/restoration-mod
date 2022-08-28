@@ -3828,7 +3828,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].anim_speed_mult = 1
 		end
 	end
-
+--[[
 	melee_anim = {
 		'dragon_slayer'
 	}
@@ -3844,7 +3844,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons[melee_id].melee_damage_delay = 0.6
 		self.melee_weapons[melee_id].anim_speed_mult = 1.2631
 	end
-
+--]]
 	--melee_nin
 	melee_anim = {
 		'melee_g36'
@@ -3907,14 +3907,14 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		}
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
-
+--[[
 	if self.melee_weapons.dragon_slayer then
 		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
 		self.melee_weapons.dragon_slayer.sounds = deep_clone(self.melee_weapons.halloween_sword.sounds)
 		self.melee_weapons.dragon_slayer.sounds.hit_body = "cash_loot_drop_reveal"
 		self.melee_weapons.dragon_slayer.sounds.hit_gen = "cash_loot_drop_reveal"
 	end
-
+--]]
 
 
 	local blanket_speed_mult = 1.15

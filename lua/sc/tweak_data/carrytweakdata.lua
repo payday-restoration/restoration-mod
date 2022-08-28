@@ -62,6 +62,22 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 	self.types.mega_heavy.can_run = false
 	self.types.mega_heavy.throw_distance_multiplier = 0.4	
 	
+	--Light bags that poof
+	self.types.cloaker_explosives_light = deep_clone(self.types.coke_light)
+	self.types.cloaker_explosives_light.can_poof = true	
+	
+	--Cloaker Cocaine
+	self.cloaker_cocaine = {
+		type = "cloaker_explosives_light",
+		name_id = "hud_carry_cloaker_cocaine",
+		bag_value = "cloaker_cocaine",
+		unit = "units/pd2_dlc_help/pickups/gen_pku_spooky_bag/gen_pku_spooky_bag",
+		visual_unit_name = "units/pd2_dlc_help/characters/npc_acc_spooky_bag/npc_acc_spooky_bag",
+		AI_carry = {
+			SO_category = "enemies"
+		}
+	}	
+	
 	--Overriding so cops won't try to snatch up the goats
 	self.goat = {
 		type = "medium",

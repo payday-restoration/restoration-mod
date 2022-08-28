@@ -21932,6 +21932,59 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 	end
 
+	if self.parts.wpn_fps_aug_body_aug_a1 then --Pawcio's AUG A1 Kit
+
+		self.parts.wpn_fps_aug_body_aug_a1.supported = true
+		self.parts.wpn_fps_aug_body_aug_a1.stats = {
+			value = 1,
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_aug_body_aug_a1.forbids = { "wpn_fps_upg_vg_ass_smg_stubby" }
+		self.parts.wpn_fps_aug_body_aug_a1.override = { 
+			wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		}
+
+		self.parts.wpn_fps_aug_body_aug_a3.supported = true
+		self.parts.wpn_fps_aug_body_aug_a3.stats = {
+			value = 1,
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_aug_body_aug_a3.forbids = { "wpn_fps_upg_vg_ass_smg_stubby" }
+		self.parts.wpn_fps_aug_body_aug_a3.override = { 
+			wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		}
+
+		self.parts.wpn_fps_aug_body_aug_a3vg.supported = true
+		self.parts.wpn_fps_aug_body_aug_a3vg.stats = {
+			value = 1
+		}
+
+		self.parts.wpn_fps_aug_m_a1_42.supported = true
+		self.parts.wpn_fps_aug_m_a1_42.stats = {
+			extra_ammo = 12,
+			concealment = -1,
+			reload = -1
+		}
+		self.parts.wpn_fps_m4_uupg_m_extend.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+		
+		self.parts.wpn_fps_aug_o_scope_a1.supported = true
+		self.parts.wpn_fps_aug_o_scope_a1.has_description = true
+		self.parts.wpn_fps_aug_o_scope_a1.desc_id = "bm_wp_upg_o_1_5_scope"			
+		self.parts.wpn_fps_aug_o_scope_a1.supported = true			
+		self.parts.wpn_fps_aug_o_scope_a1.stats = {
+			value = 3,
+			zoom = 5
+		}
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

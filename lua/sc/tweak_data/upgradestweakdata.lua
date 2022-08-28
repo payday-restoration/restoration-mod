@@ -336,13 +336,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
-		0.25,
-		0.15,
-		0.05,
-		-0.05,
+		0.2,
+		0.1,
+		0.0,
 		-0.1,
 		-0.15,
-		-0.25
+		-0.2,
+		-0.3
 	}
 	self.values.player.body_armor.dodge_grace = {
 		1.50,

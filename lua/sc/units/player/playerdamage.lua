@@ -1119,11 +1119,18 @@ end)
 function PlayerDamage:_max_armor()
 	local max_armor = self:_raw_max_armor()
 
+	--[[
 	--Stoic deletes armor.
 	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
 		max_armor = 0
 	end
-
+	]]--
+	
+	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
+		local conversion_factor = managers.player:upgrade_value("player", "armor_to_health_conversion") * 0.01
+		max_armor = max_armor * (1 - conversion_factor)
+	end
+	
 	return max_armor
 end
 

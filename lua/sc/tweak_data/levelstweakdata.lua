@@ -276,7 +276,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.ai_group_type = lapd
 	self.pent.package = {"packages/job_pent", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
-	self.pent.max_bags = 13
+	self.pent.max_bags = 17
 	
 	--///NEW OUTFITS\\\--
 	

@@ -289,8 +289,22 @@ local access_type_all = {
 }
 
 local ignored_groups = {
-	"Phalanx_minion",
-	"Phalanx_vip"
+	"Phalanx_vip_new",
+	"Phalanx_minion_new",
+	"Phalanx_sniper",
+	"Cap_Spring",
+	"Tank_Ben",
+	"Taser_Titan",
+	"Cap_Summers",
+	"medic_summers",
+	"boom_summers",
+	"taser_summers",
+	"Cap_Autumn",
+	"Autumn_Spooc",
+	"Titan_Spooc",
+	"HVH_Boss",
+	"HVH_Boss_Headless",
+	"HVH_Boss_Spooc"
 }
 
 function MutatorEnemyReplacer:modify_unit_categories(group_ai_tweak, difficulty_index)

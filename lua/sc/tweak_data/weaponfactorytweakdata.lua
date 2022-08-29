@@ -21855,6 +21855,110 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_ass_g36k_stockadapter then
+		self.parts.wpn_fps_upg_g36k_barrel_long.supported = true
+		self.parts.wpn_fps_upg_g36k_barrel_long.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_upg_g36k_barrel_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+
+		self.parts.wpn_fps_upg_g36k_barrel_medium.supported = true
+		self.parts.wpn_fps_upg_g36k_barrel_medium.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_upg_g36k_barrel_medium.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+
+		self.parts.wpn_fps_upg_g36k_fg_hkg36c.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_hkg36c.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_upg_g36k_fg_hkg36c.stats.value = nil
+		self.parts.wpn_fps_upg_g36k_fg_hkg36c.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+		self.parts.wpn_fps_upg_g36k_fg_hkg36k.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_hkg36k.stats = { 
+			spread = 1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g36k_fg_hkg36.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_hkg36.stats = { 
+			spread = 2,
+			concealment = -2
+		}
+
+		self.parts.wpn_fps_upg_g36k_fg_kacshort.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_kacshort.stats = { 
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_upg_g36k_fg_kac.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_kac.stats = { 
+			spread = -1,
+			recoil = 2
+		}
+		self.parts.wpn_fps_upg_g36k_fg_kaclong.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_kaclong.stats = { 
+			spread = -2,
+			recoil = 4
+		}
+		
+		self.parts.wpn_fps_upg_g36k_fg_hk243.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_hk243.stats = {
+			spread = 1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g36k_fg_hk243long.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_hk243long.stats = { 
+			spread = 2,
+			concealment = -2
+		}
+
+		self.parts.wpn_fps_upg_g36k_fg_bt.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_bt.stats = {
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_upg_g36k_fg_btlong.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_btlong.stats = { 
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_upg_g36k_fg_quadshort.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_quadshort.stats = {
+			concealment = 2,
+			recoil = -4
+		}
+		self.parts.wpn_fps_upg_g36k_fg_quad.supported = true
+		self.parts.wpn_fps_upg_g36k_fg_quad.stats = {
+			concealment = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_upg_g36k_grip_rubber1.supported = true
+		self.parts.wpn_fps_upg_g36k_grip_rubber1.stats = {
+			spread = 1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g36k_grip_rubber2.supported = true
+		self.parts.wpn_fps_upg_g36k_grip_rubber2.stats = {
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g36k_grip_rubber3.supported = true
+		self.parts.wpn_fps_upg_g36k_grip_rubber3.stats = {
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_g36k_grip_rubber3.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+
+		self.parts.wpn_fps_upg_g36k_export_sight.supported = true
+		self.parts.wpn_fps_upg_g36k_export_sight.desc_id = "bm_wp_upg_o_3_5"
+		self.parts.wpn_fps_upg_g36k_export_sight.has_description = true
+		self.parts.wpn_fps_upg_g36k_export_sight.stats = {
+			value = 1,
+			zoom = 25
+		}
+		self.parts.wpn_fps_upg_g36k_export_sight.stance_mod = {
+			wpn_fps_ass_g36k = {
+				translation = Vector3(0.01, -6, 0.37)
+			}
+		}
+
 		self.parts.wpn_fps_upg_g36k_mag20.supported = true
 		self.parts.wpn_fps_upg_g36k_mag20.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
 		self.parts.wpn_fps_upg_g36k_mag20.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
@@ -21883,8 +21987,48 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		
 		self.parts.wpn_fps_upg_g36k_mag_cmag.supported = true
+		self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = nil
+		self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag_cmag.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
 		self.parts.wpn_fps_upg_g36k_mag_cmag.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
+
+		self.parts.wpn_fps_upg_g36k_stock_classic.supported = true
+		self.parts.wpn_fps_upg_g36k_stock_classic.stats = deep_clone(stocks.adj_to_fold_stats)
+		self.parts.wpn_fps_upg_g36k_stock_classic.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+
+		self.parts.wpn_fps_upg_g36k_stock_sl8.supported = true
+		self.parts.wpn_fps_upg_g36k_stock_sl8.stats = deep_clone(stocks.adj_to_fold_stats)
+		self.parts.wpn_fps_upg_g36k_stock_sl8.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+
+		self.parts.wpn_fps_upg_g36k_stock_ext.supported = true
+		self.parts.wpn_fps_upg_g36k_stock_ext.stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_g36k_stock_ext.custom_stats = deep_clone(stocks.adj_rec_stats)
+
+		self.wpn_fps_ass_g36k.override = self.wpn_fps_ass_g36k.override or {}
+		self.wpn_fps_ass_g36k.override.wpn_fps_upg_m4_s_standard = {
+			stats = { value = 1 },
+			custom_stats = {}
+		}
+		self.wpn_fps_ass_g36k.override.wpn_fps_upg_m4_s_pts = {
+			stats = deep_clone(stocks.adj_acc_stats),
+			custom_stats = deep_clone(stocks.adj_acc_stats)
+		}
+		self.wpn_fps_ass_g36k.override.wpn_fps_upg_m4_s_crane = {
+			stats = deep_clone(stocks.adj_rec_stats),
+			custom_stats = deep_clone(stocks.adj_rec_stats)
+		}
+		self.wpn_fps_ass_g36k.override.wpn_fps_upg_m4_s_mk46 = {
+			stats = deep_clone(stocks.adj_rec_stats),
+			custom_stats = deep_clone(stocks.adj_rec_stats)
+		}
+		self.wpn_fps_ass_g36k.override.wpn_fps_upg_m4_s_ubr = {
+			stats = deep_clone(stocks.adj_hvy_rec_stats),
+			custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+		}
+		self.wpn_fps_ass_g36k.override.wpn_fps_snp_tti_s_vltor = {
+			stats = deep_clone(stocks.adj_hvy_acc_stats),
+			custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+		}
 
 		table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_g36k_mag20")	
 		table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_g36k_mag20magpul")	

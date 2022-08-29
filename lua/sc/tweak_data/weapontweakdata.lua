@@ -12887,10 +12887,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.super.timers.reload_exit_not_empty = 0.4
 	end
 
+	if self.g36k then --Pawcio's SCAR-L
+		self.g36k.recategorize = { "light_ar" }
+		self.g36k.damage_type = "assault_rifle"
+		self.g36k.tactical_reload = 1
+		self.g36k.nato = true
+		self.g36k.desc_id = "bm_g36_sc_desc"
+		self.g36k.has_description = true				
+		self.g36k.BURST_FIRE = 3
+		self.g36k.ADAPTIVE_BURST_SIZE = false
+		self.g36k.fire_mode_data.fire_rate = 0.08
+		self.g36k.AMMO_MAX = 150
+		self.g36k.CLIP_AMMO_MAX = 30
+		self.g36k.kick = self.stat_info.kick_tables.even_recoil
+		self.g36k.supported = true
+		self.g36k.ads_speed = 0.320
+		self.g36k.damage_falloff = {
+			start_dist = 2400,
+			end_dist = 6400,
+			min_mult = 0.4166
+		}
+		self.g36k.stats = {
+			damage = 24,
+			spread = 81,
+			recoil = 85,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 24,
+			suppression = 10,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.g36k.stats_modifiers = nil
+		self.g36k.reload_speed_multiplier = 1.2
+		self.g36k.timers.reload_not_empty = 2.4
+		self.g36k.timers.reload_exit_empty = 0.7
+		self.g36k.timers.reload_exit_not_empty = 0.8
+		self.g36k.sounds = deep_clone(self.g36.sounds)
+		--self.g36k.sounds.fire_single2 = "g36k_fire"
+		self.g36k.panic_suppression_chance = 0.05
+	end
+
 	if self.scarl then --Pawcio's SCAR-L
 		self.scarl.recategorize = { "heavy_ar" }
 		self.scarl.damage_type = "assault_rifle"
 		self.scarl.tactical_reload = 1
+		self.scarl.nato = true
 		self.scarl.lock_slide = true
 		self.scarl.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.scarl.sounds.fire_single = "m4_olympic_fire_single"

@@ -26,6 +26,9 @@
 				<file :name="ene_secret_service_2.unit"/>
 				<file :name="ene_secret_service_2_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_born/characters/ene_biker_female_2/">
+				<file :name="ene_biker_female_2_husk.unit"/>
+			</group>
 			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
 				<file :name="civ_male_locke_escort_contour.material_config"/>
 			</group>

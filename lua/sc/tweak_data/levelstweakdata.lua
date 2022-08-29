@@ -82,8 +82,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"
 
-	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/narr_born_1"}
-	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/narr_born_1"} --just in case 
+	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets", "packages/narr_born_1"}
+	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets", "packages/narr_born_1"} --just in case 
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"	
 

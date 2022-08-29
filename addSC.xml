@@ -118,7 +118,7 @@
 	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
 	<continent			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--additional FBI SUVs-->
 	
-	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers and biker guard as the camera man-->
+	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
 	<mission			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!--Adds Kung Fu Masters, more beat cops responding and possible captain encounter on Mayhem and above-->
 	

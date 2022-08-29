@@ -2891,7 +2891,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ARTFUL DODGER SUBTREE  ]]--
 			--Duck and Cover--
 			["menu_sprinter_beta_sc"] = "엄폐의 중요성",
-			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}##25%##만큼 앞당기고 회복률도 #{skill_color}##25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}##6%##만큼씩 채워집니다.\n\n웅크리고 있을 때 이동 속도가 #{skill_color}##10%##만큼 증가합니다. ",
+			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}#25%##만큼 앞당기고 회복률도 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}#6%##만큼씩 채워집니다.\n\n웅크리고 있을 때 이동 속도가 #{skill_color}#10%##만큼 증가합니다. ",
 
 			--Evasion--
 			["menu_awareness_beta_sc"] = "위기모면",

@@ -168,12 +168,6 @@
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/veteran_cop_2_df" />
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
-
-	<!--Dozer Zeal helm-->
-	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
-	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
-	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
-	<unit				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc" load="false"/>	
 	
 	<!--Titan Taser Helm Acc-->
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>

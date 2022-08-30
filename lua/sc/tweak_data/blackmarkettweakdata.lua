@@ -3885,7 +3885,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.invincible then
-		self.melee_weapons.invincible.info_id = "bm_melee_inner_child_info"	
+		self.melee_weapons.invincible.info_id = "bm_melee_inner_child_info"
 		self.melee_weapons.invincible.stats = deep_clone(self.melee_weapons.barbedwire.stats)
 		self.melee_weapons.invincible.dot_data = {
 			type = "bleed",
@@ -3899,6 +3899,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.dragon_slayer then
+		self.melee_weapons.dragon_slayer.info_id = "bm_melee_goat_info"
 		self.melee_weapons.dragon_slayer.special_weapon = "panic"
 		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
 		self.melee_weapons.dragon_slayer.sounds = deep_clone(self.melee_weapons.halloween_sword.sounds)

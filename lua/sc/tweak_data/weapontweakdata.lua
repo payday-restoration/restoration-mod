@@ -11652,8 +11652,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_socom.recategorize = { "heavy_pis" }
 		self.x_socom.damage_type = "heavy_pistol"
 		self.x_socom.tactical_reload = 2
+		self.x_socom.BURST_FIRE = 2
+		self.x_socom.BURST_FIRE_RATE_MULTIPLIER = 2
 		self.x_socom.fire_mode_data.fire_rate = 0.08571428571
-		self.x_socom.single.fire_rate = 0.08571428571
 		self.x_socom.CLIP_AMMO_MAX = 24
 		self.x_socom.AMMO_MAX = 80
 		self.x_socom.kick = self.stat_info.kick_tables.even_recoil

@@ -767,15 +767,13 @@ function PlayerDamage:damage_killzone(attack_data)
 			return
 		end
 
-		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
-
-		self:_check_chico_heal(attack_data)
-
-
 		local armor_reduction_multiplier = 0
 		if self:get_real_armor() <= 0 then
+			attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
 			armor_reduction_multiplier = 1
 		end
+
+		self:_check_chico_heal(attack_data)
 
 		local health_subtracted = self:_calc_armor_damage(attack_data)
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier

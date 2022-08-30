@@ -115,7 +115,7 @@ function PlayerInventoryGui:_get_armor_stats(name)
 		local conversion_ratio = managers.player:upgrade_value("player", "armor_to_health_conversion") * 0.01
 		local converted_armor = (base_stats.armor.value + skill_stats.armor.value) * conversion_ratio
 		local skill_in_effect = converted_armor ~= 0
-		skill_stats.armor.value = (base_stats.armor.value + skill_stats.armor.value) * -1
+		skill_stats.armor.value = skill_stats.armor.value - converted_armor
 		skill_stats.health.value = skill_stats.health.value + converted_armor
 		skill_stats.armor.skill_in_effect = skill_in_effect
 		skill_stats.health.skill_in_effect = skill_in_effect

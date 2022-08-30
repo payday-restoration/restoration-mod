@@ -115,6 +115,13 @@
 	
 	<mission			path="levels/narratives/bain/revenge/world/world" force="true" unload="true"/>
 	
+	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
+	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
+	
+	<!--better SWAT squads-->
+	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
+	
 	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
 	<continent			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--additional FBI SUVs-->
 	

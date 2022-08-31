@@ -1,5 +1,17 @@
-<materials version="3" group="ene_bulldozer_medic">
+<materials version="3" group="ene_bulldozer_1">
     <material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
+    </material>
+    <material name="mtr_body_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
+    </material>
+    <material name="mtr_medicbag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/equipment/gen_equipment_medicbag/gen_equipment_medicbag_nm"/>
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_medicbag/gen_equipment_medicbag_df"/>
+    </material>		
+    <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
         <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
     </material>
@@ -11,5 +23,27 @@
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df" mip="4"/>
     </material>
+    <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
+	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
+		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+    </material>
+    <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df" mip="4"/>
+    </material>
+
+	<material name="mtr_lens" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/glass/vehicle_glass_op"/>
+        <diffuse_texture file="units/pd2_crimefest_2015/update_2/masks/sputnik/glass_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+	</material>		
+	
+    <material name="mtr_glass_contour" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE">
+        <diffuse_texture file="units/white_df"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>			
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

@@ -8,12 +8,6 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
-		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back" />
-		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_chest/ene_acc_bulldozer_medic_classic_chest" />
-		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_helmet_plate/ene_acc_bulldozer_medic_classic_helmet_plate" />
-		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_neck/ene_acc_bulldozer_medic_classic_neck" />
-		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_stomache/ene_acc_bulldozer_medic_classic_stomache" />
-		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_throat/ene_acc_bulldozer_medic_classic_throat" />
 	</dependencies>
 
 	<extensions>

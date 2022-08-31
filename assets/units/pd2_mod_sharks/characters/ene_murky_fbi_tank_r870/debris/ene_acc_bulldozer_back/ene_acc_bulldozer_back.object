@@ -15,6 +15,7 @@
 	<graphics>
 		<lod_object name="grp_bulldozer_back">
 			<object name="g_armor_back" enabled="true" />
+		</lod_object>			
 	</graphics>
 	
 </dynamic_object>

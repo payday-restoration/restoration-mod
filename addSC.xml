@@ -996,11 +996,11 @@
 	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
 
 	<!--Classic Medic Dozer Armor Pieces-->
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	
 	<!--medic dosr-->
@@ -1014,19 +1014,19 @@
 	<sequence_manager	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
 
 	<!--Medic Dozer Armor Pieces-->
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	<!--MEME MAN-->
 	<object				path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>

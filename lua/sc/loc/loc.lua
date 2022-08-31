@@ -1480,8 +1480,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--AN-94/92
 			["bm_w_tilt"] = "KVK-99 Rifle",
 			["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
+			--HK G36
+			["bm_w_hkg36"] = "SG36 Rifle",
 			--SCAR-L
-			["bm_w_scarl"] = "Eagle Light Rifle",
+			["bm_w_scarl"] = "VF7S Rifle",
 			--Valmet Rk.62
 			["bm_w_rk62"] = "Velmer Rifle",
 
@@ -1511,16 +1513,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",		
-		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",		
+		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
 		
 		--Custom DMRs
 			--["bm_w_xeno"] = "MA14 Surge Rifle",	
-			["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",	
+			["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+			--VSS
+			["bm_w_vss"] = "Viktoriya Rifle",
+			["bm_vss_sc_desc"] = "A variant of the Valkyria configured for better range and accuracy.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 			--G3 HK79
-			["bm_w_g3hk79"] = "Gewehr-A3 GL79",
-			["bm_g3hk79_sc_desc_pc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",	
-			["bm_g3hk79_sc_desc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+			["bm_w_g3hk79"] = "Gewehr-A3 GL79 Rifle",
+			["bm_g3hk79_sc_desc_pc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			--BO3 XR2
 			["bm_w_xr2"] = "XR-2 Rifle",
 			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides 	an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
@@ -1534,10 +1538,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--R700
 		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--QBU88
-		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Winchester 1874
 		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
-		--TTI(TTY)		
+		--TTI(TTY)
 		["bm_w_tti"] = "Tecci .308 Sniper Rifle",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Scunt
@@ -1574,6 +1578,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_moss464spx"] = "Mosconi SPX Sniper Rifle",
 			--Winchester 1894
 			["bm_w_winchester1894"] = "Repeater 1894 Sniper Rifle",
+			--SVD
+			["bm_w_svd"] = "SV7 Sniper Rifle",
+			["bm_wp_wpn_fps_snp_svd_pso"] = "PSO-1 Scope",
+			--L115
+			["bm_w_l115"] = "AIM 90M Sniper Rifle",
 
 		--3GL
 		["bm_ms3gl_sc_desc"] = "Fires custom made 40mm rounds stacked in a single chamber using special technology, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="debris" slot="18">
-	<object file="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
+	<object file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 	</extensions>

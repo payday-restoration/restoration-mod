@@ -22,7 +22,7 @@ function MutatorMedicdozers:setup(data)
 	local unit_types_black = tweak_data.group_ai.unit_categories.BLACK_tank.unit_types
 	local unit_types_skull = tweak_data.group_ai.unit_categories.SKULL_tank.unit_types
 	
-	local medic_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+	local medic_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
 	local classic_medic_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic")
 
 	if difficulty_index <= 7 then 

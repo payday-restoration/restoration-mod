@@ -16206,9 +16206,9 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	table.insert(self.weap_ids, "akmsu_smg_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer"))	
 	
-	--[[Dozer MP5
+	--Dozer MP5
 	table.insert(self.weap_ids, "mp5_dozer")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_dozer/wpn_npc_mp5_dozer"))--]]	
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_dozer/wpn_npc_mp5_dozer"))
 		
 	--Dozer AA12
 	table.insert(self.weap_ids, "aa12_dozer")
@@ -16951,6 +16951,9 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.dlc1.list, "ene_security_gensec_guard_1")
 		table.insert(char_map.dlc1.list, "ene_security_gensec_guard_2")
 		table.insert(char_map.dlc1.list, "ene_security_gensec_3")
+		
+	--drm	
+		table.insert(char_map.drm.list, "ene_bulldozer_medic_sc")
 		
 	--flat
 		table.insert(char_map.flat.list, "ene_gang_colombian_1")

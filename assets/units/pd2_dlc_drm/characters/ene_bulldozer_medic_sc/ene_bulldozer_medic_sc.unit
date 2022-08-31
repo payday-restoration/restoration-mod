@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<object file="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc" />
 
 	<dependencies>
 		
@@ -39,7 +39,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

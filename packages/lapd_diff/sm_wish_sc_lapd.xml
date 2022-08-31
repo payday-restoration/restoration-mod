@@ -328,29 +328,29 @@
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
 	
 	<!--medic dosr-->
-	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true" load="true"/>
-	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk" force="true" load="true"/>
-	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
-	<model				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
-	<object				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
-	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_contour" force="true"/>
-	<sequence_manager	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
+	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc"  load="true"/>
+	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc_husk"  load="true"/>
+	<cooked_physics		path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc" />
+	<model				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc" />
+	<object				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc" />
+	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc" />
+	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc_contour" />
+	<sequence_manager	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc" />
 
 	<!--Medic Dozer Armor Pieces-->
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
+	<unit_mat				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
 	
-	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	<unit_obj				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	<!-- NEW BENELLI DOZER-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>

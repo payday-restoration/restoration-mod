@@ -1283,6 +1283,9 @@
 	<!--NPC Mp5-->
 	<model				path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
 	<object				path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
+	
+	<!--Dozer NPC MP5-->
+	<unit_obj			path="units/payday2/weapons/wpn_npc_mp5_dozer/wpn_npc_mp5_dozer" load="true" />
 
 	<!--cloaker, you have nightvision but why you use flashlight?-->
 	<object				path="units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical" force="true"/>	

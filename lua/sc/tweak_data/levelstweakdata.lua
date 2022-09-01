@@ -225,7 +225,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dah.flashlights_on = true
 	
 	self.dinner.ai_group_type = nypd
-	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
+	self.dinner.package = {"packages/narr_dinner", "packages/murkywatermisc"}
 	self.dinner.player_style = "slaughterhouse"
 	
 	self.ranc.ai_group_type = nypd
@@ -330,11 +330,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.chew.player_style = "loud_suit"
 	
-	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets"}
+	self.pbr2.package = {"packages/narr_jerry2", "packages/murkywatermisc"}
 	self.pbr2.player_style = "loud_suit"
 	
 	self.mia_1.player_style = "miami"
-	self.mia_2.package = {"packages/narr_mia_2", "packages/miscassets"}		
+	self.mia_2.package = {"packages/narr_mia_2", "packages/murkywatermisc"}		
 	self.mia_2.player_style = "miami"
 
 	self.mia_2.teams = {

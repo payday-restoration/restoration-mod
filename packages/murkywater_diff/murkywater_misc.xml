@@ -1,0 +1,186 @@
+<table directory="assets">		
+	
+	<!--Murky FBI SWAT M4-->
+	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour" force="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" force="false" load="true"/>
+	
+	<!--Murky FBI SWAT UMP-->
+	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>	
+	
+	<!--UMPSTER CAP-->	
+	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" load="true"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" />	
+	
+	<!--Shared textures-->	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df" force="false"/>	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_nm" force="false"/>	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_heads_atlas_df" force="false"/>	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_heads_atlas_nm" force="false"/>	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/fbi_body_df" force="false"/>	
+	
+	<!--NPC M60 -->
+	<cooked_physics		path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<material_config	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<model				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<object				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<sequence_manager	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false" load="false"/>
+	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_df" force="false"/>
+	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
+	
+	<!--Murky Security, just clones of the normal 'cops' for the sake of scripted spawn access flags. They function the exact same otherwise-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45_husk" force="false" load="true"/>	
+	
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5_husk" force="false" load="true"/>	
+
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870_husk" force="false" load="true"/>
+
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull_husk" force="false" load="true"/>
+
+	<!--Murky Cop C45-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" force="false"/>
+
+	<!--Murky Cop MP5-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5" force="false"/>
+	
+	<!--Murky Cop R870-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk" load="true"/>	
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870" force="false"/>
+	
+	<!--Murky Cop Raging Bull-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull_husk" load="true"/>	
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" force="false"/>
+	
+	<!--Murky Cop Textures-->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murkycop_df" />	
+	<!--Murkydozers (For Slaughterhouse and Birth of Sky)-->		
+	<!-- greendozer -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
+
+	<!--Murky Dozer 1 Armor Bits-->
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
+	
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/bulldozer_df" force="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/bulldozer_glass_op" force="false"/>	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_crk_df" force="false"/>	
+
+	<!--blackdozer -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+
+	<!--Murky Dozer 2 Armor Bits-->
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/bulldozer_saiga_df" force="false"/>
+
+	<!--skulldozer-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" load="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_contour" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
+
+	<!--Murky Dozer 3 Armor Bits-->
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/bulldozer_city_df" force="false"/>
+	
+	<!-- bendozer -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli" force="false"/>
+
+	<!--Murky Dozer 4 Armor Bits-->
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/bulldozer_minigun_df" force="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/bulldozer_minigun_nm" force="false"/>
+	
+	<!--Murky Medicdozer-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic_husk" load="true"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic_contour" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+
+	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/bulldozer_medic_df" force="false"/>
+	<!--Murkydozers end-->
+	
+</table>

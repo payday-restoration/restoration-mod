@@ -542,6 +542,7 @@
 	<!--///PACKAGES\\\-->	
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
 	<Package id="packages/miscassets" file="addMISC.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/murkywatermisc" file="packages/murkywater_diff/murkywater_misc.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/miscassetsmutators" file="addMISCMutators.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/> 

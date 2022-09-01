@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" orientation_object="rp_ene_acc_bulldozer_throat" />
+	<diesel materials="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic" orientation_object="rp_ene_acc_bulldozer_throat" />
 	
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

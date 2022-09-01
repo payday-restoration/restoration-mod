@@ -732,7 +732,7 @@ function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 		local attacker_unit = attack_data.attacker_unit
 		local variant = attack_data.variant
 
-		if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():is_category("assault_rifle", "snp") and attack_data.result.type == "death" then
+		if self._ammo_efficiency and attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():is_category("assault_rifle", "snp") and attack_data.result.type == "death" then
 			self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 		end
 	end

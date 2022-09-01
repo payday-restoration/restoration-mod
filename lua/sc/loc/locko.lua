@@ -1469,9 +1469,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM ARs
 		--AN-94/92
 		["bm_w_tilt"] = "KVK-99 소총",
-		["bm_tilt_sc_desc"] = "#{risk}#각 방아쇠의 처음 2발은## #{skill_color}#발사 속도의 3배로 발사합니다.##",		
+		["bm_tilt_sc_desc"] = "#{risk}#각 방아쇠의 처음 2발은## #{skill_color}#발사 속도의 3배로 발사합니다.##",	
+		--HK G36
+		["bm_w_hkg36"] = "SG36 소총",		
 		--SCAR-L
-		["bm_w_scarl"] = "Eagle Light 소총",
+		["bm_w_scarl"] = "VF7S 소총",
 		--Valmet Rk.62
 		["bm_w_rk62"] = "Velmer 소총",		
 
@@ -1494,7 +1496,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입하고## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
-		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}#소음기와 완전 통합되었고## #{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
+		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}##완전 통합## 소음기와 함께 제공되고 #{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 소총",
 		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
@@ -1508,10 +1510,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_w_xeno"] = "MA14 Surge Rifle",	
 		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
 		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",
+		--VSS
+		["bm_w_vss"] = "Viktoriya 소총",
+		["bm_vss_sc_desc"] = "더 개선된 사거리와 명중률로 구성된 Valkyria 소총의 개량형입니다.\n\n#{skill_color}##완전 통합## 소음기와 함께 제공되고 #{skill_color}#방탄복을 관통해 피해의 80%를 입히고, 적과 얇은 벽을 관통할 수 있습니다.##",		
 		--G3 HK79
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79 소총",
 		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3의 파생형 중 #{skill_color}#언더베럴 유탄 발사기##가 장착된 파생형입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다",	
-		["bm_g3hk79_sc_desc"] = "Gewehr-3의 파생형 중 #{skill_color}#언더베럴 유탄 발사기##가 장착된 파생형입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",		
 		--BO3 XR2
 		["bm_w_xr2"] = "XR-2 소총",
 		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
@@ -1567,7 +1571,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_moss464spx"] = "Mosconi SPX 저격소총",
 		--Winchester 1894
 		["bm_w_winchester1894"] = "Repeater 1894 저격소총",
-		
+		--SVD
+		["bm_w_svd"] = "SV7 저격소총",
+		["bm_wp_wpn_fps_snp_svd_pso"] = "PSO-1 조준경",
+		--L115
+		["bm_w_l115"] = "AIM 90M 저격소총",
+			
 		--3GL
 		["bm_ms3gl_sc_desc"] = "특수 기술을 사용한 단일 챔버에 쌓인 맞춤형 40mm 유탄을 발사하여 좁은 공간에서 신속한 후속 조치를 가능하게 합니다.\n\n발사 모드를 변경하면 #{skill_color}#유탄을 3점사로 발사 할 수 있습니다.##",
 		--COMMANDO 101/M202 FLASH

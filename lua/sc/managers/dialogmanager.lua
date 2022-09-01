@@ -869,6 +869,23 @@ function DialogManager:queue_dialog(id, ...)
 				escape_time = 540
 			end	
 		end	
+		
+		--White Xmas
+		if id == "Play_vld_cp1_03" or id == "Play_pln_cp1_08" then
+			if difficulty_index <= 2 then
+				escape_time = 660
+			elseif difficulty_index == 3 then
+				escape_time = 540
+			elseif difficulty_index == 4 then
+				escape_time = 510
+			elseif difficulty_index == 5 then
+				escape_time = 480	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 450						
+			else
+				escape_time = 420
+			end	
+		end	
 	
 		--Big Oil Day 1--
 		if id == "pln_bo1_05" then

@@ -10519,7 +10519,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 		"wpn_fps_ass_shak12_ns_muzzle",
 		"wpn_fps_ass_shak12_ns_suppressor"
 	}
-	
+	self.parts.wpn_fps_ass_asval_b_standard.sound_switch = {
+		suppressed = "suppressed_b"
+	}
 	--Solid Stock
 	self.parts.wpn_fps_ass_asval_s_solid.pcs = {}
 	self.parts.wpn_fps_ass_asval_s_solid.supported = true
@@ -19759,7 +19761,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 		--Low Profile Compensator
 		self.parts.wpn_fps_upg_pis_ns_edge.supported = true
+		self.parts.wpn_fps_upg_pis_ns_edge.perks = nil
+		self.parts.wpn_fps_upg_pis_ns_edge.desc_id = nil
+		self.parts.wpn_fps_upg_pis_ns_edge.has_description = nil
 		self.parts.wpn_fps_upg_pis_ns_edge.stats = deep_clone(muzzle_device.muzzle_b_stats)
+		self.parts.wpn_fps_upg_pis_ns_edge.custom_stats = nil
 
 		--(Reinbeck) Shell Rack
 		self.parts.wpn_fps_shot_beck_shells.supported = true
@@ -22127,6 +22133,63 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 3,
 			zoom = 5
 		}
+	end
+
+	if self.parts.wpn_fps_upg_vss_pso_alt then
+		self.parts.wpn_fps_snp_vss_barrel.sound_switch = {
+			suppressed = "suppressed_a"
+		}
+	
+
+		table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_vss_pso_alt")
+		self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)
+	end
+
+	if self.parts.wpn_fps_snp_svd_magrelease then
+
+		self.parts.wpn_fps_snp_svd_pso.stats = { zoom = 30 }
+		self.parts.wpn_fps_snp_svd_pso.stance_mod.wpn_fps_snp_svd = {
+			translation = Vector3(0.474, -17, -2.868)
+		}
+		self.parts.wpn_fps_snp_svd_pso.stance_mod.wpn_fps_snp_siltstone = {
+			translation = Vector3(0.472, -17, -2.34)
+		}
+
+		self.parts.wpn_fps_upg_svd_irons.supported = true
+		self.parts.wpn_fps_upg_svd_irons.stats = {
+			value = 0
+		}
+
+		self.parts.wpn_fps_upg_svd_handguard_modern.supported = true
+		self.parts.wpn_fps_upg_svd_handguard_modern.stats = {
+			value = 3,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_svd_stock_modern.supported = true
+		self.parts.wpn_fps_upg_svd_stock_modern.stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+		self.parts.wpn_fps_upg_svd_stock_modern.custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+
+		self.parts.wpn_fps_upg_svd_stock_folding.supported = true
+		self.parts.wpn_fps_upg_svd_stock_folding.stats = deep_clone(stocks.fixed_to_folder_stats)
+		self.parts.wpn_fps_upg_svd_stock_folding.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+
+		self.parts.wpn_fps_upg_svd_stock_solid.supported = true
+		self.parts.wpn_fps_upg_svd_stock_solid.stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+		self.parts.wpn_fps_upg_svd_stock_solid.custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+
+		--Stuff to allow the SVD's scope to be mounted on the vanilla SVD
+		self.parts.wpn_fps_snp_svd_pso_grom = deep_clone(self.parts.wpn_fps_snp_svd_pso)
+		self.parts.wpn_fps_snp_svd_pso_grom.pcs = {}
+		self.parts.wpn_fps_snp_svd_pso_grom.name_id = "bm_wp_wpn_fps_snp_svd_pso"
+		self.parts.wpn_fps_snp_svd_pso_grom.desc_id = "bm_wp_upg_o_4"
+		self.parts.wpn_fps_snp_svd_pso_grom.has_description = true
+		self.parts.wpn_fps_snp_svd_pso_grom.alt_icon = "guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/svd"
+		self.parts.wpn_fps_snp_svd_pso_grom.stats = { value = 0, zoom = 30 }
+
+		table.insert(self.wpn_fps_snp_siltstone.uses_parts, "wpn_fps_snp_svd_pso_grom")
+		self.wpn_fps_snp_siltstone_npc.uses_parts = deep_clone(self.wpn_fps_snp_siltstone.uses_parts)
+
 	end
 
 --Resmod Custom Weapon stuff

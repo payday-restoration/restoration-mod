@@ -1126,6 +1126,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
+		["bm_wp_upg_o_4_default"] = "Default scope for this weapon.\n#{risk}#4x magnification.##\n\n#{item_stage_2}#This sight cannot be removed but can be replaced by using a different sight.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_5"] = "Long-range scope.\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#5x magnification.##",
@@ -1481,9 +1482,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_tilt"] = "KVK-99 Rifle",
 			["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
 			--HK G36
-			["bm_w_hkg36"] = "SG36 Rifle",
+			["bm_w_g36k"] = "SG36K Rifle",
 			--SCAR-L
-			["bm_w_scarl"] = "VF7S Rifle",
+			["bm_w_scarl"] = "VF 16S Rifle",
 			--Valmet Rk.62
 			["bm_w_rk62"] = "Velmer Rifle",
 
@@ -1580,7 +1581,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_winchester1894"] = "Repeater 1894 Sniper Rifle",
 			--SVD
 			["bm_w_svd"] = "SV7 Sniper Rifle",
-			["bm_wp_wpn_fps_snp_svd_pso"] = "PSO-1 Scope",
+			["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
 			--L115
 			["bm_w_l115"] = "AIM 90M Sniper Rifle",
 

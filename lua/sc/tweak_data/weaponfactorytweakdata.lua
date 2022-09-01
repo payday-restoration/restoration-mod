@@ -22135,18 +22135,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
-	if self.parts.wpn_fps_upg_vss_pso_alt then
+	if self.parts.wpn_fps_upg_vss_pso_alt then --Pawcio's VSS
 		self.parts.wpn_fps_snp_vss_barrel.sound_switch = {
 			suppressed = "suppressed_a"
 		}
-	
+		self.parts.wpn_fps_snp_vss_pso.stats = { zoom = 30 }
+		self.parts.wpn_fps_snp_vss_pso.stance_mod = {
+			wpn_fps_snp_vss = {
+				translation = Vector3(0.63, -25, 4.02)
+			},
+			wpn_fps_ass_asval = {
+				translation = Vector3(0.63, -25, 4.02)
+			}
+		}
+		self.parts.wpn_fps_upg_vss_pso_alt.stats = { zoom = 30 }
+		self.parts.wpn_fps_upg_vss_pso_alt.stance_mod = deep_clone(self.parts.wpn_fps_snp_vss_pso.stance_mod)
 
 		table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_vss_pso_alt")
 		self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)
+
+		self.parts.wpn_fps_upg_vss_irons.supported = true
+		self.parts.wpn_fps_upg_vss_irons.stats = {
+			value = 0
+		}
+		self.parts.wpn_fps_upg_vss_irons.stance_mod = {
+			wpn_fps_snp_vss = {
+				translation = Vector3(-0.022, -9, 6.6)
+			}
+		}
+
+		self.parts.wpn_fps_upg_vss_irons_il.supported = true
+		self.parts.wpn_fps_upg_vss_irons_il.stats = {
+			value = 0
+		}
+		self.parts.wpn_fps_upg_vss_irons_il.stance_mod = {
+			wpn_fps_snp_vss = {
+				translation = Vector3(-0.022, -9, 6.6)
+			}
+		}
+		
+		self.parts.wpn_fps_upg_vss_mag_20rnd.supported = true
+		self.parts.wpn_fps_upg_vss_mag_20rnd.stats = {
+			value = 2,
+			extra_ammo = 10,
+			reload = -2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_upg_vss_stock_alt.supported = true
+		self.parts.wpn_fps_upg_vss_stock_alt.stats = {
+			concealment = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_upg_vss_stock_folding.supported = true
+		self.parts.wpn_fps_upg_vss_stock_folding.stats = deep_clone(stocks.fixed_to_folder_stats)
+		self.parts.wpn_fps_upg_vss_stock_folding.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	end
 
-	if self.parts.wpn_fps_snp_svd_magrelease then
-
+	if self.parts.wpn_fps_snp_svd_magrelease then --Pawcio's SVD
 		self.parts.wpn_fps_snp_svd_pso.stats = { zoom = 30 }
 		self.parts.wpn_fps_snp_svd_pso.stance_mod.wpn_fps_snp_svd = {
 			translation = Vector3(0.474, -17, -2.868)
@@ -22159,6 +22206,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_svd_irons.stats = {
 			value = 0
 		}
+
+		self.parts.wpn_fps_upg_svd_barrel_long.supported = true
+		self.parts.wpn_fps_upg_svd_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_svd_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_svd_barrel_short.supported = true
+		self.parts.wpn_fps_upg_svd_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_upg_svd_barrel_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_svd_supp_pbs1.supported = true	
+		self.parts.wpn_fps_upg_svd_supp_pbs1.stats = {
+			value = 2,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_upg_svd_supp_pbs1.custom_stats = nil
 
 		self.parts.wpn_fps_upg_svd_handguard_modern.supported = true
 		self.parts.wpn_fps_upg_svd_handguard_modern.stats = {

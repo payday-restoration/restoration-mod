@@ -10336,6 +10336,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 				}				
 				self.m32.kick = self.stat_info.kick_tables.right_kick
+				self.m32.has_description = true
+				self.m32.desc_id = "bm_m32_sc_desc"
 				self.m32.fire_mode_data.fire_rate = 0.6
 				self.m32.fire_rate_multiplier = 1.5
 				--self.m32.BURST_FIRE = 2
@@ -13017,6 +13019,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tec9.sounds.fire_single = "mp9_fire_single"
 	end	
 
+	if self.vss then
+		self.vss.categories = { 
+			"assault_rifle",
+			"dmr",
+		}
+		self.vss.recategorize = {"dmr_ar"}
+		self.vss.damage_type = "sniper"
+		self.vss.desc_id = "bm_vss_sc_desc"
+		self.vss.has_description = true
+		self.vss.AMMO_MAX = 60
+		self.vss.CLIP_AMMO_MAX = 10
+		self.vss.FIRE_MODE = "auto"
+		self.vss.fire_mode_data = {}
+		self.vss.fire_mode_data.fire_rate = 0.075
+		self.vss.CAN_TOGGLE_FIREMODE = true
+		self.vss.kick = self.stat_info.kick_tables.moderate_kick
+		self.vss.supported = true
+		self.vss.ads_speed = 0.360
+		self.vss.damage_falloff = {
+			start_dist = 900,
+			end_dist = 5200,
+			min_mult = 0.33333
+		}
+		self.vss.stats = {
+			damage = 60,
+			spread = 82,
+			recoil = 78,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 19,
+			suppression = 20,
+			alert_size = 1,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.vss.stats_modifiers = nil
+		self.vss.can_shoot_through_enemy = true
+		self.vss.can_shoot_through_wall = true
+		self.vss.panic_suppression_chance = 0.05
+		self.vss.sounds.fire = "val_fire"
+		self.vss.sounds.fire_single = "val_fire_single"
+		self.vss.sounds.fire_auto = "val_fire"
+		self.vss.sounds.stop_fire = "val_stop"
+		self.vss.timers.reload_exit_empty = 0.65
+		self.vss.timers.reload_exit_not_empty = 0.85
+		self.vss.reload_speed_multiplier = 1.1
+	end
+
 	if self.g3hk79 then
 		self.g3hk79.categories = { 
 			"assault_rifle",
@@ -13279,6 +13331,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.l115.timers.reload_not_empty = 2.55
 		self.l115.timers.reload_exit_empty = 0.7
 		self.l115.timers.reload_exit_not_empty = 0.75
+	end
+
+	if self.svd then
+		self.svd.recategorize = { "heavy_snp" }
+		self.svd.categories = {
+			"snp",
+			"semi_snp"
+		}
+		self.svd.lock_slide = true
+		self.svd.upgrade_blocks = nil
+		--self.svd.has_description = true
+		--self.svd.desc_id = "bm_siltstone_sc_desc"
+		self.svd.CLIP_AMMO_MAX = 10
+		self.svd.AMMO_MAX = 40
+		self.svd.fire_mode_data.fire_rate = 0.4
+		self.svd.sms = 0.8
+		self.svd.kick = self.stat_info.kick_tables.right_kick
+		self.svd.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.svd.supported = true
+		self.svd.ads_speed = 0.480
+		self.svd.damage_falloff = {
+			start_dist = 2400,
+			end_dist = 6500,
+			min_mult = 0.5
+		}
+		self.svd.stats = {
+			damage = 90,
+			spread = 90,
+			recoil = 41,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 18,
+			suppression = 5,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.svd.reload_speed_multiplier = 0.82
+		self.svd.armor_piercing_chance = 1
+		self.svd.stats_modifiers = nil
+		self.svd.sounds.fire = "siltstone_fire"
+		self.svd.panic_suppression_chance = 0.05
+		self.svd.timers.reload_exit_empty = 0.4
+		self.svd.timers.reload_exit_not_empty = 0.4
 	end
 
 	if self.musket then --Pawcio's Musket

@@ -1335,7 +1335,6 @@
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 				
 	<!--murky and OMNIA seqmans-->
-	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
 	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky"/>
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	

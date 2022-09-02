@@ -7520,7 +7520,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.desc_id = "bm_aug_sc_desc"
 				self.aug.has_description = true					
 				self.aug.AMMO_MAX = 150
-				self.aug.fire_mode_data.fire_rate = 0.08275862
+				self.aug.CLIP_AMMO_MAX = 30
+				self.aug.fire_mode_data.fire_rate = 0.08333
 				self.aug.kick = self.stat_info.kick_tables.moderate_left_kick
 				self.aug.supported = true
 				self.aug.ads_speed = 0.300
@@ -7532,7 +7533,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.stats = {
 					damage = 24,
 					spread = 88,
-					recoil = 85,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -7547,7 +7548,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.timers.reload_exit_empty = 1.05
 				self.aug.timers.reload_exit_not_empty = 1.7
 				self.aug.panic_suppression_chance = 0.05
-				self.aug.CLIP_AMMO_MAX = 30
 
 			--Ak17
 				self.flint.desc_id = "bm_flint_sc_desc"

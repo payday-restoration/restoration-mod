@@ -3881,16 +3881,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 		40
 	}
 	self.parts.wpn_fps_aug_b_long.supported = true
-	self.parts.wpn_fps_aug_b_long.stats = {
-		value = 5,
-		spread = 3,
-		concealment = -3
-	}
-	self.parts.wpn_fps_aug_b_long.custom_stats = {
-		falloff_start_mult = 1.225,
-		falloff_end_mult = 1.225,
-		ads_speed_mult = 1.075
-	}
+	self.parts.wpn_fps_aug_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_aug_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 	--(UAR) Short Barrel
 	self.parts.wpn_fps_aug_b_short.pcs = {
@@ -3900,16 +3892,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 		40
 	}
 	self.parts.wpn_fps_aug_b_short.supported = true
-	self.parts.wpn_fps_aug_b_short.stats = {
-		value = 3,
-		spread = -1,
-		concealment = 1
-	}
-	self.parts.wpn_fps_aug_b_short.custom_stats = {
-		falloff_start_mult = 0.925,
-		falloff_end_mult = 0.925,
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_aug_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_aug_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 	--A3 Tactical Foregrip
 	self.parts.wpn_fps_aug_fg_a3.pcs = {
@@ -3921,14 +3905,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	self.parts.wpn_fps_aug_fg_a3.supported = true
 	self.parts.wpn_fps_aug_fg_a3.stats = {
 		value = 2,
-		spread = -1,
-		recoil = 4,
+		recoil = 2,
 		concealment = -1
 	}
 
-	if not self.wpn_fps_ass_aug.override then
-		self.wpn_fps_ass_aug.override = {}
-	end
+	self.wpn_fps_ass_aug.override = self.wpn_fps_ass_aug.override or {}
 
 	self.wpn_fps_ass_aug.override.wpn_fps_upg_vg_ass_smg_stubby = {
 		stats = {
@@ -9826,16 +9807,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	self.parts.wpn_fps_aug_body_f90.supported = true
 	self.parts.wpn_fps_aug_body_f90.stats = {
 		value = 2,
-		recoil = -4,
-		concealment = 1 
+		recoil = -4
 	}
-
 	self.parts.wpn_fps_aug_body_f90.custom_stats = {
-		rof_mult = 1.075862
+		rof_mult = 1.086111
 	}
-	self.parts.wpn_fps_aug_body_f90.adds = {
-		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
-	}
+	self.parts.wpn_fps_aug_body_f90.adds = nil
 	
 	--CQB Barrel
 	self.parts.wpn_fps_ass_ak5_b_short.pcs = {}
@@ -22173,7 +22150,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				translation = Vector3(-0.022, -9, 6.6)
 			}
 		}
-		
+
 		self.parts.wpn_fps_upg_vss_mag_20rnd.supported = true
 		self.parts.wpn_fps_upg_vss_mag_20rnd.stats = {
 			value = 2,

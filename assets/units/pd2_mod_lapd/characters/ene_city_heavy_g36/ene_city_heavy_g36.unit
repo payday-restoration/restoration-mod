@@ -14,7 +14,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="fbi_heavy_swat" />
-			<var name="_default_weapon_id" value="g36" />
+			<var name="_default_weapon_id" value="m416_npc" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

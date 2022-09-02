@@ -6965,7 +6965,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	}		
 
 	--US Marshals, used on Texas heists
-	if difficulty_index == 7 then
+	if difficulty_index <= 7 then
 	self.unit_categories.marshal_marksman = {
 		unit_types = {
 			america = {

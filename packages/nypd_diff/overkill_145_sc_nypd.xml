@@ -381,28 +381,7 @@
 
 	
 		
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
-	
-
-	<add from_db="true" path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" type="unit">
-		<effect load="true" path="effects/particles/weapons/sniper_glint_marshal"/>
-		<effect load="true" path="effects/particles/weapons/rifle/muzzleflash_3dp"/>
-		<effect load="true" path="effects/particles/weapons/sniper_trail_marshal"/>
-		
-		
-		<object path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
-		<material_config path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
-		<sequence_manager path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
-
-		<unit path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat"/>
-		<object path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat"/>
-		<material_config path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat"/>
-		
-		<unit path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"/>
-		<object path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"/>
-		<material_config path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"/>
-		<unit load="true" path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_husk"/>
-	</add>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>
 	
 	<!--Titanshield-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>

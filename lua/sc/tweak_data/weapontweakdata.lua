@@ -13025,11 +13025,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"dmr",
 		}
 		self.vss.recategorize = {"dmr_ar"}
+		self.vss.warsaw = true
 		self.vss.damage_type = "sniper"
 		self.vss.desc_id = "bm_vss_sc_desc"
 		self.vss.has_description = true
 		self.vss.AMMO_MAX = 60
 		self.vss.CLIP_AMMO_MAX = 10
+		self.vss.tactical_reload = 1
 		self.vss.FIRE_MODE = "auto"
 		self.vss.fire_mode_data = {}
 		self.vss.fire_mode_data.fire_rate = 0.075
@@ -13079,6 +13081,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g3hk79.has_description = true
 		self.g3hk79.desc_id = "bm_g3hk79_sc_desc"
 		self.g3hk79.AMMO_MAX = 40
+		self.g3hk79.tactical_reload = 1
 		self.g3hk79.CLIP_AMMO_MAX = 20
 		self.g3hk79.fire_mode_data.fire_rate = 0.12
 		self.g3hk79.CAN_TOGGLE_FIREMODE = true

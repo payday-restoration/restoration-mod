@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" orientation_object="rp_ene_acc_murkywater_hat" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_murkywater_hat" />
+			<object name="c_convex" collision_type="convex" mass="1.5" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="cloth">
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_ene_acc_murkywater_hat" enabled="true" culling_object="c_convex">
+				<lod_object name="lod_hat">
+					<object name="g_hat_lod1" enabled="true"  max_distance="1000" />
+					<object name="g_hat_lod2" enabled="true" />
+				</lod_object>
+		</graphic_group>
+	</graphics>
+	
+</dynamic_object>

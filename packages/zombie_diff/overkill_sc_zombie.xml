@@ -92,6 +92,15 @@
 	
 	<texture			path="units/pd2_mod_halloween/characters/ene_spook_1/spook_hvh_df"  />	
 	
+	<!--zombie med mp5-->
+    <object				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_husk" load="true"/>
+	
 	<!--taser-->
 	<unit				path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"  load="true"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1_husk"  load="true"/>

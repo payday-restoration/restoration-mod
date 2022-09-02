@@ -21943,10 +21943,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.parts.wpn_fps_upg_g36k_mag20.supported = true
+		self.parts.wpn_fps_upg_g36k_mag20.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag20.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
 		self.parts.wpn_fps_upg_g36k_mag20.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
 
 		self.parts.wpn_fps_upg_g36k_mag20magpul.supported = true
+		self.parts.wpn_fps_upg_g36k_mag20magpul.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag20magpul.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
 		self.parts.wpn_fps_upg_g36k_mag20magpul.stats.reload = 6
 		self.parts.wpn_fps_upg_g36k_mag20magpul.stats.spread = -1
@@ -21954,6 +21956,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_g36k_mag20magpul.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
 
 		self.parts.wpn_fps_upg_g36k_mag30magpul.supported = true
+		self.parts.wpn_fps_upg_g36k_mag30magpul.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag30magpul.stats = {
 			value = 3,
 			concealment = -1,
@@ -21962,6 +21965,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.parts.wpn_fps_upg_g36k_mag_dual30.supported = true
+		self.parts.wpn_fps_upg_g36k_mag_dual30.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag_dual30.stats = {
 			value = 3,
 			concealment = -1,
@@ -21970,7 +21974,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		
 		self.parts.wpn_fps_upg_g36k_mag_cmag.supported = true
-		self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag_cmag.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
 		self.parts.wpn_fps_upg_g36k_mag_cmag.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)

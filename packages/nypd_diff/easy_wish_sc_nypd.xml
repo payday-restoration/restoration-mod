@@ -312,7 +312,8 @@
 	<model				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
 	<object				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
 	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
-	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_contour" />			
+	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_contour" />
+	<sequence_manager	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
 	<cooked_physics		path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
 
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />

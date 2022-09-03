@@ -14628,13 +14628,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			initial_spawn_delay = 30,
 			amount = {
 				1,
-				1
+				2
 			},
 			spawn = {
 				{
 					respawn_cooldown = 45,
 					amount_min = 1,
-					amount_max = 1,
+					amount_max = 2,
 					rank = 1,
 					freq = 1,
 					unit = "titan_sniper",
@@ -14744,6 +14744,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}			
 		}
 	}	
+	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W1 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "titan_sniper",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
 	
 	--Wave 2
 	self.enemy_spawn_groups.SKM_Light_Swat_W2 = {
@@ -14882,6 +14896,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}		
+	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W2 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "titan_sniper",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
 
 	--Wave 3
 	self.enemy_spawn_groups.SKM_Light_Swat_W3 = {
@@ -15038,6 +15066,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W3 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "titan_sniper",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
 	
 	--Wave 4
 	self.enemy_spawn_groups.SKM_Light_Swat_W4 = {
@@ -15227,6 +15269,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}		
 		}
 	}	
+	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W4 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "titan_sniper",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
 	
 	--Wave 5
 	self.enemy_spawn_groups.SKM_Light_Swat_W5 = {
@@ -15495,6 +15551,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W5 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "titan_sniper",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
+	
 	--Wave 6, more or less just normal DS now
 	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
 		amount = {3, 4},
@@ -15872,6 +15942,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W6 = {
+		amount = {1, 2},
+		spawn = {
+			{
+				unit = "titan_sniper",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
 	--Wave 7, more or less just normal DS now WITH Bravo support
 	self.enemy_spawn_groups.SKM_Light_Swat_W7 = {
 		amount = {3, 4},
@@ -16248,7 +16331,22 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}		
+	}	
+	--Replace Titan Snipers with Bravo Sharpshooters from Wave 7
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W7 = {
+		amount = {2, 2},
+		spawn = {
+			{
+				unit = "Bravo_Sniper",
+				freq = 1,
+				amount_min = 2,
+				amount_max = 2,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
+	
 	--Wave 8, DS but only Bravos
 	self.enemy_spawn_groups.SKM_Light_Swat_W8 = {
 		amount = {3, 4},
@@ -16625,7 +16723,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}	
+	}
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W8 = {
+		amount = {2, 2},
+		spawn = {
+			{
+				unit = "Bravo_Sniper",
+				freq = 1,
+				amount_min = 2,
+				amount_max = 2,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
 	--Wave 9
 	self.enemy_spawn_groups.SKM_Light_Swat_W9 = {
 		amount = {3, 4},
@@ -17002,7 +17113,22 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}		
+	}	
+	self.enemy_spawn_groups.SKM_Titan_Sniper_W9 = {
+		amount = {2, 2},
+		spawn = {
+			{
+				unit = "Bravo_Sniper",
+				freq = 1,
+				amount_min = 2,
+				amount_max = 2,
+				tactics = self._tactics.marshal_marksman,
+				rank = 1
+			}			
+		}
+	}
+	
+	
 	
 	--Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {

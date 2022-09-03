@@ -412,7 +412,21 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.06,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
-		},	
+		},
+		SKM_Titan_Sniper = {
+			0, --Unused
+			0.08, --Wave 1
+			0.08, --Wave 2
+			0.09, --...
+			0.09,
+			0.1,
+			0.1,
+			0.12,
+			0.12,
+			0.15,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
 		SKM_Booms = {
 			0, --Unused
 			0, --Wave 1

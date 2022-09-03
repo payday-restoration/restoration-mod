@@ -111,7 +111,6 @@ function restoration:Init()
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
 		nft_heist = restoration.captain_types.spring, --EN EF TEE HEIST
 		anlh = restoration.captain_types.spring, --An End To Liang
-		hwu = restoration.captain_types.spring, --hwUwU (Avalon's Shadow)
 		constantine_butcher_lvl = restoration.captain_types.spring, --Butcher's Bay
 		constantine_bank_lvl = restoration.captain_types.spring, --Pacific Bank
 		santas_hardware_store = restoration.captain_types.spring, --Santa Spring Is Coming To Town
@@ -143,6 +142,7 @@ function restoration:Init()
 		hntn = restoration.captain_types.autumn, --harvest and trustee north
 		wetwork = restoration.captain_types.autumn,  --res map package wetworks
 		bluewave = restoration.captain_types.autumn,  --res map bluewave
+		hwu = restoration.captain_types.autumn, --hwUwU (Avalon's Shadow)
 		amsdeal1 = restoration.captain_types.autumn,  --Armsdeal Alleyway
 		Gambling_room = restoration.captain_types.autumn,  --Underground Bargains
 		branchbank_meth = restoration.captain_types.autumn,  --Bank Heist: Meths
@@ -176,8 +176,7 @@ function restoration:Init()
 		"skm_nightmare_lvl",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl",
-		"constantine_policestation_lvl",
-		"hwu"
+		"constantine_policestation_lvl"
 	}
 			
 	--[[restoration.captain_viper = {

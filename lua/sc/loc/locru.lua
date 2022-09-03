@@ -910,7 +910,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ ОТРЯД ВИНТЕРСА",
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ВИНТЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
@@ -922,7 +922,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		})
 	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ ОТРЯД СПРИНГА",
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА СПРИНГА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})		
 	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
 		LocalizationManager:add_localized_strings({	
@@ -930,7 +930,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		})
 	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАВПРАВЛЯЕТСЯ ОТРЯД ОТЕМА",
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ОТЕМА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})		
 	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	
@@ -2086,7 +2086,7 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
+			["hud_assault_assault"] = "ИДЕТ ШТУРМ НАЁМНИКОВ",
 			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
 			["hud_assault_alpha"] = "ШTУPM HAЁMHИKOB"
 		})
@@ -2094,7 +2094,7 @@ if ai_type == r then
 elseif ai_type == z then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Итдё Плоиецский Шрутм",
+			["hud_assault_assault"] = "Итде Плоиецский Шрутм",
 			["hud_assault_cover"] = "ОСТВЙТСЬ В УРКЫТИИ...МОЗГИИ",
 			["hud_assault_alpha"] = "ПЛОИЕЦСКИЙ ШРУТМ"
 		})
@@ -2110,7 +2110,7 @@ elseif ai_type == f then
 elseif ai_type == m then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Идёт операция Murkywater",
+			["hud_assault_assault"] = "Идет операция Murkywater",
 			["hud_assault_alpha"] = "ОПЕРАЦИЯ MURKYWATER"
 		})
 	end)
@@ -2857,7 +2857,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "Ковбой",
-				["menu_gun_fighter_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПистолеты перезаряжаются на #{skill_color}#5%## быстрее.\n\nШтраф точности при стрельбе во время движения уменьшен на #{skill_color}#40%## для пистолетов.\n\nУменьшение штрафа на точность зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nПистолеты перезаряжаются ещё на #{skill_color}#25%## быстрее.",
+				["menu_gun_fighter_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПистолеты перезаряжаются на #{skill_color}#5%## быстрее.\n\nШтраф к точности при стрельбе во время движения уменьшен на #{skill_color}#40%## для пистолетов.\n\nУменьшение штрафа на точность зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nПистолеты перезаряжаются ещё на #{skill_color}#25%## быстрее.",
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Акимбо",
@@ -2973,7 +2973,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_3_desc_sc"] = "Ваша полоска уворота заполняется на ##100%## при восстановлении брони.\n\nВы получаете ##5## уворота.",
 		["menu_deck5_5_desc_sc"] = "Вы можете получить на ##60%## больше запасного здоровья.\n\nВы носите на ##1## мешок для тел больше.",
 		["menu_deck5_7_desc_sc"] = "Вы получаете ##120## временного здоровья при поднятии.\n\nВы получаете дополнительные ##5## очков уворота.",
-		["menu_deck5_9_desc_sc"] = "Пока у вас есть временное здоровье, вы получаете ##10%## устойчивости и ##20%## бонус к скорости передвижения.\n\nУстойчивость уменьшает урон по вашему здоровью, до максимальных #{skill_color}#$deflection## и накладывается после всех остальных бонусов.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_deck5_9_desc_sc"] = "Пока у вас есть временное здоровье, вы получаете ##10%## устойчивости и ##20%## бонус к скорости передвижения.\n\nУстойчивость уменьшает урон по вашему здоровью, до максимальных ##60%## и накладывается после всех остальных бонусов.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 		--Muscle
 		["menu_st_spec_2_desc_sc"] = "Силовик - это тот, к кому обращается мафия, когда нужно насилие. Они - основа любой преступной организации.\n\nИх вызывают, если нужно кого-то избить, сломать ноги, проломить череп или просто напомнить, кто здесь босс.\n\n\n\nБонусы полной колоды:\n##-##Вы получаете на ##40%## больше здоровья.\n##-##Вы используете сумки для тел и взаимодействуете с гражданскими на ##75%## быстрее.\n##-##Вы можете использовать свое оружие чтобы ##посеять панику среди врагов.\n##-##Ваш уворот увеличен на ##10## очков.##\n##-##Вы получаете на ##25%## больше здоровья после поднятия.",

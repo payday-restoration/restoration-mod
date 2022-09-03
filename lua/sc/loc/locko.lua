@@ -909,32 +909,27 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 윈터스 분대 접근 중",
+			["hud_assault_vip"] = "캡틴 윈터스를 죽여 어썰트 종료시키기",
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 서머스 팀 접근 중",
-		})
-	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 스프링 접근 중",
+			["hud_assault_vip"] = "캡틴 서머스 팀을 죽여 어썰트 종료시키기",
 		})
 	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 스프링 분대 접근 중",
-		})
-	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 어텀 접근 중",
+			["hud_assault_vip"] = "캡틴 스프링을 죽여 어썰트 종료시키기",
 		})		
 	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴 어텀 분대 접근 중",
+			["hud_assault_vip"] = "캡틴 어텀을 죽여 어썰트 종료시키기",
 		})
 	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "악몽을 마주하고 잠에서 깨어나라",
 		})
+	else LocalizationManager:add_localized_strings({	
+			["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기", --레스토레이션 모드와 일관성 있게 추가했음 (I added this line for consistency with resmod)
+		})	
 	end
 	
 end)

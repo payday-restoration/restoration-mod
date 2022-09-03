@@ -910,27 +910,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN WINTERS SQUAD",
+			["hud_assault_vip"] = "KILL CAPTAIN WINTERS TO END ASSAULT",
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN SUMMERS TEAM",
-		})
-	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN SPRING",
+			["hud_assault_vip"] = "KILL CAPTAIN SUMMERS TEAM TO END ASSAULT",
 		})
 	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN SPRING'S SQUAD",
+			["hud_assault_vip"] = "KILL CAPTAIN SPRING TO END ASSAULT",
 		})		
-	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN",
-		})
 	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "INCOMING CAPTAIN AUTUMN SQUAD",
+			["hud_assault_vip"] = "KILL CAPTAIN AUTUMN TO END ASSAULT",
 		})		
 	elseif captain_type == restoration.captain_types.hvh then
 		LocalizationManager:add_localized_strings({	

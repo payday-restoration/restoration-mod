@@ -22099,9 +22099,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_aug_m_a1_42.stats = {
 			extra_ammo = 12,
 			concealment = -1,
-			reload = -1
+			reload = -2
 		}
-		self.parts.wpn_fps_m4_uupg_m_extend.custom_stats = {
+		self.parts.wpn_fps_aug_m_a1_42.custom_stats = {
 			ads_speed_mult = 1.025
 		}
 		
@@ -22160,6 +22160,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = 10,
 			reload = -2,
 			concealment = -1
+		}
+		self.parts.wpn_fps_m4_uupg_m_extend.custom_stats = {
+			ads_speed_mult = 1.025
 		}
 
 		self.parts.wpn_fps_upg_vss_stock_alt.supported = true
@@ -22232,6 +22235,45 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		table.insert(self.wpn_fps_snp_siltstone.uses_parts, "wpn_fps_snp_svd_pso_grom")
 		self.wpn_fps_snp_siltstone_npc.uses_parts = deep_clone(self.wpn_fps_snp_siltstone.uses_parts)
+	end
+
+	if self.parts.wpn_fps_upg_sks_mag_fixed10 then
+		self.parts.wpn_fps_upg_sks_mag_fixed10.supported = true
+		self.parts.wpn_fps_upg_sks_mag_fixed10.has_description = nil
+		self.parts.wpn_fps_upg_sks_mag_fixed10.desc_id = "bm_wp_upg_m_sksclip"
+		self.parts.wpn_fps_upg_sks_mag_fixed10.stats = { concealment = 1 }
+		self.parts.wpn_fps_upg_sks_mag_fixed10.custom_stats = { sks_clip = true }
+
+		self.parts.wpn_fps_upg_sks_mag_detach20.supported = true
+		self.parts.wpn_fps_upg_sks_mag_detach20.stats = { extra_ammo = 10, reload = -2, concealment = -1 }
+		self.parts.wpn_fps_upg_sks_mag_detach20.custom_stats = { ads_speed_mult = 1.025 }
+
+		self.parts.wpn_fps_upg_sks_barrel_med.supported = true
+		self.parts.wpn_fps_upg_sks_barrel_med.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_upg_sks_barrel_med.stats.bayonet_range = -20
+		self.parts.wpn_fps_upg_sks_barrel_med.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+
+		self.parts.wpn_fps_upg_sks_barrel_short.supported = true
+		self.parts.wpn_fps_upg_sks_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_sks_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.parts.wpn_fps_upg_sks_o_pu.desc_id = "bm_wp_upg_o_3_5"
+		self.parts.wpn_fps_upg_sks_o_pu.has_description = true
+		self.parts.wpn_fps_upg_sks_o_pu.stats = { value = 0, zoom = 25 }
+
+		self.parts.wpn_fps_upg_sks_bayonet.supported = true
+		self.parts.wpn_fps_upg_sks_bayonet.stats = {
+			value = 5,
+			concealment = -5,
+			max_damage = 6,
+			min_damage = 6,
+			max_damage_effect = 1,
+			min_damage_effect = 1,
+			bayonet_range = 50
+		}
+		self.parts.wpn_fps_upg_sks_bayonet.custom_stats = {
+			ads_speed_mult = 1.125
+		}
 
 	end
 

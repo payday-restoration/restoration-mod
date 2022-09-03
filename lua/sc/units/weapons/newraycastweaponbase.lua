@@ -687,6 +687,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.big_scope then
 				self._has_big_scope = true
 			end
+			if stats.sks_clip then
+				self:weapon_tweak_data().timers.reload_exit_not_empty = 1.2
+				self:weapon_tweak_data().tactical_reload = nil
+				self:ammo_base():weapon_tweak_data().tactical_reload = nil
+			end
 
 			if not self:is_npc() then
 				if stats.sms then
@@ -701,6 +706,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
 	end
+
 
 	if self._cbfd_to_add_this_check_elsewhere then
 		self._sound_fire:set_switch("suppressed", "regular")

@@ -13019,6 +13019,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tec9.sounds.fire_single = "mp9_fire_single"
 	end	
 
+	if self.sks then
+		self.sks.categories = { 
+			"assault_rifle"
+		}
+		self.sks.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.sks.lock_slide = true
+		self.sks.lock_slide_alt = true
+		self.sks.recategorize = {"dmr_ar"}
+		self.sks.damage_type = "sniper"
+		self.sks.AMMO_MAX = 60
+		self.sks.CLIP_AMMO_MAX = 10
+		self.sks.tactical_reload = 1
+		self.sks.FIRE_MODE = "single"
+		self.sks.fire_mode_data = {}
+		self.sks.fire_mode_data.fire_rate = 0.1
+		self.sks.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.sks.supported = true
+		self.sks.ads_speed = 0.360
+		self.sks.damage_falloff = {
+			start_dist = 2500,
+			end_dist = 5200,
+			min_mult = 0.4
+		}
+		self.sks.stats = {
+			damage = 45,
+			spread = 81,
+			recoil = 81,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 24,
+			suppression = 20,
+			alert_size = 1,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.sks.stats_modifiers = nil
+		self.sks.can_shoot_through_enemy = true
+		self.sks.can_shoot_through_wall = true
+		self.sks.panic_suppression_chance = 0.05
+		self.sks.timers.reload_exit_not_empty = 0.6
+		self.sks.timers.reload_exit_empty = 0.6
+	end
+
 	if self.vss then
 		self.vss.categories = { 
 			"assault_rifle",

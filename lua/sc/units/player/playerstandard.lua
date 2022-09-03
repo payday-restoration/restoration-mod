@@ -1169,8 +1169,14 @@ function PlayerStandard:_start_action_running(t)
 				
 	self:set_running(true)
 
-	self._equipped_unit:base():tweak_data_anim_stop("fire")
-	self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
+	local weap_base = self._equipped_unit:base()
+	weap_base:tweak_data_anim_stop("fire")
+	weap_base:tweak_data_anim_stop("fire_steelsight")
+	if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
+		weap_base:tweak_data_anim_stop("reload")
+		weap_base:tweak_data_anim_stop("reload_left")
+		weap_base:tweak_data_anim_stop("magazine_empty")
+	end
 
 	self._end_running_expire_t = nil
 	self._start_running_t = t

@@ -19815,11 +19815,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 1
 		}
 		self.parts.wpn_fps_shot_amr12_fg_railed.custom_stats = {}
+		self.parts.wpn_fps_shot_amr12_fg_railed.adds = nil
 
 		--(AMG-12G) Breacher Foregrip
 		self.parts.wpn_fps_shot_amr12_fg_short.supported = true
 		self.parts.wpn_fps_shot_amr12_fg_short.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_shot_amr12_fg_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+		self.parts.wpn_fps_shot_amr12_fg_short.adds = nil
+		
+		self.parts.wpn_fps_shot_amr12_o_front.adds = nil
+		self.parts.wpn_fps_shot_amr12_rail.adds = nil
 
 		self.parts.wpn_fps_shot_amr12_b_standard.supported = true
 
@@ -19882,6 +19887,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_shot_amr12.override.wpn_fps_ass_m16_s_op = {
 			stats = deep_clone(stocks.fixed_acc_stats),
 			custom_stats = deep_clone(stocks.fixed_acc_stats)
+		}
+		self.wpn_fps_shot_amr12.override.wpn_fps_m16_fg_standard = {
+			adds = {}
 		}
 
 		table.insert(self.wpn_fps_shot_amr12.uses_parts, "wpn_fps_upg_i_singlefire")		

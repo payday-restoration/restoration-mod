@@ -198,10 +198,6 @@
 		<decal_mesh name="c_body_plate" enabled="false" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>
 
-	<effects>
-		<effect_spawner name="es_light" enabled="true" object="e_light" effect="effects/payday2/particles/character/flashlight_ss" />
-	</effects>
-
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 

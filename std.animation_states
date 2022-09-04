@@ -443,6 +443,30 @@
 			<attr name="name" value="std/stand/still/idle/look"/>
 		</target>
 	</tweak>
+	<!-- Fix recoil flag not being set on crouch autofire -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/crh/recoil"/>
+		</search>
+		<target mode="replace"/>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/std/recoil"/>
+		</search>
+		<target mode="append">
+			<state name="upper_body/crh/recoil" type="template_state" segment="upper_body">
+				<default blend="8" />
+				<keys>
+					<key at="enter" set_extension="anim_data" extension_key="recoil" extension_value="true"/>
+					<key at="exit" set_extension="anim_data" extension_key="recoil" extension_value="false"/>
+				</keys>
+				<exit name="upper_body/empty"/>
+			</state>
+		</target>
+	</tweak>
 	<!-- Bleedout state fixes -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>

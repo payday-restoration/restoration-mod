@@ -2490,6 +2490,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "척탄병",
+		["mutator_specials_override_sniper"] = "저격수",
 		
 		["mutator_titandozers_desc"] = "할로윈 홀리데이 효과",
 		["mutator_titandozers_longdesc"] = "머리 없는 불도저가 울프의 악몽에서 빠져나와 현실이 되었습니다! 이제 일반 불도저가 머리 없는 불도저 변형으로 변경되고 다른 할로윈 효과가 활성화됩니다!",		

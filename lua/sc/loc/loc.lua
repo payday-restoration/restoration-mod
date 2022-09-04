@@ -2391,6 +2391,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "Grenadiers",
+		["mutator_specials_override_sniper"] = "Snipers",	
 		
 		["mutator_titandozers_desc"] = "Halloween Holiday Effects",
 		["mutator_titandozers_longdesc"] = "The Headless Bulldozers have escaped from Wolf's nightmares and become reality! Regular Bulldozers will now be their Headless Bulldozer variants and other Halloween effects will now be active!",

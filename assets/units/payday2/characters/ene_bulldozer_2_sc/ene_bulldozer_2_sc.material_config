@@ -3,6 +3,10 @@
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_saiga_df"/>
     </material>
+	<material name="mtr_body_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_saiga_df"/>
+    </material>
     <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_saiga_df"/>

@@ -159,6 +159,8 @@
 	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/-->
 
 	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
+	
+	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
 
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>

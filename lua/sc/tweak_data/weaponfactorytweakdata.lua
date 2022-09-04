@@ -3905,8 +3905,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	self.parts.wpn_fps_aug_fg_a3.supported = true
 	self.parts.wpn_fps_aug_fg_a3.stats = {
 		value = 2,
+		spread = 1,
 		recoil = 2,
-		concealment = -1
+		concealment = -2
 	}
 
 	self.wpn_fps_ass_aug.override = self.wpn_fps_ass_aug.override or {}
@@ -9802,15 +9803,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		total_ammo_mod = -25
 	}
 	
-	--Raptor Polymer Body
+	--Raptor Polymer Body/Thales F88/90 Stock
 	self.parts.wpn_fps_aug_body_f90.pcs = {}
 	self.parts.wpn_fps_aug_body_f90.supported = true
 	self.parts.wpn_fps_aug_body_f90.stats = {
 		value = 2,
-		recoil = -4
+		recoil = -4,
+		concealment = -2
 	}
 	self.parts.wpn_fps_aug_body_f90.custom_stats = {
-		rof_mult = 1.086111
+		rof_mult = 1.090277,
+		ads_speed_mult = 1.05
 	}
 	self.parts.wpn_fps_aug_body_f90.adds = nil
 	

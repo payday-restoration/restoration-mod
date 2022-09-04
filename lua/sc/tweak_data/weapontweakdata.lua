@@ -7255,7 +7255,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.supported = true
 				self.amcar.ads_speed = 0.320
 				self.amcar.damage_falloff = {
-					start_dist = 2100,
+					start_dist = 1800,
 					end_dist = 5800,
 					min_mult = 0.5
 				}
@@ -7282,6 +7282,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.amcar.timers.reload_exit_empty = 1
 					self.amcar.timers.reload_exit_not_empty = 1
 				end
+				self.amcar.reload_speed_multiplier = 0.975
 				self.amcar.panic_suppression_chance = 0.05
 			
 			--Commando 553
@@ -7298,7 +7299,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.damage_falloff = {
 					start_dist = 3300,
 					end_dist = 8000,
-					min_mult = 0.5
+					min_mult = 0.6
 				}
 				self.s552.stats = {
 					damage = 20,
@@ -7315,6 +7316,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.s552.stats_modifiers = nil
+				self.s552.reload_speed_multiplier = 1
 				if SystemFS:exists("assets/mod_overrides/Classic Weapon Animations") then
 					self.s552.timers.reload_not_empty = 2.5
 					self.s552.timers.reload_empty = 3.45
@@ -7323,6 +7325,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.s552.timers.reload_not_empty = 1.7
 					self.s552.timers.reload_empty = 2.35					
 				end
+				self.s552.reload_speed_multiplier = self.s552.reload_speed_multiplier * 0.9
 				self.s552.timers.reload_exit_empty = 0.55
 				self.s552.timers.reload_exit_not_empty = 0.75
 				self.s552.panic_suppression_chance = 0.05
@@ -7418,7 +7421,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m4.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 81,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -7430,6 +7433,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.new_m4.stats_modifiers = nil
+				self.new_m4.reload_speed_multiplier = 1
 				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 					self.new_m4.timers.reload_not_empty = 1.6
 					self.new_m4.timers.reload_empty = 2.3
@@ -7443,13 +7447,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.new_m4.timers.reload_exit_not_empty = 0.95
 					self.new_m4.reload_speed_multiplier = 1.05
 				end
+				self.new_m4.reload_speed_multiplier = self.new_m4.reload_speed_multiplier * 1.02
 				self.new_m4.panic_suppression_chance = 0.05
 
 			--Ak5
 				self.ak5.desc_id = "bm_ak5_sc_desc"
-				self.ak5.has_description = true			
-				self.ak5.auto.fire_rate = 0.08571428571
-				self.ak5.fire_mode_data.fire_rate = 0.08571428571
+				self.ak5.has_description = true
+				self.ak5.fire_mode_data.fire_rate = 0.0857142
 				self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
 				if math.random() <= 0.05 then
 					--The 5 in ak5 stands for
@@ -7465,7 +7469,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 86,
+					recoil = 87,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -7481,6 +7485,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.timers.reload_exit_empty = 1.00
 				self.ak5.timers.reload_exit_not_empty = 0.95
 				self.ak5.panic_suppression_chance = 0.05
+				self.ak5.reload_speed_multiplier = 1.05
 
 			--Union 5.56
 				self.corgi.desc_id = "bm_corgi_sc_desc"
@@ -7500,7 +7505,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.stats = {
 					damage = 24,
 					spread = 85,
-					recoil = 74,
+					recoil = 75,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -7514,7 +7519,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.stats_modifiers = nil
 				self.corgi.panic_suppression_chance = 0.05
 				self.corgi.timers.reload_exit_empty = 0.6
-				self.corgi.timers.reload_exit_not_empty = 0.8
+				self.corgi.timers.reload_exit_not_empty = 0.75
+				self.corgi.reload_speed_multiplier = 0.85
 
 			--UAR (AUG)
 				self.aug.desc_id = "bm_aug_sc_desc"
@@ -7522,7 +7528,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.AMMO_MAX = 150
 				self.aug.CLIP_AMMO_MAX = 30
 				self.aug.fire_mode_data.fire_rate = 0.08333
-				self.aug.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.aug.kick = self.stat_info.kick_tables.moderate_kick
 				self.aug.supported = true
 				self.aug.ads_speed = 0.300
 				self.aug.damage_falloff = {
@@ -7548,6 +7554,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.timers.reload_exit_empty = 1.05
 				self.aug.timers.reload_exit_not_empty = 1.7
 				self.aug.panic_suppression_chance = 0.05
+				self.aug.reload_speed_multiplier = 0.975
 
 			--Ak17
 				self.flint.desc_id = "bm_flint_sc_desc"
@@ -7558,7 +7565,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.42857142857		
 				self.flint.ADAPTIVE_BURST_SIZE = false									
 				self.flint.fire_mode_data.fire_rate = 0.08571428571
-				self.flint.auto.fire_rate = 0.08571428571
 				self.flint.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.flint.supported = true
 				self.flint.ads_speed = 0.340
@@ -7617,7 +7623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ak74.stats_modifiers = nil
 				self.ak74.panic_suppression_chance = 0.05
-				self.ak74.reload_speed_multiplier = 1.1
+				self.ak74.reload_speed_multiplier = 1.15
 				self.ak74.timers.reload_exit_empty = 0.55
 				self.ak74.timers.reload_exit_not_empty = 0.9
 
@@ -7699,6 +7705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.komodo.timers.reload_exit_empty = 0.7
 				self.komodo.timers.reload_not_empty = 2.10
 				self.komodo.timers.reload_exit_not_empty = 0.8
+				self.komodo.reload_speed_multiplier = 0.82
 
 			--Clarion (IS THAT A DEAGLE)
 				self.famas.desc_id = "bm_menu_sc_famas_desc"
@@ -7739,6 +7746,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.famas.panic_suppression_chance = 0.05
 				self.famas.BURST_FIRE = 3
 				self.famas.ADAPTIVE_BURST_SIZE = false
+				self.famas.reload_speed_multiplier = 1.1
 
 			--CR 805
 				self.hajk.desc_id = "bm_menu_sc_hajk_desc"
@@ -7815,7 +7823,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m16.stats_modifiers = nil
 				self.m16.panic_suppression_chance = 0.05
-				self.m16.reload_speed_multiplier = 1.1
+				self.m16.reload_speed_multiplier = 1.12
 				self.m16.timers.reload_exit_empty = 0.7
 				self.m16.timers.reload_exit_not_empty = 0.95
 
@@ -7932,7 +7940,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.timers.reload_exit_empty = 0.8
 				self.akm.timers.reload_exit_not_empty = 0.95
 				self.akm.timers.reload_not_empty = 2.2
-				self.akm.reload_speed_multiplier = 1.1
+				self.akm.reload_speed_multiplier = 1.17
 				self.akm.panic_suppression_chance = 0.05
 				--Gold AK
 				self.akm_gold.bmp = 500
@@ -7945,7 +7953,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm_gold.timers.reload_exit_empty = 0.8
 				self.akm_gold.timers.reload_exit_not_empty = 0.95
 				self.akm_gold.timers.reload_not_empty = 2.2
-				self.akm_gold.reload_speed_multiplier = 1.1
+				self.akm_gold.reload_speed_multiplier = 1.17
 				self.akm_gold.supported = true
 				self.akm_gold.ads_speed = 0.380
 				self.akm_gold.damage_falloff = {
@@ -8004,6 +8012,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.groza.stats_modifiers = nil
+				self.groza.reload_speed_multiplier = 1
 				if SystemFS:exists("assets/mod_overrides/Groza Animation Overhaul") then
 					self.groza.timers.reload_not_empty = 1.95
 					self.groza.timers.reload_empty = 2.75
@@ -8023,6 +8032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.groza_underbarrel.timers.reload_exit_not_empty = 0.65
 					self.groza_underbarrel.reload_speed_multiplier = 0.66666
 				end
+				self.groza.reload_speed_multiplier = self.groza.reload_speed_multiplier * 0.86
 				self.groza_underbarrel.upgrade_blocks = {
 					weapon = {
 						"clip_ammo_increase"
@@ -8074,8 +8084,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.akmsu.stats = {
 					damage = 30,
-					spread = 71,
-					recoil = 67,
+					spread = 73,
+					recoil = 71,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 27,
@@ -8089,8 +8099,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akmsu.stats_modifiers = nil
 				self.akmsu.timers.reload_not_empty = 1.95 
 				self.akmsu.timers.reload_empty = 3.7
-				self.akmsu.timers.reload_exit_empty = 0.6
-				self.akmsu.timers.reload_exit_not_empty = 0.55
+				self.akmsu.timers.reload_exit_empty = 0.75
+				self.akmsu.timers.reload_exit_not_empty = 0.77
+				self.akmsu.reload_speed_multiplier = 1.11
 
 	--[[     DMRs     ]]
 
@@ -8138,6 +8149,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.asval.panic_suppression_chance = 0.05
 				self.asval.timers.reload_exit_empty = 0.65
 				self.asval.timers.reload_exit_not_empty = 0.85
+				self.asval.reload_speed_multiplier = 1.08
 
 			--Eagle Heavy
 				self.scar.desc_id = "bm_scar_sc_desc"
@@ -8221,6 +8233,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.timers.reload_exit_empty = 0.325
 				self.galil.timers.reload_not_empty = 2.7
 				self.galil.timers.reload_exit_not_empty = 0.75
+				self.galil.reload_speed_multiplier = 1.1
 
 			--Falcon (FAL)
 				self.fal.AMMO_MAX = 80
@@ -8365,6 +8378,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.shak12.stats_modifiers = nil
+				self.shak12.reload_speed_multiplier = 0.85
 				self.shak12.can_shoot_through_enemy = true
 				self.shak12.can_shoot_through_wall = true
 				self.shak12.panic_suppression_chance = 0.05	
@@ -11703,7 +11717,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 100,
 			recoil = 96,
 			zoom = 1,
-			concealment = math.random(0,32),
+			concealment = 32,
 			suppression = 1,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -11734,7 +11748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 100,
 			recoil = 96,
 			zoom = 1,
-			concealment = math.random(0,32),
+			concealment = 32,
 			suppression = 1,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -11751,6 +11765,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.hpb then --Gambyt's Browning HP	
+		self.hpb.recategorize = {"light_pis"}
 		self.hpb.has_description = false
 		self.hpb.tactical_reload = 1
 		self.hpb.fire_mode_data.fire_rate = 0.08571428571
@@ -13028,7 +13043,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.lock_slide_alt = true
 		self.sks.recategorize = {"dmr_ar"}
 		self.sks.damage_type = "sniper"
-		self.sks.AMMO_MAX = 60
+		self.sks.AMMO_MAX = 80
 		self.sks.CLIP_AMMO_MAX = 10
 		self.sks.tactical_reload = 1
 		self.sks.FIRE_MODE = "single"
@@ -13036,7 +13051,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.fire_mode_data.fire_rate = 0.1
 		self.sks.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.sks.supported = true
-		self.sks.ads_speed = 0.360
+		self.sks.ads_speed = 0.320
 		self.sks.damage_falloff = {
 			start_dist = 2500,
 			end_dist = 5200,

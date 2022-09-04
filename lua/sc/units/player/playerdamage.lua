@@ -1411,7 +1411,7 @@ function PlayerDamage:can_dodge_heal()
 end
 
 function PlayerDamage:tick_biker_armor_regen(amount)
-	if self:get_real_armor() == self:_max_armor() then --End biker regen when armor returns.
+	if math.round(self:get_real_armor()) == math.round(self:_max_armor()) then --End biker regen when armor returns. Also FLOATING POINT ERRORS?
 		self._biker_armor_regen_t = 0.0
 		return
 	end

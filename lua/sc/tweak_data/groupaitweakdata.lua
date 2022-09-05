@@ -14624,7 +14624,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 50,
-			max_nr_simultaneous_groups = 2,
+			max_nr_simultaneous_groups = 1,
 			initial_spawn_delay = 35,
 			amount = {
 				1,
@@ -14670,7 +14670,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 8 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 45,
-			max_nr_simultaneous_groups = 2,
+			max_nr_simultaneous_groups = 1,
 			initial_spawn_delay = 30,
 			amount = {
 				2,

@@ -6091,7 +6091,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")								
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")							
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard")					
@@ -6124,7 +6124,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard"),
@@ -6160,7 +6161,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1")					
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")					
@@ -6223,7 +6224,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
+					Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2")						
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga")					
@@ -6286,7 +6287,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")							
+					Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3")							
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")					
@@ -10121,7 +10122,7 @@ else
 				Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")								
 			},
 			zombie = {
-				Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
+				Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2")					
 			},							
 			murkywater = {
 				Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga")					

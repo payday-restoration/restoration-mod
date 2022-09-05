@@ -348,6 +348,25 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 	
+	["man"] = {
+		[Idstring("units/payday2/characters/ene_fbi_office_1/ene_fbi_office_1"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_office_2/ene_fbi_office_2"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_office_3/ene_fbi_office_3"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_office_4/ene_fbi_office_4"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3"):key()] = {"c45", "raging_bull", "m4", "r870"},
+		[Idstring("units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4"):key()] = {"c45", "raging_bull", "m4", "r870"},
+	},
+	[Idstring("units/payday2/characters/ene_fbi_office_1/ene_fbi_office_1"):key()] = "c45",
+	[Idstring("units/payday2/characters/ene_fbi_office_2/ene_fbi_office_2"):key()] = "c45",
+	[Idstring("units/payday2/characters/ene_fbi_office_3/ene_fbi_office_3"):key()] = "c45",
+	[Idstring("units/payday2/characters/ene_fbi_office_4/ene_fbi_office_4"):key()] = "c45",
+	[Idstring("units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1"):key()] = "raging_bull",
+	[Idstring("units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2"):key()] = "raging_bull",
+	[Idstring("units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3"):key()] = "raging_bull",
+	[Idstring("units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4"):key()] = "raging_bull",
+	
 	--Midland Ranch Guards
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1"):key()] = {"c45", "raging_bull", "mac11", "m4", "r870"},
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2"):key()] = {"c45", "raging_bull", "mac11", "m4", "r870"},

@@ -3522,9 +3522,9 @@ local zombie_very_hard = {
 		["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc",
 		
 		--specials
-		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1",
-		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1", 
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1", 
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",		
@@ -3575,9 +3575,9 @@ local zombie_overkill = {
 		["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc",
 		
 		--specials
-		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1",
-		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2", 
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2", 
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",		
@@ -3639,9 +3639,9 @@ local zombie_mayhem = {
 		["units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"] = "units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
 		--specials
-		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1",
-		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3", 
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3", 
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",		
@@ -3702,9 +3702,9 @@ local zombie_deathwish = {
 		["units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
-		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1",
-		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3", 
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",		
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec",

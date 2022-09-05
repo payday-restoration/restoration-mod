@@ -309,7 +309,8 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	--Green Dozers become Tasers
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870_hard/ene_akan_fbi_tank_r870_hard"] = {taser}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"] = {taser}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"] = {taser}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = {taser}
@@ -327,7 +328,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	--Black Dozers become Tasers
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = {taser}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"] = {taser}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"] = {taser}
@@ -340,7 +341,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	--Skulldozers become Tasers
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = {taser}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"] = {taser}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}

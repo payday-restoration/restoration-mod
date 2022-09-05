@@ -8251,7 +8251,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.ads_speed = 0.420
 				self.fal.damage_falloff = {
 					start_dist = 3500,
-					end_dist = 72000,
+					end_dist = 7200,
 					min_mult = 0.6666
 				}
 				self.fal.stats = {

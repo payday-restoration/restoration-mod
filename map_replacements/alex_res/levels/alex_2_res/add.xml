@@ -522,8 +522,8 @@
 		<unit force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
 	</add>
 	<add path="units/world/props/bridge/construction_blueprint/blueprint" type="unit">
-		<unit force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
-		<object force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
 		<material_config force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
+		<object force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
+		<unit force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
 	</add>
 </table>

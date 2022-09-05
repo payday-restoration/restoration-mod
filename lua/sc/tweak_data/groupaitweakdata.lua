@@ -14575,7 +14575,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				"GS_Booms"
 			})
 		}
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 60,
 			max_nr_simultaneous_groups = 1,
@@ -14621,19 +14621,65 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				"GS_Booms"
 			})
 		}	
-	elseif difficulty_index == 8 then
+	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.titan_snipers = {
-			spawn_cooldown = 45,
+			spawn_cooldown = 50,
 			max_nr_simultaneous_groups = 2,
-			initial_spawn_delay = 30,
+			initial_spawn_delay = 35,
 			amount = {
 				1,
 				2
 			},
 			spawn = {
 				{
-					respawn_cooldown = 45,
+					respawn_cooldown = 50,
 					amount_min = 1,
+					amount_max = 2,
+					rank = 1,
+					freq = 1,
+					unit = "titan_sniper",
+					tactics = self._tactics.marshal_marksman
+				}
+			},
+			spawn_point_chk_ref = table.list_to_set({
+				"FBI_Booms",
+				"FBI_defend_a",
+				"FBI_defend_b",
+				"FBI_defend_c",
+				"FBI_defend_d",
+				"FBI_stealth_a",
+				"FBI_stealth_a_boom",
+				"FBI_stealth_b",
+				"FBI_stealth_c",
+				"FBI_swats",
+				"FBI_heavys",
+				"FBI_heavys_boom",
+				"FBI_shields",
+				"FBI_shields_boom",
+				"GS_defend_b",
+				"GS_defend_c",
+				"GS_defend_d",
+				"GS_swats",
+				"GS_Heavys",
+				"GS_heavys_boom",
+				"GS_shields",
+				"GS_shields_boom",
+				"GS_Booms"
+			})
+		}	
+	elseif difficulty_index == 8 then
+		self.enemy_spawn_groups.titan_snipers = {
+			spawn_cooldown = 45,
+			max_nr_simultaneous_groups = 2,
+			initial_spawn_delay = 30,
+			amount = {
+				2,
+				2
+			},
+			spawn = {
+				{
+					respawn_cooldown = 45,
+					amount_min = 2,
 					amount_max = 2,
 					rank = 1,
 					freq = 1,
@@ -18455,6 +18501,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local captain_cooldown = 2700
 	local captain_min_diff = 0.5
 	local dozer_cooldown = 45
+	
+	local tsniperhobelow5_cooldown = 45
+	local tsniperhoabove5_cooldown = 30
 
 	if Global.game_settings and Global.game_settings.one_down then
 		captain_cooldown = 1800
@@ -18486,6 +18535,33 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			cooldown = captain_cooldown / 2,
 			min_diff = captain_min_diff,
 			sustain_only = true
+		},
+		SKM_Titan_Sniper_W1 = {
+			cooldown = tsniperhobelow5_cooldown
+		},
+		SKM_Titan_Sniper_W2 = {
+			cooldown = tsniperhobelow5_cooldown
+		},
+		SKM_Titan_Sniper_W3 = {
+			cooldown = tsniperhobelow5_cooldown
+		},
+		SKM_Titan_Sniper_W4 = {
+			cooldown = tsniperhobelow5_cooldown
+		},
+		SKM_Titan_Sniper_W5 = {
+			cooldown = tsniperhoabove5_cooldown
+		},
+		SKM_Titan_Sniper_W6 = {
+			cooldown = tsniperhoabove5_cooldown
+		},
+		SKM_Titan_Sniper_W7 = {
+			cooldown = tsniperhoabove5_cooldown
+		},
+		SKM_Titan_Sniper_W8 = {
+			cooldown = tsniperhoabove5_cooldown
+		},
+		SKM_Titan_Sniper_W9 = {
+			cooldown = tsniperhoabove5_cooldown
 		},
 		GREEN_tanks = {
 			cooldown = dozer_cooldown

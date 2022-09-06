@@ -230,48 +230,98 @@
 	</constraints>
 
 	<decal_surfaces default_material="cloth_no_decal" >
-		<decal_mesh name="dm_helmet_plate" 		enabled="true" 		material="flesh" />
+		<decal_mesh name="dm_head" 				enabled="true" 	material="flesh" />
 		<decal_mesh name="dm_armor_chest" 		enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_stomache" 	enabled="true" 	material="steel_no_decal" />
 		<decal_mesh name="dm_armor_back" 		enabled="true" 	material="steel_no_decal" />
-		<decal_mesh name="dm_helmet" 			enabled="true" 	material="flesh" />
 	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
 			<lod_object name="lod_body">
-				<object name="g_body" 					enabled="true"  max_distance="3000"  max_draw_lod="0" />
-				<object name="g_body_lod1" 				enabled="true" lod="1" />
+				<object name="g_body" 					enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer, mtr_headless" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1, mtr_headless_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2, mtr_headless_lod_2" />
+				</object>
+				<object name="g_body_lod1" 				enabled="true" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2, mtr_headless_lod_2" />
+				</object>
 			</lod_object>
 
-			<object name="g_head" 					enabled="true" />
-
-			
-
-			
+			<lod_object name="lod_head">
+				<object name="g_head" 					enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_headless" max_distance="1000" />
+					<material materials="mtr_headless_lod_1" max_distance="1500" />
+					<material materials="mtr_headless_lod_2" />
+				</object>
+				<object name="g_head_lod1" 				enabled="true" lod="1" >
+					<material materials="mtr_headless" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_headless_lod_2" />
+				</object>
+			</lod_object>
 
 			<lod_object name="lod_armor_chest">
-				<object name="g_armor_chest" 			enabled="true"  max_distance="3000"  max_draw_lod="0" />
-				<object name="g_armor_chest_lod1" 		enabled="true" lod="1" />
+				<object name="g_armor_chest" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+				<object name="g_armor_chest_lod1" 		enabled="true" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
 			</lod_object>
 
 			<lod_object name="lod_armor_stomache">
-				<object name="g_armor_stomache" 		enabled="true"  max_distance="3000"  max_draw_lod="0" />
-				<object name="g_armor_stomache_lod1" 	enabled="true" lod="1" />
+				<object name="g_armor_stomache" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+				<object name="g_armor_stomache_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
 			</lod_object>
 
-		
+			<lod_object name="lod_armor_back">
+				<object name="g_armor_back" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+				<object name="g_armor_back_lod1" 		enabled="true" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+			</lod_object>
 
+			<lod_object name="lod_throat">
+				<object name="g_throat" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+				<object name="g_throat_lod1" 			enabled="true" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+			</lod_object>
 
-				<object name="g_throat" 				enabled="true"  />
-
-
-
-				<object name="g_neck" 					enabled="true"  />
-				<object name="g_sword" 					enabled="true"  />
-
-		
+			<lod_object name="lod_neck">
+				<object name="g_neck" 					enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+				<object name="g_neck_lod1" 				enabled="true" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+			</lod_object>
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 

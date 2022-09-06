@@ -5,6 +5,12 @@
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_helmet">
+        <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod">
         <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_df" mip="4"/>
@@ -16,12 +22,6 @@
     <material name="mtr_body_static" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
         <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_nm"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>		
-    </material>
-    <material name="mtr_body_static_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-        <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/bulldozer_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>		
     </material>

@@ -10,7 +10,7 @@
 		</body>
 		<body name="head" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-12" />
+			<object name="c_sphere_head" collision_type="sphere" padding="-8" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -19,26 +19,24 @@
 
 		<body name="body_helmet" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
+			<object name="c_helmet1" collision_type="convex" padding="-2" />
+			<object name="c_helmet2" collision_type="convex" padding="-2" />
+			<object name="c_helmet3" collision_type="convex" padding="-2" />
+			<object name="c_helmet4" collision_type="convex" padding="-2" />
 		</body>
 		<body name="body_helmet_plate" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_plate" collision_type="convex"/>
+			<object name="c_helmet_plate" collision_type="convex" padding ="-2"/>
 		</body>
 		<body name="body_helmet_glass" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_glass" collision_type="convex"/>
+			<object name="c_helmet_glass" collision_type="convex" padding ="-3"/>
 		</body>
 
 		<body name="body_armor_chest" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
 			<object name="c_armor_chest" collision_type="convex"/>
 		</body>
-
-		<body name="body_armor_stomache" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="Hips"/>
-			<object name="c_armor_stomache" collision_type="convex"/>
-		</body>		
 
 		<body name="body_armor_back" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Hips"/>
@@ -47,36 +45,36 @@
 
 		<body name="body_armor_throat" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine2"/>
-			<object name="c_throat1" collision_type="convex"/>
-			<object name="c_throat2" collision_type="convex"/>
-			<object name="c_throat3" collision_type="convex"/>
+			<object name="c_throat1" collision_type="convex" padding="-2" />
+			<object name="c_throat2" collision_type="convex" padding="-2" />
+			<object name="c_throat3" collision_type="convex" padding="-2" />
 		</body>
 
 		<body name="body_armor_left_shoulderpad" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="LeftArm"/>
-			<object name="g_shoulderpad_l_lod1" collision_type="convex"/>
+			<object name="c_armor_LeftArm" collision_type="convex" padding="-2" />
 		</body>
 		<body name="body_armor_right_shoulderpad" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="RightArm"/>
-			<object name="g_shoulderpad_r_lod1" collision_type="convex"/>
+			<object name="c_armor_RightArm" collision_type="convex" padding="-2" />
 		</body>
 		
 		<body name="body_armor_left_thigh" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="LeftUpLeg"/>
-			<object name="g_thigh_l_lod1" collision_type="convex"/>
+			<object name="c_armor_LeftUpLeg" collision_type="convex" padding="-2" />
 		</body>
 		<body name="body_armor_right_thigh" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="RightUpLeg"/>
-			<object name="g_thigh_r_lod1" collision_type="convex"/>
+			<object name="c_armor_RightUpLeg" collision_type="convex" padding="-2" />
 		</body>
 		
 		<body name="body_armor_left_leg" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="LeftUpLeg"/>
-			<object name="g_leg_l_lod1" collision_type="convex"/>
+			<object name="LeftLeg"/>
+			<object name="c_armor_LeftLeg" collision_type="convex"/>
 		</body>
 		<body name="body_armor_right_leg" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="RightUpLeg"/>
-			<object name="g_leg_r_lod1" collision_type="convex"/>
+			<object name="RightLeg"/>
+			<object name="c_armor_RightLeg" collision_type="convex"/>
 		</body>
 
 		<body name="body_armor_neck" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -303,7 +301,7 @@
 				<object name="g_helmet_plate" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 
 				</object>
-				<object name="g_helmet_plate_lod1" 		enabled="false" lod="1" >
+				<object name="g_helmet_plate_lod" 		enabled="false" lod="1" >
 
 				</object>
 			</lod_object>

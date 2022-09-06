@@ -15975,6 +15975,10 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--HK21
 	table.insert(self.weap_ids, "hk21_sc")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"))		
+
+	--Dozer HK21
+	table.insert(self.weap_ids, "hk21_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_hk21_dozer/wpn_npc_hk21_dozer"))		
 		
 	--Cloaker Cloaker MP5
 	table.insert(self.weap_ids, "mp5_cloak")
@@ -16119,6 +16123,10 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--M500
 	table.insert(self.weap_ids, "m500")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500"))	
+	
+	--Dozer M500
+	table.insert(self.weap_ids, "m500_dozer")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500_dozer/wpn_npc_m500_dozer"))	
 
 	--Meme Akimbo Raging Bulls
 	table.insert(self.weap_ids, "x_raging_bull_meme_npc")

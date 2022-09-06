@@ -2,6 +2,9 @@
 	<!--mosconi 12g tactical-->
 	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500" />
 
+	<!--mosconi 12g tactical dozer-->
+	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_m500_dozer/wpn_npc_m500_dozer" />
+
 	<!--SR2-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc" load="false" force="false"/>
 	

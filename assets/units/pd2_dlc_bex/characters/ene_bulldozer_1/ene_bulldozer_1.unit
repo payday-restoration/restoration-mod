@@ -27,7 +27,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="m500" />
+			<var name="_default_weapon_id" value="m500_dozer" />
 			<var name="_stats_name" value="tank_green" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />

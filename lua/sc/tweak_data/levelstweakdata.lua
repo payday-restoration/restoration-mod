@@ -228,11 +228,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.package = {"packages/narr_dinner", "packages/murkywatermisc"}
 	self.dinner.player_style = "slaughterhouse"
 	
-	self.ranc.ai_group_type = nypd
+	self.ranc.ai_group_type = lapd
 	self.ranc.player_style = "fighterpilot"
 
         --[[
-        self.trai.ai_group_type = nypd
+        self.trai.ai_group_type = lapd
         self.trai.player_style = "fighterpilot"
         --]]
 

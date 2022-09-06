@@ -5678,8 +5678,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model3.armor_piercing_chance = 0.5
 				self.model3.can_shoot_through_enemy = true
 				self.model3.reload_speed_multiplier = 0.95
-				self.model3.timers.reload_not_empty = 2.4
-				self.model3.timers.reload_empty = 2.4		
+				self.model3.timers.reload_not_empty = 2.2
+				self.model3.timers.reload_exit_not_empty = 0.4
+				self.model3.timers.reload_empty = 2.2
+				self.model3.timers.reload_exit_empty = 0.4
 				self.model3.panic_suppression_chance = 0.05	
 
 			--Bronco
@@ -6697,7 +6699,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1928.stats = {
 					damage = 30,
 					spread = 62,
-					recoil = 84,
+					recoil = 86,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 21,
@@ -6710,8 +6712,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m1928.stats_modifiers = nil
 				self.m1928.timers.reload_not_empty = 3.3
-				self.m1928.timers.reload_exit_empty = 0.8
-				self.m1928.timers.reload_exit_not_empty = 1.05
+				self.m1928.timers.reload_exit_not_empty = 1.2
+				self.m1928.timers.reload_empty = 4.0
+				self.m1928.timers.reload_exit_empty = 1.35
 				self.m1928.panic_suppression_chance = 0.05
 
 			--Uzi
@@ -7262,7 +7265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 77,
+					recoil = 80,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -7373,7 +7376,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.has_description = true					
 				self.vhs.CLIP_AMMO_MAX = 30
 				self.vhs.AMMO_MAX = 180
-				self.vhs.fire_mode_data.fire_rate = 0.06976744186
+				self.vhs.fire_mode_data.fire_rate = 0.070588235
 				self.vhs.CAN_TOGGLE_FIREMODE = true
 				self.vhs.kick = self.stat_info.kick_tables.moderate_kick
 				self.vhs.supported = true
@@ -7386,7 +7389,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.stats = {
 					damage = 20,
 					spread = 89,
-					recoil = 86,
+					recoil = 85,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 28,
@@ -7401,7 +7404,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.panic_suppression_chance = 0.05
 				self.vhs.reload_speed_multiplier = 1.2
 				self.vhs.timers.reload_empty = 4.6
-				self.vhs.timers.reload_exit_empty = 0.7
+				self.vhs.timers.reload_exit_empty = 0.75
 				self.vhs.timers.reload_exit_not_empty = 1
 
 			--CAR 4

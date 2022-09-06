@@ -7385,7 +7385,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.vhs.stats = {
 					damage = 20,
-					spread = 91,
+					spread = 89,
 					recoil = 86,
 					spread_moving = 6,
 					zoom = 1,
@@ -7399,9 +7399,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.vhs.stats_modifiers = nil
 				self.vhs.panic_suppression_chance = 0.05
-				self.vhs.reload_speed_multiplier = 1.3
+				self.vhs.reload_speed_multiplier = 1.2
 				self.vhs.timers.reload_empty = 4.6
-				self.vhs.timers.reload_exit_empty = 0.6
+				self.vhs.timers.reload_exit_empty = 0.7
 				self.vhs.timers.reload_exit_not_empty = 1
 
 			--CAR 4

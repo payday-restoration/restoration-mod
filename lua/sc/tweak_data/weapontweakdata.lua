@@ -4673,7 +4673,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.reload_speed_multiplier = 1.25
 				self.breech.weapon_movement_penalty = 1.025
 				self.breech.timers.reload_exit_empty = 0.35
-				self.breech.timers.reload_exit_not_empty = 0.2
+				self.breech.timers.reload_not_empty = 1.2
+				self.breech.timers.reload_not_empty = 1.2
+				self.breech.timers.reload_exit_not_empty = 0.5
 
 			--Chimano Custom (Glock 22)
 				self.g22c.has_description = true
@@ -4952,8 +4954,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_type54.stats = {
 					damage = 45,
-					spread = 66,
-					recoil = 88,
+					spread = 56,
+					recoil = 78,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 28,
@@ -5235,7 +5237,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_rage.damage_falloff = {
 					start_dist = 1500,
 					end_dist = 4400,
-					min_mult = 0.3333
+					min_mult = 0.4
 				}
 				self.x_rage.stats = {
 					damage = 60,
@@ -5277,7 +5279,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.damage_falloff = {
 					start_dist = 1800,
 					end_dist = 4500,
-					min_mult = 0.3333
+					min_mult = 0.4
 				}
 				self.x_chinchilla.stats = {
 					damage = 60,
@@ -5802,8 +5804,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Micro-Uzi
 				--Keeping
 				self.x_baka.use_data.selection_index = 2
-				self.x_baka.CLIP_AMMO_MAX = 60
-				self.x_baka.NR_CLIPS_MAX = 4
+				self.x_baka.CLIP_AMMO_MAX = 64
 				self.x_baka.AMMO_MAX = 180
 				self.x_baka.FIRE_MODE = "auto"
 				self.x_baka.fire_mode_data = {}
@@ -5846,7 +5847,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.CLIP_AMMO_MAX = 25
 				self.pm9.AMMO_MAX = 180
 				self.pm9.fire_mode_data.fire_rate = 0.05454545454
-				self.pm9.auto.fire_rate = 0.05454545454
 				self.pm9.kick = self.stat_info.kick_tables.even_recoil
 				self.pm9.supported = true
 				self.pm9.ads_speed = 0.220
@@ -6028,8 +6028,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_scorpion.supported = true
 				self.x_scorpion.ads_speed = 0.220
 				self.x_scorpion.damage_falloff = {
-					start_dist = 1300,
-					end_dist = 3500,
+					start_dist = 1500,
+					end_dist = 4000,
 					min_mult = 0.2083
 				}
 				self.x_scorpion.stats = {
@@ -7399,7 +7399,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.vhs.stats_modifiers = nil
 				self.vhs.panic_suppression_chance = 0.05
-				self.vhs.reload_speed_multiplier = 1.4
+				self.vhs.reload_speed_multiplier = 1.3
 				self.vhs.timers.reload_empty = 4.6
 				self.vhs.timers.reload_exit_empty = 0.6
 				self.vhs.timers.reload_exit_not_empty = 1
@@ -11881,6 +11881,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ak5s.timers.reload_not_empty = self.ak5s.timers.reload_not_empty
 			self.ak5s.timers.reload_exit_empty = self.ak5s.timers.reload_exit_empty
 			self.ak5s.timers.reload_exit_not_empty = self.ak5s.timers.reload_exit_not_empty
+			self.ak5s.reload_speed_multiplier = 1.05
 		end	
 	
 		if self.car9 then --Gambyt's ACAR 9
@@ -13360,6 +13361,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.l115.upgrade_blocks = nil
 		self.l115.has_description = true
 		self.l115.desc_id = "bm_ap_weapon_sc_desc"
+		self.l115.tactical_reload = 1
 		self.l115.CLIP_AMMO_MAX = 5
 		self.l115.AMMO_MAX = 30
 		self.l115.fire_mode_data.fire_rate = 1.09090909

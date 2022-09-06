@@ -895,6 +895,50 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		["heist_xmn_tag_name"] = "FBI 침입 크리스마스 버전",
 		
+		--Watchdogs Early Boat Driver Restoration
+		["bot_watchdogs_new_stage2_01_any_02"] = "This is the boat. I see the signal, will be there soon.",
+		["bot_watchdogs_new_stage2_01_any_03"] = "This is the boat. Signal on sight, I'm on my way.",
+		
+		["bot_watchdogs_new_stage2_05_any_02"] = "Ok I'm here, now throw the bags into the boat!",
+		["bot_watchdogs_new_stage2_05_any_03"] = "Ok guys, get the god damn bags into the boat!",
+		["bot_watchdogs_new_stage2_05_any_04"] = "Ok everyone, get the fucking bags into the boat!",
+		
+		["bot_watchdogs_new_stage2_06_any_01"] = "I can only take four at the time! Fill it up and I come back for more.",
+		["bot_watchdogs_new_stage2_06_any_02"] = "Four at the time! Sorry...I come back for the rest.",
+		["bot_watchdogs_new_stage2_06_any_03"] = "Only four at the time, I come back for the rest!",
+		
+		["bot_watchdogs_new_stage2_07_any_01"] = "Come on, fill the barrels!",
+		["bot_watchdogs_new_stage2_07_any_02"] = "Get the barrels filled! GO! GO! GO!",
+		["bot_watchdogs_new_stage2_07_any_03"] = "Fill up those barrels, guys!",
+		
+		
+		["bot_watchdogs_new_stage2_08_any_02"] = "Ok that's four!",
+		["bot_watchdogs_new_stage2_08_any_03"] = "Ok, that's four!", 
+		
+		["bot_watchdogs_new_stage2_09_any_01"] = "Ok I'm taking this shit, then I'm coming back for the rest!",
+		["bot_watchdogs_new_stage2_09_any_02"] = "I'm taking the stuff, but I be back for the rest as soon as I can if you whine up getting more stuff for me.",
+		["bot_watchdogs_new_stage2_09_any_03"] = "So i'm taking these now but don't worry, I be back if you get more stuff.",
+		
+		["bot_watchdogs_new_stage2_10_any_01"] = "Alright, it's unloaded. I be back in a bit.",
+		["bot_watchdogs_new_stage2_10_any_02"] = "It's unloaded! I be back.",
+		["bot_watchdogs_new_stage2_10_any_03"] = "Hold on....I be back!",
+		
+		["bot_watchdogs_new_stage2_11_any_01"] = "Man, I said into the barrels, not the water!",
+		["bot_watchdogs_new_stage2_11_any_02"] = "What did I say? INTO THE BARRELS, RIGHT?!",
+		["bot_watchdogs_new_stage2_11_any_03"] = "Into the barrels! Fill it in a fucking barrels!",
+		
+		["bot_watchdogs_new_stage2_12_any_01"] = "Roger! I'm coming in at Dock 7.",
+		["bot_watchdogs_new_stage2_12_any_02"] = "Roger! Coming in at Dock 7.",
+		["bot_watchdogs_new_stage2_12_any_03"] = "Copy that, coming in at Dock 7!",
+		
+		["bot_watchdogs_new_stage2_13_any_01"] = "Roger! I'm coming in at Dock 8.",
+		["bot_watchdogs_new_stage2_13_any_02"] = "Roger! Coming in at Dock 8.",
+		["bot_watchdogs_new_stage2_13_any_03"] = "Copy that, coming in at Dock 8!",
+		
+		["bot_watchdogs_new_stage2_14_any_01"] = "Confirmed! I'm coming in at Dock 9.",
+		["bot_watchdogs_new_stage2_14_any_02"] = "Copy that, coming in at Dock 9!",
+		["bot_watchdogs_new_stage2_14_any_03"] = "Copy, coming in at Dock 9!",
+		
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "빠른 가방 운송을 위한 가방 짚라인을 삽니다",
 		

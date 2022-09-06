@@ -34,14 +34,14 @@
     </material>
 	
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head">
-		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
-		<diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_heads_df"/>
+		<bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_06_nm"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_06_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod">
-		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mips="4"/>
-		<diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_heads_df" mips="4"/>
+		<bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_06_nm" mips="4"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_06_df" mips="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

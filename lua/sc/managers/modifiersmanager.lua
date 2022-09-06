@@ -158,8 +158,10 @@ elseif ai_type == m then
 elseif ai_type == z then
 	replacement_table = {
 		--Bulldozers 
-		["units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"] = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer",
-		["units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_mod_halloween/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer",
+		
+		["units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer",
 		
 		--Zombie FBI Rifle
 		["units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1",

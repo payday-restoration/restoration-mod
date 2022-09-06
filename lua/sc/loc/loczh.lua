@@ -11,6 +11,8 @@ end
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
+		["hud_h_watchdogs_stage2_mission6_hl"] = "挺过突袭", --vanilla game wrong string fix
+
 		["menu_es_boost"] = "最佳数据",
 		["menu_es_crew"] = "全队数据",
 		["menu_es_personal"] = "个人数据",
@@ -276,8 +278,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
       ["restoration_level_data_alex_1_res"] = "凌晨3:30 , 寂静岭",
       ["restoration_level_data_alex_2_res"] = "清晨5:55 , 项目",
       ["restoration_level_data_alex_3_res"] = "清晨7:20 , 华盛顿正义大桥",
-      ["restoration_level_data_firestarter_1"] = "早晨9:25 , 私人机场",
-      ["restoration_level_data_firestarter_1_res"] = "早晨9:25 , 私人机场",
+      ["restoration_level_data_firestarter_1"] = "傍晚7:25 , 私人机场",
+      ["restoration_level_data_firestarter_1_res"] = "傍晚7:25 , 私人机场",
       ["restoration_level_data_firestarter_2"] = "上午10:05 , 联邦调查局分局",
       ["restoration_level_data_firestarter_2_res"] = "上午10:05 , 联邦调查局分局",
       ["restoration_level_data_firestarter_3"] = "中午12:15 , 丰信银行",
@@ -1186,10 +1188,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_2"] = "红点瞄准镜。\n#{risk}#1.2倍放大倍率##",
 		["bm_wp_upg_o_1_5"] = "全息瞄准镜。\n#{risk}#1.5倍放大倍率##",
 		["bm_wp_upg_o_1_5_pris"] = "棱镜瞄准具\n#{risk}#1.5倍放大倍率##",
+		["bm_wp_upg_o_1_5_scope"] = "低功率瞄准仪.\n#{risk}#1.5倍放大倍率##",
 		["bm_wp_upg_o_1_8"] = "红点瞄准镜。\n#{risk}#1.8倍放大倍率##",
 		["bm_wp_upg_o_3"] = "中距瞄准仪。\n#{risk}#3倍放大倍率##",
 		["bm_wp_upg_o_3_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{risk}#3倍放大倍率##",
+		["bm_wp_upg_o_3_5"] = "中距瞄准仪。\n#{risk}#3.5倍放大倍率##",
 		["bm_wp_upg_o_4"] = "中距瞄准仪。\n#{risk}#4倍放大倍率##",
+		["bm_wp_upg_o_4_cod"] = "中距瞄准仪。\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4倍放大倍率##",
+		--["bm_wp_upg_o_4_default"] = "该武器的默认瞄镜。\n#{risk}#4倍放大倍率##\n\n#{item_stage_2}#这个瞄准镜不能被移除，但可以被其它瞄准镜替换##。",
 		["bm_wp_upg_o_4_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{risk}#4倍放大倍率##",
 		["bm_wp_upg_o_5"] = "长距瞄准仪。\n#{risk}#5倍放大倍率##",
 		["bm_wp_upg_o_5_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{risk}#5倍放大倍率##",
@@ -1280,16 +1286,46 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CZ 75
 		["bm_czech_sc_desc"] = "曾被誉为“奇迹之九”, 一种有着优秀的人体工程学设计与良好手感的手枪。广泛应用于世界各大反恐组织。",
 		["bm_x_czech_sc_desc"] = "又一个劝退冲锋手枪的例子。你怎么可能轻松给这俩玩意换弹？",
+		--PPK (Gruber)
+		["bm_ppk_sc_desc"] = "更大，更危险的袖珍武器替代品，经典武器，经典用法。",
+		["bm_x_ppk_sc_desc"] = "如果你想比特工看起来更像个绅士就用它。",		
+		--M13
+		["bm_legacy_sc_desc"] = "西德人的设计最终被Bernetti否决，但在一场战斗中，它仍能发挥出自己的力量。",
+		["bm_x_legacy_sc_desc"] = "两支被历史遗忘的手枪，将使你所及之屋留遍子弹。",
 		--Glock 17
 		["bm_g17_sc_desc"] = "控制后坐力十分轻松且可靠。是能助你踏上劫匪生涯的完美配枪。",
 		["bm_x_g17_sc_desc"] = "以绝对的数量来弥补9毫米的弱小火力，并且依然占有低后坐力的优势\n\n在我们捞霍斯顿出来那段时间里是他的爱枪。",
 		--Bernetti 9
 		["bm_b92fs_sc_desc"] = "一款因其弹容出色且伤害像样而流行的武器。尤其在与众多敌人对峙时十分便利。",
 		["bm_x_b92fs_sc_desc"] = "两把总比一把强。以一种不同的方式将战斗化为9毫米手枪的派对。",
+		--White Streak
+		["bm_pl14_sc_desc"] = "使用西方后苏联技术的现代俄罗斯手枪。因其可靠性和未来风格而深受收割者的欢迎。",
+		["bm_x_pl14_sc_desc"] = "使用西方后苏联技术的现代俄罗斯手枪。因其可靠性和未来风格而深受收割者的欢迎。",
+		--Holt 9mm
+		["bm_holt_sc_desc"] = "一款陷入研发困境中的原型枪，采用了创新设计，有助于减少后坐力。",
+		["bm_x_holt_sc_desc"] = "不是一个，而是两个被遗忘的艺术品组成的原型枪。",		
+		--FMG-9
+		["bm_fmg9_sc_desc"] = "可作为STRYK 18c的载体的武器平台，采用未来折叠技术的原型枪。",
 		--93R
 		["bm_beer_sc_desc"] = "一块临界于幻想之间的全自动武器，使得它的子弹们争先恐后地从枪口里爬出来去寻找它们的目标。是死是活，你我来定。",
+		--Contractor Pistols 
+		["bm_packrat_sc_desc"] = "威克之所以选择它，是因为它的可靠性和综合易用性，据说他在他位临红圈时使用的就是这把枪。",
+		["bm_x_packrat_sc_desc"] = "当你想用血腥和复仇来净空俄罗斯人拥有的夜总会时，就带上它吧。",
+		--Breech (Luger) 
+		["bm_breech_sc_desc"] = "几乎两次主宰世界的手枪。这把德国工艺品优雅、精确，遗憾的是过时了。",
+		--Chimano Custom
+		["bm_g22c_sc_desc"] = "在最好的战术手枪中，这把武器是高容量和高威力的代名词。",
+		["bm_x_g22c_sc_desc"] = "如果一张选票是免费的枪支，那么当你能得到两把这样的便携式防身武器时，投票欺诈似乎很有吸引力.",
+		--Baby Deagle
+		["bm_sparrow_sc_desc"] = "\"欲擎此枪必承其重\"。",
+		--Signature .40
+		["bm_p226_sc_desc"] = "无论是截停武装押运还是银行抢劫，这个经典的警察杀手都永远不会让人失望。",
+		--LEO
+		["bm_hs2000_sc_desc"] = "国际刑警组织特工、狡猾的克罗地亚警察和国际犯罪分子都发现这种袖珍爆破手十分有效。",
+		--5/7 pistol
+		["bm_lemming_sc_desc"] = "高威力与大容量的结合。如果有人能吃了20枪没事，你可能不应该向他射击。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#11%##的伤害。",
 		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "欲擎此枪必承其重。",
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "\"欲擎此枪必承其重\"。",
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "豺狼的配枪选择。一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
 		--Crosskill
@@ -1297,17 +1333,49 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Crosskill Chunky
 		["bm_w_m1911"] = "Crosskill A1手枪",
 		--Crosskill Guard
+		["bm_shrew_sc_desc"] = "比它的经典铝制小侄子更小更紧凑。用弹夹容量和枪管长度换来了进一步的隐蔽能力。",
+		["bm_x_shrew_sc_desc"] = "迦南人的处事方式，极小枪身双持的.45麻烦解决者定叫那入侵者抱头鼠窜。",
 		["bm_shrew_g_bling_sc_desc"] = "在充满苦难与动荡的世界里，使我无比宽慰的是，黑暗里终有一线光明。",
+		--USP 
+		["bm_usp_sc_desc"] = "S&G中表现超乎寻常的一种枪，专长在于其伤害，弹容和射程。",
+		["bm_x_usp_sc_desc"] = "一对S&G手枪正适用于你实在需要发表死亡宣告的时候。",
+		--1911 
+		["bm_1911_sc_desc"] = "当9mm子弹不够用时，去取得这把装着强力.45ACP子弹的1911A1吧。顶级暴力架子。",
+		["bm_x_1911_sc_desc"] = "即便它没有恶魔之力，它带来的大屠杀一样能使得天下哀嚎遍野。",	
+		--Model 54 
+		["bm_type54_sc_desc"] = "苏联设计Tokarev的中国复制款，以独特的下挂霰弹枪为特征来给出解决坏蛋的额外手段。",
+		["bm_x_type54_sc_desc"] = "双拳难敌？四管相迎！",		
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"…然后狼吃掉了小红帽\"\n\n具有革命性的德国手枪，尤其这一款被改装成了全自动开火模式。\n\n这把枪一次装填10颗子弹",
 		["bm_wp_c96_nozzle"] = "爆能DL-44消音器",
 		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.25秒\n充能速率: 4发/秒(过热时减半)\n过热惩罚: 2秒",
+		--Sub2000
+		["bm_sub2000_sc_desc"] = "制造质量存疑的卡宾手枪。小巧的手枪子弹从长枪管射出时打身上加倍的疼，并且折叠能力使其隐蔽性首屈一指。",	
+		--Deagle
+		["bm_deagle_sc_desc"] = "还有什么拿着这个半自动法杖需要说的吗？只需要挥向坏蛋们大喊：\"崩！沙卡拉卡！\"\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		["bm_x_deagle_sc_desc"] = "实实在在地把这双持手腕毁灭者带进战场的人是十足的疯子。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		--Matever 2006m
+		["bm_2006m_sc_desc"] = "小批生产的稀少设计型。一种射程内花式打出.38子弹的方式。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		["bm_x_2006m_sc_desc"] = "双持这俩枪体现的纯正坏蛋因子要远远超过为了双持要做的准备工作。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		--Frenchman Model 87
+		["bm_model3_sc_desc"] = "对于一个终身问题的经典答案：\"我要怎么对付这些跳脸的混球？\"\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		["bm_x_model3_sc_desc"] = "引出你内心深处的牛仔品质并拿这两把左轮在午夜向条子发起决斗挑战。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		--Raging bull
+		["bm_rage_sc_desc"] = "威力十足的短距离手炮。对面排排站，嘎嘎吃子弹。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		["bm_x_rage_sc_desc"] = "既不好用也不实用，但你就是忍不住想在抢银行的时候掏这俩枪出来干条子。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		--Castigo
+		["bm_chinchilla_sc_desc"] = "强大，精准，有型。便于突破特区里更持久的敌人。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		["bm_x_chinchilla_sc_desc"] = "一个刺客需要确保它的目标能够毙命，两把这个枪能够保证这点。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		--RUS-12
+		["bm_rsh12_sc_desc"] = "单持口径口水战中毋庸置疑的终结语。\"汝等舌战可休矣！\"\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
+		--Chunky 1911 
+		["bm_m1911_sc_desc"] = "Crosskill .45的经典重制版。尽管挂着这个名字，并没有比自定义款的枪更厚实。",
 		--FMG-9
 		["bm_w_fmg9"] = "Wasp-DS自动手枪",
 		--Sub 2000
 		["bm_w_sub2000"] = "龋齿10mm手枪口径卡宾枪",
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够#{skill_color}#穿透护甲，盾牌以及薄墙壁##。",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "VF大威力手枪",
@@ -1405,7 +1473,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_w_xeno"] = "MA14 Surge Rifle",	
 		["bm_xeno_sc_desc_pc"] = "从 \"Armat\" 变为了具备异常先进的科技的奇怪玩意。配备有下挂榴弹发射器。\n\n按下 $BTN_BIPOD 切换到榴弹发射器。",	
 		["bm_xeno_sc_desc"] = "从 \"Armat\" 变为了具备异常先进的科技的奇怪玩意。配备有下挂榴弹发射器\n\n按住 $BTN_BIPOD 切换到榴弹发射器。",
-
+		--VSS
+		["bm_w_vss"] = "Viktoriya步枪",
+		["bm_vss_sc_desc"] = "Valkyria枪系的变体，拥有更好的射程和精准度。\n\n该武器#{skill_color}#自带消音##且可#{skill_color}#穿透敌人和薄墙壁##，也可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-世代武器科技。配备有20mm空爆榴弹发射器。\n按下 $BTN_BIPOD 切换到榴弹发射器。",
@@ -1432,6 +1502,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AN-94/92
 		["bm_w_tilt"] = "KVK-99步枪",
 		["bm_tilt_sc_desc"] = "扣板机打出的前两发子弹是三倍射速。",
+		--HK G36
+		["bm_w_hkg36"] = "SG36K步枪",
 
 
 		--AMR-16
@@ -1457,7 +1529,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_akmsu_sc_desc"] = "专门撂倒大个的小不点。无论什么方案都固执己见使这把枪不可被低估。",
 		--CUSTOM 60 DAMAGE ARs
 		--SCAR-L
-		["bm_w_scarl"] = "Eagle轻型步枪",
+		["bm_w_scarl"] = "VF 16S步枪",
 		--Valmet Rk.62
 		["bm_w_rk62"] = "Velmer步枪",
 
@@ -1526,7 +1598,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Custom DMRs
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79步枪",
 		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",	
-		["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
+		--["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
 		["bm_w_xr2"] = "XR-2步枪",
 		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能提升射速的独特自动式爆发射击模式。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
 		["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
@@ -1544,7 +1616,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Winchester 1874
 		["bm_winchester1874_sc_desc"] = "打下了美国西部的枪。热兵器中的圣遗物，但并不意味着其致死性不足，只因它强力的.44-40供弹。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--TTI(TTY)
-		["bm_w_tti"] = "Contractor .308狙击步枪",
+		["bm_w_tti"] = "Tecci .308狙击步枪",
 		["bm_tti_sc_desc"] = "威克的私人武器之一。据说网上有个地方有他练习这把枪莫桑比克射击法的片段。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--Scunt
 		["bm_wp_scout_m_extended"] = "神射手快换弹夹",
@@ -1581,9 +1653,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_moss464spx"] = "Mosconi SPX 狙击步枪",
 		--Winchester 1894
 		["bm_w_winchester1894"] = "Repeater 1894 狙击步枪",
+		--SVD
+		["bm_w_svd"] = "SV7狙击步枪",
+		["bm_wp_wpn_fps_snp_svd_pso"] = "SV7瞄准镜",
+		--L115
+		["bm_w_l115"] = "AIM 90M狙击步枪",
 
 		--3GL
 		["bm_ms3gl_sc_desc"] = "发射通过黑科技自制的集束40mm榴弹，可以造成快速后续冲击伤害。\n\n辅助射击允许一次性#{skill_color}#射出三发榴弹##。",
+		--["bm_ms3gl_sc_desc"] = "Fires custom 40mm rounds superposed in a single chamber. Uses electric primers to fire, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
+		--PIGLET/M32
+		["bm_m32_sc_desc"] = "变身成为一个\"#{risk}#战斗机器##\"，告诉你的敌人们，没有魔法少女会来保护他们和他们的队友免受这个6发转轮榴弹的伤害。",
 		--COMMANDO 101/M202 FLASH
 		["bm_ray_sc_desc"] = "这个四联装#{heat_warm_color}#燃烧火箭##使你成为\"#{risk}#死神##\"。\n\n火箭爆炸后#{heat_warm_color}#留下持续地火##，并且直接爆炸伤害可以#{skill_color}#秒杀警察炮台##。",
 		
@@ -1662,6 +1742,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_weapon_info"] = "在武装抢劫中，用枪托殴打受害者通常比直接开枪射击或利器刺击他们更常见。\n\n枪托的攻击速度受所用武器的隐匿度影响。",
 		["bm_melee_katana_info"] = "你的手中并无\"正义之器\"。\n\n蓄力完全时出刀速度加快50%，允许快速进行后续挥砍。",--\n\n当扮演治郎时，用此武器蓄力击杀幻影特工可以触发一个独特动画效果。
+		["bm_melee_thebestweapon_info"] = "游戏中最好的武器，没有之一。",
 		["bm_melee_thejobissnotyours_info"] = "这甚至不是你的剑。\n\n蓄力完全时出刀速度加快50%，允许快速进行后续挥砍。",
 		["bm_melee_buck_info"] = "对抗现代武器仍然十分有效。\n蓄力时减少10%的远程伤害。", --Buckler Shield
 		["bm_melee_charge_info"] = "用力叉，再用力叉！\n\n蓄力向前冲锋对前方目标造成每0.25秒45点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗15%的耐力；致命一击只消耗10%。\n\n任何时候都无法格挡敌人攻击。", -- Randal Pitchfork
@@ -1671,6 +1752,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_switchblade_info"] = "暴力与致命是我的信条。\n从背后攻击敌人造成2倍伤害。",-- Switchblade Knife
 		["bm_melee_chef_info"] = "不太确定能不能用来切超市的肉。\n完全蓄力时攻击会造成恐慌效果。", -- Psycho Knife
 		["bm_melee_headless_sword_info"] = "梦魇打造的剑。\n完全蓄力时攻击会造成恐慌效果。", -- Headless Dozer Sword
+		["bm_melee_goat_info"] = "\"它太大了，以至于不能称之为剑。巨大、厚实、沉重而又粗野。的确，它就好像一堆生铁。\"\n\n完全蓄力后攻击会散播恐慌。", -- im not gaj
 		["bm_melee_great_info"] = "试着去刺击，但穿了个洞。\n\n蓄力达到至少90%时进行刺击，使攻击距离提高1m。", -- Great Sword
 		["bm_melee_nin_info"] = "发射距离很短但几乎立刻命中的钉子，击杀仍然计入近战击杀数。", -- Pounder
 		["bm_melee_iceaxe_info"] = "爆头伤害增加50%。", -- Icepick
@@ -1680,7 +1762,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_barbedwire_info"] = "我不奢求来生怎样，现在我就坐在这，跟一个TMD棒球棍聊天！\n3秒内造成120点流血伤害。", --Lucille Baseball Bat
 		["bm_melee_inner_child_info"] = "唤起你的童心。\n\n 3秒内造成120点流血伤害。",
 		["bm_melee_spoon_gold_info"] = "吃光抹净，再来一碗！ \n有50%的几率造成120点燃烧伤害并干扰敌人3秒。", --Gold Spoon
-		["bm_melee_cqc_info"] = "毒素会在3秒内造成120点伤害并在4秒内每半秒都有50%的干扰敌人。", --Kunai, Syringe
+		["bm_melee_cqc_info"] = "毒素会在3秒内造成120点伤害并在4秒内每半秒都有50%的概率干扰敌人。", --Kunai, Syringe
 		["bm_melee_fight_info"] = "形意如水，朋友。\n格挡敌人攻击时可以造成120点伤害。此属性受到相关技能影响。", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "中头彩！\n5%的几率造成10倍伤害并击倒敌人。",
 		["bm_melee_specialist_info"] = "双份匕首，双倍快乐。\n拔刀后的第一次攻击之后的每次攻击都是双倍伤害。", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
@@ -2006,14 +2088,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end
 
 	local apex = math.rand(1)
-	local apex_fun = 0.10
+	local apex_fun = 0.05
 	if apex <= apex_fun then
 		LocalizationManager:add_localized_strings({	
 			["bm_w_fmg9"] = "平行手枪",
+			["bm_w_mg42"] = "L-STAR充能机枪",
 		})
 	end
 
-	local cute = math.rand(1)
+	--Maybe not do this in Chinese loc for now
+	--[[local cute = math.rand(1)
 	local funny = 0.02
 	if cute <= funny then
 		LocalizationManager:add_localized_strings({	
@@ -2087,7 +2171,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
 				
 		})
-	end
+	end--]]
 	
 	local big = math.rand(1)
 	local pistol = 0.02
@@ -2428,6 +2512,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "掷弹兵",
+		["mutator_specials_override_sniper"] = "狙击手",
 
 		["mutator_titandozers_desc"] = "万圣节派对",
 		["mutator_titandozers_longdesc"] = "无头熊从沃尔夫的噩梦中逃出来进入了现实世界！一般的熊将变种成他们的无头版本，其它的万圣节效果也会启用！",
@@ -2671,7 +2756,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "强力冲击",
-			["menu_shotgun_impact_beta_desc_sc"] = "掌握: #{risk}#$basic##\n霰弹枪和火焰喷射器的稳定性增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n霰弹枪每发多射出#{skill_color}#3##颗弹丸。\n\n#{important_1}#提示：该效果不适用于霰弹枪的穿甲弹和高爆弹##",																																																																																																																																																																																																
+			["menu_shotgun_impact_beta_desc_sc"] = "掌握: #{risk}#$basic##\n霰弹枪和火焰喷射器的稳定性增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n霰弹枪每发多射出#{skill_color}#3##颗弹丸。\n\n#{important_1}#提示：该效果不适用于霰弹枪的独头弹和高爆弹##",																																																																																																																																																																																																
 
 			--Pigeon Shooting	
 			["menu_far_away_beta_sc"] = "飞靶射手",
@@ -2800,7 +2885,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Kickstarter 物理修复  Expert Hardware
 			["menu_kick_starter_beta_sc"] = "硬件专家",
-			["menu_kick_starter_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的电锯和钻机在组装完毕时有#{skill_color}#30%##的概率变成自动修复的电锯或钻机。\n\n专精: #{risk}#$pro##\n你的电锯和钻机变成自动修复版的概率提高#{skill_color}#20%##。\n\n试图破坏你钻机的敌人有#{skill_color}#50%##的概率被电击，以阻止他们的破坏行为。",
+			["menu_kick_starter_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的电锯和钻机在组装完毕时有#{skill_color}#10%##的概率变成自动修复的电锯或钻机。\n\n专精: #{risk}#$pro##\n你的电锯和钻机变成自动修复版的概率提高#{skill_color}#15%##。\n\n试图破坏你钻机的敌人有#{skill_color}#50%##的概率被电击，以阻止他们的破坏行为。",
 
             --Fire Trap 火焰陷阱  Kickstarter
 			["menu_fire_trap_beta_sc"] = "物理修复",
@@ -3122,10 +3207,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "你的护甲恢复速率增加##10%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Gambler--
-		["menu_st_spec_10_desc_sc"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##拾取的子弹盒可以让你回复##5##至##7##点血量，每##8##秒只可触发一次，但是每拾取一盒子弹会减少##1##至##3##秒该技能的冷却时间。\n##-##你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##四分之一##个弹药盒的弹药补充。\n##-##当你通过拾取子弹盒回复血量的同时：\n你的闪避条增加你闪避点数的##100%##；\n你的团队成员回复你所回复的血量的##50%##。\n##-##你获得##30##点额外护甲。\n##-##你回答对讲机所需的时间减少##25%##。",		
+		["menu_st_spec_10_desc_sc"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##拾取的子弹盒可以让你回复##5##至##7##点血量，每##8##秒只可触发一次，但是每拾取一盒子弹会减少##1##至##3##秒该技能的冷却时间。\n##-##你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n##-##当你通过拾取子弹盒回复血量的同时：\n你的闪避条增加你闪避点数的##100%##；\n你的团队成员回复你所回复的血量的##50%##。\n##-##你获得##30##点额外护甲。\n##-##你回答对讲机所需的时间减少##25%##。",		
 		["menu_st_spec_10_desc_sc_short"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。",
 		["menu_deck10_1_desc_sc"] = "你捡起一个弹药盒会回复##3##至##5##点血量。\n\n冷却时间为##8##秒，每捡起一个弹药盒会减少冷却时间##1##至##3##秒。",
-		["menu_deck10_3_desc_sc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##四分之一##个弹药盒的弹药补充。\n\n你的闪避点数增加##5##。",
+		["menu_deck10_3_desc_sc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你的闪避点数增加##5##。",
 		["menu_deck10_5_desc_sc"] = "你捡起一个弹药盒回复的血量额外增加##1##。\n\n你回答对讲机所需的时间减少##25%##。",
 		["menu_deck10_7_desc_sc"] = "当你触发捡弹回血时，你的队友也回复你回血量##50%##的血量。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck10_9_desc_sc"] = "你捡起一个弹药盒回复的血量再额外增加##1##。\n\n当你触发捡弹回血时，你的护甲值也回复##30##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
@@ -3206,9 +3291,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "当你在烟雾弹产生的烟幕中时，你的闪避条每秒增加闪避点数的##40%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Sweet liquor eases the pain--
-		["menu_st_spec_19_desc_sc"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。\n\n完成全部牌组后的效果：\n##-##解锁并装备修士酒壶。受到伤害的 ##30%## 会在 ##8## 秒内逐渐承担。激活修士酒壶可以立刻抵消所有逐渐承担的伤害。当逐渐承担的伤害被抵消后，你会在时间内回复相当于##150%##剩余逐渐承担伤害的血量。修士酒壶有##30##秒的冷却时间。\n##-##你的全部护甲值将转化为 ##50%## 血量。\n##-##你每击杀1名敌人都会减少 ##1.5## 秒的酒壶冷却时间。\n##-##如果在##4##秒内未受到任何伤害你的逐渐承担的伤害将会被自动抵消。\n##-##当你的血量低于 ##50%##，你每击杀1名敌人都会减少 ##3## 秒的酒壶冷却时间。\n##-##当你倒地起身时你会获得最大生命值的 ##25%## 的血量。\n##-##你回答对讲机所需的时间减少##25%##。",
+		["menu_st_spec_19_desc_sc"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。\n\n完成全部牌组后的效果：\n##-##解锁并装备修士酒壶。受到对##血量##的伤害的##30%##会在##8##秒内逐渐承担。激活修士酒壶可以立刻抵消所有逐渐承担的伤害。当逐渐承担的伤害被抵消后，你会在时间内回复相当于##150%##剩余逐渐承担伤害的血量。修士酒壶有##30##秒的冷却时间。\n##-##你##50%##的##护甲量##将转变为##50%##的##血量##。\n##-##你每击杀1名敌人都会减少##1.5##秒的酒壶冷却时间。\n##-##如果在##4##秒内未受到任何伤害你的逐渐承担的伤害将会被自动抵消。\n##-##当你的血量低于##50%##，你每击杀1名敌人都会减少##3##秒的酒壶冷却时间。\n##-##当你倒地起身时你会获得最大生命值的##25%##的血量。\n##-##你回答对讲机所需的时间减少##25%##。",
 		["menu_st_spec_19_desc_sc_short"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。",
-		["menu_deck19_1_desc_sc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的伤害中的##30%##不会立刻使你丢失血量，而是变成虚血在##8##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##150%##的血量。修士酒壶的冷却时间为##30##秒。\n\n##你所有的护甲量将转变为护甲量50%的血量##。",
+		["menu_deck19_1_desc_sc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的对##血量##的伤害中的##30%##不会立刻使你丢失血量，而是变成虚血在##8##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##150%##的血量。修士酒壶的冷却时间为##30##秒。\n\n你##50%##的##护甲量##将转变为##50%##的##血量##。",
 		["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##1.5##秒。",
 		["menu_deck19_5_desc_sc"] = "在##4##秒内没受到伤害将会立即使虚血变为实血(即触发酒壶的效果)。\n\n你回答对讲机所需的时间减少##25%##。",
 		["menu_deck19_7_desc_sc"] = "你的血量低于##50%##时，你每击杀一名敌人将减少修士酒壶的冷却时间##3##秒。",

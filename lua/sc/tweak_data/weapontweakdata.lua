@@ -9172,8 +9172,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.supported = true
 				self.aa12.ads_speed = 0.440
 				self.aa12.damage_falloff = {
-					start_dist = 900,
-					end_dist = 3100,
+					start_dist = 1000,
+					end_dist = 3200,
 					min_mult = 0.5
 				}
 				self.aa12.stats = {
@@ -9920,9 +9920,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.CLIP_AMMO_MAX = 60
 				self.flamethrower_mk2.AMMO_MAX = 120
 				self.flamethrower_mk2.fire_mode_data.fire_rate = 0.1
-				self.flamethrower_mk2.auto = {}
-				self.flamethrower_mk2.auto.fire_rate = 0.1
-				self.flamethrower_mk2.flame_max_range = 1800
 				self.flamethrower_mk2.single_flame_effect_duration = 1
 				self.flamethrower_mk2.armor_piercing_chance = 1
 				self.flamethrower_mk2.can_shoot_through_enemy = false
@@ -9938,7 +9935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.supported = true
 				self.flamethrower_mk2.ads_speed = 0.460
 				self.flamethrower_mk2.damage_falloff = {
-					start_dist = 1300,
+					start_dist = 1000,
 					end_dist = 1800,
 					min_mult = 0,
 				}
@@ -9956,6 +9953,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
+				self.flamethrower_mk2.flame_max_range = 1800
+				self.flamethrower_mk2.sms = 0.65
 				self.flamethrower_mk2.stats_modifiers = nil
 				self.flamethrower_mk2.panic_suppression_chance = 0.05
 				self.flamethrower_mk2.timers.reload_not_empty = 7.7
@@ -9977,9 +9976,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.CLIP_AMMO_MAX = 45
 				self.system.AMMO_MAX = 120
 				self.system.fire_mode_data.fire_rate = 0.1
-				self.system.auto = {}
-				self.system.auto.fire_rate = 0.1
-				self.system.flame_max_range = 1400
 				self.system.single_flame_effect_duration = 1
 				self.system.armor_piercing_chance = 1
 				self.system.can_shoot_through_enemy = false
@@ -9995,7 +9991,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.supported = true
 				self.system.ads_speed = 0.360
 				self.system.damage_falloff = {
-					start_dist = 1100,
+					start_dist = 900,
 					end_dist = 1400,
 					min_mult = 0,
 				}
@@ -10005,7 +10001,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 96,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 19,
+					concealment = 20,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -10013,6 +10009,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
+				self.system.flame_max_range = 1400
+				self.system.sms = 0.75
 				self.system.stats_modifiers = nil
 				self.system.panic_suppression_chance = 0.05
 				self.system.reload_speed_multiplier = 1.2
@@ -10020,6 +10018,67 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.timers.reload_not_empty = 8.5
 				self.system.timers.reload_exit_empty = 1.5
 				self.system.timers.reload_exit_not_empty = 1.5
+
+			--Cash Blaster
+				if self.money then			
+					self.money.fire_variant = "money"
+					self.money.categories = {
+						"flamethrower",
+						"shotgun"
+					}
+					self.money.use_data.selection_index = 2
+					self.money.has_description = true
+					self.money.desc_id = "bm_ap_money_sc_desc"
+					self.money.timers.reload_not_empty = 8
+					self.money.timers.reload_empty = 8
+					self.money.rays = 20
+					self.money.CLIP_AMMO_MAX = 45
+					self.money.AMMO_MAX = 120
+					self.money.fire_mode_data.fire_rate = 0.1
+					self.money.single_flame_effect_duration = 1
+					self.money.armor_piercing_chance = 1
+					self.money.can_shoot_through_enemy = false
+					self.money.can_shoot_through_shield = false
+					self.money.can_shoot_through_wall = false
+					self.money.kick = self.stat_info.kick_tables.horizontal_recoil
+					self.money.fire_dot_data = {
+						dot_damage = 1.6,
+						dot_trigger_chance = 60,
+						dot_length = 3.1,
+						dot_tick_period = 0.5
+					}
+					self.money.supported = true
+					self.money.ads_speed = 0.360
+					self.money.damage_falloff = {
+						start_dist = 900,
+						end_dist = 1400,
+						min_mult = 0,
+					}
+					self.money.stats = {
+						damage = 24,
+						spread = 31,
+						recoil = 96,
+						spread_moving = 6,
+						zoom = 1,
+						concealment = 20,
+						suppression = 8,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 100,
+						value = 1,
+						reload = 20
+					}
+					self.money.flame_max_range = 1400
+					self.money.sms = 0.75
+					self.money.stats_modifiers = nil
+					self.money.panic_suppression_chance = 0.05
+					self.money.reload_speed_multiplier = 1.2
+					self.money.timers.reload_empty = 8.5
+					self.money.timers.reload_not_empty = 8.5
+					self.money.timers.reload_exit_empty = 1.5
+					self.money.timers.reload_exit_not_empty = 1.5	
+					self.money.sounds.no_fix = true		
+				end
 	
 
 
@@ -11414,67 +11473,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--DISABLED--	
 			self.x_pm9.use_data.selection_index = 5	
 		
-		--Cash Blaster
-		if self.money then			
-			self.money.fire_variant = "money"
-			self.money.categories = {
-				"flamethrower",
-				"shotgun"
-			}
-			self.money.use_data.selection_index = 2
-			self.money.has_description = true
-			self.money.desc_id = "bm_ap_money_sc_desc"
-			self.money.timers.reload_not_empty = 8
-			self.money.timers.reload_empty = 8
-			self.money.rays = 20
-			self.money.CLIP_AMMO_MAX = 45
-			self.money.AMMO_MAX = 120
-			self.money.fire_mode_data.fire_rate = 0.1
-			self.money.auto = {}
-			self.money.auto.fire_rate = 0.1
-			self.money.flame_max_range = 1400
-			self.money.single_flame_effect_duration = 1
-			self.money.armor_piercing_chance = 1
-			self.money.can_shoot_through_enemy = false
-			self.money.can_shoot_through_shield = false
-			self.money.can_shoot_through_wall = false
-			self.money.kick = self.stat_info.kick_tables.horizontal_recoil
-			self.money.fire_dot_data = {
-				dot_damage = 1.6,
-				dot_trigger_chance = 60,
-				dot_length = 3.1,
-				dot_tick_period = 0.5
-			}
-			self.money.supported = true
-			self.money.ads_speed = 0.360
-			self.money.damage_falloff = {
-				start_dist = 1100,
-				end_dist = 1400,
-				min_mult = 0,
-			}
-			self.money.stats = {
-				damage = 24,
-				spread = 31,
-				recoil = 96,
-				spread_moving = 6,
-				zoom = 1,
-				concealment = 19,
-				suppression = 8,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 1,
-				reload = 20
-			}
-			self.money.stats_modifiers = nil
-			self.money.panic_suppression_chance = 0.05
-			self.money.reload_speed_multiplier = 1.2
-			self.money.timers.reload_empty = 8.5
-			self.money.timers.reload_not_empty = 8.5
-			self.money.timers.reload_exit_empty = 1.5
-			self.money.timers.reload_exit_not_empty = 1.5	
-			self.money.sounds.no_fix = true		
-		end
 	
 	
 	--[[     Restoration Weapons     ]]--

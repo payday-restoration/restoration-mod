@@ -756,7 +756,7 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 
 	for i = 1, #weapon_tweak.categories do
 		local category = weapon_tweak.categories[i]
-		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+		if category == "flamethrower" or category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
 			damage_min_mult = 0
 			damage_base = 0
 		end
@@ -798,7 +798,7 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 
 	for i = 1, #weapon_tweak.categories do
 		local category = weapon_tweak.categories[i]
-		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+		if category == "flamethrower" or category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
 			damage_min_mult = 0
 			damage_mods = 0
 			damage_base = 0
@@ -819,6 +819,16 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
 		damage_min_mult = 0.05
+	end
+	
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "flamethrower" or category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			damage_min_mult = 0
+			damage_skill = 0
+			damage_mods = 0
+			damage_base = 0
+		end
 	end
 
 	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}

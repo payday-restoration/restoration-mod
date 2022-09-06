@@ -921,7 +921,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		["bot_watchdogs_new_stage2_09_any_01"] = "Ok I'm taking this shit, then I'm coming back for the rest!",
 		["bot_watchdogs_new_stage2_09_any_02"] = "I'm taking the stuff, but I be back for the rest as soon as I can if you whine up getting more stuff for me.",
-		["bot_watchdogs_new_stage2_09_any_03"] = "So i'm taking these now but don't worry, I be back if you get more stuff.",
+		["bot_watchdogs_new_stage2_09_any_03"] = "So I'm taking these now but don't worry, I be back if you get more stuff.",
 		
 		["bot_watchdogs_new_stage2_10_any_01"] = "Alright, it's unloaded. I be back in a bit.",
 		["bot_watchdogs_new_stage2_10_any_02"] = "It's unloaded! I be back.",

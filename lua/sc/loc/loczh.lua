@@ -422,7 +422,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_contact_akashic_description"] = "曾在赫克特·莫拉莱斯手下工作的高级中尉，尼古拉斯·\"尼可\"·雷内现在指挥着锡那罗亚贩毒集团在美国的残部。\n他们数量较少，因此规模更大的哥伦比亚贩毒集团不愿帮助他们，也不愿改善同CRIMNET的关系。\n\n于是尼可拉拢了在东海岸活动的各种小规模帮派并同CRIMENET结盟，他会提供他的资源以换取CRIME.NET的服务。",
 
 		["bm_msk_shatter_true"] = "刺眼火花",
-		["bm_msk_shatter_true_desc"] = "只被人们隐晦提及的传奇面具。/n/n当然了，这只是件复制品。/n/n原品实在是过于珍贵，以至于我认为这件复制品就足以满足你的收藏欲望。/n/n凤凰，重生的象征，无法真正死亡的永生之物。若是将其抹杀，它将火光与烈焰中给予反击。",
+		["bm_msk_shatter_true_desc"] = "只被人们隐晦提及的传奇面具。\n\n当然了，这只是件复制品。\n\n原品实在是过于珍贵，以至于我认为这件复制品就足以满足你的收藏欲望。\n\n凤凰，重生的象征，无法真正死亡的永生之物。若是将其抹杀，它将火光与烈焰中给予反击。",
 
 		["menu_l_global_value_veritas"] = "恢复MOD",
 		["menu_l_global_value_veritas_desc"] = "这是一件恢复MOD物品！",
@@ -1162,10 +1162,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_rpk_m_ban_sc"] = "特制弹\"钾\"",
 
 		--Saw--
-		["bm_ap_saw_sc_desc"] = "破甲锯。",
+		["bm_ap_saw_sc_desc"] = "#{skill_color}#破甲锯##。",
 		["bm_ap_saw_blade_sc_desc"] = "更锋利的锯片足以锯开敌人护甲。",
-		["bm_fast_motor_sc_desc"] = "增加15%电锯转速。",
-		["bm_slow_motor_sc_desc"] = "减少15%电锯转速。",
+		["bm_fast_motor_sc_desc"] = "增加 #{skill_color}#15%## 电锯转速。",
+		["bm_slow_motor_sc_desc"] = "#{important_1}#减少## #{skill_color}#15%## 电锯转速。",
 
 		--Weapon Sights--  not anymore?
 		--["bm_wp_upg_o_leupold_desc_sc"] = "开镜时自动标记特殊敌人，潜入时则会标记警卫。", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
@@ -1231,7 +1231,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_sc"] = "稀有",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "燃烧时间翻倍，燃烧持续伤害减半。",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "燃烧时间减半，燃烧持续伤害翻倍。",
-		["bm_ap_flamethrower_sc_desc"] = "五十度灰，二百度黑，三千度焦？\n喷火器可以烧穿敌人的护甲。", --used by both flamethrowers, decouple later?--
+		["bm_ap_flamethrower_sc_desc"] = "五十度灰，二百度黑，三千度焦？\n喷火器可以#{skill_color}#烧穿敌人的护甲##并可#{skill_color}#迅速烧坏敌人炮塔的装甲##。", --used by both flamethrowers, decouple later?--
 		["bm_ap_money_sc_desc"] = "只需轻轻打开阀门，成千上万白花花的票子就喷涌而出。\n票子不光可以打通关节，也可以打穿护甲。", --used by both flamethrowers, decouple later?--
 
 		--LMGs/Miniguns--
@@ -1272,8 +1272,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_m203_weapon_sc_desc"] = "按住 $BTN_BIPOD 切换到榴弹发射器。",
 
 		--Gecko Pistol
-		["bm_tranq_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用镇静弹造成持续伤害。",
-		["bm_tranq_x_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用镇静弹造成持续伤害。",
+		["bm_tranq_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用#{skill_color}#镇静弹##造成#{skill_color}#持续伤害##。",
+		["bm_tranq_x_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用#{skill_color}#镇静弹##造成#{skill_color}#持续伤害##。",
 		--Igor (APS)
 		["bm_stech_sc_desc"] = "由于这款冲锋手枪相对更重，射速也更慢使其不幸失宠。它的笨重使其以隐蔽性为代价换来了更好的可控性。",
 		["bm_x_stech_sc_desc"] = "由于这款冲锋手枪相对更重，射速也更慢使其不幸失宠。它们的笨重使其以隐蔽性为代价换来了更好的可控性。",
@@ -1284,7 +1284,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_g18c_sc_desc"] = "全自动澳洲滋水枪。虽然难于操控，但在近距离作战极具杀伤力。",
 		["bm_x_g18c_sc_desc"] = "单持火力爽，双持火葬场。小心后坐力！",
 		--CZ 75
-		["bm_czech_sc_desc"] = "曾被誉为“奇迹之九”, 一种有着优秀的人体工程学设计与良好手感的手枪。广泛应用于世界各大反恐组织。",
+		["bm_czech_sc_desc"] = "曾被誉为“奇迹之九”，一种有着优秀的人体工程学设计与良好手感的手枪。广泛应用于世界各大反恐组织。",
 		["bm_x_czech_sc_desc"] = "又一个劝退冲锋手枪的例子。你怎么可能轻松给这俩玩意换弹？",
 		--PPK (Gruber)
 		["bm_ppk_sc_desc"] = "更大，更危险的袖珍武器替代品，经典武器，经典用法。",
@@ -1293,31 +1293,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_legacy_sc_desc"] = "西德人的设计最终被Bernetti否决，但在一场战斗中，它仍能发挥出自己的力量。",
 		["bm_x_legacy_sc_desc"] = "两支被历史遗忘的手枪，将使你所及之屋留遍子弹。",
 		--Glock 17
-		["bm_g17_sc_desc"] = "控制后坐力十分轻松且可靠。是能助你踏上劫匪生涯的完美配枪。",
+		["bm_g17_sc_desc"] = "拥有易于掌控的后坐力且十分可靠。是能助你踏上劫匪生涯的完美配枪。",
 		["bm_x_g17_sc_desc"] = "以绝对的数量来弥补9毫米的弱小火力，并且依然占有低后坐力的优势\n\n在我们捞霍斯顿出来那段时间里是他的爱枪。",
 		--Bernetti 9
 		["bm_b92fs_sc_desc"] = "一款因其弹容出色且伤害像样而流行的武器。尤其在与众多敌人对峙时十分便利。",
 		["bm_x_b92fs_sc_desc"] = "两把总比一把强。以一种不同的方式将战斗化为9毫米手枪的派对。",
 		--White Streak
-		["bm_pl14_sc_desc"] = "使用西方后苏联技术的现代俄罗斯手枪。因其可靠性和未来风格而深受收割者的欢迎。",
-		["bm_x_pl14_sc_desc"] = "使用西方后苏联技术的现代俄罗斯手枪。因其可靠性和未来风格而深受收割者的欢迎。",
+		["bm_pl14_sc_desc"] = "使用西方后苏联技术的现代俄罗斯手枪。\n因其可靠性和未来风格而深受收割者的欢迎。",
+		["bm_x_pl14_sc_desc"] = "使用西方后苏联技术的现代俄罗斯手枪。\n因其可靠性和未来风格而深受收割者的欢迎。",
 		--Holt 9mm
 		["bm_holt_sc_desc"] = "一款陷入研发困境中的原型枪，采用了创新设计，有助于减少后坐力。",
 		["bm_x_holt_sc_desc"] = "不是一个，而是两个被遗忘的艺术品组成的原型枪。",		
 		--FMG-9
-		["bm_fmg9_sc_desc"] = "可作为STRYK 18c的载体的武器平台，采用未来折叠技术的原型枪。",
+		["bm_fmg9_sc_desc"] = "可作为STRYK-18c的载体的武器平台，采用未来折叠技术的原型枪。",
 		--93R
 		["bm_beer_sc_desc"] = "一块临界于幻想之间的全自动武器，使得它的子弹们争先恐后地从枪口里爬出来去寻找它们的目标。是死是活，你我来定。",
 		--Contractor Pistols 
 		["bm_packrat_sc_desc"] = "威克之所以选择它，是因为它的可靠性和综合易用性，据说他在他位临红圈时使用的就是这把枪。",
 		["bm_x_packrat_sc_desc"] = "当你想用血腥和复仇来净空俄罗斯人拥有的夜总会时，就带上它吧。",
 		--Breech (Luger) 
-		["bm_breech_sc_desc"] = "几乎两次主宰世界的手枪。这把德国工艺品优雅、精确，遗憾的是过时了。",
+		["bm_breech_sc_desc"] = "几乎两次主宰世界的手枪。这把德国工艺品优雅、精致，遗憾的是过时了。",
 		--Chimano Custom
 		["bm_g22c_sc_desc"] = "在最好的战术手枪中，这把武器是高容量和高威力的代名词。",
 		["bm_x_g22c_sc_desc"] = "如果一张选票是免费的枪支，那么当你能得到两把这样的便携式防身武器时，投票欺诈似乎很有吸引力.",
 		--Baby Deagle
-		["bm_sparrow_sc_desc"] = "\"欲擎此枪必承其重\"。",
+		["bm_sparrow_sc_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
 		--Signature .40
 		["bm_p226_sc_desc"] = "无论是截停武装押运还是银行抢劫，这个经典的警察杀手都永远不会让人失望。",
 		--LEO
@@ -1325,7 +1325,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--5/7 pistol
 		["bm_lemming_sc_desc"] = "高威力与大容量的结合。如果有人能吃了20枪没事，你可能不应该向他射击。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#11%##的伤害。",
 		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "\"欲擎此枪必承其重\"。",
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "豺狼的配枪选择。一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
 		--Crosskill
@@ -1365,11 +1365,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_rage_sc_desc"] = "既不好用也不实用，但你就是忍不住想在抢银行的时候掏这俩枪出来干条子。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
 		--Castigo
 		["bm_chinchilla_sc_desc"] = "强大，精准，有型。便于突破特区里更持久的敌人。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
-		["bm_x_chinchilla_sc_desc"] = "一个刺客需要确保它的目标能够毙命，两把这个枪能够保证这点。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
+		["bm_x_chinchilla_sc_desc"] = "一个刺客需要确保它的目标能够毙命，两把这枪能够保证这点。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "单持口径口水战中毋庸置疑的终结语。\"汝等舌战可休矣！\"\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
+		["bm_rsh12_sc_desc"] = "单持口径口水战中毋庸置疑的终结语。\n\"汝等舌战可休矣！\"\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--Chunky 1911 
-		["bm_m1911_sc_desc"] = "Crosskill .45的经典重制版。尽管挂着这个名字，并没有比自定义款的枪更厚实。",
+		["bm_m1911_sc_desc"] = "Crosskill.45的经典重制版。尽管挂着这个名字，并没有比自定义款的枪更厚实。",
 		--FMG-9
 		["bm_w_fmg9"] = "Wasp-DS自动手枪",
 		--Sub 2000
@@ -1401,14 +1401,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_mp7_sc_desc"] = "一款轻型冲锋枪，同时是Project-90冲锋枪的竞争对手。并不像某些人期待的那样具备下挂榴弹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#11%##的伤害。",
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5冲锋枪",	
-		["bm_mp5_sc_desc"] = "Gewehr-3的小妹妹\n射击快速，精准同时操控简单，你还指望冲锋枪能比这更好吗？",
+		["bm_mp5_sc_desc"] = "Gewehr-3的小妹妹。\n射击快速，精准同时操控简单，你还指望冲锋枪能比这更好吗？",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "爆能E-11枪管",
 		["bm_wp_sterling_b_e11_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1s\n充能速率: 6/s (过热时减半)\n过热惩罚: 2s",
 		--Uzi
-		["bm_uzi_sc_desc"] = "慢下来开火的时候,Uzi是一款可靠，操控简单的冲锋枪，使得它依然能拿来碰一碰，尤其是能将它转变为.41 AE时。",	
+		["bm_uzi_sc_desc"] = "慢下来开火的时候，Uzi是一款可靠，操控简单的冲锋枪，使得它依然能拿来碰一碰，尤其是能将它转变为.41 AE时。",	
 		--Chicago Typewriter
-		["bm_thompson_sc_desc"] = "堂堂正正大弹鼓，即便是你也能撂倒敌人时一展雄风",	
+		["bm_thompson_sc_desc"] = "堂堂正正大弹鼓，即便是你也能撂倒敌人时一展雄风。",	
 		--MP40
 		["bm_erma_sc_desc"] = "一把在二战期间广泛应用于步兵的相当可靠的冲锋枪，别把弹夹当握把咯。",
 
@@ -1426,7 +1426,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Argos III
 		["bm_ultima_sc_desc"] = "没有什么更能比铝和塑料更能表达现代的，这枪甚至有个给你手机充电的USB口。\n\n一次装填#{skill_color}#2##发子弹。",
 		--Loco
-		["bm_serbu_sc_desc"] = "缩小后的售后市场版Reinfeld 880；给那些想要隐蔽性和渴望搞残手腕的人。",
+		["bm_serbu_sc_desc"] = "缩小后的售后市场版Reinfeld-880；给那些想要隐蔽性和渴望搞残手腕的人。",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897霰弹枪",
 		["bm_menu_sc_m1897_desc"] = "这件标志性的历史名枪见证了太平洋岛屿上从泥沟到茂密丛林的几乎一切战斗，也因其火力汹涌而久誉恶名。\n\n辅助射击允许#{skill_color}#快速连点以用3倍射速射击##，代价是#{important_1}#后坐力和子弹散射更大并且无法右键瞄准##。",
@@ -1466,7 +1466,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Olympic/Para
 		["bm_menu_sc_olympic_desc"] = "大到离谱以至于以全自动方式射出步枪弹的手枪。这把枪因其打子弹方式这点存在生存危机。",		
 		--TAR-21/Para
-		["bm_menu_sc_komodo_desc"] = "极其紧凑的包装充满杀伤力。适用于CQB或者远距离冲突",		
+		["bm_menu_sc_komodo_desc"] = "极其紧凑的包装充满杀伤力。适用于CQB或者远距离冲突。",		
 		--Famas
 		["bm_menu_sc_famas_desc"] = "这把武器牺牲了弹容量换来了射速和精准度的提升。是个射掉人脑袋上的苹果的趁手工具。",
 		--Custom 40 damage ARs
@@ -1475,7 +1475,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_xeno_sc_desc"] = "从 \"Armat\" 变为了具备异常先进的科技的奇怪玩意。配备有下挂榴弹发射器\n\n按住 $BTN_BIPOD 切换到榴弹发射器。",
 		--VSS
 		["bm_w_vss"] = "Viktoriya步枪",
-		["bm_vss_sc_desc"] = "Valkyria枪系的变体，拥有更好的射程和精准度。\n\n该武器#{skill_color}#自带消音##且可#{skill_color}#穿透敌人和薄墙壁##，也可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害。",
+		["bm_vss_sc_desc"] = "Valkyria枪系的变体，拥有更好的射程和精准度。\n\n#{skill_color}#完全消音##并且#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-世代武器科技。配备有20mm空爆榴弹发射器。\n按下 $BTN_BIPOD 切换到榴弹发射器。",
@@ -1586,7 +1586,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m203_weapon_sc_desc"] = "疤面煞星私人款AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n完全消音并且#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+		["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n#{skill_color}#完全消音##并且#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62步枪",
 		["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",		
@@ -1627,7 +1627,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_sbl"] = "Rangehitter MK2狙击步枪", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		["bm_sbl_sc_desc"] = "二十世纪的杠杆设计使其相对十九世纪能供应更大号的枪弹。期待你这边的.45-70子弹带来额外的乐趣和额外的死仔吧。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",	
 		--Model 70
-		["bm_model70_sc_desc"] = "神枪手的神枪。早期由Repeater 1874的同一批设计师手下做出的栓动式设计。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
+		["bm_model70_sc_desc"] = "神枪手的神枪。早期由Repeater-1874的同一批设计师手下做出的栓动式设计。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--SVD
 		["bm_siltstone_sc_desc"] = "AK家族的高威力半自动狙击步枪。像许多东方武器一样声名显赫。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 
@@ -1641,12 +1641,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_r93_sc_desc"] = "大口径德国狙击步枪，为停阻大家伙而准备。是全球警察和反恐准军事力量的首选狙击枪。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 cal 反器材狙击步枪",
-		["bm_m95_sc_desc"] = "被用于对小型载具作战的反器材步枪。把它用到生物目标的人几乎是战争犯。\n\n爆头额外造成#{skill_color}#100%##伤害。\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
+		["bm_m95_sc_desc"] = "被用于对小型载具作战的反器材步枪。把它用到生物目标的人几乎是战争犯。\n\n爆头额外造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		--Custom Snipers
 		["bm_w_m107cq"] = "Mors .50 cal反器材狙击步枪",
-		["bm_m107cq_sc_desc"] = "如果Thanatos跟不上进度，那么Mors能如你所愿让他们死无全尸。\n\n爆头额外造成#{skill_color}#100%##伤害。\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
+		["bm_m107cq_sc_desc"] = "如果Thanatos跟不上进度，那么Mors能如你所愿让他们死无全尸。\n\n爆头额外造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		["bm_w_m200"] = "TF-141反器材狙击步枪",
-		["bm_m200_sc_desc"] = "为那些想要愉悦的做到楼梯间360度不开镜单杀的人设计。\n\n爆头多造成#{skill_color}#100%##伤害。\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
+		["bm_m200_sc_desc"] = "为那些想要愉悦的做到楼梯间360度不开镜单杀的人设计。\n\n爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		--Marlin 1894
 		["bm_w_m1894"] = "Mare's Leg 狙击步枪",
 		--SPX Centerfire
@@ -1665,23 +1665,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--PIGLET/M32
 		["bm_m32_sc_desc"] = "变身成为一个\"#{risk}#战斗机器##\"，告诉你的敌人们，没有魔法少女会来保护他们和他们的队友免受这个6发转轮榴弹的伤害。",
 		--COMMANDO 101/M202 FLASH
-		["bm_ray_sc_desc"] = "这个四联装#{heat_warm_color}#燃烧火箭##使你成为\"#{risk}#死神##\"。\n\n火箭爆炸后#{heat_warm_color}#留下持续地火##，并且直接爆炸伤害可以#{skill_color}#秒杀警察炮台##。",
+		["bm_ray_sc_desc"] = "这个四联装#{heat_warm_color}#燃烧火箭##使你成为\"#{risk}#死神##\"。\n\n火箭爆炸后#{heat_warm_color}#留下持续地火##，并且直接爆炸伤害可以#{skill_color}#秒杀敌人炮塔##。",
 		
 		--M4/CAR-4
 		["bm_menu_sc_m4_desc"] = "可靠，紧凑，且致命。在现代部队广泛使用的5.56mm步枪。",
 
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "腰射后坐力降低25%。",		
-		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟800发",
+		["bm_wolf_brigade_sc_desc"] = "腰射后坐力降低#{skill_color}#25%##。",		
+		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟#{skill_color}#800##发",
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "可以#{skill_color}#穿透护甲，盾牌以及薄墙壁##。\n\n有史以来做的最好的手枪。",				
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{heat_warm_color}#有史以来做的最好的手枪##。\n辅助射击能够以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",				
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
 		["bm_menu_weapon_movement_bonus_info"] = "移动速度提升 ",
 		["bm_menu_sms_info_cont"] = "射击时惩罚翻倍。",
-		["bm_menu_sms_info_2"] = " 射击时。",
+		["bm_menu_sms_info_2"] = "  ，在你射击时。",
 		["bm_menu_stat_sms_info_2"] = " 射击时受当前配件影响。",
 		["bm_menu_weapon_movement_penalty_info_2"] = "，在你手持时",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////             无 法 使 用             //////////\n",
@@ -1701,10 +1701,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_armor_80_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
 		["bm_pdw_gen_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#11%##的伤害。",
 		["bm_heavy_ap_weapon_sc_desc"] = "爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
-		["bm_ap_2_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以捡起回收，并且射程随拉弓时间提升而加长。",
-		["bm_ap_3_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以捡起回收。",
+		["bm_ap_2_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以#{skill_color}#捡起回收##，并且射程随拉弓时间提升而加长。",
+		["bm_ap_3_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以#{skill_color}#捡起回收##。",
 		["bm_40mm_weapon_sc_desc"] = "按下 $BTN_GADGET 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
-		["bm_rocket_launcher_sc_desc"] = "该武器造成的爆炸伤害能够秒杀警察炮台。",
+		["bm_rocket_launcher_sc_desc"] = "该武器造成的爆炸伤害能够#{skill_color}#秒杀敌人炮塔##。",
 		["bm_quake_shotgun_sc_desc"] = "一次射击两个枪管，弹丸数量也翻倍。",
 		["bm_hx25_buck_sc_desc"] = "发射散布广的12颗弹丸。\n\n只受榴弹相关技能加成。",
 		["bm_auto_generated_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。",
@@ -2087,12 +2087,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		})
 	end
 
-	local apex = math.rand(1)
-	local apex_fun = 0.05
-	if apex <= apex_fun then
+	local game_meme = math.rand(1)
+	local game_meme_fun = 0.05
+	if game_meme <= game_meme_fun then
 		LocalizationManager:add_localized_strings({	
+			--apex
 			["bm_w_fmg9"] = "平行手枪",
 			["bm_w_mg42"] = "L-STAR充能机枪",
+			--overwatch
+			["bm_w_peacemaker"] = "维和者",
+			["bm_ap_weapon_peacemaker_sc_desc"] = "“#{heat_warm_color}#正义可不会伸张自己##”\n\n辅助射击能够像#{heat_warm_color}#麦克雷##一样以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",
+		})
+	end
+
+	local chinese_meme = math.rand(1)
+	local chinese_meme_fun = 0.05
+	if chinese_meme <= chinese_meme_fun then
+		LocalizationManager:add_localized_strings({	
+			["bm_saiga_sc_desc"] = "这把全自动霰弹枪正适合枪马的你。",
 		})
 	end
 

@@ -19,7 +19,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_hw_black" />
-			<var name="_default_weapon_id" value="aa12_npc" />
+			<var name="_default_weapon_id" value="aa12_dozer" />
 			<var name="_melee_weapon_table" value="helloween_sword" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

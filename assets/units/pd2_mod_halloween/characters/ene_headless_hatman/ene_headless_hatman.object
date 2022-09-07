@@ -14,18 +14,9 @@
 			<object name="Spine1"/>
 			<object name="c_capsule_body" collision_type="capsule" padding="-5" />
 		</body>
-		<body name="head" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-4" />
-		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
-		</body>
-
-		<body name="body_helmet" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
 		</body>
 		<body name="body_helmet_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -332,6 +323,18 @@
 					<material materials="mtr_bulldozer_head_lod_2" />
 				</object>
 			</lod_object>
+
+			<lod_object name="lod_helmet">
+				<object name="g_helmet" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_helmet" max_distance="1000" />
+					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+				<object name="g_helmet_lod1" 			enabled="true" lod="1" >
+					<material materials="mtr_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod_2" />
+				</object>
+			</lod_object>			
 			
 			<lod_object name="lod_head_headshot">
 				<object name="g_helmet_glass_crk" 					enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">

@@ -866,6 +866,9 @@
 	<!--textures-->
 	<texture			path="units/pd2_mod_halloween/characters/ene_headless_hatman/hatman_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm" force="false"/>
+
+	<!--hatman's MG42 of Evil-->
+	<unit_mat			path="units/pd2_mod_halloween/weapons/wpn_npc_mg42_hatman/wpn_npc_mg42_hatman" />
 	
 	<!--Titan Cloaca-->	
 	<model				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>

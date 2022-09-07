@@ -15980,6 +15980,9 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	table.insert(self.weap_ids, "hk21_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_hk21_dozer/wpn_npc_hk21_dozer"))		
 		
+	table.insert(self.weap_ids, "mg42_hatman")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_halloween/weapons/wpn_npc_mg42_hatman/wpn_npc_mg42_hatman"))		
+		
 	--Cloaker Cloaker MP5
 	table.insert(self.weap_ids, "mp5_cloak")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))

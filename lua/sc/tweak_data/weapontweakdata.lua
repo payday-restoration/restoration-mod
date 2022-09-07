@@ -1487,6 +1487,10 @@ local job = Global.level_data and Global.level_data.level_id
 		--HK21
 		self.hk21_sc_npc = deep_clone(self.m249_npc)
 		self.hk21_sc_npc.sounds.prefix = "hk23e_npc"
+		
+		--Hatman's MG42 of EVIL
+		self.mg42_npc = deep_clone(self.m249_npc)
+		self.mg42_npc.sounds.prefix = "mg42_npc"
 		--[[self.hk21_sc_npc.use_data.selection_index = 2
 		self.hk21_sc_npc.DAMAGE = 3
 		self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"

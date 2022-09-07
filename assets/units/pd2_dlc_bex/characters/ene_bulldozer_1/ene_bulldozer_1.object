@@ -30,6 +30,11 @@
 			<object name="c_helmet_glass" collision_type="convex" padding ="-2"/>
 		</body>
 
+		<body name="body_armor_stomache" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Hips"/>
+			<object name="c_armor_stomache" collision_type="convex"/>
+		</body>
+		
 		<body name="body_armor_chest" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
 			<object name="c_armor_chest" collision_type="convex"/>

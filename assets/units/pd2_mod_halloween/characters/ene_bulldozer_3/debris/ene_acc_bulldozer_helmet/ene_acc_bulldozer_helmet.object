@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" orientation_object="rp_ene_acc_bulldozer_helmet" />
+	<diesel materials="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" orientation_object="rp_ene_acc_bulldozer_helmet" />
 	
 	<bodies>
 	<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

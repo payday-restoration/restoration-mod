@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" orientation_object="rp_ene_acc_bulldozer_chest" />
+	<diesel materials="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" orientation_object="rp_ene_acc_bulldozer_chest" />
 	
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

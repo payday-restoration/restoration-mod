@@ -282,112 +282,89 @@
 
 	<!--Jarey_ zeals gangstalking below-->
 	<!--GREEN-->
-	<object				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
-	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>	
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
+	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/bulldozer_2_df" />	
 	<model				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" load="true"/>
-	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/bulldozer_2_df" />	
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_husk" load="true"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>	
+	<object				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>	
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>	
+	<unit	            path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" load="true"/>	
+	<unit	            path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_husk" load="true"/>	
 	
-	<material_config	path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" force="false"/>		
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_2_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_2_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_2_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_2_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>		
+	<unit_mat			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
 	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
+
 	<!--BLACK-->
-	<object				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
+	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/bulldozer_3_df" />	
+	<model				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>	
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>	
+	<object				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>	
 	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>		
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" load="true"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_husk" load="true"/>
-	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/bulldozer_3_df" />	
+	<unit	            path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" load="true"/>		
+	<unit	            path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_husk" load="true"/>		
 	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
-	<material_config	path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_3_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_3_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_3_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_3_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>		
-
+	<unit_mat			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	
 	<!--SKULL-->
-	<object				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" load="true"/>
-	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>	
-	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
-	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_contour"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_husk" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/bulldozer_df" />	
+	<cooked_physics	    path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>	
+	<object				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>	
+	<model				path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>	
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
+	<unit           	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" load="true"/>
+	<unit           	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_husk" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>	
+	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_contour"/>	
 
-	<!--THE SKELETON M249 DOZER-->
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
-	<material_config	path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>	
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>		
+	<unit_mat			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" force="false"/>
+
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	
+	<unit_obj			path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>		
 		
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/dozers_head_atlas_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas_nm" />	

@@ -319,6 +319,9 @@
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<unit				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="true" force="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
+
+	<!--dozer HK21-->
+	<unit_obj				path="units/payday2/weapons/wpn_npc_hk21_dozer/wpn_npc_hk21_dozer"  load="true"/>
 	
 	<!-- AS VAL GRIP ATTACHMENT STUFF  -->
 	<unit_obj			path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip" />

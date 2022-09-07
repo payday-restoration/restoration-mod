@@ -5261,7 +5261,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 			},
 			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc")
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc")
 			},						
 			murkywater = {
 				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")

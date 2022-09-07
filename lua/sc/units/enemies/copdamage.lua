@@ -1039,7 +1039,7 @@ function CopDamage:damage_bullet(attack_data)
 					local world_g = World
 					if accelerated_training_program then
 						world_g:effect_manager():spawn({
-							effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"), --need yellow brains
+							effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"), --need yellow brains
 							parent = head_object_get		
 						})
 						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
@@ -1271,7 +1271,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 				local world_g = World
 				if accelerated_training_program then
 					world_g:effect_manager():spawn({
-						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"), --need yellow brains
+						effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"), --need yellow brains
 						parent = head_object_get		
 					})
 					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then

@@ -3059,7 +3059,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Frenzy--
 			["menu_wolverine_beta_sc"] = "광분",
-			["menu_wolverine_beta_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 높을수록 치유량이 최대 #{skill_color}#30%##까지 줄어듭니다.\n\n그 대신 체력이 낮을수록 굴절을 최대 #{skill_color}#20%##까지 더 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: #{owned}#$pro##\n이제 최대 #{skill_color}#75%##만큼 덜 치료되지만 굴절을 최대 #{skill_color}#50%##만큼 얻습니다.",
+			["menu_wolverine_beta_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 높을수록 치유량이 최대 #{important_1}#30%##까지 줄어듭니다.\n\n그 대신 체력이 낮을수록 굴절을 최대 #{skill_color}#20%##까지 더 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n에이스: #{owned}#$pro##\n이제 최대 #{important_1}#75%##만큼 덜 치료되지만 굴절을 최대 #{skill_color}#50%##만큼 얻습니다.",
 
 			--Berserker--
 			["menu_frenzy_sc"] = "버서커",

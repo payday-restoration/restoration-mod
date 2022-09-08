@@ -9,3 +9,15 @@ EscortWithSuitcaseActionWalk._walk_anim_lengths.stand.hos.run = EscortWithSuitca
 EscortWithSuitcaseActionWalk._walk_anim_lengths.stand.cbt = EscortWithSuitcaseActionWalk._walk_anim_lengths.stand.hos
 EscortWithSuitcaseActionWalk._walk_anim_lengths.crouch = EscortWithSuitcaseActionWalk._walk_anim_lengths.stand
 EscortWithSuitcaseActionWalk._walk_anim_lengths.wounded = EscortWithSuitcaseActionWalk._walk_anim_lengths.stand
+
+EscortPrisonerActionWalk._walk_anim_velocities.stand.ntl = EscortPrisonerActionWalk._walk_anim_velocities.stand.hos
+EscortPrisonerActionWalk._walk_anim_velocities.stand.hos.run = EscortPrisonerActionWalk._walk_anim_velocities.stand.hos.walk
+EscortPrisonerActionWalk._walk_anim_velocities.stand.cbt = EscortPrisonerActionWalk._walk_anim_velocities.stand.hos
+EscortPrisonerActionWalk._walk_anim_velocities.crouch = EscortPrisonerActionWalk._walk_anim_velocities.stand
+EscortPrisonerActionWalk._walk_anim_velocities.wounded = EscortPrisonerActionWalk._walk_anim_velocities.stand
+
+EscortPrisonerActionWalk._walk_anim_lengths.stand.ntl = EscortPrisonerActionWalk._walk_anim_lengths.stand.hos
+EscortPrisonerActionWalk._walk_anim_lengths.stand.hos.run = EscortPrisonerActionWalk._walk_anim_lengths.stand.hos.walk
+EscortPrisonerActionWalk._walk_anim_lengths.stand.cbt = EscortPrisonerActionWalk._walk_anim_lengths.stand.hos
+EscortPrisonerActionWalk._walk_anim_lengths.crouch = EscortPrisonerActionWalk._walk_anim_lengths.stand
+EscortPrisonerActionWalk._walk_anim_lengths.wounded = EscortPrisonerActionWalk._walk_anim_lengths.stand

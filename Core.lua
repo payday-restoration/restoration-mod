@@ -76,7 +76,7 @@ function restoration:Init()
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
 
 		--Summers
-		alex_2 = restoration.captain_types.spring, --Rats Day 2
+		alex_2 = restoration.captain_types.summer, --Rats Day 2
 		pal = restoration.captain_types.summer, --counterfeit
 		mia_1 = restoration.captain_types.summer, --Hotline Day 1
 		crojob2 = restoration.captain_types.summer, --bomb dockyard
@@ -86,7 +86,7 @@ function restoration:Init()
 		watchdogs_2_day = restoration.captain_types.summer, --Watchdogs Day 2 Daytime
 		jolly_CD = restoration.captain_types.summer, --jolly crackdown edit
 		--Custom Heists--	
-		alex_2_res = restoration.captain_types.spring, --Rats Day 2 edit
+		alex_2_res = restoration.captain_types.summer, --Rats Day 2 edit
 		lit1 = restoration.captain_types.summer, --California's Heat
 		glb = restoration.captain_types.summer, --Golden Lotus Bank 
 		constantine_mobsterclub_lvl = restoration.captain_types.summer, --Aurora (Borealis?!) Club

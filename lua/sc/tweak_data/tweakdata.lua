@@ -277,6 +277,27 @@ tweak_data.projectiles.launcher_electric_osipr = {
 	sound_event = "gl_explode",
 	name_id = "bm_launcher_frag"
 }
+tweak_data.projectiles.launcher_poison_osipr = {
+	launch_speed = 2500,
+	init_timer = 2.5,
+	mass_look_up_modifier = 0,
+	sound_event = "gl_explode",
+	name_id = "bm_launcher_frag",
+	damage = 0,
+	player_damage = 0,
+	curve_pow = 0,
+	range = 0,
+	poison_gas_range = 600,
+	poison_gas_duration = 12,
+	poison_gas_fade_time = 0.1,
+	poison_gas_tick_time = 0.3,
+	poison_gas_dot_data = {
+		hurt_animation_chance = 1,
+		dot_damage = 1.5,
+		dot_length = 6.15,
+		dot_tick_period = 0.5
+	}
+}
 
 --3GL
 tweak_data.projectiles.launcher_frag_ms3gl.damage = 36

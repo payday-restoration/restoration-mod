@@ -178,6 +178,21 @@ local grenadier_smash = {
 	ids_func("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1_husk")    	
 }
 
+local armour = {
+	-- Dozer
+	[Idstring("body_helmet"):key()] = true,
+	[Idstring("body_helmet_plate"):key()] = true,
+	[Idstring("body_helmet_glass"):key()] = true,
+	[Idstring("body_armor_chest"):key()] = true,
+	[Idstring("body_armor_stomache"):key()] = true,
+	[Idstring("body_armor_back"):key()] = true,
+	[Idstring("body_armor_throat"):key()] = true,
+	[Idstring("body_armor_neck"):key()] = true,
+	-- Sosa
+	[Idstring("body_vest"):key()] = true,
+	[Idstring("body_ammo"):key()] = true,
+}
+
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 
@@ -791,8 +806,8 @@ function CopDamage:damage_bullet(attack_data)
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local damage = attack_data.damage
-
-	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
+	local hit_body = attack_data.col_ray.body
+	if armour[hit_body:name():key()] then -- dozer armour negates damage
 		local pierce_armor = nil
 		
 		--Just as a fallback, ugly as sin but whatever
@@ -814,6 +829,10 @@ function CopDamage:damage_bullet(attack_data)
 				normal = attack_data.col_ray.ray
 			})
 		else
+			if attack_data.attacker_unit == managers.player:player_unit() and hit_body:extension() and hit_body:extension().damage then
+				managers.hud:on_hit_confirmed() -- no damage to the unit, but it did damage the body
+			end
+
 			World:effect_manager():spawn({
 				effect = Idstring("effects/payday2/particles/impacts/steel_no_decal_impact_pd2"),
 				position = attack_data.col_ray.position,

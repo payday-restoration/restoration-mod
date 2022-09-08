@@ -808,8 +808,11 @@ function CopDamage:damage_bullet(attack_data)
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local damage = attack_data.damage
+	
+	local ignore = self._unit:base()._tweak_table == "spring" or self._unit:base()._tweak_table == "tank_titan"	
+	
 	local hit_body = attack_data.col_ray.body
-	if armour[hit_body:name():key()] then -- dozer armour negates damage
+	if armour[hit_body:name():key()] and not ignore then -- dozer armour negates damage
 		local pierce_armor = nil
 		
 		--Just as a fallback, ugly as sin but whatever

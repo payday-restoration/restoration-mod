@@ -76,6 +76,7 @@ function restoration:Init()
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
 
 		--Summers
+		alex_2 = restoration.captain_types.spring, --Rats Day 2
 		pal = restoration.captain_types.summer, --counterfeit
 		mia_1 = restoration.captain_types.summer, --Hotline Day 1
 		crojob2 = restoration.captain_types.summer, --bomb dockyard
@@ -85,6 +86,7 @@ function restoration:Init()
 		watchdogs_2_day = restoration.captain_types.summer, --Watchdogs Day 2 Daytime
 		jolly_CD = restoration.captain_types.summer, --jolly crackdown edit
 		--Custom Heists--	
+		alex_2_res = restoration.captain_types.spring, --Rats Day 2 edit
 		lit1 = restoration.captain_types.summer, --California's Heat
 		glb = restoration.captain_types.summer, --Golden Lotus Bank 
 		constantine_mobsterclub_lvl = restoration.captain_types.summer, --Aurora (Borealis?!) Club
@@ -94,7 +96,6 @@ function restoration:Init()
 		RogueCompany = restoration.captain_types.summer, --Rogue Company
 
 		--Spring
-		alex_2 = restoration.captain_types.spring, --Rats Day 2
 		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
 		firestarter_1 = restoration.captain_types.spring, --firestarter day 1
 		arm_for = restoration.captain_types.spring, --train heist
@@ -106,7 +107,6 @@ function restoration:Init()
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
 		chas = restoration.captain_types.spring, --Dragon Heist
 		--Custom Heists--
-		alex_2_res = restoration.captain_types.spring, --Rats Day 2 edit
 		firestarter_1_res = restoration.captain_types.spring, --firestarter day 1 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
 		nft_heist = restoration.captain_types.spring, --EN EF TEE HEIST

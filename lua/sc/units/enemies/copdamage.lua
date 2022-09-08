@@ -179,6 +179,8 @@ local grenadier_smash = {
 }
 
 local armour = {
+	-- Tans
+	[Idstring("body_plate"):key()] = true,
 	-- Dozer
 	[Idstring("body_helmet"):key()] = true,
 	[Idstring("body_helmet_plate"):key()] = true,

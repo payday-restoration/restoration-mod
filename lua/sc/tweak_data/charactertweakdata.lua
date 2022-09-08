@@ -1090,9 +1090,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.heal_cooldown = 1.25
 	self.weekend.yellow_blood = nil
 	if self:get_ai_group_type() ~= "murkywater" then
-		self.weekend_lmg.yellow_blood = true
+		self.weekend.yellow_blood = true
 	else	
-		self.weekend_lmg.yellow_blood = nil
+		self.weekend.yellow_blood = nil
 	end	
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo

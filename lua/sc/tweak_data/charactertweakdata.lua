@@ -1112,6 +1112,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" or self:get_ai_group_type() ~= "murkywater" then
 		self.city_swat_titan.yellow_blood = true
+	else
+		self.city_swat_titan.yellow_blood = nil
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
 	self.city_swat_titan.headshot_dmg_mul = 2.2
@@ -2877,6 +2879,8 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.no_asu = true
 	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
 		self.taser_titan.yellow_blood = true
+	else
+		self.taser_titan.yellow_blood = nil		
 	end	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 11.25

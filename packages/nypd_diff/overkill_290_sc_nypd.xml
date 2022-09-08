@@ -253,6 +253,9 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />			
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />	
 
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
 	<!-- skulldozer -->
     <unit				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_husk" load="true"/>	
@@ -266,8 +269,9 @@
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<unit_obj			path="units/payday2/characters/ene_bulldozer_3_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
 	
-	<unit_mat			path="units/pd2_mod_nypd/characters/ene_acc_bulldozer_faceplate/ene_acc_bulldozer_faceplate" />
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_acc_bulldozer_faceplate/ene_acc_bulldozer_faceplate"/>	
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 
 	<!--Grenadier-->
 	<object				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>

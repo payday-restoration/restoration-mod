@@ -920,7 +920,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
-	if self:get_ai_group_type() ~= "murkywater" then
+	if self:get_ai_group_type() == "murkywater" then
 		self.weekend_dmr.yellow_blood = true
 	else	
 		self.weekend_dmr.yellow_blood = nil
@@ -1088,8 +1088,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 1.25
-	self.weekend.yellow_blood = nil
-	if self:get_ai_group_type() ~= "murkywater" then
+	if self:get_ai_group_type() == "murkywater" then
 		self.weekend.yellow_blood = true
 	else	
 		self.weekend.yellow_blood = nil
@@ -1156,7 +1155,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
 	self.weekend_lmg.yellow_blood = nil
-	if self:get_ai_group_type() ~= "murkywater" then
+	if self:get_ai_group_type() == "murkywater" then
 		self.weekend_lmg.yellow_blood = true
 	else	
 		self.weekend_lmg.yellow_blood = nil

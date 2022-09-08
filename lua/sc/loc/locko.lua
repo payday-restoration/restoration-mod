@@ -896,48 +896,48 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_xmn_tag_name"] = "FBI 침입 크리스마스 버전",
 		
 		--Watchdogs Early Boat Driver Restoration
-		["bot_watchdogs_new_stage2_01_any_02"] = "This is the boat. I see the signal, will be there soon.",
-		["bot_watchdogs_new_stage2_01_any_03"] = "This is the boat. Signal on sight, I'm on my way.",
+		["bot_watchdogs_new_stage2_01_any_02"] = "여기는 보트다. 신호가 보인다. 곧 도착하겠다.",
+		["bot_watchdogs_new_stage2_01_any_03"] = "여기는 보트다. 시야에 신호가 포착되었다. 거기로 가겠다.",
 		
-		["bot_watchdogs_new_stage2_05_any_02"] = "Ok I'm here, now throw the bags into the boat!",
-		["bot_watchdogs_new_stage2_05_any_03"] = "Ok guys, get the god damn bags into the boat!",
-		["bot_watchdogs_new_stage2_05_any_04"] = "Ok everyone, get the fucking bags into the boat!",
+		["bot_watchdogs_new_stage2_05_any_02"] = "좋아, 내가 왔어, 이제 가방들을 보트에다가 던져!",
+		["bot_watchdogs_new_stage2_05_any_03"] = "좋아 얘들아, 빨리 빌어먹을 가방들을 보트로 옮겨!",
+		["bot_watchdogs_new_stage2_05_any_04"] = "좋아 모두들, 빨리 망할 가방들을 보트로 옮겨!",
 		
-		["bot_watchdogs_new_stage2_06_any_01"] = "I can only take four at the time! Fill it up and I come back for more.",
-		["bot_watchdogs_new_stage2_06_any_02"] = "Four at the time! Sorry...I come back for the rest.",
-		["bot_watchdogs_new_stage2_06_any_03"] = "Only four at the time, I come back for the rest!",
+		["bot_watchdogs_new_stage2_06_any_01"] = "한 번에 4개만 가져갈 수 있어! 가득 채우고 내가 돌아오면 더 가져갈 수 있을거야.",
+		["bot_watchdogs_new_stage2_06_any_02"] = "4개째야! 미안...나머지는 내가 돌아오면 가져갈 수 있을거야.",
+		["bot_watchdogs_new_stage2_06_any_03"] = "4개만 넣을 수 있어, 나머지는 내가 돌아오면 가져갈 수 있을거야!",
 		
-		["bot_watchdogs_new_stage2_07_any_01"] = "Come on, fill the barrels!",
-		["bot_watchdogs_new_stage2_07_any_02"] = "Get the barrels filled! GO! GO! GO!",
-		["bot_watchdogs_new_stage2_07_any_03"] = "Fill up those barrels, guys!",
+		["bot_watchdogs_new_stage2_07_any_01"] = "어서, 통들을 채워!",
+		["bot_watchdogs_new_stage2_07_any_02"] = "통들을 빨리 채워! 빨리! 빨리! 빨리!",
+		["bot_watchdogs_new_stage2_07_any_03"] = "이 통들을 채워, 얘들아!",
 		
 		
-		["bot_watchdogs_new_stage2_08_any_02"] = "Ok that's four!",
-		["bot_watchdogs_new_stage2_08_any_03"] = "Ok, that's four!", 
+		["bot_watchdogs_new_stage2_08_any_02"] = "좋아, 이제 네개째야!",
+		["bot_watchdogs_new_stage2_08_any_03"] = "좋아, 네개째야!", 
 		
-		["bot_watchdogs_new_stage2_09_any_01"] = "Ok I'm taking this shit, then I'm coming back for the rest!",
-		["bot_watchdogs_new_stage2_09_any_02"] = "I'm taking the stuff, but I be back for the rest as soon as I can if you whine up getting more stuff for me.",
-		["bot_watchdogs_new_stage2_09_any_03"] = "So I'm taking these now but don't worry, I be back if you get more stuff.",
+		["bot_watchdogs_new_stage2_09_any_01"] = "좋아, 내가 이 망할 것을 전달하고나면 나머지를 위해 돌아올게!",
+		["bot_watchdogs_new_stage2_09_any_02"] = "내가 물건을 가져갈게, 네가 나한테 나머지 물건을 가져다준다면 가능한 한 빨리 돌아올 거야.",
+		["bot_watchdogs_new_stage2_09_any_03"] = "지금 물건들은 전달하고 걱정 마, 더 많은 것을 가져오면 다시 올게.",
 		
-		["bot_watchdogs_new_stage2_10_any_01"] = "Alright, it's unloaded. I be back in a bit.",
-		["bot_watchdogs_new_stage2_10_any_02"] = "It's unloaded! I be back.",
-		["bot_watchdogs_new_stage2_10_any_03"] = "Hold on....I be back!",
+		["bot_watchdogs_new_stage2_10_any_01"] = "좋아, 다 적재했어. 조금 있다가 다시 올게.",
+		["bot_watchdogs_new_stage2_10_any_02"] = "다 적재했어! 곧 돌아오지.",
+		["bot_watchdogs_new_stage2_10_any_03"] = "곧 돌아올테니...잠시 버터봐!",
 		
-		["bot_watchdogs_new_stage2_11_any_01"] = "Man, I said into the barrels, not the water!",
-		["bot_watchdogs_new_stage2_11_any_02"] = "What did I say? INTO THE BARRELS, RIGHT?!",
-		["bot_watchdogs_new_stage2_11_any_03"] = "Into the barrels! Fill it in a fucking barrels!",
+		["bot_watchdogs_new_stage2_11_any_01"] = "이봐, 물에다 넣으라는게 아니라 통에 넣으라고!",
+		["bot_watchdogs_new_stage2_11_any_02"] = "내가 뭐라고 했지? 통에다 넣으라고, 알겠지?!",
+		["bot_watchdogs_new_stage2_11_any_03"] = "통에다가 넣어! 망할 통들을 채우란말이야!",
 		
-		["bot_watchdogs_new_stage2_12_any_01"] = "Roger! I'm coming in at Dock 7.",
-		["bot_watchdogs_new_stage2_12_any_02"] = "Roger! Coming in at Dock 7.",
-		["bot_watchdogs_new_stage2_12_any_03"] = "Copy that, coming in at Dock 7!",
+		["bot_watchdogs_new_stage2_12_any_01"] = "알았다! 7번 항구로 도착하겠다.",
+		["bot_watchdogs_new_stage2_12_any_02"] = "알았다! 7번 항구로 들어오겠다.",
+		["bot_watchdogs_new_stage2_12_any_03"] = "알겠다, 7번 항구로 들어오겠다!",
 		
-		["bot_watchdogs_new_stage2_13_any_01"] = "Roger! I'm coming in at Dock 8.",
-		["bot_watchdogs_new_stage2_13_any_02"] = "Roger! Coming in at Dock 8.",
-		["bot_watchdogs_new_stage2_13_any_03"] = "Copy that, coming in at Dock 8!",
+		["bot_watchdogs_new_stage2_13_any_01"] = "알았다! 8번 부두로 도착하겠다.",
+		["bot_watchdogs_new_stage2_13_any_02"] = "알았다! 8번 항구로 들어오겠다.",
+		["bot_watchdogs_new_stage2_13_any_03"] = "알겠다, 8번 항구로 들어오겠다!",
 		
-		["bot_watchdogs_new_stage2_14_any_01"] = "Confirmed! I'm coming in at Dock 9.",
-		["bot_watchdogs_new_stage2_14_any_02"] = "Copy that, coming in at Dock 9!",
-		["bot_watchdogs_new_stage2_14_any_03"] = "Copy, coming in at Dock 9!",
+		["bot_watchdogs_new_stage2_14_any_01"] = "확인했다! 9번 부두로 도착하겠다.",
+		["bot_watchdogs_new_stage2_14_any_02"] = "알겠다, 9번 항구로 들어오겠다!",
+		["bot_watchdogs_new_stage2_14_any_03"] = "알았다, 9번 부두로 들어오겠다!",
 		
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "빠른 가방 운송을 위한 가방 짚라인을 삽니다",
@@ -2351,7 +2351,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_7"] = "그린 불도저는 많은 양의 피해량을 입히고 종종 한 발로도 가장 무거운 방탄복을 부술 수도 있습니다.",
 		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 피해량 대신 높은 연사력을 가지고 있으며 인상적인 드럼 탄창을 자랑합니다.",
 		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 강력한 제압 사격을 가하고 탄통이 비워질 때까지 사격합니다.",
-		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체하며, 그린 도저와 블랙 도저의 부정한 조합하여 높은 연사력과 높은 피해량을 입힙니다.",
+		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체하며, 그린 도저와 블랙 도저를 부정하게 조합하여 높은 연사력과 높은 피해량을 입힙니다.",
 		["loading_gameplay_res_11"] = "목표 우선순위가 중요합니다. 모든 유형의 불도저는 경무장 SWAT보다 더 주의할 가치가 있습니다.",
 		["loading_gameplay_res_12"] = "데스 센텐스에서 불도저는 바이저가 깨지면 버서커 분노 상태에 돌입하여 공격력을 10%만큼 증가시킵니다.",
 		["loading_gameplay_res_13"] = "클로커는 점프 킥을 하려고 할 때는 상징적인 소리를 냅니다.",

@@ -9038,8 +9038,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 			dot_data = { 
 				type = "poison",
 				custom_data = {
-					dot_damage = 2,
-					dot_length = 3.1,
+					dot_damage = 1.5,
+					dot_length = 4.1,
 					dot_tick_period = 0.5,
 					hurt_animation_chance = 0.75
 				}
@@ -16196,10 +16196,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 			dot_data = { 
 				type = "poison",
 				custom_data = {
-					dot_damage = 2,
-					dot_length = 3.1,
+					dot_damage = 1.5,
+					dot_length = 4.1,
 					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.75
+					hurt_animation_chance = 0.25
 				}
 			}
 		}

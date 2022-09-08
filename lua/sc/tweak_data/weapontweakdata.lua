@@ -3727,6 +3727,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--PRIMARIES
 
 			--Akimbo Geck M2 (Maxim 9)
+				self.x_maxim9.categories = {
+					"akimbo",
+					"pistol",
+					"tranq"
+				}
 				self.x_maxim9.has_description = true
 				self.x_maxim9.desc_id = "bm_tranq_x_maxim_sc_desc"	
 				self.x_maxim9.fire_mode_data.fire_rate = 0.08571428571
@@ -3737,8 +3742,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_maxim9.supported = true
 				self.x_maxim9.ads_speed = 0.220
 				self.x_maxim9.damage_falloff = {
-					start_dist = 2100,
-					end_dist = 4200,
+					start_dist = 1900,
+					end_dist = 4000,
 					min_mult = 0.3333
 				}
 				self.x_maxim9.stats = {
@@ -4167,6 +4172,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--SECONDARIES
 
 			--Gecko M2 (Maxim 9)
+				self.maxim9.categories = {
+					"pistol",
+					"tranq"
+				}
 				self.maxim9.has_description = true
 				self.maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
 				self.maxim9.fire_mode_data.fire_rate = 0.08571428571
@@ -4177,8 +4186,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.maxim9.supported = true
 				self.maxim9.ads_speed = 0.220
 				self.maxim9.damage_falloff = {
-					start_dist = 2100,
-					end_dist = 4200,
+					start_dist = 1900,
+					end_dist = 4000,
 					min_mult = 0.3333
 				}
 				self.maxim9.stats = {
@@ -14274,6 +14283,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		saw = 1.25, --Compensate for jankiness.
 		bow = 0.7, --Compensate for picking arrows back up.
 		crossbow = 0.7,
+		tranq = 0.65,
 		--Custom weapon pickup
 		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
 		typh = 0.8,

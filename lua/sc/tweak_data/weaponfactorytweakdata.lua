@@ -6307,13 +6307,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m95", "resmod_m95", function(self)
 	self.wpn_fps_snp_m95.override.wpn_fps_snp_model70_iron_sight = { 
 		adds = {"wpn_fps_gre_arbiter_o_standard"}
 	}
-	self.wpn_fps_snp_m95.override.wpn_fps_upg_m4_g_mgrip = { 
-		stats = {
-			value = 4,
-			recoil = -1,
-			concealment = 1			
-		}
-	}	
 	
 	table.insert(self.wpn_fps_snp_m95.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_snp_m95_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
@@ -19822,7 +19815,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_amr12_fg_short.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_shot_amr12_fg_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 		self.parts.wpn_fps_shot_amr12_fg_short.adds = nil
-		
+
 		self.parts.wpn_fps_shot_amr12_o_front.adds = nil
 		self.parts.wpn_fps_shot_amr12_rail.adds = nil
 

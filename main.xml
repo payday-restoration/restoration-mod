@@ -202,6 +202,7 @@
 		<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="sc/units/enemies/copbrain.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/enemies/huskcopbrain.lua" source_file="lib/units/enemies/cop/huskcopbrain"/>
+	    	<hook file="sc/units/civilians/actions/lower_body/escortwithsuitcaseactionwalk.lua" source_file="lib/units/civilians/actions/lower_body/escortwithsuitcaseactionwalk"/>
 		<hook file="sc/units/civilians/civilianbase.lua" source_file="lib/units/civilians/civilianbase"/>
 		<hook file="sc/units/civilians/civilianbrain.lua" source_file="lib/units/civilians/civilianbrain"/>
 		<hook file="sc/units/civilians/civiliandamage.lua" source_file="lib/units/civilians/civiliandamage"/>

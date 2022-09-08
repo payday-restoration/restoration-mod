@@ -9946,9 +9946,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					dot_tick_period = 0.5
 				}
 				self.flamethrower_mk2.supported = true
-				self.flamethrower_mk2.ads_speed = 0.460
+				self.flamethrower_mk2.ads_speed = 0.480
 				self.flamethrower_mk2.damage_falloff = {
-					start_dist = 1000,
+					start_dist = 800,
 					end_dist = 1800,
 					min_mult = 0,
 				}
@@ -10002,9 +10002,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					dot_tick_period = 0.5
 				}
 				self.system.supported = true
-				self.system.ads_speed = 0.360
+				self.system.ads_speed = 0.420
 				self.system.damage_falloff = {
-					start_dist = 900,
+					start_dist = 400,
 					end_dist = 1400,
 					min_mult = 0,
 				}
@@ -10061,9 +10061,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						dot_tick_period = 0.5
 					}
 					self.money.supported = true
-					self.money.ads_speed = 0.360
+					self.money.ads_speed = 0.420
 					self.money.damage_falloff = {
-						start_dist = 900,
+						start_dist = 400,
 						end_dist = 1400,
 						min_mult = 0,
 					}

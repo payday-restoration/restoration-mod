@@ -259,6 +259,7 @@ function ContourExt:update(unit, t, dt)
 		else
 			local data = self._types[setup.type]
 			local is_current = index == 1
+			local opacity = nil
 			if data.ray_check and unit:movement() and is_current then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
@@ -268,9 +269,7 @@ function ContourExt:update(unit, t, dt)
 
 				local target_opacity = turn_on and 1 or 0
 				if self._last_opacity ~= target_opacity then
-					local opacity = math.step(self._last_opacity or 0, target_opacity, dt / data.persistence)
-
-					self:_upd_opacity(opacity)
+					opacity = math.step(self._last_opacity or 0, target_opacity, dt / data.persistence)
 				end
 			end
 
@@ -281,18 +280,16 @@ function ContourExt:update(unit, t, dt)
 				end
 
 				if is_current then
-					local opacity = (setup.flash_t - t) / setup.flash_frequency
+					opacity = (setup.flash_t - t) / setup.flash_frequency
 					opacity = setup.flash_on and opacity or 1 - opacity
-
-					self:_upd_opacity(opacity)
 				end
 			elseif setup.fadeout_start_t and is_current then
-				local opacity = (t - setup.fadeout_start_t) / (setup.fadeout_t - setup.fadeout_start_t)
+				opacity = (t - setup.fadeout_start_t) / (setup.fadeout_t - setup.fadeout_start_t)
 				opacity = 1 - math.max(opacity, 0)
+			end
 
-				if self._last_opacity ~= opacity then
-					self:_upd_opacity(opacity)
-				end
+			if opacity then
+				self:_upd_opacity(opacity)
 			end
 
 			index = index + 1

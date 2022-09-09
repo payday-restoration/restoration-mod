@@ -10,7 +10,6 @@
 		<packages>
 			<value_node value="packages/narr_alex1"/>
 			<value_node value="packages/job_rats"/>
-			<value_node value="packages/miscassets"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_1/world"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_1/world_sounds"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_1/world/world"/>

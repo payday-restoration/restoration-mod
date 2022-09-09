@@ -526,4 +526,14 @@
 		<object force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
 		<unit force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
 	</add>
+	<add from_db="true" path="units/payday2/equipment/gen_interactable_weapon_case_2x1/gen_interactable_weapon_case_2x1" type="unit">
+		<unit path="units/payday2/equipment/gen_interactable_weapon_case_2x1/gen_interactable_weapon_case_2x1"/>
+		<object path="units/payday2/equipment/gen_interactable_weapon_case_2x1/gen_interactable_weapon_case_2x1"/>
+		<material_config path="units/payday2/equipment/gen_interactable_weapon_case_2x1/gen_interactable_weapon_case_2x1"/>
+		<sequence_manager path="units/payday2/equipment/gen_interactable_weapon_case_2x1/gen_interactable_weapon_case_2x1"/>
+		<unit path="units/payday2/equipment/gen_interactable_weapon_case_2x1/spawn_ak47"/>
+		<object path="units/payday2/equipment/gen_interactable_weapon_case_2x1/spawn_ak47"/>
+		<material_config path="units/payday2/equipment/gen_interactable_weapon_case_2x1/spawn_ak47"/>
+		<sequence_manager path="units/payday2/equipment/gen_interactable_weapon_case_2x1/spawn_ak47"/>
+	</add>
 </table>

@@ -1973,7 +1973,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_p226_b_long"] = "Brushed Long Slide",
 
 				--Crosskill
-				["bm_w_colt_1911"] = "Sprinfield Armory 1911 Operator",
+				["bm_w_colt_1911"] = "Springfield Armory 1911 Operator",
 				["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
 				["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
 				["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it

@@ -1415,6 +1415,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--VHS/Lion's Roar
 		["bm_vhs_sc_desc"] = "유능한 자의 손에서 인상적인 성능을 자랑하고 다루기 힘든 소총.\n\n전투에서 드라간의 분노의 영혼을 널리 알린다고 합니다.",
 		--Olympic/Para
+		["bm_w_olympic"] = "Para 소총",
 		["bm_menu_sc_olympic_desc"] = "완전 자동 방식으로 소총탄을 발사하고 엄청나게 큰 권총. 이 총은 총알을 쏘는 실존적 위기입니다.",	
 		--TAR-21/Para
 		["bm_menu_sc_komodo_desc"] = "심각하게 컴팩트한 패키지에 많은 피해를 줍니다. 근거리 전투 또는 원거리 조우에 좋습니다.",		
@@ -1441,6 +1442,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_ak74"] = "AK 5.45 소총",
 		["bm_ak74_sc_desc"] = "7.62 자매보다 작은 탄을 발사하지만 이 소총이 덜 치명적인 것이라는 건 아닙니다.",	
 		--CR 805
+		["bm_w_hajk"] = "CR 805B 소총",
 		["bm_menu_sc_hajk_desc"] = "고전적고 더 젊고 현대적인 총알 호스 코브라의 사촌입니다. 이 소총은 목표를 잡을 수 없다면 그걸 위한 다양한 발사 모드와 점사 전환 기능을 갖추고 있습니다.",
 		
 		--AMR-16
@@ -1457,10 +1459,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_groza_sc_desc_pc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_groza_sc_desc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--Krinkov
-		["bm_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",
+		["bm_w_akmsu"] = "Krinkov 소총",
+		["bm_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",
 		
 		--Akimbo Krinkov
-		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 작은 소총. 이 소총은 거의 모든 시나리오에서 자체적으로 들 수 있으므로 과소평가하지 마십시오.",
+		["bm_w_x_akmsu"] = "아킴보 Krinkov 소총",
+		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",
 		
 		--CUSTOM ARs
 		--AN-94/92
@@ -1922,16 +1926,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		["bm_wp_upg_i_singlefire_desc"] = "무기를 단발 모드로 잠급니다.",
 		["bm_wp_upg_i_autofire_desc"] = "무기를 완전 자동 사격 모드로 잠급니다.",
-
-		--Fixed names for SMGS to ARs--
-		["bm_w_olympic"] = "Para 소총",
-		["bm_w_akmsu"] = "Krinkov 소총",
-		["bm_w_x_akmsu"] = "아킴보 Krinkov 소총",
-		["bm_w_hajk"] = "CR 805B 소총",		
 		
 
-		["menu_akimbo_assault_rifle"] = "아킴보 돌격소총",
-			
 		
 		--Throwables--
 		["bm_concussion_desc"] = "범위: 10m \n- 최대 4초 동안 적을 기절 \n- 7초 동안 적의 정확도가 50% 감소 \n- 타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.\n \n이 놀라운 작은 아름다움은 모든 사람의 숨을 죽이고 그들을 죽일 추가 순간을 제공합니다.",
@@ -2067,7 +2063,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_deagle"] = "큰 권총",
 			["bm_w_m16"] = "저거 클라리온임?",
 			["bm_m16_sc_desc"] = "피해를 입힐 수 있도록 탄창을 주겠음",
-			["bm_w_x_type54"] = "크로스킬 쌍둥이들",			
+			["bm_w_x_type54"] = "크로스킬 쌍둥이들",
+			["bm_akmsu_sc_desc"] = "#{stat_maxed}#빅 맨##을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",			
 		})
 	end
 	

@@ -257,7 +257,7 @@ function MutatorEnemyReplacer:setup_options_gui(node)
 		},
 		{
 			value = "sniper",
-			text_id = "mutator_specials_override_boom",
+			text_id = "mutator_specials_override_sniper",
 			_meta = "option"
 		},		
 		type = "MenuItemMultiChoice"

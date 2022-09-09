@@ -1243,6 +1243,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_colt_1911"] = "Crosskill Operator Pistol",
 		--Crosskill Chunky
 		["bm_w_m1911"] = "Crosskill A1 Pistol",
+		["bm_m1911_sc_desc"] = "A reproduction of the classic Crosskill .45. Despite the name, not at all chunkier than the custom one.",
 		--Crosskill Guard
 		["bm_shrew_sc_desc"] = "Smaller and more compact than its classic A1 cousin. Trades magazine capacity and barrel length for even more concealability.",
 		["bm_x_shrew_sc_desc"] = "The way of the Canaanites, two .45 problem solvers in a seriously small package sure to leave invaders running.",
@@ -1258,7 +1259,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_type54_sc_desc"] = "A one-two punch that can turn into a one-two-three-four punch.",		
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
-		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Suppressor",
+		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
 		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.25s##\nRecharge rate: #{skill_color}#4/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 		--Sub2000
 		["bm_sub2000_sc_desc"] = "Pistol carbine of questionable manufacturing quality. Tiny pistol bullets hit a lot harder when coming out of a longer barrel and folding capability makes for decent concealment.",	
@@ -1279,8 +1280,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_chinchilla_sc_desc"] = "A sicario needs to ensure his mark is down, two of these will guarantee it.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 		--RUS-12
 		["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
-		--Chunky 1911 
-		["bm_m1911_sc_desc"] = "A reproduction of the classic Crosskill .45. Despite the name, not at all chunkier than the custom one.",
 		--FMG-9
 		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
 		--Sub 2000
@@ -1299,8 +1298,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--Colt Detective
 			["bm_w_coltds"] = "Crosskill Investigator Revolver",
 			["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
-
-
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 Submachine Gun",
@@ -1327,6 +1324,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 		
 		--CUSTOM SMGs
+			--LWRC
+			["bm_w_smg45"] = "Striker .45 Submachine Gun",
+			["bm_w_smg45_desc"] = "An American clone of the SG \"Jackal\" AMP.",
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "Typhoon Submachine Gun",
 			["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now I've got a lot to say.\"\n\nUtilizing superposed loading technology, this 10-barrelled SMG spits lead out at blisteringly high speeds.",
@@ -1353,7 +1353,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 MMG",	
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
-		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Suppressed Barrel",
+		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
@@ -1954,6 +1954,42 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
 
+
+	--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+	if weapon_names then
+		if weapon_names == 2 then
+			LocalizationManager:add_localized_strings({	
+				--Signature 40
+				["bm_w_hs2000"] = "Springfield Armory XD(M)-40",
+				["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
+				["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
+				["bm_wp_hs2000_sl_long"] = "Custom Slide",
+				--Signature 40
+				["bm_w_p226"] = "Sig Sauer P226R",
+				["bm_w_x_p226"] = "Dual P226Rs",
+				["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+				["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
+				["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
+				["bm_wp_p226_b_long"] = "Brushed Long Slide",
+
+				--Crosskill
+				["bm_w_colt_1911"] = "Sprinfield Armory 1911 Operator",
+				["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
+				["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
+				["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
+				["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
+				["bm_wp_1911_g_bling"] = "Walnut Grips",
+				["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+				["bm_wp_1911_b_long"] = "Compensated Long Slide",
+				["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
+				["bm_wp_1911_m_extended"] = "12rnd Magazine",
+				--Crosskill Chunky
+				["bm_w_m1911"] = "Colt 1911A1",
+				["bm_w_x_m1911"] = "Dual 1911A1s",
+			})
+		end
+	end	
+
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
 	if twirl <= shalashaska then
@@ -2061,7 +2097,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_x_type54"] = "The twin crosskills",
 			["bm_akmsu_sc_desc"] = "A small rifle useful for taking down #{stat_maxed}#BIG MEN##. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 		})
-	end	
+	end
 	
 end)
 

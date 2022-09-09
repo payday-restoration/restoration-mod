@@ -13753,6 +13753,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.coltds.panic_suppression_chance = 0.05
 	end
 
+	if self.smg45 then --Mira's LWRC/Striker 45
+		self.smg45.recategorize = {"heavy_smg"}
+		self.smg45.damage_type = "machine_gun"
+		self.smg45.has_description = true
+		self.smg45.fire_mode_data.fire_rate = 0.1
+		self.smg45.tactical_reload = 1
+		self.smg45.AMMO_MAX = 60
+		self.smg45.CLIP_AMMO_MAX = 25
+		self.smg45.BURST_FIRE = 2
+		self.smg45.ADAPTIVE_BURST_SIZE = false											
+		self.smg45.kick = self.stat_info.kick_tables.even_recoil
+		self.smg45.panic_suppression_chance = 0.05
+		self.smg45.supported = true
+		self.smg45.ads_speed = 0.260
+		self.smg45.damage_falloff = {
+			start_dist = 1600,
+			end_dist = 3800,
+			min_mult = 0.3
+		}
+		self.smg45.stats = {
+			damage = 30,
+			spread = 66,
+			recoil = 82,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 24,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.smg45.stats_modifiers = nil
+		self.smg45.reload_speed_multiplier = 1.05
+		self.smg45.timers.reload_exit_empty = 0.6
+		self.smg45.timers.reload_exit_not_empty = 0.85
+	end
+	
 
 	--Predator Pack
 		if self.owlfbullpup then

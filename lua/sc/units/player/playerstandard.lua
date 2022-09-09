@@ -1776,7 +1776,7 @@ end)
 function PlayerStandard:_shooting_move_speed_timer(t, dt)
 	local weapon = self._equipped_unit and self._equipped_unit:base()
 	if self._shooting and weapon._sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
-		self._shooting_move_speed_t = math.min(0.8, weapon._smt)
+		self._shooting_move_speed_t = math.min(0.7, weapon._smt)
 		--self._shooting_move_speed_wait = weapon._smt * 0.15
 		self._shooting_move_speed_mult = weapon._sms
 	end

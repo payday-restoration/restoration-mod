@@ -504,7 +504,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		if not self:is_npc() then
 			self._sms = self:weapon_tweak_data().sms
-			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
+			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
 		end
 
 		for part_id, stats in pairs(custom_stats) do
@@ -700,7 +700,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					else
 						self._sms = self._sms + (1 * (stats.sms - 1))
 					end
-					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 2
+					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
 				end
 			end
 		end

@@ -11891,10 +11891,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.ak5s.stats_modifiers = nil
 			self.ak5s.panic_suppression_chance = 0.05		
-			self.ak5s.timers.reload_empty = self.ak5s.timers.reload_empty
-			self.ak5s.timers.reload_not_empty = self.ak5s.timers.reload_not_empty
-			self.ak5s.timers.reload_exit_empty = self.ak5s.timers.reload_exit_empty
-			self.ak5s.timers.reload_exit_not_empty = self.ak5s.timers.reload_exit_not_empty
+			self.ak5s.timers.reload_empty = self.ak5.timers.reload_empty
+			self.ak5s.timers.reload_not_empty = self.ak5.timers.reload_not_empty
+			self.ak5s.timers.reload_exit_empty = self.ak5.timers.reload_exit_empty
+			self.ak5s.timers.reload_exit_not_empty = self.ak5.timers.reload_exit_not_empty
 			self.ak5s.reload_speed_multiplier = 1.05
 		end	
 	

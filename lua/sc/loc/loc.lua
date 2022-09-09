@@ -1956,8 +1956,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 	--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+	--[[ 
+		WepNames Options
+		1 = default/in-universe names (i.e. Crosskill Operator Pistol)
+		2 = in-universe names w/o weapon class (i.e. Crosskill Operator)
+		3 = real names (i.e. Springfield Armory 1911 Operator)
+		
+	]]
 	if weapon_names then
-		if weapon_names == 2 then
+		if weapon_names == 3 then
 			LocalizationManager:add_localized_strings({	
 				--Signature 40
 				["bm_w_hs2000"] = "Springfield Armory XD(M)-40",

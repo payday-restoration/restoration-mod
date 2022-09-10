@@ -1244,7 +1244,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Crosskill
 		["bm_w_colt_1911"] = "Crosskill Operator 권총",
 		--Crosskill Chunky
-		["bm_w_m1911"] = "Crosskill A1 권총",		
+		["bm_w_m1911"] = "Crosskill A1 권총",
+		["bm_m1911_sc_desc"] = "전형적인 Crosskill .45 권총을 재현한 권총입니다. 이름에도 불구하고, 커스텀보다 전혀 두껍지 않습니다.",			
 		--Crosskill Guard
 		["bm_shrew_sc_desc"] = "클래식한 A1 사촌보다 더 작고 컴팩트합니다. 더 많은 은폐성을 위해 탄창 용량과 총열 길이를 교환했습니다다.",
 		["bm_x_shrew_sc_desc"] = "가나안 사람들의 방식, 이 45구경 문제 해결 권총 두 개는 아주 작은 패키지에 있는 침입자들을 도망치게 할 것입니다.",		
@@ -1260,7 +1261,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_type54_sc_desc"] = "원 투 펀치가 원 투 쓰리 포 펀치로 변할 수 있습니다.",				
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"...그리고 #{important_1}#늑대##가 빨간망토 소녀를 먹어치웠습니다.\"\n\n완전 자동 발사가 가능하도록 개조된 혁신적인 독일 권총입니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
-		["bm_wp_c96_nozzle"] = "블라스테크 DL-44 소음기",
+		["bm_wp_c96_nozzle"] = "블라스테크 DL-44 머즐",
 		["bm_wp_c96_nozzle_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#1.25초##\n재충전 속도: #{skill_color}#4초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#2초##",
 		--Sub2000
 		["bm_sub2000_sc_desc"] = "제조 품질이 의심스러운 권총형 카빈. 작은 권총 탄환은 더 긴 총열에서 나올 때 훨씬 더 강하게 명중하고 접이식 기능은 적절한 은폐성을 가지게 합니다.",	
@@ -1280,9 +1281,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경 싸기 시합의 절대적인 마지막 말입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
-		--Chunky 1911 
-		["bm_m1911_sc_desc"] = "전형적인 Crosskill .45 권총을 재현한 권총입니다. 이름에도 불구하고, 커스텀보다 전혀 두껍지 않습니다.",		
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경 싸기 시합의 절대적인 마지막 말입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
 		--FMG-9
 		["bm_w_fmg9"] = "Wasp-DS 기관권총",
 		--Sub 2000
@@ -1327,6 +1326,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_erma_sc_desc"] = "제 2차 세계 대전동안 보병의 손에 널리 사용되었던 상당히 안정적인 기관단총으로, 그저 탄창을 손잡이로 사용하지 마십시오.",	
 
 		--CUSTOM SMGs
+		--LWRC
+		["bm_w_smg45"] = "Striker .45 기관단총",
+		["bm_w_smg45_desc"] = "SG \"Jackal\" AMP 기관단총의 미국 버전 복제품.",		
 		--Typhoon
 		["bm_w_crysis3_typhoon"] = "Typhoon 기관단총",
 		["bm_w_crysis3_typhoon_desc"] = "\"가장 순수한 형태의 표현인데 지금은 할 말이 많아.\"\n\n중첩 장전 기술을 사용하는 이 10연장 기관단총의 총알들은 엄청나게 빠른 속도로 발사됩니다.",
@@ -1352,7 +1354,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
 		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향 사격 시 반동이 25% 감소합니다.##",	
-		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 소음 총열",
+		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 총열",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#2초##\n재충전 속도: #{skill_color}#9초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#4초##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
 		--Versteckt-51/HK51B
@@ -1958,6 +1960,49 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
+
+
+	--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+	--[[ 
+		WepNames Options
+		1 = default/in-universe names (i.e. Crosskill Operator Pistol)
+		2 = in-universe names w/o weapon class (i.e. Crosskill Operator)
+		3 = real names (i.e. Springfield Armory 1911 Operator)
+		
+	]]	
+	if weapon_names then
+		if weapon_names == 3 then
+			LocalizationManager:add_localized_strings({	
+				--Signature 40
+				["bm_w_hs2000"] = "스프링필드 아모리 XD(M)-40",
+				["bm_wp_hs2000_m_extended"] = "XD(M)-40 22발 탄창",
+				["bm_wp_hs2000_sl_custom"] = "단축형 슬라이드",
+				["bm_wp_hs2000_sl_long"] = "맞춤형 슬라이드",
+				--Signature 40
+				["bm_w_p226"] = "시그소어 P226R",
+				["bm_w_x_p226"] = "듀얼 P226R",
+				["bm_wp_p226_co_comp_2"] = "SJC 보정기 .40",
+				["bm_wp_p226_m_extended"] = "P226 22발 탄창",
+				["bm_wp_p226_b_equinox"] = "이쿼녹스 듀오톤 슬라이드",
+				["bm_wp_p226_b_long"] = "브러시드 긴 슬라이드",
+
+				--Crosskill
+				["bm_w_colt_1911"] = "스프링필드 아모리 1911 오퍼레이터",
+				["bm_w_x_colt_1911"] = "아킴보 1911 오퍼레이터",
+				["bm_wp_1911_co_2"] = "TCII 보정기", --Not 100% but seems to be based off of it
+				["bm_wp_1911_co_1"] = "클락 헤비 핀마스터", --Not 100% but seems to be based off of it
+				["bm_wp_1911_g_ergo"] = "팩마이어 1911 손잡이",
+				["bm_wp_1911_g_bling"] = "월넛 손잡이",
+				["bm_wp_1911_g_engraved"] = "맞춤형 각인 1911 손잡이",
+				["bm_wp_1911_b_long"] = "단축형 긴 슬라이드",
+				["bm_wp_1911_b_vented"] = "단축형 투톤 슬라이드",
+				["bm_wp_1911_m_extended"] = "12발 탄창",
+				--Crosskill Chunky
+				["bm_w_m1911"] = "콜트 1911A1",
+				["bm_w_x_m1911"] = "듀얼 1911A1",
+			})
+		end
+	end	
 
 	local twirl = math.rand(1)
 	local shalashaska = 0.06

@@ -79,7 +79,7 @@
 		<hook file="sc/units/props/missiondoor.lua" source_file="lib/units/props/missiondoor"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
-		<!--<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>-->
+		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 		<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>	
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>

@@ -1770,6 +1770,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["menu_antim_snp"] = "Anti-Materiel Rifles",
 
 		["menu_wpn_special"] = "Specials",
+
+
+		["menu_reticle_dmc_eotech"] = "TECopt Full",
+		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
+		["menu_reticle_dmc_eotech_seggs"] = "TECopt Segmented",
+		["menu_reticle_dmc_ebr_cqb"] = "EBR CQB",
+		["menu_reticle_dmc_trijicon_chevron"] = "Chevron",
 		
 		
 		

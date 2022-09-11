@@ -1617,9 +1617,16 @@ function CopDamage:damage_melee(attack_data)
 	attack_data.result = result
 	attack_data.pos = attack_data.col_ray.position
 
+	local dismember_victim = false
 	local snatch_pager, from_behind = nil
 
 	if result.type == "death" then
+		if self:_dismember_condition(attack_data) then
+			self:_dismember_body_part(attack_data)
+
+			dismember_victim = true
+		end
+
 		local data = {
 			name = self._unit:base()._tweak_table,
 			stats_name = self._unit:base()._stats_name,

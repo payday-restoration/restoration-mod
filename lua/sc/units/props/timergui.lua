@@ -12,7 +12,7 @@ function DrillTimerGui:set_jammed(jammed)
 	if managers.network:session() then
 		local event_id = jammed and DrillTimerGui.EVENT_IDS.jammed or DrillTimerGui.EVENT_IDS.unjammed
 
-		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "DrillTimerGui", event_id)
+		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "timer_gui", event_id)
 	end
 
 	self:_set_jammed(jammed)

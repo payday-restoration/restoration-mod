@@ -323,6 +323,7 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic_contour" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
 	
+	<!--Murky Dozer Medic Armor Bits-->
 	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 
 	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>

@@ -315,17 +315,12 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic_contour" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
 	
+	<!--Murky Dozer Medic Armor Bits-->
 	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 
 	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
-	<!--Murky Dozer Medic Armor Bits-->
-	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
-
-	<unit_obj			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
-	
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/bulldozer_medic_df" force="false"/>
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/bulldozer_city_df" force="false"/>
 	
 	<!-- taster -->
 	<object				path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer" force="false"/>

@@ -5628,13 +5628,14 @@ function BlackMarketGui:update_info_text()
 				local color_index_string = managers.localization:to_upper_text("bm_menu_weapon_color_index", {
 					variation = managers.localization:text(tweak_data.blackmarket:get_weapon_color_index_string(slot_data.cosmetic_color_index))
 				})
+				local quality_id = tweak_data.economy.qualities[cosmetic_quality] and tweak_data.economy.qualities[cosmetic_quality].name_id and cosmetic_quality or "mint"
 				local quality_string = managers.localization:to_upper_text("bm_menu_weapon_color_quality", {
-					quality = managers.localization:text(tweak_data.economy.qualities[cosmetic_quality].name_id)
+					quality = managers.localization:text(tweak_data.economy.qualities[quality_id].name_id)
 				})
 				updated_texts[4].text = updated_texts[4].text .. name_string .. "\n" .. color_index_string .. "\n" .. quality_string
 
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
-				table.insert(updated_texts[4].resource_color, tweak_data.economy.qualities[cosmetic_quality].color or tweak_data.screen_colors.text)
+				table.insert(updated_texts[4].resource_color, tweak_data.economy.qualities[quality_id].color or tweak_data.screen_colors.text)
 			else
 				updated_texts[4].text = updated_texts[4].text .. managers.localization:text("bm_menu_customizable_weapon_color_desc")
 			end

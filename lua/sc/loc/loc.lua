@@ -1779,6 +1779,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_trijicon_chevron"] = "Trigonom Chevron",
 		["menu_reticle_dmc_ncstar"] = "Reconnaissance Cross",
 		["menu_reticle_dmc_lua"] = "Powered by Lua",
+		["menu_reticle_dmc_dot_4x4"] = "Small Dot",
+		["menu_reticle_dmc_dot_2x2"] = "Tiny Dot",
 		
 		
 		

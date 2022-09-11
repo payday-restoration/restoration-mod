@@ -516,6 +516,87 @@ function PlayerInventoryGui:_update_stats(name)
 	end
 end
 
+function PlayerInventoryGui:_update_info_weapon_cosmetics(name, cosmetics)
+	local c_td = tweak_data.blackmarket.weapon_skins[cosmetics.id] or {}
+	local quality_id = tweak_data.economy.qualities[cosmetics.quality] and tweak_data.economy.qualities[cosmetics.quality].name_id and cosmetics.quality or "mint"
+	local quality_text = managers.localization:text(tweak_data.economy.qualities[quality_id].name_id)
+	local name_text = managers.localization:text(c_td.name_id)
+	local info_text = managers.localization:to_upper_text("menu_cash_safe_result", {
+		quality = quality_text,
+		name = name_text
+	})
+
+	if cosmetics.bonus then
+		local bonus = tweak_data.blackmarket.weapon_skins[cosmetics.id] and tweak_data.blackmarket.weapon_skins[cosmetics.id].bonus
+
+		if bonus and not c_td.default_blueprint then
+			local bonus_tweak = tweak_data.economy.bonuses[bonus]
+			local bonus_value = bonus_tweak.exp_multiplier and bonus_tweak.exp_multiplier * 100 - 100 .. "%" or bonus_tweak.money_multiplier and bonus_tweak.money_multiplier * 100 - 100 .. "%"
+			info_text = info_text .. "\n" .. managers.localization:text("dialog_new_tradable_item_bonus", {
+				bonus = managers.localization:text(bonus_tweak.name_id, {
+					team_bonus = bonus_value
+				})
+			})
+		end
+	end
+
+	self:set_info_text(info_text, {
+		tweak_data.economy.rarities[c_td.rarity].color,
+		add_colors_to_text_object = true
+	})
+
+	if c_td.default_blueprint then
+		local box = self._boxes_by_name[name]
+		local category = box.params.mod_data.category
+		local slot = box.params.mod_data.slot
+		local base_stats, mods_stats, skill_stats = WeaponDescription._get_stats(c_td.weapon_id, category, slot, c_td.default_blueprint)
+		local crafted = managers.blackmarket:get_crafted_category_slot(category, slot)
+		local tweak_stats = tweak_data.weapon.stats
+		local modifier_stats = tweak_data.weapon[crafted.weapon_id].stats_modifiers
+
+		for _, stat in ipairs(self._stats_shown) do
+			self._stats_texts[stat.name].name:set_text(utf8.to_upper(managers.localization:text("bm_menu_" .. stat.name)))
+
+			local value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
+			local base = base_stats[stat.name].value
+
+			self._stats_texts[stat.name].total:set_alpha(1)
+			self._stats_texts[stat.name].total:set_text(format_round(value, stat.round_value))
+			self._stats_texts[stat.name].base:set_text(format_round(base, stat.round_value))
+			self._stats_texts[stat.name].mods:set_text(mods_stats[stat.name].value == 0 and "" or (mods_stats[stat.name].value > 0 and "+" or "") .. format_round(mods_stats[stat.name].value, stat.round_value))
+			self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) or "")
+
+			if base < value then
+				self._stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
+			elseif value < base then
+				self._stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
+			else
+				self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
+			end
+
+			if stat.percent then
+				if math.round(value) >= 100 then
+					self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stat_maxed)
+				end
+			elseif stat.index then
+				-- Nothing
+			elseif tweak_stats[stat.name] then
+				local without_skill = math.round(base_stats[stat.name].value + mods_stats[stat.name].value)
+				local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
+
+				if stat.offset then
+					local offset = math.min(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
+					max_stat = max_stat - offset
+				end
+
+				if without_skill >= max_stat then
+					self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stat_maxed)
+				end
+			end
+		end
+	end
+end
+
 --Use short descs for decks in the little preview box thing + Colored desc support
 function PlayerInventoryGui:_update_info_specialization(name)
 	local text_string = ""

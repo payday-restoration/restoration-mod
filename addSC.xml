@@ -1235,6 +1235,14 @@
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_blue_il" force="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_green_il" force="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_yellow_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_blue_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_green_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_yellow_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_blue_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_green_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_yellow_il" force="true"/>
 	
 	<!--Gold AK shit-->
 	<!--KILL ME -DMC-->

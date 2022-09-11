@@ -1775,8 +1775,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_eotech"] = "TECopt Full",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
 		["menu_reticle_dmc_eotech_seggs"] = "TECopt Segmented",
-		["menu_reticle_dmc_ebr_cqb"] = "EBR CQB",
-		["menu_reticle_dmc_trijicon_chevron"] = "Chevron",
+		["menu_reticle_dmc_ebr_cqb"] = "Maelstrom EBR-CQB",
+		["menu_reticle_dmc_trijicon_chevron"] = "Trigonom Chevron",
+		["menu_reticle_dmc_ncstar"] = "Reconnaissance Cross",
+		["menu_reticle_dmc_lua"] = "Powered by Lua",
 		
 		
 		

@@ -73,9 +73,17 @@ function GuiTweakData:init()
 
 	local dmc_dot_folder = "_dmc/wpn_effects_textures/"
 	table.insert(self.weapon_texture_switches.types.sight_swap, {
-		name_id = "menu_reticle_dmc_eotech",
-		texture_path = dmc_dot_folder .. "wpn_sight_reticle_001_il"
+		name_id = "menu_reticle_dmc_lua",
+		texture_path = dmc_dot_folder .. "wpn_sight_reticle_007_il"
 	})
+    table.insert(self.weapon_texture_switches.types.sight_swap, {
+        name_id = "menu_reticle_dmc_ncstar",
+        texture_path = dmc_dot_folder .. "wpn_sight_reticle_006_il"
+    })
+    table.insert(self.weapon_texture_switches.types.sight_swap, {
+        name_id = "menu_reticle_dmc_eotech",
+        texture_path = dmc_dot_folder .. "wpn_sight_reticle_001_il"
+    })
     table.insert(self.weapon_texture_switches.types.sight_swap, {
         name_id = "menu_reticle_dmc_eotech_moa",
         texture_path = dmc_dot_folder .. "wpn_sight_reticle_002_il"
@@ -96,6 +104,7 @@ function GuiTweakData:init()
     self.part_texture_switches = {
         wpn_fps_upg_o_45rds_v2 = "1 3",
         wpn_fps_upg_o_45rds = "1 3",
+        wpn_fps_upg_o_spot = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 5),
         wpn_fps_upg_o_acog = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap),
         wpn_fps_upg_o_bmg = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap),
         wpn_fps_upg_o_eotech = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),

@@ -9974,6 +9974,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.timers.reload_empty = 7.7
 				self.flamethrower_mk2.timers.reload_exit_empty = 1.7
 				self.flamethrower_mk2.timers.reload_exit_not_empty = 1.7
+				self.flamethrower_mk2.shake.bypass_global_shake = true
 
 			--MA-17 Flamethrower
 				self.system.categories = {
@@ -10031,6 +10032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.timers.reload_not_empty = 8.5
 				self.system.timers.reload_exit_empty = 1.5
 				self.system.timers.reload_exit_not_empty = 1.5
+				self.system.shake.bypass_global_shake = true
 
 			--Cash Blaster
 				if self.money then			
@@ -10091,6 +10093,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.money.timers.reload_exit_empty = 1.5
 					self.money.timers.reload_exit_not_empty = 1.5	
 					self.money.sounds.no_fix = true		
+					self.money.shake.bypass_global_shake = true
 				end
 	
 
@@ -10748,6 +10751,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.saw.stats_modifiers = nil
 		self.saw.panic_suppression_chance = 0.05
+		self.saw.timers.reload_exit_not_empty = 1.8
+		self.saw.timers.reload_not_empty = 3.75
+		self.saw.timers.reload_exit_empty = 1.8
+		self.saw.timers.reload_empty = 3.75
 		self.saw_secondary.kick = self.stat_info.kick_tables.none
 		self.saw_secondary.has_description = true
 		self.saw_secondary.desc_id = "bm_ap_saw_sc_desc"
@@ -10770,6 +10777,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.saw_secondary.stats_modifiers = nil
 		self.saw_secondary.panic_suppression_chance = 0.05
+		self.saw_secondary.timers.reload_exit_not_empty = 1.8
+		self.saw_secondary.timers.reload_not_empty = 3.75
+		self.saw_secondary.timers.reload_exit_empty = 1.8
+		self.saw_secondary.timers.reload_empty = 3.75
 	
 
 
@@ -11575,7 +11586,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.osipr.stats_modifiers = nil
 		self.osipr.timers.reload_not_empty = 2.16
-		self.osipr.timers.reload_empty = 3.5		
+		self.osipr.timers.reload_exit_not_empty = 0.9
+		self.osipr.timers.reload_empty = 3.2	
+		self.osipr.timers.reload_exit_empty = 0.9
 		self.osipr.panic_suppression_chance = 0.05
 		self.osipr.has_description = true
 		self.osipr.desc_id = "bm_w_osipr_desc"
@@ -11615,7 +11628,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.osipr_gl.stats_modifiers = nil
 		self.osipr_gl.sms = 0.85
 		self.osipr_gl.timers.reload_not_empty = 3.34
+		self.osipr_gl.timers.reload_exit_not_empty = 0.8
 		self.osipr_gl.timers.reload_empty = 4.5		
+		self.osipr_gl.timers.reload_exit_empty = 0.6
 		self.osipr_gl.panic_suppression_chance = 0.05
 		self.osipr_gl.custom = false	--Temp fix for BeardLib sync 
 		self.osipr_gl_npc.sounds.prefix = "contrabandm203_npc"
@@ -11711,6 +11726,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.x_socom.stats_modifiers = nil
 		self.x_socom.panic_suppression_chance = 0.05
+		self.x_socom.timers.reload_exit_empty = 0.55
+		self.x_socom.timers.reload_exit_not_empty = 0.65
 	end
 	
 	--[[     Custom weapons below     ]]--
@@ -11743,8 +11760,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toym16.panic_suppression_chance = 0.05
 		self.toym16.shake = {
 			fire_multiplier = 0.01,
-			fire_steelsight_multiplier = 0.01
+			fire_steelsight_multiplier = 0.01,
+			bypass_global_shake = true
 		}
+		self.toym16.timers.reload_not_empty = 2.10
+		self.toym16.timers.reload_empty = 2.9 		
+		self.toym16.timers.reload_exit_empty = 0.4
+		self.toym16.timers.reload_exit_not_empty = 0.5
 	end
 
 	if self.toy1911 then --Gambyt's Toy M1911
@@ -11774,8 +11796,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toy1911.panic_suppression_chance = 0.05
 		self.toy1911.shake = {
 			fire_multiplier = 0.01,
-			fire_steelsight_multiplier = 0.01
+			fire_steelsight_multiplier = 0.01,
+			bypass_global_shake = true
 		}
+		self.toy1911.timers.reload_exit_empty = 0.5
+		self.toy1911.timers.reload_exit_not_empty = 0.65	
 	end
 
 	if self.hpb then --Gambyt's Browning HP	
@@ -12216,8 +12241,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.smolak.stats_modifiers = nil
 			self.smolak.panic_suppression_chance = 0.05
 			self.smolak.reload_speed_multiplier = 1.2
-			self.smolak.timers.reload_not_empty = 3.5
-			self.smolak.timers.reload_empty = 4.3
+			self.smolak.timers = deep_clone(self.asval.timers)
 		end	
 	
 		if self.spike then --Gambyt's Spike Rifle
@@ -12289,6 +12313,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bdgr.kick = self.stat_info.kick_tables.moderate_kick
 			self.bdgr.panic_suppression_chance = 0.05
 			self.bdgr.stats_modifiers = nil
+			self.bdgr.timers = deep_clone(self.m16.timers)
+			self.bdgr.timers.reload_exit_empty = 0.65
+			self.bdgr.timers.reload_not_empty = 2.6
+			self.bdgr.timers.reload_exit_not_empty = 0.65
 		end
 	
 		if self.sgs then --Gambyt's Guerilla 308.	
@@ -12335,12 +12363,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.armor_piercing_chance = 1
 			self.sgs.stats_modifiers = nil
 			self.sgs.panic_suppression_chance = 0.05
-			self.sgs.timers.equip = self.shepheard.timers.equip
-			self.sgs.timers.unequip = self.shepheard.timers.unequip
-			self.sgs.timers.reload_empty = self.shepheard.timers.reload_empty
-			self.sgs.timers.reload_not_empty = self.shepheard.timers.reload_not_empty
-			self.sgs.timers.reload_exit_empty = self.shepheard.timers.reload_exit_empty
-			self.sgs.timers.reload_exit_not_empty = self.shepheard.timers.reload_exit_not_empty
+			self.sgs.timers = deep_clone(self.shepheard.timers)
 		end	
 
 	--Quake Weapon Pack
@@ -12503,6 +12526,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.tilt.stats_modifiers = nil
 		self.tilt.panic_suppression_chance = 0.05
+		self.tilt.timers = deep_clone(self.flint.timers)
 	end
 
 	if self.czevo then --Carl's Scorpion EVO
@@ -12539,6 +12563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.czevo.stats_modifiers = nil
 		self.czevo.panic_suppression_chance = 0.05
+		self.czevo.timers = deep_clone(self.shepheard.timers)
 		self.x_czevo.use_data.selection_index = 5 
 	end	
 
@@ -13911,6 +13936,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.amt.stats_modifiers = nil
 		self.amt.panic_suppression_chance = 0.05
+		self.amt.timers = deep_clone(self.deagle.timers)
 	end	
 
 	if self.xr2 then --KillerKrayola + Pawcio + splish's BO3 XR-2
@@ -14234,10 +14260,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			weap.desired_swap_time = 1.5
 
 			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
-			weap.shake = {
-				fire_multiplier = 0.75,
-				fire_steelsight_multiplier = -0.5
-			}
+			if weap.shake and not weap.shake.bypass_global_shake then
+				weap.shake = {
+					fire_multiplier = 0.75,
+					fire_steelsight_multiplier = -0.5
+				}
+			end
 
 			if restoration.Options:GetValue("OTHER/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then

@@ -441,7 +441,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.can_slide_on_suppress = true
 	self.fbi_vet.HEALTH_INIT = 12
 	self.fbi_vet.headshot_dmg_mul = 1.5
-	self.fbi_vet.DAMAGE_CLAMP_BULLET = 3
+	self.fbi_vet.gas_on_death = true
 	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.access = "spooc"
 	self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
@@ -768,7 +768,6 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.custom_shout = true	
 	self.hrt_titan.can_slide_on_suppress = true
 	self.hrt_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
-	self.hrt_titan.gas_on_death = true
 	self.hrt_titan.use_animation_on_fire_damage = true
 	self.hrt_titan.move_speed = presets.move_speed.very_fast
 	self.hrt_titan.dodge = presets.dodge.elite
@@ -1307,7 +1306,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.enforcer = deep_clone(self.gangster)
 	self.enforcer.tags = {"gangster", "custom", "special"}
 	self.enforcer.HEALTH_INIT = 250
-	self.enforcer.headshot_dmg_mul = 4.4375
+	self.enforcer.headshot_dmg_mul = 2.701
 	self.enforcer.damage_resistance = presets.damage_resistance.none
 	self.enforcer.is_special = true
 	self.enforcer.no_limping = true
@@ -1416,7 +1415,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
 	self.triad_boss.detection = presets.detection.normal
 	self.triad_boss.HEALTH_INIT = 750
-	self.triad_boss.headshot_dmg_mul = 7.99425	
+	self.triad_boss.headshot_dmg_mul = 5.402
 	self.triad_boss.damage_resistance = presets.damage_resistance.none
 	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.triad_boss.damage.explosion_damage_mul = 1.25
@@ -1553,7 +1552,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 750
-	self.mobster_boss.headshot_dmg_mul = 7.99425
+	self.mobster_boss.headshot_dmg_mul = 5.402
 	self.mobster_boss.damage_resistance = presets.damage_resistance.none
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
@@ -1608,7 +1607,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 750
-	self.biker_boss.headshot_dmg_mul = 7.99425
+	self.biker_boss.headshot_dmg_mul = 5.402
 	self.biker_boss.damage_resistance = presets.damage_resistance.none
 	self.biker_boss.damage.explosion_damage_mul = 1.25
 	self.biker_boss.damage.rocket_damage_mul = 1.25
@@ -1706,7 +1705,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.chavez_boss.HEALTH_INIT = 750
-	self.chavez_boss.headshot_dmg_mul = 7.99425
+	self.chavez_boss.headshot_dmg_mul = 5.402
 	self.chavez_boss.damage_resistance = presets.damage_resistance.none
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
 	self.chavez_boss.damage.rocket_damage_mul = 1.25
@@ -1830,7 +1829,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 750
-	self.drug_lord_boss.headshot_dmg_mul = 7.99425
+	self.drug_lord_boss.headshot_dmg_mul = 5.402
 	self.drug_lord_boss.damage_resistance = presets.damage_resistance.none
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 	self.drug_lord_boss.damage.rocket_damage_mul = 1.25
@@ -1942,6 +1941,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
+	--1320 head health, 400 "real damage" and an extra 920 from their armor plates
 	self.tank.headshot_dmg_mul = 12.5
 	self.tank.damage_resistance = presets.damage_resistance.none
 	self.tank.move_speed = presets.move_speed.slow
@@ -2027,7 +2027,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 	self.tank_titan.HEALTH_INIT = 750
-	self.tank_titan.headshot_dmg_mul = 7.99425
+	self.tank_titan.headshot_dmg_mul = 5.402
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
 	self.tank_titan.priority_shout_max_dis = 3000
@@ -2072,7 +2072,8 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw_black = deep_clone(self.tank)
 	self.tank_hw_black.weapon = deep_clone(presets.weapon.normal)
 	self.tank_hw_black.custom_voicework = "tdozer"
-	self.tank_hw_black.headshot_dmg_mul = 8.875
+	--Dozerish head health, lowered to account for no visor so they're about the same head health
+	self.tank_hw_black.headshot_dmg_mul = 5.402
 	self.tank_hw_black.ignore_headshot = false
 	self.tank_hw_black.melee_anims = nil
 	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"
@@ -15254,17 +15255,17 @@ function CharacterTweakData:_presets(tweak_data)
 					variations = {
 						side_step = {
 							chance = 3,
-							timeout = {1, 1},
+							timeout = {0, 0},
 							shoot_chance = 1,
 							shoot_accuracy = 0.7
 						},
 						roll = {
 							chance = 1,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						},
 						wheel = {
 							chance = 2,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						}
 					}
 				},
@@ -15274,17 +15275,17 @@ function CharacterTweakData:_presets(tweak_data)
 					variations = {
 						side_step = {
 							chance = 3,
-							timeout = {1, 1},
+							timeout = {0, 0},
 							shoot_chance = 1,
 							shoot_accuracy = 0.8
 						},
 						roll = {
 							chance = 1,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						},
 						wheel = {
 							chance = 2,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						}
 					}
 				},
@@ -15294,21 +15295,21 @@ function CharacterTweakData:_presets(tweak_data)
 					variations = {
 						side_step = {
 							chance = 5,
-							timeout = {1, 1},
+							timeout = {0, 0},
 							shoot_chance = 0.8,
 							shoot_accuracy = 0.6
 						},
 						roll = {
 							chance = 3,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						},
 						wheel = {
 							chance = 3,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						},
 						dive = {
 							chance = 1,
-							timeout = {1, 1}
+							timeout = {0, 0}
 						}
 					}
 				}

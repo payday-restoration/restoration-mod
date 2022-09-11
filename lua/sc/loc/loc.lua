@@ -2293,7 +2293,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_8"] = "Titan Shields can only be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic, and special AP rounds in Sentry Guns.",
 		["loading_new_units_res_9"] = "Captain Spring and Titan Dozers take bonus headshot damage at all times.",
 		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily, indicated by a blue UI overlay.",
-		["loading_new_units_res_11"] = "Veteran Cops have quick reflexes that make high damage and slow firing weapons ineffective making fire, explosives, and high DPS weapons ideal.",
+		["loading_new_units_res_11"] = "Veteran Cops will drop Tear Gas grenades on death when killed by anything but a headshot.",
 		["loading_new_units_res_12"] = "Veteran Cops move quickly making shots harder to land.",
 		["loading_new_units_res_13"] = "The Riot Gear clad Titan SWAT are somewhat resistant to melee.",
 		["loading_new_units_res_14"] = "Titan SWAT cannot be taken hostage or converted to fight on your side.",

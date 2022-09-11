@@ -17575,6 +17575,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	if job == "chew" then
 		map_scale_factor = 0.25
 	end
+	
+	--Reduced spawns if playing in Solo offline
+	if Global and Global.game_settings and Global.game_settings.single_player then
+		map_scale_factor = map_scale_factor * 0.75
+	end	
 
 	self.besiege.assault.force_balance_mul = {
 		0.55 * map_scale_factor,
@@ -17624,7 +17629,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		3.4 * map_scale_factor,
 		3.55 * map_scale_factor
 	}
-
+	
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
 			11,

@@ -28,6 +28,12 @@ local map_scale_factor = 1
 			map_scale_factor = 0.55
 		end
 	end
+	
+	--Reduced spawns if playing in Solo offline
+	if Global and Global.game_settings and Global.game_settings.single_player then
+		map_scale_factor = map_scale_factor * 0.75
+	end	
+	
 	self.special_unit_spawn_limits = {
 		{
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -288,6 +294,11 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 			map_scale_factor = 0.55
 		end
 	end
+	
+	--Reduced spawns if playing in Solo offline
+	if Global and Global.game_settings and Global.game_settings.single_player then
+		map_scale_factor = map_scale_factor * 0.75
+	end	
 
 	skirmish_data.assault.force_balance_mul = {
 		0.55 * map_scale_factor,

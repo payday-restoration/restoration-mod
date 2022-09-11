@@ -14341,7 +14341,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		akimbo = 1.1,
 		pistol = 1.2, --Compensate for low range.
 		smg = 1.1,
-			pdw = 0.65,
+			pdw = 0.7,
 			lmg = 0.6,
 			minigun = 0.4,
 		shotgun = 0.8, --Compensate for ease of aim+multikills and/or versatility.
@@ -14350,7 +14350,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		saw = 1.25, --Compensate for jankiness.
 		bow = 0.7, --Compensate for picking arrows back up.
 		crossbow = 0.7,
-		tranq = 0.65,
+		tranq = 0.7,
 		--Custom weapon pickup
 		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
 		typh = 0.8,

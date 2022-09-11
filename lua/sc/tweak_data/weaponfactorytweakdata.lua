@@ -14120,11 +14120,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_legacy", "resmod_legacy", function
 		40
 	}
 	self.parts.wpn_fps_pis_legacy_b_threaded.supported = true
-	self.parts.wpn_fps_pis_legacy_b_threaded.stats = {
-		value = 5,
-		spread = 1,
-		concealment = -1
-	}
+	self.parts.wpn_fps_pis_legacy_b_threaded.stats = deep_clone(barrels.long_b1_stats)
+	self.parts.wpn_fps_pis_legacy_b_threaded.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 	
 	--Wooden Grip
 	self.parts.wpn_fps_pis_legacy_g_wood.pcs = {
@@ -14134,8 +14131,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_legacy", "resmod_legacy", function
 		40
 	}
 	self.parts.wpn_fps_pis_legacy_g_wood.supported = true
-	self.parts.wpn_fps_pis_legacy_g_wood.stats = deep_clone(barrels.long_b1_stats)
-	self.parts.wpn_fps_pis_legacy_g_wood.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+	self.parts.wpn_fps_pis_legacy_g_wood.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -1
+	}
+	
 
 	self.wpn_fps_pis_legacy.wpn_fps_pis_g18c_co_1 = {
 		a_obj = "a_ns",

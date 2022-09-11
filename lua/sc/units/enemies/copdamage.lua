@@ -635,6 +635,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 
 	if not weapon_unit and weapon_id ~= "molotov" then
 		weapon_unit = attacker_unit and attacker_unit:inventory() and alive(attacker_unit:inventory():equipped_unit()) and attacker_unit:inventory():equipped_unit()
+		attack_data.is_fire_pool_damage = true
 	end
 
 	local hit_pos = mvector3.copy(self._unit:position())

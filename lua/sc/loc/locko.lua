@@ -1775,7 +1775,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_wpn_special"] = "특수",
 
 
-
+		["menu_reticle_dmc_eotech"] = "TECopt 풀",
+		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA 도트",
+		["menu_reticle_dmc_eotech_seggs"] = "TECopt 세그먼트",
+		["menu_reticle_dmc_ebr_cqb"] = "Maelstrom EBR-CQB",
+		["menu_reticle_dmc_trijicon_chevron"] = "삼각 셰브론",
+		["menu_reticle_dmc_ncstar"] = "정찰용 십자선",
+		["menu_reticle_dmc_lua"] = "Lua로 구동",
+		["menu_reticle_dmc_dot_4x4"] = "작은 도트",
+		["menu_reticle_dmc_dot_2x2"] = "더 작은 점",
 
 		
 		--Blackmarket gui per-armor skill descriptions.

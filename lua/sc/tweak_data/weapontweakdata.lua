@@ -9941,7 +9941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.flamethrower_mk2.fire_dot_data = {
 					dot_damage = 1.6,
-					dot_trigger_chance = 60,
+					dot_trigger_chance = 50,
 					dot_length = 3.1,
 					dot_tick_period = 0.5
 				}
@@ -9998,7 +9998,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.system.fire_dot_data = {
 					dot_damage = 1.6,
-					dot_trigger_chance = 60,
+					dot_trigger_chance = 50,
 					dot_length = 3.1,
 					dot_tick_period = 0.5
 				}
@@ -10058,7 +10058,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.money.kick = self.stat_info.kick_tables.horizontal_recoil
 					self.money.fire_dot_data = {
 						dot_damage = 1.6,
-						dot_trigger_chance = 60,
+						dot_trigger_chance = 50,
 						dot_length = 3.1,
 						dot_tick_period = 0.5
 					}

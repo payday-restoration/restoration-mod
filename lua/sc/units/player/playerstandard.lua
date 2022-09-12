@@ -1448,7 +1448,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
 	local moving_forwards = angle and angle <= 15
 	local can_run = self._unit:movement():is_above_stamina_threshold()
-	local max_charge = self:_get_melee_charge_lerp_value(t) >= 1
+	local max_charge = self:_get_melee_charge_lerp_value(t) >= 0.99
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then

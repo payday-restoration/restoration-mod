@@ -16,8 +16,8 @@
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = 0.8,
-					dot_length = 6.1,
+					dot_damage = 0.6,
+					dot_length = 8.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -37,8 +37,8 @@
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = 1,
-					dot_length = 6.1,
+					dot_damage = 0.75,
+					dot_length = 8.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -59,8 +59,8 @@
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 6.1,
+					dot_damage = 1.125,
+					dot_length = 8.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -82,7 +82,7 @@
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = 1.6,
-				dot_trigger_chance = 60,
+				dot_trigger_chance = 50,
 				dot_length = 3.1,
 				dot_tick_period = 0.5,
 				rays = 16
@@ -104,7 +104,7 @@
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = 3,
-				dot_trigger_chance = 60,
+				dot_trigger_chance = 50,
 				dot_length = 3.1,
 				dot_tick_period = 0.5,
 				rays = 16
@@ -127,7 +127,7 @@
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = 3,
-				dot_trigger_chance = 60,
+				dot_trigger_chance = 50,
 				dot_length = 3.1,
 				dot_tick_period = 0.5,
 				rays = 16
@@ -7883,8 +7883,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		dot_data = { 
 			type = "bleed",
 			custom_data = {
-				dot_damage = 2,
-				dot_length = 6.1,
+				dot_damage = 1.5,
+				dot_length = 8.1,
 				dot_tick_period = 0.5
 			}
 		}
@@ -7908,7 +7908,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
 			dot_damage = 4,
-			dot_trigger_chance = 60,
+			dot_trigger_chance = 50,
 			dot_length = 3.1,
 			dot_tick_period = 0.5,
 			rays = 16
@@ -14122,7 +14122,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_legacy", "resmod_legacy", function
 	self.parts.wpn_fps_pis_legacy_b_threaded.supported = true
 	self.parts.wpn_fps_pis_legacy_b_threaded.stats = deep_clone(barrels.long_b1_stats)
 	self.parts.wpn_fps_pis_legacy_b_threaded.custom_stats = deep_clone(barrels.long_b1_custom_stats)
-	
+
 	--Wooden Grip
 	self.parts.wpn_fps_pis_legacy_g_wood.pcs = {
 		10,

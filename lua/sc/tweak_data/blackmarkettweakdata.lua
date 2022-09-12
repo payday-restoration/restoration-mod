@@ -3988,7 +3988,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.pbaxe.stats = deep_clone(self.melee_weapons.beardy.stats)
 	end
 
-	if self.melee_weapons.pdutchknife then --Predator Pack Axe (Bearded Axe)
+	if self.melee_weapons.pdutchknife then --Predator Pack Axe (Tanto)
 		self.melee_weapons.pdutchknife.stats = deep_clone(self.melee_weapons.kabartanto.stats)
 		self.melee_weapons.pdutchknife.dot_data = nil
 	end
@@ -4038,7 +4038,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.predator_wristblades.anim_speed_mult = 0.6
 	end
 
-	if self.melee_weapons.melee_g36 then
+	if self.melee_weapons.melee_g36 then --G36 (Nailgun but with the G36's max damage profile + range)
 		self.melee_weapons.melee_g36.info_id = "bm_melee_thebestweapon_info"	
 		self.melee_weapons.melee_g36.hit_pre_calculation = true
 		self.melee_weapons.melee_g36.stats = deep_clone(self.melee_weapons.nin.stats)

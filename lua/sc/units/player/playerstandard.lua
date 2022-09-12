@@ -1,3 +1,34 @@
+local norecoil_blacklist = {
+	--Special
+	["flamethrower_mk2"] = true,
+	["system"] = true,
+	["china"] = true,
+	
+	--Shotguns
+	["r870_shotgun"] = true,
+	["ksg"] = true,
+	["boot"] = true,
+	["m37"] = true,
+	["m1897"] = true,
+	["m590"] = true,
+	
+	--Sniper Rifles
+	["winchester1874"] = true,
+	["mosin"] = true,
+	["m95"] = true,
+	["r93"] = true,
+	["msr"] = true,
+	["model70"] = true,
+	["r700"] = true,
+	["sbl"] = true,
+	["desertfox"] = true,
+	["scout"] = true,
+	
+	--Pistols
+	["peacemaker"] = true,
+	["model3"] = true
+}
+
 local original_init = PlayerStandard.init
 function PlayerStandard:init(unit)
 	original_init(self, unit)
@@ -752,7 +783,7 @@ function PlayerStandard:_check_stop_shooting()
 			self._ext_network:send("sync_stop_auto_fire_sound", 0)
 		end
 
-		if is_auto_fire_mode and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
+		if ((self._state_data.in_full_steelsight and not restoration.Options:GetValue("OTHER/NoADSRecoilAnims")) or not self._state_data.in_full_steelsight) and is_auto_fire_mode and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
 			self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
 		end
 
@@ -1949,10 +1980,6 @@ function PlayerStandard:_in_burst()
 end
 
 
---Check for being fully ADS'd
-function PlayerStandard:full_steelsight()
-	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
-end
 
 --ADS speed stuff
 function PlayerStandard:_stance_entered(unequipped, timemult)
@@ -2166,6 +2193,8 @@ function PlayerStandard:_check_action_steelsight(t, input)
 	return new_action
 end
 
+
+
 function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._equipped_unit and self._equipped_unit:base() then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
@@ -2242,6 +2271,17 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	managers.job:set_memory("cac_4", true)
 end
 
+--Check for being fully ADS'd
+function PlayerStandard:full_steelsight()
+	local weap_base = self._equipped_unit:base()	
+	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
+	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
+	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and (self:get_animation("recoil_enter") or self:get_animation("recoil_exit")) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+		self._ext_camera:play_redirect(self:get_animation("idle"))
+	end
+	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
+end
 
 --Ends minigun spinup.
 Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)
@@ -2250,6 +2290,13 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 		if weapon:get_name_id() == "m134" or weapon:get_name_id() == "shuno" then
 			weapon:vulcan_exit_steelsight()
 		end
+	end
+	local weap_base = self._equipped_unit:base()	
+	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
+	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
+	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and self:get_animation("recoil_enter") and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+		self._ext_camera:play_redirect(self:get_animation("recoil_enter"))
 	end
 end)
 

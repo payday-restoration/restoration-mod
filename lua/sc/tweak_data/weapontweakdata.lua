@@ -3567,6 +3567,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].is_bullpup = true
 	end
+
+	recat = {
+		"peacemaker","model3",
+		"r870","ksg","boot","m37","m1897","m590",
+		"winchester1874","mosin","m95","r93","msr","model70","r700","sbl","desertfox","scout",
+		"flamethrower_mk2","system","china"
+	}
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].always_play_anims = true
+	end
 		
 	--Weapon specific attachment category names
 	self.new_raging_bull.override_mod_type_name = {
@@ -11505,6 +11515,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.shatters_fury then
 		self.shatters_fury.recategorize = { "heavy_pis" }
 		self.shatters_fury.damage_type = "heavy_pistol"
+		self.shatters_fury.always_play_anims = true
 		self.shatters_fury.fire_mode_data.fire_rate = 0.1935
 		self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"	
 		--if restoration.Options:GetValue("OTHER/ComboSounds") then
@@ -12094,6 +12105,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bs23.recategorize = { "break_shot" }
 			self.bs23.damage_type = "shotgun"
 			self.bs23.damage_type_single_ray = "anti_materiel"
+			self.bs23.always_play_anims = true
 			self.bs23.tactical_reload = 1
 			self.bs23.AMMO_MAX = 40
 			self.bs23.CLIP_AMMO_MAX = 3
@@ -12442,6 +12454,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.derringer then --Carl's Derringer
 		self.derringer.recategorize = {"heavy_pis"}
 		self.derringer.damage_type = "heavy_pistol"
+		self.derringer.always_play_anims = true
 		self.derringer.AMMO_MAX = 20
 		self.derringer.kick = self.stat_info.kick_tables.right_kick
 		self.derringer.sounds.fire_single = "c45_fire"
@@ -12691,6 +12704,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fp45.has_description = true
 		self.fp45.desc_id = "bm_ap_weapon_sc_desc"
 		self.fp45.lock_slide = true
+		self.fp45.always_play_anims = true
 		self.fp45.fire_mode_data.fire_rate = 0.08571428571
 		self.fp45.single.fire_rate = 0.08571428571
 		self.fp45.CLIP_AMMO_MAX = 1
@@ -12858,6 +12872,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.ks23.desc_id = "bm_ks23_sc_desc"
 		self.ks23.has_description = false
+		self.ks23.always_play_anims = true
 		self.ks23.use_data.selection_index = 2
 		self.ks23.categories = {
 				"shotgun"
@@ -13225,6 +13240,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.moss464spx then --Pawcio's SPX Centerfire
 		self.moss464spx.recategorize = {"light_snp"}
 		self.moss464spx.damage_type = "sniper"
+		self.moss464spx.always_play_anims = true
 		self.moss464spx.upgrade_blocks = nil
 		self.moss464spx.has_description = true
 		self.moss464spx.sounds.stop_fire = "saiga_stop"
@@ -13271,6 +13287,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.winchester1894 then --Pawcio's Winchester 1894
 		self.winchester1894.recategorize = {"light_snp"}
 		self.winchester1894.damage_type = "sniper"
+		self.winchester1894.always_play_anims = true					
 		self.winchester1894.tactical_reload = 1						
 		self.winchester1894.has_description = true
 		self.winchester1894.desc_id = "bm_ap_weapon_sc_desc"
@@ -13316,6 +13333,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.m1894 then --Pawcio's Marlin 1894
 		self.m1894.recategorize = {"light_snp"}
 		self.m1894.damage_type = "sniper"
+		self.m1894.always_play_anims = true
 		self.m1894.tactical_reload = 1						
 		self.m1894.has_description = true
 		self.m1894.desc_id = "bm_ap_weapon_sc_desc"
@@ -13359,6 +13377,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.k31 then --Pawcio's K31
 		self.k31.recategorize = {"heavy_snp"}
 		self.k31.damage_type = "sniper"
+		self.k31.always_play_anims = true
 		self.k31.CLIP_AMMO_MAX = 6
 		self.k31.AMMO_MAX = 30
 		self.k31.fire_mode_data.fire_rate = 0.9375
@@ -13399,6 +13418,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.l115.recategorize = { "heavy_snp" }
 		self.l115.upgrade_blocks = nil
 		self.l115.has_description = true
+		self.l115.always_play_anims = true
 		self.l115.desc_id = "bm_ap_weapon_sc_desc"
 		self.l115.tactical_reload = 1
 		self.l115.CLIP_AMMO_MAX = 5
@@ -13489,6 +13509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.musket.recategorize = { "antim_snp" }
 		self.musket.damage_type = "sniper"
+		self.musket.always_play_anims = true
 		self.musket.upgrade_blocks = nil
 		self.musket.has_description = true
 		self.musket.desc_id = "bm_heavy_ap_weapon_sc_desc"
@@ -13582,6 +13603,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.recategorize = { "antim_snp" }
 		self.m200.hs_mult = 2
 		self.m200.damage_type = "anti_materiel"
+		self.m200.always_play_anims = true
 		self.m200.upgrade_blocks = nil
 		self.m200.has_description = true
 		self.m200.desc_id = "bm_m200_sc_desc"
@@ -14249,6 +14271,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, weap in pairs(self) do
 		if weap.categories and weap.stats then
 			if not weap.supported then
+				weap.always_play_anims = true
 				self:generate_custom_weapon_stats(weap)	
 			end
 			if weap.bipod_camera_spin_limit then

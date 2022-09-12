@@ -1599,6 +1599,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.melee_kill_life_leech = {0.02}
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
+	self.on_killshot_cooldown_reduction_melee = 1
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {

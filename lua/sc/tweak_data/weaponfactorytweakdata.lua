@@ -22292,6 +22292,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		for i, part_id in ipairs(mags) do
 			self.parts[part_id].supported = true
+			self.parts[part_id].fps_animation_weight = "drum_mag"
 			self.parts[part_id].stats = deep_clone(self.parts.wpn_upg_ak_m_drum.stats)
 			self.parts[part_id].custom_stats = deep_clone(self.parts.wpn_upg_ak_m_drum.custom_stats)
 		end
@@ -22460,6 +22461,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_x47.custom_stats.ads_speed_mult = 1.075
 
 		self.parts.wpn_fps_upg_m_max.supported = true
+		self.parts.wpn_fps_upg_m_max.fps_animation_weight = "drum_mag"
 		self.parts.wpn_fps_upg_m_max.stats = deep_clone(self.parts.wpn_upg_saiga_m_20rnd.stats)
 		self.parts.wpn_fps_upg_m_max.custom_stats = deep_clone(self.parts.wpn_upg_saiga_m_20rnd.custom_stats)
 

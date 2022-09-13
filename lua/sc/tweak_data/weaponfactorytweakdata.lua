@@ -3451,9 +3451,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
 		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 	}
+	self.wpn_fps_ass_74.override.wpn_lmg_rpk_m_ban = {
+		stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		},
+		custom_stats = { ads_speed_mult = 1.05 }
+	}
 
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_lmg_rpk_s_standard")
-	table.insert(self.wpn_fps_ass_74_npc.uses_parts, "wpn_fps_lmg_rpk_s_standard")
+	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_lmg_rpk_m_ban")
 
 	--No Stock
 	--table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_upg_ak_s_nostock")
@@ -3499,9 +3508,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
+	self.wpn_fps_ass_akm.override.wpn_lmg_rpk_m_ban = {
+		stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		},
+		custom_stats = { ads_speed_mult = 1.05 }
+	}
 
 	--Drum Mag
 	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_upg_ak_m_drum")
+	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_lmg_rpk_m_ban")
 	
 	--Plastic Stock
 	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_lmg_rpk_s_standard")
@@ -3580,9 +3599,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
+	self.wpn_fps_ass_akm_gold.override.wpn_lmg_rpk_m_ban = {
+		stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		},
+		custom_stats = { ads_speed_mult = 1.05 }
+	}
 	--Drum Mag
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_upg_ak_m_drum")
-	table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_upg_ak_m_drum")
+	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_lmg_rpk_m_ban")
 
 	--Plastic Stock
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_lmg_rpk_s_standard")
@@ -3643,9 +3671,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
+	self.wpn_fps_smg_akmsu.override.wpn_lmg_rpk_m_ban = {
+		stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		},
+		custom_stats = { ads_speed_mult = 1.05 }
+	}
 
 	--table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_upg_ak_s_nostock")
 	--table.insert(self.wpn_fps_smg_akmsu_npc.uses_parts, "wpn_upg_ak_s_nostock")	
+
+	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_lmg_rpk_m_ban")
+
+	self.wpn_fps_smg_akmsu_npc.override = deep_clone(self.wpn_fps_smg_akmsu.override)
+	self.wpn_fps_smg_akmsu_npc.uses_parts = deep_clone(self.wpn_fps_smg_akmsu.uses_parts)
 
 	self.wpn_fps_smg_akmsu_primary = nil
 	self.wpn_fps_smg_akmsu_primary_npc = nil
@@ -12839,16 +12881,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flint", "resmod_flint", function(s
 	--AK17 Custom parts
 	--table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_m4_s_standard")
 	--table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
+	self.wpn_fps_ass_flint.override = self.wpn_fps_ass_flint.override or {}
+
+	self.wpn_fps_ass_flint.override.wpn_lmg_rpk_m_ban = {
+		stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		},
+		custom_stats = { ads_speed_mult = 1.05 }
+	}
 
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_ak_g_rk3")
-	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_fps_upg_ak_g_rk3")	
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_i_singlefire")
-	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_fps_upg_i_singlefire")	
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_i_autofire")
-	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_fps_upg_i_autofire")	
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_upg_ak_m_drum")
-	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_upg_ak_m_drum")	
-
+	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_lmg_rpk_m_ban")
 		
 	self.wpn_fps_ass_flint_npc.uses_parts = deep_clone(self.wpn_fps_ass_flint.uses_parts)	
 
@@ -15840,12 +15889,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 	--Default Mag
 	self.parts.wpn_fps_ass_groza_m_standard.unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_akm"
 
+	self.wpn_fps_ass_groza.override = self.wpn_fps_ass_groza.override or {}
+
+	self.wpn_fps_ass_groza.override.wpn_lmg_rpk_m_ban = {
+		stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		},
+		custom_stats = { ads_speed_mult = 1.05 }
+	}
+
 	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_fps_upg_ak_m_uspalm")
-	table.insert(self.wpn_fps_ass_groza_npc.uses_parts, "wpn_fps_upg_ak_m_uspalm")
 	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_fps_upg_ak_m_quad")
-	table.insert(self.wpn_fps_ass_groza_npc.uses_parts, "wpn_fps_upg_ak_m_quad")
 	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_upg_ak_m_drum")
-	table.insert(self.wpn_fps_ass_groza_npc.uses_parts, "wpn_upg_ak_m_drum")		
+	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_lmg_rpk_m_ban")
 	
 	self.wpn_fps_ass_groza_npc.uses_parts = deep_clone(self.wpn_fps_ass_groza.uses_parts)	
 end)
@@ -22285,9 +22344,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		-- +45 mags
 		mags = {
-			'wpn_fps_upg_m_rpkd',
+			'wpn_fps_upg_m_rpkd', --"95" drum (how the fuck does something modeled after a 75 drum hold 95 rounds???? Eat ass, Tarkov)
 			'wpn_fps_upg_m_762rpk75',
-			'wpn_fps_upg_m_promagd'
+			'wpn_fps_upg_m_promagd' --73 drum (Fuckin Promag unironically making 73 round drums. Couldn't do anything to get those extra 2 in?)
 		}
 
 		for i, part_id in ipairs(mags) do
@@ -22296,6 +22355,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts[part_id].stats = deep_clone(self.parts.wpn_upg_ak_m_drum.stats)
 			self.parts[part_id].custom_stats = deep_clone(self.parts.wpn_upg_ak_m_drum.custom_stats)
 		end
+		self.parts.wpn_fps_upg_m_promagd.stats.extra_ammo = 43
 
 		-- +30 mags
 		mags = {

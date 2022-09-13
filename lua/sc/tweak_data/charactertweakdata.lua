@@ -685,7 +685,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
 	end			
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
 		self.omnia_lpf.yellow_blood = true
 	end
 	self.omnia_lpf.priority_shout = "f47"
@@ -889,9 +889,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
-		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
+		self.heavy_swat_sniper.custom_voicework = "tsniper"
 	end
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" or self:get_ai_group_type() ~= "murkywater" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "murkywater" then
 		self.heavy_swat_sniper.yellow_blood = true
 	end
 	self.heavy_swat_sniper.is_special = true
@@ -1109,7 +1109,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" or self:get_ai_group_type() ~= "murkywater" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "murkywater" then
 		self.city_swat_titan.yellow_blood = true
 	else
 		self.city_swat_titan.yellow_blood = nil
@@ -2050,7 +2050,7 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.speech_prefix_p1 = "heck"
 		self.tank_titan.speech_prefix_count = nil	
 	end				
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
 		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.ecm_hurts = {}
@@ -2448,9 +2448,9 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.phalanx_minion.custom_voicework = "tshield_ru"
 	else
-		self.phalanx_minion.custom_voicework = "tsniper"
+		self.phalanx_minion.custom_voicework = "tshield"
 	end
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
 		self.phalanx_minion.yellow_blood = true
 	end
 	self.phalanx_minion.heal_cooldown = 7.5
@@ -2878,7 +2878,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
-	if self:get_ai_group_type() ~= "russia" or self:get_ai_group_type() ~= "federales" or self:get_ai_group_type() ~= "zombie" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
 		self.taser_titan.yellow_blood = true
 	else
 		self.taser_titan.yellow_blood = nil		

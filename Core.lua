@@ -193,7 +193,8 @@ function restoration:Init()
 		--Custom Heists below--
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"bag_sim_2", --Bag Simulator 2
-		"finsternis" --Projekt Finsternis
+		"finsternis", --Projekt Finsternis
+		"funbank" --suffer
 	}
 	--Increased spawns, slightly less. Ditto
 	restoration.large_levels = {

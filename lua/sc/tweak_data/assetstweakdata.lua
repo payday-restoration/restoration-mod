@@ -58,6 +58,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_pd.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_pd.exclude_stages, "Tonis2")
 	table.insert(self.risk_pd.exclude_stages, "trop")
+	table.insert(self.risk_pd.exclude_stages, "funbank")
+	table.insert(self.risk_pd.exclude_stages, "Xanax")
+	table.insert(self.risk_pd.exclude_stages, "btms")
 
 	--SWAT--		
 	table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -100,6 +103,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_swat.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_swat.exclude_stages, "Tonis2")
 	table.insert(self.risk_swat.exclude_stages, "trop")
+	table.insert(self.risk_swat.exclude_stages, "funbank")
+	table.insert(self.risk_swat.exclude_stages, "Xanax")
+	table.insert(self.risk_swat.exclude_stages, "btms")
 	
 	--FBI--		
 	table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -142,6 +148,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_fbi.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_fbi.exclude_stages, "Tonis2")
 	table.insert(self.risk_fbi.exclude_stages, "trop")
+	table.insert(self.risk_fbi.exclude_stages, "funbank")
+	table.insert(self.risk_fbi.exclude_stages, "Xanax")
+	table.insert(self.risk_fbi.exclude_stages, "btms")
 
 	--Overkill--		
 	table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -184,6 +193,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_squad.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_death_squad.exclude_stages, "Tonis2")
 	table.insert(self.risk_death_squad.exclude_stages, "trop")
+	table.insert(self.risk_death_squad.exclude_stages, "funbank")
+	table.insert(self.risk_death_squad.exclude_stages, "Xanax")
+	table.insert(self.risk_death_squad.exclude_stages, "btms")
 
 	--Mayhem--		
 	table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -226,6 +238,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_easy_wish.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_easy_wish.exclude_stages, "Tonis2")
 	table.insert(self.risk_easy_wish.exclude_stages, "trop")
+	table.insert(self.risk_easy_wish.exclude_stages, "funbank")
+	table.insert(self.risk_easy_wish.exclude_stages, "Xanax")
+	table.insert(self.risk_easy_wish.exclude_stages, "btms")
 
 	--Deathwish--		
 	table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -268,6 +283,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_wish.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_death_wish.exclude_stages, "Tonis2")
 	table.insert(self.risk_death_wish.exclude_stages, "trop")
+	table.insert(self.risk_death_wish.exclude_stages, "funbank")
+	table.insert(self.risk_death_wish.exclude_stages, "Xanax")
+	table.insert(self.risk_death_wish.exclude_stages, "btms")
 	
 	--Death Sentence--		
 	table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -310,6 +328,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_sm_wish.exclude_stages, "ttr_yct_lvl")
 	table.insert(self.risk_sm_wish.exclude_stages, "Tonis2")
 	table.insert(self.risk_sm_wish.exclude_stages, "trop")
+	table.insert(self.risk_sm_wish.exclude_stages, "funbank")
+	table.insert(self.risk_sm_wish.exclude_stages, "Xanax")
+	table.insert(self.risk_sm_wish.exclude_stages, "btms")
 	
 	-- Reaper Risk Asset
 	table.insert(self.mad_russian_merc_cameras.stages, "pines")
@@ -345,7 +366,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"hidden_vault",
 		"ttr_yct_lvl",
 		"Tonis2",
-		"trop"
+		"trop",
+		"Xanax",
+		"btms"
 		--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
 	}		
 	self.risk_zombie.stages = {
@@ -354,7 +377,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"help",
 		"hvh",
 		"ascension_III",
-		"daymare"
+		"daymare",
+		"funbank"
 	}		
 	self.risk_bexico.stages = {
 		"bex",

@@ -7915,8 +7915,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_akmsu.stats = {
 					damage = 30,
-					spread = 61,
-					recoil = 57,
+					spread = 63,
+					recoil = 62,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 27,
@@ -8111,7 +8111,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akmsu.stats = {
 					damage = 30,
 					spread = 73,
-					recoil = 71,
+					recoil = 72,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 27,
@@ -12305,14 +12305,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bdgr.supported = true
 			self.bdgr.ads_speed = 0.300
 			self.bdgr.damage_falloff = {
-				start_dist = 1200,
-				end_dist = 5000,
-				min_mult = 0.4
+				start_dist = 1500,
+				end_dist = 3800,
+				min_mult = 0.6
 			}
 			self.bdgr.stats = {
 				damage = 30,
 				spread = 78,
-				recoil = 72,
+				recoil = 71,
 				zoom = 1,
 				concealment = 24,
 				alert_size = 2,

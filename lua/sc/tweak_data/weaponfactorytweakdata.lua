@@ -13580,13 +13580,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 	}
 	self.parts.wpn_fps_sho_basset_m_extended.supported = true
 	self.parts.wpn_fps_sho_basset_m_extended.custom_stats = {
-		ads_speed_mult = 1.05
+		ads_speed_mult = 1.075
 	}
 	self.parts.wpn_fps_sho_basset_m_extended.stats = {
 		value = 1, 
-		extra_ammo = 5, 
-		reload = -2, 
-		concealment = -2
+		extra_ammo = 7, 
+		reload = -3, 
+		concealment = -3
 	}
 
 	self.wpn_fps_sho_basset.override = {
@@ -22340,7 +22340,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
-	if self.parts.wpn_fps_upg_m_dura then
+	if self.parts.wpn_fps_upg_m_dura then --FrenchyAU Magnation
 
 		-- +45 mags
 		mags = {
@@ -22527,10 +22527,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_upg_m_pro.supported = true
 		self.parts.wpn_fps_upg_m_pro.stats = deep_clone(self.parts.wpn_fps_sho_basset_m_extended.stats)
-		self.parts.wpn_fps_upg_m_pro.stats.extra_ammo = 7
-		self.parts.wpn_fps_upg_m_pro.stats.reload = -3
-		self.parts.wpn_fps_upg_m_pro.stats.concealment = -3
-		self.parts.wpn_fps_upg_m_pro.custom_stats = { ads_speed_mult = 0.925 }
+		self.parts.wpn_fps_upg_m_pro.custom_stats = deep_clone(self.parts.wpn_fps_sho_basset_m_extended.custom_stats)
 
 		self.parts.wpn_fps_upg_m_mpxdrum.supported = true
 		self.parts.wpn_fps_upg_m_mpxdrum.stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.stats)
@@ -22553,6 +22550,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_7drum.stats.reload = -4
 		self.parts.wpn_fps_upg_m_7drum.custom_stats = { ads_speed_mult = 1.075 }
 
+	end
+
+	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets
+		local gadgets = {
+			'wpn_fps_upg_fl_peq2',
+			'wpn_fps_upg_fl_dbal',
+			'wpn_fps_upg_fl_holo',
+			'wpn_fps_upg_fl_ncs',
+			'wpn_fps_upg_fl_peq15',
+			'wpn_fps_upg_fl_2irs',
+			'wpn_fps_upg_fl_mawl',
+			'wpn_fps_upg_fl_pers',
+			'wpn_fps_upg_fl_x400',
+			'wpn_fps_upg_fl_la5',
+			'wpn_fps_upg_fl_kleh',
+			'wpn_fps_upg_fl_las',
+			'wpn_fps_upg_fl_pis_ncs',
+			'wpn_fps_upg_fl_pis_dbal',
+			'wpn_fps_upg_fl_pis_gl21',
+			'wpn_fps_upg_fl_pis_xc1',
+			'wpn_fps_upg_fl_pis_2irs',
+			'wpn_fps_upg_fl_pis_las',
+		}
+		for i, part_id in ipairs(gadgets) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = { value = 1 }
+			self.parts[part_id].custom_stats = nil
+		end
 	end
 
 

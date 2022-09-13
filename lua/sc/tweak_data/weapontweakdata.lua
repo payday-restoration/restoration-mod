@@ -3563,6 +3563,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "pdw"
 	end
 
+	recat = { "flamethrower_mk2", "system" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].damage_type = "flamethrower"
+	end
+
 	recat = { "p90", "aug", "arbiter", "komodo", "corgi", "vhs", "wa2000", "desertfox", "m95", "shak12", "l85a2", "groza", "groza_underbarrel", "ksg", "rota", "basset", "famas", "qbu88" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].is_bullpup = true
@@ -10051,6 +10056,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						"flamethrower",
 						"shotgun"
 					}
+					self.money.damage_type = "flamethrower"
 					self.money.use_data.selection_index = 2
 					self.money.has_description = true
 					self.money.desc_id = "bm_ap_money_sc_desc"
@@ -10101,7 +10107,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.money.timers.reload_empty = 8.5
 					self.money.timers.reload_not_empty = 8.5
 					self.money.timers.reload_exit_empty = 1.5
-					self.money.timers.reload_exit_not_empty = 1.5	
+					self.money.timers.reload_exit_not_empty = 1.5
 					self.money.sounds.no_fix = true		
 					self.money.shake.bypass_global_shake = true
 				end
@@ -14290,6 +14296,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 
+
+			for i, wep_id in ipairs(recat) do
+				if weap.damage_type and not weap.object_damage_mult then
+					if weap.damage_type == "anti_materiel" then
+						weap.object_damage_mult = 3
+					elseif weap.damage_type == "sniper" then
+						weap.object_damage_mult = 1.25
+					elseif weap.damage_type == "pdw" then
+						weap.object_damage_mult = 1.25
+					elseif weap.damage_type == "heavy_pistol" then
+						weap.object_damage_mult = 1.25
+					end
+				end
+			end
+	
 			if restoration.Options:GetValue("OTHER/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
 					weap.FIRE_MODE = "auto"

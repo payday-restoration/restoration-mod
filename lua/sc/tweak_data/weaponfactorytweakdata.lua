@@ -3185,6 +3185,10 @@ end)
 --Para
 Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", function(self)
 
+	--Default Handguard
+	self.parts.wpn_fps_smg_olympic_fg_olympic.adds = {"fake_a_os"}
+	self.parts.wpn_fps_smg_olympic_fg_olympic.forbids = {"wpn_fps_ass_m16_os_frontsight"}
+
 	--(Para) Railed Handguard
 	self.parts.wpn_fps_smg_olympic_fg_railed.pcs = {
 		10,
@@ -3193,6 +3197,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		40
 	}
 	self.parts.wpn_fps_smg_olympic_fg_railed.supported = true
+	self.parts.wpn_fps_smg_olympic_fg_railed.adds = {"fake_a_os"}
+	self.parts.wpn_fps_smg_olympic_fg_railed.forbids = {"wpn_fps_ass_m16_os_frontsight"}
 	self.parts.wpn_fps_smg_olympic_fg_railed.stats = {
 		value = 2,
 		recoil = 2,
@@ -3256,10 +3262,32 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 	}
-	self.wpn_fps_ass_m16.override.wpn_fps_ass_m16_s_op = {
+	self.wpn_fps_smg_olympic.override.wpn_fps_ass_m16_s_op = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
+
+	self.wpn_fps_smg_olympic.override.wpn_fps_m4_uupg_b_medium.override = {
+		wpn_fps_smg_olympic_fg_olympic = {
+			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_fg_amcar",
+			third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_fg_amcar",
+			adds = {"fake_a_os"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"}
+		},
+		wpn_fps_smg_olympic_fg_railed = {
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail",
+			adds = {"fake_a_os"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"}
+		},
+		wpn_fps_upg_smg_olympic_fg_lr300 = {
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_lr300",
+			adds = {"fake_a_os"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"}
+		}
+	}
+	
 
 	--Para Default Blueprint, making it use the 30 rounder by default
 	self.wpn_fps_smg_olympic.default_blueprint[3] = "wpn_fps_m4_uupg_m_std_vanilla"	

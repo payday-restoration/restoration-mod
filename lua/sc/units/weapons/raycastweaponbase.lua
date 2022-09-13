@@ -72,8 +72,6 @@ function FlameBulletBase:bullet_slotmask()
 end	
 
 --Add shield knocking to FlameBulletBase
-
---Add shield knocking to FlameBulletBase
 function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
 	if Network:is_client() and not blank and user_unit ~= managers.player:player_unit() then
 		blank = true
@@ -140,9 +138,8 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 			local local_damage = not blank or hit_unit:id() == -1
 
 			if local_damage then
-				local object_damage_mult = alive(weapon_unit) and weapon_unit:base() and weapon_unit:base():weapon_tweak_data().object_damage_mult or 1
 				col_ray.body:extension().damage:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
-				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage * object_damage_mult)
+				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
 
 				if alive(weapon_unit) and weapon_unit:base().categories and weapon_unit:base():categories() then
 					for _, category in ipairs(weapon_unit:base():categories()) do
@@ -302,9 +299,8 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			local local_damage = not blank or hit_unit:id() == -1
 
 			if local_damage then
-				local object_damage_mult = alive(weapon_unit) and weapon_unit:base() and weapon_unit:base():weapon_tweak_data().object_damage_mult or 1
 				col_ray.body:extension().damage:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
-				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage * object_damage_mult)
+				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
 
 				if alive(weapon_unit) and weapon_unit:base().categories and weapon_unit:base():categories() then
 					for _, category in ipairs(weapon_unit:base():categories()) do

@@ -22552,7 +22552,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets
+	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets/Tacticals
 		local gadgets = {
 			'wpn_fps_upg_fl_peq2',
 			'wpn_fps_upg_fl_dbal',

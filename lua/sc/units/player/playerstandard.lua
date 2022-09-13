@@ -695,10 +695,17 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						end
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
+
+							local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
+							local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
+							local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
 							if not self._state_data.in_steelsight then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then
-								self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
+								if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+								else
+									self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
+								end
 							end
 						end
 
@@ -2277,7 +2284,7 @@ function PlayerStandard:full_steelsight()
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and (self:get_animation("recoil_enter") or self:get_animation("recoil_exit")) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 		self._ext_camera:play_redirect(self:get_animation("idle"))
 	end
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
@@ -2295,7 +2302,7 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and self:get_animation("recoil_enter") and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 		self._ext_camera:play_redirect(self:get_animation("recoil_enter"))
 	end
 end)

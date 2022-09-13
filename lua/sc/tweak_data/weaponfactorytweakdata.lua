@@ -3186,7 +3186,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", function(self)
 
 	--Default Handguard
-	self.parts.wpn_fps_smg_olympic_fg_olympic.adds = {"fake_a_os"}
+	self.parts.wpn_fps_smg_olympic_fg_olympic.adds = {"wpn_fps_ass_m4_os_frontsight"}
 	self.parts.wpn_fps_smg_olympic_fg_olympic.forbids = {"wpn_fps_ass_m16_os_frontsight"}
 
 	--(Para) Railed Handguard
@@ -3197,7 +3197,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		40
 	}
 	self.parts.wpn_fps_smg_olympic_fg_railed.supported = true
-	self.parts.wpn_fps_smg_olympic_fg_railed.adds = {"fake_a_os"}
+	self.parts.wpn_fps_smg_olympic_fg_railed.adds = {"wpn_fps_ass_m4_os_frontsight"}
 	self.parts.wpn_fps_smg_olympic_fg_railed.forbids = {"wpn_fps_ass_m16_os_frontsight"}
 	self.parts.wpn_fps_smg_olympic_fg_railed.stats = {
 		value = 2,

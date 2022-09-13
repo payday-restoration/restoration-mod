@@ -19268,6 +19268,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -2,
 			concealment = -2
 		}
+		self.parts.wpn_fps_ass_flint_m_long.custom_stats = { ads_speed_mult = 1.05 }
 
 		--(AK17) Short Barrel
 		self.parts.wpn_fps_ass_flint_b_short.supported = true
@@ -21842,7 +21843,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_smg_crysis3_typhoon.uses_parts[47] = "resmod_dummy"
 	end
 
-	if self.parts.wpn_fps_ass_g36k_stockadapter then
+	if self.parts.wpn_fps_ass_g36k_stockadapter then --Pawcio's G36K
 		self.parts.wpn_fps_upg_g36k_barrel_long.supported = true
 		self.parts.wpn_fps_upg_g36k_barrel_long.stats = deep_clone(barrels.long_b3_stats)
 		self.parts.wpn_fps_upg_g36k_barrel_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
@@ -22063,8 +22064,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 		self.parts.wpn_fps_upg_ppsh_stock_k50m.supported = true
 		self.parts.wpn_fps_upg_ppsh_stock_k50m.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
-		self.parts.wpn_fps_upg_ppsh_stock_k50m.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
-		
+		self.parts.wpn_fps_upg_ppsh_stock_k50m.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)		
 	end
 
 	if self.parts.wpn_fps_aug_body_aug_a1 then --Pawcio's AUG A1 Kit
@@ -22279,8 +22279,222 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_sks_bayonet.custom_stats = {
 			ads_speed_mult = 1.125
 		}
+	end
+
+	if self.parts.wpn_fps_upg_m_dura then
+
+		-- +45 mags
+		mags = {
+			'wpn_fps_upg_m_rpkd',
+			'wpn_fps_upg_m_762rpk75',
+			'wpn_fps_upg_m_promagd'
+		}
+
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = deep_clone(self.parts.wpn_upg_ak_m_drum.stats)
+			self.parts[part_id].custom_stats = deep_clone(self.parts.wpn_upg_ak_m_drum.custom_stats)
+		end
+
+		-- +30 mags
+		mags = {
+			'wpn_fps_upg_m_d60',
+			'wpn_fps_upg_m_g36_d60'
+		}
+
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = deep_clone(self.parts.wpn_fps_upg_m4_m_quad.stats)
+			self.parts[part_id].custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_quad.custom_stats)
+		end
+
+		-- +15 mags
+		mags = {
+			'wpn_fps_upg_m_rpk45',
+			'wpn_fps_upg_m_45r'
+		}
+
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = {
+				value = 4,
+				extra_ammo = 15,
+				reload = -2,
+				concealment = -2
+			}
+			self.parts[part_id].custom_stats = { ads_speed_mult = 1.05 }
+		end
+
+		-- +10 mags
+		mags = {
+			'wpn_fps_upg_m_p40',
+			'wpn_fps_upg_m_g36_p40',
+			'wpn_fps_upg_m_rpk40',
+			'wpn_fps_upg_m_rpkbake',
+			'wpn_fps_upg_m_308dmmag',
+			'wpn_fps_upg_m_mpxtti'
+		}
+
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts[part_id].custom_stats = {
+				ads_speed_mult = 1.025
+			}
+		end
+
+		-- Speed pulls
+		mags = {
+			'wpn_fps_upg_m_dmmag',
+			'wpn_fps_upg_m_g36_dmmag',
+			'wpn_fps_upg_m_54530s',
+			'wpn_fps_upg_m_54530d',
+		}
+
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = deep_clone(self.parts.wpn_fps_m4_upg_m_quick.stats)
+			self.parts[part_id].custom_stats = nil
+		end
+		
+		-- Nothingburger
+		local mags = {
+			'wpn_fps_upg_m_dura',
+			'wpn_fps_upg_m_p30',
+			'wpn_fps_upg_m_p30w',
+			'wpn_fps_upg_m_battle',
+			'wpn_fps_upg_m_poly',
+			'wpn_fps_upg_m_hksteel',
+			'wpn_fps_upg_m_gen2',
+			'wpn_fps_upg_m_plum',
+			'wpn_fps_upg_m_6l10',
+			'wpn_fps_upg_m_103',
+			'wpn_fps_upg_m_762pmag',
+			'wpn_fps_upg_m_palm',
+			'wpn_fps_upg_m_308pmag',
+			'wpn_fps_upg_m_kac20',
+			'wpn_fps_upg_m_mpx30',
+			'wpn_fps_upg_m_mk17',
+			'wpn_fps_upg_m_lanc',
+			'wpn_fps_upg_m_g36_dura',
+			'wpn_fps_upg_m_g36_p30',
+			'wpn_fps_upg_m_g36_p30w',
+			'wpn_fps_upg_m_g36_battle',
+			'wpn_fps_upg_m_g36_poly',
+			'wpn_fps_upg_m_g36_hksteel',
+			'wpn_fps_upg_m_g36_gen2',
+			'wpn_fps_upg_m_g36_lanc',
+			'wpn_fps_upg_m_puf30',
+			'wpn_fps_upg_m_vityazpmag',
+		}
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = deep_clone(self.parts.wpn_fps_ass_l85a2_m_emag.stats)
+			self.parts[part_id].custom_stats = nil
+		end
+
+		-- -10 mags
+		mags = {
+			'wpn_fps_upg_m_54520',
+			'wpn_fps_upg_m_54520s',
+			'wpn_fps_upg_m_54520d',
+			'wpn_fps_upg_m_p20',
+			'wpn_fps_upg_m_kac10',
+			'wpn_fps_upg_m_puf20',
+			'wpn_fps_upg_m_mpx20',
+		}
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
+			self.parts[part_id].custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
+		end
+		self.parts.wpn_fps_upg_m_54520s.stats.reload = 2
+		self.parts.wpn_fps_upg_m_54520s.stats.spread = -1
+		self.parts.wpn_fps_upg_m_54520d.stats.reload = 2
+		self.parts.wpn_fps_upg_m_54520d.stats.spread = -1
+
+		-- -20 mags
+		mags = {
+			'wpn_fps_upg_m_p10',
+			'wpn_fps_upg_m_54510s',
+			'wpn_fps_upg_m_10rs',
+			'wpn_fps_upg_m_cap10',
+		}
+		for i, part_id in ipairs(mags) do
+			self.parts[part_id].supported = true
+			self.parts[part_id].stats = {
+				value = 2,
+				concealment = 2,
+				reload = 4,
+				extra_ammo = -20
+			}
+			self.parts[part_id].custom_stats = { 
+				ads_speed_mult = 0.95
+			}
+		end
+		self.parts.wpn_fps_upg_m_54510s.stats.reload = 5
+		self.parts.wpn_fps_upg_m_54510s.stats.spread = -1
+
+
+
+		self.parts.wpn_fps_upg_m_d60boot.supported = true
+		self.parts.wpn_fps_upg_m_d60boot.stats = {
+			reload = 2,
+			extra_ammo = -40,
+			concealment = 3
+		}
+		self.parts.wpn_fps_upg_m_d60boot.custom_stats = {
+			ads_speed_mult = 0.925
+		}
+
+		self.parts.wpn_fps_upg_m_x47.supported = true
+		self.parts.wpn_fps_upg_m_x47.stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.stats)
+		self.parts.wpn_fps_upg_m_x47.stats.extra_ammo = 20
+		self.parts.wpn_fps_upg_m_x47.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_x47.stats.reload = -3
+		self.parts.wpn_fps_upg_m_x47.custom_stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.custom_stats)
+		self.parts.wpn_fps_upg_m_x47.custom_stats.ads_speed_mult = 1.075
+
+		self.parts.wpn_fps_upg_m_max.supported = true
+		self.parts.wpn_fps_upg_m_max.stats = deep_clone(self.parts.wpn_upg_saiga_m_20rnd.stats)
+		self.parts.wpn_fps_upg_m_max.custom_stats = deep_clone(self.parts.wpn_upg_saiga_m_20rnd.custom_stats)
+
+		self.parts.wpn_fps_upg_m_pro.supported = true
+		self.parts.wpn_fps_upg_m_pro.stats = deep_clone(self.parts.wpn_fps_sho_basset_m_extended.stats)
+		self.parts.wpn_fps_upg_m_pro.stats.extra_ammo = 7
+		self.parts.wpn_fps_upg_m_pro.stats.reload = -3
+		self.parts.wpn_fps_upg_m_pro.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_pro.custom_stats = { ads_speed_mult = 0.925 }
+
+		self.parts.wpn_fps_upg_m_mpxdrum.supported = true
+		self.parts.wpn_fps_upg_m_mpxdrum.stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.stats)
+		self.parts.wpn_fps_upg_m_mpxdrum.stats.extra_ammo = 20
+		self.parts.wpn_fps_upg_m_mpxdrum.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_mpxdrum.stats.reload = -3
+		self.parts.wpn_fps_upg_m_mpxdrum.custom_stats = { ads_speed_mult = 1.075 }
+
+		self.parts.wpn_fps_upg_m_fmgdrum.supported = true
+		self.parts.wpn_fps_upg_m_fmgdrum.stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.stats)
+		self.parts.wpn_fps_upg_m_fmgdrum.stats.extra_ammo = 17
+		self.parts.wpn_fps_upg_m_fmgdrum.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_fmgdrum.stats.reload = -3
+		self.parts.wpn_fps_upg_m_fmgdrum.custom_stats = { ads_speed_mult = 1.075 }
+
+		self.parts.wpn_fps_upg_m_7drum.supported = true
+		self.parts.wpn_fps_upg_m_7drum.stats = deep_clone(self.parts.wpn_fps_smg_mp7_m_extended.stats)
+		self.parts.wpn_fps_upg_m_7drum.stats.extra_ammo = 40
+		self.parts.wpn_fps_upg_m_7drum.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_7drum.stats.reload = -4
+		self.parts.wpn_fps_upg_m_7drum.custom_stats = { ads_speed_mult = 1.075 }
 
 	end
+
+
+
 
 --Resmod Custom Weapon stuff
 

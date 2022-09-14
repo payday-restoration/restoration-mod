@@ -124,6 +124,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 
 		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
 		if damage_body_extension then
+			local object_damage_mult = alive(weapon_unit) and weapon_unit:base():weapon_tweak_data().object_damage_mult or 1
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			damage = network_damage / 163.84
@@ -132,14 +133,14 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
 				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
 
-				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage * object_damage_mult))
 			end
 
 			local local_damage = not blank or hit_unit:id() == -1
 
 			if local_damage then
 				col_ray.body:extension().damage:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
-				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
+				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage * object_damage_mult)
 
 				if alive(weapon_unit) and weapon_unit:base().categories and weapon_unit:base():categories() then
 					for _, category in ipairs(weapon_unit:base():categories()) do
@@ -225,22 +226,6 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
    return raycast_current_damage_orig(self, dmg_mul)
 end
 
-
-function InstantBulletBase:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
-	if alive(weapon_unit) and weapon_unit:base():weapon_tweak_data().fake_heiap then
-		local EFFECT_PARAMS = {
-			sound_event = "",
-			effect = "effects/payday2/particles/impacts/shotgun_explosive_round",
-			idstr_decal = Idstring(""),
-			idstr_effect = Idstring("")
-		}
-		managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, 1, EFFECT_PARAMS)
-	end
-
-	managers.game_play_central:play_impact_sound_and_effects(self:_get_sound_and_effects_params(weapon_unit, col_ray, no_sound))
-end
-
-
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound, already_ricocheted)
 	blank = blank or Network:is_client() and user_unit ~= managers.player:player_unit() 
 
@@ -301,6 +286,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
 		if damage_body_extension then
+			local object_damage_mult = alive(weapon_unit) and weapon_unit:base():weapon_tweak_data().object_damage_mult or 1
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			damage = network_damage / 163.84
@@ -309,14 +295,14 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
 				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
 
-				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage * object_damage_mult))
 			end
 
 			local local_damage = not blank or hit_unit:id() == -1
 
 			if local_damage then
 				col_ray.body:extension().damage:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
-				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
+				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage * object_damage_mult)
 
 				if alive(weapon_unit) and weapon_unit:base().categories and weapon_unit:base():categories() then
 					for _, category in ipairs(weapon_unit:base():categories()) do

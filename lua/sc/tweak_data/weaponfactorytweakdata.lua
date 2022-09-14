@@ -5289,7 +5289,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g22c", "resmod_g22c", function(sel
 		supported = true,
 		stats = {
 			value = 6,
-			extra_ammo = 13,
+			extra_ammo = 16,
 			concealment = -2,
 			reload = -3
 		}
@@ -10012,7 +10012,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g22c", "resmod_x_g22c", function
 	self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.supported = true
 	self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
-		extra_ammo = 24,
+		extra_ammo = 32,
 		concealment = -2,
 		reload = -3
 	}
@@ -22564,12 +22564,110 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_mpxdrum.stats.reload = -3
 		self.parts.wpn_fps_upg_m_mpxdrum.custom_stats = { ads_speed_mult = 1.075 }
 
+		self.parts.wpn_fps_upg_m_celerity.supported = true
+		self.parts.wpn_fps_upg_m_celerity.stats = deep_clone(self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats)
+		self.parts.wpn_fps_upg_m_celerity.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_celerity.stats.spread = -1
+		self.parts.wpn_fps_upg_m_celerity.stats.reload = -1
+		self.parts.wpn_fps_upg_m_celerity.custom_stats = { ads_speed_mult = 1.05 }
+
+		self.wpn_fps_pis_g26.override.wpn_fps_upg_m_celerity = {
+			stats = {
+				extra_ammo = 23,
+				concealment = -3,
+				spread = -1,
+				reload = -1
+			}
+		}
+		self.wpn_fps_pis_g22c.override.wpn_fps_upg_m_celerity = {
+			stats = {
+				extra_ammo = 16,
+				concealment = -3,
+				spread = -1,
+				reload = -1
+			}
+		}
+		self.wpn_fps_pis_x_g17.override.wpn_fps_upg_m_celerity = {
+			stats = {
+				extra_ammo = 30,
+				concealment = -3,
+				spread = -1,
+				reload = -1
+			}
+		}
+		self.wpn_fps_pis_x_g18c.override.wpn_fps_upg_m_celerity = {
+			stats = {
+				extra_ammo = 30,
+				concealment = -3,
+				spread = -1,
+				reload = -1
+			}
+		}
+		self.wpn_fps_jowi.override.wpn_fps_upg_m_celerity = {
+			stats = {
+				extra_ammo = 46,
+				concealment = -3,
+				spread = -1,
+				reload = -1
+			}
+		}
+
+		self.parts.wpn_fps_upg_m_sgmt.supported = true
+		self.parts.wpn_fps_upg_m_sgmt.stats = deep_clone(self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats)
+		self.parts.wpn_fps_upg_m_sgmt.stats.extra_ammo = 32
+		self.parts.wpn_fps_upg_m_sgmt.stats.concealment = -4
+		self.parts.wpn_fps_upg_m_sgmt.stats.reload = -3
+		self.parts.wpn_fps_upg_m_sgmt.custom_stats = { ads_speed_mult = 1.1 }
+
+		self.wpn_fps_pis_g26.override.wpn_fps_upg_m_sgmt = {
+			stats = {
+				extra_ammo = 40,
+				concealment = -4,
+				reload = -3
+			}
+		}
+		self.wpn_fps_pis_g22c.override.wpn_fps_upg_m_sgmt = {
+			stats = {
+				extra_ammo = 35,
+				concealment = -4,
+				reload = -3
+			}
+		}
+		self.wpn_fps_pis_x_g17.override.wpn_fps_upg_m_sgmt = {
+			stats = {
+				extra_ammo = 64,
+				concealment = -4,
+				reload = -3
+			}
+		}
+		self.wpn_fps_pis_x_g18c.override.wpn_fps_upg_m_sgmt = {
+			stats = {
+				extra_ammo = 64,
+				concealment = -4,
+				reload = -3
+			}
+		}
+		self.wpn_fps_jowi.override.wpn_fps_upg_m_sgmt = {
+			stats = {
+				extra_ammo = 80,
+				concealment = -4,
+				reload = -3
+			}
+		}
+
+		self.parts.wpn_fps_upg_m_vecsgmt.supported = true
+		self.parts.wpn_fps_upg_m_vecsgmt.stats = deep_clone(self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats)
+		self.parts.wpn_fps_upg_m_vecsgmt.stats.extra_ammo = 20
+		self.parts.wpn_fps_upg_m_vecsgmt.stats.concealment = -4
+		self.parts.wpn_fps_upg_m_vecsgmt.stats.reload = -3
+		self.parts.wpn_fps_upg_m_vecsgmt.custom_stats = { ads_speed_mult = 1.1 }
+
 		self.parts.wpn_fps_upg_m_fmgdrum.supported = true
 		self.parts.wpn_fps_upg_m_fmgdrum.stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.stats)
 		self.parts.wpn_fps_upg_m_fmgdrum.stats.extra_ammo = 17
-		self.parts.wpn_fps_upg_m_fmgdrum.stats.concealment = -3
+		self.parts.wpn_fps_upg_m_fmgdrum.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_fmgdrum.stats.reload = -3
-		self.parts.wpn_fps_upg_m_fmgdrum.custom_stats = { ads_speed_mult = 1.075 }
+		self.parts.wpn_fps_upg_m_fmgdrum.custom_stats = { ads_speed_mult = 1.1 }
 
 		self.parts.wpn_fps_upg_m_7drum.supported = true
 		self.parts.wpn_fps_upg_m_7drum.stats = deep_clone(self.parts.wpn_fps_smg_mp7_m_extended.stats)

@@ -14307,6 +14307,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						weap.object_damage_mult = 1.25
 					elseif weap.damage_type == "heavy_pistol" then
 						weap.object_damage_mult = 1.25
+					elseif weap.damage_type == "flamethrower" then
+						weap.object_damage_mult = 0.25
 					end
 				end
 			end

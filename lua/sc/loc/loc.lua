@@ -1300,6 +1300,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--Colt Detective
 			["bm_w_coltds"] = "Crosskill Investigator Revolver",
 			["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
+			--M6D
+			["kfa_scope"] = "KFA-2 Smart-Link Scope",
+			["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 Submachine Gun",

@@ -22706,6 +22706,77 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
+	if self.parts.wpn_fps_pis_m6d_scope then --RJC9000 and Offyerrocker's M6D
+		self.parts.wpn_fps_pis_m6d_scope.stats = { value = 0 }
+		self.parts.wpn_fps_pis_m6d_scope.stance_mod = {
+			wpn_fps_pis_m6d = {
+				translation = Vector3(0.01, 0, -2.5)
+			}
+		}
+
+		self.parts.wpn_fps_pis_m6d_scope_reticle = deep_clone(self.parts.wpn_fps_pis_m6d_scope)
+		self.parts.wpn_fps_pis_m6d_scope_reticle.pcs = {}
+		self.parts.wpn_fps_pis_m6d_scope_reticle.supported = true
+		self.parts.wpn_fps_pis_m6d_scope_reticle.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot"
+		self.parts.wpn_fps_pis_m6d_scope_reticle.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		self.parts.wpn_fps_pis_m6d_scope_reticle.name_id = "kfa_scope"
+		self.parts.wpn_fps_pis_m6d_scope_reticle.has_description = true
+		self.parts.wpn_fps_pis_m6d_scope_reticle.desc_id = "kfa_scope_desc"
+		self.parts.wpn_fps_pis_m6d_scope_reticle.a_obj = "a_quite"
+		self.parts.wpn_fps_pis_m6d_scope_reticle.perks = {"scope"}
+		self.parts.wpn_fps_pis_m6d_scope_reticle.texture_switch = {
+			channel = "diffuse_texture",
+			material = {
+				"gfx_reddot1",
+				"screen"
+			}
+		}
+		self.parts.wpn_fps_pis_m6d_scope_reticle.stats = { value = 0, zoom = 10 }
+		self.parts.wpn_fps_pis_m6d_scope_reticle.custom_stats = { disable_steelsight_recoil_anim = true }
+		self.parts.wpn_fps_pis_m6d_scope_reticle.alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight"
+		self.parts.wpn_fps_pis_m6d_scope_reticle.steelsight_visible = true
+		self.parts.wpn_fps_pis_m6d_scope_reticle.stance_mod = {
+			wpn_fps_pis_m6d = {
+				translation = Vector3(0.01, -52, -5.58)
+			}
+		}
+		self.parts.wpn_fps_pis_m6d_scope_reticle.visibility = {
+			{
+				objects = {
+					g_shortdot = false,
+					g_reticle = false,
+					g_mullplan = false,
+					g_gfx_lens_3 = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens = false
+				}
+			}
+		}
+		self.wpn_fps_pis_m6d.override = self.wpn_fps_pis_m6d.override or {}
+		self.wpn_fps_pis_m6d.override.wpn_fps_upg_pis_ns_flash = {
+			a_obj = "a_ns",
+			parent = "barrel"
+		}
+		self.wpn_fps_pis_m6d.override.wpn_fps_pis_g18c_co_comp_2 = {
+			a_obj = "a_ns",
+			parent = "barrel"
+		}
+		self.wpn_fps_pis_m6d.override.wpn_fps_upg_ns_pis_typhoon = {
+			a_obj = "a_ns",
+			parent = "barrel"
+		}
+
+		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_pis_m6d_scope_reticle")
+
+		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_upg_pis_ns_flash")
+		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_upg_ns_pis_typhoon")
+
+		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_upg_i_singlefire")
+		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_upg_i_autofire")
+
+		self.wpn_fps_pis_m6d_npc.uses_parts = deep_clone(self.wpn_fps_pis_m6d.uses_parts)
+	end
 
 
 
@@ -23223,6 +23294,7 @@ end
 	--end
 
 end)
+
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then

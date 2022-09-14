@@ -13927,6 +13927,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.plasmaproto.timers.reload_exit_not_empty = 0.65
 		end
 
+	if self.m6d then --RJC9000 and Offyerrocker's M6D
+		self.m6d.recategorize = { "heavy_pis" }		
+		self.m6d.damage_type = "heavy_pistol"
+		self.m6d.has_description = true
+		self.m6d.kick = self.stat_info.kick_tables.vertical_kick
+		self.m6d.FIRE_MODE = "auto"
+		self.m6d.CAN_TOGGLE_FIREMODE = true
+		self.m6d.BURST_FIRE = false
+		self.m6d.fire_mode_data.fire_rate = 0.285714
+		self.m6d.no_auto_anims = true
+		self.m6d.CLIP_AMMO_MAX = 12
+		self.m6d.AMMO_MAX = 20
+		self.m6d.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.m6d.supported = true
+		self.m6d.ads_speed = 0.200
+		self.m6d.damage_falloff = {
+			start_dist = 2500,
+			end_dist = 5000,
+			min_mult = 0.5
+		}
+		self.m6d.stats = {
+			damage = 90,
+			spread = 86,
+			recoil = 26,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 22,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.m6d.stats_modifiers = nil
+		self.m6d.panic_suppression_chance = 0.05
+		self.m6d.sounds.fire = "m6d_fire"
+		self.m6d.sounds.fire_single = "m6d_fire"
+		self.m6d.sounds.fire_single2 = "akm_stop"
+		self.m6d.sounds.fire_auto = "m6d_fire"
+		self.m6d.sounds.stop_fire = "akm_stop"
+		self.m6d.armor_piercing_chance = 1
+		self.m6d.timers = deep_clone(self.deagle.timers)
+	end
+
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 		self.amt.recategorize = { "heavy_pis" }		
 		self.amt.damage_type = "heavy_pistol"			
@@ -14296,20 +14341,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 
-
-			for i, wep_id in ipairs(recat) do
-				if weap.damage_type and not weap.object_damage_mult then
-					if weap.damage_type == "anti_materiel" then
-						weap.object_damage_mult = 3
-					elseif weap.damage_type == "sniper" then
-						weap.object_damage_mult = 1.25
-					elseif weap.damage_type == "pdw" then
-						weap.object_damage_mult = 1.25
-					elseif weap.damage_type == "heavy_pistol" then
-						weap.object_damage_mult = 1.25
-					elseif weap.damage_type == "flamethrower" then
-						weap.object_damage_mult = 0.25
-					end
+			if weap.damage_type and not weap.object_damage_mult then
+				if weap.damage_type == "anti_materiel" then
+					weap.object_damage_mult = 3
+				elseif weap.damage_type == "sniper" then
+					weap.object_damage_mult = 1.25
+				elseif weap.damage_type == "pdw" then
+					weap.object_damage_mult = 1.25
+				elseif weap.damage_type == "heavy_pistol" then
+					weap.object_damage_mult = 1.25
+				elseif weap.damage_type == "shotgun" then
+					weap.object_damage_mult = 0.75
+				elseif weap.damage_type == "flamethrower" then
+					weap.object_damage_mult = 0.25
+				else
+					--weap.object_damage_mult = 1
 				end
 			end
 	

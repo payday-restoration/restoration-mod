@@ -225,6 +225,22 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
    return raycast_current_damage_orig(self, dmg_mul)
 end
 
+
+function InstantBulletBase:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+	if alive(weapon_unit) and weapon_unit:base():weapon_tweak_data().fake_heiap then
+		local EFFECT_PARAMS = {
+			sound_event = "",
+			effect = "effects/payday2/particles/impacts/shotgun_explosive_round",
+			idstr_decal = Idstring(""),
+			idstr_effect = Idstring("")
+		}
+		managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, 1, EFFECT_PARAMS)
+	end
+
+	managers.game_play_central:play_impact_sound_and_effects(self:_get_sound_and_effects_params(weapon_unit, col_ray, no_sound))
+end
+
+
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound, already_ricocheted)
 	blank = blank or Network:is_client() and user_unit ~= managers.player:player_unit() 
 

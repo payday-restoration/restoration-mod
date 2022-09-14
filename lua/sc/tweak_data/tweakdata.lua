@@ -1048,15 +1048,26 @@ local blight = {
 }
 table.insert(tweak_data.achievement.complete_heist_achievements, blight)
 
-tweak_data.player.stances.msr.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.r93.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.m95.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.mosin.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.winchester1874.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.wa2000.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.model70.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.tti.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.r700.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.sbl.steelsight.shakers.breathing.amplitude = 0
-tweak_data.player.stances.desertfox.steelsight.shakers.breathing.amplitude = 0
+local twp = tweak_data.player
+local pivot_shoulder_translation
+local pivot_shoulder_rotation
+local pivot_head_translation
+local pivot_head_rotation
+--Can't get this shit to work in PlayerTweakData
+if twp.stances.m6d then
+	pivot_shoulder_translation = Vector3(8.47169, 40.6363, -2.73086)
+	pivot_shoulder_rotation = Rotation(0.100026, -0.68821, 0.629665)
+	pivot_head_translation = Vector3(4.5, 28, -6.25)
+	pivot_head_rotation = Rotation(0, 0, 0)
+	twp.stances.m6d.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.m6d.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	pivot_head_translation = Vector3(-0.02, 35, 0.25)
+	pivot_head_rotation = Rotation(0, 0.5, 0)
+	twp.stances.m6d.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.m6d.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	pivot_head_translation = Vector3(4.25, 26, -6.25)
+	pivot_head_rotation = Rotation(0, 0, 0)
+	twp.stances.m6d.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.m6d.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+

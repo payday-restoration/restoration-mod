@@ -1654,6 +1654,11 @@ local federales_very_hard = {
 		
 		
 		--America Faction (just in case if we replace the America faction with Federales)
+		--security
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
@@ -1751,6 +1756,11 @@ local federales_overkill = {
 		--love these unit names so much!!! :))))
 		
 		--America Faction (just in case if we replace the America faction with Federales)
+		--security
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
@@ -1850,6 +1860,11 @@ local federales_mayhem = {
 		--love these unit names so much!!! :))))
 		
 		--America Faction (just in case if we replace the America faction with Federales)
+		--security
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
@@ -1947,6 +1962,11 @@ local federales_deathwish = {
 		--love these unit names so much!!! :))))
 		
 		--America Faction (just in case if we replace the America faction with Federales)
+		--security
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
@@ -2045,6 +2065,11 @@ local federales_zeal = {
 		--love these unit names so much!!! :))))
 		
 		--America Faction (just in case if we replace the America faction with Federales)
+		--security
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",

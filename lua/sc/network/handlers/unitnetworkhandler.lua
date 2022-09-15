@@ -472,7 +472,7 @@ function UnitNetworkHandler:sync_explosion_to_client(unit, position, normal, dam
 end 
 
 
-function UnitNetworkHandler:sync_body_damage_melee(body, attacker, normal, position, direction, damage, sender, object_damage)
+function UnitNetworkHandler:sync_body_damage_melee(body, attacker, normal, position, direction, damage, object_damage, sender)
 	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not self._verify_sender(sender) then
 		return
 	end

@@ -2597,7 +2597,7 @@ function PlayerStandard:_perform_sync_melee_damage(hit_unit, col_ray, damage, da
 		end
 
 		col_ray.body:extension().damage:damage_melee(self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
-		managers.network:session():send_to_peers_synched("sync_body_damage_melee", col_ray.body, self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage, nil, damage_effect)
+		managers.network:session():send_to_peers_synched("sync_body_damage_melee", col_ray.body, self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage, damage_effect)
 	end
 end
 

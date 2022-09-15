@@ -112,6 +112,16 @@
 			<attr name="max" value="4"/>
 		</target>
 	</tweak>
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="sync_body_damage_melee"/>
+		</search>
+		<target mode="attach">
+			<param type="float" min="0" max="63" step="0.1" exact="false"/>
+		</target>
+	</tweak>
 	<tweak version="2" name="settings/network" extension="network_settings">
 		<search>
 			<network/>

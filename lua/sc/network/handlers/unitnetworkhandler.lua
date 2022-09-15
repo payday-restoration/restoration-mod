@@ -472,6 +472,39 @@ function UnitNetworkHandler:sync_explosion_to_client(unit, position, normal, dam
 end 
 
 
+function UnitNetworkHandler:sync_body_damage_melee(body, attacker, normal, position, direction, damage, sender, object_damage)
+	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not self._verify_sender(sender) then
+		return
+	end
+
+	if not alive(body) then
+		return
+	end
+
+	if not body:extension() then
+		print("[UnitNetworkHandler:sync_body_damage_melee] body has no extension", body:name(), body:unit():name())
+
+		return
+	end
+
+	if not body:extension().damage then
+		print("[UnitNetworkHandler:sync_body_damage_melee] body has no damage extension", body:name(), body:unit():name())
+
+		return
+	end
+
+	if not body:extension().damage.damage_melee then
+		print("[UnitNetworkHandler:sync_body_damage_melee] body has no damage damage_melee function", body:name(), body:unit():name())
+
+		return
+	end
+
+	if object_damage then
+		body:extension().damage:damage_damage(attacker, normal, position, direction, object_damage)
+	end
+	body:extension().damage:damage_melee(attacker, normal, position, direction, damage)
+end
+
 -- Ignore duplicate grenade sync
 function UnitNetworkHandler:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
 	if not self._verify_gamestate(self._gamestate_filter.any_ingame) then

@@ -2557,7 +2557,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 			self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
-			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage)
+			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
 			
 			if tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data and character_unit:character_damage().damage_fire then
 				local action_data = {
@@ -2573,7 +2573,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 			return defense_data
 		else
-			self:_perform_sync_melee_damage(hit_unit, col_ray, damage)
+			self:_perform_sync_melee_damage(hit_unit, col_ray, damage, damage_effect)
 		end
 	else
 	end
@@ -2585,6 +2585,20 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		stack[2] = 0
 	end
 	return col_ray
+end
+
+
+function PlayerStandard:_perform_sync_melee_damage(hit_unit, col_ray, damage, damage_effect)
+	if hit_unit:damage() and col_ray.body:extension() and col_ray.body:extension().damage then
+		damage = math.clamp(damage, PlayerStandard.MINMAX_MELEE_SYNC[1], PlayerStandard.MINMAX_MELEE_SYNC[2])
+		if damage_effect then
+			damage_effect = math.clamp(damage_effect, PlayerStandard.MINMAX_MELEE_SYNC[1], PlayerStandard.MINMAX_MELEE_SYNC[2])
+			col_ray.body:extension().damage:damage_damage(self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage_effect)
+		end
+
+		col_ray.body:extension().damage:damage_melee(self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
+		managers.network:session():send_to_peers_synched("sync_body_damage_melee", col_ray.body, self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage, nil, damage_effect)
+	end
 end
 
 --Now also returns steelsight information. Used for referencing spread values to give steelsight bonuses.

@@ -107,6 +107,73 @@
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc"  />
 		
+	<!--specials-->
+	<!-- greendozah -->
+    <unit				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1" load="true"/>
+    <unit				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1_husk" load="true"/>	
+	<model				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1" />	
+	<object				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />			
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	
+	<!-- blackdozah -->
+    <unit				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2" load="true"/>
+    <unit				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2_husk" load="true"/>	
+	<model				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+	<object				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />			
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	
+	<!-- skulldozah -->
+    <unit				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" load="true"/>
+    <unit				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true"/>	
+	<model				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" />	
+	<object				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<material_config	path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3_contour" />			
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3" />	
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	
+	<unit_obj				path="units/pd2_mod_halloween/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	
 	<!--swat cloaker-->	
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"  load="true"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1_husk"  load="true"/>
@@ -369,16 +436,6 @@
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/dozers_head_atlas_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas_nm" />	
 	
-	<!-- NEW BENELLI DOZER-->
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" load="true"/>		
-	<model				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<object				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />		
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
-	
-	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />
 	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
 	
 	<!-- NEW BENELLI DOZER-->

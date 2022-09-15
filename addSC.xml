@@ -121,6 +121,10 @@
 	<!--better SWAT squads-->
 	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/glace/glace_helicopter_dozer/world/world" force="true"/>
+	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
+	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
+	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
 	
 	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
 	

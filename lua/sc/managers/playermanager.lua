@@ -1110,6 +1110,7 @@ function PlayerManager:extend_temporary_upgrade(category, upgrade, time)
 end
 
 --Restores 1 down when enough assaults have passed. Counter is paused when player is in custody or has max revives
+local schinese = Idstring("schinese"):key() == SystemInfo:language():key()
 function PlayerManager:check_enduring()
 	if not self._assaults_to_extra_revive then
 		self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
@@ -1121,12 +1122,24 @@ function PlayerManager:check_enduring()
 			self._assaults_to_extra_revive = math.max(self._assaults_to_extra_revive - 1, 0)
 			if self._assaults_to_extra_revive == 0 then
 				damage_ext:add_revive()
-				managers.hud:show_hint( { text = "Assaults Survived- Restoring 1 Down" } )
+				if schinese then
+					managers.hud:show_hint( { text = "本波突击存活，恢复1倒地次数" } )
+				else
+					managers.hud:show_hint( { text = "Assaults Survived- Restoring 1 Down" } )
+				end
 				self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
 			elseif self._assaults_to_extra_revive == 1 then
-				managers.hud:show_hint( { text = "1 Assault Remaining Until Down Restore." } )
+				if schinese then
+					managers.hud:show_hint( { text = "距恢复倒地次数还剩1波突击" } )
+				else
+					managers.hud:show_hint( { text = "1 Assault Remaining Until Down Restore." } )
+				end
 			else
-				managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
+				if schinese then
+					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. "波后恢复倒地次数" } )
+				else
+					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
+				end
 			end
 		end
 	end

@@ -65,13 +65,18 @@ function BaseInteractionExt:_interact_blocked(player) --sentry blocking goes her
 	return false
 end
 
+local schinese = Idstring("schinese"):key() == SystemInfo:language():key()
 local orig_selected = BaseInteractionExt.selected
 function BaseInteractionExt:selected(player, locator, hand_id,...)
 	local result = orig_selected(self,player,locator,hand_id,...) 
 
 	if result and alive(self._unit) then
 		local tid = self.tweak_data or "none"
-		if self._unit:base() and self._unit:base().blackout_active then 
+		if self._unit:base() and self._unit:base().blackout_active and schinese then 
+			managers.hud:show_interact({
+				text = "已被 秋日队长 禁用！"
+			})
+		elseif self._unit:base() and self._unit:base().blackout_active then
 			managers.hud:show_interact({
 				text = "Disabled by Captain Autumn!"
 			})

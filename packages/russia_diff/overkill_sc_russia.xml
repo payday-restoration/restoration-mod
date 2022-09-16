@@ -434,6 +434,7 @@
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/k63_tit_df" force="false"/>
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/k63_df" force="false"/>
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/k63_nm" force="false"/>
+	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_il" force="false"/>
 
     <!--Titan Sniper-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>

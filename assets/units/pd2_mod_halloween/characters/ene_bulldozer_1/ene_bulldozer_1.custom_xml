@@ -2,12 +2,12 @@
 	<unit>
 		<variables>
 			<var_helmet		  value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet'"/>			
-			<var_helmet_plate value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate'"/>
-			<var_neck 		  value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck'"/>
-			<var_throat 	  value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat'"/>
-			<var_chest 		  value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
-			<var_stomache 	  value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
-			<var_back 		  value="'units/pd2_mod_halloween/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
+			<var_helmet_plate value="'units/payday2/characters/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate'"/>
+			<var_neck 		  value="'units/payday2/characters/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck'"/>
+			<var_throat 	  value="'units/payday2/characters/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat'"/>
+			<var_chest 		  value="'units/payday2/characters/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
+			<var_stomache 	  value="'units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
+			<var_back 		  value="'units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
 		</variables>	
 		<sequence name="'int_seq_helmet_plate'" once="true">
 			<body enabled="false" name="'body_helmet_plate'"/>

@@ -1957,6 +1957,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_air"] = "在空中无法放置",
 		["hud_hint_bipod_lean"] = "探头时无法放置",
 		
+		["hud_interact_autumn_disable"] = "已被 秋日队长 禁用！",
+
+		["hud_assault_restored_down"] = "本波突击存活，恢复1倒地次数",
+		["hud_assault_remaining_single"] = "距恢复倒地次数还剩1波突击",
+		["hud_assault_remaining_plural"] = " 波突击后恢复倒地次数",
+		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "完全蓄力后可以释放高压电击晕敌人。",
 

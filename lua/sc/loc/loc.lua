@@ -1686,6 +1686,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal double damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals 50% less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
 
+		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",
+		["bm_menu_weapon_bayonet_damage"] = "\nADDITIONAL DAMAGE: ##+",
+		["bm_menu_weapon_bayonet_damage_base"] = "\n-BASE: ##",
+		["bm_menu_weapon_bayonet_damage_skill"] = "\n-SKILL: ##+",
+		["bm_menu_weapon_bayonet_range"] = "\nADDITIONAL RANGE: ##+",
+
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
@@ -1875,6 +1881,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_slide"] = "Cannot mount while sliding",
 		["hud_hint_bipod_air"] = "Cannot mount while airborne",
 		["hud_hint_bipod_lean"] = "Cannot mount while leaning",
+		["hud_hint_bipod_lean"] = "Cannot mount while leaning",
+
+		["hud_interact_autumn_disable"] = "Disabled by Captain Autumn!",
+
+		["hud_assault_restored_down"] = "Assaults Survived - Restoring 1 Down",
+		["hud_assault_remaining_single"] = "1 Assault Remaining Until Down Restore",
+		["hud_assault_remaining_plural"] = " Assaults Remaining Until Down Restore",
 
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",

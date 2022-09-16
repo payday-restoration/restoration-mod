@@ -4590,11 +4590,11 @@ function BlackMarketGui:update_info_text()
 		if slot_data.name == "weapon" and (bayonet_damage or (range and range > 0)) then
 			updated_texts[2].resource_color = tweak_data.screen_colors.skill_color
 			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
-				"STATS FROM PRIMARY:" .. 
-				(damage_total and "\nADDITIONAL DAMAGE: ##+" .. tostring(damage_total) .. "##" or "") .. 
-				(bayonet_damage and skill_damage and skill_damage > 0 and "\n-BASE: ##" .. tostring(bayonet_damage) .. "##" or "") .. 
-				(bayonet_damage and skill_damage and skill_damage > 0 and "\n-SKILL: ##+" .. tostring(skill_damage) .. "##" or "") .. 
-				(range and range > 0 and "\nADDITIONAL RANGE: ##+" .. tostring(range) .. "m##" or "")
+				managers.localization:text("bm_menu_weapon_bayonet_header") .. 
+				(damage_total and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total) .. "##" or "") .. 
+				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage) .. "##" or "") .. 
+				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage) .. "##" or "") .. 
+				(range and range > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range) .. "m##" or "")
 
 			updated_texts[2].below_stats = true
 		end

@@ -387,7 +387,8 @@
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
-	
+	<!--bravo HK21-->
+	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"  load="true"/>
 	<!--bravo lmg-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
 	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />

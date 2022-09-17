@@ -1302,7 +1302,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Colt Detective
 		["bm_w_coltds"] = "Crosskill Investigator 리볼버",	
 		["bm_lemon_dmc_desc"] = "숨길 수 있는 고성능 리볼버을 들고 있는 자신을 상상해 보십시오. 이제 더 이상 상상하지 마십시오. 수사관이 바로 당신이기 때문입니다.\n\n#{skill_color}#적의 뒤에서 공격 시 2배의 피해를 줍니다.##",		
-
+		--M6D
+		["kfa_scope"] = "KFA-2 스마트 링크 조준경",
+		["kfa_scope_desc"] = "당신의 마스크와 탑재될 수 있는 #{skill_color}#Smart-Link## 조준경 간의 인터페이스를 활성화할 수 있습니다.\n#{risk}#2x 배율##",
+		
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90 기관탄총",
 		["bm_p90_sc_desc"] = "불펍식 기관단총이자 SpecOps-7 기관단총의 경쟁자. 미래형 우주총처럼 생겼다는 평을 자주 받습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 헤드샷의 피해량을 11%만큼 더 입힙니다.##",		
@@ -1654,10 +1657,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 \"정의의 도구\"가 아니야.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",
 		["bm_melee_thejobissnotyours_info"] = "이건 네놈의 검 따위가 아니지.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",		
 		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 10% 감소합니다.", --Buckler Shield
+		["bm_melee_briefcase_info"] = "안에 뭐가 들어있든 간에, 그 서류 가방 자체는 놀랍도록 탄력이 뛰어납니다.\n\n충전하는 동안 받는 원거리 피해가 5% 감소합니다.", --Briefcase		
 		["bm_melee_pitch_info"] = "피치로 찌르고 몇몇 피치들을 찌르십시오.\n\n앞으로 전진하면 전방의 대상에게 0.4초마다 45의 피해를 입히는 전력 질주를 시작합니다. 이것은 스킬로 늘릴 수 있습니다.\n\n전력 질주 중에 적을 맞추면 최대 스태미나의 15%가 소모되고, 치명타가 10%먼큼을 회복합니다.\n\n전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.", --Randal Pitchfork		
 		["bm_melee_charge_info"] = "앞으로 전진하면 전방의 대상에게 0.4초마다 45의 피해를 입히는 전력 질주를 시작합니다. 이것은 스킬로 늘릴 수 있습니다.\n\n전력 질주 충전 중 적을 명중하면 최대 스태미나의 15%가 소모됩니다. 마무리 일격을 가했다면 스테미나를 10%만큼 회복합니다.\n\n전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.",	
 		["bm_melee_cs_info"] = "찢고 죽여라, 모두 끝날때 까지.\n\n충전하는 동안 전방의 대상에게 0.25초마다 30의 피해를 줍니다. 이것은 스킬로 늘릴 수 있습니다.\n\n적의 근접 공격을 반격할 수 없습니다.", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 전방의 대상에게 0.2초마다 18의 피해를 줍니다. 이것은 스킬로 늘릴 수 있습니다.\n\n적의 근접 공격을 반격할 수 없습니다.", --Kazaguruma
+		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 전방의 대상에게 0.18초마다 18의 피해를 줍니다. 이것은 스킬로 늘릴 수 있습니다.\n\n적의 근접 공격을 반격할 수 없습니다.", --Kazaguruma
 		["bm_melee_wing_info"] = "변장 도구와 잘 어울릴거 같습니다!\n\n뒤에서 적을 공격하면 4배의 피해를 줍니다.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 두 배의 피해를 줍니다.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼트립니다.", -- Psycho Knife
@@ -1680,6 +1684,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_slot_lever_info"] = "잭팟 나와줘!\n\n5% 확률로 10배의 대미지와 넉다운을 줍니다.",
 		["bm_melee_specialist_info"] = "두 배의 칼날, 두 배의 재미.\n\n근접 공격은 뽑힌 동안 첫 번째 공격 이후 매 공격마다 두 배의 피해를 줍니다.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 50% 감소합니다.",
+
+		["bm_menu_weapon_bayonet_header"] = "주무기 통계 기준:",
+		["bm_menu_weapon_bayonet_damage"] = "\n추가 대미지: ##+",
+		["bm_menu_weapon_bayonet_damage_base"] = "\n-기본: ##",
+		["bm_menu_weapon_bayonet_damage_skill"] = "\n-스킬: ##+",
+		["bm_menu_weapon_bayonet_range"] = "\n추가 사거리: ##+",
 
 		--We assets now--
 		["menu_asset_dinner_safe"] = "금고",
@@ -1874,6 +1884,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_air"] = "공중에 떠 있을동안 거치할 수 없습니다. ",
 		["hud_hint_bipod_lean"] = "기대는 동안 거치할 수 없습니다.",
 
+		["hud_interact_autumn_disable"] = "캡틴 어텀에 의해 비활성화 되었습니다!",
+
+		["hud_assault_restored_down"] = "어썰트에서 살아남아 다운 1회가 회복되었습니다.",
+		["hud_assault_remaining_single"] = "다운 회복까지 어썰트 1회 남았습니다.",
+		["hud_assault_remaining_plural"] = " 다운 회복까지 남은 어썰트.",
+		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "완전 충전되면 접촉하는 대상을 감전시키고 방해하는 장치입니다.",
 
@@ -2497,11 +2513,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_9"] = "옴니아는 공룡의 공격으로부터 보호하기 위해 강화된 보안문을 개발하고 있습니다.",	
 		["loading_fluff_res_10"] = "척탄병은 해충 구제에도 투입됩니다.",	
 		["loading_fluff_res_11"] = "당신은 타이탄 클로커를 본 적이 없습니다.",
-		["loading_fluff_res_12"] = "'옴니아'는 네덜란드에 기반을 둔 자칭 '네오켈트 이교도 포크' 밴드로 아일랜드, 네덜란드, 콘월, 벨기에, 인도네시아 및 페르시아 출신인 멤버가 있습니다. 옴니아와 관련되어 있는지는 확인되지 않았습니다.",	
+		["loading_fluff_res_12"] = "'옴니아'는 네덜란드에 기반을 둔 자칭 '네오켈트 이교도 포크' 밴드로 아일랜드, 네덜란드, 콘월, 벨기에, 인도네시아 및 페르시아 출신인 멤버로 이루워져 있습니다. 이들이 옴니아와 관련되어 있는지는 확인되지 않았습니다.",	
 		["loading_fluff_res_13"] = "자칼이 Crime.Net에 연루되어 젠섹을 떠나게 된 원인이 무엇이든, 그는 그 사건에 대해 이야기하기를 거부합니다. 그는 그 사건으로 인해 '정신장애'가 일어난 거 같습니다.",	
 		["loading_fluff_res_14"] = "하하하하하!",
-		["loading_fluff_res_15"] = "캡틴 서머스와 그의 팀원들은 페이데이 갱과 매우 흡사한 4명의 강도로 구성되어 있었습니다. 이제 그들은 옴니아의 스트라이크 팀입니다.",
-		["loading_fluff_res_16"] = "캡틴 서머스와 그의 팀원들은 은행을 털다 건물 붕괴로 공식적으로 사망했다고 했지만 이것은 거짓이었습니다.",
+		["loading_fluff_res_15"] = "캡틴 서머스와 그의 팀원들은 페이데이 갱과 매우 흡사한 4명의 강도들로 구성되어 있었지만 이제 그들은 옴니아의 스트라이크 팀입니다.",
+		["loading_fluff_res_16"] = "캡틴 서머스와 그의 팀원들은 은행을 털다 건물 붕괴로 공식적으로 사망했다고 했지만 이 일은 계략적으로 계획된 일이였습니다.",
 		["loading_fluff_res_17"] = "캡틴 어텀은 수갑에 많은 돈을 씁니다.",
 		["loading_fluff_res_18"] = "캡틴 서머스는 가스 가스 가스에 많은 돈을 씁니다.",
 		["loading_fluff_res_19"] = "캡틴 스프링은 총알과 수류탄에 많은 돈을 씁니다.",
@@ -3055,7 +3071,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BRAWLER SUBTREE   ]]--
 			--Martial Arts--
 			["menu_martial_arts_beta_sc"] = "무술의 달인",
-			["menu_martial_arts_beta_desc_sc"] = "베이직: #{owned}#$basic##\n훈련의 성과로, 모든 근접 공격으로 입는 피해가 #{skill_color}#50%##만큼 줄어듭니다.\n\n에이스: #{owned}#$pro##\n훈련의 성과로, 근접 공격의 넉다운 효과가 #{skill_color}#100%##만큼 더 강력해집니다.",
+			["menu_martial_arts_beta_desc_sc"] = "베이직: #{owned}#$basic##\n훈련의 성과로, 모든 근접 공격으로 입는 피해가 #{skill_color}#50%##만큼 줄어듭니다.\n\n에이스: #{owned}#$pro##\n훈련의 성과로, 근접 공격의 녹다운 비율이 #{skill_color}#100%##만큼 더 강력해집니다.\n\n근접 무기의 녹다운 비율은 근접 공격이 적에게 비틀거리게 하거나 불도저의 장갑판과 바이저에 어느 정도의 피해를 입히는지 결정합니다.",
 			
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "카운터 스트라이크",

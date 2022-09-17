@@ -2924,8 +2924,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--BOOP BOOP--
 		self.melee_weapons.detector.stats.min_damage = 4.5
 		self.melee_weapons.detector.stats.max_damage = 9.001
-		self.melee_weapons.detector.stats.min_damage_effect = 9.0
-		self.melee_weapons.detector.stats.max_damage_effect = 18.0
+		self.melee_weapons.detector.stats.min_damage_effect = 6.0
+		self.melee_weapons.detector.stats.max_damage_effect = 12.0
 		self.melee_weapons.detector.stats.charge_time = 1.7
 		self.melee_weapons.detector.stats.range = 160
 		self.melee_weapons.detector.attack_allowed_expire_t = 0.1
@@ -2983,8 +2983,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Slutshaming--	
 		self.melee_weapons.branding_iron.stats.min_damage = 6
 		self.melee_weapons.branding_iron.stats.max_damage = 12.001
-		self.melee_weapons.branding_iron.stats.min_damage_effect = 6.0
-		self.melee_weapons.branding_iron.stats.max_damage_effect = 12.0
+		self.melee_weapons.branding_iron.stats.min_damage_effect = 9.0
+		self.melee_weapons.branding_iron.stats.max_damage_effect = 18.0
 		self.melee_weapons.branding_iron.stats.charge_time = 1.9
 		self.melee_weapons.branding_iron.stats.range = 180
 		self.melee_weapons.branding_iron.stats.concealment = 24
@@ -3742,7 +3742,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
 		self.melee_weapons.halloween_sword.stats.max_damage_effect = 9.0
 	end
-	
+
 	local melee_anim = {}
 	
 	--melee_sandsteel

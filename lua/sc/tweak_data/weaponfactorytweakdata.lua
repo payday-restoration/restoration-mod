@@ -4783,6 +4783,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		recoil = -6,
 		concealment = 6
 	}
+	self.parts.wpn_fps_shot_r870_s_nostock_big.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 	--Short Enough Stock
 	self.parts.wpn_fps_shot_r870_s_nostock.pcs = {

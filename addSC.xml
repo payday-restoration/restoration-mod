@@ -101,8 +101,12 @@
 	
 	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> <!--camera guard in front has a shotgun-->
 	
+	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
 	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/art2/art2" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/collision/collision" force="true" unload="true"/>
 	
 	<mission			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--adds a bikerdozer to the bunker, removes swat turret.-->	
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->

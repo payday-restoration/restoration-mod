@@ -1244,7 +1244,9 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 		for i, part_id in ipairs(self._scopes) do
 			part = self._parts[part_id]   
 
-			if part and part.unit:digital_gui() then
+			local digital_gui = part and part.unit:digital_gui()
+
+			if digital_gui and digital_gui.number_set then
 				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then
@@ -1259,7 +1261,9 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 				end
 			end
 
-			if part and part.unit:digital_gui_upper() then
+			local digital_gui_upper = part and part.unit:digital_gui_upper()
+
+			if digital_gui_upper and digital_gui_upper.number_set then
 				part.unit:digital_gui_upper():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then

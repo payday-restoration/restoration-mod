@@ -16,7 +16,7 @@
         <extension name="base" class="CopBase" >
             <var name="can_be_marked" value="true" />
             <var name="_tweak_table" value="hrt_titan" />
-            <var name="_default_weapon_id" value="sr2_titan" />
+            <var name="_default_weapon_id" value="raging_bull" />
         </extension>
         <extension name="inventory" class="CopInventory" />
         <extension name="brain" class="CopBrain" />

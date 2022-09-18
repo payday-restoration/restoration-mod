@@ -119,6 +119,8 @@
 	
 	<mission			path="levels/narratives/bain/revenge/world/world" force="true" unload="true"/>
 	
+	<mission			path="levels/narratives/bain/rvd/stage2/world/world" force="true" unload="true"/> <!--changes up the scripted dozers at the start of the heist--> 
+	
 	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	

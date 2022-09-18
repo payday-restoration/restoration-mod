@@ -3459,14 +3459,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = { "judge", "x_judge", "m1897", "m590", "r870", "ksg", "m37", "serbu" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_shot" }
-		self[ wep_id ].damage_type = "shotgun"
+		self[ wep_id ].damage_type = "shotgun_heavy"
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 	
 	recat = { "huntsman", "b682", "boot", "coach" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "break_shot" }
-		self[ wep_id ].damage_type = "shotgun"
+		self[ wep_id ].damage_type = "shotgun_heavy"
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 	
@@ -9397,13 +9397,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rota.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 				self.rota.kick = self.stat_info.kick_tables.vertical_kick
 				self.rota.fire_mode_data.fire_rate = 0.13953488372
-				self.rota.single.fire_rate = 0.13953488372
 				self.rota.panic_suppression_chance = 0.05
 				self.rota.supported = true
 				self.rota.ads_speed = 0.360
 				self.rota.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3600,
+					start_dist = 1200,
+					end_dist = 3500,
 					min_mult = 0.5
 				}
 				self.rota.stats = {
@@ -12070,7 +12069,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		if self.beck then --Gambyt's Reinbeck M1 Shotgun
 			self.beck.recategorize = { "heavy_shot" }
-			self.beck.damage_type = "shotgun"
+			self.beck.damage_type = "shotgun_heavy"
 			self.beck.damage_type_single_ray = "sniper"
 			self.beck.has_description = true
 			self.beck.desc_id = "bm_w_beck_desc"
@@ -12114,7 +12113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 		if self.bs23 then --Hammer 23
 			self.bs23.recategorize = { "break_shot" }
-			self.bs23.damage_type = "shotgun"
+			self.bs23.damage_type = "shotgun_heavy"
 			self.bs23.damage_type_single_ray = "anti_materiel"
 			self.bs23.always_play_anims = true
 			self.bs23.tactical_reload = 1
@@ -12839,7 +12838,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	if self.quadbarrel then --Pawcio's Doomstick
 		self.quadbarrel.recategorize = {"break_shot"}
-		self.quadbarrel.damage_type = "shotgun"
+		self.quadbarrel.damage_type = "shotgun_heavy"
 		self.quadbarrel.damage_type_single_ray = "sniper"
 		self.quadbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.quadbarrel.rays = 8
@@ -12889,7 +12888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"shotgun"
 		}
 		self.ks23.recategorize = { "break_shot" }
-		self.ks23.damage_type = "shotgun"
+		self.ks23.damage_type = "shotgun_heavy"
 		self.ks23.damage_type_single_ray = "anti_materiel"
 		self.ks23.tactical_reload = 1
 		self.ks23.reload_speed_multiplier = 1.3
@@ -12932,7 +12931,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.super then --Pawcio's DOOM Super Shotgun
 		self.super.recategorize = { "break_shot" }	
-		self.super.damage_type = "shotgun"
+		self.super.damage_type = "shotgun_heavy"
 		self.super.damage_type_single_ray = "anti_materiel"
 		self.super.should_reload_immediately = true
 		self.super.muzzleflash = "effects/particles/shotgun/muzzleflash"

@@ -327,7 +327,6 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk"  load="true"/>	
 	<!--FBI Zeal Heavy Shotgun-->
 	<object				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<model				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"  load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"  load="true"/>

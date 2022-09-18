@@ -203,6 +203,7 @@ function restoration:Init()
 		"dah", --Diamond Heist
 		"chca", --Black Cat Heist
 		"peta", --Goatsim 1
+		"mad", --Boiling Point
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration
@@ -250,7 +251,6 @@ function restoration:Init()
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
 		"ranc", --Midland Ranch
-		"mad", --Boiling Point
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
 		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
 		"crojob3_night", --Ditto

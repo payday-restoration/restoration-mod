@@ -1,4 +1,11 @@
 <table name="skmc_mad">
+	<instance id="obj_skm_mad">
+		<packages>
+			<value_node value="levels/instances/shared/obj_skm/world"/>
+			<value_node value="levels/instances/shared/obj_skm/world_sounds"/>
+			<value_node value="levels/instances/shared/obj_skm/world/world"/>
+		</packages>
+	</instance>
 	<level ai_group_type="russia" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skmc_mad" intro_event="Play_loc_skm_intro" music_ext_start="heist" narrator="locke" wave_count="9" player_style="winter_suit">
 		<add file="levels/skmc_mad/add.xml"/>
 		<assets/>

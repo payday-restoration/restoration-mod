@@ -1,0 +1,12 @@
+<table directory="assets">
+	<add from_db="true" path="units/pd2_dlc_mad/characters/civ_male_scientist_02/civ_male_scientist_02" type="unit">
+		<unit load="true" path="units/pd2_dlc_mad/characters/civ_male_scientist_02/civ_male_scientist_02"/>
+		<object path="units/pd2_dlc_mad/characters/civ_male_scientist_02/civ_male_scientist_02"/>
+		<unit load="true" path="units/pd2_dlc_mad/characters/civ_male_scientist_02/civ_male_scientist_02_husk"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_mad/characters/civ_male_scientist_01/civ_male_scientist_01" type="unit">
+		<unit load="true" path="units/pd2_dlc_mad/characters/civ_male_scientist_01/civ_male_scientist_01"/>
+		<unit load="true" path="units/pd2_dlc_mad/characters/civ_male_scientist_01/civ_male_scientist_01_husk"/>
+		<object path="units/pd2_dlc_mad/characters/civ_male_scientist_01/civ_male_scientist_01"/>
+	</add>
+</table>

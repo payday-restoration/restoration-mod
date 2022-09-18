@@ -1885,7 +1885,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_corgi_b_short"] = "Ствол MSG",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "Расставляются при yf;fnbb #{skill_color}#$BTN_BIPOD##, если позволяет место. Нажмите клавишу снова, чтобы убрать.\n\nУменьшают отдачу на #{skill_color}#60%## и увеличивают расстоянии #{skill_color}#30%## во время использования.\n\n#{item_stage_2}#Дополнительные настройки для сошек можно найти в настройках Restoration Mod.##",
+		["bm_sc_bipod_desc_pc"] = "Расставляются при нажатии #{skill_color}#$BTN_BIPOD##, если позволяет место. Нажмите клавишу снова, чтобы убрать.\n\nУменьшают отдачу на #{skill_color}#60%## и увеличивают расстоянии #{skill_color}#30%## во время использования.\n\n#{item_stage_2}#Дополнительные настройки для сошек можно найти в настройках Restoration Mod.##",
 		["bm_sc_bipod_desc"] = "Расставляются при удержании #{skill_color}#$BTN_BIPOD##, если позволяет место. Удержите кнопку снова, чтобы убрать.\n\nУменьшают отдачу на #{skill_color}#60%## и увеличивают расстоянии #{skill_color}#30%## во время использования.\n\n#{item_stage_2}#Дополнительные настройки для сошек можно найти в настройках Restoration Mod.##",
 		["hud_hint_bipod_moving"] = "Нельзя развернуть во время ходьбы",
 		["hud_hint_bipod_slide"] = "Нельзя развернуть во время переката",
@@ -1896,7 +1896,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		["hud_assault_restored_down"] = "Штурм пережит - восстановлено 1 падение",
 		["hud_assault_remaining_single"] = "1 штурм до восстановления падения",
-		["hud_assault_remaining_plural"] = " штурмов до восстановления падения",
+		["hud_assault_remaining_plural"] = " штурма до восстановления падения",
 
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Устройство, которое бьёт током и оглушает цели при полном заряде.",

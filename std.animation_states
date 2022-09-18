@@ -141,39 +141,22 @@
 			<xml/>
 			<state name="std/heal/heal"/>
 		</search>
-		<target mode="attributes">
-			<attr name="name" value="upper_body/heal"/>
-			<attr name="segment" value="upper_body"/>
-			<attr name="mute" value="upper_body_ext"/>
-		</target>
-	</tweak>
-	<!-- has to be done twice -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="upper_body/heal"/>
-			<keys/>
-			<key extension_key="pose"/>
-		</search>
 		<target mode="replace"/>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
-			<state name="upper_body/heal"/>
-			<keys/>
-			<key extension_key="pose"/>
+			<state name="upper_body"/>
 		</search>
-		<target mode="replace"/>
-	</tweak>
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="upper_body/heal"/>
-			<exit/>
-		</search>
-		<target mode="replace">
-			<exit name="upper_body/empty"/>
+		<target mode="append">
+			<state name="upper_body/heal" type="mix" segment="upper_body" mute="upper_body_ext">
+				<anim name="heal" weight="rifle"/>
+				<keys>
+					<key at="enter" set_extension="anim_data" extension_key="healing" extension_value="true"/>
+					<key at="exit" set_extension="anim_data" extension_key="healing" extension_value="false"/>
+				</keys>
+				<exit name="upper_body/empty"/>
+			</state>
 		</target>
 	</tweak>
 	<!-- Suppressed state fixes -->

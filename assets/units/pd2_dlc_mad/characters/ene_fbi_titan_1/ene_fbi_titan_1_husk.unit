@@ -15,7 +15,7 @@
         <extension name="base" class="HuskCopBase" >
             <var name="can_be_marked" value="true" />
             <var name="_tweak_table" value="hrt_titan" />
-            <var name="_default_weapon_id" value="raging_bull" />
+            <var name="_default_weapon_id" value="sr2_titan" />
         </extension>
         <extension name="inventory" class="HuskCopInventory" />
         <extension name="brain" class="HuskCopBrain" />

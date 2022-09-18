@@ -974,9 +974,7 @@ local job = Global.level_data and Global.level_data.level_id
 		
 		--Titan HRT SR2
 		self.sr2_smg_titan_npc = deep_clone(self.mp9_titan_npc)
-		self.sr2_smg_titan_npc.sounds.prefix = "sr2_npc"
-		self.sr2_smg_titan_npc.CLIP_AMMO_MAX = 32
-		self.sr2_smg_titan_npc.DAMAGE = 3
+		self.sr2_smg_titan_npc.sounds.prefix = "sr2_npc"			
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()

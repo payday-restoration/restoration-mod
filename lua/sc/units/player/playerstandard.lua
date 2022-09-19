@@ -1,4 +1,4 @@
-local norecoil_blacklist = {
+local norecoil_blacklist = { --From Zdann
 	--Special
 	["flamethrower_mk2"] = true,
 	["system"] = true,
@@ -789,9 +789,16 @@ function PlayerStandard:_check_stop_shooting()
 		if is_auto_fire_mode and (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) then
 			self._ext_network:send("sync_stop_auto_fire_sound", 0)
 		end
-
-		if ((self._state_data.in_full_steelsight and not restoration.Options:GetValue("OTHER/NoADSRecoilAnims")) or not self._state_data.in_full_steelsight) and is_auto_fire_mode and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
-			self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
+		local weap_base = self._equipped_unit:base()	
+		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
+		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
+		local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+		if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+			self._ext_camera:play_redirect(self:get_animation("idle"))
+		else 
+			if is_auto_fire_mode and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
+				self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
+			end
 		end
 
 		self._shooting = false

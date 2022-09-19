@@ -114,6 +114,10 @@ function GuiTweakData:init()
 	self.part_texture_switches = {
 		wpn_fps_upg_o_45rds_v2 = "1 3",
 		wpn_fps_upg_o_45rds = "1 3",
+		wpn_fps_upg_o_rmr = "3 3",
+		wpn_fps_upg_o_rx01 = "4 3",
+		wpn_fps_upg_o_rx30 = "4 3",
+		wpn_fps_upg_o_45rds = "1 3",
 		wpn_fps_upg_o_spot = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 7),
 		wpn_fps_upg_o_acog = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2),
 		wpn_fps_upg_o_bmg = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2),

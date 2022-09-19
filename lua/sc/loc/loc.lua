@@ -2679,7 +2679,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Body Expertise",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour bullets can #{skill_color}#now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply #{skill_color}#30%## of the enemy's headshot damage multiplier to their body.\n\n#{risk}#NOTE: Does not apply to Bulldozers.##\n\nACE: #{owned}#$pro##\nAll guns fired in full auto apply #{skill_color}#60%## of the enemy's headshot damage multiplier to their body.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour bullets can #{skill_color}#now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply #{skill_color}#30%## of the enemy's headshot damage multiplier to their body.\n\n#{risk}#NOTE: The body damage multiplier does not apply to Bulldozers.##\n\nACE: #{owned}#$pro##\nAll guns fired in full auto apply #{skill_color}#60%## of the enemy's headshot damage multiplier to their body.",
 
 
 		--[[   ENFORCER   ]]--

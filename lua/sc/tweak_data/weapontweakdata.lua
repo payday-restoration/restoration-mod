@@ -6808,7 +6808,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.fire_mode_data = {}
 			self.shuno.fire_mode_data.fire_rate = 0.03
 			self.shuno.CAN_TOGGLE_FIREMODE = false
-			self.shuno.kick = self.stat_info.kick_tables.right_kick
+			self.shuno.kick = self.stat_info.kick_tables.moderate_kick
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
 			self.shuno.ads_speed = 0.600
@@ -6820,7 +6820,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.stats = {
 				damage = 20,
 				spread = 11,
-				recoil = 82,
+				recoil = 86,
 				spread_moving = 25,
 				zoom = 1,
 				concealment = 16,
@@ -6978,7 +6978,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--self.m134.fire_rate_init_ramp_up = true
 			self.m134.CAN_TOGGLE_FIREMODE = false
 			self.m134.reload_speed_multiplier = 0.85
-			self.m134.kick = self.stat_info.kick_tables.right_kick
+			self.m134.kick = self.stat_info.kick_tables.moderate_kick
 			self.m134.panic_suppression_chance = 0.05
 			self.m134.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"

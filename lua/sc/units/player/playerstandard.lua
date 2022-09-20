@@ -536,7 +536,6 @@ end
 
 ]]--
 
-
 function PlayerStandard:_check_action_primary_attack(t, input)
 	local new_action = nil
 	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release
@@ -684,7 +683,14 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						local shake_multiplier = weap_tweak_data.shake[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
 						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
-
+						local vars = {
+							-1,
+							1
+						}
+						local random = vars[math.random(#vars)]
+						if self._state_data.in_steelsight and (restoration.Options:GetValue("OTHER/NoADSRecoilAnims") or weap_base._disable_steelsight_recoil_anim) then
+							self._ext_camera:play_shaker("whizby", random * 0.05 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
+						end
 						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
 						self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.2 or 1) , 1, 0.15)
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
@@ -702,7 +708,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							if not self._state_data.in_steelsight then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then
-								if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+								if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
 								else
 									self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
 								end
@@ -1855,9 +1861,7 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 	end
 	if primary:clip_empty() then
 		if active and self._shooting then
-			self._equipped_unit:base():stop_shooting()
-			self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
-			self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
+			self:_check_stop_shooting()
 			self:_interupt_action_steelsight(t)
 		end
 		primary._primary_regen_rate = primary._regen_rate_overheat or 4.5
@@ -1926,9 +1930,7 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 	end
 	if secondary:clip_empty() then
 		if active and self._shooting then
-			self._equipped_unit:base():stop_shooting()
-			self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
-			self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
+			self:_check_stop_shooting()
 			self:_interupt_action_steelsight(t)
 		end
 		secondary._secondary_regen_rate = secondary._regen_rate_overheat or 4.5

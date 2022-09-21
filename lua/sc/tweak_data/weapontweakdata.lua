@@ -3331,6 +3331,27 @@ function WeaponTweakData:_init_stats()
 				(-0.225 * self.stat_info.stance_recoil_mults.steelsight) / 10,
 				(0.225 * self.stat_info.stance_recoil_mults.steelsight) / 10
 			}
+		},
+
+		metalstorm_kick = {
+			standing = {
+				0.85 * self.stat_info.stance_recoil_mults.standing * 12,
+				0.7 * self.stat_info.stance_recoil_mults.standing * 12,
+				-0.225 * self.stat_info.stance_recoil_mults.standing * 12,
+				0.225 * self.stat_info.stance_recoil_mults.standing * 12
+			},
+			crouching = {
+				0.85 * self.stat_info.stance_recoil_mults.crouching * 12,
+				0.7 * self.stat_info.stance_recoil_mults.crouching * 12,
+				-0.225 * self.stat_info.stance_recoil_mults.crouching * 12,
+				0.225 * self.stat_info.stance_recoil_mults.crouching * 12
+			},
+			steelsight = {
+				0.85 * self.stat_info.stance_recoil_mults.steelsight * 12,
+				0.7 * self.stat_info.stance_recoil_mults.steelsight * 12,
+				-0.225 * self.stat_info.stance_recoil_mults.steelsight * 12,
+				0.225 * self.stat_info.stance_recoil_mults.steelsight * 12
+			}
 		}
 	}
 
@@ -5906,7 +5927,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.CLIP_AMMO_MAX = 120
 				self.hailstorm.AMMO_MAX = 360
 				self.hailstorm.FIRE_MODE = "auto"
-				self.hailstorm.fire_mode_data.fire_rate = 0.015
+				self.hailstorm.charge_data = {
+					max_t = 0.7,
+					cooldown_t = 0.5
+				}
+				self.hailstorm.fire_mode_data.fire_rate = 0.03
 				self.hailstorm.fire_mode_data.volley.spread_mul = 3.5
 				self.hailstorm.fire_mode_data.volley.damage_mul = 2
 				self.hailstorm.fire_mode_data.volley.ammo_usage = 30
@@ -5916,10 +5941,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.fire_mode_data.volley.can_shoot_through_enemy = true
 				self.hailstorm.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect"
 				self.hailstorm.fire_mode_data.volley.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed_volley"
+				self.hailstorm.fire_mode_data.toggable = {
+					"volley",
+					"auto"
+				}
 				self.hailstorm.sms = 0.6
 				self.hailstorm.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 				self.hailstorm.kick = self.stat_info.kick_tables.moderate_kick
-				self.hailstorm.kick.volley = self.stat_info.kick_tables.vertical_kick
+				self.hailstorm.kick.volley = self.stat_info.kick_tables.metalstorm_kick
 				self.hailstorm.supported = true
 				self.hailstorm.ads_speed = 0.300
 				self.hailstorm.damage_falloff = {

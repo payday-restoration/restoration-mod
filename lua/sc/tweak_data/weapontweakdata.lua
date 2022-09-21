@@ -3335,22 +3335,22 @@ function WeaponTweakData:_init_stats()
 
 		metalstorm_kick = {
 			standing = {
-				0.85 * self.stat_info.stance_recoil_mults.standing * 12,
-				0.7 * self.stat_info.stance_recoil_mults.standing * 12,
-				-0.225 * self.stat_info.stance_recoil_mults.standing * 12,
-				0.225 * self.stat_info.stance_recoil_mults.standing * 12
+				0.85 * self.stat_info.stance_recoil_mults.standing * 8,
+				0.7 * self.stat_info.stance_recoil_mults.standing * 8,
+				-0.225 * self.stat_info.stance_recoil_mults.standing * 8,
+				0.225 * self.stat_info.stance_recoil_mults.standing * 8
 			},
 			crouching = {
-				0.85 * self.stat_info.stance_recoil_mults.crouching * 12,
-				0.7 * self.stat_info.stance_recoil_mults.crouching * 12,
-				-0.225 * self.stat_info.stance_recoil_mults.crouching * 12,
-				0.225 * self.stat_info.stance_recoil_mults.crouching * 12
+				0.85 * self.stat_info.stance_recoil_mults.crouching * 8,
+				0.7 * self.stat_info.stance_recoil_mults.crouching * 8,
+				-0.225 * self.stat_info.stance_recoil_mults.crouching * 8,
+				0.225 * self.stat_info.stance_recoil_mults.crouching * 8
 			},
 			steelsight = {
-				0.85 * self.stat_info.stance_recoil_mults.steelsight * 12,
-				0.7 * self.stat_info.stance_recoil_mults.steelsight * 12,
-				-0.225 * self.stat_info.stance_recoil_mults.steelsight * 12,
-				0.225 * self.stat_info.stance_recoil_mults.steelsight * 12
+				0.85 * self.stat_info.stance_recoil_mults.steelsight * 8,
+				0.7 * self.stat_info.stance_recoil_mults.steelsight * 8,
+				-0.225 * self.stat_info.stance_recoil_mults.steelsight * 8,
+				0.225 * self.stat_info.stance_recoil_mults.steelsight * 8
 			}
 		}
 	}
@@ -5935,7 +5935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.FIRE_MODE = "auto"
 				self.hailstorm.charge_data = {
 					max_t = 0.5,
-					cooldown_t = 0.5
+					cooldown_t = 1
 				}
 				self.hailstorm.fire_mode_data.fire_rate = 0.03
 				self.hailstorm.fire_mode_data.volley.spread_mul = 3.5
@@ -5959,9 +5959,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.supported = true
 				self.hailstorm.ads_speed = 0.400
 				self.hailstorm.damage_falloff = {
-					start_dist = 700,
-					end_dist = 2600,
-					min_mult = 0.5,
+					start_dist = 600,
+					end_dist = 2400,
+					min_mult = 0.3,
 					ignore_rays = true
 				}
 				self.hailstorm.stats = {
@@ -9617,8 +9617,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sko12.stats_modifiers = nil
 				self.sko12.sms = 0.8
 				self.sko12.panic_suppression_chance = 0.05
-				self.sko12.timers.reload_exit_empty = 1.1
-				self.sko12.timers.reload_exit_not_empty = 0.9
+				self.sko12.timers.reload_empty = 3.4
+				self.sko12.timers.reload_exit_empty = 1.0
+				self.sko12.timers.reload_not_empty = 2.9
+				self.sko12.timers.reload_exit_not_empty = 0.8
 
 			--Goliath 12G
 				self.rota.upgrade_blocks = nil
@@ -14586,6 +14588,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.object_damage_mult = 1.25
 				elseif weap.damage_type == "shotgun" then
 					weap.object_damage_mult = 0.75
+					weap.object_damage_mult_single_ray = 1.25
+					if damage_type_single_ray == "anti_materiel" then
+						weap.object_damage_mult_single_ray = 3
+					end
 				elseif weap.damage_type == "flamethrower" then
 					weap.object_damage_mult = 0.25
 				else

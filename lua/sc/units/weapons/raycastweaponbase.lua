@@ -124,7 +124,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 
 		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
 		if damage_body_extension then
-			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().weapon_tweak_data and weapon_unit:base():weapon_tweak_data().object_damage_mult or 1
+			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().weapon_tweak_data and ((weapon_unit:base()._rays and weapon_unit:base()._rays == 1 and weapon_unit:base():weapon_tweak_data().object_damage_mult_single_ray) or weapon_unit:base():weapon_tweak_data().object_damage_mult) or 1
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			damage = network_damage / 163.84
@@ -288,7 +288,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
 		if damage_body_extension then
-			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().weapon_tweak_data and weapon_unit:base():weapon_tweak_data().object_damage_mult or 1
+			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().weapon_tweak_data and ((weapon_unit:base()._rays and weapon_unit:base()._rays == 1 and weapon_unit:base():weapon_tweak_data().object_damage_mult_single_ray) or weapon_unit:base():weapon_tweak_data().object_damage_mult) or 1
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			damage = network_damage / 163.84

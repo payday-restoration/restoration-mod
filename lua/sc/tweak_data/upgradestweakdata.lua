@@ -63,9 +63,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"spoon",
 					"x_mac10",
 					"x_packrat",
-					"x_scorpion",
-					"korth",
-					"x_korth",
+					"x_scorpion"
 				}
 			},	
 		l10 = {
@@ -85,7 +83,17 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"groza_underbarrel",
 					"m590"
 				}
-			},			
+			},
+		l13 = {
+				name_id = "weapons",
+				upgrades = {
+					"new_mp5",
+					"serbu",
+					"microphone",
+					"selfie",
+					"sko12"
+				}
+			},
 		l14 = {
 				name_id = "weapons",
 				upgrades = {
@@ -131,7 +139,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"pugio",
 					"ballistic",
 					"maxim9",
-					"scout"
+					"scout",
+					"korth"
 				}
 			},
 		l20 = {
@@ -156,6 +165,20 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"brick",
 					"ostry",
 					"r700"
+				}
+			},
+		l24 = {
+				name_id = "weapons",
+				upgrades = {
+					"model24",
+					"l85a2",
+					"scalper",
+					"switchblade",
+					"x_m1911",
+					"x_maxim9",
+					"type54",
+					"x_type54",
+					"x_sko12"
 				}
 			},
 		l25 = {
@@ -200,7 +223,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 				upgrades = {
 					"shuno",
 					"holt",
-					"x_holt"
+					"x_holt",
+					"x_korth"
 				}
 			},
 		l32 = {
@@ -241,6 +265,14 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"fal",
 					"tomahawk",
 					"coal"
+				}
+			},
+		l48 = {
+				name_id = "weapons",
+				upgrades = {
+					"dingdong",
+					"tenderizer",
+					"hailstorm"
 				}
 			},
 		l50 = {

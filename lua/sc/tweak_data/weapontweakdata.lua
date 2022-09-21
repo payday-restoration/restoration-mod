@@ -5907,9 +5907,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.AMMO_MAX = 360
 				self.hailstorm.FIRE_MODE = "auto"
 				self.hailstorm.fire_mode_data.fire_rate = 0.015
+				self.hailstorm.fire_mode_data.volley.spread_mul = 3.5
+				self.hailstorm.fire_mode_data.volley.damage_mul = 2
+				self.hailstorm.fire_mode_data.volley.ammo_usage = 30
+				self.hailstorm.fire_mode_data.volley.rays = 15
+				self.hailstorm.fire_mode_data.volley.can_shoot_through_wall = true
+				self.hailstorm.fire_mode_data.volley.can_shoot_through_shield = true
+				self.hailstorm.fire_mode_data.volley.can_shoot_through_enemy = true
+				self.hailstorm.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect"
+				self.hailstorm.fire_mode_data.volley.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed_volley"
 				self.hailstorm.sms = 0.6
 				self.hailstorm.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 				self.hailstorm.kick = self.stat_info.kick_tables.moderate_kick
+				self.hailstorm.kick.volley = self.stat_info.kick_tables.vertical_kick
 				self.hailstorm.supported = true
 				self.hailstorm.ads_speed = 0.300
 				self.hailstorm.damage_falloff = {
@@ -5920,7 +5930,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hailstorm.stats = {
 					damage = 10,
-					spread = 11,
+					spread = 16,
 					recoil = 86,
 					spread_moving = 6,
 					zoom = 1,

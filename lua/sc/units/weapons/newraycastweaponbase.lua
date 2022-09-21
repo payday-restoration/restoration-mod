@@ -1,3 +1,8 @@
+local ids_single = Idstring("single")
+local ids_auto = Idstring("auto")
+local ids_burst = Idstring("burst")
+local ids_volley = Idstring("volley")
+
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	--Since armor piercing chance is no longer used, lets use weapon category to determine armor piercing baseline.

@@ -5228,6 +5228,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_korth.armor_piercing_chance = 0.5
 				self.x_korth.can_shoot_through_enemy = true
 				self.x_korth.panic_suppression_chance = 0.05
+				self.x_korth.timers.reload_empty = 3.1
+				self.x_korth.timers.reload_not_empty = 3.1
+				self.x_korth.timers.reload_exit_empty = 1.3
+				self.x_korth.timers.reload_exit_not_empty = 1.3
 			
 			--Akimbo Matever
 				--Keeping
@@ -5725,6 +5729,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.korth.armor_piercing_chance = 0.5
 				self.korth.can_shoot_through_enemy = true
 				self.korth.panic_suppression_chance = 0.05
+				self.korth.timers.reload_exit_empty = 0.8
+				self.korth.timers.reload_exit_not_empty = 0.8
 
 			--Matever .357
 				self.mateba.has_description = true
@@ -5928,7 +5934,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.AMMO_MAX = 360
 				self.hailstorm.FIRE_MODE = "auto"
 				self.hailstorm.charge_data = {
-					max_t = 0.7,
+					max_t = 0.5,
 					cooldown_t = 0.5
 				}
 				self.hailstorm.fire_mode_data.fire_rate = 0.03
@@ -5949,8 +5955,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 				self.hailstorm.kick = self.stat_info.kick_tables.moderate_kick
 				self.hailstorm.kick.volley = self.stat_info.kick_tables.metalstorm_kick
+				self.hailstorm.shake.bypass_global_shake = true
 				self.hailstorm.supported = true
-				self.hailstorm.ads_speed = 0.300
+				self.hailstorm.ads_speed = 0.400
 				self.hailstorm.damage_falloff = {
 					start_dist = 700,
 					end_dist = 2600,
@@ -5960,7 +5967,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.stats = {
 					damage = 10,
 					spread = 16,
-					recoil = 86,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 19,
@@ -5972,7 +5979,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.hailstorm.stats_modifiers = nil
+				self.hailstorm.reload_speed_multiplier = 0.85
 				self.hailstorm.panic_suppression_chance = 0.05
+				self.hailstorm.timers.reload_exit_empty = 0.08
+				self.hailstorm.timers.reload_exit_not_empty = 0.08
 
 			--Akimbo Micro-Uzi
 				--Keeping

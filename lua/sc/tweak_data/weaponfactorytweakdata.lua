@@ -67,6 +67,70 @@
 		}
 	}
 
+	--Poison
+	local a_rip_auto_override = {
+		desc_id = "bm_wp_upg_a_rip_auto_desc_sc",
+		stats = {
+			value = 9,
+			damage = -6
+		},
+		custom_stats = {
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+			bullet_class = "PoisonBulletBase",
+			dot_data = {
+				type = "poison",
+				custom_data = {
+					hurt_animation_chance = 0.5,
+					dot_damage = 0.8,
+					dot_length = 6.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
+	}
+
+	local a_rip_semi_override = {
+		desc_id = "bm_wp_upg_a_rip_semi_desc_sc",
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+			bullet_class = "PoisonBulletBase",
+			dot_data = {
+				type = "poison",
+				custom_data = {
+					hurt_animation_chance = 0.5,
+					dot_damage = 1.5,
+					dot_length = 6.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
+	}
+
+	local a_rip_pump_override = {
+		desc_id = "bm_wp_upg_a_rip_pump_desc_sc",
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+			bullet_class = "PoisonBulletBase",
+			dot_data = {
+				type = "poison",
+				custom_data = {
+					hurt_animation_chance = 0.5,
+					dot_damage = 2.0,
+					dot_length = 6.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
+	}
+
 	--Dragon's Breath
 	local a_dragons_breath_auto_override = {
 		desc_id = "bm_wp_upg_a_dragons_breath_auto_desc_sc",
@@ -3808,6 +3872,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		wpn_fps_upg_a_custom = a_custom_auto_override,
 		wpn_fps_upg_a_custom_free = a_custom_auto_override,
 		wpn_fps_upg_a_explosive = a_explosive_auto_override,
+		wpn_fps_upg_a_rip = a_rip_auto_override,
 		wpn_fps_upg_a_piercing = a_piercing_auto_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override,
 		wpn_fps_ass_akm_body_upperreceiver_vanilla = {
@@ -4875,6 +4940,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		wpn_fps_upg_a_custom = a_custom_pump_override,	
 		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
 		wpn_fps_upg_a_explosive = a_explosive_pump_override,
+		wpn_fps_upg_a_rip = a_rip_pump_override,
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	}
@@ -4959,6 +5025,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		wpn_fps_upg_a_custom = a_custom_pump_override,	
 		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
 		wpn_fps_upg_a_explosive = a_explosive_pump_override,
+		wpn_fps_upg_a_rip = a_rip_pump_override,
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 	}
@@ -5355,6 +5422,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = a_custom_pump_override
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_rip = a_rip_pump_override
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	
@@ -6762,6 +6830,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 		wpn_fps_upg_a_custom = a_custom_semi_override,
 		wpn_fps_upg_a_custom_free = a_custom_semi_override,			
 		wpn_fps_upg_a_explosive = a_explosive_semi_override,
+		wpn_fps_upg_a_rip = a_rip_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
@@ -6812,6 +6881,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 		wpn_fps_upg_a_custom = a_custom_semi_override,	
 		wpn_fps_upg_a_custom_free = a_custom_semi_override,				
 		wpn_fps_upg_a_explosive = a_explosive_semi_override,
+		wpn_fps_upg_a_rip = a_rip_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override	
 	}
@@ -6861,6 +6931,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = a_custom_pump_override			
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_rip = a_rip_pump_override
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 end)	
@@ -8044,7 +8115,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_dragons_breath.supported = true
 	self.parts.wpn_fps_upg_a_dragons_breath.stats = {
 		value = 9,
-		damage = -30,
+		damage = -30
 	}
 	self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
 		ignore_statistic = true,
@@ -8065,6 +8136,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		"wpn_fps_upg_ns_sho_salvo_large",
 		"wpn_fps_sho_aa12_barrel_silenced",
 		"wpn_fps_sho_striker_b_suppressed"
+	}
+
+	--Tombstone Buck
+	--This part description covers heavy shotguns, other damage tiers are handled via overrides.
+	self.parts.wpn_fps_upg_a_rip.pcs = {}
+	self.parts.wpn_fps_upg_a_rip.name_id = "bm_wp_upg_a_rip"
+	self.parts.wpn_fps_upg_a_rip.desc_id = "bm_wp_upg_a_rip_heavy_desc_sc"
+	self.parts.wpn_fps_upg_a_rip.supported = true
+	self.parts.wpn_fps_upg_a_rip.stats = {
+		value = 9,
+		damage = -30
+	}
+	self.parts.wpn_fps_upg_a_rip.custom_stats = {
+		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+		bullet_class = "PoisonBulletBase",
+		dot_data = {
+			type = "poison",
+			custom_data = {
+				hurt_animation_chance = 0.5,
+				dot_damage = 2.0,
+				dot_length = 6.1,
+				dot_tick_period = 0.5
+			}
+		}
 	}
 
 	--Frag Rounds (BYK-1)
@@ -8634,6 +8729,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom = a_custom_semi_override
 	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free = a_custom_semi_override		
 	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive = a_explosive_semi_override
+	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_rip = a_rip_semi_override
 	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
 	self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 end)
@@ -10338,6 +10434,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		wpn_fps_upg_a_custom = a_custom_semi_override,
 		wpn_fps_upg_a_custom_free = a_custom_semi_override,			
 		wpn_fps_upg_a_explosive = a_explosive_semi_override,
+		wpn_fps_upg_a_rip = a_rip_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 	}
@@ -11687,6 +11784,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_rip = a_rip_pump_override
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 	
@@ -12426,6 +12524,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 		wpn_fps_upg_a_custom = a_custom_semi_override,	
 		wpn_fps_upg_a_custom_free = a_custom_semi_override,				
 		wpn_fps_upg_a_explosive = a_explosive_semi_override,
+		wpn_fps_upg_a_rip = a_rip_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
@@ -13741,6 +13840,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 		wpn_fps_upg_a_custom = a_custom_auto_override,
 		wpn_fps_upg_a_custom_free = a_custom_auto_override,					
 		wpn_fps_upg_a_explosive = a_explosive_auto_override,
+		wpn_fps_upg_a_rip = a_rip_auto_override,
 		wpn_fps_upg_a_piercing = a_piercing_auto_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
 	}
@@ -13969,6 +14069,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_rip = a_rip_pump_override
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 
@@ -15693,6 +15794,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_rip = a_rip_pump_override
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 
@@ -15827,6 +15929,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		wpn_fps_upg_a_custom = a_custom_pump_override,	
 		wpn_fps_upg_a_custom_free = a_custom_pump_override,			
 		wpn_fps_upg_a_explosive = a_explosive_pump_override,
+		wpn_fps_upg_a_rip = a_rip_pump_override,
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	}
@@ -16551,6 +16654,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 		wpn_fps_upg_a_custom = a_custom_semi_override,
 		wpn_fps_upg_a_custom_free = a_custom_semi_override,			
 		wpn_fps_upg_a_explosive = a_explosive_semi_override,
+		wpn_fps_upg_a_rip = a_rip_semi_override,
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
 	}		
@@ -17175,6 +17279,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sko12", "resmod_sko12", function(s
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_custom = a_custom_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_custom_free = a_custom_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_explosive = a_explosive_semi_override
+	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_rip = a_rip_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 
@@ -17190,6 +17295,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sko12", "resmod_x_sko12", functi
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_custom = a_custom_semi_override
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_custom_free = a_custom_semi_override
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_explosive = a_explosive_semi_override
+	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_rip = a_rip_semi_override
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 
@@ -20372,6 +20478,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_upg_a_custom = a_custom_auto_override,
 			wpn_fps_upg_a_custom_free = a_custom_auto_override,			
 			wpn_fps_upg_a_explosive = a_explosive_auto_override,
+			wpn_fps_upg_a_rip = a_rip_auto_override,
 			wpn_fps_upg_a_piercing = a_piercing_auto_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
 		}
@@ -20434,6 +20541,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_upg_a_custom = a_custom_pump_override,
 			wpn_fps_upg_a_custom_free = a_custom_pump_override,			
 			wpn_fps_upg_a_explosive = a_explosive_pump_override,
+			wpn_fps_upg_a_rip = a_rip_pump_override,
 			wpn_fps_upg_a_piercing = a_piercing_pump_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 		}
@@ -21312,6 +21420,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_upg_a_custom = a_custom_semi_override,
 			wpn_fps_upg_a_custom_free = a_custom_semi_override,			
 			wpn_fps_upg_a_explosive = a_explosive_semi_override,
+			wpn_fps_upg_a_rip = a_rip_semi_override,
 			wpn_fps_upg_a_piercing = a_piercing_semi_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 		}
@@ -21979,6 +22088,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					sms = 0.85
 				}
 			},
+			wpn_fps_upg_a_rip = a_ripg_semi_override,
 			wpn_fps_upg_a_piercing = a_piercing_semi_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
 		}	

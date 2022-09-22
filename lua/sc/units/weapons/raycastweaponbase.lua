@@ -978,6 +978,18 @@ function RaycastWeaponBase:anim_play(anim, speed_multiplier, set_offset, set_off
 	end
 end
 
+
+function DOTBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
+	local result = DOTBulletBase.super.on_collision(self, col_ray, weapon_unit, user_unit, damage, blank, self.NO_BULLET_INPACT_SOUND)
+	local hit_unit = col_ray.unit
+
+	if result and hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() and alive(weapon_unit) then
+		result = self:start_dot_damage(col_ray, weapon_unit, self:_dot_data_by_weapon(weapon_unit))
+	end
+
+	return result
+end
+
 BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
 BleedBulletBase.VARIANT = "bleed"
 ProjectilesBleedBulletBase = ProjectilesBleedBulletBase or class(BleedBulletBase)
@@ -988,7 +1000,7 @@ function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit
 	local result = DOTBulletBase.super.on_collision(self, col_ray, weapon_unit, user_unit, damage, blank, self.NO_BULLET_INPACT_SOUND)
 	local hit_unit = col_ray.unit
 
-	if hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() and alive(weapon_unit) then
+	if result and hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() and alive(weapon_unit) then
 		local dot_data = tweak_data.projectiles[weapon_unit:base()._projectile_entry].dot_data
 
 		if not dot_data then

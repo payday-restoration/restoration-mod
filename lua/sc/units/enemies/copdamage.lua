@@ -2881,7 +2881,13 @@ function CopDamage:damage_dot(attack_data)
 				managers.money:civilian_killed()
 			end
 
-			self:_check_damage_achievements(attack_data, false)
+			if attack_data and attack_data.weapon_id and not attack_data.weapon_unit then
+				attack_data.name_id = attack_data.weapon_id
+
+				self:_check_melee_achievements(attack_data)
+			else
+				self:_check_damage_achievements(attack_data, false)
+			end
 		end
 	end
 
@@ -2907,6 +2913,12 @@ function CopDamage:damage_dot(attack_data)
 
 	self:_send_dot_attack_result(attack_data, attacker, damage_percent, sync_attack_variant)
 	self:_on_damage_received(attack_data)
+
+	result.attack_data = attack_data
+	result.damage_percent = damage_percent
+	result.damage = damage
+	
+	return result
 end
 
 function CopDamage:sync_damage_dot(attacker_unit, damage_percent, death, variant, hurt_animation, weapon_id)

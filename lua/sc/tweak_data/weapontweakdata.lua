@@ -5200,7 +5200,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Kahn .357				
 				self.x_korth.fire_mode_data.fire_rate = 0.15789474
-				self.x_korth.CLIP_AMMO_MAX = 8
+				self.x_korth.CLIP_AMMO_MAX = 16
 				self.x_korth.AMMO_MAX = 60
 				self.x_korth.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.x_korth.supported = true

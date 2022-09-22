@@ -17134,7 +17134,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hailstorm", "resmod_hailstorm", fu
 	}
 end)
 
-
 --VD-12
 Hooks:PostHook(WeaponFactoryTweakData, "_init_sko12", "resmod_sko12", function(self)
 	self.parts.wpn_fps_sho_sko12_b_long.supported = true
@@ -17183,7 +17182,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sko12", "resmod_sko12", function(s
 	self.wpn_fps_sho_sko12.uses_parts[45] = "resmod_dummy"
 
 	self.wpn_fps_sho_sko12_npc.uses_parts = deep_clone(self.wpn_fps_sho_sko12.uses_parts)
-
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sko12", "resmod_x_sko12", function(self)
 
@@ -17199,8 +17197,140 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sko12", "resmod_x_sko12", functi
 	self.wpn_fps_sho_x_sko12.uses_parts[27] = "resmod_dummy"
 
 	self.wpn_fps_sho_x_sko12_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_sko12.uses_parts)
+end)
+
+--Kahn .357
+Hooks:PostHook(WeaponFactoryTweakData, "_init_korth", "resmod_korth", function(self)
+	--Railed Barrel
+	self.parts.wpn_fps_pis_korth_b_railed.supported = true
+	self.parts.wpn_fps_pis_korth_b_railed.stats = {
+			value = 1,
+			concealment = -2,
+			spread = 1,
+			recoil = 2
+	}
+	self.parts.wpn_fps_pis_korth_b_railed.stance_mod = {}
+	self.parts.wpn_fps_pis_korth_b_railed.override = {
+		wpn_fps_upg_fl_pis_m3x = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_pis_crimson = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_pis_x400v = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_pis_laser = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_pis_tlr1 = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_pis_perst = {
+			a_obj = "a_fl_2"
+		}
+	}
+
+	--Ergo Grip
+	self.parts.wpn_fps_pis_korth_g_ergo.supported = true
+	self.parts.wpn_fps_pis_korth_g_ergo.stats = {
+		spread = 1,
+		recoil = -2
+	}
+	--Overmould Grip
+	self.parts.wpn_fps_pis_korth_g_houge.supported = true
+	self.parts.wpn_fps_pis_korth_g_houge.stats = {
+		concealment = 1,
+		recoil = -2
+	}
+	self.parts.wpn_fps_pis_korth_g_houge.custom_stats = {
+		ads_speed_mult = 0.975
+	}
+
+	--8-shot
+	self.parts.wpn_fps_pis_korth_m_8_dummy = deep_clone(self.parts.wpn_fps_pis_korth_m_8)
+	self.parts.wpn_fps_pis_korth_m_8_dummy.type = "magazine_extra"
+	self.parts.wpn_fps_pis_korth_m_8_dummy.stats = {}
+	self.parts.wpn_fps_pis_korth_m_8_dummy.custom_stats = {}
+	self.parts.wpn_fps_pis_korth_m_8.supported = true
+	self.parts.wpn_fps_pis_korth_m_8.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_pis_korth_m_8.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_pis_korth_m_8.adds = {"wpn_fps_pis_korth_m_8_dummy"}
+
+	--6-shot
+	self.parts.wpn_fps_pis_korth_m_6_dummy = deep_clone(self.parts.wpn_fps_pis_korth_m_6)
+	self.parts.wpn_fps_pis_korth_m_6_dummy.type = "magazine_extra"
+	self.parts.wpn_fps_pis_korth_m_6_dummy.stats = {}
+	self.parts.wpn_fps_pis_korth_m_6_dummy.custom_stats = {}
+	self.parts.wpn_fps_pis_korth_m_6.supported = true
+	self.parts.wpn_fps_pis_korth_m_6.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_pis_korth_m_6.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_pis_korth_m_6.adds = {"wpn_fps_pis_korth_m_6_dummy"}
+	self.parts.wpn_fps_pis_korth_m_6.stats = {
+		extra_ammo = -2,
+		concealment = 1,
+		reload = 3
+	}
+	self.parts.wpn_fps_pis_korth_m_6.custom_stats = {
+		ads_speed_mult = 0.975
+	}
+
+	--Exclusive Set
+	self.parts.wpn_fps_pis_korth_conversionkit.supported = true
+	self.parts.wpn_fps_pis_korth_conversionkit.stats = { value = 1 }
+	self.parts.wpn_fps_pis_korth_conversionkit.custom_stats = {}
+	self.parts.wpn_fps_pis_korth_conversionkit.forbids = {
+		"wpn_fps_upg_fl_pis_m3x",
+		"wpn_fps_upg_fl_pis_crimson",
+		"wpn_fps_upg_fl_pis_x400v",
+		"wpn_fps_upg_fl_pis_laser",
+		"wpn_fps_upg_fl_pis_tlr1",
+		"wpn_fps_upg_fl_pis_perst"
+	}
+	self.parts.wpn_fps_pis_korth_conversionkit.override = {
+		wpn_fps_pis_korth_b_standard = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_conversionkit"
+		},
+		wpn_fps_pis_korth_b_railed = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_conversionkit"
+		},
+		wpn_fps_pis_korth_body = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_body_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_conversionkit"
+		},
+		wpn_fps_pis_korth_g_standard = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_g_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_conversionkit"
+		},
+		wpn_fps_pis_korth_g_houge = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_g_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_conversionkit"
+		},
+		wpn_fps_pis_korth_g_ergo = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_g_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_conversionkit"
+		},
+		wpn_fps_pis_korth_m_8_dummy = {
+			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_m_conversionkit",
+			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_conversionkit"
+		}
+	}
 
 end)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_korth", "resmod_x_korth", function(self)
+
+	self.wpn_fps_pis_x_korth.override = self.wpn_fps_pis_x_korth.override or {}
+	self.wpn_fps_pis_x_korth.override.wpn_fps_pis_korth_m_6 = {
+		stats = {
+			extra_ammo = -4,
+			concealment = 1,
+			reload = 3
+		}
+	}
+end)
+
 
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)

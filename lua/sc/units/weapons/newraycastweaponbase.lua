@@ -755,6 +755,15 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:precalculate_ammo_pickup()
 end
 
+function NewRaycastWeaponBase:armor_piercing_chance()
+	if self._fire_mode == ids_volley then
+		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
+		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
+		return volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
+	else
+		return self._armor_piercing_chance or 0
+	end
+end
 
 function NewRaycastWeaponBase:should_reload_immediately()
 	return self:weapon_tweak_data().should_reload_immediately

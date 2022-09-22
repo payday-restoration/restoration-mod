@@ -5931,27 +5931,28 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"typh"
 				}
 				self.hailstorm.CLIP_AMMO_MAX = 120
-				self.hailstorm.AMMO_MAX = 360
+				self.hailstorm.AMMO_MAX = 240
 				self.hailstorm.FIRE_MODE = "auto"
 				self.hailstorm.charge_data = {
 					max_t = 0.5,
-					cooldown_t = 1
+					cooldown_t = 0.5
 				}
 				self.hailstorm.fire_mode_data.fire_rate = 0.03
 				self.hailstorm.fire_mode_data.volley.spread_mul = 3.5
-				self.hailstorm.fire_mode_data.volley.damage_mul = 2
-				self.hailstorm.fire_mode_data.volley.ammo_usage = 30
+				self.hailstorm.fire_mode_data.volley.damage_mul = 1
+				self.hailstorm.fire_mode_data.volley.ammo_usage = 15
 				self.hailstorm.fire_mode_data.volley.rays = 15
-				self.hailstorm.fire_mode_data.volley.can_shoot_through_wall = true
-				self.hailstorm.fire_mode_data.volley.can_shoot_through_shield = true
+				self.hailstorm.fire_mode_data.volley.can_shoot_through_wall = false
+				self.hailstorm.fire_mode_data.volley.can_shoot_through_shield = false
 				self.hailstorm.fire_mode_data.volley.can_shoot_through_enemy = true
+				self.hailstorm.fire_mode_data.volley.armor_piercing_chance = 1
 				self.hailstorm.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect"
 				self.hailstorm.fire_mode_data.volley.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed_volley"
 				self.hailstorm.fire_mode_data.toggable = {
 					"volley",
 					"auto"
 				}
-				self.hailstorm.sms = 0.6
+				self.hailstorm.sms = 0.7
 				self.hailstorm.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 				self.hailstorm.kick = self.stat_info.kick_tables.moderate_kick
 				self.hailstorm.kick.volley = self.stat_info.kick_tables.metalstorm_kick
@@ -5961,12 +5962,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.damage_falloff = {
 					start_dist = 600,
 					end_dist = 2400,
-					min_mult = 0.3,
+					min_mult = 0.16666,
 					ignore_rays = true
 				}
 				self.hailstorm.stats = {
-					damage = 10,
-					spread = 16,
+					damage = 15,
+					spread = 41,
 					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
@@ -5979,6 +5980,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.hailstorm.stats_modifiers = nil
+				self.hailstorm.object_damage_mult = 0.5
 				self.hailstorm.reload_speed_multiplier = 0.85
 				self.hailstorm.panic_suppression_chance = 0.05
 				self.hailstorm.timers.reload_exit_empty = 0.08
@@ -6997,7 +6999,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.kick = self.stat_info.kick_tables.right_recoil
 			self.tecci.CLIP_AMMO_MAX = 100
 			self.tecci.AMMO_MAX = 360
-			self.tecci.fire_mode_data.fire_rate = 0.08
+			self.tecci.fire_mode_data.fire_rate = 0.075
 			self.tecci.CAN_TOGGLE_FIREMODE = true
 			self.tecci.auto.fire_rate = 0.08
 			self.tecci.panic_suppression_chance = 0.05
@@ -14309,7 +14311,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.FIRE_MODE = "auto"
 		self.crysis3_typhoon.fire_mode_data = {}
 		self.crysis3_typhoon.fire_mode_data.fire_rate = 0.02
-		self.crysis3_typhoon.sms = 0.6
+		self.crysis3_typhoon.sms = 0.7
 		self.crysis3_typhoon.CAN_TOGGLE_FIREMODE = false
 		self.crysis3_typhoon.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 		self.crysis3_typhoon.kick = self.stat_info.kick_tables.moderate_kick

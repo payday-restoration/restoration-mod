@@ -2516,7 +2516,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",		
+		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+
+		["mutator_sonic_mod"] = "SoniCMod",
+		["mutator_sonic_mod_desc"] = "WIP",
+		["mutator_sonic_mod_longdesc"] = "WIP",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

@@ -2531,6 +2531,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only_desc"] = "Все враги заменены на свои PONR-варианты.",
 		["mutator_bravos_only_longdesc"] = "Все враги заменены на варианты, которые появляются при Точке Невозврата (PONR) в режиме Pro-Job. Синий спецназ заменён на спецназ ФБР, а спецназ ФБР заменён на отряды Браво.",		
 
+		["mutator_sonic_mod"] = "SoniCMod",
+		["mutator_sonic_mod_desc"] = "WIP",
+		["mutator_sonic_mod_longdesc"] = "WIP",
+
 		["mutator_zombie_outbreak"] = "Ходячие мертвецы",
 		["mutator_zombie_outbreak_desc"] = "Все враги заменены зомби",
 		["mutator_zombie_outbreak_longdesc"] = "Мертвые восстали! Заменяет всех врагов на зомби-юнитов.",

@@ -187,6 +187,7 @@ function restoration:Init()
 	restoration.always_bravos = false
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
+	restoration.sonic_mod = false
 		
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {

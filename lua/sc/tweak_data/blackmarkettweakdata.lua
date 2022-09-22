@@ -2184,6 +2184,30 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 		"wpn_fps_ass_m16_o_handle_sight",
 		"wpn_fps_m16_s_solid_vanilla"
 	}
+
+	self.weapon_skins.serbu_dallas.parts = {
+		wpn_fps_shot_r870_fg_big = {
+			[Idstring("big_pump"):key()] = {
+				sticker = Idstring("units/payday2_cash/safes/dallas/sticker/sticker_american_flag_df"),
+				uv_scale = Vector3(0.596401, 0.69175, 0),
+				uv_offset_rot = Vector3(-0.00333858, 1.01741, 0)
+			}
+		},
+		wpn_fps_shot_r870_fg_wood = {
+			[Idstring("wood_pump"):key()] = {
+				sticker = Idstring("units/payday2_cash/safes/dallas/sticker/sticker_american_flag_df"),
+				uv_scale = Vector3(0.596401, 0.69175, 0),
+				uv_offset_rot = Vector3(-0.00333858, 1.01741, 0)
+			}
+		},
+		wpn_fps_shot_r870_fg_small = {
+			[Idstring("short_pump"):key()] = {
+				sticker = Idstring("units/payday2_cash/safes/dallas/sticker/sticker_american_flag_df"),
+				uv_scale = Vector3(0.596401, 0.69175, 0),
+				uv_offset_rot = Vector3(-0.00333858, 1.01741, 0)
+			}
+		}
+	}
 	
 end
 

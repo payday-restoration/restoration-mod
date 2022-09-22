@@ -18481,7 +18481,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 
 	local captain_cooldown = 2700
 	local captain_min_diff = 0.5
-	local dozer_cooldown = 45
+	local dozer_cooldown = 200
 	
 	local tsniperhobelow5_cooldown = 45
 	local tsniperhoabove5_cooldown = 30

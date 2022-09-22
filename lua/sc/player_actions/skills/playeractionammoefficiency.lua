@@ -24,7 +24,7 @@ PlayerAction.AmmoEfficiency = {
 						refund = refund + ((math.random() < refund_raw - refund) and 1 or 0) --Decimal values == random chance for extra bullet.
 						--Throw ammo into magazine if the player has the relevant upgrade.
 						if to_magazine then
-							weapon_unit:set_ammo_remaining_in_clip(math.min(weapon_unit:get_ammo_max_per_clip(), weapon_unit:get_ammo_remaining_in_clip() + refund))
+							--weapon_unit:set_ammo_remaining_in_clip(math.min(weapon_unit:get_ammo_max_per_clip(), weapon_unit:get_ammo_remaining_in_clip() + refund))
 						end
 						--Add ammo to pool. Doing this before adding ammo to magazine leads to hud errors, since set_ammo_remaining_in_clip() doesn't care about total remaining ammo and doesn't update the hud.
 						player_manager:on_ammo_increase(refund)

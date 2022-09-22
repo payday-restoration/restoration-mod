@@ -2835,7 +2835,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
-				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#3## lethal headshots with Rifles in less than #{skill_color}#8## seconds will grant #{skill_color}#1## bullet or #{skill_color}#3%## of your total ammo, whichever is higher, to the Rifle.\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#2## lethal headshots, and the ammo is refunded directly into your magazine whenever possible.",
+				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#3## lethal headshots with Rifles in less than #{skill_color}#8## seconds will grant #{skill_color}#3%## of your total ammo, to a minimum of ##1### round, to the Rifle.\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#2## lethal headshots within #{skill_color}#12## seconds of each other.",
 
 				--Aggressive Reload
 				["menu_engineering_beta_sc"] = "Aggressive Reload",

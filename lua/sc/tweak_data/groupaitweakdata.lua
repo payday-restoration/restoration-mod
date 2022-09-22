@@ -13135,7 +13135,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_tank",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 2,
+					amount_max = 1,
 					tactics = self._tactics.GREEN_tank_DW,
 					rank = 3
 				},
@@ -13245,7 +13245,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "BLACK_tank",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 2,
+					amount_max = 1,
 					tactics = self._tactics.BLACK_tank_DW,
 					rank = 3
 				},
@@ -13358,7 +13358,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "SKULL_tank",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 2,
+					amount_max = 1,
 					tactics = self._tactics.SKULL_tank,
 					rank = 3
 				},
@@ -13465,7 +13465,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "TIT_tank",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 2,
+					amount_max = 1,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},
@@ -15832,7 +15832,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_BLACK_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
@@ -15865,7 +15865,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_GREEN_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
@@ -15898,7 +15898,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_SKULL_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.SKULL_tank,
 				rank = 3
 			},
@@ -15932,7 +15932,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -16222,7 +16222,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_BLACK_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
@@ -16255,7 +16255,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_GREEN_TANK_W7",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
@@ -16288,7 +16288,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_SKULL_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.SKULL_tank,
 				rank = 3
 			},
@@ -16322,7 +16322,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -16614,7 +16614,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_BLACK_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
@@ -16647,7 +16647,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_GREEN_TANK_W8",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
@@ -16680,7 +16680,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_SKULL_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.SKULL_tank,
 				rank = 3
 			},
@@ -16714,7 +16714,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},
@@ -17004,7 +17004,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_BLACK_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.BLACK_tank_DW,
 				rank = 3
 			},
@@ -17037,7 +17037,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_GREEN_TANK_W8",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.GREEN_tank_DW,
 				rank = 3
 			},
@@ -17070,7 +17070,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_SKULL_tank_W5",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.SKULL_tank,
 				rank = 3
 			},
@@ -17104,7 +17104,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "TIT_tank",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.TIT_tank,
 				rank = 3
 			},

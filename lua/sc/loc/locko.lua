@@ -1070,11 +1070,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복과 적, 얇은 벽을 관통하고 피해의 80%만큼 입히는## 납 슬러그탄을 발사합니다.",	
 		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복, 적, 방패, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",		
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 탄은 #{skill_color}#폴오프가 없지만## #{important_1}#헤드샷을 할 수 없습니다.##",
-		["bm_wp_upg_a_custom_desc"] = "#{important_1}#펠릿 수, 사거리 내 효율성, 탄약 회수량 및 총 탄약을 줄이는## 대신 #{skill_color}#피해를 증가시키는## 더 큰 펠릿을 발사합니다.",
+		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#피해량을 증가시키는## 더 크고 무거운 펠릿을 발사합니다. 이 구슬의 순전한 힘은 #{skill_color}#부분적으로 방탄복을 관통해 피해의 20%를 입힙니다.##\n\n그 대신 #{important_1}#펠릿 수, 사거리 내 효율성, 탄 회수량 및 총 탄약량이 감소합니다.##",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#96##의 피해를 주는 펠럿을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#120##의 피해를 주는 펠럿을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#180##의 피해를 주는 펠럿을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#240##의 피해를 주는 펠럿을 발사합니다.",
+		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",		
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{skill_color}#6##초에 걸쳐 #{stats_positive}#96##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.",
+		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{skill_color}#6##초에 걸쳐 #{stats_positive}#120##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.",
+		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{skill_color}#6##초에 걸쳐 #{stats_positive}#180##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.",
+		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{skill_color}#6##초에 걸쳐 #{stats_positive}#240##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.",		
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#96##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트를 발사합니다.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#120##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트를 발사합니다.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#180##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트를 발사합니다.",
@@ -2611,12 +2616,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_bravos_only"] = "하드라인",
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",
-		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",		
-
-		["mutator_sonic_mod"] = "SoniCMod",
-		["mutator_sonic_mod_desc"] = "WIP",
-		["mutator_sonic_mod_longdesc"] = "WIP",
+		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",
 		
+		-- joke stuff until release xd
+		["mutator_sonic_mod"] = "레스토레이션 모드는 안전합니다!", 
+		["mutator_sonic_mod_desc"] = "레스토레이션 모드 정말 밸런스가 잘 맞춰있고 모델도 잘 만들었고 디테일도 쩌는 오버홀 모드인데...",
+		["mutator_sonic_mod_longdesc"] = "(아닐 수도 있습니다.)",
+
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
 		["mutator_zombie_outbreak_longdesc"] = "The dead have risen! Replaces all enemies with Zombie units",
@@ -2936,7 +2942,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Ammo Efficiency--
 			["menu_single_shot_ammo_return_sc"] = "효율적인 탄약 활용",
-			["menu_single_shot_ammo_return_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#8##초안에 헤드샷을 #{skill_color}#3##번 성공하면 사용한 무기에 #{skill_color}#1##발을 혹은 #{skill_color}#3%##만큼의 총 탄약을 되돌려줍니다.\n\n에이스: #{owned}#$pro##\n이제 이 효과는 헤드샷을 #{skill_color}#2##번 맞힐 때 발동되며 가능할 때마다 탄약이 탄창으로 되돌립니다.",
+			["menu_single_shot_ammo_return_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#8##초 이내에 헤드샷을 #{skill_color}#3##번 성공하면 사용한 소총에 #{skill_color}#3%##만큼의 총 탄약 혹은 #{skill_color}#1##발을 되돌려줍니다.\n\n에이스: #{owned}#$pro##\n이제 이 효과는 #{skill_color}#12##초 이내에 헤드샷을 #{skill_color}#2##번 맞힐 때 발동됩니다.",
 
 			--Aggressive Reload
 			["menu_engineering_beta_sc"] = "공격적인 재장전",

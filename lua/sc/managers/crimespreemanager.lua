@@ -1,9 +1,14 @@
+--[[
+
+-- Not sure why, but this screws up some heists and causes soft locks. Disabling for now, enjoy buged hud in crimespree for now
 -- Reset secured bags on mission start (vanilla doesn't clear this so it displays wrong in the HUD)
 Hooks:PreHook(CrimeSpreeManager, "on_mission_started", "sh_on_mission_started", function (self)
 	if self:is_active() then
 		managers.loot:reset()
 	end
 end)
+
+]]--
 
 -- Make secured bonus bags add crime spree levels
 -- Unfortunately a function override is pretty much the only thing we can do here

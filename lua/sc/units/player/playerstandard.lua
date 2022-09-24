@@ -2725,6 +2725,12 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			end
 		end
 	end
+	if not self._state_data.reload_expire_t and not self._state_data.reload_exit_expire_t then
+		if self._equipped_unit and self._equipped_unit:base().set_reload_objects_visible and self._equipped_unit:base()._ignore_reload_objects then
+			self._equipped_unit:base():tweak_data_anim_stop("reload")
+			self._equipped_unit:base():set_reload_objects_visible(false)
+		end
+	end
 end
 
 --Fixes weapons with manually actuated parts (visually) like pumps and bolt-actions still animating upon starting a reload

@@ -1213,12 +1213,14 @@
 	<!--
 		Weapon Reticles
 		001 - EOTech
-		002 - EOTech w/ 2 MOA dots
+		002 - EOTech w/ 2nd MOA dot
 		003 - EOTech segmented
 		004 - EBR CQB
 		005 - Chevron
-		006 - NcStar
+		006 - NcStar Cross
 		007 - Lua logo
+		008 - Small Dot
+		009 - Tiny Dot
 	-->
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_blue_il" force="true" load="true"/>

@@ -13290,7 +13290,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.ak12.stats_modifiers = nil
 		self.ak12.panic_suppression_chance = 0.05
+		self.ak12.timers.reload_empty = 2.55
 		self.ak12.timers.reload_exit_empty = 0.55
+		self.ak12.timers.reload_not_empty = 1.5
 		self.ak12.timers.reload_exit_not_empty = 0.75
 	end
 

@@ -22901,7 +22901,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_snp_siltstone_npc.uses_parts = deep_clone(self.wpn_fps_snp_siltstone.uses_parts)
 	end
 
-	if self.parts.wpn_fps_upg_sks_mag_fixed10 then
+	if self.parts.wpn_fps_upg_sks_mag_fixed10 then --Pawcio's SKS
 		self.parts.wpn_fps_upg_sks_mag_fixed10.supported = true
 		self.parts.wpn_fps_upg_sks_mag_fixed10.has_description = nil
 		self.parts.wpn_fps_upg_sks_mag_fixed10.desc_id = "bm_wp_upg_m_sksclip"
@@ -23247,7 +23247,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_7drum.stats.concealment = -3
 		self.parts.wpn_fps_upg_m_7drum.stats.reload = -4
 		self.parts.wpn_fps_upg_m_7drum.custom_stats = { ads_speed_mult = 1.075 }
-
 	end
 
 	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets/Tacticals
@@ -23350,6 +23349,43 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_pis_m6d_npc.uses_parts = deep_clone(self.wpn_fps_pis_m6d.uses_parts)
 	end
 
+	if self.parts.wpn_fps_ass_ak12_bolt then --Pawcio's KF2 AK-12 (AK-200)
+		self.parts.wpn_fps_upg_ak12_vertgrip_tact.supported = true
+		self.parts.wpn_fps_upg_ak12_vertgrip_tact.stats = { value = 0 }
+
+		self.parts.wpn_fps_upg_ak12_barrel_long.supported = true
+		self.parts.wpn_fps_upg_ak12_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_ak12_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_ak12_barrel_med.supported = true
+		self.parts.wpn_fps_upg_ak12_barrel_med.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_upg_ak12_barrel_med.custom_stats = deep_clone(barrels.short_b1_stats)
+
+		self.parts.wpn_fps_upg_ak12_barrel_short.supported = true
+		self.parts.wpn_fps_upg_ak12_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_ak12_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.parts.wpn_fps_upg_ak12_stock_ext.supported = true
+		self.parts.wpn_fps_upg_ak12_stock_ext.stats = {
+			value = 0,
+			spread = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_upg_ak12_mag_assist.supported = true
+		self.parts.wpn_fps_upg_ak12_mag_assist.stats = deep_clone(self.parts.wpn_fps_m4_upg_m_quick.stats)
+		self.parts.wpn_fps_upg_ak12_mag_assist.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ak12_mag_ext.supported = true
+		self.parts.wpn_fps_upg_ak12_mag_ext.stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
+		}
+		self.parts.wpn_fps_upg_ak12_mag_ext.custom_stats = { ads_speed_mult = 1.05 }
+
+	end
 
 
 --Resmod Custom Weapon stuff

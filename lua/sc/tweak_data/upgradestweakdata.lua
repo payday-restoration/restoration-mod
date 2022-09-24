@@ -1466,7 +1466,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.melee_to_hot_data = {
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
-		tick_time = 2,
+		tick_time = 1,
 		total_ticks = 5,
 		max_stacks = 5,
 		stacking_cooldown = 0.1,
@@ -1536,7 +1536,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		tick_time = 1,
 		total_ticks = 3,
 		max_stacks = 5,
-		stacking_cooldown = 0.5,
+		stacking_cooldown = 0.75,
 		add_stack_sources = {
 			bullet = true,
 			explosion = true,
@@ -1571,7 +1571,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.dodge_to_hot_data = {
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
-		tick_time = 2,
+		tick_time = 1,
 		total_ticks = 5,
 		max_stacks = 67,
 		stacking_cooldown = 0.0,

@@ -102,7 +102,9 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 
 		self._unit:contour():remove("deployable_active")
 		if owner == managers.network:session():local_peer():id() then
-			self._unit:interaction():set_tweak_data("start_sentrygun_repairmode")
+			if self._unit.interaction and self._unit:interaction().set_tweak_data then
+				self._unit:interaction():set_tweak_data("start_sentrygun_repairmode")
+			end
 			self._unit:contour():add("deployable_disabled")
 		end
 	else

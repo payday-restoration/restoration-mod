@@ -3702,6 +3702,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m590.override_mod_type_name = {
 		["lower_reciever"] = "whole_receiver"
 	}
+	self.p90.override_mod_type_name = {
+		["lower_reciever"] = "stock"
+	}
+	self.m1928.override_mod_type_name = {
+		["foregrip"] = "vertical_grip"
+	}
 
 	self.c96.uses_clip = true
 	self.mosin.uses_clip = true
@@ -5882,8 +5888,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.desc_id = "bm_ap_weapon_peacemaker_sc_desc"
 				self.peacemaker.AMMO_MAX = 20
 				self.peacemaker.kick = self.stat_info.kick_tables.right_kick
+				self.peacemaker.fire_mode_data.fire_rate = 0.352941
+				self.peacemaker.fire_rate_multiplier = 2.5
 				self.peacemaker.BURST_FIRE = 6
-				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.35
+				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.2352941
 				self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.peacemaker.supported = true
 				self.peacemaker.ads_speed = 0.240
@@ -5908,6 +5916,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.peacemaker.stats_modifiers = nil
 				self.peacemaker.panic_suppression_chance = 0.05
+				self.peacemaker.object_damage_mult = 2
 				self.peacemaker.armor_piercing_chance = 1
 				self.peacemaker.can_shoot_through_enemy = true
 				self.peacemaker.can_shoot_through_wall = true
@@ -5916,8 +5925,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.timers.shotgun_reload_first_shell_offset = 0.5
 				self.peacemaker.timers.shotgun_reload_exit_empty = 0.7
 				self.peacemaker.timers.shotgun_reload_exit_not_empty = 0.7
-				self.peacemaker.fire_mode_data.fire_rate = 0.3
-				self.peacemaker.fire_rate_multiplier = 2.25
 
 
 
@@ -5980,7 +5987,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.hailstorm.stats_modifiers = nil
-				self.hailstorm.object_damage_mult = 0.5
+				self.hailstorm.object_damage_mult = 0.75
 				self.hailstorm.reload_speed_multiplier = 0.85
 				self.hailstorm.panic_suppression_chance = 0.05
 				self.hailstorm.timers.reload_exit_empty = 0.08
@@ -7441,14 +7448,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.supported = true
 				self.amcar.ads_speed = 0.320
 				self.amcar.damage_falloff = {
-					start_dist = 1800,
-					end_dist = 5800,
+					start_dist = 2100,
+					end_dist = 6000,
 					min_mult = 0.5
 				}
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 80,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -7460,8 +7467,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.amcar.stats_modifiers = nil
-				self.amcar.timers.reload_not_empty = 2.10
-				self.amcar.timers.reload_empty = 2.9 		
+				self.amcar.timers.reload_not_empty = 2.1
+				self.amcar.timers.reload_empty = 2.85
 				self.amcar.timers.reload_exit_empty = 0.4
 				self.amcar.timers.reload_exit_not_empty = 0.5
 				if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
@@ -7748,7 +7755,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flint.AMMO_MAX = 150
 				self.flint.CLIP_AMMO_MAX = 30
 				self.flint.BURST_FIRE = 2
-				--self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.42857142857		
+				self.flint.BURST_DELAY = 0.08
 				self.flint.ADAPTIVE_BURST_SIZE = false									
 				self.flint.fire_mode_data.fire_rate = 0.08571428571
 				self.flint.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -10037,7 +10044,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b682.timers.reload_exit_not_empty = 0.9
 
 			--Breaker 12g (Model 1887)
-				self.boot.name_id = "bm_menu_sc_boot"
 				self.boot.desc_id = "bm_menu_sc_boot_desc"
 				self.boot.has_description = true
 				self.boot.AMMO_MAX = 40
@@ -10467,8 +10473,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.arblast.stats_modifiers = {damage =  4}
 				self.arblast.timers.reload_exit_empty = 0.9
 				self.arblast.timers.reload_exit_not_empty = 0.9
-				self.arblast.timers.reload_not_empty = 3.1
-				self.arblast.timers.reload_empty = 3.1
+				self.arblast.timers.reload_not_empty = 2.8
+				self.arblast.timers.reload_empty = 2.8
 
 			--Plainsrider bow.
 				self.plainsrider.upgrade_blocks = {
@@ -10647,7 +10653,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						"clip_ammo_increase"
 					}
 				}		
-				self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
+				self.gre_m79.desc_id = "bm_w_gre_m79_sc_desc"
 				self.gre_m79.has_description = true
 				self.gre_m79.fire_mode_data.fire_rate = 1.2
 				self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
@@ -13246,6 +13252,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g36k.sounds = deep_clone(self.g36.sounds)
 		--self.g36k.sounds.fire_single2 = "g36k_fire"
 		self.g36k.panic_suppression_chance = 0.05
+	end
+
+
+	if self.ak12 then --Pawcio's KF2 AK-12 (AK-200 Prototype)	
+		self.ak12.recategorize = { "light_ar" }
+		self.ak12.damage_type = "assault_rifle"
+		self.ak12.tactical_reload = 1
+		self.ak12.warsaw = true
+		self.ak12.AMMO_MAX = 150
+		self.ak12.CLIP_AMMO_MAX = 30
+		self.ak12.BURST_FIRE = 3
+		self.ak12.BURST_FIRE_RATE_MULTIPLIER = 1.6666666		
+		self.ak12.ADAPTIVE_BURST_SIZE = false									
+		self.ak12.fire_mode_data.fire_rate = 0.1
+		self.ak12.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.ak12.supported = true
+		self.ak12.ads_speed = 0.340
+		self.ak12.damage_falloff = {
+			start_dist = 2600,
+			end_dist = 5100,
+			min_mult = 0.5
+		}
+		self.ak12.stats = {
+			damage = 24,
+			spread = 81,
+			recoil = 84,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 22,
+			suppression = 10,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 20
+		}
+		self.ak12.stats_modifiers = nil
+		self.ak12.panic_suppression_chance = 0.05
+		self.ak12.timers.reload_exit_empty = 0.55
+		self.ak12.timers.reload_exit_not_empty = 0.75
 	end
 
 	if self.scarl then --Pawcio's SCAR-L

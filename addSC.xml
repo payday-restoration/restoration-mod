@@ -1220,42 +1220,42 @@
 		006 - NcStar
 		007 - Lua logo
 	-->
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_il" force="true"/> 
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_yellow_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_blue_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_green_il" force="true"/>
-	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_yellow_il" force="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_il" force="true" load="true"/> 
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_002_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_003_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_004_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_005_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_006_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_007_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_008_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_yellow_il" force="true" load="true"/>
 	
 	<!--Gold AK shit-->
 	<!--KILL ME -DMC-->

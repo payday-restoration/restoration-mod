@@ -693,7 +693,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._has_big_scope = true
 			end
 			if stats.sks_clip then
-				self:weapon_tweak_data().timers.reload_exit_not_empty = 1.2
+				if self:weapon_tweak_data().timers then
+					self:weapon_tweak_data().timers.reload_exit_not_empty = 1.2
+				end
 				self:weapon_tweak_data().tactical_reload = nil
 				self:ammo_base():weapon_tweak_data().tactical_reload = nil
 			end

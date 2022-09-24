@@ -2046,8 +2046,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		spread = 10
 	}
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
-		falloff_start_mult = 1,
-		falloff_end_mult = 1
+		rof_mult = 0.85,
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15
 	}
 	self.parts.wpn_fps_upg_i_singlefire.perks = {
 		"fire_mode_single"
@@ -2071,8 +2072,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		recoil = 6
 	}
 	self.parts.wpn_fps_upg_i_autofire.custom_stats = {
-		falloff_start_mult = 1,
-		falloff_end_mult = 1
+		falloff_start_mult = 0.85,
+		falloff_end_mult = 0.85
 	}			
 	self.parts.wpn_fps_upg_i_autofire.perks = {
 		"fire_mode_auto"

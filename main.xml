@@ -77,6 +77,7 @@
 		<hook file="sc/units/props/buffballoon.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/units/props/balloondamage.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/units/props/missiondoor.lua" source_file="lib/units/props/missiondoor"/>
+	    	<hook file="sc/units/props/smalllootbase.lua" source_file="lib/units/props/smalllootbase"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
@@ -213,6 +214,7 @@
 		<hook file="sc/units/props/timergui.lua" source_file="lib/units/props/timergui"/>
 		<hook file="sc/units/props/texttemplatebase.lua" source_file="lib/units/props/texttemplatebase"/>		
 		<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
+	    	<hook file="sc/units/pickups/gageassignmentbase.lua" source_file="lib/units/pickups/gageassignmentbase"/>
 		<hook file="sc/player_actions/skills/playeractiondamagecontrol.lua" source_file="lib/player_actions/skills/playeractiondamagecontrol"/>
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>

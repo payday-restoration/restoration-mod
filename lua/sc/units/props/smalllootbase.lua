@@ -1,5 +1,5 @@
-Hooks:PreHook(SmallLootBase, "take", "promod_take", function(self)
-    if not self._empty and not Network:is_server() then
+Hooks:PreHook(SmallLootBase, "take", "res_take", function(self)
+	if not self._empty and not Network:is_server() then
 		self:_set_empty() -- hide on pickup
 	end
 end)

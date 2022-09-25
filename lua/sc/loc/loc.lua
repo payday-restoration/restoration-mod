@@ -1276,6 +1276,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--USP 
 		["bm_w_usp"] = "Interceptor-45",
 		["bm_usp_sc_desc"] = "S&G's above average performer excels in damage, capacity and range.",
+		["bm_w_x_usp"] = "Akimbo Interceptor-45s",
 		["bm_x_usp_sc_desc"] = "A pair of S&G's pistols for when you really need to send a message.",
 		--Model 54 
 		["bm_w_type54"] = "CC-33",

@@ -8767,6 +8767,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		overheat_pen = 4, 
 		regen_rate_overheat = 4.5, 
 		rof_mult = 0.52083,
+		armor_piercing_override = 0.2,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25
 	}
@@ -8940,18 +8941,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	self.parts.wpn_fps_pis_c96_nozzle.custom_stats = { 
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		regen_ammo_time = 1.25, 
-		regen_rate = 4,
+		regen_ammo_time = 1.5, 
+		regen_rate = 3,
 		overheat_pen = 2, 
 		regen_rate_overheat = 2,
-		rof_mult = 0.5,
+		rof_mult = 0.35,
 		falloff_start_mult = 1.25,
-		falloff_end_mult = 1.25
+		falloff_end_mult = 1.25,
+		armor_piercing_override = 0.8
 
 	}
 	self.parts.wpn_fps_pis_c96_nozzle.forbids = {"wpn_fps_pis_c96_m_extended"}
 	self.parts.wpn_fps_pis_c96_nozzle.sub_type = nil--"silencer"
-	self.parts.wpn_fps_pis_c96_nozzle.perks = nil--{"silencer"}
+	self.parts.wpn_fps_pis_c96_nozzle.perks = { "fire_mode_single" }
 	
 	--Barrel Sight 44
 	self.parts.wpn_fps_pis_c96_sight.pcs = {}
@@ -9040,10 +9042,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		regen_rate = 6, 
 		overheat_pen = 2,
 		regen_rate_overheat = 3,
-		rof_mult = 0.8181818,
+		rof_mult = 0.7272727,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25,
-		armor_piercing_add = 0.5
+		armor_piercing_override = 0.5
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.sub_type = nil
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = nil --{"silencer"}
@@ -16179,10 +16181,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 		value = 9,
-		recoil = -14
+		recoil = -18
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
-		armor_piercing_add = 1,
+		armor_piercing_override = 1,
 		can_shoot_through_shield = true,
 		rof_mult = 0.666666,
 		ads_speed_mult = 1.15,

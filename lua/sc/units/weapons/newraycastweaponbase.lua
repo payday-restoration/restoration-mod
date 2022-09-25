@@ -652,8 +652,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._can_shoot_through_shield = true
 				self:weapon_tweak_data().can_shoot_through_shield = true
 			end
-			if stats.armor_piercing_add then
-				self:weapon_tweak_data().armor_piercing_chance = 1
+			if stats.armor_piercing_override then
+				self:weapon_tweak_data().armor_piercing_chance = stats.armor_piercing_override
 			end
 			if stats.rof_mult then
 				self._rof_mult = self._rof_mult * stats.rof_mult

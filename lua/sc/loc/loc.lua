@@ -1287,7 +1287,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_c96"] = "Broomstick",
 		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
-		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.25s##\nRecharge rate: #{skill_color}#4/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
+		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.5s##\nRecharge rate: #{skill_color}#3/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 		--Sub2000
 		["bm_w_sub2000"] = "Cavity .40",
 		["bm_sub2000_sc_desc"] = "Pistol carbine of questionable manufacturing quality. Tiny pistol bullets hit a lot harder when coming out of a longer barrel and its folding capability makes for decent concealment.",	

@@ -14633,20 +14633,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.object_damage_mult = 3
 				elseif weap.damage_type == "sniper" then
 					weap.object_damage_mult = 1.25
-				elseif weap.damage_type == "pdw" then
-					weap.object_damage_mult = 1.25
 				elseif weap.damage_type == "heavy_pistol" then
+					weap.object_damage_mult = 1.25
+				elseif weap.damage_type == "pdw" then
 					weap.object_damage_mult = 1.25
 				elseif weap.damage_type == "shotgun" then
 					weap.object_damage_mult = 0.75
-					weap.object_damage_mult_single_ray = 1.25
-					if damage_type_single_ray == "anti_materiel" then
-						weap.object_damage_mult_single_ray = 3
-					end
 				elseif weap.damage_type == "flamethrower" then
 					weap.object_damage_mult = 0.25
 				else
 					--weap.object_damage_mult = 1
+				end
+				if weap.object_damage_mult_single_ray == "sniper" then
+					weap.object_damage_mult_single_ray = 1.25
+				elseif weap.damage_type_single_ray == "anti_materiel" then
+					weap.object_damage_mult_single_ray = 3
 				end
 			end
 	

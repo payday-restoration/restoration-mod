@@ -811,26 +811,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_melee_halloween_sword"] = "Headless Bulldozer's Sword",
 		["menu_l_global_value_halloween_sword"] = "This is a Halloween 2013 item!",
 		
-		--S&W .500
-		["bm_w_shatters_fury"] = "Phoenix .500 Revolver",
-		
-		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
-		
-		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
-		
-		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
-
 		["menu_l_global_value_shatters_fury"] = "This is a VERITAS item!",
-		
-		--MK-23
-		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
-		["bm_w_socom"] = "Anubis .45 Pistol",
-		["bm_w_x_socom"] = "Akimbo Anubis .45's",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing #{skill_color}#$BTN_GADGET##",
 
 		--Ranted NMH
 		["heist_no_mercy_ranted_name"] = "No Mercy",
@@ -1275,6 +1256,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--socom deez nuts--
 		["bm_w_socom"] = "Anubis .45",
 		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing #{skill_color}#$BTN_GADGET##",
 		["bm_w_x_socom"] = "Akimbo Anubis .45s",
 		--Crosskill
 		["bm_w_colt_1911"] = "Crosskill Operator II",
@@ -1300,7 +1283,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_x_type54"] = "Akimbo CC-33s",
 		["bm_x_type54_sc_desc"] = "A one-two punch that can turn into a one-two-three-four punch.",		
 		--Broomstick--
-		["bm_w_c96"] = "\"Broomstick",
+		["bm_w_c96"] = "Broomstick",
 		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
 		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
 		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.25s##\nRecharge rate: #{skill_color}#4/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
@@ -1341,6 +1324,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--RUS-12
 		["bm_w_rsh12"] = "RUS-12",
 		["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		--S&W .500
+		["bm_w_shatters_fury"] = "Phoenix .500",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
+		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC",
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan pierce body armor, enemies, shields and thin walls.##",

@@ -4,6 +4,8 @@ function GageAssignmentBase:sync_pickup(peer_id)
 		return self:consume()
 	end
 
+	peer_id = peer_id or 1
+
 	managers.gage_assignment:on_unit_interact(self._unit, self._assignment)
 	self:show_pickup_msg(peer_id)
 

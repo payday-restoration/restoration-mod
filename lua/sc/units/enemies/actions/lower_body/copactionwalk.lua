@@ -717,11 +717,13 @@ function CopActionWalk:update(t)
 			mrot_slerp(rot_new, self._curve_path_end_rot, self._nav_link_rot or self._end_rot, 1 - math_min(1, mvec3_dis_no_z(self._last_pos, self._footstep_pos) / 140))
 		else
 			local wanted_u_fwd = tmp_vec1
+			local rotate_mult = self._common_data.char_tweak.rotation_speed or 3
 
 			mvec3_set(wanted_u_fwd, move_dir_norm)
 			mvec3_rot(wanted_u_fwd, self._walk_side_rot[wanted_walk_dir])
 			mrot_lookat(rot_new, wanted_u_fwd, math_up)
-			mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 3))
+					 
+			mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * rotate_mult))
 		end
 
 		self._ext_movement:set_rotation(rot_new)
@@ -901,11 +903,12 @@ function CopActionWalk:_upd_start_anim(t)
 
 			if not self._end_of_curved_path then
 				local wanted_u_fwd = tmp_vec1
+				local rotate_mult = self._common_data.char_tweak.rotation_speed or 3
 
 				mvec3_dir(wanted_u_fwd, self._common_data.pos, self._curve_path[self._curve_path_index + 1])
 				mvec3_rot(wanted_u_fwd, self._walk_side_rot[self._start_run_straight])
 				mrot_lookat(tmp_rot1, wanted_u_fwd, math_up) -- don't think z matters here at all
-				mrot_slerp(tmp_rot1, self._common_data.rot, tmp_rot1, math_min(1, dt * 3))
+				mrot_slerp(tmp_rot1, self._common_data.rot, tmp_rot1, math_min(1, dt * rotate_mult))
 
 				self._ext_movement:set_rotation(tmp_rot1)
 			end
@@ -1458,7 +1461,9 @@ function CopActionWalk:_upd_stop_anim(t)
 	end
 
 	mrot_lookat(rot_new, face_fwd, math_up)
-	mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * 3))
+	local rotate_mult = self._common_data.char_tweak.rotation_speed or 3
+	
+	mrot_slerp(rot_new, self._common_data.rot, rot_new, math_min(1, dt * rotate_mult))
 
 	self._ext_movement:set_rotation(rot_new)
 

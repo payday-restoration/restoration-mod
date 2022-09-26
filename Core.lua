@@ -251,7 +251,6 @@ function restoration:Init()
 		"rat", --Cook Off
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
-		"ranc", --Midland Ranch
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
 		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
 		"crojob3_night", --Ditto
@@ -286,6 +285,7 @@ function restoration:Init()
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"fex", --Buluc's Mansion	
+		"ranc", --Midland Ranch
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",

@@ -525,6 +525,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.use_animation_on_fire_damage = false
 	self.meme_man_shield.surrender = nil
 	self.meme_man_shield.is_special = true
+	self.meme_man_shield.rotation_speed = 0.75
 	self.meme_man_shield.no_asu = true
 	self.meme_man_shield.unintimidateable = true
 	self.meme_man_shield.allowed_poses = {crouch = true}
@@ -2369,6 +2370,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.allowed_stances = {cbt = true}
 	self.shield.allowed_poses = {crouch = true}
 	self.shield.always_face_enemy = true
+	self.shield.rotation_speed = 0.75
 	self.shield.move_speed = presets.move_speed.fast
 	self.shield.no_run_start = true
 	self.shield.no_run_stop = true
@@ -2453,6 +2455,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.spawn_sound_event = "shield_identification"
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
+	self.phalanx_minion.rotation_speed = 0.75
 	self.phalanx_minion.no_asu = true
 	self.phalanx_minion.speech_prefix_p1 = "fug"
 	self.phalanx_minion.speech_prefix_p2 = nil
@@ -2504,6 +2507,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
 	self.phalanx_vip.is_special = true
+	self.phalanx_vip.rotation_speed = 0.75
 	self.phalanx_vip.no_asu = true
 	self.phalanx_vip.custom_voicework = nil
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
@@ -4876,6 +4880,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.chatter = presets.enemy_chatter.no_chatter
 	presets.base.crouch_move = true
 	presets.base.shooting_death = true
+	presets.base.rotation_speed = 3
 	presets.base.suspicious = true
 	presets.base.surrender_break_time = {20, 30}
 	presets.base.submission_max = {45, 60}

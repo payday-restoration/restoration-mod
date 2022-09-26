@@ -659,7 +659,9 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					elseif fire_mode == "burst" then
 						fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 					elseif fire_mode == "volley" then
-						fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+						if self._shooting then
+							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+						end
 					end
 
 					if weap_base.manages_steelsight and weap_base:manages_steelsight() then
@@ -769,6 +771,10 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						elseif weap_base.akimbo and not weap_base:weapon_tweak_data().allow_akimbo_autofire or fire_mode == "single" or fire_mode == "burst" then
 							self._ext_network:send("shot_blank", impact, 0)
 						end
+						
+						if fire_mode == "volley" then
+							self:_check_stop_shooting()
+						end
 					elseif fire_mode == "single" then
 						new_action = false
 					elseif fire_mode == "burst" then
@@ -800,6 +806,7 @@ function PlayerStandard:_check_stop_shooting()
 		local weap_base = self._equipped_unit:base()
 		local fire_mode = weap_base:fire_mode()
 		local is_auto_fire_mode = fire_mode == "auto"
+		local is_volley_fire_mode = fire_mode == "volley"
 
 		if is_auto_fire_mode and (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) then
 			self._ext_network:send("sync_stop_auto_fire_sound", 0)
@@ -811,11 +818,10 @@ function PlayerStandard:_check_stop_shooting()
 		if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		else 
-			if is_auto_fire_mode and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
+			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
 				self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
 			end
 		end
-
 		self._shooting = false
 		self._shooting_t = nil
 	end

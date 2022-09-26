@@ -31,6 +31,17 @@
 		</search>
 		<target mode="replace"/>
 	</tweak>
+	<!-- Fix run flag getting set on sprint and causing move anim transition issues in copactionwalk -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/move/run/sprint"/>
+			<keys/>
+		</search>
+		<target mode="attach">
+			<key at="enter" set_extension="anim_data" extension_key="run" extension_value="false"/>
+		</target>
+	</tweak>
 	<!-- Navlink to crouch exit displacement fix -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -424,6 +435,27 @@
 		</search>
 		<target mode="attributes">
 			<attr name="name" value="std/stand/still/idle/look"/>
+		</target>
+	</tweak>
+	<!-- Upper body blend fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/empty"/>
+			<from_group name="upper_body/stand_reload"/>
+		</search>
+		<target mode="replace">
+			<from name="upper_body/stand_reload" blend="0"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/empty"/>
+			<from_group name="upper_body/crouch_reload"/>
+		</search>
+		<target mode="replace">
+			<from name="upper_body/crouch_reload" blend="0"/>
 		</target>
 	</tweak>
 	<!-- Fix recoil flag not being set on crouch autofire -->

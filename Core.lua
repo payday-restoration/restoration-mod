@@ -222,7 +222,8 @@ function restoration:Init()
 		"santas_hardware_store", --Hardware Store but Xmas
 		"ascension_III", --Ascension (project eclipse 3)
 		"RogueCompany", --Rogue Company
-		"battlearena" --Five-G
+		"battlearena", --Five-G
+		"Security_Avenue" --GenSec HQ Day 1
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {

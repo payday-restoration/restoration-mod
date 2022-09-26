@@ -1352,7 +1352,7 @@ end
 
 function CopActionWalk:_adjust_move_anim(side, speed)
 	local anim_data = self._ext_anim
-	if anim_data[speed] and anim_data["move_" .. side] then
+	if anim_data.haste == speed and anim_data["move_" .. side] then
 		return
 	end
 

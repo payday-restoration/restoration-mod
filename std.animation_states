@@ -31,17 +31,6 @@
 		</search>
 		<target mode="replace"/>
 	</tweak>
-	<!-- Fix run flag getting set on sprint and causing move anim transition issues in copactionwalk -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/stand/move/run/sprint"/>
-			<keys/>
-		</search>
-		<target mode="attach">
-			<key at="enter" set_extension="anim_data" extension_key="run" extension_value="false"/>
-		</target>
-	</tweak>
 	<!-- Navlink to crouch exit displacement fix -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>

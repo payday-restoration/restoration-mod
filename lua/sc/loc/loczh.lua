@@ -241,6 +241,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSCDescID"] = "启用或禁用恢复mod的完全游戏更改。切换此选项将自动退出游戏，以防止存档损坏。",
 		["RestorationModHolidayTitleID"] = "节日活动",
 		["RestorationModHolidayDescID"] = "开启或关闭 节日活动 对大修的影响",
+		["RestorationModCloakerTurnTitleID"] = "Cloaker Kick Camera Turn",
+		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",			
 		["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
 		["RestorationModRestoreHitFlashDescID"] = "启用或禁用恢复Mod的受击闪屏",	
 		["RestorationModNotifyTitleID"] = "功能及特色提示",

@@ -323,13 +323,13 @@ function ActionSpooc:_send_client_stop()
 end
 
 function ActionSpooc:on_exit()
-	if self._unit:character_damage():dead() then
-		local detect_stop_sound = self:get_sound_event("detect_stop")
+	local detect_stop_sound = self:get_sound_event("detect_stop")
 
-		if detect_stop_sound then
-			self._unit:sound():play(detect_stop_sound)
-		end
-	elseif self._is_local and self._taunt_at_beating_played and not self._unit:sound():speaking(TimerManager:game():time()) then
+	if detect_stop_sound then
+		self._unit:sound():play(detect_stop_sound)
+	end
+	
+	if self._is_local and self._taunt_at_beating_played and not self._unit:sound():speaking(TimerManager:game():time()) then
 		self._unit:sound():say(self._taunt_after_assault, true, true)
 	end
 
@@ -456,7 +456,7 @@ function ActionSpooc:_start_sprint()
 		local detect_sound = self:get_sound_event("detect")
 
 		if detect_sound then
-			if self._ext_base._tweak_table == "spooc_titan" then
+			if self._common_data.char_tweak.charging_detect then
 				self._unit:sound():play(detect_sound)
 			end
 		end
@@ -512,6 +512,19 @@ function ActionSpooc:_upd_strike_first_frame(t)
 		self._ext_network:send("action_spooc_strike", mvec3_copy(self._common_data.pos), self._action_id)
 
 		self._nav_path[self._nav_index + 1] = mvec3_copy(self._common_data.pos)
+		
+		if restoration.Options:GetValue("OTHER/CloakerTurn") then
+			if self._target_unit:base().is_local_player then
+				local enemy_vec = mvector3.copy(self._common_data.pos)
+
+				mvector3.subtract(enemy_vec, self._target_unit:movement():m_pos())
+				mvector3.set_z(enemy_vec, 0)
+				mvector3.normalize(enemy_vec)
+				self._target_unit:camera():camera_unit():base():clbk_aim_assist({
+					ray = enemy_vec
+				})
+			end	
+		end
 	end
 
 	self._last_vel_z = 0
@@ -1705,7 +1718,9 @@ function ActionSpooc:_upd_flying_strike_first_frame(t)
 		local detect_sound = self:get_sound_event("detect")
 
 		if detect_sound then
-			self._unit:sound():play(detect_sound)
+			if self._common_data.char_tweak.jump_detect then
+				self._unit:sound():play(detect_sound)
+			end
 		end
 
 		self._ext_movement:set_cloaked(false)
@@ -1731,6 +1746,19 @@ function ActionSpooc:_upd_flying_strike_first_frame(t)
 	end
 
 	self._machine:set_speed(redir_result, speed_mul)
+	
+	if restoration.Options:GetValue("OTHER/CloakerTurn") then
+		if alive(self._target_unit) and self._target_unit:base().is_local_player then
+			local enemy_vec = mvector3.copy(self._common_data.pos)
+
+			mvector3.subtract(enemy_vec, self._target_unit:movement():m_pos())
+			mvector3.set_z(enemy_vec, 0)
+			mvector3.normalize(enemy_vec)
+			self._target_unit:camera():camera_unit():base():clbk_aim_assist({
+				ray = enemy_vec
+			})
+		end	
+	end
 
 	self:_set_updator("_upd_flying_strike")
 end

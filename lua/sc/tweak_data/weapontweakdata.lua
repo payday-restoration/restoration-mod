@@ -790,6 +790,10 @@ local job = Global.level_data and Global.level_data.level_id
 		self.m4_yellow_npc.alert_size = 2500
 		self.m4_yellow_npc.suppression = 2.6
 		self.m4_yellow_npc.FIRE_MODE = "auto"
+		
+		--Yellow AK used by Reaper Tasers
+		self.ak47_yellow_ass_npc = deep_clone(self.m4_yellow_npc)
+		self.ak47_yellow_ass_npc.sounds.prefix = "ak74_npc"		
 	end
 	
 	function WeaponTweakData:_init_data_ak47_npc()
@@ -14761,7 +14765,7 @@ end
 
 WeaponTweakData.clone__create_table_structure = WeaponTweakData._create_table_structure
 function WeaponTweakData:_create_table_structure()
-	self:clone__create_table_structure()
+	self:clone__create_table_structure()	
 	self.hk23_sc_npc = {
 		usage = "is_lmg",
 		anim_usage = "is_rifle",
@@ -14835,6 +14839,14 @@ function WeaponTweakData:_create_table_structure()
 	}
 	self.flamethrower_mk2_crew.usage = "flamethrower"
 	self.flamethrower_mk2_crew.anim_usage = "is_bullpup"	
+	
+	self.m4_yellow_npc = {
+		usage = "is_rifle_single_fire",
+		anim_usage = "is_rifle",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}	
 	--Crew shit below--
 	self.benelli_crew = {
 		usage = "is_shotgun_mag",

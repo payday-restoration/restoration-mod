@@ -225,6 +225,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSCDescID"] = "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
 		["RestorationModHolidayTitleID"] = "Святковi ефекти",
 		["RestorationModHolidayDescID"] = "Включаè або вимикаè святковi ефекти в модi.",
+		["RestorationModCloakerTurnTitleID"] = "Cloaker Kick Camera Turn",
+		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",			
 		["RestorationModRestoreHitFlashTitleID"] = "Спалах при отриманнi урону",
 		["RestorationModRestoreHitFlashDescID"] = "Включити або вимкнути спалах екрану при отриманнi урону зi старих версiй гри.",	
 		["RestorationModNotifyTitleID"] = "Увiдомлення",

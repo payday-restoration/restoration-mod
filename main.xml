@@ -509,6 +509,7 @@
 				<option type="bool" default_value="false" name="StopAllBots"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Holiday"/>
+				<option type="bool" default_value="false" name="CloakerTurn"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="WpnCat" values_tbl="restoration.weapon_categories"/>

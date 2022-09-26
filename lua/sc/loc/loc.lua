@@ -225,6 +225,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSCDescID"] = "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
 		["RestorationModHolidayTitleID"] = "Holiday Effects",
 		["RestorationModHolidayDescID"] = "Enable or disable Holiday effects for the overhaul.",
+		["RestorationModCloakerTurnTitleID"] = "Cloaker Kick Camera Turn",
+		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",		
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",	
 		["RestorationModNotifyTitleID"] = "Feature Notification",

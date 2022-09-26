@@ -604,6 +604,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
 	self.medic.is_special = true
+	self.medic.static_weapon_preset = true
 	self.medic.no_asu = true
 	self.medic.no_omnia_heal = true
 	table.insert(self._enemy_list, "medic")
@@ -640,6 +641,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.use_radio = "dsp_radio_russian"
 	self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 	self.medic_summers.is_special = true
+	self.medic_summers.static_weapon_preset = false
 	self.medic_summers.no_asu = true
 	self.medic_summers.do_omnia = true
 	self.medic_summers.follower = true
@@ -2183,6 +2185,9 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
+	self.spooc.charging_detect = true
+	self.spooc.jump_detect = true
+	self.spooc.static_weapon_preset = true
 	self.spooc.no_asu = true
 	self.spooc.kick_damage = 8.0 --Amount of damage dealt when cloakers hick players.
 	self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
@@ -2246,17 +2251,16 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster = deep_clone(self.spooc)	
 	self.spooc_gangster.tags = {"gangster", "spooc", "special"}	
 	if job == "mad" then
-	self.spooc_gangster.speech_prefix_p1 = "android"
-	self.spooc_gangster.speech_prefix_p2 = nil
-	self.spooc_gangster.speech_prefix_count = nil
+		self.spooc_gangster.speech_prefix_p1 = "android"
+		self.spooc_gangster.speech_prefix_p2 = nil
+		self.spooc_gangster.speech_prefix_count = nil
 	else
-	self.spooc_gangster.speech_prefix_p1 = "lt"
-	self.spooc_gangster.speech_prefix_p2 = nil
-	self.spooc_gangster.speech_prefix_count = 2
-end	
+		self.spooc_gangster.speech_prefix_p1 = "lt"
+		self.spooc_gangster.speech_prefix_p2 = nil
+		self.spooc_gangster.speech_prefix_count = 2
+	end	
 	self.spooc_gangster.HEALTH_INIT = 24
 	self.spooc_gangster.damage.hurt_severity = presets.hurt_severities.elite
-	self.spooc_gangster.DAMAGE_CLAMP_BULLET = 3
 	self.spooc_gangster.headshot_dmg_mul = 3.4	
 	self.spooc_gangster.no_omnia_heal = true
 	self.spooc_gangster.dodge = presets.dodge.veteran	
@@ -2266,10 +2270,10 @@ end
 	self.spooc_gangster.priority_shout = nil
 	self.spooc_gangster.bot_priority_shout = nil
 	if job == "pent" then
-	self.spooc_gangster.melee_weapon = "kf_katana"	
+		self.spooc_gangster.melee_weapon = "kf_katana"	
 	else 
-	self.spooc_gangster.melee_weapon = "fists"
-end
+		self.spooc_gangster.melee_weapon = "fists"
+	end
 	self.spooc_gangster.kick_damage = 12.0
 	self.spooc_gangster.no_arrest = true
 	self.spooc_gangster.no_retreat = true
@@ -2361,6 +2365,8 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.can_be_tased = true
 	self.shadow_spooc.static_dodge_preset = true
 	self.shadow_spooc.is_special = true
+	self.shadow_spooc.charging_detect = true
+	self.shadow_spooc.jump_detect = true	
 	self.shadow_spooc.no_asu = true
 	self.shadow_spooc.heal_cooldown = 11.25
 	self.shadow_spooc.min_obj_interrupt_dis = 800
@@ -5426,6 +5432,204 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}		
 	}
+	
+	--Single shot only rifles, used for specific enemies
+	presets.weapon.normal.is_rifle_single_fire = deep_clone(presets.weapon.normal.is_rifle)
+	presets.weapon.normal.is_rifle_single_fire.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.8},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.2, 0.5},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2200,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.95,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2300,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.9,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},			
+		{
+			r = 2400,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.85,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2500,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.8,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2600,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.75,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2700,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.7,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2800,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.65,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2900,
+			acc = {0.2, 0.5},
+			dmg_mul = 0.6,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},			
+		{
+			r = 3000,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.55,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 3100,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3200,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.45,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 3200,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.4,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}		
+	}
+	
 	presets.weapon.normal.is_bullpup = presets.weapon.normal.is_rifle
 	presets.weapon.normal.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.normal.is_shotgun_pump.focus_delay = 10
@@ -7435,6 +7639,204 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	
+	--Single shot only rifles, used for specific enemies
+	presets.weapon.good.is_rifle_single_fire = deep_clone(presets.weapon.good.is_rifle)
+	presets.weapon.good.is_rifle_single_fire.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.85, 0.9},
+			dmg_mul = 1.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 500,
+			acc = {0.75, 0.9},
+			dmg_mul = 1.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2200,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.425,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2300,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.35,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2400,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.275,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2500,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2600,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.125,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2700,
+			acc = {0.3, 0.5},
+			dmg_mul = 1.05,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2800,
+			acc = {0.3, 0.5},
+			dmg_mul = 0.975,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2900,
+			acc = {0.3, 0.5},
+			dmg_mul = 0.9,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},			
+		{
+			r = 3000,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.825,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 3100,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.75,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3200,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.675,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3300,
+			acc = {0.01, 0.35},
+			dmg_mul = 0.6,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}	
+	
 	presets.weapon.good.is_bullpup = presets.weapon.good.is_rifle
 	presets.weapon.good.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.good.is_shotgun_pump.focus_delay = 5
@@ -9410,6 +9812,204 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	
+	--Single shot only rifles, used for specific enemies
+	presets.weapon.expert.is_rifle_single_fire = deep_clone(presets.weapon.expert.is_rifle)
+	presets.weapon.expert.is_rifle_single_fire.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.9, 1.0},
+			dmg_mul = 2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 500,
+			acc = {0.7, 0.95},
+			dmg_mul = 2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.65, 0.8},
+			dmg_mul = 2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2000,
+			acc = {0.5, 0.7},
+			dmg_mul = 2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2200,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.9,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2300,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.8,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2400,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.7,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2500,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.6,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2600,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2700,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.4,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2800,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.3,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2900,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},			
+		{
+			r = 3000,
+			acc = {0.2, 0.4},
+			dmg_mul = 1.1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 3100,
+			acc = {0.2, 0.4},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3200,
+			acc = {0.2, 0.4},
+			dmg_mul = 0.9,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3300,
+			acc = {0.2, 0.4},
+			dmg_mul = 0.8,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}	
+	
 	presets.weapon.expert.is_bullpup = presets.weapon.expert.is_rifle
 	presets.weapon.expert.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_shotgun_pump.focus_delay = 2
@@ -11967,6 +12567,216 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}			
 	}
+	
+	--Single shot only rifles, used for specific enemies
+	presets.weapon.deathwish.is_rifle_single_fire = deep_clone(presets.weapon.deathwish.is_rifle)
+	presets.weapon.deathwish.is_rifle_single_fire.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.9, 1.0},
+			dmg_mul = 2.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 500,
+			acc = {0.7, 0.95},
+			dmg_mul = 2.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.65, 0.8},
+			dmg_mul = 2.5,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.6, 0.8},
+			dmg_mul = 2.3,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.5, 0.7},
+			dmg_mul = 2.3,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2200,
+			acc = {0.5, 0.7},
+			dmg_mul = 2.185,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2300,
+			acc = {0.5, 0.7},
+			dmg_mul = 2.07,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2400,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.955,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2500,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.84,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2600,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.725,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2700,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.61,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2800,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.495,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 2900,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.38,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},			
+		{
+			r = 3000,
+			acc = {0.2, 0.4},
+			dmg_mul = 1.265,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 3100,
+			acc = {0.2, 0.4},
+			dmg_mul = 1.15,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3200,
+			acc = {0.2, 0.4},
+			dmg_mul = 1.035,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},	
+		{
+			r = 3300,
+			acc = {0.2, 0.4},
+			dmg_mul = 0.92,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}			
+	}
+	
 	presets.weapon.deathwish.is_bullpup = presets.weapon.deathwish.is_rifle
 	presets.weapon.deathwish.is_smg.melee_dmg = enemy_melee_damage_deathwish
 	presets.weapon.deathwish.is_smg.FALLOFF = {

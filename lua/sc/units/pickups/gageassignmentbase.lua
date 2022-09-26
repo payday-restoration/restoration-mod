@@ -1,8 +1,12 @@
 -- Show pickup message and hide the unit instantly instead of waiting for response from host
 function GageAssignmentBase:sync_pickup(peer)
 	if self._picked_up then
-		return -- client picked it up but just after someone else did
-	elseif not managers.gage_assignment:is_unit_an_assignment(self._unit) then
+		return -- client picked it up but just after someone else did so it got synced back
+	end
+
+	self._picked_up = true
+
+	if not managers.gage_assignment:is_unit_an_assignment(self._unit) then
 		return self:consume()
 	end
 
@@ -23,7 +27,6 @@ function GageAssignmentBase:_pickup(unit)
 	end
 
 	self:sync_pickup(managers.network:session():local_peer())
-	self._picked_up = true
 
 	if Network:is_client() then
 		managers.network:session():send_to_host("sync_pickup", self._unit)

@@ -802,13 +802,14 @@ function PlayerStandard:_check_stop_shooting()
 	if self._shooting then
 		self._equipped_unit:base():stop_shooting()
 		self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
-		self:_end_action_charging_weapon()
 
 		local weap_base = self._equipped_unit:base()
 		local fire_mode = weap_base:fire_mode()
 		local is_auto_fire_mode = fire_mode == "auto"
 		local is_volley_fire_mode = fire_mode == "volley"
-
+		if is_volley_fire_mode then
+			self:_end_action_charging_weapon()
+		end
 		if is_auto_fire_mode and (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) then
 			self._ext_network:send("sync_stop_auto_fire_sound", 0)
 		end

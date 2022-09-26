@@ -7749,6 +7749,71 @@ else
 		is_captain = true
 	}	
 	
+	
+	--Sonicmod mutator unit categories
+	
+	self.unit_categories.Tank_Ben_Sonicmod = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				},					
+				russia = {
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				},
+				murkywater = {
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				},						
+				nypd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				}				
+			},
+			access = access_type_all,
+			special_type = "tank"
+		}
+	
+		self.unit_categories.Tank_Medic_Sonicmod = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
+				},					
+				russia = {
+					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
+				},
+				murkywater = {
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+				},						
+				nypd = {
+					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
+				}				
+			},
+			access = access_type_all,
+			special_type = "tank"
+		}
+	
 	--Skirmish only unit categories
 	
 	--FBI Light SWATs, for earlier waves
@@ -18452,6 +18517,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local captain_cooldown = 2700
 	local captain_min_diff = 0.5
 	local dozer_cooldown = 90
+	local dozer_sonicmodcooldown = 60
 	
 	local tsniperhobelow5_cooldown = 45
 	local tsniperhoabove5_cooldown = 30

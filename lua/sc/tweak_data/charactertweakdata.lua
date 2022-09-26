@@ -581,7 +581,11 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.access = "swat"
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
+	if restoration and restoration.sonic_mod then 
+	self.medic.rescue_hostages = true
+	else
 	self.medic.rescue_hostages = false
+	end
 	self.medic.no_arrest = true
 	if self:get_ai_group_type() == "murkywater" then
 	    self.medic.custom_voicework = "murky_medic"
@@ -1105,6 +1109,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	else	
 		self.weekend.yellow_blood = nil
 	end	
+	if restoration and restoration.sonic_mod then 
+	self.weekend.rescue_hostages = true
+	else
+	self.weekend.rescue_hostages = false
+	end
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")				
@@ -1169,6 +1178,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
 	self.weekend_lmg.yellow_blood = nil
+	if restoration and restoration.sonic_mod then 
+	self.weekend_lmg.rescue_hostages = true
+	else
+	self.weekend_lmg.rescue_hostages = false
+	end
 	if self:get_ai_group_type() == "murkywater" then
 		self.weekend_lmg.yellow_blood = true
 	else	
@@ -16958,8 +16972,10 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_city_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_2_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_3_sc")
+		table.insert(char_map.basic.list, "ene_city_swat_r870") --apperantly OVK didn't add him to char_map
 		table.insert(char_map.basic.list, "ene_city_heavy_g36_sc")
-		table.insert(char_map.basic.list, "ene_city_heavy_r870_sc")		
+		table.insert(char_map.basic.list, "ene_city_heavy_r870_sc")	
+		table.insert(char_map.basic.list, "ene_city_heavy_benelli_sc")
 		table.insert(char_map.basic.list, "ene_city_shield")
 		table.insert(char_map.basic.list, "ene_shield_gensec")		
 		table.insert(char_map.basic.list, "ene_sniper_3")
@@ -17118,6 +17134,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_city_r870",
 				"ene_zeal_medic",				
 				"ene_grenadier_1",				
 				"ene_zeal_sniper",
@@ -17129,7 +17146,8 @@ function CharacterTweakData:character_map()
 				"ene_zeal_fbi_m4",
 				"ene_zeal_fbi_mp5",
 				"ene_zeal_swat_heavy_sc",
-				"ene_zeal_swat_heavy_r870_sc"
+				"ene_zeal_swat_heavy_r870_sc",
+				"ene_zeal_swat_heavy_benelli_sc"
 			}
 		}
 	--drm
@@ -17196,6 +17214,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_city_r870",
 				"ene_bulldozer_1",
 				"ene_bulldozer_1_hard",
 				"ene_bulldozer_2",
@@ -17208,6 +17227,7 @@ function CharacterTweakData:character_map()
 				"ene_city_heavy_r870",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870",
+				"ene_zeal_swat_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_swat_heavy_1",
@@ -17257,6 +17277,7 @@ function CharacterTweakData:character_map()
 				"ene_fbi_swat_3",
 				"ene_fbi_heavy_1",
 				"ene_fbi_heavy_r870",
+				"ene_fbi_heavy_benelli",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_murky_shield_yellow",
@@ -17269,11 +17290,14 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
+				"ene_city_swat_r870",
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_city_r870",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
+				"ene_zeal_swat_heavy_benelli",
 				"ene_murky_fbi_tank_m249",
 				"ene_murky_fbi_tank_benelli",
 				"ene_murky_fbi_tank_medic",
@@ -17302,8 +17326,10 @@ function CharacterTweakData:character_map()
 				"ene_omnia_city",
 				"ene_omnia_city_2",
 				"ene_omnia_city_3",
+				"ene_omnia_city_r870",
 				"ene_omnia_heavy",
 				"ene_omnia_heavy_r870",
+				"ene_omnia_heavy_benelli",
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
@@ -17331,9 +17357,11 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
+				"ene_city_swat_r870",
 				"ene_shield_gensec",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870",
+				"ene_city_heavy_benelli",
 				"ene_sniper_3",
 				"ene_spook_1",
 				"ene_bulldozer_1",
@@ -17386,6 +17414,7 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
+				"ene_city_swat_r870",
 				"ene_bulldozer_3",
 				"ene_city_shield",
 				"ene_fbi_heavy_1",
@@ -17393,6 +17422,7 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870_sc",
+				"ene_city_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_swat_heavy_1",
@@ -17440,11 +17470,14 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_city_r870",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870_sc",
+				"ene_zeal_swat_heavy_benelli_sc",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
+				"ene_city_swat_r870",
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_fbi_swat_1",
@@ -17476,6 +17509,7 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870_sc",
+				"ene_city_heavy_benelli",
 				"ene_swat_heavy_1_sc",
 				"ene_swat_heavy_r870_sc",
 				"ene_spook_1",
@@ -17509,6 +17543,7 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870",
+				"ene_city_heavy_benelli",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_swat_1",
@@ -17523,6 +17558,7 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
+				"ene_city_swat_r870",
 				"ene_bulldozer_1_hard",
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
@@ -17533,8 +17569,10 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_city_r870",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
+				"ene_zeal_swat_heavy_benelli",
 				"ene_zeal_swat_shield",
 				"ene_drak_medic",
 				"ene_zeal_sniper",

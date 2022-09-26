@@ -14459,49 +14459,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
-	if difficulty_index <= 6 then
-		self.enemy_spawn_groups.FBI_spoocs = {
-			amount = {1, 1},
-			spawn = {
-				{
-					unit = "spooc",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.spooc,
-					rank = 1
-				}
+	self.enemy_spawn_groups.FBI_spoocs = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
 			}
 		}
-	elseif difficulty_index == 7 then
-		self.enemy_spawn_groups.FBI_spoocs = {
-			amount = {2, 2},
-			spawn = {
-				{
-					unit = "spooc",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.spooc,
-					rank = 1
-				}
-			}
-		}		
-	else
-		self.enemy_spawn_groups.FBI_spoocs = {
-			amount = {3, 3},
-			spawn = {
-				{
-					unit = "spooc",
-					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
-					tactics = self._tactics.spooc,
-					rank = 1
-				}
-			}
-		}	
-	end
+	}
 	
 	--Titan Snipers/US Marshal squads
 	--These guys shouldn't exist on lower difficulties
@@ -15562,7 +15532,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W5 = {
-		amount = {2, 2},
+		amount = {1, 1},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
@@ -15953,7 +15923,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W6 = {
-		amount = {2, 2},
+		amount = {1, 1},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
@@ -16343,7 +16313,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W7 = {
-		amount = {3, 3},
+		amount = {1, 1},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
@@ -16735,7 +16705,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W8 = {
-		amount = {3, 3},
+		amount = {1, 1},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
@@ -17125,7 +17095,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W9 = {
-		amount = {3, 3},
+		amount = {1, 1},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",

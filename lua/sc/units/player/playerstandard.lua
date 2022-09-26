@@ -771,7 +771,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						elseif weap_base.akimbo and not weap_base:weapon_tweak_data().allow_akimbo_autofire or fire_mode == "single" or fire_mode == "burst" then
 							self._ext_network:send("shot_blank", impact, 0)
 						end
-						
+
 						if fire_mode == "volley" then
 							self:_check_stop_shooting()
 						end
@@ -802,6 +802,7 @@ function PlayerStandard:_check_stop_shooting()
 	if self._shooting then
 		self._equipped_unit:base():stop_shooting()
 		self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
+		self._end_action_charging_weapon()
 
 		local weap_base = self._equipped_unit:base()
 		local fire_mode = weap_base:fire_mode()

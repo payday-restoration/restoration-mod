@@ -139,6 +139,8 @@
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
+	<mission			path="levels/narratives/locke/bph/world/world" force="true" unload="true"/> <!--Delayed the spawns and replaced scripted spawns with better Murkies-->
+	
 	<mission			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!--Adds Kung Fu Masters, more beat cops responding and possible captain encounter on Mayhem and above-->
 	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
@@ -154,6 +156,7 @@
 	<nav_data			path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
 	<mission			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
 
+	<mission			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/> <!--disabled most of the bridge spawns (all of nearby van escape)-->
 	<continent			path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
 	<continent			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->	
 	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->

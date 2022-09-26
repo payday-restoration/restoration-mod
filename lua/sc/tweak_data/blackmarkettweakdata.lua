@@ -3337,23 +3337,16 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.shawn.stats.charge_time = 1.05
 		self.melee_weapons.shawn.stats.range = 160
 		self.melee_weapons.shawn.stats.concealment = 29
-		--I'm really annoyed that we don't actually poke with it--
-		--We do now :^)
-		self.melee_weapons.poker.stats.min_damage = 6
-		self.melee_weapons.poker.stats.max_damage = 12.001
-		self.melee_weapons.poker.stats.min_damage_effect = 1.0
-		self.melee_weapons.poker.stats.max_damage_effect = 2.0
-		self.melee_weapons.poker.stats.charge_time = 1.6
-		self.melee_weapons.poker.stats.range = 180
-		self.melee_weapons.poker.stats.concealment = 27
+
 		--MotherFUCKER--	
 		self.melee_weapons.fork.stats.min_damage = 3
 		self.melee_weapons.fork.stats.max_damage = 6.001
 		self.melee_weapons.fork.stats.min_damage_effect = 0.5
 		self.melee_weapons.fork.stats.max_damage_effect = 1.0
-		self.melee_weapons.fork.stats.charge_time = 0.4
+		self.melee_weapons.fork.stats.charge_time = 0.25
 		self.melee_weapons.fork.stats.range = 170
 		self.melee_weapons.fork.stats.concealment = 28
+
 		--Affix bayonets guardsmen, be ready for blood!--
 		self.melee_weapons.bayonet.stats.min_damage = 3
 		self.melee_weapons.bayonet.stats.max_damage = 6.001
@@ -3375,17 +3368,29 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.pugio.stats.max_damage = 6.001
 		self.melee_weapons.pugio.stats.min_damage_effect = 0.6
 		self.melee_weapons.pugio.stats.max_damage_effect = 1.2
-		self.melee_weapons.pugio.stats.charge_time = 0.25
+		self.melee_weapons.pugio.stats.charge_time = 0.4
 		self.melee_weapons.pugio.stats.range = 155
 		self.melee_weapons.pugio.stats.concealment = 29
+
 		--Trench Knife use to be the Fugitive meta--
 		self.melee_weapons.fairbair.stats.min_damage = 3
 		self.melee_weapons.fairbair.stats.max_damage = 6.001
 		self.melee_weapons.fairbair.stats.min_damage_effect = 0.6
 		self.melee_weapons.fairbair.stats.max_damage_effect = 1.2
-		self.melee_weapons.fairbair.stats.charge_time = 0.35
+		self.melee_weapons.fairbair.stats.charge_time = 0.6
 		self.melee_weapons.fairbair.stats.range = 165
 		self.melee_weapons.fairbair.stats.concealment = 28
+
+		--I'm really annoyed that we don't actually poke with it--
+		--We do now :^)
+		self.melee_weapons.poker.stats.min_damage = 6
+		self.melee_weapons.poker.stats.max_damage = 12.001
+		self.melee_weapons.poker.stats.min_damage_effect = 1.0
+		self.melee_weapons.poker.stats.max_damage_effect = 2.0
+		self.melee_weapons.poker.stats.charge_time = 1.3
+		self.melee_weapons.poker.stats.range = 180
+		self.melee_weapons.poker.stats.concealment = 26
+
 		--LET'S GO PRACTICE MEDICINE--
 		self.melee_weapons.fear.dot_data = {
 			type = "poison",

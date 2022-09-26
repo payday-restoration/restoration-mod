@@ -802,7 +802,7 @@ function PlayerStandard:_check_stop_shooting()
 	if self._shooting then
 		self._equipped_unit:base():stop_shooting()
 		self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
-		self._end_action_charging_weapon()
+		self:_end_action_charging_weapon()
 
 		local weap_base = self._equipped_unit:base()
 		local fire_mode = weap_base:fire_mode()

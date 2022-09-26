@@ -41,7 +41,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870_husk"/>
+	<network sync="spawn" remote_unit="units/payday2/characters/ene_city_swat_r870_sc/ene_city_swat_r870_sc_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

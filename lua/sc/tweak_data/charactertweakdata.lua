@@ -16972,7 +16972,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_city_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_2_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_3_sc")
-		table.insert(char_map.basic.list, "ene_city_swat_r870") --apperantly OVK didn't add him to char_map
+		table.insert(char_map.basic.list, "ene_city_swat_r870_sc")
 		table.insert(char_map.basic.list, "ene_city_heavy_g36_sc")
 		table.insert(char_map.basic.list, "ene_city_heavy_r870_sc")	
 		table.insert(char_map.basic.list, "ene_city_heavy_benelli_sc")

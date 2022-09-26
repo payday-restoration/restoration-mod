@@ -3335,22 +3335,22 @@ function WeaponTweakData:_init_stats()
 
 		metalstorm_kick = {
 			standing = {
-				0.85 * self.stat_info.stance_recoil_mults.standing * 8,
-				0.7 * self.stat_info.stance_recoil_mults.standing * 8,
-				-0.225 * self.stat_info.stance_recoil_mults.standing * 8,
-				0.225 * self.stat_info.stance_recoil_mults.standing * 8
+				0.85 * self.stat_info.stance_recoil_mults.standing * 6,
+				0.7 * self.stat_info.stance_recoil_mults.standing * 6,
+				-0.225 * self.stat_info.stance_recoil_mults.standing * 6,
+				0.225 * self.stat_info.stance_recoil_mults.standing * 6
 			},
 			crouching = {
-				0.85 * self.stat_info.stance_recoil_mults.crouching * 8,
-				0.7 * self.stat_info.stance_recoil_mults.crouching * 8,
-				-0.225 * self.stat_info.stance_recoil_mults.crouching * 8,
-				0.225 * self.stat_info.stance_recoil_mults.crouching * 8
+				0.85 * self.stat_info.stance_recoil_mults.crouching * 6,
+				0.7 * self.stat_info.stance_recoil_mults.crouching * 6,
+				-0.225 * self.stat_info.stance_recoil_mults.crouching * 6,
+				0.225 * self.stat_info.stance_recoil_mults.crouching * 6
 			},
 			steelsight = {
-				0.85 * self.stat_info.stance_recoil_mults.steelsight * 8,
-				0.7 * self.stat_info.stance_recoil_mults.steelsight * 8,
-				-0.225 * self.stat_info.stance_recoil_mults.steelsight * 8,
-				0.225 * self.stat_info.stance_recoil_mults.steelsight * 8
+				0.85 * self.stat_info.stance_recoil_mults.steelsight * 6,
+				0.7 * self.stat_info.stance_recoil_mults.steelsight * 6,
+				-0.225 * self.stat_info.stance_recoil_mults.steelsight * 6,
+				0.225 * self.stat_info.stance_recoil_mults.steelsight * 6
 			}
 		}
 	}
@@ -5941,16 +5941,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.AMMO_MAX = 240
 				self.hailstorm.FIRE_MODE = "auto"
 				self.hailstorm.charge_data = {
-					max_t = 0.5,
-					cooldown_t = 0.5
+					max_t = 0.2,
+					cooldown_t = 0.6
 				}
-				self.hailstorm.fire_mode_data.fire_rate = 0.03
-				self.hailstorm.fire_mode_data.volley.spread_mul = 3.5
+				self.hailstorm.fire_mode_data.fire_rate = 0.03333333333
+				self.hailstorm.fire_mode_data.volley.spread_mul = 2
 				self.hailstorm.fire_mode_data.volley.damage_mul = 1
 				self.hailstorm.fire_mode_data.volley.ammo_usage = 15
 				self.hailstorm.fire_mode_data.volley.rays = 15
 				self.hailstorm.fire_mode_data.volley.can_shoot_through_wall = false
-				self.hailstorm.fire_mode_data.volley.can_shoot_through_shield = false
+				self.hailstorm.fire_mode_data.volley.can_shoot_through_shield = true
 				self.hailstorm.fire_mode_data.volley.can_shoot_through_enemy = true
 				self.hailstorm.fire_mode_data.volley.armor_piercing_chance = 1
 				self.hailstorm.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect"
@@ -5965,17 +5965,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.kick.volley = self.stat_info.kick_tables.metalstorm_kick
 				self.hailstorm.shake.bypass_global_shake = true
 				self.hailstorm.supported = true
-				self.hailstorm.ads_speed = 0.400
+				self.hailstorm.ads_speed = 0.380
 				self.hailstorm.damage_falloff = {
-					start_dist = 600,
-					end_dist = 2400,
-					min_mult = 0.16666,
+					start_dist = 800,
+					end_dist = 3000,
+					min_mult = 0.4,
 					ignore_rays = true
 				}
 				self.hailstorm.stats = {
 					damage = 15,
 					spread = 41,
-					recoil = 81,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 19,

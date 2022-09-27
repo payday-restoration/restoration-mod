@@ -2916,7 +2916,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.90)
+		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.85)
 	end
 
 	self.stats.value = {}
@@ -14634,12 +14634,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if weap.damage_type and not weap.object_damage_mult then
 				if weap.damage_type == "anti_materiel" then
-					weap.object_damage_mult = 3
+					weap.object_damage_mult = 4
 				elseif weap.damage_type == "sniper" then
-					weap.object_damage_mult = 1.25
-				elseif weap.damage_type == "heavy_pistol" then
-					weap.object_damage_mult = 1.25
+					weap.object_damage_mult = 2
 				elseif weap.damage_type == "pdw" then
+					weap.object_damage_mult = 1.5
+				elseif weap.damage_type == "heavy_pistol" then
 					weap.object_damage_mult = 1.25
 				elseif weap.damage_type == "shotgun" then
 					weap.object_damage_mult = 0.75
@@ -14649,7 +14649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--weap.object_damage_mult = 1
 				end
 				if weap.object_damage_mult_single_ray == "sniper" then
-					weap.object_damage_mult_single_ray = 1.25
+					weap.object_damage_mult_single_ray = 1.5
 				elseif weap.damage_type_single_ray == "anti_materiel" then
 					weap.object_damage_mult_single_ray = 3
 				end

@@ -201,7 +201,6 @@ function restoration:Init()
 	restoration.large_levels = {
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion
-		"dah", --Diamond Heist
 		"chca", --Black Cat Heist
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
@@ -245,7 +244,6 @@ function restoration:Init()
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
 		"firestarter_3", --firestarter day 3
-		"mex_cooking", --Border Crystals
 		"roberts", --Go Bank
 		"family", --Diamond Store
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
@@ -302,7 +300,7 @@ function restoration:Init()
 		"constantine_smackdown_lvl", --Smackdown
 		"nmh_res" --Resmod edit of no mercy.
 	}	
-	--Mostly for stuff like Cursed Killed Room and other crap puny heists
+	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
@@ -312,6 +310,8 @@ function restoration:Init()
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
+		"mex", --Border Crossing
+		"mex_cooking", --Border Crystals		
 		"sand", --The Ukrainian Prisoner			
 		--Skirmish heists below
 		"skm_nightmare_lvl", --Safehouse Nightmare SKM

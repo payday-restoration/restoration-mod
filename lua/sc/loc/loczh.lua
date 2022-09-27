@@ -241,8 +241,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSCDescID"] = "启用或禁用恢复mod的完全游戏更改。切换此选项将自动退出游戏，以防止存档损坏。",
 		["RestorationModHolidayTitleID"] = "节日活动",
 		["RestorationModHolidayDescID"] = "开启或关闭 节日活动 对大修的影响",
-		["RestorationModCloakerTurnTitleID"] = "Cloaker Kick Camera Turn",
-		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",			
+		["RestorationModCloakerTurnTitleID"] = "幻影特工飞踢时视角转向",
+		["RestorationModCloakerTurnDescID"] = "开启或关闭幻影特工飞踢你时，你的视角自动转向它的效果。",
 		["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
 		["RestorationModRestoreHitFlashDescID"] = "启用或禁用恢复Mod的受击闪屏",	
 		["RestorationModNotifyTitleID"] = "功能及特色提示",
@@ -1174,7 +1174,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人、盾牌和薄墙壁##。",
 		["bm_wp_upg_a_slug_spam_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人和薄墙壁##，但穿透护甲时仅造成#{skill_color}#80%##的伤害。",
 		["bm_wp_upg_a_explosive_desc_sc"] = "射出一发能使人眩晕的爆炸半径为#{skill_color}#1.5米##的致命性爆炸弹头，#{skill_color}#不受任何衰减##，但也#{important_1}#不能触发爆头##。\n",
-		["bm_wp_upg_a_custom_desc"] = "更少量但更大号的自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。这种弹丸的动能足以#{skill_color}#击穿20%的护甲##。", --穿透造成20%伤害？
+		["bm_wp_upg_a_custom_desc"] = "更少量但更大号的自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。这种弹丸的动能足以#{skill_color}#穿透护甲##造成#{skill_color}#20%##的伤害。",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#96##点伤害，并有几率晕眩敌人。",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。",
@@ -1403,7 +1403,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"#{heat_warm_color}#……然后狼吃掉了小红帽##\"\n\n具有革命性的德国手枪，尤其这一款被改装成了全自动开火模式。\n\n这把枪一次装填10颗子弹",
 		["bm_wp_c96_nozzle"] = "DL-44爆能枪口", --Suppressor into Muzzle --checkout
-		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.25秒\n充能速率: 4发/秒(过热时减半)\n过热惩罚: 2秒",
+		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.5秒\n充能速率: 3发/秒(过热时减半)\n过热惩罚: 2秒",
 		--Sub2000
 		["bm_sub2000_sc_desc"] = "制造质量存疑的卡宾手枪。小巧的手枪子弹从长枪管射出时打身上加倍的疼，并且折叠能力使其隐蔽性首屈一指。",	
 		--Deagle
@@ -3010,7 +3010,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "锯刃轰鸣",
-			["menu_carbon_blade_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你现在可以用电锯锯盾对盾兵造成伤害\n\n专精: #{risk}#$pro##\n你使用电锯、弓、弩、榴弹发射器或火箭筒击杀敌人有#{skill_color}#50%##的几率在半径#{skill_color}#10##米内的敌人中#{skill_color}#散播恐慌##\n\n恐慌会使敌人短暂地失去行动能力",																								
+			["menu_carbon_blade_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你现在可以贴着盾用电锯锯盾对盾兵造成伤害\n\n专精: #{risk}#$pro##\n你使用电锯、弓、弩、榴弹发射器或火箭筒击杀敌人有#{skill_color}#50%##的几率在半径#{skill_color}#10##米内的敌人中#{skill_color}#散播恐慌##\n\n恐慌会使敌人短暂地失去行动能力",																								
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "全副武装",
@@ -3542,7 +3542,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck0_2_desc"] = "你购买武器和有利条件的花费额外减少##30%##。",				
 		["menu_deck0_3"] = "为钱卖命",
 		["menu_deck0_3_desc"] = "你捡起的零散物品的价值提高##15%##。",		
-		["menu_deck0_4"] = "老兵节",
+		["menu_deck0_4"] = "退伍军人节",
 		["menu_deck0_4_desc"] = "你捡起的零散物品的价值额外提高##15%##。",	
 		["menu_deck0_5"] = "萌新上路",
 		["menu_deck0_5_desc"] = "你完成劫案获得的经验奖励增加##45%##。",	

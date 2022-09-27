@@ -1054,7 +1054,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires pellets that have a #{skill_color}#50%## chance to #{heat_warm_color}#set enemies on fire##, potentially stunning them and dealing #{heat_warm_color}#240## damage over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_rip"] = "Tombstone Buckshot",
 		["bm_wp_upg_a_rip_auto_desc_sc"] = "Fires #{stats_positive}#poison laced## buckshot, potentially stunning enemies and dealing #{stats_positive}#96## poison damage over #{skill_color}#6## seconds.",
-		["bm_wp_upg_a_rip_semi_desc_sc"] = "Fires #{stats_positive}#poison laced## buckshot, potentially stunning enemies and dealing #{heat_warm_color}#120## poison damage over #{skill_color}#6## seconds.",
+		["bm_wp_upg_a_rip_semi_desc_sc"] = "Fires #{stats_positive}#poison laced## buckshot, potentially stunning enemies and dealing #{stats_positive}#120## poison damage over #{skill_color}#6## seconds.",
 		["bm_wp_upg_a_rip_pump_desc_sc"] = "Fires #{stats_positive}#poison laced## buckshot, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.",
 		["bm_wp_upg_a_rip_heavy_desc_sc"] = "Fires #{stats_positive}#poison laced## buckshot, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#6## seconds.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#8## seconds.",

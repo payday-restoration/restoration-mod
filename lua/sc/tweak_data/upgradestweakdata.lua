@@ -1780,7 +1780,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
-		1.00
+		0.75
 	}
 
 	self.values.player.kill_dodge_regen = {

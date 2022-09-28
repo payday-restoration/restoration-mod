@@ -603,7 +603,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_SKULL_Tank[10] = 0.015
 				assault_groups.SKM_TIT_Tank[10] = 0.005
 				assault_groups.SKM_FBI_spoocs[10] = 0.0
-			elseif wave_9_captain < 0.72 then --summers
+			elseif wave_9_captain < 0.96 then --summers
 				self.captain = "SKM_Cap_Summers_W9"
 				assault_groups.SKM_Light_Swat[10] = 0.37
 				assault_groups.SKM_Heavy_Swat[10] = 0.31
@@ -617,6 +617,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_SKULL_Tank[10] = 0.0075
 				assault_groups.SKM_TIT_Tank[10] = 0.0025
 				assault_groups.SKM_FBI_spoocs[10] = 0.025
+		--[[		
 			elseif wave_9_captain < 0.96 then --winters
 				self.captain = "SKM_Cap_Winters_W9"
 				assault_groups.SKM_Light_Swat[10] = 0.35
@@ -631,6 +632,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_SKULL_Tank[10] = 0.015
 				assault_groups.SKM_TIT_Tank[10] = 0.005
 				assault_groups.SKM_FBI_spoocs[10] = 0.05
+		--]]	
 			else --spring
 				self.captain = "SKM_Cap_Spring_W9"
 				assault_groups.SKM_Light_Swat[10] = 0.35
@@ -661,7 +663,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_SKULL_Tank[10] = 0.015
 				assault_groups.SKM_TIT_Tank[10] = 0.005
 				assault_groups.SKM_FBI_spoocs[10] = 0.0
-			elseif wave_9_captain < 0.48 then --summers
+			elseif wave_9_captain < 0.72 then --summers
 				self.captain = "SKM_Cap_Summers_W9"
 				assault_groups.SKM_Light_Swat[10] = 0.37
 				assault_groups.SKM_Heavy_Swat[10] = 0.31
@@ -675,6 +677,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_SKULL_Tank[10] = 0.0075
 				assault_groups.SKM_TIT_Tank[10] = 0.0025
 				assault_groups.SKM_FBI_spoocs[10] = 0.025
+			--[[	
 			elseif wave_9_captain < 0.72 then --winters
 				self.captain = "SKM_Cap_Winters_W9"
 				assault_groups.SKM_Light_Swat[10] = 0.35
@@ -689,6 +692,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_SKULL_Tank[10] = 0.015
 				assault_groups.SKM_TIT_Tank[10] = 0.005
 				assault_groups.SKM_FBI_spoocs[10] = 0.05
+			]]--	
 			elseif wave_9_captain < 0.96 then --spring
 				self.captain = "SKM_Cap_Spring_W9"
 				assault_groups.SKM_Light_Swat[10] = 0.35

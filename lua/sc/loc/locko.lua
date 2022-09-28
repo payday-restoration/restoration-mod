@@ -1421,7 +1421,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosconi
 		["bm_menu_sc_huntsman_desc"] = "배럴이 두 배, 재미가 두 배. 탄창 크기는 제한적이지만 #{skill_color}#두 개의 방아쇠##를 사용하면 같은 방에 있는 불행한 개새끼들에게 벅샷이 가득한 라그나로크를 보여줄 수 있습니다.",
 		--Akimbo Judge
-		["bm_w_x_judge"] = "Judge & Jury",
+		["bm_w_x_judge"] = "저지 & 쥬리",
 		["bm_x_judge_sc_desc"] = "재판과 배심, 그리고 두 개의 휴대용 방 청소기를 사용하면 당신은 사형집행자가 될 수 있습니다.",
 		--Joceline
 		["bm_b682_sc_desc"] = "일반적으로 스포츠 경기를 위한 모델로 제작된 이 상하쌍대식 산탄총은 클레이 접시 대신 헬멧을 날리는 데 사용할 것입니다.",		
@@ -1606,7 +1606,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 조준경",
 		--L115
 		["bm_w_l115"] = "AIM 90M 저격소총",
-			
+
+		--GL40		
+		["bm_w_gre_m79_sc_desc"] = "쿵하고 펑.\n\n#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 위/아래로 올리거나 내립니다.\n\n리프 조준기는 #{risk}#30미터에서 0으로 조정됩니다.##",		
 		--3GL
 		["bm_ms3gl_sc_desc"] = "단일 챔버가 달린 맞춤형 40mm 유탄을 발사합니다. 전기 뇌관을 사용하여 발사되므로 소형 패키지에 신속한 후속 작업을 수행할 수 있습니다.\n\n발사 모드를 변경하면 #{skill_color}#유탄을 3점사로 발사 할 수 있습니다.##",
 		--PIGLET/M32
@@ -1639,7 +1641,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#헤드샷 피해를 100%만큼 더 입힙니다.\n적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##", --just in case
 		["bm_ap_2_weapon_sc_desc"] = "화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_ap_3_weapon_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
-		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 위/아래로 올리거나 내립니다.\n\n#{risk}#리프 조준기는 30미터에서 0으로 조정됩니다.##",
+		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 위/아래로 올리거나 내립니다.\n\n리프 조준기는 #{risk}#30미터에서 0으로 조정됩니다.##",
 		["bm_rocket_launcher_sc_desc"] = "이 무기로 가한 폭발 피해는 #{skill_color}#터렛을 즉시 파괴합니다.##",
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
 		["bm_hx25_buck_sc_desc"] = "12개의 펠렛을 광범위하게 발사합니다.\n\n여전히 유탄 발사기로 취급하여 관련 스킬의 효과를 받습니다.",

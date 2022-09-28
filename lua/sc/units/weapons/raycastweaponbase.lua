@@ -341,6 +341,9 @@ end
 
 --Refactored from vanilla code for consistency and simplicity.
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
+
+	local previous_total_ammo = self:get_ammo_total() -- "Ammo Pickup in HUD" compatibilty
+
 	local _add_ammo = function(ammo_base, ratio, add_amount_override)
 		if ammo_base:get_ammo_max() == ammo_base:get_ammo_total() then
 			return false, 0
@@ -375,8 +378,17 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			add_amount = add_amount + a
 		end
 	end
+
+	if picked_up then -- "Ammo Pickup in HUD" compatibilty
+		local max_ammo = self:get_ammo_max()
+		local current_total_ammo = self:get_ammo_total()
+		local actual_add_amount = current_total_ammo - previous_total_ammo
+		local use_index = self:selection_index()
+		Hooks:Call("show_ammo_pickup_amount", self, actual_add_amount, use_index, add_amount, previous_total_ammo, current_total_ammo)
+	end
+
 	return picked_up, add_amount
-	
+
 end
 
 local mvec_to = Vector3()

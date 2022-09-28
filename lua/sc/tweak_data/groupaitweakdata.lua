@@ -17189,7 +17189,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	
 	--Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
-			amount = {7, 7},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -17205,14 +17205,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 4,
 					amount_max = 4,
 					tactics = self._tactics.Cap_winters_minion,
-					rank = 2
-				},
-				{
-					unit = "Bravo_Sniper",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
 			}

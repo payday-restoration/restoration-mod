@@ -2958,7 +2958,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou carry #{skill_color}#50%## more throwables.\n\nACE: #{owned}#$pro##\n#{skill_color}#You can now equip a second deployable to bring with you.## Pressing #{skill_color}#$BTN_CHANGE_EQ## will allow you to toggle between deployables.\n\nYou carry #{important_1}#50%## the normal amount of your second deployable, to a minimum of #{skill_color}#1.##",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou carry #{skill_color}#50%## more throwables.\n\n#{risk}#NOTE: Does not apply to perk deck throwables.##\n\nACE: #{owned}#$pro##\n#{skill_color}#You can now equip a second deployable to bring with you.## Pressing #{skill_color}#$BTN_CHANGE_EQ## will allow you to toggle between deployables.\n\nYou carry #{important_1}#50%## the normal amount of your second deployable, to a minimum of #{skill_color}#1.##",
 	
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Tower Defense",
@@ -3148,7 +3148,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BRAWLER SUBTREE   ]]--
 				--Martial Arts--
 				["menu_martial_arts_beta_sc"] = "Martial Arts",
-				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#50%## less damage from all melee attacks, because of training.\n\nACE: #{owned}#$pro##\nThe knockdown rating of your melee strikes are #{skill_color}#100%## greater, because of training.\n\nYour melee weapon's knockdown rating determines when a melee strike will stagger an enemy as well as how much damage is done to a Bulldozer's armor plates and visor.",
+				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#50%## less damage from all melee attacks, because of training.\n\nACE: #{owned}#$pro##\nThe knockdown rating of your melee strikes are #{skill_color}#100%## greater, because of training.\n\nYour melee weapon's knockdown rating determines when a melee strike will stagger an enemy as well as how much damage is done towards breaking a Bulldozer's armor plates and visor.",
 
 				--Counter-Strike--
 				["menu_drop_soap_beta_sc"] = "Counter Strike",

@@ -17188,7 +17188,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	
 	
 	--Captains, uses the DS spawngroups
-	--[[
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = {7, 7},
 			spawn = {
@@ -17218,7 +17217,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}						
-			--]]		
+					
 		self.enemy_spawn_groups.SKM_Cap_Spring_W9 = {
 			amount = {5, 5},
 			spawn = {

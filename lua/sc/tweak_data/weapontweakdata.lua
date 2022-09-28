@@ -3425,9 +3425,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].sounds.magazine_empty = nil
 	end
 
+	local ap_50 = {
+		'asval','scar','contraband','fal','galil'
+	}
+	for i, wep_id in ipairs(ap_50) do
+		self[wep_id].armor_piercing_chance = 0.8
+		self[wep_id].has_description = true
+		self[wep_id].desc_id = "bm_ap_armor_50_weapon_sc_desc"
+	end
+
 	local ap_80 = {
-		'asval','groza',
-		'scar','contraband','fal','galil','tti',
 		'g3','new_m14','ching','shak12'
 	}
 	for i, wep_id in ipairs(ap_80) do
@@ -8342,7 +8349,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.asval.stats_modifiers = nil
 				self.asval.can_shoot_through_enemy = true
-				self.asval.can_shoot_through_wall = true
 				self.asval.panic_suppression_chance = 0.05
 				self.asval.timers.reload_exit_empty = 0.65
 				self.asval.timers.reload_exit_not_empty = 0.85
@@ -8355,7 +8361,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.CLIP_AMMO_MAX = 20
 				self.scar.fire_mode_data.fire_rate = 0.1
 				self.scar.CAN_TOGGLE_FIREMODE = true
-				self.scar.FIRE_MODE = "single"
+				self.scar.FIRE_MODE = "auto"
 				self.scar.auto.fire_rate = 0.1
 				self.scar.kick = self.stat_info.kick_tables.moderate_right_kick		
 				self.scar.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -8383,7 +8389,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.stats_modifiers = nil
 				self.scar.panic_suppression_chance = 0.05
 				self.scar.can_shoot_through_enemy = true
-				self.scar.can_shoot_through_wall = true
 				self.scar.timers.reload_exit_empty = 0.7
 				self.scar.timers.reload_not_empty = 1.75
 				self.scar.timers.reload_exit_not_empty = 1.3
@@ -8393,7 +8398,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.desc_id = "bm_galil_sc_desc"
 				self.galil.AMMO_MAX = 80
 				self.galil.CLIP_AMMO_MAX = 25
-				self.galil.FIRE_MODE = "single"
+				self.galil.FIRE_MODE = "auto"
 				self.galil.fire_mode_data = {}
 				self.galil.fire_mode_data.fire_rate = 0.09230769230
 				self.galil.CAN_TOGGLE_FIREMODE = true
@@ -8425,7 +8430,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.stats_modifiers = nil
 				self.galil.panic_suppression_chance = 0.05
 				self.galil.can_shoot_through_enemy = true
-				self.galil.can_shoot_through_wall = true
 				self.galil.timers.reload_empty = 3.9
 				self.galil.timers.reload_exit_empty = 0.325
 				self.galil.timers.reload_not_empty = 2.7
@@ -8439,7 +8443,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.CLIP_AMMO_MAX = 30
 				self.fal.fire_mode_data.fire_rate = 0.0923076923
 				self.fal.CAN_TOGGLE_FIREMODE = true
-				self.fal.FIRE_MODE = "single"
+				self.fal.FIRE_MODE = "auto"
 				self.fal.auto = {}
 				self.fal.auto.fire_rate = 0.0923076923
 				self.fal.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -8468,7 +8472,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.stats_modifiers = nil
 				self.fal.panic_suppression_chance = 0.05
 				self.fal.can_shoot_through_enemy = true
-				self.fal.can_shoot_through_wall = true
 				self.fal.timers.reload_exit_empty = 0.75
 				self.fal.timers.reload_exit_not_empty = 0.75
 
@@ -8477,7 +8480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.has_description = true
 				self.contraband.AMMO_MAX = 60
 				self.contraband.tactical_reload = 1
-				self.contraband.FIRE_MODE = "single"
+				self.contraband.FIRE_MODE = "auto"
 				self.contraband.fire_mode_data.fire_rate = 0.1
 				self.contraband.CAN_TOGGLE_FIREMODE = true
 				self.contraband.kick = self.stat_info.kick_tables.moderate_kick
@@ -8506,7 +8509,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.stats_modifiers = nil
 				self.contraband.panic_suppression_chance = 0.05
 				self.contraband.can_shoot_through_enemy = true
-				self.contraband.can_shoot_through_wall = true
 				self.contraband.timers.reload_exit_empty = 0.725
 				self.contraband.timers.reload_exit_not_empty = 0.8
 				self.contraband_m203.upgrade_blocks = {
@@ -13377,11 +13379,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xeno.stats_modifiers = nil
-		self.xeno.armor_piercing_chance = 0.8
+		self.xeno.armor_piercing_chance = 0.5
+		self.xeno.can_shoot_through_enemy = true
 		self.xeno.panic_suppression_chance = 0.05
 		self.xeno.timers.reload_exit_not_empty = 1.2
 		self.xeno.timers.reload_exit_empty = 1.2
 
+		--since it overrides the tec9's soundbank
 		self.tec9.sounds.fire = "mp9_fire_single"
 		self.tec9.sounds.fire_single = "mp9_fire_single"
 	end	
@@ -13400,10 +13404,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.tactical_reload = 1
 		self.sks.FIRE_MODE = "single"
 		self.sks.fire_mode_data = {}
-		self.sks.fire_mode_data.fire_rate = 0.1
+		self.sks.fire_mode_data.fire_rate = 0.085714
 		self.sks.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.sks.supported = true
-		self.sks.ads_speed = 0.320
+		self.sks.ads_speed = 0.300
 		self.sks.damage_falloff = {
 			start_dist = 2500,
 			end_dist = 5200,
@@ -13416,7 +13420,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 24,
-			suppression = 20,
+			suppression = 8,
 			alert_size = 1,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -13425,7 +13429,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.sks.stats_modifiers = nil
 		self.sks.can_shoot_through_enemy = true
-		self.sks.can_shoot_through_wall = true
 		self.sks.panic_suppression_chance = 0.05
 		self.sks.timers.reload_exit_not_empty = 0.6
 		self.sks.timers.reload_exit_empty = 0.6
@@ -13444,7 +13447,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vss.AMMO_MAX = 60
 		self.vss.CLIP_AMMO_MAX = 10
 		self.vss.tactical_reload = 1
-		self.vss.FIRE_MODE = "auto"
+		self.vss.FIRE_MODE = "single"
 		self.vss.fire_mode_data = {}
 		self.vss.fire_mode_data.fire_rate = 0.075
 		self.vss.CAN_TOGGLE_FIREMODE = true
@@ -13934,10 +13937,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.fire_rate_multiplier = 1.3
 		self.m200.timers = {
 			reload_not_empty = 2.7,
-			reload_empty = 3.4,
+			reload_empty = 4.3,
 			unequip = 0.7,
 			equip = 0.9,
-			reload_exit_empty = 1.5,
+			reload_exit_empty = 0.6,
 			reload_exit_not_empty = 0.95
 		}
 		self.m200.reload_speed_multiplier = 0.9
@@ -14342,7 +14345,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xr2.stats_modifiers = nil
-		self.xr2.armor_piercing_chance = 0.8
+		self.xr2.armor_piercing_chance = 0.5
+		self.xr2.can_shoot_through_enemy = true
 		self.xr2.panic_suppression_chance = 0.05
 		self.xr2.timers.reload_exit_empty = 0.6
 		self.xr2.timers.reload_not_empty = 0.8
@@ -14700,7 +14704,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 24,  pickup = {0.053, 0.027}},
 		{damage = 30,  pickup = {0.052, 0.026}},
 		{damage = 45,  pickup = {0.050, 0.026}},
-		{damage = 60,  pickup = {0.047, 0.025}},
+		{damage = 60,  pickup = {0.046, 0.024}},
 		{damage = 90,  pickup = {0.044, 0.023}},
 		{damage = 120, pickup = {0.040, 0.022}},
 		{damage = 180, pickup = {0.036, 0.020}},

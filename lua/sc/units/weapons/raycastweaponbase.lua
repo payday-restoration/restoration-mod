@@ -376,6 +376,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 		end
 	end
 	return picked_up, add_amount
+	
 end
 
 local mvec_to = Vector3()

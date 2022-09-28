@@ -1611,31 +1611,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_rk62"] = "Velmer",
 
 	
+		--Little Friend
+		["bm_w_contraband"] = "Bigger Friend 7.62",
+		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+		--FAL
+		["bm_w_fal"] = "Falcon 58",	
+		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+		--ASS VAL
+		["bm_w_asval"] = "Valkyria",
+		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+		--Galil
+		["bm_w_galil"] = "Defender 7.62",
+		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+		--SCAR
+		["bm_w_scar"] = "Eagle Heavy",			
+		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",		
 		--Galant--
 		["bm_w_ching"] = "M1 Galant",
 		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		--M308
 		["bm_w_m14"] = "M308",
-		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
-		--FAL
-		["bm_w_fal"] = "Falcon 58",	
-		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
-		--SCAR
-		["bm_w_scar"] = "Eagle Heavy",			
-		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",			
+		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
 		--G3
 		["bm_w_g3"] = "Gewehr-3",
 		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
-		--Little Friend
-		["bm_w_contraband"] = "Bigger Friend 7.62",
-		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		--ASS VAL
-		["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
-		--Galil
-		["bm_w_galil"] = "Defender 7.62",
-		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		--KS12
 		["bm_w_shak12"] = "KS-12 Urban",
 		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
@@ -1648,13 +1648,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			--VSS
 			["bm_w_vss"] = "Viktoriya",
-			["bm_vss_sc_desc"] = "A variant of the Valkyria configured for better range and accuracy.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+			["bm_vss_sc_desc"] = "A variant of the Valkyria configured for better range and accuracy.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 			--G3 HK79
 			["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
-			["bm_g3hk79_sc_desc_pc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+			["bm_g3hk79_sc_desc_pc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			--BO3 XR2
 			["bm_w_xr2"] = "XR-2",
-			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides 	an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 			["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
 			["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
 			["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
@@ -1692,7 +1692,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Mosin--
 		["bm_w_mosin"] = "Nagant",
-		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 40 damage/sec over 3 seconds and can stun enemies.##",
 		--Desert Fox
@@ -2958,7 +2958,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou carry #{skill_color}#50%## more throwables.\n\nACE: #{owned}#$pro##\n##You can now equip a second deployable to bring with you.## Pressing #{skill_color}#$BTN_CHANGE_EQ## will allow you to toggle between deployables.\n\nYou carry #{important_1}#50%## the normal amount of your second deployable, to a minimum of #{skill_color}#1.##",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou carry #{skill_color}#50%## more throwables.\n\nACE: #{owned}#$pro##\n#{skill_color}#You can now equip a second deployable to bring with you.## Pressing #{skill_color}#$BTN_CHANGE_EQ## will allow you to toggle between deployables.\n\nYou carry #{important_1}#50%## the normal amount of your second deployable, to a minimum of #{skill_color}#1.##",
 	
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Tower Defense",

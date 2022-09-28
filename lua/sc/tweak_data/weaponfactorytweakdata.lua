@@ -11950,6 +11950,12 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_mp5", "resmod_x_mp5", function(self)
 
 	--Mag adjustments
+	self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_s_ring = {
+		supported = true,
+		stats = {
+			value = 0
+		}
+	}
 	self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_drum = {
 		supported = true,
 		stats = {
@@ -23352,6 +23358,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_ass_ak12_bolt then --Pawcio's KF2 AK-12 (AK-200)
+		self.parts.wpn_fps_ass_ak12_vertgrip.supported = true
+		self.parts.wpn_fps_ass_ak12_vertgrip.stats = { value = 0 }
+
 		self.parts.wpn_fps_upg_ak12_vertgrip_tact.supported = true
 		self.parts.wpn_fps_upg_ak12_vertgrip_tact.stats = { value = 0 }
 

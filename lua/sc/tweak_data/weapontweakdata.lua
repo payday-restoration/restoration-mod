@@ -13301,6 +13301,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ak12.timers.reload_exit_empty = 0.55
 		self.ak12.timers.reload_not_empty = 1.4
 		self.ak12.timers.reload_exit_not_empty = 1.2
+		self.ak12.timers.equip = 0.85
 	end
 
 	if self.scarl then --Pawcio's SCAR-L

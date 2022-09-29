@@ -231,7 +231,7 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 		18,
 		19,
 		20,
-		20,
+		22,
 		24,
 		24,
 		25

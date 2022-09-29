@@ -14654,9 +14654,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--weap.object_damage_mult = 1
 				end
 				if weap.object_damage_mult_single_ray == "sniper" then
-					weap.object_damage_mult_single_ray = 1.5
+					weap.object_damage_mult_single_ray = 2
 				elseif weap.damage_type_single_ray == "anti_materiel" then
-					weap.object_damage_mult_single_ray = 3
+					weap.object_damage_mult_single_ray = 4
 				end
 			end
 	

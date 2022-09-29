@@ -141,6 +141,11 @@ else
 				self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t(not self._started_reload_empty) / speed_multiplier
 				ammo_to_reload = shotgun_reload_tweak and shotgun_reload_tweak.reload_num or 1
 			end
+			
+			if ammo_to_reload > 1 then
+				ammo_to_reload = math.min(ammo_to_reload, self:get_ammo_max_per_clip() - self:get_ammo_remaining_in_clip())
+				ammo_to_reload = math.min(ammo_to_reload, self:get_ammo_total() - self:get_ammo_remaining_in_clip())
+			end
 
 			if not self._started_reload_empty and self:weapon_tweak_data().tactical_reload then
 				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + ammo_to_reload))

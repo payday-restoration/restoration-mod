@@ -3724,7 +3724,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.ostry.chainsaw = {
 			tick_damage = 1.8,
 			tick_delay = 0.18,
-			start_delay = 0.4
+			start_delay = 0.8
 		}
 		self.melee_weapons.ostry.stats.min_damage = 6
 		self.melee_weapons.ostry.stats.max_damage = 6

@@ -3363,8 +3363,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		wpn_fps_upg_smg_olympic_fg_lr300 = {
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
 			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_lr300",
-			adds = {"fake_a_os"},
-			forbids = {"wpn_fps_ass_m16_os_frontsight"}
+			forbids = {"wpn_fps_ass_m16_os_frontsight"},
+			override = {
+				wpn_fps_ass_m16_o_handle_sight = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_o_flipup",
+					stance_mod = {
+						wpn_fps_smg_olympic = {
+							translation = Vector3(0,-4,0.44)
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -11950,11 +11960,12 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_mp5", "resmod_x_mp5", function(self)
 
 	--Mag adjustments
-	self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_s_ring = {
+	self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_s_ring_vanilla = {
 		supported = true,
 		stats = {
 			value = 0
-		}
+		},
+		custom_stats = {}
 	}
 	self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_drum = {
 		supported = true,

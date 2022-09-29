@@ -2662,10 +2662,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",
 		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",
 		
-		-- joke stuff until release xd
-		["mutator_sonic_mod"] = "레스토레이션 모드는 안전합니다!", 
-		["mutator_sonic_mod_desc"] = "레스토레이션 모드 정말 밸런스가 잘 맞춰있고 모델도 잘 만들었고 디테일도 쩌는 오버홀 모드인데...",
-		["mutator_sonic_mod_longdesc"] = "(아닐 수도 있습니다.)",
+		["mutator_sonic_mod"] = "SonicMod",
+		["mutator_sonic_mod_desc"] = "Much Deadly Assaults",
+		["mutator_sonic_mod_longdesc"] = "Changes the assaults to be more difficult to survive while adding some twists. \n\nWARNING: By enabling this mutator, you're making your lives A LIVING HELL!",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

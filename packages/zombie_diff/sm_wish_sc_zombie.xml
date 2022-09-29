@@ -48,7 +48,9 @@
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"/>
 	<model				path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2" load="true"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>	
+	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_city_r870/ene_zeal_city_r870" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_city_r870/ene_zeal_city_r870_husk" load="true"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2_contour"/>	
 		
@@ -112,6 +114,8 @@
 	<model				path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_benelli_sc/ene_zeal_swat_heavy_benelli_sc" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_benelli_sc/ene_zeal_swat_heavy_benelli_sc_husk" load="true"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>	
 		

@@ -159,6 +159,8 @@
 	<!--City swat 2-->	
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_city_swat_r870/ene_city_swat_r870" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_r870/ene_city_swat_r870_husk" load="true"/>
 	<object				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
 	<model				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>	
@@ -180,6 +182,8 @@
 	<!--City Heavy r870-->
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_benelli/ene_city_heavy_benelli" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_benelli/ene_city_heavy_benelli_husk" load="true"/>
     <object				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<model				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>

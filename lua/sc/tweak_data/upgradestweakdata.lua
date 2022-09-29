@@ -1701,15 +1701,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		40,
-		30
+		120,
+		90
 	}	
 	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
-	self.max_cocaine_stacks_per_tick = 240
-	self.max_total_cocaine_stacks = 240
+	self.max_cocaine_stacks_per_tick = 720
+	self.max_total_cocaine_stacks = 720
 	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 40
+	self.cocaine_stacks_decay_amount_per_tick = 120
 	self.cocaine_stacks_decay_percentage_per_tick = 0
 	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}

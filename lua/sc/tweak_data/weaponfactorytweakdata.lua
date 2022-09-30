@@ -19795,9 +19795,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_thompson_fg_custom.supported = true
 		self.parts.wpn_fps_smg_thompson_fg_custom.stats = {
 			value = 1,
-			spread = 1,
-			recoil = 1,
-			concealment = -5
+			recoil = 2,
+			concealment = -1
 		}
 
 		--(Chicago Typewriter) Folding Stock
@@ -19873,8 +19872,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_mp5_m_custom.supported = true
 		self.parts.wpn_fps_smg_mp5_m_custom.stats = {
 			value = 4,
-			reload = 1,
-			recoil = -1
+			recoil = -2,
+			concealment = 1
 		}
 
 		--Grievky Nozzle
@@ -21232,6 +21231,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = 3
 		}
 
+		self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_dos = {
+			stats = {
+				value = 6,
+				spread = -1,
+				concealment = -1,
+				reload = 3
+			}
+		}
+
 		--(GSPS 12G) High Capacity Barrel
 		self.parts.wpn_fps_shot_m37_b_extend.supported = true
 		self.parts.wpn_fps_shot_m37_b_extend.stats = {
@@ -21420,6 +21428,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 1,
 			reload = 3,
 			extra_ammo = -10
+		}
+		self.parts.wpn_fps_smg_mp5_m_small.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+
+		self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_small = {
+			stats = {
+				value = 2,
+				concealment = 1,
+				reload = 3,
+				extra_ammo = -20
+			}
 		}
 
 		--(Compact 5) Adjusted Stock

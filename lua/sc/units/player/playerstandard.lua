@@ -829,6 +829,23 @@ function PlayerStandard:_check_stop_shooting()
 	end
 end
 
+function PlayerStandard:_start_action_charging_weapon(t)
+	self._state_data.charging_weapon = true
+	self._state_data.charging_weapon_data = {
+		t = t,
+		max_t = 2.5
+	}
+	local ANIM_LENGTH = 1.5
+	local max = self._equipped_unit:base():charge_max_t()
+	local speed_multiplier = ANIM_LENGTH / max
+	local weap_base = self._equipped_unit:base()
+	local no_charge_anims = weap_base:weapon_tweak_data().no_charge_anims
+	if not no_charge_anims then
+		self._equipped_unit:base():tweak_data_anim_play("charge", speed_multiplier)
+		self._ext_camera:play_redirect(self:get_animation("charge"), speed_multiplier)
+	end
+end
+
 function PlayerStandard:_check_action_night_vision(t, input)
 	if not input.btn_night_vision_press then
 		return

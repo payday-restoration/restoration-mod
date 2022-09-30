@@ -11759,6 +11759,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 		wpn_fps_ass_famas = {
 			translation = Vector3(0, -6, -5.8)
 		},
+		wpn_fps_hailstorm = {
+			translation = Vector3(-0.07, 2, 2),
+			rotation = Rotation(0, 1.2, 0)
+		},
 
 		wpn_fps_snp_musket = {
 			translation = Vector3(0, -6, -3.9)
@@ -17243,6 +17247,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hailstorm", "resmod_hailstorm", fu
 			a_obj = "a_o_2",
 			stance_mod = {
 				wpn_fps_hailstorm = {
+					translation = Vector3(-0.07, 2, 2.8),
+					rotation = Rotation(0, 1.2, 0)
+				}
+			}
+		},
+		wpn_fps_snp_model70_iron_sight = {
+			stance_mod = {
+				wpn_fps_hailstorm = {
 					translation = Vector3(0.005, -3, 1.26),
 					rotation = Rotation(0, 1.05, 0)
 				}
@@ -17256,6 +17268,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hailstorm", "resmod_hailstorm", fu
 			a_obj = "a_o_2"
 		}
 	}
+
+	table.insert(self.wpn_fps_hailstorm.uses_parts, "wpn_fps_snp_model70_iron_sight")
+			
+	self.wpn_fps_hailstorm_npc.uses_parts = deep_clone(self.wpn_fps_hailstorm.uses_parts)	
+
 end)
 
 --VD-12

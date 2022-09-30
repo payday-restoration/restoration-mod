@@ -1420,7 +1420,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
-			["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now I've got a lot to say.\"\n\nUtilizing superposed loading technology, this 10-barrelled SMG spits lead out at blisteringly high speeds.",
+			["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now #{important_1}#I've got a lot to say##\"\n\nUtilizing #{risk}#superposed loading## technology, this 10-barrelled machine gun trades damage for spitting lead out at blisteringly high speeds.\n\nAlt-fire fires a #{skill_color}#volley## of #{skill_color}#10## rounds down range.",
 
 
 		--Bootleg/HK416c

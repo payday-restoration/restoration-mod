@@ -62,7 +62,7 @@ function RaycastWeaponBase:get_damage_type()
 	if self._rays and self._rays == 1 then
 		return self:weapon_tweak_data().damage_type_single_ray
 	else
-		return self:weapon_tweak_data().damage_type or "normal"
+		return self:weapon_tweak_data().object_damage_mult or 1
 	end
 end
 
@@ -124,7 +124,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 
 		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
 		if damage_body_extension then
-			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().weapon_tweak_data and ((weapon_unit:base()._rays and weapon_unit:base()._rays == 1 and weapon_unit:base():weapon_tweak_data().object_damage_mult_single_ray) or weapon_unit:base():weapon_tweak_data().object_damage_mult) or 1
+			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			damage = network_damage / 163.84
@@ -228,6 +228,10 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
    return raycast_current_damage_orig(self, dmg_mul)
 end
 
+function RaycastWeaponBase:get_object_damage_mult()
+	return 1
+end
+
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound, already_ricocheted)
 	blank = blank or Network:is_client() and user_unit ~= managers.player:player_unit() 
 
@@ -288,7 +292,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
 		if damage_body_extension then
-			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().weapon_tweak_data and ((weapon_unit:base()._rays and weapon_unit:base()._rays == 1 and weapon_unit:base():weapon_tweak_data().object_damage_mult_single_ray) or weapon_unit:base():weapon_tweak_data().object_damage_mult) or 1
+			local object_damage_mult = alive(weapon_unit) and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			damage = network_damage / 163.84

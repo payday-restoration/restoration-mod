@@ -1370,3 +1370,15 @@ function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
 		end
 	end
 end
+
+function NewRaycastWeaponBase:get_object_damage_mult()
+	if self._fire_mode == ids_volley then
+		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
+		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
+		return volley_fire_mode and volley_fire_mode.object_damage_mult or 0.75
+	elseif self._rays and self._rays == 1 and self:weapon_tweak_data().object_damage_mult_single_ray then
+		return self:weapon_tweak_data().object_damage_mult_single_ray
+	else
+		return self:weapon_tweak_data().object_damage_mult or 1
+	end
+end

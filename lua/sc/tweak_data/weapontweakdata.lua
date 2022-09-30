@@ -86,6 +86,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_crew.DAMAGE = 1.8
 		self.tecci_crew.DAMAGE = 1.8
 		self.contraband_crew.DAMAGE = 1.8
+		self.groza_crew.DAMAGE = 1.8
 		self.flint_crew.DAMAGE = 1.8
 		self.corgi_crew.DAMAGE = 1.8
 		self.spas12_crew.DAMAGE = 4.5
@@ -108,6 +109,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.wa2000_crew.DAMAGE = 15
 		self.desertfox_crew.DAMAGE = 15
 		self.tti_crew.DAMAGE = 15
+		self.qbu88_crew.DAMAGE = 15
 		self.siltstone_crew.DAMAGE = 15
 		self.r700_crew.DAMAGE = 15
 		self.ching_crew.DAMAGE = 15
@@ -115,8 +117,10 @@ local job = Global.level_data and Global.level_data.level_id
 		self.rpk_crew.DAMAGE = 0.6
 		self.m249_crew.DAMAGE = 0.6
 		self.hk21_crew.DAMAGE = 0.6
+		self.hk51b_crew.DAMAGE = 0.6
 		self.mg42_crew.DAMAGE = 0.6
 		self.m60_crew.DAMAGE = 0.6
+		self.hailstorm_crew.DAMAGE = 0.6
 	end
 	
 	function WeaponTweakData:_set_hard()
@@ -154,6 +158,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_crew.DAMAGE = 1.8
 		self.tecci_crew.DAMAGE = 1.8
 		self.contraband_crew.DAMAGE = 1.8
+		self.groza_crew.DAMAGE = 1.8
 		self.flint_crew.DAMAGE = 1.8
 		self.corgi_crew.DAMAGE = 1.8
 		self.spas12_crew.DAMAGE = 4.5
@@ -176,6 +181,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.wa2000_crew.DAMAGE = 15
 		self.desertfox_crew.DAMAGE = 15
 		self.tti_crew.DAMAGE = 15
+		self.qbu88_crew.DAMAGE = 15
 		self.siltstone_crew.DAMAGE = 15
 		self.r700_crew.DAMAGE = 15
 		self.ching_crew.DAMAGE = 15
@@ -183,8 +189,10 @@ local job = Global.level_data and Global.level_data.level_id
 		self.rpk_crew.DAMAGE = 0.6
 		self.m249_crew.DAMAGE = 0.6
 		self.hk21_crew.DAMAGE = 0.6
+		self.hk51b_crew.DAMAGE = 0.6
 		self.mg42_crew.DAMAGE = 0.6
 		self.m60_crew.DAMAGE = 0.6
+		self.hailstorm_crew.DAMAGE = 0.6
 	end
 	
 	function WeaponTweakData:_set_overkill()
@@ -222,6 +230,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_crew.DAMAGE = 2.8
 		self.tecci_crew.DAMAGE = 2.8
 		self.contraband_crew.DAMAGE = 2.8
+		self.groza_crew.DAMAGE = 2.8
 		self.flint_crew.DAMAGE = 2.8
 		self.corgi_crew.DAMAGE = 2.8
 		self.spas12_crew.DAMAGE = 5.5
@@ -244,6 +253,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.wa2000_crew.DAMAGE = 16
 		self.desertfox_crew.DAMAGE = 16
 		self.tti_crew.DAMAGE = 16
+		self.qbu88_crew.DAMAGE = 16
 		self.siltstone_crew.DAMAGE = 16
 		self.r700_crew.DAMAGE = 16
 		self.ching_crew.DAMAGE = 16
@@ -251,8 +261,10 @@ local job = Global.level_data and Global.level_data.level_id
 		self.rpk_crew.DAMAGE = 1.6
 		self.m249_crew.DAMAGE = 1.6
 		self.hk21_crew.DAMAGE = 1.6
+		self.hk51b_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 1.6
 		self.m60_crew.DAMAGE = 1.6
+		self.hailstorm_crew.DAMAGE = 1.6
 	end
 	
 	function WeaponTweakData:_set_overkill_145()
@@ -290,6 +302,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.asval_crew.DAMAGE = 3.8
 		self.tecci_crew.DAMAGE = 3.8
 		self.contraband_crew.DAMAGE = 3.8
+		self.groza_crew.DAMAGE = 3.8
 		self.flint_crew.DAMAGE = 3.8
 		self.corgi_crew.DAMAGE = 3.8
 		self.spas12_crew.DAMAGE = 6.5
@@ -312,6 +325,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.wa2000_crew.DAMAGE = 17
 		self.desertfox_crew.DAMAGE = 17
 		self.tti_crew.DAMAGE = 17
+		self.qbu88_crew.DAMAGE = 17
 		self.siltstone_crew.DAMAGE = 17
 		self.r700_crew.DAMAGE = 17
 		self.ching_crew.DAMAGE = 17
@@ -319,8 +333,10 @@ local job = Global.level_data and Global.level_data.level_id
 		self.rpk_crew.DAMAGE = 2.6
 		self.m249_crew.DAMAGE = 2.6
 		self.hk21_crew.DAMAGE = 2.6
+		self.hk51b_crew.DAMAGE = 2.6
 		self.mg42_crew.DAMAGE = 2.6
 		self.m60_crew.DAMAGE = 2.6
+		self.hailstorm_crew.DAMAGE = 2.6
 		
 		if job == "chew" or job == "glace" then
 			self.swat_van_turret_module.HEALTH_INIT = 675
@@ -2227,6 +2243,41 @@ local job = Global.level_data and Global.level_data.level_id
 		self.contraband_m203_crew.suppression = 1
 		self.contraband_m203_crew.FIRE_MODE = "auto"
 	end
+
+	function WeaponTweakData:_init_data_groza_crew()
+		self.groza_crew.categories = clone(self.groza.categories)
+		self.groza_crew.sounds.prefix = "groza_npc"
+		self.groza_crew.use_data.selection_index = 2
+		self.groza_crew.DAMAGE = 4.8
+		self.groza_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.groza_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.groza_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.groza_crew.CLIP_AMMO_MAX = 60
+		self.groza_crew.NR_CLIPS_MAX = 5
+		self.groza_crew.pull_magazine_during_reload = "rifle"
+		self.groza_crew.auto.fire_rate = 0.08571428571
+		self.groza_crew.hold = "rifle"
+		self.groza_crew.reload = "bullpup"
+		self.groza_crew.alert_size = 2500
+		self.groza_crew.suppression = 2.2
+		self.groza_crew.FIRE_MODE = "auto"
+		self.groza_underbarrel_crew.sounds.prefix = "grozagl_npc"
+		self.groza_underbarrel_crew.use_data.selection_index = 2
+		self.groza_underbarrel_crew.DAMAGE = 2
+		self.groza_underbarrel_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.groza_underbarrel_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.groza_underbarrel_crew.no_trail = true
+		self.groza_underbarrel_crew.CLIP_AMMO_MAX = 1
+		self.groza_underbarrel_crew.NR_CLIPS_MAX = 4
+		self.groza_underbarrel_crew.auto.fire_rate = 0.1
+		self.groza_underbarrel_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.groza_underbarrel_crew.alert_size = 2500
+		self.groza_underbarrel_crew.suppression = 1
+		self.groza_underbarrel_crew.FIRE_MODE = "auto"
+	end
 	
 	function WeaponTweakData:_init_data_flint_crew()
 		self.flint_crew.categories = clone(self.flint.categories)
@@ -2653,6 +2704,24 @@ local job = Global.level_data and Global.level_data.level_id
 		self.tti_crew.FIRE_MODE = "single"
 	end
 	
+	function WeaponTweakData:_init_data_qbu88_crew()
+		self.qbu88_crew.categories = clone(self.qbu88.categories)
+		self.qbu88_crew.sounds.prefix = "qbu88_npc"
+		self.qbu88_crew.use_data.selection_index = 2
+		self.qbu88_crew.DAMAGE = 18
+		self.qbu88_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.qbu88_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.qbu88_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.qbu88_crew.CLIP_AMMO_MAX = 10
+		self.qbu88_crew.NR_CLIPS_MAX = 5
+		self.qbu88_crew.pull_magazine_during_reload = "rifle"
+		self.qbu88_crew.auto.fire_rate = 0.6
+		self.qbu88_crew.hold = "rifle"
+		self.qbu88_crew.alert_size = 2500
+		self.qbu88_crew.suppression = 3.4
+		self.qbu88_crew.FIRE_MODE = "single"
+	end
+	
 	function WeaponTweakData:_init_data_siltstone_crew()
 		self.siltstone_crew.categories = clone(self.siltstone.categories)
 		self.siltstone_crew.sounds.prefix = "siltstone_npc"
@@ -2772,6 +2841,22 @@ local job = Global.level_data and Global.level_data.level_id
 		self.hk21_crew.FIRE_MODE = "auto"
 	end
 	
+	function WeaponTweakData:_init_data_hk51b_crew()
+		self.hk51b_crew.categories = clone(self.hk51b.categories)
+		self.hk51b_crew.sounds.prefix = "hk51b_npc"
+		self.hk51b_crew.use_data.selection_index = 2
+		self.hk51b_crew.DAMAGE = 3.6
+		self.hk51b_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.hk51b_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+		self.hk51b_crew.CLIP_AMMO_MAX = 100
+		self.hk51b_crew.NR_CLIPS_MAX = 5
+		self.hk51b_crew.auto.fire_rate = 0.075
+		self.hk51b_crew.hold = "rifle"
+		self.hk51b_crew.alert_size = 2500
+		self.hk51b_crew.suppression = 2
+		self.hk51b_crew.FIRE_MODE = "auto"
+	end
+	
 	function WeaponTweakData:_init_data_mg42_crew()
 		self.mg42_crew.categories = clone(self.mg42.categories)
 		self.mg42_crew.sounds.prefix = "mg42_npc"
@@ -2822,6 +2907,29 @@ local job = Global.level_data and Global.level_data.level_id
 		self.x_basset_crew.alert_size = 1800
 		self.x_basset_crew.suppression = 2
 		self.x_basset_crew.FIRE_MODE = "auto"
+	end
+
+	function WeaponTweakData:_init_data_hailstorm_crew()
+		self.hailstorm_crew.categories = clone(self.hailstorm.categories)
+		self.hailstorm_crew.sounds.prefix = "hailstorm_npc"
+		self.hailstorm_crew.use_data.selection_index = 2
+		self.hailstorm_crew.DAMAGE = 3.6
+		self.hailstorm_crew.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
+		self.hailstorm_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed"
+		self.hailstorm_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+		self.hailstorm_crew.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+		self.hailstorm_crew.CLIP_AMMO_MAX = 100
+		self.hailstorm_crew.NR_CLIPS_MAX = 5
+		self.hailstorm_crew.reload = "looped"
+		self.hailstorm_crew.auto.fire_rate = 0.075
+		self.hailstorm_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.hailstorm_crew.reload = "bullpup"
+		self.hailstorm_crew.alert_size = 2500
+		self.hailstorm_crew.suppression = 2
+		self.hailstorm_crew.FIRE_MODE = "auto"
 	end
 
 --Defines most weapon stats via loops for conciseness.
@@ -5453,6 +5561,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rsh12.can_shoot_through_enemy = true
 				self.rsh12.can_shoot_through_shield = true
 				self.rsh12.can_shoot_through_wall = true
+				self.rsh12.object_damage_mult = 2
 				self.rsh12.armor_piercing_chance = 1
 
 		--SECONDARIES
@@ -5966,6 +6075,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.fire_mode_data.volley.armor_piercing_chance = 1
 				self.hailstorm.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect"
 				self.hailstorm.fire_mode_data.volley.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed_volley"
+				self.hailstorm.fire_mode_data.volley.object_damage_mult = 0.75
 				self.hailstorm.fire_mode_data.toggable = {
 					"volley",
 					"auto"
@@ -5998,7 +6108,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.hailstorm.stats_modifiers = nil
-				self.hailstorm.object_damage_mult = 0.75
 				self.hailstorm.reload_speed_multiplier = 0.85
 				self.hailstorm.panic_suppression_chance = 0.05
 				self.hailstorm.timers.reload_exit_empty = 0.08
@@ -9367,7 +9476,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sko12.categories = {"akimbo", "shotgun"}
 				self.x_sko12.AMMO_MAX = 80
 				self.x_sko12.CLIP_AMMO_MAX = 20
-				self.x_sko12.fire_mode_data.fire_rate = 0.1666666
+				self.x_sko12.fire_mode_data.fire_rate = 0.1764705
 				self.x_sko12.kick = self.stat_info.kick_tables.moderate_kick
 				self.x_sko12.FIRE_MODE = "single"				
 				self.x_sko12.CAN_TOGGLE_FIREMODE = false
@@ -9604,7 +9713,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sko12.rays = 8
 				self.sko12.AMMO_MAX = 40
 				self.sko12.CLIP_AMMO_MAX = 25
-				self.sko12.fire_mode_data.fire_rate = 0.1666666
+				self.sko12.fire_mode_data.fire_rate = 0.1764705
 				self.sko12.kick = self.stat_info.kick_tables.moderate_kick
 				self.sko12.FIRE_MODE = "single"				
 				self.sko12.CAN_TOGGLE_FIREMODE = false
@@ -11811,6 +11920,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.can_shoot_through_shield = true
 		self.shatters_fury.can_shoot_through_wall = true
 		self.shatters_fury.armor_piercing_chance = 1
+		self.shatters_fury.object_damage_mult = 2
 		--self.shatters_fury.animations.reload_name_id = "chinchilla"
 		self.shatters_fury.reload_speed_multiplier = 0.9
 		self.shatters_fury.timers = deep_clone(self.new_raging_bull.timers)
@@ -14360,31 +14470,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"smg",
 			"typh"
 		}
+		self.crysis3_typhoon.damage_type = "machine_gun"
 		self.crysis3_typhoon.recategorize = { "light_smg" } --"Light" SMG
 		self.crysis3_typhoon.use_data.selection_index = 2
 		self.crysis3_typhoon.has_description = true
-		self.crysis3_typhoon.rays = 5
-		self.crysis3_typhoon.CLIP_AMMO_MAX = 144
+		self.crysis3_typhoon.rays = 1
+		self.crysis3_typhoon.CLIP_AMMO_MAX = 180
 		self.crysis3_typhoon.AMMO_MAX = 360
 		self.crysis3_typhoon.FIRE_MODE = "auto"
+		self.crysis3_typhoon.charge_data = {
+			max_t = 0.0,
+			cooldown_t = 0.15
+		}
 		self.crysis3_typhoon.fire_mode_data = {}
 		self.crysis3_typhoon.fire_mode_data.fire_rate = 0.02
+		self.crysis3_typhoon.fire_mode_data.ammo_usage = 5
+		self.crysis3_typhoon.fire_mode_data.volley = {}
+		self.crysis3_typhoon.fire_mode_data.volley.spread_mul = 2
+		self.crysis3_typhoon.fire_mode_data.volley.damage_mul = 1
+		self.crysis3_typhoon.fire_mode_data.volley.ammo_usage = 10
+		self.crysis3_typhoon.fire_mode_data.volley.rays = 10
+		self.crysis3_typhoon.fire_mode_data.volley.can_shoot_through_wall = false
+		self.crysis3_typhoon.fire_mode_data.volley.can_shoot_through_shield = true
+		self.crysis3_typhoon.fire_mode_data.volley.can_shoot_through_enemy = true
+		self.crysis3_typhoon.fire_mode_data.volley.armor_piercing_chance = 1
+		self.crysis3_typhoon.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect"
+		self.crysis3_typhoon.fire_mode_data.volley.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed_volley"
+		self.crysis3_typhoon.fire_mode_data.volley.object_damage_mult = 0.75
+		self.crysis3_typhoon.fire_mode_data.toggable = {
+			"volley",
+			"auto"
+		}
 		self.crysis3_typhoon.sms = 0.7
 		self.crysis3_typhoon.CAN_TOGGLE_FIREMODE = false
 		self.crysis3_typhoon.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 		self.crysis3_typhoon.kick = self.stat_info.kick_tables.moderate_kick
+		self.crysis3_typhoon.kick.volley = self.stat_info.kick_tables.metalstorm_kick
+		self.crysis3_typhoon.shake.bypass_global_shake = true
+		self.crysis3_typhoon.no_charge_anims = true
 		self.crysis3_typhoon.supported = true
-		self.crysis3_typhoon.ads_speed = 0.300
+		self.crysis3_typhoon.ads_speed = 0.400
 		self.crysis3_typhoon.damage_falloff = {
-			start_dist = 700,
-			end_dist = 2600,
+			start_dist = 1000,
+			end_dist = 3600,
 			min_mult = 0.5,
 			ignore_rays = true
 		}
 		self.crysis3_typhoon.stats = {
 			damage = 10,
-			spread = 16,
-			recoil = 81,
+			spread = 11,
+			recoil = 91,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 17,
@@ -14395,13 +14530,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}		
+		self.crysis3_typhoon.bmp = 100
 		self.crysis3_typhoon.stats_modifiers = nil
 		self.crysis3_typhoon.panic_suppression_chance = 0.05
 		self.crysis3_typhoon.timers.reload_exit_empty = 0.5
 		self.crysis3_typhoon.timers.reload_not_empty = 5
 		self.crysis3_typhoon.timers.reload_exit_not_empty = 2.2
 		self.crysis3_typhoon.sounds.no_fix = true
-		self.crysis3_typhoon.sounds.fire = "typhoon_fire"
+		self.crysis3_typhoon.sounds.fire = "typhoon_fire_single"
 		self.crysis3_typhoon.sounds.fire_single = "typhoon_fire_single"
 		self.crysis3_typhoon.sounds.fire_auto = "typhoon_fire"
 		self.crysis3_typhoon.sounds.stop_fire = "typhoon_fire_stop"
@@ -14642,6 +14778,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.object_damage_mult = 4
 				elseif weap.damage_type == "sniper" then
 					weap.object_damage_mult = 2
+					if (weap.categories[2] and weap.categories[2] == "semi_snp") or (weap.categories[1] == "assault_rifle") then
+						weap.object_damage_mult = 1.25
+					end
 				elseif weap.damage_type == "pdw" then
 					weap.object_damage_mult = 1.5
 				elseif weap.damage_type == "heavy_pistol" then
@@ -14653,8 +14792,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				else
 					--weap.object_damage_mult = 1
 				end
-				if weap.object_damage_mult_single_ray == "sniper" then
+				if weap.damage_type_single_ray == "sniper" then
 					weap.object_damage_mult_single_ray = 2
+					if weap.recategorize[1] == "light_shot" then
+						weap.object_damage_mult_single_ray = 1.25
+					end
 				elseif weap.damage_type_single_ray == "anti_materiel" then
 					weap.object_damage_mult_single_ray = 4
 				end

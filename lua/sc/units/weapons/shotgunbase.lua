@@ -1,3 +1,8 @@
+local ids_single = Idstring("single")
+local ids_auto = Idstring("auto")
+local ids_burst = Idstring("burst")
+local ids_volley = Idstring("volley")
+
 local old_update_stats_values = ShotgunBase._update_stats_values
 
 function ShotgunBase:_update_stats_values(disallow_replenish, ammo_data)
@@ -62,7 +67,34 @@ local mvec_to = Vector3()
 local mvec_direction = Vector3()
 local mvec_spread_direction = Vector3()
 
-function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
+function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data, ammo_usage)
+	
+	if self._fire_mode == ids_volley then
+		local ammo_usage_ratio = math.clamp(ammo_usage > 0 and ammo_usage / (self._volley_ammo_usage or ammo_usage) or 1, 0, 1)
+		local rays = math.ceil(ammo_usage_ratio * (self._volley_rays or 1))
+		spread_mul = spread_mul * (self._volley_spread_mul or 1)
+		dmg_mul = dmg_mul * (self._volley_damage_mul or 1)
+		local result = {
+			rays = {}
+		}
+
+		for i = 1, rays do
+			local raycast_res = ShotgunBase.super.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+
+			if raycast_res.enemies_in_cone then
+				result.enemies_in_cone = result.enemies_in_cone or {}
+
+				table.map_append(result.enemies_in_cone, raycast_res.enemies_in_cone)
+			end
+
+			result.hit_enemy = result.hit_enemy or raycast_res.hit_enemy
+
+			table.list_append(result.rays, raycast_res.rays or {})
+		end
+
+		return result
+	end
+
 	local result = nil
 	local hit_enemies = {}
 	local hit_objects = {}

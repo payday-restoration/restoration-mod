@@ -200,6 +200,14 @@
 	<mission			path="levels/instances/unique/pent/pent_security_room/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/pent/pent_security_room_altdoor/world/world" force="true" unload="true"/>
 
+	<!--Brooklyn 2/10-->
+	<cover_data			path="levels/narratives/continental/spa/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/continental/spa/nav_manager_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
+	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
+	
 	<!--First World Bank-->
 	<mission			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/> 

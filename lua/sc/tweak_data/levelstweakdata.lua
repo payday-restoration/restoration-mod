@@ -200,7 +200,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
-	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds", "levels/narratives/h_watchdogs/stage_1/world/world"}
 	self.spa.player_style = "slaughterhouse"
 	self.spa.flashlights_on = true
 	

@@ -897,6 +897,7 @@ local stocks = {
 		--stocks.fixed_to_folder_stats
 		fixed_to_folder_stats = {
 			value = 4,
+			spread = -1,
 			recoil = -4,
 			concealment = 3,
 			ads_speed_mult = 0.925
@@ -905,7 +906,7 @@ local stocks = {
 		--stocks.fixed_to_nocheeks_stats
 		fixed_to_nocheeks_stats = {
 			value = 4,
-			spread = -1,
+			spread = -2,
 			recoil = -4,
 			concealment = 4,
 			ads_speed_mult = 0.9

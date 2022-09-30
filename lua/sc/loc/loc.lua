@@ -2696,7 +2696,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",
 		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
 
-		["mutator_sonic_mod"] = "SoniCMod",
+		["mutator_sonic_mod"] = "SoniCmod",
 		["mutator_sonic_mod_desc"] = "Much Deadly Assaults",
 		["mutator_sonic_mod_longdesc"] = "Changes the assaults to be more difficult to survive while adding some twists. \n\nWARNING: By enabling this mutator, you're making your lives A LIVING HELL!",
 

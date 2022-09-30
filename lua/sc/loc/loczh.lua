@@ -1663,10 +1663,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks_ap_desc"] = "装载大威力弹#{skill_color}#允许达到全面护甲穿透和穿盾能力##。 枪托和枪闩用了更敦实的材料加固使 #{important_1}#射速降低##。",
 		--Custom DMRs
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79步枪",
-		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",	
+		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。\n\n装有#{skill_color}#下挂榴弹发射器##，按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",	
 		--["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
 		["bm_w_xr2"] = "XR-2步枪",
-		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能提升射速的独特自动式爆发射击模式。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能提升射速的独特自动式爆发射击模式。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
 		["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
 		["bm_xr2_handle_01_sc_desc"] = "以爆发式射击的射速提升为代价改为全自动射击。",
 		["bm_wp_xr2_handle_02_sc"] = "快速开火枪闩",
@@ -2746,7 +2746,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
 		["mutator_bravos_only_longdesc"] = "所有非地图脚本生成的敌人都被替换成专家模式有去无回里的同类别单位。FBI SWAT将替代蓝皮SWAT，并且FBI SWAT会被替换成Bravo临界反应部队。",
 
-		["mutator_sonic_mod"] = "SonicMod",
+		["mutator_sonic_mod"] = "SoniCMod",
 		["mutator_sonic_mod_desc"] = "Much Deadly Assaults",
 		["mutator_sonic_mod_longdesc"] = "Changes the assaults to be more difficult to survive while adding some twists. \n\nWARNING: By enabling this mutator, you're making your lives A LIVING HELL!",
 
@@ -3038,7 +3038,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "万事通",
-			["menu_jack_of_all_trades_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你携带投掷物的量提高#{skill_color}#50%##\n\n专精: #{risk}#$pro##\n你现在可以#{skill_color}#携带两个随身装备##，按#{skill_color}#$BTN_CHANGE_EQ##来在两个随身装备之间切换\n\n副随身装备的携带量只有原来的#{skill_color}#一半##，最少为#{skill_color}#1##",
+			["menu_jack_of_all_trades_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你携带非天赋投掷物的量提高#{skill_color}#50%##\n\n专精: #{risk}#$pro##\n你现在可以#{skill_color}#携带两个随身装备##，按#{skill_color}#$BTN_CHANGE_EQ##来在两个随身装备之间切换\n\n副随身装备的携带量只有原来的#{skill_color}#一半##，最少为#{skill_color}#1##",
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "塔防机枪",	
@@ -3505,12 +3505,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "每减少##25%##的护甲值都将使杀敌回血量增加##2##点\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。\n\n作为社会的边缘人群，极道了解如何生存下去。尽管他彬彬有礼，却千万不能小觑他。\n\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##你的血量减伤分数上限提高至##80%##。\n##-##当你的血量低于100%:\n你的闪避条每秒最多增加闪避点数的##10%##；\n当你击杀一名敌人时，你的闪避计数器最高增加闪避点数的##50%##；\n当你使用近战武器击杀一名敌人时，你的闪避条最多额外增加你闪避点数的##100%##，且你的下次成功闪避获得的无敌时间最多增加##400%##，最多增加至##1.2##秒；\n你最多减少##20%##所受到的伤害。\n##-##受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n##-##你打包尸体和与人质互动的速度加快##75%##。",
+		["menu_st_spec_12_desc_sc"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。\n\n作为社会的边缘人群，极道了解如何生存下去。尽管他彬彬有礼，却千万不能小觑他。\n\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##你的血量减伤分数上限提高至##80%##。\n##-##当你的血量低于100%:\n你的闪避条每秒最多增加闪避点数的##10%##；\n当你使用非近战武器击杀一名敌人时，你的闪避计数器最高增加闪避点数的##50%##；\n当你使用近战武器击杀一名敌人时，你的闪避条最多额外增加你闪避点数的##125%##，且你的下次成功闪避获得的无敌时间最多增加##300%##，最多增加至##0.9##秒；\n你最多减少##20%##所受到的伤害。\n##-##受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数。\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n##-##你打包尸体和与人质互动的速度加快##75%##。",
 		["menu_st_spec_12_desc_sc_short"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。",
 		["menu_deck12_1_desc_sc"] = "你的血量低于##100%##时，血量越少，你的闪避条被动增长的速度越快，最快可以达到每秒增加闪避点数的##10%##。\n\n你的闪避点数增加##5##。",	
 		["menu_deck12_3_desc_sc"] = "你的血量低于##100%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##。",
 		["menu_deck12_5_desc_sc"] = "你的血量低于##100%##时，血量越少，你受到的伤害越少，最多可以获得##20%##的伤害减免。\n\n你打包尸体和与人质互动的速度加快##75%##。",
-		["menu_deck12_7_desc_sc"] = "你的血量低于##100%##时，血量越少，你使用近战武器杀敌增加的闪避条越多，最多可以达到每用近战武器击杀一个敌人增加闪避点数的##150%##。\n\n使用近战武器击杀敌人将使你下一次成功闪避获取的无敌时间增加##300%##，最多增加到##0.9##秒。\n\n你的闪避点数额外增加##5##。",
+		["menu_deck12_7_desc_sc"] = "你的血量低于##100%##时，血量越少，你使用近战武器杀敌增加的闪避条越多，最多可以达到每用近战武器击杀一个敌人增加闪避点数的##125%##。\n\n使用近战武器击杀敌人将使你下一次成功闪避获取的无敌时间增加##300%##，最多增加到##0.9##秒。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck12_9_desc_sc"] = "你的血量减伤分数上限提高至##80%##。\n\n受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数。\n\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",	
 		["menu_yakuza_deflection_add"] = "（因极道增加）",
 

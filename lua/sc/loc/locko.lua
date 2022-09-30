@@ -2662,7 +2662,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",
 		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",
 		
-		["mutator_sonic_mod"] = "SonicMod",
+		["mutator_sonic_mod"] = "SoniCMod",
 		["mutator_sonic_mod_desc"] = "Much Deadly Assaults",
 		["mutator_sonic_mod_longdesc"] = "Changes the assaults to be more difficult to survive while adding some twists. \n\nWARNING: By enabling this mutator, you're making your lives A LIVING HELL!",
 

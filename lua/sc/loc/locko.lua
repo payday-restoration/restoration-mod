@@ -1356,7 +1356,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_smg45_desc"] = "AMP 45 기관단총의 미국 버전 복제품.",		
 		--Typhoon
 		["bm_w_crysis3_typhoon"] = "CRYNET Typhoon 기관단총",
-		["bm_w_crysis3_typhoon_desc"] = "\"가장 순수한 형태의 표현인데 지금은 할 말이 많아.\"\n\n중첩 장전 기술을 사용하는 이 10연장 기관단총의 총알들은 엄청나게 빠른 속도로 발사됩니다.",
+		["bm_w_crysis3_typhoon_desc"] = "\"가장 순수한 형태의 표현인데 #{important_1}#지금은 할 말이 많아.##\"\n\n#{risk}#중첩 장전 기술##을 사용하는 이 10총열 기관단총은 물집이 생길 정도로 빠른 속도로 납을 뱉어내 피해를 줍니다.\n\n보조 기능은 사거리를 감소하는 대신 10발의 일제사격을 합니다.",
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootlegger 경기관총",
@@ -2663,8 +2663,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",
 		
 		["mutator_sonic_mod"] = "SoniCmod",
-		["mutator_sonic_mod_desc"] = "Much Deadly Assaults",
-		["mutator_sonic_mod_longdesc"] = "Changes the assaults to be more difficult to survive while adding some twists. \n\nWARNING: By enabling this mutator, you're making your lives A LIVING HELL!",
+		["mutator_sonic_mod_desc"] = "매우 치명적인 어썰트",
+		["mutator_sonic_mod_longdesc"] = "약간의 반전을 추가해 어썰트를 생존하기 더 어렵게 만듭니다.\n\n경고: 이 뮤테이터를 활성화하면 당신의 삶을 살아있는 지옥으로 만들어 버릴 수도 있습니다!",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

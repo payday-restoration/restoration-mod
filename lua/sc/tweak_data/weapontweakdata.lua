@@ -14023,7 +14023,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.AMMO_MAX = 20
 		self.m200.CLIP_AMMO_MAX = 7
 		self.m200.tactical_reload = 1
-		self.m200.fire_mode_data.fire_rate = 0.923076923
 		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.m200.supported = true
 		self.m200.ads_speed = 0.540
@@ -14047,7 +14046,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.m200.fire_mode_data.fire_rate = 1.2
-		self.m200.fire_rate_multiplier = 1.3
+		self.m200.fire_rate_multiplier = 1.2
 		self.m200.timers = {
 			reload_not_empty = 2.7,
 			reload_empty = 4.3,

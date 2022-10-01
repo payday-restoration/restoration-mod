@@ -1654,7 +1654,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, 4, -0.56)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_l85a2 = {
-		translation = Vector3(0, 11, 1.85)
+		translation = Vector3(-0.01, 15, 1.879)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
+		translation = Vector3(0.03, -3, -3.395)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m249 = {
 		translation = Vector3(0, -3, -3.4),
@@ -1687,6 +1690,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.025, 0, -2.82),
 		rotation = Rotation(0.0, -0.1, -0.625)
 	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_wa2000 = {
+		translation = Vector3(0, 1, 0.75),
+		rotation = Rotation(0, 0, 0)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
 		translation = Vector3(-0.005, -18, 0.6),
 		rotation = Rotation(0, 0, 0)
@@ -1700,6 +1707,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.05, -10, -4.65)
 	}	
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
+		translation = Vector3(0.0, -3, -4.03)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m107cq = {
 		translation = Vector3(-0.02, 5, -4.02)
 	}

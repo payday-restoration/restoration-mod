@@ -17248,16 +17248,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hailstorm", "resmod_hailstorm", fu
 			a_obj = "a_o_2",
 			stance_mod = {
 				wpn_fps_hailstorm = {
-					translation = Vector3(-0.07, 2, 2.8),
-					rotation = Rotation(0, 1.2, 0)
+					translation = Vector3(0.005, -3, 1.26),
+					rotation = Rotation(0, 1.05, 0)
 				}
 			}
 		},
 		wpn_fps_snp_model70_iron_sight = {
 			stance_mod = {
 				wpn_fps_hailstorm = {
-					translation = Vector3(0.005, -3, 1.26),
-					rotation = Rotation(0, 1.05, 0)
+					translation = Vector3(-0.07, 2, 2.8),
+					rotation = Rotation(0, 1.2, 0)
 				}
 			}
 		},

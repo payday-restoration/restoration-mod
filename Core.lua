@@ -94,6 +94,7 @@ function restoration:Init()
 		firestarter_3_res = restoration.captain_types.summer, --firestarter day 3 res edit version
 		bag_sim_2 = restoration.captain_types.summer, --Bag Simulator 2
 		RogueCompany = restoration.captain_types.summer, --Rogue Company
+		Security_Avenue = restoration.captain_types.summer, --Gensec HQ Raid day 1
 
 		--Spring
 		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
@@ -148,7 +149,8 @@ function restoration:Init()
 		branchbank_meth = restoration.captain_types.autumn,  --Bank Heist: Meths
 		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
-		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
+		hidden_vault, = restoration.captain_types.autumn, --Hidden Vault
+		Gensec_HQ, = restoration.captain_types.autumn, --Gensec HQ Raid day 2
 
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare

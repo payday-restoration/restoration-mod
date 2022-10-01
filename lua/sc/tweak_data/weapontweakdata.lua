@@ -3024,7 +3024,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.85)
+		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.8)
 	end
 
 	self.stats.value = {}
@@ -8445,7 +8445,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.asval.stats = {
 					damage = 45,
 					spread = 80,
-					recoil = 74,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -8484,7 +8484,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.stats = {
 					damage = 45,
 					spread = 86,
-					recoil = 73,
+					recoil = 69,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 21,
@@ -8525,7 +8525,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 69,
+					recoil = 65,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -8567,7 +8567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.stats = {
 					damage = 45,
 					spread = 83,
-					recoil = 71,
+					recoil = 67,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -8604,7 +8604,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.stats = {
 					damage = 45,
 					spread = 84,
-					recoil = 68,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 18,
@@ -8674,7 +8674,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.stats = {
 					damage = 60,
 					spread = 80,
-					recoil = 66,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -8690,8 +8690,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.can_shoot_through_enemy = true
 				self.shak12.can_shoot_through_wall = true
 				self.shak12.panic_suppression_chance = 0.05	
-				self.shak12.timers.reload_exit_empty = 0.55
-				self.shak12.timers.reload_exit_not_empty = 0.65
+				self.shak12.timers.reload_empty = 2.75
+				self.shak12.timers.reload_exit_empty = 0.65
+				self.shak12.timers.reload_not_empty = 1.8
+				self.shak12.timers.reload_exit_not_empty = 0.95
 
 			--M308 (M1A SOCOM/M14)
 				self.new_m14.CLIP_AMMO_MAX = 20
@@ -8712,7 +8714,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.stats = {
 					damage = 60,
 					spread = 90,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 19,
@@ -8750,7 +8752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.stats = {
 					damage = 60,
 					spread = 94,
-					recoil = 66,
+					recoil = 63,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -8793,7 +8795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 72,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -8826,8 +8828,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.upgrade_blocks = nil
 				self.qbu88.CLIP_AMMO_MAX = 10
 				self.qbu88.AMMO_MAX = 60
-				self.qbu88.fire_mode_data.fire_rate = 0.1956521
-				self.qbu88.fire_rate_multiplier = 1.5
+				self.qbu88.fire_mode_data.fire_rate = 0.2
+				self.qbu88.fire_rate_multiplier = 1.5 --So the recoil anim while ADS progresses faster
 				self.qbu88.sms = 0.9
 				self.qbu88.CAN_TOGGLE_FIREMODE = false
 				self.qbu88.kick = self.stat_info.kick_tables.vertical_kick
@@ -8841,7 +8843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.stats = {
 					damage = 60,
 					spread = 89,
-					recoil = 60,
+					recoil = 57,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -8874,7 +8876,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.AMMO_MAX = 60
 				self.tti.FIRE_MODE = "single"
 				self.tti.fire_mode_data = {}
-				self.tti.fire_mode_data.fire_rate = 0.1411764
+				self.tti.fire_mode_data.fire_rate = 0.142857
 				self.tti.sms = 0.9
 				self.tti.kick = self.stat_info.kick_tables.vertical_kick
 				self.tti.can_shoot_through_enemy = true
@@ -8891,7 +8893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 52,
+					recoil = 51,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 18,
@@ -9093,7 +9095,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wa2000.stats = {
 					damage = 90,
 					spread = 94,
-					recoil = 36,
+					recoil = 37,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 20,
@@ -9251,7 +9253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model70.stats = {
 					damage = 120,
 					spread = 96,
-					recoil = 46,
+					recoil = 47,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 21,
@@ -9350,7 +9352,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.desc_id = "bm_m95_sc_desc"
 			self.m95.AMMO_MAX = 20
 			self.m95.fire_mode_data.fire_rate = 1.5
-			self.m95.fire_rate_multiplier = 1.375
+			self.m95.fire_rate_multiplier = 1.25
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
 			self.m95.ads_speed = 0.480
@@ -12721,14 +12723,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.supported = true
 			self.sgs.ads_speed = 0.480
 			self.sgs.damage_falloff = {
-				start_dist = 2600,
-				end_dist = 7000,
+				start_dist = 3800,
+				end_dist = 9000,
 				min_mult = 0.5
 			}
 			self.sgs.stats = {
 				damage = 60,
 				spread = 90,
-				recoil = 58,
+				recoil = 56,
 				zoom = 1,
 				concealment = 20,
 				suppression = 8,
@@ -13478,7 +13480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.stats = {
 			damage = 45,
 			spread = 71,
-			recoil = 74,
+			recoil = 73,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 19,
@@ -13527,7 +13529,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.stats = {
 			damage = 45,
 			spread = 81,
-			recoil = 81,
+			recoil = 79,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 24,
@@ -13573,7 +13575,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vss.stats = {
 			damage = 60,
 			spread = 82,
-			recoil = 78,
+			recoil = 75,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 19,
@@ -13628,7 +13630,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g3hk79.stats = {
 			damage = 60,
 			spread = 89,
-			recoil = 63,
+			recoil = 61,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 21,
@@ -14314,7 +14316,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.plasmaproto.stats = {
 				damage = 60,
 				spread = 71,
-				recoil = 86,
+				recoil = 77,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 20,
@@ -14444,7 +14446,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xr2.stats = {
 			damage = 45,
 			spread = 88,
-			recoil = 68,
+			recoil = 65,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 24,

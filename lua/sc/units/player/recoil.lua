@@ -234,7 +234,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local r_value = 0
 
 	if self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
-		local degrees_to_move = 80 * dt --Track horizontal recoil twice as aggressively, since it tends to self compensate unlike vertical recoil.
+		local degrees_to_move = 60 * dt 
 		r_value = math.min(self._recoil_kick.h.accumulated, degrees_to_move)
 		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated - r_value
 	elseif self._recoil_wait then

@@ -16203,12 +16203,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 		value = 9,
-		recoil = -16
+		recoil = -14,
+		reload = -2,
+		concealment = -1,
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
 		armor_piercing_override = 1,
 		can_shoot_through_shield = true,
-		rof_mult = 0.666666,
+		rof_mult = 0.626666,
 		ads_speed_mult = 1.20,
 		sms = 0.9,
 	}
@@ -19860,7 +19862,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_pis_peacemaker_m_smooth.stats = {
 			value = 2
 		}
-		
+
 		--(Peacemaker) Lil' Yee-Haw
 		if self.parts.wpn_fps_pis_peacemaker_hat then
 			self.parts.wpn_fps_pis_peacemaker_hat.stance_mod = {

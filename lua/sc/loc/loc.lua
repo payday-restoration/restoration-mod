@@ -1411,7 +1411,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_erma"] = "MP 40",
 		["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 		--Jackal
-		["bm_w_schakal"] = "AMP-45",
+		["bm_w_schakal"] = "Jackal",
 		--Kross Vertex
 		["bm_w_polymer"] = "Kross Vertex",
 		--CUSTOM SMGs

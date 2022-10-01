@@ -19860,14 +19860,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_pis_peacemaker_m_smooth.stats = {
 			value = 2
 		}
-
+		
 		--(Peacemaker) Lil' Yee-Haw
-		self.parts.wpn_fps_pis_peacemaker_hat.stance_mod = {
-			wpn_fps_pis_peacemaker = {
-				translation = Vector3(0, 0, -1.8)
+		if self.parts.wpn_fps_pis_peacemaker_hat then
+			self.parts.wpn_fps_pis_peacemaker_hat.stance_mod = {
+				wpn_fps_pis_peacemaker = {
+					translation = Vector3(0, 0, -1.8)
+				}
 			}
-		}
-
+		end
 
 		--(Compact 5) Match Magazine
 		self.parts.wpn_fps_smg_mp5_m_custom.supported = true

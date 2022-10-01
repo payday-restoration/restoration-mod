@@ -2696,7 +2696,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_damage_to_hot_3"
+					"player_damage_to_hot_3",
+					"bodybags_bag_quantity"
 				},
 				cost = 2400,
 				icon_xy = {4, 0},

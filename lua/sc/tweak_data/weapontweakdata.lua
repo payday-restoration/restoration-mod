@@ -2972,8 +2972,8 @@ function WeaponTweakData:_init_stats()
 		standing = 3.5,
 		moving_crouching = 2.5,
 		crouching = 2.5,
-		moving_steelsight = 0.2,
-		steelsight = 0.1,
+		moving_steelsight = 0.08,
+		steelsight = 0.08,
 		bipod = 1,
 		player_turret = 1,
 	}
@@ -9473,26 +9473,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ultima.timers.shotgun_reload_exit_empty = 0.3
 
 			--VD-12 (SKO12)
-				self.x_sko12.rays = 8
-				self.x_sko12.categories = {"akimbo", "shotgun"}
-				self.x_sko12.AMMO_MAX = 80
-				self.x_sko12.CLIP_AMMO_MAX = 20
-				self.x_sko12.fire_mode_data.fire_rate = 0.1764705
-				self.x_sko12.kick = self.stat_info.kick_tables.moderate_kick
-				self.x_sko12.FIRE_MODE = "single"				
-				self.x_sko12.CAN_TOGGLE_FIREMODE = false
-				self.x_sko12.BURST_FIRE = 2
-				self.x_sko12.supported = true
-				self.x_sko12.ads_speed = 0.500
-				self.x_sko12.damage_falloff = {
+				self.sko12.use_data.selection_index = 2
+				self.sko12.rays = 8
+				self.sko12.AMMO_MAX = 80
+				self.sko12.CLIP_AMMO_MAX = 25
+				self.sko12.fire_mode_data.fire_rate = 0.1764705
+				self.sko12.kick = self.stat_info.kick_tables.moderate_kick
+				self.sko12.FIRE_MODE = "single"				
+				self.sko12.CAN_TOGGLE_FIREMODE = false
+				self.sko12.supported = true
+				self.sko12.ads_speed = 0.500
+				self.sko12.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3100,
 					min_mult = 0.5
 				}
-				self.x_sko12.stats = {
+				self.sko12.stats = {
 					damage = 45,
-					spread = 29,
-					recoil = 47,
+					spread = 39,
+					recoil = 57,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -9503,13 +9502,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.x_sko12.stats_modifiers = nil
-				self.x_sko12.panic_suppression_chance = 0.05
-				self.x_sko12.reload_speed_multiplier = 0.75
-				self.x_sko12.timers.reload_not_empty = 2.1
-				self.x_sko12.timers.reload_exit_not_empty = 1.5
-				self.x_sko12.timers.reload_empty = 3
-				self.x_sko12.timers.reload_exit_empty = 0.9
+				self.sko12.stats_modifiers = nil
+				self.sko12.sms = 0.8
+				self.sko12.panic_suppression_chance = 0.05
+				self.sko12.timers.reload_empty = 3.4
+				self.sko12.timers.reload_exit_empty = 1.0
+				self.sko12.timers.reload_not_empty = 2.9
+				self.sko12.timers.reload_exit_not_empty = 0.8
+				--Akimbo VD-12 
+				--DISABLED
+				self.x_sko12.use_data.selection_index = 5
 
 			--Steakout (AA-12)
 				self.aa12.rays = 8
@@ -9708,44 +9710,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.striker.stats_modifiers = nil
 				self.striker.panic_suppression_chance = 0.05
 				self.striker.timers.shotgun_reload_first_shell_offset = 0.03333333
-
-			--VD-12 (SKO12)
-				self.sko12.use_data.selection_index = 1
-				self.sko12.rays = 8
-				self.sko12.AMMO_MAX = 40
-				self.sko12.CLIP_AMMO_MAX = 25
-				self.sko12.fire_mode_data.fire_rate = 0.1764705
-				self.sko12.kick = self.stat_info.kick_tables.moderate_kick
-				self.sko12.FIRE_MODE = "single"				
-				self.sko12.CAN_TOGGLE_FIREMODE = false
-				self.sko12.supported = true
-				self.sko12.ads_speed = 0.500
-				self.sko12.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 3100,
-					min_mult = 0.5
-				}
-				self.sko12.stats = {
-					damage = 45,
-					spread = 39,
-					recoil = 57,
-					spread_moving = 7,
-					zoom = 1,
-					concealment = 20,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.sko12.stats_modifiers = nil
-				self.sko12.sms = 0.8
-				self.sko12.panic_suppression_chance = 0.05
-				self.sko12.timers.reload_empty = 3.4
-				self.sko12.timers.reload_exit_empty = 1.0
-				self.sko12.timers.reload_not_empty = 2.9
-				self.sko12.timers.reload_exit_not_empty = 0.8
 
 			--Goliath 12G
 				self.rota.upgrade_blocks = nil

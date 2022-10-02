@@ -13662,7 +13662,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 		recoil = -6
 	}
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.custom_stats = {
-		launcher_grenade = "ecp_arrow_exp"
+		launcher_grenade = "ecp_arrow_exp",
+		block_b_storm = true
 	}
 	
 	--Poison Arrow
@@ -17332,12 +17333,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sko12", "resmod_sko12", function(s
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_rip = a_rip_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
+	self.wpn_fps_sho_sko12.override.wpn_fps_smg_mac10_s_no = {
+		unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_sho_sko12_pts/wpn_fps_sho_sko12_s_adapter_short",
+		third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_sho_sko12_pts/wpn_third_sho_sko12_s_adapter_short",
+		stats = deep_clone(stocks.remove_adj_stats),
+		custom_stats = deep_clone(stocks.remove_adj_stats)
+	}		
 
 	self.wpn_fps_sho_sko12.uses_parts[44] = "resmod_dummy"
 	self.wpn_fps_sho_sko12.uses_parts[45] = "resmod_dummy"
+	
+	table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_smg_mac10_s_no")
 
 	self.wpn_fps_sho_sko12_npc.uses_parts = deep_clone(self.wpn_fps_sho_sko12.uses_parts)
+	self.wpn_fps_sho_sko12_npc.override = deep_clone(self.wpn_fps_sho_sko12.override)
 end)
+
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sko12", "resmod_x_sko12", function(self)
 
 	self.wpn_fps_sho_x_sko12.override = self.wpn_fps_sho_x_sko12.override or {}

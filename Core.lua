@@ -42,7 +42,6 @@ function restoration:Init()
 	    --Winters
 		arena = restoration.captain_types.winter, --Alesso
 		welcome_to_the_jungle_1 = restoration.captain_types.winter, --Big Oil Day 1
-		welcome_to_the_jungle_1_night = restoration.captain_types.winter, --Big Oil Day 1 Night
 		stage_1 = restoration.captain_types.winter, --Big Oil Day 1 EDIT
 		welcome_to_the_jungle_2 = restoration.captain_types.winter, --Big Oil Day 2
 		stage_2 = restoration.captain_types.winter, --Big Oil Day 2 EDIT

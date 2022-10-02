@@ -14,6 +14,9 @@ local math_point_on_line = math.point_on_line
 local table_insert = table.insert
 local table_remove = table.remove
 
+HuskPlayerMovement._walk_anim_velocities.crouch.ntl = HuskPlayerMovement._walk_anim_velocities.stand.ntl
+HuskPlayerMovement._walk_anim_lengths.crouch.ntl = HuskPlayerMovement._walk_anim_lengths.stand.ntl
+
 local post_init_original = HuskPlayerMovement.post_init
 function HuskPlayerMovement:post_init()
 	post_init_original(self)

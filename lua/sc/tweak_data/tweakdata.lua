@@ -31,22 +31,22 @@ tweak_data.bow = {
 }
 tweak_data.crossbow = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.45
+	ads_move_speed_mult = 0.5
 }
 	tweak_data.crossbow_pistol = {
-		ads_move_speed_mult = 1.7777,
+		ads_move_speed_mult = 1.6,
 		swap_bonus = 1.75
 	}
 
 tweak_data.grenade_launcher = {
-	ads_move_speed_mult = 0.45,
+	ads_move_speed_mult = 0.5,
 }
 	tweak_data.gl_pistol = {
-		ads_move_speed_mult = 1.7777,
+		ads_move_speed_mult = 1.6,
 		swap_bonus = 1.75
 	}
 	tweak_data.rocket_launcher = {
-		ads_move_speed_mult = 0.5,
+		ads_move_speed_mult = 0.4, --lowered to 0.2
 	}
 
 tweak_data.shotgun = {
@@ -67,11 +67,11 @@ tweak_data.smg = {
 	hipfire_spread_mult = 0.9
 }
 	tweak_data.pdw = {
-		ads_move_speed_mult = 0.6428,
+		ads_move_speed_mult = 0.7142857, --lowered to 0.5
 	}
 	tweak_data.lmg = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.55,
+		ads_move_speed_mult = 0.428571, --lowered to 0.3
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
@@ -80,37 +80,39 @@ tweak_data.smg = {
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.55,
+		ads_move_speed_mult = 0.428571, --lowered to 0.3
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
 
 tweak_data.snp = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.45,
+	ads_move_speed_mult = 0.5,
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 1.5,
-		hipfire_moving_spread_mult = 1.5
+		hipfire_moving_spread_mult = 1.5,
+		ads_move_speed_mult = 0.6 --lowered to 0.3
 	}
 
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.45
+	ads_move_speed_mult = 0.5
 }
 	tweak_data.crb = {
 		swap_bonus = 1.1,
-		ads_move_speed_mult = 1.111111
+		ads_move_speed_mult = 1.2 --raised to 0.6
 	}
 	tweak_data.dmr = {
 		hipfire_spread_mult = 1.5,
-		hipfire_moving_spread_mult = 1.5
+		hipfire_moving_spread_mult = 1.5,
+		ads_move_speed_mult = 0.7 --lowered to 0.4
 	}
 
 tweak_data.akimbo = {
 	swap_bonus = 0.8,
-	ads_move_speed_mult = 0.75,
+	ads_move_speed_mult = 0.8,
 	hipfire_spread_mult = 1.5
 }
 

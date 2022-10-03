@@ -17754,7 +17754,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		3.4 * map_scale_factor,
 		3.55 * map_scale_factor
 	}
-	
+	--[[
 	if restoration and restoration.sonic_mod then 
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
@@ -17927,6 +17927,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	end
 else	
+	--]]
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
 			11,
@@ -18096,7 +18097,6 @@ else
 			summers = 1
 		}
 	end
-end
 	
 	--Assault groups
 	if difficulty_index <= 2 then

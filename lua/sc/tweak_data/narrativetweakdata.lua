@@ -1,4 +1,14 @@
 Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
+	-- The stars table needs to be sorted as crimenetmanager expects them to be in ascending order
+	-- Since they're in descending order normally, crime.net actually give them the opposite weight as intended
+	for _, stars in pairs(self.STARS) do
+		table.sort(stars.jcs)
+	end
+
+	for _, stars in pairs(self.INFAMY_STARS) do
+		table.sort(stars.jcs)
+	end
+
 	self.tutorials = {
 		{job = "safehouse"},
 		{job = "short1"},
@@ -258,15 +268,3 @@ function NarrativeTweakData:create_job_name(job_id, ...)
 		end
 	return text_string, color_ranges
 end
-
-Hooks:PostHook(NarrativeTweakData, "init", "weighting_fix_init", function(self)
-	-- The stars table needs to be sorted as crimenetmanager expects them to be in ascending order
-	-- Since they're in descending order normally, crime.net actually give them the opposite weight as intended
-	for _, stars in pairs(self.STARS) do
-		table.sort(stars.jcs)
-	end
-
-	for _, stars in pairs(self.INFAMY_STARS) do
-		table.sort(stars.jcs)
-	end
-end)

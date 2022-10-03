@@ -581,11 +581,11 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.access = "swat"
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
-	if restoration and restoration.sonic_mod then 
-	self.medic.rescue_hostages = true
-	else
-	self.medic.rescue_hostages = false
-	end
+	--if restoration and restoration.sonic_mod then 
+	--self.medic.rescue_hostages = true
+	--else
+	--self.medic.rescue_hostages = false
+	--end
 	self.medic.no_arrest = true
 	if self:get_ai_group_type() == "murkywater" then
 	    self.medic.custom_voicework = "murky_medic"
@@ -1111,11 +1111,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	else	
 		self.weekend.yellow_blood = nil
 	end	
-	if restoration and restoration.sonic_mod then 
-	self.weekend.rescue_hostages = true
-	else
-	self.weekend.rescue_hostages = false
-	end
+	--if restoration and restoration.sonic_mod then 
+	--self.weekend.rescue_hostages = true
+	--else
+	--self.weekend.rescue_hostages = false
+	--end
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")				
@@ -1180,11 +1180,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
 	self.weekend_lmg.yellow_blood = nil
-	if restoration and restoration.sonic_mod then 
-	self.weekend_lmg.rescue_hostages = true
-	else
-	self.weekend_lmg.rescue_hostages = false
-	end
+	--if restoration and restoration.sonic_mod then 
+	--self.weekend_lmg.rescue_hostages = true
+	--else
+	--self.weekend_lmg.rescue_hostages = false
+	--end
 	if self:get_ai_group_type() == "murkywater" then
 		self.weekend_lmg.yellow_blood = true
 	else	

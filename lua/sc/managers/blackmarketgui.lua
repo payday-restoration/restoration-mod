@@ -4475,9 +4475,30 @@ function BlackMarketGui:update_info_text()
 			local category = (selection_index == 1 and "secondaries") or (selection_index == 2 and "primaries") or "disabled"
 			if category == slot_data.category then
 
+				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
+				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
+				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
+				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
+				local sms = weapon_tweak.sms or 1
+				local stat_sms = nil
+				local stat_attachment_desc = nil
+				if custom_stats then
+					for part_id, stats in pairs(custom_stats) do
+						if stats.sms then
+							sms = sms + (1 * (stats.sms - 1))
+							stat_sms = true
+						end
+						if stats.alt_desc then
+							stat_attachment_desc = stats.alt_desc
+						end
+					end
+				end
+
 				if weapon_tweak.has_description then
 					local has_pc_desc = managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc")
-					local description = has_pc_desc and managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros) or managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					local desc_id = stat_attachment_desc or tweak_data.weapon[slot_data.name].desc_id
+					local description = has_pc_desc and managers.localization:text(desc_id .. "_pc", desc_macros) or managers.localization:text(desc_id, desc_macros)
 					for color_id in string.gmatch(description, "#%{(.-)%}#") do
 						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 					end
@@ -4498,22 +4519,6 @@ function BlackMarketGui:update_info_text()
 					end
 					updated_texts[4].below_stats = true
 				end			
-
-				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
-				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
-				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
-				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
-				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
-				local sms = weapon_tweak.sms or 1
-				local stat_sms = nil
-				if custom_stats then
-					for part_id, stats in pairs(custom_stats) do
-						if stats.sms then
-							sms = sms + (1 * (stats.sms - 1))
-							stat_sms = true
-						end
-					end
-				end
 
 				if movement_penalty < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))

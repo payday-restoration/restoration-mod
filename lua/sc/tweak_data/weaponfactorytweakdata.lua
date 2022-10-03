@@ -4973,6 +4973,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 	self.wpn_fps_shot_r870.uses_parts[44] = "resmod_dummy"
 	self.wpn_fps_shot_r870.uses_parts[45] = "resmod_dummy"
 	self.wpn_fps_shot_r870.uses_parts[53] = "resmod_dummy"
+	self.wpn_fps_shot_r870.uses_parts[63] = "resmod_dummy"
 		
 	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
 	table.insert(self.wpn_fps_shot_r870_npc.uses_parts, "wpn_fps_shot_r870_s_folding_ext")		
@@ -5072,6 +5073,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 	self.wpn_fps_shot_serbu.uses_parts[46] = "resmod_dummy"
 	self.wpn_fps_shot_serbu.uses_parts[47] = "resmod_dummy"
 	self.wpn_fps_shot_serbu.uses_parts[52] = "resmod_dummy"	
+	self.wpn_fps_shot_serbu.uses_parts[62] = "resmod_dummy"	
 		
 	--table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_shot_r870_s_nostock")
 	--table.insert(self.wpn_fps_shot_serbu_npc.uses_parts, "wpn_fps_shot_r870_s_nostock")		
@@ -16202,7 +16204,7 @@ end)
 --KS12 Urban 
 Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function(self)
 
-	--Reinforced Frame (Formerly DMR kit)
+	--Reinforced Frame
 	self.parts.wpn_fps_ass_shak12_body_vks.pcs = {
 		10,
 		20,
@@ -16224,6 +16226,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		rof_mult = 0.626666,
 		ads_speed_mult = 1.20,
 		sms = 0.9,
+		alt_desc = "bm_shak12_sc_oden_desc"
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
 	

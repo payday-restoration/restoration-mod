@@ -4393,7 +4393,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.can_shoot_through_shield = false
 				self.lemming.can_shoot_through_wall = false
 				self.lemming.armor_piercing_chance = 0.8
-				self.lemming.hs_mult = 1.11111
+				self.lemming.hs_mult = 1.33333
 				self.lemming.supported = true
 				self.lemming.ads_speed = 0.220
 				self.lemming.damage_falloff = {
@@ -6419,7 +6419,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.can_shoot_through_enemy = false
 				self.mp7.can_shoot_through_shield = false
 				self.mp7.can_shoot_through_wall = false
-				self.mp7.hs_mult = 1.11111
+				self.mp7.hs_mult = 1.33333
 				self.mp7.armor_piercing_chance = 0.8
 				self.mp7.kick = self.stat_info.kick_tables.even_recoil
 				self.mp7.supported = true
@@ -6464,7 +6464,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.can_shoot_through_shield = false
 				self.p90.can_shoot_through_wall = false
 				self.p90.panic_suppression_chance = 0.05
-				self.p90.hs_mult = 1.11111
+				self.p90.hs_mult = 1.33333
 				self.p90.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.p90.supported = true
 				self.p90.ads_speed = 0.240

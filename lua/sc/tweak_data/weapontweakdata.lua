@@ -8256,7 +8256,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.reload_speed_multiplier = 1.17
 				self.akm.panic_suppression_chance = 0.05
 				--Gold AK
-				self.akm_gold.bmp = 500
+				self.akm_gold.bmp = 1000
 				self.akm_gold.desc_id = "bm_akm_gold_sc_desc"
 				self.akm_gold.has_description = true
 				self.akm_gold.kick = self.stat_info.kick_tables.moderate_right_kick			
@@ -12914,7 +12914,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	
 	if self.tingledingle then --Zdanns's TBP
-		self.tingledingle.bmp = 999
+		self.tingledingle.bmp = 999999
 		self.tingledingle.no_auto_anims = true		
 		self.tingledingle.recategorize = { "light_ar" }
 		self.tingledingle.damage_type = "assault_rifle"

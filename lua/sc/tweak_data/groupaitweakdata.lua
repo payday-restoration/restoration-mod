@@ -14647,13 +14647,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}
 	self.enemy_spawn_groups.FBI_spoocs = {
-		amount = {1, 1},
+		amount = {1, 2},
 		spawn = {
 			{
 				unit = "spooc",
 				freq = 1,
 				amount_min = 1,
-				amount_max = 1,
+				amount_max = 2,
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
@@ -15719,12 +15719,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W5 = {
-		amount = {1, 1},
+		amount = {1, 2},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
 				freq = 1,
 				amount_min = 1,
+				amount_max = 2,
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
@@ -16110,12 +16111,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W6 = {
-		amount = {1, 1},
+		amount = {1, 2},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
 				freq = 1,
 				amount_min = 1,
+				amount_max = 2,
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
@@ -16500,12 +16502,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W7 = {
-		amount = {1, 1},
+		amount = {1, 2},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
 				freq = 1,
 				amount_min = 1,
+				amount_max = 2,
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
@@ -16892,12 +16895,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W8 = {
-		amount = {1, 1},
+		amount = {1, 2},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
 				freq = 1,
 				amount_min = 1,
+				amount_max = 2,
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
@@ -17282,12 +17286,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_FBI_spoocs_W9 = {
-		amount = {1, 1},
+		amount = {1, 2},
 		spawn = {
 			{
 				unit = "SKM_spooc_w5",
 				freq = 1,
 				amount_min = 1,
+				amount_max = 2,
 				tactics = self._tactics.spooc,
 				rank = 1
 			}

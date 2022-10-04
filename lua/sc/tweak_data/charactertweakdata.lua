@@ -2185,8 +2185,8 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
-	self.spooc.charging_detect = true
-	self.spooc.jump_detect = true
+	self.spooc.charging_detect = false
+	self.spooc.jump_detect = false
 	self.spooc.static_weapon_preset = true
 	self.spooc.no_asu = true
 	self.spooc.kick_damage = 8.0 --Amount of damage dealt when cloakers hick players.
@@ -2234,6 +2234,8 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.can_be_tased = false
 	self.spooc_titan.priority_shout_max_dis = 0
 	self.spooc_titan.unintimidateable = true
+	self.spooc_titan.charging_detect = true
+	self.spooc_titan.jump_detect = true
 	self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 	self.spooc_titan.is_special = true

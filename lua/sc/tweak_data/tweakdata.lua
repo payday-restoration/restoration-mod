@@ -770,15 +770,6 @@ tweak_data.casino = {
 	infamous_chance = 3
 }	
 
---[[
-tweak_data.money_manager.weapon_cost = {}
-local cost = 42000
-for i = 1, 10000, 1 do
-	table.insert( tweak_data.money_manager.weapon_cost, tostring(cost) )
-	cost = cost + 23000
-end
-]]
-
 tweak_data.experience_manager.stage_failed_multiplier = 0.5
 -- From update 34
 tweak_data.experience_manager.stage_completion = {

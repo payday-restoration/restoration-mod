@@ -360,6 +360,20 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		return 0
 	end
 
+	local user_unit = self._setup and self._setup.user_unit
+	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
+	if current_state and current_state:in_steelsight() then
+		local weapon_stats = tweak_data.weapon.stats
+		local base_zoom = weapon_stats.zoom and weapon_stats.zoom[1]
+		local current_zoom = self:zoom()
+		local percent_reduction = 0.05
+		local zoom_mult = base_zoom and current_zoom and (1 + (((base_zoom / current_zoom) - 1) * percent_reduction))
+		if zoom_mult then
+			mult = mult / zoom_mult
+		end
+	end
+
+
 	return mult
 end
 

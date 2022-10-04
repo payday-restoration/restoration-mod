@@ -1724,6 +1724,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
 			--L115
 			["bm_w_l115"] = "AIM 90M",
+			--Highly Modified CAR-4
+			["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing enemies, their body armor, shields and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
+			["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
+			["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 
 		--GL40		
 		["bm_w_gre_m79"] = "GL-40",

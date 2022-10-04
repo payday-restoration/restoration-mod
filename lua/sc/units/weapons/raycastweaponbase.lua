@@ -177,12 +177,17 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 	return result
 end
 
+function RaycastWeaponBase:can_shoot_through_titan_shield()
+	return self._can_shoot_through_titan_shield
+end
+
 --Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase:_collect_hits(from, to)
 	local hit_enemy = false
 	local has_hit_wall = false
 	local can_shoot_through_wall = self:can_shoot_through_wall()
 	local can_shoot_through_shield = self:can_shoot_through_shield()
+	local can_shoot_through_titan_shield = self:can_shoot_through_titan_shield()
 	local can_shoot_through_enemy = self:can_shoot_through_enemy()
 	local enemy_mask = managers.slot:get_mask("enemies")
 	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
@@ -207,7 +212,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 				break
 			elseif not can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
 				break
-			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and not self._can_shoot_through_titan_shield  then --Titan shields
+			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and not can_shoot_through_titan_shield  then --Titan shields
 				break
 			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then --Winters being a shit.
 				break						

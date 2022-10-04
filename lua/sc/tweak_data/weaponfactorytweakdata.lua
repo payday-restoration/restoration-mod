@@ -23474,6 +23474,86 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+	if self.parts.wpn_fps_hmcar_uupg_m_std then
+
+		self.parts.wpn_fps_ass_tecci_bolt = deep_clone(self.parts.wpn_fps_ass_tecci_upper_reciever)
+		self.parts.wpn_fps_ass_tecci_bolt.visibility = {
+			{
+				objects = {
+					g_upper = false,
+				}
+			}
+		}
+
+		self.parts.wpn_fps_hmcar_hd_kit = {
+			pcs = {},
+			type = "exclusive_set",
+			dlc = "sc",
+			name_id = "bm_wp_hmcar_hd_kit",
+			a_obj = "a_fg",
+			has_description = true,
+			desc_id = "bm_wp_hmcar_hd_kit_desc",
+			alt_icon = "guis/textures/overkill_df",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			supported = true,
+			stats = {
+				value = 0
+			},
+			override = { 
+				wpn_fps_hmcar_lower_receiver = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_reciever",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_lower_reciever",
+					adds = {
+						"wpn_fps_m4_upper_reciever_round_vanilla",
+						"wpn_fps_m4_uupg_draghandle",
+						"wpn_fps_upg_m4_s_standard_vanilla",
+						"wpn_fps_upg_m4_g_standard_vanilla",
+						"wpn_fps_m4_uupg_fg_rail",
+					}
+				},
+				wpn_fps_m4_uupg_fg_rail = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_fg_railed",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_fg_railed",
+					adds = { "wpn_fps_ass_tecci_bolt" }
+				},
+				wpn_fps_m4_upper_reciever_round_vanilla = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_upper_reciever_edge",
+				},
+				wpn_fps_hmcar_uupg_b_dummy = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_short",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_short"
+				},
+				wpn_fps_hmcar_uupg_m_std = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_m_std",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_m_std"
+				},
+				wpn_fps_upg_goodlaser = {
+					unit = "units/payday2/weapons/wpn_fps_upg_fl_ass_smg_sho_peqbox/wpn_fps_upg_fl_ass_smg_sho_peqbox",
+					third_unit = "units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_peqbox/wpn_third_upg_fl_ass_smg_sho_peqbox"
+				},
+				wpn_fps_upg_goodlaser = {
+					unit = "units/payday2/weapons/wpn_fps_upg_fl_ass_smg_sho_peqbox/wpn_fps_upg_fl_ass_smg_sho_peqbox",
+					third_unit = "units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_peqbox/wpn_third_upg_fl_ass_smg_sho_peqbox"
+				},
+				wpn_fps_upg_o_hmscope = {
+					unit = "units/payday2/weapons/wpn_fps_upg_o_eotech/wpn_fps_upg_o_eotech",
+					third_unit = "units/payday2/weapons/wpn_third_upg_o_eotech/wpn_third_upg_o_eotech"
+				},
+			},
+			forbids = {
+				"wpn_fps_addon_ris"
+			}
+		}
+		self.wpn_fps_ass_hmcar.stock_adapter = "wpn_fps_upg_m4_s_adapter"
+		self.wpn_fps_ass_hmcar_npc.stock_adapter = "wpn_fps_upg_m4_s_adapter"
+
+		table.insert(self.wpn_fps_ass_hmcar.uses_parts, "wpn_fps_hmcar_hd_kit")
+
+		self.wpn_fps_ass_hmcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_hmcar.uses_parts)
+	end
+
 
 --Resmod Custom Weapon stuff
 

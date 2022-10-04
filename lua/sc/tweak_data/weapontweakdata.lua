@@ -12954,6 +12954,78 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tingledingle.timers = deep_clone(self.ecp.timers)
 	end
 
+	if self.hmcar then
+		self.hmcar.categories = {
+			"snp",
+			"semi_snp"
+		}
+		self.hmcar.recategorize = { "light_ar" }	
+		self.hmcar.damage_type = "assault_rifle"
+		self.hmcar.has_description = true
+		self.hmcar.desc_id = "bm_hmcar_sc_desc"
+		self.hmcar.FIRE_MODE = "auto"
+		self.hmcar.charge_data = {
+			max_t = 0.0,
+			cooldown_t = 3
+		}
+		self.hmcar.fire_mode_data.volley = {}
+		self.hmcar.fire_mode_data.volley.spread_mul = 1
+		self.hmcar.fire_mode_data.volley.damage_mul = 2
+		self.hmcar.fire_mode_data.volley.damage_mul_step = true
+		self.hmcar.fire_mode_data.volley.ammo_usage = 2
+		self.hmcar.fire_mode_data.volley.rays = 1
+		self.hmcar.fire_mode_data.volley.can_shoot_through_wall = true
+		self.hmcar.fire_mode_data.volley.can_shoot_through_shield = true
+		self.hmcar.fire_mode_data.volley.can_shoot_through_enemy = true
+		self.hmcar.fire_mode_data.volley.can_shoot_through_titan_shield = true
+		self.hmcar.fire_mode_data.volley.armor_piercing_chance = 1
+		self.hmcar.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
+		self.hmcar.fire_mode_data.volley.trail_effect = "effects/particles/weapons/sniper_trail_sc"
+		self.hmcar.fire_mode_data.toggable = {
+			"volley",
+			"auto"
+		}
+		self.hmcar.no_charge_anims = true
+		self.hmcar.trail_effect = "effects/particles/weapons/titan_trail_sc"
+		self.hmcar.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.hmcar.kick = self.stat_info.kick_tables.vertical_kick
+		self.hmcar.CLIP_AMMO_MAX = 10
+		self.hmcar.AMMO_MAX = 30
+		self.hmcar.no_auto_anims = true
+		self.hmcar.fire_mode_data.fire_rate = 1
+		self.hmcar.can_shoot_through_enemy = true
+		self.hmcar.can_shoot_through_shield = true
+		self.hmcar.can_shoot_through_wall = true
+		self.hmcar.supported = true
+		self.hmcar.ads_speed = 0.500
+		self.hmcar.damage_falloff = {
+			start_dist = 6900,
+			end_dist = 9600,
+			min_mult = 0.5
+		}	
+		self.hmcar.stats = {
+			damage = 90,
+			spread = 86,
+			recoil = 51,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 18,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.hmcar.stats_modifiers = nil
+		self.hmcar.reload_speed_multiplier = 0.75
+		self.hmcar.tsnipar = true
+		self.hmcar.sounds.fire_single = "zsniper_npc1a_1shot"
+		self.hmcar.sounds.fire = "zsniper_npc1a_1shot"
+		self.hmcar.sounds.fire_auto = "zsniper_npc1a_1shot"
+		self.hmcar.sounds.charge = "sniper_npc1c_1shot"
+	end
+
 	if self.raygun then --Leather Dann's CoD:Zombies Raygun
 		self.raygun.categories = {
 			"grenade_launcher",

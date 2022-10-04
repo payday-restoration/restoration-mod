@@ -16,6 +16,18 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 			break
 		end
 	end
+
+	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
+	local volley_fire_mode = fire_mode_data.volley
+
+	if volley_fire_mode then
+		self._volley_spread_mul = volley_fire_mode.spread_mul or 1
+		self._volley_damage_mul = volley_fire_mode.damage_mul or 1
+		self._volley_damage_mul_step = volley_fire_mode.damage_mul_step or nil
+		self._volley_ammo_usage = volley_fire_mode.ammo_usage or 1
+		self._volley_rays = volley_fire_mode.rays or 1
+	end
+
 end)
 
 if _G.IS_VR then
@@ -1134,6 +1146,45 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 	return ammo
 end
 
+function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data, ammo_usage)
+	if self:gadget_overrides_weapon_functions() then
+		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+	end
+
+	if self._fire_mode == ids_volley then
+		local ammo_usage_ratio = math.clamp(ammo_usage > 0 and ammo_usage / (self._volley_ammo_usage or ammo_usage) or 1, 0, 1)
+		local rays = math.ceil(ammo_usage_ratio * (self._volley_rays or 1))
+		spread_mul = spread_mul * (self._volley_spread_mul or 1)
+		dmg_mul = dmg_mul * (self._volley_damage_mul or 1)
+		if self._volley_damage_mul and self._volley_damage_mul_step and self._volley_ammo_usage then
+			local dmg_mul_step = self._volley_damage_mul / self._volley_ammo_usage
+			dmg_mul = ammo_usage > 0 and ammo_usage * dmg_mul_step
+		end
+		local result = {
+			rays = {}
+		}
+
+		for i = 1, rays do
+			local raycast_res = NewRaycastWeaponBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+
+			if raycast_res.enemies_in_cone then
+				result.enemies_in_cone = result.enemies_in_cone or {}
+
+				table.map_append(result.enemies_in_cone, raycast_res.enemies_in_cone)
+			end
+
+			result.hit_enemy = result.hit_enemy or raycast_res.hit_enemy
+
+			table.list_append(result.rays, raycast_res.rays or {})
+		end
+
+		return result
+	end
+
+	return NewRaycastWeaponBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+end
+
+
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	if managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name then
 		
@@ -1381,4 +1432,10 @@ function NewRaycastWeaponBase:get_object_damage_mult()
 	else
 		return self:weapon_tweak_data().object_damage_mult or 1
 	end
+end
+
+function NewRaycastWeaponBase:can_shoot_through_titan_shield()
+	local fire_mode_data = self._fire_mode_data[self._fire_mode:key()]
+
+	return fire_mode_data and fire_mode_data.can_shoot_through_titan_shield or self._can_shoot_through_titan_shield
 end

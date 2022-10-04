@@ -2494,8 +2494,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_uupg_b_long.supported = true
-	self.parts.wpn_fps_m4_uupg_b_long.stats = deep_clone(barrels.long_b2_stats)
-	self.parts.wpn_fps_m4_uupg_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+	self.parts.wpn_fps_m4_uupg_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_m4_uupg_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 
 	--(CAR) Short Barrel
 	self.parts.wpn_fps_m4_uupg_b_short.pcs = {
@@ -2508,7 +2508,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.parts.wpn_fps_m4_uupg_b_short.stats = deep_clone(barrels.short_b2_stats)
 	self.parts.wpn_fps_m4_uupg_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
-	--(CAR) Medium Barrel
+	--(CAR/Para) Medium Barrel
 	self.parts.wpn_fps_m4_uupg_b_medium.pcs = {
 		10,
 		20,
@@ -2534,16 +2534,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		alert_size = -1
 	}
 	self.parts.wpn_fps_m4_uupg_b_sd.perks = {"silencer"}
-	--[[ 
-	-- Dunno why I added this, might've been something done during the dev for the Em-Four kit but it doesn't seem(?) to be needed now
-	-- Comment for now just in case
-	self.parts.wpn_fps_m4_uupg_b_sd.override = {
-		wpn_fps_m4_uupg_fg_rail = {
-			adds = {},
-			override = {}
-		}
-	}
-	--]]
+	
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_m4a1")
 	
@@ -9786,8 +9777,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		}
 	}
 	self.parts.wpn_fps_upg_ass_m4_b_beowulf.supported = true
-	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats = deep_clone(barrels.long_b3_stats)
-	self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats.recoil = 8
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats.concealment = -6
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+	self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ads_speed_mult = 1.15
 	
 end)
 
@@ -23485,6 +23479,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 
+		self.parts.wpn_fps_upg_o_hmscope_hd = deep_clone(self.parts.wpn_fps_upg_o_eotech)
+		self.parts.wpn_fps_upg_o_hmscope_hd.visibility = {
+			{
+				objects = {
+					g_mullplan = false,
+					g_gfx_lens = false,
+					g_testdot = false,
+				}
+			}
+		}
+
+		self.parts.wpn_fps_hmcar_uupg_m_hd = deep_clone(self.parts.wpn_fps_hmcar_uupg_m_std)
+		self.parts.wpn_fps_hmcar_uupg_m_hd.visibility = {
+			{
+				objects = {
+					g_bullet_1 = false,
+					g_bullet_2 = false
+				}
+			}
+		}
+
 		self.parts.wpn_fps_hmcar_hd_kit = {
 			pcs = {},
 			type = "exclusive_set",
@@ -23514,32 +23529,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				},
 				wpn_fps_m4_uupg_fg_rail = {
 					unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_fg_railed",
-					third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_fg_railed",
-					adds = { "wpn_fps_ass_tecci_bolt" }
+					third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_fg_railed"
 				},
 				wpn_fps_m4_upper_reciever_round_vanilla = {
 					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",
 					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_upper_reciever_edge",
+					adds = { "wpn_fps_ass_tecci_bolt" }
 				},
 				wpn_fps_hmcar_uupg_b_dummy = {
 					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_short",
 					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_short"
 				},
 				wpn_fps_hmcar_uupg_m_std = {
-					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_m_std",
-					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_m_std"
-				},
-				wpn_fps_upg_goodlaser = {
-					unit = "units/payday2/weapons/wpn_fps_upg_fl_ass_smg_sho_peqbox/wpn_fps_upg_fl_ass_smg_sho_peqbox",
-					third_unit = "units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_peqbox/wpn_third_upg_fl_ass_smg_sho_peqbox"
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					adds = {
+						"wpn_fps_hmcar_uupg_m_hd"
+					}
 				},
 				wpn_fps_upg_goodlaser = {
 					unit = "units/payday2/weapons/wpn_fps_upg_fl_ass_smg_sho_peqbox/wpn_fps_upg_fl_ass_smg_sho_peqbox",
 					third_unit = "units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_peqbox/wpn_third_upg_fl_ass_smg_sho_peqbox"
 				},
 				wpn_fps_upg_o_hmscope = {
-					unit = "units/payday2/weapons/wpn_fps_upg_o_eotech/wpn_fps_upg_o_eotech",
-					third_unit = "units/payday2/weapons/wpn_third_upg_o_eotech/wpn_third_upg_o_eotech"
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					adds = {
+						"wpn_fps_upg_o_hmscope_hd"
+					}
 				},
 			},
 			forbids = {

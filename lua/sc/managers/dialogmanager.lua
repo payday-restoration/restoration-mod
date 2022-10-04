@@ -1214,17 +1214,17 @@ function DialogManager:queue_dialog(id, ...)
         --End of an Era (custom)--
         if id == "cmex_masterpc" then
             if difficulty_index <= 2 then
-                escape_time = 570
+                escape_time = 630
             elseif difficulty_index == 3 then
-                escape_time = 540
+                escape_time = 600
             elseif difficulty_index == 4 then
-                escape_time = 510
+                escape_time = 570
             elseif difficulty_index == 5 then
-                escape_time = 480    
+                escape_time = 540    
             elseif difficulty_index == 6 or difficulty_index == 7 then
-                escape_time = 450                        
+                escape_time = 510                        
             else
-                escape_time = 420
+                escape_time = 480
             end        
         end
 		

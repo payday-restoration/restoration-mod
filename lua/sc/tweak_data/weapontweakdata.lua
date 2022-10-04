@@ -12959,8 +12959,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"snp",
 			"semi_snp"
 		}
-		self.hmcar.recategorize = { "light_ar" }	
-		self.hmcar.damage_type = "assault_rifle"
+		self.hmcar.recategorize = { "heavy_snp" }	
+		self.hmcar.damage_type = "sniper"
 		self.hmcar.has_description = true
 		self.hmcar.desc_id = "bm_hmcar_sc_desc"
 		self.hmcar.FIRE_MODE = "auto"

@@ -13807,7 +13807,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 69,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 25,
+			concealment = 27,
 			suppression = 6,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -14286,6 +14286,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.smg45.timers.reload_exit_not_empty = 0.85
 	end
 	
+	if self.troglodyte then --Leon and Mira's AWM-F
+		self.troglodyte.recategorize = { "heavy_snp" }
+		self.troglodyte.upgrade_blocks = nil
+		self.troglodyte.has_description = true
+		self.troglodyte.always_play_anims = true
+		self.troglodyte.desc_id = "bm_ap_weapon_sc_desc"
+		self.troglodyte.tactical_reload = 1
+		self.troglodyte.CLIP_AMMO_MAX = 5
+		self.troglodyte.AMMO_MAX = 15
+		self.troglodyte.fire_mode_data.fire_rate = 1.09090909
+		self.troglodyte.fire_rate_multiplier = 1.1818181
+		self.troglodyte.sounds.stop_fire = "saiga_stop"
+		self.troglodyte.kick = self.stat_info.kick_tables.vertical_kick
+		self.troglodyte.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.troglodyte.supported = true
+		self.troglodyte.ads_speed = 0.340
+		self.troglodyte.damage_falloff = {
+			start_dist = 5000,
+			end_dist = 9300,
+			min_mult = 0.75
+		}
+		self.troglodyte.stats = {
+			damage = 120,
+			spread = 94,
+			recoil = 27,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 26,
+			suppression = 5,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.troglodyte.armor_piercing_chance = 1
+		self.troglodyte.stats_modifiers = nil
+		self.troglodyte.panic_suppression_chance = 0.05
+		self.troglodyte.timers.reload_not_empty = 2.55
+		self.troglodyte.timers.reload_exit_empty = 0.7
+		self.troglodyte.timers.reload_exit_not_empty = 0.75
+	end
 
 	--Predator Pack
 		if self.owlfbullpup then
@@ -14413,10 +14455,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m6d.timers = deep_clone(self.deagle.timers)
 	end
 
+	if self.mcx_spear then --RJC9000 and PlayBONK's SIG MCX Spear
+		self.mcx_spear.categories = { "assault_rifle" }
+		self.mcx_spear.recategorize = { "dmr_ar" }
+		self.mcx_spear.damage_type = "sniper"
+		self.mcx_spear.tactical_reload = 1
+		self.mcx_spear.CLIP_AMMO_MAX = 20
+		self.mcx_spear.AMMO_MAX = 60
+		self.mcx_spear.FIRE_MODE = "auto"
+		self.mcx_spear.CAN_TOGGLE_FIREMODE = true
+		self.mcx_spear.sounds.stop_fire = "g36_stop"
+		self.mcx_spear.kick = {}
+		self.mcx_spear.kick = self.stat_info.kick_tables.right_kick
+		self.mcx_spear.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.mcx_spear.supported = true
+		self.mcx_spear.ads_speed = 0.420
+		self.mcx_spear.damage_falloff = {
+			start_dist = 2600,
+			end_dist = 6500,
+			min_mult = 0.6666
+		}	
+		self.mcx_spear.stats = {
+			damage = 45,
+			spread = 83,
+			recoil = 73,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 21,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.mcx_spear.stats_modifiers = nil
+		self.mcx_spear.panic_suppression_chance = 0.05
+		self.mcx_spear.can_shoot_through_enemy = true
+		self.mcx_spear.can_shoot_through_wall = false
+		self.mcx_spear.can_shoot_through_shield = false
+		self.mcx_spear.armor_piercing_chance = 0.8
+		self.mcx_spear.timers.reload_empty = 3.1
+		self.mcx_spear.timers.reload_exit_empty = 0.9
+		self.mcx_spear.timers.reload_not_empty = 2.2
+		self.mcx_spear.timers.reload_exit_not_empty = 1.12
+	end
+
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 		self.amt.recategorize = { "heavy_pis" }		
 		self.amt.damage_type = "heavy_pistol"			
-		self.amt.tactical_reload = 1									
+		self.amt.tactical_reload = 1
 		self.amt.use_data.selection_index = 2
 		self.amt.has_description = true
 		self.amt.desc_id = "bm_ap_armor_50_weapon_sc_desc"

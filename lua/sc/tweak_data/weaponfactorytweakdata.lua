@@ -1700,6 +1700,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
+		translation = Vector3(-0.0, -0.5, -0.2),
+		rotation = Rotation(0.11, -0.09, 0)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
 		translation = Vector3(0, -7, -3.35)
 	}	
@@ -2154,31 +2158,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2_dec16", "resmod_conte
 		zoom = 30
 	}
 	self.parts.wpn_fps_upg_o_acog.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_lmg_hk21 = {
-		translation = Vector3(0, 0, -3.2),
-		rotation = Rotation(-0.05, -0.2, 0)
-	}
-	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_lmg_m249 = {
-		translation = Vector3(0, 0, -3.4)
-	}
-	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_pis_shatters_fury = {
-		translation = Vector3(-0.05, -15, -4.65)
-	}		
-	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_winchester = { 
-		translation = Vector3(0, -7, -3.3)
-	}	
-	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_lmg_hk51b = {
-		translation = Vector3(-0.025, 5, -2.82),
-		rotation = Rotation(0.0, -0.1, -0.625)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0.005, -13, 0.6),
-		rotation = Rotation(0, 0, 0)
-	}
-
-	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_musket = {
-		translation = Vector3(0, -15, -4.34)
-	}
+	self.parts.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_acog.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3 (0,5,0)
+		end
+	end
 
 end)
 
@@ -13291,6 +13276,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", functi
 		translation = Vector3(-0.035, -4, -4.57),
 		rotation = Rotation(0, 0, 0)
 	}
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod.wpn_fps_ass_mcx_spear = {
+		translation = Vector3(-0.0, -0.5, -0.2),
+		rotation = Rotation(0.11, -0.09, 0)
+	}
 	
 	--Angled Sight v2
 	self.parts.wpn_fps_upg_o_45rds_v2.pcs = {
@@ -14660,6 +14649,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		value = 6
 	}
 	self.parts.wpn_fps_upg_o_bmg.custom_stats = { big_scope = true }
+	self.parts.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_bmg.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3 (0,10,0)
+		end
+	end
+
 	self.parts.wpn_fps_upg_o_bmg.perks = {
 		"scope"
 	}
@@ -23570,6 +23566,151 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_hmcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_hmcar.uses_parts)
 	end
 
+	if self.parts.wpn_fps_snp_troglodyte_rec then --Leon and Mira's AWM-F
+
+		self.parts.wpn_fps_snp_troglodyte_b_long.supported = true
+		self.parts.wpn_fps_snp_troglodyte_b_long.stats = {}
+
+		self.parts.wpn_fps_snp_troglodyte_thing.supported = true
+		self.parts.wpn_fps_snp_troglodyte_thing.stats = {
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_snp_troglodyte_s_full.supported = true
+		self.parts.wpn_fps_snp_troglodyte_s_full.stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_snp_troglodyte_s_full.custom_stats = deep_clone(stocks.add_fixed_stats)
+
+	end
+
+	if self.parts.wpn_fps_ass_mcx_spear_am_default then ---RJC9000 and PlayBONK's SIG MCX Spear
+
+		--no
+		self.parts.wpn_fps_ass_mcx_spear_am_default.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_am_default.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_am_default.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_am_default.custom_stats = nil
+		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.custom_stats = nil
+		self.parts.wpn_fps_ass_mcx_spear_am_762.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_am_762.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_am_762.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_am_762.custom_stats = nil
+
+		--made to default option
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear.custom_stats = nil
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear.stance_mod = {
+			wpn_fps_ass_mcx_spear = {
+				translation = Vector3(-0.0, -10, 0.05),
+				rotation = Rotation(0.1, -0.1, 0)
+			}
+		}
+		--hidden for now
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear_folded.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear_folded.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear_folded.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_irons_rear_folded.custom_stats = nil
+
+		--2042 Irons
+		self.parts.wpn_fps_ass_2042_spear_irons_rear.supported = true
+		self.parts.wpn_fps_ass_2042_spear_irons_rear.stats = { value = 0 }
+		self.parts.wpn_fps_ass_2042_spear_irons_rear.custom_stats = nil
+		self.parts.wpn_fps_ass_2042_spear_irons_rear.stance_mod = {
+			wpn_fps_ass_mcx_spear = {
+				translation = Vector3(-0.0, -10, -0.02),
+				rotation = Rotation(0.1, -0.1, 0)
+			}
+		}
+		--hidden for now
+		self.parts.wpn_fps_ass_2042_spear_irons_rear_folded.supported = true
+		self.parts.wpn_fps_ass_2042_spear_irons_rear_folded.pcs = nil
+		self.parts.wpn_fps_ass_2042_spear_irons_rear_folded.stats = { value = 0 }
+		self.parts.wpn_fps_ass_2042_spear_irons_rear_folded.custom_stats = nil
+
+		--default stock
+		self.parts.wpn_fps_ass_mcx_spear_stock.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_stock.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_stock.custom_stats = nil
+		--2042 stock
+		self.parts.wpn_fps_ass_2042_spear_stock.supported = true
+		self.parts.wpn_fps_ass_2042_spear_stock.stats = { value = 0 }
+		self.parts.wpn_fps_ass_2042_spear_stock.custom_stats = nil
+		--folding stock
+		self.parts.wpn_fps_ass_mcx_spear_stock_visor.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_stock_visor.stats = deep_clone(stocks.adj_to_fold_stats)
+		self.parts.wpn_fps_ass_mcx_spear_stock_visor.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+
+		--hidden for now
+		self.parts.wpn_fps_ass_mcx_spear_angled_irons_no.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_angled_irons_no.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_angled_irons_no.stats = { value = 0 }
+		self.parts.wpn_fps_ass_mcx_spear_angled_irons_no.custom_stats = nil
+
+		--DD Grip
+		self.parts.wpn_fps_ass_mcx_spear_vg_bcm.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_vg_bcm.stats = {
+			value = 0
+		}
+		--DD Grip
+		self.parts.wpn_fps_ass_mcx_spear_vg_dd.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_vg_dd.stats = {
+			value = 1,
+			recoil = 2,
+			concealment = -1
+		}
+
+		--Default Suppressor
+		self.parts.wpn_fps_ass_mcx_spear_suppressor.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_suppressor.pcs = nil
+		self.parts.wpn_fps_ass_mcx_spear_suppressor.stats = { 
+			value = 2,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_ass_mcx_spear_suppressor.custom_stats = nil
+
+		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stats = {
+			value = 0,
+			zoom = 8
+		}
+		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stance_mod = {
+			wpn_fps_ass_mcx_spear = {
+				translation = Vector3(-0.0, -10, 1.4),
+				rotation = Rotation(0.1, -0.1, 0)
+			}
+		}
+
+		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.has_description = false
+		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.forbids = nil
+		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.perks = nil
+
+		self.wpn_fps_ass_mcx_spear.override = self.wpn_fps_ass_mcx_spear.override or {}
+		self.wpn_fps_ass_mcx_spear.override.wpn_fps_smg_schakal_vg_surefire = {
+			stats = {
+				value = 1,
+				recoil = 2,
+				concealment = -1
+			}
+		}
+
+		self.wpn_fps_ass_mcx_spear.default_blueprint[2] = "resmod_dummy"
+		self.wpn_fps_ass_mcx_spear.default_blueprint[8] = "wpn_fps_ass_mcx_spear_irons_rear"
+
+		table.insert(self.wpn_fps_ass_mcx_spear.uses_parts, "wpn_fps_sho_sko12_stock")
+
+		self.wpn_fps_ass_mcx_spear_npc.override = deep_clone(self.wpn_fps_ass_mcx_spear.override)
+		self.wpn_fps_ass_mcx_spear_npc.uses_parts = deep_clone(self.wpn_fps_ass_mcx_spear.uses_parts)
+
+	end
 
 --Resmod Custom Weapon stuff
 

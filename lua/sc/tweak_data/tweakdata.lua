@@ -91,7 +91,7 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1.5,
+		hipfire_spread_mult = 1.8,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.6 --lowered to 0.3
 	}
@@ -105,7 +105,7 @@ tweak_data.assault_rifle = {
 		ads_move_speed_mult = 1.2 --raised to 0.6
 	}
 	tweak_data.dmr = {
-		hipfire_spread_mult = 1.5,
+		hipfire_spread_mult = 1.8,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.7 --lowered to 0.4
 	}
@@ -831,51 +831,68 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		}
 	},
 	[2] = {
-		primaries = {
-			{ "light_pis" },
-			{ "heavy_pis" },
-			
-			{ "light_smg" },
-			{ "heavy_smg" },
-
-			{ "light_shot" },
-			{ "heavy_shot" },
-			{ "break_shot" },
-			
-			{ "light_ar" },
-			{ "heavy_ar" },
-			{ "dmr_ar" },
-
-			{ "light_snp" },
-			{ "heavy_snp" },
-			{ "antim_snp" },
-			
-			{ "light_mg" },
-			{ "heavy_mg" },
-			{ "miniguns" },
-		
-			{ "wpn_special" }
-		},
-		secondaries = {
-			{ "light_pis" },
-			{ "heavy_pis" },
-			
-			{ "light_smg" },
-			{ "heavy_smg" },
-			
-			{ "light_shot" },
-			{ "heavy_shot" },
-			{ "break_shot" },
-			
-			{ "light_ar" },
-			{ "heavy_ar" },
-
-			{ "light_snp" },
-			
-			{ "wpn_special" }
-		}
+		primaries = {},
+		secondaries = {}
 	}
 }
+
+--Fuck this is ugly
+--PRIMARIES
+table.insert(dyslexia[2].primaries, { "light_pis" })
+table.insert(dyslexia[2].primaries, { "heavy_pis" })
+		
+table.insert(dyslexia[2].primaries, { "light_smg" })
+table.insert(dyslexia[2].primaries, { "heavy_smg" })
+
+table.insert(dyslexia[2].primaries, { "light_shot" })
+table.insert(dyslexia[2].primaries, { "heavy_shot" })
+table.insert(dyslexia[2].primaries, { "break_shot" })
+		
+table.insert(dyslexia[2].primaries, { "light_ar" })
+table.insert(dyslexia[2].primaries, { "heavy_ar" })
+table.insert(dyslexia[2].primaries, { "dmr_ar" })
+
+table.insert(dyslexia[2].primaries, { "light_snp" })
+table.insert(dyslexia[2].primaries, { "heavy_snp" })
+table.insert(dyslexia[2].primaries, { "antim_snp" })
+		
+table.insert(dyslexia[2].primaries, { "light_mg" })
+table.insert(dyslexia[2].primaries, { "heavy_mg" })
+table.insert(dyslexia[2].primaries, { "miniguns" })
+		
+table.insert(dyslexia[2].primaries, { "wpn_special" })
+
+--SECONDARIES
+table.insert(dyslexia[2].secondaries, { "light_pis" })
+table.insert(dyslexia[2].secondaries, { "heavy_pis" })
+
+table.insert(dyslexia[2].secondaries, { "light_smg" })
+table.insert(dyslexia[2].secondaries, { "heavy_smg" })
+
+table.insert(dyslexia[2].secondaries, { "light_shot" })
+table.insert(dyslexia[2].secondaries, { "heavy_shot" })
+table.insert(dyslexia[2].secondaries, { "break_shot" })
+
+table.insert(dyslexia[2].secondaries, { "light_ar" })
+table.insert(dyslexia[2].secondaries, { "heavy_ar" })
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "dmr_ar" then
+		table.insert(dyslexia[2].secondaries, { "dmr_ar" })
+		break
+	end
+end
+
+table.insert(dyslexia[2].secondaries, { "light_snp" })
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "heavy_snp" then
+		table.insert(dyslexia[2].secondaries, { "heavy_snp" })
+		break
+	end
+end
+
+table.insert(dyslexia[2].secondaries, { "wpn_special" })
 
 if restoration.Options:GetValue("OTHER/WpnCat") then
 	tweak_data.gui.buy_weapon_categories = dyslexia[restoration.Options:GetValue("OTHER/WpnCat")]

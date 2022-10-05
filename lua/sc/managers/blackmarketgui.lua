@@ -4476,11 +4476,11 @@ function BlackMarketGui:update_info_text()
 			if category == slot_data.category then
 
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
-				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
-				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
+				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
 				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
-				local sms = weapon_tweak.sms or 1
+				local sms = weapon_tweak and weapon_tweak.sms or 1
 				local stat_sms = nil
 				local stat_attachment_desc = nil
 				if custom_stats then
@@ -4495,7 +4495,7 @@ function BlackMarketGui:update_info_text()
 					end
 				end
 
-				if weapon_tweak.has_description then
+				if weapon_tweak and weapon_tweak.has_description then
 					local has_pc_desc = managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc")
 					local desc_id = stat_attachment_desc or tweak_data.weapon[slot_data.name].desc_id
 					local description = has_pc_desc and managers.localization:text(desc_id .. "_pc", desc_macros) or managers.localization:text(desc_id, desc_macros)

@@ -99,7 +99,11 @@
 	<mission			path="levels/narratives/classics/dinner/world/world" force="true" />  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
 	<continent			path="levels/narratives/classics/dinner/world/world" force="true" />
 	
-	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> <!--camera guard in front has a shotgun-->
+	<!--shotgun man for security rooms-->
+	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/chas/chas_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/sand/sand_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/tag/tag_security/world/world" force="true" /> 
 	
 	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
@@ -241,6 +245,14 @@
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" load="true" force="true" />
 	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
+	
+	<!--Load Jerome The Shotty Man in case if some heist has him missing in the package-->
+	<add from_db="true" path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
+		<unit path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<object path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<material_config path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true" path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
 	
 	<!-- Gensec Security: Beret Poppin' -->
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />

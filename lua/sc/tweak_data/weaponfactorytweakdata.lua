@@ -2534,7 +2534,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		alert_size = -1
 	}
 	self.parts.wpn_fps_m4_uupg_b_sd.perks = {"silencer"}
-	
+
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_m4a1")
 	
@@ -4042,17 +4042,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 	}
 
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_standard")
-	table.insert(self.wpn_fps_ass_ak5_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_pts")
-	table.insert(self.wpn_fps_ass_ak5_npc.uses_parts, "wpn_fps_upg_m4_s_pts")	
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_crane")
-	table.insert(self.wpn_fps_ass_ak5_npc.uses_parts, "wpn_fps_upg_m4_s_crane")	
-	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_mk46")
-	table.insert(self.wpn_fps_ass_ak5_npc.uses_parts, "wpn_fps_upg_m4_s_mk46")	
+	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_mk46")	
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_ubr")
-	table.insert(self.wpn_fps_ass_ak5_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")	
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_snp_tti_s_vltor")
-	table.insert(self.wpn_fps_ass_ak5_npc.uses_parts, "wpn_fps_snp_tti_s_vltor")	
+	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_sho_sko12_stock")
 
 	self.wpn_fps_ass_ak5_npc.uses_parts = deep_clone(self.wpn_fps_ass_ak5.uses_parts)
 end)
@@ -5903,21 +5898,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_g_hgrip")
 	table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_g_hgrip")
 
-	--self.wpn_fps_ass_scar.stock_adapter = "wpn_fps_ass_s552_s_m4"
-	--self.wpn_fps_ass_scar_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
-	--table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_standard")
-	--table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
-	--table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_pts")
-	--table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_s_pts")	
-	--table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_crane")
-	--table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_s_crane")	
-	--table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_mk46")
-	--table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_s_mk46")	
-	--table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_ubr")
-	--table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")	
-	--table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_snp_tti_s_vltor")
-	--table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_snp_tti_s_vltor")		
+	self.wpn_fps_ass_scar.stock_adapter = "wpn_fps_ass_s552_s_m4"
+	self.wpn_fps_ass_scar_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_snp_tti_s_vltor")	
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_sho_sko12_stock")
+
+	self.wpn_fps_ass_scar.override = self.wpn_fps_ass_scar.overrides or {}
+	self.wpn_fps_ass_scar.override.wpn_fps_upg_m4_s_standard = {
+		stats = {},
+		custom_stats = {}
+	}
 	
+	self.wpn_fps_ass_scar_npc.override = deep_clone(self.wpn_fps_ass_scar.override)
 	self.wpn_fps_ass_scar_npc.uses_parts = deep_clone(self.wpn_fps_ass_scar.uses_parts)
 	
 end)
@@ -23490,7 +23487,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 
-		self.parts.wpn_fps_hmcar_uupg_m_hd = deep_clone(self.parts.wpn_fps_hmcar_uupg_m_std)
+		self.parts.wpn_fps_hmcar_uupg_m_hd = deep_clone(self.parts.wpn_fps_m4_uupg_m_std_vanilla)
+		self.parts.wpn_fps_hmcar_uupg_m_hd.bullet_objects = nil
 		self.parts.wpn_fps_hmcar_uupg_m_hd.visibility = {
 			{
 				objects = {
@@ -23529,7 +23527,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				},
 				wpn_fps_m4_uupg_fg_rail = {
 					unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_fg_railed",
-					third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_fg_railed"
+					third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_fg_railed",
+					adds = {}
 				},
 				wpn_fps_m4_upper_reciever_round_vanilla = {
 					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",

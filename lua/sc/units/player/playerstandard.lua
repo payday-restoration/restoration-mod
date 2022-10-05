@@ -555,6 +555,9 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 				local weap_base = self._equipped_unit:base()
 				local fire_mode = weap_base:fire_mode()
 				local fire_on_release = weap_base:fire_on_release()
+				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
+				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
+				local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
 
 				if weap_base:out_of_ammo() then
 					if input.btn_primary_attack_press then
@@ -597,7 +600,10 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								start_shooting = true
 
 								if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
-									self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
+									if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+									else
+										self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
+									end
 
 									if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) and (not weap_base.third_person_important or weap_base.third_person_important and not weap_base:third_person_important()) then
 										self._ext_network:send("sync_start_auto_fire_sound", 0)
@@ -708,9 +714,6 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
 
-							local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
-							local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-							local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
 							if not self._state_data.in_steelsight then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then

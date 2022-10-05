@@ -62,7 +62,7 @@ function RaycastWeaponBase:get_damage_type()
 	if self._rays and self._rays == 1 then
 		return self:weapon_tweak_data().damage_type_single_ray
 	else
-		return self:weapon_tweak_data().object_damage_mult or 1
+		return self:weapon_tweak_data().damage_type or "normal"
 	end
 end
 

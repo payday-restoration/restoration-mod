@@ -6319,12 +6319,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 				supported = true,
 				stats = {
 					value = 5,
-					concealment = 2,
-					reload = 3,
+					concealment = 3,
+					reload = 4,
 					extra_ammo = -30,
 				},
 				custom_stats = {
-					ads_speed_mult = 0.95
+					ads_speed_mult = 0.925
 				}
 		},
 		wpn_fps_ass_74_body_upperreceiver = {
@@ -6401,74 +6401,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 		stats = deep_clone(stocks.fixed_acc_stats),
 		custom_stats = deep_clone(stocks.fixed_acc_stats)
 	}
+	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_m_quick = {
+		fps_animation_weight = "ban_mag",
+		stats = {
+			value = 6,
+			spread = -1,
+			concealment = 4,
+			reload = 6,
+			extra_ammo = -45
+		},
+		custom_stats = {
+			ads_speed_mult = 0.9
+		}
+	}
+	if SystemFS:exists("assets/mod_overrides/AK Correct Magpul Assist Mags") then
+		self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_m_quick.unit = "units/mods/weapons/wpn_fps_ass_akm_m_magpul/wpn_fps_ass_akm_m_magpul"
+	end
 
 	--Disabling Vertical Grip Mods
 	self.wpn_fps_lmg_rpk.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"		
 	
 	--RPK Part Additions
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_specter")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_specter")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_aimpoint")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_docter")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_docter")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_eotech")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_eotech")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_t1micro")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cmore")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_cmore")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_aimpoint_2")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cs")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_cs")		
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_rx30")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_rx30")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_rx01")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_rx01")		
-	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_reflex")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_reflex")		
-	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_uh")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_uh")		
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_fc1")		
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_s_psl")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_s_psl")		
-	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_lmg_rpk_m_ban")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_lmg_rpk_m_ban")	
-
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_s_skfoldable")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_s_skfoldable")
 
 	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_ak_scopemount") -- doesn't work, missing "a_o_sm"
 	--table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_ak_scopemount")	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_fg_combo3")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_fg_combo3")	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_fg_tapco")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ak_fg_tapco")	
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_fg_midwest")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_fg_midwest")			
 	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_fg_krebs") -- Don't fit right, missing their respective unique attachment points
-	--table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ak_fg_krebs")	
 	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_fg_trax")
-	--table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ak_fg_trax")			
+
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_m_quick")			
 			
 	self.wpn_fps_lmg_rpk_npc.uses_parts = deep_clone(self.wpn_fps_lmg_rpk.uses_parts)		
 
@@ -20168,12 +20148,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_spike_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		if SystemFS:exists("assets/mod_overrides/AK Correct Magpul Assist Mags") then
-			if not self.wpn_fps_ass_spike.override then
-				self.wpn_fps_ass_spike.override = {}
-			end
-			if not self.wpn_fps_ass_spike.override.wpn_fps_upg_ak_m_quick then
-				self.wpn_fps_ass_spike.override.wpn_fps_upg_ak_m_quick = {}
-			end
+			self.wpn_fps_ass_spike.override = self.wpn_fps_ass_spike.override or {}
+			self.wpn_fps_ass_spike.override.wpn_fps_upg_ak_m_quick = self.wpn_fps_ass_spike.override.wpn_fps_upg_ak_m_quick or {}
 			self.wpn_fps_ass_spike.override.wpn_fps_upg_ak_m_quick.unit = "units/mods/weapons/wpn_fps_ass_akm_m_magpul/wpn_fps_ass_akm_m_magpul"
 		end
 
@@ -21011,9 +20987,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_lmg_rpk_m_jungle.supported = true
 		self.parts.wpn_lmg_rpk_m_jungle.stats = {
 			value = 6,
-			concealment = 1,
-			reload = 4,
+			spread = -1,
+			concealment = 4,
+			reload = 6,
 			extra_ammo = -45
+		}
+		self.parts.wpn_lmg_rpk_m_jungle.custom_stats = {
+			ads_speed_mult = 0.9
 		}
 
 		--(Holt 9mm) Luxury Grip
@@ -24063,7 +24043,7 @@ end
 		stats = {
 			value = 5,
 			concealment = 2,
-			reload = 3,
+			reload = 2,
 			extra_ammo = -30,
 		}
 	}		

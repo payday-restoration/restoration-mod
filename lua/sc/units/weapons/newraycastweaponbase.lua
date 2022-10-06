@@ -262,6 +262,9 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		local hipfire_spread_mult = 1
 		for _, category in ipairs(self:weapon_tweak_data().categories) do
 			local hip_mult = tweak_data[category] and tweak_data[category].hipfire_spread_mult or 1
+			if self._hipfire_mult then
+				hip_mult = hip_mult * self._hipfire_mult
+			end
 			hipfire_spread_mult = hipfire_spread_mult * hip_mult
 		end
 		multiplier = multiplier * hipfire_spread_mult
@@ -362,7 +365,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 
 	local user_unit = self._setup and self._setup.user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
-	if current_state and current_state:in_steelsight() then
+	if current_state and current_state:full_steelsight() then
 		local weapon_stats = tweak_data.weapon.stats
 		local base_zoom = weapon_stats.zoom and weapon_stats.zoom[1]
 		local current_zoom = self:zoom()
@@ -481,6 +484,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	self._autograph_multiplier = self:weapon_tweak_data().autograph_multiplier or nil
 	self._ignore_reload_objects = self:weapon_tweak_data().ignore_reload_objects or nil
+	self._ammo_data = ammo_data or managers.weapon_factory:get_ammo_data_from_weapon(self._factory_id, self._blueprint) or {}
 	
 	self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
 	self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
@@ -533,12 +537,13 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
 	self._movement_penalty = self:weapon_tweak_data().weapon_movement_penalty or tweak_data.upgrades.weapon_movement_penalty[primary_category] or 1
-	
+
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	if not self._custom_stats_done then
 		--Set range/rof multipliers to 1 to make anything else that changes them fuck off
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
+		self._damage_min_mult = 1
 		self._rof_mult = 1
 
 		if not self:is_npc() then
@@ -654,9 +659,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._disable_steelsight_recoil_anim = true
 			end					
 			
-			if stats.can_shoot_through_titan_shield then
-				self._can_shoot_through_titan_shield = true
-			end
 	
 			if stats.is_pistol then
 				if self:weapon_tweak_data().categories then
@@ -671,6 +673,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.falloff_end_mult then
 				self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
 			end
+			if stats.damage_min_mult then
+				self._damage_min_mult = self._damage_min_mult * stats.damage_min_mult
+			end
 			if stats.can_shoot_through_wall then
 				self:weapon_tweak_data().can_shoot_through_wall = true
 				self._can_shoot_through_wall = true
@@ -682,6 +687,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.can_shoot_through_shield then
 				self._can_shoot_through_shield = true
 				self:weapon_tweak_data().can_shoot_through_shield = true
+			end
+			if stats.can_shoot_through_titan_shield then
+				self:weapon_tweak_data().can_shoot_through_titan_shield = true
+				self._can_shoot_through_titan_shield = true
 			end
 			if stats.armor_piercing_override then
 				self:weapon_tweak_data().armor_piercing_chance = stats.armor_piercing_override
@@ -723,6 +732,21 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.muzzleflash then
 				self._muzzle_effect_pls = stats.muzzleflash
 			end
+			if stats.trail_effect then
+				self._trail_effect_pls = stats.trail_effect
+			end
+			if stats.should_reload_immediately then
+				self._should_reload_immediately = stats.should_reload_immediately
+			end
+			if stats.hip_mult then
+				self._hipfire_mult = stats.hip_mult
+			end
+			if stats.fire2 then
+				self:weapon_tweak_data().sounds.fire2 = stats.fire2
+			end
+			if stats.stop_fire2 then
+				self:weapon_tweak_data().sounds.stop_fire2 = stats.stop_fire2
+			end
 			if stats.big_scope then
 				self._has_big_scope = true
 			end
@@ -730,6 +754,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				if self:weapon_tweak_data().timers then
 					self:weapon_tweak_data().timers.reload_exit_not_empty = 1.2
 				end
+				self:weapon_tweak_data().tactical_reload = nil
+				self:ammo_base():weapon_tweak_data().tactical_reload = nil
+			end
+			if stats.no_chamber then
 				self:weapon_tweak_data().tactical_reload = nil
 				self:ammo_base():weapon_tweak_data().tactical_reload = nil
 			end
@@ -748,6 +776,17 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
 	end
 
+	for part_id, stats in pairs(custom_stats) do
+		if tweak_data.weapon.factory.parts[part_id].type ~= "ammo" then
+			if stats.ammo_pickup_min_mul then
+				self._ammo_data.ammo_pickup_min_mul = self._ammo_data.ammo_pickup_min_mul and self._ammo_data.ammo_pickup_min_mul * stats.ammo_pickup_min_mul or stats.ammo_pickup_min_mul
+			end
+
+			if stats.ammo_pickup_max_mul then
+				self._ammo_data.ammo_pickup_max_mul = self._ammo_data.ammo_pickup_max_mul and self._ammo_data.ammo_pickup_max_mul * stats.ammo_pickup_max_mul or stats.ammo_pickup_max_mul
+			end
+		end
+	end
 
 	if self._cbfd_to_add_this_check_elsewhere then
 		self._sound_fire:set_switch("suppressed", "regular")
@@ -779,6 +818,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._trail_effect_table.effect = Idstring("_dmc/effects/warsaw_trail")
 		elseif self._large_tracers then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/large_trail")
+		elseif self._trail_effect_pls then
+			self._trail_effect_table.effect = Idstring(self._trail_effect_pls)
 		end 
     end	
 
@@ -802,7 +843,7 @@ function NewRaycastWeaponBase:armor_piercing_chance()
 end
 
 function NewRaycastWeaponBase:should_reload_immediately()
-	return self:weapon_tweak_data().should_reload_immediately
+	return self._should_reload_immediately or self:weapon_tweak_data().should_reload_immediately
 end
 
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
@@ -1253,6 +1294,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	
 	--Minimum damage multiplier when taking falloff into account
 	local minimum_damage = damage_falloff and damage_falloff.min_mult or 0.3
+	minimum_damage = minimum_damage * (self._damage_min_mult or 1)
 	
 	--Have a harsher falloff for Shotguns
 	if self._rays and self._rays > 1 then

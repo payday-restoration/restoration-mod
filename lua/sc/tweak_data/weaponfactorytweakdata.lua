@@ -1711,6 +1711,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.05, -10, -4.65)
 	}	
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
+		translation = Vector3(-0.02, -3, -3.521)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
 		translation = Vector3(0.0, -1, -4.03)
 	}
@@ -15624,6 +15627,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 		},
 		custom_stats = {
 			rof_mult = 0.7647058,
+			ammo_pickup_max_mul = 0.675,
+			ammo_pickup_min_mul = 0.675,
 			alt_ammo_pickup_max_mul = 0.675,
 			alt_ammo_pickup_min_mul = 0.675
 		}
@@ -22322,17 +22327,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alert_size = -1
 		}
 		self.parts.wpn_fps_upg_l115_barrel_medsupp.custom_stats = nil
+		self.parts.wpn_fps_upg_l115_barrel_medsupp.has_description = true
+		self.parts.wpn_fps_upg_l115_barrel_medsupp.desc_id = "bm_wp_upg_suppressor"
 		self.parts.wpn_fps_upg_l115_barrel_medsupp.perks = { "silencer" }
 
 		self.parts.wpn_fps_upg_l115_barrel_short.supported = true
-		self.parts.wpn_fps_upg_l115_barrel_short.has_description = true
-		self.parts.wpn_fps_upg_l115_barrel_short.desc_id = "bm_wp_upg_suppressor"
 		self.parts.wpn_fps_upg_l115_barrel_short.stats = deep_clone(barrels.short_b3_stats)
 		self.parts.wpn_fps_upg_l115_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 		self.parts.wpn_fps_upg_l115_barrel_med.supported = true
-		self.parts.wpn_fps_upg_l115_barrel_med.has_description = true
-		self.parts.wpn_fps_upg_l115_barrel_med.desc_id = "bm_wp_upg_suppressor"
 		self.parts.wpn_fps_upg_l115_barrel_med.stats = deep_clone(barrels.short_b1_stats)
 		self.parts.wpn_fps_upg_l115_barrel_med.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
@@ -23572,9 +23575,37 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_troglodyte_b_long.stats = {}
 
 		self.parts.wpn_fps_snp_troglodyte_thing.supported = true
+		self.parts.wpn_fps_snp_troglodyte_thing.forbids = {
+			"wpn_fps_snp_troglodyte_b_long",
+			"wpn_fps_snp_troglodyte_ns_supp"
+		}
 		self.parts.wpn_fps_snp_troglodyte_thing.stats = {
-			recoil = 2,
-			concealment = -1
+			damage = 150,
+			recoil = -18,
+			concealment = -18,
+			total_ammo_mod = -85,
+			extra_ammo = -4,
+			reload = 7
+		}
+		self.parts.wpn_fps_snp_troglodyte_thing.custom_stats = {
+			alt_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
+			muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect",
+			trail_effect = "effects/particles/weapons/sniper_trail_sc",
+			fire2 = "sniper_npc1c_1shot",
+			stop_fire2 = "hailstorm_shotgun_fire_single",
+			can_shoot_through_titan_shield = true,
+			ads_speed_mult = 1.45,
+			falloff_start_mult = 0.5,
+			falloff_end_mult = 0.5,
+			ammo_pickup_min_mul = 0.1,
+			ammo_pickup_max_mul = 0.1,
+			alt_ammo_pickup_min_mul = 0.1,
+			alt_ammo_pickup_max_mul = 0.1,
+			hip_mult = 10,
+			rof_mult = 0.76923,
+			block_b_storm = true,
+			sms = 0.5,
+			no_chamber = true
 		}
 
 		self.parts.wpn_fps_snp_troglodyte_s_full.supported = true

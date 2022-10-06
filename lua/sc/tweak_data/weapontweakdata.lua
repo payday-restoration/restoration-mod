@@ -7738,7 +7738,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
-					suppression = 10,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 100,
@@ -7786,7 +7786,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
-					suppression = 10,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 100,
@@ -7822,7 +7822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
-					suppression = 10,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 100,
@@ -7856,7 +7856,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
-					suppression = 10,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 100,
@@ -7893,7 +7893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
-					suppression = 10,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 100,
@@ -7927,7 +7927,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
-					suppression = 10,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 100,
@@ -7979,54 +7979,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.olympic.timers.reload_exit_empty = 0.8
 				self.olympic.timers.reload_exit_not_empty = 0.85
 
-			--Tempest 21
-				self.komodo.use_data.selection_index = 1
-				self.komodo.desc_id = "bm_menu_sc_komodo_desc"
-				self.komodo.has_description = true		
-				self.komodo.categories = {
-					"assault_rifle"
-				}
-				self.komodo.CLIP_AMMO_MAX = 30
-				self.komodo.AMMO_MAX = 90
-				self.komodo.fire_mode_data.fire_rate = 0.06666666666
-				self.komodo.auto.fire_rate = 0.06666666666
-				self.komodo.panic_suppression_chance = 0.05
-				self.komodo.kick = self.stat_info.kick_tables.moderate_kick	
-				self.komodo.supported = true
-				self.komodo.ads_speed = 0.300
-				self.komodo.damage_falloff = {
-					start_dist = 2400,
-					end_dist = 6000,
-					min_mult = 0.5
-				}
-				self.komodo.stats = {
-					damage = 20,
-					spread = 81,
-					recoil = 83,
-					spread_moving = 8,
-					zoom = 1,
-					concealment = 28,
-					suppression = 10,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}	
-				self.komodo.stats_modifiers = nil
-				self.komodo.timers.reload_empty = 2.82
-				self.komodo.timers.reload_exit_empty = 0.7
-				self.komodo.timers.reload_not_empty = 2.10
-				self.komodo.timers.reload_exit_not_empty = 0.8
-				self.komodo.reload_speed_multiplier = 0.82
-
 			--Clarion (IS THAT A DEAGLE)
 				self.famas.desc_id = "bm_menu_sc_famas_desc"
 				self.famas.has_description = true					
 				self.famas.use_data.selection_index = 1
 				self.famas.AMMO_MAX = 90
 				self.famas.CLIP_AMMO_MAX = 25
-				self.famas.fire_mode_data.fire_rate = 0.06
+				self.famas.fire_mode_data.fire_rate = 0.0545454
 				self.famas.CAN_TOGGLE_FIREMODE = true
 				self.famas.auto = {}
 				self.famas.auto.fire_rate = 0.06
@@ -8060,6 +8019,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.famas.BURST_FIRE = 3
 				self.famas.ADAPTIVE_BURST_SIZE = false
 				self.famas.reload_speed_multiplier = 1.1
+
+			--Tempest 21
+				self.komodo.use_data.selection_index = 1
+				self.komodo.desc_id = "bm_menu_sc_komodo_desc"
+				self.komodo.has_description = true		
+				self.komodo.categories = {
+					"assault_rifle"
+				}
+				self.komodo.CLIP_AMMO_MAX = 30
+				self.komodo.AMMO_MAX = 75
+				self.komodo.fire_mode_data.fire_rate = 0.08
+				self.komodo.panic_suppression_chance = 0.05
+				self.komodo.kick = self.stat_info.kick_tables.moderate_kick	
+				self.komodo.supported = true
+				self.komodo.ads_speed = 0.300
+				self.komodo.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.komodo.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 77,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 27,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}	
+				self.komodo.stats_modifiers = nil
+				self.komodo.timers.reload_empty = 2.82
+				self.komodo.timers.reload_exit_empty = 0.7
+				self.komodo.timers.reload_not_empty = 2.10
+				self.komodo.timers.reload_exit_not_empty = 0.8
+				self.komodo.reload_speed_multiplier = 0.82
 
 			--CR 805
 				self.hajk.desc_id = "bm_menu_sc_hajk_desc"
@@ -9321,8 +9320,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.desertfox.supported = true
 				self.desertfox.ads_speed = 0.380
 				self.desertfox.damage_falloff = {
-					start_dist = 5400,
-					end_dist = 9800,
+					start_dist = 5500,
+					end_dist = 10000,
 					min_mult = 0.75
 				}
 				self.desertfox.stats = {
@@ -13880,7 +13879,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.l115.ads_speed = 0.400
 		self.l115.damage_falloff = {
 			start_dist = 5000,
-			end_dist = 9300,
+			end_dist = 9500,
 			min_mult = 0.75
 		}
 		self.l115.stats = {
@@ -14072,7 +14071,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 13,
 			spread_moving = 8,
 			zoom = 1,
-			concealment = 15,
+			concealment = 14,
 			suppression = 4,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -14288,27 +14287,28 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	if self.troglodyte then --Leon and Mira's AWM-F
 		self.troglodyte.recategorize = { "heavy_snp" }
+		self.troglodyte.use_data.selection_index = 2
 		self.troglodyte.upgrade_blocks = nil
 		self.troglodyte.has_description = true
 		self.troglodyte.always_play_anims = true
 		self.troglodyte.desc_id = "bm_ap_weapon_sc_desc"
 		self.troglodyte.tactical_reload = 1
 		self.troglodyte.CLIP_AMMO_MAX = 5
-		self.troglodyte.AMMO_MAX = 15
+		self.troglodyte.AMMO_MAX = 30
 		self.troglodyte.fire_mode_data.fire_rate = 1.09090909
 		self.troglodyte.fire_rate_multiplier = 1.1818181
 		self.troglodyte.sounds.stop_fire = "saiga_stop"
 		self.troglodyte.kick = self.stat_info.kick_tables.vertical_kick
 		self.troglodyte.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 		self.troglodyte.supported = true
-		self.troglodyte.ads_speed = 0.340
+		self.troglodyte.ads_speed = 0.360
 		self.troglodyte.damage_falloff = {
 			start_dist = 5000,
-			end_dist = 9300,
-			min_mult = 0.75
+			end_dist = 9500,
+			min_mult = 0.5
 		}
 		self.troglodyte.stats = {
-			damage = 120,
+			damage = 30,
 			spread = 94,
 			recoil = 27,
 			spread_moving = 8,
@@ -14321,8 +14321,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
+		self.troglodyte.stats_modifiers = {
+			damage = 4
+		}
 		self.troglodyte.armor_piercing_chance = 1
-		self.troglodyte.stats_modifiers = nil
 		self.troglodyte.panic_suppression_chance = 0.05
 		self.troglodyte.timers.reload_not_empty = 2.55
 		self.troglodyte.timers.reload_exit_empty = 0.7

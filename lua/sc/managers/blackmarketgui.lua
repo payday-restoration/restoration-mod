@@ -2883,13 +2883,11 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "health"
 				},
 				{
-					name = "deflection",
-					append = "%"
+					name = "deflection"
 				},
 				{
 					name = "damage_shake",
-					inverted = true,
-					append = "%"
+					inverted = true
 				},
 				{
 					revert = true,

@@ -1642,9 +1642,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{2.8, 3.5},
 			{3.2, 4.0},
 			{3.6, 4.5},
-			{4.0, 5.0},
-			{4.4, 5.5},
-			{4.8, 6.0}
+			{4.0, 6.0},
+			{4.4, 6.5},
+			{4.8, 7.5}
 		}
 	}
 	

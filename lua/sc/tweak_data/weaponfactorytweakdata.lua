@@ -23760,7 +23760,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			custom_stats = {},
 		}
 
-		self.wpn_fps_ass_mcx_spear.default_blueprint[2] = "resmod_dummy"
+		self.wpn_fps_ass_mcx_spear.default_blueprint[1] = "wpn_fps_ass_mcx_spear_handguard"
+		self.wpn_fps_ass_mcx_spear.default_blueprint[2] = "wpn_fps_ass_mcx_spear_handguard"
 		self.wpn_fps_ass_mcx_spear.default_blueprint[8] = "wpn_fps_ass_mcx_spear_irons_rear"
 
 		table.insert(self.wpn_fps_ass_mcx_spear.uses_parts, "wpn_fps_sho_sko12_stock")
@@ -23768,6 +23769,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_mcx_spear_npc.default_blueprint = deep_clone(self.wpn_fps_ass_mcx_spear.default_blueprint)
 		self.wpn_fps_ass_mcx_spear_npc.override = deep_clone(self.wpn_fps_ass_mcx_spear.override)
 		self.wpn_fps_ass_mcx_spear_npc.uses_parts = deep_clone(self.wpn_fps_ass_mcx_spear.uses_parts)
+
+	end
+
+	if self.parts.wpn_fps_upg_jackhammer_i_autofire then --Pawcio's Jackhammer
+
+		self.parts.wpn_fps_upg_jackhammer_i_autofire.supported = true
+		self.parts.wpn_fps_upg_jackhammer_i_autofire.pcs = nil
+		self.parts.wpn_fps_upg_jackhammer_i_autofire.stats = {}
+		self.parts.wpn_fps_upg_jackhammer_i_autofire.custom_stats = nil
+
+		self.parts.wpn_fps_upg_jackhammer_barrel_supp.supported = true
+		self.parts.wpn_fps_upg_jackhammer_barrel_supp.stats = {
+			value = 2,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_upg_jackhammer_barrel_supp.custom_stats = nil
+		
+		self.parts.wpn_fps_upg_jackhammer_barrel_no_brake.supported = true
+		self.parts.wpn_fps_upg_jackhammer_barrel_no_brake.stats = {
+			value = 1,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_jackhammer_barrel_no_brake.custom_stats = nil
+		
+		self.parts.wpn_fps_upg_jackhammer_barrel_long.supported = true
+		self.parts.wpn_fps_upg_jackhammer_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_jackhammer_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 	end
 

@@ -13228,6 +13228,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mp153.timers.shotgun_reload_exit_not_empty = 0.75
 	end
 	
+	if self.jackhammer then --Pawcio's Jackhammer
+		self.jackhammer.recategorize = { "light_shot" }
+		self.jackhammer.damage_type = "shotgun"
+		self.jackhammer.damage_type_single_ray = "sniper"
+		self.jackhammer.upgrade_blocks = nil
+		self.jackhammer.CLIP_AMMO_MAX = 10
+		self.jackhammer.AMMO_MAX = 40
+		self.jackhammer.rays = 8
+		self.jackhammer.CAN_TOGGLE_FIREMODE = true
+		self.jackhammer.BURST_FIRE = false
+		self.jackhammer.FIRE_MODE = "auto"
+		self.jackhammer.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.jackhammer.kick = self.stat_info.kick_tables.vertical_kick
+		self.jackhammer.fire_mode_data.fire_rate = 0.25
+		self.jackhammer.panic_suppression_chance = 0.05
+		self.jackhammer.supported = true
+		self.jackhammer.ads_speed = 0.400
+		self.jackhammer.damage_falloff = {
+			start_dist = 1600,
+			end_dist = 3800,
+			min_mult = 0.5
+		}
+		self.jackhammer.stats = {
+			damage = 45,
+			spread = 31,
+			recoil = 53,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.jackhammer.stats_modifiers = nil
+		self.jackhammer.timers.reload_exit_empty = 0.9
+		self.jackhammer.timers.reload_empty = 2.9
+		self.jackhammer.timers.reload_exit_not_empty = 1.5
+		self.jackhammer.timers.reload_not_empty = 2.2
+	end
+
 	if self.quadbarrel then --Pawcio's Doomstick
 		self.quadbarrel.recategorize = {"break_shot"}
 		self.quadbarrel.damage_type = "shotgun_heavy"

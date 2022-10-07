@@ -1,0 +1,16 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_ass_akm"/>
+	<animations>  
+		<animation_group name="reload" enabled="false" >
+			<object name="anim_drag" enabled="true" />
+			<object name="anim_reload" enabled="true" />
+			<object name="anim_m_reload" enabled="true" />
+		</animation_group>
+		<animation_group name="reload_not_empty" enabled="false" >
+			<object name="anim_reload_not_empty" enabled="true" />
+		</animation_group>
+		<animation_group name="recoil" enabled="false" >
+			<object name="anim_recoil" enabled="true" />
+		</animation_group>
+    </animations> 	
+</dynamic_object>

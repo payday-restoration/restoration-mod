@@ -323,7 +323,12 @@
 	<model				path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/wpn_fps_lmg_m249_upper_reciever" force="true"/>
 	<model				path="units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_upper_reciever" force="true"/>
 	<model				path="units/pd2_dlc_atw/weapons/wpn_fps_lmg_m60_pts/wpn_fps_lmg_m60_upper_reciever" force="true"/>
-	
+
+	<!-- 
+	<model				path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk/wpn_fps_lmg_rpk" force="true"/>
+	<object				path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk/wpn_fps_lmg_rpk" force="true"/>
+ 	-->
+ 	
 	<!-- M60 TROPICAL FOREGRIP FIX -->
 	<model				path="units/pd2_dlc_atw/weapons/wpn_fps_lmg_m60_pts/wpn_fps_lmg_m60_fg_tropical" force="true"/>
 	

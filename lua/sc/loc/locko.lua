@@ -130,7 +130,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModADSTransitionStyleDescID"] = "조준 할 때의 \"애니메이션\" 스타일을 변경합니다.",
 		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
 		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
-+		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
+		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
 		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",		
 		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
 		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",

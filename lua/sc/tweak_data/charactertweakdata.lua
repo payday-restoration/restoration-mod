@@ -2100,7 +2100,11 @@ function CharacterTweakData:_init_tank(presets)
 	--Halloween Bulldozer (Black)
 	self.tank_hw_black = deep_clone(self.tank)
 	self.tank_hw_black.weapon = deep_clone(presets.weapon.normal)
-	self.tank_hw_black.custom_voicework = "tdozer"
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+		self.tank_hw_black.custom_voicework = "tdozer_ru"
+	else
+		self.tank_hw_black.custom_voicework = "tdozer"
+	end
 	--Dozerish head health, lowered to account for no visor so they're about the same head health
 	self.tank_hw_black.headshot_dmg_mul = 5.402
 	self.tank_hw_black.ignore_headshot = false

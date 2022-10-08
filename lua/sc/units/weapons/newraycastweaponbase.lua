@@ -544,7 +544,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
 		self._damage_min_mult = 1
+
 		self._rof_mult = 1
+		self._ads_rof_mult = 1
+		self._hip_rof_mult = 1
+
+		self._hipfire_mult = 1
 
 		if not self:is_npc() then
 			self._sms = self:weapon_tweak_data().sms
@@ -698,6 +703,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.rof_mult then
 				self._rof_mult = self._rof_mult * stats.rof_mult
 			end
+			if stats.ads_rof_mult then
+				self._ads_rof_mult = self._ads_rof_mult * stats.ads_rof_mult
+			end
+			if stats.hip_rof_mult then
+				self._hip_rof_mult = self._hip_rof_mult * stats.hip_rof_mult
+			end
 			if stats.starwars then
 				if restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC") == true then
 					self._cbfd_to_add_this_check_elsewhere = true
@@ -739,7 +750,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._should_reload_immediately = stats.should_reload_immediately
 			end
 			if stats.hip_mult then
-				self._hipfire_mult = stats.hip_mult
+				self._hipfire_mult = self._hipfire_mult * stats.hip_mult
 			end
 			if stats.fire2 then
 				self:weapon_tweak_data().sounds.fire2 = stats.fire2
@@ -993,6 +1004,15 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
+	local user_unit = self._setup and self._setup.user_unit --I'd like to know an instance where you can even shoot at all without there being a user_unit
+	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
+	if current_state then 
+		if current_state:in_steelsight() then
+			multiplier = multiplier * self._ads_rof_mult
+		else
+			multiplier = multiplier * self._hip_rof_mult
+		end
+	end
 	if self:in_burst_mode() or self._macno then
 		local no_burst_mult = multiplier
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)

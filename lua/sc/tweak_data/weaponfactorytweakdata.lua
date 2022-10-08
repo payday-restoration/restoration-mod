@@ -23801,6 +23801,102 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+	if self.parts.wpn_fps_ass_nova4_iw_reflex then --RJC9000 and Synd1cate's Infinite Warfare NV4
+
+		self.parts.wpn_fps_ass_nova4_iw_reflex.supported = true
+		self.parts.wpn_fps_ass_nova4_iw_reflex.desc_id = "bm_wp_upg_o_1_2"
+		self.parts.wpn_fps_ass_nova4_iw_reflex.stats = deep_clone(self.parts.wpn_fps_upg_o_t1micro.stats)
+
+		self.parts.wpn_fps_ass_nova4_iw_elo.supported = true
+		self.parts.wpn_fps_ass_nova4_iw_elo.desc_id = "bm_wp_upg_o_1_1_elo"
+		self.parts.wpn_fps_ass_nova4_iw_elo.stats = deep_clone(self.parts.wpn_fps_upg_o_docter.stats)
+
+		self.parts.wpn_fps_ass_nova4_barrel_supp.supported = true
+		self.parts.wpn_fps_ass_nova4_barrel_supp.stats = {
+			value = 3,
+			suppression = 12,
+			alert_size = -1
+		}
+
+		self.parts.wpn_fps_ass_nova4_bolt.supported = true
+		self.parts.wpn_fps_ass_nova4_bolt.custom_stats = {
+			hip_mult = 4
+		}
+
+		self.parts.wpn_fps_ass_nova4_stock.supported = true
+		self.parts.wpn_fps_ass_nova4_stock.stats = { value = 0 }
+		self.parts.wpn_fps_ass_nova4_stock.custom_stats = nil
+
+		self.parts.wpn_fps_ass_nova4_magazine.supported = true
+		self.parts.wpn_fps_ass_nova4_magazine.stats = { value = 0 }
+		self.parts.wpn_fps_ass_nova4_magazine.custom_stats = nil
+		self.parts.wpn_fps_ass_nova4_magazine_rare.supported = true
+		self.parts.wpn_fps_ass_nova4_magazine_rare.stats = { value = 0 }
+		self.parts.wpn_fps_ass_nova4_magazine_rare.custom_stats = nil
+		self.parts.wpn_fps_ass_nova4_magazine_legendary.supported = true
+		self.parts.wpn_fps_ass_nova4_magazine_legendary.stats = { value = 0 }
+		self.parts.wpn_fps_ass_nova4_magazine_legendary.custom_stats = nil
+
+		self.parts.wpn_fps_ass_nova4_magazine_ext.supported = true
+		self.parts.wpn_fps_ass_nova4_magazine_ext.stats = {
+			value = 2,
+			concealment = -2,
+			reload = -2,
+			extra_ammo = 15
+		}
+
+		self.parts.wpn_fps_upg_fl_ass_laser.supported = true
+		self.parts.wpn_fps_upg_fl_ass_laser.stats = {}
+
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.has_description = true
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.desc_id = "bm_wp_wpn_fps_ass_nova4_flatline_desc"
+
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.supported = true
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.has_description = true
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.desc_id = "bm_wp_wpn_fps_ass_nova4_flatline_desc"
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.stats = {
+			value = 10,
+			spread = 1,
+			concealment = -2
+		}
+		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.custom_stats = {
+			rof_mult = 0.933006,
+			falloff_start_mult = 6.25,
+			falloff_end_mult = 6.248437,
+		}
+		
+		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.supported = true
+		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.has_description = true
+		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.desc_id = "bm_wp_wpn_fps_ass_nova4_chaos_desc"
+		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.stats = {
+			value = 10,
+			concealment = -2
+		}
+		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.custom_stats = {
+			rof_mult = 1.166666,
+			ads_rof_mult = 0.806722,
+			hip_mult = 0.8
+		}
+		
+		self.wpn_fps_ass_nova4.override = self.wpn_fps_ass_nova4.override or {}
+		self.wpn_fps_ass_nova4.override.wpn_fps_upg_m4_s_standard = {
+			stats = {},
+			custom_stats = {},
+		}
+
+		self.wpn_fps_ass_nova4.default_blueprint[7] = "wpn_fps_ass_nova4_receiver_lower"
+
+		self.wpn_fps_ass_nova4.uses_parts[59] = "wpn_fps_ass_nova4_receiver_lower"
+		self.wpn_fps_ass_nova4.uses_parts[60] = "wpn_fps_ass_nova4_receiver_lower"
+
+		table.insert(self.wpn_fps_ass_nova4.uses_parts, "wpn_fps_sho_sko12_stock")
+
+		self.wpn_fps_ass_nova4_npc.default_blueprint = deep_clone(self.wpn_fps_ass_nova4.default_blueprint)
+		self.wpn_fps_ass_nova4_npc.override = deep_clone(self.wpn_fps_ass_nova4.override)
+		self.wpn_fps_ass_nova4_npc.uses_parts = deep_clone(self.wpn_fps_ass_nova4.uses_parts)
+
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

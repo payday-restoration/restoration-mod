@@ -14500,6 +14500,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m6d.timers = deep_clone(self.deagle.timers)
 	end
 
+	if self.nova4 then --RJC9000 and Synd1cate's Infinite Warfare NV4
+		self.nova4.categories = { "assault_rifle" }
+		self.nova4.recategorize = { "light_ar" }
+		self.nova4.damage_type = "assault_rifle"
+		self.nova4.tactical_reload = nil
+		self.nova4.has_description = true
+		self.nova4.desc_id = "bm_nova4_sc_desc"
+		self.nova4.CLIP_AMMO_MAX = 30
+		self.nova4.AMMO_MAX = 150
+		self.nova4.CAN_TOGGLE_FIREMODE = false
+		self.nova4.FIRE_MODE = "auto"
+		self.nova4.CAN_TOGGLE_FIREMODE = true
+		self.nova4.kick = {}
+		self.nova4.kick = self.stat_info.kick_tables.moderate_kick
+		self.nova4.supported = true
+		self.nova4.ads_speed = 0.260
+		self.nova4.damage_falloff = {
+			start_dist = 4000,
+			end_dist = 4001,
+			min_mult = 0.416666
+		}	
+		self.nova4.stats = {
+			damage = 24,
+			spread = 81,
+			recoil = 87,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 20,
+			suppression = 10,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.nova4.stats_modifiers = nil
+		self.nova4.panic_suppression_chance = 0.05
+		self.nova4.timers.reload_exit_empty = 1.3
+		self.nova4.timers.reload_empty = 2.55
+		self.nova4.timers.reload_exit_not_empty = 0.8
+		self.nova4.timers.reload_not_empty = 2.2
+	end
+
 	if self.mcx_spear then --RJC9000 and PlayBONK's SIG MCX Spear
 		self.mcx_spear.categories = { "assault_rifle" }
 		self.mcx_spear.recategorize = { "dmr_ar" }

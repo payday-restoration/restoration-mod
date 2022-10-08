@@ -13709,9 +13709,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shrew", "resmod_shrew", function(s
 	self.parts.wpn_fps_pis_shrew_g_bling.has_description = true
 	self.parts.wpn_fps_pis_shrew_g_bling.desc_id = "bm_shrew_g_bling_sc_desc"	
 	self.parts.wpn_fps_pis_shrew_g_bling.stats = {
-		value = 10,
-		recoil = 1,
-		concealment = -2
+		value = 5,
+		concealment = -1,
+		spread = 1
 	}
 	
 	--Ergo Grip
@@ -23858,8 +23858,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.custom_stats = {
 			rof_mult = 0.933006,
-			falloff_start_mult = 6.25,
-			falloff_end_mult = 6.248437,
+			falloff_start_mult = 25,
+			falloff_end_mult = 24.99400149962509,
 		}
 		
 		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.supported = true

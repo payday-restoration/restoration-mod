@@ -14510,6 +14510,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.nova4.desc_id = "bm_nova4_sc_desc"
 		self.nova4.CLIP_AMMO_MAX = 30
 		self.nova4.AMMO_MAX = 150
+		self.nova4.lock_slide_alt = true
 		self.nova4.lock_slide = true
 		self.nova4.CAN_TOGGLE_FIREMODE = false
 		self.nova4.FIRE_MODE = "auto"

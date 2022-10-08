@@ -23804,11 +23804,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_ass_nova4_iw_reflex then --RJC9000 and Synd1cate's Infinite Warfare NV4
 
 		self.parts.wpn_fps_ass_nova4_iw_reflex.supported = true
-		self.parts.wpn_fps_ass_nova4_iw_reflex.desc_id = "bm_wp_upg_o_1_2"
-		self.parts.wpn_fps_ass_nova4_iw_reflex.stats = deep_clone(self.parts.wpn_fps_upg_o_t1micro.stats)
+		self.parts.wpn_fps_ass_nova4_iw_reflex.desc_id = "bm_wp_upg_o_iwrds"
+		self.parts.wpn_fps_ass_nova4_iw_reflex.stats = deep_clone(self.parts.wpn_fps_upg_o_eotech.stats)
 
 		self.parts.wpn_fps_ass_nova4_iw_elo.supported = true
-		self.parts.wpn_fps_ass_nova4_iw_elo.desc_id = "bm_wp_upg_o_1_1_elo"
+		self.parts.wpn_fps_ass_nova4_iw_elo.desc_id = "bm_wp_upg_o_iwelo"
 		self.parts.wpn_fps_ass_nova4_iw_elo.stats = deep_clone(self.parts.wpn_fps_upg_o_docter.stats)
 
 		self.parts.wpn_fps_ass_nova4_barrel_supp.supported = true
@@ -23845,11 +23845,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = 15
 		}
 
-		self.parts.wpn_fps_upg_fl_ass_laser.supported = true
-		self.parts.wpn_fps_upg_fl_ass_laser.stats = {}
-
-		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.has_description = true
-		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.desc_id = "bm_wp_wpn_fps_ass_nova4_flatline_desc"
+		self.parts.wpn_fps_ass_nova4_laser.supported = true
+		self.parts.wpn_fps_ass_nova4_laser.stats = {}
 
 		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.supported = true
 		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.has_description = true
@@ -23895,6 +23892,53 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_nova4_npc.override = deep_clone(self.wpn_fps_ass_nova4.override)
 		self.wpn_fps_ass_nova4_npc.uses_parts = deep_clone(self.wpn_fps_ass_nova4.uses_parts)
 
+	end
+
+	if self.parts.wpn_fps_rsass_handguard then --youngrich99 and FrenchyAU's Remington RSASS
+
+		self.parts.wpn_fps_rsass_barrel_short.supported = true
+		self.parts.wpn_fps_rsass_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_rsass_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.wpn_fps_ass_rsass.override = self.wpn_fps_ass_rsass.override or {}
+	
+		self.wpn_fps_ass_rsass.override.wpn_fps_upg_m4_s_standard = {
+			stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_upg_m4_s_pts = {
+			stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_sho_sko12_stock = {
+			stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_upg_m4_s_crane = {
+			stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_upg_m4_s_mk46 = {
+			stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_upg_m4_s_ubr = {
+			stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+			custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_snp_tti_s_vltor = {
+			stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+			custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_m4_uupg_s_fold = {
+			stats = deep_clone(stocks.fixed_to_folder_stats),
+			custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+		}
+		self.wpn_fps_ass_rsass.override.wpn_fps_ass_contraband_s_tecci = {
+			stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+			custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		}
+		self.wpn_fps_ass_rsass_npc.override = deep_clone(self.wpn_fps_ass_rsass.override)
 	end
 
 --Resmod Custom Weapon stuff

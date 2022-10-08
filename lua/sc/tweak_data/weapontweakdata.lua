@@ -13957,6 +13957,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.svd.upgrade_blocks = nil
 		--self.svd.has_description = true
 		--self.svd.desc_id = "bm_siltstone_sc_desc"
+		self.svd.tactical_reload = 1
 		self.svd.CLIP_AMMO_MAX = 10
 		self.svd.AMMO_MAX = 40
 		self.svd.fire_mode_data.fire_rate = 0.4
@@ -14763,6 +14764,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.sounds.fire_auto2 = "p90_x_fire"
 		self.crysis3_typhoon.sounds.stop_fire2 = "p90_x_stop"
 		self.crysis3_typhoon.sounds.stop_fire3 = "typhoon_wind_down"
+	end
+
+	if self.rsass then --youngrich99 and FrenchyAU's Remington RSASS
+		self.rsass.recategorize = { "light_snp" }
+		self.rsass.categories = {
+			"snp",
+			"semi_snp"
+		}
+		self.rsass.lock_slide = true
+		self.rsass.upgrade_blocks = nil
+		self.rsass.tactical_reload = 1
+		self.rsass.CLIP_AMMO_MAX = 20
+		self.rsass.AMMO_MAX = 60
+		self.rsass.FIRE_MODE = "single"
+		self.rsass.fire_mode_data.fire_rate = 0.142857
+		self.rsass.sms = 0.9
+		self.rsass.kick = self.stat_info.kick_tables.vertical_kick
+		self.rsass.can_shoot_through_enemy = true
+		self.rsass.can_shoot_through_shield = true
+		self.rsass.can_shoot_through_wall = true
+		self.rsass.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.rsass.supported = true
+		self.rsass.ads_speed = 0.500
+		self.rsass.damage_falloff = {
+			start_dist = 3500,
+			end_dist = 8500,
+			min_mult = 0.5
+		}
+		self.rsass.stats = {
+			damage = 60,
+			spread = 83,
+			recoil = 57,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 18,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.rsass.armor_piercing_chance = 1
+		self.rsass.stats_modifiers = nil
+		self.rsass.panic_suppression_chance = 0.05
+		self.rsass.timers.reload_not_empty = 2.5
+		self.rsass.timers.reload_empty = 3.43
+		self.rsass.timers.reload_exit_empty = 1
+		self.rsass.timers.reload_exit_not_empty = 0.95
 	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

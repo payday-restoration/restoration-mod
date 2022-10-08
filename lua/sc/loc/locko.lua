@@ -1511,7 +1511,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Valmet Rk.62
 		["bm_w_rk62"] = "Velmer 소총",		
 		--NV4
-		["bm_nova4_sc_desc"] = "완전 자동 탄도 소총. 적당한 발사 속도는 안정성을 높혀주기 때문에 동급 최고의 명중률를 보여주고 중장거리 교전에 완벽합니다.",
+		["bm_nova4_sc_desc"] = "완전 자동 탄도 소총. 적당한 발사 속도는 안정성을 높혀주기 때문에 동급 최고의 명중률을 보여주고 중장거리 교전에 완벽합니다.",
 		["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "다음과 같은 특전을 부여합니다:\n#{heat_warm_color}#정밀도:##\n#{skill_color}#대미지 폴오프가 없는## 대신 연사력을 #{important_1}#감소시킵니다.##\n#{item_stage_2}#집중력:##\n명중률이 #{skill_color}#높아집니다.##",
 		["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "다음과 같은 특전을 부여합니다:\n#{heat_warm_color}#민첩함:##\n지향 사격 발사 속도는 #{skill_color}#증가하지만## 조준 도중 발사 속도는 #{important_1}#감소합니다##.\n#{item_stage_2}#안정함:##\n지향 사격의 확산이 #{skill_color}#감소합니다.##",
 

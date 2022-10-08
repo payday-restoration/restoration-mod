@@ -14509,9 +14509,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.nova4.desc_id = "bm_nova4_sc_desc"
 		self.nova4.CLIP_AMMO_MAX = 30
 		self.nova4.AMMO_MAX = 150
+		self.nova4.lock_slide = true
 		self.nova4.CAN_TOGGLE_FIREMODE = false
 		self.nova4.FIRE_MODE = "auto"
-		self.nova4.CAN_TOGGLE_FIREMODE = true
 		self.nova4.kick = {}
 		self.nova4.kick = self.stat_info.kick_tables.moderate_kick
 		self.nova4.supported = true
@@ -14537,6 +14537,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.nova4.stats_modifiers = nil
 		self.nova4.panic_suppression_chance = 0.05
+		self.nova4.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.nova4.timers.reload_exit_empty = 1.3
 		self.nova4.timers.reload_empty = 2.55
 		self.nova4.timers.reload_exit_not_empty = 0.8

@@ -279,6 +279,7 @@ function restoration:Init()
 		"pbr2", --Birth of Sky
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
+		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
 		"bph", --Hell's Island
@@ -298,6 +299,7 @@ function restoration:Init()
 		"crimepunishlvl", --Crime And Punshiment
 		"amsdeal1", --Armsdeal Alleyway
 		"constantine_smackdown_lvl", --Smackdown
+		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
@@ -310,7 +312,6 @@ function restoration:Init()
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
 		"mex", --Border Crossing
-		"nmh", --No Mercy
 		"mex_cooking", --Border Crystals		
 		"sand", --The Ukrainian Prisoner			
 		--Skirmish heists below
@@ -319,7 +320,6 @@ function restoration:Init()
 		"infinitebank_room",  --First World Tower
 		"railrun", --The Last Train
 		"highrise_stage1", --Out of Frame
-		"nmh_res", --Resmod edit of no mercy.
 		"Victor Romeo"
 	}	
 	--Christmas Effects Heists

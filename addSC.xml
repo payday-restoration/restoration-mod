@@ -104,6 +104,12 @@
 	<mission			path="levels/instances/unique/chas/chas_security_room/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/sand/sand_security_room/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/tag/tag_security/world/world" force="true" /> 
+	<!--so many security rooms (some of them are unused but better replace them all just in case)-->
+	<mission			path="levels/instances/unique/dah/dah_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room2/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room3/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room4/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room5/world/world" force="true" /> 
 	
 	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>

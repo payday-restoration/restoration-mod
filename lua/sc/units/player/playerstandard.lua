@@ -777,6 +777,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						if fire_mode == "volley" then
 							self:_check_stop_shooting()
+							new_action = false
 						end
 					elseif fire_mode == "single" then
 						new_action = false

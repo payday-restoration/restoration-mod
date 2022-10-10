@@ -779,6 +779,9 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 
 	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	for part_id, stats in pairs(custom_data) do
+		if stats.damage_min_mult then
+			damage_min_mult = damage_min_mult * stats.damage_min_mult
+		end
 		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
 			damage_min_mult = 1
 		end
@@ -788,8 +791,6 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 	end
 
 	damage_mods = (damage_mods + damage_base) * damage_min_mult 
-
-
 
 	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
 		damage_min_mult = 0.05
@@ -833,6 +834,9 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 
 	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	for part_id, stats in pairs(custom_data) do
+		if stats.damage_min_mult then
+			damage_min_mult = damage_min_mult * stats.damage_min_mult
+		end
 		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
 			damage_min_mult = 1
 		end

@@ -91,7 +91,7 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1.8,
+		hipfire_spread_mult = 2,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.6 --lowered to 0.3
 	}
@@ -105,7 +105,7 @@ tweak_data.assault_rifle = {
 		ads_move_speed_mult = 1.2 --raised to 0.6
 	}
 	tweak_data.dmr = {
-		hipfire_spread_mult = 1.8,
+		hipfire_spread_mult = 1.2,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.7 --lowered to 0.4
 	}
@@ -621,7 +621,7 @@ velocity = {
 	'frankish_arrow','frankish_poison_arrow','frankish_arrow_exp'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 3800 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -630,7 +630,7 @@ velocity = {
 	'arblast_arrow','arblast_poison_arrow','arblast_arrow_exp'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 5500 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -639,7 +639,7 @@ velocity = {
 	'ecp_arrow','ecp_arrow_poison','ecp_arrow_exp'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 8000 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end

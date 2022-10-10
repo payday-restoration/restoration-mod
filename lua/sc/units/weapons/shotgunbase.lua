@@ -167,6 +167,25 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 					ray = spread_direction
 				})
 			end
+
+			if col_ray then
+				local tracer_dist = col_ray.distance
+				if (col_ray and tracer_dist > 200 or not col_ray) and alive(self._obj_fire)  then
+					self._obj_fire:m_position(self._trail_effect_table.position)
+					mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
+					local clamp_dist = tracer_dist
+					local trail = World:effect_manager():spawn(self._trail_effect_table)
+					if col_ray then
+						World:effect_manager():set_remaining_lifetime(trail, math.clamp(tracer_dist - 100 / 10000, 0, col_ray.distance))
+					end
+				end
+			elseif not col_ray then
+				self._obj_fire:m_position(self._trail_effect_table.position)
+				mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
+				local clamp_dist = 0.5
+				local trail = World:effect_manager():spawn(self._trail_effect_table)
+				World:effect_manager():set_remaining_lifetime(trail, clamp_dist)
+			end
 		end
 
 		if self._autoaim and autoaim then

@@ -512,7 +512,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.01 or 1
+		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.02 or 1.02 --small mult to help alliviate frame rounding
 		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
 		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
@@ -1314,7 +1314,6 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	
 	--Minimum damage multiplier when taking falloff into account
 	local minimum_damage = damage_falloff and damage_falloff.min_mult or 0.3
-	minimum_damage = minimum_damage * (self._damage_min_mult or 1)
 	
 	--Have a harsher falloff for Shotguns
 	if self._rays and self._rays > 1 then
@@ -1323,6 +1322,8 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 			minimum_damage = 0.05
 		end
 	end
+	
+	minimum_damage = minimum_damage * (self._damage_min_mult or 1)
 	
 	--[[
 	log("DAMAGE: " .. tostring( damage * 10 ))

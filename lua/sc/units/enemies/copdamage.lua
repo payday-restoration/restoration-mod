@@ -276,6 +276,7 @@ function CopDamage:_spawn_head_gadget(params)
 	self._head_gear = false
 end
 
+
 function CopDamage:damage_fire(attack_data)
 	if self._dead or self._invulnerable then
 		return
@@ -546,6 +547,7 @@ function CopDamage:damage_fire(attack_data)
 
 		if flammable then
 			local fire_dot_max_distance = weap_base and weap_base.far_falloff_distance and weap_base.far_falloff_distance + weap_base.near_falloff_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
+			local fire_dot_panic_max_distance = weap_base and weap_base.near_falloff_distance or 500
 
 			if distance < fire_dot_max_distance then
 				local start_dot_damage_roll = math.random(1, 100)
@@ -568,6 +570,10 @@ function CopDamage:damage_fire(attack_data)
 						use_animation_on_fire_damage = true
 					else
 						use_animation_on_fire_damage = self._char_tweak.use_animation_on_fire_damage
+					end
+					
+					if not (attack_data.is_fire_pool_damage or attack_data.is_molotov) and distance > fire_dot_panic_max_distance then
+						use_animation_on_fire_damage = nil
 					end
 
 					if use_animation_on_fire_damage then

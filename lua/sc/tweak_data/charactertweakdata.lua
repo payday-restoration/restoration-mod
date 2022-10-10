@@ -3350,6 +3350,9 @@ function CharacterTweakData:_init_spanish(presets)
 	self.spanish.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
 		--"wpn_fps_lmg_hk21_pdth_npc",
+		"wpn_fps_lmg_hk21_npc",
+		"wpn_fps_lmg_m249_npc",
+		"wpn_fps_lmg_m249_npc",
 		"wpn_fps_lmg_m249_npc",
 		"wpn_fps_lmg_m249_npc"
 	}
@@ -3381,6 +3384,10 @@ function CharacterTweakData:_init_american(presets)
 	self.american.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
 		--"wpn_fps_ass_m14_pdth_npc",
+		"wpn_fps_ass_g3_npc",
+		"wpn_fps_ass_m14_npc",
+		"wpn_fps_ass_m14_npc",
+		"wpn_fps_ass_m14_npc",
 		"wpn_fps_ass_m14_npc",
 		"wpn_fps_ass_m14_npc"
 	}
@@ -3412,10 +3419,6 @@ function CharacterTweakData:_init_jowi(presets)
 	local rand_weap = {
 		"wpn_fps_snp_tti_npc",
 		--"wpn_fps_snp_tti_wick_bubba_npc",
-		--"wpn_fps_snp_desertfox_wick_npc",
-		--"wpn_fps_snp_desertfox_wick_npc",
-		--"wpn_fps_snp_desertfox_wick_npc",
-		--"wpn_fps_snp_desertfox_wick_npc",
 		--"wpn_fps_snp_tti_wick_npc",
 		--"wpn_fps_snp_tti_wick_npc",
 		--"wpn_fps_snp_tti_wick_npc",
@@ -3539,6 +3542,9 @@ function CharacterTweakData:_init_jacket(presets)
 		--"wpn_fps_ass_m16_a3_npc",
 		--"wpn_fps_ass_m16_a3_npc",
 		--"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_akm_npc",
+		"wpn_fps_ass_m16_npc",
+		"wpn_fps_ass_m16_npc",
 		"wpn_fps_ass_amcar_npc",
 		"wpn_fps_ass_amcar_npc",
 		"wpn_fps_ass_amcar_npc",
@@ -3604,7 +3610,6 @@ function CharacterTweakData:_init_sokol(presets)
 		"wpn_fps_ass_asval_npc",
 		--"wpn_fps_ass_asval_vss_npc",
 		--"wpn_fps_ass_asval_vss_npc",
-		--"wpn_fps_ass_shak12_supp_npc"
 	}
 	self.sokol.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),

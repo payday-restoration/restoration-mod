@@ -1012,6 +1012,14 @@ end
 -- Or just add the name = "deflection" to the table somewhere if you don't care much for a logical layout.
 
 function BlackMarketGui:_setup(is_start_page, component_data)
+	if self.rip_can_rename_page and self:rip_can_rename_page(component_data) then
+		for i, name in pairs(self.rip_page_names) do
+			if component_data[i] then
+				name = name == '' and managers.localization:to_upper_text('bm_menu_page', {page = tostring(i)}) or utf8.to_upper(name)
+				component_data[i].name_localized = name
+			end
+		end
+	end
 	self._in_setup = true
 
 	if alive(self._panel) then

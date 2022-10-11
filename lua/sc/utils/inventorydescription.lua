@@ -794,7 +794,10 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 
 	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
 		damage_min_mult = 0.05
+	else
+		damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	end
+	
 	damage_base = damage_base * damage_min_mult 
 
 	for i = 1, #weapon_tweak.categories do

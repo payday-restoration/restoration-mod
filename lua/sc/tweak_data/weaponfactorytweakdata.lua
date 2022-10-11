@@ -23943,12 +23943,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.stats = {
 			value = 10,
 			spread = 1,
-			concealment = -2
 		}
 		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.custom_stats = {
 			rof_mult = 0.933006,
-			falloff_start_mult = 25,
-			falloff_end_mult = 24.99400149962509,
+			damage_min_mult = 2.4
 		}
 		
 		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.supported = true
@@ -23956,7 +23954,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.desc_id = "bm_wp_wpn_fps_ass_nova4_chaos_desc"
 		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.stats = {
 			value = 10,
-			concealment = -2
 		}
 		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.custom_stats = {
 			rof_mult = 1.166666,

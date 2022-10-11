@@ -1728,7 +1728,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_vhs = {
 		translation = Vector3(-0.0, 9.3, -1.19)
 	}
-
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_olympic = {
 		translation = Vector3(0, 9, -0.1)
 	}
@@ -1754,14 +1753,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_74 = {
 		translation = Vector3(-0.006, -2, -3.04)
 	}
-
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_hajk = {
 		translation = Vector3(0, 10.4, -0.48)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_komodo = {
 		translation = Vector3(0, 15, 0.09)
 	}
-
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m16 = {
 		translation = Vector3(0, 9, -0.1)
@@ -1778,11 +1775,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_groza = {
 		translation = Vector3(0, 6.8, -5.05),
 	}
-
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_akmsu = {
 		translation = Vector3(-0.006, 2, -3.01)
 	}
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_asval = {
+		translation = Vector3(0, 14, 0)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_fal = {
+		translation = Vector3(-0.005, 10.5, -3.52)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_galil = {
+		translation = Vector3(-0.005, 9, -3.21) --NEED TO DO HANDGUARDS
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_scar = {
+		translation = Vector3(-0.005, 5.2, -0.3)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_contraband = {
+		translation = Vector3(-0.005, 3.2, -1.69)
+	}
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m14 = {
 		translation = Vector3(-0.02, 2, -3.85)
@@ -1796,6 +1807,62 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
 		translation = Vector3(0, -1.5, 1.585),
 		rotation = Rotation(0, -0.5, 0)
+	}
+
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_tti = {
+		translation = Vector3(0, 9, -0.1)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_qbu88 = {
+		translation = Vector3(0, -7.2, 0.3)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
+		translation = Vector3(-0.004, -3.8, -3.36)
+	}	
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r700 = {
+		translation = Vector3(0, -0.6, -3.785)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_msr = {
+		translation = Vector3(0, -1.5, -3.54)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-0.005, -18, 0.6),
+		rotation = Rotation(0, 0, 0)
+	}
+
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_wa2000 = {
+		translation = Vector3(0, 4.3, 0.76)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_siltstone = {
+		translation = Vector3(-0.005, 14.7, -4.01)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_sbl = {
+		translation = Vector3(-0.012, -0.5, -3.81)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_model70 = {
+		translation = Vector3(0, 0.5, -4.03)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
+		translation = Vector3(0, -19.8, -4.28)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
+		translation = Vector3(0, -6.9, -3.95)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r93 = {
+		translation = Vector3(-0.005, 2, -3.76)
+	}
+
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m95 = {
+		translation = Vector3(0, 9.4, -3.82)
+	}
+
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_saiga = {
+		translation = Vector3(0.06, -2, -2.97)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_sko12 = {
+		translation = Vector3(0, 8.2, -2.81)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_aa12 = {
+		translation = Vector3(0, 12.2, 0.11)
 	}
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m249 = {
@@ -1830,22 +1897,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		rotation = Rotation(0.0, -0.1, -0.625)
 	}
 
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
-		translation = Vector3(-0.004, -3.8, -3.36)
-	}	
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_wa2000 = {
-		translation = Vector3(0, 1, 0.75),
-		rotation = Rotation(0, 0, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0.005, -18, 0.6),
-		rotation = Rotation(0, 0, 0)
-	}
 
 
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_saiga = {
-		translation = Vector3(0.06, -2, -2.97)
-	}
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
 		translation = Vector3(-0.0, -0.5, -0.2),

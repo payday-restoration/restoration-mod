@@ -1176,20 +1176,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人、盾牌和薄墙壁##。",
 		["bm_wp_upg_a_slug_spam_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人和薄墙壁##，但穿透护甲时仅造成#{skill_color}#80%##的伤害。",
 		["bm_wp_upg_a_explosive_desc_sc"] = "射出一发能使人眩晕的爆炸半径为#{skill_color}#1.5米##的致命性爆炸弹头，#{skill_color}#不受任何衰减##，但也#{important_1}#不能触发爆头##。\n",
-		["bm_wp_upg_a_custom_desc"] = "更少量但更大号的自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。这种弹丸的动能足以#{skill_color}#穿透护甲##造成#{skill_color}#20%##的伤害。",
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#96##点伤害，并有几率晕眩敌人。",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "燃烧弹丸可以#{skill_color}#烧穿敌人护甲##，并有#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。",
-		["bm_wp_upg_a_rip_auto_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#96##点伤害，并有几率眩晕敌人。",
-		["bm_wp_upg_a_rip_semi_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#120##点伤害，并有几率眩晕敌人。",
-		["bm_wp_upg_a_rip_pump_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害，并有几率眩晕敌人。",
-		["bm_wp_upg_a_rip_heavy_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#240##点伤害，并有几率眩晕敌人。",
+		["bm_wp_upg_a_custom_desc"] = "发射更少量但更大号的共#{important_1}#6##发自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。这种弹丸的动能足以#{skill_color}#穿透护甲##造成#{skill_color}#20%##的伤害。",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#15%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#90##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#20%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#30%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#40%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#1##秒内造成#{stats_positive}#30##点伤害，并有几率眩晕敌人。",
+		["bm_wp_upg_a_rip_semi_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#2##秒内造成#{stats_positive}#60##点伤害，并有几率眩晕敌人。",
+		["bm_wp_upg_a_rip_pump_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#3##秒内造成#{stats_positive}#90##点伤害，并有几率眩晕敌人。",
+		["bm_wp_upg_a_rip_heavy_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害，并有几率眩晕敌人。",
 		["bm_wp_upg_a_rip"] = "墓石大铅弹",
-		["bm_wp_upg_a_piercing_auto_desc_sc"] = "箭弹可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#96##点流血伤害。",
-		["bm_wp_upg_a_piercing_semi_desc_sc"] = "箭弹可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#120##点流血伤害。",
-		["bm_wp_upg_a_piercing_pump_desc_sc"] = "箭弹可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#180##点流血伤害。",
-		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "箭弹可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#240##点流血伤害。",
+		--[[
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#96##点流血伤害。",
+		["bm_wp_upg_a_piercing_semi_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#120##点流血伤害。",
+		["bm_wp_upg_a_piercing_pump_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#180##点流血伤害。",
+		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#240##点流血伤害。",
+		--]]
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
+		["bm_wp_upg_a_piercing_semi_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
+		["bm_wp_upg_a_piercing_pump_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
+		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "水平前握把",
@@ -3387,7 +3393,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck3_9_desc_sc"] = "你的护甲恢复速度额外加快##5%##.\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Burglar--
-		["menu_st_spec_7_desc_sc"] = "窃贼的天生敏捷可不是仅限于溜门撬锁而已。窃贼们潜入中的移动速度都比其他人快上许多。\n\n他们在战斗中更难被击中，对窃贼来说，生存的信条就是避开交战，远走高飞。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##15##点。\n##-##在蹲伏状态下你的闪避计数器每秒增加##10%##。\n##-##你蹲伏的移动速度加快##20%##。\n##-##护甲回复速度增加 ##10%##。",
+		["menu_st_spec_7_desc_sc"] = "窃贼的天生敏捷可不是仅限于溜门撬锁而已。窃贼们潜入中的移动速度都比其他人快上许多。\n\n他们在战斗中更难被击中，对窃贼来说，生存的信条就是避开交战，远走高飞。\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##15##点。\n##-##在蹲伏状态下你的闪避条每秒增加##10%##。\n##-##你蹲伏的移动速度加快##20%##。\n##-##护甲回复速度增加 ##10%##。",
 		["menu_st_spec_7_desc_sc_short"] = "窃贼的天生敏捷可不是仅限于溜门撬锁而已。窃贼们潜入中的移动速度都比其他人快上许多。\n\n他们在战斗中更难被击中，对窃贼来说，生存的信条就是避开交战，远走高飞。",
 		["menu_deck7_1_desc_sc"] = "你的闪避点数增加##5##\n\n蹲伏时，你的闪避条每##1##秒增加闪避点数的##5%##",
 		["menu_deck7_3_desc_sc"] = "你的闪避点数额外增加##5##",
@@ -3471,7 +3477,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "注射器生效期间，每获得##5##点血量的过量治疗将减少注射器冷却时间##2##秒\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--10 feet higher--
-		["menu_st_spec_18_desc_sc"] = "刺客是每一个贩毒团伙中必不可少的一份子。刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。\n\n\n完成全部牌组后的效果：\n##-##解锁并装备烟雾弹。投掷后会发散出一片持续##12##秒的烟雾。你和你的团队成员当站在烟雾当中时可以增加##100%##的护甲回复速度。任何站在烟雾当中的敌人射击精准度都会降低##75%##。当烟雾散去后，烟雾弹有##40##秒的冷却时间。但是每击杀1名敌人可以减少该技能##1##秒的冷却时间。\n##-##成功闪避敌人的攻击将会减少烟雾弹技能##1##秒的冷却时间。\n##-##当你站在烟雾当中时你的闪避计数器每秒增加##40%##。\n##-##你的闪避点数增加##15##点。\n##-##你初始携带的尸体袋数量增加##1##。",
+		["menu_st_spec_18_desc_sc"] = "刺客是每一个贩毒团伙中必不可少的一份子。刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。\n\n\n完成全部牌组后的效果：\n##-##解锁并装备烟雾弹。投掷后会发散出一片持续##12##秒的烟雾。你和你的团队成员当站在烟雾当中时可以增加##100%##的护甲回复速度。任何站在烟雾当中的敌人射击精准度都会降低##75%##。当烟雾散去后，烟雾弹有##40##秒的冷却时间。但是每击杀1名敌人可以减少该技能##1##秒的冷却时间。\n##-##成功闪避敌人的攻击将会减少烟雾弹技能##1##秒的冷却时间。\n##-##当你站在烟雾当中时你的闪避条每秒增加##40%##。\n##-##你的闪避点数增加##15##点。\n##-##你初始携带的尸体袋数量增加##1##。",
 		["menu_st_spec_18_desc_sc_short"] = "刺客是每一个贩毒团伙中必不可少的一份子。刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。",
 		["menu_deck18_1_desc_sc"] = "你的闪避点数增加##5##\n\n解锁投掷物——##烟雾弹##以供你使用\n\n烟雾弹扔出后，它会制造一片持续##12##秒的烟幕。处于烟幕中的你和你队友回复护甲的速度加快##100%##。烟幕中的敌人精准度降低##75%##.\n\n烟雾弹的冷却时间为##40##秒，击杀一名敌人将使冷却时间减少##1##",
 		["menu_deck18_3_desc_sc"] = "你的闪避点数额外增加##5##",
@@ -3507,7 +3513,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "每减少##25%##的护甲值都将使杀敌回血量增加##2##点\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。\n\n作为社会的边缘人群，极道了解如何生存下去。尽管他彬彬有礼，却千万不能小觑他。\n\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##你的血量减伤分数上限提高至##80%##。\n##-##当你的血量低于100%:\n你的闪避条每秒最多增加闪避点数的##10%##；\n当你使用非近战武器击杀一名敌人时，你的闪避计数器最高增加闪避点数的##50%##；\n当你使用近战武器击杀一名敌人时，你的闪避条最多额外增加你闪避点数的##125%##，且你的下次成功闪避获得的无敌时间最多增加##300%##，最多增加至##0.9##秒；\n你最多减少##20%##所受到的伤害。\n##-##受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数。\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n##-##你打包尸体和与人质互动的速度加快##75%##。",
+		["menu_st_spec_12_desc_sc"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。\n\n作为社会的边缘人群，极道了解如何生存下去。尽管他彬彬有礼，却千万不能小觑他。\n\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##你的血量减伤分数上限提高至##80%##。\n##-##当你的血量低于100%:\n你的闪避条每秒最多增加闪避点数的##10%##；\n当你使用非近战武器击杀一名敌人时，你的闪避条最高增加闪避点数的##50%##；\n当你使用近战武器击杀一名敌人时，你的闪避条最多额外增加你闪避点数的##125%##，且你的下次成功闪避获得的无敌时间最多增加##300%##，最多增加至##0.9##秒；\n你最多减少##20%##所受到的伤害。\n##-##受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身后重置使用次数。\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n##-##你打包尸体和与人质互动的速度加快##75%##。",
 		["menu_st_spec_12_desc_sc_short"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。",
 		["menu_deck12_1_desc_sc"] = "你的血量低于##100%##时，血量越少，你的闪避条被动增长的速度越快，最快可以达到每秒增加闪避点数的##10%##。\n\n你的闪避点数增加##5##。",	
 		["menu_deck12_3_desc_sc"] = "你的血量低于##100%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##。",

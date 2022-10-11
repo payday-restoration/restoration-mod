@@ -2346,11 +2346,15 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 		end
 	end
 	local weap_base = self._equipped_unit:base()	
+	local fire_mode = weap_base:fire_mode()
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
-		self._ext_camera:play_redirect(self:get_animation("recoil_enter"))
+
+	if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
+		if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+			self._ext_camera:play_redirect(self:get_animation("recoil_enter"))
+		end
 	end
 end)
 

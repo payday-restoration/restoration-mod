@@ -1322,7 +1322,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 			minimum_damage = 0.05
 		end
 	end
-	
+
 	minimum_damage = minimum_damage * (self._damage_min_mult or 1)
 	
 	--[[
@@ -1457,7 +1457,7 @@ function NewRaycastWeaponBase:set_reload_objects_visible(visible, anim)
 				reload_objects = self._reload_objects[part_id]
 			end
 	
-			if reload_objects then
+			if reload_objects and part.unit then
 				self:set_objects_visible(part.unit, reload_objects, visible)
 			end
 		end

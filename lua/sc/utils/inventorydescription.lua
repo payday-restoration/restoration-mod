@@ -809,7 +809,7 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 		end
 	end
 	
-	return damage_mods - damage_base
+	return math.round((damage_mods - damage_base) * 100) / 100
 end
 
 function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_stats)

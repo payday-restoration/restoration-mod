@@ -176,7 +176,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 					local clamp_dist = tracer_dist
 					local trail = World:effect_manager():spawn(self._trail_effect_table)
 					if col_ray then
-						World:effect_manager():set_remaining_lifetime(trail, math.clamp(tracer_dist - 100 / 10000, 0, col_ray.distance))
+						World:effect_manager():set_remaining_lifetime(trail, math.clamp(tracer_dist - 100 / 10000, 0,  tracer_dist * 0.00009))
 					end
 				end
 			elseif not col_ray then

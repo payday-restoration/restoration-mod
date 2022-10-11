@@ -4159,9 +4159,16 @@ function BlackMarketGui:show_stats()
 		--Checks if the weapon stats with the mod (and no skills) change, and if they do, displays the difference.
 		--Would write a better solution, but I hate this file.
 		for name, data in pairs(unaltered_total_mods_stats) do
-			if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
-				mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
-				- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
+			if name == "damage" or name == "damage_min" then
+				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+					mod_stats.chosen[name] = (total_base_stats[name].value + (total_mods_stats[name].value + total_skill_stats[name].value))
+					- (unaltered_total_base_stats[name].value + (unaltered_total_mods_stats[name].value + unaltered_total_skill_stats[name].value))
+				end
+			else
+				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+					mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
+					- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
+				end
 			end
 		end
 		

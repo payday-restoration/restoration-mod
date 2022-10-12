@@ -379,6 +379,18 @@ function PlayerTweakData:init()
 	self:_init_parachute()
 end
 
+
+local default_new_stances = PlayerTweakData._init_new_stances
+function PlayerTweakData:_init_new_stances()
+	default_new_stances(self)
+	local pivot_shoulder_translation = Vector3(10.6877, 15.6166, -2.8033)
+	local pivot_shoulder_rotation = Rotation(0.106298, -0.085067, 0.62852)
+	local pivot_head_translation = Vector3(-0.005, 8, 0)
+	local pivot_head_rotation = Rotation(0.023, 0, 0)
+	self.stances.ak5.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.ak5.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
 local default_init_hk21 = PlayerTweakData._init_hk21
 function PlayerTweakData:_init_hk21()
 	default_init_hk21(self)

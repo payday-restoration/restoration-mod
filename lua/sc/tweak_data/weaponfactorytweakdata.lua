@@ -23488,7 +23488,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -2,
 			concealment = -1
 		}
-		self.parts.wpn_fps_m4_uupg_m_extend.custom_stats = {
+		self.parts.wpn_fps_upg_vss_mag_20rnd.custom_stats = {
 			ads_speed_mult = 1.025
 		}
 

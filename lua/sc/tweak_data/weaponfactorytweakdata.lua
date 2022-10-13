@@ -1841,7 +1841,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.005, -4.8, -0.025)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_korth = {
-		translation = Vector3(0.056, 3, -3.38)
+		translation = Vector3(0.056, 3, -3.38),
+		rotation = Rotation(-0.07, 0, 0)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rsh12 = {
 		translation = Vector3(0.043, -11.7, -3.44)

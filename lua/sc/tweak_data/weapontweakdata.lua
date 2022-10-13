@@ -5325,6 +5325,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.timers.reload_exit_not_empty = 0.65
 
 			--Kahn .357				
+				self.x_korth.has_description = true
+				self.x_korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
 				self.x_korth.fire_mode_data.fire_rate = 0.15789474
 				self.x_korth.CLIP_AMMO_MAX = 16
 				self.x_korth.AMMO_MAX = 60
@@ -5827,6 +5829,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.timers.reload_exit_not_empty = 0.8
 
 			--Kahn .357				
+				self.korth.has_description = true
+				self.korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
 				self.korth.fire_mode_data.fire_rate = 0.15789474
 				self.korth.CLIP_AMMO_MAX = 8
 				self.korth.AMMO_MAX = 30

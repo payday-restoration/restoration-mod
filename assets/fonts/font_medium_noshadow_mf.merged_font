@@ -1,5 +1,6 @@
 <merged_font>
       <font name="fonts/font_medium_noshadow"/>
+      <font name="fonts/font_medium_cyrillic"/>
       <font name="fonts/font_medium_buttons_old_ps3" color="ffffff"/>
       <font name="fonts/font_noto_scn_medium"/>
       <font name="fonts/font_noto_support_medium"/>

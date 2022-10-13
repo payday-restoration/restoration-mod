@@ -1285,7 +1285,7 @@ function CrimeNetGui:update(t, dt)
 	local zoom_string = string.format( "%.2f", self._zoom )
 	self._panel:child("map_coord_text"):set_text( utf8.to_upper( managers.localization:text( "cn_menu_mapcoords", {zoom=zoom_string, x=x, y=y} ) ) )
 	
-	local num_jobs = -4
+	local num_jobs = 0
 	
 	for i, d in pairs( self._jobs ) do
 		num_jobs = num_jobs + 1

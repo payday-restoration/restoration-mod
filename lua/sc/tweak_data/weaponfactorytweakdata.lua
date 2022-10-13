@@ -24709,6 +24709,7 @@ end
 
 --OICW
 if self.wpn_fps_ass_osipr then
+	self.parts.wpn_fps_ass_osipr_scope.stance_mod.wpn_fps_ass_osipr.translation = Vector3(0.035, 0, -0.68)
 	self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
 		gfx_reddot = {
 			{

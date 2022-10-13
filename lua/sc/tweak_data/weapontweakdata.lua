@@ -7681,9 +7681,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.g36.stats_modifiers = nil
 				self.g36.reload_speed_multiplier = 1.2
-				self.g36.timers.reload_not_empty = 2.4
 				self.g36.timers.reload_exit_empty = 0.7
-				self.g36.timers.reload_exit_not_empty = 0.8
+				self.g36.timers.reload_not_empty = 2.3
+				self.g36.timers.reload_exit_not_empty = 1.2
 				self.g36.panic_suppression_chance = 0.05
 
 			--Lion's Roar

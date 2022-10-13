@@ -137,6 +137,11 @@
 	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
+	<mission			path="levels/narratives/pbr/berry/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
+	
+	<mission			path="levels/instances/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--ditto but on surface-->
+	<mission			path="levels/instances/pbr/pbr_mountain_control_room/world/world" force="true" unload="true"/> <!--changed up the control room to feature Murky security-->
+	
 	<!--better SWAT squads-->
 	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
@@ -150,6 +155,8 @@
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
 	<mission			path="levels/narratives/locke/bph/world/world" force="true" unload="true"/> <!--Delayed the spawns and replaced scripted spawns with better Murkies-->
+	
+	<mission			path="levels/narratives/vlad/chca/world/world" force="true" unload="true"/> <!--Delayed the spawns and made some spawns be disabled if C4 route has been choosen-->
 	
 	<mission			path="levels/narratives/vlad/mallcrasher/mission_turf_war/mission_turf_war" force="true" unload="true"/> <!--fixed one of the scripted cops not moving at all-->
 	

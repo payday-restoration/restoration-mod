@@ -614,7 +614,7 @@ for i, proj_id in ipairs(velocity) do
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
 
-velocity_mult = 0.65
+velocity_mult = 0.75
 velocity = {
 	'west_arrow','bow_poison_arrow','west_arrow_exp',
 	'crossbow_arrow','crossbow_poison_arrow','crossbow_arrow_exp',

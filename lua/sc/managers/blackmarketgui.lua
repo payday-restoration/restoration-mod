@@ -4359,9 +4359,12 @@ function BlackMarketGui:update_info_text()
 	}
 	local ignore_lock = false
 	local desc_macros = {
+        BTN_FIRE = managers.localization:btn_macro("primary_attack", true),
+        BTN_AIM = restoration.Options:GetValue("OTHER/SeparateBowADS") and managers.localization:btn_macro("reload", true) or managers.localization:btn_macro("secondary_attack", true),
         BTN_GADGET = managers.localization:btn_macro("weapon_gadget", true),
         BTN_BIPOD = managers.localization:btn_macro("deploy_bipod", true)
     }
+
 
 	self._stats_text_modslist:set_text("")
 

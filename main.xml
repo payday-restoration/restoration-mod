@@ -498,15 +498,23 @@
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="RestoreHitFlash"/>
+				<divider name="tod_divider" size="7"/>
 				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 				<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
 				<option type="bool" default_value="true" name="StaticAim"/>
+				<divider name="tod_divider" size="7"/>
+				<option type="bool" default_value="false" name="SeparateBowADS"/>
+				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="AimDeploysBipod"/>
 				<option type="bool" default_value="false" name="MoveCancelBipod"/>
+				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="AutoDMRs"/>
+				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="SprintCancel"/>
+				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
 				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Holiday"/>

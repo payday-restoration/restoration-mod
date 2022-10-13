@@ -10444,7 +10444,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.ecp.damage_type = "sniper"
 				self.ecp.has_description = true
-				self.ecp.desc_id = "bm_ap_3_weapon_sc_desc"
+				self.ecp.desc_id = "bm_airbow_sc_desc"
 				self.ecp.kick = self.stat_info.kick_tables.right_kick
 				self.ecp.AMMO_MAX = 40
 				self.ecp.panic_suppression_chance = 0.05
@@ -10485,7 +10485,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.frankish.damage_type = "sniper"
 				self.frankish.has_description = true
-				self.frankish.desc_id = "bm_ap_3_weapon_sc_desc"
+				self.frankish.desc_id = "bm_xbow_sc_desc"
 				self.frankish.fire_mode_data.fire_rate = 1
 				self.frankish.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.frankish.AMMO_MAX = 30
@@ -10521,7 +10521,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}			
 				self.arblast.damage_type = "anti_materiel"
 				self.arblast.has_description = true
-				self.arblast.desc_id = "bm_ap_3_weapon_sc_desc"
+				self.arblast.desc_id = "bm_xbow_sc_desc"
 				self.arblast.AMMO_MAX = 20
 				self.arblast.fire_mode_data.fire_rate = 1.2
 				self.arblast.kick = self.stat_info.kick_tables.horizontal_recoil
@@ -10558,7 +10558,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.plainsrider.damage_type = "sniper"
 				self.plainsrider.has_description = true
-				self.plainsrider.desc_id = "bm_ap_2_weapon_sc_desc"
+				self.plainsrider.desc_id = "bm_bow_sc_desc"
+				--self.plainsrider.desc_id = "bm_bow_alt_sc_desc"
 				self.plainsrider.kick = self.stat_info.kick_tables.none
 				self.plainsrider.AMMO_MAX = 30
 				self.plainsrider.charge_data.max_t = 0.5
@@ -10596,7 +10597,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.long.damage_type = "anti_materiel"
 				self.long.has_description = true
-				self.long.desc_id = "bm_ap_2_weapon_sc_desc"
+				self.long.desc_id = "bm_bow_sc_desc"
 				self.long.kick = self.stat_info.kick_tables.none	
 				self.long.charge_data.max_t = 0.6
 				self.long.not_allowed_in_bleedout = false
@@ -10635,7 +10636,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.elastic.damage_type = "anti_materiel"
 				self.elastic.has_description = true
-				self.elastic.desc_id = "bm_ap_2_weapon_sc_desc"
+				self.elastic.desc_id = "bm_bow_sc_desc"
 				self.elastic.timers = {
 					reload_not_empty = 1.5,
 					reload_empty = 1.5,
@@ -10650,6 +10651,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.elastic.ignore_damage_upgrades = true
 				self.elastic.supported = true
 				self.elastic.ads_speed = 0.260	
+				self.elastic.sprintout_anim_time = 0.5221
 				self.elastic.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 9000,
@@ -10690,7 +10692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.hunter.damage_type = "sniper"
 				self.hunter.has_description = true
-				self.hunter.desc_id = "bm_ap_3_weapon_sc_desc"
+				self.hunter.desc_id = "bm_xbow_sc_desc"
 				self.hunter.AMMO_MAX = 15
 				self.hunter.panic_suppression_chance = 0.05
 				self.hunter.ignore_damage_upgrades = true

@@ -369,6 +369,20 @@ function PlayerStandard:_check_action_reload(t, input)
 
 			new_action = true
 		end
+		if restoration.Options:GetValue("OTHER/SeparateBowADS") then
+			if alive(self._equipped_unit) then
+				local result = nil
+				local weap_base = self._equipped_unit:base()
+		
+				if weap_base.manages_steelsight and weap_base:manages_steelsight() then
+					if input.btn_reload_press and weap_base.steelsight_pressed then
+						result = weap_base:steelsight_pressed()
+					elseif input.btn_steelsight_release and weap_base.steelsight_released then
+						result = weap_base:steelsight_released()
+					end
+				end
+			end
+		end
 	end
 
 	return new_action
@@ -669,12 +683,13 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 						end
 					end
-
-					if weap_base.manages_steelsight and weap_base:manages_steelsight() then
-						if weap_base:wants_steelsight() and not self._state_data.in_steelsight then
-							self:_start_action_steelsight(t)
-						elseif not weap_base:wants_steelsight() and self._state_data.in_steelsight then
-							self:_end_action_steelsight(t)
+					if not restoration.Options:GetValue("OTHER/SeparateBowADS") then
+						if weap_base.manages_steelsight and weap_base:manages_steelsight() then
+							if weap_base:wants_steelsight() and not self._state_data.in_steelsight then
+								self:_start_action_steelsight(t)
+							elseif not weap_base:wants_steelsight() and self._state_data.in_steelsight then
+								self:_end_action_steelsight(t)
+							end
 						end
 					end
 
@@ -714,7 +729,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
 
-							if not self._state_data.in_steelsight then
+							if not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/SeparateBowADS") and is_bow) then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then
 								if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
@@ -1245,7 +1260,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or self:_changing_weapon() or self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
+	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed())or self:_changing_weapon() or self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
 		self._running_wanted = true
 		return
 	end
@@ -2195,31 +2210,32 @@ end
 
 function PlayerStandard:_check_action_steelsight(t, input)
 	local new_action = nil
-
-	if alive(self._equipped_unit) then
-		local result = nil
-		local weap_base = self._equipped_unit:base()
-
-		if weap_base.manages_steelsight and weap_base:manages_steelsight() then
-			if input.btn_steelsight_press and weap_base.steelsight_pressed then
-				result = weap_base:steelsight_pressed()
-			elseif input.btn_steelsight_release and weap_base.steelsight_released then
-				result = weap_base:steelsight_released()
-			end
-
-			if result then
-				if result.enter_steelsight and not self._state_data.in_steelsight then
-					self:_start_action_steelsight(t)
-
-					new_action = true
-				elseif result.exit_steelsight and self._state_data.in_steelsight then
-					self:_end_action_steelsight(t)
-
-					new_action = true
+	if not restoration.Options:GetValue("OTHER/SeparateBowADS") then
+		if alive(self._equipped_unit) then
+			local result = nil
+			local weap_base = self._equipped_unit:base()
+	
+			if weap_base.manages_steelsight and weap_base:manages_steelsight() then
+				if input.btn_steelsight_press and weap_base.steelsight_pressed then
+					result = weap_base:steelsight_pressed()
+				elseif input.btn_steelsight_release and weap_base.steelsight_released then
+					result = weap_base:steelsight_released()
 				end
+	
+				if result then
+					if result.enter_steelsight and not self._state_data.in_steelsight then
+						self:_start_action_steelsight(t)
+	
+						new_action = true
+					elseif result.exit_steelsight and self._state_data.in_steelsight then
+						self:_end_action_steelsight(t)
+	
+						new_action = true
+					end
+				end
+	
+				return new_action
 			end
-
-			return new_action
 		end
 	end
 

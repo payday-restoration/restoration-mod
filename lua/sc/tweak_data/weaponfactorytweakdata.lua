@@ -1,536 +1,4 @@
---Overrides for shotgun ammo types that vary per damage tier.
-	--Indented to make for easy code folding in most editors.
-	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
-
-	--Flechettes
-	local a_piercing_auto_override = {
-		desc_id = "bm_wp_upg_a_piercing_auto_desc_sc",
-		stats = {
-			value = 9,
-			damage = -6,
-			spread = 5
-		},
-		custom_stats = {
-			trail_effect = "_dmc/effects/nato_trail",
-			falloff_start_mult = 1,
-			falloff_end_mult = 1.25,
-			damage_min_mult = 4,
-			armor_piercing_add = 1,		
-			rays = 12
-			--[[
-			bullet_class = "BleedBulletBase",
-			dot_data = { 
-				type = "bleed",
-				custom_data = {
-					dot_damage = 0.6,
-					dot_length = 8.1,
-					dot_tick_period = 0.5
-				}
-			}
-			--]]
-		}
-	}
-
-	local a_piercing_semi_override = {
-		desc_id = "bm_wp_upg_a_piercing_semi_desc_sc",
-		stats = {
-			value = 9,
-			damage = -15,
-			spread = 5
-		},
-		custom_stats = {
-			trail_effect = "_dmc/effects/nato_trail",
-			falloff_start_mult = 1,
-			falloff_end_mult = 1.25,
-			damage_min_mult = 4,
-			armor_piercing_add = 1,
-			rays = 12
-			--[[
-			bullet_class = "BleedBulletBase",
-			dot_data = { 
-				type = "bleed",
-				custom_data = {
-					dot_damage = 0.75,
-					dot_length = 8.1,
-					dot_tick_period = 0.5
-				}
-			}
-			--]]
-		}
-	}
-
-	local a_piercing_pump_override = {
-		desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
-		stats = {
-			value = 9,
-			damage = -15,
-			spread = 5
-		},
-		custom_stats = {
-			trail_effect = "_dmc/effects/nato_trail",
-			falloff_start_mult = 1,
-			falloff_end_mult = 1.25,
-			damage_min_mult = 4,
-			armor_piercing_add = 1,
-			rays = 12
-			--[[
-			bullet_class = "BleedBulletBase",
-			dot_data = { 
-				type = "bleed",
-				custom_data = {
-					dot_damage = 1.125,
-					dot_length = 8.1,
-					dot_tick_period = 0.5
-				}
-			}
-			--]]
-		}
-	}
-
-	--Poison
-	local a_rip_auto_override = {
-		desc_id = "bm_wp_upg_a_rip_auto_desc_sc",
-		stats = {
-			value = 9,
-			damage = -6
-		},
-		custom_stats = {
-			trail_effect = "_dmc/effects/warsaw_trail",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
-			bullet_class = "PoisonBulletBase",
-			dot_data = { 
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 1.1,
-					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.05
-				}
-			}
-		}
-	}
-
-	local a_rip_semi_override = {
-		desc_id = "bm_wp_upg_a_rip_semi_desc_sc",
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			trail_effect = "_dmc/effects/warsaw_trail",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
-			bullet_class = "PoisonBulletBase",
-			dot_data = { 
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 2.1,
-					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.1
-				}
-			}
-		}
-	}
-
-	local a_rip_pump_override = {
-		desc_id = "bm_wp_upg_a_rip_pump_desc_sc",
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			trail_effect = "_dmc/effects/warsaw_trail",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
-			bullet_class = "PoisonBulletBase",
-			dot_data = { 
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 3.1,
-					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.15
-				}
-			}
-		}
-	}
-
-	--Dragon's Breath
-	local a_dragons_breath_auto_override = {
-		desc_id = "bm_wp_upg_a_dragons_breath_auto_desc_sc",
-		stats = {
-			value = 9,
-			damage = -6
-		},
-		custom_stats = {
-			rof_mult = 0.8,
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0,
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 0.01,								
-			can_shoot_through_shield = false,
-			rays = 16,
-			trail_effect = "",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = 1.5,
-				dot_trigger_chance = 15,
-				dot_length = 3.1,
-				dot_tick_period = 0.5
-			}
-		}
-	}
-
-	local a_dragons_breath_semi_override = {
-		desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			rof_mult = 0.8,
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0,
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 0.01,								
-			can_shoot_through_shield = false,
-			rays = 16,
-			trail_effect = "",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = 2,
-				dot_trigger_chance = 20,
-				dot_length = 3.1,
-				dot_tick_period = 0.5
-			}
-		}
-	}
-
-	local a_dragons_breath_revo_override = {
-		desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0,
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 0.01,								
-			can_shoot_through_shield = false,
-			rays = 16,
-			trail_effect = "",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = 2,
-				dot_trigger_chance = 20,
-				dot_length = 3.1,
-				dot_tick_period = 0.5
-			}
-		}
-	}
-
-	local a_dragons_breath_pump_override = {
-		desc_id = "bm_wp_upg_a_dragons_breath_pump_desc_sc",
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0,
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 0.01,							
-			can_shoot_through_shield = false,
-			rays = 16,
-			trail_effect = "",
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = 3,
-				dot_trigger_chance = 30,
-				dot_length = 3.1,
-				dot_tick_period = 0.5
-			}
-		}
-	}
-
-	--00 Buck
-	local a_custom_auto_override = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 15
-		},
-		custom_stats = {
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0.75,
-			armor_piercing_add = 0.20,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-
-	local a_custom_semi_override = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -25,
-			damage = 15
-		},
-		custom_stats = {
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0.75,
-			armor_piercing_add = 0.20,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-
-	local a_custom_pump_override = {
-		supported = true,
-		stats = {
-			value = 9,
-			total_ammo_mod = -33,
-			damage = 30
-		},
-		custom_stats = {
-			falloff_end_mult = 0.8,
-			damage_min_mult = 0.6666666666666667,
-			armor_piercing_add = 0.20,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			rays = 6
-		}
-	}
-
-	--Slugs
-	local a_slug_auto_override = {
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_spam_desc",
-		supported = true,
-		stats = {
-			value = 10,
-			concealment = -3,
-			total_ammo_mod = -33,
-			damage = 15,	
-			recoil = -20,
-			spread = 12,
-			spread_multi = {1, 1},	
-			suppression = -1,
-			moving_spread = 0
-		},
-		custom_stats = {
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-			rays = 1,
-			armor_piercing_add = 0.8,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			can_shoot_through_enemy = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 1.25,
-			falloff_end_mult = 2.0,
-			ads_speed_mult = 1
-		}
-	}
-
-	local a_slug_semi_override = {
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_spam_desc",
-		supported = true,
-		stats = {
-			value = 10,
-			concealment = -3,
-			total_ammo_mod = -25,
-			damage = 15,
-			spread = 12,
-			spread_multi = {1, 1},	
-			recoil = -20,
-			moving_spread = 0
-		},
-		custom_stats = {
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-			rays = 1,
-			armor_piercing_add = 0.8,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			can_shoot_through_enemy = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 1.25,
-			falloff_end_mult = 2.0,
-			ads_speed_mult = 1
-		}
-	}
-	
-	local a_slug_pump_override = {
-		supported = true,
-		name_id = "bm_wp_upg_a_slug",
-		desc_id = "bm_wp_upg_a_slug_desc",
-		stats = {
-			value = 10,
-			concealment = -3,
-			total_ammo_mod = -33,
-			damage = 30,
-			recoil = -20,
-			spread = 12,
-			spread_multi = {1, 1},	
-			moving_spread = 0,
-			suppression = -1
-		},
-		custom_stats = {				
-			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
-			rays = 1,
-			armor_piercing_add = 1,
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			can_shoot_through_enemy = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			falloff_start_mult = 1.25,
-			falloff_end_mult = 2.0,
-			ads_speed_mult = 1
-		}
-	}
-
-	--FRAG-12
-	local a_explosive_auto_override = {
-		supported = true,
-		stats = {
-			value = 10,
-			total_ammo_mod = -50,
-			recoil = -25,
-			spread = 5,
-			concealment = -5,
-			spread_multi = {1, 1},	
-			damage = 30
-		},
-		custom_stats = {
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase",
-			sms = 0.85
-		}
-	}
-
-	local a_explosive_semi_override = {
-		supported = true,
-		stats = {
-			value = 10,
-			recoil = -25,
-			spread = 5,
-			total_ammo_mod = -50,
-			concealment = -5,
-			spread_multi = {1, 1},	
-			damage = 45
-		},
-		custom_stats = {
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase",
-			sms = 0.85
-		}
-	}
-
-	local a_explosive_pump_override = {
-		desc_id = "bm_wp_upg_a_explosive_desc_sc",
-		supported = true,
-		stats = {
-			value = 10,
-			total_ammo_mod = -50,
-			recoil = -25,
-			spread = 5,
-			spread_multi = {1, 1},	
-			concealment = -5,
-			damage = 60
-		},
-		custom_stats = {
-			ammo_pickup_max_mul = 0.8,
-			ammo_pickup_min_mul = 0.8,
-			ignore_statistic = true,
-			block_b_storm = true,
-			rays = 1,
-			bullet_class = "InstantExplosiveBulletBase",
-			sms = 0.85
-		}
-	}
-
---[[
-	
-	General stat logic:
-		1 Accuracy = 1 Concealment = 2 Stabilty
-			+1 Acc means one of the following:
-				-1 Con
-				-2 Stab
-			+2 Stab means one of the following:
-				-1 Con
-				-1 Acc
-			+2 Con means one of the following:
-				-2 Acc
-				-4 Stab 
-				-1 Acc AND -2 Stab
-			etc.
-		ads_speed_mult:
-			ads_speed_mult values > 1 SLOW DOWN ADS speeds
-			ads_speed_mult values < 1 SPEED UP ADS speeds
-		falloff_start/end_mult:
-			falloff_start/end_mult values > 1 INCREASE range
-			falloff_start/end_mult values < 1 DECREASE range
-	
-	Barrel (or Slide) logic:
-		+/-1 Accuracy in relation to Concealment = +/-0.075 falloff_start/end_mult
-		+/-1 Concealment in relation to Accuracy = -/+0.025 ads_speed_mult
-		Usually no stabilty modifiers
-			If there is, it has no bearing on range or ads mults
-
-		"Barrel" logic:
-			Some barrels are muzzle devices in disguse (See: RUS-12 Valley Barrel) or just outright have compensators and such built into them (see: Raging Bull barrels)
-			Some barrels basically do nothing to affect length and just add shit on or change colors (See: Swedish K's "Swedish Barrel")
-			Stabilty modifiers are okay in these cases
-
-	Handguard logic:
-		No custom_stats modifiers UNLESS
-
-		Barrel/Handguard hybrid logic:
-			Some handguards affect barrel length (HK21, G3, G36, Galil, FAL, MP5)
-			These can (but don't have to) take +/-stabilty modifiers
-			Barrel logic applies as it would otherwise, meaning these "handguards" should take on falloff and ads speed modifiers related to barrels when applicable
-	
-	Muzzle device logic:
-		+/-1 Accuracy = +/-0.05 falloff_start/end_mult
-		NO +CONCEALMENT MODS WITH +ACCURACY OR +STABILITY
-		ONLY FOR -CONCEALMENT MODS WITH BOTH +ACCURACY AND +STABILITY
-			-1 Concealment = +0.025 ads_speed_mult
-	
-	Pistol grip logic:
-		+1 Concealment = -0.025 ads_speed_mult
-		-Concealment pistol grips do not negatively affect ADS speed
-
-	Stock logic:
-		+/-1 Concealment = -/+0.025 ads_speed_mult
-
-	"Stock" logic:
-		Some stocks modify the barrel
-			Currently only applies to that one stock for the M14
-		Use Barrel and Stock logic
-]]
-
---PRESETS
+--ATTACHMENT PRESETS
 
 --Barrels
 local barrels = {
@@ -614,8 +82,6 @@ local barrels = {
 			ads_speed_mult = 1.075
 		}
 }
-
-
 
 --Stocks
 --PRIMARILY FOR GUNS THAT ARE COMPATIBLE WITH AR-15 STOCKS
@@ -1159,9 +625,7 @@ local stocks = {
 			concealment = -1,
 			ads_speed_mult = 1.025
 		}
-
 }
-
 
 --Muzzle device stats
 local muzzle_device = {
@@ -1394,10 +858,478 @@ local muzzle_device = {
 		}
 }
 
+--SHOTGUN AMMO PRESETS
+--Overrides for shotgun ammo types that vary per damage tier.
+	--Indented to make for easy code folding in most editors.
+	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
 
+	--Flechettes
+		local a_piercing_auto_override = {
+			desc_id = "bm_wp_upg_a_piercing_auto_desc_sc",
+			stats = {
+				value = 9,
+				damage = -6,
+				spread = 5
+			},
+			custom_stats = {
+				trail_effect = "_dmc/effects/nato_trail",
+				falloff_start_mult = 1,
+				falloff_end_mult = 1.25,
+				damage_min_mult = 4,
+				armor_piercing_add = 1,		
+				rays = 12
+				--[[
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = 0.6,
+						dot_length = 8.1,
+						dot_tick_period = 0.5
+					}
+				}
+				--]]
+			}
+		}
+	
+		local a_piercing_semi_override = {
+			desc_id = "bm_wp_upg_a_piercing_semi_desc_sc",
+			stats = {
+				value = 9,
+				damage = -15,
+				spread = 5
+			},
+			custom_stats = {
+				trail_effect = "_dmc/effects/nato_trail",
+				falloff_start_mult = 1,
+				falloff_end_mult = 1.25,
+				damage_min_mult = 4,
+				armor_piercing_add = 1,
+				rays = 12
+				--[[
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = 0.75,
+						dot_length = 8.1,
+						dot_tick_period = 0.5
+					}
+				}
+				--]]
+			}
+		}
+	
+		local a_piercing_pump_override = {
+			desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
+			stats = {
+				value = 9,
+				damage = -15,
+				spread = 5
+			},
+			custom_stats = {
+				trail_effect = "_dmc/effects/nato_trail",
+				falloff_start_mult = 1,
+				falloff_end_mult = 1.25,
+				damage_min_mult = 4,
+				armor_piercing_add = 1,
+				rays = 12
+				--[[
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = 1.125,
+						dot_length = 8.1,
+						dot_tick_period = 0.5
+					}
+				}
+				--]]
+			}
+		}
+	
+	--Poison
+		local a_rip_auto_override = {
+			desc_id = "bm_wp_upg_a_rip_auto_desc_sc",
+			stats = {
+				value = 9,
+				damage = -6
+			},
+			custom_stats = {
+				trail_effect = "_dmc/effects/warsaw_trail",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+				bullet_class = "PoisonBulletBase",
+				dot_data = { 
+					type = "poison",
+					custom_data = {
+						dot_damage = 1.5,
+						dot_length = 1.1,
+						dot_tick_period = 0.5,
+						hurt_animation_chance = 0.05
+					}
+				}
+			}
+		}
+	
+		local a_rip_semi_override = {
+			desc_id = "bm_wp_upg_a_rip_semi_desc_sc",
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				trail_effect = "_dmc/effects/warsaw_trail",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+				bullet_class = "PoisonBulletBase",
+				dot_data = { 
+					type = "poison",
+					custom_data = {
+						dot_damage = 1.5,
+						dot_length = 2.1,
+						dot_tick_period = 0.5,
+						hurt_animation_chance = 0.1
+					}
+				}
+			}
+		}
 
+		local a_rip_pump_override = {
+			desc_id = "bm_wp_upg_a_rip_pump_desc_sc",
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				trail_effect = "_dmc/effects/warsaw_trail",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
+				bullet_class = "PoisonBulletBase",
+				dot_data = { 
+					type = "poison",
+					custom_data = {
+						dot_damage = 1.5,
+						dot_length = 3.1,
+						dot_tick_period = 0.5,
+						hurt_animation_chance = 0.15
+					}
+				}
+			}
+		}
 
+	--Dragon's Breath
+		local a_dragons_breath_auto_override = {
+			desc_id = "bm_wp_upg_a_dragons_breath_auto_desc_sc",
+			stats = {
+				value = 9,
+				damage = -6
+			},
+			custom_stats = {
+				rof_mult = 0.8,
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0,
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 0.01,								
+				can_shoot_through_shield = false,
+				rays = 16,
+				trail_effect = "",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = 1.5,
+					dot_trigger_chance = 15,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
 
+		local a_dragons_breath_semi_override = {
+			desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rof_mult = 0.8,
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0,
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 0.01,								
+				can_shoot_through_shield = false,
+				rays = 16,
+				trail_effect = "",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = 2,
+					dot_trigger_chance = 20,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
+
+		local a_dragons_breath_revo_override = {
+			desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0,
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 0.01,								
+				can_shoot_through_shield = false,
+				rays = 16,
+				trail_effect = "",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = 2,
+					dot_trigger_chance = 20,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
+
+		local a_dragons_breath_pump_override = {
+			desc_id = "bm_wp_upg_a_dragons_breath_pump_desc_sc",
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0,
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 0.01,							
+				can_shoot_through_shield = false,
+				rays = 16,
+				trail_effect = "",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = 3,
+					dot_trigger_chance = 30,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
+				}
+			}
+		}
+
+	--00 Buck
+		local a_custom_auto_override = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				damage = 15
+			},
+			custom_stats = {
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0.75,
+				armor_piercing_add = 0.20,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 6
+			}
+		}
+
+		local a_custom_semi_override = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -25,
+				damage = 15
+			},
+			custom_stats = {
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0.75,
+				armor_piercing_add = 0.20,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 6
+			}
+		}
+
+		local a_custom_pump_override = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				damage = 30
+			},
+			custom_stats = {
+				falloff_end_mult = 0.8,
+				damage_min_mult = 0.6666666666666667,
+				armor_piercing_add = 0.20,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 6
+			}
+		}
+
+	--Slugs
+		local a_slug_auto_override = {
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_spam_desc",
+			supported = true,
+			stats = {
+				value = 10,
+				concealment = -3,
+				total_ammo_mod = -33,
+				damage = 15,	
+				recoil = -20,
+				spread = 12,
+				spread_multi = {1, 1},	
+				suppression = -1,
+				moving_spread = 0
+			},
+			custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
+				rays = 1,
+				armor_piercing_add = 0.8,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				can_shoot_through_enemy = true,
+				can_shoot_through_wall = true,
+				falloff_start_mult = 1.25,
+				falloff_end_mult = 2.0,
+				ads_speed_mult = 1
+			}
+		}
+
+		local a_slug_semi_override = {
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_spam_desc",
+			supported = true,
+			stats = {
+				value = 10,
+				concealment = -3,
+				total_ammo_mod = -25,
+				damage = 15,
+				spread = 12,
+				spread_multi = {1, 1},	
+				recoil = -20,
+				moving_spread = 0
+			},
+			custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
+				rays = 1,
+				armor_piercing_add = 0.8,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				can_shoot_through_enemy = true,
+				can_shoot_through_wall = true,
+				falloff_start_mult = 1.25,
+				falloff_end_mult = 2.0,
+				ads_speed_mult = 1
+			}
+		}
+	
+		local a_slug_pump_override = {
+			supported = true,
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
+			stats = {
+				value = 10,
+				concealment = -3,
+				total_ammo_mod = -33,
+				damage = 30,
+				recoil = -20,
+				spread = 12,
+				spread_multi = {1, 1},	
+				moving_spread = 0,
+				suppression = -1
+			},
+			custom_stats = {				
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
+				rays = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true,
+				falloff_start_mult = 1.25,
+				falloff_end_mult = 2.0,
+				ads_speed_mult = 1
+			}
+		}
+
+	--FRAG-12
+		local a_explosive_auto_override = {
+			supported = true,
+			stats = {
+				value = 10,
+				total_ammo_mod = -50,
+				recoil = -25,
+				spread = 5,
+				concealment = -5,
+				spread_multi = {1, 1},	
+				damage = 30
+			},
+			custom_stats = {
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
+			}
+		}
+
+		local a_explosive_semi_override = {
+			supported = true,
+			stats = {
+				value = 10,
+				recoil = -25,
+				spread = 5,
+				total_ammo_mod = -50,
+				concealment = -5,
+				spread_multi = {1, 1},	
+				damage = 45
+			},
+			custom_stats = {
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
+			}
+		}
+
+		local a_explosive_pump_override = {
+			desc_id = "bm_wp_upg_a_explosive_desc_sc",
+			supported = true,
+			stats = {
+				value = 10,
+				total_ammo_mod = -50,
+				recoil = -25,
+				spread = 5,
+				spread_multi = {1, 1},	
+				concealment = -5,
+				damage = 60
+			},
+			custom_stats = {
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
+			}
+		}
 
 
 
@@ -1786,7 +1718,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0.005, 10.5, -3.52)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_galil = {
-		translation = Vector3(-0.005, 9, -3.21) --NEED TO DO HANDGUARDS
+		translation = Vector3(-0.005, 9, -3.21)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_scar = {
 		translation = Vector3(-0.005, 5.2, -0.3)
@@ -1884,6 +1816,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, 5.9, -2.8)
 	}
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ksg = {
+		translation = Vector3(0, 5.3, -1.315)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_r870 = {
 		translation = Vector3(0.005, 1.5, -3.27)
 	}
@@ -1902,6 +1837,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0.04, -6.5, -5.325)
 	}
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_sub2000 = {
+		translation = Vector3(-0.005, -4.8, -0.025)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_korth = {
+		translation = Vector3(0.056, 3, -3.38)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rsh12 = {
+		translation = Vector3(0.043, -11.7, -3.44)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
+		translation = Vector3(-0.03, -6, -4.62)
+	}	
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rage = {
 		translation = Vector3(-0.03, -6, -4.62)
 	}
@@ -1930,6 +1877,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, 17.2, -4.57)
 	}
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_vityaz = {
+		translation = Vector3(0.01, 8.5, -3.321)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_coal = {
+		translation = Vector3(0, 17.8, -4)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_shepheard = {
+		translation = Vector3(0, -1.2, -0.41)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_scorpion = {
 		translation = Vector3(-0.005, -0.8, -5.19)
 	}
@@ -1937,6 +1893,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, 9.4, -2.92)
 	}
 	
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_erma = {
+		translation = Vector3(0.005, 5, -4.152)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_schakal = {
+		translation = Vector3(0, 7.15, -2.81)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_polymer = {
+		translation = Vector3(0, 10.8, -0.65)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_m45 = {
 		translation = Vector3(0, -2.4, -3.925)
 	}
@@ -1953,48 +1918,71 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, 4.7, -5.1)
 	}
 
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_tecci = {
+		translation = Vector3(-0.005, 13.2, -1.68)
+	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m249 = {
-		translation = Vector3(0, -3, -3.4),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_par = {
-		translation = Vector3(-0.03, -2.4, -3.25),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg42 = {
-		translation = Vector3(0.02, 4.9, -2.85 ),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk21 = {
-		translation = Vector3(0, -2.4, -3.25),
-		rotation = Rotation(-0.05, -0.2, 0)
+		translation = Vector3(0.003, 9.6, -3.415),
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
-		translation = Vector3(0.02, -2, -3.1),
+		translation = Vector3(0.05, -1.5, -2.99),
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg42 = {
+		translation = Vector3(0.07, 24.7, -2.78 ),
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk21 = {
+		translation = Vector3(0.002, 3.5, -3.23),
+		rotation = Rotation(-0.05, -0.2, 0)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk51b = {
+		translation = Vector3(-0.025, 10.4, -2.827),
+		rotation = Rotation(0.0, -0.1, -0.625)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_par = {
+		translation = Vector3(0.05, 5, -3.05), --NEEDS ADJUSTMENT LATER, IRONS NEED FIXING
+		rotation = Rotation(0.15, -0.1, 0.5)
 	}
 	if WeaponTweakData.SetupAttachmentPoint then
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
-			translation = Vector3(-0.01, 3, -1.9),
+			translation = Vector3(-0.006, 14, -1.952),
 			rotation = Rotation(-0.062, 0.13, 0)
 		}
 	else
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
-			translation = Vector3(-0.01, 3, -1.1),
+			translation = Vector3(-0.01, 3, -1.1), --CHECK WITHOUT CAP AT SOME POINT
 			rotation = Rotation(-0.062, 0.13, 0)
 		}
 	end
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk51b = {
-		translation = Vector3(-0.025, 0, -2.82),
-		rotation = Rotation(0.0, -0.1, -0.625)
+
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_elastic = {
+		translation = Vector3(-0.003, 16, -1.5)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_ecp = {
+		translation = Vector3(-0.001, -1, -3.325)
 	}
 
-
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_m32 = {
+		translation = Vector3(0, 12.5, -3.475)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_rpg7 = {
+		translation = Vector3(-0.005, 18.7, 0.046)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_slap = {
+		translation = Vector3(-0.02, 5.4, -1.85)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_arbiter = {
+		translation = Vector3(-0.01, 5.4, -0.402)
+	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_ms3gl = {
+		translation = Vector3(0.018, 12, 2.465),
+		rotation = Rotation(0, -6, 0)
+	}
 
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
 		translation = Vector3(-0.0, -0.5, -0.2),
 		rotation = Rotation(0.11, -0.09, 0)
 	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
-		translation = Vector3(-0.05, -10, -4.65)
-	}	
 
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
 		translation = Vector3(-0.02, -3, -3.521)
@@ -7473,6 +7461,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 		recoil = 2,
 		concealment = -1
 	}
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod = { 
+		wpn_fps_ass_galil = {
+			translation = Vector3(-0.004, 4.1, -3.495)
+		}
+	}
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_acog.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,4,0)
+		end
+	end
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_bmg.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,10,0)
+		end
+	end
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	
 		
 	--CQB Foregrip
 	self.parts.wpn_fps_ass_galil_fg_mar.pcs = {}
@@ -7481,6 +7503,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	self.parts.wpn_fps_ass_galil_fg_mar.stats.recoil = -2
 	self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 3
 	self.parts.wpn_fps_ass_galil_fg_mar.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+	self.parts.wpn_fps_ass_galil_fg_mar.forbids = {}
+	self.parts.wpn_fps_ass_galil_fg_mar.override = {
+		wpn_fps_upg_ass_ns_jprifles = {
+			a_obj = "a_ns_s"
+		},
+		wpn_fps_upg_ass_ns_surefire = {
+			a_obj = "a_ns_s"
+		},
+		wpn_fps_upg_ass_ns_battle = {
+			a_obj = "a_ns_s"
+		}
+	}
 	
 	--Light Foregrip
 	self.parts.wpn_fps_ass_galil_fg_sar.pcs = {}
@@ -18065,6 +18099,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_korth", "resmod_korth", function(s
 			unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_conversionkit"
 		}
 	}
+
+	table.insert(self.wpn_fps_pis_korth.uses_parts, "wpn_fps_upg_o_specter")
+
+	self.wpn_fps_pis_korth_npc.uses_parts = deep_clone(self.wpn_fps_pis_korth.uses_parts)
 
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_korth", "resmod_x_korth", function(self)

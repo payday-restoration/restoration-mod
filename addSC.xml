@@ -220,7 +220,7 @@
 	<mission			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--Changed up the murkies and added some stuff-->
 	<continent			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--lookout choppas-->
 	
-	<mission			path="levels/instances/vlad/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
+	<mission			path="levels/instances/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
 	
 	<!-- mountain master edit -->
 	<mission			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>

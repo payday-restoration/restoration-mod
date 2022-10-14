@@ -2408,6 +2408,7 @@ function PlayerStandard:_update_slide_locks()
 				weap_base:tweak_data_anim_stop("reload_left")
 				if weap_base.AKIMBO then
 					weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
+					weap_base._second_gun:base():tweak_data_anim_offset("reload", 0.033) 
 					weap_base:tweak_data_anim_offset("reload", 0.033)
 					weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
 				else

@@ -1184,7 +1184,7 @@ local muzzle_device = {
 				value = 10,
 				concealment = -3,
 				total_ammo_mod = -33,
-				damage = 15,	
+				damage = 15,
 				recoil = -20,
 				spread = 12,
 				spread_multi = {1, 1},	
@@ -13239,6 +13239,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	}
 	self.parts.wpn_fps_upg_o_spot.custom_stats = { big_scope = true }
 	self.parts.wpn_fps_upg_o_spot.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_spot.forbids = {
+		"wpn_fps_amcar_uupg_body_upperreciever",
+		"wpn_fps_ass_m16_os_frontsight",
+		"wpn_fps_ass_scar_o_flipups_up",
+		"wpn_fps_upg_o_xpsg33_magnifier",
+		"wpn_fps_upg_o_sig",
+		--"wpn_fps_ass_shak12_o_carry_dummy"
+	}
 	self.parts.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	
 	--Box Buddy Sight/Pulsar Digisight LRF
@@ -15299,9 +15307,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 			weap.translation = weap.translation + Vector3(0,10,0)
 		end
 	end
-
-	self.parts.wpn_fps_upg_o_bmg.perks = {
-		"scope"
+	self.parts.wpn_fps_upg_o_bmg.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_bmg.forbids = {
+		"wpn_fps_amcar_uupg_body_upperreciever",
+		"wpn_fps_ass_m16_os_frontsight",
+		"wpn_fps_ass_scar_o_flipups_up",
+		"wpn_fps_upg_o_xpsg33_magnifier",
+		"wpn_fps_upg_o_sig",
+		--"wpn_fps_ass_shak12_o_carry_dummy"
 	}
 	
 	self.parts.wpn_fps_upg_o_rms.has_description = true
@@ -16922,6 +16935,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		40
 	}
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.supported = true
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.forbids = nil
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.stats = {
 		value = 0
 	}
@@ -16999,13 +17013,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 
 	--self.parts.wpn_fps_ass_shak12_b_dummy.sound_switch = {suppressed = "regular_b"}
 
-	if not self.wpn_fps_ass_shak12.override then
-		self.wpn_fps_ass_shak12.override = {}
-	end
-	
+	self.wpn_fps_ass_shak12.override = self.wpn_fps_ass_shak12.override or {}
+	self.wpn_fps_ass_shak12.forbids = {}
+
 	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_singlefire")
 	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_autofire")
 
+	self.wpn_fps_ass_shak12_npc.forbids = deep_clone(self.wpn_fps_ass_shak12.forbids)	
 	self.wpn_fps_ass_shak12_npc.uses_parts = deep_clone(self.wpn_fps_ass_shak12.uses_parts)	
 
 

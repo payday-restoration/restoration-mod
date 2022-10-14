@@ -2300,7 +2300,6 @@ local crew_wep_preset = {
 			self.ben_crew.is_shotgun = true
 			self.ben_crew.rays = 8
 			self.ben_crew.FIRE_MODE = "auto"
-			self.benelli_crew = deep_clone(self.ben_crew)
 		end
 		
 		function WeaponTweakData:_init_data_spas12_crew()
@@ -2432,7 +2431,25 @@ local crew_wep_preset = {
 			self.r870_crew.suppression = 3.4
 			self.r870_crew.is_shotgun = true
 			self.r870_crew.rays = 8
-			self.r870_crew.FIRE_MODE = "single"		
+			self.r870_crew.FIRE_MODE = "single"	
+			self.benelli_crew = deep_clone(self.r870_crew)
+			self.benelli_crew.categories = {"shotgun"}
+			self.benelli_crew.sounds.prefix = "benelli_m4_npc"
+			self.benelli_crew.use_data.selection_index = 2
+			self.benelli_crew.DAMAGE = 7.5
+			self.benelli_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+			self.benelli_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
+			self.benelli_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
+			self.benelli_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_auto.mag_capacity
+			self.benelli_crew.NR_CLIPS_MAX = 4
+			self.benelli_crew.hold = "rifle"
+			self.benelli_crew.reload = "looped"
+			self.benelli_crew.looped_reload_speed = 0.8
+			self.benelli_crew.alert_size = 2500
+			self.benelli_crew.suppression = 3.4
+			self.benelli_crew.is_shotgun = true
+			self.benelli_crew.rays = 8
+			self.benelli_crew.FIRE_MODE = "auto"
 		end
 		
 		function WeaponTweakData:_init_data_ksg_crew()

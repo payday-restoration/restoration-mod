@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+	<network sync="spawn" />
+  <!-- <network sync="unit" remote_unit="units/weapons/frag_grenade/frag_grenade" sync_rotation="false" sync_position="true"/> -->
+  <object file="units/pd2_dlc_tng/weapons/wpn_arbiter_frag_grenade/wpn_arbiter_frag_grenade" />
+	<dependencies>
+    <depends_on effect="effects/particles/explosions/explosion_smoke_grenade" />
+    <depends_on effect="effects/payday2/particles/impacts/stone_explosion_impact_pd2" />
+    <depends_on effect="effects/payday2/particles/impacts/metal_explosion_impact_pd2" />
+    <depends_on effect="effects/payday2/particles/impacts/dirt_explosion_impact_pd2" />
+    <depends_on effect="effects/payday2/particles/impacts/concrete_explosion_impact_pd2" />
+    <depends_on bnk="soundbanks/weapon_lung" />
+    <depends_on bnk="soundbanks/regular_weapon_sfx" />
+	</dependencies>
+	<extensions>
+  	<extension name="base" class="PoisonGasGrenade" >
+  		<var name="_tweak_projectile_entry" value="launcher_poison_osipr" />
+  	</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" >
+    	<!-- <var name="_collision_event" value="grenade_hit_ground" />
+    	<var name="_collision_sfx_quite_time" value="0.1" /> -->
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_wpn_launcher_frag_grenade" />
+    <soundsource name="snd" source="rp_wpn_launcher_frag_grenade" />
+    <spawn_event source="snd" name="wp_gl_grenade_flyby" stop_when_killed="true"/>
+	</sounds>
+</unit>

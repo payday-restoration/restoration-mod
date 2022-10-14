@@ -680,7 +680,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	}
 	self.projectiles.launcher_poison_osipr = {
 		name_id = "bm_launcher_poison",
-		unit = "units/mods/weapons/wpn_osipr_frag_electric_grenade/wpn_osipr_frag_electric_grenade",
+		unit = "units/mods/weapons/wpn_osipr_frag_poison_grenade/wpn_osipr_frag_poison_grenade",
 		weapon_id = "osipr_gl",
 		no_cheat_count = true,
 		impact_detonation = true,

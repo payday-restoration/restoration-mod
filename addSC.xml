@@ -137,6 +137,9 @@
 	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
+	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> <!--delayed and balanced the spawns so they won't appear out of nowhere-->
+	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
+	
 	<mission			path="levels/narratives/pbr/berry/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
 	
 	<mission			path="levels/instances/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--ditto but on surface-->

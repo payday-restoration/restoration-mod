@@ -40,6 +40,10 @@
 				<file :name="ene_sniper_3.unit"/>
 				<file :name="ene_sniper_3_husk.unit"/>
 			</group>
+			<group :name="payday2/characters/ene_fbi_3/">
+				<file :name="ene_fbi_3.unit"/>
+				<file :name="ene_fbi_3_husk.unit"/>
+			</group>
 			<group :name="pd2_dlc_pent/characters/">
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1.unit"/>
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>

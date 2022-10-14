@@ -239,3 +239,7 @@ function NewNPCRaycastWeaponBase:_sound_singleshot()
 		sound = self._sound_fire:post_event(sound_name)
 	end
 end
+
+function NewNPCRaycastWeaponBase:ammo_usage()
+	return 1
+end

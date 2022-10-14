@@ -1633,7 +1633,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.melee_kill_life_leech = {0.02}
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
-	self.on_killshot_cooldown_reduction_melee = 1
+	self.on_killshot_cooldown_reduction_melee = 1.5
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
@@ -1679,13 +1679,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.body_armor.skill_max_health_store = {
-		4.8,
-		4.4,
 		4.0,
 		3.6,
 		3.2,
 		2.8,
-		2.4
+		2.4,
+		2.0,
+		1.6
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {

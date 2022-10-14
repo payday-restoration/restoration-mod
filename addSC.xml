@@ -142,6 +142,10 @@
 	<mission			path="levels/instances/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--ditto but on surface-->
 	<mission			path="levels/instances/pbr/pbr_mountain_control_room/world/world" force="true" unload="true"/> <!--changed up the control room to feature Murky security-->
 	
+	<mission			path="levels/narratives/locke/sah/world/world" force="true" unload="true"/> <!--delayed the spawns and replaced most of the ss guys with flashlight ones (execpt cameraman and near metal detectors)-->
+	
+	<mission			path="levels/instances/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
+	
 	<!--better SWAT squads-->
 	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
@@ -263,12 +267,18 @@
 	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
 	
-	<!--Load Jerome The Shotty Man in case if some heist has him missing in the package-->
-	<add from_db="true" path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
-		<unit path="units/payday2/characters/ene_security_3/ene_security_3"/>
-		<object path="units/payday2/characters/ene_security_3/ene_security_3"/>
-		<material_config path="units/payday2/characters/ene_security_3/ene_security_3"/>
-		<unit load="true" path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	<!--Load Jerome The Shotty Man and some other guards in case if some heist has them missing in the packages (so I won't need to load the heist packages just for one enemy)-->
+	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
+		<unit 				path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
+	<add from_db="true" 	path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2" type="unit">
+		<unit 				path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
+		<object 			path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
+		<material_config 	path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
+		<unit load="true" 	path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2_husk"/>
 	</add>
 	
 	<!-- Gensec Security: Beret Poppin' -->

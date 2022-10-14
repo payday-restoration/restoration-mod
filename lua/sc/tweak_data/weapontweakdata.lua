@@ -46,6 +46,7 @@ local damage_set = {
 	shotgun_pump = {
 		"b682_crew",
 		"r870_crew",
+		"mossberg_crew",
 		"huntsman_crew",
 		"ksg_crew",
 		"boot_crew",
@@ -2300,6 +2301,7 @@ local crew_wep_preset = {
 			self.ben_crew.is_shotgun = true
 			self.ben_crew.rays = 8
 			self.ben_crew.FIRE_MODE = "auto"
+			self.benelli_crew = deep_clone(self.ben_crew)
 		end
 		
 		function WeaponTweakData:_init_data_spas12_crew()
@@ -2431,25 +2433,7 @@ local crew_wep_preset = {
 			self.r870_crew.suppression = 3.4
 			self.r870_crew.is_shotgun = true
 			self.r870_crew.rays = 8
-			self.r870_crew.FIRE_MODE = "single"	
-			self.benelli_crew = deep_clone(self.r870_crew)
-			self.benelli_crew.categories = {"shotgun"}
-			self.benelli_crew.sounds.prefix = "benelli_m4_npc"
-			self.benelli_crew.use_data.selection_index = 2
-			self.benelli_crew.DAMAGE = 7.5
-			self.benelli_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-			self.benelli_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
-			self.benelli_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
-			self.benelli_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_auto.mag_capacity
-			self.benelli_crew.NR_CLIPS_MAX = 4
-			self.benelli_crew.hold = "rifle"
-			self.benelli_crew.reload = "looped"
-			self.benelli_crew.looped_reload_speed = 0.8
-			self.benelli_crew.alert_size = 2500
-			self.benelli_crew.suppression = 3.4
-			self.benelli_crew.is_shotgun = true
-			self.benelli_crew.rays = 8
-			self.benelli_crew.FIRE_MODE = "auto"
+			self.r870_crew.FIRE_MODE = "single"		
 		end
 		
 		function WeaponTweakData:_init_data_ksg_crew()
@@ -2480,6 +2464,7 @@ local crew_wep_preset = {
 			self.huntsman_crew.auto = {}
 			self.huntsman_crew.auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
 			self.huntsman_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+			self.huntsman_crew.NR_CLIPS_MAX = 4
 			self.huntsman_crew.looped_reload_speed = 0.2
 			self.huntsman_crew.hold = "rifle"
 			self.huntsman_crew.alert_size = 2500
@@ -2499,6 +2484,7 @@ local crew_wep_preset = {
 			self.boot_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.boot_crew.auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
 			self.boot_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+			self.boot_crew.NR_CLIPS_MAX = 5
 			self.boot_crew.hold = "rifle"
 			self.boot_crew.alert_size = 2500
 			self.boot_crew.suppression = 3.4
@@ -3170,7 +3156,7 @@ function WeaponTweakData:_init_stats()
 				0.5 * self.stat_info.stance_recoil_mults.standing,
 				0.4 * self.stat_info.stance_recoil_mults.standing,
 				-0.55 * self.stat_info.stance_recoil_mults.standing,
-				0.575 * self.stat_info.stance_recoil_mults.standing
+				0.55 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
 				0.5 * self.stat_info.stance_recoil_mults.crouching,
@@ -15307,7 +15293,7 @@ function WeaponTweakData:_create_table_structure()
 
 	for i, wep_id in ipairs(damage_set.shotgun_pump) do
 		if self[ wep_id ] and self[ wep_id ].usage then
-			self[ wep_id ].usage = "mossberg"
+			self[ wep_id ].usage = "is_shotgun_pump"
 		end
 	end
 
@@ -15356,13 +15342,29 @@ function WeaponTweakData:_create_table_structure()
 		usage = "is_shotgun_mag",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
-		use_data = {}
+		use_data = {},
+		auto = {}
+	}
+	self.ben_crew = {
+		usage = "is_shotgun_mag",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {},
+		auto = {}
 	}
 	self.spas12_crew = {
 		usage = "is_shotgun_mag",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
-		use_data = {}
+		use_data = {},
+		auto = {}
+	}
+	self.ultima_crew = {
+		usage = "is_shotgun_mag",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {},
+		auto = {}
 	}
 
 	self.m16_crew = {
@@ -15396,6 +15398,12 @@ function WeaponTweakData:_create_table_structure()
 	}
 
 	self.mossberg_crew = {
+		usage = "mossberg",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {}
+	}
+	self.huntsman_crew = {
 		usage = "mossberg",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},

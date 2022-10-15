@@ -202,7 +202,6 @@ function restoration:Init()
 	restoration.large_levels = {
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion
-		"chca", --Black Cat Heist
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
 		--Custom Heists below--
@@ -247,6 +246,7 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"roberts", --Go Bank
 		"family", --Diamond Store
+		"chca", --Black Cat Heist
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"rat", --Cook Off
 		"chas", --Dragon Heist	
@@ -342,6 +342,7 @@ function restoration:Init()
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
+		"chca", --black cat
 		"pent", --Mountain Master 
 		"lvl_friday", --Mallbank / Crashing Capitol
 		--"hox_1", --Hoxout D1

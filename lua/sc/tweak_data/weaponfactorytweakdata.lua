@@ -9893,6 +9893,9 @@ end)
 --Lion's Roar
 Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 	
+	--default mag
+	self.parts.wpn_fps_ass_vhs_m.stats = { value = 0 }
+	
 	--CQB Barrel
 	self.parts.wpn_fps_ass_vhs_b_short.pcs = {
 		10,

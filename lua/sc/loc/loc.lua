@@ -2936,7 +2936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: #{owned}#$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers #{skill_color}#10%## faster.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nACE: #{owned}#$pro##\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers #{skill_color}#10%## faster.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger

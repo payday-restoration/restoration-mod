@@ -786,6 +786,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						--Unlock ICTV
 					--Ace
 						self.values.player.shield_knock = {true}
+						self.values.player.bullet_shield_knock = {true}
 						self.values.player.armor_regen_timer_multiplier = {0.9}
 			
 		--Support--
@@ -3010,6 +3011,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "steelsight_move_speed_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_bullet_shield_knock = {
+		name_id = "menu_player_bullet_shield_knock",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "bullet_shield_knock",
 			category = "player"
 		}
 	}

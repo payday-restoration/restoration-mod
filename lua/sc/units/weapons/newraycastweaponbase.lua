@@ -20,6 +20,8 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
 	local volley_fire_mode = fire_mode_data.volley
 
+	self._shield_knock = managers.player:has_category_upgrade("player", "bullet_shield_knock")
+
 	if volley_fire_mode then
 		self._volley_spread_mul = volley_fire_mode.spread_mul or 1
 		self._volley_damage_mul = volley_fire_mode.damage_mul or 1

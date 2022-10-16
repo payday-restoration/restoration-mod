@@ -144,7 +144,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACTitleID"] = "绝对原始模式",  --may need improved
 		["RestorationModGCGPYPMMSACDescID"] = "关闭来自遥远银河系的武器配件。重启劫案生效。",  --may need improved
 		["RestorationModStaticAimTitleID"] = "机瞄时武器无变向",
-		["RestorationModStaticAimDescID"] = "勾选以关闭你在机瞄时，武器会随着你屏幕的移动而变向的效果。参考PDTH。\n\n重启以生效。警告：取消勾选将导致某些选项不可用。",
+		["RestorationModStaticAimDescID"] = "勾选以关闭你在机瞄时，武器会随着你屏幕的移动而变向的效果。参考PDTH。\n重启以生效。警告：取消勾选将导致某些选项不可用。",
 		["RestorationModWpnCatTitleID"] = "购买菜单分类方式",
 		["RestorationModWpnCatDescID"] = "改变武器在购买菜单的分类方式。重启游戏生效。",
 		["RestorationModAutoDMRsTitleID"] = "DMR步枪全自动模式开局",
@@ -161,6 +161,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAimDeploysBipodDescID"] = "勾选以在一个可用平面瞄准时自动架起脚架。",
 		["RestorationModMoveCancelBipodTitleID"] = "移动时自动收脚架",
 		["RestorationModMoveCancelBipodDescID"] = "勾选以在你移动时自动收起脚架。",
+		["RestorationModSeparateBowADSTitleID"] = "分离弓的瞄准",
+		["RestorationModSeparateBowADSDescID"] = "勾选以关闭拉弓时强制进入瞄准状态。\n启用后，你的换弹按键将用于停止拉弓。",
 		["RestorationModClassicMoviesTitleID"] = "PD:TH经典界面",
 		["RestorationModClassicMoviesDescID"] = "选择是否在任务简报界面采用PD:TH的经典页面(仅适用于经典劫案)",
 		
@@ -1284,7 +1286,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_sc"] = "稀有",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "燃烧时间#{skill_color}#翻倍##，燃烧持续伤害#{important_1}#减半##。",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "燃烧时间#{important_1}#减半##，燃烧持续伤害#{skill_color}#翻倍##。",
-		["bm_ap_flamethrower_sc_desc"] = "五十度灰，二百度黑，三千度焦？\n喷火器可以#{skill_color}#烧穿敌人的护甲##并可#{skill_color}#迅速烧坏敌人炮塔的装甲##。", --used by both flamethrowers, decouple later?--
+		["bm_ap_flamethrower_sc_desc"] = "五十度灰，二百度黑，三千度焦？\n喷火器可以#{skill_color}#烧穿敌人的护甲##但对熊的装甲#{important_1}#收效甚微##。", --used by both flamethrowers, decouple later?--
 		["bm_ap_money_sc_desc"] = "只需轻轻打开阀门，成千上万白花花的票子就喷涌而出。\n票子不光可以打通关节，也可以#{skill_color}#打穿护甲##。", --used by both flamethrowers, decouple later?--
 
 		--LMGs/Miniguns--
@@ -1732,6 +1734,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_hmcar_hd_kit"] = "32位-8K超高清套件",
 		["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 
+		
+		--GL40		
+		["bm_w_gre_m79_sc_desc"] = "咚了个砰！\n\n按下 #{skill_color}#$BTN_GADGET## 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
 		--3GL
 		["bm_ms3gl_sc_desc"] = "发射通过黑科技自制的集束40mm榴弹，可以造成快速后续冲击伤害。\n\n辅助射击允许一次性#{skill_color}#射出三发榴弹##。",
 		--["bm_ms3gl_sc_desc"] = "Fires custom 40mm rounds superposed in a single chamber. Uses electric primers to fire, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
@@ -1775,8 +1780,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_pdw_gen_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#33%##的伤害。",
 		["bm_heavy_ap_weapon_sc_desc"] = "爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
+		--delete
 		["bm_ap_2_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以#{skill_color}#捡起回收##，并且射程随拉弓时间提升而加长。",
 		["bm_ap_3_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。箭矢可以#{skill_color}#捡起回收##。",
+		--delete end
+		["bm_bow_sc_desc"] = "按住 #{skill_color}#$BTN_FIRE## 以拉弓，然后松开以射击。\n弓拉的越满，伤害和箭的飞行速度越高。\n\n按下 #{skill_color}#$BTN_AIM## 停止拉弓。\n\n箭矢可以#{skill_color}#捡起回收##。\n能够#{skill_color}#穿透护甲##。",
+		["bm_xbow_sc_desc"] = "弩箭可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
+		["bm_airbow_sc_desc"] = "箭矢可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
 		["bm_40mm_weapon_sc_desc"] = "按下 $BTN_GADGET 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
 		["bm_rocket_launcher_sc_desc"] = "该武器造成的爆炸伤害能够#{skill_color}#秒杀敌人炮塔##。",
 		["bm_quake_shotgun_sc_desc"] = "一次射击两个枪管，弹丸数量也翻倍。",
@@ -2617,7 +2627,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_15"] = "\"首脑\"——一个兼顾多方面的天赋，它的注射器既可以用于保证自己的生存能力，在重火力中生存；又可以吸引火力，为队友迎来喘息的机会。",	
 		["loading_equip_skills_res_16"] = "\"双人组\"——一个以团队之间相互配合为核心的天赋，只要你和你标记的队友都能保证持续的输出杀敌，你们就能共同获得大量的治疗。",	
 		["loading_equip_skills_res_17"] = "穿过盾牌的子弹伤害减半。",	
-		["loading_equip_skills_res_18"] = "Peacemaker .45左轮手枪和Phoenix .500左轮手枪可以像狙击步枪一样穿透护甲。",
+		["loading_equip_skills_res_18"] = "Peacemaker.45左轮手枪和Phoenix.500左轮手枪可以像狙击步枪一样穿透护甲。",
 		["loading_equip_skills_res_19"] = "如果你有闪避点数，那么你能在游戏中的屏幕右边看到一个蓝色的条。当它闪烁时，你就能闪避下一发子弹。你可以在Steam指南中找到关于闪避机制的更多解释。",	
 		["loading_equip_skills_res_20"] = "枪械武器隐藏度越高, 拔枪和收枪的速度越快。",	
 		["loading_equip_skills_res_21"] = "电锯和风车刀蓄力时可以对面前的敌人造成伤害。",	
@@ -3358,9 +3368,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "铅笔杀神",
 		["menu_deck5_7_sc"] = "终极杀手",
 
-        ["menu_st_spec_5_desc_sc"] = "杀手是精通各种杀人手段的行家。对于犯罪团伙来说，杀手一般被雇佣来刺杀敌对团伙的首脑，从而确保自己的统治。\n\n完成全部牌组后的效果：\n##-##使用非近战武器杀敌会为你储存##25##点血量，最多可以储存##120##点血量。使用近战武器击杀敌人将使储存的血量转化为临时虚血，临时虚血会以每秒##5##点的速度减少。临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。\n##-##你的护甲恢复后，闪避条将会增加闪避点数的##100%##。\n##-##你的闪避点数增加##10##。\n##-##当你有临时虚血时，你受到的对##血量##的伤害减少##10%##且你的移动速度额外增加##20%##。\n##-##你初始携带的尸体袋数量增加##1##。",
+        ["menu_st_spec_5_desc_sc"] = "杀手是精通各种杀人手段的行家。对于犯罪团伙来说，杀手一般被雇佣来刺杀敌对团伙的首脑，从而确保自己的统治。\n\n完成全部牌组后的效果：\n##-##使用非近战武器杀敌会为你储存##25##点血量，最多可以储存##120##点血量。使用近战武器击杀敌人将使储存的血量转化为临时虚血，临时虚血跟血量一样是你的生命值，临时虚血会以每秒##5##点的速度减少。临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。\n##-##你的护甲恢复后，闪避条将会增加闪避点数的##100%##。\n##-##你的闪避点数增加##10##。\n##-##当你有临时虚血时，你受到的对##血量##的伤害减少##10%##且你的移动速度额外增加##20%##。\n##-##你初始携带的尸体袋数量增加##1##。",
 		["menu_st_spec_5_desc_sc_short"] = "杀手是精通各种杀人手段的行家。对于犯罪团伙来说，杀手一般被雇佣来刺杀敌对团伙的首脑，从而确保自己的统治。",
-		["menu_deck5_1_desc_sc"] = "使用非近战武器击杀敌人将为你储存##25##点血量，储存的血量上限为##75##点。\n\n使用近战武器击杀敌人将使储存的血量转化为临时虚血，临时虚血会以每秒##5##点的速度减少。\n\n临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。",
+		["menu_deck5_1_desc_sc"] = "使用非近战武器击杀敌人将为你储存##25##点血量，储存的血量上限为##75##点。\n\n使用近战武器击杀敌人将使储存的血量转化为临时虚血，临时虚血跟血量一样是你的生命值，临时虚血会以每秒##5##点的速度减少。\n\n临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。",
 		["menu_deck5_3_desc_sc"] = "你的护甲恢复后，闪避条将会增加闪避点数的##100%##。\n\n你的闪避点数增加##5##。",
 		["menu_deck5_5_desc_sc"] = "你现在可以多储存##60%##的血量。\n\n你初始携带的尸体袋数量增加##1##。",
 		["menu_deck5_7_desc_sc"] = "你倒地起身后获得##120##的临时虚血。\n\n你的闪避点数额外增加##5##。",
@@ -3422,11 +3432,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "每次使用近战武器成功击中敌人都将在##5##秒内使你的血量每##1##秒回复##1##点，该效果可以叠加且最多叠加##5##次\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Sociopath--
-		["menu_st_spec_9_desc_sc"] = "反社会者是公认最有效率的犯罪者，效率高到大型犯罪团伙都对他另眼相看。\n\n胆大包天，毫无感情且凶狠毒辣使得反社会者经常在最暴力的案件中现身。不知负罪感为何物使得反社会者成为最危险的罪犯。\n\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##当你与敌人的距离在##18##米以内时，来自敌人的伤害减少##5%##。\n##-##击杀1名敌人可以恢复##20##点护甲，该敌人在距你##18##米内则效果增加##100%##，该技能每##5##秒只能触发1次。\n##-##近战击杀1名敌人可以回复##2%##的血量。该技能每##5##秒只能触发1次。\n##-##在##18##米内击杀敌人会有##25%##的几率让敌人陷入恐慌，该技能每##5##秒只能触发1次。\n##-##每击杀一名敌人均可使上述冷却时间减少##0.5##秒，近战击杀将额外减少##0.5##秒。\n##-##你初始携带的尸体袋数量增加##1##。",
+		["menu_st_spec_9_desc_sc"] = "反社会者是公认最有效率的犯罪者，效率高到大型犯罪团伙都对他另眼相看。\n\n胆大包天，毫无感情且凶狠毒辣使得反社会者经常在最暴力的案件中现身。不知负罪感为何物使得反社会者成为最危险的罪犯。\n\n\n完成全部牌组后的效果：\n##-##你的闪避点数增加##10##。\n##-##当你与敌人的距离在##18##米以内时，来自敌人的伤害减少##5%##。\n##-##击杀1名敌人可以恢复##20##点护甲，该敌人在距你##18##米内则效果增加##100%##，该技能每##5##秒只能触发1次。\n##-##近战击杀1名敌人可以回复##2%##的血量。该技能每##5##秒只能触发1次。\n##-##在##18##米内击杀敌人会有##25%##的几率让敌人陷入恐慌，该技能每##5##秒只能触发1次。\n##-##每击杀一名敌人均可使上述冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n##-##你初始携带的尸体袋数量增加##1##。",
 		["menu_st_spec_9_desc_sc_short"] = "反社会者是公认最有效率的犯罪者，效率高到大型犯罪团伙都对他另眼相看。\n\n胆大包天，毫无感情且凶狠毒辣使得反社会者经常在最暴力的案件中现身。不知负罪感为何物使得反社会者成为最危险的罪犯。",
 		["menu_deck9_1_sc"] = "非礼勿言",
 		["menu_deck9_1_desc_sc"] = "当你被##18##米内至少##3##名敌人包围时，你受到来自敌人的伤害减少##5%##。",
-		["menu_deck9_3_desc_sc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##0.5##秒。\n\n你的闪避点数增加##5##。",
+		["menu_deck9_3_desc_sc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n\n你的闪避点数增加##5##。",
 		["menu_deck9_5_desc_sc"] = "使用近战武器击杀一名敌人将为你回复##2%##的血量。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n你初始携带的尸体袋数量增加##1##。",
 		["menu_deck9_7_desc_sc"] = "击杀一名距你##18##米内的敌人将为你额外回复##20##点护甲值。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck9_9_desc_sc"] = "击杀一名距你##18##米内的敌人将有##25%##的几率在敌人中##散播恐慌##，恐慌会使敌人短暂地失去行动能力。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
@@ -3532,7 +3542,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##2.5##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Leech
-		["menu_st_spec_22_desc_sc"] = "你在战斗中是个有选择的寄生虫，吸收敌人的力量来强化你和你的队友。不过，你对砖厕里的玩意可不屑一顾。你能够发泄你的痛苦并且将这份斗气加强到你的队友身上。\n\n完成全部牌组后的效果：\n##-##解锁并装备水蛭安瓶，能够持续##10##秒钟并且有##40##秒冷却，每击杀1人减少##1##秒冷却。生效时恢复你总血量的##10%##并且取消你的全部护甲。与此同时你的血量以每##5%##来被分割成小格，每受任意一次伤害移除整个格，同时每击杀##3##名敌人回复一格且免伤##1##秒。受到任何伤害会恢复你队友其总血量的##2%##。倒地时启用水蛭安瓶能立即起身，但是会增加额外的##30##秒冷却时间。\n##-##你打包尸体和与人质互动的速度加快##75%##。",
+		["menu_st_spec_22_desc_sc"] = "你在战斗中是个有选择的寄生虫，吸收敌人的力量来强化你和你的队友。不过，你对砖厕里的玩意可不屑一顾。你能够发泄你的痛苦并且将这份斗气加强到你的队友身上。\n\n完成全部牌组后的效果：\n##-##解锁并装备水蛭安瓶，能够持续##10##秒钟并且有##40##秒冷却，每击杀1人减少##1##秒冷却。生效时恢复你总血量的##10%##并且取消你的全部护甲。与此同时你的血量以每##5%##来被分割成小格，每受任意一次伤害移除整个格，同时每击杀##3##名敌人##回复一格##且免伤##1##秒。受到任何伤害会恢复你队友其总血量的##2%##。倒地时启用水蛭安瓶能立即起身，但是会增加额外的##30##秒冷却时间。\n##-##你打包尸体和与人质互动的速度加快##75%##。",
 		["menu_st_spec_22_desc_sc_short"] = "你在战斗中是个有选择的寄生虫，吸收敌人的力量来强化你和你的队友。不过，你对砖厕里的玩意可不屑一顾。你能够发泄你的痛苦并且将这份斗气加强到你的队友身上。",		
 		["menu_deck22_1_desc_sc"] = "解锁并装备##水蛭安瓶##。\n\n对局中你可以使用投掷物按键来启用水蛭安瓶，启用时会直接恢复##10%##的总血量并且在生效期间取消你的全部护甲。\n\n与此同时你的血量以每##10%##来被分割成小格，每受任意一次伤害移除整个格。同时每击杀##3##名敌人回复一格且免伤##1##秒。\n\n水蛭安瓶能够持续##6##秒钟并且有##40##秒冷却。",
 		["menu_deck22_3_desc_sc"] = "在水蛭安瓶生效期间，任何时候你受到生命值伤害会恢复你队友其总血量的##1%##。",

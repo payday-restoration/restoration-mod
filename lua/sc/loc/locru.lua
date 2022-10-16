@@ -230,7 +230,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModHolidayTitleID"] = "Святковi ефекти",
 		["RestorationModHolidayDescID"] = "Включаè або вимикаè святковi ефекти в модi.",
 		["RestorationModCloakerTurnTitleID"] = "Пинок Клокера: Поворачивать камеру",
-		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилл.",			
+		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилле.",			
 		["RestorationModRestoreHitFlashTitleID"] = "Спалах при отриманнi урону",
 		["RestorationModRestoreHitFlashDescID"] = "Включити або вимкнути спалах екрану при отриманнi урону зi старих версiй гри.",	
 		["RestorationModNotifyTitleID"] = "Увiдомлення",
@@ -241,7 +241,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_support"] = "Гайд / Допомога по ребалансу",
 		["menu_support_help"] = "Переглянути гайд по ребалансу в Restoration Mod, отримати допомогу, знайти iнших гравцiв.",
 		["menu_manual_header"] = "Placeholder Text",
-		["hud_assault_alpha"] = "ПОЛiЦЕЙСЬКИЙ ШТУРМ",
+		["hud_assault_alpha"] = "ПОЛIЦЕЙСЬКИЙ ШТУРМ",
 		["hud_loot_secured_title"] = "ВИДОБУТОК ЗАХОПЛЕНА!",
 		["debug_none"] = "ЗАВДАННЯ",
 

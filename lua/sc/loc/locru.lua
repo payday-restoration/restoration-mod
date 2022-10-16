@@ -1840,6 +1840,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	    ["bm_wp_wpn_fps_upg_super_body_burst_desc"] = "Стреляет из двух стволов сразу.",
 	    ["bm_wp_wpn_fps_upg_super_classic"] = "Старая школа",
 	    ["bm_wp_wpn_fps_upg_super_meathook"] = "Крюк",
+		
+		["bm_w_czevo"] = "Кобра Марк 4",
+        ["bm_w_ppsh"] = "ШПП-42",
+        ["bm_w_ks23"] = "Молот 24",
+        ["bm_w_nova4"] = "Нова 4",
+        ["bm_w_owlfbullpup"] = "Питбуль 5.56",
+        ["bm_w_xeno"] = "Пульсовая винтовка M41A",
+        ["bm_w_plasmaproto"] = "Прототип плазморужья",
+        ["bm_w_mcx_spear"] = "Пейпервейт",
+        ["bm_w_rsass"] = "Рейнджхиттер 11",
+        ["bm_w_troglodyte"] = "АВМ-Ф",  
+        ["bm_w_as24"] = "А24 Уничтожитель",
+        ["bm_w_raygun"] = "Лучемёт",
+        ["bm_w_fp45"] = "Фридом .45",
+        ["bm_w_m6d"] = "Чиф 12.7",
+        ["bm_w_jackhammer"] = "Отбойник 12",
+        ["bm_w_hx25"] = "КФ-25",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "Скорость передвижения уменьшена на ",

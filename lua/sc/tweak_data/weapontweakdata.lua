@@ -12523,10 +12523,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 		if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
 			self.aknato.nato = true
+			self.aknato.recategorize = {"light_ar"}
 			self.aknato.tactical_reload = 1
 			self.aknato.CLIP_AMMO_MAX = 30
 			self.aknato.AMMO_MAX = 150
 			self.aknato.FIRE_MODE = "auto"				
+			self.aknato.BURST_FIRE = false
 			self.aknato.CAN_TOGGLE_FIREMODE = true
 			self.aknato.sounds.fire = "m4_olympic_fire_single"
 			self.aknato.sounds.fire_single = "m4_olympic_fire_single"
@@ -12543,7 +12545,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.aknato.stats = {
 				damage = 24,
 				spread = 81,
-				recoil = 83,
+				recoil = 89,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 24,
@@ -12559,24 +12561,30 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.aknato.timers = deep_clone(self.akm.timers)
 		end	
 	
-		if self.smolak then --Gambyt's AK Dragon 5.45 Rifle
+		if self.smolak then --Gambyt's AK Dragon 5.45 Pistol
 			self.smolak.warsaw = true
 			self.smolak.categories = {"assault_rifle"}
+			self.smolak.recategorize = {"light_ar"}
 			self.smolak.use_data.selection_index = 2
 			self.smolak.tactical_reload = 1
-			self.smolak.fire_mode_data.fire_rate = 0.0923076923
-			self.smolak.auto.fire_rate = 0.0923076923
-			self.smolak.AMMO_MAX = 80
+			self.smolak.fire_mode_data.fire_rate = 0.08
+			self.smolak.AMMO_MAX = 150
 			self.smolak.CAN_TOGGLE_FIREMODE = true
 			self.smolak.kick = self.stat_info.kick_tables.right_kick		
 			self.smolak.supported = true
+			self.smolak.ads_speed = 0.280
+			self.smolak.damage_falloff = {
+				start_dist = 1800,
+				end_dist = 4400,
+				min_mult = 0.5
+			}
 			self.smolak.stats = {
 				damage = 24,
-				spread = 81,
-				recoil = 85,
+				spread = 73,
+				recoil = 81,
 				spread_moving = 5,
 				zoom = 1,
-				concealment = 25,
+				concealment = 28,
 				suppression = 8,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -13451,6 +13459,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g36k.sounds = deep_clone(self.g36.sounds)
 		--self.g36k.sounds.fire_single2 = "g36k_fire"
 		self.g36k.panic_suppression_chance = 0.05
+	end
+
+	if self.ar18 then --Pawcio's SCAR-L
+		self.ar18.recategorize = { "light_ar" }
+		self.ar18.damage_type = "assault_rifle"
+		self.ar18.tactical_reload = 1
+		self.ar18.nato = true
+		self.ar18.desc_id = "bm_g36_sc_desc"
+		self.ar18.has_description = true				
+		self.ar18.BURST_FIRE = false
+		self.ar18.ADAPTIVE_BURST_SIZE = false
+		self.ar18.fire_mode_data.fire_rate = 0.08
+		self.ar18.AMMO_MAX = 150
+		self.ar18.CLIP_AMMO_MAX = 30
+		self.ar18.kick = self.stat_info.kick_tables.moderate_kick
+		self.ar18.supported = true
+		self.ar18.ads_speed = 0.320
+		self.ar18.damage_falloff = {
+			start_dist = 2400,
+			end_dist = 6400,
+			min_mult = 0.4166
+		}
+		self.ar18.stats = {
+			damage = 24,
+			spread = 83,
+			recoil = 85,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 21,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.ar18.stats_modifiers = nil
+		self.ar18.timers = deep_clone(self.ak5.timers)
+		self.ar18.panic_suppression_chance = 0.05
 	end
 
 

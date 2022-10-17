@@ -13472,7 +13472,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ar18.ADAPTIVE_BURST_SIZE = false
 		self.ar18.fire_mode_data.fire_rate = 0.08
 		self.ar18.AMMO_MAX = 150
-		self.ar18.CLIP_AMMO_MAX = 30
+		self.ar18.CLIP_AMMO_MAX = 20
 		self.ar18.kick = self.stat_info.kick_tables.moderate_kick
 		self.ar18.supported = true
 		self.ar18.ads_speed = 0.320

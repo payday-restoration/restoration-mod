@@ -2410,7 +2410,7 @@ function PlayerStandard:_update_slide_locks()
 					weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
 					weap_base._second_gun:base():tweak_data_anim_offset("reload", 0.033) 
 					weap_base:tweak_data_anim_offset("reload", 0.033)
-					weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
+					--weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
 				else
 					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
 						weap_base:tweak_data_anim_offset("magazine_empty", 1)
@@ -2786,11 +2786,15 @@ end
 --Fixes weapons with manually actuated parts (visually) like pumps and bolt-actions still animating upon starting a reload
 --Also includes fix for Bloodthirst's reload bonus
 Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimReloadFix", function(self, t)
-	local weapon = self._equipped_unit:base()
-	if weapon and weapon:can_reload() then
-		weapon:tweak_data_anim_stop("fire")
-		weapon:tweak_data_anim_stop("fire_steelsight")
-		weapon._current_reload_speed_multiplier = nil
+	local weap_base = self._equipped_unit:base()
+	if weap_base and weap_base:can_reload() then
+		weap_base:tweak_data_anim_stop("fire")
+		weap_base:tweak_data_anim_stop("fire_steelsight")
+		if weap_base.AKIMBO then
+			weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
+			weap_base._second_gun:base():tweak_data_anim_stop("reload")
+		end
+		weap_base._current_reload_speed_multiplier = nil
 	end
 end)
 

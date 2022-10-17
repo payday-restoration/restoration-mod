@@ -21290,8 +21290,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_lmg_par_rail.supported = true
 		self.parts.wpn_fps_lmg_par_rail.stats = {
 			value = 3,
-			recoil = 1,
-			concealment = -2
+			recoil = 2,
+			concealment = -1
 		}		
 	end
 
@@ -24685,6 +24685,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ar18_mag_30.has_description = false
 		self.parts.wpn_fps_upg_ar18_mag_30.stats = {
 			value = 1,
+			extra_ammo = 10,
 			concealment = -1,
 			reload = -1
 		}
@@ -24696,6 +24697,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ar18_mag_30_dual.has_description = false
 		self.parts.wpn_fps_upg_ar18_mag_30_dual.stats = {
 			value = 2,
+			extra_ammo = 10,
 			spread = -1,
 			concealment = -2,
 			reload = 2

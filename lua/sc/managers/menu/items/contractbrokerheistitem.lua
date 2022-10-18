@@ -3,7 +3,7 @@ function ContractBrokerHeistItem:init(...) -- parent_panel, job_data, idx
 
 	init_original(self, ...)
 
-    local heat_text, heat_color = self:get_job_heat_text(self._job_data.job_id)
+   -- local heat_text, heat_color = self:get_job_heat_text(self._job_data.job_id)
 
     local heat = self._panel:text({
         alpha = 1,
@@ -29,6 +29,7 @@ function ContractBrokerHeistItem:make_fine_text(text)
 	text:set_position(math.round(text:x()), math.round(text:y()))
 end
 
+--[[
 function ContractBrokerHeistItem:get_job_heat_text(job_id)
 	local heat_text = ""
 	local heat_color = Color(1,0,1)
@@ -42,3 +43,4 @@ function ContractBrokerHeistItem:get_job_heat_text(job_id)
 
 	return heat_text, heat_color
 end 
+--]

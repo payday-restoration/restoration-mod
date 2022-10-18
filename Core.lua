@@ -204,6 +204,8 @@ function restoration:Init()
 		"friend", --Scarface Mansion
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
+		"watchdogs_2_day", --Watchdogs Day 2 
+		"watchdogs_2", --Watchdogs Day 2 but night
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration

@@ -1782,7 +1782,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, 0.5, -4.03)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
-		translation = Vector3(0, -19.8, -4.28)
+		translation = Vector3(0, -0.8, -4.28)
 	}
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
 		translation = Vector3(0, -6.9, -3.95)
@@ -24511,6 +24511,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_jackhammer_barrel_long.supported = true
 		self.parts.wpn_fps_upg_jackhammer_barrel_long.stats = deep_clone(barrels.long_b2_stats)
 		self.parts.wpn_fps_upg_jackhammer_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.wpn_fps_shot_jackhammer.override = self.wpn_fps_shot_jackhammer.override or {}
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_slug = a_slug_semi_override
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_custom = a_custom_semi_override
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_custom_free = a_custom_semi_override	
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_explosive = a_explosive_semi_override
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_rip = a_rip_semi_override
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
+		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
+
 
 	end
 

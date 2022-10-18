@@ -1,5 +1,18 @@
 --ATTACHMENT PRESETS
 
+local sight_1_5x_offset = {
+	sights = {
+		"wpn_fps_upg_o_eotech",
+		"wpn_fps_upg_o_eotech_xps",
+		"wpn_fps_upg_o_uh",
+		"wpn_fps_upg_o_fc1"
+	},
+	offset = Vector3(0,-8,0),
+	exclude = {
+		"wpn_fps_snp_mosin"
+	}
+}
+
 --Barrels
 local barrels = {
 	--Short Barrel
@@ -1331,15 +1344,6 @@ local muzzle_device = {
 			}
 		}
 
-local sight_1_5x_offset = {
-	sights = {
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"
-	},
-	offset = Vector3(0,-8,0)
-}
 
 --Vanilla Silencers
 Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", function(self)
@@ -1656,359 +1660,360 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		zoom = 30
 	}
 	self.parts.wpn_fps_upg_o_specter.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_amcar = {
-		translation = Vector3(0, 9, -0.1)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s552 = {
-		translation = Vector3(-0.05, 8, -2.15)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g36 = {
-		translation = Vector3(-0.02, 2.7, -2.97)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_vhs = {
-		translation = Vector3(-0.0, 9.3, -1.19)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_olympic = {
-		translation = Vector3(0, 9, -0.1)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_famas = {
-		translation = Vector3(0, 2.1, -6.25)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4 = {
-		translation = Vector3(0, 13.2, -0.55)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ak5 = {
-		translation = Vector3(0.015, 14.2, -3.52)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_corgi = {
-		translation = Vector3(-0.003, 1, -2.28)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_aug = {
-		translation = Vector3(-0.003, 8.9, -2.79)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_flint = {
-		translation = Vector3(-0.012, -4.2, -2.69)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_74 = {
-		translation = Vector3(-0.006, -2, -3.04)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_hajk = {
-		translation = Vector3(0, 10.4, -0.48)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_komodo = {
-		translation = Vector3(0, 15, 0.09)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m16 = {
-		translation = Vector3(0, 9, -0.1)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_l85a2 = {
-		translation = Vector3(-0.01, 18.3, 1.879)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm_gold = {
-		translation = Vector3(-0.006, -2, -3.04)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm = {
-		translation = Vector3(-0.006, -2, -3.04)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_groza = {
-		translation = Vector3(0, 6.8, -5.05),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_akmsu = {
-		translation = Vector3(-0.006, 2, -3.01)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_asval = {
-		translation = Vector3(0, 14, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_fal = {
-		translation = Vector3(-0.005, 10.5, -3.52)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_galil = {
-		translation = Vector3(-0.005, 9, -3.21)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_scar = {
-		translation = Vector3(-0.005, 5.2, -0.3)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_contraband = {
-		translation = Vector3(-0.005, 3.2, -1.69)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m14 = {
-		translation = Vector3(-0.02, 2, -3.85)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ching = {
-		translation = Vector3(0, -2, -2.77)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
-		translation = Vector3(0.03, 0.5, -3.395)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
-		translation = Vector3(0, -1.5, 1.585),
-		rotation = Rotation(0, -0.5, 0)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_tti = {
-		translation = Vector3(0, 9, -0.1)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_qbu88 = {
-		translation = Vector3(0, -7.2, 0.3)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
-		translation = Vector3(-0.004, -3.8, -3.36)
-	}	
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r700 = {
-		translation = Vector3(0, -0.6, -3.785)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_msr = {
-		translation = Vector3(0, -1.5, -3.54)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0.005, -19.2, 0.6),
-		rotation = Rotation(0, 0, 0)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_wa2000 = {
-		translation = Vector3(0, 4.3, 0.76)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_siltstone = {
-		translation = Vector3(-0.005, 14.7, -4.01)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_sbl = {
-		translation = Vector3(-0.012, -0.5, -3.81)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_model70 = {
-		translation = Vector3(0, 0.5, -4.03)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
-		translation = Vector3(0, -0.8, -4.28)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
-		translation = Vector3(0, -6.9, -3.95)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r93 = {
-		translation = Vector3(-0.005, 2, -3.76)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m95 = {
-		translation = Vector3(0, 9.4, -3.82)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_saiga = {
-		translation = Vector3(0.06, -2, -2.97)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_sko12 = {
-		translation = Vector3(0, 8.2, -2.81)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_aa12 = {
-		translation = Vector3(0, 12.2, 0.11)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_spas12 = {
-		translation = Vector3(-0.164, 9, -3.93)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ben = {
-		translation = Vector3(-0.002, 0.8, -3.23)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ultima = {
-		translation = Vector3(-0.064, 8.7, -2.755),
-		rotation = Rotation(0, -0.5, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_rota = {
-		translation = Vector3(0, 2.2, -0.415)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_basset = {
-		translation = Vector3(0, 2.5, -0.68)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_striker = {
-		translation = Vector3(0, 5.9, -2.8)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ksg = {
-		translation = Vector3(0, 5.3, -1.315)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_r870 = {
-		translation = Vector3(0.005, 1.5, -3.27)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_m590 = {
-		translation = Vector3(-0.26, 10.7, -4.25),
-		rotation = Rotation(0, -0.45, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_serbu = {
-		translation = Vector3(0, 6.7, -3.26)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_m37 = {
-		translation = Vector3(-0.005, 14.5, -3.67),
-		rotation = Rotation(0, -0.5, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_judge = {
-		translation = Vector3(0.04, -6.5, -5.325)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_sub2000 = {
-		translation = Vector3(-0.005, -4.8, -0.025)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_korth = {
-		translation = Vector3(0.056, 3, -3.38),
-		rotation = Rotation(-0.07, 0, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rsh12 = {
-		translation = Vector3(0.043, -11.7, -3.44)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
-		translation = Vector3(-0.03, -6, -4.62)
-	}	
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rage = {
-		translation = Vector3(-0.03, -6, -4.62)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_deagle = {
-		translation = Vector3(0, -14, -4.23),
-		rotation = Rotation(0, -0.5, 0)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_p90 = {
-		translation = Vector3(-0.005, 1.6, -3.028)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp7 = {
-		translation = Vector3(0, 7.5, -2.82)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp9 = {
-		translation = Vector3(0, 11.6, -3.47)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_cobray = {
-		translation = Vector3(0, 9.2, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_tec9 = {
-		translation = Vector3(0, 6, -5)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_sr2 = {
-		translation = Vector3(0, 17.2, -4.57)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_vityaz = {
-		translation = Vector3(0.01, 8.5, -3.321)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_coal = {
-		translation = Vector3(0, 17.8, -4)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_shepheard = {
-		translation = Vector3(0, -1.2, -0.41)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_scorpion = {
-		translation = Vector3(-0.005, -0.8, -5.19)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp5 = {
-		translation = Vector3(0, 9.4, -2.92)
-	}
+	--STANCE MODS
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_amcar = {
+			translation = Vector3(0, 9, -0.1)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s552 = {
+			translation = Vector3(-0.05, 8, -2.15)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g36 = {
+			translation = Vector3(-0.02, 2.7, -2.97)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_vhs = {
+			translation = Vector3(-0.0, 9.3, -1.19)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_olympic = {
+			translation = Vector3(0, 9, -0.1)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_famas = {
+			translation = Vector3(0, 2.1, -6.25)
+		}
 	
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_erma = {
-		translation = Vector3(0.005, 5, -4.152)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_schakal = {
-		translation = Vector3(0, 7.15, -2.81)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_polymer = {
-		translation = Vector3(0, 10.8, -0.65)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_m45 = {
-		translation = Vector3(0, -2.4, -3.925)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_sterling = {
-		translation = Vector3(0, -6.5, -3.61)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mac10 = {
-		translation = Vector3(0, -6.3, -3.1)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_thompson = {
-		translation = Vector3(-0.005, -12.5, -4.2)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_uzi = {
-		translation = Vector3(0, 4.7, -5.1)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_tecci = {
-		translation = Vector3(-0.005, 13.2, -1.68)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m249 = {
-		translation = Vector3(0.003, 9.6, -3.415),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
-		translation = Vector3(0.05, -1.5, -2.99),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg42 = {
-		translation = Vector3(0.07, 24.7, -2.78 ),
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk21 = {
-		translation = Vector3(0.002, 3.5, -3.23),
-		rotation = Rotation(-0.05, -0.2, 0)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk51b = {
-		translation = Vector3(-0.025, 10.4, -2.827),
-		rotation = Rotation(0.0, -0.1, -0.625)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_par = {
-		translation = Vector3(0.05, 5, -3.05), --NEEDS ADJUSTMENT LATER, IRONS NEED FIXING
-		rotation = Rotation(0.15, -0.1, 0.5)
-	}
-	if WeaponTweakData.SetupAttachmentPoint then
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
-			translation = Vector3(-0.006, 14, -1.952),
-			rotation = Rotation(-0.062, 0.13, 0)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4 = {
+			translation = Vector3(0, 13.2, -0.55)
 		}
-	else
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
-			translation = Vector3(-0.01, 3, -1.1), --CHECK WITHOUT CAP AT SOME POINT
-			rotation = Rotation(-0.062, 0.13, 0)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ak5 = {
+			translation = Vector3(0.015, 14.2, -3.52)
 		}
-	end
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_elastic = {
-		translation = Vector3(-0.003, 16, -1.5)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_ecp = {
-		translation = Vector3(-0.001, -1, -3.325)
-	}
-
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_m32 = {
-		translation = Vector3(0, 12.5, -3.475)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_rpg7 = {
-		translation = Vector3(-0.005, 18.7, 0.046)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_slap = {
-		translation = Vector3(-0.02, 5.4, -1.85)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_arbiter = {
-		translation = Vector3(-0.01, 5.4, -0.402)
-	}
-	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_ms3gl = {
-		translation = Vector3(0.018, 12, 2.465),
-		rotation = Rotation(0, -6, 0)
-	}
-
-	--CUSTOM WEAPS
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar18 = {
-			translation = Vector3(0.012, 5, -3.525)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_corgi = {
+			translation = Vector3(-0.003, 1, -2.28)
 		}
-
-	--CUSTOM WEAPS THAT NEED REALIGNMENT
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
-			translation = Vector3(-0.0, -0.5, -0.2),
-			rotation = Rotation(0.11, -0.09, 0)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_aug = {
+			translation = Vector3(-0.003, 8.9, -2.79)
 		}
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
-			translation = Vector3(-0.02, -3, -3.521)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_flint = {
+			translation = Vector3(-0.012, -4.2, -2.69)
 		}
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
-			translation = Vector3(0.0, -1, -4.03)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_74 = {
+			translation = Vector3(-0.006, -2, -3.04)
 		}
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m107cq = {
-			translation = Vector3(-0.02, 5, -4.02)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_hajk = {
+			translation = Vector3(0, 10.4, -0.48)
 		}
-		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_musket = {
-			translation = Vector3(0, -15, -4.34)
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_komodo = {
+			translation = Vector3(0, 15, 0.09)
 		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m16 = {
+			translation = Vector3(0, 9, -0.1)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_l85a2 = {
+			translation = Vector3(-0.01, 18.3, 1.879)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm_gold = {
+			translation = Vector3(-0.006, -2, -3.04)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm = {
+			translation = Vector3(-0.006, -2, -3.04)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_groza = {
+			translation = Vector3(0, 6.8, -5.05),
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_akmsu = {
+			translation = Vector3(-0.006, 2, -3.01)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_asval = {
+			translation = Vector3(0, 14, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_fal = {
+			translation = Vector3(-0.005, 10.5, -3.52)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_galil = {
+			translation = Vector3(-0.005, 9, -3.21)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_scar = {
+			translation = Vector3(-0.005, 5.2, -0.3)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_contraband = {
+			translation = Vector3(-0.005, 3.2, -1.69)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m14 = {
+			translation = Vector3(-0.02, 2, -3.85)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ching = {
+			translation = Vector3(0, -2, -2.77)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
+			translation = Vector3(0.03, 0.5, -3.395)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
+			translation = Vector3(0, -1.5, 1.585),
+			rotation = Rotation(0, -0.5, 0)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_tti = {
+			translation = Vector3(0, 9, -0.1)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_qbu88 = {
+			translation = Vector3(0, -7.2, 0.3)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
+			translation = Vector3(-0.004, -3.8, -3.36)
+		}	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r700 = {
+			translation = Vector3(0, -0.6, -3.785)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_msr = {
+			translation = Vector3(0, -1.5, -3.54)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
+			translation = Vector3(-0.005, -19.2, 0.6),
+			rotation = Rotation(0, 0, 0)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_wa2000 = {
+			translation = Vector3(0, 4.3, 0.76)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_siltstone = {
+			translation = Vector3(-0.005, 14.7, -4.01)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_sbl = {
+			translation = Vector3(-0.012, -0.5, -3.81)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_model70 = {
+			translation = Vector3(0, 0.5, -4.03)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
+			translation = Vector3(0, -0.8, -4.28)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
+			translation = Vector3(0, -6.9, -3.95)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r93 = {
+			translation = Vector3(-0.005, 2, -3.76)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m95 = {
+			translation = Vector3(0, 9.4, -3.82)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_saiga = {
+			translation = Vector3(0.06, -2, -2.97)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_sko12 = {
+			translation = Vector3(0, 8.2, -2.81)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_aa12 = {
+			translation = Vector3(0, 12.2, 0.11)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_spas12 = {
+			translation = Vector3(-0.164, 9, -3.93)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ben = {
+			translation = Vector3(-0.002, 0.8, -3.23)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ultima = {
+			translation = Vector3(-0.064, 8.7, -2.755),
+			rotation = Rotation(0, -0.5, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_rota = {
+			translation = Vector3(0, 2.2, -0.415)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_basset = {
+			translation = Vector3(0, 2.5, -0.68)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_striker = {
+			translation = Vector3(0, 5.9, -2.8)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_ksg = {
+			translation = Vector3(0, 5.3, -1.315)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_r870 = {
+			translation = Vector3(0.005, 1.5, -3.27)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_m590 = {
+			translation = Vector3(-0.26, 10.7, -4.25),
+			rotation = Rotation(0, -0.45, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_serbu = {
+			translation = Vector3(0, 6.7, -3.26)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_m37 = {
+			translation = Vector3(-0.005, 14.5, -3.67),
+			rotation = Rotation(0, -0.5, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_judge = {
+			translation = Vector3(0.04, -6.5, -5.325)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_sub2000 = {
+			translation = Vector3(-0.005, -4.8, -0.025)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_korth = {
+			translation = Vector3(0.056, 3, -3.38),
+			rotation = Rotation(-0.07, 0, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rsh12 = {
+			translation = Vector3(0.043, -11.7, -3.44)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
+			translation = Vector3(-0.03, -6, -4.62)
+		}	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_rage = {
+			translation = Vector3(-0.03, -6, -4.62)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_deagle = {
+			translation = Vector3(0, -14, -4.23),
+			rotation = Rotation(0, -0.5, 0)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_p90 = {
+			translation = Vector3(-0.005, 1.6, -3.028)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp7 = {
+			translation = Vector3(0, 7.5, -2.82)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp9 = {
+			translation = Vector3(0, 11.6, -3.47)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_cobray = {
+			translation = Vector3(0, 9.2, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_tec9 = {
+			translation = Vector3(0, 6, -5)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_sr2 = {
+			translation = Vector3(0, 17.2, -4.57)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_vityaz = {
+			translation = Vector3(0.01, 8.5, -3.321)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_coal = {
+			translation = Vector3(0, 17.8, -4)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_shepheard = {
+			translation = Vector3(0, -1.2, -0.41)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_scorpion = {
+			translation = Vector3(-0.005, -0.8, -5.19)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp5 = {
+			translation = Vector3(0, 9.4, -2.92)
+		}
+		
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_erma = {
+			translation = Vector3(0.005, 5, -4.152)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_schakal = {
+			translation = Vector3(0, 7.15, -2.81)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_polymer = {
+			translation = Vector3(0, 10.8, -0.65)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_m45 = {
+			translation = Vector3(0, -2.4, -3.925)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_sterling = {
+			translation = Vector3(0, -6.5, -3.61)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mac10 = {
+			translation = Vector3(0, -6.3, -3.1)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_thompson = {
+			translation = Vector3(-0.005, -12.5, -4.2)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_uzi = {
+			translation = Vector3(0, 4.7, -5.1)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_tecci = {
+			translation = Vector3(-0.005, 13.2, -1.68)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m249 = {
+			translation = Vector3(0.003, 9.6, -3.415),
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
+			translation = Vector3(0.05, -1.5, -2.99),
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg42 = {
+			translation = Vector3(0.07, 24.7, -2.78 ),
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk21 = {
+			translation = Vector3(0.002, 3.5, -3.23),
+			rotation = Rotation(-0.05, -0.2, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_hk51b = {
+			translation = Vector3(-0.025, 10.4, -2.827),
+			rotation = Rotation(0.0, -0.1, -0.625)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_par = {
+			translation = Vector3(0.05, 5, -3.05), --NEEDS ADJUSTMENT LATER, IRONS NEED FIXING
+			rotation = Rotation(0.15, -0.1, 0.5)
+		}
+		if WeaponTweakData.SetupAttachmentPoint then
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
+				translation = Vector3(-0.006, 14, -1.952),
+				rotation = Rotation(-0.062, 0.13, 0)
+			}
+		else
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
+				translation = Vector3(-0.01, 3, -1.1), --CHECK WITHOUT CAP AT SOME POINT
+				rotation = Rotation(-0.062, 0.13, 0)
+			}
+		end
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_elastic = {
+			translation = Vector3(-0.003, 16, -1.5)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_ecp = {
+			translation = Vector3(-0.001, -1, -3.325)
+		}
+	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_m32 = {
+			translation = Vector3(0, 12.5, -3.475)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_rpg7 = {
+			translation = Vector3(-0.005, 18.7, 0.046)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_slap = {
+			translation = Vector3(-0.02, 5.4, -1.85)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_arbiter = {
+			translation = Vector3(-0.01, 5.4, -0.402)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_ms3gl = {
+			translation = Vector3(0.018, 12, 2.465),
+			rotation = Rotation(0, -6, 0)
+		}
+	
+		--CUSTOM WEAPS
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar18 = {
+				translation = Vector3(0.012, 5, -3.525)
+			}
+	
+		--CUSTOM WEAPS THAT NEED REALIGNMENT
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
+				translation = Vector3(-0.0, -0.5, -0.2),
+				rotation = Rotation(0.11, -0.09, 0)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
+				translation = Vector3(-0.02, -3, -3.521)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
+				translation = Vector3(0.0, -1, -4.03)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m107cq = {
+				translation = Vector3(-0.02, 5, -4.02)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_musket = {
+				translation = Vector3(0, -15, -4.34)
+			}
 
 
 	--Military Red Dot
@@ -2027,24 +2032,39 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_aimpoint.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	
-	--Preorder Military Red Dot
-	self.parts.wpn_fps_upg_o_aimpoint_2.pcs = {
-		10, 
-		20,
-		30, 
-		40	
-	}
-	self.parts.wpn_fps_upg_o_aimpoint_2.has_description = true
-	self.parts.wpn_fps_upg_o_aimpoint_2.desc_id = "bm_wp_upg_o_1_8"		
-	self.parts.wpn_fps_upg_o_aimpoint_2.supported = true		
-	self.parts.wpn_fps_upg_o_aimpoint_2.stats = {
-		value = 8,
-		zoom = 8
-	}
-	self.parts.wpn_fps_upg_o_aimpoint_2.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	
+		--Preorder Military Red Dot
+		self.parts.wpn_fps_upg_o_aimpoint_2.pcs = {
+			10, 
+			20,
+			30, 
+			40	
+		}
+		self.parts.wpn_fps_upg_o_aimpoint_2.has_description = true
+		self.parts.wpn_fps_upg_o_aimpoint_2.desc_id = "bm_wp_upg_o_1_8"		
+		self.parts.wpn_fps_upg_o_aimpoint_2.supported = true		
+		self.parts.wpn_fps_upg_o_aimpoint_2.stats = {
+			value = 8,
+			zoom = 8
+		}
+		self.parts.wpn_fps_upg_o_aimpoint_2.perks = {"scope"}
+		self.parts.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_aimpoint.stance_mod)
+		--Compact Tactical/Tech Force 90
+		self.parts.wpn_fps_upg_o_tf90.pcs = {
+			10, 
+			20,
+			30, 
+			40
+		}
+		self.parts.wpn_fps_upg_o_tf90.has_description = true
+		self.parts.wpn_fps_upg_o_tf90.desc_id = "bm_wp_upg_o_1_2"
+		self.parts.wpn_fps_upg_o_tf90.supported = true
+		self.parts.wpn_fps_upg_o_tf90.stats = {
+			value = 8,
+			zoom = 2
+		}
+		self.parts.wpn_fps_upg_o_tf90.perks = {"scope"}	
+		self.parts.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	--Surgeon Sight
 	self.parts.wpn_fps_upg_o_docter.pcs = {
 		10,
@@ -2061,23 +2081,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_docter.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	
-	--Compact Tactical/Tech Force 90
-	self.parts.wpn_fps_upg_o_tf90.pcs = {
-		10, 
-		20,
-		30, 
-		40
-	}
-	self.parts.wpn_fps_upg_o_tf90.has_description = true
-	self.parts.wpn_fps_upg_o_tf90.desc_id = "bm_wp_upg_o_1_2"
-	self.parts.wpn_fps_upg_o_tf90.supported = true
-	self.parts.wpn_fps_upg_o_tf90.stats = {
-		value = 8,
-		zoom = 2
-	}
-	self.parts.wpn_fps_upg_o_tf90.perks = {"scope"}	
-	self.parts.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 
 	--Owl Glass/BelOMO PO4x24P
 	self.parts.wpn_fps_upg_o_poe.pcs = {
@@ -2113,8 +2116,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_eotech.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_eotech.stance_mod) do
-		if weap and weap.translation then
-			weap.translation = weap.translation + sight_1_5x_offset.offset
+		for k, wep_id in pairs(sight_1_5x_offset.exclude) do
+			if weap and i ~= wep_id and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
 		end
 	end
 
@@ -2689,12 +2694,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		zoom = 5
 	}
 	self.parts.wpn_fps_upg_o_eotech_xps.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	for i, weap in pairs(self.parts.wpn_fps_upg_o_eotech_xps.stance_mod) do
-		if weap and weap.translation then
-			weap.translation = weap.translation + sight_1_5x_offset.offset
-		end
-	end
+	self.parts.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_eotech.stance_mod)
 	
 	--Speculator Sight
 	self.parts.wpn_fps_upg_o_reflex.pcs = {}
@@ -2706,7 +2706,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		zoom = 1
 	}
 	self.parts.wpn_fps_upg_o_reflex.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_docter.stance_mod)
 	
 	--Trigonom Sight
 	self.parts.wpn_fps_upg_o_rx01.pcs = {}
@@ -2718,7 +2718,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		zoom = 1
 	}
 	self.parts.wpn_fps_upg_o_rx01.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_docter.stance_mod)
 	
 	--Solar Sight
 	self.parts.wpn_fps_upg_o_rx30.pcs = {}
@@ -2730,7 +2730,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		zoom = 1
 	}
 	self.parts.wpn_fps_upg_o_rx30.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_docter.stance_mod)
 	
 	--Combat Sight
 	self.parts.wpn_fps_upg_o_cs.pcs = {}
@@ -2743,7 +2743,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		zoom = 8
 	}
 	self.parts.wpn_fps_upg_o_cs.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_aimpoint.stance_mod)
 
 end)
 
@@ -3700,38 +3700,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		}
 	}
 	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_eotech.stance_mod)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_upg_ak_fg_standard.override[ part_id ].stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
+	
 	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_acog.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
 	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_bmg.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_upg_ak_fg_standard.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 
@@ -7497,33 +7502,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 		}
 	}
 	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_acog.stance_mod) do
-		if weap and weap.translation then
-			weap.translation = weap.translation + Vector3(0,4,0)
-		end
-	end
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_bmg.stance_mod) do
-		if weap and weap.translation then
-			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_eotech.stance_mod)
 	for i, part_id in ipairs(sight_1_5x_offset.sights) do
 		for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override[ part_id ].stance_mod) do
 			if weap and weap.translation then
@@ -7531,6 +7525,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 			end
 		end
 	end
+
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_acog.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,4,0)
+		end
+	end
+	self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_bmg.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,10,0)
+		end
+	end
+
 	
 		
 	--CQB Foregrip
@@ -10035,38 +10046,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		}
 	}
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_eotech.stance_mod)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_krebs.override[ part_id ].stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
+	
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_acog.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_bmg.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_krebs.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 	
@@ -10091,38 +10107,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		}
 	}
 	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_eotech.stance_mod)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_trax.override[ part_id ].stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
+	
 	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_acog.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
 	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_bmg.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_trax.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 
@@ -10232,38 +10253,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		translation = Vector3(-0.005, 15.5, -4.34)
 	}
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_eotech.stance_mod)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override[ part_id ].stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_acog.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_bmg.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 
@@ -10746,38 +10772,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		translation = Vector3(-0.02, 5.4, -5.2)
 	}
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_eotech.stance_mod)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override[ part_id ].stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_acog.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_bmg.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 
@@ -15296,12 +15327,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	self.parts.wpn_fps_upg_o_uh.perks = {
 		"scope"
 	}
-	self.parts.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	for i, weap in pairs(self.parts.wpn_fps_upg_o_uh.stance_mod) do
-		if weap and weap.translation then
-			weap.translation = weap.translation + sight_1_5x_offset.offset
-		end
-	end
+	self.parts.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_eotech.stance_mod)
 	
 	--Compact Profile/DI Optical FC1 Sight
 	self.parts.wpn_fps_upg_o_fc1.has_description = true
@@ -15320,12 +15346,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	self.parts.wpn_fps_upg_o_fc1.perks = {
 		"scope"
 	}
-	self.parts.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	for i, weap in pairs(self.parts.wpn_fps_upg_o_fc1.stance_mod) do
-		if weap and weap.translation then
-			weap.translation = weap.translation + sight_1_5x_offset.offset
-		end
-	end
+	self.parts.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_eotech.stance_mod)
 	
 	self.parts.wpn_fps_upg_o_45steel.pcs = {
 		10,
@@ -16551,38 +16572,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		}
 	}
 	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_aimpoint.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_aimpoint_2.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_aimpoint.stance_mod)
+
 	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
+
 	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_t1micro.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_cmore.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_reflex.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_t1micro.stance_mod)
+
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech_xps.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_eotech.stance_mod)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_fps_sho_m590_body_rail.override[ part_id ].stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
+	
 	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_acog.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_acog.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_spot.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
 	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_bmg.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_bmg.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_uh.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_fc1.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_specter.stance_mod)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_fps_sho_m590_body_rail.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 
@@ -16878,38 +16904,43 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		}
 	}
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_aimpoint = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_aimpoint_2 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_aimpoint_2 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_aimpoint)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_cs = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_aimpoint)
+
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_cmore = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_reflex = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_rx01 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_rx30 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
+
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_t1micro = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_cmore = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_cs = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech_xps = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_reflex = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_rx01 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_rx30 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_tf90 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_t1micro)
+
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech_xps = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_uh = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_fc1 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_eotech)
+	for i, part_id in ipairs(sight_1_5x_offset.sights) do
+		for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override[ part_id ]) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + sight_1_5x_offset.offset
+			end
+		end
+	end
+
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_spot = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_poe = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_acog = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_acog.stance_mod) do
+	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_acog) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,4,0)
 		end
 	end
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_spot = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_bmg = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_bmg.stance_mod) do
+	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_bmg) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
-		end
-	end
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_uh = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_fc1 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_tf90 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_poe = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
-	for i, part_id in ipairs(sight_1_5x_offset.sights) do
-		for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override[ part_id ].stance_mod) do
-			if weap and weap.translation then
-				weap.translation = weap.translation + sight_1_5x_offset.offset
-			end
 		end
 	end
 	

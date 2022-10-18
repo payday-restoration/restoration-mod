@@ -5265,7 +5265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sub2000.damage_falloff = {
 					start_dist = 2400,
 					end_dist = 4500,
-					min_mult = 0.3
+					min_mult = 0.2
 				}
 				self.sub2000.stats = {
 					damage = 45,

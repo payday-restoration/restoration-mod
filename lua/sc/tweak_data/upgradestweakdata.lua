@@ -1873,7 +1873,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.pocket_ecm_jammer_base = {
 		{
 			cooldown_drain = 2,
-			duration = 10
+			duration = 10,
+			affects_cameras = true,
+			affects_pagers = true,
+			feedback_interval = 1.5,
+			feedback_range = 1500
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {

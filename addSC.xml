@@ -160,6 +160,7 @@
 	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
 	
 	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
+	<continent			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/>
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
@@ -1344,6 +1345,10 @@
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>
 	<bnk				path="soundbanks/weapon_sterling" force = "true"/>
 	<bnk				path="soundbanks/weapon_mg42" force = "true"/>
+	
+	
+	<!--Old Meth Instructions-->
+	<bnk				path="soundbanks/job_h_rat_stage1" force="true"/>
 	
 	<!--Blank Statboost-->
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>	

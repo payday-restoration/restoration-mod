@@ -9664,13 +9664,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	}
 	self.parts.wpn_fps_snp_mosin_b_sniper.perks = {"silencer"}
 	
-	--Discrete Stock
+	--Discreet Stock
 	self.parts.wpn_fps_snp_mosin_body_black.pcs = {}
 	self.parts.wpn_fps_snp_mosin_body_black.supported = true
 	self.parts.wpn_fps_snp_mosin_body_black.stats = {
 		value = 1,
 		concealment = 1,
-		recoil = -1
+		recoil = -2
 	}
 	
 	--Nagant Bayonet

@@ -840,7 +840,7 @@ function PlayerStandard:_check_stop_shooting()
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		else 
 			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
-				self._unit:camera():play_redirect(self:get_animation("recoil_exit"))
+				self._ext_camera:play_redirect(self:get_animation("recoil_exit"))
 			end
 		end
 		self._shooting = false

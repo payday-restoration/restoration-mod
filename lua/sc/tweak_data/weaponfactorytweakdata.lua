@@ -24527,7 +24527,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_mcx_spear_npc.default_blueprint = deep_clone(self.wpn_fps_ass_mcx_spear.default_blueprint)
 		self.wpn_fps_ass_mcx_spear_npc.override = deep_clone(self.wpn_fps_ass_mcx_spear.override)
 		self.wpn_fps_ass_mcx_spear_npc.uses_parts = deep_clone(self.wpn_fps_ass_mcx_spear.uses_parts)
-
 	end
 
 	if self.parts.wpn_fps_upg_jackhammer_i_autofire then --Pawcio's Jackhammer
@@ -24565,8 +24564,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_rip = a_rip_semi_override
 		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
 		self.wpn_fps_shot_jackhammer.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
-
-
 	end
 
 	if self.parts.wpn_fps_ass_nova4_iw_reflex then --RJC9000 and Synd1cate's Infinite Warfare NV4
@@ -24656,7 +24653,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_nova4_npc.default_blueprint = deep_clone(self.wpn_fps_ass_nova4.default_blueprint)
 		self.wpn_fps_ass_nova4_npc.override = deep_clone(self.wpn_fps_ass_nova4.override)
 		self.wpn_fps_ass_nova4_npc.uses_parts = deep_clone(self.wpn_fps_ass_nova4.uses_parts)
-
 	end
 
 	if self.parts.wpn_fps_rsass_handguard then --youngrich99 and FrenchyAU's Remington RSASS
@@ -24711,7 +24707,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_quad100.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
 		self.parts.wpn_fps_upg_m_quad100.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
 	end
-
 
 	if self.parts.wpn_fps_ass_ar18_barrel then
 
@@ -24784,6 +24779,161 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_ar18_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar18.uses_parts)
 	end
 
+	if self.parts.wpn_fps_upg_g19_fire_selector then
+
+		self.parts.wpn_fps_upg_g19_grip_ctc.supported = true
+		self.parts.wpn_fps_upg_g19_grip_ctc.stats = {
+			value = 1
+		}
+		self.parts.wpn_fps_upg_g19_grip_force.supported = true
+		self.parts.wpn_fps_upg_g19_grip_force.stats = {
+			value = 1,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g19_grip_hogue.supported = true
+		self.parts.wpn_fps_upg_g19_grip_hogue.stats = {
+			value = 1,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_g19_grip_hogue.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+		self.parts.wpn_fps_upg_g19_grip_pachymar.supported = true
+		self.parts.wpn_fps_upg_g19_grip_pachymar.stats = {
+			value = 1,
+			spread = 1,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_upg_g19_magwell.supported = true
+		self.parts.wpn_fps_upg_g19_magwell.has_description = false
+		self.parts.wpn_fps_upg_g19_magwell.stats = {
+			value = 4,
+			reload = 1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g19_magwellcarver.supported = true
+		self.parts.wpn_fps_upg_g19_magwellcarver.has_description = true
+		self.parts.wpn_fps_upg_g19_magwellcarver.stats = {
+			value = 6,
+			reload = 1,
+			recoil = 2,
+			concealment = -2
+		}
+
+		self.parts.wpn_fps_upg_g19_slide_lightweight.supported = true
+		self.parts.wpn_fps_upg_g19_slide_lightweight.stats = {
+			value = 2,
+			recoil = -2,
+			concealment = 1
+		}
+
+		self.parts.wpn_fps_upg_g19_sight_gns01.supported = true
+		self.parts.wpn_fps_upg_g19_sight_gns01.stats = {
+			value = 1
+		}
+		self.parts.wpn_fps_upg_g19_sight_truglo.custom_stats = nil
+		self.parts.wpn_fps_upg_g19_sight_truglo.supported = true
+		self.parts.wpn_fps_upg_g19_sight_truglo.stats = {
+			value = 1
+		}
+		self.parts.wpn_fps_upg_g19_sight_truglo.custom_stats = nil
+		self.parts.wpn_fps_upg_g19_sight_mount.supported = true
+		self.parts.wpn_fps_upg_g19_sight_mount.stats = {
+			value = 1
+		}
+		self.parts.wpn_fps_upg_g19_sight_mount.custom_stats = nil
+
+		self.parts.wpn_fps_upg_g19_mag17.supported = true
+		self.parts.wpn_fps_upg_g19_mag17.has_description = true
+		self.parts.wpn_fps_upg_g19_mag17.stats = {
+			value = 1,
+			extra_ammo = 3,
+			reload = -1
+		}
+		self.parts.wpn_fps_upg_g19_mag32.supported = true
+		self.parts.wpn_fps_upg_g19_mag32.has_description = true
+		self.parts.wpn_fps_upg_g19_mag32.stats = {
+			value = 6,
+			extra_ammo = 16,
+			concealment = -2,
+			reload = -2
+		}
+		self.parts.wpn_fps_upg_g19_mag32.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+		self.parts.wpn_fps_upg_g19_mag33.supported = true
+		self.parts.wpn_fps_upg_g19_mag33.has_description = true
+		self.parts.wpn_fps_upg_g19_mag33.stats = {
+			value = 6,
+			extra_ammo = 18,
+			concealment = -2,
+			reload = -3
+		}
+		self.parts.wpn_fps_upg_g19_mag33.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+
+		self.parts.wpn_fps_upg_g19_barrel_threaded.supported = true
+		self.parts.wpn_fps_upg_g19_barrel_threaded.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_upg_g19_barrel_threaded.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+
+		self.parts.wpn_fps_upg_g19_barrel_ported.supported = true
+		self.parts.wpn_fps_upg_g19_barrel_ported.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_g19_barrel_ported.custom_stats = nil
+
+		--auto-sear
+		self.parts.wpn_fps_upg_g19_fire_selector.supported = true
+		self.parts.wpn_fps_upg_g19_fire_selector.stats = {
+			value = 5,
+			recoil = -4,
+			spread = -1
+		}
+		self.parts.wpn_fps_upg_g19_fire_selector.custom_stats = {
+			rof_mult = 1.05
+		}
+
+		table.insert(self.wpn_fps_pis_g19.uses_parts, "wpn_fps_ass_nova4_iw_reflex")
+		table.insert(self.wpn_fps_pis_g19.uses_parts, "wpn_fps_ass_nova4_iw_elo")
+
+		self.wpn_fps_pis_g19_npc.uses_parts = deep_clone(self.wpn_fps_pis_g19.uses_parts)
+	end
+
+	if self.parts.wpn_fps_upg_svd_b_draco then
+
+		self.parts.wpn_fps_upg_svd_b_draco.supported = true
+		self.parts.wpn_fps_upg_svd_b_draco.stats = {
+			value = 5,
+			spread = -6,
+			recoil = -4,
+			concealment = 8
+		}
+		self.parts.wpn_fps_upg_svd_b_draco.custom_stats = {
+			falloff_start_mult = 0.55,
+			falloff_end_mult = 0.55,
+			ads_speed_mult = 0.85
+		} 
+		self.parts.wpn_fps_upg_svd_b_draco.forbids = { "wpn_fps_snp_siltstone_fg_polymer" }
+		self.parts.wpn_fps_upg_svd_b_draco.override = { 
+			wpn_fps_snp_siltstone_fg_wood = {
+				unit = "units/mods/weapons/wpn_fps_svd_upg_fg_draco/wpn_fps_svd_upg_fg_draco"
+			}
+		}
+
+		self.parts.wpn_fps_svd_upg_fg_draco.supported = true
+		self.parts.wpn_fps_svd_upg_fg_draco.pcs = nil
+		self.parts.wpn_fps_svd_upg_fg_draco.stats = { value = 0 }
+
+		self.parts.wpn_fps_svd_upg_s_draco.supported = true
+		self.parts.wpn_fps_svd_upg_s_draco.stats = deep_clone(stocks.fixed_to_folder_stats)
+		self.parts.wpn_fps_svd_upg_s_draco.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+	end
 
 --Resmod Custom Weapon stuff
 
@@ -25402,7 +25552,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	end
 end)
 
---[[ NPC weaps
+-- [[ NPC weaps
 Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_npc_weaps", function(self)
 
 	self.wpn_fps_ass_shak12_supp = deep_clone(self.wpn_fps_ass_shak12)

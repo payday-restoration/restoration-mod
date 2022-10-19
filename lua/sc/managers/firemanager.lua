@@ -134,54 +134,82 @@ function FireManager:add_doted_enemy(enemy_unit, fire_damage_received_time, weap
 end
 
 function FireManager:_add_doted_enemy(enemy_unit, fire_damage_received_time, weapon_unit, dot_length, dot_damage, user_unit, is_molotov)
-	local contains = false
+	if not self._doted_enemies then
+		return
+	end
 
-	if self._doted_enemies then
-		for _, dot_info in ipairs(self._doted_enemies) do
-			if dot_info.enemy_unit == enemy_unit then
-				--instead of always updating fire_damage_received_time, only do so (plus update the dot length) if the new length
-				--is longer than the remaining DoT time (DoT damage also gets replaced as it's pretty much a new DoT instance)
-				if dot_info.fire_damage_received_time + dot_info.dot_length < fire_damage_received_time + dot_length then
-					dot_info.fire_damage_received_time = fire_damage_received_time
-					dot_info.dot_length = dot_length
-					dot_info.dot_damage = dot_damage
-				else
-					--to avoid a higher damage DoT from not applying, or applying with a longer timer
-					if dot_info.dot_damage < dot_damage then
-						dot_info.fire_damage_received_time = fire_damage_received_time
-						dot_info.dot_length = dot_length
-						dot_info.dot_damage = dot_damage
-					end
+	local dot_info = nil
+
+	for _, cur_dot_info in ipairs(self._doted_enemies) do
+		if cur_dot_info.enemy_unit == enemy_unit then
+			--instead of always updating fire_damage_received_time, only do so (plus update the dot length) if the new length
+			--is longer than the remaining DoT time (DoT damage also gets replaced as it's pretty much a new DoT instance)
+			if cur_dot_info.fire_damage_received_time + cur_dot_info.dot_length < fire_damage_received_time + dot_length then
+				cur_dot_info.fire_damage_received_time = fire_damage_received_time
+				cur_dot_info.dot_length = dot_length
+				cur_dot_info.dot_damage = dot_damage
+			else
+				--to avoid a higher damage DoT from not applying, or applying with a longer timer
+				if cur_dot_info.dot_damage < dot_damage then
+					cur_dot_info.fire_damage_received_time = fire_damage_received_time
+					cur_dot_info.dot_length = dot_length
+					cur_dot_info.dot_damage = dot_damage
 				end
+			end
 
-				--always override the attacker and weapons used so that the latest attacker gets credited properly
-				dot_info.weapon_unit = weapon_unit
-				dot_info.user_unit = user_unit
-				dot_info.is_molotov = is_molotov
+			--always override the attacker and weapons used so that the latest attacker gets credited properly
+			cur_dot_info.weapon_unit = weapon_unit
+			cur_dot_info.user_unit = user_unit
+			cur_dot_info.is_molotov = is_molotov
 
-				contains = true
+			dot_info = cur_dot_info
+
+			break
+		end
+	end
+
+	if dot_info then
+		dot_info.fire_damage_received_time = fire_damage_received_time
+		dot_info.weapon_unit = weapon_unit
+		dot_info.user_unit = user_unit
+		dot_info.is_molotov = is_molotov
+		dot_info.dot_damage = dot_damage
+		dot_info.dot_length = dot_length
+
+	else
+		dot_info = {
+			fire_dot_counter = 0,
+			enemy_unit = enemy_unit,
+			fire_damage_received_time = fire_damage_received_time,
+			weapon_unit = weapon_unit,
+			dot_length = dot_length,
+			dot_damage = dot_damage,
+			user_unit = user_unit,
+			is_molotov = is_molotov
+		}
+
+		table.insert(self._doted_enemies, dot_info)
+
+		local has_delayed_info = false
+
+		for index, delayed_dot in pairs(self.predicted_dot_info) do
+			if enemy_unit == delayed_dot.enemy_unit then
+				dot_info.sound_source = delayed_dot.sound_source
+				dot_info.fire_effects = delayed_dot.fire_effects
+
+				table.remove(self.predicted_dot_info, index)
+
+				has_delayed_info = true
 			end
 		end
 
-		if not contains then
-			local dot_info = {
-				fire_dot_counter = 0,
-				enemy_unit = enemy_unit,
-				fire_damage_received_time = fire_damage_received_time,
-				weapon_unit = weapon_unit,
-				dot_length = dot_length,
-				dot_damage = dot_damage,
-				user_unit = user_unit,
-				is_molotov = is_molotov
-			}
-
-			table_insert(self._doted_enemies, dot_info)
+		if not has_delayed_info then
 			self:_start_enemy_fire_effect(dot_info)
 			self:start_burn_body_sound(dot_info)
 		end
-
-		self:check_achievemnts(enemy_unit, fire_damage_received_time)
 	end
+
+	self:check_achievemnts(enemy_unit, fire_damage_received_time)
 end
 
 function FireManager:detect_and_give_dmg(params)

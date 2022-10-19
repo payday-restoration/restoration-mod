@@ -1006,7 +1006,7 @@ function DOTBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, bla
 	local hit_unit = col_ray.unit
 
 	if result and hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() and alive(weapon_unit) then
-		result = self:start_dot_damage(col_ray, weapon_unit, self:_dot_data_by_weapon(weapon_unit))
+		result = self:start_dot_damage(col_ray, weapon_unit, self:_dot_data_by_weapon(weapon_unit), alive(weapon_unit) and weapon_unit:base():get_name_id(), user_unit)
 	end
 
 	return result

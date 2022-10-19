@@ -978,6 +978,7 @@ local muzzle_device = {
 						dot_damage = 1.5,
 						dot_length = 1.1,
 						dot_tick_period = 0.5,
+						use_weapon_damage_falloff = true,
 						hurt_animation_chance = 0.05
 					}
 				}
@@ -1000,6 +1001,7 @@ local muzzle_device = {
 						dot_damage = 1.5,
 						dot_length = 2.1,
 						dot_tick_period = 0.5,
+						use_weapon_damage_falloff = true,
 						hurt_animation_chance = 0.1
 					}
 				}
@@ -1022,6 +1024,7 @@ local muzzle_device = {
 						dot_damage = 1.5,
 						dot_length = 3.1,
 						dot_tick_period = 0.5,
+						use_weapon_damage_falloff = true,
 						hurt_animation_chance = 0.15
 					}
 				}
@@ -8598,6 +8601,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				dot_damage = 1.5,
 				dot_length = 4.1,
 				dot_tick_period = 0.5,
+				use_weapon_damage_falloff = true,
 				hurt_animation_chance = 0.20
 			}
 		}

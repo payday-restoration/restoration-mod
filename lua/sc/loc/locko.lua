@@ -1862,6 +1862,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_crossbow_single"] = "쇠뇌",
 
 		["menu_akimbo"] = "아킴보+",
+		
+		["menu_unsupported"] = "지원하지 않음",
 
 		["st_menu_value"] = "가격:",
 

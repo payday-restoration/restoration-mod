@@ -1989,6 +1989,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_akimbo"] = "Akimbo+",
 
+		["menu_unsupported"] = "Unsupported",
+
 		["st_menu_value"] = "Value:",
 
 		["st_menu_skill_use"] = "SKILL USE:",

@@ -3558,7 +3558,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Just fucking put this shit on everything
 	for wep_id, i in pairs(self) do
 		if self[ wep_id ].stats then
-			self[ wep_id ].recategorize = { "wpn_special" }
+			self[ wep_id ].recategorize = { "unsupported" }
 			self[ wep_id ].ads_speed = 0.169
 			self[ wep_id ].damage_falloff = {
 				start_dist = 690,
@@ -15072,6 +15072,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.always_play_anims = true
 				self:generate_custom_weapon_stats(weap)	
 			end
+
+			if weap.supported and weap.recategorize[1] == "unsupported" then
+				weap.recategorize[1] = "wpn_special"
+			end
+			
 			if weap.bipod_camera_spin_limit then
 				weap.bipod_camera_spin_limit = 65
 				weap.bipod_camera_pitch_limit = 20

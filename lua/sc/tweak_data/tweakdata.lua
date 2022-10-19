@@ -862,6 +862,14 @@ table.insert(dyslexia[2].primaries, { "miniguns" })
 		
 table.insert(dyslexia[2].primaries, { "wpn_special" })
 
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 2
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+		table.insert(dyslexia[2].primaries, { "unsupported" })
+		break
+	end
+end
+
 --SECONDARIES
 table.insert(dyslexia[2].secondaries, { "light_pis" })
 table.insert(dyslexia[2].secondaries, { "heavy_pis" })
@@ -893,6 +901,13 @@ for i, weap in pairs(tweak_data.weapon) do
 end
 
 table.insert(dyslexia[2].secondaries, { "wpn_special" })
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+		table.insert(dyslexia[2].secondaries, { "unsupported" })
+		break
+	end
+end
 
 if restoration.Options:GetValue("OTHER/WpnCat") then
 	tweak_data.gui.buy_weapon_categories = dyslexia[restoration.Options:GetValue("OTHER/WpnCat")]

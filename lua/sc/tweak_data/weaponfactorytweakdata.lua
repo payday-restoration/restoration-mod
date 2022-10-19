@@ -7357,6 +7357,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	
 	--Just in case
 	self.parts.wpn_fps_ammo_type.supported = true
+	self.parts.wpn_fps_ammo_type.cull = true
 	self.parts.wpn_fps_ammo_type.stats = {value = 1}
 	self.parts.wpn_fps_ammo_type.custom_stats = {}
 	
@@ -24971,6 +24972,19 @@ for _, part in pairs(self.parts) do
 
 		if not cosmetic_part then
 			self:generate_custom_mod_stats(part)
+		end
+	end
+	if part.type then
+		if part.type == "ammo" then
+			if part.cull then
+				part.pcs = nil
+				part.stats = { value = 0 }
+				part.custom_stats = nil
+			end
+		elseif part.type ~= "ammo" then
+			if part.stats then
+				part.stats.damage = nil
+			end
 		end
 	end
 end

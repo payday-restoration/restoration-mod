@@ -15073,6 +15073,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self:generate_custom_weapon_stats(weap)	
 			end
 
+			if weap.fire_mode_data then
+				if weap.fire_mode_data.single then
+					weap.fire_mode_data.single = nil
+				end
+				if weap.fire_mode_data.auto then
+					weap.fire_mode_data.auto = nil
+				end
+			end
+
 			if weap.supported and weap.recategorize[1] == "unsupported" then
 				weap.recategorize[1] = "wpn_special"
 			end

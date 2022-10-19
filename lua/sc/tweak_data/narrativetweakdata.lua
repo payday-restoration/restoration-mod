@@ -239,6 +239,9 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 	
 end)
 
+--[[
+Crashes the filter on Crime.net online for some reason, fix later
+
 local create_job_name=NarrativeTweakData.create_job_name
 function NarrativeTweakData:create_job_name(job_id, ...)
 	local text_string, color_ranges=create_job_name(self, job_id, ...)
@@ -258,3 +261,4 @@ function NarrativeTweakData:create_job_name(job_id, ...)
 		end
 	return text_string, color_ranges
 end
+]]--

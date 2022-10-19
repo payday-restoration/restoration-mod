@@ -110,9 +110,6 @@
 			<!-- Recoil anims cause bugey head rotation -->
 			<key at="enter" set_extension="anim_data" extension_key="base_no_recoil" extension_value="true"/>
 			<key at="exit" set_extension="anim_data" extension_key="base_no_recoil" extension_value="false"/>
-
-			<key at="enter" set_extension="anim_data" extension_key="base_no_reload" extension_value="true"/>
-			<key at="exit" set_extension="anim_data" extension_key="base_no_reload" extension_value="false"/>
 		</target>
 	</tweak>
 	<!-- Shield navlink displacement fix -->

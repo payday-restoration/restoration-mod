@@ -10683,6 +10683,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Durable Blade
 	self.parts.wpn_fps_saw_m_blade_durable.pcs = {}
 	self.parts.wpn_fps_saw_m_blade_durable.supported = true
+	self.parts.wpn_fps_saw_m_blade_durable.keep_damage = true
 	self.parts.wpn_fps_saw_m_blade_durable.stats = {
 		value = 1,
 		extra_ammo = 10,
@@ -10693,6 +10694,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Sharp Blade
 	self.parts.wpn_fps_saw_m_blade_sharp.pcs = {}
 	self.parts.wpn_fps_saw_m_blade_sharp.supported = true
+	self.parts.wpn_fps_saw_m_blade_sharp.keep_damage = true
 	self.parts.wpn_fps_saw_m_blade_sharp.stats = {
 		value = 1,
 		extra_ammo = -5,
@@ -14469,8 +14471,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shrew", "resmod_shrew", function(s
 	self.parts.wpn_fps_pis_shrew_sl_milled.supported = true
 	self.parts.wpn_fps_pis_shrew_sl_milled.stats = {
 		value = 2,
-		recoil = 2,
-		concealment = -1
+		recoil = -2,
+		concealment = 1
 	}
 	
 	self.wpn_fps_pis_shrew.override.wpn_fps_pis_1911_co_1 = {parent = "barrel"}
@@ -15675,7 +15677,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(s
 	self.parts.wpn_fps_pis_stech_g_tactical.supported = true
 	self.parts.wpn_fps_pis_stech_g_tactical.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 	self.parts.wpn_fps_pis_stech_g_tactical.custom_stats = {
@@ -20178,6 +20180,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 3
 		}
 
+		--(Crosskill Guard) Aftermarket Slide
+		self.parts.wpn_fps_pis_shrew_sl_tt.supported = true
+		self.parts.wpn_fps_pis_shrew_sl_tt.stats = {
+			value = 1
+		}
+
 		--(Czech 92) Argent Slide
 		self.parts.wpn_fps_pis_czech_sl_chrome.supported = true
 		self.parts.wpn_fps_pis_czech_sl_chrome.stats = {
@@ -21959,6 +21967,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		--(OVE9000 Saw) Ripper Blade
 		self.parts.wpn_fps_saw_m_blade_scream.supported = true
+		self.parts.wpn_fps_saw_m_blade_scream.keep_damage = true
 		self.parts.wpn_fps_saw_m_blade_scream.stats = {
 			value = 1,
 			extra_ammo = -5,
@@ -24982,7 +24991,7 @@ for _, part in pairs(self.parts) do
 				part.custom_stats = nil
 			end
 		elseif part.type ~= "ammo" then
-			if part.stats then
+			if not part.keep_damage and part.stats then
 				part.stats.damage = nil
 			end
 		end

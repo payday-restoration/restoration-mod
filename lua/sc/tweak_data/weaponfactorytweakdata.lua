@@ -22816,86 +22816,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			rays = 6
 		}
 		self.wpn_fps_shot_mp153.override = {
-			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug",
-				desc_id = "bm_wp_upg_a_slug_desc",
-				supported = true,
-				stats = {
-					value = 10,
-					concealment = -3,
-					total_ammo_mod = -25,
-					damage = 15,
-					spread = 20,
-					spread_multi = {1, 1},	
-					recoil = -20,
-					moving_spread = 0
-				},
-				custom_stats = {
-					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-					rays = 1,
-					armor_piercing_add = 1,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					falloff_start_mult = 1.25,
-					falloff_end_mult = 2.0,
-					ads_speed_mult = 1.10
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 15
-				},
-				custom_stats = {
-					falloff_start_mult = 0.8,
-					falloff_end_mult = 0.8,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 6
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 15
-				},
-				custom_stats = {
-					falloff_start_mult = 0.8,
-					falloff_end_mult = 0.8,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 6
-				}
-			},			
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -50,
-					recoil = -25,
-					spread = 5,
-					spread_multi = {1, 1},	
-					damage = 45
-				},
-				custom_stats = {
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase",
-					sms = 0.85
-				}
-			},
-			wpn_fps_upg_a_rip = a_ripg_semi_override,
+			wpn_fps_upg_a_slug = a_slug_semi_override,
+			wpn_fps_upg_a_custom = a_custom_semi_override,
+			wpn_fps_upg_a_custom_free = a_custom_semi_override,			
+			wpn_fps_upg_a_explosive = a_explosive_semi_override,
+			wpn_fps_upg_a_rip = a_rip_semi_override,
 			wpn_fps_upg_a_piercing = a_piercing_semi_override,
 			wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
 		}	
@@ -25120,6 +25045,55 @@ self.parts.wpn_fps_pis_judge_b_legend.supported = true
 self.parts.wpn_fps_shot_shorty_b_legendary.supported = true
 self.parts.wpn_fps_ass_m14_b_legendary.supported = true
 
+local exclude = {
+	"wpn_fps_pis_maxim9_a_tranq",
+	"wpn_fps_snp_mosin_a_tranq",
+	"wpn_fps_lmg_mg42_dummy_mag",
+	"wpn_fps_upg_a_custom",
+	"wpn_fps_upg_a_custom_free",
+	"wpn_fps_upg_a_piercing",
+	"wpn_fps_upg_a_slug",
+	"wpn_fps_upg_a_explosive",
+	"wpn_fps_upg_a_dragons_breath",
+	"wpn_fps_upg_a_rip",
+	"wpn_fps_bow_hunter_m_standard",
+	"wpn_fps_upg_a_crossbow_explosion",
+	"wpn_fps_upg_a_crossbow_poison",
+	"wpn_fps_bow_frankish_m_standard",
+	"wpn_fps_bow_frankish_m_poison",
+	"wpn_fps_bow_frankish_m_explosive",
+	"wpn_fps_bow_arblast_m_standard",
+	"wpn_fps_bow_arblast_m_explosive",
+	"wpn_fps_bow_arblast_m_poison",
+	"wpn_fps_bow_ecp_m_arrows",
+	"wpn_fps_bow_ecp_m_arrows_standard",
+	"wpn_fps_bow_ecp_m_arrows_explosive",
+	"wpn_fps_bow_ecp_m_arrows_poison",
+	"wpn_fps_bow_plainsrider_m_standard",
+	"wpn_fps_upg_a_bow_explosion",
+	"wpn_fps_upg_a_bow_poison",
+	"wpn_fps_bow_long_m_standard",
+	"wpn_fps_bow_long_m_explosive",
+	"wpn_fps_bow_long_m_poison",
+	"wpn_fps_bow_elastic_m_standard",
+	"wpn_fps_bow_elastic_m_explosive",
+	"wpn_fps_bow_elastic_m_poison",
+	"wpn_fps_upg_a_grenade_launcher_incendiary",
+	"wpn_fps_upg_a_grenade_launcher_electric",
+	"wpn_fps_upg_a_grenade_launcher_poison",
+	"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter",
+	"wpn_fps_upg_a_grenade_launcher_electric_arbiter",
+	"wpn_fps_upg_a_grenade_launcher_poison_arbiter",
+	"wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl",
+	"wpn_fps_upg_a_grenade_launcher_electric_ms3gl",
+	"wpn_fps_upg_a_grenade_launcher_poison_ms3gl",
+	"wpn_fps_gre_ms3gl_conversion_grenade_poison",
+	"wpn_fps_ass_osipr_m_gl",
+	"wpn_fps_ass_osipr_m_gl_incendiary",
+	"wpn_fps_ass_osipr_m_gl_electric",
+	"wpn_fps_ass_osipr_m_gl_poison",
+}
+
 for _, part in pairs(self.parts) do
 	if not part.supported and part.stats then
 		local cosmetic_part = true
@@ -25134,13 +25108,19 @@ for _, part in pairs(self.parts) do
 		end
 	end
 	if part.type then
+		for k, v in ipairs(exclude) do
+			if part and not part.no_cull and _ == v then
+				part.no_cull = true
+				break
+			end
+		end
 		if part.type == "ammo" then
-			if part.cull then
+			if part.cull or not part.no_cull then
 				part.pcs = nil
 				part.stats = { value = 0 }
 				part.custom_stats = nil
 			end
-		elseif part.type ~= "ammo" then
+		else
 			if not part.keep_damage and part.stats then
 				part.stats.damage = nil
 			end

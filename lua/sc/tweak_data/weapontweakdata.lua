@@ -6440,7 +6440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.stats = {
 					damage = 18,
 					spread = 71,
-					recoil = 85,
+					recoil = 89,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -6484,7 +6484,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.stats = {
 					damage = 18,
 					spread = 76,
-					recoil = 81,
+					recoil = 87,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -7825,8 +7825,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.corgi.stats = {
 					damage = 24,
-					spread = 85,
-					recoil = 75,
+					spread = 84,
+					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -13088,8 +13088,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.p99.stats = {
 			damage = 24,
-			spread = 58,
-			recoil = 89,
+			spread = 60,
+			recoil = 87,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 30,
@@ -13110,6 +13110,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.p99.panic_suppression_chance = 0.05
 		self.p99.timers.reload_exit_empty = 0.5
 		self.p99.timers.reload_exit_not_empty = 0.65
+	end
+
+	if self.g19 then --Pawcio's Glock 19
+		self.g19.recategorize = {"light_pis"}
+		self.g19.damage_type = "pistol"
+		self.g19.lock_slide = true
+		self.g19.fire_mode_data.fire_rate = 0.08571428571
+		self.g19.single.fire_rate = 0.08571428571
+		self.g19.no_auto_anims = true
+		self.g19.tactical_reload = 1
+		self.g19.CLIP_AMMO_MAX = 15
+		self.g19.AMMO_MAX = 75
+		self.g19.sounds.stop_fire = "mp9_stop"
+		self.g19.kick = self.stat_info.kick_tables.even_recoil
+		self.g19.supported = true
+		self.g19.ads_speed = 0.200
+		self.g19.damage_falloff = {
+			start_dist = 1400,
+			end_dist = 3400,
+			min_mult = 0.25
+		}
+		self.g19.stats = {
+			damage = 24,
+			spread = 58,
+			recoil = 87,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 31,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.g19.stats_modifiers = nil
+		self.g19.reload_speed_multiplier = 1.1
+		self.g19.weapon_hold = "packrat"
+		self.g19.timers = deep_clone(self.lemming.timers)
 	end
 
 	if self.fp45 then --Pawcio's FP45 Liberator
@@ -15073,6 +15112,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self:generate_custom_weapon_stats(weap)	
 			end
 
+			if weap.fire_mode_data then
+				if weap.fire_mode_data.single then
+					weap.fire_mode_data.single = nil
+				end
+				if weap.fire_mode_data.auto then
+					weap.fire_mode_data.auto = nil
+				end
+			end
+
 			if weap.supported and weap.recategorize[1] == "unsupported" then
 				weap.recategorize[1] = "wpn_special"
 			end
@@ -15202,7 +15250,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		akimbo = 1.1,
 		pistol = 1.2, --Compensate for low range.
 		smg = 1.1,
-			pdw = 0.75,
+			pdw = 0.8,
 			lmg = 0.6,
 			minigun = 0.4,
 		shotgun = 0.8, --Compensate for ease of aim+multikills and/or versatility.

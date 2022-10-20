@@ -16,6 +16,10 @@ function CopActionDodge:init(action_desc, common_data)
 
 	local redir_res = common_data.ext_movement:play_redirect("dodge")
 	if redir_res then
+		if self._ext_anim.upper_body_active and not self._ext_anim.upper_body_empty then
+			self._ext_movement:play_redirect("up_idle")
+		end
+		
 		self._descriptor = action_desc
 		self._last_vel_z = 0
 

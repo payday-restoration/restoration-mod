@@ -3941,7 +3941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g18c.desc_id = "bm_x_g18c_sc_desc"						
 				self.x_g18c.fire_mode_data.fire_rate = 0.05454545454
 				self.x_g18c.single.fire_rate = 0.05454545454
-				self.x_g18c.CLIP_AMMO_MAX = 36
+				self.x_g18c.CLIP_AMMO_MAX = 34
 				self.x_g18c.AMMO_MAX = 180
 				self.x_g18c.kick = self.stat_info.kick_tables.moderate_kick
 				self.x_g18c.supported = true
@@ -4075,7 +4075,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g17.has_description = true
 				self.x_g17.desc_id = "bm_x_g17_sc_desc"					
 				self.x_g17.kick = self.stat_info.kick_tables.even_recoil
-				self.x_g17.CLIP_AMMO_MAX = 36
+				self.x_g17.CLIP_AMMO_MAX = 34
 				self.x_g17.AMMO_MAX = 150
 				self.x_g17.FIRE_MODE = "single"
 				self.x_g17.fire_mode_data.fire_rate = 0.08571428571
@@ -4428,7 +4428,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_18c.has_description = true
 				self.glock_18c.fire_mode_data.fire_rate = 0.05454545454
 				self.glock_18c.auto.fire_rate = 0.05454545454
-				self.glock_18c.CLIP_AMMO_MAX = 18
+				self.glock_18c.CLIP_AMMO_MAX = 17
 				self.glock_18c.AMMO_MAX = 90
 				self.glock_18c.kick = self.stat_info.kick_tables.left_recoil
 				self.glock_18c.supported = true
@@ -4685,7 +4685,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_17.fire_mode_data.fire_rate = 0.08571428571
 				self.glock_17.single.fire_rate = 0.08571428571
 				self.glock_17.AMMO_MAX = 75
-				self.glock_17.CLIP_AMMO_MAX = 18
+				self.glock_17.CLIP_AMMO_MAX = 17
 				self.glock_17.kick = self.stat_info.kick_tables.even_recoil
 				self.glock_17.supported = true
 				self.glock_17.ads_speed = 0.200
@@ -15216,21 +15216,21 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.055, 0.028}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.054, 0.027}},
+		{damage = 18,  pickup = {0.057, 0.028}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.055, 0.027}},
 		{damage = 24,  pickup = {0.053, 0.027}},
-		{damage = 30,  pickup = {0.052, 0.026}},
-		{damage = 45,  pickup = {0.050, 0.026}},
-		{damage = 60,  pickup = {0.047, 0.024}},
-		{damage = 90,  pickup = {0.045, 0.023}},
-		{damage = 120, pickup = {0.041, 0.022}},
-		{damage = 180, pickup = {0.036, 0.020}},
-		{damage = 240, pickup = {0.031, 0.018}},
-		{damage = 360, pickup = {0.029, 0.017}},
-		{damage = 600, pickup = {0.026, 0.016}}, --Light GLs
-		{damage = 800, pickup = {0.021, 0.013}}, --Heavy GLs
-		{damage = 900, pickup = {0.015, 0.010}}, --Rocket Launchers
-		{damage = 1200, pickup = {0.012, 0.009}} --Rocket Launchers
+		{damage = 30,  pickup = {0.051, 0.026}},
+		{damage = 45,  pickup = {0.049, 0.025}},
+		{damage = 60,  pickup = {0.046, 0.024}},
+		{damage = 90,  pickup = {0.043, 0.023}},
+		{damage = 120, pickup = {0.040, 0.022}},
+		{damage = 180, pickup = {0.037, 0.020}},
+		{damage = 240, pickup = {0.033, 0.018}},
+		{damage = 360, pickup = {0.029, 0.016}},
+		{damage = 600, pickup = {0.025, 0.014}}, --Light GLs
+		{damage = 800, pickup = {0.021, 0.011}}, --Heavy GLs
+		{damage = 900, pickup = {0.016, 0.008}}, --Rocket Launchers
+		{damage = 1200, pickup = {0.011, 0.005}}
 	}
 
 	--Determine the damage tier the gun falls under.

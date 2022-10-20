@@ -3306,7 +3306,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.supported = true
 	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
-		extra_ammo = 15,
+		extra_ammo = 16,
 		concealment = -2,
 		reload = -3
 	}
@@ -10905,7 +10905,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g17", "resmod_x_g17", function(s
 	self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_m_mag_33rnd.supported = true
 	self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
-		extra_ammo = 30,
+		extra_ammo = 32,
 		concealment = -2,
 		reload = -3
 	}
@@ -14706,7 +14706,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g18c", "resmod_x_g18c", function
 		supported = true,
 		stats = {
 			value = 6,
-			extra_ammo = 30,
+			extra_ammo = 32,
 			concealment = -2,
 			reload = -3
 		}
@@ -23900,7 +23900,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.wpn_fps_pis_x_g17.override.wpn_fps_upg_m_celerity = {
 			stats = {
-				extra_ammo = 30,
+				extra_ammo = 32,
 				concealment = -3,
 				spread = -1,
 				reload = -1
@@ -23908,7 +23908,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.wpn_fps_pis_x_g18c.override.wpn_fps_upg_m_celerity = {
 			stats = {
-				extra_ammo = 30,
+				extra_ammo = 32,
 				concealment = -3,
 				spread = -1,
 				reload = -1
@@ -23925,7 +23925,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_upg_m_sgmt.supported = true
 		self.parts.wpn_fps_upg_m_sgmt.stats = deep_clone(self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats)
-		self.parts.wpn_fps_upg_m_sgmt.stats.extra_ammo = 32
+		self.parts.wpn_fps_upg_m_sgmt.stats.extra_ammo = 33
 		self.parts.wpn_fps_upg_m_sgmt.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_sgmt.stats.reload = -3
 		self.parts.wpn_fps_upg_m_sgmt.custom_stats = { ads_speed_mult = 1.1 }
@@ -23946,14 +23946,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.wpn_fps_pis_x_g17.override.wpn_fps_upg_m_sgmt = {
 			stats = {
-				extra_ammo = 64,
+				extra_ammo = 66,
 				concealment = -4,
 				reload = -3
 			}
 		}
 		self.wpn_fps_pis_x_g18c.override.wpn_fps_upg_m_sgmt = {
 			stats = {
-				extra_ammo = 64,
+				extra_ammo = 66,
 				concealment = -4,
 				reload = -3
 			}
@@ -23968,7 +23968,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_upg_m_vecsgmt.supported = true
 		self.parts.wpn_fps_upg_m_vecsgmt.stats = deep_clone(self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats)
-		self.parts.wpn_fps_upg_m_vecsgmt.stats.extra_ammo = 20
+		self.parts.wpn_fps_upg_m_vecsgmt.stats.extra_ammo = 21
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.reload = -3
 		self.parts.wpn_fps_upg_m_vecsgmt.custom_stats = { ads_speed_mult = 1.1 }
@@ -24740,7 +24740,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -1
 		}
 		self.parts.wpn_fps_upg_g19_magwellcarver.supported = true
-		self.parts.wpn_fps_upg_g19_magwellcarver.has_description = true
+		self.parts.wpn_fps_upg_g19_magwellcarver.has_description = false
 		self.parts.wpn_fps_upg_g19_magwellcarver.stats = {
 			value = 6,
 			reload = 1,
@@ -24772,14 +24772,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_g19_sight_mount.custom_stats = nil
 
 		self.parts.wpn_fps_upg_g19_mag17.supported = true
-		self.parts.wpn_fps_upg_g19_mag17.has_description = true
+		self.parts.wpn_fps_upg_g19_mag17.has_description = false
 		self.parts.wpn_fps_upg_g19_mag17.stats = {
 			value = 1,
-			extra_ammo = 3,
+			extra_ammo = 2,
 			reload = -1
 		}
 		self.parts.wpn_fps_upg_g19_mag32.supported = true
-		self.parts.wpn_fps_upg_g19_mag32.has_description = true
+		self.parts.wpn_fps_upg_g19_mag32.has_description = false
 		self.parts.wpn_fps_upg_g19_mag32.stats = {
 			value = 6,
 			extra_ammo = 16,
@@ -24790,7 +24790,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ads_speed_mult = 1.05
 		}
 		self.parts.wpn_fps_upg_g19_mag33.supported = true
-		self.parts.wpn_fps_upg_g19_mag33.has_description = true
+		self.parts.wpn_fps_upg_g19_mag33.has_description = false
 		self.parts.wpn_fps_upg_g19_mag33.stats = {
 			value = 6,
 			extra_ammo = 18,
@@ -24824,10 +24824,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			rof_mult = 1.05
 		}
 
-		table.insert(self.wpn_fps_pis_g19.uses_parts, "wpn_fps_ass_nova4_iw_reflex")
-		table.insert(self.wpn_fps_pis_g19.uses_parts, "wpn_fps_ass_nova4_iw_elo")
-
-		self.wpn_fps_pis_g19_npc.uses_parts = deep_clone(self.wpn_fps_pis_g19.uses_parts)
+		self.wpn_fps_pis_g19.override = self.wpn_fps_pis_g19.override or {}
+		
 	end
 
 	if self.parts.wpn_fps_upg_svd_b_draco then

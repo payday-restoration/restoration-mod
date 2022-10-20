@@ -6440,7 +6440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.stats = {
 					damage = 18,
 					spread = 71,
-					recoil = 85,
+					recoil = 89,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -6484,7 +6484,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.stats = {
 					damage = 18,
 					spread = 76,
-					recoil = 81,
+					recoil = 87,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -7825,8 +7825,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.corgi.stats = {
 					damage = 24,
-					spread = 85,
-					recoil = 75,
+					spread = 84,
+					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -15250,7 +15250,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		akimbo = 1.1,
 		pistol = 1.2, --Compensate for low range.
 		smg = 1.1,
-			pdw = 0.75,
+			pdw = 0.8,
 			lmg = 0.6,
 			minigun = 0.4,
 		shotgun = 0.8, --Compensate for ease of aim+multikills and/or versatility.

@@ -282,8 +282,6 @@ function restoration:Init()
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
-		"hox_1",
-		"xmn_hox_1",
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"fex", --Buluc's Mansion	

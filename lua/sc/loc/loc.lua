@@ -363,6 +363,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_tag"] = "12:43 AM, J. Edgar Hoover Building",
 		["restoration_level_data_bph"] = "TIME CLASSIFIED, Fort Clatsop Prison",
 		["restoration_level_data_nmh"] = "8:24 PM, Mercy Hospital - Isolation Ward",
+		["restoration_level_data_nmh_res"] = "8:24 PM, Mercy Hospital - Isolation Ward",
 		["restoration_level_data_vit"] = "1:07 PM, Washington D.C. - The White House",
 		["restoration_level_data_mex"] = "TIME CLASSIFIED, United States - Southern Border",
 		["restoration_level_data_mex_cooking"] = "TIME CLASSIFIED, Mexico - Coyopa Compound",

@@ -2483,6 +2483,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.is_special = true
 	self.phalanx_minion.rotation_speed = 0.75
 	self.phalanx_minion.no_asu = true
+	self.phalanx_minion.no_retreat = true
 	self.phalanx_minion.speech_prefix_p1 = "fug"
 	self.phalanx_minion.speech_prefix_p2 = nil
 	self.phalanx_minion.speech_prefix_count = 1	
@@ -2499,7 +2500,8 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	table.insert(self._enemy_list, "phalanx_minion")
 	
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
-	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"	
+	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
+	self.phalanx_minion_assault.no_retreat = false
 	table.insert(self._enemy_list, "phalanx_minion_assault")
 end
 
@@ -2535,6 +2537,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.is_special = true
 	self.phalanx_vip.rotation_speed = 0.75
 	self.phalanx_vip.no_asu = true
+	self.phalanx_vip.no_retreat = true
 	self.phalanx_vip.custom_voicework = nil
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
 	self.phalanx_vip.speech_prefix_p2 = nil

@@ -3754,7 +3754,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_fg_combo2.stats = {
 		value = 3,
 		concealment = -1,
-		recoil = 2
+		spread = 1
 	}
 	
 	--The Tactical Russian Handguard
@@ -3767,7 +3767,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_fg_combo3.supported = true
 	self.parts.wpn_upg_ak_fg_combo3.stats = {
 		value = 5,
-		spread = 2,
+		spread = 1,
+		recoil = 2,
 		concealment = -2
 	}
 	
@@ -4215,6 +4216,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		20,
 		30, 
 		40
+	}
+	self.parts.wpn_upg_saiga_fg_lowerrail.stats = {
+		value = 5,
+		spread = 1,
+		recoil = 2,
+		concealment = -2
 	}
 
 	self.parts.wpn_upg_saiga_fg_standard.override = {}
@@ -10036,8 +10043,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ak_fg_krebs.supported = true
 	self.parts.wpn_fps_upg_ak_fg_krebs.stats = {
 		value = 3,
-		recoil = -2,
-		concealment = 1
+		recoil = 2,
+		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter.stance_mod = { 
 		wpn_fps_ass_akm = {
@@ -10096,8 +10103,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ak_fg_trax.supported = true
 	self.parts.wpn_fps_upg_ak_fg_trax.stats = {
 		value = 5,
-		spread = 2,
-		recoil = -2,
+		spread = -1,
+		recoil = 4,
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_specter.stance_mod = { 
@@ -14994,7 +15001,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shepheard", "resmod_shepheard", fu
 		value = 1,
 		extra_ammo = -10,
 		reload = 2,
-		concealment = 2			
+		concealment = 2
+	}
+	self.parts.wpn_fps_smg_shepheard_mag_extended.custom_stats = {
+		ads_speed_mult = 0.95
 	}
 	
 	--No Stock
@@ -19856,40 +19866,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_tilt_mag_tactical.supported = true						
 		self.parts.wpn_fps_ass_tilt_mag_tactical.stats = {
 				value = 1,
-				recoil = -1,
+				recoil = -2,
 				concealment = 1
 			}	
 		self.parts.wpn_fps_ass_tilt_g_wood.supported = true	
 		self.parts.wpn_fps_ass_tilt_g_wood.stats = {
 				value = 2,
 				spread = -1,
-				recoil = 1
+				recoil = 2
 			}
-		self.parts.wpn_fps_ass_tilt_g_wood.custom_stats = {falloff_start_mult = 1, falloff_end_mult = 1}		
-		self.parts.wpn_fps_ass_tilt_stock_wood.supported = true		
-		self.parts.wpn_fps_ass_tilt_stock_wood.stats = {
-				value = 1
-			}			
-		self.parts.wpn_fps_ass_tilt_stock_fold.supported = true			
-		self.parts.wpn_fps_ass_tilt_stock_fold.stats = {
-				value = 3,
-				recoil = -1,
-				concealment = 1
-			}	
-		self.parts.wpn_fps_ass_tilt_stock_tactical.supported = true	
-		self.parts.wpn_fps_ass_tilt_stock_tactical.stats = {
-				value = 3,
-				spread = 1,
-				recoil = -1,
-				concealment = -1
-		}
-		self.parts.wpn_fps_ass_tilt_stock_tactical.custom_stats = {falloff_start_mult = 1, falloff_end_mult = 1}
+		self.parts.wpn_fps_ass_tilt_g_wood.custom_stats = nil
+		self.parts.wpn_fps_ass_tilt_stock_wood.supported = true
+		self.parts.wpn_fps_ass_tilt_stock_wood.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+		self.parts.wpn_fps_ass_tilt_stock_wood.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+
+		self.parts.wpn_fps_ass_tilt_stock_fold.supported = true
+		self.parts.wpn_fps_ass_tilt_stock_fold.stats = deep_clone(stocks.fold_folder_stats)
+		self.parts.wpn_fps_ass_tilt_stock_fold.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+		self.parts.wpn_fps_ass_tilt_stock_tactical.supported = true
+		self.parts.wpn_fps_ass_tilt_stock_tactical.stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+		self.parts.wpn_fps_ass_tilt_stock_tactical.custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+
 		self.parts.wpn_fps_ass_tilt_stock_none.supported = true
-		self.parts.wpn_fps_ass_tilt_stock_none.stats = {
-				value = 3,
-				recoil = -3,
-				concealment = 3
-			}																		
+		self.parts.wpn_fps_ass_tilt_stock_none.stats = deep_clone(stocks.remove_folder_stats)
+		self.parts.wpn_fps_ass_tilt_stock_none.custom_stats = deep_clone(stocks.remove_folder_stats)
 		end	
 		
 	if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23	
@@ -24825,7 +24826,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.wpn_fps_pis_g19.override = self.wpn_fps_pis_g19.override or {}
-		
+
 	end
 
 	if self.parts.wpn_fps_upg_svd_b_draco then

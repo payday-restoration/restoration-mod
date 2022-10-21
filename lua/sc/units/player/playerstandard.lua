@@ -2104,10 +2104,13 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 
 	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
 	managers.menu:set_mouse_sensitivity(self:in_steelsight())
+
 	if PlayerStandard.set_ads_objects then
+		local value = 0.155
+		value = value / duration_multiplier
 		if not unequipped then
 			if self._state_data.in_steelsight then
-				DelayedCalls:Add("FancyScopeCheckDelay", 0.175, function()
+				DelayedCalls:Add("FancyScopeCheckDelay", value, function()
 					if self._state_data.in_steelsight then
 						self:set_ads_objects(true)
 					end

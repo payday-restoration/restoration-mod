@@ -206,6 +206,7 @@ function restoration:Init()
 		"mad", --Boiling Point
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
+		"bex", --San Martin Bank
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration
@@ -233,6 +234,7 @@ function restoration:Init()
 		"brb", --Brooklyn Bank
 		"mus", --The Diamond
 		"run", --Heat Street
+		"ranc", --Midland Ranch
 		"run_res", --Whurr's Heat Street Edit
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
@@ -285,7 +287,6 @@ function restoration:Init()
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"fex", --Buluc's Mansion	
-		"ranc", --Midland Ranch
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",

@@ -362,6 +362,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_tag"] = "오전 12:43, J. 에드가 후버 빌딩",
 		["restoration_level_data_bph"] = "시간 기밀, 포트 클랏솝 감옥",
 		["restoration_level_data_nmh"] = "오후 8:24, 머시 병원 - 격리 병동",
+		["restoration_level_data_nmh_res"] = "오후 8:24, 머시 병원 - 격리 병동",
 		["restoration_level_data_vit"] = "오후 1:07, 워싱턴 D.C. - 백악관",
 		["restoration_level_data_mex"] = "시간 기밀, 미국 - 남부 국경",
 		["restoration_level_data_mex_cooking"] = "시간 기밀, 멕시코 - 코요파 컴파운드",
@@ -377,7 +378,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_junk"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_holly"] = "오후 5:00, 로스앤젤레스 - 루카스 맨션",
 		["restoration_level_data_lvl_friday"] = "오후 5:00, 실드 쇼핑몰",
-		["restoration_level_data_skm_nightmare_lvl"] = "세탁소? 너는 너의 죄를 씻기 위해 여기에 있는가?",
+		["restoration_level_data_skm_nightmare_lvl"] = "세탁소? 너는 너의 죄를 씻기 위해 여기에 왔는가?",
 		
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",

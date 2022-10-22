@@ -2190,7 +2190,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
 	self.spooc.charging_detect = false
-	self.spooc.jump_detect = false
+	self.spooc.jump_detect = true
 	self.spooc.static_weapon_preset = true
 	self.spooc.no_asu = true
 	self.spooc.kick_damage = 8.0 --Amount of damage dealt when cloakers hick players.
@@ -2371,7 +2371,7 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.can_be_tased = true
 	self.shadow_spooc.static_dodge_preset = true
 	self.shadow_spooc.is_special = true
-	self.shadow_spooc.charging_detect = true
+	self.shadow_spooc.charging_detect = false
 	self.shadow_spooc.jump_detect = true	
 	self.shadow_spooc.no_asu = true
 	self.shadow_spooc.heal_cooldown = 11.25

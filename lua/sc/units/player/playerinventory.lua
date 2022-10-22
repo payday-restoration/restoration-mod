@@ -76,6 +76,14 @@ Hooks:PostHook(PlayerInventory, "set_visibility_state", "res_set_visibility_stat
 	end
 end)
 
+function PlayerInventory:_start_jammer_effect_drop_in_load(jammer_data)
+	self:_start_jammer_effect(jammer_data.t)
+end
+
+function PlayerInventory:_start_feedback_effect_drop_in_load(jammer_data)
+	self:_start_feedback_effect(jammer_data.t)
+end
+
 function PlayerInventory:_start_feedback_effect(end_time)
 	if self._jammer_data then
 		self:_chk_queue_jammer_effect("feedback")

@@ -1718,6 +1718,10 @@ local federales_very_hard = {
 		
 		
 		--Federales Faction
+		--security
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
 		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
@@ -1820,6 +1824,10 @@ local federales_overkill = {
 		
 		
 		--Federales Faction
+		--security
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
 		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
@@ -1924,6 +1932,10 @@ local federales_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
 		
 		--Federales Faction
+		--security
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
 		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -2027,6 +2039,10 @@ local federales_deathwish = {
 		
 		
 		--Federales Faction
+		--security
+		["units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
 		--swat
 		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
@@ -2130,6 +2146,10 @@ local federales_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		
 		--Federales Faction
+		--security
+		["units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
 		--swat
 		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",

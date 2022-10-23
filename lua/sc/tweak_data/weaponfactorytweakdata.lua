@@ -999,9 +999,10 @@ local muzzle_device = {
 					type = "poison",
 					custom_data = {
 						dot_damage = 1.5,
-						dot_length = 2.1,
+						dot_length = 4.1,
 						dot_tick_period = 0.5,
 						use_weapon_damage_falloff = true,
+						duration_falloff_end_mult = 0.5,
 						hurt_animation_chance = 0.1
 					}
 				}
@@ -1022,9 +1023,10 @@ local muzzle_device = {
 					type = "poison",
 					custom_data = {
 						dot_damage = 1.5,
-						dot_length = 3.1,
+						dot_length = 6.1,
 						dot_tick_period = 0.5,
 						use_weapon_damage_falloff = true,
+						duration_falloff_end_mult = 0.5,
 						hurt_animation_chance = 0.15
 					}
 				}
@@ -1161,13 +1163,13 @@ local muzzle_device = {
 			supported = true,
 			stats = {
 				value = 9,
+				spread = -5,
 				total_ammo_mod = -25,
 				damage = 15
 			},
 			custom_stats = {
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0.75,
-				armor_piercing_add = 0.20,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
 				rays = 6
@@ -1178,13 +1180,13 @@ local muzzle_device = {
 			supported = true,
 			stats = {
 				value = 9,
+				spread = -5,
 				total_ammo_mod = -33,
 				damage = 30
 			},
 			custom_stats = {
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0.6666667,
-				armor_piercing_add = 0.20,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
 				rays = 6
@@ -1280,28 +1282,6 @@ local muzzle_device = {
 		}
 
 	--FRAG-12
-		local a_explosive_auto_override = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -25,
-				spread = 5,
-				concealment = -5,
-				spread_multi = {1, 1},	
-				damage = 30
-			},
-			custom_stats = {
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
-			}
-		}
-
 		local a_explosive_semi_override = {
 			supported = true,
 			stats = {
@@ -3860,13 +3840,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(self)
 
 	--AK74 Overrides Table
-	self.wpn_fps_ass_74.override = {
-		wpn_fps_lmg_rpk_s_standard = {
-			adds = {
-				"wpn_upg_ak_g_standard"
-			}
-		}
-	}
+	self.wpn_fps_ass_74.override = self.wpn_fps_ass_74.override or {}
 	
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
@@ -3898,7 +3872,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_lmg_rpk_s_standard = {
 		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
-		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
+		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		adds = {
+			"wpn_upg_ak_g_standard"
+		}
 	}
 	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_solidstock = {
 		stats = deep_clone(stocks.folder_to_fixed_rec3_stats),
@@ -3975,7 +3952,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 	}
 	self.wpn_fps_ass_akm.override.wpn_fps_lmg_rpk_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
-		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		adds = {
+			"wpn_upg_ak_g_standard"
+		}
 	}
 	self.wpn_fps_ass_akm.override.wpn_lmg_rpk_m_ban = {
 		stats = {
@@ -4070,7 +4050,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 	}
 	self.wpn_fps_ass_akm_gold.override.wpn_fps_lmg_rpk_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
-		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		adds = {
+			"wpn_upg_ak_g_standard"
+		}
 	}
 	self.wpn_fps_ass_akm_gold.override.wpn_lmg_rpk_m_ban = {
 		stats = {
@@ -4183,7 +4166,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_lmg_rpk_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
-		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		adds = {
+			"wpn_upg_ak_g_standard"
+		}
 	}
 	self.wpn_fps_smg_akmsu.override.wpn_lmg_rpk_m_ban = {
 		stats = {
@@ -4308,7 +4294,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	}
 	self.wpn_fps_shot_saiga.override.wpn_fps_lmg_rpk_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
-		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		adds = {
+			"wpn_upg_ak_g_standard"
+		}
 	}
 
 	--Izhma Part Additions
@@ -6706,7 +6695,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 		wpn_fps_upg_o_leupold = { "wpn_fps_ak_extra_ris" },
 		wpn_fps_upg_o_sig = { "wpn_fps_ak_extra_ris" },
 		wpn_fps_upg_o_uh = { "wpn_fps_ak_extra_ris" },
-		wpn_fps_upg_o_fc1 = { "wpn_fps_ak_extra_ris" },			
+		wpn_fps_upg_o_fc1 = { "wpn_fps_ak_extra_ris" }
 	}
 	self.wpn_fps_lmg_rpk.override = {
 		wpn_lmg_rpk_m_ban = {
@@ -8481,13 +8470,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_custom.supported = true
 	self.parts.wpn_fps_upg_a_custom.stats = {
 		value = 9,
+		spread = -5,
 		total_ammo_mod = -25,
 		damage = 30
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
 		falloff_end_mult = 0.8,
 		damage_min_mult = 0.75,
-		armor_piercing_add = 0.20,
 		ammo_pickup_max_mul = 0.8,
 		ammo_pickup_min_mul = 0.8,
 		rays = 6
@@ -8607,9 +8596,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			type = "poison",
 			custom_data = {
 				dot_damage = 1.5,
-				dot_length = 4.1,
+				dot_length = 8.1,
 				dot_tick_period = 0.5,
 				use_weapon_damage_falloff = true,
+				duration_falloff_end_mult = 0.5,
 				hurt_animation_chance = 0.20
 			}
 		}
@@ -20020,8 +20010,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--Gambyt's Vanilla Mod Pack
 	if self.parts.wpn_fps_ass_flint_b_long then
-		self.parts.wpn_fps_aug_b_big.supported = true --Stops silly incorrect logs.
-		self.parts.wpn_fps_aug_b_big.pcs = nil
 		self.parts.wpn_fps_ass_s552_m_ak.supported = true
 		self.parts.wpn_fps_ass_s552_m_ak.pcs = nil
 		self.parts.wpn_fps_ass_m4_m_stick_amcar.supported = true
@@ -20073,6 +20061,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_mac10_fg_m4.supported = true
 		self.parts.wpn_fps_pis_lebman_b_chrome_akimbo.supported = true
 		
+		--UAR Heavy Barrel
+		self.parts.wpn_fps_aug_b_big.supported = true
+		self.parts.wpn_fps_aug_b_big.pcs = {}
+		self.parts.wpn_fps_aug_b_big.name_id = "bm_wp_upg_b_hbar"
+		self.parts.wpn_fps_aug_b_big.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_aug_b_big.stats.recoil = 8
+		self.parts.wpn_fps_aug_b_big.stats.concealment = -6
+		self.parts.wpn_fps_aug_b_big.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+		self.parts.wpn_fps_aug_b_big.custom_stats.ads_speed_mult = 1.15
+
 		--Theia Micro Sight
 		self.parts.wpn_fps_upg_o_cqb.supported = true
 		self.parts.wpn_fps_upg_o_cqb.desc_id = "bm_wp_upg_o_1_1"
@@ -20649,9 +20647,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_m37_b_ridge.stats = {
 			value = 1,
 			spread = -1,
-			recoil = 1
+			recoil = 2
 		}
-
 		--(GSPS 12G) Folding Stock
 		self.parts.wpn_fps_shot_m37_s_tactical.supported = true
 		self.parts.wpn_fps_shot_m37_s_tactical.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
@@ -20698,6 +20695,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_flint_b_short.supported = true
 		self.parts.wpn_fps_ass_flint_b_short.stats = deep_clone(barrels.short_b1_stats)
 		self.parts.wpn_fps_ass_flint_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+		
+		--(AK17) Long Barrel
+		self.parts.wpn_fps_ass_flint_b_long.supported = true
+		self.parts.wpn_fps_ass_flint_b_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_flint_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+		
+		--(AK17) Marksman Stock
+		self.parts.wpn_fps_ass_flint_s_solid.supported = true
+		self.parts.wpn_fps_ass_flint_s_solid.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+		self.parts.wpn_fps_ass_flint_s_solid.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+
+		--(Little Friend) Short Barrel
+		self.parts.wpn_fps_ass_contraband_b_short.supported = true
+		self.parts.wpn_fps_ass_contraband_b_short.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_ass_contraband_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+
+		--(Little Friend) Long Barrel
+		self.parts.wpn_fps_ass_contraband_b_long.supported = true
+		self.parts.wpn_fps_ass_contraband_b_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_ass_contraband_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
 
 		--(Little Friend) Skeletal Stock
 		self.parts.wpn_fps_ass_contraband_s_tecci.supported = true
@@ -20724,6 +20741,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_pis_lemming_b_long.supported = true
 		self.parts.wpn_fps_pis_lemming_b_long.stats = deep_clone(barrels.long_b1_stats)
 		self.parts.wpn_fps_pis_lemming_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+
+		--(5/7 AP) Striking Kit
+		self.parts.wpn_fps_pis_lemming_body_silver.supported = true
+		self.parts.wpn_fps_pis_lemming_body_silver.stats = {
+			value = 4
+		}
+
 
 		--(Crosskill Classic) Wooden Grip
 		self.parts.wpn_fps_pis_cold_g_wood.supported = true
@@ -20769,12 +20793,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_siltstone_b_short.supported = true
 		self.parts.wpn_fps_snp_siltstone_b_short.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_snp_siltstone_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
-
-		--(5/7 AP) Striking Kit
-		self.parts.wpn_fps_pis_lemming_body_silver.supported = true
-		self.parts.wpn_fps_pis_lemming_body_silver.stats = {
-			value = 4
-		}
 
 		--(Microgun) XL Barrel
 		self.parts.wpn_fps_lmg_shuno_b_long.supported = true
@@ -20827,26 +20845,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 1,
 			recoil = -2
 		}
-
-		--(AK17) Marksman Stock
-		self.parts.wpn_fps_ass_flint_s_solid.supported = true
-		self.parts.wpn_fps_ass_flint_s_solid.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
-		self.parts.wpn_fps_ass_flint_s_solid.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
-
-		--(Little Friend) Long Barrel
-		self.parts.wpn_fps_ass_contraband_b_long.supported = true
-		self.parts.wpn_fps_ass_contraband_b_long.stats = deep_clone(barrels.long_b1_stats)
-		self.parts.wpn_fps_ass_contraband_b_long.custom_stats = deep_clone(barrels.long_b1_custom_stats)
-
-		--(Little Friend) Short Barrel
-		self.parts.wpn_fps_ass_contraband_b_short.supported = true
-		self.parts.wpn_fps_ass_contraband_b_short.stats = deep_clone(barrels.short_b1_stats)
-		self.parts.wpn_fps_ass_contraband_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
-
-		--(AK17) Long Barrel
-		self.parts.wpn_fps_ass_flint_b_long.supported = true
-		self.parts.wpn_fps_ass_flint_b_long.stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_ass_flint_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
 		--(GSPS 12G) Riot Sight 
 		self.parts.wpn_fps_shot_m37_o_expert.supported = true 
@@ -21134,8 +21132,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.parts.wpn_fps_ass_s552_o_custom.supported = true
-
-
 		self.parts.wpn_fps_ass_s552_o_custom.stats = {
 			value = 0
 		}
@@ -22807,11 +22803,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.stats = {
 			value = 9,
 			total_ammo_mod = -25,
+			spread = -5,
 			damage = 15
 		}
 		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.custom_stats = {
-			falloff_start_mult = 0.75,
-			falloff_end_mult = 0.75,
+			falloff_end_mult = 0.8,
+			damage_min_mult = 0.6666667,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
 			rays = 6

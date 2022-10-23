@@ -2982,7 +2982,7 @@ function WeaponTweakData:_init_stats()
 		player_turret = 1,
 	}
 
-	--Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
+	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
 	self.stat_info.shotgun_spread_increase = 3.5
 
 	self.stat_info.base_spread = 10.1 --How much spread area you have at 0 accuracy.
@@ -10844,6 +10844,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ray.weapon_movement_penalty = 1
 				self.ray.sms = 0.8
+				self.ray.rms = 0.25
 				self.ray.panic_suppression_chance = 0.05
 				self.ray.stats_modifiers = {damage = 3}
 				self.ray.turret_instakill = true
@@ -11060,6 +11061,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.rpg7.weapon_movement_penalty = 1
 				self.rpg7.sms = 0.8
+				self.rpg7.rms = 0.5
 				self.rpg7.panic_suppression_chance = 0.05
 				self.rpg7.stats_modifiers = {damage = 3}
 				self.rpg7.reload_speed_multiplier = 1.1

@@ -1012,6 +1012,18 @@ function DOTBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, bla
 	return result
 end
 
+function DOTBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_id, user_unit)
+	dot_data = dot_data or self.DOT_DATA
+	local hurt_animation = not dot_data.hurt_animation_chance or math.rand(1) < dot_data.hurt_animation_chance
+	local dot_length = dot_data.dot_length
+
+	if dot_data.use_weapon_damage_falloff and alive(weapon_unit) then
+		dot_length = weapon_unit:base():get_damage_falloff(dot_length, col_ray, user_unit, true)
+	end
+
+	managers.dot:add_doted_enemy(col_ray.unit, TimerManager:game():time(), weapon_unit, dot_length, dot_data.dot_damage, hurt_animation, self.VARIANT, weapon_id)
+end
+
 BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
 BleedBulletBase.VARIANT = "bleed"
 ProjectilesBleedBulletBase = ProjectilesBleedBulletBase or class(BleedBulletBase)

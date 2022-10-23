@@ -546,6 +546,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._damage_near_mul = 1
 		self._damage_far_mul = 1
 		self._damage_min_mult = 1
+		self._duration_falloff_start_mult = 1
+		self._duration_falloff_end_mult = 1
 
 		self._rof_mult = 1
 		self._ads_rof_mult = 1
@@ -554,6 +556,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._hipfire_mult = 1
 
 		if not self:is_npc() then
+			self._rms = self:weapon_tweak_data().rms
 			self._sms = self:weapon_tweak_data().sms
 			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
 		end
@@ -673,10 +676,15 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				end
 			end
 	
+			if stats.duration_falloff_start_mult then		
+				self._duration_falloff_start_mult = self._duration_falloff_start_mult * stats.duration_falloff_start_mult
+			end
+			if stats.duration_falloff_end_mult then		
+				self._duration_falloff_end_mult = self._duration_falloff_end_mult * stats.duration_falloff_end_mult
+			end
 			if stats.falloff_start_mult then
 				self._damage_near_mul = self._damage_near_mul * stats.falloff_start_mult
 			end
-	
 			if stats.falloff_end_mult then
 				self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
 			end
@@ -767,6 +775,13 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 						self._sms = self._sms + (1 * (stats.sms - 1))
 					end
 					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
+				end
+				if stats.rms then
+					if not self._rms then
+						self._rms = stats.rms
+					else
+						self._rms = self._rms + (1 * (stats.rms - 1))
+					end
 				end
 			end
 		end
@@ -1258,7 +1273,7 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 end
 
 
-function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
+function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only)
 	if managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name then
 		
 	end
@@ -1280,6 +1295,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	log("falloff_start_mult : " .. tostring( self._damage_near_mul ))
 	log("falloff_end_mult : " .. tostring( self._damage_far_mul ))
 	--]]
+
 	
 	if current_state then
 		--Get ADS multiplier.
@@ -1305,6 +1321,11 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	
 	falloff_start = falloff_start * self._damage_near_mul
 	falloff_end = falloff_end * self._damage_far_mul
+
+	if dot_only then
+		falloff_start = falloff_start * self._duration_falloff_mult
+		falloff_end = falloff_end * self._duration_falloff_mult
+	end
 	
 	--Cache falloff values for usage in hitmarkers.
 	self.near_falloff_distance = falloff_start

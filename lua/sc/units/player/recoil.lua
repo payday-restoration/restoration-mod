@@ -15,6 +15,19 @@ local mvec3_rotate_with = mvector3.rotate_with
 local mrot_set_zero = mrotation.set_zero
 local mrot_multiply = mrotation.multiply
 
+--[[
+local old_init = FPCameraPlayerBase.init
+function FPCameraPlayerBase:init( unit )
+	old_init(self, unit)
+	
+	self._view_kick = {
+		velocity = 0,
+		direction = Vector3(),
+		delta = Vector3()
+	}
+end
+--]]
+
 --Add limit constraints to recoil, to allow for recoil to occur with a bipod.
 function FPCameraPlayerBase:_update_movement(t, dt)
 	local data = self._camera_properties

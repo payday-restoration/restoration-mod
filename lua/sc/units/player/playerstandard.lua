@@ -1187,7 +1187,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 				end
 			end
 			if weapon_tweak.is_bullpup then 
-				speed_mult = speed_mult * 1.2
+				speed_mult = speed_mult * 1.25
 			end
 			speed_mult = speed_mult * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
 			movement_speed = base_speed * ((not has_ads_move_speed_mult and 0.45) or 1)
@@ -1260,7 +1260,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed())or self:_changing_weapon() or self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
+	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
 		self._running_wanted = true
 		return
 	end
@@ -1276,7 +1276,7 @@ function PlayerStandard:_start_action_running(t)
 	local weap_base = self._equipped_unit:base()
 	weap_base:tweak_data_anim_stop("fire")
 	weap_base:tweak_data_anim_stop("fire_steelsight")
-	if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
+	if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:can_reload() and not weap_base:clip_empty()) then
 		weap_base:tweak_data_anim_stop("reload")
 		weap_base:tweak_data_anim_stop("reload_left")
 		weap_base:tweak_data_anim_stop("magazine_empty")
@@ -1288,7 +1288,7 @@ function PlayerStandard:_start_action_running(t)
 	local cancel_sprint = restoration.Options:GetValue("OTHER/SprintCancel")
 	
 	--Skip sprinting animations of player is doing melee things.
-	if not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and (cancel_sprint == true or self._equipped_unit:base()._starwars)))) then
+	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and (cancel_sprint == true or self._equipped_unit:base()._starwars)))) then
 		if not self._equipped_unit:base():run_and_shoot_allowed() then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))	
 		else
@@ -1312,7 +1312,7 @@ function PlayerStandard:_end_action_running(t)
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
 		local cancel_sprint = restoration.Options:GetValue("OTHER/SprintCancel")
-		local stop_running = not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and self._equipped_unit:base()._starwars))))
+		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and self._equipped_unit:base()._starwars))))
 		
 		if stop_running then
 			self._ext_camera:play_redirect(self:get_animation("stop_running"), speed_multiplier)
@@ -3194,6 +3194,53 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	self._camera_unit:anim_state_machine():set_parameter(state, "alt_inspect", anim_weight)
 	
 	managers.player:send_message(Message.OnCashInspectWeapon)
+end
+
+function PlayerStandard:_start_action_unequip_weapon(t, data)
+	local speed_multiplier = self:_get_swap_speed_multiplier()
+
+	self._equipped_unit:base():tweak_data_anim_stop("equip")
+	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)
+
+	local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	self._change_weapon_data = data
+	self._unequip_weapon_expire_t = t + (tweak_data.timers.unequip or 0.5) / speed_multiplier
+
+	--self:_interupt_action_running(t)
+	self:_interupt_action_charging_weapon(t)
+
+	local result = self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
+
+	self:_interupt_action_reload(t)
+	self:_interupt_action_steelsight(t)
+	self._ext_network:send("switch_weapon", speed_multiplier, 1)
+end
+
+function PlayerStandard:_update_equip_weapon_timers(t, input)
+	if self._unequip_weapon_expire_t and self._unequip_weapon_expire_t <= t then
+		if self._change_weapon_data.unequip_callback and not self._change_weapon_data.unequip_callback() then
+			return
+		end
+
+		self._unequip_weapon_expire_t = nil
+
+		self:_start_action_equip_weapon(t)
+	end
+
+	if self._equip_weapon_expire_t and self._equip_weapon_expire_t <= t then
+		self._equip_weapon_expire_t = nil
+
+		if input.btn_steelsight_state then
+			self._steelsight_wanted = true
+		end
+
+		if self._running and not self._end_running_expire_t then
+			self._ext_camera:play_redirect(self:get_animation("start_running"))
+		end
+
+		TestAPIHelper.on_event("load_weapon")
+		TestAPIHelper.on_event("mask_up")
+	end
 end
 
 --Apply swap speed multiplier to more forms of equip/unequip animation.

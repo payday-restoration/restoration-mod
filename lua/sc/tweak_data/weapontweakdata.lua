@@ -3703,6 +3703,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	recat = { "m95" }
 	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "amr")
 		self[ wep_id ].recategorize = { "antim_snp" }
 		self[ wep_id ].damage_type = "anti_materiel"
 	end
@@ -14136,7 +14137,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.m107cq then --Pawcio's M107
 		self.m107cq.categories = {
 			"snp",
-			"semi_snp"
+			"semi_snp",
+			"amr"
 		}
 		self.m107cq.recategorize = { "antim_snp" }
 		self.m107cq.hs_mult = 2
@@ -14183,6 +14185,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.m200 then --Pawcio's Intervention
+		self.m200.categories = {
+			"snp",
+			"amr"
+		}
 		self.m200.recategorize = { "antim_snp" }
 		self.m200.hs_mult = 2
 		self.m200.damage_type = "anti_materiel"

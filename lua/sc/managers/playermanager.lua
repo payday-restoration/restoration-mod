@@ -1030,9 +1030,9 @@ end
 
 --Professional aced extra ammo when killing specials.
 function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
-	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and variant == "bullet" then
-		local tracker = killed_unit:movement():nav_tracker()
-	    local position = tracker:lost() and tracker:field_position() or tracker:position()
+	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and variant and variant == "bullet" then
+		local tracker = killed_unit.movement and killed_unit:movement():nav_tracker()
+	    local position = tracker and tracker:lost() and tracker:field_position() or tracker:position()
 	    local rotation = killed_unit:rotation()
 		if Network:is_client() then
 			managers.network:session():send_to_host("sync_spawn_extra_ammo", position, rotation)

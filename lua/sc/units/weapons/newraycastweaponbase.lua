@@ -1323,8 +1323,8 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	falloff_end = falloff_end * self._damage_far_mul
 
 	if dot_only then
-		falloff_start = falloff_start * self._duration_falloff_mult
-		falloff_end = falloff_end * self._duration_falloff_mult
+		falloff_start = falloff_start * self._duration_falloff_start_mult
+		falloff_end = falloff_end * self._duration_falloff_end_mult
 	end
 	
 	--Cache falloff values for usage in hitmarkers.

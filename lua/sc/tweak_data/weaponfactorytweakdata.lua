@@ -1054,7 +1054,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 1.5,
-					dot_trigger_chance = 15,
+					dot_trigger_chance = 20,
 					dot_length = 3.1,
 					dot_tick_period = 0.5
 				}
@@ -1081,7 +1081,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 2,
-					dot_trigger_chance = 20,
+					dot_trigger_chance = 25,
 					dot_length = 3.1,
 					dot_tick_period = 0.5
 				}
@@ -1107,7 +1107,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 2,
-					dot_trigger_chance = 20,
+					dot_trigger_chance = 25,
 					dot_length = 3.1,
 					dot_tick_period = 0.5
 				}
@@ -1134,7 +1134,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 3,
-					dot_trigger_chance = 30,
+					dot_trigger_chance = 35,
 					dot_length = 3.1,
 					dot_tick_period = 0.5
 				}
@@ -8566,7 +8566,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
 			dot_damage = 4,
-			dot_trigger_chance = 40,
+			dot_trigger_chance = 45,
 			dot_length = 3.1,
 			dot_tick_period = 0.5
 		}

@@ -3235,7 +3235,11 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 		end
 
 		if self._running and not self._end_running_expire_t then
-			self._ext_camera:play_redirect(self:get_animation("start_running"))
+			if not self._equipped_unit:base():run_and_shoot_allowed() then
+				self._ext_camera:play_redirect(self:get_animation("start_running"))	
+			else
+				self._ext_camera:play_redirect(self:get_animation("idle"))	
+			end	
 		end
 
 		TestAPIHelper.on_event("load_weapon")

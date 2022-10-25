@@ -231,10 +231,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ranc.ai_group_type = lapd
 	self.ranc.player_style = "fighterpilot"
 
-        --[[
-        self.trai.ai_group_type = lapd
-        self.trai.player_style = "fighterpilot"
-        --]]
+    
+    self.trai.ai_group_type = lapd
+    self.trai.player_style = "fighterpilot"
 
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil

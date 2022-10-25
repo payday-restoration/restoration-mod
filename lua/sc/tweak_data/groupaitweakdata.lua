@@ -6389,7 +6389,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			    	Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
 			    },				
 			    nypd = {
-			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    	Idstring("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1")
 			    },
 			    lapd = {
 			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
@@ -8817,7 +8817,7 @@ else
 				Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
 			},				
 			nypd = {
-				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+				Idstring("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1")
 			},
 			lapd = {
 				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")

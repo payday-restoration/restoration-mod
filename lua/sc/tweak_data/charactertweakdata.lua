@@ -18195,6 +18195,7 @@ function CharacterTweakData:character_map()
 				"ene_nypd_heavy_m4",					
 				"ene_nypd_medic",
 				"ene_tazer_1",
+				"ene_grenadier_1",
 				"ene_fbi_2",	
 				"ene_fbi_3",	
 				"ene_nypd_veteran_cop_1",		

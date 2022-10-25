@@ -413,6 +413,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
       ["restoration_level_data_chca"] = "下午9:24, 圣弗朗西斯海湾-黑猫号",
       ["restoration_level_data_pent"] = "11:30 PM, 旧金山 - 渔夫王的顶楼",
 	  ["restoration_level_data_ranc"] = "6:24 PM, 德克萨斯 - 米德兰牧场",
+	  ["restoration_level_data_trai"] = "7:40 PM, Fort Worth - Dalton Yard",
       ["restoration_level_data_wetwork"] = "秘密的时间, 秘密的地点",
       ["restoration_level_data_junk"] = "秘密的时间, 秘密的地点",
       ["restoration_level_data_holly"] = "下午5:00 , 洛杉矶-卢卡斯的庄园",

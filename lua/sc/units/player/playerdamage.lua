@@ -197,6 +197,11 @@ function PlayerDamage:init(unit)
 	}
 
 	self:clear_delayed_damage()
+	
+	self._can_play_tinnitus = not managers.user:get_setting("accessibility_sounds_tinnitus") or false
+	self._can_play_tinnitus_clbk_func = callback(self, self, "clbk_tinnitus_toggle_changed")
+
+	managers.user:add_setting_changed_callback("accessibility_sounds_tinnitus", self._can_play_tinnitus_clbk_func)	
 end
 
 --check_ally_attack == check if the attack came from an ally at all.

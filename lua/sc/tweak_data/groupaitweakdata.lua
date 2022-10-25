@@ -6967,66 +6967,97 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 
 	--US Marshals, used on Texas heists
 	if difficulty_index <= 7 then
-	self.unit_categories.marshal_marksman = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		self.unit_categories.marshal_marksman = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},					
+				murkywater = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},				
+				nypd = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+				}	
 			},
-			russia = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+			access = access_type_all
+		}	
+	else
+		self.unit_categories.marshal_marksman = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},					
+				murkywater = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},				
+				nypd = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+				}	
 			},
-			zombie = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
-			},					
-			murkywater = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
-			},
-			federales = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
-			},				
-			nypd = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
-			},	
-			lapd = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
-			},
-			fbi = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
-			}	
-		},
-		access = access_type_all
-	}	
-else
-	self.unit_categories.marshal_marksman = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},
-			zombie = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},					
-			murkywater = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},
-			federales = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},				
-			nypd = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},	
-			lapd = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			},
-			fbi = {
-				Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
-			}	
-		},
-		access = access_type_all
-	}
+			access = access_type_all
+		}
 	end
+	
+	--Marshal Shield
+	self.unit_categories.marshal_shield = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},					
+			murkywater = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			}				
+		},
+		access = access_type_walk_only
+	}	
 	
 	--Beat Cop overrides
 	--Texas heists, replace NYPD beat cops with Texas state troopers and Titan Snipers with US Marshals
@@ -11866,7 +11897,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		marshal_marksman = {
 			"ranged_fire",
 			"flank"
-		}		
+		},
+		marshal_shield = {
+			"shield",
+			"ranged_fire"
+		}
 	}
 	self.enemy_spawn_groups = {}
 	self.enemy_spawn_groups.CS_defend_a = {
@@ -17528,6 +17563,43 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	if difficulty_index == 8 then
 		self.flash_grenade.light_color = Vector3(255, 165, 0)
 	end
+	
+	self.flash_shields = {
+		marshal_shield = {
+			flash_charge_stun_sound = "USM_Beep_Stop",
+			flash_charge_stun_effect = "effects/particles/explosions/explosion_flash_grenade",
+			flash_effect = "effects/payday2/particles/character/marshal_bright_light",
+			flash_charge_stun_sound_explosion = "no_sound",
+			flash_charge_timer = 3,
+			beep_effect = "effects/payday2/particles/character/marshal_red_light",
+			flash_charge_stun_range = 300,
+			beep_sound = "USM_Beep",
+			flash_range = 1200,
+			flash_charge_range = 1100,
+			flash_shape_radius = 120,
+			flash_charge_cooldown = 18,
+			flash_slotmask = "persons_no_players",
+			flash_shape = "cylinder",
+			flash_sound = "USM_Flash",
+			flash_range_min = 200,
+			flash_charge_stun_slotmask = "persons_no_players",
+			beep_speeds = {
+				0.1,
+				0.025
+			},
+			beep_light_data = {
+				type_str = "omni|specular",
+				range = 300,
+				beep_mul = 0.3,
+				falloff_exp = 0.5,
+				beep_fade_speed = 4,
+				specular_mul = 1,
+				color = Vector3(255, 0, 0)
+			}
+		}
+	}
+	self.flash_shields.default = self.flash_shields.marshal_shield	
+	
 	self.optimal_trade_distance = {0, 0}
 	self.bain_assault_praise_limits = {1, 3}
 	if difficulty_index <= 3 then

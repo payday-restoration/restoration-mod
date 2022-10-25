@@ -653,12 +653,12 @@ local crew_wep_preset = {
 		self.m1911_npc.suppression = 3		
 		self.m1911_npc.DAMAGE = 4.5		
 		
-		self.deagle_npc = deep_clone(self.raging_bull_npc)
-		self.deagle_npc.CLIP_AMMO_MAX = 8
-		self.deagle_npc.anim_usage = "is_pistol"
-		self.deagle_npc.hold = "pistol"
-		self.deagle_npc.reload = "pistol"	
-		self.deagle_npc.sounds.prefix = "deagle_npc"
+		self.deagle_guard_npc = deep_clone(self.raging_bull_npc)
+		self.deagle_guard_npc.CLIP_AMMO_MAX = 8
+		self.deagle_guard_npc.anim_usage = "is_pistol"
+		self.deagle_guard_npc.hold = "pistol"
+		self.deagle_guard_npc.reload = "pistol"	
+		self.deagle_guard_npc.sounds.prefix = "deagle_npc"
 		
 		self.peacemaker_npc = deep_clone(self.raging_bull_npc)
 		self.peacemaker_npc.DAMAGE = 14.1
@@ -675,6 +675,42 @@ local crew_wep_preset = {
 		self.x_raging_bull_npc.hold = "akimbo_pistol"
 		self.x_raging_bull_npc.FIRE_MODE = "single"		
 	end
+	
+	--Vanilla Deagle, less lethal
+	function WeaponTweakData:_init_data_deagle_npc()
+		self.deagle_npc = deep_clone(self.raging_bull_npc)
+		self.deagle_npc.DAMAGE = 1.2
+		self.deagle_npc.CLIP_AMMO_MAX = 8
+		self.deagle_npc.sounds.prefix = "deagle_npc"
+		self.deagle_npc.anim_usage = "is_pistol"
+		self.deagle_npc.hold = "pistol"
+		self.deagle_npc.reload = "pistol"	
+	end
+
+	--Marshal Shield Phase 2 Shotgun, less lethal
+	function WeaponTweakData:_init_data_sko12_conc_npc()
+		self.sko12_conc_npc.categories = clone(self.sko12.categories)
+		self.sko12_conc_npc.sounds.prefix = "sko12_npc"
+		self.sko12_conc_npc.use_data.selection_index = 2
+		self.sko12_conc_npc.DAMAGE = 0.1
+		self.sko12_conc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.sko12_conc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_g2"
+		self.sko12_conc_npc.CLIP_AMMO_MAX = 25
+		self.sko12_conc_npc.NR_CLIPS_MAX = 10
+		self.sko12_conc_npc.hold = "rifle"
+		self.sko12_conc_npc.alert_size = 2500
+		self.sko12_conc_npc.suppression = 1.8
+		self.sko12_conc_npc.FIRE_MODE = "single"
+		self.sko12_conc_npc.bullet_class = "ConcussiveInstantBulletBase"
+		self.sko12_conc_npc.concussion_data = {
+			mul = 0.5,
+			sound_duration = {
+				min = 4,
+				mul = 0.3,
+				additional = 4
+			}
+		}
+	end	
 	
 	function WeaponTweakData:_init_data_m4_npc()
 		--M4

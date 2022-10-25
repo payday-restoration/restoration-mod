@@ -784,9 +784,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Iron Man
 					--Basic
 						--Unlock ICTV
-					--Ace
 						self.values.player.shield_knock = {true}
+					--Ace						
 						self.values.player.bullet_shield_knock = {true}
+						self.values.player.shield_knock_bullet = {
+							max_damage = 200,
+							chance = 0.8
+						}						
 						self.values.player.armor_regen_timer_multiplier = {0.9}
 			
 		--Support--

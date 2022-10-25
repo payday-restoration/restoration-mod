@@ -11,6 +11,22 @@ Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 	if weapon_tweak.armor_piercing then
 		self._use_armor_piercing = true
 	end
+	
+	local bullet_class = tweak_data.weapon[self._name_id].bullet_class
+	
+	if bullet_class ~= nil then
+		bullet_class = CoreSerialize.string_to_classtable(bullet_class)
+
+		if bullet_class then
+			self._bullet_class = bullet_class
+		else
+			Application:error("[NPCRaycastWeaponBase:init] Unexisting class for bullet_class string ", weap_tweak.bullet_class, "defined for tweak data ID ", name_id)
+
+			self._bullet_class = InstantBulletBase
+		end
+	else
+		self._bullet_class = InstantBulletBase
+	end	
 
 	local trail = weapon_tweak.trail_effect or Idstring("effects/particles/weapons/weapon_trail")
 	
@@ -100,14 +116,14 @@ function NPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 		player_hit, player_ray_data = self:damage_player(col_ray, from_pos, direction, result)
 
 		if player_hit then
-			InstantBulletBase:on_hit_player(col_ray or player_ray_data, self._unit, user_unit, damage)
+			self._unit:base():bullet_class():on_hit_player(col_ray or player_ray_data, self._unit, user_unit, damage)
 		end
 	end
 
 	local char_hit = nil
 
 	if not player_hit and col_ray then
-		char_hit = InstantBulletBase:on_collision(col_ray, self._unit, user_unit, damage)
+		char_hit = self._unit:base():bullet_class():on_collision(col_ray, self._unit, user_unit, damage)
 	end
 
 	if (not col_ray or col_ray.unit ~= target_unit) and target_unit and target_unit:character_damage() and target_unit:character_damage().build_suppression then

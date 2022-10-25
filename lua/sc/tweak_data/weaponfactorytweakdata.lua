@@ -17336,11 +17336,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 		40
 	}
 	self.parts.wpn_fps_sho_ultima_s_light.supported = true
-	self.parts.wpn_fps_sho_ultima_s_light.stats = {
-		value = 2,
-		concealment = -1,
-		recoil = 2
-	}
+	self.parts.wpn_fps_sho_ultima_s_light.stats = deep_clone(stocks.add_nocheeks_stats)
+	self.parts.wpn_fps_sho_ultima_s_light.custom_stats = deep_clone(stocks.add_nocheeks_stats)
 	
 	--Shellswitch M8 (Quick Pull)
 	self.parts.wpn_fps_sho_ultima_body_rack.pcs = {
@@ -20563,7 +20560,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_m37_fg_tactical.supported = true
 		self.parts.wpn_fps_shot_m37_fg_tactical.stats = {
 			value = 1,
-			recoil = -1,
+			recoil = -2,
 			concealment = 1
 		}
 
@@ -20576,7 +20573,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		--Schäfer Grip
-		--Schafer Grip
 		self.parts.wpn_fps_ass_m4_g_sg.supported = true
 		self.parts.wpn_fps_ass_m4_g_sg.stats = {
 			value = 2,
@@ -20653,6 +20649,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_m37_s_tactical.supported = true
 		self.parts.wpn_fps_shot_m37_s_tactical.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 		self.parts.wpn_fps_shot_m37_s_tactical.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_shot_m37_s_tactical_extra.stats = nil
+		self.parts.wpn_fps_shot_m37_s_tactical_extra.custom_stats = nil
 
 		--Trench Sweeper Nozzle
 		self.parts.wpn_fps_upg_ns_shot_grinder.supported = true

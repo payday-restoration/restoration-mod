@@ -237,6 +237,26 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		800000
 	}
 	
+	--Lost In Transit
+	self.jobs.trai.payout = {			
+		95000,
+		200000,
+		700000,
+		1000000,
+		1100000,
+		1100000,
+		1100000
+	}
+	self.jobs.trai.contract_cost = {
+		80000,
+		400000,
+		500000,
+		600000,
+		670000,
+		670000,
+		670000
+	}
+	
 end)
 
 --[[

@@ -183,9 +183,14 @@ function restoration:Init()
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
-
-	restoration.global_spawn_multiplier = 1
+	
+	
+	if job == "trai" then
+	restoration.always_bravos = true
+	else
 	restoration.always_bravos = false
+	end
+	restoration.global_spawn_multiplier = 1
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.sonic_mod = false
@@ -207,6 +212,7 @@ function restoration:Init()
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
+		"trai", --Lost in Transit
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration

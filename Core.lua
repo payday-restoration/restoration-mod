@@ -184,13 +184,15 @@ function restoration:Init()
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	
-	
+	--[[
 	if job == "trai" then
 	restoration.always_bravos = true
 	else
 	restoration.always_bravos = false
 	end
+	--]]
 	restoration.global_spawn_multiplier = 1
+	restoration.always_bravos = false
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.sonic_mod = false

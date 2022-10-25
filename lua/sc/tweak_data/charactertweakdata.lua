@@ -18137,7 +18137,8 @@ function CharacterTweakData:character_map()
 				"ene_murky_tazer",
 				"ene_swat_1",
 				"ene_swat_2",
-				"ene_murky_sniper"
+				"ene_murky_sniper",
+				"ene_murky_sniper_2"
 			}
 		}
 

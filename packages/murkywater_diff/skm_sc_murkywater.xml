@@ -53,16 +53,13 @@
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_murky_hrt_df" force="false"/>
 	
 	<!--Murky Sniper-->
-	<unit				path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false" load="true"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper_husk" force="false" load="true"/>
-	<object				path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false"/>
-	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false"/>
-	<model				path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false"/>
-	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false"/>
-	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper_contour" force="false"/>	
-
-	<df_nm				path="units/pd2_mod_sharks/characters/ene_murky_sniper/body" force="false"/>
-	<df_nm				path="units/pd2_mod_sharks/characters/ene_murky_sniper/head" force="false"/>	
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2_contour" force="false"/>	
 	
 	<!--fbi tier-->
 	<!--Murky Shield Acc Lights-->

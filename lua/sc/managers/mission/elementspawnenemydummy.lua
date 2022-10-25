@@ -2422,8 +2422,8 @@ local murkywater_deathwish = {
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",		
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
-		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
-		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",
+		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",	
+		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
@@ -2477,7 +2477,7 @@ local murkywater_deathwish = {
 		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",	 
 		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
 		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",	
 		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_medic/ene_murkywater_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic",
@@ -2496,9 +2496,10 @@ local murkywater_deathwish = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull"
 	}
-local murkywater_omnia = {
+local murkywater_hecu = {
         --bye bye fbi lights
 		--elites introduced
+		--their asses are heavy
 		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",
@@ -2525,8 +2526,8 @@ local murkywater_omnia = {
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",		
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
-		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",
+		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",	
+		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -2580,7 +2581,7 @@ local murkywater_omnia = {
 		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",	 
 		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",	
 		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_medic/ene_murkywater_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic",
@@ -4220,10 +4221,10 @@ function ElementSpawnEnemyDummy:init(...)
 			self._values.enemy = murkywater_deathwish[self._values.enemy] or self._values.enemy			
 		--deaf sentence XD						
 		elseif difficulty_index == 8 then
-			if murkywater_omnia[self._values.enemy] then
-				self._values.enemy = murkywater_omnia[self._values.enemy]
+			if murkywater_hecu[self._values.enemy] then
+				self._values.enemy = murkywater_hecu[self._values.enemy]
 			end
-			self._values.enemy = murkywater_omnia[self._values.enemy] or self._values.enemy							
+			self._values.enemy = murkywater_hecu[self._values.enemy] or self._values.enemy							
 		end
 	--Reapers
 	elseif ai_type == "russia" then

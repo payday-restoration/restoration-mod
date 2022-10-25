@@ -7338,28 +7338,28 @@ else
 	self.unit_categories.Autumn_Spooc = {
 		unit_types = {
 			america = {
-				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},
 			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},	
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},					
 			nypd = {
-				Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},	
 			lapd = {
-				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			},
 			fbi = {
-				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			}			
 		},
 		access = access_type_all,

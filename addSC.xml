@@ -851,6 +851,29 @@
 	<texture			path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_cloak_glow_df" force="false" load="true"/>
 	
 	<!--Autumn's Squad-->
+	<!--OMNIA spooky boi-->
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook" load="true"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook_contour"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook_husk" load="true"/>
+	<texture			path="units/pd2_mod_omnia/characters/ene_omnia_spook/spook_heavy_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df"/>				
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm"/>		
+	
+	<!--OMNIA Cloaker Debris-->
+	<!--head-->
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris"/>
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris" load="false"/>
+	<!--body-->
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_upper_body_debris"/>
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_upper_body_debris" load="false"/>
+	<!--end debris-->
+	
+	<!--OMNIA Titan Spooc-->
 	<unit				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
 	<unit				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>		
 	<model				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
@@ -865,7 +888,8 @@
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
 	<texture			path="units/payday2/characters/shared_textures/nvg_df" load="true"/>
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm" load="true"/>
-		
+	
+	<!--DRAK Titan Cloaker (why would Shado--- i mean Autumn hang around with DRAK clonkers?)-->	
 	<model				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<object				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>

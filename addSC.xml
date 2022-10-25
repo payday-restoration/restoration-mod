@@ -861,8 +861,8 @@
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook_contour"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook_husk" load="true"/>
 	<texture			path="units/pd2_mod_omnia/characters/ene_omnia_spook/spook_heavy_df"/>
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df"/>				
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm"/>		
+	<texture			path="units/pd2_mod_omnia/characters/ene_omnia_spook/nvg_df"/>				
+	<texture			path="units/pd2_mod_omnia/characters/ene_omnia_spook/nvg_nm"/>		
 	
 	<!--OMNIA Cloaker Debris-->
 	<!--head-->

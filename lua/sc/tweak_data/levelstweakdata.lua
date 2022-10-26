@@ -229,7 +229,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.player_style = "slaughterhouse"
 
     self.trai.ai_group_type = nypd
-    self.trai.player_style = "fighterpilot"
+    self.trai.player_style = "railroad"
 
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil

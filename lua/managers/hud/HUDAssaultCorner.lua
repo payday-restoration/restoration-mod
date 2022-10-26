@@ -251,7 +251,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		blend_mode = "add",
 		layer = 1,
 		valign = "center",
-		align = "center",
+		align = "right",
 		vertical = "center",
 		x = 0,
 		y = 0,
@@ -263,7 +263,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		time = ""
 	})))
 	local _, _, w, h = point_of_no_return_text:text_rect()
-	point_of_no_return_text:set_size(w, h)
+	point_of_no_return_text:set_size(w * 2, h)
 	point_of_no_return_text:set_right(point_of_no_return_panel:w())
 	local point_of_no_return_timer = point_of_no_return_panel:text({
 		name = "point_of_no_return_timer",

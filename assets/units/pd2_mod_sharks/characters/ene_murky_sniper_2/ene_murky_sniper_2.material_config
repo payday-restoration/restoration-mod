@@ -1,0 +1,51 @@
+<materials version="3" group="ene_murkywater_light">
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_head" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df"/>
+    </material>
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_head_lod" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="3"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df" mip="3"/>
+    </material>
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_body" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_df"/>
+    </material>
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_body_lod" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_nm" mip="3"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_df" mip="3"/>
+    </material>
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_frame" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_df"/>
+    </material>
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_frame_lod" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_nm" mip="3"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/material_df" mip="3"/>
+    </material>
+
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mtr_hat" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/helmets_atlas_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/helmets_atlas_df"/>
+    </material>
+
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mtr_hat_lod" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df"/>
+    </material>
+
+    <material unique="true" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2" name="mtr_glass">
+        <variable type="vector3" name="fresnel_settings" value="0 1 0.66999995708466"/>
+        <opacity_texture file="units/glass/vehicle_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/glasses_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" name="shadow_caster" version="2"/>
+</materials>

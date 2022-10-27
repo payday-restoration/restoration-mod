@@ -3424,8 +3424,14 @@ function CharacterTweakData:_init_german(presets)
 	self.german.flammable = false
 	self.german.damage = presets.gang_member_damage
 	self.german.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_shot_r870_pdth_npc",
+		"wpn_fps_shot_r870_npc",
+		"wpn_fps_shot_r870_npc",
+		"wpn_fps_shot_r870_npc"
+	}
 	self.german.weapon.weapons_of_choice = {
-		primary = "wpn_fps_shot_r870_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.german.detection = presets.detection.gang_member
@@ -3671,8 +3677,13 @@ function CharacterTweakData:_init_bonnie(presets)
 	self.bonnie.no_run_stop = true
 	self.bonnie.damage = presets.gang_member_damage
 	self.bonnie.weapon = deep_clone(presets.weapon.gang_member)
+	local rand_weap = {
+		"wpn_fps_shot_b682_725_npc",
+		"wpn_fps_shot_b682_npc",
+		"wpn_fps_shot_b682_npc",
+	}
 	self.bonnie.weapon.weapons_of_choice = {
-		primary = "wpn_fps_shot_b682_npc",
+		primary = table.random(rand_weap),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.bonnie.detection = presets.detection.gang_member
@@ -3700,7 +3711,6 @@ function CharacterTweakData:_init_sokol(presets)
 		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_npc",
-		"wpn_fps_ass_asval_vss_npc",
 		"wpn_fps_ass_asval_vss_npc",
 	}
 	self.sokol.weapon.weapons_of_choice = {
@@ -3820,7 +3830,10 @@ function CharacterTweakData:_init_sydney(presets)
 	self.sydney.damage = presets.gang_member_damage
 	self.sydney.weapon = deep_clone(presets.weapon.gang_member)
 	local rand_weap = {
-		"wpn_fps_ass_tecci_npc"
+		"wpn_fps_ass_tecci_long_npc",
+		--"wpn_fps_ass_tecci_npc",
+		--"wpn_fps_ass_tecci_npc",
+		--"wpn_fps_ass_tecci_npc",
 	}
 	self.sydney.weapon.weapons_of_choice = {
 		primary = table.random(rand_weap),

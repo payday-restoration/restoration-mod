@@ -486,33 +486,34 @@ local stocks = {
 			concealment = -5,
 			ads_speed_mult = 1.125
 		},
-	--Folded > Heavy Adjustable ----Con ++Acc ++Stab
+	--Folded > Heavy Adjustable ----Con +++Acc +Stab
 		--stocks.folded_to_hvy_rec2
 		folded_to_hvy_rec2 = {
+			value = 5,
+			recoil = 2,
+			spread = 3,
+			concealment = -4,
+			ads_speed_mult = 1.1
+		},
+	--Folded > Heavy Adjustable ----Con ++Acc ++Stab
+		--stocks.folded_to_hvy_rec3
+		folded_to_hvy_rec3 = {
 			value = 5,
 			recoil = 4,
 			spread = 2,
 			concealment = -4,
 			ads_speed_mult = 1.1
 		},
-	--Folded > Heavy Adjustable ----Con +Acc +++Stab
-		--stocks.folded_to_hvy_rec3
-		folded_to_hvy_rec3 = {
-			value = 5,
-			recoil = 6,
-			spread = 1,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--Folded > Adjustable ---Con ++Acc +Stab
+	--Folded > Adjustable ---Con +++Acc
 		--stocks.folded_to_adj_rec1
 		folded_to_adj_rec1 = {
 			value = 4,
 			spread = 3,
+			recoil = 0,
 			concealment = -3,
 			ads_speed_mult = 1.075
 		},
-	--Folded > Adjustable ---Con +Acc ++Stab
+	--Folded > Adjustable ---Con ++Acc +Stab
 		--stocks.folded_to_adj_rec2
 		folded_to_adj_rec2 = {
 			value = 4,
@@ -521,7 +522,7 @@ local stocks = {
 			concealment = -3,
 			ads_speed_mult = 1.075
 		},
-	--Folded > Adjustable ---Con +++Stab
+	--Folded > Adjustable ---Con +Acc ++Stab
 		--stocks.folded_to_adj_rec3
 		folded_to_adj_rec3 = {
 			value = 4,
@@ -530,7 +531,7 @@ local stocks = {
 			concealment = -3,
 			ads_speed_mult = 1.075
 		},
-	--Folded > Unfolded --Con ++Stab
+	--Folded > Unfolded --Con +Acc +Stab
 		--stocks.unfold_folded_stats
 		unfold_folded_stats = {
 			value = 3,
@@ -17630,9 +17631,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
 	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 
-	if not self.wpn_fps_lmg_hk51b.override then
-		self.wpn_fps_lmg_hk51b.override = {}
-	end
+	self.wpn_fps_lmg_hk51b.stock_adapter = "wpn_fps_sho_sko12_s_adapter"
+	self.wpn_fps_lmg_hk51b_npc.stock_adapter = "wpn_fps_sho_sko12_s_adapter"
+
+	self.wpn_fps_lmg_hk51b.override = self.wpn_fps_lmg_hk51b.override or {}
+
+	
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_standard = {
+		stats = deep_clone(stocks.folded_to_adj_rec2),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec2)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_pts = {
+		stats = deep_clone(stocks.folded_to_adj_rec1),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec1)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_sho_sko12_stock = {
+		stats = deep_clone(stocks.folded_to_adj_rec1),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec1)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_crane = {
+		stats = deep_clone(stocks.folded_to_adj_rec3),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec3)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_mk46 = {
+		stats = deep_clone(stocks.folded_to_adj_rec3),
+		custom_stats = deep_clone(stocks.folded_to_adj_rec3)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_ubr = {
+		stats = deep_clone(stocks.folded_to_hvy_rec3),
+		custom_stats = deep_clone(stocks.folded_to_hvy_rec3)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_snp_tti_s_vltor = {
+		stats = deep_clone(stocks.folded_to_hvy_rec2),
+		custom_stats = deep_clone(stocks.folded_to_hvy_rec2)
+	}
 
 	self.wpn_fps_lmg_hk51b.override.wpn_fps_smg_mp5_s_ring = {
 		stats = deep_clone(stocks.remove_folded_stats),
@@ -17645,6 +17677,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_ring")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_folding")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_snp_tti_s_vltor")	
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_sho_sko12_stock")
 			
 	self.wpn_fps_lmg_hk51b_npc.override = deep_clone(self.wpn_fps_lmg_hk51b.override)		
 	self.wpn_fps_lmg_hk51b_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk51b.uses_parts)		
@@ -25566,7 +25605,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_npc_weaps", function(self
 		"wpn_fps_ass_asval_body_standard",
 		"wpn_fps_ass_asval_fg_standard",
 		"wpn_fps_ass_asval_m_standard",
-		"wpn_fps_upg_o_poe",
+		"wpn_fps_ass_asval_scopemount",
+		"wpn_fps_upg_o_shortdot",
 		"wpn_fps_ass_asval_s_solid"
 	}
 	self.wpn_fps_ass_asval_vss_npc = deep_clone(self.wpn_fps_ass_asval_vss)
@@ -25596,6 +25636,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_npc_weaps", function(self
 	}
 	self.wpn_fps_sho_ben_jim_npc = deep_clone(self.wpn_fps_sho_ben_jim)
 	self.wpn_fps_sho_ben_jim_npc.unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben/wpn_fps_sho_ben_npc"
+
+	self.wpn_fps_shot_r870_pdth = deep_clone(self.wpn_fps_shot_r870)
+	self.wpn_fps_shot_r870_pdth.real_factory_id = "wpn_fps_shot_r870"
+	self.wpn_fps_shot_r870_pdth.default_blueprint = {
+		"wpn_fps_shot_r870_body_standard",
+		"wpn_fps_shot_r870_b_short",
+		"wpn_fps_shot_r870_fg_small",
+		"wpn_fps_shot_r870_s_folding",
+		"wpn_fps_upg_m4_g_standard"
+	}
+	self.wpn_fps_shot_r870_pdth_npc = deep_clone(self.wpn_fps_shot_r870_pdth)
+	self.wpn_fps_shot_r870_pdth_npc.unit = "units/payday2/weapons/wpn_fps_shot_r870/wpn_fps_shot_r870_npc"
 
 	self.wpn_fps_lmg_hk21_pdth = deep_clone(self.wpn_fps_lmg_hk21)
 	self.wpn_fps_lmg_hk21_pdth.real_factory_id = "wpn_fps_lmg_hk21"
@@ -25778,5 +25830,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_npc_weaps", function(self
 	}
 	self.wpn_fps_snp_tti_wick_bubba_npc = deep_clone(self.wpn_fps_snp_tti_wick_bubba)
 	self.wpn_fps_snp_tti_wick_bubba_npc.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti_npc"
+
+	self.wpn_fps_shot_b682_725 = deep_clone(self.wpn_fps_shot_b682)
+	self.wpn_fps_shot_b682_725.real_factory_id = "wpn_fps_shot_b682"
+	self.wpn_fps_shot_b682_725.default_blueprint = {
+		"wpn_fps_shot_b682_body_standard",
+		"wpn_fps_shot_b682_b_short",
+		"wpn_fps_shot_b682_s_short"
+	}
+	self.wpn_fps_shot_b682_725_npc = deep_clone(self.wpn_fps_shot_b682_725)
+	self.wpn_fps_shot_b682_725_npc.unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682/wpn_fps_shot_b682_npc"
+
+	self.wpn_fps_ass_tecci_long = deep_clone(self.wpn_fps_ass_tecci)
+	self.wpn_fps_ass_tecci_long.real_factory_id = "wpn_fps_ass_tecci"
+	self.wpn_fps_ass_tecci_long.default_blueprint = {
+		"wpn_fps_ass_contraband_b_standard",
+		"wpn_fps_ass_tecci_dh_standard",
+		"wpn_fps_ass_contraband_fg_standard",
+		"wpn_fps_ass_tecci_g_standard",
+		"wpn_fps_ass_tecci_lower_reciever",
+		"wpn_fps_ass_tecci_m_drum",
+		"wpn_fps_ass_contraband_ns_standard",
+		"wpn_fps_upg_o_cmore",
+		"wpn_fps_ass_tecci_s_standard",
+		"wpn_fps_ass_tecci_upper_reciever",
+		"wpn_fps_ass_tecci_vg_standard"
+	}
+	self.wpn_fps_ass_tecci_long_npc = deep_clone(self.wpn_fps_ass_tecci_long)
+	self.wpn_fps_ass_tecci_long_npc.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci_npc"
 end)
 --]]

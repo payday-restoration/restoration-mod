@@ -14,7 +14,6 @@ function WeaponFactoryManager:get_animation_weights_from_weapon(factory_id, blue
 	return t
 end
 
---[[
 function WeaponFactoryManager:get_weapon_id_by_factory_id(factory_id)
 	local factory = tweak_data.weapon.factory
 	local real_factory_id = factory[factory_id] and factory[factory_id].real_factory_id
@@ -30,7 +29,6 @@ function WeaponFactoryManager:get_weapon_id_by_factory_id(factory_id)
 
 	return upgrade.weapon_id
 end
-]]
 
 --Debug stuff
 --[[

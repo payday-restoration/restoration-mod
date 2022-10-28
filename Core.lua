@@ -83,6 +83,7 @@ function restoration:Init()
 		jolly = restoration.captain_types.summer, --aftershock
 		rvd1 = restoration.captain_types.summer, --highland mortuary 
 		watchdogs_2_day = restoration.captain_types.summer, --Watchdogs Day 2 Daytime
+		trai = restoration.captain_types.summer, --Lost In Transit
 		jolly_CD = restoration.captain_types.summer, --jolly crackdown edit
 		--Custom Heists--	
 		alex_2_res = restoration.captain_types.summer, --Rats Day 2 edit

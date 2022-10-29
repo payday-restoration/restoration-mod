@@ -14882,6 +14882,42 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			})
 		}	
 	end	
+	
+	--Marshal Shield Spawn, just for Train Heist
+	if job == "trai" then
+		self.enemy_spawn_groups.marshal_squad = {
+			spawn_cooldown = 60,
+			max_nr_simultaneous_groups = 2,
+			initial_spawn_delay = 90,
+			amount = {
+				2,
+				2
+			},
+			spawn = {
+				{
+					respawn_cooldown = 30,
+					amount_min = 1,
+					rank = 2,
+					freq = 1,
+					unit = "marshal_shield",
+					tactics = self._tactics.marshal_shield
+				},
+				{
+					respawn_cooldown = 30,
+					amount_min = 1,
+					rank = 1,
+					freq = 1,
+					unit = "marshal_marksman",
+					tactics = self._tactics.marshal_marksman
+				}
+			},
+			spawn_point_chk_ref = table.list_to_set({
+				"tac_shield_wall",
+				"tac_shield_wall_ranged",
+				"tac_shield_wall_charge"
+			})
+		}
+	end
 
 	--Skirmish Spawngroups Below
 	

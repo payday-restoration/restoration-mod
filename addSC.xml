@@ -1372,7 +1372,7 @@
 	
 	
 	<!--Old Meth Instructions-->
-	<bnk				path="soundbanks/job_h_rat_stage1" force="true"/>
+	<!--bnk				path="soundbanks/job_h_rat_stage1" force="true"-->
 	
 	<!--Blank Statboost-->
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>	

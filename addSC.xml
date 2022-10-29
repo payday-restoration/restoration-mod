@@ -290,12 +290,6 @@
 		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
 	</add>
-	<add from_db="true" 	path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2" type="unit">
-		<unit 				path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
-		<object 			path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
-		<material_config 	path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
-		<unit load="true" 	path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2_husk"/>
-	</add>
 	
 	<!-- Gensec Security: Beret Poppin' -->
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />

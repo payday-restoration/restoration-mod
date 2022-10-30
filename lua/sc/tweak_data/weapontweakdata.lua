@@ -85,38 +85,38 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 60,
-		fire_rate = 0.08571428571,
+		mag_capacity = 50,
+		fire_rate = 0.06666666667,
 		damage = 4.8
 	},
 	assault_rifle = {
-		mag_capacity = 60,
-		fire_rate = 0.08571428571,
-		damage = 4.8
+		mag_capacity = 30,
+		fire_rate = 0.1,
+		damage = 6.0
 	},
 	lmg = {
 		mag_capacity = 100,
-		fire_rate = 0.075,
+		fire_rate = 0.08,
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 16,
-		fire_rate = 0.12,
+		mag_capacity = 14,
+		fire_rate = 0.15,
 		damage = 7.5
 	},
 	shotgun_pump = {
-		mag_capacity = 8,
-		fire_rate = 0.75,
+		mag_capacity = 7,
+		fire_rate = 0.8,
 		damage = 15.0
 	},
 	sniper_auto = {
-		mag_capacity = 12,
+		mag_capacity = 10,
 		fire_rate = 0.6,
 		damage = 9.0
 	},
 	sniper_bolt = {
-		mag_capacity = 6,
-		fire_rate = 1,
+		mag_capacity = 5,
+		fire_rate = 1.33333,
 		damage = 18.0
 	}
 }
@@ -173,138 +173,143 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_normal()
+
 		--Bot sidearm--
-		self.beretta92_npc.DAMAGE = 1
+		self.beretta92_npc.DAMAGE = 1.8
 		
+		local diff_reduction = 3
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
-			self[ wep_id ].DAMAGE = 1.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
 		end
 		
 		for i, wep_id in ipairs(damage_set.assault_rifle) do
-			self[ wep_id ].DAMAGE = 1.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_auto) do
-			self[ wep_id ].DAMAGE = 4.5
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_pump) do
-			self[ wep_id ].DAMAGE = 12
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_auto) do
-			self[ wep_id ].DAMAGE = 6
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_bolt) do
-			self[ wep_id ].DAMAGE = 15
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.lmg) do
-			self[ wep_id ].DAMAGE = 0.6
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 	end
 	
 	function WeaponTweakData:_set_hard()
 		--Bot sidearm--
-		self.beretta92_npc.DAMAGE = 1
+		self.beretta92_npc.DAMAGE = 1.8
 		
+		local diff_reduction = 3
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
-			self[ wep_id ].DAMAGE = 1.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
 		end
 		
 		for i, wep_id in ipairs(damage_set.assault_rifle) do
-			self[ wep_id ].DAMAGE = 1.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_auto) do
-			self[ wep_id ].DAMAGE = 4.5
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_pump) do
-			self[ wep_id ].DAMAGE = 12
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_auto) do
-			self[ wep_id ].DAMAGE = 6
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_bolt) do
-			self[ wep_id ].DAMAGE = 15
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.lmg) do
-			self[ wep_id ].DAMAGE = 0.6
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 	end
 	
 	function WeaponTweakData:_set_overkill()
 		--Bot sidearm--
-		self.beretta92_npc.DAMAGE = 2
+		self.beretta92_npc.DAMAGE = 2.8
 		
+		local diff_reduction = 2
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
-			self[ wep_id ].DAMAGE = 2.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
 		end
 		
 		for i, wep_id in ipairs(damage_set.assault_rifle) do
-			self[ wep_id ].DAMAGE = 2.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_auto) do
-			self[ wep_id ].DAMAGE = 5.5
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_pump) do
-			self[ wep_id ].DAMAGE = 13
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_auto) do
-			self[ wep_id ].DAMAGE = 7
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_bolt) do
-			self[ wep_id ].DAMAGE = 16
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.lmg) do
-			self[ wep_id ].DAMAGE = 1.6
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 	end
 	
 	function WeaponTweakData:_set_overkill_145()
 		--Bot sidearm--
-		self.beretta92_npc.DAMAGE = 3
+		self.beretta92_npc.DAMAGE = 3.8
 		
+		local diff_reduction = 1
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
-			self[ wep_id ].DAMAGE = 3.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
 		end
 		
 		for i, wep_id in ipairs(damage_set.assault_rifle) do
-			self[ wep_id ].DAMAGE = 3.8
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_auto) do
-			self[ wep_id ].DAMAGE = 6.5
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.shotgun_pump) do
-			self[ wep_id ].DAMAGE = 14
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_auto) do
-			self[ wep_id ].DAMAGE = 8
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.sniper_bolt) do
-			self[ wep_id ].DAMAGE = 17
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
 		end
 
 		for i, wep_id in ipairs(damage_set.lmg) do
-			self[ wep_id ].DAMAGE = 2.6
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 		
 		if job == "chew" or job == "glace" then
@@ -1714,7 +1719,7 @@ local crew_wep_preset = {
 			self.shepheard_crew.categories = clone(self.shepheard.categories)
 			self.shepheard_crew.sounds.prefix = "shepheard_npc"
 			self.shepheard_crew.use_data.selection_index = 2
-			self.shepheard_crew.DAMAGE = 4.8
+			self.shepheard_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.shepheard_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.shepheard_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.shepheard_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1732,7 +1737,7 @@ local crew_wep_preset = {
 			self.erma_crew.categories = clone(self.erma.categories)
 			self.erma_crew.sounds.prefix = "erma_npc"
 			self.erma_crew.use_data.selection_index = 2
-			self.erma_crew.DAMAGE = 4.8
+			self.erma_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.erma_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.erma_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.erma_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1751,7 +1756,7 @@ local crew_wep_preset = {
 			self.vityaz_crew.categories = clone(self.vityaz.categories)
 			self.vityaz_crew.sounds.prefix = "vityaz_npc"
 			self.vityaz_crew.use_data.selection_index = 2
-			self.vityaz_crew.DAMAGE = 4.8
+			self.vityaz_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.vityaz_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.vityaz_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.vityaz_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
@@ -1771,7 +1776,7 @@ local crew_wep_preset = {
 			self.polymer_crew.categories = clone(self.polymer.categories)
 			self.polymer_crew.sounds.prefix = "polymer_npc"
 			self.polymer_crew.use_data.selection_index = 2
-			self.polymer_crew.DAMAGE = 4.8
+			self.polymer_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.polymer_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.polymer_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.polymer_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1793,7 +1798,7 @@ local crew_wep_preset = {
 			self.schakal_crew.categories = clone(self.schakal.categories)
 			self.schakal_crew.sounds.prefix = "schakal_npc"
 			self.schakal_crew.use_data.selection_index = 2
-			self.schakal_crew.DAMAGE = 4.8
+			self.schakal_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.schakal_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.schakal_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.schakal_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1815,7 +1820,7 @@ local crew_wep_preset = {
 			self.pm9_crew.categories = clone(self.pm9.categories)
 			self.pm9_crew.sounds.prefix = "pm9_npc"
 			self.pm9_crew.use_data.selection_index = 2
-			self.pm9_crew.DAMAGE = 4.8
+			self.pm9_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.pm9_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.pm9_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.pm9_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1833,7 +1838,7 @@ local crew_wep_preset = {
 			self.coal_crew.categories = clone(self.coal.categories)
 			self.coal_crew.sounds.prefix = "coal_npc"
 			self.coal_crew.use_data.selection_index = 2
-			self.coal_crew.DAMAGE = 4.8
+			self.coal_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.coal_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.coal_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.coal_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1851,7 +1856,7 @@ local crew_wep_preset = {
 			self.hailstorm_crew.categories = clone(self.hailstorm.categories)
 			self.hailstorm_crew.sounds.prefix = "hailstorm_npc"
 			self.hailstorm_crew.use_data.selection_index = 2
-			self.hailstorm_crew.DAMAGE = 4.8
+			self.hailstorm_crew.DAMAGE = crew_wep_preset.smg.damage
 			self.hailstorm_crew.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 			self.hailstorm_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed"
 			self.hailstorm_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
@@ -1875,7 +1880,7 @@ local crew_wep_preset = {
 			self.akm_gold_crew.categories = clone(self.akm_gold.categories)
 			self.akm_gold_crew.sounds.prefix = "akm_npc"
 			self.akm_gold_crew.use_data.selection_index = 2
-			self.akm_gold_crew.DAMAGE = 4.8
+			self.akm_gold_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.akm_gold_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.akm_gold_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.akm_gold_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -1892,7 +1897,7 @@ local crew_wep_preset = {
 			self.amcar_crew.categories = clone(self.amcar.categories)
 			self.amcar_crew.sounds.prefix = "amcar_npc"
 			self.amcar_crew.use_data.selection_index = 2
-			self.amcar_crew.DAMAGE = 4.8
+			self.amcar_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.amcar_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.amcar_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.amcar_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -1909,7 +1914,7 @@ local crew_wep_preset = {
 			self.ak74_crew.categories = clone(self.ak74.categories)
 			self.ak74_crew.sounds.prefix = "ak74_npc"
 			self.ak74_crew.use_data.selection_index = 2
-			self.ak74_crew.DAMAGE = 4.8
+			self.ak74_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.ak74_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.ak74_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.ak74_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -1928,7 +1933,7 @@ local crew_wep_preset = {
 			self.m4_crew.categories = clone(self.new_m4.categories)
 			self.m4_crew.sounds.prefix = "m4_npc"
 			self.m4_crew.use_data.selection_index = 2
-			self.m4_crew.DAMAGE = 4.8
+			self.m4_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.m4_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.m4_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.m4_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -1948,7 +1953,7 @@ local crew_wep_preset = {
 			self.aug_crew.categories = clone(self.aug.categories)
 			self.aug_crew.sounds.prefix = "aug_npc"
 			self.aug_crew.use_data.selection_index = 2
-			self.aug_crew.DAMAGE = 4.8
+			self.aug_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.aug_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.aug_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.aug_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -1967,7 +1972,7 @@ local crew_wep_preset = {
 			self.akm_crew.categories = clone(self.akm.categories)
 			self.akm_crew.sounds.prefix = "akm_npc"
 			self.akm_crew.use_data.selection_index = 2
-			self.akm_crew.DAMAGE = 4.8
+			self.akm_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.akm_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.akm_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.akm_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -1984,7 +1989,7 @@ local crew_wep_preset = {
 			self.g36_crew.categories = clone(self.g36.categories)
 			self.g36_crew.sounds.prefix = "g36_npc"
 			self.g36_crew.use_data.selection_index = 2
-			self.g36_crew.DAMAGE = 4.8
+			self.g36_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.g36_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.g36_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.g36_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2001,7 +2006,7 @@ local crew_wep_preset = {
 			self.ak5_crew.categories = clone(self.ak5.categories)
 			self.ak5_crew.sounds.prefix = "ak5_npc"
 			self.ak5_crew.use_data.selection_index = 2
-			self.ak5_crew.DAMAGE = 4.8
+			self.ak5_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.ak5_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.ak5_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.ak5_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2018,7 +2023,7 @@ local crew_wep_preset = {
 			self.m16_crew.categories = clone(self.m16.categories)
 			self.m16_crew.sounds.prefix = "m16_npc"
 			self.m16_crew.use_data.selection_index = 2
-			self.m16_crew.DAMAGE = 4.8
+			self.m16_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.m16_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.m16_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.m16_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2035,7 +2040,7 @@ local crew_wep_preset = {
 			self.s552_crew.categories = clone(self.s552.categories)
 			self.s552_crew.sounds.prefix = "sig552_npc"
 			self.s552_crew.use_data.selection_index = 2
-			self.s552_crew.DAMAGE = 4.8
+			self.s552_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.s552_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.s552_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.s552_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2054,7 +2059,7 @@ local crew_wep_preset = {
 			self.scar_crew.categories = clone(self.scar.categories)
 			self.scar_crew.sounds.prefix = "scar_npc"
 			self.scar_crew.use_data.selection_index = 2
-			self.scar_crew.DAMAGE = 4.8
+			self.scar_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.scar_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.scar_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.scar_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2071,7 +2076,7 @@ local crew_wep_preset = {
 			self.fal_crew.categories = clone(self.fal.categories)
 			self.fal_crew.sounds.prefix = "fn_fal_npc"
 			self.fal_crew.use_data.selection_index = 2
-			self.fal_crew.DAMAGE = 4.8
+			self.fal_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.fal_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.fal_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.fal_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2088,7 +2093,7 @@ local crew_wep_preset = {
 			self.famas_crew.categories = clone(self.famas.categories)
 			self.famas_crew.sounds.prefix = "famas_npc"
 			self.famas_crew.use_data.selection_index = 2
-			self.famas_crew.DAMAGE = 4.8
+			self.famas_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.famas_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.famas_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.famas_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2105,7 +2110,7 @@ local crew_wep_preset = {
 			self.galil_crew.categories = clone(self.galil.categories)
 			self.galil_crew.sounds.prefix = "galil_npc"
 			self.galil_crew.use_data.selection_index = 2
-			self.galil_crew.DAMAGE = 4.8
+			self.galil_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.galil_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.galil_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.galil_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2118,31 +2123,11 @@ local crew_wep_preset = {
 			self.galil_crew.FIRE_MODE = "auto"
 		end
 		
-		function WeaponTweakData:_init_data_shak12_crew()
-			self.shak12_crew.categories = clone(self.shak12.categories)
-			self.shak12_crew.sounds.prefix = "shak12_npc"
-			self.shak12_crew.use_data.selection_index = 2
-			self.shak12_crew.DAMAGE = 4.8
-			self.shak12_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
-			self.shak12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-			self.shak12_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
-			self.shak12_crew.CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
-			self.shak12_crew.NR_CLIPS_MAX = 5
-			self.shak12_crew.pull_magazine_during_reload = "rifle"
-			self.shak12_crew.hold = {
-				"bullpup",
-				"rifle"
-			}
-			self.shak12_crew.alert_size = 2500
-			self.shak12_crew.suppression = 2.2
-			self.shak12_crew.FIRE_MODE = "auto"
-		end
-		
 		function WeaponTweakData:_init_data_l85a2_crew()
 			self.l85a2_crew.categories = clone(self.l85a2.categories)
 			self.l85a2_crew.sounds.prefix = "l85_npc"
 			self.l85a2_crew.use_data.selection_index = 2
-			self.l85a2_crew.DAMAGE = 4.8
+			self.l85a2_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.l85a2_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.l85a2_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.l85a2_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2161,7 +2146,7 @@ local crew_wep_preset = {
 			self.vhs_crew.categories = clone(self.vhs.categories)
 			self.vhs_crew.sounds.prefix = "vhs_npc"
 			self.vhs_crew.use_data.selection_index = 2
-			self.vhs_crew.DAMAGE = 4.8
+			self.vhs_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.vhs_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.vhs_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.vhs_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2179,7 +2164,7 @@ local crew_wep_preset = {
 			self.asval_crew.categories = clone(self.asval.categories)
 			self.asval_crew.sounds.prefix = "akm_npc"
 			self.asval_crew.use_data.selection_index = 2
-			self.asval_crew.DAMAGE = 4.8
+			self.asval_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.asval_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.asval_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.asval_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2196,7 +2181,7 @@ local crew_wep_preset = {
 			self.contraband_crew.categories = clone(self.contraband.categories)
 			self.contraband_crew.sounds.prefix = "contraband_npc"
 			self.contraband_crew.use_data.selection_index = 2
-			self.contraband_crew.DAMAGE = 4.8
+			self.contraband_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.contraband_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.contraband_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.contraband_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2228,7 +2213,7 @@ local crew_wep_preset = {
 			self.groza_crew.categories = clone(self.groza.categories)
 			self.groza_crew.sounds.prefix = "groza_npc"
 			self.groza_crew.use_data.selection_index = 2
-			self.groza_crew.DAMAGE = 4.8
+			self.groza_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.groza_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.groza_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.groza_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2263,7 +2248,7 @@ local crew_wep_preset = {
 			self.flint_crew.categories = clone(self.flint.categories)
 			self.flint_crew.sounds.prefix = "flint_npc"
 			self.flint_crew.use_data.selection_index = 2
-			self.flint_crew.DAMAGE = 4.8
+			self.flint_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.flint_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.flint_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.flint_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
@@ -2280,7 +2265,7 @@ local crew_wep_preset = {
 			self.corgi_crew.categories = clone(self.corgi.categories)
 			self.corgi_crew.sounds.prefix = "corgi_npc"
 			self.corgi_crew.use_data.selection_index = 2
-			self.corgi_crew.DAMAGE = 4.8
+			self.corgi_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.corgi_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.corgi_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.corgi_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2301,7 +2286,7 @@ local crew_wep_preset = {
 			self.komodo_crew.categories = clone(self.komodo.categories)
 			self.komodo_crew.sounds.prefix = "komodo_npc"
 			self.komodo_crew.use_data.selection_index = 2
-			self.komodo_crew.DAMAGE = 4.8
+			self.komodo_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
 			self.komodo_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.komodo_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.komodo_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2323,7 +2308,7 @@ local crew_wep_preset = {
 			self.ben_crew.categories = {"shotgun"}
 			self.ben_crew.sounds.prefix = "benelli_m4_npc"
 			self.ben_crew.use_data.selection_index = 2
-			self.ben_crew.DAMAGE = 7.5
+			self.ben_crew.DAMAGE = crew_wep_preset.shotgun_auto.damage
 			self.ben_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.ben_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.ben_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
@@ -2344,7 +2329,7 @@ local crew_wep_preset = {
 			self.spas12_crew.categories = clone(self.spas12.categories)
 			self.spas12_crew.sounds.prefix = "spas_npc"
 			self.spas12_crew.use_data.selection_index = 2
-			self.spas12_crew.DAMAGE = 7.5
+			self.spas12_crew.DAMAGE = crew_wep_preset.shotgun_auto.damage
 			self.spas12_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.spas12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.spas12_crew.auto = {}
@@ -2363,7 +2348,7 @@ local crew_wep_preset = {
 			self.ultima_crew.categories = clone(self.ultima.categories)
 			self.ultima_crew.sounds.prefix = "ultima_npc"
 			self.ultima_crew.use_data.selection_index = 2
-			self.ultima_crew.DAMAGE = 7.5
+			self.ultima_crew.DAMAGE = crew_wep_preset.shotgun_auto.damage
 			self.ultima_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.ultima_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.ultima_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
@@ -2381,7 +2366,7 @@ local crew_wep_preset = {
 			self.aa12_crew.categories = clone(self.aa12.categories)
 			self.aa12_crew.sounds.prefix = "aa12_npc"
 			self.aa12_crew.use_data.selection_index = 2
-			self.aa12_crew.DAMAGE = 7.5
+			self.aa12_crew.DAMAGE = crew_wep_preset.shotgun_auto.damage
 			self.aa12_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.aa12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.aa12_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
@@ -2400,7 +2385,7 @@ local crew_wep_preset = {
 			self.sko12_crew.categories = clone(self.sko12.categories)
 			self.sko12_crew.sounds.prefix = "sko12_npc"
 			self.sko12_crew.use_data.selection_index = 2
-			self.sko12_crew.DAMAGE = 7.5
+			self.sko12_crew.DAMAGE = crew_wep_preset.shotgun_auto.damage
 			self.sko12_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.sko12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.sko12_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
@@ -2419,7 +2404,7 @@ local crew_wep_preset = {
 			self.saiga_crew.categories = clone(self.saiga.categories)
 			self.saiga_crew.sounds.prefix = "saiga_npc"
 			self.saiga_crew.use_data.selection_index = 2
-			self.saiga_crew.DAMAGE = 7.5
+			self.saiga_crew.DAMAGE = crew_wep_preset.shotgun_auto.damage
 			self.saiga_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.saiga_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.saiga_crew.auto.fire_rate = crew_wep_preset.shotgun_auto.fire_rate
@@ -2438,7 +2423,7 @@ local crew_wep_preset = {
 			self.b682_crew.categories = clone(self.b682.categories)
 			self.b682_crew.sounds.prefix = "b682_npc"
 			self.b682_crew.use_data.selection_index = 2
-			self.b682_crew.DAMAGE = 15
+			self.b682_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
 			self.b682_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.b682_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 			self.b682_crew.auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
@@ -2457,7 +2442,7 @@ local crew_wep_preset = {
 			self.r870_crew.categories = clone(self.r870.categories)
 			self.r870_crew.sounds.prefix = "remington_npc"
 			self.r870_crew.use_data.selection_index = 2
-			self.r870_crew.DAMAGE = 15
+			self.r870_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
 			self.r870_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.r870_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 			self.r870_crew.auto = {}
@@ -2476,7 +2461,7 @@ local crew_wep_preset = {
 			self.ksg_crew.categories = clone(self.ksg.categories)
 			self.ksg_crew.sounds.prefix = "keltec_npc"
 			self.ksg_crew.use_data.selection_index = 2
-			self.ksg_crew.DAMAGE = 15
+			self.ksg_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
 			self.ksg_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.ksg_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.ksg_crew.auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
@@ -2494,7 +2479,7 @@ local crew_wep_preset = {
 			self.huntsman_crew.categories = clone(self.huntsman.categories)
 			self.huntsman_crew.sounds.prefix = "huntsman_npc"
 			self.huntsman_crew.use_data.selection_index = 2
-			self.huntsman_crew.DAMAGE = 15
+			self.huntsman_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
 			self.huntsman_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.huntsman_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 			self.huntsman_crew.auto = {}
@@ -2514,7 +2499,7 @@ local crew_wep_preset = {
 			self.boot_crew.categories = clone(self.boot.categories)
 			self.boot_crew.sounds.prefix = "boot_npc"
 			self.boot_crew.use_data.selection_index = 2
-			self.boot_crew.DAMAGE = 15
+			self.boot_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
 			self.boot_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.boot_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.boot_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
@@ -2534,7 +2519,7 @@ local crew_wep_preset = {
 			self.m14_crew.categories = clone(self.new_m14.categories)
 			self.m14_crew.sounds.prefix = "m14_npc"
 			self.m14_crew.use_data.selection_index = 2
-			self.m14_crew.DAMAGE = 10
+			self.m14_crew.DAMAGE = crew_wep_preset.sniper_auto.damage
 			self.m14_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.m14_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.m14_crew.auto.fire_rate = crew_wep_preset.sniper_auto.fire_rate
@@ -2551,7 +2536,7 @@ local crew_wep_preset = {
 			self.g3_crew.categories = clone(self.g3.categories)
 			self.g3_crew.sounds.prefix = "g3_npc"
 			self.g3_crew.use_data.selection_index = 2
-			self.g3_crew.DAMAGE = 9
+			self.g3_crew.DAMAGE = crew_wep_preset.sniper_auto.damage
 			self.g3_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.g3_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.g3_crew.auto.fire_rate = crew_wep_preset.sniper_auto.fire_rate
@@ -2563,12 +2548,32 @@ local crew_wep_preset = {
 			self.g3_crew.suppression = 3.4
 			self.g3_crew.FIRE_MODE = "single"
 		end
+
+		function WeaponTweakData:_init_data_shak12_crew()
+			self.shak12_crew.categories = clone(self.shak12.categories)
+			self.shak12_crew.sounds.prefix = "shak12_npc"
+			self.shak12_crew.use_data.selection_index = 2
+			self.shak12_crew.DAMAGE = crew_wep_preset.sniper_auto.damage
+			self.shak12_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+			self.shak12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+			self.shak12_crew.auto.fire_rate = crew_wep_preset.sniper_auto.fire_rate
+			self.shak12_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_auto.mag_capacity
+			self.shak12_crew.NR_CLIPS_MAX = 5
+			self.shak12_crew.pull_magazine_during_reload = "rifle"
+			self.shak12_crew.hold = {
+				"bullpup",
+				"rifle"
+			}
+			self.shak12_crew.alert_size = 2500
+			self.shak12_crew.suppression = 2.2
+			self.shak12_crew.FIRE_MODE = "auto"
+		end
 		
 		function WeaponTweakData:_init_data_ching_crew()
 			self.ching_crew.categories = clone(self.ching.categories)
 			self.ching_crew.sounds.prefix = "ching_npc"
 			self.ching_crew.use_data.selection_index = 2
-			self.ching_crew.DAMAGE = 9
+			self.ching_crew.DAMAGE = crew_wep_preset.sniper_auto.damage
 			self.ching_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 			self.ching_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.ching_crew.auto.fire_rate = crew_wep_preset.sniper_auto.fire_rate
@@ -2587,7 +2592,7 @@ local crew_wep_preset = {
 			self.tti_crew.categories = clone(self.tti.categories)
 			self.tti_crew.sounds.prefix = "tti_npc"
 			self.tti_crew.use_data.selection_index = 2
-			self.tti_crew.DAMAGE = 9
+			self.tti_crew.DAMAGE = crew_wep_preset.sniper_auto.damage
 			self.tti_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.tti_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.tti_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2605,7 +2610,7 @@ local crew_wep_preset = {
 			self.qbu88_crew.categories = clone(self.qbu88.categories)
 			self.qbu88_crew.sounds.prefix = "qbu88_npc"
 			self.qbu88_crew.use_data.selection_index = 2
-			self.qbu88_crew.DAMAGE = 9
+			self.qbu88_crew.DAMAGE = crew_wep_preset.sniper_auto.damage
 			self.qbu88_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.qbu88_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.qbu88_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -2623,12 +2628,12 @@ local crew_wep_preset = {
 			self.wa2000_crew.categories = clone(self.wa2000.categories)
 			self.wa2000_crew.sounds.prefix = "lakner_npc"
 			self.wa2000_crew.use_data.selection_index = 2
-			self.wa2000_crew.DAMAGE = 18
+			self.wa2000_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.wa2000_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.wa2000_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.wa2000_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-			self.wa2000_crew.auto.fire_rate = crew_wep_preset.sniper_auto.fire_rate
-			self.wa2000_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_auto.mag_capacity
+			self.wa2000_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+			self.wa2000_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
 			self.wa2000_crew.NR_CLIPS_MAX = 5
 			self.wa2000_crew.pull_magazine_during_reload = "rifle"
 			self.wa2000_crew.hold = {"bullpup", "rifle"}
@@ -2641,12 +2646,12 @@ local crew_wep_preset = {
 			self.siltstone_crew.categories = clone(self.siltstone.categories)
 			self.siltstone_crew.sounds.prefix = "siltstone_npc"
 			self.siltstone_crew.use_data.selection_index = 2
-			self.siltstone_crew.DAMAGE = 18
+			self.siltstone_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.siltstone_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.siltstone_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 			self.siltstone_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-			self.siltstone_crew.auto.fire_rate = crew_wep_preset.sniper_auto.fire_rate
-			self.siltstone_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_auto.mag_capacity
+			self.siltstone_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+			self.siltstone_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
 			self.siltstone_crew.NR_CLIPS_MAX = 4
 			self.siltstone_crew.hold = "rifle"
 			self.siltstone_crew.alert_size = 2500
@@ -2658,7 +2663,7 @@ local crew_wep_preset = {
 			self.model70_crew.categories = clone(self.model70.categories)
 			self.model70_crew.sounds.prefix = "model70_npc"
 			self.model70_crew.use_data.selection_index = 2
-			self.model70_crew.DAMAGE = 18
+			self.model70_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.model70_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.model70_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.model70_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2677,7 +2682,7 @@ local crew_wep_preset = {
 			self.msr_crew.categories = clone(self.msr.categories)
 			self.msr_crew.sounds.prefix = "msr_npc"
 			self.msr_crew.use_data.selection_index = 2
-			self.msr_crew.DAMAGE = 18
+			self.msr_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.msr_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.msr_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.msr_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2694,7 +2699,7 @@ local crew_wep_preset = {
 			self.r93_crew.categories = clone(self.r93.categories)
 			self.r93_crew.sounds.prefix = "blazer_npc"
 			self.r93_crew.use_data.selection_index = 2
-			self.r93_crew.DAMAGE = 18
+			self.r93_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.r93_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.r93_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.r93_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2711,7 +2716,7 @@ local crew_wep_preset = {
 			self.m95_crew.categories = clone(self.m95.categories)
 			self.m95_crew.sounds.prefix = "barrett_npc"
 			self.m95_crew.use_data.selection_index = 2
-			self.m95_crew.DAMAGE = 18
+			self.m95_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.m95_crew.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
 			self.m95_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper_m95"
 			self.m95_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2729,7 +2734,7 @@ local crew_wep_preset = {
 			self.mosin_crew.categories = clone(self.mosin.categories)
 			self.mosin_crew.sounds.prefix = "nagant_npc"
 			self.mosin_crew.use_data.selection_index = 2
-			self.mosin_crew.DAMAGE = 18
+			self.mosin_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.mosin_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.mosin_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.mosin_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2747,7 +2752,7 @@ local crew_wep_preset = {
 			self.winchester1874_crew.categories = clone(self.winchester1874.categories)
 			self.winchester1874_crew.sounds.prefix = "m1873_npc"
 			self.winchester1874_crew.use_data.selection_index = 2
-			self.winchester1874_crew.DAMAGE = 18
+			self.winchester1874_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.winchester1874_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.winchester1874_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.winchester1874_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2766,7 +2771,7 @@ local crew_wep_preset = {
 			self.sbl_crew.categories = clone(self.sbl.categories)
 			self.sbl_crew.sounds.prefix = "sbl_npc"
 			self.sbl_crew.use_data.selection_index = 2
-			self.sbl_crew.DAMAGE = 18
+			self.sbl_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.sbl_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.sbl_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.sbl_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2785,7 +2790,7 @@ local crew_wep_preset = {
 			self.desertfox_crew.categories = clone(self.desertfox.categories)
 			self.desertfox_crew.sounds.prefix = "desertfox_npc"
 			self.desertfox_crew.use_data.selection_index = 2
-			self.desertfox_crew.DAMAGE = 18
+			self.desertfox_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.desertfox_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.desertfox_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.desertfox_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2805,7 +2810,7 @@ local crew_wep_preset = {
 			self.r700_crew.categories = clone(self.r700.categories)
 			self.r700_crew.sounds.prefix = "r700_npc"
 			self.r700_crew.use_data.selection_index = 2
-			self.r700_crew.DAMAGE = 18
+			self.r700_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.r700_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.r700_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.r700_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
@@ -2823,7 +2828,7 @@ local crew_wep_preset = {
 			self.tecci_crew.categories = clone(self.tecci.categories)
 			self.tecci_crew.sounds.prefix = "tecci_npc"
 			self.tecci_crew.use_data.selection_index = 2
-			self.tecci_crew.DAMAGE = 3.6
+			self.tecci_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.tecci_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 			self.tecci_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.tecci_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2840,7 +2845,7 @@ local crew_wep_preset = {
 			self.par_crew.categories = clone(self.par.categories)
 			self.par_crew.sounds.prefix = "svinet_npc"
 			self.par_crew.use_data.selection_index = 2
-			self.par_crew.DAMAGE = 3.6
+			self.par_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.par_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.par_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.par_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2859,7 +2864,7 @@ local crew_wep_preset = {
 			self.rpk_crew.categories = clone(self.rpk.categories)
 			self.rpk_crew.sounds.prefix = "rpk_npc"
 			self.rpk_crew.use_data.selection_index = 2
-			self.rpk_crew.DAMAGE = 3.6
+			self.rpk_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.rpk_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.rpk_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 			self.rpk_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2875,7 +2880,7 @@ local crew_wep_preset = {
 			self.m249_crew.categories = clone(self.m249.categories)
 			self.m249_crew.sounds.prefix = "m249_npc"
 			self.m249_crew.use_data.selection_index = 2
-			self.m249_crew.DAMAGE = 3.6
+			self.m249_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.m249_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.m249_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.m249_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2891,7 +2896,7 @@ local crew_wep_preset = {
 			self.hk21_crew.categories = clone(self.hk21.categories)
 			self.hk21_crew.sounds.prefix = "hk23e_npc"
 			self.hk21_crew.use_data.selection_index = 2
-			self.hk21_crew.DAMAGE = 3.6
+			self.hk21_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.hk21_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.hk21_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.hk21_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2907,7 +2912,7 @@ local crew_wep_preset = {
 			self.hk51b_crew.categories = clone(self.hk51b.categories)
 			self.hk51b_crew.sounds.prefix = "hk51b_npc"
 			self.hk51b_crew.use_data.selection_index = 2
-			self.hk51b_crew.DAMAGE = 3.6
+			self.hk51b_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.hk51b_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.hk51b_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.hk51b_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2923,7 +2928,7 @@ local crew_wep_preset = {
 			self.mg42_crew.categories = clone(self.mg42.categories)
 			self.mg42_crew.sounds.prefix = "mg42_npc"
 			self.mg42_crew.use_data.selection_index = 2
-			self.mg42_crew.DAMAGE = 3.6
+			self.mg42_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.mg42_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.mg42_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.mg42_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
@@ -2942,7 +2947,7 @@ local crew_wep_preset = {
 			self.m60_crew.categories = clone(self.m60.categories)
 			self.m60_crew.sounds.prefix = "m60_npc"
 			self.m60_crew.use_data.selection_index = 2
-			self.m60_crew.DAMAGE = 3.6
+			self.m60_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.m60_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 			self.m60_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 			self.m60_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate

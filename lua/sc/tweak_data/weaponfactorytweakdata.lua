@@ -3843,6 +3843,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 	--AK74 Overrides Table
 	self.wpn_fps_ass_74.override = self.wpn_fps_ass_74.override or {}
 	
+	self.wpn_fps_ass_74.override.wpn_fps_upg_ass_ak_b_zastava = nil -- fuck
+
 	self.wpn_fps_ass_74.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
 		custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)

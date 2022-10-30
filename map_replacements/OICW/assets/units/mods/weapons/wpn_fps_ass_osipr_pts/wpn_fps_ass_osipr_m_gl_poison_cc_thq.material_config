@@ -1,0 +1,23 @@
+<materials version="3" group="weapon_m4">
+    <material name="mtr_body" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df_cc"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
+        <diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+        <diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+        <diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+        <variable value="0" type="scalar" name="wear_tear_value"/>
+        <diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+        <variable value="1 1 1" type="vector3" name="uv_scale"/>
+        <variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+        <variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mtr_shell" version="2">
+        <diffuse_texture file="units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/3gl_grenade_df"/>
+        <material_texture file="units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/3gl_grenade_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_pxp1/weapons/wpn_fps_gre_3gl_pts/3gl_grenade_nm"/>
+        <reflection_texture file="environments/cubemaps/cubemap_steel" type="cubemap"/>
+    </material>
+</materials>

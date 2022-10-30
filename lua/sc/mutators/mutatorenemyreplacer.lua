@@ -346,7 +346,7 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 						Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1")	
 					},
 					zombie = {
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")	
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1")	
 					},
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")
@@ -380,8 +380,8 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 						Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2")
 					},
 					zombie = {
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2")
 					},
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
@@ -431,12 +431,12 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 						Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2")
 					},
 					zombie = {
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
-						Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"),
 						Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
 					},

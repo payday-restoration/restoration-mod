@@ -197,6 +197,11 @@ function PlayerDamage:init(unit)
 	}
 
 	self:clear_delayed_damage()
+	
+	self._can_play_tinnitus = not managers.user:get_setting("accessibility_sounds_tinnitus") or false
+	self._can_play_tinnitus_clbk_func = callback(self, self, "clbk_tinnitus_toggle_changed")
+
+	managers.user:add_setting_changed_callback("accessibility_sounds_tinnitus", self._can_play_tinnitus_clbk_func)	
 end
 
 --check_ally_attack == check if the attack came from an ally at all.
@@ -583,7 +588,12 @@ function PlayerDamage:damage_melee(attack_data)
 			if attacker_unit:base()._tweak_table == "autumn" then
 				attacker_unit:sound():say("i03", true, nil, true)
 			end
-			pm:set_player_state("arrested")
+			if pm:current_state() == "standard" or pm:current_state() == "carry" then
+				pm:set_player_state("arrested")
+			elseif pm:current_state() == "bipod" then
+				self._unit:movement()._current_state:exit(nil, "standard")
+				pm:set_player_state("arrested")				
+			end
 		--If the player's in the bipod state, punch them out if they're not getting cuffed or tased
 		else
 			if pm:current_state() == "bipod" then

@@ -2,6 +2,7 @@
     <!-- Alpha Fonts -->
     <font path="fonts/font_medium_shadow" force="true"/>
 	<merged_font path="fonts/font_medium_shadow_mf" force="true"/>
+	<merged_font path="fonts/font_medium_noshadow_mf" force="true"/>
     <!-- PDTH Challenges -->
 	<font path="fonts/pdth_challenge" load="true"/>
 	<texture path="fonts/pdth_challenge"/>

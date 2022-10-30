@@ -3,7 +3,7 @@ function ContractBrokerHeistItem:init(...) -- parent_panel, job_data, idx
 
 	init_original(self, ...)
 
-    local heat_text, heat_color = self:get_job_heat_text(self._job_data.job_id)
+   local heat_text, heat_color = self:get_job_heat_text(self._job_data.job_id)
 
     local heat = self._panel:text({
         alpha = 1,
@@ -32,7 +32,7 @@ end
 function ContractBrokerHeistItem:get_job_heat_text(job_id)
 	local heat_text = ""
 	local heat_color = Color(1,0,1)
-	local multiplier = managers.job:get_job_heat(job_id)
+	local multiplier = managers.job:get_job_heat(job_id) or 0
 	local exp_multi  = managers.job:heat_to_experience_multiplier(multiplier)*20-20
 
     if exp_multi ~= 0 then
@@ -41,4 +41,4 @@ function ContractBrokerHeistItem:get_job_heat_text(job_id)
     end
 
 	return heat_text, heat_color
-end 
+end

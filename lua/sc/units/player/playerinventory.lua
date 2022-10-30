@@ -76,73 +76,126 @@ Hooks:PostHook(PlayerInventory, "set_visibility_state", "res_set_visibility_stat
 	end
 end)
 
+function PlayerInventory:_start_jammer_effect_drop_in_load(jammer_data)
+	self:_start_jammer_effect(jammer_data.t)
+end
 
+function PlayerInventory:_start_feedback_effect_drop_in_load(jammer_data)
+	self:_start_feedback_effect(jammer_data.t)
+end
 
-function PlayerInventory:_start_feedback_effect(end_time, interval, range)
-	end_time = end_time or self:get_jammer_time() + TimerManager:game():time()
+function PlayerInventory:_start_feedback_effect(end_time)
+	if self._jammer_data then
+		self:_chk_queue_jammer_effect("feedback")
+		return
+	end
+
+	end_time = end_time or self:get_jammer_time()
+
+	if end_time == 0 then
+		return false
+	end
+
+	local interval, range, nr_ticks = nil
+
+	if Network:is_server() then
+		interval, range = self:get_feedback_values()
+
+		if interval == 0 or range == 0 then
+			return false
+		end
+
+		nr_ticks = math.max(1, math.floor(end_time / interval))
+	end
+
+	local t = TimerManager:game():time()
+	local key_str = tostring(self._unit:key())
+	end_time = t + end_time
 	self._jammer_data = {
 		effect = "feedback",
-		t = end_time + 0.3,
-		interval = interval or 1.5,
-		range = range or 1500,
-		sound = self._unit:sound_source():post_event("ecm_jammer_puke_signal")
+		t = end_time,
+		interval = interval,
+		range = range,
+		sound = self._unit:sound_source():post_event("ecm_jammer_puke_signal"),
+		feedback_callback_key = "PocketECMFeedback" .. key_str,
+		nr_ticks = nr_ticks,
+		first_tick = true
 	}
-	local is_player = managers.player:player_unit() == self._unit
-	local dodge = is_player and self._unit:base():upgrade_value("temporary", "pocket_ecm_kill_dodge")
-	local heal = is_player and self._unit:base():upgrade_value("player", "pocket_ecm_heal_on_kill") or self._unit:base():upgrade_value("team", "pocket_ecm_heal_on_kill")
 
-	if heal then
-		self._jammer_data.heal = heal
-		self._jammer_data.heal_listener_key = "feedback_heal" .. tostring(self._unit:key())
+	if Network:is_server() then
+		local interval_t = t + interval
 
-		managers.player:register_message(Message.OnEnemyKilled, self._jammer_data.heal_listener_key, callback(self, self, "_feedback_heal_on_kill"))
+		if nr_ticks == 1 and end_time < interval_t then
+			interval_t = end_time or interval_t
+		end
+
+		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), t + 0.05)
+	else
+		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_clbk_stop_feedback_effect"), end_time)
 	end
+
+	local local_player = managers.player:player_unit()
+	local user_is_local_player = local_player and local_player:key() == self._unit:key()
+	local dodge = user_is_local_player and self._unit:base():upgrade_value("temporary", "pocket_ecm_kill_dodge")
+	local heal = user_is_local_player and self._unit:base():upgrade_value("player", "pocket_ecm_heal_on_kill") or self._unit:base():upgrade_value("team", "pocket_ecm_heal_on_kill")
 
 	if dodge then
 		self._jammer_data.dodge_kills = dodge[3]
-		self._jammer_data.dodge_listener_key = "jamming_dodge" .. tostring(self._unit:key())
+		self._jammer_data.dodge_listener_key = "PocketECMFeedbackDodge" .. key_str
 
 		managers.player:register_message(Message.OnEnemyKilled, self._jammer_data.dodge_listener_key, callback(self, self, "_jamming_kill_dodge"))
 	end
 
-	if Network:is_server() then
-		self._jammer_data.feedback_callback_key = "feedback" .. tostring(self._unit:key())
+	if heal then
+		self._jammer_data.heal = heal
+		self._jammer_data.heal_listener_key = "PocketECMFeedbackHeal" .. key_str
 
-		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), TimerManager:game():time() + 0.25)
+		managers.player:register_message(Message.OnEnemyKilled, self._jammer_data.heal_listener_key, callback(self, self, "_feedback_heal_on_kill"))
 	end
+	
+	return true
 end
 
 --Fix PECM feedback not coming out in waves as described
 function PlayerInventory:_do_feedback()
-	local t = TimerManager:game():time()
-
-	if not alive(self._unit) or not self._jammer_data or t > self._jammer_data.t then
-		self:stop_feedback_effect()
+	if not alive(self._unit) then
+		self:_chk_remove_queued_jammer_effects()
+		self:_clbk_stop_feedback_effect()
 
 		return
 	end
 
-	local activation = self._jammer_data.t - t > self:get_jammer_time() * 0.975
+	local jammer_data = self._jammer_data
+
+	if not jammer_data then
+		self:_clbk_stop_feedback_effect()
+
+		return
+	end
+
+	local activation = jammer_data.first_tick
 	ECMJammerBase._detect_and_give_dmg(self._unit:position(), nil, self._unit, self._jammer_data.range, activation)
 
-	if self._jammer_data.t > t + self._jammer_data.interval then
-		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), t + self._jammer_data.interval)
-	else
-		managers.enemy:add_delayed_clbk(self._jammer_data.feedback_callback_key, callback(self, self, "stop_feedback_effect"), self._jammer_data.t)
-	end
-end
+	jammer_data.nr_ticks = jammer_data.nr_ticks - 1
+	jammer_data.first_tick = nil
+	local t = TimerManager:game():time()
+	local end_time = jammer_data.t
 
-function PlayerInventory:_feedback_heal_on_kill()
-	local unit = managers.player:player_unit()
-	local is_downed = game_state_machine:verify_game_state(GameStateFilters.downed)
-	local swan_song_active = managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier")
+	if jammer_data.nr_ticks == 0 then
+		if t < end_time then
+			managers.enemy:add_delayed_clbk(jammer_data.feedback_callback_key, callback(self, self, "_clbk_stop_feedback_effect"), end_time)
+		else
+			self:_clbk_stop_feedback_effect()
+		end
 
-	if is_downed or swan_song_active then
 		return
 	end
 
-	if alive(self._unit) and unit and self._jammer_data then
-		local heal = self._jammer_data.heal * managers.player:upgrade_value("player", "healing_reduction", 1)
-		unit:character_damage():change_health(self._jammer_data.heal)
+	local interval_t = t + jammer_data.interval
+
+	if jammer_data.nr_ticks == 1 and end_time < interval_t then
+		interval_t = end_time or interval_t
 	end
+
+	managers.enemy:add_delayed_clbk(jammer_data.feedback_callback_key, callback(self, self, "_do_feedback"), interval_t)
 end

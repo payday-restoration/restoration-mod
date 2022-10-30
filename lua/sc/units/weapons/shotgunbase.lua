@@ -127,6 +127,8 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 				hit_objects[col_ray.unit:key()] = hit_objects[col_ray.unit:key()] or {}
 
 				table.insert(hit_objects[col_ray.unit:key()], col_ray)
+			elseif col_ray.unit:in_slot(self.shield_mask) then
+				self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage / self._rays)
 			else
 				self._bullet_class:on_collision(col_ray, self._unit, user_unit, (self._bullet_class.id and self._bullet_class.id == "explosive" and damage / (self._rays or 1)) or damage)
 			end
@@ -166,6 +168,25 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 					position = ray_to,
 					ray = spread_direction
 				})
+			end
+
+			if col_ray then
+				local tracer_dist = col_ray.distance
+				if (col_ray and tracer_dist > 200 or not col_ray) and alive(self._obj_fire)  then
+					self._obj_fire:m_position(self._trail_effect_table.position)
+					mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
+					local clamp_dist = tracer_dist
+					local trail = World:effect_manager():spawn(self._trail_effect_table)
+					if col_ray then
+						World:effect_manager():set_remaining_lifetime(trail, math.clamp(tracer_dist - 100 / 10000, 0,  tracer_dist * 0.00009))
+					end
+				end
+			elseif not col_ray then
+				self._obj_fire:m_position(self._trail_effect_table.position)
+				mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
+				local clamp_dist = 0.5
+				local trail = World:effect_manager():spawn(self._trail_effect_table)
+				World:effect_manager():set_remaining_lifetime(trail, clamp_dist)
 			end
 		end
 

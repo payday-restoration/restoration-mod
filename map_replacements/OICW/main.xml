@@ -13,6 +13,9 @@
 	<WeaponMod id="wpn_fps_ass_osipr_gl_electric" based_on="wpn_fps_ass_contraband_gl_m203" type="underbarrel" a_obj="a_g" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
 		<bullet_objects amount="0"/>
 	</WeaponMod>
+	<WeaponMod id="wpn_fps_ass_osipr_gl_poison" based_on="wpn_fps_ass_contraband_gl_m203" type="underbarrel" a_obj="a_g" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
+		<bullet_objects amount="0"/>
+	</WeaponMod>
 	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
 		<stats zoom="10"/>
 	</WeaponMod>
@@ -32,6 +35,13 @@
 		<bullet_objects amount="1" prefix="g_bullet_"/>
 		<override>
 			<wpn_fps_ass_osipr_gl unit="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_electric"/>
+		</override>
+	</WeaponMod>
+	<WeaponMod id="wpn_fps_ass_osipr_m_gl_poison" based_on="wpn_fps_ass_scar_body_standard" type="ammo" sub_type="ammo_poison" wpn_pts="wpn_fps_ass_osipr" hidden="false" name_id="bm_wp_upg_a_grenade_launcher_poison" desc_id="bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc" has_description="true" alt_icon="guis/dlcs/pxp1/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_grenade_launcher_poison" ver="2">
+		<animations bipod_reload="reload" bipod_reload_not_empty="reload_not_empty" reload="" reload_not_empty=""/>
+		<bullet_objects amount="1" prefix="g_bullet_"/>
+		<override>
+			<wpn_fps_ass_osipr_gl unit="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_poison"/>
 		</override>
 	</WeaponMod>
 	
@@ -65,6 +75,8 @@
 				<value_node value="wpn_fps_ass_osipr_m_gl_incendiary"/>
 				<value_node value="wpn_fps_ass_osipr_gl_electric"/>
 				<value_node value="wpn_fps_ass_osipr_m_gl_electric"/>
+				<value_node value="wpn_fps_ass_osipr_gl_poison"/>
+				<value_node value="wpn_fps_ass_osipr_m_gl_poison"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_large"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_medium"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_small"/>
@@ -142,12 +154,15 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_incendiary"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_electric"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_poison"/>
 		<unit_mat_cc path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl"/>
 		<unit_mat_cc path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl_incendiary"/>
 		<unit_mat_cc path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl_electric"/>
+		<unit_mat_cc path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl_poison"/>
 		<unit path="units/mods/weapons/wpn_osipr_frag_grenade/wpn_osipr_frag_grenade" load="true"/>
 		<unit path="units/mods/weapons/wpn_osipr_frag_incendiary_grenade/wpn_osipr_frag_incendiary_grenade" load="true"/>
 		<unit path="units/mods/weapons/wpn_osipr_frag_electric_grenade/wpn_osipr_frag_electric_grenade" load="true"/>
+		<unit path="units/mods/weapons/wpn_osipr_frag_poison_grenade/wpn_osipr_frag_poison_grenade" load="true"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df_cc"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
@@ -188,5 +203,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/osipr_gl"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_osipr_m_gl_incendiary"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_osipr_m_gl_electric"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_osipr_m_gl_poison"/>
 	</AddFiles>
 </mod>

@@ -784,8 +784,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Iron Man
 					--Basic
 						--Unlock ICTV
-					--Ace
 						self.values.player.shield_knock = {true}
+					--Ace						
+						self.values.player.bullet_shield_knock = {true}
+						self.values.player.shield_knock_bullet = {
+							max_damage = 200,
+							chance = 0.8
+						}						
 						self.values.player.armor_regen_timer_multiplier = {0.9}
 			
 		--Support--
@@ -1633,7 +1638,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.melee_kill_life_leech = {0.02}
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
-	self.on_killshot_cooldown_reduction_melee = 1
+	self.on_killshot_cooldown_reduction_melee = 1.5
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
@@ -1662,9 +1667,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{4.0, 5},
 			{4.5, 5},
 			{5.0, 5},
-			{5.3, 5},
-			{5.7, 5},
-			{6.0, 5}
+			{6.0, 5},
+			{6.5, 5},
+			{7.5, 5}
 		}
 	}
 	
@@ -1679,13 +1684,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.body_armor.skill_max_health_store = {
-		4.8,
-		4.4,
 		4.0,
 		3.6,
 		3.2,
 		2.8,
-		2.4
+		2.4,
+		2.0,
+		1.6
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
@@ -1872,7 +1877,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.pocket_ecm_jammer_base = {
 		{
 			cooldown_drain = 2,
-			duration = 10
+			duration = 10,
+			affects_cameras = true,
+			affects_pagers = true,
+			feedback_interval = 1.5,
+			feedback_range = 1500
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
@@ -3010,6 +3019,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "steelsight_move_speed_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_bullet_shield_knock = {
+		name_id = "menu_player_bullet_shield_knock",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "bullet_shield_knock",
 			category = "player"
 		}
 	}

@@ -82,8 +82,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"
 
-	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets", "packages/narr_born_1"}
-	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets", "packages/narr_born_1"} --just in case 
+	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets", "packages/narr_born_1", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
+	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets", "packages/narr_born_1", "levels/narratives/h_alex_must_die/stage_1/world_sounds"} --just in case 
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"	
 
@@ -227,14 +227,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.ai_group_type = nypd
 	self.dinner.package = {"packages/narr_dinner", "packages/murkywatermisc"}
 	self.dinner.player_style = "slaughterhouse"
-	
-	self.ranc.ai_group_type = lapd
-	self.ranc.player_style = "fighterpilot"
 
-        --[[
-        self.trai.ai_group_type = lapd
-        self.trai.player_style = "fighterpilot"
-        --]]
+    self.trai.ai_group_type = nypd
+    self.trai.player_style = "railroad"
 
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
@@ -277,6 +272,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.package = {"packages/job_pent", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
+		
+	self.ranc.ai_group_type = lapd
+	self.ranc.player_style = "fighterpilot"
+
 	
 	--///NEW OUTFITS\\\--
 	
@@ -533,6 +532,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.crojob2.ghost_bonus = 0.20
 	--Gemma McShay's Heists goes here--
 	self.ranc.ghost_bonus = 0.20
+	self.trai.ghost_bonus = 0.25
 	
 	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}

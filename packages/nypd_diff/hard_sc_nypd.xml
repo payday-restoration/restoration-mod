@@ -133,6 +133,13 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true"/>	
 	
+	<!--Jerome The Camera Man-->
+	<object				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true"/>
+	
 	<!-- these work fine in here so i'm leaving them in here -->		
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1_contour" />
@@ -149,7 +156,8 @@
 	
 	<!--nypd textures-->	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />

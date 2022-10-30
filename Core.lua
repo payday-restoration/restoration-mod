@@ -83,6 +83,7 @@ function restoration:Init()
 		jolly = restoration.captain_types.summer, --aftershock
 		rvd1 = restoration.captain_types.summer, --highland mortuary 
 		watchdogs_2_day = restoration.captain_types.summer, --Watchdogs Day 2 Daytime
+		trai = restoration.captain_types.summer, --Lost In Transit
 		jolly_CD = restoration.captain_types.summer, --jolly crackdown edit
 		--Custom Heists--	
 		alex_2_res = restoration.captain_types.summer, --Rats Day 2 edit
@@ -183,7 +184,7 @@ function restoration:Init()
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
-
+	
 	restoration.global_spawn_multiplier = 1
 	restoration.always_bravos = false
 	restoration.disco_inferno = false
@@ -202,9 +203,12 @@ function restoration:Init()
 	restoration.large_levels = {
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion
-		"chca", --Black Cat Heist
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
+		"watchdogs_2_day", --Watchdogs Day 2 
+		"watchdogs_2", --Watchdogs Day 2 but night
+		"bex", --San Martin Bank
+		"trai", --Lost in Transit
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration
@@ -232,6 +236,7 @@ function restoration:Init()
 		"brb", --Brooklyn Bank
 		"mus", --The Diamond
 		"run", --Heat Street
+		"ranc", --Midland Ranch
 		"run_res", --Whurr's Heat Street Edit
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
@@ -247,6 +252,7 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"roberts", --Go Bank
 		"family", --Diamond Store
+		"chca", --Black Cat Heist
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"rat", --Cook Off
 		"chas", --Dragon Heist	
@@ -280,12 +286,9 @@ function restoration:Init()
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
-		"hox_1",
-		"xmn_hox_1",
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"fex", --Buluc's Mansion	
-		"ranc", --Midland Ranch
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
@@ -342,6 +345,7 @@ function restoration:Init()
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
+		"chca", --black cat
 		"pent", --Mountain Master 
 		"lvl_friday", --Mallbank / Crashing Capitol
 		--"hox_1", --Hoxout D1

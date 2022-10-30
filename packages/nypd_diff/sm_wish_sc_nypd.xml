@@ -118,6 +118,13 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true"/>
 	
+	<!--Jerome The Camera Man-->
+	<object				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true"/>
+	
 	<!--White Gensec Guys for some scripted spawns-->
 	<object				path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"/>
@@ -382,6 +389,8 @@
 	<material_config	path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />		
 	
 	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />	
+	
+	<unit_obj			path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" force="false"/>
 		
 	<!--zeal taser-->
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"/>

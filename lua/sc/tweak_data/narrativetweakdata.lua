@@ -237,7 +237,30 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		800000
 	}
 	
+	--Lost In Transit
+	self.jobs.trai.payout = {			
+		95000,
+		200000,
+		700000,
+		1000000,
+		1100000,
+		1100000,
+		1100000
+	}
+	self.jobs.trai.contract_cost = {
+		80000,
+		400000,
+		500000,
+		600000,
+		670000,
+		670000,
+		670000
+	}
+	
 end)
+
+--[[
+Crashes the filter on Crime.net online for some reason, fix later
 
 local create_job_name=NarrativeTweakData.create_job_name
 function NarrativeTweakData:create_job_name(job_id, ...)
@@ -258,3 +281,4 @@ function NarrativeTweakData:create_job_name(job_id, ...)
 		end
 	return text_string, color_ranges
 end
+]]--

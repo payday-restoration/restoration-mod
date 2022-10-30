@@ -1012,6 +1012,14 @@ end
 -- Or just add the name = "deflection" to the table somewhere if you don't care much for a logical layout.
 
 function BlackMarketGui:_setup(is_start_page, component_data)
+	if self.rip_can_rename_page and self:rip_can_rename_page(component_data) then
+		for i, name in pairs(self.rip_page_names) do
+			if component_data[i] then
+				name = name == '' and managers.localization:to_upper_text('bm_menu_page', {page = tostring(i)}) or utf8.to_upper(name)
+				component_data[i].name_localized = name
+			end
+		end
+	end
 	self._in_setup = true
 
 	if alive(self._panel) then
@@ -2883,13 +2891,11 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "health"
 				},
 				{
-					name = "deflection",
-					append = "%"
+					name = "deflection"
 				},
 				{
 					name = "damage_shake",
-					inverted = true,
-					append = "%"
+					inverted = true
 				},
 				{
 					revert = true,
@@ -4153,9 +4159,16 @@ function BlackMarketGui:show_stats()
 		--Checks if the weapon stats with the mod (and no skills) change, and if they do, displays the difference.
 		--Would write a better solution, but I hate this file.
 		for name, data in pairs(unaltered_total_mods_stats) do
-			if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
-				mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
-				- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
+			if name == "damage" or name == "damage_min" then
+				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+					mod_stats.chosen[name] = (total_base_stats[name].value + (total_mods_stats[name].value + total_skill_stats[name].value))
+					- (unaltered_total_base_stats[name].value + (unaltered_total_mods_stats[name].value + unaltered_total_skill_stats[name].value))
+				end
+			else
+				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+					mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
+					- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
+				end
 			end
 		end
 		
@@ -4346,9 +4359,12 @@ function BlackMarketGui:update_info_text()
 	}
 	local ignore_lock = false
 	local desc_macros = {
+        BTN_FIRE = managers.localization:btn_macro("primary_attack", true),
+        BTN_AIM = restoration.Options:GetValue("OTHER/SeparateBowADS") and managers.localization:btn_macro("reload", true) or managers.localization:btn_macro("secondary_attack", true),
         BTN_GADGET = managers.localization:btn_macro("weapon_gadget", true),
         BTN_BIPOD = managers.localization:btn_macro("deploy_bipod", true)
     }
+
 
 	self._stats_text_modslist:set_text("")
 
@@ -4475,9 +4491,30 @@ function BlackMarketGui:update_info_text()
 			local category = (selection_index == 1 and "secondaries") or (selection_index == 2 and "primaries") or "disabled"
 			if category == slot_data.category then
 
-				if weapon_tweak.has_description then
+				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
+				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
+				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
+				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
+				local sms = weapon_tweak and weapon_tweak.sms or 1
+				local stat_sms = nil
+				local stat_attachment_desc = nil
+				if custom_stats then
+					for part_id, stats in pairs(custom_stats) do
+						if stats.sms then
+							sms = sms + (1 * (stats.sms - 1))
+							stat_sms = true
+						end
+						if stats.alt_desc then
+							stat_attachment_desc = stats.alt_desc
+						end
+					end
+				end
+
+				if weapon_tweak and weapon_tweak.has_description then
 					local has_pc_desc = managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc")
-					local description = has_pc_desc and managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros) or managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					local desc_id = stat_attachment_desc or tweak_data.weapon[slot_data.name].desc_id
+					local description = has_pc_desc and managers.localization:text(desc_id .. "_pc", desc_macros) or managers.localization:text(desc_id, desc_macros)
 					for color_id in string.gmatch(description, "#%{(.-)%}#") do
 						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 					end
@@ -4498,22 +4535,6 @@ function BlackMarketGui:update_info_text()
 					end
 					updated_texts[4].below_stats = true
 				end			
-
-				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
-				local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
-				local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
-				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
-				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
-				local sms = weapon_tweak.sms or 1
-				local stat_sms = nil
-				if custom_stats then
-					for part_id, stats in pairs(custom_stats) do
-						if stats.sms then
-							sms = sms + (1 * (stats.sms - 1))
-							stat_sms = true
-						end
-					end
-				end
 
 				if movement_penalty < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))

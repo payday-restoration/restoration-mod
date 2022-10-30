@@ -1,5 +1,17 @@
 <?xml version="1.0"?>
 <tweaks>
+	<!-- Actually set base_need_upd otherwise stand actions end too soon -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/still/std_from_crh"/>
+			<keys/>
+		</search>
+		<target mode="attach">
+			<key at="enter" set_extension="anim_data" extension_key="base_need_upd" extension_value="true"/>
+			<key at="exit" set_extension="anim_data" extension_key="base_need_upd" extension_value="false"/>
+		</target>
+	</tweak>
 	<!-- Give akimbo pistol users a neutral idle animation -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -52,6 +64,18 @@
 			<attr name="blend" value="3"/>
 		</target>
 	</tweak>
+	<!-- Actually set base_need_upd otherwise crouch actions end too soon -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/crouch/still/crh_from_std"/>
+			<keys/>
+		</search>
+		<target mode="attach">
+			<key at="enter" set_extension="anim_data" extension_key="base_need_upd" extension_value="true"/>
+			<key at="exit" set_extension="anim_data" extension_key="base_need_upd" extension_value="false"/>
+		</target>
+	</tweak>
 	<!-- has to be done twice -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -82,6 +106,10 @@
 			<!-- The state should have these regardless of whether the actual copaction forces updating -->
 			<key at="enter" set_extension="anim_data" extension_key="base_need_upd" extension_value="true"/>
 			<key at="exit" set_extension="anim_data" extension_key="base_need_upd" extension_value="false"/>
+
+			<!-- Recoil anims cause bugey head rotation -->
+			<key at="enter" set_extension="anim_data" extension_key="base_no_recoil" extension_value="true"/>
+			<key at="exit" set_extension="anim_data" extension_key="base_no_recoil" extension_value="false"/>
 		</target>
 	</tweak>
 	<!-- Shield navlink displacement fix -->

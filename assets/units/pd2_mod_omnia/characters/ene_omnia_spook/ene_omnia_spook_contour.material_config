@@ -21,8 +21,8 @@
     </material>
 	
     <material name="mtr_night_vision" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-        <bump_normal_texture            file="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm" mip="1" />
-        <diffuse_texture                file="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df" mip="1" />
+        <bump_normal_texture            file="units/pd2_mod_omnia/characters/ene_omnia_spook/nvg_nm" mip="1" />
+        <diffuse_texture                file="units/pd2_mod_omnia/characters/ene_omnia_spook/nvg_df" mip="1" />
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0"     type="scalar" name="contour_opacity"/>
     </material>

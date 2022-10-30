@@ -128,7 +128,18 @@ function CopMovement:post_init()
 	self:add_weapons()
 
 	if self._unit:inventory():is_selection_available(2) then
-		if managers.groupai:state():whisper_mode() or not self._unit:inventory():is_selection_available(1) then
+		if self._unit:inventory():shield_unit() then
+			if self._unit:inventory():is_selection_available(1) then
+				self._unit:inventory():equip_selection(1, true)
+
+				local primary = self._unit:inventory():unit_by_selection(2)
+
+				primary:set_visible(false)
+				primary:set_enabled(false)
+			else
+				self._unit:inventory():equip_selection(2, true)
+			end
+		elseif managers.groupai:state():whisper_mode() or not self._unit:inventory():is_selection_available(1) then
 			self._unit:inventory():equip_selection(2, true)
 		else
 			self._unit:inventory():equip_selection(1, true)
@@ -137,11 +148,10 @@ function CopMovement:post_init()
 		self._unit:inventory():equip_selection(1, true)
 	end
 
-	if self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
+	if not self._unit:inventory():shield_unit() and self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
 		self._ext_inventory:set_weapon_enabled(false)
 	end
 
-	local weap_name = self._ext_base:default_weapon_name(managers.groupai:state():enemy_weapons_hot() and "primary" or "secondary")
 	local fwd = self._m_rot:y()
 	self._action_common_data = {
 		stance = self._stance,

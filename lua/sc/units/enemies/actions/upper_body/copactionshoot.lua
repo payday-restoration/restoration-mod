@@ -879,6 +879,10 @@ function CopActionShoot:update(t)
 					if self._shooting_husk_unit then
 						self._next_vis_ray_t = t + 2
 					end
+					
+					if Network:is_server() and alive(self._ext_inventory._shield_unit) and target_dis < 1100 and self._ext_inventory._shield_unit:base() and self._ext_inventory._shield_unit:base().request_start_flash and self._ext_inventory._shield_unit:base():can_request_flash(t) then
+						self._ext_inventory._shield_unit:base():request_start_flash()
+					end					
 
 					local fire_line_is_obstructed = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision")
 

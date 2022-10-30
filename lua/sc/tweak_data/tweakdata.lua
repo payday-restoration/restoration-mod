@@ -91,9 +91,12 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 1.5,
+		hipfire_spread_mult = 2,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.6 --lowered to 0.3
+	}
+	tweak_data.amr = {
+		ads_move_speed_mult = 0.5
 	}
 
 tweak_data.assault_rifle = {
@@ -105,7 +108,7 @@ tweak_data.assault_rifle = {
 		ads_move_speed_mult = 1.2 --raised to 0.6
 	}
 	tweak_data.dmr = {
-		hipfire_spread_mult = 1.5,
+		hipfire_spread_mult = 1.2,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.7 --lowered to 0.4
 	}
@@ -614,14 +617,14 @@ for i, proj_id in ipairs(velocity) do
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
 
-velocity_mult = 0.65
+velocity_mult = 0.75
 velocity = {
 	'west_arrow','bow_poison_arrow','west_arrow_exp',
 	'crossbow_arrow','crossbow_poison_arrow','crossbow_arrow_exp',
 	'frankish_arrow','frankish_poison_arrow','frankish_arrow_exp'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 3800 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -630,7 +633,7 @@ velocity = {
 	'arblast_arrow','arblast_poison_arrow','arblast_arrow_exp'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 5500 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -639,7 +642,7 @@ velocity = {
 	'ecp_arrow','ecp_arrow_poison','ecp_arrow_exp'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 8000 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -770,13 +773,6 @@ tweak_data.casino = {
 	infamous_chance = 3
 }	
 
-tweak_data.money_manager.weapon_cost = {}
-local cost = 42000
-for i = 1, 10000, 1 do
-	table.insert( tweak_data.money_manager.weapon_cost, tostring(cost) )
-	cost = cost + 23000
-end
-
 tweak_data.experience_manager.stage_failed_multiplier = 0.5
 -- From update 34
 tweak_data.experience_manager.stage_completion = {
@@ -838,51 +834,83 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		}
 	},
 	[2] = {
-		primaries = {
-			{ "light_pis" },
-			{ "heavy_pis" },
-			
-			{ "light_smg" },
-			{ "heavy_smg" },
-
-			{ "light_shot" },
-			{ "heavy_shot" },
-			{ "break_shot" },
-			
-			{ "light_ar" },
-			{ "heavy_ar" },
-			{ "dmr_ar" },
-
-			{ "light_snp" },
-			{ "heavy_snp" },
-			{ "antim_snp" },
-			
-			{ "light_mg" },
-			{ "heavy_mg" },
-			{ "miniguns" },
-		
-			{ "wpn_special" }
-		},
-		secondaries = {
-			{ "light_pis" },
-			{ "heavy_pis" },
-			
-			{ "light_smg" },
-			{ "heavy_smg" },
-			
-			{ "light_shot" },
-			{ "heavy_shot" },
-			{ "break_shot" },
-			
-			{ "light_ar" },
-			{ "heavy_ar" },
-
-			{ "light_snp" },
-			
-			{ "wpn_special" }
-		}
+		primaries = {},
+		secondaries = {}
 	}
 }
+
+--Fuck this is ugly
+--PRIMARIES
+table.insert(dyslexia[2].primaries, { "light_pis" })
+table.insert(dyslexia[2].primaries, { "heavy_pis" })
+		
+table.insert(dyslexia[2].primaries, { "light_smg" })
+table.insert(dyslexia[2].primaries, { "heavy_smg" })
+
+table.insert(dyslexia[2].primaries, { "light_shot" })
+table.insert(dyslexia[2].primaries, { "heavy_shot" })
+table.insert(dyslexia[2].primaries, { "break_shot" })
+		
+table.insert(dyslexia[2].primaries, { "light_ar" })
+table.insert(dyslexia[2].primaries, { "heavy_ar" })
+table.insert(dyslexia[2].primaries, { "dmr_ar" })
+
+table.insert(dyslexia[2].primaries, { "light_snp" })
+table.insert(dyslexia[2].primaries, { "heavy_snp" })
+table.insert(dyslexia[2].primaries, { "antim_snp" })
+		
+table.insert(dyslexia[2].primaries, { "light_mg" })
+table.insert(dyslexia[2].primaries, { "heavy_mg" })
+table.insert(dyslexia[2].primaries, { "miniguns" })
+		
+table.insert(dyslexia[2].primaries, { "wpn_special" })
+
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 2
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+		table.insert(dyslexia[2].primaries, { "unsupported" })
+		break
+	end
+end
+
+--SECONDARIES
+table.insert(dyslexia[2].secondaries, { "light_pis" })
+table.insert(dyslexia[2].secondaries, { "heavy_pis" })
+
+table.insert(dyslexia[2].secondaries, { "light_smg" })
+table.insert(dyslexia[2].secondaries, { "heavy_smg" })
+
+table.insert(dyslexia[2].secondaries, { "light_shot" })
+table.insert(dyslexia[2].secondaries, { "heavy_shot" })
+table.insert(dyslexia[2].secondaries, { "break_shot" })
+
+table.insert(dyslexia[2].secondaries, { "light_ar" })
+table.insert(dyslexia[2].secondaries, { "heavy_ar" })
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "dmr_ar" then
+		table.insert(dyslexia[2].secondaries, { "dmr_ar" })
+		break
+	end
+end
+
+table.insert(dyslexia[2].secondaries, { "light_snp" })
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "heavy_snp" then
+		table.insert(dyslexia[2].secondaries, { "heavy_snp" })
+		break
+	end
+end
+
+table.insert(dyslexia[2].secondaries, { "wpn_special" })
+for i, weap in pairs(tweak_data.weapon) do
+	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+	if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+		table.insert(dyslexia[2].secondaries, { "unsupported" })
+		break
+	end
+end
 
 if restoration.Options:GetValue("OTHER/WpnCat") then
 	tweak_data.gui.buy_weapon_categories = dyslexia[restoration.Options:GetValue("OTHER/WpnCat")]

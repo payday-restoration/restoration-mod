@@ -379,6 +379,18 @@ function PlayerTweakData:init()
 	self:_init_parachute()
 end
 
+
+local default_new_stances = PlayerTweakData._init_new_stances
+function PlayerTweakData:_init_new_stances()
+	default_new_stances(self)
+	local pivot_shoulder_translation = Vector3(10.6877, 15.6166, -2.8033)
+	local pivot_shoulder_rotation = Rotation(0.106298, -0.085067, 0.62852)
+	local pivot_head_translation = Vector3(-0.005, 8, 0)
+	local pivot_head_rotation = Rotation(0.023, 0, 0)
+	self.stances.ak5.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.ak5.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
 local default_init_hk21 = PlayerTweakData._init_hk21
 function PlayerTweakData:_init_hk21()
 	default_init_hk21(self)
@@ -627,23 +639,26 @@ if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 	end)
 end
 
-
-Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
-	for wep_id, i in pairs(self.stances) do
-		if self.stances[ wep_id ] and self.stances[ wep_id ].steelsight then
-			self.stances[ wep_id ].steelsight.shakers.breathing.amplitude = 0
-			self.stances[ wep_id ].steelsight.vel_overshot.yaw_neg = 0
-			self.stances[ wep_id ].steelsight.vel_overshot.yaw_pos = 0
-			self.stances[ wep_id ].steelsight.vel_overshot.pitch_neg = 0
-			self.stances[ wep_id ].steelsight.vel_overshot.pitch_pos = 0
+local static_aim = restoration.Options:GetValue("OTHER/StaticAim")
+if static_aim then
+	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
+		for wep_id, i in pairs(self.stances) do
+			if self.stances[ wep_id ] then
+				if self.stances[ wep_id ].steelsight then
+					self.stances[ wep_id ].steelsight.shakers.breathing.amplitude = 0
+					self.stances[ wep_id ].steelsight.vel_overshot.yaw_neg = 0
+					self.stances[ wep_id ].steelsight.vel_overshot.yaw_pos = 0
+					self.stances[ wep_id ].steelsight.vel_overshot.pitch_neg = 0
+					self.stances[ wep_id ].steelsight.vel_overshot.pitch_pos = 0
+				end
+			end
 		end
-	end
-end)
+	end)
+end
 
 
 if SystemFS:exists("assets/mod_overrides/Crosskill Fixed Scale") then
 	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "crosskillscalefix", function(self)
 		self.stances.colt_1911.steelsight.shoulders.translation = Vector3(-8.61721, -8.12715, 4.09579)
 	end)
-
 end	

@@ -133,6 +133,13 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true"/>	
 	
+	<!--Jerome The Camera Man-->
+	<object				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true"/>
+	
 	<!-- these work fine in here so i'm leaving them in here -->		
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1_contour" />
@@ -150,6 +157,7 @@
 	<!--nypd textures-->	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
@@ -358,27 +366,6 @@
 	
 		
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
-	
-
-	<add from_db="true" path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" type="unit">
-		<effect load="true" path="effects/particles/weapons/sniper_glint_marshal"/>
-		<effect load="true" path="effects/particles/weapons/rifle/muzzleflash_3dp"/>
-		<effect load="true" path="effects/particles/weapons/sniper_trail_marshal"/>
-		
-		
-		<object path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
-		<material_config path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
-		<sequence_manager path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
-
-		<unit path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat"/>
-		<object path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat"/>
-		<material_config path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat"/>
-		
-		<unit path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"/>
-		<object path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"/>
-		<material_config path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"/>
-		<unit load="true" path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_husk"/>
-	</add>
 
 	<!--Titanshield-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
@@ -428,8 +415,6 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_contour" force="false"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_husk" force="false" load="true"/>
-	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" force="false"/>
 	
 	<!--Titan Taser Helm Acc-->
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>

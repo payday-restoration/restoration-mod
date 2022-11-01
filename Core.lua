@@ -175,6 +175,7 @@ function restoration:Init()
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
 		"chas",
+		"trai",
 		"skm_nightmare_lvl",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl",

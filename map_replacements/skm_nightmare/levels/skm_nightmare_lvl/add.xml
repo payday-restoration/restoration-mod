@@ -77,7 +77,11 @@
 		<scene load="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
 	</add>
 	<add from_db="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark" type="scene">
-		<scene load="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
 		<material_config path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
+		<scene load="true" path="core/environments/skies/sky_0902_overcast_dark/sky_0902_overcast_dark"/>
+	</add>
+	<add from_db="true" path="units/payday2/characters/civ_male_casual_1/civ_male_casual_1" type="unit">
+		<unit load="true" path="units/payday2/characters/civ_male_casual_1/civ_male_casual_1"/>
+		<unit load="true" path="units/payday2/characters/civ_male_casual_1/civ_male_casual_1_husk"/>
 	</add>
 </table>

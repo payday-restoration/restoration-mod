@@ -181,6 +181,8 @@
 	
 	<mission			path="levels/narratives/dentist/mus/world/world" force="true" unload="true"/>
 	
+	<mission			path="levels/narratives/mcshay/trai/world/world" force="true" unload="true"/>
+	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	
 	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->
@@ -282,9 +284,9 @@
 	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
 	
-	<!--Load Jerome The Shotty Man and some other guards in case if some heist has them missing in the packages (so I won't need to load the heist packages just for one enemy)-->
+	<!--Load Jerome The Shotty Man in case if some heist has him missing in the package-->
 	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
-		<unit 				path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>

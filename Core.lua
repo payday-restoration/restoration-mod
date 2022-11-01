@@ -204,6 +204,7 @@ function restoration:Init()
 	restoration.large_levels = {
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion
+		"kenaz", --Golden Grin Casino
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
 		"watchdogs_2_day", --Watchdogs Day 2 

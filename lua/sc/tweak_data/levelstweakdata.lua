@@ -524,7 +524,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.vit.ghost_bonus = 0.15
 	--The Dentist's Heists goes here--
 	self.big.ghost_bonus = 0.20
-	self.kenaz.ghost_bonus = 0.20
+	self.kenaz.ghost_bonus = 0.25
 	--Vlad's Heists goes here--
 	self.chca.ghost_bonus = 0.30
 	--The Butcher's Heists goes here--

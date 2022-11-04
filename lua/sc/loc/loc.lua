@@ -1574,7 +1574,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	
 		["bm_wp_corgi_b_short"] = "MSG Barrel",
 		--UAR
-		["bm_w_aug"] = "UAR A3",	
+		["bm_w_aug"] = "UAR A2",	
 		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",	
 		["bm_wp_upg_b_hbar"] = "Heavy Barrel",	
 		--AK17

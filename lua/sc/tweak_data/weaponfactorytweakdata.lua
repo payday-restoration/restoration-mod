@@ -21593,74 +21593,50 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end	
 
 	if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
-		self.parts.wpn_fps_upg_o_snp_m4flipup_rear.supported = true
-		self.parts.wpn_fps_upg_o_snp_m4flipup_rear.stats = {
-			value = 0
-			}		
-		self.parts.wpn_fps_upg_o_snp_mbus_rear.supported = true		
-		self.parts.wpn_fps_upg_o_snp_mbus_rear.stats = {
-			value = 0
-			}
-		self.parts.wpn_fps_upg_o_snp_troy_rear.supported = true
-		self.parts.wpn_fps_upg_o_snp_troy_rear.stats = {
-			value = 0
-			}			
-		self.parts.wpn_fps_upg_o_snp_troym4_rear.supported = true			
-		self.parts.wpn_fps_upg_o_snp_troym4_rear.stats = {
-			value = 0
-			}								
-		self.parts.wpn_fps_upg_o_snp_scorpionevo_rear.supported = true								
-		self.parts.wpn_fps_upg_o_snp_scorpionevo_rear.stats = {
-			value = 0
-			}				
-		self.parts.wpn_fps_upg_o_snp_kac_rear.supported = true				
-		self.parts.wpn_fps_upg_o_snp_kac_rear.stats = {
-			value = 0
-			}				
-		self.parts.wpn_fps_upg_o_snp_dd_a1_rear.supported = true				
-		self.parts.wpn_fps_upg_o_snp_dd_a1_rear.stats = {
-			value = 0
-			}											
-		end			
+		local iron_sights = {
+			--Full
+			"wpn_fps_upg_o_snp_troy_rear",
+			"wpn_fps_upg_o_snp_troym4_rear",
+			"wpn_fps_upg_o_snp_scorpionevo_rear",
+			"wpn_fps_upg_o_snp_kac_rear",
+
+			--Lite
+			"wpn_fps_upg_o_snp_cheap_rear",
+			"wpn_fps_upg_o_snp_dd_a1_rear",
+			"wpn_fps_upg_o_snp_m4flipup_rear",
+			"wpn_fps_upg_o_snp_mbus_rear",
+			"wpn_fps_upg_o_var_m4flipup_rear",
+			"wpn_fps_upg_o_var_mbus_rear",
+		}
+		for i, part_id in ipairs(iron_sights) do
+			if self.parts[part_id] then
+				self.parts[part_id].supported = true
+				self.parts[part_id].stats = { value = 0 }
+				self.parts[part_id].custom_stats = nil
+			end
+		end									
+	end			
 		
 	if self.parts.wpn_fps_upg_1911_tritium then --Pawcio's Illuminated Ironsights Pack
-		self.parts.wpn_fps_upg_b92fs_tritium.supported = true
-		self.parts.wpn_fps_upg_b92fs_tritium.stats = {
-			value = 0
-			}	
-		self.parts.wpn_fps_upg_1911_tritium.supported = true	
-		self.parts.wpn_fps_upg_1911_tritium.stats = {
-			value = 0
-			}		
-		self.parts.wpn_fps_upg_beer_tritium.supported = true		
-		self.parts.wpn_fps_upg_beer_tritium.stats = {
-			value = 0
-			}	
-		self.parts.wpn_fps_upg_czech_tritium.supported = true	
-		self.parts.wpn_fps_upg_czech_tritium.stats = {
-			value = 0
-			}	
-		self.parts.wpn_fps_upg_deagle_tritium.supported = true	
-		self.parts.wpn_fps_upg_deagle_tritium.stats = {
-			value = 0
-			}	
-		self.parts.wpn_fps_upg_p226_tritium.supported = true	
-		self.parts.wpn_fps_upg_p226_tritium.stats = {
-			value = 0
-			}
-		self.parts.wpn_fps_upg_pl14_tritium.supported = true
-		self.parts.wpn_fps_upg_pl14_tritium.stats = {
-			value = 0
-			}
-		self.parts.wpn_fps_upg_shrew_tritium.supported = true
-		self.parts.wpn_fps_upg_shrew_tritium.stats = {
-			value = 0
-			}																							
-		self.parts.wpn_fps_upg_stech_tritium.supported = true																							
-		self.parts.wpn_fps_upg_stech_tritium.stats = {
-			value = 0
-			}																											
-		end
+		local iron_sights = {
+			"wpn_fps_upg_b92fs_tritium",
+			"wpn_fps_upg_1911_tritium",
+			"wpn_fps_upg_beer_tritium",
+			"wpn_fps_upg_czech_tritium",
+			"wpn_fps_upg_deagle_tritium",
+			"wpn_fps_upg_p226_tritium",
+			"wpn_fps_upg_pl14_tritium",
+			"wpn_fps_upg_shrew_tritium",
+			"wpn_fps_upg_stech_tritium",
+		}
+		for i, part_id in ipairs(iron_sights) do
+			if self.parts[part_id] then
+				self.parts[part_id].supported = true
+				self.parts[part_id].stats = { value = 0 }
+				self.parts[part_id].custom_stats = nil
+			end
+		end																										
+	end
 					
 	if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight		
 		self.parts.wpn_fps_upg_o_compm2.supported = true		
@@ -21668,7 +21644,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 3,
 				zoom = 5
 			}		
-		end				
+	end				
 
 	if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
 		self.parts.wpn_fps_upg_o_okp7_dove.supported = true 
@@ -24297,6 +24273,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_troglodyte_b_long.supported = true
 		self.parts.wpn_fps_snp_troglodyte_b_long.stats = {}
 
+		self.parts.wpn_fps_snp_troglodyte_thing.keep_damage = true
 		self.parts.wpn_fps_snp_troglodyte_thing.supported = true
 		self.parts.wpn_fps_snp_troglodyte_thing.forbids = {
 			"wpn_fps_snp_troglodyte_b_long",
@@ -25130,34 +25107,36 @@ local exclude = {
 }
 
 for _, part in pairs(self.parts) do
-	if not part.supported and part.stats then
-		local cosmetic_part = true
-		for name, stat in pairs(part.stats) do
-			if name ~= "value" and name ~= "zoom" and name ~= "gadget_zoom" and name ~= "spread_moving" and stat ~= 0 then
-				cosmetic_part = nil
+	if part then
+		if not part.supported and part.stats then
+			local cosmetic_part = true
+			for name, stat in pairs(part.stats) do
+				if name ~= "value" and name ~= "zoom" and name ~= "gadget_zoom" and name ~= "spread_moving" and stat ~= 0 then
+					cosmetic_part = nil
+				end
+			end
+	
+			if not cosmetic_part then
+				self:generate_custom_mod_stats(part)
 			end
 		end
-
-		if not cosmetic_part then
-			self:generate_custom_mod_stats(part)
-		end
-	end
-	if part.type then
-		for k, v in ipairs(exclude) do
-			if part and not part.no_cull and _ == v then
-				part.no_cull = true
-				break
+		if part.type then
+			for k, v in ipairs(exclude) do
+				if part and not part.no_cull and _ == v then
+					part.no_cull = true
+					break
+				end
 			end
-		end
-		if part.type == "ammo" then
-			if part.cull or not part.no_cull then
-				part.pcs = nil
-				part.stats = { value = 0 }
-				part.custom_stats = nil
-			end
-		else
-			if not part.keep_damage and part.stats then
-				part.stats.damage = nil
+			if part.type == "ammo" then
+				if part.cull or not part.no_cull then
+					part.pcs = nil
+					part.stats = { value = 0 }
+					part.custom_stats = nil
+				end
+			else
+				if not part.keep_damage and part.stats then
+					part.stats.damage = nil
+				end
 			end
 		end
 	end

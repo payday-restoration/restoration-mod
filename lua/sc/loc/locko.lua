@@ -1477,6 +1477,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_corgi_sc_desc"] = "이 불펍 소총은 명성에도 불구하고 내항성이 전혀 없습니다.",
 		["bm_wp_corgi_b_short"] = "MSG 총열",		
 		--UAR
+		["bm_w_aug"] = "UAR A2 소총",
 		["bm_aug_sc_desc"] = "클래식 불펍 소총. 죽은 나쁜 사람들을 더 죽이기 위한 훌륭한 만능 도구입니다.",
 		["bm_wp_upg_b_hbar"] = "중 총열",		
 		--AK17
@@ -2787,7 +2788,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "응급 치료",
-			["menu_tea_time_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 구급 키트와 의료 가방의 배치시간이 #{skill_color}#50%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n당신의 구급 키트을 사용한 사람은 #{skill_color}#5##초간 #{skill_color}#50%##만큼의 피해 감소를 받습니다.",
+			["menu_tea_time_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 구급 키트와 의료 가방의 배치시간이 #{skill_color}#50%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n당신의 구급 키트를 사용한 사람은 #{skill_color}#5##초간 #{skill_color}#50%##만큼의 피해 감소를 받습니다.",
 
 			--Pain Killers
 			["menu_fast_learner_beta_sc"] = "진통제",
@@ -2799,11 +2800,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "군의관",
-			["menu_medic_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n의료 가방의 사용 횟수를 #{skill_color}#1##번 더 늘려줍니다\n\n에이스: ##$pro##\n의료 가방의 소지 개수를 #{skill_color}#2##개로 늘려줍니다.",
+			["menu_medic_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n의료 가방의 사용 횟수를 #{skill_color}#1##번 더 늘려줍니다.\n\n에이스: ##$pro##\n의료 가방의 소지 개수를 #{skill_color}#2##개로 늘려줍니다.",
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "인스파이어",
-			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상습합니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#9미터 안##에 #{skill_color}#시야를 확보한 상태##에서 다운된 팀원에게 소리치면 팀원을 되살립니다. 이 효과는 매 #{skill_color}#90##초 마다 한 번만 일어납니다.",
+			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#9미터 안##에 #{skill_color}#시야를 확보한 상태##에서 다운된 팀원에게 소리치면 팀원을 되살립니다. 이 효과는 매 #{skill_color}#90##초 마다 한 번만 일어납니다.",
 
 			--[[   CONTROLLER SUBTREE   ]]--
 			--Cable Guy
@@ -2824,11 +2825,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime
 			["menu_control_freak_beta_sc"] = "공범",
-			["menu_control_freak_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신은 인질 당 최대 #{skill_color}#4##명까지 당신의 이동 속도가 #{skill_color}#3%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신은 인질 당 최대 #{skill_color}#4##명까지 최대 체력이 추가로 #{skill_color}#5%##씩 상승합니다.",
+			["menu_control_freak_beta_desc_sc"] = "베이직: #{owned}#$basic##\n인질 당 최대 #{skill_color}#4##명까지 당신의 이동 속도가 #{skill_color}#3%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n인질 당 최대 #{skill_color}#4##명까지 최대 체력이 추가로 #{skill_color}#5%##씩 상승합니다.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "인질범",
-			["menu_black_marketeer_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신은 인질 당 최대 #{skill_color}#4##명까지 매 #{skill_color}#4##초마다 당신의 체력의 #{skill_color}#1##만큼 체력을 회복합니다.\n\n에이스: #{owned}#$pro##\n당신의 #{skill_color}#인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 #{skill_color}#1##번만 발생합니다.\n\n#{skill_color}#4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 #{skill_color}#50%##만큼 증가합니다.",
+			["menu_black_marketeer_beta_desc_sc"] = "베이직: #{owned}#$basic##\n인질 당 최대 #{skill_color}#4##명까지 매 #{skill_color}#4##초마다 당신의 체력의 #{skill_color}#1##만큼 체력을 회복합니다.\n\n에이스: #{owned}#$pro##\n당신의 #{skill_color}#인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 #{skill_color}#1##번만 발생합니다.\n\n#{skill_color}#4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 #{skill_color}#50%##만큼 증가합니다.",
 
 			--[[   ASSAULT SUBTREE   ]]--
 			--Leadership
@@ -2873,7 +2874,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
-			["menu_shotgun_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#2##만큼 증가합니다\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##은 펠릿을 #{skill_color}#3##발 더 발사합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
+			["menu_shotgun_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##은 펠릿을 #{skill_color}#3##발 더 발사합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
@@ -2885,7 +2886,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Overkill
 			["menu_overkill_sc"] = "오버킬",
-			["menu_overkill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#2##초 동안 산탄총과 휴대용 톱의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#10##초 동안 모든 무기의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 유탄 발사기에는 공격력 보너스가 적용되지 않습니다.##\n\n#{skill_color}#산탄총과 화염방사기 OVE9000 톱##의 교체 속도가 #{skill_color}#50%##만큼 빨라집니다.",
+			["menu_overkill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#2##초 동안 산탄총과 휴대용 톱의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#10##초 동안 모든 무기의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 발사기에는 공격력 보너스가 적용되지 않습니다.##\n\n#{skill_color}#산탄총과 화염방사기 OVE9000 톱##의 교체 속도가 #{skill_color}#50%##만큼 빨라집니다.",
 
 			--}
 
@@ -2939,7 +2940,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "완전무장",
-			["menu_bandoliers_desc_sc"] = "베이직: #{owned}#$basic##\n소지 탄약이 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자로 획득하는 탄약 수급율이 #{skill_color}#50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 #{skill_color}#5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 #{skill_color}#1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n#{risk}#참고: 특성 덱의 투척물은 해당 스킬로도 획득할 수 없습니다.##",
+			["menu_bandoliers_desc_sc"] = "베이직: #{owned}#$basic##\n소지 탄약이 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자로 획득하는 탄약 수급율이 #{skill_color}#50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 #{skill_color}#5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 #{skill_color}#1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n#{risk}#참고: 특성 덱의 투척물은 해당 스킬로는 획득할 수 없습니다.##",
 
 		--[[   TECHNICIAN   ]]--
 		

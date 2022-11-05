@@ -175,14 +175,9 @@
 	
 	<mission			path="levels/narratives/vlad/mallcrasher/mission_turf_war/mission_turf_war" force="true" unload="true"/> <!--fixed one of the scripted cops not moving at all-->
 	
-	<mission			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!--Adds Kung Fu Masters, more beat cops responding and possible captain encounter on Mayhem and above-->
-	
-	<mission			path="levels/narratives/mcshay/ranc/world/world" force="true" unload="true"/> <!--fixed the beat cops-->
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
 	
 	<mission			path="levels/narratives/dentist/mus/world/world" force="true" unload="true"/>
-	
-	<mission			path="levels/narratives/mcshay/trai/world/world" force="true" unload="true"/>
 	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	

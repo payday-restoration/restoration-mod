@@ -106,7 +106,6 @@ function restoration:Init()
 		dinner = restoration.captain_types.spring, --Slaughterhouse
 		dah = restoration.captain_types.spring, --diamond heist
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
-		chas = restoration.captain_types.spring, --Dragon Heist
 		--Custom Heists--
 		firestarter_1_res = restoration.captain_types.spring, --firestarter day 1 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
@@ -174,8 +173,6 @@ function restoration:Init()
 	
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
-		"chas",
-		"trai",
 		"skm_nightmare_lvl",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl",

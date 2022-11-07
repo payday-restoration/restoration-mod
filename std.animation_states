@@ -153,6 +153,18 @@
 			<attr name="name" value="std/crouch/still/idle"/>
 		</target>
 	</tweak>
+	<!-- Proper align place for syringe on healed units -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/heal/use_syringe"/>
+			<keys/>
+			<key callback="anim_clbk_wanted_item"/>
+		</search>
+		<target mode="attributes">
+			<attr name="param2" value="hand_l"/>
+		</target>
+	</tweak>
 	<!-- Make medic heals an upper_body animation -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>

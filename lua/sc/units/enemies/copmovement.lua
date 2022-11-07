@@ -805,15 +805,6 @@ function CopMovement:anim_clbk_enemy_spawn_melee_item()
 	end
 end
 
-local _equip_item_original = CopMovement._equip_item
-function CopMovement:_equip_item(item_type, align_place, droppable)
-	if item_type == "needle" then
-		align_place = "hand_l"
-	end
-
-	_equip_item_original(self, item_type, align_place, droppable)
-end
-
 function CopMovement:sync_action_act_start(index, blocks_hurt, clamp_to_graph, needs_full_blend, start_rot, start_pos)
 	if self._ext_damage:dead() then
 		return

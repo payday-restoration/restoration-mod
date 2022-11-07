@@ -295,6 +295,12 @@ function CopMovement:_upd_actions(t)
 	end	
 end
 
+Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
+	if self._suppression.transition and self._suppression.transition.next_upd_t < t then
+		self._force_head_upd = true -- update head position vector
+	end
+end)
+
 function CopMovement:do_omnia(self)
 	local t = TimerManager:main():time()
 	
@@ -752,7 +758,7 @@ function CopMovement:on_suppressed(state)
 		managers.network:session():send_to_peers_synched("suppressed_state", self._unit, state and true or false)
 	end
 
-	self:enable_update()
+	self:enable_update(true)
 end
 
 function CopMovement:synch_attention(attention)

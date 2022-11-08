@@ -451,9 +451,6 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",
 	[Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2"):key()] = "beretta92",
 	[Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke"):key()] = "beretta92",
-
-	--Giving Vanilla Titanshields their silent pistols
-	[Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"):key()] = "beretta92_titan",
 }
 
 local default_weapon_name_orig = CopBase.default_weapon_name

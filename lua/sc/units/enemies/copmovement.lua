@@ -296,7 +296,7 @@ function CopMovement:_upd_actions(t)
 end
 
 Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
-	if self._suppression.transition and self._suppression.transition.next_upd_t < t then
+	if self._suppression.transition and self._suppression.transition.next_upd_t < t or self._stance.transition and self._stance.transition.next_upd_t < t then
 		self._force_head_upd = true -- update head position vector
 	end
 end)
@@ -544,6 +544,10 @@ function CopMovement:play_redirect(redirect_name, at_time)
 
 	return result
 end
+
+Hooks:PostHook(CopMovement, "_change_stance", "res_change_stance", function(self)
+	self._force_head_upd = true -- update head position vector
+end)
 
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z

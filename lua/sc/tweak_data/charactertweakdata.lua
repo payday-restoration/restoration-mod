@@ -16912,28 +16912,28 @@ end
 Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_table_structure", function(self)
 
 	--Vanilla Murky Scar-H turns into Scar-L
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light")
+	self.weap_unit_names[table.index_of(self.weap_ids, "scar_murky")] = Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light")
 	
 	--Vanilla RPK SC'd
-	self.weap_unit_names[20] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "rpk_lmg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc")
 	
 	--Vanilla SVD SC'd
-	self.weap_unit_names[21] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")	
+	self.weap_unit_names[table.index_of(self.weap_ids, "svd_snp")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")	
 	
 	--Vanilla AKMSU SC'd
-	self.weap_unit_names[22] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "akmsu_smg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc")
 	
 	--Vanilla Cloaker Asval SC'd
-	self.weap_unit_names[23] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "asval_smg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc")
 	
 	--Vanilla SR2 SC'd
-	self.weap_unit_names[24] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "sr2_smg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc")
 	
 	--Vanilla AK101 SC'd
-	self.weap_unit_names[25] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "ak47_ass")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
 
 	--Vanilla Zeal Sniper made M14/SCAR-H DMR
-	self.weap_unit_names[30] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
+	self.weap_unit_names[table.index_of(self.weap_ids, "heavy_zeal_sniper")] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
 	
 	--Peacemaker
 	table.insert(self.weap_ids, "peacemaker")

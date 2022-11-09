@@ -16931,10 +16931,6 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	
 	--Vanilla AK101 SC'd
 	self.weap_unit_names[25] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
-	
-	--Vanilla Minigun becomes Benelli to make Benelli Dozers
-	self.weap_unit_names[29] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-
 
 	--Vanilla Zeal Sniper made M14/SCAR-H DMR
 	self.weap_unit_names[30] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	

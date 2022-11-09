@@ -173,13 +173,6 @@
 	<!--opscore-->
 	<unit_mat			path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
-
-	<!--M416 -->
-	<texture			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_df" />		
-	<texture			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_nm" />		
-	
-	<unit_mat			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416" />
-	<cooked_physics		path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"/>
 	
 	<!-- city tier -->	
 	<!--City swat 1-->

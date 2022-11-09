@@ -1492,6 +1492,13 @@
 	<texture			path="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" force="true"/>
 	<material_config	path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
 	<model				path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>	
+	
+	<!--M416 for FBI Elites/Ready Agents-->
+	<texture			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_df" />		
+	<texture			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_nm" />		
+	
+	<unit_mat			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416" />
+	<cooked_physics		path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"/>
 
 	<!--Cloaked MP5-->
 	<model				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>

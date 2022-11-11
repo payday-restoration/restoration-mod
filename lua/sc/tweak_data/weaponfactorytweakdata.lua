@@ -23112,6 +23112,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			sms = 0.9
 		}
 	end
+	if self.parts.wpn_fps_fla_type99inc_rec then
+		self.parts.wpn_fps_fla_type99inc_rec.supported = true
+		self.parts.wpn_fps_fla_type99inc_rec.custom_stats = {
+			type99_stats = true
+		}
+	end
 
 	if self.parts.wpn_fps_snp_k31_scope then --Pawcio's K31
 		self.parts.wpn_fps_snp_k31_scope.supported = true

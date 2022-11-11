@@ -14595,6 +14595,102 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.plasmaproto.timers.reload_exit_not_empty = 0.65
 		end
 
+		if self.hhpc then
+			self.hhpc.recategorize = { "heavy_pis" }
+			self.hhpc.plasma_b = true
+			self.hhpc.fire_mode_data.fire_rate = 0.2
+			self.hhpc.kick = self.stat_info.kick_tables.moderate_right_kick
+			self.hhpc.CLIP_AMMO_MAX = 8
+			self.hhpc.AMMO_MAX = 20
+			self.hhpc.supported = true
+			self.hhpc.ads_speed = 0.320
+			self.hhpc.damage_falloff = {
+				start_dist = 2000,
+				end_dist = 5000,
+				min_mult = 0.2222
+			}
+			self.hhpc.stats = {
+				damage = 90,
+				spread = 66,
+				recoil = 79,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 22,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.hhpc.stats_modifiers = nil
+			self.hhpc.armor_piercing_chance = 1
+			self.hhpc.object_damage_mult = 2
+			self.hhpc.reload_speed_multiplier = 0.9
+			self.hhpc.panic_suppression_chance = 0.05
+			self.hhpc.timers.reload_exit_empty = 0.5
+			self.hhpc.timers.reload_exit_not_empty = 0.5
+		end
+
+		if self.type99inc then --Actually set up to use the stats for "system", stuff here is just for UI and anything else that might be looking for stuff from "type99inc"
+			self.type99inc.categories = {
+				"flamethrower",
+				"shotgun"
+			}
+			self.type99inc.use_data.selection_index = 2
+			self.type99inc.has_description = true
+			self.type99inc.desc_id = "bm_ap_flamethrower_sc_desc"
+			self.type99inc.timers.reload_not_empty = 8
+			self.type99inc.timers.reload_empty = 8
+			self.type99inc.rays = 20
+			self.type99inc.CLIP_AMMO_MAX = 45
+			self.type99inc.AMMO_MAX = 120
+			self.type99inc.fire_mode_data.fire_rate = 0.1
+			self.type99inc.single_flame_effect_duration = 1
+			self.type99inc.armor_piercing_chance = 1
+			self.type99inc.can_shoot_through_enemy = false
+			self.type99inc.can_shoot_through_shield = false
+			self.type99inc.can_shoot_through_wall = false
+			self.type99inc.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.type99inc.fire_dot_data = {
+				dot_damage = 1.6,
+				dot_trigger_chance = 50,
+				dot_length = 3.1,
+				dot_tick_period = 0.5
+			}
+			self.type99inc.supported = true
+			self.type99inc.ads_speed = 0.420
+			self.type99inc.damage_falloff = {
+				start_dist = 300,
+				end_dist = 1200,
+				min_mult = 0,
+			}
+			self.type99inc.stats = {
+				damage = 24,
+				spread = 31,
+				recoil = 97,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 20,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.type99inc.flame_max_range = 1200
+			self.type99inc.sms = 0.75
+			self.type99inc.stats_modifiers = nil
+			self.type99inc.panic_suppression_chance = 0.05
+			self.type99inc.reload_speed_multiplier = 1.13
+			self.type99inc.timers.reload_empty = 8
+			self.type99inc.timers.reload_not_empty = 8
+			self.type99inc.timers.reload_exit_empty = 0.8
+			self.type99inc.timers.reload_exit_not_empty = 0.8
+			self.type99inc.shake.bypass_global_shake = true
+		end
+
 	if self.m6d then --RJC9000 and Offyerrocker's M6D
 		self.m6d.recategorize = { "heavy_pis" }		
 		self.m6d.damage_type = "heavy_pistol"

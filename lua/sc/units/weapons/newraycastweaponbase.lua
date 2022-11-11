@@ -629,6 +629,15 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
 			end	
+			if stats.type99_stats then
+				--have to do this due to how this thing is set up, can't have both equipped anyways
+				tweak_data.weapon.system.reload_speed_multiplier = 1.13 * 1.1
+				tweak_data.weapon.system.timers = tweak_data.weapon.system.timers or {}
+				tweak_data.weapon.system.timers.reload_empty = 8
+				tweak_data.weapon.system.timers.reload_not_empty = 8
+				tweak_data.weapon.system.timers.reload_exit_empty = 0.8
+				tweak_data.weapon.system.timers.reload_exit_not_empty = 0.8
+			end	
 	
 			if stats.m16_burst then
 				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.066666) or 1

@@ -1323,11 +1323,12 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	else
 		self.marshal_shield.custom_voicework = "bravo_dmr"
 	end		
-	self.marshal_shield.speech_prefix_count = 4
+	self.marshal_shield.speech_prefix_count = nil
 	self.marshal_shield.priority_shout = "f31"
 	self.marshal_shield.access = "shield"
 	self.marshal_shield.chatter = presets.enemy_chatter.shield
 	self.marshal_shield.announce_incomming = "incomming_shield"
+	self.marshal_shield.spawn_sound_event = "shield_identification"
 	self.marshal_shield.steal_loot = nil
 	self.marshal_shield.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "marshal_shield")
@@ -1348,6 +1349,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield_break.wall_fwd_offset = nil
 	self.marshal_shield_break.priority_shout = nil
 	self.marshal_shield_break.access = "swat"
+	self.marshal_shield_break.spawn_sound_event = "swatturret_plate_off" --sound for breaking Marshal's shield
 	self.marshal_shield_break.chatter = presets.enemy_chatter.swat
 	self.marshal_shield_break.announce_incomming = nil
 	self.marshal_shield_break.damage.hurt_severity = presets.hurt_severities.base

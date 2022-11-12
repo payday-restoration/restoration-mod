@@ -1081,9 +1081,9 @@ local muzzle_device = {
 				trail_effect = "",
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
-					dot_damage = 2,
-					dot_trigger_chance = 25,
-					dot_length = 3.1,
+					dot_damage = 3,
+					dot_trigger_chance = 30,
+					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -1107,9 +1107,9 @@ local muzzle_device = {
 				trail_effect = "",
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
-					dot_damage = 2,
-					dot_trigger_chance = 25,
-					dot_length = 3.1,
+					dot_damage = 3,
+					dot_trigger_chance = 30,
+					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -1134,9 +1134,9 @@ local muzzle_device = {
 				trail_effect = "",
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
-					dot_damage = 3,
-					dot_trigger_chance = 35,
-					dot_length = 3.1,
+					dot_damage = 4.5,
+					dot_trigger_chance = 40,
+					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -8568,9 +8568,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		trail_effect = "",
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
-			dot_damage = 4,
-			dot_trigger_chance = 45,
-			dot_length = 3.1,
+			dot_damage = 6,
+			dot_trigger_chance = 50,
+			dot_length = 2.1,
 			dot_tick_period = 0.5
 		}
 	}
@@ -24379,8 +24379,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_2042_spear_stock.custom_stats = nil
 		--folding stock
 		self.parts.wpn_fps_ass_mcx_spear_stock_visor.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_stock_visor.stats = deep_clone(stocks.adj_to_fold_stats)
-		self.parts.wpn_fps_ass_mcx_spear_stock_visor.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+		self.parts.wpn_fps_ass_mcx_spear_stock_visor.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+		self.parts.wpn_fps_ass_mcx_spear_stock_visor.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
+		--folding stock
+		self.parts.wpn_fps_ass_mcx_spear_stock_folding.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_stock_folding.stats = deep_clone(stocks.adj_to_fold_stats)
+		self.parts.wpn_fps_ass_mcx_spear_stock_folding.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+		--folding stock
+		self.parts.wpn_fps_ass_mcx_spear_stock_skeletal_min.supported = true
+		self.parts.wpn_fps_ass_mcx_spear_stock_skeletal_min.stats = deep_clone(stocks.adj_to_fold_stats)
+		self.parts.wpn_fps_ass_mcx_spear_stock_skeletal_min.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 
 		--hidden for now
 		self.parts.wpn_fps_ass_mcx_spear_angled_irons_no.supported = true

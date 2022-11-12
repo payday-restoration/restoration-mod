@@ -1349,7 +1349,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield_break.wall_fwd_offset = nil
 	self.marshal_shield_break.priority_shout = nil
 	self.marshal_shield_break.access = "swat"
-	self.marshal_shield_break.spawn_sound_event = "swatturret_plate_off" --sound for breaking Marshal's shield
+	
 	self.marshal_shield_break.chatter = presets.enemy_chatter.swat
 	self.marshal_shield_break.announce_incomming = nil
 	self.marshal_shield_break.damage.hurt_severity = presets.hurt_severities.base

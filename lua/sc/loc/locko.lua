@@ -1075,9 +1075,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 탄은 #{skill_color}#폴오프가 없지만## #{important_1}#헤드샷을 할 수 없습니다.##",
 		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#피해량을 증가시키는## 더 크고 무거운 펠릿 #{important_1}#6발##을 발사합니다.",
 		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#15%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#96##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리가 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#25%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#120##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#35%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#180##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#45%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#240##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 적을 기절시킬 수 있습니다.##",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#30%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#120##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 적을 기절시킬 수 있습니다.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#40%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#180##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 적을 기절시킬 수 있습니다.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#240##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 적을 기절시킬 수 있습니다.##",
 		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",		
 		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{skill_color}#1##초에 걸쳐 #{stats_positive}#30##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{skill_color}#2##초에 걸쳐 #{stats_positive}#120##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
@@ -3051,7 +3051,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ARTFUL DODGER SUBTREE  ]]--
 			--Duck and Cover--
 			["menu_sprinter_beta_sc"] = "엄폐의 중요성",
-			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}#25%##만큼 앞당기고 회복률도 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}#6%##만큼씩 채워집니다.\n\n웅크리고 있을 때 이동 속도가 #{skill_color}#10%##만큼 증가합니다. ",
+			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}#25%##만큼 앞당기고 회복률도 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}#6%##만큼씩 채워집니다.\n\n웅크리고 있을 때 이동 속도가 #{skill_color}#10%##만큼 증가합니다.",
 
 			--Evasion--
 			["menu_awareness_beta_sc"] = "위기모면",
@@ -3070,7 +3070,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n테이저의 전기 공격에 당하면 #{skill_color}#15%## 확률로 테이저를 넉백시킵니다.\n\n에이스: #{owned}#$pro##\n테이저의 전기 공격에 당한 직후 #{skill_color}#2##초 안에 상호작용 키를 누르면 감전시킨 테이저를 넉백 시키고 #{skill_color}#50##만큼 대미지를 줍니다.",
 			
 			--Sneaky Bastard--
-			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이것은 방탄복이 부서질 때마다 한 번만 발생합니다.",			
+			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 부서질 때마다 한 번만 발생합니다.",			
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 			--Second Wind
@@ -3079,7 +3079,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기를 꺼내고 넣는 속도가 #{skill_color}#15%##만큼 증가합니다\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기를 꺼내고 넣는 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
@@ -3113,11 +3113,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Akimbo--
 			["menu_akimbo_skill_sc"] = "아킴보",
-			["menu_akimbo_skill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#아킴보##의 안정성이 #{skill_color}#10##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 총 탄약량과 탄약 흭득량이 #{skill_color}#25%##만큼 증가합니다",
+			["menu_akimbo_skill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#아킴보##의 안정성이 #{skill_color}#10##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 총 탄약량과 탄약 흭득량이 #{skill_color}#25%##만큼 증가합니다.",
 
 			--Desperado--
 			["menu_expert_handling_sc"] = "데스페라도",
-			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명줄률 및 사거리 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
+			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
 
 			--Trigger Happy--
 			["menu_trigger_happy_beta_sc"] = "난사광",

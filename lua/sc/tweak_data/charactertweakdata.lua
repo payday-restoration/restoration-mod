@@ -159,6 +159,19 @@ function CharacterTweakData:_init_region_fbi()
 	}
 	self._speech_prefix_p2 = "d"
 end
+function CharacterTweakData:_init_region_omnia()
+	self._default_chatter = "dsp_radio_russian"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l5d",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "nothing"
+	}
+	self._speech_prefix_p2 = "d"
+end
 
 function CharacterTweakData:get_ai_group_type()    
 	return self.tweak_data.levels:get_ai_group_type()

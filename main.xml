@@ -593,7 +593,7 @@
     <Package id="packages/overkill_290_sc_federales" file="packages/federales_diff/overkill_290_sc_federales.xml"/>
     <Package id="packages/sm_wish_sc_federales" file="packages/federales_diff/sm_wish_sc_federales.xml"/>	
    
-   <!-- ///DIFF PACKAGES MURKYWATER\\\ -->
+	<!-- ///DIFF PACKAGES MURKYWATER\\\ -->
     <Package id="packages/normal_sc_murkywater" file="packages/murkywater_diff/normal_sc_murkywater.xml"/>
     <Package id="packages/hard_sc_murkywater" file="packages/murkywater_diff/hard_sc_murkywater.xml"/>
     <Package id="packages/overkill_sc_murkywater" file="packages/murkywater_diff/overkill_sc_murkywater.xml"/>
@@ -601,6 +601,15 @@
     <Package id="packages/easy_wish_sc_murkywater" file="packages/murkywater_diff/easy_wish_sc_murkywater.xml"/>
     <Package id="packages/overkill_290_sc_murkywater" file="packages/murkywater_diff/overkill_290_sc_murkywater.xml"/>
     <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/>	
+	
+	<!-- ///DIFF PACKAGES OMNIA\\\ -->
+    <Package id="packages/normal_sc_omnia" file="packages/omnia_diff/normal_sc_omnia.xml"/>
+    <Package id="packages/hard_sc_omnia" file="packages/omnia_diff/hard_sc_omnia.xml"/>
+    <Package id="packages/overkill_sc_omnia" file="packages/omnia_diff/overkill_sc_omnia.xml"/>
+    <Package id="packages/overkill_145_sc_omnia" file="packages/omnia_diff/overkill_145_sc_omnia.xml"/>
+    <Package id="packages/easy_wish_sc_omnia" file="packages/omnia_diff/easy_wish_sc_omnia.xml"/>
+    <Package id="packages/overkill_290_sc_omnia" file="packages/omnia_diff/overkill_290_sc_omnia.xml"/>
+    <Package id="packages/sm_wish_sc_omnia" file="packages/omnia_diff/sm_wish_sc_omnia.xml"/>
 
 	<!--///DIFF PACKAGES ZOMBIE\\\-->
     <Package id="packages/normal_sc_zombie" file="packages/zombie_diff/normal_sc_zombie.xml"/>
@@ -655,6 +664,7 @@
 	<Package id="packages/skm_sc_russia" file="packages/russia_diff/skm_sc_russia.xml"/>
 	<Package id="packages/skm_sc_zombie" file="packages/zombie_diff/skm_sc_zombie.xml"/>
 	<Package id="packages/skm_sc_murkywater" file="packages/murkywater_diff/skm_sc_murkywater.xml"/>
+	<Package id="packages/skm_sc_omnia" file="packages/murkywater_diff/skm_sc_omnia.xml"/>
     <Package id="packages/skm_sc_federales" file="packages/federales_diff/skm_sc_federales.xml"/>
 	
 </mod>

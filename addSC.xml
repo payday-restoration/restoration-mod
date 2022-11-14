@@ -280,12 +280,18 @@
 	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
 	
-	<!--Load Jerome The Shotty Man in case if some heist has him missing in the package-->
+	<!--Load Jerome The Shotty Man and other guards in case if some heist has him missing in the package-->
 	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
 		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
+	<add from_db="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service" type="unit">
+		<unit load="true"	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<object 			path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<material_config 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<unit load="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service_husk"/>
 	</add>
 	
 	<!-- Gensec Security: Beret Poppin' -->

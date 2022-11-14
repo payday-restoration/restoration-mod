@@ -10,8 +10,7 @@
   "ene_omnia_hrt" : "OMNIA SRT",    
   "ene_omnia_crew" : "OMNIA Crewman",          
   "ene_omnia_medic" : "OMNIA Medic",
-  "ene_omnia_shield" : "OMNIA Shield",
-  "ene_omnia_spook" : "OMNIA Cloaker", 
+  "ene_omnia_shield" : "OMNIA Shield", 
   "ene_omnia_sniper" : "OMNIA Sniper",
   "ene_omnia_taser" : "OMNIA Taser",  
   "ene_fbi_swat" : "OMNIA Ground Force Light",
@@ -21,7 +20,6 @@
   "ene_omnia_city" : "OMNIA Executioners Light", 
   "ene_omnia_heavy" : "OMNIA Executioners Heavy",
   "ene_omnia_shield" : "OMNIA Executioners Shield",
-  "ene_murky_veteran" : "Ray Shatter",
   "ene_shield_1" : "OMNIA Ground Force Shield",
   "ene_shield_2" : "OMNIA Tactical Security Shield",
   "ene_city_shield" : "OMNIA Escalated Response Shield"

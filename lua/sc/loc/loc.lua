@@ -2353,6 +2353,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local f = tweak_data.levels.ai_groups.federales
+local o = tweak_data.levels.ai_groups.omnia
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -2386,6 +2387,13 @@ elseif ai_type == m then
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
 		})
 	end)
+elseif ai_type == o then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "OMNIA Incursion Underway",
+			["hud_assault_alpha"] = "OMNIA INCURSION"
+		})
+	end)	
 end
 
  if _G.HopLib then

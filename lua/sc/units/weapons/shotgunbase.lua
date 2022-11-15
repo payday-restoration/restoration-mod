@@ -170,9 +170,9 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 				})
 			end
 
-			if col_ray then
+			if col_ray and alive(self._obj_fire)  then
 				local tracer_dist = col_ray.distance
-				if (col_ray and tracer_dist > 200 or not col_ray) and alive(self._obj_fire)  then
+				if (col_ray and tracer_dist > 200 or not col_ray) then
 					self._obj_fire:m_position(self._trail_effect_table.position)
 					mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
 					local clamp_dist = tracer_dist

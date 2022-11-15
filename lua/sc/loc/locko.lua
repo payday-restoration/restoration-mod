@@ -933,7 +933,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["hud_assault_vip"] = "악몽을 마주하고 잠에서 깨어나라",
 		})
 	else LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기", --레스토레이션 모드와 일관성 있게 추가했음 (I added this line for consistency with resmod)
+			["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기", --이것 또한 바꿀 필요가 있어서 추가했음
 		})	
 	end
 	
@@ -1002,7 +1002,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skm_nightmare_lvl_name"] = "세이프하우스?",
 
 		--Heist Breifings--
-		["heist_pines_briefing"] = "너희들은 빨리 장소에 도착해야해, 하지만 장소가 숲속이다 보니까 낙하산으로 가야할꺼야. 조송사를 찾아봐 - 아마 사고지점 근처에 있을거야 - 그리고 탈출시킬 헬리콥터를 호출해. 그리고, 블라드가 말하길 그 비행기에 많은 상품이 있었다고 하더군, 숲을 수색해서 가지고 올 수 있는만큼 가지고와, 크리스마스에서 돈을 버는게 나쁘지는 않잖아?\n\n자칼의 충고:\n그 충돌로 인한 폭발은 인근 리퍼 팀을 건들었나봐. 경찰의 대응을 기대하지말라고.",
+		["heist_pines_briefing"] = "너희들은 빨리 장소에 도착해야해, 하지만 장소가 숲속이다 보니까 낙하산으로 가야할꺼야. 조종사를 찾아봐 아마 사고지점 근처에 있을거야 그리고 탈출시킬 헬리콥터를 호출해. 그리고, 블라드가 말하길 그 비행기에 많은 상품이 있었다고 하더군, 숲을 수색해서 가지고 올 수 있는만큼 가지고와, 크리스마스에서 돈을 버는게 나쁘지는 않잖아?\n\n자칼의 충고:\n그 충돌로 인한 폭발은 인근 리퍼 팀을 건들었나봐. 경찰의 대응은 기대하지말라고.",
 
 		----Custom Achievements----
 				
@@ -1303,7 +1303,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_2006m_b_long"] = "쿠사나기 총열",		
 		["bm_x_2006m_sc_desc"] = "이것들 중 두 가지를 처리하는 물류는 순전히 아주 멋진 요인보다 더 중요합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--Frenchman Model 87
-		["bm_model3_sc_desc"] = "평생의 질문에 대한 고전적인 대답 \"내 면상에 나타난 이 모든 멍청이들에 대해 나는 무엇을 해야 해야돼?\"\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",
+		["bm_model3_sc_desc"] = "평생의 질문에 대한 고전적인 대답 \"내 면상에 나타난 이 모든 멍청이들에 대해 나는 무엇을 해야돼?\"\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",
 		["bm_w_x_model3"] = "아킴보 Frenchman Model 87 리볼버",
 		["bm_x_model3_sc_desc"] = "이 쌍리볼버를 들고 정오에 당신의 내면에 있는 투덜거리는 자질을 끌어내고 경찰에게 듀얼을 도전하세요.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--Raging bull

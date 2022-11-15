@@ -2282,9 +2282,9 @@ local omnia_normal_overkill = {
         --like murkies, swat tier are always loaded for scripted guard stuff and fbi tier are loaded for ponrs meaning these can be lumped into one replacer
 		
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
-		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
-		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
+		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_omnia/characters/ene_swat_1/ene_swat_1",
@@ -2386,9 +2386,9 @@ local omnia_mayhem = {
 		--elites introduced
 		
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
-		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_omnia/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -2492,9 +2492,9 @@ local omnia_deathwish = {
 		--elites introduced
 		
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
-		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1",
@@ -2601,11 +2601,10 @@ local omnia_desperado_enforcement = {
 		--ON MY OWN
 		--INVISBLE WARRIOR
 		--I AM THE WIND OF DESTRUCTION!
-		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_veteran_2/ene_omnia_veteran_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
-		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",

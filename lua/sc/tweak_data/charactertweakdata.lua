@@ -18270,7 +18270,8 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_mod_omnia/characters/",
 			list = {
 				"ene_omnia_hrt_1",
-				"ene_omnia_hrt_2",				
+				"ene_omnia_hrt_2",
+				"ene_omnia_hrt_3",
 				"ene_omnia_crew",
 				"ene_omnia_crew_2",
 				"ene_omnia_security_c45",
@@ -18303,6 +18304,7 @@ function CharacterTweakData:character_map()
 				"ene_omnia_heavy_r870",
 				"ene_omnia_heavy_benelli",
 				"ene_bulldozer_1",
+				"ene_bulldozer_1_hard",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
 				"ene_bulldozer_minigun",

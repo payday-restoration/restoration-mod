@@ -7936,7 +7936,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			fbi = {
 				Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870")
-			,
+			},
 			omnia = {
 				Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870")
 			}		
@@ -8433,7 +8433,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "tank",
 			is_captain = true
 		}		
-	end
 	--Titan Tasers that specifically spawn with Spring (Ignores Spawncaps)
 	self.unit_categories.Taser_Titan = {
 		unit_types = {
@@ -12468,9 +12467,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		self.unit_categories.TIT_tank.unit_types.omnia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"		
 	end
-
 end
-
+	
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--The below summarizes the functions of new or revised tactics in Restoration.
 	

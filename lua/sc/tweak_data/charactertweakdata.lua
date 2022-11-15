@@ -18308,11 +18308,13 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
 				"ene_bulldozer_minigun",
+				"ene_bulldozer_medic",
 				"ene_omnia_spook",
 				"ene_grenadier_1",
 				"ene_omnia_medic",
 				"ene_omnia_taser",
 				"ene_omnia_sniper",
+				"ene_omnia_sniper_2",
 				"ene_omnia_shield"					
 			}
 		}

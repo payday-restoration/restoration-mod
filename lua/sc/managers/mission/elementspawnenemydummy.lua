@@ -2965,7 +2965,7 @@ local omnia_deathwish = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_omnia_security_r870/ene_omnia_security_r870",
 		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_omnia/characters/ene_omnia_security_raging_bull/ene_omnia_security_raging_bull"
 	}
-local omnia_desperado_enforcement = {
+local omnia_desperado = {
         --bye bye elites
 		--crackdown operation team is introduced
 		--Hey look! It's senator's men!

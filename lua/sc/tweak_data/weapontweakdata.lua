@@ -4611,7 +4611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ppk.timers.reload_exit_not_empty = 0.6
 				self.ppk.timers.reload_empty = 2.2	
 				self.ppk.timers.reload_exit_empty = 0.65
-				self.ppk.weapon_movement_penalty = 1.025
+				self.ppk.weapon_movement_penalty = 1.05
 
 			--Chimano Compact (Glock 26)
 				self.g26.has_description = true
@@ -4861,12 +4861,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Parabellum (Luger)
 				self.breech.has_description = true
 				self.breech.desc_id = "bm_breech_sc_desc"				
-				self.breech.timers = {
-					reload_not_empty = 1.55,
-					reload_empty = 2.1,
-					unequip = 0.5,
-					equip = 0.35
-				}	
 				self.breech.AMMO_MAX = 75
 				self.breech.CLIP_AMMO_MAX = 8
 				self.breech.fire_mode_data.fire_rate = 0.08571428571
@@ -4896,11 +4890,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.stats_modifiers = nil
 				self.breech.panic_suppression_chance = 0.05
 				self.breech.reload_speed_multiplier = 1.25
-				self.breech.weapon_movement_penalty = 1.025
-				self.breech.timers.reload_exit_empty = 0.35
-				self.breech.timers.reload_not_empty = 1.2
-				self.breech.timers.reload_not_empty = 1.2
-				self.breech.timers.reload_exit_not_empty = 0.5
+				self.breech.weapon_movement_penalty = 1.05
+				self.breech.timers = {
+					reload_not_empty = 1.2,
+					reload_exit_not_empty = 0.5,
+					reload_empty = 2.1,
+					reload_exit_empty = 0.35,
+					unequip = 0.5,
+					equip = 0.35
+				}	
 
 			--Chimano Custom (Glock 22)
 				self.g22c.has_description = true
@@ -9404,9 +9402,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.fire_rate_multiplier = 1
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
-			self.m95.ads_speed = 0.540
+			self.m95.ads_speed = 0.580
 			self.m95.damage_falloff = {
-				start_dist = 5000,
+				start_dist = 4000,
 				end_dist = 20000,
 				min_mult = 0.6666
 			}
@@ -14195,9 +14193,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.kick.crouching = self.m107cq.kick.standing
 		self.m107cq.kick.steelsight = self.m107cq.kick.standing
 		self.m107cq.supported = true
-		self.m107cq.ads_speed = 0.640
+		self.m107cq.ads_speed = 0.680
 		self.m107cq.damage_falloff = {
-			start_dist = 4000,
+			start_dist = 3000,
 			end_dist = 10000,
 			min_mult = 0.75
 		}
@@ -14242,9 +14240,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.tactical_reload = 1
 		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.m200.supported = true
-		self.m200.ads_speed = 0.600
+		self.m200.ads_speed = 0.640
 		self.m200.damage_falloff = {
-			start_dist = 6000,
+			start_dist = 5000,
 			end_dist = 15000,
 			min_mult = 0.5
 		}
@@ -15275,8 +15273,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.bipod_camera_pitch_limit = 20
 				weap.bipod_deploy_multiplier = 1.5
 			end
-			-- roughly normalizes swap speeds before additional modifiers are in play
-			weap.desired_swap_time = 1.5
+			--Roughly normalizes swap speeds before additional modifiers are in play
+			if not weap.swap_speed_multiplier then
+				weap.desired_swap_time = 1.5
+				self:get_swap_speed_multiplier(weap)
+			end
 
 			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
 			if weap.shake and not weap.shake.bypass_global_shake then
@@ -15338,12 +15339,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.recategorize = { "smg" }
 				end
 			end
-			--[[
-			if weap.ads_speed then
-				weap.ads_speed = weap.ads_speed + 0.150
-			end
-			]]
-			self:get_swap_speed_multiplier(weap)
 			self:calculate_ammo_pickup(weap)
 		end
 	end
@@ -15351,10 +15346,8 @@ end)
 
 function WeaponTweakData:get_swap_speed_multiplier(weapon)
 	local swap_speed_mult = 1
-	if not weapon.swap_speed_multiplier then
-		swap_speed_mult = swap_speed_mult / ( weapon.desired_swap_time / (weapon.timers.unequip + weapon.timers.equip) )
-		weapon.swap_speed_multiplier = swap_speed_mult
-	end
+	swap_speed_mult = swap_speed_mult / ( weapon.desired_swap_time / (weapon.timers.unequip + weapon.timers.equip) )
+	weapon.swap_speed_multiplier = swap_speed_mult
 end
 
 function WeaponTweakData:calculate_ammo_pickup(weapon)

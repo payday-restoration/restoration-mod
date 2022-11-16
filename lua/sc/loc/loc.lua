@@ -2205,7 +2205,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			})
 		elseif weapon_names == 3 then
 			LocalizationManager:add_localized_strings({	
-				--Signature 40
+				--LEO-40
 				["bm_w_hs2000"] = "SA XD(M)-40",
 				["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
 				["bm_wp_hs2000_sl_custom"] = "Compensated Slide",

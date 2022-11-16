@@ -1643,6 +1643,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		value = 8,
 		zoom = 30
 	}
+	self.parts.wpn_fps_upg_o_specter.adds = nil --{"wpn_fps_upg_o_specter_piggyback"}
 	self.parts.wpn_fps_upg_o_specter.perks = {"scope"}
 	--STANCE MODS
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_amcar = {
@@ -2726,6 +2727,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		value = 3,
 		zoom = 8
 	}
+	self.parts.wpn_fps_upg_o_cs.adds = nil --{"wpn_fps_upg_o_cs_piggyback"}
 	self.parts.wpn_fps_upg_o_cs.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_aimpoint.stance_mod)
 

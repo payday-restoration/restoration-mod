@@ -2732,7 +2732,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].expire_t = 0.85
 			self.melee_weapons[melee_id].repeat_expire_t = 0.6
 			self.melee_weapons[melee_id].melee_damage_delay = 0.15
-			self.melee_weapons[melee_id].anim_speed_mult = 1.2
+			self.melee_weapons[melee_id].anim_speed_mult = 1.25
 		end
 		
 		--melee_ballistic
@@ -2867,15 +2867,15 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.zeus.stats.charge_time = 0.75
 		self.melee_weapons.zeus.stats.range = 155
 		self.melee_weapons.zeus.stats.concealment = 28
-		--RIP Buzzer meta--
-		self.melee_weapons.taser.special_weapon = "taser"	
-		self.melee_weapons.taser.stats.min_damage = 1.2
-		self.melee_weapons.taser.stats.max_damage = 2.401
-		self.melee_weapons.taser.stats.min_damage_effect = 0.6
-		self.melee_weapons.taser.stats.max_damage_effect = 1.2
-		self.melee_weapons.taser.stats.charge_time = 0.75
-		self.melee_weapons.taser.stats.range = 155
-		self.melee_weapons.taser.stats.concealment = 28
+			--RIP Buzzer meta--
+			self.melee_weapons.taser.special_weapon = "taser"	
+			self.melee_weapons.taser.stats.min_damage = 1.2
+			self.melee_weapons.taser.stats.max_damage = 2.401
+			self.melee_weapons.taser.stats.min_damage_effect = 0.6
+			self.melee_weapons.taser.stats.max_damage_effect = 1.2
+			self.melee_weapons.taser.stats.charge_time = 0.75
+			self.melee_weapons.taser.stats.range = 155
+			self.melee_weapons.taser.stats.concealment = 28
 
 		--Le Spatula--	
 		self.melee_weapons.spatula.stats.min_damage = 2.4
@@ -2885,40 +2885,40 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spatula.stats.charge_time = 0.8
 		self.melee_weapons.spatula.stats.range = 150
 		self.melee_weapons.spatula.stats.concealment = 30
-		--For that you get the belt--
-		--Fitting name, because if you actually like Duke you're a sap
-		self.melee_weapons.sap.stats.min_damage = 2.4
-		self.melee_weapons.sap.stats.max_damage = 4.501
-		self.melee_weapons.sap.stats.min_damage_effect = 6.0
-		self.melee_weapons.sap.stats.max_damage_effect = 12.0
-		self.melee_weapons.sap.stats.charge_time = 0.6
-		self.melee_weapons.sap.stats.range = 150
-		self.melee_weapons.sap.stats.concealment = 30
-		--Money money money--
-		self.melee_weapons.moneybundle.stats.min_damage = 2.4
-		self.melee_weapons.moneybundle.stats.max_damage = 4.501
-		self.melee_weapons.moneybundle.stats.min_damage_effect = 6.0
-		self.melee_weapons.moneybundle.stats.max_damage_effect = 12.0
-		self.melee_weapons.moneybundle.stats.charge_time = 0.6
-		self.melee_weapons.moneybundle.stats.range = 150
-		self.melee_weapons.moneybundle.stats.concealment = 30
-		--Who's up for rockin the mic?--	
-		self.melee_weapons.microphone.special_weapon = "talk"
-		self.melee_weapons.microphone.stats.min_damage = 2.4
-		self.melee_weapons.microphone.stats.max_damage = 4.501
-		self.melee_weapons.microphone.stats.min_damage_effect = 6.0
-		self.melee_weapons.microphone.stats.max_damage_effect = 12.0
-		self.melee_weapons.microphone.stats.charge_time = 0.6
-		self.melee_weapons.microphone.stats.range = 150
-		self.melee_weapons.microphone.stats.concealment = 30
-		--Ay, qué lindo carnaval--	
-		self.melee_weapons.chac.stats.min_damage = 2.4
-		self.melee_weapons.chac.stats.max_damage = 4.501
-		self.melee_weapons.chac.stats.min_damage_effect = 6.0
-		self.melee_weapons.chac.stats.max_damage_effect = 12.0
-		self.melee_weapons.chac.stats.charge_time = 0.6
-		self.melee_weapons.chac.stats.range = 150
-		self.melee_weapons.chac.stats.concealment = 30
+			--For that you get the belt--
+			--Fitting name, because if you actually like Duke you're a sap
+			self.melee_weapons.sap.stats.min_damage = 2.4
+			self.melee_weapons.sap.stats.max_damage = 4.501
+			self.melee_weapons.sap.stats.min_damage_effect = 6.0
+			self.melee_weapons.sap.stats.max_damage_effect = 12.0
+			self.melee_weapons.sap.stats.charge_time = 0.6
+			self.melee_weapons.sap.stats.range = 150
+			self.melee_weapons.sap.stats.concealment = 30
+			--Money money money--
+			self.melee_weapons.moneybundle.stats.min_damage = 2.4
+			self.melee_weapons.moneybundle.stats.max_damage = 4.501
+			self.melee_weapons.moneybundle.stats.min_damage_effect = 6.0
+			self.melee_weapons.moneybundle.stats.max_damage_effect = 12.0
+			self.melee_weapons.moneybundle.stats.charge_time = 0.6
+			self.melee_weapons.moneybundle.stats.range = 150
+			self.melee_weapons.moneybundle.stats.concealment = 30
+			--Who's up for rockin the mic?--	
+			self.melee_weapons.microphone.special_weapon = "talk"
+			self.melee_weapons.microphone.stats.min_damage = 2.4
+			self.melee_weapons.microphone.stats.max_damage = 4.501
+			self.melee_weapons.microphone.stats.min_damage_effect = 6.0
+			self.melee_weapons.microphone.stats.max_damage_effect = 12.0
+			self.melee_weapons.microphone.stats.charge_time = 0.6
+			self.melee_weapons.microphone.stats.range = 150
+			self.melee_weapons.microphone.stats.concealment = 30
+			--Ay, qué lindo carnaval--	
+			self.melee_weapons.chac.stats.min_damage = 2.4
+			self.melee_weapons.chac.stats.max_damage = 4.501
+			self.melee_weapons.chac.stats.min_damage_effect = 6.0
+			self.melee_weapons.chac.stats.max_damage_effect = 12.0
+			self.melee_weapons.chac.stats.charge_time = 0.6
+			self.melee_weapons.chac.stats.range = 150
+			self.melee_weapons.chac.stats.concealment = 30
 
 		--It's da hotline--
 		self.melee_weapons.brick.special_weapon = "talk"
@@ -2929,23 +2929,23 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.brick.stats.charge_time = 1.3
 		self.melee_weapons.brick.stats.range = 160
 		self.melee_weapons.brick.stats.concealment = 28
-		--BOOP BOOP--
-		self.melee_weapons.detector.stats.min_damage = 4.5
-		self.melee_weapons.detector.stats.max_damage = 9.001
-		self.melee_weapons.detector.stats.min_damage_effect = 6.0
-		self.melee_weapons.detector.stats.max_damage_effect = 12.0
-		self.melee_weapons.detector.stats.charge_time = 1.3
-		self.melee_weapons.detector.stats.range = 160
-		self.melee_weapons.detector.attack_allowed_expire_t = 0.1
-		self.melee_weapons.detector.stats.concealment = 28
-		--Cheers mate!--
-		self.melee_weapons.whiskey.stats.min_damage = 4.5
-		self.melee_weapons.whiskey.stats.max_damage = 9.001
-		self.melee_weapons.whiskey.stats.min_damage_effect = 6.0
-		self.melee_weapons.whiskey.stats.max_damage_effect = 12.0
-		self.melee_weapons.whiskey.stats.charge_time = 1.3
-		self.melee_weapons.whiskey.stats.range = 160
-		self.melee_weapons.whiskey.stats.concealment = 28
+			--BOOP BOOP--
+			self.melee_weapons.detector.stats.min_damage = 4.5
+			self.melee_weapons.detector.stats.max_damage = 9.001
+			self.melee_weapons.detector.stats.min_damage_effect = 6.0
+			self.melee_weapons.detector.stats.max_damage_effect = 12.0
+			self.melee_weapons.detector.stats.charge_time = 1.3
+			self.melee_weapons.detector.stats.range = 160
+			self.melee_weapons.detector.attack_allowed_expire_t = 0.1
+			self.melee_weapons.detector.stats.concealment = 28
+			--Cheers mate!--
+			self.melee_weapons.whiskey.stats.min_damage = 4.5
+			self.melee_weapons.whiskey.stats.max_damage = 9.001
+			self.melee_weapons.whiskey.stats.min_damage_effect = 6.0
+			self.melee_weapons.whiskey.stats.max_damage_effect = 12.0
+			self.melee_weapons.whiskey.stats.charge_time = 1.3
+			self.melee_weapons.whiskey.stats.range = 160
+			self.melee_weapons.whiskey.stats.concealment = 28
 		--It's a 1% chance to win the slots asshats keep an eye on the fucking BFD--
 		self.melee_weapons.slot_lever.info_id = "bm_melee_slot_lever_info"
 		self.melee_weapons.slot_lever.special_weapon = "hyper_crit"
@@ -2965,46 +2965,46 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.selfie.stats.charge_time = 1.5
 		self.melee_weapons.selfie.stats.range = 170
 		self.melee_weapons.selfie.stats.concealment = 27
-		--I don't even know what the fuck the swagger stick is supposed to be--
-		self.melee_weapons.swagger.stats.min_damage = 3
-		self.melee_weapons.swagger.stats.max_damage = 6.001
-		self.melee_weapons.swagger.stats.min_damage_effect = 6.0
-		self.melee_weapons.swagger.stats.max_damage_effect = 12.0
-		self.melee_weapons.swagger.stats.charge_time = 1.5
-		self.melee_weapons.swagger.stats.range = 170
-		self.melee_weapons.swagger.stats.concealment = 27
-		--The safeword is police brutality--
-		self.melee_weapons.oldbaton.stats.min_damage = 3
-		self.melee_weapons.oldbaton.stats.max_damage = 6.001
-		self.melee_weapons.oldbaton.stats.min_damage_effect = 4.5
-		self.melee_weapons.oldbaton.stats.max_damage_effect = 9.0
-		self.melee_weapons.oldbaton.stats.charge_time = 1.5
-		self.melee_weapons.oldbaton.stats.range = 170
-		self.melee_weapons.oldbaton.stats.concealment = 27
-		--HAHAHA EBIN CODE JOEK :DDDDDD--
-		self.melee_weapons.happy.stats.min_damage = 3
-		self.melee_weapons.happy.stats.max_damage = 6.001
-		self.melee_weapons.happy.stats.min_damage_effect = 3.0
-		self.melee_weapons.happy.stats.max_damage_effect = 6.0
-		self.melee_weapons.happy.stats.charge_time = 1.5
-		self.melee_weapons.happy.stats.range = 170
-		self.melee_weapons.happy.stats.concealment = 27
-		--STOP RESISTING ARRREST MOTHERFUCKER--
-		self.melee_weapons.baton.stats.min_damage = 3
-		self.melee_weapons.baton.stats.max_damage = 6.001
-		self.melee_weapons.baton.stats.min_damage_effect = 3.0
-		self.melee_weapons.baton.stats.max_damage_effect = 6.0
-		self.melee_weapons.baton.stats.charge_time = 1.5
-		self.melee_weapons.baton.stats.range = 170
-		self.melee_weapons.baton.stats.concealment = 27
-		--Another baton reskin, thanks Overkill--
-		self.melee_weapons.croupier_rake.stats.min_damage = 3
-		self.melee_weapons.croupier_rake.stats.max_damage = 6.001
-		self.melee_weapons.croupier_rake.stats.min_damage_effect = 3.0
-		self.melee_weapons.croupier_rake.stats.max_damage_effect = 6.0
-		self.melee_weapons.croupier_rake.stats.charge_time = 1.5
-		self.melee_weapons.croupier_rake.stats.range = 170
-		self.melee_weapons.croupier_rake.stats.concealment = 27
+			--I don't even know what the fuck the swagger stick is supposed to be--
+			self.melee_weapons.swagger.stats.min_damage = 3
+			self.melee_weapons.swagger.stats.max_damage = 6.001
+			self.melee_weapons.swagger.stats.min_damage_effect = 6.0
+			self.melee_weapons.swagger.stats.max_damage_effect = 12.0
+			self.melee_weapons.swagger.stats.charge_time = 1.5
+			self.melee_weapons.swagger.stats.range = 170
+			self.melee_weapons.swagger.stats.concealment = 27
+			--The safeword is police brutality--
+			self.melee_weapons.oldbaton.stats.min_damage = 3
+			self.melee_weapons.oldbaton.stats.max_damage = 6.001
+			self.melee_weapons.oldbaton.stats.min_damage_effect = 4.5
+			self.melee_weapons.oldbaton.stats.max_damage_effect = 9.0
+			self.melee_weapons.oldbaton.stats.charge_time = 1.5
+			self.melee_weapons.oldbaton.stats.range = 170
+			self.melee_weapons.oldbaton.stats.concealment = 27
+			--HAHAHA EBIN CODE JOEK :DDDDDD--
+			self.melee_weapons.happy.stats.min_damage = 3
+			self.melee_weapons.happy.stats.max_damage = 6.001
+			self.melee_weapons.happy.stats.min_damage_effect = 3.0
+			self.melee_weapons.happy.stats.max_damage_effect = 6.0
+			self.melee_weapons.happy.stats.charge_time = 1.5
+			self.melee_weapons.happy.stats.range = 170
+			self.melee_weapons.happy.stats.concealment = 27
+			--STOP RESISTING ARRREST MOTHERFUCKER--
+			self.melee_weapons.baton.stats.min_damage = 3
+			self.melee_weapons.baton.stats.max_damage = 6.001
+			self.melee_weapons.baton.stats.min_damage_effect = 3.0
+			self.melee_weapons.baton.stats.max_damage_effect = 6.0
+			self.melee_weapons.baton.stats.charge_time = 1.5
+			self.melee_weapons.baton.stats.range = 170
+			self.melee_weapons.baton.stats.concealment = 27
+			--Another baton reskin, thanks Overkill--
+			self.melee_weapons.croupier_rake.stats.min_damage = 3
+			self.melee_weapons.croupier_rake.stats.max_damage = 6.001
+			self.melee_weapons.croupier_rake.stats.min_damage_effect = 3.0
+			self.melee_weapons.croupier_rake.stats.max_damage_effect = 6.0
+			self.melee_weapons.croupier_rake.stats.charge_time = 1.5
+			self.melee_weapons.croupier_rake.stats.range = 170
+			self.melee_weapons.croupier_rake.stats.concealment = 27
 
 		--shillelelelelelagh--	
 		self.melee_weapons.shillelagh.stats.min_damage = 4.5
@@ -3015,39 +3015,39 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.shillelagh.stats.range = 160
 		self.melee_weapons.shillelagh.attack_allowed_expire_t = 0.1
 		self.melee_weapons.shillelagh.stats.concealment = 26
-		-- https://i.imgur.com/8IJSRPZ.jpg --
-		self.melee_weapons.shock.stats.min_damage = 4.5
-		self.melee_weapons.shock.stats.max_damage = 9.001
-		self.melee_weapons.shock.stats.min_damage_effect = 9.0
-		self.melee_weapons.shock.stats.max_damage_effect = 18.0
-		self.melee_weapons.shock.stats.charge_time = 1.8
-		self.melee_weapons.shock.stats.range = 160
-		self.melee_weapons.shock.attack_allowed_expire_t = 0.1
-		self.melee_weapons.shock.stats.concealment = 26
-		--Hammer Hammer Toilet Slammer--
-		self.melee_weapons.hammer.stats.min_damage = 4.5
-		self.melee_weapons.hammer.stats.max_damage = 9.001
-		self.melee_weapons.hammer.stats.min_damage_effect = 9.0
-		self.melee_weapons.hammer.stats.max_damage_effect = 18.0
-		self.melee_weapons.hammer.stats.charge_time = 1.8
-		self.melee_weapons.hammer.stats.range = 160
-		self.melee_weapons.hammer.stats.concealment = 26
-		--I'M GOIN'TA LIQUIFY YA!--
-		self.melee_weapons.model24.stats.min_damage = 4.5
-		self.melee_weapons.model24.stats.max_damage = 9.001
-		self.melee_weapons.model24.stats.min_damage_effect = 9.0
-		self.melee_weapons.model24.stats.max_damage_effect = 18.0
-		self.melee_weapons.model24.stats.charge_time = 1.8
-		self.melee_weapons.model24.stats.range = 160
-		self.melee_weapons.model24.stats.concealment = 26
-		--Tenderizing meat is my fetish--	
-		self.melee_weapons.tenderizer.stats.min_damage = 4.5
-		self.melee_weapons.tenderizer.stats.max_damage = 9.001
-		self.melee_weapons.tenderizer.stats.min_damage_effect = 9.0
-		self.melee_weapons.tenderizer.stats.max_damage_effect = 18.0
-		self.melee_weapons.tenderizer.stats.charge_time = 1.8
-		self.melee_weapons.tenderizer.stats.range = 160
-		self.melee_weapons.tenderizer.stats.concealment = 26
+			-- https://i.imgur.com/8IJSRPZ.jpg --
+			self.melee_weapons.shock.stats.min_damage = 4.5
+			self.melee_weapons.shock.stats.max_damage = 9.001
+			self.melee_weapons.shock.stats.min_damage_effect = 9.0
+			self.melee_weapons.shock.stats.max_damage_effect = 18.0
+			self.melee_weapons.shock.stats.charge_time = 1.8
+			self.melee_weapons.shock.stats.range = 160
+			self.melee_weapons.shock.attack_allowed_expire_t = 0.1
+			self.melee_weapons.shock.stats.concealment = 26
+			--Hammer Hammer Toilet Slammer--
+			self.melee_weapons.hammer.stats.min_damage = 4.5
+			self.melee_weapons.hammer.stats.max_damage = 9.001
+			self.melee_weapons.hammer.stats.min_damage_effect = 9.0
+			self.melee_weapons.hammer.stats.max_damage_effect = 18.0
+			self.melee_weapons.hammer.stats.charge_time = 1.8
+			self.melee_weapons.hammer.stats.range = 160
+			self.melee_weapons.hammer.stats.concealment = 26
+			--I'M GOIN'TA LIQUIFY YA!--
+			self.melee_weapons.model24.stats.min_damage = 4.5
+			self.melee_weapons.model24.stats.max_damage = 9.001
+			self.melee_weapons.model24.stats.min_damage_effect = 9.0
+			self.melee_weapons.model24.stats.max_damage_effect = 18.0
+			self.melee_weapons.model24.stats.charge_time = 1.8
+			self.melee_weapons.model24.stats.range = 160
+			self.melee_weapons.model24.stats.concealment = 26
+			--Tenderizing meat is my fetish--	
+			self.melee_weapons.tenderizer.stats.min_damage = 4.5
+			self.melee_weapons.tenderizer.stats.max_damage = 9.001
+			self.melee_weapons.tenderizer.stats.min_damage_effect = 9.0
+			self.melee_weapons.tenderizer.stats.max_damage_effect = 18.0
+			self.melee_weapons.tenderizer.stats.charge_time = 1.8
+			self.melee_weapons.tenderizer.stats.range = 160
+			self.melee_weapons.tenderizer.stats.concealment = 26
 
 		--Angry Shovel Noises--
 		self.melee_weapons.shovel.stats.min_damage = 4.5
@@ -3083,22 +3083,22 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.micstand.stats.charge_time = 2
 		self.melee_weapons.micstand.stats.range = 200
 		self.melee_weapons.micstand.stats.concealment = 25
-		--We'll put you in the hospital for free eh?--
-		self.melee_weapons.hockey.stats.min_damage = 4.5
-		self.melee_weapons.hockey.stats.max_damage = 6.001
-		self.melee_weapons.hockey.stats.min_damage_effect = 6.0
-		self.melee_weapons.hockey.stats.max_damage_effect = 12.0
-		self.melee_weapons.hockey.stats.charge_time = 2
-		self.melee_weapons.hockey.stats.range = 200
-		self.melee_weapons.hockey.stats.concealment = 25
-		--Binary Ruler--
-		self.melee_weapons.meter.stats.min_damage = 4.5
-		self.melee_weapons.meter.stats.max_damage = 6.001
-		self.melee_weapons.meter.stats.min_damage_effect = 6.0
-		self.melee_weapons.meter.stats.max_damage_effect = 12.0
-		self.melee_weapons.meter.stats.charge_time = 2
-		self.melee_weapons.meter.stats.range = 200
-		self.melee_weapons.meter.stats.concealment = 25
+			--We'll put you in the hospital for free eh?--
+			self.melee_weapons.hockey.stats.min_damage = 4.5
+			self.melee_weapons.hockey.stats.max_damage = 6.001
+			self.melee_weapons.hockey.stats.min_damage_effect = 6.0
+			self.melee_weapons.hockey.stats.max_damage_effect = 12.0
+			self.melee_weapons.hockey.stats.charge_time = 2
+			self.melee_weapons.hockey.stats.range = 200
+			self.melee_weapons.hockey.stats.concealment = 25
+			--Binary Ruler--
+			self.melee_weapons.meter.stats.min_damage = 4.5
+			self.melee_weapons.meter.stats.max_damage = 6.001
+			self.melee_weapons.meter.stats.min_damage_effect = 6.0
+			self.melee_weapons.meter.stats.max_damage_effect = 12.0
+			self.melee_weapons.meter.stats.charge_time = 2
+			self.melee_weapons.meter.stats.range = 200
+			self.melee_weapons.meter.stats.concealment = 25
 
 		--Payday DLC? Nah it's a walking dead game you cunts.--
 		self.melee_weapons.barbedwire.type = "axe"
@@ -3126,15 +3126,15 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.baseballbat.stats.charge_time = 2.4
 		self.melee_weapons.baseballbat.stats.range = 200
 		self.melee_weapons.baseballbat.stats.concealment = 23
-		--Shephard's cane--
-		self.melee_weapons.stick.type = "axe"
-		self.melee_weapons.stick.stats.min_damage = 6
-		self.melee_weapons.stick.stats.max_damage = 12.001
-		self.melee_weapons.stick.stats.min_damage_effect = 9.0
-		self.melee_weapons.stick.stats.max_damage_effect = 18.0
-		self.melee_weapons.stick.stats.charge_time = 2.4
-		self.melee_weapons.stick.stats.range = 200
-		self.melee_weapons.stick.stats.concealment = 23
+			--Shephard's cane--
+			self.melee_weapons.stick.type = "axe"
+			self.melee_weapons.stick.stats.min_damage = 6
+			self.melee_weapons.stick.stats.max_damage = 12.001
+			self.melee_weapons.stick.stats.min_damage_effect = 9.0
+			self.melee_weapons.stick.stats.max_damage_effect = 18.0
+			self.melee_weapons.stick.stats.charge_time = 2.4
+			self.melee_weapons.stick.stats.range = 200
+			self.melee_weapons.stick.stats.concealment = 23
 
 		--BIRE xddddddd--
 		self.melee_weapons.spoon_gold.type = "axe"
@@ -3153,23 +3153,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spoon_gold.stats.charge_time = 2.7
 		self.melee_weapons.spoon_gold.stats.range = 210
 		self.melee_weapons.spoon_gold.stats.concealment = 22
-		--WHAT IB WE JUZ USED A SPUUUN :DDDDD--
-		self.melee_weapons.spoon.stats.min_damage = 6
-		self.melee_weapons.spoon.stats.max_damage = 12.001
-		self.melee_weapons.spoon.stats.min_damage_effect = 9.0
-		self.melee_weapons.spoon.stats.max_damage_effect = 24.0
-		self.melee_weapons.spoon.stats.charge_time = 2.7
-		self.melee_weapons.spoon.stats.range = 210
-		self.melee_weapons.spoon.stats.concealment = 22
-		--Ayy Hammer--
-		self.melee_weapons.alien_maul.type = "axe"
-		self.melee_weapons.alien_maul.stats.min_damage = 6
-		self.melee_weapons.alien_maul.stats.max_damage = 12.001
-		self.melee_weapons.alien_maul.stats.min_damage_effect = 9.0
-		self.melee_weapons.alien_maul.stats.max_damage_effect = 24.0
-		self.melee_weapons.alien_maul.stats.charge_time = 2.7
-		self.melee_weapons.alien_maul.stats.range = 210
-		self.melee_weapons.alien_maul.stats.concealment = 22
 		--It has a crowbar we can't use--
 		self.melee_weapons.dingdong.stats.min_damage = 6
 		self.melee_weapons.dingdong.stats.max_damage = 12.001
@@ -3178,6 +3161,23 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.dingdong.stats.charge_time = 2.7
 		self.melee_weapons.dingdong.stats.range = 210
 		self.melee_weapons.dingdong.stats.concealment = 22
+			--Ayy Hammer--
+			self.melee_weapons.alien_maul.type = "axe"
+			self.melee_weapons.alien_maul.stats.min_damage = 6
+			self.melee_weapons.alien_maul.stats.max_damage = 12.001
+			self.melee_weapons.alien_maul.stats.min_damage_effect = 9.0
+			self.melee_weapons.alien_maul.stats.max_damage_effect = 24.0
+			self.melee_weapons.alien_maul.stats.charge_time = 2.7
+			self.melee_weapons.alien_maul.stats.range = 210
+			self.melee_weapons.alien_maul.stats.concealment = 22
+			--WHAT IB WE JUZ USED A SPUUUN :DDDDD--
+			self.melee_weapons.spoon.stats.min_damage = 6
+			self.melee_weapons.spoon.stats.max_damage = 12.001
+			self.melee_weapons.spoon.stats.min_damage_effect = 9.0
+			self.melee_weapons.spoon.stats.max_damage_effect = 24.0
+			self.melee_weapons.spoon.stats.charge_time = 2.7
+			self.melee_weapons.spoon.stats.range = 210
+			self.melee_weapons.spoon.stats.concealment = 22
 		--we postal now--
 		self.melee_weapons.cutters.stats.min_damage = 6
 		self.melee_weapons.cutters.stats.max_damage = 12.001
@@ -3198,16 +3198,16 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.buck.stats.range = 155
 		self.melee_weapons.buck.stats.concealment = 26
 		self.melee_weapons.buck.block = 0.9
-		--The target is a briefcase. Discretion is of the essence.--
-		self.melee_weapons.briefcase.info_id = "bm_melee_briefcase_info"	
-		self.melee_weapons.briefcase.stats.min_damage = 3
-		self.melee_weapons.briefcase.stats.max_damage = 6.001
-		self.melee_weapons.briefcase.stats.min_damage_effect = 6.0
-		self.melee_weapons.briefcase.stats.max_damage_effect = 12.0
-		self.melee_weapons.briefcase.stats.charge_time = 1.5
-		self.melee_weapons.briefcase.stats.range = 155
-		self.melee_weapons.briefcase.stats.concealment = 26
-		self.melee_weapons.briefcase.block = 0.9
+			--The target is a briefcase. Discretion is of the essence.--
+			self.melee_weapons.briefcase.info_id = "bm_melee_briefcase_info"	
+			self.melee_weapons.briefcase.stats.min_damage = 3
+			self.melee_weapons.briefcase.stats.max_damage = 6.001
+			self.melee_weapons.briefcase.stats.min_damage_effect = 6.0
+			self.melee_weapons.briefcase.stats.max_damage_effect = 12.0
+			self.melee_weapons.briefcase.stats.charge_time = 1.5
+			self.melee_weapons.briefcase.stats.range = 155
+			self.melee_weapons.briefcase.stats.concealment = 26
+			self.melee_weapons.briefcase.block = 0.9
 
 
 
@@ -3277,22 +3277,22 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.sword.stats.charge_time = 0.25
 		self.melee_weapons.sword.stats.range = 150
 		self.melee_weapons.sword.stats.concealment = 30
-		--That's a big ass toothbrush--
-		self.melee_weapons.toothbrush.stats.min_damage = 3
-		self.melee_weapons.toothbrush.stats.max_damage = 6.001
-		self.melee_weapons.toothbrush.stats.min_damage_effect = 0.6
-		self.melee_weapons.toothbrush.stats.max_damage_effect = 1.2
-		self.melee_weapons.toothbrush.stats.charge_time = 0.25
-		self.melee_weapons.toothbrush.stats.range = 150
-		self.melee_weapons.toothbrush.stats.concealment = 30
+			--That's a big ass toothbrush--
+			self.melee_weapons.toothbrush.stats.min_damage = 3
+			self.melee_weapons.toothbrush.stats.max_damage = 6.001
+			self.melee_weapons.toothbrush.stats.min_damage_effect = 0.6
+			self.melee_weapons.toothbrush.stats.max_damage_effect = 1.2
+			self.melee_weapons.toothbrush.stats.charge_time = 0.25
+			self.melee_weapons.toothbrush.stats.range = 150
+			self.melee_weapons.toothbrush.stats.concealment = 30
 		--This looks like a boxcutter too, but whatever--
-		self.melee_weapons.gerber.stats.min_damage = 3
-		self.melee_weapons.gerber.stats.max_damage = 6.001
+		self.melee_weapons.gerber.stats.min_damage = 4.5
+		self.melee_weapons.gerber.stats.max_damage = 9.001
 		self.melee_weapons.gerber.stats.min_damage_effect = 0.6
 		self.melee_weapons.gerber.stats.max_damage_effect = 1.2
-		self.melee_weapons.gerber.stats.charge_time = 0.4
-		self.melee_weapons.gerber.stats.range = 150
-		self.melee_weapons.gerber.stats.concealment = 30
+		self.melee_weapons.gerber.stats.charge_time = 0.8
+		self.melee_weapons.gerber.stats.range = 155
+		self.melee_weapons.gerber.stats.concealment = 29
 		--REMEMBER THE BASICS OF--
 		self.melee_weapons.cqc.dot_data = {	
 			type = "poison",
@@ -3355,22 +3355,22 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.bayonet.stats.charge_time = 0.4
 		self.melee_weapons.bayonet.stats.range = 155
 		self.melee_weapons.bayonet.stats.concealment = 29
-		--Scout Knife--
-		self.melee_weapons.scoutknife.stats.min_damage = 3
-		self.melee_weapons.scoutknife.stats.max_damage = 6.001
-		self.melee_weapons.scoutknife.stats.min_damage_effect = 0.6
-		self.melee_weapons.scoutknife.stats.max_damage_effect = 1.2
-		self.melee_weapons.scoutknife.stats.charge_time = 0.4
-		self.melee_weapons.scoutknife.stats.range = 155
-		self.melee_weapons.scoutknife.stats.concealment = 29
-		--Even more pokey knives--
-		self.melee_weapons.pugio.stats.min_damage = 3
-		self.melee_weapons.pugio.stats.max_damage = 6.001
-		self.melee_weapons.pugio.stats.min_damage_effect = 0.6
-		self.melee_weapons.pugio.stats.max_damage_effect = 1.2
-		self.melee_weapons.pugio.stats.charge_time = 0.4
-		self.melee_weapons.pugio.stats.range = 155
-		self.melee_weapons.pugio.stats.concealment = 29
+			--Scout Knife--
+			self.melee_weapons.scoutknife.stats.min_damage = 3
+			self.melee_weapons.scoutknife.stats.max_damage = 6.001
+			self.melee_weapons.scoutknife.stats.min_damage_effect = 0.6
+			self.melee_weapons.scoutknife.stats.max_damage_effect = 1.2
+			self.melee_weapons.scoutknife.stats.charge_time = 0.4
+			self.melee_weapons.scoutknife.stats.range = 155
+			self.melee_weapons.scoutknife.stats.concealment = 29
+			--Even more pokey knives--
+			self.melee_weapons.pugio.stats.min_damage = 3
+			self.melee_weapons.pugio.stats.max_damage = 6.001
+			self.melee_weapons.pugio.stats.min_damage_effect = 0.6
+			self.melee_weapons.pugio.stats.max_damage_effect = 1.2
+			self.melee_weapons.pugio.stats.charge_time = 0.4
+			self.melee_weapons.pugio.stats.range = 155
+			self.melee_weapons.pugio.stats.concealment = 29
 
 		--Trench Knife use to be the Fugitive meta--
 		self.melee_weapons.fairbair.stats.min_damage = 3
@@ -3449,29 +3449,29 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.boxcutter.stats.charge_time = 0.35
 		self.melee_weapons.boxcutter.stats.range = 150
 		self.melee_weapons.boxcutter.stats.concealment = 29
-		--German Steel--
-		self.melee_weapons.kampfmesser.stats.min_damage = 4.5
-		self.melee_weapons.kampfmesser.stats.max_damage = 9.001
-		self.melee_weapons.kampfmesser.stats.min_damage_effect = 1.5
-		self.melee_weapons.kampfmesser.stats.max_damage_effect = 3.0
-		self.melee_weapons.kampfmesser.stats.charge_time = 0.85
-		self.melee_weapons.kampfmesser.stats.range = 175
-		self.melee_weapons.kampfmesser.stats.concealment = 28
 		--Tacticool Knife--
 		self.melee_weapons.x46.stats.min_damage = 4.5
 		self.melee_weapons.x46.stats.max_damage = 9.001
 		self.melee_weapons.x46.stats.min_damage_effect = 1.5
 		self.melee_weapons.x46.stats.max_damage_effect = 3.0
-		self.melee_weapons.x46.stats.charge_time = 0.85
+		self.melee_weapons.x46.stats.charge_time = 0.8
 		self.melee_weapons.x46.stats.range = 170
 		self.melee_weapons.x46.stats.concealment = 28
+		--German Steel--
+		self.melee_weapons.kampfmesser.stats.min_damage = 4.5
+		self.melee_weapons.kampfmesser.stats.max_damage = 9.001
+		self.melee_weapons.kampfmesser.stats.min_damage_effect = 1.5
+		self.melee_weapons.kampfmesser.stats.max_damage_effect = 3.0
+		self.melee_weapons.kampfmesser.stats.charge_time = 0.9
+		self.melee_weapons.kampfmesser.stats.range = 175
+		self.melee_weapons.kampfmesser.stats.concealment = 27
 
 		--and anotha tanto--
 		self.melee_weapons.hauteur.stats.min_damage = 4.5
 		self.melee_weapons.hauteur.stats.max_damage = 9.001
 		self.melee_weapons.hauteur.stats.min_damage_effect = 1.0
 		self.melee_weapons.hauteur.stats.max_damage_effect = 2.0
-		self.melee_weapons.hauteur.stats.charge_time = 0.65
+		self.melee_weapons.hauteur.stats.charge_time = 0.7
 		self.melee_weapons.hauteur.stats.range = 160
 		self.melee_weapons.hauteur.stats.concealment = 30
 		--OG Kabar Knife--
@@ -3479,23 +3479,23 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.kabar.stats.max_damage = 9.001
 		self.melee_weapons.kabar.stats.min_damage_effect = 1.5
 		self.melee_weapons.kabar.stats.max_damage_effect = 3.0
-		self.melee_weapons.kabar.stats.charge_time = 0.75
+		self.melee_weapons.kabar.stats.charge_time = 0.8
 		self.melee_weapons.kabar.stats.range = 160
 		self.melee_weapons.kabar.stats.concealment = 29
-		--ONE Knife--
-		self.melee_weapons.kabartanto.stats.min_damage = 4.5
-		self.melee_weapons.kabartanto.stats.max_damage = 9.001
-		self.melee_weapons.kabartanto.stats.min_damage_effect = 1.5
-		self.melee_weapons.kabartanto.stats.max_damage_effect = 3.0
-		self.melee_weapons.kabartanto.stats.charge_time = 0.75
-		self.melee_weapons.kabartanto.stats.range = 160
-		self.melee_weapons.kabartanto.stats.concealment = 29
+			--ONE Knife--
+			self.melee_weapons.kabartanto.stats.min_damage = 4.5
+			self.melee_weapons.kabartanto.stats.max_damage = 9.001
+			self.melee_weapons.kabartanto.stats.min_damage_effect = 1.5
+			self.melee_weapons.kabartanto.stats.max_damage_effect = 3.0
+			self.melee_weapons.kabartanto.stats.charge_time = 0.8
+			self.melee_weapons.kabartanto.stats.range = 160
+			self.melee_weapons.kabartanto.stats.concealment = 29
 		--Now THIS is a knife.--
 		self.melee_weapons.rambo.stats.min_damage = 6
 		self.melee_weapons.rambo.stats.max_damage = 12.001
 		self.melee_weapons.rambo.stats.min_damage_effect = 1.5
 		self.melee_weapons.rambo.stats.max_damage_effect = 3.0
-		self.melee_weapons.rambo.stats.charge_time = 1.15
+		self.melee_weapons.rambo.stats.charge_time = 1.2
 		self.melee_weapons.rambo.stats.range = 165
 		self.melee_weapons.rambo.stats.concealment = 27
 		--I'm david bowie--	
@@ -3515,14 +3515,14 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.becker.stats.charge_time = 0.9
 		self.melee_weapons.becker.stats.range = 170
 		self.melee_weapons.becker.stats.concealment = 27
-		--another machete--
-		self.melee_weapons.oxide.stats.min_damage = 4.5
-		self.melee_weapons.oxide.stats.max_damage = 9.001
-		self.melee_weapons.oxide.stats.min_damage_effect = 1.5
-		self.melee_weapons.oxide.stats.max_damage_effect = 3.0
-		self.melee_weapons.oxide.stats.charge_time = 0.9
-		self.melee_weapons.oxide.stats.range = 170
-		self.melee_weapons.oxide.stats.concealment = 27
+			--another machete--
+			self.melee_weapons.oxide.stats.min_damage = 4.5
+			self.melee_weapons.oxide.stats.max_damage = 9.001
+			self.melee_weapons.oxide.stats.min_damage_effect = 1.5
+			self.melee_weapons.oxide.stats.max_damage_effect = 3.0
+			self.melee_weapons.oxide.stats.charge_time = 0.9
+			self.melee_weapons.oxide.stats.range = 170
+			self.melee_weapons.oxide.stats.concealment = 27
 		--More Gore--
 		self.melee_weapons.gator.stats.min_damage = 6
 		self.melee_weapons.gator.stats.max_damage = 12.001
@@ -3531,14 +3531,14 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.gator.stats.charge_time = 1.3
 		self.melee_weapons.gator.stats.range = 180
 		self.melee_weapons.gator.stats.concealment = 26
-		--Because we didn't have enough fucking machetes--
-		self.melee_weapons.machete.stats.min_damage = 6
-		self.melee_weapons.machete.stats.max_damage = 12.001
-		self.melee_weapons.machete.stats.min_damage_effect = 2.4
-		self.melee_weapons.machete.stats.max_damage_effect = 4.5
-		self.melee_weapons.machete.stats.charge_time = 1.3
-		self.melee_weapons.machete.stats.range = 180
-		self.melee_weapons.machete.stats.concealment = 26
+			--Because we didn't have enough fucking machetes--
+			self.melee_weapons.machete.stats.min_damage = 6
+			self.melee_weapons.machete.stats.max_damage = 12.001
+			self.melee_weapons.machete.stats.min_damage_effect = 2.4
+			self.melee_weapons.machete.stats.max_damage_effect = 4.5
+			self.melee_weapons.machete.stats.charge_time = 1.3
+			self.melee_weapons.machete.stats.range = 180
+			self.melee_weapons.machete.stats.concealment = 26
 		--asdf--
 		self.melee_weapons.agave.stats.min_damage = 6
 		self.melee_weapons.agave.stats.max_damage = 12.001
@@ -3555,9 +3555,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.meat_cleaver.stats.max_damage = 12.001
 		self.melee_weapons.meat_cleaver.stats.min_damage_effect = 1.8
 		self.melee_weapons.meat_cleaver.stats.max_damage_effect = 3.6
-		self.melee_weapons.meat_cleaver.stats.charge_time = 1.1
+		self.melee_weapons.meat_cleaver.stats.charge_time = 0.8
 		self.melee_weapons.meat_cleaver.stats.range = 155
-		self.melee_weapons.meat_cleaver.stats.concealment = 26
+		self.melee_weapons.meat_cleaver.stats.concealment = 28
 		self.melee_weapons.meat_cleaver.headshot_damage_multiplier = 0.5
 		--Throwing knives when?--
 		self.melee_weapons.cleaver.info_id = "bm_melee_cleaver_info"
@@ -3565,7 +3565,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cleaver.stats.max_damage = 12.001
 		self.melee_weapons.cleaver.stats.min_damage_effect = 1.8
 		self.melee_weapons.cleaver.stats.max_damage_effect = 3.6
-		self.melee_weapons.cleaver.stats.charge_time = 0.7
+		self.melee_weapons.cleaver.stats.charge_time = 1.0
 		self.melee_weapons.cleaver.stats.range = 165
 		self.melee_weapons.cleaver.stats.concealment = 27
 		self.melee_weapons.cleaver.headshot_damage_multiplier = 0.5
@@ -3574,9 +3574,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.bullseye.stats.max_damage = 12.001
 		self.melee_weapons.bullseye.stats.min_damage_effect = 1.5
 		self.melee_weapons.bullseye.stats.max_damage_effect = 3.0
-		self.melee_weapons.bullseye.stats.charge_time = 1.25
-		self.melee_weapons.bullseye.stats.range = 165
-		self.melee_weapons.bullseye.stats.concealment = 27
+		self.melee_weapons.bullseye.stats.charge_time = 1.3
+		self.melee_weapons.bullseye.stats.range = 170
+		self.melee_weapons.bullseye.stats.concealment = 26
 		--Just like the injuns--
 		self.melee_weapons.tomahawk.stats.min_damage = 6
 		self.melee_weapons.tomahawk.stats.max_damage = 12.001
@@ -3586,15 +3586,15 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.tomahawk.stats.range = 180
 		self.melee_weapons.tomahawk.attack_allowed_expire_t = 0.1
 		self.melee_weapons.tomahawk.stats.concealment = 25
-		--another injun tomahawk	
-		self.melee_weapons.scalper.stats.min_damage = 6
-		self.melee_weapons.scalper.stats.max_damage = 12.001
-		self.melee_weapons.scalper.stats.min_damage_effect = 2.4
-		self.melee_weapons.scalper.stats.max_damage_effect = 4.5
-		self.melee_weapons.scalper.stats.charge_time = 1.45
-		self.melee_weapons.scalper.stats.range = 180
-		self.melee_weapons.scalper.attack_allowed_expire_t = 0.1
-		self.melee_weapons.scalper.stats.concealment = 25
+			--another injun tomahawk	
+			self.melee_weapons.scalper.stats.min_damage = 6
+			self.melee_weapons.scalper.stats.max_damage = 12.001
+			self.melee_weapons.scalper.stats.min_damage_effect = 2.4
+			self.melee_weapons.scalper.stats.max_damage_effect = 4.5
+			self.melee_weapons.scalper.stats.charge_time = 1.45
+			self.melee_weapons.scalper.stats.range = 180
+			self.melee_weapons.scalper.attack_allowed_expire_t = 0.1
+			self.melee_weapons.scalper.stats.concealment = 25
 		--Reminds me of how HL2 was gonna have an ice axe--
 		self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
 		self.melee_weapons.iceaxe.stats.min_damage = 6

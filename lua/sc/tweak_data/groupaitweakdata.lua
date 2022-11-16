@@ -4742,7 +4742,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 				},						
-				murkywater = {
+				omnia = {
 					Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1"),
@@ -6525,7 +6525,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
 					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},						
-				murkywater = {
+				omnia = {
 					Idstring("units/pd2_mod_omnia/characters/ene_city_shield/ene_city_shield"),
 					Idstring("units/pd2_mod_omnia/characters/ene_city_shield/ene_city_shield"),
 					Idstring("units/pd2_mod_omnia/characters/ene_city_shield/ene_city_shield"),
@@ -9988,7 +9988,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 			},						
-			murkywater = {
+			omnia = {
 				Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1"),
 				Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1"),
 				Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1"),

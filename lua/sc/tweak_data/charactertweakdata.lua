@@ -600,7 +600,7 @@ function CharacterTweakData:_init_medic(presets)
 	--self.medic.rescue_hostages = false
 	--end
 	self.medic.no_arrest = true
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 	    self.medic.custom_voicework = "murky_medic"
 	else	
 	    self.medic.custom_voicework = nil

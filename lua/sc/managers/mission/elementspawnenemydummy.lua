@@ -2602,7 +2602,8 @@ local omnia_desperado_enforcement = {
 		--INVISBLE WARRIOR
 		--I AM THE WIND OF DESTRUCTION!
 		--hrt
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_veteran_2/ene_omnia_veteran_2",
+		--["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_veteran_2/ene_omnia_veteran_2",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		

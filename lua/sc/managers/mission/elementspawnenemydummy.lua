@@ -2701,10 +2701,14 @@ local omnia_desperado_enforcement = {
 		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",	
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",
-		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_omnia/characters/ene_omnia_security_c45/ene_omnia_security_c45",
-		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_omnia/characters/ene_omnia_security_mp5/ene_omnia_security_mp5",
-		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_omnia_security_r870/ene_omnia_security_r870",
-		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_omnia/characters/ene_omnia_security_raging_bull/ene_omnia_security_raging_bull"
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
+		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull"
+		--["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_omnia/characters/ene_omnia_security_c45/ene_omnia_security_c45",
+		--["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_omnia/characters/ene_omnia_security_mp5/ene_omnia_security_mp5",
+		--["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_omnia_security_r870/ene_omnia_security_r870",
+		--["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_omnia/characters/ene_omnia_security_raging_bull/ene_omnia_security_raging_bull"
 	}
 	---------------------------------------------------OMNIA END---------------------------------------------------
 	

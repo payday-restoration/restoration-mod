@@ -2356,8 +2356,8 @@ elseif ai_type == m then
 elseif ai_type == o then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "OMNIA Incursion Underway",
-			["hud_assault_alpha"] = "OMNIA INCURSION"
+			["hud_assault_assault"] = "옴니아 습격 진행 중",
+			["hud_assault_alpha"] = "옴니아 습격"
 		})
 	end)
 end

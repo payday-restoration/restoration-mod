@@ -12,6 +12,8 @@ end
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
 		--some vanilla and mod stuff
+		["achievement_frog_1"] = "返璞归真（Tabula Rasa）",
+		["achievement_trai_10_desc"] = "全队成员在无任何技能，身穿两件套西装，携带Castigo_.44左轮手枪和Mosconi_21G霰弹枪的情况下以强袭途径完成\"迷途纵横\"任务，难度为枪林弹雨或以上。",
 		["sm_17_obj"] = "完成\"石油大亨\"任务，难度为非常困难或以上。\n要完成此任务，你必须从头开始劫案。\n完成后要领取奖励，请使用鼠标滑轮滑下去点击奖励图标。\n\n注意事项：你将需要在第二天的豪宅中找到并收集正确的引擎。\n判断正确引擎的方法：（您可以使用截图或拍照记下该方法和需要搜集的线索）\n1.首先，搜集我们需要的线索。\n在豪宅中找到2个写有可识别英文字母的纸质笔记本，并在地下室楼梯前的墙上找到一块写有三个等于号的白板，以及在地下室的房间中找到一台写有5783psi或5812psi的计算机电脑。\n2.然后，分析辨别我们需要的线索。\n记住白板等于号左边的三个单词，检查笔记本和电脑，其中一个笔记本上写有三个单词中的一个，对应的是白板上等于号右边英文描述的颜色；另一个笔记本上写有H,2xH或3xH；电脑的数字左边会写有大于等于或小于等于的符号。\n3.再来，我们了解引擎的构成。\n引擎由1个斜着放的不同颜色的管子、1个正着放的大蓝管和1个气压表组成。\n4.最后，我们找出正确的引擎。\n单词和白板对应的颜色是斜管的颜色；H,2xH,3xH分别代表正大蓝管的顶部接着1,2,3条线；大于等于和小于等于分别代表气压大于等于或小于等于表上的红色线值。\n若有气压远大于或远小于红线的，那就一定不可能是气压接近红线的引擎。",
 		["menu_st_spec_23"] = "白板",
 		["bm_menu_gadget_placement"] = "附件位置",
@@ -31,7 +33,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_w_spike"] = "Spiker 7.62步枪",
 		["bm_w_sgs"] = "Guerilla .308狙击步枪",
 		["bm_w_hmcar"] = "魔改CAR4步枪",	
-
 		["hud_h_watchdogs_stage2_mission6_hl"] = "挺过突袭", --vanilla game wrong string fix
 
 		["menu_es_boost"] = "最佳数据",
@@ -1203,9 +1204,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_explosive_desc_sc"] = "射出一发能使人眩晕的爆炸半径为#{skill_color}#1.5米##的致命性爆炸弹头，#{skill_color}#不受任何衰减##，但也#{important_1}#不能触发爆头##。\n",
 		["bm_wp_upg_a_custom_desc"] = "发射更少量但更大号的共#{important_1}#6##发自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。",
 		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#15%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#90##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#25%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#35%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#45%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#30%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#40%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
 		--["bm_wp_upg_a_rip_auto_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#1##秒内造成#{stats_positive}#30##点伤害，并有几率眩晕敌人。",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
 		["bm_wp_upg_a_rip_pump_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
@@ -2244,7 +2245,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			})
 		elseif weapon_names == 3 then
 			LocalizationManager:add_localized_strings({	
-				--Signature 40
+				--LEO-40
 				["bm_w_hs2000"] = "SA XD(M)-40",
 				["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
 				["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
@@ -2455,7 +2456,7 @@ elseif ai_type == o then
 			["hud_assault_assault"] = "OMNIA Incursion Underway",
 			["hud_assault_alpha"] = "OMNIA INCURSION"
 		})
-	end)	
+	end)
 end
 
  if _G.HopLib then

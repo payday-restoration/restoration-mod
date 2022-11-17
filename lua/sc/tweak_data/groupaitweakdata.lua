@@ -1910,10 +1910,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
 				},
 				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_tazer/ene_omnia_tazer"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_tazer/ene_omnia_tazer"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_tazer/ene_omnia_tazer"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_tazer/ene_omnia_tazer"),					
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),					
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
 				}
 			},

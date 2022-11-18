@@ -1259,7 +1259,7 @@ function CharacterTweakData:_init_marshal_marksman(presets)
 	self.marshal_marksman.speech_prefix_p1 = "cum"
 	self.marshal_marksman.speech_prefix_p2 = nil
 	self.marshal_marksman.speech_prefix_count = nil
-	self.marshal_marksman.yellow_blood = nil
+	self.marshal_marksman.yellow_blood = false
 	if self:get_ai_group_type() == "russia" then
 		self.marshal_marksman.custom_voicework = "tswat_ru"
 	elseif self:get_ai_group_type() == "murkywater" then

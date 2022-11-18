@@ -705,9 +705,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
 	end			
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.omnia_lpf.yellow_blood = true
-	end
+	self.omnia_lpf.yellow_blood = true
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
@@ -755,7 +753,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" then
 	    self.swat.has_alarm_pager = true
 	else
 	    self.swat.has_alarm_pager = false
@@ -850,7 +848,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.dodge = presets.dodge.heavy
 	self.heavy_swat.no_arrest = false
 	self.heavy_swat.chatter = presets.enemy_chatter.swat
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" then
 	    self.heavy_swat.has_alarm_pager = true
 	else
 	    self.heavy_swat.has_alarm_pager = false
@@ -911,8 +909,10 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat_sniper.custom_voicework = "tsniper"
 	end
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "murkywater" then
-		self.heavy_swat_sniper.yellow_blood = true
+	if self:get_ai_group_type() == "murkywater" then
+	self.heavy_swat_sniper.yellow_blood = false
+	else
+	self.heavy_swat_sniper.yellow_blood = true
 	end
 	self.heavy_swat_sniper.is_special = true
 	self.heavy_swat_sniper.no_asu = true
@@ -927,7 +927,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.speech_prefix_count = nil
 	if self:get_ai_group_type() == "russia" then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
+	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 		self.weekend_dmr.custom_voicework = "bravo_elite_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend_dmr.custom_voicework = "bravo_elite_mex"
@@ -939,10 +939,10 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "russia" then
 		self.weekend_dmr.yellow_blood = true
 	else	
-		self.weekend_dmr.yellow_blood = nil
+		self.weekend_dmr.yellow_blood = false
 	end
 	table.insert(self._enemy_list, "weekend_dmr")
 end
@@ -1106,7 +1106,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend = deep_clone(self.city_swat)
 	if self:get_ai_group_type() == "russia" then
 		self.weekend.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
+	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 		self.weekend.custom_voicework = "bravo_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend.custom_voicework = "bravo_mex"
@@ -1119,10 +1119,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 1.25
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend.yellow_blood = true
 	else	
-		self.weekend.yellow_blood = nil
+		self.weekend.yellow_blood = false
 	end	
 	--if restoration and restoration.sonic_mod then 
 	--self.weekend.rescue_hostages = true
@@ -1146,10 +1146,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "murkywater" then
-		self.city_swat_titan.yellow_blood = true
+	if self:get_ai_group_type() == "murkywater" then
+		self.city_swat_titan.yellow_blood = false
 	else
-		self.city_swat_titan.yellow_blood = nil
+		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
 	self.city_swat_titan.headshot_dmg_mul = 2.2
@@ -1178,7 +1178,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg = deep_clone(self.city_swat_titan)		
 	if self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
+	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 		self.weekend_lmg.custom_voicework = "bravo_elite_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend_lmg.custom_voicework = "bravo_elite_mex"
@@ -1198,10 +1198,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	--else
 	--self.weekend_lmg.rescue_hostages = false
 	--end
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.yellow_blood = true
 	else	
-		self.weekend_lmg.yellow_blood = nil
+		self.weekend_lmg.yellow_blood = false
 	end
 	table.insert(self._enemy_list, "weekend_lmg")
 	
@@ -2607,9 +2607,8 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	else
 		self.phalanx_minion.custom_voicework = "tshield"
 	end
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.phalanx_minion.yellow_blood = true
-	end
+
+	self.phalanx_minion.yellow_blood = true
 	self.phalanx_minion.heal_cooldown = 7.5
 	self.phalanx_minion.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_minion")

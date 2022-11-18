@@ -3037,11 +3037,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.taser_titan.yellow_blood = true
-	else
-		self.taser_titan.yellow_blood = nil		
-	end	
+	self.taser_titan.yellow_blood = true	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 11.25
 	self.taser_titan.slowing_bullets = {

@@ -1192,7 +1192,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.headshot_dmg_mul = 2.75	
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
-	self.weekend_lmg.yellow_blood = nil
 	--if restoration and restoration.sonic_mod then 
 	--self.weekend_lmg.rescue_hostages = true
 	--else
@@ -2194,9 +2193,7 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.speech_prefix_p1 = "heck"
 		self.tank_titan.speech_prefix_count = nil	
 	end				
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.tank_titan.yellow_blood = true
-	end
+	self.tank_titan.yellow_blood = true
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25

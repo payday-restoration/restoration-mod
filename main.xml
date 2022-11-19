@@ -253,7 +253,7 @@
 		<hook file="sc/units/civilians/civilianlogicflee.lua" source_file="lib/units/civilians/logics/civilianlogicflee"/>
 		<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 		<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
-		<hook file="sc/units/enemies/tankcopmedicdamage.lua" source_file="lib/units/enemies/tank/tankmediccopdamage"/>
+		<hook file="sc/units/enemies/tankmediccopdamage.lua" source_file="lib/units/enemies/tank/tankmediccopdamage"/>
 		<hook file="sc/units/enemies/husktankmediccopdamage.lua" source_file="lib/units/enemies/tank/husktankmediccopdamage"/>
 		<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
 		<hook file="sc/units/weapons/concussiongrenade.lua" source_file="lib/units/weapons/grenades/concussiongrenade"/>

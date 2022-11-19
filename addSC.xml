@@ -151,8 +151,6 @@
 	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--ditto but on surface-->
 	<mission			path="levels/instances/unique/pbr/pbr_mountain_control_room/world/world" force="true" unload="true"/> <!--changed up the control room to feature Murky security-->
 	
-	<mission			path="levels/narratives/locke/sah/world/world" force="true" unload="true"/> <!--delayed the spawns and replaced most of the ss guys with flashlight ones (execpt cameraman and near metal detectors)-->
-	
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
 	<!--better SWAT squads-->
@@ -170,8 +168,6 @@
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
 	<mission			path="levels/narratives/locke/bph/world/world" force="true" unload="true"/> <!--Delayed the spawns and replaced scripted spawns with better Murkies-->
-	
-	<mission			path="levels/narratives/vlad/chca/world/world" force="true" unload="true"/> <!--Delayed the spawns and made some spawns be disabled if C4 route has been choosen-->
 	
 	<mission			path="levels/narratives/vlad/mallcrasher/mission_turf_war/mission_turf_war" force="true" unload="true"/> <!--fixed one of the scripted cops not moving at all-->
 	

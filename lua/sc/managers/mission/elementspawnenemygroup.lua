@@ -1041,6 +1041,32 @@ local standard_spawngroups = {
 		"FBI_defend_b",
 		"CS_cops",
 		"CS_heavys"
+	},
+	["proprietary_chca"] = {
+		"CS_defend_b",
+		"CS_defend_c",
+		"CS_swats",
+		"CS_heavys",
+		"CS_shields",
+		"CS_tazers",
+		"FBI_Booms",
+		"FBI_defend_a",
+		"FBI_stealth_a",
+		"FBI_swats",
+		"FBI_heavys",
+		"FBI_heavys_boom",
+		"FBI_shields",
+		"FBI_shields_boom",
+		"GS_defend_b",
+		"GS_defend_c",
+		"GS_defend_d",
+		"GS_swats",
+		"GS_Heavys",
+		"GS_heavys_boom",
+		"GS_shields",
+		"GS_shields_boom",
+		"GS_Booms",
+		"FBI_spoocs"
 	}
 }
 
@@ -4306,6 +4332,402 @@ local spawnpoint_delays = {
 			interval = 45,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
+	},
+	chca = {
+		[100131] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"] 
+		},
+		[100786] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100792] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
+		},
+		[101471] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100132] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100133] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]	
+		},
+		[101468] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101469] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101470] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100779] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_CS_cops"]
+		},
+		[100007] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100692] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100019] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_CS_cops"]
+		},
+		[100704] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100712] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
+		},
+		[100693] = { 
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100648] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100757] = {
+			interval = 25,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[100758] = {
+			interval = 25,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[100759] = {
+			interval = 25,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[100648] = {
+			interval = 25,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[100766] = {
+			interval = 20,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[100768] = {
+			interval = 20,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[100647] = {
+			interval = 20,
+			preferred_spawn_groups = standard_spawngroups["proprietary_chca"]
+		},
+		[101945] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101946] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101947] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101952] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101953] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101954] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101919] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101923] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102064] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102068] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101927] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101930] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102069] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102070] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102071] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101935] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102072] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102073] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102074] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102075] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102076] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102077] = { 
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101941] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[103018] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102890] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		}
+	},
+	sah = {
+		[100128] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"] 
+		},
+		[100130] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100131] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
+		},
+		[100132] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100133] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100007] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]	
+		},
+		[100019] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100692] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100693] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[100694] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_CS_cops"]
+		},
+		[103307] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[103371] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[103522] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_CS_cops"]
+		},
+		[103662] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[106764] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
+		},
+		[106767] = { 
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[106776] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[106779] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard_no_FBI_spoocs"]
+		},
+		[106826] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard_no_FBI_spoocs"]
+		},
+		[106829] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[106832] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[104086] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[104089] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102667] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102299] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_FBI_spoocs"]
+		},
+		[102303] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_FBI_spoocs"]
+		},
+		[101947] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101952] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101953] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101954] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101919] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101923] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102064] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102068] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101927] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101930] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102069] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102070] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102071] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101935] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102072] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102073] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102074] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102075] = {
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102076] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102077] = { 
+			interval = 15,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[101941] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[103018] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		},
+		[102890] = {
+			interval = 10,
+			preferred_spawn_groups = standard_spawngroups["standard"]
+		}
 	}
 }
 
@@ -4325,6 +4747,8 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 		level = "framing_frame_1"
 	elseif level == "rat" then
 		level = "alex_1"
+	elseif level == "welcome_to_the_jungle_1_night" then
+		level = "welcome_to_the_jungle_1"	
 	end
 
 	local groups = self._values.preferred_spawn_groups

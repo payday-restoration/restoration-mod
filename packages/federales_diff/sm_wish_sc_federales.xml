@@ -422,6 +422,14 @@
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_phalanx_snp_df" force="false"/>	
 
 	<!--Titanshield-->	
+	<material_config	path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<object				path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<model				path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<unit				path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" load="true"/>
+	<texture			path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/akan_phalanx_df" force="false"/>	
+	<texture			path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_phalanx/akan_phalanx_nm" force="false"/>
+	
 	<unit				path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>
 

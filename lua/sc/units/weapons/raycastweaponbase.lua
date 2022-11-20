@@ -212,7 +212,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 				break
 			elseif not can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
 				break
-			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and not can_shoot_through_titan_shield  then --Titan shields
+			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '283ae213b3a71c5f') and not can_shoot_through_titan_shield  then --Titan shields
 				break
 			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then --Winters being a shit.
 				break						

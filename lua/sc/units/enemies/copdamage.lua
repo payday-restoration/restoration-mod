@@ -2896,8 +2896,14 @@ function CopDamage:damage_dot(attack_data)
 			self:_show_death_hint(self._unit:base()._tweak_table)
 			managers.statistics:killed(data)
 
-			if CopDamage.is_civilian(self._unit:base()._tweak_table) then
+			local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+
+			if is_civilian then
 				managers.money:civilian_killed()
+			end
+
+			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end
 
 			if attack_data and attack_data.weapon_id and not attack_data.weapon_unit then

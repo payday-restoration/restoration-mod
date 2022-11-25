@@ -1,6 +1,6 @@
 {
-  "ene_omnia_security" : "옴니아 경비원",
-  "ene_omnia_cs_cop" : "옴니아 경비원",
+  "ene_security" : "옴니아 경비원",
+  "ene_cop" : "옴니아 경비원",
   "ene_swat" : "옴니아 전술 경비원",
   "ene_swat_heavy" : "옴니아 전술 중장갑 경비원",
   "ene_bulldozer_1" : "옴니아 불도저",

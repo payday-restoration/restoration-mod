@@ -1,6 +1,6 @@
 {
-  "ene_omnia_security" : "OMNIA Security",
-  "ene_omnia_cs_cop" : "OMNIA Security",
+  "ene_security" : "OMNIA Security",
+  "ene_cop" : "OMNIA Security",
   "ene_swat" : "OMNIA Tactical Security",
   "ene_swat_heavy" : "OMNIA Tactical Heavy Security",
   "ene_bulldozer_1" : "OMNIA Bulldozer",

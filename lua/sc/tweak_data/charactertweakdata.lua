@@ -17888,6 +17888,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_bulldozer_1_hard")	
 		table.insert(char_map.basic.list, "ene_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_swat_2_sc")		
+		table.insert(char_map.basic.list, "ene_swat_3")
 		table.insert(char_map.basic.list, "ene_swat_heavy_1_sc")
 		table.insert(char_map.basic.list, "ene_swat_heavy_r870_sc")	
 		table.insert(char_map.basic.list, "ene_sniper_2_sc")
@@ -18171,6 +18172,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_policia_01",
@@ -18253,6 +18255,7 @@ function CharacterTweakData:character_map()
 				"ene_murky_tazer",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_murky_sniper",
 				"ene_murky_sniper_2"
 			}
@@ -18276,6 +18279,7 @@ function CharacterTweakData:character_map()
 				"ene_omnia_cs_cop_raging_bull",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_fbi_swat_1",
@@ -18346,6 +18350,7 @@ function CharacterTweakData:character_map()
 				"ene_nypd_heavy_r870",
 				"ene_nypd_swat_1",
 				"ene_nypd_swat_2",
+				"ene_nypd_swat_3",
 				"ene_nypd_shield",
 				"ene_nypd_murky_1",
 				"ene_nypd_murky_2",
@@ -18394,6 +18399,7 @@ function CharacterTweakData:character_map()
 				"ene_city_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_lapd_veteran_cop_1",
@@ -18449,6 +18455,7 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_r870",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
 				"ene_fbi_swat_3",
@@ -18517,6 +18524,7 @@ function CharacterTweakData:character_map()
 				"ene_swat_heavy_r870",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_sniper_1",
 				"ene_tazer_1",
 				"ene_sniper_2",

@@ -424,14 +424,6 @@
 	<unit				path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true" load="true"/>	
 	<unit				path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>		
 
-	<!--Cops for the Bomb: Forest heist-->
-	<unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest" load="true"/>
-    <unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk" load="true"/>
-	
-	<unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest" load="true"/>
-    <unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>
-
-	
 	<!--Panic Room Bullet Impact Fixes-->		
 	<object				path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
 	<object				path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	

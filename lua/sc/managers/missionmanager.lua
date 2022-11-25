@@ -144,6 +144,32 @@ local level_mission_script_elements = {
 				enabled = false
 			}
 		}
+	},
+	crojob3 = {
+		-- change the beat cop teams
+		[100634] = {
+			values = {
+				team = "mobster1"
+			}
+		},
+		[100635] = {
+			values = {
+				team = "mobster1"
+			}
+		}
+	},
+	crojob3_night = {
+		-- ditto but night
+		[100634] = {
+			values = {
+				team = "mobster1"
+			}
+		},
+		[100635] = {
+			values = {
+				team = "mobster1"
+			}
+		}
 	}
 }
 local mission_script_elements = level_mission_script_elements[level_id]

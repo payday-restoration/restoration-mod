@@ -91,7 +91,7 @@ function MutatorNoTitans:setup(data)
 		}
 	end		
 	--No Titan Spoocs for you, Autumn!
-	self.unit_categories.Titan_Spooc = {
+	tweak_data.group_ai.unit_categories.Titan_Spooc = {
 		unit_types = {
 			america = {
 				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")

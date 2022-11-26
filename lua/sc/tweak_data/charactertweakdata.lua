@@ -505,6 +505,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet_boss.heal_cooldown = 1.875
 	self.fbi_vet_boss.rescue_hostages = false
 	self.fbi_vet_boss.steal_loot = false	
+	self.fbi_vet_boss.gas_on_death = false
 	table.insert(self._enemy_list, "fbi_vet_boss")	
 		
 	self.meme_man = deep_clone(self.fbi_vet)		

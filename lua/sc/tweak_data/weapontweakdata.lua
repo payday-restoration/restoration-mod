@@ -14202,7 +14202,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.stats = {
 			damage = 120,
 			spread = 91,
-			recoil = 6,
+			recoil = 7,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 12,
@@ -14823,6 +14823,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.timers.reload_exit_empty = 0.9
 		self.mcx_spear.timers.reload_not_empty = 2.2
 		self.mcx_spear.timers.reload_exit_not_empty = 1.12
+	end
+
+	if self.srs99_s7 then --RJC9000's Halo Infinite SRS99-S7 AMR
+		self.srs99_s7.categories = {
+			"snp",
+			"semi_snp",
+			"amr",
+			"s7",
+		}
+		self.srs99_s7.recategorize = { "antim_snp" }
+		self.srs99_s7.hs_mult = 2
+		self.srs99_s7.damage_type = "anti_materiel"
+		self.srs99_s7.upgrade_blocks = nil
+		self.srs99_s7.AMMO_MAX = 30
+		self.srs99_s7.sms = 0.7
+		self.srs99_s7.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
+		self.srs99_s7.supported = true
+		self.srs99_s7.ads_speed = 0.500
+		self.srs99_s7.damage_falloff = {
+			start_dist = 10000,
+			end_dist = 20000,
+			min_mult = 0.75
+		}
+		self.srs99_s7.stats = {
+			damage = 120,
+			spread = 101,
+			recoil = 11,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 10,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.srs99_s7.armor_piercing_chance = 1
+		self.srs99_s7.can_shoot_through_titan_shield = true
+		self.srs99_s7.stats_modifiers = nil
+		self.srs99_s7.panic_suppression_chance = 0.05
+		self.srs99_s7.timers.reload_exit_empty = 0.75
+		self.srs99_s7.timers.reload_exit_not_empty = 0.75
 	end
 
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44

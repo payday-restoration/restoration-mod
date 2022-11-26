@@ -593,6 +593,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end	
+			if stats.s7_flexfire then
+				self:weapon_tweak_data().can_shoot_through_titan_shield = false
+			end	
 			if stats.hailstorm then
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.33
@@ -1405,6 +1408,7 @@ local scope_colors = {
 	redmid = Color(1, 0, 1),
 	redlow = Color(0, 0, 1),
 	redno = Color(0, 1, 1),
+	off = Color(0, 0, 0, 0),
 }
 function NewRaycastWeaponBase:set_scope_range_distance(distance)
 	if not self._assembly_complete then
@@ -1417,6 +1421,13 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
 	falloff_start = falloff_start * (self._damage_near_mul or 1)
 	falloff_end = falloff_end * (self._damage_near_mul or 1)
+	local is_visible = nil
+	local is_player = self._setup.user_unit == managers.player:player_unit()
+	local steelsight_swap_state = false
+
+	if is_player then
+		steelsight_swap_state = self._setup.user_unit:camera() and alive(self._setup.user_unit:camera():camera_unit()) and self._setup.user_unit:camera():camera_unit():base():get_steelsight_swap_state() or false
+	end
 
 	if self._scopes and self._parts then
 		local part = nil
@@ -1426,18 +1437,20 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 
 			local digital_gui = part and part.unit:digital_gui()
 
+			is_visible = (part.steelsight_visible == nil or part.steelsight_visible == steelsight_swap_state) or nil
+
 			if digital_gui and digital_gui.number_set then
 				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then
-						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.green or scope_colors.red )
+						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.green or scope_colors.red )
 					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenmid or scope_colors.redmid )
+						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenmid or scope_colors.redmid )
 					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenlow or scope_colors.redlow )
+						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenlow or scope_colors.redlow )
 					end
 				else
-					part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenno or scope_colors.redno )
+					part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenno or scope_colors.redno )
 				end
 			end
 
@@ -1447,14 +1460,14 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 				part.unit:digital_gui_upper():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then
-						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.green )
+						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.green )
 					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenmid )
+						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenmid )
 					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenlow )
+						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenlow )
 					end
 				else
-					part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenno )
+					part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenno )
 				end
 			end
 		end

@@ -8178,7 +8178,76 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		texture_bundle_folder = "boost_in_lootdrop",
 		sub_type = "bonus_stats"
 	}
-	
+
+	local con_acc_penalty_override = {
+		--[[
+		"wpn_fps_snp_tti",
+		"wpn_fps_snp_qbu88",
+		"wpn_fps_snp_sgs",
+
+		"wpn_fps_snp_winchester",
+		"wpn_fps_snp_moss464spx",
+		"wpn_fps_snp_m1894",
+		"wpn_fps_snp_winchester1894",
+		"wpn_fps_snp_msr",
+		"wpn_fps_snp_r700",
+		"wpn_fps_snp_scout",
+
+		"wpn_fps_snp_siltstone",
+		"wpn_fps_snp_wa2000",
+		"wpn_fps_snp_svd",
+
+		"wpn_fps_snp_sbl",
+		"wpn_fps_snp_mosin",
+		"wpn_fps_snp_model70",
+		"wpn_fps_snp_desertfox",
+		"wpn_fps_snp_r93",
+		"wpn_fps_snp_k31",
+		"wpn_fps_snp_troglodyte",
+		"wpn_fps_snp_l115",
+
+		"wpn_fps_snp_m95",
+		"wpn_fps_snp_m200",
+		"wpn_fps_snp_musket",
+
+		"wpn_fps_snp_m107cq",
+		"wpn_fps_snp_srs99_s7",
+		--]]
+	}
+
+	for i, factory_id in ipairs(con_acc_penalty_override) do
+		if self[ factory_id ] then
+			self[ factory_id ].override = self[ factory_id ].override or {}
+			self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
+				stats = {value = 1, concealment = 1, spread = -1},
+				custom_stats = { 
+					empire = true,
+					falloff_start_mult = 0.925,
+					falloff_end_mult = 0.925,
+					ads_speed_mult = 0.975
+				}
+			}
+			self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
+				stats = {value = 1, concealment = 2, spread = -2},
+				custom_stats = { 
+					empire = true,
+					falloff_start_mult = 0.85,
+					falloff_end_mult = 0.85,
+					ads_speed_mult = 0.95
+				}
+			}
+			self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
+				stats = {value = 1, concealment = 3, spread = -3},
+				custom_stats = { 
+					empire = true,
+					falloff_start_mult = 0.775,
+					falloff_end_mult = 0.775,
+					ads_speed_mult = 0.925
+				}
+			}
+		end
+	end
+
 	--This is where it gets messy
 	--Small Accuracy Modifier
 	self.parts.wpn_fps_upg_bonus_damage_p1 = {
@@ -24107,6 +24176,128 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_pis_m6d.uses_parts, "wpn_fps_upg_i_autofire")
 
 		self.wpn_fps_pis_m6d_npc.uses_parts = deep_clone(self.wpn_fps_pis_m6d.uses_parts)
+	end
+
+	if self.parts.wpn_fps_snp_srs99_s7_scope then
+		self.parts.wpn_fps_snp_srs99_s7_scope.supported = true
+		self.parts.wpn_fps_snp_srs99_s7_scope.stats = { value = 0, zoom = 40 }
+		self.parts.wpn_fps_snp_srs99_s7_scope.custom_stats = { disable_steelsight_recoil_anim = true }
+		self.parts.wpn_fps_snp_srs99_s7_scope.perks = {"scope"}
+		self.parts.wpn_fps_snp_srs99_s7_scope.stance_mod = {
+			wpn_fps_snp_srs99_s7 = {
+				translation = Vector3(0.147, -4, 5.725),
+				rotation = Rotation(0, 0, 1)
+			}
+		}
+
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle = deep_clone(self.parts.wpn_fps_snp_srs99_s7_scope)
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.pcs = {}
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.name_id = "oracle_scope"
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.has_description = true
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.desc_id = "oracle_scope_desc"
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.perks = {"scope"}
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.texture_switch = {
+			channel = "diffuse_texture",
+			material = {
+				"gfx_reddot1",
+				"screen"
+			}
+		}
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight"
+
+		local optic_steelsights = {
+			wpn_fps_snp_srs99_s7_scope = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_box/wpn_fps_upg_o_box",
+				steelsight_swap_progress_trigger = 0.9
+			},
+			wpn_fps_snp_srs99_s7_scope_reticle = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_box/wpn_fps_upg_o_box",
+				steelsight_swap_progress_trigger = 0.9
+			},
+			wpn_fps_snp_srs99_s7_body = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				unit = "units/mods/weapons/wpn_fps_snp_srs99_s7_pts/wpn_fps_snp_srs99_s7_body",
+				steelsight_swap_progress_trigger = 0.9
+			},
+			wpn_fps_snp_srs99_s7_barrel = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				unit = "units/mods/weapons/wpn_fps_snp_srs99_s7_pts/wpn_fps_snp_srs99_s7_barrel",
+				steelsight_swap_progress_trigger = 0.9
+			},
+		}
+
+		local steelsight_id = nil
+	
+		for part_id, steelsight_data in pairs(optic_steelsights) do
+			steelsight_id = part_id .. "_steelsight"
+			self.parts[part_id].steelsight_visible = false
+			self.parts[part_id].adds = self.parts[part_id].adds or {}
+	
+			table.insert(self.parts[part_id].adds, steelsight_id)
+	
+			self.parts[steelsight_id] = steelsight_data
+			self.parts[steelsight_id].steelsight_visible = true
+			self.parts[steelsight_id].steelsight_parent = part_id
+			self.parts[steelsight_id].stats = {
+				value = 1
+			}
+			self.parts[steelsight_id].type = "sight_swap"
+			self.parts[steelsight_id].third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			self.parts[steelsight_id].skip_third_thq = true
+			self.parts[steelsight_id].visibility = {
+				{
+					objects = {
+						g_box = false,
+						g_s7_barrel = false,
+						g_s7_muzzle_brake = false,
+						g_s7_bipod = false,
+					}
+				}
+			}
+		end
+
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle_steelsight.perks = {"scope"}
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle_steelsight.a_obj = "a_o"
+		self.parts.wpn_fps_snp_srs99_s7_scope_reticle_steelsight.texture_switch = {
+			channel = "diffuse_texture",
+			material = {
+				"gfx_reddot1",
+				"screen"
+			}
+		}
+		self.parts.wpn_fps_snp_srs99_s7_scope_steelsight.perks = {"scope", "scope_aim"}
+		self.parts.wpn_fps_snp_srs99_s7_scope_steelsight.a_obj = "a_o"
+		self.parts.wpn_fps_snp_srs99_s7_barrel_steelsight.a_obj = self.parts.wpn_fps_snp_srs99_s7_barrel.a_obj
+		self.parts.wpn_fps_snp_srs99_s7_body_steelsight.a_obj = self.parts.wpn_fps_snp_srs99_s7_body.a_obj
+
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.keep_damage = true
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.supported = true
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.desc_id = "flexfire_desc"
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.stats = {
+			value = 10,
+			damage = -30,
+			spread = -10,
+			total_ammo_mod = 33,
+			extra_ammo = 6,
+			recoil = 10,
+			concealment = 5
+		}
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.custom_stats = {
+			alt_desc = "bm_w_srs99_s7_flexfire_desc",
+			falloff_start_mult = 0.4,
+			falloff_end_mult = 0.4,
+			rof_mult = 2.25,
+			damage_min_mult = 0.66667,
+			s7_flexfire = true,
+			alt_ammo_pickup_min_mul = 1.45,
+			alt_ammo_pickup_max_mul = 1.45,
+			ammo_pickup_min_mul = 1.45,
+			ammo_pickup_max_mul = 1.45
+		}
+
+		table.insert(self.wpn_fps_snp_srs99_s7.uses_parts, "wpn_fps_snp_srs99_s7_scope_reticle")
 	end
 
 	if self.parts.wpn_fps_ass_ak12_bolt then --Pawcio's KF2 AK-12 (AK-200)

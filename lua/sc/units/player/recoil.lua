@@ -404,9 +404,9 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			
 			if restoration and restoration.Options:GetValue("OTHER/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/ADSTransitionStyle") ~= 1 and not is_akimbo then
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
-					local prog = 1 - absolute_progress
+					local prog = (1 - absolute_progress) * (dt * 100)
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then
-						prog = absolute_progress
+						prog = absolute_progress * (dt * 100)
 						trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
 						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
 						self._shoulder_stance.was_in_steelsight = nil

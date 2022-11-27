@@ -167,8 +167,6 @@
 	
 	<mission			path="levels/narratives/locke/bph/world/world" force="true" unload="true"/> <!--Delayed the spawns and replaced scripted spawns with better Murkies-->
 	
-	<mission			path="levels/narratives/vlad/mallcrasher/mission_turf_war/mission_turf_war" force="true" unload="true"/> <!--fixed one of the scripted cops not moving at all-->
-	
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
 	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->

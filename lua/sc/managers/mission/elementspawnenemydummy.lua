@@ -2756,6 +2756,12 @@ local russia_very_hard = {
 		["units/payday2/characters/ene_security_winter_1/ene_security_winter_1"] = "units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_winter_2/ene_security_winter_2"] = "units/pd2_mod_reapers/characters/ene_security_2/ene_security_2",
 		
+		--cops
+		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2",
@@ -2868,6 +2874,12 @@ local russia_overkill = {
 		
 		["units/payday2/characters/ene_security_winter_1/ene_security_winter_1"] = "units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_winter_2/ene_security_winter_2"] = "units/pd2_mod_reapers/characters/ene_security_2/ene_security_2",
+		
+		--cops
+		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
 		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
@@ -2983,6 +2995,12 @@ local russia_mayhem = {
 		["units/payday2/characters/ene_security_winter_1/ene_security_winter_1"] = "units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_winter_2/ene_security_winter_2"] = "units/pd2_mod_reapers/characters/ene_security_2/ene_security_2",
 		
+		--cops
+		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2",
@@ -3097,6 +3115,12 @@ local russia_deathwish = {
 		
 		["units/payday2/characters/ene_security_winter_1/ene_security_winter_1"] = "units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_winter_2/ene_security_winter_2"] = "units/pd2_mod_reapers/characters/ene_security_2/ene_security_2",
+		
+		--cops
+		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
 	
 		--hrt
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
@@ -3217,6 +3241,12 @@ local russia_drak = {
 		
 		["units/payday2/characters/ene_security_winter_1/ene_security_winter_1"] = "units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_winter_2/ene_security_winter_2"] = "units/pd2_mod_reapers/characters/ene_security_2/ene_security_2",
+		
+		--cops
+		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
+		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest",
+		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest",
 		
 		--hrt  
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2",

@@ -75,6 +75,8 @@ function CopBase:random_mat_seq_initialization()
 	--BEAT COP FACE STUFF STARTS HERE	
 	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3_husk")
 	
@@ -82,6 +84,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2_husk")	
 	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4_husk")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk")
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")

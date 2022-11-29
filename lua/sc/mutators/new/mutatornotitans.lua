@@ -240,8 +240,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")						
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2")							
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2")							
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
@@ -282,8 +282,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2")								
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
@@ -326,7 +326,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")							
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")							
@@ -359,7 +359,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3")
+					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
@@ -847,7 +847,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob")
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5")
@@ -881,7 +881,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5")						
@@ -915,7 +915,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic")							
@@ -952,7 +952,7 @@ function MutatorNoTitans:setup(data)
 			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
 			    },
 			    russia = {
-			    	Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+			    	Idstring("units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 			    },
 			    zombie = {
 			    	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
@@ -986,7 +986,7 @@ function MutatorNoTitans:setup(data)
 			    	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
 			    },
 			    russia = {
-			    	Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+			    	Idstring("units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 			    },
 			    zombie = {
 			    	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")

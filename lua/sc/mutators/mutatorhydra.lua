@@ -293,13 +293,13 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 
 	--Medics become Cloakers
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_medic_mp5/ene_medic_mp5"] = {spooc}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"] = {spooc}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_medic_mp5/ene_medic_mp5"] = {spooc}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"] = {spooc}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"] = {spooc}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"] = {spooc}
@@ -321,7 +321,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	
 	--Grenadiers become Medics (Since he isn't always loaded, no one can become him
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"] = {medic}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
@@ -348,7 +348,6 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	
 	--Black Dozers become Tasers
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"] = {taser}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"] = {taser}
@@ -361,7 +360,6 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	
 	--Skulldozers become Tasers
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"] = {taser}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
@@ -376,7 +374,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 
 	--Titandozers become a random Dozer variant
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"] = {green_dozer, black_dozer, skull_dozer}
-	MutatorHydra.raw_enemy_list["units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2"] = {green_dozer, black_dozer, skull_dozer}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"] = {green_dozer, black_dozer, skull_dozer}
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = {green_dozer, black_dozer, skull_dozer}
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_mememan_1/ene_mememan_1"] = {green_dozer, black_dozer, skull_dozer}
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_mememan_2/ene_mememan_2"] = {green_dozer, black_dozer, skull_dozer}

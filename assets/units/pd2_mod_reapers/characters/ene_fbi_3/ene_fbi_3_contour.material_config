@@ -1,0 +1,37 @@
+<materials version="3" group="ene_akan_cs_swat_ak47_ass">
+    <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/pd2_mod_reapers/characters/shared_textures/head_atlas_nm"/>
+        <diffuse_texture        file="units/pd2_mod_reapers/characters/shared_textures/head_atlas_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/pd2_mod_reapers/characters/shared_textures/head_atlas_nm" mip="1"/>
+        <diffuse_texture        file="units/pd2_mod_reapers/characters/shared_textures/head_atlas_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+	
+    <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_nm" mip="1"/>
+         <diffuse_texture file="units/pd2_mod_reapers/characters/ene_fbi_1/security_winter_df"/>
+        <material_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_gsma"/>		
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+	
+    <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_nm" mip="1"/>
+         <diffuse_texture file="units/pd2_mod_reapers/characters/ene_fbi_1/security_winter_df"/>
+        <material_texture file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/player_tactical_outfit_gsma"/>		
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+	<material name="mtr_hat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_wmp/masks/wmp_01/msk_wmp_01_df" />
+		<bump_normal_texture file="units/pd2_dlc_wmp/masks/wmp_01/msk_wmp_01_nm" />
+	</material>	
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

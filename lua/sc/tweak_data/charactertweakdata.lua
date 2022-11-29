@@ -17171,13 +17171,11 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	
 	--DRAK Titan Taser Gauss Rifle
 	table.insert(self.weap_ids, "gauss_gun")
-	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"))			
-	
-	--For some reason, once this hits 92 entries the third person husk used by players breaks. Look into solutions
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"))
 	
 	--Titandozer M32
 	table.insert(self.weap_ids, "m32_large")
-	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large"))		
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_m32_large/wpn_npc_m32_large"))		
 
 	--Dozer Benelli
 	table.insert(self.weap_ids, "benelli_dozer")
@@ -17997,69 +17995,6 @@ function CharacterTweakData:character_map()
 				"ene_titan_taser"
 			}
 		}
-	--mad
-		char_map.mad = {
-			path = "units/pd2_dlc_mad/characters/",
-			list = {
-				"civ_male_scientist_01",
-				"civ_male_scientist_02",
-				"ene_akan_fbi_heavy_g36",
-				"ene_akan_fbi_heavy_r870",
-				"ene_akan_fbi_shield_sr2_smg",
-				"ene_akan_fbi_spooc_asval_smg",
-				"ene_akan_cs_cop_c45_sc",
-				"ene_akan_cs_cop_raging_bull_sc",					
-				"ene_akan_fbi_swat_ak47_ass",	
-				"ene_akan_fbi_sniper_svd_snp",
-				"ene_akan_fbi_sniper_dw_svd_snp",
-				"ene_akan_fbi_swat_dw_ak47_ass",
-				"ene_akan_fbi_swat_dw_ak47_ass_sc",					
-				"ene_akan_fbi_swat_dw_r870",
-				"ene_akan_fbi_swat_dw_r870_sc",					
-				"ene_akan_fbi_swat_dw_ump",
-				"ene_akan_fbi_swat_r870",
-				"ene_akan_fbi_swat_ump",
-				"ene_akan_fbi_tank_r870",
-				"ene_akan_fbi_tank_rpk_lmg",
-				"ene_akan_fbi_tank_saiga",
-				"ene_akan_dozer_mini",
-				"ene_akan_cs_cop_ak47_ass",
-				"ene_akan_cs_cop_akmsu_smg",
-				"ene_akan_cs_cop_akmsu_smg_sc",
-				"ene_akan_cs_cop_asval_smg",
-				"ene_akan_cs_swat_zeal",					
-				"ene_akan_cs_cop_r870",
-				"ene_akan_cs_heavy_ak47_ass",
-				"ene_akan_cs_heavy_r870",
-				"ene_akan_cs_shield_c45",
-				"ene_akan_cs_swat_ak47_ass",
-				"ene_akan_cs_swat_r870",
-				"ene_akan_cs_swat_sniper_svd_snp",
-				"ene_akan_cs_tazer_ak47_ass",
-				"ene_akan_medic_ak47_ass",
-				"ene_akan_medic_r870",				
-				"ene_akan_fbi_heavy_dw",
-				"ene_akan_fbi_heavy_dw_r870",
-				"ene_akan_fbi_1",
-				"ene_akan_fbi_2",
-				"ene_akan_fbi_3",
-				"ene_akan_veteran_1",
-				"ene_akan_veteran_2",
-				"ene_akan_veteran_subject",
-				"ene_akan_grenadier_1",
-				"ene_akan_medic_bob",
-				"ene_akan_medic_zdann",	
-				"ene_vip_2",
-				"ene_titan_shotgun",
-				"ene_titan_rifle",
-				"ene_akan_lpf",
-				"ene_fbi_titan_1",
-				"ene_phalanx_1_assault",										
-				"ene_spook_cloak_1",										
-				"ene_titan_sniper",
-				"ene_titan_taser"				
-			}
-		}
 	--gitgud
 		char_map.gitgud = {
 			path = "units/pd2_dlc_gitgud/characters/",
@@ -18526,6 +18461,12 @@ function CharacterTweakData:character_map()
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_swat_3",
+				"ene_fbi_1",
+				"ene_fbi_2",
+				"ene_fbi_3",
+				"ene_akan_veteran_1",
+				"ene_akan_veteran_2",
+				"ene_akan_veteran_subject",
 				"ene_sniper_1",
 				"ene_tazer_1",
 				"ene_sniper_2",
@@ -18554,7 +18495,19 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_shield",
 				"ene_drak_medic",
 				"ene_zeal_sniper",
-				"ene_subject_enforcer"
+				"ene_subject_enforcer",
+				"ene_akan_grenadier_1",
+				"ene_akan_medic_bob",
+				"ene_akan_medic_zdann",	
+				"ene_vip_2",
+				"ene_titan_shotgun",
+				"ene_titan_rifle",
+				"ene_akan_lpf",
+				"ene_fbi_titan_1",
+				"ene_phalanx_1_assault",										
+				"ene_spook_cloak_1",										
+				"ene_titan_sniper",
+				"ene_titan_taser"
 			}
 		}
 

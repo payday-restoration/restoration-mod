@@ -34,13 +34,11 @@ function CopSound:init(unit)
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1") or self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
 	--DRAK Titans
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser") then
+	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser") then
 		self._prefix = ("rtsr") .. "_"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1") then
+	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1") then
 		self._prefix = ("rclk") .. "_"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf") then
-		self._prefix = ("rmdc") .. "_"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1") then
+	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1") then
 		self._prefix = ("r") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"
 	--Russian Merc VO	
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_3_mp5/ene_rus_cop_3_mp5") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870") then
@@ -76,13 +74,11 @@ function CopSound:init(unit)
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1_husk") or self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2_husk") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
 	--DRAK Titans husks
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser_husk") then
+	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk") then
 		self._prefix = ("rtsr") .. "_"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk") then
+	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk") then
 		self._prefix = ("rclk") .. "_"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk") then
-		self._prefix = ("rmdc") .. "_"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk") then
+	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk") then
 		self._prefix = ("r") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"
 	--Russian Merc VO	
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_3_mp5/ene_rus_cop_3_mp5_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870_husk") then

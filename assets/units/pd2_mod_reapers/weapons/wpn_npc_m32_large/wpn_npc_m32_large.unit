@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_mod_reapers/weapons/wpn_npc_m32_large/wpn_npc_m32_large" />
+  <dependencies>
+	<depends_on bnk="soundbanks/weapon_gl40"/>
+    <depends_on bnk="soundbanks/weapon_swatturret" />			
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCGrenadeLauncherBaseBoss" >
+		<var name="name_id" value="m32_npc" />
+    </extension>
+  <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_m32" />
+    <default_soundsource source="rp_m32" />
+  </sounds>
+</unit>

@@ -655,12 +655,22 @@ velocity = {
 	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade',
 	'dynamite','molotov'
 }
+--[[
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 900
 	tweak_data.projectiles[proj_id].adjust_z = 50
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+tweak_data.projectiles.dynamite.launch_speed = 600
 tweak_data.projectiles.molotov.launch_speed = 700
+--]]
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 250
+	tweak_data.projectiles[proj_id].adjust_z = 15
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 3.25
+end
+tweak_data.projectiles.dynamite.launch_speed = 150
+tweak_data.projectiles.molotov.launch_speed = 200
 velocity = {
 	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
 	'wpn_prj_hur','wpn_prj_jav'

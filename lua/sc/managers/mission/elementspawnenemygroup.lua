@@ -4746,9 +4746,7 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 	elseif level == "gallery" then
 		level = "framing_frame_1"
 	elseif level == "rat" then
-		level = "alex_1"
-	elseif level == "welcome_to_the_jungle_1_night" then
-		level = "welcome_to_the_jungle_1"	
+		level = "alex_1"	
 	end
 
 	local groups = self._values.preferred_spawn_groups

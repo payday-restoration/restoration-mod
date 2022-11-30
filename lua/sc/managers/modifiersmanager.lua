@@ -75,10 +75,10 @@ elseif ai_type == r then
 		["units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
 		
 		--Beat Cops
-		["units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
-		["units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",
-		["units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2",
-		["units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3",
+		["units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1"] = "units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2",
+		["units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3",
 	
 		--Reaper FBI Rifle
 		["units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",

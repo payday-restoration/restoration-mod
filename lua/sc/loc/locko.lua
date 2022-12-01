@@ -2331,32 +2331,32 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
-			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
-			["hud_assault_alpha"] = "ШTУPM HAЁMHИKO"
+			["hud_assault_assault"] = "용병대 공격 진행 중",
+			["hud_assault_cover"] = "엄폐물에 머물러라",
+			["hud_assault_alpha"] = "용병대 공격"
 		})
 	end)
 elseif ai_type == z then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "겨차 타겨어대에 지행 주",
-			["hud_assault_cover"] = "어페무에 머무러라...살덩이",
+			["hud_assault_cover"] = "어페무에 머무러라...살덩이!",
 			["hud_assault_alpha"] = "겨차 타겨어대"
 		})
 	end)
 elseif ai_type == f then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Asalto Federal En Marcha",
-			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
-			["hud_assault_alpha"] = "ASALTO FEDERAL"
+			["hud_assault_assault"] = "연방 경찰 공격 진행 중",
+			["hud_assault_cover"] = "엄폐물에 머물러라",
+			["hud_assault_alpha"] = "연방 경찰 공격"
 		})
 	end)
 elseif ai_type == m then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "머키워터 작전대 진행 중",
-			["hud_assault_alpha"] = "머키워터 작전대"
+			["hud_assault_assault"] = "머키워터 작전 진행 중",
+			["hud_assault_alpha"] = "머키워터 작전"
 		})
 	end)
 elseif ai_type == o then
@@ -2424,7 +2424,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_one_down"] = "프로 잡",
 		["menu_es_pro_job_bonus"] = "프로 잡",
 
-		["menu_asset_lock_additional_assets_pro"] = "프로 잡에서는 사용할 수 없습니다!",
+		["menu_pro_warning"] = "이 작업은 프로 잡입니다! 실패할 경우, 재시작을 할 수 없고, 전체 계약이 파기됩니다.\n또한 하이스트가 끝나가면 제한 시간이 나타나고 강력한 적들이 등장합니다.\n프로 잡을 활성화하면 돈과 경험치 보너스를 25%만큼 얻습니다.",
 
 		["cn_menu_contract_daypay_header"] = "일일 요금:",
 		["cn_menu_contract_jobpay_header"] = "계약금:",
@@ -2901,7 +2901,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
-			["menu_close_by_beta_desc_sc"] = "베이직: #{owned}#$basic##\n산탄총과 화염 방사기는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 지향 사격하는 동안 발사 속도가 #{skill_color}#35%##만큼 증가합니다.",
+			["menu_close_by_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염 방사기##는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 지향 사격하는 동안 발사 속도가 #{skill_color}#35%##만큼 증가합니다.",
 
 			--Overkill
 			["menu_overkill_sc"] = "오버킬",
@@ -3248,7 +3248,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["menu_st_spec_5_desc_sc"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.\n\n전체 특성 덱의 이점:\n##-##근접 무기 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##120##까지 임시 체력을 저장할 수 있습니다. 근접 공격으로 적을 죽이면 저장된 임시 체력이 초당 ##5##씩 감소하는 임시 체력으로 바뀝니다. 임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.\n##-##방탄력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.\n##-##인벤토리에 시체가방을 ##1##개를 추가로 가집니다.\n##-##임시 체력이 있는 동안 굴절이 ##10%##만큼 증가하고 이동 속도가 ##20%##만큼 증가합니다.",
 		["menu_st_spec_5_desc_sc_short"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.",		
-		["menu_deck5_1_desc_sc"] = "근접 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##75##의 체력을 저장할 수 있습니다.\n\n근접 공격으로 적을 죽이면 저장된 체력이 초당 ##5##의 속도로 감소하는 임시 체력으로 바뀝니다.\n\n임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.",
+		["menu_deck5_1_desc_sc"] = "근접 외로 적을 죽이면 임시 체력이 ##25##만큼 생깁니다. 최대 ##75##의 체력을 저장할 수 있습니다.\n\n근접 공격으로 적을 죽이면 저장된 체력이 초당 ##5##의 속도로 감소하는 임시 체력으로 바뀝니다.\n\n임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.",
 		["menu_deck5_3_desc_sc"] = "방탄력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n\n회피 포인트를 추가로 ##5##만큼 더 얻습니다.",
 		["menu_deck5_5_desc_sc"] = "임시 체력을 ##60%##만큼 더 저장합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 		["menu_deck5_7_desc_sc"] = "일어나면 임시 체력을 ##120##만큼 얻습니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",

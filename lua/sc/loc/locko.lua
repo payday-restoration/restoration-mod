@@ -2423,8 +2423,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_toggle_one_down"] = "프로 잡",
 		["menu_one_down"] = "프로 잡",
 		["menu_es_pro_job_bonus"] = "프로 잡",
-
+		
 		["menu_pro_warning"] = "이 작업은 프로 잡입니다! 실패할 경우, 재시작을 할 수 없고, 전체 계약이 파기됩니다.\n또한 하이스트가 끝나가면 제한 시간이 나타나고 강력한 적들이 등장합니다.\n프로 잡을 활성화하면 돈과 경험치 보너스를 25%만큼 얻습니다.",
+
+		["menu_asset_lock_additional_assets_pro"] = "프로 잡에서는 사용할 수 없습니다!",
 
 		["cn_menu_contract_daypay_header"] = "일일 요금:",
 		["cn_menu_contract_jobpay_header"] = "계약금:",

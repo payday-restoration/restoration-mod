@@ -2457,8 +2457,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
 		["menu_es_pro_job_bonus"] = "Pro-Job",
-
+		
 		["menu_pro_warning"] = "This is a pro job! if you fail, the entire contract will be terminated\nalso, at near the end of the heist, there PONR and powerful enemies will appears.\nactivating a pro job grants you a 25% money and experience bonus.",
+
+		["menu_asset_lock_additional_assets_pro"] = "NOT AVAILABLE IN PRO-JOBS!",
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",

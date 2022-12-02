@@ -8084,7 +8084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.komodo.damage_falloff = {
 					start_dist = 2200,
 					end_dist = 6000,
-					min_mult = 0.5
+					min_mult = 0.4166
 				}
 				self.komodo.stats = {
 					damage = 24,
@@ -8124,7 +8124,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hajk.damage_falloff = {
 					start_dist = 2500,
 					end_dist = 6800,
-					min_mult = 0.5
+					min_mult = 0.4166
 				}
 				self.hajk.stats = {
 					damage = 24,

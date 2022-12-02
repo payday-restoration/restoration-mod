@@ -8179,72 +8179,48 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		sub_type = "bonus_stats"
 	}
 
-	local con_acc_penalty_override = {
-		--[[
-		"wpn_fps_snp_tti",
-		"wpn_fps_snp_qbu88",
-		"wpn_fps_snp_sgs",
+	local function peepee(factory_id)
+		for id, data in pairs(tweak_data.upgrades.definitions) do
+			if data.category == "weapon" and data.factory_id == factory_id then
+				return data.weapon_id
+			end
+		end
+	end
 
-		"wpn_fps_snp_winchester",
-		"wpn_fps_snp_moss464spx",
-		"wpn_fps_snp_m1894",
-		"wpn_fps_snp_winchester1894",
-		"wpn_fps_snp_msr",
-		"wpn_fps_snp_r700",
-		"wpn_fps_snp_scout",
-
-		"wpn_fps_snp_siltstone",
-		"wpn_fps_snp_wa2000",
-		"wpn_fps_snp_svd",
-
-		"wpn_fps_snp_sbl",
-		"wpn_fps_snp_mosin",
-		"wpn_fps_snp_model70",
-		"wpn_fps_snp_desertfox",
-		"wpn_fps_snp_r93",
-		"wpn_fps_snp_k31",
-		"wpn_fps_snp_troglodyte",
-		"wpn_fps_snp_l115",
-
-		"wpn_fps_snp_m95",
-		"wpn_fps_snp_m200",
-		"wpn_fps_snp_musket",
-
-		"wpn_fps_snp_m107cq",
-		"wpn_fps_snp_srs99_s7",
-		--]]
-	}
-
-	for i, factory_id in ipairs(con_acc_penalty_override) do
+	for factory_id, i in pairs(self) do
 		if self[ factory_id ] then
-			self[ factory_id ].override = self[ factory_id ].override or {}
-			self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
-				stats = {value = 1, concealment = 1, spread = -1},
-				custom_stats = { 
-					empire = true,
-					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925,
-					ads_speed_mult = 0.975
+			local weapon_id = peepee(factory_id)
+			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories and tweak_data.weapon[ weapon_id ].categories[1] == "snp" then
+				log(tostring( factory_id ))
+				self[ factory_id ].override = self[ factory_id ].override or {}
+				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
+					stats = {value = 1, concealment = 1, spread = -1},
+					custom_stats = { 
+						empire = true,
+						falloff_start_mult = 0.925,
+						falloff_end_mult = 0.925,
+						ads_speed_mult = 0.975
+					}
 				}
-			}
-			self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
-				stats = {value = 1, concealment = 2, spread = -2},
-				custom_stats = { 
-					empire = true,
-					falloff_start_mult = 0.85,
-					falloff_end_mult = 0.85,
-					ads_speed_mult = 0.95
+				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
+					stats = {value = 1, concealment = 2, spread = -2},
+					custom_stats = { 
+						empire = true,
+						falloff_start_mult = 0.85,
+						falloff_end_mult = 0.85,
+						ads_speed_mult = 0.95
+					}
 				}
-			}
-			self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
-				stats = {value = 1, concealment = 3, spread = -3},
-				custom_stats = { 
-					empire = true,
-					falloff_start_mult = 0.775,
-					falloff_end_mult = 0.775,
-					ads_speed_mult = 0.925
+				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
+					stats = {value = 1, concealment = 3, spread = -3},
+					custom_stats = { 
+						empire = true,
+						falloff_start_mult = 0.775,
+						falloff_end_mult = 0.775,
+						ads_speed_mult = 0.925
+					}
 				}
-			}
+			end
 		end
 	end
 
@@ -24296,6 +24272,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ammo_pickup_min_mul = 1.45,
 			ammo_pickup_max_mul = 1.45
 		}
+
+
+		self.wpn_fps_snp_srs99_s7.override = self.wpn_fps_snp_srs99_s7.override or {}
+
+		for i, part_id in pairs(self.wpn_fps_snp_srs99_s7.uses_parts) do
+			if self.parts and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "gadget" and not self.parts[part_id].depends_on then
+				self.wpn_fps_snp_srs99_s7.override[part_id] = {
+					custom_stats = { big_scope = true }
+				}
+			end
+		end	
 
 		table.insert(self.wpn_fps_snp_srs99_s7.uses_parts, "wpn_fps_snp_srs99_s7_scope_reticle")
 	end

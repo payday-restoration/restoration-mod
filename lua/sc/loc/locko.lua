@@ -866,11 +866,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["csgo_plane_timer_text"] = "Wait for the plane &&TIMER",
 		["csgo_plane_timer_desc"] = "Wait for the plane &&TIMER",
 		
-		["hud_equipment_pickup_spraycan"] = "Press $BTN_INTERACT to pickup Spraycan",
-		["hud_action_spraypaint"] = "Press $BTN_INTERACT to Spraypaint",
-		["hud_action_spraypaint_none"] = "Spraycan Required",
-		["spraycan_obtained"] = "Spraycan Obtained",
-		["hud_equipment_obtained_spraycan"] = "Spraycan Obtained",
+		["hud_equipment_pickup_spraycan"] = "$BTN_INTERACT 를 눌러 스프레이 캔을 얻기",
+		["hud_action_spraypaint"] = "$BTN_INTERACT 를 눌러 스프레이 뿌리기",
+		["hud_action_spraypaint_none"] = "스프레이 캔이 필요합니다",
+		["spraycan_obtained"] = "스프레이 캔 획득",
+		["hud_equipment_obtained_spraycan"] = "스프레이 캔 획득",
 		
 		["trophy_csgo01"] = "Graffiti Box",
 		["trophy_csgo01_desc"] = "And you didnt even have to buy this one",
@@ -1592,7 +1592,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 제공하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가 죽은 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
 		--Model 70
 		["bm_model70_sc_desc"] = "라이플맨의 소총. Repeater 1874 소총을 제작한 디자이너가 만든 초기 볼트 액션 디자인 소총입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SVD
@@ -2424,7 +2424,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_one_down"] = "프로 잡",
 		["menu_es_pro_job_bonus"] = "프로 잡",
 		
-		["menu_pro_warning"] = "이 작업은 프로 잡입니다! 실패할 경우, 재시작을 할 수 없고, 전체 계약이 파기됩니다.\n또한 하이스트가 끝나가면 제한 시간이 나타나고 강력한 적들이 등장합니다.\n프로 잡을 활성화하면 돈과 경험치 보너스를 25%만큼 얻습니다.",
+		["menu_pro_warning"] = "이 작업은 프로 잡입니다! 실패할 경우, 재시작을 할 수 없고, 전체 계약이 파기됩니다.\n또한 하이스트가 끝날 무렵 더 강력한 적들이 배치되고 돌아올 수 없는 지점 이벤트가 발생할 수 있습니다.\n프로 잡을 완료하면 돈과 경험치 보너스를 25%만큼 얻습니다.",
 
 		["menu_asset_lock_additional_assets_pro"] = "프로 잡에서는 사용할 수 없습니다!",
 
@@ -2491,7 +2491,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_23"] = "적들은 더 높은 난이도에서 실드 뒤에 더 잘 숨습니다.",
 		["loading_gameplay_res_24"] = "적들은 더 높은 난이도에서 다른 행동을 보여줍니다.",
 		["loading_gameplay_res_25"] = "데스 센텐스 난이도는 당신의 삶을 지옥으로 만들기 위해 온갖 종류의 불쾌한 속임수를 보여줍니다. 그들이 주먹부터 날릴 것이라고 생각하지 마십시오.",
-		["loading_gameplay_res_26"] = "프로 잡은 단 한 번의 기회만 주어지며 자신의 능력을 시험할 수 있고, 두려운 브라보 유닛의 스폰을 허용합니다.",
+		["loading_gameplay_res_26"] = "프로 잡은 단 한 번의 기회만 주어지며 자신의 능력을 시험할 수 있고, 위협적인 브라보 유닛의 스폰을 허용합니다.",
 		["loading_gameplay_res_27"] = "레스토레이션 모드는 머키워터 용병 및 다른 주의 법 집행자와 같은 다양한 진영을 제공합니다.",
 		["loading_gameplay_res_28"] = "클로커는 더 높은 난이도에서 제압을 수행할 때 연막탄을 사용합니다.",
 		

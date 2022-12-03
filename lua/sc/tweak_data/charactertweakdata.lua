@@ -2650,6 +2650,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.rotation_speed = 0.75
 	self.phalanx_vip.no_asu = true
 	self.phalanx_vip.no_retreat = true
+	self.phalanx_vip.yellow_blood = false
 	self.phalanx_vip.custom_voicework = nil
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
 	self.phalanx_vip.speech_prefix_p2 = nil

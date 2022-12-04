@@ -2321,7 +2321,7 @@ local crew_wep_preset = {
 			self.ben_crew.suppression = 3.4
 			self.ben_crew.is_shotgun = true
 			self.ben_crew.rays = 9
-			self.ben_crew.FIRE_MODE = "auto"
+			self.ben_crew.FIRE_MODE = "single"
 			self.benelli_crew = deep_clone(self.ben_crew)
 		end
 		
@@ -2341,7 +2341,7 @@ local crew_wep_preset = {
 			self.spas12_crew.suppression = 3.4
 			self.spas12_crew.rays = 9
 			self.spas12_crew.is_shotgun = true
-			self.spas12_crew.FIRE_MODE = "auto"
+			self.spas12_crew.FIRE_MODE = "single"
 		end
 		
 		function WeaponTweakData:_init_data_ultima_crew()
@@ -2358,7 +2358,7 @@ local crew_wep_preset = {
 			self.ultima_crew.hold = "rifle"
 			self.ultima_crew.alert_size = 2500
 			self.ultima_crew.suppression = 3.4
-			self.ultima_crew.FIRE_MODE = "auto"
+			self.ultima_crew.FIRE_MODE = "single"
 			self.ultima_crew.is_shotgun = true
 		end	
 	

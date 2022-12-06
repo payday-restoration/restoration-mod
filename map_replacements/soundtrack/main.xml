@@ -1,91 +1,108 @@
 <table name="resost">
-	<HeistMusic directory="sounds/burnout" id="resmusic_burnout" volume="0.7">
-		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
-		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+
+	<!--Heist Tracks-->
+	<HeistMusic id="resmusic_burnout" directory="sounds/burnout" volume="0.7">
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
+		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/wetwork" id="resmusic_wetwork" volume="0.7">
+	<HeistMusic id="resmusic_wetwork" directory="sounds/wetwork" volume="0.7">
 		<event name="setup" source="stealth.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.05"/>
-		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="assault" allow_switch="true">
+		<track start_source="assaultintro.ogg" source="assault.ogg" weight="3"/>
+		<track start_source="assaultintro.ogg" source="assaultalt.ogg" weight="1"/>
+		</event>
+		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/doghouse" id="resmusic_doghouse" volume="0.7">
+	<HeistMusic id="resmusic_doghouse" directory="sounds/doghouse" volume="0.7">
 		<event name="setup" source="setup.ogg"/>
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
 		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
 		<event name="control" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/madvlad" id="resmusic_madvlad" volume="0.7">
+	<HeistMusic id="resmusic_madvlad" directory="sounds/madvlad" volume="0.7">
 		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>	
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
 		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
 		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/lethalforce" id="resmusic_lethalforce" volume="0.7">
+	<HeistMusic id="resmusic_lethalforce" directory="sounds/lethalforce" volume="0.7">
 		<event name="setup" source="setup.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
-		<event name="control" source="control.ogg"/>
-	</HeistMusic>
-	<HeistMusic directory="sounds/redmarks" id="resmusic_redmarks" volume="0.7">
-		<event name="setup" source="setup.ogg"/>
-		<event name="anticipation" source="setup.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.2"/>
-		<event name="control" source="control.ogg" start_source="assaultintro.ogg"/>
-	</HeistMusic>
-	<HeistMusic directory="sounds/gunmetalgreybeta" id="resmusic_gunmetalgreybeta" volume="0.7">
-		<event name="setup" source="setup.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" />
-		<event name="control" source="control.ogg"/>
-	</HeistMusic>
-	<HeistMusic directory="sounds/doublecrossbeta" id="resmusic_doublecrossbeta" volume="0.7">
-		<event name="setup" source="setup.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.2"/>
-		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
-	</HeistMusic>
-	<HeistMusic directory="sounds/thetakeoriginal" id="resmusic_thetakeoriginal" volume="0.7">
-		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>	
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
 		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
+	<HeistMusic id="resmusic_redmarks" directory="sounds/redmarks" volume="0.7">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="setup.ogg"/>
+		<event name="assault" allow_switch="true">
+		<track start_source="assaultintro.ogg" source="assault.ogg" weight="3"/>
+		<track start_source="assaultintro.ogg" source="assaultalt.ogg"  weight="1"/>
+		</event>
+		<event name="control" start_source="assaultintro.ogg" source="control.ogg"/>
+	</HeistMusic>
+	<HeistMusic id="resmusic_gunmetalgreybeta" directory="sounds/gunmetalgreybeta" volume="0.8">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
+	<HeistMusic id="resmusic_doublecrossbeta" directory="sounds/doublecrossbeta" volume="0.8">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="assault" allow_switch="true">
+		<track start_source="assaultintro.ogg" source="assaultalt.ogg" weight="3"/>
+		<track start_source="assaultintro.ogg" source="assault.ogg"  weight="1"/>
+		</event>
 		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/razormindbeta" id="resmusic_razormindbeta" volume="0.7">
-		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
-		<event name="control" source="control.ogg" start_source="stealthintro.ogg"/>
-	</HeistMusic>
-	<HeistMusic directory="sounds/ticktockalpha" id="resmusic_ticktockalpha" volume="0.7">
-		<event name="setup" source="stealth.ogg"/>	
+	<HeistMusic id="resmusic_thetakeoriginal" directory="sounds/thetakeoriginal" volume="0.7"> 
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="control" start_source="stealthintro.ogg" source="control.ogg"/>
 		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
-		<event name="control" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/ponr" id="resmusic_ponr" volume="0.7">
+	<HeistMusic id="resmusic_razormindbeta" directory="sounds/razormindbeta" volume="0.7"> 
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="control" start_source="stealthintro.ogg" source="control.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
+	</HeistMusic>
+	<HeistMusic id="resmusic_ticktockalpha" directory="sounds/ticktockalpha" volume="0.7"> 
 		<event name="setup" source="stealth.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
-		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="control" source="control.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/bluewave" id="resmusic_bluewave" volume="0.9">
-		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
-		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+	<HeistMusic id="resmusic_ponr" directory="sounds/ponr" volume="0.7"> 
+		<event name="setup" source="stealth.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="sounds/proto" id="resmusic_proto" volume="0.8">
-		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
-		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+	<HeistMusic id="resmusic_bluewave" directory="sounds/bluewave" volume="0.8"> 
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
+		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
+	</HeistMusic>
+	<HeistMusic id="resmusic_proto" directory="sounds/proto" volume="0.8"> 
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>
+		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
+		<event name="control" allow_switch="true">
+		<track start_source="controlintroalt.ogg" source="controlalt2.ogg"  weight="5"/>
+		<track start_source="controlintro.ogg" source="control.ogg"  weight="3"/>
+		<track start_source="controlintro.ogg" source="controlalt.ogg"  weight="1"/>
+		</event>
 		<event name="assault" source="assault.ogg"/>
-		<event name="control" source="control.ogg" start_source="controlintro.ogg" alt_source="controlalt.ogg" alt_source_chance="0.50"/>
 	</HeistMusic>
-	<MenuMusic id="m1" source="m1.ogg" start_source="m1intro.ogg" volume="0.6"/>
-	<MenuMusic id="m2" source="m2.ogg" start_source="m2intro.ogg" volume="0.6"/>
-	<MenuMusic id="m3" source="m3.ogg" start_source="m3intro.ogg" volume="0.6"/>
+	
+	<!--Menu Tracks-->
+	<MenuMusic id="m1" start_source="m1intro.ogg" source="m1.ogg"  volume="0.6"/>
+	<MenuMusic id="m2" start_source="m2intro.ogg" source="m2.ogg"  volume="0.6"/>
+	<MenuMusic id="m3" start_source="m3intro.ogg" source="m3.ogg"  volume="0.6"/>
 	<MenuMusic id="m4" source="m4.ogg" volume="0.6"/>
 	<MenuMusic id="m5" source="m5.ogg" volume="0.6"/>
 	<MenuMusic id="m6" source="m6.ogg" volume="0.6"/>

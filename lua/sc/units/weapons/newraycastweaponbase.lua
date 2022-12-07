@@ -1110,7 +1110,7 @@ function NewRaycastWeaponBase:can_reload()
 end
 
 function NewRaycastWeaponBase:_check_toggle_burst()
-	if not self._lock_burst then
+	if not self:is_npc() and not self._lock_burst then
 		if self:in_burst_mode() then
 			self:_set_burst_mode(false, self.AKIMBO and not self._has_auto)
 			return true

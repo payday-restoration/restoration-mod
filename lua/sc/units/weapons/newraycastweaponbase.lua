@@ -529,7 +529,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
 		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
-	else
+	else	
+		self._has_burst_fire = false
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	

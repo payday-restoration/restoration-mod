@@ -15620,28 +15620,28 @@ function WeaponTweakData:_create_table_structure()
 	}
 
 	self.benelli_crew = {
-		usage = "is_shotgun_mag",
+		usage = "is_shotgun_pump",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
 		use_data = {},
 		auto = {}
 	}
 	self.ben_crew = {
-		usage = "is_shotgun_mag",
+		usage = "is_shotgun_pump",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
 		use_data = {},
 		auto = {}
 	}
 	self.spas12_crew = {
-		usage = "is_shotgun_mag",
+		usage = "is_shotgun_pump",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
 		use_data = {},
 		auto = {}
 	}
 	self.ultima_crew = {
-		usage = "is_shotgun_mag",
+		usage = "is_shotgun_pump",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
 		use_data = {},

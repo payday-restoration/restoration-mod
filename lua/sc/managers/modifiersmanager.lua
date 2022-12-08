@@ -368,6 +368,8 @@ elseif ai_type == ny then
 		
 		--Bravo DMR
 		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
+		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
+		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
 	}
 else
 	replacement_table = {
@@ -461,6 +463,8 @@ else
 		
 		--Bravo DMR
 		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
+		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
+		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
 	}	
 end
 --this table is for robots. don't edit this one

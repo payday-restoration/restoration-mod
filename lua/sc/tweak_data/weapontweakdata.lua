@@ -14785,7 +14785,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.damage_type = "sniper"
 		self.mcx_spear.tactical_reload = 1
 		self.mcx_spear.CLIP_AMMO_MAX = 20
-		self.mcx_spear.AMMO_MAX = 60
+		self.mcx_spear.AMMO_MAX = 80
 		self.mcx_spear.FIRE_MODE = "auto"
 		self.mcx_spear.CAN_TOGGLE_FIREMODE = true
 		self.mcx_spear.sounds.stop_fire = "g36_stop"

@@ -1974,6 +1974,7 @@
 	<material_config	path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
 	<material_config	path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_contour" force="false"/>
 	<unit				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_husk" force="false" load="true"/>
+	<df_nm				path="units/payday2/characters/shared_textures/veteran_lodman"/>
 
 	<object				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
@@ -1982,6 +1983,7 @@
 	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
 	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_contour" force="false"/>
 	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>
+	<df_nm				path="units/payday2/characters/shared_textures/veteran_lodman_2"/>
 
 
 	<!--Payday 10th Anniversary-->	

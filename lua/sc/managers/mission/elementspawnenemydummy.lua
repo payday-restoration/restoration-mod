@@ -2399,8 +2399,8 @@ local omnia_normal_overkill = {
 		["units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"] = "units/pd2_mod_omnia/characters/ene_swat_1/ene_swat_1",	
 		["units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"] = "units/pd2_mod_omnia/characters/ene_swat_heavy_1/ene_swat_heavy_1",	
 		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_omnia/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",	
-		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_omnia/characters/ene_omnia_security_c45/ene_omnia_security_c45",	
-		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_omnia_security_mp5/ene_omnia_security_mp5",
+		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_omnia/characters/ene_security_1/ene_security_1",	
+		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_security_2/ene_security_2",
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_omnia/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_omnia/characters/ene_security_2/ene_security_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_security_3/ene_security_3",
@@ -2507,8 +2507,8 @@ local omnia_mayhem = {
 		["units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"] = "units/pd2_mod_omnia/characters/ene_swat_1/ene_swat_1",	
 		["units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"] = "units/pd2_mod_omnia/characters/ene_swat_heavy_1/ene_swat_heavy_1",	
 		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_omnia/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",	
-		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_omnia/characters/ene_murky_security_c45/ene_murky_security_c45",	
-		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_omnia/characters/ene_security_1/ene_security_1",	
+		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_security_2/ene_security_2",
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_omnia/characters/ene_security_1/ene_security_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_omnia/characters/ene_security_2/ene_security_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_security_3/ene_security_3",
@@ -2630,8 +2630,7 @@ local omnia_desperado_enforcement = {
 		--INVISBLE WARRIOR
 		--I AM THE WIND OF DESTRUCTION!
 		--hrt
-		--["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_veteran_2/ene_omnia_veteran_2",
-		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
+		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_omnia/characters/ene_omnia_veteran_2/ene_omnia_veteran_2",
 		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
 		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		
@@ -2730,14 +2729,10 @@ local omnia_desperado_enforcement = {
 		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",	
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",
-		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
-		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
-		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
-		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull"
-		--["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_omnia/characters/ene_security_1/ene_security_1",
-		--["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_omnia/characters/ene_security_2/ene_security_2",
-		--["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_security_3/ene_security_3",
-		--["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_omnia/characters/ene_security_4/ene_security_4"
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_omnia/characters/ene_security_1/ene_security_1",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_omnia/characters/ene_security_2/ene_security_2",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_omnia/characters/ene_security_3/ene_security_3",
+		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_omnia/characters/ene_security_4/ene_security_4"
 	}
 	---------------------------------------------------OMNIA END---------------------------------------------------
 	

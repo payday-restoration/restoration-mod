@@ -694,9 +694,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 			},
 			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_c45/ene_ommia_cs_cop_c45"),
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_mp5/ene_ommia_cs_cop_mp5"),	
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_r870/ene_ommia_cs_cop_r870")
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_1/ene_cop_1"),
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_3/ene_cop_3"),	
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_4/ene_cop_4")
 			}
 		},
 		access = access_type_all
@@ -736,8 +736,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
 			},
 			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_c45/ene_ommia_cs_cop_c45"),
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_mp5/ene_ommia_cs_cop_mp5")
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_1/ene_cop_1"),
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_3/ene_cop_3")
 			}
 		},
 		access = access_type_all
@@ -769,7 +769,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 			},
 			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_r870/ene_ommia_cs_cop_r870")
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_4/ene_cop_4")
 			}
 		},
 		access = access_type_all
@@ -801,7 +801,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
 			},
 			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_ommia_cs_cop_raging_bull/ene_ommia_cs_cop_raging_bull")
+				Idstring("units/pd2_mod_omnia/characters/ene_cop_2/ene_cop_2")
 			}
 		},
 		access = access_type_all

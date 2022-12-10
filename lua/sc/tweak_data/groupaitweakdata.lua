@@ -896,7 +896,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1")
 				},
 				fbi = {
-					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
 				},
 				omnia = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_veteran_1/ene_omnia_veteran_1")
@@ -18568,9 +18568,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}			
 		}
 	}
-	
-	
-	--[[
 	--Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = {7, 7},
@@ -18600,8 +18597,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}
 			}
-		}						
-					
+		}								
 		self.enemy_spawn_groups.SKM_Cap_Spring_W9 = {
 			amount = {5, 5},
 			spawn = {
@@ -18630,8 +18626,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},					
 			}
-		}			
-	
+		}
 		self.enemy_spawn_groups.SKM_HVH_Boss_W9 = {
 			amount = {5, 5},
 			spawn = {
@@ -18660,8 +18655,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},					
 			}
-		}			
-	
+		}
 		self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = {
 			amount = {5, 5},
 			spawn = {
@@ -18682,53 +18676,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}					
 			}
-		}		
-	
-	--Captain Summers
-	self.enemy_spawn_groups.SKM_Cap_Summers_W9 = {
-		amount = {4, 4},
-		spawn = {
-			{
-				unit = "Cap_Summers",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
-				rank = 4
-			},
-			{
-				unit = "medic_summers",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.Cap_summers_minion,
-				rank = 1
-			},
-			{
-				unit = "boom_summers",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.Cap_summers_minion,
-				rank = 1
-			},
-			{
-				unit = "taser_summers",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.Cap_summers_minion,
-				rank = 1
-			}
 		}
-	}
-	--]]
-	self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = deep_clone(self.enemy_spawn_groups.Cap_Autumn)
-	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = deep_clone(self.enemy_spawn_groups.Cap_Winters)
 	self.enemy_spawn_groups.SKM_Cap_Summers_W9 = deep_clone(self.enemy_spawn_groups.Cap_Summers)
-	self.enemy_spawn_groups.SKM_Cap_Spring_W9 = deep_clone(self.enemy_spawn_groups.Cap_Spring)
-	self.enemy_spawn_groups.SKM_HVH_Boss_W9 = deep_clone(self.enemy_spawn_groups.HVH_Boss)
-	
 end
 
 function GroupAITweakData:_init_task_data(difficulty_index, difficulty)

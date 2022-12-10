@@ -253,6 +253,7 @@
 	<unit_obj			path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />	
 	
 	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />
+	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>
 	
 	<!--zshield-->
 	<object				path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>

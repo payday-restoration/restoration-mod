@@ -1417,7 +1417,7 @@ function CharacterTweakData:_init_gangster(presets)
 		self.gangster.rescue_hostages = true
 		self.gangster.use_radio = self._default_chatter	
 		self.gangster.no_omnia_heal = false		
-		self.gangster.no_asu = false	
+		self.gangster.no_asu = false
 	else
 		self.gangster.speech_prefix_p1 = "lt"
 		self.gangster.speech_prefix_p2 = nil
@@ -17674,7 +17674,9 @@ function CharacterTweakData:_set_sm_wish()
 	self.taser.shock_damage = 8.0
 	
 	
-	--Titan Shields gets overhealed
+	--Shields get overhealed by LPF/Winters
+	self.shield.overheal_mult = 2
+	self.marshal_shield.overheal_mult = 2
 	self.phalanx_minion.overheal_mult = 2
 	self.phalanx_minion_assault.overheal_mult = 2
 	

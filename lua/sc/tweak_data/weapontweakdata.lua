@@ -12770,6 +12770,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"clip_ammo_increase"
 				}
 			}		
+			self.qrl.supported = true
 			self.qrl.ads_speed = 0.320
 			self.qrl.damage_falloff = {
 				start_dist = 3000,

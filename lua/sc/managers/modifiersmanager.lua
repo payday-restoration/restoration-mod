@@ -17,7 +17,7 @@ if ai_type == b then
 		
 		--Beat Cops
 		["units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02"] = "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02"] = "units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2",
 		["units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03"] = "units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04"] = "units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -76,7 +76,7 @@ elseif ai_type == r then
 		
 		--Beat Cops
 		["units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1"] = "units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_reapers/characters/ene_akan_veteran_1/ene_akan_veteran_1",
 		["units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3",
 	
@@ -135,7 +135,7 @@ elseif ai_type == m then
 		
 		--Beat Cops
 		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",
 		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -192,7 +192,7 @@ elseif ai_type == m then
 		
 		--Beat Cops
 		["units/pd2_mod_omnia/characters/ene_cop_1/ene_cop_1"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
-		["units/pd2_mod_omnia/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		["units/pd2_mod_omnia/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_omnia/characters/ene_omnia_veteran_2/ene_omnia_veteran_2",
 		["units/pd2_mod_omnia/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
 		["units/pd2_mod_omnia/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
 		
@@ -251,7 +251,7 @@ elseif ai_type == z then
 		
 		--Beat Cops
 		["units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1",
-		["units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1",
+		["units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2"] = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1",
 		["units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2",
 		["units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4"] = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3",
 		
@@ -313,12 +313,12 @@ elseif ai_type == ny then
 		
 		--Beat Cops
 		["units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2",
 		["units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 		
 		["units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2",
 		["units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 		
@@ -381,22 +381,22 @@ else
 		
 		--Beat Cops
 		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/payday2/characters/ene_fbi_2/ene_fbi_2",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/payday2/characters/ene_fbi_3/ene_fbi_3",
 		
 		["units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
 		["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
 		
 		["units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
 		["units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
 		
 		["units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
 		["units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
 		

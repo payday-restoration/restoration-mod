@@ -61,7 +61,7 @@
 	<HeistMusic id="resmusic_thetakeoriginal" directory="sounds/thetakeoriginal" volume="0.7"> 
 		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>
-		<event name="control" start_source="stealthintro.ogg" source="control.ogg"/>
+		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
 		<event name="assault" start_source="assaultintro.ogg" source="assault.ogg"/>
 	</HeistMusic>
 	<HeistMusic id="resmusic_razormindbeta" directory="sounds/razormindbeta" volume="0.7"> 

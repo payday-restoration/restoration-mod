@@ -189,8 +189,8 @@
 	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
 	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->	
 
-	<!--White House edit, disabled temporarily due to invalid navsegments-->
-	<!--continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
+	<!--White House edit-->
+	<continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
 	<continent			path="levels/narratives/locke/vit/backdrop/backdrop" force="true" unload="true"/>
 	<continent			path="levels/narratives/locke/vit/collision/collision" force="true" unload="true"/>
 	<continent			path="levels/narratives/locke/vit/lights/lights" force="true" unload="true"/>
@@ -199,13 +199,11 @@
 	<continent			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
 	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
 	<cover_data			path="levels/narratives/locke/vit/cover_data" force="true" unload="true"/>
-	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/-->
+	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/>
 
 	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
 	<mission			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>
-	
-	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
 
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>

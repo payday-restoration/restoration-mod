@@ -321,7 +321,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	
 	--Grenadiers become Medics (Since he isn't always loaded, no one can become him
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"] = {medic}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1"] = {medic}

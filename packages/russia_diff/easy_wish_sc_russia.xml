@@ -292,18 +292,16 @@
 	<unit_obj			path="units/pd2_mod_reapers/characters/ene_acc_tasfucker/ene_acc_tasfucker" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_tasfucker/ene_acc_tasfucker"/>
 
-	<!--Taser AK-->	
-	
 	<!--Russian Grenadier-->
-	<object				path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<model				path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false" load="true"/>
-	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_contour" force="false"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-
+	<object				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	
 	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
 	
 	<!-- greendozer -->

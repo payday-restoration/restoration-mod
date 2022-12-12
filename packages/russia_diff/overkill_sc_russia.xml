@@ -259,8 +259,6 @@
 	<unit_obj			path="units/pd2_mod_reapers/characters/ene_acc_tasfucker/ene_acc_tasfucker" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_tasfucker/ene_acc_tasfucker"/>
 
-	<!--Taser AK-->	
-	
 	<!-- greendozer -->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />

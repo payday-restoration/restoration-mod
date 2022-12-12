@@ -18499,7 +18499,7 @@ function CharacterTweakData:character_map()
 				"ene_drak_medic",
 				"ene_zeal_sniper",
 				"ene_subject_enforcer",
-				"ene_akan_grenadier_1",
+				"ene_grenadier_1",
 				"ene_akan_medic_bob",
 				"ene_akan_medic_zdann",	
 				"ene_vip_2",

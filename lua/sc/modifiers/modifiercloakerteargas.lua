@@ -1,24 +1,41 @@
 ModifierCloakerTearGas.default_value = "spawn_chance"
-ModifierCloakerTearGas.hrts = {
-	Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"),
-	Idstring("units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1"),
+ModifierCloakerTearGas.titanhrt = {
 	Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-	Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
 	Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
+	Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+	Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+	Idstring("units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"),
+	Idstring("units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"),
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+	Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2"),
+	Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 }
-ModifierCloakerTearGas.zombiehrts = {
-	Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
-	Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+ModifierCloakerTearGas.titanocelot = {
+	Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
+	Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
+	Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+	Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")
+}
+ModifierCloakerTearGas.zombietitanhrt = {
+	Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 }
 
 function ModifierCloakerTearGas:modify_value(id, value)
 	if id == "GroupAIStateBesiege:SpawningUnit" then
-		local is_hrt = table.contains(ModifierCloakerTearGas.hrts, value)
-		local is_zombiehrt = table.contains(ModifierCloakerTearGas.zombiehrts, value)
-		if is_hrt and math.random(0,100) < 10 then
+		local is_titanhrt = table.contains(ModifierCloakerTearGas.titanhrt, value)
+		local is_zombietitanhrt = table.contains(ModifierCloakerTearGas.zombietitanhrt, value)
+		local is_titanocelot = table.contains(ModifierCloakerTearGas.titanocelot, value)
+		if is_titanhrt and math.random(0,100) < 10 then
 			return Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-		elseif is_zombiehrt and math.random(0,100) < 10 then
+		elseif is_titanocelot and math.random(0,100) < 10 then
+			return Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")	
+		elseif is_zombietitanshrt and math.random(0,100) < 10 then
 			return Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 		end
 	end

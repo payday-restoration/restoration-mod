@@ -1005,6 +1005,8 @@ local lapd_very_hard = {
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -1066,6 +1068,8 @@ local lapd_overkill = {
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -1128,6 +1132,8 @@ local lapd_mayhem = {
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -1198,6 +1204,8 @@ local lapd_deathwish = {
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -1262,6 +1270,8 @@ local lapd_zeal = {
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_01/ene_male_chas_police_01"] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -2964,7 +2974,7 @@ local russia_overkill = {
 		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"] = "units/pd2_dlc_mad/characters/units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",
 		
 		--ZEALS
@@ -3225,11 +3235,6 @@ local russia_deathwish = {
 		["units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
 		["units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser"] = "units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
 		
-		
-		["units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
-		["units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
-		
-		
 		--ZEALS
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
@@ -3414,6 +3419,7 @@ local zombie_very_hard = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -3484,6 +3490,7 @@ local zombie_overkill = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -3555,6 +3562,7 @@ local zombie_mayhem = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -3625,6 +3633,7 @@ local zombie_deathwish = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 				
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",
@@ -3695,7 +3704,7 @@ local zombie_zeal = {
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
 		["units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2"] = "units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
-		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -3723,8 +3732,7 @@ local zombie_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer", 
 		
 		--Scripted Spawns Only
-		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
-		["units/pd2_dlc_help/characters/ene_zeal_bulldozer_halloween/ene_zeal_bulldozer_halloween"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		["units/pd2_dlc_help/characters/ene_zeal_bulldozer_halloween/ene_zeal_bulldozer_halloween"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	}	
 	
 	--Safehouse Nightmare

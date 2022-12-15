@@ -232,7 +232,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
     self.trai.ai_group_type = nypd
     self.trai.player_style = "railroad"
-
+	
+	--[[
+	self.corp.ai_group_type = nypd
+	self.corp.ai_group_type = murkywater
+	--]]
+	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
 	

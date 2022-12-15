@@ -357,7 +357,8 @@ function restoration:Init()
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
 		"dinner",
-        "trai"
+        "trai",
+		"corp"
 	}	
 	--San Francisco
 	restoration.needle = {

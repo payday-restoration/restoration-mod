@@ -40,6 +40,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"x_b92fs",
 		"x_deagle",
 		"x_g22c",
+		"x_p226",
 		"x_g17",
 		"x_usp",
 		"x_sr2",

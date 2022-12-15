@@ -3885,6 +3885,28 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
+
+	melee_anim = {
+		'revenant_heirloom'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].anim_global_param = "revenant_heirloom"
+			self.melee_weapons[melee_id].anim_attack_vars = {"var3"}
+			self.melee_weapons[melee_id].anim_attack_charged_start = 0.25
+			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var1","var2","var4","var4"}
+			self.melee_weapons[melee_id].anim_attack_charged_left_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var2"}
+			self.melee_weapons[melee_id].expire_t = 0.65
+			self.melee_weapons[melee_id].repeat_expire_t = 0.5
+			self.melee_weapons[melee_id].melee_damage_delay = 0.1
+			self.melee_weapons[melee_id].anim_speed_mult = 0.75
+			self.melee_weapons[melee_id].make_effect = true
+			self.melee_weapons[melee_id].make_decal = nil
+		end
+	end
+
+
 	melee_anim = {
 		'predator_wristblades'
 	}
@@ -4008,7 +4030,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.pkat.anim_speed_mult = 0.75
 	end
 
-	if self.melee_weapons.pclub then --Preadator Pack War Club (Icepick)
+	if self.melee_weapons.pclub then --Predator Pack War Club (Icepick)
 		self.melee_weapons.pclub.anim_attack_vars = {"var1"}
 		self.melee_weapons.pclub.make_decal = true
 		self.melee_weapons.pclub.make_effect = true
@@ -4017,7 +4039,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.pclub.headshot_damage_multiplier = 1.5
 	end
 
-	if self.melee_weapons.psick then --Preadator Pack Alpha Sickle (Morning Star)
+	if self.melee_weapons.psick then --Predator Pack Alpha Sickle (Morning Star)
 		self.melee_weapons.psick.stats = deep_clone(self.melee_weapons.morning.stats)
 		self.melee_weapons.psick.dot_data = nil
 	end
@@ -4034,6 +4056,18 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		}
 		self.melee_weapons.predator_wristblades.stats = deep_clone(self.melee_weapons.barbedwire.stats)
 		self.melee_weapons.predator_wristblades.anim_speed_mult = 0.6
+	end
+
+	if self.melee_weapons.revenant_heirloom then --Revenant Heirloom Scythe
+		self.melee_weapons.revenant_heirloom.info_id = nil
+		self.melee_weapons.revenant_heirloom.stats.min_damage = 6
+		self.melee_weapons.revenant_heirloom.stats.max_damage = 18.001
+		self.melee_weapons.revenant_heirloom.stats.min_damage_effect = 2.4
+		self.melee_weapons.revenant_heirloom.stats.max_damage_effect = 6.0
+		self.melee_weapons.revenant_heirloom.stats.charge_time = 1.9
+		self.melee_weapons.revenant_heirloom.stats.range = 200
+		self.melee_weapons.revenant_heirloom.stats.concealment = 23
+		self.melee_weapons.revenant_heirloom.headshot_damage_multiplier = nil
 	end
 
 	if self.melee_weapons.melee_g36 then --G36 (Nailgun but with the G36's max damage profile + range)

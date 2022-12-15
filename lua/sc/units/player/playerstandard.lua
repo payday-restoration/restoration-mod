@@ -552,7 +552,8 @@ end
 
 function PlayerStandard:_check_action_primary_attack(t, input)
 	local new_action = nil
-	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release
+	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release or self._queue_fire
+
 	action_wanted = action_wanted or self:is_shooting_count()
 	action_wanted = action_wanted or self:_is_charging_weapon()
 
@@ -598,13 +599,12 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 				else
 					if not self._shooting then
 						if weap_base:start_shooting_allowed() then
-							local start = fire_mode == "single" and input.btn_primary_attack_press
+							local start = fire_mode == "single" and self._queue_fire or input.btn_primary_attack_press
 							start = start or fire_mode == "auto" and input.btn_primary_attack_state
 							start = start or fire_mode == "burst" and input.btn_primary_attack_press
 							start = start or fire_mode == "volley" and input.btn_primary_attack_press
 							start = start and not fire_on_release
 							start = start or fire_on_release and input.btn_primary_attack_release
-
 							if start then
 								weap_base:start_shooting()
 								self._camera_unit:base():start_shooting()
@@ -625,6 +625,19 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								end
 							end
 						else
+							if restoration.Options:GetValue("OTHER/SeparateBowADS") then
+								if input.btn_primary_attack_press and fire_mode == "single" and not weap_base:start_shooting_allowed() then
+									local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+									local next_fire_last = weap_base._next_fire_allowed - next_fire
+									local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
+									local next_fire_current_t = weap_base._next_fire_allowed - t
+									if next_fire_current_t < next_fire_delay / 2 then
+										self._queue_fire = true
+									end
+								end
+							else
+								self._queue_fire = nil
+							end
 							self:_check_stop_shooting()
 
 							return false
@@ -663,7 +676,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					local fired = nil
 
 					if fire_mode == "single" then
-						if input.btn_primary_attack_press and start_shooting then
+						if (self._queue_fire or input.btn_primary_attack_press) and start_shooting then
 							fired = weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 						elseif fire_on_release then
 							if input.btn_primary_attack_release then
@@ -704,6 +717,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					new_action = true
 
 					if fired then
+						self._queue_fire = nil
 						managers.rumble:play("weapon_fire")
 
 						local weap_tweak_data = tweak_data.weapon[weap_base:get_name_id()]
@@ -808,6 +822,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 		elseif self:_is_reloading() and self._equipped_unit:base():reload_interuptable() and input.btn_primary_attack_press then
 			self._queue_reload_interupt = true
 		end
+		self._queue_fire = nil
 	end
 
 	if not new_action then
@@ -1265,6 +1280,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 				
+	self._queue_fire = nil
 	self._running_wanted = false
 
 	if (not self._state_data.shake_player_start_running or not self._ext_camera:shaker():is_playing(self._state_data.shake_player_start_running)) and managers.user:get_setting("use_headbob") then
@@ -1785,10 +1801,12 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 
 	else
 		local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars
-		local anim_attack_charged_amount = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 --At half charge, use the charge variant
-		local anim_attack_charged_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_vars
+		local anim_attack_charged_amount = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_start or 0.5 --At half charge, use the charge variant
 		local anim_attack_left_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_left_vars
 		local anim_attack_right_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_right_vars
+		local anim_attack_charged_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_vars
+		local anim_attack_charged_left_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_left_vars
+		local anim_attack_charged_right_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_right_vars
 		local timing_fix = tweak_data.blackmarket.melee_weapons[melee_entry].timing_fix
 		local timing_fix_speed_mult = tweak_data.blackmarket.melee_weapons[melee_entry].timing_fix_speed_mult or 1
 		self._melee_attack_var = anim_attack_vars and math.random(#anim_attack_vars)
@@ -1799,12 +1817,19 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		local melee_item_prefix = ""
 		local melee_item_suffix = ""
 		local anim_attack_param = anim_attack_vars and anim_attack_vars[self._melee_attack_var]
-		
+		local angle = mvector3.angle(self._stick_move, math.X)
+
 		if anim_attack_charged_vars and charge_lerp_value >= anim_attack_charged_amount then
 			self._melee_attack_var = anim_attack_charged_vars and math.random(#anim_attack_charged_vars)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
+			if anim_attack_charged_left_vars and angle and (angle <= 181) and (angle >= 134) then
+				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
+				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
+			elseif anim_attack_charged_right_vars and angle and (angle <= 45) and (angle >= 0) then
+				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
+				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
+			end
 		elseif self._stick_move then
-			local angle = mvector3.angle(self._stick_move, math.X)
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]

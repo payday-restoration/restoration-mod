@@ -5793,7 +5793,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g22c", "resmod_g22c", function(sel
 		supported = true,
 		stats = {
 			value = 6,
-			extra_ammo = 16,
+			extra_ammo = 6,
 			concealment = -2,
 			reload = -3
 		}
@@ -6349,7 +6349,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 	}
 	self.parts.wpn_fps_pis_p226_m_extended.supported = true
 	self.parts.wpn_fps_pis_p226_m_extended.stats = {
-		value = 1,
+		value = 3,
 		extra_ammo = 7,
 		reload = -2,
 		concealment = -1
@@ -6376,6 +6376,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 	self.parts.wpn_fps_pis_p226_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
 	self.parts.wpn_fps_pis_p226_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	
+end)
+
+--Akimbo Signature .40
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_p226", "resmod_x_p226", function(self)
+
+	self.wpn_fps_pis_x_p226.override.wpn_fps_pis_p226_m_extended.supported = true
+	self.wpn_fps_pis_x_p226.override.wpn_fps_pis_p226_m_extended.stats = {
+		value = 3,
+		extra_ammo = 14,
+		reload = -2,
+		concealment = -1
+	}
+
 end)
 
 --Brenner-21
@@ -10039,7 +10052,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hs2000", "resmod_hs2000", function
 	self.parts.wpn_fps_pis_hs2000_m_extended.supported = true
 	self.parts.wpn_fps_pis_hs2000_m_extended.stats = {
 		value = 1,
-		extra_ammo = 12,
+		extra_ammo = 9,
 		reload = -2,
 		concealment = -1
 	}
@@ -10939,7 +10952,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g22c", "resmod_x_g22c", function
 	self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.supported = true
 	self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
-		extra_ammo = 32,
+		extra_ammo = 12,
 		concealment = -2,
 		reload = -3
 	}
@@ -11727,6 +11740,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 	self.parts.wpn_fps_ass_sub2000_o_adapter.adds = { "wpn_fps_ass_sub2000_o_back_down" }
 	for i, part_id in pairs(self.wpn_fps_ass_sub2000.uses_parts) do
 		if part_id ~= "wpn_fps_ass_sub2000_o_back" and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
+			self.parts[part_id].forbids = self.parts[part_id].forbids or {}
 			table.insert(self.parts[part_id].forbids, "wpn_fps_ass_sub2000_o_back")
 		end
 	end
@@ -17222,7 +17236,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 			hailstorm = true,
 			falloff_start_mult = 0.2,
 			falloff_end_mult = 0.4,
-			rof_mult = 4.3,
+			rof_mult = 4.443333,
 			--disable_steelsight_recoil_anim = true
 		},
 		stats = {
@@ -18567,7 +18581,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			hailstorm = true,
 			falloff_start_mult = 0.5,
 			falloff_end_mult = 0.75,
-			rof_mult = 3.50789,
+			rof_mult = 3.3325,
 			--disable_steelsight_recoil_anim = true
 		},
 		stats = {
@@ -24287,6 +24301,60 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_snp_srs99_s7.uses_parts, "wpn_fps_snp_srs99_s7_scope_reticle")
 	end
 
+	if self.parts.wpn_fps_ass_vk78_commando_magazine then
+
+		self.parts.wpn_fps_ass_vk78_commando_grip.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_grip.stats = {
+			value = 1
+		}
+
+		self.parts.wpn_fps_ass_vk78_commando_magazine.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_magazine.stats = {
+			value = 1
+		}
+
+		self.parts.wpn_fps_ass_vk78_commando_stock_ext.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_stock_ext.stats = deep_clone(stocks.unfold_folded_stats)
+		self.parts.wpn_fps_ass_vk78_commando_stock_ext.custom_stats = deep_clone(stocks.unfold_folded_stats)
+
+		self.parts.wpn_fps_ass_vk78_commando_barrel_short.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_ass_vk78_commando_barrel_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+		self.parts.wpn_fps_ass_vk78_commando_barrel_long.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_vk78_commando_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_ass_vk78_commando_magazine_ext.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_magazine_ext.stats = {
+			value = 2,
+			extra_ammo = 10,
+			reload = -2,
+			concealment = -2
+		}
+		self.parts.wpn_fps_ass_vk78_commando_magazine_ext.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+		self.parts.wpn_fps_ass_vk78_commando_magazine_quick.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_magazine_quick.stats = {
+			value = 2,
+			spread = -1,
+			concealment = -1,
+			reload = 3
+		}
+
+		self.parts.wpn_fps_ass_vk78_commando_sight.supported = true
+		self.parts.wpn_fps_ass_vk78_commando_sight.stats = {
+			value = 1,
+			zoom = 10
+		}
+		self.parts.wpn_fps_ass_vk78_commando_sight.stance_mod = {
+			wpn_fps_ass_vk78_commando = {
+				translation = Vector3(0, -22.0, 0.6)
+			}
+		}
+	end
+
 	if self.parts.wpn_fps_ass_ak12_bolt then --Pawcio's KF2 AK-12 (AK-200)
 		self.parts.wpn_fps_ass_ak12_vertgrip.supported = true
 		self.parts.wpn_fps_ass_ak12_vertgrip.stats = { value = 0 }
@@ -25029,7 +25097,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = -1
 		}
 		self.parts.wpn_fps_upg_g19_fire_selector.custom_stats = {
-			rof_mult = 1.05
+			rof_mult = 1.0808823
 		}
 
 		self.wpn_fps_pis_g19.override = self.wpn_fps_pis_g19.override or {}

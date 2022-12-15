@@ -442,3 +442,11 @@ function MenuCallbackHandler:accept_skirmish_weekly_contract(item)
         MenuCallbackHandler:start_job(job_data)
     end
 end
+
+if VakaraAmmoGui then
+	function VakaraAmmoGui:set_zoom(amount)
+		if alive(self._scope_zoom_counter) then 
+			self._scope_zoom_counter:set_text(string.format("%.01fx",amount / 2))
+		end
+	end
+end

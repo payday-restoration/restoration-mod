@@ -12486,6 +12486,18 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			federales = {
 				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			nypd = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			lapd = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			omnia = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
 			}
 		},
 		access = access_type_all
@@ -16127,6 +16139,25 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			})
 		}
 	end
+	
+	self.enemy_spawn_groups.snowman_boss = {
+		amount = {
+			1,
+			1
+		},
+		spawn = {
+			{
+				freq = 1,
+				amount_min = 1,
+				rank = 1,
+				unit = "snowman_boss",
+				tactics = self._tactics.SKULL_tank --:)))))))))))))
+			}
+		},
+		spawn_point_chk_ref = table.list_to_set({
+			"tac_bull_rush"
+		})
+	}
 
 	--Skirmish Spawngroups Below
 	
@@ -19793,6 +19824,12 @@ else
 		0,
 		0
 	}
+	--prevent from spawning snowman outside of the event
+	self.besiege.assault.groups.snowman_boss = {
+		0,
+		0,
+		0
+	}
 	--Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
@@ -19927,6 +19964,12 @@ else
 			}
 		}
 	end
+	--ditto but for reenforce units
+	self.besiege.reenforce.groups.snowman_boss = {
+		0,
+		0,
+		0
+	}
 	self.besiege.recon.interval = {
 		5,
 		5,
@@ -20074,6 +20117,12 @@ else
 		0
 	}
 	self.besiege.recon.groups.Phalanx = {
+		0,
+		0,
+		0
+	}
+	--ditto but for recon units
+	self.besiege.recon.groups.snowman_boss = {
 		0,
 		0,
 		0

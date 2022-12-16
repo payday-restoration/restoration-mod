@@ -710,7 +710,7 @@ function MutatorTweakData:init_cg22(tweak_data)
 			position = Vector3(-3965.54, 3311.53, -5.18584),
 			rotation = Rotation(-180, 0, -0)
 		},
-		roberts = {
+		roberts_v2 = {
 			position = Vector3(-2557.15, -2403.91, -86.3682),
 			rotation = Rotation(292.4, 0, 0)
 		},
@@ -848,7 +848,7 @@ function MutatorTweakData:init_cg22(tweak_data)
 			position = Vector3(-435, -42.8406, -5.18508),
 			rotation = Rotation(-255, 0, 0)
 		},
-		roberts = {
+		roberts_v2 = {
 			position = Vector3(2062.43, -341.785, -76.7702),
 			rotation = Rotation(122.244, 0, -0)
 		},

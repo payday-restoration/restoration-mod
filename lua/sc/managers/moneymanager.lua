@@ -1,5 +1,3 @@
---[
-
 function MoneyManager:get_weapon_price(weapon_id)
 	local pc = self:_get_weapon_pc(weapon_id)
 	if not tweak_data.money_manager.weapon_cost[pc] then
@@ -43,5 +41,3 @@ function MoneyManager:get_weapon_price_modified(weapon_id)
 
 	return math.round(cost * cost_multiplier)
 end
-
---]]

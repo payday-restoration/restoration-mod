@@ -23,6 +23,7 @@ function MutatorsManager:init()
 		MutatorShieldDozers:new(self),
 		MutatorTitandozers:new(self),
 		MutatorPiggyBank:new(self),
+		MutatorCG22:new(self),
 		--Custom mutators below
 		MutatorMinidozers:new(self),
 		MutatorMedicdozers:new(self),

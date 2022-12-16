@@ -12468,6 +12468,29 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		self.unit_categories.TIT_tank.unit_types.omnia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"		
 	end
+	
+	--Snowman Boss
+	self.unit_categories.snowman_boss = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			murkywater = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+			}
+		},
+		access = access_type_all
+	}
+	
 end
 	
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)

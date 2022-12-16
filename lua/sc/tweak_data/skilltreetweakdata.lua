@@ -3670,6 +3670,6 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[20] = sc_nose
 	self.specializations[21] = sc_nip
 	self.specializations[22] = sc_leech
-	self.specializations[23] = sc_blank
-	self.specializations[24] = sc_yes_man
+	self.specializations[24] = sc_blank
+	self.specializations[25] = sc_yes_man
 end

@@ -541,6 +541,10 @@ function MutatorTweakData:init_piggybank(tweak_data)
 			bex = {
 				position = Vector3(-8, 3144, -13),
 				rotation = Rotation(-180, 0, -0)
+			},
+			trai = {
+				position = Vector3(-3042.98, 5799.85, 120.418),
+				rotation = Rotation(-90.0341, 0, -0)
 			}
 		},
 		event_jobs_from_level = {}

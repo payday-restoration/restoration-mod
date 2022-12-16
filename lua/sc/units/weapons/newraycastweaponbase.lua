@@ -1478,8 +1478,10 @@ end
 --Fix for reload objects not appearing
 function NewRaycastWeaponBase:set_reload_objects_visible(visible, anim)
 	local data = tweak_data.weapon.factory[self._factory_id]
+	local ignore_reload_objects_empty = self:weapon_tweak_data().ignore_reload_objects_empty
+	local ignore_reload_objects_not_empty = self:weapon_tweak_data().ignore_reload_objects_not_empty
 	local reload_objects = anim and data.reload_objects and data.reload_objects[anim]
-	if not anim or (anim and (anim == "reload_not_empty" or anim == "reload")) then
+	if not anim or (anim and ( (not ignore_reload_objects_not_empty and anim == "reload_not_empty") or (not ignore_reload_objects_empty and anim == "reload") )) then
 		if reload_objects then
 			self._reload_objects[self._name_id] = reload_objects
 		elseif self._reload_objects then

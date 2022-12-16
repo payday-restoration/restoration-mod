@@ -2436,20 +2436,23 @@ function PlayerStandard:_update_slide_locks()
 				weap_base:tweak_data_anim_stop("magazine_empty")
 				weap_base:tweak_data_anim_stop("reload")
 				weap_base:tweak_data_anim_stop("reload_left")
+				if weap_base:weapon_tweak_data().lock_slide_reload_objects then
+					weap_base:set_reload_objects_visible(true)
+				end
 				if weap_base.AKIMBO then
 					weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
-					weap_base._second_gun:base():tweak_data_anim_offset("reload", 0.033) 
+					weap_base._second_gun:base():tweak_data_anim_offset("reload", 0.1033) 
 					weap_base:tweak_data_anim_offset("reload", 0.033)
 					--weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
 				else
 					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
 						weap_base:tweak_data_anim_offset("magazine_empty", 1)
 					else 
-						weap_base:tweak_data_anim_offset("reload", 0.033)
+						weap_base:tweak_data_anim_offset("reload", weap_base:weapon_tweak_data().lock_slide_offset or 0.033)
 					end
 				end
 			end
-		end
+		end	
 	end
 end
 

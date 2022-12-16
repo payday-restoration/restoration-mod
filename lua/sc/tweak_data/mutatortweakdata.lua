@@ -942,7 +942,7 @@ function MutatorTweakData:init_cg22(tweak_data)
 		branchbank = {
 			position = Vector3(-375, 0, 0)
 		},
-		roberts = {
+		roberts_v2 = {
 			position = Vector3(0, 400, 0)
 		},
 		jewelry_store = {

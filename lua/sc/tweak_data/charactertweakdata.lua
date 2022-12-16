@@ -1679,9 +1679,14 @@ function CharacterTweakData:_init_snowman_boss(presets)
 	self.snowman_boss.weapon_voice = "3"
 	self.snowman_boss.experience.cable_tie = "tie_swat"
 	self.snowman_boss.access = "tank"
-	self.snowman_boss.speech_prefix_p1 = "bb"
-	self.snowman_boss.speech_prefix_p2 = "n"
-	self.snowman_boss.speech_prefix_count = 1
+	self.snowman_boss.speech_prefix_p1 = "snowman"
+	self.snowman_boss.speech_prefix_p2 = nil
+	self.snowman_boss.speech_prefix_count = nil
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+		self.snowman_boss.custom_voicework = "tdozer_ru"
+	else
+		self.snowman_boss.custom_voicework = "tdozer"
+	end
 	self.snowman_boss.priority_shout = "f30"
 	self.snowman_boss.rescue_hostages = false
 	self.snowman_boss.melee_weapon_dmg_multiplier = 2.5
@@ -2255,20 +2260,10 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.custom_voicework = "tdozer_ru"
 	else
 		self.tank_titan.custom_voicework = "tdozer"
-	end			
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
-	else
-		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
-	end		
-	if self:get_ai_group_type() == "russia" then
-		self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
-		self.tank.speech_prefix_p2 = nil
-		self.tank.speech_prefix_count = nil
-	else
-		self.tank_titan.speech_prefix_p1 = "heck"
-		self.tank_titan.speech_prefix_count = nil	
-	end				
+	end
+	self.tank_titan.speech_prefix_p1 = "heck"
+	self.tank_titan.speech_prefix_p2 = nil
+	self.tank_titan.speech_prefix_count = nil				
 	self.tank_titan.yellow_blood = true
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"

@@ -417,6 +417,12 @@ tweak_data.projectiles.dada_com.player_damage = 40
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
 
+--SEEEEEEMTEEEEEEEEEEX
+tweak_data.projectiles.sticky_grenade.damage = 80
+tweak_data.projectiles.sticky_grenade.player_damage = 40
+tweak_data.projectiles.sticky_grenade.curve_pow = 0.5
+tweak_data.projectiles.sticky_grenade.range = 400
+
 --Molliest of tovs--
 tweak_data.projectiles.molotov.damage = 3
 tweak_data.projectiles.molotov.player_damage = 3
@@ -652,7 +658,7 @@ for i, proj_id in ipairs(velocity) do
 end
 
 velocity = {
-	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade',
+	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade','sticky_grenade',
 	'dynamite','molotov'
 }
 --[[

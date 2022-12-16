@@ -3731,7 +3731,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = 0.7
 	end
 	
-	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "scout" }
+	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "scout", "victor" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_snp" }
 		self[ wep_id ].damage_type = "sniper"

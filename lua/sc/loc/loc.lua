@@ -1106,20 +1106,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_health"] = "Reflex sight that displays the health of enemies while aiming at them.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{risk}#1.2x magnification.##",
 		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_scope"] = "Low-powered scope.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{risk}#1.8x magnification.##",
-		["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up ironsights.\n#{risk}#1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up ironsights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{risk}#3x magnification.##",
 		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##",
+		["bm_wp_upg_o_3_rds"] = "Mid-range scope with top-mounted reflex sight.\n#{risk}#1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3_4"] = "Mid-range scope.\n#{risk}#3.4x magnification.##",
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
-		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral reflex sight.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_5"] = "Long-range scope.\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#5x magnification.##",
@@ -1137,7 +1139,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
-		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the laser sight.", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic or to angle your weapon and utilize your laser to aim.\n\n#{risk}#Higly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
 
@@ -2191,6 +2193,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_electric_desc"] = "Damage: 400 \nRadius: 5m \nFuse: 3s \n \nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
 		["bm_grenade_poison_gas_grenade_desc"] = "Damage: 300 over 10s \nRadius: 6m \nDuration (Gas Cloud): 12s \nFuse: 1s after remaining stationary \n- Enemies cannot be poisoned by the same gas cloud more than once\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		["bm_grenade_sticky_grenade"] = "Semtex",
+		["bm_grenade_sticky_grenade_desc"] = "Damage: 800 \nRadius: 4m \nFuse: 3s after sticking to a surface \n\nThrowable explosive compound that will stick to most surfaces, including people!",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",

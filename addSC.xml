@@ -371,6 +371,18 @@
 		<sequence_manager path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>
 		<unit path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>	
 	</add>
+	
+	<!-- Vanilla Snowthrower -->
+	<add from_db="true" path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower" type="unit">
+		<effect load="true" path="effects/payday2/particles/explosions/snowthrower"/>
+		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
+		
+		
+		<object path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
+		<material_config path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
+		<sequence_manager path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
+		<unit path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>	
+	</add>
 
 	<!--NPC Railgun-->
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>

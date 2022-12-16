@@ -1692,7 +1692,14 @@ function CharacterTweakData:_init_snowman_boss(presets)
 	self.snowman_boss.melee_weapon_dmg_multiplier = 2.5
 	self.snowman_boss.steal_loot = nil
 	self.snowman_boss.calls_in = nil
-	self.snowman_boss.chatter = presets.enemy_chatter.no_chatter
+	self.snowman_boss.chatter = {
+		reload = true, --this is just here for tdozers
+		aggressive = true,
+		retreat = true,
+		go_go = true,
+		contact = true,
+		entrance = true
+	}
 	self.snowman_boss.use_radio = nil
 	self.snowman_boss.use_animation_on_fire_damage = false
 	self.snowman_boss.flammable = false

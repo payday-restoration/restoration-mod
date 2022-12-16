@@ -3523,7 +3523,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
@@ -3556,11 +3556,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1911.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 
-	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','contraband','fal','scar','m249','par','m60','aa12','sko12','x_sko12'}
+	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','contraband','fal','scar','m249','par','m60','aa12','sko12','x_sko12','victor'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_rifle_slide_lock"
 	end
+	self.victor.lock_slide_reload_objects = true
 	self.aa12.open_bolt_offset = 5
 
 	lock_em_up = {'hunter','frankish','arblast'}
@@ -9113,6 +9114,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scout.reload_speed_multiplier = 1.25
 				self.scout.timers.reload_exit_empty = 0.5
 				self.scout.timers.reload_exit_not_empty = 0.95
+
+			--North Star
+				self.victor.categories = {
+					"snp",
+					"semi_snp"
+				}
+				self.victor.upgrade_blocks = nil
+				self.victor.has_description = true
+				self.victor.CLIP_AMMO_MAX = 20
+				self.victor.AMMO_MAX = 30
+				self.victor.FIRE_MODE = "single"
+				self.victor.fire_mode_data = {}
+				self.victor.fire_mode_data.fire_rate = 0.13333333
+				self.victor.sms = 0.9
+				self.victor.kick = self.stat_info.kick_tables.vertical_kick
+				self.victor.can_shoot_through_enemy = true
+				self.victor.can_shoot_through_shield = true
+				self.victor.can_shoot_through_wall = true
+				self.victor.supported = true
+				self.victor.ads_speed = 0.460
+				self.victor.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 6300,
+					min_mult = 0.1666667
+				}
+				self.victor.stats = {
+					damage = 60,
+					spread = 86,
+					recoil = 77,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 19,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.victor.stats_modifiers = nil
+				self.victor.armor_piercing_chance = 1
+				self.victor.ignore_reload_objects_not_empty = true
+				self.victor.timers.reload_empty = 2.5
+				self.victor.timers.reload_exit_empty = 1.1
+				self.victor.timers.reload_not_empty = 2.5
+				self.victor.timers.reload_exit_not_empty = 0.9
+				self.victor.panic_suppression_chance = 0.05
 
 	--[[     HEAVY SNIPERS     ]]
 

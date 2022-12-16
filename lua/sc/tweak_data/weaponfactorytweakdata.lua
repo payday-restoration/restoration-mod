@@ -1637,13 +1637,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		40
 	}
 	self.parts.wpn_fps_upg_o_specter.has_description = true
-	self.parts.wpn_fps_upg_o_specter.desc_id = "bm_wp_upg_o_4"
+	self.parts.wpn_fps_upg_o_specter.desc_id = "bm_wp_upg_o_4_irons"
 	self.parts.wpn_fps_upg_o_specter.supported = true
 	self.parts.wpn_fps_upg_o_specter.stats = {
 		value = 8,
 		zoom = 30
 	}
-	self.parts.wpn_fps_upg_o_specter.adds = nil --{"wpn_fps_upg_o_specter_piggyback"}
 	self.parts.wpn_fps_upg_o_specter.perks = {"scope"}
 	--STANCE MODS
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_amcar = {
@@ -1999,7 +1998,44 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_musket = {
 				translation = Vector3(0, -15, -4.34)
 			}
+	--Milspec Scope Back-up Irons
+	self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0, -10, -3.15)
+		end
+	end
+	self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod.wpn_fps_snp_scout = {
+		translation = self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout.translation + Vector3(0, 8, -2.2) --WHY ARE OPTICS ON THE SCOUT SO FUCKING TINY??????
+	}
 
+
+	--CASSIAN Elite Combo Sight
+	self.parts.wpn_fps_upg_o_hamr.pcs = {
+		10, 
+		20,
+		30, 
+		40	
+	}
+	self.parts.wpn_fps_upg_o_hamr.has_description = true
+	self.parts.wpn_fps_upg_o_hamr.desc_id = "bm_wp_upg_o_4_rds"		
+	self.parts.wpn_fps_upg_o_hamr.supported = true		
+	self.parts.wpn_fps_upg_o_hamr.stats = {
+		value = 10,
+		zoom = 30
+	}
+	self.parts.wpn_fps_upg_o_hamr.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_hamr.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+
+	self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0, -14, -3.3)
+		end
+	end
+	self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod.wpn_fps_snp_scout = {
+		translation = self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout.translation + Vector3(0, -10, -2.4)
+	}
 
 	--Military Red Dot
 	self.parts.wpn_fps_upg_o_aimpoint.pcs = {
@@ -2720,16 +2756,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Combat Sight
 	self.parts.wpn_fps_upg_o_cs.pcs = {}
 	self.parts.wpn_fps_upg_o_cs.has_description = true
-	self.parts.wpn_fps_upg_o_cs.desc_id = "bm_wp_upg_o_1_8"		
+	self.parts.wpn_fps_upg_o_cs.desc_id = "bm_wp_upg_o_1_8_irons"		
 	self.parts.wpn_fps_upg_o_cs.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_cs.supported = true
 	self.parts.wpn_fps_upg_o_cs.stats = {
 		value = 3,
 		zoom = 8
 	}
-	self.parts.wpn_fps_upg_o_cs.adds = nil --{"wpn_fps_upg_o_cs_piggyback"}
 	self.parts.wpn_fps_upg_o_cs.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_aimpoint.stance_mod)
+	--Combat Sight Back-up Irons (lmao)
+	self.parts.wpn_fps_upg_o_cs_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_cs.stance_mod)
+	
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_cs_piggyback.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0, -10, -3.3)
+		end
+	end
 
 end)
 
@@ -21589,20 +21632,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	if self.parts.wpn_fps_upg_o_pkas then --Pawcio's PKA-S
 		self.parts.wpn_fps_upg_o_pkas.supported = true
+		self.parts.wpn_fps_upg_o_pkas.desc_id = "bm_wp_upg_o_1_5"		
 		self.parts.wpn_fps_upg_o_pkas.stats = {
-			concealment = -1,
-			spread_moving = -1,
 			zoom = 1,
-			value = 3
+			value = 5
 		}
 	end
 
 	if self.parts.wpn_fps_upg_o_m145 then --Pawcio's ELCAN C79
 		self.parts.wpn_fps_upg_o_m145.supported = true
+		self.parts.wpn_fps_upg_o_m145.desc_id = "bm_wp_upg_o_3_4"
 		self.parts.wpn_fps_upg_o_m145.stats = {
-			concealment = -5,
-			spread_moving = -5,
-			zoom = 5,
+			zoom = 24,
 			value = 8
 		}
 	end

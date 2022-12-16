@@ -1111,12 +1111,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_scope"] = "Low-powered scope.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{risk}#1.8x magnification.##",
+		["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up ironsights.\n#{risk}#1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{risk}#3x magnification.##",
 		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##",
+		["bm_wp_upg_o_3_4"] = "Mid-range scope.\n#{risk}#3.4x magnification.##",
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
+		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral reflex sight.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_5"] = "Long-range scope.\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_6"] = "Long-range scope.\n#{risk}#6x magnification.##",
@@ -1130,12 +1134,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
 		["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
 
-		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled iron sights.",
-		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
-		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
+		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
+		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
 		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## to switch between your main optic and the laser sight.", --VMP Point Shoot Laser
 
-		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
+		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{skill_color}#3x magnification.##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#120## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",

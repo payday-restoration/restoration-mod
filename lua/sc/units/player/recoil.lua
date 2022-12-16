@@ -358,7 +358,7 @@ local bezier_values = {
 }
 local bezier_values2 = {
 	0,
-	0.4,
+	0,
 	1,
 	1
 }
@@ -371,6 +371,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 		local player_state = managers.player:current_state()
 		local equipped_weapon = self._parent_unit:inventory():equipped_unit()
 		local is_akimbo = equipped_weapon and equipped_weapon:base() and equipped_weapon:base().AKIMBO
+		local in_full_steelsight = self._parent_movement_ext._current_state._state_data.in_full_steelsight
 
 		if trans_data.duration < elapsed_t then
 			mvector3.set(self._shoulder_stance.translation, trans_data.end_translation)
@@ -388,6 +389,12 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			local progress = elapsed_t / trans_data.duration
 			local progress_smooth = math.bezier(bezier_values, progress)
 			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
+			if equipped_weapon and equipped_weapon:base() then
+				local in_second_sight = equipped_weapon:base():is_second_sight_on()
+				if in_second_sight and in_second_sight == true then
+					self._shoulder_stance.was_in_second_sight = true
+				end
+			end
 			local absolute_progress = nil
 
 			if in_steelsight or self._shoulder_stance.was_in_steelsight then
@@ -401,37 +408,23 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			mvector3.lerp(self._shoulder_stance.translation, trans_data.start_translation, trans_data.end_translation, progress_smooth)
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
-			
-			if equipped_weapon and equipped_weapon:base() then
-				local in_second_sight = equipped_weapon:base():is_second_sight_on()
-			end
-			
-			if in_steelsight and trans_data.steelsight_swap_progress_trigger <= absolute_progress then
-				self:_set_steelsight_swap_state(true)
-				self._shoulder_stance.was_in_second_sight = true
-			elseif (in_steelsight and in_second_sight ~= true) or (not in_steelsight and self._steelsight_swap_state and absolute_progress < trans_data.steelsight_swap_progress_trigger) then
-				self:_set_steelsight_swap_state(false)
-			end
 
 			if restoration and restoration.Options:GetValue("OTHER/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/ADSTransitionStyle") ~= 1 and not is_akimbo then
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
 					local prog = (1 - absolute_progress) * (dt * 100)
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then
+						self._shoulder_stance.was_in_steelsight = nil
+						self._shoulder_stance.was_in_second_sight = nil
 						prog = absolute_progress * (dt * 100)
 						trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
 						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
-						self._shoulder_stance.was_in_steelsight = nil
-						self._shoulder_stance.was_in_second_sight = nil
-					elseif in_steelsight then
-						if self._shoulder_stance.was_in_second_sight then
-						else
-							if restoration.Options:GetValue("OTHER/ADSTransitionStyle") == 2 then
-								trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
-								trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
-							elseif restoration.Options:GetValue("OTHER/ADSTransitionStyle") == 3 then
-								trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
-								trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
-							end
+					elseif in_steelsight and in_full_steelsight ~= true then
+						if restoration.Options:GetValue("OTHER/ADSTransitionStyle") == 2 then
+							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
+							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
+						elseif restoration.Options:GetValue("OTHER/ADSTransitionStyle") == 3 then
+							trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
+							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
 						end
 					end
 				end

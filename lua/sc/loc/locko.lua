@@ -142,6 +142,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDescID"] = "상호 작용 키가 토글 역할을 하는지 여부를 활성화하거나 비활성화합니다.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "배치물 취소 상호 작용",
 		["RestorationModSevenHoldDeployCancelDescID"] = "배치물 키가 토글 상호 작용을 취소하는 데 사용되는지 여부를 활성화하거나 비활성화합니다. 효과를 보려면 토클 상호작용을 활성화해야 합니다.",
+		["RestorationModQueuedShootingTitleID"] = "사격 대기",
+		["RestorationModQueuedShootingDescID"] = "오버샘플링을 지원하기 위해 반자동 무기에 대한 사격 입력 대기열을 활성화/비활성화합니다.",		
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화/비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",		
 		["RestorationModAimDeploysBipodTitleID"] = "정조준 상태에서 양각대 펼치기",
@@ -1131,12 +1133,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_5_pris"] = "프리즘형 조준기.\n#{risk}#1.5x 배율.##",
 		["bm_wp_upg_o_1_5_scope"] = "저출력 조준경.\n#{risk}#1.5x 배율.##",
 		["bm_wp_upg_o_1_8"] = "레드 닷 조준기.\n#{risk}#1.8x 배율.##",
+		["bm_wp_upg_o_1_8_irons"] = "보조 기계식 조준기가 있는 레드 닷 조준기.\n#{risk}#1.8x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_3"] = "중거리 조준경.\n#{risk}#3x 배율.##",
 		["bm_wp_upg_o_3_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#3x 배율.##",
+		["bm_wp_upg_o_3_4"] = "중거리 조준경.\n#{risk}#3.4x 배율.##",
 		["bm_wp_upg_o_3_5"] = "중거리 조준경.\n#{risk}#3.5x 배율.##",
 		["bm_wp_upg_o_4"] = "중거리 조준경.\n#{risk}#4x 배율.##",
 		["bm_wp_upg_o_4_cod"] = "중거리 조준경.\n#{skill_color}#정지 전원##이 필요로 할때 전원은 어디에 있습니까?\n#{risk}#4x 배율.##",	
 		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#4x 배율.##",
+		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기이 있는 중거리 조준경.\n#{risk}#4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
+		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{risk}#6x 배율.##",
@@ -1147,12 +1153,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_shortdot_dmc"] = "숏닷 조준경",
 		["bm_wp_upg_o_5_default"] = "원거리 조준경.\n기본 저격소총의 조준경 십자선을 수정할 수 있도록 부착합니다.\n#{skill_color}#5x 배율.##",
 
-		["bm_wp_upg_o_angled_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 기계식 조준기 사이를 전환합니다.",
-		["bm_wp_upg_o_angled_1_1_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 반사 조준기 사이를 전환합니다.\n#{skill_color}#1.1x 배율.##",
-		["bm_wp_upg_o_angled_1_2_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 레드 닷 조준기 사이를 전환합니다.\n#{skill_color}#1.2x 배율.##",
-		["bm_wp_upg_o_angled_laser_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 레이저 조준기 사이를 전환합니다.", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 기계식 조준기 사이를 전환합니다.",
+		["bm_wp_upg_o_angled_1_1_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 반사 조준기 사이를 전환합니다.\n#{skill_color}#1.1x 배율.##",
+		["bm_wp_upg_o_angled_1_2_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 레드 닷 조준기 사이를 전환합니다.\n#{skill_color}#1.2x 배율.##",
+		["bm_wp_upg_o_angled_laser_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 레이저 조준기 사이를 전환합니다.", --VMP Point Shoot Laser
 
-		["bm_wp_upg_o_magnifier_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 확대경을 위/아래로 올리거나 내립니다.\n#{skill_color}#3x 배율.##",
+		["bm_wp_upg_o_magnifier_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 확대경을 위/아래로 올리거나 내립니다.\n#{skill_color}#3x 배율.##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이고 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 #{skill_color}#120##의 피해를 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
@@ -1313,7 +1319,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경 싸기 시합의 절대적인 마지막 말입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 말입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n발사 모드를 전환하면 #{skill_color}#증가된 발사 속도로## #{skill_color}#6발##을 전부 발사합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1739,6 +1745,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_slot_lever_info"] = "잭팟 나와줘!\n\n5% 확률로 10배의 대미지와 넉다운을 줍니다.",
 		["bm_melee_specialist_info"] = "두 배의 칼날, 두 배의 재미.\n\n근접 공격은 뽑힌 동안 첫 번째 공격 이후 매 공격마다 두 배의 피해를 줍니다.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 50% 감소합니다.",
+		
+		--CUSTOM MELEE WEAPONS
+		["bm_melee_revenant_heirloom"] = "데드맨의 곡선",		
 
 		["bm_menu_weapon_bayonet_header"] = "주무기 통계 기준:",
 		["bm_menu_weapon_bayonet_damage"] = "\n추가 대미지: ##+",
@@ -2476,7 +2485,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 피해량 대신 높은 연사력을 가지고 있으며 인상적인 드럼 탄창을 자랑합니다.",
 		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 강력한 제압 사격을 가하고 탄통이 비워질 때까지 사격합니다.",
 		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체하며, 그린 도저와 블랙 도저를 부정하게 조합하여 높은 연사력과 높은 피해량을 입힙니다.",
-		["loading_gameplay_res_11"] = "목표 우선순위가 중요합니다. 모든 유형의 불도저는 경무장 SWAT보다 더 주의할 가치가 있습니다.",
+		["loading_gameplay_res_11"] = "목표 우선순위가 중요합니다. 모든 타입의 불도저는 경무장 SWAT보다 더 주의할 가치가 있습니다.",
 		["loading_gameplay_res_12"] = "데스 센텐스에서 불도저는 바이저가 깨지면 버서커 분노 상태에 돌입하여 공격력을 10%만큼 증가시킵니다.",
 		["loading_gameplay_res_13"] = "클로커는 점프 킥을 하려고 할 때는 상징적인 소리를 냅니다.",
 		["loading_gameplay_res_14"] = "클로커의 점프 킥은 당신을 다운 대신에 수갑을 채웁니다.",
@@ -2559,7 +2568,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_3"] = "레스토레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 대미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
 		["loading_equip_skills_res_4"] = "대미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은페도가 낮습니다.",	
 		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 수리합니다.",	
-		["loading_equip_skills_res_6"] = "센트리 철갑탄을 잠금 해제된 경우 장비 메뉴에서 기본 탄약 유형을 선택할 수 있습니다.",	
+		["loading_equip_skills_res_6"] = "센트리 철갑탄을 잠금 해제된 경우 장비 메뉴에서 기본 탄약 타입을 선택할 수 있습니다.",	
 		["loading_equip_skills_res_7"] = "특성 덱은 상당한 대미지 보너스를 제공하며 그 중 다수는 희귀하고 귀중한 치유 능력을 제공합니다.",	
 		["loading_equip_skills_res_8"] = "크루 치프, 아머러, 머슬, 크룩, 겜블러 및 바이커는 기본적이지만 일관된 특성 덱입니다.",	
 		["loading_equip_skills_res_9"] = "히트맨은 낮은 장기 생존성과 일관성 특성 덱으로 리워크 되었지만 그 대가로 '임시 HP'를 엄청나게 모아 어려운 지점을 통과할 수 있습니다.",	

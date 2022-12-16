@@ -366,10 +366,12 @@ function MutatorTweakData:init_piggybank(tweak_data)
 				position = Vector3(-931, -24726, 5759),
 				rotation = Rotation(90, -0, -0)
 			},
+			--[[
 			flat = {
 				position = Vector3(-128, 1097, 1892),
 				rotation = Rotation(90, 16, -0)
 			},
+			--]]
 			dinner = {
 				position = Vector3(-17385, 8228, -69),
 				rotation = Rotation(120, 0, -0)

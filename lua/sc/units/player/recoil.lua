@@ -408,16 +408,8 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			mvector3.lerp(self._shoulder_stance.translation, trans_data.start_translation, trans_data.end_translation, progress_smooth)
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
-			
-			
-			if in_steelsight and trans_data.steelsight_swap_progress_trigger <= absolute_progress then
-				--self:_set_steelsight_swap_state(true)
-			elseif (in_steelsight and in_second_sight ~= true) or (not in_steelsight and self._steelsight_swap_state and absolute_progress < trans_data.steelsight_swap_progress_trigger) then
-				--self:_set_steelsight_swap_state(false)
-			end
 
 			if restoration and restoration.Options:GetValue("OTHER/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/ADSTransitionStyle") ~= 1 and not is_akimbo then
-				log("in_full_steelsight " .. tostring( in_full_steelsight ))
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
 					local prog = (1 - absolute_progress) * (dt * 100)
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then

@@ -1702,8 +1702,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--TTI(TTY)
 		["bm_w_tti"] = "Tecci Tactical .308",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		--Icky Vicky
+		["bm_w_victor"] = "SA North Star",
+		--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		--Scunt
 		["bm_w_scout"] = "Pronghorn",
+		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300",

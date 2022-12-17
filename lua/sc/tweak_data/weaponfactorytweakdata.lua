@@ -25806,6 +25806,60 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_svd_upg_s_draco.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	end
 
+	if self.wpn_fps_shot_omni then 	--Tangerine's Lunatic .410	
+	--Dummy Sight
+			self.parts.wpn_fps_shot_omni_os_frontsight_dummy.forbids = {
+					"wpn_fps_ass_m4_os_frontsight",
+					"wpn_fps_ass_m16_os_frontsight"
+				}
+	--Contraband Mag	
+			self.parts.wpn_fps_shot_omni_m_contraband.supported = true		
+			self.parts.wpn_fps_shot_omni_m_contraband.stats = {
+					value = 0,
+					recoil = -2,
+					spread = 1
+				}
+	--Tactical Foregrip Addon				
+			self.parts.wpn_fps_m16_fg_covers.supported = true														
+			self.parts.wpn_fps_m16_fg_covers.stats = {
+					value = 0,
+					spread = 1,
+					concealment = -1
+				}		
+	--Retro Handguard				
+			self.parts.wpn_fps_shot_omni_fg_amcar.supported = true			
+			self.parts.wpn_fps_shot_omni_fg_amcar.stats = {
+					value = 0,
+					recoil = -2,
+					concealment = 1
+				}
+	--Mall Ninja Handguard		
+			self.parts.wpn_fps_shot_omni_fg_tti.supported = true
+			self.parts.wpn_fps_shot_omni_fg_tti.stats = {
+					value = 0,
+					spread = 2,
+					recoil = 2,
+					concealment = -3
+				}	
+	--Enforcer Barrel		
+			self.parts.wpn_fps_shot_omni_b_heavy.supported = true							
+			self.parts.wpn_fps_shot_omni_b_heavy.stats = {
+					value = 0,
+					spread = 2,
+					recoil = 6,
+					concealment = -5
+				}
+			self.parts.wpn_fps_shot_omni_b_heavy.custom_stats = {
+					ads_speed_mult = 1.15			
+				}
+				
+			table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_m4_uupg_s_fold")
+			table.insert(self.wpn_fps_shot_omni_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")	
+	
+			table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m16_s_fixed")
+			table.insert(self.wpn_fps_shot_omni_npc.uses_parts, "wpn_fps_ass_m16_s_fixed")
+		end		
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

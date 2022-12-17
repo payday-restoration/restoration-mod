@@ -15186,6 +15186,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rsass.timers.reload_exit_empty = 1
 		self.rsass.timers.reload_exit_not_empty = 0.95
 	end
+	
+	if self.omni then --Lunatic .410 Shotgun
+		self.omni.recategorize = { "light_shot" }	
+		self.omni.damage_type = "shotgun"
+		self.omni.use_data.selection_index = 1		
+		self.omni.damage_type_single_ray = "sniper"
+		self.omni.rays = 9
+		self.omni.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.omni.AMMO_MAX = 30
+		self.omni.tactical_reload = 1		
+		self.omni.CLIP_AMMO_MAX = 10
+		self.omni.fire_mode_data.fire_rate = 0.1
+		self.omni.FIRE_MODE = "auto"		
+		self.omni.CAN_TOGGLE_FIREMODE = true
+		self.omni.BURST_FIRE = false
+		self.omni.kick = self.stat_info.kick_tables.vertical_kick
+		self.omni.supported = true
+		self.omni.ads_speed = 0.400
+		self.omni.damage_falloff = {
+			start_dist = 300,
+			end_dist = 2400,
+			min_mult = 0.5
+		}
+		self.omni.stats = {
+			damage = 30,
+			spread = 32,
+			recoil = 65,
+			zoom = 1,
+			concealment = 23,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.omni.panic_suppression_chance = 0.05
+		self.omni.stats_modifiers = {damage = 1}
+		self.omni.sounds.stop_fire = "contraband_fire_single"
+		self.omni.timers = deep_clone(self.new_m4.timers)
+	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality) then it's a no-go outright

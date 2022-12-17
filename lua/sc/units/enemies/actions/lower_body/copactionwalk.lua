@@ -90,6 +90,7 @@ function CopActionWalk:init(action_desc, common_data)
 	CopActionAct._create_blocks_table(self, action_desc.blocks)
 
 	self._persistent = action_desc.persistent
+	self._interrupted = action_desc.interrupted
 	self._haste = action_desc.variant
 	self._start_t = TimerManager:game():time()
 	self._no_walk = action_desc.no_walk
@@ -1033,6 +1034,14 @@ function CopActionWalk:_get_current_max_walk_speed(move_dir)
 			speed = speed * tweak_data.network.stealth_speed_boost
 		end
 	end
+	
+	if managers.mutators:is_mutator_active(MutatorCG22) then
+		local cg22 = managers.mutators:get_mutator(MutatorCG22)
+
+		if cg22:can_enemy_be_affected_by_buff("yellow", self._unit) then
+			speed = speed * cg22:get_enemy_yellow_multiplier()
+		end
+	end	
 
 	return speed
 end

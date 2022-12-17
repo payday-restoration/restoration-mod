@@ -1693,6 +1693,35 @@ local crew_wep_preset = {
 		self.flamethrower_npc.FIRE_MODE = "auto"
 	end
 	
+	function WeaponTweakData:_init_data_snowthrower_npc()
+		self.snowthrower_npc.categories = {
+			"flamethrower"
+		}
+		self.snowthrower_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.snowthrower_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.snowthrower_npc.shell_ejection = "effects/payday2/particles/weapons/heat/overheat"
+		self.snowthrower_npc.single_flame_effect_duration = 1
+		self.snowthrower_npc.flame_effect = "effects/payday2/particles/explosions/snowthrower"
+		self.snowthrower_npc.bullet_class = "FlameBulletBase"
+		self.snowthrower_npc.flame_max_range = 1400
+		self.snowthrower_npc.extra_flames_offset = 0.05
+		self.snowthrower_npc.sounds.prefix = "snowthrower_npc"
+		self.snowthrower_npc.sounds.fire = "snowthrower_npc_fire"
+		self.snowthrower_npc.sounds.stop_fire = "snowthrower_npc_fire_stop"
+		self.snowthrower_npc.use_data.selection_index = 2
+		self.snowthrower_npc.DAMAGE = 2.4
+		self.snowthrower_npc.CLIP_AMMO_MAX = 60
+		self.snowthrower_npc.NR_CLIPS_MAX = 4
+		self.snowthrower_npc.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.snowthrower_npc.auto.fire_rate = 0.1
+		self.snowthrower_npc.alert_size = 2500
+		self.snowthrower_npc.suppression = 3.1
+		self.snowthrower_npc.FIRE_MODE = "auto"
+	end	
+	
 	--Lotta crew guns in here now--
 	--PISTOLS
 		function WeaponTweakData:_init_data_raging_bull_crew()

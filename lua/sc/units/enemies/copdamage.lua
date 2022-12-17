@@ -278,6 +278,10 @@ function CopDamage:damage_fire(attack_data)
 		return
 	end
 	
+	if self:is_friendly_fire(attack_data.attacker_unit) then
+		return "friendly_fire"
+	end	
+	
 	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
 		return
 	end

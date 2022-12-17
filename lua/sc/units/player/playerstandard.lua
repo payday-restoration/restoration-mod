@@ -1269,6 +1269,12 @@ end
 
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
+	if self._slowdown_run_prevent then
+		self._running_wanted = false
+
+		return
+	end
+
 	--Consolidated vanilla checks.
 	if not self._move_dir or self:on_ladder() or self:_on_zipline() or not self:_can_run_directional() or managers.player:get_player_rule("no_run") or not self._unit:movement():is_above_stamina_threshold() then
 		self._running_wanted = true
@@ -2934,6 +2940,7 @@ function PlayerStandard:_get_swap_speed_multiplier()
 	end
 
 	multiplier = managers.modifiers:modify_value("PlayerStandard:GetSwapSpeedMultiplier", multiplier)
+	multiplier = multiplier * managers.player:upgrade_value("weapon", "mrwi_swap_speed_multiplier", 1)
 	return multiplier
 end
 

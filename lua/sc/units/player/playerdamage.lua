@@ -1083,6 +1083,18 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 			self._unit:network():send("copr_teammate_heal", teammate_heal_level)
 		end
 	end
+	
+	if self._has_mrwi_health_invulnerable then
+		local health_threshold = self._mrwi_health_invulnerable_threshold or 0.5
+		local is_cooling_down = managers.player:get_temporary_property("mrwi_health_invulnerable", false)
+
+		if self:health_ratio() <= health_threshold and not is_cooling_down then
+			local cooldown_time = self._mrwi_health_invulnerable_cooldown or 10
+
+			managers.player:activate_temporary_upgrade("temporary", "mrwi_health_invulnerable")
+			managers.player:activate_temporary_property("mrwi_health_invulnerable", cooldown_time, true)
+		end
+	end	
 		
 	local trigger_skills = table.contains({
 		"bullet",
@@ -1118,6 +1130,10 @@ function PlayerDamage:_calc_health_damage(attack_data)
 			self:apply_slowdown(weap_tweak_data.slowdown_data)
 		end
 	end
+	
+	if managers.player:has_activate_temporary_upgrade("temporary", "mrwi_health_invulnerable") then
+		return 0
+	end	
 
 	local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
 	if self:has_temp_health() then --Hitman deflection bonus.

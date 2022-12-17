@@ -2198,7 +2198,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
 		["bm_grenade_poison_gas_grenade_desc"] = "Damage: 300 over 10s \nRadius: 6m \nDuration (Gas Cloud): 12s \nFuse: 1s after remaining stationary \n- Enemies cannot be poisoned by the same gas cloud more than once\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		["bm_grenade_sticky_grenade"] = "Semtex",
-		["bm_grenade_sticky_grenade_desc"] = "Damage: 800 \nRadius: 4m \nFuse: 3s after sticking to a surface \n\nThrowable explosive compound that will stick to most surfaces, including people!",
+		["bm_grenade_sticky_grenade_desc"] = "Damage: 800 \nRadius: 4m \nFuse: 3s, fuse resets upon sticking \n\nThrowable explosive compound that will stick to most surfaces, including people!",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",

@@ -676,6 +676,7 @@ for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 3.25
 end
 tweak_data.projectiles.dynamite.launch_speed = 150
+tweak_data.projectiles.sticky_grenade.launch_speed = 225
 tweak_data.projectiles.molotov.launch_speed = 200
 velocity = {
 	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',

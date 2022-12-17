@@ -422,6 +422,29 @@ tweak_data.projectiles.sticky_grenade.damage = 80
 tweak_data.projectiles.sticky_grenade.player_damage = 40
 tweak_data.projectiles.sticky_grenade.curve_pow = 0.5
 tweak_data.projectiles.sticky_grenade.range = 400
+tweak_data.projectiles.sticky_grenade.in_air_timer = 3
+tweak_data.projectiles.sticky_grenade.detonate_timer = 3
+tweak_data.projectiles.sticky_grenade.warning_data = {
+	play_when_attached = true,
+	beep_speeds = {
+		0.1,
+		0.025
+	},
+	sound_data = {
+		event_name = "grenade_sticky_beep",
+		event_stop_name = "grenade_sticky_beep_stop"
+	},
+	light_data = {
+		type_str = "omni|specular",
+		range = 1250,
+		beep_mul = 0.2,
+		falloff_exp = 0.5,
+		beep_fade_speed = 3.5,
+		specular_mul = 0.05,
+		link_to_unit = true,
+		color = Vector3(255, 0, 0)
+	}
+}
 
 --Molliest of tovs--
 tweak_data.projectiles.molotov.damage = 3

@@ -9151,6 +9151,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.victor.upgrade_blocks = nil
 				self.victor.has_description = true
+				self.victor.desc_id = "bm_ap_weapon_sc_desc"
 				self.victor.CLIP_AMMO_MAX = 20
 				self.victor.AMMO_MAX = 30
 				self.victor.FIRE_MODE = "single"

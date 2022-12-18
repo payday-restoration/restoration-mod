@@ -540,7 +540,9 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.concussion.max_amount = 3
 	self.projectiles.wpn_gre_electric.max_amount = 3
 	self.projectiles.poison_gas_grenade.max_amount = 3
-	
+
+	self.projectiles.sticky_grenade.throw_shout = nil
+
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
 	

@@ -1654,14 +1654,6 @@ function CharacterTweakData:_init_snowman_boss(presets)
 	else
 		self.snowman_boss.custom_voicework = "tdozer"
 	end
-	self.snowman_boss.chatter = {
-		reload = true, --this is just here for tdozers
-		aggressive = true,
-		retreat = true,
-		go_go = true,
-		contact = true,
-		entrance = true
-	}
 	self.snowman_boss.aoe_damage_data = {
 		verification_delay = 0.3,
 		activation_range = 300,

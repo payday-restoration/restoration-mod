@@ -73,6 +73,7 @@ function restoration:Init()
 		constantine_policestation_lvl = restoration.captain_types.winter, --Constantine Scores (precinct raid)
 		battlearena = restoration.captain_types.winter, --Five-G
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
+		constantine_penthouse_lvl = restoration.captain_types.winter, --Penthouse Crasher (Constantine Scores)
 
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
@@ -95,6 +96,7 @@ function restoration:Init()
 		bag_sim_2 = restoration.captain_types.summer, --Bag Simulator 2
 		RogueCompany = restoration.captain_types.summer, --Rogue Company
 		Security_Avenue = restoration.captain_types.summer, --Gensec HQ Raid day 1
+		constantine_resort_lvl = restoration.captain_types.summer, --Scarlett Resort (Constantine Scores)
 
 		--Spring
 		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
@@ -121,6 +123,7 @@ function restoration:Init()
 		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.spring, --Constantine Scores (gunrunner)
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
 		dwn1 = restoration.captain_types.spring, --Deep Inside
+		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -227,6 +230,8 @@ function restoration:Init()
 		"ascension_III", --Ascension (project eclipse 3)
 		"RogueCompany", --Rogue Company
 		"battlearena", --Five-G
+		"constantine_penthouse_lvl", --Penthouse Crashers (Constantine Scores)
+		"constantine_resort_lvl", --Scarlett Resort (Constantine Scores)
 		"Security_Avenue" --GenSec HQ Day 1
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
@@ -278,6 +283,7 @@ function restoration:Init()
 		"wetwork_burn", --Burnout
 		"brb_rant", --Brooklyn Bank: Ranted
 		"hidden_vault", --Hidden Vault
+		"constantine_gold_lvl", --Golden Shakedown (Constantine Scores)
 		"cshr" --Old Safehouse Raid
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
@@ -302,6 +308,7 @@ function restoration:Init()
 		"crimepunishlvl", --Crime And Punshiment
 		"amsdeal1", --Armsdeal Alleyway
 		"constantine_smackdown_lvl", --Smackdown
+		"constantine_restaurant_lvl", --Blood in the Water (Constantine Scores)
 		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists

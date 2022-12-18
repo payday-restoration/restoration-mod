@@ -31,11 +31,11 @@ function ModifierCloakerTearGas:modify_value(id, value)
 		local is_titanhrt = table.contains(ModifierCloakerTearGas.titanhrt, value)
 		local is_zombietitanhrt = table.contains(ModifierCloakerTearGas.zombietitanhrt, value)
 		local is_titanocelot = table.contains(ModifierCloakerTearGas.titanocelot, value)
-		if is_titanhrt and math.random(0,100) < 10 then
+		if is_titanhrt and math.random(0,100) < 15 then
 			return Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
-		elseif is_titanocelot and math.random(0,100) < 10 then
+		elseif is_titanocelot and math.random(0,100) < 15 then
 			return Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")	
-		elseif is_zombietitanshrt and math.random(0,100) < 10 then
+		elseif is_zombietitanshrt and math.random(0,100) < 15 then
 			return Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 		end
 	end

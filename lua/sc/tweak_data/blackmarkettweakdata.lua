@@ -2978,32 +2978,32 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--The safeword is police brutality--
 			self.melee_weapons.oldbaton.stats.min_damage = 3
 			self.melee_weapons.oldbaton.stats.max_damage = 6.001
-			self.melee_weapons.oldbaton.stats.min_damage_effect = 4.5
-			self.melee_weapons.oldbaton.stats.max_damage_effect = 9.0
+			self.melee_weapons.oldbaton.stats.min_damage_effect = 6.0
+			self.melee_weapons.oldbaton.stats.max_damage_effect = 12.0
 			self.melee_weapons.oldbaton.stats.charge_time = 1.5
 			self.melee_weapons.oldbaton.stats.range = 170
 			self.melee_weapons.oldbaton.stats.concealment = 27
 			--HAHAHA EBIN CODE JOEK :DDDDDD--
 			self.melee_weapons.happy.stats.min_damage = 3
 			self.melee_weapons.happy.stats.max_damage = 6.001
-			self.melee_weapons.happy.stats.min_damage_effect = 3.0
-			self.melee_weapons.happy.stats.max_damage_effect = 6.0
+			self.melee_weapons.happy.stats.min_damage_effect = 6.0
+			self.melee_weapons.happy.stats.max_damage_effect = 12.0
 			self.melee_weapons.happy.stats.charge_time = 1.5
 			self.melee_weapons.happy.stats.range = 170
 			self.melee_weapons.happy.stats.concealment = 27
 			--STOP RESISTING ARRREST MOTHERFUCKER--
 			self.melee_weapons.baton.stats.min_damage = 3
 			self.melee_weapons.baton.stats.max_damage = 6.001
-			self.melee_weapons.baton.stats.min_damage_effect = 3.0
-			self.melee_weapons.baton.stats.max_damage_effect = 6.0
+			self.melee_weapons.baton.stats.min_damage_effect = 6.0
+			self.melee_weapons.baton.stats.max_damage_effect = 12.0
 			self.melee_weapons.baton.stats.charge_time = 1.5
 			self.melee_weapons.baton.stats.range = 170
 			self.melee_weapons.baton.stats.concealment = 27
 			--Another baton reskin, thanks Overkill--
 			self.melee_weapons.croupier_rake.stats.min_damage = 3
 			self.melee_weapons.croupier_rake.stats.max_damage = 6.001
-			self.melee_weapons.croupier_rake.stats.min_damage_effect = 3.0
-			self.melee_weapons.croupier_rake.stats.max_damage_effect = 6.0
+			self.melee_weapons.croupier_rake.stats.min_damage_effect = 6.0
+			self.melee_weapons.croupier_rake.stats.max_damage_effect = 12.0
 			self.melee_weapons.croupier_rake.stats.charge_time = 1.5
 			self.melee_weapons.croupier_rake.stats.range = 170
 			self.melee_weapons.croupier_rake.stats.concealment = 27

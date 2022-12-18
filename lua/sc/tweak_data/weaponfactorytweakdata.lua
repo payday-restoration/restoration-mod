@@ -2368,7 +2368,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, -13.5, -0.855)
 	}
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_qbu88 = {
-		translation = Vector3(0, -30, -0.45)
+		translation = Vector3(0, -30, -0.455)
 	}
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_siltstone = {
 		translation = Vector3(0, -8, -4.77)
@@ -2381,6 +2381,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_scout = {
 		translation = Vector3(-0.001, -31.5, -0.122)
+	}
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_victor = {
+		translation = Vector3(-0.001, -15.5, -1.089)
 	}
 
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m200 = {
@@ -2452,6 +2455,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_scout = {
 		translation = Vector3(-0, -38, -0)
+	}
+	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_victor = {
+		translation = Vector3(-0.001, -19.9, -1.191)
 	}
 	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_siltstone = {
 		translation = Vector3(0, -12.1, -4.8745)

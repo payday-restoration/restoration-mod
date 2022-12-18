@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" orientation_object="rp_wpn_fps_snp_scout_b_standard"/>
+	<graphics>
+		<object enabled="true" name="g_b" />
+	</graphics>
+</dynamic_object>

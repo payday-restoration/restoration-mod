@@ -2869,7 +2869,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--Combat Sight
 	self.parts.wpn_fps_upg_o_cs.pcs = {}
 	self.parts.wpn_fps_upg_o_cs.has_description = true
-	self.parts.wpn_fps_upg_o_cs.desc_id = "bm_wp_upg_o_1_8_irons"		
+	self.parts.wpn_fps_upg_o_cs.desc_id = "bm_wp_upg_o_1_8"		
 	self.parts.wpn_fps_upg_o_cs.reticle_obj = nil
 	self.parts.wpn_fps_upg_o_cs.supported = true
 	self.parts.wpn_fps_upg_o_cs.stats = {
@@ -2878,6 +2878,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	}
 	self.parts.wpn_fps_upg_o_cs.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_cs.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_aimpoint.stance_mod)
+	self.parts.wpn_fps_upg_o_cs.adds = nil -- no
 	--Combat Sight Back-up Irons (lmao)
 	self.parts.wpn_fps_upg_o_cs_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_cs.stance_mod)
 	

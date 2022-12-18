@@ -76,7 +76,9 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		--"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Event units
+		"snowman_boss"
 	},
 	["standard_no_CS_cops"] = {
 		--All Blue units
@@ -124,7 +126,9 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		--"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Event units
+		"snowman_boss"
 	},
 	["standard_with_single_spooc"] = {
 		--All Blue units
@@ -175,7 +179,9 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Event units
+		"snowman_boss"
 	},
 	["standard_with_single_spooc_with_phalanx"] = { -- ??
 		--All Blue units
@@ -226,7 +232,9 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		--"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Event units
+		"snowman_boss"
 	},
 	["standard_with_single_spooc_no_CS_cops"] = {
 		--All Blue units
@@ -274,7 +282,9 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Event units
+		"snowman_boss"
 	},
 	["standard_with_single_spooc_no_FBI_spoocs"] = {
 		--All Blue units
@@ -321,7 +331,9 @@ local standard_spawngroups = {
 		"Cap_Autumn",
 		"Cap_Summers",
 		--Cloakers
-		"single_spooc"
+		"single_spooc",
+		--Event units
+		"snowman_boss"
 	},
 	["standard_no_FBI_spoocs"] = {
 		--All Blue units
@@ -372,6 +384,8 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		--"single_spooc"
+		--Event units
+		"snowman_boss"
 	},
 	["proprietary_alex_2"] = {
 		"FBI_stealth_a",

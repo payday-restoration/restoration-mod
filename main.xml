@@ -499,6 +499,7 @@
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
+				<option type="bool" default_value="false" name="BotsNoDrop"/>
 				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="QueuedShooting"/>
 				<divider name="tod_divider" size="7"/>

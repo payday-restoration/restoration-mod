@@ -3065,7 +3065,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--YOU AND I--
 	local sc_scarface = {
 			name_id = "menu_st_spec_17",
-			desc_id = "menu_st_spec_17_desc_sc",
+			desc_id = "menu_st_spec_17_desc",
 			category = {
 				"offensive",
 				"activated"

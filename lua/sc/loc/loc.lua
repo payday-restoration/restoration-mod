@@ -235,6 +235,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",		
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",	
+		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",
+		["RestorationModBotsNoDropDescID"] = "Enable or disable bots dropping loot bags.",			
 		["RestorationModNotifyTitleID"] = "Feature Notification",
 		["RestorationModNotifyDescID"] = "Enable or disable the notification for this feature.",
 		["RestorationModPauseTitleID"] = "Alpha Pause Menu",

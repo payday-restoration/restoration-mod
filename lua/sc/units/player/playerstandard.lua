@@ -626,7 +626,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							end
 						else
 							if restoration.Options:GetValue("OTHER/SeparateBowADS") then
-								if input.btn_primary_attack_press and fire_mode == "single" and not weap_base:start_shooting_allowed() then
+								if input.btn_primary_attack_press and fire_mode == "single" and not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
 									local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
 									local next_fire_last = weap_base._next_fire_allowed - next_fire
 									local next_fire_delay = weap_base._next_fire_allowed - next_fire_last

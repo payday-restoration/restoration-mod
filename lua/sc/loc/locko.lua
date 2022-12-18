@@ -2067,7 +2067,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_electric_desc"] = "대미지: 400 \n범위: 5m \n기폭: 3초 \n \n파편은 모두 훌륭하고 좋지만 일부는 튀깁니다. 이 작고 아름다운 이것은 고전압으로 약간의 피해를 입히기에 다소 실용적인 짐승입니다.",
 		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 생화학 수류탄",
 		["bm_grenade_poison_gas_grenade_desc"] = "대미지: 10초당 300 \n범위: 6m \n지속시간 (가스 구름): 12초 \n기폭: 정지 상태를 유지한 후 1초 \n- 적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.\n- 실드, 불도저, 척탄병, 캡틴은 스턴 효과에 면역입니다.\n\n이 실험적인 생물무기는 당신이나 당신의 팀원들에게 해를 끼치지 않도록 설계된 특정 유전자형을 표적으로 하는 독성 가스 구름을 뿜어냅니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 선택한 무기인거야, 페코.",
-		["bm_grenade_sticky_grenade"] = "셈텍스",
+		["bm_grenade_sticky_grenade"] = "셈텍스 수류탄",
 		["bm_grenade_sticky_grenade_desc"] = "대미지: 800 \n범위: 4m \n기폭: 3초, 붙혀질 시 기폭 시간 재설정 \n\n사람을 포함한 대부분의 표면에 달라붙는 던질 수 있는 폭발성 화합물입니다!",		
 	
 

@@ -217,7 +217,7 @@ end
 
 --check_ally_attack == check if the attack came from an ally at all.
 function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)
-	if not unit then
+	if not unit or not alive(unit) then
 		return false
 	end
 

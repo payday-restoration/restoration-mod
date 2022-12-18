@@ -582,9 +582,9 @@ end
 
 function MutatorTweakData:init_cg22(tweak_data)
 	self.cg22 = {
-		initial_tree_shake_timer = 60,
-		tree_shake_timer = 60,
-		snowman_spawn_per_bag = 5,
+		initial_tree_shake_timer = 30,
+		tree_shake_timer = 30,
+		snowman_spawn_per_bag = 3,
 		default_bag_pool = {
 			{
 				bag_id = "cg22_bag",
@@ -622,17 +622,17 @@ function MutatorTweakData:init_cg22(tweak_data)
 			--Blue, gives cops DR
 			cg22_bag = {
 				scale = 0.005,
-				max_multiplier = 0.9
+				max_multiplier = 1
 			},
 			--Green, increases cop damage
 			cg22_bag_green = {
 				scale = 0.01,
-				max_multiplier = 1.2
+				max_multiplier = 1
 			},
 			--Yellow, increases movement speed
 			cg22_bag_yellow = {
 				scale = 0.01,
-				max_multiplier = 1.2
+				max_multiplier = 1
 			}
 		},
 		enemy_buff_exceptions = {

@@ -816,7 +816,7 @@ function CopDamage:damage_bullet(attack_data)
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local damage = attack_data.damage
 	
-	local ignore = self._unit:base()._tweak_table == "spring" or self._unit:base()._tweak_table == "tank_titan"	or self._unit:base()._tweak_table == "headless_hatman" or self._unit:base()._tweak_table == "tank_titan_assault" or self._unit:base()._tweak_table == "snowman_boss"	
+	local ignore = self._unit:base()._tweak_table == "spring" or self._unit:base()._tweak_table == "tank_titan"	or self._unit:base()._tweak_table == "headless_hatman" or self._unit:base()._tweak_table == "tank_titan_assault"	
 	
 	local hit_body = attack_data.col_ray.body
 	if armour[hit_body:name():key()] and not ignore then -- dozer armour negates damage

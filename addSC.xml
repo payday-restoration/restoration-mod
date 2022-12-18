@@ -784,6 +784,22 @@
 	<model				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_contour" force="true" />	
+	
+	<!--Snowman Dozer-->
+	<object				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<model				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<unit				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false" load="true"/>
+	<material_config	path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<material_config	path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman_contour" force="false"/>
+	<unit				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman_husk" force="false" load="true"/>
+
+	<!-- Vanilla Snowman Effects -->
+	<add from_db="true" path="effects/payday2/particles/character/snowman_molotov" type="effect">
+		<effect load="true" path="effects/payday2/particles/character/snowman_molotov"/>
+		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
+	</add>	
 
 	<!--Spring-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>

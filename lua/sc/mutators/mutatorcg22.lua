@@ -1,3 +1,5 @@
+MutatorCG22.snowman = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+
 function MutatorCG22:setup(mutator_manager)
 	print("MutatorCG22:setup")
 
@@ -32,9 +34,9 @@ function MutatorCG22:setup(mutator_manager)
 	--log("SC: Snowman spawns!")
 	--Setting up Snowmen to be repeating spawns, because we need more of him
     tweak_data.group_ai.enemy_spawn_groups.snowman_boss.max_nr_simultaneous_groups = 1
-    tweak_data.group_ai.enemy_spawn_groups.snowman_boss.spawn_cooldown = 120
+    tweak_data.group_ai.enemy_spawn_groups.snowman_boss.spawn_cooldown = 180
     tweak_data.group_ai.enemy_spawn_groups.snowman_boss.initial_spawn_delay = 90
-    tweak_data.group_ai.enemy_spawn_groups.snowman_boss.spawn.respawn_cooldown = 120
+    tweak_data.group_ai.enemy_spawn_groups.snowman_boss.spawn.respawn_cooldown = 180
 end
 
 function MutatorCG22:on_snowman_killed(unit, damage_info)

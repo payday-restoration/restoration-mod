@@ -12473,31 +12473,31 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	self.unit_categories.snowman_boss = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			zombie = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			murkywater = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			federales = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			nypd = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			lapd = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			},
 			omnia = {
-				Idstring("units/pd2_dlc_cg22/characters/ene_snowman_boss/ene_snowman_boss")
+				Idstring("units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman")
 			}
 		},
 		access = access_type_all,

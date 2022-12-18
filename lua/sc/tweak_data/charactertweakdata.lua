@@ -1646,6 +1646,8 @@ function CharacterTweakData:_init_snowman_boss(presets)
 		"snowman",
 		"special"
 	}
+	self.snowman_boss.headshot_dmg_mul = 18.75
+	self.snowman_boss.HEALTH_INIT = 400	
 	self.snowman_boss.speech_prefix_p1 = "snowman"
 	self.snowman_boss.speech_prefix_p2 = nil
 	self.snowman_boss.speech_prefix_count = nil
@@ -1665,8 +1667,8 @@ function CharacterTweakData:_init_snowman_boss(presets)
 			-2,
 			-3
 		}
-	}
-
+	}	
+	
 	table.insert(self._enemy_list, "snowman_boss")
 end
 
@@ -17998,6 +18000,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.ranc.list, "ene_cop_2")	
 		table.insert(char_map.ranc.list, "ene_cop_3")
 		table.insert(char_map.ranc.list, "ene_cop_4")
+	--Christmas
+		table.insert(char_map.cg22.list, "ene_bulldozer_snowman")		
 	--vip
 		char_map.vip = {
 			path = "units/pd2_dlc_vip/characters/",

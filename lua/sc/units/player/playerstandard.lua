@@ -369,7 +369,7 @@ function PlayerStandard:_check_action_reload(t, input)
 
 			new_action = true
 		end
-		if restoration.Options:GetValue("OTHER/SeparateBowADS") then
+		if restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") then
 			if alive(self._equipped_unit) then
 				local result = nil
 				local weap_base = self._equipped_unit:base()
@@ -614,7 +614,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								start_shooting = true
 
 								if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
-									if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+									if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
 									else
 										self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
 									end
@@ -625,7 +625,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								end
 							end
 						else
-							if restoration.Options:GetValue("OTHER/SeparateBowADS") then
+							if restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShooting") then
 								if input.btn_primary_attack_press and fire_mode == "single" and not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
 									local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
 									local next_fire_last = weap_base._next_fire_allowed - next_fire
@@ -696,7 +696,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 						end
 					end
-					if not restoration.Options:GetValue("OTHER/SeparateBowADS") then
+					if not restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") then
 						if weap_base.manages_steelsight and weap_base:manages_steelsight() then
 							if weap_base:wants_steelsight() and not self._state_data.in_steelsight then
 								self:_start_action_steelsight(t)
@@ -729,7 +729,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							1
 						}
 						local random = vars[math.random(#vars)]
-						if self._state_data.in_steelsight and (restoration.Options:GetValue("OTHER/NoADSRecoilAnims") or weap_base._disable_steelsight_recoil_anim) then
+						if self._state_data.in_steelsight and (restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") or weap_base._disable_steelsight_recoil_anim) then
 							self._ext_camera:play_shaker("whizby", random * 0.05 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
 						end
 						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
@@ -743,10 +743,10 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
 
-							if not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/SeparateBowADS") and is_bow) then
+							if not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow) then
 								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 							elseif weap_tweak_data.animations.recoil_steelsight then
-								if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+								if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
 								else
 									self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
 								end
@@ -851,7 +851,7 @@ function PlayerStandard:_check_stop_shooting()
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 		local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-		if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+		if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		else 
 			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
@@ -1307,7 +1307,7 @@ function PlayerStandard:_start_action_running(t)
 	self._end_running_expire_t = nil
 	self._start_running_t = t
 
-	local cancel_sprint = restoration.Options:GetValue("OTHER/SprintCancel")
+	local cancel_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SprintCancel")
 	
 	--Skip sprinting animations of player is doing melee things.
 	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and (cancel_sprint == true or self._equipped_unit:base()._starwars)))) then
@@ -1333,7 +1333,7 @@ function PlayerStandard:_end_action_running(t)
 
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
-		local cancel_sprint = restoration.Options:GetValue("OTHER/SprintCancel")
+		local cancel_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SprintCancel")
 		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and self._equipped_unit:base()._starwars))))
 		
 		if stop_running then
@@ -2244,7 +2244,7 @@ end
 
 function PlayerStandard:_check_action_steelsight(t, input)
 	local new_action = nil
-	if not restoration.Options:GetValue("OTHER/SeparateBowADS") then
+	if not restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") then
 		if alive(self._equipped_unit) then
 			local result = nil
 			local weap_base = self._equipped_unit:base()
@@ -2326,7 +2326,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		return
 	end
 
-	if not self:_is_using_bipod() and restoration.Options:GetValue("OTHER/AimDeploysBipod") and not self._moving then
+	if not self:_is_using_bipod() and restoration.Options:GetValue("OTHER/WeaponHandling/AimDeploysBipod") and not self._moving then
 		self:_check_action_deploy_bipod(t, {btn_deploy_bipod = true}, true)
 	end
 
@@ -2382,7 +2382,7 @@ function PlayerStandard:full_steelsight()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
 	local is_turret = managers.player:current_state() and managers.player:current_state() == "player_turret"
-	if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims and not is_turret then
+	if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims and not is_turret then
 		self._ext_camera:play_redirect(self:get_animation("idle"))
 	end
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
@@ -2404,7 +2404,7 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
 
 	if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
-		if restoration.Options:GetValue("OTHER/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
+		if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("recoil_enter"))
 		end
 	end

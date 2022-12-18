@@ -639,7 +639,7 @@ if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 	end)
 end
 
-local static_aim = restoration.Options:GetValue("OTHER/StaticAim")
+local static_aim = restoration.Options:GetValue("OTHER/WeaponHandling/StaticAim")
 if static_aim then
 	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
 		for wep_id, i in pairs(self.stances) do

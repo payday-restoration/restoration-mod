@@ -12631,8 +12631,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.aknato.supported = true
 			self.aknato.ads_speed = 0.320
 			self.aknato.damage_falloff = {
-				start_dist = 2600,
-				end_dist = 6200,
+				start_dist = 3300,
+				end_dist = 7500,
 				min_mult = 0.4166
 			}
 			self.aknato.stats = {
@@ -15461,7 +15461,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 	
-			if restoration.Options:GetValue("OTHER/AutoDMRs") then
+			if restoration.Options:GetValue("OTHER/WeaponHandling/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
 					weap.FIRE_MODE = "auto"
 				end

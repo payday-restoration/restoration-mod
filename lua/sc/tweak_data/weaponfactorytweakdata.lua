@@ -26760,6 +26760,12 @@ if self.wpn_fps_smg_ak5s then
 end
 end)
 
+Hooks:PostHook(WeaponFactoryTweakData, "init", "vmplegacyInit", function(self)
+if self.wpn_fps_ass_aknato then
+end
+end)
+
+
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then
 		if not self.wpn_fps_lmg_hk21.override then

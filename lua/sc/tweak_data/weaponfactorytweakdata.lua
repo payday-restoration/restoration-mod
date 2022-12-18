@@ -2116,12 +2116,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			end
 		end
 	end
+	self.parts.wpn_fps_upg_o_atibal.stance_mod.wpn_fps_snp_scout = {
+		translation = self.parts.wpn_fps_upg_o_atibal.stance_mod.wpn_fps_snp_scout.translation + Vector3(0, -0, 0.25)
+	}
+
 	self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_atibal.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + sight_atibal_rds_offset.offset
 		end
 	end
+	self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod.wpn_fps_snp_scout = {
+		translation = self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod.wpn_fps_snp_scout.translation + Vector3(0.06, 4.7, 1.6)
+	}
+
 
 
 	--CASSIAN Elite Combo Sight

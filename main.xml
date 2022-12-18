@@ -353,6 +353,7 @@
 		<hook file="sc/mutators/mutatortitandozers.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
 		<hook file="sc/mutators/mutatorbirthday.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/mutatorpiggybank.lua" source_file="lib/mutators/mutatorpiggybank"/>
+		<hook file="sc/mutators/mutatorcg22.lua" source_file="lib/mutators/mutatorcg22"/>
 		<!--///NEW MUTATORS GO HERE\\\-->
 		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfatroll.lua" source_file="lib/mutators/basemutator"/>
@@ -497,7 +498,7 @@
 			<option_group name="OTHER">
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
-				<option type="bool" default_value="false" name="RestoreHitFlash"/>
+				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
 				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="QueuedShooting"/>
 				<divider name="tod_divider" size="7"/>

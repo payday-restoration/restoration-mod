@@ -1699,6 +1699,8 @@ function PlayerDamage:set_armor(armor)
 	self._armor = Application:digest_value(armor, true)
 end
 
+--[[
+
 --For people like SC that enjoy being blinded when taking damage
 if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 	local _hit_direction_actual = PlayerDamage._hit_direction
@@ -1729,6 +1731,8 @@ if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 		return _hit_direction_actual(self, position_vector, ...)
 	end
 end
+
+]]--
 
 function PlayerDamage:play_whizby(position)
 	self._unit:sound():play_whizby({

@@ -2043,7 +2043,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crew Chief--
 	local sc_crew_chief = {
 			name_id = "menu_st_spec_1",
-			desc_id = "menu_st_spec_1_desc_sc",
+			desc_id = "menu_st_spec_1_desc",
+			category = "supportive",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2106,7 +2107,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Muscle--
 	local sc_muscle = {
 			name_id = "menu_st_spec_2",
-			desc_id = "menu_st_spec_2_desc_sc",
+			desc_id = "menu_st_spec_2_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2171,7 +2173,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Armorer--
 	local sc_armorer = {
 			name_id = "menu_st_spec_3",
-			desc_id = "menu_st_spec_3_desc_sc",
+			desc_id = "menu_st_spec_3_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_1",
@@ -2230,7 +2233,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Rogue--
 	local sc_rogue = {
 			name_id = "menu_st_spec_4",
-			desc_id = "menu_st_spec_4_desc_sc",
+			desc_id = "menu_st_spec_4_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2290,7 +2294,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Hitman--
 	local sc_hitman = {
 			name_id = "menu_st_spec_5",
-			desc_id = "menu_st_spec_5_desc_sc",
+			desc_id = "menu_st_spec_5_desc",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_store_temp_health_1"
@@ -2350,7 +2355,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crook--
 	local sc_crook = {
 			name_id = "menu_st_spec_6",
-			desc_id = "menu_st_spec_6_desc_sc",
+			desc_id = "menu_st_spec_6_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2419,8 +2425,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Burglar--
 	local sc_burglar = {
 			name_id = "menu_st_spec_7",
-			desc_id = "menu_st_spec_7_desc_sc",
+			desc_id = "menu_st_spec_7_desc",
 			dlc = "character_pack_clover",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2478,8 +2485,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Infiltrator--
 	local sc_infiltrator = {
 			name_id = "menu_st_spec_8",
-			desc_id = "menu_st_spec_8_desc_sc",
+			desc_id = "menu_st_spec_8_desc",
 			dlc = "character_pack_dragan",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_damage_dampener_close_contact_1"
@@ -2541,8 +2549,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Sociopath--
 	local sc_sociopath = {
 			name_id = "menu_st_spec_9",
-			desc_id = "menu_st_spec_9_desc_sc",
+			desc_id = "menu_st_spec_9_desc",
 			dlc = "hlm2_deluxe",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_damage_dampener_outnumbered_strong",
@@ -2601,7 +2610,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Gambler--
 	local sc_gambler = {
 			name_id = "menu_st_spec_10",
-			desc_id = "menu_st_spec_10_desc_sc",
+			desc_id = "menu_st_spec_10_desc",
+			category = "supportive",
 			{
 				upgrades = {
 					"temporary_loose_ammo_restore_health_1"
@@ -2662,8 +2672,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Grinder--
 	local sc_grinder = {
 			name_id = "menu_st_spec_11",
-			desc_id = "menu_st_spec_11_desc_sc",
+			desc_id = "menu_st_spec_11_desc",
 			dlc = "character_pack_sokol",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
@@ -2722,7 +2733,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Yakuza--
 	local sc_yakuza = {
 			name_id = "menu_st_spec_12",
-			desc_id = "menu_st_spec_12_desc_sc",
+			desc_id = "menu_st_spec_12_desc",
+			category = "offensive",
 			dlc = "dragon",
 			{
 				upgrades = {
@@ -2786,7 +2798,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Ex President--
 	local sc_ex = {
 			name_id = "menu_st_spec_13",
-			desc_id = "menu_st_spec_13_desc_sc",
+			desc_id = "menu_st_spec_13_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_armor_health_store_amount_1"
@@ -2846,7 +2859,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Maniac--
 	local sc_maniac = {
 			name_id = "menu_st_spec_14",
-			desc_id = "menu_st_spec_14_desc_sc",
+			desc_id = "menu_st_spec_14_desc",
+			category = "supportive",
 			{
 				upgrades = {
 					"player_cocaine_stacking_1"
@@ -2910,8 +2924,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Anarchist--
 	local sc_sydney = {
 			name_id = "menu_st_spec_15",
-			desc_id = "menu_st_spec_15_desc_sc",
+			desc_id = "menu_st_spec_15_desc",
 			dlc = "opera",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_armor_grinding_1"
@@ -3043,13 +3058,18 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_16",
 			dlc = "wild",
-			desc_id = "menu_st_spec_16_desc_sc"
+			desc_id = "menu_st_spec_16_desc",
+			category = "defensive"
 		}
 
 	--YOU AND I--
 	local sc_scarface = {
 			name_id = "menu_st_spec_17",
 			desc_id = "menu_st_spec_17_desc_sc",
+			category = {
+				"offensive",
+				"activated"
+			},
 			dlc = "chico",
 			{
 				upgrades = {
@@ -3106,14 +3126,18 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 1},
 				texture_bundle_folder = "chico",
 				name_id = "menu_deck17_9",
-				desc_id = "menu_deck17_9_desc_sc"
+				desc_id = "menu_deck17_9_desc"
 			}
 		}
 
 	--Chicken Tacos--
 	local sc_wall = {
 			name_id = "menu_st_spec_18",
-			desc_id = "menu_st_spec_18_desc_sc",
+			desc_id = "menu_st_spec_18_desc",
+			category = {
+				"supportive",
+				"activated"
+			},
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -3172,8 +3196,12 @@ function SkillTreeTweakData:init(tweak_data)
 		
 	--Don't cry for me, I'm already dead.--
 	local sc_august = {
-			desc_id = "menu_st_spec_19_desc_sc",
+			desc_id = "menu_st_spec_19_desc",
 			name_id = "menu_st_spec_19",
+			category = {
+				"defensive",
+				"activated"
+			},
 			{
 				cost = 200,
 				texture_bundle_folder = "myh",
@@ -3325,7 +3353,11 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_20",
 			dlc = "ecp",
-			desc_id = "menu_st_spec_20_desc_sc"
+			desc_id = "menu_st_spec_20_desc",
+			category = {
+				"supportive",
+				"activated"
+			}
 		}
 		
 	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
@@ -3401,8 +3433,12 @@ function SkillTreeTweakData:init(tweak_data)
 					1
 				}
 			},
-			desc_id = "menu_st_spec_21_desc_sc",
-			name_id = "menu_st_spec_21"
+			desc_id = "menu_st_spec_21_desc",
+			name_id = "menu_st_spec_21",
+			category = {
+				"supportive",
+				"activated"
+			}
 		}	
 		
 	--Leech--
@@ -3486,14 +3522,19 @@ function SkillTreeTweakData:init(tweak_data)
 					1
 				}
 			},
-			desc_id = "menu_st_spec_22_desc_sc",
-			name_id = "menu_st_spec_22"
+			desc_id = "menu_st_spec_22_desc",
+			name_id = "menu_st_spec_22",
+			category = {
+				"offensive",
+				"activated"
+			}
 		}		
 		
 	--Tabula Rasa, blank perk deck
 	local sc_blank = {
 			name_id = "menu_st_spec_0",
 			desc_id = "menu_st_spec_0_desc",
+			category = "challenge",
 			{
 				upgrades = {
 					"player_buy_cost_multiplier_1",
@@ -3594,6 +3635,7 @@ function SkillTreeTweakData:init(tweak_data)
 	local sc_yes_man = {
 			name_id = "menu_st_spec_00",
 			desc_id = "menu_st_spec_00_desc",
+			category = "challenge",
 			{
 				upgrades = {
 					"player_buy_cost_multiplier_1",
@@ -3672,4 +3714,37 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[22] = sc_leech
 	self.specializations[24] = sc_blank
 	self.specializations[25] = sc_yes_man
+	
+
+	self.specialization_category = {
+		{
+			name_id = "menu_st_category_all",
+			category = "all"
+		},
+		{
+			name_id = "menu_st_category_offensive",
+			category = "offensive"
+		},
+		{
+			name_id = "menu_st_category_defensive",
+			category = "defensive"
+		},
+		{
+			name_id = "menu_st_category_supportive",
+			category = "supportive"
+		},
+		{
+			name_id = "menu_st_category_activated",
+			category = "activated"
+		},
+		{
+			name_id = "menu_st_category_challenge",
+			category = "challenge"
+		},
+		{
+			name_id = "menu_st_category_favorites",
+			category = "favorites"
+		}
+	}
+	
 end

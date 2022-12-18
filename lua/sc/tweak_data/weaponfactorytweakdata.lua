@@ -26541,6 +26541,7 @@ end
 
 end)
 
+--[[
 --VMP Sight Positioning override from Gambyt
 Hooks:PostHook(WeaponFactoryTweakData, "init", "cqbSightInit", function(self)
 	local custom_weapon_id = "wpn_fps_smg_ak5s"
@@ -26708,6 +26709,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "cqbSightInit", function(self)
 	}
 
 end)
+
+]]--
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then

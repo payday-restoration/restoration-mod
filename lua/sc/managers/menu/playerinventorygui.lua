@@ -597,37 +597,6 @@ function PlayerInventoryGui:_update_info_weapon_cosmetics(name, cosmetics)
 	end
 end
 
---Use short descs for decks in the little preview box thing + Colored desc support
-function PlayerInventoryGui:_update_info_specialization(name)
-	local text_string = ""
-	local current_specialization = managers.skilltree:get_specialization_value("current_specialization")
-	local specialization_data = tweak_data.skilltree.specializations[current_specialization]
-	local has_short_desc = tweak_data.skilltree.specializations[current_specialization].use_short_desc
-
-	if specialization_data then
-		local current_tier = managers.skilltree:get_specialization_value(current_specialization, "tiers", "current_tier")
-		local max_tier = managers.skilltree:get_specialization_value(current_specialization, "tiers", "max_tier")
-		text_string = managers.localization:text(specialization_data.name_id) .. " (" .. tostring(current_tier) .. "/" .. tostring(max_tier) .. ")\n"
-
-		if current_tier < max_tier then
-			local current_points = managers.skilltree:get_specialization_value(current_specialization, "tiers", "next_tier_data", "current_points")
-			local points = managers.skilltree:get_specialization_value(current_specialization, "tiers", "next_tier_data", "points")
-			text_string = text_string .. managers.localization:text("menu_st_progress", {
-				progress = string.format("%i/%i", current_points, points)
-			}) .. "\n"
-		end
-
-		if self:_should_show_description() and specialization_data.desc_id then
-			text_string = text_string .. "\n" .. managers.localization:text(specialization_data.desc_id .. "_short")
-		end
-	end
-
-	self:set_info_text(text_string, {
-		tweak_data.screen_colors.skill_color,
-		add_colors_to_text_object = true
-	})
-end
-
 --Colored desc support
 function PlayerInventoryGui:_update_info_throwable(name)
 	local throwable_id, amount = managers.blackmarket:equipped_projectile()

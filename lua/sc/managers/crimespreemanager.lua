@@ -8,8 +8,6 @@ Hooks:PreHook(CrimeSpreeManager, "on_mission_started", "sh_on_mission_started", 
 	end
 end)
 
-]]--
-
 -- Make secured bonus bags add crime spree levels
 -- Unfortunately a function override is pretty much the only thing we can do here
 Hooks:OverrideFunction(CrimeSpreeManager, "on_mission_completed", function (self, mission_id)
@@ -92,6 +90,8 @@ Hooks:OverrideFunction(CrimeSpreeManager, "on_mission_completed", function (self
 		MenuCallbackHandler:update_matchmake_attributes()
 	end
 end)
+
+]]--
 
 function CrimeSpreeManager:get_mission(mission_id)
 	mission_id = mission_id or self:current_mission()

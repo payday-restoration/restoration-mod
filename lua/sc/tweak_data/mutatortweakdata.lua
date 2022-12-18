@@ -584,7 +584,7 @@ function MutatorTweakData:init_cg22(tweak_data)
 	self.cg22 = {
 		initial_tree_shake_timer = 60,
 		tree_shake_timer = 60,
-		snowman_spawn_per_bag = 9,
+		snowman_spawn_per_bag = 5,
 		default_bag_pool = {
 			{
 				bag_id = "cg22_bag",
@@ -619,17 +619,20 @@ function MutatorTweakData:init_cg22(tweak_data)
 			normal = 1
 		},
 		enemy_buff_values = {
+			--Blue, gives cops DR
 			cg22_bag = {
-				scale = 0.1,
-				max_multiplier = 0.75
+				scale = 0.005,
+				max_multiplier = 0.9
 			},
+			--Green, increases cop damage
 			cg22_bag_green = {
-				scale = 0.1,
-				max_multiplier = 2
+				scale = 0.01,
+				max_multiplier = 1.2
 			},
+			--Yellow, increases movement speed
 			cg22_bag_yellow = {
-				scale = 0.1,
-				max_multiplier = 2
+				scale = 0.01,
+				max_multiplier = 1.2
 			}
 		},
 		enemy_buff_exceptions = {
@@ -671,17 +674,23 @@ function MutatorTweakData:init_cg22(tweak_data)
 				scale = 0.05,
 				color = Color.white
 			},
+			--[[
+			Disabled until DMC can unfuck this
+			
 			{
 				hud_string_id = "hud_buff_ammo_types",
 				func_name = "ammo_types",
 				duration = 30,
 				color = Color.white
 			}
+			]]--
 		}
 	}
+	--[[
 	self.cg22.buffs.cg22_bag_yellow[2].ammo_types = {
 		"explosive"
 	}
+	]]--
 	self.cg22.voice_line_amount_triggers = {
 		spawn_present_enemy_buff = {
 			initial = false,

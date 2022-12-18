@@ -1,3 +1,5 @@
+--[[
+
 -- Display bonus bags as additional earned crime spree levels
 Hooks:PostHook(CrimeSpreeResultTabItem, "_create_level", "sh__create_level", function (self, total_w)
 	local bonus_bags = math.min(managers.loot:get_secured_bonus_bags_amount(), 10)
@@ -53,3 +55,5 @@ Hooks:PostHook(CrimeSpreeResultTabItem, "_create_level", "sh__create_level", fun
 		bonus_bags
 	})
 end)
+
+]]--

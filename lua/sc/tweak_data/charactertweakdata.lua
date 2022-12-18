@@ -1638,47 +1638,14 @@ function CharacterTweakData:_init_triad_boss(presets)
 end
 
 function CharacterTweakData:_init_snowman_boss(presets)
-	self.snowman_boss = deep_clone(presets.base)
+	self.snowman_boss = deep_clone(self.tank)
 	self.snowman_boss.experience = {}
 	self.snowman_boss.tags = {
+		"law",
 		"tank",
 		"snowman",
 		"special"
 	}
-	self.snowman_boss.weapon = deep_clone(presets.weapon.good)
-	self.snowman_boss.weapon.is_flamethrower.melee_speed = nil
-	self.snowman_boss.weapon.is_flamethrower.melee_dmg = nil
-	self.snowman_boss.weapon.is_flamethrower.melee_retry_delay = nil
-	self.snowman_boss.detection = presets.detection.normal
-	self.snowman_boss.HEALTH_INIT = 435
-	self.snowman_boss.headshot_dmg_mul = 2
-	self.snowman_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.snowman_boss.damage.explosion_damage_mul = 0.5
-	self.snowman_boss.can_be_tased = false
-	self.snowman_boss.suppression = nil
-	self.snowman_boss.move_speed = presets.move_speed.slow
-	self.snowman_boss.allowed_stances = {
-		cbt = true
-	}
-	self.snowman_boss.allowed_poses = {
-		stand = true
-	}
-	self.snowman_boss.crouch_move = false
-	self.snowman_boss.no_run_start = true
-	self.snowman_boss.no_run_stop = true
-	self.snowman_boss.no_retreat = true
-	self.snowman_boss.no_arrest = true
-	self.snowman_boss.surrender = nil
-	self.snowman_boss.ecm_vulnerability = 0
-	self.snowman_boss.ecm_hurts = {
-		ears = {
-			max_duration = 0,
-			min_duration = 0
-		}
-	}
-	self.snowman_boss.weapon_voice = "3"
-	self.snowman_boss.experience.cable_tie = "tie_swat"
-	self.snowman_boss.access = "tank"
 	self.snowman_boss.speech_prefix_p1 = "snowman"
 	self.snowman_boss.speech_prefix_p2 = nil
 	self.snowman_boss.speech_prefix_count = nil
@@ -1687,11 +1654,6 @@ function CharacterTweakData:_init_snowman_boss(presets)
 	else
 		self.snowman_boss.custom_voicework = "tdozer"
 	end
-	self.snowman_boss.priority_shout = "f30"
-	self.snowman_boss.rescue_hostages = false
-	self.snowman_boss.melee_weapon_dmg_multiplier = 2.5
-	self.snowman_boss.steal_loot = nil
-	self.snowman_boss.calls_in = nil
 	self.snowman_boss.chatter = {
 		reload = true, --this is just here for tdozers
 		aggressive = true,
@@ -1700,14 +1662,6 @@ function CharacterTweakData:_init_snowman_boss(presets)
 		contact = true,
 		entrance = true
 	}
-	self.snowman_boss.use_radio = nil
-	self.snowman_boss.use_animation_on_fire_damage = false
-	self.snowman_boss.flammable = false
-	self.snowman_boss.immune_to_knock_down = true
-	self.snowman_boss.immune_to_concussion = true
-	self.snowman_boss.can_reload_while_moving_tmp = true
-	self.snowman_boss.no_headshot_add_mul = true
-	self.snowman_boss.player_health_scaling_mul = 1.5
 	self.snowman_boss.aoe_damage_data = {
 		verification_delay = 0.3,
 		activation_range = 300,

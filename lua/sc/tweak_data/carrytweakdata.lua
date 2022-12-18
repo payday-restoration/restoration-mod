@@ -86,4 +86,8 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 	self.nail_caustic_soda.AI_carry = nil
 	self.nail_hydrogen_chloride.AI_carry = nil
 	self.nail_euphadrine_pills.AI_carry = nil
+	
+	--CG22 event stuff
+	self.types.cg22_light = deep_clone(self.types.light)	
+	self.types.cg22_heavy = deep_clone(self.types.heavy)		
 end)

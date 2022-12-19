@@ -9,6 +9,7 @@ ModifierShieldPhalanx.shields = {
 	Idstring("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"),
 	Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),					
 	Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
 	Idstring("units/pd2_mod_omnia/characters/ene_city_shield/ene_city_shield"),
 	Idstring("units/pd2_mod_omnia/characters/ene_shield_1/ene_shield_1"),	
 	Idstring("units/pd2_mod_omnia/characters/ene_shield_2/ene_shield_2"),

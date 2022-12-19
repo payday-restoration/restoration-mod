@@ -182,9 +182,11 @@
   "ene_gang_mobster_5_pager" : "Mobster Thug",
   "ene_gang_mobster_6_pager" : "Mobster Thug",
   "ene_gang_mobster_7_pager" : "Mobster Thug",
+  "ene_security_resort" : "Resort Security Guard",
   "ene_gang_mobster_armored" : "Armored Mobster",
   "ene_gang_mobster_clubowner" : "Club Owner",
   "ene_gang_mobster_clubsecurity" : "Club Security", 
   "ene_gang_mobster_enforcer" : "Mobster Enforcer",
+  "ene_gang_mobster_mobboss" : "Mobster Boss",
   "ene_gang_mobster_vip" : "VIP Mobster"
 }

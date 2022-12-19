@@ -2884,7 +2884,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spatula.stats.max_damage = 4.501
 		self.melee_weapons.spatula.stats.min_damage_effect = 6.0
 		self.melee_weapons.spatula.stats.max_damage_effect = 12.0
-		self.melee_weapons.spatula.stats.charge_time = 0.8
+		self.melee_weapons.spatula.stats.charge_time = 0.6
 		self.melee_weapons.spatula.stats.range = 150
 		self.melee_weapons.spatula.stats.concealment = 30
 			--For that you get the belt--

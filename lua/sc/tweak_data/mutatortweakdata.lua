@@ -743,7 +743,7 @@ function MutatorTweakData:init_cg22(tweak_data)
 			position = Vector3(-1537.23, -2278.96, -40.1852),
 			rotation = Rotation(0, 0, 0)
 		},
-		run = {
+		run_res = {
 			position = Vector3(-5670, -11500, 2044.81),
 			rotation = Rotation(315, 0, 0)
 		},
@@ -969,7 +969,7 @@ function MutatorTweakData:init_cg22(tweak_data)
 		red2 = {
 			position = Vector3(-425, -200, 0)
 		},
-		run = {
+		run_res = {
 			position = Vector3(800, -400, 0)
 		},
 		mad = {

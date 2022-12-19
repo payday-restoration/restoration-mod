@@ -1964,8 +1964,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			rotation = Rotation(0.0, -0.1, -0.625)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_par = {
-			translation = Vector3(0.05, 5, -3.05), --NEEDS ADJUSTMENT LATER, IRONS NEED FIXING
-			rotation = Rotation(0.15, -0.1, 0.5)
+			translation = Vector3(0.01, 4.55, -3.077),
+			rotation = Rotation(0.01, -0.1, 0)
 		}
 		if WeaponTweakData.SetupAttachmentPoint then
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
@@ -7270,14 +7270,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 	self.parts.wpn_fps_snp_msr_body_msr.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	self.parts.wpn_fps_snp_msr_body_msr.override = {
 		wpn_fps_snp_model70_iron_sight = {
-			adds = {"wpn_fps_smg_hajk_o_standard"}
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_o_standard",
 		}
 	}
 	
 	--Default Wood Body
 	self.parts.wpn_fps_snp_msr_body_wood.override = {
 		wpn_fps_snp_model70_iron_sight = {
-			adds = {"wpn_fps_gre_arbiter_o_standard"}
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_o_standard",
 		}
 	}
 
@@ -13006,7 +13006,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 	}
 	self.parts.wpn_fps_snp_model70_iron_sight.stance_mod = {
 		wpn_fps_snp_msr = {
-			translation = Vector3(0, -3, -3.1)
+			translation = Vector3(0, -7, -3),
+			rotation = Rotation(0, -0.35, 0),
 		},
 		wpn_fps_snp_desertfox = {
 			translation = Vector3(0, -12, -3.48)

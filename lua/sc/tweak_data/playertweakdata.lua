@@ -487,8 +487,8 @@ function PlayerTweakData:_init_par()
 	default_init_par(self)
 	local pivot_shoulder_translation = Vector3(10, 4, -4)
 	local pivot_shoulder_rotation = Rotation(0.106596, -0.0844502, 0.629187)    
-	local pivot_head_translation = Vector3(0, 12, 0) -- 10, 12, -2
-	local pivot_head_rotation = Rotation(0, 0, 0) -- 0, 0, -5
+	local pivot_head_translation = Vector3(-0.0125, 12, -0.07) -- 10, 12, -2
+	local pivot_head_rotation = Rotation(0.1, 0, 0.5) -- 0, 0, -5
 	self.stances.par.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.par.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 	local pivot_head_translation = Vector3(0, 15, -8)

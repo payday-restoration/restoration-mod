@@ -232,6 +232,7 @@ function restoration:Init()
 		"battlearena", --Five-G
 		"constantine_penthouse_lvl", --Penthouse Crashers (Constantine Scores)
 		"constantine_resort_lvl", --Scarlett Resort (Constantine Scores)
+		"constantine_murkyairport_lvl", --Murky Airport (Constantine Scores)
 		"Security_Avenue" --GenSec HQ Day 1
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.

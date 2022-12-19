@@ -34,17 +34,12 @@ end)
 
 local old_throw = TeamAIMovement.throw_bag
 function TeamAIMovement:throw_bag(...)
-	--Bots never drop bags
-	if restoration and restoration.Options:GetValue("OTHER/BotsNoDrop") then
-		return
-	end
-
 	local data = self._ext_brain._logic_data
 	if data then
 		local objective = data.objective
 		if objective then
 			if objective.type == "revive" then
-				if managers.player:is_custom_cooldown_not_active("team", "crew_inspire") then
+				if managers.player:is_custom_cooldown_not_active("team", "crew_inspire") or restoration and restoration.Options:GetValue("OTHER/BotsNoDrop") then
 					return
 				end
 			end

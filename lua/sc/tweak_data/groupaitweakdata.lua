@@ -12466,7 +12466,17 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.TIT_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		self.unit_categories.TIT_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		self.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
-		self.unit_categories.TIT_tank.unit_types.omnia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"		
+		self.unit_categories.TIT_tank.unit_types.omnia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"	
+	elseif Month == "12" and restoration.Options:GetValue("OTHER/Holiday") then
+		self.unit_categories.SKULL_tank.unit_types.america[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.russia[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.zombie[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.murkywater[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.federales[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.nypd[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.lapd[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.fbi[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
+		self.unit_categories.SKULL_tank.unit_types.omnia[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"	
 	end
 	
 	--Snowman Boss

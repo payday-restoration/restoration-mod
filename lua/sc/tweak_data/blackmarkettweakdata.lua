@@ -3295,6 +3295,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.gerber.stats.charge_time = 0.8
 		self.melee_weapons.gerber.stats.range = 155
 		self.melee_weapons.gerber.stats.concealment = 29
+		
 		--REMEMBER THE BASICS OF--
 		self.melee_weapons.cqc.dot_data = {	
 			type = "poison",
@@ -3311,6 +3312,24 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cqc.stats.charge_time = 0.25
 		self.melee_weapons.cqc.stats.range = 150
 		self.melee_weapons.cqc.stats.concealment = 30
+			--LET'S GO PRACTICE MEDICINE--
+			self.melee_weapons.fear.dot_data = {
+				type = "poison",
+				custom_data = {
+					dot_damage = 1.5,
+					dot_length = 4.1,
+					hurt_animation_chance = 0.5
+				}
+			}
+			self.melee_weapons.fear.stats.min_damage = 1.2
+			self.melee_weapons.fear.stats.max_damage = 2.401
+			self.melee_weapons.fear.stats.min_damage_effect = 0.5
+			self.melee_weapons.fear.stats.max_damage_effect = 1.0
+			self.melee_weapons.fear.stats.charge_time = 0.25
+			self.melee_weapons.fear.stats.range = 150
+			self.melee_weapons.fear.stats.concealment = 30
+			self.melee_weapons.fear.info_id = "bm_melee_cqc_info"
+
 		--you got blood on my suit--
 		self.melee_weapons.wing.info_id = "bm_melee_wing_info"	
 		self.melee_weapons.wing.stats.min_damage = 2.4
@@ -3392,24 +3411,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.poker.stats.charge_time = 1.3
 		self.melee_weapons.poker.stats.range = 180
 		self.melee_weapons.poker.stats.concealment = 26
-
-		--LET'S GO PRACTICE MEDICINE--
-		self.melee_weapons.fear.dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 4.1,
-				hurt_animation_chance = 0.5
-			}
-		}
-		self.melee_weapons.fear.stats.min_damage = 1.2
-		self.melee_weapons.fear.stats.max_damage = 2.401
-		self.melee_weapons.fear.stats.min_damage_effect = 0.25
-		self.melee_weapons.fear.stats.max_damage_effect = 0.5
-		self.melee_weapons.fear.stats.charge_time = 0.25
-		self.melee_weapons.fear.stats.range = 150
-		self.melee_weapons.fear.stats.concealment = 30
-		self.melee_weapons.fear.info_id = "bm_melee_cqc_info"
 
 		--Clowns to the left of me, jokers to the right--
 		self.melee_weapons.clean.dot_data = {

@@ -887,7 +887,7 @@ function PlayerManager:get_max_grenades(grenade_id)
 
 	--Jack of all trades basic grenade count increase.
 	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
-	local is_perk_throwable = grenade_id.base_cooldown and not grenade_id.base_cooldown_no_perk
+	local is_perk_throwable = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown_no_perk")
 	if max_amount and not is_perk_throwable then
 		max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
 	end

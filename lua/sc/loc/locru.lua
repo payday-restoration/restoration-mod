@@ -2514,7 +2514,7 @@ elseif ai_type == m then
 elseif ai_type == o then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Идет ренд OMNIA",
+			["hud_assault_assault"] = "Идет рейд OMNIA",
 			["hud_assault_alpha"] = "РЕЙД OMNIA"
 		})
 	end)	
@@ -3352,6 +3352,14 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "Уворот",
+		["menu_st_category_all"] = "Все перки",
+		["menu_st_category_offensive"] = "Нападение",
+		["menu_st_category_defensive"] = "Защита",
+		["menu_st_category_supportive"] = "Поддержка",
+		["menu_st_category_favorites"] = "Избранные",
+		["menu_specialization_tier"] = "Карта",
+		["menu_specialization_key_but_deck"] = "Разблокировать",
+		["menu_specialization_key_favorite"] = "В избранное",
 		["menu_st_category_activated"] = "Включаемые",
 		["menu_st_category_challenge"] = "Пустые",
 

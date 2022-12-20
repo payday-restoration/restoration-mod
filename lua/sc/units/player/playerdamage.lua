@@ -301,7 +301,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--Get hit direction and display it on hud.
 	local attacker_unit = attack_data.attacker_unit
 	if alive(attacker_unit) then
-		self:_hit_direction(attacker_unit:position())
+		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attacK_dir)
 	end
 	
 	self._last_received_dmg = math.huge --As opposed to raw damage (attack_data.damage), just an idea to see if the game feels better without grace piercing
@@ -418,7 +418,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
-			self:_hit_direction(attacker_unit:position())
+			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attacK_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
 				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
@@ -505,7 +505,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
-			self:_hit_direction(attacker_unit:position())
+			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attacK_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
 				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
@@ -782,7 +782,7 @@ function PlayerDamage:damage_killzone(attack_data)
 		self:_damage_screen()
 		self:_check_bleed_out(nil)
 	else
-		self:_hit_direction(attack_data.col_ray.origin)
+		self:_hit_direction(attack_data.col_ray.origin, attack_data.col_ray.ray)
 
 		if self._bleed_out then
 			return
@@ -836,7 +836,7 @@ function PlayerDamage:damage_fall(data)
 	elseif self._bleed_out and not is_free_falling then
 		self._unit:sound():play("player_hit")
 		managers.environment_controller:hit_feedback_down()
-		managers.hud:on_hit_direction(Vector3(0, 0, 0), HUDHitDirection.DAMAGE_TYPES.HEALTH, 0)
+		managers.hud:on_hit_direction(Vector3(0, 0, -1), die and HUDHitDirection.DAMAGE_TYPES.HEALTH or HUDHitDirection.DAMAGE_TYPES.ARMOUR, 0)
 
 		return
 	end
@@ -1700,7 +1700,6 @@ function PlayerDamage:set_armor(armor)
 end
 
 --[[
-
 --For people like SC that enjoy being blinded when taking damage
 if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 	local _hit_direction_actual = PlayerDamage._hit_direction
@@ -1731,7 +1730,6 @@ if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 		return _hit_direction_actual(self, position_vector, ...)
 	end
 end
-
 ]]--
 
 function PlayerDamage:play_whizby(position)

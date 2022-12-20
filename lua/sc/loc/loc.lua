@@ -1147,6 +1147,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_flashlight"] = "Toggle the flashlight on/off by pressing #{skill_color}#$BTN_GADGET##",
 		["bm_wp_upg_fl_laser"] = "Toggle the laser on/off by pressing #{skill_color}#$BTN_GADGET##",
 		["bm_wp_upg_fl_dual"] = "Toggle between the laser and flashlight by pressing #{skill_color}#$BTN_GADGET##",
+		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Automatically marks## guards and special enemies within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",

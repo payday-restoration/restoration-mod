@@ -21327,6 +21327,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		--HeistEye Target Marker
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.supported = true
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.desc_id = "bm_wp_upg_fl_vmp_marker"
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.stats = {
 			value = 3,
 			concealment = -2

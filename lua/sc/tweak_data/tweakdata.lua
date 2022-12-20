@@ -2,6 +2,8 @@ if not tweak_data then
 	return 
 end
 
+tweak_data.accessibility_colors.screenflash.hit_flash.default = Color(255, 255, 250, 180) / 255
+
 tweak_data.ammo = {}
 tweak_data.ammo.ricochet = {}
 tweak_data.ammo.ricochet.max_ricochets = 5

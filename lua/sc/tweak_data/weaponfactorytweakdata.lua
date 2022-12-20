@@ -1532,6 +1532,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gadgets", "resmod_gadgets", functi
 		40
 	}
 	self.parts.wpn_fps_upg_fl_ass_smg_sho_surefire.supported = true
+	self.parts.wpn_fps_upg_fl_ass_smg_sho_surefire.desc_id = "bm_wp_upg_fl_flashlight"
 	self.parts.wpn_fps_upg_fl_ass_smg_sho_surefire.stats = {
 		value = 3
 	}
@@ -1543,6 +1544,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gadgets", "resmod_gadgets", functi
 		30,
 		40
 	}
+	self.parts.wpn_fps_upg_fl_ass_smg_sho_peqbox.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_upg_fl_ass_smg_sho_peqbox.supported = true
 	self.parts.wpn_fps_upg_fl_ass_smg_sho_peqbox.stats = {
 		value = 4
@@ -1556,6 +1558,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gadgets", "resmod_gadgets", functi
 		40
 	}
 	self.parts.wpn_fps_upg_fl_pis_laser.supported = true
+	self.parts.wpn_fps_upg_fl_pis_laser.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_upg_fl_pis_laser.stats = {
 		value = 4
 	}
@@ -1568,6 +1571,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gadgets", "resmod_gadgets", functi
 		40
 	}
 	self.parts.wpn_fps_upg_fl_pis_tlr1.supported = true
+	self.parts.wpn_fps_upg_fl_pis_tlr1.desc_id = "bm_wp_upg_fl_flashlight"
 	self.parts.wpn_fps_upg_fl_pis_tlr1.stats = {
 		value = 3
 	}
@@ -1661,6 +1665,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		40
 	}
 	self.parts.wpn_fps_upg_o_specter.has_description = true
+	self.parts.wpn_fps_upg_o_specter.has_second_sight = true
 	self.parts.wpn_fps_upg_o_specter.desc_id = "bm_wp_upg_o_4_irons"
 	self.parts.wpn_fps_upg_o_specter.supported = true
 	self.parts.wpn_fps_upg_o_specter.stats = {
@@ -2101,6 +2106,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		40	
 	}
 	self.parts.wpn_fps_upg_o_atibal.has_description = true
+	self.parts.wpn_fps_upg_o_atibal.has_second_sight = true
 	self.parts.wpn_fps_upg_o_atibal.desc_id = "bm_wp_upg_o_3_rds"		
 	self.parts.wpn_fps_upg_o_atibal.supported = true		
 	self.parts.wpn_fps_upg_o_atibal.stats = {
@@ -2130,8 +2136,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod.wpn_fps_snp_scout.translation + Vector3(0.06, 4.7, 1.6)
 	}
 
-
-
 	--CASSIAN Elite Combo Sight
 	self.parts.wpn_fps_upg_o_hamr.pcs = {
 		10, 
@@ -2140,6 +2144,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		40	
 	}
 	self.parts.wpn_fps_upg_o_hamr.has_description = true
+	self.parts.wpn_fps_upg_o_hamr.has_second_sight = true
 	self.parts.wpn_fps_upg_o_hamr.desc_id = "bm_wp_upg_o_4_rds"		
 	self.parts.wpn_fps_upg_o_hamr.supported = true		
 	self.parts.wpn_fps_upg_o_hamr.stats = {
@@ -2797,8 +2802,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	self.parts.wpn_fps_upg_ns_pis_medium_slim.perks = {"silencer"}
 	
+	--Compact Laser Module
+	self.parts.wpn_fps_upg_fl_ass_laser.pcs = {}
+	self.parts.wpn_fps_upg_fl_ass_laser.desc_id = "bm_wp_upg_fl_laser"
+	self.parts.wpn_fps_upg_fl_ass_laser.supported = true
+	self.parts.wpn_fps_upg_fl_ass_laser.stats = {
+		value = 3
+	}
+	self.parts.wpn_fps_upg_fl_ass_laser.perks = {"gadget"}
+
 	--Military Laser Module
 	self.parts.wpn_fps_upg_fl_ass_peq15.pcs = {}
+	self.parts.wpn_fps_upg_fl_ass_peq15.desc_id = "bm_wp_upg_fl_dual"
 	self.parts.wpn_fps_upg_fl_ass_peq15.supported = true
 	self.parts.wpn_fps_upg_fl_ass_peq15.stats = {
 		value = 5
@@ -6409,6 +6424,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ppk", "resmod_ppk", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_ppk_g_laser.supported = true
+	self.parts.wpn_fps_pis_ppk_g_laser.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_pis_ppk_g_laser.stats = {value = 1}
 	self.parts.wpn_fps_pis_ppk_g_laser.perks = {"gadget"}
 	
@@ -9295,6 +9311,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_pis_g26_g_laser.supported = true
+	self.parts.wpn_fps_pis_g26_g_laser.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_pis_g26_g_laser.stats = {
 		value = 4
 	}
@@ -9323,6 +9340,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_fl_pis_crimson.supported = true
+	self.parts.wpn_fps_upg_fl_pis_crimson.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_upg_fl_pis_crimson.stats = {
 		value = 4
 	}
@@ -9335,6 +9353,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		40
 	}
 	self.parts.wpn_fps_upg_fl_pis_x400v.supported = true
+	self.parts.wpn_fps_upg_fl_pis_x400v.desc_id = "bm_wp_upg_fl_dual"
 	self.parts.wpn_fps_upg_fl_pis_x400v.stats = {
 		value = 5
 	}
@@ -11468,6 +11487,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--LED Combo
 	self.parts.wpn_fps_upg_fl_ass_utg.pcs = {}
 	self.parts.wpn_fps_upg_fl_ass_utg.supported = true
+	self.parts.wpn_fps_upg_fl_ass_utg.desc_id = "bm_wp_upg_fl_dual"
 	self.parts.wpn_fps_upg_fl_ass_utg.stats = {
 		value = 5
 	}
@@ -11476,6 +11496,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	--Polymer Flashlight
 	self.parts.wpn_fps_upg_fl_pis_m3x.pcs = {}
 	self.parts.wpn_fps_upg_fl_pis_m3x.supported = true
+	self.parts.wpn_fps_upg_fl_pis_m3x.desc_id = "bm_wp_upg_fl_flashlight"
 	self.parts.wpn_fps_upg_fl_pis_m3x.stats = {
 		value = 3
 	}
@@ -13692,6 +13713,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 	--Twinkle Grip
 	self.parts.wpn_fps_smg_schakal_vg_surefire.pcs = {}
 	self.parts.wpn_fps_smg_schakal_vg_surefire.supported = true
+	self.parts.wpn_fps_smg_schakal_vg_surefire.desc_id = "bm_wp_upg_fl_dual"
 	self.parts.wpn_fps_smg_schakal_vg_surefire.stats = {
 		value = 5
 	}
@@ -14018,6 +14040,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Enlightened Foregrip
 	self.parts.wpn_fps_smg_mp5_fg_flash.pcs = {}
 	self.parts.wpn_fps_smg_mp5_fg_flash.supported = true
+	self.parts.wpn_fps_smg_mp5_fg_flash.desc_id = "bm_wp_upg_fl_flashlight"
 	self.parts.wpn_fps_smg_mp5_fg_flash.stats = {
 		value = 8,
 		spread = 1,
@@ -18239,6 +18262,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		40
 	}
 	self.parts.wpn_fps_upg_fl_pis_perst.supported = true
+	self.parts.wpn_fps_upg_fl_pis_perst.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_upg_fl_pis_perst.stats = {
 		value = 4
 	}
@@ -19114,6 +19138,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 	}
 
 	self.parts.wpn_fps_upg_fl_dbal_laser.supported = true
+	self.parts.wpn_fps_upg_fl_dbal_laser.desc_id = "bm_wp_upg_fl_laser"
 	self.parts.wpn_fps_upg_fl_dbal_laser.stats = {
 		value = 1
 	}

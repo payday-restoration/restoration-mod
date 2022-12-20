@@ -506,6 +506,8 @@
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="SecondSightSprint"/>
+					<divider name="tod_divider" size="7"/>
 					<option type="bool" default_value="false" name="SeparateBowADS"/>
 					<divider name="tod_divider" size="7"/>
 					<option type="bool" default_value="false" name="SprintCancel"/>

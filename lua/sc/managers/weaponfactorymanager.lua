@@ -30,6 +30,27 @@ function WeaponFactoryManager:get_weapon_id_by_factory_id(factory_id)
 	return upgrade.weapon_id
 end
 
+function WeaponFactoryManager:get_part_desc_by_part_id_from_weapon(part_id, factory_id, blueprint)
+	local factory = tweak_data.weapon.factory
+	local override = self:_get_override_parts(factory_id, blueprint)
+	local part = self:_part_data(part_id, factory_id, override)
+	local desc_id = part.desc_id or tweak_data.blackmarket.weapon_mods[part_id].desc_id
+	log(tostring(desc_id))
+	local is_second_sight = part and ( part.has_second_sight or part.sub_type == "second_sight" or ( part.perks and table.contains(part.perks, "second_sight") ) )
+	local params = {
+		BTN_GADGET = (restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint") and is_second_sight and managers.localization:btn_macro("run", true)) or managers.localization:btn_macro("weapon_gadget", true),
+		BTN_BIPOD = managers.localization:btn_macro("deploy_bipod", true)
+	}
+
+	if managers.menu:is_pc_controller() and managers.localization:exists(desc_id .. "_pc") then
+		return managers.localization:text(desc_id .. "_pc", params)
+	elseif managers.localization:exists(desc_id) then
+		return managers.localization:text(desc_id, params)
+	end
+
+	return Application:production_build() and managers.localization:text(desc_id) or ""
+end
+
 --Debug stuff
 --[[
 function WeaponFactoryManager:unpack_blueprint_from_string(factory_id, blueprint_string)

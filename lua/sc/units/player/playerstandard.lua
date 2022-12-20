@@ -1269,6 +1269,13 @@ end
 
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
+	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
+
+	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
+	if second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+		return
+	end
+
 	if self._slowdown_run_prevent then
 		self._running_wanted = false
 
@@ -1295,7 +1302,6 @@ function PlayerStandard:_start_action_running(t)
 				
 	self:set_running(true)
 
-	local weap_base = self._equipped_unit:base()
 	weap_base:tweak_data_anim_stop("fire")
 	weap_base:tweak_data_anim_stop("fire_steelsight")
 	if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:can_reload() and not weap_base:clip_empty()) then
@@ -2297,7 +2303,32 @@ function PlayerStandard:_check_action_steelsight(t, input)
 	return new_action
 end
 
+function PlayerStandard:_toggle_gadget(weap_base)
+	local gadget_index = 0
 
+	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
+	if not second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+		return
+	end
+
+	if weap_base.toggle_gadget and weap_base:has_gadget() and weap_base:toggle_gadget(self) then
+		gadget_index = weap_base:current_gadget_index()
+
+		self._unit:network():send("set_weapon_gadget_state", weap_base._gadget_on)
+
+		local gadget = weap_base:get_active_gadget()
+
+		if gadget and gadget.color then
+			local col = gadget:color()
+
+			self._unit:network():send("set_weapon_gadget_color", col.r * 255, col.g * 255, col.b * 255)
+		end
+
+		if alive(self._equipped_unit) then
+			managers.hud:set_ammo_amount(weap_base:selection_index(), weap_base:ammo_info())
+		end
+	end
+end
 
 function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._equipped_unit and self._equipped_unit:base() then

@@ -887,7 +887,8 @@ function PlayerManager:get_max_grenades(grenade_id)
 
 	--Jack of all trades basic grenade count increase.
 	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
-	if max_amount and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") then
+	local is_perk_throwable = grenade_id.base_cooldown and not grenade_id.base_cooldown_no_perk
+	if max_amount and not is_perk_throwable then
 		max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
 	end
 	max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
@@ -927,8 +928,9 @@ function PlayerManager:_internal_load()
 	if self:has_grenade(peer_id) then
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
-
-	if amount and not grenade.base_cooldown then --*Should* stop perk deck actives from being increased.
+	
+	local is_perk_throwable = grenade.base_cooldown and not grenade.base_cooldown_no_perk
+	if amount and not is_perk_throwable then --*Should* stop perk deck actives from being increased.
 		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount) --Crime spree throwables mod.
 		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0)) --JOAT Basic
 	end

@@ -543,6 +543,13 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 
 	self.projectiles.sticky_grenade.throw_shout = nil
 
+	if self.projectiles.xmas_snowball then
+		self.projectiles.xmas_snowball.max_amount = 3
+		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
+		self.projectiles.xmas_snowball.base_cooldown = 5
+		self.projectiles.xmas_snowball.throw_shout = true
+	end
+
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
 	

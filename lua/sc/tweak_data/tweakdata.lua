@@ -489,6 +489,18 @@ tweak_data.projectiles.wpn_prj_hur.damage = 36
 tweak_data.projectiles.wpn_prj_hur.launch_speed = 1800
 tweak_data.projectiles.wpn_prj_hur.adjust_z = 0
 
+--Balled Snow--
+if tweak_data.projectiles.xmas_snowball then
+	tweak_data.projectiles.xmas_snowball.damage = 24
+	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
+	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
+	tweak_data.projectiles.xmas_snowball.feedback_range = -100
+	tweak_data.projectiles.xmas_snowball.curve_pow = 0.000001
+	tweak_data.projectiles.xmas_snowball.range = 100
+	tweak_data.projectiles.xmas_snowball.launch_speed = 1500
+	tweak_data.projectiles.xmas_snowball.adjust_z = 0
+end
+
 --ZAPper grenade
 tweak_data.projectiles.wpn_gre_electric.damage = 40
 tweak_data.projectiles.wpn_gre_electric.player_damage = 20
@@ -703,11 +715,13 @@ tweak_data.projectiles.sticky_grenade.launch_speed = 225
 tweak_data.projectiles.molotov.launch_speed = 200
 velocity = {
 	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
-	'wpn_prj_hur','wpn_prj_jav'
+	'wpn_prj_hur','wpn_prj_jav','xmas_snowball'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].adjust_z = 50
-	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].adjust_z = 50
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
 end
 
 

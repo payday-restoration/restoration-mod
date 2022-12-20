@@ -2205,6 +2205,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_poison_gas_grenade_desc"] = "Damage: 300 over 10s \nRadius: 6m \nDuration (Gas Cloud): 12s \nFuse: 1s after remaining stationary \n- Enemies cannot be poisoned by the same gas cloud more than once\n- Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.\n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		["bm_grenade_sticky_grenade"] = "Semtex",
 		["bm_grenade_sticky_grenade_desc"] = "Damage: 800 \nRadius: 4m \nFuse: 3s, fuse resets upon sticking \n\nThrowable explosive compound that will stick to most surfaces, including people!",
+		["bm_grenade_xmas_snowball_desc"] = "Damage: 240 \nRadius: 1m \nRegen time: 4s \nFuse: Breaks upon impact \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
@@ -3123,7 +3124,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "Evasion",
-				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#5%## additional movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nRun and reload - you can reload your weapons while sprinting.\n\nA setting to allow for sprint canceling reloads can be found in Restoration Mod's extra options.",
+				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#5%## additional movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nRun and reload - you can reload your weapons while sprinting.\n\nA setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Deep Pockets",

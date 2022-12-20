@@ -136,8 +136,6 @@
 	<mission			path="levels/narratives/classics/glace/world/world" force="true" unload="true"/> <!--restores the unused dozer rappel man that is supposed to spawn during the scaffolding defend section on mayhem and above-->
 																										 <!--actually that was cloaker but I replaced him with dozer as a PDTH's OVK 145+ throwback-->
 	
-	<mission			path="levels/narratives/bain/rvd/stage2/world/world" force="true" unload="true"/> <!--changes up the scripted dozers at the start of the heist--> 
-	
 	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	

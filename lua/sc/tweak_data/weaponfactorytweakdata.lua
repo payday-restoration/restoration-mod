@@ -18975,6 +18975,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		30,
 		40
 	}
+	self.parts.wpn_fps_m4_uupg_upper_radian.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_m4_uupg_upper_radian.adds = { "wpn_fps_m4_uupg_draghandle" }
+	self.parts.wpn_fps_m4_uupg_upper_radian.override.wpn_fps_amcar_uupg_body_upperreciever = {
+		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
+		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
+		a_obj = "a_o"
+	}
 	self.parts.wpn_fps_m4_uupg_upper_radian.supported = true
 	self.parts.wpn_fps_m4_uupg_upper_radian.stats = {
 		value = 5,

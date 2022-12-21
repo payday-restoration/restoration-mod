@@ -406,7 +406,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.mia2_new.teams = self.mia_2.teams
 
-	self.cane.package = {"packages/cane", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
+	self.cane.package = {"packages/cane", "packages/narr_born_1", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	self.cane.player_style = "winter_suit"
 							
 	self.mus.package = {"packages/narr_mus"}

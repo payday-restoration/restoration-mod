@@ -129,10 +129,6 @@
 
 	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
 	
-	<mission			path="levels/narratives/locke/mex/world/world" force="true" unload="true"/> <!--Adds female/guard bikers, made the mex security not kill their men-->
-	
-	<mission			path="levels/narratives/bain/revenge/world/world" force="true" unload="true"/>
-	
 	<mission			path="levels/narratives/classics/glace/world/world" force="true" unload="true"/> <!--restores the unused dozer rappel man that is supposed to spawn during the scaffolding defend section on mayhem and above-->
 																										 <!--actually that was cloaker but I replaced him with dozer as a PDTH's OVK 145+ throwback-->
 	

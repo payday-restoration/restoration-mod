@@ -5207,7 +5207,8 @@ function BlackMarketGui:update_info_text()
 			end
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
 		end
-
+		
+		crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
 			local description = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
 			if is_gadget and has_second_sight and not is_second_sight then

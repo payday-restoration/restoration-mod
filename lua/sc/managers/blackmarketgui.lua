@@ -5172,11 +5172,25 @@ function BlackMarketGui:update_info_text()
 		local part_data = part_id and tweak_data.weapon.factory.parts[part_id]
 		local perks = part_data and part_data.perks
 		local is_gadget = part_data and part_data.type == "gadget" or perks and table.contains(perks, "gadget")
+		local is_second_sight = part_data and part_data.sub_type == "second_sight" or perks and table.contains(perks, "second_sight")
 		local is_ammo = part_data and part_data.type == "ammo" or perks and table.contains(perks, "ammo")
 		local is_bayonet = part_data and part_data.type == "bayonet" or perks and table.contains(perks, "bayonet")
 		local is_bipod = part_data and part_data.type == "bipod" or perks and table.contains(perks, "bipod")
 		local has_desc = part_data and part_data.has_description == true
 		local has_sms = part_data and part_data.custom_stats and part_data.custom_stats.sms
+		local has_second_sight = nil
+		local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
+		if crafted then
+			for _, id in ipairs(managers.weapon_factory:get_assembled_blueprint(crafted.factory_id, crafted.blueprint)) do
+				local part = managers.weapon_factory:_part_data(id, crafted.factory_id)
+				if part and ( part.has_second_sight or part.sub_type == "second_sight" or ( part.perks and table.contains(part.perks, "second_sight") ) ) then
+					has_second_sight = not restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint") and true
+					break -- don't need to keep looking if one is present
+				end
+			end
+		end
+
+
 		local desc_color_info = part_data and part_data.desc_color_info
 		updated_texts[4].resource_color = {}
 
@@ -5194,9 +5208,11 @@ function BlackMarketGui:update_info_text()
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
 		end
 
-		local crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
 			local description = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)
+			if is_gadget and has_second_sight and not is_second_sight then
+				description = description .. managers.localization:text("bm_wp_upg_fl_second_sight_warning")
+			end
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end

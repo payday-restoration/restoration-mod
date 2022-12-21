@@ -1786,7 +1786,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			translation = Vector3(0, -1.5, -3.54)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
-			translation = Vector3(-0.005, -19.2, 0.6),
+			translation = Vector3(-0.005, -12, 0.65),
 			rotation = Rotation(0, 0, 0)
 		}
 	
@@ -2087,15 +2087,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.02, -3, -3.521)
 			}
 	--Milspec Scope Back-up Irons
+	self.parts.wpn_fps_upg_o_specter_piggyback.stats = {
+		value = 1,
+		gadget_zoom = 1
+	}
 	self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0, -10, -3.15)
 		end
 	end
-	self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod.wpn_fps_snp_scout = {
-		translation = self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout.translation + Vector3(0, 8, -2.2) --WHY ARE OPTICS ON THE SCOUT SO FUCKING TINY??????
-	}
 
 
 	--CASSIAN Sharp Combo Sight
@@ -2122,19 +2123,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			end
 		end
 	end
-	self.parts.wpn_fps_upg_o_atibal.stance_mod.wpn_fps_snp_scout = {
-		translation = self.parts.wpn_fps_upg_o_atibal.stance_mod.wpn_fps_snp_scout.translation + Vector3(0, -0, 0.25)
-	}
 
+	self.parts.wpn_fps_upg_o_atibal_reddot.stats = {
+		value = 1,
+		gadget_zoom = 2
+	}
 	self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_atibal.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + sight_atibal_rds_offset.offset
 		end
 	end
-	self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod.wpn_fps_snp_scout = {
-		translation = self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod.wpn_fps_snp_scout.translation + Vector3(0.06, 4.7, 1.6)
-	}
 
 	--CASSIAN Elite Combo Sight
 	self.parts.wpn_fps_upg_o_hamr.pcs = {
@@ -2153,15 +2152,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_hamr.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_hamr.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_hamr_reddot.stats = {
+		value = 1,
+		gadget_zoom = 2
+	}
 	self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0, -14, -3.3)
 		end
 	end
-	self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod.wpn_fps_snp_scout = {
-		translation = self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout.translation + Vector3(0, -10, -2.4)
-	}
 
 	--Military Red Dot
 	self.parts.wpn_fps_upg_o_aimpoint.pcs = {
@@ -2385,7 +2385,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(0, -23, -4.54)
 	}
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0.001, -31.5, -0.122)
+		translation = Vector3(-0.001, -34.3, -0.111)
 	}
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_victor = {
 		translation = Vector3(-0.001, -15.5, -1.089)
@@ -2459,7 +2459,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-0, -34.1, -0.555)
 	}
 	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0, -38, -0)
+		translation = Vector3(-0, -38.9, -0.211)
 	}
 	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_victor = {
 		translation = Vector3(-0.001, -19.9, -1.191)
@@ -3891,6 +3891,9 @@ end)
 
 --Shared AK Parts
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", function(self)
+
+	--Default sight rail
+	self.parts.wpn_fps_ak_extra_ris.override = nil
 
 	--Default Handguard
 	self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_specter.stance_mod = { 
@@ -10858,14 +10861,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 			weap.translation = weap.translation + Vector3(0, -10, -3.15)
 		end
 	end
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_hamr.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_hamr = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter)
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_hamr_reddot = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_hamr)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_hamr_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + sight_hamr_rds_offset.offset
 		end
 	end
-	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_atibal.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_atibal = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_atibal.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + sight_atibal_offset.offset
@@ -13996,7 +13999,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		translation = Vector3(-0.001, -15.95, -4.68)
 	}
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(-0.002, -35.1, -0.21),
+		translation = Vector3(-0.002, -37.3, -0.21),
 		rotation = Rotation(0, 0, 0)
 	}
 	--Custom wep alignment
@@ -14552,6 +14555,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coal", "resmod_coal", function(sel
 		stats = deep_clone(stocks.remove_folder_stats),
 		custom_stats = deep_clone(stocks.remove_folder_stats)
 	}
+	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_zenitco = {
+		stats = { },
+		custom_stats = { },
+		adds = { }
+	}
 
 	--New Parts
 	table.insert(self.wpn_fps_smg_coal.uses_parts, "wpn_upg_ak_s_psl")	
@@ -14592,10 +14600,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", functi
 	}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.perks = {"gadget"}
 	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod.wpn_fps_snp_scout = { --Needs its own set cuz itty bitty baby scopes
-		translation = Vector3(-0.005, -20, 0.6),
-		rotation = Rotation(0, 0, 0)
-	}
 	
 	--Angled Sight v2
 	self.parts.wpn_fps_upg_o_45rds_v2.pcs = {
@@ -16907,8 +16911,6 @@ end)
 --Bernetti Rangerhitter
 Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 
-	self.parts.wpn_fps_snp_sbl_body_standard.forbids = { "wpn_fps_addon_ris" }
-
 	--BIG Barrel
 	self.parts.wpn_fps_snp_sbl_b_long.pcs = {
 		10,
@@ -16966,12 +16968,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	self.parts.wpn_fps_snp_sbl_o_standard.stats = {
 		value = 1
 	}	
-	
-	--Override Table
-	self.wpn_fps_snp_sbl.override = {}
-	self.wpn_fps_snp_sbl.adds = {}
-			
-	self.wpn_fps_snp_sbl_npc.override = deep_clone(self.wpn_fps_snp_sbl.override)	
+
+	self.wpn_fps_snp_sbl.override = self.wpn_fps_snp_sbl.override or {}
+
+	for i, part_id in pairs(self.wpn_fps_snp_sbl.uses_parts) do
+		if self.parts and self.parts[part_id] and self.parts[part_id].a_obj and self.parts[part_id].a_obj == "a_fl" then
+			self.wpn_fps_snp_sbl.override[part_id] = self.wpn_fps_snp_sbl.override[part_id] or {}
+			self.wpn_fps_snp_sbl.override[part_id].a_obj = "a_fl_2"
+		end
+	end	
+
+	self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris = self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris or {}
+	self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris.a_obj = "a_fl_2"
+
+	self.wpn_fps_snp_sbl_npc.override = deep_clone(self.wpn_fps_snp_sbl.override)		
 	self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)		
 
 end)
@@ -19048,6 +19058,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		40
 	}
 	self.parts.wpn_fps_upg_ak_s_zenitco.supported = true
+	self.parts.wpn_fps_upg_ak_s_zenitco.adds = { "wpn_upg_ak_g_standard" }
 	self.parts.wpn_fps_upg_ak_s_zenitco.stats = deep_clone(stocks.nocheeks_to_folder_stats)
 	self.parts.wpn_fps_upg_ak_s_zenitco.custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
 

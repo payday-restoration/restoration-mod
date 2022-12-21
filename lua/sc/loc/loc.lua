@@ -152,7 +152,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
 		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
 		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
-		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS. While enabled, you cannot enter a sprint while ADS and non-sight gadgets may be toggled with the gadget button, even while ADS with a secondary sight.",
+		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
 		["RestorationModAimDeploysBipodTitleID"] = "ADS Deploys Bipod",
 		["RestorationModAimDeploysBipodDescID"] = "Enable/disable bipods auto-mounting when ADSing over a valid surface.",
 		["RestorationModMoveCancelBipodTitleID"] = "Movement Dismounts Bipod",
@@ -1144,9 +1144,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
 		["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
 
-		["bm_wp_upg_fl_flashlight"] = "Toggle the flashlight on/off by pressing #{skill_color}#$BTN_GADGET##",
-		["bm_wp_upg_fl_laser"] = "Toggle the laser on/off by pressing #{skill_color}#$BTN_GADGET##",
-		["bm_wp_upg_fl_dual"] = "Toggle between the laser and flashlight by pressing #{skill_color}#$BTN_GADGET##",
+		["bm_wp_upg_fl_flashlight"] = "Toggle the flashlight on/off by pressing #{skill_color}#$BTN_GADGET.##",
+		["bm_wp_upg_fl_laser"] = "Toggle the laser on/off by pressing #{skill_color}#$BTN_GADGET.##",
+		["bm_wp_upg_fl_dual"] = "Toggle between the laser and flashlight by pressing #{skill_color}#$BTN_GADGET.##",
 		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Automatically marks## guards and special enemies within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#CANNOT BE TOGGLED WHILE AIMING AS A SECONDARY SIGHT IS ATTACHED.##",
 

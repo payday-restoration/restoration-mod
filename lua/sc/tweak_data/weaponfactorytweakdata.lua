@@ -14555,7 +14555,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coal", "resmod_coal", function(sel
 		stats = deep_clone(stocks.remove_folder_stats),
 		custom_stats = deep_clone(stocks.remove_folder_stats)
 	}
-	self.wpn_fps_ass_74.override.wpn_fps_upg_ak_s_zenitco = {
+	self.wpn_fps_smg_coal.override.wpn_fps_upg_ak_s_zenitco = {
 		stats = { },
 		custom_stats = { },
 		adds = { }

@@ -149,7 +149,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
-		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬 없이 주 무기로 쓰러질 때 소생 시 강제 무기 교체를 비활성화합니다.",		
+		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬 없이 주 무기로 쓰러질 때 소생 시 강제 무기 교체를 비활성화합니다.",
+		["RestorationModSecondSightSprintTitleID"] = "전력 질주 버튼 누르는 동안 보조 조준기 전환",
+		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다. 활성화된 상태에서는 조준이 보조 조준기에 있는 동안에도 조준 및 비조준기 가젯이 가젯 버튼으로 전환되는 동안 전력 질주를 할 수 없습니다.",		
 		["RestorationModAimDeploysBipodTitleID"] = "정조준 상태에서 양각대 펼치기",
 		["RestorationModAimDeploysBipodDescID"] = "유효한 표면 위에 정조준을 할 때 양각대 자동 거치을 활성화하거나 비활성화합니다.",
 		["RestorationModMoveCancelBipodTitleID"] = "움직일때 양각대 분리",
@@ -1159,6 +1161,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_wp_upg_o_shortdot_dmc"] = "숏닷 조준경",
 		["bm_wp_upg_o_5_default"] = "원거리 조준경.\n기본 저격소총의 조준경 십자선을 수정할 수 있도록 부착합니다.\n#{skill_color}#5x 배율.##",
+		
+		["bm_wp_upg_fl_flashlight"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 손전등을 켜거나 끕니다.",
+		["bm_wp_upg_fl_laser"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 레이저를 켜거나 끕니다.",
+		["bm_wp_upg_fl_dual"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 레이저와 손전등 사이를 전환합니다.",
+		["bm_wp_upg_fl_vmp_marker"] = "조준하는 동안 #{skill_color}#40##미터 내에 있는 경비병과 특수 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 중에만 마킹할 수 있습니다.##",		
+	
 
 		["bm_wp_upg_o_angled_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 기계식 조준기 사이를 전환합니다.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 반사 조준기 사이를 전환합니다.\n#{skill_color}#1.1x 배율.##",
@@ -2074,7 +2082,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 생화학 수류탄",
 		["bm_grenade_poison_gas_grenade_desc"] = "대미지: 10초당 300 \n범위: 6m \n지속시간 (가스 구름): 12초 \n기폭: 정지 상태를 유지한 후 1초 \n- 적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.\n- 실드, 불도저, 척탄병, 캡틴은 스턴 효과에 면역입니다.\n\n이 실험적인 생물무기는 당신이나 당신의 팀원들에게 해를 끼치지 않도록 설계된 특정 유전자형을 표적으로 하는 독성 가스 구름을 뿜어냅니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 선택한 무기인거야, 페코.",
 		["bm_grenade_sticky_grenade"] = "셈텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "대미지: 800 \n범위: 4m \n기폭: 3초, 붙혀질 시 기폭 시간 재설정 \n\n사람을 포함한 대부분의 표면에 달라붙는 던질 수 있는 폭발성 화합물입니다!",		
+		["bm_grenade_sticky_grenade_desc"] = "대미지: 800 \n범위: 4m \n기폭: 3초, 붙혀질 시 기폭 시간 재설정 \n\n사람을 포함한 대부분의 표면에 달라붙는 던질 수 있는 폭발성 화합물입니다!",
+		["bm_grenade_xmas_snowball_desc"] = "대미지: 240 \n범위: 1m \n기폭: 충격 시 부서짐 \n충전 시간: 5초 \n\n눈을 물에 담가 냉동실에 넣어주면 치명적인 무기를 얻을 수 있습니다. 간단하죠.",		
 	
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",

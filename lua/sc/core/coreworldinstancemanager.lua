@@ -48,7 +48,11 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		--"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Recurring spawns
+		"titan_snipers",
+		--Event units
+		"snowman_boss"		
 	},
 	["standard_with_single_spooc"] = {
 		--All Blue units
@@ -99,7 +103,11 @@ local standard_spawngroups = {
 		"Cap_Summers",
 		--Cloakers
 		"single_spooc",
-		"FBI_spoocs"
+		"FBI_spoocs",
+		--Recurring spawns
+		"titan_snipers",
+		--Event units
+		"snowman_boss"		
 	},
 	["proprietary_pbr"] = {
 		"single_spooc",
@@ -134,7 +142,11 @@ local standard_spawngroups = {
 		"GS_heavys",
 		"GS_heavys_boom",
 		"FBI_swats",
-		"GS_swats"
+		"GS_swats",
+		--Recurring spawns
+		"titan_snipers",
+		--Event units
+		"snowman_boss"		
 	}
 }
 

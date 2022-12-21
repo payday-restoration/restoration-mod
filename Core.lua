@@ -664,3 +664,19 @@ function restoration:send_sync_environment(to)
 		end
 	end
 end
+
+--Stealing this from SH cause it's way better
+function restoration:require(file)
+	local path = ModPath .. "req/" .. file .. ".lua"
+	return io.file_is_readable(path) and blt.vm.dofile(path)
+end
+
+function restoration:mission_script_patches()
+	if self._mission_script_patches == nil then
+		local level_id = Global.game_settings and Global.game_settings.level_id
+		if level_id then
+			self._mission_script_patches = self:require("mission_script/" .. level_id:gsub("_night$", ""):gsub("_day$", "")) or false
+		end
+	end
+	return self._mission_script_patches
+end

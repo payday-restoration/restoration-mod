@@ -14681,6 +14681,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.hhpc.timers.reload_exit_not_empty = 0.5
 		end
 
+		if self.predator_spear_crossbow then 
+			self.predator_spear_crossbow.use_data.selection_index = 2
+			self.predator_spear_crossbow.upgrade_blocks = {
+				weapon = {
+					"clip_ammo_increase"
+				}
+			}
+			self.predator_spear_crossbow.damage_type = "sniper"
+			self.predator_spear_crossbow.has_description = true
+			self.predator_spear_crossbow.desc_id = "bm_xbow_sc_desc"
+			self.predator_spear_crossbow.lock_slide = true
+			self.predator_spear_crossbow.sounds.magazine_empty = nil
+			self.predator_spear_crossbow.fire_mode_data.fire_rate = 1
+			self.predator_spear_crossbow.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.predator_spear_crossbow.AMMO_MAX = 30
+			self.predator_spear_crossbow.panic_suppression_chance = 0.05
+			self.predator_spear_crossbow.ignore_damage_upgrades = true
+			self.predator_spear_crossbow.supported = true
+			self.predator_spear_crossbow.ads_speed = 0.260
+			self.predator_spear_crossbow.stats = {
+				damage = 60,
+				spread = 91,
+				recoil = 85,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 26,
+				suppression = 20,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.predator_spear_crossbow.timers.reload_not_empty = 1.55
+			self.predator_spear_crossbow.timers.reload_empty = 1.55
+			self.predator_spear_crossbow.timers.reload_exit_empty = 0.6
+			self.predator_spear_crossbow.timers.reload_exit_not_empty = 0.6
+			self.predator_spear_crossbow.stats_modifiers = {damage = 4}
+		end
+
 		if self.type99inc then --Actually set up to use the stats for "system", stuff here is just for UI and anything else that might be looking for stuff from "type99inc"
 			self.type99inc.categories = {
 				"flamethrower",

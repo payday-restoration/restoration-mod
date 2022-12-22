@@ -24056,6 +24056,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	--Predator Pack
+	if self.parts.wpn_fps_upg_fl_pinty_combo_tribeam then
+		self.parts.wpn_fps_upg_fl_pinty_combo_tribeam.supported = true
+		self.parts.wpn_fps_upg_fl_pinty_combo_tribeam.desc_id = "bm_wp_upg_fl_laser"
+		self.parts.wpn_fps_upg_fl_pinty_combo_tribeam.supported = true
+		self.parts.wpn_fps_upg_fl_pinty_combo_tribeam.stats = { value = 4 }
+		self.parts.wpn_fps_upg_fl_pis_ncstar_comp_tribeam.supported = true
+		self.parts.wpn_fps_upg_fl_pis_ncstar_comp_tribeam.desc_id = "bm_wp_upg_fl_laser"
+		self.parts.wpn_fps_upg_fl_pis_ncstar_comp_tribeam.supported = true
+		self.parts.wpn_fps_upg_fl_pis_ncstar_comp_tribeam.stats = { value = 4 }
+	end
 	if self.parts.wpn_fps_ass_plasmaproto_mag then
 		self.parts.wpn_fps_ass_plasmaproto_mag.supported = true
 		self.parts.wpn_fps_ass_plasmaproto_mag.stats = { value = 0}

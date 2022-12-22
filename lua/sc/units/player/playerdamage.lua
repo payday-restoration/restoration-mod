@@ -408,6 +408,88 @@ function PlayerDamage:damage_bullet(attack_data)
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
+			
+			--This shit needs to be here, it is what it is
+			if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
+				local hit_chance = pm:upgrade_value("player", "dodge_ricochet_bullets")[1]
+				local cooldown = pm:upgrade_value("player", "dodge_ricochet_bullets")[2]
+				local last_ricochet_time = 0
+				local from = Vector3()
+				local to = Vector3()
+				local dir = Vector3()
+				local t = TimerManager:game():time()
+
+				if t > last_ricochet_time + cooldown then
+					last_ricochet_time = t
+					local player_unit = pm:local_player()
+
+					if not alive(attacker_unit) or not attacker_unit:character_damage() or attacker_unit:character_damage():dead() or not attacker_unit:character_damage().damage_simple then
+						return
+					end
+
+					mvector3.set(dir, attack_data.col_ray.ray)
+					mvector3.negate(dir)
+					mvector3.set(to, attack_data.col_ray.position)
+					mvector3.set(from, dir)
+					mvector3.multiply(from, attack_data.col_ray.distance or 20000)
+					mvector3.add(from, to)
+					math.point_on_line(from, to, player_unit:movement():m_head_pos(), to)
+					mvector3.direction(dir, to, from)
+					mvector3.set(from, to)
+					mvector3.set(to, dir)
+					mvector3.spread(to, 3)
+					mvector3.multiply(to, 20000)
+					mvector3.add(to, from)
+
+					local ray_hits = RaycastWeaponBase.collect_hits(from, to, {
+						ignore_unit = {
+							player_unit
+						}
+					})
+					local hit_dmg_ext = nil
+
+					for _, col_ray in ipairs(ray_hits) do
+						hit_dmg_ext = col_ray.unit:character_damage()
+
+						if hit_dmg_ext and hit_dmg_ext.damage_simple then
+							hit_dmg_ext:damage_simple({
+								variant = "bullet",
+								damage = attack_data.damage,
+								attacker_unit = player_unit,
+								pos = col_ray.position,
+								attack_dir = dir
+							})
+							managers.game_play_central:play_impact_flesh({
+								col_ray = col_ray
+							})
+						end
+
+						managers.game_play_central:play_impact_sound_and_effects({
+							col_ray = col_ray
+						})
+					end
+
+					local furthest_hit = ray_hits[#ray_hits]
+
+					if furthest_hit and furthest_hit.distance > 600 or not furthest_hit then
+						local trail_effect_table = {
+							effect = RaycastWeaponBase.TRAIL_EFFECT,
+							normal = dir,
+							position = from
+						}
+						local trail = World:effect_manager():spawn(trail_effect_table)
+
+						if furthest_hit then
+							World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 600) / 10000, 0, furthest_hit.distance))
+						end
+					end
+				end
+
+				pm:register_message(Message.OnPlayerDodge, "dodge_ricochet_bullets", on_player_dodged)
+			else
+				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
+			end
+		
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.

@@ -92,13 +92,10 @@
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
 		
-	<!--Tiny Heist Edits that Change like a few things-->	
-	<mission			path="levels/narratives/pbr/jerry/world/world" force="true" unload="true"/> <!--removes scripted sewer spawns. might have messed something up on the sewer part, so uh pls test kthx.-->		
+	<!--Tiny Heist Edits that Change like a few things-->		
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
 	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
 	<mission			path="levels/instances/unique/pbr/pbr_sewer_enemies/world/world" force="true" unload="true"/> <!--adjusted the dozers cuz fuck the trio of skullys that come on mayhem above-->
-	<mission			path="levels/narratives/classics/dinner/world/world" force="true" />  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
-	<continent			path="levels/narratives/classics/dinner/world/world" force="true" />
 	
 	<!--shotgun man for security rooms-->
 	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> 
@@ -138,10 +135,7 @@
 	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> <!--delayed and balanced the spawns so they won't appear out of nowhere-->
 	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
 	
-	<mission			path="levels/narratives/pbr/berry/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
-	
-	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--ditto but on surface-->
-	<mission			path="levels/instances/unique/pbr/pbr_mountain_control_room/world/world" force="true" unload="true"/> <!--changed up the control room to feature Murky security-->
+	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
 	
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
@@ -158,8 +152,6 @@
 	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
-	
-	<mission			path="levels/narratives/locke/bph/world/world" force="true" unload="true"/> <!--Delayed the spawns and replaced scripted spawns with better Murkies-->
 	
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
 	

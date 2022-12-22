@@ -591,8 +591,6 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
@@ -671,8 +669,6 @@ local nypd_overkill = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
@@ -751,8 +747,6 @@ local nypd_mayhem = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -833,8 +827,6 @@ local nypd_deathwish = {
 		-- segurity :DDDD
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1",
@@ -919,8 +911,6 @@ local nypd_zeal = {
 		-- segurity :DDDD
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2",
-		["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
-		["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",

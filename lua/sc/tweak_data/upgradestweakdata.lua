@@ -2022,6 +2022,187 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 end)
 
+
+function UpgradesTweakData.mrwi_deck9_options()
+	local deck9_options = {
+		{ --Crew Chief
+			icon_xy = {2, 0},
+			name_id = "menu_deck1_3",
+			desc_id = "menu_deck1_3_desc_mrwi",
+			upgrades = {
+				"team_passive_stamina_multiplier_1",
+				"player_passive_intimidate_range_mul"
+			}
+		},
+		{ --Muscle
+			icon_xy = {3, 1},
+			name_id = "menu_deck2_7",
+			desc_id = "menu_deck2_7_desc_mrwi",
+			upgrades = {
+				"player_panic_suppression"
+			}
+		},
+		{ --Armorer
+			icon_xy = {6, 1},
+			name_id = "menu_deck3_7",
+			desc_id = "menu_deck3_7_desc_sc",
+			upgrades = {
+				"player_perk_armor_regen_timer_multiplier_1"
+			}
+		},
+		{ --Rouge
+			icon_xy = {4, 2},
+			name_id = "menu_deck4_1",
+			desc_id = "menu_deck4_1_desc_mrwi",
+			upgrades = {
+				"weapon_passive_swap_speed_multiplier_1"
+			}
+		},
+		{ --Hitman
+			icon_xy = {6, 2},
+			name_id = "menu_deck5_1",
+			desc_id = "menu_deck5_1_desc_sc",
+			upgrades = {
+				"player_store_temp_health_1"
+			}
+		},
+		{ --Crook
+			icon_xy = {5, 3},
+			name_id = "menu_deck6_5",
+			desc_id = "menu_deck6_5_desc_mrwi",
+			upgrades = {
+				"player_level_2_armor_multiplier_2",
+				"player_level_3_armor_multiplier_2",
+				"player_level_4_armor_multiplier_2",
+			}
+		},
+		--[[
+		{ --Burglar
+			icon_xy = {1, 2},
+			name_id = "menu_deck7_1",
+			desc_id = "menu_deck7_1_desc_mrwi",
+			upgrades = {
+				"player_crouch_dodge_chance_burglar_1"
+			}
+		},
+		{ --Infiltrator
+			tier = 7,
+			tree = 8,
+			desc_id = "menu_deck8_1_desc",
+			upgrades = {
+				"player_damage_dampener_close_contact_1",
+				"player_damage_dampener_close_contact_2"
+			},
+			custom_editable_descs = {
+				[1.0] = "24%"
+			}
+		},
+		{
+			tree = 9,
+			tier = 3
+		},
+		{
+			tree = 10,
+			tier = 1
+		},
+		{
+			desc_id = "menu_deck23_9_11_desc",
+			short_id = "menu_deck23_9_11_short",
+			tier = 3,
+			tree = 11,
+			upgrades = {
+				"player_damage_to_hot_1"
+			},
+			custom_editable_descs = {
+				"2",
+				"0.3",
+				"3",
+				"1.5",
+				"20%"
+			}
+		},
+		{
+			tree = 12,
+			tier = 3
+		},
+		{
+			desc_id = "menu_deck23_9_13_desc",
+			short_id = "menu_deck23_9_13_short",
+			tier = 3,
+			tree = 13,
+			upgrades = {
+				"player_armor_health_store_amount_1"
+			},
+			custom_editable_descs = {
+				"8",
+				"1",
+				"10%"
+			}
+		},
+		{
+			desc_id = "menu_deck23_9_14_desc",
+			short_id = "menu_deck23_9_14_short",
+			tier = 3,
+			tree = 14,
+			upgrades = {
+				"player_cocaine_stacking_1"
+			},
+			custom_editable_descs = {
+				"100%",
+				"240",
+				"4",
+				"600",
+				"1",
+				"30",
+				"60% + 80",
+				"8"
+			}
+		},
+		{
+			tree = 15,
+			tier = 1,
+			upgrades = {
+				"temporary_armor_break_invulnerable_2"
+			},
+			custom_editable_descs = {
+				[2.0] = "30"
+			}
+		},
+		{
+			tree = 16,
+			tier = 1
+		},
+		{
+			tree = 17,
+			tier = 1
+		},
+		{
+			tree = 18,
+			tier = 1
+		},
+		{
+			tree = 19,
+			tier = 1
+		},
+		{
+			tree = 20,
+			tier = 1
+		},
+		{
+			tree = 21,
+			tier = 1
+		},
+		{
+			tree = 22,
+			tier = 1,
+			shorten_desc = true
+		}
+		--]]
+	}
+
+	return deck9_options
+end
+
 --Added new definitions--
 
 local sc_definitions = UpgradesTweakData._player_definitions

@@ -3441,6 +3441,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1_desc"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
 		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##2## health.\n\nThis cannot occur more than once every ##5## seconds.",
 		["menu_deck23_7_desc"] = "When your health drops below ##25%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##30## seconds.",
+		--Final Card
+			--Crew Chief
+			["menu_deck1_3_desc_mrwi"] = "Increases your shout distance by ##25%.##\n\nYou and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.",
+			--Muscle
+			["menu_deck2_7_desc_mrwi"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable 	fear.",
+			--Rouge
+			["menu_deck4_1_desc_mrwi"] = "You swap between your weapons an additional ##30%## faster.",
+			--Crook
+			["menu_deck6_5_desc_mrwi"] = "Your armor is increased by an additional ##15%## for ballistic vests.",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",

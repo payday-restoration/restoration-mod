@@ -2199,7 +2199,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_5"
+					"player_tier_armor_multiplier_5",
+					"bodybags_bag_quantity"
 				},
 				cost = 1000,
 				icon_xy = {7, 1},
@@ -2209,8 +2210,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1",
-					"bodybags_bag_quantity"
+					"player_perk_armor_regen_timer_multiplier_1"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},

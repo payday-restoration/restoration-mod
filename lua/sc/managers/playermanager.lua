@@ -343,7 +343,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	local regen_health_bonus = 0
 
-
 	--Sociopath regen.
 	if variant == "melee" then
 		regen_health_bonus = regen_health_bonus + self:upgrade_value("player", "melee_kill_life_leech", 0)
@@ -777,6 +776,12 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(regen_armor_bonus)
+	end
+
+	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
+
+	if damage_ext and regen_health_bonus > 0 then
+		damage_ext:restore_health(regen_health_bonus, true)
 	end
 end
 

@@ -1161,3 +1161,20 @@ if twp.stances.m6d then
 	twp.stances.m6d.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+if twp.stances.papa320 then
+	pivot_shoulder_translation = Vector3(8.45416, 39.1301, -4.58611)
+	pivot_shoulder_rotation = Rotation(0.100083, -0.688408, 0.630516)
+	pivot_head_translation = Vector3(1.5, 28, -5)
+	pivot_head_rotation = Rotation(0, 0.2, -6)
+	twp.stances.papa320.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.papa320.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	pivot_head_translation = Vector3(0.2, 25, -5)
+	pivot_head_rotation = Rotation(0, 0.2, -10)
+	twp.stances.papa320.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.papa320.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	pivot_head_translation = Vector3(0, 37, -0.2)
+	pivot_head_rotation = Rotation(0, 0, 0)
+	twp.stances.papa320.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.papa320.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+

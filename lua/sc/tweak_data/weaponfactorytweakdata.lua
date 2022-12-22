@@ -25016,6 +25016,142 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
+	if self.parts.wpn_fps_pis_papa320_barrel then --RJC9000's MW2019 Sig P320
+
+		--Extended
+		self.parts.wpn_fps_pis_papa320_slide_ext.supported = true
+		self.parts.wpn_fps_pis_papa320_slide_ext.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_pis_papa320_slide_ext.stats.recoil = 2
+		self.parts.wpn_fps_pis_papa320_slide_ext.stats.concealment = -3
+		self.parts.wpn_fps_pis_papa320_slide_ext.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+		--Super
+		self.parts.wpn_fps_pis_papa320_slide_vented.supported = true
+		self.parts.wpn_fps_pis_papa320_slide_vented.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_pis_papa320_slide_vented.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+		--Lightweight
+		self.parts.wpn_fps_pis_papa320_slide_v2.supported = true
+		self.parts.wpn_fps_pis_papa320_slide_v2.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_pis_papa320_slide_v2.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+
+		--Granulated
+		self.parts.wpn_fps_pis_papa320_griptape.supported = true
+		self.parts.wpn_fps_pis_papa320_griptape.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -2,
+		}
+		--Rubberized
+		self.parts.wpn_fps_pis_papa320_griptape02.supported = true
+		self.parts.wpn_fps_pis_papa320_griptape02.stats = {
+			value = 2,
+			recoil = 2,
+			spread = -1
+		}
+		--Stippled
+		self.parts.wpn_fps_pis_papa320_griptape03.supported = true
+		self.parts.wpn_fps_pis_papa320_griptape03.stats = {
+			value = 4,
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_pis_papa320_griptape03.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+
+		--Slick Steel
+		self.parts.wpn_fps_pis_papa320_frame_v2.supported = true
+		self.parts.wpn_fps_pis_papa320_frame_v2.stats = {
+			value = 4,
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_pis_papa320_griptape03.custom_stats = {
+			ads_speed_mult = 0.975
+		}
+
+		--Lightweight
+		self.parts.wpn_fps_pis_papa320_trigger_custom.supported = true
+		self.parts.wpn_fps_pis_papa320_trigger_custom.has_description = false
+		self.parts.wpn_fps_pis_papa320_trigger_custom.stats = {
+			value = 5,
+			recoil = -4
+		}
+		self.parts.wpn_fps_pis_papa320_trigger_custom.custom_stats = {
+			rof_mult = 1.285285285285285
+		}
+		--Hair
+		self.parts.wpn_fps_pis_papa320_trigger_hair.supported = true
+		self.parts.wpn_fps_pis_papa320_trigger_hair.has_description = false
+		self.parts.wpn_fps_pis_papa320_trigger_hair.stats = {
+			value = 5,
+			recoil = -4
+		}
+		self.parts.wpn_fps_pis_papa320_trigger_hair.custom_stats = {
+			rof_mult = 1.285285285285285
+		}
+		--Heavy
+		self.parts.wpn_fps_pis_papa320_trigger_custom_02.supported = true
+		self.parts.wpn_fps_pis_papa320_trigger_custom_02.has_description = false
+		self.parts.wpn_fps_pis_papa320_trigger_custom_02.stats = {
+			value = 2,
+			recoil = 4,
+			spread = 2
+		}
+		self.parts.wpn_fps_pis_papa320_trigger_custom_02.custom_stats = {
+			rof_mult = 0.774774774774774
+		}
+		--Match
+		self.parts.wpn_fps_pis_papa320_trigger_custom_03.supported = true
+		self.parts.wpn_fps_pis_papa320_trigger_custom_03.has_description = false
+		self.parts.wpn_fps_pis_papa320_trigger_custom_03.stats = {
+			value = 4,
+			recoil = -2,
+			spread = 1
+		}
+		self.parts.wpn_fps_pis_papa320_trigger_custom_03.custom_stats = {
+			rof_mult = 1.126126126126126
+		}
+
+		--21 Mag
+		self.parts.wpn_fps_pis_papa320_magazine_ext.supported = true
+		self.parts.wpn_fps_pis_papa320_magazine_ext.stats = {
+			value = 4,
+			extra_ammo = 4,
+			concealment = -1,
+			reload = -1
+		}
+		self.parts.wpn_fps_pis_papa320_magazine_ext.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+		--32 Mag
+		self.parts.wpn_fps_pis_papa320_magazine_ext2.has_description = false
+		self.parts.wpn_fps_pis_papa320_magazine_ext2.supported = true
+		self.parts.wpn_fps_pis_papa320_magazine_ext2.stats = {
+			value = 6,
+			extra_ammo = 15,
+			concealment = -2,
+			reload = -3
+		}
+		self.parts.wpn_fps_pis_papa320_magazine_ext2.custom_stats = {
+			ads_speed_mult = 1.05
+		}
+
+		self.wpn_fps_pis_x_papa320.override = self.wpn_fps_pis_x_papa320.override or {}
+		self.wpn_fps_pis_x_papa320.override.wpn_fps_pis_papa320_magazine_ext.stats = {
+			value = 4,
+			extra_ammo = 8,
+			concealment = -1,
+			reload = -1
+		}
+		self.wpn_fps_pis_x_papa320.override.wpn_fps_pis_papa320_magazine_ext2.stats = {
+			value = 6,
+			extra_ammo = 30,
+			concealment = -2,
+			reload = -3
+		}
+
+	end
+
 	if self.parts.wpn_fps_pis_m6d_scope then --RJC9000 and Offyerrocker's M6D
 		self.parts.wpn_fps_pis_m6d_scope.stats = { value = 0 }
 		self.parts.wpn_fps_pis_m6d_scope.stance_mod = {

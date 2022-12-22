@@ -2481,6 +2481,10 @@ function PlayerStandard:_update_slide_locks()
 					weap_base._second_gun:base():tweak_data_anim_offset("reload", 0.1033) 
 					weap_base:tweak_data_anim_offset("reload", 0.033)
 					--weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
+					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
+						weap_base:tweak_data_anim_offset("magazine_empty", 1)
+						weap_base._second_gun:base():tweak_data_anim_offset("magazine_empty", 1)
+					end
 				else
 					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
 						weap_base:tweak_data_anim_offset("magazine_empty", 1)
@@ -2492,7 +2496,6 @@ function PlayerStandard:_update_slide_locks()
 		end	
 	end
 end
-
 
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()

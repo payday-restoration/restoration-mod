@@ -14740,6 +14740,85 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.type99inc.shake.bypass_global_shake = true
 		end
 
+	if self.papa320 then --RJC9000 and Offyerrocker's M6D
+		self.papa320.recategorize = { "light_pis" }		
+		self.papa320.damage_type = "light_pistol"
+		self.papa320.kick = self.stat_info.kick_tables.vertical_kick
+		self.papa320.lock_slide = true
+		self.papa320.lock_slide_alt = true
+		self.papa320.tactical_reload = 1
+		self.papa320.FIRE_MODE = "single"
+		self.papa320.CAN_TOGGLE_FIREMODE = false
+		self.papa320.BURST_FIRE = false
+		self.papa320.fire_mode_data.fire_rate = 0.18018018
+		self.papa320.CLIP_AMMO_MAX = 17
+		self.papa320.AMMO_MAX = 75
+		self.papa320.supported = true
+		self.papa320.ads_speed = 0.200
+		self.papa320.damage_falloff = {
+			start_dist = 1800,
+			end_dist = 4000,
+			min_mult = 0.25
+		}
+		self.papa320.stats = {
+			damage = 24,
+			spread = 66,
+			recoil = 89,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 30,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.papa320.reload_speed_multiplier = 1.3
+		self.papa320.timers.reload_exit_empty = 0.8
+		self.papa320.timers.reload_empty = 2.15
+		self.papa320.timers.reload_exit_not_empty = 1
+		self.papa320.timers.reload_not_empty = 1.47
+		self.papa320.stats_modifiers = nil
+		self.papa320.panic_suppression_chance = 0.05
+	end
+	if self.x_papa320 then
+		self.x_papa320.recategorize = { "light_pis" }		
+		self.x_papa320.damage_type = "light_pistol"
+		self.x_papa320.kick = self.stat_info.kick_tables.vertical_kick
+		self.x_papa320.lock_slide = true
+		self.x_papa320.lock_slide_alt = true
+		self.x_papa320.tactical_reload = 2
+		self.x_papa320.BURST_FIRE = 2
+		self.x_papa320.BURST_FIRE_RATE_MULTIPLIER = 2
+		self.x_papa320.fire_mode_data.fire_rate = 0.18018018
+		self.x_papa320.CLIP_AMMO_MAX = 34
+		self.x_papa320.AMMO_MAX = 150
+		self.x_papa320.supported = true
+		self.x_papa320.ads_speed = 0.200
+		self.x_papa320.damage_falloff = {
+			start_dist = 1800,
+			end_dist = 4000,
+			min_mult = 0.25
+		}
+		self.x_papa320.stats = {
+			damage = 24,
+			spread = 56,
+			recoil = 79,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 30,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.x_papa320.stats_modifiers = nil
+		self.x_papa320.panic_suppression_chance = 0.05
+	end
+
 	if self.m6d then --RJC9000 and Offyerrocker's M6D
 		self.m6d.recategorize = { "heavy_pis" }		
 		self.m6d.damage_type = "heavy_pistol"

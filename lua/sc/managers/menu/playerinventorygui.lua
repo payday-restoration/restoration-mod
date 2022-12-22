@@ -604,7 +604,7 @@ function PlayerInventoryGui:_update_info_throwable(name)
 	local text_string = ""
 
 	if projectile_data then
-		local is_perk_throwable = tweak_data.blackmarket.projectiles[throwable_id].base_cooldown
+		local is_perk_throwable = tweak_data.blackmarket.projectiles[throwable_id].base_cooldown and not tweak_data.blackmarket.projectiles[throwable_id].base_cooldown_no_perk
 		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[throwable_id].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))
 
 		text_string = text_string .. managers.localization:text(projectile_data.name_id) .. " (x" .. tostring(amount) .. ")" .. "\n\n"
@@ -616,6 +616,42 @@ function PlayerInventoryGui:_update_info_throwable(name)
 
 	self:set_info_text(text_string, {
 		tweak_data.screen_colors.skill_color,
+		add_colors_to_text_object = true
+	})
+end
+
+function PlayerInventoryGui:_update_info_specialization(name)
+	local text_string = ""
+	local current_specialization = managers.skilltree:get_specialization_value("current_specialization")
+	local specialization_data = tweak_data.skilltree.specializations[current_specialization]
+
+	if specialization_data then
+		local current_tier = managers.skilltree:get_specialization_value(current_specialization, "tiers", "current_tier")
+		local max_tier = managers.skilltree:get_specialization_value(current_specialization, "tiers", "max_tier")
+		text_string = managers.localization:text(specialization_data.name_id) .. " (" .. tostring(current_tier) .. "/" .. tostring(max_tier) .. ")\n"
+
+		if current_tier < max_tier then
+			local current_points = managers.skilltree:get_specialization_value(current_specialization, "tiers", "next_tier_data", "current_points")
+			local points = managers.skilltree:get_specialization_value(current_specialization, "tiers", "next_tier_data", "points")
+			text_string = text_string .. managers.localization:text("menu_st_progress", {
+				progress = string.format("%i/%i", current_points, points)
+			}) .. "\n"
+		end
+
+		if self:_should_show_description() and specialization_data.desc_id then
+			text_string = text_string .. "\n" .. managers.localization:text(specialization_data.desc_id)
+		end
+	end
+	
+	local resource_color = {}
+	for color_id in string.gmatch(text_string, "#%{(.-)%}#") do
+		table.insert(resource_color, tweak_data.screen_colors[color_id])
+	end
+	text_string = text_string:gsub("#%{(.-)%}#", "##")
+
+
+	self:set_info_text(text_string, {
+		unpack(resource_color),
 		add_colors_to_text_object = true
 	})
 end

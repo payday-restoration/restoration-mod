@@ -1390,6 +1390,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--M6D
 			["kfa_scope"] = "KFA-2 Smart-Link Scope",
 			["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
+			--SIG P320
+			["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90",
@@ -3256,6 +3258,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	local frame = 0.01
 	if butt <= frame then
 		LocalizationManager:add_localized_strings({	
+			["menu_st_spec_23"] = "Helminth",
+			["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
 			["menu_difficulty_sm_wish"] = "The Steel Path",
 			["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
 		})
@@ -3381,11 +3385,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##5## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
-		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Kingpin Injector is active.",
-		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Kingpin Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
+		["menu_deck17_1_desc_sc"] = "Unlocks the ##Injector## for use in place of your throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nThe Injector can only be used once every ##30## seconds.",
+		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Injector is active.",
+		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##60%## while below ##25%## health.",
-		["menu_deck17_9_desc_sc"] = "For every ##5## health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck17_9_desc_sc"] = "For every ##5## health gained during the Injector effect while at maximum health, the recharge time of the Injector is reduced by ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
@@ -3424,7 +3428,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device.##\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks the ##Pocket ECM Device## for use in place of your throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has ##1## charge with an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##5## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
@@ -3478,13 +3482,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Infiltrator
 			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nThe cooldown reduction also applies to Head Games (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
+			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nYou carry ##1## additional body bag in your inventory.",
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "When you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
 			--Grinder
 			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.\n\nYou gain the ability to place ##2## body bag cases.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			--Ex-Pres
+			["menu_deck13_mrwi_desc"] = "While your armor is up, you will store ##4## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+			--Maniac
+			["menu_deck14_mrwi_desc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##720.##\n\nHysteria Stacks:\nIncoming damage is reduced by ##1## point for every ##120## stacks of Hysteria. Hysteria Stacks decay by ##120## every ##8## seconds.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+			--Anarchist
+			["menu_deck15_mrwi_desc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+			--Biker
+			["menu_deck16_mrwi_desc"] = "You regenerate ##10## armor every ##5## seconds.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			--Kingpin
+			["menu_deck17_mrwi_desc"] = "Unlocks the ##Injector## for use in place of your throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by ##20%## while the Injector is active.\n\nThe Injector can only be used once every ##30## seconds.",
+			--Sicario
+			--Stoic
+			--Tag Team
+			--Hacker
+			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of your throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has ##1## charge with an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
+			--Leech
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",

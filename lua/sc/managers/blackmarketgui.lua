@@ -4756,9 +4756,11 @@ function BlackMarketGui:update_info_text()
 			local amount = managers.player:body_armor_value("skill_max_health_store", upgrade_level, 1)
 			local multiplier = managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
 			local regen_speed = format_round((managers.player:body_armor_value("skill_kill_change_regenerate_speed", upgrade_level, 1) - 1) * 100)
-			local description = (managers.player:has_category_upgrade("player", "skill_kill_change_regenerate_speed") and 
-								managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)})) or 
+			local description = (managers.player:has_category_upgrade("player", "kill_change_regenerate_speed") and 
 								managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})
+									or
+								managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)}))
+
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
@@ -5207,7 +5209,7 @@ function BlackMarketGui:update_info_text()
 			end
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.text)
 		end
-		
+
 		crafted = managers.blackmarket:get_crafted_category_slot(prev_data.category, prev_data.slot)
 		if is_gadget or is_ammo or is_bayonet or is_bipod or has_desc then
 			local description = managers.weapon_factory:get_part_desc_by_part_id_from_weapon(part_id, crafted.factory_id, crafted.blueprint)

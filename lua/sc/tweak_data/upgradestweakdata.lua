@@ -1961,8 +1961,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.dodge_ricochet_bullets = {
 		{
-			1, --% Chance
-			0 --Cooldown?
+			0.5, --% Chance
+			1, --Cooldown
+			2 --Armor break chance mult
 		}
 	}
 	self.values.player.headshot_regen_health_bonus = {
@@ -2140,75 +2141,80 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_civ_move_multiplier"
 			},
 		},
+		{ --Ex-Pres
+			icon_xy = {3, 7},
+			name_id = "menu_deck13_1",
+			desc_id = "menu_deck13_mrwi_desc",
+			upgrades = {
+				"player_armor_health_store_amount_1",
+				"team_civ_intimidation_mul"
+			}
+		},
+		{ --Maniac
+			icon_xy = {0, 0},
+			texture_bundle_folder = "coco",
+			name_id = "menu_deck14_1",
+			desc_id = "menu_deck14_mrwi_desc",
+			upgrades = {
+				"player_cocaine_stacking_1",
+				"team_civ_intimidation_mul"
+			},
+		},
+		{ --Anarchist
+			icon_xy = {0, 0},
+			texture_bundle_folder = "opera",
+			name_id = "menu_deck15_1",
+			desc_id = "menu_deck15_mrwi_desc",
+			upgrades = {
+				"player_armor_grinding_1",
+				"team_civ_intimidation_mul"
+			},
+		},
+		{ --Biker
+			icon_xy = {0, 0},
+			texture_bundle_folder = "wild",
+			name_id = "menu_deck16_1",
+			desc_id = "menu_deck16_mrwi_desc",
+			upgrades = {
+				"player_wild_health_amount_1",
+				"team_civ_intimidation_mul"
+			},
+		},
+		{ --Kingpin
+			icon_xy = {0, 0},
+			texture_bundle_folder = "chico",
+			name_id = "menu_deck17_1",
+			desc_id = "menu_deck17_mrwi_desc",
+			upgrades = {
+				"chico_injector",
+				"temporary_chico_injector_1",
+				"player_chico_injector_speed"
+			},
+		},
 		--[[
-		{
-			desc_id = "menu_deck23_9_13_desc",
-			short_id = "menu_deck23_9_13_short",
-			tier = 3,
-			tree = 13,
-			upgrades = {
-				"player_armor_health_store_amount_1"
-			},
-			custom_editable_descs = {
-				"8",
-				"1",
-				"10%"
-			}
-		},
-		{
-			desc_id = "menu_deck23_9_14_desc",
-			short_id = "menu_deck23_9_14_short",
-			tier = 3,
-			tree = 14,
-			upgrades = {
-				"player_cocaine_stacking_1"
-			},
-			custom_editable_descs = {
-				"100%",
-				"240",
-				"4",
-				"600",
-				"1",
-				"30",
-				"60% + 80",
-				"8"
-			}
-		},
-		{
-			tree = 15,
-			tier = 1,
-			upgrades = {
-				"temporary_armor_break_invulnerable_2"
-			},
-			custom_editable_descs = {
-				[2.0] = "30"
-			}
-		},
-		{
-			tree = 16,
-			tier = 1
-		},
-		{
-			tree = 17,
-			tier = 1
-		},
-		{
+		{ --Sicario
 			tree = 18,
 			tier = 1
 		},
-		{
+		{ --Stoic
 			tree = 19,
 			tier = 1
 		},
-		{
+		{ --Tag Team
 			tree = 20,
 			tier = 1
 		},
-		{
-			tree = 21,
-			tier = 1
+		{ --Hacker
+			icon_xy = {0,0}
+			texture_bundle_folder = "joy",
+			name_id = "menu_deck21_1",
+			desc_id = "menu_deck21_mrwi_desc",
+			upgrades = {
+				"pocket_ecm_jammer",
+				"player_pocket_ecm_jammer_base"
+			}
 		},
-		{
+		{ --Leech
 			tree = 22,
 			tier = 1,
 			shorten_desc = true

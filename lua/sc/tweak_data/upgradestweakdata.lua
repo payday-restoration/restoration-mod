@@ -1916,9 +1916,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Copycat
 	local health_boost = 0.2
 	local armor_boost = 0.05
-	local dodge_boost = 0.05
-	local crouch_speed_multiplier = 0.1
-	local carry_speed_multiplier = 0.1
+	local dodge_boost = 0.025
+	local crouch_speed_multiplier = 0.05
+	local carry_speed_multiplier = 0.05
 	self.values.player.mrwi_health_multiplier = {
 		1 + health_boost * 1,
 		1 + health_boost * 2,
@@ -2022,109 +2022,125 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 end)
 
-
+--Copycat Copies
 function UpgradesTweakData.mrwi_deck9_options()
 	local deck9_options = {
 		{ --Crew Chief
 			icon_xy = {2, 0},
 			name_id = "menu_deck1_3",
-			desc_id = "menu_deck1_3_desc_mrwi",
+			desc_id = "menu_deck1_mrwi_desc",
 			upgrades = {
 				"team_passive_stamina_multiplier_1",
-				"player_passive_intimidate_range_mul"
+				"player_passive_intimidate_range_mul",
+				"player_alarm_pager_speed_multiplier"
 			}
 		},
 		{ --Muscle
 			icon_xy = {3, 1},
 			name_id = "menu_deck2_7",
-			desc_id = "menu_deck2_7_desc_mrwi",
+			desc_id = "menu_deck2_mrwi_desc",
 			upgrades = {
-				"player_panic_suppression"
+				"player_panic_suppression",
+				"player_corpse_dispose_speed_multiplier",
+				"player_civ_move_multiplier"
 			}
 		},
 		{ --Armorer
 			icon_xy = {6, 1},
 			name_id = "menu_deck3_7",
-			desc_id = "menu_deck3_7_desc_sc",
+			desc_id = "menu_deck3_mrwi_desc",
 			upgrades = {
-				"player_perk_armor_regen_timer_multiplier_1"
+				"player_perk_armor_regen_timer_multiplier_1",
+				"bodybags_bag_quantity"
 			}
 		},
 		{ --Rouge
 			icon_xy = {4, 2},
 			name_id = "menu_deck4_1",
-			desc_id = "menu_deck4_1_desc_mrwi",
+			desc_id = "menu_deck4_mrwi_desc",
 			upgrades = {
-				"weapon_passive_swap_speed_multiplier_1"
+				"weapon_passive_swap_speed_multiplier_1",
+				"player_tape_loop_duration_2"
 			}
 		},
 		{ --Hitman
 			icon_xy = {6, 2},
 			name_id = "menu_deck5_1",
-			desc_id = "menu_deck5_1_desc_sc",
+			desc_id = "menu_deck5_mrwi_desc",
 			upgrades = {
-				"player_store_temp_health_1"
+				"player_store_temp_health_1",
+				"player_corpse_dispose_amount_2"
 			}
 		},
 		{ --Crook
 			icon_xy = {5, 3},
 			name_id = "menu_deck6_5",
-			desc_id = "menu_deck6_5_desc_mrwi",
+			desc_id = "menu_deck6_mrwi_desc",
 			upgrades = {
 				"player_level_2_armor_multiplier_2",
 				"player_level_3_armor_multiplier_2",
 				"player_level_4_armor_multiplier_2",
+				"player_pick_lock_speed_multiplier"	
 			}
 		},
-		--[[
 		{ --Burglar
 			icon_xy = {1, 2},
 			name_id = "menu_deck7_1",
-			desc_id = "menu_deck7_1_desc_mrwi",
+			desc_id = "menu_deck7_mrwi_desc",
 			upgrades = {
-				"player_crouch_dodge_chance_burglar_1"
+				"player_crouch_dodge_chance_burglar_1",
+				"player_crouch_speed_multiplier_burglar"
 			}
 		},
 		{ --Infiltrator
-			tier = 7,
-			tree = 8,
-			desc_id = "menu_deck8_1_desc",
+			icon_xy = {3, 4},
+			name_id = "menu_deck8_3",
+			desc_id = "menu_deck8_mrwi_desc",
 			upgrades = {
-				"player_damage_dampener_close_contact_1",
-				"player_damage_dampener_close_contact_2"
+				"player_damage_dampener_close_contact_2",
+				"player_tape_loop_duration_2"
 			},
-			custom_editable_descs = {
-				[1.0] = "24%"
-			}
 		},
-		{
-			tree = 9,
-			tier = 3
-		},
-		{
-			tree = 10,
-			tier = 1
-		},
-		{
-			desc_id = "menu_deck23_9_11_desc",
-			short_id = "menu_deck23_9_11_short",
-			tier = 3,
-			tree = 11,
+		{ --Sociopath
+			icon_xy = {0, 5},
+			name_id = "menu_deck9_3",
+			desc_id = "menu_deck9_mrwi_desc",
 			upgrades = {
-				"player_damage_to_hot_1"
+				"player_killshot_regen_armor_bonus",
+				"player_corpse_dispose_amount_2"
 			},
-			custom_editable_descs = {
-				"2",
-				"0.3",
-				"3",
-				"1.5",
-				"20%"
-			}
 		},
-		{
-			tree = 12,
-			tier = 3
+		{ --Gambler
+			icon_xy = {5, 5},
+			name_id = "menu_deck10_3",
+			desc_id = "menu_deck10_mrwi_desc",
+			upgrades = {
+				"temporary_loose_ammo_give_team",
+				"player_alarm_pager_speed_multiplier"
+			},
 		},
+		{ --Grinder
+			icon_xy = {1, 6},
+			name_id = "menu_deck11_1",
+			desc_id = "menu_deck11_mrwi_desc",
+			upgrades = {
+				"player_damage_to_hot_1",
+				"player_level_5_armor_addend_grinder",
+				"player_flak_jacket_concealment_1",
+				"bodybags_bag_quantity"
+			},
+		},
+		{ --Yakuza
+			icon_xy = {0, 7},
+			name_id = "menu_deck12_3",
+			desc_id = "menu_deck12_mrwi_desc",
+			upgrades = {
+				"player_kill_dodge_regen",
+				"player_corpse_dispose_speed_multiplier",
+				"player_civ_move_multiplier"
+			},
+		},
+		--[[
 		{
 			desc_id = "menu_deck23_9_13_desc",
 			short_id = "menu_deck23_9_13_short",

@@ -3324,7 +3324,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Burglar--
 		["menu_deck7_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.",
 		["menu_deck7_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck7_5_desc_sc"] = "You gain a ##20%## boost in your movement speed when crouching.\n\nYour dodge meter fills up by an additional ##5%## of your dodge every second while crouching.",
+		["menu_deck7_5_desc_sc"] = "Your dodge meter fills up by an additional ##5%## of your dodge every second while crouching.\n\nYou gain a ##20%## boost in your movement speed when crouching.",
 		["menu_deck7_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
@@ -3348,9 +3348,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three enemies or more within ##18## meters, you take ##5%## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nYou gain ##5## dodge points.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis is activated alongside Tension and shares its cooldown.\n\nYou carry ##1## additional body bag in your inventory.",
-		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis is activated alongside Tension and shares its cooldown.\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis is activated alongside Tension and shares its cooldown.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis is activated alongside Tension (Card 3) and shares its cooldown.\n\nYou carry ##1## additional body bag in your inventory.",
+		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis is activated alongside Tension (Card 3) and shares its cooldown.\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis is activated alongside Tension (Card 3) and shares its cooldown.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.",
@@ -3439,17 +3439,52 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--CopyCat--
 		["menu_deck23_1_desc"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_1_3_desc"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_1_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
+		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
+
 		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##2## health.\n\nThis cannot occur more than once every ##5## seconds.",
+		["menu_deck23_3_3_desc"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_3_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_3_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
+		["menu_deck23_3_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
+
+		["menu_deck23_5_3_desc"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_5_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_5_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
+		["menu_deck23_5_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
+
 		["menu_deck23_7_desc"] = "When your health drops below ##25%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##30## seconds.",
+		["menu_deck23_7_3_desc"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_7_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_7_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
+		["menu_deck23_7_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		--Final Card
 			--Crew Chief
-			["menu_deck1_3_desc_mrwi"] = "Increases your shout distance by ##25%.##\n\nYou and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.",
+			["menu_deck1_mrwi_desc"] = "Increases your shout distance by ##25%.##\n\nYou and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##25%## faster.",
 			--Muscle
-			["menu_deck2_7_desc_mrwi"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable 	fear.",
+			["menu_deck2_mrwi_desc"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			--Armorer
+			["menu_deck3_mrwi_desc"] = "Your armor recovery rate is increased by ##10%.##\n\nYou gain the ability to place ##2## body bag cases.",
 			--Rouge
-			["menu_deck4_1_desc_mrwi"] = "You swap between your weapons an additional ##30%## faster.",
+			["menu_deck4_mrwi_desc"] = "You swap between your weapons an additional ##30%## faster.\n\nYour camera loop duration is increased by ##20## seconds.",
+			--Hitman
+			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores ##25## health. You can store up to ##75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of ##5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once.\n\nYou carry ##1## additional body bag in your inventory.",
 			--Crook
-			["menu_deck6_5_desc_mrwi"] = "Your armor is increased by an additional ##15%## for ballistic vests.",
+			["menu_deck6_mrwi_desc"] = "Your armor is increased by an additional ##15%## for ballistic vests.\n\nYou pick locks ##20%## faster.",
+			--Burglar
+			["menu_deck7_mrwi_desc"] = "Your dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##20%## boost in your movement speed when crouching.",
+			--Infiltrator
+			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nYour camera loop duration is increased by ##20## seconds.",
+			--Sociopath
+			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nThe cooldown reduction also applies to Head Games (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
+			--Gambler
+			["menu_deck10_mrwi_desc"] = "When you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
+			--Grinder
+			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.\n\nYou gain the ability to place ##2## body bag cases.",
+			--Yakuza
+			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",

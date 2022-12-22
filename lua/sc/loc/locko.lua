@@ -151,7 +151,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
 		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬 없이 주 무기로 쓰러질 때 소생 시 강제 무기 교체를 비활성화합니다.",
 		["RestorationModSecondSightSprintTitleID"] = "전력 질주 버튼 누르는 동안 보조 조준기 전환",
-		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다. 활성화된 상태에서는 조준이 보조 조준기에 있는 동안에도 조준 및 비조준기 가젯이 가젯 버튼으로 전환되는 동안 전력 질주를 할 수 없습니다.",		
+		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다.\n활성화된 가젯은 U232 이전처럼 전환할 수 있지만 조준 도중에는 전력 질주를 할 수 없습니다.",		
 		["RestorationModAimDeploysBipodTitleID"] = "정조준 상태에서 양각대 펼치기",
 		["RestorationModAimDeploysBipodDescID"] = "유효한 표면 위에 정조준을 할 때 양각대 자동 거치을 활성화하거나 비활성화합니다.",
 		["RestorationModMoveCancelBipodTitleID"] = "움직일때 양각대 분리",
@@ -1144,14 +1144,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_1_8_irons"] = "보조 기계식 조준기가 있는 레드 닷 조준기.\n#{risk}#1-1.8x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_3"] = "중거리 조준경.\n#{risk}#3x 배율.##",
 		["bm_wp_upg_o_3_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#3x 배율.##",
-		["bm_wp_upg_o_3_rds"] = "상단에 장착된 반사식 조준기이 있는 중거리 조준경.\n#{risk}#1-3x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
+		["bm_wp_upg_o_3_rds"] = "상단에 장착된 반사식 조준기가 달려있는 중거리 조준경.\n#{risk}#1.1-3x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_3_4"] = "중거리 조준경.\n#{risk}#3.4x 배율.##",
 		["bm_wp_upg_o_3_5"] = "중거리 조준경.\n#{risk}#3.5x 배율.##",
 		["bm_wp_upg_o_4"] = "중거리 조준경.\n#{risk}#4x 배율.##",
 		["bm_wp_upg_o_4_cod"] = "중거리 조준경.\n#{skill_color}#정지 전원##이 필요로 할때 전원은 어디에 있습니까?\n#{risk}#4x 배율.##",	
 		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#4x 배율.##",
 		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기이 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
-		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
+		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{risk}#6x 배율.##",
@@ -1166,7 +1166,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_laser"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 레이저를 켜거나 끕니다.",
 		["bm_wp_upg_fl_dual"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 레이저와 손전등 사이를 전환합니다.",
 		["bm_wp_upg_fl_vmp_marker"] = "조준하는 동안 #{skill_color}#40##미터 내에 있는 경비병과 특수 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 중에만 마킹할 수 있습니다.##",		
-	
+		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#보조 조준기가 부착된 상태에서 조준하는 동안에는 전환할 수 없습니다.##",	
 
 		["bm_wp_upg_o_angled_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 기계식 조준기 사이를 전환합니다.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 반사 조준기 사이를 전환합니다.\n#{skill_color}#1.1x 배율.##",
@@ -3327,7 +3327,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Sociopath--
 		["menu_deck9_1_sc"] = "말 없는",
 		["menu_deck9_1_desc_sc"] = "##18미터## 내에 3명 이상의 적에게 둘러싸여 있을 때 적에게 받는 피해가 ##5%## 감소합니다.",
-		["menu_deck9_3_desc_sc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n매 ##5##초마다 한 번만 일어납니다. 재사용 대기시간 중 적을 죽일수록 ##0.5##초씩 감소하며, 근접 무기로 죽이면 재사용 대기시간이 3배로 감소합니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
+		["menu_deck9_3_desc_sc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n이 효과는 매 ##5##초마다 한 번만 일어납니다. 재사용 대기시간 중 적을 죽일수록 ##0.5##초씩 감소하며, 근접 무기로 죽이면 재사용 대기시간이 3배로 감소합니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
 		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 체력이 ##2%##만큼 회복됩니다.\n\n이 효과는 긴장과 함께 활성화될 수 있고 재사용 대기시간을 공유합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 		["menu_deck9_7_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 방탄복이 ##20##만큼 재생됩니다.\n\n이 효과는 긴장과 함께 활성화될 수 있고 재사용 대기시간을 공유합니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
 		["menu_deck9_9_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n이 효과는 긴장과 함께 활성화될 수 있고 재사용 대기시간을 공유합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
@@ -3389,7 +3389,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초씩 감소합니다.\n\n태그가 지정된 유닛이 더 이상 짝을 이루지 않을 때까지 적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초 씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "당신이나 당신의 팀원이 적을 죽일때마다 당신은 ##2##만큼 체력을 회복합니다. 매 ##2##초마다 한 번만 발생할 수 있습니다.",
+		["menu_deck16_1_desc_sc"] = "당신이나 당신의 팀원이 적을 죽일때마다 당신은 ##2##만큼 체력을 회복합니다. 이 효과는 매 ##2##초마다 한 번만 발생할 수 있습니다.",
 		["menu_deck16_3_desc_sc"] = "##3##초마다 방탄복를 ##10##만큼 재생합니다.",
 		["menu_deck16_5_desc_sc"] = "방탄력을 ##25%##만큼 손실될 때마다 처치 재생을 위한 재사용 대기시간이 ##0.5##초 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 		["menu_deck16_7_desc_sc"] = "이제 ##2.5##초마다 방탄복를 ##30## 재생합니다.\n\n근접 무기로 적을 죽이면 즉시 이 효과가 발동되고 다음 방탄복 재생 틱이 ##1##초 더 빨리 발생합니다.",
@@ -3416,6 +3416,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_5_desc_sc"] = "리치 약병의 지속시간이 ##10##초로 증가합니다.\n\n적을 죽이면 리치 약병의 재사용 대기시간이 ##1##초씩 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 		["menu_deck22_7_desc_sc"] = "이제 리치 앰플이 활성화되어 있는 동안 체력을 ##5%## 부분씩 분할됩니다",
 		["menu_deck22_9_desc_sc"] = "이제 리치 약병을 쓰러진 상태에서 활성화하여 리치 약병이 끝날 때까지 일시적으로 소생될 수 있습니다.\n\n리치 약병으로 소생하면 약병의 재사용 대기시간이 ##30##초 더 추가됩니다.\n\n이제 피해를 입으면 팀원의 체력이 ##2%##씩 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+
+		--CopyCat--
+		["menu_deck23_1_desc"] = "들고 있는 무기로 적을 ##10##명 죽이면 집어넣은 무기가 자동으로 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
+		["menu_deck23_3_desc"] = "헤드샷을 할 때마다 체력을 ##2##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
+		["menu_deck23_7_desc"] = "체력이 ##25%## 이하로 떨어지면 ##2##초 동안 체력 피해에 면역이 됩니다.\n\n이 효과는 매 ##30##초마다 한 번만 발생합니다.",		
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "타뷸라 라사",

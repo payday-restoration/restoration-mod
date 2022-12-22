@@ -1913,6 +1913,69 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.copr_ability_cooldown = 40
 	self.copr_risen_cooldown_add = 30
 
+	--Copycat
+	local health_boost = 0.2
+	local armor_boost = 0.05
+	local dodge_boost = 0.05
+	local crouch_speed_multiplier = 0.1
+	local carry_speed_multiplier = 0.1
+	self.values.player.mrwi_health_multiplier = {
+		1 + health_boost * 1,
+		1 + health_boost * 2,
+		1 + health_boost * 3,
+		1 + health_boost * 4
+	}
+	self.values.player.mrwi_armor_multiplier = {
+		1 + armor_boost * 1,
+		1 + armor_boost * 2,
+		1 + armor_boost * 3,
+		1 + armor_boost * 4
+	}
+	self.values.player.mrwi_dodge_chance = {
+		dodge_boost * 1,
+		dodge_boost * 2,
+		dodge_boost * 3,
+		dodge_boost * 4
+	}
+	self.values.player.mrwi_crouch_speed_multiplier = {
+		1 + crouch_speed_multiplier * 1,
+		1 + crouch_speed_multiplier * 2,
+		1 + crouch_speed_multiplier * 3,
+		1 + crouch_speed_multiplier * 4
+	}
+	self.values.player.mrwi_carry_speed_multiplier = {
+		1 + carry_speed_multiplier * 1,
+		1 + carry_speed_multiplier * 2,
+		1 + carry_speed_multiplier * 3,
+		1 + carry_speed_multiplier * 4
+	}
+	local auto_reload_kills = 10
+	self.values.player.primary_reload_secondary = {
+		auto_reload_kills
+	}
+	self.values.player.secondary_reload_primary = {
+		auto_reload_kills
+	}
+	self.values.weapon.mrwi_swap_speed_multiplier = {
+		1.15
+	}
+	self.values.player.dodge_ricochet_bullets = {
+		{
+			1, --% Chance
+			0 --Cooldown?
+		}
+	}
+	self.values.player.headshot_regen_health_bonus = {
+		0.2
+	}
+	self.values.temporary.mrwi_health_invulnerable = {
+		{
+			0.25, --% Threshold
+			2, --Duration
+			30 --Cooldown
+		}
+	}
+
 	--Tabula Rasa/Innatae
 	self.values.player.small_loot_multiplier = {1.15, 1.3}	
 	self.values.player.assets_cost_multiplier = {

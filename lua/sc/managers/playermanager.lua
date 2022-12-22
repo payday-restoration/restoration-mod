@@ -308,7 +308,9 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
 	
 	if self._on_killshot_t and t < self._on_killshot_t then
-		self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
+		if self:has_category_upgrade("player", "melee_kill_life_leech") then
+			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
+		end
 		return
 	end
 

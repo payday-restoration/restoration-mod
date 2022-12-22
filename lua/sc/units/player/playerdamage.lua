@@ -1085,11 +1085,11 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	end
 	
 	if self._has_mrwi_health_invulnerable then
-		local health_threshold = self._mrwi_health_invulnerable_threshold or 0.5
+		local health_threshold = self._mrwi_health_invulnerable_threshold or 0.25
 		local is_cooling_down = managers.player:get_temporary_property("mrwi_health_invulnerable", false)
 
 		if self:health_ratio() <= health_threshold and not is_cooling_down then
-			local cooldown_time = self._mrwi_health_invulnerable_cooldown or 10
+			local cooldown_time = self._mrwi_health_invulnerable_cooldown or 30
 
 			managers.player:activate_temporary_upgrade("temporary", "mrwi_health_invulnerable")
 			managers.player:activate_temporary_property("mrwi_health_invulnerable", cooldown_time, true)

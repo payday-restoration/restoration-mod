@@ -3437,6 +3437,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_7_desc_sc"] = "While the Leech Ampule is active your health is now divided into segments of ##5%.##",
 		["menu_deck22_9_desc_sc"] = "You can now activate the Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule.\n\nReviving yourself with the Leech Ampule will add ##30## additional seconds to the Ampule's cooldown.\n\nTaking damage now heals teammates by ##2%## of their health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
+		--CopyCat--
+		["menu_deck23_1_desc"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##2## health.\n\nThis cannot occur more than once every ##5## seconds.",
+		["menu_deck23_7_desc"] = "When your health drops below ##25%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##30## seconds.",
+
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",
 		["menu_st_spec_0_desc"] = "It is hypothesized that human beings are born without inherent ideas, thoughts, or ideologies and that these are all learned behaviors from various experiences. In some ways this can cause one to have great difficulty, in other ways this can be seen as an advantage. The Tabula Rasa perk deck offers benefits that may not seem obvious at first and even detrimental, but a greater challenge can sometimes bring about other rewards.",

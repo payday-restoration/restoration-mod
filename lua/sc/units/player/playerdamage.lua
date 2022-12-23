@@ -402,7 +402,7 @@ function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 
 		local player_unit = pm:local_player()
 
-		if not alive(attacker_unit) or not attacker_unit:character_damage() or attacker_unit:character_damage():dead() or not attacker_unit:character_damage().damage_simple then
+		if attack_data.col_ray and (not alive(attacker_unit) or not attacker_unit:character_damage() or attacker_unit:character_damage():dead() or not attacker_unit:character_damage().damage_simple) then
 			return
 		end
 

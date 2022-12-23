@@ -4163,32 +4163,6 @@ function CharacterTweakData:_presets(tweak_data)
 			suppress = true,
 			enemyidlepanic = true
 		},
-		cop = {
-			entry = true,
-			aggressive = true,
-			enemyidlepanic = true,
-			controlpanic = true,
-			retreat = true,
-			contact = true,
-			clear = true,
-			go_go = true,
-			push = true,
-			reload = true,
-			look_for_angle = true,
-			inpos = true,
-			ecm = true,
-			saw = true,
-			trip_mines = true,
-			sentry = true,
-			ready = true,
-			smoke = true,
-			flash_grenade = true,
-			deathguard = true,
-			open_fire = true,
-			suppress = true,
-			dodge = true,
-			cuffed = true
-		},
 		omnia_lpf = {
 			entry = true,
 			aggressive = true,
@@ -4293,7 +4267,7 @@ function CharacterTweakData:_presets(tweak_data)
 			cloakercontact = true,
 			cloakeravoidance = true,
 			aggressive = true
-		},			
+		}			
 	}
 	
 	presets.hurt_severities = {}
@@ -17981,6 +17955,8 @@ function CharacterTweakData:character_map()
 	--drm	
 		table.insert(char_map.drm.list, "ene_bulldozer_medic_sc")
 		
+	--mad	
+		table.insert(char_map.mad.list, "ene_akan_lpf")	
 	--flat
 		table.insert(char_map.flat.list, "ene_gang_colombian_1")
 		table.insert(char_map.flat.list, "ene_gang_colombian_2")	
@@ -18065,27 +18041,15 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_dlc_bex/characters/",
 			list = {
 				"ene_swat_policia_federale",
-				"ene_swat_policia_federale_sc",
 				"ene_swat_policia_federale_r870",
 				"ene_swat_policia_federale_city",
 				"ene_swat_policia_federale_city_r870",
-				"ene_swat_policia_federale_city_ump",
-				"ene_swat_policia_federale_zeal",
-				"ene_swat_policia_federale_zeal_r870",
-				"ene_swat_policia_federale_zeal_ump",
-				"ene_swat_policia_federale_city_fbi",
-				"ene_swat_policia_federale_city_fbi_r870",
-				"ene_swat_policia_federale_city_fbi_ump",
 				"ene_swat_policia_federale_fbi",
 				"ene_swat_policia_federale_fbi_r870",
-				"ene_swat_policia_federale_fbi_ump",
-				"ene_swat_medic_policia_federale_sc",
-				"ene_swat_medic_policia_federale_sc_r870",
+				"ene_swat_medic_policia_federale",
+				"ene_swat_medic_policia_federale_r870",
 				"ene_swat_cloaker_policia_federale",
-				"ene_swat_cloaker_policia_federale_sc",
 				"ene_swat_policia_sniper",
-				"ene_swat_shield_policia_federale_mp9_fbi",
-				"ene_swat_shield_policia_federale_mp9_sc",
 				"ene_swat_shield_policia_federale_mp9",
 				"ene_swat_shield_policia_federale_c45",
 				"ene_swat_tazer_policia_federale",
@@ -18095,10 +18059,6 @@ function CharacterTweakData:character_map()
 				"ene_swat_heavy_policia_federale_fbi",
 				"ene_swat_heavy_policia_federale_fbi_r870",
 				"ene_swat_heavy_policia_federale_fbi_g36",
-				"ene_swat_heavy_policia_federale_city_r870",
-				"ene_swat_heavy_policia_federale_city_g36",
-				"ene_swat_heavy_policia_federale_zeal_r870",
-				"ene_swat_heavy_policia_federale_zeal_g36",
 				"ene_swat_dozer_medic_policia_federale",
 				"ene_swat_dozer_policia_federale_r870",
 				"ene_swat_dozer_policia_federale_saiga",
@@ -18532,7 +18492,6 @@ function CharacterTweakData:character_map()
 				"ene_vip_2",
 				"ene_titan_shotgun",
 				"ene_titan_rifle",
-				"ene_akan_lpf",
 				"ene_fbi_titan_1",
 				"ene_phalanx_1_assault",										
 				"ene_spook_cloak_1",										

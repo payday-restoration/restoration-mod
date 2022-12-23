@@ -380,15 +380,19 @@ end
 
 function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 	local pm = managers.player
-	local hit_chance = pm:upgrade_value("player", "dodge_ricochet_bullets")[1] * ((armor_break and pm:upgrade_value("player", "dodge_ricochet_bullets")[3]) or 1)
+	local hit_chance = pm:upgrade_value("player", "dodge_ricochet_bullets")[1]
 	local cooldown = pm:upgrade_value("player", "dodge_ricochet_bullets")[2]
+	local armor_break_dmg_mult = pm:upgrade_value("player", "dodge_ricochet_bullets")[3]
 	local from = Vector3()
 	local to = Vector3()
 	local dir = Vector3()
 	local t = TimerManager:game():time()
+	local attacker_unit = attack_data.attacker_unit
 
-	if t > self._mrwi_last_ricochet_time + cooldown then
-		self._mrwi_last_ricochet_time = t
+	if not armor_break or armor_break and t > self._mrwi_last_ricochet_time + cooldown then
+		if armor_break then
+			self._mrwi_last_ricochet_time = t
+		end
 		
 		--[[
 		if math.rand(1) > hit_chance then
@@ -400,6 +404,10 @@ function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 
 		if not alive(attacker_unit) or not attacker_unit:character_damage() or attacker_unit:character_damage():dead() or not attacker_unit:character_damage().damage_simple then
 			return
+		end
+
+		if armor_break then
+			attack_data.damage = attack_data.damage * armor_break_dmg_mult
 		end
 
 		mvector3.set(dir, attack_data.col_ray.ray)
@@ -1504,13 +1512,16 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
 		end
 
+		local pm = managers.player
+
 		if self:get_real_armor() <= 0 then
 			if not self._ally_attack then
 				if not self._armor_broken then
 					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
 					if attack_data.attacker_unit then
-					--Will look into tying this to Yakuza later if needed
-					--self:fill_dodge_meter(self._dodge_points * 0.5)
+						if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
+							self:_mrwick_ricochet_bullets(attack_data, true)
+						end
 					end
 				end
 			end
@@ -1519,8 +1530,6 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 			if attack_data.armor_piercing then
 				self._unit:sound():play("player_sniper_hit_armor_gone")
 			end
-
-			local pm = managers.player
 
 			self:_start_regen_on_the_side(pm:upgrade_value("player", "passive_always_regen_armor", 0))
 

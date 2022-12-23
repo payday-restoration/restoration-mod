@@ -3781,7 +3781,7 @@ function SkillTreeTweakData:init(tweak_data)
 			table.insert(deck9_multi_choice, data)
 		end		
 		
-	--Copy Cat--
+	--Copycat--
 	local sc_steamed = {
 			{
 				cost = 200,

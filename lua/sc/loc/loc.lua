@@ -3352,9 +3352,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three enemies or more within ##18## meters, you take ##5%## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nYou gain ##5## dodge points.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis is activated alongside Tension (Card 3) and shares its cooldown.\n\nYou carry ##1## additional body bag in your inventory.",
-		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis is activated alongside Tension (Card 3) and shares its cooldown.\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis is activated alongside Tension (Card 3) and shares its cooldown.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis shares its cooldown with Tension (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
+		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis shares its cooldown with Tension (Card 3).\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis shares its cooldown with Tension (Card 3).\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.",
@@ -3385,28 +3385,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##5## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Unlocks the ##Injector## for use in place of your throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nThe Injector can only be used once every ##30## seconds.",
+		["menu_deck17_1_desc_sc"] = "Unlocks the ##Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nThe Injector can only be used once every ##30## seconds.",
 		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Injector is active.",
 		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##60%## while below ##25%## health.",
 		["menu_deck17_9_desc_sc"] = "For every ##5## health gained during the Injector effect while at maximum health, the recharge time of the Injector is reduced by ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
+		["menu_deck18_1_desc_sc"] = "Unlocks the ##Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck18_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_5_desc_sc"] = "Dodging an attack reduces the smoke bomb's cooldown by ##1## second.\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##40%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n ##30%## of the damage taken to your health is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##",
+		["menu_deck19_1_desc_sc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n ##30%## of the damage taken to your health is applied over time (##8## seconds).\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##",
 		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##1.5## seconds for each enemy you kill.",
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any remaining damage-over-time will be negated.\n\nYou answer pagers ##25%## faster.",
 		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask will be reduced by ##3## seconds for each enemy you kill.",
 		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--
-		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.",
+		["menu_deck20_1_desc_sc"] = "Unlocks the ##Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within ##18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.",
 		["menu_deck20_3_desc_sc"] = "Enemies you or the tagged unit kill extend the duration of the gas dispenser by ##2## seconds. This increase is reduced by ##0.2## seconds each time it happens.",
 		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduces damage you take by ##0.5## points up to a maximum of ##8## until the Gas Dispenser's effect and cooldown ends.\n\nYour camera loop duration is increased by ##20## seconds.",
 		["menu_deck20_7_desc_sc"] = "Healing from the Gas Dispenser is increased by ##100%.##",
@@ -3428,14 +3428,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Unlocks the ##Pocket ECM Device## for use in place of your throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has ##1## charge with an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##5## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##2.5## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Leech
-		["menu_deck22_1_desc_sc"] = "Unlocks and equips the ##Leech Ampule.##\n\nWhile in game you can use the throwable key to activate the Leech Ampule, activating it will restore ##10%## of your maximum health and disables your armor for the duration of the Leech Ampule.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Leech Ampule lasts ##6## seconds with a ##40## second cooldown.",
+		["menu_deck22_1_desc_sc"] = "Unlocks the ##Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore ##10%## of your maximum health and disables your armor for ##6## seconds.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Ampule has a ##40## second cooldown.",
 		["menu_deck22_3_desc_sc"] = "While the Leech ampule is active, anytime you take health damage your teammates are healed for ##1%## of their maximum health.",
 		["menu_deck22_5_desc_sc"] = "The Leech Ampule's duration is increased to ##10## seconds.\n\nKilling an enemy reduces the cooldown of the Leech Ampule by ##1## second.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 		["menu_deck22_7_desc_sc"] = "While the Leech Ampule is active your health is now divided into segments of ##5%.##",
@@ -3443,23 +3443,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--CopyCat--
 		["menu_deck23_1_desc"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_1_short"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_1_1_desc"] = "You gain ##7.5%## more health.",
+		["menu_deck23_1_1_short"] = "You gain ##7.5%## more health.",
 		["menu_deck23_1_3_desc"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_1_3_short"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
 		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##2## health.\n\nThis cannot occur more than once every ##5## seconds.",
+		["menu_deck23_3_short"] = "Each headshot you achieve heals you for ##2## health.\n\nThis cannot occur more than once every ##5## seconds.",
+		["menu_deck23_3_1_desc"] = "You gain ##7.5%## more health.",
+		["menu_deck23_3_1_short"] = "You gain ##7.5%## more health.",
 		["menu_deck23_3_3_desc"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_3_3_short"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_3_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_3_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
+		["menu_deck23_5_desc"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for ##50%## more damage.\n\nArmor break ricochets have a ##10## second cooldown.",
+		["menu_deck23_5_short"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for ##50%## more damage.\n\nArmor break ricochets have a ##10## second cooldown.",
+		["menu_deck23_5_1_desc"] = "You gain ##7.5%## more health.",
+		["menu_deck23_5_1_short"] = "You gain ##7.5%## more health.",
 		["menu_deck23_5_3_desc"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_5_3_short"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_5_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_5_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
 		["menu_deck23_7_desc"] = "When your health drops below ##25%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##30## seconds.",
+		["menu_deck23_7_short"] = "When your health drops below ##25%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##30## seconds.",
+		["menu_deck23_7_1_desc"] = "You gain ##7.5%## more health.",
+		["menu_deck23_7_1_short"] = "You gain ##7.5%## more health.",
 		["menu_deck23_7_3_desc"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_7_3_short"] = "Your dodge is increased by ##2.5## points.",
 		["menu_deck23_7_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
@@ -3496,15 +3509,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Anarchist
 			["menu_deck15_mrwi_desc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
 			--Biker
-			["menu_deck16_mrwi_desc"] = "You regenerate ##10## armor every ##5## seconds.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			["menu_deck16_mrwi_desc"] = "Every time you or your crew kill an enemy you will gain ##2## health. This can only occur once every ##5## seconds.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "Unlocks the ##Injector## for use in place of your throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by ##20%## while the Injector is active.\n\nThe Injector can only be used once every ##30## seconds.",
+			["menu_deck17_mrwi_desc"] = "Unlocks the ##Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by ##20%## while the Injector is active.\n\nThe Injector can only be used once every ##30## seconds.",
 			--Sicario
+			["menu_deck18_mrwi_desc"] = "Unlocks the ##Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.\n\nYou carry ##1## additional body bag in your inventory.",
 			--Stoic
+			["menu_deck19_mrwi_desc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n ##30%## of the damage taken to your health is applied over time (##8## seconds).\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##\n\nYou answer pagers ##25%## faster.",
 			--Tag Team
+			["menu_deck20_mrwi_desc"] = "Unlocks the ##Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within ##18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of your throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has ##1## charge with an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
 			--Leech
+			["menu_deck22_mrwi_desc"] = "Unlocks the ##Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore ##10%## of your maximum health and disables your armor for ##6## seconds.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Ampule has a ##40## second cooldown.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",

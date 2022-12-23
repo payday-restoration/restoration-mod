@@ -631,7 +631,9 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 									local next_fire_last = weap_base._next_fire_allowed - next_fire
 									local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
 									local next_fire_current_t = weap_base._next_fire_allowed - t
-									if next_fire_current_t < next_fire_delay * 0.5 then
+									local queue_window = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingWindow") or 0.5
+									local queue_exlude = (restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") and 60 / restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude")) or 0.6
+									if queue_exlude >= next_fire and next_fire_current_t < next_fire_delay * queue_window then
 										self._queue_fire = true
 									end
 								end
@@ -1273,6 +1275,8 @@ function PlayerStandard:_start_action_running(t)
 
 	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
 	if second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+		self._running_wanted = false
+
 		return
 	end
 

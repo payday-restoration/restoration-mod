@@ -502,6 +502,8 @@
 					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
 					<divider name="tod_divider" size="7"/>
 					<option type="bool" default_value="false" name="QueuedShooting"/>
+					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
+					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
 					<divider name="tod_divider" size="7"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>

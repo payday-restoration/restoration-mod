@@ -631,7 +631,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 									local next_fire_last = weap_base._next_fire_allowed - next_fire
 									local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
 									local next_fire_current_t = weap_base._next_fire_allowed - t
-									if next_fire_current_t < next_fire_delay / 2 then
+									if next_fire_current_t < next_fire_delay * 0.5 then
 										self._queue_fire = true
 									end
 								end

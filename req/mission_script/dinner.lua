@@ -90,29 +90,9 @@ return {
 		}
 	},
 	--some murky replacers
-	[103100] = {
-		values = {
-            enemy = "units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
-		}
-	},
-	[103102] = {
-		values = {
-            enemy = "units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
-		}
-	},
-	[103083] = {
-		values = {
-            enemy = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1"
-		}
-	},
 	[103084] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
-		}
-	},
-	[103085] = {
-		values = {
-            enemy = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1"
 		}
 	},
 	[103086] = {

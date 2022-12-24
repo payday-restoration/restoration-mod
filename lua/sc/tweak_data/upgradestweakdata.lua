@@ -1016,8 +1016,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.ecm_jammer.can_open_sec_doors = {true}		
 			--Ace
 				self.values.ecm_jammer.affects_pagers = {true}
-				self.values.ecm_jammer.feedback_duration_boost = {1.25}
 				self.values.ecm_jammer.duration_multiplier = {1.25}
+				self.values.ecm_jammer.feedback_duration_boost = {1.25}
 				
 				--Unused
 				self.values.ecm_jammer.duration_multiplier_2 = {1.25}

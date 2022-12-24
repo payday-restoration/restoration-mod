@@ -4717,6 +4717,12 @@ function BlackMarketGui:update_info_text()
 
 		updated_texts[4].resource_color = {}
 		local desc_text = managers.localization:text(tweak_data.blackmarket.projectiles[slot_data.name].desc_id)
+
+		for color_id in string.gmatch(desc_text, "#%{(.-)%}#") do
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+		end
+		desc_text = desc_text:gsub("#%{(.-)%}#", "##")
+
 		updated_texts[4].text = desc_text .. "\n"
 
 		if slot_data.global_value and slot_data.global_value ~= "normal" then
@@ -5622,10 +5628,42 @@ function BlackMarketGui:update_info_text()
 			updated_texts[3].text = updated_texts[3].text .. "\n"
 		end
 
-		updated_texts[4].text = managers.localization:text(tweak_data.blackmarket.deployables[slot_data.name].desc_id, {
+		local deployable_id = slot_data.name
+		local deployable_uses = nil
+		if deployable_id == "doctor_bag" then
+			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
+		elseif deployable_id == "ammo_bag" then
+			deployable_uses = tweak_data.upgrades.ammo_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "ammo_increase") or 0)
+		elseif deployable_id == "ecm_jammer" then
+			local mult_1 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier") or 1
+			local mult_2 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier_2") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier_2") or 1
+			deployable_uses = tweak_data.upgrades.ecm_jammer_base_battery_life * mult_1 * mult_2
+		elseif deployable_id == "sentry_gun_silent" then
+			deployable_id = "sentry_gun"
+		end
+
+		if deployable_id == "sentry_gun" then
+			local ammo_cost = { --SentryGunBase isn't loaded outside of gameplay so I gotta dupe the cost table here, maybe I'll move it to tweak_data
+				0.4,
+				0.35,
+				0.3
+			}
+			local cost_reduction = managers.player:has_category_upgrade(deployable_id, "cost_reduction") and managers.player:equiptment_upgrade_value(deployable_id, "cost_reduction") or 1
+			deployable_uses = ammo_cost[cost_reduction] * 100 .. "%"
+		end
+
+		updated_texts[4].resource_color = {}
+		local description = managers.localization:text(tweak_data.blackmarket.deployables[slot_data.name].desc_id, {
 			BTN_INTERACT = managers.localization:btn_macro("interact", true),
-			BTN_USE_ITEM = managers.localization:btn_macro("use_item", true)
+			BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
+			deployable_uses = deployable_uses
 		})
+		for color_id in string.gmatch(description, "#%{(.-)%}#") do
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+		end
+		description = description:gsub("#%{(.-)%}#", "##")
+
+		updated_texts[4].text = description
 	elseif identifier == self.identifiers.character then
 		updated_texts[1].text = slot_data.name_localized
 
@@ -5985,7 +6023,6 @@ function BlackMarketGui:update_info_text()
 		self._rename_caret:set_world_position(x + w, y)
 	end
 end
-
 
 
 function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)

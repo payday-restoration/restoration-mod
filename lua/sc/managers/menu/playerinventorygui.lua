@@ -2,6 +2,121 @@ local function format_round(num, round_value)
 	return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
 end
 
+--Can't figure out how "color_ranges" is read for multiple colors so have some ugly workaround
+function PlayerInventoryGui:set_info_text(text, color_ranges, recursive, resource_color)
+	self._info_text:set_text(text)
+
+	local default_font_size = tweak_data.menu.pd2_small_font_size
+
+	self._info_text:set_font_size(default_font_size)
+	
+	local start_ci, end_ci, first_ci = nil
+
+	if resource_color then
+		local text_dissected = utf8.characters(text)
+		local idsp = Idstring("#")
+		start_ci = {}
+		end_ci = {}
+		first_ci = true
+
+		for i, c in ipairs(text_dissected) do
+			if Idstring(c) == idsp then
+				local next_c = text_dissected[i + 1]
+
+				if next_c and Idstring(next_c) == idsp then
+					if first_ci then
+						table.insert(start_ci, i)
+					else
+						table.insert(end_ci, i)
+					end
+
+					first_ci = not first_ci
+				end
+			end
+		end
+
+		if #start_ci == #end_ci then
+			for i = 1, #start_ci do
+				start_ci[i] = start_ci[i] - ((i - 1) * 4 + 1)
+				end_ci[i] = end_ci[i] - (i * 4 - 1)
+			end
+		end
+
+		text = string.gsub(text, "##", "")
+	end
+
+	self._info_text:set_text(text)
+	self._info_text:set_alpha(1)
+
+	if resource_color then
+		self._info_text:clear_range_color(1, utf8.len(text))
+
+		if #start_ci ~= #end_ci then
+			Application:error("BlackMarketGui: Missing ##'s in :set_info_text() string!", id, new_string, #start_ci, #end_ci)
+		else
+			for i = 1, #start_ci do
+				self._info_text:set_range_color(start_ci[i], end_ci[i], type(resource_color) == "table" and (resource_color[i] or tweak_data.screen_colors.skill_color) or (resource_color or tweak_data.screen_colors.skill_color))
+			end
+		end
+	end
+
+	if color_ranges then
+		if color_ranges.add_colors_to_text_object then
+			managers.menu_component:add_colors_to_text_object(self._info_text, unpack(color_ranges))
+		else
+			for _, color_range in ipairs(color_ranges) do
+				self._info_text:set_range_color(color_range.start, color_range.stop, color_range.color)
+			end
+		end
+	end
+
+	local _, _, _, h = self._info_text:text_rect()
+
+	self._info_text:set_h(h)
+
+	local min_font_size = math.max(math.min(6, default_font_size), math.ceil(default_font_size * 0.7))
+
+	if self._info_panel:parent():h() < self._info_text:bottom() then
+		local font_size = self._info_text:font_size()
+
+		while self._info_panel:parent():h() < self._info_text:bottom() and min_font_size < font_size do
+			self._info_text:set_font_size(font_size)
+
+			local _, _, _, h = self._info_text:text_rect()
+
+			self._info_text:set_h(h)
+
+			font_size = font_size - 1
+		end
+
+		if not recursive and self._info_panel:parent():h() < self._info_text:bottom() then
+			print("[PlayerInventoryGui] Info text dynamic font sizer failed")
+
+			local x = self._info_text:world_left() + 1
+			local y = self._info_panel:parent():world_bottom() - self._info_text:line_height()
+			local index = self._info_text:point_to_index(x, y)
+			local text = self._info_text:text()
+			text = utf8.sub(text, 1, index)
+			local last = utf8.sub(text, -1)
+
+			while last == " " or last == "\n" do
+				last = utf8.sub(text, -2, -1)
+
+				if last ~= "." then
+					text = utf8.sub(text, 1, -2)
+				end
+			end
+
+			text = text .. "..."
+
+			return self:set_info_text(text, color_ranges, true)
+		end
+	end
+
+	self._info_panel:set_top(self._info_text:bottom())
+	self._info_panel:set_h(self._info_panel:parent():h() - self._info_panel:top())
+end
+
 function PlayerInventoryGui:_get_armor_stats(name)
 	local base_stats = {}
 	local mods_stats = {}
@@ -606,19 +721,24 @@ function PlayerInventoryGui:_update_info_throwable(name)
 	if projectile_data then
 		local is_perk_throwable = tweak_data.blackmarket.projectiles[throwable_id].base_cooldown and not tweak_data.blackmarket.projectiles[throwable_id].base_cooldown_no_perk
 		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[throwable_id].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))
+		local has_short_desc = managers.localization:exists(projectile_data.desc_id .. "_short")
 
 		text_string = text_string .. managers.localization:text(projectile_data.name_id) .. " (x" .. tostring(amount) .. ")" .. "\n\n"
 
 		if self:_should_show_description() then
-			text_string = text_string .. managers.localization:text(projectile_data.desc_id) .. "\n"
+			text_string = text_string .. managers.localization:text((has_short_desc and projectile_data.desc_id .. "_short") or projectile_data.desc_id) .. "\n"
 		end
 	end
 
-	self:set_info_text(text_string, {
-		tweak_data.screen_colors.skill_color,
-		add_colors_to_text_object = true
-	})
+	local resource_color = {}
+	for color_id in string.gmatch(text_string, "#%{(.-)%}#") do
+		table.insert(resource_color, tweak_data.screen_colors[color_id])
+	end
+	text_string = text_string:gsub("#%{(.-)%}#", "##")
+
+	self:set_info_text(text_string, nil, nil, resource_color)
 end
+
 
 function PlayerInventoryGui:_update_info_specialization(name)
 	local text_string = ""
@@ -649,9 +769,70 @@ function PlayerInventoryGui:_update_info_specialization(name)
 	end
 	text_string = text_string:gsub("#%{(.-)%}#", "##")
 
+	self:set_info_text(text_string, nil, nil, resource_color)
+end
 
-	self:set_info_text(text_string, {
-		unpack(resource_color),
-		add_colors_to_text_object = true
-	})
+function PlayerInventoryGui:_update_info_deployable(name, slot)
+	local deployable_id = managers.blackmarket:equipped_deployable(slot)
+	local equipment_data = deployable_id and tweak_data.equipments[deployable_id]
+	local deployable_data = deployable_id and tweak_data.blackmarket.deployables[deployable_id]
+	local text_string = ""
+
+	if deployable_data and equipment_data then
+		local amount = equipment_data.quantity[1] or 1
+		local amount_2 = nil
+		local has_short_desc = managers.localization:exists(deployable_data.desc_id .. "_short")
+		local deployable_uses = nil
+
+		if deployable_id == "doctor_bag" then
+			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
+		elseif deployable_id == "ammo_bag" then
+			deployable_uses = tweak_data.upgrades.ammo_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "ammo_increase") or 0)
+		elseif deployable_id == "trip_mine" then
+			amount_2 = (equipment_data.quantity[2] or 1) + (managers.player:equiptment_upgrade_value("shape_charge", "quantity") or 0)
+		elseif deployable_id == "ecm_jammer" then
+			local mult_1 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier") or 1
+			local mult_2 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier_2") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier_2") or 1
+			deployable_uses = tweak_data.upgrades.ecm_jammer_base_battery_life * mult_1 * mult_2
+		elseif deployable_id == "sentry_gun_silent" then
+			deployable_id = "sentry_gun"
+		end
+
+		if deployable_id == "sentry_gun" then
+			local ammo_cost = { --SentryGunBase isn't loaded outside of gameplay so I gotta dupe the cost table here, maybe I'll move it to tweak_data
+				0.4,
+				0.35,
+				0.3
+			}
+			local cost_reduction = managers.player:has_category_upgrade(deployable_id, "cost_reduction") and managers.player:equiptment_upgrade_value(deployable_id, "cost_reduction") or 1
+			deployable_uses = ammo_cost[cost_reduction] * 100 .. "%"
+		end
+
+		amount = amount + (managers.player:equiptment_upgrade_value(deployable_id, "quantity") or 0)
+
+		if slot and slot > 1 then
+			amount = math.ceil(amount / 2)
+			if amount_2 then
+				amount_2 = math.ceil(amount_2 / 2)
+			end
+		end
+
+		text_string = text_string .. managers.localization:text(deployable_data.name_id) .. " (x" .. tostring(amount) .. (amount_2 and ( "|x" .. tostring(amount_2)) or "" ) .. ")" .. "\n\n"
+
+		if self:_should_show_description() then
+			text_string = text_string .. managers.localization:text(((has_short_desc and deployable_data.desc_id .. "_short") or deployable_data.desc_id), {
+				BTN_INTERACT = managers.localization:btn_macro("interact", true),
+				BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
+				deployable_uses = deployable_uses
+			}) .. "\n"
+		end
+	end
+
+	local resource_color = {}
+	for color_id in string.gmatch(text_string, "#%{(.-)%}#") do
+		table.insert(resource_color, tweak_data.screen_colors[color_id])
+	end
+	text_string = text_string:gsub("#%{(.-)%}#", "##")
+
+	self:set_info_text(text_string, nil, nil, resource_color)
 end

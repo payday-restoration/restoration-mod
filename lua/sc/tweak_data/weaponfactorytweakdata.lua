@@ -19168,6 +19168,18 @@ end)
 --North Star
 Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function(self)
 
+	--Tiwaz Silencer
+	self.parts.wpn_fps_snp_victor_ns_omega.supported = true
+	self.parts.wpn_fps_snp_victor_ns_omega.supported = true
+	self.parts.wpn_fps_snp_victor_ns_omega.has_description = true
+	self.parts.wpn_fps_snp_victor_ns_omega.desc_id = "bm_wp_upg_suppressor"
+	self.parts.wpn_fps_snp_victor_ns_omega.stats = {
+		value = 2,
+		suppression = 12,
+		alert_size = -1
+	}
+	self.parts.wpn_fps_snp_victor_ns_omega.perks = {"silencer"}
+
 	--Ursa Minor Grip
 	self.parts.wpn_fps_snp_victor_g_mod3.pcs = {
 		10,
@@ -19211,6 +19223,163 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 			concealment = 1,
 			recoil = -2
 		}
+	}
+
+	--Celestial Assault Kit
+	self.parts.wpn_fps_snp_victor_sbr_kit.supported = true
+	self.parts.wpn_fps_snp_victor_sbr_kit.forbids = { "wpn_fps_addon_ris" }
+	self.parts.wpn_fps_snp_victor_sbr_kit.supported = true
+	self.parts.wpn_fps_snp_victor_sbr_kit.stats = {
+		value = 0
+	}	
+	self.parts.wpn_fps_snp_victor_sbr_kit.perks = nil
+	self.parts.wpn_fps_snp_victor_sbr_kit.override = {
+		wpn_fps_snp_victor_fg_standard = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_fg_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_fg_hera"
+		},
+		wpn_fps_upg_m4_g_standard_vanilla = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_upg_m4_s_standard_vanilla = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_snp_victor_b_standard = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_b_sbr",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_b_sbr"
+		},
+		wpn_fps_snp_victor_bolt_standard = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_bolt_hera"
+		},
+		wpn_fps_snp_victor_dh_standard = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_dh_hera"
+		},
+		wpn_fps_snp_victor_dhs_switch = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy"
+		},
+		wpn_fps_snp_victor_s_adapter = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy"
+		},
+		wpn_fps_snp_victor_ns_omega = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_ns_hera_supp",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_ns_hera_supp"
+		},
+		wpn_fps_snp_victor_ns_standard = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_ns_hera_muzzle",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_ns_hera_muzzle"
+		},
+		wpn_fps_snp_victor_body_receiver_upper = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_body_receiver_upper_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_body_receiver_upper_hera"
+		},
+		wpn_fps_snp_victor_body_receiver_lower = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_body_receiver_lower_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_body_receiver_lower_hera"
+		},
+		wpn_fps_snp_victor_o_standard = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_o_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_o_hera"
+		},
+		wpn_fps_snp_victor_o_down = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_o_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_o_down_hera"
+		},
+		wpn_fps_upg_fl_ass_smg_sho_peqbox = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_smg_sho_surefire = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_peq15 = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_laser = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_dbal_laser = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_utg = {
+			a_obj = "a_fl_2"
+		},
+		--Extra Overrides
+		wpn_fps_upg_vg_ass_smg_verticalgrip = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_vg_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_vg_hera",
+			a_obj = "a_fg"
+		},
+		wpn_fps_upg_vg_ass_smg_stubby = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_vg_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_vg_hera",
+			a_obj = "a_fg"
+		},
+		wpn_fps_upg_m4_g_hgrip = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_upg_m4_g_mgrip = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_upg_m4_g_ergo = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_upg_m4_g_sniper = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_upg_g_m4_surgeon = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_snp_victor_g_mod3 = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_m4_uupg_g_billet = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
+		wpn_fps_snp_victor_s_mod0 = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_upg_m4_s_pts = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_m4_uupg_s_fold = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_upg_m4_s_ubr = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_upg_m4_s_crane = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_upg_m4_s_mk46 = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		wpn_fps_m4_uupg_s_zulu = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
+		},
+		--VMP
+		wpn_fps_ass_m4_g_fancy = {
+			third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
+			unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
+		},
 	}
 
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_m4_uupg_g_billet") --strangely isn't available on the St. Vic despite being part of the same content drop that also brought more AR-15 parts????
@@ -19429,7 +19598,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_upg_fg_jp = m4a1_override,
 			wpn_fps_upg_fg_smr = m4a1_override,
 			wpn_fps_upg_ass_m4_fg_moe = m4a1_override,
-			wpn_fps_upg_ass_m4_fg_lvoa = m4a1_override
+			wpn_fps_upg_ass_m4_fg_lvoa = m4a1_override,
+			wpn_fps_uupg_fg_radian = m4a1_override,
+			--VMP
+			wpn_fps_uupg_m4_fg_victorcar = m4a1_override,
 		},
 		forbids = {
 			"wpn_fps_addon_ris"
@@ -21015,6 +21187,367 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_toym16_b_standard.pcs = nil
 	end
 
+	if self.wpn_fps_smg_owen then 	-- Silent Enforcer's Owen Gun		
+			self.parts.wpn_fps_smg_owen_m_double.supported = true		
+			self.parts.wpn_fps_smg_owen_m_double.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}														
+			self.parts.wpn_fps_smg_owen_sling.supported = true														
+			self.parts.wpn_fps_smg_owen_sling.stats = {
+					value = 0
+				}			
+			self.parts.wpn_fps_smg_owen_s_wood.supported = true			
+			self.parts.wpn_fps_smg_owen_s_wood.stats = {
+					value = 2,
+					recoil = 1,
+					concealment = -1
+				}
+			self.parts.wpn_fps_smg_owen_s_no.supported = true
+			self.parts.wpn_fps_smg_owen_s_no.stats = {
+					value = 2,
+					recoil = -2,
+					concealment = 2
+				}							
+			self.parts.wpn_fps_smg_owen_low_window.supported = true							
+			self.parts.wpn_fps_smg_owen_low_window.stats = {
+					value = 1,
+					spread = -1,
+					concealment = 1						
+				}															
+			self.parts.wpn_fps_smg_owen_b_43.supported = true															
+			self.parts.wpn_fps_smg_owen_b_43.stats = {
+					value = 4,
+					spread = -1,
+					recoil = 1,
+				}					
+		end				
+
+	if self.wpn_fps_ass_aek971 then -- Pawcio's AEK 971
+		self.parts.wpn_fps_upg_aek971_stock_pad.supported = true
+		self.parts.wpn_fps_upg_aek971_stock_pad.stats = {
+			value = 1,				
+			recoil = 1,
+			spread = -1
+		}
+		self.parts.wpn_fps_upg_aek971_mag_rpk.supported = true
+		self.parts.wpn_fps_upg_aek971_mag_rpk.stats = {
+			value = 4,
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -1
+		}							
+		self.parts.wpn_fps_upg_aek971_mag_magpul.supported = true							
+		self.parts.wpn_fps_upg_aek971_mag_magpul.stats = {
+			value = 2,
+			spread = -1,
+			concealment = -1,
+			reload = 3
+		}	
+		self.parts.wpn_fps_upg_aek971_mag_magpul.has_description = false														
+		self.parts.wpn_fps_upg_aek971_dtk1.supported = true														
+		self.parts.wpn_fps_upg_aek971_dtk1.stats = {
+			value = 5,
+			suppression = -4,
+			spread = -2,
+			recoil = 2
+		}	
+		self.parts.wpn_fps_upg_aek971_supp_tgp_a.supported = true	
+		self.parts.wpn_fps_upg_aek971_supp_tgp_a.stats = {
+			value = 2,
+			suppression = 12,
+			alert_size = -1,
+			recoil = 1,
+			concealment = -2
+		}	
+				
+	end						
+
+	if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
+		self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
+		self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil	
+		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
+			"wpn_fps_upg_i_slower_rof"
+		})
+		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
+			"wpn_fps_upg_i_faster_rof"
+		})		
+		self.parts.wpn_fps_smg_czevo_barrel_long.supported = true		
+		self.parts.wpn_fps_smg_czevo_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_czevo_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_smg_czevo_vg_tti.supported = true	
+		self.parts.wpn_fps_smg_czevo_vg_tti.stats = {
+			value = 1,
+			concealment = -2,
+			recoil = 4,
+		}					
+		self.parts.wpn_fps_smg_czevo_vg_handstop.supported = true					
+		self.parts.wpn_fps_smg_czevo_vg_handstop.stats = {
+			value = 1,
+			concealment = -1,
+			recoil = 2,
+		}		
+		self.parts.wpn_fps_smg_czevo_vg_ptk.supported = true		
+		self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
+			value = 1,
+			spread = 1,
+			concealment = -1
+		}		
+		self.parts.wpn_fps_smg_czevo_vg_angled.supported = true		
+		self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
+			value = 1,
+			spread = 1,
+			concealment = -1
+		}																	
+		self.parts.wpn_fps_smg_czevo_sight_troy.supported = true																	
+		self.parts.wpn_fps_smg_czevo_sight_troy.stats = {
+			value = 1
+		}			
+		self.parts.wpn_fps_smg_czevo_vg_cover.supported = true			
+		self.parts.wpn_fps_smg_czevo_vg_cover.stats = {
+			value = 1
+		}					
+		self.parts.wpn_fps_smg_czevo_mag_speed.pcs = nil
+		self.parts.wpn_fps_smg_czevo_barrel_silenced.supported = true
+		self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
+			value = 10,
+			suppression = 12,
+			alert_size = -1
+		}
+	end	
+
+	if self.parts.wpn_fps_upg_o_prismatic then --Pawcio's SIGtac CP1
+		self.parts.wpn_fps_upg_o_prismatic.supported = true
+		self.parts.wpn_fps_upg_o_prismatic.stats = {
+			concealment = -3,
+			spread_moving = -3,
+			zoom = 3,
+			value = 5
+		}
+	end
+
+	if self.parts.wpn_fps_upg_o_rmr_riser then --Pawcio's Trijicon RMR
+		self.parts.wpn_fps_upg_o_rmr_riser.supported = true
+		self.parts.wpn_fps_upg_o_rmr_riser.stats = {
+			concealment = 0,
+			zoom = 0,
+			value = 0
+		}
+	end
+
+	if self.parts.wpn_fps_upg_o_pkas then --Pawcio's PKA-S
+		self.parts.wpn_fps_upg_o_pkas.supported = true
+		self.parts.wpn_fps_upg_o_pkas.desc_id = "bm_wp_upg_o_1_5"		
+		self.parts.wpn_fps_upg_o_pkas.stats = {
+			zoom = 1,
+			value = 5
+		}
+	end
+
+	if self.parts.wpn_fps_upg_o_m145 then --Pawcio's ELCAN C79
+		self.parts.wpn_fps_upg_o_m145.supported = true
+		self.parts.wpn_fps_upg_o_m145.desc_id = "bm_wp_upg_o_3_4"
+		self.parts.wpn_fps_upg_o_m145.stats = {
+			zoom = 24,
+			value = 8
+		}
+	end
+
+	if self.parts.wpn_fps_upg_o_anpas13d then --Pawcio's ANPAS-13D Night Vision
+		self.parts.wpn_fps_upg_o_anpas13d.supported = true
+		self.parts.wpn_fps_upg_o_anpas13d.stats = {
+			concealment = -3,
+			spread_moving = -3,
+			zoom = 3,
+			value = 5
+		}
+	end
+
+	if self.parts.wpn_fps_upg_o_pn23 then --Silent Enforcer's PN 23 Night
+		self.parts.wpn_fps_upg_o_pn23.supported = true
+		self.parts.wpn_fps_upg_o_pn23.stats = {
+			concealment = -5,
+			spread_moving = -5,
+			zoom = 5,
+			value = 8
+		}
+	end
+
+	if self.parts.wpn_fps_gre_arbiter_o_smart then --Alcat's Arbiter Scope
+		self.parts.wpn_fps_gre_arbiter_o_smart.supported = true
+		self.parts.wpn_fps_gre_arbiter_o_smart.stats = {
+			spread = 2,
+			concealment = -4
+		}
+		self.parts.wpn_fps_gre_arbiter_o_smart.has_description = true
+		self.parts.wpn_fps_gre_arbiter_o_smart.forbids = {"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter"}
+	end		
+
+	if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint Comp M4s Sight
+		self.parts.wpn_fps_upg_o_compm4s.supported = true
+		self.parts.wpn_fps_upg_o_compm4s.stats = {
+				value = 3,
+				zoom = 5
+			}			
+		end
+
+
+	if self.parts.wpn_fps_ass_komodo_o_tele then --Alcat's F2000 Sight
+		self.parts.wpn_fps_ass_komodo_o_tele.supported = true
+		self.parts.wpn_fps_ass_komodo_o_tele.stats = {
+			value = 1
+			}			
+		end	
+
+	if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
+		local iron_sights = {
+			--Full
+			"wpn_fps_upg_o_snp_troy_rear",
+			"wpn_fps_upg_o_snp_troym4_rear",
+			"wpn_fps_upg_o_snp_scorpionevo_rear",
+			"wpn_fps_upg_o_snp_kac_rear",
+
+			--Lite
+			"wpn_fps_upg_o_snp_cheap_rear",
+			"wpn_fps_upg_o_snp_dd_a1_rear",
+			"wpn_fps_upg_o_snp_m4flipup_rear",
+			"wpn_fps_upg_o_snp_mbus_rear",
+			"wpn_fps_upg_o_var_m4flipup_rear",
+			"wpn_fps_upg_o_var_mbus_rear",
+		}
+		for i, part_id in ipairs(iron_sights) do
+			if self.parts[part_id] then
+				self.parts[part_id].supported = true
+				self.parts[part_id].stats = { value = 0 }
+				self.parts[part_id].custom_stats = nil
+			end
+		end									
+	end			
+		
+	if self.parts.wpn_fps_upg_1911_tritium then --Pawcio's Illuminated Ironsights Pack
+		local iron_sights = {
+			"wpn_fps_upg_b92fs_tritium",
+			"wpn_fps_upg_1911_tritium",
+			"wpn_fps_upg_beer_tritium",
+			"wpn_fps_upg_czech_tritium",
+			"wpn_fps_upg_deagle_tritium",
+			"wpn_fps_upg_p226_tritium",
+			"wpn_fps_upg_pl14_tritium",
+			"wpn_fps_upg_shrew_tritium",
+			"wpn_fps_upg_stech_tritium",
+		}
+		for i, part_id in ipairs(iron_sights) do
+			if self.parts[part_id] then
+				self.parts[part_id].supported = true
+				self.parts[part_id].stats = { value = 0 }
+				self.parts[part_id].custom_stats = nil
+			end
+		end																										
+	end
+					
+	if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight		
+		self.parts.wpn_fps_upg_o_compm2.supported = true		
+		self.parts.wpn_fps_upg_o_compm2.stats = {
+				value = 3,
+				zoom = 5
+			}		
+	end				
+
+	if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
+		self.parts.wpn_fps_upg_o_okp7_dove.supported = true 
+		self.parts.wpn_fps_upg_o_okp7_dove.stats = {
+			value = 3,
+			zoom = 2	
+			}	
+		self.parts.wpn_fps_upg_o_pso1.supported = true	
+		self.parts.wpn_fps_upg_o_pso1.stats = {
+			value = 8,
+			zoom = 40
+			}				
+		self.parts.wpn_fps_upg_o_pso1_rifle.supported = true				
+		self.parts.wpn_fps_upg_o_pso1_rifle.stats = {
+			value = 8,
+			zoom = 40
+			}	
+		self.parts.wpn_fps_upg_o_1pn93.supported = true	
+		self.parts.wpn_fps_upg_o_1pn93.stats = {
+			value = 8,
+			zoom = 30
+			}	
+		self.parts.wpn_fps_upg_o_ekp_1s_03.supported = true	
+		self.parts.wpn_fps_upg_o_ekp_1s_03.stats = {
+			value = 3,
+			zoom = 2	
+			}									
+		self.parts.wpn_fps_upg_o_1p29.supported = true									
+		self.parts.wpn_fps_upg_o_1p29.stats = {
+			value = 8,
+			zoom = 30
+			}															
+		end	
+
+	--Silent Killer Pack Welrod
+	if self.parts.wpn_fps_pis_welrod_a_ap then
+		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
+
+		--Short barrel
+		self.parts.wpn_fps_pis_welrod_b_short.supported = true
+		self.parts.wpn_fps_pis_welrod_b_short.stats = {
+			value = 3,
+			suppression = -1,
+			spread = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
+
+		--Trigger Guard
+		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
+		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
+			value = 1
+		}
+
+		--Illuminated Iron Sights
+		self.parts.wpn_fps_pis_welrod_glow.supported = true
+	end
+
+	--Silent Killer Pack PB
+	if self.parts.wpn_fps_pis_pb_ns_std then
+		self.parts.wpn_fps_pis_pb_ns_std.supported = true
+		self.parts.wpn_fps_pis_pb_ns_std.stats = {
+			value = 4,
+			suppression = 1,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+	end
+
+	--Silent Killer Pack Max9
+	if self.parts.wpn_fps_pis_max9_b_short then
+		self.parts.wpn_fps_pis_max9_b_short.supported = true
+		self.parts.wpn_fps_pis_max9_b_short.stats = {
+			value = 5,
+			suppression = -1,
+			recoil = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
+
+		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
+		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
+			value = 5,
+			alert_size = 1,
+			suppression = -12,
+			recoil = -1,
+			spread = -1,
+			concealment = 2
+		}
+		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
+	end
+
 	--Gambyt's Vanilla Mod Pack
 	if self.parts.wpn_fps_ass_flint_b_long then
 		self.parts.wpn_fps_ass_s552_m_ak.supported = true
@@ -21614,15 +22147,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 2
 		}
 
-		--(Peacemaker) Lil' Yee-Haw
-		if self.parts.wpn_fps_pis_peacemaker_hat then
-			self.parts.wpn_fps_pis_peacemaker_hat.stance_mod = {
-				wpn_fps_pis_peacemaker = {
-					translation = Vector3(0, 0, -1.8)
-				}
-			}
-		end
-
 		--(Compact 5) Match Magazine
 		self.parts.wpn_fps_smg_mp5_m_custom.supported = true
 		self.parts.wpn_fps_smg_mp5_m_custom.stats = {
@@ -21829,14 +22353,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		--Sport Grip
 		self.parts.wpn_fps_bow_ecp_s_bare.adds = { "wpn_fps_upg_m4_g_standard_vanilla" }
 		self.parts.wpn_fps_ass_m4_g_fancy.supported = true
-		self.parts.wpn_fps_ass_m4_g_fancy.unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_s_bare"
-		self.parts.wpn_fps_ass_m4_g_fancy.visibility = {
-			{
-				objects = {
-					g_stock_bare = false
-				}
-			}
-		}
 		self.parts.wpn_fps_ass_m4_g_fancy.stats = {
 			value = 1,
 			recoil = -2,
@@ -22347,367 +22863,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 2,
 			concealment = -1
 		}		
-	end
-
-	if self.wpn_fps_smg_owen then 	-- Silent Enforcer's Owen Gun		
-			self.parts.wpn_fps_smg_owen_m_double.supported = true		
-			self.parts.wpn_fps_smg_owen_m_double.stats = {
-					value = 2,
-					spread = -1,
-					concealment = -1,
-					reload = 3
-				}														
-			self.parts.wpn_fps_smg_owen_sling.supported = true														
-			self.parts.wpn_fps_smg_owen_sling.stats = {
-					value = 0
-				}			
-			self.parts.wpn_fps_smg_owen_s_wood.supported = true			
-			self.parts.wpn_fps_smg_owen_s_wood.stats = {
-					value = 2,
-					recoil = 1,
-					concealment = -1
-				}
-			self.parts.wpn_fps_smg_owen_s_no.supported = true
-			self.parts.wpn_fps_smg_owen_s_no.stats = {
-					value = 2,
-					recoil = -2,
-					concealment = 2
-				}							
-			self.parts.wpn_fps_smg_owen_low_window.supported = true							
-			self.parts.wpn_fps_smg_owen_low_window.stats = {
-					value = 1,
-					spread = -1,
-					concealment = 1						
-				}															
-			self.parts.wpn_fps_smg_owen_b_43.supported = true															
-			self.parts.wpn_fps_smg_owen_b_43.stats = {
-					value = 4,
-					spread = -1,
-					recoil = 1,
-				}					
-		end				
-
-	if self.wpn_fps_ass_aek971 then -- Pawcio's AEK 971
-		self.parts.wpn_fps_upg_aek971_stock_pad.supported = true
-		self.parts.wpn_fps_upg_aek971_stock_pad.stats = {
-			value = 1,				
-			recoil = 1,
-			spread = -1
-		}
-		self.parts.wpn_fps_upg_aek971_mag_rpk.supported = true
-		self.parts.wpn_fps_upg_aek971_mag_rpk.stats = {
-			value = 4,
-			extra_ammo = 15,
-			reload = -2,
-			concealment = -1
-		}							
-		self.parts.wpn_fps_upg_aek971_mag_magpul.supported = true							
-		self.parts.wpn_fps_upg_aek971_mag_magpul.stats = {
-			value = 2,
-			spread = -1,
-			concealment = -1,
-			reload = 3
-		}	
-		self.parts.wpn_fps_upg_aek971_mag_magpul.has_description = false														
-		self.parts.wpn_fps_upg_aek971_dtk1.supported = true														
-		self.parts.wpn_fps_upg_aek971_dtk1.stats = {
-			value = 5,
-			suppression = -4,
-			spread = -2,
-			recoil = 2
-		}	
-		self.parts.wpn_fps_upg_aek971_supp_tgp_a.supported = true	
-		self.parts.wpn_fps_upg_aek971_supp_tgp_a.stats = {
-			value = 2,
-			suppression = 12,
-			alert_size = -1,
-			recoil = 1,
-			concealment = -2
-		}	
-				
-	end						
-
-	if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
-		self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
-		self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil	
-		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
-			"wpn_fps_upg_i_slower_rof"
-		})
-		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
-			"wpn_fps_upg_i_faster_rof"
-		})		
-		self.parts.wpn_fps_smg_czevo_barrel_long.supported = true		
-		self.parts.wpn_fps_smg_czevo_barrel_long.stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_smg_czevo_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
-
-		self.parts.wpn_fps_smg_czevo_vg_tti.supported = true	
-		self.parts.wpn_fps_smg_czevo_vg_tti.stats = {
-			value = 1,
-			concealment = -2,
-			recoil = 4,
-		}					
-		self.parts.wpn_fps_smg_czevo_vg_handstop.supported = true					
-		self.parts.wpn_fps_smg_czevo_vg_handstop.stats = {
-			value = 1,
-			concealment = -1,
-			recoil = 2,
-		}		
-		self.parts.wpn_fps_smg_czevo_vg_ptk.supported = true		
-		self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
-			value = 1,
-			spread = 1,
-			concealment = -1
-		}		
-		self.parts.wpn_fps_smg_czevo_vg_angled.supported = true		
-		self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
-			value = 1,
-			spread = 1,
-			concealment = -1
-		}																	
-		self.parts.wpn_fps_smg_czevo_sight_troy.supported = true																	
-		self.parts.wpn_fps_smg_czevo_sight_troy.stats = {
-			value = 1
-		}			
-		self.parts.wpn_fps_smg_czevo_vg_cover.supported = true			
-		self.parts.wpn_fps_smg_czevo_vg_cover.stats = {
-			value = 1
-		}					
-		self.parts.wpn_fps_smg_czevo_mag_speed.pcs = nil
-		self.parts.wpn_fps_smg_czevo_barrel_silenced.supported = true
-		self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
-			value = 10,
-			suppression = 12,
-			alert_size = -1
-		}
-	end	
-
-	if self.parts.wpn_fps_upg_o_prismatic then --Pawcio's SIGtac CP1
-		self.parts.wpn_fps_upg_o_prismatic.supported = true
-		self.parts.wpn_fps_upg_o_prismatic.stats = {
-			concealment = -3,
-			spread_moving = -3,
-			zoom = 3,
-			value = 5
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_rmr_riser then --Pawcio's Trijicon RMR
-		self.parts.wpn_fps_upg_o_rmr_riser.supported = true
-		self.parts.wpn_fps_upg_o_rmr_riser.stats = {
-			concealment = 0,
-			zoom = 0,
-			value = 0
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_pkas then --Pawcio's PKA-S
-		self.parts.wpn_fps_upg_o_pkas.supported = true
-		self.parts.wpn_fps_upg_o_pkas.desc_id = "bm_wp_upg_o_1_5"		
-		self.parts.wpn_fps_upg_o_pkas.stats = {
-			zoom = 1,
-			value = 5
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_m145 then --Pawcio's ELCAN C79
-		self.parts.wpn_fps_upg_o_m145.supported = true
-		self.parts.wpn_fps_upg_o_m145.desc_id = "bm_wp_upg_o_3_4"
-		self.parts.wpn_fps_upg_o_m145.stats = {
-			zoom = 24,
-			value = 8
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_anpas13d then --Pawcio's ANPAS-13D Night Vision
-		self.parts.wpn_fps_upg_o_anpas13d.supported = true
-		self.parts.wpn_fps_upg_o_anpas13d.stats = {
-			concealment = -3,
-			spread_moving = -3,
-			zoom = 3,
-			value = 5
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_pn23 then --Silent Enforcer's PN 23 Night
-		self.parts.wpn_fps_upg_o_pn23.supported = true
-		self.parts.wpn_fps_upg_o_pn23.stats = {
-			concealment = -5,
-			spread_moving = -5,
-			zoom = 5,
-			value = 8
-		}
-	end
-
-	if self.parts.wpn_fps_gre_arbiter_o_smart then --Alcat's Arbiter Scope
-		self.parts.wpn_fps_gre_arbiter_o_smart.supported = true
-		self.parts.wpn_fps_gre_arbiter_o_smart.stats = {
-			spread = 2,
-			concealment = -4
-		}
-		self.parts.wpn_fps_gre_arbiter_o_smart.has_description = true
-		self.parts.wpn_fps_gre_arbiter_o_smart.forbids = {"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter"}
-	end		
-
-	if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint Comp M4s Sight
-		self.parts.wpn_fps_upg_o_compm4s.supported = true
-		self.parts.wpn_fps_upg_o_compm4s.stats = {
-				value = 3,
-				zoom = 5
-			}			
-		end
-
-
-	if self.parts.wpn_fps_ass_komodo_o_tele then --Alcat's F2000 Sight
-		self.parts.wpn_fps_ass_komodo_o_tele.supported = true
-		self.parts.wpn_fps_ass_komodo_o_tele.stats = {
-			value = 1
-			}			
-		end	
-
-	if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
-		local iron_sights = {
-			--Full
-			"wpn_fps_upg_o_snp_troy_rear",
-			"wpn_fps_upg_o_snp_troym4_rear",
-			"wpn_fps_upg_o_snp_scorpionevo_rear",
-			"wpn_fps_upg_o_snp_kac_rear",
-
-			--Lite
-			"wpn_fps_upg_o_snp_cheap_rear",
-			"wpn_fps_upg_o_snp_dd_a1_rear",
-			"wpn_fps_upg_o_snp_m4flipup_rear",
-			"wpn_fps_upg_o_snp_mbus_rear",
-			"wpn_fps_upg_o_var_m4flipup_rear",
-			"wpn_fps_upg_o_var_mbus_rear",
-		}
-		for i, part_id in ipairs(iron_sights) do
-			if self.parts[part_id] then
-				self.parts[part_id].supported = true
-				self.parts[part_id].stats = { value = 0 }
-				self.parts[part_id].custom_stats = nil
-			end
-		end									
-	end			
-		
-	if self.parts.wpn_fps_upg_1911_tritium then --Pawcio's Illuminated Ironsights Pack
-		local iron_sights = {
-			"wpn_fps_upg_b92fs_tritium",
-			"wpn_fps_upg_1911_tritium",
-			"wpn_fps_upg_beer_tritium",
-			"wpn_fps_upg_czech_tritium",
-			"wpn_fps_upg_deagle_tritium",
-			"wpn_fps_upg_p226_tritium",
-			"wpn_fps_upg_pl14_tritium",
-			"wpn_fps_upg_shrew_tritium",
-			"wpn_fps_upg_stech_tritium",
-		}
-		for i, part_id in ipairs(iron_sights) do
-			if self.parts[part_id] then
-				self.parts[part_id].supported = true
-				self.parts[part_id].stats = { value = 0 }
-				self.parts[part_id].custom_stats = nil
-			end
-		end																										
-	end
-					
-	if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight		
-		self.parts.wpn_fps_upg_o_compm2.supported = true		
-		self.parts.wpn_fps_upg_o_compm2.stats = {
-				value = 3,
-				zoom = 5
-			}		
-	end				
-
-	if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
-		self.parts.wpn_fps_upg_o_okp7_dove.supported = true 
-		self.parts.wpn_fps_upg_o_okp7_dove.stats = {
-			value = 3,
-			zoom = 2	
-			}	
-		self.parts.wpn_fps_upg_o_pso1.supported = true	
-		self.parts.wpn_fps_upg_o_pso1.stats = {
-			value = 8,
-			zoom = 40
-			}				
-		self.parts.wpn_fps_upg_o_pso1_rifle.supported = true				
-		self.parts.wpn_fps_upg_o_pso1_rifle.stats = {
-			value = 8,
-			zoom = 40
-			}	
-		self.parts.wpn_fps_upg_o_1pn93.supported = true	
-		self.parts.wpn_fps_upg_o_1pn93.stats = {
-			value = 8,
-			zoom = 30
-			}	
-		self.parts.wpn_fps_upg_o_ekp_1s_03.supported = true	
-		self.parts.wpn_fps_upg_o_ekp_1s_03.stats = {
-			value = 3,
-			zoom = 2	
-			}									
-		self.parts.wpn_fps_upg_o_1p29.supported = true									
-		self.parts.wpn_fps_upg_o_1p29.stats = {
-			value = 8,
-			zoom = 30
-			}															
-		end	
-
-	--Silent Killer Pack Welrod
-	if self.parts.wpn_fps_pis_welrod_a_ap then
-		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
-
-		--Short barrel
-		self.parts.wpn_fps_pis_welrod_b_short.supported = true
-		self.parts.wpn_fps_pis_welrod_b_short.stats = {
-			value = 3,
-			suppression = -1,
-			spread = -1,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
-
-		--Trigger Guard
-		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
-		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
-			value = 1
-		}
-
-		--Illuminated Iron Sights
-		self.parts.wpn_fps_pis_welrod_glow.supported = true
-	end
-
-	--Silent Killer Pack PB
-	if self.parts.wpn_fps_pis_pb_ns_std then
-		self.parts.wpn_fps_pis_pb_ns_std.supported = true
-		self.parts.wpn_fps_pis_pb_ns_std.stats = {
-			value = 4,
-			suppression = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
-	end
-
-	--Silent Killer Pack Max9
-	if self.parts.wpn_fps_pis_max9_b_short then
-		self.parts.wpn_fps_pis_max9_b_short.supported = true
-		self.parts.wpn_fps_pis_max9_b_short.stats = {
-			value = 5,
-			suppression = -1,
-			recoil = -1,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
-
-		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
-		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
-			value = 5,
-			alert_size = 1,
-			suppression = -12,
-			recoil = -1,
-			spread = -1,
-			concealment = 2
-		}
-		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
 	end
 
 	--Vanilla Mod Pack Volume 2 Support
@@ -23268,6 +23423,153 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}		
 		
+	end
+
+	--That one VMP update that added a tiny hat
+	if self.parts.wpn_fps_pis_peacemaker_hat then
+		--Lil' Yee-Haw
+		self.parts.wpn_fps_pis_peacemaker_hat.stance_mod = {
+			wpn_fps_pis_peacemaker = {
+				translation = Vector3(0, 0, -1.8)
+			}
+		}
+	end
+
+	--Vanilla Mod Pack 23.3 v6
+	if self.parts.wpn_fps_pis_triggermod_fast then
+		--Pistol Triggers, Disabled for now
+			self.parts.wpn_fps_pis_triggermod_fast.pcs = nil
+			self.parts.wpn_fps_pis_triggermod_fast.supported = true
+			self.parts.wpn_fps_pis_triggermod_fast.stats = { 
+				value = 5,
+				spread = -2,
+				recoil = -4
+			}
+			self.parts.wpn_fps_pis_triggermod_fast.custom_stats = { rof_mult = 1.1 }
+			self.parts.wpn_fps_pis_triggermod_slow.pcs = nil
+			self.parts.wpn_fps_pis_triggermod_slow.supported = true
+			self.parts.wpn_fps_pis_triggermod_slow.stats = { 
+				value = 5,
+				spread = 2,
+				recoil = 4
+			}
+			self.parts.wpn_fps_pis_triggermod_slow.custom_stats = { rof_mult = 0.85 }
+
+		--Argos III
+			self.parts.wpn_fps_sho_ultima_o_expert.supported = true
+			self.parts.wpn_fps_sho_ultima_o_expert.stats = { value = 0 }
+
+		--Signature SMG
+			self.parts.wpn_fps_smg_shepheard_fg_suppressed.supported = true
+			self.parts.wpn_fps_smg_shepheard_fg_suppressed.has_description = true
+			self.parts.wpn_fps_smg_shepheard_fg_suppressed.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_smg_shepheard_fg_suppressed.stats = {
+				value = 3,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_smg_shepheard_fg_suppressed.perks = {"silencer"}
+
+		--R700
+			self.parts.wpn_fps_snp_r700_b_supp.supported = true
+			self.parts.wpn_fps_snp_r700_b_supp.has_description = true
+			self.parts.wpn_fps_snp_r700_b_supp.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_snp_r700_b_supp.override = nil
+			self.parts.wpn_fps_snp_r700_b_supp.stats = {
+				value = 3,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_snp_r700_b_supp.perks = {"silencer"}
+
+		--AK Family Parts
+			--Expanded Mag
+			self.parts.wpn_upg_ak_m_slick.supported = true
+			self.parts.wpn_upg_ak_m_slick.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts.wpn_upg_ak_m_slick.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+			--Compact Mag
+			self.parts.wpn_upg_ak_m_tiny.supported = true
+			self.parts.wpn_upg_ak_m_tiny.stats = {
+				value = 2,
+				concealment = 1,
+				reload = 3,
+				extra_ammo = -10
+			}
+			self.parts.wpn_upg_ak_m_tiny.custom_stats = { 
+				ads_speed_mult = 0.975
+			}
+
+		--CAR Family Parts
+			--Modern Foregrip
+			self.parts.wpn_fps_uupg_m4_fg_victorcar.supported = true
+			self.parts.wpn_fps_uupg_m4_fg_victorcar.adds = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }
+			self.parts.wpn_fps_uupg_m4_fg_victorcar.supported = true
+			self.parts.wpn_fps_uupg_m4_fg_victorcar.stats = {
+				value = 5,
+				spread = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_m4_m_slick.supported = true
+			self.parts.wpn_fps_ass_m4_m_star.supported = true
+			self.parts.wpn_fps_ass_m4_m_star.stats = {
+				value = 2,
+				concealment = 1,
+				reload = 3,
+				extra_ammo = -10
+			}
+			self.parts.wpn_fps_ass_m4_m_star.custom_stats = { 
+				ads_speed_mult = 0.975
+			}
+
+		--Glock 22 Kit
+			self.parts.wpn_fps_pis_g22c_body_wick_dummy.supported = true
+			self.parts.wpn_fps_pis_g22c_body_wick_dummy.stats = { value = 0 }
+			self.parts.wpn_fps_pis_g22c_body_wick_dummy.forbids = nil
+			self.parts.wpn_fps_pis_g22c_body_wick_dummy.override.wpn_fps_pis_g18c_g_ergo = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+			self.parts.wpn_fps_pis_g22c_body_wick_dummy.override.wpn_fps_pis_g26_g_gripforce = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+			self.parts.wpn_fps_pis_g22c_body_wick_dummy.override.wpn_fps_pis_g22c_b_long = {
+				unit = "units/mods/weapons/wpn_fps_pis_g22c_pts/wpn_fps_pis_g22c_b_wick",
+			}
+
+		--Deagle Steady Wooden Grip Updated
+			self.parts.wpn_fps_pis_deagle_g_wooden.supported = true
+			self.parts.wpn_fps_pis_deagle_g_wooden.stats = {
+				value = 3,
+				recoil = 2,
+				spread = -1
+			}
+			self.parts.wpn_fps_pis_deagle_g_wooden.custom_stats = nil
+
+		--Lion's Roar Urban Heat Kit Updated
+			self.parts.wpn_fps_ass_vhs_body_camo.supported = true
+			self.parts.wpn_fps_ass_vhs_body_camo.stats = {
+				value = 0
+			}
+
+		--Repeater Papa Yeehaw
+			self.parts.wpn_fps_snp_winchester_yeehaw.type = "sight"
+			self.parts.wpn_fps_snp_winchester_yeehaw.supported = true
+			self.parts.wpn_fps_snp_winchester_yeehaw.stats = {
+				value = 0
+			}
+			self.parts.wpn_fps_snp_winchester_yeehaw.stance_mod = {
+				wpn_fps_snp_winchester = {
+					translation = Vector3(0,10,-4),
+					rotation = Rotation(0,2.5,0)
+				}
+			}
 	end
 
 	--HX25 Grenade Launcher

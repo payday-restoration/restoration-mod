@@ -8921,7 +8921,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.stats = {
 					damage = 60,
 					spread = 89,
-					recoil = 57,
+					recoil = 65,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -9156,7 +9156,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.victor.AMMO_MAX = 30
 				self.victor.FIRE_MODE = "single"
 				self.victor.fire_mode_data = {}
-				self.victor.fire_mode_data.fire_rate = 0.13333333
+				self.victor.fire_mode_data.fire_rate = 0.142857
 				self.victor.sms = 0.9
 				self.victor.kick = self.stat_info.kick_tables.vertical_kick
 				self.victor.can_shoot_through_enemy = true
@@ -9165,14 +9165,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.victor.supported = true
 				self.victor.ads_speed = 0.460
 				self.victor.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2000,
 					end_dist = 6300,
 					min_mult = 0.1666667
 				}
 				self.victor.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 77,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 19,
@@ -9184,10 +9184,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.victor.stats_modifiers = nil
+				self.victor.reload_speed_multiplier = 0.9
 				self.victor.armor_piercing_chance = 1
 				self.victor.ignore_reload_objects_not_empty = true
 				self.victor.timers.reload_empty = 2.5
-				self.victor.timers.reload_exit_empty = 1.1
+				self.victor.timers.reload_exit_empty = 1
 				self.victor.timers.reload_not_empty = 2.5
 				self.victor.timers.reload_exit_not_empty = 0.9
 				self.victor.panic_suppression_chance = 0.05

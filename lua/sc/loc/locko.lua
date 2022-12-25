@@ -144,12 +144,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDescID"] = "상호 작용 키가 토글 역할을 하는지 여부를 활성화하거나 비활성화합니다.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "배치물 취소 상호 작용",
 		["RestorationModSevenHoldDeployCancelDescID"] = "배치물 키가 토글 상호 작용을 취소하는 데 사용되는지 여부를 활성화하거나 비활성화합니다. 효과를 보려면 토클 상호작용을 활성화해야 합니다.",
-		["RestorationModQueuedShootingTitleID"] = "사격 대기",
+		["RestorationModQueuedShootingTitleID"] = "사격 입력 대기",
 		["RestorationModQueuedShootingDescID"] = "오버샘플링을 지원하기 위해 반자동 무기에 대한 사격 입력 대기열을 활성화하거나 비활성화합니다.",
-		["RestorationModQueuedShootingWindowTitleID"] = "사격 대기 감도",
+		["RestorationModQueuedShootingWindowTitleID"] = "사격 입력 대기 감도",
 		["RestorationModQueuedShootingWindowDescID"] = "무기의 발사 시간 지연 %을 기준으로 사격 입력이 대기열에 들어가는 시간을 결정합니다. 더 높은 값 = 더 빠른 대기열",
-		["RestorationModQueuedShootingExcludeTitleID"] = "사격 대기 속도 제한",
-		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도 (RPM) 이상으로 발사하는 무기의 사격 대기를 제한합니다.",		
+		["RestorationModQueuedShootingExcludeTitleID"] = "사격 입력 대기 속도 제한",
+		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도 (RPM) *이상으로* 발사하는 무기의 사격 입력 대기를 제한합니다.",		
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
@@ -1828,6 +1828,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_foregrip_plural"] = "총열덮개",
 		["bm_menu_vertical_grip"] = "수직 손잡이",
 		["bm_menu_vertical_grip_plural"] = "수직 손잡이",
+		["bm_menu_bayonet"] = "총검",
+		["bm_menu_bayonet_plural"] = "총검",		
 		--Spoof types--
 		["bm_menu_frame"] = "프레임",
 		["bm_menu_whole_receiver"] = "리시버",
@@ -2071,27 +2073,48 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		
 		--Throwables--
-		["bm_concussion_desc"] = "범위: 10m \n- 최대 4초 동안 적을 기절 \n- 7초 동안 적의 정확도가 50% 감소 \n- 타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.\n \n이 놀라운 작은 아름다움은 모든 사람의 숨을 죽이고 그들을 죽일 추가 순간을 제공합니다.",
-		["bm_grenade_smoke_screen_grenade_desc"] = "사거리: 8m \n지속시간: 12초 \n기폭: 멈춘 뒤  1초 \n \n이 중 하나를 떨어뜨리면 연기 구름 속으로 사라져 적들이 당신을 조준하기 위해 고군분투하게 됩니다.",
-		["bm_grenade_frag_desc"] = "대미지: 800 \n범위: 5m \n기폭: 3초 \n \n고전적인 폭발성 수류탄. 할 말이 더 있겠습니까?",
-		["bm_dynamite_desc"] = "대미지: 800 \n범위: 4m \n기폭: 3초 \n충돌 지점에서 튕기거나 구르지 않지만 유사한 폭발물보다 스플래시 피해가 적습니다.\n\n바위를 효과적으로 폭파하도록 설계되었고. 사람을 폭파하는 데에도 더욱 효과적입니다.",
-		["bm_grenade_frag_com_desc"] = "대미지: 800 \n범위: 5m \n기폭: 3초 \n \n클래식 수류탄의 날렵한 새로운 모습으로 폭발할 때마다 오버킬 터치를 제공합니다.",
-		["bm_grenade_dada_com_desc"] = "대미지: 800 \n범위: 5m \n기폭: 3초 \n \n인형의 바같 층은 폭발적인 내부 구조를 숨깁니다. 조국에 대한 찬사입니다.",
-		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): 10초당 1200\n대미지 (불): 3초당 60 \n범위: 3.75m \n지속시간 (화염 지대): 10초 \n기폭: 충격 시 폭발 \n- 50%의 확률로 적을 불을 붙이고 불태워 대부분의 적들을 패닉 상태로 만듭니다.\n \n타오르는 걸레로 부서지기 쉬운 가연성 액체 병. 저렴하고 간단하며 매우 효과적입니다. 이걸로 다 태워버리십시오.",
-		["bm_grenade_fir_com_desc"] = "대미지 (화염 지대): 12초당 1440\n대미지 (불): 3초당 60 \n범위: 3.75m \n지속시간 (화염 지대): 12초 \n기폭: 2.5초 - 50%의 확률로 적을 불을 붙이고 불태워 대부분의 적들을 패닉 상태로 만듭니다.\n \n자체 인이 담겨있는 점화 용기. 벽과 모퉁이를 튕기며 적을 향해 튀어오기에 안성맞춤입니다.",
-		["bm_wpn_prj_ace_desc"] = "대미지: 240 \n \n추가된 무게와 면도날이 있고 던질 수 있는 카드. 진정한 킬러 손의 카드입니다.",
-		["bm_wpn_prj_four_desc"] = "대미지 (직격): 200 \n대미지: 5초당 200 (독) \n대미지 (독): 4초당 120 \n- 0.5초마다 50%의 확률로 적을 기절시킵니다\n- 실드, 불도저, 척탄병 및 캡틴은 기절 효과에 면역입니다.\n \n이 수리검은 피와 전투로 가득 찬 오랜 역사를 가지고 있습니다. 이 독이 코팅된 스테인리스 강철 수리검은 앞을 가로막는 누구에게나 치명적인 위협이 될 것입니다.",
-		["bm_wpn_prj_target_desc"] = "대미지: 240 \n \n정확하고 조용한 킬을 위한 확실한 백업 계획과 신뢰할 수 있는 전술.",
-		["bm_wpn_prj_jav_desc"] = "대미지: 360 \n \n흐린 선사 시대에 그 기원을 잃어버린 자벨린은 단순한 무기입니다. 결국, 그것은 누군가의 하루를 망치는 끝이 뾰족한 던질 수 있는 막대기입니다.",
-		["bm_wpn_prj_hur_desc"] = "대미지: 360 \n \n날카로운 도끼는 절대 틀리지 않다고 합니다. 던질 수 있는 날카로운 도끼는 더 이상 옳지 않습니다.",
-		["bm_grenade_electric_desc"] = "대미지: 400 \n범위: 5m \n기폭: 3초 \n \n파편은 모두 훌륭하고 좋지만 일부는 튀깁니다. 이 작고 아름다운 이것은 고전압으로 약간의 피해를 입히기에 다소 실용적인 짐승입니다.",
-		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 생화학 수류탄",
-		["bm_grenade_poison_gas_grenade_desc"] = "대미지: 10초당 300 \n범위: 6m \n지속시간 (가스 구름): 12초 \n기폭: 정지 상태를 유지한 후 1초 \n- 적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.\n- 실드, 불도저, 척탄병, 캡틴은 스턴 효과에 면역입니다.\n\n이 실험적인 생물무기는 당신이나 당신의 팀원들에게 해를 끼치지 않도록 설계된 특정 유전자형을 표적으로 하는 독성 가스 구름을 뿜어냅니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 선택한 무기인거야, 페코.",
+		["bm_dynamite_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#4m## \n기폭: #{skill_color}#3초## \n- 투척할 수 있는 다른 폭발물에 비해 튕김과 굴림이 적습니다.\n\n바위를 효과적으로 폭파할 수 있고, 사람을 날려 보내는 데에도 더욱 효과적으로 설계되었습니다.",
+		--Frag
+		["bm_grenade_frag_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n\n고전적인 세열 수류탄. 할 말이 더 있겠습니까?",
+		--Community Frag
+		["bm_grenade_frag_com_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n\n기존 세열 수류탄의 세련된 디자인으로, 폭발할 때마다 오버킬식의 터치를 가미해 줄 것입니다.",
+		--Community Frag 2
+		["bm_grenade_dada_com_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n\n인형의 외형이 내부의 구조물들을 감싸고 있고 고향의 힘을 과시합니다.",
+		--Snowball
+		["bm_grenade_xmas_snowball_desc"] = "대미지: #{skill_color}#240## \n범위: #{skill_color}#1m## \n충전 속도: #{skill_color}#5초마다 눈덩이 1개## \n\n물에 적시고, 냉장고에서 얼리면 죽여주는 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
+		--Zapper
+		["bm_grenade_electric_desc"] = "대미지: #{skill_color}#400## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n- #{skill_color}#대부분의 적들을 감전시킵니다.## \n\n파편 수류탄도 나름 괜찮지만, 뭔가를 지져야 한다면, 이 어여쁜 작은 친구야말로 실용적으로 고압 피해를 가할 수 있는 짐승 같은 녀석입니다.",
+		--Sticky
 		["bm_grenade_sticky_grenade"] = "셈텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "대미지: 800 \n범위: 4m \n기폭: 3초, 붙혀질 시 기폭 시간 재설정 \n\n사람을 포함한 대부분의 표면에 달라붙는 던질 수 있는 폭발성 화합물입니다!",
-		["bm_grenade_xmas_snowball_desc"] = "대미지: 240 \n범위: 1m \n기폭: 충격 시 부서짐 \n충전 시간: 5초 \n\n눈을 물에 담가 냉동실에 넣어주면 치명적인 무기를 얻을 수 있습니다. 간단하죠.",		
-	
+		["bm_grenade_sticky_grenade_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#4m## \n기폭: #{skill_color}#3초## \n- #{risk}#부착 시 기폭 시간 재설정## \n\n사람을 포함한 대부분의 물체 표면에 들러붙는 투척용 폭발물입니다!",
+		--Molotov
+		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): #{heat_warm_color}#10초당 1200##\n대미지 (화염): #{heat_warm_color}#3초 동안 60## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#10초## \n기폭: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n부서지는 병과 인화성 액체와 불붙은 천으로 이루어져 있습니다. 간단하고, 저렴하지만, 매우 효과적입니다. 이걸로 전부 불태워 버리십시오.",
+		--Incendiary
+		["bm_grenade_fir_com_desc"] = "대미지 (화염 지대): #{heat_warm_color}#12초당 1440##\n대미지 (화염): #{heat_warm_color}#3초 동안 60## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#12초## \n기폭: #{skill_color}#2.5초## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n자연적으로 발화하는 인을 담은 수류탄입니다. 벽과 모퉁이을 이용해서 적에게 던지기 적합합니다.",
+		--Concussion
+		["bm_concussion_desc"] = "범위: #{skill_color}#10m## \n- 최대 #{skill_color}#4초## 동안 적을 스턴시킵니다.\n- #{skill_color}#7초## 동안 적의 명중률이 #{skill_color}#50%##만큼 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 도저 및 캡틴은 스턴 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 조금의 순간을 벌어줍니다.",
+		--Gas
+		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 생화학 수류탄",
+		["bm_grenade_poison_gas_grenade_desc"] = "대미지: #{stats_positive}#10초당 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내 있는 대부분의 적들을 기절시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.##\n- #{important_1}#적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.## \n\n이 실험적인 생화학 무기는 특정 유전자형을 목표로 하는 독성 가스 구름을 광범위하게 방출합니다. 이 가스는 당신이나 당신의 팀원들에게는 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적들에게 치명적입니다.\n\n그야말로 전범이 선택한 무기인거야, 페코.",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "대미지: #{stats_positive}#10초당 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내 있는 대부분의 적들을 기절시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.##\n- #{important_1}#적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.##",
+		
+		--Throwing Cards
+		["bm_wpn_prj_ace_desc"] = "대미지: #{skill_color}#240## \n- #{skill_color}#회수할 수 있습니다.## \n\n약간의 무게를 싣고, 모서리를 매우 날카롭게 한 카드를 던집니다. 진정한 암살자의 손에서 쓰이는 카드이기도 하죠.",
+		--Throwing Stars
+		["bm_wpn_prj_four_desc"] = "대미지 (Impact): #{skill_color}#200## \n대미지 (독): #{stats_positive}#4초당 120## \n- #{skill_color}#회수할 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초##마다 대부분의 적들을 스턴시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.## \n\n표창은 피와 전투로 물든 역사를 지니고 있습니다. 최근에 만들어지는 강철에 독이 발라져서 만들어지는 표창은 당신의 앞을 가로막는 누구에게나 치명적인 위협이 될 것입니다.",
+		--Javelin
+		["bm_wpn_prj_jav_desc"] = "대미지: #{skill_color}#360## \n- #{skill_color}#회수할 수 있습니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도 이것은 누군가의 하루를 망칠 수 잇는 뾰족한 모서리를 지닌 투척 막대기일 뿐이니까요.",
+		--Throwing Axe
+		["bm_wpn_prj_hur_desc"] = "대미지: #{skill_color}#360## \n- #{skill_color}#회수할 수 있습니다.## \n\n그들은 날카로운 도끼는 절대 틀리지 않다고 말하지만, 투척용 날카로운 도끼는 더 이상 옳진 않습니다.",
+		--Throwing Knife
+		["bm_wpn_prj_target_desc"] = "대미지: #{skill_color}#240## \n- #{skill_color}#회수할 수 있습니다.## \n\n정밀하고 조용한 살인을 위한 예비책이자 믿음직한 물건입니다.",
 
+		--Perk Deck Throwables
+		["bm_grenade_copr_ability"] = "약병",
+		["bm_grenade_damage_control"] = "힙 플라스크",
+		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#8m## \n지속 시간: #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
+		
+		
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
 		["bm_wp_wpn_fps_upg_scar_m203_flechette"] = "40MM Flechette Rounds",
@@ -2473,14 +2496,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_equipment_armor_kit"] = "투척물 가방",
 		["bm_equipment_armor_kit"] = "투척물 가방",
 		["debug_equipment_armor_kit"] = "투척물 가방",
-		["bm_equipment_armor_kit_desc"] = "투척물 가방을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 투척물을 보충할 수  있습니다. 세 번만 사용할 수 있습니다.\n\n당신은 가방을 보고 얼마나 남았는지 짐작할 수 있습니다.\n\n투척물 가방는 상황이 위험할때 특수 무기를 휴대하기 위해 일반적으로 군인이나 용병이 사용하는 은페용 케이스입니다.",
-
-		["bm_equipment_ecm_jammer_desc"] = "ECM 재머를 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 10초 동안 활성화됩니다.\n\nECM 재머와 상호 작용하면 ECM 재머의 피드백 기능을 활성화할 수 있습니다. 피드백 루프의 범위는 25미터입니다. 첫 번째 피드백 루프는 대부분의 적을 스턴할 확률이 100%이며, 그 이후로는 1.5초마다 스턴할 확률이 60%입니다. 피드백은 10초 동안 지속되며 4분 후에 재충전됩니다.\n\nECM 재머는 ATM 기계를 열 수 있고 휴대폰, 카메라 및 기타 탐지 시스템과 같은 전자 장치를 일시적으로 중지시키며 목표를 쉽게 달성할 수 있도록 합니다.",
-		["bm_equipment_first_aid_kit_desc"] = "구급 키트를 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 150 체력을 회복합니다. 한 번만 사용할 수 있습니다.\n\n구급 키트는 긴급 상황에서 신속하게 응급 처치를 제공하는 데 사용되는 소모품 및 장비입니다.",
-		["bm_equipment_doctor_bag_desc"] = "의료 가방을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 3분 동안 4초마다 최대 체력의 20%와 최대 체력의 4%를 회복합니다. 두 번만 사용할 수 있습니다.\n\n의료 가방은 일반적으로 의사 또는 기타 의료 전문가가 의료 용품 및 의약품을 운반하는 데 사용하는 휴대용 가방입니다.",
-		["bm_equipment_sentry_gun_desc"] = "센트리 건을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 배치 시 최대 탄약의 40%를 사용합니다. 너무 많은 피해를 입으면 꺼집니다. 이 상태에서 $BTN_INTERACT 키를 길게 눌러 자동 복구 모드로 전환합니다. 센트리 건을 회수하면 남은 탄약을 되돌리고 수리합니다. 민간인을 겁에 질리게 하여 바닥에 눕게합니다.\n\n센트리 건은 센서에 감지된 목표물을 자동으로 조준하고 발사합니다. 일반적으로 주의를 산만하게 하여 당신과 당신의 팀원으로부터 주의를 끌기 위해 사용됩니다.",
-		["bm_equipment_sentry_gun_silent_desc"] = "센트리 건을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 배치 시 최대 탄약의 40%를 사용합니다. 너무 많은 피해를 입으면 꺼집니다. 이 상태에서 $BTN_INTERACT 키를 길게 눌러 자동 복구 모드로 전환합니다. 센트리 건을 회수하면 남은 탄약을 되돌리고 수리합니다. 민간인을 겁에 질리게 하여 바닥에 눕게합니다.\n\n저소음 센트리 건은 일반적인 방해 요소보다 적을 제거하는 데 더 많이 사용되기 때문에 일반 센트리 건에 대응합니다.",
-		["bm_equipment_bodybags_bag_desc"] = "시체가방 케이스를 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만,당신과 당신의 팀원들이 $BTN_INTERACT 키를 길게 눌러 시체 가방과 케이블 타이를 다시 채웁니다.\n\n시체가방 케이스는 갯수가 제한되어 있으며, 시체가방 케이스를 보면 얼마나 사용 할 수 있는지 알 수 있습니다. 시체가방 케이스에는 스텔스 중에 시체를 운반하는데 사용되는 추가 가방과 시민 군중을 통제하는 데 사용되는 추가 케이블 타이가 들어 있습니다.",		
+		["bm_equipment_armor_kit_desc"] = "투척물 가방을 사용하려면, #{skill_color}#$$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n투척물 가방는 상황이 위험할때 특수 무기를 휴대하기 위해 일반적으로 군인이나 용병이 사용하는 은페용 케이스입니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
+		["bm_equipment_armor_kit_desc_short"] = "투척물 가방을 사용하려면, #{skill_color}#$$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
+		--Ordnance Bag
+		["bm_equipment_grenade_crate_desc"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며. 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n군장 가방은 전투원이 폭발물 및 기타 투척물을 전투지역으로 운반할 때 사용하는 휴대용 가방입니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
+		["bm_equipment_grenade_crate_desc_short"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며. 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
+		--Trip Mine
+		["bm_equipment_trip_mine_desc"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT.## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다.\n\n트립 마인 주로 레이저를 지나는 적에게 피해를 주거나 처치하는 함정으로 사용합니다. 성형작약탄은 주로 문이나 금고를 터트리는 데 사용합니다. 둘 다 대부분의 전투 상황에서 유용한 장비로 사용될 수 있습니다.",
+		["bm_equipment_trip_mine_desc_short"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치하여야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT.## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다.",
+		--ECM Jammer		
+		["bm_equipment_ecm_jammer_desc"] = "ECM 재머를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, #{skill_color}#$deployable_uses##초 동안 활성화됩니다.\n\nECM 재머와 상호 작용하면 ECM 재머의 피드백 기능을 활성화할 수 있습니다. 피드백 루프의 범위는 #{skill_color}#25##미터입니다. 첫 번째 피드백 루프는 대부분의 적을 스턴할 확률이 #{skill_color}#100%##이며, 그 이후로는 #{skill_color}#1.5##초마다 스턴할 확률이 #{skill_color}#60%##입니다. 피드백은 #{skill_color}#$deployable_uses##초 동안 지속되며 #{skill_color}#4##분 후에 재충전됩니다.\n\nECM 재머는 ATM 기계를 열 수 있고 휴대폰, 카메라 및 기타 탐지 시스템과 같은 전자 장치를 일시적으로 중지시켜 목표를 쉽게 달성할 수 있도록 해줍니다.",
+		["bm_equipment_ecm_jammer_desc_short"] = "ECM 재머를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, #{skill_color}#$deployable_uses##초 동안 활성화됩니다.\n\nECM 재머와 상호 작용하면 ECM 재머의 피드백 기능을 활성화할 수 있습니다. 피드백 루프의 범위는 #{skill_color}#25##미터입니다. 첫 번째 피드백 루프는 대부분의 적을 스턴할 확률이 #{skill_color}#100%##이며, 그 이후로는 #{skill_color}#1.5##초마다 스턴할 확률이 #{skill_color}#60%##입니다. 피드백은 #{skill_color}#$deployable_uses##초 동안 지속되며 #{skill_color}#4##분 후에 재충전됩니다.",	
+		--FAQ U
+		["bm_equipment_first_aid_kit_desc"] = "구급 키트를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 #{skill_color}#150##만큼 체력을 회복할 수 있습니다.\n\n구급 키트는 #{skill_color}#한 번만## 사용할 수 있습니다.\n\n구급 키트는 응급치료를 위한 의약품 및 장비를 모은 조그만한 주머니입니다.",
+		["bm_equipment_first_aid_kit_desc_short"] = "구급 키트를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 #{skill_color}#150##만큼 체력을 회복할 수 있습니다.\n\n구급 키트는 #{skill_color}#한 번만## 사용할 수 있습니다.",
+		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		["bm_equipment_doctor_bag_desc"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 #{skill_color}#4##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n의료 가방은 의사 또는 기타 의료 전문가가 의료 용품 및 의약품을 쉽게 들고 다니기 위해 사용하는 휴대용 가방입니다.",
+		["bm_equipment_doctor_bag_desc_short"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 #{skill_color}#4##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.",
+		--Sentry
+		["bm_equipment_sentry_gun_desc"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n센트리 건이 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n센트리 건은 시민들을 위협하여 땅에 눕게 내몹니다.\n\n센트리 건은 부착된 센서를 통해 자동으로 목표를 조준하고 사격합니다. 센트리 건은 주로 당신과 당신의 팀원으로부터 주의를 끌어 교란용으로 주로 사용됩니다.",
+		["bm_equipment_sentry_gun_desc_short"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n센트리 건이 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
+		--Supp. Sentry		
+		["bm_equipment_sentry_gun_silent_desc"] = "저소음 센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 저소음 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n저소음 센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 저소음 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 저소음 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n저소음 센트리 건이 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n저소음 센트리 건은 시민들을 위협하여 땅에 눕게 내몹니다.\n\n저소음 센트리 건은 일반적인 시끄러운 센트리 건의 대체품으로 주의 분산보다는 적을 사살하는 데 더 자주 사용됩니다.",
+		["bm_equipment_sentry_gun_silent_desc_short"] = "저소음 센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 저소음 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n저소음 센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 저소음 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 저소음 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n저소음 센트리 건이 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
+		--Body Bags		
+		["bm_equipment_bodybags_bag_desc"] = "시체 가방 케이스를 사용하려면 #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 시체 가방과 케이블 타이를 보충할 수 있습니다.\n\n시체 가방 케이스는 사용한도가 있습니다. 당신은 케이스를 보고 얼마나 사용 할 수 있는지 확인할 수 있습니다.\n\n시체 가방 케이스는 스텔스 도중에 시체를 운반할 때 사용되는 여분의 가방과 시민 군중을 통제하는 데 사용되는 추가 케이블 타이가 포함되어 있습니다.",
+		["bm_equipment_bodybags_bag_desc_short"] = "시체 가방 케이스를 사용하려면 #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 시체 가방과 케이블 타이를 보충할 수 있습니다.\n\n시체 가방 케이스는 사용한도가 있습니다. 당신은 케이스를 보고 얼마나 사용 할 수 있는지 확인할 수 있습니다.",		
 
 		["hud_int_hold_take_pardons"] = "$BTN_INTERACT 키를 눌러 사면장을 얻기",
 		["debug_interact_gage_assignment_take"] = "$BTN_INTERACT 키를 눌러 패키지를 얻기",
@@ -2996,7 +3037,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "완전무장",
-			["menu_bandoliers_desc_sc"] = "베이직: #{owned}#$basic##\n소지 탄약이 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자로 획득하는 탄약 수급율이 #{skill_color}#50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 #{skill_color}#5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 #{skill_color}#1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n#{risk}#참고: 특성 덱의 투척물은 해당 스킬로는 획득할 수 없습니다.##",
+			["menu_bandoliers_desc_sc"] = "베이직: #{owned}#$basic##\n소지 탄약이 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자로 획득하는 탄약 수급율이 #{skill_color}#50%##만큼 증가합니다.\n\n탄약 상자를 획득할 때 투척물을 획득할 기본 확률이 #{skill_color}#5%##로 증가하고 하나도 획득하지 못할 때마다 확률이 추가로 #{skill_color}#1%##씩 증가하며 획득했을 경우 기본 확률로 리셋됩니다.\n\n#{risk}#참고: 재생 또는 쿨다운 기반 투척물은 해당 스킬로는 획독할 수 없습니다.##",
 
 		--[[   TECHNICIAN   ]]--
 		

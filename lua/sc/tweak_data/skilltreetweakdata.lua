@@ -40,6 +40,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"x_b92fs",
 		"x_deagle",
 		"x_g22c",
+		"x_p226",
 		"x_g17",
 		"x_usp",
 		"x_sr2",
@@ -2042,7 +2043,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crew Chief--
 	local sc_crew_chief = {
 			name_id = "menu_st_spec_1",
-			desc_id = "menu_st_spec_1_desc_sc",
+			desc_id = "menu_st_spec_1_desc",
+			category = "supportive",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2105,7 +2107,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Muscle--
 	local sc_muscle = {
 			name_id = "menu_st_spec_2",
-			desc_id = "menu_st_spec_2_desc_sc",
+			desc_id = "menu_st_spec_2_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2170,7 +2173,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Armorer--
 	local sc_armorer = {
 			name_id = "menu_st_spec_3",
-			desc_id = "menu_st_spec_3_desc_sc",
+			desc_id = "menu_st_spec_3_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_1",
@@ -2195,7 +2199,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_5"
+					"player_tier_armor_multiplier_5",
+					"bodybags_bag_quantity"
 				},
 				cost = 1000,
 				icon_xy = {7, 1},
@@ -2205,8 +2210,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1",
-					"bodybags_bag_quantity"
+					"player_perk_armor_regen_timer_multiplier_1"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},
@@ -2229,7 +2233,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Rogue--
 	local sc_rogue = {
 			name_id = "menu_st_spec_4",
-			desc_id = "menu_st_spec_4_desc_sc",
+			desc_id = "menu_st_spec_4_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2289,7 +2294,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Hitman--
 	local sc_hitman = {
 			name_id = "menu_st_spec_5",
-			desc_id = "menu_st_spec_5_desc_sc",
+			desc_id = "menu_st_spec_5_desc",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_store_temp_health_1"
@@ -2349,7 +2355,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crook--
 	local sc_crook = {
 			name_id = "menu_st_spec_6",
-			desc_id = "menu_st_spec_6_desc_sc",
+			desc_id = "menu_st_spec_6_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2418,8 +2425,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Burglar--
 	local sc_burglar = {
 			name_id = "menu_st_spec_7",
-			desc_id = "menu_st_spec_7_desc_sc",
+			desc_id = "menu_st_spec_7_desc",
 			dlc = "character_pack_clover",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2477,8 +2485,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Infiltrator--
 	local sc_infiltrator = {
 			name_id = "menu_st_spec_8",
-			desc_id = "menu_st_spec_8_desc_sc",
+			desc_id = "menu_st_spec_8_desc",
 			dlc = "character_pack_dragan",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_damage_dampener_close_contact_1"
@@ -2540,8 +2549,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Sociopath--
 	local sc_sociopath = {
 			name_id = "menu_st_spec_9",
-			desc_id = "menu_st_spec_9_desc_sc",
+			desc_id = "menu_st_spec_9_desc",
 			dlc = "hlm2_deluxe",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_damage_dampener_outnumbered_strong",
@@ -2600,7 +2610,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Gambler--
 	local sc_gambler = {
 			name_id = "menu_st_spec_10",
-			desc_id = "menu_st_spec_10_desc_sc",
+			desc_id = "menu_st_spec_10_desc",
+			category = "supportive",
 			{
 				upgrades = {
 					"temporary_loose_ammo_restore_health_1"
@@ -2661,8 +2672,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Grinder--
 	local sc_grinder = {
 			name_id = "menu_st_spec_11",
-			desc_id = "menu_st_spec_11_desc_sc",
+			desc_id = "menu_st_spec_11_desc",
 			dlc = "character_pack_sokol",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
@@ -2721,7 +2733,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Yakuza--
 	local sc_yakuza = {
 			name_id = "menu_st_spec_12",
-			desc_id = "menu_st_spec_12_desc_sc",
+			desc_id = "menu_st_spec_12_desc",
+			category = "offensive",
 			dlc = "dragon",
 			{
 				upgrades = {
@@ -2785,7 +2798,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Ex President--
 	local sc_ex = {
 			name_id = "menu_st_spec_13",
-			desc_id = "menu_st_spec_13_desc_sc",
+			desc_id = "menu_st_spec_13_desc",
+			category = "defensive",
 			{
 				upgrades = {
 					"player_armor_health_store_amount_1"
@@ -2845,7 +2859,8 @@ function SkillTreeTweakData:init(tweak_data)
 	--Maniac--
 	local sc_maniac = {
 			name_id = "menu_st_spec_14",
-			desc_id = "menu_st_spec_14_desc_sc",
+			desc_id = "menu_st_spec_14_desc",
+			category = "supportive",
 			{
 				upgrades = {
 					"player_cocaine_stacking_1"
@@ -2909,8 +2924,9 @@ function SkillTreeTweakData:init(tweak_data)
 	--Anarchist--
 	local sc_sydney = {
 			name_id = "menu_st_spec_15",
-			desc_id = "menu_st_spec_15_desc_sc",
+			desc_id = "menu_st_spec_15_desc",
 			dlc = "opera",
+			category = "offensive",
 			{
 				upgrades = {
 					"player_armor_grinding_1"
@@ -3042,13 +3058,18 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_16",
 			dlc = "wild",
-			desc_id = "menu_st_spec_16_desc_sc"
+			desc_id = "menu_st_spec_16_desc",
+			category = "defensive"
 		}
 
 	--YOU AND I--
 	local sc_scarface = {
 			name_id = "menu_st_spec_17",
-			desc_id = "menu_st_spec_17_desc_sc",
+			desc_id = "menu_st_spec_17_desc",
+			category = {
+				"offensive",
+				"activated"
+			},
 			dlc = "chico",
 			{
 				upgrades = {
@@ -3105,14 +3126,18 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 1},
 				texture_bundle_folder = "chico",
 				name_id = "menu_deck17_9",
-				desc_id = "menu_deck17_9_desc_sc"
+				desc_id = "menu_deck17_9_desc"
 			}
 		}
 
 	--Chicken Tacos--
 	local sc_wall = {
 			name_id = "menu_st_spec_18",
-			desc_id = "menu_st_spec_18_desc_sc",
+			desc_id = "menu_st_spec_18_desc",
+			category = {
+				"supportive",
+				"activated"
+			},
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -3171,8 +3196,12 @@ function SkillTreeTweakData:init(tweak_data)
 		
 	--Don't cry for me, I'm already dead.--
 	local sc_august = {
-			desc_id = "menu_st_spec_19_desc_sc",
+			desc_id = "menu_st_spec_19_desc",
 			name_id = "menu_st_spec_19",
+			category = {
+				"defensive",
+				"activated"
+			},
 			{
 				cost = 200,
 				texture_bundle_folder = "myh",
@@ -3324,7 +3353,11 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_20",
 			dlc = "ecp",
-			desc_id = "menu_st_spec_20_desc_sc"
+			desc_id = "menu_st_spec_20_desc",
+			category = {
+				"supportive",
+				"activated"
+			}
 		}
 		
 	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
@@ -3400,8 +3433,12 @@ function SkillTreeTweakData:init(tweak_data)
 					1
 				}
 			},
-			desc_id = "menu_st_spec_21_desc_sc",
-			name_id = "menu_st_spec_21"
+			desc_id = "menu_st_spec_21_desc",
+			name_id = "menu_st_spec_21",
+			category = {
+				"supportive",
+				"activated"
+			}
 		}	
 		
 	--Leech--
@@ -3485,14 +3522,364 @@ function SkillTreeTweakData:init(tweak_data)
 					1
 				}
 			},
-			desc_id = "menu_st_spec_22_desc_sc",
-			name_id = "menu_st_spec_22"
+			desc_id = "menu_st_spec_22_desc",
+			name_id = "menu_st_spec_22",
+			category = {
+				"offensive",
+				"activated"
+			}
 		}		
+		
+		local deck1_multi_choice = {
+			{
+				desc_id = "menu_deck23_1_1_desc",
+				short_id = "menu_deck23_1_1_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_1_1",
+				upgrades = {
+					"mrwi_health_multiplier_1"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_1_2_desc",
+				short_id = "menu_deck23_1_2_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_1_2",
+				upgrades = {
+					"mrwi_armor_multiplier_1"
+				},
+				icon_xy = {
+					6,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_1_3_desc",
+				short_id = "menu_deck23_1_3_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_1_3",
+				upgrades = {
+					"mrwi_dodge_chance_1"
+				},
+				icon_xy = {
+					1,
+					2
+				}
+			},
+			{
+				desc_id = "menu_deck23_1_4_desc",
+				texture_bundle_folder = "mrwi",
+				icon_atlas = "icons_atlas",
+				short_id = "menu_deck23_1_4_short",
+				name_id = "menu_deck23_bonus_speed",
+				upgrades = {
+					"mrwi_crouch_speed_multiplier_1",
+					"mrwi_carry_speed_multiplier_1"
+				},
+				icon_xy = {
+					1,
+					1
+				}
+			}
+		}
+		local deck3_multi_choice = {
+			{
+				desc_id = "menu_deck23_3_1_desc",
+				short_id = "menu_deck23_3_1_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_3_1",
+				upgrades = {
+					"mrwi_health_multiplier_2"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_3_2_desc",
+				short_id = "menu_deck23_3_2_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_3_2",
+				upgrades = {
+					"mrwi_armor_multiplier_2"
+				},
+				icon_xy = {
+					6,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_3_3_desc",
+				short_id = "menu_deck23_3_3_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_3_3",
+				upgrades = {
+					"mrwi_dodge_chance_2"
+				},
+				icon_xy = {
+					1,
+					2
+				}
+			},
+			{
+				desc_id = "menu_deck23_3_4_desc",
+				texture_bundle_folder = "mrwi",
+				icon_atlas = "icons_atlas",
+				short_id = "menu_deck23_3_4_short",
+				name_id = "menu_deck23_bonus_speed",
+				upgrades = {
+					"mrwi_crouch_speed_multiplier_2",
+					"mrwi_carry_speed_multiplier_2"
+				},
+				icon_xy = {
+					1,
+					1
+				}
+			}
+		}
+		local deck5_multi_choice = {
+			{
+				desc_id = "menu_deck23_5_1_desc",
+				short_id = "menu_deck23_5_1_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_5_1",
+				upgrades = {
+					"mrwi_health_multiplier_3"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_5_2_desc",
+				short_id = "menu_deck23_5_2_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_5_2",
+				upgrades = {
+					"mrwi_armor_multiplier_3"
+				},
+				icon_xy = {
+					6,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_5_3_desc",
+				short_id = "menu_deck23_5_3_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_5_3",
+				upgrades = {
+					"mrwi_dodge_chance_3"
+				},
+				icon_xy = {
+					1,
+					2
+				}
+			},
+			{
+				desc_id = "menu_deck23_5_4_desc",
+				texture_bundle_folder = "mrwi",
+				icon_atlas = "icons_atlas",
+				short_id = "menu_deck23_5_4_short",
+				name_id = "menu_deck23_bonus_speed",
+				upgrades = {
+					"mrwi_crouch_speed_multiplier_3",
+					"mrwi_carry_speed_multiplier_3"
+				},
+				icon_xy = {
+					1,
+					1
+				}
+			}
+		}
+		local deck7_multi_choice = {
+			{
+				desc_id = "menu_deck23_7_1_desc",
+				short_id = "menu_deck23_7_1_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_7_1",
+				upgrades = {
+					"mrwi_health_multiplier_4"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_7_2_desc",
+				short_id = "menu_deck23_7_2_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_7_2",
+				upgrades = {
+					"mrwi_armor_multiplier_4"
+				},
+				icon_xy = {
+					6,
+					0
+				}
+			},
+			{
+				desc_id = "menu_deck23_7_3_desc",
+				short_id = "menu_deck23_7_3_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_7_3",
+				upgrades = {
+					"mrwi_dodge_chance_4"
+				},
+				icon_xy = {
+					1,
+					2
+				}
+			},
+			{
+				desc_id = "menu_deck23_7_4_desc",
+				texture_bundle_folder = "mrwi",
+				icon_atlas = "icons_atlas",
+				short_id = "menu_deck23_7_4_short",
+				name_id = "menu_deck23_bonus_speed",
+				upgrades = {
+					"mrwi_crouch_speed_multiplier_4",
+					"mrwi_carry_speed_multiplier_4"
+				},
+				icon_xy = {
+					1,
+					1
+				}
+			}
+		}
+		local deck9_multi_choice = {}
+		local deck9_options = UpgradesTweakData.mrwi_deck9_options()
+
+		for _, options in pairs(deck9_options) do
+			local data = nil
+
+			if options.tree and options.tier then
+				data = clone(self.specializations[options.tree][options.tier])
+			else
+				data = {}
+			end
+
+			data.upgrades = table.list_add(options.upgrades or {}, data.upgrades or {})
+			data.cost = options.cost or data.cost or 4000
+			data.icon_atlas = options.icon_atlas or data.icon_atlas or "icons_atlas"
+			data.icon_xy = options.icon_xy or data.icon_xy
+			data.texture_bundle_folder = options.texture_bundle_folder or data.texture_bundle_folder
+			data.name_id = options.name_id or data.name_id
+			data.desc_id = options.desc_id or data.desc_id
+			data.short_id = "menu_deck23_9_short"
+			data.skip_tier_desc = options.skip_tier_desc or data.skip_tier_desc
+			data.skip_tier_name = true
+			data.shorten_desc = options.shorten_desc or data.shorten_desc
+
+			table.insert(deck9_multi_choice, data)
+		end		
+		
+	--Copycat--
+	local sc_steamed = {
+			{
+				cost = 200,
+				texture_bundle_folder = "mrwi",
+				desc_id = "menu_deck23_1_desc",
+				short_id = "menu_deck23_1_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_1",
+				upgrades = {
+					"player_primary_reload_secondary_1",
+					"player_secondary_reload_primary_1",
+					"weapon_mrwi_swap_speed_multiplier_1"
+				},
+				icon_xy = {
+					0,
+					0
+				},
+				multi_choice = deck1_multi_choice
+			},
+			deck2,
+			{
+				cost = 400,
+				texture_bundle_folder = "mrwi",
+				desc_id = "menu_deck23_3_desc",
+				short_id = "menu_deck23_3_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_3",
+				upgrades = {
+					"player_headshot_regen_health_bonus_1"
+				},
+				icon_xy = {
+					1,
+					0
+				},
+				multi_choice = deck3_multi_choice
+			},
+			deck4,
+			{
+				cost = 1000,
+				texture_bundle_folder = "mrwi",
+				desc_id = "menu_deck23_5_desc",
+				short_id = "menu_deck23_5_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_5",
+				upgrades = {
+					"player_dodge_ricochet_bullets"
+				},
+				icon_xy = {
+					2,
+					0
+				},
+				multi_choice = deck5_multi_choice
+			},
+			deck6,
+			{
+				cost = 2400,
+				texture_bundle_folder = "mrwi",
+				desc_id = "menu_deck23_7_desc",
+				short_id = "menu_deck23_7_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_7",
+				upgrades = {
+					"temporary_mrwi_health_invulnerable_1"
+				},
+				icon_xy = {
+					3,
+					0
+				},
+				multi_choice = deck7_multi_choice
+			},
+			deck8,
+			{
+				cost = 4000,
+				texture_bundle_folder = "mrwi",
+				desc_id = "menu_deck23_9_desc",
+				short_id = "menu_deck23_9_short",
+				icon_atlas = "icons_atlas",
+				name_id = "menu_deck23_9",
+				upgrades = {
+					"player_passive_loot_drop_multiplier"
+				},
+				icon_xy = {
+					0,
+					1
+				},
+				multi_choice = deck9_multi_choice
+			},
+			name_id = "menu_st_spec_23",
+			dlc = "mrwi_deck",
+			desc_id = "menu_st_spec_23_desc",
+			category = "challenge"
+		}			
 		
 	--Tabula Rasa, blank perk deck
 	local sc_blank = {
 			name_id = "menu_st_spec_0",
 			desc_id = "menu_st_spec_0_desc",
+			category = "challenge",
 			{
 				upgrades = {
 					"player_buy_cost_multiplier_1",
@@ -3593,6 +3980,7 @@ function SkillTreeTweakData:init(tweak_data)
 	local sc_yes_man = {
 			name_id = "menu_st_spec_00",
 			desc_id = "menu_st_spec_00_desc",
+			category = "challenge",
 			{
 				upgrades = {
 					"player_buy_cost_multiplier_1",
@@ -3644,7 +4032,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck0_8",
 				desc_id = "menu_deck00_9_desc"
 			}
-		}		
+		}	
 
 	--Then we insert our new perk decks into the table--
 	self.specializations[1] = sc_crew_chief
@@ -3669,6 +4057,40 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[20] = sc_nose
 	self.specializations[21] = sc_nip
 	self.specializations[22] = sc_leech
-	self.specializations[23] = sc_blank
-	self.specializations[24] = sc_yes_man
+	self.specializations[23] = sc_steamed
+	self.specializations[24] = sc_blank
+	self.specializations[25] = sc_yes_man
+	
+
+	self.specialization_category = {
+		{
+			name_id = "menu_st_category_all",
+			category = "all"
+		},
+		{
+			name_id = "menu_st_category_offensive",
+			category = "offensive"
+		},
+		{
+			name_id = "menu_st_category_defensive",
+			category = "defensive"
+		},
+		{
+			name_id = "menu_st_category_supportive",
+			category = "supportive"
+		},
+		{
+			name_id = "menu_st_category_activated",
+			category = "activated"
+		},
+		{
+			name_id = "menu_st_category_challenge",
+			category = "challenge"
+		},
+		{
+			name_id = "menu_st_category_favorites",
+			category = "favorites"
+		}
+	}
+	
 end

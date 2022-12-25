@@ -17,7 +17,9 @@ function PlayerBleedOut:enter(state_data, enter_data)
 			self:_interupt_action_throw_projectile(managers.player:player_timer():time())
 		end
 
-		self._old_selection = self._unit:inventory():equipped_selection()
+		if not restoration.Options:GetValue("OTHER/WeaponHandling/NoSwapOnRevive") then
+			self._old_selection = self._unit:inventory():equipped_selection()
+		end
 
 		self:_start_action_unequip_weapon(managers.player:player_timer():time(), {selection_wanted = 1})
 		self._unit:inventory():unit_by_selection(1):base():on_reload()

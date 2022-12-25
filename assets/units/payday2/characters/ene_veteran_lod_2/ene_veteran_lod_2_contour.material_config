@@ -1,7 +1,7 @@
 <materials version="3" group="ene_veteran_cop_1">
     <material name="mtr_veteran_cop" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/payday2/characters/shared_textures/veteran_cop_2_nm"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/veteran_cop_2_df"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/veteran_lodman_2_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/veteran_lodman_2_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

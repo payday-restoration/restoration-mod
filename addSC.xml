@@ -92,12 +92,10 @@
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
 		
-	<!--Tiny Heist Edits that Change like a few things-->	
-	<mission			path="levels/narratives/pbr/jerry/world/world" force="true" unload="true"/> <!--removes scripted sewer spawns. might have messed something up on the sewer part, so uh pls test kthx.-->		
+	<!--Tiny Heist Edits that Change like a few things-->		
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
 	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
-	<mission			path="levels/narratives/classics/dinner/world/world" force="true" />  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
-	<continent			path="levels/narratives/classics/dinner/world/world" force="true" />
+	<mission			path="levels/instances/unique/pbr/pbr_sewer_enemies/world/world" force="true" unload="true"/> <!--adjusted the dozers cuz fuck the trio of skullys that come on mayhem above-->
 	
 	<!--shotgun man for security rooms-->
 	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> 
@@ -128,16 +126,8 @@
 
 	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
 	
-	<mission			path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->
-	
-	<mission			path="levels/narratives/locke/mex/world/world" force="true" unload="true"/> <!--Adds female/guard bikers, made the mex security not kill their men-->
-	
-	<mission			path="levels/narratives/bain/revenge/world/world" force="true" unload="true"/>
-	
 	<mission			path="levels/narratives/classics/glace/world/world" force="true" unload="true"/> <!--restores the unused dozer rappel man that is supposed to spawn during the scaffolding defend section on mayhem and above-->
 																										 <!--actually that was cloaker but I replaced him with dozer as a PDTH's OVK 145+ throwback-->
-	
-	<mission			path="levels/narratives/bain/rvd/stage2/world/world" force="true" unload="true"/> <!--changes up the scripted dozers at the start of the heist--> 
 	
 	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
@@ -145,12 +135,7 @@
 	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> <!--delayed and balanced the spawns so they won't appear out of nowhere-->
 	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
 	
-	<mission			path="levels/narratives/pbr/berry/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
-	
-	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--ditto but on surface-->
-	<mission			path="levels/instances/unique/pbr/pbr_mountain_control_room/world/world" force="true" unload="true"/> <!--changed up the control room to feature Murky security-->
-	
-	<mission			path="levels/narratives/locke/sah/world/world" force="true" unload="true"/> <!--delayed the spawns and replaced most of the ss guys with flashlight ones (execpt cameraman and near metal detectors)-->
+	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
 	
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
@@ -165,22 +150,10 @@
 	
 	<!--Watchdeeznuts-->
 	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
-	<continent			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/>
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
-	<mission			path="levels/narratives/locke/bph/world/world" force="true" unload="true"/> <!--Delayed the spawns and replaced scripted spawns with better Murkies-->
-	
-	<mission			path="levels/narratives/vlad/chca/world/world" force="true" unload="true"/> <!--Delayed the spawns and made some spawns be disabled if C4 route has been choosen-->
-	
-	<mission			path="levels/narratives/vlad/mallcrasher/mission_turf_war/mission_turf_war" force="true" unload="true"/> <!--fixed one of the scripted cops not moving at all-->
-	
-	<mission			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!--Adds Kung Fu Masters, more beat cops responding and possible captain encounter on Mayhem and above-->
-	
-	<mission			path="levels/narratives/mcshay/ranc/world/world" force="true" unload="true"/> <!--fixed the beat cops-->
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
-	
-	<mission			path="levels/narratives/dentist/mus/world/world" force="true" unload="true"/>
 	
 	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	
@@ -202,8 +175,8 @@
 	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
 	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->	
 
-	<!--White House edit, disabled temporarily due to invalid navsegments-->
-	<!--continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
+	<!--White House edit-->
+	<continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
 	<continent			path="levels/narratives/locke/vit/backdrop/backdrop" force="true" unload="true"/>
 	<continent			path="levels/narratives/locke/vit/collision/collision" force="true" unload="true"/>
 	<continent			path="levels/narratives/locke/vit/lights/lights" force="true" unload="true"/>
@@ -212,13 +185,10 @@
 	<continent			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
 	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
 	<cover_data			path="levels/narratives/locke/vit/cover_data" force="true" unload="true"/>
-	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/-->
+	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/>
 
 	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
-	<mission			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>
-	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>
-	
-	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>  <!--removes tons of objects underneath the map-->
 
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
@@ -283,12 +253,18 @@
 	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
 	
-	<!--Load Jerome The Shotty Man and some other guards in case if some heist has them missing in the packages (so I won't need to load the heist packages just for one enemy)-->
+	<!--Load Jerome The Shotty Man and other guards in case if some heist has him missing in the package-->
 	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
-		<unit 				path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
+	<add from_db="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service" type="unit">
+		<unit load="true"	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<object 			path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<material_config 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<unit load="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service_husk"/>
 	</add>
 	
 	<!-- Gensec Security: Beret Poppin' -->
@@ -380,6 +356,18 @@
 		<sequence_manager path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>
 		<unit path="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"/>	
 	</add>
+	
+	<!-- Vanilla Snowthrower -->
+	<add from_db="true" path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower" type="unit">
+		<effect load="true" path="effects/payday2/particles/explosions/snowthrower"/>
+		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
+		
+		
+		<object path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
+		<material_config path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
+		<sequence_manager path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
+		<unit path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>	
+	</add>
 
 	<!--NPC Railgun-->
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
@@ -425,17 +413,16 @@
 	<unit				path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true" load="true"/>	
 	<unit				path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>		
 
-	<!--Cops for the Bomb: Forest heist-->
-	<unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest" load="true"/>
-    <unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk" load="true"/>
-	
-	<unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest" load="true"/>
-    <unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>
-
-	
 	<!--Panic Room Bullet Impact Fixes-->		
 	<object				path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
 	<object				path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
+	
+	<!--Cops for the Bomb: Forest heist-->
+	<unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest" load="true"/>
+    <unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk" load="true"/>
+
+	<unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest" load="true"/>
+    <unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>
 	
 	<!--Parachute Collision edit (No more Boiling Point suicides)-->
 	<object				path="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" force="true"/>
@@ -782,6 +769,22 @@
 	<model				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_contour" force="true" />	
+	
+	<!--Snowman Dozer-->
+	<object				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<model				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<unit				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false" load="true"/>
+	<material_config	path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
+	<material_config	path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman_contour" force="false"/>
+	<unit				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman_husk" force="false" load="true"/>
+
+	<!-- Vanilla Snowman Effects -->
+	<add from_db="true" path="effects/payday2/particles/character/snowman_molotov" type="effect">
+		<effect load="true" path="effects/payday2/particles/character/snowman_molotov"/>
+		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
+	</add>	
 
 	<!--Spring-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
@@ -885,20 +888,20 @@
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm" load="true"/>
 	
 	<!--DRAK Titan Cloaker (why would Shado--- i mean Autumn hang around with DRAK clonkers?)-->	
-	<model				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<object				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
-	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<object				path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
+	<unit				path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 	
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_df" load="true"/>	
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/spook_il" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_nm" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_body_df" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_df" load="true"/>	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/spook_il" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_nm" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_body_df" load="true"/>
 	
 
 	<cooked_physics		path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
@@ -1365,6 +1368,10 @@
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
 	
+	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_conversion" load="false"/>
+	
 	<!--PEW PEW PEW-->
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>
 	<bnk				path="soundbanks/weapon_sterling" force = "true"/>
@@ -1495,6 +1502,13 @@
 	<texture			path="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" force="true"/>
 	<material_config	path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
 	<model				path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>	
+	
+	<!--M416 for FBI Elites/Ready Agents-->
+	<texture			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_df" />		
+	<texture			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_nm" />		
+	
+	<unit_mat			path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416" />
+	<cooked_physics		path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"/>
 
 	<!--Cloaked MP5-->
 	<model				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
@@ -1975,6 +1989,7 @@
 	<material_config	path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
 	<material_config	path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_contour" force="false"/>
 	<unit				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_husk" force="false" load="true"/>
+	<df_nm				path="units/payday2/characters/shared_textures/veteran_lodman"/>
 
 	<object				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
@@ -1983,6 +1998,7 @@
 	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
 	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_contour" force="false"/>
 	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>
+	<df_nm				path="units/payday2/characters/shared_textures/veteran_lodman_2"/>
 
 
 	<!--Payday 10th Anniversary-->	

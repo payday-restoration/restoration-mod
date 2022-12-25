@@ -25,3 +25,10 @@ function GrenadeCrateBase:take_grenade(unit)
 
 	return can_take_grenade
 end
+
+--Overkill Grenade Case, setting it to just be a reskin of our grenade case for now
+function GrenadeCrateDeployableBase:setup()
+	self._max_grenade_amount = 3
+	
+	GrenadeCrateDeployableBase.super.setup(self)
+end

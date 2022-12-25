@@ -48,6 +48,25 @@ function EnvEffectTweakData:hatman_molotov_fire()
 	return params
 end
 
+function EnvEffectTweakData:snowman_boss_aoe_fire()
+	local params = {
+		sound_event = "snowmolo_impact",
+		range = 100,
+		curve_pow = 1,
+		no_fire_alert = true,
+		sound_event_burning = "no_sound",
+		sound_event_burning_stop = "snowmolo_burn_loop_stop",
+		damage = 1.5,
+		player_damage = 1.5,
+		sound_event_impact_duration = 0,
+		burn_tick_period = 0.2,
+		burn_duration = 1,
+		effect_name = "effects/payday2/particles/character/snowman_molotov"
+	}
+
+	return params
+end
+
 function EnvEffectTweakData:triad_boss_aoe_fire()
 	local params = {
 		sound_event = "PENT_Boss_Molotov_Drop",

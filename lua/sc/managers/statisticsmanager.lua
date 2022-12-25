@@ -40,7 +40,8 @@ StatisticsManager.special_unit_ids = {
 	"taser_titan_reaper",
 	"autumn",
 	"marshal_marksman",
-	"marshal_shield"	
+	"marshal_shield",
+	"snowman_boss"
 }
 
 local old_stats = StatisticsManager.init

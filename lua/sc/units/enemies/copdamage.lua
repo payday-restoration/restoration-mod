@@ -136,9 +136,7 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),                 	
 	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),                 	
-	ids_func("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
-	ids_func("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870_husk"),
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),
 	
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),   	
@@ -154,22 +152,18 @@ local enemies_plink = {
 	ids_func("units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"),
 	ids_func("units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"),
 
-	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),
-	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
-	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870_husk"),
 	
 }
 
 local grenadier_smash = {
 	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk"),
-	ids_func("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser"),
-	ids_func("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser_husk"),
+	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser"),
+	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"),     	
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"),
@@ -283,6 +277,10 @@ function CopDamage:damage_fire(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	
+	if self:is_friendly_fire(attack_data.attacker_unit) then
+		return "friendly_fire"
+	end	
 	
 	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
 		return
@@ -2896,8 +2894,14 @@ function CopDamage:damage_dot(attack_data)
 			self:_show_death_hint(self._unit:base()._tweak_table)
 			managers.statistics:killed(data)
 
-			if CopDamage.is_civilian(self._unit:base()._tweak_table) then
+			local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+
+			if is_civilian then
 				managers.money:civilian_killed()
+			end
+
+			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end
 
 			if attack_data and attack_data.weapon_id and not attack_data.weapon_unit then
@@ -3575,7 +3579,7 @@ function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 		PlayerStandard.say_line(attacker:sound(), "g31x_any")
 	elseif victim_base:has_tag("sniper") then
 		PlayerStandard.say_line(attacker:sound(), "g35x_any")
-	elseif victim_base:has_tag("medic") then
+	elseif victim_base:has_tag("medic") or victim_base:has_tag("medic_summers") then
 		PlayerStandard.say_line(attacker:sound(), "g36x_any")
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1
@@ -3604,7 +3608,7 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 		unit:sound():say("g31x_any", true)
 	elseif victim_base:has_tag("sniper") then
 		unit:sound():say("g35x_any", true)
-	elseif victim_base:has_tag("medic") then
+	elseif victim_base:has_tag("medic") or victim_base:has_tag("medic_summers") then
 		unit:sound():say("g36x_any", true)
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1

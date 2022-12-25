@@ -221,7 +221,7 @@ function PlayerBipod:update(t, dt)
 end
 
 function PlayerBipod:_update_movement(t, dt)
-	if restoration.Options:GetValue("OTHER/MoveCancelBipod") then
+	if restoration.Options:GetValue("OTHER/WeaponHandling/MoveCancelBipod") then
 		local current_state = managers.player:get_current_state()
 		if self._move_dir then
 			self:_unmount_bipod()

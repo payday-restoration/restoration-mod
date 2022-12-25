@@ -2,6 +2,8 @@ if not tweak_data then
 	return 
 end
 
+tweak_data.accessibility_colors.screenflash.hit_flash.default = Color(255, 255, 250, 180) / 255
+
 tweak_data.ammo = {}
 tweak_data.ammo.ricochet = {}
 tweak_data.ammo.ricochet.max_ricochets = 5
@@ -95,6 +97,10 @@ tweak_data.snp = {
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.6 --lowered to 0.3
 	}
+		tweak_data.s7 = {
+			hipfire_spread_mult = 0.5,
+			hipfire_moving_spread_mult = 0.33334,
+		}
 	tweak_data.amr = {
 		ads_move_speed_mult = 0.5
 	}
@@ -413,6 +419,35 @@ tweak_data.projectiles.dada_com.player_damage = 40
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
 
+--SEEEEEEMTEEEEEEEEEEX
+tweak_data.projectiles.sticky_grenade.damage = 80
+tweak_data.projectiles.sticky_grenade.player_damage = 40
+tweak_data.projectiles.sticky_grenade.curve_pow = 0.5
+tweak_data.projectiles.sticky_grenade.range = 400
+tweak_data.projectiles.sticky_grenade.in_air_timer = 3
+tweak_data.projectiles.sticky_grenade.detonate_timer = 3
+tweak_data.projectiles.sticky_grenade.warning_data = {
+	play_when_attached = true,
+	beep_speeds = {
+		0.1,
+		0.025
+	},
+	sound_data = {
+		event_name = "grenade_sticky_beep",
+		event_stop_name = "grenade_sticky_beep_stop"
+	},
+	light_data = {
+		type_str = "omni|specular",
+		range = 1250,
+		beep_mul = 0.2,
+		falloff_exp = 0.5,
+		beep_fade_speed = 3.5,
+		specular_mul = 0.05,
+		link_to_unit = true,
+		color = Vector3(255, 0, 0)
+	}
+}
+
 --Molliest of tovs--
 tweak_data.projectiles.molotov.damage = 3
 tweak_data.projectiles.molotov.player_damage = 3
@@ -455,6 +490,18 @@ tweak_data.projectiles.wpn_prj_jav.adjust_z = 0
 tweak_data.projectiles.wpn_prj_hur.damage = 36
 tweak_data.projectiles.wpn_prj_hur.launch_speed = 1800
 tweak_data.projectiles.wpn_prj_hur.adjust_z = 0
+
+--Balled Snow--
+if tweak_data.projectiles.xmas_snowball then
+	tweak_data.projectiles.xmas_snowball.damage = 24
+	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
+	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
+	tweak_data.projectiles.xmas_snowball.feedback_range = -100
+	tweak_data.projectiles.xmas_snowball.curve_pow = 0.000001
+	tweak_data.projectiles.xmas_snowball.range = 100
+	tweak_data.projectiles.xmas_snowball.launch_speed = 1500
+	tweak_data.projectiles.xmas_snowball.adjust_z = 0
+end
 
 --ZAPper grenade
 tweak_data.projectiles.wpn_gre_electric.damage = 40
@@ -648,22 +695,35 @@ for i, proj_id in ipairs(velocity) do
 end
 
 velocity = {
-	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade',
+	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade','sticky_grenade',
 	'dynamite','molotov'
 }
+--[[
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 900
 	tweak_data.projectiles[proj_id].adjust_z = 50
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+tweak_data.projectiles.dynamite.launch_speed = 600
 tweak_data.projectiles.molotov.launch_speed = 700
+--]]
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 250
+	tweak_data.projectiles[proj_id].adjust_z = 15
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 3.25
+end
+tweak_data.projectiles.dynamite.launch_speed = 150
+tweak_data.projectiles.sticky_grenade.launch_speed = 225
+tweak_data.projectiles.molotov.launch_speed = 200
 velocity = {
 	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
-	'wpn_prj_hur','wpn_prj_jav'
+	'wpn_prj_hur','wpn_prj_jav','xmas_snowball'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].adjust_z = 50
-	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].adjust_z = 50
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
 end
 
 
@@ -1099,5 +1159,22 @@ if twp.stances.m6d then
 	pivot_head_rotation = Rotation(0, 0, 0)
 	twp.stances.m6d.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	twp.stances.m6d.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
+if twp.stances.papa320 then
+	pivot_shoulder_translation = Vector3(8.45416, 39.1301, -4.58611)
+	pivot_shoulder_rotation = Rotation(0.100083, -0.688408, 0.630516)
+	pivot_head_translation = Vector3(1.5, 28, -5)
+	pivot_head_rotation = Rotation(0, 0.2, -6)
+	twp.stances.papa320.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.papa320.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	pivot_head_translation = Vector3(0.2, 25, -5)
+	pivot_head_rotation = Rotation(0, 0.2, -10)
+	twp.stances.papa320.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.papa320.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	pivot_head_translation = Vector3(0, 37, -0.2)
+	pivot_head_rotation = Rotation(0, 0, 0)
+	twp.stances.papa320.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	twp.stances.papa320.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 

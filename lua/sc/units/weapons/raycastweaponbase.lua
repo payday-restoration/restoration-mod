@@ -181,21 +181,41 @@ function RaycastWeaponBase:can_shoot_through_titan_shield()
 	return self._can_shoot_through_titan_shield
 end
 
---Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase:_collect_hits(from, to)
+	local setup_data = {
+		can_shoot_through_wall = self:can_shoot_through_wall(),
+		can_shoot_through_shield = self:can_shoot_through_shield(),
+		can_shoot_through_titan_shield = self:can_shoot_through_titan_shield(),
+		can_shoot_through_enemy = self:can_shoot_through_enemy(),
+		has_hit_wall = nil,
+		bullet_slotmask = self._bullet_slotmask,
+		ignore_units = self._setup.ignore_units
+	}
+
+	return RaycastWeaponBase.collect_hits(from, to, setup_data)
+end
+
+--Minor fixes and making Winters unpiercable.
+function RaycastWeaponBase.collect_hits(from, to, setup_data)
+	setup_data = setup_data or {}
+	local ray_hits = nil
 	local hit_enemy = false
-	local has_hit_wall = false
-	local can_shoot_through_wall = self:can_shoot_through_wall()
-	local can_shoot_through_shield = self:can_shoot_through_shield()
-	local can_shoot_through_titan_shield = self:can_shoot_through_titan_shield()
-	local can_shoot_through_enemy = self:can_shoot_through_enemy()
+	local can_shoot_through_wall = setup_data.can_shoot_through_wall
+	local can_shoot_through_shield = setup_data.can_shoot_through_shield
+	local can_shoot_through_titan_shield = setup_data.can_shoot_through_titan_shield
+	local can_shoot_through_enemy = setup_data.can_shoot_through_enemy
+	local bullet_slotmask = setup_data.bullet_slotmask or managers.slot:get_mask("bullet_impact_targets")
 	local enemy_mask = managers.slot:get_mask("enemies")
 	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
 	local shield_mask = managers.slot:get_mask("enemy_shield_check")
 	local ai_vision_ids = Idstring("ai_vision")
+	local bulletproof_ids = Idstring("bulletproof")
+	local ignore_unit = setup_data.ignore_units or {}
+
 	--Just set this immediately.
-	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
-		or World:raycast_all("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
+	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit, "thickness", 40, "thickness_mask", wall_mask)
+		or World:raycast_all("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit)
+
 	local units_hit = {}
 	local unique_hits = {}
 
@@ -203,22 +223,24 @@ function RaycastWeaponBase:_collect_hits(from, to)
 		if not units_hit[hit.unit:key()] then
 			units_hit[hit.unit:key()] = true
 			unique_hits[#unique_hits + 1] = hit
+			hit.hit_position = hit.position
 			local hit_enemy = hit_enemy or hit.unit:in_slot(enemy_mask)
 			local weak_body = hit.body:has_ray_type(ai_vision_ids)
+			weak_body = weak_body or hit.body:has_ray_type(bulletproof_ids)
 
 			if not can_shoot_through_enemy and hit_enemy then
 				break
-			elseif has_hit_wall or (not can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body) then
+			elseif setup_data.has_hit_wall or (not can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body) then
 				break
 			elseif not can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
 				break
-			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and not can_shoot_through_titan_shield  then --Titan shields
+			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '15cbabccf0841ff8') and not can_shoot_through_titan_shield then --Titan shields
 				break
 			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then --Winters being a shit.
 				break						
 			end
 			
-			has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)				
+			setup_data.has_hit_wall = setup_data.has_hit_wall or hit.unit:in_slot(wall_mask)				
 		end
 	end
 
@@ -636,10 +658,23 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local hit_through_shield = false
 	local shield_damage_reduction_applied = false
 	local hit_result = nil
+	local extra_collisions = self.extra_collisions and self:extra_collisions()
 
 	for _, hit in ipairs(ray_hits) do
 		damage = self:get_damage_falloff(damage, hit, user_unit)
-		hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, damage)
+		hit_result = nil
+
+		if damage > 0 then
+			hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, damage)
+
+			if extra_collisions then
+				for idx, extra_col_data in ipairs(extra_collisions) do
+					if alive(hit.unit) then
+						extra_col_data.bullet_class:on_collision(hit, self._unit, user_unit, damage * (extra_col_data.dmg_mul or 1))
+					end
+				end
+			end
+		end
 
 		if hit_result and hit_result.type == "death" then
 			local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
@@ -709,13 +744,28 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	end
 
 	if not tweak_data.achievement.tango_4.difficulty or table.contains(tweak_data.achievement.tango_4.difficulty, Global.game_settings.difficulty) then
-		if self._gadgets and table.contains(self._gadgets, "wpn_fps_upg_o_45rds") and cop_kill_count > 0 and managers.player:player_unit():movement():current_state():in_steelsight() then
+		local second_sight_index, has_second_sight = nil
+
+		for index, data in ipairs(self._second_sights or {}) do
+			if data.part_id == "wpn_fps_upg_o_45rds" then
+				second_sight_index = index
+				has_second_sight = true
+
+				break
+			end
+		end
+
+		if has_second_sight and cop_kill_count > 0 and managers.player:player_unit():movement():current_state():in_steelsight() then
+			local second_sight_on = self._second_sight_on and self._second_sight_on > 0 and self._second_sight_on
+
 			if self._tango_4_data then
-				if self._gadget_on == self._tango_4_data.last_gadget_state then
-					self._tango_4_data = nil
-				else
-					self._tango_4_data.last_gadget_state = self._gadget_on
+				local is_correct_sight = second_sight_on ~= self._tango_4_data.last_second_sight_state and (not second_sight_on or second_sight_on == second_sight_index)
+
+				if is_correct_sight then
+					self._tango_4_data.last_second_sight_state = second_sight_on
 					self._tango_4_data.count = self._tango_4_data.count + 1
+				else
+					self._tango_4_data = nil
 				end
 
 				if self._tango_4_data and tweak_data.achievement.tango_4.count <= self._tango_4_data.count then
@@ -724,7 +774,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 			else
 				self._tango_4_data = {
 					count = 1,
-					last_gadget_state = self._gadget_on
+					last_second_sight_state = second_sight_on
 				}
 			end
 		elseif self._tango_4_data then

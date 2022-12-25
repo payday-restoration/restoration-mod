@@ -529,7 +529,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
 		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
-	else
+	else	
+		self._has_burst_fire = false
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	
@@ -593,6 +594,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end	
+			if stats.s7_flexfire then
+				self:weapon_tweak_data().can_shoot_through_titan_shield = false
+			end	
 			if stats.hailstorm then
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.33
@@ -628,6 +632,15 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
+			end	
+			if stats.type99_stats then
+				--have to do this due to how this thing is set up, can't have both equipped anyways
+				tweak_data.weapon.system.reload_speed_multiplier = 1.13 * 1.1
+				tweak_data.weapon.system.timers = tweak_data.weapon.system.timers or {}
+				tweak_data.weapon.system.timers.reload_empty = 8
+				tweak_data.weapon.system.timers.reload_not_empty = 8
+				tweak_data.weapon.system.timers.reload_exit_empty = 0.8
+				tweak_data.weapon.system.timers.reload_exit_not_empty = 0.8
 			end	
 	
 			if stats.m16_burst then
@@ -1097,7 +1110,7 @@ function NewRaycastWeaponBase:can_reload()
 end
 
 function NewRaycastWeaponBase:_check_toggle_burst()
-	if not self._lock_burst then
+	if not self:is_npc() and not self._lock_burst then
 		if self:in_burst_mode() then
 			self:_set_burst_mode(false, self.AKIMBO and not self._has_auto)
 			return true
@@ -1396,6 +1409,7 @@ local scope_colors = {
 	redmid = Color(1, 0, 1),
 	redlow = Color(0, 0, 1),
 	redno = Color(0, 1, 1),
+	off = Color(0, 0, 0, 0),
 }
 function NewRaycastWeaponBase:set_scope_range_distance(distance)
 	if not self._assembly_complete then
@@ -1408,6 +1422,13 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
 	falloff_start = falloff_start * (self._damage_near_mul or 1)
 	falloff_end = falloff_end * (self._damage_near_mul or 1)
+	local is_visible = nil
+	local is_player = self._setup.user_unit == managers.player:player_unit()
+	local steelsight_swap_state = false
+
+	if is_player then
+		steelsight_swap_state = self._setup.user_unit:camera() and alive(self._setup.user_unit:camera():camera_unit()) and self._setup.user_unit:camera():camera_unit():base():get_steelsight_swap_state() or false
+	end
 
 	if self._scopes and self._parts then
 		local part = nil
@@ -1417,18 +1438,20 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 
 			local digital_gui = part and part.unit:digital_gui()
 
+			is_visible = (part.steelsight_visible == nil or part.steelsight_visible == steelsight_swap_state) or nil
+
 			if digital_gui and digital_gui.number_set then
 				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then
-						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.green or scope_colors.red )
+						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.green or scope_colors.red )
 					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenmid or scope_colors.redmid )
+						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenmid or scope_colors.redmid )
 					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenlow or scope_colors.redlow )
+						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenlow or scope_colors.redlow )
 					end
 				else
-					part.unit:digital_gui()._title_text:set_color( green_display and scope_colors.greenno or scope_colors.redno )
+					part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenno or scope_colors.redno )
 				end
 			end
 
@@ -1438,14 +1461,14 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 				part.unit:digital_gui_upper():number_set(distance and math.round(distance) or false, false)
 				if distance then
 					if (distance * 100) < falloff_start then
-						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.green )
+						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.green )
 					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenmid )
+						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenmid )
 					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenlow )
+						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenlow )
 					end
 				else
-					part.unit:digital_gui_upper()._title_text:set_color( scope_colors.greenno )
+					part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenno )
 				end
 			end
 		end
@@ -1455,8 +1478,10 @@ end
 --Fix for reload objects not appearing
 function NewRaycastWeaponBase:set_reload_objects_visible(visible, anim)
 	local data = tweak_data.weapon.factory[self._factory_id]
+	local ignore_reload_objects_empty = self:weapon_tweak_data().ignore_reload_objects_empty
+	local ignore_reload_objects_not_empty = self:weapon_tweak_data().ignore_reload_objects_not_empty
 	local reload_objects = anim and data.reload_objects and data.reload_objects[anim]
-	if not anim or (anim and (anim == "reload_not_empty" or anim == "reload")) then
+	if not anim or (anim and ( (not ignore_reload_objects_not_empty and anim == "reload_not_empty") or (not ignore_reload_objects_empty and anim == "reload") )) then
 		if reload_objects then
 			self._reload_objects[self._name_id] = reload_objects
 		elseif self._reload_objects then

@@ -123,6 +123,8 @@ function GuiTweakData:init()
 		wpn_fps_upg_o_bmg = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2),
 		wpn_fps_upg_o_eotech = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 5),
 		wpn_fps_upg_o_eotech_xps = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 6),
-		wpn_fps_upg_o_uh = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3)
+		wpn_fps_upg_o_uh = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
+		wpn_fps_upg_o_hamr = "1 8",
+		wpn_fps_upg_o_atibal = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2)
 	}
 end

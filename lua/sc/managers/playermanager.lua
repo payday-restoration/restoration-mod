@@ -53,6 +53,7 @@ function PlayerManager:body_armor_skill_multiplier(override_armor)
 	multiplier = multiplier + self:upgrade_value("player", "perk_armor_loss_multiplier", 1) - 1
 	multiplier = multiplier + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_multiplier", 1) - 1
 	multiplier = multiplier + self:upgrade_value("player", "chico_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "mrwi_armor_multiplier", 1) - 1
 	multiplier = multiplier + self:upgrade_value("team", "crew_add_armor", 1) - 1 --Added bot armor boost.
 
 	return multiplier
@@ -90,6 +91,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	if speed_state then
 		multiplier = multiplier + self:upgrade_value("player", speed_state .. "_speed_multiplier", 1) - 1
+		multiplier = multiplier + self:upgrade_value("player", "mrwi_" .. speed_state .. "_speed_multiplier", 1) - 1
 		
 		--Burglar
 		multiplier = multiplier + self:upgrade_value("player", speed_state .. "_speed_multiplier_burglar", 1) - 1
@@ -163,6 +165,48 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if self._num_kills % self._SHOCK_AND_AWE_TARGET_KILLS == 0 and self:has_category_upgrade("player", "automatic_faster_reload") then
 		self:_on_enter_shock_and_awe_event()
 	end
+	
+	local selection_index = equipped_unit and equipped_unit:base() and equipped_unit:base():selection_index() or 0
+
+	if selection_index == 1 and self._has_secondary_reload_primary then
+		local kills_to_reload = self:upgrade_value("player", "secondary_reload_primary", 10)
+		local secondary_kills = self:get_property("secondary_reload_primary_kills", 0) + 1
+
+		if kills_to_reload <= secondary_kills then
+			local primary_unit = player_unit:inventory():unit_by_selection(2)
+			local primary_base = alive(primary_unit) and primary_unit:base()
+			local can_reload = primary_base and primary_base.can_reload and primary_base:can_reload()
+
+			if can_reload then
+				primary_base:on_reload()
+				managers.statistics:reloaded()
+				managers.hud:set_ammo_amount(primary_base:selection_index(), primary_base:ammo_info())
+			end
+
+			secondary_kills = 0
+		end
+
+		self:set_property("secondary_reload_primary_kills", secondary_kills)
+	elseif selection_index == 2 and self._has_primary_reload_secondary then
+		local kills_to_reload = self:upgrade_value("player", "primary_reload_secondary", 10)
+		local primary_kills = self:get_property("primary_reload_secondary_kills", 0) + 1
+
+		if kills_to_reload <= primary_kills then
+			local secondary_unit = player_unit:inventory():unit_by_selection(1)
+			local secondary_base = alive(secondary_unit) and secondary_unit:base()
+			local can_reload = secondary_base and secondary_base.can_reload and secondary_base:can_reload()
+
+			if can_reload then
+				secondary_base:on_reload()
+				managers.statistics:reloaded()
+				managers.hud:set_ammo_amount(secondary_base:selection_index(), secondary_base:ammo_info())
+			end
+
+			primary_kills = 0
+		end
+
+		self:set_property("primary_reload_secondary_kills", primary_kills)
+	end	
 
 	self._message_system:notify(Message.OnEnemyKilled, nil, equipped_unit, variant, killed_unit)
 
@@ -264,7 +308,9 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
 	
 	if self._on_killshot_t and t < self._on_killshot_t then
-		self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
+		if self:has_category_upgrade("player", "melee_kill_life_leech") then
+			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
+		end
 		return
 	end
 
@@ -296,7 +342,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	end
 
 	local regen_health_bonus = 0
-
 
 	--Sociopath regen.
 	if variant == "melee" then
@@ -511,6 +556,7 @@ end
 --Leaving stance stuff in parameters for compatability.
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
+	chance = chance + self:upgrade_value("player", "mrwi_dodge_chance", 0)
 	
 	chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
 
@@ -533,6 +579,7 @@ function PlayerManager:health_skill_multiplier()
 	multiplier = multiplier + self:team_upgrade_value("health", "passive_multiplier", 1) - 1
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
 	multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0) --Anarchist reduces health by expected amount.
+	multiplier = multiplier + self:upgrade_value("player", "mrwi_health_multiplier", 1) - 1
 	
 	return multiplier
 end
@@ -636,6 +683,12 @@ function PlayerManager:check_skills()
 		self._message_system:unregister(Message.OnLethalHeadShot, "play_pda9_headshot")
 	end
 	
+	self._has_primary_reload_secondary = self:has_category_upgrade("player", "primary_reload_secondary")
+	self._has_secondary_reload_primary = self:has_category_upgrade("player", "secondary_reload_primary")
+
+	self:set_property("primary_reload_secondary_kills", 0)
+	self:set_property("secondary_reload_primary_kills", 0)
+	
 	--New resmod skills for dodge.
 	if self:has_category_upgrade("player", "dodge_stacking_heal") then
 		self:register_message(Message.OnPlayerDodge, "dodge_stack_health_regen", callback(self, self, "_dodge_stack_health_regen"))
@@ -724,6 +777,12 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(regen_armor_bonus)
 	end
+
+	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
+
+	if damage_ext and regen_health_bonus > 0 then
+		damage_ext:restore_health(regen_health_bonus, true)
+	end
 end
 
 --Add extra checks to make sure that it only looks for killing headshots done with valid guns.
@@ -751,7 +810,8 @@ function PlayerManager:get_max_grenades(grenade_id)
 
 	--Jack of all trades basic grenade count increase.
 	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
-	if max_amount and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") then
+	local is_perk_throwable = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown_no_perk")
+	if max_amount and not is_perk_throwable then
 		max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
 	end
 	max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
@@ -791,8 +851,9 @@ function PlayerManager:_internal_load()
 	if self:has_grenade(peer_id) then
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
-
-	if amount and not grenade.base_cooldown then --*Should* stop perk deck actives from being increased.
+	
+	local is_perk_throwable = grenade.base_cooldown and not grenade.base_cooldown_no_perk
+	if amount and not is_perk_throwable then --*Should* stop perk deck actives from being increased.
 		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount) --Crime spree throwables mod.
 		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0)) --JOAT Basic
 	end

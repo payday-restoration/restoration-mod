@@ -1016,8 +1016,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.ecm_jammer.can_open_sec_doors = {true}		
 			--Ace
 				self.values.ecm_jammer.affects_pagers = {true}
-				self.values.ecm_jammer.feedback_duration_boost = {1.25}
 				self.values.ecm_jammer.duration_multiplier = {1.25}
+				self.values.ecm_jammer.feedback_duration_boost = {1.25}
 				
 				--Unused
 				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
@@ -1913,6 +1913,70 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.copr_ability_cooldown = 40
 	self.copr_risen_cooldown_add = 30
 
+	--Copycat
+	local health_boost = 0.075
+	local armor_boost = 0.05
+	local dodge_boost = 0.025
+	local crouch_speed_multiplier = 0.05
+	local carry_speed_multiplier = 0.05
+	self.values.player.mrwi_health_multiplier = {
+		1 + health_boost * 1,
+		1 + health_boost * 2,
+		1 + health_boost * 3,
+		1 + health_boost * 4
+	}
+	self.values.player.mrwi_armor_multiplier = {
+		1 + armor_boost * 1,
+		1 + armor_boost * 2,
+		1 + armor_boost * 3,
+		1 + armor_boost * 4
+	}
+	self.values.player.mrwi_dodge_chance = {
+		dodge_boost * 1,
+		dodge_boost * 2,
+		dodge_boost * 3,
+		dodge_boost * 4
+	}
+	self.values.player.mrwi_crouch_speed_multiplier = {
+		1 + crouch_speed_multiplier * 1,
+		1 + crouch_speed_multiplier * 2,
+		1 + crouch_speed_multiplier * 3,
+		1 + crouch_speed_multiplier * 4
+	}
+	self.values.player.mrwi_carry_speed_multiplier = {
+		1 + carry_speed_multiplier * 1,
+		1 + carry_speed_multiplier * 2,
+		1 + carry_speed_multiplier * 3,
+		1 + carry_speed_multiplier * 4
+	}
+	local auto_reload_kills = 10
+	self.values.player.primary_reload_secondary = {
+		auto_reload_kills
+	}
+	self.values.player.secondary_reload_primary = {
+		auto_reload_kills
+	}
+	self.values.weapon.mrwi_swap_speed_multiplier = {
+		1.15
+	}
+	self.values.player.dodge_ricochet_bullets = {
+		{
+			1, --% Chance
+			10, --Cooldown, only applies to armor break ricochets
+			1.5 --Armor break ricochet damage mult, Resmod addition
+		}
+	}
+	self.values.player.headshot_regen_health_bonus = {
+		0.2
+	}
+	self.values.temporary.mrwi_health_invulnerable = {
+		{
+			0.25, --% Threshold
+			2, --Duration
+			30 --Cooldown
+		}
+	}
+
 	--Tabula Rasa/Innatae
 	self.values.player.small_loot_multiplier = {1.15, 1.3}	
 	self.values.player.assets_cost_multiplier = {
@@ -1958,6 +2022,239 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	
 end)
+
+--Copycat Copies
+function UpgradesTweakData.mrwi_deck9_options()
+	local deck9_options = {
+		{ --Crew Chief
+			icon_xy = {2, 0},
+			name_id = "menu_deck1_3",
+			desc_id = "menu_deck1_mrwi_desc",
+			upgrades = {
+				"team_passive_stamina_multiplier_1",
+				"player_passive_intimidate_range_mul",
+				"player_alarm_pager_speed_multiplier"
+			}
+		},
+		{ --Muscle
+			icon_xy = {3, 1},
+			name_id = "menu_deck2_7",
+			desc_id = "menu_deck2_mrwi_desc",
+			upgrades = {
+				"player_panic_suppression",
+				"player_corpse_dispose_speed_multiplier",
+				"player_civ_move_multiplier"
+			}
+		},
+		{ --Armorer
+			icon_xy = {6, 1},
+			name_id = "menu_deck3_7",
+			desc_id = "menu_deck3_mrwi_desc",
+			upgrades = {
+				"player_perk_armor_regen_timer_multiplier_1",
+				"bodybags_bag_quantity"
+			}
+		},
+		{ --Rouge
+			icon_xy = {4, 2},
+			name_id = "menu_deck4_1",
+			desc_id = "menu_deck4_mrwi_desc",
+			upgrades = {
+				"weapon_passive_swap_speed_multiplier_1",
+				"player_tape_loop_duration_2"
+			}
+		},
+		{ --Hitman
+			icon_xy = {6, 2},
+			name_id = "menu_deck5_1",
+			desc_id = "menu_deck5_mrwi_desc",
+			upgrades = {
+				"player_store_temp_health_1",
+				"player_corpse_dispose_amount_2"
+			}
+		},
+		{ --Crook
+			icon_xy = {5, 3},
+			name_id = "menu_deck6_5",
+			desc_id = "menu_deck6_mrwi_desc",
+			upgrades = {
+				"player_level_2_armor_multiplier_2",
+				"player_level_3_armor_multiplier_2",
+				"player_level_4_armor_multiplier_2",
+				"player_pick_lock_speed_multiplier"	
+			}
+		},
+		{ --Burglar
+			icon_xy = {1, 2},
+			name_id = "menu_deck7_1",
+			desc_id = "menu_deck7_mrwi_desc",
+			upgrades = {
+				"player_crouch_dodge_chance_burglar_1",
+				"player_crouch_speed_multiplier_burglar"
+			}
+		},
+		{ --Infiltrator
+			icon_xy = {3, 4},
+			name_id = "menu_deck8_3",
+			desc_id = "menu_deck8_mrwi_desc",
+			upgrades = {
+				"player_damage_dampener_close_contact_2",
+				"player_tape_loop_duration_2"
+			}
+		},
+		{ --Sociopath
+			icon_xy = {0, 5},
+			name_id = "menu_deck9_3",
+			desc_id = "menu_deck9_mrwi_desc",
+			upgrades = {
+				"player_killshot_regen_armor_bonus",
+				"player_corpse_dispose_amount_2"
+			}
+		},
+		{ --Gambler
+			icon_xy = {5, 5},
+			name_id = "menu_deck10_3",
+			desc_id = "menu_deck10_mrwi_desc",
+			upgrades = {
+				"temporary_loose_ammo_give_team",
+				"player_alarm_pager_speed_multiplier"
+			}
+		},
+		{ --Grinder
+			icon_xy = {1, 6},
+			name_id = "menu_deck11_1",
+			desc_id = "menu_deck11_mrwi_desc",
+			upgrades = {
+				"player_damage_to_hot_1",
+				"player_level_5_armor_addend_grinder",
+				"player_flak_jacket_concealment_1",
+				"bodybags_bag_quantity"
+			}
+		},
+		{ --Yakuza
+			icon_xy = {0, 7},
+			name_id = "menu_deck12_3",
+			desc_id = "menu_deck12_mrwi_desc",
+			upgrades = {
+				"player_kill_dodge_regen",
+				"player_corpse_dispose_speed_multiplier",
+				"player_civ_move_multiplier"
+			}
+		},
+		{ --Ex-Pres
+			icon_xy = {3, 7},
+			name_id = "menu_deck13_1",
+			desc_id = "menu_deck13_mrwi_desc",
+			upgrades = {
+				"player_armor_health_store_amount_1",
+				"team_civ_intimidation_mul"
+			}
+		},
+		{ --Maniac
+			icon_xy = {0, 0},
+			texture_bundle_folder = "coco",
+			name_id = "menu_deck14_1",
+			desc_id = "menu_deck14_mrwi_desc",
+			upgrades = {
+				"player_cocaine_stacking_1",
+				"team_civ_intimidation_mul"
+			}
+		},
+		{ --Anarchist
+			icon_xy = {0, 0},
+			texture_bundle_folder = "opera",
+			name_id = "menu_deck15_1",
+			desc_id = "menu_deck15_mrwi_desc",
+			upgrades = {
+				"player_armor_grinding_1",
+				"team_civ_intimidation_mul"
+			}
+		},
+		{ --Biker
+			icon_xy = {0, 0},
+			texture_bundle_folder = "wild",
+			name_id = "menu_deck16_1",
+			desc_id = "menu_deck16_mrwi_desc",
+			upgrades = {
+				"player_wild_health_amount_1",
+				"team_civ_intimidation_mul"
+			}
+		},
+		{ --Kingpin
+			icon_xy = {0, 0},
+			texture_bundle_folder = "chico",
+			name_id = "menu_deck17_1",
+			desc_id = "menu_deck17_mrwi_desc",
+			upgrades = {
+				"chico_injector",
+				"temporary_chico_injector_1",
+				"player_chico_injector_speed"
+			}
+		},
+		{ --Sicario
+			icon_xy = {0, 0},
+			texture_bundle_folder = "max",
+			name_id = "menu_deck18_1",
+			desc_id = "menu_deck18_mrwi_desc",
+			upgrades = {
+				"smoke_screen_grenade",
+				"player_corpse_dispose_amount_2"
+			}
+		},
+		{ --Stoic
+			icon_xy = {0, 0},
+			texture_bundle_folder = "myh",
+			name_id = "menu_deck19_1",
+			desc_id = "menu_deck19_mrwi_desc",
+			upgrades = {
+				"damage_control",
+				"player_damage_control_passive",
+				"player_damage_control_healing",
+				"player_armor_to_health_conversion",
+				"player_alarm_pager_speed_multiplier"
+			}
+		},
+		{ --Tag Team
+			icon_xy = {0, 0},
+			texture_bundle_folder = "ecp",
+			name_id = "menu_deck20_1",
+			desc_id = "menu_deck20_mrwi_desc",
+			upgrades = {
+				"tag_team",
+				"player_tag_team_base_1",
+				"player_tag_team_cooldown_drain_1",
+				"player_tape_loop_duration_2"
+			}
+		},
+		{ --Hacker
+			icon_xy = {0, 0},
+			texture_bundle_folder = "joy",
+			name_id = "menu_deck21_1",
+			desc_id = "menu_deck21_mrwi_desc",
+			upgrades = {
+				"pocket_ecm_jammer",
+				"player_pocket_ecm_jammer_base"
+			}
+		},
+		{ --Leech
+			icon_xy = {0, 0},
+			texture_bundle_folder = "copr",
+			name_id = "menu_deck22_1",
+			desc_id = "menu_deck22_mrwi_desc",
+			upgrades = {
+				"temporary_copr_ability_1",
+				"copr_ability",
+				"player_copr_static_damage_ratio_1",
+				"player_copr_kill_life_leech_1",
+				"player_copr_activate_bonus_health_ratio_1",
+				"player_corpse_dispose_speed_multiplier",
+				"player_civ_move_multiplier"	
+			}
+		}
+	}
+
+	return deck9_options
+end
 
 --Added new definitions--
 

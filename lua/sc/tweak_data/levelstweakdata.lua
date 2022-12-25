@@ -11,6 +11,7 @@ LevelsTweakData.LevelType.Federales = "federales"
 LevelsTweakData.LevelType.NYPD = "nypd"
 LevelsTweakData.LevelType.LAPD = "lapd"
 LevelsTweakData.LevelType.FBI = "fbi"
+LevelsTweakData.LevelType.Omnia = "omnia"
 --///LEVELS\\\--
 Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
@@ -22,6 +23,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	local federales = LevelsTweakData.LevelType.Federales		
 	local lapd = LevelsTweakData.LevelType.LAPD
 	local fbi = LevelsTweakData.LevelType.FBI
+	local omnia = LevelsTweakData.LevelType.Omnia
 	self.ai_groups = {}
 	self.ai_groups.default = america
 	self.ai_groups.america = america
@@ -32,6 +34,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	self.ai_groups.fbi = fbi
+	self.ai_groups.omnia = omnia
 	
 	--Christmas Dozer/Cloaker jingle bells
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
@@ -217,7 +220,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.flat.ai_group_type = nypd
 	
 	self.glace.ai_group_type = nypd
-	self.glace.package = {"packages/narr_glace"}
 	self.glace.flashlights_on = true
 	
 	self.dah.ai_group_type = nypd
@@ -230,7 +232,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
     self.trai.ai_group_type = nypd
     self.trai.player_style = "railroad"
-
+	
+	--[[
+	self.corp.ai_group_type = nypd
+	self.corp.ai_group_type = murkywater
+	--]]
+	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
 	
@@ -257,7 +264,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.chas.ai_group_type = lapd
-	self.chas.package = {"packages/job_chas", "packages/miscassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
+	self.chas.package = {"packages/job_chas", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.chas.player_style = "suit_sunny"
 	
 	self.sand.ai_group_type = lapd
@@ -324,7 +331,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
-	--self.welcome_to_the_jungle_1_night.flashlights_on = true
+	self.welcome_to_the_jungle_1_night.flashlights_on = true
 	
 	
 	self.chew.player_style = "loud_suit"
@@ -399,7 +406,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.mia2_new.teams = self.mia_2.teams
 
-	self.cane.package = {"packages/cane", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
+	self.cane.package = {"packages/cane", "packages/narr_born_1", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	self.cane.player_style = "winter_suit"
 							
 	self.mus.package = {"packages/narr_mus"}
@@ -524,7 +531,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.vit.ghost_bonus = 0.15
 	--The Dentist's Heists goes here--
 	self.big.ghost_bonus = 0.20
-	self.kenaz.ghost_bonus = 0.20
+	self.kenaz.ghost_bonus = 0.25
 	--Vlad's Heists goes here--
 	self.chca.ghost_bonus = 0.30
 	--The Butcher's Heists goes here--
@@ -668,6 +675,26 @@ function LevelsTweakData:get_team_setup()
 
 		for id, team in pairs(teams) do
 			team.id = id
+		end
+	end
+
+	if managers.mutators:is_mutator_active(MutatorCG22) then
+		local team_ids = {}
+	
+		for team_id, team_data in pairs(teams) do
+			team_data.friends = team_data.friends or {}
+			team_data.friends.cg22 = true
+	
+			table.insert(team_ids, team_id)
+		end
+	
+		teams.cg22 = {
+			foes = {},
+			friends = {}
+		}
+	
+		for _, team_id in ipairs(team_ids) do
+			teams.cg22.friends[team_id] = true
 		end
 	end
 

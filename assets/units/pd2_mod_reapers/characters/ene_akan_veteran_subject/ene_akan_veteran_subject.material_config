@@ -1,0 +1,11 @@
+<materials version="3" group="npc_old_hoxton_prisonsuit_1">
+    <material name="mtr_old_hoxton_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/pd2_mod_reapers/characters/shared_textures/compound_test_subject_head_nm"/>
+        <diffuse_texture file="units/pd2_mod_reapers/characters/shared_textures/compound_test_subject_head_df"/>
+    </material>
+    <material name="mtr_old_hoxton_prison_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/pd2_mod_reapers/characters/shared_textures/compound_test_subject_nm"/>
+        <diffuse_texture file="units/pd2_mod_reapers/characters/shared_textures/compound_test_subject_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

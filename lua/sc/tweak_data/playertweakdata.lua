@@ -487,8 +487,8 @@ function PlayerTweakData:_init_par()
 	default_init_par(self)
 	local pivot_shoulder_translation = Vector3(10, 4, -4)
 	local pivot_shoulder_rotation = Rotation(0.106596, -0.0844502, 0.629187)    
-	local pivot_head_translation = Vector3(0, 12, 0) -- 10, 12, -2
-	local pivot_head_rotation = Rotation(0, 0, 0) -- 0, 0, -5
+	local pivot_head_translation = Vector3(-0.0125, 12, -0.07) -- 10, 12, -2
+	local pivot_head_rotation = Rotation(0.1, 0, 0.5) -- 0, 0, -5
 	self.stances.par.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.par.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 	local pivot_head_translation = Vector3(0, 15, -8)
@@ -639,7 +639,7 @@ if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 	end)
 end
 
-local static_aim = restoration.Options:GetValue("OTHER/StaticAim")
+local static_aim = restoration.Options:GetValue("OTHER/WeaponHandling/StaticAim")
 if static_aim then
 	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
 		for wep_id, i in pairs(self.stances) do

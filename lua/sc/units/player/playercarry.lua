@@ -7,11 +7,15 @@ end
 
 function PlayerCarry:_get_max_walk_speed(...)
 	local multiplier = tweak_data.carry.types[self._tweak_data_name].move_speed_modifier
+	
 	if managers.player:has_category_upgrade("carry", "movement_penalty_nullifier") then
 		multiplier = math.clamp(multiplier * managers.player:upgrade_value("carry", "movement_speed_multiplier", 1), 0, 1)
+		multiplier = math.clamp(multiplier * managers.player:upgrade_value("player", "mrwi_carry_speed_multiplier", 1), 0, 1)
 	else
 		multiplier = math.clamp(multiplier * managers.player:upgrade_value("carry", "movement_speed_multiplier", 1), 0, 1)
+		multiplier = math.clamp(multiplier * managers.player:upgrade_value("player", "mrwi_carry_speed_multiplier", 1), 0, 1)
 	end
+	
 	if managers.player:has_category_upgrade("player", "armor_carry_bonus") then
 		local base_max_armor = armor_init + managers.player:body_armor_value("armor") + managers.player:body_armor_skill_addend()
 		local mul = managers.player:upgrade_value("player", "armor_carry_bonus", 1)
@@ -22,6 +26,12 @@ function PlayerCarry:_get_max_walk_speed(...)
 
 		multiplier = math.clamp(multiplier, 0, 1)
 	end
+	
+
+	if managers.mutators:is_mutator_active(MutatorCG22) then
+		local mutator = managers.mutators:get_mutator(MutatorCG22)
+		multiplier = multiplier * mutator:get_bag_speed_increase_multiplier()
+	end	
 		
 	return PlayerCarry.super._get_max_walk_speed(self, ...) * multiplier
 end

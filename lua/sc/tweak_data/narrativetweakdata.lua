@@ -115,6 +115,46 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000
 	}
 	
+	--Almir Breakout
+	self.jobs.pex.payout = {			
+		58000,
+		78000,
+		88000,
+		98000,
+		130000,
+		130000,
+		130000
+	}
+	self.jobs.pex.contract_cost = {			
+		200000,
+		300000,
+		400000,
+		450000,
+		550000,
+		550000,
+		550000
+	}
+	
+	--Mexican Scarface Mansion
+	self.jobs.fex.payout = {			
+		70000,
+		100000,
+		300000,
+		500000,
+		650000,
+		650000,
+		650000
+	}
+	self.jobs.fex.contract_cost = {			
+		45000,
+		108000,
+		200000,
+		350000,
+		500000,
+		500000,
+		500000
+	}
+	
 	--Dragon Heist
 	self.jobs.chas.payout = {			
 		62500,

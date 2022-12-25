@@ -35,6 +35,7 @@ function MutatorTitandozers:setup()
 	tweak_data.group_ai.unit_categories.BLACK_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 	tweak_data.group_ai.unit_categories.BLACK_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 	tweak_data.group_ai.unit_categories.BLACK_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+	tweak_data.group_ai.unit_categories.BLACK_tank.unit_types.omnia[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 	
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
@@ -43,7 +44,8 @@ function MutatorTitandozers:setup()
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.federales[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
-	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"		
+	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.omnia[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	
 	--Replace Spring, not a pretty way to do it but it works
 	if difficulty_index <= 5 then

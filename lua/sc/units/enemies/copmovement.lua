@@ -295,6 +295,12 @@ function CopMovement:_upd_actions(t)
 	end	
 end
 
+Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
+	if self._suppression.transition and self._suppression.transition.next_upd_t < t or self._stance.transition and self._stance.transition.next_upd_t < t then
+		self._force_head_upd = true -- update head position vector
+	end
+end)
+
 function CopMovement:do_omnia(self)
 	local t = TimerManager:main():time()
 	
@@ -539,6 +545,10 @@ function CopMovement:play_redirect(redirect_name, at_time)
 	return result
 end
 
+Hooks:PostHook(CopMovement, "_change_stance", "res_change_stance", function(self)
+	self._force_head_upd = true -- update head position vector
+end)
+
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z
 local mvec3_lerp = mvector3.lerp
@@ -752,7 +762,7 @@ function CopMovement:on_suppressed(state)
 		managers.network:session():send_to_peers_synched("suppressed_state", self._unit, state and true or false)
 	end
 
-	self:enable_update()
+	self:enable_update(true)
 end
 
 function CopMovement:synch_attention(attention)
@@ -797,15 +807,6 @@ function CopMovement:anim_clbk_enemy_spawn_melee_item()
 		self._melee_item_unit = World:spawn_unit(unit_name, align_obj_l:position(), align_obj_l:rotation())
 		self._unit:link(align_obj_l:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())
 	end
-end
-
-local _equip_item_original = CopMovement._equip_item
-function CopMovement:_equip_item(item_type, align_place, droppable)
-	if item_type == "needle" then
-		align_place = "hand_l"
-	end
-
-	_equip_item_original(self, item_type, align_place, droppable)
 end
 
 function CopMovement:sync_action_act_start(index, blocks_hurt, clamp_to_graph, needs_full_blend, start_rot, start_pos)

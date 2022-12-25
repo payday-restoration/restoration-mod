@@ -61,6 +61,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_pd.exclude_stages, "funbank")
 	table.insert(self.risk_pd.exclude_stages, "Xanax")
 	table.insert(self.risk_pd.exclude_stages, "btms")
+	table.insert(self.risk_pd.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_pd.exclude_stages, "constantine_murkyairport_lvl")
 
 	--SWAT--		
 	table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -106,6 +108,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_swat.exclude_stages, "funbank")
 	table.insert(self.risk_swat.exclude_stages, "Xanax")
 	table.insert(self.risk_swat.exclude_stages, "btms")
+	table.insert(self.risk_swat.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_swat.exclude_stages, "constantine_murkyairport_lvl")
+
 	
 	--FBI--		
 	table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -151,6 +156,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_fbi.exclude_stages, "funbank")
 	table.insert(self.risk_fbi.exclude_stages, "Xanax")
 	table.insert(self.risk_fbi.exclude_stages, "btms")
+	table.insert(self.risk_fbi.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_fbi.exclude_stages, "constantine_murkyairport_lvl")
 
 	--Overkill--		
 	table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -196,6 +203,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_squad.exclude_stages, "funbank")
 	table.insert(self.risk_death_squad.exclude_stages, "Xanax")
 	table.insert(self.risk_death_squad.exclude_stages, "btms")
+	table.insert(self.risk_death_squad.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_death_squad.exclude_stages, "constantine_murkyairport_lvl")
 
 	--Mayhem--		
 	table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -241,6 +250,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_easy_wish.exclude_stages, "funbank")
 	table.insert(self.risk_easy_wish.exclude_stages, "Xanax")
 	table.insert(self.risk_easy_wish.exclude_stages, "btms")
+	table.insert(self.risk_easy_wish.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_easy_wish.exclude_stages, "constantine_murkyairport_lvl")
 
 	--Deathwish--		
 	table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -286,6 +297,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_wish.exclude_stages, "funbank")
 	table.insert(self.risk_death_wish.exclude_stages, "Xanax")
 	table.insert(self.risk_death_wish.exclude_stages, "btms")
+	table.insert(self.risk_death_wish.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_death_wish.exclude_stages, "constantine_murkyairport_lvl")
 	
 	--Death Sentence--		
 	table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -331,6 +344,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_sm_wish.exclude_stages, "funbank")
 	table.insert(self.risk_sm_wish.exclude_stages, "Xanax")
 	table.insert(self.risk_sm_wish.exclude_stages, "btms")
+	table.insert(self.risk_sm_wish.exclude_stages, "constantine_wintersniper_lvl")
+	table.insert(self.risk_sm_wish.exclude_stages, "constantine_murkyairport_lvl")
 	
 	-- Reaper Risk Asset
 	table.insert(self.mad_russian_merc_cameras.stages, "pines")
@@ -363,6 +378,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"mex",
 		"hwu",
 		"constantine_gunrunnerclubhouse_lvl",
+		"constantine_wintersniper_lvl",
+		"constantine_murkyairport_lvl",
 		"hidden_vault",
 		"ttr_yct_lvl",
 		"Tonis2",

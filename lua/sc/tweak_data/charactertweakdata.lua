@@ -159,6 +159,19 @@ function CharacterTweakData:_init_region_fbi()
 	}
 	self._speech_prefix_p2 = "d"
 end
+function CharacterTweakData:_init_region_omnia()
+	self._default_chatter = "dsp_radio_russian"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l5d",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "nothing"
+	}
+	self._speech_prefix_p2 = "d"
+end
 
 function CharacterTweakData:get_ai_group_type()    
 	return self.tweak_data.levels:get_ai_group_type()
@@ -492,6 +505,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet_boss.heal_cooldown = 1.875
 	self.fbi_vet_boss.rescue_hostages = false
 	self.fbi_vet_boss.steal_loot = false	
+	self.fbi_vet_boss.gas_on_death = false
 	table.insert(self._enemy_list, "fbi_vet_boss")	
 		
 	self.meme_man = deep_clone(self.fbi_vet)		
@@ -587,7 +601,7 @@ function CharacterTweakData:_init_medic(presets)
 	--self.medic.rescue_hostages = false
 	--end
 	self.medic.no_arrest = true
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 	    self.medic.custom_voicework = "murky_medic"
 	else	
 	    self.medic.custom_voicework = nil
@@ -692,9 +706,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
 	end			
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.omnia_lpf.yellow_blood = true
-	end
+	self.omnia_lpf.yellow_blood = true
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
@@ -742,7 +754,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" then
 	    self.swat.has_alarm_pager = true
 	else
 	    self.swat.has_alarm_pager = false
@@ -837,7 +849,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.dodge = presets.dodge.heavy
 	self.heavy_swat.no_arrest = false
 	self.heavy_swat.chatter = presets.enemy_chatter.swat
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" then
 	    self.heavy_swat.has_alarm_pager = true
 	else
 	    self.heavy_swat.has_alarm_pager = false
@@ -898,8 +910,10 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat_sniper.custom_voicework = "tsniper"
 	end
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "murkywater" then
-		self.heavy_swat_sniper.yellow_blood = true
+	if self:get_ai_group_type() == "murkywater" then
+	self.heavy_swat_sniper.yellow_blood = false
+	else
+	self.heavy_swat_sniper.yellow_blood = true
 	end
 	self.heavy_swat_sniper.is_special = true
 	self.heavy_swat_sniper.no_asu = true
@@ -914,7 +928,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.speech_prefix_count = nil
 	if self:get_ai_group_type() == "russia" then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
+	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 		self.weekend_dmr.custom_voicework = "bravo_elite_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend_dmr.custom_voicework = "bravo_elite_mex"
@@ -926,10 +940,10 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "russia" then
 		self.weekend_dmr.yellow_blood = true
 	else	
-		self.weekend_dmr.yellow_blood = nil
+		self.weekend_dmr.yellow_blood = false
 	end
 	table.insert(self._enemy_list, "weekend_dmr")
 end
@@ -1093,7 +1107,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend = deep_clone(self.city_swat)
 	if self:get_ai_group_type() == "russia" then
 		self.weekend.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
+	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 		self.weekend.custom_voicework = "bravo_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend.custom_voicework = "bravo_mex"
@@ -1106,10 +1120,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 1.25
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend.yellow_blood = true
 	else	
-		self.weekend.yellow_blood = nil
+		self.weekend.yellow_blood = false
 	end	
 	--if restoration and restoration.sonic_mod then 
 	--self.weekend.rescue_hostages = true
@@ -1133,10 +1147,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "murkywater" then
-		self.city_swat_titan.yellow_blood = true
+	if self:get_ai_group_type() == "murkywater" then
+		self.city_swat_titan.yellow_blood = false
 	else
-		self.city_swat_titan.yellow_blood = nil
+		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
 	self.city_swat_titan.headshot_dmg_mul = 2.2
@@ -1165,7 +1179,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg = deep_clone(self.city_swat_titan)		
 	if self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
+	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 		self.weekend_lmg.custom_voicework = "bravo_elite_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend_lmg.custom_voicework = "bravo_elite_mex"
@@ -1179,16 +1193,15 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.headshot_dmg_mul = 2.75	
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
-	self.weekend_lmg.yellow_blood = nil
 	--if restoration and restoration.sonic_mod then 
 	--self.weekend_lmg.rescue_hostages = true
 	--else
 	--self.weekend_lmg.rescue_hostages = false
 	--end
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.yellow_blood = true
 	else	
-		self.weekend_lmg.yellow_blood = nil
+		self.weekend_lmg.yellow_blood = false
 	end
 	table.insert(self._enemy_list, "weekend_lmg")
 	
@@ -1246,7 +1259,7 @@ function CharacterTweakData:_init_marshal_marksman(presets)
 	self.marshal_marksman.speech_prefix_p1 = "cum"
 	self.marshal_marksman.speech_prefix_p2 = nil
 	self.marshal_marksman.speech_prefix_count = nil
-	self.marshal_marksman.yellow_blood = nil
+	self.marshal_marksman.yellow_blood = false
 	if self:get_ai_group_type() == "russia" then
 		self.marshal_marksman.custom_voicework = "tswat_ru"
 	elseif self:get_ai_group_type() == "murkywater" then
@@ -1323,11 +1336,12 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	else
 		self.marshal_shield.custom_voicework = "bravo_dmr"
 	end		
-	self.marshal_shield.speech_prefix_count = 4
+	self.marshal_shield.speech_prefix_count = nil
 	self.marshal_shield.priority_shout = "f31"
 	self.marshal_shield.access = "shield"
 	self.marshal_shield.chatter = presets.enemy_chatter.shield
 	self.marshal_shield.announce_incomming = "incomming_shield"
+	self.marshal_shield.spawn_sound_event = "shield_identification"
 	self.marshal_shield.steal_loot = nil
 	self.marshal_shield.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "marshal_shield")
@@ -1348,6 +1362,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield_break.wall_fwd_offset = nil
 	self.marshal_shield_break.priority_shout = nil
 	self.marshal_shield_break.access = "swat"
+	
 	self.marshal_shield_break.chatter = presets.enemy_chatter.swat
 	self.marshal_shield_break.announce_incomming = nil
 	self.marshal_shield_break.damage.hurt_severity = presets.hurt_severities.base
@@ -1402,7 +1417,7 @@ function CharacterTweakData:_init_gangster(presets)
 		self.gangster.rescue_hostages = true
 		self.gangster.use_radio = self._default_chatter	
 		self.gangster.no_omnia_heal = false		
-		self.gangster.no_asu = false	
+		self.gangster.no_asu = false
 	else
 		self.gangster.speech_prefix_p1 = "lt"
 		self.gangster.speech_prefix_p2 = nil
@@ -1620,6 +1635,41 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss_no_armor.radio_prefix = "fri_"
 
 	table.insert(self._enemy_list, "triad_boss_no_armor")
+end
+
+function CharacterTweakData:_init_snowman_boss(presets)
+	self.snowman_boss = deep_clone(self.tank)
+	self.snowman_boss.experience = {}
+	self.snowman_boss.tags = {
+		"law",
+		"tank",
+		"snowman",
+		"special"
+	}
+	self.snowman_boss.headshot_dmg_mul = 18.75
+	self.snowman_boss.HEALTH_INIT = 400	
+	self.snowman_boss.speech_prefix_p1 = "snowman"
+	self.snowman_boss.speech_prefix_p2 = nil
+	self.snowman_boss.speech_prefix_count = nil
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+		self.snowman_boss.custom_voicework = "tdozer_ru"
+	else
+		self.snowman_boss.custom_voicework = "tdozer"
+	end
+	self.snowman_boss.aoe_damage_data = {
+		verification_delay = 0.3,
+		activation_range = 300,
+		activation_delay = 1,
+		env_tweak_name = "snowman_boss_aoe_fire",
+		check_player = true,
+		check_npc_slotmask = {
+			"criminals",
+			-2,
+			-3
+		}
+	}	
+	
+	table.insert(self._enemy_list, "snowman_boss")
 end
 
 function CharacterTweakData:_init_captain(presets)
@@ -2165,23 +2215,11 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.custom_voicework = "tdozer_ru"
 	else
 		self.tank_titan.custom_voicework = "tdozer"
-	end			
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
-	else
-		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
-	end		
-	if self:get_ai_group_type() == "russia" then
-		self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
-		self.tank.speech_prefix_p2 = nil
-		self.tank.speech_prefix_count = nil
-	else
-		self.tank_titan.speech_prefix_p1 = "heck"
-		self.tank_titan.speech_prefix_count = nil	
-	end				
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.tank_titan.yellow_blood = true
 	end
+	self.tank_titan.speech_prefix_p1 = "heck"
+	self.tank_titan.speech_prefix_p2 = nil
+	self.tank_titan.speech_prefix_count = nil				
+	self.tank_titan.yellow_blood = true
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
@@ -2592,9 +2630,8 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	else
 		self.phalanx_minion.custom_voicework = "tshield"
 	end
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.phalanx_minion.yellow_blood = true
-	end
+
+	self.phalanx_minion.yellow_blood = true
 	self.phalanx_minion.heal_cooldown = 7.5
 	self.phalanx_minion.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_minion")
@@ -2638,6 +2675,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.rotation_speed = 0.75
 	self.phalanx_vip.no_asu = true
 	self.phalanx_vip.no_retreat = true
+	self.phalanx_vip.yellow_blood = false
 	self.phalanx_vip.custom_voicework = nil
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
 	self.phalanx_vip.speech_prefix_p2 = nil
@@ -3023,11 +3061,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "zombie" then
-		self.taser_titan.yellow_blood = true
-	else
-		self.taser_titan.yellow_blood = nil		
-	end	
+	self.taser_titan.yellow_blood = true	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 11.25
 	self.taser_titan.slowing_bullets = {
@@ -4060,12 +4094,6 @@ function CharacterTweakData:_presets(tweak_data)
 			controlpanic = true,
 			dodge = true,
 			cuffed = true,
-			incomming_captain = true,
-			incomming_gren = true,
-			incomming_tank = true,
-			incomming_spooc = true,
-			incomming_shield = true,
-			incomming_taser = true,
 			entry = true,
 			aggressive_assault = true,
 			retreat = true,
@@ -4079,6 +4107,8 @@ function CharacterTweakData:_presets(tweak_data)
 			ecm = true,
 			saw = true,
 			trip_mines = true,
+			sabotagebags = true,
+			sabotagehostages = true,
 			sentry = true,
 			ready = true,
 			smoke = true,
@@ -4128,32 +4158,6 @@ function CharacterTweakData:_presets(tweak_data)
 			go_go = true,
 			suppress = true,
 			enemyidlepanic = true
-		},
-		cop = {
-			entry = true,
-			aggressive = true,
-			enemyidlepanic = true,
-			controlpanic = true,
-			retreat = true,
-			contact = true,
-			clear = true,
-			go_go = true,
-			push = true,
-			reload = true,
-			look_for_angle = true,
-			inpos = true,
-			ecm = true,
-			saw = true,
-			trip_mines = true,
-			sentry = true,
-			ready = true,
-			smoke = true,
-			flash_grenade = true,
-			deathguard = true,
-			open_fire = true,
-			suppress = true,
-			dodge = true,
-			cuffed = true
 		},
 		omnia_lpf = {
 			entry = true,
@@ -4259,7 +4263,7 @@ function CharacterTweakData:_presets(tweak_data)
 			cloakercontact = true,
 			cloakeravoidance = true,
 			aggressive = true
-		},			
+		}			
 	}
 	
 	presets.hurt_severities = {}
@@ -16912,32 +16916,28 @@ end
 Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_table_structure", function(self)
 
 	--Vanilla Murky Scar-H turns into Scar-L
-	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light")
+	self.weap_unit_names[table.index_of(self.weap_ids, "scar_murky")] = Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light")
 	
 	--Vanilla RPK SC'd
-	self.weap_unit_names[20] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "rpk_lmg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc")
 	
 	--Vanilla SVD SC'd
-	self.weap_unit_names[21] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")	
+	self.weap_unit_names[table.index_of(self.weap_ids, "svd_snp")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")	
 	
 	--Vanilla AKMSU SC'd
-	self.weap_unit_names[22] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "akmsu_smg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc")
 	
 	--Vanilla Cloaker Asval SC'd
-	self.weap_unit_names[23] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "asval_smg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc")
 	
 	--Vanilla SR2 SC'd
-	self.weap_unit_names[24] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc")
+	self.weap_unit_names[table.index_of(self.weap_ids, "sr2_smg")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc")
 	
 	--Vanilla AK101 SC'd
-	self.weap_unit_names[25] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
-	
-	--Vanilla Minigun becomes Benelli to make Benelli Dozers
-	self.weap_unit_names[29] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-
+	self.weap_unit_names[table.index_of(self.weap_ids, "ak47_ass")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
 
 	--Vanilla Zeal Sniper made M14/SCAR-H DMR
-	self.weap_unit_names[30] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
+	self.weap_unit_names[table.index_of(self.weap_ids, "heavy_zeal_sniper")] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
 	
 	--Peacemaker
 	table.insert(self.weap_ids, "peacemaker")
@@ -17167,13 +17167,11 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	
 	--DRAK Titan Taser Gauss Rifle
 	table.insert(self.weap_ids, "gauss_gun")
-	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"))			
-	
-	--For some reason, once this hits 92 entries the third person husk used by players breaks. Look into solutions
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon"))
 	
 	--Titandozer M32
 	table.insert(self.weap_ids, "m32_large")
-	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_mad/weapons/wpn_npc_m32_large/wpn_npc_m32_large"))		
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_m32_large/wpn_npc_m32_large"))		
 
 	--Dozer Benelli
 	table.insert(self.weap_ids, "benelli_dozer")
@@ -17671,7 +17669,9 @@ function CharacterTweakData:_set_sm_wish()
 	self.taser.shock_damage = 8.0
 	
 	
-	--Titan Shields gets overhealed
+	--Shields get overhealed by LPF/Winters
+	self.shield.overheal_mult = 2
+	self.marshal_shield.overheal_mult = 2
 	self.phalanx_minion.overheal_mult = 2
 	self.phalanx_minion_assault.overheal_mult = 2
 	
@@ -17885,6 +17885,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_bulldozer_1_hard")	
 		table.insert(char_map.basic.list, "ene_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_swat_2_sc")		
+		table.insert(char_map.basic.list, "ene_swat_3")
 		table.insert(char_map.basic.list, "ene_swat_heavy_1_sc")
 		table.insert(char_map.basic.list, "ene_swat_heavy_r870_sc")	
 		table.insert(char_map.basic.list, "ene_sniper_2_sc")
@@ -17950,6 +17951,8 @@ function CharacterTweakData:character_map()
 	--drm	
 		table.insert(char_map.drm.list, "ene_bulldozer_medic_sc")
 		
+	--mad	
+		table.insert(char_map.mad.list, "ene_akan_lpf")	
 	--flat
 		table.insert(char_map.flat.list, "ene_gang_colombian_1")
 		table.insert(char_map.flat.list, "ene_gang_colombian_2")	
@@ -17969,6 +17972,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.ranc.list, "ene_cop_2")	
 		table.insert(char_map.ranc.list, "ene_cop_3")
 		table.insert(char_map.ranc.list, "ene_cop_4")
+	--Christmas
+		table.insert(char_map.cg22.list, "ene_bulldozer_snowman")		
 	--vip
 		char_map.vip = {
 			path = "units/pd2_dlc_vip/characters/",
@@ -17990,69 +17995,6 @@ function CharacterTweakData:character_map()
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
 				"ene_titan_taser"
-			}
-		}
-	--mad
-		char_map.mad = {
-			path = "units/pd2_dlc_mad/characters/",
-			list = {
-				"civ_male_scientist_01",
-				"civ_male_scientist_02",
-				"ene_akan_fbi_heavy_g36",
-				"ene_akan_fbi_heavy_r870",
-				"ene_akan_fbi_shield_sr2_smg",
-				"ene_akan_fbi_spooc_asval_smg",
-				"ene_akan_cs_cop_c45_sc",
-				"ene_akan_cs_cop_raging_bull_sc",					
-				"ene_akan_fbi_swat_ak47_ass",	
-				"ene_akan_fbi_sniper_svd_snp",
-				"ene_akan_fbi_sniper_dw_svd_snp",
-				"ene_akan_fbi_swat_dw_ak47_ass",
-				"ene_akan_fbi_swat_dw_ak47_ass_sc",					
-				"ene_akan_fbi_swat_dw_r870",
-				"ene_akan_fbi_swat_dw_r870_sc",					
-				"ene_akan_fbi_swat_dw_ump",
-				"ene_akan_fbi_swat_r870",
-				"ene_akan_fbi_swat_ump",
-				"ene_akan_fbi_tank_r870",
-				"ene_akan_fbi_tank_rpk_lmg",
-				"ene_akan_fbi_tank_saiga",
-				"ene_akan_dozer_mini",
-				"ene_akan_cs_cop_ak47_ass",
-				"ene_akan_cs_cop_akmsu_smg",
-				"ene_akan_cs_cop_akmsu_smg_sc",
-				"ene_akan_cs_cop_asval_smg",
-				"ene_akan_cs_swat_zeal",					
-				"ene_akan_cs_cop_r870",
-				"ene_akan_cs_heavy_ak47_ass",
-				"ene_akan_cs_heavy_r870",
-				"ene_akan_cs_shield_c45",
-				"ene_akan_cs_swat_ak47_ass",
-				"ene_akan_cs_swat_r870",
-				"ene_akan_cs_swat_sniper_svd_snp",
-				"ene_akan_cs_tazer_ak47_ass",
-				"ene_akan_medic_ak47_ass",
-				"ene_akan_medic_r870",				
-				"ene_akan_fbi_heavy_dw",
-				"ene_akan_fbi_heavy_dw_r870",
-				"ene_akan_fbi_1",
-				"ene_akan_fbi_2",
-				"ene_akan_fbi_3",
-				"ene_akan_veteran_1",
-				"ene_akan_veteran_2",
-				"ene_akan_veteran_subject",
-				"ene_akan_grenadier_1",
-				"ene_akan_medic_bob",
-				"ene_akan_medic_zdann",	
-				"ene_vip_2",
-				"ene_titan_shotgun",
-				"ene_titan_rifle",
-				"ene_akan_lpf",
-				"ene_fbi_titan_1",
-				"ene_phalanx_1_assault",										
-				"ene_spook_cloak_1",										
-				"ene_titan_sniper",
-				"ene_titan_taser"				
 			}
 		}
 	--gitgud
@@ -18095,27 +18037,15 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_dlc_bex/characters/",
 			list = {
 				"ene_swat_policia_federale",
-				"ene_swat_policia_federale_sc",
 				"ene_swat_policia_federale_r870",
 				"ene_swat_policia_federale_city",
 				"ene_swat_policia_federale_city_r870",
-				"ene_swat_policia_federale_city_ump",
-				"ene_swat_policia_federale_zeal",
-				"ene_swat_policia_federale_zeal_r870",
-				"ene_swat_policia_federale_zeal_ump",
-				"ene_swat_policia_federale_city_fbi",
-				"ene_swat_policia_federale_city_fbi_r870",
-				"ene_swat_policia_federale_city_fbi_ump",
 				"ene_swat_policia_federale_fbi",
 				"ene_swat_policia_federale_fbi_r870",
-				"ene_swat_policia_federale_fbi_ump",
-				"ene_swat_medic_policia_federale_sc",
-				"ene_swat_medic_policia_federale_sc_r870",
+				"ene_swat_medic_policia_federale",
+				"ene_swat_medic_policia_federale_r870",
 				"ene_swat_cloaker_policia_federale",
-				"ene_swat_cloaker_policia_federale_sc",
 				"ene_swat_policia_sniper",
-				"ene_swat_shield_policia_federale_mp9_fbi",
-				"ene_swat_shield_policia_federale_mp9_sc",
 				"ene_swat_shield_policia_federale_mp9",
 				"ene_swat_shield_policia_federale_c45",
 				"ene_swat_tazer_policia_federale",
@@ -18125,10 +18055,6 @@ function CharacterTweakData:character_map()
 				"ene_swat_heavy_policia_federale_fbi",
 				"ene_swat_heavy_policia_federale_fbi_r870",
 				"ene_swat_heavy_policia_federale_fbi_g36",
-				"ene_swat_heavy_policia_federale_city_r870",
-				"ene_swat_heavy_policia_federale_city_g36",
-				"ene_swat_heavy_policia_federale_zeal_r870",
-				"ene_swat_heavy_policia_federale_zeal_g36",
 				"ene_swat_dozer_medic_policia_federale",
 				"ene_swat_dozer_policia_federale_r870",
 				"ene_swat_dozer_policia_federale_saiga",
@@ -18168,6 +18094,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_policia_01",
@@ -18250,6 +18177,7 @@ function CharacterTweakData:character_map()
 				"ene_murky_tazer",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_murky_sniper",
 				"ene_murky_sniper_2"
 			}
@@ -18259,9 +18187,33 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_mod_omnia/characters/",
 			list = {
 				"ene_omnia_hrt_1",
-				"ene_omnia_hrt_2",				
+				"ene_omnia_hrt_2",
+				"ene_omnia_hrt_3",
 				"ene_omnia_crew",
 				"ene_omnia_crew_2",
+				"ene_security_1",
+				"ene_security_2",
+				"ene_security_3",
+				"ene_security_4",
+				"ene_cop_1",
+				"ene_cop_2",
+				"ene_cop_3",
+				"ene_cop_4",
+				"ene_swat_1",
+				"ene_swat_2",
+				"ene_swat_3",
+				"ene_swat_heavy_1",
+				"ene_swat_heavy_r870",
+				"ene_fbi_swat_1",
+				"ene_fbi_swat_2",
+				"ene_fbi_swat_3",
+				"ene_fbi_heavy_1",
+				"ene_fbi_heavy_r870",
+				"ene_city_swat_1",
+				"ene_city_swat_2",
+				"ene_city_swat_3",
+				"ene_city_heavy_g36",
+				"ene_city_heavy_r870",
 				"ene_omnia_city",
 				"ene_omnia_city_2",
 				"ene_omnia_city_3",
@@ -18270,14 +18222,17 @@ function CharacterTweakData:character_map()
 				"ene_omnia_heavy_r870",
 				"ene_omnia_heavy_benelli",
 				"ene_bulldozer_1",
+				"ene_bulldozer_1_hard",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
 				"ene_bulldozer_minigun",
+				"ene_bulldozer_medic",
 				"ene_omnia_spook",
 				"ene_grenadier_1",
 				"ene_omnia_medic",
 				"ene_omnia_taser",
 				"ene_omnia_sniper",
+				"ene_omnia_sniper_2",
 				"ene_omnia_shield"					
 			}
 		}
@@ -18317,6 +18272,7 @@ function CharacterTweakData:character_map()
 				"ene_nypd_heavy_r870",
 				"ene_nypd_swat_1",
 				"ene_nypd_swat_2",
+				"ene_nypd_swat_3",
 				"ene_nypd_shield",
 				"ene_nypd_murky_1",
 				"ene_nypd_murky_2",
@@ -18365,6 +18321,7 @@ function CharacterTweakData:character_map()
 				"ene_city_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_lapd_veteran_cop_1",
@@ -18420,6 +18377,7 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_r870",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
 				"ene_fbi_swat_3",
@@ -18488,6 +18446,13 @@ function CharacterTweakData:character_map()
 				"ene_swat_heavy_r870",
 				"ene_swat_1",
 				"ene_swat_2",
+				"ene_swat_3",
+				"ene_fbi_1",
+				"ene_fbi_2",
+				"ene_fbi_3",
+				"ene_akan_veteran_1",
+				"ene_akan_veteran_2",
+				"ene_akan_veteran_subject",
 				"ene_sniper_1",
 				"ene_tazer_1",
 				"ene_sniper_2",
@@ -18516,7 +18481,18 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_shield",
 				"ene_drak_medic",
 				"ene_zeal_sniper",
-				"ene_subject_enforcer"
+				"ene_subject_enforcer",
+				"ene_grenadier_1",
+				"ene_akan_medic_bob",
+				"ene_akan_medic_zdann",	
+				"ene_vip_2",
+				"ene_titan_shotgun",
+				"ene_titan_rifle",
+				"ene_fbi_titan_1",
+				"ene_phalanx_1_assault",										
+				"ene_spook_cloak_1",										
+				"ene_titan_sniper",
+				"ene_titan_taser"
 			}
 		}
 

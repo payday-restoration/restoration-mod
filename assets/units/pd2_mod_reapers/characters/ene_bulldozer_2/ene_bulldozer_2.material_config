@@ -22,8 +22,8 @@
     </material>
 	
     <material name="mtr_helmet_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/k63_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/k63_tit_df"/>
+		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/shared_textures/k63_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_reapers/characters/shared_textures/k63_tit_df"/>
     </material>
 	
     <material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
@@ -36,12 +36,12 @@
     </material>
 	
     <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/k63_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/k63_tit_df"/>
+		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/shared_textures/k63_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_reapers/characters/shared_textures/k63_tit_df"/>
     </material>
     <material name="mtr_helmet_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/k63_nm" mip="4"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/k63_tit_df" mip="4"/>
+		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/shared_textures/k63_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_reapers/characters/shared_textures/k63_tit_df" mip="4"/>
     </material>
 	
     <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2" name="mtr_glass">

@@ -69,6 +69,17 @@ function PlayerDamage:init(unit)
 	self._dire_need = managers.player:has_category_upgrade("player", "armor_depleted_stagger_shot")
 	self._has_damage_speed = managers.player:has_inactivate_temporary_upgrade("temporary", "damage_speed_multiplier")
 	self._has_damage_speed_team = managers.player:upgrade_value("player", "team_damage_speed_multiplier_send", 0) ~= 0
+	self._has_mrwi_health_invulnerable = player_manager:has_category_upgrade("temporary", "mrwi_health_invulnerable")
+	self._mrwi_last_ricochet_time = 0
+
+	if self._has_mrwi_health_invulnerable then
+		local upgrade_values = player_manager:upgrade_value("temporary", "mrwi_health_invulnerable")
+		local health_threshold = upgrade_values[1]
+		local duration = upgrade_values[2]
+		local cooldown = upgrade_values[3]
+		self._mrwi_health_invulnerable_threshold = health_threshold
+		self._mrwi_health_invulnerable_cooldown = cooldown
+	end
 
 	--Unique resmod stuff.
 	self._ally_attack = false --Whether or not an ally dealt the last attack. Prevents certain cheese with friendly fire.
@@ -198,6 +209,7 @@ function PlayerDamage:init(unit)
 
 	self:clear_delayed_damage()
 	
+	self._slowdowns = {}
 	self._can_play_tinnitus = not managers.user:get_setting("accessibility_sounds_tinnitus") or false
 	self._can_play_tinnitus_clbk_func = callback(self, self, "clbk_tinnitus_toggle_changed")
 
@@ -210,7 +222,7 @@ function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)
 		return false
 	end
 
-	local movement_ext = unit:movement() --Deals with funny case with enemy thrown frags.
+	local movement_ext = alive(unit) and unit:movement() --Deals with funny case with enemy thrown frags.
 	if not movement_ext or movement_ext:team() ~= self._unit:movement():team() and movement_ext:friendly_fire() then
 		return false
 	end
@@ -290,7 +302,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--Get hit direction and display it on hud.
 	local attacker_unit = attack_data.attacker_unit
 	if alive(attacker_unit) then
-		self:_hit_direction(attacker_unit:position())
+		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 	end
 	
 	self._last_received_dmg = math.huge --As opposed to raw damage (attack_data.damage), just an idea to see if the game feels better without grace piercing
@@ -366,6 +378,97 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 end
 
 
+function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
+	local pm = managers.player
+	local hit_chance = pm:upgrade_value("player", "dodge_ricochet_bullets")[1]
+	local cooldown = pm:upgrade_value("player", "dodge_ricochet_bullets")[2]
+	local armor_break_dmg_mult = pm:upgrade_value("player", "dodge_ricochet_bullets")[3]
+	local from = Vector3()
+	local to = Vector3()
+	local dir = Vector3()
+	local t = TimerManager:game():time()
+	local attacker_unit = attack_data.attacker_unit
+
+	if not armor_break or armor_break and t > self._mrwi_last_ricochet_time + cooldown then
+		if armor_break then
+			self._mrwi_last_ricochet_time = t
+		end
+		
+		--[[
+		if math.rand(1) > hit_chance then
+			return
+		end
+		--]]
+
+		local player_unit = pm:local_player()
+
+		if not attack_data.col_ray or (not alive(attacker_unit) or not attacker_unit:character_damage() or attacker_unit:character_damage():dead() or not attacker_unit:character_damage().damage_simple) then
+			return
+		end
+
+		if armor_break then
+			attack_data.damage = attack_data.damage * armor_break_dmg_mult
+		end
+
+		mvector3.set(dir, attack_data.col_ray.ray)
+		mvector3.negate(dir)
+		mvector3.set(to, attack_data.col_ray.position)
+		mvector3.set(from, dir)
+		mvector3.multiply(from, attack_data.col_ray.distance or 20000)
+		mvector3.add(from, to)
+		math.point_on_line(from, to, player_unit:movement():m_head_pos(), to)
+		mvector3.direction(dir, to, from)
+		mvector3.set(from, to)
+		mvector3.set(to, dir)
+		mvector3.spread(to, 3)
+		mvector3.multiply(to, 20000)
+		mvector3.add(to, from)
+
+		local ray_hits = RaycastWeaponBase.collect_hits(from, to, {
+			ignore_unit = {
+				player_unit
+			}
+		})
+		local hit_dmg_ext = nil
+
+		for _, col_ray in ipairs(ray_hits) do
+			hit_dmg_ext = col_ray.unit:character_damage()
+
+			if hit_dmg_ext and hit_dmg_ext.damage_simple then
+				hit_dmg_ext:damage_simple({
+					variant = "bullet",
+					damage = attack_data.damage,
+					attacker_unit = player_unit,
+					pos = col_ray.position,
+					attack_dir = dir
+				})
+				managers.game_play_central:play_impact_flesh({
+					col_ray = col_ray
+				})
+			end
+
+			managers.game_play_central:play_impact_sound_and_effects({
+				col_ray = col_ray
+			})
+		end
+
+		local furthest_hit = ray_hits[#ray_hits]
+
+		if furthest_hit and furthest_hit.distance > 600 or not furthest_hit then
+			local trail_effect_table = {
+				effect = RaycastWeaponBase.TRAIL_EFFECT,
+				normal = dir,
+				position = from
+			}
+			local trail = World:effect_manager():spawn(trail_effect_table)
+
+			if furthest_hit then
+				World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 600) / 10000, 0, furthest_hit.distance))
+			end
+		end
+	end
+end
+
 --All damage_x functions have been rewritten.
 function PlayerDamage:damage_bullet(attack_data)
 	local attacker_unit = attack_data.attacker_unit
@@ -397,6 +500,15 @@ function PlayerDamage:damage_bullet(attack_data)
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
+			
+			--This shit needs to be here, it is what it is
+			if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
+				self:_mrwick_ricochet_bullets(attack_data)
+				pm:register_message(Message.OnPlayerDodge, "dodge_ricochet_bullets", on_player_dodged)
+			else
+				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
+			end
+		
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
@@ -407,7 +519,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
-			self:_hit_direction(attacker_unit:position())
+			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
 				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
@@ -494,7 +606,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
-			self:_hit_direction(attacker_unit:position())
+			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
 				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
@@ -771,7 +883,7 @@ function PlayerDamage:damage_killzone(attack_data)
 		self:_damage_screen()
 		self:_check_bleed_out(nil)
 	else
-		self:_hit_direction(attack_data.col_ray.origin)
+		self:_hit_direction(attack_data.col_ray.origin, attack_data.col_ray.ray)
 
 		if self._bleed_out then
 			return
@@ -825,7 +937,7 @@ function PlayerDamage:damage_fall(data)
 	elseif self._bleed_out and not is_free_falling then
 		self._unit:sound():play("player_hit")
 		managers.environment_controller:hit_feedback_down()
-		managers.hud:on_hit_direction(Vector3(0, 0, 0), HUDHitDirection.DAMAGE_TYPES.HEALTH, 0)
+		managers.hud:on_hit_direction(Vector3(0, 0, -1), die and HUDHitDirection.DAMAGE_TYPES.HEALTH or HUDHitDirection.DAMAGE_TYPES.ARMOUR, 0)
 
 		return
 	end
@@ -1072,6 +1184,18 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 			self._unit:network():send("copr_teammate_heal", teammate_heal_level)
 		end
 	end
+	
+	if self._has_mrwi_health_invulnerable then
+		local health_threshold = self._mrwi_health_invulnerable_threshold or 0.25
+		local is_cooling_down = managers.player:get_temporary_property("mrwi_health_invulnerable", false)
+
+		if self:health_ratio() <= health_threshold and not is_cooling_down then
+			local cooldown_time = self._mrwi_health_invulnerable_cooldown or 30
+
+			managers.player:activate_temporary_upgrade("temporary", "mrwi_health_invulnerable")
+			managers.player:activate_temporary_property("mrwi_health_invulnerable", cooldown_time, true)
+		end
+	end	
 		
 	local trigger_skills = table.contains({
 		"bullet",
@@ -1099,6 +1223,19 @@ end
 
 --Applies deflection and stoic effects.
 function PlayerDamage:_calc_health_damage(attack_data)
+	if attack_data.weapon_unit then
+		local weap_base = alive(attack_data.weapon_unit) and attack_data.weapon_unit:base()
+		local weap_tweak_data = weap_base and weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()
+
+		if weap_tweak_data and weap_tweak_data.slowdown_data then
+			self:apply_slowdown(weap_tweak_data.slowdown_data)
+		end
+	end
+	
+	if managers.player:has_activate_temporary_upgrade("temporary", "mrwi_health_invulnerable") then
+		return 0
+	end	
+
 	local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
 	if self:has_temp_health() then --Hitman deflection bonus.
 		deflection = math.max(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), self._max_deflection)
@@ -1375,13 +1512,16 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
 		end
 
+		local pm = managers.player
+
 		if self:get_real_armor() <= 0 then
 			if not self._ally_attack then
 				if not self._armor_broken then
 					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
 					if attack_data.attacker_unit then
-					--Will look into tying this to Yakuza later if needed
-					--self:fill_dodge_meter(self._dodge_points * 0.5)
+						if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
+							self:_mrwick_ricochet_bullets(attack_data, true)
+						end
 					end
 				end
 			end
@@ -1390,8 +1530,6 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 			if attack_data.armor_piercing then
 				self._unit:sound():play("player_sniper_hit_armor_gone")
 			end
-
-			local pm = managers.player
 
 			self:_start_regen_on_the_side(pm:upgrade_value("player", "passive_always_regen_armor", 0))
 
@@ -1663,6 +1801,7 @@ function PlayerDamage:set_armor(armor)
 	self._armor = Application:digest_value(armor, true)
 end
 
+--[[
 --For people like SC that enjoy being blinded when taking damage
 if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 	local _hit_direction_actual = PlayerDamage._hit_direction
@@ -1693,6 +1832,7 @@ if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
 		return _hit_direction_actual(self, position_vector, ...)
 	end
 end
+]]--
 
 function PlayerDamage:play_whizby(position)
 	self._unit:sound():play_whizby({

@@ -20,6 +20,14 @@ function ProjectileBase:update(unit, t, dt)
 	if self._sweep_data and not self._collided then
 		self._unit:m_position(self._sweep_data.current_pos)
 
+		local raycast_params = {
+			"ray",
+			self._sweep_data.last_pos,
+			self._sweep_data.current_pos,
+			"slot_mask",
+			self._sweep_data.slot_mask
+		}
+
 		local col_ray = nil
 		local ignore_units = {}
 
@@ -36,11 +44,24 @@ function ProjectileBase:update(unit, t, dt)
 		if #ignore_units > 0 then
 			col_ray = World:raycast("ray", self._sweep_data.last_pos, self._sweep_data.current_pos, "slot_mask", self._sweep_data.slot_mask, "ignore_unit", ignore_units) --prevent husks from hitting themselves with RPGs/grenade launchers
 		else
-			col_ray = World:raycast("ray", self._sweep_data.last_pos, self._sweep_data.current_pos, "slot_mask", self._sweep_data.slot_mask)
+			col_ray = World:raycast(unpack(raycast_params))
 		end
+		
+		if self._sphere_cast_radius then
+			table.list_append(raycast_params, {
+				"sphere_cast_radius",
+				self._sphere_cast_radius,
+				"bundle",
+				4
+			})
+		end		
 
 		if self._draw_debug_trail then
-			Draw:brush(Color(1, 0, 0, 1), nil, 3):line(self._sweep_data.last_pos, self._sweep_data.current_pos)
+			if self._sphere_cast_radius then
+				Draw:brush(Color(0.25, 0, 0, 1), nil, 3):cylinder(self._sweep_data.last_pos, self._sweep_data.current_pos, self._sphere_cast_radius, 4)
+			else
+				Draw:brush(Color(1, 0, 0, 1), nil, 3):line(self._sweep_data.last_pos, self._sweep_data.current_pos)
+			end
 		end
 
 		if col_ray and col_ray.unit then
@@ -62,6 +83,11 @@ function ProjectileBase:update(unit, t, dt)
 
 		self._unit:m_position(self._sweep_data.last_pos)
 	end
+	
+	if self._warning_fx_vfx_data then
+		self:_warning_fx_vfx_upd(unit, t, dt, self._warning_fx_vfx_data)
+	end
+	
 end
 
 function ProjectileBase:create_sweep_data()

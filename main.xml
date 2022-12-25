@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.0.2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.0.3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -77,7 +77,7 @@
 		<hook file="sc/units/props/buffballoon.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/units/props/balloondamage.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/units/props/missiondoor.lua" source_file="lib/units/props/missiondoor"/>
-	    	<hook file="sc/units/props/smalllootbase.lua" source_file="lib/units/props/smalllootbase"/>
+	    <hook file="sc/units/props/smalllootbase.lua" source_file="lib/units/props/smalllootbase"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
@@ -117,6 +117,7 @@
 		<hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
 		<hook file="sc/managers/blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
 		<hook file="sc/managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
+		<hook file="sc/managers/menu/SpecializationGuiNew.lua" source_file="lib/managers/menu/specializationguinew"/>
 		<hook file="sc/tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
@@ -253,7 +254,7 @@
 		<hook file="sc/units/civilians/civilianlogicflee.lua" source_file="lib/units/civilians/logics/civilianlogicflee"/>
 		<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 		<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
-		<hook file="sc/units/enemies/tankcopmedicdamage.lua" source_file="lib/units/enemies/tank/tankmediccopdamage"/>
+		<hook file="sc/units/enemies/tankmediccopdamage.lua" source_file="lib/units/enemies/tank/tankmediccopdamage"/>
 		<hook file="sc/units/enemies/husktankmediccopdamage.lua" source_file="lib/units/enemies/tank/husktankmediccopdamage"/>
 		<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
 		<hook file="sc/units/weapons/concussiongrenade.lua" source_file="lib/units/weapons/grenades/concussiongrenade"/>
@@ -353,6 +354,7 @@
 		<hook file="sc/mutators/mutatortitandozers.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
 		<hook file="sc/mutators/mutatorbirthday.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/mutatorpiggybank.lua" source_file="lib/mutators/mutatorpiggybank"/>
+		<hook file="sc/mutators/mutatorcg22.lua" source_file="lib/mutators/mutatorcg22"/>
 		<!--///NEW MUTATORS GO HERE\\\-->
 		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfatroll.lua" source_file="lib/mutators/basemutator"/>
@@ -495,27 +497,39 @@
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
 			<option_group name="OTHER">
+
+				<option_group name="WeaponHandling">
+					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="QueuedShooting"/>
+					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
+					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
+					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
+					<option type="bool" default_value="true" name="StaticAim"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="SecondSightSprint"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="SeparateBowADS"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="SprintCancel"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="AimDeploysBipod"/>
+					<option type="bool" default_value="false" name="MoveCancelBipod"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="AutoDMRs"/>
+				</option_group>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
-				<option type="bool" default_value="false" name="RestoreHitFlash"/>
-				<divider name="tod_divider" size="7"/>
-				<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
-				<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
-				<option type="bool" default_value="true" name="StaticAim"/>
-				<divider name="tod_divider" size="7"/>
-				<option type="bool" default_value="false" name="SeparateBowADS"/>
-				<divider name="tod_divider" size="7"/>
-				<option type="bool" default_value="false" name="AimDeploysBipod"/>
-				<option type="bool" default_value="false" name="MoveCancelBipod"/>
-				<divider name="tod_divider" size="7"/>
-				<option type="bool" default_value="false" name="AutoDMRs"/>
-				<divider name="tod_divider" size="7"/>
-				<option type="bool" default_value="false" name="SprintCancel"/>
+				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
 				<divider name="tod_divider" size="7"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
 				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
+				<option type="bool" default_value="false" name="BotsNoDrop"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="CloakerTurn"/>
@@ -593,7 +607,7 @@
     <Package id="packages/overkill_290_sc_federales" file="packages/federales_diff/overkill_290_sc_federales.xml"/>
     <Package id="packages/sm_wish_sc_federales" file="packages/federales_diff/sm_wish_sc_federales.xml"/>	
    
-   <!-- ///DIFF PACKAGES MURKYWATER\\\ -->
+	<!-- ///DIFF PACKAGES MURKYWATER\\\ -->
     <Package id="packages/normal_sc_murkywater" file="packages/murkywater_diff/normal_sc_murkywater.xml"/>
     <Package id="packages/hard_sc_murkywater" file="packages/murkywater_diff/hard_sc_murkywater.xml"/>
     <Package id="packages/overkill_sc_murkywater" file="packages/murkywater_diff/overkill_sc_murkywater.xml"/>
@@ -601,6 +615,15 @@
     <Package id="packages/easy_wish_sc_murkywater" file="packages/murkywater_diff/easy_wish_sc_murkywater.xml"/>
     <Package id="packages/overkill_290_sc_murkywater" file="packages/murkywater_diff/overkill_290_sc_murkywater.xml"/>
     <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/>	
+	
+	<!-- ///DIFF PACKAGES OMNIA\\\ -->
+    <Package id="packages/normal_sc_omnia" file="packages/omnia_diff/normal_sc_omnia.xml"/>
+    <Package id="packages/hard_sc_omnia" file="packages/omnia_diff/hard_sc_omnia.xml"/>
+    <Package id="packages/overkill_sc_omnia" file="packages/omnia_diff/overkill_sc_omnia.xml"/>
+    <Package id="packages/overkill_145_sc_omnia" file="packages/omnia_diff/overkill_145_sc_omnia.xml"/>
+    <Package id="packages/easy_wish_sc_omnia" file="packages/omnia_diff/easy_wish_sc_omnia.xml"/>
+    <Package id="packages/overkill_290_sc_omnia" file="packages/omnia_diff/overkill_290_sc_omnia.xml"/>
+    <Package id="packages/sm_wish_sc_omnia" file="packages/omnia_diff/sm_wish_sc_omnia.xml"/>
 
 	<!--///DIFF PACKAGES ZOMBIE\\\-->
     <Package id="packages/normal_sc_zombie" file="packages/zombie_diff/normal_sc_zombie.xml"/>
@@ -655,6 +678,7 @@
 	<Package id="packages/skm_sc_russia" file="packages/russia_diff/skm_sc_russia.xml"/>
 	<Package id="packages/skm_sc_zombie" file="packages/zombie_diff/skm_sc_zombie.xml"/>
 	<Package id="packages/skm_sc_murkywater" file="packages/murkywater_diff/skm_sc_murkywater.xml"/>
+	<Package id="packages/skm_sc_omnia" file="packages/murkywater_diff/skm_sc_omnia.xml"/>
     <Package id="packages/skm_sc_federales" file="packages/federales_diff/skm_sc_federales.xml"/>
 	
 </mod>

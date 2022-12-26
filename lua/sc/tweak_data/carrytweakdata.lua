@@ -78,6 +78,8 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 		}
 	}	
 	--made Train Heist ammo explode on huge impact again :')
+	--Disabled due to stack overflow crash
+	--[[
 	self.ammo = {
 		type = "explosives",
 		name_id = "hud_carry_ammo",
@@ -88,7 +90,7 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 			SO_category = "enemies"
 		}
 	}
-	
+	--]]
 	--Overriding so cops won't try to snatch up the goats
 	self.goat.AI_carry = nil
 

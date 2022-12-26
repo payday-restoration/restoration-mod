@@ -3169,7 +3169,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.HEALTH_INIT = 120
 	self.boom_summers.headshot_dmg_mul = 1.5
 	self.boom_summers.damage_resistance = presets.damage_resistance.none
-	self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
+	self.boom_summers.tags = {"female_enemy", "custom", "medic_summers", "special"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true

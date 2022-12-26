@@ -3801,7 +3801,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"flamethrower_mk2","system","china"
 	}
 	for i, wep_id in ipairs(recat) do
-		self[ wep_id ].always_play_anims = true
+		self[ wep_id ].always_play_anims = true --Makes weapon ignore the "No recoil anims while ADS" setting when enabled
 	end
 		
 	--Weapon specific attachment category names
@@ -3863,9 +3863,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mac10.override_mod_type_name = {
 		["lower_reciever"] = "whole_receiver",
 	}
-	self.g36.override_mod_type_name = {
-		["foregrip"] = "barrel",
-	}
 	self.elastic.override_mod_type_name = {
 		["upper_reciever"] = "riser",
 	}
@@ -3881,6 +3878,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g36.override_mod_type_name = {
 		["foregrip"] = "forebarrelgrip"
 	}
+	--[[
+	self.g3.override_mod_type_name = {
+		["stock"] = "jiisuri_stock", --:^)
+	}
+	--]]
 	self.galil.override_mod_type_name = {
 		["barrel"] = "forebarrelgrip"
 	}
@@ -3923,22 +3925,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		if weap.stats and weap.stats.total_ammo_mod then
 			weap.stats.total_ammo_mod = 100
 		end
-	end
-	
-	for i, weap in pairs(self) do
 		if weap.stats and weap.stats.reload then
 			weap.stats.reload = 20
 		end
-	end		
-	
-	for i, weap in pairs(self) do
 		if weap.stats and weap.stats.extra_ammo then
 			weap.stats.extra_ammo = 101
 		end
-	end
-	
-	--Test to just give everything sniper auto hit cause reasons
-	for i, weap in pairs(self) do
+		--Test to just give everything sniper auto hit cause reasons
 		if weap.autohit then
 			weap.autohit.INIT_RATIO = 0.05
 			weap.autohit.MAX_RATIO = 0.4
@@ -3947,17 +3940,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			weap.autohit.MIN_RATIO = 0.2
 			weap.autohit.near_angle = 2				
 		end
-	end		
-	
-	--burst fire
-	for i, weap in pairs(self) do
+		--burst fire
 		if weap.CAN_TOGGLE_FIREMODE then
 			weap.BURST_FIRE = false
 		end
-	end	
-
-	--No more upgrade blocks!
-	for i, weap in pairs(self) do
+		--No more upgrade blocks!
 		if weap.upgrade_blocks then
 			weap.upgrade_blocks = nil
 		end
@@ -12530,6 +12517,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 	
 		if self.bs23 then --Hammer 23
+			self.bs23.categories = { "shotgun" }
 			self.bs23.recategorize = { "break_shot" }
 			self.bs23.damage_type = "shotgun_heavy"
 			self.bs23.damage_type_single_ray = "anti_materiel"

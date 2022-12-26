@@ -2,6 +2,14 @@ local function format_round(num, round_value)
 	return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
 end
 
+local function format_round_2(num, round_value)
+	return round_value and tostring(math.round(num)) or string.format("%.2f", num)
+end
+
+local function format_round_3(num, round_value)
+	return round_value and tostring(math.round(num)) or string.format("%.2f", num):gsub("%.?0+$", "")
+end
+
 --Can't figure out how "color_ranges" is read for multiple colors so have some ugly workaround
 function PlayerInventoryGui:set_info_text(text, color_ranges, recursive, resource_color)
 	self._info_text:set_text(text)
@@ -115,6 +123,160 @@ function PlayerInventoryGui:set_info_text(text, color_ranges, recursive, resourc
 
 	self._info_panel:set_top(self._info_text:bottom())
 	self._info_panel:set_h(self._info_panel:parent():h() - self._info_panel:top())
+end
+
+function PlayerInventoryGui:_get_melee_weapon_stats(name)
+	local base_stats = {}
+	local mods_stats = {}
+	local skill_stats = {}
+	local stats_data = managers.blackmarket:get_melee_weapon_stats(name)
+	local multiple_of = {}
+	local has_non_special = managers.player:has_category_upgrade("player", "non_special_melee_multiplier")
+	local has_special = managers.player:has_category_upgrade("player", "melee_damage_multiplier")
+	local non_special = managers.player:upgrade_value("player", "non_special_melee_multiplier", 1) - 1
+	local special = managers.player:upgrade_value("player", "melee_damage_multiplier", 1) - 1
+
+	for i, stat in ipairs(self._stats_shown) do
+		local skip_rounding = stat.num_decimals
+		base_stats[stat.name] = {
+			value = 0,
+			max_value = 0,
+			min_value = 0
+		}
+		mods_stats[stat.name] = {
+			value = 0,
+			max_value = 0,
+			min_value = 0
+		}
+		skill_stats[stat.name] = {
+			value = 0,
+			max_value = 0,
+			min_value = 0
+		}
+
+		if stat.name == "damage" then
+			local base_min = stats_data.min_damage * tweak_data.gui.stats_present_multiplier
+			local base_max = stats_data.max_damage * tweak_data.gui.stats_present_multiplier
+			local dmg_mul = managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[name].stats.weapon_type) .. "_damage_multiplier", 1)
+			local skill_mul = dmg_mul * ((has_non_special and has_special and math.max(non_special, special) or 0) + 1) - 1
+			local skill_min = skill_mul
+			local skill_max = skill_mul
+			base_stats[stat.name] = {
+				min_value = base_min,
+				max_value = base_max,
+				value = (base_min + base_max) / 2
+			}
+			skill_stats[stat.name] = {
+				min_value = skill_min,
+				max_value = skill_max,
+				value = (skill_min + skill_max) / 2,
+				skill_in_effect = skill_min > 0 or skill_max > 0
+			}
+		elseif stat.name == "damage_effect" then
+			local base_min = stats_data.min_damage_effect
+			local base_max = stats_data.max_damage_effect
+			base_stats[stat.name] = {
+				min_value = base_min,
+				max_value = base_max,
+				value = (base_min + base_max) / 2
+			}
+			local dmg_mul = managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[name].stats.weapon_type) .. "_damage_multiplier", 1) - 1
+			local gst_skill = managers.player:upgrade_value("player", "melee_knockdown_mul", 1) - 1
+			local skill_mul = (1 + dmg_mul) * (1 + gst_skill) - 1
+			local skill_min = skill_mul
+			local skill_max = skill_mul
+			skill_stats[stat.name] = {
+				skill_min = skill_min,
+				skill_max = skill_max,
+				min_value = skill_min,
+				max_value = skill_max,
+				value = (skill_min + skill_max) / 2,
+				skill_in_effect = skill_min > 0 or skill_max > 0
+			}
+		elseif stat.name == "charge_time" then
+			local base = stats_data.charge_time
+			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
+			base_stats[stat.name] = {
+				value = base,
+				min_value = base,
+				max_value = base
+			}
+			skill_stats[stat.name] = {
+				min_value = -skill,
+				max_value = -skill,
+				value = -skill,
+				skill_in_effect = base > 0 and skill > 0
+			}
+		elseif stat.name == "range" then
+			local base_min = stats_data.range
+			local base_max = stats_data.range
+			base_stats[stat.name] = {
+				min_value = base_min,
+				max_value = base_max,
+				value = (base_min + base_max) / 2
+			}
+		elseif stat.name == "concealment" then
+			local base = managers.blackmarket:_calculate_melee_weapon_concealment(name)
+			local skill = managers.blackmarket:concealment_modifier("melee_weapons")
+			base_stats[stat.name] = {
+				min_value = base,
+				max_value = base,
+				value = base
+			}
+			skill_stats[stat.name] = {
+				min_value = skill,
+				max_value = skill,
+				value = skill,
+				skill_in_effect = skill > 0
+			}
+		end
+
+		if stat.multiple_of then
+			table.insert(multiple_of, {
+				stat.name,
+				stat.multiple_of
+			})
+		end
+
+		base_stats[stat.name].real_value = base_stats[stat.name].value
+		mods_stats[stat.name].real_value = mods_stats[stat.name].value
+		skill_stats[stat.name].real_value = skill_stats[stat.name].value
+		base_stats[stat.name].real_min_value = base_stats[stat.name].min_value
+		mods_stats[stat.name].real_min_value = mods_stats[stat.name].min_value
+		skill_stats[stat.name].real_min_value = skill_stats[stat.name].min_value
+		base_stats[stat.name].real_max_value = base_stats[stat.name].max_value
+		mods_stats[stat.name].real_max_value = mods_stats[stat.name].max_value
+		skill_stats[stat.name].real_max_value = skill_stats[stat.name].max_value
+	end
+
+	for i, data in ipairs(multiple_of) do
+		local multiplier = data[1]
+		local stat = data[2]
+		base_stats[multiplier].min_value = base_stats[stat].real_min_value * base_stats[multiplier].real_min_value
+		base_stats[multiplier].max_value = base_stats[stat].real_max_value * base_stats[multiplier].real_max_value
+		base_stats[multiplier].value = (base_stats[multiplier].min_value + base_stats[multiplier].max_value) / 2
+	end
+
+	for i, stat in ipairs(self._stats_shown) do
+		if not stat.index then
+			if skill_stats[stat.name].value and base_stats[stat.name].value then
+				skill_stats[stat.name].value = base_stats[stat.name].value * skill_stats[stat.name].value
+				base_stats[stat.name].value = base_stats[stat.name].value
+			end
+
+			if skill_stats[stat.name].min_value and base_stats[stat.name].min_value then
+				skill_stats[stat.name].min_value = base_stats[stat.name].min_value * skill_stats[stat.name].min_value
+				base_stats[stat.name].min_value = base_stats[stat.name].min_value
+			end
+
+			if skill_stats[stat.name].max_value and base_stats[stat.name].max_value then
+				skill_stats[stat.name].max_value = base_stats[stat.name].max_value * skill_stats[stat.name].max_value
+				base_stats[stat.name].max_value = base_stats[stat.name].max_value
+			end
+		end
+	end
+
+	return base_stats, mods_stats, skill_stats
 end
 
 function PlayerInventoryGui:_get_armor_stats(name)
@@ -453,6 +615,111 @@ function PlayerInventoryGui:_update_info_weapon(name)
 	end
 end
 
+function PlayerInventoryGui:_update_info_melee(name)
+	local player_loadout_data = managers.blackmarket:player_loadout_data()
+	local category = "melee_weapons"
+	local equipped_item = managers.blackmarket:equipped_item(category)
+	local base_stats, mods_stats, skill_stats = self:_get_melee_weapon_stats(equipped_item)
+	local text_string = string.format("%s", player_loadout_data.melee_weapon.info_text)
+
+	self:set_info_text(text_string)
+
+	local value, value_min, value_max = nil
+
+	for _, stat in ipairs(self._stats_shown) do
+		if stat.range then
+			value_min = math.max(base_stats[stat.name].min_value + mods_stats[stat.name].min_value + skill_stats[stat.name].min_value, 0)
+			value_max = math.max(base_stats[stat.name].max_value + mods_stats[stat.name].max_value + skill_stats[stat.name].max_value, 0)
+		end
+
+		value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
+		local base, base_min, base_max, skill, skill_min, skill_max = nil
+
+		if stat.range then
+			base_min = base_stats[stat.name].min_value
+			base_max = base_stats[stat.name].max_value
+			skill_min = skill_stats[stat.name].min_value
+			skill_max = skill_stats[stat.name].max_value
+		end
+
+		base = base_stats[stat.name].value
+		skill = skill_stats[stat.name].value
+		if stat.name == "range" then
+			base = base / 100
+			skill = skill / 100
+			value = value / 100
+		end
+		local format_string = "%0." .. tostring(stat.num_decimals or 0) .. "f"
+		local equip_text = value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(value, stat.round_value)) or format_round(value, stat.round_value)
+		local base_text = base and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(base, stat.round_value)) or format_round(base, stat.round_value)
+		local skill_text = skill_stats[stat.name].value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(skill_stats[stat.name].value, stat.round_value)) or format_round(skill_stats[stat.name].value, stat.round_value)
+		local base_min_text = base_min and format_round(base_min, true)
+		local base_max_text = base_max and format_round(base_max, true)
+		local value_min_text = value_min and format_round(value_min, true)
+		local value_max_text = value_max and format_round(value_max, true)
+		local skill_min_text = skill_min and format_round(skill_min, true)
+		local skill_max_text = skill_max and format_round(skill_max, true)
+
+		log("equip_text " .. tostring( equip_text ))
+		log("base_text " .. tostring( base_text ))
+
+
+		if stat.range then
+			if base_min ~= base_max then
+				base_text = base_min_text .. " (" .. base_max_text .. ")"
+			end
+
+			if value_min ~= value_max then
+				equip_text = value_min_text .. " (" .. value_max_text .. ")"
+			end
+
+			if skill_min ~= skill_max then
+				skill_text = skill_min_text .. " (" .. skill_max_text .. ")"
+			end
+		end
+
+		if stat.suffix then
+			base_text = base_text .. tostring(stat.suffix)
+			equip_text = equip_text .. tostring(stat.suffix)
+			skill_text = skill_text .. tostring(stat.suffix)
+		end
+
+		if stat.prefix then
+			base_text = tostring(stat.prefix) .. base_text
+			equip_text = tostring(stat.prefix) .. equip_text
+			skill_text = tostring(stat.prefix) .. skill_text
+		end
+
+		self._stats_texts[stat.name].total:set_alpha(1)
+		self._stats_texts[stat.name].total:set_text(equip_text)
+		self._stats_texts[stat.name].base:set_text(base_text)
+		self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. skill_text or "")
+
+		local positive = value ~= 0 and base < value
+		local negative = value ~= 0 and value < base
+
+		if stat.inverse then
+			local temp = positive
+			positive = negative
+			negative = temp
+		end
+
+		if stat.range then
+			if positive then
+				self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_positive)
+			elseif negative then
+				self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_negative)
+			end
+		elseif positive then
+			self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_positive)
+		elseif negative then
+			self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_negative)
+		else
+			self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
+		end
+	end
+end
+
 function PlayerInventoryGui:_update_stats(name)
 	if name == self._current_stat_shown then
 		return
@@ -528,8 +795,9 @@ function PlayerInventoryGui:_update_stats(name)
 				suffix = managers.localization:text("menu_seconds_suffix_short")
 			},
 			{
-				range = true,
-				name = "range"
+				name = "range",
+				num_decimals = 2,
+				suffix = "m"
 			},
 			{
 				index = true,
@@ -738,7 +1006,6 @@ function PlayerInventoryGui:_update_info_throwable(name)
 
 	self:set_info_text(text_string, nil, nil, resource_color)
 end
-
 
 function PlayerInventoryGui:_update_info_specialization(name)
 	local text_string = ""

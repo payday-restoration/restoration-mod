@@ -1975,6 +1975,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_riser"] = "Riser",
 		["bm_menu_pump"] = "Pump",
 
+		["bm_menu_upotte_barrel"] = "Barrel",
+		["bm_menu_upotte_foregrip"] = "Handguard",
+		["bm_menu_upotte_stock"] = "Stock",
+		["bm_menu_upotte_grip"] = "Grip",
+
 		["bm_menu_ro_barrel"] = "Barrel",
 		["bm_menu_ro_stock"] = "Stock",
 		["bm_menu_ro_modifier"] = "Modifiers",
@@ -2350,7 +2355,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m14"] = "Ichiyon",
 						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
 					["bm_w_g3"] = "Jiisuri",
-						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
+						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
+						["bm_menu_jiisuri_stock"] = "Pantyhose",
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",

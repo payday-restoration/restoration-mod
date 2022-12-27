@@ -367,7 +367,9 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	end
 	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
 
-	self:_send_damage_drama(attack_data, health_subtracted)
+	if health_subtracted > 0 then
+		self:_send_damage_drama(attack_data, health_subtracted)
+	end
 
 	--Unique kill taunt stuff, in case player was knocked into bleedout.
 	if self._bleed_out and alive(attacker_unit) and attacker_unit:alive() then
@@ -774,6 +776,10 @@ function PlayerDamage:damage_explosion(attack_data)
 	}
 
 	if not self:can_take_damage(attack_data, damage_info) then
+		return
+	end
+
+	if attack_data.attacker_unit and alive(attack_data.attacker_unit) and attack_data.attacker_unit ~= self._unit and self:is_friendly_fire(attack_data.attacker_unit, true) then
 		return
 	end
 

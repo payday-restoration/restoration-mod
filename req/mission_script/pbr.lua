@@ -23,7 +23,7 @@ return {
 	},
 	[100626] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100630] = {
@@ -73,7 +73,7 @@ return {
 	},
 	[100651] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100652] = {
@@ -94,12 +94,12 @@ return {
 	},
 	[100667] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100668] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100669] = {
@@ -130,22 +130,22 @@ return {
 	--mfr blockade
 	[100692] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100693] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100694] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100695] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100703] = {
@@ -155,7 +155,7 @@ return {
 	},
 	[100704] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100705] = {
@@ -180,7 +180,7 @@ return {
 	},
 	[100714] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100715] = {
@@ -200,7 +200,7 @@ return {
 	},
 	[100719] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	--mid blockade
@@ -211,27 +211,27 @@ return {
 	},
 	[100735] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100736] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100737] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
 		}
 	},
 	[100741] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100742] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
 		}
 	},
 	[100745] = {
@@ -272,7 +272,7 @@ return {
 	},
 	[100766] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100769] = {
@@ -282,12 +282,12 @@ return {
 	},
 	[100772] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
 		}
 	},
 	[100774] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100775] = {
@@ -312,12 +312,12 @@ return {
 	},
 	[100781] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
 		}
 	},
 	[100782] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	--ffl blockade
@@ -353,12 +353,12 @@ return {
 	},
 	[100818] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[100820] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[100821] = {
@@ -405,27 +405,27 @@ return {
 	},
 	[101263] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"
 		}
 	},
 	[101264] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
 		}
 	},
 	[101265] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
 		}
 	},
 	[101266] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
 		}
 	},
 	[101272] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
 		}
 	},
 	[101275] = {

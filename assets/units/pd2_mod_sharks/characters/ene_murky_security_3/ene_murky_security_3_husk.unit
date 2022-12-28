@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" />
+	<object file="units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4" />
 
 	<dependencies>
 		
@@ -11,8 +11,8 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="cop" />			
-			<var name="_default_weapon_id" value="c45" />
+			<var name="_tweak_table" value="security" />			
+			<var name="_default_weapon_id" value="r870" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

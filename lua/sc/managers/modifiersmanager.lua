@@ -134,10 +134,10 @@ elseif ai_type == m then
 		["units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"] = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		
 		--Beat Cops
-		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",
-		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
-		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
+		["units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"] = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"] = "units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",
+		["units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"] = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
+		["units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"] = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
 		
 		--Murky FBI Rifle
 		["units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",

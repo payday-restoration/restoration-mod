@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" orientation_object="root_point" />
+	<diesel materials="units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
@@ -20,7 +20,7 @@
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="-5" name="c_sphere_head_ragdoll"/>
 		</body>
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
@@ -197,13 +197,13 @@
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_security_body, mtr_security_head" max_distance="1000" />
-					<material materials="mtr_security_body_lod_1, mtr_security_head_lod_1" max_distance="1500" />
-					<material materials="mtr_security_body_lod_2, mtr_security_head_lod_2" />
+					<material materials="mtr_security_body" max_distance="1000" />
+					<material materials="mtr_security_body_lod_1" max_distance="1500" />
+					<material materials="mtr_security_body_lod_2" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_security_body, mtr_security_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_security_body_lod_2, mtr_security_head_lod_2" />
+					<material materials="mtr_security_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_security_body_lod_2" />
 				</object>
 			</lod_object>
 
@@ -216,6 +216,13 @@
 				<object name="g_head_lod1" 	enabled="true" lod="1" >
 					<material materials="mtr_security_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_security_head_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_hat">
+				<object name="g_hat_lod1" 		enabled="true"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				</object>
+				<object name="g_hat_lod2" 		enabled="true" lod="1" >
 				</object>
 			</lod_object>
 			<object name="s_body" enabled="true" shadow_caster="true"/>

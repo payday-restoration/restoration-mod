@@ -1,25 +1,29 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" />
+	<object file="units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3" />
 
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="security" />
-			<var name="_default_weapon_id" value="raging_bull" />
+			<var name="_tweak_table" value="security" />			
+			<var name="_default_weapon_id" value="mp5" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_hat_lod" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />
@@ -42,7 +46,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_mod_sharks/characters/ene_murky_security_2/ene_murky_security_2_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

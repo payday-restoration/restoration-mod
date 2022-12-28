@@ -669,9 +669,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
 			},				
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"),
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"),	
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4")
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"),
@@ -716,8 +716,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3")
 			},				
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"),
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3")
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"),
@@ -754,7 +754,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 {				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
 			},				
 			murkywater = {	
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4")
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04")
@@ -786,7 +786,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2")
 			},
 			murkywater = {	
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2")
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02")

@@ -391,7 +391,7 @@ function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 	local t = TimerManager:game():time()
 	local attacker_unit = attack_data.attacker_unit
 
-	if not armor_break or armor_break and t > self._mrwi_last_ricochet_time + cooldown then
+	if attacker_unit and (not armor_break or (armor_break and t > self._mrwi_last_ricochet_time + cooldown)) then
 		if armor_break then
 			self._mrwi_last_ricochet_time = t
 		end

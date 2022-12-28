@@ -23409,6 +23409,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -1
 			}
 			self.parts.wpn_fps_ass_m4_m_slick.supported = true
+			self.parts.wpn_fps_ass_m4_m_slick.stats = {
+				value = 0
+			}
 			self.parts.wpn_fps_ass_m4_m_star.supported = true
 			self.parts.wpn_fps_ass_m4_m_star.stats = {
 				value = 2,

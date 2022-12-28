@@ -1347,7 +1347,7 @@ function PlayerStandard:_end_action_running(t)
 		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and self._equipped_unit:base()._starwars))))
 		
 		if stop_running then
-			self._ext_camera:play_redirect(self:get_animation("stop_running"), speed_multiplier)
+			self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
 		end
 	end
 end

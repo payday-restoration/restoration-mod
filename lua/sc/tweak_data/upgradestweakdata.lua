@@ -1754,10 +1754,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.armor_to_health_conversion = {
 		50
 	}
-	self.values.player.damage_control_passive = {{
-		30,
-		12.5
-	}}
+	self.values.player.damage_control_passive = {
+		{
+			30,
+			12.5
+		}
+	}
 	self.values.player.damage_control_auto_shrug = {
 		4
 	}
@@ -1962,7 +1964,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.dodge_ricochet_bullets = {
 		{
 			1, --% Chance
-			10, --Cooldown, only applies to armor break ricochets
+			15, --Cooldown, only applies to armor break ricochets
 			1.5 --Armor break ricochet damage mult, Resmod addition
 		}
 	}
@@ -1973,7 +1975,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{
 			0.25, --% Threshold
 			2, --Duration
-			30 --Cooldown
+			60 --Cooldown (seconds)
 		}
 	}
 
@@ -2028,7 +2030,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 	local deck9_options = {
 		{ --Crew Chief
 			icon_xy = {2, 0},
-			name_id = "menu_deck1_3",
+			name_id = "menu_st_spec_1",
 			desc_id = "menu_deck1_mrwi_desc",
 			upgrades = {
 				"team_passive_stamina_multiplier_1",
@@ -2038,7 +2040,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Muscle
 			icon_xy = {3, 1},
-			name_id = "menu_deck2_7",
+			name_id = "menu_st_spec_2",
 			desc_id = "menu_deck2_mrwi_desc",
 			upgrades = {
 				"player_panic_suppression",
@@ -2048,7 +2050,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Armorer
 			icon_xy = {6, 1},
-			name_id = "menu_deck3_7",
+			name_id = "menu_st_spec_3",
 			desc_id = "menu_deck3_mrwi_desc",
 			upgrades = {
 				"player_perk_armor_regen_timer_multiplier_1",
@@ -2057,7 +2059,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Rouge
 			icon_xy = {4, 2},
-			name_id = "menu_deck4_1",
+			name_id = "menu_st_spec_4",
 			desc_id = "menu_deck4_mrwi_desc",
 			upgrades = {
 				"weapon_passive_swap_speed_multiplier_1",
@@ -2066,7 +2068,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Hitman
 			icon_xy = {6, 2},
-			name_id = "menu_deck5_1",
+			name_id = "menu_st_spec_5",
 			desc_id = "menu_deck5_mrwi_desc",
 			upgrades = {
 				"player_store_temp_health_1",
@@ -2075,7 +2077,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Crook
 			icon_xy = {5, 3},
-			name_id = "menu_deck6_5",
+			name_id = "menu_st_spec_6",
 			desc_id = "menu_deck6_mrwi_desc",
 			upgrades = {
 				"player_level_2_armor_multiplier_2",
@@ -2086,7 +2088,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Burglar
 			icon_xy = {1, 2},
-			name_id = "menu_deck7_1",
+			name_id = "menu_st_spec_7",
 			desc_id = "menu_deck7_mrwi_desc",
 			upgrades = {
 				"player_crouch_dodge_chance_burglar_1",
@@ -2095,7 +2097,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Infiltrator
 			icon_xy = {3, 4},
-			name_id = "menu_deck8_3",
+			name_id = "menu_st_spec_8",
 			desc_id = "menu_deck8_mrwi_desc",
 			upgrades = {
 				"player_damage_dampener_close_contact_2",
@@ -2104,7 +2106,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Sociopath
 			icon_xy = {0, 5},
-			name_id = "menu_deck9_3",
+			name_id = "menu_st_spec_9",
 			desc_id = "menu_deck9_mrwi_desc",
 			upgrades = {
 				"player_killshot_regen_armor_bonus",
@@ -2113,7 +2115,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Gambler
 			icon_xy = {5, 5},
-			name_id = "menu_deck10_3",
+			name_id = "menu_st_spec_10",
 			desc_id = "menu_deck10_mrwi_desc",
 			upgrades = {
 				"temporary_loose_ammo_give_team",
@@ -2122,7 +2124,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Grinder
 			icon_xy = {1, 6},
-			name_id = "menu_deck11_1",
+			name_id = "menu_st_spec_11",
 			desc_id = "menu_deck11_mrwi_desc",
 			upgrades = {
 				"player_damage_to_hot_1",
@@ -2133,7 +2135,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Yakuza
 			icon_xy = {0, 7},
-			name_id = "menu_deck12_3",
+			name_id = "menu_st_spec_12",
 			desc_id = "menu_deck12_mrwi_desc",
 			upgrades = {
 				"player_kill_dodge_regen",
@@ -2143,7 +2145,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		},
 		{ --Ex-Pres
 			icon_xy = {3, 7},
-			name_id = "menu_deck13_1",
+			name_id = "menu_st_spec_13",
 			desc_id = "menu_deck13_mrwi_desc",
 			upgrades = {
 				"player_armor_health_store_amount_1",
@@ -2153,7 +2155,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Maniac
 			icon_xy = {0, 0},
 			texture_bundle_folder = "coco",
-			name_id = "menu_deck14_1",
+			name_id = "menu_st_spec_14",
 			desc_id = "menu_deck14_mrwi_desc",
 			upgrades = {
 				"player_cocaine_stacking_1",
@@ -2163,7 +2165,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Anarchist
 			icon_xy = {0, 0},
 			texture_bundle_folder = "opera",
-			name_id = "menu_deck15_1",
+			name_id = "menu_st_spec_15",
 			desc_id = "menu_deck15_mrwi_desc",
 			upgrades = {
 				"player_armor_grinding_1",
@@ -2173,7 +2175,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Biker
 			icon_xy = {0, 0},
 			texture_bundle_folder = "wild",
-			name_id = "menu_deck16_1",
+			name_id = "menu_st_spec_16",
 			desc_id = "menu_deck16_mrwi_desc",
 			upgrades = {
 				"player_wild_health_amount_1",
@@ -2183,7 +2185,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Kingpin
 			icon_xy = {0, 0},
 			texture_bundle_folder = "chico",
-			name_id = "menu_deck17_1",
+			name_id = "menu_st_spec_17",
 			desc_id = "menu_deck17_mrwi_desc",
 			upgrades = {
 				"chico_injector",
@@ -2194,7 +2196,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Sicario
 			icon_xy = {0, 0},
 			texture_bundle_folder = "max",
-			name_id = "menu_deck18_1",
+			name_id = "menu_st_spec_18",
 			desc_id = "menu_deck18_mrwi_desc",
 			upgrades = {
 				"smoke_screen_grenade",
@@ -2204,7 +2206,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Stoic
 			icon_xy = {0, 0},
 			texture_bundle_folder = "myh",
-			name_id = "menu_deck19_1",
+			name_id = "menu_st_spec_19",
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
 				"damage_control",
@@ -2217,7 +2219,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Tag Team
 			icon_xy = {0, 0},
 			texture_bundle_folder = "ecp",
-			name_id = "menu_deck20_1",
+			name_id = "menu_st_spec_20",
 			desc_id = "menu_deck20_mrwi_desc",
 			upgrades = {
 				"tag_team",
@@ -2229,7 +2231,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Hacker
 			icon_xy = {0, 0},
 			texture_bundle_folder = "joy",
-			name_id = "menu_deck21_1",
+			name_id = "menu_st_spec_21",
 			desc_id = "menu_deck21_mrwi_desc",
 			upgrades = {
 				"pocket_ecm_jammer",
@@ -2239,7 +2241,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 		{ --Leech
 			icon_xy = {0, 0},
 			texture_bundle_folder = "copr",
-			name_id = "menu_deck22_1",
+			name_id = "menu_st_spec_22",
 			desc_id = "menu_deck22_mrwi_desc",
 			upgrades = {
 				"temporary_copr_ability_1",

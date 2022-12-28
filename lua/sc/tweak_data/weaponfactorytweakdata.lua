@@ -9731,109 +9731,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	}
 	self.parts.wpn_fps_lmg_mg42_reciever.adds = {"wpn_fps_lmg_mg42_dummy_mag"}
 
-	self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
-
-	self.wpn_fps_lmg_mg42.override.wpn_fps_snp_mosin_rail = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_specter = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_docter = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_t1micro = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cmore = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_aimpoint_2 = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_cs = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx30 = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_rx01 = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_reflex = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_eotech_xps = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_sig = {
-		parent = "magazine_extra"
-	}	
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_uh = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_fc1 = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_spot = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_bmg = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_poe = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_health = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_hamr = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_atibal = {
-		parent = "magazine_extra"
-	}
-	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_ns_ass_filter = {
-		a_obj = "a_ns",
-		parent = "barrel"
-	}
-	
-	--Rails
-	self.wpn_fps_lmg_mg42.adds = { 
-		wpn_fps_upg_o_specter = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_aimpoint = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_docter = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_eotech = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_t1micro = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_cmore = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_acog = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_cs = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_eotech_xps = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_reflex = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_rx01 = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_rx30 = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_45iron = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_leupold = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_sig = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_uh = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_fc1 = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_tf90 = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_spot = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_bmg = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_poe = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_health = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_hamr = { "wpn_fps_snp_mosin_rail" },
-		wpn_fps_upg_o_atibal = { "wpn_fps_snp_mosin_rail" },
-		shortdot_normal = { "wpn_fps_snp_mosin_rail" },
-	}
-
 	--Buzzsaw Part Additions
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_aimpoint")
@@ -9857,6 +9754,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
+
+	self.wpn_fps_lmg_mg42.adds = {}
+	self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
+
+	for i, part_id in pairs(self.wpn_fps_lmg_mg42.uses_parts) do
+		if part_id ~= "wpn_fps_ass_sub2000_o_back" and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then	
+			self.wpn_fps_lmg_mg42.adds[part_id] = { "wpn_fps_snp_mosin_rail" }
+			self.wpn_fps_lmg_mg42.override[part_id] = { 
+				parent = "magazine_extra",
+				custom_stats = { big_scope = true }
+			}
+		end
+	end
+	self.wpn_fps_lmg_mg42.override.wpn_fps_snp_mosin_rail = { parent = "magazine_extra" }
+	self.wpn_fps_lmg_mg42.override.wpn_fps_upg_ns_ass_filter = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
 			
 	self.wpn_fps_lmg_mg42_npc.adds = deep_clone(self.wpn_fps_lmg_mg42.adds)			
 	self.wpn_fps_lmg_mg42_npc.override = deep_clone(self.wpn_fps_lmg_mg42.override)			

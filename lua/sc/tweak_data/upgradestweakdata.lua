@@ -1540,7 +1540,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		works_with_armor_kit = true,
 		tick_time = 1,
 		total_ticks = 3,
-		max_stacks = 5,
+		max_stacks = 3,
 		stacking_cooldown = 0.75,
 		add_stack_sources = {
 			bullet = true,
@@ -1560,7 +1560,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.2,
 		0.3,
 		0.4,
-		0.5 --Unused
+		
+		0.1 --Copycat's version
 	}	
 	self.values.player.damage_to_hot_extra_ticks = {2}
 	self.values.player.hot_speed_bonus = {0.05}
@@ -1727,7 +1728,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.temporary.chico_injector = {
 		{0.3, 4},
 		{0.3, 5},
-		{0.3, 6}
+		{0.3, 6},
+
+		{0.15, 4} --Copycat's version
 	}
 	self.values.player.chico_injector_speed = {
 		1.2
@@ -1756,9 +1759,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.damage_control_passive = {
 		{
+			30, --% of damage converted into DoT 
+			12.5 --% of DoT damage applied per tick
+		},
+		{--Copycat
 			30,
-			12.5
-		}
+			25
+		},
 	}
 	self.values.player.damage_control_auto_shrug = {
 		4
@@ -1854,6 +1861,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			kill_dropoff = 0.2,
 			duration = 11,
 			tagged_health_gain_ratio = 0.5
+		},
+
+		{	--Copycat
+			kill_health_gain = 0.2,
+			radius = 0.6,
+			distance = 18,
+			kill_extension = 0,
+			kill_duration = 0,
+			kill_dropoff = 0,
+			duration = 11,
+			tagged_health_gain_ratio = 0.5
 		}
 	}
 
@@ -1899,7 +1917,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.05
 	}	
 	self.values.player.copr_activate_bonus_health_ratio = {
-		0.1
+		0.1,
+
+		0.05 --Copycat
 	}	
 	self.values.player.copr_teammate_heal = {
 		0.01,
@@ -1965,17 +1985,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{
 			1, --% Chance
 			15, --Cooldown, only applies to armor break ricochets
-			1.5 --Armor break ricochet damage mult, Resmod addition
+			2 --Armor break ricochet damage mult, Resmod addition
 		}
 	}
 	self.values.player.headshot_regen_health_bonus = {
-		0.2
+		0.3
 	}
 	self.values.temporary.mrwi_health_invulnerable = {
 		{
-			0.25, --% Threshold
+			0.5, --% Threshold
 			2, --Duration
-			60 --Cooldown (seconds)
+			90 --Cooldown (seconds)
 		}
 	}
 
@@ -2127,7 +2147,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_11",
 			desc_id = "menu_deck11_mrwi_desc",
 			upgrades = {
-				"player_damage_to_hot_1",
+				"player_damage_to_hot_4",
 				"player_level_5_armor_addend_grinder",
 				"player_flak_jacket_concealment_1",
 				"bodybags_bag_quantity"
@@ -2189,7 +2209,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck17_mrwi_desc",
 			upgrades = {
 				"chico_injector",
-				"temporary_chico_injector_1",
+				"temporary_chico_injector_mrwi",
 				"player_chico_injector_speed"
 			}
 		},
@@ -2210,7 +2230,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
 				"damage_control",
-				"player_damage_control_passive",
+				"player_damage_control_passive_mrwi",
 				"player_damage_control_healing",
 				"player_armor_to_health_conversion",
 				"player_alarm_pager_speed_multiplier"
@@ -2223,7 +2243,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck20_mrwi_desc",
 			upgrades = {
 				"tag_team",
-				"player_tag_team_base_1",
+				"player_tag_team_base_mrwi",
 				"player_tag_team_cooldown_drain_1",
 				"player_tape_loop_duration_2"
 			}
@@ -2248,7 +2268,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"copr_ability",
 				"player_copr_static_damage_ratio_1",
 				"player_copr_kill_life_leech_1",
-				"player_copr_activate_bonus_health_ratio_1",
+				"player_copr_activate_bonus_health_ratio_mrwi",
 				"player_corpse_dispose_speed_multiplier",
 				"player_civ_move_multiplier"	
 			}
@@ -2822,6 +2842,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_tag_team_base_mrwi = {
+		category = "feature",
+		upgrade = {
+			value = 4,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {
@@ -3184,6 +3213,16 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
+	self.definitions.temporary_chico_injector_mrwi = {
+		name_id = "menu_temporary_chico_injector_mrwi",
+		category = "temporary",
+		upgrade = {
+			value = 4,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}
 	self.definitions.player_chico_injector_speed = {
 		name_id = "menu_player_chico_injector_speed",
 		category = "feature",
@@ -3193,6 +3232,27 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+
+	self.definitions.player_damage_control_passive_mrwi = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "damage_control_passive",
+			category = "player"
+		}
+	}
+
+
+	self.definitions.player_copr_activate_bonus_health_ratio_mrwi = {
+		name_id = "menu_player_copr_activate_bonus_health_ratio_mrwi",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "copr_activate_bonus_health_ratio",
+			category = "player"
+		}
+	}
+
 	self.definitions.pistol_swap_speed_multiplier_1 = {
 		name_id = "menu_pistol_swap_speed_multiplier",
 		category = "feature",

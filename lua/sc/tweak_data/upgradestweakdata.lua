@@ -1561,7 +1561,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.3,
 		0.4,
 		
-		0.1 --Copycat's version
+		0.0 --Unused
 	}	
 	self.values.player.damage_to_hot_extra_ticks = {2}
 	self.values.player.hot_speed_bonus = {0.05}
@@ -2136,7 +2136,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_11",
 			desc_id = "menu_deck11_mrwi_desc",
 			upgrades = {
-				"player_damage_to_hot_4",
+				"player_damage_to_hot_1",
 				"player_level_5_armor_addend_grinder",
 				"player_flak_jacket_concealment_1",
 				"bodybags_bag_quantity"

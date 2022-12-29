@@ -1540,7 +1540,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		works_with_armor_kit = true,
 		tick_time = 1,
 		total_ticks = 3,
-		max_stacks = 3,
+		max_stacks = 5,
 		stacking_cooldown = 0.75,
 		add_stack_sources = {
 			bullet = true,

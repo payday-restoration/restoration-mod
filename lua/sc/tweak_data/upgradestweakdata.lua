@@ -1861,17 +1861,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			kill_dropoff = 0.2,
 			duration = 11,
 			tagged_health_gain_ratio = 0.5
-		},
-
-		{	--Copycat
-			kill_health_gain = 0.2,
-			radius = 0.6,
-			distance = 18,
-			kill_extension = 0,
-			kill_duration = 0,
-			kill_dropoff = 0,
-			duration = 11,
-			tagged_health_gain_ratio = 0.5
 		}
 	}
 
@@ -2243,7 +2232,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck20_mrwi_desc",
 			upgrades = {
 				"tag_team",
-				"player_tag_team_base_mrwi",
+				"player_tag_team_base_1",
 				"player_tag_team_cooldown_drain_1",
 				"player_tape_loop_duration_2"
 			}
@@ -2837,15 +2826,6 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 3,
-			upgrade = "tag_team_base",
-			synced = true,
-			category = "player"
-		}
-	}
-	self.definitions.player_tag_team_base_mrwi = {
-		category = "feature",
-		upgrade = {
-			value = 4,
 			upgrade = "tag_team_base",
 			synced = true,
 			category = "player"

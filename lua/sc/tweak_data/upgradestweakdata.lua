@@ -2198,7 +2198,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck17_mrwi_desc",
 			upgrades = {
 				"chico_injector",
-				"temporary_chico_injector_mrwi",
+				"temporary_chico_injector_1",
 				"player_chico_injector_speed"
 			}
 		},
@@ -2219,7 +2219,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
 				"damage_control",
-				"player_damage_control_passive_mrwi",
+				"player_damage_control_passive",
 				"player_damage_control_healing",
 				"player_armor_to_health_conversion",
 				"player_alarm_pager_speed_multiplier"
@@ -2257,7 +2257,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"copr_ability",
 				"player_copr_static_damage_ratio_1",
 				"player_copr_kill_life_leech_1",
-				"player_copr_activate_bonus_health_ratio_mrwi",
+				"player_copr_activate_bonus_health_ratio_1",
 				"player_corpse_dispose_speed_multiplier",
 				"player_civ_move_multiplier"	
 			}

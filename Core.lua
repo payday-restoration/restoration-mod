@@ -182,13 +182,20 @@ function restoration:Init()
 		"constantine_gunrunnerclubhouse_lvl",
 		"constantine_policestation_lvl"
 	}
+		
 			
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	
-	restoration.global_spawn_multiplier = 1
+	
+	if table.contains(restoration.bravo_heists, job) then
+	restoration.always_bravos = true
+	else
 	restoration.always_bravos = false
+	end
+	
+	restoration.global_spawn_multiplier = 1
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.sonic_mod = false
@@ -359,6 +366,11 @@ function restoration:Init()
 		--"hox_1", --Hoxout D1
 		--"xmn_hox_1" --Xmas edition
 	}	
+	
+	--Bravo Response
+	restoration.bravo_heists = {
+		"trai"
+	}
 	
 	--Sub Faction overrides
 	--Texas

@@ -391,6 +391,10 @@ local weapons_map = {
 	[Idstring("units/payday2/characters/ene_security_7/ene_security_7"):key()] = "r870",
 	[Idstring("units/payday2/characters/ene_security_8/ene_security_8"):key()] = {"m1911_npc", "mp5"},
 	
+	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"):key()] = {"bravo_rifle", "bravo_shotgun", "bravo_lmg", "deagle_guard"},
+	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"):key()] = {"bravo_rifle", "bravo_shotgun", "bravo_lmg", "deagle_guard"},
+	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"):key()] = {"bravo_rifle", "bravo_shotgun", "bravo_lmg", "deagle_guard"},
+	
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"):key()] = {"m1911_npc", "mp5"},
 	

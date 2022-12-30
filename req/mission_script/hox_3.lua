@@ -58,11 +58,6 @@ return {
             enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		}
 	},
-	[102323] = {
-		values = {
-            enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-		}
-	},
 	[102324] = {
 		values = {
             enemy = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"

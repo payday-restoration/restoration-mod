@@ -1132,7 +1132,15 @@ function CharacterTweakData:_init_city_swat(presets)
 	--end
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
-	table.insert(self._enemy_list, "weekend")				
+	table.insert(self._enemy_list, "weekend")	
+
+	--Weekend (Guard Variant)
+	self.weekend_guard = deep_clone(self.weekend)
+	self.weekend_guard.HEALTH_INIT = 14.75
+	self.weekend_guard.headshot_dmg_mul = 4.75
+	self.weekend_guard.can_throw_frag = false
+	self.weekend_guard.access = "security"
+	table.insert(self._enemy_list, "weekend_guard")
 	
 	--Titan SWAT (LMG)
 	self.city_swat_titan = deep_clone(self.city_swat)
@@ -1204,6 +1212,14 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.weekend_lmg.yellow_blood = false
 	end
 	table.insert(self._enemy_list, "weekend_lmg")
+	
+	--Weekend LMG (Guard Variant)
+	self.weekend_elite_guard = deep_clone(self.weekend_lmg)			
+	self.weekend_elite_guard.HEALTH_INIT = 27.50
+	self.weekend_elite_guard.headshot_dmg_mul = 4.75	
+	self.weekend_elite_guard.can_throw_frag = false
+	self.weekend_elite_guard.access = "security"
+	table.insert(self._enemy_list, "weekend_elite_guard")
 	
 end
 
@@ -18332,6 +18348,9 @@ function CharacterTweakData:character_map()
 		char_map.bravo = {
 			path = "units/pd2_mod_bravo/characters/",
 			list = {
+				"ene_bravo_guard_1",
+				"ene_bravo_guard_2",
+				"ene_bravo_guard_3",
 				"ene_bravo_dmr",
 				"ene_bravo_lmg",
 				"ene_bravo_rifle",

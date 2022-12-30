@@ -188,11 +188,15 @@ function restoration:Init()
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	
+	--Bravo Response
+	restoration.bravo_heists = {
+		"trai"
+	}	
 	
 	if table.contains(restoration.bravo_heists, job) then
-	restoration.always_bravos = true
+		restoration.always_bravos = true
 	else
-	restoration.always_bravos = false
+		restoration.always_bravos = false
 	end
 	
 	restoration.global_spawn_multiplier = 1
@@ -366,12 +370,7 @@ function restoration:Init()
 		--"hox_1", --Hoxout D1
 		--"xmn_hox_1" --Xmas edition
 	}	
-	
-	--Bravo Response
-	restoration.bravo_heists = {
-		"trai"
-	}
-	
+		
 	--Sub Faction overrides
 	--Texas
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {

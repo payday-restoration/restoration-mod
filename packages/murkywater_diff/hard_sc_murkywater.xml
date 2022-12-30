@@ -86,6 +86,14 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4_husk" force="false" load="true"/>
 	
+	<!--Murky Secret Service-->
+	<add from_db="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service" type="unit">
+		<unit load="true"	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<object 			path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<material_config 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
+		<unit load="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service_husk"/>
+	</add>
+	
 	<!--Murky Cop Textures-->
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murkycop_df" />	
 	

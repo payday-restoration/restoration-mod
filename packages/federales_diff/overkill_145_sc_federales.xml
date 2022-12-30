@@ -49,8 +49,15 @@
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/material_body_df" force="false"/>	
 	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>	
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" />
-	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>	
-    	
+	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
+	
+	<!--Buluc Mansion cam guard-->
+	<add from_db="true" 	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3" type="unit">
+		<unit load="true"	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"/>
+		<object 			path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"/>
+		<material_config 	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"/>
+		<unit load="true" 	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3_husk"/>
+	</add>	
 	
 	<!--Fixed Beat Cops-->
 	<!--Glock-->	

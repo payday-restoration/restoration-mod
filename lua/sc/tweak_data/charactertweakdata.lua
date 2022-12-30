@@ -1136,8 +1136,6 @@ function CharacterTweakData:_init_city_swat(presets)
 
 	--Weekend (Guard Variant)
 	self.weekend_guard = deep_clone(self.weekend)
-	self.weekend_guard.HEALTH_INIT = 14.75
-	self.weekend_guard.headshot_dmg_mul = 4.75
 	self.weekend_guard.can_throw_frag = false
 	self.weekend_guard.access = "security"
 	table.insert(self._enemy_list, "weekend_guard")
@@ -1215,8 +1213,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	--Weekend LMG (Guard Variant)
 	self.weekend_elite_guard = deep_clone(self.weekend_lmg)			
-	self.weekend_elite_guard.HEALTH_INIT = 27.50
-	self.weekend_elite_guard.headshot_dmg_mul = 4.75	
 	self.weekend_elite_guard.can_throw_frag = false
 	self.weekend_elite_guard.access = "security"
 	table.insert(self._enemy_list, "weekend_elite_guard")

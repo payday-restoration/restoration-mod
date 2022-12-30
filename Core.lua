@@ -188,9 +188,9 @@ function restoration:Init()
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	
-	--Bravo Response
+	--Bravo Response only response, not sure if we really want to use this ATM tbh.
 	restoration.bravo_heists = {
-		"trai"
+		--"trai"
 	}	
 	
 	if table.contains(restoration.bravo_heists, job) then

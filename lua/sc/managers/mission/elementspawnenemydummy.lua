@@ -3685,20 +3685,6 @@ local zombie_zeal = {
 		["units/pd2_dlc_help/characters/ene_zeal_bulldozer_halloween/ene_zeal_bulldozer_halloween"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	}	
 	
-	--Safehouse Nightmare
-	local haunted_normal = {
-			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
-			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
-		}		
-	local haunted_black = {
-			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat",
-			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
-		}		
-	local haunted_white = {
-			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat",
-			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
-		}	
-	
 	---------------------------------------------------ZOMBIES END---------------------------------------------------		
 
 function ElementSpawnEnemyDummy:init(...)
@@ -3799,24 +3785,6 @@ function ElementSpawnEnemyDummy:init(...)
 		end
 	--Zombies
 	elseif ai_type == "zombie" then
-		if job == "haunted" then
-			if difficulty_index <= 2 then
-				if haunted_normal[self._values.enemy] then
-					self._values.enemy = haunted_normal[self._values.enemy]
-				end
-				self._values.enemy = haunted_normal[self._values.enemy] or self._values.enemy		
-			elseif difficulty_index == 3 or difficulty_index == 4 or difficulty_index == 5 or difficulty_index == 6 then
-				if haunted_black[self._values.enemy] then
-					self._values.enemy = haunted_black[self._values.enemy]
-				end
-				self._values.enemy = haunted_black[self._values.enemy] or self._values.enemy
-			else
-				if haunted_white[self._values.enemy] then
-					self._values.enemy = haunted_white[self._values.enemy]
-				end
-				self._values.enemy = haunted_white[self._values.enemy] or self._values.enemy		
-			end	
-		else
 			--Very Hard			
 			if difficulty_index <= 4 then
 				if zombie_very_hard[self._values.enemy] then
@@ -3847,8 +3815,7 @@ function ElementSpawnEnemyDummy:init(...)
 					self._values.enemy = zombie_zeal[self._values.enemy]
 				end
 				self._values.enemy = zombie_zeal[self._values.enemy] or self._values.enemy							
-			end	
-		end		
+			end		
 	--NYPD
 	elseif ai_type == "nypd" then		
 		--Very Hard			

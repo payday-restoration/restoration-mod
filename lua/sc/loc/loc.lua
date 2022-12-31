@@ -3505,8 +3505,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_9_desc_sc"] = "You can now activate the Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule.\n\nReviving yourself with the Leech Ampule will add ##30## additional seconds to the Ampule's cooldown.\n\nTaking damage now heals teammates by ##2%## of their health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--CopyCat--
-		["menu_deck23_1_desc"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
-		["menu_deck23_1_short"] = "Auto-reload your holstered weapon after killing ##10## enemies with your drawn weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_1_desc"] = "Killing ##10## enemies reloads your holstered weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_1_short"] = "Killing ##10## enemies reloads your holstered weapon.\n\nYou swap between weapons ##15%## faster.",
 		["menu_deck23_1_1_desc"] = "You gain ##7.5%## more health.",
 		["menu_deck23_1_1_short"] = "You gain ##7.5%## more health.",
 		["menu_deck23_1_3_desc"] = "Your dodge is increased by ##2.5## points.",

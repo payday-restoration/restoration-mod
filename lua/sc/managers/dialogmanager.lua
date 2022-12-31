@@ -62,11 +62,6 @@ function DialogManager:queue_dialog(id, ...)
 			else
 				escape_time = 1200
 			end			
-		end	
-		
-		--Prison Nightmare--				
-		if id == "Play_pln_hlp_35" then
-				escape_time = 300	
 		end
 		
 		--Black Cat Fun Method--				

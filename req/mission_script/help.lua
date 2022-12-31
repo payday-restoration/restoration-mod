@@ -44,5 +44,8 @@ return {
 		values = {
 			so_action = "e_nl_down_9_3m_rappel"
 		}
-	}
+	},
+	--adds point of no return at the end of the heist
+	[101715] = {
+    ponr = 300
 }

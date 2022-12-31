@@ -44,6 +44,9 @@
 				<file :name="ene_fbi_3.unit"/>
 				<file :name="ene_fbi_3_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_hvh/characters/ene_cop_hvh_3/">
+				<file :name="ene_cop_hvh_3.model"/>
+			</group>
 			<group :name="pd2_dlc_hvh/characters/ene_fbi_hvh_3/">
 				<file :name="ene_fbi_hvh_3.model"/>
 				<file :name="ene_fbi_hvh_3.unit"/>

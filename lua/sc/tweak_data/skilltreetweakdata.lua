@@ -3126,7 +3126,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 1},
 				texture_bundle_folder = "chico",
 				name_id = "menu_deck17_9",
-				desc_id = "menu_deck17_9_desc"
+				desc_id = "menu_deck17_9_desc_sc"
 			}
 		}
 

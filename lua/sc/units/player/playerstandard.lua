@@ -461,6 +461,48 @@ function PlayerStandard:_check_action_equip(t, input)
 	return new_action
 end
 
+
+
+function PlayerStandard:_check_action_jump(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_jump_press
+
+	if self._is_wallrunning and action_wanted then --_is_wallrunning will return nil without AdvMov, no need to check for its global
+		self:_cancel_wallrun(t, "jump")
+	elseif action_wanted then
+		local action_forbidden = self._jump_t and t < self._jump_t + 0.55
+		action_forbidden = action_forbidden or self._unit:base():stats_screen_visible() or self._state_data.in_air or self:_interacting() or self:_on_zipline() or self:_does_deploying_limit_movement() or self:_is_using_bipod()
+
+		if not action_forbidden then
+			if self._state_data.ducking and not AdvMov then --Advmov global check
+				self:_interupt_action_ducking(t)
+			else
+				if self._state_data.on_ladder then
+					self:_interupt_action_ladder(t)
+				end
+
+				local action_start_data = {}
+				local jump_vel_z = tweak_data.player.movement_state.standard.movement.jump_velocity.z
+				action_start_data.jump_vel_z = jump_vel_z
+
+				if self._move_dir then
+					local is_running = self._running and self._unit:movement():is_above_stamina_threshold() and t - self._start_running_t > 0.4
+					local jump_vel_xy = tweak_data.player.movement_state.standard.movement.jump_velocity.xy[is_running and "run" or "walk"]
+					action_start_data.jump_vel_xy = jump_vel_xy
+
+					if is_running then
+						self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.SPRINT_JUMP_STAMINA_DRAIN or 0)
+					end
+				end
+
+				new_action = self:_start_action_jump(t, action_start_data)
+			end
+		end
+	end
+
+	return new_action
+end
+
 --[[
 Temp disabled, might revisit this?
 
@@ -1180,7 +1222,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	local speed_state = "walk"
 	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
 
-	if self._is_sliding then -- should be fine without having AdvMov installed since it'll return nil in you don't have it
+	if self._is_sliding then -- should be fine without having AdvMov installed since _is_sliding will return nil if you don't have it
 		movement_speed = self._slide_speed
 		speed_state = "run"
 	elseif self._is_wallrunning then -- ditto

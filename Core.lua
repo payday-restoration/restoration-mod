@@ -154,6 +154,7 @@ function restoration:Init()
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
 		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 		Gensec_HQ = restoration.captain_types.autumn, --Gensec HQ Raid day 2
+		jambank = restoration.captain_types.autumn, --The Botched Bank Heist
 
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare

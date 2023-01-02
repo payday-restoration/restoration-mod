@@ -175,11 +175,6 @@ return {
             enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"
 		}
 	},
-	[101667] = {
-		values = {
-            enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"
-		}
-	},
 	[101674] = {
 		values = {
             enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"
@@ -192,7 +187,7 @@ return {
 	},
 	[101678] = {
 		values = {
-            enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"
+            enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"
 		}
 	},
 	[101695] = {
@@ -213,6 +208,11 @@ return {
 	[101704] = {
 		values = {
             enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"
+		}
+	},
+	[101706] = {
+		values = {
+            enemy = "units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"
 		}
 	},
 	[101708] = {

@@ -129,6 +129,8 @@
   "ene_guard_biker" : "오버킬 MC 바이커 경비원",
   "ene_biker_female" : "오버킬 MC 여성 바이커",
   "ene_gang_biker_boss" : "오버킬 MC 보스",
+  "ene_thug_indoor" : "볼리비아 깡패",
+  "ene_bolivian_thug_outdoor" : "볼리비아 깡패",  
   "ene_rus_cop" : "러시안 경찰",
   "ene_rus_security" : "러시안 경비원",
   "ene_rus_prisoner" : "죄수",

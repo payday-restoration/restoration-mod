@@ -1,7 +1,4 @@
 function PlayerBase:set_suspicion_multiplier(reason, multiplier)
-	if not reason or not multiplier then
-		return
-	end
 	self._suspicion_settings.multipliers[reason] = multiplier
 	local buildup_mul = self._suspicion_settings.init_buildup_mul
 	local range_mul = self._suspicion_settings.init_range_mul
@@ -19,9 +16,6 @@ function PlayerBase:set_suspicion_multiplier(reason, multiplier)
 end
 
 function PlayerBase:set_detection_multiplier(reason, multiplier)
-	if not reason or not multiplier then
-		return
-	end
 	self._detection_settings.multipliers[reason] = multiplier
 	local delay_mul = self._detection_settings.init_delay_mul
 	local range_mul = self._detection_settings.init_range_mul

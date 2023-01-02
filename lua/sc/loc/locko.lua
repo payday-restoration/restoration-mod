@@ -26,8 +26,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModHUDOptionsButtonDescID"] = "레스토레이션의 HUD & UI 옵션",
 		["RestorationModOTHEROptionsButtonTitleID"] = "추가 레스토레이션 모드 옵션",
 		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스토레이션 모드 옵션",
-		["RestorationModWeaponHandlingOptionsButtonTitleID"] = "+++ 무기 핸들링 토글 +++",
-		["RestorationModWeaponHandlingOptionsButtonDescID"] = "무기 핸들링에 관한 옵션",		
+		["RestorationModWeaponHandlingOptionsButtonTitleID"] = "++ 무기 핸들링 옵션 ++",
+		["RestorationModWeaponHandlingOptionsButtonDescID"] = "무기 핸들링에 관한 추가 옵션",		
 		["RestorationModUIOptionsButtonTitleID"] = "알파 UI",
 		["RestorationModUIOptionsButtonDescID"] = "알파 UI 옵션",
 		["RestorationModTimeOfDayTitleID"] = "신규 + 랜덤 시간대",
@@ -3394,8 +3394,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_9_desc_sc"] = "이제 리치 약병을 쓰러진 상태에서 활성화하여 리치 약병이 끝날 때까지 일시적으로 소생될 수 있습니다.\n\n리치 약병으로 소생하면 약병의 재사용 대기시간이 ##30##초 더 추가됩니다.\n\n이제 피해를 입으면 팀원의 체력이 ##2%##씩 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--CopyCat--
-		["menu_deck23_1_desc"] = "들고 있는 무기로 적을 ##10##명 죽이면 집어넣은 무기가 자동으로 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
-		["menu_deck23_1_short"] = "들고 있는 무기로 적을 ##10##명 죽이면 집어넣은 무기가 자동으로 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
+		["menu_deck23_1_desc"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
+		["menu_deck23_1_short"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
 		["menu_deck23_1_1_desc"] = "체력을 ##7.5%##만큼 얻습니다.",
 		["menu_deck23_1_1_short"] = "체력을 ##7.5%##만큼 얻습니다.",		
 		["menu_deck23_1_3_desc"] = "회피 포인트가 ##2.5##만큼 증가합니다.",

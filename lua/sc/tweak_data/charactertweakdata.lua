@@ -1138,7 +1138,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_guard = deep_clone(self.weekend)
 	self.weekend_guard.can_throw_frag = false
 	self.weekend_guard.chatter = presets.enemy_chatter.guard
+	if job == "shoutout_raid" then
+	self.weekend_guard.access = "swat"
+	else
 	self.weekend_guard.access = "security"
+	end
 	table.insert(self._enemy_list, "weekend_guard")
 	
 	--Titan SWAT (LMG)
@@ -1216,7 +1220,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_elite_guard = deep_clone(self.weekend_lmg)			
 	self.weekend_elite_guard.can_throw_frag = false
 	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard
+	if job == "shoutout_raid" then
+	self.weekend_elite_guard.access = "swat"
+	else
 	self.weekend_elite_guard.access = "security"
+	end
 	table.insert(self._enemy_list, "weekend_elite_guard")
 	
 end

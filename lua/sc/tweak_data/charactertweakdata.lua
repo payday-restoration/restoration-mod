@@ -1072,7 +1072,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.chatter = presets.enemy_chatter.swat
 	self.city_swat.melee_weapon = "knife_1"
 	self.city_swat.melee_weapon_dmg_multiplier = 2.5
-	if job == "kosugi" or job == "dark" then
+	if job == "kosugi" then
 		self.city_swat.shooting_death = false
 		self.city_swat.radio_prefix = "fri_"
 		self.city_swat.use_radio = "dsp_radio_russian"

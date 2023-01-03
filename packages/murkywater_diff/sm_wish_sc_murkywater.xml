@@ -105,17 +105,19 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2_contour" force="false"/>	
 	<!-- blue swat tier end -->
 	
-	<!-- zeals -->		
-	<!--city swat 1-->
+	<!-- zeals (also used as guards in Murky Station) -->		
+	<!--zeal swat 1-->
 	<object				path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" force="false" load="true"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1_contour" force="false"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1_husk" force="false" load="true"/>   
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1_husk" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1_husk" force="false" load="true"/> 
 	
-	<!--city swat 2-->
+	<!--zeal swat 2-->
 	<object				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" force="false"/>
@@ -123,8 +125,10 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk" force="false" load="true"/>  
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_r870/ene_zeal_city_r870" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_r870/ene_zeal_city_r870_husk" force="false" load="true"/> 
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2_husk" force="false" load="true"/> 
 
-	<!--city swat 3-->
+	<!--zeal swat 3-->
 	<object				path="units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" force="false"/>
@@ -139,6 +143,7 @@
 	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
 	
+	<!--heavy swat m4-->
 	<object				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_contour" force="false"/>
@@ -403,6 +408,8 @@
 	<model				path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3_husk" force="false" load="true"/> 
 
 	<!--Omnia LPF-->
 	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>

@@ -171,11 +171,10 @@
 	<mission			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
 
-	<mission			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/> <!--disabled most of the bridge spawns (all of nearby van escape)-->
 	<continent			path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
 	<continent			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->	
 	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
-	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->	
+	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->
 
 	<!--White House edit-->
 	<continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>

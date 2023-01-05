@@ -1137,6 +1137,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Weekend (Guard Variant)
 	self.weekend_guard = deep_clone(self.weekend)
 	self.weekend_guard.can_throw_frag = false
+	self.weekend_guard.yellow_blood = false
 	self.weekend_guard.chatter = presets.enemy_chatter.guard
 	if job == "shoutout_raid" then
 	self.weekend_guard.access = "swat"
@@ -1219,6 +1220,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Weekend LMG (Guard Variant)
 	self.weekend_elite_guard = deep_clone(self.weekend_lmg)			
 	self.weekend_elite_guard.can_throw_frag = false
+	self.weekend_elite_guard.yellow_blood = false
 	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard
 	if job == "shoutout_raid" then
 	self.weekend_elite_guard.access = "swat"

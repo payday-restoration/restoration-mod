@@ -35,7 +35,7 @@ function ModifierCloakerTearGas:modify_value(id, value)
 			return Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 		elseif is_titanocelot and math.random(0,100) < 15 then
 			return Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")	
-		elseif is_zombietitanshrt and math.random(0,100) < 15 then
+		elseif is_zombietitanhrt and math.random(0,100) < 15 then
 			return Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 		end
 	end

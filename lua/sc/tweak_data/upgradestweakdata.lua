@@ -701,9 +701,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
+				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
-				self.values.player.ap_bullets = {1.0}
-				self.values.smg.automatic_can_shoot_through_enemy = {true}
+				self.values.smg.automatic_can_shoot_through_enemy = {
+					{
+						5, --stack limit
+						1.1 --dmg mult
+					}
+				}
 				--Unused
 					self.values.weapon.automatic_head_shot_add = {0.03, 0.06}
 					self.values.player.universal_body_expertise = {false}

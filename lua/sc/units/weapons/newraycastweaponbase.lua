@@ -6,9 +6,11 @@ local ids_volley = Idstring("volley")
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	--Since armor piercing chance is no longer used, lets use weapon category to determine armor piercing baseline.
-	if self:is_category("bow", "crossbow", "saw") or managers.player:has_category_upgrade("player", "ap_bullets") then
+	if self:is_category("bow", "crossbow", "saw") then
 		self._use_armor_piercing = true
 	end
+
+	self._skill_global_ap = (managers.player:has_category_upgrade("player", "ap_bullets") and managers.player:upgrade_value("player", "ap_bullets", 1)) or nil
 
 	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
 	local volley_fire_mode = fire_mode_data.volley
@@ -863,7 +865,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 end
 
 function NewRaycastWeaponBase:armor_piercing_chance()
-	local skill_ap = 0
+	local skill_ap = self._skill_global_ap or 0
 	for _, category in ipairs(self:categories()) do
 		if managers.player:has_category_upgrade(category, "ap_bullets") then
 			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 1)
@@ -873,7 +875,7 @@ function NewRaycastWeaponBase:armor_piercing_chance()
 		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
 		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
 		local volley_ap = volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
-		return volley_ap + skill_ap
+		return math.min(volley_ap + skill_ap, 1)
 	else
 		return math.min((self._armor_piercing_chance or 0) + skill_ap, 1)
 	end
@@ -1567,6 +1569,8 @@ function NewRaycastWeaponBase:can_shoot_through_enemy()
 		for _, category in ipairs(self:categories()) do
 			if managers.player:has_category_upgrade(category, "automatic_can_shoot_through_enemy") then
 				can_shoot_through_enemy = true
+				self._shoot_through_enemy_max_stacks = managers.player:upgrade_value(category, "automatic_can_shoot_through_enemy")[1]
+				self._shoot_through_enemy_dmg_mult = managers.player:upgrade_value(category, "automatic_can_shoot_through_enemy")[2]
 			end
 		end
 	end

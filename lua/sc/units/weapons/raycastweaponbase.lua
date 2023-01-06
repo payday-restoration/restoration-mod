@@ -699,6 +699,10 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 			hit_count = hit_count + 1
 		end
 
+		if self:fire_mode() == "auto" and self._shoot_through_enemy_max_stacks and hit_count <= self._shoot_through_enemy_max_stacks then
+			damage = damage * self._shoot_through_enemy_dmg_mult
+		end
+
 		if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
 			hit_through_wall = true
 			shield_damage_reduction_applied = false

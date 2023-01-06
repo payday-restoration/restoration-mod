@@ -144,12 +144,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDescID"] = "상호 작용 키가 토글 역할을 하는지 여부를 활성화하거나 비활성화합니다.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "배치물 취소 상호 작용",
 		["RestorationModSevenHoldDeployCancelDescID"] = "배치물 키가 토글 상호 작용을 취소하는 데 사용되는지 여부를 활성화하거나 비활성화합니다. 효과를 보려면 토클 상호작용을 활성화해야 합니다.",
-		["RestorationModQueuedShootingTitleID"] = "사격 입력 대기",
-		["RestorationModQueuedShootingDescID"] = "오버샘플링을 지원하기 위해 반자동 무기에 대한 사격 입력 대기열을 활성화하거나 비활성화합니다.",
-		["RestorationModQueuedShootingWindowTitleID"] = "사격 입력 대기 감도",
-		["RestorationModQueuedShootingWindowDescID"] = "무기의 발사 시간 지연 %을 기준으로 사격 입력이 대기열에 들어가는 시간을 결정합니다. 더 높은 값 = 더 빠른 대기열",
-		["RestorationModQueuedShootingExcludeTitleID"] = "사격 입력 대기 속도 제한",
-		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도 (RPM) *이상으로* 발사하는 무기의 사격 입력 대기를 제한합니다.",		
+		["RestorationModQueuedShootingTitleID"] = "발사 입력 버퍼",
+		["RestorationModQueuedShootingDescID"] = "오버샘플링(무기가 발사할 수 있는 것보다 빠르게 발사)을 지원하기 위해 반자동 무기에 대한 발사 입력 버퍼링을 활성화/비활성화합니다.",
+		["RestorationModQueuedShootingWindowTitleID"] = "발사 입력 대기 감도 버퍼",
+		["RestorationModQueuedShootingWindowDescID"] = "무기 발사 시간 지연의 %에 따라 버퍼링할 발사 입력 시간을 결정합니다. (높은 값 = 초기 버퍼)",
+		["RestorationModQueuedShootingExcludeTitleID"] = "발사 속도 입력 제한 버퍼",
+		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도(RPM) *이상으로* 발사하는 무기에 대한 발사 입력의 버퍼링을 제한합니다.",		
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
@@ -1870,12 +1870,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_heavy_shot"] = "경산탄총",
 		["menu_break_shot"] = "중산탄총",
 		
-		["menu_smg"] = "기관총/기관단총",
-		["menu_smg_single"] = "기관총/기관단총",
-		["menu_lmg"] = "기관총/기관단총",
-		["menu_lmg_single"] = "기관총/기관단총",
-		["menu_minigun"] = "기관총/기관단총",
-		["menu_minigun_single"] = "기관총/기관단총",		
+		["menu_smg"] = "기관총",
+		["menu_smg_single"] = "기관총",
+		["menu_lmg"] = "기관총",
+		["menu_lmg_single"] = "기관총",
+		["menu_minigun"] = "기관총",
+		["menu_minigun_single"] = "기관총",		
 		["menu_light_smg"] = "경기관단총",
 		["menu_heavy_smg"] = "중기관단총",
 		
@@ -2867,27 +2867,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ASSAULT SUBTREE   ]]--
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "리더쉽",
-			["menu_stable_shot_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##의 안정성을 #{skill_color}#2##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신과 동료들의 #{skill_color}#모든 무기##의 안정성을 #{skill_color}#2##만큼 상승시켜줍니다.",
+			["menu_stable_shot_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##의 안정성을 #{skill_color}#2##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신과 동료들의 #{skill_color}#모든 무기##의 안정성을 #{skill_color}#2##만큼 상승시켜줍니다.",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "기관총 핸들링",
-			["menu_scavenger_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##의 지향 사격 명중률이 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관단총##의 지향 사격 명중률을 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n#{skill_color}#기관단총##의 재장전 속도가 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_scavenger_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##의 지향 사격 명중률이 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##의 지향 사격 명중률을 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n#{skill_color}#기관총##의 재장전 속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "기관총 전문가",
-			["menu_sharpshooter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##의 이동 패널티에 대한 명중률이 #{skill_color}#60%##만큼 감소합니다.\n\n이동 패널티에 대한 명중률은 안정성에 따라 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관단총##의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n#{skill_color}#기관단총##으로 방아쇠를 놓지 않고 발사하면 #{skill_color}#5번째## 총알은 소모되지 않습니다.",
+			["menu_sharpshooter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##의 이동 패널티에 대한 명중률이 #{skill_color}#60%##만큼 감소합니다.\n\n이동 패널티에 대한 명중률은 안정성에 따라 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n#{skill_color}#기관총##으로 방아쇠를 놓지 않고 발사하면 #{skill_color}#5번째## 총알은 소모되지 않습니다.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: #{owned}#$basic##\n모든 무기의 장탄수가 #{skill_color}#20%##만큼 증가합니다.\n\n#{risk}#참고: 쇠뇌, 활, 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n모든 무기의 장탄수가 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n전력 질주하는 동안 모든 무기로 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.",
+			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#모든 무기##의 장탄수가 #{skill_color}#20%##만큼 증가합니다.\n\n#{risk}#참고: 쇠뇌, 활, 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n모든 무기의 장탄수가 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n#{skill_color}#모든 무기##로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
-			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##은 #{skill_color}#20%##의 확률로 적을 쓰러뜨릴 수 있습니다.\n\n양각대 사용 시 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##25%##으로 증가합니다.",
+			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##은 #{skill_color}#20%##의 확률로 적을 쓰러뜨릴 수 있습니다.\n\n양각대 사용 시 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##25%##으로 증가합니다.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#모든 무기##는 이제 #{skill_color}#방탄복을 관통할 수 있습니다.##\n\n자동으로 사격하는 #{skill_color}#기관단총##은 적의 헤드샷 배율의 #{skill_color}#30%##가 몸통 사격에 적용됩니다.\n\n#{risk}#참고: 불도저에게는 피해 배율이 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n자동으로 사격하는 #{skill_color}#모든 무기##는 적의 헤드샷 배율의 #{skill_color}#60%##가 몸통 사격에 적용됩니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다.\n\n#{skill_color}#기관총##의 경우 이 효과가 #{skill_color}#100%##로 증가합니다.\n\n#{risk}#참고: 이 효과는 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 추가로 최대 100%까지 중첩됩니다.##\n\n에이스: #{owned}#$pro##\n완전 자동으로 설정된 #{skill_color}#기관총##은 적을 관통할 수 있으며, 관통된 적에게 추가로 #{skill_color}#10%##만큼 피해를 입히고 최대 #{skill_color}#5##번까지 피해를 입힙니다.",
 
 			--}
 		--}
@@ -3052,7 +3052,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Mind Blown, formerly Explosive Headshot--
 			["menu_kilmer_sc"] = "마인드 블로우",
-			["menu_kilmer_desc_sc"] = "베이직: #{owned}#$basic##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##으로 헤드샷 할 시 #{skill_color}#4##미터 반경에서 가장 가까운 적에게 입힌 피해의 #{skill_color}#70%##만큼 입힙니다.\n\n적에게서 #{skill_color}#7##미터 떨어져 있을 때 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 #{skill_color}#4##번까지 됩니다.\n\n에이스: #{owned}#$pro##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##의 헤드샷은 #{skill_color}#거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 #{skill_color}#1##미터만큼 증가합니다.\n\n적에게서 #{skill_color}#7##미터 떨어져 있을 때 연쇄 효과가 추가로 #{skill_color}#10%##만큼 피해를 주고, 최대 총 #{skill_color}#110%##의 피해를 입힐 수 있습니다.",			
+			["menu_kilmer_desc_sc"] = "베이직: #{owned}#$basic##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##으로 헤드샷 할 시 #{skill_color}#4##미터 반경에서 가장 가까운 적에게 입힌 피해의 #{skill_color}#70%##만큼 입힙니다.\n\n적에게서 #{skill_color}#8##미터 떨어져 있을 때 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 #{skill_color}#3##번까지 됩니다.\n\n에이스: #{owned}#$pro##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##의 헤드샷은 #{skill_color}#거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 #{skill_color}#1##미터만큼 증가합니다.\n\n적에게서 #{skill_color}#8##미터 떨어져 있을 때 연쇄 효과가 추가로 #{skill_color}#10%##만큼 피해를 주고, 최대 총 #{skill_color}#100%##의 피해를 입힐 수 있습니다.",			
 
 		--[[   GHOST   ]]--
 		
@@ -3154,7 +3154,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Trigger Happy--
 			["menu_trigger_happy_beta_sc"] = "난사광",
-			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지를 #{skill_color}#10%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
+			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지를 #{skill_color}#10%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#3##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 부스트 지속 시간이 #{skill_color}#10##초로 증가하고 최대 중첩이 #{skill_color}#2##회 더 증가합니다.",
 
 			--[[   REVENANT SUBTREE  ]]--
 			--Running From Death--

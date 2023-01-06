@@ -15204,9 +15204,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"typh"
 		}
 		self.crysis3_typhoon.damage_type = "machine_gun"
-		self.crysis3_typhoon.recategorize = { "light_smg" } --"Light" SMG
+		self.crysis3_typhoon.recategorize = { "wpn_special" }
 		self.crysis3_typhoon.use_data.selection_index = 2
 		self.crysis3_typhoon.has_description = true
+		self.crysis3_typhoon.use_newraycast_fire = true
 		self.crysis3_typhoon.rays = 1
 		self.crysis3_typhoon.CLIP_AMMO_MAX = 180
 		self.crysis3_typhoon.AMMO_MAX = 360

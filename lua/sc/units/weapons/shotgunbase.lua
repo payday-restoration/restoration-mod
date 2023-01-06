@@ -93,8 +93,11 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 		end
 
 		return result
+	
+	elseif self:weapon_tweak_data().use_newraycast_fire then
+		ShotgunBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
 	end
-
+	
 	local result = nil
 	local hit_enemies = {}
 	local hit_objects = {}

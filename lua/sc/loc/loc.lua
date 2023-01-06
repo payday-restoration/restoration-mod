@@ -145,12 +145,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDescID"] = "Enable/disable whether or not the interact key acts as a toggle.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "Deployable Cancels Interact",
 		["RestorationModSevenHoldDeployCancelDescID"] = "Enable/disable whether or not the deployable key is what's used to cancel an active toggle interaction. Requires Toggle Interactions to be enabled to have any effect.",
-		["RestorationModQueuedShootingTitleID"] = "Queued Fire Inputs",
-		["RestorationModQueuedShootingDescID"] = "Enable/disable the queuing of fire inputs for semi-auto weapons to assist with oversampling.",
-		["RestorationModQueuedShootingWindowTitleID"] = "Queued Fire Input Sensitivity",
-		["RestorationModQueuedShootingWindowDescID"] = "Determines the window of time for your fire input to be queued based on a % of the weapon's fire time delay. Higher value = earlier queuing",
-		["RestorationModQueuedShootingExcludeTitleID"] = "Queued Fire Input Fire Rate Limit",
-		["RestorationModQueuedShootingExcludeDescID"] = "Limits queued fire inputs to weapons that fire *above* the firerate (RPM) set by this option.",
+		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
+		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto weapons to assist with oversampling (sending inputs faster than the weapon can fire).",
+		["RestorationModQueuedShootingWindowTitleID"] = "Buffer Fire Input Sensitivity",
+		["RestorationModQueuedShootingWindowDescID"] = "Determines the window of time for your fire input to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
+		["RestorationModQueuedShootingExcludeTitleID"] = "Buffer Inputs Fire Rate Limit",
+		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the firerate (RPM) set by this option.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
@@ -3005,7 +3005,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Body Expertise",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#All weapons## can now #{skill_color}#pierce body armor.##\n\n#{skill_color}#Machine guns## fired in full auto apply #{skill_color}#30%## of the enemy's headshot damage multiplier to their body.\n\n#{risk}#NOTE: The damage multiplier does not apply to Bulldozers.##\n\nACE: #{owned}#$pro##\n#{skill_color}#All weapons## fired in full auto apply #{skill_color}#60%## of the enemy's headshot damage multiplier to their body.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## deal #{skill_color}#100%## of their damage through body armor.\n\nACE: #{owned}#$pro##\n#{skill_color}#All weapons## deal #{skill_color}#100%## of their damage through body armor.\n\n#{skill_color}#Machine guns## fired in full auto are capable of shooting through enemies.",
 
 
 		--[[   ENFORCER   ]]--
@@ -3160,7 +3160,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
-				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst deal #{skill_color}#70%## of the damage dealt to the closest enemy in a #{skill_color}#4## meter radius.\n\nFor every #{skill_color}#7## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#1## meter.\n\nFor every #{skill_color}#7## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#10%## damage; up to a total of #{skill_color}#110%## of the damage dealt.",
+				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst deal #{skill_color}#70%## of the damage dealt to the closest enemy in a #{skill_color}#4## meter radius.\n\nFor every #{skill_color}#8## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#3## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#1## meter.\n\nFor every #{skill_color}#8## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#10%## damage; up to a total of #{skill_color}#100%## of the damage dealt.",
 
 		--[[   GHOST   ]]--
 
@@ -3263,7 +3263,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-				["menu_trigger_happy_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them a #{skill_color}#10%## damage boost for #{skill_color}#4## seconds.\n\nThis effect can stack #{skill_color}#5## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the damage boost duration to #{skill_color}#10## seconds.",
+				["menu_trigger_happy_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them a #{skill_color}#10%## damage boost for #{skill_color}#4## seconds.\n\nThis effect can stack #{skill_color}#3## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the damage boost duration to #{skill_color}#10## seconds and maximum stacks by an additional #{skill_color}#2## more times.",
 
 			--[[   REVENANT SUBTREE   ]]--
 				--Running From Death--

@@ -457,15 +457,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 3},
 				[1] = {
 					upgrades = {
-						"player_ap_bullets_1",
-						"weapon_automatic_head_shot_add_1"
+						"smg_ap_bullets_1",
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"weapon_automatic_head_shot_add_2",
-						"player_universal_body_expertise"
+						"player_ap_bullets_1",
+						"smg_automatic_can_shoot_through_enemy_1",
 					},
 					cost = self.costs.hightierpro
 				}

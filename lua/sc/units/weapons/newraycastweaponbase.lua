@@ -6,15 +6,8 @@ local ids_volley = Idstring("volley")
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	--Since armor piercing chance is no longer used, lets use weapon category to determine armor piercing baseline.
-	if self:is_category("bow", "crossbow", "saw", "snp") then
+	if self:is_category("bow", "crossbow", "saw") or managers.player:has_category_upgrade("player", "ap_bullets") then
 		self._use_armor_piercing = true
-	end
-
-	for _, category in ipairs(self:categories()) do
-		if managers.player:has_category_upgrade(category, "ap_bullets") then
-			self._use_armor_piercing = true
-			break
-		end
 	end
 
 	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
@@ -870,12 +863,19 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 end
 
 function NewRaycastWeaponBase:armor_piercing_chance()
+	local skill_ap = 0
+	for _, category in ipairs(self:categories()) do
+		if managers.player:has_category_upgrade(category, "ap_bullets") then
+			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 1)
+		end
+	end
 	if self._fire_mode == ids_volley then
 		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
 		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
-		return volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
+		local volley_ap = volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
+		return volley_ap + skill_ap
 	else
-		return self._armor_piercing_chance or 0
+		return math.min((self._armor_piercing_chance or 0) + skill_ap, 1)
 	end
 end
 
@@ -1559,4 +1559,16 @@ function NewRaycastWeaponBase:can_shoot_through_titan_shield()
 	local fire_mode_data = self._fire_mode_data[self._fire_mode:key()]
 
 	return fire_mode_data and fire_mode_data.can_shoot_through_titan_shield or self._can_shoot_through_titan_shield
+end
+
+function NewRaycastWeaponBase:can_shoot_through_enemy()
+	local can_shoot_through_enemy = nil
+	if self:fire_mode() == "auto" then
+		for _, category in ipairs(self:categories()) do
+			if managers.player:has_category_upgrade(category, "automatic_can_shoot_through_enemy") then
+				can_shoot_through_enemy = true
+			end
+		end
+	end
+	return can_shoot_through_enemy or self._can_shoot_through_enemy
 end

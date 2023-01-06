@@ -701,8 +701,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.crouching_damage_reduction = {0.875}
 	
 			--Body Expertise
-				self.values.weapon.automatic_head_shot_add = {0.3, 0.6}
-				self.values.player.universal_body_expertise = {true}
+				self.values.smg.ap_bullets = {1.0}
+				self.values.player.ap_bullets = {1.0}
+				self.values.smg.automatic_can_shoot_through_enemy = {true}
+				--Unused
+					self.values.weapon.automatic_head_shot_add = {0.03, 0.06}
+					self.values.player.universal_body_expertise = {false}
 						
 	--ENFORCER--
 		--Shotgunner--
@@ -978,20 +982,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.snp.graze_damage = {
 					{ --Basic
 						radius = 400,
-						max_chain = 4,
+						max_chain = 3,
 						damage_factor = 0.70,
 						damage_factor_range = 0.00,
-						range_increment = 700
+						range_increment = 800
 					},
 					{ --Ace
 						radius = 500,
-						max_chain = 4,
+						max_chain = 3,
 						damage_factor = 0.70,
 						damage_factor_range = 0.10,
-						range_increment = 700
+						range_increment = 800
 					}
 				}			
-				self.values.player.headshot_no_falloff = {true}	
+				self.values.player.headshot_no_falloff = {true}
 
 	--GHOST--
 		--Shinobi--
@@ -1215,7 +1219,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.pistol.hip_fire_spread_multiplier = {0.8}	
 				--Ace
 					self.values.pistol.fire_rate_multiplier = {1.15}
-					self.values.pistol.ap_bullets = {true}
+					self.values.pistol.ap_bullets = {1.0}
 
 			--Gunfighter
 				self.values.pistol.reload_speed_multiplier = {
@@ -1255,7 +1259,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
-					{damage_bonus = 1.1, max_stacks = 5, max_time = 4}, --Basic
+					{damage_bonus = 1.1, max_stacks = 3, max_time = 4}, --Basic
 					{damage_bonus = 1.1, max_stacks = 5, max_time = 10} --Ace
 				}
 			
@@ -4152,6 +4156,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 1,
 			upgrade = "ap_bullets",
 			category = "pistol"
+		}
+	}
+	self.definitions.smg_ap_bullets_1 = {
+		name_id = "menu_smg_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets",
+			category = "smg"
+		}
+	}
+	self.definitions.smg_automatic_can_shoot_through_enemy_1 = {
+		name_id = "menu_smg_automatic_can_shoot_through_enemy_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "automatic_can_shoot_through_enemy",
+			category = "smg"
 		}
 	}
 	self.definitions.akimbo_pick_up_multiplier = {

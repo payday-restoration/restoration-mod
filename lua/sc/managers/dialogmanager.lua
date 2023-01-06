@@ -1256,6 +1256,23 @@ function DialogManager:queue_dialog(id, ...)
                 escape_time = 420
             end        
         end
+        
+        	--Botched Bank (custom)--
+        if id == "Play_clt_jambank_25" then
+            if difficulty_index <= 2 then
+                escape_time = 750
+            elseif difficulty_index == 3 then
+                escape_time = 720
+            elseif difficulty_index == 4 then
+                escape_time = 690
+            elseif difficulty_index == 5 then
+                escape_time = 660    
+            elseif difficulty_index == 6 or difficulty_index == 7 then
+                escape_time = 630                        
+            else
+                escape_time = 600
+            end        
+        end
 		
 		if escape_time > 0 then
 			if managers.groupai:state():whisper_mode() then

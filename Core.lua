@@ -124,6 +124,7 @@ function restoration:Init()
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
+		jambank = restoration.captain_types.spring, --Botched Bank
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -154,7 +155,6 @@ function restoration:Init()
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
 		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 		Gensec_HQ = restoration.captain_types.autumn, --Gensec HQ Raid day 2
-		jambank = restoration.captain_types.autumn, --The Botched Bank Heist
 
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
@@ -297,6 +297,7 @@ function restoration:Init()
 		"brb_rant", --Brooklyn Bank: Ranted
 		"hidden_vault", --Hidden Vault
 		"constantine_gold_lvl", --Golden Shakedown (Constantine Scores)
+		"jambank", --Botched Bank
 		"cshr" --Old Safehouse Raid
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.

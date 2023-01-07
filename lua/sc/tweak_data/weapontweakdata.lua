@@ -15335,6 +15335,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rsass.timers.reload_exit_not_empty = 0.95
 	end
 
+	if self.fg42 then
+		self.fg42.recategorize = { "dmr_ar" }
+		self.fg42.categories = { "assault_rifle"}
+		self.fg42.CLIP_AMMO_MAX = 20
+		self.fg42.AMMO_MAX = 60
+		self.fg42.CAN_TOGGLE_FIREMODE = true
+		self.fg42.kick = self.stat_info.kick_tables.vertical_kick
+		self.fg42.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.fg42.supported = true
+		self.fg42.ads_speed = 0.420
+		self.fg42.stats = {
+			damage = 60,
+			spread = 73,
+			recoil = 65,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 19,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.fg42.stats_modifiers = nil
+		self.fg42.panic_suppression_chance = 0.05
+		self.fg42.can_shoot_through_enemy = true
+		self.fg42.can_shoot_through_wall = true
+		self.fg42.armor_piercing_chance = 0.8
+		self.fg42.sounds.fire = "hk23e_firee"
+		self.fg42.sounds.fire_single = "hk23e_fire_single"
+		self.fg42.sounds.fire_auto = "hk23e_fire"
+		self.fg42.sounds.stop_fire = "hk23e_stop"
+	end
+
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality) then it's a no-go for now
 	if self.owen then -- Silent Enforcer's Owen Gun

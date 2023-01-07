@@ -15335,7 +15335,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rsass.timers.reload_exit_not_empty = 0.95
 	end
 
-	if self.fg42 then
+	if self.fg42 then --Killerwolf's FG42
 		self.fg42.recategorize = { "dmr_ar" }
 		self.fg42.categories = { "assault_rifle"}
 		self.fg42.CLIP_AMMO_MAX = 20
@@ -15345,6 +15345,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 		self.fg42.supported = true
 		self.fg42.ads_speed = 0.420
+		self.fg42.damage_falloff = {
+			start_dist = 2200,
+			end_dist = 6800,
+			min_mult = 0.5
+		}
 		self.fg42.stats = {
 			damage = 60,
 			spread = 73,
@@ -15364,10 +15369,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.can_shoot_through_enemy = true
 		self.fg42.can_shoot_through_wall = true
 		self.fg42.armor_piercing_chance = 0.8
-		self.fg42.sounds.fire = "hk23e_firee"
-		self.fg42.sounds.fire_single = "hk23e_fire_single"
-		self.fg42.sounds.fire_auto = "hk23e_fire"
-		self.fg42.sounds.stop_fire = "hk23e_stop"
+		self.fg42.timers.reload_not_empty = 2.4
+		self.fg42.timers.reload_exit_not_empty = 0.6
+		self.fg42.timers.reload_empty = 3.5
+		self.fg42.timers.reload_exit_empty = 0.4
+		self.fg42.sounds.fire = "hk51b_fire"
+		self.fg42.sounds.fire_single = "hk51b_fire_single"
+		self.fg42.sounds.fire_auto = "hk51b_fire"
+		self.fg42.sounds.stop_fire = "hk51b_stop"
 	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

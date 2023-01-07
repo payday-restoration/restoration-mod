@@ -26593,6 +26593,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.parts.wpn_fps_lmg_fg42_bayonet_equip.supported = true
+		self.parts.wpn_fps_lmg_fg42_bayonet_equip.desc_id = ""
+		self.parts.wpn_fps_lmg_fg42_bayonet_equip.has_description = false
 		self.parts.wpn_fps_lmg_fg42_bayonet_equip.stats = { value = 0 }
 		--[[
 		self.parts.wpn_fps_lmg_fg42_bayonet_equip.stats = {

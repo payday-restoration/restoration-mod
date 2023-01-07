@@ -3005,7 +3005,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Body Expertise",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor\n\nThis effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\n#{risk}#NOTE: This stacks additively with any armor piercing capabilites your weapon(s) may already have, to a maximum of 100%.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fired in full auto are capable of shooting through enemies, each enemy you shoot through dealing an additional #{skill_color}#10%## more damage; applies up to #{skill_color}#5## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor\n\nThis effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\n#{risk}#NOTE: This stacks additively with any armor piercing capabilites your weapon(s) may already have, to a maximum of 100%.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fired in full auto are capable of shooting through enemies, each enemy you shoot through makes the next enemy hit by the same shot take an additional #{skill_color}#10%## more damage; stacks up to #{skill_color}#5## times.",
 
 
 		--[[   ENFORCER   ]]--

@@ -208,7 +208,7 @@ function FPCameraPlayerBase:stop_shooting( wait )
 	self._recoil_kick.to_reduce 	= self._recoil_kick.to_reduce * recoil_recover
 	self._recoil_kick.h.to_reduce 	= self._recoil_kick.h.to_reduce	* recoil_recover
 
-	self._recoil_wait = wait or 0
+	self._recoil_wait = 0
 end
 
 --Add more recoil to burn through.

@@ -3658,9 +3658,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "pistol"
 	end	
 	
-	recat = { "usp", "x_usp", "type54", "x_type54", "deagle", "x_deagle", "shrew", "x_shrew", "colt_1911", "x_1911", "model3", "x_model3", "rsh12", "new_raging_bull", "x_rage", "peacemaker", "mateba", "x_2006m", "chinchilla", "x_chinchilla", "m1911", "c96","korth","x_korth" }
+	recat = { "usp", "x_usp", "type54", "x_type54", "shrew", "x_shrew", "colt_1911", "x_1911", "m1911", "c96" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_pis" }
+		self[ wep_id ].damage_type = "heavy_pistol"
+	end
+
+	recat = { "deagle", "x_deagle", "model3", "x_model3", "rsh12", "new_raging_bull", "x_rage", "peacemaker", "mateba", "x_2006m", "chinchilla", "x_chinchilla", "korth","x_korth" }
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].recategorize = { "heavy_pis", "handcannon" }
 		self[ wep_id ].damage_type = "heavy_pistol"
 	end
 	
@@ -6174,6 +6180,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 20
 				}		
+				self.hailstorm.rcs = 5
+				self.hailstorm.rr = 0.1
 				self.hailstorm.stats_modifiers = nil
 				self.hailstorm.reload_speed_multiplier = 0.85
 				self.hailstorm.panic_suppression_chance = 0.05
@@ -7218,6 +7226,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 1,
 				reload = 20
 			}
+			self.tecci.rcs = 7.5
+			self.tecci.rr = 0.6
 			self.tecci.stats_modifiers = nil
 			self.tecci.timers.reload_exit_empty = 0.9
 			self.tecci.timers.reload_exit_not_empty = 1.0
@@ -13146,6 +13156,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20,
 			value = 10
 		}
+		self.raygun.rcs = 8
+		self.raygun.rr = 1
 		self.raygun.panic_suppression_chance = 0.05
 		self.raygun.timers.reload_exit_not_empty = 0.7
 		self.raygun.timers.reload_exit_empty = 0.7
@@ -15264,6 +15276,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}		
+		self.crysis3_typhoon.rcs = 5
+		self.crysis3_typhoon.rr = 0.1
 		self.crysis3_typhoon.bmp = 100
 		self.crysis3_typhoon.stats_modifiers = nil
 		self.crysis3_typhoon.panic_suppression_chance = 0.05
@@ -15649,6 +15663,63 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			for i, category in pairs(weap.categories) do
 				if category == "shotgun" then
 					weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+				end
+			end
+
+			if weap.recategorize and not weap.rcs then
+				--YandereDev moment (this isn't run every frame though)
+				if weap.recategorize[1] == "light_pis" then
+					weap.rcs = 9
+					weap.rr = 0.8
+				elseif weap.recategorize[1] == "heavy_pis" then
+					weap.rcs = 7
+					weap.rr = 0.5
+					if weap.recategorize[2] and weap.recategorize[2] == "handcannon" then
+						weap.rcs = 5
+						weap.rr = 0.2
+					end
+				elseif weap.recategorize[1] == "light_shot" then
+					weap.rcs = 6
+					weap.rr = 0.3
+				elseif weap.recategorize[1] == "heavy_shot" then
+					weap.rcs = 5.5
+					weap.rr = 0.2
+				elseif weap.recategorize[1] == "break_shot" then
+					weap.rcs = 5
+					weap.rr = 0.1
+				elseif weap.recategorize[1] == "light_smg" then
+					weap.rcs = 8
+					weap.rr = 0.8
+				elseif weap.recategorize[1] == "heavy_smg" then
+					weap.rcs = 7
+					weap.rr = 0.6
+				elseif weap.recategorize[1] == "light_ar" then
+					weap.rcs = 7.5
+					weap.rr = 0.6
+				elseif weap.recategorize[1] == "heavy_ar" then
+					weap.rcs = 6.5
+					weap.rr = 0.4
+				elseif weap.recategorize[1] == "dmr_ar" then
+					weap.rcs = 6
+					weap.rr = 0.2
+				elseif weap.recategorize[1] == "light_mg" then
+					weap.rcs = 6
+					weap.rr = 0.3
+				elseif weap.recategorize[1] == "heavy_mg" then
+					weap.rcs = 5.5
+					weap.rr = 0.2
+				elseif weap.recategorize[1] == "miniguns" then
+					weap.rcs = 5
+					weap.rr = 0.1
+				elseif weap.recategorize[1] == "light_snp" then
+					weap.rcs = 5.5
+					weap.rr = 0.1
+				elseif weap.recategorize[1] == "heavy_snp" then
+					weap.rcs = 5.5
+					weap.rr = 0.1
+				elseif weap.recategorize[1] == "antim_snp" then
+					weap.rcs = 5.5
+					weap.rr = 0.1
 				end
 			end
 	

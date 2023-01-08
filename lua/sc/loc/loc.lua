@@ -135,6 +135,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
 		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+		["RestorationModCarpalTunnelTitleID"] = "Enable Recoil Auto-Recovery",
+		["RestorationModCarpalTunnelDescID"] = "Enables vanilla-esque recoil auto-recovery mechanics. Amount varies by weapon.",
 		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
 		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires restart.",
 		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",

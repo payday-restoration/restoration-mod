@@ -476,6 +476,11 @@ local old_update_stats_values = NewRaycastWeaponBase._update_stats_values
 function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data)
 	old_update_stats_values(self, disallow_replenish, ammo_data)
 	
+	self._recoil_v_speed = self:weapon_tweak_data().rvs or 90
+	self._recoil_h_speed = self:weapon_tweak_data().rhs or 60
+	self._recoil_center_speed = math.clamp(self:weapon_tweak_data().rcs or 7.5, 5, 10)
+	self._recoil_recovery = math.clamp(self:weapon_tweak_data().rr or 0.5, 0, 1)
+
 	self._reload_speed_mult = self:weapon_tweak_data().reload_speed_multiplier or 1
 	self._ads_speed_mult = self._ads_speed_mult or  1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil

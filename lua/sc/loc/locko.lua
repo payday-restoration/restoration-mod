@@ -133,7 +133,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
 		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
 		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
-		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",		
+		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
+		["RestorationModCarpalTunnelTitleID"] = "반동 자동 복구 활성화",
+		["RestorationModCarpalTunnelDescID"] = "바닐라와 같은 반동 자동 복구 메커니즘을 활성화합니다. 무기에 따라 복구하는 양이 다릅니다.",		
 		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
 		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
 		["RestorationModAutoDMRsTitleID"] = "지정사수 소총 항상 완전 자동 사격으로 시작",
@@ -2887,7 +2889,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다.\n\n#{skill_color}#기관총##의 경우 이 효과가 #{skill_color}#100%##로 증가합니다.\n\n#{risk}#참고: 이 효과는 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 추가로 최대 100%까지 중첩됩니다.##\n\n에이스: #{owned}#$pro##\n완전 자동으로 설정된 #{skill_color}#기관총##은 적을 관통할 수 있으며, 관통된 적에게 추가로 #{skill_color}#10%##만큼 피해를 입히고 최대 #{skill_color}#5##번까지 피해를 입힙니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다.\n\n#{skill_color}#기관총##의 경우 이 효과가 #{skill_color}#100%##로 증가합니다.\n\n#{risk}#참고: 이 효과는 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 추가로 최대 100%까지 중첩됩니다.##\n\n에이스: #{owned}#$pro##\n완전 자동으로 설정된 #{skill_color}#기관총##은 적을 관통할 수 있으며, 관통된 적마다 같은 사격에 맞은 다음 적을 #{skill_color}#10%##만큼 피해를 추가로 줍니다. 최대 #{skill_color}#5##회까지 중첩됩니다.",
 
 			--}
 		--}

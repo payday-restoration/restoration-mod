@@ -11939,7 +11939,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	--Phoenix .500
 	if self.shatters_fury then
-		self.shatters_fury.recategorize = { "heavy_pis" }
+		self.shatters_fury.recategorize = { "heavy_pis", "handcannon" }
 		self.shatters_fury.damage_type = "heavy_pistol"
 		self.shatters_fury.always_play_anims = true
 		self.shatters_fury.fire_mode_data.fire_rate = 0.2142857
@@ -14404,7 +14404,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.deckard then 
-		self.deckard.recategorize = {"heavy_pis"}
+		self.deckard.recategorize = {"heavy_pis", "handcannon"}
 		self.deckard.has_description = true
 		self.deckard.desc_id = "bm_ap_armor_50_weapon_sc_desc"
 		self.deckard.armor_piercing_chance = 0.5
@@ -14648,7 +14648,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 
 		if self.hhpc then
-			self.hhpc.recategorize = { "heavy_pis" }
+			self.hhpc.recategorize = { "heavy_pis", "handcannon" }
 			self.hhpc.plasma_b = true
 			self.hhpc.fire_mode_data.fire_rate = 0.2
 			self.hhpc.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -14863,7 +14863,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.m6d then --RJC9000 and Offyerrocker's M6D
-		self.m6d.recategorize = { "heavy_pis" }		
+		self.m6d.recategorize = { "heavy_pis", "handcannon" }		
 		self.m6d.damage_type = "heavy_pistol"
 		self.m6d.has_description = true
 		self.m6d.kick = self.stat_info.kick_tables.vertical_kick
@@ -15123,7 +15123,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
-		self.amt.recategorize = { "heavy_pis" }		
+		self.amt.recategorize = { "heavy_pis", "handcannon" }		
 		self.amt.damage_type = "heavy_pistol"			
 		self.amt.tactical_reload = 1
 		self.amt.use_data.selection_index = 2

@@ -27778,7 +27778,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_npc_weaps", function(self
 		"wpn_fps_smg_schakal_vg_surefire",
 		"wpn_fps_snp_tti_ns_standard",
 		"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_ass_m16_fg_stag",
+		"wpn_fps_snp_tti_fg_standard",
 		"wpn_fps_snp_tti_dhs_switch",
 		"wpn_fps_snp_tti_dh_standard",
 		"wpn_fps_snp_tti_bolt_standard",

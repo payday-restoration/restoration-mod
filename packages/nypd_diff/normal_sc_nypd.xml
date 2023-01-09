@@ -282,6 +282,26 @@
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
+	<!-- cloaca -->
+	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1_husk" load="true"/>	
+	<model				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<object				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1_contour"/>
+
+	<unit_mat			path="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_head_debris" />
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_head_debris"/>	
+
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" />
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_upper_body_debris"/>	
+	
+	<texture			path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_df"/>
+	<texture			path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_nm"/>
+	<texture			path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_df"/>
+	<texture			path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_nm"/>
+	
 	<object				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>

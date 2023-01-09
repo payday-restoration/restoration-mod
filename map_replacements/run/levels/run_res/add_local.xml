@@ -13,10 +13,10 @@
 	<mission path="dhruva_art/dhruva_art" script_data_type="binary"/>
 	<continent path="backdrop/backdrop" script_data_type="binary"/>
 	<mission path="backdrop/backdrop" script_data_type="binary"/>
-	<continent path="lights/lights" script_data_type="binary"/>
-	<mission path="lights/lights" script_data_type="binary"/>
 	<continent path="world/world" script_data_type="binary"/>
 	<mission path="world/world" script_data_type="binary"/>
+	<continent path="lights/lights" script_data_type="binary"/>
+	<mission path="lights/lights" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
 	<environment path="environments/env_street" script_data_type="custom_xml"/>
 </table>

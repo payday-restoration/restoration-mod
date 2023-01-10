@@ -5179,8 +5179,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.parts.wpn_fps_pis_deagle_m_extended.stats = {
 		value = 5,
 		concealment = -2,
-		reload = -3,
-		extra_ammo = 6
+		reload = -4,
+		extra_ammo = 5
 	}
 	self.parts.wpn_fps_pis_deagle_m_extended.custom_stats = {
 		ads_speed_mult = 1.05
@@ -9582,9 +9582,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_deagle", "resmod_x_deagle", func
 		supported = true,
 		stats = {
 			value = 5,
-			concealment = -1,
-			reload = -1,
-			extra_ammo = 12
+			concealment = -2,
+			reload = -4,
+			extra_ammo = 10
 		}
 	}
 	

@@ -286,6 +286,15 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	return spread_x, spread_y
 end
 
+function NewRaycastWeaponBase:recoil_wait()
+	local tweak_is_auto = tweak_data.weapon[self._name_id].FIRE_MODE == "auto"
+	local weapon_is_auto = self:fire_mode() == "auto"
+
+	local multiplier = tweak_is_auto == weapon_is_auto and 1 or 2
+
+	return self:weapon_fire_rate() * multiplier
+end
+
 local start_shooting_original = NewRaycastWeaponBase.start_shooting
 local stop_shooting_original = NewRaycastWeaponBase.stop_shooting
 local _fire_sound_original = NewRaycastWeaponBase._fire_sound
@@ -717,7 +726,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._hip_rof_mult = self._hip_rof_mult * stats.hip_rof_mult
 			end
 			if stats.starwars then
-				if restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC") == true then
+				if restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
 					self._cbfd_to_add_this_check_elsewhere = true
 				else
 					self._starwars = true

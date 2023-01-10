@@ -5356,46 +5356,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sub2000.timers.reload_exit_empty = 0.85
 				self.sub2000.timers.reload_exit_not_empty = 0.95
 
-			--Akimbo Deagle
-				self.x_deagle.has_description = true
-				self.x_deagle.desc_id = "bm_x_deagle_sc_desc"					
-				self.x_deagle.use_data.selection_index = 2
-				self.x_deagle.CLIP_AMMO_MAX = 14
-				self.x_deagle.AMMO_MAX = 60
-				self.x_deagle.FIRE_MODE = "single"
-				self.x_deagle.fire_mode_data = {}
-				self.x_deagle.fire_mode_data.fire_rate = 0.13953488
-				self.x_deagle.kick = self.stat_info.kick_tables.moderate_right_kick
-				self.x_deagle.animations.has_steelsight_stance = true
-				self.x_deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-				self.x_deagle.supported = true
-				self.x_deagle.ads_speed = 0.320
-				self.x_deagle.damage_falloff = {
-					start_dist = 1400,
-					end_dist = 4200,
-					min_mult = 0.4
-				}
-				self.x_deagle.stats = {
-					damage = 60,
-					spread = 51,
-					recoil = 21,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 23,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.x_deagle.stats_modifiers = nil
-				self.x_deagle.armor_piercing_chance = 0.5
-				self.x_deagle.can_shoot_through_enemy = true
-				self.x_deagle.panic_suppression_chance = 0.05
-				self.x_deagle.timers.reload_exit_empty = 0.55
-				self.x_deagle.timers.reload_exit_not_empty = 0.65
-
 			--Kahn .357				
 				self.x_korth.has_description = true
 				self.x_korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
@@ -5594,6 +5554,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.timers.reload_exit_empty = 0.5
 				self.x_chinchilla.timers.reload_exit_not_empty = 0.5
 				self.x_chinchilla.panic_suppression_chance = 0.05
+
+			--Akimbo Deagle
+				self.x_deagle.has_description = true
+				self.x_deagle.desc_id = "bm_x_deagle_sc_desc"					
+				self.x_deagle.use_data.selection_index = 2
+				self.x_deagle.CLIP_AMMO_MAX = 14
+				self.x_deagle.AMMO_MAX = 40
+				self.x_deagle.FIRE_MODE = "single"
+				self.x_deagle.fire_mode_data = {}
+				self.x_deagle.fire_mode_data.fire_rate = 0.13953488
+				self.x_deagle.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.x_deagle.animations.has_steelsight_stance = true
+				self.x_deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.x_deagle.supported = true
+				self.x_deagle.ads_speed = 0.320
+				self.x_deagle.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 4200,
+					min_mult = 0.26666
+				}
+				self.x_deagle.stats = {
+					damage = 90,
+					spread = 51,
+					recoil = 21,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.x_deagle.stats_modifiers = nil
+				self.x_deagle.armor_piercing_chance = 0.5
+				self.x_deagle.can_shoot_through_enemy = true
+				self.x_deagle.panic_suppression_chance = 0.05
+				self.x_deagle.timers.reload_exit_empty = 0.55
+				self.x_deagle.timers.reload_exit_not_empty = 0.65
 		
 			--RUS-12 Angry Tiger
 				self.rsh12.has_description = true
@@ -5858,44 +5858,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.timers.reload_exit_not_empty = 0.65
 				self.m1911.animations.reload_name_id = "sparrow"
 
-			--Deagle
-				--Back to secondary
-				self.deagle.has_description = true
-				self.deagle.desc_id = "bm_deagle_sc_desc"						
-				self.deagle.use_data.selection_index = 1
-				self.deagle.fire_mode_data.fire_rate = 0.13953488
-				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
-				self.deagle.CLIP_AMMO_MAX = 7
-				self.deagle.AMMO_MAX = 30
-				self.deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-				self.deagle.supported = true
-				self.deagle.ads_speed = 0.320
-				self.deagle.damage_falloff = {
-					start_dist = 1400,
-					end_dist = 4200,
-					min_mult = 0.4
-				}
-				self.deagle.stats = {
-					damage = 60,
-					spread = 61,
-					recoil = 31,
-					spread_moving = 6,
-					zoom = 1,
-					concealment = 23,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.deagle.stats_modifiers = nil
-				self.deagle.armor_piercing_chance = 0.5
-				self.deagle.can_shoot_through_enemy = true
-				self.deagle.panic_suppression_chance = 0.05
-				self.deagle.timers.reload_exit_empty = 0.75
-				self.deagle.timers.reload_exit_not_empty = 0.8
-
 			--Kahn .357				
 				self.korth.has_description = true
 				self.korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
@@ -6075,16 +6037,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.chinchilla.reload_speed_multiplier = 1.12
 				self.chinchilla.timers.reload_exit_empty = 0.5
 				self.chinchilla.timers.reload_exit_not_empty = 0.5
+
+			--Deagle
+				--Back to secondary
+				self.deagle.has_description = true
+				self.deagle.desc_id = "bm_deagle_sc_desc"						
+				self.deagle.use_data.selection_index = 1
+				self.deagle.fire_mode_data.fire_rate = 0.13953488
+				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.deagle.CLIP_AMMO_MAX = 7
+				self.deagle.AMMO_MAX = 20
+				self.deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.deagle.supported = true
+				self.deagle.ads_speed = 0.320
+				self.deagle.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 4200,
+					min_mult = 0.26666
+				}
+				self.deagle.stats = {
+					damage = 90,
+					spread = 61,
+					recoil = 31,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.deagle.stats_modifiers = nil
+				self.deagle.armor_piercing_chance = 0.5
+				self.deagle.can_shoot_through_enemy = true
+				self.deagle.panic_suppression_chance = 0.05
+				self.deagle.timers.reload_exit_empty = 0.75
+				self.deagle.timers.reload_exit_not_empty = 0.8
 			
 			--Wow wow (Peacemaker)
 				self.peacemaker.has_description = true
 				self.peacemaker.desc_id = "bm_ap_weapon_peacemaker_sc_desc"
 				self.peacemaker.AMMO_MAX = 20
 				self.peacemaker.kick = self.stat_info.kick_tables.right_kick
-				self.peacemaker.fire_mode_data.fire_rate = 0.352941
+				self.peacemaker.fire_mode_data.fire_rate = 0.375
 				self.peacemaker.fire_rate_multiplier = 2.5
 				self.peacemaker.BURST_FIRE = 6
-				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.2352941
+				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.25
 				self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.peacemaker.supported = true
 				self.peacemaker.ads_speed = 0.240
@@ -15792,15 +15792,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 			if restoration.Options:GetValue("OTHER/WpnCat") and restoration.Options:GetValue("OTHER/WpnCat") ~= 2 then
-				weap.recategorize = nil
-				if weap.categories[1] == "akimbo" then
-					weap.recategorize = { weap.categories[2] }
+				if weap.recategorize and weap.recategorize[1] ~= "unsupported" then
+					weap.recategorize = nil
 				end
-				if weap.categories[1] == "snp" then
-					weap.recategorize = { "assault_rifle" }
-				end
-				if weap.categories[1] == "minigun" or weap.categories[1] == "lmg" then
-					weap.recategorize = { "smg" }
+				if not weap.recategorize then
+					if weap.categories[1] == "akimbo" then
+						weap.recategorize = { weap.categories[2] }
+					end
+					if weap.categories[1] == "snp" then
+						weap.recategorize = { "assault_rifle" }
+					end
+					if weap.categories[1] == "minigun" or weap.categories[1] == "lmg" then
+						weap.recategorize = { "smg" }
+					end
 				end
 			end
 			self:calculate_ammo_pickup(weap)

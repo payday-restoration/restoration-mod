@@ -125,28 +125,37 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking of this specific skill.",
 		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Doctor Bag Health Regen",
 		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Enables or disables tracking of doctor bag health regen.",
+
+		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
 		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
-		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
-		["RestorationModADSTransitionStyleDescID"] = "Change the \"animation\" style of aiming down your sights.",
 		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Mode",
-		["RestorationModGCGPYPMMSACDescID"] = "Disables tracers and ammo regen that some attachments provide. Requires restart if toggled in-heist.",
-		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
-		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
-		["RestorationModCarpalTunnelTitleID"] = "Enable Recoil Auto-Recovery",
-		["RestorationModCarpalTunnelDescID"] = "Enables vanilla-esque recoil auto-recovery mechanics. Amount varies by weapon.",
-		["RestorationModWpnCatTitleID"] = "Buy Menu Organization",
-		["RestorationModWpnCatDescID"] = "Change weapon organization method used when buying a weapon from the black market menu. Requires restart.",
-		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
-		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with a fire selector start off on full-auto.",
-		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
-		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
+		["RestorationModGCGPYPMMSACDescID"] = "Disables blaster tracers, ammo regen and localization easter eggs. Requires restart.",
 		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
 		["RestorationModSevenHoldDescID"] = "Enable/disable whether or not the interact key acts as a toggle.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "Deployable Cancels Interact",
 		["RestorationModSevenHoldDeployCancelDescID"] = "Enable/disable whether or not the deployable key is what's used to cancel an active toggle interaction. Requires Toggle Interactions to be enabled to have any effect.",
+		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
+		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
+		["RestorationModWpnCatTitleID"] = "Buy Menu Tab Sorting",
+		["RestorationModWpnCatDescID"] = "Change weapon grouping method used when buying a weapon from the black market menu. Requires restart.",
+		["base_wpn_cat"] = "base skill",
+		["sub_wpn_cat"] = "sub-category & damage tier",
+
+		--WEAPON HANDLING
+		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
+		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+		["RestorationModCarpalTunnelTitleID"] = "Recoil Auto-Recovery",
+		["RestorationModCarpalTunnelDescID"] = "Choose how recoil auto-recovery mechanics work. Enabled versions are balanced differently.",
+			["rr_off"] = "Disabled",
+			["rr_per_weapon"] = "Weapon specific",
+			["rr_full"] = "Full",
+		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
+		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with a fire selector start off on full-auto.",
+		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
+		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
 		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto weapons to assist with oversampling (sending inputs faster than the weapon can fire).",
 		["RestorationModQueuedShootingWindowTitleID"] = "Buffer Fire Input Sensitivity",
@@ -159,21 +168,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
 		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
 		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
+		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
+		["RestorationModADSTransitionStyleDescID"] = "Change the transition style of aiming down your sights.",
+			["vanilla_on_rails"] = "Default/On-Rails",
+			["kf_mw_style"] = "KF1/CoD Style",
+			["tilt_in"] = "Tilted In",
 		["RestorationModAimDeploysBipodTitleID"] = "ADS Deploys Bipod",
 		["RestorationModAimDeploysBipodDescID"] = "Enable/disable bipods auto-mounting when ADSing over a valid surface.",
 		["RestorationModMoveCancelBipodTitleID"] = "Movement Dismounts Bipod",
 		["RestorationModMoveCancelBipodDescID"] = "Enable/disable basic movement inputs dismounting bipods.",
 		["RestorationModSeparateBowADSTitleID"] = "Separate Bow Aiming",
 		["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
-		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
-		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 
-		["vanilla_on_rails"] = "Default/On-Rails",
-		["kf_mw_style"] = "KF1/CoD Style",
-		["tilt_in"] = "Tilted In",
-
-		["base_wpn_cat"] = "Divide by base/skill category",
-		["sub_wpn_cat"] = "Divide by sub-category + damage tier",
 
 		["default"] = "Default",
 		["random"] = "Random",
@@ -2272,77 +2278,77 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	})
 
 
-	--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
-	--[[ 
-		WepNames Options
-		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
-		2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
-		3 = real names (i.e. SA 1911 Operator, HK 416c)
-		
-	]]
-	if weapon_names then
-		if weapon_names == 2 then
-			LocalizationManager:add_localized_strings({	
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+		--[[ 
+			WepNames Options
+			1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
+			2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
+			3 = real names (i.e. SA 1911 Operator, HK 416c)
+		]]
+		if weapon_names then
+			if weapon_names == 2 then
+				LocalizationManager:add_localized_strings({	
+	
+				})
+			elseif weapon_names == 3 then
+				LocalizationManager:add_localized_strings({	
+					--LEO-40
+					["bm_w_hs2000"] = "SA XD(M)-40",
+					["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
+					["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
+					["bm_wp_hs2000_sl_long"] = "Custom Slide",
+					--Signature 40
+					["bm_w_p226"] = "SIG P226R",
+					["bm_w_x_p226"] = "Akimbo P226Rs",
+					["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+					["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
+					["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
+					["bm_wp_p226_b_long"] = "Brushed Long Slide",
+	
+					--Crosskill
+					["bm_w_colt_1911"] = "SA 1911 Operator",
+					["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
+					["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
+					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
+					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
+					["bm_wp_1911_g_bling"] = "Walnut Grips",
+					["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+					["bm_wp_1911_b_long"] = "Compensated Long Slide",
+					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
+					["bm_wp_1911_m_extended"] = "12rnd Magazine",
+					--Crosskill Chunky
+					["bm_w_m1911"] = "Colt 1911A1",
+					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+				})
+			end
+		end	
 
-			})
-		elseif weapon_names == 3 then
+		local twirl = math.rand(1)
+		local shalashaska = 0.06
+		if twirl <= shalashaska then
 			LocalizationManager:add_localized_strings({	
-				--LEO-40
-				["bm_w_hs2000"] = "SA XD(M)-40",
-				["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
-				["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
-				["bm_wp_hs2000_sl_long"] = "Custom Slide",
-				--Signature 40
-				["bm_w_p226"] = "SIG P226R",
-				["bm_w_x_p226"] = "Akimbo P226Rs",
-				["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
-				["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
-				["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
-				["bm_wp_p226_b_long"] = "Brushed Long Slide",
-
-				--Crosskill
-				["bm_w_colt_1911"] = "SA 1911 Operator",
-				["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
-				["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
-				["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
-				["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
-				["bm_wp_1911_g_bling"] = "Walnut Grips",
-				["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
-				["bm_wp_1911_b_long"] = "Compensated Long Slide",
-				["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
-				["bm_wp_1911_m_extended"] = "12rnd Magazine",
-				--Crosskill Chunky
-				["bm_w_m1911"] = "Colt 1911A1",
-				["bm_w_x_m1911"] = "Akimbo 1911A1s",
+				["bm_w_peacemaker"] = "Revolver Ocelot",
+				["bm_w_peacemaker_desc"] = "Revolver Ocelot",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
+				["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
+				["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
+				["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
+				["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
+				["bm_menu_ro_barrel"] = "Revolver Ocelot",
+				["bm_menu_ro_stock"] = "Revolver Ocelot",
+				["bm_menu_ro_modifier"] = "Revolver Ocelot",
+				["bm_menu_ro_charm"] = "Revolver Ocelot",
+				["bm_menu_ro_grip"] = "Revolver Ocelot",
+	
+				["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
 			})
 		end
-	end	
 
-	local twirl = math.rand(1)
-	local shalashaska = 0.06
-	if twirl <= shalashaska then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_peacemaker"] = "Revolver Ocelot",
-			["bm_w_peacemaker_desc"] = "Revolver Ocelot",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
-			["bm_menu_ro_barrel"] = "Revolver Ocelot",
-			["bm_menu_ro_stock"] = "Revolver Ocelot",
-			["bm_menu_ro_modifier"] = "Revolver Ocelot",
-			["bm_menu_ro_charm"] = "Revolver Ocelot",
-			["bm_menu_ro_grip"] = "Revolver Ocelot",
-
-			["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
-		})
-	end
-
-	local cute = math.rand(1)
-	local funny = 0.02
-	if cute <= funny then
-		LocalizationManager:add_localized_strings({	
+		local cute = math.rand(1)
+		local funny = 0.02
+		if cute <= funny then
+			LocalizationManager:add_localized_strings({	
 			--It's an "Upotte!!" reference
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
@@ -2351,7 +2357,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m4"] = "Em-Four",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
 					["bm_w_aug"] = "AUG",
-						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
+						["bm_aug_sc_desc"] = "#{stats_negative}#\"RUN AWAY! PLEAD FOR YOUR LIFE!\"##\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
 					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
 					["bm_w_s552"] = "Shigu",
@@ -2359,7 +2365,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_l85a2"] = "Eru",
 						["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
 					["bm_w_rk62"] = "Sako",
-						["bm_rk62_sc_desc"] = "\"#{stat_maxed}#What wonderful squeals!## You sound like you're about to #{stats_positive}#die!##\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
+						["bm_rk62_sc_desc"] = "\"#{stat_maxed}#What wonderful squeals!## You sound like you're about to #{stats_negative}#die!##\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
 	
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "Faru",
@@ -2412,20 +2418,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
 					["bm_w_benelli"] = "Beneri M4",
 						["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
-				
-		})
-	end
+					
+			})
+		end
 	
-	local big = math.rand(1)
-	local pistol = 0.02
-	if big <= pistol then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_deagle"] = "Big Pistol",
-			["bm_w_m16"] = "is that a clarion",
-			["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
-			["bm_w_x_type54"] = "The twin crosskills",
-			["bm_akmsu_sc_desc"] = "A small rifle useful for taking down #{stat_maxed}#BIG MEN##. Not to be underestimated as this rifle can hold its own in just about any scenario.",
-		})
+		local big = math.rand(1)
+		local pistol = 0.02
+		if big <= pistol then
+			LocalizationManager:add_localized_strings({	
+				["bm_w_deagle"] = "Big Pistol",
+				["bm_w_m16"] = "is that a clarion",
+				["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
+				["bm_w_x_type54"] = "The twin crosskills",
+				["bm_akmsu_sc_desc"] = "A small rifle useful for taking down #{stat_maxed}#BIG MEN##. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+			})
+		end
 	end
 	
 end)
@@ -3318,15 +3325,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 	})
 
-	local butt = math.rand(1)
-	local frame = 0.01
-	if butt <= frame then
-		LocalizationManager:add_localized_strings({	
-			["menu_st_spec_23"] = "Helminth",
-			["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
-			["menu_difficulty_sm_wish"] = "The Steel Path",
-			["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
-		})
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		local butt = math.rand(1)
+		local frame = 0.01
+		if butt <= frame then
+			LocalizationManager:add_localized_strings({	
+				["menu_st_spec_23"] = "Helminth",
+				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless 	strength and vigor?\n\n\n#{important_1}#It can only be me.##",
+				["menu_difficulty_sm_wish"] = "The Steel Path",
+				["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
+			})
+		end
 	end
 
 end)

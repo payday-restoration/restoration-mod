@@ -201,14 +201,11 @@ end
 function FPCameraPlayerBase:stop_shooting( wait )
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
-	local recoil_recover = (enable_recoil_recover and (weapon and weapon:base()._recoil_recovery or 0.5)) or 0
+	local recoil_recover = (enable_recoil_recover and enable_recoil_recover ~= 1 and ((enable_recoil_recover == 3 and 1) or (weapon and weapon:base()._recoil_recovery) or 0.5)) or 0
 
-	self._recoil_kick.to_reduce 	= self._recoil_kick.accumulated or 0 
-	self._recoil_kick.h.to_reduce 	= self._recoil_kick.h.accumulated or 0
-	self._recoil_kick.to_reduce 	= self._recoil_kick.to_reduce * recoil_recover
-	self._recoil_kick.h.to_reduce 	= self._recoil_kick.h.to_reduce	* recoil_recover
-
-	self._recoil_wait = 0
+	self._recoil_kick.to_reduce = (self._recoil_kick.accumulated or 0) * recoil_recover
+	self._recoil_kick.h.to_reduce = (self._recoil_kick.h.accumulated or 0) * recoil_recover
+	self._recoil_wait = (wait and wait * ((enable_recoil_recover and enable_recoil_recover == 3 and 2) or 1)) or 0
 end
 
 --Add more recoil to burn through.
@@ -229,34 +226,15 @@ function FPCameraPlayerBase:recoil_kick(up, down, left, right)
 	self._recoil_kick.h.accumulated = (self._recoil_kick.h.accumulated or 0) + h
 end
 
-function FPCameraPlayerBase:recoil_kick( up, down, left, right )
-	local player_state = managers.player:current_state()
-	if player_state == "bipod" then
-		up = up * 0.4
-		down = down * 0.4
-		left = left * 0.4
-		right = right * 0.4
-	end
-
-	local v = math.lerp( up, down, math.random() )
-	if self._recoil_kick.accumulated and (v + self._recoil_kick.accumulated) < 0 then
-		 v = v * -1
-	end
-	self._recoil_kick.accumulated = (self._recoil_kick.accumulated or 0) + v
-	if self._recoil_kick.accumulated < 0 then
-		self._recoil_kick.accumulated = 0
-	end
-	
-	local h
-	h = math.lerp( left, right, math.random() )
-	self._recoil_kick.h.accumulated = (self._recoil_kick.h.accumulated or 0) + h
-end
-
 function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local r_value = 0
 	local player_state = self._parent_unit:movement():current_state()
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
+	if enable_recoil_recover and enable_recoil_recover == 3 then
+		center_speed = math.max(center_speed * 0.5, 1)
+	end
 	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 90, 0)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
@@ -276,7 +254,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 		local n = math.lerp(self._recoil_kick.to_reduce, 0, center_speed * dt)
 		r_value = -(self._recoil_kick.to_reduce - n)
 		self._recoil_kick.to_reduce = n
-		if self._recoil_kick.to_reduce <= 0 then
+		if self._recoil_kick.to_reduce == 0 then
 			self._recoil_kick.to_reduce = nil
 		end
 	end
@@ -289,6 +267,10 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local player_state = self._parent_unit:movement():current_state()
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
+	if enable_recoil_recover and enable_recoil_recover == 3 then
+		center_speed = math.max(center_speed * 0.5, 1)
+	end
 	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
@@ -307,12 +289,9 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 		local n = math.lerp(self._recoil_kick.h.to_reduce, 0, center_speed * dt)
 		r_value = -(self._recoil_kick.h.to_reduce - n)
 		self._recoil_kick.h.to_reduce = n
-		if self._recoil_kick.h.to_reduce <= 0 then
+		if self._recoil_kick.h.to_reduce == 0 then
 			self._recoil_kick.h.to_reduce = nil
 		end
-	end
-	if player_state and player_state:_is_using_bipod() then
-		r_value = r_value * 0.5
 	end
 	return r_value
 end

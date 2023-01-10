@@ -435,7 +435,6 @@ function BlackMarketGui:populate_mods(data)
 	end
 end
 
-
 function BlackMarketGui:choose_weapon_mods_callback(data)
 	local dropable_mods = managers.blackmarket:get_dropable_mods_by_weapon_id(data.name, {
 		category = data.category,
@@ -658,8 +657,6 @@ function BlackMarketGui:choose_weapon_mods_callback(data)
 	self:_start_crafting_weapon(data, new_node_data)
 end
 
-
-
 function BlackMarketGui:_get_melee_weapon_stats(name)
 	local base_stats = {}
 	local mods_stats = {}
@@ -813,7 +810,6 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 
 	return base_stats, mods_stats, skill_stats
 end
-
 
 function BlackMarketGui:_get_armor_stats(name)
 	local base_stats = {}
@@ -3453,7 +3449,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 	self._in_setup = nil
 end
 
-
 function BlackMarketGui:show_stats()
 	if not self._stats_panel or not self._rweapon_stats_panel or not self._armor_stats_panel or not self._mweapon_stats_panel then
 		return
@@ -4332,7 +4327,6 @@ function BlackMarketGui:show_stats()
 		self._stats_panel:show()
 	end
 end
-
 
 function BlackMarketGui:update_info_text()
 	local slot_data = self._slot_data
@@ -6201,7 +6195,6 @@ function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 		new_node_data
 	})
 end
-
 -- Mod Shop Stuff
 Hooks:RegisterHook("BlackMarketGUIOnPopulateBuyMasks")
 Hooks:RegisterHook("BlackMarketGUIOnPopulateBuyMasksActionList")
@@ -6355,7 +6348,6 @@ function BlackMarketGui.populate_buy_mask(self, data)
 		end
 
 	end
-
 end
 
 local populate_choose_mask_mod1 = BlackMarketGui.populate_choose_mask_mod
@@ -6514,7 +6506,6 @@ populate_choose_mask_mod1(self, data)
 		end
 
 	end
-
 end
 
 BlackMarketGui.modshop_purchase_mask_callback = function(self, data)

@@ -598,6 +598,11 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.recoil_recover_style = {
+	"rr_off",
+	"rr_per_weapon",
+	"rr_full"
+}
 restoration.ads_transition_style = {
 	"vanilla_on_rails",
 	"kf_mw_style",

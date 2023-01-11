@@ -124,20 +124,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_survive_one_hitDescID"] = "이 특정 기술의 트래커를 활성화하거나 비활성화합니다.",
 		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "의료 가방 체력 회복",
 		["RestorationModInfo_doctor_bag_health_regenDescID"] = "의료 가방 체력 회복 트래커를 활성화하거나 비활성화합니다.",
+
+		--EXTRA OPTIONS		
 		["RestorationModAltLastDownColorTitleID"] = "대체된 마지막 다운 컬러 그레이딩",
 		["RestorationModAltLastDownColorDescID"] = "마지막 다운 컬러 그레이딩을 color_sin_classic으로 전환합니다.",
 		["RestorationModNoBleedoutTiltTitleID"] = "최후의 저항 카메라 기울기 비활성화",
-		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",
-		["RestorationModADSTransitionStyleTitleID"] = "ADS 스타일",
-		["RestorationModADSTransitionStyleDescID"] = "조준 할 때의 \"애니메이션\" 스타일을 변경합니다.",
+		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",	
 		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
-		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
-		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
-		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
-		["RestorationModCarpalTunnelTitleID"] = "반동 자동 복구 활성화",
-		["RestorationModCarpalTunnelDescID"] = "바닐라와 같은 반동 자동 복구 메커니즘을 활성화합니다. 무기에 따라 복구하는 양이 다릅니다.",		
-		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
-		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
+		["RestorationModGCGPYPMMSACDescID"] = "블래스터 예광탄, 탄약 재생 및 번역된 이스터 에그를 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",		
 		["RestorationModAutoDMRsTitleID"] = "지정사수 소총 항상 완전 자동 사격으로 시작",
 		["RestorationModAutoDMRsDescID"] = "발사 선택기가 있는 모든 지정사수 소총이 완전 자동으로 시작할지 여부를 전환합니다.",		
 		["RestorationModSprintCancelTitleID"] = "위기모면 에이스 효과 재장전 취소",
@@ -146,6 +140,21 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDescID"] = "상호 작용 키가 토글 역할을 하는지 여부를 활성화하거나 비활성화합니다.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "배치물 취소 상호 작용",
 		["RestorationModSevenHoldDeployCancelDescID"] = "배치물 키가 토글 상호 작용을 취소하는 데 사용되는지 여부를 활성화하거나 비활성화합니다. 효과를 보려면 토클 상호작용을 활성화해야 합니다.",
+		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
+		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
+		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
+		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
+			["base_wpn_cat"] = "기본/스킬 카테고리로 나누기",
+			["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",		
+		
+		--WEAPON HANDLING
+		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
+		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
+		["RestorationModCarpalTunnelTitleID"] = "반동 자동 복구 활성화",
+		["RestorationModCarpalTunnelDescID"] = "반동 자동 복구 메커니즘이 작동하는 방식을 선택합니다. 활성화된 버전은 다르게 밸런스가 되어 있습니다.",
+			["rr_off"] = "비활성화",
+			["rr_per_weapon"] = "무기에 따라",
+			["rr_full"] = "전부",		
 		["RestorationModQueuedShootingTitleID"] = "발사 입력 버퍼",
 		["RestorationModQueuedShootingDescID"] = "오버샘플링(무기가 발사할 수 있는 것보다 빠르게 발사)을 지원하기 위해 반자동 무기에 대한 발사 입력 버퍼링을 활성화/비활성화합니다.",
 		["RestorationModQueuedShootingWindowTitleID"] = "발사 입력 대기 감도 버퍼",
@@ -157,22 +166,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
 		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬 없이 주 무기로 쓰러질 때 소생 시 강제 무기 교체를 비활성화합니다.",
 		["RestorationModSecondSightSprintTitleID"] = "전력 질주 버튼 누르는 동안 보조 조준기 전환",
-		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다.\n활성화된 가젯은 U232 이전처럼 전환할 수 있지만 조준 도중에는 전력 질주를 할 수 없습니다.",		
+		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다.\n활성화된 가젯은 U232 이전처럼 전환할 수 있지만 조준 도중에는 전력 질주를 할 수 없습니다.",
+		["RestorationModADSTransitionStyleTitleID"] = "ADS 스타일",
+		["RestorationModADSTransitionStyleDescID"] = "조준하는 전환 스타일을 변경합니다.",
+			["vanilla_on_rails"] = "기본/온레일",
+			["kf_mw_style"] = "킬링 플로어 1/콜 오브 듀티 스타일",
+			["tilt_in"] = "기울임",		
 		["RestorationModAimDeploysBipodTitleID"] = "정조준 상태에서 양각대 펼치기",
 		["RestorationModAimDeploysBipodDescID"] = "유효한 표면 위에 정조준을 할 때 양각대 자동 거치을 활성화하거나 비활성화합니다.",
 		["RestorationModMoveCancelBipodTitleID"] = "움직일때 양각대 분리",
 		["RestorationModMoveCancelBipodDescID"] = "움직일때 양각대를 분리하는걸 활성화하거나 비활성화합니다.",
 		["RestorationModSeparateBowADSTitleID"] = "별도 방식의 활 조준",
-		["RestorationModSeparateBowADSDescID"] = "활로 화살을 당길 때 강제 조준을 비활성화합니다. 활성화된 동안 재장전 키를 눌려 당긴 화살을 놓습니다.",		
-		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
-		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
-
-		["vanilla_on_rails"] = "기본/온레일",
-		["kf_mw_style"] = "킬링 플로어 1/콜 오브 듀티 스타일",
-		["tilt_in"] = "기울임",
-
-		["base_wpn_cat"] = "기본/스킬 카테고리로 나누기",
-		["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",
+		["RestorationModSeparateBowADSDescID"] = "활로 화살을 당길 때 강제 조준을 비활성화합니다. 활성화된 동안 재장전 키를 눌려 당긴 화살을 놓습니다.",
 		
 		["default"] = "기본",
 		["random"] = "랜덤",
@@ -2138,181 +2143,173 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
 
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+		--[[ 
+			WepNames Options
+			1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
+			2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
+			3 = real names (i.e. SA 1911 Operator, HK 416c)
+		]]
+		if weapon_names then
+			if weapon_names == 2 then
+				LocalizationManager:add_localized_strings({	
+	
+				})
+			elseif weapon_names == 3 then
+				LocalizationManager:add_localized_strings({	
+					--LEO-40
+					["bm_w_hs2000"] = "SA XD(M)-40",
+					["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
+					["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
+					["bm_wp_hs2000_sl_long"] = "Custom Slide",
+					--Signature 40
+					["bm_w_p226"] = "SIG P226R",
+					["bm_w_x_p226"] = "Akimbo P226Rs",
+					["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+					["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
+					["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
+					["bm_wp_p226_b_long"] = "Brushed Long Slide",
+	
+					--Crosskill
+					["bm_w_colt_1911"] = "SA 1911 Operator",
+					["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
+					["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
+					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
+					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
+					["bm_wp_1911_g_bling"] = "Walnut Grips",
+					["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+					["bm_wp_1911_b_long"] = "Compensated Long Slide",
+					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
+					["bm_wp_1911_m_extended"] = "12rnd Magazine",
+					--Crosskill Chunky
+					["bm_w_m1911"] = "Colt 1911A1",
+					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+				})
+			end
+		end		
 
-	--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
-	--[[ 
-		WepNames Options
-		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
-		2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
-		3 = real names (i.e. SA 1911 Operator, HK 416c)
-		
-	]]	
-	if weapon_names then
-		if weapon_names == 2 then
+		local twirl = math.rand(1)
+		local shalashaska = 0.06
+		if twirl <= shalashaska then
 			LocalizationManager:add_localized_strings({	
+				["bm_w_peacemaker"] = "리볼버 오셀롯",
+				["bm_w_peacemaker_desc"] = "리볼버 오셀롯",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_barrel_long"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯",
+				["bm_menu_ro_barrel"] = "리볼버 오셀롯",
+				["bm_menu_ro_stock"] = "리볼버 오셀롯",
+				["bm_menu_ro_modifier"] = "리볼버 오셀롯",
+				["bm_menu_ro_charm"] = "리볼버 오셀롯",
+				["bm_menu_ro_grip"] = "리볼버 오셀롯",
 
-			})
-		elseif weapon_names == 3 then
-			LocalizationManager:add_localized_strings({	
-				--Signature 40
-				["bm_w_hs2000"] = "SA XD(M)-40",
-				["bm_wp_hs2000_m_extended"] = "XD(M)-40 22발 탄창",
-				["bm_wp_hs2000_sl_custom"] = "단축형 슬라이드",
-				["bm_wp_hs2000_sl_long"] = "맞춤형 슬라이드",
-				--Signature 40
-				["bm_w_p226"] = "시그 P226R",
-				["bm_w_x_p226"] = "아킴보 P226R",
-				["bm_wp_p226_co_comp_2"] = "SJC 보정기 .40",
-				["bm_wp_p226_m_extended"] = "P226 22발 탄창",
-				["bm_wp_p226_b_equinox"] = "이쿼녹스 듀오톤 슬라이드",
-				["bm_wp_p226_b_long"] = "브러시드 긴 슬라이드",
-
-				--Crosskill
-				["bm_w_colt_1911"] = "SA 1911 오퍼레이터",
-				["bm_w_x_colt_1911"] = "아킴보 1911 오퍼레이터",
-				["bm_wp_1911_co_2"] = "TCII 보정기", --Not 100% but seems to be based off of it
-				["bm_wp_1911_co_1"] = "클락 헤비 핀마스터", --Not 100% but seems to be based off of it
-				["bm_wp_1911_g_ergo"] = "팩마이어 1911 손잡이",
-				["bm_wp_1911_g_bling"] = "월넛 손잡이",
-				["bm_wp_1911_g_engraved"] = "맞춤형 각인 1911 손잡이",
-				["bm_wp_1911_b_long"] = "단축형 긴 슬라이드",
-				["bm_wp_1911_b_vented"] = "단축형 투톤 슬라이드",
-				["bm_wp_1911_m_extended"] = "12발 탄창",
-				--Crosskill Chunky
-				["bm_w_m1911"] = "콜트 1911A1",
-				["bm_w_x_m1911"] = "아킴보 1911A1",
+				["bm_m134_sc_desc"] = "잠긴 메타포...",
 			})
 		end
-	end	
 
-	local twirl = math.rand(1)
-	local shalashaska = 0.06
-
-	if twirl <= shalashaska then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_peacemaker"] = "리볼버 오셀롯",
-			["bm_w_peacemaker_desc"] = "리볼버 오셀롯",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_barrel_long"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯",
-			["bm_menu_ro_barrel"] = "리볼버 오셀롯",
-			["bm_menu_ro_stock"] = "리볼버 오셀롯",
-			["bm_menu_ro_modifier"] = "리볼버 오셀롯",
-			["bm_menu_ro_charm"] = "리볼버 오셀롯",
-			["bm_menu_ro_grip"] = "리볼버 오셀롯",
-
-			["bm_m134_sc_desc"] = "잠긴 메타포...",
-		})
-	end
-
-	local blue = math.rand(1)
-	local archive = 0.01
-	if blue <= archive then
-		LocalizationManager:add_localized_strings({
-		-- Abydos
-			-- Countermeasures Council
-			["bm_w_s552"] = "WHITE FANG 465",
-			["bm_s552_sc_desc"] = "\"이 근처에 분명 은행이...\"\n\n#{skill_color}#시로코##가 애용하는 돌격소총.\n늘 꼼꼼하게 정비해 두기 때문에 어떤 상황에서도 준비만전이다.",	
-			["bm_w_m134"] = "미니 No.5",
-			["bm_m134_sc_desc"] = "\"노노미 갑니다!\"\n\n#{skill_color}#노노미##가 사용하는 기관총.\n#{skill_color}#'미니 No.5'##라는 이름과 어울리지 않게 그 무게는 절대 가볍지 않다.",
-			["bm_w_p226"] = "커먼 센스",
-			["bm_p226_sc_desc"] = "\"자, 부탁드립니다!\"\n\n#{skill_color}#아야네##가 귀여운 디자인의 권총.\n아야네 앞에서 상식적인 말과 행동만 한다면 볼 일은 거의 없다.",
+		local blue = math.rand(1)
+		local archive = 0.01
+		if blue <= archive then
+			LocalizationManager:add_localized_strings({
+			-- Abydos
+				-- Countermeasures Council
+				["bm_w_s552"] = "WHITE FANG 465",
+				[	"bm_s552_sc_desc"] = "\"이 근처에 분명 은행이...\"\n\n#{skill_color}#시로코##가 애용하는 돌격소총.\n늘 꼼꼼하게 정비해 두기 때문에 어떤 상황에서도 준비만전이다.",	
+				["bm_w_m134"] = "미니 No.5",
+					["bm_m134_sc_desc"] = "\"노노미 갑니다!\"\n\n#{skill_color}#노노미##가 사용하는 기관총.\n#{skill_color}#'미니 No.5'##라는 이름과 어울리지 않게 그 무게는 절대 가볍지 않다.",
+				["bm_w_p226"] = "커먼 센스",
+					["bm_p226_sc_desc"] = "\"자, 부탁드립니다!\"\n\n#{skill_color}#아야네##가 귀여운 디자인의 권총.\n아야네 앞에서 상식적인 말과 행동만 한다면 볼 일은 거의 없다.",
 			
-		-- Gehenna
-			-- Prefect Team
-			["bm_w_mg42"] = "종막: 디스트로이어",
-			["bm_wolf_brigade_sc_desc"] = "\"정말... 해도해도 끝이 없어.\"\n\n#{skill_color}#히나##가 마치 자신의 수족처럼 다루는 기관총.\n교칙을 위반하거나 풍기를 어지럽히는 사람은 그 무자비한 파괴력에 날아가 버리고 만다.",	
-			["bm_w_c96"] = "서포트 포인터",
-			["bm_c96_sc_desc"] = "\"포기하지 말아주세요.\"\n\n#{skill_color}#치나츠##가 애용하는 권총.\n누군가를 쏠 때보다 뭔가를 가리킬 때 사용하는 경우가 더 많다.",
-			["bm_w_breech"] = "핫 샷",
-			["bm_breech_sc_desc"] = "\"분석 완료. 약점은 파악됐습니다.\"\n\n#{skill_color}#아코##가 휴대하고 있는 권총.\n#{skill_color}#아코##가 뼈를 깎는 노력을 거듭해 행정관의 자리에 올랐을 때 건네받은 소중한 것. 언제나 가지고 다니면서 몹시 귀중하게 다루고 있다.",			
-			-- School Lunch Club
-			["bm_w_mp7"] = "급식부 호신용 총 type A",
-			["bm_mp7_sc_desc"] = "\"응! 완벽해!\"\n\n#{skill_color}#후우카##가 항상 휴대하는 기관단총.\n가끔 식당에서 날뛰는 문제아들을 제압하기 위해서도 사용하려 하지만, 대부분의 경우 사용하기 전에 상대가 온순해지므로 별로 사용할 일은 없는 모양.",
-			-- Emergency Medicine Club
-			["bm_w_gre_m79"] = "구급용 돌입 키트",
-			["bm_w_gre_m79_sc_desc"] = "\"출동합니다.\"\n\n#{skill_color}#세나##가 사용하는 유탄발사기.\n구급 출동 시 빠르게 장애물을 제거하는 도구. 장애물 중에는 일을 방해하는 상대도 포함된다.",
+			-- Gehenna
+				-- Prefect Team
+				["bm_w_mg42"] = "종막: 디스트로이어",
+					["bm_wolf_brigade_sc_desc"] = "\"정말... 해도해도 끝이 없어.\"\n\n#{skill_color}#히나##가 마치 자신의 수족처럼 다루는 기관총.\n교칙을 위반하거나 풍기를 어지럽히는 사람은 그 무자비한 파괴력에 날아가 버리고 만다.",	
+				["bm_w_c96"] = "서포트 포인터",
+					["bm_c96_sc_desc"] = "\"포기하지 말아주세요.\"\n\n#{skill_color}#치나츠##가 애용하는 권총.\n누군가를 쏠 때보다 뭔가를 가리킬 때 사용하는 경우가 더 많다.",
+				["bm_w_breech"] = "핫 샷",
+					["bm_breech_sc_desc"] = "\"분석 완료. 약점은 파악됐습니다.\"\n\n#{skill_color}#아코##가 휴대하고 있는 권총.\n#{skill_color}#아코##가 뼈를 깎는 노력을 거듭해 행정관의 자리에 올랐을 때 건네받은 소중한 것. 언제나 가지고 다니면서 몹시 귀중하게 다루고 있다.",			
+				-- School Lunch Club
+				["bm_w_mp7"] = "급식부 호신용 총 type A",
+					["bm_mp7_sc_desc"] = "\"응! 완벽해!\"\n\n#{skill_color}#후우카##가 항상 휴대하는 기관단총.\n가끔 식당에서 날뛰는 문제아들을 제압하기 위해서도 사용하려 하지만, 대부분의 경우 사용하기 전에 상대가 온순해지므로 별로 사용할 일은 없는 모양.",
+				-- Emergency Medicine Club
+				["bm_w_gre_m79"] = "구급용 돌입 키트",
+					["bm_w_gre_m79_sc_desc"] = "\"출동합니다.\"\n\n#{skill_color}#세나##가 사용하는 유탄발사기.\n구급 출동 시 빠르게 장애물을 제거하는 도구. 장애물 중에는 일을 방해하는 상대도 포함된다.",
 			
-		-- Millennium
-			-- Seminar
-			["bm_w_shepheard"] = "로직 & 리즌",
-			--["bm_w_shepheard_desc"] = "\"현재 상황과 조건. 좋아, 이건 승리야!\"\n\n#{skill_color}#유우카##가 사용하는 2정의 기관단총.\n중요한 타이밍이나 적절한 대처가 필요 할 때 유우카가 합리적이고 이성적인 판단을 내릴 수 있도록 도와준다.",
-			-- Veritas
-			["bm_w_glock_17"] = "에코링크",
-			["bm_g17_sc_desc"] = "\"감청 개시.\"\n\n#{skill_color}#코타마##가 항상 휴대하는 권총.\n도청의 방해가 되지 않도록, 발사음이 최소화 된 모델을 사용하고 있다.",			
-			-- Cleaning&Clearing
-			["bm_w_famas"] = "서프라이즈 파티",
-			["bm_menu_sc_famas_desc"] = "\"아스나! 여기에 등장!\"\n\n#{skill_color}#아스나##가 사용하는 돌격소총.\n떠들썩한 장소에 어울리는 이름이지만 늘 그렇듯 본인은 잊어버린다.",
-			-- Engineering Department
-			["bm_w_mac10"] = "마이스터 제로",
-			--["bm_w_mac10_desc"] = "\"정비완료, 작동개시.\"\n\n#{skill_color}#우타하##가 직접 개조한 심플한 디자인의 기관단총.\n튼튼한 내구성 덕분에 망치와 같은 공구 대용으로도 사용할 수 있다.",
-			-- Gym Training Department
-			["bm_w_benelli"] = "밀레니엄제 최신형 덤벨",
-			["bm_benelli_sc_desc"] = "\"오늘 훈련도 즐겁네요.\"\n\n#{skill_color}#스미레##가 평소 운동용으로 애용하는 반자동 산탄총.\n총 한 발을 쏠 때마다 팔굽혀펴기를 같이 하면 절로 건강해지는 굉장한 효과가 있다.",			
-			-- Game Development Department
-			["bm_w_g3"] = "유니크 아이디어/플래시 인스피레이션",
-			["bm_g3_sc_desc"] = "\"#{important_1}#우리들의 승리!##/#{stats_positive}#클리어, 다음 스테이지로 이동하죠.##\"\n\n#{important_1}#사이바## #{stats_positive}#자매##가 사용하는 소총.\n성격과 총의 겉모습이 살짝 다르더라도 함께라면 어떤 위협이든 무찌를 수 있을 정도의 자매력을 보여준다.",	
-			["bm_w_slap"] = "냥즈 대쉬",
-			--["bm_w_slap_desc"] = "\"레트로여...영원하라!\"\n\n#{skill_color}#유즈##가 사용하는 유탄발사기.\n몸체의 측면에는 귀여운 고양이가 달려 나가는 영상이 계속 출력되고 있다.",			
-			-- Paranormal Affairs Department
-			["bm_w_spas12"] = "멀티 택티컬",
-			["bm_spas12_sc_desc"] = "\"여기서라면 옷을 벗어도...안돼?\"\n\n#{skill_color}#에이미##가 애용하는 샷건.\n그 이름대로 강행돌파에서 초상현상에의 대응까지 다양한 상황을 상정해두고 제작되었다.",			
+			-- Millennium
+				-- Seminar
+				["bm_w_shepheard"] = "로직 & 리즌",
+					--["bm_w_shepheard_desc"] = "\"현재 상황과 조건. 좋아, 이건 승리야!\"\n\n#{skill_color}#유우카##가 사용하는 2정의 기관단총.\n중요한 타이밍이나 적절한 대처가 필요 할 때 유우카가 합리적이고 이성적인 판단을 내릴 수 있도록 도와준다.",
+				-- Veritas
+				["bm_w_glock_17"] = "에코링크",
+					["bm_g17_sc_desc"] = "\"감청 개시.\"\n\n#{skill_color}#코타마##가 항상 휴대하는 권총.\n도청의 방해가 되지 않도록, 발사음이 최소화 된 모델을 사용하고 있다.",			
+				-- Cleaning&Clearing
+				["bm_w_famas"] = "서프라이즈 파티",
+					["bm_menu_sc_famas_desc"] = "\"아스나! 여기에 등장!\"\n\n#{skill_color}#아스나##가 사용하는 돌격소총.\n떠들썩한 장소에 어울리는 이름이지만 늘 그렇듯 본인은 잊어버린다.",
+				-- Engineering Department
+				["bm_w_mac10"] = "마이스터 제로",
+					--["bm_w_mac10_desc"] = "\"정비완료, 작동개시.\"\n\n#{skill_color}#우타하##가 직접 개조한 심플한 디자인의 기관단총.\n튼튼한 내구성 덕분에 망치와 같은 공구 대용으로도 사용할 수 있다.",
+				-- Gym Training Department
+				["bm_w_benelli"] = "밀레니엄제 최신형 덤벨",
+					["bm_benelli_sc_desc"] = "\"오늘 훈련도 즐겁네요.\"\n\n#{skill_color}#스미레##가 평소 운동용으로 애용하는 반자동 산탄총.\n총 한 발을 쏠 때마다 팔굽혀펴기를 같이 하면 절로 건강해지는 굉장한 효과가 있다.",			
+				-- Game Development Department
+				["bm_w_g3"] = "유니크 아이디어/플래시 인스피레이션",
+					["bm_g3_sc_desc"] = "\"#{important_1}#우리들의 승리!##/#{stats_positive}#클리어, 다음 스테이지로 이동하죠.##\"\n\n#{important_1}#사이바## #{stats_positive}#자매##가 사용하는 소총.\n성격과 총의 겉모습이 살짝 다르더라도 함께라면 어떤 위협이든 무찌를 수 있을 정도의 자매력을 보여준다.",	
+				["bm_w_slap"] = "냥즈 대쉬",
+					--["bm_w_slap_desc"] = "\"레트로여...영원하라!\"\n\n#{skill_color}#유즈##가 사용하는 유탄발사기.\n몸체의 측면에는 귀여운 고양이가 달려 나가는 영상이 계속 출력되고 있다.",			
+				-- Paranormal Affairs Department
+				["bm_w_spas12"] = "멀티 택티컬",
+					["bm_spas12_sc_desc"] = "\"여기서라면 옷을 벗어도...안돼?\"\n\n#{skill_color}#에이미##가 애용하는 샷건.\n그 이름대로 강행돌파에서 초상현상에의 대응까지 다양한 상황을 상정해두고 제작되었다.",			
 			
-		-- Trinity
-			-- Supplementary Lesson Department
-			["bm_w_l85a2"] = "마이 네세시티",
-			["bm_l85a2_sc_desc"] = "\"#{risk}#페로로님은 어디에?##\"\n\n#{risk}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
-			["bm_w_m4"] = "Et Omnia Vanitas",
-			["bm_m4_sc_desc"] = "#{item_stage_2}#\"Vanitas Vanitatum et omnia Vanitas\"##\n\n#{mutators_color}#아즈사##가 아끼는 돌격소총,\n이름에는 #{item_stage_2}#'헛되고 헛되도다 모든 것이 헛되도다'##라고 새겨져 있다.",
-			-- After-School Sweets Club
-			["bm_w_scar"] = "스위트 드라이버",
-			["bm_scar_sc_desc"] = "\"이거라도 받아라!\"\n\n#{skill_color}#요시미##의 전용 라이플.\n키보토스의 스위츠 쟁탈전에서 이기기 위해서는 우선 전투력이 필요하다.",
-			["bm_w_mp5"] = "상큼 민트초코",
-			["bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
-			["bm_w_baka"] = "비욘드 더 루미네이션",
-			--["bm_w_baka_desc"] = "\"감사!\"\n\n#{skill_color}#나츠##의 기관단총.\n사색하는 것을 즐기는 나츠가 마지막 수단으로 꺼내드는 도구이다.",			
-			-- Justice Realization Committee
-			["bm_menu_sc_boot"] = "블러드&건파우더",
-			["bm_menu_sc_boot_desc"] = "\"#{important_1}#캬하하하하하!!!##\"\n\n#{important_1}#츠루기##가 사용하는 두 자루의 산탄총.\n한 쪽이 #{important_1}#'블러드'##고 다른 한 쪽이 #{item_stage_3}#'건파우더'##다. 똑같이 무시무시하며 딱히 구분하지는 않는다.",
-			-- Sisterhood
-			["bm_w_deagle"] = "파이에티",
-			["bm_deagle_sc_desc"] = "\"안식이 있기를.\"\n\n#{skill_color}#마리##가 소지하고 다니는 권총.\n늘 지니고 다니긴 하지만, 실제로 쏘는 것을 본 사람은 거의 없다.",
+			-- Trinity
+				-- Supplementary Lesson Department
+				["bm_w_l85a2"] = "마이 네세시티",
+				[	"bm_l85a2_sc_desc"] = "\"#{risk}#페로로님은 어디에?##\"\n\n#{risk}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
+				["bm_w_m4"] = "Et Omnia Vanitas",
+				[	"bm_m4_sc_desc"] = "#{item_stage_2}#\"Vanitas Vanitatum et omnia Vanitas\"##\n\n#{mutators_color}#아즈사##가 아끼는 돌격소총,\n이름에는 #{item_stage_2}#'헛되고 헛되도다 모든 것이 헛되도다'##라고 새겨져 있다.",
+				-- After-School Sweets Club
+				["bm_w_scar"] = "스위트 드라이버",
+					["bm_scar_sc_desc"] = "\"이거라도 받아라!\"\n\n#{skill_color}#요시미##의 전용 라이플.\n키보토스의 스위츠 쟁탈전에서 이기기 위해서는 우선 전투력이 필요하다.",
+				["bm_w_mp5"] = "상큼 민트초코",
+				[	"bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
+				["bm_w_baka"] = "비욘드 더 루미네이션",
+					--["bm_w_baka_desc"] = "\"감사!\"\n\n#{skill_color}#나츠##의 기관단총.\n사색하는 것을 즐기는 나츠가 마지막 수단으로 꺼내드는 도구이다.",			
+				-- Justice Realization Committee
+				["bm_menu_sc_boot"] = "블러드&건파우더",
+					["bm_menu_sc_boot_desc"] = "\"#{important_1}#캬하하하하하!!!##\"\n\n#{important_1}#츠루기##가 사용하는 두 자루의 산탄총.\n한 쪽이 #{important_1}#'블러드'##고 다른 한 쪽이 #{item_stage_3}#'건파우더'##다. 똑같이 무시무시하며 딱히 구분하지는 않는다.",
+				-- Sisterhood
+				["bm_w_deagle"] = "파이에티",
+					["bm_deagle_sc_desc"] = "\"안식이 있기를.\"\n\n#{skill_color}#마리##가 소지하고 다니는 권총.\n늘 지니고 다니긴 하지만, 실제로 쏘는 것을 본 사람은 거의 없다.",
 			
-		-- Hyakkiyako
-			-- Festival Management Committee
-			["bm_w_m37"] = "사쿠라 봉봉",
-			--["bm_w_m37_desc"] = "\"앍! 센세!\"\n\n#{skill_color}#시즈코##가 사용하는 펌프 액션식 샷건.\n시즈코가 말하길 "백야당 명물인 팥꿀의 향기가 은은하게 나는, 이 세상에 단 하나의 일품" 이라고..",
-			-- Yin-Yang Club
-			["bm_w_m32"] = "575식 유탄발사기",
-			["bm_m32_sc_desc"] = "\"악령퇴산, 악령퇴산.\"\n\n#{skill_color}#치세##가 가지고 있는 다연발 유탄발사기.\n탄환 하나하나에 치세가 고심해서 지은 하이쿠 구절이 쓰여져 있다.\n음양부의 굿즈로 판매중.",
-			-- Etiquette Training Society
-			["bm_w_scorpion"] = "숙면 도우미 Ⅱ",
-			--["bm_w_scorpion_desc"] = "\"아프지 않아... 아프지 않아...\"\n\n#{skill_color}#츠바키##가 사용하는 기관단총.\n평소 하는 수행에 방해되지 않도록 작고 아담한 물건을 골랐다. 참고로 숙면 도우미 Ⅰ은 방패 안에 들어 있는 베개.",
+			-- Hyakkiyako
+				-- Festival Management Committee
+				["bm_w_m37"] = "사쿠라 봉봉",
+					--["bm_w_m37_desc"] = "\"앍! 센세!\"\n\n#{skill_color}#시즈코##가 사용하는 펌프 액션식 샷건.\n시즈코가 말하길 "백야당 명물인 팥꿀의 향기가 은은하게 나는, 이 세상에 단 하나의 일품" 이라고..",
+				-- Yin-Yang Club
+				["bm_w_m32"] = "575식 유탄발사기",
+					["bm_m32_sc_desc"] = "\"악령퇴산, 악령퇴산.\"\n\n#{skill_color}#치세##가 가지고 있는 다연발 유탄발사기.\n탄환 하나하나에 치세가 고심해서 지은 하이쿠 구절이 쓰여져 있다.\n음양부의 굿즈로 판매중.",
+				-- Etiquette Training Society
+				["bm_w_scorpion"] = "숙면 도우미 Ⅱ",
+					--["bm_w_scorpion_desc"] = "\"아프지 않아... 아프지 않아...\"\n\n#{skill_color}#츠바키##가 사용하는 기관단총.\n평소 하는 수행에 방해되지 않도록 작고 아담한 물건을 골랐다. 참고로 숙면 도우미 Ⅰ은 방패 안에 들어 있는 베개.",
 			
-		-- Shanhaijing
-			-- Chinese Alchemy Study Club
-			["bm_w_b92fs"] = "나님의 특제 권총",
-			["bm_b92fs_sc_desc"] = "\"나님 등장! 이번 실험의 표본은 어딨느냐?\"\n\n#{skill_color}#사야##가 곳곳을 개조한 특제 권총.\n#{skill_color}#네즈스케##에 주사를 할 때에도 사용되고 있는 것 같다...",
-			-- Training Support Department
-			["bm_w_qbu88"] = "사랑의 매",
-			["bm_qbu88_sc_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
+			-- Shanhaijing
+				-- Chinese Alchemy Study Club
+				["bm_w_b92fs"] = "나님의 특제 권총",
+					["bm_b92fs_sc_desc"] = "\"나님 등장! 이번 실험의 표본은 어딨느냐?\"\n\n#{skill_color}#사야##가 곳곳을 개조한 특제 권총.\n#{skill_color}#네즈스케##에 주사를 할 때에도 사용되고 있는 것 같다...",
+				-- Training Support Department
+				["bm_w_qbu88"] = "사랑의 매",
+					["bm_qbu88_sc_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
 			
-		-- SRT Special Academy
-			-- RABBIT Squad
-			["bm_w_mosin"] = "RABBIT 39식 소총",
-			["bm_mosin_sc_desc"] = "\"어, 어째서 이런 일이...\"\n\n#{skill_color}#미유##가 SRT 특수학원에서 지급받은 제식 소총.\n강력한 한 발을 위해 정밀하게 가공되어 명중률이 매우 높다.",			
-		})
+			-- SRT Special Academy
+				-- RABBIT Squad
+				["bm_w_mosin"] = "RABBIT 39식 소총",
+					["bm_mosin_sc_desc"] = "\"어, 어째서 이런 일이...\"\n\n#{skill_color}#미유##가 SRT 특수학원에서 지급받은 제식 소총.\n강력한 한 발을 위해 정밀하게 가공되어 명중률이 매우 높다.",			
+			})
+		end
 	end
 	
-	local big = math.rand(1)
-	local man = 0.02
-	if big <= man then
-		LocalizationManager:add_localized_strings({
-			["bm_akmsu_sc_desc"] = "#{stat_maxed}#빅 맨##을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",			
-		})
-	end	
 end)
 
 local r = tweak_data.levels.ai_groups.russia
@@ -3208,14 +3205,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_frenzy_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 근접 공격과 톱의 공격력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 원거리 무기류의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 발사기에는 적용되지 않습니다.##"
 
 	})
-	
-	local yes = math.rand(1)
-	local no = 0.05
-	if yes <= no then
-		LocalizationManager:add_localized_strings({
-			["menu_st_spec_17_desc"] = "#{risk}#이거 그냥 무료로 모든 플레이어가 사용할 수 있게 하면 안되나? 이미 DLC 없어졌는데 왜 DLC 있어야됨?##",		
-			["menu_risk_sm_wish"] = "데센. 바닐라보다 순한 맛이고 헤비 스왓 225는 더 이상 없음 ㅅㄱ"
-		})
+
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		local yes = math.rand(1)
+		local no = 0.05
+		if yes <= no then
+			LocalizationManager:add_localized_strings({
+				["menu_st_spec_17_desc"] = "#{risk}#이거 그냥 무료로 모든 플레이어가 사용할 수 있게 하면 안되나? 이미 DLC 없어졌는데 왜 DLC 있어야됨?##",
+				["menu_difficulty_normal"] = "쉬움",
+					["menu_risk_pd"] = "쉬움. 위험도에 대한 추가 보상은 없습니다.",
+				["menu_difficulty_hard"] = "보통",
+					["menu_risk_swat"] = "보통. 경험치와 보상이 증가합니다.",
+				["menu_difficulty_very_hard"] = "어려움",
+					["menu_risk_fbi"] = "어려움. 경험치와 보상이 상당히 증가합니다.",
+				["menu_difficulty_overkill"] = "매우 어려움",
+					["menu_risk_special"] = "매우 어려움. 경험치와 보상이 굉장히 증가합니다.",
+				["menu_difficulty_easy_wish"] = "하드코어",
+					["menu_risk_easy_wish"] = "하드코어. 경험치와 보상이 엄청나게 증가합니다.",
+				["menu_difficulty_apocalypse"] = "익스트림",
+					["menu_risk_eilte"] = "익스트림. 그들에게 지옥을 보여주십시오.",
+				["menu_difficulty_sm_wish"] = "인세인",
+					["menu_risk_sm_wish"] = "인세인. 너의 한계를 보여줘라."
+			})
+		end
 	end
 	
 end)
@@ -3382,10 +3394,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##휴대용 ECM 장치##를 잠금 해제합니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 재밍 효과가 발생하여 ##10##초 동안 모든 전자기기와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발생하여 ##10##초 동안 지속되고 범위는 ##15##미터입니다. ##첫 번째## 피드백 루프는 ##100%##의 확률로 대부분의 적을 스턴시키고, 이후 ##1.5##초마다 ##60%#의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
+		["menu_deck21_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##휴대용 ECM 장치##를 잠금 해제합니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 재밍 효과가 발생하여 ##10##초 동안 모든 전자기기와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발생하여 ##10##초 동안 지속되고 범위는 ##15##미터입니다. ##첫 번째## 피드백 루프는 ##100%##의 확률로 대부분의 적을 스턴시키고, 이후 ##1.5##초마다 ##60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##5##만큼 회복됩니다.",
-		["menu_deck21_7_desc_sc"] = "방탄복 회복률이 ##10% 증가합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",
+		["menu_deck21_7_desc_sc"] = "방탄복 회복률이 ##10%## 증가합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",
 		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##2.5##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech

@@ -2141,7 +2141,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		end
 	end
 
-	--CASSIAN Elite Combo Sight
+	--CASSIAN Elite Combo Sight/Trigonom SCRW Scope
 	self.parts.wpn_fps_upg_o_hamr.pcs = {
 		10, 
 		20,
@@ -2567,10 +2567,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		value = 6,
 		recoil = 2,
 		concealment = -1
-	}
-	self.parts.wpn_fps_upg_m4_g_hgrip.custom_stats = {
-		falloff_start_mult = 1,
-		falloff_end_mult = 1
 	}
 
 	--Vanilla Rubber Grip
@@ -2999,6 +2995,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_m4a1")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_ass_shak12_ns_muzzle")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_ass_shak12_ns_suppressor")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_upg_ak_ns_zenitco")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_smg_cobray_ns_silencer")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_smg_polymer_ns_silencer")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_smg_mp7_b_suppressed")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_smg_schakal_ns_silencer")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_snp_msr_ns_suppressor")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_snp_victor_ns_omega")
 	
 	
 	--Aftermarket Special Handguard
@@ -8190,28 +8195,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_nostock")	
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_unfolded")
 
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_specter = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_aimpoint = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_aimpoint_2 = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_docter = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_eotech = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_t1micro = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_cmore = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_acog = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_cs = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_eotech_xps = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_reflex = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_rx01 = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_rx30 = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_spot = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_bmg = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_uh = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_fc1 = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_tf90 = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_poe = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-	-- VMP sight(s)
-	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_cqb = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
-
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folded_to_adj_rec2),
 		custom_stats = deep_clone(stocks.folded_to_adj_rec2),
@@ -8295,17 +8278,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_scorpion", "resmod_x_scorpion", 
 end)
 
 
-Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_scorpion_rail", function(self)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_scorpion_additions", function(self)
 	--Won't apply to all gadgets for some reason unless I hook into the main init func, whatever
 	for i, part_id in pairs(self.wpn_fps_smg_scorpion.uses_parts) do
-		if self.parts and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "gadget" and not self.parts[part_id].depends_on then
-			if not self.wpn_fps_smg_scorpion.adds then
-				self.wpn_fps_smg_scorpion.adds = {}
+		if self.parts and self.parts[part_id] and self.parts[part_id].type then
+			if self.parts[part_id].type == "gadget" and not self.parts[part_id].depends_on then
+				self.wpn_fps_smg_scorpion.adds = self.wpn_fps_smg_scorpion.adds or {}
+				self.wpn_fps_smg_scorpion.adds[part_id] = self.wpn_fps_smg_scorpion.adds[part_id] or {}
+				table.insert(self.wpn_fps_smg_scorpion.adds[part_id], "wpn_fps_smg_scorpion_body_standard_rail")
 			end
-			if not self.wpn_fps_smg_scorpion.adds[part_id] then
-				self.wpn_fps_smg_scorpion.adds[part_id] = {}
-			end
-			table.insert(self.wpn_fps_smg_scorpion.adds[part_id], "wpn_fps_smg_scorpion_body_standard_rail")
+		end
+		if self.parts[part_id].type == "sight" then
+			self.wpn_fps_smg_scorpion.override[part_id] = self.wpn_fps_smg_scorpion.override[part_id] or {}
+			self.wpn_fps_smg_scorpion.override[part_id].forbids = (self.parts[part_id].forbids and deep_clone(self.parts[part_id].forbids)) or self.wpn_fps_smg_scorpion.override[part_id].forbids or {}
+			table.insert(self.wpn_fps_smg_scorpion.override[part_id].forbids , "wpn_fps_gre_arbiter_o_standard_no_forbid")
 		end
 	end	
 	self.wpn_fps_smg_scorpion_npc.override = deep_clone(self.wpn_fps_smg_scorpion.override)
@@ -15878,8 +15864,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 		"wpn_fps_ass_m16_os_frontsight",
 		"wpn_fps_ass_scar_o_flipups_up",
 		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_sig",
-		--"wpn_fps_ass_shak12_o_carry_dummy"
+		"wpn_fps_upg_o_sig"
 	}
 	
 	self.parts.wpn_fps_upg_o_rms.has_description = true
@@ -19237,6 +19222,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 	}
 	self.parts.wpn_fps_snp_victor_ns_omega.perks = {"silencer"}
 
+	self.parts.wpn_fps_snp_victor_ns_omega_special = deep_clone(self.parts.wpn_fps_snp_victor_ns_omega)
+	self.parts.wpn_fps_snp_victor_ns_omega_special.name_id = "bm_wp_victor_sbr_suppr"
+	self.parts.wpn_fps_snp_victor_ns_omega_special.alt_icon = "guis/dlcs/pd2_dlc_savi/textures/pd2/blackmarket/icons/mods/wpn_fps_snp_victor_sbr_kit"
+	self.parts.wpn_fps_snp_victor_ns_omega_special.pcs = {}
+	self.parts.wpn_fps_snp_victor_ns_omega_special.third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_ns_hera_supp"
+	self.parts.wpn_fps_snp_victor_ns_omega_special.unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_ns_hera_supp"
+			
 	--Ursa Minor Grip
 	self.parts.wpn_fps_snp_victor_g_mod3.pcs = {
 		10,

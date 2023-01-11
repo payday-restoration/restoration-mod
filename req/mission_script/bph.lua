@@ -43,39 +43,39 @@ return {
 	--murky spawn changes
 	[101669] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
 		}
 	},
 	[101670] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
 		}
 	},
 	[101671] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
 		}
 	},
 	[101672] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
 		}
 	},
 	[101949] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3",
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5",
 			enabled = true
 		}
 	},
 	[101950] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1",
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
 			enabled = true
 		}
 	},
 	[100596] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3"
+            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
 		}
 	}
 }

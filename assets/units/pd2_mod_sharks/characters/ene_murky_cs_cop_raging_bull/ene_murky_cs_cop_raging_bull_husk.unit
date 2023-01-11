@@ -1,27 +1,26 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2" />
+	<object file="units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull" />
 
 	<dependencies>
 		
-		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="security" />
+		<extension name="base" class="HuskCopBase" >
+			<var name="_tweak_table" value="cop" />
 			<var name="_default_weapon_id" value="raging_bull" />
 		</extension>
-		<extension name="inventory" class="CopInventory" />
-		<extension name="brain" class="CopBrain" />
+		<extension name="inventory" class="HuskCopInventory" />
+		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="CopDamage">
+		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
 		</extension>
-		<extension name="movement" class="CopMovement" >
+		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />
 			<var name="_anim_global" value="cop" />
 		</extension>
@@ -42,9 +41,9 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4_husk"/>
+  <network sync="husk" remote_unit=""/>
 
-	<sounds>
+  <sounds>
 		<default_soundsource source="Hips"/>
-	</sounds>
+  </sounds>
 </unit>

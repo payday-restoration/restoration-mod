@@ -160,14 +160,14 @@ function CopBase:random_mat_seq_initialization()
 	end
 	--end security shit
 	
-    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1_husk")	
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2_husk")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3")	
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3_husk")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4_husk")
+    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk")	
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull_husk")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")	
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk")
 		
     local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk")

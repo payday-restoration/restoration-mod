@@ -19819,6 +19819,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	local attachment_list = {}
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id .. "_npc"] then
+			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_g_sniper") then
+				attachment_list = {
+					"wpn_fps_upg_g_m4_surgeon",
+					"wpn_fps_upg_m4_g_mgrip",
+					"wpn_fps_snp_tti_g_grippy",
+					"wpn_fps_m4_uupg_g_billet",
+					"wpn_fps_snp_victor_g_mod3"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+					end
+				end
+			end
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_ass_smg_tank") then
 				attachment_list = {
 					"wpn_fps_ass_shak12_ns_muzzle",

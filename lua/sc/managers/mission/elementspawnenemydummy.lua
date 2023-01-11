@@ -1963,7 +1963,11 @@ local murkywater_normal_overkill = {
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_1/ene_murky_security_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_2/ene_murky_security_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_3/ene_murky_security_3",
-		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4"
+		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"] = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"] = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"] = "units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"
 	}
 	
 local murkywater_mayhem = {
@@ -2071,7 +2075,11 @@ local murkywater_mayhem = {
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_1/ene_murky_security_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_2/ene_murky_security_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_3/ene_murky_security_3",
-		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4"
+		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"] = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"] = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"] = "units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"
 	}
 local murkywater_deathwish = {
         --bye bye fbi lights
@@ -2176,7 +2184,11 @@ local murkywater_deathwish = {
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_1/ene_murky_security_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_2/ene_murky_security_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_3/ene_murky_security_3",
-		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4"
+		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"] = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"] = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"] = "units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"
 	}
 local murkywater_hecu = {
         --bye bye fbi lights
@@ -2286,7 +2298,11 @@ local murkywater_hecu = {
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_1/ene_murky_security_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_2/ene_murky_security_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_3/ene_murky_security_3",
-		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4"
+		["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_sharks/characters/ene_murky_security_4/ene_murky_security_4",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"] = "units/pd2_mod_sharks/characters/ene_murky_cop_1/ene_murky_cop_1",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"] = "units/pd2_mod_sharks/characters/ene_murky_cop_2/ene_murky_cop_2",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"] = "units/pd2_mod_sharks/characters/ene_murky_cop_3/ene_murky_cop_3",
+		["units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"] = "units/pd2_mod_sharks/characters/ene_murky_cop_4/ene_murky_cop_4"
 	}
 	
 	---------------------------------------------------MURKIES END---------------------------------------------------

@@ -205,7 +205,7 @@ function FPCameraPlayerBase:stop_shooting( wait )
 
 	self._recoil_kick.to_reduce = (self._recoil_kick.accumulated or 0) * recoil_recover
 	self._recoil_kick.h.to_reduce = (self._recoil_kick.h.accumulated or 0) * recoil_recover
-	self._recoil_wait = (wait and wait * ((enable_recoil_recover and enable_recoil_recover == 3 and 2) or 1)) or 0
+	self._recoil_wait = (wait and wait * ((enable_recoil_recover and enable_recoil_recover == 3 and 3) or 1)) or 0
 end
 
 --Add more recoil to burn through.
@@ -233,7 +233,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
 	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
 	if enable_recoil_recover and enable_recoil_recover == 3 then
-		center_speed = math.max(center_speed * 0.5, 1)
+		center_speed = math.max(center_speed * 0.75, 1)
 	end
 	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 90, 0)
 	if player_state and player_state:in_air() then
@@ -269,7 +269,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
 	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
 	if enable_recoil_recover and enable_recoil_recover == 3 then
-		center_speed = math.max(center_speed * 0.5, 1)
+		center_speed = math.max(center_speed * 0.75, 1)
 	end
 	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0)
 	if player_state and player_state:in_air() then

@@ -6130,7 +6130,7 @@ end)
 --The Judge
 Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(self)
 	--Judge Override Table
-
+	self.wpn_fps_pis_judge.override.wpn_fps_sho_ultima_ns_comp = deep_clone(self.wpn_fps_pis_judge.override.wpn_fps_upg_ns_shot_shark)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = a_slug_pump_override
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = a_custom_pump_override
@@ -8188,8 +8188,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_snp_tti_s_vltor")
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_nostock")	
-	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_unfolded")	
-
+	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_unfolded")
 
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_specter = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_o_aimpoint = { forbids = {"wpn_fps_gre_arbiter_o_standard_no_forbid"} }
@@ -8618,7 +8617,6 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		if self[ factory_id ] then
 			local weapon_id = peepee(factory_id)
 			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories and tweak_data.weapon[ weapon_id ].categories[1] == "snp" then
-				log(tostring( factory_id ))
 				self[ factory_id ].override = self[ factory_id ].override or {}
 				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 					stats = {value = 1, concealment = 1, spread = -1},
@@ -9695,6 +9693,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	}
 	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_lmg_mg42_dummy_mag")
 	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_upg_ns_ass_filter")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_ass_shak12_ns_muzzle")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_ass_shak12_ns_suppressor")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_upg_ak_ns_zenitco")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_smg_cobray_ns_silencer")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_smg_polymer_ns_silencer")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_smg_mp7_b_suppressed")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_smg_schakal_ns_silencer")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_snp_msr_ns_suppressor")
+	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_snp_victor_ns_omega")
 	self.parts.wpn_fps_lmg_mg42_b_vg38.sub_type = nil
 	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = nil--{"silencer"}
 
@@ -9893,6 +9900,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_sterling_b_suppressed.perks = {"silencer"}
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_ass_shak12_ns_muzzle")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_ass_shak12_ns_suppressor")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_upg_ak_ns_zenitco")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_smg_cobray_ns_silencer")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_smg_polymer_ns_silencer")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_smg_mp7_b_suppressed")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_smg_schakal_ns_silencer")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_snp_msr_ns_suppressor")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_snp_victor_ns_omega")
 	
 	--Heatsinked Suppressed Barrel
 	self.parts.wpn_fps_smg_sterling_b_e11.pcs = {}
@@ -15358,7 +15374,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 		reload = "reload",
 		reload_not_empty = "reload"
 	}
-
+	self.wpn_fps_pis_x_judge.override.wpn_fps_sho_ultima_ns_comp = deep_clone(self.wpn_fps_pis_x_judge.override.wpn_fps_upg_ns_shot_shark)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = a_slug_pump_override
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = a_custom_pump_override
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = a_custom_pump_override	
@@ -19587,9 +19603,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.parts.wpn_fps_upg_o_shortdot_dmc.dlc = "sc"
 
 	for factory_id, i in pairs(self) do
-		if self[factory_id] then
+		if self[factory_id] and self[factory_id .. "_npc"] then
 			if self[factory_id].uses_parts and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot_dmc") and (table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot")	or table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot_vanilla")) then
 				table.insert(self[factory_id].uses_parts, "wpn_fps_upg_o_shortdot_dmc")
+				table.insert(self[factory_id .. "_npc"].uses_parts, "wpn_fps_upg_o_shortdot_dmc")
 				if self[factory_id].override and (self[factory_id].override.wpn_fps_upg_o_shortdot or self[factory_id].override.wpn_fps_upg_o_shortdot_vanilla) then
 					self[factory_id].override.wpn_fps_upg_o_shortdot_dmc = deep_clone((self[factory_id].override.wpn_fps_upg_o_shortdot or self[factory_id].override.wpn_fps_upg_o_shortdot_vanilla))
 				end
@@ -19796,7 +19813,107 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
 		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats),
 		dlc = "sc"			
-	}						
+	}
+
+	--Make more attachments universally available, cartridge mismatching be damned
+	local attachment_list = {}
+	for factory_id, i in pairs(self) do
+		if self[factory_id] and self[factory_id .. "_npc"] then
+			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_ass_smg_tank") then
+				attachment_list = {
+					"wpn_fps_ass_shak12_ns_muzzle",
+					"wpn_fps_ass_shak12_ns_suppressor",
+					"wpn_fps_upg_ak_ns_zenitco",
+					"wpn_fps_smg_cobray_ns_silencer",
+					"wpn_fps_smg_polymer_ns_silencer",
+					"wpn_fps_smg_mp7_b_suppressed",
+					"wpn_fps_smg_schakal_ns_silencer",
+					"wpn_fps_snp_msr_ns_suppressor",
+					"wpn_fps_snp_victor_ns_omega"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_shot_shark") then
+				attachment_list = {
+					"wpn_fps_sho_ultima_ns_comp"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+				end
+				attachment_list = {
+					"wpn_fps_upg_ns_ass_smg_v6"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_crane") then
+				attachment_list = {
+					"wpn_fps_snp_victor_s_mod0"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						if self[factory_id].override and self[factory_id].override[part_id] then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_crane)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_pts") then
+				attachment_list = {
+					"wpn_fps_sho_sko12_stock"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						if self[factory_id].override and self[factory_id].override[part_id] then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_pts)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_m_pmag") then
+				attachment_list = {
+					"wpn_fps_m4_uupg_m_strike"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+					end
+				end
+			end
+		end
+	end
+						
 	--Vlad's Rodina--
 	self.parts.wpn_fps_upg_vlad_rodina_legend = {
 		type = "legendary",
@@ -23275,6 +23392,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = -1,
 			recoil = 2
 		}
+		self.parts.wpn_fps_ass_asval_b_heat.forbids = deep_clone(self.parts.wpn_fps_ass_asval_b_standard.forbids)
 
 		--(M1014) Wrist Remover Grip
 		self.parts.wpn_fps_sho_ben_s_fracture.supported = true

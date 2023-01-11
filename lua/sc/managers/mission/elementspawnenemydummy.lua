@@ -2808,8 +2808,8 @@ local russia_very_hard = {
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass"] = "units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob",
-		["units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870"] = "units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob",
+		["units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass"] = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870"] = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",
 		

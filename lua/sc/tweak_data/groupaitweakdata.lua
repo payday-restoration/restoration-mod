@@ -15840,7 +15840,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.Cap_Autumn = {
-			amount = {4, 4},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -15853,8 +15853,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Titan_Spooc",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}					
@@ -18766,7 +18774,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 		self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = {
-			amount = {4, 4},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -18779,8 +18787,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Titan_Spooc",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}					

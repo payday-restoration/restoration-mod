@@ -140,6 +140,7 @@ function restoration:Init()
 		ukrainian_job = restoration.captain_types.autumn, --Ukrainian Job
 		man = restoration.captain_types.autumn, --undercover--
 		watchdogs_2 = restoration.captain_types.autumn, --Watchdogs Day 2 Night
+		watchdogs_1_night = restoration.captain_types.autumn, --Watchdogs Day 1 Night
 		--Custom Heists--
 		alex_1_res = restoration.captain_types.autumn, --Rats Day 1 edit
 		lvl_fourmorestores = restoration.captain_types.autumn, --four more stores

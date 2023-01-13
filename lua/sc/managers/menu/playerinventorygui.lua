@@ -660,10 +660,6 @@ function PlayerInventoryGui:_update_info_melee(name)
 		local skill_min_text = skill_min and format_round(skill_min, true)
 		local skill_max_text = skill_max and format_round(skill_max, true)
 
-		log("equip_text " .. tostring( equip_text ))
-		log("base_text " .. tostring( base_text ))
-
-
 		if stat.range then
 			if base_min ~= base_max then
 				base_text = base_min_text .. " (" .. base_max_text .. ")"

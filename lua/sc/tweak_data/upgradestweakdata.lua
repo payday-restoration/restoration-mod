@@ -703,15 +703,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Body Expertise
 				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
-				self.values.smg.automatic_can_shoot_through_enemy = {
+				self.values.smg.automatic_kills_to_damage = {
 					{
 						5, --stack limit
-						1.1 --dmg mult
+						0.1 --dmg mult add
 					}
 				}
 				--Unused
 					self.values.weapon.automatic_head_shot_add = {0.03, 0.06}
 					self.values.player.universal_body_expertise = {false}
+					self.values.smg.automatic_can_shoot_through_enemy = {
+						{
+							5, --stack limit
+							1.1 --dmg mult
+						}
+					}
 						
 	--ENFORCER--
 		--Shotgunner--
@@ -1543,7 +1549,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Hey you're getting your grinder on my grinder
 	self.values.player.level_5_armor_addend_grinder = {-3}
-	self.values.player.flak_jacket_concealment = {8}
+	self.values.player.flak_jacket_concealment = {
+		8,
+		4
+	}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
@@ -1738,8 +1747,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{0.3, 4},
 		{0.3, 5},
 		{0.3, 6},
-
-		{0.15, 4} --Copycat's version
+		{0.2, 4} --Copycat's version
 	}
 	self.values.player.chico_injector_speed = {
 		1.2
@@ -1769,12 +1777,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.damage_control_passive = {
 		{
 			30, --% of damage converted into DoT 
-			12.5 --% of DoT damage applied per tick
+			12.5 --% of converted DoT damage applied per second
 		},
 		{--Copycat
-			30,
-			25
-		},
+			20,
+			20
+		}
 	}
 	self.values.player.damage_control_auto_shrug = {
 		4
@@ -1916,7 +1924,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}	
 	self.values.player.copr_activate_bonus_health_ratio = {
 		0.1,
-
 		0.05 --Copycat
 	}	
 	self.values.player.copr_teammate_heal = {
@@ -1934,9 +1941,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.copr_risen_cooldown_add = 30
 
 	--Copycat
-	local health_boost = 0.075
+	local health_boost = 0.05
 	local armor_boost = 0.05
-	local dodge_boost = 0.025
+	local dodge_boost = 0.0125
 	local crouch_speed_multiplier = 0.05
 	local carry_speed_multiplier = 0.05
 	self.values.player.mrwi_health_multiplier = {
@@ -2080,6 +2087,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_4",
 			desc_id = "menu_deck4_mrwi_desc",
 			upgrades = {
+				"player_passive_dodge_chance_1",
 				"weapon_passive_swap_speed_multiplier_1",
 				"player_tape_loop_duration_2"
 			}
@@ -2098,6 +2106,9 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_6",
 			desc_id = "menu_deck6_mrwi_desc",
 			upgrades = {
+				"player_level_2_dodge_addend_1",
+				"player_level_3_dodge_addend_1",
+				"player_level_4_dodge_addend_1",
 				"player_level_2_armor_multiplier_2",
 				"player_level_3_armor_multiplier_2",
 				"player_level_4_armor_multiplier_2",
@@ -2109,6 +2120,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_7",
 			desc_id = "menu_deck7_mrwi_desc",
 			upgrades = {
+				"player_passive_dodge_chance_1",
 				"player_crouch_dodge_chance_burglar_1",
 				"player_crouch_speed_multiplier_burglar"
 			}
@@ -2148,6 +2160,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_damage_to_hot_1",
 				"player_level_5_armor_addend_grinder",
 				"player_flak_jacket_concealment_1",
+				"player_flak_jacket_concealment_2",
 				"bodybags_bag_quantity"
 			}
 		},
@@ -2208,6 +2221,9 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"chico_injector",
 				"temporary_chico_injector_1",
+				"temporary_chico_injector_2",
+				"temporary_chico_injector_3",
+				"temporary_chico_injector_4",
 				"player_chico_injector_speed"
 			}
 		},
@@ -2217,6 +2233,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_18",
 			desc_id = "menu_deck18_mrwi_desc",
 			upgrades = {
+				"player_passive_dodge_chance_1",
 				"smoke_screen_grenade",
 				"player_corpse_dispose_amount_2"
 			}
@@ -2228,7 +2245,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
 				"damage_control",
-				"player_damage_control_passive",
+				"player_damage_control_passive_1",
+				"player_damage_control_passive_2",
 				"player_damage_control_healing",
 				"player_armor_to_health_conversion",
 				"player_alarm_pager_speed_multiplier"
@@ -2267,6 +2285,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_copr_static_damage_ratio_1",
 				"player_copr_kill_life_leech_1",
 				"player_copr_activate_bonus_health_ratio_1",
+				"player_copr_activate_bonus_health_ratio_2",
 				"player_corpse_dispose_speed_multiplier",
 				"player_civ_move_multiplier"	
 			}
@@ -2387,6 +2406,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "flak_jacket_concealment",
+			category = "player"
+		}
+	}	
+	self.definitions.player_flak_jacket_concealment_2 = {
+		name_id = "menu_player_flak_jacket_concealment",
+		category = "feature",
+		upgrade = {
+			value = 2,
 			upgrade = "flak_jacket_concealment",
 			category = "player"
 		}
@@ -3202,8 +3230,8 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
-	self.definitions.temporary_chico_injector_mrwi = {
-		name_id = "menu_temporary_chico_injector_mrwi",
+	self.definitions.temporary_chico_injector_4 = { --Copycat
+		name_id = "menu_temporary_chico_injector_1",
 		category = "temporary",
 		upgrade = {
 			value = 4,
@@ -3222,7 +3250,16 @@ function UpgradesTweakData:_player_definitions()
 		}
 	}
 
-	self.definitions.player_damage_control_passive_mrwi = {
+	self.definitions.player_damage_control_passive_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_control_passive",
+			category = "player"
+		}
+	}
+
+	self.definitions.player_damage_control_passive_2 = { --Copycat
 		category = "feature",
 		upgrade = {
 			value = 2,
@@ -3231,9 +3268,8 @@ function UpgradesTweakData:_player_definitions()
 		}
 	}
 
-
-	self.definitions.player_copr_activate_bonus_health_ratio_mrwi = {
-		name_id = "menu_player_copr_activate_bonus_health_ratio_mrwi",
+	self.definitions.player_copr_activate_bonus_health_ratio_2 = { --Copycat
+		name_id = "menu_player_copr_activate_bonus_health_ratio_1",
 		category = "feature",
 		upgrade = {
 			value = 2,
@@ -4178,6 +4214,15 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 		upgrade = {
 			value = 1,
 			upgrade = "automatic_can_shoot_through_enemy",
+			category = "smg"
+		}
+	}
+	self.definitions.smg_automatic_kills_to_damage_1 = {
+		name_id = "menu_automatic_kills_to_damage_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "automatic_kills_to_damage",
 			category = "smg"
 		}
 	}

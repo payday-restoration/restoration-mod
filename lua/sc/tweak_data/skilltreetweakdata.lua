@@ -457,14 +457,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 3},
 				[1] = {
 					upgrades = {
-						"smg_ap_bullets_1",
+						"player_ap_bullets_1",
+						"smg_ap_bullets_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_ap_bullets_1",
-						"smg_automatic_can_shoot_through_enemy_1",
+						"smg_automatic_kills_to_damage_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -3208,7 +3208,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_1",
 				upgrades = {
 					"damage_control",
-					"player_damage_control_passive",
+					"player_damage_control_passive_1",
 					"player_damage_control_healing",
 					"player_armor_to_health_conversion"
 				},

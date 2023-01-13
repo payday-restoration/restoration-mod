@@ -2055,8 +2055,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_bow"] = "Bows",
 		["menu_bow_single"] = "Bow",
-		["menu_crossbow"] = "Crossbows",
-		["menu_crossbow_single"] = "Crossbow",
+		["menu_crossbow"] = "Bows",
+		["menu_crossbow_single"] = "Bow",
 
 		["menu_akimbo"] = "Akimbo+",
 
@@ -2234,7 +2234,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Community Frag 2
 		["bm_grenade_dada_com_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s## \n\nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
 		--Snowball
-		["bm_grenade_xmas_snowball_desc"] = "Damage: #{skill_color}#240## \nRadius: #{skill_color}#1m## \nRegen rate: #{skill_color}#1 snowball every 5s## \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
+		["bm_grenade_xmas_snowball_desc"] = "Damage: #{skill_color}#240## \nRadius: #{skill_color}#1m## \nRegen rate: #{skill_color}#1 snowball every 25s## \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
 		--Zapper
 		["bm_grenade_electric_desc"] = "Damage: #{skill_color}#400## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s## \n- #{skill_color}#Electrocutes most enemies## \n\nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		--Sticky
@@ -2265,7 +2265,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "Ampule",
 		["bm_grenade_damage_control"] = "Hip Flask",
-		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#8m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#4m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
@@ -2946,7 +2946,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   MEDIC SUBTREE   ]]--
 				--Combat Medic
 				["menu_combat_medic_beta_sc"] = "Combat Medic",
-				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#10%## damage reduction for #{skill_color}#5## seconds both after and during reviving another player.\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#30%## more health.",
+				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#10%## damage reduction for #{skill_color}#5## seconds while and after reviving another crew member.\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#30%## more health.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "Quick Fix",
@@ -2958,20 +2958,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Uppers
 				["menu_tea_cookies_beta_sc"] = "Uppers",
-				["menu_tea_cookies_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nAdds #{skill_color}#3## more First Aid Kits to your inventory.\n\nACE: #{owned}#$pro##\nAdds #{skill_color}#3## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a #{skill_color}#5## meter radius of the first aid kit.\n\nThis cannot occur more than once every #{skill_color}#60## seconds individually for each player.\n\n#{risk}#NOTE: Does not apply to Swan Song.##",
+				["menu_tea_cookies_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now carry and deploy #{skill_color}#6## more First Aid Kits.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#9## First Aid Kits.\n\nYour deployed First Aid Kits will #{skill_color}#auto-revive## you or any crew members going down within #{skill_color}#5## meters of it.\n\n#{risk}#NOTE: Auto-revival has a## #{important_1}#60## #{risk}#second cooldown applying to whoever was auto-revived; First Aid Kits will not revive anyone on cooldown or in a Swan Song state.##",
 
 				--Combat Doctor
 				["menu_medic_2x_beta_sc"] = "Combat Doctor",
-				["menu_medic_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour doctor bags have #{skill_color}#1## more charge.\n\nACE: #{owned}#$pro##\nYou can now deploy #{skill_color}#2## Doctor Bags instead of just one.",
+				["menu_medic_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour Doctor Bags carry additional supplies, allowing them to be used #{skill_color}#1## more time.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#2## Doctor Bags.",
 
 				--Inspire
 				["menu_inspire_beta_sc"] = "Inspire",
-				["menu_inspire_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou revive crew members #{skill_color}#50%## faster.\n\nShouting at your teammates will increase their movement and reload speed by #{skill_color}#20%## for #{skill_color}#10## seconds.\n\nACE: #{owned}#$pro##\nYou can revive crew members with #{skill_color}#clear line of sight## at a distance of #{skill_color}#9 meters## by shouting at them. This cannot occur more than once every #{skill_color}#90## seconds.",
+				["menu_inspire_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou revive crew members #{skill_color}#50%## faster.\n\nShouting at your crew members will increase their movement and reload speed by #{skill_color}#20%## for #{skill_color}#10## seconds.\n\nACE: #{owned}#$pro##\nYou can revive a downed crew member you have a line of sight on up to #{skill_color}#9## meters away from you by shouting at them.\n\n#{risk}#NOTE: You can only revive others like this## #{important_1}#1## #{risk}#time every## #{important_1}#90## #{risk}#seconds.##",
 
 			--[[   CONTROLLER SUBTREE   ]]--
 				--Cable Guy
 				["menu_triathlete_beta_sc"] = "Cable Guy",
-				["menu_triathlete_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour supply of cable ties is increased by #{skill_color}#3.##\n\nACE: #{owned}#$pro##\nYour chance to pick up cable ties from ammo boxes is increased to #{skill_color}#30%.##\n\nYour supply of cable ties is increased by an additional #{skill_color}#3.##",
+				["menu_triathlete_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour supply of cable ties is increased by #{skill_color}#3.##\n\nACE: #{owned}#$pro##\nYour supply of cable ties is increased by an additional #{skill_color}#3.##\n\nYour chance to pick up cable ties from ammo boxes is increased to #{skill_color}#30%.##",
 
 				--Clowns are Scary
 				["menu_cable_guy_beta_sc"] = "Clowns are Scary",
@@ -2979,24 +2979,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Stockholm Syndrome
 				["menu_joker_beta_sc"] = "Stockholm Syndrome",
-				["menu_joker_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nNearby civilians and jokers will #{skill_color}#revive you when you go down when called over## and will give you an ammo box.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#1## damage absorption for each hostage up to #{skill_color}#4## times.\n\n#{risk}#NOTE: This effect does not stack with multiple crew members using this skill.##",
+				["menu_joker_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nNearby civilians and jokers will #{skill_color}#revive you when you go down when called over## and will give you an ammo box.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#1## damage absorption for each hostage up to #{skill_color}#4## times.\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
 
 				--Joker
 				["menu_stockholm_syndrome_beta_sc"] = "Joker",
-				["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can convert #{skill_color}#1## non-special enemy who has surrendered to fight on your side. This can not be done during stealth.\n\nYour converted enemy takes #{skill_color}#60%## less damage.\n\nConverted enemies count as hostages for the purposes of skills and trading people out of custody.\n\nACE: #{owned}#$pro##\nYou can now have #{skill_color}#2## non-special enemies converted at the same time.\n\nYour converted enemies takes an additional #{skill_color}#20%## less damage.",
+				["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nOnce the heist has gone loud, you can convert #{skill_color}#1## non-special enemy who has surrendered to fight on your side; they count as hostages for the purpose of skills and trading crew members out of custody.\n\nYour converted enemy takes #{skill_color}#60%## less damage.\n\nACE: #{owned}#$pro##\nYou can now have #{skill_color}#2## non-special enemies converted at the same time.\n\nYour converted enemies takes an additional #{skill_color}#20%## less damage.",
 
 				--Partners in Crime
 				["menu_control_freak_beta_sc"] = "Partners in Crime",
-				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEach hostage increases your movement speed by #{skill_color}#3%##, up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nEach hostage increases your health by an additional #{skill_color}#5%##, up to #{skill_color}#4## times.",
+				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additonal #{skill_color}#3%## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#5%## for each hostage you have; stacks up to #{skill_color}#4## times.",
 
 				--Hostage Taker
 				["menu_black_marketeer_beta_sc"] = "Hostage Taker",
-				["menu_black_marketeer_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou regenerate #{skill_color}#1## health every #{skill_color}#4## seconds for each hostage up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour #{skill_color}#hostages will not flee## when they have been rescued by law enforcers.\n\nWhenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only #{skill_color}#1## time during a heist.\n\nHealth regen from Hostage Taker is increased by #{skill_color}#50%## when you have #{skill_color}#4## or more hostages.",
+				["menu_black_marketeer_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou regenerate #{skill_color}#1## health point every #{skill_color}#4## seconds for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nHealth regen from this skill is increased by #{skill_color}#50%## when you have #{skill_color}#4 or more## hostages.\n\n#{skill_color}#Your civillian hostages will not flee## when they have been rescued by law enforcers.\n\n#{skill_color}#A hostage will trade themselves## for your safe return if you go into custody during an assault.\n\n#{risk}#NOTE: This trade can only occur## #{important_1}#1## #{risk}#time during a heist.##",
 
 			--[[   ASSAULT SUBTREE   ]]--
 				--Leadership
 				["menu_stable_shot_beta_sc"] = "Leadership",
-				["menu_stable_shot_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\nYou and your crews' stability rating for #{skill_color}#all weapons## is increased by #{skill_color}#2.##",
+				["menu_stable_shot_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#2## stability for #{skill_color}#all weapons.##\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
 
 				--MG Handling
 				["menu_scavenger_sc"] = "MG Handling",
@@ -3008,15 +3008,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#All weapon## magazine sizes are increased by #{skill_color}#20%.##\n\n#{risk}#NOTE: Does not apply to crossbows, bows or launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#30%.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#All weapon## magazine sizes are increased by #{skill_color}#20%.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#Bows or Launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#30%.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",
-				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#20%## chance to knock down enemies.\n\nThis chance is raised to #{skill_color}#40%## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to Captains, Bulldozers, Snipers, and Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#12.5%## less damage while crouched.\n\nThe effect is raised to #{skill_color}#25%## when using a bipod.",
+				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#20%## chance to stagger enemies.\n\nThis chance is raised to #{skill_color}#40%## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#12.5%## less damage while crouched.\n\nThe effect is raised to #{skill_color}#25%## when using a bipod.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Body Expertise",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor\n\nThis effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\n#{risk}#NOTE: This stacks additively with any armor piercing capabilites your weapon(s) may already have, to a maximum of 100%.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fired in full auto are capable of shooting through enemies, each enemy you shoot through makes the next enemy hit by the same shot take an additional #{skill_color}#10%## more damage; stacks up to #{skill_color}#5## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor\n\nThis effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\n#{risk}#NOTE: This stacks additively with any armor piercing capabilites your weapon(s) may already have, to a maximum of 100%.##\n\nACE: #{owned}#$pro##\nKills using a #{skill_color}#machine gun## without releasing the trigger will grant it an additional #{skill_color}#10%## more damage; stacks up to #{skill_color}#5## times.",
 
 
 		--[[   ENFORCER   ]]--
@@ -3028,28 +3028,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#15%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.",
+				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#Shotguns and Flamethrowers## are #{skill_color}#15%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and Flamethrowers## reload #{skill_color}#25%## faster.",
 
 				--Shotgun Impact
 				["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-				["menu_shotgun_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns## fire #{skill_color}#3## extra pellets.\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
+				["menu_shotgun_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and Flamethrowers## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns## fire #{skill_color}#3## extra pellets.\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Pigeon Shooter",
-				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#60%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#30%## while aiming down sights.",
+				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#60%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#Shotguns and Flamethrowers## is increased by #{skill_color}#30%## while aiming down sights.",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Gung-Ho",
-				["menu_close_by_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nACE: #{owned}#$pro##\nWhile hip-firing, the rate of fire of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#35%.##",
+				["menu_close_by_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and Flamethrowers## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nACE: #{owned}#$pro##\nWhile hip-firing, the rate of fire of #{skill_color}#Shotguns and Flamethrowers## is increased by #{skill_color}#35%.##",
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills using #{skill_color}#shotguns, flamethrowers or OVE9000 saw## grants them a #{skill_color}#50%## damage boost for #{skill_color}#2## seconds.\n\nACE: #{owned}#$pro##\nThe damage bonus now applies to all weapons and lasts #{skill_color}#10## seconds. Skill must still be activated using a #{skill_color}#shotgun, flamethrower or OVE9000 saw.##\n\n#{risk}#NOTE: The damage bonus does not apply to launchers.##\n\nDecreases the time it takes to pull and put away #{skill_color}#shotguns, flamethrowers and the OVE9000 saw## by #{skill_color}#50%.##",
+				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills using #{skill_color}#Shotguns, Flamethrowers or the OVE9000 Saw## grants them a #{skill_color}#50%## damage increase for #{skill_color}#2## seconds.\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and lasts an additional #{skill_color}#8## seconds.\n\n#{risk}#NOTE: Skill must still be activated using a## #{skill_color}#Shotgun, Flamethrower or OVE9000 Saw## #{risk}#and the damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#Shotguns, Flamethrowers and the OVE9000 Saw## are #{skill_color}#50%## faster",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Stun Resistance",
-				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#0.25%## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of Flashbangs by #{skill_color}#50%.##",
+				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#0.25%## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs by #{skill_color}#50%.##",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Die Hard",
@@ -3069,28 +3069,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nACE: #{owned}#$pro##\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers #{skill_color}#10%## faster.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ranged weapons to have a chance to stagger Shield enemies when shooting their shield; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
 				["menu_scavenging_sc"] = "Scavenger",
-				["menu_scavenging_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#50%## increased ammo box pick up range.\n\nACE: #{owned}#$pro##\nEvery #{skill_color}#5th## enemy you kill will drop an extra ammo box.",
+				["menu_scavenging_desc_sc"] = "BASIC: #{owned}#$basic##\nYour ammo box pick up range is increased by #{skill_color}#50%.##\n\nACE: #{owned}#$pro##\nEvery #{skill_color}#5th## enemy you kill will drop an extra ammo box.",
 
 				--Bulletstorm--
 				["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",
-				["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to #{skill_color}#5## seconds after interacting with it.\n\nThe more ammo players replenish, the longer the duration of the effect.\n\n#{risk}#NOTE: Launchers and any other weapons using explosive munitions do not receive the effects of this skill.##\n\nACE: #{owned}#$pro##\nIncreases the maximum possible duration of the effect by an additional #{skill_color}#15## seconds.",
+				["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nAmmo bags placed by you grant its users the ability to shoot without depleting their ammunition for up to #{skill_color}#5## seconds after replenishing ammo from it.\n\nThe more ammo replenished, the longer the duration of the effect.\n\n#{risk}#NOTE:## #{important_1}#Launchers and weapons using explosive ammo## #{risk}#do not receive the effects of this skill.##\n\nACE: #{owned}#$pro##\nIncreases the maximum possible duration of the effect by an additional #{skill_color}#15## seconds.",
 
 				--Specialist Equipment formally Rip and Tear
 				["menu_portable_saw_beta_sc"] = "Specialist Equipment",
-				["menu_portable_saw_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nReduces the wear down of #{skill_color}#OVE9000 saw## blades by #{skill_color}#50%.##\n\nACE: #{owned}#$pro##\n#{skill_color}#The OVE9000 saw, crossbows, bows and launchers## reload #{skill_color}#25%## faster.",
+				["menu_portable_saw_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nReduces the wear down of #{skill_color}#OVE9000 Saw## blades by #{skill_color}#50%.##\n\nACE: #{owned}#$pro##\nThe #{skill_color}#OVE9000 Saw, Bows and Launchers## reload #{skill_color}#25%## faster.",
 
 				--Extra Lead
 				["menu_ammo_2x_beta_sc"] = "Extra Lead",
-				["menu_ammo_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEach ammo bag contains additional #{skill_color}#200%## ammunition.\n\nACE: #{owned}#$pro##\nYou can now place #{skill_color}#2## ammo bags instead of just one.",
+				["menu_ammo_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEach ammo bag contains an additional #{skill_color}#200%## more ammunition.\n\nACE: #{owned}#$pro##\nYou can now place #{skill_color}#2## ammo bags instead of just one.",
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "Rip and Tear",
-				["menu_carbon_blade_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now saw through shields with your #{skill_color}#OVE9000 saw.##\n\nACE: #{owned}#$pro##\nKills with #{skill_color}#the OVE9000 saw, crossbows, bows and launchers## have a #{skill_color}#50%## chance to cause nearby enemies in a #{skill_color}#10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",
+				["menu_carbon_blade_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now saw through shields with your #{skill_color}#OVE9000 saw.##\n\nACE: #{owned}#$pro##\nKills with the #{skill_color}#OVE9000 Saw, Bows and Launchers## have a #{skill_color}#50%## chance to cause nearby enemies in a #{skill_color}#10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "Fully Loaded",
@@ -3101,7 +3101,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   FORTRESS SUBTREE   ]]--
 				--Logistician
 				["menu_defense_up_beta_sc"] = "Logistician",
-				["menu_defense_up_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou deploy and interact with all deployables #{skill_color}#25%## faster.\n\nACE: #{owned}#$pro##\nYou and your crew deploy and interact with all deployables #{skill_color}#50%## faster.",
+				["menu_defense_up_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou deploy and interact with all deployables #{skill_color}#25%## faster.\n\nACE: #{owned}#$pro##\nYou and your crew deploy and interact with all deployables #{skill_color}#50%## faster.\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
 	
 				--Nerves of Steel--
 				["menu_fast_fire_beta_sc"] = "Nerves of Steel",
@@ -3227,7 +3227,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   SILENT KILLER SUBTREE   ]]--
 				--Second Wind
 				["menu_scavenger_beta_sc"] = "Second Wind",
-				["menu_scavenger_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your armor breaks you gain #{skill_color}#10%## speed for #{skill_color}#3## seconds.\n\nACE: #{owned}#$pro##\nWhen your armor is fully depleted, the first shot on every enemy will cause them to stagger.\n\nThis effect persists for #{skill_color}#3## seconds after your armor has regenerated.",
+				["menu_scavenger_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your armor breaks you gain #{skill_color}#10%## speed for #{skill_color}#3## seconds.\n\nACE: #{owned}#$pro##\nWhen your armor is fully depleted, the first shot on every enemy will stagger them.\n\nThis effect persists for #{skill_color}#3## seconds after your armor has regenerated.",
 
 				--Optical Illusions--
 				["menu_optic_illusions_sc"] = "Optical Illusions",
@@ -3290,7 +3290,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_what_doesnt_kill_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIncoming damage is reduced by #{skill_color}#1## point for each down you are closer to custody. \n\nACE: #{owned}#$pro##\nIncoming damage is reduced by an additional #{skill_color}#3## points at all times.",
 
 				--Swan Song
-				["menu_perseverance_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your health reaches #{skill_color}#0##, instead of instantly going down, you can fight for #{skill_color}#3## seconds with a #{skill_color}#60%## movement speed penalty.\n\nACE: #{owned}#$pro##\nYou can fight for an additional #{skill_color}#6## seconds.",
+				["menu_perseverance_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your health reaches #{skill_color}#0##, instead of instantly going down you enter the Swan Song state; you can fight for #{skill_color}#3## seconds with a #{skill_color}#60%## movement speed penalty.\n\n#{risk}#NOTE: Entering the Swan Song state will always end with you going down once it expires.##\n\nACE: #{owned}#$pro##\nYou can fight for an additional #{skill_color}#6## seconds.",
 
 				--Haunt--
 				["menu_haunt_sc"] = "Haunt",
@@ -3324,6 +3324,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Berserker--
 				["menu_frenzy_sc"] = "Berserker",
 				["menu_frenzy_desc_sc"] = "BASIC: #{owned}#$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#100%## more melee and saw damage.\n\nACE: #{owned}#$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#50%## more damage with ranged weapons.\n\n#{risk}#NOTE: Does not apply launchers.##"
+
 
 	})
 
@@ -3518,57 +3519,57 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_9_desc_sc"] = "You can now activate the Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule.\n\nReviving yourself with the Leech Ampule will add ##30## additional seconds to the Ampule's cooldown.\n\nTaking damage now heals teammates by ##2%## of their health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--CopyCat--
+		["menu_st_spec_23"] = "Copycat",
 		["menu_deck23_1_desc"] = "Killing ##10## enemies reloads your holstered weapon.\n\nYou swap between weapons ##15%## faster.",
 		["menu_deck23_1_short"] = "Killing ##10## enemies reloads your holstered weapon.\n\nYou swap between weapons ##15%## faster.",
-		["menu_deck23_1_1_desc"] = "You gain ##7.5%## more health.",
-		["menu_deck23_1_1_short"] = "You gain ##7.5%## more health.",
-		["menu_deck23_1_3_desc"] = "Your dodge is increased by ##2.5## points.",
-		["menu_deck23_1_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_1_1_desc"] = "You gain ##5%## more health.",
+		["menu_deck23_1_1_short"] = "You gain ##5%## more health.",
+		["menu_deck23_1_3_desc"] = "Your dodge is increased by ##1.25## points.",
+		["menu_deck23_1_3_short"] = "Your dodge is increased by ##1.25## points.",
 		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
 		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds.",
 		["menu_deck23_3_short"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds.",
-		["menu_deck23_3_1_desc"] = "You gain ##7.5%## more health.",
-		["menu_deck23_3_1_short"] = "You gain ##7.5%## more health.",
-		["menu_deck23_3_3_desc"] = "Your dodge is increased by ##2.5## points.",
-		["menu_deck23_3_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_3_1_desc"] = "You gain ##5%## more health.",
+		["menu_deck23_3_1_short"] = "You gain ##5%## more health.",
+		["menu_deck23_3_3_desc"] = "Your dodge is increased by ##1.25## points.",
+		["menu_deck23_3_3_short"] = "Your dodge is increased by ##1.25## points.",
 		["menu_deck23_3_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_3_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
 		["menu_deck23_5_desc"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for ##100%## more damage.\n\nArmor break ricochets have a ##15## second cooldown.",
 		["menu_deck23_5_short"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for ##100%## more damage.\n\nArmor break ricochets have a ##15## second cooldown.",
-		["menu_deck23_5_1_desc"] = "You gain ##7.5%## more health.",
-		["menu_deck23_5_1_short"] = "You gain ##7.5%## more health.",
-		["menu_deck23_5_3_desc"] = "Your dodge is increased by ##2.5## points.",
-		["menu_deck23_5_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_5_1_desc"] = "You gain ##5%## more health.",
+		["menu_deck23_5_1_short"] = "You gain ##5%## more health.",
+		["menu_deck23_5_3_desc"] = "Your dodge is increased by ##1.25## points.",
+		["menu_deck23_5_3_short"] = "Your dodge is increased by ##1.25## points.",
 		["menu_deck23_5_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_5_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
 		["menu_deck23_7_desc"] = "When your health drops below ##50%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##90## seconds.",
 		["menu_deck23_7_short"] = "When your health drops below ##50%## you will be immune to health damage for ##2## seconds.\n\nThis cannot occur more than once every ##90## seconds.",
-		["menu_deck23_7_1_desc"] = "You gain ##7.5%## more health.",
-		["menu_deck23_7_1_short"] = "You gain ##7.5%## more health.",
-		["menu_deck23_7_3_desc"] = "Your dodge is increased by ##2.5## points.",
-		["menu_deck23_7_3_short"] = "Your dodge is increased by ##2.5## points.",
+		["menu_deck23_7_1_desc"] = "You gain ##5%## more health.",
+		["menu_deck23_7_1_short"] = "You gain ##5%## more health.",
+		["menu_deck23_7_3_desc"] = "Your dodge is increased by ##1.25## points.",
+		["menu_deck23_7_3_short"] = "Your dodge is increased by ##1.25## points.",
 		["menu_deck23_7_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_7_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		--Final Card
 			--Crew Chief
-			["menu_deck1_mrwi_desc"] = "Increases your shout distance by ##25%.##\n\nYou and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##25%## faster.",
 			["menu_deck1_mrwi_desc"] = "Increases your shout distance by ##25%.##\n\nYou and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##25%## faster.",
 			--Muscle
 			["menu_deck2_mrwi_desc"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 			--Armorer
 			["menu_deck3_mrwi_desc"] = "Your armor recovery rate is increased by ##10%.##\n\nYou gain the ability to place ##2## body bag cases.",
 			--Rouge
-			["menu_deck4_mrwi_desc"] = "You swap between your weapons an additional ##30%## faster.\n\nYour camera loop duration is increased by ##20## seconds.",
+			["menu_deck4_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points.\n\nYou swap between your weapons an additional ##30%## faster.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Hitman
 			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores ##25## health. You can store up to ##75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of ##5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once.\n\nYou carry ##1## additional body bag in your inventory.",
 			--Crook
-			["menu_deck6_mrwi_desc"] = "Your armor is increased by an additional ##15%## for ballistic vests.\n\nYou pick locks ##20%## faster.",
+			["menu_deck6_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##15%## for ballistic vests.\n\nYou pick locks ##20%## faster.",
 			--Burglar
-			["menu_deck7_mrwi_desc"] = "Your dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##20%## boost in your movement speed when crouching.",
+			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points.\n\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##20%## boost in your movement speed when crouching.",
 			--Infiltrator
 			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Sociopath
@@ -3576,7 +3577,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "When you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.\n\nYou gain the ability to place ##2## body bag cases.",
+			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##4## concealment while wearing the Flak Jacket.\n\nYou gain the ability to place ##2## body bag cases.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 			--Ex-Pres
@@ -3588,17 +3589,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Biker
 			["menu_deck16_mrwi_desc"] = "Every time you or your crew kill an enemy you will gain ##2## health. This can only occur once every ##5## seconds.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "Unlocks the ##Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by ##20%## while the Injector is active.\n\nThe Injector can only be used once every ##30## seconds.",
+			["menu_deck17_mrwi_desc"] = "Unlocks the ##Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for ##20%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by ##20%## while the Injector is active.\n\nThe Injector can only be used once every ##30## seconds.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "Unlocks the ##Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.\n\nYou carry ##1## additional body bag in your inventory.",
+			["menu_deck18_mrwi_desc"] = "Unlocks the ##Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.\n\nYour dodge is increased by an additonal ##5## points.\n\nYou carry ##1## additional body bag in your inventory.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n##30%## of the damage taken to your health is applied over ##8## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time.\n\nThe flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##\n\nYou answer pagers ##25%## faster.",
+			["menu_deck19_mrwi_desc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n##20%## of the damage taken to your health is applied over ##5## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time.\n\nThe flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##\n\nYou answer pagers ##25%## faster.",
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Unlocks the ##Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within ##18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Hacker
 			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "Unlocks the ##Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore ##10%## of your maximum health and disables your armor for ##6## seconds.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Ampule has a ##40## second cooldown.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			["menu_deck22_mrwi_desc"] = "Unlocks the ##Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore ##5%## of your maximum health and disables your armor for ##6## seconds.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Ampule has a ##40## second cooldown.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",

@@ -12,6 +12,14 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 
 	self._skill_global_ap = (managers.player:has_category_upgrade("player", "ap_bullets") and managers.player:upgrade_value("player", "ap_bullets", 1)) or nil
 
+	for _, category in ipairs(self:categories()) do
+		if managers.player:has_category_upgrade(category, "automatic_kills_to_damage") then
+			log("YOU HAVE THE POWER")
+			self._automatic_kills_to_damage_max_stacks = managers.player:upgrade_value(category, "automatic_kills_to_damage")[1]
+			self._automatic_kills_to_damage_dmg_mult = managers.player:upgrade_value(category, "automatic_kills_to_damage")[2]
+		end
+	end
+
 	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
 	local volley_fire_mode = fire_mode_data.volley
 
@@ -1579,6 +1587,7 @@ end
 
 function NewRaycastWeaponBase:can_shoot_through_enemy()
 	local can_shoot_through_enemy = nil
+	--[[
 	if self:fire_mode() == "auto" then
 		for _, category in ipairs(self:categories()) do
 			if managers.player:has_category_upgrade(category, "automatic_can_shoot_through_enemy") then
@@ -1588,5 +1597,6 @@ function NewRaycastWeaponBase:can_shoot_through_enemy()
 			end
 		end
 	end
+	--]]
 	return can_shoot_through_enemy or self._can_shoot_through_enemy
 end

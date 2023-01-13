@@ -528,9 +528,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_ace.max_amount = 9
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.15
 	self.projectiles.wpn_prj_target.max_amount = 9
+	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_jav.max_amount = 6
 	self.projectiles.wpn_prj_hur.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
@@ -546,8 +545,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
-		self.projectiles.xmas_snowball.base_cooldown = 5
-		self.projectiles.xmas_snowball.throw_shout = true
+		self.projectiles.xmas_snowball.base_cooldown = 25
+		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
 	self.projectiles.pocket_ecm_jammer.max_amount = 1

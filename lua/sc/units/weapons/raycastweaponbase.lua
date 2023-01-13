@@ -56,6 +56,7 @@ function RaycastWeaponBase:setup(...)
 		end
 	end
 	self._shots_without_releasing_trigger = 0
+	self._no_cheevo_kills_without_releasing_trigger = 0
 end
 
 function RaycastWeaponBase:get_damage_type()
@@ -663,6 +664,13 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	for _, hit in ipairs(ray_hits) do
 		damage = self:get_damage_falloff(damage, hit, user_unit)
 		hit_result = nil
+		local hit_unit = hit and hit.unit
+		local is_alive = hit_unit and hit_unit:character_damage() and not hit_unit:character_damage():dead()
+		
+		if is_alive and self:fire_mode() == "auto" and self._no_cheevo_kills_without_releasing_trigger > 0 and self._automatic_kills_to_damage_max_stacks then
+			local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
+			damage = damage * (1 + (self._automatic_kills_to_damage_dmg_mult * stacks))
+		end
 
 		if damage > 0 then
 			hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, damage)
@@ -682,6 +690,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 			if not is_civilian then
 				cop_kill_count = cop_kill_count + 1
+				self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
 			end
 
 			if self:is_category(tweak_data.achievement.easy_as_breathing.weapon_type) and not is_civilian then
@@ -699,9 +708,11 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 			hit_count = hit_count + 1
 		end
 
+		--[[
 		if self:fire_mode() == "auto" and self._shoot_through_enemy_max_stacks and hit_count <= self._shoot_through_enemy_max_stacks then
 			damage = damage * self._shoot_through_enemy_dmg_mult
 		end
+		--]]
 
 		if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
 			hit_through_wall = true
@@ -1091,6 +1102,9 @@ local orig_stop_shooting = RaycastWeaponBase.stop_shooting
 function RaycastWeaponBase:stop_shooting(...)
 	if self._shots_without_releasing_trigger then
 		self._shots_without_releasing_trigger = 0
+	end
+	if self._no_cheevo_kills_without_releasing_trigger then
+		self._no_cheevo_kills_without_releasing_trigger = 0
 	end
 	if self:_get_sound_event("stop_fire2") then
 		--self._sound_fire:stop()

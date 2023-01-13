@@ -1316,7 +1316,9 @@ function PlayerStandard:_start_action_running(t)
 	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 
 	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
-	if second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+	if second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() then
+		if self._running_wanted ~= true and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+		end
 		self._running_wanted = false
 
 		return

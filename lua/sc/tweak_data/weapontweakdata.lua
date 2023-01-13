@@ -3752,6 +3752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	recat = { "mg42", "m60", "hk21", "par", "hk51b", "ranc_heavy_machine_gun" }
 	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "mmg")
 		self[ wep_id ].recategorize = { "heavy_mg" }
 		self[ wep_id ].sms = 0.75
 		self[ wep_id ].damage_type = "machine_gun"
@@ -7204,21 +7205,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.kick = self.stat_info.kick_tables.right_recoil
 			self.tecci.CLIP_AMMO_MAX = 100
 			self.tecci.AMMO_MAX = 360
-			self.tecci.fire_mode_data.fire_rate = 0.075
+			self.tecci.fire_mode_data.fire_rate = 0.0705882
 			self.tecci.CAN_TOGGLE_FIREMODE = true
-			self.tecci.auto.fire_rate = 0.08
 			self.tecci.panic_suppression_chance = 0.05
 			self.tecci.supported = true
-			self.tecci.ads_speed = 0.440
+			self.tecci.ads_speed = 0.420
 			self.tecci.damage_falloff = {
-				start_dist = 2000,
-				end_dist = 6000,
+				start_dist = 2100,
+				end_dist = 6300,
 				min_mult = 0.5
 			}
 			self.tecci.stats = {
 				damage = 20,
 				spread = 71,
-				recoil = 73,
+				recoil = 75,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 23,
@@ -7293,10 +7293,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.BURST_FIRE = false
 			self.rpk.kick = self.stat_info.kick_tables.right_kick
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.480
+			self.rpk.ads_speed = 0.500
 			self.rpk.damage_falloff = {
 				start_dist = 3000,
-				end_dist = 5300,
+				end_dist = 5500,
 				min_mult = 0.6
 			}
 			self.rpk.stats = {
@@ -7382,7 +7382,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.desc_id = "bm_m60_sc_desc"		
 				self.m60.categories = {
 					"lmg",
-					"smg"
+					"smg",
+					"mmg"
 				}
 				self.m60.CLIP_AMMO_MAX = 75
 				self.m60.AMMO_MAX = 120
@@ -7413,7 +7414,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m60.stats_modifiers = nil
 				self.m60.panic_suppression_chance = 0.05
-				self.m60.reload_speed_multiplier = 0.9
+				self.m60.reload_speed_multiplier = 0.8
 				self.m60.timers.reload_exit_empty = 1.4
 				self.m60.timers.reload_not_empty = 4.7
 				self.m60.timers.reload_exit_not_empty = 2.8
@@ -7423,7 +7424,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.desc_id = "bm_par_sc_desc"				
 				self.par.categories = {
 					"lmg",
-					"smg"
+					"smg",
+					"mmg"
 				}
 				self.par.CLIP_AMMO_MAX = 50
 				self.par.fire_mode_data.fire_rate = 0.096
@@ -7458,6 +7460,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.par.stats_modifiers = nil
 				self.par.no_bipod_anims = true
+				self.par.reload_speed_multiplier = 0.85
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
 				self.par.timers.reload_exit_empty = 1.325
@@ -7467,7 +7470,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.categories = {
 					"lmg",
 					"smg",
-					"wolf_brigade"
+					"wolf_brigade",
+					"mmg"
 				}
 				self.mg42.sounds.fire = "mg42_fire"
 				self.mg42.sounds.fire_single = "mg42_fire"
@@ -7508,7 +7512,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Brenner 21 (HK21)
 				self.hk21.categories = {
 					"lmg",
-					"smg"
+					"smg",
+					"mmg"
 				}
 				self.hk21.desc_id = "bm_hk21_sc_desc"
 				self.hk21.has_description = true
@@ -7554,7 +7559,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--HK21 nerfs have made this more viable as a primary
 				self.hk51b.categories = {
 					"lmg",
-					"smg"
+					"smg",
+					"mmg"
 				}
 				self.hk51b.desc_id = "bm_hk51b_sc_desc"
 				self.hk51b.has_description = true
@@ -9486,7 +9492,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.fire_rate_multiplier = 1
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
-			self.m95.ads_speed = 0.580
+			self.m95.ads_speed = 0.560
 			self.m95.damage_falloff = {
 				start_dist = 4000,
 				end_dist = 20000,
@@ -15399,14 +15405,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.timers.reload_exit_not_empty = 0.6
 		self.fg42.timers.reload_empty = 3.5
 		self.fg42.timers.reload_exit_empty = 0.4
-		self.fg42.sounds.fire = "hk51b_fire"
-		self.fg42.sounds.fire_single = "hk51b_fire_single"
-		self.fg42.sounds.fire_auto = "hk51b_fire"
-		self.fg42.sounds.stop_fire = "hk51b_stop"
+		self.fg42.sounds.fire = "hk23e_fire"
+		self.fg42.sounds.fire_single = "hk23e_fire_single"
+		self.fg42.sounds.fire_auto = "hk23e_fire"
+		self.fg42.sounds.stop_fire = "hk23e_stop"
 	end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
-	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality) then it's a no-go for now
+	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality, those are fine) then it's a no-go for now
 	if self.owen then -- Silent Enforcer's Owen Gun
 		self.owen.use_data.selection_index = 2
 		self.owen.tactical_reload = 1
@@ -15826,8 +15832,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 20,  pickup = {0.055, 0.027}},
 		{damage = 24,  pickup = {0.053, 0.027}},
 		{damage = 30,  pickup = {0.051, 0.026}},
-		{damage = 45,  pickup = {0.049, 0.025}},
-		{damage = 60,  pickup = {0.046, 0.024}},
+		{damage = 45,  pickup = {0.047, 0.025}},
+		{damage = 60,  pickup = {0.045, 0.024}},
 		{damage = 90,  pickup = {0.043, 0.023}},
 		{damage = 120, pickup = {0.040, 0.022}},
 		{damage = 180, pickup = {0.037, 0.020}},
@@ -15857,18 +15863,21 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		pistol = 1.2, --Compensate for low range.
 		smg = 1.1,
 			pdw = 0.8,
+			typh = 0.8,
 			lmg = 0.6,
-			minigun = 0.4,
-		shotgun = 0.8, --Compensate for ease of aim+multikills and/or versatility.
-		--snp = 1, 
-			semi_snp = 0.8,
+				mmg = 0.875,
+				minigun = 0.4,
+		shotgun = 0.75, --Compensate for ease of aim+multikills and/or versatility.
+		--assault_rifle = 1, 
+			--snp = 1, 
+				semi_snp = 0.8,
+				amr = 0.9,
 		saw = 1.25, --Compensate for jankiness.
-		bow = 0.7, --Compensate for picking arrows back up.
-		crossbow = 0.7,
+		bow = 0.6, --Compensate for picking arrows back up.
+		crossbow = 0.6,
 		tranq = 0.7,
 		--Custom weapon pickup
 		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
-		typh = 0.8,
 	}
 
 	--Get weapon category specific pickup multipliers.

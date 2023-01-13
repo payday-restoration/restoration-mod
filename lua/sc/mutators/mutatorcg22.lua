@@ -1,3 +1,8 @@
+--[[
+MutatorCG22.categories = {
+	"old_event"
+}
+]]--
 MutatorCG22.snowman = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
 
 function MutatorCG22:on_snowman_killed(unit, damage_info)

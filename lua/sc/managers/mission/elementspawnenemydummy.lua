@@ -1444,31 +1444,37 @@ local federales_very_hard = {
 		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
 		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
-		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
-		
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1",
-		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",
-		
-		--specials
-		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+		--unused unit but better replace it anyway
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_g36/ene_swat_heavy_policia_federale_g36"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1",
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",	
 		
 		--fbi swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-	
-	    --also used as city heavy
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi/ene_swat_heavy_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1", --unused unit meant to spawn on Very Hard-Overkill but Denka made the g36 variant to spawn instead
     	["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
-        --city swat
+        --city swat (only 2 units like in vanilla Murkies)
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1", --no medicdozers!!
+		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
 		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1550,31 +1556,36 @@ local federales_overkill = {
 		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
 		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
-		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
-		
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1",
-		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",
-		
-		--specials
-		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_g36/ene_swat_heavy_policia_federale_g36"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1", --unused unit but better replace it anyway
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",	
 		
 		--fbi swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", 
-	
-	    --also used as city heavy
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi/ene_swat_heavy_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1", --unused unit meant to spawn on Very Hard-Overkill but Denka made the g36 variant to spawn instead
     	["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
-        --city swat
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
+        --city swat (only 2 units like in vanilla Murkies)
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2", --no medicdozers!!
+		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
 		
 		--Secret Service Replacers 					
@@ -1658,30 +1669,36 @@ local federales_mayhem = {
 		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
 		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
-		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
-		
-		--specials
-		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_g36/ene_swat_heavy_policia_federale_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1", --unused unit but better replace it anyway
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",	
 		
 		--fbi swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", 
-	
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi/ene_swat_heavy_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1", --unused unit meant to spawn on Very Hard-Overkill but Denka made the g36 variant to spawn instead
     	["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
-        --city swat
+        --city swat (only 2 units like in vanilla Murkies)
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2", --no medicdozers!!
+		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
 		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1761,34 +1778,40 @@ local federales_deathwish = {
 		
 		--Federales Faction
 		--security
-		["units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
-		["units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
-		["units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
-		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
-		
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
-		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
-		
-		--specials
-		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_g36/ene_swat_heavy_policia_federale_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36", --unused unit but better replace it anyway
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",	
 		
 		--fbi swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
-	
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi/ene_swat_heavy_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36", --unused unit meant to spawn on Very Hard-Overkill but Denka made the g36 variant to spawn instead
     	["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
 		
-        --city swat
+        --city swat (only 2 units like in vanilla Murkies)
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2", --no medicdozers!!
+		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
 		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1827,7 +1850,7 @@ local federales_zeal = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",  --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --just in case if some map uses vanilla minidozer
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
@@ -1868,34 +1891,40 @@ local federales_zeal = {
 		
 		--Federales Faction
 		--security
-		["units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
-		["units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
-		["units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
 		--swat
-		--also used as zeal lights
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
-		
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
-		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
-		
-		--specials
-		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",	
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_g36/ene_swat_heavy_policia_federale_g36"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc", --unused unit but better replace it anyway
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",	
 		
 		--fbi swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2", 
-	
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi/ene_swat_heavy_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc", --unused unit meant to spawn on Very Hard-Overkill but Denka made the g36 variant to spawn instead
     	["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 		
-        --city swat
+        --city swat (only 2 units like in vanilla Murkies)
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+		
+		--specials
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
+		["units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3", --no medicdozers!!
+		["units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
 		
 		--Secret Service Replacers 				
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1925,10 +1954,10 @@ local murkywater_normal_overkill = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
-		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
-		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
@@ -1990,8 +2019,8 @@ local murkywater_normal_overkill = {
 		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
-		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
-		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_medic/ene_murkywater_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		
 		--Scripted Spawns Only
@@ -2356,10 +2385,10 @@ local omnia_normal_overkill = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
-		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1",
+		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook",
-		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic",
+		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_omnia/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_omnia/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",	
@@ -2421,8 +2450,8 @@ local omnia_normal_overkill = {
 		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_omnia/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
 		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",	
-		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic",
-		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
 		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_medic/ene_murkywater_bulldozer_medic"] = "units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2",
 		
 		--OMNIA Guards

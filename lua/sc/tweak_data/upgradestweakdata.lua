@@ -755,7 +755,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Overkill
 				self.values.temporary.overkill_damage_multiplier = {
 					{1.5, 2}, --Basic
-					{1.5, 10} --Ace
+					{1.5, 8} --Ace
 				}
 				--Ace
 					self.values.shotgun.swap_speed_multiplier = {1.5}
@@ -1265,13 +1265,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 4}, --Basic
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10} --Ace
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 8} --Ace
 				}
 				
 			--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
-					{damage_bonus = 1.1, max_stacks = 3, max_time = 4}, --Basic
-					{damage_bonus = 1.1, max_stacks = 5, max_time = 10} --Ace
+					{damage_bonus = 1.05, max_stacks = 5, max_time = 4}, --Basic
+					{damage_bonus = 1.05, max_stacks = 10, max_time = 8} --Ace
 				}
 			
 		--Revenant

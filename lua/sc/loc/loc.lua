@@ -3044,7 +3044,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills using #{skill_color}#Shotguns, Flamethrowers or the OVE9000 Saw## grants them a #{skill_color}#50%## damage increase for #{skill_color}#2## seconds.\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and lasts an additional #{skill_color}#8## seconds.\n\n#{risk}#NOTE: Skill must still be activated using a## #{skill_color}#Shotgun, Flamethrower or OVE9000 Saw## #{risk}#and the damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#Shotguns, Flamethrowers and the OVE9000 Saw## are #{skill_color}#50%## faster",
+				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills using #{skill_color}#Shotguns, Flamethrowers or the OVE9000 Saw## grants them a #{skill_color}#50%## damage increase for #{skill_color}#2## seconds.\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and lasts an additional #{skill_color}#6## seconds.\n\n#{risk}#NOTE: Skill must still be activated using a## #{skill_color}#Shotgun, Flamethrower or OVE9000 Saw## #{risk}#and the damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#Shotguns, Flamethrowers and the OVE9000 Saw## are #{skill_color}#50%## faster",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
@@ -3270,11 +3270,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Desperado",
-				["menu_expert_handling_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them a #{skill_color}#8%## accuracy and range boost for #{skill_color}#4## seconds.\n\nThis effect can stack #{skill_color}#5## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the accuracy and range boost duration to #{skill_color}#10## seconds.",
+				["menu_expert_handling_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them a #{skill_color}#8%## accuracy and range boost for #{skill_color}#4## seconds.\n\nThis effect can stack #{skill_color}#5## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the accuracy and range boost duration to #{skill_color}#8## seconds.",
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-				["menu_trigger_happy_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them a #{skill_color}#10%## damage boost for #{skill_color}#4## seconds.\n\nThis effect can stack #{skill_color}#3## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the damage boost duration to #{skill_color}#10## seconds and maximum stacks by an additional #{skill_color}#2## more times.",
+				["menu_trigger_happy_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them a #{skill_color}#5%## damage boost for #{skill_color}#4## seconds.\n\nThis effect can stack #{skill_color}#4## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the damage boost duration to #{skill_color}#8## seconds and maximum stacks by an additional #{skill_color}#6## more times.",
 
 			--[[   REVENANT SUBTREE   ]]--
 				--Running From Death--

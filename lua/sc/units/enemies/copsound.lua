@@ -33,6 +33,8 @@ function CopSound:init(unit)
 		self._prefix = ("fl1n") .. "_"	
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1") or self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
+	elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5") then
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
 	--DRAK Titans
 	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser") then
 		self._prefix = ("rtsr") .. "_"	
@@ -72,6 +74,8 @@ function CopSound:init(unit)
 	elseif self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3_husk") then
 		self._prefix = ("fl1n") .. "_"
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1_husk") or self._unit:name() == Idstring("units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2_husk") then
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
+	elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
 	--DRAK Titans husks
 	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk") then

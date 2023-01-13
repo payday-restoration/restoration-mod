@@ -250,18 +250,19 @@
 	
 	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
 	
-	<!--Russian Medic zdann-->
-	<unit				path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" load="true"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_husk" force="false" load="true"/>
-	<object				path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<model				path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_contour" force="false" />
-	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_head_df" force="false" />
-	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_body_df" force="false" />
-
-	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann" load="true"/>
+	<!--DRAK Medic-->
+	<object				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>	
+	<material_config	path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic_contour" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic_husk" force="false" load="true"/>
+	
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/drak_body_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/maska_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/maska_il" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/drak_medic_head_df" force="false"/>
 	
 	<!-- greendozer -->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1" />

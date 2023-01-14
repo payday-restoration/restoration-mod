@@ -1778,9 +1778,9 @@ local federales_deathwish = {
 		
 		--Federales Faction
 		--security
-		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
-		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
-		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
+		["units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
 		--swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
@@ -1891,9 +1891,9 @@ local federales_zeal = {
 		
 		--Federales Faction
 		--security
-		["units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
-		["units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02",
-		["units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03",
+		["units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
+		["units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02",
+		["units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"] = "units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03",
 		--swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",

@@ -1448,6 +1448,35 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function 
 	self._next_group_spawn_t = self._t + spawn_task.group.size * tweak_data.group_ai.spawn_cooldown_mul
 end)
 
+-- When scripted spawns are assigned to group ai, use a generic group type instead of using their category as type
+-- This ensures they are not retired immediatley cause they are not part of assault/recon group types
+Hooks:OverrideFunction(GroupAIStateBesiege, "assign_enemy_to_group_ai", function (self, unit, team_id)
+	local assault_active = self._task_data.assault.active
+	local area = self:get_area_from_nav_seg_id(unit:movement():nav_tracker():nav_segment())
+	local grp_objective = {
+		type = assault_active and "assault_area" or "recon_area",
+		area = area,
+		moving_out = false
+	}
+
+	local objective = unit:brain():objective()
+	if objective then
+		grp_objective.area = objective.area or objective.nav_seg and self:get_area_from_nav_seg_id(objective.nav_seg) or grp_objective.area
+		objective.grp_objective = grp_objective
+	end
+
+	local group = self:_create_group({
+		size = 1,
+		type = assault_active and "custom_assault" or "custom_recon"
+	})
+	group.team = self._teams[team_id]
+	group.objective = grp_objective
+	group.has_spawned = true
+
+	self:_add_group_member(group, unit:key())
+	self:set_enemy_assigned(area, unit:key())
+end)
+
 -- Fix for potential crash when a group objective does not have a coarse path
 local _get_group_forwardmost_coarse_path_index_original = GroupAIStateBesiege._get_group_forwardmost_coarse_path_index
 function GroupAIStateBesiege:_get_group_forwardmost_coarse_path_index(group, ...)

@@ -19901,6 +19901,12 @@ else
 		0,
 		0
 	}
+	--catch all the scripted spawns so they can actually participate in assaults instead of fucking away from the action
+    self.besiege.assault.groups.custom_assault = {
+		0,
+		0,
+		0
+	}
 	--Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
@@ -20194,6 +20200,12 @@ else
 	}
 	--ditto but for recon units
 	self.besiege.recon.groups.snowman_boss = {
+		0,
+		0,
+		0
+	}
+	--ditto but for recon phase
+	self.besiege.recon.groups.custom_recon = {
 		0,
 		0,
 		0

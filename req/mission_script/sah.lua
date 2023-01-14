@@ -5,6 +5,12 @@ return {
 			enabled = false
 		}
 	},
+	--Made Locke less annoying
+	[101989] = {
+		values = {
+			trigger_times = 1
+		}
+	},
 	[101400] = {
 		difficulty = 0.5,
 		reinforce = {

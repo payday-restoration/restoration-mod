@@ -2558,7 +2558,7 @@ local crew_wep_preset = {
 			self.m14_crew.hold = "rifle"
 			self.m14_crew.alert_size = 2500
 			self.m14_crew.suppression = 3.4
-			self.m14_crew.FIRE_MODE = "single"
+			self.m14_crew.FIRE_MODE = "auto"
 		end
 		
 		function WeaponTweakData:_init_data_g3_crew()
@@ -2575,7 +2575,7 @@ local crew_wep_preset = {
 			self.g3_crew.hold = "rifle"
 			self.g3_crew.alert_size = 2500
 			self.g3_crew.suppression = 3.4
-			self.g3_crew.FIRE_MODE = "single"
+			self.g3_crew.FIRE_MODE = "auto"
 		end
 
 		function WeaponTweakData:_init_data_shak12_crew()
@@ -3098,7 +3098,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.75)
+		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.725)
 	end
 
 	self.stats.value = {}
@@ -3461,19 +3461,19 @@ function WeaponTweakData:_init_stats()
 				0.85 * self.stat_info.stance_recoil_mults.standing,
 				0.7 * self.stat_info.stance_recoil_mults.standing,
 				-0.4 * self.stat_info.stance_recoil_mults.standing,
-				0.05 * self.stat_info.stance_recoil_mults.standing
+				-0.05 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
 				0.85 * self.stat_info.stance_recoil_mults.crouching,
 				0.7 * self.stat_info.stance_recoil_mults.crouching,
 				-0.4 * self.stat_info.stance_recoil_mults.crouching,
-				0.05 * self.stat_info.stance_recoil_mults.crouching
+				-0.05 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
 				0.85 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.4 * self.stat_info.stance_recoil_mults.steelsight,
-				0.05 * self.stat_info.stance_recoil_mults.steelsight
+				-0.05 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
@@ -3481,19 +3481,19 @@ function WeaponTweakData:_init_stats()
 			standing = {
 				0.85 * self.stat_info.stance_recoil_mults.standing,
 				0.7 * self.stat_info.stance_recoil_mults.standing,
-				-0.05 * self.stat_info.stance_recoil_mults.standing,
+				0.05 * self.stat_info.stance_recoil_mults.standing,
 				0.4 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
 				0.85 * self.stat_info.stance_recoil_mults.crouching,
 				0.7 * self.stat_info.stance_recoil_mults.crouching,
-				-0.05 * self.stat_info.stance_recoil_mults.crouching,
+				0.05 * self.stat_info.stance_recoil_mults.crouching,
 				0.4 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
 				0.85 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.05 * self.stat_info.stance_recoil_mults.steelsight,
+				0.05 * self.stat_info.stance_recoil_mults.steelsight,
 				0.4 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},

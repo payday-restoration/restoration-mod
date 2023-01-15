@@ -4810,6 +4810,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 			value = 0
 		}
 	}
+
+	--[[
+	self.wpn_fps_ass_aug.override.wpn_upg_o_marksmansight_rear_vanilla = {
+		a_obj = "a_or",
+		adds = {"wpn_fps_upg_o_dd_front"},
+		unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_upg_o_dd/wpn_fps_upg_o_dd_rear",
+		third_unit = "units/pd2_dlc_gage_shot/weapons/wpn_third_upg_o_dd/wpn_third_upg_o_dd_rear"
+	}
+	self.wpn_fps_ass_aug.override.wpn_fps_upg_o_dd_front = {
+		a_obj = "a_of"
+	}
+	self.wpn_fps_ass_aug.override.wpn_upg_o_marksmansight_front = {
+		a_obj = "a_of"
+	}
+	--]]
 	
 	--UAR Default Blueprint, disabling Vertical Grips
 	self.wpn_fps_ass_aug.default_blueprint[3] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"	
@@ -4817,6 +4832,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	self.wpn_fps_ass_aug.uses_parts[18] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"	
 	--self.wpn_fps_ass_aug.uses_parts[19] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"	
 	self.wpn_fps_ass_aug.uses_parts[20] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
+
+	--table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_upg_o_marksmansight_rear")
 	
 	self.wpn_fps_ass_aug_npc.uses_parts = deep_clone(self.wpn_fps_ass_aug.uses_parts)
 

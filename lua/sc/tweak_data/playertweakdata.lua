@@ -640,6 +640,19 @@ if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 	end)
 end
 
+if SystemFS:exists("assets/mod_overrides/Patchett Proper Hold Reload Animations") then
+	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "jamview_fix", function(self)
+	
+		local pivot_shoulder_translation = Vector3(10.704, 1.084, -6.406)
+		local pivot_shoulder_rotation = Rotation(0.1355, -0.14, 0.5)     
+		local pivot_head_translation = Vector3(0, 10, 0)
+		local pivot_head_rotation = Rotation(0, 0, 0)
+		self.stances.sterling.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.sterling.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	
+	end )
+end
+
 local static_aim = restoration.Options:GetValue("OTHER/WeaponHandling/StaticAim")
 if static_aim then
 	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	

@@ -1111,9 +1111,7 @@ function CopDamage:damage_bullet(attack_data)
 				variant = attack_data.variant
 			}
 
-			if attack_data.backstab then
-				managers.player:add_backstab_dodge()
-			end
+			managers.player:add_backstab_dodge(attack_data.backstab)
 			self:die(attack_data)
 			self:chk_killshot(attack_data.attacker_unit, "bullet", headshot_by_player, attack_data.weapon_unit:base():get_name_id())
 		end
@@ -1571,9 +1569,7 @@ function CopDamage:damage_melee(attack_data)
 				variant = "melee"
 			}
 
-			if attack_data.backstab then
-				managers.player:add_backstab_dodge()
-			end
+			managers.player:add_backstab_dodge(attack_data.backstab)
 
 			self:die(attack_data)
 			self:chk_killshot(attack_data.attacker_unit, "melee", false, attack_data.name_id)

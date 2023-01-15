@@ -974,10 +974,11 @@ function PlayerManager:_dodge_smokebomb_cdr()
 end
 
 --Fills dodge meter when backstab kills are done.
-function PlayerManager:add_backstab_dodge()
+function PlayerManager:add_backstab_dodge(was_backstab)
+	local backstab_mult = (was_backstab and self:upgrade_value("player", "backstab_dodge", 0)[2]) or 1
 	if self.player_unit then
 		local damage_ext = self:player_unit():character_damage()
-		damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge", 0))
+		damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * (self:upgrade_value("player", "backstab_dodge", 0)[1] * backstab_mult))
 	end
 end
 

@@ -3243,7 +3243,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Cleaner",
-				["menu_hitman_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou deal #{skill_color}#10%## more damage to special enemies.\n\n#{risk}#NOTE: Does not apply to## #{important_1}#launchers.##\n\nACE: #{owned}#$pro##\nYou deal an additional #{skill_color}#15%## more damage to special enemies.\n\nKilling an enemy fills your dodge meter by #{skill_color}#12.5%## of your dodge; doing so from behind fills your dodge meter by #{skill_color}#75%## of your dodge.\n\n#{risk}#NOTE: Kills using## #{important_1}#explosives, fire or damage-over-time effects## #{risk}#will not grant you dodge.##",
+				["menu_hitman_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou deal #{skill_color}#10%## more damage to special enemies.\n\n#{risk}#NOTE: Does not apply to## #{important_1}#launchers.##\n\nACE: #{owned}#$pro##\nYou deal an additional #{skill_color}#15%## more damage to special enemies.\n\nKilling an enemy with a headshot fills your dodge meter by #{skill_color}#12.5%## of your dodge.\n\nKilling an enemy from behind fills your dodge meter by #{skill_color}#75%## of your dodge; stacks in addition to dodge given through headshot kills.\n\n#{risk}#NOTE: Kills using## #{important_1}#explosives, fire or damage-over-time effects## #{risk}#will not grant you dodge.##",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",

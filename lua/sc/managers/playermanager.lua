@@ -973,12 +973,15 @@ function PlayerManager:_dodge_smokebomb_cdr()
 	self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
 end
 
---Fills dodge meter when backstab kills are done.
-function PlayerManager:add_backstab_dodge(was_backstab)
-	local backstab_mult = (was_backstab and self:upgrade_value("player", "backstab_dodge", 0)[2]) or 1
-	if self.player_unit then
-		local damage_ext = self:player_unit():character_damage()
-		damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * (self:upgrade_value("player", "backstab_dodge", 0)[1] * backstab_mult))
+--Fills dodge meter when headshot and/or backstab kills are done.
+function PlayerManager:add_backstab_dodge(was_backstab, was_headshot)
+	if self:has_category_upgrade("player", "backstab_dodge") then
+		local headshot_add = (was_headshot and self:upgrade_value("player", "backstab_dodge", 0)[1]) or 0
+		local backstab_add = (was_backstab and self:upgrade_value("player", "backstab_dodge", 0)[2]) or 0
+		if self.player_unit then
+			local damage_ext = self:player_unit():character_damage()
+			damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * (backstab_add + headshot_add))
+		end
 	end
 end
 

@@ -1196,8 +1196,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace		
 					self.values.player.backstab_dodge = {
 						{
-							0.125, --Dodge on kill
-							6 --Kill from behind mult
+							0.125, --Dodge on headshot
+							0.75 --Dodge on kill from behind
 						}
 					}
 

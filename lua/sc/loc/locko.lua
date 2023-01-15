@@ -2833,7 +2833,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "각성제",
-			["menu_tea_cookies_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구급 키트의 소지량이 #{skill_color}#6##개 늘어납니다.\n\n에이스: #{owned}#$pro##\n구급 키트의 소지량이 #{skill_color}#9##개 더 늘어납니다.\n\n배치된 구급 키트는 당신 또는 팀원이 #{skill_color}#5##미터 내에 다운되면 #{skill_color}#자동으로 소생시킵니다.##\n\n이 효과는 플레이어마다 매 #{skill_color}#60##초당 한 번만 발동합니다.\n\n#{risk}#참고: 스완송에는 적용되지 않습니다.##",
+			["menu_tea_cookies_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구급 키트의 소지량이 #{skill_color}#6##개 늘어납니다.\n\n에이스: #{owned}#$pro##\n구급 키트의 소지량이 #{skill_color}#9##개 더 늘어납니다.\n\n배치된 구급 키트는 당신 또는 팀원이 #{skill_color}#5##미터 내에 다운되면 #{skill_color}#자동으로 소생시킵니다.## 자동 소생된 사람에게는 자동 부활을 위한 #{important_1}#60초## 대기시간이 적용됩니다.\n\n#{risk}#참고: 구급 키트는 스완송 상태가 된 사람에게는 자동 소생이 적용되지 않습니다.##",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "군의관",
@@ -2841,7 +2841,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "인스파이어",
-			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신으로부터 최대 #{skill_color}#9미터## 떨어있는 다운된 팀원에게 시야 내에 있는 동안 소리치면 팀원을 되살립니다. 이 효과는 매 #{skill_color}#90##초 마다 한 번만 일어납니다.\n\n#{risk}#참고:## #{important_1}#90초마다 1번만## #{risk}#다른 사람을 같은 방식으로 소생시킬 수 있습니다.##",
+			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#9미터## 떨어진 시야에 쓰러진 팀원에게 소리를 지르면 소생시킬 수 있습니다. 원거리 소생은 대기시간이 #{important_1}#90초## 입니다.",
 
 			--[[   CONTROLLER SUBTREE   ]]--
 			--Cable Guy
@@ -2854,7 +2854,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "스톡홀름 증후군",
-			["menu_joker_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근처에 있는 민간인과 조커들을 #{skill_color}#쓰려진 상태에서 부르면 당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: #{owned}#$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 #{skill_color}#4##번까지 피해 흡수를 #{skill_color}#1##씩 얻습니다.\n\n#{risk}#참고: 이 효과는 여러 팀원들이 이 스킬을 사용하는 경우에는 중첩되지 않습니다.##",
+			["menu_joker_beta_desc_sc"] = "베이직: #{owned}#$basic##\n쓰려진 상태에서 근처에 있는 민간인과 조커들을 부르면 #{skill_color}#당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: #{owned}#$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 #{skill_color}#4##번까지 피해 흡수를 #{skill_color}#1##씩 얻습니다.\n\n#{risk}#참고: 이 효과는 여러 팀원들이 이 스킬을 사용하는 경우에는 중첩되지 않습니다.##",
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "조커",
@@ -2891,7 +2891,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다.\n\n#{skill_color}#기관총##의 경우 이 효과가 #{skill_color}#100%##로 증가합니다.\n\n#{risk}#참고: 이 효과는 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 추가로 최대 100%까지 중첩됩니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총으로## 방아쇠를 놓지 않는 동안 적을 죽이면 대미지가 #{skill_color}#10%##만큼씩 증가합니다. 이 효과는 최대 #{skill_color}#5##번까지 중첩됩니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다. #{skill_color}#기관총##의 경우 효과가 #{skill_color}#100%##로 증가하고 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 효과는 추가로 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총으로## 방아쇠를 놓지 않는 동안 적을 죽이면 대미지가 #{skill_color}#10%##만큼씩 증가합니다. 이 효과는 최대 #{skill_color}#5##번까지 중첩됩니다.",
 
 			--}
 		--}
@@ -2988,7 +2988,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Nerves of Steel--
 			["menu_fast_fire_beta_sc"] = "강인한 정신",
-			["menu_fast_fire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n다운 상태에서 #{skill_color}#정조준을 할 수 있게 됩니다##.\n\n에이스: #{owned}#$pro##\n상호작용 중 입는 피해가 #{skill_color}#50%##만큼 감소합니다.",
+			["menu_fast_fire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n다운 상태에서 #{skill_color}#정조준을 할 수 있게 됩니다.##\n\n에이스: #{owned}#$pro##\n상호작용 중 입는 피해가 #{skill_color}#50%##만큼 감소합니다.",
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "엔지니어링",
@@ -3002,7 +3002,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "타워 디펜스",
-			["menu_tower_defense_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 센트리 건에서 철갑탄을 전환할 수 있으며 전환 시 발사 속도를 #{skill_color}#66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 #{skill_color}#35%##가 소모됩니다.",
+			["menu_tower_defense_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 센트리 건에서 #{skill_color}#철갑탄##으로 전환할 수 있으며 전환 시 발사 속도를 #{skill_color}#66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 #{skill_color}#35%##가 소모됩니다.",
 
 			--Bulletproof--
 			["menu_iron_man_sc"] = "방탄",
@@ -3031,7 +3031,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",
-			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n#{skill_color}#75%##의 성공률로 드릴이 고장날 때마다 기회를 #{skill_color}#1##번 얻습니다.\n\n에이스: #{owned}#$pro##\n상호작용을 하는 동안 #{skill_color}#더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
+			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n#{skill_color}#75%##의 성공률로 드릴이 고장날 때마다 기회를 #{skill_color}#1##번 얻습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#상호작용을 하는 동안 더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
 
 			--[[  COMBAT ENGINEER SUBTREE   ]]--
 			--Rifleman
@@ -3092,7 +3092,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Evasion--
 			["menu_awareness_beta_sc"] = "위기모면",
-			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n달리면서 재장전할 수 있습니다.\n\n전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.",			
+			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 추가로 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n달리면서 재장전할 수 있습니다.\n\n#{item_stage_2}#전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.##",			
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
@@ -3120,7 +3120,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 적을 표준 총알 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 적을 비폭발 원거리 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
@@ -3128,7 +3128,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고: 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 #{skill_color}#75%##만큼 채워집니다.\n\n특수 적에게 추가로 #{skill_color}#15%##만큼 피해를 더 많이 입힙니다.",
+			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 #{skill_color}#75%##만큼 채워집니다.\n\n특수 적에게 추가로 #{skill_color}#15%##만큼 피해를 더 많이 입힙니다.",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
@@ -3154,11 +3154,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Desperado--
 			["menu_expert_handling_sc"] = "데스페라도",
-			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 #{skill_color}#8##초로 증가합니다.",
+			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 추가로 #{skill_color}#4##초 증가합니다.",
 
 			--Trigger Happy--
 			["menu_trigger_happy_beta_sc"] = "난사광",
-			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지가 #{skill_color}#5%##만큼 증가됩니다.\n\n이 효과는 #{skill_color}#4##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 부스트 지속 시간이 #{skill_color}#8##초로 증가하고 최대 중첩이 #{skill_color}#6##회 더 증가합니다.",
+			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지가 #{skill_color}#5%##만큼 증가됩니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 부스트 지속 시간이 추가로 #{skill_color}#4##초 증가하고 최대 중첩 수가 #{skill_color}#5##회 더 증가합니다.",
 
 			--[[   REVENANT SUBTREE  ]]--
 			--Running From Death--
@@ -3182,7 +3182,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Messiah--
 			["menu_pistol_beta_messiah_sc"] = "구세주",
-			["menu_pistol_beta_messiah_desc_sc"] = "베이직: #{owned}#$basic##\n쓰러질 동안 적을 사살하면 바로 일어날 수 있습니다. #{skill_color}#1##번의 기회만 주어지고 구금 상태에서 풀릴 때 다시 채워집니다.\n\n처음으로 구금되기 전까진 추가로 #{skill_color}#한 번## 더 다운될 수 있습니다.\n\n에이스: #{owned}#$pro##\n이제 구세주를 제한 없이 사용 가능하지만 #{skill_color}#120##초의 재사용 대기시간이 생깁니다. 쓰러진 상태에서 적을 처치하면 재사용 대기시간이 #{skill_color}#10##초 만큼 감소합니다.",			
+			["menu_pistol_beta_messiah_desc_sc"] = "베이직: #{owned}#$basic##\n쓰러질 동안 적을 죽이면 구세주 기회가 준비되어 점프하면 스스로 소생시킬 수 있습니다. #{skill_color}#1##번의 기회만 주어지고 구금 상태에서 풀릴 때 다시 채워집니다.\n\n처음으로 구금되기 전까진 #{skill_color}#한 번## 더 다운될 수 있습니다.\n\n에이스: #{owned}#$pro##\n이제 구세주 기회를 무한으로 사용이 가능하지만 #{important_1}#120##초의 재사용 대기시간이 생깁니다. 쓰러진 상태에서 적을 처치하면 재사용 대기시간이 #{skill_color}#10##초씩 감소합니다.",			
 
 			--[[   BRAWLER SUBTREE   ]]--
 			--Martial Arts--
@@ -3199,7 +3199,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "피의 갈증",
-			["menu_bloodthirst_desc_sc"] = "베이직: #{owned}#$basic##\n근접 공격으로 적을 죽이면 #{skill_color}#10##초 동안 장전 속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n적을 처치할 때마다 다음 근접 공격 피해가 #{skill_color}#25%##씩 증가하고, 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 공격하면 초기화됩니다.",
+			["menu_bloodthirst_desc_sc"] = "베이직: #{owned}#$basic##\n근접 공격으로 적을 죽이면 #{skill_color}#10##초 동안 장전 속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n근접 무기를 제외한 무기로 적을 처치할 때마다 다음 근접 공격 피해가 #{skill_color}#25%##씩 증가하고 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 공격하면 초기화됩니다.",
 
 			--Frenzy--
 			["menu_wolverine_beta_sc"] = "광분",
@@ -3207,7 +3207,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Berserker--
 			["menu_frenzy_sc"] = "버서커",
-			["menu_frenzy_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 근접 공격과 톱의 공격력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 원거리 무기류의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 발사기에는 적용되지 않습니다.##"
+			["menu_frenzy_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 근접 공격과 톱의 공격력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 원거리 무기류의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##"
 
 	})
 
@@ -3416,7 +3416,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1_desc"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
 		["menu_deck23_1_short"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
 		["menu_deck23_1_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
-		["menu_deck23_1_1_short"] = "체력을 ##5%##만큼 얻습니다.",		
+		["menu_deck23_1_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_1_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_1_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
 		["menu_deck23_1_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_1_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_1_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
@@ -3425,7 +3427,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_3_desc"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
 		["menu_deck23_3_short"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
 		["menu_deck23_3_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
-		["menu_deck23_3_1_short"] = "체력을 ##5%##만큼 얻습니다.",		
+		["menu_deck23_3_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_3_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_3_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
 		["menu_deck23_3_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_3_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_3_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
@@ -3435,6 +3439,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_5_short"] = "회피한 총알은 발사한 적에게 다시 튕겨 나갑니다.\n\n방탄복을 부수는 총알의 경우 발사한 적에게 튕겨지면 피해를 ##100%##만큼 줍니다.\n\n방탄복을 부수는 총알은 튕겨낼 경우 ##15##초의 재사용 대기시간을 가집니다.",
 		["menu_deck23_5_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
 		["menu_deck23_5_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_5_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_5_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
 		["menu_deck23_5_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_5_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_5_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
@@ -3444,6 +3450,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_7_short"] = "체력이 ##50%## 이하로 떨어지면 ##2##초 동안 체력 피해에 면역이 됩니다.\n\n이 효과는 매 ##90##초마다 한 번만 발생합니다.",
 		["menu_deck23_7_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
 		["menu_deck23_7_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_7_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_7_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
 		["menu_deck23_7_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_7_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
 		["menu_deck23_7_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",

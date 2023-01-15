@@ -2958,7 +2958,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Uppers
 				["menu_tea_cookies_beta_sc"] = "Uppers",
-				["menu_tea_cookies_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now carry and deploy #{skill_color}#6## more First Aid Kits.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#9## First Aid Kits.\n\nYour deployed First Aid Kits will #{skill_color}#auto-revive## you or any crew members going down within #{skill_color}#5## meters of it; a #{important_1}#60## second cooldown for auto-revival is applied to whoever was auto-revived.\n\n#{risk}#NOTE: First Aid Kits will not revive anyone in a Swan Song state.##",
+				["menu_tea_cookies_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now carry and deploy #{skill_color}#6## First Aid Kits.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#9## First Aid Kits.\n\nYour deployed First Aid Kits will #{skill_color}#auto-revive## you or any crew members going down within #{skill_color}#5## meters of it; a #{important_1}#60## second cooldown for auto-revival is applied to whoever was auto-revived.\n\n#{risk}#NOTE: First Aid Kits will not revive anyone in a Swan Song state.##",
 
 				--Combat Doctor
 				["menu_medic_2x_beta_sc"] = "Combat Doctor",

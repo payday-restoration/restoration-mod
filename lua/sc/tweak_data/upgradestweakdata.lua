@@ -1942,7 +1942,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Copycat
 	local health_boost = 0.05
-	local armor_boost = 0.05
+	local armor_boost = 0.0375
 	local dodge_boost = 0.0125
 	local crouch_speed_multiplier = 0.05
 	local carry_speed_multiplier = 0.05

@@ -1096,9 +1096,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 탄은 #{skill_color}#폴오프가 없지만## #{important_1}#헤드샷을 할 수 없습니다.##",
 		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#피해량을 증가시키는## 더 크고 무거운 펠릿 #{important_1}#6발##을 발사합니다.",
 		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#15%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#96##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리가 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#30%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#120##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#40%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#180##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#240##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#30%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#120##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#40%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#180##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#240##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
 		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",		
 		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{skill_color}#1##초에 걸쳐 #{stats_positive}#30##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{skill_color}#2##초에 걸쳐 #{stats_positive}#120##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
@@ -3128,7 +3128,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 #{skill_color}#75%##만큼 채워집니다.\n\n특수 적에게 추가로 #{skill_color}#15%##만큼 피해를 더 많이 입힙니다.",
+			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n헤드샷으로 적을 죽이면 회피 미터가 회피의 #{skill_color}#12.5%##만큼 채워집니다.\n\n적을 뒤에서 죽이면 회피 미터가 회피의 #{skill_color}#75%##만큼 채워집니다. 또한 헤드샷 킬을 통해 주어지는 회피와 중첩이 가능합니다.\n\n#{risk}#참고:## #{important_1}#폭발물, 불 또는 지속 피해 효과로 죽이면## #{risk}#회피가 채워지지 않습니다.##",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",

@@ -11770,16 +11770,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_peacemaker", "resmod_peacemaker", 
 		40
 	}
 	self.parts.wpn_fps_pis_peacemaker_b_long.supported = true
-	self.parts.wpn_fps_pis_peacemaker_b_long.stats = {
-		value = 5,
-		spread = 3,
-		concealment = -3
-	}
-	self.parts.wpn_fps_pis_peacemaker_b_long.custom_stats = {
-		falloff_start_mult = 1.225,
-		falloff_end_mult = 1.225,
-		ads_speed_mult = 1.075
-	}
+	self.parts.wpn_fps_pis_peacemaker_b_long.stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_pis_peacemaker_b_long.custom_stats = deep_clone(barrels.long_b3_custom_stats)
 	
 	--Shootout Barrel
 	self.parts.wpn_fps_pis_peacemaker_b_short.pcs = {
@@ -11789,16 +11781,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_peacemaker", "resmod_peacemaker", 
 		40
 	}
 	self.parts.wpn_fps_pis_peacemaker_b_short.supported = true
-	self.parts.wpn_fps_pis_peacemaker_b_short.stats = {
-		value = 3,
-		spread = -1,
-		concealment = 1
-	}
-	self.parts.wpn_fps_pis_peacemaker_b_short.custom_stats = {
-		falloff_start_mult = 0.925,
-		falloff_end_mult = 0.925,
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_pis_peacemaker_b_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_pis_peacemaker_b_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
 
 	--Grand Grip
 	self.parts.wpn_fps_pis_peacemaker_g_bling.pcs = {
@@ -11823,14 +11807,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_peacemaker", "resmod_peacemaker", 
 	}
 	self.parts.wpn_fps_pis_peacemaker_s_skeletal.supported = true
 	self.parts.wpn_fps_pis_peacemaker_s_skeletal.fps_animation_weight = "stock"
-	self.parts.wpn_fps_pis_peacemaker_s_skeletal.stats = {
-		value = 2,
-		recoil = 6,
-		concealment = -4
-	}
-	self.parts.wpn_fps_pis_peacemaker_s_skeletal.custom_stats = {
-		ads_speed_mult = 1.1
-	}
+	self.parts.wpn_fps_pis_peacemaker_s_skeletal.stats = deep_clone(stocks.add_fixed_stats)
+	self.parts.wpn_fps_pis_peacemaker_s_skeletal.custom_stats = deep_clone(stocks.add_fixed_stats)
 
 end)
 

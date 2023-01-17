@@ -581,9 +581,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			if next(self._spawning_groups) then
 				-- Nothing
 			else
-				if not managers.skirmish:is_skirmish() then
-					self:_check_spawn_timed_groups(primary_target_area, task_data)
-				end			
+				self:_check_spawn_timed_groups(primary_target_area, task_data)		
 			
 				local spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
 
@@ -617,6 +615,86 @@ function GroupAIStateBesiege:_upd_assault_task()
 	self:_assign_enemy_groups_to_assault(task_data.phase)
 end
 
+--Add a check to handle Skirmish's unique diff curve
+function GroupAIStateBesiege:_check_spawn_timed_groups(target_area, task_data)
+	if not self._timed_groups then
+		return
+	end
+
+	local cur_group, cur_group_tweak_data, cur_group_individual_data = nil
+	local t = TimerManager:game():time()
+
+	for group_id, cur_group_data in pairs(self._timed_groups) do
+		cur_group_tweak_data = cur_group_data.tweak_data
+		cur_group_individual_data = cur_group_data.individual_data
+
+		for i = 1, #cur_group_individual_data do
+			cur_group = cur_group_individual_data[i]
+
+			if not cur_group.timer then
+				cur_group.timer = t + (cur_group_tweak_data.initial_spawn_delay or cur_group_tweak_data.spawn_cooldown)
+			elseif cur_group.needs_spawn then
+				if cur_group.timer < t then
+					if managers.skirmish:is_skirmish() then
+						if self:_spawn_timed_group(task_data, cur_group, target_area, {
+							[group_id] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+						}) then
+							cur_group.needs_spawn = false
+						else
+							cur_group.timer = t + 1
+						end
+					else
+						if self:_spawn_timed_group(task_data, cur_group, target_area, {
+							[group_id] = {
+								1,
+								1,
+								1
+							}
+						}) then
+							cur_group.needs_spawn = false
+						else
+							cur_group.timer = t + 1
+						end					
+					end
+				end
+			elseif cur_group.respawning_units then
+				for spawn_unit_type, respawn_data in pairs(cur_group.respawning_units) do
+					if respawn_data.timer < t then
+						if managers.skirmish:is_skirmish() then
+							if self:_respawn_unit_for_group(task_data, cur_group, target_area, respawn_data, spawn_unit_type, {
+								[group_id] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+							}) then
+								cur_group.respawning_units[spawn_unit_type] = nil
+
+								if not next(cur_group.respawning_units) then
+									cur_group.respawning_units = nil
+								end
+							else
+								respawn_data.timer = t + 1
+							end
+						else
+							if self:_respawn_unit_for_group(task_data, cur_group, target_area, respawn_data, spawn_unit_type, {
+								[group_id] = {
+									1,
+									1,
+									1
+								}
+							}) then
+								cur_group.respawning_units[spawn_unit_type] = nil
+
+								if not next(cur_group.respawning_units) then
+									cur_group.respawning_units = nil
+								end
+							else
+								respawn_data.timer = t + 1
+							end						
+						end
+					end
+				end
+			end
+		end
+	end
+end
 
 -- Add an alternate in_place check to prevent enemy groups from getting stuck
 function GroupAIStateBesiege:_assign_enemy_groups_to_assault(phase)

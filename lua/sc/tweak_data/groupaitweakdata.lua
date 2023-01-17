@@ -16297,21 +16297,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}			
 		}
 	}	
-	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W1 = {
-		amount = {1, 1},
-		spawn = {
-			{
-				unit = "titan_sniper",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
-	
+		
 	--Wave 2
 	self.enemy_spawn_groups.SKM_Light_Swat_W2 = {
 		amount = {3, 4},
@@ -16450,20 +16436,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}		
 	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W2 = {
-		amount = {1, 1},
-		spawn = {
-			{
-				unit = "titan_sniper",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
-
 	--Wave 3
 	self.enemy_spawn_groups.SKM_Light_Swat_W3 = {
 		amount = {3, 4},
@@ -16619,20 +16591,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
-	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W3 = {
-		amount = {1, 1},
-		spawn = {
-			{
-				unit = "titan_sniper",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
 	
 	--Wave 4
 	self.enemy_spawn_groups.SKM_Light_Swat_W4 = {
@@ -16822,20 +16780,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}		
 		}
 	}	
-	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W4 = {
-		amount = {1, 1},
-		spawn = {
-			{
-				unit = "titan_sniper",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
 	
 	--Wave 5
 	self.enemy_spawn_groups.SKM_Light_Swat_W5 = {
@@ -17105,19 +17049,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W5 = {
-		amount = {1, 1},
-		spawn = {
-			{
-				unit = "titan_sniper",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
 	
 	--Wave 6, more or less just normal DS now
 	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
@@ -17497,19 +17428,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W6 = {
-		amount = {1, 2},
-		spawn = {
-			{
-				unit = "titan_sniper",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 2,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
+
 	--Wave 7, more or less just normal DS now WITH Bravo support
 	self.enemy_spawn_groups.SKM_Light_Swat_W7 = {
 		amount = {3, 4},
@@ -17888,20 +17807,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
-	--Replace Titan Snipers with Bravo Sharpshooters from Wave 7
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W7 = {
-		amount = {2, 2},
-		spawn = {
-			{
-				unit = "Bravo_Sniper",
-				freq = 1,
-				amount_min = 2,
-				amount_max = 2,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
 	
 	--Wave 8, DS but only Bravos
 	self.enemy_spawn_groups.SKM_Light_Swat_W8 = {
@@ -18281,19 +18186,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W8 = {
-		amount = {2, 2},
-		spawn = {
-			{
-				unit = "Bravo_Sniper",
-				freq = 1,
-				amount_min = 2,
-				amount_max = 2,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
+
 	--Wave 9
 	self.enemy_spawn_groups.SKM_Light_Swat_W9 = {
 		amount = {3, 4},
@@ -18672,19 +18565,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
-	self.enemy_spawn_groups.SKM_Titan_Sniper_W9 = {
-		amount = {2, 2},
-		spawn = {
-			{
-				unit = "Bravo_Sniper",
-				freq = 1,
-				amount_min = 2,
-				amount_max = 2,
-				tactics = self._tactics.marshal_marksman,
-				rank = 1
-			}			
-		}
-	}
+
 	--Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = {7, 7},
@@ -20256,33 +20137,6 @@ else
 			cooldown = captain_cooldown / 2,
 			min_diff = captain_min_diff,
 			sustain_only = true
-		},
-		SKM_Titan_Sniper_W1 = {
-			cooldown = tsniperhobelow5_cooldown
-		},
-		SKM_Titan_Sniper_W2 = {
-			cooldown = tsniperhobelow5_cooldown
-		},
-		SKM_Titan_Sniper_W3 = {
-			cooldown = tsniperhobelow5_cooldown
-		},
-		SKM_Titan_Sniper_W4 = {
-			cooldown = tsniperhobelow5_cooldown
-		},
-		SKM_Titan_Sniper_W5 = {
-			cooldown = tsniperhoabove5_cooldown
-		},
-		SKM_Titan_Sniper_W6 = {
-			cooldown = tsniperhoabove5_cooldown
-		},
-		SKM_Titan_Sniper_W7 = {
-			cooldown = tsniperhoabove5_cooldown
-		},
-		SKM_Titan_Sniper_W8 = {
-			cooldown = tsniperhoabove5_cooldown
-		},
-		SKM_Titan_Sniper_W9 = {
-			cooldown = tsniperhoabove5_cooldown
 		},
 		GREEN_tanks = {
 			cooldown = dozer_cooldown

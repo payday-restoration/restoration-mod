@@ -620,6 +620,12 @@ function GroupAIStateBesiege:_check_spawn_timed_groups(target_area, task_data)
 	if not self._timed_groups then
 		return
 	end
+	
+	if managers.skirmish:is_skirmish() then
+		diff_curve = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	else
+		diff_curve = {1, 1, 1}
+	end	
 
 	local cur_group, cur_group_tweak_data, cur_group_individual_data = nil
 	local t = TimerManager:game():time()
@@ -635,59 +641,27 @@ function GroupAIStateBesiege:_check_spawn_timed_groups(target_area, task_data)
 				cur_group.timer = t + (cur_group_tweak_data.initial_spawn_delay or cur_group_tweak_data.spawn_cooldown)
 			elseif cur_group.needs_spawn then
 				if cur_group.timer < t then
-					if managers.skirmish:is_skirmish() then
-						if self:_spawn_timed_group(task_data, cur_group, target_area, {
-							[group_id] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-						}) then
-							cur_group.needs_spawn = false
-						else
-							cur_group.timer = t + 1
-						end
+					if self:_spawn_timed_group(task_data, cur_group, target_area, {
+						[group_id] = diff_curve
+					}) then
+						cur_group.needs_spawn = false
 					else
-						if self:_spawn_timed_group(task_data, cur_group, target_area, {
-							[group_id] = {
-								1,
-								1,
-								1
-							}
-						}) then
-							cur_group.needs_spawn = false
-						else
-							cur_group.timer = t + 1
-						end					
+						cur_group.timer = t + 1
 					end
 				end
 			elseif cur_group.respawning_units then
 				for spawn_unit_type, respawn_data in pairs(cur_group.respawning_units) do
 					if respawn_data.timer < t then
-						if managers.skirmish:is_skirmish() then
-							if self:_respawn_unit_for_group(task_data, cur_group, target_area, respawn_data, spawn_unit_type, {
-								[group_id] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-							}) then
-								cur_group.respawning_units[spawn_unit_type] = nil
+						if self:_respawn_unit_for_group(task_data, cur_group, target_area, respawn_data, spawn_unit_type, {
+							[group_id] = diff_curve
+						}) then
+							cur_group.respawning_units[spawn_unit_type] = nil
 
-								if not next(cur_group.respawning_units) then
-									cur_group.respawning_units = nil
-								end
-							else
-								respawn_data.timer = t + 1
+							if not next(cur_group.respawning_units) then
+								cur_group.respawning_units = nil
 							end
 						else
-							if self:_respawn_unit_for_group(task_data, cur_group, target_area, respawn_data, spawn_unit_type, {
-								[group_id] = {
-									1,
-									1,
-									1
-								}
-							}) then
-								cur_group.respawning_units[spawn_unit_type] = nil
-
-								if not next(cur_group.respawning_units) then
-									cur_group.respawning_units = nil
-								end
-							else
-								respawn_data.timer = t + 1
-							end						
+							respawn_data.timer = t + 1
 						end
 					end
 				end

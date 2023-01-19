@@ -1850,9 +1850,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
+		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows explode on impact.",
+
 		["bm_xbow_sc_desc"] = "Bolts can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
+		["bm_xbow_exp_sc_desc"] = "Bolts explode on impact.",
+
 		["bm_airbow_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
+		["bm_airbow_exp_sc_desc"] = "Arrows explode on impact.##",
+
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the leaf sight up/down.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
 		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubling the number of pellets.",

@@ -3909,7 +3909,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].expire_t = 0.65
 			self.melee_weapons[melee_id].repeat_expire_t = 0.5
 			self.melee_weapons[melee_id].melee_damage_delay = 0.1
-			self.melee_weapons[melee_id].anim_speed_mult = 0.75
+			self.melee_weapons[melee_id].anim_speed_mult = 0.625
 			self.melee_weapons[melee_id].make_effect = true
 			self.melee_weapons[melee_id].make_decal = nil
 		end
@@ -4073,7 +4073,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.revenant_heirloom.stats.max_damage = 18.001
 		self.melee_weapons.revenant_heirloom.stats.min_damage_effect = 2.4
 		self.melee_weapons.revenant_heirloom.stats.max_damage_effect = 6.0
-		self.melee_weapons.revenant_heirloom.stats.charge_time = 1.9
+		self.melee_weapons.revenant_heirloom.stats.charge_time = 2
 		self.melee_weapons.revenant_heirloom.stats.range = 200
 		self.melee_weapons.revenant_heirloom.stats.concealment = 23
 		self.melee_weapons.revenant_heirloom.headshot_damage_multiplier = nil

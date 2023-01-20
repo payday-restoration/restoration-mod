@@ -200,11 +200,20 @@ end
 
 function FPCameraPlayerBase:stop_shooting( wait )
 	local weapon = self._parent_unit:inventory():equipped_unit()
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
 	local recoil_recover = (enable_recoil_recover and enable_recoil_recover ~= 1 and ((enable_recoil_recover == 3 and 1) or (weapon and weapon:base()._recoil_recovery) or 0.5)) or 0
 
-	self._recoil_kick.to_reduce = (self._recoil_kick.accumulated or 0) * recoil_recover
-	self._recoil_kick.h.to_reduce = (self._recoil_kick.h.accumulated or 0) * recoil_recover
+	if enable_recoil_recover ~= 1 then
+		self._recoil_kick.to_reduce = (self._recoil_kick.accumulated or 0) * recoil_recover
+		self._recoil_kick.h.to_reduce = (self._recoil_kick.h.accumulated or 0) * recoil_recover
+	else
+		self._recoil_kick.current = nil
+		self._recoil_kick.to_reduce = 0
+		self._recoil_kick.accumulated = 0
+		self._recoil_kick.h.current = nil
+		self._recoil_kick.h.to_reduce = 0
+		self._recoil_kick.h.accumulated = 0
+	end
 	self._recoil_wait = (wait and wait * ((enable_recoil_recover and enable_recoil_recover == 3 and 3) or 1)) or 0
 end
 
@@ -239,7 +248,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
-	if self._recoil_kick.current and self._recoil_kick.accumulated - self._recoil_kick.current > self._episilon then
+	if self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then
 		local n = math.step(self._recoil_kick.current, self._recoil_kick.accumulated, recoil_speed  * dt)
 		r_value = n - self._recoil_kick.current
 		self._recoil_kick.current = n
@@ -275,7 +284,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
-	if self._recoil_kick.h.current and math.abs(self._recoil_kick.h.accumulated - self._recoil_kick.h.current) > self._episilon then
+	if self._recoil_kick.h.current and math.abs(self._recoil_kick.h.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.h.current) or 0)) > self._episilon then
 		local n = math.step(self._recoil_kick.h.current, self._recoil_kick.h.accumulated, recoil_speed * dt)
 		r_value = n - self._recoil_kick.h.current
 		self._recoil_kick.h.current = n

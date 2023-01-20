@@ -12789,6 +12789,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.damage_type = "sniper"
 			self.sgs.upgrade_blocks = nil
 			self.sgs.has_description = true
+			self.sgs.lock_slide = true
+			self.sgs.sounds.magazine_empty = "wp_rifle_slide_lock"
 			self.sgs.desc_id = "bm_ap_weapon_sc_desc"
 			self.sgs.CLIP_AMMO_MAX = 20
 			self.sgs.tactical_reload = 1

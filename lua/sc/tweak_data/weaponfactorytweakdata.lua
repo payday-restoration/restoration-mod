@@ -19845,8 +19845,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_ass_smg_tank") then
 				attachment_list = {
 					"wpn_fps_ass_shak12_ns_muzzle",
+					"wpn_fps_upg_ak_ns_zenitco"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+				end
+			end
+			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_ass_smg_large") then
+				attachment_list = {
 					"wpn_fps_ass_shak12_ns_suppressor",
-					"wpn_fps_upg_ak_ns_zenitco",
 					"wpn_fps_smg_cobray_ns_silencer",
 					"wpn_fps_smg_polymer_ns_silencer",
 					"wpn_fps_smg_mp7_b_suppressed",
@@ -19858,8 +19872,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank)
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_large then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_large)
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 						end
 					end

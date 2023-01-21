@@ -14585,13 +14585,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Predator Pack
 		if self.owlfbullpup then
-			self.owlfbullpup.recategorize = { "heavy_ar" }
-			self.owlfbullpup.damage_type = "assault_rifle"
+			self.owlfbullpup.categories = { 
+				"assault_rifle",
+				"dmr",
+			}
+			self.owlfbullpup.recategorize = { "dmr_ar" }
+			self.owlfbullpup.damage_type = "sniper"
+			self.owlfbullpup.plasma_b = true
+			self.owlfbullpup.is_bullpup = true
 			self.owlfbullpup.tactical_reload = 1
 			self.owlfbullpup.CLIP_AMMO_MAX = 30
-			self.owlfbullpup.AMMO_MAX = 120
+			self.owlfbullpup.AMMO_MAX = 80
 			self.owlfbullpup.FIRE_MODE = "auto"
 			self.owlfbullpup.CAN_TOGGLE_FIREMODE = true
+			self.owlfbullpup.fire_rate_multiplier = 1.5
+			self.owlfbullpup.fire_mode_data.fire_rate = 0.2
 			self.owlfbullpup.kick = {}
 			self.owlfbullpup.kick = self.stat_info.kick_tables.moderate_kick
 			self.owlfbullpup.supported = true
@@ -14602,7 +14610,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				min_mult = 0.3333
 			}
 			self.owlfbullpup.stats = {
-				damage = 30,
+				damage = 45,
 				spread = 86,
 				recoil = 83,
 				spread_moving = 5,
@@ -14633,20 +14641,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.plasmaproto.AMMO_MAX = 60
 			self.plasmaproto.FIRE_MODE = "auto"
 			self.plasmaproto.CAN_TOGGLE_FIREMODE = true
-			self.plasmaproto.sounds.stop_fire = "g36_stop"
+			self.plasmaproto.fire_mode_data.fire_rate = 0.1470588
 			self.plasmaproto.kick = {}
 			self.plasmaproto.kick = self.stat_info.kick_tables.right_kick
 			self.plasmaproto.supported = true
 			self.plasmaproto.ads_speed = 0.460
 			self.plasmaproto.damage_falloff = {
-				start_dist = 3200,
-				end_dist = 8000,
-				min_mult = 0.6666
+				start_dist = 3700,
+				end_dist = 9000,
+				min_mult = 0.75
 			}	
 			self.plasmaproto.stats = {
 				damage = 60,
-				spread = 71,
-				recoil = 77,
+				spread = 81,
+				recoil = 87,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 20,

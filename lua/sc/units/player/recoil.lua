@@ -191,12 +191,16 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_rot", "ResFixBipodADS", function(sel
 end)
 
 --Initializes recoil_kick values since they start null.
---[[
+local old_start_shooting = FPCameraPlayerBase.start_shooting
 function FPCameraPlayerBase:start_shooting()
-	self._recoil_kick.accumulated = self._recoil_kick.accumulated or 0 --Total amount of recoil to burn through in degrees.
-	self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated or 0
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	if enable_recoil_recover == 1 then
+		self._recoil_kick.accumulated = self._recoil_kick.accumulated or 0 --Total amount of recoil to burn through in degrees.
+		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated or 0
+	else
+		old_start_shooting(self)
+	end
 end
---]]
 
 function FPCameraPlayerBase:stop_shooting( wait )
 	local weapon = self._parent_unit:inventory():equipped_unit()
@@ -209,10 +213,8 @@ function FPCameraPlayerBase:stop_shooting( wait )
 	else
 		self._recoil_kick.current = nil
 		self._recoil_kick.to_reduce = 0
-		self._recoil_kick.accumulated = 0
 		self._recoil_kick.h.current = nil
 		self._recoil_kick.h.to_reduce = 0
-		self._recoil_kick.h.accumulated = 0
 	end
 	self._recoil_wait = (wait and wait * ((enable_recoil_recover and enable_recoil_recover == 3 and 3) or 1)) or 0
 end
@@ -240,7 +242,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local player_state = self._parent_unit:movement():current_state()
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
@@ -248,7 +250,11 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
-	if self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then
+	if enable_recoil_recover == 1 and self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
+		local degrees_to_move = 90 * dt --Move camera 90 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
+		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
+		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value
+	elseif enable_recoil_recover ~= 1 and self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then
 		local n = math.step(self._recoil_kick.current, self._recoil_kick.accumulated, recoil_speed  * dt)
 		r_value = n - self._recoil_kick.current
 		self._recoil_kick.current = n
@@ -276,7 +282,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local player_state = self._parent_unit:movement():current_state()
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel")
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
@@ -284,7 +290,11 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
-	if self._recoil_kick.h.current and math.abs(self._recoil_kick.h.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.h.current) or 0)) > self._episilon then
+	if enable_recoil_recover == 1 and self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
+		local degrees_to_move = 60 * dt 
+		r_value = math.min(self._recoil_kick.h.accumulated, degrees_to_move)
+		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated - r_value
+	elseif enable_recoil_recover ~= 1 and self._recoil_kick.h.current and math.abs(self._recoil_kick.h.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.h.current) or 0)) > self._episilon then
 		local n = math.step(self._recoil_kick.h.current, self._recoil_kick.h.accumulated, recoil_speed * dt)
 		r_value = n - self._recoil_kick.h.current
 		self._recoil_kick.h.current = n

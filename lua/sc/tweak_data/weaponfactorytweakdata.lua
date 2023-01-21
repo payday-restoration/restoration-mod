@@ -24559,6 +24559,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			zoom = 20
 		}
 		self.parts.wpn_fps_upg_owlfbullpup_scope.perks = {"scope"}
+		self.parts.wpn_fps_upg_owlfbullpup_scope.stance_mod = {
+			wpn_fps_ass_owlfbullpup = {
+				translation = Vector3(0.01, -15, 0.605),
+				rotation = Rotation(0, 0.21, 0)
+			}
+		}
+
 
 		self.parts.wpn_fps_upg_owlfbullpup_barrel_med.supported = true
 		self.parts.wpn_fps_upg_owlfbullpup_barrel_med.stats = deep_clone(barrels.long_b1_stats)
@@ -24572,15 +24579,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.has_description = false
 		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.stats = {
 			value = 9,
-			extra_ammo = 30,
-			concealment = -4,
-			spread = -1,
-			reload = -3
+			extra_ammo = 15,
+			reload = -2,
+			concealment = -2
 		}
-		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.custom_stats = {
-			ads_speed_mult = 1.1,
-			sms = 0.9
-		}
+		self.parts.wpn_fps_upg_owlfbullpup_mag_drum.custom_stats = { ads_speed_mult = 1.05 }
+		
 	end
 	if self.parts.wpn_fps_fla_type99inc_rec then
 		self.parts.wpn_fps_fla_type99inc_rec.supported = true

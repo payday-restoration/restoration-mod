@@ -1352,6 +1352,7 @@ local muzzle_device = {
 			}
 		}
 
+local attachment_list = {}
 
 --Vanilla Silencers
 Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", function(self)
@@ -5680,17 +5681,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		wpn_fps_upg_a_piercing = a_piercing_pump_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	}
-	
-	self.wpn_fps_shot_r870.uses_parts[18] = "resmod_dummy"
-	self.wpn_fps_shot_r870.uses_parts[19] = "resmod_dummy"
-	self.wpn_fps_shot_r870.uses_parts[43] = "resmod_dummy"
-	self.wpn_fps_shot_r870.uses_parts[44] = "resmod_dummy"
-	self.wpn_fps_shot_r870.uses_parts[45] = "resmod_dummy"
-	self.wpn_fps_shot_r870.uses_parts[53] = "resmod_dummy"
-	self.wpn_fps_shot_r870.uses_parts[63] = "resmod_dummy"
+
+	for i, part_id in pairs(self.wpn_fps_shot_r870.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_m4_s_standard",
+			"wpn_fps_upg_m4_s_pts",
+			"wpn_fps_upg_m4_s_crane",
+			"wpn_fps_upg_m4_s_mk46",
+			"wpn_fps_upg_m4_s_ubr",
+			"wpn_fps_snp_tti_s_vltor",
+			"wpn_fps_sho_sko12_stock",
+			"wpn_fps_snp_victor_s_mod0"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_shot_r870.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end	
 		
-	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
-	table.insert(self.wpn_fps_shot_r870_npc.uses_parts, "wpn_fps_shot_r870_s_folding_ext")		
+	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_shot_r870_s_folding_ext")	
 	
 	self.wpn_fps_shot_r870_npc.uses_parts = deep_clone(self.wpn_fps_shot_r870.uses_parts)
 
@@ -5780,20 +5790,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		custom_stats = deep_clone(stocks.add_folded_stats)
 	}
 	
-	self.wpn_fps_shot_serbu.uses_parts[17] = "resmod_dummy"
-	self.wpn_fps_shot_serbu.uses_parts[18] = "resmod_dummy"
-	--self.wpn_fps_shot_serbu.uses_parts[22] = "resmod_dummy"
-	self.wpn_fps_shot_serbu.uses_parts[45] = "resmod_dummy"
-	self.wpn_fps_shot_serbu.uses_parts[46] = "resmod_dummy"
-	self.wpn_fps_shot_serbu.uses_parts[47] = "resmod_dummy"
-	self.wpn_fps_shot_serbu.uses_parts[52] = "resmod_dummy"	
-	self.wpn_fps_shot_serbu.uses_parts[62] = "resmod_dummy"	
-		
-	--table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_shot_r870_s_nostock")
-	--table.insert(self.wpn_fps_shot_serbu_npc.uses_parts, "wpn_fps_shot_r870_s_nostock")		
+	for i, part_id in pairs(self.wpn_fps_shot_serbu.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_m4_s_standard",
+			"wpn_fps_upg_m4_s_pts",
+			"wpn_fps_upg_m4_s_crane",
+			"wpn_fps_upg_m4_s_mk46",
+			"wpn_fps_upg_m4_s_ubr",
+			"wpn_fps_snp_tti_s_vltor",
+			"wpn_fps_sho_sko12_stock",
+			"wpn_fps_snp_victor_s_mod0"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_shot_serbu.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end	
 	
 	table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
-	table.insert(self.wpn_fps_shot_serbu_npc.uses_parts, "wpn_fps_shot_r870_s_folding_ext")		
 	
 	self.wpn_fps_shot_serbu_npc.uses_parts = deep_clone(self.wpn_fps_shot_serbu.uses_parts)
 
@@ -19824,7 +19839,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	}
 
 	--Make more attachments universally available, cartridge mismatching be damned
-	local attachment_list = {}
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id .. "_npc"] then
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_g_sniper") then

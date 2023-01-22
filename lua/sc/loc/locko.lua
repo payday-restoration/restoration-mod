@@ -1350,7 +1350,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 말입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 말.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n발사 모드를 전환하면 #{skill_color}#증가된 발사 속도로## #{skill_color}#6발##을 전부 발사합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1405,7 +1405,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM SMGs
 		--LWRC
 		["bm_w_smg45"] = "TF Striker .45 기관단총",
-		["bm_w_smg45_desc"] = "AMP 45 기관단총의 미국 버전 복제품.",		
+		["bm_w_smg45_desc"] = "AMP 45 기관단총의 미국 버전 복제품입니다.",		
 		--Typhoon
 		["bm_w_crysis3_typhoon"] = "CRYNET Typhoon 기관단총",
 		["bm_w_crysis3_typhoon_desc"] = "\"가장 순수한 형태의 표현인데 #{important_1}#지금은 할 말이 많아.##\"\n\n#{risk}#중첩 장전 기술##을 사용하는 이 10총열 기관단총은 물집이 생길 정도로 빠른 속도로 납을 뱉어내 피해를 줍니다.\n\n보조 기능은 사거리를 감소하는 대신 10발의 일제사격을 합니다.",
@@ -1424,7 +1424,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
 		--M60
 		["bm_w_m60"] = "M60 중기관총",
-		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관이 될 것입니다.",		
+		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.",		
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B 중기관총",
 		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
@@ -2943,7 +2943,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "트랜스포터",
-			["menu_transporter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n방탄력 #{skill_color}#10##마다 가방의 이동속도 패널티가 #{skill_color}#0.5%##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n이제 아무 가방을 들어도 질주할 수 있습니다.\n\n#{risk}#참고: 가방의 이동 패널티는 여전히 적용됩니다.##",
+			["menu_transporter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n입고있는 방탄복의 방탄력 #{skill_color}#10##점마다 가방 이동속도 패널티가 #{skill_color}#0.5%##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n이제 아무 가방을 들어도 질주할 수 있습니다.\n\n#{risk}#참고: 가방의 이동 패널티는 여전히 적용됩니다.##",
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "더 많은 피, 더 많은 출혈",
@@ -2951,7 +2951,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "불스아이",
-			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 #{skill_color}#5##초마다 #{skill_color}#5##씩 방탄력을 회복합니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 #{skill_color}#5##초마다 추가로 #{skill_color}#30##씩 방탄력을 회복합니다.",
+			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 방탄력을 #{skill_color}#5##만큼 회복합니다. 재사용 대기시간은 #{important_1}#5##초입니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 추가로 방탄력을 #{skill_color}#30##만큼 회복합니다.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
@@ -3216,7 +3216,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
 		local yes = math.rand(1)
-		local no = 0.05
+		local no = 0.01
 		if yes <= no then
 			LocalizationManager:add_localized_strings({
 				["menu_st_spec_17_desc"] = "#{risk}#이거 그냥 무료로 모든 플레이어가 사용할 수 있게 하면 안되나? 이미 DLC 없어졌는데 왜 DLC 있어야됨?##",

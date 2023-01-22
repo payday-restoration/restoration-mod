@@ -638,7 +638,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().tactical_reload = nil
 				self:weapon_tweak_data().BURST_FIRE = 2
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 12
-				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.2
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.1
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
@@ -1091,6 +1091,10 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 		elseif (self._fire_rate_init_count < self._shots_fired) then
 			self._fire_rate_init_progress = nil
 		end
+	end
+
+	if (self:can_toggle_firemode() or self._has_burst_fire) and self:fire_mode() == "single" and not self:in_burst_mode() then
+		multiplier = multiplier * 0.85
 	end
 
 	return multiplier

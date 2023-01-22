@@ -3064,7 +3064,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Transporter
 				["menu_pack_mule_beta_sc"] = "Transporter",
-				["menu_transporter_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nFor each #{skill_color}#10## armor points the bag movement penalty is reduced by #{skill_color}#0.5%.##\n\nACE: #{owned}#$pro##\nYou can now sprint with any bag.\n\n#{risk}#NOTE: The movement penalty from the bag still applies.##",
+				["menu_transporter_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nFor every #{skill_color}#10## points of armor you have, the movement penalty for carried bags is reduced by #{skill_color}#0.5%.##\n\nACE: #{owned}#$pro##\nYou can now sprint with any bag.\n\n#{risk}#NOTE: The movement penalty from the bag still applies.##",
 
 				--More Blood to Bleed--
 				["menu_iron_man_beta_sc"] = "More Blood to Bleed",
@@ -3072,7 +3072,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "Bullseye",
-				["menu_prison_wife_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots regenerate #{skill_color}#5## armor once every #{skill_color}#5## seconds.\n\nACE: #{owned}#$pro##\nHeadshots regenerate an additional #{skill_color}#30## armor once every #{skill_color}#5## seconds.",
+				["menu_prison_wife_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots regenerate #{skill_color}#5## armor; has a cooldown of #{important_1}#5## seconds.\n\nACE: #{owned}#$pro##\nHeadshots regenerate an additional #{skill_color}#30## armor.",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",

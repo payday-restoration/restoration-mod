@@ -448,6 +448,11 @@ function ShotgunBase:fire_rate_multiplier()
 			self._fire_rate_init_progress = nil
 		end
 	end
+	
+	if (self:can_toggle_firemode() or self._has_burst_fire) and self:fire_mode() == "single" and not self:in_burst_mode() then
+		multiplier = multiplier * 0.85
+	end
+
 
 	return multiplier
 end

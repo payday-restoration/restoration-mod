@@ -19759,8 +19759,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		custom_stats = {
 			widowmaker = true,
-			falloff_start_mult = 0.66666,
-			falloff_end_mult = 0.025725
+			falloff_start_mult = 0.5,
+			falloff_end_mult = 0.33333
 		},
 		internal_part = true,
 		dlc = "sc"

@@ -4213,12 +4213,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 		stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
 	}
+	self.wpn_fps_ass_akm.override.wpn_fps_ass_galil_s_sniper = {
+		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+	}
 	self.wpn_fps_ass_akm.override.wpn_fps_lmg_rpk_s_standard = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
-		adds = {
-			"wpn_upg_ak_g_standard"
-		}
+		adds = { "wpn_upg_ak_g_standard" }
 	}
 	self.wpn_fps_ass_akm.override.wpn_lmg_rpk_m_ban = {
 		stats = {
@@ -14453,9 +14455,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coal", "resmod_coal", function(sel
 	self.wpn_fps_smg_coal.stock_adapter = "wpn_upg_ak_s_adapter"
 	self.wpn_fps_smg_coal_npc.stock_adapter = "wpn_upg_ak_s_adapter"
 
-	if not self.wpn_fps_smg_coal.override then
-		self.wpn_fps_smg_coal.override = {}
-	end
+	self.wpn_fps_smg_coal.override = self.wpn_fps_smg_coal.override or {}
 
 	self.wpn_fps_smg_coal.override.wpn_upg_ak_s_adapter = {
 		adds = {}
@@ -19948,9 +19948,175 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+			if table.contains(self[factory_id].default_blueprint, "wpn_upg_ak_s_folding_vanilla") or table.contains(self[factory_id].default_blueprint, "wpn_upg_ak_s_folding_vanilla_gold") then
+				attachment_list = {
+					"wpn_fps_ass_galil_s_skeletal",
+					"wpn_fps_ass_galil_s_plastic",
+					"wpn_fps_ass_galil_s_wood",
+					"wpn_fps_ass_galil_s_light",
+					"wpn_fps_ass_galil_s_fab",
+					"wpn_fps_ass_galil_s_sniper"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						self[factory_id].override.wpn_fps_ass_galil_s_skeletal = {
+							stats = deep_clone(stocks.nocheeks_to_folder_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_folder_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_fab = {
+							stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_light = {
+							stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_wood = {
+							stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_plastic = {
+							stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_sniper = {
+							stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+				end
+			end
+			if table.contains(self[factory_id].default_blueprint, "wpn_upg_ak_s_skfoldable_vanilla") 
+				or table.contains(self[factory_id].default_blueprint, "wpn_fps_ass_asval_s_standard") 
+				or table.contains(self[factory_id].default_blueprint, "wpn_fps_smg_coal_s_standard") then
+				attachment_list = {
+					"wpn_fps_ass_galil_s_skeletal",
+					"wpn_fps_ass_galil_s_plastic",
+					"wpn_fps_ass_galil_s_wood",
+					"wpn_fps_ass_galil_s_light",
+					"wpn_fps_ass_galil_s_fab",
+					"wpn_fps_ass_galil_s_sniper"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						self[factory_id].override.wpn_fps_ass_galil_s_skeletal = {
+							stats = {},
+							custom_stats = {},
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_fab = {
+							stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+							custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_light = {
+							stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+							custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_wood = {
+							stats = deep_clone(stocks.folder_to_adj_rec_stats),
+							custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_plastic = {
+							stats = deep_clone(stocks.folder_to_adj_rec_stats),
+							custom_stats = deep_clone(stocks.folder_to_adj_rec_stats),
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_sniper = {
+							stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+							custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+				end
+			end
+			if table.contains(self[factory_id].default_blueprint, "wpn_fps_lmg_rpk_s_wood") then
+				attachment_list = {
+					"wpn_fps_ass_galil_s_skeletal",
+					"wpn_fps_ass_galil_s_plastic",
+					"wpn_fps_ass_galil_s_wood",
+					"wpn_fps_ass_galil_s_light",
+					"wpn_fps_ass_galil_s_fab",
+					"wpn_fps_ass_galil_s_sniper"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						self[factory_id].override.wpn_fps_ass_galil_s_skeletal = {
+							stats = deep_clone(stocks.fixed_to_folder_stats),
+							custom_stats = deep_clone(stocks.fixed_to_folder_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_fab = {
+							stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+							custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_light = {
+							stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+							custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_wood = {
+							stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+							custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_plastic = {
+							stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+							custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_ass_galil_s_sniper = {
+							stats = {
+								spread = 1,
+								recoil = -2
+							},
+							custom_stats = {},
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+				end
+			end
+
 		end
 	end
-						
+				
+
+
+
+
+
+
+
 	--Vlad's Rodina--
 	self.parts.wpn_fps_upg_vlad_rodina_legend = {
 		type = "legendary",

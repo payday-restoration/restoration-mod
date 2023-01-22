@@ -15335,6 +15335,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"semi_snp"
 		}
 		self.rsass.lock_slide = true
+		self.rsass.has_description = true
+		self.rsass.desc_id = "bm_ap_weapon_sc_desc"
 		self.rsass.upgrade_blocks = nil
 		self.rsass.tactical_reload = 1
 		self.rsass.CLIP_AMMO_MAX = 20

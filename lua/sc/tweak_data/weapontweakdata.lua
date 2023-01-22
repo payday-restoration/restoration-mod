@@ -12419,7 +12419,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.amr12.damage_type_single_ray = "sniper"
 			self.amr12.rays = 9
 			self.amr12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-			self.amr12.AMMO_MAX = 120
+			self.amr12.AMMO_MAX = 80
 			self.amr12.tactical_reload = 1		
 			self.amr12.CLIP_AMMO_MAX = 5
 			self.amr12.fire_mode_data.fire_rate = 0.125

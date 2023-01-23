@@ -46,7 +46,7 @@
 			<value_node value="cn_branchbank3"/>
 		</crimenet_videos>
 		<debrief_event>
-			<value_node value="Play_loc_run_end"/>
+			<value_node value=""/>
 		</debrief_event>
 		<experience_mul>
 			<value_node value="1"/>

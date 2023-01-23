@@ -3808,6 +3808,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		stats = deep_clone(stocks.nocheeks_to_folder_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
 	}
+	self.wpn_fps_smg_olympic.override.wpn_fps_m4_uupg_s_zulu = {
+		stats = deep_clone(stocks.nocheeks_to_folder_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
+	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_smg_olympic_s_short = {
 		stats = deep_clone(stocks.remove_nocheeks_stats),
 		custom_stats = deep_clone(stocks.remove_nocheeks_stats)

@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="mtr_hub_elements" render_template="generic:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="core/textures/hub_elements_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>
+

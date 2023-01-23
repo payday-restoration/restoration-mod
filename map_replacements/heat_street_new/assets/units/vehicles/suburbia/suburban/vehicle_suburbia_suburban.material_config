@@ -1,0 +1,28 @@
+<materials version="3" group="vehicle_suburbia_suburban">
+    <material name="suburban" version="2" render_template="generic:BLUE_MASK_TINT:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_BIGPROPS">
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <diffuse_texture file="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban_df"/>
+        <bump_normal_texture file="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban_nm"/>
+        <variable value="0.31 0.32 0.31" type="vector3" name="tint_color"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE" name="glass_shattered">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/vehicles/window/glass_shattered_2_op"/>
+        <diffuse_texture file="units/vehicles/window/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/vehicles/window/glass_shattered_nm"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="glass_breakable" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE" version="2">
+        <variable value="0 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/glass/vehicle_glass_op"/>
+        <diffuse_texture file="units/glass/vehicle_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="suburban_low" version="2" render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE:RL_BIGPROPS">
+        <diffuse_texture file="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban_df"/>
+        <variable value="0.31 0.32 0.31" type="vector3" name="tint_color"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

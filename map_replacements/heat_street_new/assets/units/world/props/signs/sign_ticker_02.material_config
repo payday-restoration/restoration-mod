@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="ticker02" render_template="generic:DIFFUSE_TEXTURE:DIFFUSE_UVANIM:SELF_ILLUMINATION:SELF_ILLUMINATION_UVANIM" version="2">
+        <diffuse_texture file="units/world/props/signs/sign_ticker_02_df"/>
+        <variable value="0.08 0 0" type="vector3" name="uv_speed"/>
+        <self_illumination_texture file="units/world/props/signs/sign_ticker_02_df"/>
+        <variable value="match" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/desert/des_prop_con_cone/des_prop_con_cone" orientation_object="rp_des_prop_con_boom_2m" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_des_prop_con_boom_2m" />
+      <object name="c_des_prop_con_boom_2m" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="wood" static="true">
+    <decal_mesh name="dm_wood" enabled="true" material="wood"/>
+  </decal_surfaces>
+  <graphics>
+    <object name="g_des_prop_con_boom_2m" enabled="true"  />
+    <object name="s_des_prop_con_boom_2m" enabled="true" shadow_caster="true" />
+  </graphics>
+</dynamic_object>

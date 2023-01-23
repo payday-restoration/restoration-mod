@@ -1,0 +1,8 @@
+<materials version="3">
+		<material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" decal_material="metal" version="2" name="des_prop_con_boom">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/props/desert/des_prop_con_cone/des_prop_con_cone_df"/>
+        <bump_normal_texture file="units/world/props/desert/des_prop_con_cone/des_prop_con_cone_nm"/>
+		</material>
+		<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

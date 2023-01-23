@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="shovel_material" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/prop_shovel/prop_shovel_df"/>
+    </material>
+    <diffuse_texture file="units/world/props/prop_shovel/prop_shovel_df"/>
+</materials>

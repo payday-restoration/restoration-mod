@@ -1,0 +1,6 @@
+<unit type="cft" slot="1" >
+    <object file="units/world/props/prop_shovel/prop_shovel" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

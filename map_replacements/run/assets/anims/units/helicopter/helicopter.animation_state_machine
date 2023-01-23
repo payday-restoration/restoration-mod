@@ -1,9 +1,0 @@
-
-<state_machine name="helicopter" timebase="frames">
-	<segment name="base"/>
-	
-	<default state="std/empty"/>
-	
-	<states file="anims/units/helicopter/std"/>
-	
-</state_machine>

@@ -1,0 +1,32 @@
+<effect force_synch="false">
+    <atom name="middle" min_size="1" max_size="1" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="800" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+        </initializerstack>
+        <simulatorstack>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="1" teleport_cap="1" current_position="true" channel="local" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="0 0 140" max="0 0 140" min_normal="0 1 0" max_normal="0 1 0"/>
+                <normal min_velocity="0" max_velocity="0"/>
+            </teleporter>
+            <worldtransform transform_rotations="false"/>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <light per_particle_age="true" shadow_caster="false" specular="true" color_input="keys" multiplier_input="keys" far_range_input="constant" far_range="800">
+                <color_keys loop="false">
+                    <key t="0" v="225 0 0"/>
+                    <key t="0.24703891575336" v="143 143 143"/>
+                    <key t="0.5" v="225 0 0"/>
+                    <key t="0.74788492918015" v="143 143 143"/>
+                </color_keys>
+                <multiplier_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.24703891575336" v="0.89999997615814"/>
+                    <key t="0.74788492918015" v="0.89999997615814"/>
+                    <key t="1" v="0"/>
+                </multiplier_keys>
+            </light>
+        </visualizerstack>
+    </atom>
+</effect>

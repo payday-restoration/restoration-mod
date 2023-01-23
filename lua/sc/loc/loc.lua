@@ -908,6 +908,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Bag Zipline for quick bag transport",
 		
+		--Heat Street Waypoints
+		["wp_heat_street_matt"] = "Matt",
+		["wp_heat_street_eddie"] = "Eddie",
+		["wp_heat_street_jp"] = "Jake's Parking",
+		["wp_heat_street_dl"] = "Drake's Loading",
+		["wp_heat_street_ba"] = "Back Alley",
+		["wp_heat_street_aa"] = "Armitage AVE",
+		["wp_heat_street_bile"] = "Bile",
+		["wp_heat_street_question"] = "?",
+		
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "Mia Calienté is a real piece of work, friends. For years she's been the brains behind the Murkywater's operations in DC. Not too long ago, Murkywater took over a warehouse at the docks and they've using it as an additional distribution point. Our target is there checking in on some loot recently plundered from abroard. We're going to get in there, grab the dwankie and take her hostage. The Murkies can't afford to lose her, they will pay for her release, maybe with the aforementioned and rather valuable plunder, what do you say gang?"
 	})

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<unit type="deprecated" slot="15">
+  <object file="units/dev_tools/level_tools/navigation_blocker" />
+  <extensions>
+		<extension name="unit_data" class="ScriptUnitData">
+      <var name="only_exists_in_editor" value="true" />
+    </extension>
+  </extensions>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<unit type="static" slot="1">
+  <object file="units/vehicles/police_armored_truck/vehicle_police_armored_truck" />
+  
+    <dependencies>
+	<depends_on effect="effects/particles/bullet_hit/misc/misc_tire" />
+    <depends_on effect="effects/particles/window/vehicle_window" />
+    <depends_on bnk="soundbanks/effects" />
+  </dependencies>
+
+    <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="sync_unit_data" class="SyncUnitData" />
+  </extensions>
+</unit>

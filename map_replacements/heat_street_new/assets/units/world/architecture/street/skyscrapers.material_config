@@ -1,0 +1,36 @@
+<materials version="3">
+    <material version="2" decal_material="metal" name="facade_window" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR">
+        <diffuse_texture file="units/world/architecture/street/skyscrapes/scyscrape_top_near_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_street_01"/>
+        <variable value="5 0.23499999940395 1.6000000238419" type="vector3" name="environment_settings"/>
+        <bump_normal_texture file="units/world/architecture/street/skyscrapes/scyscrape_top_near_nm"/>
+    </material>
+    <material version="2" decal_material="concrete" name="facade_storefront_tile" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_D_A:BLEND_SMOOTH:BLEND_TINT_SECOND:DIFFUSE_TEXTURE:PIXEL_TILE:RL_ENVIRONMENT">
+        <diffuse_texture file="units/world/architecture/street/facade_tile_df"/>
+        <diffuse_layer0_texture file="units/world/architecture/street/facade_blend_tile_df"/>
+        <variable value="0.25 0.25 10" type="vector3" name="size_density"/>
+        <variable value="0.99400001764297" type="scalar" name="texture_padding"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_D_A:BLEND_SMOOTH:BLEND_TINT_SECOND:DIFFUSE_TEXTURE:RL_ENVIRONMENT" decal_material="concrete" version="2" name="facade">
+        <diffuse_texture file="units/world/architecture/street/facade_tile_df"/>
+        <diffuse_layer0_texture file="units/world/architecture/street/facade_blend_tile_df"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE_TO_SOLID" name="storefront_glass">
+        <opacity_texture file="units/world/architecture/glass/storefront_glass_op"/>
+        <diffuse_texture file="units/world/props/blank_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_street_01"/>
+        <variable value="0.12999999523163 0.059999998658895 0" type="vector3" name="fresnel_settings"/>
+        <variable value="1000 1800 0" type="vector3" name="opacity_fade_to_solid"/>
+    </material>
+    <material version="2" decal_material="concrete" name="ground_blend" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_SMOOTH:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR">
+        <diffuse_texture file="units/world/architecture/street/ground/ground_blend_df"/>
+        <diffuse_layer0_texture file="units/world/architecture/street/ground/ground_df"/>
+        <bump_normal_texture file="units/world/architecture/street/ground/ground_nm"/>
+        <diffuse_layer1_texture file="units/world/architecture/street/ground/ground_mask_df"/>
+    </material>
+    <material name="mat_storeinterior" render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/architecture/street/store_fronts_int/store_front_df"/>
+        <variable value="0" type="scalar" name="specular_power"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

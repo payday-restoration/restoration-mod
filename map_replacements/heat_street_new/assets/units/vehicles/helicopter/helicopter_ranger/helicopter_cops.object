@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<dynamic_object>c
+	<animation_def name="anims/units/helicopter/helicopter" />
+	<diesel materials="units/vehicles/helicopter/helicopter_ranger/helicopter" orientation_object="rp_helicopter" />
+	<sequence_manager file="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" />
+
+  	<animations>
+		<animation_group name="ag_door_left">
+			<object name="a_door_left" />
+		</animation_group>
+		<animation_group name="ag_door_right">
+			<object name="a_door_right" />
+		</animation_group>
+		<animation_group name="ag_main_rotor">
+			<object name="a_main_rotor" />
+			<object name="a_second_rotor" />
+		</animation_group>
+		<animation_group name="a_main_animation">
+			<object name="a_body" />
+		</animation_group>
+	</animations>
+	
+	<bodies>
+		<body name="static_body" enabled="true" template="raycoll">
+			<object name="a_body" />
+			<object name="c_interior" collision_type="box" />
+			<object name="c_interior_hull" collision_type="box" />
+			<object name="c_body" collision_type="box" />
+		</body>
+		<body name="left_door" enabled="true" template="raycoll">
+			<object name="c_door_left" collision_type="box" />
+		</body>
+		<body name="right_door" enabled="true" template="raycoll">
+			<object name="c_door_right" collision_type="box" />
+		</body>
+		<body name="main_rotor" enabled="true" template="raycoll">
+			<object name="c_main_rotor" collision_type="box" />
+		</body>
+		<body name="second_rotor" enabled="true" template="raycoll">
+			<object name="c_second_rotor" collision_type="box" />
+		</body>
+		<body name="mover_blocker" enabled="true" keyframed="true" template="mover_blocker">
+			<object name="c_mover_blocker" collision_type="box" />
+		</body>
+	</bodies> 
+  <graphics>
+	<graphic_group name="heli_gfx_grp" enabled="true" culling_object="co_helicopeter">
+		<object name="g_interior" enabled="true" />
+		<object name="g_interior_hull" enabled="true" />
+		<object name="g_door_right_handles" enabled="true" />
+		<object name="g_door_right_nypd" enabled="true" />
+		<object name="g_door_right_swat" enabled="false" />
+		<object name="g_door_left_handles" enabled="true" />
+		<object name="g_door_left_swat" enabled="false" />
+		<object name="g_door_left_nypd" enabled="true" />
+		<object name="g_main_rotor" enabled="true" />
+		<object name="g_second_rotor" enabled="true" />
+		<object name="g_glass" enabled="true" />
+		<object name="g_glass_right_passenger" enabled="true" />
+		<object name="g_glass_left_passenger" enabled="true" />
+		<object name="g_body_nypd" enabled="true" shadow_caster="true"/>
+		<object name="g_body_swat" enabled="false" />
+		<object name="g_light_holder" enabled="false" /> 
+		<object name="g_spotlight" enabled="false" />
+		<object name="g_spotlight_shaft" enabled="false" />
+		<object name="g_light_cone" enabled="false" instance_struct="world_tm"/>
+		<object name="g_blue_halo" enabled="false" instance_struct="world_tm" />
+		<object name="g_red_halo_down" enabled="false" instance_struct="world_tm" />
+		<object name="g_red_halo_right" enabled="false" instance_struct="world_tm" />
+		<object name="g_red_halo_up" enabled="false" instance_struct="world_tm" />
+		<object name="g_light_source_white" enabled="false" instance_struct="world_tm" />
+		<object name="g_light_source_red_blink" enabled="false" instance_struct="world_tm" />
+		<object name="g_light_source_red" enabled="false" instance_struct="world_tm" />
+		<object name="g_light_source_blue" enabled="false" instance_struct="world_tm" />
+	</graphic_group>
+  </graphics>
+  <decal_surfaces default_material="metal">           
+		<decal_mesh name="dm_door_left_nypd" enabled="true" material="sheet_metal" />
+		<decal_mesh name="dm_door_right_nypd" enabled="true" material="sheet_metal" />
+		<decal_mesh name="dm_body_nypd" enabled="true" material="metal_chassis" />
+		<decal_mesh name="c_body" enabled="true" material="sheet_metal" />
+		<decal_mesh name="g_glass" enabled="true" material="glass_breakable" />
+		<decal_mesh name="g_glass_left_passenger" enabled="true" material="glass_breakable" />
+		<decal_mesh name="g_glass_right_passenger" enabled="true" material="glass_breakable" />
+	</decal_surfaces>
+	<effects>
+		<effect_spawner name="flashlight" object="align_spotlight_effect" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
+	</effects>
+	<lights>
+		<light multiplier="identity" far_range="4000" name="ls_spotlight" enabled="false" type="spot|specular" />
+	</lights>
+</dynamic_object> 

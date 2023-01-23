@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="concrete_barrier" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/street/concrete_barrier/concrete_barrier_stripes_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>

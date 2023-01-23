@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/street/trafic_lights/trafic_lights" orientation_object="rp_street_lights" />
+	<sequence_manager file="units/world/street/street_lights/street_lights" />
+  
+	<bodies>
+		<body name="static_body1" enabled="true" template="static">
+			<object name="rp_street_lights"/>
+			<object name="c_street_lights_a" collision_type="mesh_mopp" />
+		</body>
+
+		<body name="static_body2" enabled="false" template="static">
+			<object name="c_street_lights_b" collision_type="mesh_mopp" />
+		</body>
+
+		<body name="static_body3" enabled="false" template="static">
+			<object name="c_street_lights_c" collision_type="mesh_mopp" />
+		</body>
+		<body name="static_body5" enabled="false" template="static">
+			<object name="c_traffic_light_pole" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	
+	<graphics>
+		<object name="g_street_lights_a" enabled="true"  shadow_caster="false" instance_struct="world_tm" />
+		<object name="g_street_lights_b" enabled="false" shadow_caster="false" instance_struct="world_tm" />
+		<object name="g_street_lights_c" enabled="false" shadow_caster="false" instance_struct="world_tm" />
+		<!-- <object name="g_street_lights_d" enabled="false" shadow_caster="false" instance_struct="world_tm" /> -->
+		<object name="g_street_lights_e" enabled="false" shadow_caster="false" instance_struct="world_tm" />
+		<object name="g_traffic_light_pole" enabled="false" shadow_caster="false" instance_struct="world_tm" />
+
+		<object name="s_street_lights_a" enabled="true"  shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_street_lights_b" enabled="false" shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_street_lights_c" enabled="false" shadow_caster="true" instance_struct="world_tm" />
+		<!-- <object name="s_street_lights_d" enabled="false" shadow_caster="true" instance_struct="world_tm" /> -->
+		<object name="s_street_lights_e" enabled="false" shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_traffic_light_pole" enabled="false" shadow_caster="true" instance_struct="world_tm" />
+	</graphics>
+
+	<decal_surfaces default_material="metal_hollow" static="true">
+		<decal_mesh name="dm_street_lights" enabled="true" material="metal_hollow"/>
+	</decal_surfaces>
+</dynamic_object>

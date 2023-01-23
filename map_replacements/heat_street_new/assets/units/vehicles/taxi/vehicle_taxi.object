@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/vehicles/taxi/vehicle_taxi" orientation_object="rp_vehicle_taxi" />
+	<sequence_manager file="units/vehicles/taxi/vehicle_taxi" />
+	<animations>
+	 <animation_group name="ag_tire_front_right">
+			<object name="a_tire_front_right" />
+		</animation_group>
+		<animation_group name="ag_tire_front_left">
+			<object name="a_tire_front_left" />
+		</animation_group>
+		<animation_group name="ag_tire_rear_right">
+			<object name="a_tire_rear_right" />
+		</animation_group>
+		<animation_group name="ag_tire_rear_left">
+			<object name="a_tire_rear_left" />
+		</animation_group>
+	</animations>
+	
+	<bodies>
+		<body name="vehicle_taxi" enabled="true" template="static">
+			<object name="rp_vehicle_taxi" />
+			<object name="c_taxi" collision_type="mesh_mopp" />
+		</body>
+		<body name="navblocker_big" enabled="true" template="graph_blocker">
+			<object name="c_navblocker_big" collision_type="box" />
+		</body>
+		<body remove_ray_type="ai_vision" name="window_right_rear" enabled="true" template="static">
+			<object name="c_window_right_rear" collision_type="convex" two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_right_front" enabled="true" template="static">
+			<object name="c_window_right_front" collision_type="convex" two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_left_rear" enabled="true" template="static">
+			<object name="c_window_left_rear" collision_type="convex" two_sided="true" />
+		</body>
+		<body remove_ray_type="ai_vision" name="window_left_front" enabled="true" template="static">
+			<object name="c_window_left_front" collision_type="convex" two_sided="true"/>
+		</body>
+		<body name="window_back" enabled="true" template="static">
+			<object name="c_window_back" collision_type="convex" two_sided="true"/>
+		</body>
+		<body name="window_front" enabled="true" template="static">
+			<object name="c_window_front" collision_type="convex" two_sided="true"/>
+		</body>
+		<body name="f_l_il" template="static">
+			<object name="g_f_l_il" collision_type="convex" />
+		</body>
+		<body name="f_r_il" template="static">
+			<object name="g_f_r_il" collision_type="convex" />
+		</body>
+		<body name="b_l_il" template="static">
+			<object name="g_b_l_il" collision_type="convex" />
+			</body>
+		<body name="b_r_il" template="static">
+			<object name="g_b_r_il" collision_type="convex" />
+		</body>
+		<body name="tire_front_left" enabled="true" template="static">
+			<object name="c_tire_front_left" collision_type="convex" />
+		</body>
+		<body name="tire_rear_left" enabled="true" template="static">
+			<object name="c_tire_rear_left" collision_type="convex" />
+		</body>
+		<body name="tire_front_right" enabled="true" template="static">
+			<object name="c_tire_front_right" collision_type="convex" />
+		</body>
+		<body name="tire_rear_right" enabled="true" template="static">
+			<object name="c_tire_rear_right" collision_type="convex" />
+		</body>
+	</bodies>
+	
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_glass" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_rim" enabled="true" material="metal" />
+		<decal_mesh name="dm_tire" enabled="true" material="rubber" />
+		<decal_mesh name="dm_vehicle_taxi" enabled="true" material="metal_chassis" /> 
+	</decal_surfaces>
+	
+	<graphics>
+		<lod_object name="taxi">
+			<object name="g_vehicle_taxi" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_vehicle_taxi_far" lod="1" enabled="true" instance_struct="world_tm" />
+		</lod_object> 
+		<lod_object name="win1">
+			<object name="g_window_right_rear" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_right_rear_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		<lod_object name="win2">
+			<object name="g_window_right_rear_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_right_rear_dmg_lod" lod="1"	enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win3">
+			<object name="g_window_right_front_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_right_front_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win4">
+			<object name="g_window_left_rear" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_left_rear_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win5">
+			<object name="g_window_left_rear_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_left_rear_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win6">
+			<object name="g_window_left_front_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_left_front_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win7">
+			<object name="g_window_left_front" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_left_front_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win8">
+			<object name="g_window_back_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_back_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win9">
+			<object name="g_window_back" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_back_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win10">
+			<object name="g_window_front_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_front_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win11">
+			<object name="g_window_front" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_front_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win12">
+			<object name="g_window_right_front" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" /> 
+			<object name="g_window_right_front_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object>
+		 <lod_object name="win13">
+			<object name="g_window_interior" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_interior_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object>
+		<object name="s_vehicle_taxi" enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="g_f_l_il" instance_struct="world_tm" />
+		<object name="g_f_r_il" instance_struct="world_tm" />
+		<object name="g_b_l_il" instance_struct="world_tm" />
+		<object name="g_b_r_il" instance_struct="world_tm" />
+		<object name="g_l_head" instance_struct="world_tm" />
+		<object name="g_r_head" instance_struct="world_tm" />
+	</graphics>
+	
+	<lights>
+		<light name="ls_left" far_range="2000" type="spot|specular"	end_angle="53" multiplier="match" editable="true" />
+		<light name="ls_right" far_range="2000" type="spot|specular" end_angle="39" multiplier="match" editable="true" />
+	</lights>
+	
+	<objects>
+		<align_point name="e_window_right_rear" enabled="true" parent="rp_vehicle_taxi" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_right_front" enabled="true" parent="rp_vehicle_taxi" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_rear" enabled="true" parent="rp_vehicle_taxi" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_front" enabled="true" parent="rp_vehicle_taxi" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_back" enabled="true" parent="rp_vehicle_taxi" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_front" enabled="true" parent="rp_vehicle_taxi" position="0 0 0" rotation="0 0 0" />
+	</objects>
+</dynamic_object> 

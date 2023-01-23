@@ -1,0 +1,28 @@
+<materials version="3">
+    <material render_template="generic:BLUE_MASK_TINT:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:RL_BIGPROPS" decal_material="wood" version="2" name="bmw">
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <diffuse_texture file="units/vehicles/bmw/vehicle_bmw_df"/>
+        <bump_normal_texture file="units/vehicles/bmw/vehicle_bmw_nm"/>
+        <variable value="0.037 0.08 0.0155" type="vector3" name="tint_color"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:OPACITY_FADE" name="glass_shattered">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/vehicles/window/glass_shattered_2_op"/>
+        <diffuse_texture file="units/vehicles/window/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/vehicles/window/glass_shattered_nm"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="glass_breakable" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED:OPACITY_FADE" version="2">
+        <variable value="0 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/glass/vehicle_glass_op"/>
+        <diffuse_texture file="units/glass/vehicle_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE:INSTANCED:RL_BIGPROPS" decal_material="wood" version="2" name="bmw_low">
+        <variable value="0.037 0.08 0.0155" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/vehicles/bmw/vehicle_bmw_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>

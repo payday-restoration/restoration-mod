@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/signs/sign_street_cover_poster_01" orientation_object="rp_sign_street_cover_poster_01" />
+  <sequence_manager file="units/world/props/signs/sign_street_cover_poster_01" />
+  
+  <bodies>
+	<body name="static_body" enabled="true" template="static">
+      <object name="rp_sign_street_cover_poster_01" />
+      <object name="c_box_000" collision_type="box" padding="-2"/>
+    </body>
+	<body name="win_1" enabled="true" template="static">
+      <object name="c_glass_01" collision_type="box" />
+	</body>	
+	<body name="win_2" enabled="true" template="static">
+      <object name="c_glass_02" collision_type="box" />
+	</body>
+  </bodies>
+  
+  
+  <decal_surfaces default_material="sheet_metal" static="true">
+    <decal_mesh name="dm_metal" enabled="true" material="sheet_metal" />
+    <decal_mesh name="g_glass_1" enabled="true" material="glass_breakable" />
+    <decal_mesh name="g_glass_2" enabled="true" material="glass_breakable" />
+  </decal_surfaces>
+   <graphics>
+    <object name="g_sign_street_cover_01" enabled="true" shadow_caster="false"  />
+    <object name="g_sign_street_cover_poster_01" enabled="true" shadow_caster="false"  />
+    <object name="g_sign_street_cover_poster_02" enabled="false" shadow_caster="false"  />
+    <object name="g_sign_street_cover_poster_03" enabled="false" shadow_caster="false"  />
+    <object name="s_sign_street_cover_poster_01" enabled="true" shadow_caster="true"  />
+    <object name="g_glass_1" enabled="true"  />
+    <object name="g_glass_2" enabled="true"  />
+    <object name="g_glass_1_dmg" enabled="false"  />
+    <object name="g_glass_2_dmg" enabled="false"  />
+  </graphics>
+  <objects>
+    <object name="e_glass_01" enabled="true" />
+    <object name="e_glass_02" enabled="true" />
+  </objects>
+</dynamic_object>

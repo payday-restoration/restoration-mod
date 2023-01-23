@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/facadebalcony" orientation_object="rp_fireescape_01" />
+  <bodies>
+    <body name="fireescape_01" enabled="true" template="static">
+      <object name="rp_fireescape_01" />
+      <object name="c_fireescape_01" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="metal_catwalk" static="true">
+    <decal_mesh name="c_fireescape_01" enabled="true" material="metal_catwalk" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_fireescape_01" enabled="true"  />
+  </graphics>
+</dynamic_object>

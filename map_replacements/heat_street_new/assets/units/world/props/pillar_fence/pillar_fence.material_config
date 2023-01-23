@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="ground_blend" decal_material="concrete" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" version="2">
+        <diffuse_texture file="units/world/architecture/street/ground/ground_df"/>
+        <bump_normal_texture file="units/world/architecture/street/ground/ground_nm"/>
+    </material>
+</materials>

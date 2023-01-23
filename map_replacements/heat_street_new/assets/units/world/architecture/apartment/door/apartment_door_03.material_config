@@ -1,0 +1,13 @@
+<materials version="3">
+    <material name="door_metal" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/world/architecture/apartment/textures/door_03_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="0.25 0 0.20000000298023" type="vector3" name="environment_settings"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/glass/glass_indoors_op"/>
+        <diffuse_texture file="units/glass/glass_indoors_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+</materials>

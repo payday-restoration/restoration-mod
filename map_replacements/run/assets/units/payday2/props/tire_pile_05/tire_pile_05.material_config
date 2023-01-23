@@ -1,5 +1,0 @@
-<materials version="3">
-    <material name="mtr_tires" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE">
-        <diffuse_texture file="units/payday2/props/tire_pile_05/tire_pile_05"/>
-	</material>
-</materials>

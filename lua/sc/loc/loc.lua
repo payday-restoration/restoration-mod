@@ -2860,7 +2860,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
 		["mutator_birthday_longdesc"] = "PAYDAY 10th Anniversary event:\n\nKilling special units will spawn balloons which you can shoot to give buffs to the entire team that will either be a direct bonus or timed depending on the unit killed. Some units spawn balloons more frequently than others and several buffs can be active at the same time.",		
 
-		["mutator_piggybank"] = "Feed the Pig",
+		["mutator_CG22"] = "A Criminal Carol",
+		["mutator_CG22_desc"] = "Some heists will have a christmas tree that spawns presents to shred or give to Hajrudin.",
+		["mutator_CG22_longdesc"] = "PAYDAY 2 2022 Christmas Event:\n\nChristmas Trees that appear on some heists will drop Christmas presents. Christmas Presents can either be shredded for temporary buffs during the heist, or given to Hajrudin for bonus XP, Cash, or Continental Coins. Doing either has a chance to spawn the Freeze-Thrower wielding Snowman Dozer.",		
+
+		["menu_cg22_post_objective_1_desc"] = "Kill 200 enemies with any sniper rifle.",
+		["menu_cg22_post_objective_2_desc"] = "Kill 15 Cloakers with the North Star rifle on Very Hard or above.",
+		["menu_cg22_post_objective_3_desc"] = "Perform 50 double kills with the North Star rifle on any difficulty.",
+		["menu_cg22_post_objective_4_desc"] = "Secure 10 loot bags (followed by a successful escape) on any difficulty.",
+		["menu_cg22_post_objective_5_desc"] = "Kill 10 Dozers on Overkill difficulty or above.",
+		["menu_cg22_post_objective_6_desc"] = "Secure 25 loot bags (followed by a successful escape) on any difficulty.",
+		["menu_cg22_post_objective_7_desc"] = "Secure 50 loot bags (followed by a successful escape) on any difficulty.",
+		["menu_cg22_post_objective_8_desc"] = "Kill 20 Dozers on Overkill difficulty or above.",
+		["menu_cg22_post_objective_9_desc"] = "Secure 75 loot bags (followed by a successful escape) on any difficulty.",
+
 		["mutator_piggybank_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig.",
 		["mutator_piggybank_longdesc"] = "PAYDAY 2 9th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy on certain heists, and the bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
 		

@@ -15,6 +15,10 @@ MutatorBirthday.icon_coords = {
 	4
 }
 
+MutatorBirthday.incompatibility_tags = {
+	"replaces_gamemode"
+}
+
 function MutatorBirthday:setup(mutator_manager)
 	self._tweakdata = tweak_data.mutators.birthday
 	self._special_killed_count = {}

@@ -11,3 +11,7 @@ MutatorPiggyBank.icon_coords = {
 	4,
 	4
 }
+
+MutatorPiggyBank.incompatibility_tags = {
+	"replaces_gamemode"
+}

@@ -107,10 +107,10 @@
 	<material_config	path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" />
 	
-	<unit				path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2" />
+	<!--unit				path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2" />
 	<object				path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2" />
 	<model				path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2" />
-	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2" />
+	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2" -->
 	
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" />
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_df" />

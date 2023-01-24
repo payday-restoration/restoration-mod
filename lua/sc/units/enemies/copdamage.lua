@@ -3760,3 +3760,26 @@ function CopDamage:bag_explode()
 
 	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)			
 end
+
+function CopDamage:_apply_damage_reduction(damage)
+	local damage_reduction = self._unit:movement():team().damage_reduction or 0
+
+	if damage_reduction > 0 then
+		damage = damage * (1 - damage_reduction)
+	end
+
+	if self._damage_reduction_multiplier then
+		damage = damage * self._damage_reduction_multiplier
+	end
+	
+	if managers.mutators:is_mutator_active(MutatorCG22) then
+		local cg22_mutator = managers.mutators:get_mutator(MutatorCG22)
+
+		if cg22_mutator:can_enemy_be_affected_by_buff("blue", self._unit) then
+			damage = damage * cg22_mutator:get_enemy_blue_multiplier()
+		end
+	end
+
+	return damage
+end
+

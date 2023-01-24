@@ -1542,7 +1542,6 @@ function CharacterTweakData:_init_biker(presets)
 	self.biker_guard.suppression = presets.suppression.hard_def
 	self.biker_guard.has_alarm_pager = true
 	self.biker_guard.radio_prefix = "fri_"
-	self.biker_guard.surrender = presets.surrender.hard
 	self.biker_guard.surrender_break_time = {20, 30}
 	self.biker_guard.detection = presets.detection.guard
 	self.biker_guard.HEALTH_INIT = 6

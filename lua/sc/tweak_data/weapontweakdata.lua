@@ -111,12 +111,12 @@ local crew_wep_preset = {
 	},
 	sniper_auto = {
 		mag_capacity = 10,
-		fire_rate = 0.6,
+		fire_rate = 0.85714,
 		damage = 9.0
 	},
 	sniper_bolt = {
 		mag_capacity = 5,
-		fire_rate = 1.33333,
+		fire_rate = 2,
 		damage = 18.0
 	}
 }
@@ -7464,7 +7464,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
 				self.par.timers.reload_exit_empty = 1.325
-				self.par.timers.reload_exit_not_empty = 1.325	
+				self.par.timers.reload_exit_not_empty = 1.325
+
+			--????
+			--[[
+				self.xxxx.has_description = true
+				self.xxxx.desc_id = "bm_xxxx_sc_desc"		
+				self.xxxx.categories = {
+					"lmg",
+					"smg",
+					"mmg"
+				}
+				self.xxxx.CLIP_AMMO_MAX = 00
+				self.xxxx.AMMO_MAX = 120
+				self.xxxx.fire_mode_data.fire_rate = 0.12
+				self.xxxx.kick = self.stat_info.kick_tables.moderate_kick
+				self.xxxx.supported = true
+				self.xxxx.ads_speed = 0.480
+				self.xxxx.damage_falloff = {
+					start_dist = 4000,
+					end_dist = 7200,
+					min_mult = 0.5
+				}
+				self.xxxx.stats = {
+					damage = 60,
+					spread = 78,
+					recoil = 72,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 19,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.xxxx.stats_modifiers = nil
+				self.xxxx.panic_suppression_chance = 0.05
+			--]]
 	
 			--Buzzsaw (MG42)
 				self.mg42.categories = {
@@ -8461,6 +8499,40 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.groza_underbarrel.stats_modifiers = {damage = 10}
+
+			--???-???
+			--[[
+				self.xxx.desc_id = "bm_xxx_sc_desc"
+				self.xxx.has_description = true
+				self.xxx.CLIP_AMMO_MAX = 00
+				self.xxx.AMMO_MAX = 120
+				self.xxx.fire_mode_data.fire_rate = 0.1
+				self.xxx.kick = self.stat_info.kick_tables.moderate_kick		
+				self.xxx.supported = true
+				self.xxx.ads_speed = 0.340
+				self.xxx.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 4800,
+					min_mult = 0.6
+				}
+				self.xxx.stats = {
+					damage = 30,
+					spread = 60,
+					recoil = 71,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 21,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.xxx.stats_modifiers = nil
+				self.xxx.panic_suppression_chance = 0.05
+			--]]
+
 
 		--SECONDARIES
 
@@ -9480,6 +9552,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.desertfox.reload_speed_multiplier = 0.95
 				self.desertfox.timers.reload_exit_empty = 0.7
 				self.desertfox.timers.reload_exit_not_empty = 0.75
+
+		--SECONDARIES
+
+			--??
+			--[[
+				self.xx.upgrade_blocks = nil
+				self.xx.CLIP_AMMO_MAX = 0
+				self.xx.AMMO_MAX = 15
+				self.xx.FIRE_MODE = "single"
+				self.xx.fire_mode_data = {}
+				self.xx.fire_mode_data.fire_rate = 1
+				self.xx.CAN_TOGGLE_FIREMODE = false
+				self.xx.kick = self.stat_info.kick_tables.vertical_kick
+				self.xx.tactical_reload = 1
+				self.xx.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.xx.supported = true
+				self.xx.ads_speed = 0.200
+				self.xx.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 5000,
+					min_mult = 0.375
+				}
+				self.xx.stats = {
+					damage = 120,
+					spread = 81,
+					recoil = 51,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 21,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}	
+				self.xx.stats_modifiers = nil
+				self.xx.panic_suppression_chance = 0.05
+			--]]
 
 	--[[     ANTI-MATERIEL SNIPERS     ]]
 

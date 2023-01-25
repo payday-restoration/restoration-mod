@@ -3749,24 +3749,37 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].sms = 0.8
 		self[ wep_id ].weapon_movement_penalty = 0.8
 	end
+	self.tecci.sms = 0.85
+	self.tecci.weapon_movement_penalty = 0.85
 	
-	recat = { "mg42", "m60", "hk21", "par", "hk51b", "ranc_heavy_machine_gun" }
+	recat = { "mg42", "hk21", "hk51b", "ranc_heavy_machine_gun" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "mmg")
 		self[ wep_id ].recategorize = { "heavy_mg" }
-		self[ wep_id ].sms = 0.75
 		self[ wep_id ].damage_type = "machine_gun"
+		self[ wep_id ].sms = 0.75
 		self[ wep_id ].weapon_movement_penalty = 0.75
+	end
+
+	recat = { "m60", "par" }
+	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "mmg")
+		self[ wep_id ].recategorize = { "heavy_mg" }
+		self[ wep_id ].damage_type = "machine_gun"
+		self[ wep_id ].sms = 0.7
+		self[ wep_id ].weapon_movement_penalty = 0.7
 	end
 	self.ranc_heavy_machine_gun.damage_type = "anti_materiel"
 	
 	recat = { "shuno", "m134" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "miniguns" }
-		self[ wep_id ].sms = 0.7
 		self[ wep_id ].damage_type = "machine_gun"
+		self[ wep_id ].sms = 0.7
 		self[ wep_id ].weapon_movement_penalty = 0.7
 	end
+	self.shuno.sms = 0.75
+	self.shuno.weapon_movement_penalty = 0.75
 	
 	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "scout", "victor" }
 	for i, wep_id in ipairs(recat) do
@@ -12533,8 +12546,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.amr12.tactical_reload = 1		
 			self.amr12.CLIP_AMMO_MAX = 5
 			self.amr12.fire_mode_data.fire_rate = 0.125
-			self.amr12.FIRE_MODE = "auto"		
-			self.amr12.CAN_TOGGLE_FIREMODE = true
+			self.amr12.FIRE_MODE = "single"		
+			self.amr12.CAN_TOGGLE_FIREMODE = false
 			self.amr12.BURST_FIRE = false
 			self.amr12.kick = self.stat_info.kick_tables.vertical_kick
 			self.amr12.supported = true
@@ -15533,8 +15546,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.sounds.stop_fire = "hk23e_stop"
 	end
 
+	if self.omni then --Tangerine's .410 AR
+		self.omni.recategorize = { "light_shot" }	
+		self.omni.damage_type = "shotgun"
+		self.omni.damage_type_single_ray = "sniper"
+		self.omni.rays = 9
+		self.omni.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.omni.AMMO_MAX = 60
+		self.omni.tactical_reload = 1		
+		self.omni.CLIP_AMMO_MAX = 10
+		self.omni.fire_mode_data.fire_rate = 0.125
+		self.omni.FIRE_MODE = "single"		
+		self.omni.CAN_TOGGLE_FIREMODE = false
+		self.omni.BURST_FIRE = false
+		self.omni.kick = self.stat_info.kick_tables.moderate_kick
+		self.omni.supported = true
+		self.omni.ads_speed = 0.320
+		self.omni.damage_falloff = {
+			start_dist = 900,
+			end_dist = 3000,
+			min_mult = 0.66667
+		}
+		self.omni.stats = {
+			damage = 30,
+			spread = 49,
+			recoil = 65,
+			zoom = 1,
+			concealment = 24,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.omni.panic_suppression_chance = 0.05
+		self.omni.stats_modifiers = {damage = 1}
+		self.omni.timers = deep_clone(self.new_m4.timers)
+	end
+
 	if self.f500 then --Silent Enforcer's Fort-500
-		self.f500.recategorize = { "light_shot" }
+		self.f500.recategorize = { "heavy_shot" }
 		self.f500.damage_type = "shotgun"
 		self.f500.damage_type_single_ray = "sniper"
 		self.f500.tactical_reload = 1
@@ -15574,7 +15626,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.f500.timers.shotgun_reload_exit_not_empty = 0.3
 		self.f500.timers.shotgun_reload_exit_empty = 0.7
 	end	
-
+	
 	if self.mg34 then -- Silent Enforcer's MG34
 		self.mg34.sms = 0.75
 		self.mg34.damage_type = "machine_gun"

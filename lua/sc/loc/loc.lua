@@ -1978,6 +1978,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",
 
+
+		--Menu Buttons--
+		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
+		["bm_menu_btn_buy_selected_weapon"] = "BUY WEAPON ($price)",
+
 		--New menu stats--
 		["bm_menu_damage_shake"] = "Flinch",
 		["bm_menu_deflection"] = "Deflection",
@@ -2083,7 +2088,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["st_menu_skill_use"] = "SKILL USE:",
 
-
+		["st_menu_firemode"] = "FIREMODES:",
+		["st_menu_firemode_semi"] = "SEMI",
+		["st_menu_firemode_auto"] = "AUTO",
+		["st_menu_firemode_burst"] = "BURST",
+		["st_menu_firemode_volley"] = "AUTO+VOLLEY",
 
 		["menu_reticle_dmc_eotech"] = "TECopt Full",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",

@@ -2059,6 +2059,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.015, -1.2, -2.755)
 			}
 
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
+				translation = Vector3(-0.04, -0.8, -0.135),
+				rotation = Rotation(-0.11, 0 ,-0.7)
+			}
+		
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
 				translation = Vector3(0, 8.6, -3.36)
 			}
@@ -27072,6 +27077,57 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+
+	if self.parts.wpn_fps_shot_omni_m_standard then --Tangerine's .410 AR
+		self.parts.wpn_fps_snp_tti_fg_rail.adds = nil
+		self.parts.wpn_fps_gas_block.adds = nil
+		self.parts.wpn_fps_m16_fg_railed_vanilla.adds = { "wpn_fps_gas_block" }
+
+		self.parts.wpn_fps_shot_omni_m_contraband.supported = true
+		self.parts.wpn_fps_shot_omni_m_contraband.stats = {
+			value = 2,
+			spread = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_shot_omni_b_heavy.supported = true
+		self.parts.wpn_fps_shot_omni_b_heavy.stats = {
+			value = 8,
+			spread = -1,
+			recoil = 4,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_shot_omni_fg_amcar.supported = true
+		self.parts.wpn_fps_shot_omni_fg_amcar.stats = {
+			value = 7,
+			recoil = -4,
+			concealment = 2
+		}
+		self.parts.wpn_fps_shot_omni_fg_tti.supported = true
+		self.parts.wpn_fps_shot_omni_fg_tti.stats = {
+			value = 5,
+			spread = 1,
+			recoil = 4,
+			concealment = -3
+		}
+		self.parts.wpn_fps_m16_fg_covers.supported = true
+		self.parts.wpn_fps_m16_fg_covers.stats = {
+			value = 2,
+			spread = 1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_m16_fg_covers.adds = {
+			"wpn_fps_m16_fg_railed_vanilla",
+			"wpn_fps_shot_omni_vg_afg_default",
+			"wpn_fps_gas_block"
+		}
+
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sg")
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sport")
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_s_russian")
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury
@@ -27832,6 +27888,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "vmplegacyInit", function(self)
 if self.wpn_fps_ass_aknato then
 end
 end)
+
+--Override Tangerine's stance_mod data
+Hooks:PostHook(WeaponFactoryTweakData, "init", "omnisightinit", function(self)
+end )
 
 --Override Silent Enforcer's stance_mod data
 Hooks:PostHook( WeaponFactoryTweakData, "init", "mg34ModInit", function(self)

@@ -3449,6 +3449,87 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 	self._in_setup = nil
 end
 
+function BlackMarketGui:show_btns(slot)
+	local data = slot._data
+	local btn_show_funcs = data.btn_show_funcs or {} 
+
+	for _, btn in pairs(self._btns) do
+		btn:hide()
+	end
+
+	local btns = {}
+	local btn_show_func_name, btn_show_func = nil
+
+	for i, btn in ipairs(data.buttons or data) do
+		btn_show_func_name = btn_show_funcs[btn]
+		btn_show_func = btn_show_func_name and callback(self, self, btn_show_func_name)
+
+		if self._btns[btn] and (not btn_show_func or btn_show_func(data)) then
+			self._btns[btn]:show()
+			table.insert(btns, self._btns[btn])
+		end
+	end
+
+	if not managers.menu:is_pc_controller() then
+		local back_btn = self._btns.back_btn
+
+		if back_btn then
+			back_btn:show()
+			table.insert(btns, back_btn)
+		end
+	end
+
+	self._button_count = #btns
+
+	table.sort(btns, function (x, y)
+		return x._data.prio < y._data.prio
+	end)
+
+	self._controllers_mapping = {}
+	self._controllers_pc_mapping = {}
+
+	for i, btn in ipairs(btns) do
+		if (not managers.menu:is_pc_controller() or managers.menu:is_steam_controller()) and not btn._data.no_btn then
+			btn:set_text_btn_prefix(btn._data.btn)
+		end
+
+		if btn._data.pc_btn then
+			self._controllers_pc_mapping[Idstring(btn._data.pc_btn):key()] = btn
+		end
+
+		self._controllers_mapping[btn._data.btn:key()] = btn
+
+		if btn._data.name == "bm_menu_btn_sell" or btn._data.name == "bm_menu_btn_buy_selected_weapon" then
+			data.btn_text_params = {
+				price = managers.experience:cash_string(data.price)
+			}
+		end
+
+		btn:set_text_params(data.btn_text_params)
+		btn:set_order(i)
+	end
+
+	local num_btns = #btns
+	local h = self._real_small_font_size or small_font_size
+	local info_box_panel = self._panel:child("info_box_panel")
+
+	if self._info_panel then
+		self._info_panel:set_size(info_box_panel:w() - 20, self._info_panel:num_children() / 2 * h)
+		self._info_panel:set_rightbottom(self._panel:w() - 10, self._btn_panel:top() - 10)
+	end
+
+	if managers.menu:is_pc_controller() and #btns > 0 then
+		slot:set_btn_text(btns[1]:btn_text())
+	else
+		slot:set_btn_text("")
+	end
+
+	self._visible_btns = btns
+
+	self:_update_borders()
+end
+
+
 function BlackMarketGui:show_stats()
 	if not self._stats_panel or not self._rweapon_stats_panel or not self._armor_stats_panel or not self._mweapon_stats_panel then
 		return
@@ -4395,21 +4476,57 @@ function BlackMarketGui:update_info_text()
 
 			local weapon_category = nil
 			local is_akimbo = false
-			if weapon_tweak and weapon_tweak.categories then
-				if weapon_tweak.categories[1] == "akimbo" then
-					is_akimbo = true
+			local firemode_string = ""
+			local add_burst = nil
+			local lock_burst = nil
+			local lock_firemode = nil
+			if weapon_tweak then
+				if weapon_tweak.categories then
+					if weapon_tweak.categories[1] == "akimbo" then
+						is_akimbo = true
+					end
+					weapon_category = is_akimbo and weapon_tweak.categories[2] or weapon_tweak.categories[1]
 				end
-				weapon_category = is_akimbo and weapon_tweak.categories[2] or weapon_tweak.categories[1]
+				if not lock_firemode and not lock_burst then
+					if weapon_tweak.FIRE_MODE == "single" then
+						firemode_string = managers.localization:to_upper_text("st_menu_firemode_semi")
+					elseif weapon_tweak.FIRE_MODE == "auto" then
+						firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto")
+					end
+					if weapon_tweak.CAN_TOGGLE_FIREMODE then
+						if weapon_tweak.FIRE_MODE == "single" then
+							firemode_string = managers.localization:to_upper_text("st_menu_firemode_semi") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
+						else
+							firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
+						end
+					end
+					if weapon_tweak.BURST_FIRE then
+						if is_akimbo then
+							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
+						else
+							firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") or managers.localization:to_upper_text("st_menu_firemode_burst")
+						end
+					end
+					if weapon_tweak.fire_mode_data and weapon_tweak.fire_mode_data.volley then
+						firemode_string = managers.localization:to_upper_text("st_menu_firemode_volley")
+					end
+				else
+					firemode_string = "temp"
+				end
 			end
 
+			--[[
 			if price > 0 then
 				updated_texts[2].text = managers.localization:to_upper_text(slot_data.not_moddable and "st_menu_cost" or "st_menu_value") .. " ##" .. managers.experience:cash_string(price) .. "##"
 
 				table.insert(resource_color, slot_data.can_afford and tweak_data.screen_colors.skill_color or tweak_data.screen_colors.important_1)
 			end
+			--]]
 
 			if weapon_category then
-				updated_texts[2].text = updated_texts[2].text .. ((price > 0 and " | ") or "") .. managers.localization:to_upper_text("st_menu_skill_use") .." ##" .. ((is_akimbo and managers.localization:to_upper_text("menu_akimbo")) or "") .. managers.localization:to_upper_text("menu_" .. tostring(weapon_category) .. "_single") .. "##"
+				updated_texts[2].text = updated_texts[2].text .. --((price > 0 and " | ") or "") .. 
+				managers.localization:to_upper_text("st_menu_skill_use") .." ##" .. ((is_akimbo and managers.localization:to_upper_text("menu_akimbo")) or "") .. managers.localization:to_upper_text("menu_" .. tostring(weapon_category) .. "_single") .. "## | " ..
+				managers.localization:to_upper_text("st_menu_firemode") .. " ##" ..  firemode_string .. "##"
 
 				table.insert(resource_color, tweak_data.screen_colors.skill_color)
 			end

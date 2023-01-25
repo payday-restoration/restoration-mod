@@ -913,7 +913,7 @@ local muzzle_device = {
 				trail_effect = "_dmc/effects/nato_trail",
 				falloff_start_mult = 1,
 				falloff_end_mult = 1.25,
-				damage_min_mult = 6,
+				damage_min_mult = 5,
 				armor_piercing_add = 1,		
 				rays = 12
 				--[[
@@ -1001,9 +1001,10 @@ local muzzle_device = {
 					type = "poison",
 					custom_data = {
 						dot_damage = 1.5,
-						dot_length = 1.1,
+						dot_length = 2.1,
 						dot_tick_period = 0.5,
 						use_weapon_damage_falloff = true,
+						duration_falloff_end_mult = 0.5,
 						hurt_animation_chance = 0.05
 					}
 				}
@@ -1078,9 +1079,9 @@ local muzzle_device = {
 				trail_effect = "",
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
-					dot_damage = 1.5,
-					dot_trigger_chance = 20,
-					dot_length = 3.1,
+					dot_damage = 2.25,
+					dot_trigger_chance = 15,
+					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
 			}
@@ -1176,7 +1177,7 @@ local muzzle_device = {
 			},
 			custom_stats = {
 				falloff_end_mult = 0.8,
-				damage_min_mult = 0.75,
+				damage_min_mult = 0.66667,
 				armor_piercing_add = 0.20,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
@@ -1307,6 +1308,28 @@ local muzzle_device = {
 		}
 
 	--FRAG-12
+		local a_explosive_auto_override = {
+			supported = true,
+			stats = {
+				value = 10,
+				recoil = -25,
+				spread = 5,
+				total_ammo_mod = -50,
+				concealment = -5,
+				spread_multi = {1, 1},	
+				damage = 30
+			},
+			custom_stats = {
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				bullet_class = "InstantExplosiveBulletBase",
+				sms = 0.85
+			}
+		}
+
 		local a_explosive_semi_override = {
 			supported = true,
 			stats = {
@@ -27123,9 +27146,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			"wpn_fps_gas_block"
 		}
 
+		self.wpn_fps_shot_omni.override = self.wpn_fps_shot_omni.override or {}
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_slug = a_slug_auto_override
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom = a_custom_auto_override
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom_free = a_custom_auto_override
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_explosive = a_explosive_auto_override
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_rip = a_rip_auto_override
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing = a_piercing_auto_override
+		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
+		
+		self.wpn_fps_shot_omni_npc.override = deep_clone(self.wpn_fps_shot_omni.override)
+
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sg")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sport")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_s_russian")
+
+		self.wpn_fps_shot_omni_npc.uses_parts = deep_clone(self.wpn_fps_shot_omni.uses_parts)
 	end
 
 --Resmod Custom Weapon stuff

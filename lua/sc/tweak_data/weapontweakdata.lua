@@ -10208,7 +10208,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.serbu.CLIP_AMMO_MAX = 4
 				self.serbu.AMMO_MAX = 30
 				self.serbu.fire_mode_data.fire_rate = 0.5
-				self.serbu.single.fire_rate = 0.5
 				self.serbu.kick = self.stat_info.kick_tables.moderate_kick
 				self.serbu.supported = true
 				self.serbu.ads_speed = 0.360
@@ -15534,6 +15533,94 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.sounds.stop_fire = "hk23e_stop"
 	end
 
+	if self.f500 then --Silent Enforcer's Fort-500
+		self.f500.recategorize = { "light_shot" }
+		self.f500.damage_type = "shotgun"
+		self.f500.damage_type_single_ray = "sniper"
+		self.f500.tactical_reload = 1
+		self.f500.fire_mode_data.fire_rate = 0.5
+		self.f500.CLIP_AMMO_MAX = 6
+		self.f500.AMMO_MAX = 30
+		self.f500.supported = true
+		self.f500.ads_speed = 0.400
+		self.f500.damage_falloff = {
+			start_dist = 1100,
+			end_dist = 3200,
+			min_mult = 0.3333
+		}
+		self.f500.stats = {
+			damage = 60,
+			spread = 41,
+			recoil = 35,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 25,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.f500.kick = self.stat_info.kick_tables.moderate_kick
+		self.f500.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.f500.panic_suppression_chance = 0.05
+		self.f500.stats_modifiers = nil
+		self.f500.rays = 9
+		self.f500.reload_speed_multiplier = 0.8
+		self.f500.timers.shotgun_reload_enter = 0.3
+		self.f500.timers.shotgun_reload_first_shell_offset = 0.33
+		self.f500.timers.shotgun_reload_shell = 0.5666666666666667
+		self.f500.timers.shotgun_reload_exit_not_empty = 0.3
+		self.f500.timers.shotgun_reload_exit_empty = 0.7
+	end	
+
+	if self.mg34 then -- Silent Enforcer's MG34
+		self.mg34.sms = 0.75
+		self.mg34.damage_type = "machine_gun"
+		self.mg34.weapon_movement_penalty = 0.75
+		self.mg34.categories = {
+			"lmg",
+			"smg",
+			"mmg"
+		}
+		self.mg34.CLIP_AMMO_MAX = 50
+		self.mg34.BURST_FIRE = false
+		self.mg34.CAN_TOGGLE_FIREMODE = true
+		self.mg34.fake_semi_anims = true
+		self.mg34.fire_mode_data.fire_rate = 0.06666666
+		self.mg34.AMMO_MAX = 160
+		self.mg34.kick = self.stat_info.kick_tables.vertical_kick
+		self.mg34.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.mg34.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
+		self.mg34.supported = true
+		self.mg34.ads_speed = 0.580
+		self.mg34.damage_falloff = {
+			start_dist = 2500,
+			end_dist = 5000,
+			min_mult = 0.6666
+		}
+		self.mg34.stats = {
+			damage = 45,
+			spread = 65,
+			recoil = 67,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 18,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.mg34.stats_modifiers = nil
+		self.mg34.panic_suppression_chance = 0.05
+		self.mg34.reload_speed_multiplier = 1
+		self.mg34.timers.reload_exit_empty = 1.65
+		self.mg34.timers.reload_exit_not_empty = 1.65
+	end	
+
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 	-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality, those are fine) then it's a no-go for now
 	if self.owen then -- Silent Enforcer's Owen Gun
@@ -15734,6 +15821,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Automatically generate reasonableish stats for custom weapons.
 	--Someone please help me fix this for the new stat indexes -DMC
 	for i, weap in pairs(self) do
+
 		if weap.categories and weap.stats then
 			if not weap.supported then
 				weap.always_play_anims = true
@@ -15914,7 +16002,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 				end
 			end
-	
+
 			if restoration.Options:GetValue("OTHER/WeaponHandling/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
 					weap.FIRE_MODE = "auto"

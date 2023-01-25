@@ -2059,6 +2059,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.015, -1.2, -2.755)
 			}
 
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
+				translation = Vector3(0, 8.6, -3.36)
+			}
+
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar18 = {
 				translation = Vector3(0.012, 5, -3.525)
 			}
@@ -2075,8 +2079,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.045, 4, -2.3),
 				rotation = Rotation(-0.15, 0, 0)
 			}
+
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_fg42 = {
 				translation = Vector3(0.045, 5.7, -3.092)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg34 = {
+				translation = Vector3(-0.004, 13.5, -3.01 ),
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
@@ -26641,7 +26649,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_quad100.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
 	end
 
-	if self.parts.wpn_fps_ass_ar18_barrel then
+	if self.parts.wpn_fps_ass_ar18_barrel then --Pawcio's AR18
 
 		self.parts.wpn_fps_upg_ar18_barrel_long.supported = true
 		self.parts.wpn_fps_upg_ar18_barrel_long.stats = deep_clone(barrels.long_b2_stats)
@@ -26712,7 +26720,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_ar18_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar18.uses_parts)
 	end
 
-	if self.parts.wpn_fps_upg_g19_fire_selector then
+	if self.parts.wpn_fps_upg_g19_fire_selector then --Pawcio's Glock 19
 
 		self.parts.wpn_fps_upg_g19_grip_ctc.supported = true
 		self.parts.wpn_fps_upg_g19_grip_ctc.stats = {
@@ -26866,7 +26874,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_svd_upg_s_draco.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 	end
 
-	if self.parts.wpn_fps_lmg_fg42_frame_std then
+	if self.parts.wpn_fps_lmg_fg42_frame_std then --Killerwolf's FG42
 
 		self.parts.wpn_fps_lmg_fg42_bp_std.supported = true
 		self.parts.wpn_fps_lmg_fg42_bp_std.stats = { value = 0 }
@@ -27019,6 +27027,48 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 		self.wpn_fps_lmg_fg42_npc.override = deep_clone(self.wpn_fps_lmg_fg42.override)
 		self.wpn_fps_lmg_fg42_npc.adds = deep_clone(self.wpn_fps_lmg_fg42.adds)
+
+	end
+
+	if self.parts.wpn_fps_lmg_mg34_rec then --Silent Enforcer's MG34
+
+		self.parts.wpn_fps_lmg_mg34_rec.visibility = nil
+		self.parts.wpn_fps_lmg_mg34_rec.adds = {
+			"wpn_fps_lmg_mg34_o_rail",
+			"wpn_fps_lmg_mg34_irons_down"
+		}
+		self.parts.wpn_fps_lmg_mg34_lid.visibility = nil
+		self.parts.wpn_fps_lmg_mg34_lid.adds = nil
+		self.parts.wpn_fps_lmg_mg34_mag.visibility = nil
+		self.parts.wpn_fps_lmg_mg34_mag.adds = nil
+
+		self.parts.wpn_fps_lmg_mg34_m_double.supported = true
+		self.parts.wpn_fps_lmg_mg34_m_double.stats = {
+			value = 10,
+			extra_ammo = 25,
+			concealment = -4,
+			reload = 3
+		}
+		self.parts.wpn_fps_lmg_mg34_m_double.custom_stats = {
+			ads_speed_mult = 1.1
+		}
+		self.parts.wpn_fps_lmg_mg34_m_double.visibility = nil
+		self.parts.wpn_fps_lmg_mg34_m_double.adds = nil
+
+		self.parts.wpn_fps_lmg_mg34_irons_air.supported = true
+		self.parts.wpn_fps_lmg_mg34_irons_air.stats = { value = 0 }
+
+		self.parts.wpn_fps_lmg_mg34_irons_up.supported = true
+		self.parts.wpn_fps_lmg_mg34_irons_up.stats = { value = 0 }
+		self.parts.wpn_fps_lmg_mg34_irons_up.stance_mod = {
+			wpn_fps_lmg_mg34 = {
+				translation = Vector3(-0.02, 0, -0.15)
+			}
+		}
+
+		self.wpn_fps_lmg_mg34.override = self.wpn_fps_lmg_mg34.override or {}
+		self.wpn_fps_lmg_mg34.override.wpn_fps_upg_o_hamr_reddot = { parent="upper_reciever" }
+		self.wpn_fps_lmg_mg34.override.wpn_fps_upg_o_atibal_reddot = { parent="upper_reciever" }
 
 	end
 
@@ -27775,7 +27825,6 @@ if self.wpn_fps_smg_ak5s then
 	self.parts.wpn_fps_pis_m1911_sl_match.override = {
 		wpn_fps_pis_m1911_sl_standard_classic_dots = {unit="units/mods/weapons/wpn_fps_pis_m1911_pts/wpn_fps_pis_m1911_sl_match_classic_dots"}
 	}
-
 end
 end)
 
@@ -27784,6 +27833,11 @@ if self.wpn_fps_ass_aknato then
 end
 end)
 
+--Override Silent Enforcer's stance_mod data
+Hooks:PostHook( WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
+end )
+Hooks:PostHook( WeaponFactoryTweakData, "init", "fort500Init", function(self)
+end )
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then

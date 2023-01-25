@@ -15628,14 +15628,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 	
 	if self.mg34 then -- Silent Enforcer's MG34
-		self.mg34.sms = 0.75
-		self.mg34.damage_type = "machine_gun"
-		self.mg34.weapon_movement_penalty = 0.75
+		self.mg34.recategorize = { "heavy_mg" }
 		self.mg34.categories = {
 			"lmg",
 			"smg",
 			"mmg"
 		}
+		self.mg34.damage_type = "machine_gun"
 		self.mg34.CLIP_AMMO_MAX = 50
 		self.mg34.BURST_FIRE = false
 		self.mg34.CAN_TOGGLE_FIREMODE = true
@@ -15668,6 +15667,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.mg34.stats_modifiers = nil
 		self.mg34.panic_suppression_chance = 0.05
+		self.mg34.sms = 0.75
+		self.mg34.weapon_movement_penalty = 0.75
 		self.mg34.reload_speed_multiplier = 1
 		self.mg34.timers.reload_exit_empty = 1.65
 		self.mg34.timers.reload_exit_not_empty = 1.65

@@ -2107,6 +2107,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.045, 4, -2.3),
 				rotation = Rotation(-0.15, 0, 0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_skspug = {
+				translation = Vector3(0, 2.5, -0.68)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_fg42 = {
 				translation = Vector3(0.045, 5.7, -3.092)
@@ -27100,7 +27103,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-
 	if self.parts.wpn_fps_shot_omni_m_standard then --Tangerine's .410 AR
 		self.parts.wpn_fps_snp_tti_fg_rail.adds = nil
 		self.parts.wpn_fps_gas_block.adds = nil
@@ -27159,13 +27161,53 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_m4_uupg_s_fold")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m16_s_fixed")	
-		
+
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sg")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sport")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m16_s_op")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_contraband_s_tecci")
 
 		self.wpn_fps_shot_omni_npc.uses_parts = deep_clone(self.wpn_fps_shot_omni.uses_parts)
+	end
+
+	if self.parts.wpn_fps_ass_skspug_rec then --Pawcio's SKS Pug
+
+		self.parts.wpn_fps_ass_skspug_mag.supported = true
+		self.parts.wpn_fps_ass_skspug_mag.stats = { value = 0 }
+
+		self.parts.wpn_fps_upg_skspug_handguard_short.supported = true
+		self.parts.wpn_fps_upg_skspug_handguard_short.stats = { 
+			value = 5,
+			recoil = -4,
+			concealment = 2
+		}
+
+		self.parts.wpn_fps_upg_skspug_stock_ext.supported = true
+		self.parts.wpn_fps_upg_skspug_stock_ext.stats = { 
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_upg_skspug_barrel_long.supported = true
+		self.parts.wpn_fps_upg_skspug_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_skspug_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_skspug_barrel_short.supported = true
+		self.parts.wpn_fps_upg_skspug_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_skspug_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.parts.wpn_fps_upg_skspug_mag_30.supported = true
+		self.parts.wpn_fps_upg_skspug_mag_30.stats = { 
+			value = 2,
+			extra_ammo = 10,
+			reload = -3,
+			concealment = -1
+		}
+		self.parts.wpn_fps_upg_skspug_mag_30.custom_stats = { 
+			ads_speed_mult = 0.975
+		}
+
 	end
 
 --Resmod Custom Weapon stuff

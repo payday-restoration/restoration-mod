@@ -13950,6 +13950,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.timers.reload_exit_empty = 0.6
 	end
 
+	if self.skspug then
+		self.skspug.categories = { 
+			"assault_rifle"
+		}
+		self.skspug.recategorize = {"dmr_ar"}
+		self.skspug.damage_type = "sniper"
+		self.skspug.AMMO_MAX = 40
+		self.skspug.CLIP_AMMO_MAX = 20
+		self.skspug.tactical_reload = 1
+		self.skspug.FIRE_MODE = "single"
+		self.skspug.fire_mode_data = {}
+		self.skspug.fire_mode_data.fire_rate = 0.12
+		self.skspug.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.skspug.supported = true
+		self.skspug.ads_speed = 0.300
+		self.skspug.damage_falloff = {
+			start_dist = 2300,
+			end_dist = 5000,
+			min_mult = 0.4
+		}
+		self.skspug.stats = {
+			damage = 45,
+			spread = 83,
+			recoil = 71,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 26,
+			suppression = 8,
+			alert_size = 1,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.skspug.stats_modifiers = nil
+		self.skspug.can_shoot_through_enemy = true
+		self.skspug.panic_suppression_chance = 0.05
+		self.skspug.timers = deep_clone(self.basset.timers)
+	end
+
 	if self.vss then
 		self.vss.categories = { 
 			"assault_rifle",
@@ -13965,7 +14005,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vss.tactical_reload = 1
 		self.vss.FIRE_MODE = "single"
 		self.vss.fire_mode_data = {}
-		self.vss.fire_mode_data.fire_rate = 0.075
+		self.vss.fire_mode_data.fire_rate = 0.12
 		self.vss.CAN_TOGGLE_FIREMODE = true
 		self.vss.kick = self.stat_info.kick_tables.moderate_kick
 		self.vss.supported = true

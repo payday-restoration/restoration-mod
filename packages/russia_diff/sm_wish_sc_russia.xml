@@ -123,35 +123,27 @@
 	<material_config	path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4_contour" />
 
-	<!--Akan HRT-->
-	<unit  				path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1" load="true" force="false"/>
-	<unit  				path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1_husk" load="true" force="false"/>
-	<material_config 	path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1"/>
-	<material_config 	path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1_contour"/>
-	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1"/>
-	<model 				path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1"/>
-	<object 			path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1"/>
-	<texture 			path="units/pd2_mod_reapers/characters/ene_fbi_1/security_winter_df"/>
-	<texture 			path="units/pd2_mod_reapers/characters/ene_fbi_1/ene_soldier_akan_head3_df"/>
-
-	<unit  				path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2" load="true" force="false"/>
-	<unit  				path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2_husk" load="true" force="false"/>
-	<material_config 	path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"/>
-	<material_config 	path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2_contour"/>
-	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"/>
-	<model 				path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"/>
-	<object 			path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"/>
-	<texture 			path="units/pd2_mod_reapers/characters/ene_fbi_2/ene_soldier_akan_head6_df"/>
-
-	<unit 				path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3" load="true" force="false"/>
-	<unit 				path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3_husk" load="true" force="false"/>	
-	<material_config 	path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"/>
-	<material_config 	path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3_contour"/>	
-	<object 			path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3" />
-	<model 				path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3" />	
-	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"/>	
-	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/head_atlas_df" force="false"/>
-	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/head_atlas_nm" force="false"/>	
+	<!--DRAK HRT-->
+	<unit  				path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1" load="true" force="false"/>
+	<unit  				path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1_husk" load="true" force="false"/>
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1_contour"/>
+	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	<model 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	<object 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	
+	<unit 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2" load="true"/>
+	<unit 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2_husk" load="true"/>	
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2_contour"/>	
+	<object 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>
+	<model 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>	
+	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>
+	
+	<texture 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/drak_fbi_rifle_df"/>
+	<texture 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/drak_fbi_head_df"/>
+	<texture 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/heads_atlas_hrt_df" force="true"/>
+	
 	
 	<!-- reaper zeal tier-->
 	<!--sexy ass helmets-->

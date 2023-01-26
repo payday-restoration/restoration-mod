@@ -3300,12 +3300,12 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),				
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),				
 					Idstring("units/pd2_mod_reapers/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
 					Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},
@@ -3986,9 +3986,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),	
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),						
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),	
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),						
 					Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 				},
 				zombie = {
@@ -11274,9 +11274,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),	
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),	
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),							
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),	
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),	
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),							
 				Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 			},
 			zombie = {
@@ -11339,12 +11339,12 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-				Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),					
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+				Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),					
 				Idstring("units/pd2_mod_reapers/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
 				Idstring("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 			},

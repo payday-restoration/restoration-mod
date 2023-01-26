@@ -16,6 +16,8 @@ ModifierCloakerTearGas.titanhrt = {
 ModifierCloakerTearGas.titanocelot = {
 	Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2"),
 	Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
+	Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+	Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"),
 	Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
 	Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")
 }

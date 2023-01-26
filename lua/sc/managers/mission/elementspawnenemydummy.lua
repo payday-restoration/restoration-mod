@@ -3271,8 +3271,8 @@ local russia_drak = {
 		
 		--hrt  
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_reapers/characters/ene_akan_veteran_2/ene_akan_veteran_2",
-		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2",
-		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3",
+		["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1",
+		["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2",
 	
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",

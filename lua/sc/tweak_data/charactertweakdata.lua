@@ -18478,6 +18478,8 @@ function CharacterTweakData:character_map()
 				"ene_fbi_1",
 				"ene_fbi_2",
 				"ene_fbi_3",
+				"ene_drak_hrt_1",
+				"ene_drak_hrt_2",
 				"ene_akan_veteran_1",
 				"ene_akan_veteran_2",
 				"ene_akan_veteran_subject",

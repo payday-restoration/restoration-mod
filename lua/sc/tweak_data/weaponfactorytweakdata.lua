@@ -27154,12 +27154,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_rip = a_rip_auto_override
 		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing = a_piercing_auto_override
 		self.wpn_fps_shot_omni.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
-		
+
 		self.wpn_fps_shot_omni_npc.override = deep_clone(self.wpn_fps_shot_omni.override)
 
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_m4_uupg_s_fold")
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m16_s_fixed")	
+		
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sg")
 		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_g_sport")
-		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m4_s_russian")
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_m16_s_op")
+		table.insert(self.wpn_fps_shot_omni.uses_parts, "wpn_fps_ass_contraband_s_tecci")
 
 		self.wpn_fps_shot_omni_npc.uses_parts = deep_clone(self.wpn_fps_shot_omni.uses_parts)
 	end

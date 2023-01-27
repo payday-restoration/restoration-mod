@@ -363,37 +363,37 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
 tweak_data.projectiles.west_arrow_exp.damage = 48
-tweak_data.projectiles.bow_poison_arrow.damage = 20
+tweak_data.projectiles.bow_poison_arrow.damage = 18
 
 --Hunter crossbow--
 tweak_data.projectiles.crossbow_arrow.damage = 24
 tweak_data.projectiles.crossbow_arrow_exp.damage = 48
-tweak_data.projectiles.crossbow_poison_arrow.damage = 20
+tweak_data.projectiles.crossbow_poison_arrow.damage = 18
 
 --Arblast Heavy Crossbow--
 tweak_data.projectiles.arblast_arrow.damage = 36
 tweak_data.projectiles.arblast_arrow_exp.damage = 60
-tweak_data.projectiles.arblast_poison_arrow.damage = 30
+tweak_data.projectiles.arblast_poison_arrow.damage = 24
 
 --Franken fish--
 tweak_data.projectiles.frankish_arrow.damage = 24
 tweak_data.projectiles.frankish_arrow_exp.damage = 48
-tweak_data.projectiles.frankish_poison_arrow.damage = 20
+tweak_data.projectiles.frankish_poison_arrow.damage = 18
 
 --BOWMEN, FORM UP--
 tweak_data.projectiles.long_arrow.damage = 36
 tweak_data.projectiles.long_arrow_exp.damage = 60
-tweak_data.projectiles.long_poison_arrow.damage = 30
+tweak_data.projectiles.long_poison_arrow.damage = 24
 
 --le happy merchant--
 tweak_data.projectiles.ecp_arrow.damage = 18
 tweak_data.projectiles.ecp_arrow_exp.damage = 36
-tweak_data.projectiles.ecp_arrow_poison.damage = 14
+tweak_data.projectiles.ecp_arrow_poison.damage = 12
 
 --The not longbow--
 tweak_data.projectiles.elastic_arrow.damage = 36
 tweak_data.projectiles.elastic_arrow_exp.damage = 60
-tweak_data.projectiles.elastic_arrow_poison.damage = 30
+tweak_data.projectiles.elastic_arrow_poison.damage = 24
 
 --GRENADE OUT--
 tweak_data.projectiles.frag.damage = 80
@@ -664,63 +664,93 @@ for i, proj_id in ipairs(velocity) do
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
 
-velocity_mult = 0.75
+velocity_mult = 0.8
 velocity = {
-	'west_arrow','bow_poison_arrow',
-	'crossbow_arrow','crossbow_poison_arrow',
-	'frankish_arrow','frankish_poison_arrow'
+	'west_arrow',
+	'crossbow_arrow',
+	'frankish_arrow'
 }
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+	velocity = {
+		'bow_poison_arrow',
+		'crossbow_poison_arrow',
+		'frankish_poison_arrow'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+	velocity = {
+		'west_arrow_exp',
+		'crossbow_arrow_exp',
+		'frankish_arrow_exp'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+
 velocity = {
-	'west_arrow_exp',
-	'crossbow_arrow_exp',
-	'frankish_arrow_exp'
-}
-for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.5
-	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
-	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
-end
-velocity = {
-	'long_arrow','long_poison_arrow',
-	'arblast_arrow','arblast_poison_arrow'
+	'long_arrow',
+	'arblast_arrow'
 }
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+	velocity = {
+		'long_poison_arrow',
+		'arblast_poison_arrow'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+	velocity = {
+		'long_arrow_exp',
+		'arblast_arrow_exp'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+
 velocity = {
-	'long_arrow_exp',
-	'arblast_arrow_exp'
-}
-for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.5
-	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
-	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
-end
-velocity = {
-	'elastic_arrow','elastic_arrow_poison',
-	'ecp_arrow','ecp_arrow_poison'
+	'elastic_arrow',
+	'ecp_arrow'
 }
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
-velocity = {
-	'elastic_arrow_exp',
-	'ecp_arrow_exp'
-}
-for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult
-	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
-	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
-end
+	velocity = {
+		'elastic_arrow_poison',
+		'ecp_arrow_poison'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+	velocity = {
+		'elastic_arrow_exp',
+		'ecp_arrow_exp'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
 
 velocity = {
 	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade','sticky_grenade',

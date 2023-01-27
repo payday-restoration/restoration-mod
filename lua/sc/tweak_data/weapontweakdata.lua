@@ -11249,7 +11249,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						"clip_ammo_increase"
 					}
 				}		
-				self.china.desc_id = "bm_40mm_weapon_sc_desc"
+				self.china.desc_id = "bm_w_china_sc_desc"
 				self.china.has_description = true
 				self.china.fire_mode_data.fire_rate = 1.3
 				self.china.fire_rate_multiplier = 0.75
@@ -13154,8 +13154,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_czevo.use_data.selection_index = 5 
 	end	
 
+	if self.akm_nomag then --Leather Dann's Early Access AK
+		self.akm_nomag.warsaw = true
+		self.akm_nomag.recategorize = { "heavy_ar" }
+		self.akm_nomag.has_description = false
+		self.akm_nomag.AMMO_MAX = 120
+		self.akm_nomag.fire_mode_data.fire_rate = 0.1
+		self.akm_nomag.kick = self.stat_info.kick_tables.moderate_right_kick		
+		self.akm_nomag.supported = true
+		self.akm_nomag.ads_speed = 0.300
+		self.akm_nomag.damage_falloff = {
+			start_dist = 2800,
+			end_dist = 5000,
+			min_mult = 0.6
+		}
+		self.akm_nomag.stats = {
+			damage = 30,
+			spread = 77,
+			recoil = 73,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 29,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.akm_nomag.stats_modifiers = nil
+		self.akm_nomag.reload_speed_multiplier = 1.3
+		self.akm_nomag.panic_suppression_chance = 0.05
+		self.akm_nomag.timers.reload_exit_not_empty = 0.7
+		self.akm_nomag.timers.reload_exit_empty = 0.7
+	end
 
-	
 	if self.tingledingle then --Zdanns's TBP
 		self.tingledingle.bmp = 999999
 		self.tingledingle.no_auto_anims = true		
@@ -13285,7 +13318,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 86,
 			recoil = 85,
 			zoom = 1,
-			concealment = 18,
+			concealment = 20,
 			alert_size = 2,
 			suppression = 6,
 			extra_ammo = 101,
@@ -13301,6 +13334,39 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.raygun.panic_suppression_chance = 0.05
 		self.raygun.timers.reload_exit_not_empty = 0.7
 		self.raygun.timers.reload_exit_empty = 0.7
+	end
+
+	if self.umd_launcher then --Leather Dann's UMD Launcher
+		self.umd_launcher.categories = {
+			"grenade_launcher",
+			"gl_pistol",
+			"raygun"
+		}
+		self.umd_launcher.AMMO_MAX = 6
+		self.umd_launcher.supported = true
+		self.umd_launcher.fire_mode_data.fire_rate = 0.5
+		self.umd_launcher.ads_speed = 0.200
+		self.umd_launcher.stats = {
+			damage = 60,
+			spread = 91,
+			recoil = 85,
+			zoom = 1,
+			concealment = 28,
+			alert_size = 2,
+			suppression = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 10
+		}
+		self.umd_launcher.recoil_values = {
+			{ 90, 60 },
+			8,
+			1
+		}
+		self.umd_launcher.panic_suppression_chance = 0.05
+		self.umd_launcher.timers.reload_exit_not_empty = 0.7
+		self.umd_launcher.timers.reload_exit_empty = 0.7
 	end
 
 

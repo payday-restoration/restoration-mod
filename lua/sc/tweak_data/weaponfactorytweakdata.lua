@@ -2098,6 +2098,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.0015, 10, -0.675),
 				rotation = Rotation(0, 0, -0.5),
 			}
+	
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm_nomag = {
+				translation = Vector3(-0.006, -2, -3.04)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
 				translation = Vector3(0.01, 2, -0.2),
@@ -3936,6 +3940,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 			translation = Vector3(-0.006, -2, -3.145)
 		},
 		wpn_fps_ass_74 = {
+			translation = Vector3(-0.006, -2, -3.145)
+		},
+
+
+		wpn_fps_ass_akm_nomag = {
 			translation = Vector3(-0.006, -2, -3.145)
 		}
 	}
@@ -8175,8 +8184,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
 	}
 
-	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")
-	table.insert(self.wpn_fps_ass_famas_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")		
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")	
 
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)	
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
@@ -10553,6 +10561,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		},
 		wpn_fps_ass_74 = {
 			translation = Vector3(-0.006, -2, -3.745)
+		},
+
+		wpn_fps_ass_akm_nomag = {
+			translation = Vector3(-0.006, -2, -3.745)
 		}
 	}
 	self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_specter_piggyback = {}
@@ -10645,6 +10657,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 			translation = Vector3(-0.006, -2, -3.745)
 		},
 		wpn_fps_ass_74 = {
+			translation = Vector3(-0.006, -2, -3.745)
+		},
+
+		wpn_fps_ass_akm_nomag = {
 			translation = Vector3(-0.006, -2, -3.745)
 		}
 	}
@@ -10868,6 +10884,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	}
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_akmsu = {
 		translation = Vector3(-0.005, 15.5, -4.34)
+	}
+
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm_nomag = {
+		translation = Vector3(-0.005, 15.5, -4.6)
 	}
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter_piggyback = {}
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod)
@@ -11995,6 +12015,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_plainsrider", "resmod_plainsrider"
 
 	--Explosive Arrows
 	self.parts.wpn_fps_upg_a_bow_explosion.pcs = {}
+	self.parts.wpn_fps_upg_a_bow_explosion.has_description = true
+	self.parts.wpn_fps_upg_a_bow_explosion.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_upg_a_bow_explosion.supported = true
 	self.parts.wpn_fps_upg_a_bow_explosion.stats = {damage = 60, total_ammo_mod = -50, spread = -6}
 	self.parts.wpn_fps_upg_a_bow_explosion.custom_stats = {
@@ -12007,13 +12029,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_plainsrider", "resmod_plainsrider"
 	
 	--Poisoned Arrows
 	self.parts.wpn_fps_upg_a_bow_poison.pcs = {}
+	self.parts.wpn_fps_upg_a_bow_poison.has_description = true
+	self.parts.wpn_fps_upg_a_bow_poison.desc_id = "bm_w_bow_light_poison_desc"
 	self.parts.wpn_fps_upg_a_bow_poison.supported = true
-	self.parts.wpn_fps_upg_a_bow_poison.stats = {damage = -10, total_ammo_mod = 0}
+	self.parts.wpn_fps_upg_a_bow_poison.stats = {damage = -15}
 	self.parts.wpn_fps_upg_a_bow_poison.custom_stats = {
 		launcher_grenade = "bow_poison_arrow",
 		dot_data = {
 			type = "poison",
-			custom_data = {dot_length = nil, hurt_animation_chance = nil}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 6.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.6
+			}
 		}
 	}
 
@@ -12547,20 +12576,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 
 	--Poisoned Bolts
 	self.parts.wpn_fps_upg_a_crossbow_poison.pcs = {}
+	self.parts.wpn_fps_upg_a_crossbow_poison.has_description = true
+	self.parts.wpn_fps_upg_a_crossbow_poison.desc_id = "bm_w_xbow_light_poison_desc"
 	self.parts.wpn_fps_upg_a_crossbow_poison.supported = true
-	self.parts.wpn_fps_upg_a_crossbow_poison.stats = {damage = -20, total_ammo_mod = 0}
+	self.parts.wpn_fps_upg_a_crossbow_poison.stats = {damage = -30}
 	self.parts.wpn_fps_upg_a_crossbow_poison.is_a_unlockable = true
 	self.parts.wpn_fps_upg_a_crossbow_poison.custom_stats = {
 		launcher_grenade = "crossbow_poison_arrow",
 		dot_data = {
 			type = "poison",
-			custom_data = {dot_length = nil, hurt_animation_chance = nil}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 6.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.6
+			}
 		}
 	}
 	
 	--Explosive Bolts
 	self.parts.wpn_fps_upg_a_crossbow_explosion.pcs = {}
 	self.parts.wpn_fps_upg_a_crossbow_explosion.supported = true
+	self.parts.wpn_fps_upg_a_crossbow_explosion.has_description = true
+	self.parts.wpn_fps_upg_a_crossbow_explosion.desc_id = "bm_w_xbow_exp_desc"
 	self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 120, total_ammo_mod = -50, spread = -8, recoil = -4}
 	self.parts.wpn_fps_upg_a_crossbow_explosion.custom_stats = {
 		alt_desc = "bm_xbow_exp_sc_desc",
@@ -12660,19 +12698,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_arblast", "resmod_arblast", functi
 	
 	--Poison Bolt
 	self.parts.wpn_fps_bow_arblast_m_poison.pcs = {}
+	self.parts.wpn_fps_bow_arblast_m_poison.has_description = true
+	self.parts.wpn_fps_bow_arblast_m_poison.desc_id = "bm_w_xbow_heavy_poison_desc"
 	self.parts.wpn_fps_bow_arblast_m_poison.supported = true
-	self.parts.wpn_fps_bow_arblast_m_poison.stats = {damage = -15}
+	self.parts.wpn_fps_bow_arblast_m_poison.stats = {damage = -30}
 	self.parts.wpn_fps_bow_arblast_m_poison.custom_stats = {
 		launcher_grenade = "arblast_poison_arrow",
 		dot_data = {
 			type = "poison",
-			custom_data = {dot_length = nil, hurt_animation_chance = nil}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 8.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.8
+			}
 		}
 	}
 	
 	--Explosive Bolt
 	self.parts.wpn_fps_bow_arblast_m_explosive.pcs = {}
 	self.parts.wpn_fps_bow_arblast_m_explosive.supported = true
+	self.parts.wpn_fps_bow_arblast_m_explosive.has_description = true
+	self.parts.wpn_fps_bow_arblast_m_explosive.desc_id = "bm_w_xbow_exp_desc"
 	self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3, recoil = -6}
 	self.parts.wpn_fps_bow_arblast_m_explosive.custom_stats = {
 		alt_desc = "bm_xbow_exp_sc_desc",
@@ -12690,18 +12737,27 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 	--Poison Bolt
 	self.parts.wpn_fps_bow_frankish_m_poison.pcs = {}
 	self.parts.wpn_fps_bow_frankish_m_poison.supported = true
-	self.parts.wpn_fps_bow_frankish_m_poison.stats = {damage = -10}
+	self.parts.wpn_fps_bow_frankish_m_poison.has_description = true
+	self.parts.wpn_fps_bow_frankish_m_poison.desc_id = "bm_w_xbow_light_poison_desc"
+	self.parts.wpn_fps_bow_frankish_m_poison.stats = {damage = -15}
 	self.parts.wpn_fps_bow_frankish_m_poison.custom_stats = {
 		launcher_grenade = "frankish_poison_arrow",
 		dot_data = {
 			type = "poison",
-			custom_data = {dot_length = nil, hurt_animation_chance = nil}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 6.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.6
+			}
 		}
 	}
 	
 	--Explosive Bolt
 	self.parts.wpn_fps_bow_frankish_m_explosive.pcs = {}
 	self.parts.wpn_fps_bow_frankish_m_explosive.supported = true
+	self.parts.wpn_fps_bow_frankish_m_explosive.has_description = true
+	self.parts.wpn_fps_bow_frankish_m_explosive.desc_id = "bm_w_xbow_exp_desc"
 	self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -50, spread = -6, recoil = -6}
 	self.parts.wpn_fps_bow_frankish_m_explosive.custom_stats = {
 		alt_desc = "bm_xbow_exp_sc_desc",
@@ -12719,6 +12775,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_long", "resmod_long", function(sel
 	--Explosive Arrow
 	self.parts.wpn_fps_bow_long_m_explosive.pcs = {}
 	self.parts.wpn_fps_bow_long_m_explosive.supported = true
+	self.parts.wpn_fps_bow_long_m_explosive.has_description = true
+	self.parts.wpn_fps_bow_long_m_explosive.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_bow_long_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3}
 	self.parts.wpn_fps_bow_long_m_explosive.custom_stats = {
 		alt_desc = "bm_bow_exp_sc_desc",
@@ -12731,12 +12789,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_long", "resmod_long", function(sel
 	--Poison Arrow
 	self.parts.wpn_fps_bow_long_m_poison.pcs = {}
 	self.parts.wpn_fps_bow_long_m_poison.supported = true
-	self.parts.wpn_fps_bow_long_m_poison.stats = {damage = -15}
+	self.parts.wpn_fps_bow_long_m_poison.has_description = true
+	self.parts.wpn_fps_bow_long_m_poison.desc_id = "bm_w_bow_heavy_poison_desc"
+	self.parts.wpn_fps_bow_long_m_poison.stats = {damage = -30}
 	self.parts.wpn_fps_bow_long_m_poison.custom_stats = {
 		launcher_grenade = "long_poison_arrow",
 		dot_data = {
 			type = "poison",
-			custom_data = {dot_length = nil, hurt_animation_chance = nil}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 8.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.8
+			}
 		}
 	}
 
@@ -14926,7 +14991,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 		"wpn_fps_upg_m4_g_hgrip",
 		"wpn_fps_upg_m4_g_mgrip",
 		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_g_m4_surgeon"
+		"wpn_fps_upg_g_m4_surgeon",
+		"wpn_fps_m4_uupg_g_billet",
+		"wpn_fps_snp_victor_g_mod3",
 	}
 
 
@@ -14974,6 +15041,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 	--Explosive Arrows
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.is_a_unlockable = true
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.pcs = {}
+	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.has_description = true
+	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.supported = true
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.stats = {
 		damage = 45, 
@@ -14992,20 +15061,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 	--Poison Arrow
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison.is_a_unlockable = true
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison.pcs = {}
+	self.parts.wpn_fps_bow_ecp_m_arrows_poison.has_description = true
+	self.parts.wpn_fps_bow_ecp_m_arrows_poison.desc_id = "bm_w_airbow_poison_desc"
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison.supported = true
-	self.parts.wpn_fps_bow_ecp_m_arrows_poison.stats = {damage = -10}
+	self.parts.wpn_fps_bow_ecp_m_arrows_poison.stats = {damage = -15}
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison.custom_stats = {
 		launcher_grenade = "ecp_arrow_poison",
 		dot_data = {
 			type = "poison",
-			custom_data = {}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 4.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.4
+			}
 		}
 	}
 
-
-	if not self.wpn_fps_bow_ecp.override then
-		self.wpn_fps_bow_ecp.override = {}
-	end
+	self.wpn_fps_bow_ecp.override = self.wpn_fps_bow_ecp.override or {}
 
 	self.wpn_fps_bow_ecp.override.wpn_fps_upg_m4_g_ergo = { 
 		forbids = {
@@ -15044,6 +15117,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 		}
 	}
 	self.wpn_fps_bow_ecp.override.wpn_fps_ass_m4_g_fancy = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_m4_uupg_g_billet = { 
+		forbids = {
+			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_bow_ecp_s_bare_grip"
+		}
+	}
+	self.wpn_fps_bow_ecp.override.wpn_fps_snp_victor_g_mod3 = { 
 		forbids = {
 			"wpn_fps_upg_m4_g_standard_vanilla",
 			"wpn_fps_bow_ecp_s_bare_grip"
@@ -15760,6 +15845,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_elastic", "resmod_elastic", functi
 	
 	--Explosive Arrows
 	self.parts.wpn_fps_bow_elastic_m_explosive.pcs = {}
+	self.parts.wpn_fps_bow_elastic_m_explosive.has_description = true
+	self.parts.wpn_fps_bow_elastic_m_explosive.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_bow_elastic_m_explosive.supported = true
 	self.parts.wpn_fps_bow_elastic_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3}
 	self.parts.wpn_fps_bow_elastic_m_explosive.custom_stats = {
@@ -15772,13 +15859,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_elastic", "resmod_elastic", functi
 	
 	--Poison Arrows
 	self.parts.wpn_fps_bow_elastic_m_poison.pcs = {}
+	self.parts.wpn_fps_bow_elastic_m_poison.has_description = true
+	self.parts.wpn_fps_bow_elastic_m_poison.desc_id = "bm_w_bow_heavy_poison_desc"
 	self.parts.wpn_fps_bow_elastic_m_poison.supported = true
-	self.parts.wpn_fps_bow_elastic_m_poison.stats = {damage = -15, total_ammo_mod = 0}
+	self.parts.wpn_fps_bow_elastic_m_poison.stats = {damage = -30}
 	self.parts.wpn_fps_bow_elastic_m_poison.custom_stats = {
 		launcher_grenade = "elastic_arrow_poison",
 		dot_data = {
 			type = "poison",
-			custom_data = {}
+			custom_data = {
+				dot_damage = 1.5,
+				dot_length = 8.1, 
+				dot_tick_period = 0.5,
+				hurt_animation_chance = 0.8
+			}
 		}
 	}
 
@@ -19112,6 +19206,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		},
 		wpn_fps_smg_akmsu = {
 			translation = Vector3(-0.005, 15.5, -4.34)
+		},
+
+		wpn_fps_ass_akm_nomag = {
+			translation = Vector3(-0.005, 15.5, -4.6)
 		}
 	}
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter_piggyback = {}
@@ -20018,6 +20116,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						self[factory_id].override = self[factory_id].override or {}
 						self[factory_id].override.wpn_fps_ass_galil_s_skeletal = {
 							stats = deep_clone(stocks.nocheeks_to_folder_stats),
 							custom_stats = deep_clone(stocks.nocheeks_to_folder_stats),
@@ -27208,6 +27307,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ads_speed_mult = 0.975
 		}
 
+	end
+
+	if self.parts.wpn_upg_ak_m_akm_nomag then
+
+		self.wpn_fps_ass_akm_nomag.stock_adapter = "wpn_upg_ak_s_adapter"
+		self.wpn_fps_ass_akm_nomag.stock_adapter = "wpn_upg_ak_s_adapter"
+		self.wpn_fps_ass_akm_nomag.override = self.wpn_fps_ass_akm_nomag.override or {}
+	
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_upg_m4_s_standard = {
+			stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_dual_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_upg_m4_s_pts = {
+			stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_sho_sko12_stock = {
+			stats = deep_clone(stocks.nocheeks_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_upg_m4_s_crane = {
+			stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_upg_m4_s_mk46 = {
+			stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_snp_victor_s_mod0 = {
+			stats = deep_clone(stocks.nocheeks_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_upg_m4_s_ubr = {
+			stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc1_rec2_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_snp_tti_s_vltor = {
+			stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_hvy_acc2_rec1_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_ass_galil_s_sniper = {
+			stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_lmg_rpk_s_standard = {
+			stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+			adds = { "wpn_upg_ak_g_standard" }
+		}
+		self.wpn_fps_ass_akm_nomag.override.wpn_fps_rpg7_sight_adapter = {
+			custom_stats = { big_scope = true }
+		}
+	
+		table.insert(self.wpn_fps_ass_akm_nomag.uses_parts, "wpn_fps_snp_victor_s_mod0")
+		
+		--Plastic Stock
+		table.insert(self.wpn_fps_ass_akm_nomag.uses_parts, "wpn_fps_lmg_rpk_s_standard")
+	
+		self.wpn_fps_ass_akm_nomag_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm_nomag.uses_parts)
 	end
 
 --Resmod Custom Weapon stuff

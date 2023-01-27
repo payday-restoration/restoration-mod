@@ -153,7 +153,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["rr_per_weapon"] = "Weapon specific",
 			["rr_full"] = "Full",
 		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
-		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with a fire selector start off on full-auto.",
+		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
@@ -1817,7 +1817,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--GL40		
 		["bm_w_gre_m79"] = "GL-40",
-		["bm_w_gre_m79_sc_desc"] = "A thump and a boom.\n\nPress #{skill_color}#$BTN_GADGET## to flip the leaf sight up/down.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
+		["bm_w_gre_m79_sc_desc"] = "A thump and a boom.\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
 		--3GL
 		["bm_w_ms3gl"] = "Basilisk 3GL",
 		["bm_ms3gl_sc_desc"] = "Fires custom 40mm rounds superposed in a single chamber. Uses electric primers to fire, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
@@ -1826,6 +1826,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m32_sc_desc"] = "Become a \"#{risk}#War Machine##\", show your enemies that no amount of love will protect them and those near them from this 6-shot rotary grenade launcher.",
 		--China Puff
 		["bm_w_china"] = "China Puff",
+		["bm_w_china_sc_desc"] = "\"This really is a most horrid neighborhood!\"\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
+
 		--Compact 40mm
 		["bm_w_slap"] = "Compact 40mm",
 		--Arbiter
@@ -1863,14 +1865,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
 		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows explode on impact.",
+		["bm_w_bow_exp_desc"] = "Fire arrows that #{risk}#explode## on impact in a #{skill_color}#1.5## meter radius.\n\n#{important_1}#Arrow velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
+		["bm_w_bow_light_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
+		["bm_w_bow_heavy_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_xbow_sc_desc"] = "Bolts can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
 		["bm_xbow_exp_sc_desc"] = "Bolts explode on impact.",
+		["bm_w_xbow_exp_desc"] = "Fire bolts that #{risk}#explode## on impact in a #{skill_color}#1.5## meter radius.\n\n#{important_1}#Bolt velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
+		["bm_w_xbow_light_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
+		["bm_w_xbow_heavy_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 
 		["bm_airbow_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
 		["bm_airbow_exp_sc_desc"] = "Arrows explode on impact.##",
+		["bm_w_airbow_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
-		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to flip the leaf sight up/down.\n\nThe leaf sight is #{risk}#zeroed to 30 meters.##",
+		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
 		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubling the number of pellets.",
 		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",

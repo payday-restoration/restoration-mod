@@ -4094,7 +4094,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 
 
 
-	local blanket_speed_mult = 1.125
+	local blanket_speed_mult = 1.1
 	for melee_id, _ in pairs(self.melee_weapons) do
 		if self.melee_weapons[melee_id] then
 			if not self.melee_weapons[melee_id].instant then

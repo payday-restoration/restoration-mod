@@ -2098,7 +2098,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.0015, 10, -0.675),
 				rotation = Rotation(0, 0, -0.5),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo105_2022 = {
+				translation = Vector3(-0.016, -9.5, -2.787),
+				rotation = Rotation(0, 0, -0.79),
+			}
 	
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
+				translation = Vector3(-0.016, -9.5, -2.787),
+				rotation = Rotation(0, 0, -0.79),
+			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm_nomag = {
 				translation = Vector3(-0.006, -2, -3.04)
 			}
@@ -27370,6 +27378,450 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_ass_akm_nomag.uses_parts, "wpn_fps_lmg_rpk_s_standard")
 	
 		self.wpn_fps_ass_akm_nomag_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm_nomag.uses_parts)
+	end
+	
+	if self.parts.wpn_fps_ass_akilo_2022_optic_rail then --RJC9000 and PlayBONK's MW2022 AKs
+
+		attachment_list = {
+			"wpn_fps_ass_akilo_2022_optic_rail",
+			"wpn_fps_ass_akilo_2022_irons",
+			"wpn_fps_ass_akilo_2022_perk_sleight",
+			"wpn_fps_ass_akilo_2022_barrel",
+			"wpn_fps_ass_akilo_2022_barrel_akilo105",
+			"wpn_fps_ass_akilo_2022_barrel_heavy",
+			"wpn_fps_ass_akilo_2022_barrel_heavy02",
+			"wpn_fps_ass_akilo_2022_barrel_heavy_long",
+			"wpn_fps_ass_akilo_2022_barrel_heavy_short",
+			"wpn_fps_ass_akilo_2022_barrel_rkilo",
+			"wpn_fps_ass_akilo_2022_barrel_heavy_rkilo",
+			"wpn_fps_ass_akilo_2022_barrel_light_akilo74",
+			"wpn_fps_ass_akilo_2022_barrel_light_short_akilo74",
+			"wpn_fps_ass_akilo_2022_barrel_heavy_short_akilo74",
+			"wpn_fps_ass_akilo_2022_magazine",
+			"wpn_fps_ass_akilo_2022_magazine_t9damage",
+			"wpn_fps_ass_akilo_2022_magazine_akilo105",
+			"wpn_fps_ass_akilo_2022_magazine_t9damage_545",
+		}
+
+		for i, part_id in pairs(self.parts) do
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.parts[ part_id ].supported = true
+					self.parts[ part_id ].stats = { value = 0 }
+					self.parts[ part_id ].custom_stats = nil
+				end
+			end
+		end
+
+		self.parts.wpn_fps_ass_akilo_2022_perk_sleight.pcs = nil
+		self.parts.wpn_fps_ass_akilo_2022_handguard_akilo74.pcs = nil
+
+		--Recievers
+			self.parts.wpn_fps_ass_akilo_2022_receiver.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_receiver.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_receiver.custom_stats = {
+				hip_mult = 5
+			}
+			--RPK
+			self.parts.wpn_fps_ass_akilo_2022_receiver_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_receiver_rkilo.stats = {
+				value = 0,
+				spread = 4,
+				recoil = 6,
+				concealment = -7
+			}
+			self.parts.wpn_fps_ass_akilo_2022_receiver_rkilo.custom_stats = {
+				hip_mult = 8,
+				ads_speed_mult = 1.175
+			}
+
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo105.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo105.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo105.custom_stats = {
+				hip_mult = 4
+			}
+			--AKS-74
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo74.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo74.stats = {
+				value = 0,
+				spread = -1,
+				recoil = -2,
+				concealment = 2
+			}
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo74.custom_stats = {
+				ads_speed_mult = 0.95,
+				falloff_start_mult = 0.85,
+				falloff_end_mult = 0.85,
+				hip_mult = 3
+			}
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo74.override.wpn_fps_ass_akilo_2022_barrel_akilo105 = {
+				unit = "units/mods/weapons/wpn_fps_ass_akilo_2022_pts/wpn_fps_ass_akilo_2022_barrel_akilo74"
+			}
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo74.override.wpn_fps_ass_akilo_2022_handguard_akilo105_vanilla = {
+				unit = "units/mods/weapons/wpn_fps_ass_akilo_2022_pts/wpn_fps_ass_akilo_2022_handguard_akilo74"
+			}
+			self.parts.wpn_fps_ass_akilo_2022_receiver_akilo74.forbids = {
+				"wpn_fps_ass_akilo_2022_handguard",
+				"wpn_fps_ass_akilo_2022_handguard_heavy",
+				"wpn_fps_ass_akilo_2022_handguard_heavy02",
+				"wpn_fps_ass_akilo_2022_handguard_heavy_long",
+				"wpn_fps_ass_akilo_2022_handguard_heavy_short"
+			}
+
+		--Grips
+			self.parts.wpn_fps_ass_akilo_2022_grip_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_grip)
+			self.parts.wpn_fps_ass_akilo_2022_grip_vanilla.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_vanilla.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_vanilla.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_grip.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_grip_akilo105)
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105_vanilla.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105_vanilla.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105_vanilla.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_grip_akilo105.custom_stats = nil
+
+			--IVANOV
+			self.parts.wpn_fps_ass_akilo_2022_grip_steady.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_grip_steady.stats = {
+				value = 0,
+				spread = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_akilo_2022_grip_steady.custom_stats = nil
+			--DEMO X2
+			self.parts.wpn_fps_ass_akilo_2022_grip_ass.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_grip_ass.stats = {
+				value = 0,
+				spread = -1,
+				recoil = 2
+			}
+			self.parts.wpn_fps_ass_akilo_2022_grip_ass.custom_stats = nil
+			--True-Tac
+			self.parts.wpn_fps_ass_akilo_2022_grip_tac.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_grip_tac.stats = {
+				value = 0,
+				recoil = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_akilo_2022_grip_tac.custom_stats = { ads_speed_mult = 0.975 }
+
+		--Stocks
+			self.parts.wpn_fps_ass_akilo_2022_stock_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_stock)
+			self.parts.wpn_fps_ass_akilo_2022_stock_vanilla.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_vanilla.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_vanilla.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_akilo_2022_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_stock_akilo105)
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105_vanilla.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105_vanilla.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105_vanilla.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105.stats = { value = 0 }
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo105.custom_stats = nil
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.stats = deep_clone(stocks.fixed_to_folder_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.stats = deep_clone(stocks.fixed_to_folder_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac.stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac.custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac02.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac02.stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac02.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_stock_tac02.custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_wire.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_wire.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_wire.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_stock_wire.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.stats = deep_clone(stocks.remove_fixed_stats)
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.stats = { value = 0 }
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.stats = { 
+				value = 0,
+				recoil = 4,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.custom_stats = {
+				ads_speed_mult = 1.05
+			}
+
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.stats = { value = 0 }
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.stats = { 
+				value = 0,
+				spread = 1,
+				recoil = 6,
+				concealment = -4
+			}
+			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.custom_stats = {
+				ads_speed_mult = 1.1
+			}
+
+		--Barrels
+			--SAKIN KL
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.stats.recoil = -2
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.stats.concealment = 2
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_short.custom_stats.ads_speed_mult = 0.95
+			--Kastovia 343
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105_vanilla.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105_vanilla.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105_vanilla.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_akilo105.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+			--Kastovia 406
+			self.parts.wpn_fps_ass_akilo_2022_handguard_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_handguard)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_vanilla.pcs = nil
+			self.parts.wpn_fps_ass_akilo_2022_handguard_vanilla.stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_handguard_vanilla.custom_stats = nil
+			self.parts.wpn_fps_ass_akilo_2022_handguard.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+			--KAS-7
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.stats.recoil = 2
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.stats.concealment = -1
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.custom_stats = deep_clone(barrels.short_b1_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy02.custom_stats.ads_speed_mult = 1.025
+			--IG-K30
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.stats.recoil = 6
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.stats.concealment = -4
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy.custom_stats.ads_speed_mult = 1.1
+			--KAS-10
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_long.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_long.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+			--RPK
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.stats.recoil = 2
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.stats.concealment = -4
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_rkilo.custom_stats.ads_speed_mult = 1.1
+			--Tac 579
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.spread = 5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.concealment = -5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_start_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_end_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.ads_speed_mult = 1.125
+
+			--SA Ultra
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.spread = 5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.concealment = -5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_start_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_end_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.ads_speed_mult = 1.125
+			--ShortTAC
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.spread = 5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.concealment = -5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_start_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_end_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.ads_speed_mult = 1.125
+			--BR209
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.value = 0
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.spread = 5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.stats.concealment = -5
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_start_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.falloff_end_mult = 1.375
+			self.parts.wpn_fps_ass_akilo_2022_handguard_heavy_rkilo.custom_stats.ads_speed_mult = 1.125
+
+		--Magazines
+			self.parts.wpn_fps_ass_akilo_2022_xmag.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_xmag.stats = {
+				value = 0,
+				extra_ammo = 10,
+				reload = -2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_akilo_2022_xmag.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+			self.parts.wpn_fps_ass_akilo_2022_xmag_akilo105.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_xmag_akilo105.stats = {
+				value = 0,
+				extra_ammo = 15,
+				reload = -3,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_akilo_2022_xmag_akilo105.custom_stats = {
+				ads_speed_mult = 1.05
+			}
+			self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.stats = {
+				value = 0,
+				concealment = -4,
+				extra_ammo = 30,
+				reload = -3
+			}
+			self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.custom_stats = {
+				ads_speed_mult = 1.1,
+				sms = 0.9
+			}
+			self.parts.wpn_fps_ass_akilo_2022_smag.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_smag.stats = {
+				value = 0,
+				extra_ammo = -10,
+				reload = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_akilo_2022_smag.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+			self.parts.wpn_fps_ass_akilo_2022_smag_akilo105.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_smag_akilo105.stats = {
+				value = 0,
+				extra_ammo = -10,
+				reload = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_akilo_2022_smag_akilo105.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+
+		attachment_list = {
+			"wpn_fps_ass_akilo_2022_handguard",
+			"wpn_fps_ass_akilo_2022_grip",
+			"wpn_fps_ass_akilo_2022_stock",
+		}
+		for i, part_id in pairs(self.wpn_fps_ass_akilo_2022.default_blueprint) do
+			for _, swap_id in ipairs(attachment_list) do
+				if part_id == swap_id then
+					self.wpn_fps_ass_akilo_2022.default_blueprint[i] = swap_id .. "_vanilla"
+				end
+			end
+		end
+		for i, part_id in pairs(self.wpn_fps_ass_akilo_2022.uses_parts) do
+			for _, swap_id in ipairs(attachment_list) do
+				if part_id == swap_id then
+					self.wpn_fps_ass_akilo_2022.uses_parts[i] = swap_id .. "_vanilla"
+				end
+			end
+		end
+
+		attachment_list = {
+			"wpn_fps_ass_akilo_2022_handguard_akilo105",
+			"wpn_fps_ass_akilo_2022_grip_akilo105",
+			"wpn_fps_ass_akilo_2022_stock_akilo105",
+		}
+		for i, part_id in pairs(self.wpn_fps_ass_akilo105_2022.default_blueprint) do
+			for _, swap_id in ipairs(attachment_list) do
+				if part_id == swap_id then
+					self.wpn_fps_ass_akilo105_2022.default_blueprint[i] = swap_id .. "_vanilla"
+				end
+			end
+		end
+		for i, part_id in pairs(self.wpn_fps_ass_akilo105_2022.uses_parts) do
+			for _, swap_id in ipairs(attachment_list) do
+				if part_id == swap_id then
+					self.wpn_fps_ass_akilo105_2022.uses_parts[i] = swap_id .. "_vanilla"
+				end
+			end
+		end
+
+		attachment_list = {
+			"wpn_fps_upg_ak_g_hgrip",
+			"wpn_fps_upg_ak_g_pgrip",
+			"wpn_fps_upg_ak_g_wgrip",
+			"wpn_fps_upg_ak_g_rk3",
+
+			"wpn_fps_upg_m4_s_standard",
+			"wpn_fps_upg_m4_s_pts",
+			"wpn_fps_upg_m4_s_crane",
+			"wpn_fps_upg_m4_s_mk46",
+			"wpn_fps_upg_m4_s_ubr",
+			"wpn_fps_snp_tti_s_vltor",
+			"wpn_fps_sho_sko12_stock",
+			"wpn_fps_snp_victor_s_mod0"
+		}
+		for i, part_id in pairs(self.wpn_fps_ass_akilo_2022.uses_parts) do
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_ass_akilo_2022.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end
+		self.wpn_fps_ass_akilo_2022_npc.default_blueprint = deep_clone(self.wpn_fps_ass_akilo_2022.default_blueprint)
+		self.wpn_fps_ass_akilo_2022_npc.uses_parts = deep_clone(self.wpn_fps_ass_akilo_2022.uses_parts)
+
+		attachment_list = {
+			"wpn_fps_upg_ak_g_hgrip",
+			"wpn_fps_upg_ak_g_pgrip",
+			"wpn_fps_upg_ak_g_wgrip",
+			"wpn_fps_upg_ak_g_rk3",
+
+			"wpn_fps_upg_m4_s_standard",
+			"wpn_fps_upg_m4_s_pts",
+			"wpn_fps_upg_m4_s_crane",
+			"wpn_fps_upg_m4_s_mk46",
+			"wpn_fps_upg_m4_s_ubr",
+			"wpn_fps_snp_tti_s_vltor",
+			"wpn_fps_sho_sko12_stock",
+			"wpn_fps_snp_victor_s_mod0"
+		}
+		for i, part_id in pairs(self.wpn_fps_ass_akilo105_2022.uses_parts) do
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_ass_akilo105_2022.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end
+		self.wpn_fps_ass_akilo105_2022_npc.default_blueprint = deep_clone(self.wpn_fps_ass_akilo105_2022.default_blueprint)
+		self.wpn_fps_ass_akilo105_2022_npc.uses_parts = deep_clone(self.wpn_fps_ass_akilo105_2022.uses_parts)
+
 	end
 
 --Resmod Custom Weapon stuff

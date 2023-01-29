@@ -15037,7 +15037,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.type99inc.shake.bypass_global_shake = true
 		end
 
-	if self.papa320 then --RJC9000 and Offyerrocker's M6D
+	if self.papa320 then --RJC9000 and PlayBONK's MW2019 P320
 		self.papa320.recategorize = { "light_pis" }		
 		self.papa320.damage_type = "light_pistol"
 		self.papa320.kick = self.stat_info.kick_tables.vertical_kick
@@ -15205,6 +15205,79 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.nova4.timers.reload_exit_not_empty = 0.8
 		self.nova4.timers.reload_not_empty = 2.2
 	end
+
+	--RJC9000 and PlayBONK's MW2022 AKs
+		if self.akilo_2022 then 
+			self.akilo_2022.warsaw = true
+			self.akilo_2022.recategorize = { "heavy_ar" }
+			self.akilo_2022.has_description = false
+			self.akilo_2022.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+			self.akilo_2022.tactical_reload = 1
+			self.akilo_2022.AMMO_MAX = 120
+			self.akilo_2022.fire_mode_data.fire_rate = 0.1
+			self.akilo_2022.kick = self.stat_info.kick_tables.right_recoil	
+			self.akilo_2022.supported = true
+			self.akilo_2022.ads_speed = 0.340
+			self.akilo_2022.damage_falloff = {
+				start_dist = 2800,
+				end_dist = 4500,
+				min_mult = 0.6
+			}
+			self.akilo_2022.stats = {
+				damage = 30,
+				spread = 76,
+				recoil = 73,
+				zoom = 1,
+				concealment = 21,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.akilo_2022.stats_modifiers = nil
+			self.akilo_2022.reload_speed_multiplier = 1.25
+			self.akilo_2022.timers.reload_exit_empty = 0.8
+			self.akilo_2022.timers.reload_exit_not_empty = 1.2
+			self.akilo_2022.panic_suppression_chance = 0.05
+		end
+
+		if self.akilo105_2022 then 
+			self.akilo105_2022.warsaw = true
+			self.akilo105_2022.recategorize = { "light_ar" }
+			self.akilo105_2022.has_description = false
+			self.akilo105_2022.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+			self.akilo105_2022.tactical_reload = 1
+			self.akilo105_2022.AMMO_MAX = 150
+			self.akilo105_2022.fire_mode_data.fire_rate = 0.09202453
+			self.akilo105_2022.kick = self.stat_info.kick_tables.right_recoil	
+			self.akilo105_2022.supported = true
+			self.akilo105_2022.ads_speed = 0.300
+			self.akilo105_2022.damage_falloff = {
+				start_dist = 2400,
+				end_dist = 4500,
+				min_mult = 0.5
+			}
+			self.akilo105_2022.stats = {
+				damage = 24,
+				spread = 76,
+				recoil = 77,
+				zoom = 1,
+				concealment = 21,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.akilo105_2022.stats_modifiers = nil
+			self.akilo105_2022.reload_speed_multiplier = 1.25
+			self.akilo105_2022.timers.reload_exit_empty = 0.8
+			self.akilo105_2022.timers.reload_exit_not_empty = 1.2
+			self.akilo105_2022.panic_suppression_chance = 0.05
+		end
 
 	if self.mcbravo then --RJC9000 and PlayBONK's Honey Badger
 		self.mcbravo.recategorize = { "heavy_ar" }

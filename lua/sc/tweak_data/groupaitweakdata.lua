@@ -15991,13 +15991,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			initial_spawn_delay = 60,
 			amount = {
 				1,
-				1
+				2
 			},
 			spawn = {
 				{
 					respawn_cooldown = 60,
 					amount_min = 1,
-					amount_max = 1,
+					amount_max = 2,
 					rank = 1,
 					freq = 1,
 					unit = "titan_sniper",
@@ -16036,13 +16036,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			max_nr_simultaneous_groups = 1,
 			initial_spawn_delay = 35,
 			amount = {
-				1,
+				2,
 				2
 			},
 			spawn = {
 				{
 					respawn_cooldown = 50,
-					amount_min = 1,
+					amount_min = 2,
 					amount_max = 2,
 					rank = 1,
 					freq = 1,
@@ -16083,13 +16083,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			initial_spawn_delay = 30,
 			amount = {
 				2,
-				2
+				3
 			},
 			spawn = {
 				{
 					respawn_cooldown = 45,
 					amount_min = 2,
-					amount_max = 2,
+					amount_max = 3,
 					rank = 1,
 					freq = 1,
 					unit = "titan_sniper",

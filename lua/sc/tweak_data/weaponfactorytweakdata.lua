@@ -20007,6 +20007,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_g_sniper") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
 				end
 			end
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_ass_smg_tank") then
@@ -20021,6 +20026,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank then
 							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank)
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_ass_smg_tank") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
 						end
 					end
 				end
@@ -20044,6 +20054,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 						end
 					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_ass_smg_large") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
 				end
 			end
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_shot_shark") then
@@ -20059,6 +20074,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 						end
 					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_shot_shark") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
 				end
 				attachment_list = {
 					"wpn_fps_upg_ns_ass_smg_v6"
@@ -20070,6 +20090,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
 							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_shot_shark") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
 						end
 					end
 				end
@@ -20087,6 +20112,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 						end
 					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_crane") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
 				end
 			end
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_pts") then
@@ -20102,6 +20132,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 						end
 					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_pts") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
 				end
 			end
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_m_pmag") then
@@ -20112,6 +20147,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_m_pmag") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
 					end
 				end
 			end

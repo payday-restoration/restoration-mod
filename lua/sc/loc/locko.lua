@@ -3288,7 +3288,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "회피",
 		["menu_st_category_activated"] = "활성 기능",
-		["menu_st_category_challenge"] = "와일드 카드",		
+		["menu_st_category_challenge"] = "와일드 카드",
+		["menu_st_category_mod"] = "모드",
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "헤드샷 대미지가 ##25%만큼 증가합니다.##\n\n##25%##만큼 많은 피해를 입힙니다. 투척 무기 또는 발사기에는 적용되지 않습니다.",
@@ -3579,6 +3580,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		["rpd_menu_button"] = "특성 덱 리셋",
 		["rpd_menu_dialog_title"] = "확실하십니까?",
-		["rpd_menu_dialog_text"] = "$perk_deck_name 특성 덱을 리셋하면, 특성 포인트를 $points_to_refund 만큼 되돌려받습니다."	
+		["rpd_menu_dialog_text"] = "$perk_deck_name 특성 덱을 리셋하면, 특성 포인트를 $points_to_refund 만큼 되돌려받습니다.",
+
+
+		--MOD PERK DECKS
+			--OFFYERROCKER'S MERCENARY PERK DECK
+				["menu_deck_kmerc_1_desc_sc"] = "수년간의 전투로 인해 당신의 피부는 거칠어졌습니다. ##어떤 공격도 당신을 죽일 수 없도록## 강한 타격으로 인한 체력 피해를 크게 줄입니다.\n\n체력을 ##10%##만큼 얻습니다.",
+				["menu_deck_kmerc_3_desc_sc"] = "강하게 서서 힘을 힘으로 만나세요! 보유하고 있는 방탄력 ##15## 포인트당 치명타 확률이 ##1%##만큼씩 증가합니다.\n\n방어력을 ##10%##만큼 얻습니다.",	
+				["menu_deck_kmerc_5_desc_sc"] = "체력이 ##0##에 도달되었을 때 대신 ##1##이 되고 ##2##초 동안 무적 상태가 됩니다.\n\n무적 효과를 받는 동안에는 전력 질주할 수 없습니다.\n이 효과는 체력을 완전히 회복할 때까지는 다시 발생하지 않습니다.\n\n추가로 체력을 ##10%##만큼 더 얻습니다.",
+				["menu_deck_kmerc_7_desc_sc"] = "당신의 방탄복의 내부 안에는 응고제와 지혈 젤로 이루워져 있습니다. 최소 ##2초## 동안 방탄복을 회복된 후, 방탄력이 있는 있는 동안 ##5초마다## 체력을 최대 방탄력의 ##1%##만큼씩 회복합니다.",
+		
 	})
 end)

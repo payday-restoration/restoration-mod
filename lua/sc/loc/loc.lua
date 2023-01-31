@@ -3696,7 +3696,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 				["menu_deck_kmerc_1_desc_sc"] = "Years of battle have made your skin tough. Take greatly reduced damage from heavy hits to your health so that ##no single attack can kill you##.\n\nYou gain ##10%## more health.",
 				["menu_deck_kmerc_3_desc_sc"] = "Stand strong and meet force with force! Gain ##1%## critical chance for every ##15## point of armor you have.\n\nYou gain ##10%## more armor.",	
 				["menu_deck_kmerc_5_desc_sc"] = "When your health would become ##0##, it becomes ##1## instead and you gain ##2## seconds of invulnerability.\n\nYou cannot sprint while under the effects of this invulnerability.\nThis effect cannot occur again until you are restored to full health.\n\nYou gain an additional ##10%## more health.",
-				["menu_deck_kmerc_7_desc_sc"] = "The inner layer of your armor is lined with coagulant agents and hemostatic gel. After having armor for at least ##2 seconds##, heal health equal to ##1%## of your max armor ##every 5 seconds## so long as you have armor.",
+				["menu_deck_kmerc_7_desc_sc"] = "The inner layer of your armor is lined with coagulant agents and hemostatic gel. After having armor for at least ##2## seconds, heal health equal to ##1%## of your max armor every ##5## seconds so long as you have armor.",
 
 	})
 end)

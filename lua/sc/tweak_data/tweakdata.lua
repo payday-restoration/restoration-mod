@@ -1232,56 +1232,57 @@ if BeardLib and BeardLib.Mods then
 	local modded_perk_deck = false
 	for i, v in pairs(BeardLib.Mods) do
 
-		local deck2 = {
-			upgrades = {
-				"weapon_passive_headshot_damage_multiplier",
-				"weapon_passive_damage_multiplier_1",
-				"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
-				"player_melee_damage_multiplier_1"
-			},
-			cost = 0,
-			icon_xy = {1, 0},
-			name_id = "menu_deckall_2",
-			desc_id = "menu_deckall_2_desc_sc"
-		}
-		local deck4 = {
-			upgrades = {
-				"passive_player_xp_multiplier_1",
-				"player_passive_suspicion_bonus",
-				"player_passive_armor_movement_penalty_multiplier",
-				"weapon_passive_damage_multiplier_2",
-				"player_non_special_melee_multiplier_2",
-				"player_melee_damage_multiplier_2"			
-			},
-			cost = 0,
-			icon_xy = {3, 0},
-			name_id = "menu_deckall_4",
-			desc_id = "menu_deckall_4_desc_sc"
-		}
-		local deck6 = {
-			upgrades = {
-				"armor_kit",
-				"weapon_passive_damage_multiplier_3",
-				"player_non_special_melee_multiplier_3",
-				"player_melee_damage_multiplier_3"			
-			},
-			cost = 0,
-			icon_xy = {5, 0},
-			name_id = "menu_deckall_6",
-			desc_id = "menu_deckall_6_desc_sc"
-		}
-		local deck8 = {
-			upgrades = {
-				"weapon_passive_damage_multiplier_4",
-				"passive_doctor_bag_interaction_speed_multiplier",
-				"player_non_special_melee_multiplier_4",
-				"player_melee_damage_multiplier_4"
-			},
-			cost = 0,
-			icon_xy = {7, 0},
-			name_id = "menu_deckall_8",
-			desc_id = "menu_deckall_8_desc_sc"
-		}
+		--Global perk deck cards
+			local deck2 = {
+				upgrades = {
+					"weapon_passive_headshot_damage_multiplier",
+					"weapon_passive_damage_multiplier_1",
+					"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
+					"player_melee_damage_multiplier_1"
+				},
+				cost = 0,
+				icon_xy = {1, 0},
+				name_id = "menu_deckall_2",
+				desc_id = "menu_deckall_2_desc_sc"
+			}
+			local deck4 = {
+				upgrades = {
+					"passive_player_xp_multiplier_1",
+					"player_passive_suspicion_bonus",
+					"player_passive_armor_movement_penalty_multiplier",
+					"weapon_passive_damage_multiplier_2",
+					"player_non_special_melee_multiplier_2",
+					"player_melee_damage_multiplier_2"			
+				},
+				cost = 0,
+				icon_xy = {3, 0},
+				name_id = "menu_deckall_4",
+				desc_id = "menu_deckall_4_desc_sc"
+			}
+			local deck6 = {
+				upgrades = {
+					"armor_kit",
+					"weapon_passive_damage_multiplier_3",
+					"player_non_special_melee_multiplier_3",
+					"player_melee_damage_multiplier_3"			
+				},
+				cost = 0,
+				icon_xy = {5, 0},
+				name_id = "menu_deckall_6",
+				desc_id = "menu_deckall_6_desc_sc"
+			}
+			local deck8 = {
+				upgrades = {
+					"weapon_passive_damage_multiplier_4",
+					"passive_doctor_bag_interaction_speed_multiplier",
+					"player_non_special_melee_multiplier_4",
+					"player_melee_damage_multiplier_4"
+				},
+				cost = 0,
+				icon_xy = {7, 0},
+				name_id = "menu_deckall_8",
+				desc_id = "menu_deckall_8_desc_sc"
+			}
 
 		if BeardLib.Mods[i].Name and BeardLib.Mods[i].Name == "Mercenary Perk Deck" then
 			modded_perk_deck = true

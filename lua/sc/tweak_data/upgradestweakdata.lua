@@ -4266,7 +4266,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 		self.values.player.kmerc_crit_chance_per_max_armor = {
 			{
 				crit_chance = 0.01,
-				armor_points = 1.5
+				armor_points = 2.0
 			}
 		}
 		self.values.player.kmerc_armored_hot = {

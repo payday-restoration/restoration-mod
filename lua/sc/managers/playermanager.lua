@@ -479,6 +479,23 @@ function PlayerManager:critical_hit_chance(detection_risk)
 	local detection_risk_add_crit_chance = managers.player:upgrade_value("player", "detection_risk_add_crit_chance")
 	multiplier = multiplier + self:get_value_from_risk_upgrade(detection_risk_add_crit_chance, self._detection_risk)
 
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","kmerc_crit_chance_per_max_armor") then
+			local upgrade_data = self:upgrade_value("player","kmerc_crit_chance_per_max_armor")
+			local player_unit = self:local_player()
+			if alive(player_unit) then
+				local rate_crit = upgrade_data.crit_chance
+				local rate_armor = upgrade_data.armor_points
+				local dmg_ext = player_unit:character_damage()
+				local max_armor = dmg_ext:_max_armor()
+				
+				local bonus = math.floor(max_armor / rate_armor) * rate_crit
+				multiplier = multiplier + bonus
+			end
+		end
+	--]]
+
 	return multiplier
 end
 
@@ -580,6 +597,9 @@ function PlayerManager:health_skill_multiplier()
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
 	multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0) --Anarchist reduces health by expected amount.
 	multiplier = multiplier + self:upgrade_value("player", "mrwi_health_multiplier", 1) - 1
+
+	--OFFYERROCKER'S MERC PERK DECK
+		multiplier = multiplier + self:upgrade_value("player","kmerc_passive_health_multiplier", 1) - 1
 	
 	return multiplier
 end
@@ -751,6 +771,15 @@ function PlayerManager:check_skills()
 	else
 		self._message_system:unregister(Message.OnEnemyKilled, "expres_store_health")
 	end
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","kmerc_fatal_triggers_invuln") then
+			self:set_property("kmerc_invuln_ready",true)
+		else
+			self:remove_property("kmerc_invuln_ready")
+		end
+	--]]
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.

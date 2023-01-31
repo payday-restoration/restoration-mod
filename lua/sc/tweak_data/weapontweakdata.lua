@@ -5577,7 +5577,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.AMMO_MAX = 40
 				self.x_deagle.FIRE_MODE = "single"
 				self.x_deagle.fire_mode_data = {}
-				self.x_deagle.fire_mode_data.fire_rate = 0.13953488
+				self.x_deagle.fire_mode_data.fire_rate = 0.17647058
 				self.x_deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.x_deagle.animations.has_steelsight_stance = true
 				self.x_deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
@@ -6057,7 +6057,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.has_description = true
 				self.deagle.desc_id = "bm_deagle_sc_desc"						
 				self.deagle.use_data.selection_index = 1
-				self.deagle.fire_mode_data.fire_rate = 0.13953488
+				self.deagle.fire_mode_data.fire_rate = 0.17647058
 				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.deagle.CLIP_AMMO_MAX = 7
 				self.deagle.AMMO_MAX = 20
@@ -6095,10 +6095,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.desc_id = "bm_ap_weapon_peacemaker_sc_desc"
 				self.peacemaker.AMMO_MAX = 20
 				self.peacemaker.kick = self.stat_info.kick_tables.right_kick
-				self.peacemaker.fire_mode_data.fire_rate = 0.375
+				self.peacemaker.fire_mode_data.fire_rate = 0.44117
 				self.peacemaker.fire_rate_multiplier = 2.5
 				self.peacemaker.BURST_FIRE = 6
-				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.25
+				self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.47058
 				self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.peacemaker.supported = true
 				self.peacemaker.ads_speed = 0.240

@@ -4259,3 +4259,32 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 		}
 	}
 end)
+
+Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
+
+	--MERCENARY DECK
+		self.values.player.kmerc_crit_chance_per_max_armor = {
+			{
+				crit_chance = 0.01,
+				armor_points = 1.5
+			}
+		}
+		self.values.player.kmerc_armored_hot = {
+			{
+				hot_percent = 0.01,
+				interval = 5,
+				warmup = 2 -- heal over time counter is reset whenever armor is depleted and initially starts again at 1 second after any amount of armor is regenerated
+			}
+		}
+		self.values.player.kmerc_fatal_triggers_invuln = {
+			{
+				hp = 0.1, --hp instead set to 1 upon taking fatal damage
+				duration = 2 --2 second invuln upon taking fatal damage
+			}
+		}
+		self.values.player.kmerc_passive_health_multiplier = {
+			1.05,
+			1.10
+		}
+
+end)

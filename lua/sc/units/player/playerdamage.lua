@@ -1542,7 +1542,6 @@ function PlayerDamage:_upd_health_regen(t, dt)
 			local interval = upgrade_data.interval
 			local hot_percent = upgrade_data.hot_percent
 			local warmup = upgrade_data.warmup
-			log("pepepopo")
 			if self:get_real_armor() > 0 then
 				if not self:full_health() then
 					local check_t = self._kmerc_upd_health_regen_timer or interval

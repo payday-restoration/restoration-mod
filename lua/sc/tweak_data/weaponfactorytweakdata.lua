@@ -19881,7 +19881,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 		end
 	end
 	self.parts.wpn_fps_upg_o_northtac.stance_mod.wpn_fps_snp_mosin = {
-		translation = Vector3(0, -0.8, -4.28) + Vector3(0,-22,-0.03)
+		translation = Vector3(0, -0.8, -4.28) + Vector3(0,-41,-0.03)
 	}
 
 	self.parts.wpn_fps_upg_o_northtac_reddot.stats = {
@@ -19892,7 +19892,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
-			weap.rotation = Rotation(-0.05, 0, 0)
+			weap.rotation = Rotation(-0.07, 0, 0)
 		end
 	end
 
@@ -19937,6 +19937,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 		"wpn_upg_ak_g_standard",
 		"wpn_fps_ass_asval_g_standard"
 	}
+
+	self.parts.wpn_fps_upg_ak_ns_jmac.supported = true
+	self.parts.wpn_fps_upg_ak_ns_jmac.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+	self.parts.wpn_fps_upg_ak_ns_jmac.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+	
+	self.parts.wpn_fps_upg_ak_ns_tgp.supported = true
+	self.parts.wpn_fps_upg_ak_ns_tgp.has_description = true
+	self.parts.wpn_fps_upg_ak_ns_tgp.desc_id = "bm_wp_upg_suppressor"
+	self.parts.wpn_fps_upg_ak_ns_tgp.stats = {
+		value = 2,
+		suppression = 12,
+		alert_size = -1
+	}
+	self.parts.wpn_fps_upg_ak_ns_tgp.perks = {"silencer"}
 
 
 end)
@@ -20713,7 +20727,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_ns_ass_smg_tank") then
 				attachment_list = {
 					"wpn_fps_ass_shak12_ns_muzzle",
-					"wpn_fps_upg_ak_ns_zenitco"
+					"wpn_fps_upg_ak_ns_zenitco",
+					"wpn_fps_upg_ak_ns_jmac"
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) then
@@ -20739,7 +20754,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_smg_mp7_b_suppressed",
 					"wpn_fps_smg_schakal_ns_silencer",
 					"wpn_fps_snp_msr_ns_suppressor",
-					"wpn_fps_snp_victor_ns_omega"
+					"wpn_fps_snp_victor_ns_omega",
+					"wpn_fps_upg_ak_ns_tgp"
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) then

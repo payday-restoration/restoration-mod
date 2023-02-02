@@ -215,7 +215,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"vhs",
 					"bowie",
 					"micstand",
-					"qbu88"
+					"qbu88",
+					"contender"
 				}
 			},
 		l30 = {
@@ -272,12 +273,15 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 				upgrades = {
 					"dingdong",
 					"tenderizer",
-					"hailstorm"
+					"hailstorm",
+					"hcar"
 				}
 			},
 		l50 = {
 				name_id = "lvl_50",
-				upgrades = {}
+				upgrades = {
+					"tkb"
+				}
 			},
 		l51 = {
 				name_id = "weapons",

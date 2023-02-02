@@ -1461,7 +1461,7 @@ if BeardLib and BeardLib.Mods then
 					texture_bundle_folder = "liberator",
 					icon = "chico_injector",
 					max_amount = 1,
-					base_cooldown = 60,
+					base_cooldown = 30,
 					sounds = {
 						activate = "perkdeck_activate",
 						cooldown = "perkdeck_cooldown_over"

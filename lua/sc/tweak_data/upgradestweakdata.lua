@@ -4324,8 +4324,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 			0
 		}
 		self.values.player.tachi_restore_stamina = {
-			10,
-			20
+			15,
+			30
 		}
 		self.values.player.tachi_hot_cancelled_damage_resistance_consolation = {
 			0.1
@@ -4338,8 +4338,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 		
 		self.values.player.tachi_hot_duration = {
 			4,
-			5,
-			6
+			6,
+			8
 		}
 
 		self.definitions.player_tachi_hot_amount_3 = {

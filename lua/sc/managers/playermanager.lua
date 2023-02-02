@@ -529,6 +529,13 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	multiplier = multiplier * self._temporary_properties:get_property("revived_damage_reduction", 1)
 	--Removed vanilla crew chief team DR.
 
+	--OFFYERROCKER'S LIB PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","tachi_hot_cancelled_damage_resistance_consolation") then 
+			multiplier = multiplier * (1 - self:get_property("tachi_damage_resistance",0))
+		end
+	--]]
+
 	--Yakuza DR.
 	local health_ratio = self:player_unit():character_damage():health_ratio()
 	if self:is_damage_health_ratio_active(health_ratio) then
@@ -778,6 +785,25 @@ function PlayerManager:check_skills()
 			self:set_property("kmerc_invuln_ready",true)
 		else
 			self:remove_property("kmerc_invuln_ready")
+		end
+	--]]
+	--OFFYERROCKER'S LIB PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","tachi_base") then 
+			local base_upgrade_data = self:upgrade_value("player","tachi_base")
+			local cooldown_drain = base_upgrade_data.cooldown_drain_per_kill
+			
+			self:register_message(Message.OnEnemyKilled,"tachi_syringe_cooldown_drain_on_kill",
+				function(equipped_unit,variant,killed_unit)
+					local player = self:local_player()
+					if alive(player) then
+						managers.player:speed_up_grenade_cooldown(cooldown_drain)
+					end
+				end
+			)
+			
+		else
+			self:unregister_message(Message.OnEnemyKilled,"tachi_syringe_cooldown_drain_on_kill")
 		end
 	--]]
 end

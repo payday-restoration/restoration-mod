@@ -62,13 +62,22 @@ else
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip(), ammo_base:get_ammo_remaining_in_clip() +  ammo_base:weapon_tweak_data().clip_capacity))
 			end
 		else
-			if ammo_base:get_ammo_remaining_in_clip() > 0 and  ammo_base:weapon_tweak_data().tactical_reload == 1 then
+			if ammo_base:get_ammo_remaining_in_clip() > 0 and ammo_base:weapon_tweak_data().tactical_reload == 1 then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
-			elseif ammo_base:get_ammo_remaining_in_clip() > 1 and  ammo_base:weapon_tweak_data().tactical_reload == 2 then
+
+			elseif ammo_base:get_ammo_remaining_in_clip() > 1 and ammo_base:weapon_tweak_data().tactical_reload == 2 then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
-			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and  ammo_base:weapon_tweak_data().tactical_reload == 2 then
+			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and ammo_base:weapon_tweak_data().tactical_reload == 2 then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
-			elseif ammo_base:get_ammo_remaining_in_clip() > 0 and not  ammo_base:weapon_tweak_data().tactical_reload then
+
+			elseif ammo_base:get_ammo_remaining_in_clip() >= 3 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
+				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 3))
+			elseif ammo_base:get_ammo_remaining_in_clip() == 2 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
+				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
+			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
+				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
+
+			elseif ammo_base:get_ammo_remaining_in_clip() > 0 and not ammo_base:weapon_tweak_data().tactical_reload then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip()))
 			elseif self._setup.expend_ammo then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip()))
@@ -336,7 +345,11 @@ end
 
 function NewRaycastWeaponBase:_fire_sound(...)
 	if (self._name_id ~= "m134" and self._name_id ~= "shuno") or self._vulcan_firing then
-		return _fire_sound_original(self, ...)
+		if self._fire_mode == ids_volley and self:weapon_tweak_data().sounds.fire_volley then
+			self:play_tweak_data_sound("fire_volley", "fire")
+			return
+		end
+		NewRaycastWeaponBase.super._fire_sound(self)
 	end
 end
 
@@ -363,6 +376,10 @@ end
 
 function NewRaycastWeaponBase:recoil_multiplier(...)
 	local mult = recoil_multiplier_original(self, ...)
+
+	mult = mult * (self._volley_recoil_mul or 1)
+	self._volley_recoil_mul = nil
+
 	if self:in_burst_mode() then
 		if self._burst_fire_last_recoil_multiplier and (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
 			mult = mult * (self._burst_fire_last_recoil_multiplier or 1)
@@ -389,7 +406,6 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 			mult = mult / zoom_mult
 		end
 	end
-
 
 	return mult
 end
@@ -570,6 +586,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._rof_mult = 1
 		self._ads_rof_mult = 1
 		self._hip_rof_mult = 1
+
+		self._movement_speed_add = 0
 
 		self._hipfire_mult = 1
 
@@ -785,6 +803,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.big_scope then
 				self._has_big_scope = true
 			end
+			if stats.movement_speed_add then
+				self._movement_speed_add = self._movement_speed_add + stats.movement_speed_add
+			end
 			if stats.sks_clip then
 				if self:weapon_tweak_data().timers then
 					self:weapon_tweak_data().timers.reload_exit_not_empty = 1.2
@@ -816,6 +837,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 		end
 	self._custom_stats_done = true --stops from repeating and hiking up the effects of the multiplicative stats
+	end
+
+	if self._movement_speed_add then
+		self._movement_penalty = math.max(self._movement_penalty + self._movement_speed_add, 0.1)
 	end
 
 	for part_id, stats in pairs(custom_stats) do
@@ -1280,11 +1305,13 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	end
 
+	self._volley_recoil_mul = nil
 	if self._fire_mode == ids_volley then
 		local ammo_usage_ratio = math.clamp(ammo_usage > 0 and ammo_usage / (self._volley_ammo_usage or ammo_usage) or 1, 0, 1)
 		local rays = math.ceil(ammo_usage_ratio * (self._volley_rays or 1))
 		spread_mul = spread_mul * (self._volley_spread_mul or 1)
 		dmg_mul = dmg_mul * (self._volley_damage_mul or 1)
+		self._volley_recoil_mul = rays or 1
 		if self._volley_damage_mul and self._volley_damage_mul_step and self._volley_ammo_usage then
 			local dmg_mul_step = self._volley_damage_mul / self._volley_ammo_usage
 			dmg_mul = ammo_usage > 0 and ammo_usage * dmg_mul_step

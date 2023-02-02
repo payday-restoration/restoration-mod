@@ -1031,11 +1031,12 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	self:_check_ammo_total(user_unit)
 
-	if alive(self._obj_fire) then
-		self:_spawn_muzzle_effect(from_pos, direction)
+	for i = 1, ammo_usage do
+		if alive(self._obj_fire) then
+			self:_spawn_muzzle_effect(from_pos, direction)
+		end
+		self:_spawn_shell_eject_effect()
 	end
-
-	self:_spawn_shell_eject_effect()
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
 

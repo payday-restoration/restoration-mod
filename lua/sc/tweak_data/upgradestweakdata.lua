@@ -2065,7 +2065,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"team_passive_stamina_multiplier_1",
 				"player_passive_intimidate_range_mul",
-				"player_alarm_pager_speed_multiplier"
+				"player_alarm_pager_speed_multiplier",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Muscle
@@ -2075,7 +2076,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"player_panic_suppression",
 				"player_corpse_dispose_speed_multiplier",
-				"player_civ_move_multiplier"
+				"player_civ_move_multiplier",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Armorer
@@ -2084,7 +2086,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck3_mrwi_desc",
 			upgrades = {
 				"player_perk_armor_regen_timer_multiplier_1",
-				"bodybags_bag_quantity"
+				"bodybags_bag_quantity",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Rouge
@@ -2094,7 +2097,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"player_passive_dodge_chance_1",
 				"weapon_passive_swap_speed_multiplier_1",
-				"player_tape_loop_duration_2"
+				"player_tape_loop_duration_2",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Hitman
@@ -2103,7 +2107,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck5_mrwi_desc",
 			upgrades = {
 				"player_store_temp_health_1",
-				"player_corpse_dispose_amount_2"
+				"player_corpse_dispose_amount_2",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Crook
@@ -2117,7 +2122,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_level_2_armor_multiplier_2",
 				"player_level_3_armor_multiplier_2",
 				"player_level_4_armor_multiplier_2",
-				"player_pick_lock_speed_multiplier"	
+				"player_pick_lock_speed_multiplier"	,
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Burglar
@@ -2127,7 +2133,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"player_passive_dodge_chance_1",
 				"player_crouch_dodge_chance_burglar_1",
-				"player_crouch_speed_multiplier_burglar"
+				"player_crouch_speed_multiplier_burglar",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Infiltrator
@@ -2136,7 +2143,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck8_mrwi_desc",
 			upgrades = {
 				"player_damage_dampener_close_contact_2",
-				"player_tape_loop_duration_2"
+				"player_tape_loop_duration_2",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Sociopath
@@ -2145,7 +2153,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck9_mrwi_desc",
 			upgrades = {
 				"player_killshot_regen_armor_bonus",
-				"player_corpse_dispose_amount_2"
+				"player_corpse_dispose_amount_2",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Gambler
@@ -2154,7 +2163,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck10_mrwi_desc",
 			upgrades = {
 				"temporary_loose_ammo_give_team",
-				"player_alarm_pager_speed_multiplier"
+				"player_alarm_pager_speed_multiplier",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Grinder
@@ -2166,7 +2176,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_level_5_armor_addend_grinder",
 				"player_flak_jacket_concealment_1",
 				"player_flak_jacket_concealment_2",
-				"bodybags_bag_quantity"
+				"bodybags_bag_quantity",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Yakuza
@@ -2176,7 +2187,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"player_kill_dodge_regen",
 				"player_corpse_dispose_speed_multiplier",
-				"player_civ_move_multiplier"
+				"player_civ_move_multiplier",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Ex-Pres
@@ -2185,7 +2197,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck13_mrwi_desc",
 			upgrades = {
 				"player_armor_health_store_amount_1",
-				"team_civ_intimidation_mul"
+				"team_civ_intimidation_mul",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Maniac
@@ -2195,7 +2208,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck14_mrwi_desc",
 			upgrades = {
 				"player_cocaine_stacking_1",
-				"team_civ_intimidation_mul"
+				"team_civ_intimidation_mul",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Anarchist
@@ -2205,7 +2219,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck15_mrwi_desc",
 			upgrades = {
 				"player_armor_grinding_1",
-				"team_civ_intimidation_mul"
+				"team_civ_intimidation_mul",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Biker
@@ -2215,7 +2230,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck16_mrwi_desc",
 			upgrades = {
 				"player_wild_health_amount_1",
-				"team_civ_intimidation_mul"
+				"team_civ_intimidation_mul",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Kingpin
@@ -2229,7 +2245,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"temporary_chico_injector_2",
 				"temporary_chico_injector_3",
 				"temporary_chico_injector_4",
-				"player_chico_injector_speed"
+				"player_chico_injector_speed",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Sicario
@@ -2240,7 +2257,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"player_passive_dodge_chance_1",
 				"smoke_screen_grenade",
-				"player_corpse_dispose_amount_2"
+				"player_corpse_dispose_amount_2",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Stoic
@@ -2254,7 +2272,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_damage_control_passive_2",
 				"player_damage_control_healing",
 				"player_armor_to_health_conversion",
-				"player_alarm_pager_speed_multiplier"
+				"player_alarm_pager_speed_multiplier",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Tag Team
@@ -2266,7 +2285,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"tag_team",
 				"player_tag_team_base_1",
 				"player_tag_team_cooldown_drain_1",
-				"player_tape_loop_duration_2"
+				"player_tape_loop_duration_2",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Hacker
@@ -2276,7 +2296,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck21_mrwi_desc",
 			upgrades = {
 				"pocket_ecm_jammer",
-				"player_pocket_ecm_jammer_base"
+				"player_pocket_ecm_jammer_base",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		},
 		{ --Leech
@@ -2292,7 +2313,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_copr_activate_bonus_health_ratio_1",
 				"player_copr_activate_bonus_health_ratio_2",
 				"player_corpse_dispose_speed_multiplier",
-				"player_civ_move_multiplier"	
+				"player_civ_move_multiplier",
+				"player_passive_loot_drop_multiplier_1"	
 			}
 		}
 	}
@@ -4286,5 +4308,45 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 			1.05,
 			1.10
 		}
+
+	--LIBERATOR DECK
+		self.values.player.tachi_base = {
+			{
+				cooldown_drain_per_kill = 1,
+				regen_interval = 0.5
+			}
+		}
+		self.values.player.tachi_restore_health = {
+			0
+		}
+		self.values.player.tachi_restore_stamina = {
+			10,
+			20
+		}
+		self.values.player.tachi_hot_cancelled_damage_resistance_consolation = {
+			0.1
+		}
+		self.values.player.tachi_hot_amount = {
+			0.025,
+			0.05,
+			0.1
+		}
+		
+		self.values.player.tachi_hot_duration = {
+			4,
+			5,
+			6
+		}
+
+		self.definitions.player_tachi_hot_amount_3 = {
+			name_id = "menu_deck_liberator_9",
+			category = "feature",
+			upgrade = {
+				value = 3,
+				upgrade = "tachi_hot_amount",
+				category = "player"
+			}
+		}
+
 
 end)

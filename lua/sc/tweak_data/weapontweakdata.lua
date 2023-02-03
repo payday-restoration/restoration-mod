@@ -3726,7 +3726,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
-	recat = { "m16", "akm", "akm_gold", "groza", "l85a2"}
+	recat = { "m16", "akm", "akm_gold", "groza", "l85a2", "tkb" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"

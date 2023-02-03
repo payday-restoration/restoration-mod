@@ -19775,7 +19775,7 @@ else
 	--Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
-		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.5, 1}
+		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.2, 0.5}
 	end		
 	self.besiege.reenforce.interval = {
 		30,

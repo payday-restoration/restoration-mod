@@ -1172,8 +1172,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4"] = "중거리 조준경.\n#{risk}#4x 배율.##",
 		["bm_wp_upg_o_4_cod"] = "중거리 조준경.\n#{skill_color}#정지 전원##이 필요로 할때 전원은 어디에 있습니까?\n#{risk}#4x 배율.##",	
 		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#4x 배율.##",
-		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기이 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
-		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
+		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기가 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
+		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
+		["bm_wp_upg_o_4_rds_mount"] = "상단에 장착된 반사식 조준기rk 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{risk}#6x 배율.##",
@@ -1432,7 +1433,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 중기관총",
-		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
+		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",
+		--HCAR
+		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.",		
 		--M60
 		["bm_w_m60"] = "M60 중기관총",
 		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.",		
@@ -1553,6 +1556,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_groza"] = "OB-14st Byk-1 소총",
 		["bm_groza_sc_desc_pc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_groza_sc_desc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		--CHIKUBI
+		["bm_wp_tkb_m_bakelite"] = "시베리아 15x3 탄창",		
 		--Krinkov
 		["bm_w_akmsu"] = "Krinkov 소총",
 		["bm_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",
@@ -1654,7 +1659,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		--Contender G2
+		["bm_contender_sc_desc"] = "",			
 		--Model 70
 		["bm_model70_sc_desc"] = "라이플맨의 소총. Repeater 1874 소총을 제작한 디자이너가 만든 초기 볼트 액션 디자인 소총입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SVD
@@ -1713,6 +1720,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_bonus_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",	
 		["bm_menu_sms_info_cont"] = "또한 사격하는 동안 패널티가 2배로 증가합니다.",
+		["bm_menu_sms_info_cont_2"] = "현재 부착물로 인해 사격하는 동안 페널티가 2배로 증가합니다.",
 		["bm_menu_sms_info_2"] = " 만큼 사격하는 동안 감소합니다.",
 		["bm_menu_stat_sms_info_2"] = " 만큼 사격하는 동안 현재 개조물로 인해서 감소합니다.",		
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               사용하지 마시오              //////////\n",
@@ -1966,7 +1974,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_firemode_semi"] = "단발",
 		["st_menu_firemode_auto"] = "자동",
 		["st_menu_firemode_burst"] = "점사",
-		["st_menu_firemode_volley"] = "연발+일제사격",
+		["st_menu_firemode_volley"] = "일제사격",
 		
 		["menu_reticle_dmc_eotech"] = "TECopt 풀",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA 도트",
@@ -3585,10 +3593,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--MOD PERK DECKS
 			--OFFYERROCKER'S MERCENARY PERK DECK
-				["menu_deck_kmerc_1_desc_sc"] = "수년간의 전투로 인해 당신의 피부는 거칠어졌습니다. ##어떤 공격도 당신을 죽일 수 없도록## 강한 타격으로 인한 체력 피해를 크게 줄입니다.\n\n체력을 ##5%##만큼 얻습니다.",
-				["menu_deck_kmerc_3_desc_sc"] = "강하게 서서 힘을 힘으로 만나세요! 보유하고 있는 방탄력 ##20## 포인트당 치명타 확률이 ##1%##만큼씩 증가합니다.\n\n방어력을 ##10%##만큼 얻습니다.",	
-				["menu_deck_kmerc_5_desc_sc"] = "체력이 ##0##에 도달되었을 때 대신 ##1##이 되고 ##2##초 동안 무적 상태가 됩니다.\n\n무적 효과를 받는 동안에는 전력 질주할 수 없습니다.\n이 효과는 체력을 완전히 회복할 때까지는 다시 발생하지 않습니다.\n\n추가로 체력을 ##5%##만큼 더 얻습니다.",
-				["menu_deck_kmerc_7_desc_sc"] = "당신의 방탄복의 내부 안에는 응고제와 지혈 젤로 이루워져 있습니다. 최소 ##2초## 동안 방탄복을 회복된 후, 방탄력이 있는 있는 동안 ##5초마다## 체력을 최대 방탄력의 ##1%##만큼씩 회복합니다.",
+				["menu_deck_kmerc_1_desc_sc"] = "어떤 공격도 당신을 죽일 수 없도록 강한 타격으로 인한 체력 피해를 크게 줄입니다.\n\n체력을 ##5%##만큼 얻습니다.",
+				["menu_deck_kmerc_3_desc_sc"] = "방어력을 ##10%##만큼 얻습니다.\n\n방탄복 회복률이 ##10%##만큼 증가합니다.",	
+				["menu_deck_kmerc_5_desc_sc"] = "체력이 ##0##에 도달되었을 때 대신 ##1##이 되고 ##2##초 동안 무적 상태가 됩니다.\n무적 효과를 받는 동안에는 전력 질주할 수 없습니다.\n이 효과는 체력을 완전히 회복할 때까지는 다시 발생하지 않습니다.\n\n추가로 체력을 ##5%##만큼 더 얻습니다.",
+				["menu_deck_kmerc_7_desc_sc"] = "최소 ##2초##동안 방탄복을 회복된 후, 방탄력이 있는 있는 동안 ##5초마다## 체력을 최대 방탄력의 ##1%##만큼씩 회복합니다.",
+				["menu_deck_kmerc_9_desc_sc"] = "체력을 ##50%## 이하가 될 만큼 피해를 입을 때마다 해당 피해의 ##100%##를 방어력으로 회복합니다.\n이 효과는 Walk It Off(카드 5)의 무적 상태를 동시에 발생할 수 없습니다.",
+			--OFFYERROCKER'S LIBERATOR PERK DECK
+				["menu_deck_liberator_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##비상용 주사기##를 잠금 해제합니다. 비상용 주사기를 사용하면 즉시 스태미나를 ##15##만큼 회복되고 ##4초## 동안 혹은 플레이어가 체력 피해를 입을 때까지 매 초마다 체력이 ##0.5##씩 회복됩니다.\n비상용 주사기는 ##한 번만## 사용할 수 있고 ##45##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##1##초씩 단축됩니다.",
+				["menu_deck_liberator_3_desc_sc"] = "이제 비상용 주사기의 체력 재생이 추가로 ##2##초 더 증가합니다.\n\n비상용 주사기의 체력 재생이 취소되면 남은 시간 동안 대미지 저항력을 ##10%##만큼 얻습니다.",
+				["menu_deck_liberator_5_desc_sc"] = "서바이벌 주사기는 추가로 스태미나를 ##15##만큼 회복하고 매 초마다 추가로 체력을 ##0.5## 더 회복합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
+				["menu_deck_liberator_7_desc_sc"] = "체력이 ##10%##만큼 증가합니다.\n\n이제 비상용 주사기의 체력 재생은 추가로 ##2##초 더 증가합니다.",
+				["menu_deck_liberator_9_desc_sc"] = "이제 비상용 주사기는 매 초 추가로 체력을 ##1##씩 회복합니다."				
 		
 	})
 end)

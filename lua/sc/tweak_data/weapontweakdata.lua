@@ -8509,7 +8509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 51,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 18,
+					concealment = 19,
 					suppression = 1,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -8548,17 +8548,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb.supported = true
 				self.tkb.ads_speed = 0.400
 				self.tkb.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1800,
 					end_dist = 4500,
 					min_mult = 0.6
 				}
 				self.tkb.stats = {
 					damage = 30,
 					spread = 73,
-					recoil = 69,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 19,
+					concealment = 18,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,

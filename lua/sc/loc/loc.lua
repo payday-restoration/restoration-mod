@@ -1313,8 +1313,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
 		--Baby Deagle--
 		["bm_w_sparrow"] = "Sparrow 941",
-		["bm_sparrow_sc_desc"] = "\"You're gonna carry that weight.\"",
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
+		["bm_sparrow_sc_desc"] = "SEE YOU SPACE COWBOY...",
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
 		--socom deez nuts--
 		["bm_w_socom"] = "Anubis .45",
 		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",

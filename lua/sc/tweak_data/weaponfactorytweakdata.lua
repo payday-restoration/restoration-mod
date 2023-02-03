@@ -20220,7 +20220,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tkb", "resmod_chikubi", function(s
 	self.parts.wpn_fps_ass_tkb_barrels.supported = true
 	self.parts.wpn_fps_ass_tkb_barrels.stats = {
 		value = 1,
-		spread_multi = {2, 0.5}
+		spread_multi = {2, 0.25}
 	}
 
 	self.parts.wpn_fps_ass_tkb_body_pouch.supported = true

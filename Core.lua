@@ -74,6 +74,7 @@ function restoration:Init()
 		battlearena = restoration.captain_types.winter, --Five-G
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
 		constantine_penthouse_lvl = restoration.captain_types.winter, --Penthouse Crasher (Constantine Scores)
+		tonmapjam22l = restoration.captain_types.winter, --Hard Cash
 
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
@@ -299,6 +300,7 @@ function restoration:Init()
 		"hidden_vault", --Hidden Vault
 		"constantine_gold_lvl", --Golden Shakedown (Constantine Scores)
 		"jambank", --Botched Bank
+		"tonmapjam22l", --Hard Cash
 		"cshr" --Old Safehouse Raid
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
@@ -383,7 +385,9 @@ function restoration:Init()
 		"ranc",
 		"dinner",
         "trai",
-		"corp"
+		"corp",
+		--Custom Heists--
+		"tonmapjam22l"
 	}	
 	--San Francisco
 	restoration.needle = {

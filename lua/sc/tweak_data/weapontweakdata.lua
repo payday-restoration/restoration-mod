@@ -8503,8 +8503,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.groza_underbarrel.AMMO_MAX = 6
 				self.groza_underbarrel.supported = true
 				self.groza_underbarrel.ads_speed = 0.360
+				self.groza_underbarrel.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5500,
+					min_mult = 0.05
+				}
 				self.groza_underbarrel.stats = {
-					damage = 72,
+					damage = 36,
 					spread = 61,
 					recoil = 51,
 					spread_moving = 5,
@@ -8833,8 +8838,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband_m203.AMMO_MAX = 6
 				self.contraband_m203.supported = true
 				self.contraband_m203.ads_speed = 0.440
+				self.contraband_m203.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5500,
+					min_mult = 0.05
+				}
 				self.contraband_m203.stats = {
-					damage = 72,
+					damage = 36,
 					spread = 64,
 					recoil = 71,
 					spread_moving = 6,

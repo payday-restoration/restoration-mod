@@ -9306,7 +9306,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	self.parts.wpn_fps_gre_ms3gl_conversion.adds = {}
 
-
 	self.parts.wpn_fps_upg_a_underbarrel_hornet.pcs = nil
 
 	local hornet_unit_folder = "units/pd2_dlc_pxp3/weapons/wpn_fps_grenade_launcher_hornet/"
@@ -9417,15 +9416,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_ass_groza = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -36,
-				spread = -30,
-				reload = 2
+				spread = -30
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
-				gl_buck = true,
 				rays = 20,
-				rof_mult = 1.2,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9434,15 +9429,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_ass_contraband = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -36,
-				spread = -30,
-				reload = 2
+				spread = -30
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
-				gl_buck = true,
 				rays = 20,
-				rof_mult = 1.2,
 				sounds = {
 					fire_single = "hornet_fire"
 				}

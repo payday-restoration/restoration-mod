@@ -364,6 +364,7 @@ function restoration:Init()
 		"pines", --white xmas
 		"spa", --brooklyn 10-10
 		"jolly", --aftershock
+		"born", --biker heist D1
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne

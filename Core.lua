@@ -373,6 +373,8 @@ function restoration:Init()
 		"lvl_friday", --Mallbank / Crashing Capitol
 		--"hox_1", --Hoxout D1
 		--"xmn_hox_1" --Xmas edition
+		--Custom Heists--
+		"the_factory" --eclipse research facility
 	}	
 		
 	--Sub Faction overrides

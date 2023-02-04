@@ -1943,6 +1943,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		end
 	end
 	self:_shooting_move_speed_timer(t, dt)
+	self:_last_shot_t(t, dt)
 
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
 	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
@@ -1961,6 +1962,27 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	
 end)
+
+
+function PlayerStandard:_last_shot_t(t, dt)
+	local weapon = self._equipped_unit and self._equipped_unit:base()
+	local fire_mode = weapon and weapon:fire_mode()
+	if weapon then
+		if self._shooting and fire_mode == "auto" then
+			local reset_delay_t = tweak_data.upgrades.automatic_kills_to_damage_reset_t or 1
+			self._last_shooting_t = reset_delay_t
+		else
+			if self._last_shooting_t then
+				self._last_shooting_t = self._last_shooting_t - dt
+				if self._last_shooting_t < 0 then
+					self._last_shooting_t = nil
+					weapon._no_cheevo_kills_without_releasing_trigger = 0
+				end
+			end
+		end
+	end
+end
+
 
 function PlayerStandard:_shooting_move_speed_timer(t, dt)
 	local weapon = self._equipped_unit and self._equipped_unit:base()

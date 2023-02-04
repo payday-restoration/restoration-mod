@@ -777,7 +777,7 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	end
 
 	if gl_buck then
-		damage_min_mult = 0.025
+		damage_min_mult = damage_min_mult / 2
 	end
 
 	if not gl_buck then

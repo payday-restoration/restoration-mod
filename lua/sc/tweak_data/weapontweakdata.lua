@@ -3183,7 +3183,7 @@ function WeaponTweakData:_init_stats()
 	end
 
 	self.stats.total_ammo_mod = {}
-		for i = -0.99, 1.155, 0.01 do
+		for i = -0.99, 3.155, 0.01 do
 		table.insert(self.stats.total_ammo_mod, clamp_near_zero(i))
 	end
 
@@ -11092,7 +11092,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m32.damage_falloff = {
 					start_dist = 1600,
 					end_dist = 5000,
-					min_mult = 0.05
+					min_mult = 0.033333
 				}
 				self.m32.stats = {
 					damage = 72,
@@ -11235,8 +11235,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.arbiter.ads_speed = 0.460
 				self.arbiter.damage_falloff = {
 					start_dist = 2000,
-					end_dist = 5000,
-					min_mult = 0.05
+					end_dist = 6000,
+					min_mult = 0.03
 				}
 				self.arbiter.stats = {
 					damage = 60,
@@ -11320,7 +11320,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.china.damage_falloff = {
 					start_dist = 1800,
 					end_dist = 4500,
-					min_mult = 0.05
+					min_mult = 0.033333
 				}
 				self.china.stats = {
 					damage = 72,

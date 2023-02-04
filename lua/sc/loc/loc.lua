@@ -3075,7 +3075,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Body Expertise",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor; effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\nThe effects of this skill are in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using a #{skill_color}#machine gun## without releasing the trigger will grant it an additional #{skill_color}#10%## more damage; stacks up to #{skill_color}#5## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor; effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using a #{skill_color}#machine gun## on full-auto without releasing the trigger for more than #{skill_color}#1## second will grant it an additional #{skill_color}#10%## more damage; stacks up to #{skill_color}#5## times.",
 
 
 		--[[   ENFORCER   ]]--

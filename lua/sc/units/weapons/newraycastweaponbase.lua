@@ -14,7 +14,6 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 
 	for _, category in ipairs(self:categories()) do
 		if managers.player:has_category_upgrade(category, "automatic_kills_to_damage") then
-			log("YOU HAVE THE POWER")
 			self._automatic_kills_to_damage_max_stacks = managers.player:upgrade_value(category, "automatic_kills_to_damage")[1]
 			self._automatic_kills_to_damage_dmg_mult = managers.player:upgrade_value(category, "automatic_kills_to_damage")[2]
 		end

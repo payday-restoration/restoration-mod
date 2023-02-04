@@ -7392,6 +7392,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m95", "resmod_m95", function(self)
 	}
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.perks = {"silencer"}
 		
+	self.wpn_fps_snp_m95.override.wpn_fps_upg_m4_g_mgrip = nil --fuck off
+
 	self.wpn_fps_snp_m95.override.wpn_fps_snp_model70_iron_sight = { 
 		adds = {"wpn_fps_gre_arbiter_o_standard"}
 	}
@@ -9313,14 +9315,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_arbiter = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -36,
-				spread = -20
+				damage = -42,
+				spread = -20,
+				reload = 1,
+				total_ammo_mod = 230
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 12,
 				rof_mult = 1.2,
+				ammo_pickup_max_mul = 6,
+				ammo_pickup_min_mul = 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9331,13 +9337,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -48,
 				spread = -30,
-				reload = 1
+				reload = 1,
+				total_ammo_mod = 200
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
+				ammo_pickup_max_mul = 6,
+				ammo_pickup_min_mul = 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9348,13 +9357,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -48,
 				spread = -30,
-				reload = 1
+				reload = 1,
+				total_ammo_mod = 200
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
+				ammo_pickup_max_mul = 6,
+				ammo_pickup_min_mul = 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9365,13 +9377,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -36,
 				spread = -30,
-				reload = 2
+				reload = 2,
+				total_ammo_mod = 100
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
+				ammo_pickup_max_mul = 6,
+				ammo_pickup_min_mul = 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9382,13 +9397,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -18,
 				spread = -30,
-				reload = 1
+				reload = 1,
+				total_ammo_mod = 100
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
+				ammo_pickup_max_mul = 3,
+				ammo_pickup_min_mul = 3,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9399,13 +9417,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -36,
 				spread = -30,
-				reload = 2
+				reload = 2,
+				total_ammo_mod = 100
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
+				ammo_pickup_max_mul = 6,
+				ammo_pickup_min_mul = 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}

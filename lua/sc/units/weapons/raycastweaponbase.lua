@@ -666,10 +666,14 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		hit_result = nil
 		local hit_unit = hit and hit.unit
 		local is_alive = hit_unit and hit_unit:character_damage() and not hit_unit:character_damage():dead()
+		local track_body_expert = nil
 		
-		if is_alive and self:fire_mode() == "auto" and self._no_cheevo_kills_without_releasing_trigger > 0 and self._automatic_kills_to_damage_max_stacks then
-			local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
-			damage = damage * (1 + (self._automatic_kills_to_damage_dmg_mult * stacks))
+		if is_alive and self:fire_mode() == "auto" and self._automatic_kills_to_damage_max_stacks then
+			track_body_expert = true
+			if self._no_cheevo_kills_without_releasing_trigger > 0 then
+				local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
+				damage = damage * (1 + (self._automatic_kills_to_damage_dmg_mult * stacks))
+			end
 		end
 
 		if damage > 0 then
@@ -690,7 +694,9 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 			if not is_civilian then
 				cop_kill_count = cop_kill_count + 1
-				self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
+				if track_body_expert then
+					self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
+				end
 			end
 
 			if self:is_category(tweak_data.achievement.easy_as_breathing.weapon_type) and not is_civilian then
@@ -1103,9 +1109,6 @@ local orig_stop_shooting = RaycastWeaponBase.stop_shooting
 function RaycastWeaponBase:stop_shooting(...)
 	if self._shots_without_releasing_trigger then
 		self._shots_without_releasing_trigger = 0
-	end
-	if self._no_cheevo_kills_without_releasing_trigger then
-		self._no_cheevo_kills_without_releasing_trigger = 0
 	end
 	if self:_get_sound_event("stop_fire2") then
 		--self._sound_fire:stop()

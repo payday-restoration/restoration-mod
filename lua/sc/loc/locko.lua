@@ -2946,7 +2946,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다. #{skill_color}#기관총##의 경우 효과가 #{skill_color}#100%##로 증가하고 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 효과는 추가로 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총으로## 방아쇠를 놓지 않는 동안 적을 죽이면 대미지가 #{skill_color}#10%##만큼씩 증가합니다. 이 효과는 최대 #{skill_color}#5##번까지 중첩됩니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다. #{skill_color}#기관총##의 경우 효과가 #{skill_color}#100%##로 증가하고 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 효과는 추가로 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}완전 자동인 #기관총으로## 1초 이상 방아쇠를 놓지 않는 동안 적을 죽이면 대미지가 #{skill_color}#10%##만큼씩 증가합니다. 이 효과는 최대 #{skill_color}#5##번까지 중첩됩니다.",
 
 			--}
 		--}

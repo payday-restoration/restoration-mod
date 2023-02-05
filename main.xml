@@ -350,6 +350,7 @@
 		<hook file="sc/mutators/mutatorshielddozers.lua" source_file="lib/mutators/mutatorshielddozers"/>
 		<hook file="sc/mutators/mutatorhydra.lua" source_file="lib/mutators/mutatorhydra"/>
 		<hook file="sc/mutators/mutatorenemyreplacer.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
+		<hook file="sc/mutators/mutatormedidozer.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
 		<hook file="sc/mutators/mutatorexplodingenemies.lua" source_file="lib/mutators/mutatorexplodingenemies"/>
 		<hook file="sc/mutators/mutatorshotguntweak.lua" source_file="lib/mutators/mutatorshotguntweak"/>
 		<hook file="sc/mutators/mutatortitandozers.lua" source_file="lib/mutators/mutatorenemyreplacer"/>

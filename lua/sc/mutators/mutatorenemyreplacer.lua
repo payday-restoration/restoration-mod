@@ -4,8 +4,8 @@ MutatorZombieOutbreak.name_id = "mutator_zombie_outbreak"
 MutatorZombieOutbreak.desc_id = "mutator_zombie_outbreak_desc"
 MutatorZombieOutbreak.has_options = false
 MutatorZombieOutbreak.reductions = {
-	money = 0.35,
-	exp = 0.35
+	money = 0,
+	exp = 0
 }
 MutatorZombieOutbreak.disables_achievements = false
 MutatorZombieOutbreak.categories = {
@@ -55,8 +55,8 @@ MutatorFactionsReplacer.name_id = "mutator_faction_override"
 MutatorFactionsReplacer.desc_id = "mutator_faction_override_desc"
 MutatorFactionsReplacer.has_options = true
 MutatorFactionsReplacer.reductions = {
-	money = 0.35,
-	exp = 0.35
+	money = 0,
+	exp = 0
 }
 MutatorFactionsReplacer.disables_achievements = false
 MutatorFactionsReplacer.categories = {
@@ -167,8 +167,8 @@ MutatorEnemyReplacer.name_id = "mutator_specials_override"
 MutatorEnemyReplacer.desc_id = "mutator_specials_override_desc"
 MutatorEnemyReplacer.has_options = true
 MutatorEnemyReplacer.reductions = {
-	money = 0.35,
-	exp = 0.35
+	money = 0,
+	exp = 0
 }
 MutatorEnemyReplacer.disables_achievements = true
 MutatorEnemyReplacer.categories = {

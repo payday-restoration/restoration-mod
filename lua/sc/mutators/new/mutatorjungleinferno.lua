@@ -3,8 +3,8 @@ MutatorJungleInferno._type = "MutatorJungleInferno"
 MutatorJungleInferno.name_id = "MutatorJungleInferno"
 MutatorJungleInferno.desc_id = "MutatorJungleInferno_desc"
 MutatorJungleInferno.reductions = {
-	money = 0.75,
-	exp = 0.75
+	money = 0,
+	exp = 0
 }
 MutatorJungleInferno.incompatibility_tags = {}		
 MutatorJungleInferno.disables_achievements = true

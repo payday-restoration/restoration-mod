@@ -1351,6 +1351,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield.speech_prefix_p2 = nil
 	self.marshal_shield.speech_prefix_count = nil
 	self.marshal_shield.yellow_blood = nil
+	self.marshal_shield.no_asu = true
 	if self:get_ai_group_type() == "russia" then
 		self.marshal_shield.custom_voicework = "tswat_ru"
 	elseif self:get_ai_group_type() == "murkywater" then
@@ -1396,6 +1397,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield_break.modify_health_on_tweak_change = true
 	self.marshal_shield_break.no_mutator_weapon_override = true
 	self.marshal_shield_break.unintimidateable = true
+	self.marshal_shield_break.no_asu = true
 	table.insert(self._enemy_list, "marshal_shield_break")
 end
 

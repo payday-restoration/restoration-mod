@@ -4,8 +4,8 @@ MutatorNoTitans._type = "MutatorNoTitans"
 MutatorNoTitans.name_id = "mutator_notitans"
 MutatorNoTitans.desc_id = "mutator_notitans_desc"
 MutatorNoTitans.reductions = {
-	money = 0.5,
-	exp = 0.5
+	money = 0,
+	exp = 0
 }
 MutatorNoTitans.disables_achievements = true
 MutatorNoTitans.categories = {"enemies"}

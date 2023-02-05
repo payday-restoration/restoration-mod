@@ -3,8 +3,8 @@ MutatorMoreDonutsPlus._type = "MutatorMoreDonutsPlus"
 MutatorMoreDonutsPlus.name_id = "MutatorMoreDonutsPlus"
 MutatorMoreDonutsPlus.desc_id = "MutatorMoreDonutsPlus_desc"
 MutatorMoreDonutsPlus.reductions = {
-	money = 0.5, --Because you're essentially committing a major atrocity by enabling this mutator.
-	exp = 0.5
+	money = 0, --Because you're essentially committing a major atrocity by enabling this mutator.
+	exp = 0
 }
 MutatorMoreDonutsPlus.disables_achievements = true
 MutatorMoreDonutsPlus.categories = {"enemies"}

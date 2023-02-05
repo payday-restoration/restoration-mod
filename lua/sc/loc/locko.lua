@@ -2624,7 +2624,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_11"] = "갬블러는 탄약을 획득할 때 팀원에게 약간의 체력과 추가 탄약을 제공하는 팀 중심의 특성 덱입니다. 추가 탄약을 제공하는 스킬과 함께 쓸 수 있습니다.",	
 		["loading_equip_skills_res_12"] = "매니악은 빠른 팀 중심의 특성 덱으로, 킬을 계속 유지하는 한 자신과 팀원에게 받는 피해를 줄여줍니다. 고화력 빌드와 대미지 저항 빌드와 함께 쓸 수 있습니다.",	
 		["loading_equip_skills_res_13"] = "해커의 휴대용 ECM은 팀 전체의 치유와 강력한 군중 제어를 제공하지만 재충전하는 데 오랜 시간이 걸립니다. 스텔스에서도 효과적입니다.",	
-		["loading_equip_skills_res_14"] = "버글러는 라우드용으로 사용되는 다른 덱보다 약간 약한 대가로 스텔스에 약간의 보너스를 제공하는 특성 덱입니다.",	
+		["loading_equip_skills_res_14"] = "Burglar is a dodge focused perk deck that promotes keeping your head down during a firefight.",	
 		["loading_equip_skills_res_15"] = "킹핀은 다재다능한 특성 덱입니다. 주사기로 자가 유지, 높은 대미지에서 살아남거나 팀 대신 적의 사격을 맞아주는 데 사용할 수 있습니다.",	
 		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 특성 덱입니다.",	
 		["loading_equip_skills_res_17"] = "방패를 관통하는 총알은 절반의 피해를 줍니다.",	
@@ -2709,7 +2709,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_content_updates_previous"] = "",
 
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 획득한 경험치와 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
+		["menu_mutators_achievement_disabled"] = "",
 		["menu_mutators_category_holiday"] = "홀리데이",
 		["menu_mutators_category_old_event"] = "이벤트",
 		

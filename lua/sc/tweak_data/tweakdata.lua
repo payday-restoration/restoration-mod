@@ -77,9 +77,6 @@ tweak_data.smg = {
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}
-		tweak_data.bar = {
-			hipfire_spread_mult = 0.75
-		}
 		tweak_data.wolf_brigade = {
 			hipfire_spread_mult = 0.5
 		}
@@ -1225,252 +1222,247 @@ if twp.stances.papa320 then
 	twp.stances.papa320.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
-if BeardLib and BeardLib.Mods then
+if BeardLib then
 	local modded_perk_deck = false
-	for i, v in pairs(BeardLib.Mods) do
+	--Global perk deck cards
+		local deck2 = {
+			upgrades = {
+				"weapon_passive_headshot_damage_multiplier",
+				"weapon_passive_damage_multiplier_1",
+				"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
+				"player_melee_damage_multiplier_1"
+			},
+			cost = 0,
+			icon_xy = {1, 0},
+			name_id = "menu_deckall_2",
+			desc_id = "menu_deckall_2_desc_sc"
+		}
+		local deck4 = {
+			upgrades = {
+				"passive_player_xp_multiplier_1",
+				"player_passive_suspicion_bonus",
+				"player_passive_armor_movement_penalty_multiplier",
+				"weapon_passive_damage_multiplier_2",
+				"player_non_special_melee_multiplier_2",
+				"player_melee_damage_multiplier_2"			
+			},
+			cost = 0,
+			icon_xy = {3, 0},
+			name_id = "menu_deckall_4",
+			desc_id = "menu_deckall_4_desc_sc"
+		}
+		local deck6 = {
+			upgrades = {
+				"armor_kit",
+				"weapon_passive_damage_multiplier_3",
+				"player_non_special_melee_multiplier_3",
+				"player_melee_damage_multiplier_3"			
+			},
+			cost = 0,
+			icon_xy = {5, 0},
+			name_id = "menu_deckall_6",
+			desc_id = "menu_deckall_6_desc_sc"
+		}
+		local deck8 = {
+			upgrades = {
+				"weapon_passive_damage_multiplier_4",
+				"passive_doctor_bag_interaction_speed_multiplier",
+				"player_non_special_melee_multiplier_4",
+				"player_melee_damage_multiplier_4"
+			},
+			cost = 0,
+			icon_xy = {7, 0},
+			name_id = "menu_deckall_8",
+			desc_id = "menu_deckall_8_desc_sc"
+		}
 
-		--Global perk deck cards
-			local deck2 = {
+	if BeardLib.Utils:FindMod("Mercenary Perk Deck") then
+		modded_perk_deck = true
+		local kmerc_deck = {
+			name_id = "menu_deck_kmerc_title",
+			desc_id = "menu_deck_kmerc_desc",
+			category = {
+				"mod"
+			},
+			{
+				name_id = "menu_deck_kmerc_1",
+				desc_id = "menu_deck_kmerc_1_desc_sc",
+				cost = 0,
 				upgrades = {
-					"weapon_passive_headshot_damage_multiplier",
-					"weapon_passive_damage_multiplier_1",
-					"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
-					"player_melee_damage_multiplier_1"
+					"player_kmerc_reactive_absorption",
+					"player_kmerc_passive_health_multiplier_1"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			deck2,
+			{
+				name_id = "menu_deck_kmerc_3",
+				desc_id = "menu_deck_kmerc_3_desc_sc",
+				cost = 0,
+				upgrades = {
+					--"player_kmerc_crit_chance_per_max_armor",
+					"player_perk_armor_regen_timer_multiplier_1",
+					"player_tier_armor_multiplier_1",
+					"player_tier_armor_multiplier_2"
+				},
+				--texture_bundle_folder = "kmerc",
+				--icon_xy = {1,0}
+				icon_xy = {6, 0}
+			},
+			deck4,
+			{
+				name_id = "menu_deck_kmerc_5",
+				desc_id = "menu_deck_kmerc_5_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_fatal_triggers_invuln",
+					"player_kmerc_passive_health_multiplier_2"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					2,
+					0
+				}
+			},
+			deck6,
+			{
+				name_id = "menu_deck_kmerc_7",
+				desc_id = "menu_deck_kmerc_7_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_armored_hot"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					3,
+					0
+				}
+			},
+			deck8,
+			{
+				name_id = "menu_deck_kmerc_9",
+				desc_id = "menu_deck_kmerc_9_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_bloody_armor"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					0,
+					1
+				}
+			}
+		}	
+
+		for i, k in pairs(tweak_data.skilltree.specializations) do 
+			if tweak_data.skilltree.specializations[i].name_id and tweak_data.skilltree.specializations[i].name_id == "menu_deck_kmerc_title" then
+				tweak_data.skilltree.specializations[i] = kmerc_deck
+			end
+		end
+	end
+	if BeardLib.Utils:FindMod("Liberator Perk Deck") then
+		modded_perk_deck = true
+		local silence_deck = {
+			name_id = "menu_deck_liberator_title",
+			desc_id = "menu_deck_liberator_desc",
+			category = {
+				"mod",
+				"activated"
+			},
+			{
+				upgrades = {
+					"tachi", --unlocks throwable
+					"player_tachi_base", --base throwable stats (number of charges, cooldown speed etc)
+					"player_tachi_restore_health_1",
+					"player_tachi_restore_stamina_1",
+					"player_tachi_hot_amount_1",
+					"player_tachi_hot_duration_1"
 				},
 				cost = 0,
-				icon_xy = {1, 0},
-				name_id = "menu_deckall_2",
-				desc_id = "menu_deckall_2_desc_sc"
-			}
-			local deck4 = {
+				icon_xy = {0, 0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_1",
+				desc_id = "menu_deck_liberator_1_desc_sc"
+			},
+			deck2,
+			{
 				upgrades = {
-					"passive_player_xp_multiplier_1",
-					"player_passive_suspicion_bonus",
-					"player_passive_armor_movement_penalty_multiplier",
-					"weapon_passive_damage_multiplier_2",
-					"player_non_special_melee_multiplier_2",
-					"player_melee_damage_multiplier_2"			
+					"player_tachi_hot_duration_2",
+					"player_tachi_hot_cancelled_damage_resistance_consolation"
+				},
+				cost = 0,
+				icon_xy = {1,0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_3",
+				desc_id = "menu_deck_liberator_3_desc_sc"
+			},
+			deck4,
+			{
+				upgrades = {
+					"player_tachi_hot_amount_2",
+					"player_tachi_restore_stamina_2",
+					"player_passive_dodge_chance_1"
+				},
+				cost = 0,
+				icon_xy = {2, 0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_5",
+				desc_id = "menu_deck_liberator_5_desc_sc"
+			},
+			deck6,
+			{
+				upgrades = {
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2",
+					"player_tachi_hot_duration_3"
 				},
 				cost = 0,
 				icon_xy = {3, 0},
-				name_id = "menu_deckall_4",
-				desc_id = "menu_deckall_4_desc_sc"
-			}
-			local deck6 = {
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_7",
+				desc_id = "menu_deck_liberator_7_desc_sc"
+			},
+			deck8,
+			{
 				upgrades = {
-					"armor_kit",
-					"weapon_passive_damage_multiplier_3",
-					"player_non_special_melee_multiplier_3",
-					"player_melee_damage_multiplier_3"			
+					"player_tachi_hot_amount_3"
 				},
 				cost = 0,
-				icon_xy = {5, 0},
-				name_id = "menu_deckall_6",
-				desc_id = "menu_deckall_6_desc_sc"
+				icon_xy = {0,1},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_9",
+				desc_id = "menu_deck_liberator_9_desc_sc"
 			}
-			local deck8 = {
-				upgrades = {
-					"weapon_passive_damage_multiplier_4",
-					"passive_doctor_bag_interaction_speed_multiplier",
-					"player_non_special_melee_multiplier_4",
-					"player_melee_damage_multiplier_4"
-				},
-				cost = 0,
-				icon_xy = {7, 0},
-				name_id = "menu_deckall_8",
-				desc_id = "menu_deckall_8_desc_sc"
-			}
+		}
 
-		if BeardLib.Mods[i].Name then
-			if BeardLib.Mods[i].Name == "Mercenary Perk Deck" then
-				modded_perk_deck = true
-				local kmerc_deck = {
-					name_id = "menu_deck_kmerc_title",
-					desc_id = "menu_deck_kmerc_desc",
-					category = {
-						"mod"
-					},
-					{
-						name_id = "menu_deck_kmerc_1",
-						desc_id = "menu_deck_kmerc_1_desc_sc",
-						cost = 0,
-						upgrades = {
-							"player_kmerc_reactive_absorption",
-							"player_kmerc_passive_health_multiplier_1"
-						},
-						texture_bundle_folder = "kmerc",
-						icon_xy = {
-							0,
-							0
-						}
-					},
-					deck2,
-					{
-						name_id = "menu_deck_kmerc_3",
-						desc_id = "menu_deck_kmerc_3_desc_sc",
-						cost = 0,
-						upgrades = {
-							--"player_kmerc_crit_chance_per_max_armor",
-							"player_perk_armor_regen_timer_multiplier_1",
-							"player_tier_armor_multiplier_1",
-							"player_tier_armor_multiplier_2"
-						},
-						--texture_bundle_folder = "kmerc",
-						--icon_xy = {1,0}
-						icon_xy = {6, 0}
-					},
-					deck4,
-					{
-						name_id = "menu_deck_kmerc_5",
-						desc_id = "menu_deck_kmerc_5_desc_sc",
-						cost = 0,
-						upgrades = {
-							"player_kmerc_fatal_triggers_invuln",
-							"player_kmerc_passive_health_multiplier_2"
-						},
-						texture_bundle_folder = "kmerc",
-						icon_xy = {
-							2,
-							0
-						}
-					},
-					deck6,
-					{
-						name_id = "menu_deck_kmerc_7",
-						desc_id = "menu_deck_kmerc_7_desc_sc",
-						cost = 0,
-						upgrades = {
-							"player_kmerc_armored_hot"
-						},
-						texture_bundle_folder = "kmerc",
-						icon_xy = {
-							3,
-							0
-						}
-					},
-					deck8,
-					{
-						name_id = "menu_deck_kmerc_9",
-						desc_id = "menu_deck_kmerc_9_desc_sc",
-						cost = 0,
-						upgrades = {
-							"player_kmerc_bloody_armor"
-						},
-						texture_bundle_folder = "kmerc",
-						icon_xy = {
-							0,
-							1
-						}
-					}
-				}	
-
-				for i, k in pairs(tweak_data.skilltree.specializations) do 
-					if tweak_data.skilltree.specializations[i].name_id and tweak_data.skilltree.specializations[i].name_id == "menu_deck_kmerc_title" then
-						tweak_data.skilltree.specializations[i] = kmerc_deck
-					end
-				end
-			end
-			if BeardLib.Mods[i].Name == "Liberator Perk Deck" then
-				modded_perk_deck = true
-				local silence_deck = {
-					name_id = "menu_deck_liberator_title",
-					desc_id = "menu_deck_liberator_desc",
-					category = {
-						"mod",
-						"activated"
-					},
-					{
-						upgrades = {
-							"tachi", --unlocks throwable
-							"player_tachi_base", --base throwable stats (number of charges, cooldown speed etc)
-							"player_tachi_restore_health_1",
-							"player_tachi_restore_stamina_1",
-							"player_tachi_hot_amount_1",
-							"player_tachi_hot_duration_1"
-						},
-						cost = 0,
-						icon_xy = {0, 0},
-						texture_bundle_folder = "liberator",
-						name_id = "menu_deck_liberator_1",
-						desc_id = "menu_deck_liberator_1_desc_sc"
-					},
-					deck2,
-					{
-						upgrades = {
-							"player_tachi_hot_duration_2",
-							"player_tachi_hot_cancelled_damage_resistance_consolation"
-						},
-						cost = 0,
-						icon_xy = {1,0},
-						texture_bundle_folder = "liberator",
-						name_id = "menu_deck_liberator_3",
-						desc_id = "menu_deck_liberator_3_desc_sc"
-					},
-					deck4,
-					{
-						upgrades = {
-							"player_tachi_hot_amount_2",
-							"player_tachi_restore_stamina_2",
-							"player_passive_dodge_chance_1"
-						},
-						cost = 0,
-						icon_xy = {2, 0},
-						texture_bundle_folder = "liberator",
-						name_id = "menu_deck_liberator_5",
-						desc_id = "menu_deck_liberator_5_desc_sc"
-					},
-					deck6,
-					{
-						upgrades = {
-							"player_passive_health_multiplier_1",
-							"player_passive_health_multiplier_2",
-							"player_tachi_hot_duration_3"
-						},
-						cost = 0,
-						icon_xy = {3, 0},
-						texture_bundle_folder = "liberator",
-						name_id = "menu_deck_liberator_7",
-						desc_id = "menu_deck_liberator_7_desc_sc"
-					},
-					deck8,
-					{
-						upgrades = {
-							"player_tachi_hot_amount_3"
-						},
-						cost = 0,
-						icon_xy = {0,1},
-						texture_bundle_folder = "liberator",
-						name_id = "menu_deck_liberator_9",
-						desc_id = "menu_deck_liberator_9_desc_sc"
-					}
-				}
-
-				for i, k in pairs(tweak_data.skilltree.specializations) do 
-					if tweak_data.skilltree.specializations[i].name_id and tweak_data.skilltree.specializations[i].name_id == "menu_deck_liberator_title" then
-						tweak_data.skilltree.specializations[i] = silence_deck
-					end
-				end
-
-				tweak_data.blackmarket.projectiles.tachi = {
-					name_id = "bm_tachi",
-					desc_id = "bm_tachi_desc",
-					ability = "tachi",
-					custom = true,
-					ignore_statistics = true,
-					based_on = "chico_injector",
-					texture_bundle_folder = "liberator",
-					icon = "chico_injector",
-					max_amount = 1,
-					base_cooldown = 30,
-					sounds = {
-						activate = "perkdeck_activate",
-						cooldown = "perkdeck_cooldown_over"
-					}
-				}
+		for i, k in pairs(tweak_data.skilltree.specializations) do 
+			if tweak_data.skilltree.specializations[i].name_id and tweak_data.skilltree.specializations[i].name_id == "menu_deck_liberator_title" then
+				tweak_data.skilltree.specializations[i] = silence_deck
 			end
 		end
-	
+
+		tweak_data.blackmarket.projectiles.tachi = {
+			name_id = "bm_tachi",
+			desc_id = "bm_tachi_desc",
+			ability = "tachi",
+			custom = true,
+			ignore_statistics = true,
+			based_on = "chico_injector",
+			texture_bundle_folder = "liberator",
+			icon = "chico_injector",
+			max_amount = 1,
+			base_cooldown = 30,
+			sounds = {
+				activate = "perkdeck_activate",
+				cooldown = "perkdeck_cooldown_over"
+			}
+		}
 	end
+
 	if modded_perk_deck then
 		tweak_data.skilltree.specialization_category = {
 			{

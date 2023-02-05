@@ -3738,7 +3738,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "sniper"
 	end
 
-	recat = { "ching", "g3", "new_m14", "shak12" }
+	recat = { "ching", "g3", "new_m14", "shak12", "hcar" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "dmr")
 		self[ wep_id ].recategorize = { "dmr_ar" }
@@ -3764,7 +3764,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = 0.75
 	end
 
-	recat = { "m60", "par", "hcar" }
+	recat = { "m60", "par" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "mmg")
 		self[ wep_id ].recategorize = { "heavy_mg" }
@@ -3772,8 +3772,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].sms = 0.7
 		self[ wep_id ].weapon_movement_penalty = 0.7
 	end
-	self.hcar.sms = nil
-	self.hcar.weapon_movement_penalty = 1
 	self.ranc_heavy_machine_gun.damage_type = "anti_materiel"
 	
 	recat = { "shuno", "m134" }
@@ -7183,6 +7181,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.fire_mode_data.fire_rate = 0.03
 			self.shuno.CAN_TOGGLE_FIREMODE = false
 			self.shuno.kick = self.stat_info.kick_tables.moderate_kick
+			self.shuno.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
 			self.shuno.ads_speed = 0.600
@@ -7267,6 +7266,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.AMMO_MAX = 300
 			self.m249.fire_mode_data.fire_rate = 0.08
 			self.m249.kick = self.stat_info.kick_tables.even_recoil
+			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
 			self.m249.ads_speed = 0.520
 			self.m249.damage_falloff = {
@@ -7407,7 +7407,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.AMMO_MAX = 120
 				self.m60.fire_mode_data.fire_rate = 0.10909090909
 				self.m60.kick = self.stat_info.kick_tables.moderate_kick
-				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
 				self.m60.ads_speed = 0.620
@@ -7433,6 +7433,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.stats_modifiers = nil
 				self.m60.panic_suppression_chance = 0.05
 				self.m60.reload_speed_multiplier = 0.8
+				self.m60.obd = 1
+				self.m60.armor_piercing_chance = 0.2
 				self.m60.timers.reload_exit_empty = 1.4
 				self.m60.timers.reload_not_empty = 4.7
 				self.m60.timers.reload_exit_not_empty = 2.8
@@ -7448,12 +7450,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.CLIP_AMMO_MAX = 50
 				self.par.fire_mode_data.fire_rate = 0.096
 				self.par.AMMO_MAX = 120
-				self.par.timers.reload_not_empty = 6.5
-				self.par.timers.reload_empty = 6.5
 				self.par.kick = {}
 				self.par.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.par.panic_suppression_chance = 0.05
-				self.par.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.par.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.par.supported = true
 				self.par.ads_speed = 0.600
@@ -7478,50 +7478,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.par.stats_modifiers = nil
 				self.par.no_bipod_anims = true
-				self.par.reload_speed_multiplier = 0.85
+				self.par.armor_piercing_chance = 0.2
+				self.par.reload_speed_multiplier = 0.8
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
 				self.par.timers.reload_exit_empty = 1.325
 				self.par.timers.reload_exit_not_empty = 1.325
-
-			--Ohio Ord. HCAR
-				self.hcar.categories = {
-					"lmg",
-					"smg",
-					"bar",
-					"mmg"
-				}
-				self.hcar.has_description = true
-				self.hcar.desc_id = "bm_hcar_sc_desc"	
-				self.hcar.CLIP_AMMO_MAX = 20
-				self.hcar.AMMO_MAX = 60
-				self.hcar.fire_mode_data.fire_rate = 0.12
-				self.hcar.kick = self.stat_info.kick_tables.moderate_kick
-				self.hcar.supported = true
-				self.hcar.ads_speed = 0.420
-				self.hcar.damage_falloff = {
-					start_dist = 3600,
-					end_dist = 7000,
-					min_mult = 0.5
-				}
-				self.hcar.stats = {
-					damage = 60,
-					spread = 78,
-					recoil = 71,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 19,
-					suppression = 5,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 9,
-					reload = 20
-				}
-				self.hcar.stats_modifiers = nil
-				self.hcar.panic_suppression_chance = 0.05
-				self.hcar.timers.reload_exit_empty = 0.8
-				self.hcar.timers.reload_exit_not_empty = 0.7
 	
 			--Buzzsaw (MG42)
 				self.mg42.categories = {
@@ -7537,7 +7499,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.has_description = true
 				self.mg42.desc_id = "bm_wolf_brigade_sc_desc"
 				self.mg42.kick = self.stat_info.kick_tables.the_wolf_brigade
-				self.mg42.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.mg42.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
 				self.mg42.ads_speed = 0.600
@@ -7581,7 +7543,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.fake_semi_anims = true
 				self.hk21.kick = self.stat_info.kick_tables.right_kick
 				self.hk21.panic_suppression_chance = 0.05
-				self.hk21.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.hk21.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk21.supported = true
 				self.hk21.ads_speed = 0.620
@@ -7628,7 +7590,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.BURST_FIRE = 3
 				self.hk51b.kick = self.stat_info.kick_tables.right_kick
 				self.hk51b.panic_suppression_chance = 0.05
-				self.hk51b.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.hk51b.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk51b.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk51b.supported = true
 				self.hk51b.ads_speed = 0.480
@@ -9025,6 +8987,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.timers.reload_exit_empty = 0.85
 				self.ching.timers.reload_not_empty = 2.2
 				self.ching.timers.reload_exit_not_empty = 1
+
+			--Ohio Ord. HCAR
+				self.hcar.categories = {"assault_rifle" }
+				self.hcar.has_description = true
+				self.hcar.desc_id = "bm_hcar_sc_desc"	
+				self.hcar.CLIP_AMMO_MAX = 20
+				self.hcar.AMMO_MAX = 60
+				self.hcar.fire_mode_data.fire_rate = 0.12
+				self.hcar.kick = self.stat_info.kick_tables.moderate_kick
+				self.hcar.supported = true
+				self.hcar.ads_speed = 0.420
+				self.hcar.damage_falloff = {
+					start_dist = 3600,
+					end_dist = 7000,
+					min_mult = 0.5
+				}
+				self.hcar.stats = {
+					damage = 60,
+					spread = 78,
+					recoil = 71,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 19,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 9,
+					reload = 20
+				}
+				self.hcar.stats_modifiers = nil
+				self.hcar.panic_suppression_chance = 0.05
+				self.hcar.armor_piercing_chance = 0.8
+				self.hcar.can_shoot_through_wall = true
+				self.hcar.can_shoot_through_enemy = true
+				self.hcar.timers.reload_exit_empty = 0.8
+				self.hcar.timers.reload_exit_not_empty = 0.7
 
 	--[[     LIGHT SNIPERS     ]]	
 		
@@ -16372,10 +16371,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		smg = 1.1,
 			pdw = 0.8,
 			typh = 0.8,
-			lmg = 0.6,
+			lmg = 0.575,
 				mmg = 0.8,
-					bar = 1.9,
-				minigun = 0.4,
+				minigun = 0.45,
 		shotgun = 0.75, --Compensate for ease of aim+multikills and/or versatility.
 		--assault_rifle = 1, 
 			--snp = 1, 

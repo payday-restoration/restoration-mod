@@ -789,9 +789,6 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 			end
 		end
 	end
-	log(tostring(  name ))
-	log(tostring(  gl_buck ))
-	log(tostring(  damage_base * damage_min_mult ))
 
 	return damage_base * damage_min_mult
 end

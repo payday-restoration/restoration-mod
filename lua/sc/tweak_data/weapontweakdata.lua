@@ -3773,7 +3773,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = 0.7
 	end
 	self.hcar.sms = nil
-	self.hcar.weapon_movement_penalty = 0.8
+	self.hcar.weapon_movement_penalty = 1
 	self.ranc_heavy_machine_gun.damage_type = "anti_materiel"
 	
 	recat = { "shuno", "m134" }
@@ -7494,11 +7494,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hcar.has_description = true
 				self.hcar.desc_id = "bm_hcar_sc_desc"	
 				self.hcar.CLIP_AMMO_MAX = 20
-				self.hcar.AMMO_MAX = 120
+				self.hcar.AMMO_MAX = 60
 				self.hcar.fire_mode_data.fire_rate = 0.12
 				self.hcar.kick = self.stat_info.kick_tables.moderate_kick
 				self.hcar.supported = true
-				self.hcar.ads_speed = 0.440
+				self.hcar.ads_speed = 0.420
 				self.hcar.damage_falloff = {
 					start_dist = 3600,
 					end_dist = 7000,
@@ -16373,7 +16373,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			pdw = 0.8,
 			typh = 0.8,
 			lmg = 0.6,
-				mmg = 0.875,
+				mmg = 0.8,
+					bar = 1.9,
 				minigun = 0.4,
 		shotgun = 0.75, --Compensate for ease of aim+multikills and/or versatility.
 		--assault_rifle = 1, 

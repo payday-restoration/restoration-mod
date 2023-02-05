@@ -20007,15 +20007,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hcar", "resmod_hcar", function(sel
 
 	self.parts.wpn_fps_lmg_hcar_m_drum.supported = true
 	self.parts.wpn_fps_lmg_hcar_m_drum.stats = {
+		total_ammo_mod = 100,
 		extra_ammo = 30,
 		value = 10,
 		reload = -6,
-		concealment = -5
+		concealment = -6
 	}
 	self.parts.wpn_fps_lmg_hcar_m_drum.custom_stats = {
-		ads_speed_mult = 1.125,
-		movement_speed_add = -0.1,
-		sms = 0.7
+		ads_speed_mult = 1.15,
+		movement_speed_add = -0.3,
+		sms = 0.7,
+		rof_mult = 0.9,
+		hip_mult = 1.33333
 	}
 
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.supported = true
@@ -20746,10 +20749,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank)
-							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-						end
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_tank)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_ass_smg_tank") then
@@ -20773,10 +20776,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_large then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_large)
-							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-						end
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_large then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_large)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_ass_smg_large") then
@@ -20793,10 +20796,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
-							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-						end
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_shot_shark") then
@@ -20811,10 +20814,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
-							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-						end
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_shot_shark then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_shot_shark)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_shot_shark") then
@@ -20831,10 +20834,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override[part_id] then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_crane)
-							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_crane then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_crane)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_crane") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
 						end
+					end
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_m4_uupg_s_fold") then
+				attachment_list = {
+					"wpn_fps_m4_uupg_s_zulu"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self[factory_id].override and self[factory_id].override.wpn_fps_m4_uupg_s_fold then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_m4_uupg_s_fold)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_crane") then
@@ -20851,10 +20870,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if not table.contains(self[factory_id].uses_parts, part_id) then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-						if self[factory_id].override and self[factory_id].override[part_id] then
-							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_pts)
-							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-						end
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_pts then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_pts)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_pts") then
@@ -28080,6 +28099,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_skspug_barrel_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 
 		self.parts.wpn_fps_upg_skspug_mag_30.supported = true
+		self.parts.wpn_fps_upg_skspug_mag_30.has_description = false
 		self.parts.wpn_fps_upg_skspug_mag_30.stats = { 
 			value = 2,
 			extra_ammo = 10,
@@ -28619,6 +28639,211 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_akilo105_2022_npc.default_blueprint = deep_clone(self.wpn_fps_ass_akilo105_2022.default_blueprint)
 		self.wpn_fps_ass_akilo105_2022_npc.uses_parts = deep_clone(self.wpn_fps_ass_akilo105_2022.uses_parts)
 
+	end
+
+	if self.parts.wpn_fps_upg_m4_hera_lower then
+	
+		self.parts.wpn_fps_upg_m4_hera_lower.supported = true
+		self.parts.wpn_fps_upg_m4_hera_lower.stats = {
+			value = 1,
+			recoil = 2,
+			spread = -1
+		}
+		self.parts.wpn_fps_upg_m4_hera_upper.supported = true
+		self.parts.wpn_fps_upg_m4_hera_upper.stats = {
+			value = 1,
+			recoil = -2,
+			spread = 1
+		}
+	
+		self.parts.wpn_fps_upg_m4_victor_lower.supported = true
+		self.parts.wpn_fps_upg_m4_victor_lower.stats = {
+			value = 1,
+			concealment = -1,
+			recoil = 2
+		}
+		self.parts.wpn_fps_upg_m4_victor_upper.supported = true
+		self.parts.wpn_fps_upg_m4_victor_upper.stats = {
+			value = 1,
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_upg_m4_b_victor.supported = true
+		self.parts.wpn_fps_upg_m4_b_victor.stats = {
+			value = 1
+		}
+		self.parts.wpn_fps_upg_m4_b_victor.custom_stats = nil
+
+		self.parts.wpn_fps_ass_ar47_g_ergo.supported = true
+		self.parts.wpn_fps_ass_ar47_g_ergo.stats = {
+			value = 3,
+			spread = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_snp_tti_body_receiverlower_223.supported = true
+		self.parts.wpn_fps_snp_tti_body_receiverlower_223.stats = {
+			value = 1,
+			spread = -1,
+			recoil = 2
+		}
+		self.parts.wpn_fps_snp_tti_body_receiverupper_223.supported = true
+		self.parts.wpn_fps_snp_tti_body_receiverupper_223.stats = {
+			value = 1,
+			spread = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_snp_tti_fg_m4.supported = true
+		self.parts.wpn_fps_snp_tti_fg_m4.stats = {
+			value = 1,
+			spread = 1,
+			recoil = 2,
+			concealment = -2
+		}
+		
+		self.parts.wpn_fps_ass_m4_fg_vietnam_akcar.supported = true
+		self.parts.wpn_fps_ass_m4_fg_vietnam_akcar.adds = nil
+		self.parts.wpn_fps_ass_m4_fg_vietnam_akcar.stats = {
+			value = 3,
+			recoil = -4,
+			concealment = 2
+		}
+	
+		self.parts.wpn_fps_m4_uupg_m_sharps.supported = true
+		self.parts.wpn_fps_m4_uupg_m_sharps.has_description = false
+		self.parts.wpn_fps_m4_uupg_m_sharps.desc_id = ""
+		self.parts.wpn_fps_m4_uupg_m_sharps.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_m4_uupg_m_sharps.custom_stats = nil
+
+		self.parts.wpn_fps_ass_tecci_m_jungle_m4.supported = true
+		self.parts.wpn_fps_ass_tecci_m_jungle_m4.stats = {
+			value = 2,
+			spread = -1,
+			concealment = -1,
+			reload = 3
+		}
+		self.parts.wpn_fps_ass_tecci_m_jungle_m4.custom_stats = nil
+		self.parts.wpn_fps_ass_tecci_m_jungle.supported = true
+		self.parts.wpn_fps_ass_tecci_m_jungle.stats = {
+			value = 2,
+			extra_ammo = -70,
+			spread = -1,
+			concealment = 5,
+			reload = 6
+		}
+		self.parts.wpn_fps_ass_tecci_m_jungle.custom_stats = {
+			ads_speed_mult = 0.875
+		}
+
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.supported = true
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.has_description = true
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.stats = {
+			value = 3,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.perks = {"silencer"}
+
+		self.parts.wpn_fps_upg_m4_s_hcar.supported = true
+		self.parts.wpn_fps_upg_m4_s_hcar.stats = deep_clone(stocks.adj_hvy_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_hcar.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+
+		self.parts.wpn_fps_upg_m4_s_contender_normal.supported = true
+		self.parts.wpn_fps_upg_m4_s_contender_normal.stats = deep_clone(stocks.adj_hvy_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_contender_normal.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+
+		self.parts.wpn_fps_ass_hera_s_russian.supported = true
+		self.parts.wpn_fps_ass_hera_s_russian.stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_ass_hera_s_russian.custom_stats = deep_clone(stocks.adj_acc_stats)
+
+		for factory_id, i in pairs(self) do
+			if self[factory_id] and self[factory_id .. "_npc"] then
+				if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_snp_tti_s_vltor") then
+					attachment_list = {
+						"wpn_fps_upg_m4_s_hcar"
+					}
+					for _, part_id in ipairs(attachment_list) do
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_snp_tti_s_vltor then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_snp_tti_s_vltor)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_g_sniper") then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
+					end
+				end
+				if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_ubr") then
+					attachment_list = {
+						"wpn_fps_upg_m4_s_contender_normal"
+					}
+					for _, part_id in ipairs(attachment_list) do
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_ubr then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_ubr)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_g_sniper") then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
+					end
+				end
+				if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_pts") then
+					attachment_list = {
+						"wpn_fps_ass_hera_s_russian"
+					}
+					for _, part_id in ipairs(attachment_list) do
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_pts then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_pts)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_g_sniper") then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
+					end
+				end
+			end
+		end
+
+		self.parts.wpn_fps_upg_ak_m_nato.supported = true
+		self.parts.wpn_fps_upg_ak_m_nato.stats = { 
+			value = 1,
+			spread = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_upg_ak_m_nato.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ak_m_double.supported = true
+		self.parts.wpn_fps_upg_ak_m_double.stats = {
+			value = 2,
+			spread = -1,
+			concealment = -1,
+			reload = 3
+		}
+		self.parts.wpn_fps_upg_ak_m_double.custom_stats = nil
+
+	
 	end
 
 --Resmod Custom Weapon stuff

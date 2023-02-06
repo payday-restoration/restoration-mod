@@ -156,7 +156,7 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 		if not table.contains(ignored_groups, group) then
 			if units_data.special_type then
 				if units_data.special_type ~= "tank" and units_data.special_type ~= "medic" then
-					group_ai_tweak.unit_categories[group] = group_ai_tweak.unit_categories.FBI_tank
+					group_ai_tweak.unit_categories[group] = group_ai_tweak.unit_categories.All_Tanks
 				end
 			else
 				group_ai_tweak.unit_categories[group] = group_ai_tweak.unit_categories.medic_M4

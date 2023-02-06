@@ -8653,7 +8653,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					}
 				},
 				access = access_type_all,
-				special_type = "tank",
+				special_type = "tank"
 			}
 		elseif difficulty_index == 6 or difficulty_index == 7 then
 			self.unit_categories.All_Tanks = {

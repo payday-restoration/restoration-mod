@@ -3187,10 +3187,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_upg_m4_m_pmag.supported = true
 	self.parts.wpn_fps_upg_m4_m_pmag.stats = {
-		value = 3,
-		recoil = -1,
+		value = 1,
 		extra_ammo = -5,
-		concealment = 1
+		reload = 1
 	}
 	
 	--Vintage Mag.
@@ -10610,8 +10609,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 	}
 	self.parts.wpn_fps_ass_l85a2_m_emag.supported = true
 	self.parts.wpn_fps_ass_l85a2_m_emag.stats = {
-		value = 0,
-		extra_ammo = 0
+		value = 1,
+		concealment = 1,
+		recoil = -2
 	}
 	
 	--Versatile Foregrip
@@ -11296,7 +11296,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_m4_m_l5.pcs = {}
 	self.parts.wpn_fps_upg_m4_m_l5.supported = true
 	self.parts.wpn_fps_upg_m4_m_l5.stats = {
-		value = 0
+		value = 1,
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--2 Piece Stock
@@ -19398,6 +19400,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		recoil = -4,
 	}
 	self.parts.wpn_fps_uupg_fg_radian.adds = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }	
+	self.parts.wpn_fps_uupg_fg_radian.override = {
+		wpn_fps_ass_m16_o_handle_sight = {
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_o_flipup_emo",
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup_emo",
+			stance_mod = {
+				wpn_fps_ass_m16 = {
+					translation = Vector3(0,-4,0.47)
+				}
+			}
+		}
+	}
 	self.parts.wpn_fps_uupg_fg_radian.forbids = {
 		"wpn_fps_ass_m16_os_frontsight",
 		"wpn_fps_m4_uupg_b_sd",
@@ -20574,21 +20587,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {
 			value = 0
 		},
-		override = { 
-			wpn_fps_m4_uupg_fg_rail = m4a1_override,
-			wpn_fps_m4_uupg_fg_lr300 = m4a1_override,
-			wpn_fps_upg_fg_jp = m4a1_override,
-			wpn_fps_upg_fg_smr = m4a1_override,
-			wpn_fps_upg_ass_m4_fg_moe = m4a1_override,
-			wpn_fps_upg_ass_m4_fg_lvoa = m4a1_override,
-			wpn_fps_uupg_fg_radian = m4a1_override,
-			--VMP
-			wpn_fps_uupg_m4_fg_victorcar = m4a1_override,
-		},
+		override = {},
 		forbids = {
 			"wpn_fps_addon_ris"
 		}
 	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type and self.parts[used_part_id].type == "foregrip" then
+			self.parts.wpn_fps_m4_uupg_fg_rail_m4a1.override[used_part_id] = m4a1_override
+		end
+	end
 
 	--Fixed Stock (AMR-16)
 	self.parts.wpn_fps_ass_m16_s_fixed = {

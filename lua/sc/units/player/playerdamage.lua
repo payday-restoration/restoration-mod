@@ -1257,9 +1257,10 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
-		if not kmerc_proc_invuln and managers.player:has_category_upgrade("player","kmerc_bloody_armor") then
+		if not kmerc_proc_invuln and managers.player:has_category_upgrade("player","kmerc_bloody_armor") and not self._kmerc_bloody_armor_t then
 			if health_subtracted > 0 then
-				if self:health_ratio() <= 0.25 then
+				self._kmerc_bloody_armor_t = 1
+				if self:health_ratio() <= 0.3 then
 					self:change_armor(health_subtracted * 0.5)
 				end
 			end
@@ -1486,6 +1487,12 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		self._next_temp_health_decay_t = t + 1
 		self:change_health(-math.min(tweak_data.upgrades.temp_health_decay, self._temp_health))
 	end
+
+	--OFFYERROCKER'S MERC PERK DECK
+		--This is not part of the original deck
+		if self._kmerc_bloody_armor_t then
+			self._kmerc_bloody_armor_t = self._kmerc_bloody_armor_t - dt
+		end
 end)
 
 --Deals with resmod's health regen changes.

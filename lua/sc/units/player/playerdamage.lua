@@ -1492,6 +1492,9 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		--This is not part of the original deck
 		if self._kmerc_bloody_armor_t then
 			self._kmerc_bloody_armor_t = self._kmerc_bloody_armor_t - dt
+			if self._kmerc_bloody_armor_t < 0 then
+				self._kmerc_bloody_armor_t = nil
+			end
 		end
 end)
 

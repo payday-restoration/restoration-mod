@@ -1259,8 +1259,8 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	--[ [
 		if not kmerc_proc_invuln and managers.player:has_category_upgrade("player","kmerc_bloody_armor") then
 			if health_subtracted > 0 then
-				if self:health_ratio() <= 0.5 then
-					self:change_armor(health_subtracted)
+				if self:health_ratio() <= 0.25 then
+					self:change_armor(health_subtracted * 0.5)
 				end
 			end
 		end

@@ -4672,11 +4672,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ppk.stats_modifiers = nil
 				self.ppk.panic_suppression_chance = 0.05
-				self.ppk.reload_speed_multiplier = 1.35
+				self.ppk.reload_speed_multiplier = 1.45
 				self.ppk.timers.reload_not_empty = 1.45
-				self.ppk.timers.reload_exit_not_empty = 0.6
+				self.ppk.timers.reload_exit_not_empty = 0.5
 				self.ppk.timers.reload_empty = 2.2	
-				self.ppk.timers.reload_exit_empty = 0.65
+				self.ppk.timers.reload_exit_empty = 0.6
 				self.ppk.weapon_movement_penalty = 1.05
 
 			--Chimano Compact (Glock 26)
@@ -4934,7 +4934,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.stats = {
 					damage = 24,
 					spread = 61,
-					recoil = 93,
+					recoil = 91,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 32,
@@ -4947,7 +4947,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.breech.stats_modifiers = nil
 				self.breech.panic_suppression_chance = 0.05
-				self.breech.reload_speed_multiplier = 1.25
+				self.breech.reload_speed_multiplier = 1.1
 				self.breech.weapon_movement_penalty = 1.05
 				self.breech.timers = {
 					reload_not_empty = 1.2,

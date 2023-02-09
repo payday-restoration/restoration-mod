@@ -1362,7 +1362,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 말.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n발사 모드를 전환하면 #{skill_color}#증가된 발사 속도로## #{skill_color}#6발##을 전부 발사합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1395,7 +1395,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_90_body_boxy_desc"] = "오래된 옴니아 창고의 황폐한 유적에서 복구된 이 프레임은 무기의 취급이나 기능에 아무런 차이가 없지만 블록과 같은 미학은 확실히 좋은 물건입니다.",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7 기관단총",
-		["bm_mp7_sc_desc"] = "경량 기관단총이자 Project-90 기관단총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달고 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 헤드샷의 피해량을 33%만큼 더 입힙니다.##",
+		["bm_mp7_sc_desc"] = "경량 기관단총이자 Project-90 기관단총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달 수 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 헤드샷의 피해량을 33%만큼 더 입힙니다.##",
 		--Tec-9
 		["bm_w_tec9"] = "T3K Urban 기관단총",
 		["bm_w_x_tec9"] = "아킴보 T3K Urban 기관단총",		
@@ -1403,7 +1403,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_scorpion_m_extended"] = "이중 탄창",		
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 기관단총",	
-		["bm_mp5_sc_desc"] = "Gewehr-3의 자매.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
+		["bm_mp5_sc_desc"] = "Gewehr-3 모델 중 막내.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "블라스테크 E-11 총열",
 		["bm_wp_sterling_b_e11_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#1초##\n재충전 속도: #{skill_color}#6초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#2초##",		
@@ -1433,7 +1433,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 중기관총",
-		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
+		["bm_hk21_sc_desc"] = "Gewehr-3 모델 중 제일 막내. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
 		--M60
 		["bm_w_m60"] = "M60 중기관총",
 		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.",		
@@ -1450,9 +1450,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
 		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, 이 기관총을 Compact-5 크기로 축소했습니다.",
 		--M134
-		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
+		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 		--Microgun
-		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
+		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 
 
 
@@ -1596,7 +1596,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",		
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
-		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 자매, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
@@ -1931,8 +1931,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_assault_rifle_single"] = "소총",
 		["menu_snp"] = "소총",
 		["menu_snp_single"] = "소총",		
-		["menu_light_ar"] = "경소총",
-		["menu_heavy_ar"] = "중소총",
+		["menu_light_ar"] = "경돌격소총",
+		["menu_heavy_ar"] = "중돌격소총",
 		["menu_dmr_ar"] = "저정사수 소총",
 		
 		["menu_lmg"] = "기관총",
@@ -1990,7 +1990,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Blackmarket gui per-armor skill descriptions.
 		
-		["bm_menu_dodge_grace"] = "회피 시 최대 #{skill_color}#300ms##까지 더 긴 유예 시간을 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
+		["bm_menu_dodge_grace"] = "회피 시 최대 #{skill_color}#0.3##까지 더 긴 유예 시간을 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
 		
 		["bm_menu_armor_grinding_1"] = "틱당 방탄복 재생량: $passive_armor_regen",
 		["bm_menu_armor_grinding_2"] = "틱당 방탄복 재생량: $passive_armor_regen \n공격 적중시 방탄복 재생량: $active_armor_regen",
@@ -2943,7 +2943,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
-			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##은 #{skill_color}#20%##의 확률로 적을 쓰러뜨릴 수 있습니다.\n\n양각대 사용 시 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고: 스태거 효과는## #{important_1}#캡틴, 불도저, 실드 및 저격수에게는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 #{skill_color}#25%##으로 증가합니다.",
+			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##은 #{skill_color}#20%## 확률로 적을 경직 시킬 수 있습니다.\n\n양각대 거치하는 동안에는 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고:## #{important_1}#캡틴, 불도저, 실드 및 저격수는## #{risk}#경직 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 #{skill_color}#25%##으로 증가합니다.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
@@ -3420,7 +3420,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "최대 체력일 때 주사기 효과 동안 얻은 체력 ##5##마다 주사기 재충전 시간이 ##1##초씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "기본 투척 무기를 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 배치하면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 서 있는 동안, 당신과 당신의 아군은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 서 있는 적의 정확도가 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
+		["menu_deck18_1_desc_sc"] = "기본 투척 무기를 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 던지면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 아군은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck18_3_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 		["menu_deck18_7_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
@@ -3435,7 +3435,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--it's not a war crime if they're not people--
 		["menu_deck20_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 ##18## 미터 내에 있는 다른 아군 유닛을 정확하게 보고 투척 무기 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##2##만큼 회복합니다.\n\n효과는 ##11##초 동안 지속되며 재사용 대기시간은 ##80##초입니다.",
-		["menu_deck20_3_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽이면 기체 디스펜서의 지속 시간이 ##2##초만큼 증가합니니다. 이 증가는 발생할 때마다 ##0.2##초씩 감소합니다.",
+		["menu_deck20_3_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽일 때마다 기체 디스펜서의 지속 시간이 증가합니다. 증가량은 기본 ##2##초지만, 매 처치마다 ##0.2##초씩 최대 ##10##번까지 줄어듭니다.",
 		["menu_deck20_5_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽일 때마다 당신이 받는 피해가 기체 디스펜서의 효과와 재사용 대기시간이 끝날 때까지 ##0.5##만큼 최대 ##8##만큼 감소합니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
 		["menu_deck20_7_desc_sc"] = "기체 디스펜서의 치유량이 ##100%## 증가합니다.",
 		["menu_deck20_9_desc_sc"] = "적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초씩 감소합니다.\n\n태그가 지정된 유닛이 더 이상 짝을 이루지 않을 때까지 적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초 씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
@@ -3451,7 +3451,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다.\n\n체력이 ##100%## 이하일 때 회피 미터가 초당 회피의 최대 ##10%##씩 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##100%## 이하일 때 받는 피해가 최대 ##20%## 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
-		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%## 이하일 때 적을 근접 무기로 죽일 시 회피 미터가 최대 ##125%##만큼 채워지며 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##900ms##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
+		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%## 이하일 때 적을 근접 무기로 죽일 시 회피 미터가 최대 ##125%##만큼 채워지며 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##0.9##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
 		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 굴절량이 ##80%##만큼 증가합니다.\n\n다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 
@@ -3598,7 +3598,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 				["menu_deck_kmerc_3_desc_sc"] = "방어력을 ##10%##만큼 얻습니다.\n\n방탄복 회복률이 ##10%##만큼 증가합니다.",	
 				["menu_deck_kmerc_5_desc_sc"] = "체력이 ##0##에 도달되었을 때 대신 ##1##이 되고 ##2##초 동안 무적 상태가 됩니다.\n무적 효과를 받는 동안에는 전력 질주할 수 없습니다.\n이 효과는 체력을 완전히 회복할 때까지는 다시 발생하지 않습니다.\n\n추가로 체력을 ##5%##만큼 더 얻습니다.",
 				["menu_deck_kmerc_7_desc_sc"] = "최소 ##2초##동안 방탄복을 회복된 후, 방탄력이 있는 있는 동안 ##5초마다## 체력을 최대 방탄력의 ##1%##만큼씩 회복합니다.",
-				["menu_deck_kmerc_9_desc_sc"] = "체력을 ##30%## 이하가 될 만큼 피해를 입을 때마다 해당 피해의 ##50%##를 방탄력으로 회복합니다.\n이 효과는 Walk It Off(카드 5)의 무적 상태를 동시에 발생할 수 없습니다.",
+				["menu_deck_kmerc_9_desc_sc"] = "체력을 ##30%## 이하가 될 만큼 피해를 입을 때마다 해당 피해의 ##50%##를 방탄력으로 회복합니다.\n이 효과는 매 초마다 한 번만 발생하거나 Walk It Off(카드 5)의 무적 상태를 동시에 발생할 수 없습니다.",
 			--OFFYERROCKER'S LIBERATOR PERK DECK
 				["menu_deck_liberator_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##비상용 주사기##를 잠금 해제합니다. 비상용 주사기를 사용하면 즉시 스태미나를 ##15##만큼 회복되고 ##4초## 동안 혹은 플레이어가 체력 피해를 입을 때까지 매 초마다 체력이 ##0.5##씩 회복됩니다.\n비상용 주사기는 ##한 번만## 사용할 수 있고 ##45##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##1##초씩 단축됩니다.",
 				["menu_deck_liberator_3_desc_sc"] = "이제 비상용 주사기의 체력 재생이 추가로 ##2##초 더 증가합니다.\n\n비상용 주사기의 체력 재생이 취소되면 남은 시간 동안 대미지 저항력을 ##10%##만큼 얻습니다.",

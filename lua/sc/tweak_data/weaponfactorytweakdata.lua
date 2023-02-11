@@ -2734,13 +2734,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_m4_m_quad.pcs = {}
 	self.parts.wpn_fps_upg_m4_m_quad.supported = true
 	self.parts.wpn_fps_upg_m4_m_quad.custom_stats = {
-		ads_speed_mult = 1.1,
-		sms = 0.9
+		ads_speed_mult = 1.1
 	}
 	self.parts.wpn_fps_upg_m4_m_quad.stats = {
 		value = 3,
 		concealment = -4,
-		reload = -3,
+		reload = -5,
 		extra_ammo = 30
 	}
 	
@@ -2783,11 +2782,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		value = 3,
 		concealment = -4,
 		extra_ammo = 30,
-		reload = -3
+		reload = -5
 	}
 	self.parts.wpn_fps_upg_ak_m_quad.custom_stats = {
-		ads_speed_mult = 1.1,
-		sms = 0.9
+		ads_speed_mult = 1.1
 	}
 	
 	--AK Rubber Grip
@@ -3168,12 +3166,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		stats = {
 			value = 9,
 			extra_ammo = 70,
-			reload = -6,
-			concealment = -5
+			reload = -7,
+			concealment = -7
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125,
-			sms = 0.8
+			ads_speed_mult = 1.15
 		}
 	}
 	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
@@ -4100,19 +4097,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		supported = true,
 		stats = {
 			value = 5,
-			concealment = -5,
+			concealment = -6,
 			extra_ammo = 45,
-			reload = -6
+			reload = -7
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125,
-			sms = 0.8
+			ads_speed_mult = 1.125
 		}
 	}
 	self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
 	self.parts.wpn_upg_ak_m_drum_vanilla = deep_clone(self.parts.wpn_upg_ak_m_drum)
 	self.parts.wpn_upg_ak_m_drum_vanilla.stats = nil
-	self.parts.wpn_upg_ak_m_drum_vanilla.pcs = nil	
+	self.parts.wpn_upg_ak_m_drum_vanilla.pcs = nil
 	
 	--(AK) Folding Stock
 	self.parts.wpn_upg_ak_s_folding.pcs = {
@@ -4649,8 +4645,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			concealment = -5
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125,
-			sms = 0.8
+			ads_speed_mult = 1.125
 		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -12061,7 +12056,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
 	self.parts.wpn_fps_sho_aa12_mag_drum.custom_stats = {
 		ads_speed_mult = 1.125,
-		sms = 0.8
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
@@ -20020,15 +20014,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hcar", "resmod_hcar", function(sel
 
 	self.parts.wpn_fps_lmg_hcar_m_drum.supported = true
 	self.parts.wpn_fps_lmg_hcar_m_drum.stats = {
-		extra_ammo = 30,
+		extra_ammo = 25,
 		value = 10,
 		reload = -6,
 		concealment = -5
 	}
 	self.parts.wpn_fps_lmg_hcar_m_drum.custom_stats = {
-		ads_speed_mult = 1.125,
-		sms = 0.7,
-		rof_mult = 0.9
+		ads_speed_mult = 1.125
 	}
 
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.supported = true
@@ -24988,7 +24980,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_mosin_body_bubba.stats.concealment = 2
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats = deep_clone(stocks.remove_fixed_stats)
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.ads_speed_mult = 0.95
-		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.sms = 0.8
 
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.supported = true
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.stats = {
@@ -28555,8 +28546,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -3
 			}
 			self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.custom_stats = {
-				ads_speed_mult = 1.1,
-				sms = 0.9
+				ads_speed_mult = 1.1
 			}
 			self.parts.wpn_fps_ass_akilo_2022_smag.supported = true
 			self.parts.wpn_fps_ass_akilo_2022_smag.has_description = false
@@ -28780,11 +28770,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 2,
 			extra_ammo = -70,
 			spread = -1,
-			concealment = 5,
-			reload = 6
+			concealment = 7,
+			reload = 7
 		}
 		self.parts.wpn_fps_ass_tecci_m_jungle.custom_stats = {
-			ads_speed_mult = 0.875
+			ads_speed_mult = 0.85
 		}
 
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.supported = true

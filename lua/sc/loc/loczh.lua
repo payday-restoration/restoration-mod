@@ -23,6 +23,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_st_spec_23"] = "模仿者",
 		["menu_st_spec_24"] = "白板",
 		["menu_st_spec_25"] = "天赋异禀",
+		["bm_menu_drag_handle"] = "拉机柄",
 		["bm_menu_gadget_placement"] = "附件位置",
 		["bm_wp_wpn_fps_upg_xr2_fl_lr"] = "左侧",
 		["bm_wp_wpn_fps_upg_xr2_fl_rr"] = "右侧",
@@ -1017,10 +1018,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["wp_heat_street_bile"] = "Bile",
 		["wp_heat_street_question"] = "?",
 
-		
-		--The Bomb: Forest Breifing
-		["heist_crojob3_briefing"] = "Those thermobaric explosives were loaded onto a freight train this morning. It's heading down to Norfolk. Maybe to be sold on, maybe to be decommissioned - it doesn't matter, because it won't reach there. A moving train is tough to stop, so we're doing this Old West style. Blow a section of bridge and the whole thing comes tumbling down. It's loud and messy, but effective. The wagons will be scattered to hell. One of them has a vault where our explosives are - search each of 'em til you find it. \n\nNOTE FROM JACKAL:\nI've got intel on Reaper teams near the scene - seems Akan wants this prize for himself. Prepare for trouble.",
-		
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "劫持Mia Calienté是个真正的活，朋友。她已经在幕后主使黑水在特区的行动好几年了。就在不久之前，黑水接管了码头的一个仓库作为额外的分配点。我们的目标正在那里清点从船上刚掠夺不久的货。我们将突入这里，抓住这小崽子作为人质。黑水的人无法接受失去她，他们将会愿意去花钱赎人，没准在上述条件下我们还能要价更高，伙计们你们觉得呢？"
 	})
@@ -1079,9 +1076,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			})
 		end
 	elseif captain_type == restoration.captain_types.hvh then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "直面你的噩梦......快醒来......",
-		})
+		if random_captain < 0.25 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "地狱呼唤着你......",
+			})
+		else
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "直面你的噩梦......快醒来......",
+			})
+		end
 	end			
 	
 end)
@@ -1150,7 +1153,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--Heist Breifings--
-		["heist_pines_briefing"] = "你们得赶紧过去，不过那地方根本没法着陆，所以你们得空降下去。找到坠机的飞行员————可能就在坠机地点附近————然后我们会派一架直升机过去接他。待在他身边保护他的安全，直到他被护送离开。此外，弗拉德还说飞机上装满了货物。在森林里找找，能拿多少拿多少，圣诞节总是要挣点零花钱的。\n\n胡狼的提示：\n坠机引起的爆炸引来了附近的收割者小组，别指望着警察对此作出回应了。",
+		["heist_pines_briefing"] = "你们得赶紧过去，不过那地方根本没法着陆，所以你们得空降下去。找到坠机的飞行员————可能就在坠机地点附近————然后我们会派一架直升机过去接他。待在他身边保护他的安全，直到他被护送离开。此外，弗拉德还说飞机上装满了货物。在森林里找找，能拿多少拿多少，圣诞节总是要挣点零花钱的。\n\n胡狼的提示：\n坠机引起的爆炸引来了附近的收割者小队，他们贿赂了当地的治安部门，别指望着警察对此作出回应了。",
+			--The Bomb: Forest Breifing
+		["heist_crojob3_briefing"] = "一批温压炸弹今晨被装上列车并启运。其目的地为诺福克。在那里它们将会被出售或销毁——这无关紧要，它们注定无法抵达那儿。要想截停一辆行进中的列车，一般方式是行不通的。这时候，传统的西部方式就派上了用场——在列车经过时将一段铁路桥炸毁，然后整辆列车就会从桥上顺势滚下。虽然简单粗暴，但却不失为最有效的方式。爆炸产生的冲击波将会冲散车厢，同时也会把不该来的人招来。因此，行动要迅速。\n\n胡狼的提示：\n看样子阿肯也想就此事掺一脚，他贿赂了当地的治安部门，并派遣了一批收割者小队，别指望着警察来解决这件事了。",
 
 		----Custom Achievements----
 				
@@ -1298,6 +1303,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{risk}#4倍放大倍率##",
 		["bm_wp_upg_o_4_irons"] = "带有次要铁瞄镜的红点瞄准具。\n#{risk}#1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
 		["bm_wp_upg_o_4_rds"] = "带有整合型反射次瞄具的中距瞄准仪。\n#{risk}#1.1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
+		["bm_wp_upg_o_4_rds_mount"] = "顶部装有反射次瞄具的中距瞄准仪。\n#{risk}#1.1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
 		["bm_wp_upg_o_5"] = "长距瞄准仪。\n#{risk}#5倍放大倍率##",
 		["bm_wp_upg_o_5_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{risk}#5倍放大倍率##",
 		["bm_wp_upg_o_6"] = "长距瞄准仪。\n#{risk}#6倍放大倍率##",
@@ -1324,7 +1330,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_1_2_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和斜角红点瞄具之间切换。\n#{skill_color}#1.2倍放大倍率##",
 		["bm_wp_upg_o_angled_laser_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和斜角激光瞄准之间切换。\n\n#{risk}#非常建议使用一个镭射配件##", --VMP Point Shoot Laser
 
-		["bm_wp_upg_o_magnifier_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 来升起/放下瞄具放大镜。\n#{skill_color}#3倍放大倍率##",
+		["bm_wp_upg_o_magnifier_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 来升起/放下瞄具放大镜。\n#{risk}#3倍放大倍率##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "受到撞击时释放半径为#{skill_color}#3.75米##的#{heat_warm_color}#火焰##，持续#{skill_color}#5##秒。火焰上的敌人每秒受到#{skill_color}#120##点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在#{skill_color}#3##秒内受到额外#{skill_color}#60##点伤害。",
@@ -1429,15 +1435,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_g22c_sc_desc"] = "在最好的战术手枪中，这把武器是高容量和高威力的代名词。",
 		["bm_x_g22c_sc_desc"] = "如果一张选票是免费的枪支，那么当你能得到两把这样的便携式防身武器时，投票欺诈似乎很有吸引力.",
 		--Baby Deagle
-		["bm_sparrow_sc_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
+		["bm_sparrow_sc_desc"] = "\n后会有期，星际牛仔......",
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
 		--Signature .40
 		["bm_p226_sc_desc"] = "无论是截停武装押运还是银行抢劫，这个经典的警察杀手都永远不会让人失望。",
 		--LEO
 		["bm_hs2000_sc_desc"] = "国际刑警组织特工、狡猾的克罗地亚警察和国际犯罪分子都发现这种袖珍爆破手十分有效。",
 		--5/7 pistol
 		["bm_lemming_sc_desc"] = "高威力与大容量的结合。如果有人能吃了20枪没事，你可能不应该向他射击。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#33%##的伤害。",
-		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "豺狼的配枪选择。一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
 		--Crosskill
@@ -1650,6 +1655,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Eh, whatever
 		["bm_groza_sc_desc_pc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
 		["bm_groza_sc_desc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
+		--CHIKUBI
+		["bm_w_tkb"] = "Rodion 3B步枪",
+		["bm_wp_tkb_m_bakelite"] = "西伯利亚款15x3弹匣",
 		--Krinkov
 		["bm_akmsu_sc_desc"] = "专门撂倒大个的小不点。无论什么方案都固执己见使这把枪不可被低估。",
 		--Akimbo Krinkov
@@ -1734,7 +1742,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\"枪托",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "装载大威力弹#{skill_color}#允许达到全面护甲穿透和穿盾能力##。 枪托和枪闩用了更敦实的材料加固使 #{important_1}#射速降低##。",
-		--Custom DMRs
+		--HCAR
+		["bm_w_hcar"] = "Akron HC步枪",
+		["bm_hcar_sc_desc"] = "一把经典二战机枪的现代版本。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",	
+
+			--Custom DMRs
 		--MCX Spear
 		["bm_w_mcx_spear"] = "Signature M5",  --tra E
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79步枪",
@@ -1771,6 +1783,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2狙击步枪", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		["bm_sbl_sc_desc"] = "二十世纪的杠杆设计使其相对十九世纪能供应更大号的枪弹。期待你这边的.45-70子弹带来额外的乐趣和额外的死仔吧。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",	
+		--Contender G2
+		["bm_w_contender"] = "Aran G2狙击步枪",
+		["bm_contender_sc_desc"] = "",	
 		--Model 70
 		["bm_model70_sc_desc"] = "神枪手的神枪。早期由Repeater-1874的同一批设计师手下做出的栓动式设计。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--SVD
@@ -1841,6 +1856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
 		["bm_menu_weapon_movement_bonus_info"] = "移动速度提升 ",
 		["bm_menu_sms_info_cont"] = "射击时惩罚翻倍。",
+		["bm_menu_sms_info_cont_2"] = "受配件影响，射击时惩罚翻倍。",
 		["bm_menu_sms_info_2"] = "  ，在你射击时。",
 		["bm_menu_stat_sms_info_2"] = " ，在你射击时。\n该惩罚受当前配件影响。",
 		["bm_menu_weapon_movement_penalty_info_2"] = "，在你手持时",
@@ -2055,8 +2071,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["menu_smg"] = "冲锋枪",
 		["menu_smg_single"] = "冲锋枪",
-		["menu_lmg"] = "冲锋枪", --s
-		["menu_lmg_single"] = "冲锋枪",
+		["menu_lmg"] = "机枪", --s
+		["menu_lmg_single"] = "机枪",
 		["menu_minigun"] = "冲锋枪", --s
 		["menu_minigun_single"] = "冲锋枪",
 		["menu_akimbo_smg"] = "双持冲锋枪",
@@ -2092,8 +2108,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_flamethrower"] = "火焰喷射器",
 		["menu_flamethrower_single"] = "火焰喷射器",
 
-		["menu_grenade_launcher"] = "火箭筒/榴弹发射器",
-		["menu_grenade_launcher_single"] = "火箭筒/榴弹发射器",
+		["menu_grenade_launcher"] = "火箭筒/榴弹",
+		["menu_grenade_launcher_single"] = "火箭筒/榴弹",
 
 		["menu_saw"] = "电锯",
 		["menu_saw_single"] = "电锯",
@@ -2115,7 +2131,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_firemode_semi"] = "单发",
 		["st_menu_firemode_auto"] = "连发",
 		["st_menu_firemode_burst"] = "三连发",
-		["st_menu_firemode_volley"] = "连发+齐射",
+		["st_menu_firemode_volley"] = "齐射",
 
 		["menu_reticle_dmc_eotech"] = "TECopt 圆准星",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA瞄点",
@@ -2446,6 +2462,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			LocalizationManager:add_localized_strings({	
 				["bm_w_deagle"] = "700块钱的大狙",
 				["bm_w_m16"] = "9000GP永久",
+				["bm_sparrow_sc_desc"] = "\n我一定会回来的！",
 				["bm_m16_sc_desc"] = "我给你一个弹夹，这样你就可以输出了。",
 				["bm_w_x_type54"] = "十字杀双胞胎",
 				["bm_akmsu_sc_desc"] = "一支不可被低估的小型步枪，用于击倒#{stat_maxed}#大个子##。这把步枪几乎可以在任何时候都发挥效用。",
@@ -2505,6 +2522,8 @@ elseif ai_type == o then
 	end)
 end
 
+local ModPath_Chin = ModPath
+
  if _G.HopLib then
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
@@ -2516,41 +2535,41 @@ end
 	local breins = tweak_data.levels.ai_groups.zombie
 	local oom = tweak_data.levels.ai_groups.omnia
 
-	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
+	Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat", function(loc)
+		loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/hoplibkillfeedcompat.json")
 	end)
 
 	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_murkywetew", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/murkywetew.json")
 		end)
 	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/lapd.json")
 		end)	
 	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/mex.json")		
 		end)
 	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/akan.json")		
 		end)
 	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_nypd", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/nypd.json")		
 		end)
 	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_fbi", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/fbi.json")		
 		end)
 	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_breins", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/breins.json")		
 		end)
 	elseif ai_type == oom then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_oom", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/omnia.json")	
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_oom", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/omnia.json")	
 		end)	
 	end
  end
@@ -2592,8 +2611,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒，期间它会阻止手机报警、干扰摄像头及一些其它电子设备。\n\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.5##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。\n靠近并对ATM机、安全门等目标上的干扰器标志按住#{skill_color}#$BTN_INTERACT##可以打开目标或造成目标失效等的影响。\n\nECM干扰器可以用于干扰电子设备，让你更轻松地实现目标。但若你使用不当，它反而有可能拖延你的任务进程。",
 		["bm_equipment_ecm_jammer_desc_short"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒。\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.5##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。",
 		--FAQ U
-		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{skill_color}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。\n\n急救包在紧急情况下用于快速急救。",
-		["bm_equipment_first_aid_kit_desc_short"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{skill_color}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。",
+		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{stats_positive}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。\n\n急救包在紧急情况下用于快速急救。",
+		["bm_equipment_first_aid_kit_desc_short"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{stats_positive}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。",
 		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#4##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
 		["bm_equipment_doctor_bag_desc_short"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#4##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。",
@@ -2637,7 +2656,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_7"] = "绿熊有极高的单发伤害并会尝试突然从侧翼突入，打空子弹，然后逃走。你作为一个69岁的老劫匪要小心不要大意了，没有闪，然后就被偷袭了。",
 		["loading_gameplay_res_8"] = "使用高射速高弹容伊孜玛霰弹枪的黑熊极具进攻性并会直接从正面冲向劫匪。这使得他们会很容易被发现，但如果你还没做好准备，他们会变得极具威胁性。",
 		["loading_gameplay_res_9"] = "使用轻机枪的骷髅熊会给其它单位提供火力掩护，同时也会在各种情况下准备好突入，不射空弹匣他们不会停火。",
-		["loading_gameplay_res_10"] = "Benelli霰弹枪熊取代了加特林熊。高伤高射速，绿熊和黑熊的完美结合。",
+		["loading_gameplay_res_10"] = "手雷熊取代了加特林熊在能投掷高爆手雷的同时，使用着Benelli霰弹枪。高伤高射速，绿熊和黑熊的完美结合。",
 		["loading_gameplay_res_11"] = "选择正确的目标很重要，任意一只熊都比一个轻甲水军更值得注意。（但我不是在叫你无脑优先怼熊）",
 		["loading_gameplay_res_12"] = "在\"死刑宣判\"难度下，熊会在面甲破碎后进入狂怒模式，狂怒模式下他们的伤害会提高10%。",
 		["loading_gameplay_res_13"] = "幻影特工在在飞踢时会发出标志性的声音。",
@@ -2729,7 +2748,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_11"] = "\"赌徒\"——一个以团队为中心的辅助天赋，你捡弹时可以使你和你的队友获得少量的血量和弹药，与捡弹技能相匹配。由于恢复MOD下非玩家击杀的敌人不一定会掉落弹药，赌徒的益处有了进一步的提升。",	
 		["loading_equip_skills_res_12"] = "\"瘾君子\"——一个以团队为中心的辅助天赋，你持续杀敌时可以为你和你的队友提供减伤效果，与提高伤害和伤害减免的技能相匹配。",	
 		["loading_equip_skills_res_13"] = "黑客的便携式ECM有着强大的控场能力，并能为队友提供一定的治疗能力，但冷却时间较长。黑客在潜入和强攻均有良效。",	
-		["loading_equip_skills_res_14"] = "Burglar is a dodge focused perk deck that promotes keeping your head down during a firefight.",	
+		["loading_equip_skills_res_14"] = "\"窃贼\"——一个专为潜入而生的天赋，在强攻下比其它大多数天赋都要弱。",	--fix
 		["loading_equip_skills_res_15"] = "\"首脑\"——一个兼顾多方面的天赋，它的注射器既可以用于保证自己的生存能力，在重火力中生存；又可以吸引火力，为队友迎来喘息的机会。",	
 		["loading_equip_skills_res_16"] = "\"双人组\"——一个以团队之间相互配合为核心的天赋，只要你和你标记的队友都能保证持续的输出杀敌，你们就能共同获得大量的治疗。",	
 		["loading_equip_skills_res_17"] = "穿过盾牌的子弹伤害减半。",	
@@ -2783,7 +2802,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_22"] = "鬼知道做恢复MOD汉化的人从开始汉化到完成汉化鸽了多久。",
 		["loading_fluff_res_23"] = "B站是唯一一个可以直播PAYDAY2的国内知名平台。",
 		["loading_fluff_res_24"] = "你知道吗？每当队长被你打死时，他们并不是真的死了，而是跟你一样进了局子。",
-		["loading_fluff_res_25"] = "作为联邦特警成立联邦泰坦计划的替代品，REAPER以更快更高效的执行速度，与低于OMNIA的报价，从同类竞品中脱颖而出。该集团有望使联邦特警在墨西哥与美国两地拥有接近OMNIA和黑水的势力。",
+		["loading_fluff_res_25"] = "作为联邦特警成立联邦泰坦计划的替代品，收割者集团以更快更高效的执行速度，与低于OMNIA的报价，从同类竞品中脱颖而出。该集团有望使联邦特警在墨西哥与美国两地拥有接近OMNIA和黑水的势力。",
 
 		["menu_button_deploy_bipod"] = "切换为脚架/下挂榴弹",
 		["hint_short_max_pagers"] = "不回答对讲机将会极大地增加怀疑度。",
@@ -2813,7 +2832,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_content_updates_previous"] = "",
 
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "",
+		["menu_mutators_achievement_disabled"] = "",--启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
 		["menu_mutators_category_holiday"] = "节日活动",
 		["menu_mutators_category_old_event"] = "活动事件",
 
@@ -3061,7 +3080,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "人体解析",
-			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。\n\n其余所有不能穿甲的武器都能#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。\n\n对于本身可以穿甲的武器，其穿透护甲造成的伤害百分比增加#{skill_color}#50%##，最多增加至#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n冲锋枪和轻重机枪按住扳机不松手时，每击杀一名敌人就增加#{skill_color}#10%##的伤害，最多增加#{skill_color}#50%##，松手后失效。",
+			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。\n\n其余所有不能穿甲的武器都能#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。\n\n对于本身可以穿甲的武器，其穿透护甲造成的伤害百分比增加#{skill_color}#50%##，最多增加至#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n使用连发模式的冲锋枪和轻重机枪在连续射击时，每击杀一名敌人就增加#{skill_color}#10%##的伤害，最多增加#{skill_color}#50%##，停止射击#{skill_color}#1##秒后失效。",
 
 			--}
 		--}
@@ -3463,6 +3482,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["bm_menu_dodge"] = "闪避点数",
 		["menu_st_category_activated"] = "激活",
 		["menu_st_category_challenge"] = "白卡",
+		["menu_st_category_mod"] = "模组",
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "你的爆头伤害增加##25%##\n\n你造成的伤害增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒",
@@ -3799,7 +3819,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["rpd_menu_button"] = "重置天赋牌组",
 		["rpd_menu_dialog_title"] = "你确定吗？",
-		["rpd_menu_dialog_text"] = "如果你重置 $perk_deck_name 天赋，你会被返还 $points_to_refund 天赋点。"
+		["rpd_menu_dialog_text"] = "如果你重置 $perk_deck_name 天赋，你会被返还 $points_to_refund 天赋点。",
+
+		--MOD PERK DECKS
+			--OFFYERROCKER'S MERCENARY PERK DECK
+				["menu_deck_kmerc_1_desc_sc"] = "Years of battle have made your skin tough. Take greatly reduced damage from heavy hits to your health so that ##no single attack can kill you##.\n\nYou gain ##5%## more health.",
+				["menu_deck_kmerc_3_desc_sc"] = "Stand strong and meet force with force! Gain ##1%## critical chance for every ##20## points of armor you have.\n\nYou gain ##10%## more armor.",	
+				["menu_deck_kmerc_5_desc_sc"] = "When your health would become ##0##, it becomes ##1## instead and you gain ##2## seconds of invulnerability.\n\nYou cannot sprint while under the effects of this invulnerability.\nThis effect cannot occur again until you are restored to full health.\n\nYou gain an additional ##5%## more health.",
+				["menu_deck_kmerc_7_desc_sc"] = "The inner layer of your armor is lined with coagulant agents and hemostatic gel. After having armor for at least ##2## seconds, heal health equal to ##1%## of your max armor every ##5## seconds so long as you have armor.",
+				["menu_deck_kmerc_1_desc_sc"] = "Take greatly reduced damage from heavy hits to your health so that no single attack can kill you.\n\nYou gain ##5%## more health.",
+				["menu_deck_kmerc_3_desc_sc"] = "You gain ##10%## more armor.\n\nYour armor recovery rate is increased by ##10%##.",	
+				["menu_deck_kmerc_5_desc_sc"] = "When your health would become ##0##, it becomes ##1## instead and you gain ##2## seconds of invulnerability.\nYou cannot sprint while under the effects of this invulnerability.\nThis effect cannot occur again until you are restored to full health.\n\nYou gain an additional ##5%## more health.",
+				["menu_deck_kmerc_7_desc_sc"] = "After having armor for at least ##2## seconds, heal health equal to ##1%## of your max armor every ##5## seconds so long as you have armor.",
+				["menu_deck_kmerc_9_desc_sc"] = "Whenever you take damage to your health that leaves you at ##30%## health or less, regain ##50%## of that damage as armor.\nThis cannot occur more than once every ##1## second or from the same hit that triggers Walk It Off's (Card 5) invulnerability.",
+
+			--OFFYERROCKER'S LIBERATOR PERK DECK
+				["menu_deck_liberator_1_desc_sc"] = "Unlocks the ##Survival Syringe## for use in place of a throwable. Using the Survival Syringe will immediately restore ##15## stamina and restore ##0.5## points of health every second for ##4## seconds or until the player takes health damage.\nThe Survival Syringe has ##1## charge with a cooldown of ##30## seconds; each kill you perform will reduce the cooldown by ##1## second.",
+				["menu_deck_liberator_3_desc_sc"] = "The health regen from the Survival Syringe now lasts for an additional ##2## seconds.\n\nWhen health regen from Survival Syringe is canceled, gain ##10%## damage resistance for the remaining time.",
+				["menu_deck_liberator_5_desc_sc"] = "The Survival Syringe restores an additional ##15## stamina and restores an additional ##0.5## points of health every second.\n\nYour dodge is increased by ##5## points.",
+				["menu_deck_liberator_7_desc_sc"] = "Your health is increased by ##10%##.\n\nThe health regen from Survival Syringe now lasts for an additional ##2## seconds.",
+				["menu_deck_liberator_9_desc_sc"] = "The Survival Syringe now restores an additional ##1## point of health every second."
 
 		--[[ Original Blank Perk Deck--
 		["menu_st_spec_0"] = "空白天赋",	

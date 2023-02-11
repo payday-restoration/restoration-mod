@@ -115,6 +115,7 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 	return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
 end
 
+--[[
 -- Cache for normal spawngroups to avoid losing them when they're overwritten.
 -- Once a captain is spawned in, this gets reset back to nil.
 local cached_spawn_groups = nil
@@ -141,6 +142,7 @@ function GroupAIStateBesiege:force_spawn_group_hard(spawn_group)
 	cached_spawn_groups = self._tweak_data.assault.groups
 	self._tweak_data.assault.groups = new_spawn_groups
 end
+]]--
 
 --Refactored from vanilla code to be a bit easier to read and debug. Also adds timestamp support.
 local debug_spawn_groups = true

@@ -536,7 +536,84 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.005,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
-		}
+		},
+		--Captain Spawns (using normal assault group systems as a placeholder)
+		
+		--Hatman
+		SKM_HVH_Boss = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		--Autumn
+		SKM_Cap_Autumn = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		--Summers
+		SKM_Cap_Summers = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		--Winters
+		SKM_Cap_Winters = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		--Spring
+		SKM_Cap_Spring = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},			
 	}
 
 	--This portion of the code will need to be cut and reworked once infinite is in progress.
@@ -547,6 +624,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	--Always force the big scary halloween guy, maybe look into a faction check down the line?
 	if job == "skm_nightmare_lvl" then
 		self.captain = "SKM_HVH_Boss_W9"
+		assault_groups.SKM_HVH_Boss[10] = 5
 		assault_groups.SKM_Light_Swat[10] = 0.35
 		assault_groups.SKM_Heavy_Swat[10] = 0.25
 		assault_groups.SKM_Shields[10] = 0.06
@@ -563,6 +641,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 			if wave_9_captain < 0.24 then --Spooky halloween boss.
 				self.captain = "SKM_HVH_Boss_W9"
+				assault_groups.SKM_HVH_Boss[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.06
@@ -577,6 +656,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.05
 			elseif wave_9_captain < 0.48 then --autumn
 				self.captain = "SKM_Cap_Autumn_W9"
+				assault_groups.SKM_Cap_Autumn[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.14
@@ -591,6 +671,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.0
 			elseif wave_9_captain < 0.72 then --summers
 				self.captain = "SKM_Cap_Summers_W9"
+				assault_groups.SKM_Cap_Summers[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.37
 				assault_groups.SKM_Heavy_Swat[10] = 0.31
 				assault_groups.SKM_Shields[10] = 0.05
@@ -605,6 +686,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.025
 			elseif wave_9_captain < 0.96 then --winters
 				self.captain = "SKM_Cap_Winters_W9"
+				assault_groups.SKM_Cap_Winters[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.0
@@ -619,6 +701,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.05
 			else --spring
 				self.captain = "SKM_Cap_Spring_W9"
+				assault_groups.SKM_Cap_Spring[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.06
@@ -635,6 +718,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		else	
 			if wave_9_captain < 0.24 then --autumn
 				self.captain = "SKM_Cap_Autumn_W9"
+				assault_groups.SKM_Cap_Autumn[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.14
@@ -649,6 +733,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.0
 			elseif wave_9_captain < 0.48 then --summers
 				self.captain = "SKM_Cap_Summers_W9"
+				assault_groups.SKM_Cap_Summers[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.37
 				assault_groups.SKM_Heavy_Swat[10] = 0.31
 				assault_groups.SKM_Shields[10] = 0.05
@@ -663,6 +748,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.025
 			elseif wave_9_captain < 0.72 then --winters
 				self.captain = "SKM_Cap_Winters_W9"
+				assault_groups.SKM_Cap_Winters[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.0
@@ -677,6 +763,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.05
 			elseif wave_9_captain < 0.96 then --spring
 				self.captain = "SKM_Cap_Spring_W9"
+				assault_groups.SKM_Cap_Spring[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.35
 				assault_groups.SKM_Heavy_Swat[10] = 0.25
 				assault_groups.SKM_Shields[10] = 0.06
@@ -691,6 +778,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 				assault_groups.SKM_FBI_spoocs[10] = 0.05
 			else --Spooky halloween boss.
 				self.captain = "SKM_HVH_Boss_W9"
+				assault_groups.SKM_HVH_Boss[10] = 5
 				assault_groups.SKM_Light_Swat[10] = 0.325
 				assault_groups.SKM_Heavy_Swat[10] = 0.3
 				assault_groups.SKM_Shields[10] = 0.06

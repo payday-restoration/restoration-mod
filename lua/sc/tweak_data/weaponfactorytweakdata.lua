@@ -3166,7 +3166,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		stats = {
 			value = 9,
 			extra_ammo = 70,
-			reload = -7,
+			reload = -8,
 			concealment = -7
 		},
 		custom_stats = {
@@ -28664,7 +28664,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_upg_m4_hera_lower then
-	
+		
+		--Hera parts
 		self.parts.wpn_fps_upg_m4_hera_lower.supported = true
 		self.parts.wpn_fps_upg_m4_hera_lower.stats = {
 			value = 1,
@@ -28677,7 +28678,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -2,
 			spread = 1
 		}
-	
+		
+		--St. Victor
 		self.parts.wpn_fps_upg_m4_victor_lower.supported = true
 		self.parts.wpn_fps_upg_m4_victor_lower.stats = {
 			value = 1,
@@ -28696,6 +28698,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_upg_m4_b_victor.custom_stats = nil
 
+		--??
 		self.parts.wpn_fps_ass_ar47_g_ergo.supported = true
 		self.parts.wpn_fps_ass_ar47_g_ergo.stats = {
 			value = 3,
@@ -28703,6 +28706,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -2
 		}
 
+		--TTI
 		self.parts.wpn_fps_snp_tti_body_receiverlower_223.supported = true
 		self.parts.wpn_fps_snp_tti_body_receiverlower_223.stats = {
 			value = 1,
@@ -28723,6 +28727,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -2
 		}
 		
+		--M4/M16 parts
 		self.parts.wpn_fps_ass_m16_fg_s552.supported = true
 		self.parts.wpn_fps_ass_m16_fg_s552.adds = { "wpn_fps_ass_m4_os_frontsight" }
 		self.parts.wpn_fps_ass_m16_fg_s552.stats = {
@@ -28757,13 +28762,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_m4_uupg_m_sharps.custom_stats = nil
 
-		self.parts.wpn_fps_ass_tecci_m_jungle_m4.supported = true
-		self.parts.wpn_fps_ass_tecci_m_jungle_m4.stats = {
-			value = 2,
-			spread = -1,
-			concealment = -1,
-			reload = 3
-		}
+		--HK416c parts
+		self.parts.wpn_fps_ass_tecci_fg_contraband.supported = true
+		self.parts.wpn_fps_ass_tecci_fg_contraband.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_tecci_fg_contraband.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
 		self.parts.wpn_fps_ass_tecci_m_jungle_m4.custom_stats = nil
 		self.parts.wpn_fps_ass_tecci_m_jungle.supported = true
 		self.parts.wpn_fps_ass_tecci_m_jungle.stats = {
@@ -28777,6 +28780,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ads_speed_mult = 0.85
 		}
 
+		self.parts.wpn_fps_ass_tecci_m_jungle_m4.supported = true
+		self.parts.wpn_fps_ass_tecci_m_jungle_m4.stats = {
+			value = 2,
+			spread = -1,
+			concealment = -1,
+			reload = 3
+		}
+
+
+		--SRS Supp.
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.supported = true
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.has_description = true
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.desc_id = "bm_wp_upg_suppressor"
@@ -28788,14 +28801,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.custom_stats = nil
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.perks = {"silencer"}
 
+		--HCAR stock
 		self.parts.wpn_fps_upg_m4_s_hcar.supported = true
 		self.parts.wpn_fps_upg_m4_s_hcar.stats = deep_clone(stocks.adj_hvy_acc_stats)
 		self.parts.wpn_fps_upg_m4_s_hcar.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 
+		--Contender stock
 		self.parts.wpn_fps_upg_m4_s_contender_normal.supported = true
 		self.parts.wpn_fps_upg_m4_s_contender_normal.stats = deep_clone(stocks.adj_hvy_rec_stats)
 		self.parts.wpn_fps_upg_m4_s_contender_normal.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
 
+		--AK12 stock
 		self.parts.wpn_fps_ass_hera_s_russian.supported = true
 		self.parts.wpn_fps_ass_hera_s_russian.stats = deep_clone(stocks.adj_acc_stats)
 		self.parts.wpn_fps_ass_hera_s_russian.custom_stats = deep_clone(stocks.adj_acc_stats)

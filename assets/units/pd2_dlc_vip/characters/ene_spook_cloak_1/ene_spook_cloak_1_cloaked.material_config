@@ -1,6 +1,6 @@
 <materials version="3" group="ene_akan_fbi_spooc_asval_smg">
-	<material name="mtr_body" render_template="effect:pd2_dlc_vip:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
-		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_cloak_df"/>
+	<material name="mtr_body" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 				file="units/pd2_dlc_vip/characters/shared_textures/spook_cloak_df"/>
 		<variable name="uv0_speed" value="0 0 0" type="vector3"/>
 		<variable value="1" type="scalar" name="intensity"/>
 	</material>

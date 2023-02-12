@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" orientation_object="root_point" />
-	<sequence_manager file="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<diesel materials="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" orientation_object="root_point" />
+	<sequence_manager file="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -16,12 +16,15 @@
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
-
+		<body name="body_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine1" />
+			<object name="c_body_plate" collision_type="capsule" />
+		</body>
 
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-5" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
 		</body>
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
@@ -177,7 +180,7 @@
 		<constraint type="limited_hinge" name="RightLeg" enabled="false">
 			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
 			<param pivot="position:RightLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+			<param min_angle="20" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:RightLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -185,73 +188,41 @@
 		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
 			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
 			<param pivot="position:LeftLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+			<param min_angle="20" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:LeftLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" />
-
-	<effects>
-		<effect_spawner name="es_light" enabled="false" object="e_light" effect="effects/particles/character/titan_goggle" />
-		<effect_spawner name="shimmer_head" enabled="true" object="Head" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_shoulder_left" enabled="true" object="LeftShoulder" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_shoulder_right" enabled="true" object="RightShoulder" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_torso" enabled="true" object="Spine2" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_hips" enabled="true" object="Hips" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_left_fore" enabled="true" object="LeftForeArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_left_arm" enabled="true" object="LeftArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_left_hand" enabled="true" object="LeftHand" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_right_fore" enabled="true" object="RightForeArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_right_arm" enabled="true" object="RightArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_right_hand" enabled="true" object="RightHand" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_left_thigh" enabled="true" object="LeftUpLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_left_leg" enabled="true" object="LeftLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_left_foot" enabled="true" object="LeftFoot" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_right_thigh" enabled="true" object="RightUpLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_right_leg" enabled="true" object="RightLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-		<effect_spawner name="shimmer_right_foot" enabled="true" object="RightFoot" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
-	</effects>
+	<decal_surfaces default_material="flesh" >
+		<decal_mesh name="dm_helmet"				enabled="true" material="steel_no_decal" />
+		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
+	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="69696969696969696969696969696969696969696969696969696969696969696969"  max_draw_lod="0" shadow_caster="true"/>
-				<object name="s_body" 	enabled="true" lod="1" >
-				</object>
-			</lod_object>
-			<object name="g_nvg" enabled="true"/>
-	
-			<object name="g_body_lod1" enabled="true"/>
-
-			<object name="g_il" 		enabled="false" />
-			
-		</graphic_group>
-		<graphic_group name="grp_body_no_head" enabled="false" >
-			<lod_object name="lod_no_head">
-				<object name="g_body_no_head" enabled="true"  max_distance="2000">
-				</object>
-				<object name="g_body_no_head_lod1" enabled="true" >
-				</object>
-			</lod_object>
-			<object name="s_body_no_head" enabled="true" shadow_caster="true"/>
-		</graphic_group>
-		<graphic_group name="grp_body_bottom" enabled="false" >
-			<lod_object name="lod_bottom">
-				<object name="g_body_bottom" enabled="true"  max_distance="2000">
-				</object>
-				<object name="g_body_bottom_lod1" enabled="true" >
-				</object>
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
+				<object name="g_body_lod1" 	enabled="true" lod="1" />
 			</lod_object>
 
-			<object name="s_body_bottom" enabled="true" shadow_caster="true"/>
+			<lod_object name="lod_head">
+				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
+				<object name="g_head_lod1" 	enabled="true" lod="1" />
+			</lod_object>
+
+			<lod_object name="lod_helmet">
+				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0"/>
+				<object name="g_helmet_lod2" 	enabled="true" lod="1" />
+			</lod_object>
+
+			<object name="s_body" enabled="true" shadow_caster="true"/>
+
 		</graphic_group>
 	</graphics>
-
+	
 	<lights>
-		<light name="point_light" enabled="false" multiplier="reddot" far_range="25" near_range="1" falloff="4.0" type="omni|specular" />
-	</lights>
-
+		<light multiplier="identity" far_range="400" name="ls_light" enabled="true" type="spot|specular" />
+	</lights>	
 </dynamic_object>

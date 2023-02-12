@@ -1213,7 +1213,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					russia = {
 						Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1"),
@@ -1237,7 +1237,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					federales = {
 						Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
@@ -1253,7 +1253,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					lapd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
@@ -1261,7 +1261,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					fbi = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
@@ -1269,7 +1269,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					omnia = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
@@ -1277,7 +1277,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					}
 				},
 				access = access_type_all

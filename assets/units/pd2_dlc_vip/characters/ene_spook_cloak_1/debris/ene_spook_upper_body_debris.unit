@@ -1,5 +1,5 @@
 <unit type="debris" slot="18">
-	<object file="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris" />
+	<object file="units/pd2_dlc_vip/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris" />
 	<dependencies>
 		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
 	</dependencies>

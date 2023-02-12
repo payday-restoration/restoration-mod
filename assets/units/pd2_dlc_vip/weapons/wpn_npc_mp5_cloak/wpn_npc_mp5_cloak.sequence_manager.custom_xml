@@ -1,0 +1,14 @@
+<table>
+	<unit>
+		<sequence name="'enable_body'" triggable="true">
+			<material_config name="'units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak'"/>
+			<body enabled="true" name="'body'"/>
+		</sequence>
+		<sequence editable_state="true" name="'decloak'" triggable="true">
+			<material_config name="'units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak'"/>
+		</sequence>
+		<sequence editable_state="true" name="'cloak_engaged'" triggable="true">
+			<material_config name="'units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_cloaked'"/>
+		</sequence>
+	</unit>
+</table>

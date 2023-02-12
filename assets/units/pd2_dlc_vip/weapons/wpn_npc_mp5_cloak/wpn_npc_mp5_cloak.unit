@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-  <object file="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" />
+  <object file="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" />
    <dependencies>
    	<depends_on effect="effects/particles/weapons/mp5/muzzleflash_3dp" />
 	<depends_on bnk="soundbanks/weapon_com5" />

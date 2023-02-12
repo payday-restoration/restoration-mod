@@ -3580,7 +3580,7 @@ function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 		PlayerStandard.say_line(attacker:sound(), "g31x_any")
 	elseif victim_base:has_tag("sniper") then
 		PlayerStandard.say_line(attacker:sound(), "g35x_any")
-	elseif victim_base:has_tag("medic") or victim_base:has_tag("medic_summers") then
+	elseif victim_base:has_tag("medic") then
 		PlayerStandard.say_line(attacker:sound(), "g36x_any")
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1
@@ -3609,7 +3609,7 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 		unit:sound():say("g31x_any", true)
 	elseif victim_base:has_tag("sniper") then
 		unit:sound():say("g35x_any", true)
-	elseif victim_base:has_tag("medic") or victim_base:has_tag("medic_summers") then
+	elseif victim_base:has_tag("medic") then
 		unit:sound():say("g36x_any", true)
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1

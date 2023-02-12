@@ -16991,7 +16991,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 		
 	--Cloaker Cloaker MP5
 	table.insert(self.weap_ids, "mp5_cloak")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))
 
 	--LPF S552 
 	table.insert(self.weap_ids, "s552_sc")
@@ -17944,7 +17944,6 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_sniper_3")
 		
 		--Zeal (The Few that are here and not in gitgud)
-		table.insert(char_map.basic.list, "ene_spook_cloak_1")
 		table.insert(char_map.basic.list, "ene_city_guard_1")
 		table.insert(char_map.basic.list, "ene_city_guard_2")
 		table.insert(char_map.basic.list, "ene_city_guard_3")		
@@ -17975,8 +17974,6 @@ function CharacterTweakData:character_map()
 	--drm	
 		table.insert(char_map.drm.list, "ene_bulldozer_medic_sc")
 		
-	--mad	
-		table.insert(char_map.mad.list, "ene_akan_lpf")	
 	--flat
 		table.insert(char_map.flat.list, "ene_gang_colombian_1")
 		table.insert(char_map.flat.list, "ene_gang_colombian_2")	
@@ -18006,7 +18003,8 @@ function CharacterTweakData:character_map()
 				"ene_vip_2",
 				"ene_vip_2_assault",					
 				"ene_spring",
-				"ene_vip_autumn",					
+				"ene_vip_autumn",
+				"ene_spook_cloak_1",
 				"ene_summers",
 				"ene_phalanx_medic",
 				"ene_phalanx_grenadier",
@@ -18517,6 +18515,7 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_akan_medic_bob",
 				"ene_akan_medic_zdann",	
+				"ene_akan_lpf",
 				"ene_vip_2",
 				"ene_titan_shotgun",
 				"ene_titan_rifle",

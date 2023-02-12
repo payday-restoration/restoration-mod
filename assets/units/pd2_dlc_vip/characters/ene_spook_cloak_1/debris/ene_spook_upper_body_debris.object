@@ -1,5 +1,5 @@
 <dynamic_object>
-	<diesel materials="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead" orientation_object="root_point" />
 	<bodies>
 		<body name="rag_Head" enabled="true" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />

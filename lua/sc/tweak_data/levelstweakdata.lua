@@ -146,6 +146,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.chill_combat.ai_group_type = fbi
 	
+	self.peta.ai_group_type = fbi
+	self.peta2.ai_group_type = fbi
+	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
 	self.man.ai_group_type = fbi

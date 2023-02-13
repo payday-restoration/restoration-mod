@@ -8,6 +8,26 @@ return {
 		difficulty = 1
 	},
 	--FBI Team Responders
+	[102346] = {
+		values = {
+            enemy = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+		}
+	},
+	[102347] = {
+		values = {
+            enemy = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+		}
+	},
+	[102348] = {
+		values = {
+            enemy = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+		}
+	},
+	[102349] = {
+		values = {
+            enemy = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+		}
+	},
 	[102288] = {
 		values = {
             enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
@@ -51,11 +71,6 @@ return {
 	[102322] = {
 		values = {
             enemy = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
-		}
-	},
-	[102323] = {
-		values = {
-            enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		}
 	},
 	[102323] = {

@@ -2,6 +2,7 @@
 	"ene_security" : "Reaper Security",
 	"ene_cop" : "Reaper Security",
 	"ene_fbi" : "Reaper SRT",
+	"ene_drak_hrt" : "DRAK SRT",
 	"ene_swat" : "Reaper Tactical Security",
 	"ene_swat_heavy" : "Reaper Tactical Security Heavy",
 	"ene_fbi_swat" : "Reaper Soldier Light", 
@@ -16,6 +17,7 @@
 	"ene_shield_2" : "Reaper Tactical Security Shield",
 	"ene_city_shield" : "Reaper Elite Shield",
 	"ene_bulldozer_1" : "Reaper Bulldozer",
+	"ene_bulldozer_1_hard" : "Reaper Bulldozer",
 	"ene_bulldozer_2" : "Reaper Blackdozer",
 	"ene_bulldozer_3" : "Reaper Skulldozer",
 	"ene_bulldozer_mini" : "DRAK Benellidozer",
@@ -37,9 +39,9 @@
 	"ene_phalanx_1_assault" : "DRAK Titan Shield",
 	"ene_spook_cloak_1" : "DRAK Titan Cloaker",
 	"ene_titan_grenadier" : "DRAK Titan Grenadier",
-	"ene_titan_rifle" : "DRAK Titan Heavygunner",
-	"ene_titan_shotgun" : "DRAK Titan Heavy Autoshotgunner",
-	"ene_titan_sniper" : "DRAK Titan Sharpshooter",
+	"ene_titan_rifle" : "DRAK Titan Soldier",
+    "ene_titan_shotgun" : "DRAK Titan Soldier",
+	"ene_titan_sniper" : "DRAK Titan Ground Sniper",
 	"ene_titan_taser" : "DRAK Titan Taser",
 	"ene_vip_2" : "DRAK Titandozer"
 }	

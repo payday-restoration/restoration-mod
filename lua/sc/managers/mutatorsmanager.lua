@@ -91,3 +91,12 @@ function MutatorsManager:categories()
 		"old_event"
 	}
 end
+
+--No more disabling achievos/progress
+function MutatorsManager:are_achievements_disabled()
+	return false
+end
+
+function MutatorsManager:should_disable_statistics()
+	return false
+end

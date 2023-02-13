@@ -1,5 +1,8 @@
 {
   "ene_lapd_veteran_cop" : "SWAT Chief Mardo",
+  "ene_thug_indoor" : "Ernesto Sosa's Security Guard",
+  "ene_bolivian_thug_outdoor" : "Ernesto Sosa's Outdoor Guard",
+  "ene_security_manager" : "Ernesto Sosa's Security Manager",
   "ene_sniper_1" : "LAPD SWAT Sniper",
   "ene_sniper_2_sc" : "LAPD FBI SWAT Sniper",
   "ene_sniper_3" : "FBI SWAT Elite Sniper",
@@ -14,5 +17,5 @@
   "ene_city_heavy" : "Heavy FBI SWAT Elite",
   "ene_city_heavy_r870_sc" : "Heavy FBI SWAT Elite",
   "ene_city_shield" : "FBI SWAT Elite Shield",
-  "ene_bulldozer_3" : "Skulldozer"
+  "ene_bulldozer_3" : "FBI SWAT Elite Skulldozer"
 }

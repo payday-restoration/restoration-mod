@@ -4,8 +4,8 @@ MutatorNoTitans._type = "MutatorNoTitans"
 MutatorNoTitans.name_id = "mutator_notitans"
 MutatorNoTitans.desc_id = "mutator_notitans_desc"
 MutatorNoTitans.reductions = {
-	money = 0.5,
-	exp = 0.5
+	money = 0,
+	exp = 0
 }
 MutatorNoTitans.disables_achievements = true
 MutatorNoTitans.categories = {"enemies"}
@@ -282,8 +282,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3"),
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2")								
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"),
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2")								
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
@@ -359,7 +359,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3")
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
@@ -915,7 +915,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
+					Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic")							

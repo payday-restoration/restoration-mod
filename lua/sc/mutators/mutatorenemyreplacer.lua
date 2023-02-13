@@ -4,8 +4,8 @@ MutatorZombieOutbreak.name_id = "mutator_zombie_outbreak"
 MutatorZombieOutbreak.desc_id = "mutator_zombie_outbreak_desc"
 MutatorZombieOutbreak.has_options = false
 MutatorZombieOutbreak.reductions = {
-	money = 0.35,
-	exp = 0.35
+	money = 0,
+	exp = 0
 }
 MutatorZombieOutbreak.disables_achievements = false
 MutatorZombieOutbreak.categories = {
@@ -55,8 +55,8 @@ MutatorFactionsReplacer.name_id = "mutator_faction_override"
 MutatorFactionsReplacer.desc_id = "mutator_faction_override_desc"
 MutatorFactionsReplacer.has_options = true
 MutatorFactionsReplacer.reductions = {
-	money = 0.35,
-	exp = 0.35
+	money = 0,
+	exp = 0
 }
 MutatorFactionsReplacer.disables_achievements = false
 MutatorFactionsReplacer.categories = {
@@ -167,8 +167,8 @@ MutatorEnemyReplacer.name_id = "mutator_specials_override"
 MutatorEnemyReplacer.desc_id = "mutator_specials_override_desc"
 MutatorEnemyReplacer.has_options = true
 MutatorEnemyReplacer.reductions = {
-	money = 0.35,
-	exp = 0.35
+	money = 0,
+	exp = 0
 }
 MutatorEnemyReplacer.disables_achievements = true
 MutatorEnemyReplacer.categories = {
@@ -413,8 +413,9 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 				},
 				access = access_type_all
 			}
+		--Introduce Titandozers and Benellidozers from now on	
 		elseif difficulty_index == 6 or difficulty_index == 7 then
-			self._groups.tank = {  --Introduce Titandozers and Benellidozers from now on 
+			self._groups.tank = { 
 				special_type = "tank",
 				unit_types = {
 					america = {
@@ -511,7 +512,8 @@ function MutatorEnemyReplacer:_get_unit_group_tank(difficulty_index)
 				access = access_type_all
 			}
 		else
-			self._groups.tank = { --DS introduces all types of dozers (including Medicdozers)
+		--DS introduces all types of dozers (including Medicdozers)
+			self._groups.tank = {
 				special_type = "tank",
 				unit_types = {
 					america = {
@@ -645,11 +647,13 @@ function MutatorEnemyReplacer:_get_unit_group_shield(difficulty_index)
 						Idstring("units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1"),
 						Idstring("units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2")
 					},
-					murkywater = {  --this faction had duplicated same mp9 shields because Jules thought that they have c45 variant.
+					--this faction had duplicated same mp9 shields because Jules thought that they have c45 variant.
+					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow")
 					},
-					federales = { --this faction had DC Shields, thank you Denka :denkayes:
+					--this faction had DC Shields, thank you Denka :denkayes:
+					federales = {
 						Idstring("units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1"),
 						Idstring("units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2")
 					},
@@ -672,7 +676,8 @@ function MutatorEnemyReplacer:_get_unit_group_shield(difficulty_index)
 				},
 				access = access_type_all
 			}
-		elseif difficulty_index <= 5 then  --Introduce Titan Shields from now on 
+		--Introduce Titan Shields from now on	
+		elseif difficulty_index <= 5 then
 			self._groups.shield = {
 				special_type = "shield",
 				unit_types = {
@@ -997,8 +1002,9 @@ end
 
 function MutatorEnemyReplacer:_get_unit_group_taser(difficulty_index)
 	if not self._groups.taser then
+	--Introduce Titan Tasers
 	if difficulty_index <= 7 then
-			self._groups.taser = {  --Introduce Titan Tasers
+			self._groups.taser = {
 				special_type = "taser",
 				unit_types = {
 					america = {
@@ -1197,7 +1203,8 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 				access = access_type_all
 			}
 		else
-			self._groups.spooc = {  --Introduce Titan Cloakers cuz why not?
+		--Introduce Titan Cloakers
+			self._groups.spooc = {
 				special_type = "spooc",
 				unit_types = {
 					america = {
@@ -1206,7 +1213,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					russia = {
 						Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1"),
@@ -1230,7 +1237,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					federales = {
 						Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
@@ -1246,7 +1253,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					lapd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
@@ -1254,7 +1261,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					fbi = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
@@ -1262,7 +1269,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					},
 					omnia = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
@@ -1270,7 +1277,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-						Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+						Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 					}
 				},
 				access = access_type_all
@@ -1281,7 +1288,7 @@ function MutatorEnemyReplacer:_get_unit_group_spooc(difficulty_index)
 	return self._groups.spooc
 end
 
---Medic Shotgunners are absent in Resmod so only MP5+LPF/Reaper Flamermen will spawn in
+--Medic Shotgunners are absent in Resmod so only MP5+LPF Medic/DRAK Flamermen will spawn in
 function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)  
 	if not self._groups.medic then
 		if difficulty_index <= 5 then  
@@ -1318,8 +1325,9 @@ function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)
 				},
 				access = access_type_all
 		  }	
+		 --Introducing LPF/Flamermen with the most gayest jacket ever (if you get the refrence) 
 		elseif difficulty_index <= 6 then
-			self._groups.medic = {  --Introducing LPF/Flamermen with the most gayest jacket ever (if you get the refrence)
+			self._groups.medic = {
 				special_type = "medic",
 				unit_types = {
 					america = {
@@ -1489,11 +1497,11 @@ function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)
 						Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 					},
 					russia = {
-						Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
-						Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
-						Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
-						Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
-						Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
+						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
+						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
+						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
+						Idstring("units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic"),
 						Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
 					},
 					zombie = {

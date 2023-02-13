@@ -13,7 +13,7 @@
 	<object				path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
 	
 	<!-- da blackhawk -->
-	<texture		    path="units/payday2/vehicles/air_vehicle_blackhawk/blackhawk_prop_df" />
+	<!--texture		    path="units/payday2/vehicles/air_vehicle_blackhawk/blackhawk_prop_df"/-->
 	
 	<!--Titan Safes-->	
 	<!--object				path="units/payday2/equipment/gen_interactable_sec_safe_1x1_titan/gen_interactable_sec_safe_1x1_titan" force="true"/-->
@@ -92,7 +92,9 @@
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
 		
-	<!--Tiny Heist Edits that Change like a few things-->		
+	<!--Tiny Heist Edits that Change like a few things-->	
+	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
+	
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
 	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
 	<mission			path="levels/instances/unique/pbr/pbr_sewer_enemies/world/world" force="true" unload="true"/> <!--adjusted the dozers cuz fuck the trio of skullys that come on mayhem above-->
@@ -107,12 +109,16 @@
 	<continent			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/mus_security_room/world/world" force="true" />
 	<mission			path="levels/instances/unique/vit/vit_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/are_security_room/world/world" force="true" />
 	<!--so many security rooms (some of them are unused but better replace them all just in case)-->
 	<mission			path="levels/instances/unique/dah/dah_security_room/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/dah/dah_security_room2/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/dah/dah_security_room3/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/dah/dah_security_room4/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/dah/dah_security_room5/world/world" force="true" /> 
+	<!--Buluc's Mansion Security Rooms-->
+	<mission			path="levels/instances/unique/fex/fex_security_room_left/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/fex/fex_security_room_right/world/world" force="true" />
 	
 	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
@@ -142,14 +148,12 @@
 	<!--better SWAT squads-->
 	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_dozer/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
-	
-	<!--Watchdeeznuts-->
-	<mission			path="levels/narratives/h_watchdogs/stage_2/world/world" force="true" unload="true"/> <!--Massive FBI Ready Team Response at the start, fixed and moved some cop spawns-->
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 	
@@ -169,11 +173,10 @@
 	<mission			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
 
-	<mission			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/> <!--disabled most of the bridge spawns (all of nearby van escape)-->
 	<continent			path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
 	<continent			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->	
 	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
-	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->	
+	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->
 
 	<!--White House edit-->
 	<continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
@@ -189,15 +192,13 @@
 
 	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
 	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>  <!--removes tons of objects underneath the map-->
+	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
 
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
 
 	<!--ffs ovk, dont load the entire map if you force the players in one area-->
 	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
-
-	<!--fuck your powerboxes-->
-	<mission			path="levels/narratives/e_framing_frame/stage_3/world/world" force="true" unload="true"/>
 
 	<!--5 minute edit-->
 	<mission			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--Changed up the murkies and added some stuff-->
@@ -253,18 +254,12 @@
 	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
 	
-	<!--Load Jerome The Shotty Man and other guards in case if some heist has him missing in the package-->
+	<!--Load Jerome The Shotty Man in case if some heist has them missing in the package-->
 	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
 		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
-	</add>
-	<add from_db="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service" type="unit">
-		<unit load="true"	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
-		<object 			path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
-		<material_config 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"/>
-		<unit load="true" 	path="units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service_husk"/>
 	</add>
 	
 	<!-- Gensec Security: Beret Poppin' -->
@@ -872,20 +867,24 @@
 	<!--end debris-->
 	
 	<!--OMNIA Titan Spooc-->
-	<unit				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
-	<unit				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>		
-	<model				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<object				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<sequence_manager	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<cooked_physics		path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
+	<unit				path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>		
+	<model				path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1_cloaked"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
 		
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_df"  load="true"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
-	<texture			path="units/payday2/characters/shared_textures/nvg_df" load="true"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm" load="true"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/spook_cloak_df"  load="true"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/nvg_df" load="true"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/nvg_nm" load="true"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/spook_cloak_nm" load="true"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_il"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/spook_cloak_glow_df" load="true"/> 
+	
 	
 	<!--DRAK Titan Cloaker (why would Shado--- i mean Autumn hang around with DRAK clonkers?)-->	
 	<model				path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
@@ -898,8 +897,7 @@
 	<material_config	path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
 	<unit				path="units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 	
-	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_df" load="true"/>	
-	<texture			path="units/pd2_mod_reapers/characters/shared_textures/spook_il" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_df" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_nm" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_body_df" load="true"/>
 	
@@ -913,9 +911,7 @@
 	<unit				path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
 
 	<effect				path="effects/payday2/particles/spook_cloak/spook_cloak_smoke" load="true"/>
-	<effect				path="effects/particles/character/titan_goggle" load="true"/>	
-	<texture			path="units/payday2/characters/shared_textures/titan_il"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" load="true"/> 		
+	<effect				path="effects/particles/character/titan_goggle" load="true"/>		
 	
 	<!--Winter with his cool cigar (Jarey)-->
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
@@ -997,7 +993,6 @@
 
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_df" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" load="true"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" />
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
 	
@@ -1511,13 +1506,13 @@
 	<cooked_physics		path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"/>
 
 	<!--Cloaked MP5-->
-	<model				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
-	<object				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
-	<unit				path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" load="false"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_cloaked"/>
-	<sequence_manager	path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<model				path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<object				path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<unit				path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" load="false"/>
+	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<material_config	path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_cloaked"/>
+	<sequence_manager	path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<cooked_physics		path="units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 				
 	<!--murky and OMNIA seqmans-->
 	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky"/>

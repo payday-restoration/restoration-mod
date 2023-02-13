@@ -16,11 +16,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["achievement_frog_1"] = "返璞归真（Tabula Rasa）",
 		["achievement_trai_10_desc"] = "全队成员在无任何技能，身穿两件套西装，携带Castigo_.44左轮手枪和Mosconi_21G霰弹枪的情况下以强袭途径完成\"迷途纵横\"任务，难度为枪林弹雨或以上。",
 		["sm_17_obj"] = "完成\"石油大亨\"任务，难度为非常困难或以上。\n要完成此任务，你必须从头开始劫案。\n完成后要领取奖励，请使用鼠标滑轮滑下去点击奖励图标。\n\n注意事项：你将需要在第二天的豪宅中找到并收集正确的引擎。\n判断正确引擎的方法：（您可以使用截图或拍照记下该方法和需要搜集的线索）\n1.首先，搜集我们需要的线索。\n在豪宅中找到2个写有可识别英文字母的纸质笔记本，并在地下室楼梯前的墙上找到一块写有三个等于号的白板，以及在地下室的房间中找到一台写有5783psi或5812psi的计算机电脑。\n2.然后，分析辨别我们需要的线索。\n记住白板等于号左边的三个单词，检查笔记本和电脑，其中一个笔记本上写有三个单词中的一个，对应的是白板上等于号右边英文描述的颜色；另一个笔记本上写有H,2xH或3xH；电脑的数字左边会写有大于等于或小于等于的符号。\n3.再来，我们了解引擎的构成。\n引擎由1个斜着放的不同颜色的管子、1个正着放的大蓝管和1个气压表组成。\n4.最后，我们找出正确的引擎。\n单词和白板对应的颜色是斜管的颜色；H,2xH,3xH分别代表正大蓝管的顶部接着1,2,3条线；大于等于和小于等于分别代表气压大于等于或小于等于表上的红色线值。\n若有气压远大于或远小于红线的，那就一定不可能是气压接近红线的引擎。",
+		["dialog_err_failed_joining_lobby"] = "加入游戏失败。\n\n可能的原因：\n——您未能连接上房主的网络或房间不存在\n——您的恢复MOD版本与对方不同",
+		["dialog_remove_dead_peer"] = "与一位或多位玩家的网络连接无法建立。\n\n可能的原因：\n——您未能连接上房主或房间内其它玩家的网络",
+		["dialog_authentication_fail"] = "Steam无法验证你的Steam ID。\n\n可能的原因：\n——您连接到Steam服务器的网络异常",
+		["bm_menu_dlc_locked"] = "无法获取，或连接到STEAM的网络异常",
 		["menu_st_spec_23"] = "模仿者",
+		["menu_st_spec_24"] = "白板",
+		["menu_st_spec_25"] = "天赋异禀",
+		["bm_menu_drag_handle"] = "拉机柄",
 		["bm_menu_gadget_placement"] = "附件位置",
 		["bm_wp_wpn_fps_upg_xr2_fl_lr"] = "左侧",
 		["bm_wp_wpn_fps_upg_xr2_fl_rr"] = "右侧",
-		--["bm_menu_st_spec_23"] = "模仿者",
 		["bm_w_car9"] = "ACAR-9冲锋枪",
 		["bm_w_ak5s"] = "Automat-5冲锋枪",
 		["bm_w_bs23"] = "Hammer 23霰弹枪",
@@ -63,7 +69,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModOTHEROptionsButtonTitleID"] = "其它设置",
 		["RestorationModOTHEROptionsButtonDescID"] = "设置额外的功能",
 		["RestorationModWeaponHandlingOptionsButtonTitleID"] = "(+) 武器使用习惯设置",
-		["RestorationModWeaponHandlingOptionsButtonDescID"] = "内含有关你武器使用习惯的设置。\n包含瞄准习惯、操作习惯等。",  --tra
+		["RestorationModWeaponHandlingOptionsButtonDescID"] = "内含有关你武器使用习惯的设置。\n包含瞄准习惯、操作习惯等。",
 		["RestorationModUIOptionsButtonTitleID"] = "Alpha UI",
 		["RestorationModUIOptionsButtonDescID"] = "Alpha UI的设置",
 		["RestorationModTimeOfDayTitleID"] = "自定义劫案时间",
@@ -167,9 +173,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModADSTransitionStyleTitleID"] = "机瞄风格",
 		["RestorationModADSTransitionStyleDescID"] = "改变你使用机瞄的动作风格。",
 		["RestorationModGCGPYPMMSACTitleID"] = "绝对原始模式",  --may need improved
-		["RestorationModGCGPYPMMSACDescID"] = "关闭来自遥远银河系的武器配件。重启劫案生效。",  --may need improved
+		["RestorationModGCGPYPMMSACDescID"] = "关闭来自遥远银河系的武器配件以及极低概率出现的汉化彩蛋。\n重启劫案生效。",  --may need improved
 		["RestorationModStaticAimTitleID"] = "机瞄时武器无变向",
 		["RestorationModStaticAimDescID"] = "勾选以关闭你在机瞄时，武器会随着你屏幕的移动而变向的效果。参考PDTH。\n重启以生效。警告：取消勾选将导致某些选项不可用。",
+		["RestorationModCarpalTunnelTitleID"] = "自动压枪",
+		["RestorationModCarpalTunnelDescID"] = "选择原版中自动压枪机制的效果程度。\n即在完成射击后，准星会自动下移一部分后坐力抬升的角度。",
 		["RestorationModWpnCatTitleID"] = "购买菜单分类方式",
 		["RestorationModWpnCatDescID"] = "改变武器在购买菜单的分类方式。重启游戏生效。",
 		["RestorationModAutoDMRsTitleID"] = "DMR步枪全自动模式开局",
@@ -180,12 +188,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDescID"] = "只需要按一下互动键，就会自动保持互动。\n再按一次互动键取消互动。",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "用放置随身装备键取消互动",
 		["RestorationModSevenHoldDeployCancelDescID"] = "勾选以使用放置随身装备的按键取消互动。需要先开启轻按互动切换。",
-		["RestorationModQueuedShootingTitleID"] = "Queued Shooting", --tra
-		["RestorationModQueuedShootingDescID"] = "Enable/disable the queuing of fire inputs for semi-auto weapons to assist with oversampling.",
+		["RestorationModQueuedShootingTitleID"] = "连点射击辅助输入",
+		["RestorationModQueuedShootingDescID"] = "半自动武器在连续点鼠标两下时，可能因为射击间隔还没到，第二发没射出来。\n勾选此选项帮助你在射击间隔期间按鼠标也会等待间隔结束自动帮你开火。",
+		["RestorationModQueuedShootingWindowTitleID"] = "辅助输入的灵敏度",
+		["RestorationModQueuedShootingWindowDescID"] = "以百分比决定你在间隔达到之前什么时候点鼠标可以让下一发射出来，值高意味着更早。\n例：3秒间隔+0.2值=射击后等2.4秒再点鼠标就会让第二发在又0.6秒后自动射出来",
+		["RestorationModQueuedShootingExcludeTitleID"] = "辅助输入的武器限制",
+		["RestorationModQueuedShootingExcludeDescID"] = "只为高于此选项所设射速(RPM)的武器启用辅助输入。",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "取消瞄准后坐力动作",
 		["RestorationModNoADSRecoilAnimsDescID"] = "勾选以取消你在瞄准时射击产生的后坐力动画。\n有些武器不受此选项影响（换言之即手动操作的枪械，弓弩，火焰喷射器）",
 		["RestorationModNoSwapOnReviveTitleID"] = "被救起时不强制切换武器",
 		["RestorationModNoSwapOnReviveDescID"] = "勾选以避免在“苟延残喘”技能未专精且使用主武器倒地时，\n被救起后强行切换出主武器。",
+		["RestorationModSecondSightSprintTitleID"] = "使用冲刺按键切换次要瞄具",
+		["RestorationModSecondSightSprintDescID"] = "使用冲刺按键而不是附件按键来在瞄准时切换为次要瞄具。\n这将导致你无法在瞄准时即刻切换为奔跑状态。", --try
 		["RestorationModAimDeploysBipodTitleID"] = "瞄准时自动用脚架",
 		["RestorationModAimDeploysBipodDescID"] = "勾选以在一个可用平面瞄准时自动架起脚架。",
 		["RestorationModMoveCancelBipodTitleID"] = "移动时自动收脚架",
@@ -199,6 +213,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQuietRainTitleID"] = "减轻雨声",
 		["RestorationModQuietRainDescID"] = "在下雨的劫案中雨声不会那么嘈杂",
 		
+		["rr_off"] = "关闭",
+		["rr_per_weapon"] = "依武器而定",
+		["rr_full"] = "全额",
+
 		["vanilla_on_rails"] = "默认/原版",
 		["kf_mw_style"] = "杀戮间1/使命召唤",
 		["tilt_in"] = "Tilted体感控制器",
@@ -865,7 +883,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 
 		--["ch_watchdogs_d1_heavy_wpn1_hl"] = "重甲配大枪",
-		--["ch_watchdogs_d1_heavy_wpn1"] = "身穿改良型复合战术背心，仅使用Vulcan转轮机枪、Thanatos.50 cal狙击步枪或HRL-7火箭发射器完成\"看门狗\"任务第一天，难度为枪林弹雨或以上。要完成此挑战，你必须从头开始劫案。",
+		--["ch_watchdogs_d1_heavy_wpn1"] = "身穿改良型复合战术背心，仅使用Vulcan转轮机枪、Thanatos.50 cal狙击步枪或HRL-7火箭筒完成\"看门狗\"任务第一天，难度为枪林弹雨或以上。要完成此挑战，你必须从头开始劫案。",
 
 		["ch_deploy_ammobag_hl"] = "最后一颗子弹！",
 		["ch_deploy_ammobag"] = "部署$count个弹药包。",
@@ -990,52 +1008,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "用于快速运包的滑索",
 
-		--[[
-		--Watchdogs Early Boat Driver Restoration
-		["bot_watchdogs_new_stage2_01_any_02"] = "这里是运输艇。我收到信号了，马上就来。",
-		["bot_watchdogs_new_stage2_01_any_03"] = "这里是运输艇。我看到信号了，在路上了。",
+		--Heat Street Waypoints
+		["wp_heat_street_matt"] = "Matt",  --tra
+		["wp_heat_street_eddie"] = "Eddie",
+		["wp_heat_street_jp"] = "Jake's Parking",
+		["wp_heat_street_dl"] = "Drake's Loading",
+		["wp_heat_street_ba"] = "Back Alley",
+		["wp_heat_street_aa"] = "Armitage AVE",
+		["wp_heat_street_bile"] = "Bile",
+		["wp_heat_street_question"] = "?",
 
-		["bot_watchdogs_new_stage2_05_any_02"] = "我来了，把包丢上来吧！",
-		["bot_watchdogs_new_stage2_05_any_03"] = "好了兄弟们，快把包丢过来吧！",
-		["bot_watchdogs_new_stage2_05_any_04"] = "我就位了，赶紧把包都丢进来吧！",
-
-		["bot_watchdogs_new_stage2_06_any_01"] = "货一次四包，别丢多了！",
-		["bot_watchdogs_new_stage2_06_any_02"] = "不好意思，我一次只能带四包！等会再来拿剩下的。",
-		["bot_watchdogs_new_stage2_06_any_03"] = "一次撑死四包！货且运下，我去去就回。",
-
-		["bot_watchdogs_new_stage2_07_any_01"] = "必须！得！再快点！",
-		["bot_watchdogs_new_stage2_07_any_02"] = "把桶装满，快快快！",
-		["bot_watchdogs_new_stage2_07_any_03"] = "快点，快点，再快点！",
-
-
-		["bot_watchdogs_new_stage2_08_any_02"] = "那就满四包了！",
-		["bot_watchdogs_new_stage2_08_any_03"] = "好了，桶装满了！", 
-
-		["bot_watchdogs_new_stage2_09_any_01"] = "我先把这些东西带走，待会再回来！",
-		["bot_watchdogs_new_stage2_09_any_02"] = "如果你们还想贪包，我很快就会回来的！",
-		["bot_watchdogs_new_stage2_09_any_03"] = "船满了我先走了！别担心，我片刻即归。",
-
-		["bot_watchdogs_new_stage2_10_any_01"] = "我卸完货了，马上回来！",
-		["bot_watchdogs_new_stage2_10_any_02"] = "卸完了！爷来辣！",
-		["bot_watchdogs_new_stage2_10_any_03"] = "稍等......我卸完货了，正全速驶回！",
-
-		["bot_watchdogs_new_stage2_11_any_01"] = "兄啊，我让你丢桶里，不是水里！",
-		["bot_watchdogs_new_stage2_11_any_02"] = "我说啥来着？丢进桶里，对吧？！",
-		["bot_watchdogs_new_stage2_11_any_03"] = "你他妈在逗我吗？！丢桶里明白吗？？",
-
-		["bot_watchdogs_new_stage2_12_any_01"] = "收到！我会停靠在码头7。",
-		["bot_watchdogs_new_stage2_12_any_02"] = "收到！正在向码头7靠近。",
-		["bot_watchdogs_new_stage2_12_any_03"] = "明白了，码头7见面！",
-
-		["bot_watchdogs_new_stage2_13_any_01"] = "收到！我会停靠在码头8。",
-		["bot_watchdogs_new_stage2_13_any_02"] = "收到！正在向码头8靠近。",
-		["bot_watchdogs_new_stage2_13_any_03"] = "明白了，码头8见面！",
-
-		["bot_watchdogs_new_stage2_14_any_01"] = "收到！我会停靠在码头9。",
-		["bot_watchdogs_new_stage2_14_any_02"] = "收到！正在向码头9靠近。",
-		["bot_watchdogs_new_stage2_14_any_03"] = "明白了，码头9见面！",
-		--]]
-		
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "劫持Mia Calienté是个真正的活，朋友。她已经在幕后主使黑水在特区的行动好几年了。就在不久之前，黑水接管了码头的一个仓库作为额外的分配点。我们的目标正在那里清点从船上刚掠夺不久的货。我们将突入这里，抓住这小崽子作为人质。黑水的人无法接受失去她，他们将会愿意去花钱赎人，没准在上述条件下我们还能要价更高，伙计们你们觉得呢？"
 	})
@@ -1044,6 +1026,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
+	local random_captain = math.rand(1)
 	if captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "凛冬盾阵来袭",
@@ -1053,25 +1036,55 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["hud_assault_vip"] = "夏日小队来袭",
 		})
 	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "春日队长来袭",
-		})
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "春日队长来袭",
+			})
 	elseif captain_type == restoration.captain_types.spring then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "春日部队来袭",
-		})		
+		if random_captain < 0.05 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "勃勃生机，万物竞发！",
+			})
+		elseif random_captain < 0.1 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "春日行刑队来袭",
+			})
+		else
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "惊蛰战术攻坚小组来袭",
+			})
+		end
 	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "秋日队长来袭",
 		})
 	elseif captain_type == restoration.captain_types.autumn then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "秋日部队来袭",
-		})		
+		if random_captain < 0.25 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "秋天悄然而至......",
+			})
+		elseif	random_captain < 0.5 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "你感到后背一阵凉意......",
+			})
+		elseif	random_captain < 0.75 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "阵阵袭来的寒意......",
+			})
+		else
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "秋风萧瑟，万物凋零",
+			})
+		end
 	elseif captain_type == restoration.captain_types.hvh then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "直面你的噩梦......快醒来......",
-		})
+		if random_captain < 0.25 then
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "地狱呼唤着你......",
+			})
+		else
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "直面你的噩梦......快醒来......",
+			})
+		end
 	end			
 	
 end)
@@ -1115,7 +1128,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_contact_skirmish"] = "遭遇战",
 		["menu_skirmish_pick_heist"] = "胡狼公司委托你完成这项任务",
 		["menu_skirmish_map_selection"] = "目标地点",
-		["menu_skirmish_selected_briefing"] = "在此选项中，你和你队友可以选择任何遭遇战地图进行作战\n\n遭遇战将最多持续9波，难度将随波数增加而上升。\n\n每波结束都将使你获得极大的金钱和经验奖励，但失败会使你丢失所有已获得的奖励\n\n##一旦你或你的队友被逮捕入狱，遭遇战将在本波完成后强制结束##\n##当所有劫匪倒下或人质被救走时，遭遇战就会失败##",
+		["menu_skirmish_selected_briefing"] = "在此选项中，你和你队友可以选择任何遭遇战地图进行作战\n\n遭遇战将最多持续9波，难度将随波数增加而上升。\n\n每波结束都将使你获得极大的金钱和经验奖励，但失败会使你丢失所有已获得的奖励\n\n一旦你或你的队友被逮捕入狱，你们将无法被换出来。\n当所有劫匪倒下或人质被救走时，遭遇战就会失败",
 		["menu_skirmish_selected"] = "遭遇战",
 
 		--Skirmish Heists--
@@ -1140,7 +1153,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--Heist Breifings--
-		["heist_pines_briefing"] = "你们得赶紧过去，不过那地方根本没法着陆，所以你们得空降下去。找到坠机的飞行员————可能就在坠机地点附近————然后我们会派一架直升机过去接他。待在他身边保护他的安全，直到他被护送离开。此外，弗拉德还说飞机上装满了货物。在森林里找找，能拿多少拿多少，圣诞节总是要挣点零花钱的。\n\n胡狼的提示：\n坠机引起的爆炸引来了附近的收割者小组，别指望着警察对此作出回应了。",
+		["heist_pines_briefing"] = "你们得赶紧过去，不过那地方根本没法着陆，所以你们得空降下去。找到坠机的飞行员————可能就在坠机地点附近————然后我们会派一架直升机过去接他。待在他身边保护他的安全，直到他被护送离开。此外，弗拉德还说飞机上装满了货物。在森林里找找，能拿多少拿多少，圣诞节总是要挣点零花钱的。\n\n胡狼的提示：\n坠机引起的爆炸引来了附近的收割者小队，他们贿赂了当地的治安部门，别指望着警察对此作出回应了。",
+			--The Bomb: Forest Breifing
+		["heist_crojob3_briefing"] = "一批温压炸弹今晨被装上列车并启运。其目的地为诺福克。在那里它们将会被出售或销毁——这无关紧要，它们注定无法抵达那儿。要想截停一辆行进中的列车，一般方式是行不通的。这时候，传统的西部方式就派上了用场——在列车经过时将一段铁路桥炸毁，然后整辆列车就会从桥上顺势滚下。虽然简单粗暴，但却不失为最有效的方式。爆炸产生的冲击波将会冲散车厢，同时也会把不该来的人招来。因此，行动要迅速。\n\n胡狼的提示：\n看样子阿肯也想就此事掺一脚，他贿赂了当地的治安部门，并派遣了一批收割者小队，别指望着警察来解决这件事了。",
 
 		----Custom Achievements----
 				
@@ -1212,11 +1227,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_spam_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人和薄墙壁##，但穿透护甲时仅造成#{skill_color}#80%##的伤害。",
 		["bm_wp_upg_a_explosive_desc_sc"] = "射出一发能使人眩晕的爆炸半径为#{skill_color}#1.5米##的致命性爆炸弹头，#{skill_color}#不受任何衰减##，但也#{important_1}#不能触发爆头##。\n",
 		["bm_wp_upg_a_custom_desc"] = "发射更少量但更大号的共#{important_1}#6##发自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。",
-		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#15%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#3##秒内造成#{skill_color}#90##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#30%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#40%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
-		--["bm_wp_upg_a_rip_auto_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#1##秒内造成#{stats_positive}#30##点伤害，并有几率眩晕敌人。",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#15%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#90##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#30%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#40%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#50%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减少且只能点燃衰减始距内的敌人##。\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#2##秒内造成#{stats_positive}#60##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
 		["bm_wp_upg_a_rip_pump_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
 		["bm_wp_upg_a_rip_heavy_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
@@ -1227,7 +1242,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#180##点流血伤害。",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#240##点流血伤害。",
 		--]]
-		--["bm_wp_upg_a_piercing_auto_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
@@ -1279,7 +1294,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_1_8_irons"] = "带有次要铁瞄镜的红点瞄准具。\n#{risk}#1-1.8倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
 		["bm_wp_upg_o_3"] = "中距瞄准仪。\n#{risk}#3倍放大倍率##",
 		["bm_wp_upg_o_3_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{risk}#3倍放大倍率##",
-		["bm_wp_upg_o_3_rds"] = "顶部装有反射次瞄具的中距瞄准仪。\n#{risk}#1-3倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
+		["bm_wp_upg_o_3_rds"] = "顶部装有反射次瞄具的中距瞄准仪。\n#{risk}#1.1-3倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
 		["bm_wp_upg_o_3_4"] = "中距瞄准仪。\n#{risk}#3.4倍放大倍率##",
 		["bm_wp_upg_o_3_5"] = "中距瞄准仪。\n#{risk}#3.5倍放大倍率##",
 		["bm_wp_upg_o_4"] = "中距瞄准仪。\n#{risk}#4倍放大倍率##",
@@ -1287,7 +1302,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_o_4_default"] = "该武器的默认瞄镜。\n#{risk}#4倍放大倍率##\n\n#{item_stage_2}#这个瞄准镜不能被移除，但可以被其它瞄准镜替换##。",
 		["bm_wp_upg_o_4_range"] = "内置#{skill_color}#测距仪##的中距瞄准器。\n#{risk}#4倍放大倍率##",
 		["bm_wp_upg_o_4_irons"] = "带有次要铁瞄镜的红点瞄准具。\n#{risk}#1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
-		["bm_wp_upg_o_4_rds"] = "带有整合型反射次瞄具的中距瞄准仪。\n#{risk}#1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
+		["bm_wp_upg_o_4_rds"] = "带有整合型反射次瞄具的中距瞄准仪。\n#{risk}#1.1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
+		["bm_wp_upg_o_4_rds_mount"] = "顶部装有反射次瞄具的中距瞄准仪。\n#{risk}#1.1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
 		["bm_wp_upg_o_5"] = "长距瞄准仪。\n#{risk}#5倍放大倍率##",
 		["bm_wp_upg_o_5_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{risk}#5倍放大倍率##",
 		["bm_wp_upg_o_6"] = "长距瞄准仪。\n#{risk}#6倍放大倍率##",
@@ -1298,15 +1314,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_iwelo"] = "光明浮动十字瞄具。\n#{risk}#1.1倍放大倍率##",
 		["bm_wp_upg_o_iwrds"] = "精准红点瞄准镜。\n#{risk}#1.5倍放大倍率##",
 
+		["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW瞄具", --try Trigonom SCRW Scope
+
 		["bm_wp_upg_o_shortdot_dmc"] = "短点瞄具",
-		["bm_wp_upg_o_5_default"] = "长距瞄准仪。\n装备后即可修改默认狙击镜刻线。\n#{skill_color}#5倍放大倍率##",
+		["bm_wp_upg_o_5_default"] = "长距瞄准仪。\n这就是默认的狙击镜，装备后可修改准星样式。\n#{skill_color}#5倍放大倍率##",
+
+		["bm_wp_upg_fl_flashlight"] = "按下#{skill_color}#$BTN_GADGET##以开关手电筒。",
+		["bm_wp_upg_fl_laser"] = "按下#{skill_color}#$BTN_GADGET##以开关镭射。",
+		["bm_wp_upg_fl_dual"] = "按下#{skill_color}#$BTN_GADGET##以在镭射和手电筒之间切换或开关它们。",
+		["bm_wp_upg_fl_vmp_marker"] = "瞄准时#{skill_color}#自动标记##距你#{skill_color}#40##米以内的保安和特殊敌人。\n\n#{risk}#提示：保安只能在潜入中被标记##。",
+		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#装备次要瞄具后，你不能在瞄准时开关此附件。##",
 
 		["bm_wp_upg_o_angled_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和斜角铁瞄之间切换。",
 		["bm_wp_upg_o_angled_1_1_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和斜角反射瞄具之间切换。\n#{skill_color}#1.1倍放大倍率##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和斜角红点瞄具之间切换。\n#{skill_color}#1.2倍放大倍率##",
 		["bm_wp_upg_o_angled_laser_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和斜角激光瞄准之间切换。\n\n#{risk}#非常建议使用一个镭射配件##", --VMP Point Shoot Laser
 
-		["bm_wp_upg_o_magnifier_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 来升起/放下瞄具放大镜。\n#{skill_color}#3倍放大倍率##",
+		["bm_wp_upg_o_magnifier_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 来升起/放下瞄具放大镜。\n#{risk}#3倍放大倍率##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "受到撞击时释放半径为#{skill_color}#3.75米##的#{heat_warm_color}#火焰##，持续#{skill_color}#5##秒。火焰上的敌人每秒受到#{skill_color}#120##点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在#{skill_color}#3##秒内受到额外#{skill_color}#60##点伤害。",
@@ -1411,15 +1435,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_g22c_sc_desc"] = "在最好的战术手枪中，这把武器是高容量和高威力的代名词。",
 		["bm_x_g22c_sc_desc"] = "如果一张选票是免费的枪支，那么当你能得到两把这样的便携式防身武器时，投票欺诈似乎很有吸引力.",
 		--Baby Deagle
-		["bm_sparrow_sc_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
+		["bm_sparrow_sc_desc"] = "\n后会有期，星际牛仔......",
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
 		--Signature .40
 		["bm_p226_sc_desc"] = "无论是截停武装押运还是银行抢劫，这个经典的警察杀手都永远不会让人失望。",
 		--LEO
 		["bm_hs2000_sc_desc"] = "国际刑警组织特工、狡猾的克罗地亚警察和国际犯罪分子都发现这种袖珍爆破手十分有效。",
 		--5/7 pistol
 		["bm_lemming_sc_desc"] = "高威力与大容量的结合。如果有人能吃了20枪没事，你可能不应该向他射击。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#33%##的伤害。",
-		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "\n“#{heat_warm_color}#欲擎此枪必承其重##”",
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "豺狼的配枪选择。一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
 		--Crosskill
@@ -1440,7 +1463,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_type54_sc_desc"] = "苏联设计Tokarev的中国复制款，以独特的下挂霰弹枪为特征来给出解决坏蛋的额外手段。",
 		["bm_x_type54_sc_desc"] = "双拳难敌？四管相迎！",		
 		--Broomstick--
-		["bm_c96_sc_desc"] = "\"#{heat_warm_color}#……然后狼吃掉了小红帽##\"\n\n具有革命性的德国手枪，尤其这一款被改装成了全自动开火模式。\n\n这把枪一次装填10颗子弹",
+		["bm_c96_sc_desc"] = "\"#{heat_warm_color}#……然后狼吃掉了小红帽##\"\n\n具有革命性的德国手枪，尤其这一款被改装成了全自动开火模式。\n\n这把枪一次装填#{skill_color}#10##颗子弹",
 		["bm_wp_c96_nozzle"] = "DL-44爆能枪口", --Suppressor into Muzzle --checkout
 		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.5秒\n充能速率: 3发/秒(过热时减半)\n过热惩罚: 2秒",
 		--Sub2000
@@ -1486,6 +1509,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--M6D
 		["kfa_scope"] = "KFA-2 智联瞄具",
 		["kfa_scope_desc"] = "使你能够对接面具和装配的#{skill_color}#智联##瞄具。\n#{risk}#2x放大倍率。##",
+		--SIG P320
+		--["bm_w_papa320"] = "M19", --not sure what it is
+		["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32发装弹匣",  --tra
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90冲锋枪",
@@ -1629,6 +1655,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Eh, whatever
 		["bm_groza_sc_desc_pc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
 		["bm_groza_sc_desc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
+		--CHIKUBI
+		["bm_w_tkb"] = "Rodion 3B步枪",
+		["bm_wp_tkb_m_bakelite"] = "西伯利亚款15x3弹匣",
 		--Krinkov
 		["bm_akmsu_sc_desc"] = "专门撂倒大个的小不点。无论什么方案都固执己见使这把枪不可被低估。",
 		--Akimbo Krinkov
@@ -1644,6 +1673,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "获得以下加成：\n#{heat_warm_color}#精确##：\n#{skill_color}#无伤害衰减##但#{important_1}#降低射速##。\n#{item_stage_2}#专注##：\n#{skill_color}#提高##精准度。",
 		["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "获得以下加成：\n#{heat_warm_color}#迅捷##：\n#{skill_color}#提高腰射射速##但#{important_1}#降低瞄准射速##。\n#{item_stage_2}#稳固##：\n#{skill_color}#提高##腰射精准度。",
 
+		--VMP Honey Badger
+		--["bm_w_bdgr_desc"] = "",
+		--MW22 Honey Badger
+		["bm_w_mcbravo"] = "Chimera",  --tra E
+		["bm_w_mcbravo_desc"] = "With an #{skill_color}#integrated suppressor## and slow, high-energy subsonic #{risk}#.300 BLK## rounds, the Chimera is adept at close-quarters combat.",
+		--AR-18
+		["bm_w_ar18"] = "CAR-18",
 
 		--Bootleg/HK416c
 		["bm_w_tecci"] = "Bootleg轻机枪",
@@ -1706,7 +1742,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"VISha\"枪托",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "装载大威力弹#{skill_color}#允许达到全面护甲穿透和穿盾能力##。 枪托和枪闩用了更敦实的材料加固使 #{important_1}#射速降低##。",
-		--Custom DMRs
+		--HCAR
+		["bm_w_hcar"] = "Akron HC步枪",
+		["bm_hcar_sc_desc"] = "一把经典二战机枪的现代版本。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",	
+
+			--Custom DMRs
+		--MCX Spear
+		["bm_w_mcx_spear"] = "Signature M5",  --tra E
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79步枪",
 		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。\n\n装有#{skill_color}#下挂榴弹发射器##，按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",	
 		--["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
@@ -1741,6 +1783,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2狙击步枪", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		["bm_sbl_sc_desc"] = "二十世纪的杠杆设计使其相对十九世纪能供应更大号的枪弹。期待你这边的.45-70子弹带来额外的乐趣和额外的死仔吧。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",	
+		--Contender G2
+		["bm_w_contender"] = "Aran G2狙击步枪",
+		["bm_contender_sc_desc"] = "",	
 		--Model 70
 		["bm_model70_sc_desc"] = "神枪手的神枪。早期由Repeater-1874的同一批设计师手下做出的栓动式设计。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		--SVD
@@ -1786,12 +1831,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		
 		--GL40		
-		["bm_w_gre_m79_sc_desc"] = "咚了个砰！\n\n按下 #{skill_color}#$BTN_GADGET## 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
+		["bm_w_gre_m79_sc_desc"] = "咚了个砰！\n\n按下 #{skill_color}#$BTN_GADGET## 切换到折叠瞄具。\n\n该瞄具视野限制在#{skill_color}#30m##内。",
 		--3GL
 		["bm_ms3gl_sc_desc"] = "发射通过黑科技自制的集束40mm榴弹，可以造成快速后续冲击伤害。\n\n辅助射击允许一次性#{skill_color}#射出三发榴弹##。",
 		--["bm_ms3gl_sc_desc"] = "Fires custom 40mm rounds superposed in a single chamber. Uses electric primers to fire, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
 		--PIGLET/M32
 		["bm_m32_sc_desc"] = "变身成为一个\"#{risk}#战斗机器##\"，告诉你的敌人们，没有魔法少女会来保护他们和他们的队友免受这个6发转轮榴弹的伤害。",
+		--China Puff
+		["bm_w_china_sc_desc"] = "\"哇哦，这儿可真是个可怕的地方！\"\n\n按下 #{skill_color}#$BTN_GADGET## 切换到折叠瞄具。\n\n该瞄具视野限制在#{skill_color}#30m##内。",
 		--COMMANDO 101/M202 FLASH
 		["bm_ray_sc_desc"] = "这个四联装#{heat_warm_color}#燃烧火箭##使你成为\"#{risk}#死神##\"。\n\n火箭爆炸后#{heat_warm_color}#留下持续地火##，并且直接爆炸伤害可以#{skill_color}#秒杀敌人炮塔##。",
 		
@@ -1809,6 +1856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
 		["bm_menu_weapon_movement_bonus_info"] = "移动速度提升 ",
 		["bm_menu_sms_info_cont"] = "射击时惩罚翻倍。",
+		["bm_menu_sms_info_cont_2"] = "受配件影响，射击时惩罚翻倍。",
 		["bm_menu_sms_info_2"] = "  ，在你射击时。",
 		["bm_menu_stat_sms_info_2"] = " ，在你射击时。\n该惩罚受当前配件影响。",
 		["bm_menu_weapon_movement_penalty_info_2"] = "，在你手持时",
@@ -1830,9 +1878,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_pdw_gen_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#33%##的伤害。",
 		["bm_heavy_ap_weapon_sc_desc"] = "爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
+		
 		["bm_bow_sc_desc"] = "按住 #{skill_color}#$BTN_FIRE## 以拉弓，然后松开以射击。\n弓拉的越满，伤害和箭的飞行速度越高。\n\n按下 #{skill_color}#$BTN_AIM## 停止拉弓。\n\n箭矢可以#{skill_color}#捡起回收##。\n能够#{skill_color}#穿透护甲##。",
+		["bm_bow_exp_sc_desc"] = "按住 #{skill_color}#$BTN_FIRE## 以拉弓，然后松开以射击。\n弓拉的越满，箭的飞行速度越高。\n\n按下 #{skill_color}#$BTN_AIM## 停止拉弓。\n\n箭矢在#{skill_color}#撞击时爆炸##。",
+		["bm_w_bow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#1.5##米内所有敌人的箭矢。\n\n#{important_1}#箭矢的飞行速度降低，且无法爆头和回收##",
+		["bm_w_bow_light_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的箭矢，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害并有概率眩晕敌人。\n\n#{important_1}#箭矢的飞行速度略微降低##",
+		["bm_w_bow_heavy_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的箭矢，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害并有概率眩晕敌人。\n\n#{important_1}#箭矢的飞行速度略微降低##",
+
 		["bm_xbow_sc_desc"] = "弩箭可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
+		["bm_xbow_exp_sc_desc"] = "弩箭在#{skill_color}#撞击时爆炸##。",
+		["bm_w_xbow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#1.5##米内所有敌人的弩箭。\n\n#{important_1}#弩箭的飞行速度降低，且无法爆头和回收####",
+		["bm_w_xbow_light_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
+		["bm_w_xbow_heavy_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
+
 		["bm_airbow_sc_desc"] = "箭矢可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
+		["bm_airbow_exp_sc_desc"] = "箭矢在#{skill_color}#撞击时爆炸##。",
+		["bm_w_airbow_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
+
 		["bm_40mm_weapon_sc_desc"] = "按下 $BTN_GADGET 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
 		["bm_rocket_launcher_sc_desc"] = "该武器造成的爆炸伤害能够#{skill_color}#秒杀敌人炮塔##。",
 		["bm_quake_shotgun_sc_desc"] = "一次射击两个枪管，弹丸数量也翻倍。",
@@ -1942,6 +2004,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen"] = "软黏绿",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "据说这套衣服曾属于一个三人精神病罪犯组中的一员，是在一辆破损垃圾车旁找到的。据推测，这辆垃圾车被三人用于进行一场对GenSec运钞车的劫案，本次劫案中有多名SWAT死亡，还有许多人员受伤。而这些罪犯的身份依然是个谜。大多数证据都随着垃圾车的损坏被摧毁了，现场只留下了这件连身衣。",
 
+		--Menu Buttons--
+		["bm_menu_btn_sell"] = "售出武器 ($price)",
+		["bm_menu_btn_buy_selected_weapon"] = "购买武器 ($price)",
+
 		--New menu stats--
 		["bm_menu_damage_shake"] = "抖动百分比",
 		["bm_menu_deflection"] = "血量减伤分数",
@@ -1962,6 +2028,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_foregrip_plural"] = "护木",
 		["bm_menu_vertical_grip"] = "前握把",
 		["bm_menu_vertical_grip_plural"] = "前握把",
+		["bm_menu_bayonet"] = "刺刀",
+		["bm_menu_bayonet_plural"] = "刺刀",
 		--Spoof types--
 		["bm_menu_frame"] = "框架",
 		["bm_menu_whole_receiver"] = "机匣",
@@ -1973,6 +2041,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_forebarrelgrip"] = "枪管&护木",
 		["bm_menu_riser"] = "镜桥",
 		["bm_menu_pump"] = "泵",
+
+		["bm_menu_upotte_barrel"] = "枪管",
+		["bm_menu_upotte_foregrip"] = "护木",
+		["bm_menu_upotte_stock"] = "枪托",
+		["bm_menu_upotte_grip"] = "握把",
 
 		["bm_menu_ro_barrel"] = "枪管",
 		["bm_menu_ro_stock"] = "枪托",
@@ -1998,8 +2071,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["menu_smg"] = "冲锋枪",
 		["menu_smg_single"] = "冲锋枪",
-		["menu_lmg"] = "冲锋枪", --s
-		["menu_lmg_single"] = "冲锋枪",
+		["menu_lmg"] = "机枪", --s
+		["menu_lmg_single"] = "机枪",
 		["menu_minigun"] = "冲锋枪", --s
 		["menu_minigun_single"] = "冲锋枪",
 		["menu_akimbo_smg"] = "双持冲锋枪",
@@ -2035,8 +2108,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_flamethrower"] = "火焰喷射器",
 		["menu_flamethrower_single"] = "火焰喷射器",
 
-		["menu_grenade_launcher"] = "火箭筒/榴弹发射器",
-		["menu_grenade_launcher_single"] = "火箭筒/榴弹发射器",
+		["menu_grenade_launcher"] = "火箭筒/榴弹",
+		["menu_grenade_launcher_single"] = "火箭筒/榴弹",
 
 		["menu_saw"] = "电锯",
 		["menu_saw_single"] = "电锯",
@@ -2053,6 +2126,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_value"] = "卖出可得：",
 
 		["st_menu_skill_use"] = "技能归属：",
+
+		["st_menu_firemode"] = "开火模式：", --tra consider
+		["st_menu_firemode_semi"] = "单发",
+		["st_menu_firemode_auto"] = "连发",
+		["st_menu_firemode_burst"] = "三连发",
+		["st_menu_firemode_volley"] = "齐射",
 
 		["menu_reticle_dmc_eotech"] = "TECopt 圆准星",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA瞄点",
@@ -2230,25 +2309,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		
 		["menu_akimbo_assault_rifle"] = "双持突击步枪",
 
+		--Perk Deck Throwables
+		["bm_grenade_copr_ability"] = "水蛭安瓿瓶",
+		["bm_grenade_damage_control"] = "修士酒壶",
+		["bm_grenade_smoke_screen_grenade_desc"] = "爆炸半径：#{skill_color}#4##米 \n持续时间：#{skill_color}#12##秒 \n引爆：静止#{skill_color}#1##秒后 \n\n扔一颗烟雾弹，消失在烟幕中，让你的敌人更难瞄准你。",
+
 		--Throwables--
-		["bm_concussion_desc"] = "爆炸半径：10米 \n晕眩敌人最长4秒 \n7秒内敌人精准度减少50% \n晕眩所有敌人，除了泰坦盾兵、泰坦熊和队长。\n\n这个可爱的小玩意可以震瞎附近所有人的狗眼，给你额外的时间击杀他们。",
-		["bm_grenade_smoke_screen_grenade_desc"] = "爆炸半径：8米 \n持续时间：12秒 \n引爆：静止1秒后 \n\n扔一颗烟雾弹，消失在烟幕中，让你的敌人更难瞄准你。",
-		["bm_grenade_frag_desc"] = "伤害：800 \n爆炸半径：5米 \n引爆：3秒后 \n\n就是一颗高爆手榴弹，还有什么好说的？",
-		["bm_dynamite_desc"] = "伤害：800 \n爆炸半径：4米 \n引爆：3秒后 \n\n不会到处滚动或弹跳，但是爆炸半径略低一点。\n设计是用来炸石头的，当然也可以用来炸人。",
-		["bm_grenade_frag_com_desc"] = "伤害：800 \n爆炸半径：5米 \n\n就是一颗换了皮的高爆手榴弹，OVERKILL那性子没什么好说的。",
-		["bm_grenade_dada_com_desc"] = "伤害：800 \n爆炸半径：5米 \n\n娃娃的外表炸弹的心，来自祖国母亲的爱。",
-		["bm_grenade_molotov_desc"] = "伤害（火焰）：10秒内造成1200点伤害 \n伤害（点燃）：3秒内造成60点伤害 \n爆炸半径：3.75米 \n持续时间（火焰）：10秒\n引爆：撞击物体时 \n有50%的概率点燃敌人并使其陷入硬直。\n\n玻璃瓶、可燃液体与一块碎布的完美结合，简单而有效。",
-		["bm_grenade_fir_com_desc"] = "伤害（火焰）：12秒内造成1440点伤害 \n伤害（点燃）：3秒内造成60点伤害 \n爆炸半径：3.75米 \n持续时间（火焰）：12秒 \n引爆：2.5秒后 \n有50%的概率点燃敌人并使其陷入硬直。\n\n白磷手榴弹，适合反弹到敌人那边点燃他们。",
-		["bm_wpn_prj_ace_desc"] = "伤害：240 \n\n拥有锋利边缘的加重纸牌，金牌杀手口袋里的必备物品。",
-		["bm_wpn_prj_four_desc"] = "伤害（击中）：200 \n伤害（毒素）： 4秒内造成120点伤害 \n每半秒有50%的几率干扰敌人 \n\n流星镖拥有悠久的充满血腥的历史，纯钢打造的淬毒武器是你面对的敌人最可怕的噩梦。",
-		["bm_wpn_prj_target_desc"] = "伤害：240 \n\n精准而有效的无声杀人武器。兜里揣两把，干啥都不怕。",
-		["bm_wpn_prj_jav_desc"] = "伤害：360 \n\n从远古时期开始，标枪就被证明是非常有效的武器，尽管它只是由一根木棍和一个尖头组成的。",
-		["bm_wpn_prj_hur_desc"] = "伤害：360 \n\n他们说锋利的斧头永远是对的，所以一把飞斧当然不会错。",
-		["bm_grenade_electric_desc"] = "伤害：400 \n爆炸半径：5米 \n引爆：3秒后 \n\n比起普通的高爆手雷，电击手雷加了一点点调味料。雷电法王的珍藏。",
+		["bm_grenade_xmas_snowball_desc"] = "伤害：#{risk}#240## \n爆炸半径：#{skill_color}#1##米 \n恢复速度：每#{skill_color}#25##秒一个 \n\n沉进水里，再丢进冰箱，你就拥有了一件致命的投掷武器。就那么简单。",
+		["bm_concussion_desc"] = "爆炸半径：#{skill_color}#10##米 \n晕眩敌人最长#{skill_color}#4##秒 \n#{skill_color}#7##秒内敌人精准度减少#{skill_color}#50%## \n#{skill_color}#晕眩##所有范围内的敌人，#{important_1}#泰坦盾兵、泰坦熊和队长##除外。\n\n这个可爱的小玩意可以震瞎附近所有人的狗眼，给你额外的时间击杀他们。",
+		["bm_grenade_frag_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n就是一颗高爆手榴弹，还有什么好说的？",
+		["bm_dynamite_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#4##米 \n引爆：#{skill_color}#3##秒后 \n\n不会到处滚动或弹跳，但是爆炸半径略低一点。\n设计是用来炸石头的，当然也可以用来炸人。",
+		["bm_grenade_frag_com_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n就是一颗换了皮的高爆手榴弹，OVERKILL那性子没什么好说的。",
+		["bm_grenade_dada_com_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n娃娃的外表炸弹的心，来自祖国母亲的爱。",
+		["bm_grenade_molotov_desc"] = "伤害（火焰）：#{skill_color}#10##秒内造成#{heat_warm_color}#1200##点伤害 \n伤害（点燃）：#{skill_color}#3##秒内造成#{heat_warm_color}#60##点伤害 \n爆炸半径：#{skill_color}#3.75##米 \n持续时间（火焰）：#{skill_color}#10##秒\n引爆：#{skill_color}#撞击物体##时 \n有#{skill_color}#50%##的概率点燃敌人并使其陷入硬直。\n\n玻璃瓶、可燃液体与一块碎布的完美结合，简单而有效。",
+		["bm_grenade_fir_com_desc"] = "伤害（火焰）：#{skill_color}#12##秒内造成#{heat_warm_color}#1440##点伤害 \n伤害（点燃）：#{skill_color}#3##秒内造成#{heat_warm_color}#60##点伤害 \n爆炸半径：#{skill_color}#3.75##米 \n持续时间（火焰）：#{skill_color}#12##秒 \n引爆：#{skill_color}#2.5##秒后 \n有#{skill_color}#50%##的概率点燃敌人并使其陷入硬直。\n\n白磷手榴弹，适合反弹到敌人那边点燃他们。",
+		["bm_wpn_prj_ace_desc"] = "伤害：#{skill_color}#240## \n\n拥有锋利边缘的加重纸牌，金牌杀手口袋里的必备物品。",
+		["bm_wpn_prj_four_desc"] = "伤害（击中）：#{skill_color}#200## \n伤害（毒素）： #{skill_color}#4##秒内造成#{stats_positive}#120##点伤害 \n每#{skill_color}#0.5##秒有#{skill_color}#50%##的几率干扰敌人 \n\n流星镖拥有悠久的充满血腥的历史，纯钢打造的淬毒武器是你面对的敌人最可怕的噩梦。",
+		["bm_wpn_prj_target_desc"] = "伤害：#{skill_color}#240## \n\n精准而有效的无声杀人武器。兜里揣两把，干啥都不怕。",
+		["bm_wpn_prj_jav_desc"] = "伤害：#{skill_color}#360## \n\n从远古时期开始，标枪就被证明是非常有效的武器，尽管它只是由一根木棍和一个尖头组成的。",
+		["bm_wpn_prj_hur_desc"] = "伤害：#{skill_color}#360## \n\n他们说锋利的斧头永远是对的，所以一把飞斧当然不会错。",
+		["bm_grenade_electric_desc"] = "伤害：#{ghost_color}#400## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n比起普通的高爆手雷，电击手雷加了一点点调味料。雷电法王的珍藏。",
 		["bm_grenade_poison_gas_grenade"] = "蝰蛇-6 手雷",
-		["bm_grenade_poison_gas_grenade_desc"] = "伤害：10秒内造成300点伤害 \n爆炸半径：6m \n持续时间（毒雾）：12秒 \n引爆：静止1秒后 \n敌人不会反复中同一片毒雾的毒。\n盾兵、熊、掷弹兵和队长对毒雾带来的硬直效果免疫。\n\n这个实验性的生物武器只会释放针对特定基因型的大范围有毒气体，因此对你和你的队员无效。中毒的受害者会出现剧烈的咳嗽、恶心、呕吐等症状，甚至可以致命！除了那些最坚强的佼佼者......\n\n是老道劫匪的理想武器之一喵。",
+		["bm_grenade_poison_gas_grenade_desc"] = "伤害：#{skill_color}#10##秒内造成#{stats_positive}#300##点伤害 \n爆炸半径：#{skill_color}#6##米 \n持续时间（毒雾）：#{skill_color}#12##秒 \n引爆：静止#{skill_color}#1##秒后 \n\n-有#{skill_color}#100%##的几率使范围内敌人中毒陷入硬直，但敌人不会反复中同一片毒雾的硬直\n-#{important_1}#盾兵、熊、掷弹兵和队长对毒雾带来的硬直效果免疫##\n\n这个实验性的生物武器只会释放针对特定基因型的大范围有毒气体，因此对你和你的队员无效。中毒的受害者会出现剧烈的咳嗽、恶心、呕吐等症状，甚至可以致命！除了那些最坚强的佼佼者......\n\n是老道劫匪的理想武器之一喵。",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "伤害：#{skill_color}#10##秒内造成#{stats_positive}#300##点伤害 \n爆炸半径：#{skill_color}#6##米 \n持续时间（毒雾）：#{skill_color}#12##秒 \n引爆：静止#{skill_color}#1##秒后 \n\n-有#{skill_color}#100%##的几率使范围内敌人中毒陷入硬直，但敌人不会反复中同一片毒雾的硬直\n-#{important_1}#盾兵、熊、掷弹兵和队长对毒雾带来的硬直效果免疫##",
 		["bm_grenade_sticky_grenade"] = "粘性手雷",
-		["bm_grenade_sticky_grenade_desc"] = "伤害：800 \n炸半径：4米 \n引爆：3秒后（粘附在物体上会重置引爆时间）\n\n可粘附在敌人身上或物体表面的投掷爆炸物。",
+		["bm_grenade_sticky_grenade_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#4##米 \n引爆：#{skill_color}#3##秒后（粘附在物体上会#{skill_color}#重置引爆时间##）\n\n可粘附在敌人身上或物体表面的投掷爆炸物。",
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM鹿弹",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "每颗榴弹内装6颗超大号弹丸。\n总弹量：15\n伤害：360\n精准度：40\n有效射程：9米\n最大射程：18米",
@@ -2269,173 +2354,120 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		3 = real names (i.e. SA 1911 Operator, HK 416c)
 		
 	--]]
-	if weapon_names then
-		if weapon_names == 2 then
-			LocalizationManager:add_localized_strings({	
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		if weapon_names then
+			if weapon_names == 2 then
+				LocalizationManager:add_localized_strings({	
 
-			})
-		elseif weapon_names == 3 then
-			LocalizationManager:add_localized_strings({	
-				--LEO-40
-				["bm_w_hs2000"] = "SA XD(M)-40",
-				["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
-				["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
-				["bm_wp_hs2000_sl_long"] = "Custom Slide",
-				--Signature 40
-				["bm_w_p226"] = "SIG P226R",
-				["bm_w_x_p226"] = "Akimbo P226Rs",
-				["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
-				["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
-				["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
-				["bm_wp_p226_b_long"] = "Brushed Long Slide",
+				})
+			elseif weapon_names == 3 then
+				LocalizationManager:add_localized_strings({	
+					--LEO-40
+					["bm_w_hs2000"] = "SA XD(M)-40",
+					["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
+					["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
+					["bm_wp_hs2000_sl_long"] = "Custom Slide",
+					--Signature 40
+					["bm_w_p226"] = "SIG P226R",
+					["bm_w_x_p226"] = "Akimbo P226Rs",
+					["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+					["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
+					["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
+					["bm_wp_p226_b_long"] = "Brushed Long Slide",
 
-				--Crosskill
-				["bm_w_colt_1911"] = "SA 1911 Operator",
-				["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
-				["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
-				["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
-				["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
-				["bm_wp_1911_g_bling"] = "Walnut Grips",
-				["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
-				["bm_wp_1911_b_long"] = "Compensated Long Slide",
-				["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
-				["bm_wp_1911_m_extended"] = "12rnd Magazine",
-				--Crosskill Chunky
-				["bm_w_m1911"] = "Colt 1911A1",
-				["bm_w_x_m1911"] = "Akimbo 1911A1s",
-			})
+					--Crosskill
+					["bm_w_colt_1911"] = "SA 1911 Operator",
+					["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
+					["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
+					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
+					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
+					["bm_wp_1911_g_bling"] = "Walnut Grips",
+					["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+					["bm_wp_1911_b_long"] = "Compensated Long Slide",
+					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
+					["bm_wp_1911_m_extended"] = "12rnd Magazine",
+					--Crosskill Chunky
+					["bm_w_m1911"] = "Colt 1911A1",
+					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+				})
+			end
 		end
-	end	
+	end
 
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
 	if twirl <= shalashaska then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_peacemaker"] = "左轮山猫",
-			["bm_w_peacemaker_desc"] = "左轮山猫",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "左轮山猫",
-			["bm_wp_peacemaker_barrel_long"] = "左轮山猫",
-			["bm_wp_peacemaker_barrel_short"] = "左轮山猫",
-			["bm_wp_peacemaker_handle_bling"] = "左轮山猫",
-			["bm_wp_peacemaker_rifle_stock"] = "左轮山猫",
-			["bm_menu_ro_barrel"] = "左轮山猫",
-			["bm_menu_ro_stock"] = "左轮山猫",
-			["bm_menu_ro_modifier"] = "左轮山猫",
-			["bm_menu_ro_charm"] = "左轮山猫",
-			["bm_menu_ro_grip"] = "左轮山猫",
+		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+			LocalizationManager:add_localized_strings({	
+				["bm_w_peacemaker"] = "左轮山猫",
+				["bm_w_peacemaker_desc"] = "左轮山猫",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "左轮山猫",
+				["bm_wp_peacemaker_barrel_long"] = "左轮山猫",
+				["bm_wp_peacemaker_barrel_short"] = "左轮山猫",
+				["bm_wp_peacemaker_handle_bling"] = "左轮山猫",
+				["bm_wp_peacemaker_rifle_stock"] = "左轮山猫",
+				["bm_menu_ro_barrel"] = "左轮山猫",
+				["bm_menu_ro_stock"] = "左轮山猫",
+				["bm_menu_ro_modifier"] = "左轮山猫",
+				["bm_menu_ro_charm"] = "左轮山猫",
+				["bm_menu_ro_grip"] = "左轮山猫",
 
-			["bm_m134_sc_desc"] = "不可言喻......",
-		})
+				["bm_m134_sc_desc"] = "不可言喻......",
+			})
+		end
 	end
 
 	local game_meme = math.rand(1)
 	local game_meme_fun = 0.05
 	if game_meme <= game_meme_fun then
-		LocalizationManager:add_localized_strings({	
-			--apex
-			["bm_w_fmg9"] = "平行手枪",
-			["bm_w_mg42"] = "L-STAR充能机枪",
-			--overwatch
-			["bm_w_peacemaker"] = "维和者",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "“#{heat_warm_color}#正义可不会伸张自己##”\n\n辅助射击能够像#{heat_warm_color}#卡西迪##一样以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",
-		})
+		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+			LocalizationManager:add_localized_strings({	
+				--apex
+				["bm_w_fmg9"] = "平行手枪",
+				["bm_w_mg42"] = "L-STAR充能机枪",
+				--overwatch
+				["bm_w_peacemaker"] = "维和者",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "“#{heat_warm_color}#正义可不会伸张自己##”\n\n辅助射击能够像#{heat_warm_color}#卡西迪##一样以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",
+			})
+		end
+	end
+
+	local game_meme_2 = math.rand(1)
+	local game_meme_fun_2 = 0.01
+	if game_meme_2 <= game_meme_fun_2 then
+		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+			LocalizationManager:add_localized_strings({	
+				["bm_menu_drag_handle"] = "垃圾饼",
+				["bm_wp_ak_upg_dh_zenitco"] = "美味垃圾饼",
+				["menu_what_doesnt_kill_beta_sc"] = "没能杀死你的东西，只会让你更强大",
+			})
+		end
 	end
 
 	local chinese_meme = math.rand(1)
 	local chinese_meme_fun = 0.05
 	if chinese_meme <= chinese_meme_fun then
-		LocalizationManager:add_localized_strings({	
-			["bm_saiga_sc_desc"] = "这把全自动霰弹枪正适合枪马的你。",
-		})
+		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+			LocalizationManager:add_localized_strings({	
+				["ene_spring"] = "惊蛰战士",
+				["bm_saiga_sc_desc"] = "这把全自动霰弹枪正适合枪马的你。",
+			})
+		end
 	end
-
-	--Maybe not do this in Chinese loc for now
-	--[[local cute = math.rand(1)
-	local funny = 0.02
-	if cute <= funny then
-		LocalizationManager:add_localized_strings({	
-			--It's an "Upotte!!" reference
-			--SEISHOU ACADEMY
-				--MIDDLE SCHOOLERS
-					["bm_w_m16"] = "Ichiroku",
-						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
-					["bm_w_m4"] = "Em-Four",
-						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
-					["bm_w_aug"] = "AUG",
-						["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
-					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
-						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
-					["bm_w_s552"] = "Shigu",
-						["bm_s552_sc_desc"] = "\"Next shot, I'll take your ear off, bitch.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nAn honor student from a wealthy family who excels in both sports and studies.",
-					["bm_w_l85a2"] = "Eru",
-						["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
-					["bm_w_rk62"] = "Sako",
-						["bm_rk62_sc_desc"] = "\"#{stat_maxed}#What wonderful squeals!## You sound like you're about to #{stats_positive}#die!##\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
-	
-				--HIGH SCHOOLERS
-					["bm_w_fal"] = "Faru",
-						["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
-					["bm_w_m14"] = "Ichiyon",
-						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
-					["bm_w_g3"] = "Jiisuri",
-						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
-
-				--ELEMENTARY
-					["bm_w_mp5"] = "Empi",
-						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
-					["bm_w_uzi"] = "Uzi",
-						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
-					["bm_w_mac10"] = "Ram",
-						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nA machinegun with words. Also rather top-heavy.",
-		
-				--FACULTY
-					["bm_w_erma"] = "Erma-sensei",
-						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at #{stats_positive}#Seishou Academy.##\nThe SMGs love her.",
-					["bm_w_m1928"] = "Thompson-sensei",
-						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at #{stats_positive}#Seishou Academy.##\nSpeaks with accented Japanese. A former member of the FBI.",
-					["bm_w_ching"] = "Garand",
-						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at #{stats_positive}#Seishou Academy.##\nLooks over the middleschoolers.",
-	
-			--RED STEEL ACADEMY
-				--THREE STRIPES
-					["bm_w_siltstone"] = "Drako",
-						["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
-					["bm_w_akm"] = "AKM",
-						["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
-					--["bm_w_rpk"] = "RPK",
-						["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
-				--TWO STRIPES
-					["bm_w_ak74"] = "Nanayon",
-						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
-					["bm_w_saiga"] = "Saiga-chan",
-						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
-				--ONE STRIPE
-					["bm_w_coal"] = "Bizon",
-						["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending #{stats_negative}#Red Steel Academy.##\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
-				--FACULTY
-					["bm_w_mosin"] = "Mosin Nagant",
-						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of #{stats_negative}#Red Steel Academy.##\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-			
-			--ENOSHIMA
-				--MIDDLE SCHOOLERS
-					["bm_w_spas12"] = "Supasu",  --SPAS-12
-						["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
-					["bm_w_benelli"] = "Beneri",  --Benelli M4
-						["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
-				
-		})
-	end--]]
 	
 	local big = math.rand(1)
 	local pistol = 0.02
 	if big <= pistol then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_deagle"] = "700块钱的大狙",
-			["bm_w_m16"] = "9000GP永久",
-			["bm_m16_sc_desc"] = "我给你一个弹夹，这样你就可以输出了。",
-			["bm_w_x_type54"] = "十字杀双胞胎",
-			["bm_akmsu_sc_desc"] = "一支不可被低估的小型步枪，用于击倒#{stat_maxed}#大个子##。这把步枪几乎可以在任何时候都发挥效用。",
-		})
+		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+			LocalizationManager:add_localized_strings({	
+				["bm_w_deagle"] = "700块钱的大狙",
+				["bm_w_m16"] = "9000GP永久",
+				["bm_sparrow_sc_desc"] = "\n我一定会回来的！",
+				["bm_m16_sc_desc"] = "我给你一个弹夹，这样你就可以输出了。",
+				["bm_w_x_type54"] = "十字杀双胞胎",
+				["bm_akmsu_sc_desc"] = "一支不可被低估的小型步枪，用于击倒#{stat_maxed}#大个子##。这把步枪几乎可以在任何时候都发挥效用。",
+			})
+		end
 	end	
 	
 	
@@ -2490,6 +2522,8 @@ elseif ai_type == o then
 	end)
 end
 
+local ModPath_Chin = ModPath
+
  if _G.HopLib then
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
@@ -2501,41 +2535,41 @@ end
 	local breins = tweak_data.levels.ai_groups.zombie
 	local oom = tweak_data.levels.ai_groups.omnia
 
-	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
+	Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat", function(loc)
+		loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/hoplibkillfeedcompat.json")
 	end)
 
 	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_murkywetew", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/murkywetew.json")
 		end)
 	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/lapd.json")
 		end)	
 	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/mex.json")		
 		end)
 	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/akan.json")		
 		end)
 	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_nypd", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/nypd.json")		
 		end)
 	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_fbi", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/fbi.json")		
 		end)
 	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_breins", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/breins.json")		
 		end)
 	elseif ai_type == oom then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_oom", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/omnia.json")	
+		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_oom", function(loc)
+			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/omnia.json")	
 		end)	
 	end
  end
@@ -2547,7 +2581,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_es_pro_job_bonus"] = "专家模式奖励",
 		
 		["menu_asset_lock_additional_assets_pro"] = "专家模式下不可用！",
-		["menu_pro_warning"] = "这是一个专家级任务！如果你失败了，整场合约将直接被终止！\n此外，有去无回会触发于劫案的尾声部分，此时会出现具有极高威胁性的临界反应部队。\n启用专家模式将使你获得的经验和金钱提高25%。",
+		["menu_pro_warning"] = "这是一个专家级任务！如果你失败了，整场合约将直接被终止！\n此外，有去无回会触发于劫案的尾声部分，此时会出现具有极高威胁性的临界反应部队。\n全武器友军伤害已启用。完成劫案获得的经验和金钱提高25%。",
 
 		["cn_menu_contract_daypay_header"] = "任务天数：",
 		["cn_menu_contract_jobpay_header"] = "合约报酬：",
@@ -2559,14 +2593,38 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_equipment_armor_kit"] = "手雷箱",
 		["bm_equipment_armor_kit"] = "手雷箱",
 		["debug_equipment_armor_kit"] = "手雷箱",
-		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你必须先按住$BTN_USE_ITEM将其放下。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住$BTN_INTERACT来补充投掷物。手雷箱只能被使用三次。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能补满你的投掷物。",
-
-		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住$BTN_USE_ITEM将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈开始时必定使所有半径25米范围内的敌人失去行动能力，随后每1.5秒有60%的几率眩晕范围内的敌人，反馈持续10秒且可以在4分钟的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
-		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住$BTN_USE_ITEM将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以回复150点血量。急救包只能使用一次。\n\n急救包可以在紧急情况下快速进行急救。",
-		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住$BTN_USE_ITEM将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以立即回复血量上限20%的血量，然后在3分钟内每4秒回复血量上限4%的血量。医疗箱在无技能时可以使用两次。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
-		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住$BTN_USE_ITEM将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住$BTN_INTERACT使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
-		["bm_equipment_sentry_gun_silent_desc"] = "要使用消音哨戒机枪，你需要按住$BTN_USE_ITEM将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住$BTN_INTERACT使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n这个消音的哨戒机枪与普通的不同，它更多地被用于消灭敌人，而不是分散注意力。",
-		["bm_equipment_bodybags_bag_desc"] = "要使用尸体袋箱，你需要按住$BTN_USE_ITEM将其部署下来。一旦部署完毕就无法移动，但是你和你的队友可以按住$BTN_INTERACT来补充尸体袋和绑带。\n\n尸体袋箱只能被使用三次，你可以通过看尸体袋箱里还剩多少个袋子来判断剩余使用次数。这个箱子携带有额外的尸体袋和绑带，用于在潜入中搬运尸体和控制平民。",
+		
+		--Throwable Case
+		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。手雷箱只能被使用#{skill_color}#三次##。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n手雷箱是一种隐蔽性补给品，通常被军队或雇佣兵用来捞薯条。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
+		["bm_equipment_armor_kit_desc_short"] = "要使用手雷箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。手雷箱只能被使用#{skill_color}#三次##。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
+		--Ordnance Bag
+		["bm_equipment_grenade_crate_desc"] = "要使用军需包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。军需包一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。军需包只能被使用#{skill_color}#三次##。\n\n你可以通过观察军需包来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n军需包是战斗人员随身携带的便携包，用于将投掷型武器运送到战场中。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
+		["bm_equipment_grenade_crate_desc_short"] = "要使用军需包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。军需包一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。军需包只能被使用#{skill_color}#三次##。\n\n你可以通过观察军需包来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
+		--Trip Mine
+		["bm_equipment_trip_mine_desc"] = "要使用诡雷，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。诡雷一旦被安置就不能被移动，安置后靠近并对其按下#{skill_color}#$BTN_INTERACT##以在感应模式和爆炸模式之间切换。\n感应模式：潜入中，保安经过会被标记并发出声音；强袭中，特殊敌人经过会被标记并发出声音。\n爆炸模式：敌人经过时引爆。\n潜入中放下时会默认使用感应模式，强袭中放下时会默认使用爆炸模式。\n\n要使用聚能炸药，你需要先靠近可爆破的目标，并对准目标上的炸药标志按住#{skill_color}#$BTN_INTERACT##以部署一枚聚能炸药上去。聚能炸药一旦被安置就不能收回，当爆破目标所需的全部炸药被安置完毕后，聚能炸药就会在几秒后炸开目标。\n\n诡雷是一种基础陷阱，能将触碰镭射的敌人炸残或炸死。\n聚能炸药可用于炸开部分保险箱和门。\n两者都是战斗中的好帮手。",
+		["bm_equipment_trip_mine_desc_short"] = "要使用诡雷，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。诡雷一旦被安置就不能被移动，安置后靠近并对其按下#{skill_color}#$BTN_INTERACT##以在感应模式和爆炸模式之间切换。\n要使用聚能炸药，你需要先靠近可爆破的目标，并对准目标上的炸药标志按住#{skill_color}#$BTN_INTERACT##以部署。聚能炸药一旦被安置就不能收回，当所有炸药被安置完毕后，聚能炸药就会在几秒后炸开目标。",
+		--Ammo Bag
+		["bm_equipment_ammo_bag_desc"] = "要使用弹药包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，你和你的队友都可以按住#{skill_color}#$BTN_INTERACT##与其互动补充#{risk}#弹药##。\n\n它可以被用于完全补充一把没子弹的武器#{skill_color}#$deployable_uses##次，你可以通过观察弹药包中剩余的弹匣数量来判断弹药包余量。\n\n弹药包是一种便携式包裹，原本为士兵设计，使其在战斗中能携带更多弹药。",
+		["bm_equipment_ammo_bag_desc_short"] = "要使用弹药包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你和你的队友都可以按住#{skill_color}#$BTN_INTERACT##与其互动补充#{risk}#弹药##。\n\n它可以被用于完全补充一把没子弹的武器#{skill_color}#$deployable_uses##次，你可以通过观察弹药包中剩余的弹匣数量来判断弹药包余量。",
+		--ECM Jammer
+		["bm_equipment_ecm_jammer"] = "ECM电子干扰器",
+		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒，期间它会阻止手机报警、干扰摄像头及一些其它电子设备。\n\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.5##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。\n靠近并对ATM机、安全门等目标上的干扰器标志按住#{skill_color}#$BTN_INTERACT##可以打开目标或造成目标失效等的影响。\n\nECM干扰器可以用于干扰电子设备，让你更轻松地实现目标。但若你使用不当，它反而有可能拖延你的任务进程。",
+		["bm_equipment_ecm_jammer_desc_short"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒。\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.5##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。",
+		--FAQ U
+		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{stats_positive}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。\n\n急救包在紧急情况下用于快速急救。",
+		["bm_equipment_first_aid_kit_desc_short"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{stats_positive}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。",
+		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#4##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
+		["bm_equipment_doctor_bag_desc_short"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#4##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。",
+		--Sentry
+		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。部署哨戒机枪将用掉你备弹上限#{skill_color}#$deployable_uses##的弹药。\n哨戒机枪在承受过多伤害后会损坏，此时你可以通过靠近对其按住#{skill_color}#$BTN_INTERACT##使其进入自动维修模式并在#{skill_color}#1##分钟的修理后重新运作。若未损坏，则靠近按住#{skill_color}#$BTN_INTERACT##会捡起哨戒机枪，这会返还它的剩余弹药并使其恢复到完好的状态。\n若掌握了“塔防机枪”技能，则在未靠近并目视机枪时按下#{skill_color}#$BTN_INTERACT##可以切换哨戒机枪使用的弹种。\n哨戒机枪可以用于#{skill_color}#恐吓平民##，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
+		["bm_equipment_sentry_gun_desc_short"] = "要使用哨戒机枪，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。部署哨戒机枪将用掉你备弹上限#{skill_color}#$deployable_uses##的弹药。\n哨戒机枪在承受过多伤害后会损坏，此时你可以通过靠近对其按住#{skill_color}#$BTN_INTERACT##使其进入自动维修模式并在#{skill_color}#1##分钟的修理后重新运作。捡起哨戒机枪会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于#{skill_color}#恐吓平民##。",
+		--Supp. Sentry
+		["bm_equipment_sentry_gun_silent_desc"] = "要使用消音哨戒机枪，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。部署哨戒机枪将用掉你备弹上限#{skill_color}#$deployable_uses##的弹药。\n哨戒机枪在承受过多伤害后会损坏，此时你可以通过靠近对其按住#{skill_color}#$BTN_INTERACT##使其进入自动维修模式并在#{skill_color}#1##分钟的修理后重新运作。若未损坏，则靠近按住#{skill_color}#$BTN_INTERACT##会捡起哨戒机枪，这会返还它的剩余弹药并使其恢复到完好的状态。\n若掌握了“塔防机枪”技能，则在未靠近并目视机枪时按下#{skill_color}#$BTN_INTERACT##可以切换哨戒机枪使用的弹种。\n哨戒机枪可以用于#{skill_color}#恐吓平民##，使平民保持趴在地上的状态。\n\n这个消音的哨戒机枪与普通的不同，它更多地被用于消灭敌人，而不是分散注意力。",
+		["bm_equipment_sentry_gun_silent_desc_short"] = "要使用消音哨戒机枪，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。部署哨戒机枪将用掉你备弹上限#{skill_color}#$deployable_uses##的弹药。\n哨戒机枪在承受过多伤害后会损坏，此时你可以通过靠近对其按住#{skill_color}#$BTN_INTERACT##使其进入自动维修模式并在#{skill_color}#1##分钟的修理后重新运作。捡起哨戒机枪会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于#{skill_color}#恐吓平民##。",
+		--Body Bags
+		["bm_equipment_bodybags_bag_desc"] = "要使用尸体袋箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#尸体袋##和#{risk}#绑带##。\n\n尸体袋箱只能被使用#{skill_color}#三次##，你可以通过看尸体袋箱里还剩多少个袋子来判断剩余使用次数。\n\n这个箱子携带有额外的尸体袋和绑带，用于在潜入中搬运尸体和控制平民。",
+		["bm_equipment_bodybags_bag_desc_short"] = "要使用尸体袋箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#尸体袋##和#{risk}#绑带##。\n\n尸体袋箱只能被使用#{skill_color}#三次##，你可以通过看尸体袋箱里还剩多少个袋子来判断剩余使用次数。",
 
 		["hud_int_hold_take_pardons"] = "按下 $BTN_INTERACT 拿走特赦令",
 		["debug_interact_gage_assignment_take"] = "按下 $BTN_INTERACT 捡起盖奇包裹",
@@ -2598,12 +2656,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_7"] = "绿熊有极高的单发伤害并会尝试突然从侧翼突入，打空子弹，然后逃走。你作为一个69岁的老劫匪要小心不要大意了，没有闪，然后就被偷袭了。",
 		["loading_gameplay_res_8"] = "使用高射速高弹容伊孜玛霰弹枪的黑熊极具进攻性并会直接从正面冲向劫匪。这使得他们会很容易被发现，但如果你还没做好准备，他们会变得极具威胁性。",
 		["loading_gameplay_res_9"] = "使用轻机枪的骷髅熊会给其它单位提供火力掩护，同时也会在各种情况下准备好突入，不射空弹匣他们不会停火。",
-		["loading_gameplay_res_10"] = "Benelli霰弹枪熊取代了加特林熊。高伤高射速，绿熊和黑熊的完美结合。",
-		["loading_gameplay_res_11"] = "选择正确的目标很重要，任意一只熊都比一个轻甲水军更值得注意。",
+		["loading_gameplay_res_10"] = "手雷熊取代了加特林熊在能投掷高爆手雷的同时，使用着Benelli霰弹枪。高伤高射速，绿熊和黑熊的完美结合。",
+		["loading_gameplay_res_11"] = "选择正确的目标很重要，任意一只熊都比一个轻甲水军更值得注意。（但我不是在叫你无脑优先怼熊）",
 		["loading_gameplay_res_12"] = "在\"死刑宣判\"难度下，熊会在面甲破碎后进入狂怒模式，狂怒模式下他们的伤害会提高10%。",
 		["loading_gameplay_res_13"] = "幻影特工在在飞踢时会发出标志性的声音。",
 		["loading_gameplay_res_14"] = "幻影特工的飞踢只会把你拷住，不算倒地次数。",
-		["loading_gameplay_res_15"] = "在\"死刑宣判\"难度下，警察的闪光弹无法被打掉。我不要你觉得，我要我觉得，我的模组我做主(竖中指)。",
+		["loading_gameplay_res_15"] = "在\"死刑宣判\"难度下，警察的闪光弹无法被打掉。我不要你觉得，我要我觉得。",
 		["loading_gameplay_res_16"] = "你可以通过近战蓄力来招架住敌人的近战攻击。使用\"反\'控\'精英\"技能可以让其招架住幻影特工的飞踢。",
 		["loading_gameplay_res_17"] = "敌人的近战攻击比原版更快更猛，保持距离！别傻傻逼逼想着从警察堆里冲过去，这么做你只会被警察的一套连击打出十割。",
 		["loading_gameplay_res_18"] = "有什么比用棒球棍猛打敌人更好的事情呢？用棒球棒爆他们的头！",
@@ -2629,7 +2687,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_8"] = "泰坦盾兵的盾牌只能被反器材狙击步枪、\"锯刃轰鸣\"基础技能下的OVE9000电锯、以及使用AP弹的哨戒机枪穿透。",
 		["loading_new_units_res_9"] = "春日队长和泰坦熊会受到额外的爆头伤害。",
 		["loading_new_units_res_10"] = "泰坦泰瑟会使用电击枪限制你的移动。当你被电击枪射中时，你的屏幕周边会出现一圈蓝色的光作为指示。",
-		["loading_new_units_res_11"] = "非爆头击杀反恐老兵会使其拉开一颗催泪弹。",
+		["loading_new_units_res_11"] = "非爆头和非近战击杀反恐老兵会使其拉开一颗催泪弹。",
 		["loading_new_units_res_12"] = "反恐老兵会空翻躲避子弹，他们还会迅速地移动以使自己更难被击中。",
 		["loading_new_units_res_13"] = "泰坦特警身着防爆装备，对近战伤害有些许的抗性，但这点抗性在高额近战伤害下并没有什么卵用。",
 		["loading_new_units_res_14"] = "泰坦特警不会投降，也不能被转化为变节警察为你作战。",
@@ -2637,7 +2695,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_16"] = "触发\"有去无回\"时，Bravo临界反应部队会参与镇压劫匪。他们拥有更高级的护甲和更强力的武器，还会投掷破片手雷，他们可不想跟你多逼逼。",
 		["loading_new_units_res_17"] = "Bravo临界反应部队的血量和伤害都比一般单位要强上许多，他们进攻时会频繁地投掷破片手雷，你最好不要只在一个小坑位上蹲太久。",
 		["loading_new_units_res_18"] = "阿肯拥有他自己的泰坦部队。他们看起来不同但实际属性是相同的。他们的整体视觉效果和穿着特征也是基本一致的，因此你可以轻易地认出不同的兵种。",
-		["loading_new_units_res_19"] = "掷弹兵的武器有能发射催泪瓦斯的下挂件，站在瓦斯中的玩家会持续受到伤害。在\"死刑宣判\"难度下，他装备了更致命的、伤血更快的毒气弹。",
+		["loading_new_units_res_19"] = "掷弹兵的武器有能发射催泪瓦斯的下挂件，站在瓦斯中的玩家会持续受到伤害。在\"死刑宣判\"难度下，他装备了更致命的、伤血更快且会迅速清空你耐力的毒气弹。",
 		--Captain Hints
 		["loading_captains_res_title"] = "恢复MOD劫匪小贴士(四季队长)",
 		["loading_captains_res_1"] = "要击败夏日队长，要先从他的医疗单位入手。夏日队长的队员死亡前，队长几乎是无敌的。而他的左右护法在医疗兵还活着时几乎是无懈可击的。",		
@@ -2647,7 +2705,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_5"] = "春日队长也许具有高威胁性，但他的输出范围实在是太有限了，而且他走的是真的很——慢——。",	
 		["loading_captains_res_6"] = "秋日队长在他攻击你时会大声地嘲讽你，利用这一点来确定他的位置。",	
 		["loading_captains_res_7"] = "不像其他队长，警方不会扛着个大喇叭告诉你秋日队长来了，这是为了给你一个\"惊喜\"。",	
-		["loading_captains_res_8"] = "秋日队长在未被发现的情况下存活一段时间后会逐渐破坏你部署的随身装备。被破坏的随身装备会变为紫色，只有在队长被击败时才能重新使用。",	
+		["loading_captains_res_8"] = "秋日队长在未被发现的情况下存活一段时间后就会破坏掉你部署的随身装备。被破坏的随身装备会变为紫色，只有在队长被击败时才能重新使用。",	
 		["loading_captains_res_9"] = "你也许未能在第一次与秋日队长的交战中就击败他......不，想都别想。",	
 		["loading_captains_res_10"] = "凛冬队长对爆炸和火焰几乎免疫，并且有很强的抗子弹能力，但很容易受到近战伤害。",	
 		["loading_captains_res_11"] = "凛冬队长的盾牌是无法穿透的。",	
@@ -2665,7 +2723,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_9"] = "你最多能同时携带4个ECM，但每个ECM只有原版一半的持续时间，尽可能保证你的每个ECM都用对了地方。",	
 		["loading_stealth_res_10"] = "消音武器在潜入中不会发出任何声音，不带消音的武器在潜入中会固定发出半径为25米的声音。",	
 		["loading_stealth_res_11"] = "无论是潜入还是强攻，你都只能吼住4名保安或警察作为人质。",	
-		["loading_stealth_res_12"] = "原版中大多数会直接导致潜入失败的因素(如警觉的摄像头和超过次数上限的对讲机)现在不会直接触发警报，而是大幅度增加你的怀疑度。",	
+		["loading_stealth_res_12"] = "原版中大多数会直接导致潜入失败的因素（如警觉的摄像头和超过次数上限的对讲机）现在不会直接触发警报，而是大幅度增加你的怀疑度。",	
 		["loading_stealth_res_13"] = "潜入中未警觉的保安不是必定被秒杀了，在击杀保安时注意瞄准他的头或使用高伤害武器。",	
 		["loading_stealth_res_14"] = "潜入中屏幕上方的怀疑度填满后，你将剩下60秒的时间完成劫案，60秒后警报就会响起。",	
 		["loading_stealth_res_15"] = "潜入中屏幕上方的怀疑度越高，你越容易被保安发现。",	
@@ -2684,29 +2742,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_5"] = "沃尔夫升级了我们的哨戒机枪，它们即使被损坏也可以修复了。维修需要一些时间，但一旦你启动自动维修模式，它们就会自己慢慢修复。",	
 		["loading_equip_skills_res_6"] = "如果你解锁了哨戒机枪的AP弹，你可以在放置物菜单内切换哨戒机枪的默认弹药使用种类。",	
 		["loading_equip_skills_res_7"] = "天赋牌组能为你提供显著的伤害加成，有些牌组还有珍贵而罕见的治疗能力。如果你想冲击高难度，一定不能忽略它们。",	
-		["loading_equip_skills_res_8"] = "领队、军械、肌肉男、骗术师、赌徒和飞车党的玩法非常基础，它们在恢复MOD下也没有那么弱，是新玩家上手体验游戏的最好选择。",	
+		["loading_equip_skills_res_8"] = "领队、军械、肌肉男、骗术师、赌徒和飞车党的玩法非常基础，它们在恢复MOD下也不弱，是新玩家上手体验游戏的最好选择。",	
 		["loading_equip_skills_res_9"] = "杀手已被重做为一个一个拥有持久生存能力和续航能力的天赋，但你需要完成一些复杂且高难的操作才能获得高额的\"临时虚血\"。",	
 		["loading_equip_skills_res_10"] = "\"领队\"——一个以团队为中心的辅助天赋，可以为你和你的队友提供少量但非常有用的增益。如果你能控制住多个人质，你们可以获得更高的增益。领队与突击系的技能树相匹配，可以结合使用以提高增益的效益。",	
-		["loading_equip_skills_res_11"] = "\"赌徒\"——一个以团队为中心的辅助天赋，你捡弹时可以使你和你的队友获得少量的血量和弹药，与捡弹技能相匹配。由于恢复MOD下并不是所有敌人都会掉落弹药，赌徒的益处有了一定的提升。",	
+		["loading_equip_skills_res_11"] = "\"赌徒\"——一个以团队为中心的辅助天赋，你捡弹时可以使你和你的队友获得少量的血量和弹药，与捡弹技能相匹配。由于恢复MOD下非玩家击杀的敌人不一定会掉落弹药，赌徒的益处有了进一步的提升。",	
 		["loading_equip_skills_res_12"] = "\"瘾君子\"——一个以团队为中心的辅助天赋，你持续杀敌时可以为你和你的队友提供减伤效果，与提高伤害和伤害减免的技能相匹配。",	
 		["loading_equip_skills_res_13"] = "黑客的便携式ECM有着强大的控场能力，并能为队友提供一定的治疗能力，但冷却时间较长。黑客在潜入和强攻均有良效。",	
-		["loading_equip_skills_res_14"] = "\"窃贼\"——一个专为潜入而生的天赋，在强攻下比其它大多数天赋都要弱。",	
+		["loading_equip_skills_res_14"] = "\"窃贼\"——一个专为潜入而生的天赋，在强攻下比其它大多数天赋都要弱。",	--fix
 		["loading_equip_skills_res_15"] = "\"首脑\"——一个兼顾多方面的天赋，它的注射器既可以用于保证自己的生存能力，在重火力中生存；又可以吸引火力，为队友迎来喘息的机会。",	
 		["loading_equip_skills_res_16"] = "\"双人组\"——一个以团队之间相互配合为核心的天赋，只要你和你标记的队友都能保证持续的输出杀敌，你们就能共同获得大量的治疗。",	
 		["loading_equip_skills_res_17"] = "穿过盾牌的子弹伤害减半。",	
-		["loading_equip_skills_res_18"] = "Peacemaker.45左轮手枪和Phoenix.500左轮手枪可以像狙击步枪一样穿透护甲。",
-		["loading_equip_skills_res_19"] = "如果你有闪避点数，那么你能在游戏中的屏幕右边看到一个蓝色的条。当它闪烁时，你就能闪避下一发子弹。你可以在Steam指南中找到关于闪避机制的更多解释。",	
+		["loading_equip_skills_res_18"] = "Peacemaker.45左轮手枪和Phoenix.500左轮手枪可以像狙击步枪一样穿透护甲、敌人等。",
+		["loading_equip_skills_res_19"] = "如果你有闪避点数，那么你能在游戏中的屏幕右边看到一个蓝色的条。当它闪烁时，你就能闪避一次敌人的攻击，并消耗黑线下面的部分。你可以在Steam指南中找到关于闪避机制的更多解释。",	
 		["loading_equip_skills_res_20"] = "枪械武器隐藏度越高, 拔枪和收枪的速度越快。",	
 		["loading_equip_skills_res_21"] = "电锯和风车刀蓄力时可以对面前的敌人造成伤害。",	
 		["loading_equip_skills_res_22"] = "蝴蝶刀和折叠刀背刺能对敌人造成巨大的伤害。",	
 		["loading_equip_skills_res_23"] = "冰镐和十字镐造成更高的爆头伤害，但攻击速度变得更慢。",	
 		["loading_equip_skills_res_24"] = "中毒效果只能造成中等的伤害，但是增加了呕吐效果来打断敌人的动作。",	
-		["loading_equip_skills_res_25"] = "闪光弹可以造成全面干扰，对熊也是一样。",	
+		["loading_equip_skills_res_25"] = "闪光弹可以在一定范围内造成全面干扰，对大多数熊也是一样。",	
 		["loading_equip_skills_res_26"] = "使用武器的机瞄可以显著提高你的精准度并减少武器后坐力，即使你使用的是轻机枪。",	
 		["loading_equip_skills_res_27"] = "射钉枪拥有相较于其他近战武器更远的攻击距离。",
 		["loading_equip_skills_res_28"] = "升级天赋牌组可以解锁手雷箱供你使用，手雷箱有三次使用机会。",
 		["loading_equip_skills_res_29"] = "手雷箱/尸体袋箱现在只要消耗一次使用次数就能补满你的投掷物/尸体袋。",	
-		["loading_equip_skills_res_30"] = "春哥战吼的冷却时间非常长而且需要双方之间没有视野阻挡，你唯有在真正危急的时刻使用它才能发挥出它应有的效果。",	
+		["loading_equip_skills_res_30"] = "领袖鼓舞的激励战吼冷却时间非常长而且需要双方之间没有视野阻挡，你唯有在真正危急的时刻使用它才能发挥出它应有的效果。",	
 		["loading_equip_skills_res_31"] = "恢复MOD增加了两个新的天赋牌组(通用牌组和空白牌组)，通用牌组只提供每个天赋都有的普通加成，空白牌组什么加成都没有。使用这俩牌组可以获得经验和金钱奖励加成。",
 		["loading_equip_skills_res_32"] = "瞄准技能的改动使得你必须瞄准完全才能享受相关技能加成。在改装枪的时候多留心\"瞄准时间\"这一属性。",
 		["loading_equip_skills_res_33"] = "长枪管，坚固枪托以及扩容弹夹虽然有各自的优点，但他们对切枪、换弹、瞄准和冲刺开火这些硬直时间负面影响巨大；用太多这类配件会让你的枪十分笨重。",
@@ -2744,7 +2802,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_22"] = "鬼知道做恢复MOD汉化的人从开始汉化到完成汉化鸽了多久。",
 		["loading_fluff_res_23"] = "B站是唯一一个可以直播PAYDAY2的国内知名平台。",
 		["loading_fluff_res_24"] = "你知道吗？每当队长被你打死时，他们并不是真的死了，而是跟你一样进了局子。",
-		["loading_fluff_res_25"] = "作为联邦特警成立联邦泰坦计划的替代品，REAPER以更快更高效的执行速度，与低于OMNIA的报价，从同类竞品中脱颖而出。该集团有望使联邦特警在墨西哥与美国两地拥有接近OMNIA和黑水的势力。",
+		["loading_fluff_res_25"] = "作为联邦特警成立联邦泰坦计划的替代品，收割者集团以更快更高效的执行速度，与低于OMNIA的报价，从同类竞品中脱颖而出。该集团有望使联邦特警在墨西哥与美国两地拥有接近OMNIA和黑水的势力。",
 
 		["menu_button_deploy_bipod"] = "切换为脚架/下挂榴弹",
 		["hint_short_max_pagers"] = "不回答对讲机将会极大地增加怀疑度。",
@@ -2774,7 +2832,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_content_updates_previous"] = "",
 
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
+		["menu_mutators_achievement_disabled"] = "",--启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
 		["menu_mutators_category_holiday"] = "节日活动",
 		["menu_mutators_category_old_event"] = "活动事件",
 
@@ -2821,17 +2879,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_birthday"] = "气球派对",
 		["mutator_birthday_desc"] = "击杀特殊敌人将生成能提供增益的气球。",
-		["mutator_birthday_longdesc"] = "收获日十周年活动事件：\n\n击杀特殊敌人将生成一个气球，射爆气球将能为全队带来增益效果，不同的单位会生成不同增益的气球。有些单位会更频繁地生成气球，不同种气球增益效果可以同时触发。",
+		["mutator_birthday_longdesc"] = "收获日-十周年活动事件：\n\n击杀特殊敌人将生成一个气球，射爆气球将能为全队带来增益效果，不同的单位会生成不同增益的气球。有些单位会更频繁地生成气球，不同种气球增益效果可以同时触发。",
+
+		["mutator_CG22"] = "犯罪颂歌",
+		["mutator_CG22_desc"] = "有些劫案会生成一颗掉落礼包的圣诞树，将礼包销毁或运到雪橇上。",
+		["mutator_CG22_longdesc"] = "收获日2-2022年圣诞节活动事件：\n\n一颗圣诞树会在某些劫案中出现，与其互动会使其持续掉落礼包。将礼包运送至销毁处销毁可使你获得一个效果增益，或送至雪橇上使你获得额外的经验、金钱或大陆币。每运一包礼物都有概率生成使用喷雪器的雪人熊。",		
+
+		["menu_cg22_post_objective_1_desc"] = "使用任意狙击步枪击杀200名敌人。",
+		["menu_cg22_post_objective_2_desc"] = "在非常困难或更高的难度中，使用SA北极星狙击步枪击杀15个幻影特工。",
+		["menu_cg22_post_objective_3_desc"] = "在任意难度中，使用SA北极星狙击步枪完成50次一枪双杀。",
+		["menu_cg22_post_objective_4_desc"] = "在任意难度中，劫获10包战利品（成功完成劫案才计数）。 ",
+		["menu_cg22_post_objective_5_desc"] = "在枪林弹雨或更高的难度中，击杀10只熊。",
+		["menu_cg22_post_objective_6_desc"] = "在任意难度中，劫获25包战利品（成功完成劫案才计数）。",
+		["menu_cg22_post_objective_7_desc"] = "在任意难度中，劫获50包战利品（成功完成劫案才计数）。",
+		["menu_cg22_post_objective_8_desc"] = "在枪林弹雨或更高的难度中，击杀20只熊。",
+		["menu_cg22_post_objective_9_desc"] = "S在任意难度中，劫获75包战利品（成功完成劫案才计数）。",
 
 		["mutator_piggybank"] = "小猪小猪快长大",
 		["mutator_piggybank_desc"] = "警察爆金币啦！用小猪钞票喂饱金猪存钱罐吧！",
-		["mutator_piggybank_longdesc"] = "收获日2九周年活动事件：\n\n特定劫案内，被击杀的敌人有几率掉落小猪钞票，每包小猪钞票只会暂时留在地上，你需要在它们消失前拿起并丢给巨大的金色小猪存钱罐，将存钱罐喂得越来越胖，然后打碎它。打碎小猪存钱罐时，小猪存钱罐越大，你在劫案结束时获得的经验和钱也越多。",
+		["mutator_piggybank_longdesc"] = "收获日2-九周年活动事件：\n\n特定劫案内，被击杀的敌人有几率掉落小猪钞票，每包小猪钞票只会暂时留在地上，你需要在它们消失前拿起并丢给巨大的金色小猪存钱罐，将存钱罐喂得越来越胖，然后打碎它。打碎小猪存钱罐时，小猪存钱罐越大，你在劫案结束时获得的经验和钱也越多。",
 
 		["mutator_bravos_only"] = "死亡地带",
 		["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
 		["mutator_bravos_only_longdesc"] = "所有非地图脚本生成的敌人都被替换成专家模式有去无回里的同类别单位。FBI SWAT将替代蓝皮SWAT，并且FBI SWAT会被替换成Bravo临界反应部队。",
 
-		["mutator_sonic_mod"] = "SoniCmod",
+		["mutator_sonic_mod"] = "SoniCmod",  --tra
 		["mutator_sonic_mod_desc"] = "Much Deadly Assaults",
 		["mutator_sonic_mod_longdesc"] = "Changes the assaults to be more difficult to survive while adding some twists. \n\nWARNING: By enabling this mutator, you're making your lives A LIVING HELL!",
 
@@ -3008,7 +3080,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "人体解析",
-			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的子弹可以#{skill_color}#射穿敌人的护甲##。\n\n射击敌人的身体能造成原定爆头所造成的伤害的#{skill_color}#30%##，该效果只能被#{skill_color}#连发模式##的冲锋枪和轻重机枪触发。\n\n#{important_1}#提示：该技能不适用于熊##\n\n专精: #{risk}#$pro##\n射击敌人的身体能造成原定爆头所造成伤害的#{skill_color}#60%##，该效果现在#{skill_color}#适用于所有武器##。",
+			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。\n\n其余所有不能穿甲的武器都能#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。\n\n对于本身可以穿甲的武器，其穿透护甲造成的伤害百分比增加#{skill_color}#50%##，最多增加至#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n使用连发模式的冲锋枪和轻重机枪在连续射击时，每击杀一名敌人就增加#{skill_color}#10%##的伤害，最多增加#{skill_color}#50%##，停止射击#{skill_color}#1##秒后失效。",
 
 			--}
 		--}
@@ -3040,7 +3112,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Overkill
 			["menu_overkill_sc"] = "疯狂杀戮",
-			["menu_overkill_desc_sc"] = "掌握: #{risk}#$basic##\n使用霰弹枪、火焰喷射器或OVE9000电锯完成杀敌会在#{skill_color}#2##秒内提高这些武器#{skill_color}#50%##的伤害。\n\n专精: #{risk}#$pro##\n加快霰弹枪、火焰喷射器和OVE9000电锯的切枪速度#{skill_color}#50%##。\n\n伤害加成的持续时间提高至#{skill_color}#10##秒且伤害加成可适用于所有武器。\n\n#{important_1}#提示：\n1.该效果不适用于火箭筒和榴弹发射器\n2.火焰喷射器的余火烧死敌人不能触发伤害加成\n3.专精后你仍需要使用霰弹枪、火焰发射器或OVE9000电锯完成杀敌触发伤害加成##",
+			["menu_overkill_desc_sc"] = "掌握: #{risk}#$basic##\n使用霰弹枪、火焰喷射器或OVE9000电锯完成杀敌会在#{skill_color}#2##秒内提高这些武器#{skill_color}#50%##的伤害。\n\n专精: #{risk}#$pro##\n加快霰弹枪、火焰喷射器和OVE9000电锯的切枪速度#{skill_color}#50%##。\n\n伤害加成的持续时间提高至#{skill_color}#8##秒且伤害加成可适用于所有武器。\n\n#{important_1}#提示：\n1.该效果不适用于火箭筒和榴弹发射器\n2.火焰喷射器的余火烧死敌人不能触发伤害加成\n3.专精后你仍需要使用霰弹枪、火焰发射器或OVE9000电锯完成杀敌触发伤害加成##",
 
 			--}
 
@@ -3065,11 +3137,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "正中靶心",
-			["menu_prison_wife_beta_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头击杀会恢复你#{skill_color}#5##点护甲值，冷却时间#{skill_color}#5##秒\n\n专精: #{risk}#$pro##\n完成爆头击杀恢复的护甲值增加#{skill_color}#30##",																								
+			["menu_prison_wife_beta_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头击杀会恢复你#{skill_color}#5##点护甲值，冷却时间#{skill_color}#5##秒。\n\n专精: #{risk}#$pro##\n完成爆头击杀恢复的护甲值增加#{skill_color}#30##。",																								
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "钢铁之躯",
-			["menu_juggernaut_beta_desc_sc"] = "掌握: #{risk}#$basic##\n解锁 #{skill_color}#改良型复合战术背心## 以供你使用。\n\n近战打盾可以#{skill_color}#击退或推倒盾兵##。\n\n专精: #{risk}#$pro##\n现在远程武器射击盾也有几率#{skill_color}#击退或推倒盾兵##，击倒概率取决于武器伤害。\n\n护甲恢复速度加快#{skill_color}#10%##",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "掌握: #{risk}#$basic##\n解锁 #{skill_color}#改良型复合战术背心## 以供你使用。\n\n近战打盾可以#{skill_color}#击退或推倒盾兵##。\n\n#{important_1}#提示：对冬日队长无效##\n\n专精: #{risk}#$pro##\n现在远程武器射击盾也有几率#{skill_color}#击退或推倒盾兵##，击倒概率取决于武器伤害。\n\n护甲恢复速度加快#{skill_color}#10%##",																																																																																																																																																																																																
 		
 
 			--}
@@ -3083,7 +3155,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "子弹风暴",
-			["menu_ammo_reservoir_beta_desc_sc"] = "掌握: #{risk}#$basic##\n任何玩家使用你放置的弹药袋将获得#{skill_color}#无限弹药##的增益，持续时间取决于补充的弹药数量，最多持续#{skill_color}#5##秒。\n\n#{important_1}#提示：榴弹发射器、火箭发射器和任何其它使用爆炸类型弹药的武器都不受此技能的增益##\n\n专精: #{risk}#$pro##\n该技能的最长持续时间额外延长#{skill_color}#15##秒。",																								
+			["menu_ammo_reservoir_beta_desc_sc"] = "掌握: #{risk}#$basic##\n任何玩家使用你放置的弹药袋将获得#{skill_color}#无限弹药##的增益，持续时间取决于补充的弹药数量，最多持续#{skill_color}#5##秒。\n\n#{important_1}#提示：榴弹发射器、火箭筒和任何其它使用爆炸类型弹药的武器都不受此技能的增益##\n\n专精: #{risk}#$pro##\n该技能的最长持续时间额外延长#{skill_color}#15##秒。",																								
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "专业配备",
@@ -3099,7 +3171,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "全副武装",
-			["menu_bandoliers_desc_sc"] = "掌握: #{risk}#$basic##\n你武器携带的总弹量增加#{skill_color}#25%##\n\n专精: #{risk}#$pro##\n你武器从每个弹药盒中获取的弹药量增加#{skill_color}#50%##\n\n你有#{skill_color}#5%##的几率从一个弹药盒中获得一个投掷物\n\n若你没有从一个弹药盒中成功获取投掷物，那么该几率将提升#{skill_color}#1%##，成功获取投掷物后该几率将被重置\n\n#{important_1}#提示：你无法用此技能补充天赋投掷物道具##",
+			["menu_bandoliers_desc_sc"] = "掌握: #{risk}#$basic##\n你武器携带的总弹量增加#{skill_color}#25%##\n\n专精: #{risk}#$pro##\n你武器从每个弹药盒中获取的弹药量增加#{skill_color}#50%##\n\n你有#{skill_color}#5%##的几率从一个弹药盒中获得一个投掷物\n\n若你没有从一个弹药盒中成功获取投掷物，那么该几率将提升#{skill_color}#1%##，成功获取投掷物后该几率将被重置\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
 		
 			--}
 		--}
@@ -3181,7 +3253,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Alert--
 			["menu_jail_workout_sc"] = "警戒",
-			["menu_jail_workout_desc_sc"] = "掌握: #{risk}#$basic##\n敌人被你标记的时间延长#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n你现在可以#{skill_color}#通过开镜瞄准来标记特殊敌人和潜入时的保安##。",
+			["menu_jail_workout_desc_sc"] = "掌握: #{risk}#$basic##\n敌人被你标记的时间延长#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n你现在可以#{skill_color}#通过开镜瞄准来标记特殊敌人和你潜入时看见的保安##。",
 
 			--Sixth Sense--
 			["menu_chameleon_beta_sc"] = "第六感",
@@ -3249,7 +3321,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "清道夫",
-			["menu_hitman_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你对特殊敌人造成的伤害增加#{skill_color}#10%##。\n\n#{important_1}#提示：该效果不适用于榴弹发射器和火箭发射器##\n\n专精: #{risk}#$pro##\n你对特殊敌人造成的伤害额外增加#{skill_color}#15%##。\n\n使用枪械或近战武器从背后击杀一名敌人将使你的闪避条增加闪避点数的#{skill_color}#75%##。",
+			["menu_hitman_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你对特殊敌人造成的伤害增加#{skill_color}#10%##。\n\n#{important_1}#提示：该效果不适用于榴弹发射器和火箭筒##\n\n专精: #{risk}#$pro##\n你对特殊敌人造成的伤害额外增加#{skill_color}#15%##。\n\n爆头击杀敌人将使你的闪避条增加闪避点数的#{skill_color}#12.5%##，使用枪械或近战武器从背后击杀一名敌人将使你的闪避条增加闪避点数的#{skill_color}#75%##，两者可以叠加。\n\n#{important_1}#提示：使用爆炸物或火焰这样的持续伤害击杀敌人无法获得闪避条的增加##",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "下作手段",
@@ -3308,7 +3380,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "脑\"洞\"大开",
-		["menu_kilmer_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头的同时，被爆头的敌人半径#{skill_color}#4##米内最近的敌人会受到你刚刚爆头伤害#{skill_color}#70%##的擦伤，该效果只能由#{skill_color}#单发模式##和#{skill_color}#三连发模式##的突击步枪和狙击步枪触发\n\n被爆头的敌人每离你#{skill_color}#7##米远，就会有一个额外的警察受到该擦伤效果，最多同时擦伤#{skill_color}#5##名敌人\n\n专精: #{risk}#$pro##\n使用突击步枪或狙击步枪爆头产生的伤害#{skill_color}#不受距离衰减影响##\n\n可被擦伤的距离增加#{skill_color}#1##米\n\n被爆头的敌人每离你#{skill_color}#7##米远，擦伤的伤害就额外增加#{skill_color}#10%##，最多额外增加#{skill_color}#110%##",
+		["menu_kilmer_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头的同时，被爆头的敌人半径#{skill_color}#4##米内最近的敌人会受到你刚刚爆头伤害#{skill_color}#70%##的擦伤，该效果只能由#{skill_color}#单发模式##和#{skill_color}#三连发模式##的突击步枪和狙击步枪触发\n\n被爆头的敌人每离你#{skill_color}#8##米远，就会有一个额外的警察受到该擦伤效果，最多同时擦伤#{skill_color}#3##名敌人\n\n专精: #{risk}#$pro##\n使用突击步枪或狙击步枪爆头产生的伤害#{skill_color}#不受距离衰减影响##\n\n可被擦伤的距离增加#{skill_color}#1##米\n\n被爆头的敌人每离你#{skill_color}#8##米远，擦伤的伤害就额外增加#{skill_color}#10%##，最多额外增加#{skill_color}#100%##",
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "弹无虚发",
@@ -3334,7 +3406,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "手枪狂徒",
-		["menu_dance_instructor_desc_sc"] = "掌握: #{risk}#$basic##\n腰射时，手枪的精准度增加#{skill_color}#20%##\n\n专精: #{risk}#$pro##\n手枪的射速增加#{skill_color}#15%##\n\n你的手枪可以#{skill_color}#射穿敌人的护甲##",																								
+		["menu_dance_instructor_desc_sc"] = "掌握: #{risk}#$basic##\n腰射时，手枪的精准度增加#{skill_color}#20%##\n\n专精: #{risk}#$pro##\n手枪的射速增加#{skill_color}#15%##\n\n你的手枪现在可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。",																								
 
 		--Over Pressurized/Gunfighter--
 		["menu_gun_fighter_sc"] = "手枪斗士",
@@ -3346,11 +3418,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "亡命之徒",
-		["menu_expert_handling_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头击杀会在#{skill_color}#4##秒内提高你所有武器#{skill_color}#8%##的精准度和射程。\n该效果可叠加#{skill_color}#5##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间重置为四秒。\n\n#{important_1}#提示：该技能的精准度增加不适用于霰弹枪和火焰喷射器##\n\n专精: #{risk}#$pro##\n该效果的持续时间延长至#{skill_color}#10##秒，重置后持续时间也是十秒。",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头击杀会在#{skill_color}#4##秒内提高你所有武器#{skill_color}#8%##的精准度和射程。\n该效果可叠加#{skill_color}#5##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间重置为四秒。\n\n#{important_1}#提示：该技能的精准度增加不适用于霰弹枪和火焰喷射器##\n\n专精: #{risk}#$pro##\n该效果的持续时间延长至#{skill_color}#8##秒，重置后持续时间也是八秒。",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "乱枪狂人",
-		["menu_trigger_happy_beta_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头击杀会在#{skill_color}#4##秒内提高手枪#{skill_color}#10%##的伤害。\n该效果可叠加#{skill_color}#5##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间重置为四秒。\n\n专精: #{risk}#$pro##\n该效果的持续时间延长至#{skill_color}#10##秒，重置后持续时间也是十秒。",																								
+		["menu_trigger_happy_beta_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头击杀会在#{skill_color}#4##秒内提高手枪#{skill_color}#5%##的伤害。\n该效果可叠加#{skill_color}#4##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间重置为四秒。\n\n专精: #{risk}#$pro##\n该效果的可叠加次数增加至#{skill_color}#10##次，持续时间延长至#{skill_color}#8##秒，重置后持续时间也是八秒。",																								
 
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "死里逃生",
@@ -3362,7 +3434,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--What Doesn't Kill You Only Makes You Stronger--
 		["menu_what_doesnt_kill_beta_sc"] = "越挫越勇",
-		["menu_what_doesnt_kill_beta_desc_sc"] = "掌握: #{risk}#$basic##\n每次倒地将使你获得#{skill_color}#1##点伤害吸收，该效果可以持续累计且会在每次被逮捕后从监狱出来时被重置\n\n专精: #{risk}#$pro##\n每次倒地额外获得#{skill_color}#3##点伤害吸收",
+		["menu_what_doesnt_kill_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你获得#{skill_color}#X##点伤害吸收。\n#{skill_color}#X##=#{skill_color}#初始倒地次数##-#{skill_color}#剩余倒地次数##\n\n专精: #{risk}#$pro##\n该技能提供的伤害吸收效果变为原来的#{skill_color}#3##倍。",
 
 		--Haunt--
 		["menu_haunt_sc"] = "恐惧弥漫",
@@ -3386,17 +3458,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "狂战士",
-		["menu_frenzy_desc_sc"] = "掌握: #{risk}#$basic##\n你的血量越少，伤害就越高。\n\n你的血量低于#{skill_color}#100%##时，你将会获得最高#{skill_color}#100%##的#{skill_color}#近战武器和电锯##伤害加成。\n\n专精: #{risk}#$pro##\n你的血量越少，伤害就越高。\n\n你的血量低于#{skill_color}#100%##时，你将获得最高#{skill_color}#50%##的#{skill_color}#远程武器##伤害加成。\n\n#{important_1}#提示：不适用于榴弹发射器和火箭发射器##"																																																																																																																																																																																																																																	
+		["menu_frenzy_desc_sc"] = "掌握: #{risk}#$basic##\n你的血量越少，伤害就越高。\n\n你的血量低于#{skill_color}#100%##时，你将会获得最高#{skill_color}#100%##的#{skill_color}#近战武器和电锯##伤害加成。\n\n专精: #{risk}#$pro##\n你的血量越少，伤害就越高。\n\n你的血量低于#{skill_color}#100%##时，你将获得最高#{skill_color}#50%##的#{skill_color}#远程武器##伤害加成。\n\n#{important_1}#提示：不适用于榴弹发射器和火箭筒##"																																																																																																																																																																																																																																	
 
 	})
 
 	local butt = math.rand(1)
 	local frame = 0.01
 	if butt <= frame then
-		LocalizationManager:add_localized_strings({	
-			["menu_difficulty_sm_wish"] = "钢铁之路",
-			["menu_risk_sm_wish"] = "钢铁之路，为那些掌控了秘密会议并寻求挑战的人而准备。"
-		})
+		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+			LocalizationManager:add_localized_strings({	
+				["menu_st_spec_23"] = "瑞典蠢驴",
+				["menu_st_spec_23_desc"] = "谁抄袭一堆MOD当DLC卖？谁的BUG的修了一个又一个，还是没修完？谁的游戏闪退成为日常？\n\n\n#{important_1}#只有我——Overkill。##\n\n\n",
+				["menu_difficulty_sm_wish"] = "钢铁之路",
+				["menu_risk_sm_wish"] = "钢铁之路，为那些掌控了秘密诀窍并寻求挑战的人而准备。"
+			})
+		end
 	end
 
 end)
@@ -3406,6 +3482,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["bm_menu_dodge"] = "闪避点数",
 		["menu_st_category_activated"] = "激活",
 		["menu_st_category_challenge"] = "白卡",
+		["menu_st_category_mod"] = "模组",
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "你的爆头伤害增加##25%##\n\n你造成的伤害增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒",
@@ -3414,8 +3491,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deckall_8_desc_sc"] = "你使用医疗箱的速度加快##20%##\n\n你造成的伤害再次额外增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒",
 	
 		--Crook--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck6_1_desc_sc"] = "你的闪避点数增加##5##\n\n防弹背心的护甲值提高##15%##",
 		["menu_deck6_3_desc_sc"] = "防弹背心的闪避点数增加##5##",
 		["menu_deck6_5_desc_sc"] = "防弹背心的护甲值额外提高##15%##\n\n你的撬锁速度加快##20%##",
@@ -3423,8 +3499,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_9_desc_sc"] = "防弹背心的护甲值再额外提高##20%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Rogue
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck4_1_desc_sc"] = "你的闪避点数增加##5##\n\n你的切枪速度加快##30%##",
 		["menu_deck4_3_desc_sc"] = "你的闪避点数额外增加##5##",
 		["menu_deck4_5_desc_sc"] = "倒地起身后，你的闪避条增加至其正常状态上限的##200%##\n\n你回路的摄像头，失效的时间增加##20##秒",
@@ -3437,17 +3512,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "铅笔杀神",
 		["menu_deck5_7_sc"] = "终极杀手",
 
---delete perk desc 1
---delete perk desc 2
-		["menu_deck5_1_desc_sc"] = "使用非近战武器击杀敌人将为你储存##25##点血量，储存的血量上限为##75##点。\n\n使用近战武器击杀敌人将使储存的血量转化为临时虚血，临时虚血跟血量一样是你的生命值，临时虚血会以每秒##5##点的速度减少。\n\n临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。",
+
+		["menu_deck5_1_desc_sc"] = "使用非近战武器击杀一名敌人将为你储存##25##点血量，储存血量的上限为##75##点。\n\n使用近战武器杀敌将使储存的血量转化为临时虚血，临时虚血跟血量一样是你的生命值，临时虚血会以每秒##5##点的速度减少。\n\n临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。",
 		["menu_deck5_3_desc_sc"] = "你的护甲恢复后，闪避条将会增加闪避点数的##100%##。\n\n你的闪避点数增加##5##。",
 		["menu_deck5_5_desc_sc"] = "你现在可以多储存##60%##的血量。\n\n你初始携带的尸体袋数量增加##1##。",
 		["menu_deck5_7_desc_sc"] = "你倒地起身后获得##120##的临时虚血。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck5_9_desc_sc"] = "当你有临时虚血时，你受到的对##血量##的伤害减少##10%##且你的移动速度额外增加##20%##。\n\n对血量的减伤会在其他减伤计算完后再进行计算，你最多能有##60%##的血量减伤分数。\n\n赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Muscle
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck2_1_desc_sc"] = "你的血量上限增加##10%##。",
 		["menu_deck2_3_desc_sc"] = "你的血量上限额外增加##10%##。\n\n你的闪避点数增加##5##。",
 		["menu_deck2_5_desc_sc"] = "你的血量上限再额外增加##10%##。\n\n你打包尸体和与人质互动的速度加快##75%##。",
@@ -3455,16 +3528,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_9_desc_sc"] = "你的血量上限再次额外增加##10%##。\n\n你倒地起身后的血量恢复##25%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
         
         --Crew Chief
---delete perk desc 1
---delete perk desc 2
-		["menu_deck1_3_desc_sc"] = "你和队友奔跑的耐力提高##50%##。\n\n提示：该效果不能由多个使用领队天赋的玩家叠加\n\n你的闪避点数增加##5##。\n\n你呼喊的距离增加##25%##。",
+
+		["menu_deck1_3_desc_sc"] = "你和你队友的耐力提高##50%##。\n\n提示：该效果不能由多个使用领队天赋的玩家叠加\n\n你的闪避点数增加##5##。\n\n你呼喊的距离增加##25%##。",
 		["menu_deck1_5_desc_sc"] = "你的血量上限增加##10%##，你队友的血量上限增加##5%##。\n\n提示：该效果不能由多个使用领队天赋的玩家叠加\n\n你回答对讲机所需的时间减少##25%##。",
 		["menu_deck1_7_desc_sc"] = "你的护甲值提高##10%##。\n\n提示：该效果不能由多个使用领队天赋的玩家叠加。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck1_9_desc_sc"] = "每位人质会为你和队友增加##5%##的血量上限和##10%##的耐力，最多叠加##4##次。\n\n提示：该效果不能由多个使用领队天赋的玩家叠加\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck3_1_desc_sc"] = "你的护甲值增加##10%##",
 		["menu_deck3_3_desc_sc"] = "你的护甲值额外增加##10%##",
 		["menu_deck3_5_desc_sc"] = "你的护甲值再额外增加##5%##\n\n你可以放置##2##个尸体袋箱",
@@ -3472,17 +3543,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck3_9_desc_sc"] = "你的护甲恢复速度额外加快##5%##.\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Burglar--
---delete perk desc 1
---delete perk desc 2
-		["menu_deck7_1_desc_sc"] = "你的闪避点数增加##5##\n\n蹲伏时，你的闪避条每##1##秒增加闪避点数的##5%##",
+
+		["menu_deck7_1_desc_sc"] = "你的闪避点数增加##5##\n\n蹲伏时，你的闪避条每秒增加闪避点数的##5%##",
 		["menu_deck7_3_desc_sc"] = "你的闪避点数额外增加##5##",
-		["menu_deck7_5_desc_sc"] = "你蹲伏的移动速度加快##20%##\n\n蹲伏时，你的闪避条每##1##秒额外增加闪避点数的##5%##",
+		["menu_deck7_5_desc_sc"] = "你蹲伏的移动速度加快##20%##\n\n蹲伏时，你的闪避条每秒额外增加闪避点数的##5%##",
 		["menu_deck7_7_desc_sc"] = "你的闪避点数再额外增加##5##",
 		["menu_deck7_9_desc_sc"] = "你的护甲恢复速率增加##10%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Gambler--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck10_1_desc_sc"] = "你捡起一个弹药盒会回复##3##至##5##点血量。\n\n冷却时间为##8##秒，每捡起一个弹药盒会减少冷却时间##1##至##3##秒。",
 		["menu_deck10_3_desc_sc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你的闪避点数增加##5##。",
 		["menu_deck10_5_desc_sc"] = "你捡起一个弹药盒回复的血量额外增加##1##。\n\n你回答对讲机所需的时间减少##25%##。",
@@ -3492,8 +3561,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck10_9"] = "满贯神药",
 
 		--Infiltrator--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck8_1_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害减少##5%##。",
 		["menu_deck8_3_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害额外减少##5%##。\n你的闪避点数增加##5##。",
 		["menu_deck8_5_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害再额外减少##10%##。\n\n每次使用近战武器成功击中敌人都将在##10##秒内使你的近战武器伤害增加##8%##，该效果可以叠加且最多叠加##5##次。\n\n你回路的摄像头，失效的时间增加##20##秒。",
@@ -3501,8 +3569,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "每次使用近战武器成功击中敌人都将在##5##秒内使你的血量每##1##秒回复##1##点，该效果可以叠加且最多叠加##5##次。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Sociopath--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck9_1_sc"] = "非礼勿言",
 		["menu_deck9_1_desc_sc"] = "当你被##18##米内至少##3##名敌人包围时，你受到来自敌人的伤害减少##5%##。",
 		["menu_deck9_3_desc_sc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n\n你的闪避点数增加##5##。",
@@ -3511,17 +3578,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "击杀一名距你##18##米内的敌人将有##25%##的几率在敌人中##散播恐慌##，恐慌会使敌人短暂地失去行动能力。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Grinder--
---delete perk desc 1
---delete perk desc 2
-		["menu_deck11_1_desc_sc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以被叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的隐匿度增加##8##。",
+
+		["menu_deck11_1_desc_sc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的隐匿度增加##8##。",
 		["menu_deck11_3_desc_sc"] = "每层增益中每秒回复的血量额外增加##1##点。",
 		["menu_deck11_5_desc_sc"] = "每层增益的持续时间额外增加##2##秒。\n\n你可以放置##2##个尸体袋箱。",
 		["menu_deck11_7_desc_sc"] = "每层增益中每秒回复的血量再额外增加##1##点。",
 		["menu_deck11_9_desc_sc"] = "每层增益将使你的移动速度加快##5%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Open your mind--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck13_1_desc_sc"] = "当你有护甲时，每击杀一名敌人将为你储存##4##点血量。\n\n当你的护甲完全被破坏后，回复护甲的同时也会将你储存的血量用于一等一回复你的血量。\n\n最多能储存多少血取决于你穿的是什么护甲，更轻的护甲能储存更多的血量。",
 		["menu_deck13_3_desc_sc"] = "每次杀敌储存的血量增加##2##点。\n\n你的闪避点数增加##5##。",
 		["menu_deck13_5_desc_sc"] = "提高你血量储存上限的##25%##。\n\n你和你队友控制的平民趴下的时间延长##25%##。",
@@ -3529,8 +3594,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck13_9_desc_sc"] = "每击杀一名敌人都可以加快你的护甲恢复速度，加快的程度取决于你穿的是什么护甲，更轻的护甲能获得更快的恢复速度。护甲成功恢复后该效果需要重新叠加。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--THIS IS WAR BABY--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck14_1_desc_sc"] = "你所造成伤害的100%将会转化为狂乱度，狂乱度最多可以叠##720##层。\n\n关于狂乱度：\n每累积##120##点狂乱度，你受到的伤害就减少##1##点。狂乱度每##8##秒减少##120##层。",
 		["menu_deck14_3_desc_sc"] = "你的队友现在也可以享受通过狂乱度获得的减伤效果。\n\n你和队友同时使用瘾君子的效果不叠加，减伤效果取团队内最高的狂乱度。\n\n你的闪避点数增加##5##。",
 		["menu_deck14_5_desc_sc"] = "你的狂乱度现在每##8##秒只减少##90##层。\n\n你和你队友控制的平民趴下的时间延长##25%##。",
@@ -3538,35 +3602,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck14_9_desc_sc"] = "你通过狂乱度获得的减伤效果增加##100%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Anarchist--
---delete perk desc 1
---delete perk desc 2
+		["menu_st_spec_15"] = "无政府主义者", --there's a random space at the end of the original string
 		["menu_deck15_1_desc_sc"] = "你的护甲不再是一次性回满，而是每段时间回复一次。回复量取决于积累的量，每秒会积累##8##点护甲值；两次回复的时间间隔取决于你穿的护甲，更厚重的防弹背心回复间隔更长。\n\n提示：加快护甲回复速率的技能效果将对此天赋无效",
-		["menu_deck15_3_desc_sc"] = "你##50%##的血量转化为##50%##的护甲值",
-		["menu_deck15_5_desc_sc"] = "你##50%##的血量转化为##100%##的护甲值\n\n你和你队友控制的平民趴下的时间延长##25%##",
-		["menu_deck15_7_desc_sc"] = "你##50%##的血量转化为##150%##的护甲值",
-		["menu_deck15_9_desc_sc"] = "造成伤害会为你回复护甲值——该效果的冷却时间为##5##秒，穿越重型的防弹背心就能回复越多的护甲\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+		["menu_deck15_3_desc_sc"] = "你##50%##的血量转化为##50%##的护甲值。",
+		["menu_deck15_5_desc_sc"] = "你##50%##的血量转化为##100%##的护甲值。\n\n你和你队友控制的平民趴下的时间延长##25%##。",
+		["menu_deck15_7_desc_sc"] = "你##50%##的血量转化为##150%##的护甲值。",
+		["menu_deck15_9_desc_sc"] = "造成伤害会为你回复护甲值——该效果的冷却时间为##5##秒，穿越重型的防弹背心就能回复越多的护甲。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Scarface--
---delete perk desc 1
---delete perk desc 2
-		["menu_deck17_1_desc_sc"] = "解锁首脑##注射器##以供你使用。注射器会使用你的投掷物栏。\n\n游戏中你可以按[使用投掷物]键激活注射器，激活注射器会在##4##秒内使你在受到伤害后回复所受到伤害##30%##的血量。\n\n注射器的冷却时间为##30##秒\n\n提示：=注射器效果总结=\n1.先回血再受到伤害；\n2.有护甲时，受击回血；\n3.无护甲时，受击减伤。\n(并不是绝对的减伤，取决于不同的情况)",
-		["menu_deck17_3_desc_sc"] = "注射器生效期间，你的移动速度加快##20%##",
-		["menu_deck17_5_desc_sc"] = "注射器的持续时间增加至##6##秒\n\n注射器生效期间，你获得##嘲讽##——一旦你进入敌人的射击范围内，无论周围是什么情况敌人都会优先射击你",
-		["menu_deck17_7_desc_sc"] = "你的血量低于##25%##时，注射器生效期间的回血量额外增加##60%##",
-		["menu_deck17_9_desc_sc"] = "注射器生效期间，每获得##5##点血量的过量治疗将减少注射器冷却时间##2##秒\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+
+		["menu_deck17_1_desc_sc"] = "解锁首脑##注射器##以供你使用。注射器会使用你的投掷物栏。\n\n游戏中你可以按##$BTN_ABILITY;##键激活注射器，激活注射器会在##4##秒内使你在受到伤害后回复所受到伤害##30%##的血量。\n\n注射器的冷却时间为##30##秒。\n\n提示：=注射器效果总结=\n1.先回血再受到伤害；\n2.有护甲时，受击回血；\n3.无护甲时，受击减伤。\n(并不是绝对的减伤，取决于不同的情况)",
+		["menu_deck17_3_desc_sc"] = "注射器生效期间，你的移动速度加快##20%##。",
+		["menu_deck17_5_desc_sc"] = "注射器的持续时间增加至##6##秒。\n\n注射器生效期间，你获得##嘲讽##——一旦你进入敌人的射击范围内，无论周围是什么情况敌人都会优先射击你。",
+		["menu_deck17_7_desc_sc"] = "你的血量低于##25%##时，注射器生效期间的回血量额外增加##60%##。",
+		["menu_deck17_9_desc_sc"] = "注射器生效期间，每获得##5##点血量的过量治疗将减少注射器冷却时间##2##秒。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--10 feet higher--
---delete perk desc 1
---delete perk desc 2
-		["menu_deck18_1_desc_sc"] = "你的闪避点数增加##5##\n\n解锁投掷物——##烟雾弹##以供你使用\n\n烟雾弹扔出后，它会制造一片持续##12##秒的烟幕。处于烟幕中的你和你队友回复护甲的速度加快##100%##。烟幕中的敌人精准度降低##75%##.\n\n烟雾弹的冷却时间为##40##秒，击杀一名敌人将使冷却时间减少##1##",
-		["menu_deck18_3_desc_sc"] = "你的闪避点数额外增加##5##",
-		["menu_deck18_5_desc_sc"] = "成功闪避一次敌人的攻击将减少烟雾弹的冷却时间##1##秒\n\n你初始携带的尸体袋数量增加##1##",
-		["menu_deck18_7_desc_sc"] = "你的闪避点数再额外增加##5##",
-		["menu_deck18_9_desc_sc"] = "当你在烟雾弹产生的烟幕中时，你的闪避条每秒增加闪避点数的##40%##\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+
+		["menu_deck18_1_desc_sc"] = "你的闪避点数增加##5##。\n\n解锁投掷物——##烟雾弹##以供你使用。\n\n烟雾弹扔出后，它会制造一片持续##12##秒的烟幕。处于烟幕中的你和你队友回复护甲的速度加快##100%##。烟幕中的敌人精准度降低##75%##。\n\n烟雾弹的冷却时间为##40##秒，击杀一名敌人将使冷却时间减少##1##秒。",
+		["menu_deck18_3_desc_sc"] = "你的闪避点数额外增加##5##。",
+		["menu_deck18_5_desc_sc"] = "成功闪避一次敌人的攻击将减少烟雾弹的冷却时间##1##秒。\n\n你初始携带的尸体袋数量增加##1##。",
+		["menu_deck18_7_desc_sc"] = "你的闪避点数再额外增加##5##。",
+		["menu_deck18_9_desc_sc"] = "当你在烟雾弹产生的烟幕中时，你的闪避条每秒增加闪避点数的##40%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Sweet liquor eases the pain--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck19_1_desc_sc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的对##血量##的伤害中的##30%##不会立刻使你丢失血量，而是变成虚血在##8##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##150%##的血量。修士酒壶的冷却时间为##30##秒。\n\n你##50%##的##护甲量##将转变为##50%##的##血量##。",
 		["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##1.5##秒。",
 		["menu_deck19_5_desc_sc"] = "在##4##秒内没受到伤害将会立即使虚血变为实血(即触发酒壶的效果)。\n\n你回答对讲机所需的时间减少##25%##。",
@@ -3574,8 +3634,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_9_desc_sc"] = "你倒地被救起后的剩余血量提高##25%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--it's not a war crime if they're not people--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck20_1_desc_sc"] = "解锁##电子烟##以供你使用。\n\n要使用电子烟，你需要看向一名没有视野遮挡的##18##米内的队友并按下使用投掷物的按键标记他。\n\n你和你标记的队友每击杀一名敌人都会为你回复##4##点血量，并且为你标记的队友回复##2##点血量。\n\n电子烟的持续时间为##11##秒，冷却时间为##80##秒。",
 		["menu_deck20_3_desc_sc"] = "你和你标记的队友每击杀一名敌人都会延长电子烟的持续时间##2##秒。每次杀敌将减少下次杀敌延长时间的##0.2##秒。",
 		["menu_deck20_5_desc_sc"] = "你和你标记的队友每击杀一名敌人都会为你获得##0.5##的伤害减免，最多获得##8##点伤害减免，电子烟效果结束时失效。\n\n你回路的摄像头，失效的时间增加##20##秒。",
@@ -3583,17 +3642,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "你每击杀一名敌人都会减少电子烟的冷却时间##2##秒。\n\n电子烟效果持续时间，你标记的队友击杀敌人也能为你减少电子烟的冷却时间##2##秒。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Biker--
---delete perk desc 1
---delete perk desc 2
-		["menu_deck16_1_desc_sc"] = "每当你或你队友击杀一名敌人时，你获得##2##点血量。冷却时间为##5##秒。",
+
+		["menu_deck16_1_desc_sc"] = "每当你或你队友击杀一名敌人时，你获得##2##点血量，冷却时间为##5##秒。",
 		["menu_deck16_3_desc_sc"] = "你每##5##秒恢复##10##点护甲值",
 		["menu_deck16_5_desc_sc"] = "每减少##25%##的护甲值都将减少杀敌加血冷却时间##0.5##秒\n\n你打包尸体和与人质互动的速度加快##75%##",
 		["menu_deck16_7_desc_sc"] = "你现在每##5##秒恢复##20##点护甲值\n\n使用近战武器击杀敌人将使该效果下一次提前##1##秒触发",
 		["menu_deck16_9_desc_sc"] = "每减少##25%##的护甲值都将使杀敌回血量增加##2##点\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Yakuza--
---delete perk desc 1
---delete perk desc 2
+
 		["menu_deck12_1_desc_sc"] = "你的血量低于##100%##时，血量越少，你的闪避条被动增长的速度越快，最快可以达到每秒增加闪避点数的##10%##。\n\n你的闪避点数增加##5##。",	
 		["menu_deck12_3_desc_sc"] = "你的血量低于##100%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##。",
 		["menu_deck12_5_desc_sc"] = "你的血量低于##100%##时，血量越少，你受到的伤害越少，最多可以获得##20%##的伤害减免。\n\n你打包尸体和与人质互动的速度加快##75%##。",
@@ -3602,22 +3659,134 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "（因极道增加）",
 
 		--Hacker--
---delete perk desc 1
---delete perk desc 2
-		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用\n\n游戏中你可以按[使用投掷物]键激活便携式ECM干扰器\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.5##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2##秒",
-		["menu_deck21_3_desc_sc"] = "你的闪避点数增加##5##",
-		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##5##点血量",
-		["menu_deck21_7_desc_sc"] = "你的护甲回复速率增加##10%##\n\n你的闪避点数额外增加##5##",
-		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##2.5##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+
+		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.5##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2##秒。",
+		["menu_deck21_3_desc_sc"] = "你的闪避点数增加##5##。",
+		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##5##点血量。",
+		["menu_deck21_7_desc_sc"] = "你的护甲回复速率增加##10%##。\n\n你的闪避点数额外增加##5##。",
+		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##2.5##点血量。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Leech
---delete perk desc 1
---delete perk desc 2
-		["menu_deck22_1_desc_sc"] = "解锁并装备##水蛭安瓶##。\n\n对局中你可以使用投掷物按键来启用水蛭安瓶，启用时会直接恢复##10%##的总血量并且在生效期间取消你的全部护甲。\n\n与此同时你的血量以血上限的每##10%##来被分割成小格，每受任意一次伤害移除整个格。同时每击杀##3##名敌人回复一格且免伤##1##秒。\n\n水蛭安瓶能够持续##6##秒钟并且有##40##秒冷却。",
+
+		["menu_deck22_1_desc_sc"] = "解锁并装备##水蛭安瓿瓶##。\n\n对局中你可以使用投掷物按键来启用水蛭安瓶，启用时会直接恢复##10%##的总血量并且在生效期间取消你的全部护甲。\n\n与此同时你的血量以血上限的每##10%##来被分割成小格，每受任意一次伤害移除整个格。同时每击杀##3##名敌人回复一格且免伤##1##秒。\n\n水蛭安瓶能够持续##6##秒钟并且有##40##秒冷却。",
 		["menu_deck22_3_desc_sc"] = "在水蛭安瓶生效期间，任何时候你受到生命值伤害会恢复你队友其总血量的##1%##。",
 		["menu_deck22_5_desc_sc"] = "水蛭安瓶的生效时间延长到##10##秒。\n\n每击杀一名敌人会减少水蛭安瓶的冷却时间##1##秒。\n\n你打包尸体和与人质互动的速度加快##75%##。",
 		["menu_deck22_7_desc_sc"] = "水蛭生效期间血量分割变为血上限的每##5%##一格。",
 		["menu_deck22_9_desc_sc"] = "倒地时启用水蛭安瓶能够立即起身直至生效结束。\n\n使用水蛭安瓶起身会增加额外的##30##秒冷却时间。\n\n受到伤害时为队友恢复的血量变为##2%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+
+		--CopyCat--
+		["menu_deck23_1_desc"] = "使用主武器时，击杀##10##名敌人会自动装填副武器，反之亦然。\n\n你武器切换速度增快##15%##。",
+		["menu_deck23_1_short"] = "使用主武器时，击杀##10##名敌人会自动装填副武器，反之亦然。\n\n你武器切换速度增快##15%##。",
+		["menu_deck23_1_1_desc"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_1_1_short"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_1_2_desc"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_1_2_short"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_1_3_desc"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_1_3_short"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_1_4_desc"] = "你蹲下时和背包时的移动速度加快##5%##。",
+		["menu_deck23_1_4_short"] = "你蹲下时和背包时的移动速度加快##5%##。",
+
+		["menu_deck23_3_desc"] = "你每次完成爆头可恢复##3##点血量，每##5##秒只能触发一次。",
+		["menu_deck23_3_short"] = "你每次完成爆头可恢复##3##点血量，每##5##秒只能触发一次。",
+		["menu_deck23_3_1_desc"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_3_1_short"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_3_2_desc"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_3_2_short"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_3_3_desc"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_3_3_short"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_3_4_desc"] = "你蹲下时和背包时的移动速度加快##5%##。",
+		["menu_deck23_3_4_short"] = "你蹲下时和背包时的移动速度加快##5%##。",
+
+		["menu_deck23_5_desc"] = "闪避成功将使本来的伤害##100%##反弹回开火的敌人身上。\n\n打破你护甲的子弹会以##200%##的伤害反弹回开火的敌人身上，冷却时间为##15##秒。",
+		["menu_deck23_5_short"] = "闪避成功将使本来的伤害##100%##反弹回开火的敌人身上。\n\n打破你护甲的子弹会以##200%##的伤害反弹回开火的敌人身上，冷却时间为##15##秒。",
+		["menu_deck23_5_1_desc"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_5_1_short"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_5_2_desc"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_5_2_short"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_5_3_desc"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_5_3_short"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_5_4_desc"] = "你蹲下时和背包时的移动速度加快##5%##。",
+		["menu_deck23_5_4_short"] = "你蹲下时和背包时的移动速度加快##5%##。",
+
+		["menu_deck23_7_desc"] = "当你的血量低于##50%##时，你会免疫对血量的伤害##2##秒，每##90##秒只能触发一次。",
+		["menu_deck23_7_short"] = "当你的血量低于##50%##时，你会免疫对血量的伤害##2##秒，每##90##秒只能触发一次。",
+		["menu_deck23_7_1_desc"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_7_1_short"] = "你的血量上限增加##7.5%##。",
+		["menu_deck23_7_2_desc"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_7_2_short"] = "你的护甲量增加##3.75%##。",
+		["menu_deck23_7_3_desc"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_7_3_short"] = "你的闪避点数增加##1.25##。",
+		["menu_deck23_7_4_desc"] = "你蹲下时和背包时的移动速度加快##5%##。",
+		["menu_deck23_7_4_short"] = "你蹲下时和背包时的移动速度加快##5%##。",
+		--Final Card
+			--Crew Chief
+			["menu_deck1_mrwi_desc"] = "你呼喊的距离增加##25%##。\n\n你和你队友的耐力提高##50%##。\n\n提示：不与其它同天赋玩家的效果叠加\n\n你回答对讲机所需的时间减少##25%##。",
+			--Muscle
+			["menu_deck2_mrwi_desc"] = "每次的开火射击有##5%##的几率在敌人中##散播恐慌##，恐慌会使敌人短暂地失去行动能力。\n\n你打包尸体和与人质互动的速度加快##75%##。",
+			--Armorer
+			["menu_deck3_mrwi_desc"] = "你的护甲恢复速度加快##10%##。\n\n你可以放置##2##个尸体袋箱。",
+			--Rouge
+			["menu_deck4_mrwi_desc"] = "你的闪避点数额外增加##5##。\n\n你的切枪速度加快##30%##。\n\n你回路的摄像头，失效的时间增加##20##秒。",
+			--Hitman
+			["menu_deck5_mrwi_desc"] = "使用非近战武器击杀一名敌人将为你储存##25##点血量，储存血量的上限为##75##点。\n\n使用近战武器杀敌将使储存的血量转化为临时虚血，临时虚血跟血量一样是你的生命值，临时虚血会以每秒##5##点的速度减少。\n\n临时虚血可以超出你的血量上限，你最多能拥有##240##点临时虚血。\n\n你初始携带的尸体袋数量增加##1##。",
+			--Crook
+			["menu_deck6_mrwi_desc"] = "防弹背心的闪避点数增加##5##。\n\n防弹背心的护甲值提高##15%##。\n\n你的撬锁速度加快##20%##。",
+			--Burglar
+			["menu_deck7_mrwi_desc"] = "你的闪避点数额外增加##5##。\n\n蹲伏时，你的闪避条每秒增加闪避点数的##5%##。\n\n你蹲伏的移动速度加快##20%##。",
+			--Infiltrator
+			["menu_deck8_mrwi_desc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害减少##10%##。\n\n你回路的摄像头，失效的时间增加##20##秒。",
+			--Sociopath
+			["menu_deck9_mrwi_desc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n\n你初始携带的尸体袋数量增加##1##。",
+			--Gambler
+			["menu_deck10_mrwi_desc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你回答对讲机所需的时间减少##25%##。",
+			--Grinder
+			["menu_deck11_mrwi_desc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的隐匿度增加##4##。\n\n你可以放置##2##个尸体袋箱。",
+			--Yakuza
+			["menu_deck12_mrwi_desc"] = "你的血量低于##100%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##。\n\n你打包尸体和与人质互动的速度加快##75%##。",
+			--Ex-Pres
+			["menu_deck13_mrwi_desc"] = "当你有护甲时，每击杀一名敌人将为你储存##4##点血量。\n\n当你的护甲完全被破坏后，回复护甲的同时也会将你储存的血量用于一等一回复你的血量。\n\n最多能储存多少血取决于你穿的是什么护甲，更轻的护甲能储存更多的血量。\n\n你和你队友控制的平民趴下的时间延长##25%##。",
+			--Maniac
+			["menu_deck14_mrwi_desc"] = "你所造成伤害的100%将会转化为狂乱度，狂乱度最多可以叠##720##层。\n\n关于狂乱度：\n每累积##120##点狂乱度，你受到的伤害就减少##1##点。狂乱度每##8##秒减少##120##层。\n\n你和你队友控制的平民趴下的时间延长##25%##。",
+			--Anarchist
+			["menu_deck15_mrwi_desc"] = "你的护甲不再是一次性回满，而是每段时间回复一次。回复量取决于积累的量，每秒会积累##8##点护甲值；两次回复的时间间隔取决于你穿的护甲，更厚重的防弹背心回复间隔更长。\n\n提示：加快护甲回复速率的技能效果将对此天赋无效\n\n你和你队友控制的平民趴下的时间延长##25%##。",
+			--Biker
+			["menu_deck16_mrwi_desc"] = "每当你或你队友击杀一名敌人时，你获得##2##点血量，冷却时间为##5##秒。\n\n你打包尸体和与人质互动的速度加快##75%##。",
+			--Kingpin
+			["menu_deck17_mrwi_desc"] = "解锁首脑##注射器##以供你使用。注射器会使用你的投掷物栏。\n\n游戏中你可以按##$BTN_ABILITY;##键激活注射器，激活注射器会在##4##秒内使你的移动速度加快##20%##并在受到伤害后回复所受到伤害##20%##的血量。\n\n注射器的冷却时间为##30##秒。",
+			--Sicario
+			["menu_deck18_mrwi_desc"] = "解锁投掷物——##烟雾弹##以供你使用\n\n烟雾弹扔出后，它会制造一片持续##12##秒的烟幕。处于烟幕中的你和你队友回复护甲的速度加快##100%##。烟幕中的敌人精准度降低##75%##。\n\n烟雾弹的冷却时间为##40##秒，击杀一名敌人将使冷却时间减少##1##秒。\n\n你的闪避点数额外增加##5##。\n\n你初始携带的尸体袋数量增加##1##。",
+			--Stoic
+			["menu_deck19_mrwi_desc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的对##血量##的伤害中的##20%##不会立刻使你丢失血量，而是变成虚血在##5##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##150%##的血量。修士酒壶的冷却时间为##30##秒。\n\n你##50%##的##护甲量##将转变为##50%##的##血量##。\n\n你回答对讲机所需的时间减少##25%##。",
+			--Tag Team
+			["menu_deck20_mrwi_desc"] = "解锁##电子烟##以供你使用。\n\n要使用电子烟，你需要看向一名没有视野遮挡的##18##米内的队友并按下使用投掷物的按键标记他。\n\n你和你标记的队友每击杀一名敌人都会为你回复##4##点血量，并且为你标记的队友回复##2##点血量。\n\n电子烟的持续时间为##11##秒，冷却时间为##80##秒。\n\n你回路的摄像头，失效的时间增加##20##秒。",
+			--Hacker
+			["menu_deck21_mrwi_desc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.5##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2##秒。",
+			--Leech
+			["menu_deck22_mrwi_desc"] = "解锁并装备##水蛭安瓿瓶##。\n\n对局中你可以使用投掷物按键来启用水蛭安瓶，启用时会直接恢复##5%##的总血量并且在生效期间取消你的全部护甲。\n\n与此同时你的血量以血上限的每##10%##来被分割成小格，每受任意一次伤害移除整个格。同时每击杀##3##名敌人回复一格且免伤##1##秒。\n\n水蛭安瓶能够持续##6##秒钟并且有##40##秒冷却。\n\n你打包尸体和与人质互动的速度加快##75%##。",
+
+		--Better Description in Chinese
+		["menu_st_spec_6_desc"] = "骗术师是一个多面手，他和犯罪这个词一样古老。\n\n说真的，骗术师是无所不能的。他能偷会盗、花言巧语，一两句话就能将一个滔天大罪瞒天过海。他一生都以欺骗和犯罪为活。",
+		["menu_st_spec_4_desc"] = "浪人是无声无息的罪犯。各种无声且致命的技巧都是他的招牌。诡计多端的浪人经常被雇佣来做一些见不得人的勾当，比如偷窃，暗杀等等。\n\n诡计多端是浪人的代名词——力量不够，技术来凑。",
+		["menu_st_spec_5_desc"] = "杀手是精通各种杀人手段的行家。对于犯罪团伙来说，杀手一般被雇佣来刺杀敌对团伙的首脑，从而确保自己的统治。",
+		["menu_st_spec_2_desc"] = "肌肉男一般都是受雇于黑帮老大，用最暴力的手段向其他人或帮会传递一些信息的危险人物。他们也是所有犯罪团伙的核心。\n\n当你需要一些暴力手段比如打断腿、敲破脑壳以及其他一些方法来提醒其他人谁才是老大的时候，肌肉男是你的不二选择。",
+		["menu_st_spec_1_desc"] = "领队，有些时候也被称之为头目，是绝大部分犯罪团伙的组织者。领队一般都是带领一些喽啰并听命于犯罪团伙的高层领导，完成领导安排的任务。\n\n当犯罪团伙有某些事情要解决的时候，领队与他的喽啰们确保这些事情解决的干净利落。",
+		["menu_st_spec_3_desc"] = "军械士曾经是军队里的专家。他们的工作主要是维护和升级各类防弹衣和护甲。\n\n任何有野心的犯罪团伙都会有一名军械士来确保所有的团伙成员在进行犯罪活动时得到最佳的保护。",
+		["menu_st_spec_7_desc"] = "窃贼的天生敏捷可不是仅限于溜门撬锁而已。窃贼们潜入中的移动速度都比其他人快上许多。\n\n他们在战斗中更难被击中，对窃贼来说，生存的信条就是避开交战，远走高飞。",
+		["menu_st_spec_10_desc"] = "幸运的本质难以捉摸。古希腊人相信运气是由神赐予的。但是与其说是一种天赋，不如说它是一种能力。这种能力需要你做万全的打算，同时对即将发生的事有一定的计划，才能让你在每一次行动中如有神助。真正的赌徒是无论手里有什么牌都会想方设法打赢的玩家。\n\n赌徒天赋是辅助型天赋之一，虽然任何人都可以让团队赢，但是赌徒可以让团队的胜利更加完美。",
+		["menu_st_spec_8_desc"] = "渗透者一般受雇与政府机构或是大型商业公司，用来刺探机密情报或是获取竞争对手的商业机密。\n\n渗透者是近距离格斗的好手，懂得利用环境来逆转劣势。",
+		["menu_st_spec_9_desc"] = "反社会者是公认最有效率的犯罪者，效率高到大型犯罪团伙都对他另眼相看。\n\n胆大包天，毫无感情且凶狠毒辣使得反社会者经常在最暴力的案件中现身。不知负罪感为何物使得反社会者成为最危险的罪犯。",
+		["menu_st_spec_11_desc"] = "一个典型的冲锋手是属于闷声干实事的那种类型，他们可以控制现场的突发状况并扭转不利局面。\n\n冲锋手顾名思义就是永远冲在最前面，承担最多的那个人。他是那种能对敌人造成大量的伤害同时也能承担大量的伤害的狠角色。",
+		["menu_st_spec_13_desc"] = "前总统帮是最勇敢无畏的帮会之一。一群热爱挑战极限的人们组成了这个帮会。同样的理想使得帮会成员之间亲如手足。\n\n前总统帮的成员们的最高信条是完成尾崎八项挑战，通过完成一系列最高难度的极限挑战来达到自然与天性的平衡。",
+		["menu_st_spec_14_desc"] = "瘾君子是一群不知危险为何物的人物。在勇往直前大杀四方的时候，所有的团队成员都会受到瘾君子的影响而获得一层临时护盾。",
+		["menu_st_spec_15_desc"] = "无政府主义者一直都在与极权统治对抗。他们对国王，女王或总统都嗤之以鼻。无拘无束是他们的座右铭。无政府主义者不相信那些被他们称之为被操纵的真相的东西，他们走自己的非常规路线，用他们自己的方法来完成那些几乎不可能完成的任务。",
+		["menu_st_spec_17_desc"] = "首脑是真正的大亨，大亨中的大亨，所有人都得听命于他。首先你得有钱，有钱就会有权。但是你要记住：在这个世界上，想成大事？你得有种！",
+		["menu_st_spec_18_desc"] = "刺客是每一个贩毒团伙中必不可少的一份子。刺客用最简单的方法来处理最复杂的问题，无论是什么样的情况，刺客都能确保完成任务。",
+		["menu_st_spec_19_desc"] = "你是一面无法被摧毁的墙。意识上的修炼可以使修士轻松面对许多让其他人惊慌失措的局面。佛教徒传授的呼吸控制法和物我两忘的技巧可以让你在最恶劣的环境下生存最长的时间。",
+		["menu_st_spec_20_desc"] = "一个好汉三个帮，好东西需要分享！比如能增强属性的电子烟！让你与你的朋友联系更加紧密，无论是在抢劫银行还是在大杀四方。",
+		["menu_st_spec_16_desc"] = "在世界范围内，飞车党都家喻户晓和臭名远扬。想成为飞车党的一员你必须忠诚且强硬，并且全面遵守飞车党的规定。飞车党是一群冷血且暴力的恶棍，敢于挑战拦在他们路上的一切。",
+		["menu_st_spec_12_desc"] = "极道是世界上最恶名昭著的犯罪团伙。由组长和若头组成的领导层控制着整个组织。极道以严于律己的信条，高度的组织性及遍布全身的文身而广为人知。",
+		["menu_st_spec_21_desc"] = "靠你的聪明才智和得力工具，你只需轻轻一按就能使任何安保系统陷入瘫痪。你永远不会被摄像头或保安发现，但是事情一旦闹大，你也可以轻易骇入敌人的通讯系统，给所有的敌人来一个小小的惊喜。",
+		["menu_st_spec_22_desc"] = "你在战斗中是个有选择的寄生虫，吸收敌人的力量来强化你和你的队友。不过，你对砖厕里的玩意可不屑一顾。你能够发泄你的痛苦并且将这份斗气加强到你的队友身上。",		
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "白板",
@@ -3650,7 +3819,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["rpd_menu_button"] = "重置天赋牌组",
 		["rpd_menu_dialog_title"] = "你确定吗？",
-		["rpd_menu_dialog_text"] = "如果你重置 $perk_deck_name 天赋，你会被返还 $points_to_refund 天赋点。"
+		["rpd_menu_dialog_text"] = "如果你重置 $perk_deck_name 天赋，你会被返还 $points_to_refund 天赋点。",
+
+		--MOD PERK DECKS
+			--OFFYERROCKER'S MERCENARY PERK DECK
+				["menu_deck_kmerc_1_desc_sc"] = "Years of battle have made your skin tough. Take greatly reduced damage from heavy hits to your health so that ##no single attack can kill you##.\n\nYou gain ##5%## more health.",
+				["menu_deck_kmerc_3_desc_sc"] = "Stand strong and meet force with force! Gain ##1%## critical chance for every ##20## points of armor you have.\n\nYou gain ##10%## more armor.",	
+				["menu_deck_kmerc_5_desc_sc"] = "When your health would become ##0##, it becomes ##1## instead and you gain ##2## seconds of invulnerability.\n\nYou cannot sprint while under the effects of this invulnerability.\nThis effect cannot occur again until you are restored to full health.\n\nYou gain an additional ##5%## more health.",
+				["menu_deck_kmerc_7_desc_sc"] = "The inner layer of your armor is lined with coagulant agents and hemostatic gel. After having armor for at least ##2## seconds, heal health equal to ##1%## of your max armor every ##5## seconds so long as you have armor.",
+				["menu_deck_kmerc_1_desc_sc"] = "Take greatly reduced damage from heavy hits to your health so that no single attack can kill you.\n\nYou gain ##5%## more health.",
+				["menu_deck_kmerc_3_desc_sc"] = "You gain ##10%## more armor.\n\nYour armor recovery rate is increased by ##10%##.",	
+				["menu_deck_kmerc_5_desc_sc"] = "When your health would become ##0##, it becomes ##1## instead and you gain ##2## seconds of invulnerability.\nYou cannot sprint while under the effects of this invulnerability.\nThis effect cannot occur again until you are restored to full health.\n\nYou gain an additional ##5%## more health.",
+				["menu_deck_kmerc_7_desc_sc"] = "After having armor for at least ##2## seconds, heal health equal to ##1%## of your max armor every ##5## seconds so long as you have armor.",
+				["menu_deck_kmerc_9_desc_sc"] = "Whenever you take damage to your health that leaves you at ##30%## health or less, regain ##50%## of that damage as armor.\nThis cannot occur more than once every ##1## second or from the same hit that triggers Walk It Off's (Card 5) invulnerability.",
+
+			--OFFYERROCKER'S LIBERATOR PERK DECK
+				["menu_deck_liberator_1_desc_sc"] = "Unlocks the ##Survival Syringe## for use in place of a throwable. Using the Survival Syringe will immediately restore ##15## stamina and restore ##0.5## points of health every second for ##4## seconds or until the player takes health damage.\nThe Survival Syringe has ##1## charge with a cooldown of ##30## seconds; each kill you perform will reduce the cooldown by ##1## second.",
+				["menu_deck_liberator_3_desc_sc"] = "The health regen from the Survival Syringe now lasts for an additional ##2## seconds.\n\nWhen health regen from Survival Syringe is canceled, gain ##10%## damage resistance for the remaining time.",
+				["menu_deck_liberator_5_desc_sc"] = "The Survival Syringe restores an additional ##15## stamina and restores an additional ##0.5## points of health every second.\n\nYour dodge is increased by ##5## points.",
+				["menu_deck_liberator_7_desc_sc"] = "Your health is increased by ##10%##.\n\nThe health regen from Survival Syringe now lasts for an additional ##2## seconds.",
+				["menu_deck_liberator_9_desc_sc"] = "The Survival Syringe now restores an additional ##1## point of health every second."
 
 		--[[ Original Blank Perk Deck--
 		["menu_st_spec_0"] = "空白天赋",	

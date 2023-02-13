@@ -1598,6 +1598,7 @@ function CopActionWalk:_play_nav_link_anim(t)
 	self._end_of_path = nil
 	self._curve_path_end_rot = nil
 	self._nav_link_rot = nil
+	self._chk_stop_dis = nil
 
 	self:_advance_simplified_path()
 

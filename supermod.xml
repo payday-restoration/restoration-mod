@@ -44,32 +44,21 @@
 				<file :name="ene_fbi_3.unit"/>
 				<file :name="ene_fbi_3_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_hvh/characters/ene_cop_hvh_3/">
+				<file :name="ene_cop_hvh_3.model"/>
+			</group>
+			<group :name="pd2_dlc_hvh/characters/ene_fbi_hvh_3/">
+				<file :name="ene_fbi_hvh_3.model"/>
+				<file :name="ene_fbi_hvh_3.unit"/>
+				<file :name="ene_fbi_hvh_3_husk.unit"/>
+			</group>
 			<group :name="pd2_dlc_pent/characters/">
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1.unit"/>
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
 			</group>
-			<group :name="pd2_dlc_usm2/weapons/">
-				<file :name="wpn_npc_deagle/wpn_npc_deagle.cooked_physics"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle.material_config"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle.model"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle.object"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle.sequence_manager"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle_df.texture"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle_nm.texture"/>
-				<file :name="wpn_npc_deagle/wpn_npc_deagle.unit"/>
-				
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc.cooked_physics"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc.material_config"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc.model"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc.object"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc.sequence_manager"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc_df.texture"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc_nm.texture"/>
-				<file :name="wpn_npc_sko12_conc/wpn_npc_sko12_conc.unit"/>
-			</group>			
-			<!--
+		<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
 				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>
 				<file :name="gen_interactable_sec_safe_1x1_titan.unit"/>

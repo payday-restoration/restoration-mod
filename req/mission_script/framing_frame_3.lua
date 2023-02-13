@@ -5,5 +5,27 @@ return {
 			base_delay = 15,
 			base_delay_rand = 15
 		}
+	},
+	-- Always have 3 power boxes to defend regardless of difficulty
+	[104661] = {
+		values = {
+			amount = 3
+		}
+	},
+	[105352] = {
+		values = {
+			amount = 3
+		}
+	},
+	-- fix the invincible guard
+	[105930] = {
+		values = {
+			enabled = false
+		}
+	},
+	[105929] = {
+		values = {
+			enabled = false
+		}
 	}
 }

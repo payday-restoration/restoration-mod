@@ -26,8 +26,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModHUDOptionsButtonDescID"] = "레스토레이션의 HUD & UI 옵션",
 		["RestorationModOTHEROptionsButtonTitleID"] = "추가 레스토레이션 모드 옵션",
 		["RestorationModOTHEROptionsButtonDescID"] = "추가 레스토레이션 모드 옵션",
-		["RestorationModWeaponHandlingOptionsButtonTitleID"] = "+++ 무기 핸들링 토글 +++",
-		["RestorationModWeaponHandlingOptionsButtonDescID"] = "무기 핸들링에 관한 옵션",		
+		["RestorationModWeaponHandlingOptionsButtonTitleID"] = "++ 무기 핸들링 옵션 ++",
+		["RestorationModWeaponHandlingOptionsButtonDescID"] = "무기 핸들링에 관한 추가 옵션",		
 		["RestorationModUIOptionsButtonTitleID"] = "알파 UI",
 		["RestorationModUIOptionsButtonDescID"] = "알파 UI 옵션",
 		["RestorationModTimeOfDayTitleID"] = "신규 + 랜덤 시간대",
@@ -124,53 +124,60 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_survive_one_hitDescID"] = "이 특정 기술의 트래커를 활성화하거나 비활성화합니다.",
 		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "의료 가방 체력 회복",
 		["RestorationModInfo_doctor_bag_health_regenDescID"] = "의료 가방 체력 회복 트래커를 활성화하거나 비활성화합니다.",
+
+		--EXTRA OPTIONS		
 		["RestorationModAltLastDownColorTitleID"] = "대체된 마지막 다운 컬러 그레이딩",
 		["RestorationModAltLastDownColorDescID"] = "마지막 다운 컬러 그레이딩을 color_sin_classic으로 전환합니다.",
 		["RestorationModNoBleedoutTiltTitleID"] = "최후의 저항 카메라 기울기 비활성화",
-		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",
-		["RestorationModADSTransitionStyleTitleID"] = "ADS 스타일",
-		["RestorationModADSTransitionStyleDescID"] = "조준 할 때의 \"애니메이션\" 스타일을 변경합니다.",
+		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",	
 		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
-		["RestorationModGCGPYPMMSACDescID"] = "일부 부착물이 제공하는 예광탄과 탄약 재생을 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
-		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
-		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",		
-		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
-		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
+		["RestorationModGCGPYPMMSACDescID"] = "블래스터 예광탄, 탄약 재생 및 번역된 이스터 에그를 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",		
 		["RestorationModAutoDMRsTitleID"] = "지정사수 소총 항상 완전 자동 사격으로 시작",
-		["RestorationModAutoDMRsDescID"] = "발사 선택기가 있는 모든 지정사수 소총이 완전 자동으로 시작할지 여부를 전환합니다.",		
+		["RestorationModAutoDMRsDescID"] = "반자동 및 완전 자동 발사 모드가 있는 모든 지정사수 소총이 완전 자동으로 시작할지 여부를 전환합니다.",		
 		["RestorationModSprintCancelTitleID"] = "위기모면 에이스 효과 재장전 취소",
 		["RestorationModSprintCancelDescID"] = "\"회피\" 스킬를 에이스 찍었을 때 '전력 질주 시작'이 진행 중일때 재장전을 취소할지 여부를 정합니다. 전력 질주하는 동안의 재장전은 영향을 받지 않습니다.",	
 		["RestorationModSevenHoldTitleID"] = "토클 상호작용 (Press2Hold)",
 		["RestorationModSevenHoldDescID"] = "상호 작용 키가 토글 역할을 하는지 여부를 활성화하거나 비활성화합니다.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "배치물 취소 상호 작용",
 		["RestorationModSevenHoldDeployCancelDescID"] = "배치물 키가 토글 상호 작용을 취소하는 데 사용되는지 여부를 활성화하거나 비활성화합니다. 효과를 보려면 토클 상호작용을 활성화해야 합니다.",
-		["RestorationModQueuedShootingTitleID"] = "사격 입력 대기",
-		["RestorationModQueuedShootingDescID"] = "오버샘플링을 지원하기 위해 반자동 무기에 대한 사격 입력 대기열을 활성화하거나 비활성화합니다.",
-		["RestorationModQueuedShootingWindowTitleID"] = "사격 입력 대기 감도",
-		["RestorationModQueuedShootingWindowDescID"] = "무기의 발사 시간 지연 %을 기준으로 사격 입력이 대기열에 들어가는 시간을 결정합니다. 더 높은 값 = 더 빠른 대기열",
-		["RestorationModQueuedShootingExcludeTitleID"] = "사격 입력 대기 속도 제한",
-		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도 (RPM) *이상으로* 발사하는 무기의 사격 입력 대기를 제한합니다.",		
+		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
+		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
+		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
+		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
+			["base_wpn_cat"] = "기본/스킬 카테고리로 나누기",
+			["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",		
+		
+		--WEAPON HANDLING
+		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
+		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
+		["RestorationModCarpalTunnelTitleID"] = "반동 자동 복구 활성화",
+		["RestorationModCarpalTunnelDescID"] = "반동 자동 복구 메커니즘이 작동하는 방식을 선택합니다. 활성화된 버전은 다르게 밸런스가 되어 있습니다.",
+			["rr_off"] = "비활성화",
+			["rr_per_weapon"] = "무기에 따라",
+			["rr_full"] = "전부",		
+		["RestorationModQueuedShootingTitleID"] = "발사 입력 버퍼",
+		["RestorationModQueuedShootingDescID"] = "오버샘플링(무기가 발사할 수 있는 것보다 빠르게 발사)을 지원하기 위해 반자동 무기에 대한 발사 입력 버퍼링을 활성화/비활성화합니다.",
+		["RestorationModQueuedShootingWindowTitleID"] = "발사 입력 대기 감도 버퍼",
+		["RestorationModQueuedShootingWindowDescID"] = "무기 발사 시간 지연의 %에 따라 버퍼링할 발사 입력 시간을 결정합니다. (높은 값 = 초기 버퍼)",
+		["RestorationModQueuedShootingExcludeTitleID"] = "발사 속도 입력 제한 버퍼",
+		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도(RPM) *이상으로* 발사하는 무기에 대한 발사 입력의 버퍼링을 제한합니다.",		
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
 		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬 없이 주 무기로 쓰러질 때 소생 시 강제 무기 교체를 비활성화합니다.",
 		["RestorationModSecondSightSprintTitleID"] = "전력 질주 버튼 누르는 동안 보조 조준기 전환",
-		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다.\n활성화된 가젯은 U232 이전처럼 전환할 수 있지만 조준 도중에는 전력 질주를 할 수 없습니다.",		
+		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다.\n활성화된 가젯은 U232 이전처럼 전환할 수 있지만 조준 도중에는 전력 질주를 할 수 없습니다.",
+		["RestorationModADSTransitionStyleTitleID"] = "ADS 스타일",
+		["RestorationModADSTransitionStyleDescID"] = "조준하는 전환 스타일을 변경합니다.",
+			["vanilla_on_rails"] = "기본/온레일",
+			["kf_mw_style"] = "킬링 플로어 1/콜 오브 듀티 스타일",
+			["tilt_in"] = "기울임",		
 		["RestorationModAimDeploysBipodTitleID"] = "정조준 상태에서 양각대 펼치기",
 		["RestorationModAimDeploysBipodDescID"] = "유효한 표면 위에 정조준을 할 때 양각대 자동 거치을 활성화하거나 비활성화합니다.",
 		["RestorationModMoveCancelBipodTitleID"] = "움직일때 양각대 분리",
 		["RestorationModMoveCancelBipodDescID"] = "움직일때 양각대를 분리하는걸 활성화하거나 비활성화합니다.",
 		["RestorationModSeparateBowADSTitleID"] = "별도 방식의 활 조준",
-		["RestorationModSeparateBowADSDescID"] = "활로 화살을 당길 때 강제 조준을 비활성화합니다. 활성화된 동안 재장전 키를 눌려 당긴 화살을 놓습니다.",		
-		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
-		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
-
-		["vanilla_on_rails"] = "기본/온레일",
-		["kf_mw_style"] = "킬링 플로어 1/콜 오브 듀티 스타일",
-		["tilt_in"] = "기울임",
-
-		["base_wpn_cat"] = "기본/스킬 카테고리로 나누기",
-		["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",
+		["RestorationModSeparateBowADSDescID"] = "활로 화살을 당길 때 강제 조준을 비활성화합니다. 활성화된 동안 재장전 키를 눌려 당긴 화살을 놓습니다.",
 		
 		["default"] = "기본",
 		["random"] = "랜덤",
@@ -436,7 +443,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["menu_asset_wet_intel"] = "정보",
 		["menu_asset_risk_murky"] = "머키워터 용병들",
-		["menu_asset_risk_bexico"] = "연방경찰",
+		["menu_asset_risk_bexico"] = "연방 경찰",
 		["menu_asset_risk_zombie"] = "조옴비들의 대으응",
 		["menu_asset_wet_boat"] = "보트",
 		["menu_asset_wet_boat_desc"] = "전리품 확보 및 탈출 할 수 있는 보트를 삽니다",
@@ -546,7 +553,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_unforsaken_desc"] = "이 전설적인 마스크는 커뮤니티의 헌신, 이해 및 지속적인 지원에 대한 감사의 표시입니다. 오버킬 팀원에게 - 우리는 당신에게 경의를 표합니다.\n\n두꺼운 것과 얇은 것을 사이로 그 헬멧을 날리십시오.",
 
 		["bm_msk_chains_halloween"] = "샤터 실드",
-		["bm_msk_chains_halloween_desc"] = "당신이 무적이거나 멈출 수 없다고 느끼더라도 고용된 용병이 되면 많은 고통과 죽음을 보게 됩니다... 때때로 모든 것이 당신을 괴롭히기 위해 되돌아오죠.\n\n2008년의 아름답고 밝고 눈이 내리는 10월 오후, 체인스는 잠을 자고 있었습니다. 머키워터 대신하여 암살 의뢰를 막 마친 그는 힘든 일을 하고 급여를 받았으며 잠을 잘 수 있는 멋진 호텔 방을 얻었습니다.\n\n몇 년 만에 처음으로 그는 악몽에 시달렸습니다. 그는 그것이 무엇인지 기억할 수 없지만 깨어나보니 몸이 마비되었고, 그 위에 사람보다 더 해골 같은 형체가 서 있었고 몸을 움직일 수 없었습니다.\n\n그 날 이후 총을 들 때마다 다음 밤은 불안하고 끔찍해졌습니다.\n\n결국 그는 '그만하라'고 말해야 했고. 용병 사업에서 나와 치료사를 만났습니다. 약이 도움이 되었고 덕분에 1년은 잘 살았습니다...\n\n정확히 1년 후인 2009년 10월 31일 머키워터는 자신의 삶을 고친 사람이 비밀을 폭로하고 회사를 해칠 것이라고 확신했습니다. 그들은 그렇게 냅둘 순 없었습니다.\n\n범죄 생활에 휘말린 체인스는 결국 자신을 지키기 위해 다시 군인이 됩니다.\n\n그런데 이번에는 달랐습니다. 악몽과 수면마비는 돌아오지 않았고. 그는 다른 사람들에게 상처를 주려고 나온 것이 아닙니다.\n\n이번에는 자기 자신을 보호하는 것이었습니다.",
+		["bm_msk_chains_halloween_desc"] = "당신이 무적이거나 멈출 수 없다고 느끼더라도 고용된 용병이 되면 많은 고통과 죽음을 보게 됩니다... 때때로 모든 것이 당신을 괴롭히기 위해 되돌아오죠.\n\n2008년의 아름답고 밝고 눈이 내리는 10월 오후, 체인스는 잠을 자고 있었습니다. 머키워터 대신하여 암살 의뢰를 막 마친 그는 힘든 일을 하고 급여를 받았으며 잠을 잘 수 있는 멋진 호텔 방을 얻었습니다.\n\n몇 년 만에 처음으로 그는 악몽에 시달렸습니다. 그는 그것이 무엇인지 기억할 수 없지만 깨어나보니 몸이 마비되었고, 그 위에 사람보다 더 해골 같은 형체가 서 있었고 몸을 움직일 수 없었습니다.\n\n그 날 이후 총을 들 때마다 다음 밤은 불안하고 끔찍해졌습니다.\n\n결국 그는 '그만하라'고 말해야 했고. 용병 사업에서 나와 치료사를 만나 약을 처방하게 되었고 이게 도움이 되어 덕분에 1년은 잘 살았습니다...\n\n정확히 1년 후인 2009년 10월 31일 머키워터는 자신의 삶을 고친 사람이 비밀을 폭로하고 회사를 해칠 것이라고 확신했고 그들은 그렇게 냅둘 순 없었습니다.\n\n범죄 생활에 휘말린 체인스는 결국 자신을 지키기 위해 다시 군인이 됩니다.\n\n그런데 이번에는 달랐습니다. 악몽과 수면마비는 돌아오지 않았고. 그는 다른 사람들에게 상처를 주려고 나온 것이 아닙니다.\n\n이번에는 자기 자신을 보호하는 것이었습니다.",
 
 		["bm_msk_dallas_halloween"] = "괴물의 반사",
 		["bm_msk_dallas_halloween_desc"] = "거짓 신원, 거짓말, 이야기를 구성하는 데 너무 많은 세월을 보내다 보면 자신을 잃어버리기 시작합니다.\n\n당신은 당신의 다양한 친구, 연인, 친구로부터 특성과 특징을 선택하면서 사람에서 사람으로 빠자기 시작합니다. 아마도 그것들이 서로 섞이기 시작하고, 당신은 융합처럼 느껴질 것입니다.\n\n10월의 어느 날 아침, 달라스는 일어나 거울로 걸어갔습니다. 머리는 못생긴 금발로 염색했고 헝클어진 면도를 했습니다. 쉼 없는 악몽의 땀으로 정장이 얼룩진 끈적끈적해졌고, 술에서 술로 넘어간 주말 후 욱신거리는 두통이 느껴졌습니다다.\n\n자신을 쳐다보면서 그가 생각할 수 있는 것은 그가 사람이라기보다 프랑켄슈타인의 괴물에 더 가깝다는 것뿐이었습니다. 그의 범죄 경력을 더 발전시키기에 충분할 만큼 충분히 설득력 있는 부분일 뿐입니다.\n\n전환점이 되었지만 때때로 그는 여전히 자신의 조각이 전부가 아니라는 느낌은 지울 수가 없습니다.",
@@ -654,7 +661,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_rush_asset_sentrygun_desc"] = "센트리 패키지를 구매합니다",
 
 		["heist_junker_name"] = "도그하우스",
-		["heist_junker_brief"] = "이건 블라드를 위한 작업이야. 분명히, 실패한 무역 거래는 그의 부하들과 그들이 가져온 물품을 나쁜 상황에 놓이게 만들고. 연방경찰은 거의 이 상황에 직면해 있지. 너희들을 해당 위치로 데려다 줄 차량이 준비되어 있고 백업을 제공할 수 있어. 우리는 지원 헬기를 확보하고 너희들과 필수품을 그곳에서 꺼낼거야.\n\n짧을 수도 있겠지만 경찰을 과소평가 하지말고. 장비를 가져가.",
+		["heist_junker_brief"] = "이건 블라드를 위한 작업이야. 분명히, 실패한 무역 거래는 그의 부하들과 그들이 가져온 물품을 나쁜 상황에 놓이게 만들고. 연방 경찰은 거의 이 상황에 직면해 있지. 너희들을 해당 위치로 데려다 줄 차량이 준비되어 있고 백업을 제공할 수 있어. 우리는 지원 헬기를 확보하고 너희들과 필수품을 그곳에서 꺼낼거야.\n\n짧을 수도 있겠지만 경찰을 과소평가 하지말고. 장비를 가져가.",
 		["heist_junk_name"] = "경계하는 눈",
 		["heist_junk_brief"] = "건설 지역이 바로 앞에 있어. 경찰은 아직 도착하지 않았지만 곧 올거야. 블라드의 부하들이 백업을 제공할 거지만 너무 오래 지속되지는 않을거야.\n\n보고에 따르면 현장에 마약 제조실이 분명히 있으니 블라드의 물건을 동시에 안전하게 보관할 수 있다면 약간의 추가 돈을 자유롭게 벌 수 있을거야.",
 		["junk_01"] = "현금과 마약을 보호하라",
@@ -916,6 +923,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "빠른 가방 운송을 위한 가방 짚라인을 삽니다",
+
+		--Heat Street Waypoints
+		["wp_heat_street_matt"] = "맷",
+		["wp_heat_street_eddie"] = "에디",
+		["wp_heat_street_jp"] = "제이크의 주차장",
+		["wp_heat_street_dl"] = "드레이크의 로딩",
+		["wp_heat_street_ba"] = "뒷골목",
+		["wp_heat_street_aa"] = "아미티지 AVE",
+		["wp_heat_street_bile"] = "바일",
+		["wp_heat_street_question"] = "?",
+		
+		--The Bomb: Forest Breifing
+		["heist_crojob3_briefing"] = "오늘 아침에 열기압 폭탄이 열차에 실렸다고 해. 노퍽으로 향하는 열차인데 아마도 누가 그걸 사거나, 해체를 할지도 모르지, 하지만 그건 별로 상관없어, 왜냐면 도착하지 못할 거니까. 움직이는 기차를 멈추는 건 어렵지만 옛날 서부 방식을 사용할 거야. 다리의 일부분을 날려 버리면 통째로 굴러떨어지겠지. 시끄럽고 지저분할지는 몰라도 하지만 효과적이야. 열차는 사방팔방 흩어질 거야. 그 중 하나의 금고에 우리의 폭탄이 실려있을 테니 전부다 살펴보고 가져와.\n\n자칼의 충고:\n현장 근처에 있는 리퍼 팀을 감지했어. 아무래도 아칸이 저 폭탄을 원하는 것 같다. 문제 일으킬 준비를 하라고.",		
 		
 		["heist_skm_watchdogs_stage2_briefing"] = "미아 칼리엔테는 살아있는 물건이 될걸세. 친구들, 그녀는 수년 동안 DC에서 머키워터의 작전 뒤에 있는 두뇌 역할을 하고 있었지. 얼마 전 머키워터는 어느 부두의 창고를 인수하여 추가 유통 지점으로 사용하고 있다네, 우리의 목표는 그들이 최근 해외에서 약탈한 전리품들을 확인하는 것이지. 거기에 들어가서 그 애새끼를 잡고 인질로 삼을걸세. 머키들은 그녀를 잃을 순 없을테니 그녀를 구하기 위해 우리에게 돈을 줄 것이라네. 아마도 앞서 언급한 좀 더 가치 있는 약탈품을 줄까?, 자네들의 생각은 어떨세?"		
 	})
@@ -1088,20 +1108,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복, 적, 방패, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",		
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5## 미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 탄은 #{skill_color}#폴오프가 없지만## #{important_1}#헤드샷을 할 수 없습니다.##",
 		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#피해량을 증가시키는## 더 크고 무거운 펠릿 #{important_1}#6발##을 발사합니다.",
-		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#15%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 3초에 걸쳐 #{heat_warm_color}#96##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리가 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#30%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#120##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#40%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#180##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## 잠재적으로 스턴시키고 2초에 걸쳐 #{heat_warm_color}#240##의 피해를 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#15%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#96##까지 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리가 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#30%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#120##까지 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#40%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#180##까지 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "#{skill_color}#50%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#240##까지 주는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 입힙니다.##",
 		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",		
-		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{skill_color}#1##초에 걸쳐 #{stats_positive}#30##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
-		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{skill_color}#2##초에 걸쳐 #{stats_positive}#120##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
-		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{skill_color}#3##초에 걸쳐 #{stats_positive}#180##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
-		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{skill_color}#4##초에 걸쳐 #{stats_positive}#240##의 독 피해를 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",		
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{skill_color}#2##초에 걸쳐 독 피해를 #{stats_positive}#30##까지 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
+		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{skill_color}#4##초에 걸쳐 독 피해를 #{stats_positive}#120##까지 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
+		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{skill_color}#6##초에 걸쳐 독 피해를 #{stats_positive}#180##까지 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",
+		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{skill_color}#8##초에 걸쳐 독 피해를 #{stats_positive}#240##까지 입히고 적을 스턴 시키는 #{stats_positive}#독이 발려져있는 벅샷##을 발사합니다.\n\n#{risk}#지속 시간은 사거리 내에서 멀어질 수록 감소합니다.##",		
 		--["bm_wp_upg_a_piercing_auto_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#96##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		--["bm_wp_upg_a_piercing_semi_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#120##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		--["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#180##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		--["bm_wp_upg_a_piercing_heavy_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#240##의 출혈 피해를 입히는 #{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
-		--["bm_wp_upg_a_piercing_auto_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",		
@@ -1154,14 +1174,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4"] = "중거리 조준경.\n#{risk}#4x 배율.##",
 		["bm_wp_upg_o_4_cod"] = "중거리 조준경.\n#{skill_color}#정지 전원##이 필요로 할때 전원은 어디에 있습니까?\n#{risk}#4x 배율.##",	
 		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#4x 배율.##",
-		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기이 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
-		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
+		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기가 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
+		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
+		["bm_wp_upg_o_4_rds_mount"] = "상단에 장착된 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{risk}#6x 배율.##",
 		["bm_wp_upg_o_6_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#6x 배율.##",
 		["bm_wp_upg_o_8"] = "원거리 조준경.\n#{risk}#8x 배율.##",
 		["bm_wp_upg_o_8_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#8x 배율.##",
+		
+		["bm_wp_upg_o_iwelo"] = "플로팅 조명 조준점이 있는 발광 광학 조준기\n#{risk}#1.1x 배율.##",
+		["bm_wp_upg_o_iwrds"] = "정밀한 레드 닷 조준기.\n#{risk}#1.5x 배율.##",
+
+		["bm_wpn_fps_upg_o_hamr"] = "삼각 SCRW 조준경",		
 
 		["bm_wp_upg_o_shortdot_dmc"] = "숏닷 조준경",
 		["bm_wp_upg_o_5_default"] = "원거리 조준경.\n기본 저격소총의 조준경 십자선을 수정할 수 있도록 부착합니다.\n#{skill_color}#5x 배율.##",
@@ -1180,17 +1206,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_magnifier_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 확대경을 위/아래로 올리거나 내립니다.\n#{skill_color}#3x 배율.##",
 
 		--'Nade Launchers--
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이고 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 #{skill_color}#120##의 피해를 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이고 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 #{skill_color}#80##의 피해를 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이며 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 #{skill_color}#40##의 피해를 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이고 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 피해를 #{skill_color}#120##까지 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이고 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 피해를 #{skill_color}#80##까지 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "충돌 지점에 #{heat_warm_color}#불 지대를 생성하는## 유탄을 발사합니다.\n지대의 반경은 #{skill_color}#3.75m##이며 #{skill_color}#5##초 동안 지속되며 그 안에 서 있는 적들에게 초당 피해를 #{skill_color}#40##까지 입히며 일정 확률로 불을 붙이고 패닉 상태에 빠트려 #{skill_color}#3##초에 걸쳐 추가로 #{skill_color}#60##의 피해를 줍니다.",
 		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "충돌 지점에 #{risk}#폭발하는## 유탄을 발사합니다. 폭발은 #{skill_color}#720##의 피해를 주고 반경은 #{skill_color}#5##미터입니다.",
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "충돌 지점에 #{ghost_color}#전기 폭발을 생성하는## 유탄을 발사합니다. 폭발은 #{skill_color}#360##의 피해를 주고 반경은 #{skill_color}#5##미터이며 #{ghost_color}#일정 확률로 적을 감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "충돌 지점에 #{ghost_color}#전기 폭발을 생성하는## 유탄을 발사합니다. 폭발은 #{skill_color}#180##의 피해를 입히고 반경은 #{skill_color}#5##미터이며 일정 확률로 #{ghost_color}#적을 감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 #{ghost_color}#전기 폭발을 생성하는## 유탄을 발사합니다. 폭발은 #{skill_color}#300##의 피해를 주고 반경은 #{skill_color}#2.5##미터이며 일정 확률로 #{ghost_color}#적을 감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_poison"] = "맨티코어-6 생화학탄",
-		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름을 생성하는## 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터, #{skill_color}#10##초 동안 머물며 #{skill_color}#8##초에 걸쳐 #{skill_color}#240##의 피해를 입히고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름을 생성하는## 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터, #{skill_color}#8##초 동안 머물며 #{skill_color}#6##초에 걸쳐 #{skill_color}#180##의 피해를 입히고, 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름을 생성하는## 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터, #{skill_color}#6##초 동안 머물며 #{skill_color}#4##초에 걸쳐 #{skill_color}#120##의 피해를 입히고, 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름을 생성하는## 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터, #{skill_color}#10##초 동안 머물며 #{skill_color}#8##초에 걸쳐 피해를 #{skill_color}#240##까지 입히고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름을 생성하는## 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터, #{skill_color}#8##초 동안 머물며 #{skill_color}#6##초에 걸쳐 피해를 #{skill_color}#180##까지 입히고, 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름을 생성하는## 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터, #{skill_color}#6##초 동안 머물며 #{skill_color}#4##초에 걸쳐 피해를 #{skill_color}#120##까지 입히고, 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "레어",
@@ -1338,7 +1364,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 말입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n발사 모드를 전환하면 #{skill_color}#증가된 발사 속도로## #{skill_color}#6발##을 전부 발사합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1360,6 +1386,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["kfa_scope"] = "KFA-2 스마트 링크 조준경",
 		["kfa_scope_desc"] = "당신의 마스크와 탑재될 수 있는 #{skill_color}#스마트 링크## 조준경 간의 인터페이스를 활성화할 수 있습니다.\n#{risk}#2x 배율##",
 		--SIG P320
+		["bm_w_papa320"] = "M19 권총",		
 		["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32발 탄창",		
 		
 		--Kobus 90--
@@ -1370,7 +1397,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_90_body_boxy_desc"] = "오래된 옴니아 창고의 황폐한 유적에서 복구된 이 프레임은 무기의 취급이나 기능에 아무런 차이가 없지만 블록과 같은 미학은 확실히 좋은 물건입니다.",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7 기관단총",
-		["bm_mp7_sc_desc"] = "경량 기관단총이자 Project-90 기관단총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달고 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 헤드샷의 피해량을 33%만큼 더 입힙니다.##",
+		["bm_mp7_sc_desc"] = "경량 기관단총이자 Project-90 기관단총의 경쟁자입니다. 어느 한 게임 때문에 언더베럴 유탄 발사기를 달 수 있다고 믿고 계셨겠지만 실제로는 언더베럴 유탄 발사기를 달 수 없습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 헤드샷의 피해량을 33%만큼 더 입힙니다.##",
 		--Tec-9
 		["bm_w_tec9"] = "T3K Urban 기관단총",
 		["bm_w_x_tec9"] = "아킴보 T3K Urban 기관단총",		
@@ -1378,7 +1405,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_scorpion_m_extended"] = "이중 탄창",		
 		--Compact-5/MP5
 		["bm_w_mp5"] = "Compact-5 기관단총",	
-		["bm_mp5_sc_desc"] = "Gewehr-3의 자매.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
+		["bm_mp5_sc_desc"] = "Gewehr-3 모델 중 막내.\n빠르고 정확하고 다루기 쉬우며 이 기관단총에게 무엇을 더 바랄 수 있겠습니까?",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "블라스테크 E-11 총열",
 		["bm_wp_sterling_b_e11_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#1초##\n재충전 속도: #{skill_color}#6초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#2초##",		
@@ -1392,7 +1419,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM SMGs
 		--LWRC
 		["bm_w_smg45"] = "TF Striker .45 기관단총",
-		["bm_w_smg45_desc"] = "AMP 45 기관단총의 미국 버전 복제품.",		
+		["bm_w_smg45_desc"] = "AMP 45 기관단총의 미국 버전 복제품입니다.",		
 		--Typhoon
 		["bm_w_crysis3_typhoon"] = "CRYNET Typhoon 기관단총",
 		["bm_w_crysis3_typhoon_desc"] = "\"가장 순수한 형태의 표현인데 #{important_1}#지금은 할 말이 많아.##\"\n\n#{risk}#중첩 장전 기술##을 사용하는 이 10총열 기관단총은 물집이 생길 정도로 빠른 속도로 납을 뱉어내 피해를 줍니다.\n\n보조 기능은 사거리를 감소하는 대신 10발의 일제사격을 합니다.",
@@ -1408,10 +1435,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Brenner-21 중기관총",
-		["bm_hk21_sc_desc"] = "Gewehr-3의 제일 작은 자매. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
+		["bm_hk21_sc_desc"] = "Gewehr-3 모델 중 제일 막내. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
 		--M60
 		["bm_w_m60"] = "M60 중기관총",
-		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관이 될 것입니다.",		
+		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.",		
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B 중기관총",
 		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
@@ -1425,9 +1452,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
 		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판, 이 기관총을 Compact-5 크기로 축소했습니다.",
 		--M134
-		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
+		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 		--Microgun
-		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n발사 전에 짧은 회전 기간이 있습니다. 조준 할 동안 무기 회전을 유지합니다.",
+		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 
 
 
@@ -1529,6 +1556,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_groza"] = "OB-14st Byk-1 소총",
 		["bm_groza_sc_desc_pc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_groza_sc_desc"] = "AK 계열의 불펍 자매, 좀 많은 폭발을 원하는 사람들에게 적합합니다.\n\n방탄복을 관통해 피해의 80%를 입하고 #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		--CHIKUBI
+		["bm_wp_tkb_m_bakelite"] = "시베리아 15x3 탄창",		
 		--Krinkov
 		["bm_w_akmsu"] = "Krinkov 소총",
 		["bm_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",
@@ -1551,6 +1580,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_nova4_sc_desc"] = "완전 자동 탄도 소총. 적당한 발사 속도는 안정성을 높혀주기 때문에 동급 최고의 명중률을 보여주고 중장거리 교전에 완벽합니다.",
 		["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "다음과 같은 특전을 부여합니다:\n#{heat_warm_color}#정밀도:##\n#{skill_color}#대미지 폴오프가 없는## 대신 연사력을 #{important_1}#감소시킵니다.##\n#{item_stage_2}#집중력:##\n명중률이 #{skill_color}#높아집니다.##",
 		["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "다음과 같은 특전을 부여합니다:\n#{heat_warm_color}#민첩함:##\n지향 사격 발사 속도는 #{skill_color}#증가하지만## 조준 도중 발사 속도는 #{important_1}#감소합니다##.\n#{item_stage_2}#안정함:##\n지향 사격의 확산이 #{skill_color}#감소합니다.##",
+		--VMP Honey Badger
+		--["bm_w_bdgr_desc"] = "",
+		--MW22 Honey Badger
+		["bm_w_mcbravo"] = "Chimera 소총",
+		["bm_w_mcbravo_desc"] = "#{skill_color}#통합 소음기##와 느리고 높은 운동력을 가진 아음속 #{risk}#.300 BLK## 탄을 사용하는 Chimera 소총은 근접 전투에 능숙합니다.",
+		--AR-18
+		["bm_w_ar18"] = "CAR-18 소총",		
 
 		--Galant--
 		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 #{skill_color}#탄창이 비었을때 빠르게 재장전합니다.\n\n방탄복을 관통해 피해의 80%를 입힙니다.##",				
@@ -1562,7 +1598,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",		
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
-		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 큰 자매, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
 		
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
@@ -1580,9 +1616,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",
+		--HCAR
+		["bm_w_hcar"] = "Akron HC 소총",
+		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 적 및 얇은 벽을 관통할 수 있습니다.##",		
 		
 		--Custom DMRs
-		--["bm_w_xeno"] = "MA14 Surge Rifle",	
+		--MCX Spear
+		["bm_w_mcx_spear"] = "Signature M5 소총",		
+		--["bm_w_xeno"] = "MA14 Surge 소총",	
 		["bm_xeno_sc_desc_pc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
 		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",
 		--VSS
@@ -1621,7 +1662,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
+		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		--Contender G2
+		["bm_contender_sc_desc"] = "",			
 		--Model 70
 		["bm_model70_sc_desc"] = "라이플맨의 소총. Repeater 1874 소총을 제작한 디자이너가 만든 초기 볼트 액션 디자인 소총입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SVD
@@ -1665,11 +1708,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_hmcar_hd_kit_desc"] = "응용 프로그램이 충돌했습니다: C++ 예외\nIDirect3D9::CreateTexture 호출이 실패했기 때문에 텍스처를 로드할 수 없습니다.\nDirect3D가 호출을 완료하는 데 충분한 메모리를 할당하지 못했습니다.\n\n\n\n\n\n\n ",		
 
 		--GL40		
-		["bm_w_gre_m79_sc_desc"] = "쿵하고 펑.\n\n#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 위/아래로 올리거나 내립니다.\n\n리프 조준기는 #{risk}#30미터에서 0으로 조정됩니다.##",			
+		["bm_w_gre_m79_sc_desc"] = "쿵하고 펑.\n\n#{skill_color}#$BTN_GADGET## 키를 눌러 #{skill_color}#30미터로## 영점 조정된 리프 조준기로 전환할 수 있습니다.",			
 		--3GL
 		["bm_ms3gl_sc_desc"] = "단일 챔버가 달린 맞춤형 40mm 유탄을 발사합니다. 전기 뇌관을 사용하여 발사되므로 소형 패키지에 신속한 후속 작업을 수행할 수 있습니다.\n\n발사 모드를 변경하면 #{skill_color}#유탄을 3점사로 발사 할 수 있습니다.##",
 		--PIGLET/M32
-		["bm_m32_sc_desc"] = "\"#{risk}#워 머신##\"이 되어 적에게 아무리 사랑이 있어도 이 6발의 회전하는 유탄 발사기로부터 적과 근처에 있는 사람들을 보호할 수 없다는 것을 보여주십시오.",		
+		["bm_m32_sc_desc"] = "\"#{risk}#워 머신##\"이 되어 적에게 아무리 사랑이 있어도 이 6발의 회전하는 유탄 발사기로부터 적과 근처에 있는 사람들을 보호할 수 없다는 것을 보여주십시오.",
+		--China Puff
+		["bm_w_china_sc_desc"] = "\"여긴 참 끔직한 동네구만!\"\n\n#{skill_color}#$BTN_GADGET## 키를 눌러 #{skill_color}#30미터로## 영점 조정된 리프 조준기로 전환할 수 있습니다.",		
 		--COMMANDO 101/M202 FLASH
 		["bm_ray_sc_desc"] = "이 4연장 #{heat_warm_color}#소이## 로켓 발사기로 \"#{risk}#그림 리퍼##\"가 되보십시오.\n\n로켓은 #{heat_warm_color}#화염 지대##를 남기고 이 무기로 가한 폭발 피해는 #{skill_color}#터렛을 즉시 파괴합니다.##",		
 
@@ -1678,6 +1723,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_bonus_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",	
 		["bm_menu_sms_info_cont"] = "또한 사격하는 동안 패널티가 2배로 증가합니다.",
+		["bm_menu_sms_info_cont_2"] = "현재 부착물로 인해 사격하는 동안 페널티가 2배로 증가합니다.",
 		["bm_menu_sms_info_2"] = " 만큼 사격하는 동안 감소합니다.",
 		["bm_menu_stat_sms_info_2"] = " 만큼 사격하는 동안 현재 개조물로 인해서 감소합니다.",		
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               사용하지 마시오              //////////\n",
@@ -1698,9 +1744,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#헤드샷 피해를 100%만큼 더 입힙니다.\n적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",		
 		["bm_bow_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고 떼면 발사합니다.\n화살을 최대로 당겨질 수록 화살의 대미지와 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
+		["bm_bow_exp_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고 떼면 발사합니다.\n화살을 최대로 당겨질 수록 화살의 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n화살은 충격 시 폭발합니다.",
+		["bm_w_bow_exp_desc"] = "충돌 시 폭발 반경이 #{skill_color}#1.5## 미터인 #{risk}#폭발성## 화살을 발사합니다.\n\n#{important_1}#화살 속도가 감소하고 회수할 수 없어 재사용이 불가능해지고 헤드샷이 불가능 해집니다.##",
+		["bm_w_bow_light_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#6##초 동안 독 피해를 #{stats_positive}#180##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",
+		["bm_w_bow_heavy_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#8##초 동안 독 피해를 #{stats_positive}#240##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",		
 		["bm_xbow_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
+		["bm_xbow_exp_sc_desc"] = "화살은 충격 시 폭발합니다.",
+		["bm_w_xbow_exp_desc"] = "충돌 시 폭발 반경이 #{skill_color}#1.5## 미터인 #{risk}#폭발성## 화살을 발사합니다.\n\n#{important_1}#화살 속도가 감소하고 회수할 수 없어 재사용이 불가능해지고 헤드샷이 불가능 해집니다.##",
+		["bm_w_xbow_light_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#6##초 동안 독 피해를 #{stats_positive}#180##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",
+		["bm_w_xbow_heavy_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#8##초 동안 독 피해를 #{stats_positive}#240##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",		
 		["bm_airbow_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
-		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 리프 조준기를 위/아래로 올리거나 내립니다.\n\n리프 조준기는 #{risk}#30미터에서 0으로 조정됩니다.##",
+		["bm_airbow_exp_sc_desc"] = "화살은 충격 시 폭발합니다.",
+		["bm_w_airbow_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#4##초 동안 독 피해를 #{stats_positive}#120##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",		
+		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 #{skill_color}#30미터로## 영점 조정된 리프 조준기로 전환할 수 있습니다.",
 		["bm_rocket_launcher_sc_desc"] = "이 무기로 가한 폭발 피해는 #{skill_color}#터렛을 즉시 파괴합니다.##",
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
 		["bm_hx25_buck_sc_desc"] = "12개의 펠렛을 광범위하게 발사합니다.\n\n여전히 유탄 발사기로 취급하여 관련 스킬의 효과를 받습니다.",
@@ -1808,11 +1864,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen"] = "끈적끈적한 녹색",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 소유했다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭에서 인멸되었고 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있지만 이 복장만은 파괴된 쓰레기 트럭 근처에 남았기 때문에 회수 되었습니다.",
 
+		--Menu Buttons--
+		["bm_menu_btn_sell"] = "무기 판매 ($price)",
+		["bm_menu_btn_buy_selected_weapon"] = "무기 구매 ($price)",
+
 		--New menu stats--
 		["bm_menu_damage_shake"] = "흔들림",
 		["bm_menu_deflection"] = "굴절",
 		["bm_menu_regen_time"] = "재생 지연",
-		["bm_menu_swap_speed"] = "스왑 시간",
+		["bm_menu_swap_speed"] = "교체 시간",
 		["bm_menu_pickup"] = "탄약 획득량",
 		["bm_menu_ads_speed"] = "조준 시간",
 		["bm_menu_reload"] = "재장전 시간",
@@ -1860,12 +1920,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_heavy_shot"] = "경산탄총",
 		["menu_break_shot"] = "중산탄총",
 		
-		["menu_smg"] = "기관총/기관단총",
-		["menu_smg_single"] = "기관총/기관단총",
-		["menu_lmg"] = "기관총/기관단총",
-		["menu_lmg_single"] = "기관총/기관단총",
-		["menu_minigun"] = "기관총/기관단총",
-		["menu_minigun_single"] = "기관총/기관단총",		
+		["menu_smg"] = "기관총",
+		["menu_smg_single"] = "기관총",
+		["menu_lmg"] = "기관총",
+		["menu_lmg_single"] = "기관총",
+		["menu_minigun"] = "기관총",
+		["menu_minigun_single"] = "기관총",		
 		["menu_light_smg"] = "경기관단총",
 		["menu_heavy_smg"] = "중기관단총",
 		
@@ -1873,8 +1933,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_assault_rifle_single"] = "소총",
 		["menu_snp"] = "소총",
 		["menu_snp_single"] = "소총",		
-		["menu_light_ar"] = "경소총",
-		["menu_heavy_ar"] = "중소총",
+		["menu_light_ar"] = "경돌격소총",
+		["menu_heavy_ar"] = "중돌격소총",
 		["menu_dmr_ar"] = "저정사수 소총",
 		
 		["menu_lmg"] = "기관총",
@@ -1902,8 +1962,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_bow"] = "활",
 		["menu_bow_single"] = "활",
-		["menu_crossbow"] = "쇠뇌",
-		["menu_crossbow_single"] = "쇠뇌",
+		["menu_crossbow"] = "활",
+		["menu_crossbow_single"] = "활",
 
 		["menu_akimbo"] = "아킴보+",
 		
@@ -1912,7 +1972,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_value"] = "가격:",
 
 		["st_menu_skill_use"] = "사용하는 스킬:",
-
+		
+		["st_menu_firemode"] = "발사모드:",
+		["st_menu_firemode_semi"] = "단발",
+		["st_menu_firemode_auto"] = "자동",
+		["st_menu_firemode_burst"] = "점사",
+		["st_menu_firemode_volley"] = "일제사격",
+		
 		["menu_reticle_dmc_eotech"] = "TECopt 풀",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA 도트",
 		["menu_reticle_dmc_eotech_seggs"] = "TECopt 세그먼트",
@@ -1926,10 +1992,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Blackmarket gui per-armor skill descriptions.
 		
-		["bm_menu_dodge_grace"] = "회피 시 최대 #{skill_color}#300ms##까지 더 긴 유예 시간을 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
+		["bm_menu_dodge_grace"] = "회피 시 유예 시간을 최대 #{skill_color}#0.3##까지 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
 		
-		["bm_menu_armor_grinding_1"] = "틱당 방탄복 재생량: $passive_armor_regen",
-		["bm_menu_armor_grinding_2"] = "틱당 방탄복 재생량: $passive_armor_regen \n공격 적중시 방탄복 재생량: $active_armor_regen",
+		["bm_menu_armor_grinding_1"] = "간격당 방탄복 재생량: $passive_armor_regen",
+		["bm_menu_armor_grinding_2"] = "간격당 방탄복 재생량: $passive_armor_regen \n적중 시 방탄복 재생량: $active_armor_regen",
 
 		["bm_menu_armor_max_health_store_1"] = "최대 체력 저장량: $health_stored",
 		["bm_menu_armor_max_health_store_2"] = "최대 체력 저장량: $health_stored \n처치 시 방탄복의 재생량: $regen_bonus%",
@@ -2081,22 +2147,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Community Frag 2
 		["bm_grenade_dada_com_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n\n인형의 외형이 내부의 구조물들을 감싸고 있고 고향의 힘을 과시합니다.",
 		--Snowball
-		["bm_grenade_xmas_snowball_desc"] = "대미지: #{skill_color}#240## \n범위: #{skill_color}#1m## \n충전 속도: #{skill_color}#5초마다 눈덩이 1개## \n\n물에 적시고, 냉장고에서 얼리면 죽여주는 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
+		["bm_grenade_xmas_snowball_desc"] = "대미지: #{skill_color}#240## \n범위: #{skill_color}#1m## \n충전 속도: #{skill_color}#25초마다 눈덩이 1개## \n\n물에 적시고, 냉장고에서 얼리면 죽여주는 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
 		--Zapper
 		["bm_grenade_electric_desc"] = "대미지: #{skill_color}#400## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n- #{skill_color}#대부분의 적들을 감전시킵니다.## \n\n파편 수류탄도 나름 괜찮지만, 뭔가를 지져야 한다면, 이 어여쁜 작은 친구야말로 실용적으로 고압 피해를 가할 수 있는 짐승 같은 녀석입니다.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "셈텍스 수류탄",
 		["bm_grenade_sticky_grenade_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#4m## \n기폭: #{skill_color}#3초## \n- #{risk}#부착 시 기폭 시간 재설정## \n\n사람을 포함한 대부분의 물체 표면에 들러붙는 투척용 폭발물입니다!",
 		--Molotov
-		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): #{heat_warm_color}#10초당 1200##\n대미지 (화염): #{heat_warm_color}#3초 동안 60## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#10초## \n기폭: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n부서지는 병과 인화성 액체와 불붙은 천으로 이루어져 있습니다. 간단하고, 저렴하지만, 매우 효과적입니다. 이걸로 전부 불태워 버리십시오.",
+		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): #{heat_warm_color}#10초당 1200까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 60씩## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#10초## \n기폭: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n부서지는 병과 인화성 액체와 불붙은 천으로 이루어져 있습니다. 간단하고, 저렴하지만, 매우 효과적입니다. 이걸로 전부 불태워 버리십시오.",
 		--Incendiary
-		["bm_grenade_fir_com_desc"] = "대미지 (화염 지대): #{heat_warm_color}#12초당 1440##\n대미지 (화염): #{heat_warm_color}#3초 동안 60## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#12초## \n기폭: #{skill_color}#2.5초## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n자연적으로 발화하는 인을 담은 수류탄입니다. 벽과 모퉁이을 이용해서 적에게 던지기 적합합니다.",
+		["bm_grenade_fir_com_desc"] = "대미지 (화염 지대): #{heat_warm_color}#12초당 1440까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 60씩## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#12초## \n기폭: #{skill_color}#2.5초## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n자연적으로 발화하는 인을 담은 수류탄입니다. 벽과 모퉁이을 이용해서 적에게 던지기 적합합니다.",
 		--Concussion
 		["bm_concussion_desc"] = "범위: #{skill_color}#10m## \n- 최대 #{skill_color}#4초## 동안 적을 스턴시킵니다.\n- #{skill_color}#7초## 동안 적의 명중률이 #{skill_color}#50%##만큼 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 도저 및 캡틴은 스턴 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 조금의 순간을 벌어줍니다.",
 		--Gas
 		["bm_grenade_poison_gas_grenade"] = "맨티코어-6 생화학 수류탄",
-		["bm_grenade_poison_gas_grenade_desc"] = "대미지: #{stats_positive}#10초당 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내 있는 대부분의 적들을 기절시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.##\n- #{important_1}#적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.## \n\n이 실험적인 생화학 무기는 특정 유전자형을 목표로 하는 독성 가스 구름을 광범위하게 방출합니다. 이 가스는 당신이나 당신의 팀원들에게는 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적들에게 치명적입니다.\n\n그야말로 전범이 선택한 무기인거야, 페코.",
-		["bm_grenade_poison_gas_grenade_desc_short"] = "대미지: #{stats_positive}#10초당 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내 있는 대부분의 적들을 기절시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.##\n- #{important_1}#적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.##",
+		["bm_grenade_poison_gas_grenade_desc"] = "대미지: #{stats_positive}#10초당 300까지## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내 있는 대부분의 적들을 기절시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.##\n- #{important_1}#적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.## \n\n이 실험적인 생화학 무기는 특정 유전자형을 목표로 하는 독성 가스 구름을 광범위하게 방출합니다. 이 가스는 당신이나 당신의 팀원들에게는 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험할 것이며 가장 강인한 적을 제외한 모든 적들에게 치명적입니다.\n\n그야말로 전범이 선택한 무기인거야, 페코.",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "대미지: #{stats_positive}#10초당 300까지## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내 있는 대부분의 적들을 기절시킵니다.\n- #{important_1}#실드, 불도저, 척탄병, 캡틴은 기절 효과에 면역입니다.##\n- #{important_1}#적들은 같은 가스 구름에 두 번 이상 중독될 수 없습니다.##",
 		
 		--Throwing Cards
 		["bm_wpn_prj_ace_desc"] = "대미지: #{skill_color}#240## \n- #{skill_color}#회수할 수 있습니다.## \n\n약간의 무게를 싣고, 모서리를 매우 날카롭게 한 카드를 던집니다. 진정한 암살자의 손에서 쓰이는 카드이기도 하죠.",
@@ -2112,7 +2178,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
 		["bm_grenade_damage_control"] = "힙 플라스크",
-		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#8m## \n지속 시간: #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#4m## \n지속 시간: #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
 		
 		
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
@@ -2126,255 +2192,173 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
 
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+		--[[ 
+			WepNames Options
+			1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
+			2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
+			3 = real names (i.e. SA 1911 Operator, HK 416c)
+		]]
+		if weapon_names then
+			if weapon_names == 2 then
+				LocalizationManager:add_localized_strings({	
+	
+				})
+			elseif weapon_names == 3 then
+				LocalizationManager:add_localized_strings({	
+					--LEO-40
+					["bm_w_hs2000"] = "SA XD(M)-40",
+					["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
+					["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
+					["bm_wp_hs2000_sl_long"] = "Custom Slide",
+					--Signature 40
+					["bm_w_p226"] = "SIG P226R",
+					["bm_w_x_p226"] = "Akimbo P226Rs",
+					["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+					["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
+					["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
+					["bm_wp_p226_b_long"] = "Brushed Long Slide",
+	
+					--Crosskill
+					["bm_w_colt_1911"] = "SA 1911 Operator",
+					["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
+					["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
+					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
+					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
+					["bm_wp_1911_g_bling"] = "Walnut Grips",
+					["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+					["bm_wp_1911_b_long"] = "Compensated Long Slide",
+					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
+					["bm_wp_1911_m_extended"] = "12rnd Magazine",
+					--Crosskill Chunky
+					["bm_w_m1911"] = "Colt 1911A1",
+					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+				})
+			end
+		end		
 
-	--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
-	--[[ 
-		WepNames Options
-		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
-		2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
-		3 = real names (i.e. SA 1911 Operator, HK 416c)
-		
-	]]	
-	if weapon_names then
-		if weapon_names == 2 then
+		local twirl = math.rand(1)
+		local shalashaska = 0.06
+		if twirl <= shalashaska then
 			LocalizationManager:add_localized_strings({	
+				["bm_w_peacemaker"] = "리볼버 오셀롯",
+				["bm_w_peacemaker_desc"] = "리볼버 오셀롯",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_barrel_long"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
+				["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯",
+				["bm_menu_ro_barrel"] = "리볼버 오셀롯",
+				["bm_menu_ro_stock"] = "리볼버 오셀롯",
+				["bm_menu_ro_modifier"] = "리볼버 오셀롯",
+				["bm_menu_ro_charm"] = "리볼버 오셀롯",
+				["bm_menu_ro_grip"] = "리볼버 오셀롯",
 
-			})
-		elseif weapon_names == 3 then
-			LocalizationManager:add_localized_strings({	
-				--Signature 40
-				["bm_w_hs2000"] = "SA XD(M)-40",
-				["bm_wp_hs2000_m_extended"] = "XD(M)-40 22발 탄창",
-				["bm_wp_hs2000_sl_custom"] = "단축형 슬라이드",
-				["bm_wp_hs2000_sl_long"] = "맞춤형 슬라이드",
-				--Signature 40
-				["bm_w_p226"] = "시그 P226R",
-				["bm_w_x_p226"] = "아킴보 P226R",
-				["bm_wp_p226_co_comp_2"] = "SJC 보정기 .40",
-				["bm_wp_p226_m_extended"] = "P226 22발 탄창",
-				["bm_wp_p226_b_equinox"] = "이쿼녹스 듀오톤 슬라이드",
-				["bm_wp_p226_b_long"] = "브러시드 긴 슬라이드",
-
-				--Crosskill
-				["bm_w_colt_1911"] = "SA 1911 오퍼레이터",
-				["bm_w_x_colt_1911"] = "아킴보 1911 오퍼레이터",
-				["bm_wp_1911_co_2"] = "TCII 보정기", --Not 100% but seems to be based off of it
-				["bm_wp_1911_co_1"] = "클락 헤비 핀마스터", --Not 100% but seems to be based off of it
-				["bm_wp_1911_g_ergo"] = "팩마이어 1911 손잡이",
-				["bm_wp_1911_g_bling"] = "월넛 손잡이",
-				["bm_wp_1911_g_engraved"] = "맞춤형 각인 1911 손잡이",
-				["bm_wp_1911_b_long"] = "단축형 긴 슬라이드",
-				["bm_wp_1911_b_vented"] = "단축형 투톤 슬라이드",
-				["bm_wp_1911_m_extended"] = "12발 탄창",
-				--Crosskill Chunky
-				["bm_w_m1911"] = "콜트 1911A1",
-				["bm_w_x_m1911"] = "아킴보 1911A1",
+				["bm_m134_sc_desc"] = "잠긴 메타포...",
 			})
 		end
-	end	
 
-	local twirl = math.rand(1)
-	local shalashaska = 0.06
-
-	if twirl <= shalashaska then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_peacemaker"] = "리볼버 오셀롯",
-			["bm_w_peacemaker_desc"] = "리볼버 오셀롯",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_barrel_long"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯",
-			["bm_menu_ro_barrel"] = "리볼버 오셀롯",
-			["bm_menu_ro_stock"] = "리볼버 오셀롯",
-			["bm_menu_ro_modifier"] = "리볼버 오셀롯",
-			["bm_menu_ro_charm"] = "리볼버 오셀롯",
-			["bm_menu_ro_grip"] = "리볼버 오셀롯",
-
-			["bm_m134_sc_desc"] = "잠긴 메타포...",
-		})
-	end
-
-	local cute = math.rand(1)
-	local funny = 0.02
-	if cute <= funny then
-		LocalizationManager:add_localized_strings({			
+		local blue = math.rand(1)
+		local archive = 0.01
+		if blue <= archive then
+			LocalizationManager:add_localized_strings({
+			-- Abydos
+				-- Countermeasures Council
+				["bm_w_s552"] = "WHITE FANG 465",
+				[	"bm_s552_sc_desc"] = "\"이 근처에 분명 은행이...\"\n\n#{skill_color}#시로코##가 애용하는 돌격소총.\n늘 꼼꼼하게 정비해 두기 때문에 어떤 상황에서도 준비만전이다.",	
+				["bm_w_m134"] = "미니 No.5",
+					["bm_m134_sc_desc"] = "\"노노미 갑니다!\"\n\n#{skill_color}#노노미##가 사용하는 기관총.\n#{skill_color}#'미니 No.5'##라는 이름과 어울리지 않게 그 무게는 절대 가볍지 않다.",
+				["bm_w_p226"] = "커먼 센스",
+					["bm_p226_sc_desc"] = "\"자, 부탁드립니다!\"\n\n#{skill_color}#아야네##가 귀여운 디자인의 권총.\n아야네 앞에서 상식적인 말과 행동만 한다면 볼 일은 거의 없다.",
 			
-			--SEISHOU ACADEMY
-				--MIDDLE SCHOOLERS
-					["bm_w_m16"] = "이치로쿠",
-						["bm_m16_sc_desc"] = "\"내는 지지 않을기다!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n활기차고 입이 험한 학교의 대표.",
-					["bm_w_m4"] = "엠포",
-						["bm_m4_sc_desc"] = "\"제식 소총을 과소 평가하지 마세요!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n중학교 학생회 부회장.",
-					["bm_w_aug"] = "AUG",
-						["bm_aug_sc_desc"] = "\"도망쳐보라고! 니 목숨을 위해 간청해봐라!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n중학교 학생회장.",
-					["bm_wp_ak5_fg_fnc"] = "훈코 킷",
-						["bm_wp_ak5_fg_fnc_desc"] = "\"주인의 뜻에 응하는 것은 도구의 기쁨이다.\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n이 묵직한 \"주인공의 아우라\"를 발산해보십시오.",
-					["bm_w_l85a2"] = "에루",
-						["bm_l85a2_sc_desc"] = "\"...\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 중학생.\n수줍음이 많고 서투른 그녀는 믿을 수 없는 성격과 많이 깨는 버릇이 있습니다.",
-					["bm_w_rk62"] = "사코",
-						["bm_rk62_sc_desc"] = "\"얼마나 멋진 비명은 뭘까! 너희가 죽는 소리일까!\"\n\n#{stats_positive}#세이쇼 학원##에 재학중인 편입생.\n그녀가 다니는 모든 학교의 \"알파\"가 되려는 충동을 가진 엘프 귀가 달린 새디스트입니다. 또한 훈코를 좋아하는듯합니다.",						
-	
-				--HIGH SCHOOLERS
-					["bm_w_fal"] = "파루",
-						["bm_fal_sc_desc"] = "\"언니가 왔어-!\"\n\n훈코의 큰 언니\n훈코의 다른 자매인 L1A1와 혼동하지 마십시오.",
-					["bm_w_m14"] = "이치온",
-						["bm_m14_sc_desc"] = "\"저 서양인들은 AK를 빼기고 무슨 짓거리를 하는거냐!? 분짜 배신자 녀석들 같으니!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 고등학생.\n느긋하고 말장난의 분필로 가득한 말장난을 합니다. 현재 패션센스 위기를 겪고 있습니다.",
-					["bm_w_g3"] = "지이쓰리",
-						["bm_g3_sc_desc"] = "\"결판을 내겠어요!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 고등학생.\n우아하지만 약간 덤벙거립니다. 또한 그녀의 많은 자매 중 맏이이고 DMC의 소총입니다.",
-
-				--ELEMENTARY
-					["bm_w_mp5"] = "에무피",
-						["bm_mp5_sc_desc"] = "\"그게 취향인가요...\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 초등학생.\n지이쓰리의 많은 자매 중 한명으로 초등학생 학생회장.",
-					["bm_w_uzi"] = "우지",
-						["bm_uzi_sc_desc"] = "\"이거나 먹어라!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 초등학생.\n전 자칭 초등학생 리더이었지만 에무피가 오자 그 자리에서 물려났습니다.",
-					["bm_w_mac10"] = "라무",
-						["bm_mac10_sc_desc"] = "\"잉그램!\"\n\n#{stats_positive}#세이쇼 학원##에 다니는 초등학생.\n말 하는 기관단총. 또한 다소 무겁습니다.",
-		
-				--FACULTY
-					["bm_w_erma"] = "엘마 선생",
-						["bm_erma_sc_desc"] = "\"들어와! 들어와!\"\n\n#{stats_positive}#세이쇼 학원##에서 일하는 초등학생 기숙사 엄마.\n기관단총들은 그녀를 좋아합니다.",
-					["bm_w_m1928"] = "톰슨 선생",
-						["bm_m1928_sc_desc"] = "\"이건 상식이라고!\"\n\n#{stats_positive}#세이쇼 학원##에 근무하는 초등학생 교사.\n액센트가 있는 일본어로 말하고 전 FBI 요원.",
-					["bm_w_ching"] = "가란드",
-						["bm_galant_sc_desc"] = "\"나에게 실없는 말을 하는건가!?\"\n\n#{stats_positive}#세이쇼 학원##에 근무하는 교관 강사.\n중학생들을 관여합니다.",
-	
-			--RED STEEL ACADEMY
-				--THREE STRIPES
-					["bm_w_siltstone"] = "드라코",
-						["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\n#{stats_negative}#아카가네 공고##에 다니는 셋줄무늬 학생.\n조용하고 수집가이며 러시아어로만 말합니다.", --sorry about the Google/MS translate
-					["bm_w_akm"] = "AKM",
-						["bm_akm_sc_desc"] = "\"나랑 장난까지 말라고!\"\n\n#{stats_negative}#아카가네 공고##에 다니는 셋줄무늬 학생.\n여우의 귀와 꼬리를 가지고 키가 크고 위협적인 소녀. AK47을 능가할 수 있는 몇 안 되는 학생 중 한 명.",
-					--["bm_w_rpk"] = "RPK",
-						["bm_rpk_sc_desc"] = "\"이래서 남자는 돼지란말이야!\"\n\n#{stats_negative}#아카가네 공고##에 다니는 셋줄무늬 학생.\n시베리아 호랑이의 귀와 꼬리를 가진 키 큰 금발 소녀. 저격을 자주 당합니다.",						
-				--TWO STRIPES
-					["bm_w_ak74"] = "나나욘",
-						["bm_ak74_sc_desc"] = "\"소령의 명령이면 뭐든지-\"\n\n#{stats_negative}#아카가네 공고##에 다니는 두줄무늬 학생.\n여우의 귀와 꼬리뿐 아니라 교활한 성격까지 겸비한 아름다운 소녀.",
-					["bm_w_saiga"] = "사이가짱",
-						["bm_saiga_sc_desc"] = "\"너희들은 모두 덫에 걸린 쥐라고, 냐!\"\n\n#{stats_negative}#아카가네 공고##에 다니는 두줄무늬 학생.\n거만하고 자신감이 넘치며 표현력이 뛰어난 사이가는 시끄럽고 떠들썩한 자동 산탄총입니다.",
-				--ONE STRIPE
-					["bm_w_coal"] = "비존",
-						["bm_coal_sc_desc"] = "\"날 믿어도 돼-!\"\n\n#{stats_negative}#아카가네 공고##에 다니는 하나줄무늬 학생.\n말 그대로 선배를 존경하지만 SVD에게 말할 때 특별한 주의를 기울입니다.",						
-				--FACULTY
-					["bm_w_mosin"] = "모신나강",
-						["bm_mosin_sc_desc"] = "\"자기 반성의 방으로 가도록...\"\n\n#{stats_negative}#아카가네 공고##의 교수.\n러시아 제국에서 태어난 절대적인 차리차. 톰슨 선생의 오랜 친구.",
+			-- Gehenna
+				-- Prefect Team
+				["bm_w_mg42"] = "종막: 디스트로이어",
+					["bm_wolf_brigade_sc_desc"] = "\"정말... 해도해도 끝이 없어.\"\n\n#{skill_color}#히나##가 마치 자신의 수족처럼 다루는 기관총.\n교칙을 위반하거나 풍기를 어지럽히는 사람은 그 무자비한 파괴력에 날아가 버리고 만다.",	
+				["bm_w_c96"] = "서포트 포인터",
+					["bm_c96_sc_desc"] = "\"포기하지 말아주세요.\"\n\n#{skill_color}#치나츠##가 애용하는 권총.\n누군가를 쏠 때보다 뭔가를 가리킬 때 사용하는 경우가 더 많다.",
+				["bm_w_breech"] = "핫 샷",
+					["bm_breech_sc_desc"] = "\"분석 완료. 약점은 파악됐습니다.\"\n\n#{skill_color}#아코##가 휴대하고 있는 권총.\n#{skill_color}#아코##가 뼈를 깎는 노력을 거듭해 행정관의 자리에 올랐을 때 건네받은 소중한 것. 언제나 가지고 다니면서 몹시 귀중하게 다루고 있다.",			
+				-- School Lunch Club
+				["bm_w_mp7"] = "급식부 호신용 총 type A",
+					["bm_mp7_sc_desc"] = "\"응! 완벽해!\"\n\n#{skill_color}#후우카##가 항상 휴대하는 기관단총.\n가끔 식당에서 날뛰는 문제아들을 제압하기 위해서도 사용하려 하지만, 대부분의 경우 사용하기 전에 상대가 온순해지므로 별로 사용할 일은 없는 모양.",
+				-- Emergency Medicine Club
+				["bm_w_gre_m79"] = "구급용 돌입 키트",
+					["bm_w_gre_m79_sc_desc"] = "\"출동합니다.\"\n\n#{skill_color}#세나##가 사용하는 유탄발사기.\n구급 출동 시 빠르게 장애물을 제거하는 도구. 장애물 중에는 일을 방해하는 상대도 포함된다.",
 			
-			--ENOSHIMA
-				--MIDDLE SCHOOLERS
-					["bm_w_spas12"] = "스파스-12",
-						["bm_spas12_sc_desc"] = "\"이 바보야! 완전히 드러났잖아!\"\n\n#{stats_negative}#에노시마의 공립학교##에 다니는 중학생.",
-					["bm_w_benelli"] = "베넬리 M4",
-						["bm_spas12_sc_desc"] = "\"분위기를 못 읽는 건 한계가 있다고!\"\n\n#{stats_negative}#에노시마의 공립학교##에 다니는 중학생.",
-				
-
-		})
-	end
-
-	local big = math.rand(1)
-	local pistol = 0.02
-	if big <= pistol then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_deagle"] = "큰 권총",
-			["bm_w_m16"] = "저거 클라리온임?",
-			["bm_m16_sc_desc"] = "피해를 입힐 수 있도록 탄창을 주겠음",
-			["bm_w_x_type54"] = "크로스킬 쌍둥이들",
-			["bm_akmsu_sc_desc"] = "#{stat_maxed}#빅 맨##을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",			
-		})
+			-- Millennium
+				-- Seminar
+				["bm_w_shepheard"] = "로직 & 리즌",
+					--["bm_w_shepheard_desc"] = "\"현재 상황과 조건. 좋아, 이건 승리야!\"\n\n#{skill_color}#유우카##가 사용하는 2정의 기관단총.\n중요한 타이밍이나 적절한 대처가 필요 할 때 유우카가 합리적이고 이성적인 판단을 내릴 수 있도록 도와준다.",
+				-- Veritas
+				["bm_w_glock_17"] = "에코링크",
+					["bm_g17_sc_desc"] = "\"감청 개시.\"\n\n#{skill_color}#코타마##가 항상 휴대하는 권총.\n도청의 방해가 되지 않도록, 발사음이 최소화 된 모델을 사용하고 있다.",			
+				-- Cleaning&Clearing
+				["bm_w_famas"] = "서프라이즈 파티",
+					["bm_menu_sc_famas_desc"] = "\"아스나! 여기에 등장!\"\n\n#{skill_color}#아스나##가 사용하는 돌격소총.\n떠들썩한 장소에 어울리는 이름이지만 늘 그렇듯 본인은 잊어버린다.",
+				-- Engineering Department
+				["bm_w_mac10"] = "마이스터 제로",
+					--["bm_w_mac10_desc"] = "\"정비완료, 작동개시.\"\n\n#{skill_color}#우타하##가 직접 개조한 심플한 디자인의 기관단총.\n튼튼한 내구성 덕분에 망치와 같은 공구 대용으로도 사용할 수 있다.",
+				-- Gym Training Department
+				["bm_w_benelli"] = "밀레니엄제 최신형 덤벨",
+					["bm_benelli_sc_desc"] = "\"오늘 훈련도 즐겁네요.\"\n\n#{skill_color}#스미레##가 평소 운동용으로 애용하는 반자동 산탄총.\n총 한 발을 쏠 때마다 팔굽혀펴기를 같이 하면 절로 건강해지는 굉장한 효과가 있다.",			
+				-- Game Development Department
+				["bm_w_g3"] = "유니크 아이디어/플래시 인스피레이션",
+					["bm_g3_sc_desc"] = "\"#{important_1}#우리들의 승리!##/#{stats_positive}#클리어, 다음 스테이지로 이동하죠.##\"\n\n#{important_1}#사이바## #{stats_positive}#자매##가 사용하는 소총.\n성격과 총의 겉모습이 살짝 다르더라도 함께라면 어떤 위협이든 무찌를 수 있을 정도의 자매력을 보여준다.",	
+				["bm_w_slap"] = "냥즈 대쉬",
+					--["bm_w_slap_desc"] = "\"레트로여...영원하라!\"\n\n#{skill_color}#유즈##가 사용하는 유탄발사기.\n몸체의 측면에는 귀여운 고양이가 달려 나가는 영상이 계속 출력되고 있다.",			
+				-- Paranormal Affairs Department
+				["bm_w_spas12"] = "멀티 택티컬",
+					["bm_spas12_sc_desc"] = "\"여기서라면 옷을 벗어도...안돼?\"\n\n#{skill_color}#에이미##가 애용하는 샷건.\n그 이름대로 강행돌파에서 초상현상에의 대응까지 다양한 상황을 상정해두고 제작되었다.",			
+			
+			-- Trinity
+				-- Supplementary Lesson Department
+				["bm_w_l85a2"] = "마이 네세시티",
+				[	"bm_l85a2_sc_desc"] = "\"#{risk}#페로로님은 어디에?##\"\n\n#{risk}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
+				["bm_w_m4"] = "Et Omnia Vanitas",
+				[	"bm_m4_sc_desc"] = "#{item_stage_2}#\"Vanitas Vanitatum et omnia Vanitas\"##\n\n#{mutators_color}#아즈사##가 아끼는 돌격소총,\n이름에는 #{item_stage_2}#'헛되고 헛되도다 모든 것이 헛되도다'##라고 새겨져 있다.",
+				-- After-School Sweets Club
+				["bm_w_scar"] = "스위트 드라이버",
+					["bm_scar_sc_desc"] = "\"이거라도 받아라!\"\n\n#{skill_color}#요시미##의 전용 라이플.\n키보토스의 스위츠 쟁탈전에서 이기기 위해서는 우선 전투력이 필요하다.",
+				["bm_w_mp5"] = "상큼 민트초코",
+				[	"bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
+				["bm_w_baka"] = "비욘드 더 루미네이션",
+					--["bm_w_baka_desc"] = "\"감사!\"\n\n#{skill_color}#나츠##의 기관단총.\n사색하는 것을 즐기는 나츠가 마지막 수단으로 꺼내드는 도구이다.",			
+				-- Justice Realization Committee
+				["bm_menu_sc_boot"] = "블러드&건파우더",
+					["bm_menu_sc_boot_desc"] = "\"#{important_1}#캬하하하하하!!!##\"\n\n#{important_1}#츠루기##가 사용하는 두 자루의 산탄총.\n한 쪽이 #{important_1}#'블러드'##고 다른 한 쪽이 #{item_stage_3}#'건파우더'##다. 똑같이 무시무시하며 딱히 구분하지는 않는다.",
+				-- Sisterhood
+				["bm_w_deagle"] = "파이에티",
+					["bm_deagle_sc_desc"] = "\"안식이 있기를.\"\n\n#{skill_color}#마리##가 소지하고 다니는 권총.\n늘 지니고 다니긴 하지만, 실제로 쏘는 것을 본 사람은 거의 없다.",
+			
+			-- Hyakkiyako
+				-- Festival Management Committee
+				["bm_w_m37"] = "사쿠라 봉봉",
+					--["bm_w_m37_desc"] = "\"앍! 센세!\"\n\n#{skill_color}#시즈코##가 사용하는 펌프 액션식 샷건.\n시즈코가 말하길 "백야당 명물인 팥꿀의 향기가 은은하게 나는, 이 세상에 단 하나의 일품" 이라고..",
+				-- Yin-Yang Club
+				["bm_w_m32"] = "575식 유탄발사기",
+					["bm_m32_sc_desc"] = "\"악령퇴산, 악령퇴산.\"\n\n#{skill_color}#치세##가 가지고 있는 다연발 유탄발사기.\n탄환 하나하나에 치세가 고심해서 지은 하이쿠 구절이 쓰여져 있다.\n음양부의 굿즈로 판매중.",
+				-- Etiquette Training Society
+				["bm_w_scorpion"] = "숙면 도우미 Ⅱ",
+					--["bm_w_scorpion_desc"] = "\"아프지 않아... 아프지 않아...\"\n\n#{skill_color}#츠바키##가 사용하는 기관단총.\n평소 하는 수행에 방해되지 않도록 작고 아담한 물건을 골랐다. 참고로 숙면 도우미 Ⅰ은 방패 안에 들어 있는 베개.",
+			
+			-- Shanhaijing
+				-- Chinese Alchemy Study Club
+				["bm_w_b92fs"] = "나님의 특제 권총",
+					["bm_b92fs_sc_desc"] = "\"나님 등장! 이번 실험의 표본은 어딨느냐?\"\n\n#{skill_color}#사야##가 곳곳을 개조한 특제 권총.\n#{skill_color}#네즈스케##에 주사를 할 때에도 사용되고 있는 것 같다...",
+				-- Training Support Department
+				["bm_w_qbu88"] = "사랑의 매",
+					["bm_qbu88_sc_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
+			
+			-- SRT Special Academy
+				-- RABBIT Squad
+				["bm_w_mosin"] = "RABBIT 39식 소총",
+					["bm_mosin_sc_desc"] = "\"어, 어째서 이런 일이...\"\n\n#{skill_color}#미유##가 SRT 특수학원에서 지급받은 제식 소총.\n강력한 한 발을 위해 정밀하게 가공되어 명중률이 매우 높다.",			
+			})
+		end
 	end
 	
-	local blue = math.rand(1)
-	local archive = 0.01
-	if blue <= archive then
-		LocalizationManager:add_localized_strings({
-		-- Abydos 
-			["bm_w_s552"] = "WHITE FANG 465",
-			["bm_s552_sc_desc"] = "\"이 근처에 분명 은행이...\"\n\n#{skill_color}#시로코##가 애용하는 돌격소총.\n늘 꼼꼼하게 정비해 두기 때문에 어떤 상황에서도 준비만전이다.",	
-			["bm_w_benelli"] = "호루스의 눈",
-			["bm_benelli_sc_desc"] = "\"소용없어.\"\n\n#{skill_color}#호시노##가 애용하는 심플한 디자인의 산탄총.\n게으름 부리길 좋아하는 호시노이지만 총기의 상태만큼은 언제나 완벽하다.",
-			["bm_w_m134"] = "미니 No.5",
-			["bm_m134_sc_desc"] = "\"노노미 갑니다!\"\n\n#{skill_color}#노노미##가 사용하는 기관총.\n#{skill_color}#'미니 No.5'##라는 이름과 어울리지 않게 그 무게는 절대 가볍지 않다.",
-			["bm_w_p226"] = "커먼 센스",
-			["bm_p226_sc_desc"] = "\"자, 부탁드립니다!\"\n\n#{skill_color}#아야네##가 귀여운 디자인의 권총.\n아야네 앞에서 상식적인 말과 행동만 한다면 볼 일은 거의 없다.",
-			
-		-- Gehenna
-			-- Prefect Team
-			["bm_w_mg42"] = "종막: 디스트로이어",
-			["bm_wolf_brigade_sc_desc"] = "\"정말... 해도해도 끝이 없어.\"\n\n#{skill_color}#히나##가 마치 자신의 수족처럼 다루는 기관총.\n교칙을 위반하거나 풍기를 어지럽히는 사람은 그 무자비한 파괴력에 날아가 버리고 만다.",	
-			["bm_w_c96"] = "서포트 포인터",
-			["bm_c96_sc_desc"] = "\"포기하지 말아주세요.\"\n\n#{skill_color}#치나츠##가 애용하는 권총.\n누군가를 쏠 때보다 뭔가를 가리킬 때 사용하는 경우가 더 많다.",
-			["bm_w_breech"] = "핫 샷",
-			["bm_breech_sc_desc"] = "\"분석 완료. 약점은 파악됐습니다.\"\n\n#{skill_color}#아코##가 휴대하고 있는 권총.\n#{skill_color}#아코##가 뼈를 깎는 노력을 거듭해 행정관의 자리에 올랐을 때 건네받은 소중한 것. 언제나 가지고 다니면서 몹시 귀중하게 다루고 있다.",			
-			-- School Lunch Club
-			["bm_w_mp7"] = "급식부 호신용 총 type A",
-			["bm_mp7_sc_desc"] = "\"응! 완벽해!\"\n\n#{skill_color}#후우카##가 항상 휴대하는 기관단총.\n가끔 식당에서 날뛰는 문제아들을 제압하기 위해서도 사용하려 하지만, 대부분의 경우 사용하기 전에 상대가 온순해지므로 별로 사용할 일은 없는 모양.",
-			-- Emergency Medicine Club
-			["bm_w_gre_m79"] = "구급용 돌입 키트",
-			["bm_w_gre_m79_sc_desc"] = "\"출동합니다.\"\n\n#{skill_color}#세나##가 사용하는 유탄발사기.\n구급 출동 시 빠르게 장애물을 제거하는 도구. 장애물 중에는 일을 방해하는 상대도 포함된다.",
-			
-		-- Millennium
-			-- Seminar
-			["bm_w_shepheard"] = "로직 & 리즌",
-			--["bm_w_shepheard_desc"] = "\"현재 상황과 조건. 좋아, 이건 승리야!\"\n\n#{skill_color}#유우카##가 사용하는 2정의 기관단총.\n중요한 타이밍이나 적절한 대처가 필요 할 때 유우카가 합리적이고 이성적인 판단을 내릴 수 있도록 도와준다.",
-			-- Veritas
-			["bm_w_glock_17"] = "에코링크",
-			["bm_g17_sc_desc"] = "\"감청 개시.\"\n\n#{skill_color}#코타마##가 항상 휴대하는 권총.\n도청의 방해가 되지 않도록, 발사음이 최소화 된 모델을 사용하고 있다.",			
-			-- Cleaning&Clearing
-			["bm_w_famas"] = "서프라이즈 파티",
-			["bm_menu_sc_famas_desc"] = "\"아스나! 여기에 등장!\"\n\n#{skill_color}#아스나##가 사용하는 돌격소총.\n떠들썩한 장소에 어울리는 이름이지만 늘 그렇듯 본인은 잊어버린다.",
-			-- Engineering Department
-			["bm_w_mac10"] = "마이스터 제로",
-			--["bm_w_mac10_desc"] = "\"정비완료, 작동개시.\"\n\n#{skill_color}#우타하##가 직접 개조한 심플한 디자인의 기관단총.\n튼튼한 내구성 덕분에 망치와 같은 공구 대용으로도 사용할 수 있다.",
-			-- Game Development Department
-			["bm_w_g3"] = "유니크 아이디어/플래시 인스피레이션",
-			["bm_g3_sc_desc"] = "\"우리들의 승리!/클리어, 다음 스테이지로 이동하죠.\"\n\n#{skill_color}#사이바 자매##가 사용하는 소총.\n성격과 총의 겉모습이 살짝 다르더라도 함께라면 어떤 위협이든 무찌를 수 있을 정도의 자매력을 보여준다.",	
-			["bm_w_slap"] = "냥즈 대쉬",
-			--["bm_w_slap_desc"] = "\"레트로여...영원하라!\"\n\n#{skill_color}#유즈##가 사용하는 유탄발사기.\n몸체의 측면에는 귀여운 고양이가 달려 나가는 영상이 계속 출력되고 있다.",			
-			-- Paranormal Affairs Department
-			["bm_w_spas12"] = "멀티 택티컬",
-			["bm_spas12_sc_desc"] = "\"여기서라면 옷을 벗어도...안돼?\"\n\n#{skill_color}#에이미##가 애용하는 샷건.\n그 이름대로 강행돌파에서 초상현상에의 대응까지 다양한 상황을 상정해두고 제작되었다.",
-			
-		-- Trinity
-		
-			-- Supplementary Lesson Department
-			["bm_w_l85a2"] = "마이 네세시티",
-			["bm_l85a2_sc_desc"] = "\"페로로님은 어디에?\"\n\n#{skill_color}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
-			["bm_w_m4"] = "Et Omnia Vanitas",
-			["bm_m4_sc_desc"] = "#{item_stage_2}#\"Vanitas Vanitatum et omnia Vanitas\"##\n\n#{skill_color}#아즈사##가 아끼는 돌격소총,\n이름에는 #{item_stage_2}#'헛되고 헛되도다 모든 것이 헛되도다'##라고 새겨져 있다.",
-			-- After-School Sweets Club
-			["bm_w_scar"] = "스위트 드라이버",
-			["bm_scar_sc_desc"] = "\"이거라도 받아라!\"\n\n#{skill_color}#요시미##의 전용 라이플.\n키보토스의 스위츠 쟁탈전에서 이기기 위해서는 우선 전투력이 필요하다.",
-			["bm_w_mp5"] = "상큼 민트초코",
-			["bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
-			["bm_w_baka"] = "비욘드 더 루미네이션",
-			--["bm_w_baka_desc"] = "\"감사!\"\n\n#{skill_color}#나츠##의 기관단총.\n사색하는 것을 즐기는 나츠가 마지막 수단으로 꺼내드는 도구이다.",			
-			-- Justice Realization Committee
-			["bm_menu_sc_boot"] = "블러드&건파우더",
-			["bm_menu_sc_boot_desc"] = "\"캬하하하하하!!!\"\n\n#{skill_color}#츠루기##가 사용하는 두 자루의 산탄총.\n한 쪽이 #{important_1}#'블러드'##고 다른 한 쪽이 #{item_stage_3}#'건파우더'##다. 똑같이 무시무시하며 딱히 구분하지는 않는다.",
-			-- Sisterhood
-			["bm_w_deagle"] = "파이에티",
-			["bm_deagle_sc_desc"] = "\"안식이 있기를.\"\n\n#{skill_color}#마리##가 소지하고 다니는 권총.\n늘 지니고 다니긴 하지만, 실제로 쏘는 것을 본 사람은 거의 없다.",
-			
-		-- Hyakkiyako
-		
-			-- Festival Management Committee
-			["bm_w_m37"] = "사쿠라 봉봉",
-			--["bm_w_m37_desc"] = "\"앍! 센세!\"\n\n#{skill_color}#시즈코##가 사용하는 펌프 액션식 샷건.\n시즈코가 말하길 "백야당 명물인 팥꿀의 향기가 은은하게 나는, 이 세상에 단 하나의 일품" 이라고..",
-			-- Yin-Yang Club
-			["bm_w_m32"] = "575식 유탄발사기",
-			["bm_m32_sc_desc"] = "\"악령퇴산, 악령퇴산.\"\n\n#{skill_color}#치세##가 가지고 있는 다연발 유탄발사기.\n탄환 하나하나에 치세가 고심해서 지은 하이쿠 구절이 쓰여져 있다.\n음양부의 굿즈로 판매중.",
-			-- Etiquette Training Society
-			["bm_w_scorpion"] = "숙면 도우미 Ⅱ",
-			--["bm_w_scorpion_desc"] = "\"아프지 않아... 아프지 않아...\"\n\n#{skill_color}#츠바키##가 사용하는 기관단총.\n평소 하는 수행에 방해되지 않도록 작고 아담한 물건을 골랐다. 참고로 숙면 도우미 Ⅰ은 방패 안에 들어 있는 베개.",
-			
-		-- Shanhaijing
-			-- Chinese Alchemy Study Club
-			["bm_w_b92fs"] = "나님의 특제 권총",
-			["bm_b92fs_sc_desc"] = "\"나님 등장! 이번 실험의 표본은 어딨느냐?\"\n\n#{skill_color}#사야##가 곳곳을 개조한 특제 권총.\n#{skill_color}#네즈스케##에 주사를 할 때에도 사용되고 있는 것 같다...",
-			-- Training Support Department
-			["bm_w_qbu88"] = "사랑의 매",
-			["bm_qbu88_sc_desc"] = "\"나쁜 아이 발견!\"\n\n#{skill_color}#슌##이 사용하는 저격소총.\n어떠한 문제아라 할지라도, 슌이 이 총을 꺼내면 곧바로 상냥한 아이가 된다...물론 매화원의 아이들에게 향할 일은 없다.",
-		})
-	end		
 end)
 
 local r = tweak_data.levels.ai_groups.russia
@@ -2544,7 +2528,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_title"] = "레스토레이션 게임플레이 팁",
 		["loading_gameplay_res_1"] = "클로커는 플레이어에게 공격적일 때 '쌕쌕' 소리를 냅니다. 이것을 들어서 찾아보십시오.",
 		["loading_gameplay_res_2"] = "클로커는 더 이상 돌진할 때 주변에서 윙윙거리는 소리나 끽끽거리는 소리를 내지 않습니다.",
-		["loading_gameplay_res_3"] = "권총은 교체 시간이 긴 주무기를 쓸 때 이상적인 보조 무기입니다.",
+		["loading_gameplay_res_3"] = "권총은 교체 시간이 긴 주무기를 쓸 때 보완해주는 보조 무기입니다.",
 		["loading_gameplay_res_4"] = "테이저는 더 이상 당신의 무기를 재장전 해주지 않습니다.",
 		["loading_gameplay_res_5"] = "클로커는 혼자 있는 하이스터 혹은 하이스터를 가로막을 때 쉽게 반격합니다.",
 		["loading_gameplay_res_6"] = "클로커는 발로 차면 직접적인 체력 피해를 입힙니다. 이것은 굴절 또는 반격 스킬로 감소시킬 수 있습니다.",
@@ -2643,13 +2627,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_11"] = "갬블러는 탄약을 획득할 때 팀원에게 약간의 체력과 추가 탄약을 제공하는 팀 중심의 특성 덱입니다. 추가 탄약을 제공하는 스킬과 함께 쓸 수 있습니다.",	
 		["loading_equip_skills_res_12"] = "매니악은 빠른 팀 중심의 특성 덱으로, 킬을 계속 유지하는 한 자신과 팀원에게 받는 피해를 줄여줍니다. 고화력 빌드와 대미지 저항 빌드와 함께 쓸 수 있습니다.",	
 		["loading_equip_skills_res_13"] = "해커의 휴대용 ECM은 팀 전체의 치유와 강력한 군중 제어를 제공하지만 재충전하는 데 오랜 시간이 걸립니다. 스텔스에서도 효과적입니다.",	
-		["loading_equip_skills_res_14"] = "버글러는 라우드용으로 사용되는 다른 덱보다 약간 약한 대가로 스텔스에 약간의 보너스를 제공하는 특성 덱입니다.",	
+		["loading_equip_skills_res_14"] = "버글러는 총격전 중에 고개를 숙이는 것을 촉진하는 회피 중심 특전 덱입니다.",	
 		["loading_equip_skills_res_15"] = "킹핀은 다재다능한 특성 덱입니다. 주사기로 자가 유지, 높은 대미지에서 살아남거나 팀 대신 적의 사격을 맞아주는 데 사용할 수 있습니다.",	
 		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 특성 덱입니다.",	
 		["loading_equip_skills_res_17"] = "방패를 관통하는 총알은 절반의 피해를 줍니다.",	
 		["loading_equip_skills_res_18"] = "Peacemaker 리볼버와 Phoenix .500 리볼버는 저격소총처럼 방탄복을 관통할 수 있습니다.",
-		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 있다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
-		["loading_equip_skills_res_20"] = "무기의 은폐가 높을수록 더 빨리 교체하거나 넣을 수 있습니다.",	
+		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 가능하다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
+		["loading_equip_skills_res_20"] = "무기의 은폐성이 높을수록 더 빨리 교체할 수 있습니다.",	
 		["loading_equip_skills_res_21"] = "전기톱과 카자구루마는 들고 있는 동안 전방의 적에게 피해를 줍니다.",	
 		["loading_equip_skills_res_22"] = "버터플라이 나이프와 스위치블레이드는 적의 등을 찌르면 막대한 피해를 줍니다.",	
 		["loading_equip_skills_res_23"] = "아이스 픽 및 금광 열풍은 느린 속도 대신 헤드샷 피해를 더 줍니다.",	
@@ -2659,10 +2643,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_27"] = "파운더 네일건은 다른 어떤 근접 무기보다 훨씬 더 긴 사거리를 가지고 있습니다.",	
 		["loading_equip_skills_res_28"] = "특성 덱의 레벨을 올리면 투척물 케이스가 잠금 해제됩니다.",
 		["loading_equip_skills_res_29"] = "이제 투척물 케이스로 사용할 때마다 투척물을 보충하면 모두 채워줍니다.",	
-		["loading_equip_skills_res_30"] = "상황이 안 좋을때 인스파이어 에이스로 팀원을 구하십시오. 재사용 대기 시간이 매우 길고 시야가 필요합니다.",	
+		["loading_equip_skills_res_30"] = "인스파이어 에이스는 재사용 대기 시간이 매우 길고 시야가 필요하지만 상황이 안 좋을때 팀원을 쉽게 구할 수 있습니다.",	
 		["loading_equip_skills_res_31"] = "레스토레이션 모드는 특성 효과를 비활성화하는 대가로 돈과 경험치 획득을 더욱 증가하는 2개의 새로운 특성 덱을 추가합니다. 더 나은 보상을 위해 도전해보십시오!",
-		["loading_equip_skills_res_32"] = "조준 매커니즘은 조준할 때 명중률의 이점을 얻으려면 완전히 조준해야 효과가 증가하도록 변경되었습니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
-		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 사용하면 무기를 사용하기가 번거로워집니다.",
+		["loading_equip_skills_res_32"] = "조준할 때 명중률 보너스를 얻으려면 조준 애니메이션이 끝날 때까지 기다려야 합니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
+		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 개조하면 무기를 사용하기가 번거로워집니다.",
 		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은페도에 영향을 받습니다.",
 		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",
 		["loading_equip_skills_res_36"] = "전투 중 소음기는 당신이 적을 조준할때 적이 회피할 가능성을 줄입니다. 그들이 당신을 피하지 않고 보내는 시간을 대신 당신을 쏘는 데 쓰일 가능성이 있음을 명심하십시오.",
@@ -2728,7 +2712,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_content_updates_previous"] = "",
 
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 획득한 경험치와 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
+		["menu_mutators_achievement_disabled"] = "",
 		["menu_mutators_category_holiday"] = "홀리데이",
 		["menu_mutators_category_old_event"] = "이벤트",
 		
@@ -2776,6 +2760,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_birthday"] = "풍선 터트리기",
 		["mutator_birthday_desc"] = "특수 적 처치 시 버프를 주는 풍선을 생성합니다.",
 		["mutator_birthday_longdesc"] = "페이데이 10주년 이벤트:\n\n특수 적을 처치 시 죽인 적에 따라 풍선이 생성됩니다. 풍선을 쏠 시 시간이 초과되는 버프 보너스가 전체 팀에 제공합니다. 일부 유닛은 다른 유닛보다 풍선을 더 자주 생성하며 여러 버프가 동시에 활성화될 수 있습니다.",		
+
+		["mutator_CG22"] = "크리미널 캐럴",
+		["mutator_CG22_desc"] = "일부 하이스트에 파쇄가 가능하거나 하이루딘에게 줄 선물을 생성하는 크리스마스 트리가 생성됩니다.",
+		["mutator_CG22_longdesc"] = "페이데이 2 2022년 크리스마스 이벤트:\n\n일부 하이스트에 나타나는 크리스마스 트리는 크리스마스 선물을 떨어뜨립니다. 크리스마스 선물은 하이스트 동안 파쇄하여 버프를 일시적으로 얻거나 혹은 하이루딘에게 줘서 보너스 경험치, 현금 또는 컨티넨탈 코인을 얻을 수 있습니다. 둘 중 하나를 수행하다 보면 일정 확률로 냉기 방사기를 든 스노우맨 도저가 생성될 수 있습니다.",		
+
+		["menu_cg22_post_objective_1_desc"] = "적 200명을 아무 저격총으로 처치하기.",
+		["menu_cg22_post_objective_2_desc"] = "매우 어려움 이상 난이도에서 클로커 15명을 North Star 저격소총으로 처치하기.",
+		["menu_cg22_post_objective_3_desc"] = "아무 난이도에서 North Star 저격소총으로 더블킬 50회 달성하기.",
+		["menu_cg22_post_objective_4_desc"] = "아무 난이도에서 전리품 가방 10개 확보하기. (탈출에 성공해야 인정)",
+		["menu_cg22_post_objective_5_desc"] = "오버킬 이상 난이도에서 불도저 10명 처치하기.",
+		["menu_cg22_post_objective_6_desc"] = "아무 난이도에서 전리품 가방 25개 확보하기. (탈출에 성공해야 인정)",
+		["menu_cg22_post_objective_7_desc"] = "아무 난이도에서 전리품 가방 50개 확보하기. (탈출에 성공해야 인정)",
+		["menu_cg22_post_objective_8_desc"] = "오버킬 이상 난이도에서 불도저 20명 처치하기.",
+		["menu_cg22_post_objective_9_desc"] = "아무 난이도에서 전리품 가방 75개 확보하기. (탈출에 성공해야 인정)",
 
 		["mutator_piggybank"] = "돼지 먹이주기",
 		["mutator_piggybank_desc"] = "적들이 죽을 때 황금 돼지에게 먹이기 위한 꿀꿀이 가방을 떨굽니다.",
@@ -2881,7 +2879,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   MEDIC SUBTREE   ]]--
 			--Combat Medic
 			["menu_combat_medic_beta_sc"] = "의무병",
-			["menu_combat_medic_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신이 팀원을 되살리는 동안과 그 이후 #{skill_color}#5##초간 #{skill_color}#10%##만큼의 피해 감소 효과를 받습니다.\n\n에이스: #{owned}#$pro##\n팀원을 되살릴때 #{skill_color}#30%##만큼 더 많은 체력을 추가로 회복시켜서 되살립니다.",
+			["menu_combat_medic_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신이 팀원을 되살리는 동안과 되살린 이후 #{skill_color}#5##초간 #{skill_color}#10%##만큼의 피해 감소 효과를 받습니다.\n\n에이스: #{owned}#$pro##\n팀원을 되살릴때 #{skill_color}#30%##만큼 더 많은 체력을 추가로 회복시켜서 되살립니다.",
 
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "응급 치료",
@@ -2893,20 +2891,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "각성제",
-			["menu_tea_cookies_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구급 키트의 소지량이 #{skill_color}#3##개 늘어납니다.\n\n에이스: #{owned}#$pro##\n구급 키트의 소지량이 #{skill_color}#3##개 더 늘어납니다.\n\n당신이 배치한 구급 키트는 구급 키트로부터 반경 #{skill_color}#5##미터 안에 플레이어가 다운된경우 자동으로 사용되어 다운을 방지합니다.\n\n이 효과는 플레이어마다 매 #{skill_color}#60##초당 한 번만 발동합니다.\n\n#{risk}#참고: 스완송에는 적용되지 않습니다.##",
+			["menu_tea_cookies_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구급 키트의 소지량이 #{skill_color}#6##개 늘어납니다.\n\n에이스: #{owned}#$pro##\n구급 키트의 소지량이 #{skill_color}#9##개 더 늘어납니다.\n\n배치된 구급 키트는 당신 또는 팀원이 #{skill_color}#5##미터 내에 다운되면 #{skill_color}#자동으로 소생시킵니다.## 자동 소생된 사람에게는 자동 부활을 위한 #{important_1}#60초## 대기시간이 적용됩니다.\n\n#{risk}#참고: 구급 키트는 스완송 상태가 된 사람에게는 자동 소생이 적용되지 않습니다.##",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "군의관",
-			["menu_medic_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n의료 가방의 사용 횟수를 #{skill_color}#1##번 더 늘려줍니다.\n\n에이스: ##$pro##\n의료 가방의 소지 개수를 #{skill_color}#2##개로 늘려줍니다.",
+			["menu_medic_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n의료 가방에 물품이 더 추가되어 사용 횟수를 #{skill_color}#한 번## 더 늘려줍니다.\n\n에이스: ##$pro##\n의료 가방의 소지 개수를 #{skill_color}#2##개로 늘어납니다.",
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "인스파이어",
-			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#9미터 안##에 #{skill_color}#시야를 확보한 상태##에서 다운된 팀원에게 소리치면 팀원을 되살립니다. 이 효과는 매 #{skill_color}#90##초 마다 한 번만 일어납니다.",
+			["menu_inspire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n팀원을 되살리는 속도가 #{skill_color}#50%##만큼 상승합니다.\n\n팀원에게 소리치면 팀원의 이동 속도와 재장전 속도가 #{skill_color}#10##초간 #{skill_color}#20%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#9미터## 떨어진 시야에 쓰러진 팀원에게 소리를 지르면 소생시킬 수 있습니다. 원거리 소생은 대기시간이 #{important_1}#90초## 입니다.",
 
 			--[[   CONTROLLER SUBTREE   ]]--
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "케이블 가이",
-			["menu_triathlete_beta_desc_sc"] = "베이직: #{owned}#$basic##\n케이블 타이 소지량이 #{skill_color}#3##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n탄약 상자에서 케이블 타이를 획득할 확률이 #{skill_color}#30%##로 증가합니다.\n\n케이블 타이 소지량이 추가로 #{skill_color}#3##만큼 증가합니다.",
+			["menu_triathlete_beta_desc_sc"] = "베이직: #{owned}#$basic##\n케이블 타이 소지량이 #{skill_color}#3##개 증가합니다.\n\n에이스: #{owned}#$pro##\n케이블 타이 소지량이 추가로 #{skill_color}#3##개로 더 증가합니다.\n\n탄약 상자에서 케이블 타이를 획득할 확률이 #{skill_color}#30%##로 증가합니다",
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "광대는 무섭다",
@@ -2914,44 +2912,44 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "스톡홀름 증후군",
-			["menu_joker_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근처에 있는 민간인과 조커들을 #{skill_color}#쓰려진 상태에서 부르면 당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: #{owned}#$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 #{skill_color}#4##번까지 피해 흡수를 #{skill_color}#1##씩 얻습니다.\n\n#{risk}#참고: 이 효과는 이 스킬을 사용하는 팀원들의 효과와 중첩되지 않습니다.##",
+			["menu_joker_beta_desc_sc"] = "베이직: #{owned}#$basic##\n쓰려진 상태에서 근처에 있는 민간인과 조커들을 부르면 #{skill_color}#당신을 소생시키고## 탄약 상자를 줍니다.\n\n에이스: #{owned}#$pro##\n당신과 당신의 팀원은 각 인질에 있을 때마다 최대 #{skill_color}#4##번까지 피해 흡수를 #{skill_color}#1##씩 얻습니다.\n\n#{risk}#참고: 이 효과는 여러 팀원들이 이 스킬을 사용하는 경우에는 중첩되지 않습니다.##",
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "조커",
-			["menu_stockholm_syndrome_beta_desc_sc"] = "베이직: #{owned}#$basic##\n항복한 비특수 적 #{skill_color}#1명##을 당신의 편에서 싸우게 만들 수 있습니다. 스텔스 도중에는 할 수 없습니다.\n\n전환된 적은 받는 피해가 #{skill_color}#60%##만큼 감소합니다.\n\n스킬의 목적과 구금된 플레이어를 거래하기 위해 전환된 적은 인질로 간주됩니다.\n\n에이스: #{owned}#$pro##\n당신은 동시에 #{skill_color}#2##명의 비특수 적을 전환할 수 있습니다.\n\n전환된 적은 추가로 받는 피해가 #{skill_color}#20%##만큼 감소합니다.",
+			["menu_stockholm_syndrome_beta_desc_sc"] = "베이직: #{owned}#$basic##\n하이스트가 라우드로 진행될 때 항복한 비특수 적 #{skill_color}#1명##을 당신의 편에서 싸우게 만들 수 있습니다. 전환된 적은 스킬의 목적과 구금된 플레이어를 거래하기 위해 인질로 간주됩니다.\n\n전환된 적은 받는 피해가 #{skill_color}#60%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n당신은 동시에 #{skill_color}#2##명의 비특수 적을 전환할 수 있습니다.\n\n전환된 적은 추가로 받는 피해가 #{skill_color}#20%##만큼 감소합니다.",
 
 			--Partners in Crime
 			["menu_control_freak_beta_sc"] = "공범",
-			["menu_control_freak_beta_desc_sc"] = "베이직: #{owned}#$basic##\n인질 당 최대 #{skill_color}#4##명까지 당신의 이동 속도가 #{skill_color}#3%##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n인질 당 최대 #{skill_color}#4##명까지 최대 체력이 추가로 #{skill_color}#5%##씩 상승합니다.",
+			["menu_control_freak_beta_desc_sc"] = "베이직: #{owned}#$basic##\n인질 한 명당 당신의 이동 속도가 #{skill_color}#3%##씩 상승합니다. 이 효과는 최대 #{skill_color}#4##번까지만 중첩됩니다.\n\n에이스: #{owned}#$pro##\n인질 한 명당 최대 체력이 추가로 #{skill_color}#5%##씩 상승합니다. 이 효과는 최대 #{skill_color}#4##번까지만 중첩됩니다. ",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "인질범",
-			["menu_black_marketeer_beta_desc_sc"] = "베이직: #{owned}#$basic##\n인질 당 최대 #{skill_color}#4##명까지 매 #{skill_color}#4##초마다 당신의 체력의 #{skill_color}#1##만큼 체력을 회복합니다.\n\n에이스: #{owned}#$pro##\n당신의 #{skill_color}#인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 구금될 때마다 인질들은 당신의 안전한 귀환을 위해 스스로를 교환할 것 입니다. 이 효과는 어썰트 중에도 발생할 수 있지만 하이스트 중에는 #{skill_color}#1##번만 발생합니다.\n\n#{skill_color}#4##명 이상의 인질이 있을 때마다 인질범의 체력 재생이 #{skill_color}#50%##만큼 증가합니다.",
+			["menu_black_marketeer_beta_desc_sc"] = "베이직: #{owned}#$basic##\n인질 한 명당 매 #{skill_color}#4##초마다 당신의 체력의 #{skill_color}#1## 포인트씩 체력을 회복합니다. 이 효과는 최대 #{skill_color}#4##번까지만 중첩됩니다.\n\n에이스: #{owned}#$pro##\n\n인질이 #{skill_color}#4명 혹은 그 이상 있을 때## 인질범의 체력 재생이 #{skill_color}#50%##만큼 증가합니다.\n\n당신의 #{skill_color}#인질은 법 집행관에 의해 구출되어도 도망치지 않습니다.##\n\n당신이 어썰트 도중 구금당하게 되면 인질은 당신의 안전한 귀환을 위해 #{skill_color}#자신을 교환할 것입니다.##\n\n#{risk}#참고: 이 거래는 하이스트 도중에## #{important_1}#한 번만## #{risk}#발생합니다##",
 
 			--[[   ASSAULT SUBTREE   ]]--
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "리더쉽",
-			["menu_stable_shot_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##의 안정성을 #{skill_color}#2##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신과 동료들의 #{skill_color}#모든 무기##의 안정성을 #{skill_color}#2##만큼 상승시켜줍니다.",
+			["menu_stable_shot_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##의 안정성을 #{skill_color}#2##만큼 상승합니다.\n\n에이스: #{owned}#$pro##\n당신과 동료들의 #{skill_color}#모든 무기##의 안정성을 #{skill_color}#2##만큼 상승시켜줍니다.",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "기관총 핸들링",
-			["menu_scavenger_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##의 지향 사격 명중률이 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관단총##의 지향 사격 명중률을 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n#{skill_color}#기관단총##의 재장전 속도가 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_scavenger_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##의 지향 사격 명중률이 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##의 지향 사격 명중률을 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n#{skill_color}#기관총##의 재장전 속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "기관총 전문가",
-			["menu_sharpshooter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##의 이동 패널티에 대한 명중률이 #{skill_color}#60%##만큼 감소합니다.\n\n이동 패널티에 대한 명중률은 안정성에 따라 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관단총##의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n#{skill_color}#기관단총##으로 방아쇠를 놓지 않고 발사하면 #{skill_color}#5번째## 총알은 소모되지 않습니다.",
+			["menu_sharpshooter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##의 이동 패널티에 대한 명중률이 #{skill_color}#60%##만큼 감소합니다.\n\n이동 패널티에 대한 명중률은 안정성에 따라 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n#{skill_color}#기관총##으로 방아쇠를 놓지 않고 발사하면 #{skill_color}#5번째## 총알은 소모되지 않습니다.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: #{owned}#$basic##\n모든 무기의 장탄수가 #{skill_color}#20%##만큼 증가합니다.\n\n#{risk}#참고: 쇠뇌, 활, 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n모든 무기의 장탄수가 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n전력 질주하는 동안 모든 무기로 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.",
+			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#모든 무기##의 장탄수가 #{skill_color}#20%##만큼 증가합니다.\n\n#{risk}#참고:## #{important_1}#쇠뇌, 활, 발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n모든 무기의 장탄수가 추가로 #{skill_color}#30%##만큼 증가합니다.\n\n#{skill_color}#모든 무기##로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 후 사격 지연이 제거됩니다.",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
-			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관단총##은 #{skill_color}#20%##의 확률로 적을 쓰러뜨릴 수 있습니다.\n\n양각대 사용 시 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고: 스태거 효과는 캡틴, 불도저, 실드 및 저격수에게는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 ##25%##으로 증가합니다.",
+			["menu_speedy_reload_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#기관총##은 #{skill_color}#20%## 확률로 적을 경직 시킬 수 있습니다.\n\n양각대 거치하는 동안에는 확률이 #{skill_color}#40%##로 증가합니다.\n\n#{risk}#참고:## #{important_1}#캡틴, 불도저, 실드 및 저격수는## #{risk}#경직 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n앉아 있는 동안 받는 피해가 #{skill_color}#12.5%##만큼 감소합니다.\n\n양각대 사용 시 효과가 #{skill_color}#25%##으로 증가합니다.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "신체 전문지식",
-			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#모든 무기##는 이제 #{skill_color}#방탄복을 관통할 수 있습니다.##\n\n자동으로 사격하는 #{skill_color}#기관단총##은 적의 헤드샷 배율의 #{skill_color}#30%##가 몸통 사격에 적용됩니다.\n\n#{risk}#참고: 불도저에게는 피해 배율이 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n자동으로 사격하는 #{skill_color}#모든 무기##는 적의 헤드샷 배율의 #{skill_color}#60%##가 몸통 사격에 적용됩니다.",
+			["menu_body_expertise_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신의 무기는 방탄복을 관통해 피해의 #{skill_color}#50%##를 줍니다. #{skill_color}#기관총##의 경우 효과가 #{skill_color}#100%##로 증가하고 무기가 이미 방탄복 관통 능력을 가지고 있을 경우 효과는 추가로 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}완전 자동인 #기관총으로## 1초 이상 방아쇠를 놓지 않는 동안 적을 죽이면 대미지가 #{skill_color}#10%##만큼씩 증가합니다. 이 효과는 최대 #{skill_color}#5##번까지 중첩됩니다.",
 
 			--}
 		--}
@@ -2963,7 +2961,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Underdog--
 			["menu_underdog_beta_sc"] = "언더독",
-			["menu_underdog_beta_desc_sc"] = "베이직: #{owned}#$basic##\n반경 #{skill_color}#18##미터 이내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 공격력이 #{skill_color}#10%## 증가합니다.\n\n에이스: #{owned}#$pro##\n반경 #{skill_color}#18##미터 이내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 입는 피해가 #{skill_color}#10%## 감소합니다.",
+			["menu_underdog_beta_desc_sc"] = "베이직: #{owned}#$basic##\n반경 #{skill_color}#18##미터 내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 공격력이 #{skill_color}#10%## 증가합니다.\n\n에이스: #{owned}#$pro##\n반경 #{skill_color}#18##미터 내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 입는 피해가 #{skill_color}#10%## 감소합니다.",
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
@@ -2983,7 +2981,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Overkill
 			["menu_overkill_sc"] = "오버킬",
-			["menu_overkill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#2##초 동안 산탄총과 휴대용 톱의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#10##초 동안 모든 무기의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 발사기에는 공격력 보너스가 적용되지 않습니다.##\n\n#{skill_color}#산탄총과 화염방사기 OVE9000 톱##의 교체 속도가 #{skill_color}#50%##만큼 빨라집니다.",
+			["menu_overkill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총이나 화염방사기, OVE9000 톱##으로 적을 처치할 경우, #{skill_color}#2##초 동안 산탄총과 휴대용 톱의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 효과가 #{skill_color}#모든 무기에 적용이 되고## 추가로 지속 시간이 #{skill_color}#6##초로 증가합니다.\n\n#{risk}#참고: 스킬은 여전히## #{skill_color}#산탄총이나 화염방사기, OVE9000 톱으로 적을 처치해야 되고## #{important_1}#발사기에는 대미지 증가 효과가 적용되지 않습니다.##\n\n#{skill_color}#산탄총과 화염방사기 OVE9000 톱##의 교체 속도가 #{skill_color}#50%##만큼 빨라집니다.",
 
 			--}
 
@@ -3000,7 +2998,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "트랜스포터",
-			["menu_transporter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n방탄력 #{skill_color}#10##마다 가방의 이동속도 패널티가 #{skill_color}#0.5%##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n이제 아무 가방을 들어도 질주할 수 있습니다.\n\n#{risk}#참고: 가방의 이동 패널티는 여전히 적용됩니다.##",
+			["menu_transporter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n입고있는 방탄복의 방탄력 #{skill_color}#10##점마다 가방 이동속도 패널티가 #{skill_color}#0.5%##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n이제 아무 가방을 들어도 질주할 수 있습니다.\n\n#{risk}#참고: 가방의 이동 패널티는 여전히 적용됩니다.##",
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "더 많은 피, 더 많은 출혈",
@@ -3008,11 +3006,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "불스아이",
-			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 #{skill_color}#5##초마다 #{skill_color}#5##씩 방탄력을 회복합니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 #{skill_color}#5##초마다 추가로 #{skill_color}#30##씩 방탄력을 회복합니다.",
+			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 방탄력을 #{skill_color}#5##만큼 회복합니다. 재사용 대기시간은 #{important_1}#5##초입니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 추가로 방탄력을 #{skill_color}#30##만큼 회복합니다.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
-			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n실드를 근접 공격하면 넘어뜨립니다.\n\n에이스: #{owned}#$pro##\n원거리 무기로 실드을 공격할 때 일정 확률로 넘어뜨릴 수 있습니다. 무기의 총 대미지가 높을수록 넉백 확률이 증가합니다.\n\n방탄력이 #{skill_color}#10%##만큼 더 빨리 회복됩니다.",
+			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n실드를 근접 공격하면 넘어뜨립니다.\n\n#{risk}#참고:## #{important_1}#캡틴 윈터스는## #{risk}#넘어뜨릴 수 없습니다.##\n\n에이스: #{owned}#$pro##\n방탄력이 #{skill_color}#10%##만큼 더 빨리 회복됩니다.\n\n원거리 무기로 실드을 공격할 때 일정 확률로 넘어뜨릴 수 있습니다. 무기의 총 대미지가 높을수록 넉백 확률이 증가합니다.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 			--Scavenger
@@ -3021,19 +3019,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "탄환폭풍",
-			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 #{skill_color}#5##초까지 탄약 소모가 없어집니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n#{risk}#참고: 발사기 및 폭발탄을 사용하는 무기들은 이 스킬의 효과를 받지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄약 소모가 없어지는 시간이 추가로 #{skill_color}#15##초로 증가합니다.",
+			["menu_ammo_reservoir_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이 스킬을 보유한 사람이 설치한 탄약 가방을 소모할 때, 공급받은 탄약량에 따라 소모 직후 최대 #{skill_color}#5##초까지 탄약 소모가 없어집니다.\n\n플레이어가 탄약 가방에 탄약을 보충할 수록 효과 지속 시간이 길어집니다.\n\n#{risk}#참고:## #{important_1}#발사기 및 폭발탄을 사용하는 무기들은## #{risk}#이 스킬의 효과를 받지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄약 소모가 없어지는 시간이 추가로 #{skill_color}#15##초로 증가합니다.",
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "장비 전문가",
-			["menu_portable_saw_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#OVE9000 톱##으로 적을 공격할 때 톱날의 내구도가 #{skill_color}#50%##만큼 덜 감소됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#OVE9000 톱, 쇠뇌, 활, 발사기##의 재장전 속도가 #{skill_color}#25%##만큼 증가합니다.",
+			["menu_portable_saw_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#OVE9000 톱##으로 적을 공격할 때 톱날의 내구도가 #{skill_color}#50%##만큼 덜 감소됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#OVE9000 톱, 활, 발사기##의 재장전 속도가 #{skill_color}#25%##만큼 증가합니다.",
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "추가 탄약통",
-			["menu_ammo_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n탄약 가방의 용량이 #{skill_color}#200%## 늘어납니다.\n\n에이스: #{owned}#$pro##\n탄약 가방의 휴대량이 #{skill_color}#2##개로 늘어납니다.",
+			["menu_ammo_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n탄약 가방의 용량이 #{skill_color}#200%##만큼 늘어납니다.\n\n에이스: #{owned}#$pro##\n탄약 가방의 휴대량이 #{skill_color}#2##개로 늘어납니다.",
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "찢고 죽인다",
-			["menu_carbon_blade_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#OVE9000 톱##으로 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n적을 #{skill_color}#OVE9000 톱, 쇠뇌, 활, 발사기##로 죽일 경우, #{skill_color}#50%## 확률로 #{skill_color}#10m## 이내에 있는 주변 적들에게 패닉을 일으킵니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.",
+			["menu_carbon_blade_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#OVE9000 톱##으로 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n적을 #{skill_color}#OVE9000 톱, 활, 발사기##로 죽일 경우, #{skill_color}#50%## 확률로 #{skill_color}#10m## 이내에 있는 주변 적들에게 패닉을 일으킵니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.",
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "완전무장",
@@ -3044,11 +3042,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ENGINEER SUBTREE   ]]--
 			--Logistician
 			["menu_defense_up_beta_sc"] = "로지스티션",
-			["menu_defense_up_beta_desc_sc"] = "베이직: #{owned}#$basic##\n도구와의 상호작용, 설치속도 #{skill_color}#25%##만큼 향상합니다.\n\n에이스: #{owned}#$pro##\n당신과 둉료들은 도구와의 상호작용, 설치속도 #{skill_color}#50%##만큼 향상합니다.",
+			["menu_defense_up_beta_desc_sc"] = "베이직: #{owned}#$basic##\n도구와의 상호작용, 설치속도 #{skill_color}#25%##만큼 향상합니다.\n\n에이스: #{owned}#$pro##\n당신과 둉료들은 도구와의 상호작용, 설치속도 #{skill_color}#50%##만큼 향상합니다.\n\n#{risk}#참고: 이 효과는 여러 팀원들이 이 스킬을 사용하는 경우에는 중첩되지 않습니다.##",
 
 			--Nerves of Steel--
 			["menu_fast_fire_beta_sc"] = "강인한 정신",
-			["menu_fast_fire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n다운 상태에서 #{skill_color}#정조준을 할 수 있게 됩니다##.\n\n에이스: #{owned}#$pro##\n상호작용 중 입는 피해가 #{skill_color}#50%##만큼 감소합니다.",
+			["menu_fast_fire_beta_desc_sc"] = "베이직: #{owned}#$basic##\n다운 상태에서 #{skill_color}#정조준을 할 수 있게 됩니다.##\n\n에이스: #{owned}#$pro##\n상호작용 중 입는 피해가 #{skill_color}#50%##만큼 감소합니다.",
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "엔지니어링",
@@ -3062,7 +3060,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "타워 디펜스",
-			["menu_tower_defense_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 센트리 건에서 철갑탄을 전환할 수 있으며 전환 시 발사 속도를 #{skill_color}#66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 #{skill_color}#35%##가 소모됩니다.",
+			["menu_tower_defense_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 센트리 건에서 #{skill_color}#철갑탄##으로 전환할 수 있으며 전환 시 발사 속도를 #{skill_color}#66%##만큼 낮추고 적과 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#2##개의 센트리 건을 휴대할 수 있습니다.\n\n센트리 건을 배치하는 데 최대 탄약의 #{skill_color}#35%##가 소모됩니다.",
 
 			--Bulletproof--
 			["menu_iron_man_sc"] = "방탄",
@@ -3091,7 +3089,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",
-			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n#{skill_color}#75%##의 성공률로 드릴이 고장날 때마다 기회를 #{skill_color}#1##번 얻습니다.\n\n에이스: #{owned}#$pro##\n상호작용을 하는 동안 #{skill_color}#더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
+			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n#{skill_color}#75%##의 성공률로 드릴이 고장날 때마다 기회를 #{skill_color}#1##번 얻습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#상호작용을 하는 동안 더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
 
 			--[[  COMBAT ENGINEER SUBTREE   ]]--
 			--Rifleman
@@ -3116,7 +3114,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Mind Blown, formerly Explosive Headshot--
 			["menu_kilmer_sc"] = "마인드 블로우",
-			["menu_kilmer_desc_sc"] = "베이직: #{owned}#$basic##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##으로 헤드샷 할 시 #{skill_color}#4##미터 반경에서 가장 가까운 적에게 입힌 피해의 #{skill_color}#70%##만큼 입힙니다.\n\n적에게서 #{skill_color}#7##미터 떨어져 있을 때 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 #{skill_color}#4##번까지 됩니다.\n\n에이스: #{owned}#$pro##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##의 헤드샷은 #{skill_color}#거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 #{skill_color}#1##미터만큼 증가합니다.\n\n적에게서 #{skill_color}#7##미터 떨어져 있을 때 연쇄 효과가 추가로 #{skill_color}#10%##만큼 피해를 주고, 최대 총 #{skill_color}#110%##의 피해를 입힐 수 있습니다.",			
+			["menu_kilmer_desc_sc"] = "베이직: #{owned}#$basic##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##으로 헤드샷 할 시 #{skill_color}#4##미터 반경에서 가장 가까운 적에게 입힌 피해의 #{skill_color}#70%##만큼 입힙니다.\n\n적에게서 #{skill_color}#8##미터 떨어져 있을 때 효과가 해당 적의 근처에 있는 다른 적에게도 연결됩니다. 이 효과는 최대 #{skill_color}#3##번까지 됩니다.\n\n에이스: #{owned}#$pro##\n반자동 혹은 점사로 설정된 #{skill_color}#소총##의 헤드샷은 #{skill_color}#거리에 따른 피해 감소 없음##을 가지며 연쇄 효과의 반경이 #{skill_color}#1##미터만큼 증가합니다.\n\n적에게서 #{skill_color}#8##미터 떨어져 있을 때 연쇄 효과가 추가로 #{skill_color}#10%##만큼 피해를 주고, 최대 총 #{skill_color}#100%##의 피해를 입힐 수 있습니다.",			
 
 		--[[   GHOST   ]]--
 		
@@ -3148,11 +3146,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ARTFUL DODGER SUBTREE  ]]--
 			--Duck and Cover--
 			["menu_sprinter_beta_sc"] = "엄폐의 중요성",
-			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}#25%##만큼 앞당기고 회복률도 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}#6%##만큼씩 채워집니다.\n\n웅크리고 있을 때 이동 속도가 #{skill_color}#10%##만큼 증가합니다.",
+			["menu_sprinter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n스태미나의 회복 시작 시간을 #{skill_color}#25%##만큼 앞당기고 회복률도 #{skill_color}#25%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n앉아 있는 동안 회피 미터는 매 초마다 회피의 #{skill_color}#6%##만큼씩 채워집니다.\n\n앉아 있을 때 이동 속도가 #{skill_color}#10%##만큼 증가합니다.",
 
 			--Evasion--
 			["menu_awareness_beta_sc"] = "위기모면",
-			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n달리면서 재장전할 수 있습니다.\n\n전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.",			
+			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 추가로 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n달리면서 재장전할 수 있습니다.\n\n#{item_stage_2}#전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.##",			
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
@@ -3176,11 +3174,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기를 꺼내고 넣는 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기 교체 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 적을 표준 총알 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 적을 비폭발 원거리 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
@@ -3188,7 +3186,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고: 발사기에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n적의 뒤에서 총이나 근접 공격으로 죽이면 회피 미터가 #{skill_color}#75%##만큼 채워집니다.\n\n특수 적에게 추가로 #{skill_color}#15%##만큼 피해를 더 많이 입힙니다.",
+			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n헤드샷으로 적을 죽이면 회피 미터가 회피의 #{skill_color}#12.5%##만큼 채워집니다.\n\n적을 뒤에서 죽이면 회피 미터가 회피의 #{skill_color}#75%##만큼 채워집니다. 또한 헤드샷 킬을 통해 주어지는 회피와 중첩이 가능합니다.\n\n#{risk}#참고:## #{important_1}#폭발물, 불 또는 지속 피해 효과로 죽이면## #{risk}#회피가 채워지지 않습니다.##",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
@@ -3214,11 +3212,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Desperado--
 			["menu_expert_handling_sc"] = "데스페라도",
-			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
+			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 추가로 #{skill_color}#4##초 증가합니다.",
 
 			--Trigger Happy--
 			["menu_trigger_happy_beta_sc"] = "난사광",
-			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지를 #{skill_color}#10%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 지속 시간이 #{skill_color}#10##초로 증가합니다.",
+			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지가 #{skill_color}#5%##만큼 증가됩니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 부스트 지속 시간이 추가로 #{skill_color}#4##초 증가하고 최대 중첩 수가 #{skill_color}#5##회 더 증가합니다.",
 
 			--[[   REVENANT SUBTREE  ]]--
 			--Running From Death--
@@ -3234,7 +3232,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_what_doesnt_kill_beta_desc_sc"] = "베이직: #{owned}#$basic##\n구금에 가까워질 때마다 받는 피해가 #{skill_color}#1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n받는 피해가 추가로 #{skill_color}#3##만큼 감소합니다.",
 			
 			--Swan Song
-			["menu_perseverance_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 다 떨어졌을때 바로 쓰러지지 않고, #{skill_color}#3##초 동안 이동 속도 패널티를 #{skill_color}#60%##만큼 받으며 전투를 속행합니다.\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}#6##초 동안 전투를 속행할 수 있습니다.",
+			["menu_perseverance_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 다 떨어졌을때 바로 쓰러지지 않고, #{skill_color}#3##초 동안 이동 속도 패널티를 #{skill_color}#60%##만큼 받으며 전투를 속행하는 스완송 상태가 됩니다.\n\n#{risk}#참고: 스완송 상태에 돌입되면 끝나는 즉시 다운이 됩니다.##\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}#6##초 동안 전투를 속행할 수 있습니다.",
 
 			--Haunt--
 			["menu_haunt_sc"] = "저주",
@@ -3242,7 +3240,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Messiah--
 			["menu_pistol_beta_messiah_sc"] = "구세주",
-			["menu_pistol_beta_messiah_desc_sc"] = "베이직: #{owned}#$basic##\n쓰러질 동안 적을 사살하면 바로 일어날 수 있습니다. #{skill_color}#1##번의 기회만 주어지고 구금 상태에서 풀릴 때 다시 채워집니다.\n\n처음으로 구금되기 전까진 추가로 #{skill_color}#한 번## 더 다운될 수 있습니다.\n\n에이스: #{owned}#$pro##\n이제 구세주를 제한 없이 사용 가능하지만 #{skill_color}#120##초의 재사용 대기시간이 생깁니다. 쓰러진 상태에서 적을 처치하면 재사용 대기시간이 #{skill_color}#10##초 만큼 감소합니다.",			
+			["menu_pistol_beta_messiah_desc_sc"] = "베이직: #{owned}#$basic##\n쓰러질 동안 적을 죽이면 구세주 기회가 준비되어 점프하면 스스로 소생시킬 수 있습니다. #{skill_color}#1##번의 기회만 주어지고 구금 상태에서 풀릴 때 다시 채워집니다.\n\n처음으로 구금되기 전까진 #{skill_color}#한 번## 더 다운될 수 있습니다.\n\n에이스: #{owned}#$pro##\n이제 구세주 기회를 무한으로 사용이 가능하지만 #{important_1}#120##초의 재사용 대기시간이 생깁니다. 쓰러진 상태에서 적을 처치하면 재사용 대기시간이 #{skill_color}#10##초씩 감소합니다.",			
 
 			--[[   BRAWLER SUBTREE   ]]--
 			--Martial Arts--
@@ -3259,7 +3257,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "피의 갈증",
-			["menu_bloodthirst_desc_sc"] = "베이직: #{owned}#$basic##\n근접 공격으로 적을 죽이면 #{skill_color}#10##초 동안 장전 속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n적을 처치할 때마다 다음 근접 공격 피해가 #{skill_color}#25%##씩 증가하고, 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 공격하면 초기화됩니다.",
+			["menu_bloodthirst_desc_sc"] = "베이직: #{owned}#$basic##\n근접 공격으로 적을 죽이면 #{skill_color}#10##초 동안 장전 속도가 #{skill_color}#25%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n근접 무기를 제외한 무기로 적을 처치할 때마다 다음 근접 공격 피해가 #{skill_color}#25%##씩 증가하고 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 공격하면 초기화됩니다.",
 
 			--Frenzy--
 			["menu_wolverine_beta_sc"] = "광분",
@@ -3267,27 +3265,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Berserker--
 			["menu_frenzy_sc"] = "버서커",
-			["menu_frenzy_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 근접 공격과 톱의 공격력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 원거리 무기류의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고: 발사기에는 적용되지 않습니다.##"
+			["menu_frenzy_desc_sc"] = "베이직: #{owned}#$basic##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 근접 공격과 톱의 공격력이 #{skill_color}#100%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 낮을수록 공격력이 상승합니다.\n\n체력이 #{skill_color}#100%## 미만일 때 원거리 무기류의 공격력이 #{skill_color}#50%##만큼 증가합니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##"
 
 	})
-	
-	local butt = math.rand(1)
-	local frame = 0.01
-	if butt <= frame then
-		LocalizationManager:add_localized_strings({
-			["menu_st_spec_23"] = "헬민스",
-			["menu_st_spec_23_desc"] = "주인께서 쉴 때 주인을 양육하는 사람은 누구이나이까? 날마다 전쟁으로 찢긴 몸을 누가 회복시켜 주는옵니까? 끝없는 힘과 활력으로 주인의 혈연의 살을 풍요롭게 하는 우유는 누구의 우유이나이까?\n\n\n#{important_1}#오직 저일지도 모르나이다.##",		
-			["menu_difficulty_sm_wish"] = "강철의 길",
-			["menu_risk_sm_wish"] = "강철의 길. 콘클레이브를 마스터하고 도전을 원하는 사람들을 위한 난이도입니다."
-		})
-	end
 
-	local murky = math.rand(1)
-	local marinecorpse = 0.01
-	if murky <= marinecorpse then
-		LocalizationManager:add_localized_strings({
-			["menu_risk_sm_wish"] = "아쎄이! 이 난이도를 고르겠다면 희망을 버려라!"
-		})
+	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+		local yes = math.rand(1)
+		local no = 0.01
+		if yes <= no then
+			LocalizationManager:add_localized_strings({
+				["menu_st_spec_17_desc"] = "#{risk}#이거 그냥 무료로 모든 플레이어가 사용할 수 있게 하면 안되나? 이미 DLC 없어졌는데 왜 DLC 있어야됨?##",
+				["menu_difficulty_normal"] = "쉬움",
+					["menu_risk_pd"] = "쉬움. 위험도에 대한 추가 보상은 없습니다.",
+				["menu_difficulty_hard"] = "보통",
+					["menu_risk_swat"] = "보통. 경험치와 보상이 증가합니다.",
+				["menu_difficulty_very_hard"] = "어려움",
+					["menu_risk_fbi"] = "어려움. 경험치와 보상이 상당히 증가합니다.",
+				["menu_difficulty_overkill"] = "매우 어려움",
+					["menu_risk_special"] = "매우 어려움. 경험치와 보상이 굉장히 증가합니다.",
+				["menu_difficulty_easy_wish"] = "하드코어",
+					["menu_risk_easy_wish"] = "하드코어. 경험치와 보상이 엄청나게 증가합니다.",
+				["menu_difficulty_apocalypse"] = "익스트림",
+					["menu_risk_eilte"] = "익스트림. 그들에게 지옥을 보여주십시오.",
+				["menu_difficulty_sm_wish"] = "인세인",
+					["menu_risk_sm_wish"] = "인세인. 너의 한계를 보여줘라."
+			})
+		end
 	end
 	
 end)
@@ -3296,7 +3299,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "회피",
 		["menu_st_category_activated"] = "활성 기능",
-		["menu_st_category_challenge"] = "와일드 카드",		
+		["menu_st_category_challenge"] = "와일드 카드",
+		["menu_st_category_mod"] = "모드",
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "헤드샷 대미지가 ##25%만큼 증가합니다.##\n\n##25%##만큼 많은 피해를 입힙니다. 투척 무기 또는 발사기에는 적용되지 않습니다.",
@@ -3305,11 +3309,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deckall_8_desc_sc"] = "의료 가방의 상호 작용 속도가 ##20%##만큼 빨라집니다.\n\n대미지가 ##25%##만큼 얻습니다. 투척 무기 또는 발사기에는 적용되지 않습니다.",
 
 		--Crook--	
-		["menu_deck6_1_desc_sc"] = "회피가 ##5##만큼 증가합니다.\n\n방어 조끼의 경우 방탄력이 ##15%##만큼 증가합니다.",
-		["menu_deck6_3_desc_sc"] = "방탄조끼류의 회피 포인트가 추가로 ##5##만큼 증가합니다.",
-		["menu_deck6_5_desc_sc"] = "방탄조끼류의 방탄력이 추가로 ##15%##만큼 증가합니다.\n\n락픽 시간이 ##20%##만큼 빨라집니다.",
-		["menu_deck6_7_desc_sc"] = "방탄조끼류의 회피 포인트가 추가로 ##5##만큼 증가합니다.",
-		["menu_deck6_9_desc_sc"] = "방탄조끼류의 방탄력이 추가로 ##20%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck6_1_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.\n\n방탄 조끼의 경우 방탄력이 ##15%##만큼 증가합니다.",
+		["menu_deck6_3_desc_sc"] = "방탄 조끼의 회피 포인트가 추가로 ##5##만큼 증가합니다.",
+		["menu_deck6_5_desc_sc"] = "방탄 조끼의 방탄력이 추가로 ##15%##만큼 증가합니다.\n\n락픽 시간이 ##20%##만큼 빨라집니다.",
+		["menu_deck6_7_desc_sc"] = "방탄 조끼의 회피 포인트가 추가로 ##5##만큼 증가합니다.",
+		["menu_deck6_9_desc_sc"] = "방탄 조끼의 방탄력이 추가로 ##20%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Rogue	
 		["menu_deck4_1_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.\n\n무기를 교체하는 속도가 ##30%## 빨라집니다.",
@@ -3324,116 +3328,117 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "연필과 함께",
 		["menu_deck5_7_sc"] = "전문 암살자",
 
-		["menu_deck5_1_desc_sc"] = "근접 외로 적을 죽이면 임시 체력이 ##25##만큼 생깁니다. 최대 ##75##의 체력을 저장할 수 있습니다.\n\n근접 공격으로 적을 죽이면 저장된 체력이 초당 ##5##의 속도로 감소하는 임시 체력으로 바뀝니다.\n\n임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.",
+		["menu_deck5_1_desc_sc"] = "근접 무기 이외의 무기로 적을 죽이면 임시 체력을 ##25##만큼 저장합니다.\n\n임시 체력은 최대 ##75##까지 저장할 수 있고 근접 공격으로 적을 죽이면 저장된 체력만큼 체력을 부여하지만 매 초마다 ##5##씩 감소하고 한 번에 최대 ##240##까지만 가질 수 있습니다.",
 		["menu_deck5_3_desc_sc"] = "방탄력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n\n회피 포인트를 추가로 ##5##만큼 더 얻습니다.",
-		["menu_deck5_5_desc_sc"] = "임시 체력을 ##60%##만큼 더 저장합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
-		["menu_deck5_7_desc_sc"] = "일어나면 임시 체력을 ##120##만큼 얻습니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck5_9_desc_sc"] = "임시 체력이 있는 동안 ##10%## 굴절 및 ##20%## 추가 이동 속도를 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck5_5_desc_sc"] = "임시 체력을 ##60%##만큼 더 저장할 수 있습니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
+		["menu_deck5_7_desc_sc"] = "다운된 상태에서 일어나면 임시 체력을 ##120##만큼 얻습니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
+		["menu_deck5_9_desc_sc"] = "임시 체력이 있는 동안 굴절을 ##10%##만큼과 이동 속도를 ##20%##만큼 추가로 얻습니다.\n\n굴절은 받는 체력 피해를 최대 #{skill_color}#$deflection##까지 줄이고 다른 형태의 피해 감소 후에 적용됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Muscle	
 		["menu_deck2_1_desc_sc"] = "체력을 ##10%##만큼 얻습니다.",
 		["menu_deck2_3_desc_sc"] = "체력을 추가로 ##10%##만큼 얻습니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck2_5_desc_sc"] = "체력을 추가로 ##10%##만큼 얻습니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 		["menu_deck2_7_desc_sc"] = "총으로 발사할 때 마다 ##5%## 확률로 적들에게 패닉를 퍼뜨릴 수 있습니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n추가로 회피 포인트가 ##5##만큼 증가합니다.",
-		["menu_deck2_9_desc_sc"] = "추가로 체력을 ##10%##만큼 얻습니다.\n\n일어난 후 최대 체력의 ##25%##를 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck2_9_desc_sc"] = "추가로 체력을 ##10%##만큼 얻습니다.\n\n다운된 상태에서 일어나면 최대 체력의 ##25%##만큼 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Crew Chief
 		["menu_deck1_3_desc_sc"] = "당신과 당신의 팀원의 스태미나가 ##50%##만큼 증가합니다.\n\n외침 거리가 ##25%##만큼 증가합니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck1_5_desc_sc"] = "추가로 체력이 ##10%##만큼 얻습니다.\n\n팀원의 체력이 ##5%##만큼 더 증가합니다.\n\n참고: 팀원의 퍽 효과는 중첩되지 않습니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
 		["menu_deck1_7_desc_sc"] = "방탄력을 ##10%##만큼 얻습니다.\n\n추가로 회피 포인트가 ##5##만큼 증가합니다.",
-		["menu_deck1_9_desc_sc"] = "각 인질이 있을 때마다 당신과 당신의 팀원은 ##5%## 최대 체력과 ##10%## 스태미나를 최대 ##4##번 얻습니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck1_9_desc_sc"] = "각 인질마다 당신과 당신의 팀원은 ##5%## 최대 체력과 ##10%## 스태미나를 얻습니다. 이 효과는 인질 4명까지 적용됩니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		
 		--Armorer--		
 		["menu_deck3_1_desc_sc"] = "방탄력을 ##10%##만큼 얻습니다.",
 		["menu_deck3_3_desc_sc"] = "방탄력을 추가로 ##10%##만큼 얻습니다.",
 		["menu_deck3_5_desc_sc"] = "방탄력을 추가로 ##5%##만큼 얻습니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
-		["menu_deck3_7_desc_sc"] = "방탄복 회복률이 ##10%##만큼 증가합니다.",
-		["menu_deck3_9_desc_sc"] = "방탄복 회복률이 추가로 ##5%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck3_7_desc_sc"] = "모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.",
+		["menu_deck3_9_desc_sc"] = "모든 방탄복의 회복 시간이 추가로 ##5%##만큼 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Burglar--			
 		["menu_deck7_1_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck7_3_desc_sc"] = "추가로 회피 포인트가 ##5##만큼 증가합니다.\n\n시체 가방을 싸는 시간이 ##20%##만큼 빨라집니다.",
-		["menu_deck7_5_desc_sc"] = "웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##5%##만큼 채워집니다.\n\n웅크리고 있을 때 이동 속도가 ##20%##만큼 증가합니다.",
-		["menu_deck7_7_desc_sc"] = "회피 포인트가 추가로 ##5##만큼 증가합니다.\n\n페이저에 응답하는 속도가 ##10%##만큼 빨라집니다.",
-		["menu_deck7_9_desc_sc"] = "방탄복 회복률이 ##10%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck7_5_desc_sc"] = "앉아 있는 동안 회피 미터가 매 초마다 회피의 ##5%##만큼 채워집니다.\n\n앉아 있을 때 이동 속도가 ##20%##만큼 증가합니다.",
+		["menu_deck7_7_desc_sc"] = "회피 포인트가 추가로 ##5##만큼 증가합니다.",
+		["menu_deck7_9_desc_sc"] = "모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Gambler--	
-		["menu_deck10_1_desc_sc"] = "획득한 탄약 상자에 체력을 ##3##에서 ##5##씩 치료하는 의약품을 생성합니다.\n\n재사용 대기시간은 ##8##초이지만, 탄약 상자를 획득할 때마다 재사용 대기시간이 ##1##에서 ##3##초씩 감소합니다.",
-		["menu_deck10_3_desc_sc"] = "탄약을 주우면 다른 팀원들에게 평상 비율의 ##15%##만큼 탄약을 줍니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck10_5_desc_sc"] = "탄약 상자로 얻는 회복률을 ##1##만큼 추가로 증가합니다.\n\n탄약 상자를 획득하고 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
+		["menu_deck10_1_desc_sc"] = "탄약 상자를 획득하면 체력을 ##3##-##5##만큼 회복됩니다.\n\n재사용 대기시간은 ##8##초이지만, 탄약 상자를 획득할 때마다 재사용 대기시간이 ##1##-##3##초씩 감소합니다.",
+		["menu_deck10_3_desc_sc"] = "탄약 상자를 획득하면 다른 팀원들에게 평상 비율의 ##15%##만큼 탄약을 줍니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
+		["menu_deck10_5_desc_sc"] = "탄약 상자로 획득하고 얻는 회복량을 ##1##만큼 증가합니다.\n\n탄약 상자를 획득하고 회복되었다면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
 		["menu_deck10_7_desc_sc"] = "탄약 상자를 획득하고 회복되면 당신의 팀원들도 ##50%##만큼 회복됩니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck10_9_desc_sc"] = "탄약 상자로 얻는 회복률을 ##1##만큼 추가로 증가합니다.\n\n탄약 상자를 획득하고 회복되면 방탄복도 ##30##만큼 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck10_9_desc_sc"] = "탄약 상자로 획득하고 얻는 회복량을 ##1##만큼 더 증가합니다.\n\n탄약 상자를 획득하고 회복되었다면 방탄복도 ##30##만큼 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		["menu_deck10_7"] = "회피용 약품",
 		["menu_deck10_9"] = "방어용 약품",		
 
 		--Infiltrator--
-		["menu_deck8_1_desc_sc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.",
-		["menu_deck8_3_desc_sc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 추가로 감소합니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck8_5_desc_sc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##10%##만큼 추가로 감소합니다.\n\n근접 공격이 적중할 때마다 ##10##초 동안 근접 피해가 ##8%##만큼 추가로 증가하며 최대 ##5##번 중첩될 수 있습니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
+		["menu_deck8_1_desc_sc"] = "적이 ##12##미터 내에 있을 경우 적에게 받는 피해가 ##5%##만큼 감소합니다.",
+		["menu_deck8_3_desc_sc"] = "적이 ##12##미터 내에 있을 경우 적에게 받는 피해가 ##5%##만큼 추가로 감소합니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
+		["menu_deck8_5_desc_sc"] = "적이 ##12##미터 내에 있을 경우 적에게 받는 피해가 ##10%##만큼 추가로 감소합니다.\n\n근접 공격이 적중할 때마다 ##10##초 동안 근접 피해가 ##8%##만큼 추가로 증가하며 최대 ##5##번까지 중첩됩니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
 		["menu_deck8_7_desc_sc"] = "근접 공격이 적중할 때마다 ##10##초 동안 근접 피해가 ##8%##만큼 추가로 증가하며 최대 ##5##번 중첩될 수 있습니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck8_9_desc_sc"] = "근접 공격이 적중할 때마다 ##5##초 동안 매 초마다 체력이 ##2##씩 회복되며 최대 ##5##번 중첩됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck8_9_desc_sc"] = "근접 공격이 적중할 때마다 ##5##초 동안 매 초마다 체력이 ##2##씩 회복되며 최대 ##5##번까지 중첩됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "말 없는",
-		["menu_deck9_1_desc_sc"] = "##18미터## 내에 3명 이상의 적에게 둘러싸여 있을 때 적에게 받는 피해가 ##5%## 감소합니다.",
-		["menu_deck9_3_desc_sc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n이 효과는 매 ##5##초마다 한 번만 일어납니다. 재사용 대기시간 중 적을 죽일수록 ##0.5##초씩 감소하며, 근접 무기로 죽이면 재사용 대기시간이 3배씩 감소합니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
+		["menu_deck9_1_desc_sc"] = "##18##미터 내에 3명 이상의 적에게 둘러싸여 있을 때 적에게 받는 피해가 ##5%## 감소합니다.",
+		["menu_deck9_3_desc_sc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n이 효과는 매 ##5##초마다 한 번만 일어나고, 재사용 대기시간 중 적을 죽일수록 ##0.5##초씩 감소하며, 근접 무기로 적을 죽이면 재사용 대기시간이 ##1.5##초씩 감소합니다.\n\n회피 포인트를 ##5##만큼 얻습니다.",
 		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 체력이 ##2%##만큼 회복됩니다.\n\n이 효과는 긴장 (3번째 카드)과 재사용 대기시간을 공유합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
-		["menu_deck9_7_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 방탄복이 ##20##만큼 재생됩니다.\n\n이 효과는 긴장 (3번째 카드)과 재사용 대기시간을 공유합니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
-		["menu_deck9_9_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n이 효과는 긴장 (3번째 카드)과 재사용 대기시간을 공유합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
+		["menu_deck9_7_desc_sc"] = "##18##미터 내에 있는 적을 죽이면 방탄복이 ##20##만큼 재생됩니다.\n\n이 효과는 긴장 (3번째 카드)과 재사용 대기시간을 공유합니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
+		["menu_deck9_9_desc_sc"] = "##18##미터 내에 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n이 효과는 긴장 (3번째 카드)과 재사용 대기시간을 공유합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
 
 		--Grinder--		
-		["menu_deck11_1_desc_sc"] = "적에게 피해를 입히면 ##3##초 동안 1초마다 체력이 ##2##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.75##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복을 착용하는 동안 방탄력읋 ##30##만큼 잃습니다.\n\n방편복을 착용하는 동안 은페도를 ##8##만큼 얻습니다.",
-		["menu_deck11_3_desc_sc"] = "중첩이 1초마다 ##1## 체력을 추가로 회복합니다.",
+		["menu_deck11_1_desc_sc"] = "적에게 피해를 입히면 ##3##초 동안 매 초마다 체력이 ##2##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.75##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 또한 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복의 방탄력이 ##30##만큼 잃고 그 대신 은페도를 ##8##만큼 얻습니다.",
+		["menu_deck11_3_desc_sc"] = "효과가 중첩될 때마다 체력을 ##1## 추가로 회복합니다.",
 		["menu_deck11_5_desc_sc"] = "중첩이 ##2##초 동안 추가로 지속됩니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
-		["menu_deck11_7_desc_sc"] = "중첩이 1초마다 ##1## 체력을 추가로 회복합니다.",
+		["menu_deck11_7_desc_sc"] = "효과가 중첩될 때마다 체력을 ##1## 추가로 더 회복합니다.",
 		["menu_deck11_9_desc_sc"] = "모든 중첩이 이동 속도를 ##5%##만큼 증가시킵니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Open your mind--
-		["menu_deck13_1_desc_sc"] = "방탄력이 있는 동안 적을 1명씩 죽일때 마다 체력을 ##4##만큼 저장합니다.\n\n방탄력이 완전히 부서진 후 재생되기 시작하면 저장된 체력만큼 체력을 얻습니다.\n\n저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다르며, 중량 방탄복일 수록 경량 방탄복보다 체력을 저장할 수 있는 양이 적어집니다.",
+		["menu_deck13_1_desc_sc"] = "방탄력이 있는 동안 적을 죽일때 마다 체력을 ##4##만큼씩 저장합니다.\n\n방탄력이 완전히 부서진 후 재생되면 저장된 체력만큼 체력을 회복합니다.\n\n저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다르며, 무거운 방탄복일 수록 가벼운 방탄복보다 체력을 저장할 수 있는 양이 적어집니다.",
 		["menu_deck13_3_desc_sc"] = "처치 시 저장할 수 있는 체력이 ##2##만큼 증가합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck13_5_desc_sc"] = "저장할 수 있는 최대 체력이 ##25%## 증가합니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
 		["menu_deck13_7_desc_sc"] = "처치 시 저장할 수 있는 체력이 ##2##만큼 증가합니다.\n\n회피 포인트가 ##5##만큼 추가로 증가합니다.",
 		["menu_deck13_9_desc_sc"] = "적을 처치하면 장착한 방탄복에 따라 방탄복 회복 속도가 빨라집니다. 무거운 방탄복일 수록 가벼운 방탄복보다 적은 보너스를 얻습니다. 이 보너스는 방탄력이 회복될 때마다 초기화됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "당신이 입힌 피해가 히스테리 스택으로 전환됩니다. 최대 스택 수는 ##720##입니다.\n\n히스테리 스택:\n히스테리의 ##120## 중첩마다 받는 피해가 ##1##씩 감소합니다. 히스테리 스택은 ##8##초마다 ##120##씩 감소합니다.",
+		["menu_deck14_1_desc_sc"] = "당신이 입힌 피해의 ##100%##가 최대 ##720##까지 히스테리 스택으로 전환되고, ##120##마다 받는 피해를 ##1##씩 감소시킵니다.\n\n히스테리 스택은 ##8##초마다 ##120##씩 감소합니다.",
 		["menu_deck14_3_desc_sc"] = "당신의 팀원 또한 당신의 히스테리 스택의 효과를 얻습니다.\n\n팀원의 히스테리 스택은 같이 중첩되지 않으며 가장 높은 피해 흡수율을 제공하는 스택만 효과를 줍니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck14_5_desc_sc"] = "히스테리 스택의 감소를 ##8##초마다 ##90##으로 변경합니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
 		["menu_deck14_7_desc_sc"] = "이제 히스테리의 ##90## 중첩마다 받는 피해가 ##1##씩 감소합니다.",
-		["menu_deck14_9_desc_sc"] = "히스테리 스택이 ##100%## 더 강력해집니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck14_9_desc_sc"] = "히스테리 스택 효과가 ##100%##만큼 당신에게 적용됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Anarchist--
-		["menu_deck15_1_desc_sc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방탄력을 주기적으로 재생합니다. 방탄복이 중량일 수록 틱당 많은 방탄력을 재생하지만 틱 사이에는 긴 재생 시간이 생깁니다.\n\n참고: 이 특성 덱을 사용할 때 방탄복 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.",
-		["menu_deck15_3_desc_sc"] = "체력의 ##50%##가 ##50%##만큼 방탄복로 전환됩니다.",
-		["menu_deck15_5_desc_sc"] = "체력의 ##50%##가 ##100%##만큼 방탄복로 전환됩니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
-		["menu_deck15_7_desc_sc"] = "체력의 ##50%##가 ##150%##만큼 방탄복로 전환됩니다.",
-		["menu_deck15_9_desc_sc"] = "피해를 입히면 방탄력이 부여됩니다. 이것은 매 ##3##초마다 한 번만 발생합니다. 방탄복이 무거울 수록 많은 방탄력이 부여됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_st_spec_15"] = "아나키스트", --there's a random space at the end of the original string
+		["menu_deck15_1_desc_sc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방탄력을 주기적으로 재생합니다. 방탄복이 무거울 수록 많은 방탄력을 재생하지만 매 재생 간의 간격이 길어집니다.\n\n참고: 이 특성 덱을 사용할 때 방탄복 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.",
+		["menu_deck15_3_desc_sc"] = "##체력의 50%##가 ##50%##만큼 방탄량으로 전환됩니다.",
+		["menu_deck15_5_desc_sc"] = "##체력의 50%##가 ##100%##만큼 방탄량으로 전환됩니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
+		["menu_deck15_7_desc_sc"] = "##체력의 50%##가 ##150%##만큼 방탄량으로 전환됩니다.",
+		["menu_deck15_9_desc_sc"] = "피해를 입히면 방탄력이 부여됩니다. 이것은 매 ##3##초마다 발생하고, 방탄복이 무거울 수록 많은 방탄력이 부여됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##주사기##를 잠금 해제합니다.\n\n주사기를 활성화하면 ##4##초 동안 받은 모든 피해의 ##30%##만큼 회복합니다.\n\n효과가 지속되는 동안에도 여전히 피해를 입을 수 있습니다.\n\n주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.",
+		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##주사기##를 잠금 해제합니다.\n\n주사기를 활성화하면 ##4##초 동안 받은 모든 피해의 ##30%##만큼 회복합니다.\n\n효과가 지속되는 동안에도 여전히 피해를 입을 수 있습니다.\n\n주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.",
 		["menu_deck17_3_desc_sc"] = "주사기가 활성화되어 있는 동안 이동 속도가 ##20%##만큼 증가합니다.",
-		["menu_deck17_5_desc_sc"] = "이제 주사기가 활성화된 동안 ##6##초 동안 받는 모든 피해의 ##30%##만큼 치유됩니다.\n\n주사기가 활성화되어 있는 동안 주변에 있는 적들은 가능할 때마다 당신을 목표로 삼습니다.",
-		["menu_deck17_7_desc_sc"] = "체력이 ##25%## 미만일 때 주사기 효과를 받는 동안 회복되는 체력이 ##60%##만큼 증가합니다.",
-		["menu_deck17_9_desc_sc"] = "최대 체력일 때 주사기 효과 동안 얻은 체력 ##5##마다 주사기 재충전 시간이 ##1##초씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck17_5_desc_sc"] = "이제 주사기가 활성화된 동안 ##6##초로 증가합니다.\n\n주사기가 활성화되어 있는 동안 주변에 있는 적들은 가능한 한 당신을 목표로 삼습니다.",
+		["menu_deck17_7_desc_sc"] = "체력이 ##25%##보다 낮을 때 주사기의 회복 효과가 ##60%##만큼 증가합니다.",
+		["menu_deck17_9_desc_sc"] = "주사기 효과 동안 최대 체력보다 초과해서 회복했을 경우, 회복한 체력 ##5##마다 주사기 재사용 대기 시간이 ##1##초씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "기본 투척 무기를 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 배치하면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 서 있는 동안, 당신과 당신의 아군은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 서 있는 적의 정확도가 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
+		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 던지면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초씩 감소합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck18_3_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
-		["menu_deck18_7_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
+		["menu_deck18_7_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 더 증가합니다.",
 		["menu_deck18_9_desc_sc"] = "연막 안에 있는 동안 회피 미터가 1초마다 회피의 ##40%##만큼 채워집니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##힙 플라스크##를 잠금 해제합니다.\n\n체력에 입은 피해의 ##30%##가 시간에 따라 적용됩니다(##8##초).\n\n플라스크를 사용하면 시간 경과에 따른 피해가 즉시 무효화됩니다.\n\n지속 피해가 무효화될 때마다 남은 지속 피해의 ##150%##만큼 치유합니다. 플라스크의 재사용 대기시간은 ##30##입니다.\n\n모든 방탄복의 ##50%##만큼 체력을 ##50%##만큼으로 전환됩니다.",
+		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##힙 플라스크##를 잠금 해제합니다.\n\n체력에 입은 피해의 ##30%##가 ##8##초에 걸쳐 적용됩니다.\n\n플라스크를 사용하면 시간 경과에 따른 피해가 즉시 무효화됩니다.\n\n지속 피해가 무효화될 때마다 남은 지속 피해의 ##150%##만큼 치유합니다.\n\n플라스크의 재사용 대기시간은 ##30##초입니다.\n\n##방탄복의 50%##가 ##50%##만큼 체력으로 전환됩니다.",
 		["menu_deck19_3_desc_sc"] = "적을 죽일 때마다 플라스크의 재사용 대기시간이 ##1.5##초씩 감소합니다.",
 		["menu_deck19_5_desc_sc"] = "##4##초 동안 피해를 입지 않으면 모든 지속 피해가 무효화됩니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
-		["menu_deck19_7_desc_sc"] = "체력이 ##50%## 미만이면 플라스크의 재사용 대기시간이 적을 죽일 때마다 ##3##초씩 감소합니다.",
+		["menu_deck19_7_desc_sc"] = "체력이 ##50%##보다 낮을 때 플라스크의 재사용 대기시간이 적을 죽일 때마다 ##3##초씩 감소합니다.",
 		["menu_deck19_9_desc_sc"] = "일어날 때 최대 체력의 ##25%##만큼 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--it's not a war crime if they're not people--
-		["menu_deck20_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 ##18## 미터 내에 있는 다른 아군 유닛을 정확하게 보고 투척 무기 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##2##만큼 회복합니다.\n\n효과는 ##11##초 동안 지속되며 재사용 대기시간은 ##80##초입니다.",
-		["menu_deck20_3_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽이면 기체 디스펜서의 지속 시간이 ##2##초만큼 증가합니니다. 이 증가는 발생할 때마다 ##0.2##초씩 감소합니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
-		["menu_deck20_5_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽일 때마다 당신이 받는 피해가 기체 디스펜서의 효과와 재사용 대기시간이 끝날 때까지 ##0.5##만큼 최대 ##8##만큼 감소합니다.",
+		["menu_deck20_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 ##18##미터 내에 있는 동료를 보고 투척 무기 사용 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##2##만큼 회복합니다.\n\n효과는 ##11##초 동안 지속되며 재사용 대기시간은 ##80##초입니다.",
+		["menu_deck20_3_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽일 때마다 기체 디스펜서의 지속 시간이 증가합니다. 증가량은 기본 ##2##초지만, 매 처치마다 ##0.2##초씩 최대 ##10##번까지 줄어듭니다.",
+		["menu_deck20_5_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽일 때마다 당신이 받는 피해가 기체 디스펜서의 효과와 재사용 대기시간이 끝날 때까지 ##0.5##만큼 최대 ##8##만큼 감소합니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
 		["menu_deck20_7_desc_sc"] = "기체 디스펜서의 치유량이 ##100%## 증가합니다.",
 		["menu_deck20_9_desc_sc"] = "적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초씩 감소합니다.\n\n태그가 지정된 유닛이 더 이상 짝을 이루지 않을 때까지 적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초 씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
@@ -3445,108 +3450,116 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "방탄력을 ##25%##만큼 손실될 때마다 처치로 얻는 체력 수가 ##2##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Yakuza--
-		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다.\n\n체력이 ##100%## 이하일 때 회피 미터가 초당 회피의 최대 ##10%##씩 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
-		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
-		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##100%## 이하일 때 받는 피해가 최대 ##20%## 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
-		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%## 이하일 때 적을 근접 무기로 죽일 시 회피 미터가 최대 ##125%##만큼 채워지며 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##900ms##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
-		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 굴절량이 ##80%##만큼 증가합니다.\n\n다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방탄복이 ##50##만큼 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 회피 미터가 초당 회피의 최대 ##10%##씩 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
+		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 적을 죽일 때마다 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
+		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##100%##보다 낮을 때, 받는 피해가 최대 ##20%## 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
+		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 근접 공격으로 적을 죽일 때마다 회피 미터가 최대 ##125%##만큼 채워지며 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##0.9##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
+		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 굴절량이 ##80%##만큼 증가합니다.\n\n체력이 0이 되었을 때, 다운되는 대신 체력 ##1##과 방탄량이 ##50##만큼 회복된 상태로 생존합니다.\n\n참고: 이 효과는 다운마다 한 번만 발동되고 클로커 킥과 테이저 전기 충격로 인한 다운에는 발동되지 않습니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##휴대용 ECM 장치##를 잠금 해제합니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 재밍 효과가 발생하여 ##10##초 동안 모든 전자기기와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발생하여 ##10##초 동안 지속되고 범위는 ##15##미터입니다. ##첫 번째## 피드백 루프는 ##100%##의 확률로 대부분의 적을 스턴시키고, 이후 ##1.5##초마다 ##60%#의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
+		["menu_deck21_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##휴대용 ECM 장치##를 잠금 해제합니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 재밍 효과가 발생하여 ##10##초 동안 모든 전자기기와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발생하여 ##10##초 동안 지속되고 범위는 ##15##미터입니다. ##첫 번째## 피드백 루프는 ##100%##의 확률로 대부분의 적을 스턴시키고, 이후 ##1.5##초마다 ##60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##5##만큼 회복됩니다.",
-		["menu_deck21_7_desc_sc"] = "방탄복 회복률이 ##10% 증가합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",
+		["menu_deck21_7_desc_sc"] = "모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",
 		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##2.5##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech
-		["menu_deck22_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##리치 약병##을 잠금 해제합니다.\n\n약병을 활성화하면 최대 생명력의 ##10%##를 회복하고 ##6##초 동안 방탄력을 비활성화합니다.\n\n약병이 활성화되어 있는 동안 체력을 ##10%## 부분씩 분할되고 적으로부터 피해를 받으면 하나의 분할을 제거합니다. 적을 ##3##명씩 죽이면 체력의 한 분할을 회복하고 ##1##초 동안 피해를 입지 않습니다.\n\n리치 약병의 재사용 대기시간은 ##40##초입니다.",
-		["menu_deck22_3_desc_sc"] = "리치 약병이 활성화되어 있는 동안 체력 피해를 입을 때마다 팀원의 체력이 최대 체력의 ##1%##씩 회복합니다.",
+		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##리치 약병##을 잠금 해제합니다.\n\n약병을 활성화하면 최대 체력의 ##10%##를 회복하고 ##6##초 동안 방탄력을 비활성화합니다.\n\n약병이 활성화되어 있는 동안 체력을 ##10%## 단위로 분할되고 적으로부터 피해를 받으면 하나의 분할을 제거합니다. 적을 ##3##명씩 죽이면 체력의 한 분할을 회복하고 ##1##초 동안 피해를 입지 않습니다.\n\n리치 약병의 재사용 대기시간은 ##40##초입니다.",
+		["menu_deck22_3_desc_sc"] = "리치 약병이 활성화되어 있는 동안 체력 피해를 입을 때마다 팀원의 체력이 최대 체력의 ##1%##씩 회복됩니다.",
 		["menu_deck22_5_desc_sc"] = "리치 약병의 지속시간이 ##10##초로 증가합니다.\n\n적을 죽이면 리치 약병의 재사용 대기시간이 ##1##초씩 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
-		["menu_deck22_7_desc_sc"] = "이제 리치 앰플이 활성화되어 있는 동안 체력을 ##5%## 부분씩 분할됩니다",
-		["menu_deck22_9_desc_sc"] = "이제 리치 약병을 쓰러진 상태에서 활성화하여 리치 약병이 끝날 때까지 일시적으로 소생될 수 있습니다.\n\n리치 약병으로 소생하면 약병의 재사용 대기시간이 ##30##초 더 추가됩니다.\n\n이제 피해를 입으면 팀원의 체력이 ##2%##씩 회복합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck22_7_desc_sc"] = "이제 리치 약병이 활성화되어 있는 동안 체력을 ##5%## 단위로 분할됩니다.",
+		["menu_deck22_9_desc_sc"] = "이제 리치 약병을 쓰러진 상태에서 활성화하여 리치 약병이 끝날 때까지 일시적으로 소생될 수 있습니다.\n\n리치 약병으로 일어서게 되면 약병의 재사용 대기시간을 ##30##초 더 추가합니다.\n\n이제 약병이 활성화되어 있는 동안 피해를 입으면 팀원의 체력이 ##2%##씩 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--CopyCat--
-		["menu_deck23_1_desc"] = "들고 있는 무기로 적을 ##10##명 죽이면 집어넣은 무기가 자동으로 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
-		["menu_deck23_1_short"] = "들고 있는 무기로 적을 ##10##명 죽이면 집어넣은 무기가 자동으로 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
-		["menu_deck23_1_1_desc"] = "체력을 ##7.5%##만큼 얻습니다.",
-		["menu_deck23_1_1_short"] = "체력을 ##7.5%##만큼 얻습니다.",		
-		["menu_deck23_1_3_desc"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_1_3_short"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_1_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
-		["menu_deck23_1_4_short"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_1_desc"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
+		["menu_deck23_1_short"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
+		["menu_deck23_1_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_1_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_1_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_1_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
+		["menu_deck23_1_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_1_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_1_4_desc"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_1_4_short"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
 		
-		["menu_deck23_3_desc"] = "헤드샷을 할 때마다 체력을 ##2##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
-		["menu_deck23_3_short"] = "헤드샷을 할 때마다 체력을 ##2##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
-		["menu_deck23_3_1_desc"] = "체력을 ##7.5%##만큼 얻습니다.",
-		["menu_deck23_3_1_short"] = "체력을 ##7.5%##만큼 얻습니다.",		
-		["menu_deck23_3_3_desc"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_3_3_short"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_3_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
-		["menu_deck23_3_4_short"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_3_desc"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
+		["menu_deck23_3_short"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
+		["menu_deck23_3_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_3_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_3_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_3_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
+		["menu_deck23_3_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_3_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_3_4_desc"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_3_4_short"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
 
-		["menu_deck23_5_desc"] = "회피한 총알은 발사한 적에게 다시 튕겨 나갑니다.\n\n방탄복을 부수는 총알의 경우 발사한 적에게 튕겨지면 피해를 ##50%##만큼 줍니다.\n\n방탄복을 부수는 총알은 튕겨낼 경우 ##10##초의 재사용 대기시간을 가집니다.",
-		["menu_deck23_5_short"] = "회피한 총알은 발사한 적에게 다시 튕겨 나갑니다.\n\n방탄복을 부수는 총알의 경우 발사한 적에게 튕겨지면 피해를 ##50%##만큼 줍니다.\n\n방탄복을 부수는 총알은 튕겨낼 경우 ##10##초의 재사용 대기시간을 가집니다.",
-		["menu_deck23_5_1_desc"] = "체력을 ##7.5%##만큼 얻습니다.",
-		["menu_deck23_5_1_short"] = "체력을 ##7.5%##만큼 얻습니다.",
-		["menu_deck23_5_3_desc"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_5_3_short"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_5_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
-		["menu_deck23_5_4_short"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_5_desc"] = "회피한 총알은 발사한 적에게 다시 튕겨 나갑니다.\n\n방탄복을 부수는 총알의 경우 발사한 적에게 튕겨지면 피해를 ##100%##만큼 줍니다.\n\n방탄복을 부수는 총알은 튕겨낼 경우 ##15##초의 재사용 대기시간을 가집니다.",
+		["menu_deck23_5_short"] = "회피한 총알은 발사한 적에게 다시 튕겨 나갑니다.\n\n방탄복을 부수는 총알의 경우 발사한 적에게 튕겨지면 피해를 ##100%##만큼 줍니다.\n\n방탄복을 부수는 총알은 튕겨낼 경우 ##15##초의 재사용 대기시간을 가집니다.",
+		["menu_deck23_5_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_5_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_5_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_5_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
+		["menu_deck23_5_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_5_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_5_4_desc"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_5_4_short"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
 		
-		["menu_deck23_7_desc"] = "체력이 ##25%## 이하로 떨어지면 ##2##초 동안 체력 피해에 면역이 됩니다.\n\n이 효과는 매 ##30##초마다 한 번만 발생합니다.",
-		["menu_deck23_7_short"] = "체력이 ##25%## 이하로 떨어지면 ##2##초 동안 체력 피해에 면역이 됩니다.\n\n이 효과는 매 ##30##초마다 한 번만 발생합니다.",
-		["menu_deck23_7_1_desc"] = "체력을 ##7.5%##만큼 얻습니다.",
-		["menu_deck23_7_1_short"] = "체력을 ##7.5%##만큼 얻습니다.",
-		["menu_deck23_7_3_desc"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_7_3_short"] = "회피 포인트가 ##2.5##만큼 증가합니다.",
-		["menu_deck23_7_4_desc"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
-		["menu_deck23_7_4_short"] = "웅크리거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",		
+		["menu_deck23_7_desc"] = "체력이 ##50%## 이하로 떨어지면 ##2##초 동안 체력 피해에 면역이 됩니다.\n\n이 효과는 매 ##90##초마다 한 번만 발생합니다.",
+		["menu_deck23_7_short"] = "체력이 ##50%## 이하로 떨어지면 ##2##초 동안 체력 피해에 면역이 됩니다.\n\n이 효과는 매 ##90##초마다 한 번만 발생합니다.",
+		["menu_deck23_7_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_7_1_short"] = "체력을 ##5%##만큼 얻습니다.",
+		["menu_deck23_7_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",
+		["menu_deck23_7_2_short"] = "방탄력을 ##3.75%##만큼 얻습니다.",		
+		["menu_deck23_7_3_desc"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_7_3_short"] = "회피 포인트가 ##1.25##만큼 증가합니다.",
+		["menu_deck23_7_4_desc"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
+		["menu_deck23_7_4_short"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",		
 		--Final Card
 			--Crew Chief
 			["menu_deck1_mrwi_desc"] = "외침 거리가 ##25%##만큼 증가합니다.\n\n당신과 당신의 팀원의 스태미나가 ##50%##만큼 증가합니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
 			--Muscle
 			["menu_deck2_mrwi_desc"] = "총으로 발사할 때 마다 ##5%## 확률로 적들에게 패닉를 퍼뜨릴 수 있습니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.",
 			--Armorer
-			["menu_deck3_mrwi_desc"] = "방탄복 회복률이 ##10%##만큼 증가합니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",		
+			["menu_deck3_mrwi_desc"] = "모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",		
 			--Rouge
-			["menu_deck4_mrwi_desc"] = "무기를 교체하는 속도가 ##30%## 빨라집니다.",
+			["menu_deck4_mrwi_desc"] = "회피 포인트가 추가로 ##5##만큼 더 증가합니다.\n\n무기를 교체하는 속도가 ##30%## 빨라집니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
 			--Hitman
-			["menu_deck5_mrwi_desc"] = "근접 외로 적을 죽이면 임시 체력이 ##25##만큼 생깁니다. 최대 ##75##의 체력을 저장할 수 있습니다.\n\n근접 공격으로 적을 죽이면 저장된 체력이 초당 ##5##의 속도로 감소하는 임시 체력으로 바뀝니다.\n\n임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",			
+			["menu_deck5_mrwi_desc"] = "접 무기 이외의 무기로 적을 죽이면 임시 체력을 ##25##만큼 저장합니다.\n\n임시 체력은 최대 ##75##까지 저장할 수 있고 근접 공격으로 적을 죽이면 저장된 체력만큼 체력을 부여하지만 매 초마다 ##5##씩 감소하고 한 번에 최대 ##240##까지만 가질 수 있습니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",			
 			--Crook
-			["menu_deck6_mrwi_desc"] = "방어 조끼의 경우 방탄력이 ##15%##만큼 증가합니다.",
+			["menu_deck6_mrwi_desc"] = "방탄 조끼의 회피 포인트가 추가로 ##5##만큼 증가합니다.\n\n방탄 조끼의 방탄력이 방탄력이 ##15%##만큼 증가합니다.\n\n락픽 시간이 ##20%##만큼 빨라집니다.",
 			--Burglar
-			["menu_deck7_mrwi_desc"] = "웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##5%##만큼 채워집니다.\n\n웅크리고 있을 때 이동 속도가 ##20%##만큼 증가합니다.",
+			["menu_deck7_mrwi_desc"] = "회피 포인트가 추가로 ##5##만큼 더 증가합니다.\n\n앉아 있는 동안 회피 미터가 매 초마다 회피의 ##5%##만큼 채워집니다.\n\n앉아 있을 때 이동 속도가 ##20%##만큼 증가합니다.",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##10%##만큼 추가로 감소합니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
+			["menu_deck8_mrwi_desc"] = "적이 ##12##미터 내에 있을 경우 적에게 받는 피해가 ##10%##만큼 추가로 감소합니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n이 효과는 매 ##5##초마다 한 번만 일어납니다. 재사용 대기시간 중 적을 죽일수록 ##0.5##초씩 감소하며, 근접 무기로 죽이면 재사용 대기시간이 3배씩 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
+			["menu_deck9_mrwi_desc"] = "적을 죽이면 방탄력이 ##20##만큼 재생됩니다.\n\n이 효과는 매 ##5##초마다 한 번만 일어나고, 재사용 대기시간 중 적을 죽일수록 ##0.5##초씩 감소하며, 근접 무기로 적을 죽이면 재사용 대기시간이 ##1.5##초씩 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 			--Gambler
-			["menu_deck10_mrwi_desc"] = "탄약을 주우면 다른 팀원들에게 평상 비율의 ##15%##만큼 탄약을 줍니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
+			["menu_deck10_mrwi_desc"] = "탄약 상자를 획득하면 다른 팀원들에게 평상 비율의 ##15%##만큼 탄약을 줍니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "적에게 피해를 입히면 ##3##초 동안 1초마다 체력이 ##2##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.75##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복을 착용하는 동안 방탄력읋 ##30##만큼 잃습니다.\n\n방편복을 착용하는 동안 은페도를 ##8##만큼 얻습니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
+			["menu_deck11_mrwi_desc"] = "적에게 피해를 입히면 ##3##초 동안 매 초마다 체력이 ##2##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.75##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 또한 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복의 방탄력이 ##30##만큼 잃고 그 대신 은페도를 ##4##만큼 얻습니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
 			--Yakuza
-			["menu_deck12_mrwi_desc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
+			["menu_deck12_mrwi_desc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 적을 죽일 때마다 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 			--Ex-Pres
-			["menu_deck13_mrwi_desc"] = "방탄력이 있는 동안 적을 1명씩 죽일때 마다 체력을 ##4##만큼 저장합니다.\n\n방탄력이 완전히 부서진 후 재생되기 시작하면 저장된 체력만큼 체력을 얻습니다.\n\n저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다르며, 중량 방탄복일 수록 경량 방탄복보다 체력을 저장할 수 있는 양이 적어집니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
+			["menu_deck13_mrwi_desc"] = "방탄력이 있는 동안 적을 죽일때 마다 체력을 ##4##만큼씩 저장합니다.\n\n방탄력이 완전히 부서진 후 재생되면 저장된 체력만큼 체력을 회복합니다.\n\n저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다르며, 무거운 방탄복일 수록 가벼운 방탄복보다 체력을 저장할 수 있는 양이 적어집니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
 			--Maniac
-			["menu_deck14_mrwi_desc"] = "당신이 입힌 피해가 히스테리 스택으로 전환됩니다. 최대 스택 수는 ##720##입니다.\n\n히스테리 스택:\n히스테리의 ##120## 중첩마다 받는 피해가 ##1##씩 감소합니다. 히스테리 스택은 ##8##초마다 ##120##씩 감소합니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
+			["menu_deck14_mrwi_desc"] = "당신이 입힌 피해의 ##100%##가 최대 ##720##까지 히스테리 스택으로 전환되고, ##120##마다 받는 피해를 ##1##씩 감소시킵니다.\n\n히스테리 스택은 ##8##초마다 ##120##씩 감소합니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
 			--Anarchist
-			["menu_deck15_mrwi_desc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방탄력을 주기적으로 재생합니다. 방탄복이 중량일 수록 틱당 많은 방탄력을 재생하지만 틱 사이에는 긴 재생 시간이 생깁니다.\n\n참고: 이 특성 덱을 사용할 때 방탄복 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
+			["menu_deck15_mrwi_desc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방탄력을 주기적으로 재생합니다. 방탄복이 무거울 수록 많은 방탄력을 재생하지만 매 재생 간의 간격이 길어집니다.\n\n참고: 이 특성 덱을 사용할 때 방탄복 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
 			--Biker
 			["menu_deck16_mrwi_desc"] = "당신이나 당신의 팀원이 적을 죽일때마다 당신은 ##2##만큼 체력을 회복합니다. 이 효과는 매 ##2##초마다 한 번만 발생할 수 있습니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "투척 무기를 대신 사용할 수 있는 ##주사기##를 잠금 해제합니다.\n\n주사기를 활성화하면 ##4##초 동안 받은 모든 피해의 ##30%##만큼 회복합니다.\n\n효과가 지속되는 동안에도 여전히 피해를 입을 수 있습니다.\n\n주사기가 활성화되어 있는 동안 이동 속도가 ##20%##만큼 증가합니다.\n\n주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.",
+			["menu_deck17_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 ##주사기##를 잠금 해제합니다.\n\n주사기를 활성화하면 ##4##초 동안 받은 모든 피해의 ##30%##만큼 회복합니다.\n\n효과가 지속되는 동안에도 여전히 피해를 입을 수 있습니다.\n\n주사기가 활성화되어 있는 동안 이동 속도가 ##20%##만큼 증가합니다.\n\n주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "기본 투척 무기를 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 배치하면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 서 있는 동안, 당신과 당신의 아군은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 서 있는 적의 정확도가 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
+			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 던지면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초씩 감소합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "투척 무기를 대신 사용할 수 있는 ##힙 플라스크##를 잠금 해제합니다.\n\n체력에 입은 피해의 ##30%##가 시간에 따라 적용됩니다(##8##초).\n\n플라스크를 사용하면 시간 경과에 따른 피해가 즉시 무효화됩니다.\n\n지속 피해가 무효화될 때마다 남은 지속 피해의 ##150%##만큼 치유합니다. 플라스크의 재사용 대기시간은 ##30##입니다.\n\n모든 방탄복의 ##50%##만큼 체력을 ##50%##만큼으로 전환됩니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
+			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 ##힙 플라스크##를 잠금 해제합니다.\n\n체력에 입은 피해의 ##20%##가 ##5##초에 걸쳐 적용됩니다.\n\n플라스크를 사용하면 시간 경과에 따른 피해가 즉시 무효화됩니다.\n\n지속 피해가 무효화될 때마다 남은 지속 피해의 ##150%##만큼 치유합니다.\n\n플라스크의 재사용 대기시간은 ##30##초입니다.\n\n##방탄복의 50%##가 ##50%##만큼 체력으로 전환됩니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
 			--Tag Team
-			["menu_deck20_mrwi_desc"] = "투척 무기를 대신 사용할 수 있는 ##기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 ##18## 미터 내에 있는 다른 아군 유닛을 정확하게 보고 투척 무기 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##2##만큼 회복합니다.\n\n효과는 ##11##초 동안 지속되며 재사용 대기시간은 ##80##초입니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
+			["menu_deck20_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 ##기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 ##18##미터 내에 있는 동료를 보고 투척 무기 사용 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##2##만큼 회복합니다.\n\n효과는 ##11##초 동안 지속되며 재사용 대기시간은 ##80##초입니다.\n\n카메라 루프 지속 시간이 ##20##초로 증가합니다.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "투척 무기를 대신 사용할 수 있는 ##휴대용 ECM 장치##를 잠금 해제합니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 재밍 효과가 발생하여 ##10##초 동안 모든 전자기기와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발생하여 ##10##초 동안 지속되고 범위는 ##15##미터입니다. ##첫 번째## 피드백 루프는 ##100%##의 확률로 대부분의 적을 스턴시키고, 이후 ##1.5##초마다 ##60%#의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
+			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 ##휴대용 ECM 장치##를 잠금 해제합니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 재밍 효과가 발생하여 ##10##초 동안 모든 전자기기와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발생하여 ##10##초 동안 지속되고 범위는 ##15##미터입니다. ##첫 번째## 피드백 루프는 ##100%##의 확률로 대부분의 적을 스턴시키고, 이후 ##1.5##초마다 ##60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 ##80##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##2##초씩 단축됩니다.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "투척 무기를 대신 사용할 수 있는 ##리치 약병##을 잠금 해제합니다.\n\n약병을 활성화하면 최대 생명력의 ##10%##를 회복하고 ##6##초 동안 방탄력을 비활성화합니다.\n\n약병이 활성화되어 있는 동안 체력을 ##10%## 부분씩 분할되고 적으로부터 피해를 받으면 하나의 분할을 제거합니다. 적을 ##3##명씩 죽이면 체력의 한 분할을 회복하고 ##1##초 동안 피해를 입지 않습니다.\n\n리치 약병의 재사용 대기시간은 ##40##초입니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",			
+			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 ##리치 약병##을 잠금 해제합니다.\n\n약병을 활성화하면 최대 체력의 ##10%##를 회복하고 ##6##초 동안 방탄력을 비활성화합니다.\n\n약병이 활성화되어 있는 동안 체력을 ##10%## 단위로 분할되고 적으로부터 피해를 받으면 하나의 분할을 제거합니다. 적을 ##3##명씩 죽이면 체력의 한 분할을 회복하고 ##1##초 동안 피해를 입지 않습니다.\n\n리치 약병의 재사용 대기시간은 ##40##초입니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",			
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "타뷸라 라사",
@@ -3578,6 +3591,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		["rpd_menu_button"] = "특성 덱 리셋",
 		["rpd_menu_dialog_title"] = "확실하십니까?",
-		["rpd_menu_dialog_text"] = "$perk_deck_name 특성 덱을 리셋하면, 특성 포인트를 $points_to_refund 만큼 되돌려받습니다."	
+		["rpd_menu_dialog_text"] = "$perk_deck_name 특성 덱을 리셋하면, 특성 포인트를 $points_to_refund 만큼 되돌려받습니다.",
+
+
+		--MOD PERK DECKS
+			--OFFYERROCKER'S MERCENARY PERK DECK
+				["menu_deck_kmerc_1_desc_sc"] = "어떤 공격도 당신을 죽일 수 없도록 강한 타격으로 인한 체력 피해를 크게 줄입니다.\n\n체력을 ##5%##만큼 얻습니다.",
+				["menu_deck_kmerc_3_desc_sc"] = "방어력을 ##10%##만큼 얻습니다.\n\n모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.",	
+				["menu_deck_kmerc_5_desc_sc"] = "체력이 ##0##에 도달되었을 때 대신 ##1##이 되고 ##2##초 동안 무적 상태가 됩니다.\n무적 효과를 받는 동안에는 전력 질주할 수 없습니다.\n이 효과는 체력을 완전히 회복할 때까지는 다시 발생하지 않습니다.\n\n추가로 체력을 ##5%##만큼 더 얻습니다.",
+				["menu_deck_kmerc_7_desc_sc"] = "최소 ##2초##동안 방탄복을 회복된 후, 방탄력이 있는 있는 동안 ##5초마다## 체력을 최대 방탄력의 ##1%##만큼씩 회복합니다.",
+				["menu_deck_kmerc_9_desc_sc"] = "체력을 ##30%## 이하가 될 만큼 피해를 입을 때마다 해당 피해의 ##50%##를 방탄력으로 회복합니다.\n이 효과는 매 초마다 한 번만 발생하거나 Walk It Off(카드 5)의 무적 상태를 동시에 발생할 수 없습니다.",
+			--OFFYERROCKER'S LIBERATOR PERK DECK
+				["menu_deck_liberator_1_desc_sc"] = "투척 무기를 대신 사용할 수 있는 ##비상용 주사기##를 잠금 해제합니다. 비상용 주사기를 사용하면 즉시 스태미나를 ##15##만큼 회복되고 ##4초## 동안 혹은 플레이어가 체력 피해를 입을 때까지 매 초마다 체력이 ##0.5##씩 회복됩니다.\n비상용 주사기는 ##한 번만## 사용할 수 있고 ##45##초의 재사용 대기시간이 있지만, 적을 처치할 때마다 재사용 대기시간이 ##1##초씩 단축됩니다.",
+				["menu_deck_liberator_3_desc_sc"] = "이제 비상용 주사기의 체력 재생이 추가로 ##2##초 더 증가합니다.\n\n비상용 주사기의 체력 재생이 취소되면 남은 시간 동안 대미지 저항력을 ##10%##만큼 얻습니다.",
+				["menu_deck_liberator_5_desc_sc"] = "서바이벌 주사기는 추가로 스태미나를 ##15##만큼 회복하고 매 초마다 추가로 체력을 ##0.5## 더 회복합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
+				["menu_deck_liberator_7_desc_sc"] = "체력이 ##10%##만큼 증가합니다.\n\n이제 비상용 주사기의 체력 재생은 추가로 ##2##초 더 증가합니다.",
+				["menu_deck_liberator_9_desc_sc"] = "이제 비상용 주사기는 매 초 추가로 체력을 ##1##씩 회복합니다."				
+		
 	})
 end)

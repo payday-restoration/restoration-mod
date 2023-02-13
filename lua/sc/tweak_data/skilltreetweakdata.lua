@@ -458,14 +458,13 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"player_ap_bullets_1",
-						"weapon_automatic_head_shot_add_1"
+						"smg_ap_bullets_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"weapon_automatic_head_shot_add_2",
-						"player_universal_body_expertise"
+						"smg_automatic_kills_to_damage_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -3126,7 +3125,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 1},
 				texture_bundle_folder = "chico",
 				name_id = "menu_deck17_9",
-				desc_id = "menu_deck17_9_desc"
+				desc_id = "menu_deck17_9_desc_sc"
 			}
 		}
 
@@ -3209,7 +3208,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_1",
 				upgrades = {
 					"damage_control",
-					"player_damage_control_passive",
+					"player_damage_control_passive_1",
 					"player_damage_control_healing",
 					"player_armor_to_health_conversion"
 				},

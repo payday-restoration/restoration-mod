@@ -156,6 +156,27 @@
 	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/head_atlas_df" force="false"/>
 	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/head_atlas_nm" force="false"/>	
 	
+	<!--DRAK HRT-->
+	<unit  				path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1" load="true"/>
+	<unit  				path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1_husk" load="true"/>
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1_contour"/>
+	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	<model 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	<object 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/ene_drak_hrt_1"/>
+	
+	<unit 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2" load="true"/>
+	<unit 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2_husk" load="true"/>	
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>
+	<material_config 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2_contour"/>	
+	<object 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>
+	<model 				path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>	
+	<cooked_physics 	path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2"/>
+	
+	<texture 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/drak_fbi_rifle_df"/>
+	<texture 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_1/drak_fbi_head_df"/>
+	<texture 			path="units/pd2_mod_reapers/characters/ene_drak_hrt_2/heads_atlas_hrt_df" force="true"/>
+	
 	<!-- reaper fbi tier-->
 	<!--sexy ass helmets-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_fbi_helmet/ene_acc_fbi_helmet" />
@@ -496,6 +517,20 @@
 	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_contour" force="false" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_head_df" force="false" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_body_df" force="false" />
+	
+	<!--DRAK Medic-->
+	<object				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic" force="false"/>	
+	<material_config	path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic_contour" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_drak_medic/ene_drak_medic_husk" force="false" load="true"/>
+	
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/drak_body_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/maska_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/maska_il" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/drak_medic_head_df" force="false"/>
 	
 	<!--Cloaker-->
 	<object				path="units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1"/>

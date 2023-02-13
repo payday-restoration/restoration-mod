@@ -461,6 +461,48 @@ function PlayerStandard:_check_action_equip(t, input)
 	return new_action
 end
 
+
+
+function PlayerStandard:_check_action_jump(t, input)
+	local new_action = nil
+	local action_wanted = input.btn_jump_press
+
+	if self._is_wallrunning and action_wanted then --_is_wallrunning will return nil without AdvMov, no need to check for its global
+		self:_cancel_wallrun(t, "jump")
+	elseif action_wanted then
+		local action_forbidden = self._jump_t and t < self._jump_t + 0.55
+		action_forbidden = action_forbidden or self._unit:base():stats_screen_visible() or self._state_data.in_air or self:_interacting() or self:_on_zipline() or self:_does_deploying_limit_movement() or self:_is_using_bipod()
+
+		if not action_forbidden then
+			if self._state_data.ducking and not AdvMov then --Advmov global check
+				self:_interupt_action_ducking(t)
+			else
+				if self._state_data.on_ladder then
+					self:_interupt_action_ladder(t)
+				end
+
+				local action_start_data = {}
+				local jump_vel_z = tweak_data.player.movement_state.standard.movement.jump_velocity.z
+				action_start_data.jump_vel_z = jump_vel_z
+
+				if self._move_dir then
+					local is_running = self._running and self._unit:movement():is_above_stamina_threshold() and t - self._start_running_t > 0.4
+					local jump_vel_xy = tweak_data.player.movement_state.standard.movement.jump_velocity.xy[is_running and "run" or "walk"]
+					action_start_data.jump_vel_xy = jump_vel_xy
+
+					if is_running then
+						self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.SPRINT_JUMP_STAMINA_DRAIN or 0)
+					end
+				end
+
+				new_action = self:_start_action_jump(t, action_start_data)
+			end
+		end
+	end
+
+	return new_action
+end
+
 --[[
 Temp disabled, might revisit this?
 
@@ -1180,7 +1222,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	local speed_state = "walk"
 	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
 
-	if self._is_sliding then -- should be fine without having AdvMov installed since it'll return nil in you don't have it
+	if self._is_sliding then -- should be fine without having AdvMov installed since _is_sliding will return nil if you don't have it
 		movement_speed = self._slide_speed
 		speed_state = "run"
 	elseif self._is_wallrunning then -- ditto
@@ -1274,7 +1316,9 @@ function PlayerStandard:_start_action_running(t)
 	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 
 	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
-	if second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+	if second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() then
+		if self._running_wanted ~= true and weap_base:has_second_sight() and weap_base:toggle_second_sight(self) then
+		end
 		self._running_wanted = false
 
 		return
@@ -1347,7 +1391,7 @@ function PlayerStandard:_end_action_running(t)
 		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and self._equipped_unit:base()._starwars))))
 		
 		if stop_running then
-			self._ext_camera:play_redirect(self:get_animation("stop_running"), speed_multiplier)
+			self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
 		end
 	end
 end
@@ -1899,6 +1943,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		end
 	end
 	self:_shooting_move_speed_timer(t, dt)
+	self:_last_shot_t(t, dt)
 
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
 	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
@@ -1917,6 +1962,27 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	
 end)
+
+
+function PlayerStandard:_last_shot_t(t, dt)
+	local weapon = self._equipped_unit and self._equipped_unit:base()
+	local fire_mode = weapon and weapon:fire_mode()
+	if weapon then
+		if self._shooting and fire_mode == "auto" then
+			local reset_delay_t = tweak_data.upgrades.automatic_kills_to_damage_reset_t or 1
+			self._last_shooting_t = reset_delay_t
+		else
+			if self._last_shooting_t then
+				self._last_shooting_t = self._last_shooting_t - dt
+				if self._last_shooting_t < 0 then
+					self._last_shooting_t = nil
+					weapon._no_cheevo_kills_without_releasing_trigger = 0
+				end
+			end
+		end
+	end
+end
+
 
 function PlayerStandard:_shooting_move_speed_timer(t, dt)
 	local weapon = self._equipped_unit and self._equipped_unit:base()
@@ -2492,6 +2558,8 @@ function PlayerStandard:_update_slide_locks()
 				else
 					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
 						weap_base:tweak_data_anim_offset("magazine_empty", 1)
+					elseif weap_base:weapon_tweak_data().lock_slide_fire then
+						weap_base:tweak_data_anim_offset("fire", weap_base:weapon_tweak_data().lock_slide_offset or 0.033)
 					else 
 						weap_base:tweak_data_anim_offset("reload", weap_base:weapon_tweak_data().lock_slide_offset or 0.033)
 					end

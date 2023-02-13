@@ -101,9 +101,9 @@ return {
 		}
 	},
 	--disables the Swat Turret
-	[102484] = {
+	[100305] = {
 		values = {
-            chance = 0
+            enabled = false
 		}
 	}
 }

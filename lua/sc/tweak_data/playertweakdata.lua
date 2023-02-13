@@ -366,7 +366,8 @@ function PlayerTweakData:init()
 	self.movement_state.stamina.STAMINA_DRAIN_RATE_WARP = 3
 	self.movement_state.stamina.REGENERATE_TIME = 1
 	self.movement_state.stamina.MIN_STAMINA_THRESHOLD = 4
-	self.movement_state.stamina.JUMP_STAMINA_DRAIN = 0
+	self.movement_state.stamina.JUMP_STAMINA_DRAIN = 2 --Unused for vanilla movement mechanics
+	self.movement_state.stamina.SPRINT_JUMP_STAMINA_DRAIN = 0
 	
 	self.camera = {}
 	self.camera.MIN_SENSITIVITY = 0.3
@@ -637,6 +638,19 @@ if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then
 		self.stances.vityaz.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 		--SCAR is aligned as far as I can tell, no changes needed
 	end)
+end
+
+if SystemFS:exists("assets/mod_overrides/Patchett Proper Hold Reload Animations") then
+	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "jamview_fix", function(self)
+	
+		local pivot_shoulder_translation = Vector3(10.704, 1.084, -6.406)
+		local pivot_shoulder_rotation = Rotation(0.1355, -0.14, 0.5)     
+		local pivot_head_translation = Vector3(0, 10, 0)
+		local pivot_head_rotation = Rotation(0, 0, 0)
+		self.stances.sterling.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+		self.stances.sterling.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	
+	end )
 end
 
 local static_aim = restoration.Options:GetValue("OTHER/WeaponHandling/StaticAim")

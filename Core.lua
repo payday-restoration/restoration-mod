@@ -74,6 +74,7 @@ function restoration:Init()
 		battlearena = restoration.captain_types.winter, --Five-G
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
 		constantine_penthouse_lvl = restoration.captain_types.winter, --Penthouse Crasher (Constantine Scores)
+		tonmapjam22l = restoration.captain_types.winter, --Hard Cash
 
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
@@ -124,6 +125,7 @@ function restoration:Init()
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
+		jambank = restoration.captain_types.spring, --Botched Bank
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -139,6 +141,7 @@ function restoration:Init()
 		ukrainian_job = restoration.captain_types.autumn, --Ukrainian Job
 		man = restoration.captain_types.autumn, --undercover--
 		watchdogs_2 = restoration.captain_types.autumn, --Watchdogs Day 2 Night
+		watchdogs_1_night = restoration.captain_types.autumn, --Watchdogs Day 1 Night
 		--Custom Heists--
 		alex_1_res = restoration.captain_types.autumn, --Rats Day 1 edit
 		lvl_fourmorestores = restoration.captain_types.autumn, --four more stores
@@ -182,13 +185,24 @@ function restoration:Init()
 		"constantine_gunrunnerclubhouse_lvl",
 		"constantine_policestation_lvl"
 	}
+		
 			
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	
+	--Bravo Response only response, not sure if we really want to use this ATM tbh.
+	restoration.bravo_heists = {
+		--"trai"
+	}	
+	
+	if table.contains(restoration.bravo_heists, job) then
+		restoration.always_bravos = true
+	else
+		restoration.always_bravos = false
+	end
+	
 	restoration.global_spawn_multiplier = 1
-	restoration.always_bravos = false
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.sonic_mod = false
@@ -243,7 +257,7 @@ function restoration:Init()
 		"mus", --The Diamond
 		"run", --Heat Street
 		"ranc", --Midland Ranch
-		"run_res", --Whurr's Heat Street Edit
+		"street_new", --Whurr's Heat Street Edit
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
@@ -285,6 +299,8 @@ function restoration:Init()
 		"brb_rant", --Brooklyn Bank: Ranted
 		"hidden_vault", --Hidden Vault
 		"constantine_gold_lvl", --Golden Shakedown (Constantine Scores)
+		"jambank", --Botched Bank
+		"tonmapjam22l", --Hard Cash
 		"cshr" --Old Safehouse Raid
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
@@ -350,6 +366,7 @@ function restoration:Init()
 		"pines", --white xmas
 		"spa", --brooklyn 10-10
 		"jolly", --aftershock
+		"born", --biker heist D1
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
@@ -358,15 +375,19 @@ function restoration:Init()
 		"lvl_friday", --Mallbank / Crashing Capitol
 		--"hox_1", --Hoxout D1
 		--"xmn_hox_1" --Xmas edition
+		--Custom Heists--
+		"the_factory" --eclipse research facility
 	}	
-	
+		
 	--Sub Faction overrides
 	--Texas
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
 		"dinner",
         "trai",
-		"corp"
+		"corp",
+		--Custom Heists--
+		"tonmapjam22l"
 	}	
 	--San Francisco
 	restoration.needle = {
@@ -585,6 +606,11 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.recoil_recover_style = {
+	"rr_off",
+	"rr_per_weapon",
+	"rr_full"
+}
 restoration.ads_transition_style = {
 	"vanilla_on_rails",
 	"kf_mw_style",

@@ -1072,7 +1072,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.chatter = presets.enemy_chatter.swat
 	self.city_swat.melee_weapon = "knife_1"
 	self.city_swat.melee_weapon_dmg_multiplier = 2.5
-	if job == "kosugi" or job == "dark" then
+	if job == "kosugi" then
 		self.city_swat.shooting_death = false
 		self.city_swat.radio_prefix = "fri_"
 		self.city_swat.use_radio = "dsp_radio_russian"
@@ -1132,7 +1132,19 @@ function CharacterTweakData:_init_city_swat(presets)
 	--end
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
-	table.insert(self._enemy_list, "weekend")				
+	table.insert(self._enemy_list, "weekend")	
+
+	--Weekend (Guard Variant)
+	self.weekend_guard = deep_clone(self.weekend)
+	self.weekend_guard.can_throw_frag = false
+	self.weekend_guard.yellow_blood = false
+	self.weekend_guard.chatter = presets.enemy_chatter.guard
+	if job == "shoutout_raid" then
+	self.weekend_guard.access = "swat"
+	else
+	self.weekend_guard.access = "security"
+	end
+	table.insert(self._enemy_list, "weekend_guard")
 	
 	--Titan SWAT (LMG)
 	self.city_swat_titan = deep_clone(self.city_swat)
@@ -1204,6 +1216,18 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.weekend_lmg.yellow_blood = false
 	end
 	table.insert(self._enemy_list, "weekend_lmg")
+	
+	--Weekend LMG (Guard Variant)
+	self.weekend_elite_guard = deep_clone(self.weekend_lmg)			
+	self.weekend_elite_guard.can_throw_frag = false
+	self.weekend_elite_guard.yellow_blood = false
+	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard
+	if job == "shoutout_raid" then
+	self.weekend_elite_guard.access = "swat"
+	else
+	self.weekend_elite_guard.access = "security"
+	end
+	table.insert(self._enemy_list, "weekend_elite_guard")
 	
 end
 
@@ -1327,6 +1351,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield.speech_prefix_p2 = nil
 	self.marshal_shield.speech_prefix_count = nil
 	self.marshal_shield.yellow_blood = nil
+	self.marshal_shield.no_asu = true
 	if self:get_ai_group_type() == "russia" then
 		self.marshal_shield.custom_voicework = "tswat_ru"
 	elseif self:get_ai_group_type() == "murkywater" then
@@ -1372,6 +1397,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield_break.modify_health_on_tweak_change = true
 	self.marshal_shield_break.no_mutator_weapon_override = true
 	self.marshal_shield_break.unintimidateable = true
+	self.marshal_shield_break.no_asu = true
 	table.insert(self._enemy_list, "marshal_shield_break")
 end
 
@@ -1518,8 +1544,6 @@ function CharacterTweakData:_init_biker(presets)
 	self.biker_guard.suppression = presets.suppression.hard_def
 	self.biker_guard.has_alarm_pager = true
 	self.biker_guard.radio_prefix = "fri_"
-	self.biker_guard.surrender = presets.surrender.hard
-	self.biker_guard.surrender_break_time = {20, 30}
 	self.biker_guard.detection = presets.detection.guard
 	self.biker_guard.HEALTH_INIT = 6
 	self.biker_guard.headshot_dmg_mul = 3.4
@@ -3169,7 +3193,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.HEALTH_INIT = 120
 	self.boom_summers.headshot_dmg_mul = 1.5
 	self.boom_summers.damage_resistance = presets.damage_resistance.none
-	self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
+	self.boom_summers.tags = {"female_enemy", "custom", "medic_summers", "special"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true
@@ -16967,7 +16991,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 		
 	--Cloaker Cloaker MP5
 	table.insert(self.weap_ids, "mp5_cloak")
-	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))
+	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"))
 
 	--LPF S552 
 	table.insert(self.weap_ids, "s552_sc")
@@ -17920,7 +17944,6 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_sniper_3")
 		
 		--Zeal (The Few that are here and not in gitgud)
-		table.insert(char_map.basic.list, "ene_spook_cloak_1")
 		table.insert(char_map.basic.list, "ene_city_guard_1")
 		table.insert(char_map.basic.list, "ene_city_guard_2")
 		table.insert(char_map.basic.list, "ene_city_guard_3")		
@@ -17951,8 +17974,6 @@ function CharacterTweakData:character_map()
 	--drm	
 		table.insert(char_map.drm.list, "ene_bulldozer_medic_sc")
 		
-	--mad	
-		table.insert(char_map.mad.list, "ene_akan_lpf")	
 	--flat
 		table.insert(char_map.flat.list, "ene_gang_colombian_1")
 		table.insert(char_map.flat.list, "ene_gang_colombian_2")	
@@ -17982,7 +18003,8 @@ function CharacterTweakData:character_map()
 				"ene_vip_2",
 				"ene_vip_2_assault",					
 				"ene_spring",
-				"ene_vip_autumn",					
+				"ene_vip_autumn",
+				"ene_spook_cloak_1",
 				"ene_summers",
 				"ene_phalanx_medic",
 				"ene_phalanx_grenadier",
@@ -18134,6 +18156,9 @@ function CharacterTweakData:character_map()
 				"ene_murky_security_mp5",
 				"ene_murky_security_r870",
 				"ene_murky_security_raging_bull",
+				"ene_murky_elite_guard_1",
+				"ene_murky_elite_guard_2",
+				"ene_murky_elite_guard_3",
 				"ene_fbi_3",
 				"ene_fbi_1",
 				"ene_fbi_2",
@@ -18332,6 +18357,9 @@ function CharacterTweakData:character_map()
 		char_map.bravo = {
 			path = "units/pd2_mod_bravo/characters/",
 			list = {
+				"ene_bravo_guard_1",
+				"ene_bravo_guard_2",
+				"ene_bravo_guard_3",
 				"ene_bravo_dmr",
 				"ene_bravo_lmg",
 				"ene_bravo_rifle",
@@ -18450,6 +18478,8 @@ function CharacterTweakData:character_map()
 				"ene_fbi_1",
 				"ene_fbi_2",
 				"ene_fbi_3",
+				"ene_drak_hrt_1",
+				"ene_drak_hrt_2",
 				"ene_akan_veteran_1",
 				"ene_akan_veteran_2",
 				"ene_akan_veteran_subject",
@@ -18485,6 +18515,7 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_akan_medic_bob",
 				"ene_akan_medic_zdann",	
+				"ene_akan_lpf",
 				"ene_vip_2",
 				"ene_titan_shotgun",
 				"ene_titan_rifle",

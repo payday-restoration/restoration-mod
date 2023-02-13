@@ -52,7 +52,18 @@ function CopActionShoot:init(action_desc, common_data)
 	if self._glint_effect then
 		self._glint_effect:activate()
 	end
+	
+	if self._ext_inventory.shield_unit then
+		self._shield_unit = self._ext_inventory:shield_unit()
+		local shield_base = self._shield_unit and self._shield_unit:base()
+		local use_data = shield_base and shield_base.get_use_data and shield_base:get_use_data()
 
+		if use_data then
+			self._shield_base = shield_base
+			self._shield_use_range = use_data.range
+			self._shield_use_cooldown = use_data.cooldown
+		end
+	end	
 	
 	local weap_tweak = weapon_unit:base():weapon_tweak_data()
 	local weapon_usage_tweak = common_data.char_tweak.weapon[weap_tweak.usage]
@@ -651,6 +662,14 @@ function CopActionShoot:update(t)
 
 		target_vec = self:_upd_ik(target_vec, fwd_dot, t)
 	end
+	
+	if self._shield_use_cooldown and target_vec and self._common_data.allow_fire and self._shield_use_cooldown < t and target_dis < self._shield_use_range then
+		local new_cooldown = self._shield_base:request_use(t)
+
+		if new_cooldown then
+			self._shield_use_cooldown = new_cooldown
+		end
+	end	
 
 	if not ext_anim.reload and not ext_anim.equip and not ext_anim.melee then
 		local proceed_as_usual = true

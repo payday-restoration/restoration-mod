@@ -528,9 +528,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_ace.max_amount = 9
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.15
 	self.projectiles.wpn_prj_target.max_amount = 9
+	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_jav.max_amount = 6
 	self.projectiles.wpn_prj_hur.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
@@ -546,8 +545,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
-		self.projectiles.xmas_snowball.base_cooldown = 5
-		self.projectiles.xmas_snowball.throw_shout = true
+		self.projectiles.xmas_snowball.base_cooldown = 25
+		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
@@ -3910,7 +3909,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].expire_t = 0.65
 			self.melee_weapons[melee_id].repeat_expire_t = 0.5
 			self.melee_weapons[melee_id].melee_damage_delay = 0.1
-			self.melee_weapons[melee_id].anim_speed_mult = 0.75
+			self.melee_weapons[melee_id].anim_speed_mult = 0.625
 			self.melee_weapons[melee_id].make_effect = true
 			self.melee_weapons[melee_id].make_decal = nil
 		end
@@ -4074,7 +4073,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.revenant_heirloom.stats.max_damage = 18.001
 		self.melee_weapons.revenant_heirloom.stats.min_damage_effect = 2.4
 		self.melee_weapons.revenant_heirloom.stats.max_damage_effect = 6.0
-		self.melee_weapons.revenant_heirloom.stats.charge_time = 1.9
+		self.melee_weapons.revenant_heirloom.stats.charge_time = 2
 		self.melee_weapons.revenant_heirloom.stats.range = 200
 		self.melee_weapons.revenant_heirloom.stats.concealment = 23
 		self.melee_weapons.revenant_heirloom.headshot_damage_multiplier = nil
@@ -4095,7 +4094,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 
 
 
-	local blanket_speed_mult = 1.125
+	local blanket_speed_mult = 1.1
 	for melee_id, _ in pairs(self.melee_weapons) do
 		if self.melee_weapons[melee_id] then
 			if not self.melee_weapons[melee_id].instant then

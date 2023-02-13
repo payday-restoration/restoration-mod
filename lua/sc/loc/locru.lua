@@ -135,6 +135,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACDescID"] = "Отключает плазменные трассеры и регенерацию патронов от некоторых модулей. Требует перезапуска ограбления.",
 		["RestorationModStaticAimTitleID"] = "Покачивание в прицеле",
 		["RestorationModStaticAimDescID"] = "Включает визуальное покачивание во время прицеливания. Требуется перезапуск. ПРИ ОТКЛЮЧЕНИИ, НЕКОТОРУЮ ОПТИКУ БУДЕТ НЕВОЗМОЖНО ИСПОЛЬЗОВАТЬ.",
+		["RestorationModCarpalTunnelTitleID"] = "Компенсация отдачи",
+		["RestorationModCarpalTunnelDescID"] = "Оружие возвращается в изначальное положение, как в ванильной игре.",
+		["rr_off"] = "Нет",
+		["rr_per_weapon"] = "Частичная",
+		["rr_full"] = "Полная",
 		["RestorationModWpnCatTitleID"] = "Сортировка меню оружия",
 		["RestorationModWpnCatDescID"] = "Изменить порядок оружия в меню покупки. Требуется перезапуск.",
 		["RestorationModAutoDMRsTitleID"] = "Авто. марксманские винтовки",
@@ -147,6 +152,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDeployCancelDescID"] = "Кнопка снаряжения будет отменять текущую интеракцию. Требует включения Липких интеракций.",
 		["RestorationModQueuedShootingTitleID"] = "Очередь нажатий",
 		["RestorationModQueuedShootingDescID"] = "Включить/выключить занос нажатия на курок в очередь для полуавтоматического оружия.",
+		["RestorationModQueuedShootingWindowTitleID"] = "Чувствительность очереди",
+		["RestorationModQueuedShootingWindowDescID"] = "Время, которое ваши нажатия будут в очереди, в зависимости от задержки оружия. Чем выше, тем раньше нажатия попадут в очередь.",
+		["RestorationModQueuedShootingExcludeTitleID"] = "Ограничение очереди",
+		["RestorationModQueuedShootingExcludeDescID"] = "Ограничивает очередь для оружия, которое стреляет быстрее, чем указано в этой настройке.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "Отключить отдачу в прицеле",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Отключает анимацию отдачи во время прицеливания. Опция не влияет на некоторое оружие (луки, огнеметы)",
 		["RestorationModNoSwapOnReviveTitleID"] = "Отключить переключение оружия после поднятия",
@@ -166,8 +175,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["kf_mw_style"] = "Стиль KF1/CoD",
 		["tilt_in"] = "Наклон",
 		
-		["base_wpn_cat"] = "Сортировать по основным категориям",
-		["sub_wpn_cat"] = "Сортировать по саб-категориям",
+		["base_wpn_cat"] = "Основной навык",
+		["sub_wpn_cat"] = "Саб-категория и урон",
 
 		["default"] = "Стандартна",
 		["random"] = "Випадковий",
@@ -915,6 +924,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Лебедка для быстрого переноса сумок",
 		
+		--Heat Street Waypoints
+		["wp_heat_street_matt"] = "Мэтт",
+		["wp_heat_street_eddie"] = "Эдди",
+		["wp_heat_street_jp"] = "Парковка Джейкс",
+		["wp_heat_street_dl"] = "Склад Дрейкс",
+		["wp_heat_street_ba"] = "Подворотня",
+		["wp_heat_street_aa"] = "Авеню Армитаж",
+		["wp_heat_street_bile"] = "Байл",
+		["wp_heat_street_question"] = "?",
+		
+		--The Bomb: Forest Breifing
+		["heist_crojob3_briefing"] = "Those thermobaric explosives were loaded onto a freight train this morning. It's heading down to Norfolk. Maybe to be sold on, maybe to be decommissioned - it doesn't matter, because it won't reach there. A moving train is tough to stop, so we're doing this Old West style. Blow a section of bridge and the whole thing comes tumbling down. It's loud and messy, but effective. The wagons will be scattered to hell. One of them has a vault where our explosives are - search each of 'em til you find it. \n\nNOTE FROM JACKAL:\nI've got intel on Reaper teams near the scene - seems Akan wants this prize for himself. Prepare for trouble.",
+		
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиенте — хорошая добыча, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняли портовый склад, который они используют как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы проникнем туда и возьмём девку в заложники. Мурки не могут позволить себе потерять её и они заплатят за её освобождение, может быть даже вышеупомянутой и весьма ценной добычей. Что скажете, банда?"
 	})
@@ -1091,16 +1113,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_spam_desc"] = "Свинцовая пуля, которая #{skill_color}#наносит 80% урона через броню и пробивает врагов и тонкие стены.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "#{heat_warm_color}#Взрывная## пуля радиусом #{skill_color}#1.5## метра.\n#{skill_color}#Не теряет урон с расстоянием##, но #{important_1}#не наносит дополнительный урон в голову.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#6## больших дробинок #{skill_color}#имеют увеличенный урон",
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#3## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Магниевые осколки обладают #{skill_color}#30%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#120## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Магниевые осколки обладают #{skill_color}#40%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#180## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Магниевые осколки обладают #{skill_color}#50%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#240## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Магниевые осколки обладают #{skill_color}#30%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#120## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.\n\nНаносит огненный урон.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Магниевые осколки обладают #{skill_color}#40%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#180## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.\n\nНаносит огненный урон.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Магниевые осколки обладают #{skill_color}#50%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#240## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.\n\nНаносит огненный урон.##",
 		["bm_wp_upg_a_rip"] = "Дробь 'Томбстоун'",
-		--["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#30## урона ядом в течение #{skill_color}#1## секунды.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#60## урона ядом в течение #{skill_color}#1## секунды.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#120## урона ядом в течение #{skill_color}#2## секунд.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
 		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#180## урона ядом в течение #{skill_color}#3## секунды.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
 		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#240## урона ядом в течение #{skill_color}#4## секунды.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
-		--["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
@@ -1143,27 +1165,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_5_pris"] = "Призматический прицел.\n#{risk}#Увеличение 1.5x##",
 		["bm_wp_upg_o_1_5_scope"] = "Слабая оптика.\n#{risk}#Увеличение 1.5x.##",
 		["bm_wp_upg_o_1_8"] = "Коллиматорный прицел.\n#{risk}#Увеличение 1.8.##",
-		--["bm_wp_upg_o_1_8_irons"] = "Коллиматорный прицел с дополнительной мушкой.\n#{risk}#Увеличение 1-1.8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливание, чтобы переключится между прицелами.",
+		--["bm_wp_upg_o_1_8_irons"] = "Коллиматорный прицел с дополнительной мушкой.\n#{risk}#Увеличение 1-1.8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_3"] = "Средняя оптика.\n#{risk}#Увеличение 3x##",
 		["bm_wp_upg_o_3_range"] = "Средняя оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 3x.##",
-		["bm_wp_upg_o_3_rds"] = "Средняя оптика с дополнительным отражательным прицелом.\n#{risk}#Увеличение 1-3x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливание, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_3_rds"] = "Средняя оптика с дополнительным отражательным прицелом.\n#{risk}#Увеличение 1-3x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_3_4"] = "Средняя оптика.\n#{risk}#Увеличение 3.4x.##",
 		["bm_wp_upg_o_3_5"] = "Средняя оптика.\n#{risk}#Увеличение 3.5x.##",
 		["bm_wp_upg_o_4"] = "Средняя оптика.\n#{risk}#Увеличение 4x.##",
 		["bm_wp_upg_o_4_cod"] = "Средняя оптика.\n#{risk}#Увеличение 4x.##",
 		["bm_wp_upg_o_4_default"] = "Стандартная оптика у этого оружия.\n#{risk}#Увеличение 4x.##\n\n#{item_stage_2}#Прицел нельзя убрать, но его можно заменить на другой.##",
 		["bm_wp_upg_o_4_range"] = "Средняя оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 4x.##",
-		["bm_wp_upg_o_4_irons"] = "Средняя оптика с дополнительной мушкой.\n#{risk}#Увеличение 1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливание, чтобы переключится между прицелами.",
-		["bm_wp_upg_o_4_rds"] = "Средняя оптика со встроенным прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливание, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_4_irons"] = "Средняя оптика с дополнительной мушкой.\n#{risk}#Увеличение 1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_4_rds"] = "Средняя оптика со встроенным прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_4_rds_mount"] = "Средняя оптика с дополнительными прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_5"] = "Дальнобойная оптика.\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_5_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_6"] = "Дальнобойная оптика.\n#{risk}#Увеличение 6x.##",
 		["bm_wp_upg_o_6_range"] = "Дальнобойная оптика c #{skill_color}#дальномером.##\n#{risk}#Увеличение 6x.##",
 		["bm_wp_upg_o_8"] = "Дальнобойная оптика.\n#{risk}#Увеличение 8x.##",
 		["bm_wp_upg_o_8_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 8x.##",
-		
-		["bm_wp_upg_o_1_1_iwelo"] = "Оптика с подсвечиванием.\n#{risk}#величение 1.1x.##",
-		["bm_wp_upg_o_1_2_iwrds"] = "Коллиматорный прицел особой точности.\n#{risk}#Увеличение 1.5x.##",
+	
+		["bm_wp_upg_o_iwelo"] = "Оптика с подсвечиванием.\n#{risk}#величение 1.1x.##",
+		["bm_wp_upg_o_iwrds"] = "Коллиматорный прицел особой точности.\n#{risk}#Увеличение 1.5x.##",
+
+		["bm_wpn_fps_upg_o_hamr"] = "Прицел Тригоном",
 
 		["bm_wp_upg_o_shortdot_dmc"] = "Прицел Шортдот",
 		["bm_wp_upg_o_5_default"] = "Дальнобойная оптика.\nИспользуйте, чтобы модифицировать перекрестие у стандартного прицела.\n#{skill_color}#Увеличение 5x.##",
@@ -1179,7 +1204,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_1_2_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы переключиться между оптикой и угловым прицелом.\n#{skill_color}#Увеличение 1.2х.##",
 		["bm_wp_upg_o_angled_laser_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы переключиться между оптикой или использовать лазер для прицеливания.\n\n#{risk}#Для эффективного использования необходимо установить лазер.##", --VMP Point Shoot Laser
 
-		["bm_wp_upg_o_magnifier_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы использовать линзу.\n#{skill_color}#Увеличение 3x.##",
+		["bm_wp_upg_o_magnifier_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы использовать линзу.\n#{risk}#Увеличение 3x.##",
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Снаряд создаёт #{heat_warm_color}#огненную лужу## на месте взрыва.\nЛужа обладает радиусом #{skill_color}#3.75м## и горит #{skill_color}#5 секунд##, нанося #{skill_color}#120 урона/сек## врагам, которые в неё попадают, что вызывает панику и наносит ещё #{skill_color}#60 урона## в течение #{skill_color}#3 секунд.##",
@@ -1401,6 +1426,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
             --M6D
 			["kfa_scope"] = "Прицел Смарт-Линк",
 			["kfa_scope_desc"] = "Подключает вашу маску к системе #{skill_color}#Smart-Link##.\n#{risk}#Увеличение 2x.##",
+			--SIG P320
+			["bm_w_papa320"] = "M19",
+			["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "Магазин на 32",
 
 
 		--Kobus 90--
@@ -1483,6 +1511,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Brenner 21/HK21
 		["bm_w_hk21"] = "Бреннер 21",
 		["bm_hk21_sc_desc"] = "Большая младшая сестра винтовки Гевер-3. Увеличенная скорострельность отлично подходит для подавляющего огня.",	
+		--HCAR
+		["bm_w_hcar"] = "Акрон",
+		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.",	
 		--M60
 		["bm_w_m60"] = "M60",
 		["bm_m60_sc_desc"] = "Так называемая 'Свинка' - тяжёлая и пожирающая патроны. Вблизи никому не выжить.",	
@@ -1643,6 +1674,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Ех, вотева
 		["bm_groza_sc_desc_pc"] = "Буллпап-родственник АК, любящий взрывы.\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
 		["bm_groza_sc_desc"] = "Буллпап-родственник АК, любящий взрывы.\n\nУдерживайте #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
+		--CHIKUBI
+		["bm_w_tkb"] = "Трехствольник Родионова",
+		["bm_wp_tkb_m_bakelite"] = "Сибирский магазин 15x3",
 		--Krinkov
 		["bm_w_akmsu"] = "Кринков",
 		["bm_akmsu_sc_desc"] = "Маленькая винтовка против больших людей. Подойдёт для любого случая.",
@@ -1664,6 +1698,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_nova4_sc_desc"] = "Полностью автоматическая баллистическая винтовка. Восхитительная точность за счёт уменьшенной скорострельности. Идеальна для перестрелок на средних и дальних дистанциях.",
 			["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "#{skill_color}#Отсутствие штрафа на расстояние##, но #{important_1}#уменьшена скорострельность##.\n#{skill_color}#Увеличена точность##.",
 			["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "#{skill_color}#Увеличена скорострельность от бедра##, #{important_1}#уменьшена скорострельность в прицеливании##.\n#{skill_color}#Уменьшена кучность от бедра##.",
+			--VMP Honey Badger
+			--["bm_w_bdgr_desc"] = "",
+			--MW22 Honey Badger
+			["bm_w_mcbravo"] = "Химера",
+			["bm_w_mcbravo_desc"] = "#{skill_color}#Встроенный глушитель## и дозвуковые патроны #{risk}#.300 BLK## делают Химеру идеальной для близких дистанций.",
+			--AR-18
+			["bm_w_ar18"] = "КАР-18",
 			
 			
 		--Galant--
@@ -1700,6 +1741,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks_ap_desc"] = "Предоставляет ещё более мощный калибр, который позволяет #{skill_color}#пробивать броню и щиты.## Приклад и затвор укреплены тяжёлым материалом, что #{important_1}#уменьшает скорострельность.##",	
 
             --Custom DMRs
+			--MCX Spear
+			["bm_w_mcx_spear"] = "Сигнатур M5",
 			--["bm_w_xeno"] = "MA14 Surge Rifle",	
 			["bm_xeno_sc_desc_pc"] = "\"Armat\" предлагает странную винтовку будущего. #{skill_color}#Интегрирован гранатомёт.##\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомёт.",	
 			["bm_xeno_sc_desc"] = "\"Armat\" предлагает странную винтовку будущего. #{skill_color}#Интегрирован гранатомёт.##\n\nУдерживайте #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомёт",
@@ -1745,6 +1788,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Rangerhitter
 		["bm_w_sbl"] = "Рейнджхитер Марк 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 		["bm_sbl_sc_desc"] = "Рычажная винтовка двадцатого века, которая превосходит винтовки девятнадцатого века благодаря увеличенной пуле. Больше отдачи - больше смертоносности, когда на твоей стороне .45-70.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",	
+		--Contender G2
+		["bm_w_contender"] = "Аран Джи 2",
+		["bm_contender_sc_desc"] = "",	
 		--Model 70
 		["bm_w_model70"] = "Платипус 70",
 		["bm_model70_sc_desc"] = "Ранняя болтовка, сделанная дизайнерами Репитера 1874.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",			
@@ -1808,6 +1854,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m32_sc_desc"] = "Никто не спасётся от этого шестизарядного гранатомёта... Пока вам не понадобится перезаряжаться.",
 		--China Puff
 		["bm_w_china"] = "Чайна Пафф",
+		["bm_w_china_sc_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## чтобы поднять прицел.\n\nПрицел #{risk}#выверен на 30 метров.##",
 		--Compact 40mm
 		["bm_w_slap"] = "Компакт 40",
 		--Arbiter
@@ -1898,6 +1945,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_bonus_info"] = "Скорость передвижения увеличена на ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " когда оружие в руках",
 		["bm_menu_sms_info_cont"] = "штраф удваивается во время стрельбы.",
+		["bm_menu_sms_info_cont_2"] = "штраф удваивается во время стрельбы из-за установленных модулей.",
 		["bm_menu_sms_info_2"] = " при стрельбе.",
 		["bm_menu_stat_sms_info_2"] = " во время стрельбы из-за установленных модулей.",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               НЕ ИСПОЛЬЗОВАТЬ               //////////\n",
@@ -1920,8 +1968,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_2_weapon_sc_desc"] = "Стрелы можно подобрать обратно. Чем дольше держать тетиву, тем выше будет дальность.\n\n#{skill_color}#Может пробивать броню.##",
 		["bm_ap_3_weapon_sc_desc"] = "Стрелы можно подобрать обратно.\n\n#{skill_color}#Может пробивать броню.##",
 		["bm_bow_sc_desc"] = "Зажмите #{skill_color}#$BTN_FIRE## чтобы приготовить стрелу, отпустите для стрельбы.\nЧем сильнее стрела оттянута, тем выше будут урон и дальность.\n\nНажмите #{skill_color}#$BTN_AIM##, чтобы опустить стрелу.\n\nИспользованные стрелы можно забрать обратно.\n#{skill_color}#Пробивает броню.##",
+		["bm_bow_exp_sc_desc"] = "Зажмите #{skill_color}#$BTN_FIRE## чтобы приготовить стрелу, отпустите для стрельбы.\nЧем сильнее стрела оттянута, тем выше будут урон и дальность.\n\nНажмите #{skill_color}#$BTN_AIM##, чтобы опустить стрелу.\n\nСтрелы взрываются при попадании.",
+		["bm_w_bow_exp_desc"] = "Стрелы #{risk}#взрываются## при попадании с радиусом в #{skill_color}#1.5## метра\n\n#{important_1}#Дальность стрел снижена, их нельзя подобрать и попадания в голову не учитываются.##",
+		["bm_w_bow_light_poison_desc"] = "Стрелы обладают #{stats_positive}#ядом##, который оглушает врагов и наносит #{stats_positive}#180## урона ядом в течение #{skill_color}#6## секунд.\n\n#{important_1}#Дальность стрел слегка снижена.##",
+		["bm_w_bow_heavy_poison_desc"] = "Стрелы обладают #{stats_positive}#ядом##, который оглушает врагов и наносит #{stats_positive}#240## урона ядом в течение #{skill_color}#8## секунд.\n\n#{important_1}#Дальность стрел слегка снижена.##",
 		["bm_xbow_sc_desc"] = "Использованные болты можно забрать обратно.\n\n#{skill_color}#Пробивает броню.##",
+		["bm_xbow_exp_sc_desc"] = "Болты взрываются при попадании.",
+		["bm_w_xbow_exp_desc"] = "Болты #{risk}#взрываются## при попадании с радиусом в #{skill_color}#1.5## метра\n\n#{important_1}#Дальность болтов снижена, их нельзя подобрать и попадания в голову не учитываются.##",
+		["bm_w_xbow_light_poison_desc"] = "Болты обладают #{stats_positive}#ядом##, который оглушает врагов и наносит #{stats_positive}#180## урона ядом в течение #{skill_color}#6## секунд.\n\n#{important_1}#Дальность болтов слегка снижена.##",
+		["bm_w_xbow_heavy_poison_desc"] = "Болты обладают #{stats_positive}#ядом##, который оглушает врагов и наносит #{stats_positive}#240## урона ядом в течение #{skill_color}#8## секунд.\n\n#{important_1}#Дальность болтов слегка снижена.##",
 		["bm_airbow_sc_desc"] = "Использованные стрелы можно забрать обратно.\n\n#{skill_color}#Пробивает броню.##",
+		["bm_airbow_exp_sc_desc"] = "Стрелы взрываются при попадании.##",
+		["bm_w_airbow_poison_desc"] = "Стрелы обладают #{stats_positive}#ядом##, который оглушает врагов и наносит #{stats_positive}#120## урона ядом в течение #{skill_color}#4## секунд.\n\n#{important_1}#Дальность стрел слегка снижена.##",
 		["bm_40mm_weapon_sc_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## чтобы поднять прицел.\n\nПрицел #{risk}#выверен на 30 метров.##",
 		["bm_rocket_launcher_sc_desc"] = "#{skill_color}#Ракеты мгновенно уничтожают турели.##",
 		["bm_quake_shotgun_sc_desc"] = "Стреляет из двух стволов сразу, удваивая количество дробинок.",
@@ -2032,6 +2090,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen"] = "Вязко-зелёный",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "Этот костюм, по слухам, принадлежал одному из трёх членов банды психопатов и был найден в уничтоженном мусоровозе, который использовался в кровавом ограблении бронетранспорта GenSec, в ходе которого несколько членов SWAT были убиты и многие ранены. Личности этих бандитов до сих пор остаются в тайне, так как большинство улик было уничтожено вместе с мусоровозом - остался только этот костюм.",
 
+		--Menu Buttons--
+		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
+		["bm_menu_btn_buy_selected_weapon"] = "КУПИТЬ ОРУЖИЕ ($price)",
+		
 		--New menu stats--
 		["bm_menu_damage_shake"] = "Тряска",
 		["bm_menu_deflection"] = "Устой-вость",
@@ -2052,6 +2114,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_foregrip_plural"] = "Цевье",
 		["bm_menu_vertical_grip"] = "Рукоятка",
 		["bm_menu_vertical_grip_plural"] = "Рукоятки",
+		["bm_menu_bayonet"] = "Штык",
+		["bm_menu_bayonet_plural"] = "Штыки",
 		--Spoof types--
 		["bm_menu_frame"] = "Рама",
 		["bm_menu_whole_receiver"] = "Затвор",
@@ -2064,6 +2128,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_riser"] = "Рельс",
 		["bm_menu_pump"] = "Помпа",
 
+		["bm_menu_upotte_barrel"] = "Ствол",
+		["bm_menu_upotte_foregrip"] = "Цевье",
+		["bm_menu_upotte_stock"] = "Приклад",
+		["bm_menu_upotte_grip"] = "Рукоятка",
+		
 		["bm_menu_ro_barrel"] = "Ствол",
 		["bm_menu_ro_stock"] = "Приклад",
 		["bm_menu_ro_modifier"] = "Модификаторы",
@@ -2130,7 +2199,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["st_menu_skill_use"] = "ТИП НАВЫКА:",
 		
-		
+		["st_menu_firemode"] = "РЕЖИМ ОГНЯ:",
+		["st_menu_firemode_semi"] = "ПОЛУ",
+		["st_menu_firemode_auto"] = "АВТО",
+		["st_menu_firemode_burst"] = "ОЧЕРЕДЬ",
+		["st_menu_firemode_volley"] = "ЗАЛП",
 		
 		["menu_reticle_dmc_eotech"] = "TECopt Full",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
@@ -2283,8 +2356,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_spread"] = "Точность\n",
 		["bm_menu_recoil"] = "Стабильность\n",
 		["bm_menu_concealment"] = "Скрытность\n",
-		["bm_menu_bonus_spread_p2_mod"] = "Большой модификатор скрытности",
-		["bm_menu_bonus_spread_p3_mod"] = "Огромный модификатор скрытности",
+		["bm_menu_bonus_spread_p2_mod"] = "Большой модификатор точности",
+		["bm_menu_bonus_spread_p3_mod"] = "Огромный модификатор точности",
 		["bm_menu_bonus_recoil_p2_mod"] = "Большой модификатор стабильности",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "Денежный бонус",
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+5% к денежной награде для вас и команды.",
@@ -2296,7 +2369,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		--Throwables--
 		["bm_concussion_desc"] = "Радиус: 10м \nОглушает врагов на промежуток до 4 секунд \nТочность врагов уменьшается на 50% на 7 секунд \nОглушает всех врагов, кроме Титановых Щитов, Титановых Бульдозеров и Капитанов. \n \nЭто сногсшибательная штучка поразит всех и даст вам лишние секунды чтобы их убить.",
-		["bm_grenade_smoke_screen_grenade_desc"] = "Дальность: 8м \nДлительность: 12 секунд \nДетонация: 1сек после падения \n \nИспользуйте, чтобы испариться в клубе дыма, через который врагам будет сложно попасть по вам.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "Радиус: 4м \nДлительность: 12 секунд \nДетонация: 1сек после падения \n \nИспользуйте, чтобы испариться в клубе дыма, через который врагам будет сложно попасть по вам.",
 		["bm_grenade_frag_desc"] = "Урон: 800 \nРадиус: 5м \nДетонация: 3сек \n \nКлассическая осколочная граната. Не требует лишних слов.",
 		["bm_dynamite_desc"] = "Урон: 800 \nРадиус: 4м \nДетонация: 3сек \nНе отскакивает и не катится после приземления, но наносит меньше урона от взрыва, чем другая взрывчата.\n\nПридуман, чтобы взрывать камень. Вполне подходит чтобы взрывать людей.",
 		["bm_grenade_frag_com_desc"] = "Урон: 800 \nРадиус: 5м \nДетонация: 3сек \n \nОбновлённая классическая граната, она придаст каждому взрыву стиль OVERKILL.",
@@ -2313,7 +2386,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_poison_gas_grenade_desc"] = "Урон: 900 за 30с \nРадиус: 8м \nДлительность: 12с \nДетонация: 1сек после падения \nВраги могут отравиться каждым облаком только один раз\nЩиты, Гренадёры, Бульдозеры и Капитаны не прерываются.\n\nЭто экспериментальное био-оружие выпускает облако ядовитого газа, которое влияет только на особые гены - у банды полный иммунитет. Жертвы почувствуют сильный кашель, головокружение и рвоту. Опасно для всех, кроме самых бронированных врагов.\n\nОружие военного преступника.",
 		["bm_grenade_sticky_grenade"] = "Граната 'Семтекс'",
 		["bm_grenade_sticky_grenade_desc"] = "Урон: 800 \nРадиус: 4м \nДетонация: Три секунды после прилипания \n\nВзрывчатое вещество, которое прилипает к любым поверхностям, включая людей!",
-		["bm_grenade_xmas_snowball_desc"] = "Урон: 240 \nРадиус: 1м \nВремя восстановления: 5с \nДетонация: При попадании \n\nОпустите их в воду, засуньте в морозильник и вот у вас смертоносное оружие. Легко.",
+		["bm_grenade_xmas_snowball_desc"] = "Урон: 240 \nРадиус: 1м \nВремя восстановления: 25с \nДетонация: При попадании \n\nОпустите их в воду, засуньте в морозильник и вот у вас смертоносное оружие. Легко.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
@@ -2599,7 +2672,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit"] = "Кейс с метательным оружием",
 		["debug_equipment_armor_kit"] = "Кейс с метательным оружием",
 		["bm_equipment_armor_kit_desc"] = "Чтобы использовать кейс с метательным оружием, вам нужно установить его, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить запас метательного оружия. Он может быть использован три раза.\n\nВы можете увидеть, сколько ещё раз можно использовать кейс, посмотрев на него.\n\nКейс с метательным оружием это скрытная вещь, используемая солдатами и наёмниками для переноски особого оружия на тяжёлый случай.",
-
+		--Ordanance Bag
+		["bm_equipment_grenade_crate"] = "Сумка с гранатами",
+		["bm_equipment_grenade_crate_desc"] = "Чтобы использовать сумку с гранатами, вам нужно установить её, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить запас метательного оружия. Она может быть использована три раза.\n\nВы можете увидеть, сколько ещё раз можно использовать сумку, посмотрев на неё.\n\nСумка с гранатами используется оперативниками для транспортировки взрывчатки на место боевых действий.",
+		["bm_equipment_grenade_crate_desc_short"] = "Чтобы использовать сумку с гранатами, вам нужно установить её, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить запас метательного оружия. Она может быть использована три раза.",
 		["bm_equipment_ecm_jammer_desc"] = "Чтобы использовать генератор помех, вам нужно установить его, удерживая $BTN_USE_ITEM. После установки его нельзя переместить. Он активируется на 10 секунд.\n\nВы можете переключить режим работы генератора помех при взаимодействии с ним. В этом случае, генератор помех будет оглушать врагов в радиусе 25 метров. Первые помехи имеют 100% шанс оглушить врага, затем каждые 1.5 секунды помех имеют 60% шанс на оглушение. Помехи длятся 10 секунд, и перезаряжаются через 4 минуты.\n\nГенераторы помех могут взламывать банкоматы и ненадолго отключать электронные устройства - телефоны, камеры и прочие системы безопасности.",
 		["bm_equipment_first_aid_kit_desc"] = "Удерживайте кнопку $BTN_USE_ITEM, чтобы установить аптечку. Её нельзя переместить после установки, но можно использовать, зажав кнопку $BTN_INTERACT, чтобы восстановить 150 здоровья. Аптечку первой помощи можно использовать только один раз.\n\nАптечка первой помощи - небольшой ассортимент лечебных средств, используемый в экстренных ситуациях.",
 		["bm_equipment_doctor_bag_desc"] = "Чтобы использовать медицинскую сумку, вам нужно установить её, используя $BTN_USE_ITEM. После установки её нельзя переместить, но можно использовать, удерживая $BTN_INTERACT, чтобы восстановить 20% максимального здоровья сразу и 4% максимального здоровья каждые 4 секунды в течение 3 минут. Медицинскую сумку можно использовать 2 раза.\n\nМедицинская сумка - портативный кейс, который используется профессиональными врачами для переноса медикаментов и лекарств.",
@@ -2729,7 +2805,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_11"] = "Шулер (Gambler) - это командный набор перков, который предоставляет немного здоровья вам и бонусные боеприпасы для ваших товарищей, когда вы подбираете патроны. Хорошо сочетается с навыками, которые дают дополнительные коробки патронов с врагов.",	
 		["loading_equip_skills_res_12"] = "Маньяк (Maniac) - это агрессивный и командный набор перков, который понижает повреждения по вам и вашим соратникам, если вы безостановочно наносите урон. Хорошо сочетается с билдами, в которых есть высокий урон и сопротивление урону.",	
 		["loading_equip_skills_res_13"] = "Карманный генератор помех Хакера (Hacker) предоставляет лечение и сдерживание толпы всей команде, но долго перезаряжается. Помимо этого, он эффективен в стелсе.",	
-		["loading_equip_skills_res_14"] = "Взломщик (Burglar) - набор перков, которые предоставляет небольшие бонусы в стелсе, но в бою слабее, чем другие перки.",	
+		["loading_equip_skills_res_14"] = "Burglar is a dodge focused perk deck that promotes keeping your head down during a firefight.",	
 		["loading_equip_skills_res_15"] = "Вор в законе (Kingpin) - гибкий набор перков. Инъектор можно использовать для самолечения, защиты от большого урона, или отвлечения противников от вашей команды.",	
 		["loading_equip_skills_res_16"] = "Тандем (Tag Team) - командный набор перков, который позволяет предоставить большое количество лечения конкретному соратнику, при условии, что вы вдвоём устраняете врагов без остановки.",	
 		["loading_equip_skills_res_17"] = "Бронебойные пули, пробившие щит, нанесут 50% урона.",	
@@ -2813,7 +2889,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_content_updates_previous"] = "",
 
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "Мутаторы, которые урезают Опыт и Деньги также не будут давать достижения, большинство трофеев и не считаются за прохождение ограбления!",
+		["menu_mutators_achievement_disabled"] = "",
 		["menu_mutators_category_holiday"] = "ПРАЗДНИКИ",
 		["menu_mutators_category_old_event"] = "ИВЕНТЫ",
 
@@ -2861,6 +2937,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_birthday"] = "Гелиевая вечеринка",
 		["mutator_birthday_desc"] = "Убийство особых врагов спаунит шарики, которые дают бонусы.",
 		["mutator_birthday_longdesc"] = "Восьмилетие PAYDAY:\n\nУбийство особых врагов заспаунит шарики, которые можно прострелить чтобы получить бонусы для всей команды. Некоторые враги спаунят шарики чаще. Можно активировать несколько бонусов сразу.",		
+
+		["mutator_CG22"] = "Криминальные колядки",
+		["mutator_CG22_desc"] = "На некоторых ограблениях появится ёлка, которая даёт подарки.",
+		["mutator_CG22_longdesc"] = "Рождество 2022:\n\nНа некоторых ограблениях появляются ёлки, которые дают подарки. Подарки можно уничтожить и получить временные бонусы, или отдать Хайрудину для бонусного опыта, денег и монет Континеталь. При использовании подарков может появиться Бульдозер-Снеговик.",		
+
+		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
+		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",
+		["menu_cg22_post_objective_3_desc"] = "Сделать 50 двойных убийств из винтовки 'Полярная Звезда' на любой сложности.",
+		["menu_cg22_post_objective_4_desc"] = "Украсть 10 сумок и успешно сбежать на любой сложности.",
+		["menu_cg22_post_objective_5_desc"] = "Убить 10 Бульдозеров на сложности 'OVERKILL' или выше.",
+		["menu_cg22_post_objective_6_desc"] = "Украсть 25 сумок и успешно сбежать на любой сложности.",
+		["menu_cg22_post_objective_7_desc"] = "Украсть 50 сумок и успешно сбежать на любой сложности.",
+		["menu_cg22_post_objective_8_desc"] = "Убить 20 Бульдозеров на сложности 'OVERKILL' или выше.",
+		["menu_cg22_post_objective_9_desc"] = "Украсть 75 сумок и успешно сбежать на любой сложности.",
 
 		["mutator_piggybank"] = "Покорми свинью",
 		["mutator_piggybank_desc"] = "Убийство врагов даёт свинобаксы, которыми можно покормить золотую свинью.",
@@ -3015,27 +3105,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ASSAULT SUBTREE   ]]--
 				--Leadership
 				["menu_stable_shot_beta_sc"] = "Лидерство",
-				["menu_stable_shot_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПистолеты-пулемёты и пулемёты получают #{skill_color}#2## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nСтабильность у любого оружия у вас и вашей команды увеличена на #{skill_color}#2.##",
+				["menu_stable_shot_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Автоматы## получают #{skill_color}#2## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nСтабильность у любого оружия у вас и вашей команды увеличена на #{skill_color}#2.##",
 
 				--MG Handling
 				["menu_scavenger_sc"] = "Пулеметная хватка",
-				["menu_scavenger_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает точность стрельбы от бедра пистолетов-пулемётов и пулемётов на #{skill_color}#20%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает точность стрельбы от бедра пистолетов-пулемётов и пулемётов ещё на #{skill_color}#30%.##\n\nВы перезаряжаете пистолеты-пулемёты и пулемёты на #{skill_color}#25%## быстрее.",
+				["menu_scavenger_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает точность стрельбы от бедра пистолетов-пулемётов и пулемётов на #{skill_color}#20%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает точность стрельбы от бедра пистолетов-пулемётов и пулемётов ещё на #{skill_color}#30%.##\n\nВы перезаряжаете #{skill_color}#Автоматы## на #{skill_color}#25%## быстрее.",
 
 				--MG Specialist
 				["menu_sharpshooter_sc"] = "Пулеметчик",
-				["menu_sharpshooter_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШтраф точности при стрельбе во время движения уменьшен на #{skill_color}#60%## для пистолетов-пулемётов и пулемётов.\n\nУменьшение штрафа на точность зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nПистолеты-пулемёты и пулемёты стреляют на #{skill_color}#15%## быстрее.\n\nКаждая #{skill_color}#5-ая## пуля, выпущенная из пистолета-пулемёта и пулемёта при продолжительной стрельбе, не будет потрачена.",
+				["menu_sharpshooter_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШтраф точности при стрельбе во время движения уменьшен на #{skill_color}#60%## для пистолетов-пулемётов и пулемётов.\n\nУменьшение штрафа на точность зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Автоматы## стреляют на #{skill_color}#15%## быстрее.\n\nКаждая #{skill_color}#5-ая## пуля, выпущенная из пистолета-пулемёта и пулемёта при продолжительной стрельбе, не будет потрачена.",
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Шок и трепет",
-				["menu_spotter_teamwork_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nРазмеры магазинов вашего оружия увеличены на #{skill_color}#20%.##\n\n#{risk}#Не работает на арбалеты, луки, гранатомёты и ракетомёты.##\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега.\n\nРазмеры магазинов вашего оружия увеличены ещё на #{skill_color}#30%.##",
+				["menu_spotter_teamwork_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nРазмеры магазинов #{skill_color}#всего## оружия увеличены на #{skill_color}#20%.##\n\n#{risk}#Не работает на арбалеты, луки, гранатомёты и ракетомёты.##\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега.\n\nРазмеры магазинов вашего оружия увеличены ещё на #{skill_color}#30%.##",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Нокаутирующие пули",
-				["menu_speedy_reload_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПистолеты-пулемёты и пулемёты получают #{skill_color}#20%## шанс сбить врага с ног.\n\nПри использования сошек, шанс повышается до #{skill_color}#40%##.\n\n#{risk}#Навык не действует на  капитанов, снайперов, бульдозеров и щитов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#12.5%## меньше урона в приседе.\n\nЭтот эффект повышается до #{skill_color}#25%## при использовании сошек.",
+				["menu_speedy_reload_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Автоматы## получают #{skill_color}#20%## шанс сбить врага с ног.\n\nПри использования сошек, шанс повышается до #{skill_color}#40%##.\n\n#{risk}#Навык не действует на  капитанов, снайперов, бульдозеров и щитов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#12.5%## меньше урона в приседе.\n\nЭтот эффект повышается до #{skill_color}#25%## при использовании сошек.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Хирургическая точность",
-				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши пули теперь #{skill_color}#пробивают броню.##\n\nПистолеты-пулемёты и пулемёты в автоматическом режиме наносят #{skill_color}#30%## от множителя попадания в голову по телу.\n\n#{risk}#Не работает на бульдозеров.##\n\nПИКОВЫЙ: #{owned}#$pro##\nЛюбое оружие в автоматическом режиме наносит по телу #{skill_color}#60%## множителя от попадания в голову.",
+				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Всё оружие## наносит #{skill_color}#50%## урона через броню.\n\nЭтот эффект увеличивается до #{skill_color}#100%## для #{skill_color}#автоматов.##\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, до максимальных 100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства ии з #{skill_color}#автоматов## в течение одной очереди увеличивают урон на #{skill_color}#10%##; до максимальных #{skill_color}#50%##.",
 
 
 		--[[   ENFORCER   ]]--
@@ -3063,7 +3153,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПосле убийства из дробовика, огнемёта или пилы OVE9000, они получают #{skill_color}#50%## бонус к урону на #{skill_color}#2## секунды.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к урону теперь работает на всё оружие и действует #{skill_color}#10## секунд. Навык должен быть активирован убийством из дробовика, огнемёта или пилы OVE9000.\n\n#{risk}#Бонус не работает на гранатомёты.##\n\nВы убираете и достаёте дробовики и пилу на #{skill_color}#50%## быстрее.",
+				["menu_overkill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПосле убийства из дробовика, огнемёта или пилы OVE9000, они получают #{skill_color}#50%## бонус к урону на #{skill_color}#2## секунды.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к урону теперь работает на всё оружие и действует #{skill_color}#6## секунд. Навык должен быть активирован убийством из дробовика, огнемёта или пилы OVE9000.\n\n#{risk}#Бонус не работает на гранатомёты.##\n\nВы убираете и достаёте дробовики и пилу на #{skill_color}#50%## быстрее.",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
@@ -3190,7 +3280,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Взрыв мозга",
-				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из винтовок в режиме одиночной стрельбы или очередями наносят #{skill_color}#70%## урона ближайшему врагу в радиусе #{skill_color}#4## метров.\n\nЗа каждые #{skill_color}#7## метров, в которых вы находитесь от врага, эффект перебрасывается на ещё одного врага, до #{skill_color}#4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову из винтовок в режиме одиночной стрельбы или очередями #{skill_color}#не теряют урон с расстоянием.## Радиус навыка увеличен на #{skill_color}#1## метр.\n\nЗа каждые #{skill_color}#7## метров от врага, эффект наносит дополнительные #{skill_color}#10%## урона; вплоть до #{skill_color}#110%## урона.",
+				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями наносят #{skill_color}#70%## урона ближайшему врагу в радиусе #{skill_color}#4## метров.\n\nЗа каждые #{skill_color}#7## метров, в которых вы находитесь от врага, эффект перебрасывается на ещё одного врага, до #{skill_color}#3## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову из винтовок в режиме одиночной стрельбы или очередями #{skill_color}#не теряют урон с расстоянием.## Радиус навыка увеличен на #{skill_color}#1## метр.\n\nЗа каждые #{skill_color}#7## метров от врага, эффект наносит дополнительные #{skill_color}#10%## урона; вплоть до #{skill_color}#100%## урона.",
 
 		--[[   GHOST   ]]--
 
@@ -3262,7 +3352,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Чистильщик",
-				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#10%## больше урона по особым врагам.\n\n#{risk}#Не действует на ракетомёты и гранатомёты.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийство врага сзади заполняет ваш уворот на #{skill_color}#75%##.\n\nВы наносите ещё на #{skill_color}#15%## больше урона по особым врагам.",
+				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#10%## больше урона по особым врагам.\n\n#{risk}#Не действует на ракетомёты и гранатомёты.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносит ещё #{skill_color}#15%## дополнительного урона по особым врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#12.5%##; убийство сзади заполнят её на #{skill_color}#75%##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и при нанесении урона через время## #{risk}#не считаются.##",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Подлый прием",
@@ -3277,7 +3367,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Gun Nut--
 				["menu_dance_instructor_sc"] = "Пистолетный маньяк",
-				["menu_dance_instructor_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУменьшает разлёт пуль при стрельбе от бедра из пистолетов на #{skill_color}#20%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nПистолеты стреляют на #{skill_color}#15%## быстрее.\n\nПистолеты #{skill_color}#пробивают броню.##",
+				["menu_dance_instructor_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУменьшает разлёт пуль при стрельбе от бедра из пистолетов на #{skill_color}#20%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nПистолеты стреляют на #{skill_color}#15%## быстрее.\n\n#{skill_color}#Пистолеты## наносят #{skill_color}#100%## урона через броню.",
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "Ковбой",
@@ -3289,11 +3379,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Отчаянный",
-				["menu_expert_handling_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждое убийство в голову из пистолета даёт #{skill_color}#8%## бонус к точности и дальнобойности на #{skill_color}#4## секунды. Этот эффект накладывается до #{skill_color}#5## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к точности и дальнобойности до #{skill_color}#10## секунд.",
+				["menu_expert_handling_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждое убийство в голову из пистолета даёт #{skill_color}#8%## бонус к точности и дальнобойности на #{skill_color}#4## секунды. Этот эффект накладывается до #{skill_color}#5## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к точности и дальнобойности до #{skill_color}#8## секунд.",
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "Неудержимый стрелок",
-				["menu_trigger_happy_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждый выстрел в голову из пистолета даёт дополнительные #{skill_color}#10%## урона на #{skill_color}#4## секунды. Этот эффект накладывается до #{skill_color}#5## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к урону до #{skill_color}#10## секунд.",
+				["menu_trigger_happy_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждый выстрел в голову из пистолета даёт дополнительные #{skill_color}#5%## урона на #{skill_color}#4## секунды. Этот эффект накладывается до #{skill_color}#5## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к урону до #{skill_color}#8## секунд. Эффект теперь накладывается до #{skill_color}#7## раз.",
 
 			--[[   REVENANT SUBTREE   ]]--
 				--Running From Death--
@@ -3350,6 +3440,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	-- local frame = 0.01
 	-- if butt <= frame then
 		-- LocalizationManager:add_localized_strings({	
+			--["menu_st_spec_23"] = "Helminth",
+			--["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
 			-- ["menu_difficulty_sm_wish"] = "The Steel Path",
 			-- ["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
 		-- })
@@ -3370,6 +3462,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_specialization_key_favorite"] = "В избранное",
 		["menu_st_category_activated"] = "Включаемые",
 		["menu_st_category_challenge"] = "Пустые",
+		["menu_st_category_mod"] = "Моды",
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Увеличивает урон в голову на ##25%.##\n\nВы наносите на ##25%## больше урона. Не относится к метательному оружию, гранатомётам и ракетомётам.",
@@ -3554,33 +3647,66 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1"] = "Тактическая перезарядка",
 		["menu_deck23_3"] = "Головная боль",
 		["menu_deck23_5"] = "Твоя пуля?",
-		["menu_deck23_5_desc"] = "Пули, от которых вы увернулись, отлетят во врагов.",
 		["menu_deck23_7"] = "Секунда славы",
 		["menu_deck23_9"] = "Мимикрия",
 		["menu_deck23_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 		
-		["menu_deck23_1_desc"] = "Ваше оружие перезарядится само после убийства ##10## врагов этим оружием.\n\nВы переключаете оружие на ##15%## быстрее.",
+		["menu_deck23_1_desc"] = "Убийство ##10## врагов перезарядит ваше спрятанное оружие.\n\nВы переключаете оружие на ##15%## быстрее.",
+		["menu_deck23_1_short"] = "Убийство ##10## врагов перезарядит ваше спрятанное оружие.\n\nВы переключаете оружие на ##15%## быстрее.",
+		["menu_deck23_1_1_desc"] = "Ваше здоровье увеличено на ##7.5%##.",
+		["menu_deck23_1_1_short"] = "Ваше здоровье увеличено на ##7.5%##.",
+		["menu_deck23_1_2_desc"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_1_2_short"] = "Ваша броня увеличена на ##3.75%##.",
 		["menu_deck23_1_3_desc"] = "Ваш уворот увеличен на ##2.5## очка.",
 		["menu_deck23_1_3_short"] = "Ваш уворот увеличен на ##2.5## очка.",
 		["menu_deck23_1_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
 		["menu_deck23_1_4_short"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
+		["menu_deck23_1_1"] = "Живчик",
+		["menu_deck23_1_2"] = "Крепыш",
+		["menu_deck23_1_3"] = "Ловкач",
+		["menu_deck23_bonus_speed"] = "Проныра",
 
-		["menu_deck23_3_desc"] = "Каждый выстрел голову восстанавливает ##2## здоровья.\n\nЭто может произойти не чаще чем раз в ##30## секунд.",
-		["menu_deck23_3_3_desc"] = "Ваш уворот увеличен на ##2.5## очка.",
-		["menu_deck23_3_3_short"] = "Ваш уворот увеличен на ##2.5## очка.",
+		["menu_deck23_3_desc"] = "Каждый выстрел в голову восстанавливает ##3## здоровья.\n\nЭто может произойти не чаще чем раз в ##30## секунд.",
+		["menu_deck23_3_short"] = "Каждый выстрел в голову восстанавливает ##3## здоровья.\n\nЭто может произойти не чаще чем раз в ##30## секунд..",
+		["menu_deck23_3_1_desc"] = "Ваше здоровье увеличено на ##5%##.",
+		["menu_deck23_3_1_short"] = "Ваше здоровье увеличено на ##5%##.",
+		["menu_deck23_3_2_desc"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_3_2_short"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_3_3_desc"] = "Ваш уворот увеличен на ##1.25## очка.",
+		["menu_deck23_3_3_short"] = "Ваш уворот увеличен на ##1.25## очка.",
 		["menu_deck23_3_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
 		["menu_deck23_3_4_short"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
+		["menu_deck23_3_1"] = "Живчик",
+		["menu_deck23_3_2"] = "Крепыш",
+		["menu_deck23_3_3"] = "Ловкач",
 
-		["menu_deck23_5_3_desc"] = "Ваш уворот увеличен на ##2.5## очка.",
-		["menu_deck23_5_3_short"] = "Ваш уворот увеличен на ##2.5## очка.",
+		["menu_deck23_5_desc"] = "Пули, от которых вы увернулись, отлетят во врагов.\n\nПули, которые ломают вашу броню, отлетят обратно во врага и нанесут на ##100%## больше урона.\n\nРикошеты от брони происходят не чаще чем раз в ##15## секунд.",
+		["menu_deck23_5_short"] = "Пули, от которых вы увернулись, отлетят во врагов.\n\nПули, которые ломают вашу броню, отлетят обратно во врага и нанесут на ##100%## больше урона.\n\nРикошеты от брони происходят не чаще чем раз в ##15## секунд.",
+		["menu_deck23_5_1_desc"] = "Ваше здоровье увеличено на ##5%##.",
+		["menu_deck23_5_1_short"] = "Ваше здоровье увеличено на ##5%##.",
+	    ["menu_deck23_5_2_desc"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_5_2_short"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_5_3_desc"] = "Ваш уворот увеличен на ##1.25## очка.",
+		["menu_deck23_5_3_short"] = "Ваш уворот увеличен на ##1.25## очка.",
 		["menu_deck23_5_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
 		["menu_deck23_5_4_short"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
+		["menu_deck23_5_1"] = "Живчик",
+		["menu_deck23_5_2"] = "Крепыш",
+		["menu_deck23_5_3"] = "Ловкач",
 
-		["menu_deck23_7_desc"] = "Когда ваше здоровье опускается ниже ##25%##, вы получите иммунитет к урону на ##2## секунды.\n\nЭто может произойти не чаще чем раз в ##30## секунд.",
-		["menu_deck23_7_3_desc"] = "Ваш уворот увеличен на ##2.5## очка.",
-		["menu_deck23_7_3_short"] = "Ваш уворот увеличен на ##2.5## очка.",
+		["menu_deck23_7_desc"] = "Когда ваше здоровье опускается ниже ##50%##, вы получите иммунитет к урону на ##2## секунды.\n\nЭто может произойти не чаще чем раз в ##90## секунд.",
+		["menu_deck23_7_short"] = "Когда ваше здоровье опускается ниже ##50%##, вы получите иммунитет к урону на ##2## секунды.\n\nЭто может произойти не чаще чем раз в ##90## секунд.",
+		["menu_deck23_7_1_desc"] = "Ваше здоровье увеличено на ##5%##.",
+		["menu_deck23_7_1_short"] = "Ваше здоровье увеличено на ##5%##.",
+		["menu_deck23_7_2_desc"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_7_2_short"] = "Ваша броня увеличена на ##3.75%##.",
+		["menu_deck23_7_3_desc"] = "Ваш уворот увеличен на ##1.25## очка.",
+		["menu_deck23_7_3_short"] = "Ваш уворот увеличен на ##1.25## очка.",
 		["menu_deck23_7_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
 		["menu_deck23_7_4_short"] = "Скорость в приседе и с сумкой увеличена на ##5%##.",
+		["menu_deck23_7_1"] = "Живчик",
+		["menu_deck23_7_2"] = "Крепыш",
+		["menu_deck23_7_3"] = "Ловкач",
 		--Final Card
 			--Crew Chief
 			["menu_deck1_mrwi_desc"] = "Выносливость вас и вашей команды увеличена на ##50%##.\n\nРасстояние ваших криков увеличено на ##25%##.\n\nКомандные бонусы не складываются.\n\nВы отвечаете на пейджеры на ##25%## быстрее.",
@@ -3589,13 +3715,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Armorer
 			["menu_deck3_mrwi_desc"] = "Ваша броня восстанавливается на ##10%## быстрее.\n\nВы можете ставить ##2## кейса с мешками для тел.",
 			--Rouge
-			["menu_deck4_mrwi_desc"] = "Вы переключаете оружие на ##30%## быстрее.\n\nВы зацикливаете камеры на ##20## секунд дольше.",
+			["menu_deck4_mrwi_desc"] = "Ваш уворот увеличен на ##5## очков.\n\nВы переключаете оружие на ##30%## быстрее.\n\nВы зацикливаете камеры на ##20## секунд дольше.",
 			--Hitman
 			["menu_deck5_mrwi_desc"] = "Убийство врагов огнестрельным оружием добавляет ##25## запасного здоровья. Вы можете получить до ##75## запасного здоровья.\n\nУбийство врага оружием ближнего боя превращает запасное здоровье во временное здоровье, которое утекает со скоростью ##5## в секунду.\n\nВременное здоровье может превышать ваше максимальное здоровье, но вы не можете иметь больше ##240## временного здоровья за раз.\n\nВы носите на ##1## мешок для тел больше.",
 			--Crook
-			["menu_deck6_mrwi_desc"] = "При ношении баллистических жилетов, ваша броня увеличена ещё на ##15%##.\n\nYВы взламываете замки на ##20%## быстрее.",
+			["menu_deck6_mrwi_desc"] = "При ношении баллистических жилетов, ваша броня увеличена ещё на ##15%##, а уворот - на ##5## очков.\n\nYВы взламываете замки на ##20%## быстрее.",
 			--Burglar
-			["menu_deck7_mrwi_desc"] = "Ваша полоска уворота заполняется ещё на ##5%## за каждую секунду в приседе.\n\nВы двигаетесь на ##20%## быстрее в приседе.",
+			["menu_deck7_mrwi_desc"] = "Ваш уворот увеличен на ##5## очков.\n\nВаша полоска уворота заполняется ещё на ##5%## за каждую секунду в приседе.\n\nВы двигаетесь на ##20%## быстрее в приседе.",
 			--Infiltrator
 			["menu_deck8_mrwi_desc"] = "Когда вы находитесь в ##12## метрах от врага, вы получаете на ##10%## меньше урона.\n\nВы зацикливаете камеры на ##20## секунд дольше.",
 			--Sociopath
@@ -3603,10 +3729,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "Когда вы подбираете патроны, ваша команда дополнительно получает ##15%## патронов.\n\nВы отвечаете на пейджеры на ##25%## быстрее.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Нанесение урона врагу восстанавливает ##2## очка здоровья каждую секунду в течение ##3## секунд.\n\nЭтот эффект складывается до ##5## раз, но не чаще чем раз в ##0.75## секунд и только при ношении ##Противоосколочного жилета##. Нанесение урона при помощи турелей и урона через время (огня или яда) не вызывает эффект.\n\nВы теряете ##30## брони при ношении Противоосколочного жилета.\n\nВы получаете ##8## скрытности при ношении Противоосколочного жилета.\n\nВы получаете возможность ставить ##2## кейса с мешками для трупов.",
+			["menu_deck11_mrwi_desc"] = "Нанесение урона врагу восстанавливает ##2## очка здоровья каждую секунду в течение ##3## секунд.\n\nЭтот эффект складывается до ##5## раз, но не чаще чем раз в ##0.75## секунд и только при ношении ##Противоосколочного жилета##. Нанесение урона при помощи турелей и урона через время (огня или яда) не вызывает эффект.\n\nВы теряете ##30## брони при ношении Противоосколочного жилета.\n\nВы получаете ##4## скрытности при ношении Противоосколочного жилета.\n\nВы получаете возможность ставить ##2## кейса с мешками для трупов.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "Чем меньше у вас здоровья, тем больше вы будете получать уворота при убийстве врага. Когда у вас меньше ##100%## здоровья, вы получите до ##50%## уворота при убийстве врага.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##75%## быстрее.",
-
+			--Ex-Pres
+			["menu_deck13_mrwi_desc"] = "Когда у вас полная броня, вы получаете ##4## очка запасного здоровья за каждого убитого врага.\n\nКогда ваша броня восстанавливается после полной потери, ваше запасное здоровье превращается в настоящее.\n\nМаксимальное количество запасного здоровья зависит от вашей брони - тяжёлая броня накапливает меньше запасного здоровья, чем лёгкая.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##25%## дольше.",
+			--Maniac
+			["menu_deck14_mrwi_desc"] = "Наносимый вами урон переводится в Истерию. Максимальное количество Истерии - ##720##.\n\nИстерия:\nПолучаемый урон для вас и вашей команды уменьшается на ##1## очко за каждые ##120## очков Истерии. Истерия уменьшается на ##120## каждые ##8## секунд.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##25%## дольше.",
+			--Anarchist
+			["menu_deck15_mrwi_desc"] = "Вместо восстановления брони вне боя, Анархист периодически восстанавливает броню с частотой ##8## очков брони в секунду. Тяжёлые бронежилеты восстанавливают больше брони за раз, но делают это реже.\n\nНавыки, увеличивающие скорость восстановления брони, отключены при использовании этого набора.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##25%## дольше.",
+			--Biker
+			["menu_deck16_mrwi_desc"] = "Каждый раз, когда вы или ваша команда убивают врага, вы восстанавливаете ##2## очка здоровья. Это может произойти только раз в ##5## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##75%## быстрее.",
+			--Kingpin
+			["menu_deck17_mrwi_desc"] = "Теперь вы можете использовать Инъектор. Инъектор заменяет ваше метательное оружие.\n\nВо время использования Инъектора, вы будете вылечены на ##20%## от любого полученного урона в течение ##4## секунд.\n\nВаша скорость увеличена на ##20%## пока действует Инъектор.\n\nИнъектор можно использовать раз в ##30## секунд.",
+			--Sicario
+			["menu_deck18_mrwi_desc"] = "Теперь вы можете использовать ##Дымовую шашку.##\n\nПри броске, дымовая шашка создаёт дымовую завесу на ##12## секунд. Внутри завесы вы и ваша команда восстанавливают броню на ##100%## быстрее. Любые противники, стоящие в дымовой завесе, получает штраф ##75%## к точности.\n\nДымовую завесу можно использовать раз в ##40## секунд, но убийство врага сокращает эту задержку на ##1## секунду.\n\nВаш уворот увеличен на ##5## очков.\n\nВы носите на ##1## мешок для тел больше.",
+			--Stoic
+			["menu_deck19_mrwi_desc"] = "Теперь вы можете использовать Фляжку.\n\n##20%## получаемого урона по здоровью будет задержано на ##8## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и мгновенно отвергнуть задержанный урон.\n\nКогда вы отвергаете задержанный урон, ##150%## этого урона возвращается вам в качестве здоровья. Фляжку можно использовать раз в ##30## секунд.\n\n##50% вашей брони превращается в 50% здоровья.##\n\nВы отвечаете на пейджеры на ##25%## быстрее.",
+			--Tag Team
+			["menu_deck20_mrwi_desc"] = "Теперь вы можете использовать ##Парилку.##\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##18## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##4## здоровья вам и ##2## здоровья союзнику.\n\nКаждый убитый враг увеличит время эффекта на ##2## секунды.\n\nПарилка длится ##11## секунд и восстанавливается ##80## секунд.\n\nВы зацикливаете камеры на ##20## секунд дольше.",
+			--Hacker
+			["menu_deck21_mrwi_desc"] = "Теперь вы можете использовать ##Карманный генератор помех##.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы активировать его.\n\nАктивация Карманного генератора помех до тревоги отключит всю электронику и пейджеры на ##10## секунд.\n\nАктивация Карманного генератора помех после тревоги будет оглушать врагов в радиусе ##15## метров. Первые помехи имеют ##100%## шанс оглушить врага, затем каждые ##1.5## секунды помех имеют ##60%## шанс на оглушение.\n\nКарманный генератор помех восстанавливается ##80## секунд, но каждое убийство сократит задержку на ##2## секунды.",
+			--Leech
+			["menu_deck22_mrwi_desc"] = "Теперь вы можете использовать ##Ампулу##.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##5%## вашего здоровья и отключит броню на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##10%##, и любой полученный урон снимет один сегмент. Убийство ##3## врагов восстановит один сегмент и заблокирует получаемый урон на ##1## секунду.\n\nАмпула действует ##6## секунд и восстанавливается ##40## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##75%## быстрее.",
+			
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Перерожденный",
 		["menu_st_spec_0_desc"] = "Говорят, люди рождаются без каких-либо заложенных идей, мыслей и убеждений - они приобретаются исключительно из опыта. Для кого-то это усложняет жизнь, кто-то видит в этом возможности. Перерожденный - это грабитель, удача которого раскрывается не сразу. Его судьба полна как больших рисков, так и больших наград.",
@@ -3631,12 +3777,44 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck0_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##20%.##",		
 
 		["menu_st_spec_00"] = "Прирожденный",
-		["menu_st_spec_00_desc"] = "Некоторые считают, что все необходимые навыки уже есть у вас при рождении. Некоторые люди - прирождённые грабители - ему не нужно тратить ресурсы на навыки. Возможно, его убеждения - просто упрямство. Действительно ли стоит отказываться приобретать новые навыки?",
-		["menu_st_spec_00_desc_short"] = "Некоторые считают, что все необходимые навыки уже есть у вас при рождении. Некоторые люди - прирождённые грабители - ему не нужно тратить ресурсы на навыки. Возможно, его убеждения - просто упрямство. Действительно ли стоит отказываться приобретать новые навыки?",
+		["menu_st_spec_00_desc"] = "Некоторые считают, что все необходимые навыки уже есть с рождения. Некоторые люди - прирождённые грабители: им не нужно тратить ресурсы на навыки. Возможно, их убеждения - просто упрямство. Действительно ли стоит отказываться приобретать новые навыки?",
+		["menu_st_spec_00_desc_short"] = "Некоторые считают, что все необходимые навыки уже есть с рождения. Некоторые люди - прирождённые грабители: им не нужно тратить ресурсы на навыки. Возможно, их убеждения - просто упрямство. Действительно ли стоит отказываться приобретать новые навыки?",
 		["menu_deck00_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##20%.##",
 
 		["rpd_menu_button"] = "Обнулить перк",
 		["rpd_menu_dialog_title"] = "Вы уверены?",
-		["rpd_menu_dialog_text"] = "Если вы обнулите перк '$perk_deck_name', вы получите $points_to_refund очков."	
+		["rpd_menu_dialog_text"] = "Если вы обнулите перк '$perk_deck_name', вы получите $points_to_refund очков.",
+		
+		--MOD PERK DECKS
+			--OFFYERROCKER'S MERCENARY PERK DECK
+	["menu_deck_kmerc_title"] = "Наемник",
+	["menu_deck_kmerc_desc"] = "Профессиональный Наёмник прошёл сотни тренировок, чтобы убивать и не быть убитым. Даже в самых жарких перестрелках, Наёмник найдёт дух, настойчивость и силу прорываться вперёд. Выживание - правило номер один; ведь когда всё кончится, оплату заберут лишь живые.",
+	["menu_deck_kmerc_1"] = "Покрытый шрамами",
+	["menu_deck_kmerc_1_desc_sc"] = "Урон от сильных атак снижен, ##вас не могут убить одной атакой##.\n\nВы получаете на ##5%## больше здоровья.",
+	["menu_deck_kmerc_3"] = "Чрезмерная сила",
+	["menu_deck_kmerc_3_desc_sc"] = "Вы получаете на ##10%## больше брони.\n\nВаша броня восстанавливается быстрее на ##10%##.",
+	["menu_deck_kmerc_5"] = "Отстранись",
+	["menu_deck_kmerc_5_desc_sc"] = "Когда ваше здоровья становится ##0##, оно становится ##1##, а вы получаете ##2## секунды неуязвимости.\nВо время неуязвимости нельзя бежать.\nЭтот эффект не может повториться, пока вы не вылечитесь до 100% здоровья.\n\nВы получаете на ##5%## больше здоровья.",
+	["menu_deck_kmerc_7"] = "Лечебный слой",
+	["menu_deck_kmerc_7_desc_sc"] = "Если ваша броня держится ##2 секунды##, вы лечитесь на число равное ##1%## вашей максимальной брони ##каждые 0.75 секунд##, пока у вас есть броня.\n\nВы получаете на ##10%## больше брони.",
+	["menu_deck_kmerc_9"] = "Сильная сторона",
+	["menu_deck_kmerc_9_desc_sc"] = "Когда вы получаете урон, который оставит вас с меньше чем ##50%## здоровья, вы ##восстанавливаете броню## на число, равное полученному урону.\nНе может сработать одновременно с неуязвимостью от перка 'Отстранись'.",
+	
+	--OFFYERROCKER'S LIBERATOR PERK DECK
+	["bm_tachi"] = "Инъектор жизни Таки-2Б",
+	["bm_tachi_desc"] = "В этих инъекторах содержатся сильные лекасртва и микроскопические роботы. При инъекции, эти роботы попадают в организм и быстро восстанавливают повреждённые ткани. Данный вариант инъектора так же содержит адреналин для ускорения действия роботов.",
+	["menu_deck_liberator_title"] = "Либератор",
+	["menu_deck_liberator_desc"] = "Либератор уже долгое время занимается восстановлением государственного и корпоративного имущества - в основном, цифровых документов. Отсутствие боевого опыта означает, что Либератору иногда приходится останавливаться и брать передышку, прежде чем возвращаться к борьбе со всякими тиранами, захватившими власть.",
+	["menu_deck_liberator_1"] = "Любой ценой",
+	["menu_deck_liberator_1_desc_sc"] = "Открывает Инъектор жизни. Использование Инъектора сразу восстановит ##15## стамины, а также будет восстанавливать ##0.5## здоровья каждую секунду в течение ##4## секунд, или пока игрок не получит урон.\nИнъектор жизни обладает ##1## использованием с задержкой в ##30## секунд. Каждое убийство уменьшит задержку на ##1## секунду.",
+	["menu_deck_liberator_3"] = "На опережение",
+	["menu_deck_liberator_3_desc_sc"] = "Регенерация здоровья от Инъектора теперь длится на ##2## секунды дольше.\n\nЕсли регенерация здоровья отменилась, вы получите ##10%## сопортивления урону на остаток времени.",
+	["menu_deck_liberator_5"] = "Теоретические знания",
+	["menu_deck_liberator_5_desc_sc"] = "Использование Инъектора теперь восстанавливает на ##15## стамины больше, а регенерация увеличена на ##0.5##.\n\nВаш уворот увеличен на ##5## очков.",
+	["menu_deck_liberator_7"] = "Проблемная личность",
+	["menu_deck_liberator_7_desc_sc"] = "Ваше здоровье увеличено на ##10%##.\n\nРегенерация здоровья от Инъектора теперь длится на ##2## секунды дольше.",
+	["menu_deck_liberator_9"] = "Внезапная сила",
+	["menu_deck_liberator_9_desc_sc"] = "Инъектор теперь восстанавливает ##50## здоровья каждую секунду вместо ##35##.",
+
 	})
 end)

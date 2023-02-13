@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.0.3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.0.4" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -340,6 +340,7 @@
 		<hook file="sc/modifiers/new/modifierdodgethis.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierfriendlyfire.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifier10secondsresponsetime.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierbravosniper.lua" source_file="lib/modifiers/basemodifier"/>
 		<!--///MUTATORS\\\-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
@@ -349,6 +350,7 @@
 		<hook file="sc/mutators/mutatorshielddozers.lua" source_file="lib/mutators/mutatorshielddozers"/>
 		<hook file="sc/mutators/mutatorhydra.lua" source_file="lib/mutators/mutatorhydra"/>
 		<hook file="sc/mutators/mutatorenemyreplacer.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
+		<hook file="sc/mutators/mutatormedidozer.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
 		<hook file="sc/mutators/mutatorexplodingenemies.lua" source_file="lib/mutators/mutatorexplodingenemies"/>
 		<hook file="sc/mutators/mutatorshotguntweak.lua" source_file="lib/mutators/mutatorshotguntweak"/>
 		<hook file="sc/mutators/mutatortitandozers.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
@@ -500,31 +502,32 @@
 
 				<option_group name="WeaponHandling">
 					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="QueuedShooting"/>
 					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
 					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
 					<option type="bool" default_value="true" name="StaticAim"/>
-					<divider name="tod_divider" size="7"/>
+					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="SecondSightSprint"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="SeparateBowADS"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="SprintCancel"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AimDeploysBipod"/>
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
-				<divider name="tod_divider" size="14"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
-				<divider name="tod_divider" size="7"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
 				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>
 				<divider name="tod_divider" size="15"/>
@@ -535,7 +538,7 @@
 				<option type="bool" default_value="false" name="CloakerTurn"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
-				<option type="multichoice" default_value="2" name="WpnCat" values_tbl="restoration.weapon_categories"/>
+				<option type="multichoice" default_value="1" name="WpnCat" values_tbl="restoration.weapon_categories"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
 				<divider name="tod_divider" size="15"/>
 				<!-- <option type="multichoice" default_value="1" name="PONRTracks" values_tbl="restoration.ponrtracks"/> -->

@@ -367,7 +367,9 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	end
 	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
 
-	self:_send_damage_drama(attack_data, health_subtracted)
+	if health_subtracted > 0 then
+		self:_send_damage_drama(attack_data, health_subtracted)
+	end
 
 	--Unique kill taunt stuff, in case player was knocked into bleedout.
 	if self._bleed_out and alive(attacker_unit) and attacker_unit:alive() then
@@ -389,7 +391,7 @@ function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 	local t = TimerManager:game():time()
 	local attacker_unit = attack_data.attacker_unit
 
-	if not armor_break or armor_break and t > self._mrwi_last_ricochet_time + cooldown then
+	if attacker_unit and (not armor_break or (armor_break and t > self._mrwi_last_ricochet_time + cooldown)) then
 		if armor_break then
 			self._mrwi_last_ricochet_time = t
 		end
@@ -774,6 +776,10 @@ function PlayerDamage:damage_explosion(attack_data)
 	}
 
 	if not self:can_take_damage(attack_data, damage_info) then
+		return
+	end
+
+	if attack_data.attacker_unit and alive(attack_data.attacker_unit) and attack_data.attacker_unit ~= self._unit and self:is_friendly_fire(attack_data.attacker_unit, true) then
 		return
 	end
 
@@ -1172,9 +1178,39 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --End Rogue health regen.
 		self._damage_to_hot_stack = {}
 	end
-	
+
 	attack_data.damage = attack_data.damage * managers.player:upgrade_value("player", "real_health_damage_reduction", 1)
-	self:change_health(-attack_data.damage)
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		local kmerc_proc_invuln = false
+		if attack_data.damage >= health_subtracted then
+			if managers.player:has_category_upgrade("player","kmerc_fatal_triggers_invuln") then
+				local kmerc_invuln_data = managers.player:upgrade_value("player","kmerc_fatal_triggers_invuln")
+				if managers.player:get_property("kmerc_invuln_ready") then
+					local endure_health = kmerc_invuln_data.hp
+					local max_invuln_duration = kmerc_invuln_data.duration
+					managers.player:set_property("kmerc_invuln_ready",false)
+					managers.player:activate_temporary_property("kmerc_invuln",max_invuln_duration,max_invuln_duration)
+					self:set_health(endure_health)
+					
+					local mov_ext = self._unit:movement()
+					if mov_ext and mov_ext:running() then
+						local player_state = mov_ext:current_state()
+						player_state:_end_action_running(managers.player:player_timer():time())
+						player_state:set_running(false)
+					end
+					
+					kmerc_proc_invuln = true
+				end
+			end
+		end
+	--]]
+
+	if not kmerc_proc_invuln then
+		self:change_health(-attack_data.damage)
+	end
+
 	health_subtracted = health_subtracted - self:get_real_health()
 	
 	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and health_subtracted > 0 then
@@ -1218,11 +1254,40 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	self:_send_set_health()
 	self:_set_health_effect()
 	managers.statistics:health_subtracted(health_subtracted)
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if not kmerc_proc_invuln and managers.player:has_category_upgrade("player","kmerc_bloody_armor") and not self._kmerc_bloody_armor_t then
+			if health_subtracted > 0 then
+				self._kmerc_bloody_armor_t = 1
+				if self:health_ratio() <= 0.3 then
+					self:change_armor(health_subtracted * 0.5)
+				end
+			end
+		end
+	--]]
+
 	return health_subtracted
 end
 
 --Applies deflection and stoic effects.
 function PlayerDamage:_calc_health_damage(attack_data)
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if managers.player:get_temporary_property("kmerc_invuln") then
+			return 0
+		end
+	
+		if managers.player:has_category_upgrade("player","kmerc_reactive_absorption") then
+			local max_health = self:_max_health()
+			
+			local base_damage = attack_data.damage
+			local new_damage = (base_damage * max_health) / (base_damage + max_health)
+			attack_data.damage = new_damage
+		end
+	--]]
+	
 	if attack_data.weapon_unit then
 		local weap_base = alive(attack_data.weapon_unit) and attack_data.weapon_unit:base()
 		local weap_tweak_data = weap_base and weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()
@@ -1422,6 +1487,15 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		self._next_temp_health_decay_t = t + 1
 		self:change_health(-math.min(tweak_data.upgrades.temp_health_decay, self._temp_health))
 	end
+
+	--OFFYERROCKER'S MERC PERK DECK
+		--This is not part of the original deck
+		if self._kmerc_bloody_armor_t then
+			self._kmerc_bloody_armor_t = self._kmerc_bloody_armor_t - dt
+			if self._kmerc_bloody_armor_t < 0 then
+				self._kmerc_bloody_armor_t = nil
+			end
+		end
 end)
 
 --Deals with resmod's health regen changes.
@@ -1470,6 +1544,42 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	end
 
 	managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if managers.player:has_category_upgrade("player","kmerc_armored_hot") then
+			local upgrade_data = managers.player:upgrade_value("player","kmerc_armored_hot")
+			local interval = upgrade_data.interval
+			local hot_percent = upgrade_data.hot_percent
+			local warmup = upgrade_data.warmup
+			if self:get_real_armor() > 0 then
+				if not self:full_health() then
+					local check_t = self._kmerc_upd_health_regen_timer or interval
+					if check_t <= 0 then
+						self._kmerc_upd_health_regen_timer = interval
+						local max_armor = self:_max_armor()
+						local hot_amount = max_armor * hot_percent
+						
+						self:restore_health(hot_amount,true,true)
+					else
+						self._kmerc_upd_health_regen_timer = check_t - dt
+					end
+				end
+			else
+				self._kmerc_upd_health_regen_timer = warmup + interval
+			end
+		end
+		local max_invuln_duration = managers.player:get_temporary_property("kmerc_invuln",false)
+		if max_invuln_duration then
+			local invuln_duration_left = managers.player._temporary_properties._properties.kmerc_invuln[2] - Application:time()
+			
+			managers.hud:set_player_custom_radial({
+				total = 1,
+				current = invuln_duration_left / max_invuln_duration
+			})
+		end
+	--]]
+
 end
 
 
@@ -1494,6 +1604,14 @@ end)
 
 
 function PlayerDamage:_calc_armor_damage(attack_data)
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if managers.player:get_temporary_property("kmerc_invuln") then
+			return 0
+		end
+	--]]
+
 	local health_subtracted = 0
 
 	if self:get_real_armor() > 0 then

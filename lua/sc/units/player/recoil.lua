@@ -190,18 +190,33 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_rot", "ResFixBipodADS", function(sel
 	end
 end)
 
-
-
 --Initializes recoil_kick values since they start null.
+local old_start_shooting = FPCameraPlayerBase.start_shooting
 function FPCameraPlayerBase:start_shooting()
-	self._recoil_kick.accumulated = self._recoil_kick.accumulated or 0 --Total amount of recoil to burn through in degrees.
-	self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated or 0
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	if enable_recoil_recover == 1 then
+		self._recoil_kick.accumulated = self._recoil_kick.accumulated or 0 --Total amount of recoil to burn through in degrees.
+		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated or 0
+	else
+		old_start_shooting(self)
+	end
 end
 
---Adds pauses between shots in full auto fire.
---No longer triggers automatic recoil compensation.
-function FPCameraPlayerBase:stop_shooting(wait)
-	self._recoil_wait = wait or 0
+function FPCameraPlayerBase:stop_shooting( wait )
+	local weapon = self._parent_unit:inventory():equipped_unit()
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	local recoil_recover = (enable_recoil_recover and enable_recoil_recover ~= 1 and ((enable_recoil_recover == 3 and 1) or (weapon and weapon:base()._recoil_recovery) or 0.5)) or 0
+
+	if enable_recoil_recover ~= 1 then
+		self._recoil_kick.to_reduce = (self._recoil_kick.accumulated or 0) * recoil_recover
+		self._recoil_kick.h.to_reduce = (self._recoil_kick.h.accumulated or 0) * recoil_recover
+	else
+		self._recoil_kick.current = nil
+		self._recoil_kick.to_reduce = 0
+		self._recoil_kick.h.current = nil
+		self._recoil_kick.h.to_reduce = 0
+	end
+	self._recoil_wait = (wait and wait * ((enable_recoil_recover and enable_recoil_recover == 3 and 3) or 1)) or 0
 end
 
 --Add more recoil to burn through.
@@ -222,42 +237,81 @@ function FPCameraPlayerBase:recoil_kick(up, down, left, right)
 	self._recoil_kick.h.accumulated = (self._recoil_kick.h.accumulated or 0) + h
 end
 
---Simplified vanilla function to remove auto-correction weirdness.
 function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local r_value = 0
-
-	if self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
+	local player_state = self._parent_unit:movement():current_state()
+	local weapon = self._parent_unit:inventory():equipped_unit()
+	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	if enable_recoil_recover and enable_recoil_recover == 3 then
+		center_speed = math.max(center_speed * 0.75, 1)
+	end
+	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 90, 0)
+	if player_state and player_state:in_air() then
+		recoil_speed = recoil_speed * 1.25
+	end
+	if enable_recoil_recover == 1 and self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
 		local degrees_to_move = 90 * dt --Move camera 90 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
 		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
 		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value
+	elseif enable_recoil_recover ~= 1 and self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then
+		local n = math.step(self._recoil_kick.current, self._recoil_kick.accumulated, recoil_speed  * dt)
+		r_value = n - self._recoil_kick.current
+		self._recoil_kick.current = n
 	elseif self._recoil_wait then
 		self._recoil_wait = self._recoil_wait - dt
 
 		if self._recoil_wait <= 0 then
 			self._recoil_wait = nil
+		end
+	elseif self._recoil_kick.to_reduce then
+		self._recoil_kick.current = nil
+		local n = math.lerp(self._recoil_kick.to_reduce, 0, center_speed * dt)
+		r_value = -(self._recoil_kick.to_reduce - n)
+		self._recoil_kick.to_reduce = n
+		if self._recoil_kick.to_reduce == 0 then
+			self._recoil_kick.to_reduce = nil
 		end
 	end
 
 	return r_value
 end
 
---Simplified vanilla function to remove auto-correction weirdness.
---Also adds more aggressive tracking for horizontal recoil.
 function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local r_value = 0
-
-	if self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
+	local player_state = self._parent_unit:movement():current_state()
+	local weapon = self._parent_unit:inventory():equipped_unit()
+	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
+	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	if enable_recoil_recover and enable_recoil_recover == 3 then
+		center_speed = math.max(center_speed * 0.75, 1)
+	end
+	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0)
+	if player_state and player_state:in_air() then
+		recoil_speed = recoil_speed * 1.25
+	end
+	if enable_recoil_recover == 1 and self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
 		local degrees_to_move = 60 * dt 
 		r_value = math.min(self._recoil_kick.h.accumulated, degrees_to_move)
 		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated - r_value
+	elseif enable_recoil_recover ~= 1 and self._recoil_kick.h.current and math.abs(self._recoil_kick.h.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.h.current) or 0)) > self._episilon then
+		local n = math.step(self._recoil_kick.h.current, self._recoil_kick.h.accumulated, recoil_speed * dt)
+		r_value = n - self._recoil_kick.h.current
+		self._recoil_kick.h.current = n
 	elseif self._recoil_wait then
 		self._recoil_wait = self._recoil_wait - dt
-
-		if self._recoil_wait <= 0 then
+		if 0 > self._recoil_wait then
 			self._recoil_wait = nil
 		end
+	elseif self._recoil_kick.h.to_reduce then
+		self._recoil_kick.h.current = nil
+		local n = math.lerp(self._recoil_kick.h.to_reduce, 0, center_speed * dt)
+		r_value = -(self._recoil_kick.h.to_reduce - n)
+		self._recoil_kick.h.to_reduce = n
+		if self._recoil_kick.h.to_reduce == 0 then
+			self._recoil_kick.h.to_reduce = nil
+		end
 	end
-
 	return r_value
 end
 

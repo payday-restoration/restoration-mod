@@ -824,7 +824,7 @@ function CopDamage:damage_bullet(attack_data)
 		
 		--Just as a fallback, ugly as sin but whatever
 		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun and not weap_base.thrower_unit then
-			if not attack_data.armor_piercing and attack_data.weapon_unit:base():armor_piercing_chance() and attack_data.weapon_unit:base():armor_piercing_chance() > 0 then
+			if attack_data.weapon_unit:base():armor_piercing_chance() and attack_data.weapon_unit:base():armor_piercing_chance() > 0 then
 				pierce_armor = true
 				damage = damage * attack_data.weapon_unit:base():armor_piercing_chance() or 1
 			end
@@ -1110,10 +1110,11 @@ function CopDamage:damage_bullet(attack_data)
 				type = "death",
 				variant = attack_data.variant
 			}
-
-			if attack_data.backstab then
-				managers.player:add_backstab_dodge()
+			
+			if is_player and (attack_data.backstab or head) then
+				managers.player:add_backstab_dodge(attack_data.backstab, head)
 			end
+			
 			self:die(attack_data)
 			self:chk_killshot(attack_data.attacker_unit, "bullet", headshot_by_player, attack_data.weapon_unit:base():get_name_id())
 		end
@@ -1571,8 +1572,8 @@ function CopDamage:damage_melee(attack_data)
 				variant = "melee"
 			}
 
-			if attack_data.backstab then
-				managers.player:add_backstab_dodge()
+			if is_player and (attack_data.backstab or head) then
+				managers.player:add_backstab_dodge(attack_data.backstab, head)
 			end
 
 			self:die(attack_data)
@@ -3579,7 +3580,7 @@ function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 		PlayerStandard.say_line(attacker:sound(), "g31x_any")
 	elseif victim_base:has_tag("sniper") then
 		PlayerStandard.say_line(attacker:sound(), "g35x_any")
-	elseif victim_base:has_tag("medic") or victim_base:has_tag("medic_summers") then
+	elseif victim_base:has_tag("medic") then
 		PlayerStandard.say_line(attacker:sound(), "g36x_any")
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1
@@ -3608,7 +3609,7 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 		unit:sound():say("g31x_any", true)
 	elseif victim_base:has_tag("sniper") then
 		unit:sound():say("g35x_any", true)
-	elseif victim_base:has_tag("medic") or victim_base:has_tag("medic_summers") then
+	elseif victim_base:has_tag("medic") then
 		unit:sound():say("g36x_any", true)
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1
@@ -3759,3 +3760,26 @@ function CopDamage:bag_explode()
 
 	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)			
 end
+
+function CopDamage:_apply_damage_reduction(damage)
+	local damage_reduction = self._unit:movement():team().damage_reduction or 0
+
+	if damage_reduction > 0 then
+		damage = damage * (1 - damage_reduction)
+	end
+
+	if self._damage_reduction_multiplier then
+		damage = damage * self._damage_reduction_multiplier
+	end
+	
+	if managers.mutators:is_mutator_active(MutatorCG22) then
+		local cg22_mutator = managers.mutators:get_mutator(MutatorCG22)
+
+		if cg22_mutator:can_enemy_be_affected_by_buff("blue", self._unit) then
+			damage = damage * cg22_mutator:get_enemy_blue_multiplier()
+		end
+	end
+
+	return damage
+end
+

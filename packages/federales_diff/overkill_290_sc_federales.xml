@@ -53,7 +53,14 @@
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" />		
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" />
-    	
+	
+	<!--Buluc Mansion cam guard-->
+	<add from_db="true" 	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3" type="unit">
+		<unit load="true"	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"/>
+		<object 			path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"/>
+		<material_config 	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"/>
+		<unit load="true" 	path="units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3_husk"/>
+	</add>
 	
 	<!--Fixed Beat Cops-->
 	<!--Glock-->	

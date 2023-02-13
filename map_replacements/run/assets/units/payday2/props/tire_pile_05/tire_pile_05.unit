@@ -1,6 +1,0 @@
-<unit type="com" slot="1" >
-    <object file="units/payday2/props/tire_pile_05/tire_pile_05" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

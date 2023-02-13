@@ -314,7 +314,21 @@ function StatisticsManager:init()
 			melee = 0,
 			explosion = 0,
 			tied = 0
-		}				
+		}		
+	self._defaults.killed.weekend_guard = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.weekend_elite_guard = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}	
 		
 end
 

@@ -21,11 +21,6 @@ return {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
 		}
 	},
-	[100626] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
 	[100630] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
@@ -71,11 +66,6 @@ return {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"
 		}
 	},
-	[100651] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
 	[100652] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"
@@ -90,16 +80,6 @@ return {
 	[100662] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
-		}
-	},
-	[100667] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
-	[100668] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
 		}
 	},
 	[100669] = {
@@ -128,34 +108,9 @@ return {
 		}
 	},
 	--mfr blockade
-	[100692] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
-	[100693] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
-	[100694] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
-	[100695] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
 	[100703] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
-		}
-	},
-	[100704] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
 		}
 	},
 	[100705] = {
@@ -178,11 +133,6 @@ return {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
 		}
 	},
-	[100714] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
 	[100715] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
@@ -198,40 +148,10 @@ return {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
 		}
 	},
-	[100719] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
 	--mid blockade
 	[100734] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
-		}
-	},
-	[100735] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
-	[100736] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
-	[100737] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
-		}
-	},
-	[100741] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
-	[100742] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
 		}
 	},
 	[100745] = {
@@ -270,24 +190,9 @@ return {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
 		}
 	},
-	[100766] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
 	[100769] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
-		}
-	},
-	[100772] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
-		}
-	},
-	[100774] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
 		}
 	},
 	[100775] = {
@@ -308,16 +213,6 @@ return {
 	[100779] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
-		}
-	},
-	[100781] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
-		}
-	},
-	[100782] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
 		}
 	},
 	--ffl blockade
@@ -351,16 +246,6 @@ return {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"
 		}
 	},
-	[100818] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-		}
-	},
-	[100820] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
-		}
-	},
 	[100821] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"
@@ -392,7 +277,7 @@ return {
             enemy = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		}
 	},
-	--Welcome! it's a-me, Murkywater Mercs and we're gonna kick your ass.
+	--the vault area
 	[101245] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"

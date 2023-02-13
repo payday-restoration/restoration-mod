@@ -479,6 +479,23 @@ function PlayerManager:critical_hit_chance(detection_risk)
 	local detection_risk_add_crit_chance = managers.player:upgrade_value("player", "detection_risk_add_crit_chance")
 	multiplier = multiplier + self:get_value_from_risk_upgrade(detection_risk_add_crit_chance, self._detection_risk)
 
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","kmerc_crit_chance_per_max_armor") then
+			local upgrade_data = self:upgrade_value("player","kmerc_crit_chance_per_max_armor")
+			local player_unit = self:local_player()
+			if alive(player_unit) then
+				local rate_crit = upgrade_data.crit_chance
+				local rate_armor = upgrade_data.armor_points
+				local dmg_ext = player_unit:character_damage()
+				local max_armor = dmg_ext:_max_armor()
+				
+				local bonus = math.floor(max_armor / rate_armor) * rate_crit
+				multiplier = multiplier + bonus
+			end
+		end
+	--]]
+
 	return multiplier
 end
 
@@ -511,6 +528,13 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	multiplier = multiplier * self._properties:get_property("revive_damage_reduction", 1)
 	multiplier = multiplier * self._temporary_properties:get_property("revived_damage_reduction", 1)
 	--Removed vanilla crew chief team DR.
+
+	--OFFYERROCKER'S LIB PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","tachi_hot_cancelled_damage_resistance_consolation") then 
+			multiplier = multiplier * (1 - self:get_property("tachi_damage_resistance",0))
+		end
+	--]]
 
 	--Yakuza DR.
 	local health_ratio = self:player_unit():character_damage():health_ratio()
@@ -580,6 +604,9 @@ function PlayerManager:health_skill_multiplier()
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
 	multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0) --Anarchist reduces health by expected amount.
 	multiplier = multiplier + self:upgrade_value("player", "mrwi_health_multiplier", 1) - 1
+
+	--OFFYERROCKER'S MERC PERK DECK
+		multiplier = multiplier + self:upgrade_value("player","kmerc_passive_health_multiplier", 1) - 1
 	
 	return multiplier
 end
@@ -751,6 +778,34 @@ function PlayerManager:check_skills()
 	else
 		self._message_system:unregister(Message.OnEnemyKilled, "expres_store_health")
 	end
+
+	--OFFYERROCKER'S MERC PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","kmerc_fatal_triggers_invuln") then
+			self:set_property("kmerc_invuln_ready",true)
+		else
+			self:remove_property("kmerc_invuln_ready")
+		end
+	--]]
+	--OFFYERROCKER'S LIB PERK DECK
+	--[ [
+		if self:has_category_upgrade("player","tachi_base") then 
+			local base_upgrade_data = self:upgrade_value("player","tachi_base")
+			local cooldown_drain = base_upgrade_data.cooldown_drain_per_kill
+			
+			self:register_message(Message.OnEnemyKilled,"tachi_syringe_cooldown_drain_on_kill",
+				function(equipped_unit,variant,killed_unit)
+					local player = self:local_player()
+					if alive(player) then
+						managers.player:speed_up_grenade_cooldown(cooldown_drain)
+					end
+				end
+			)
+			
+		else
+			self:unregister_message(Message.OnEnemyKilled,"tachi_syringe_cooldown_drain_on_kill")
+		end
+	--]]
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
@@ -973,11 +1028,15 @@ function PlayerManager:_dodge_smokebomb_cdr()
 	self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
 end
 
---Fills dodge meter when backstab kills are done.
-function PlayerManager:add_backstab_dodge()
-	if self.player_unit then
-		local damage_ext = self:player_unit():character_damage()
-		damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge", 0))
+--Fills dodge meter when headshot and/or backstab kills are done.
+function PlayerManager:add_backstab_dodge(was_backstab, was_headshot)
+	if self:has_category_upgrade("player", "backstab_dodge") then
+		local headshot_add = (was_headshot and self:upgrade_value("player", "backstab_dodge", 0)[1]) or 0
+		local backstab_add = (was_backstab and self:upgrade_value("player", "backstab_dodge", 0)[2]) or 0
+		if self.player_unit then
+			local damage_ext = self:player_unit():character_damage()
+			damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * (backstab_add + headshot_add))
+		end
 	end
 end
 

@@ -363,37 +363,37 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
 tweak_data.projectiles.west_arrow_exp.damage = 48
-tweak_data.projectiles.bow_poison_arrow.damage = 20
+tweak_data.projectiles.bow_poison_arrow.damage = 18
 
 --Hunter crossbow--
 tweak_data.projectiles.crossbow_arrow.damage = 24
 tweak_data.projectiles.crossbow_arrow_exp.damage = 48
-tweak_data.projectiles.crossbow_poison_arrow.damage = 20
+tweak_data.projectiles.crossbow_poison_arrow.damage = 18
 
 --Arblast Heavy Crossbow--
 tweak_data.projectiles.arblast_arrow.damage = 36
 tweak_data.projectiles.arblast_arrow_exp.damage = 60
-tweak_data.projectiles.arblast_poison_arrow.damage = 30
+tweak_data.projectiles.arblast_poison_arrow.damage = 24
 
 --Franken fish--
 tweak_data.projectiles.frankish_arrow.damage = 24
 tweak_data.projectiles.frankish_arrow_exp.damage = 48
-tweak_data.projectiles.frankish_poison_arrow.damage = 20
+tweak_data.projectiles.frankish_poison_arrow.damage = 18
 
 --BOWMEN, FORM UP--
 tweak_data.projectiles.long_arrow.damage = 36
 tweak_data.projectiles.long_arrow_exp.damage = 60
-tweak_data.projectiles.long_poison_arrow.damage = 30
+tweak_data.projectiles.long_poison_arrow.damage = 24
 
 --le happy merchant--
 tweak_data.projectiles.ecp_arrow.damage = 18
 tweak_data.projectiles.ecp_arrow_exp.damage = 36
-tweak_data.projectiles.ecp_arrow_poison.damage = 14
+tweak_data.projectiles.ecp_arrow_poison.damage = 12
 
 --The not longbow--
 tweak_data.projectiles.elastic_arrow.damage = 36
 tweak_data.projectiles.elastic_arrow_exp.damage = 60
-tweak_data.projectiles.elastic_arrow_poison.damage = 30
+tweak_data.projectiles.elastic_arrow_poison.damage = 24
 
 --GRENADE OUT--
 tweak_data.projectiles.frag.damage = 80
@@ -497,9 +497,9 @@ if tweak_data.projectiles.xmas_snowball then
 	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
 	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
 	tweak_data.projectiles.xmas_snowball.feedback_range = -100
-	tweak_data.projectiles.xmas_snowball.curve_pow = 0.000001
+	tweak_data.projectiles.xmas_snowball.curve_pow = 0.05
 	tweak_data.projectiles.xmas_snowball.range = 100
-	tweak_data.projectiles.xmas_snowball.launch_speed = 1500
+	tweak_data.projectiles.xmas_snowball.launch_speed = 1250
 	tweak_data.projectiles.xmas_snowball.adjust_z = 0
 end
 
@@ -664,35 +664,93 @@ for i, proj_id in ipairs(velocity) do
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
 
-velocity_mult = 0.75
+velocity_mult = 0.8
 velocity = {
-	'west_arrow','bow_poison_arrow','west_arrow_exp',
-	'crossbow_arrow','crossbow_poison_arrow','crossbow_arrow_exp',
-	'frankish_arrow','frankish_poison_arrow','frankish_arrow_exp'
+	'west_arrow',
+	'crossbow_arrow',
+	'frankish_arrow'
 }
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+	velocity = {
+		'bow_poison_arrow',
+		'crossbow_poison_arrow',
+		'frankish_poison_arrow'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+	velocity = {
+		'west_arrow_exp',
+		'crossbow_arrow_exp',
+		'frankish_arrow_exp'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+
 velocity = {
-	'long_arrow','long_poison_arrow','long_arrow_exp',
-	'arblast_arrow','arblast_poison_arrow','arblast_arrow_exp'
+	'long_arrow',
+	'arblast_arrow'
 }
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+	velocity = {
+		'long_poison_arrow',
+		'arblast_poison_arrow'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+	velocity = {
+		'long_arrow_exp',
+		'arblast_arrow_exp'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+
 velocity = {
-	'elastic_arrow','elastic_arrow_poison','elastic_arrow_exp',
-	'ecp_arrow','ecp_arrow_poison','ecp_arrow_exp'
+	'elastic_arrow',
+	'ecp_arrow'
 }
 for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
+	velocity = {
+		'elastic_arrow_poison',
+		'ecp_arrow_poison'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+	velocity = {
+		'elastic_arrow_exp',
+		'ecp_arrow_exp'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
 
 velocity = {
 	'frag','frag_com','dada_com','fir_com','wpn_gre_electric','concussion','poison_gas_grenade','sticky_grenade',
@@ -899,92 +957,78 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 	}
 }
 
---Fuck this is ugly
---PRIMARIES
-table.insert(dyslexia[2].primaries, { "light_pis" })
-table.insert(dyslexia[2].primaries, { "heavy_pis" })
-		
-table.insert(dyslexia[2].primaries, { "light_smg" })
-table.insert(dyslexia[2].primaries, { "heavy_smg" })
-
-table.insert(dyslexia[2].primaries, { "light_shot" })
-table.insert(dyslexia[2].primaries, { "heavy_shot" })
-table.insert(dyslexia[2].primaries, { "break_shot" })
-		
-table.insert(dyslexia[2].primaries, { "light_ar" })
-table.insert(dyslexia[2].primaries, { "heavy_ar" })
-table.insert(dyslexia[2].primaries, { "dmr_ar" })
-
-table.insert(dyslexia[2].primaries, { "light_snp" })
-table.insert(dyslexia[2].primaries, { "heavy_snp" })
-table.insert(dyslexia[2].primaries, { "antim_snp" })
-		
-table.insert(dyslexia[2].primaries, { "light_mg" })
-table.insert(dyslexia[2].primaries, { "heavy_mg" })
-table.insert(dyslexia[2].primaries, { "miniguns" })
-		
-table.insert(dyslexia[2].primaries, { "wpn_special" })
-
-for i, weap in pairs(tweak_data.weapon) do
-	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 2
-	if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
-		table.insert(dyslexia[2].primaries, { "unsupported" })
-		break
+if restoration.Options:GetValue("OTHER/WpnCat") == 1 then
+	for i, weap in pairs(tweak_data.weapon) do
+		local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 2
+		if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+			table.insert(dyslexia[1].primaries, { "unsupported" })
+			break
+		end
+	end
+	for i, weap in pairs(tweak_data.weapon) do
+		local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+		if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+			table.insert(dyslexia[1].secondaries, { "unsupported" })
+			break
+		end
+	end
+elseif restoration.Options:GetValue("OTHER/WpnCat") == 2 then
+	--PRIMARIES
+	table.insert(dyslexia[2].primaries, { "light_pis" })
+	table.insert(dyslexia[2].primaries, { "heavy_pis" })	
+	table.insert(dyslexia[2].primaries, { "light_smg" })
+	table.insert(dyslexia[2].primaries, { "heavy_smg" })
+	table.insert(dyslexia[2].primaries, { "light_shot" })
+	table.insert(dyslexia[2].primaries, { "heavy_shot" })
+	table.insert(dyslexia[2].primaries, { "break_shot" })	
+	table.insert(dyslexia[2].primaries, { "light_ar" })
+	table.insert(dyslexia[2].primaries, { "heavy_ar" })
+	table.insert(dyslexia[2].primaries, { "dmr_ar" })
+	table.insert(dyslexia[2].primaries, { "light_snp" })
+	table.insert(dyslexia[2].primaries, { "heavy_snp" })
+	table.insert(dyslexia[2].primaries, { "antim_snp" })		
+	table.insert(dyslexia[2].primaries, { "light_mg" })
+	table.insert(dyslexia[2].primaries, { "heavy_mg" })
+	table.insert(dyslexia[2].primaries, { "miniguns" })
+	table.insert(dyslexia[2].primaries, { "wpn_special" })
+	for i, weap in pairs(tweak_data.weapon) do
+		local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 2
+		if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+			table.insert(dyslexia[2].primaries, { "unsupported" })
+			break
+		end
+	end
+	--SECONDARIES
+	table.insert(dyslexia[2].secondaries, { "light_pis" })
+	table.insert(dyslexia[2].secondaries, { "heavy_pis" })
+	table.insert(dyslexia[2].secondaries, { "light_smg" })
+	table.insert(dyslexia[2].secondaries, { "heavy_smg" })
+	table.insert(dyslexia[2].secondaries, { "light_shot" })
+	table.insert(dyslexia[2].secondaries, { "heavy_shot" })
+	table.insert(dyslexia[2].secondaries, { "break_shot" })
+	table.insert(dyslexia[2].secondaries, { "light_ar" })
+	table.insert(dyslexia[2].secondaries, { "heavy_ar" })
+	for i, weap in pairs(tweak_data.weapon) do
+		local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+		if is_secondary and weap.recategorize and weap.recategorize[1] == "dmr_ar" then
+			table.insert(dyslexia[2].secondaries, { "dmr_ar" })
+			break
+		end
+	end
+	table.insert(dyslexia[2].secondaries, { "light_snp" })
+	table.insert(dyslexia[2].secondaries, { "heavy_snp" })
+	table.insert(dyslexia[2].secondaries, { "wpn_special" })
+	for i, weap in pairs(tweak_data.weapon) do
+		local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
+		if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
+			table.insert(dyslexia[2].secondaries, { "unsupported" })
+			break
+		end
 	end
 end
 
---SECONDARIES
-table.insert(dyslexia[2].secondaries, { "light_pis" })
-table.insert(dyslexia[2].secondaries, { "heavy_pis" })
+tweak_data.gui.buy_weapon_categories = dyslexia[restoration.Options:GetValue("OTHER/WpnCat") or 1]
 
-table.insert(dyslexia[2].secondaries, { "light_smg" })
-table.insert(dyslexia[2].secondaries, { "heavy_smg" })
-
-table.insert(dyslexia[2].secondaries, { "light_shot" })
-table.insert(dyslexia[2].secondaries, { "heavy_shot" })
-table.insert(dyslexia[2].secondaries, { "break_shot" })
-
-table.insert(dyslexia[2].secondaries, { "light_ar" })
-table.insert(dyslexia[2].secondaries, { "heavy_ar" })
-for i, weap in pairs(tweak_data.weapon) do
-	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
-	if is_secondary and weap.recategorize and weap.recategorize[1] == "dmr_ar" then
-		table.insert(dyslexia[2].secondaries, { "dmr_ar" })
-		break
-	end
-end
-
-table.insert(dyslexia[2].secondaries, { "light_snp" })
-for i, weap in pairs(tweak_data.weapon) do
-	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
-	if is_secondary and weap.recategorize and weap.recategorize[1] == "heavy_snp" then
-		table.insert(dyslexia[2].secondaries, { "heavy_snp" })
-		break
-	end
-end
-
-table.insert(dyslexia[2].secondaries, { "wpn_special" })
-for i, weap in pairs(tweak_data.weapon) do
-	local is_secondary = weap.use_data and weap.use_data.selection_index and weap.use_data.selection_index == 1
-	if is_secondary and weap.recategorize and weap.recategorize[1] == "unsupported" then
-		table.insert(dyslexia[2].secondaries, { "unsupported" })
-		break
-	end
-end
-
-if restoration.Options:GetValue("OTHER/WpnCat") then
-	tweak_data.gui.buy_weapon_categories = dyslexia[restoration.Options:GetValue("OTHER/WpnCat")]
-end
-
---[[
-	if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") or SystemFS:exists("assets/mod_overrides/Mosin Nagant M9130 Obrez/main.xml") then
-		table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"snp"})
-	end		
-
-	if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
-		table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
-	end		
-]]	
 
 --Sounds of Animals Fighting--
 local animal_fight = {
@@ -1178,3 +1222,281 @@ if twp.stances.papa320 then
 	twp.stances.papa320.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+if BeardLib then
+	local modded_perk_deck = false
+	--Global perk deck cards
+		local deck2 = {
+			upgrades = {
+				"weapon_passive_headshot_damage_multiplier",
+				"weapon_passive_damage_multiplier_1",
+				"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
+				"player_melee_damage_multiplier_1"
+			},
+			cost = 0,
+			icon_xy = {1, 0},
+			name_id = "menu_deckall_2",
+			desc_id = "menu_deckall_2_desc_sc"
+		}
+		local deck4 = {
+			upgrades = {
+				"passive_player_xp_multiplier_1",
+				"player_passive_suspicion_bonus",
+				"player_passive_armor_movement_penalty_multiplier",
+				"weapon_passive_damage_multiplier_2",
+				"player_non_special_melee_multiplier_2",
+				"player_melee_damage_multiplier_2"			
+			},
+			cost = 0,
+			icon_xy = {3, 0},
+			name_id = "menu_deckall_4",
+			desc_id = "menu_deckall_4_desc_sc"
+		}
+		local deck6 = {
+			upgrades = {
+				"armor_kit",
+				"weapon_passive_damage_multiplier_3",
+				"player_non_special_melee_multiplier_3",
+				"player_melee_damage_multiplier_3"			
+			},
+			cost = 0,
+			icon_xy = {5, 0},
+			name_id = "menu_deckall_6",
+			desc_id = "menu_deckall_6_desc_sc"
+		}
+		local deck8 = {
+			upgrades = {
+				"weapon_passive_damage_multiplier_4",
+				"passive_doctor_bag_interaction_speed_multiplier",
+				"player_non_special_melee_multiplier_4",
+				"player_melee_damage_multiplier_4"
+			},
+			cost = 0,
+			icon_xy = {7, 0},
+			name_id = "menu_deckall_8",
+			desc_id = "menu_deckall_8_desc_sc"
+		}
+
+	if BeardLib.Utils:FindMod("Mercenary Perk Deck") then
+		modded_perk_deck = true
+		local kmerc_deck = {
+			name_id = "menu_deck_kmerc_title",
+			desc_id = "menu_deck_kmerc_desc",
+			category = {
+				"mod"
+			},
+			{
+				name_id = "menu_deck_kmerc_1",
+				desc_id = "menu_deck_kmerc_1_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_reactive_absorption",
+					"player_kmerc_passive_health_multiplier_1"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			deck2,
+			{
+				name_id = "menu_deck_kmerc_3",
+				desc_id = "menu_deck_kmerc_3_desc_sc",
+				cost = 0,
+				upgrades = {
+					--"player_kmerc_crit_chance_per_max_armor",
+					"player_perk_armor_regen_timer_multiplier_1",
+					"player_tier_armor_multiplier_1",
+					"player_tier_armor_multiplier_2"
+				},
+				--texture_bundle_folder = "kmerc",
+				--icon_xy = {1,0}
+				icon_xy = {6, 0}
+			},
+			deck4,
+			{
+				name_id = "menu_deck_kmerc_5",
+				desc_id = "menu_deck_kmerc_5_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_fatal_triggers_invuln",
+					"player_kmerc_passive_health_multiplier_2"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					2,
+					0
+				}
+			},
+			deck6,
+			{
+				name_id = "menu_deck_kmerc_7",
+				desc_id = "menu_deck_kmerc_7_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_armored_hot"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					3,
+					0
+				}
+			},
+			deck8,
+			{
+				name_id = "menu_deck_kmerc_9",
+				desc_id = "menu_deck_kmerc_9_desc_sc",
+				cost = 0,
+				upgrades = {
+					"player_kmerc_bloody_armor"
+				},
+				texture_bundle_folder = "kmerc",
+				icon_xy = {
+					0,
+					1
+				}
+			}
+		}	
+
+		for i, k in pairs(tweak_data.skilltree.specializations) do 
+			if tweak_data.skilltree.specializations[i].name_id and tweak_data.skilltree.specializations[i].name_id == "menu_deck_kmerc_title" then
+				tweak_data.skilltree.specializations[i] = kmerc_deck
+			end
+		end
+	end
+	if BeardLib.Utils:FindMod("Liberator Perk Deck") then
+		modded_perk_deck = true
+		local silence_deck = {
+			name_id = "menu_deck_liberator_title",
+			desc_id = "menu_deck_liberator_desc",
+			category = {
+				"mod",
+				"activated"
+			},
+			{
+				upgrades = {
+					"tachi", --unlocks throwable
+					"player_tachi_base", --base throwable stats (number of charges, cooldown speed etc)
+					"player_tachi_restore_health_1",
+					"player_tachi_restore_stamina_1",
+					"player_tachi_hot_amount_1",
+					"player_tachi_hot_duration_1"
+				},
+				cost = 0,
+				icon_xy = {0, 0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_1",
+				desc_id = "menu_deck_liberator_1_desc_sc"
+			},
+			deck2,
+			{
+				upgrades = {
+					"player_tachi_hot_duration_2",
+					"player_tachi_hot_cancelled_damage_resistance_consolation"
+				},
+				cost = 0,
+				icon_xy = {1,0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_3",
+				desc_id = "menu_deck_liberator_3_desc_sc"
+			},
+			deck4,
+			{
+				upgrades = {
+					"player_tachi_hot_amount_2",
+					"player_tachi_restore_stamina_2",
+					"player_passive_dodge_chance_1"
+				},
+				cost = 0,
+				icon_xy = {2, 0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_5",
+				desc_id = "menu_deck_liberator_5_desc_sc"
+			},
+			deck6,
+			{
+				upgrades = {
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2",
+					"player_tachi_hot_duration_3"
+				},
+				cost = 0,
+				icon_xy = {3, 0},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_7",
+				desc_id = "menu_deck_liberator_7_desc_sc"
+			},
+			deck8,
+			{
+				upgrades = {
+					"player_tachi_hot_amount_3"
+				},
+				cost = 0,
+				icon_xy = {0,1},
+				texture_bundle_folder = "liberator",
+				name_id = "menu_deck_liberator_9",
+				desc_id = "menu_deck_liberator_9_desc_sc"
+			}
+		}
+
+		for i, k in pairs(tweak_data.skilltree.specializations) do 
+			if tweak_data.skilltree.specializations[i].name_id and tweak_data.skilltree.specializations[i].name_id == "menu_deck_liberator_title" then
+				tweak_data.skilltree.specializations[i] = silence_deck
+			end
+		end
+
+		tweak_data.blackmarket.projectiles.tachi = {
+			name_id = "bm_tachi",
+			desc_id = "bm_tachi_desc",
+			ability = "tachi",
+			custom = true,
+			ignore_statistics = true,
+			based_on = "chico_injector",
+			texture_bundle_folder = "liberator",
+			icon = "chico_injector",
+			max_amount = 1,
+			base_cooldown = 30,
+			sounds = {
+				activate = "perkdeck_activate",
+				cooldown = "perkdeck_cooldown_over"
+			}
+		}
+	end
+
+	if modded_perk_deck then
+		tweak_data.skilltree.specialization_category = {
+			{
+				name_id = "menu_st_category_all",
+				category = "all"
+			},
+			{
+				name_id = "menu_st_category_offensive",
+				category = "offensive"
+			},
+			{
+				name_id = "menu_st_category_defensive",
+				category = "defensive"
+			},
+			{
+				name_id = "menu_st_category_supportive",
+				category = "supportive"
+			},
+			{
+				name_id = "menu_st_category_activated",
+				category = "activated"
+			},
+			{
+				name_id = "menu_st_category_challenge",
+				category = "challenge"
+			},
+			{
+				name_id = "menu_st_category_mod",
+				category = "mod"
+			},
+			{
+				name_id = "menu_st_category_favorites",
+				category = "favorites"
+			}
+		}
+	end
+end

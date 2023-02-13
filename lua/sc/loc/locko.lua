@@ -443,7 +443,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["menu_asset_wet_intel"] = "정보",
 		["menu_asset_risk_murky"] = "머키워터 용병들",
-		["menu_asset_risk_bexico"] = "연방경찰",
+		["menu_asset_risk_bexico"] = "연방 경찰",
 		["menu_asset_risk_zombie"] = "조옴비들의 대으응",
 		["menu_asset_wet_boat"] = "보트",
 		["menu_asset_wet_boat_desc"] = "전리품 확보 및 탈출 할 수 있는 보트를 삽니다",
@@ -661,7 +661,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_rush_asset_sentrygun_desc"] = "센트리 패키지를 구매합니다",
 
 		["heist_junker_name"] = "도그하우스",
-		["heist_junker_brief"] = "이건 블라드를 위한 작업이야. 분명히, 실패한 무역 거래는 그의 부하들과 그들이 가져온 물품을 나쁜 상황에 놓이게 만들고. 연방경찰은 거의 이 상황에 직면해 있지. 너희들을 해당 위치로 데려다 줄 차량이 준비되어 있고 백업을 제공할 수 있어. 우리는 지원 헬기를 확보하고 너희들과 필수품을 그곳에서 꺼낼거야.\n\n짧을 수도 있겠지만 경찰을 과소평가 하지말고. 장비를 가져가.",
+		["heist_junker_brief"] = "이건 블라드를 위한 작업이야. 분명히, 실패한 무역 거래는 그의 부하들과 그들이 가져온 물품을 나쁜 상황에 놓이게 만들고. 연방 경찰은 거의 이 상황에 직면해 있지. 너희들을 해당 위치로 데려다 줄 차량이 준비되어 있고 백업을 제공할 수 있어. 우리는 지원 헬기를 확보하고 너희들과 필수품을 그곳에서 꺼낼거야.\n\n짧을 수도 있겠지만 경찰을 과소평가 하지말고. 장비를 가져가.",
 		["heist_junk_name"] = "경계하는 눈",
 		["heist_junk_brief"] = "건설 지역이 바로 앞에 있어. 경찰은 아직 도착하지 않았지만 곧 올거야. 블라드의 부하들이 백업을 제공할 거지만 너무 오래 지속되지는 않을거야.\n\n보고에 따르면 현장에 마약 제조실이 분명히 있으니 블라드의 물건을 동시에 안전하게 보관할 수 있다면 약간의 추가 돈을 자유롭게 벌 수 있을거야.",
 		["junk_01"] = "현금과 마약을 보호하라",
@@ -1872,7 +1872,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_damage_shake"] = "흔들림",
 		["bm_menu_deflection"] = "굴절",
 		["bm_menu_regen_time"] = "재생 지연",
-		["bm_menu_swap_speed"] = "스왑 시간",
+		["bm_menu_swap_speed"] = "교체 시간",
 		["bm_menu_pickup"] = "탄약 획득량",
 		["bm_menu_ads_speed"] = "조준 시간",
 		["bm_menu_reload"] = "재장전 시간",
@@ -1992,10 +1992,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Blackmarket gui per-armor skill descriptions.
 		
-		["bm_menu_dodge_grace"] = "회피 시 최대 #{skill_color}#0.3##까지 더 긴 유예 시간을 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
+		["bm_menu_dodge_grace"] = "회피 시 유예 시간을 최대 #{skill_color}#0.3##까지 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
 		
-		["bm_menu_armor_grinding_1"] = "틱당 방탄복 재생량: $passive_armor_regen",
-		["bm_menu_armor_grinding_2"] = "틱당 방탄복 재생량: $passive_armor_regen \n공격 적중시 방탄복 재생량: $active_armor_regen",
+		["bm_menu_armor_grinding_1"] = "간격당 방탄복 재생량: $passive_armor_regen",
+		["bm_menu_armor_grinding_2"] = "간격당 방탄복 재생량: $passive_armor_regen \n적중 시 방탄복 재생량: $active_armor_regen",
 
 		["bm_menu_armor_max_health_store_1"] = "최대 체력 저장량: $health_stored",
 		["bm_menu_armor_max_health_store_2"] = "최대 체력 저장량: $health_stored \n처치 시 방탄복의 재생량: $regen_bonus%",
@@ -2528,7 +2528,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_title"] = "레스토레이션 게임플레이 팁",
 		["loading_gameplay_res_1"] = "클로커는 플레이어에게 공격적일 때 '쌕쌕' 소리를 냅니다. 이것을 들어서 찾아보십시오.",
 		["loading_gameplay_res_2"] = "클로커는 더 이상 돌진할 때 주변에서 윙윙거리는 소리나 끽끽거리는 소리를 내지 않습니다.",
-		["loading_gameplay_res_3"] = "권총은 교체 시간이 긴 주무기를 쓸 때 이상적인 보조 무기입니다.",
+		["loading_gameplay_res_3"] = "권총은 교체 시간이 긴 주무기를 쓸 때 보완해주는 보조 무기입니다.",
 		["loading_gameplay_res_4"] = "테이저는 더 이상 당신의 무기를 재장전 해주지 않습니다.",
 		["loading_gameplay_res_5"] = "클로커는 혼자 있는 하이스터 혹은 하이스터를 가로막을 때 쉽게 반격합니다.",
 		["loading_gameplay_res_6"] = "클로커는 발로 차면 직접적인 체력 피해를 입힙니다. 이것은 굴절 또는 반격 스킬로 감소시킬 수 있습니다.",
@@ -2632,8 +2632,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 특성 덱입니다.",	
 		["loading_equip_skills_res_17"] = "방패를 관통하는 총알은 절반의 피해를 줍니다.",	
 		["loading_equip_skills_res_18"] = "Peacemaker 리볼버와 Phoenix .500 리볼버는 저격소총처럼 방탄복을 관통할 수 있습니다.",
-		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 있다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
-		["loading_equip_skills_res_20"] = "무기의 은폐가 높을수록 더 빨리 교체하거나 넣을 수 있습니다.",	
+		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 가능하다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
+		["loading_equip_skills_res_20"] = "무기의 은폐성이 높을수록 더 빨리 교체할 수 있습니다.",	
 		["loading_equip_skills_res_21"] = "전기톱과 카자구루마는 들고 있는 동안 전방의 적에게 피해를 줍니다.",	
 		["loading_equip_skills_res_22"] = "버터플라이 나이프와 스위치블레이드는 적의 등을 찌르면 막대한 피해를 줍니다.",	
 		["loading_equip_skills_res_23"] = "아이스 픽 및 금광 열풍은 느린 속도 대신 헤드샷 피해를 더 줍니다.",	
@@ -2643,10 +2643,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_27"] = "파운더 네일건은 다른 어떤 근접 무기보다 훨씬 더 긴 사거리를 가지고 있습니다.",	
 		["loading_equip_skills_res_28"] = "특성 덱의 레벨을 올리면 투척물 케이스가 잠금 해제됩니다.",
 		["loading_equip_skills_res_29"] = "이제 투척물 케이스로 사용할 때마다 투척물을 보충하면 모두 채워줍니다.",	
-		["loading_equip_skills_res_30"] = "상황이 안 좋을때 인스파이어 에이스로 팀원을 구하십시오. 재사용 대기 시간이 매우 길고 시야가 필요합니다.",	
+		["loading_equip_skills_res_30"] = "인스파이어 에이스는 재사용 대기 시간이 매우 길고 시야가 필요하지만 상황이 안 좋을때 팀원을 쉽게 구할 수 있습니다.",	
 		["loading_equip_skills_res_31"] = "레스토레이션 모드는 특성 효과를 비활성화하는 대가로 돈과 경험치 획득을 더욱 증가하는 2개의 새로운 특성 덱을 추가합니다. 더 나은 보상을 위해 도전해보십시오!",
-		["loading_equip_skills_res_32"] = "조준 매커니즘은 조준할 때 명중률의 이점을 얻으려면 완전히 조준해야 효과가 증가하도록 변경되었습니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
-		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 사용하면 무기를 사용하기가 번거로워집니다.",
+		["loading_equip_skills_res_32"] = "조준할 때 명중률 보너스를 얻으려면 조준 애니메이션이 끝날 때까지 기다려야 합니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
+		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 개조하면 무기를 사용하기가 번거로워집니다.",
 		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은페도에 영향을 받습니다.",
 		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",
 		["loading_equip_skills_res_36"] = "전투 중 소음기는 당신이 적을 조준할때 적이 회피할 가능성을 줄입니다. 그들이 당신을 피하지 않고 보내는 시간을 대신 당신을 쏘는 데 쓰일 가능성이 있음을 명심하십시오.",
@@ -3174,7 +3174,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기를 꺼내고 넣는 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기 교체 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",

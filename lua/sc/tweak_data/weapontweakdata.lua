@@ -8042,6 +8042,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.flint.stats_modifiers = nil
 				self.flint.panic_suppression_chance = 0.05
+				self.flint.timers.reload_empty = 3.23
 				self.flint.timers.reload_exit_empty = 0.55
 				self.flint.timers.reload_not_empty = 2.2
 				self.flint.timers.reload_exit_not_empty = 0.75

@@ -20581,7 +20581,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		override = {},
 		forbids = {
-			"wpn_fps_addon_ris"
+			"wpn_fps_addon_ris",
+			"wpn_fps_upg_m4_o_victor"
 		}
 	}
 
@@ -24005,6 +24006,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 			self.parts.wpn_fps_smg_car9_b_standard.supported = true
 			self.parts.wpn_fps_smg_car9_b_standard.stats = { value = 1 }
+			self.parts.wpn_fps_smg_car9_fg_rail.supported = true
+			self.parts.wpn_fps_smg_car9_fg_rail.stats = { value = 1 }
 	
 			--Extended Magazine
 			self.parts.wpn_fps_smg_car9_m_extended.supported = true
@@ -24013,14 +24016,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				extra_ammo = 10,
 				reload = -2,
 				concealment = -1
-			}
-	
-			--Hush Foregrip
-			self.parts.wpn_fps_smg_car9_fg_rail.supported = true
-			self.parts.wpn_fps_smg_car9_fg_rail.stats = {
-				value = 2,
-				recoil = -1,
-				concealment = 1
 			}
 
 		--Reinbeck
@@ -28697,6 +28692,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 1
 		}
 		self.parts.wpn_fps_upg_m4_b_victor.custom_stats = nil
+		self.parts.wpn_fps_upg_m4_b_victor.forbids = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }
 
 		--??
 		self.parts.wpn_fps_ass_ar47_g_ergo.supported = true

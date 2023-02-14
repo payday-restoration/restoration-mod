@@ -15810,7 +15810,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.omni.AMMO_MAX = 60
 		self.omni.tactical_reload = 1		
 		self.omni.CLIP_AMMO_MAX = 10
-		self.omni.fire_mode_data.fire_rate = 0.125
+		self.omni.fire_mode_data.fire_rate = 0.12
 		self.omni.FIRE_MODE = "single"		
 		self.omni.CAN_TOGGLE_FIREMODE = false
 		self.omni.BURST_FIRE = false

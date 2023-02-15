@@ -779,8 +779,8 @@ function PlayerDamage:damage_explosion(attack_data)
 		return
 	end
 	local attacker_unit = attack_data.attacker_unit
-
-	if attacker_unit and alive(attacker_unit) and attacker_unit ~= self._unit and attacker_unit:movement():team() == self._unit:movement():team() and self:is_friendly_fire(attacker_unit, true) then
+	local movement_ext = attacker_unit and alive(attacker_unit) and attacker_unit:movement()
+	if attacker_unit and alive(attacker_unit) and movement_ext and movement_ext:team() ~= self._unit:movement():team() and self:is_friendly_fire(attacker_unit, true) then
 		return
 	end
 

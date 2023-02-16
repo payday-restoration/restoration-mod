@@ -9770,8 +9770,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sko12.rays = 9
 				self.sko12.AMMO_MAX = 80
 				self.sko12.CLIP_AMMO_MAX = 25
-				self.sko12.fire_mode_data.fire_rate = 0.1875
+				self.sko12.fire_mode_data.fire_rate = 0.1714285
 				self.sko12.kick = self.stat_info.kick_tables.moderate_kick
+				self.sko12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.sko12.FIRE_MODE = "single"				
 				self.sko12.CAN_TOGGLE_FIREMODE = false
 				self.sko12.supported = true
@@ -9783,11 +9784,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sko12.stats = {
 					damage = 45,
-					spread = 39,
-					recoil = 57,
+					spread = 41,
+					recoil = 55,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 20,
+					concealment = 15,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -9796,6 +9797,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.sko12.stats_modifiers = nil
+				self.sko12.reload_speed_multiplier = 0.675
 				self.sko12.panic_suppression_chance = 0.05
 				self.sko12.timers.reload_empty = 3.4
 				self.sko12.timers.reload_exit_empty = 1.0
@@ -9818,8 +9820,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.supported = true
 				self.aa12.ads_speed = 0.440
 				self.aa12.damage_falloff = {
-					start_dist = 1100,
-					end_dist = 3200,
+					start_dist = 1200,
+					end_dist = 3300,
 					min_mult = 0.5
 				}
 				self.aa12.stats = {
@@ -9838,7 +9840,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.aa12.stats_modifiers = nil
 				self.aa12.panic_suppression_chance = 0.05
-				self.aa12.reload_speed_multiplier = 1.1
+				self.aa12.reload_speed_multiplier = 1.175
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
 

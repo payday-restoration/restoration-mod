@@ -19148,6 +19148,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sko12", "resmod_sko12", function(s
 	self.parts.wpn_fps_sho_sko12_conversion.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 	self.parts.wpn_fps_sho_sko12_conversion.stats = { value = 0 }
 
+	self.parts.wpn_fps_sho_sko12_m_drum.forbids = { 
+		"wpn_fps_upg_i_autofire",
+		"wpn_fps_upg_i_singlefire"
+	}
+
 	self.wpn_fps_sho_sko12.override = self.wpn_fps_sho_sko12.override or {}
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_slug = a_slug_semi_override
 	self.wpn_fps_sho_sko12.override.wpn_fps_upg_a_custom = a_custom_semi_override
@@ -19163,8 +19168,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sko12", "resmod_sko12", function(s
 		custom_stats = deep_clone(stocks.remove_adj_stats)
 	}		
 
-	self.wpn_fps_sho_sko12.uses_parts[44] = "resmod_dummy"
-	self.wpn_fps_sho_sko12.uses_parts[45] = "resmod_dummy"
+	for i, part_id in pairs(self.wpn_fps_sho_sko12.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_singlefire"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_sho_sko12.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end	
 	
 	table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_smg_mac10_s_no")
 

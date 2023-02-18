@@ -64,7 +64,7 @@ return {
 	},
 	[101404] = { 
 		values = {
-            enemy = "units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" --:)
+            enemy = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" --:)
 		}
 	},
 	[101405] = { 

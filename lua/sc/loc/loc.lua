@@ -2640,6 +2640,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
 		["debug_interact_gage_assignment_take"] = "PRESS $BTN_INTERACT TO PICK UP THE PACKAGE",
 
+		["hint_ability_no_grenade_pickup"] = "YOU CAN'T PICK UP PERK DECK THROWABLES",
+		["hint_full_grenades"] = "YOU ALREADY HAVE THE FULL AMOUNT.",
+		["debug_interact_ordnance_bag_take_grenades"] = "HOLD $BTN_INTERACT TO TAKE A THROWABLE AND SOME AMMO",
+
 		["far_repair_sentry_macro"] = "Sentry critically damaged, repairs needed.",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT",
 		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.

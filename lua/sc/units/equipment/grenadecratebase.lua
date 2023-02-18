@@ -34,22 +34,22 @@ function GrenadeCrateDeployableBase:setup()
 end
 
 function GrenadeCrateDeployableBase:take_grenade(unit)
-	if self._empty or not self:_can_take_grenade() or not managers.network:session() then
+	local inventory = unit:inventory()
+
+	local can_take = self:_can_take_grenade() or inventory:need_ammo()
+
+	if self._empty or not can_take or not managers.network:session() then
 		return
 	end
 
 	unit:sound():play("pickup_ammo")
 
-	local grenade_amount = managers.player:add_grenade_amount(1, true)
-	
+	local grenade_amount = (managers.blackmarket:equipped_grenade_allows_pickups() and managers.player:add_grenade_amount(1, true)) or nil
+
 	--So you take some ammo back too
-	local inventory = unit:inventory()
-
-	self._ammo_amount = 0.25
-
 	if inventory then
 		for id, weapon in pairs(inventory:available_selections()) do
-			local took = self:round_value(weapon.unit:base():add_ammo_from_bag(self._ammo_amount))
+			local took = self:round_value(weapon.unit:base():add_ammo_from_bag(0.25))
 			managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
 		end
 	end

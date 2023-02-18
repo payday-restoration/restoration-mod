@@ -19197,9 +19197,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sko12", "resmod_x_sko12", functi
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_piercing = a_piercing_semi_override
 	self.wpn_fps_sho_x_sko12.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 
-	self.wpn_fps_sho_x_sko12.uses_parts[26] = "resmod_dummy"
-	self.wpn_fps_sho_x_sko12.uses_parts[27] = "resmod_dummy"
-
+	for i, part_id in pairs(self.wpn_fps_sho_x_sko12.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_singlefire"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_sho_x_sko12.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end	
+	
 	self.wpn_fps_sho_x_sko12_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_sko12.uses_parts)
 end)
 

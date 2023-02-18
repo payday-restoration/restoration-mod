@@ -613,6 +613,18 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	}	
 	self.grenade_briefcase = deep_clone(self.invisible_interaction_open_superfast)
 	self.grenade_briefcase.contour = "deployable"
+
+	self.ordnance_bag = {
+		icon = "equipment_ammo_bag",
+		text_id = "debug_interact_ordnance_bag_take_grenades",
+		contour = "deployable",
+		timer = 1.5,
+		blocked_hint = "full_grenades",
+		sound_start = "bar_bag_generic",
+		sound_interupt = "bar_bag_generic_cancel",
+		sound_done = "bar_bag_generic_finished",
+		action_text_id = "hud_action_taking_grenades"
+	}
 	
 	--Gage package
 	self.gage_assignment.timer = 0		

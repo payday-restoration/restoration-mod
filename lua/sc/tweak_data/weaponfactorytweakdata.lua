@@ -1313,15 +1313,16 @@ local muzzle_device = {
 			stats = {
 				value = 10,
 				recoil = -25,
-				spread = 5,
+				spread = 2,
 				total_ammo_mod = -50,
 				concealment = -5,
-				spread_multi = {1, 1},	
 				damage = 30
 			},
 			custom_stats = {
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
+				ads_speed_mult = 1.125,
+				hip_mult = 4,
+				ammo_pickup_max_mul = 0.7,
+				ammo_pickup_min_mul = 0.7,
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
@@ -1335,15 +1336,16 @@ local muzzle_device = {
 			stats = {
 				value = 10,
 				recoil = -25,
-				spread = 5,
+				spread = 2,
 				total_ammo_mod = -50,
 				concealment = -5,
-				spread_multi = {1, 1},	
 				damage = 45
 			},
 			custom_stats = {
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
+				ads_speed_mult = 1.125,
+				hip_mult = 4,
+				ammo_pickup_max_mul = 0.7,
+				ammo_pickup_min_mul = 0.7,
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
@@ -1359,14 +1361,15 @@ local muzzle_device = {
 				value = 10,
 				total_ammo_mod = -50,
 				recoil = -25,
-				spread = 5,
-				spread_multi = {1, 1},	
+				spread = 2,
 				concealment = -5,
 				damage = 60
 			},
 			custom_stats = {
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
+				ads_speed_mult = 1.125,
+				hip_mult = 4,
+				ammo_pickup_max_mul = 0.7,
+				ammo_pickup_min_mul = 0.7,
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
@@ -9081,17 +9084,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_explosive.supported = true
 	self.parts.wpn_fps_upg_a_explosive.stats = {
 		value = 10,
-		total_ammo_mod = -16,
+		total_ammo_mod = -50,
 		damage = 90,
 		recoil = -25,
-		spread = 5,
-		spread_multi = {1, 1},	
+		spread = 2,
 		concealment = -5,
 		moving_spread = 3
 	}
 	self.parts.wpn_fps_upg_a_explosive.custom_stats = {
-		ammo_pickup_max_mul = 0.8,
-		ammo_pickup_min_mul = 0.8,
+		ads_speed_mult = 1.125,
+		hip_mult = 4,
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7,
 		ignore_statistic = true,
 		rays = 1,
 		block_b_storm = true,	
@@ -11535,27 +11539,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 	}
 	
 	--Override table
-	self.wpn_fps_shot_b682.override = {
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				recoil = -25,
-				spread = 5,
-				concealment = -5,
-				spread_multi = {1, 1},	
-				total_ammo_mod = -50,
-				damage = 90
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
-			}
-		}
-	}	
+	self.wpn_fps_shot_b682.override = {}	
 	
 end)
 
@@ -12837,6 +12821,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 	self.parts.wpn_fps_upg_a_crossbow_explosion.desc_id = "bm_w_xbow_exp_desc"
 	self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 120, total_ammo_mod = -50, spread = -8, recoil = -4}
 	self.parts.wpn_fps_upg_a_crossbow_explosion.custom_stats = {
+		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "crossbow_arrow_exp",
 		block_b_storm = true
@@ -12958,6 +12943,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_arblast", "resmod_arblast", functi
 	self.parts.wpn_fps_bow_arblast_m_explosive.desc_id = "bm_w_xbow_exp_desc"
 	self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3, recoil = -6}
 	self.parts.wpn_fps_bow_arblast_m_explosive.custom_stats = {
+		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "arblast_arrow_exp",
 		block_b_storm = true,
@@ -12996,6 +12982,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 	self.parts.wpn_fps_bow_frankish_m_explosive.desc_id = "bm_w_xbow_exp_desc"
 	self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -50, spread = -6, recoil = -6}
 	self.parts.wpn_fps_bow_frankish_m_explosive.custom_stats = {
+		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "frankish_arrow_exp",
 		block_b_storm = true,
@@ -15304,6 +15291,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 		recoil = -6
 	}
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.custom_stats = {
+		hip_mult = 3,
 		alt_desc = "bm_airbow_exp_sc_desc",
 		launcher_grenade = "ecp_arrow_exp",
 		block_b_storm = true,
@@ -19208,7 +19196,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sko12", "resmod_x_sko12", functi
 			end
 		end
 	end	
-	
+
 	self.wpn_fps_sho_x_sko12_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_sko12.uses_parts)
 end)
 

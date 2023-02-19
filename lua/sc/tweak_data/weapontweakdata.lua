@@ -8015,7 +8015,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flint.AMMO_MAX = 150
 				self.flint.CLIP_AMMO_MAX = 30
 				self.flint.BURST_FIRE = 2
-				self.flint.BURST_DELAY = 0.06
+				self.flint.BURST_DELAY = 0.03
+				self.flint.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
+				self.flint.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 				self.flint.ADAPTIVE_BURST_SIZE = false									
 				self.flint.fire_mode_data.fire_rate = 0.08571428571
 				self.flint.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -8042,8 +8044,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.flint.stats_modifiers = nil
 				self.flint.panic_suppression_chance = 0.05
-				self.flint.timers.reload_empty = 3.23
-				self.flint.timers.reload_exit_empty = 0.55
+				self.flint.timers.reload_empty = 3.21
+				self.flint.timers.reload_exit_empty = 0.57
 				self.flint.timers.reload_not_empty = 2.2
 				self.flint.timers.reload_exit_not_empty = 0.75
 
@@ -8993,7 +8995,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.ads_speed = 0.320
 				self.ching.damage_falloff = {
 					start_dist = 4000,
-					end_dist = 8900,
+					end_dist = 9000,
 					min_mult = 0.5
 				}
 				self.ching.stats = {
@@ -9030,7 +9032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hcar.ads_speed = 0.420
 				self.hcar.damage_falloff = {
 					start_dist = 3600,
-					end_dist = 7000,
+					end_dist = 8500,
 					min_mult = 0.5
 				}
 				self.hcar.stats = {

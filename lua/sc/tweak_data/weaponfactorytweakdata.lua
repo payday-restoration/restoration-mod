@@ -20037,12 +20037,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hcar", "resmod_hcar", function(sel
 
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.supported = true
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.stats = { value = 1}
-	self.parts.wpn_fps_lmg_hcar_body_conversionkit.custom_stats = {
-		sounds = {
-			stop_fire = "hcarc_stop",
-			fire_auto = "hcarc_fire"
-		}
-	}
+	self.parts.wpn_fps_lmg_hcar_body_conversionkit.custom_stats = nil
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.forbids = nil
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.override = {
 		wpn_fps_lmg_hcar_barrel_standard = {

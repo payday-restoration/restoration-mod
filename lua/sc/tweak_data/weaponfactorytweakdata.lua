@@ -4757,7 +4757,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_ak5_fg_fnc.supported = true
-	self.parts.wpn_fps_ass_ak5_fg_fnc.has_description = false
+	self.parts.wpn_fps_ass_ak5_fg_fnc.has_description = true
 	self.parts.wpn_fps_ass_ak5_fg_fnc.desc_id = "fnc_burst_desc"
 	self.parts.wpn_fps_ass_ak5_fg_fnc.custom_stats = { funco_chan = true }
 	self.parts.wpn_fps_ass_ak5_fg_fnc.stats = {

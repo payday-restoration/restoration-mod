@@ -1622,6 +1622,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AK5
 		["bm_w_ak5"] = "Ak 5",
 		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
+		["fnc_burst_desc"] = "Adds a 3-round burst firemode.",
 		--Union 5.56
 		["bm_w_corgi"] = "Union 5.56",	
 		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	

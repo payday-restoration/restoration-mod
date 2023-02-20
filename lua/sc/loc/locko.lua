@@ -1527,6 +1527,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
 		--AK5
 		["bm_ak5_sc_desc"] = "은행 강도와 총알 크기에 대해 정보를 모르는 사람들을 혼란스럽게 만드는 유명하고 좋은 다목적 소총입니다.",
+		["fnc_burst_desc"] = "3점사 발사 모드를 추가합니다.",
 		--Union 5.56
 		["bm_corgi_sc_desc"] = "이 불펍 소총은 명성에도 불구하고 내항성이 전혀 없습니다.",
 		["bm_wp_corgi_b_short"] = "MSG 총열",		

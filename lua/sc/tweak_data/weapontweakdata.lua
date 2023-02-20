@@ -3098,7 +3098,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (10.2 + (i * -0.1)) * 0.75)
+		table.insert(self.stats.recoil, (math.lerp( 7.5, 0.25, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -6204,6 +6204,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"auto"
 				}
 				self.hailstorm.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
+				self.hailstorm.muzzleflash_silenced = "effects/payday2/particles/weapons/hailstorm_suppressed_volley"
 				self.hailstorm.kick = self.stat_info.kick_tables.moderate_kick
 				self.hailstorm.kick.volley = nil
 				self.hailstorm.shake.bypass_global_shake = true
@@ -8537,6 +8538,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb.fire_mode_data.volley.armor_piercing_chance = 0
 				self.tkb.fire_mode_data.volley.trail_effect = "_dmc/effects/warsaw_trail"
 				self.tkb.trail_effect = "_dmc/effects/warsaw_trail"
+				self.tkb.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.tkb.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 				self.tkb.kick = self.stat_info.kick_tables.moderate_kick	
 				self.tkb.kick.volley = nil
 				self.tkb.FIRE_MODE = "auto"

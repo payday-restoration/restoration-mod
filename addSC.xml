@@ -1173,7 +1173,37 @@
 	<texture			path="units/pd2_mod_dave/characters/shared_textures/taser_body_df"/>
 	<texture			path="units/pd2_mod_dave/characters/shared_textures/taser_body_nm"/>
 	<texture			path="units/pd2_mod_dave/characters/shared_textures/heads_atlas_df"/>
-	<texture			path="units/pd2_mod_dave/characters/shared_textures/helmets_heavy_taser_atlas_df"/>		
+	<texture			path="units/pd2_mod_dave/characters/shared_textures/helmets_heavy_taser_atlas_df"/>
+	
+	<!--Make Marshals More Epic-->
+	<!--Epic Cowboy Hats-->
+	<model				path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat" force="true"/>
+	<model				path="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat_2/ene_acc_marksman_hat_2" force="true"/>
+	
+	<!--Epic Marshals-->
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_contour" force="true"/>
+	<model				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
+	<object				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
+	<cooked_physics		path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" load="true" force="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_husk" load="true" force="true"/>
+	
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2" force="true"/>
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2_contour" force="true"/>
+	<model				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2" force="true"/>
+	<object				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2" force="true"/>
+	<cooked_physics		path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2" force="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2" load="true" force="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2_husk" load="true" force="true"/>
+	
+	<!--Hoppip's Marshal Textures-->
+	<df_nm				path="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_arms" force="true"/>	
+	<df_nm				path="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_head_1" force="true"/>	
+	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_df" force="true"/>		
+	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_merc_df" force="true"/>		
+	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" force="true"/>
+	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" force="true"/>
 	
 	<!--Omnia Buff Effect-->
 	<object				path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>

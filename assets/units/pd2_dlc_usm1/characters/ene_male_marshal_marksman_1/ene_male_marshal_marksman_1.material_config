@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<materials group="ene_male_marshal_marksman_1" version="3">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_df"/>
+		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_nm"/>
+	</material>
+	<material name="mtr_equipment" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df"/>
+		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm"/>
+	</material>
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_head_1_df"/>
+		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_head_1_nm"/>
+	</material>
+	<material name="mtr_arms" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_arms_df"/>
+		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_arms_nm"/>
+	</material>
+
+    <material unique="true" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2" name="mtr_glass">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_light/glasses_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+	
+	<material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT"/>
+</materials>

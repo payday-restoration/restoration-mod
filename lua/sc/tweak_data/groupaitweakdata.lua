@@ -16445,7 +16445,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	end	
 	
 	--Marshal Shield Spawn, just for Train Heist
-	if job == "trai" or job == "corp" then
+	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
 		self.enemy_spawn_groups.marshal_squad = {
 			spawn_cooldown = 60,
 			max_nr_simultaneous_groups = 2,

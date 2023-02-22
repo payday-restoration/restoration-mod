@@ -5,25 +5,6 @@
 	
 	<!--Sniper-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" force="false"/>
-	
-	<!--Texas Cops-->
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" load="true" force="false" />
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_husk" load="true" force="false" />	
-	<object				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
-	<sequence_manager	path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_contour" force="false" />	
-
-	<unit_mat			path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" load="true" />
-	<cooked_physics		path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" />
-	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" load="true" force="false" />
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_husk" load="true" force="false" /> 	
-	<object				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" force="false" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" force="false" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" force="false" />
-	<material_config	path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_contour" force="false" />
 
 	<!-- feds n cops     -->
 	<!--FBI 1-->

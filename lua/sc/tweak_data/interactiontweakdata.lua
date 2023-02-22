@@ -630,10 +630,7 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	self.gage_assignment.timer = 0		
 	self.gage_assignment.sound_start = "money_grab"	
 	self.gage_assignment.sound_event = "money_grab"	
-	self.gage_assignment.sound_done = "money_grab"	
-	
-	--this isn't fun anymore (will remove it once OVK fixes this)
-	self.cas_open_door.timer = 0	
+	self.gage_assignment.sound_done = "money_grab"
 	
 	--Golden Grin keypad, used on a few heists. Increased interaction distance to play it safe
 	self.cas_button_01.interact_distance = 75

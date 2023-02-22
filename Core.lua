@@ -385,7 +385,7 @@ function restoration:Init()
 		"ranc",
 		"dinner",
         "trai",
-		"corp",
+		--"corp",
 		--Custom Heists--
 		"tonmapjam22l"
 	}	

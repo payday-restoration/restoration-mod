@@ -110,6 +110,7 @@ function restoration:Init()
 		dah = restoration.captain_types.spring, --diamond heist
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
 		chas = restoration.captain_types.spring, --Dragon Heist
+		corp = restoration.captain_types.spring, --Hostile Takeover
 		--Custom Heists--
 		firestarter_1_res = restoration.captain_types.spring, --firestarter day 1 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
@@ -226,6 +227,7 @@ function restoration:Init()
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
 		"trai", --Lost in Transit
+		"corp", --Hostile Takeover
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration

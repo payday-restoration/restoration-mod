@@ -1,9 +1,5 @@
 local old_queue_dialog = DialogManager.queue_dialog
 
-function DialogManager:queue_narrator_dialog(id, params)
-	return self:queue_dialog(self._narrator_prefix .. id, params)
-end
-
 function DialogManager:queue_dialog(id, ...)
 	local escape_time = 0
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"

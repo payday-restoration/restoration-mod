@@ -367,7 +367,7 @@ tweak_data.projectiles.bow_poison_arrow.damage = 18
 
 --Hunter crossbow--
 tweak_data.projectiles.crossbow_arrow.damage = 24
-tweak_data.projectiles.crossbow_arrow_exp.damage = 48
+tweak_data.projectiles.crossbow_arrow_exp.damage = 36
 tweak_data.projectiles.crossbow_poison_arrow.damage = 18
 
 --Arblast Heavy Crossbow--
@@ -691,7 +691,7 @@ end
 		'frankish_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -719,7 +719,7 @@ end
 		'arblast_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -747,7 +747,7 @@ end
 		'ecp_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

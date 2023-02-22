@@ -12244,8 +12244,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_plainsrider", "resmod_plainsrider"
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "west_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.75,
-		ammo_pickup_min_mul = 0.75
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 	
 	--Poisoned Arrows
@@ -12764,6 +12764,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 	}
 	self.parts.wpn_fps_bow_hunter_b_carbon.supported = true
 	self.parts.wpn_fps_bow_hunter_b_carbon.stats = {value = 1, spread = 2, recoil = -2, concealment = -1}
+	self.parts.wpn_fps_bow_hunter_b_carbon.custom_stats = { velocity_mult = 1.2 }
 	
 	--Skeletal Limb
 	self.parts.wpn_fps_bow_hunter_b_skeletal.pcs = {
@@ -12774,6 +12775,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 	}
 	self.parts.wpn_fps_bow_hunter_b_skeletal.supported = true
 	self.parts.wpn_fps_bow_hunter_b_skeletal.stats = {value = 3, spread = -1, concealment = 1}
+	self.parts.wpn_fps_bow_hunter_b_skeletal.custom_stats = { velocity_mult = 0.8 }
 	
 	--Camo Grip
 	self.parts.wpn_fps_bow_hunter_g_camo.pcs = {
@@ -12820,12 +12822,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 	self.parts.wpn_fps_upg_a_crossbow_explosion.supported = true
 	self.parts.wpn_fps_upg_a_crossbow_explosion.has_description = true
 	self.parts.wpn_fps_upg_a_crossbow_explosion.desc_id = "bm_w_xbow_exp_desc"
-	self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 120, total_ammo_mod = -50, spread = -8, recoil = -4}
+	self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 60, total_ammo_mod = -35, spread = -12}
 	self.parts.wpn_fps_upg_a_crossbow_explosion.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "crossbow_arrow_exp",
-		block_b_storm = true
+		block_b_storm = true,
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 
 end)
@@ -12942,14 +12946,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_arblast", "resmod_arblast", functi
 	self.parts.wpn_fps_bow_arblast_m_explosive.supported = true
 	self.parts.wpn_fps_bow_arblast_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_arblast_m_explosive.desc_id = "bm_w_xbow_exp_desc"
-	self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3, recoil = -6}
+	self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -12}
 	self.parts.wpn_fps_bow_arblast_m_explosive.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "arblast_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.75,
-		ammo_pickup_min_mul = 0.75
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 
 end)
@@ -12981,14 +12985,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 	self.parts.wpn_fps_bow_frankish_m_explosive.supported = true
 	self.parts.wpn_fps_bow_frankish_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_frankish_m_explosive.desc_id = "bm_w_xbow_exp_desc"
-	self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -50, spread = -6, recoil = -6}
+	self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -50, spread = -12}
 	self.parts.wpn_fps_bow_frankish_m_explosive.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "frankish_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.75,
-		ammo_pickup_min_mul = 0.75
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 
 end)	
@@ -13001,13 +13005,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_long", "resmod_long", function(sel
 	self.parts.wpn_fps_bow_long_m_explosive.supported = true
 	self.parts.wpn_fps_bow_long_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_long_m_explosive.desc_id = "bm_w_bow_exp_desc"
-	self.parts.wpn_fps_bow_long_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3}
+	self.parts.wpn_fps_bow_long_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -6}
 	self.parts.wpn_fps_bow_long_m_explosive.custom_stats = {
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "long_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.75,
-		ammo_pickup_min_mul = 0.75
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 	
 	--Poison Arrow
@@ -15288,16 +15292,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.stats = {
 		damage = 45, 
 		total_ammo_mod = -50, 
-		spread = -3, 
-		recoil = -6
+		spread = -12
 	}
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_airbow_exp_sc_desc",
 		launcher_grenade = "ecp_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.75,
-		ammo_pickup_min_mul = 0.75
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 	
 	--Poison Arrow
@@ -16090,13 +16093,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_elastic", "resmod_elastic", functi
 	self.parts.wpn_fps_bow_elastic_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_elastic_m_explosive.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_bow_elastic_m_explosive.supported = true
-	self.parts.wpn_fps_bow_elastic_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -3}
+	self.parts.wpn_fps_bow_elastic_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -6}
 	self.parts.wpn_fps_bow_elastic_m_explosive.custom_stats = {
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "elastic_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.75,
-		ammo_pickup_min_mul = 0.75
+		ammo_pickup_max_mul = 0.7,
+		ammo_pickup_min_mul = 0.7
 	}
 	
 	--Poison Arrows

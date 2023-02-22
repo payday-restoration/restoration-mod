@@ -25,6 +25,7 @@ local damage_set = {
 		"corgi_crew",
 		"akm_crew",
 		"akm_gold_crew",
+		"tkb_crew",
 		"m16_crew",
 		"l85a2_crew",
 		"groza_crew",
@@ -33,6 +34,7 @@ local damage_set = {
 		"fal_crew",
 		"asval_crew",
 		"contraband_crew",
+		"hcar_crew",
 	},
 	shotgun_auto = {
 		"saiga_crew",
@@ -85,38 +87,38 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 50,
+		mag_capacity = 40,
 		fire_rate = 0.06666666667,
 		damage = 4.8
 	},
 	assault_rifle = {
-		mag_capacity = 30,
+		mag_capacity = 25,
 		fire_rate = 0.1,
 		damage = 6.0
 	},
 	lmg = {
-		mag_capacity = 100,
+		mag_capacity = 80,
 		fire_rate = 0.08,
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 14,
-		fire_rate = 0.15,
+		mag_capacity = 10,
+		fire_rate = 0.2,
 		damage = 7.5
 	},
 	shotgun_pump = {
-		mag_capacity = 7,
-		fire_rate = 0.8,
+		mag_capacity = 6,
+		fire_rate = 1,
 		damage = 15.0
 	},
 	sniper_auto = {
-		mag_capacity = 10,
-		fire_rate = 0.85714,
+		mag_capacity = 8,
+		fire_rate = 1.2,
 		damage = 9.0
 	},
 	sniper_bolt = {
-		mag_capacity = 5,
-		fire_rate = 2,
+		mag_capacity = 4,
+		fire_rate = 3,
 		damage = 18.0
 	}
 }
@@ -2013,6 +2015,22 @@ local crew_wep_preset = {
 			self.akm_crew.suppression = 2.2
 			self.akm_crew.FIRE_MODE = "auto"
 		end
+
+		function WeaponTweakData:_init_data_tkb_crew()
+			self.tkb_crew.categories = clone(self.tkb.categories)
+			self.tkb_crew.sounds.prefix = "tkb_npc"
+			self.tkb_crew.use_data.selection_index = 2
+			self.tkb_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
+			self.tkb_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+			self.tkb_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+			self.tkb_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+			self.tkb_crew.CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+			self.tkb_crew.NR_CLIPS_MAX = 5
+			self.tkb_crew.hold = "rifle"
+			self.tkb_crew.alert_size = 2500
+			self.tkb_crew.suppression = 2.2
+			self.tkb_crew.FIRE_MODE = "auto"
+		end
 		
 		function WeaponTweakData:_init_data_g36_crew()
 			self.g36_crew.categories = clone(self.g36.categories)
@@ -2099,6 +2117,22 @@ local crew_wep_preset = {
 			self.scar_crew.alert_size = 2500
 			self.scar_crew.suppression = 2.2
 			self.scar_crew.FIRE_MODE = "auto"
+		end
+
+		function WeaponTweakData:_init_data_hcar_crew()
+			self.hcar_crew.categories = clone(self.hcar.categories)
+			self.hcar_crew.sounds.prefix = "hcar_npc"
+			self.hcar_crew.use_data.selection_index = 2
+			self.hcar_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
+			self.hcar_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+			self.hcar_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+			self.hcar_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+			self.hcar_crew.CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+			self.hcar_crew.NR_CLIPS_MAX = 5
+			self.hcar_crew.hold = "rifle"
+			self.hcar_crew.alert_size = 2500
+			self.hcar_crew.suppression = 2.2
+			self.hcar_crew.FIRE_MODE = "auto"
 		end
 		
 		function WeaponTweakData:_init_data_fal_crew()

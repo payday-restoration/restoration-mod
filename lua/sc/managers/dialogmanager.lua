@@ -11,7 +11,7 @@ function DialogManager:queue_dialog(id, ...)
 	
 	
 		--Hostile Takeover
-		if id == "Play_loc_corp_50" then
+		if id == "Play_loc_corp_50" or id == "Play_loc_corp_62" then
 		if difficulty_index <= 2 then
 				escape_time = 720
 			elseif difficulty_index == 3 then

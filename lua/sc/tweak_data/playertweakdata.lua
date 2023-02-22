@@ -96,7 +96,7 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.max_value = 10
 	self.suspicion.range_mul = 1.2
 	self.suspicion.buildup_mul = 1.2
-	self.damage.MIN_DAMAGE_INTERVAL = 0.15
+	self.damage.MIN_DAMAGE_INTERVAL = 0.16666667
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.3
 	}		

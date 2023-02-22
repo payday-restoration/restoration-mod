@@ -110,6 +110,7 @@
 	<mission			path="levels/instances/unique/mus_security_room/world/world" force="true" />
 	<mission			path="levels/instances/unique/vit/vit_security_room/world/world" force="true" />
 	<mission			path="levels/instances/unique/are_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/corp/corp_security_room/world/world" force="true" />
 	<!--so many security rooms (some of them are unused but better replace them all just in case)-->
 	<mission			path="levels/instances/unique/dah/dah_security_room/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/dah/dah_security_room2/world/world" force="true" /> 
@@ -1185,7 +1186,6 @@
 	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_contour" force="true"/>
 	<model				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
 	<object				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
-	<cooked_physics		path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true"/>
 	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" load="true" force="true"/>
 	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_husk" load="true" force="true"/>
 	

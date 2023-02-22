@@ -297,6 +297,26 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		670000
 	}
 	
+	--Hostile Takeover
+	self.jobs.corp.payout = {			
+		68500,
+		200000,
+		500000,
+		850000,
+		1200000,
+		1200000,
+		1200000
+	}
+	self.jobs.corp.contract_cost = {
+		89000,
+		170000,
+		320000,
+		470000,
+		630000,
+		630000,
+		630000
+	}
+	
 end)
 
 --[[

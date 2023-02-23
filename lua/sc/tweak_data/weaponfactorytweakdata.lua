@@ -17243,11 +17243,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 			suppression = -1
 		},
 		custom_stats = {
-			rof_mult = 0.7647058,
-			ammo_pickup_max_mul = 0.675,
-			ammo_pickup_min_mul = 0.675,
-			alt_ammo_pickup_max_mul = 0.675,
-			alt_ammo_pickup_min_mul = 0.675
+			rof_mult = 0.75,
+			ammo_pickup_max_mul = 0.6895,
+			ammo_pickup_min_mul = 0.6895,
+			alt_ammo_pickup_max_mul = 0.6895,
+			alt_ammo_pickup_min_mul = 0.6895
 		}
 	}
 
@@ -20863,7 +20863,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_crane") then
 				attachment_list = {
-					"wpn_fps_snp_victor_s_mod0"
+					"wpn_fps_snp_victor_s_mod0",
+
+					"wpn_fps_upg_ar47_s_mod0_pad"
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) then
@@ -28903,8 +28905,114 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = 3
 		}
 		self.parts.wpn_fps_upg_ak_m_double.custom_stats = nil
+	end
 
-	
+	if self.parts.wpn_fps_ass_ar47_b_standard then --Tangerine's AR47
+
+		self.parts.wpn_fps_ass_ar47_b_standard.forbids = self.parts.wpn_fps_ass_ar47_b_standard.forbids or {}
+		table.insert(self.parts.wpn_fps_ass_ar47_b_standard.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
+		table.insert(self.parts.wpn_fps_ass_ar47_b_standard.forbids, "wpn_fps_ass_m4_os_frontsight")
+
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.supported = true
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.name_id = "bm_wp_upg_ass_m4_b_beowulf"
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.has_description = false
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.forbids = self.parts.wpn_fps_upg_ass_ar47_b_heavy.forbids or {}
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_heavy.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_heavy.forbids, "wpn_fps_ass_m4_os_frontsight")
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.stats = {
+			value = 8,
+			recoil = 6,
+			concealment = -3
+		}
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.custom_stats = {
+			ads_speed_mult = 1.075
+		}
+
+		self.parts.wpn_fps_upg_ass_ar47_b_short.supported = true
+		self.parts.wpn_fps_upg_ass_ar47_b_short.name_id = "bm_wp_m4_uupg_b_short"
+		self.parts.wpn_fps_upg_ass_ar47_b_short.has_description = false
+		self.parts.wpn_fps_upg_ass_ar47_b_short.forbids = self.parts.wpn_fps_upg_ass_ar47_b_short.forbids or {}
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_short.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_short.forbids, "wpn_fps_ass_m4_os_frontsight")
+		self.parts.wpn_fps_upg_ass_ar47_b_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.supported = true
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.name_id = "bm_wp_m4_uupg_b_sd"
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.has_description = true
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.forbids = self.parts.wpn_fps_upg_ass_ar47_b_sd.forbids or {}
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_sd.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_sd.forbids, "wpn_fps_ass_m4_os_frontsight")
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_sd.forbids, "wpn_fps_snp_tti_ns_brake")
+		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_sd.forbids, "wpn_fps_upg_ns_ass_smg_desertfox")
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.stats = {
+			value = 3,
+			suppression = 12,
+			alert_size = -1
+		}
+
+		self.parts.wpn_fps_upg_ar47_fg_m4.supported = true
+		self.parts.wpn_fps_upg_ar47_fg_m4.custom_stats = nil
+		self.parts.wpn_fps_upg_ar47_fg_m4.stats = {
+			value = 3,
+			spread = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_upg_fg_smr_short.supported = true
+		self.parts.wpn_fps_upg_fg_smr_short.custom_stats = nil
+		self.parts.wpn_fps_upg_fg_smr_short.stats = {
+			value = 3,
+			recoil = -2,
+			concealment = 1
+		}
+
+		self.parts.wpn_fps_m4_lower_reciever_tan.supported = true
+		self.parts.wpn_fps_m4_lower_reciever_tan.custom_stats = nil
+		self.parts.wpn_fps_m4_lower_reciever_tan.stats = {
+			value = 0
+		}
+
+		self.parts.wpn_fps_upg_ar47_s_mod0_pad.supported = true
+		self.parts.wpn_fps_upg_ar47_s_mod0_pad.stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_ar47_s_mod0_pad.custom_stats = deep_clone(stocks.adj_rec_stats)
+
+		self.parts.wpn_fps_ass_ar47_m_blk.supported = true
+		self.parts.wpn_fps_ass_ar47_m_blk.stats = {
+			value = 10,
+			recoil = 4
+		}
+		self.parts.wpn_fps_ass_ar47_m_blk.custom_stats = {
+			rof_mult = 1.33334,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 0.8
+		}
+
+		self.parts.wpn_fps_ass_ar47_vg_stubby.supported = true
+		self.parts.wpn_fps_ass_ar47_vg_stubby.stats = {
+			value = 3,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_ar47_vg_stubby.custom_stats = nil
+
+		self.parts.wpn_fps_ass_ar47_vg_long.supported = true
+		self.parts.wpn_fps_ass_ar47_vg_long.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_ass_ar47_vg_long.custom_stats = nil
+
+		self.parts.wpn_fps_ass_ar47_vg_ergo.supported = true
+		self.parts.wpn_fps_ass_ar47_vg_ergo.stats = {
+			value = 5,
+			recoil = 2,
+			spread = 1,
+			concealment = -2
+		}
+		self.parts.wpn_fps_ass_ar47_vg_ergo.custom_stats = nil
+
 	end
 
 --Resmod Custom Weapon stuff

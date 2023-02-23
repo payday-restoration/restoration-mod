@@ -1237,6 +1237,12 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	end
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
+
+	if self:get_ammo_remaining_in_clip() ~= 0 then
+		if self:weapon_tweak_data().reload_not_empty_speed_multiplier then
+			multiplier = multiplier * self:weapon_tweak_data().reload_not_empty_speed_multiplier
+		end
+	end
 	
 	if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
 		local morale_boost_bonus = self._setup.user_unit:movement():morale_boost()

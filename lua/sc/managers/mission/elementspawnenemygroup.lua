@@ -79,6 +79,7 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},

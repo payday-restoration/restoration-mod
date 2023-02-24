@@ -28951,6 +28951,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			suppression = 12,
 			alert_size = -1
 		}
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.custom_stats = nil
+		self.parts.wpn_fps_upg_ass_ar47_b_sd.adds = nil
 
 		self.parts.wpn_fps_upg_ar47_fg_m4.supported = true
 		self.parts.wpn_fps_upg_ar47_fg_m4.custom_stats = nil

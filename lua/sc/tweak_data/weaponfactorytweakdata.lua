@@ -8405,10 +8405,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_scorpion", "resmod_x_scorpion", 
 		stats = deep_clone(stocks.remove_folded_stats),
 		custom_stats = deep_clone(stocks.remove_folded_stats)
 	}
-	
-	self.wpn_fps_smg_x_scorpion.uses_parts[18] = "resmod_dummy"
-	self.wpn_fps_smg_x_scorpion.uses_parts[19] = "resmod_dummy"
-	self.wpn_fps_smg_x_scorpion.uses_parts[20] = "resmod_dummy"	
+
+	for i, part_id in pairs(self.wpn_fps_smg_x_scorpion.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip",
+			"wpn_fps_upg_vg_ass_smg_stubby",
+			"wpn_fps_upg_vg_ass_smg_afg"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_scorpion.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+
 	table.insert(self.wpn_fps_smg_x_scorpion.uses_parts, "wpn_fps_smg_mac10_s_no")	
 
 	self.wpn_fps_smg_x_scorpion_npc.override = deep_clone(self.wpn_fps_smg_x_scorpion.override)
@@ -9741,8 +9751,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 	}
 	
 	--Parts
-	self.wpn_fps_pis_g26.uses_parts[27] = "resmod_dummy"
-	
 	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_g26_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
@@ -9804,8 +9812,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_jowi", "resmod_jowi", function(sel
 	}
 	
 	--Parts
-	self.wpn_fps_jowi.uses_parts[26] = "resmod_dummy"
-	
 	table.insert(self.wpn_fps_jowi.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_jowi_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_jowi.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
@@ -10505,19 +10511,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.wpn_fps_snp_mosin.override.wpn_fps_addon_ris = {
 		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fl_adapter"
 	}
-
-	--[[
-	for i, part_id in pairs(self.wpn_fps_snp_mosin.uses_parts) do
-		attachment_list = {
-			"wpn_fps_upg_o_northtac"
-		}
-		for _, remove_id in ipairs(attachment_list) do
-			if part_id == remove_id then
-				self.wpn_fps_snp_mosin.uses_parts[i] = "resmod_dummy"
-			end
-		end
-	end
-	]]
 	
 	table.insert(self.wpn_fps_snp_mosin.uses_parts, "wpn_fps_snp_mosin_a_tranq")
 	table.insert(self.wpn_fps_snp_mosin_npc.uses_parts, "wpn_fps_snp_mosin_a_tranq")		
@@ -18338,9 +18331,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 		}
 	}	
 		
-	self.wpn_fps_pis_maxim9.uses_parts[12] = "resmod_dummy"
-	self.wpn_fps_pis_maxim9.uses_parts[15] = "resmod_dummy"
-	self.wpn_fps_pis_maxim9.uses_parts[16] = "resmod_dummy"
+	for i, part_id in pairs(self.wpn_fps_pis_maxim9.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_pis_ns_flash",
+			"wpn_fps_upg_ns_pis_ipsccomp",
+			"wpn_fps_upg_ns_pis_meatgrinder"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_pis_maxim9.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
 	
 	table.insert(self.wpn_fps_pis_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")	
 	
@@ -18361,9 +18363,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_maxim9", "resmod_x_maxim9", func
 		}
 	}
 	
-	self.wpn_fps_pis_x_maxim9.uses_parts[11] = "resmod_dummy"
-	self.wpn_fps_pis_x_maxim9.uses_parts[14] = "resmod_dummy"
-	self.wpn_fps_pis_x_maxim9.uses_parts[15] = "resmod_dummy"
+	for i, part_id in pairs(self.wpn_fps_pis_x_maxim9.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_pis_ns_flash",
+			"wpn_fps_upg_ns_pis_ipsccomp",
+			"wpn_fps_upg_ns_pis_meatgrinder"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_pis_x_maxim9.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
 	
 	table.insert(self.wpn_fps_pis_x_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")			
 	
@@ -25878,12 +25889,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_smg_crysis3_typhoon_body then --KillerKrayola + splish + RJC9000's Crysis 3 Typhoon
-		self.wpn_fps_smg_crysis3_typhoon.uses_parts[21] = "resmod_dummy"
-		self.wpn_fps_smg_crysis3_typhoon.uses_parts[22] = "resmod_dummy"
-		self.wpn_fps_smg_crysis3_typhoon.uses_parts[44] = "resmod_dummy"
-		self.wpn_fps_smg_crysis3_typhoon.uses_parts[45] = "resmod_dummy"
-		self.wpn_fps_smg_crysis3_typhoon.uses_parts[46] = "resmod_dummy"
-		self.wpn_fps_smg_crysis3_typhoon.uses_parts[47] = "resmod_dummy"
+		for i, part_id in pairs(self.wpn_fps_smg_crysis3_typhoon.uses_parts) do
+			attachment_list = {
+				"wpn_fps_upg_i_singlefire",
+				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_a_custom",
+				"wpn_fps_upg_a_custom_free",
+				"wpn_fps_upg_a_piercing",
+				"wpn_fps_upg_a_dragons_breath"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_smg_crysis3_typhoon.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end
 	end
 
 	if self.parts.wpn_fps_ass_g36k_stockadapter then --Pawcio's G36K

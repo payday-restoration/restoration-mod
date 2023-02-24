@@ -28927,6 +28927,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ass_ar47_b_heavy.custom_stats = {
 			ads_speed_mult = 1.075
 		}
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.adds = nil
 
 		self.parts.wpn_fps_upg_ass_ar47_b_short.supported = true
 		self.parts.wpn_fps_upg_ass_ar47_b_short.name_id = "bm_wp_m4_uupg_b_short"
@@ -28935,7 +28936,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_short.forbids, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 		table.insert(self.parts.wpn_fps_upg_ass_ar47_b_short.forbids, "wpn_fps_ass_m4_os_frontsight")
 		self.parts.wpn_fps_upg_ass_ar47_b_short.stats = deep_clone(barrels.short_b2_stats)
-		self.parts.wpn_fps_upg_ass_ar47_b_heavy.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+		self.parts.wpn_fps_upg_ass_ar47_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
 
 		self.parts.wpn_fps_upg_ass_ar47_b_sd.supported = true
 		self.parts.wpn_fps_upg_ass_ar47_b_sd.name_id = "bm_wp_m4_uupg_b_sd"
@@ -28952,7 +28953,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alert_size = -1
 		}
 		self.parts.wpn_fps_upg_ass_ar47_b_sd.custom_stats = nil
-		self.parts.wpn_fps_upg_ass_ar47_b_sd.adds = nil
+			self.parts.wpn_fps_ass_ar47_sd_suppressor.supported = true
+			self.parts.wpn_fps_ass_ar47_sd_suppressor.stats = {value = 1}
+			self.parts.wpn_fps_ass_ar47_sd_suppressor.custom_stats = nil
 
 		self.parts.wpn_fps_upg_ar47_fg_m4.supported = true
 		self.parts.wpn_fps_upg_ar47_fg_m4.custom_stats = nil

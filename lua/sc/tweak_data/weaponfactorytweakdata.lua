@@ -5208,6 +5208,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp9", "resmod_mp9", function(self)
 	--CMP Part Table	
 	self.wpn_fps_smg_mp9.uses_parts[38] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
 
+	for i, part_id in pairs(self.wpn_fps_smg_mp9.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_stubby"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_mp9.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end	
+
 	table.insert(self.wpn_fps_smg_mp9.uses_parts, "wpn_fps_smg_mac10_s_no")
 	table.insert(self.wpn_fps_smg_mp9.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_smg_mp9.uses_parts, "wpn_fps_smg_schakal_vg_surefire")

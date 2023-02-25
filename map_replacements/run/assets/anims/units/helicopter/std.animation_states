@@ -1,0 +1,673 @@
+<xml>
+	<state name="empty" type="emptyloop" segment="base">
+		<from_group name="std" blend="3" />
+		<keys>
+
+		</keys>
+	</state>
+	<state name="std" type="template_state" segment="base">
+		<default blend="5"/>
+
+		
+		<to name="chew_bwd"			redirect="std/fly/chew_bwd" />
+		<to name="chew_bwd_to_l"	redirect="std/fly/chew_bwd_to_l" />
+		<to name="chew_bwd_to_r"	redirect="std/fly/chew_bwd_to_r" />
+		<to name="chew_exit"		redirect="std/fly/chew_exit" />
+		<to name="chew_fwd"			redirect="std/fly/chew_fwd" />
+		<to name="chew_fwd_to_l"	redirect="std/fly/chew_fwd_to_l" />
+		<to name="chew_fwd_to_r"	redirect="std/fly/chew_fwd_to_r" />
+		<to name="chew_idle"		redirect="std/fly/chew_idle" />
+		<to name="chew_start"		redirect="std/fly/chew_start" />
+		
+		
+		<to name="glace_bwd_to_l"		redirect="std/fly/glace_l_bwd" />
+		<to name="glace_bwd_to_r"		redirect="std/fly/glace_r_bwd" />
+		<to name="glace_escape_to_r"	redirect="std/fly/glace_r_escape" />
+		<to name="glace_escape_to_l"	redirect="std/fly/glace_l_escape" />
+		<to name="glace_fwd_to_l"		redirect="std/fly/glace_l_fwd" />
+		<to name="glace_fwd_to_r"		redirect="std/fly/glace_r_fwd" />
+		<to name="glace_idle"			redirect="std/fly/glace_idle" />
+		<to name="glace_start"			redirect="std/fly/glace_start" />
+		<to name="glace_exit"			redirect="std/fly/glace_exit"/>
+		
+		
+		<to name="spa_enter"				redirect="std/fly/spa_enter" />
+		<to name="spa_exit"					redirect="std/fly/spa_exit" />
+
+		<to name="spa_gunship_enter"		redirect="std/fly/spa_gunship_enter" />
+		<to name="spa_gunship_exit"			redirect="std/fly/spa_gunship_exit" />
+
+		<to name="spa_helispotlight_enter"	redirect="std/fly/spa_helispotlight_enter" />
+		<to name="spa_helispotlight_exit"	redirect="std/fly/spa_helispotlight_exit" />
+		<to name="spa_helispotlight_idle"	redirect="std/fly/spa_helispotlight_idle" />
+		<to name="spa_helispotlight_fwd"	redirect="std/fly/spa_helispotlight_fwd" />
+
+		
+
+		
+		<to name="rvd_enter"				redirect="std/fly/rvd_enter" />
+		<to name="rvd_exit"					redirect="std/fly/rvd_exit" />
+		
+		<to name="hover" redirect="std/hover/loop"/>
+		<to name="jry_flyin" redirect="std/flyin_to_jry_hover"/>
+		<to name="hover_to_circulate" redirect="std/hover/to_circulate"/>
+		<to name="hover_to_flyout_backward" redirect="std/hover/to_flyout_backward"/>
+		<to name="hover_to_flyout_left" redirect="std/hover/to_flyout_left"/>
+		<to name="hover_to_flyout_right" redirect="std/hover/to_flyout_right"/>
+		<to name="hover_to_land" redirect="std/hover/to_land"/>
+		<to name="hover_to_land2" redirect="std/hover/to_land2"/>
+		<to name="circulate" redirect="std/circulate"/>
+		<to name="circulate_to_hover" redirect="std/circulate_to_hover"/>
+		<to name="flyin_forward_to_hover" redirect="std/flyin_forward_to_hover"/>
+		<to name="flyin_left_to_hover" redirect="std/flyin_left_to_hover"/>
+		<to name="flyin_right_to_hover" redirect="std/flyin_right_to_hover"/>
+		<to name="takeoff_backwards" redirect="std/takeoff/backwards"/>
+		<to name="takeoff_forward" redirect="std/takeoff/forward"/>
+		<to name="takeoff_left" redirect="std/takeoff/left"/>
+		<to name="takeoff_right" redirect="std/takeoff/right"/>
+		<to name="takeoff_to_hover" redirect="std/takeoff/to_hover"/>
+		
+		<to name="apartment_enter" redirect="std/apartment/enter"/>
+		<to name="apartment_circulate_loop" redirect="std/apartment/loop"/>
+		<to name="apartment_to_panicroom" redirect="std/apartment/to_panicroom"/>		
+		<to name="apartment_liftoff_panicroom" redirect="std/apartment/liftoff_panicroom"/>
+		<to name="aprt_drop_bag" redirect="std/apartment/aprt_drop_bag"/>
+		<to name="apartment_repel_to_panicroom" redirect="std/apartment/attach_pnc"/>
+		
+		<to name="street_end_enter" redirect="std/street/end_enter"/>
+		<to name="street_end_1_land" redirect="std/street/end_1_land"/>
+		<to name="street_end_backout" redirect="std/street/end_backout"/>
+		<to name="street_end_2_land" redirect="std/street/end_2_land"/>
+		
+		<to name="street_first_flyin" redirect="std/street/first_flyin"/>
+		<to name="street_first_flyout" redirect="std/street/first_flyout"/>
+		
+		<to name="street_second_flyin" redirect="std/street/second_flyin"/>
+		<to name="street_second_flyout" redirect="std/street/second_flyout"/>
+		
+		<to name="street_third_flyin" redirect="std/street/third_flyin"/>
+		<to name="street_third_flyout" redirect="std/street/third_flyout"/>
+		<to name="street_third_flyin2" redirect="std/street/third_flyin2"/>
+		<to name="street_third_flyout2" redirect="std/street/third_flyout2"/>
+		
+		<to name="street_fourth_flyin" redirect="std/street/fourth_flyin"/>
+		<to name="street_fourth_flyout" redirect="std/street/fourth_flyout"/>
+		
+		<to name="street_fifth_flyin" redirect="std/street/fifth_flyin"/>
+		<to name="street_fifth_flyout" redirect="std/street/fifth_flyout"/>
+		
+		<to name="street_sixth_flyin" redirect="std/street/sixth_flyin"/>
+		<to name="street_sixth_flyout" redirect="std/street/sixth_flyout"/>
+		
+		<to name="street_seventh_flyin" redirect="std/street/seventh_flyin"/>
+		<to name="street_seventh_flyout" redirect="std/street/seventh_flyout"/>
+		
+		<to name="street_news_sweep" redirect="std/street/news_sweep"/>
+		
+		<to name="suburbia_flyin" redirect="std/suburbia/suburbia_flyin"/>
+		<to name="suburbia_hover" redirect="std/suburbia/suburbia_hover"/>
+		<to name="suburbia_flyaway" redirect="std/suburbia/suburbia_flyaway"/>
+		
+		<to name="pos_pickup" redirect="std/street/pickup"/>
+		
+		<to name="dh_circulate" redirect="std/dh/dh_circulate"/>
+		<to name="dh_circulate_2" redirect="std/dh/dh_circulate_2"/>
+		
+		<to name="framing3_flyin_1" redirect="std/framing3/framing3_flyin_1"/>
+		<to name="framing3_circulate_1" redirect="std/framing3/framing3_circulate_1"/>
+		<to name="framing3_flyin_2" redirect="std/framing3/framing3_flyin_2"/>
+		<to name="framing3_circulate_2" redirect="std/framing3/framing3_circulate_2"/>
+		<to name="framing3_flyin_3" redirect="std/framing3/framing3_flyin_3"/>
+		<to name="framing3_circulate_3" redirect="std/framing3/framing3_circulate_3"/>
+		<to name="framing3_flyin_4" redirect="std/framing3/framing3_flyin_4"/>
+				
+	</state>
+
+	<state name="std/empty" type="emptyloop" segment="base">
+		<keys>
+			<key at="9" callback="anim_clbk_empty_full_blend" class_name="base"/>
+			<key at="exit" callback="anim_clbk_empty_exit" class_name="base"/>
+		</keys>
+	</state>
+
+	<state name="std/fly" type="template_state" segment="base">
+		<keys>
+			<key at="enter" callback="anim_clbk_animated_driving" class_name="base" param1="true"/>
+			<key at="exit" callback="anim_clbk_animated_driving" class_name="base" param1="false"/>
+		</keys>
+	</state>
+	
+	<state name="std/fly/spa_enter" type="once" segment="base">
+		<anim name="anim_spa_enter"/>
+		<exit name="std/fly/spa_idle" />
+	</state>
+
+	<state name="std/fly/spa_idle" type="loop" segment="base">
+		<anim name="anim_spa_idle"/>
+		<keys>
+			<key at="loop" callback="anim_clbk_run_seq" class_name="base" param1="done_spa_idle_loop" />
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/fly/spa_exit" type="once" segment="base">
+		<anim name="anim_spa_exit"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/fly/spa_gunship_enter" type="once" segment="base">
+		<anim name="anim_spa_gunship_enter"/>
+		<exit name="std/fly/spa_gunship_idle" />
+	</state>
+
+	<state name="std/fly/spa_gunship_idle" type="loop" segment="base">
+		<anim name="anim_spa_gunship_idle"/>
+		<keys>
+			<key at="loop" callback="anim_clbk_run_seq" class_name="base" param1="done_spa_gunship_idle_loop" />
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/fly/spa_gunship_exit" type="once" segment="base">
+		<anim name="anim_spa_gunship_exit"/>
+		<exit name="std/empty"/>
+	</state>	
+
+	<state name="std/fly/spa_helispotlight_enter" type="once" segment="base">
+		<anim name="anim_spa_helispotlight_enter"/>
+		<exit name="std/fly/spa_helispotlight_idle"/>
+	</state>
+
+	<state name="std/fly/spa_helispotlight_idle" type="loop" segment="base">
+		<anim name="anim_spa_helispotlight_idle"/>
+		<keys>
+			<key at="loop" callback="anim_clbk_run_seq" class_name="base" param1="done_spa_helispotlight_idle_loop" />
+		</keys>
+		<exit name="std/empty"/>
+	</state>	
+
+	<state name="std/fly/spa_helispotlight_fwd" type="once" segment="base">
+		<anim name="anim_spa_helispotlight_fwd"/>
+		<exit name="std/fly/spa_helispotlight_idle"/>
+	</state>
+
+	<state name="std/fly/spa_helispotlight_exit" type="once" segment="base">
+		<anim name="anim_spa_helispotlight_exit"/>
+		<exit name="std/empty"/>
+	</state>
+		
+
+	
+	<state name="std/fly/rvd_enter" type="once" segment="base">
+		<anim name="anim_rvd_enter"/>
+		<exit name="std/fly/rvd_idle" />
+	</state>
+
+	<state name="std/fly/rvd_idle" type="loop" segment="base">
+		<anim name="anim_rvd_idle"/>
+		<keys>
+			<key at="loop" callback="anim_clbk_run_seq" class_name="base" param1="done_rvd_idle_loop" />
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/fly/rvd_exit" type="once" segment="base">
+		<anim name="anim_rvd_exit"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	
+	<state name="std/fly/chew_bwd" type="once" segment="base">
+		<anim name="anim_chew_bwd"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_bwd_to_l" type="once" segment="base">
+		<anim name="anim_chew_bwd_to_l"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_bwd_to_r" type="once" segment="base">
+		<anim name="anim_chew_bwd_to_r"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_exit" type="once" segment="base">
+		<anim name="anim_chew_exit"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_fwd" type="once" segment="base">
+		<anim name="anim_chew_fwd"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_fwd_to_l" type="once" segment="base">
+		<anim name="anim_chew_fwd_to_l"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_fwd_to_r" type="once" segment="base">
+		<anim name="anim_chew_fwd_to_r"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+
+	<state name="std/fly/chew_idle" type="loop" segment="base">
+		<anim name="anim_chew_idle"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/fly/chew_start" type="once" segment="base">
+		<anim name="anim_chew_start"/>
+		<exit name="std/fly/chew_idle"/>
+	</state>
+	
+
+	
+	<state name="std/fly/glace_l_bwd" type="once" segment="base" speed="0.8">
+		<anim name="anim_glace_l_bwd"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_r_bwd" type="once" segment="base" speed="0.8">
+		<anim name="anim_glace_r_bwd"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_l_escape" type="once" segment="base" speed="0.8">
+		<anim name="anim_glace_l_escape"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_r_escape" type="once" segment="base" speed="0.8">
+		<anim name="anim_glace_r_escape"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_l_fwd" type="once" segment="base" speed="0.8">
+		<anim name="anim_glace_l_fwd"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_r_fwd" type="once" segment="base" speed="0.8">
+		<anim name="anim_glace_r_fwd"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_idle" type="loop" segment="base" speed="0.8">
+		<anim name="anim_glace_idle"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/fly/glace_start" type="once" segment="base" speed="0.95">
+		<anim name="anim_glace_start"/>
+		<exit name="std/fly/glace_idle"/>
+	</state>
+
+	<state name="std/fly/glace_exit" type="once" segment="base" speed="1">
+		<anim name="anim_glace_exit"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+<!-- Hover -->
+	
+	<state name="std/hover/loop" type="loop" segment="base">
+		<anim name="hover_idle_loop"/>
+	</state>
+
+	<state name="std/hover/jry_hover" type="loop" segment="base">
+		<anim name="jry_hover_idle"/>
+	</state>
+
+	<state name="std/hover/loop_2" type="loop" segment="base">
+		<anim name="hover_idle_2_loop"/>
+	</state>
+	
+	<state name="std/hover/to_circulate" type="once" segment="base">
+		<anim name="hover_to_circulate"/>
+		<exit name="std/circulate"/>
+	</state>
+	
+	<state name="std/hover/to_flyout_backward" type="once" segment="base">
+		<anim name="hover_to_flyout_backward"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/hover/to_flyout_left" type="once" segment="base">
+		<anim name="hover_to_flyout_left"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/hover/to_flyout_right" type="once" segment="base">
+		<anim name="hover_to_flyout_right"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/hover/to_land" type="once" segment="base">
+		<anim name="hover_to_land"/>
+		<exit name="std/hover/to_land/idle"/>
+	</state>
+	<state name="std/hover/to_land/idle" type="timeblend" segment="base">
+		<anim name="hover_to_land" time="1"/>
+	</state>
+
+	<state name="std/hover/to_land2" type="once" segment="base">
+		<anim name="hover_to_land"/>
+		<exit name="std/hover/loop_2"/>
+	</state>
+
+	<!-- Circulate -->
+	
+	<state name="std/circulate" type="loop" segment="base">
+		<anim name="circulate"/>
+	</state>
+	
+	<state name="std/circulate_to_hover" type="once" segment="base">
+		<anim name="circulate_to_hover"/>
+		<exit name="std/circulate"/>
+	</state>
+	
+	
+	<state name="std/flyin_forward_to_hover" type="once" segment="base">
+		<anim name="flyin_forward_to_hover"/>
+		<exit name="std/hover/loop"/>
+	</state>
+
+	<state name="std/flyin_to_jry_hover" type="once" segment="base">
+		<anim name="flyin_forward_to_hover"/>
+		<exit name="std/hover/jry_hover"/>
+	</state>
+	
+	<state name="std/flyin_left_to_hover" type="once" segment="base">
+		<anim name="flyin_left_to_hover"/>
+		<exit name="std/hover/loop"/>
+	</state>
+	
+	<state name="std/flyin_right_to_hover" type="once" segment="base">
+		<anim name="flyin_right_to_hover"/>
+		<exit name="std/hover/loop"/>
+	</state>
+	
+	<!-- Take off -->
+	
+	<state name="std/takeoff/backwards" type="once" segment="base">
+		<anim name="takeoff_backwards"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/takeoff/forward" type="once" segment="base">
+		<anim name="takeoff_forward"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/takeoff/left" type="once" segment="base">
+		<anim name="takeoff_left"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/takeoff/right" type="once" segment="base">
+		<anim name="takeoff_right"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/takeoff/to_hover" type="once" segment="base">
+		<anim name="takeoff_to_hover"/>
+		<exit name="std/hover/loop"/>
+	</state>
+	
+	<!-- Apartment -->
+	
+	<state name="std/apartment/enter" type="once" segment="base">
+		<anim name="apartment_enter"/>
+		<exit name="std/apartment/loop"/>
+	</state>
+
+	<state name="std/apartment/aprt_drop_bag" type="once" segment="base">
+		<anim name="aprt_drop_bag"/>
+		<exit name="std/apartment/loop"/>
+	</state>
+	
+	<state name="std/apartment/loop" type="loop" segment="base">
+		<anim name="apartment_circulate_loop"/>
+		<!--<to name="apartment_to_panicroom" trigger="anim_act_02">
+			<trigger_redirect on="loop" redirect="std/apartment/to_panicroom"/>
+		</to>-->
+	</state>
+	
+	<state name="std/apartment/to_panicroom" type="once" segment="base">
+		<anim name="apartment_to_panicroom"/>
+		<exit name="std/hover/loop"/>
+	</state>
+	
+	<state name="std/apartment/liftoff_panicroom" type="once" segment="base">
+		<anim name="apartment_liftoff_panicroom"/>
+		<exit name="std/hover/loop"/>
+	</state>	
+
+	<state name="std/apartment/attach_pnc" type="once" segment="base">
+		<anim name="apartment_repel_to_panicroom"/>
+		<exit name="std/hover/loop"/>
+	</state>
+	
+	<!-- Street -->
+	
+	<state name="std/street/end_enter" type="once" segment="base">
+		<anim name="street_1_enter"/>
+		<exit name="std/street/loop1"/>
+	</state>
+	
+	<state name="std/street/loop1" type="loop" segment="base">
+		<anim name="street_2_hover_idle"/>
+	</state>
+	
+	<state name="std/street/end_1_land" type="once" segment="base">
+		<anim name="street_3_land"/>
+		<exit name="std/street/loop2"/>
+	</state>
+	
+	<state name="std/street/loop2" type="loop" segment="base">
+		<anim name="street_4_land_idle"/>
+	</state>
+	
+	<state name="std/street/end_backout" type="once" segment="base">
+		<anim name="street_5_backout"/>
+		<exit name="std/street/loop3"/>
+	</state>
+	
+	<state name="std/street/loop3" type="loop" segment="base">
+		<anim name="street_6_hover_idle"/>
+	</state>
+	
+	<state name="std/street/end_2_land" type="once" segment="base">
+		<anim name="street_7_land"/>
+		<exit name="std/street/loop4"/>
+	</state>
+	
+	<state name="std/street/loop4" type="loop" segment="base">
+		<anim name="street_8_hover_idle"/>
+	</state>
+	
+	<state name="std/street/first_flyin" type="once" segment="base">
+		<anim name="street_first_flyin"/>
+		<exit name="std/street/first_hover"/>
+	</state>
+	
+	<state name="std/street/first_hover" type="loop" segment="base">
+		<anim name="street_first_hover"/>
+	</state>
+	
+	<state name="std/street/first_flyout" type="once" segment="base">
+		<anim name="street_first_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/second_flyin" type="once" segment="base">
+		<anim name="street_second_flyin"/>
+		<exit name="std/street/second_hover"/>
+	</state>
+	
+	<state name="std/street/second_hover" type="loop" segment="base">
+		<anim name="street_second_hover"/>
+	</state>
+	
+	<state name="std/street/second_flyout" type="once" segment="base">
+		<anim name="street_second_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/third_flyin" type="once" segment="base">
+		<anim name="street_third_flyin"/>
+		<exit name="std/street/third_hover"/>
+	</state>
+	
+	<state name="std/street/third_hover" type="loop" segment="base">
+		<anim name="street_third_hover"/>
+	</state>
+	
+	<state name="std/street/third_flyout" type="once" segment="base">
+		<anim name="street_third_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/third_flyin2" type="once" segment="base">
+		<anim name="street_third_flyin2"/>
+		<exit name="std/street/third_hover2"/>
+	</state>
+	
+	<state name="std/street/third_hover2" type="loop" segment="base">
+		<anim name="street_third_hover2"/>
+	</state>
+	
+	<state name="std/street/third_flyout2" type="once" segment="base">
+		<anim name="street_third_flyout2"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/fourth_flyin" type="once" segment="base">
+		<anim name="street_fourth_flyin"/>
+		<exit name="std/street/fourth_hover"/>
+	</state>
+	
+	<state name="std/street/fourth_hover" type="loop" segment="base">
+		<anim name="street_fourth_hover"/>
+	</state>
+	
+	<state name="std/street/fourth_flyout" type="once" segment="base">
+		<anim name="street_fourth_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/fifth_flyin" type="once" segment="base">
+		<anim name="street_fifth_flyin"/>
+		<exit name="std/street/fifth_hover"/>
+	</state>
+	
+	<state name="std/street/fifth_hover" type="loop" segment="base">
+		<anim name="street_fifth_hover"/>
+	</state>
+	
+	<state name="std/street/fifth_flyout" type="once" segment="base">
+		<anim name="street_fifth_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/sixth_flyin" type="once" segment="base">
+		<anim name="street_sixth_flyin"/>
+		<exit name="std/street/sixth_hover"/>
+	</state>
+	
+	<state name="std/street/sixth_hover" type="loop" segment="base">
+		<anim name="street_sixth_hover"/>
+	</state>
+	
+	<state name="std/street/sixth_flyout" type="once" segment="base">
+		<anim name="street_sixth_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/seventh_flyin" type="once" segment="base">
+		<anim name="street_seventh_flyin"/>
+		<exit name="std/street/seventh_hover"/>
+	</state>
+	
+	<state name="std/street/seventh_hover" type="loop" segment="base">
+		<anim name="street_seventh_hover"/>
+	</state>
+	
+	<state name="std/street/seventh_flyout" type="once" segment="base">
+		<anim name="street_seventh_flyout"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<state name="std/street/news_sweep" type="once" segment="base">
+		<anim name="street_news_sweep"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/street/pickup" type="loop" segment="base">
+		<anim name="pos_pickup"/>
+	</state>
+	
+	<!-- suburbia -->
+	<state name="std/suburbia/suburbia_flyin" type="once" segment="base">
+		<anim name="suburbia_flyin"/>
+		<exit name="std/suburbia/suburbia_hover"/>
+	</state>
+	
+	<state name="std/suburbia/suburbia_hover" type="loop" segment="base">
+		<anim name="suburbia_hover"/>
+	</state>
+	
+	<state name="std/suburbia/suburbia_flyaway" type="once" segment="base">
+		<anim name="suburbia_flyaway"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<!--DH anims -->
+	
+	<state name="std/dh/dh_circulate" type="loop" segment="base">
+		<anim name="dh_circulate"/>
+	</state>
+	
+	<state name="std/dh/dh_circulate_2" type="once" segment="base">
+		<anim name="dh_circulate_2"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	<!-- framing3 -->
+	<state name="std/framing3/framing3_flyin_1" type="once" segment="base">
+		<anim name="framing3_flyin_1"/>
+		<exit name="std/framing3/framing3_circulate_1"/>
+	</state>
+	
+	<state name="std/framing3/framing3_circulate_1" type="loop" segment="base">
+		<anim name="framing3_circulate_1"/>
+	</state>
+	
+	<state name="std/framing3/framing3_flyin_2" type="once" segment="base">
+		<anim name="framing3_flyin_2"/>
+		<exit name="std/framing3/framing3_circulate_2"/>
+	</state>
+	
+	<state name="std/framing3/framing3_circulate_2" type="loop" segment="base">
+		<anim name="framing3_circulate_2"/>
+	</state>
+	
+	<state name="std/framing3/framing3_flyin_3" type="once" segment="base">
+		<anim name="framing3_flyin_3"/>
+		<exit name="std/framing3/framing3_circulate_3"/>
+	</state>
+	
+	<state name="std/framing3/framing3_circulate_3" type="loop" segment="base">
+		<anim name="framing3_circulate_3"/>
+	</state>
+	
+	<state name="std/framing3/framing3_flyin_4" type="once" segment="base">
+		<anim name="framing3_flyin_4"/>
+		<exit name="std/empty"/>
+	</state>
+	
+</xml>

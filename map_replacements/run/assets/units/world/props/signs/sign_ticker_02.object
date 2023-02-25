@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/signs/sign_ticker_02" orientation_object="rp_sign_ticker_02" />
+  <bodies>
+    <body name="static_body" collides_with_mover="false" enabled="true" template="static">
+      <object name="rp_sign_ticker_02" />
+      <object name="c_sign_ticker_02" collision_type="box" />
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="metal_chassis" static="true">
+    <decal_mesh name="c_sign_ticker_02" enabled="true" material="metal_chassis" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_sign_ticker_02" enabled="true" />
+  </graphics>
+</dynamic_object>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/street/concrete_barrier/concrete_barrier_stripes" orientation_object="rp_concrete_barrier_stripes_single" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_concrete_barrier_stripes_single" />
+      <object name="c_concrete_barrier" collision_type="mesh_mopp" />
+    </body>
+	<body name="phys_body" enabled="true" template="graph_blocker">
+      <object name="nav_block" collision_type="box" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="concrete" static="true">
+    <decal_mesh name="c_concrete_barrier" enabled="true" material="concrete" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_concrete_barrier" enabled="true" instance_struct="world_tm"/>
+    <object name="s_concrete_barrier" enabled="true" shadow_caster="true" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object>

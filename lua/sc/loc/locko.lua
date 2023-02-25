@@ -923,16 +923,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "빠른 가방 운송을 위한 가방 짚라인을 삽니다",
-
-		--Heat Street Waypoints
-		["wp_heat_street_matt"] = "맷",
-		["wp_heat_street_eddie"] = "에디",
-		["wp_heat_street_jp"] = "제이크의 주차장",
-		["wp_heat_street_dl"] = "드레이크의 로딩",
-		["wp_heat_street_ba"] = "뒷골목",
-		["wp_heat_street_aa"] = "아미티지 AVE",
-		["wp_heat_street_bile"] = "바일",
-		["wp_heat_street_question"] = "?",
 		
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "오늘 아침에 열기압 폭탄이 열차에 실렸다고 해. 노퍽으로 향하는 열차인데 아마도 누가 그걸 사거나, 해체를 할지도 모르지, 하지만 그건 별로 상관없어, 왜냐면 도착하지 못할 거니까. 움직이는 기차를 멈추는 건 어렵지만 옛날 서부 방식을 사용할 거야. 다리의 일부분을 날려 버리면 통째로 굴러떨어지겠지. 시끄럽고 지저분할지는 몰라도 하지만 효과적이야. 열차는 사방팔방 흩어질 거야. 그 중 하나의 금고에 우리의 폭탄이 실려있을 테니 전부다 살펴보고 가져와.\n\n자칼의 충고:\n현장 근처에 있는 리퍼 팀을 감지했어. 아무래도 아칸이 저 폭탄을 원하는 것 같다. 문제 일으킬 준비를 하라고.",		

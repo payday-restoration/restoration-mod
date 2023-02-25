@@ -1008,16 +1008,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "用于快速运包的滑索",
 
-		--Heat Street Waypoints
-		["wp_heat_street_matt"] = "Matt",  --tra
-		["wp_heat_street_eddie"] = "Eddie",
-		["wp_heat_street_jp"] = "Jake's Parking",
-		["wp_heat_street_dl"] = "Drake's Loading",
-		["wp_heat_street_ba"] = "Back Alley",
-		["wp_heat_street_aa"] = "Armitage AVE",
-		["wp_heat_street_bile"] = "Bile",
-		["wp_heat_street_question"] = "?",
-
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "劫持Mia Calienté是个真正的活，朋友。她已经在幕后主使黑水在特区的行动好几年了。就在不久之前，黑水接管了码头的一个仓库作为额外的分配点。我们的目标正在那里清点从船上刚掠夺不久的货。我们将突入这里，抓住这小崽子作为人质。黑水的人无法接受失去她，他们将会愿意去花钱赎人，没准在上述条件下我们还能要价更高，伙计们你们觉得呢？"
 	})

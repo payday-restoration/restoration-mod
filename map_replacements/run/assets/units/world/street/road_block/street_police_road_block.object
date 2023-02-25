@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/street/road_block/street_police_road_block" orientation_object="rp_street_police_road_block" />
+  <sequence_manager file="units/world/street/road_block/street_police_road_block"/>
+  
+  <bodies>
+    <body remove_ray_type="ai_vision vis_graph" name="street_police_road_block" enabled="true" template="static">
+      <object name="rp_street_police_road_block" />
+      <object name="c_street_police_road_block" collision_type="mesh_mopp" />
+    </body>
+	<body name="graph_blocker" enabled="true" template="graph_blocker">
+      <object name="c_graph_blocker" collision_type="box" />
+	  </body>
+  </bodies>
+  
+  <decal_surfaces default_material="wood" static="true">
+    <decal_mesh name="dm_wood" enabled="true" material="wood" />
+    <decal_mesh name="dm_metal" enabled="true" material="metal" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_street_police_road_block" enabled="true" />
+    <object name="s_street_police_road_block" enabled="true"  shadow_caster="true"/>
+  </graphics>
+  
+  <lights>
+    <light multiplier="identity" editable="true" name="li_light1" enabled="true" type="omni|specular" />
+    <light editable="true" name="li_light2" enabled="true" type="omni|specular" />
+  </lights>
+</dynamic_object>

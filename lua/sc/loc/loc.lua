@@ -908,16 +908,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Bag Zipline for quick bag transport",
 		
-		--Heat Street Waypoints
-		["wp_heat_street_matt"] = "Matt",
-		["wp_heat_street_eddie"] = "Eddie",
-		["wp_heat_street_jp"] = "Jake's Parking",
-		["wp_heat_street_dl"] = "Drake's Loading",
-		["wp_heat_street_ba"] = "Back Alley",
-		["wp_heat_street_aa"] = "Armitage AVE",
-		["wp_heat_street_bile"] = "Bile",
-		["wp_heat_street_question"] = "?",
-		
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "Those thermobaric explosives were loaded onto a freight train this morning. It's heading down to Norfolk. Maybe to be sold on, maybe to be decommissioned - it doesn't matter, because it won't reach there. A moving train is tough to stop, so we're doing this Old West style. Blow a section of bridge and the whole thing comes tumbling down. It's loud and messy, but effective. The wagons will be scattered to hell. One of them has a vault where our explosives are - search each of 'em til you find it. \n\nNOTE FROM JACKAL:\nI've got intel on Reaper teams near the scene - seems Akan wants this prize for himself. Prepare for trouble.",
 		

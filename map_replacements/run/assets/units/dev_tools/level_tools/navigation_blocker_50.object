@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="core/material_configs/hub_elements" orientation_object="rp_navigation_blocker_50" />
+  <bodies>
+    <body name="static_body" enabled="true" template="editor" add_ray_type="ai_blocker walk">
+      <object name="g_navigation_blocker_50" collision_type="box" />
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_navigation_blocker_50" enabled="true" instance_struct="world_tm" />
+  </graphics>
+</dynamic_object>

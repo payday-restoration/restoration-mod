@@ -1,0 +1,12 @@
+<materials version="3">
+	<material name="backdrop_scrapers" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:RL_BACKDROP:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/world/architecture/backdrops/scrapers/backdrop_scrapers_df"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+		<variable value="0.750 0.591 3.80" type="vector3" name="environment_settings"/>
+	</material>
+	<material name="store" render_template="generic:DIFFUSE_TEXTURE" version="2">
+		<diffuse_texture file="units/world/architecture/street/backdropstores_df"/>
+	</material>
+	<material name="shadow" render_template="shadow_caster_only" version="2">
+	</material>
+</materials>

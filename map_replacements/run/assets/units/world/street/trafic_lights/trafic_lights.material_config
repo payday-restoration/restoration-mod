@@ -1,0 +1,18 @@
+<materials version="3">
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+    <material version="2" decal_material="sheet_metal" name="trafic_lights" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP">
+        <bump_normal_texture file="units/world/street/trafic_lights/trafic_lights_walk_nm"/>
+        <diffuse_texture file="units/world/street/trafic_lights/trafic_lights_walk_df"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="trafic_light_il" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:SELF_ILLUMINATION:VERTEX_COLOR">
+        <variable value="supernova" type="scalar" name="il_multiplier"/>
+        <diffuse_texture file="units/world/street/trafic_lights/trafic_lights_walk_df"/>
+        <bump_normal_texture file="units/world/street/trafic_lights/trafic_lights_walk_nm"/>
+        <self_illumination_texture file="units/world/street/trafic_lights/trafic_lights_walk_df"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="trafic_walk_stop_il" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SELF_ILLUMINATION:VERTEX_COLOR">
+        <diffuse_texture file="units/world/street/trafic_lights/trafic_lights_walk_change_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="units/world/street/trafic_lights/trafic_lights_walk_change_il"/>
+    </material>
+</materials>

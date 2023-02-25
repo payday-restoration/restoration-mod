@@ -1,0 +1,22 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2" name="police_road_block">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/street/road_block/police_road_block_df"/>
+        <bump_normal_texture file="units/world/street/road_block/police_road_block_nm"/>
+    </material>
+    <material name="police_road_block_il" version="2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_TINT">
+        <variable value="light::color" type="listener" name="il_tint" object="li_light2"/>
+        <diffuse_texture file="units/world/street/road_block/police_road_block_df"/>
+        <self_illumination_texture file="units/world/street/road_block/police_road_block_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <variable value="0" type="scalar" name="specular_power"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_TINT" version="2" name="police_road_block_il2">
+        <variable value="light::color" type="listener" name="il_tint" object="li_light1"/>
+        <diffuse_texture file="units/world/street/road_block/police_road_block_df"/>
+        <self_illumination_texture file="units/world/street/road_block/police_road_block_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <variable value="0" type="scalar" name="specular_power"/>
+    </material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

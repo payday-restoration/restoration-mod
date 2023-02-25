@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/architecture/backdrops/scrapers/backdrop_street" orientation_object="rp_backdrop_street" />
+	<graphics>
+		<object name="g_backdrop_street" enabled="true" />
+		<object name="s_backdrop_street" enabled="true" />
+	</graphics>
+</dynamic_object>

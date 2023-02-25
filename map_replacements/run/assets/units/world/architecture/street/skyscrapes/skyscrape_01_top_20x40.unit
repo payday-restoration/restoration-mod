@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="static" slot="1">
+  <object file="units/world/architecture/street/skyscrapes/skyscrape_01_top_20x40" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

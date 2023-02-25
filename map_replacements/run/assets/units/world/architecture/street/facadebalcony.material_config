@@ -1,0 +1,7 @@
+<materials version="3">
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF" decal_material="metal" version="2" name="facade_balcony">
+        <diffuse_texture file="units/world/architecture/street/fireescape_df"/>
+        <variable value="0.043000001460314" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

@@ -258,7 +258,7 @@ function restoration:Init()
 		"mus", --The Diamond
 		"run", --Heat Street
 		"ranc", --Midland Ranch
-		"street_new", --Whurr's Heat Street Edit
+		"run_res", --Whurr's Heat Street Edit
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse

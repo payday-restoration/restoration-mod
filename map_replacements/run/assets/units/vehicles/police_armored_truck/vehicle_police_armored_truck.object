@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/vehicles/police_armored_truck/vehicle_police_armored_truck" orientation_object="rp_police_truck" />
+  <sequence_manager file="units/vehicles/police_armored_truck/vehicle_police_armored_truck" />
+	<animations>
+		
+	<animation_group name="ag_right_door">
+		<object name="a_right_door" />
+	</animation_group>
+
+	<animation_group name="ag_left_door">
+		<object name="a_left_door" />
+	</animation_group>
+		
+	
+    <animation_group name="ag_tire_front_right">
+      <object name="a_tire_front_right" />
+    </animation_group>
+    <animation_group name="ag_tire_front_left">
+      <object name="a_tire_front_left" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_right">
+      <object name="a_tire_rear_right" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_left">
+      <object name="a_tire_rear_left" />
+    </animation_group>
+
+		
+	</animations>
+	
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_police_truck"/>
+			<object name="c_police_truck" collision_type="mesh_mopp" />
+		</body>
+		<body remove_ray_type="body" name="static_body" enabled="true" template="static">
+			<object name="rp_police_truck"/>
+			<object name="c_player_nono" collision_type="mesh_mopp" />
+		</body>
+
+		<body remove_ray_type="ai_vision" name="window_front_left" enabled="true" template="static">
+			<object name="c_window_front_left" collision_type="mesh_mopp"  two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_front_right" enabled="true" template="static">
+			<object name="c_window_front_right" collision_type="mesh_mopp"  two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_right" enabled="true" template="static">
+			<object name="c_window_right" collision_type="mesh_mopp"  two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_left" enabled="true" template="static">
+			<object name="c_window_left" collision_type="mesh_mopp"  two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_right_door" enabled="true" template="animated">
+			<object name="c_window_right_door" collision_type="box" padding="-2"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_left_door" enabled="true" template="animated">
+			<object name="c_window_left_door" collision_type="box" padding="-2"/>
+		</body>
+
+		<body name="tire_front_left" enabled="true" template="static">
+			<object name="c_tire_front_left" collision_type="mesh_mopp" />
+		</body>
+		<body name="tire_rear_left" enabled="true" template="static">
+			<object name="c_tire_rear_left" collision_type="mesh_mopp" />
+		</body>
+		<body name="tire_front_right" enabled="true" template="static">
+			<object name="c_tire_front_right" collision_type="mesh_mopp" />
+		</body>
+		<body name="tire_rear_right" enabled="true" template="static">
+			<object name="c_tire_rear_right" collision_type="mesh_mopp" />
+		</body>	
+		<body name="static_body2" enabled="true" template="animated">
+			<object name="a_left_door" />
+			<object name="c_left_door_1" collision_type="box" padding="-2"/>
+			<object name="c_left_door_2" collision_type="box" padding="-2"/>
+			<object name="c_left_door_3" collision_type="box" padding="-2"/>
+			<object name="c_left_door_4" collision_type="box" padding="-2"/>
+		</body>	
+		<body name="static_body3" enabled="true" template="animated">
+			<object name="a_right_door" />
+			<object name="c_right_door_1" collision_type="box" padding="-2"/>
+			<object name="c_right_door_2" collision_type="box" padding="-2"/>
+			<object name="c_right_door_3" collision_type="box" padding="-2"/>
+			<object name="c_right_door_4" collision_type="box" padding="-2"/>
+		</body>
+	</bodies>
+  
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_police_truck" 			enabled="true" material="metal_chassis"/>
+		<decal_mesh name="dm_left_door" 			enabled="true" material="metal_chassis" />
+		<decal_mesh name="dm_right_door" 			enabled="true" material="metal_chassis" />
+		<decal_mesh name="dm_tier" 					enabled="true" material="rubber" />
+		<decal_mesh name="dm_window_right_door" 	enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_left_door" 		enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_right" 			enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_left" 			enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_front_left" 	enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_front_right" 	enabled="true" material="glass_breakable" />   
+	</decal_surfaces>
+  
+	<graphics>
+		<object name="g_police_truck" 				enabled="true" instance_struct="world_tm" />
+		<object name="g_window_right" 				enabled="true" instance_struct="world_tm" />
+		<object name="g_window_left" 				enabled="true" instance_struct="world_tm" />
+		<object name="g_window_front_left" 			enabled="true" instance_struct="world_tm" />
+		<object name="g_window_front_right" 		enabled="true" instance_struct="world_tm" />
+		<object name="g_window_right_dmg" 			enabled="false" instance_struct="world_tm" />
+		<object name="g_window_left_dmg" 			enabled="false" instance_struct="world_tm" />
+		<object name="g_window_front_left_dmg" 		enabled="false" instance_struct="world_tm" />
+		<object name="g_window_front_right_dmg" 	enabled="false" instance_struct="world_tm" />
+		<object name="g_fence" 						enabled="true" instance_struct="world_tm" />
+		<object name="g_left_door" 					enabled="true" instance_struct="world_tm" />
+		<object name="g_window_left_door" 			enabled="true" instance_struct="world_tm" />
+		<object name="g_window_left_door_dmg" 		enabled="false" instance_struct="world_tm" />
+		<object name="g_right_door" 				enabled="true" instance_struct="world_tm" />
+		<object name="g_window_right_door" 			enabled="true" instance_struct="world_tm" />
+		<object name="g_window_right_door_dmg" 		enabled="false" instance_struct="world_tm" />
+		<object name="g_under_plate" 				enabled="true" instance_struct="world_tm" />
+		<object name="g_illum_off" 					enabled="true" instance_struct="world_tm" />
+		<object name="g_illum_on" 					enabled="false" instance_struct="world_tm" />
+		<object name="s_police_truck" 				enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_left_door" 					enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_right_door" 				enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="g_floater" 					enabled="true" instance_struct="world_tm" />
+		<object name="g_door_floater_R" 			enabled="true" instance_struct="world_tm" />
+		<object name="g_door_floater_L" 			enabled="true" instance_struct="world_tm" />
+	</graphics>
+	<lights>
+		<light name="ls_left" far_range="2000" type="spot|specular"   	end_angle="53" multiplier="identity" editable="true" />
+		<light name="ls_right" far_range="2000" type="spot|specular"   	end_angle="39" multiplier="identity" editable="true" />
+		<light name="ls_t_left" far_range="1000" type="spot|specular"  	end_angle="53" multiplier="identity" editable="true" />
+		<light name="ls_t_right" far_range="1000" type="spot|specular" 	end_angle="39" multiplier="identity" editable="true" />
+	</lights>
+</dynamic_object> 

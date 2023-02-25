@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/equipment/gas/gas_can_interact" orientation_object="rp_thermite" />
+  <sequence_manager file="units/equipment/gas/gas_can_interact" />
+  <bodies>
+    <body name="static_body" enabled="true" template="editor">
+      <object name="rp_thermite"/>
+      <object name="g_thermite" collision_type="box" />
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="sheet_metal" static="true">
+	<decal_mesh material="sheet_metal" name="g_thermite" enabled="true" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_thermite" enabled="true" />
+    <object name="g_thermite_decal" enabled="false" />
+    <object name="g_gas_decal" enabled="false" />
+  </graphics>
+</dynamic_object> 

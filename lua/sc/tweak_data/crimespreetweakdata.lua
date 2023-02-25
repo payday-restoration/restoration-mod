@@ -468,11 +468,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.glace
 			},
 			{
-				stage_id = "street_new",
+				stage_id = "run_res",
 				add = 18,
-				id = "street_new",
+				id = "run_res",
 				icon = "csm_run",
-				level = tweak_data.narrative.stages.street_new
+				level = tweak_data.narrative.stages.run_res
 			},
 			{
 				stage_id = "man",

@@ -2126,8 +2126,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.006, -2, -3.04)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar47 = {
-				translation = Vector3(-0.0125, 6.8, -0.19),
-				rotation = Rotation(-0.15, 0, 0)
+				translation = Vector3(0.02, 6.8, -0.21),
+				rotation = Rotation(-0.1, 0.08, 0)
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
@@ -29037,8 +29037,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_ass_ar47_m_blk.custom_stats = {
 			rof_mult = 1.33334,
-			falloff_start_mult = 0.8,
-			falloff_end_mult = 0.8
+			falloff_start_mult = 0.75,
+			falloff_end_mult = 0.75
 		}
 
 		self.parts.wpn_fps_ass_ar47_vg_stubby.supported = true
@@ -29939,12 +29939,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "mallninj762init", function(self)
 			
 			table.insert(self.wpn_fps_shot_amr12.uses_parts, "wpn_fps_m4_lower_reciever_tan")
 			table.insert(self.wpn_fps_shot_amr12.uses_parts, "wpn_fps_upg_ar47_upper_reciever_tecci")
-
-			self.parts.wpn_fps_upg_o_cqb.stance_mod.wpn_fps_ass_ar47 = 
-			{
-				translation = Vector3(0, 0, -0.2),
-				rotation = Rotation(0, 0, 0)
-			}
 		
 			self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod.wpn_fps_ass_ar47 = 
 			{

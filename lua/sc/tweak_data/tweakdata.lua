@@ -932,7 +932,7 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		primaries = {
 			{ "pistol" },
 
-			{ "smg" },
+			{ "lmg" },
 
 			{ "shotgun" },
 
@@ -943,7 +943,7 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		secondaries = {
 			{ "pistol" },
 
-			{ "smg" },
+			{ "lmg" },
 
 			{ "shotgun" },
 

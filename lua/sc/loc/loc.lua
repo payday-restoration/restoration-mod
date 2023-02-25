@@ -908,6 +908,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Bag Zipline for quick bag transport",
 		
+		--Heat Street Waypoints
+		["wp_heat_street_matt"] = "Matt",
+		["wp_heat_street_eddie"] = "Eddie",
+		["wp_heat_street_jp"] = "Jake's Parking",
+		["wp_heat_street_dl"] = "Drake's Loading",
+		["wp_heat_street_ba"] = "Back Alley",
+		["wp_heat_street_aa"] = "Armitage AVE",
+		["wp_heat_street_bile"] = "Bile",
+		["wp_heat_street_question"] = "?",
+		
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "Those thermobaric explosives were loaded onto a freight train this morning. It's heading down to Norfolk. Maybe to be sold on, maybe to be decommissioned - it doesn't matter, because it won't reach there. A moving train is tough to stop, so we're doing this Old West style. Blow a section of bridge and the whole thing comes tumbling down. It's loud and messy, but effective. The wagons will be scattered to hell. One of them has a vault where our explosives are - search each of 'em til you find it. \n\nNOTE FROM JACKAL:\nI've got intel on Reaper teams near the scene - seems Akan wants this prize for himself. Prepare for trouble.",
 		
@@ -1493,13 +1503,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
 		--M60
 		["bm_w_m60"] = "M60",
-		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.",	
+		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.\n\n#{skill_color}#Has improved hipfire capabilties.##",	
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B",	
 		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",	
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42",	
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
+		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved hipfire capabilties.##",
 		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
@@ -2044,22 +2054,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "Pistols",
-		["menu_pistol_single"] = "Pistol",
 			["menu_light_pis"] = "Light Pistols",
 			["menu_heavy_pis"] = "Heavy Pistols",
 		
 		["menu_shotgun"] = "Shotguns",
-		["menu_shotgun_single"] = "Shotgun",
 			["menu_light_shot"] = "Auto Shotguns",
 			["menu_heavy_shot"] = "Light Shotguns",
 			["menu_break_shot"] = "Heavy Shotguns",
 		
-		["menu_smg"] = "Machine Guns",
-		["menu_smg_single"] = "Machine Gun",
+		["menu_smg"] = "Sub-Machine Guns",
 		["menu_lmg"] = "Machine Guns",
-		["menu_lmg_single"] = "Machine Gun",
-		["menu_minigun"] = "Machine Guns",
-		["menu_minigun_single"] = "Machine Gun",
+		["menu_minigun"] = "Gatling Guns",
 			["menu_light_smg"] = "Light SMGs",
 			["menu_heavy_smg"] = "Heavy SMGs",
 			["menu_light_mg"] = "LMGs",
@@ -2067,9 +2072,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["menu_miniguns"] = "Gatling Guns",
 
 		["menu_assault_rifle"] = "Rifles",
-		["menu_assault_rifle_single"] = "Rifle",
-		["menu_snp"] = "Rifles",
-		["menu_snp_single"] = "Rifle",
+		["menu_snp"] = "Snipers",
 			["menu_light_ar"] = "Light Rifles",
 			["menu_heavy_ar"] = "Heavy Rifles",
 			["menu_dmr_ar"] = "Marksman Rifles",
@@ -2078,29 +2081,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["menu_antim_snp"] = "Anti-Materiel Rifles",
 
 		["menu_wpn_special"] = "Specials",
-		["menu_wpn_special_single"] = "Special",
+
 
 		["menu_flamethrower"] = "Flamethrowers",
-		["menu_flamethrower_single"] = "Flamethrower",
-
 		["menu_grenade_launcher"] = "Launchers",
-		["menu_grenade_launcher_single"] = "Launcher",
 
 		["menu_saw"] = "Saws",
-		["menu_saw_single"] = "Saw",
 
 		["menu_bow"] = "Bows",
-		["menu_bow_single"] = "Bow",
-		["menu_crossbow"] = "Bows",
-		["menu_crossbow_single"] = "Bow",
 
-		["menu_akimbo"] = "Akimbo+",
+		["menu_crossbow"] = "Bows",
 
 		["menu_unsupported"] = "Unsupported",
 
 		["st_menu_value"] = "Value:",
 
 		["st_menu_skill_use"] = "SKILL USE:",
+		["st_wpn_akimbo"] = "Akimbo+",
+		["st_wpn_assault_rifle"] = "Rifle",
+		["st_wpn_snp"] = "Rifle",
+		["st_wpn_pistol"] = "Pistol",
+		["st_wpn_shotgun"] = "Shotgun",
+		["st_wpn_smg"] = "Machine Gun",
+		["st_wpn_lmg"] = "Machine Gun",
+		["st_wpn_minigun"] = "Machine Gun",
+		["st_wpn_crossbow"] = "Bow",
+		["st_wpn_bow"] = "Bow",
+		["st_wpn_saw"] = "Saw",
+		["st_wpn_grenade_launcher"] = "Launcher",
+		["st_wpn_wpn_special"] = "Special",
+		["st_wpn_flamethrower"] = "Flamethrower",
 
 		["st_menu_firemode"] = "FIREMODES:",
 		["st_menu_firemode_semi"] = "SEMI",

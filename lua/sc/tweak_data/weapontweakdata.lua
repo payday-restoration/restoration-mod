@@ -7471,6 +7471,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.categories = {
 					"lmg",
 					"smg",
+					"wolf_brigade",
 					"mmg"
 				}
 				self.m60.CLIP_AMMO_MAX = 75
@@ -7480,15 +7481,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
-				self.m60.ads_speed = 0.620
+				self.m60.ads_speed = 0.600
 				self.m60.damage_falloff = {
-					start_dist = 2500,
-					end_dist = 6100,
+					start_dist = 2400,
+					end_dist = 5500,
 					min_mult = 0.5
 				}
 				self.m60.stats = {
 					damage = 60,
-					spread = 72,
+					spread = 71,
 					recoil = 67,
 					spread_moving = 5,
 					zoom = 1,
@@ -7528,8 +7529,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.supported = true
 				self.par.ads_speed = 0.600
 				self.par.damage_falloff = {
-					start_dist = 2100,
-					end_dist = 5800,
+					start_dist = 2000,
+					end_dist = 5000,
 					min_mult = 0.5
 				}
 				self.par.stats = {
@@ -7549,7 +7550,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.stats_modifiers = nil
 				self.par.no_bipod_anims = true
 				self.par.armor_piercing_chance = 0.2
-				self.par.reload_speed_multiplier = 0.8
+				self.par.reload_speed_multiplier = 0.775
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
 				self.par.timers.reload_exit_empty = 1.325
@@ -9371,7 +9372,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.victor.ads_speed = 0.460
 				self.victor.damage_falloff = {
 					start_dist = 2000,
-					end_dist = 6300,
+					end_dist = 6000,
 					min_mult = 0.1666667
 				}
 				self.victor.stats = {
@@ -16411,8 +16412,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					if weap.categories[1] == "snp" then
 						weap.recategorize = { "assault_rifle" }
 					end
-					if weap.categories[1] == "minigun" or weap.categories[1] == "lmg" then
-						weap.recategorize = { "smg" }
+					if weap.categories[1] == "minigun" or weap.categories[1] == "smg" or (weap.recategorize and weap.recategorize[1] == "smg") then
+						weap.recategorize = { "lmg" }
 					end
 				end
 			end

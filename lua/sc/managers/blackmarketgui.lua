@@ -4536,7 +4536,7 @@ function BlackMarketGui:update_info_text()
 					table.insert(resource_color, tweak_data.screen_colors.important_1)
 				else
 					updated_texts[2].text = updated_texts[2].text .. --((price > 0 and " | ") or "") .. 
-					managers.localization:to_upper_text("st_menu_skill_use") .." ##" .. ((is_akimbo and managers.localization:to_upper_text("menu_akimbo")) or "") .. managers.localization:to_upper_text("menu_" .. tostring(weapon_category) .. "_single") .. "## | " ..
+					managers.localization:to_upper_text("st_menu_skill_use") .." ##" .. ((is_akimbo and managers.localization:to_upper_text("st_wpn_akimbo")) or "") .. managers.localization:to_upper_text("st_wpn_" .. tostring(weapon_category)) .. "## | " ..
 					managers.localization:to_upper_text("st_menu_firemode") .. " ##" ..  firemode_string .. "##"
 
 					table.insert(resource_color, tweak_data.screen_colors.skill_color)

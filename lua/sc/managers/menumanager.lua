@@ -443,6 +443,160 @@ function MenuCallbackHandler:accept_skirmish_weekly_contract(item)
     end
 end
 
+function MenuChooseWeaponRewardInitiator:modify_node(original_node, data)
+	local node = original_node
+
+	if data and data.reward_data then
+		node:parameters().reward_data = data.reward_data
+	end
+
+	local all_dlc_data = Global.dlc_manager.all_dlc_data
+	local weapon_tweak = tweak_data.weapon
+	local x_id, y_id, x_level, y_level, x_unlocked, y_unlocked, x_skill, y_skill, x_gv, y_gv, x_sn, y_sn = nil
+	local primaries = managers.blackmarket:get_weapon_category("primaries")
+	local secondaries = managers.blackmarket:get_weapon_category("secondaries")
+	local items = {}
+
+	local function chk_unlocked_func(weapon)
+		return not not weapon.unlocked
+	end
+
+	local function chk_dlc_func(weapon)
+		x_id = weapon.weapon_id
+		x_gv = weapon_tweak[x_id].global_value
+
+		if all_dlc_data[x_gv] and all_dlc_data[x_gv].app_id and not managers.dlc:is_dlc_unlocked(x_gv) then
+			return false
+		end
+
+		return true
+	end
+
+	local function chk_dropable_func(weapon)
+		local loot_table = managers.blackmarket:get_lootdropable_mods_by_weapon_id(weapon.weapon_id, nil, true)
+
+		return loot_table and #loot_table > 0 or false
+	end
+
+	local function chk_parent_func(weapon)
+		return weapon_tweak[weapon.weapon_id] and not weapon_tweak[weapon.weapon_id].parent_weapon_id
+	end
+
+	local loot_table, data = nil
+
+	for i, category_data in ipairs({
+		primaries,
+		secondaries
+	}) do
+		for _, weapon_data in ipairs(category_data) do
+			if chk_dlc_func(weapon_data) and chk_parent_func(weapon_data) then
+				loot_table = managers.blackmarket:get_lootdropable_mods_by_weapon_id(weapon_data.weapon_id, nil, true)
+
+				if #loot_table > 0 then
+					data = deep_clone(weapon_data)
+					data.loot_table = loot_table
+
+					for _, category in ipairs(weapon_tweak[weapon_data.weapon_id].categories) do
+
+						local real_categories = {
+							"akimbo",
+
+							"assault_rifle",
+							"snp",
+
+							"smg",
+							"lmg",
+
+							"pistol",
+							"revolver",
+
+							"shotgun",
+
+							"bow",
+							"crossbow",
+							"grenade_launcher",
+							"saw",
+							"minigun",
+							"flamethrower"
+						}
+
+						for i, real_category in ipairs(real_categories) do
+							if category == real_category then
+								--log("real_category: " .. tostring(real_category))
+								category = tweak_data.gui.buy_weapon_category_aliases[category] or category
+								items[category] = items[category] or {}
+								table.insert(items[category], data)
+							end
+						end
+					end
+
+				end
+			end
+		end
+	end
+
+	local function sort_func(x, y)
+		x_unlocked = x.unlocked
+		y_unlocked = y.unlocked
+
+		if x_unlocked ~= y_unlocked then
+			return x_unlocked
+		end
+
+		x_id = x.weapon_id
+		y_id = y.weapon_id
+		x_gv = weapon_tweak[x_id].global_value
+		y_gv = weapon_tweak[y_id].global_value
+		x_sn = x_gv and tweak_data.lootdrop.global_values[x_gv].sort_number or 0
+		y_sn = y_gv and tweak_data.lootdrop.global_values[y_gv].sort_number or 0
+
+		if x_sn ~= y_sn then
+			return x_sn < y_sn
+		end
+
+		x_skill = x.skill_based
+		y_skill = y.skill_based
+
+		if x_skill ~= y_skill then
+			return y_skill
+		end
+
+		x_level = x.level or 0
+		y_level = y.level or 0
+
+		if x_level ~= y_level then
+			return x_level < y_level
+		end
+
+		return x_id < y_id
+	end
+
+	local category_list = {}
+
+	for category, data in pairs(items) do
+		table.sort(data, sort_func)
+		table.insert(category_list, category)
+	end
+
+	table.sort(category_list)
+
+	node:parameters().first_weapons = {}
+
+	for index, category in ipairs(category_list) do
+		node:parameters().first_weapons[category] = items[category][1].weapon_id
+	end
+
+	node:parameters().category_list = category_list
+	node:parameters().weapon_items = items
+	node = self:setup_node(node)
+
+	node:set_default_item_name("choose_weapon_category")
+	node:select_item("choose_weapon_category")
+
+	return node
+end
+
+
 if VakaraAmmoGui then
 	function VakaraAmmoGui:set_zoom(amount)
 		if alive(self._scope_zoom_counter) then 

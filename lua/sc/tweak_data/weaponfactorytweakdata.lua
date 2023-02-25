@@ -2125,6 +2125,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akm_nomag = {
 				translation = Vector3(-0.006, -2, -3.04)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar47 = {
+				translation = Vector3(-0.0125, 6.8, -0.19),
+				rotation = Rotation(-0.15, 0, 0)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
 				translation = Vector3(0.01, 2, -0.2),
@@ -28833,7 +28837,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.stats = {
 			value = 3,
 			suppression = 12,
-			alert_size = -1
+			alert_size = -1,
+			spread = 2,
+			concealment = -2
 		}
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.custom_stats = nil
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.perks = {"silencer"}
@@ -28956,7 +28962,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ass_ar47_b_heavy.custom_stats = {
 			ads_speed_mult = 1.075
 		}
-		self.parts.wpn_fps_upg_ass_ar47_b_heavy.adds = nil
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.adds = {"wpn_fps_upg_ass_ar47_b_heavy_gasblock"}
 
 		self.parts.wpn_fps_upg_ass_ar47_b_short.supported = true
 		self.parts.wpn_fps_upg_ass_ar47_b_short.name_id = "bm_wp_m4_uupg_b_short"
@@ -28986,6 +28992,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar47_sd_suppressor.stats = {value = 1}
 			self.parts.wpn_fps_ass_ar47_sd_suppressor.custom_stats = nil
 
+		self.parts.wpn_fps_ass_ar47_ns_hera_supp.supported = true
+		self.parts.wpn_fps_ass_ar47_ns_hera_supp.stats = {
+			value = 8,
+			suppression = 12,
+			alert_size = -1,
+			concealment = -3,
+			spread = 2,
+			recoil = 2
+		}
+		self.parts.wpn_fps_ass_ar47_ns_hera_supp.custom_stats = {
+			ads_speed_mult = 1.075
+		}
+
 		self.parts.wpn_fps_upg_ar47_fg_m4.supported = true
 		self.parts.wpn_fps_upg_ar47_fg_m4.custom_stats = nil
 		self.parts.wpn_fps_upg_ar47_fg_m4.stats = {
@@ -29014,7 +29033,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ar47_m_blk.supported = true
 		self.parts.wpn_fps_ass_ar47_m_blk.stats = {
 			value = 10,
-			recoil = 4
+			recoil = 2
 		}
 		self.parts.wpn_fps_ass_ar47_m_blk.custom_stats = {
 			rof_mult = 1.33334,
@@ -29900,6 +29919,83 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "additionalpartsinit", function(s
 		self.parts.wpn_fps_m4_uupg_b_sd.forbids = self.parts.wpn_fps_m4_uupg_b_sd.forbids or {}
 		table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_snp_tti_ns_brake")
 		table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_upg_ns_ass_smg_desertfox")
+	end
+end)
+
+Hooks:PostHook(WeaponFactoryTweakData, "init", "mallninj762init", function(self)
+	if self.parts.wpn_fps_upg_ass_ar47_b_heavy then
+		-- vmp support
+		if BeardLib.Utils:FindMod("Vanilla Styled Weapon Mods") then
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_ass_tecci_s_minicontra")
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_ass_m4_g_sg")
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_uupg_m4_fg_victorcar")
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_ass_m4_s_russian")
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_ass_m16_s_op")
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")
+	
+			table.insert(self.wpn_fps_ass_bdgr.uses_parts, "wpn_fps_m4_lower_reciever_tan")
+			
+			table.insert(self.wpn_fps_ass_sg416.uses_parts, "wpn_fps_m4_lower_reciever_tan")
+			
+			table.insert(self.wpn_fps_shot_amr12.uses_parts, "wpn_fps_m4_lower_reciever_tan")
+			table.insert(self.wpn_fps_shot_amr12.uses_parts, "wpn_fps_upg_ar47_upper_reciever_tecci")
+
+			self.parts.wpn_fps_upg_o_cqb.stance_mod.wpn_fps_ass_ar47 = 
+			{
+				translation = Vector3(0, 0, -0.2),
+				rotation = Rotation(0, 0, 0)
+			}
+		
+			self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod.wpn_fps_ass_ar47 = 
+			{
+				translation = Vector3(-3.5, 0, -11.5),
+				rotation = Rotation(0, 0, -45)
+			}
+	
+		else
+			-- vanilla mod pack not installed
+		end
+
+		if BeardLib.Utils:FindMod("Vanilla Styled Weapon Mods Legacy") then
+			table.insert(self.wpn_fps_ass_ar47.uses_parts, "wpn_fps_m4_g_wrap")
+		
+		else
+			-- vanilla mod pack not installed
+		end
+	
+		self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_ar47 = 
+		{
+			translation = Vector3(-3.5, 0, -11.5), 
+			rotation = Rotation(0, 0, -45)
+		}
+		self.parts.wpn_fps_upg_o_45rds.stance_mod.wpn_fps_ass_ar47 = 
+		{
+			translation = Vector3(-3.5, 0, -11.5),
+			rotation = Rotation(0, 0, -45)
+		}
+		self.parts.wpn_fps_upg_o_45rds_v2.stance_mod.wpn_fps_ass_ar47 = 
+		{
+			translation = Vector3(-3.5, 0, -11.5),
+			rotation = Rotation(0, 0, -45)
+		}
+		self.parts.wpn_fps_upg_o_45steel.stance_mod.wpn_fps_ass_ar47 = 
+		{
+			translation = Vector3(-3.5, 0, -11.5),
+			rotation = Rotation(0, 0, -45)
+		}
+	
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy_gasblock = deep_clone(self.parts.wpn_fps_m4_uupg_fg_rail_ext)
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy_gasblock.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard"
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy_gasblock.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy_gasblock.visibility = {
+			{
+				objects = {
+					g_barrel = false,
+				}
+			}
+		}
+	
+		self.parts.wpn_fps_upg_ass_ar47_b_heavy.adds = { "wpn_fps_upg_ass_ar47_b_heavy_gasblock" }	
 	end
 end)
 

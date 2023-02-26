@@ -71,9 +71,18 @@ function BaseInteractionExt:selected(player, locator, hand_id,...)
 
 	if result and alive(self._unit) then
 		local tid = self.tweak_data or "none"
+		local is_ordnance_bag = self._unit:name() == Idstring("units/pd2_dlc_mxm/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate")
+
 		if self._unit:base() and self._unit:base().blackout_active then 
 			managers.hud:show_interact({
 				text = managers.localization:text("hud_interact_autumn_disable")
+			})
+		elseif is_ordnance_bag then
+			local string_macros = {}
+			self:_add_string_macros(string_macros)
+
+			managers.hud:show_interact({
+				text = managers.localization:text("debug_interact_ordnance_bag_take_grenades", string_macros)
 			})
 		end
 	end
@@ -160,6 +169,24 @@ function SentryGunInteractionExt:interact(player)
 	self._unit:base():on_interaction(rip)
 
 	return true
+end
+
+--Different interaction block depending on the bag/case
+function GrenadeCrateInteractionExt:_interact_blocked(player)
+	local is_ordnance_bag = self._unit:name() == Idstring("units/pd2_dlc_mxm/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate")
+	if is_ordnance_bag then
+		local need_ammo = player:inventory():need_ammo()
+		local abilty_regen_throwable = not managers.blackmarket:equipped_grenade_allows_pickups()
+		local need_grenades = not abilty_regen_throwable and not managers.player:got_max_grenades()
+
+		return not need_ammo and not need_grenades, false, (not managers.player:got_max_grenades() and abilty_regen_throwable and "ability_no_grenade_pickup") or "full_grenades"
+	else
+		if not managers.blackmarket:equipped_grenade_allows_pickups() then
+			return true, false, "ability_no_grenade_pickup"
+		end
+	
+		return managers.player:got_max_grenades()
+	end
 end
 
 if Global.game_settings and Global.game_settings.single_player then

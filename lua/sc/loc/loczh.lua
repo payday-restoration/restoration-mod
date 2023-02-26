@@ -1008,16 +1008,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "用于快速运包的滑索",
 
-		--Heat Street Waypoints
-		["wp_heat_street_matt"] = "Matt",  --tra
-		["wp_heat_street_eddie"] = "Eddie",
-		["wp_heat_street_jp"] = "Jake's Parking",
-		["wp_heat_street_dl"] = "Drake's Loading",
-		["wp_heat_street_ba"] = "Back Alley",
-		["wp_heat_street_aa"] = "Armitage AVE",
-		["wp_heat_street_bile"] = "Bile",
-		["wp_heat_street_question"] = "?",
-
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "劫持Mia Calienté是个真正的活，朋友。她已经在幕后主使黑水在特区的行动好几年了。就在不久之前，黑水接管了码头的一个仓库作为额外的分配点。我们的目标正在那里清点从船上刚掠夺不久的货。我们将突入这里，抓住这小崽子作为人质。黑水的人无法接受失去她，他们将会愿意去花钱赎人，没准在上述条件下我们还能要价更高，伙计们你们觉得呢？"
 	})
@@ -2598,8 +2588,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。手雷箱只能被使用#{skill_color}#三次##。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n手雷箱是一种隐蔽性补给品，通常被军队或雇佣兵用来捞薯条。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
 		["bm_equipment_armor_kit_desc_short"] = "要使用手雷箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。手雷箱只能被使用#{skill_color}#三次##。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
 		--Ordnance Bag
-		["bm_equipment_grenade_crate_desc"] = "要使用军需包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。军需包一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。军需包只能被使用#{skill_color}#三次##。\n\n你可以通过观察军需包来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n军需包是战斗人员随身携带的便携包，用于将投掷型武器运送到战场中。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
-		["bm_equipment_grenade_crate_desc_short"] = "要使用军需包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。军需包一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。军需包只能被使用#{skill_color}#三次##。\n\n你可以通过观察军需包来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
+		["bm_equipment_grenade_crate_desc"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to replenish #{skill_color}#25%## of a weapon's ammo reserves and give you #{skill_color}#1## throwable.\n\nIt can only be used #{skill_color}#4## times; you can see how many uses are left by looking at the bag.\n\nThe Ordnance Bag is a portable bag carried by combat operatives to transport explosives and other throwable weapons into a battle zone.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
+		["bm_equipment_grenade_crate_desc_short"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to replenish #{skill_color}#25%## of a weapon's ammo reserves and give you #{skill_color}#1## throwable.\n\nIt can only be used #{skill_color}#4## times; you can see how many uses are left by looking at the bag.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
 		--Trip Mine
 		["bm_equipment_trip_mine_desc"] = "要使用诡雷，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。诡雷一旦被安置就不能被移动，安置后靠近并对其按下#{skill_color}#$BTN_INTERACT##以在感应模式和爆炸模式之间切换。\n感应模式：潜入中，保安经过会被标记并发出声音；强袭中，特殊敌人经过会被标记并发出声音。\n爆炸模式：敌人经过时引爆。\n潜入中放下时会默认使用感应模式，强袭中放下时会默认使用爆炸模式。\n\n要使用聚能炸药，你需要先靠近可爆破的目标，并对准目标上的炸药标志按住#{skill_color}#$BTN_INTERACT##以部署一枚聚能炸药上去。聚能炸药一旦被安置就不能收回，当爆破目标所需的全部炸药被安置完毕后，聚能炸药就会在几秒后炸开目标。\n\n诡雷是一种基础陷阱，能将触碰镭射的敌人炸残或炸死。\n聚能炸药可用于炸开部分保险箱和门。\n两者都是战斗中的好帮手。",
 		["bm_equipment_trip_mine_desc_short"] = "要使用诡雷，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。诡雷一旦被安置就不能被移动，安置后靠近并对其按下#{skill_color}#$BTN_INTERACT##以在感应模式和爆炸模式之间切换。\n要使用聚能炸药，你需要先靠近可爆破的目标，并对准目标上的炸药标志按住#{skill_color}#$BTN_INTERACT##以部署。聚能炸药一旦被安置就不能收回，当所有炸药被安置完毕后，聚能炸药就会在几秒后炸开目标。",

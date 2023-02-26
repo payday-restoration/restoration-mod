@@ -33,11 +33,22 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
+	--Turtle Always Wins doesn't check for deployable anymore, as armor kit doesn't exist in resmod.
+	self.complete_heist_achievements.turtle_wins = {
+		timer = 240,
+		stealth = true,
+		award = "ameno_6",
+		job = "gallery",
+		equipped_team = {
+			armor = "level_7"
+		}
+	}		
+	
 	--Lets Titan Snipers count for Martial Law
 	self.enemy_kill_achievements.ranc_11.enemies = {
 		"marshal_marksman",
 		"heavy_swat_sniper",
 		"weekend_dmr"
 	}
-	
+		
 end

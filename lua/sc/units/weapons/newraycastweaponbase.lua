@@ -546,7 +546,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.02 or 1.02 --small mult to help alliviate frame rounding
+		self._burst_fire_rate_multiplier = (self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.05) or 1.05 --small mult to help alliviate frame rounding
 		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
 		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
@@ -1237,6 +1237,12 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	end
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
+
+	if self:get_ammo_remaining_in_clip() ~= 0 then
+		if self:weapon_tweak_data().reload_not_empty_speed_multiplier then
+			multiplier = multiplier * self:weapon_tweak_data().reload_not_empty_speed_multiplier
+		end
+	end
 	
 	if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
 		local morale_boost_bonus = self._setup.user_unit:movement():morale_boost()

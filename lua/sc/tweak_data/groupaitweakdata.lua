@@ -7799,9 +7799,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	end
 	
 	--Marshal Shield
-	self.unit_categories.marshal_shield = {
-		unit_types = {
-			america = {
+	if difficulty_index <= 7 then
+		self.unit_categories.marshal_shield = {
+			unit_types = {
+				america = {
 				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
 			},
 			russia = {
@@ -7827,10 +7828,44 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			omnia = {
 				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			}	
+			},
+			access = access_type_all
+		}	
+	else
+	self.unit_categories.marshal_shield = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},					
+			murkywater = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+			},
+			omnia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
 			}				
 		},
 		access = access_type_walk_only
 	}	
+	end
 	
 	--Beat Cop overrides
 	--Texas heists, replace NYPD beat cops with Texas state troopers and Titan Snipers with US Marshals
@@ -16410,7 +16445,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	end	
 	
 	--Marshal Shield Spawn, just for Train Heist
-	if job == "trai" then
+	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
 		self.enemy_spawn_groups.marshal_squad = {
 			spawn_cooldown = 60,
 			max_nr_simultaneous_groups = 2,

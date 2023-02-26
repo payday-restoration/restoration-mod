@@ -1,9 +1,5 @@
 local old_queue_dialog = DialogManager.queue_dialog
 
-function DialogManager:queue_narrator_dialog(id, params)
-	return self:queue_dialog(self._narrator_prefix .. id, params)
-end
-
 function DialogManager:queue_dialog(id, ...)
 	local escape_time = 0
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -12,6 +8,24 @@ function DialogManager:queue_dialog(id, ...)
 	--log("SC: Found Event! " .. id)
 			
 	if Global.game_settings and Global.game_settings.one_down then
+	
+	
+		--Hostile Takeover
+		if id == "Play_loc_corp_61" then
+		if difficulty_index <= 2 then
+				escape_time = 780
+			elseif difficulty_index == 3 then
+				escape_time = 750
+			elseif difficulty_index == 4 then
+				escape_time = 720
+			elseif difficulty_index == 5 then
+				escape_time = 660	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 630					
+			else
+				escape_time = 600
+			end
+		end
 	
 		--Ranch--				
 		if id == "Play_loc_ranc_62" then

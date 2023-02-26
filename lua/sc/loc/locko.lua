@@ -923,16 +923,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "빠른 가방 운송을 위한 가방 짚라인을 삽니다",
-
-		--Heat Street Waypoints
-		["wp_heat_street_matt"] = "맷",
-		["wp_heat_street_eddie"] = "에디",
-		["wp_heat_street_jp"] = "제이크의 주차장",
-		["wp_heat_street_dl"] = "드레이크의 로딩",
-		["wp_heat_street_ba"] = "뒷골목",
-		["wp_heat_street_aa"] = "아미티지 AVE",
-		["wp_heat_street_bile"] = "바일",
-		["wp_heat_street_question"] = "?",
 		
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "오늘 아침에 열기압 폭탄이 열차에 실렸다고 해. 노퍽으로 향하는 열차인데 아마도 누가 그걸 사거나, 해체를 할지도 모르지, 하지만 그건 별로 상관없어, 왜냐면 도착하지 못할 거니까. 움직이는 기차를 멈추는 건 어렵지만 옛날 서부 방식을 사용할 거야. 다리의 일부분을 날려 버리면 통째로 굴러떨어지겠지. 시끄럽고 지저분할지는 몰라도 하지만 효과적이야. 열차는 사방팔방 흩어질 거야. 그 중 하나의 금고에 우리의 폭탄이 실려있을 테니 전부다 살펴보고 가져와.\n\n자칼의 충고:\n현장 근처에 있는 리퍼 팀을 감지했어. 아무래도 아칸이 저 폭탄을 원하는 것 같다. 문제 일으킬 준비를 하라고.",		
@@ -1438,13 +1428,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "Gewehr-3 모델 중 제일 막내. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
 		--M60
 		["bm_w_m60"] = "M60 중기관총",
-		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.",		
+		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.\n\n#{skill_color}#지향사격 능력에 특화되어 있습니다.##",		
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B 중기관총",
 		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
-		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향 사격 시 반동이 25% 감소합니다.##",	
+		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향사격 능력에 특화되어 있습니다.##",	
 		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 총열",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#2초##\n재충전 속도: #{skill_color}#9초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#4초##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
@@ -1527,6 +1517,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
 		--AK5
 		["bm_ak5_sc_desc"] = "은행 강도와 총알 크기에 대해 정보를 모르는 사람들을 혼란스럽게 만드는 유명하고 좋은 다목적 소총입니다.",
+		["fnc_burst_desc"] = "3점사 발사 모드를 추가합니다.",
 		--Union 5.56
 		["bm_corgi_sc_desc"] = "이 불펍 소총은 명성에도 불구하고 내항성이 전혀 없습니다.",
 		["bm_wp_corgi_b_short"] = "MSG 총열",		
@@ -1744,17 +1735,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#헤드샷 피해를 100%만큼 더 입힙니다.\n적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",		
 		["bm_bow_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고 떼면 발사합니다.\n화살을 최대로 당겨질 수록 화살의 대미지와 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
-		["bm_bow_exp_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고 떼면 발사합니다.\n화살을 최대로 당겨질 수록 화살의 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n화살은 충격 시 폭발합니다.",
+		["bm_bow_exp_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고 떼면 발사합니다.\n화살을 최대로 당겨질 수록 화살의 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n#{risk}#화살은 충격 시 폭발합니다.##",
 		["bm_w_bow_exp_desc"] = "충돌 시 폭발 반경이 #{skill_color}#1.5## 미터인 #{risk}#폭발성## 화살을 발사합니다.\n\n#{important_1}#화살 속도가 감소하고 회수할 수 없어 재사용이 불가능해지고 헤드샷이 불가능 해집니다.##",
 		["bm_w_bow_light_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#6##초 동안 독 피해를 #{stats_positive}#180##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",
 		["bm_w_bow_heavy_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#8##초 동안 독 피해를 #{stats_positive}#240##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",		
 		["bm_xbow_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
-		["bm_xbow_exp_sc_desc"] = "화살은 충격 시 폭발합니다.",
+		["bm_xbow_exp_sc_desc"] = "#{risk}#화살은 충격 시 폭발합니다.##",
 		["bm_w_xbow_exp_desc"] = "충돌 시 폭발 반경이 #{skill_color}#1.5## 미터인 #{risk}#폭발성## 화살을 발사합니다.\n\n#{important_1}#화살 속도가 감소하고 회수할 수 없어 재사용이 불가능해지고 헤드샷이 불가능 해집니다.##",
 		["bm_w_xbow_light_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#6##초 동안 독 피해를 #{stats_positive}#180##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",
 		["bm_w_xbow_heavy_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#8##초 동안 독 피해를 #{stats_positive}#240##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",		
 		["bm_airbow_sc_desc"] = "화살은 집어들면 회수할 수 있습니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
-		["bm_airbow_exp_sc_desc"] = "화살은 충격 시 폭발합니다.",
+		["bm_airbow_exp_sc_desc"] = "#{risk}#화살은 충격 시 폭발합니다.##",
 		["bm_w_airbow_poison_desc"] = "#{stats_positive}#독##으로 발라진 화살을 발사하여 적을 기절시키고 #{skill_color}#4##초 동안 독 피해를 #{stats_positive}#120##까지 입힙니다.\n\n#{important_1}#화살 속도가 감소합니다.##",		
 		["bm_40mm_weapon_sc_desc"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 #{skill_color}#30미터로## 영점 조정된 리프 조준기로 전환할 수 있습니다.",
 		["bm_rocket_launcher_sc_desc"] = "이 무기로 가한 폭발 피해는 #{skill_color}#터렛을 즉시 파괴합니다.##",
@@ -1910,29 +1901,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "권총",
-		["menu_pistol_single"] = "권총",
 		["menu_light_pis"] = "경권총",
 		["menu_heavy_pis"] = "중권총",
 		
 		["menu_shotgun"] = "산탄총",
-		["menu_shotgun_single"] = "산탄총",
 		["menu_light_shot"] = "자동 산탄총",
 		["menu_heavy_shot"] = "경산탄총",
 		["menu_break_shot"] = "중산탄총",
 		
-		["menu_smg"] = "기관총",
-		["menu_smg_single"] = "기관총",
+		["menu_smg"] = "기관단총",
 		["menu_lmg"] = "기관총",
-		["menu_lmg_single"] = "기관총",
 		["menu_minigun"] = "기관총",
-		["menu_minigun_single"] = "기관총",		
 		["menu_light_smg"] = "경기관단총",
 		["menu_heavy_smg"] = "중기관단총",
 		
 		["menu_assault_rifle"] = "소총",
-		["menu_assault_rifle_single"] = "소총",
-		["menu_snp"] = "소총",
-		["menu_snp_single"] = "소총",		
+		["menu_snp"] = "소총",	
 		["menu_light_ar"] = "경돌격소총",
 		["menu_heavy_ar"] = "중돌격소총",
 		["menu_dmr_ar"] = "저정사수 소총",
@@ -1949,21 +1933,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_wpn_special"] = "특수",
 
-		["menu_wpn_special_single"] = "특수",
-
 		["menu_flamethrower"] = "화염방사기",
-		["menu_flamethrower_single"] = "화염방사기",
 
 		["menu_grenade_launcher"] = "발사기",
-		["menu_grenade_launcher_single"] = "발사기",
 
 		["menu_saw"] = "톱",
-		["menu_saw_single"] = "톱",
 
 		["menu_bow"] = "활",
-		["menu_bow_single"] = "활",
 		["menu_crossbow"] = "활",
-		["menu_crossbow_single"] = "활",
 
 		["menu_akimbo"] = "아킴보+",
 		
@@ -1972,6 +1949,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_value"] = "가격:",
 
 		["st_menu_skill_use"] = "사용하는 스킬:",
+		["st_wpn_akimbo"] = "아킴보+",
+		["st_wpn_assault_rifle"] = "소총",
+		["st_wpn_snp"] = "소총",
+		["st_wpn_pistol"] = "권총",
+		["st_wpn_shotgun"] = "산탄총",
+		["st_wpn_smg"] = "기관총",
+		["st_wpn_lmg"] = "기관총",
+		["st_wpn_minigun"] = "기관총",
+		["st_wpn_crossbow"] = "활",
+		["st_wpn_bow"] = "활",
+		["st_wpn_saw"] = "톱",
+		["st_wpn_grenade_launcher"] = "발사기",
+		["st_wpn_wpn_special"] = "특수",
+		["st_wpn_flamethrower"] = "화염방사기",		
 		
 		["st_menu_firemode"] = "발사모드:",
 		["st_menu_firemode_semi"] = "단발",
@@ -2483,8 +2474,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit_desc"] = "투척물 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n투척물 가방는 상황이 위험할때 특수 무기를 휴대하기 위해 일반적으로 군인이나 용병이 사용하는 은페용 케이스입니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
 		["bm_equipment_armor_kit_desc_short"] = "투척물 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
 		--Ordnance Bag
-		["bm_equipment_grenade_crate_desc"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며. 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n군장 가방은 전투원이 폭발물 및 기타 투척물을 전투지역으로 운반할 때 사용하는 휴대용 가방입니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
-		["bm_equipment_grenade_crate_desc_short"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척물을 보충할 수 있습니다.\n\n#{skill_color}#3##번만 사용할 수 있으며. 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
+		["bm_equipment_grenade_crate_desc"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 ##25%##만큼 보충하고 투척물을 ##1##개를 보충할 수 있습니다.\n\n#{skill_color}#4##번만 사용할 수 있으며. 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n군장 가방은 전투원이 폭발물 및 기타 투척물을 전투지역으로 운반할 때 사용하는 휴대용 가방입니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
+		["bm_equipment_grenade_crate_desc_short"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM.## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 ##25%##만큼 보충하고 투척물을 ##1##개를 보충할 수 있습니다.\n\n#{skill_color}#4##번만 사용할 수 있으며. 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n#{important_1}#참고: 재생 또는 쿨다운 기반의 투척물은 보충하는 데 사용할 수 없습니다.##",
 		--Trip Mine
 		["bm_equipment_trip_mine_desc"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT.## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다.\n\n트립 마인 주로 레이저를 지나는 적에게 피해를 주거나 처치하는 함정으로 사용합니다. 성형작약탄은 주로 문이나 금고를 터트리는 데 사용합니다. 둘 다 대부분의 전투 상황에서 유용한 장비로 사용될 수 있습니다.",
 		["bm_equipment_trip_mine_desc_short"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치하여야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT.## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다.",
@@ -2509,6 +2500,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["hud_int_hold_take_pardons"] = "$BTN_INTERACT 키를 눌러 사면장을 얻기",
 		["debug_interact_gage_assignment_take"] = "$BTN_INTERACT 키를 눌러 패키지를 얻기",
+		
+		["hint_ability_no_grenade_pickup"] = "특성 덱 투척 무기를 보충할 수 없습니다.",
+		["debug_interact_ordnance_bag_take_grenades"] = "$BTN_INTERACT 키를 길게 눌러 투척 무기와 탄약을 보충하기",		
 
 		["far_repair_sentry_macro"] = "센트리가 심각하게 손상되어 수리가 필요합니다.",
 		["fixing_sentry_macro"] = "수리 진행도: $AMMO_LEFT",
@@ -3422,7 +3416,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "주사기 효과 동안 최대 체력보다 초과해서 회복했을 경우, 회복한 체력 ##5##마다 주사기 재사용 대기 시간이 ##1##초씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 던지면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초씩 감소합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
+		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 ##연막탄##을 잠금 해제합니다.\n\n연막탄을 던지면 ##12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 ##100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 ##75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 재사용 대기시간이 ##1##초씩 감소합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck18_3_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 		["menu_deck18_7_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 더 증가합니다.",

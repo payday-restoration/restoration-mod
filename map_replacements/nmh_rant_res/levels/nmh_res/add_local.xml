@@ -11,10 +11,10 @@
 	<mission path="lights/lights" script_data_type="binary"/>
 	<continent path="world/world" script_data_type="binary"/>
 	<mission path="world/world" script_data_type="binary"/>
-	<continent path="env/env" script_data_type="binary"/>
-	<mission path="env/env" script_data_type="binary"/>
 	<continent path="editor_only/editor_only" script_data_type="binary"/>
 	<mission path="editor_only/editor_only" script_data_type="binary"/>
+	<continent path="env/env" script_data_type="binary"/>
+	<mission path="env/env" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
 	<environment path="environments/newer_darkness" script_data_type="custom_xml"/>
 	<environment path="environments/no_mercy_default" script_data_type="custom_xml"/>

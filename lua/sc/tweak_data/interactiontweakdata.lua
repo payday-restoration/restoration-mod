@@ -613,15 +613,24 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	}	
 	self.grenade_briefcase = deep_clone(self.invisible_interaction_open_superfast)
 	self.grenade_briefcase.contour = "deployable"
+
+	self.ordnance_bag = {
+		icon = "equipment_ammo_bag",
+		text_id = "debug_interact_ordnance_bag_take_grenades",
+		contour = "deployable",
+		timer = 1.5,
+		blocked_hint = "full_grenades",
+		sound_start = "bar_bag_generic",
+		sound_interupt = "bar_bag_generic_cancel",
+		sound_done = "bar_bag_generic_finished",
+		action_text_id = "hud_action_taking_grenades"
+	}
 	
 	--Gage package
 	self.gage_assignment.timer = 0		
 	self.gage_assignment.sound_start = "money_grab"	
 	self.gage_assignment.sound_event = "money_grab"	
-	self.gage_assignment.sound_done = "money_grab"	
-	
-	--this isn't fun anymore (will remove it once OVK fixes this)
-	self.cas_open_door.timer = 0	
+	self.gage_assignment.sound_done = "money_grab"
 	
 	--Golden Grin keypad, used on a few heists. Increased interaction distance to play it safe
 	self.cas_button_01.interact_distance = 75

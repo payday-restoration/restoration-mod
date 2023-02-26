@@ -226,6 +226,7 @@ function restoration:Init()
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
 		"trai", --Lost in Transit
+		"corp", --Hostile Takeover
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration
@@ -257,7 +258,7 @@ function restoration:Init()
 		"mus", --The Diamond
 		"run", --Heat Street
 		"ranc", --Midland Ranch
-		"street_new", --Whurr's Heat Street Edit
+		"run_res", --Whurr's Heat Street Edit
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
@@ -384,7 +385,7 @@ function restoration:Init()
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {
 		"ranc",
 		"dinner",
-        "trai",
+		"trai",
 		"corp",
 		--Custom Heists--
 		"tonmapjam22l"

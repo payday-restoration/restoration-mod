@@ -98,10 +98,11 @@ tweak_data.snp = {
 		ads_move_speed_mult = 0.6 --lowered to 0.3
 	}
 		tweak_data.s7 = {
-			hipfire_spread_mult = 0.5,
+			hipfire_spread_mult = 0.25,
 			hipfire_moving_spread_mult = 0.33334,
 		}
 	tweak_data.amr = {
+		hipfire_spread_mult = 2,
 		ads_move_speed_mult = 0.5
 	}
 
@@ -367,7 +368,7 @@ tweak_data.projectiles.bow_poison_arrow.damage = 18
 
 --Hunter crossbow--
 tweak_data.projectiles.crossbow_arrow.damage = 24
-tweak_data.projectiles.crossbow_arrow_exp.damage = 48
+tweak_data.projectiles.crossbow_arrow_exp.damage = 36
 tweak_data.projectiles.crossbow_poison_arrow.damage = 18
 
 --Arblast Heavy Crossbow--
@@ -691,7 +692,7 @@ end
 		'frankish_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -719,7 +720,7 @@ end
 		'arblast_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].launch_speed = 6000 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -747,7 +748,7 @@ end
 		'ecp_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.5
+		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -931,7 +932,7 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		primaries = {
 			{ "pistol" },
 
-			{ "smg" },
+			{ "lmg" },
 
 			{ "shotgun" },
 
@@ -942,7 +943,7 @@ local dyslexia = { --for reference, I actually am diagnosed with Dyslexia
 		secondaries = {
 			{ "pistol" },
 
-			{ "smg" },
+			{ "lmg" },
 
 			{ "shotgun" },
 
@@ -1221,6 +1222,27 @@ if twp.stances.papa320 then
 	twp.stances.papa320.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	twp.stances.papa320.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
+
+
+local twf = tweak_data.weapon.factory --ugly fuckin fix but I just could not get this to work otherwise
+function WeaponFactoryTweakData:_clone_part_type_for_weapon_resmod(part_type, factory_id, amount)
+	local factory_data = twf[factory_id]
+	local parts = {}
+	local part_data = nil
+
+	for _, part_id in ipairs(factory_data.uses_parts) do
+		part_data = twf.parts[part_id]
+
+		if part_data.type == part_type then
+			table.insert(parts, part_id)
+		end
+	end
+
+	for _, part_id in ipairs(parts) do
+		twf:_clone_part_for_weapon(part_id, factory_id, amount)
+	end
+end
+twf:_clone_part_type_for_weapon_resmod("barrel_ext", "wpn_fps_ass_tkb", 2)
 
 if BeardLib then
 	local modded_perk_deck = false

@@ -79,6 +79,7 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -130,7 +131,8 @@ local standard_spawngroups = {
 		--"single_spooc",
 		"FBI_spoocs",
 		--Recurring spawns
-		"titan_snipers",		
+		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -185,7 +187,8 @@ local standard_spawngroups = {
 		"single_spooc",
 		"FBI_spoocs",
 		--Recurring spawns
-		"titan_snipers",		
+		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -240,7 +243,8 @@ local standard_spawngroups = {
 		--"single_spooc",
 		"FBI_spoocs",
 		--Recurring spawns
-		"titan_snipers",		
+		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -292,7 +296,8 @@ local standard_spawngroups = {
 		"single_spooc",
 		"FBI_spoocs",
 		--Recurring spawns
-		"titan_snipers",		
+		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -343,7 +348,8 @@ local standard_spawngroups = {
 		--Cloakers
 		"single_spooc",
 		--Recurring spawns
-		"titan_snipers",		
+		"titan_snipers",	
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -397,7 +403,8 @@ local standard_spawngroups = {
 		--Cloakers
 		--"single_spooc"
 		--Recurring spawns
-		"titan_snipers",		
+		"titan_snipers",
+		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},

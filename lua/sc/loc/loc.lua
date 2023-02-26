@@ -908,15 +908,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Bag Zipline for quick bag transport",
 		
-		--Heat Street Waypoints
-		["wp_heat_street_matt"] = "Matt",
-		["wp_heat_street_eddie"] = "Eddie",
-		["wp_heat_street_jp"] = "Jake's Parking",
-		["wp_heat_street_dl"] = "Drake's Loading",
-		["wp_heat_street_ba"] = "Back Alley",
-		["wp_heat_street_aa"] = "Armitage AVE",
-		["wp_heat_street_bile"] = "Bile",
-		["wp_heat_street_question"] = "?",
 		
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "Those thermobaric explosives were loaded onto a freight train this morning. It's heading down to Norfolk. Maybe to be sold on, maybe to be decommissioned - it doesn't matter, because it won't reach there. A moving train is tough to stop, so we're doing this Old West style. Blow a section of bridge and the whole thing comes tumbling down. It's loud and messy, but effective. The wagons will be scattered to hell. One of them has a vault where our explosives are - search each of 'em til you find it. \n\nNOTE FROM JACKAL:\nI've got intel on Reaper teams near the scene - seems Akan wants this prize for himself. Prepare for trouble.",
@@ -1116,6 +1107,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_wp_upg_flash_hider"] = "#{skill_color}#Hides muzzle flash## and #{risk}#reduces the chance of enemies evading your aim.##",
 		["bm_wp_upg_suppressor"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
+		["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##\n\n#{important_1}#May block sights.##",
 
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 		["bm_wp_upg_mil_sc"] = "Milspec Mag",
@@ -1503,13 +1495,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
 		--M60
 		["bm_w_m60"] = "M60",
-		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.",	
+		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.\n\n#{skill_color}#Has improved hipfire capabilties.##",	
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B",	
 		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",	
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42",	
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has 25% less recoil when hipfired.##",
+		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved hipfire capabilties.##",
 		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
@@ -1622,6 +1614,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AK5
 		["bm_w_ak5"] = "Ak 5",
 		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
+		["fnc_burst_desc"] = "Adds a 3-round burst firemode.",
 		--Union 5.56
 		["bm_w_corgi"] = "Union 5.56",	
 		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	
@@ -1878,19 +1871,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
-		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows explode on impact.",
+		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact.##",
 		["bm_w_bow_exp_desc"] = "Fire arrows that #{risk}#explode## on impact in a #{skill_color}#1.5## meter radius.\n\n#{important_1}#Arrow velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
 		["bm_w_bow_light_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 		["bm_w_bow_heavy_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_xbow_sc_desc"] = "Bolts can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
-		["bm_xbow_exp_sc_desc"] = "Bolts explode on impact.",
+		["bm_xbow_exp_sc_desc"] = "#{risk}#Bolts explode on impact.##",
 		["bm_w_xbow_exp_desc"] = "Fire bolts that #{risk}#explode## on impact in a #{skill_color}#1.5## meter radius.\n\n#{important_1}#Bolt velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
 		["bm_w_xbow_light_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 		["bm_w_xbow_heavy_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 
 		["bm_airbow_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
-		["bm_airbow_exp_sc_desc"] = "Arrows explode on impact.##",
+		["bm_airbow_exp_sc_desc"] = "#{risk}#Arrows explode on impact.##",
 		["bm_w_airbow_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
@@ -2053,22 +2046,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "Pistols",
-		["menu_pistol_single"] = "Pistol",
 			["menu_light_pis"] = "Light Pistols",
 			["menu_heavy_pis"] = "Heavy Pistols",
 		
 		["menu_shotgun"] = "Shotguns",
-		["menu_shotgun_single"] = "Shotgun",
 			["menu_light_shot"] = "Auto Shotguns",
 			["menu_heavy_shot"] = "Light Shotguns",
 			["menu_break_shot"] = "Heavy Shotguns",
 		
-		["menu_smg"] = "Machine Guns",
-		["menu_smg_single"] = "Machine Gun",
+		["menu_smg"] = "Sub-Machine Guns",
 		["menu_lmg"] = "Machine Guns",
-		["menu_lmg_single"] = "Machine Gun",
-		["menu_minigun"] = "Machine Guns",
-		["menu_minigun_single"] = "Machine Gun",
+		["menu_minigun"] = "Gatling Guns",
 			["menu_light_smg"] = "Light SMGs",
 			["menu_heavy_smg"] = "Heavy SMGs",
 			["menu_light_mg"] = "LMGs",
@@ -2076,9 +2064,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["menu_miniguns"] = "Gatling Guns",
 
 		["menu_assault_rifle"] = "Rifles",
-		["menu_assault_rifle_single"] = "Rifle",
-		["menu_snp"] = "Rifles",
-		["menu_snp_single"] = "Rifle",
+		["menu_snp"] = "Snipers",
 			["menu_light_ar"] = "Light Rifles",
 			["menu_heavy_ar"] = "Heavy Rifles",
 			["menu_dmr_ar"] = "Marksman Rifles",
@@ -2087,29 +2073,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["menu_antim_snp"] = "Anti-Materiel Rifles",
 
 		["menu_wpn_special"] = "Specials",
-		["menu_wpn_special_single"] = "Special",
+
 
 		["menu_flamethrower"] = "Flamethrowers",
-		["menu_flamethrower_single"] = "Flamethrower",
-
 		["menu_grenade_launcher"] = "Launchers",
-		["menu_grenade_launcher_single"] = "Launcher",
 
 		["menu_saw"] = "Saws",
-		["menu_saw_single"] = "Saw",
 
 		["menu_bow"] = "Bows",
-		["menu_bow_single"] = "Bow",
-		["menu_crossbow"] = "Bows",
-		["menu_crossbow_single"] = "Bow",
 
-		["menu_akimbo"] = "Akimbo+",
+		["menu_crossbow"] = "Bows",
 
 		["menu_unsupported"] = "Unsupported",
 
 		["st_menu_value"] = "Value:",
 
 		["st_menu_skill_use"] = "SKILL USE:",
+		["st_wpn_akimbo"] = "Akimbo+",
+		["st_wpn_assault_rifle"] = "Rifle",
+		["st_wpn_snp"] = "Rifle",
+		["st_wpn_pistol"] = "Pistol",
+		["st_wpn_shotgun"] = "Shotgun",
+		["st_wpn_smg"] = "Machine Gun",
+		["st_wpn_lmg"] = "Machine Gun",
+		["st_wpn_minigun"] = "Machine Gun",
+		["st_wpn_crossbow"] = "Bow",
+		["st_wpn_bow"] = "Bow",
+		["st_wpn_saw"] = "Saw",
+		["st_wpn_grenade_launcher"] = "Launcher",
+		["st_wpn_wpn_special"] = "Special",
+		["st_wpn_flamethrower"] = "Flamethrower",
 
 		["st_menu_firemode"] = "FIREMODES:",
 		["st_menu_firemode_semi"] = "SEMI",
@@ -2610,8 +2603,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit_desc"] = "To use the Throwable Case, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to refill your throwables.\n\nIt can only be used #{skill_color}#3## times; you can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
 		["bm_equipment_armor_kit_desc_short"] = "To use the Throwable Case, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to refill your throwables.\n\nIt can only be used #{skill_color}#3## times; you can see how many uses are left by looking into the case.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
 		--Ordnance Bag
-		["bm_equipment_grenade_crate_desc"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to refill your throwables.\n\nIt can only be used #{skill_color}#3## times; you can see how many uses are left by looking at the bag.\n\nThe Ordnance Bag is a portable bag carried by combat operatives to transport explosives and other throwable weapons into a battle zone.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
-		["bm_equipment_grenade_crate_desc_short"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to refill your throwables.\n\nIt can only be used #{skill_color}#3## times; you can see how many uses are left by looking at the bag.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
+		["bm_equipment_grenade_crate_desc"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to replenish #{skill_color}#25%## of a weapon's ammo reserves and give you #{skill_color}#1## throwable.\n\nIt can only be used #{skill_color}#4## times; you can see how many uses are left by looking at the bag.\n\nThe Ordnance Bag is a portable bag carried by combat operatives to transport explosives and other throwable weapons into a battle zone.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
+		["bm_equipment_grenade_crate_desc_short"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to replenish #{skill_color}#25%## of a weapon's ammo reserves and give you #{skill_color}#1## throwable.\n\nIt can only be used #{skill_color}#4## times; you can see how many uses are left by looking at the bag.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
 		--Trip Mine
 		["bm_equipment_trip_mine_desc"] = "To use a Trip Mine, you need to place one by holding #{skill_color}#$BTN_USE_ITEM.## The trigger laser can be toggled between its explosive and sensor modes by pressing #{skill_color}#$BTN_INTERACT.##\n\nTo use a Shaped Charge, you need to place one by holding #{skill_color}#$BTN_INTERACT.## Once the required number of charges have been placed they will detonate within a few seconds.\n\nTrip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations.",
 		["bm_equipment_trip_mine_desc_short"] = "To use a Trip Mine, you need to place one by holding #{skill_color}#$BTN_USE_ITEM.## The trigger laser can be toggled between its explosive and sensor modes by pressing #{skill_color}#$BTN_INTERACT.##\n\nTo use a Shaped Charge, you need to place one by holding #{skill_color}#$BTN_INTERACT.## Once the required number of charges have been placed they will detonate within a few seconds.",
@@ -2619,8 +2612,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_ammo_bag_desc"] = "To use the Ammo Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to refill your ammo.\n\nIt can be used to fully replenish the ammo reserves of a weapon #{skill_color}#$deployable_uses## times; you can see how many uses are left by looking into the bag.\n\nThe Ammo Bag is a portable bag, originally intended to allow soldiers to carry extra ammunition with them into combat.",
 		["bm_equipment_ammo_bag_desc_short"] = "To use the Ammo Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to refill your ammo.\n\nIt can be used to fully replenish the ammo reserves of a weapon #{skill_color}#$deployable_uses## times; you can see how many uses are left by looking into the bag.",
 		--ECM Jammer
-		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved and it will be active for #{skill_color}#$deployable_uses## seconds.\n\nYou can activate the ECM Jammer's feedback ability by interacting with it. The feedback loop has a #{skill_color}#25## meter radius. The first feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.5## seconds afterwards having a #{skill_color}#60%## chance to stun. Feedback lasts for #{skill_color}#$deployable_uses## seconds and will recharge after #{skill_color}#4## minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
-		["bm_equipment_ecm_jammer_desc_short"] = "To use the ECM Jammer, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved and it will be active for #{skill_color}#$deployable_uses## seconds.\n\nYou can activate the ECM Jammer's feedback ability by interacting with it. The feedback loop has a #{skill_color}#25## meter radius. The first feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.5## seconds afterwards having a #{skill_color}#60%## chance to stun. Feedback lasts for #{skill_color}#$deployable_uses## seconds and will recharge after #{skill_color}#4## minutes.",
+		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved and it will be active for #{skill_color}#$deployable_uses## seconds.\n\nYou can activate the ECM Jammer's feedback ability by interacting with it. The feedback loop has a #{skill_color}#25## meter radius. The first feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.2## seconds afterwards having a #{skill_color}#60%## chance to stun. Feedback lasts for #{skill_color}#$deployable_uses## seconds and will recharge after #{skill_color}#4## minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
+		["bm_equipment_ecm_jammer_desc_short"] = "To use the ECM Jammer, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved and it will be active for #{skill_color}#$deployable_uses## seconds.\n\nYou can activate the ECM Jammer's feedback ability by interacting with it. The feedback loop has a #{skill_color}#25## meter radius. The first feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.2## seconds afterwards having a #{skill_color}#60%## chance to stun. Feedback lasts for #{skill_color}#$deployable_uses## seconds and will recharge after #{skill_color}#4## minutes.",
 		--FAQ U
 		["bm_equipment_first_aid_kit_desc"] = "To use a First Aid Kit, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain #{skill_color}#150## health.\n\nFirst Aid Kits can only be used #{skill_color}#1## time.\n\nThe First Aid Kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
 		["bm_equipment_first_aid_kit_desc_short"] = "To use a First Aid Kit, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain #{skill_color}#150## health.\n\nFirst Aid Kits can only be used #{skill_color}#1## time.",
@@ -2639,6 +2632,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
 		["debug_interact_gage_assignment_take"] = "PRESS $BTN_INTERACT TO PICK UP THE PACKAGE",
+
+		["hint_ability_no_grenade_pickup"] = "YOU CAN'T PICK UP PERK DECK THROWABLES",
+		["hint_full_grenades"] = "YOU ALREADY HAVE THE FULL AMOUNT.",
+		["debug_interact_ordnance_bag_take_grenades"] = "HOLD $BTN_INTERACT TO TAKE A THROWABLE AND SOME AMMO",
 
 		["far_repair_sentry_macro"] = "Sentry critically damaged, repairs needed.",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT",
@@ -3568,7 +3565,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.2## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##5## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
@@ -3668,7 +3665,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Unlocks the ##Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within ##18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.5## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.2## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2## seconds.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "Unlocks the ##Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore ##5%## of your maximum health and disables your armor for ##6## seconds.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Ampule has a ##40## second cooldown.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 

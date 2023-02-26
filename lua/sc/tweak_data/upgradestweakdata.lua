@@ -507,7 +507,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.ecm_jammer_base_range = 2500
 	self.ecm_feedback_min_duration = 10
 	self.ecm_feedback_max_duration = 10
-	self.ecm_feedback_interval = 1.5
+	self.ecm_feedback_interval = 1.2
 	self.ecm_feedback_retrigger_interval = 240
 
 	--Sentry Guns
@@ -1916,7 +1916,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			duration = 10,
 			affects_cameras = true,
 			affects_pagers = true,
-			feedback_interval = 1.5,
+			feedback_interval = 1.2,
 			feedback_range = 1500
 		}
 	}	

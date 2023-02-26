@@ -3085,6 +3085,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_smg_schakal_ns_silencer")
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_snp_msr_ns_suppressor")
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_snp_victor_ns_omega")
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_upg_ns_ass_filter")
 	
 	
 	--Aftermarket Special Handguard
@@ -10232,6 +10233,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_smg_schakal_ns_silencer")
 	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_snp_msr_ns_suppressor")
 	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_snp_victor_ns_omega")
+	table.insert(self.parts.wpn_fps_smg_sterling_b_suppressed.forbids, "wpn_fps_upg_ns_ass_filter")
 	
 	--Heatsinked Suppressed Barrel
 	self.parts.wpn_fps_smg_sterling_b_e11.pcs = {}
@@ -12696,11 +12698,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 	self.parts.wpn_fps_smg_polymer_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_polymer_ns_silencer.has_description = true
 	self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-	self.parts.wpn_fps_smg_polymer_ns_silencer.stats = {
-		value = 2,
-		suppression = 12,
-		alert_size = -1
-	}
+	self.parts.wpn_fps_smg_polymer_ns_silencer.stats = deep_clone(muzzle_device.supp_c_duo_stats)
+	self.parts.wpn_fps_smg_polymer_ns_silencer.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 	self.parts.wpn_fps_smg_polymer_ns_silencer.perks = {"silencer"}
 
 	--Fix for disappearing bolt
@@ -13992,11 +13991,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 	self.parts.wpn_fps_smg_schakal_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_schakal_ns_silencer.has_description = true
 	self.parts.wpn_fps_smg_schakal_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-	self.parts.wpn_fps_smg_schakal_ns_silencer.stats = {
-		value = 2,
-		suppression = 12,
-		alert_size = -1
-	}
+	self.parts.wpn_fps_smg_schakal_ns_silencer.stats = deep_clone(muzzle_device.supp_b_alt_stats)
+	self.parts.wpn_fps_smg_schakal_ns_silencer.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 	self.parts.wpn_fps_smg_schakal_ns_silencer.perks = {"silencer"}
 	
 	--Civilian Stock
@@ -20405,6 +20401,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tkb", "resmod_chikubi", function(s
 		}
 	}
 
+	for i, part_id in pairs(self.wpn_fps_ass_tkb.uses_parts) do
+		attachment_list = { --me no like clipping; do not test me on this
+			"wpn_fps_upg_ns_ass_smg_v6",
+			"wpn_fps_upg_ns_ass_smg_tank"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_ass_tkb.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end	
+
 	self.wpn_fps_ass_tkb.override.wpn_fps_ass_tkb_o_tt01_mount = {
 		custom_stats = { big_scope = true }
 	}
@@ -20840,6 +20848,36 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_large)
 						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_ass_smg_large") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
+				end	
+				attachment_list = {
+					"wpn_fps_upg_ns_ass_filter"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_ns_ass_smg_large then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_ns_ass_smg_large)
+						if not self[factory_id].override[part_id].a_obj then
+							self[factory_id].override[part_id].a_obj = "a_ns"
+						end
+						if not self[factory_id].override[part_id].parent then
+							self[factory_id].override[part_id].parent = "barrel"
+						end
+					else
+						self[factory_id].override = self[factory_id].override or {}
+						self[factory_id].override[part_id] = {
+							a_obj = "a_ns",
+							parent = "barrel"
+						}
+					end
+					self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_ns_ass_smg_large") then
 							table.insert(self.parts[used_part_id].forbids, part_id)
@@ -28834,14 +28872,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.supported = true
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.has_description = true
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.desc_id = "bm_wp_upg_suppressor"
-		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.stats = {
-			value = 3,
-			suppression = 12,
-			alert_size = -1,
-			spread = 2,
-			concealment = -2
-		}
-		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.custom_stats = nil
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.stats = deep_clone(muzzle_device.supp_c_stats)
+		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 		self.parts.wpn_fps_upg_ns_ass_smg_desertfox.perks = {"silencer"}
 
 		--HCAR stock

@@ -1425,29 +1425,21 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.no_omnia_heal = true
 	self.gangster.no_asu = true	
 	self.gangster.use_radio = nil		
-	if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
-		self.gangster.speech_prefix_p1 = "rt"
-		self.gangster.speech_prefix_p2 = nil
-		self.gangster.speech_prefix_count = 2
-	elseif job == "alex_2" or job == "alex_2_res" or job == "welcome_to_the_jungle_1" then
-		self.gangster.speech_prefix_p1 = "ict"
-		self.gangster.speech_prefix_p2 = nil
-		self.gangster.speech_prefix_count = 2
-	elseif job == "man" then	
-		self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
-		self.gangster.tags = {"law"}
-		self.gangster.HEALTH_INIT = 4
-		self.gangster.speech_prefix_p2 = "n"
-		self.gangster.speech_prefix_count = 4	
-		self.gangster.no_arrest = false
-		self.gangster.rescue_hostages = true
-		self.gangster.use_radio = self._default_chatter	
-		self.gangster.no_omnia_heal = false		
-		self.gangster.no_asu = false
+	if job == "man" then	
+	self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
+	self.gangster.tags = {"law"}
+	self.gangster.HEALTH_INIT = 4
+	self.gangster.speech_prefix_p2 = "n"
+	self.gangster.speech_prefix_count = 4	
+	self.gangster.no_arrest = false
+	self.gangster.rescue_hostages = true
+	self.gangster.use_radio = self._default_chatter	
+	self.gangster.no_omnia_heal = false		
+	self.gangster.no_asu = false
 	else
-		self.gangster.speech_prefix_p1 = "lt"
-		self.gangster.speech_prefix_p2 = nil
-		self.gangster.speech_prefix_count = 2
+	self.gangster.speech_prefix_p1 = "lt"
+	self.gangster.speech_prefix_p2 = nil
+	self.gangster.speech_prefix_count = 2
 	end
 	self.gangster.chatter = {
 		aggressive = true,

@@ -52,7 +52,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	end
 	
 	--///MEXICAN LEVELS\\\--
-	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex2"}
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
@@ -81,12 +80,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
-	self.mex.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds", "packages/narr_born_1", "packages/job_mex"}
+	self.mex.package = {"packages/narr_born_1", "packages/job_mex"}
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"
 
-	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets", "packages/narr_born_1", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/h_alex_must_die/stage_2/world_sounds"}
-	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets", "packages/narr_born_1", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/h_alex_must_die/stage_2/world_sounds"} 
+	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets", "packages/narr_born_1"}
+	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets", "packages/narr_born_1"} 
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"	
 
@@ -206,7 +205,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
-	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds", "levels/narratives/h_watchdogs/stage_1/world/world"}
+	self.spa.package = {"packages/job_spa", "levels/narratives/h_watchdogs/stage_1/world/world"}
 	self.spa.player_style = "slaughterhouse"
 	self.spa.flashlights_on = true
 	
@@ -243,13 +242,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd
-	self.jolly.package = {"packages/jolly", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.jolly.player_style = "suit_sunny"
 	
 	self.pal.ai_group_type = lapd
 	
 	self.friend.ai_group_type = lapd
-	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend"}
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd
@@ -264,19 +261,16 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.chas.ai_group_type = lapd
-	self.chas.package = {"packages/job_chas", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.chas.player_style = "suit_sunny"
 	
 	self.sand.ai_group_type = lapd
-	self.sand.package = {"packages/job_sand", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.sand.player_style = "highinttech"
 
 	self.chca.ai_group_type = lapd
-	self.chca.package = {"packages/job_chca", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.chca.player_style = "continental"
 
 	self.pent.ai_group_type = lapd
-	self.pent.package = {"packages/job_pent", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
+	self.pent.package = {"packages/job_pent", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
 		
@@ -296,7 +290,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.arena.player_style = "hiphop"
 
-	self.born.package = {"packages/narr_born_1", "packages/miscassets", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}	
+	self.born.package = {"packages/narr_born_1", "packages/miscassets"}	
 	self.born.player_style = "punk"
 	
 	
@@ -406,18 +400,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.mia2_new.teams = self.mia_2.teams
 
-	self.cane.package = {"packages/cane", "packages/narr_born_1", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
+	self.cane.package = {"packages/cane", "packages/narr_born_1"}
 	self.cane.player_style = "winter_suit"
 							
 	self.mus.package = {"packages/narr_mus"}
 	self.mus.player_style = "sneak_suit"
-	
-	--///GANGSTER VOICEOVER\\\--
-	self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
-	self.chew.package = {"packages/lvl_chew", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
-	self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
-	self.peta.package = {"packages/narr_peta", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
-	self.peta2.package = {"packages/narr_peta2", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	
 	--//CHRISTMAS HEISTS\\--
 	

@@ -4,6 +4,20 @@ function GameSetup:load_packages()
 	if not PackageManager:loaded("packages/game_base_init") then
 		PackageManager:load("packages/game_base_init")
 	end
+	
+	--Gangster's VO
+	if not PackageManager:loaded("levels/narratives/h_alex_must_die/stage_1/world_sounds") then
+		PackageManager:load("levels/narratives/h_alex_must_die/stage_1/world_sounds")
+	end
+	if not PackageManager:loaded("levels/narratives/h_alex_must_die/stage_2/world_sounds") then
+		PackageManager:load("levels/narratives/h_alex_must_die/stage_2/world_sounds")
+	end
+	if not PackageManager:loaded("levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds") then
+		PackageManager:load("levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds")
+	end
+	if not PackageManager:loaded("levels/narratives/dentist/mia/stage2/world_sounds") then
+		PackageManager:load("levels/narratives/dentist/mia/stage2/world_sounds")
+	end
 
 	if not managers.dlc:is_installing() then
 		if not PackageManager:loaded("packages/game_base") and PackageManager:package_exists("packages/game_base") then

@@ -12697,7 +12697,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 	}
 	self.parts.wpn_fps_smg_polymer_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_polymer_ns_silencer.has_description = true
-	self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor"
+	self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor_warn"
 	self.parts.wpn_fps_smg_polymer_ns_silencer.stats = deep_clone(muzzle_device.supp_c_duo_stats)
 	self.parts.wpn_fps_smg_polymer_ns_silencer.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 	self.parts.wpn_fps_smg_polymer_ns_silencer.perks = {"silencer"}

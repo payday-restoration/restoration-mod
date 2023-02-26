@@ -1428,13 +1428,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "Gewehr-3 모델 중 제일 막내. 제압 사격 능력을 더 늘리기 위해 증가된 발사 속도와 함께 제공합니다.",		
 		--M60
 		["bm_w_m60"] = "M60 중기관총",
-		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.",		
+		["bm_m60_sc_desc"] = "탄약을 많이 소모하고 엄청나게 거추장스러워서 '돼지'라는 별명을 얻었습니다. 그래도 사거리 내에 있는 사람들은 닫힌 관짝으로 되지만요.\n\n#{skill_color}#지향사격 능력에 특화되어 있습니다.##",		
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B 중기관총",
 		["bm_par_sc_desc"] = "KSP-90 경기관총보다 더 무거운 이 후속 기관총은 일반적으로 차량에 장착됩니다. 더 큰 총알을 얻은 대신 기동성을 교환했습니다.",		
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42 중기관총",
-		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향 사격 시 반동이 25% 감소합니다.##",	
+		["bm_wolf_brigade_sc_desc"] = "\"우리는 단지 개처럼 위장한 인간이 아니다.\n우리는 그저 인간으로 위장한 #{important_1}#늑대##이다.\"\n\n#{skill_color}#지향사격 능력에 특화되어 있습니다.##",	
 		["bm_wp_mg42_b_vg38"] = "블라스테크 DLT-19 총열",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#2초##\n재충전 속도: #{skill_color}#9초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#4초##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
@@ -1901,29 +1901,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "권총",
-		["menu_pistol_single"] = "권총",
 		["menu_light_pis"] = "경권총",
 		["menu_heavy_pis"] = "중권총",
 		
 		["menu_shotgun"] = "산탄총",
-		["menu_shotgun_single"] = "산탄총",
 		["menu_light_shot"] = "자동 산탄총",
 		["menu_heavy_shot"] = "경산탄총",
 		["menu_break_shot"] = "중산탄총",
 		
-		["menu_smg"] = "기관총",
-		["menu_smg_single"] = "기관총",
+		["menu_smg"] = "기관단총",
 		["menu_lmg"] = "기관총",
-		["menu_lmg_single"] = "기관총",
 		["menu_minigun"] = "기관총",
-		["menu_minigun_single"] = "기관총",		
 		["menu_light_smg"] = "경기관단총",
 		["menu_heavy_smg"] = "중기관단총",
 		
 		["menu_assault_rifle"] = "소총",
-		["menu_assault_rifle_single"] = "소총",
-		["menu_snp"] = "소총",
-		["menu_snp_single"] = "소총",		
+		["menu_snp"] = "소총",	
 		["menu_light_ar"] = "경돌격소총",
 		["menu_heavy_ar"] = "중돌격소총",
 		["menu_dmr_ar"] = "저정사수 소총",
@@ -1940,21 +1933,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_wpn_special"] = "특수",
 
-		["menu_wpn_special_single"] = "특수",
-
 		["menu_flamethrower"] = "화염방사기",
-		["menu_flamethrower_single"] = "화염방사기",
 
 		["menu_grenade_launcher"] = "발사기",
-		["menu_grenade_launcher_single"] = "발사기",
 
 		["menu_saw"] = "톱",
-		["menu_saw_single"] = "톱",
 
 		["menu_bow"] = "활",
-		["menu_bow_single"] = "활",
 		["menu_crossbow"] = "활",
-		["menu_crossbow_single"] = "활",
 
 		["menu_akimbo"] = "아킴보+",
 		
@@ -1963,6 +1949,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_value"] = "가격:",
 
 		["st_menu_skill_use"] = "사용하는 스킬:",
+		["st_wpn_akimbo"] = "아킴보+",
+		["st_wpn_assault_rifle"] = "소총",
+		["st_wpn_snp"] = "소총",
+		["st_wpn_pistol"] = "권총",
+		["st_wpn_shotgun"] = "산탄총",
+		["st_wpn_smg"] = "기관총",
+		["st_wpn_lmg"] = "기관총",
+		["st_wpn_minigun"] = "기관총",
+		["st_wpn_crossbow"] = "활",
+		["st_wpn_bow"] = "활",
+		["st_wpn_saw"] = "톱",
+		["st_wpn_grenade_launcher"] = "발사기",
+		["st_wpn_wpn_special"] = "특수",
+		["st_wpn_flamethrower"] = "화염방사기",		
 		
 		["st_menu_firemode"] = "발사모드:",
 		["st_menu_firemode_semi"] = "단발",

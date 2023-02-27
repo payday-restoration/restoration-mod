@@ -164,5 +164,8 @@ function PlayerTased:update(t, dt)
 			self:_check_action_weapon_firemode(t, { btn_weapon_firemode_press = true }) --volley currently just DUMPS your ammo anf bypasses refire delays, so force firemode switch to not dump ammo as fast
 		end
 	end
+
+	self._num_shocks = self._num_shocks or 0 --potential fix for the rare occurance of self._num_shocks being nil while in the tase state maybe
+
 	PlayerTased.super.update(self, t, dt)
 end

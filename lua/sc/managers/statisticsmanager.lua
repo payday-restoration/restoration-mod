@@ -392,10 +392,12 @@ function StatisticsManager:_bullet_challenges( data )
 	local success, err = pcall(function()
 		managers.challenges_res:count_up( data.type )
 		managers.challenges_res:count_up( data.name )
-		if data.head_shot then
-			managers.challenges_res:count_up( data.type.."_head_shot" )
-		else
-			managers.challenges_res:count_up( data.type.."_body_shot" )
+		if data.type then
+			if data.head_shot then
+				managers.challenges_res:count_up( data.type.."_head_shot" )
+			else
+				managers.challenges_res:count_up( data.type.."_body_shot" )
+			end
 		end
 		--[[if data.attacker_state then
 			if data.attacker_state == "bleed_out" then

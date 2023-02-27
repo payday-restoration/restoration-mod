@@ -18818,6 +18818,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scout", "resmod_scout", function(s
 	self.parts.wpn_fps_snp_scout_o_iron_up.stats = {
 		value = 0
 	}
+	self.parts.wpn_fps_snp_scout_o_iron_up.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(0.01, -1, 4.1),
+		rotation = Rotation(0.05, 0, 0)
+	}
 
 	--Open Range Set
 	self.parts.wpn_fps_snp_scout_conversion.pcs = {
@@ -18876,11 +18880,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scout", "resmod_scout", function(s
 		concealment = 1
 	}
 
-	--Irons
-	self.parts.wpn_fps_snp_scout_o_iron_up.stance_mod.wpn_fps_snp_scout = {
-		translation = Vector3(0.01, -12, 2.55),
-		rotation = Rotation(0.05, 0, 0)
-	}
 
 end)
 

@@ -13044,7 +13044,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.tactical_reload = 1
 			self.sgs.AMMO_MAX = 60
 			self.sgs.FIRE_MODE = "single"
-			self.sgs.fire_mode_data.fire_rate = 0.15
+			self.sgs.fire_mode_data.fire_rate = 0.1666666
 			self.sgs.sms = sms_preset.semi_snp_light
 			self.sgs.kick = self.stat_info.kick_tables.vertical_kick
 			self.sgs.can_shoot_through_enemy = true

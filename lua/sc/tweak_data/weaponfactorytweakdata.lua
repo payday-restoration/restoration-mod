@@ -21003,7 +21003,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_ass_galil_s_wood",
 					"wpn_fps_ass_galil_s_light",
 					"wpn_fps_ass_galil_s_fab",
-					"wpn_fps_ass_galil_s_sniper"
+					"wpn_fps_ass_galil_s_sniper",
+
+					"wpn_fps_upg_ak_s_galil_sniper"
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) then
@@ -21036,6 +21038,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							adds = { "wpn_upg_ak_g_standard" }
 						}
 						self[factory_id].override.wpn_fps_ass_galil_s_sniper = {
+							stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+
+						self[factory_id].override.wpn_fps_upg_ak_s_galil_sniper = {
 							stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 							custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 							adds = { "wpn_upg_ak_g_standard" }
@@ -28740,7 +28748,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-	if self.parts.wpn_fps_upg_m4_hera_lower then
+	if self.parts.wpn_fps_upg_m4_hera_lower then --Tangerine's AK/AR Mod Pack
 		
 		--Hera parts
 		self.parts.wpn_fps_upg_m4_hera_lower.supported = true
@@ -28971,6 +28979,53 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = 3
 		}
 		self.parts.wpn_fps_upg_ak_m_double.custom_stats = nil
+
+		self.parts.wpn_fps_upg_bdgr_b_loud.supported = true
+		self.parts.wpn_fps_upg_bdgr_b_loud.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_upg_bdgr_b_loud.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+
+		self.parts.wpn_fps_lmg_rpk_fg_modern.supported = true
+		self.parts.wpn_fps_lmg_rpk_fg_modern.stats = {
+			value = 6,
+			recoil = 2,
+			spread = 1,
+			concealment = -2
+		}
+		self.parts.wpn_fps_lmg_rpk_fg_modern.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ak_fg_modern.supported = true
+		self.parts.wpn_fps_upg_ak_fg_modern.stats = {
+			value = 6,
+			recoil = 2,
+			spread = 1,
+			concealment = -2
+		}
+		self.parts.wpn_fps_upg_ak_fg_modern.custom_stats = nil
+
+		self.parts.wpn_fps_smg_akmsu_fg_mar.supported = true
+		self.parts.wpn_fps_smg_akmsu_fg_mar.stats = {
+			value = 4,
+			recoil = -2,
+			spread = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_smg_akmsu_fg_mar.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ak_b_galil.supported = true
+		self.parts.wpn_fps_upg_ak_b_galil.stats = {
+			value = 4,
+			recoil = 2,
+			spread = -1
+		}
+		self.parts.wpn_fps_upg_ak_b_galil.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ak_b_galil_bipod.supported = true
+		self.parts.wpn_fps_upg_ak_b_galil_bipod.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_upg_ak_b_galil_bipod.stats.recoil = 4
+		self.parts.wpn_fps_upg_ak_b_galil_bipod.stats.concealment = -5
+		self.parts.wpn_fps_upg_ak_b_galil_bipod.custom_stats = deep_clone(barrels.long_b3_custom_stats)
+		self.parts.wpn_fps_upg_ak_b_galil_bipod.custom_stats.ads_speed_mult = 1.025
+
 	end
 
 	if self.parts.wpn_fps_ass_ar47_b_standard then --Tangerine's AR47

@@ -38,6 +38,26 @@
 	<unit_obj			path="units/payday2/characters/ene_bulldozer_biker_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>	
 	<!--end armor bits-->	
 	
+	<!-- female bikers -->
+	<add from_db="true" 	path="units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1" type="unit">
+		<unit load="true"	path="units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"/>
+		<object 			path="units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"/>
+		<material_config 	path="units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"/>
+		<unit load="true" 	path="units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1_husk"/>
+	</add>
+	<add from_db="true" 	path="units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2" type="unit">
+		<unit load="true"	path="units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"/>
+		<object 			path="units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"/>
+		<material_config 	path="units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"/>
+		<unit load="true" 	path="units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2_husk"/>
+	</add>
+	<add from_db="true" 	path="units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3" type="unit">
+		<unit load="true"	path="units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"/>
+		<object 			path="units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"/>
+		<material_config 	path="units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"/>
+		<unit load="true" 	path="units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3_husk"/>
+	</add>
+	
 	
 	<!-- cobras enforcer -->
 	<unit				path="units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer" load="true"/>

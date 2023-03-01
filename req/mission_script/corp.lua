@@ -32,5 +32,16 @@ return {
 				position = Vector3(700, -75, 0)
 			}
 		}
+	},
+	--fixes the issue with turret objective
+	[102783] = {
+		values = {		
+			enemy_names = {
+			"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+			"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+			"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+			"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+			}
+		}
 	}
-}
+}	

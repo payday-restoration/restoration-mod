@@ -6987,7 +6987,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.CAN_TOGGLE_FIREMODE = true
 				self.polymer.BURST_FIRE = 2
 				self.polymer.ADAPTIVE_BURST_SIZE = false													
-				self.polymer.kick = self.stat_info.kick_tables.moderate_kick
+				self.polymer.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.polymer.supported = true
 				self.polymer.ads_speed = 0.260
 				self.polymer.damage_falloff = {
@@ -9731,7 +9731,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.upgrade_blocks = nil
 			self.m95.has_description = true
 			self.m95.desc_id = "bm_m95_sc_desc"
-			self.m95.AMMO_MAX = 20
+			self.m95.AMMO_MAX = 10
 			self.m95.fire_mode_data.fire_rate = 1.5
 			self.m95.fire_rate_multiplier = 1
 			self.m95.kick = self.stat_info.kick_tables.left_kick
@@ -14555,7 +14555,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.categories = {
 			"snp"
 		}
-		self.musket.recategorize = { "antim_snp" }
+		self.musket.recategorize = { "heavy_snp" }
 		self.musket.damage_type = "sniper"
 		self.musket.always_play_anims = true
 		self.musket.upgrade_blocks = nil
@@ -14611,7 +14611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.has_description = true
 		self.m107cq.desc_id = "bm_m107cq_sc_desc"
 		self.m107cq.tactical_reload = 1
-		self.m107cq.AMMO_MAX = 30
+		self.m107cq.AMMO_MAX = 15
 		self.m107cq.fire_mode_data.fire_rate = 0.6
 		self.m107cq.sms = sms_preset.semi_snp_amr
 		self.m107cq.kick = deep_clone(self.stat_info.kick_tables.right_kick)
@@ -14660,7 +14660,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.upgrade_blocks = nil
 		self.m200.has_description = true
 		self.m200.desc_id = "bm_m200_sc_desc"
-		self.m200.AMMO_MAX = 20
+		self.m200.AMMO_MAX = 10
 		self.m200.CLIP_AMMO_MAX = 7
 		self.m200.tactical_reload = 1
 		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -15540,7 +15540,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.srs99_s7.hs_mult = 2
 		self.srs99_s7.damage_type = "anti_materiel"
 		self.srs99_s7.upgrade_blocks = nil
-		self.srs99_s7.AMMO_MAX = 30
+		self.srs99_s7.AMMO_MAX = 15
 		self.srs99_s7.sms = sms_preset.semi_snp_amr
 		self.srs99_s7.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
 		self.srs99_s7.supported = true
@@ -16432,9 +16432,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.057, 0.028}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.055, 0.027}},
-		{damage = 24,  pickup = {0.053, 0.027}},
+		{damage = 18,  pickup = {0.058, 0.029}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.056, 0.028}},
+		{damage = 24,  pickup = {0.054, 0.027}},
 		{damage = 30,  pickup = {0.051, 0.026}},
 		{damage = 45,  pickup = {0.047, 0.025}},
 		{damage = 60,  pickup = {0.045, 0.024}},

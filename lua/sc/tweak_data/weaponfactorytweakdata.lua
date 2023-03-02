@@ -9268,6 +9268,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_grenade_launcher_poison.custom_stats = {
 		launcher_grenade = "launcher_poison"
 	}
+
+	self.parts.wpn_fps_upg_a_underbarrel_poison.pcs = {}
+	self.parts.wpn_fps_upg_a_underbarrel_poison.has_description = true
+	self.parts.wpn_fps_upg_a_underbarrel_poison.desc_id = "bm_wp_upg_a_grenade_launcher_poison_desc_sc"
+	self.parts.wpn_fps_upg_a_underbarrel_poison.supported = true
 	
 	
 	--Incendiary Round (Arbiter)
@@ -20784,7 +20789,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--Make more attachments universally available, cartridge mismatching be damned
 	for factory_id, i in pairs(self) do
-		if self[factory_id] and self[factory_id .. "_npc"] then
+		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then
+
+			--[[
+			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
+				attachment_list = {
+					"wpn_fps_upg_o_northtac"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if not table.contains(self[factory_id].uses_parts, part_id) then
+						table.insert(self[factory_id].uses_parts, part_id)
+						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+					end
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_o_specter then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_o_specter)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+					if self[factory_id].adds and self[factory_id].adds.wpn_fps_upg_o_specter then
+						self[factory_id].adds[part_id] = deep_clone(self[factory_id].adds.wpn_fps_upg_o_specter)
+						self[factory_id .. "_npc"].adds = deep_clone(self[factory_id].adds)
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_o_specter") then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
+				end
+			end
+			--]]
+
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_g_sniper") then
 				attachment_list = {
 					"wpn_fps_upg_g_m4_surgeon",

@@ -3463,17 +3463,17 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.x46.stats.max_damage = 9.001
 		self.melee_weapons.x46.stats.min_damage_effect = 1.5
 		self.melee_weapons.x46.stats.max_damage_effect = 3.0
-		self.melee_weapons.x46.stats.charge_time = 0.8
-		self.melee_weapons.x46.stats.range = 170
-		self.melee_weapons.x46.stats.concealment = 28
-		--German Steel--
-		self.melee_weapons.kampfmesser.stats.min_damage = 4.5
-		self.melee_weapons.kampfmesser.stats.max_damage = 9.001
-		self.melee_weapons.kampfmesser.stats.min_damage_effect = 1.5
-		self.melee_weapons.kampfmesser.stats.max_damage_effect = 3.0
-		self.melee_weapons.kampfmesser.stats.charge_time = 0.9
-		self.melee_weapons.kampfmesser.stats.range = 175
-		self.melee_weapons.kampfmesser.stats.concealment = 27
+		self.melee_weapons.x46.stats.charge_time = 0.9
+		self.melee_weapons.x46.stats.range = 175
+		self.melee_weapons.x46.stats.concealment = 27
+			--German Steel--
+			self.melee_weapons.kampfmesser.stats.min_damage = 4.5
+			self.melee_weapons.kampfmesser.stats.max_damage = 9.001
+			self.melee_weapons.kampfmesser.stats.min_damage_effect = 1.5
+			self.melee_weapons.kampfmesser.stats.max_damage_effect = 3.0
+			self.melee_weapons.kampfmesser.stats.charge_time = 0.9
+			self.melee_weapons.kampfmesser.stats.range = 175
+			self.melee_weapons.kampfmesser.stats.concealment = 27
 
 		--and anotha tanto--
 		self.melee_weapons.hauteur.stats.min_damage = 4.5

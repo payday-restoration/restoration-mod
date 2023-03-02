@@ -98,11 +98,11 @@ tweak_data.snp = {
 		ads_move_speed_mult = 0.6 --lowered to 0.3
 	}
 		tweak_data.s7 = {
-			hipfire_spread_mult = 0.25,
+			hipfire_spread_mult = 0.2,
 			hipfire_moving_spread_mult = 0.33334,
 		}
 	tweak_data.amr = {
-		hipfire_spread_mult = 2,
+		hipfire_spread_mult = 2.5,
 		ads_move_speed_mult = 0.5
 	}
 

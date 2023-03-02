@@ -96,7 +96,8 @@ return {
 	}
 },
 	[103643] = {
-		rules = {		
+		values = {
+			rules = {
 			enemy_names = {
 			"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 			"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -104,7 +105,8 @@ return {
 			"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
 			}
 		}
-	},
+	}
+},
 	[103644] = {
 		values = {
 			rules = {
@@ -117,5 +119,4 @@ return {
 		}
 	}
 }
-
 }

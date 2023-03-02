@@ -396,7 +396,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_pent"] = "오후 11:30, 샌프란시스코 - 유후 왕의 펜트하우스",
 		["restoration_level_data_ranc"] = "오후 6:24, 텍사스 - 내륙 목장",
 		["restoration_level_data_trai"] = "오후 7:40, 포트 워스 - 달튼 기차역",
-		["restoration_level_data_corp"] = "8:35 PM, Dallas - SERA R&D Facility",
+		["restoration_level_data_corp"] = "오후 8:35, 댈러스 - SERA 연구개발 시설",
 		["restoration_level_data_wetwork"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_junk"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_holly"] = "오후 5:00, 로스앤젤레스 - 루카스 맨션",

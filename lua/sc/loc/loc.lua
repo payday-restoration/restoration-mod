@@ -3104,7 +3104,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills using #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## grants them a #{skill_color}#50%## damage increase for #{skill_color}#2## seconds.\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and lasts an additional #{skill_color}#6## seconds.\n\n#{risk}#NOTE: Skill must still be activated using a## #{skill_color}#Shotgun, Flamethrower or OVE9000 Saw## #{risk}#and the damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#50%## faster",
+				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills using #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## grants them a #{skill_color}#50%## damage increase for #{skill_color}#2## seconds.\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and lasts an additional #{skill_color}#6## seconds.\n\n#{risk}#NOTE: Skill must still be activated using a## #{skill_color}#Shotgun, Flamethrower or OVE9000 Saw## #{risk}#and the damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#50%## faster.",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--

@@ -14560,7 +14560,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.always_play_anims = true
 		self.musket.upgrade_blocks = nil
 		self.musket.has_description = true
-		self.musket.desc_id = "bm_heavy_ap_weapon_sc_desc"
+		self.musket.desc_id = "bm_heavy_ap_no_mult_weapon_sc_desc"
 		self.musket.CLIP_AMMO_MAX = 1
 		self.musket.AMMO_MAX = 20
 		self.musket.fire_mode_data.fire_rate = 1.5

@@ -1802,8 +1802,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 1.5},
-		{50, 3}
+		{ 0, 2},
+		{50, 4}
 	}
 	
 	--Yakuza--
@@ -1912,7 +1912,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Hacker
 	self.values.player.pocket_ecm_jammer_base = {
 		{
-			cooldown_drain = 2,
+			cooldown_drain = 2.5,
 			duration = 10,
 			affects_cameras = true,
 			affects_pagers = true,

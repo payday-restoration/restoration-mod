@@ -1515,7 +1515,7 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		if self:get_real_health() < real_max_health then
 			--No need to do health nonsense twice.
 			self:restore_health(managers.player:health_regen() * base_max_health + managers.player:fixed_health_regen(), true)
-			self._health_regen_update_timer = 4
+			self._health_regen_update_timer = 5
 		end
 	end
 

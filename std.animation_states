@@ -526,4 +526,14 @@
 			<attr name="redirect" value="std/fatal/to_dead"/>
 		</target>
 	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state/>
+			<to name="fatal"/>
+		</search>
+		<target mode="attributes" multiple="true">
+			<attr name="redirect" value="std/fatal/enter"/>
+		</target>
+	</tweak>
 </tweaks>

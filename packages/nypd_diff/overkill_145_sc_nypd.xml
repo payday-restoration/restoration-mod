@@ -174,7 +174,7 @@
 	<!--AMCAR-->	
 	<unit				path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
 	
-	<!--swat 2-->
+	<!--swat 1-->
     <unit				path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1_husk" load="true"/>	
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" />	
@@ -188,7 +188,11 @@
     <unit				path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_husk" load="true"/>	
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />
+
+	<!--swat 3-->
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3_husk" load="true"/>	
 	
 	<!--swat heavy 1-->
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4" load="true"/>
@@ -241,6 +245,7 @@
 	<object				path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2" />	
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2" />	
 	
+	<!--fbi swat 3-->
     <unit				path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>	
 	<model				path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	

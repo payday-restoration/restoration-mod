@@ -32,10 +32,6 @@
 			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
 				<file :name="civ_male_locke_escort_contour.material_config"/>
 			</group>
-			<group :name="pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/">
-				<file :name="ene_male_marshal_marksman_2.material_config"/>
-				<file :name="ene_male_marshal_marksman_2_contour.material_config"/>
-			</group>
 			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
 				<file :name="ene_sniper_3.unit"/>
 				<file :name="ene_sniper_3_husk.unit"/>

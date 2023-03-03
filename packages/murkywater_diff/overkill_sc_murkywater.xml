@@ -153,6 +153,10 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_contour" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_husk" force="false" load="true"/>
 	
+	<!--Murky SWAT M4-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3_husk" force="false" load="true"/>
+	
 	<!-- martinwater green beret -->
 	<unit_mat			path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="false" load="true"/>
 	<cooked_physics		path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="false"/>

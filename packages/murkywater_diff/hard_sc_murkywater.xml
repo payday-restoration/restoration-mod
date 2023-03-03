@@ -122,7 +122,7 @@
 	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_murky_swat_helmet/ene_acc_murky_swat_helmet" force="false" load="true"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_swat_helmet/ene_acc_murky_swat_helmet" force="false"/>
 
-	<!--Murky SWAT M4-->
+	<!--Murky SWAT MP5-->
 	<object				path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1" force="false"/>
@@ -139,6 +139,10 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_contour" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_husk" force="false" load="true"/>
+	
+	<!--Murky SWAT M4-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3_husk" force="false" load="true"/>
 	
 	<!-- martinwater green beret -->
 	<unit_mat			path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="false" load="true"/>
@@ -181,9 +185,6 @@
 	<!-- shield -->
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi_husk" force="false" load="true"/>
-	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
-	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
-	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 
 	<!--Murky FBI SWAT M4-->
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
@@ -200,6 +201,13 @@
 	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" force="false" load="true"/>	
+	
+	<!--Murky FBI SWAT UMP-->
+	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>
 	
 	<!--UMPSTER CAP-->	
 	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" load="true"/>

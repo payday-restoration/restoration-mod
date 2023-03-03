@@ -27,7 +27,7 @@ if ai_type == b then
     	--Federales FBI Shotgun
 		["units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--Federales FBI UMP (currently unused)
+		--Federales FBI UMP
 		["units/pd2_dlc_bex/characters/ene_swat_3/ene_swat_3"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Federales FBI Heavy Rifle
@@ -86,7 +86,7 @@ elseif ai_type == r then
 		--Reaper FBI Shotgun
 		["units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--Reaper FBI UMP (currently unused)
+		--Reaper FBI UMP
 		["units/pd2_mod_reapers/characters/ene_swat_3/ene_swat_3"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Reaper FBI Heavy Rifle
@@ -145,7 +145,7 @@ elseif ai_type == m then
 		--Murky FBI Shotgun
 		["units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--Murky FBI UMP (currently unused)
+		--Murky FBI UMP
 		["units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Murky FBI Heavy Rifle
@@ -202,7 +202,7 @@ elseif ai_type == m then
 		--Omnia FBI Shotgun
 		["units/pd2_mod_omnia/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_omnia/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--Omnia FBI UMP (currently unused)
+		--Omnia FBI UMP
 		["units/pd2_mod_omnia/characters/ene_swat_3/ene_swat_3"] = "units/pd2_mod_omnia/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Omnia FBI Heavy Rifle
@@ -261,7 +261,7 @@ elseif ai_type == z then
 		--Zombie FBI Shotgun
 		["units/pd2_mod_halloween/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--Zombie FBI UMP (currently unused)
+		--Zombie FBI UMP
 		["units/pd2_mod_halloween/characters/ene_swat_3/ene_swat_3"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Zombie FBI Heavy Rifle
@@ -328,7 +328,7 @@ elseif ai_type == ny then
 		--FBI Shotgun
 		["units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--FBI UMP (currently unused)
+		--FBI UMP
 		["units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--FBI Heavy Rifle
@@ -406,7 +406,7 @@ else
 		["units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
 		["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
-		--FBI UMP (currently unused)
+		--FBI UMP
 		["units/payday2/characters/ene_swat_3/ene_swat_3"] = "units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		["units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		

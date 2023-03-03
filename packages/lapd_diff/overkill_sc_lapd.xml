@@ -213,7 +213,11 @@
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
 	<model				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
 	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
-	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>	
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>
+
+	<!--LAPD swat m4-->
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3_husk" load="true"/>
 	
 	<!--swat shield 2-->
 	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"/>

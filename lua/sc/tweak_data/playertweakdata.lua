@@ -596,6 +596,31 @@ function PlayerTweakData:_init_aa12()
 	self.stances.aa12.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+-- G26
+local default_init_g26 = PlayerTweakData._init_g26
+function PlayerTweakData:_init_g26()
+	default_init_g26(self)
+	local pivot_shoulder_translation = Vector3(8.49051, 38.6474, -5.09399)
+	local pivot_shoulder_rotation = Rotation(0.0999949, -0.687702, 0.630304)
+	local pivot_head_translation = Vector3(0, 37, 0.4)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.g26.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.g26.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
+-- P08
+local default_init_breech = PlayerTweakData._init_breech
+function PlayerTweakData:_init_breech()
+	default_init_breech(self)
+	local pivot_shoulder_translation = Vector3(8.14622, 27.4494, -3.81421)
+	local pivot_shoulder_rotation = Rotation(0.160076, -0.075191, -0.10197)
+	local pivot_head_translation = Vector3(0, 33, -0.08)
+	local pivot_head_rotation = Rotation(0.025, 0.4, 0)
+	self.stances.breech.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.breech.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	
+end
+
 
 
 if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then

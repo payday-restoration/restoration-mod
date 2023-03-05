@@ -1926,7 +1926,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			translation = Vector3(-0.005, 1.6, -3.028)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp7 = {
-			translation = Vector3(0, 7.5, -2.82)
+			translation = Vector3(0.02, 7.5, -2.72)
 		}
 	
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp9 = {
@@ -2380,6 +2380,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			value = 1
 		}
 	self.parts.wpn_upg_o_marksmansight_rear.perks = {"scope"}
+	self.parts.wpn_upg_o_marksmansight_rear.stance_mod.wpn_fps_ass_aug = {
+		translation = Vector3(-0.02, 3, 0),
+		rotation = Rotation(-0.025, 0, 0)
+	}
+	self.parts.wpn_upg_o_marksmansight_rear_vanilla.stance_mod = deep_clone(self.parts.wpn_upg_o_marksmansight_rear.stance_mod)
 
 	--Angled Sight
 	self.parts.wpn_fps_upg_o_45iron.pcs = {}
@@ -11901,7 +11906,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	self.parts.wpn_fps_upg_ns_ass_filter.pcs = {}
 	self.parts.wpn_fps_upg_ns_ass_filter.supported = true
 	self.parts.wpn_fps_upg_ns_ass_filter.has_description = true
-	self.parts.wpn_fps_upg_ns_ass_filter.desc_id = "bm_wp_upg_suppressor"
+	self.parts.wpn_fps_upg_ns_ass_filter.desc_id = "bm_wp_upg_suppressor_warn"
 	self.parts.wpn_fps_upg_ns_ass_filter.stats = {
 		value = 0,
 		suppression = 12,
@@ -12805,7 +12810,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 	}
 	self.parts.wpn_fps_smg_polymer_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_polymer_ns_silencer.has_description = true
-	self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor_warn"
+	self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_smg_polymer_ns_silencer.stats = deep_clone(muzzle_device.supp_c_duo_stats)
 	self.parts.wpn_fps_smg_polymer_ns_silencer.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 	self.parts.wpn_fps_smg_polymer_ns_silencer.perks = {"silencer"}

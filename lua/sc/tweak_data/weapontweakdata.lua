@@ -15284,6 +15284,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m6d.timers = deep_clone(self.deagle.timers)
 	end
 
+	if self.alpha57_prim then --RJC9000 and PlayBONK's MW2022 AR57
+		self.alpha57_prim.recategorize = { "light_smg" }		
+		self.alpha57_prim.damage_type = "machine_gun"
+		self.alpha57_prim.kick = self.stat_info.kick_tables.vertical_kick
+		self.alpha57_prim.nato = true
+		self.alpha57_prim.tactical_reload = 1
+		self.alpha57_prim.FIRE_MODE = "auto"
+		self.alpha57_prim.CAN_TOGGLE_FIREMODE = true
+		self.alpha57_prim.BURST_FIRE = false
+		self.alpha57_prim.fire_mode_data.fire_rate = 0.0857142
+		self.alpha57_prim.CLIP_AMMO_MAX = 50
+		self.alpha57_prim.AMMO_MAX = 180
+		self.alpha57_prim.supported = true
+		self.alpha57_prim.ads_speed = 0.280
+		self.alpha57_prim.hs_mult = 1.33333
+		self.alpha57_prim.armor_piercing_chance = 0.8
+		self.alpha57_prim.can_shoot_through_enemy = false
+		self.alpha57_prim.can_shoot_through_shield = false
+		self.alpha57_prim.can_shoot_through_wall = false
+		self.alpha57_prim.damage_falloff = {
+			start_dist = 2200,
+			end_dist = 5600,
+			min_mult = 0.555555
+		}
+		self.alpha57_prim.stats = {
+			damage = 18,
+			spread = 77,
+			recoil = 85,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 24,
+			suppression = 12,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.alpha57_prim.stats_modifiers = nil
+		self.alpha57_prim.panic_suppression_chance = 0.05
+		self.alpha57_prim.timers.reload_exit_empty = 0.6
+		self.alpha57_prim.timers.reload_exit_not_empty = 0.9
+
+		self.alpha57.use_data.selection_index = 5
+	end
+
 	if self.nova4 then --RJC9000 and Synd1cate's Infinite Warfare NV4
 		self.nova4.categories = { "assault_rifle" }
 		self.nova4.recategorize = { "light_ar" }

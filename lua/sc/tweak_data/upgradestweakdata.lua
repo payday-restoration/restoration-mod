@@ -707,11 +707,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Body Expertise
 				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
-				self.automatic_kills_to_damage_reset_t = 1 --delay to reset time (seconds)
+				self.automatic_kills_to_damage_reset_t = 1.5 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
-						5, --stack limit
-						0.1 --dmg mult add
+						4, --stack limit
+						0.125 --dmg mult add
 					}
 				}
 				--Unused

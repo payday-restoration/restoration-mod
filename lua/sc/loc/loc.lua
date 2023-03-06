@@ -1474,6 +1474,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Kross Vertex
 		["bm_w_polymer"] = "Kross Vertex",
 		--CUSTOM SMGs
+			--AR57
+			["bm_w_alpha57_prim"] = "FSS Hurricane",
+			["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
 			--LWRC
 			["bm_w_smg45"] = "FT Striker .45",
 			["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
@@ -3076,7 +3079,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Body Expertise",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor; effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using a #{skill_color}#machine gun## on full-auto without releasing the trigger for more than #{skill_color}#1## second will grant it an additional #{skill_color}#10%## more damage; stacks up to #{skill_color}#5## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor; effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on full-auto without releasing the trigger for more than #{skill_color}#1.5## seconds will grant them an additional #{skill_color}#12.5%## more damage; stacks up to #{skill_color}#4## times.",
 
 
 		--[[   ENFORCER   ]]--

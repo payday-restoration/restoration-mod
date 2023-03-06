@@ -2101,7 +2101,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.028, 4.2, -0.149),
 				rotation = Rotation(-0.05, 0, -0.075)
 			}
-			
+
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.135),
 				rotation = Rotation(-0.11, 0 ,-0.7)
@@ -29273,7 +29273,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 2
 		}
 		self.parts.wpn_fps_ass_ar47_ns_hera_supp.custom_stats = {
-			ads_speed_mult = 1.075
+			ads_speed_mult = 1.075,
+			falloff_start_mult = 1.1,
+			falloff_end_mult = 1.1
 		}
 
 		self.parts.wpn_fps_upg_ar47_fg_m4.supported = true
@@ -29341,7 +29343,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	if self.parts.wpn_fps_smg_alpha57_barrel then --RJC9000 and PlayBONK's MW2022 AR57
 
-		self.parts.wpn_fps_smg_alpha57_barrel.adds = { "wpn_fps_smg_alpha57_flash_hider" }
 		self.parts.wpn_fps_smg_alpha57_barrel.stats = { value = 0 }
 		self.parts.wpn_fps_smg_alpha57_barrel.custom_stats = nil
 
@@ -29352,7 +29353,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_alpha57_stock.custom_stats = nil
 
 		self.parts.wpn_fps_smg_alpha57_barrel_long.supported = true
-		self.parts.wpn_fps_smg_alpha57_barrel_long.adds = { "wpn_fps_smg_alpha57_flash_hider" }
 		self.parts.wpn_fps_smg_alpha57_barrel_long.stats = deep_clone(barrels.long_b2_stats)
 		self.parts.wpn_fps_smg_alpha57_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
@@ -29362,22 +29362,163 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_alpha57_barrel_sil.stats = {
 			value = 3,
 			suppression = 12,
-			alert_size = -1
+			alert_size = -1,
+			spread = 1,
+			recoil = 4,
+			concealment = -3
 		}
-		self.parts.wpn_fps_smg_alpha57_barrel_sil.custom_stats = nil
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.custom_stats = {
+			falloff_start_mult = 1.075,
+			falloff_end_mult = 1.075,
+			ads_speed_mult = 1.075
+		}
 		self.parts.wpn_fps_smg_alpha57_barrel_sil.perks = {"silencer"}
-
-
-		for i, part_id in pairs(self.wpn_fps_smg_alpha57.uses_parts) do
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.override = {
+			wpn_fps_smg_alpha57_flash_hider = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		}
+		for i, part_id in pairs(self.parts.wpn_fps_smg_alpha57_barrel_sil.forbids) do
 			attachment_list = {
 				"wpn_fps_smg_alpha57_flash_hider"
 			}
 			for _, remove_id in ipairs(attachment_list) do
 				if part_id == remove_id then
-					self.wpn_fps_smg_alpha57.uses_parts[i] = "resmod_dummy"
+					self.parts.wpn_fps_smg_alpha57_barrel_sil.forbids[i] = "dummy"
 				end
 			end
 		end	
+
+		self.parts.wpn_fps_smg_alpha57_grip_steady.supported = true
+		self.parts.wpn_fps_smg_alpha57_grip_steady.has_description = false
+		self.parts.wpn_fps_smg_alpha57_grip_steady.stats = {
+			value = 0,
+			spread = 1,
+			concealment = -1
+		}
+		self.parts.wpn_fps_smg_alpha57_grip_steady.custom_stats = nil
+
+		self.parts.wpn_fps_smg_alpha57_grip_sniper.supported = true
+		self.parts.wpn_fps_smg_alpha57_grip_sniper.has_description = false
+		self.parts.wpn_fps_smg_alpha57_grip_sniper.stats = {
+			value = 0,
+			spread = 1,
+			recoil = 2,
+			concealment = -2
+		}
+		self.parts.wpn_fps_smg_alpha57_grip_sniper.custom_stats = nil
+
+		self.parts.wpn_fps_smg_alpha57_grip_ass.supported = true
+		self.parts.wpn_fps_smg_alpha57_grip_ass.has_description = false
+		self.parts.wpn_fps_smg_alpha57_grip_ass.stats = {
+			value = 0,
+			spread = -1,
+			recoil = 2
+		}
+		self.parts.wpn_fps_smg_alpha57_grip_ass.custom_stats = nil
+
+		self.parts.wpn_fps_smg_alpha57_grip_tac.supported = true
+		self.parts.wpn_fps_smg_alpha57_grip_tac.has_description = false
+		self.parts.wpn_fps_smg_alpha57_grip_tac.stats = {
+			value = 0,
+			recoil = -2,
+			concealment = 1
+		}
+
+		self.parts.wpn_fps_smg_alpha57_grip_tac.custom_stats = { ads_speed_mult = 0.975 }
+
+		self.parts.wpn_fps_smg_alpha57_grip_skeleton.supported = true
+		self.parts.wpn_fps_smg_alpha57_grip_skeleton.has_description = false
+		self.parts.wpn_fps_smg_alpha57_grip_skeleton.stats = {
+			value = 0,
+			recoil = -4,
+			concealment = 2
+		}
+		self.parts.wpn_fps_smg_alpha57_grip_skeleton.custom_stats = { ads_speed_mult = 0.95 }
+
+		self.parts.wpn_fps_smg_alpha57_stock_light.supported = true
+		self.parts.wpn_fps_smg_alpha57_stock_light.stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
+		self.parts.wpn_fps_smg_alpha57_stock_light.stats.value = 0
+		self.parts.wpn_fps_smg_alpha57_stock_light.custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
+
+		self.parts.wpn_fps_smg_alpha57_stock_mike4.supported = true
+		self.parts.wpn_fps_smg_alpha57_stock_mike4.stats = deep_clone(stocks.folder_to_adj_rec_stats)
+		self.parts.wpn_fps_smg_alpha57_stock_mike4.stats.value = 0
+		self.parts.wpn_fps_smg_alpha57_stock_mike4.custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+
+		self.parts.wpn_fps_smg_alpha57_stock_no_mike4.supported = true
+		self.parts.wpn_fps_smg_alpha57_stock_no_mike4.stats = deep_clone(stocks.remove_folder_stats)
+		self.parts.wpn_fps_smg_alpha57_stock_no_mike4.stats.value = 0
+		self.parts.wpn_fps_smg_alpha57_stock_no_mike4.custom_stats = deep_clone(stocks.remove_folder_stats)
+
+		self.parts.wpn_fps_smg_alpha57_stock_wire.supported = true
+		self.parts.wpn_fps_smg_alpha57_stock_wire.stats = deep_clone(stocks.folder_to_nocheeks_stats)
+		self.parts.wpn_fps_smg_alpha57_stock_wire.stats.value = 0
+		self.parts.wpn_fps_smg_alpha57_stock_wire.custom_stats = deep_clone(stocks.folder_to_nocheeks_stats)
+
+		self.parts.wpn_fps_smg_alpha57_stock_no.supported = true
+		self.parts.wpn_fps_smg_alpha57_stock_no.stats = deep_clone(stocks.remove_folder_stats)
+		self.parts.wpn_fps_smg_alpha57_stock_no.stats.value = 0
+		self.parts.wpn_fps_smg_alpha57_stock_no.custom_stats = deep_clone(stocks.remove_folder_stats)
+		
+		self.parts.wpn_fps_smg_alpha57_stock_tac.supported = true
+		self.parts.wpn_fps_smg_alpha57_stock_tac.stats = {
+			value = 0,
+			spread = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_smg_alpha57_stock_tac.custom_stats = nil
+
+
+		self.wpn_fps_smg_alpha57_prim.override = self.wpn_fps_smg_alpha57_prim.override or {}
+
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_upg_m4_s_standard = {
+			stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_upg_m4_s_pts = {
+			stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_sho_sko12_stock = {
+			stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_upg_m4_s_crane = {
+			stats = deep_clone(stocks.folder_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_upg_m4_s_mk46 = {
+			stats = deep_clone(stocks.folder_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_snp_victor_s_mod0 = {
+			stats = deep_clone(stocks.folder_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_upg_m4_s_ubr = {
+			stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+			custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
+		}
+		self.wpn_fps_smg_alpha57_prim.override.wpn_fps_snp_tti_s_vltor = {
+			stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+			custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
+		}
+
+		for i, part_id in pairs(self.wpn_fps_smg_alpha57_prim.uses_parts) do
+			attachment_list = {
+				"nothing"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_smg_alpha57_prim.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end	
+
+		self.wpn_fps_smg_alpha57_prim_npc.override = deep_clone(self.wpn_fps_smg_alpha57_prim.override)
+		self.wpn_fps_smg_alpha57_prim_npc.uses_parts = deep_clone(self.wpn_fps_smg_alpha57_prim.uses_parts)
 		
 	end
 

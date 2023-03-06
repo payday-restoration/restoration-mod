@@ -15285,9 +15285,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.alpha57_prim then --RJC9000 and PlayBONK's MW2022 AR57
+		self.alpha57_prim.categories = {
+			"smg",
+			"pdw"
+		}	
 		self.alpha57_prim.recategorize = { "light_smg" }		
-		self.alpha57_prim.damage_type = "machine_gun"
-		self.alpha57_prim.kick = self.stat_info.kick_tables.vertical_kick
+		self.alpha57_prim.damage_type = "pdw"
+		self.alpha57_prim.kick = self.stat_info.kick_tables.even_recoil
 		self.alpha57_prim.nato = true
 		self.alpha57_prim.tactical_reload = 1
 		self.alpha57_prim.FIRE_MODE = "auto"

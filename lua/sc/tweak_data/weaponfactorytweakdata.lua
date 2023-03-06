@@ -2097,6 +2097,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.015, -1.2, -2.755)
 			}
 
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_alpha57_prim = {
+				translation = Vector3(-0.028, 4.2, -0.149),
+				rotation = Rotation(-0.05, 0, -0.075)
+			}
+			
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.135),
 				rotation = Rotation(-0.11, 0 ,-0.7)
@@ -29332,6 +29337,48 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_ass_ar47_vg_ergo.custom_stats = nil
 
+	end
+
+	if self.parts.wpn_fps_smg_alpha57_barrel then --RJC9000 and PlayBONK's MW2022 AR57
+
+		self.parts.wpn_fps_smg_alpha57_barrel.adds = { "wpn_fps_smg_alpha57_flash_hider" }
+		self.parts.wpn_fps_smg_alpha57_barrel.stats = { value = 0 }
+		self.parts.wpn_fps_smg_alpha57_barrel.custom_stats = nil
+
+		self.parts.wpn_fps_smg_alpha57_flash_hider.stats = { value = 0 }
+		self.parts.wpn_fps_smg_alpha57_flash_hider.custom_stats = nil
+
+		self.parts.wpn_fps_smg_alpha57_stock.stats = { value = 0 }
+		self.parts.wpn_fps_smg_alpha57_stock.custom_stats = nil
+
+		self.parts.wpn_fps_smg_alpha57_barrel_long.supported = true
+		self.parts.wpn_fps_smg_alpha57_barrel_long.adds = { "wpn_fps_smg_alpha57_flash_hider" }
+		self.parts.wpn_fps_smg_alpha57_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_smg_alpha57_barrel_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.supported = true
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.has_description = true
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.stats = {
+			value = 3,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.custom_stats = nil
+		self.parts.wpn_fps_smg_alpha57_barrel_sil.perks = {"silencer"}
+
+
+		for i, part_id in pairs(self.wpn_fps_smg_alpha57.uses_parts) do
+			attachment_list = {
+				"wpn_fps_smg_alpha57_flash_hider"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_smg_alpha57.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end	
+		
 	end
 
 --Resmod Custom Weapon stuff

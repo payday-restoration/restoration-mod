@@ -15291,6 +15291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}	
 		self.alpha57_prim.recategorize = { "light_smg" }		
 		self.alpha57_prim.damage_type = "pdw"
+		self.alpha57_prim.has_description = true
 		self.alpha57_prim.kick = self.stat_info.kick_tables.even_recoil
 		self.alpha57_prim.nato = true
 		self.alpha57_prim.tactical_reload = 1

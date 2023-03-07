@@ -442,7 +442,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
       ["restoration_level_data_pent"] = "夜晚11:30, 旧金山 - 渔夫王的顶楼",
 	  ["restoration_level_data_ranc"] = "傍晚6:24, 德克萨斯 - 米德兰牧场",
 	  ["restoration_level_data_trai"] = "傍晚7:40, 沃斯堡 - 道尔顿庭院",
-	  ["restoration_level_data_corp"] = "8:35 PM, Dallas - SERA R&D Facility",
+	  ["restoration_level_data_corp"] = "傍晚8:35, 达拉斯 - SERA研究所",
       ["restoration_level_data_wetwork"] = "秘密的时间, 秘密的地点",
       ["restoration_level_data_junk"] = "秘密的时间, 秘密的地点",
       ["restoration_level_data_holly"] = "下午5:00 , 洛杉矶-卢卡斯的庄园",
@@ -497,7 +497,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_asset_wet_boat_desc"] = "购买一个额外的运包与撤离快艇",
 
 		["bm_msk_canada"] = "冰球炼狱",
-		["bm_msk_canada_desc"] = "不要留下任何东西——即使大军压境了也不行！当你对此有所追求的时候，你必须为之而战。（即便条子的进攻如温压炸药一般势不可挡）",
+		["bm_msk_canada_desc"] = "不要留下任何东西——即使大军压境了也不行！当你对此有所追求的时候，你必须为之而战。（即便条子的进攻如铝热炸弹一般势不可挡）",
 		["bm_msk_jsr"] = "涂鸦女士",
 		["bm_msk_jsr_desc"] = "由一位真正的艺术家制作。清理涂鸦就像烧掉一本书，对吧？\n\n艺术就是艺术，尊重它。",
 		["bm_msk_jsrf"] = "涂鸦先生",
@@ -1195,7 +1195,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL改装套件",
-		["bm_wp_upg_i_b93o_desc"] = "在93R改装基础上增加了全自动模式，代价是后坐力的进一步增大。",
+		["bm_wp_upg_i_b93o_desc"] = "在93R改装基础上增加了全自动射击模式，代价是后坐力的进一步增大。",
 
 		--2006M Hailstorm
 		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm改装套件",
@@ -1208,7 +1208,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--M32 MK32 Kit
 		["bm_wp_upg_i_ghosts_mk32"] = "MK32改装套件",
-		["bm_wp_upg_i_ghosts_mk32_desc"] = "一个来自特遣部队：鬼魂的原型武器套件。\n\n启用并锁定武器为二连发模式。",
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "一个来自特遣部队：鬼魂的原型武器套件。\n\n启用并锁定武器为二连发速射模式。",
 
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "使弹丸散布面呈横向扩散，而非缩小散布。",
@@ -1246,6 +1246,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_ns_ass_smg_stubby"] = "短粗枪火消除器",
 		["bm_wp_upg_flash_hider"] = "#{skill_color}#消除枪口火焰##并#{risk}#降低敌人在被你瞄准时进行躲避的概率##。",
 		["bm_wp_upg_suppressor"] = "使你的武器#{skill_color}#消音##并#{risk}#降低敌人在被你瞄准时进行躲避的概率##。",
+		["bm_wp_upg_suppressor_warn"] = "使你的武器#{skill_color}#消音##并#{risk}#降低敌人在被你瞄准时进行躲避的概率##。\n\n#{important_1}#可能会阻挡瞄具的视野##",
 
 		["bm_wp_upg_vintage_sc"] = "复古弹匣",
 		["bm_wp_upg_mil_sc"] = "军标弹匣",
@@ -1527,6 +1528,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_erma_sc_desc"] = "一把在二战期间广泛应用于步兵的相当可靠的冲锋枪，别把弹夹当握把咯。",
 
 		--CUSTOM SMGs
+			--AR57
+			["bm_w_alpha57_prim"] = "FSS飓风冲锋枪",  --tra
+			["bm_w_alpha57_prim_desc"] = "FSS飓风以有效射程和停止力的牺牲为代价换取了高强的弹容量和稳定性。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头可额外造成#{skill_color}#33%##的伤害。",
 			--LWRC
 			["bm_w_smg45"] = "FT Striker .45冲锋枪",
 			["bm_w_smg45_desc"] = "\"Jackal\" AMP-45冲锋枪的美式复制品。",
@@ -1608,6 +1612,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_s_fixed"] = "CAR 固定枪托",
 		--AK5
 		["bm_ak5_sc_desc"] = "因各大银行劫案和有关它的子弹尺寸这点迷惑了那些不了解的人而出名的全用途步枪。",
+		["fnc_burst_desc"] = "添加#{skill_color}#三连发速射模式##。",
 		--Union 5.56
 		["bm_corgi_sc_desc"] = "尽管声名远扬，这把小无托也不适合远航。",	
 		--UAR
@@ -1615,7 +1620,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_aug_sc_desc"] = "经典无托式步枪。非常适合用来打坏蛋。",
 		["bm_wp_upg_b_hbar"] = "重型枪管",	
 		--AK17
-		["bm_flint_sc_desc"] = "经典AK的现代理解版。因其强力的二连发开火模式一度被怀疑其ak身份。",	
+		["bm_flint_sc_desc"] = "经典AK的现代理解版。因其强力的二连发速射模式一度被怀疑其ak身份。",	
 		--AK 5.45
 		["bm_w_ak74"] = "AK 5.45步枪",
 		["bm_ak74_sc_desc"] = "和它那些打7.62子弹的集美不同，这把枪在致命性上毫不逊色。",
@@ -1686,16 +1691,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hk21_sc_desc"] = "Gewehr-3家族的大妹。更高的射速带来了更大的压制力。",	
 		--M60
 		["bm_w_m60"] = "M60重机枪",
-		["bm_m60_sc_desc"] = "因为对子弹十分饥渴并且极其笨重，所以有个绰号'小猪'。期待任何顺向子弹的人都会变成一口封闭的棺材。",
+		["bm_m60_sc_desc"] = "因为对子弹十分饥渴并且极其笨重，所以有个绰号'小猪'。期待任何顺向子弹的人都会变成一口封闭的棺材。\n\n#{skill_color}#这把武器具有更好的腰射表现##",
 		--Ksp 58
 		["bm_w_par"] = "KSP-58B重机枪",	
 		["bm_par_sc_desc"] = "相对KSP-90更重，通常架设在载具上的机枪弟妹。用机动性换来了更大的口径。",
 		--Buzzsaw/Mg42
 		["bm_w_mg42"] = "Buzzsaw-42重机枪",	
-		["bm_wolf_brigade_sc_desc"] = "\"我们不是人模狗样。\n我们是人中之狼。\"\n\n腰射时精准度极大降低且后坐力降低20%。",
+		["bm_wolf_brigade_sc_desc"] = "#{heat_warm_color}#我们不是人模狗样，\n我们是人中之狼。##\n\n#{skill_color}#这把武器具有更好的腰射表现##",
 		["bm_wp_mg42_b_vg38"] = "爆能科技 DLT-19抑制器", --Suppressed Barrel into Barrel  --checkout
 		["bm_wp_mg42_b_vg38_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能延迟: 2s\n充能速率: 9/s (过热时减半)\n过热惩罚: 4s",
-		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的射速降低到800RPM",
+		--["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟#{skill_color}#800##发",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B重机枪",
 		["bm_hk51b_sc_desc"] = "Brenner-21的售后版本，这把机枪缩小到了Compact-5的大小并且拥有更快的射速。",
@@ -1744,11 +1749,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。\n\n装有#{skill_color}#下挂榴弹发射器##，按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",	
 		--["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
 		["bm_w_xr2"] = "XR-2步枪",
-		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能#{skill_color}#提升射速##的独特#{skill_color}#三连发式爆发射击模式##。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+		["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能#{skill_color}#提升射速##的独特#{skill_color}#三连发速射模式##。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
 		["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
-		["bm_xr2_handle_01_sc_desc"] = "以#{important_1}#失去射速提高##为代价，将三连发射击模式改为#{skill_color}#全自动射击##模式。",
+		["bm_xr2_handle_01_sc_desc"] = "以#{important_1}#失去射速提高##为代价，将三连发速射模式改为#{skill_color}#连发模式##。",
 		["bm_wp_xr2_handle_02_sc"] = "快速开火枪闩",
-		["bm_xr2_handle_02_sc_desc"] = "以#{important_1}#提高后坐力##为代价将三连发射击模式的射速提升到#{skill_color}#950RPM##。\n\n三连发射击间隔时间和半自动射击射速不受影响。",
+		["bm_xr2_handle_02_sc_desc"] = "以#{important_1}#提高后坐力##为代价将三连发速射模式的射速提升到#{skill_color}#950RPM##。\n\n三连发射击间隔时间和半自动射击射速不受影响。",
 
 
 		--MSR
@@ -1835,10 +1840,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--M4/CAR-4
 		["bm_menu_sc_m4_desc"] = "可靠，紧凑，且致命。在现代部队广泛使用的5.56mm步枪。",
-
-		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "腰射后坐力降低#{skill_color}#25%##。",		
-		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟#{skill_color}#800##发",
 
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{heat_warm_color}#有史以来做的最好的手枪##。\n辅助射击能够以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",				
@@ -2046,14 +2047,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon categories--
 		["menu_pistol"] = "手枪",
-		["menu_pistol_single"] = "手枪",
 		["menu_akimbo_pistol"] = "双持手枪",
 		--
 		["menu_light_pis"] = "轻型手枪",
 		["menu_heavy_pis"] = "重型手枪",
 		
 		["menu_shotgun"] = "霰弹枪",
-		["menu_shotgun_single"] = "霰弹枪",
 		["menu_akimbo_shotgun"] = "双持霰弹枪",
 		--
 		["menu_light_shot"] = "全自动霰弹枪",
@@ -2061,20 +2060,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_break_shot"] = "重型霰弹枪",
 		
 		["menu_smg"] = "冲锋枪",
-		["menu_smg_single"] = "冲锋枪",
 		["menu_lmg"] = "机枪", --s
-		["menu_lmg_single"] = "机枪",
-		["menu_minigun"] = "冲锋枪", --s
-		["menu_minigun_single"] = "冲锋枪",
+		["menu_minigun"] = "加特林", --s
 		["menu_akimbo_smg"] = "双持冲锋枪",
 		--
 		["menu_light_smg"] = "轻型冲锋枪",
 		["menu_heavy_smg"] = "重型冲锋枪",
 		
 		["menu_assault_rifle"] = "突击步枪",
-		["menu_assault_rifle_single"] = "突击步枪",
 		["menu_snp"] = "狙击步枪",
-		["menu_snp_single"] = "狙击步枪",
 		["menu_akimbo_assault_rifle"] = "双持突击步枪",
 		--
 		["menu_light_ar"] = "轻型突击步枪",
@@ -2094,34 +2088,40 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_antim_snp"] = "反器材狙击步枪",
 
 		["menu_wpn_special"] = "特殊武器",
-		["menu_wpn_special_single"] = "特殊武器",
 
 		["menu_flamethrower"] = "火焰喷射器",
-		["menu_flamethrower_single"] = "火焰喷射器",
 
 		["menu_grenade_launcher"] = "火箭筒/榴弹",
-		["menu_grenade_launcher_single"] = "火箭筒/榴弹",
 
 		["menu_saw"] = "电锯",
-		["menu_saw_single"] = "电锯",
 
 		["menu_bow"] = "弓",
-		["menu_bow_single"] = "弓",
 		["menu_crossbow"] = "弩",
-		["menu_crossbow_single"] = "弩",
-
-		["menu_akimbo"] = "双持+",
 
 		["menu_unsupported"] = "未受支持",
 
 		["st_menu_value"] = "卖出可得：",
 
 		["st_menu_skill_use"] = "技能归属：",
+		["st_wpn_akimbo"] = "双持+",
+		["st_wpn_assault_rifle"] = "突击步枪",
+		["st_wpn_snp"] = "狙击步枪",
+		["st_wpn_pistol"] = "手枪",
+		["st_wpn_shotgun"] = "霰弹枪",
+		["st_wpn_smg"] = "冲锋枪",
+		["st_wpn_lmg"] = "机枪",
+		["st_wpn_minigun"] = "冲锋枪", --check
+		["st_wpn_crossbow"] = "弩",
+		["st_wpn_bow"] = "弓",
+		["st_wpn_saw"] = "电锯",
+		["st_wpn_grenade_launcher"] = "火箭筒/榴弹",
+		["st_wpn_wpn_special"] = "特殊武器",
+		["st_wpn_flamethrower"] = "喷火器",
 
 		["st_menu_firemode"] = "开火模式：", --tra consider
 		["st_menu_firemode_semi"] = "单发",
 		["st_menu_firemode_auto"] = "连发",
-		["st_menu_firemode_burst"] = "三连发",
+		["st_menu_firemode_burst"] = "速射",
 		["st_menu_firemode_volley"] = "齐射",
 
 		["menu_reticle_dmc_eotech"] = "TECopt 圆准星",
@@ -2289,8 +2289,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "金钱奖励加成",
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "你和你的队友获得5%的额外金钱奖励。",
 
-		["bm_wp_upg_i_singlefire_desc"] = "锁定你的武器为\"单发模式\"",
-		["bm_wp_upg_i_autofire_desc"] = "锁定你的武器为\"连发模式\"",
+		["bm_wp_upg_i_singlefire_desc"] = "锁定你的武器为\"单发射击\"",
+		["bm_wp_upg_i_autofire_desc"] = "锁定你的武器为\"连发射击\"",
 
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para步枪",
@@ -2416,6 +2416,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--apex
 				["bm_w_fmg9"] = "平行手枪",
 				["bm_w_mg42"] = "L-STAR充能机枪",
+				--battalfield
+				["bm_w_m60"] = "M60重机枪（壕沟战）",
+				["bm_w_mg42"] = "Buzzsaw-42重机枪（壕沟战）",	
 				--overwatch
 				["bm_w_peacemaker"] = "维和者",
 				["bm_ap_weapon_peacemaker_sc_desc"] = "“#{heat_warm_color}#正义可不会伸张自己##”\n\n辅助射击能够像#{heat_warm_color}#卡西迪##一样以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",
@@ -2513,9 +2516,7 @@ elseif ai_type == o then
 	end)
 end
 
-local ModPath_Chin = ModPath
-
- if _G.HopLib then
+if _G.HopLib then
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 	local lapd = tweak_data.levels.ai_groups.lapd
@@ -2526,41 +2527,41 @@ local ModPath_Chin = ModPath
 	local breins = tweak_data.levels.ai_groups.zombie
 	local oom = tweak_data.levels.ai_groups.omnia
 
-	Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/hoplibkillfeedcompat.json")
+	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
 	end)
 
 	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_murkywetew", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/murkywetew.json")
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
 	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/lapd.json")
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
 		end)	
 	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/mex.json")		
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
 		end)
 	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/akan.json")		
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
 		end)
 	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/nypd.json")		
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
 		end)
 	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/fbi.json")		
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
 		end)
 	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/breins.json")		
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
 		end)
 	elseif ai_type == oom then
-		Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_oom", function(loc)
-			loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/omnia.json")	
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_oom", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/omnia.json")	
 		end)	
 	end
  end
@@ -2589,8 +2590,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。手雷箱只能被使用#{skill_color}#三次##。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n手雷箱是一种隐蔽性补给品，通常被军队或雇佣兵用来捞薯条。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
 		["bm_equipment_armor_kit_desc_short"] = "要使用手雷箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#投掷物##。手雷箱只能被使用#{skill_color}#三次##。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能#{skill_color}#补满##你的投掷物。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
 		--Ordnance Bag
-		["bm_equipment_grenade_crate_desc"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to replenish #{skill_color}#25%## of a weapon's ammo reserves and give you #{skill_color}#1## throwable.\n\nIt can only be used #{skill_color}#4## times; you can see how many uses are left by looking at the bag.\n\nThe Ordnance Bag is a portable bag carried by combat operatives to transport explosives and other throwable weapons into a battle zone.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
-		["bm_equipment_grenade_crate_desc_short"] = "To use the Ordnance Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to replenish #{skill_color}#25%## of a weapon's ammo reserves and give you #{skill_color}#1## throwable.\n\nIt can only be used #{skill_color}#4## times; you can see how many uses are left by looking at the bag.\n\n#{important_1}#NOTE: CANNOT BE USED TO RESTORE REGENERATING OR COOLDOWN-BASED THROWABLES.##",
+		["bm_equipment_grenade_crate_desc"] = "要使用军需包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。军需包一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#弹药#和##{risk}#投掷物##。军需包只能被使用#{skill_color}#三次##。\n\n你可以通过观察军需包来判断剩余使用次数。\n\n每使用一次就能补充#{skill_color}#25%##的弹药和#{skill_color}#1##颗投掷物。\n\n军需包是战斗人员随身携带的便携包，用于将投掷型武器运送到战场中。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
+		["bm_equipment_grenade_crate_desc_short"] = "要使用军需包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。军需包一旦被放下就不能被移动，但是你和你的队友可以按住#{skill_color}#$BTN_INTERACT##来补充#{risk}#弹药#和#{risk}#投掷物##。军需包只能被使用#{skill_color}#三次##。\n\n你可以通过观察军需包来判断剩余使用次数。\n\n每使用一次就能补充#{skill_color}#25%##的弹药和#{skill_color}#1##颗投掷物。\n\n#{important_1}#提示：你无法用此技能补充天赋/充能投掷物道具##",
 		--Trip Mine
 		["bm_equipment_trip_mine_desc"] = "要使用诡雷，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。诡雷一旦被安置就不能被移动，安置后靠近并对其按下#{skill_color}#$BTN_INTERACT##以在感应模式和爆炸模式之间切换。\n感应模式：潜入中，保安经过会被标记并发出声音；强袭中，特殊敌人经过会被标记并发出声音。\n爆炸模式：敌人经过时引爆。\n潜入中放下时会默认使用感应模式，强袭中放下时会默认使用爆炸模式。\n\n要使用聚能炸药，你需要先靠近可爆破的目标，并对准目标上的炸药标志按住#{skill_color}#$BTN_INTERACT##以部署一枚聚能炸药上去。聚能炸药一旦被安置就不能收回，当爆破目标所需的全部炸药被安置完毕后，聚能炸药就会在几秒后炸开目标。\n\n诡雷是一种基础陷阱，能将触碰镭射的敌人炸残或炸死。\n聚能炸药可用于炸开部分保险箱和门。\n两者都是战斗中的好帮手。",
 		["bm_equipment_trip_mine_desc_short"] = "要使用诡雷，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。诡雷一旦被安置就不能被移动，安置后靠近并对其按下#{skill_color}#$BTN_INTERACT##以在感应模式和爆炸模式之间切换。\n要使用聚能炸药，你需要先靠近可爆破的目标，并对准目标上的炸药标志按住#{skill_color}#$BTN_INTERACT##以部署。聚能炸药一旦被安置就不能收回，当所有炸药被安置完毕后，聚能炸药就会在几秒后炸开目标。",
@@ -2599,14 +2600,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_ammo_bag_desc_short"] = "要使用弹药包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你和你的队友都可以按住#{skill_color}#$BTN_INTERACT##与其互动补充#{risk}#弹药##。\n\n它可以被用于完全补充一把没子弹的武器#{skill_color}#$deployable_uses##次，你可以通过观察弹药包中剩余的弹匣数量来判断弹药包余量。",
 		--ECM Jammer
 		["bm_equipment_ecm_jammer"] = "ECM电子干扰器",
-		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒，期间它会阻止手机报警、干扰摄像头及一些其它电子设备。\n\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.5##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。\n靠近并对ATM机、安全门等目标上的干扰器标志按住#{skill_color}#$BTN_INTERACT##可以打开目标或造成目标失效等的影响。\n\nECM干扰器可以用于干扰电子设备，让你更轻松地实现目标。但若你使用不当，它反而有可能拖延你的任务进程。",
-		["bm_equipment_ecm_jammer_desc_short"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒。\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.5##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。",
+		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒，期间它会阻止手机报警、干扰摄像头及一些其它电子设备。\n\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.2##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。\n靠近并对ATM机、安全门等目标上的干扰器标志按住#{skill_color}#$BTN_INTERACT##可以打开目标或造成目标失效等的影响。\n\nECM干扰器可以用于干扰电子设备，让你更轻松地实现目标。但若你使用不当，它反而有可能拖延你的任务进程。",
+		["bm_equipment_ecm_jammer_desc_short"] = "要使用ECM干扰器，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就不能被移动，并且它会立刻生效#{skill_color}#$deployable_uses##秒。\n你可以靠近并对其按下#{skill_color}#$BTN_INTERACT##以启用ECM干扰器的反馈功能，反馈开始时有#{skill_color}#100%##的几率使半径#{skill_color}#25##米范围内的绝大部分敌人失去行动能力，随后每#{skill_color}#1.2##秒都有#{skill_color}#60%##的几率眩晕范围内的敌人。反馈持续#{skill_color}#$deployable_uses##秒且可以在#{skill_color}#4##分钟的充能后重新使用。",
 		--FAQ U
 		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{stats_positive}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。\n\n急救包在紧急情况下用于快速急救。",
 		["bm_equipment_first_aid_kit_desc_short"] = "要使用急救包，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并瞬间回复#{stats_positive}#150##点#{risk}#血量##。急救包只能使用#{skill_color}#一次##。",
 		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#4##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
-		["bm_equipment_doctor_bag_desc_short"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#4##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。",
+		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#5##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
+		["bm_equipment_doctor_bag_desc_short"] = "要使用医疗箱，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。一旦部署完毕就无法移动，你或你的队友都可以按住#{skill_color}#$BTN_INTERACT##使用并立即回复血量上限#{stats_positive}#20%##的#{risk}#血量##，然后在#{skill_color}#3##分钟内每#{skill_color}#5##秒回复血量上限#{stats_positive}#4%##的#{risk}#血量##。医疗箱可以使用#{skill_color}#$deployable_uses##次，你可以通过观察医疗箱判断剩余使用次数。",
 		--Sentry
 		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。部署哨戒机枪将用掉你备弹上限#{skill_color}#$deployable_uses##的弹药。\n哨戒机枪在承受过多伤害后会损坏，此时你可以通过靠近对其按住#{skill_color}#$BTN_INTERACT##使其进入自动维修模式并在#{skill_color}#1##分钟的修理后重新运作。若未损坏，则靠近按住#{skill_color}#$BTN_INTERACT##会捡起哨戒机枪，这会返还它的剩余弹药并使其恢复到完好的状态。\n若掌握了“塔防机枪”技能，则在未靠近并目视机枪时按下#{skill_color}#$BTN_INTERACT##可以切换哨戒机枪使用的弹种。\n哨戒机枪可以用于#{skill_color}#恐吓平民##，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
 		["bm_equipment_sentry_gun_desc_short"] = "要使用哨戒机枪，你需要按住#{skill_color}#$BTN_USE_ITEM##将其部署下来。部署哨戒机枪将用掉你备弹上限#{skill_color}#$deployable_uses##的弹药。\n哨戒机枪在承受过多伤害后会损坏，此时你可以通过靠近对其按住#{skill_color}#$BTN_INTERACT##使其进入自动维修模式并在#{skill_color}#1##分钟的修理后重新运作。捡起哨戒机枪会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于#{skill_color}#恐吓平民##。",
@@ -2619,6 +2620,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["hud_int_hold_take_pardons"] = "按下 $BTN_INTERACT 拿走特赦令",
 		["debug_interact_gage_assignment_take"] = "按下 $BTN_INTERACT 捡起盖奇包裹",
+
+		["hint_ability_no_grenade_pickup"] = "你无法从中拾取天赋道具",
+		["hint_full_grenades"] = "你的投掷物已满。",
+		["debug_interact_ordnance_bag_take_grenades"] = "按住 $BTN_INTERACT 补充一颗投掷物和一些弹药",
 
 		["far_repair_sentry_macro"] = "哨戒机枪严重受损，需要维修。",
 		["fixing_sentry_macro"] = "维修进度: $AMMO_LEFT",
@@ -2739,7 +2744,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_11"] = "\"赌徒\"——一个以团队为中心的辅助天赋，你捡弹时可以使你和你的队友获得少量的血量和弹药，与捡弹技能相匹配。由于恢复MOD下非玩家击杀的敌人不一定会掉落弹药，赌徒的益处有了进一步的提升。",	
 		["loading_equip_skills_res_12"] = "\"瘾君子\"——一个以团队为中心的辅助天赋，你持续杀敌时可以为你和你的队友提供减伤效果，与提高伤害和伤害减免的技能相匹配。",	
 		["loading_equip_skills_res_13"] = "黑客的便携式ECM有着强大的控场能力，并能为队友提供一定的治疗能力，但冷却时间较长。黑客在潜入和强攻均有良效。",	
-		["loading_equip_skills_res_14"] = "\"窃贼\"——一个专为潜入而生的天赋，在强攻下比其它大多数天赋都要弱。",	--fix
+		["loading_equip_skills_res_14"] = "\"窃贼\"——一个强攻中需要把头低下的天赋，潜入下它能提供可观的蹲伏移速加成。",
 		["loading_equip_skills_res_15"] = "\"首脑\"——一个兼顾多方面的天赋，它的注射器既可以用于保证自己的生存能力，在重火力中生存；又可以吸引火力，为队友迎来喘息的机会。",	
 		["loading_equip_skills_res_16"] = "\"双人组\"——一个以团队之间相互配合为核心的天赋，只要你和你标记的队友都能保证持续的输出杀敌，你们就能共同获得大量的治疗。",	
 		["loading_equip_skills_res_17"] = "穿过盾牌的子弹伤害减半。",	
@@ -2855,9 +2860,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["MutatorJungleInferno_desc"] = "所有敌人使用喷火器。",
 		["MutatorJungleInferno_longdesc"] = "所有非地图脚本生成的敌人都将使用喷火器。\n\n狙击手和盾兵依然会使用默认武器。",
 
-		["mutator_minidozers"] = "半自动喷子熊",
-		["mutator_minidozers_desc"] = "在任意难度下生成半自动喷子熊。",
-		["mutator_minidozers_longdesc"] = "每当有一只黑熊生成时，这只熊都有50%的几率被替换为一只手持M1014的熊。\n\n提示：如果启用了\"医疗熊\"的突变，则黑熊只有33.3%的几率被替换为手持M1014的熊。",
+		["mutator_minidozers"] = "手雷熊",
+		["mutator_minidozers_desc"] = "在任意难度下生成手雷熊。",
+		["mutator_minidozers_longdesc"] = "每当有一只黑熊生成时，这只熊都有50%的几率被替换为一只手持M1014的手雷熊。\n\n提示：如果启用了\"医疗熊\"的突变，则黑熊只有33.3%的几率被替换为手雷熊。",
 
 		["mutator_fatroll"] = "死亡翻滚",
 		["mutator_fatroll_desc"] = "取消无敌帧。",
@@ -3071,7 +3076,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "人体解析",
-			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。\n\n其余所有不能穿甲的武器都能#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。\n\n对于本身可以穿甲的武器，其穿透护甲造成的伤害百分比增加#{skill_color}#50%##，最多增加至#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n使用连发模式的冲锋枪和轻重机枪在连续射击时，每击杀一名敌人就增加#{skill_color}#10%##的伤害，最多增加#{skill_color}#50%##，停止射击#{skill_color}#1##秒后失效。",
+			["menu_body_expertise_beta_desc_sc"] = "掌握: #{risk}#$basic##\n冲锋枪和轻重机枪可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。\n\n其余所有不能穿甲的武器都能#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。\n\n对于本身可以穿甲的武器，其穿透护甲造成的伤害百分比增加#{skill_color}#50%##，最多增加至#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n使用#{skill_color}#连发射击##的冲锋枪和轻重机枪在连续射击时，每击杀一名敌人就增加这些武器#{skill_color}#12.5%##的伤害，最多增加#{skill_color}#50%##，停止射击#{skill_color}#1.5##秒后失效。",
 
 			--}
 		--}
@@ -3363,7 +3368,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "神枪手",
-		["menu_discipline_desc_sc"] = "掌握: #{risk}#$basic##\n突击步枪和狙击步枪的稳定性增加#{skill_color}#2##\n\n专精: #{risk}#$pro##\n完成爆头击杀将在#{skill_color}#10##秒内使你的开火速率增加#{skill_color}#20%##，该效果只能由#{skill_color}#单发模式##和#{skill_color}#三连发模式##的突击步枪和狙击步枪触发",
+		["menu_discipline_desc_sc"] = "掌握: #{risk}#$basic##\n突击步枪和狙击步枪的稳定性增加#{skill_color}#2##\n\n专精: #{risk}#$pro##\n完成爆头击杀将在#{skill_color}#10##秒内使你的开火速率增加#{skill_color}#20%##，该效果只能由#{skill_color}#单发射击##和#{skill_color}#速射模式##的突击步枪和狙击步枪触发",
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "基尔默",
@@ -3371,11 +3376,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "脑\"洞\"大开",
-		["menu_kilmer_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头的同时，被爆头的敌人半径#{skill_color}#4##米内最近的敌人会受到你刚刚爆头伤害#{skill_color}#70%##的擦伤，该效果只能由#{skill_color}#单发模式##和#{skill_color}#三连发模式##的突击步枪和狙击步枪触发\n\n被爆头的敌人每离你#{skill_color}#8##米远，就会有一个额外的警察受到该擦伤效果，最多同时擦伤#{skill_color}#3##名敌人\n\n专精: #{risk}#$pro##\n使用突击步枪或狙击步枪爆头产生的伤害#{skill_color}#不受距离衰减影响##\n\n可被擦伤的距离增加#{skill_color}#1##米\n\n被爆头的敌人每离你#{skill_color}#8##米远，擦伤的伤害就额外增加#{skill_color}#10%##，最多额外增加#{skill_color}#100%##",
+		["menu_kilmer_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头的同时，被爆头的敌人半径#{skill_color}#4##米内最近的敌人会受到你刚刚爆头伤害#{skill_color}#70%##的擦伤，该效果只能由#{skill_color}#单发射击##和#{skill_color}#速射模式##的突击步枪和狙击步枪触发\n\n被爆头的敌人每离你#{skill_color}#8##米远，就会有一个额外的警察受到该擦伤效果，最多同时擦伤#{skill_color}#3##名敌人\n\n专精: #{risk}#$pro##\n使用突击步枪或狙击步枪爆头产生的伤害#{skill_color}#不受距离衰减影响##\n\n可被擦伤的距离增加#{skill_color}#1##米\n\n被爆头的敌人每离你#{skill_color}#8##米远，擦伤的伤害就额外增加#{skill_color}#10%##，最多额外增加#{skill_color}#100%##",
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "弹无虚发",
-		["menu_single_shot_ammo_return_desc_sc"] = "掌握: #{risk}#$basic##\n在#{skill_color}#8##秒内完成#{skill_color}#3##次爆头击杀会额外给予你武器总弹量#{skill_color}#3%##的子弹，最少可以获得#{skill_color}#1##发弹药。\n该效果只能由#{skill_color}#单发模式##和#{skill_color}#三连发模式##的突击步枪和狙击步枪触发。\n\n专精: #{risk}#$pro##\n现在只需要在#{skill_color}#12##秒内完成#{skill_color}#2##次爆头就能触发技能。", --，子弹会在你弹匣不满时#{skill_color}#直接加进弹匣中##
+		["menu_single_shot_ammo_return_desc_sc"] = "掌握: #{risk}#$basic##\n在#{skill_color}#8##秒内完成#{skill_color}#3##次爆头击杀会额外给予你武器总弹量#{skill_color}#3%##的子弹，最少可以获得#{skill_color}#1##发弹药。\n该效果只能由#{skill_color}#单发射击##和#{skill_color}#速射模式##的突击步枪和狙击步枪触发。\n\n专精: #{risk}#$pro##\n现在只需要在#{skill_color}#12##秒内完成#{skill_color}#2##次爆头就能触发技能。", --，子弹会在你弹匣不满时#{skill_color}#直接加进弹匣中##
 
 		--Rifleman
 		["menu_rifleman_sc"] = "步枪精通",
@@ -3383,7 +3388,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Aggressive Reload
 		["menu_engineering_beta_sc"] = "迅猛装填",
-		["menu_engineering_beta_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头击杀会在#{skill_color}#10##秒内加快你#{skill_color}#25%##的换弹速度，该效果只能由#{skill_color}#单发模式##或#{skill_color}#三连发模式##的突击步枪和狙击步枪触发\n\n专精: #{risk}#$pro##\n换弹速度增益提升至#{skill_color}#50%##且可以由#{skill_color}#连发模式##的突击步枪和狙击步枪触发",					
+		["menu_engineering_beta_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头击杀会在#{skill_color}#10##秒内加快你#{skill_color}#25%##的换弹速度，该效果只能由#{skill_color}#单发射击##和#{skill_color}#速射模式##的突击步枪和狙击步枪触发\n\n专精: #{risk}#$pro##\n换弹速度增益提升至#{skill_color}#50%##且可以由#{skill_color}#连发射击##的突击步枪和狙击步枪触发",					
 			
 
 
@@ -3619,9 +3624,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Sweet liquor eases the pain--
 
 		["menu_deck19_1_desc_sc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的对##血量##的伤害中的##30%##不会立刻使你丢失血量，而是变成虚血在##8##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##150%##的血量。修士酒壶的冷却时间为##30##秒。\n\n你##50%##的##护甲量##将转变为##50%##的##血量##。",
-		["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##1.5##秒。",
+		["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##2##秒。",
 		["menu_deck19_5_desc_sc"] = "在##4##秒内没受到伤害将会立即使虚血变为实血(即触发酒壶的效果)。\n\n你回答对讲机所需的时间减少##25%##。",
-		["menu_deck19_7_desc_sc"] = "你的血量低于##50%##时，你每击杀一名敌人将减少修士酒壶的冷却时间##3##秒。",
+		["menu_deck19_7_desc_sc"] = "你的血量低于##50%##时，你每击杀一名敌人将减少修士酒壶的冷却时间##4##秒。",
 		["menu_deck19_9_desc_sc"] = "你倒地被救起后的剩余血量提高##25%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--it's not a war crime if they're not people--
@@ -3651,7 +3656,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Hacker--
 
-		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.5##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2##秒。",
+		["menu_deck21_1_desc_sc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.2##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2.5##秒。",
 		["menu_deck21_3_desc_sc"] = "你的闪避点数增加##5##。",
 		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##5##点血量。",
 		["menu_deck21_7_desc_sc"] = "你的护甲回复速率增加##10%##。\n\n你的闪避点数额外增加##5##。",
@@ -3751,7 +3756,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "解锁##电子烟##以供你使用。\n\n要使用电子烟，你需要看向一名没有视野遮挡的##18##米内的队友并按下使用投掷物的按键标记他。\n\n你和你标记的队友每击杀一名敌人都会为你回复##4##点血量，并且为你标记的队友回复##2##点血量。\n\n电子烟的持续时间为##11##秒，冷却时间为##80##秒。\n\n你回路的摄像头，失效的时间增加##20##秒。",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.5##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2##秒。",
+			["menu_deck21_mrwi_desc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.2##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2.5##秒。",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "解锁并装备##水蛭安瓿瓶##。\n\n对局中你可以使用投掷物按键来启用水蛭安瓶，启用时会直接恢复##5%##的总血量并且在生效期间取消你的全部护甲。\n\n与此同时你的血量以血上限的每##10%##来被分割成小格，每受任意一次伤害移除整个格。同时每击杀##3##名敌人回复一格且免伤##1##秒。\n\n水蛭安瓶能够持续##6##秒钟并且有##40##秒冷却。\n\n你打包尸体和与人质互动的速度加快##75%##。",
 

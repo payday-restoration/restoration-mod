@@ -48,7 +48,7 @@ local america_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"

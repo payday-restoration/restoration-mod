@@ -89,13 +89,53 @@ return {
             enemy = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 		}
 	},
-	--some murky replacers
+	--murky shotgunners
 	[103084] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		}
 	},
 	[103086] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101082] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101083] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101827] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101829] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101904] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101906] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101857] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101852] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		}

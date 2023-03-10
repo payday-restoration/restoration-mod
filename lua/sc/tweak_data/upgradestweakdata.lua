@@ -1543,7 +1543,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{0.8, 7}
 	}
 	self.max_melee_weapon_dmg_mul_stacks = 5
-	self.values.melee.stacking_hit_expire_t = {10}
+	self.values.melee.stacking_hit_expire_t = {
+		10,
+		5 --Copycat
+	}
 	self.values.melee.stacking_hit_damage_multiplier = {
 		0.08,
 		0.16
@@ -2147,9 +2150,13 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_8",
 			desc_id = "menu_deck8_mrwi_desc",
 			upgrades = {
+				"player_damage_dampener_close_contact_1",
 				"player_damage_dampener_close_contact_2",
+				"melee_stacking_hit_damage_multiplier_1",
+				"melee_stacking_hit_expire_t",
+				"melee_stacking_hit_expire_t_2",
 				"player_tape_loop_duration_2",
-				"player_passive_loot_drop_multiplier_1"	
+				"player_passive_loot_drop_multiplier_1"
 			}
 		},
 		{ --Sociopath
@@ -2158,6 +2165,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck9_mrwi_desc",
 			upgrades = {
 				"player_killshot_regen_armor_bonus",
+				"player_killshot_close_regen_armor_bonus",
 				"player_corpse_dispose_amount_2",
 				"player_passive_loot_drop_multiplier_1"	
 			}
@@ -3307,6 +3315,16 @@ function UpgradesTweakData:_player_definitions()
 			value = 2,
 			upgrade = "copr_activate_bonus_health_ratio",
 			category = "player"
+		}
+	}
+
+	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat
+		name_id = "menu_melee_stacking_hit_expire_t_2",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "stacking_hit_expire_t",
+			category = "melee"
 		}
 	}
 

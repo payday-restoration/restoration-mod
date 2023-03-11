@@ -30125,80 +30125,65 @@ if self.wpn_fps_smg_ak5s then
 			log("[ERROR] " .. custom_weapon_id .. " Missing stance_mod data for: " .. sight_id, stance_base_id)
 		end
 	end
-	
-	if SystemFS:exists("assets/mod_overrides/Subtle Weapon Improvements/main.xml") then
-		self.parts.wpn_fps_ass_m16_s_op.override = {
-			wpn_fps_ass_m16_s_op = {unit="units/mods/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_s_op_swi"},
-			wpn_fps_ass_m16_s_op_riser = {unit="units/mods/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_s_op_riser_swi"},
-			wpn_fps_ass_m16_s_op_rest = {unit="units/mods/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_s_op_rest_swi"}
-		}
-	
-	end
-	
-	if SystemFS:exists("assets/mod_overrides/Subtle Weapon Improvements/main.xml") then
-		self.parts.wpn_fps_smg_mp7_b_long.override = {
-			wpn_fps_smg_mp7_b_long = {unit="units/mods/weapons/wpn_fps_smg_mp7_pts/wpn_fps_smg_mp7_b_long_swi"}
-		}
-	end
-	
-	if SystemFS:exists("assets/mod_overrides/Subtle Weapon Improvements/main.xml") then
-		self.parts.wpn_fps_ass_g36_g_sniper.override = {
+
+	if SystemFS:exists("assets/mod_overrides/Weapon Texture Reworks/main.xml") then
+			self.parts.wpn_fps_ass_g36_g_sniper.override = {
 			wpn_fps_ass_g36_g_sniper_bit = {unit="units/mods/weapons/wpn_fps_ass_g36_pts/wpn_fps_ass_g36_g_sniper_bit_black"}
-		}
+			}
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/SCAR-H Improved - Black/units") then
-		self.parts.wpn_fps_ass_scar_m_extended.override = {
+			self.parts.wpn_fps_ass_scar_m_extended.override = {
 			wpn_fps_ass_scar_m_extended = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_m_extended_black"},
 			wpn_fps_ass_scar_m_extended_strap = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_m_extended_strap_black"}
-		}
+			}
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/SCAR-H Improved - Black/units") then
-		self.parts.wpn_fps_ass_scar_g_tan.override = {
+			self.parts.wpn_fps_ass_scar_g_tan.override = {
 			wpn_fps_ass_scar_g_tan = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_g_tan_2"},
-		}
+			}
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/Eagle Heavy Two Tone/units") then
-		self.parts.wpn_fps_ass_scar_m_extended.override = {
+			self.parts.wpn_fps_ass_scar_m_extended.override = {
 			wpn_fps_ass_scar_m_extended = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_m_extended_black"},
 			wpn_fps_ass_scar_m_extended_strap = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_m_extended_strap_black"}
-		}
+			}
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/Eagle Heavy Two Tone (Speedpull)/units") then
-		self.parts.wpn_fps_ass_scar_m_extended.override = {
+			self.parts.wpn_fps_ass_scar_m_extended.override = {
 			wpn_fps_ass_scar_m_extended = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_m_extended_black"},
 			wpn_fps_ass_scar_m_extended_strap = {unit="units/mods/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_m_extended_strap_black"}
-		}
+			}
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/AK5 Black/units") then
-		self.parts.wpn_fps_ass_ak5_s_pts.override = {
+			self.parts.wpn_fps_ass_ak5_s_pts.override = {
 			wpn_fps_ass_ak5_s_pts = {unit="units/mods/weapons/wpn_fps_ass_ak5_pts/wpn_fps_ass_ak5_s_pts_black"}
-		}
+			}
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/Extra Attachments Compilation+-/main.xml") then
-		self.parts.wpn_fps_vg_vmp_pod.pcs = nil
-		self.parts.wpn_fps_vg_vmp_cheems.pcs = nil
-		self.parts.wpn_fps_vg_vmp_vert.pcs = nil
+			self.parts.wpn_fps_vg_vmp_pod.pcs = nil
+			self.parts.wpn_fps_vg_vmp_cheems.pcs = nil
+			self.parts.wpn_fps_vg_vmp_vert.pcs = nil
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/Vertical grip attachment pack/main.xml") then
-		self.parts.wpn_fps_vg_vmp_stubby.pcs = nil
-		self.parts.wpn_fps_vg_vmp_medium.pcs = nil
-		self.parts.wpn_fps_vg_vmp_stable.pcs = nil
-		self.parts.wpn_fps_vg_vmp_pod.pcs = nil
-		self.parts.wpn_fps_vg_vmp_cheems.pcs = nil
-		self.parts.wpn_fps_vg_vmp_vert.pcs = nil
+			self.parts.wpn_fps_vg_vmp_stubby.pcs = nil
+			self.parts.wpn_fps_vg_vmp_medium.pcs = nil
+			self.parts.wpn_fps_vg_vmp_stable.pcs = nil
+			self.parts.wpn_fps_vg_vmp_pod.pcs = nil
+			self.parts.wpn_fps_vg_vmp_cheems.pcs = nil
+			self.parts.wpn_fps_vg_vmp_vert.pcs = nil
 	end
 	
 	if SystemFS:exists("assets/mod_overrides/Improved weapon modification/mod.txt") then
-		self.parts.wpn_fps_ass_ak_fg_waffle.pcs = nil
+			self.parts.wpn_fps_ass_ak_fg_waffle.pcs = nil
 	end
-	
+
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 		self.parts.wpn_fps_vg_vmp_stubby.pcs = nil
 		self.parts.wpn_fps_vg_vmp_medium.pcs = nil
@@ -30232,6 +30217,11 @@ if self.wpn_fps_smg_ak5s then
 	self.parts.wpn_fps_smg_thompson_barrel_short.override.wpn_fps_smg_thompson_fg_custom = {unit="units/mods/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fg_custom_short"}
 	
 	table.insert(self.parts.wpn_fps_ass_g36_s_sl8.forbids, "wpn_fps_ass_g36_g_sniper")
+
+	table.insert(self.parts.wpn_fps_m4_upg_fg_mk12.forbids, "wpn_fps_uupg_m4_fg_victorcar")
+
+	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_upg_ns_pis_putnik")
+
 	
 	self.parts.wpn_fps_pis_judge_body_raybull.animations = {
 		reload_not_empty = "reload_not_empty",

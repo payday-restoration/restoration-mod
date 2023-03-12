@@ -3484,13 +3484,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Infiltrator--
 		["menu_deck8_1_desc_sc"] = "When you are within ##12## meters of an enemy, you receive ##5%## less damage from enemies.",
 		["menu_deck8_3_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##5%## less damage from enemies.\n\nYou gain ##5## dodge points.",
-		["menu_deck8_5_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
-		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds, this effect can stack up to ##5## times.\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck8_5_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds or until you miss; stacks up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
+		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds or until you miss; stacks up to ##5## times.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##1## health every second for ##5## seconds, this effect can stack up to ##5## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
-		["menu_deck9_1_desc_sc"] = "When you are surrounded by three enemies or more within ##18## meters, you take ##5%## less damage from enemies.",
+		["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##18## meters, you take ##5%## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nYou gain ##5## dodge points.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis shares its cooldown with Tension (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##20## armor.\n\nThis shares its cooldown with Tension (Card 3).\n\nYour dodge is increased by an additional ##5## points.",

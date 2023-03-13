@@ -1859,7 +1859,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_disabled"] = "武器已被秋日队长禁用\n在劫案内使用将导致崩溃",
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "如果物品栏还有这把枪务必不要使用。\n\n目前依然没有平衡方式。",
 		["empty"] = "",
-		["missing_cap"] = "#{risk}#自定义附件###{important_1}#未安装##\n\n附件将使用该栏默认外观。",
+		["missing_cap"] = "#{risk}#自定义附件##-#{important_1}#未安装##\n\n附件将使用该栏默认外观。",
 		["bm_slamfire_generic_desc"] = "辅助射击允许#{skill_color}#快速连点以用3倍射速射击##，代价是#{important_1}#后坐力和子弹散射更大并且无法右键瞄准##。",
 		--["bm_lmg_generic_desc"] = "#{important_1}#腰射时大幅降低精准度##",
 		["bm_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
@@ -1879,7 +1879,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_xbow_sc_desc"] = "弩箭可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
 		["bm_xbow_exp_sc_desc"] = "弩箭在#{skill_color}#撞击时爆炸##。",
-		["bm_w_xbow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#1.5##米内所有敌人的弩箭。\n\n#{important_1}#弩箭的飞行速度降低，且无法爆头和回收####",
+		["bm_w_xbow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#1.5##米内所有敌人的弩箭。\n\n#{important_1}#弩箭的飞行速度降低，且无法爆头和回收##",
 		["bm_w_xbow_light_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
 		["bm_w_xbow_heavy_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
 
@@ -3108,7 +3108,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Overkill
 			["menu_overkill_sc"] = "疯狂杀戮",
-			["menu_overkill_desc_sc"] = "掌握: #{risk}#$basic##\n使用霰弹枪、火焰喷射器或OVE9000电锯完成杀敌会在#{skill_color}#2##秒内提高这些武器#{skill_color}#50%##的伤害。\n\n专精: #{risk}#$pro##\n加快霰弹枪、火焰喷射器和OVE9000电锯的切枪速度#{skill_color}#50%##。\n\n伤害加成的持续时间提高至#{skill_color}#8##秒且伤害加成可适用于所有武器。\n\n#{important_1}#提示：\n1.该效果不适用于火箭筒和榴弹发射器\n2.火焰喷射器的余火烧死敌人不能触发伤害加成\n3.专精后你仍需要使用霰弹枪、火焰发射器或OVE9000电锯完成杀敌触发伤害加成##",
+			["menu_overkill_desc_sc"] = "掌握: #{risk}#$basic##\n使用霰弹枪、火焰喷射器或OVE9000电锯完成杀敌会在#{skill_color}#2##秒内提高这些武器#{skill_color}#50%##的伤害。\n\n#{important_1}#提示：该伤害加成对爆炸弹药无效##\n\n专精: #{risk}#$pro##\n加快霰弹枪、火焰喷射器和OVE9000电锯的切枪速度#{skill_color}#50%##。\n\n伤害加成的持续时间提高至#{skill_color}#8##秒且伤害加成可适用于所有武器。\n\n#{important_1}#提示：\n1.该效果不适用于火箭筒和榴弹发射器\n2.火焰喷射器的余火烧死敌人不能触发伤害加成\n3.专精后你仍需要使用霰弹枪、火焰发射器或OVE9000电锯完成杀敌触发伤害加成##",
 
 			--}
 
@@ -3560,7 +3560,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["menu_deck8_1_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害减少##5%##。",
 		["menu_deck8_3_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害额外减少##5%##。\n你的闪避点数增加##5##。",
-		["menu_deck8_5_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害再额外减少##10%##。\n\n每次使用近战武器成功击中敌人都将在##10##秒内使你的近战武器伤害增加##8%##，该效果可以叠加且最多叠加##5##次。\n\n你回路的摄像头，失效的时间增加##20##秒。",
+		["menu_deck8_5_desc_sc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害再额外减少##10%##。\n\n每次使用近战武器成功击中敌人都将在##10##秒内使你的近战武器伤害增加##8%##，该效果可以叠加且最多叠加##5##次，打空失效。\n\n你回路的摄像头，失效的时间增加##20##秒。",
 		["menu_deck8_7_desc_sc"] = "近战武器击中敌人后，近战武器伤害加成额外增加##8%##。\n\n你的闪避点数额外增加##5##。",
 		["menu_deck8_9_desc_sc"] = "每次使用近战武器成功击中敌人都将在##5##秒内使你的血量每##1##秒回复##1##点，该效果可以叠加且最多叠加##5##次。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
@@ -3671,7 +3671,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_9_desc_sc"] = "倒地时启用水蛭安瓶能够立即起身直至生效结束。\n\n使用水蛭安瓶起身会增加额外的##30##秒冷却时间。\n\n受到伤害时为队友恢复的血量变为##2%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--CopyCat--
-		["menu_deck23_1_desc"] = "使用主武器时，击杀##10##名敌人会自动装填副武器，反之亦然。\n\n你武器切换速度增快##15%##。",
+		["menu_deck23_1_desc"] = "使用主武器时，击杀##10##名敌人会自动装填副武器，反之亦然。\n提示：主副武器杀敌会独立计算，但你切出另一把武器并换弹后杀敌计数就会重置\n\n你武器切换速度增快##15%##。",
 		["menu_deck23_1_short"] = "使用主武器时，击杀##10##名敌人会自动装填副武器，反之亦然。\n\n你武器切换速度增快##15%##。",
 		["menu_deck23_1_1_desc"] = "你的血量上限增加##7.5%##。",
 		["menu_deck23_1_1_short"] = "你的血量上限增加##7.5%##。",
@@ -3730,9 +3730,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "你的闪避点数额外增加##5##。\n\n蹲伏时，你的闪避条每秒增加闪避点数的##5%##。\n\n你蹲伏的移动速度加快##20%##。",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害减少##10%##。\n\n你回路的摄像头，失效的时间增加##20##秒。",
+			["menu_deck8_mrwi_desc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害减少##10%##。\n\n每次使用近战武器成功击中敌人都将在##5##秒内使你的近战武器伤害增加##8%##，该效果可以叠加且最多叠加##5##次，打空失效。\n\n你回路的摄像头，失效的时间增加##20##秒。",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n\n你初始携带的尸体袋数量增加##1##。",
+			["menu_deck9_mrwi_desc"] = "击杀一名敌人将为你回复护甲值，击杀的敌人若在你周围##18##米内，你回复##40##点护甲值，否则回复##20##点。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n\n你初始携带的尸体袋数量增加##1##。",
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你回答对讲机所需的时间减少##25%##。",
 			--Grinder

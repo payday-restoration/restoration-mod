@@ -3473,11 +3473,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
-		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##3 to 5## health.\n\nHealing has an ##8## second cooldown, but every ammo pack you pick up reduces it by ##1 to 3## seconds.",
+		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##3 to 5## health.\n\nHealing has an ##8## second cooldown but every ammo box you pick up reduces it by ##1 to 3## seconds.",
 		["menu_deck10_3_desc_sc"] = "When you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou gain ##5## dodge points.",
-		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo packs by an additional ##1## point.\n\nWhen you get healed from picking up ammo packs, your dodge meter is also filled up by ##100%## of your dodge.\n\nYou answer pagers ##25%## faster.",
-		["menu_deck10_7_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also get healed for ##50%## of the amount.\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##1## point.\n\nWhen you get healed from picking up ammo packs, you also gain ##30## armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo boxes by an additional ##1## point.\n\nWhen you get healed from picking up ammo boxes, your dodge meter is also filled up by ##100%## of your dodge.\n\nYou answer pagers ##25%## faster.",
+		["menu_deck10_7_desc_sc"] = "When you get healed from picking up ammo boxes, your teammates also get healed for ##50%## of the amount.\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo boxes by an additional ##1## point.\n\nWhen you get healed from picking up ammo boxes, you also gain ##30## armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		["menu_deck10_7"] = "Dodgy Medicine",
 		["menu_deck10_9"] = "Locked-Up Medicine",
 
@@ -3643,11 +3643,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points.\n\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##20%## boost in your movement speed when crouching.",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##5## seconds and can stack up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
+			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##5## seconds or until you miss; stacks up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Sociopath
 			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates ##20## armor; doing so within ##18## meters regenerates an additional ##20## armor.\n\nThis cannot occur more than once every ##5## seconds; each kill during cooldown reduces it by ##0.5## seconds, with melee kills tripling the reduction.\n\nYou carry ##1## additional body bag in your inventory.",
 			--Gambler
-			["menu_deck10_mrwi_desc"] = "When you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
+			["menu_deck10_mrwi_desc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##2 to 4## health.\n\nHealing has a ##10## second cooldown, but every ammo box you pick up reduces it by ##1 to 3## seconds.\n\nWhen you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
 			--Grinder
 			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##4## concealment while wearing the Flak Jacket.\n\nYou gain the ability to place ##2## body bag cases.",
 			--Yakuza

@@ -1634,11 +1634,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
- 		cd = 8, --Cooldown
+ 		cd = { --Cooldown (seconds)
+ 			8,
+ 			8,
+ 			8,
+
+ 			10 --Copycat
+ 		},
  		cdr = {1 , 3}, --Amount cooldown is reduced on ammo box pickup.
 		{3, 5}, --Amounts healed per level
 		{4, 6},
-		{5, 7}
+		{5, 7},
+
+		{2, 4} --Copycat
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
@@ -1653,7 +1661,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				data[1],
 				data[2]
 			},
-			self.loose_ammo_restore_health_values.cd
+			self.loose_ammo_restore_health_values.cd[i]
 		})
 	end
 
@@ -1667,7 +1675,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.killshot_regen_armor_bonus = {2}
 	self.values.player.killshot_close_regen_armor_bonus = {2}
 	self.values.player.killshot_close_panic_chance = {0.25}
-	self.values.player.melee_kill_life_leech = {0.02}
+	self.values.player.melee_kill_life_leech = {
+		0.02,
+		0.01 --Copycat
+	}
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
 	self.on_killshot_cooldown_reduction_melee = 1.5
@@ -2175,6 +2186,10 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_10",
 			desc_id = "menu_deck10_mrwi_desc",
 			upgrades = {
+				"temporary_loose_ammo_restore_health_1",
+				"temporary_loose_ammo_restore_health_2",
+				"temporary_loose_ammo_restore_health_3",
+				"temporary_loose_ammo_restore_health_4",
 				"temporary_loose_ammo_give_team",
 				"player_alarm_pager_speed_multiplier",
 				"player_passive_loot_drop_multiplier_1"	
@@ -3270,7 +3285,7 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
-	self.definitions.temporary_chico_injector_4 = { --Copycat
+	self.definitions.temporary_chico_injector_4 = { --Copycat Kingpin
 		name_id = "menu_temporary_chico_injector_1",
 		category = "temporary",
 		upgrade = {
@@ -3289,7 +3304,6 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-
 	self.definitions.player_damage_control_passive_1 = {
 		category = "feature",
 		upgrade = {
@@ -3307,8 +3321,7 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-
-	self.definitions.player_copr_activate_bonus_health_ratio_2 = { --Copycat
+	self.definitions.player_copr_activate_bonus_health_ratio_2 = { --Copycat Stoic
 		name_id = "menu_player_copr_activate_bonus_health_ratio_1",
 		category = "feature",
 		upgrade = {
@@ -3317,14 +3330,22 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-
-	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat
+	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat Infiltrator
 		name_id = "menu_melee_stacking_hit_expire_t_2",
 		category = "feature",
 		upgrade = {
 			value = 2,
 			upgrade = "stacking_hit_expire_t",
 			category = "melee"
+		}
+	}
+	self.definitions.player_melee_kill_life_leech_2 = { --Copycath Sociopath
+		name_id = "menu_player_melee_kill_life_leech",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "melee_kill_life_leech",
+			category = "player"
 		}
 	}
 
@@ -3373,7 +3394,16 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}	
-	
+	self.definitions.temporary_loose_ammo_restore_health_4 = { --Copycat Gambler
+		name_id = "menu_temporary_loose_ammo_restore_health",
+		category = "temporary",
+		upgrade = {
+			value = 4,
+			upgrade = "loose_ammo_restore_health",
+			category = "temporary"
+		}
+	}
+
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {
 		name_id = "menu_weapon_passive_damage_multiplier",

@@ -1780,7 +1780,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local weap_base = self._equipped_unit:base():weapon_tweak_data()
 	if instant_hit then
 		local weap_t = 1 * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
-		weap_t = math.clamp(weap_t, 0.7, 1.05)
+		weap_t = math.clamp(weap_t, 0.6, 1.05)
 		speed = speed * weap_t
 	end
 	--So the timers play nicely with the anim speed mult

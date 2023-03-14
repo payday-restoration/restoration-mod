@@ -163,34 +163,34 @@ function MutatorNoTitans:setup(data)
 	}
 	
 	--OMNIA Tasers replaces their titan counterparts in Spring's squad on DS
-	self.unit_categories.Taser_Titan = {
+	tweak_data.group_ai.unit_categories.Taser_Titan = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},
 			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},					
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},
 			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},
 			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},				
 			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},	
 			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			},
 			omnia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
 			}			
 		},
 		access = access_type_all,

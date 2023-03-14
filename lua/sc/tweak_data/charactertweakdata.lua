@@ -595,11 +595,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.access = "swat"
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
-	--if restoration and restoration.sonic_mod then 
-	--self.medic.rescue_hostages = true
-	--else
-	--self.medic.rescue_hostages = false
-	--end
 	self.medic.no_arrest = true
 	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
 	    self.medic.custom_voicework = "murky_medic"
@@ -727,7 +722,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.weapon = presets.weapon.normal
 	self.swat.detection = presets.detection.normal
 	self.swat.HEALTH_INIT = 8
-	self.swat.headshot_dmg_mul = 2
+	self.swat.headshot_dmg_mul = 3.5
 	self.swat.damage_resistance = presets.damage_resistance.none
 	self.swat.move_speed = presets.move_speed.very_fast
 	self.swat.surrender_break_time = {6, 10}
@@ -825,7 +820,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
 	self.heavy_swat.HEALTH_INIT = 13
-	self.heavy_swat.headshot_dmg_mul = 2.2
+	self.heavy_swat.headshot_dmg_mul = 3.25
 	self.heavy_swat.damage_resistance = presets.damage_resistance.none
 	self.heavy_swat.damage.explosion_damage_mul = 0.75
 	self.heavy_swat.damage.fire_damage_mul = 0.75
@@ -876,7 +871,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000
 	self.heavy_swat_sniper.weapon = deep_clone(presets.weapon.normal)
 	self.heavy_swat_sniper.HEALTH_INIT = 19.5
-	self.heavy_swat_sniper.headshot_dmg_mul = 2.2
+	self.heavy_swat_sniper.headshot_dmg_mul = 3.25
 	self.heavy_swat_sniper.damage_resistance = presets.damage_resistance.none
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
@@ -936,7 +931,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.weekend_dmr.custom_voicework = "bravo_dmr"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 24.375
-	self.weekend_dmr.headshot_dmg_mul = 2.75
+	self.weekend_dmr.headshot_dmg_mul = 4.0625
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
@@ -955,7 +950,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.weapon = deep_clone(presets.weapon.good)
 	self.fbi_swat.detection = presets.detection.normal
 	self.fbi_swat.HEALTH_INIT = 15
-	self.fbi_swat.headshot_dmg_mul = 2.2
+	self.fbi_swat.headshot_dmg_mul = 3
 	self.fbi_swat.damage_resistance = presets.damage_resistance.none
 	self.fbi_swat.move_speed = presets.move_speed.very_fast
 	self.fbi_swat.surrender_break_time = {6, 10}
@@ -1002,7 +997,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.weapon = deep_clone(presets.weapon.normal)
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
-	self.fbi_heavy_swat.headshot_dmg_mul = 1.5
+	self.fbi_heavy_swat.headshot_dmg_mul = 2
 	self.fbi_heavy_swat.damage.explosion_damage_mul = 0.75
 	self.fbi_heavy_swat.damage.fire_damage_mul = 0.75
 	self.fbi_heavy_swat.damage.fire_pool_damage_mul = 0.75	
@@ -1049,7 +1044,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
 	self.city_swat.detection = presets.detection.normal
 	self.city_swat.HEALTH_INIT = 15
-	self.city_swat.headshot_dmg_mul = 2.2
+	self.city_swat.headshot_dmg_mul = 3
 	self.city_swat.damage_resistance = presets.damage_resistance.none
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
@@ -1115,7 +1110,7 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.weekend.custom_voicework = "bravo"
 	end	
 	self.weekend.HEALTH_INIT = 18.75
-	self.weekend.headshot_dmg_mul = 2.75
+	self.weekend.headshot_dmg_mul = 3.75
 	self.weekend.speech_prefix_p1 = "null"
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
@@ -1125,11 +1120,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	else	
 		self.weekend.yellow_blood = false
 	end	
-	--if restoration and restoration.sonic_mod then 
-	--self.weekend.rescue_hostages = true
-	--else
-	--self.weekend.rescue_hostages = false
-	--end
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")	
@@ -1140,9 +1130,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_guard.yellow_blood = false
 	self.weekend_guard.chatter = presets.enemy_chatter.guard
 	if job == "shoutout_raid" then
-	self.weekend_guard.access = "swat"
+		self.weekend_guard.access = "swat"
 	else
-	self.weekend_guard.access = "security"
+		self.weekend_guard.access = "security"
 	end
 	table.insert(self._enemy_list, "weekend_guard")
 	
@@ -1165,7 +1155,7 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 2.2
+	self.city_swat_titan.headshot_dmg_mul = 3.29
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
@@ -1202,14 +1192,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_p2 = nil
 	self.weekend_lmg.speech_prefix_count = nil
 	self.weekend_lmg.HEALTH_INIT = 28.125
-	self.weekend_lmg.headshot_dmg_mul = 2.75	
+	self.weekend_lmg.headshot_dmg_mul = 4.1125
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
-	--if restoration and restoration.sonic_mod then 
-	--self.weekend_lmg.rescue_hostages = true
-	--else
-	--self.weekend_lmg.rescue_hostages = false
-	--end
 	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.yellow_blood = true
 	else	
@@ -1223,9 +1208,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_elite_guard.yellow_blood = false
 	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard
 	if job == "shoutout_raid" then
-	self.weekend_elite_guard.access = "swat"
+		self.weekend_elite_guard.access = "swat"
 	else
-	self.weekend_elite_guard.access = "security"
+		self.weekend_elite_guard.access = "security"
 	end
 	table.insert(self._enemy_list, "weekend_elite_guard")
 	
@@ -17482,9 +17467,9 @@ end
 
 function CharacterTweakData:_set_overkill_145()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.5, 1)
+		self:_multiply_all_hp(1, 1)
 	else
-		self:_multiply_all_hp(1.5, 1)
+		self:_multiply_all_hp(1, 1)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -17547,9 +17532,9 @@ end
 
 function CharacterTweakData:_set_easy_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 1.1667)
+		self:_multiply_all_hp(1.5, 1)
 	else
-		self:_multiply_all_hp(1.75, 1.1667)
+		self:_multiply_all_hp(1.5, 1)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -17660,14 +17645,20 @@ function CharacterTweakData:_set_overkill_290()
 end
 
 function CharacterTweakData:_set_sm_wish()
-	--if not PackageManager:loaded("packages/zealassets") then
-	--	PackageManager:load("packages/zealassets")
-	--end
+	--Harder heads base
+	self.swat.headshot_dmg_mul = 2
+	self.heavy_swat.headshot_dmg_mul = 2.2
+	self.fbi_swat.headshot_dmg_mul = 2.2
+	self.fbi_heavy_swat.headshot_dmg_mul = 1.5
+	self.city_swat.headshot_dmg_mul = 2.2
+	self.weekend.headshot_dmg_mul = 2.75	
+
 	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(2, 0.915)
 	else
 		self:_multiply_all_hp(2, 0.915)
 	end
+	
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -17683,8 +17674,7 @@ function CharacterTweakData:_set_sm_wish()
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0
 	self.taser.shock_damage = 8.0
-	
-	
+		
 	--Shields get overhealed by LPF/Winters
 	self.shield.overheal_mult = 2
 	self.marshal_shield.overheal_mult = 2

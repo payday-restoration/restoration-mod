@@ -1,6 +1,6 @@
 function PlayerTweakData:_set_easy()
 	self.damage.automatic_respawn_time = 120
-	self.damage.MIN_DAMAGE_INTERVAL = 0.55
+	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 6
 	self.suspicion.range_mul = 0.8
 	self.suspicion.buildup_mul = 0.8
@@ -8,7 +8,7 @@ end
 
 function PlayerTweakData:_set_normal()
 	self.damage.automatic_respawn_time = 175
-	self.damage.MIN_DAMAGE_INTERVAL = 0.5
+	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
@@ -23,7 +23,7 @@ function PlayerTweakData:_set_hard()
 end
 
 function PlayerTweakData:_set_overkill()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -31,7 +31,7 @@ function PlayerTweakData:_set_overkill()
 end
 
 function PlayerTweakData:_set_overkill_145()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -49,7 +49,7 @@ function PlayerTweakData:_set_easy_wish()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
-	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.damage.custody_ammo_drained  = 0.75
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.70,
@@ -64,7 +64,7 @@ function PlayerTweakData:_set_overkill_290()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1.1
 	self.suspicion.buildup_mul = 1.1
-	self.damage.MIN_DAMAGE_INTERVAL = 0.25
+	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.30
 	}
@@ -96,7 +96,7 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.max_value = 10
 	self.suspicion.range_mul = 1.2
 	self.suspicion.buildup_mul = 1.2
-	self.damage.MIN_DAMAGE_INTERVAL = 0.16666667
+	self.damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.3
 	}		

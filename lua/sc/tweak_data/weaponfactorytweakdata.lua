@@ -1,5 +1,5 @@
---ATTACHMENT PRESETS
 
+--ATTACHMENT PRESETS
 local sight_1_5x_offset = {
 	sights = {
 		"wpn_fps_upg_o_eotech",
@@ -18709,52 +18709,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		value = 4
 	}	
 	self.parts.wpn_fps_smg_fmg9_conversion.perks = nil
-	self.parts.wpn_fps_smg_fmg9_conversion.override = {		
+	self.parts.wpn_fps_smg_fmg9_conversion.override = {	
 		--Hiding Barrel Extensions
-		wpn_fps_upg_ns_ass_smg_small = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},		
-		wpn_fps_upg_ns_ass_smg_medium = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},
-		wpn_fps_upg_ns_ass_smg_large = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},	
-		wpn_fps_upg_ns_ass_smg_stubby = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},		
-		wpn_fps_upg_ns_ass_smg_tank = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},	
-		wpn_fps_upg_ns_ass_smg_firepig = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},		
-		wpn_fps_upg_ass_ns_surefire = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},		
-		wpn_fps_upg_ass_ns_jprifles = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},	
-		wpn_fps_upg_ass_ns_linear = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},	
-		wpn_fps_upg_ass_ns_battle = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},	
-		wpn_fps_upg_ns_pis_putnik = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},		
+		--MOVED
 		--Hiding Gadgets
 		wpn_fps_upg_fl_pis_perst = {
 			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
@@ -21352,8 +21309,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 				
-
-
+	--Hide Barrel Extensions for the FMG-9's Exclusive kit
+	for i, part_id in pairs(self.wpn_fps_smg_fmg9.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "barrel_ext" then
+			self.parts.wpn_fps_smg_fmg9_conversion.override[part_id] = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		end
+	end
 
 
 

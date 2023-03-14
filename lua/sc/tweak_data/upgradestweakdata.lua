@@ -1661,7 +1661,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				data[1],
 				data[2]
 			},
-			self.loose_ammo_restore_health_values.cd[i]
+			self.loose_ammo_restore_health_values.cd[i] --I CAN'T WAIT TO BOMB SOME DODONGOS!
 		})
 	end
 

@@ -3789,7 +3789,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	
 	--melee_sandsteel
 	melee_anim = {
-		'hfblade','murasama','pkat'
+		'hfblade','murasama','pkat','therkatana'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
@@ -3968,6 +3968,10 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.toyknife.stats.max_damage = 1.0
 		self.melee_weapons.toyknife.stats.min_damage_effect = 0.3
 		self.melee_weapons.toyknife.stats.max_damage_effect = 0.6
+	end
+
+	if self.melee_weapons.therkatana then --Cyberpunk 2077 Thermal Katana
+		self.melee_weapons.therkatana.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 	end
 
 	if self.melee_weapons.hfblade then --HF Blade (Katana 1.8x speed, 1/2 damage)

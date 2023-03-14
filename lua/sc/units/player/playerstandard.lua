@@ -1220,6 +1220,8 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	local speed_tweak = self._tweak_data.movement.speed
 	local movement_speed = speed_tweak.STANDARD_MAX
 	local speed_state = "walk"
+	local weapon = self._equipped_unit:base()
+	local weapon_tweak = weapon:weapon_tweak_data()
 	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
 
 	if self._is_sliding then -- should be fine without having AdvMov installed since _is_sliding will return nil if you don't have it
@@ -1234,8 +1236,6 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	elseif self._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") and not _G.IS_VR then
 		movement_speed = speed_tweak.STEELSIGHT_MAX
 		if alive(self._equipped_unit) then
-			local weapon = self._equipped_unit:base()
-			local weapon_tweak = weapon:weapon_tweak_data()
 			local base_speed = ( (self:on_ladder() and speed_tweak.CLIMBING_MAX ) or (self._state_data.ducking and speed_tweak.CROUCHING_MAX) or (self._state_data.in_air and speed_tweak.INAIR_MAX) or speed_tweak.STANDARD_MAX )
 			local speed_mult = 1
 			local has_ads_move_speed_mult = nil
@@ -1296,6 +1296,8 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	
 	if self._shooting_move_speed_t then
 		multiplier = multiplier * self._shooting_move_speed_mult
+	elseif self:_is_reloading() and weapon and weapon._rms then
+		multiplier = multiplier * weapon._rms
 	end
 
 	local final_speed = movement_speed * multiplier
@@ -2166,6 +2168,16 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 		translation = Vector3(0, 0, 0),
 		rotation = Rotation(0, 0, 0)
 	}
+
+	--[[
+	local weap_base = self._equipped_unit and self._equipped_unit:base()
+	local weap_tweak = weap_base and weap_base:weapon_tweak_data()
+	local player_char = managers.criminals:local_character_name()
+	if player_char and player_char == "jowi" and weap_tweak.jowi_grip and not self._state_data.in_steelsight then
+		stance_mod.translation = stance_mod.translation + Vector3(-6, -3, -4)
+		stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, -15)
+	end
+	--]]
 
 	local duration = tweak_data.player.TRANSITION_DURATION 
 	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1

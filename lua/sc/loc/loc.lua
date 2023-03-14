@@ -1825,6 +1825,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 			["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 
+		--Light Crossbow		
+		["bm_wp_avelyn"] = "Avelyn Kit",
+		["bm_wp_avelyn_desc"] = "A #{skill_color}#repeating crossbow## kit.\nAllows for firing a volley of #{skill_color}#3## bolts with a single trigger pull.",
+
 		--GL40		
 		["bm_w_gre_m79"] = "GL-40",
 		["bm_w_gre_m79_sc_desc"] = "A thump and a boom.\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
@@ -1837,7 +1841,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--China Puff
 		["bm_w_china"] = "China Puff",
 		["bm_w_china_sc_desc"] = "\"This really is a most horrid neighborhood!\"\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
-
 		--Compact 40mm
 		["bm_w_slap"] = "Compact 40mm",
 		--Arbiter

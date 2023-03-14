@@ -5940,7 +5940,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.reload_speed_multiplier = 1.1
 				self.m1911.timers.reload_exit_empty = 0.5
 				self.m1911.timers.reload_exit_not_empty = 0.65
-				self.m1911.animations.reload_name_id = "sparrow"
 
 			--Kahn .357				
 				self.korth.has_description = true
@@ -10886,10 +10885,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.frankish.timers.reload_not_empty = 1.55
-				self.frankish.timers.reload_empty = 1.55
-				self.frankish.timers.reload_exit_empty = 0.6
-				self.frankish.timers.reload_exit_not_empty = 0.6
+				self.frankish.timers.reload_not_empty = 1.42
+				self.frankish.timers.reload_empty = 1.42
+				self.frankish.timers.reload_exit_empty = 0.8
+				self.frankish.timers.reload_exit_not_empty = 0.8
 				self.frankish.stats_modifiers = {damage = 4}
 			
 			--Heavy Crossbow

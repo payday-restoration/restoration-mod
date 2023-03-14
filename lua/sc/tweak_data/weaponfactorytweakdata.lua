@@ -20896,6 +20896,37 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"			
 	}
 
+
+	self.parts.avelyn = {
+		pcs = {}, 
+		type = "custom", 
+		name_id = "bm_wp_avelyn", 
+		has_description = true, 
+		a_obj = "a_body", 
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy", 
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy", 
+		dlc = "sc", 		
+		supported = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire", 
+		stats = {
+			value = 10, 
+			recoil = -10, 
+			extra_ammo = 2,
+			reload = -6
+		}, 
+		custom_stats = { 
+			avelyn = true, 
+			rof_mult = 7.5,
+			rms = 0.6,
+			sms = 0.6
+		}, 
+		internal_part = true, 
+		sub_type = "autofire", 
+		forbids = { "wpn_fps_bow_frankish_m_explosive", "wpn_fps_bow_frankish_m_poison" }
+	}
+
+	table.insert(self.wpn_fps_bow_frankish.uses_parts, "avelyn" ) 
+
 	--Make more attachments universally available, cartridge mismatching be damned
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then

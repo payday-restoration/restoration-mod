@@ -650,7 +650,18 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().LOCK_BURST = true
+			end
+
+			if stats.avelyn then
+				self:weapon_tweak_data().BURST_FIRE = 3
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 1
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
+				self:weapon_tweak_data().BURST_DELAY = 0.2
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:_set_burst_mode(true, true)
+				self:weapon_tweak_data().LOCK_BURST = true
 			end			
+
 			if stats.widowmaker then
 				self:weapon_tweak_data().tactical_reload = nil
 				self:weapon_tweak_data().BURST_FIRE = 2

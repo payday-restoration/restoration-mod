@@ -366,7 +366,6 @@
 	
 
 	<!--Murky Tazer Textures-->	
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_nm" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_df" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/helmets_heavy_taser_atlas_df" force="false"/>
  

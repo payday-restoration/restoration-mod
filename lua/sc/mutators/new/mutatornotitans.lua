@@ -162,6 +162,42 @@ function MutatorNoTitans:setup(data)
 		is_captain = true
 	}
 	
+	--OMNIA Tasers replaces their titan counterparts in Spring's squad on DS
+	self.unit_categories.Taser_Titan = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")
+			},					
+			russia = {
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")
+			},
+			murkywater = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			},
+			federales = {
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			},
+			omnia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			}			
+		},
+		access = access_type_all,
+		special_type = "taser",
+		is_captain = true
+	}
+	
 	--Titan Shotgunner replacing Heavy SWAT R870--
 	tweak_data.group_ai.unit_categories.CS_heavy_R870 = {
 		unit_types = {

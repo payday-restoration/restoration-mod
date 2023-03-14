@@ -905,7 +905,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat_sniper.custom_voicework = "tsniper"
 	end
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 	self.heavy_swat_sniper.yellow_blood = false
 	else
 	self.heavy_swat_sniper.yellow_blood = true
@@ -1115,7 +1115,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 1.25
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" then
 		self.weekend.yellow_blood = true
 	else	
 		self.weekend.yellow_blood = false
@@ -1149,7 +1149,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.city_swat_titan.yellow_blood = false
 	else
 		self.city_swat_titan.yellow_blood = true
@@ -1195,7 +1195,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.headshot_dmg_mul = 4.1125
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" then
 		self.weekend_lmg.yellow_blood = true
 	else	
 		self.weekend_lmg.yellow_blood = false
@@ -2219,8 +2219,12 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	self.tank_titan.speech_prefix_p1 = "heck"
 	self.tank_titan.speech_prefix_p2 = nil
-	self.tank_titan.speech_prefix_count = nil				
+	self.tank_titan.speech_prefix_count = nil
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	self.tank_titan.yellow_blood = false
+	else
 	self.tank_titan.yellow_blood = true
+	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
@@ -3062,7 +3066,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
-	self.taser_titan.yellow_blood = true	
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	self.taser_titan.yellow_blood = false
+	else
+	self.taser_titan.yellow_blood = true
+	end	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 11.25
 	self.taser_titan.slowing_bullets = {

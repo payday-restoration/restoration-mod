@@ -126,6 +126,42 @@ function MutatorNoTitans:setup(data)
 		is_captain = true
 	}
 	
+	--Have ZEAL Zombie Cloakers act as Hatman's minions on DS
+	tweak_data.group_ai.unit_categories.HVH_Boss_Spooc = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},
+			russia = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},
+			federales = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},
+			fbi = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},
+			omnia = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			}		
+		},
+		access = access_type_all,
+		special_type = "spooc",
+		is_captain = true
+	}
+	
 	--Titan Shotgunner replacing Heavy SWAT R870--
 	tweak_data.group_ai.unit_categories.CS_heavy_R870 = {
 		unit_types = {

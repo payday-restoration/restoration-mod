@@ -579,14 +579,8 @@
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk"  load="true"/>
 	
 	<!--textures-->
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_nm"/>
-
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_nm"/>
-	
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city"/>
+	<df_nm				path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas"/>
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" />
 	<!-- bravoss squad end-->	
 </table>

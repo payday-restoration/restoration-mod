@@ -1701,7 +1701,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Highly Modified CAR-4
 		["bm_hmcar_sc_desc"] = "법 집행에 의해 단계적으로 폐기되기 전에, 당신은 이러한 변환 키트들로 가득 찬 케이스를 훔치는 데 성공했습니다.\n\n#{skill_color}#적, 방탄복, 방패, 얇은 벽을 관통할 수 있는## #{stat_maxed}#타이탄 명사수의 탄##을 발사합니다. 보조 기능은 #{skill_color}#타이탄 실드를 관통하는 능력을 추가하고## #{skill_color}#탄약과 화력을 두 배로 늘리는## #{event_color}#풀파워 스나이퍼 탄##을 발사합니다.",
 		["bm_wp_hmcar_hd_kit"] = "32비트 8K HD 킷",
-		["bm_wp_hmcar_hd_kit_desc"] = "응용 프로그램이 충돌했습니다: C++ 예외\nIDirect3D9::CreateTexture 호출이 실패했기 때문에 텍스처를 로드할 수 없습니다.\nDirect3D가 호출을 완료하는 데 충분한 메모리를 할당하지 못했습니다.\n\n\n\n\n\n\n ",		
+		["bm_wp_hmcar_hd_kit_desc"] = "응용 프로그램이 충돌했습니다: C++ 예외\nIDirect3D9::CreateTexture 호출이 실패했기 때문에 텍스처를 로드할 수 없습니다.\nDirect3D가 호출을 완료하는 데 충분한 메모리를 할당하지 못했습니다.\n\n\n\n\n\n\n ",
+		
+		--Light Crossbow		
+		["bm_wp_avelyn"] = "애블린 키트",
+		["bm_wp_avelyn_desc"] = "#{skill_color}#연발 쇠뇌## 킷.\n방아쇠를 당기면 #{skill_color}#3##개의 화살을 한 번에 일제 사격할 수 있습니다.",		
+		
 
 		--GL40		
 		["bm_w_gre_m79_sc_desc"] = "쿵하고 펑.\n\n#{skill_color}#$BTN_GADGET## 키를 눌러 #{skill_color}#30미터로## 영점 조정된 리프 조준기로 전환할 수 있습니다.",			

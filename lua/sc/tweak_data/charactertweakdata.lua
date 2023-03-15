@@ -1115,7 +1115,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 1.25
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend.yellow_blood = true
 	else	
 		self.weekend.yellow_blood = false
@@ -1195,7 +1195,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.headshot_dmg_mul = 4.1125
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.yellow_blood = true
 	else	
 		self.weekend_lmg.yellow_blood = false
@@ -3066,7 +3066,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "russia" then
 	self.taser_titan.yellow_blood = false
 	else
 	self.taser_titan.yellow_blood = true

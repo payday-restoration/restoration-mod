@@ -8608,7 +8608,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "spring"
 	}	
-	--OMNIA Benelli Dozers that spawn with Spring (Also ignores spawncaps)
+	--OMNIA Benelli Dozers that spawn with Spring (Ignores spawncaps)
 		self.unit_categories.Tank_Ben = {
 			unit_types = {
 				america = {
@@ -8642,8 +8642,43 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all,
 			special_type = "tank",
 			is_captain = true
-		}		
-	--Titan Tasers that specifically spawn with Spring (Ignores Spawncaps)
+		}
+	--OMNIA Tasers that spawn with Spring on Death Wish	(Also ignores spawncaps)
+	self.unit_categories.OMNIA_Taser = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			russia = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			federales = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			fbi = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			omnia = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			}			
+		},
+		access = access_type_all,
+		special_type = "taser",
+		is_captain = true
+	}
+	--Titan Tasers that specifically spawn with Spring replacing OMNIA Tasers on Death Sentence (Also ignores spawncaps)
 	self.unit_categories.Taser_Titan = {
 		unit_types = {
 			america = {
@@ -9073,209 +9108,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				special_type = "tank"
 			}
 		end
-	
-	--SoniCmod
-	self.unit_categories.Sonicmod_Tank_Ben = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				},					
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini")
-				},
-				zombie = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				},
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				},						
-				nypd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-				}				
-			},
-			access = access_type_all,
-			special_type = "tank"
-		}
-	
-		self.unit_categories.Sonicmod_Tank_Medic = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
-				},					
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-				},
-				zombie = {
-					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
-				},
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-				},						
-				nypd = {
-					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-				}				
-			},
-			access = access_type_all,
-			special_type = "tank"
-		}
-		
-		self.unit_categories.Sonicmod_Titan_Rifle = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
-				},					
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")
-				},
-				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat")
-				},
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
-				},
-				federales = {
-					Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")
-				},						
-				nypd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
-				},
-				omnia = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
-				}				
-			},
-			access = access_type_all
-		}
-		
-		self.unit_categories.Sonicmod_Titan_Shotgun = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},					
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},
-				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")
-				},
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},
-				federales = {
-					Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},						
-				nypd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-				},
-				omnia = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-				}				
-			},
-			access = access_type_all
-		}
-		
-		self.unit_categories.Sonicmod_Titan_Tazer = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				},					
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")
-				},
-				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")
-				},
-				murkywater = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				},
-				federales = {
-					Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")
-				},						
-				nypd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				},
-				omnia = {
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
-				}				
-			},
-			access = access_type_all,
-			special_type = "taser"
-		}
-		
-		self.unit_categories.Sonicmod_Titan_Shield = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},					
-				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},
-				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},
-				murkywater = {
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},
-				federales = {
-					Idstring("units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},						
-				nypd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},	
-				lapd = {
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},
-				fbi = {
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				},
-				omnia = {
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
-				}				
-			},
-			access = access_type_all,
-			special_type = "shield"
-		}
 	
 	--Skirmish only unit categories
 	
@@ -16154,7 +15986,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = {3, 3},
 			spawn = {
@@ -16175,7 +16007,37 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}
 			}
-		}				
+		}
+	elseif difficulty_index == 7 then	
+		self.enemy_spawn_groups.Cap_Spring = {
+			amount = {5, 5},
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "Tank_Ben",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "OMNIA_Taser",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.CS_Tazer,
+					rank = 2
+				}
+			}
+		}
 	else
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = {5, 5},
@@ -16203,7 +16065,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 2,
 					tactics = self._tactics.CS_Tazer,
 					rank = 2
-				},					
+				}					
 			}
 		}			
 	end

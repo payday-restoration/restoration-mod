@@ -367,7 +367,6 @@
 		<hook file="sc/mutators/new/mutatoronlybravos.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorjungleinferno.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatormoredonutsplus.lua" source_file="lib/mutators/basemutator"/>
-		<!--hook file="sc/mutators/new/mutatorsonicmod.lua" source_file="lib/mutators/basemutator"/>
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>

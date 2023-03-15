@@ -189,23 +189,12 @@ function restoration:Init()
 			
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
-	}]]--
-	
-	--Bravo Response only response, not sure if we really want to use this ATM tbh.
-	restoration.bravo_heists = {
-		--"trai"
-	}	
-	
-	if table.contains(restoration.bravo_heists, job) then
-		restoration.always_bravos = true
-	else
-		restoration.always_bravos = false
-	end
+	}]]--	
 	
 	restoration.global_spawn_multiplier = 1
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
-	restoration.sonic_mod = false
+	restoration.always_bravos = false
 		
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {

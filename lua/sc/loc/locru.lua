@@ -2955,11 +2955,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_bravos_only"] = "Профессиональный день",
 		["mutator_bravos_only_desc"] = "Все враги заменены на свои PONR-варианты.",
-		["mutator_bravos_only_longdesc"] = "Все враги заменены на варианты, которые появляются при Точке Невозврата (PONR) в режиме Pro-Job. Синий спецназ заменён на спецназ ФБР, а спецназ ФБР заменён на отряды Браво.",		
-
-		["mutator_sonic_mod"] = "Соник Мод",
-		["mutator_sonic_mod_desc"] = "Более смертоносные штурмы",
-		["mutator_sonic_mod_longdesc"] = "Штурмы будут гораздо более опасными и приносить неожиданные сюрпризы. \n\nВНИМАНИЕ: Это адский мутатор!",
+		["mutator_bravos_only_longdesc"] = "Все враги заменены на варианты, которые появляются при Точке Невозврата (PONR) в режиме Pro-Job. Синий спецназ заменён на спецназ ФБР, а спецназ ФБР заменён на отряды Браво.",
 
 		["mutator_zombie_outbreak"] = "Ходячие мертвецы",
 		["mutator_zombie_outbreak_desc"] = "Все враги заменены зомби",

@@ -6919,7 +6919,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.damage_falloff = {
 					start_dist = 1600,
 					end_dist = 4800,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.erma.stats = {
 					damage = 30,
@@ -6990,17 +6990,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.supported = true
 				self.polymer.ads_speed = 0.260
 				self.polymer.damage_falloff = {
-					start_dist = 1100,
-					end_dist = 3300,
+					start_dist = 1000,
+					end_dist = 3100,
 					min_mult = 0.3
 				}
 				self.polymer.stats = {
 					damage = 30,
 					spread = 52,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 24,
+					concealment = 23,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,

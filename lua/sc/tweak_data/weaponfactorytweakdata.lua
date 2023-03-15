@@ -123,7 +123,7 @@ local barrels = {
 --Stocks
 --PRIMARILY FOR GUNS THAT ARE COMPATIBLE WITH AR-15 STOCKS
 local stocks = {
-	--DEFAULT RETRACTABLE/UNDERFOLDER/WIRE STOCK
+	--DEFAULT RETRACTABLE/UNDERFOLDER/WIRE STOCK/STOCK WITH SUPER SHIT CHEEKWELD
 		--Retract > Thumbhole Stock -----Con ++Acc +++Stab
 			--stocks.nocheeks_to_thumb_stats
 			nocheeks_to_thumb_stats = {
@@ -196,7 +196,7 @@ local stocks = {
 			--stocks.nocheeks_to_folder_stats
 			nocheeks_to_folder_stats = {
 				value = 4,
-				spread = 1,
+				recoil = 2,
 				concealment = -1,
 				ads_speed_mult = 1.025
 			},
@@ -208,12 +208,11 @@ local stocks = {
 				concealment = 1,
 				ads_speed_mult = 0.975
 			},
-		--Retract > No Stock ++Con -Acc -Stab
+		--Retract > No Stock +++Con ---Stab
 			--stocks.remove_nocheeks_stats
 			remove_nocheeks_stats = {
 				value = 3,
-				spread = -1,
-				recoil = -4,
+				recoil = -6,
 				concealment = 3,
 				ads_speed_mult = 0.925
 			},
@@ -297,11 +296,11 @@ local stocks = {
 				recoil = -2,
 				spread = 1
 			},
-		--Folder > Retractable/Underfolder/Wire +Con -Acc
+		--Folder > Retractable/Underfolder/Wire +Con -Stab
 			--stocks.folder_to_nocheeks_stats
 			folder_to_nocheeks_stats = {
 				value = 4,
-				spread = -1,
+				recoil = -2,
 				concealment = 1,
 				ads_speed_mult = 0.975
 			},
@@ -317,8 +316,7 @@ local stocks = {
 			--stocks.remove_folder_stats
 			remove_folder_stats = {
 				value = 5,
-				spread = -1,
-				recoil = -6,
+				recoil = -8,
 				concealment = 4,
 				ads_speed_mult = 0.9
 			},
@@ -395,12 +393,11 @@ local stocks = {
 		--Adjustable > No Stock ++++Con --Acc --Stab
 			remove_adj_stats = {
 				value = 4,
-				spread = -2,
-				recoil = -6,
+				spread = -1,
+				recoil = -8,
 				concealment = 5,
 				ads_speed_mult = 0.875
 			},
-
 
 	--DEFAULT FIXED STOCK (SELF EXPLANATORY)
 		--Fixed > Thumbhole --Con +Acc +Stab
@@ -473,30 +470,29 @@ local stocks = {
 			--stocks.fixed_to_nocheeks_stats
 			fixed_to_nocheeks_stats = {
 				value = 4,
-				spread = -2,
-				recoil = -4,
+				spread = -1,
+				recoil = -6,
 				concealment = 4,
 				ads_speed_mult = 0.9
 			},
-		--Fixed > Folded/Retracted +++++Con --Acc ---Stab
+		--Fixed > Folded/Retracted +++++Con -Acc ----Stab
 			--stocks.fixed_to_folded_stats
 			fixed_to_folded_stats = {
 				value = 4,
-				spread = -2,
-				recoil = -6,
+				spread = -1,
+				recoil = -8,
 				concealment = 5,
 				ads_speed_mult = 0.875
 			},
-		--Fixed > No stock ++++++Con --Acc ----Stab
+		--Fixed > No stock ++++++Con -Acc ------Stab
 			--stocks.remove_fixed_stats
 			remove_fixed_stats = {
 				value = 5,
-				spread = -2,
-				recoil = -10,
+				spread = -1,
+				recoil = -12,
 				concealment = 7,
 				ads_speed_mult = 0.825
 			},
-
 
 	--DEFAULT FOLDED/COLLAPSED STOCK
 		--Folded > Fixed Stock -----Con ++Acc +++Stab
@@ -553,12 +549,11 @@ local stocks = {
 				concealment = -3,
 				ads_speed_mult = 1.075
 			},
-		--Folded > Unfolded --Con +Acc +Stab
+		--Folded > Unfolded --Con ++Stab
 			--stocks.unfold_folded_stats
 			unfold_folded_stats = {
 				value = 3,
-				spread = 1,
-				recoil = 2,
+				recoil = 4,
 				concealment = -2,
 				ads_speed_mult = 1.05
 			},
@@ -570,7 +565,7 @@ local stocks = {
 				concealment = -1,
 				ads_speed_mult = 1.025
 			},
-		--Folded > No Stock +Con -Stab
+		--Folded > No Stock ++Con --Stab
 			--stocks.remove_folded_stats
 			remove_folded_stats = {
 				value = 1,
@@ -578,7 +573,6 @@ local stocks = {
 				concealment = 2,
 				ads_speed_mult = 0.95
 			},
-
 
 	--DEFAULT NO STOCK
 		--No Stock > Fixed ------Con ++Acc ++++Stab
@@ -637,7 +631,7 @@ local stocks = {
 				concealment = -5,
 				ads_speed_mult = 1.125
 			},
-		--No Stock > Folder (or just really lightweight stocks) ---Con  +++Stab
+		--No Stock > Folder ----Con ++++Stab
 		--stocks.add_folder_stats
 			add_folder_stats = {
 				value = 4,
@@ -646,18 +640,18 @@ local stocks = {
 				ads_speed_mult = 1.1
 			},
 		--No Stock > Retractable/Wire
-		--stocks.add_nocheeks_stats
+		--stocks.add_nocheeks_stats ---Con +++Stab
 			add_nocheeks_stats = {
 				value = 2,
-				recoil = 4,
+				recoil = 6,
 				concealment = -3,
 				ads_speed_mult = 1.075
 			},
 		--No Stock > Folded
-		--stocks.add_folded_stats
+		--stocks.add_folded_stats --Con ++Stab
 			add_folded_stats = {
 				value = 2,
-				recoil = 2,
+				recoil = 4,
 				concealment = -2,
 				ads_speed_mult = 1.05
 			}
@@ -8856,50 +8850,6 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		sub_type = "bonus_stats"
 	}
 
-	local function peepee(factory_id)
-		for id, data in pairs(tweak_data.upgrades.definitions) do
-			if data.category == "weapon" and data.factory_id == factory_id then
-				return data.weapon_id
-			end
-		end
-	end
-
-	for factory_id, i in pairs(self) do
-		if self[ factory_id ] then
-			local weapon_id = peepee(factory_id)
-			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories and tweak_data.weapon[ weapon_id ].categories[1] == "snp" then
-				self[ factory_id ].override = self[ factory_id ].override or {}
-				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
-					stats = {value = 1, concealment = 1, spread = -1},
-					custom_stats = { 
-						empire = true,
-						falloff_start_mult = 0.925,
-						falloff_end_mult = 0.925,
-						ads_speed_mult = 0.975
-					}
-				}
-				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
-					stats = {value = 1, concealment = 2, spread = -2},
-					custom_stats = { 
-						empire = true,
-						falloff_start_mult = 0.85,
-						falloff_end_mult = 0.85,
-						ads_speed_mult = 0.95
-					}
-				}
-				self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
-					stats = {value = 1, concealment = 3, spread = -3},
-					custom_stats = { 
-						empire = true,
-						falloff_start_mult = 0.775,
-						falloff_end_mult = 0.775,
-						ads_speed_mult = 0.925
-					}
-				}
-			end
-		end
-	end
-
 	--This is where it gets messy
 	--Small Accuracy Modifier
 	self.parts.wpn_fps_upg_bonus_damage_p1 = {
@@ -8986,6 +8936,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -1, recoil = 2},
 		custom_stats = {
 			republic = true,
+			hip_mult = 1.5,
 			falloff_start_mult = 0.925,
 			falloff_end_mult = 0.925
 		},
@@ -9008,6 +8959,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -2, recoil = 4},
 		custom_stats = {
 			republic = true,
+			hip_mult = 1.75,
 			falloff_start_mult = 0.85,
 			falloff_end_mult = 0.85
 		},
@@ -9030,6 +8982,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -3, recoil = 6},
 		custom_stats = { 
 			republic = true,
+			hip_mult = 2,
 			falloff_start_mult = 0.775,
 			falloff_end_mult = 0.775
 		},
@@ -9039,6 +8992,53 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		sub_type = "bonus_stats"
 	}		
 	
+
+	local function peepee(factory_id)
+		for id, data in pairs(tweak_data.upgrades.definitions) do
+			if data.category == "weapon" and data.factory_id == factory_id then
+				return data.weapon_id
+			end
+		end
+	end
+
+	for factory_id, i in pairs(self) do
+		if self[ factory_id ] then
+			local weapon_id = peepee(factory_id)
+			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories then
+				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") then
+					self[ factory_id ].override = self[ factory_id ].override or {}
+					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
+						stats = {value = 1, concealment = 1, spread = -1},
+						custom_stats = { 
+							empire = true,
+							falloff_start_mult = 0.925,
+							falloff_end_mult = 0.925,
+							ads_speed_mult = 0.975
+						}
+					}
+					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
+						stats = {value = 1, concealment = 2, spread = -2},
+						custom_stats = { 
+							empire = true,
+							falloff_start_mult = 0.85,
+							falloff_end_mult = 0.85,
+							ads_speed_mult = 0.95
+						}
+					}
+					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
+						stats = {value = 1, concealment = 3, spread = -3},
+						custom_stats = { 
+							empire = true,
+							falloff_start_mult = 0.775,
+							falloff_end_mult = 0.775,
+							ads_speed_mult = 0.925
+						}
+					}
+				end
+			end
+		end
+	end
+
 	--Team Boost
 	self.parts.wpn_fps_upg_bonus_total_ammo_p3 = {
 		pcs = {},

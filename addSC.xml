@@ -836,9 +836,8 @@
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/taser_body_df"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_nm" force="false"/>
 	
 	<!--Autumn-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>

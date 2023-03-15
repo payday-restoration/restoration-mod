@@ -124,545 +124,543 @@ local barrels = {
 --PRIMARILY FOR GUNS THAT ARE COMPATIBLE WITH AR-15 STOCKS
 local stocks = {
 	--DEFAULT RETRACTABLE/UNDERFOLDER/WIRE STOCK
-	--Retract > Thumbhole Stock -----Con ++Acc +++Stab
-		--stocks.nocheeks_to_thumb_stats
-		nocheeks_to_thumb_stats = {
-			value = 7,
-			spread = 2,
-			recoil = 6,
-			concealment = -5,
-			ads_speed_mult = 1.125
-		},
-	--Retract > Fixed Stock ----Con ++Acc ++Stab
-		--stocks.nocheeks_to_fixed_acc2_rec2_stats
-		nocheeks_to_fixed_acc2_rec2_stats = {
-			value = 6,
-			spread = 2,
-			recoil = 4,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--Retract > Fixed Stock ----Con +Acc +++Stab
-		--stocks.nocheeks_to_fixed_rec3_stats
-		nocheeks_to_fixed_rec3_stats = {
-			value = 6,
-			spread = 1,
-			recoil = 6,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--Retract > Heavy Adjustable Stock ---Con ++Acc +Stab
-		nocheeks_to_hvy_acc2_rec1_stats = {
-			value = 5,
-			recoil = 2,
-			spread = 2,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Retract > Heavy Adjustable Stock ---Con +Acc ++Stab
-		nocheeks_to_hvy_acc1_rec2_stats = {
-			value = 5,
-			recoil = 4,
-			spread = 1,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Retract > Adjustable Stock --Con ++Acc
-		--stocks.nocheeks_to_adj_acc_stats
-		nocheeks_to_adj_acc_stats = {
-			value = 4,
-			spread = 2,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--Retract > Adjustable Stock --Con +Acc +Stab
-		--stocks.nocheeks_to_adj_dual_stats
-		nocheeks_to_adj_dual_stats = {
-			value = 4,
-			spread = 1,
-			recoil = 2,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--Retract > Adjustable Stock --Con ++Stab
-		--stocks.nocheeks_to_adj_rec_stats
-		nocheeks_to_adj_rec_stats = {
-			value = 4,
-			recoil = 4,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--Retract > SideFolder -Con +Acc
-		--stocks.nocheeks_to_folder_stats
-		nocheeks_to_folder_stats = {
-			value = 4,
-			spread = 1,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},
-	--Retract > Retracted/Folded Stock +Con -Stab
-		--stocks.fold_nocheeks_stats
-		fold_nocheeks_stats = {
-			value = 0,
-			recoil = -2,
-			concealment = 1,
-			ads_speed_mult = 0.975
-		},
-	--Retract > No Stock ++Con -Acc -Stab
-		--stocks.remove_nocheeks_stats
-		remove_nocheeks_stats = {
-			value = 3,
-			spread = -1,
-			recoil = -2,
-			concealment = 2,
-			ads_speed_mult = 0.95
-		},
-
+		--Retract > Thumbhole Stock -----Con ++Acc +++Stab
+			--stocks.nocheeks_to_thumb_stats
+			nocheeks_to_thumb_stats = {
+				value = 7,
+				spread = 2,
+				recoil = 6,
+				concealment = -5,
+				ads_speed_mult = 1.125
+			},
+		--Retract > Fixed Stock ----Con ++Acc ++Stab
+			--stocks.nocheeks_to_fixed_acc2_rec2_stats
+			nocheeks_to_fixed_acc2_rec2_stats = {
+				value = 6,
+				spread = 2,
+				recoil = 4,
+				concealment = -4,
+				ads_speed_mult = 1.1
+			},
+		--Retract > Fixed Stock ----Con +Acc +++Stab
+			--stocks.nocheeks_to_fixed_rec3_stats
+			nocheeks_to_fixed_rec3_stats = {
+				value = 6,
+				spread = 1,
+				recoil = 6,
+				concealment = -4,
+				ads_speed_mult = 1.1
+			},
+		--Retract > Heavy Adjustable Stock ---Con ++Acc +Stab
+			nocheeks_to_hvy_acc2_rec1_stats = {
+				value = 5,
+				recoil = 2,
+				spread = 2,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Retract > Heavy Adjustable Stock ---Con +Acc ++Stab
+			nocheeks_to_hvy_acc1_rec2_stats = {
+				value = 5,
+				recoil = 4,
+				spread = 1,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Retract > Adjustable Stock --Con ++Acc
+			--stocks.nocheeks_to_adj_acc_stats
+			nocheeks_to_adj_acc_stats = {
+				value = 4,
+				spread = 2,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},
+		--Retract > Adjustable Stock --Con +Acc +Stab
+			--stocks.nocheeks_to_adj_dual_stats
+			nocheeks_to_adj_dual_stats = {
+				value = 4,
+				spread = 1,
+				recoil = 2,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},
+		--Retract > Adjustable Stock --Con ++Stab
+			--stocks.nocheeks_to_adj_rec_stats
+			nocheeks_to_adj_rec_stats = {
+				value = 4,
+				recoil = 4,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},
+		--Retract > SideFolder -Con +Acc
+			--stocks.nocheeks_to_folder_stats
+			nocheeks_to_folder_stats = {
+				value = 4,
+				spread = 1,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},
+		--Retract > Retracted/Folded Stock +Con -Stab
+			--stocks.fold_nocheeks_stats
+			fold_nocheeks_stats = {
+				value = 0,
+				recoil = -2,
+				concealment = 1,
+				ads_speed_mult = 0.975
+			},
+		--Retract > No Stock ++Con -Acc -Stab
+			--stocks.remove_nocheeks_stats
+			remove_nocheeks_stats = {
+				value = 3,
+				spread = -1,
+				recoil = -4,
+				concealment = 3,
+				ads_speed_mult = 0.925
+			},
 
 	--DEFAULT SIDEFOLDER STOCK
-	--Folder > Thumbhole Stock ----Con +Acc ++++Stab
-		--stocks.folder_to_thumb_stats
-		folder_to_thumb_stats = {
-			value = 7,
-			spread = 1,
-			recoil = 6,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--Folder > Fixed Stock ---Con +Acc ++Stab
-		--stocks.folder_to_fixed_acc1_rec2_stats
-		folder_to_fixed_acc1_rec2_stats = {
-			value = 6,
-			spread = 1,
-			recoil = 4,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Folder > Fixed Stock ---Con +++Stab
-		--stocks.folder_to_fixed_rec3_stats
-		folder_to_fixed_rec3_stats = {
-			value = 6,
-			recoil = 6,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Folder > Heavy Adjustable Stock --Con ++Acc
-		folder_to_hvy_acc2_stats = {
-			value = 5,
-			spread = 2,
-			recoil = 0,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},	
-	--Folder > Heavy Adjustable Stock --Con ++Stab
-		folder_to_hvy_rec2_stats = {
-			value = 5,
-			spread = 0,
-			recoil = 4,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},	
-	--Folder > Adjustable Stock -Con -Stab ++Acc
-		folder_to_adj_acc2_stats = {
-			value = 4,
-			spread = 2,
-			recoil = -2,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},	
-	--Folder > Adjustable Stock -Con +Acc
-		folder_to_adj_acc1_stats = {
-			value = 4,
-			spread = 1,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},
-	--Folder > Adjustable Stock -Con +Stab
-		folder_to_adj_rec_stats = {
-			value = 4,
-			recoil = 2,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},
-	--Folder +Stab -Acc
-		--stocks.folder_rec_stats
-		folder_rec_stats = {
-			value = 3,
-			recoil = 2,
-			spread = -1
-		},
-	--Folder +Acc -Stab
-		--stocks.folder_acc_stats
-		folder_acc_stats = {
-			value = 3,
-			recoil = -2,
-			spread = 1
-		},
-	--Folder > Retractable/Underfolder/Wire +Con -Acc
-		--stocks.folder_to_nocheeks_stats
-		folder_to_nocheeks_stats = {
-			value = 4,
-			spread = -1,
-			concealment = 1,
-			ads_speed_mult = 0.975
-		},
-	--Folder > Folded Stock ++Con
-		--stocks.fold_folder_stats
-		fold_folder_stats = {
-			value = 0,
-			recoil = -4,
-			concealment = 2,
-			ads_speed_mult = 0.95
-		},
-	--Folder > No Stock +++Con
-		--stocks.remove_folder_stats
-		remove_folder_stats = {
-			value = 5,
-			spread = -1,
-			recoil = -4,
-			concealment = 3,
-			ads_speed_mult = 0.925
-		},
-
-
+		--Folder > Thumbhole Stock ----Con +Acc ++++Stab
+			--stocks.folder_to_thumb_stats
+			folder_to_thumb_stats = {
+				value = 7,
+				spread = 1,
+				recoil = 6,
+				concealment = -4,
+				ads_speed_mult = 1.1
+			},
+		--Folder > Fixed Stock ---Con +Acc ++Stab
+			--stocks.folder_to_fixed_acc1_rec2_stats
+			folder_to_fixed_acc1_rec2_stats = {
+				value = 6,
+				spread = 1,
+				recoil = 4,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Folder > Fixed Stock ---Con +++Stab
+			--stocks.folder_to_fixed_rec3_stats
+			folder_to_fixed_rec3_stats = {
+				value = 6,
+				recoil = 6,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Folder > Heavy Adjustable Stock --Con ++Acc
+			folder_to_hvy_acc2_stats = {
+				value = 5,
+				spread = 2,
+				recoil = 0,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},	
+		--Folder > Heavy Adjustable Stock --Con ++Stab
+			folder_to_hvy_rec2_stats = {
+				value = 5,
+				spread = 0,
+				recoil = 4,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},	
+		--Folder > Adjustable Stock -Con -Stab ++Acc
+			folder_to_adj_acc2_stats = {
+				value = 4,
+				spread = 2,
+				recoil = -2,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},	
+		--Folder > Adjustable Stock -Con +Acc
+			folder_to_adj_acc1_stats = {
+				value = 4,
+				spread = 1,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},
+		--Folder > Adjustable Stock -Con +Stab
+			folder_to_adj_rec_stats = {
+				value = 4,
+				recoil = 2,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},
+		--Folder +Stab -Acc
+			--stocks.folder_rec_stats
+			folder_rec_stats = {
+				value = 3,
+				recoil = 2,
+				spread = -1
+			},
+		--Folder +Acc -Stab
+			--stocks.folder_acc_stats
+			folder_acc_stats = {
+				value = 3,
+				recoil = -2,
+				spread = 1
+			},
+		--Folder > Retractable/Underfolder/Wire +Con -Acc
+			--stocks.folder_to_nocheeks_stats
+			folder_to_nocheeks_stats = {
+				value = 4,
+				spread = -1,
+				concealment = 1,
+				ads_speed_mult = 0.975
+			},
+		--Folder > Folded Stock ++Con
+			--stocks.fold_folder_stats
+			fold_folder_stats = {
+				value = 0,
+				recoil = -4,
+				concealment = 2,
+				ads_speed_mult = 0.95
+			},
+		--Folder > No Stock +++Con
+			--stocks.remove_folder_stats
+			remove_folder_stats = {
+				value = 5,
+				spread = -1,
+				recoil = -6,
+				concealment = 4,
+				ads_speed_mult = 0.9
+			},
+	
 	--DEFAULT ADJUSTABLE STOCK (DEFAULT M4)
-	--Adjustable > Fixed --Con ++Stab
-		adj_to_fixed_acc_stats = {
-			value = 5,
-			recoil = 4,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--Adjustable > Fixed --Con ++Stab
-		adj_to_fixed_rec_stats = {
-			value = 5,
-			recoil = 4,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--Adjustable > Heavy Adjustable -Con +Acc
-		--stocks.adj_hvy_acc_stats
-		adj_hvy_acc_stats = {
-			value = 4,
-			spread = 1,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},
-	--Adjustable > Heavy Adjustable -Con +Stab
-		--stocks.adj_hvy_rec_stats
-		adj_hvy_rec_stats = {
-			value = 4,
-			recoil = 2,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},
-	--Adjustable +Stab -Acc
-		--stocks.adj_rec_stats
-		adj_rec_stats = {
-			value = 3,
-			recoil = 2,
-			spread = -1
-		},
-	--Adjustable +Acc -Stab
-		--stocks.adj_acc_stats
-		adj_acc_stats = {
-			value = 3,
-			recoil = -2,
-			spread = 1
-		},
-	--Adjustable > Folder +Con -Stab
-		adj_to_fold_stats = {
-			value = 4,
-			recoil = -2,
-			concealment = 1,
-			ads_speed_mult = 0.975
-		},
-	--Adjustable > Retractable/Underfolder/Wire ++Con -Acc -Stab
-		--stocks.adj_to_nocheeks_stats
-		adj_to_nocheeks_stats = {
-			value = 4,
-			spread = -1,
-			recoil = -2,
-			concealment = 2,
-			ads_speed_mult = 0.95
-		},
-	--Adjustable > Folded/Retracted +++Con -Acc --Stab
-		adj_to_folded_stats = {
-			value = 4,
-			spread = -1,
-			recoil = -4,
-			concealment = 3,
-			ads_speed_mult = 0.925
-		},
-	--Adjustable > No Stock ++++Con --Acc --Stab
-		remove_adj_stats = {
-			value = 4,
-			spread = -2,
-			recoil = -4,
-			concealment = 4,
-			ads_speed_mult = 0.9
-		},
+		--Adjustable > Fixed --Con ++Stab
+			adj_to_fixed_acc_stats = {
+				value = 5,
+				recoil = 4,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},
+		--Adjustable > Fixed --Con ++Stab
+			adj_to_fixed_rec_stats = {
+				value = 5,
+				recoil = 4,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},
+		--Adjustable > Heavy Adjustable -Con +Acc
+			--stocks.adj_hvy_acc_stats
+			adj_hvy_acc_stats = {
+				value = 4,
+				spread = 1,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},
+		--Adjustable > Heavy Adjustable -Con +Stab
+			--stocks.adj_hvy_rec_stats
+			adj_hvy_rec_stats = {
+				value = 4,
+				recoil = 2,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},
+		--Adjustable +Stab -Acc
+			--stocks.adj_rec_stats
+			adj_rec_stats = {
+				value = 3,
+				recoil = 2,
+				spread = -1
+			},
+		--Adjustable +Acc -Stab
+			--stocks.adj_acc_stats
+			adj_acc_stats = {
+				value = 3,
+				recoil = -2,
+				spread = 1
+			},
+		--Adjustable > Folder +Con -Stab
+			adj_to_fold_stats = {
+				value = 4,
+				recoil = -2,
+				concealment = 1,
+				ads_speed_mult = 0.975
+			},
+		--Adjustable > Retractable/Underfolder/Wire ++Con -Acc -Stab
+			--stocks.adj_to_nocheeks_stats
+			adj_to_nocheeks_stats = {
+				value = 4,
+				spread = -1,
+				recoil = -2,
+				concealment = 2,
+				ads_speed_mult = 0.95
+			},
+		--Adjustable > Folded/Retracted +++Con -Acc --Stab
+			adj_to_folded_stats = {
+				value = 4,
+				spread = -1,
+				recoil = -4,
+				concealment = 3,
+				ads_speed_mult = 0.925
+			},
+		--Adjustable > No Stock ++++Con --Acc --Stab
+			remove_adj_stats = {
+				value = 4,
+				spread = -2,
+				recoil = -6,
+				concealment = 5,
+				ads_speed_mult = 0.875
+			},
 
 
 	--DEFAULT FIXED STOCK (SELF EXPLANATORY)
-	--Fixed > Thumbhole --Con +Acc +Stab
-		--stocks.fixed_to_thumbhole_stats
-		fixed_to_thumbhole_stats = {
-			value = 6,
-			spread = 1,
-			recoil = 4,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Fixed +Stab -Acc
-		fixed_rec_stats = {
-			value = 4,
-			spread = -1,
-			recoil = 2
-		},
-	--Fixed +Acc -Stab
-		fixed_acc_stats = {
-			value = 4,
-			spread = 1,
-			recoil = -2
-		},
-	--Fixed > Heavy Adjustable +Con -Acc
-		fixed_to_hvy_acc_stats = {
-			value = 4,
-			spread = -1,
-			concealment = 1,
-			ads_speed_mult = 0.975
-		},
-	--Fixed > Heavy Adjustable +Con -Stab
-		fixed_to_hvy_rec_stats = {
-			value = 4,
-			recoil = -2,
-			concealment = 1,
-			ads_speed_mult = 0.975
-		},
-	--Fixed > Adjustable ++Con --Stab
-		fixed_to_adj_acc_stats = {
-			value = 3,
-			recoil = -4,
-			concealment = 2,
-			ads_speed_mult = 0.95
-		},
-	--Fixed > Adjustable ++Con --Acc
-		fixed_to_adj_rec_stats = {
-			value = 3,
-			spread = -2,
-			concealment = 2,
-			ads_speed_mult = 0.95
-		},
-	--Fixed > Adjustable ++Con -Acc -Stab
-		fixed_to_adj_dual_stats = {
-			value = 3,
-			spread = -1,
-			recoil = -2,
-			concealment = 2,
-			ads_speed_mult = 0.95
-		},
-	--Fixed > Sidefolder +++Con ---Stab
-		--stocks.fixed_to_folder_stats
-		fixed_to_folder_stats = {
-			value = 4,
-			spread = -1,
-			recoil = -4,
-			concealment = 3,
-			ads_speed_mult = 0.925
-		},
-	--Fixed > Retractable/Underfolder/Wire ++++Con -Acc ---Stab
-		--stocks.fixed_to_nocheeks_stats
-		fixed_to_nocheeks_stats = {
-			value = 4,
-			spread = -2,
-			recoil = -4,
-			concealment = 4,
-			ads_speed_mult = 0.9
-		},
-	--Fixed > Folded/Retracted +++++Con --Acc ---Stab
-		--stocks.fixed_to_folded_stats
-		fixed_to_folded_stats = {
-			value = 4,
-			spread = -2,
-			recoil = -6,
-			concealment = 5,
-			ads_speed_mult = 0.875
-		},
-	--Fixed > No stock ++++++Con --Acc ----Stab
-		--stocks.remove_fixed_stats
-		remove_fixed_stats = {
-			value = 5,
-			spread = -2,
-			recoil = -8,
-			concealment = 6,
-			ads_speed_mult = 0.85
-		},
+		--Fixed > Thumbhole --Con +Acc +Stab
+			--stocks.fixed_to_thumbhole_stats
+			fixed_to_thumbhole_stats = {
+				value = 6,
+				spread = 1,
+				recoil = 4,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Fixed +Stab -Acc
+			fixed_rec_stats = {
+				value = 4,
+				spread = -1,
+				recoil = 2
+			},
+		--Fixed +Acc -Stab
+			fixed_acc_stats = {
+				value = 4,
+				spread = 1,
+				recoil = -2
+			},
+		--Fixed > Heavy Adjustable +Con -Acc
+			fixed_to_hvy_acc_stats = {
+				value = 4,
+				spread = -1,
+				concealment = 1,
+				ads_speed_mult = 0.975
+			},
+		--Fixed > Heavy Adjustable +Con -Stab
+			fixed_to_hvy_rec_stats = {
+				value = 4,
+				recoil = -2,
+				concealment = 1,
+				ads_speed_mult = 0.975
+			},
+		--Fixed > Adjustable ++Con --Stab
+			fixed_to_adj_acc_stats = {
+				value = 3,
+				recoil = -4,
+				concealment = 2,
+				ads_speed_mult = 0.95
+			},
+		--Fixed > Adjustable ++Con --Acc
+			fixed_to_adj_rec_stats = {
+				value = 3,
+				spread = -2,
+				concealment = 2,
+				ads_speed_mult = 0.95
+			},
+		--Fixed > Adjustable ++Con -Acc -Stab
+			fixed_to_adj_dual_stats = {
+				value = 3,
+				spread = -1,
+				recoil = -2,
+				concealment = 2,
+				ads_speed_mult = 0.95
+			},
+		--Fixed > Sidefolder +++Con ---Stab
+			--stocks.fixed_to_folder_stats
+			fixed_to_folder_stats = {
+				value = 4,
+				spread = -1,
+				recoil = -4,
+				concealment = 3,
+				ads_speed_mult = 0.925
+			},
+		--Fixed > Retractable/Underfolder/Wire ++++Con -Acc ---Stab
+			--stocks.fixed_to_nocheeks_stats
+			fixed_to_nocheeks_stats = {
+				value = 4,
+				spread = -2,
+				recoil = -4,
+				concealment = 4,
+				ads_speed_mult = 0.9
+			},
+		--Fixed > Folded/Retracted +++++Con --Acc ---Stab
+			--stocks.fixed_to_folded_stats
+			fixed_to_folded_stats = {
+				value = 4,
+				spread = -2,
+				recoil = -6,
+				concealment = 5,
+				ads_speed_mult = 0.875
+			},
+		--Fixed > No stock ++++++Con --Acc ----Stab
+			--stocks.remove_fixed_stats
+			remove_fixed_stats = {
+				value = 5,
+				spread = -2,
+				recoil = -10,
+				concealment = 7,
+				ads_speed_mult = 0.825
+			},
 
 
 	--DEFAULT FOLDED/COLLAPSED STOCK
-	--Folded > Fixed Stock -----Con ++Acc +++Stab
-		--stocks.folded_to_fixed_stats
-		folded_to_fixed_stats = {
-			value = 7,
-			spread = 2,
-			recoil = 6,
-			concealment = -5,
-			ads_speed_mult = 1.125
-		},
-	--Folded > Heavy Adjustable ----Con +++Acc +Stab
-		--stocks.folded_to_hvy_rec2
-		folded_to_hvy_rec2 = {
-			value = 5,
-			recoil = 2,
-			spread = 3,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--Folded > Heavy Adjustable ----Con ++Acc ++Stab
-		--stocks.folded_to_hvy_rec3
-		folded_to_hvy_rec3 = {
-			value = 5,
-			recoil = 4,
-			spread = 2,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--Folded > Adjustable ---Con +++Acc
-		--stocks.folded_to_adj_rec1
-		folded_to_adj_rec1 = {
-			value = 4,
-			spread = 3,
-			recoil = 0,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Folded > Adjustable ---Con ++Acc +Stab
-		--stocks.folded_to_adj_rec2
-		folded_to_adj_rec2 = {
-			value = 4,
-			spread = 2,
-			recoil = 2,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Folded > Adjustable ---Con +Acc ++Stab
-		--stocks.folded_to_adj_rec3
-		folded_to_adj_rec3 = {
-			value = 4,
-			spread = 1,
-			recoil = 4,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--Folded > Unfolded --Con +Acc +Stab
-		--stocks.unfold_folded_stats
-		unfold_folded_stats = {
-			value = 3,
-			spread = 1,
-			recoil = 2,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--Folded > Uncollapsed -Con +Stab
-		--stocks.unfold_nocheeks_stats
-		unfold_nocheeks_stats = {
-			value = 2,
-			recoil = 2,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		},
-	--Folded > No Stock +Con -Stab
-		--stocks.remove_folded_stats
-		remove_folded_stats = {
-			value = 1,
-			recoil = -2,
-			concealment = 1,
-			ads_speed_mult = 0.975
-		},
+		--Folded > Fixed Stock -----Con ++Acc +++Stab
+			--stocks.folded_to_fixed_stats
+			folded_to_fixed_stats = {
+				value = 7,
+				spread = 2,
+				recoil = 6,
+				concealment = -5,
+				ads_speed_mult = 1.125
+			},
+		--Folded > Heavy Adjustable ----Con +++Acc +Stab
+			--stocks.folded_to_hvy_rec2
+			folded_to_hvy_rec2 = {
+				value = 5,
+				recoil = 2,
+				spread = 3,
+				concealment = -4,
+				ads_speed_mult = 1.1
+			},
+		--Folded > Heavy Adjustable ----Con ++Acc ++Stab
+			--stocks.folded_to_hvy_rec3
+			folded_to_hvy_rec3 = {
+				value = 5,
+				recoil = 4,
+				spread = 2,
+				concealment = -4,
+				ads_speed_mult = 1.1
+			},
+		--Folded > Adjustable ---Con +++Acc
+			--stocks.folded_to_adj_rec1
+			folded_to_adj_rec1 = {
+				value = 4,
+				spread = 3,
+				recoil = 0,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Folded > Adjustable ---Con ++Acc +Stab
+			--stocks.folded_to_adj_rec2
+			folded_to_adj_rec2 = {
+				value = 4,
+				spread = 2,
+				recoil = 2,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Folded > Adjustable ---Con +Acc ++Stab
+			--stocks.folded_to_adj_rec3
+			folded_to_adj_rec3 = {
+				value = 4,
+				spread = 1,
+				recoil = 4,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--Folded > Unfolded --Con +Acc +Stab
+			--stocks.unfold_folded_stats
+			unfold_folded_stats = {
+				value = 3,
+				spread = 1,
+				recoil = 2,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			},
+		--Folded > Uncollapsed -Con +Stab
+			--stocks.unfold_nocheeks_stats
+			unfold_nocheeks_stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -1,
+				ads_speed_mult = 1.025
+			},
+		--Folded > No Stock +Con -Stab
+			--stocks.remove_folded_stats
+			remove_folded_stats = {
+				value = 1,
+				recoil = -4,
+				concealment = 2,
+				ads_speed_mult = 0.95
+			},
 
 
 	--DEFAULT NO STOCK
-	--No Stock > Fixed ------Con ++Acc ++++Stab
-		add_fixed_rec_stats = {
-			value = 7,
-			spread = 2,
-			recoil = 8,
-			concealment = -6,
-			ads_speed_mult = 1.15
-		},
-	--No Stock > Fixed ------Con +++Acc +++Stab
-		add_fixed_stats = {
-			value = 7,
-			spread = 3,
-			recoil = 6,
-			concealment = -6,
-			ads_speed_mult = 1.15
-		},
-	--No Stock > Heavy Adjustable -----Con ++Acc +++Stab
-		add_hvy_rec_stats = {
-			value = 5,
-			spread = 2,
-			recoil = 6,
-			concealment = -5,
-			ads_speed_mult = 1.125
-		},
-	--No Stock > Heavy Adjustable -----Con +++Acc ++Stab
-		add_hvy_acc_stats = {
-			value = 5,
-			spread = 3,
-			recoil = 4,
-			concealment = -5,
-			ads_speed_mult = 1.125
-		},
-	--No Stock > Adjustable ----Con +++Acc +Stab
-		add_adj_acc3_stats = {
-			value = 5,
-			spread = 3,
-			recoil = 2,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--No Stock > Adjustable ----Con ++Acc ++Stab
-		add_adj_acc2_stats = {
-			value = 5,
-			spread = 2,
-			recoil = 4,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--No Stock > Adjustable ----Con +Acc +++Stab
-		add_adj_stats = {
-			value = 5,
-			spread = 1,
-			recoil = 6,
-			concealment = -4,
-			ads_speed_mult = 1.1
-		},
-	--No Stock > Folder (or just really lightweight stocks) ---Con  +++Stab
-	--stocks.add_folder_stats
-		add_folder_stats = {
-			value = 4,
-			recoil = 6,
-			concealment = -3,
-			ads_speed_mult = 1.075
-		},
-	--No Stock > Retractable/Wire
-	--stocks.add_nocheeks_stats
-		add_nocheeks_stats = {
-			value = 2,
-			recoil = 4,
-			concealment = -2,
-			ads_speed_mult = 1.05
-		},
-	--No Stock > Folded
-	--stocks.add_folded_stats
-		add_folded_stats = {
-			value = 2,
-			recoil = 2,
-			concealment = -1,
-			ads_speed_mult = 1.025
-		}
+		--No Stock > Fixed ------Con ++Acc ++++Stab
+			add_fixed_rec_stats = {
+				value = 7,
+				spread = 2,
+				recoil = 10,
+				concealment = -7,
+				ads_speed_mult = 1.175
+			},
+		--No Stock > Fixed ------Con +++Acc +++Stab
+			add_fixed_stats = {
+				value = 7,
+				spread = 3,
+				recoil = 8,
+				concealment = -7,
+				ads_speed_mult = 1.175
+			},
+		--No Stock > Heavy Adjustable -----Con ++Acc +++Stab
+			add_hvy_rec_stats = {
+				value = 5,
+				spread = 2,
+				recoil = 8,
+				concealment = -6,
+				ads_speed_mult = 1.15
+			},
+		--No Stock > Heavy Adjustable -----Con +++Acc ++Stab
+			add_hvy_acc_stats = {
+				value = 5,
+				spread = 3,
+				recoil = 6,
+				concealment = -6,
+				ads_speed_mult = 1.15
+			},
+		--No Stock > Adjustable ----Con +++Acc +Stab
+			add_adj_acc3_stats = {
+				value = 5,
+				spread = 3,
+				recoil = 4,
+				concealment = -5,
+				ads_speed_mult = 1.125
+			},
+		--No Stock > Adjustable ----Con ++Acc ++Stab
+			add_adj_acc2_stats = {
+				value = 5,
+				spread = 2,
+				recoil = 6,
+				concealment = -5,
+				ads_speed_mult = 1.125
+			},
+		--No Stock > Adjustable ----Con +Acc +++Stab
+			add_adj_stats = {
+				value = 5,
+				spread = 1,
+				recoil = 8,
+				concealment = -5,
+				ads_speed_mult = 1.125
+			},
+		--No Stock > Folder (or just really lightweight stocks) ---Con  +++Stab
+		--stocks.add_folder_stats
+			add_folder_stats = {
+				value = 4,
+				recoil = 8,
+				concealment = -4,
+				ads_speed_mult = 1.1
+			},
+		--No Stock > Retractable/Wire
+		--stocks.add_nocheeks_stats
+			add_nocheeks_stats = {
+				value = 2,
+				recoil = 4,
+				concealment = -3,
+				ads_speed_mult = 1.075
+			},
+		--No Stock > Folded
+		--stocks.add_folded_stats
+			add_folded_stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -2,
+				ads_speed_mult = 1.05
+			}
 }
 
 --Muzzle device stats
@@ -12795,16 +12793,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 		40
 	}
 	self.parts.wpn_fps_smg_polymer_barrel_precision.supported = true
-	self.parts.wpn_fps_smg_polymer_barrel_precision.stats = {
-		value = 5,
-		spread = 2,
-		concealment = -2
-	}
-	self.parts.wpn_fps_smg_polymer_barrel_precision.custom_stats = {
-		falloff_start_mult = 1.15,
-		falloff_end_mult = 1.15,
-		ads_speed_mult = 1.05
-	}
+	self.parts.wpn_fps_smg_polymer_barrel_precision.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_smg_polymer_barrel_precision.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 	
 	--HPS Suppressor
 	self.parts.wpn_fps_smg_polymer_ns_silencer.pcs = {
@@ -24628,10 +24618,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			stats = {},
 			custom_stats = {}
 		}
+		self.wpn_fps_ass_bdgr.override.wpn_fps_ass_m16_s_op = {
+			stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
+		}
+		self.wpn_fps_ass_bdgr.override.wpn_fps_ass_m16_s_fixed = {
+			stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats),
+			custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
+		}
+
 		table.insert(self.wpn_fps_ass_bdgr.uses_parts, "wpn_fps_smg_olympic_s_short")
-		table.insert(self.wpn_fps_ass_bdgr_npc.uses_parts, "wpn_fps_smg_olympic_s_short")
+		table.insert(self.wpn_fps_ass_bdgr.uses_parts, "wpn_fps_ass_m16_s_fixed")
+
 		table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_m4_uupg_s_fold")
-		table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")	
+		table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")
 
 		self.wpn_fps_ass_bdgr_npc.override = deep_clone(self.wpn_fps_ass_bdgr.override)
 		self.wpn_fps_ass_bdgr_npc.uses_parts = deep_clone(self.wpn_fps_ass_bdgr.uses_parts)

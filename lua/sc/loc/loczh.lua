@@ -2473,7 +2473,6 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local f = tweak_data.levels.ai_groups.federales
-local o = tweak_data.levels.ai_groups.omnia
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -2507,13 +2506,6 @@ elseif ai_type == m then
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
 		})
 	end)
-elseif ai_type == o then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "OMNIA Incursion Underway",
-			["hud_assault_alpha"] = "OMNIA INCURSION"
-		})
-	end)
 end
 
 if _G.HopLib then
@@ -2525,7 +2517,6 @@ if _G.HopLib then
 	local nypd = tweak_data.levels.ai_groups.nypd
 	local fbi = tweak_data.levels.ai_groups.fbi
 	local breins = tweak_data.levels.ai_groups.zombie
-	local oom = tweak_data.levels.ai_groups.omnia
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -2558,10 +2549,6 @@ if _G.HopLib then
 	elseif ai_type == breins then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
-		end)
-	elseif ai_type == oom then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_oom", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/omnia.json")	
 		end)	
 	end
  end

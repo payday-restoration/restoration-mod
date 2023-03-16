@@ -19,7 +19,6 @@ function ModifierSkulldozers:init(data)
 		table.insert(unit_types.nypd, Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"))
 		table.insert(unit_types.lapd, Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"))
 		table.insert(unit_types.fbi, Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"))
-		table.insert(unit_types.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"))
 	
 		table.insert(unit_types_black.america, Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"))
 		table.insert(unit_types_black.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"))
@@ -29,7 +28,6 @@ function ModifierSkulldozers:init(data)
 		table.insert(unit_types_black.nypd, Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"))
 		table.insert(unit_types_black.lapd, Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"))	
 		table.insert(unit_types_black.fbi, Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"))	
-		table.insert(unit_types_black.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"))
 	else	
 		table.insert(unit_types.america, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
 		table.insert(unit_types.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"))
@@ -39,7 +37,6 @@ function ModifierSkulldozers:init(data)
 		table.insert(unit_types.nypd, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
 		table.insert(unit_types.lapd, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
 		table.insert(unit_types.fbi, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
-		table.insert(unit_types.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"))
 	
 		table.insert(unit_types_black.america, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
 		table.insert(unit_types_black.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"))
@@ -49,7 +46,6 @@ function ModifierSkulldozers:init(data)
 		table.insert(unit_types_black.nypd, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
 		table.insert(unit_types_black.lapd, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
 		table.insert(unit_types_black.fbi, Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"))
-		table.insert(unit_types_black.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"))
 	end	
 end
 

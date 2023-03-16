@@ -11,7 +11,6 @@ LevelsTweakData.LevelType.Federales = "federales"
 LevelsTweakData.LevelType.NYPD = "nypd"
 LevelsTweakData.LevelType.LAPD = "lapd"
 LevelsTweakData.LevelType.FBI = "fbi"
-LevelsTweakData.LevelType.Omnia = "omnia"
 --///LEVELS\\\--
 Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
@@ -23,7 +22,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	local federales = LevelsTweakData.LevelType.Federales		
 	local lapd = LevelsTweakData.LevelType.LAPD
 	local fbi = LevelsTweakData.LevelType.FBI
-	local omnia = LevelsTweakData.LevelType.Omnia
 	self.ai_groups = {}
 	self.ai_groups.default = america
 	self.ai_groups.america = america
@@ -34,7 +32,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	self.ai_groups.fbi = fbi
-	self.ai_groups.omnia = omnia
 	
 	--Christmas Dozer/Cloaker jingle bells
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then

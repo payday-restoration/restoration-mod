@@ -231,6 +231,17 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_saiga_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
 	
+	<!-- OMNIA taster -->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
+	
 	<!--OMNIA Grenadier-->
 	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
@@ -264,190 +275,4 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_nm"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
-	
-	<!-- titans	 -->
-	<!--Keep those helmets flying ;)-->	
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
-	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	
-	<!--Titan Shotgunner-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-
-
-	<!--Titanshield-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-
-
-    <!--Titan Sniper-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
-	
-	<!--Titan Rifle-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
-	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
-	
-    <!--Titan Taser-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
-
-	<!--Titan Taser Helm Acc-->
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
-	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_nm" force="false"/>	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" force="false"/>		
-
-	<!--Veteran Cop-->	
-	<unit				path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false" load="true"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_husk" force="false" load="true"/>
-	<object				path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
-	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
-	<model				path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
-	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
-	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_contour" force="false"/>	
-	
-	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_body_1_df" force="false"/>
-	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_head_1_df" force="false"/>	
-
-	<!--Omnia LPF-->
-	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
-
-	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
-
-	
-	
-
-	<!--Titandozer-->
-	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
-	
-	<object				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
-
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
-	
-	<!--Titan HRT-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
-		
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
-	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_df" force="false"/>	
-	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_nm" force="false"/>	
-	
-	<!--Titan HRT MP9-->	
-	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
-	
-	<!--Titan Grenadier--
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_grenadier/ene_titan_grenadier" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_grenadier/ene_titan_grenadier_husk" force="false" load="true"/>
-	<!-- titans end -->
-	
-	<!-- bravoss squad -->
-	<!-- WEAPONS TEMP SWAPPED TO BRAVO TWEAKDATA -->
-	<!--NPC M60 Omnia-->
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false"/>
-	<model				path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false"/>
-	<object				path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false"/>
-	<sequence_manager	path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false"/>
-	<unit				path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false" load="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_df" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_nm" force="false"/>		
-	
-	<!--OICW-->
-	<object				path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
-	<model				path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
-	<unit				path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false" load="false"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_oicw/oicw_df" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_oicw/oicw_nm" force="false"/>	
-	
-	<!--bravo dmr-->
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky_husk"  load="true"/>
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" />
-		
-	<!--bravo lmg-->
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky_husk"  load="true"/>
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" />
-	
-	<!--bravo rifle-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_husk"  load="true"/>	
-	<!--bravo shotgun-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk"  load="true"/>
-	
-	<!--textures-->
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_nm"/>
-
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_nm"/>
-	
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
-	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" />
-	<!-- bravoss squad end-->	
 </table>

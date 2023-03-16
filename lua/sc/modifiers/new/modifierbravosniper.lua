@@ -7,7 +7,7 @@ ModifierBravoSniper.default_value = "spawn_chance"
 
 ModifierBravoSniper.omnia_titans = {
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
-	Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+	Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")
 }	
 
 ModifierBravoSniper.murky_titans = {
@@ -22,7 +22,6 @@ local r = tweak_data.levels.ai_groups.russia
 local m = tweak_data.levels.ai_groups.murkywater
 local b = tweak_data.levels.ai_groups.federales
 local z = tweak_data.levels.ai_groups.zombie
-local oom = tweak_data.levels.ai_groups.omnia
 local ny = tweak_data.levels.ai_groups.nypd
 local ai_type = tweak_data.levels:get_ai_group_type()
 

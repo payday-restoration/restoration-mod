@@ -8783,6 +8783,67 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_uzi", "resmod_uzi", function(self)
 	
 end)
 
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_uzi", "resmod_x_uzi", function(self)
+
+	self.wpn_fps_smg_x_uzi.override = self.wpn_fps_smg_x_uzi.override or {}
+
+	self.wpn_fps_smg_x_uzi.override.wpn_fps_smg_mac10_s_no = {
+		stats = deep_clone(stocks.remove_nocheeks_stats),
+		custom_stats = deep_clone(stocks.remove_nocheeks_stats)
+	}
+	self.wpn_fps_smg_x_uzi.override.wpn_fps_upg_vg_ass_smg_stubby = {
+		stats = {
+			concealment = 1,
+			recoil = -2
+		},
+		forbids = { "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla" }
+	}
+	self.wpn_fps_smg_x_uzi.override.wpn_fps_smg_schakal_vg_surefire = {
+		forbids = { "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla" }
+	}
+
+	for i, part_id in pairs(self.wpn_fps_smg_x_uzi.default_blueprint) do
+		attachment_list = {
+			"wpn_fps_smg_uzi_s_standard_vanilla"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_uzi.default_blueprint[i] = "wpn_fps_smg_uzi_s_unfolded"
+			end
+		end
+	end
+
+	for i, part_id in pairs(self.wpn_fps_smg_x_uzi.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_afg",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_uzi.uses_parts[i] = "resmod_dummy"
+			end
+		end
+		attachment_list = {
+			"wpn_fps_smg_uzi_s_standard_vanilla"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_uzi.uses_parts[i] = "wpn_fps_smg_uzi_s_unfolded"
+			end
+		end
+	end
+
+	table.insert(self.wpn_fps_smg_x_uzi.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_smg_x_uzi.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	table.insert(self.wpn_fps_smg_x_uzi.uses_parts, "wpn_fps_smg_uzi_s_standard")
+	table.insert(self.wpn_fps_smg_x_uzi.uses_parts, "wpn_fps_smg_mac10_s_no")
+
+	self.wpn_fps_smg_x_uzi_npc.override = deep_clone(self.wpn_fps_smg_x_uzi.override)
+	self.wpn_fps_smg_x_uzi_npc.default_blueprint = deep_clone(self.wpn_fps_smg_x_uzi.default_blueprint)
+	self.wpn_fps_smg_x_uzi_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_uzi.uses_parts)
+
+end)
+
 --Skin Boosts
 function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	--Gotta keep the internal IDs intact to not anger remote JSONs and custom_xml. Using comments to note what is actually what.
@@ -8936,7 +8997,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -1, recoil = 2},
 		custom_stats = {
 			republic = true,
-			hip_mult = 1.5,
+			hip_mult = 1.1,
 			falloff_start_mult = 0.925,
 			falloff_end_mult = 0.925
 		},
@@ -8959,7 +9020,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -2, recoil = 4},
 		custom_stats = {
 			republic = true,
-			hip_mult = 1.75,
+			hip_mult = 1.2,
 			falloff_start_mult = 0.85,
 			falloff_end_mult = 0.85
 		},
@@ -8982,7 +9043,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -3, recoil = 6},
 		custom_stats = { 
 			republic = true,
-			hip_mult = 2,
+			hip_mult = 1.3,
 			falloff_start_mult = 0.775,
 			falloff_end_mult = 0.775
 		},
@@ -9005,6 +9066,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		if self[ factory_id ] then
 			local weapon_id = peepee(factory_id)
 			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories then
+
 				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") then
 					self[ factory_id ].override = self[ factory_id ].override or {}
 					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
@@ -9036,6 +9098,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 					}
 				end
 			end
+
 		end
 	end
 

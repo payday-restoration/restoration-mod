@@ -3132,7 +3132,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7.5, 0.25, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 7.5, 0.3, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -3623,7 +3623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
 	end
 
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','contender'}
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
@@ -6945,7 +6945,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mac10.CLIP_AMMO_MAX = 40
 				self.x_mac10.AMMO_MAX = 120
 				self.x_mac10.fire_mode_data.fire_rate = 0.05
-				self.x_mac10.single.fire_rate = 0.06
 				self.x_mac10.kick = self.stat_info.kick_tables.even_recoil
 				self.x_mac10.supported = true
 				self.x_mac10.ads_speed = 0.240
@@ -6976,6 +6975,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mac10.timers.reload_exit_empty = 0.95
 				self.x_mac10.timers.reload_exit_not_empty = 1.3
 
+			--Akimbo Uzi
+				self.x_uzi.use_data.selection_index = 2
+				self.x_uzi.has_description = true
+				self.x_uzi.desc_id = "bm_uzi_sc_desc"
+				self.x_uzi.AMMO_MAX = 120
+				self.x_uzi.CLIP_AMMO_MAX = 40
+				self.x_uzi.fire_mode_data.fire_rate = 0.1
+				self.x_uzi.kick = self.stat_info.kick_tables.even_recoil
+				self.x_uzi.supported = true
+				self.x_uzi.ads_speed = 0.240
+				self.x_uzi.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4000,
+					min_mult = 0.5
+				}
+				self.x_uzi.stats = {
+					damage = 30,
+					spread = 48,
+					recoil = 71,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 26,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 7,
+					reload = 20
+				}
+				self.x_uzi.stats_modifiers = nil
+				self.x_uzi.panic_suppression_chance = 0.05
+				self.x_uzi.reload_speed_multiplier = 0.75
+				self.x_uzi.timers.reload_empty = 3
+				self.x_uzi.timers.reload_not_empty = 2
+				self.x_uzi.timers.reload_exit_empty = 0.95
+				self.x_uzi.timers.reload_exit_not_empty = 1.3
+
 			--Kross Vertex (Vector)
 				self.polymer.use_data.selection_index = 2
 				self.polymer.CLIP_AMMO_MAX = 30
@@ -6997,7 +7033,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.stats = {
 					damage = 30,
 					spread = 52,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 23,
@@ -7201,8 +7237,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.fire_mode_data = {}
 				self.uzi.fire_mode_data.fire_rate = 0.1
 				self.uzi.CAN_TOGGLE_FIREMODE = true
-				self.uzi.auto = {}
-				self.uzi.auto.fire_rate = 0.1
 				self.uzi.kick = self.stat_info.kick_tables.even_recoil
 				self.uzi.supported = true
 				self.uzi.ads_speed = 0.240
@@ -8725,7 +8759,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.stats = {
 					damage = 45,
 					spread = 86,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 21,
@@ -8766,7 +8800,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -8808,7 +8842,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.stats = {
 					damage = 45,
 					spread = 83,
-					recoil = 67,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -8920,7 +8954,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.stats = {
 					damage = 60,
 					spread = 80,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -8960,7 +8994,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.stats = {
 					damage = 60,
 					spread = 90,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 19,
@@ -8998,7 +9032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.stats = {
 					damage = 60,
 					spread = 94,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -9041,7 +9075,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -9078,7 +9112,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hcar.stats = {
 					damage = 60,
 					spread = 78,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 19,
@@ -9111,7 +9145,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.upgrade_blocks = nil
 				self.qbu88.CLIP_AMMO_MAX = 10
 				self.qbu88.AMMO_MAX = 60
-				self.qbu88.fire_mode_data.fire_rate = 0.21951219
+				self.qbu88.fire_mode_data.fire_rate = 0.2307692
 				self.qbu88.fire_rate_multiplier = 1.5 --So the recoil anim while ADS progresses faster
 				self.qbu88.sms = sms_preset.semi_snp_light
 				self.qbu88.CAN_TOGGLE_FIREMODE = false
@@ -9159,7 +9193,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.AMMO_MAX = 60
 				self.tti.FIRE_MODE = "single"
 				self.tti.fire_mode_data = {}
-				self.tti.fire_mode_data.fire_rate = 0.15789473
+				self.tti.fire_mode_data.fire_rate = 0.1666666
 				self.tti.sms = sms_preset.semi_snp_light
 				self.tti.kick = self.stat_info.kick_tables.vertical_kick
 				self.tti.can_shoot_through_enemy = true
@@ -11916,32 +11950,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_tec9.stats_modifiers = nil
 			self.x_tec9.panic_suppression_chance = 0.05
 	
-		--Akimbo Uzi
-		--DISABLED--	
-			self.x_uzi.use_data.selection_index = 5		
-			self.x_uzi.AMMO_MAX = 120
-			self.x_uzi.CLIP_AMMO_MAX = 44
-			self.x_uzi.fire_mode_data.fire_rate = 0.086
-			self.x_uzi.single.fire_rate = 0.086
-			self.x_uzi.kick = self.stat_info.kick_tables.even_recoil
-			self.x_uzi.supported = true
-			self.x_uzi.stats = {
-				damage = 30,
-				spread = 61,
-				recoil = 79,
-				spread_moving = 8,
-				zoom = 1,
-				concealment = 25,
-				suppression = 8,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 7,
-				reload = 20
-			}
-			self.x_uzi.stats_modifiers = nil
-			self.x_uzi.panic_suppression_chance = 0.05	
-	
 		--Akimbo Parabellum
 		--DISABLED--	
 			self.x_breech.use_data.selection_index = 5			
@@ -13043,7 +13051,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.tactical_reload = 1
 			self.sgs.AMMO_MAX = 60
 			self.sgs.FIRE_MODE = "single"
-			self.sgs.fire_mode_data.fire_rate = 0.1666666
+			self.sgs.fire_mode_data.fire_rate = 0.173913
 			self.sgs.sms = sms_preset.semi_snp_light
 			self.sgs.kick = self.stat_info.kick_tables.vertical_kick
 			self.sgs.can_shoot_through_enemy = true

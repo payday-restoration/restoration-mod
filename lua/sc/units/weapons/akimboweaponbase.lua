@@ -14,7 +14,12 @@ else
 		local fire_mode_data = tweak_data.weapon[self._name_id].fire_mode_data
 		if fire_mode_data then
 			fire_mode_data.original_fire_rate = fire_mode_data.original_fire_rate or fire_mode_data.fire_rate
-			fire_mode_data.fire_rate = fire_mode_data.original_fire_rate / 1.5
+
+			if tweak_data.weapon[self._name_id].FIRE_MODE and tweak_data.weapon[self._name_id].FIRE_MODE == "auto" then
+				fire_mode_data.fire_rate = fire_mode_data.original_fire_rate / 1.25
+			else
+				fire_mode_data.fire_rate = fire_mode_data.original_fire_rate / 1.75
+			end
 		end
 	end
 

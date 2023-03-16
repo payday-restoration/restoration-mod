@@ -672,7 +672,6 @@
 	<Package id="packages/skm_sc_russia" file="packages/russia_diff/skm_sc_russia.xml"/>
 	<Package id="packages/skm_sc_zombie" file="packages/zombie_diff/skm_sc_zombie.xml"/>
 	<Package id="packages/skm_sc_murkywater" file="packages/murkywater_diff/skm_sc_murkywater.xml"/>
-	<Package id="packages/skm_sc_omnia" file="packages/murkywater_diff/skm_sc_omnia.xml"/>
     <Package id="packages/skm_sc_federales" file="packages/federales_diff/skm_sc_federales.xml"/>
 	
 </mod>

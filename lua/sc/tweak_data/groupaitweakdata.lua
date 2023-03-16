@@ -616,6 +616,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			fbi = {
 				Idstring("units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			}
 		},
 		access = access_type_all,
 		special_type = "spooc"

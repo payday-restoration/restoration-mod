@@ -3118,7 +3118,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		40
 	}
 	self.parts.wpn_fps_m4_upper_reciever_edge.supported = true
-	self.parts.wpn_fps_m4_upper_reciever_edge.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_m4_upper_reciever_edge.override.wpn_fps_m4_upper_reciever_round_vanilla = {
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	}
 	self.parts.wpn_fps_m4_upper_reciever_edge.override.wpn_fps_amcar_uupg_body_upperreciever = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
@@ -3314,7 +3317,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.parts.wpn_fps_upg_m4_m_straight.stats = {
 		value = 2,
 		concealment = 1,
-		reload = 3,
+		reload = 5,
 		extra_ammo = -10
 	}
 	self.parts.wpn_fps_upg_m4_m_straight.custom_stats = { 
@@ -11443,7 +11446,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--LW Upper Receiver
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.supported = true
-	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.override.wpn_fps_m4_upper_reciever_round_vanilla = {
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.override.wpn_fps_amcar_uupg_body_upperreciever = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
@@ -11458,7 +11464,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--THRUST Upper Receiver
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.supported = true
-	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.override.wpn_fps_m4_upper_reciever_round_vanilla = {
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.override.wpn_fps_amcar_uupg_body_upperreciever = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
@@ -19553,8 +19562,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		30,
 		40
 	}
-	self.parts.wpn_fps_m4_uupg_upper_radian.forbids = { "wpn_fps_m4_upper_reciever_round_vanilla" }
 	self.parts.wpn_fps_m4_uupg_upper_radian.adds = { "wpn_fps_m4_uupg_draghandle" }
+	self.parts.wpn_fps_m4_uupg_upper_radian.override.wpn_fps_m4_upper_reciever_round_vanilla = {
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	}
 	self.parts.wpn_fps_m4_uupg_upper_radian.override.wpn_fps_amcar_uupg_body_upperreciever = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
@@ -19892,8 +19904,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 
 	--Starlight Stock
 	self.parts.wpn_fps_m4_uupg_s_zulu.supported = true
+	self.parts.wpn_fps_m4_uupg_s_zulu.forbids = self.parts.wpn_fps_m4_uupg_s_zulu.forbids or {}
+	table.insert(self.parts.wpn_fps_m4_uupg_s_zulu.forbids, "wpn_fps_gre_m32_stock_adapter")
 	self.parts.wpn_fps_m4_uupg_s_zulu.stats = deep_clone(stocks.adj_to_fold_stats)
 	self.parts.wpn_fps_m4_uupg_s_zulu.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+
 
 	self.wpn_fps_snp_victor.override = self.wpn_fps_snp_victor.override or {}
 	self.wpn_fps_snp_victor.override.wpn_fps_upg_vg_ass_smg_stubby = {
@@ -21403,6 +21418,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
+	--Alternative way of making the default CAR-4 stock piss off instead of putting a "attachment forbids" warning on everything
+	for part_id, i in pairs(self.parts) do
+		if self.parts[part_id] and self.parts[part_id].forbids and table.contains(self.parts[part_id].forbids, "wpn_fps_upg_m4_s_standard_vanilla") then
+			for k, forbid_id in pairs(self.parts[part_id].forbids) do
+				if forbid_id == "wpn_fps_upg_m4_s_standard_vanilla" then
+					self.parts[part_id].forbids[k] = "forbid_dummy"
+				end
+			end
+			self.parts[part_id].override = self.parts[part_id].override or {}
+			self.parts[part_id].override.wpn_fps_upg_m4_s_standard_vanilla = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		end
+	end
 
 
 
@@ -26311,7 +26341,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_g36k_mag20magpul.supported = true
 		self.parts.wpn_fps_upg_g36k_mag20magpul.has_description = nil
 		self.parts.wpn_fps_upg_g36k_mag20magpul.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
-		self.parts.wpn_fps_upg_g36k_mag20magpul.stats.reload = 6
+		self.parts.wpn_fps_upg_g36k_mag20magpul.stats.reload = 8
 		self.parts.wpn_fps_upg_g36k_mag20magpul.stats.spread = -1
 		self.parts.wpn_fps_upg_g36k_mag20magpul.stats.concealment = nil
 		self.parts.wpn_fps_upg_g36k_mag20magpul.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
@@ -26772,9 +26802,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts[part_id].stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
 			self.parts[part_id].custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
 		end
-		self.parts.wpn_fps_upg_m_54520s.stats.reload = 5
+		self.parts.wpn_fps_upg_m_54520s.stats.reload = 7
 		self.parts.wpn_fps_upg_m_54520s.stats.spread = -1
-		self.parts.wpn_fps_upg_m_54520d.stats.reload = 5
+		self.parts.wpn_fps_upg_m_54520d.stats.reload = 7
 		self.parts.wpn_fps_upg_m_54520d.stats.spread = -1
 
 		-- -20 mags
@@ -29090,6 +29120,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -1
 		}
 		self.parts.wpn_fps_m4_uupg_m_sharps.custom_stats = nil
+	
+		self.parts.wpn_fps_upg_m4_m_d60.supported = true
+		self.parts.wpn_fps_upg_m4_m_d60.has_description = false
+		self.parts.wpn_fps_upg_m4_m_d60.desc_id = ""
+		self.parts.wpn_fps_upg_m4_m_d60.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_quad.stats)
+		self.parts.wpn_fps_upg_m4_m_d60.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_quad.custom_stats)
 
 		--HK416c parts
 		self.parts.wpn_fps_ass_tecci_fg_contraband.supported = true

@@ -128,10 +128,10 @@ local stocks = {
 			--stocks.nocheeks_to_thumb_stats
 			nocheeks_to_thumb_stats = {
 				value = 7,
-				spread = 2,
-				recoil = 6,
-				concealment = -5,
-				ads_speed_mult = 1.125
+				spread = 3,
+				recoil = 8,
+				concealment = -7,
+				ads_speed_mult = 1.175
 			},
 		--Retract > Fixed Stock ----Con ++Acc ++Stab
 			--stocks.nocheeks_to_fixed_acc2_rec2_stats
@@ -222,10 +222,10 @@ local stocks = {
 			--stocks.folder_to_thumb_stats
 			folder_to_thumb_stats = {
 				value = 7,
-				spread = 1,
-				recoil = 6,
-				concealment = -4,
-				ads_speed_mult = 1.1
+				spread = 2,
+				recoil = 8,
+				concealment = -6,
+				ads_speed_mult = 1.15
 			},
 		--Folder > Fixed Stock ---Con +Acc ++Stab
 			--stocks.folder_to_fixed_acc1_rec2_stats
@@ -322,10 +322,19 @@ local stocks = {
 			},
 	
 	--DEFAULT ADJUSTABLE STOCK (DEFAULT M4)
+		--Adjustable > Thumbhole ---Con ++Stab +Acc
+			adj_to_to_thumb_stats = {
+				value = 7,
+				spread = 2,
+				recoil = 6,
+				concealment = -5,
+				ads_speed_mult = 1.125
+			},
 		--Adjustable > Fixed --Con ++Stab
 			adj_to_fixed_acc_stats = {
 				value = 5,
-				recoil = 4,
+				spread = 1,
+				recoil = 2,
 				concealment = -2,
 				ads_speed_mult = 1.05
 			},
@@ -495,6 +504,15 @@ local stocks = {
 			},
 
 	--DEFAULT FOLDED/COLLAPSED STOCK
+		--Folded > Fixed Stock -----Con ++Acc +++Stab
+			--stocks.folded_to_thumb
+			folded_to_thumb = {
+				value = 7,
+				spread = 3,
+				recoil = 10,
+				concealment = -8,
+				ads_speed_mult = 1.125
+			},
 		--Folded > Fixed Stock -----Con ++Acc +++Stab
 			--stocks.folded_to_fixed_stats
 			folded_to_fixed_stats = {
@@ -3917,6 +3935,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		custom_stats = deep_clone(stocks.fixed_acc_stats)
 	}
 
+	self.wpn_fps_ass_m16.override.wpn_fps_ass_tecci_s_wire = {
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+	}
+	self.wpn_fps_ass_m16.override.wpn_fps_upg_m4_s_hera = {
+		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+	}
+
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_pts")
@@ -4011,6 +4038,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	self.wpn_fps_smg_olympic.override.wpn_fps_ass_contraband_s_tecci = {
 		stats = {},
 		custom_stats = {}
+	}
+	self.wpn_fps_smg_olympic.override.wpn_fps_ass_tecci_s_wire = {
+		stats = {},
+		custom_stats = {}
+	}
+	self.wpn_fps_smg_olympic.override.wpn_fps_upg_m4_s_hera = {
+		stats = deep_clone(stocks.nocheeks_to_thumb_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_thumb_stats)
 	}
 	self.wpn_fps_smg_olympic.override.wpn_fps_ass_tecci_s_minicontra = {
 		stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats),
@@ -13901,6 +13936,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tecci", "resmod_tecci", function(s
 		custom_stats = deep_clone(stocks.folded_to_fixed_stats)
 	}
 
+	self.wpn_fps_ass_tecci.override.wpn_fps_ass_tecci_s_wire = {
+		stats = deep_clone(stocks.unfold_nocheeks_stats),
+		custom_stats = deep_clone(stocks.unfold_nocheeks_stats)
+	}
+	self.wpn_fps_ass_tecci.override.wpn_fps_upg_m4_s_hera = {
+		stats = deep_clone(stocks.folded_to_thumb),
+		custom_stats = deep_clone(stocks.folded_to_thumb)
+	}
+
 	--New parts
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_smg_olympic_s_short")
@@ -14754,6 +14798,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_contraband", "resmod_contraband", 
 		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
 		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 	}
+
+	self.wpn_fps_ass_contraband.override.wpn_fps_ass_tecci_s_wire = {
+		stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+	}
+	self.wpn_fps_ass_contraband.override.wpn_fps_upg_m4_s_hera = {
+		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+	}
+
 	self.wpn_fps_ass_contraband.override.wpn_fps_smg_olympic_s_short = {
 		stats = deep_clone(stocks.remove_fixed_stats),
 		custom_stats = deep_clone(stocks.remove_fixed_stats)
@@ -23563,6 +23617,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				stats = deep_clone(stocks.fixed_acc_stats),
 				custom_stats = deep_clone(stocks.fixed_acc_stats)
 			}
+
+			self.wpn_fps_shot_amr12.override.wpn_fps_ass_tecci_s_wire = {
+				stats = deep_clone(stocks.fixed_to_nocheeks_stats),
+				custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+			}
+			self.wpn_fps_shot_amr12.override.wpn_fps_upg_m4_s_hera = {
+				stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+				custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+			}
+
 			self.wpn_fps_shot_amr12.override.wpn_fps_m16_fg_standard = {
 				adds = {}
 			}
@@ -29036,6 +29100,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -2,
 			spread = 1
 		}
+		self.parts.wpn_fps_upg_m4_s_hera.supported = true
+		self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		for i, part_id in pairs(self.parts.wpn_fps_upg_m4_s_hera.forbids) do
+			if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "stock" then
+				self.parts.wpn_fps_upg_m4_s_hera.forbids[i] = "dummy"
+			end
+		end	
 		
 		--St. Victor
 		self.parts.wpn_fps_upg_m4_victor_lower.supported = true
@@ -29131,6 +29203,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_tecci_fg_contraband.supported = true
 		self.parts.wpn_fps_ass_tecci_fg_contraband.stats = deep_clone(barrels.long_b2_stats)
 		self.parts.wpn_fps_ass_tecci_fg_contraband.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+		self.parts.wpn_fps_ass_tecci_s_wire.supported = true
+		self.parts.wpn_fps_ass_tecci_s_wire.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+		self.parts.wpn_fps_ass_tecci_s_wire.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 
 		self.parts.wpn_fps_ass_tecci_m_jungle_m4.custom_stats = nil
 		self.parts.wpn_fps_ass_tecci_m_jungle.supported = true

@@ -29102,6 +29102,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_upg_m4_fg_hera.supported = true
 		self.parts.wpn_fps_upg_m4_fg_hera.forbids = { "wpn_fps_m4_uupg_fg_rail_ext" }
+		self.parts.wpn_fps_upg_m4_fg_hera.adds = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }
 		self.parts.wpn_fps_upg_m4_fg_hera.stats = {
 			value = 5,
 			spread = 1,

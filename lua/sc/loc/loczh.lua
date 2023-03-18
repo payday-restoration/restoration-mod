@@ -3,7 +3,7 @@ This code is to detect one of my mods, which helps me keep up the translation of
 Or The update is so less that I should not bother you guys in that case.
 I tried to make my mod have a lower priorty, but it didn't work, so I can only do something here.
 THIS CAN RLY MAKES MY WORK MUCH MORE CONVENIENT, so PLZ don't delete it since it only affects Chinese.  --]]
-if ChinStringFixes and ChinStringFixes.settings and ChinStringFixes.settings.Resmod_Compat and ChinStringFixes.settings.Enable_String then
+if ChinStringFixes and ChinStringFixes.settings and ChinStringFixes.settings.Mod_Support and ChinStringFixes.settings.Mod_Support.Resmod and ChinStringFixes.settings.Mod_Support.Resmod.Resmod_Compat and ChinStringFixes.settings.Mod_Support.Resmod.Resmod_Compat ~= 1 and ChinStringFixes.settings.Enable_String then
 	return
 end
 
@@ -1277,7 +1277,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "反射式瞄具。\n#{risk}#1.1倍放大倍率##",
-		["bm_wp_upg_o_1_1_health"] = "此反射式瞄具能显示被瞄准的敌人的血量。\n#{risk}#1.1倍放大倍率##",
+		["bm_wp_upg_o_1_1_health"] = "此反射式瞄具能#{skill_color}#显示被瞄准的敌人的血量##。\n#{risk}#1.1倍放大倍率##",
 		["bm_wp_upg_o_1_2"] = "红点瞄准镜。\n#{risk}#1.2倍放大倍率##",
 		["bm_wp_upg_o_1_5"] = "全息瞄准镜。\n#{risk}#1.5倍放大倍率##",
 		["bm_wp_upg_o_1_5_pris"] = "棱镜瞄准具\n#{risk}#1.5倍放大倍率##",
@@ -1341,7 +1341,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_sc"] = "稀有",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "燃烧时间#{skill_color}#翻倍##，燃烧持续伤害#{important_1}#减半##。",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "燃烧时间#{important_1}#减半##，燃烧持续伤害#{skill_color}#翻倍##。",
-		["bm_ap_flamethrower_sc_desc"] = "五十度灰，二百度黑，三千度焦？\n喷火器可以#{skill_color}#烧穿敌人的护甲##但对熊的装甲#{important_1}#收效甚微##。", --used by both flamethrowers, decouple later?--
+		["bm_ap_flamethrower_sc_desc"] = "五十度灰，二百度黑，三千度焦？\n喷火器可以#{skill_color}#烧穿敌人的护甲##但对熊和炮塔的装甲#{important_1}#收效甚微##。", --used by both flamethrowers, decouple later?--
 		["bm_ap_money_sc_desc"] = "只需轻轻打开阀门，成千上万白花花的票子就喷涌而出。\n票子不光可以打通关节，也可以#{skill_color}#打穿护甲##。", --used by both flamethrowers, decouple later?--
 
 		--LMGs/Miniguns--
@@ -1457,7 +1457,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"#{heat_warm_color}#……然后狼吃掉了小红帽##\"\n\n具有革命性的德国手枪，尤其这一款被改装成了全自动开火模式。\n\n这把枪一次装填#{skill_color}#10##颗子弹",
 		["bm_wp_c96_nozzle"] = "DL-44爆能枪口", --Suppressor into Muzzle --checkout
-		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1.5秒\n充能速率: 3发/秒(过热时减半)\n过热惩罚: 2秒",
+		["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: #{item_stage_2}#1.5##秒\n充能速率: #{skill_color}#3##发/秒 (过热时减半)\n过热惩罚: #{item_stage_2}#2##秒",
 		--Sub2000
 		["bm_sub2000_sc_desc"] = "制造质量存疑的卡宾手枪。小巧的手枪子弹从长枪管射出时打身上加倍的疼，并且折叠能力使其隐蔽性首屈一指。",	
 		--Deagle
@@ -1519,7 +1519,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_mp5_sc_desc"] = "Gewehr-3的小妹妹。\n射击快速，精准同时操控简单，你还指望冲锋枪能比这更好吗？",
 		--Pachett/Sterling
 		["bm_wp_sterling_b_e11"] = "爆能E-11枪管",
-		["bm_wp_sterling_b_e11_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: 1s\n充能速率: 6/s (过热时减半)\n过热惩罚: 2s",
+		["bm_wp_sterling_b_e11_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: #{item_stage_2}#1##秒\n充能速率: #{skill_color}#6##发/秒 (过热时减半)\n过热惩罚: #{item_stage_2}#2##秒",
 		--Uzi
 		["bm_uzi_sc_desc"] = "慢下来开火的时候，Uzi是一款可靠，操控简单的冲锋枪，使得它依然能拿来碰一碰，尤其是能将它转变为.41 AE时。",	
 		--Chicago Typewriter
@@ -1649,8 +1649,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
 		--Although, a Russian word for "region/zone/area" followed up with a Polish word...
 		--Eh, whatever
-		["bm_groza_sc_desc_pc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
-		["bm_groza_sc_desc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
+		["bm_groza_sc_desc_pc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按下#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
+		["bm_groza_sc_desc"] = "AK家族的无托小妹，专为那些想搞大动静的人配备。\n\n按住#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
 		--CHIKUBI
 		["bm_w_tkb"] = "Rodion 3B步枪",
 		["bm_wp_tkb_m_bakelite"] = "西伯利亚款15x3弹匣",
@@ -1699,7 +1699,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mg42"] = "Buzzsaw-42重机枪",	
 		["bm_wolf_brigade_sc_desc"] = "#{heat_warm_color}#我们不是人模狗样，\n我们是人中之狼。##\n\n#{skill_color}#这把武器具有更好的腰射表现##",
 		["bm_wp_mg42_b_vg38"] = "爆能科技 DLT-19抑制器", --Suppressed Barrel into Barrel  --checkout
-		["bm_wp_mg42_b_vg38_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能延迟: 2s\n充能速率: 9/s (过热时减半)\n过热惩罚: 4s",
+		["bm_wp_mg42_b_vg38_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: #{item_stage_2}#2##秒\n充能速率: #{skill_color}#9##发/秒 (过热时减半)\n过热惩罚: #{item_stage_2}#4##秒",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟#{skill_color}#800##发",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B重机枪",
@@ -1790,7 +1790,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosin--
 		["bm_mosin_sc_desc"] = "当你食不果腹而仍然需要一把枪，这把廉价又经典的栓动式步枪便应召而来。\n\n这把枪一次装填满5颗子弹，并且能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
 		["bm_wp_upg_a_tranq_mosin"] = "镇静弹",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "忘却，#{item_stage_2}#结束##。\n\n发射伤害更低的#{stats_positive}#镇静弹##在#{skill_color}#6##秒内每秒造成#{skill_color}#30##点伤害并且能够#{stats_positive}#硬直敌人##。",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "#{ghost_color}#忘却##，#{item_stage_2}#结束##。\n\n发射伤害更低的#{stats_positive}#镇静弹##，但命中敌人时能在#{skill_color}#6##秒内每秒造成#{skill_color}#30##点伤害并且能够#{stats_positive}#硬直敌人##。",
 		--Desert Fox
 		["bm_desertfox_sc_desc"] = "威克突击俄罗斯黑帮安全屋时用的紧凑型无托狙击步枪。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",			
 		--R93
@@ -1825,6 +1825,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_hmcar_hd_kit"] = "32位-8K超高清套件",
 		["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 
+		--Light Crossbow		
+		["bm_wp_avelyn"] = "“万箭齐发”套件",
+		["bm_wp_avelyn_desc"] = "一种真正的#{skill_color}#齐射##套件。\n让你可以一次射出#{skill_color}#3##发箭矢。",
 		
 		--GL40		
 		["bm_w_gre_m79_sc_desc"] = "咚了个砰！\n\n按下 #{skill_color}#$BTN_GADGET## 切换到折叠瞄具。\n\n该瞄具视野限制在#{skill_color}#30m##内。",
@@ -1871,8 +1874,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_weapon_sc_desc"] = "爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 		
-		["bm_bow_sc_desc"] = "按住 #{skill_color}#$BTN_FIRE## 以拉弓，然后松开以射击。\n弓拉的越满，伤害和箭的飞行速度越高。\n\n按下 #{skill_color}#$BTN_AIM## 停止拉弓。\n\n箭矢可以#{skill_color}#捡起回收##。\n能够#{skill_color}#穿透护甲##。",
-		["bm_bow_exp_sc_desc"] = "按住 #{skill_color}#$BTN_FIRE## 以拉弓，然后松开以射击。\n弓拉的越满，箭的飞行速度越高。\n\n按下 #{skill_color}#$BTN_AIM## 停止拉弓。\n\n箭矢在#{skill_color}#撞击时爆炸##。",
+		["bm_bow_sc_desc"] = "轻按#{skill_color}#$BTN_FIRE##以快速射击，但#{important_1}#伤害减半##且#{important_1}#下垂更快##。\n按住#{skill_color}#$BTN_FIRE##以拉弓，然后松开以射击。\n弓拉的越满，伤害和箭的飞行速度越高。\n\n按下#{skill_color}#$BTN_AIM##停止拉弓。\n\n箭矢可以#{skill_color}#捡起回收##。\n能够#{skill_color}#穿透护甲##。",
+		["bm_bow_exp_sc_desc"] = "轻按#{skill_color}#$BTN_FIRE##以快速射击，但#{important_1}#伤害减半##且#{important_1}#下垂更快##。\n按住#{skill_color}#$BTN_FIRE##以拉弓，然后松开以射击。\n弓拉的越满，箭的飞行速度越高。\n\n按下#{skill_color}#$BTN_AIM##停止拉弓。\n\n箭矢在#{skill_color}#撞击时爆炸##。",
 		["bm_w_bow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#1.5##米内所有敌人的箭矢。\n\n#{important_1}#箭矢的飞行速度降低，且无法爆头和回收##",
 		["bm_w_bow_light_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的箭矢，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害并有概率眩晕敌人。\n\n#{important_1}#箭矢的飞行速度略微降低##",
 		["bm_w_bow_heavy_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的箭矢，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害并有概率眩晕敌人。\n\n#{important_1}#箭矢的飞行速度略微降低##",
@@ -2373,13 +2376,66 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
 					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
 					["bm_wp_1911_g_bling"] = "Walnut Grips",
-					["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+					["bm_wp_1911_g_engraved"] = "Engraved 1911 Grips",
 					["bm_wp_1911_b_long"] = "Compensated Long Slide",
 					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
 					["bm_wp_1911_m_extended"] = "12rnd Magazine",
 					--Crosskill Chunky
-					["bm_w_m1911"] = "Colt 1911A1",
+					["bm_w_m1911"] = "Colt 1911A1", --Not entirely but its the closest thing
 					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+					--Crosskill Guard
+					["bm_w_shrew"] = "Colt Defender",
+					["bm_w_x_shrew"] = "Akimbo Defenders",
+
+					["bm_w_uzi"] = "IMI Uzi",
+					["bm_w_x_uzi"] = "Akimbo Uzi",
+					["bm_wp_uzi_s_solid"] = "Wooden Stock",
+					["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
+					["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
+
+					["bm_w_mp9"] = "B&T TP9SF",
+					["bm_w_x_mp9"] = "Akimbo TP9SFs",
+					["bm_wp_mp9_m_extended"] = "30rnd MP9 Magazine",
+					["bm_wp_mp9_s_skel"] = "Steyr TMP Fixed Stock",
+
+					["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
+					["bm_w_x_scorpion"] = "Akimbo Skorpions",
+					["bm_wp_scorpion_m_extended"] = "Dual Magazines",
+					["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
+
+					["bm_w_baka"] = "IWI Micro Uzi",
+					["bm_w_x_baka"] = "Akimbo Micro Uzis",
+
+					["bm_w_tec9"] = "Intratec TEC-9",
+					["bm_wp_tec9_b_standard"] = "AB-10 Barrel",
+					["bm_wp_tec9_ns_ext"] = "Pseudo Barrel Extension",
+					["bm_wp_tec9_s_unfolded"] = "Interdynamic MP-9 Wire Stock",
+					["bm_wp_tec9_m_extended"] = "50rnd Magazine",
+
+					["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
+					["bm_w_x_sr2"] = "Akimbo SR-2Ms",
+
+					["bm_w_sterling"] = "Sterling L2A1",
+					["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
+					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+					["bm_wp_sterling_m_short"] = "15rnd Magazine",
+					["bm_wp_sterling_m_long"] = "34rnd Magazine",
+
+					["bm_w_mp5"] = "H&K MP5A2",
+					["bm_w_x_mp5"] = "Akimbo MP5A2s",
+
+					["bm_w_shepheard"] = "SIG MPX", 
+
+					["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
+
+					["bm_w_coal"] = "Kalashnikov Concern PP-19 Bizon-2",
+
+					["bm_w_schakal"] = "H&K UMP-45",
+					["bm_wp_schakal_b_civil"] = "USC Barrel",
+					["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
+
+					--AK parts
+					["bm_wp_upg_ak_ns_jmac"] = "JMac Customs MTC-1",
 				})
 			end
 		end
@@ -2413,6 +2469,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	if game_meme <= game_meme_fun then
 		if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
 			LocalizationManager:add_localized_strings({	
+				--SanGuoSha
+				["bm_wp_avelyn_desc"] = "“#{ghost_color}#万箭齐发##”\n“#{risk}#闪！##”\n\n一种真正的#{skill_color}#齐射##套件。\n让你可以一次射出#{skill_color}#3##发箭矢。",
 				--apex
 				["bm_w_fmg9"] = "平行手枪",
 				["bm_w_mg42"] = "L-STAR充能机枪",
@@ -3717,7 +3775,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Sociopath
 			["menu_deck9_mrwi_desc"] = "击杀一名敌人将为你回复护甲值，击杀的敌人若在你周围##18##米内，你回复##40##点护甲值，否则回复##20##点。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1##秒。\n\n你初始携带的尸体袋数量增加##1##。",
 			--Gambler
-			["menu_deck10_mrwi_desc"] = "你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你回答对讲机所需的时间减少##25%##。",
+			["menu_deck10_mrwi_desc"] = "你捡起一个弹药盒会回复##2##至##4##点血量。\n冷却时间为##10##秒，每捡起一个弹药盒会减少冷却时间##1##至##3##秒。\n\n你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你回答对讲机所需的时间减少##25%##。",
 			--Grinder
 			["menu_deck11_mrwi_desc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的隐匿度增加##4##。\n\n你可以放置##2##个尸体袋箱。",
 			--Yakuza

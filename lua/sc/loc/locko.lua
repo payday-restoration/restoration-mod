@@ -1150,7 +1150,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "반사식 조준기.\n#{risk}#1.1x 배율.##",
-		["bm_wp_upg_o_1_1_health"] = "적을 조준하는 동안 적의 체력을 표시하는 반사식 조준기.\n#{risk}#1.1x 배율.##",		
+		["bm_wp_upg_o_1_1_health"] = "적을 조준하는 동안 #{skill_color}#적의 체력을 표시해주는## 반사식 조준기.\n#{risk}#1.1x 배율.##",		
 		["bm_wp_upg_o_1_2"] = "레드 닷 조준기.\n#{risk}#1.2x 배율.##",
 		["bm_wp_upg_o_1_2_iwrds"] = "정밀 레드 닷 조준기.\n#{risk}#1.2x 배율.##",
 		["bm_wp_upg_o_1_5"] = "홀로그램 조준기.\n#{risk}#1.5x 배율.##",

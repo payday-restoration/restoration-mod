@@ -2344,11 +2344,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				})
 			elseif weapon_names == 3 then
 				LocalizationManager:add_localized_strings({	
+
 					--LEO-40
 					["bm_w_hs2000"] = "SA XD(M)-40",
 					["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
 					["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
 					["bm_wp_hs2000_sl_long"] = "Custom Slide",
+					
 					--Signature 40
 					["bm_w_p226"] = "SIG P226R",
 					["bm_w_x_p226"] = "Akimbo P226Rs",
@@ -2364,13 +2366,66 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
 					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
 					["bm_wp_1911_g_bling"] = "Walnut Grips",
-					["bm_wp_1911_g_engraved"] = "Custom Engraved 1911 Grips",
+					["bm_wp_1911_g_engraved"] = "Engraved 1911 Grips",
 					["bm_wp_1911_b_long"] = "Compensated Long Slide",
 					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
 					["bm_wp_1911_m_extended"] = "12rnd Magazine",
 					--Crosskill Chunky
-					["bm_w_m1911"] = "Colt 1911A1",
+					["bm_w_m1911"] = "Colt 1911A1", --Not entirely but its the closest thing
 					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+					--Crosskill Guard
+					["bm_w_shrew"] = "Colt Defender",
+					["bm_w_x_shrew"] = "Akimbo Defenders",
+
+					["bm_w_uzi"] = "IMI Uzi",
+					["bm_w_x_uzi"] = "Akimbo Uzi",
+					["bm_wp_uzi_s_solid"] = "Wooden Stock",
+					["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
+					["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
+					
+					["bm_w_mp9"] = "B&T TP9SF",
+					["bm_w_x_mp9"] = "Akimbo TP9SFs",
+					["bm_wp_mp9_m_extended"] = "30rnd MP9 Magazine",
+					["bm_wp_mp9_s_skel"] = "Steyr TMP Fixed Stock",
+
+					["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
+					["bm_w_x_scorpion"] = "Akimbo Skorpions",
+					["bm_wp_scorpion_m_extended"] = "Dual Magazines",
+					["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
+
+					["bm_w_baka"] = "IWI Micro Uzi",
+					["bm_w_x_baka"] = "Akimbo Micro Uzis",
+
+					["bm_w_tec9"] = "Intratec TEC-9",
+					["bm_wp_tec9_b_standard"] = "AB-10 Barrel",
+					["bm_wp_tec9_ns_ext"] = "Pseudo Barrel Extension",
+					["bm_wp_tec9_s_unfolded"] = "Interdynamic MP-9 Wire Stock",
+					["bm_wp_tec9_m_extended"] = "50rnd Magazine",
+
+					["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
+					["bm_w_x_sr2"] = "Akimbo SR-2Ms",
+
+					["bm_w_sterling"] = "Sterling L2A1",
+					["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
+					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+					["bm_wp_sterling_m_short"] = "15rnd Magazine",
+					["bm_wp_sterling_m_long"] = "34rnd Magazine",
+
+					["bm_w_mp5"] = "H&K MP5A2",
+					["bm_w_x_mp5"] = "Akimbo MP5A2s",
+
+					["bm_w_shepheard"] = "SIG MPX", 
+
+					["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
+					
+					["bm_w_coal"] = "Kalashnikov Concern PP-19 Bizon-2",
+
+					["bm_w_schakal"] = "H&K UMP-45",
+					["bm_wp_schakal_b_civil"] = "USC Barrel",
+					["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
+
+					--AK parts
+					["bm_wp_upg_ak_ns_jmac"] = "JMac Customs MTC-1",
 				})
 			end
 		end	

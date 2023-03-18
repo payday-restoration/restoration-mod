@@ -2465,6 +2465,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_x_mp9"] = "Akimbo TP9SFs",
 						["bm_wp_mp9_m_extended"] = "30rnd TP9 Magazine",
 						["bm_wp_mp9_s_skel"] = "Steyr TMP Fixed Stock",
+						["bm_wp_mp9_b_suppressed"] = "B&T MP9 QD Suppressor",
 						--Micro Uzi
 						["bm_w_baka"] = "IWI Micro Uzi",
 						["bm_w_x_baka"] = "Akimbo Micro Uzis",
@@ -2508,9 +2509,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Thompson
 						["bm_w_m1928"] = "Auto-Ordnance M1928",
 						["bm_wp_m1928_b_short"] = "Short Barrel",
-						["bm_wp_m1928_fg_discrete"] = "Synthetic Foregrip",
-						["bm_wp_m1928_g_discrete"] = "Synthetic Pistol Grip",
-						["bm_wp_m1928_s_discrete"] = "Synthetic Stock",
+						["bm_wp_m1928_fg_discrete"] = "Polymer Foregrip",
+						["bm_wp_m1928_g_discrete"] = "Polymer Pistol Grip",
+						["bm_wp_m1928_s_discrete"] = "Polymer Stock",
 						--MP 40
 						["bm_w_erma"] = "Erma MP 40",
 						--UMP
@@ -2536,6 +2537,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
 						["bm_wp_mp5_s_ring"] = "No Stock",
 						["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
+						["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
 						--MPX
 						["bm_w_shepheard"] = "SIG MPX", 
 						--Vityaz
@@ -2549,40 +2551,217 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_tecci_b_long"] = "Long Barrel",
 						["bm_wp_tecci_ns_special"] = "JPE Recoil Eliminator Muzzle Brake",
 
+						--SAW
+						["bm_w_m249"] = "FN M249 Para",
+						["bm_wp_m249_fg_mk46"] = "Mk 46 Handguard",
+						["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
+
+						--RPK
+						["bm_w_rpk"] = "KC RPK",
+						["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
+						["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
+
+						--HK21
+						["bm_w_hk21"] = "H&K HK21E",
+						["bm_wp_hk21_fg_short"] = "Short HK21 Handguard",
+						["bm_wp_hk21_g_ergo"] = "HK21 Ergo Grip",
+						--MG42
+						["bm_w_mg42"] = "Mauser Maschinengewehr 42",
+						["bm_wp_mg42_b_mg34"] = "Maschinengewehr 34 Barrel",
+						["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
+
+						--M240
+						["bm_w_par"] = "FN M240B",
+						["bm_wp_par_s_plastic"] = "M240B Stock",
+
 					--[[SHOTGUNS]]
+						--Saiga
+						["bm_w_saiga"] = "KC Saiga-12K",
+						["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
+						["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
+						--AA12
+						["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
+						["bm_wp_aa12_barrel_long"] = "Standard AA12 Barrel",
+						["bm_wp_aa12_mag_drum"] = "20rnd AA-12 Drum",
 						--Six12
 						["bm_w_rota"] = "Crye Precision Six12",
+						--M1014
+						["bm_w_benelli"] = "Benelli M4 Super 90",
+						["bm_wp_ben_b_long"] = "Long M4 Barrel",
+						["bm_wp_ben_b_short"] = "NFA M4 Barrel",
+						["bm_wp_ben_s_collapsed"] = "Collapsed M4 Stock",
+						["bm_wp_ben_fg_standard"] = "M4 Tactical Stock",
+						--SPAS-12
+						["bm_w_spas12"] = "Franchi SPAS-12",
+						["bm_wp_spas12_b_long"] = "8rnd Tube",
+						--Striker
+						["bm_w_striker"] = "Sentinel Arms Striker",
 
+						--870
+						["bm_w_r870"] = "Remington Model 870",
+						["bm_wp_r870_m_extended"] = "2rnd Tube Extension",
+						["bm_wp_r870_fg_wood"] = "Wooden Pump",
+						["bm_wp_r870_s_nostock"] = "No Stock",
+						["bm_wp_r870_s_nostock_big"] = "No Stock w/Full Length Rail",
+						["bm_wp_r870_s_solid_big"] = "Fixed Stock w/Full Length Rail",
+						--
+						["bm_w_serbu"] = "Short Remington Model 870",
+						["bm_wp_shorty_m_extended_short"] = "1rnd Extension",
+						["bm_wp_r870_s_solid"] = "Fixed Stock",
+						["bm_wp_serbu_s_solid_short"] = "Fixed Stock w/Rail",
+						["bm_wp_serbu_s_nostock_short"] = "No Stock w/Rail",
+
+						--KSG
+						["bm_w_ksg"] = "Kel-Tec KSG",
+						["bm_wp_ksg_b_long"] = "Long Barrel w/2x 8-Shot Tubes",
+						["bm_wp_ksg_b_short"] = "Patrol Barrel w/2x 6-Shot Tubes",
 						--Judge
 						["bm_w_judge"] = "Taurus 4510PLYFS",
 
+						--Mosconi
+						["bm_w_huntsman"] = "Mosconi Coach Gun",
+						["bm_wp_huntsman_b_short"] = "Sawn-Off Barrel",
+						["bm_wp_huntsman_s_short"] = "Sawn-Off Stock",
+						--725
+						["bm_w_b682"] = "Beretta 682",
+						["bm_wp_b682_b_short"] = "Sawn-Off Barrel",
+						["bm_wp_b682_s_short"] = "Sawn-Off Stock",
+						["bm_wp_b682_s_ammopouch"] = "Ammo Pouch",
 						--1887
 						["bm_w_boot"] = "Winchester Model 1887",
-						["bm_wp_boot_body_exotic"] = "Case Hardened Reciever",
+						["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
 
 					--[[ARs]]
+						--FAMAS
+						["bm_w_famas"] = "Nexter FAMAS F1",
+						["bm_wp_famas_b_sniper"] = "G2 Sniper Barrel",
+						["bm_wp_famas_b_short"] = "G2 Commando Barrel",
+						["bm_wp_famas_g_retro"] = "G1 Pistol Grip",
+						--VHS
+						["bm_w_vhs"] = "HS Produkt VHS-2",
+						["bm_wp_vhs_b_short"] = "Short Barrel",
+						["bm_wp_vhs_b_sniper"] = "Sniper Barrel",
+						["bm_wp_vhs_b_silenced"] = "Suppressed Barrel",
+						--JP36
+						["bm_w_g36"] = "H&K G36K",
+						["bm_wp_g36_fg_c"] = "G36c Handguard",
+						["bm_wp_g36_fg_ksk"] = "Knights Armament Co. RAS Handguard",
+						["bm_wp_g36_s_kv"] = "G36KV Stock",
+						["bm_wp_g36_s_sl8"] = "SL8 Stock",
+						--S552
+						["bm_w_s552"] = "SIG SG 552-2",
+						["bm_wp_ass_s552_fg_standard_green"] = "OD Green Handguard",
+						["bm_wp_ass_s552_g_standard_green"] = "OD Green Pistol Grip",
+						["bm_wp_ass_s552_s_standard_green"] = "OD Green Stock",
+						["bm_wp_ass_s552_fg_railed"] = "SIG Railed Handguard",
+						["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
+
+						--AUG
+						["bm_w_aug"] = "Steyr AUG A2",
+						["bm_wp_aug_fg_a3"] = "A3 Rail",
+						["bm_wp_aug_body_f90"] = "Thales F90 Kit",
 						--Boatgun
 						["bm_w_corgi"] = "FN F2000 Tactical TR",
 						--AK12
 						["bm_w_flint"] = "KC AK-12",
+						--Ak5
+						 ["bm_w_ak5"] = "Bofors Ak 5",
+						 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
+						 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
+						 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
+						 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
 						--805
 						["bm_w_hajk"] = "CZ 805 BREN",
 						["bm_wp_hajk_b_short"] = "A2 Barrel",
 
+						--M16
+						["bm_w_m16"] = "Colt M16A4",
+						["bm_wp_m16_fg_railed"] = "Daniel Defense Lite Rail",
+						["bm_wp_m16_fg_vietnam"] = "M16A1 Handguard",
+						--["bm_wp_m16_s_solid"] = "M16 Stock",
+						--L85
+						["bm_w_l85a2"] = "BAE L85A2",
+						["bm_wp_l85a2_b_long"] = "Long Barrel",
+						["bm_wp_l85a2_b_short"] = "Short Barrel",
+						["bm_wp_l85a2_g_worn"] = "Taped Pistol Grip",
+						["bm_wp_l85a2_fg_short"] = "Daniel Defense L85 Quad Rail",
 						--Krink
 						["bm_w_akmsu"] = "AKMSU",
 						["bm_w_x_akmsu"] = "Akimbo AKMSUs",
 						["bm_wp_akmsu_fg_rail"] = "Samson K-Rail",
+						--AKM
+						["bm_w_akm"] = "KC AKMS",
 
 					--[[DMRs]]
 						--417
 						["bm_w_contraband"] = "H&K HK417 w/ M203",
+						--SCAR
+						["bm_w_scar"] = "FN Mk.17",
+						["bm_wp_scar_fg_railext"] = "PWS SCAR Rail Extension",
+						["bm_wp_scar_s_sniper"] = "Mk.20 Stock",
+						--FAL
+						["bm_w_fal"] = "FN FAL",
+						["bm_wp_fal_body_standard"] = "DSA SA58 Handguard",
+						["bm_wp_fal_fg_wood"] = "Wooden FAL Handguard",
+						["bm_wp_fal_fg_04"] = "DSA Freefloat Handguard",
+						["bm_wp_fal_fg_03"] = "IWI Romat Handguard",
+						["bm_wp_fal_g_01"] = "Tapco FAL Pistol Grip",
+						["bm_wp_fal_m_01"] = "20rnd FAL Magazine",
+						["bm_wp_fal_s_01"] = "Sidefolding FAL Stock",
+						["bm_wp_fal_s_03"] = "Magpul FAL PRS Stock",
+						--Galil
+						["bm_w_galil"] = "IWI Galil ARM",
+						["bm_wp_galil_fg_sniper"] = "IWI Galatz Handguard",
+						["bm_wp_galil_fg_sar"] = "IMI Galil SAR Handguard",
+						["bm_wp_galil_fg_mar"] = "IWI Galil MAR Handguard",
+						["bm_wp_galil_fg_fab"] = "FAB Defense VFR GA Handguard",
+						["bm_wp_galil_g_sniper"] = "IMI Galatz Pistol Grip",
+						["bm_wp_galil_s_sniper"] = "IMI Galatz Wooden Stock",
+						["bm_wp_galil_s_skeletal"] = "IMI Galil MAR Stock",
+						["bm_wp_galil_s_light"] = "IMI Galatz Skeleton Stock",
+						["bm_wp_galil_s_fab"] = "FAB Defense MG-CP Cheek Pad",
+
+						--Raifu
+						["bm_w_g3"] = "H&K G3A3",
+						["bm_wp_g3_b_short"] = "Short Barrel",
+						["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
+						["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",
+						["bm_wp_g3_fg_railed"] = "FAB Defense G3-RS Handguard",
+						["bm_wp_g3_fg_retro"] = "Wooden Slimline Handguard",
+						["bm_wp_g3_fg_retro_plastic"] = "Slimline Handguard",
+						["bm_wp_g3_g_retro"] = "G3 Ergo Grip",
+						["bm_wp_g3_g_sniper"] = "PSG-1 Wooden Pistol Grip",
+						["bm_wp_g3_s_sniper"] = "PSG-1 Stock",
+						--M308
+						["bm_w_m14"] = "SA M14 DMR",
+						["bm_wp_m14_body_ebr"] = "Sage EBR Chassis",
+						["bm_wp_m14_body_jae"] = "JAE 100 G3 Stock",
+						["bm_wp_upg_o_m14_scopemount"] = "Sun Optics USA M14/M1A Scope Mount",
 
 					--[[SNIPERS]]
 						--Titty
 						["bm_w_tti"] = "Taran Tactical TR-1 AR-10",
+
+						--MSR
+						["bm_w_msr"] = "Remington MSR",
+						["bm_wp_snp_msr_ns_suppressor"] = "AAC TiTAN-QD Suppressor",
+						["bm_wp_msr_body_msr"] = "MSR Aluminum Stock & Receiver",
+
 						--Drako
 						["bm_w_siltstone"] = "KC SVD",
+
+						--Moist Nugget
+						["bm_w_mosin"] = "Mosin Nagant M91/30",
+						["bm_wp_mosin_b_sniper"] = "Nagant Suppressor",
+						["bm_wp_mosin_body_conceal"] = "Black Polymer Stock",
+						--R93
+						["bm_w_r93"] = "Blaser R93 Tactical 2",
+						["bm_wp_r93_b_suppressed"] = "Harvester Big Bore 338 Suppressor",
+						["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
+
+						--M95
+						["bm_w_m95"] = "Barrett M95",
+						 ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
 
 					--[[SPECIALS]]
 						["bm_w_ray"] = "M202 Flash",
@@ -2592,106 +2771,137 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
 
 					--Attachments
-						["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR1",
-						["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
-						["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC",
-						["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201",
-						["bm_wp_pis_g_laser"] = "Crimson Trace Glock Laser Grip",
-						["bm_wp_pis_g_beavertail"] = "Beavertail Grip Extension",
 
-						["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
-						["bm_wp_upg_ns_ass_smg_medium"] = "Small Arms Industries M80 Suppressor",
-						["bm_wp_upg_ns_ass_smg_large"] = "Large Suppressor", --Generic name just to remove any nickname-y names
+						--Gadgets
+							["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR1",
+							["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
+							["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC",
+							["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201",
+							["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
+							["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X",
 
-						["bm_wp_upg_ns_pis_small"] = "Thompson Machine Poseidon Suppressor",
-						["bm_wp_upg_ns_pis_medium"] = "GemTech SFN Suppressor", --Close enough... it's sectioned similarly enough for me to just name it this
-						["bm_wp_upg_ns_pis_large"] = "SilencerCo Osprey Suppressor",
-						["bm_wp_upg_ns_medium_gem"] = "GemTech Blackside Suppressor",
-						["bm_wp_upg_ns_large_kac"] = "KAC MK.23 Suppressor",
+						--Muzzle Devices
+							["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
 
-						["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",
+							["bm_wp_upg_ns_pis_small"] = "Thompson Machine Poseidon Suppressor",
+							["bm_wp_upg_ns_pis_medium"] = "GemTech SFN Suppressor", --Close enough... it's sectioned similarly enough for me to just name it this
+							["bm_wp_upg_ns_pis_large"] = "SilencerCo Osprey Suppressor",
+							["bm_wp_upg_ns_medium_gem"] = "GemTech Blackside Suppressor",
+							["bm_wp_upg_ns_large_kac"] = "KAC MK.23 Suppressor",
+							["bm_wp_upg_ns_pis_jungle"] = "Big Boss Suppressor",
+							["bm_wp_upg_ns_ass_filter"] = "Oil Filter",
+	
+							["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",
+							["bm_wp_upg_ns_sho_salvo_large"] = "SilencerCo Salvo 12 Suppressor",
 
-						["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
+							["bm_wp_upg_ns_ass_smg_stubby"] = "VFC Stinger Flash Hider",
+							["bm_wp_upg_ns_ass_smg_tank"] = "Tank Compensator",
+							["bm_wp_upg_ns_ass_smg_firepig"] = "Noveske KX3 Compensator",
+							["bm_wp_upg_ass_ns_jprifles"] = "JPE Bennie Cooley Muzzle Brake",
+							["bm_wp_upg_ass_ns_linear"] = "KIES Blast Master Linear Compensator",
+							["bm_wp_upg_ass_ns_surefire"] = "SureFire MBK Muzzle Brake",
 
-						["bm_wp_upg_ns_ass_smg_stubby"] = "VFC Stinger Flash Hider",
-						["bm_wp_upg_ns_ass_smg_tank"] = "Tank Compensator",
-						["bm_wp_upg_ns_ass_smg_firepig"] = "Noveske KX3 Compensator",
-						["bm_wp_upg_ass_ns_jprifles"] = "JPE Bennie Cooley Muzzle Brake",
-						["bm_wp_upg_ass_ns_linear"] = "KIES Blast Master Linear Compensator",
-						["bm_wp_upg_ass_ns_surefire"] = "SureFire MBK Muzzle Brake",
+							["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
+							["bm_wp_upg_ns_ass_smg_medium"] = "Small Arms Industries M80 Suppressor",
+							["bm_wp_upg_ns_ass_smg_large"] = "Large Suppressor", --Generic name just to remove any nickname-y names
 
-						["bm_wp_m4_s_standard"] = "Bushmaster LE Stock",
-						["bm_wp_m4_s_pts"] = "Magpul PTS Stock",
-						["bm_wp_m4_uupg_s_fold"] = "LR300 Folding Stock",
-						["bm_wp_upg_m4_s_crane"] = "NSWC Crane Stock",
-						["bm_wp_upg_m4_s_mk46"] = "NSWC Crane Stock w/Cheek Pad",
+						--Glock Parts
+							["bm_wp_g18c_m_mag_33rnd"] = "Extended Glock Magazine",
+							["bm_wp_g18c_g_ergo"] = "Hogue Handall Grip Sleeve",
+							["bm_wp_pis_g_laser"] = "Crimson Trace Laser Grip",
+							["bm_wp_pis_g_beavertail"] = "Beavertail Grip Extension",
 
-						["bm_wp_ak_s_folding"] = "Underfolding AK Stock",
-						["bm_wp_ak_s_skfoldable"] = "Sidefolding AK Stock",
-						["bm_wp_ak_s_psl"] = "PSL Thumbhole Stock",
+						--AK parts
+							["bm_wp_upg_ak_fg_krebs"] = "Krebs UFM Keymod System Handguard",
+							["bm_wp_upg_ak_fg_trax"] = "Strike Industries TRAX Handguard",
+							["bm_wp_upg_ak_g_rk3"] = "ZenitCo PK-3 Pistol Grip",
+							["bm_wp_upg_ak_fg_zenit"] = "ZenitCo Handguard",
+							["bm_wp_upg_o_ak_scopemount"] = "K-VAR KV-04S Optic Mount",
+							["bm_wp_upg_ak_m_uspalm"] = "30rnd US PALM AK30 Magazine",
+							["bm_wp_upg_ns_ass_pbs1"] = "PBS-1 Suppressor",
+							["bm_wp_upg_ass_ak_b_zastava"] = "Zastava M76 Barrel",
+							["bm_wp_upg_ak_b_draco"] = "Draco Pistol Barrel",
+							["bm_wp_upg_ak_b_ak105"] = "AK-105 Barrel",
+							["bm_wp_upg_ak_ns_jmac"] = "JMac Customs MTC-1",
+							["bm_wp_upg_ak_m_quad"] = "60rnd KC Magazine",
+							["bm_wp_ak_m_drum"] = "75rnd AK Drum",
+							["bm_wp_ak_fg_combo2"] = "Ultimak AK Optic Mount",
+							["bm_wp_ak_fg_combo3"] = "Ultimak AK Modular Rail Forend System",
+							["bm_wp_upg_ak_fg_tapco"] = "Tapco Intrafuse Handguard",
+							["bm_wp_upg_fg_midwest"] = "Midwest Industries Quad Rail",
+							["bm_wp_upg_ak_g_hgrip"] = "Hogue OverMolded AK Pistol Grip",
+							["bm_wp_upg_ak_g_pgrip"] = "US PALM Enhanced Pistol Grip",
+							["bm_wp_ak_s_folding"] = "Underfolding AK Stock",
+							["bm_wp_ak_s_skfoldable"] = "Sidefolding AK Stock",
+							["bm_wp_ak_s_psl"] = "PSL Thumbhole Stock",
 
-						["bm_wp_g18c_g_ergo"] = "Hogue Handall Grip Sleeve",
-						["bm_wp_m4_g_ergo"] = "Command Arms UPG16 Pistol Grip",
-						["bm_wp_m4_g_sniper"] = "PSG Style Pistol Grip",
-						["bm_wp_upg_m4_g_hgrip"] = "Houge Rubber Ergo Grip",
-						["bm_wp_upg_m4_g_mgrip"] = "Magpul MOE-K Pistol Grip",
+						--Sights
+							["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
+							["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
+	
+							["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
+							["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
+							["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
+							["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",	
+	
+							["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
+							["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
+							["bm_wp_upg_o_t1micro"] = "Aimpoint Micro T-1 Red Dot Sight",
+	
+							["bm_wp_upg_o_eotech"] = "EOTech 553 Holographic Sight",
+							["bm_wp_upg_o_eotech_xps"] = "EOTech EXPS3 Holographic Sight",
+	
+							["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
+							["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
+	
+							--"Schmidt & Bender 1-8x24 PM Short Dot"
+							["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
+							["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
+	
+							["bm_wpn_fps_upg_o_45iron"] = "XS Sights Angled Sights",
+							["bm_wpn_fps_upg_o_45rds"] = "Leupold Deltapoint Pro Angled RDS",
+							["bm_wpn_fps_upg_o_45rds_v2"] = "Aimpoint Micro T-1 Red Dot Sight",
+	
+							["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "Aimpoint 3XMag Magnifier",
+	
+							["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
 
-						["bm_wp_upg_ak_g_hgrip"] = "Hogue OverMolded AK Pistol Grip",
-						["bm_wp_upg_ak_g_pgrip"] = "US PALM Enhanced Pistol Grip",
+						--Vertical Grips
+							["bm_wp_upg_vg_ass_smg_verticalgrip"] = "Knights Armament Co. VFG",
+							["bm_wp_upg_vg_ass_smg_stubby"] = "Tango Down QD Stubby VFG",
+							["bm_wp_upg_vg_ass_smg_afg"] = "Magpul AFG 2",
 
-						["bm_wp_ak_fg_combo2"] = "Ultimak AK Optic Mount",
-						["bm_wp_ak_fg_combo3"] = "Ultimak AK Modular Rail Forend System",
-						["bm_wp_upg_ak_fg_tapco"] = "Tapco Intrafuse Handguard",
-						["bm_wp_upg_fg_midwest"] = "Midwest Industries Quad Rail",
+						--STANAG compatible mags
+							["bm_wp_m4_m_straight"] = "20rnd STANAG Magazine",
+							["bm_wp_m4_uupg_m_std"] = "30rnd STANAG Magazine",
+							["bm_wp_m4_m_pmag"] = "30rnd Magpul PMAG GEN1 Magazine",
+							["bm_wp_l85a2_m_emag"] = "30rnd Magpul EMAG Magazine",
+							["bm_wp_upg_m4_m_quad"] = "60rnd SureFire Magazine",
+							["bm_wp_m4_m_drum"] = "100rnd Beta-C Dual Drum",
+							["bm_wp_upg_m4_m_l5"] = "30rnd Lancer Systems L5 AW Magazine",
 
-						["bm_wp_upg_ak_b_draco"] = "Draco Pistol Barrel",
+						--AR15 parts
+							["bm_wp_m4_upper_reciever_edge"] = "VLTOR Upper Receiver",
+							["bm_wp_upg_ass_m4_upper_reciever_ballos"] = "2A-Arm BALIOS Upper Receiver",
+							["bm_wp_upg_ass_m4_upper_reciever_core"] = "CORE15 Upper Receiver",
+							["bm_wp_upg_ass_m4_lower_reciever_core"] = "CORE15 Lower Receiver",
+							["bm_wp_upg_smg_olympic_fg_lr300"] = "Short LR300 Handguard",
+							["bm_wp_upg_ass_m16_fg_stag"] = "Stag Arms Model 8T Handguard",
+							["bm_wp_upg_ass_m4_fg_moe"] = "Magpul MOE SL Handguard",
+							["bm_wp_upg_ass_m4_fg_lvoa"] = "War Sport LVOA Handguard",
+							["bm_wp_upg_ass_m4_b_beowulf"] = "Heavy Barrel",
+							["bm_wp_m4_s_standard"] = "Bushmaster LE Stock",
+							["bm_wp_m4_s_pts"] = "Magpul PTS Stock",
+							["bm_wp_m4_uupg_s_fold"] = "LR300 Folding Stock",
+							["bm_wp_upg_m4_s_crane"] = "NSWC Crane Stock",
+							["bm_wp_upg_m4_s_mk46"] = "NSWC Crane Stock w/Cheek Pad",
+							["bm_wp_upg_m4_s_ubr"] = "Magpul UBR Stock",
+							["bm_wp_m4_g_ergo"] = "Command Arms UPG16 Pistol Grip",
+							["bm_wp_m4_g_sniper"] = "PSG Style Pistol Grip",
+							["bm_wp_upg_m4_g_hgrip"] = "Houge Rubber Ergo Grip",
+							["bm_wp_upg_m4_g_mgrip"] = "Magpul MOE-K Pistol Grip",
 
-						["bm_wp_g18c_m_mag_33rnd"] = "Extended Glock Magazine",
-
-						["bm_wp_m4_m_straight"] = "20rnd STANAG Magazine",
-						["bm_wp_m4_uupg_m_std"] = "30rnd STANAG Magazine",
-						["bm_wp_m4_m_pmag"] = "30rnd Magpul PMAG GEN1 Magazine",
-						["bm_wp_l85a2_m_emag"] = "30rnd Magpul EMAG Magazine",
-						["bm_wp_upg_m4_m_quad"] = "60rnd SureFire Magazine",
-						["bm_wp_upg_ak_m_quad"] = "60rnd KC Magazine",
-						["bm_wp_m4_m_drum"] = "100rnd Beta-C Dual Drum",
-						["bm_wp_ak_m_drum"] = "75rnd AK Drum",
-
-						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
-						["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
-
-						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
-						["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
-						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
-						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",	
-
-						["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
-						["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
-						["bm_wp_upg_o_t1micro"] = "Aimpoint Micro T-1 Red Dot Sight",
-
-						["bm_wp_upg_o_eotech"] = "EOTech 553 Holographic Sight",
-						["bm_wp_upg_o_eotech_xps"] = "EOTech EXPS3 Holographic Sight",
-
-						["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
-						["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
-
-						--"Schmidt & Bender 1-8x24 PM Short Dot"
-						["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
-						["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
-
-						["bm_wpn_fps_upg_o_45iron"] = "XS Sights Angled Sights",
-						["bm_wpn_fps_upg_o_45rds"] = "Leupold Deltapoint Pro Angled RDS",
-						["bm_wpn_fps_upg_o_45rds_v2"] = "Aimpoint Micro T-1 Red Dot Sight",
-
-						["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "Aimpoint 3XMag Magnifier",
-
-						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
-
-						["bm_wp_upg_vg_ass_smg_verticalgrip"] = "Knights Armament Co. VFG",
-						["bm_wp_upg_vg_ass_smg_stubby"] = "Tango Down QD Stubby VFG",
-						["bm_wp_upg_vg_ass_smg_afg"] = "Magpul AFG 2",
-
-						["bm_wp_upg_ak_ns_jmac"] = "JMac Customs MTC-1",
+						["bm_wp_upg_lmg_lionbipod"] = "Bipod",
 
 					--[[MELEE]]
 						["bm_melee_kabar"] = "USMC KA-BAR",

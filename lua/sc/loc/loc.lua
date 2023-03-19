@@ -1945,6 +1945,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic.", -- Headless Dozer Sword
 			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic.", -- im not gaj
 		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharge an attack by at least 90% to perform a thrust, extending range by half a meter.", -- Great Sword
+			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.\n\nCharge an attack by at least 90% to perform a thrust, extending range by half a meter.",
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
 			["bm_melee_thebestweapon_info"] = "The best weapon in the game.",
 		["bm_melee_iceaxe_info"] = "Deals 50% more headshot damage.", -- Icepick

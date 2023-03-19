@@ -3837,7 +3837,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	melee_anim = {
-		'dragon_slayer','peld'
+		'dragon_slayer','peld','Binary_Blade'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
@@ -4011,6 +4011,11 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.dragon_slayer.sounds = deep_clone(self.melee_weapons.halloween_sword.sounds)
 		self.melee_weapons.dragon_slayer.sounds.hit_body = "cash_loot_drop_reveal"
 		self.melee_weapons.dragon_slayer.sounds.hit_gen = "cash_loot_drop_reveal"
+	end
+
+	if self.melee_weapons.Binary_Blade then --Binary Blade (Greatsword)
+		self.melee_weapons.Binary_Blade.stats = deep_clone(self.melee_weapons.great.stats)
+		self.melee_weapons.Binary_Blade.info_id = "bm_melee_jebus_info"
 	end
 
 	if self.melee_weapons.peld then --Predator Pack Elder Sword (Greatsword)

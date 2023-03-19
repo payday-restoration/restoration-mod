@@ -1808,7 +1808,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼트립니다.", -- Psycho Knife
 		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 패닉을 퍼트립니다.", -- Headless Dozer Sword
 		["bm_melee_goat_info"] = "\"그건 검이라 하기엔 너무나 컸다. 엄청나게 크고, 두껍고, 무겁고, 그리고 조잡했다. 그것은 그야말로 철괴였다.\"\n\n완전히 충전된 상태로 공격하면 패닉을 퍼트립니다", -- im not gaj		
-		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 90% 이상 충전하면 찌르기 공격을 수행하여 사거리를 1미터 확장합니다.", -- Great Sword
+		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 90% 이상 충전하면 찌르기를 하여 사거리를 1미터 확장합니다.", -- Great Sword
+		["bm_melee_jebus_info"] = "빛과 어둠.\n\n흑백과 백색.\n\n생명과 죽음.\n\n바이너리 소드는 상대방을 자르기 때문에 중간 지점이 없습니다.\n\n차지 공격을 90% 이상 충전하면 찌르기를 하여 사거리를 1미터 확장합니다.",		
 		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.", -- Pounder
 		["bm_melee_thebestweapon_info"] = "게임에서 최고의 무기.",
 		["bm_melee_iceaxe_info"] = "헤드샷 피해를 50%만큼 많이 줍니다.", -- Icepick

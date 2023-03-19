@@ -305,6 +305,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 	end
 
+	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
 	local dist_sq = mvector3.distance_sq(player_unit:movement():m_pos(), killed_unit:movement():m_pos())
 	local close_combat_sq = tweak_data.upgrades.close_combat_distance * tweak_data.upgrades.close_combat_distance
 	
@@ -339,8 +340,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			return
 		end
 	end
-
-	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(regen_armor_bonus)

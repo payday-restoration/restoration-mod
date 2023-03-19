@@ -305,25 +305,13 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 	end
 
-	--Sociopath killshot procs (THINGS NOT RELATED TO SOCIOPATH'S COOLDOWNS SHOULD NOT BE BELOW THIS)
-	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
-	
-	if self._on_killshot_t and t < self._on_killshot_t then
-		if self:has_category_upgrade("player", "killshot_regen_armor_bonus") then
-			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
-		end
-		if self._on_killshot_t > t then
-			return
-		end
-	end
-
-	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
 	local dist_sq = mvector3.distance_sq(player_unit:movement():m_pos(), killed_unit:movement():m_pos())
 	local close_combat_sq = tweak_data.upgrades.close_combat_distance * tweak_data.upgrades.close_combat_distance
 	
 	if dist_sq <= close_combat_sq then
 		regen_armor_bonus = regen_armor_bonus + self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)
-		local panic_chance = self:upgrade_value("player", "killshot_close_panic_chance", 0)
+		local socio_panic_available = self._on_killshot_t and t < self._on_killshot_t and self:has_category_upgrade("player", "killshot_close_panic_chance")
+		local panic_chance = (socio_panic_available and (self:upgrade_value("player", "killshot_close_panic_chance", 0) * ((variant and variant == "melee" and 2) or 1)) or 0)
 			+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0) --Add Haunt skill to panic chance.
 			+ self:upgrade_value("player", "killshot_spooky_panic_chance", 0) * self:player_unit():character_damage():get_missing_revives()
 		panic_chance = managers.modifiers:modify_value("PlayerManager:GetKillshotPanicChance", panic_chance)
@@ -339,6 +327,20 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			end
 		end
 	end
+
+	--Sociopath killshot procs (THINGS NOT RELATED TO SOCIOPATH'S COOLDOWNS SHOULD NOT BE BELOW THIS)
+	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
+	
+	if self._on_killshot_t and t < self._on_killshot_t then
+		if self:has_category_upgrade("player", "killshot_regen_armor_bonus") then
+			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
+		end
+		if self._on_killshot_t > t then
+			return
+		end
+	end
+
+	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(regen_armor_bonus)

@@ -3047,7 +3047,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["victory_stage_cash_summary_name_job"] = "계약일 요금으로 $stage_cash를 벌었고 계약 완료에 대해 추가로 $job_cash를 받았습니다.",
 
 		["debug_interact_grenade_crate_take_grenades"] = "$BTN_INTERACT 키를 길게 눌러 투척물을 보충하기",
-		["debug_interact_bodybags_bag_take_bodybag"] = "$BTN_INTERACT 키를 길게 눌러 시체가방와 케이블 타이를 보충하기",
+		["debug_interact_bodybags_bag_take_bodybag"] = "$BTN_INTERACT 키를 길게 눌러 시체 가방과 케이블 타이를 보충하기",
 
 		["menu_equipment_armor_kit"] = "투척물 가방",
 		["bm_equipment_armor_kit"] = "투척물 가방",

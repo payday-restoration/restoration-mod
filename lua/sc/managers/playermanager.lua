@@ -305,19 +305,22 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 	end
 
+	--Sociopath killshot procs (THINGS NOT RELATED TO SOCIOPATH'S COOLDOWNS SHOULD NOT BE BELOW THIS)
 	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
 	
 	if self._on_killshot_t and t < self._on_killshot_t then
-		if self:has_category_upgrade("player", "melee_kill_life_leech") then
+		if self:has_category_upgrade("player", "killshot_regen_armor_bonus") then
 			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
 		end
-		return
+		if self._on_killshot_t > t then
+			return
+		end
 	end
 
 	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
 	local dist_sq = mvector3.distance_sq(player_unit:movement():m_pos(), killed_unit:movement():m_pos())
 	local close_combat_sq = tweak_data.upgrades.close_combat_distance * tweak_data.upgrades.close_combat_distance
-
+	
 	if dist_sq <= close_combat_sq then
 		regen_armor_bonus = regen_armor_bonus + self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)
 		local panic_chance = self:upgrade_value("player", "killshot_close_panic_chance", 0)
@@ -343,7 +346,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	local regen_health_bonus = 0
 
-	--Sociopath regen.
 	if variant == "melee" then
 		regen_health_bonus = regen_health_bonus + self:upgrade_value("player", "melee_kill_life_leech", 0)
 	end

@@ -26734,6 +26734,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_upg_m_dura then --FrenchyAU Tacticool Magnation
+		
+		local mags = {}
 
 		-- +45 mags
 		mags = {
@@ -26816,7 +26818,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 		
 		-- Nothingburger
-		local mags = {
+		mags = {
 			'wpn_fps_upg_m_dura',
 			'wpn_fps_upg_m_p30',
 			'wpn_fps_upg_m_p30w',

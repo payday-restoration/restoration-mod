@@ -1197,7 +1197,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 기계식 조준기 사이를 전환합니다.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 반사 조준기 사이를 전환합니다.\n#{skill_color}#1.1x 배율.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 레드 닷 조준기 사이를 전환합니다.\n#{skill_color}#1.2x 배율.##",
-		["bm_wp_upg_o_angled_laser_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 레이저 조준기 사이를 전환하거나 무기의 각도를 조정하여 레이저를 사용하여 조준합니다.\n\n#{risk}#레이저 가젯 사용을 적극 권장합니다.##", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_laser_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 레이저 사이트 사이를 전환하거나 무기의 각도를 조정하여 레이저를 사용하여 조준합니다.\n\n#{risk}#레이저 가젯 사용을 적극 권장합니다.##", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 확대경을 위/아래로 올리거나 내립니다.\n#{skill_color}#3x 배율.##",
 
@@ -1241,8 +1241,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_deagle_bling_desc_sc"] = "직접 만들어진 이 Deagle 권총은 세계 최고의 게임 훈련을 받은 명사수의 증거로 제작되었습니다.",
 
 		--Exclusive Sets--
-		["bm_wp_upg_ultima_body_kit_desc_sc"] = "이 전용 세트는 다른 장치와 함께 사용할 수 있는 독특한 #{risk}#트리플 트리트 레이저 조준기##를 추가합니다.",
-		["bm_wp_upg_fmg9_conversion_desc_sc"] = "이 전용 세트는 #{risk}#하이테크 탄약 카운터##와 다른 장치와 함께 사용할 수 있는 레이저 조준기를 추가합니다.",
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "이 전용 세트는 다른 장치와 함께 사용할 수 있는 독특한 #{risk}#트리플 트리트 레이저 사이트##를 추가합니다.",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "이 전용 세트는 #{risk}#하이테크 탄약 카운터##와 다른 장치와 함께 사용할 수 있는 레이저 사이트를 추가합니다.",
 		
 		
 		--Modifiers--
@@ -3141,7 +3141,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_4"] = "타이탄 클로커는 거의 보이지 않게 만드는 고급 은폐 장비를 가지고 있지만 여전히 표준 클로커 장비의 이전 모델의 주변 소음을 가지고 있습니다.",
 		["loading_new_units_res_5"] = "타이탄 도저는 방해받지 않고 레일건의 잠재력을 최대한 발휘하기 위해 목표물과 거리를 두는 것을 선호합니다.",
 		["loading_new_units_res_6"] = "타이탄 명사수는 더 높은 연사력과 이동 중에 사격할 수 있는 대신 표준품의 탄당 피해량과 방탄복 관통력을 교환했습니다.",
-		["loading_new_units_res_7"] = "타이탄 명사수는 레이저 조준기를 사용하지 않는 대신 사격하면 보라색 예광을 남깁니다.",
+		["loading_new_units_res_7"] = "타이탄 명사수는 레이저 사이트를 사용하지 않는 대신 사격하면 보라색 예광을 남깁니다.",
 		["loading_new_units_res_8"] = "타이탄 실드는 Thanatos 대물 저격소총, 찢고 죽인다 베이직을 찍었을때 OVE9000 톱, 센트리 건의 특수 철갑탄 탄으로만 뚫을 수 있습니다.",
 		["loading_new_units_res_9"] = "캡틴 스프링과 타이탄 도저는 항상 추가 헤드샷 피해를 입습니다.",
 		["loading_new_units_res_10"] = "타이탄 테이저는 이동을 일시적으로 매우 감소되는 감전탄을 발사합니다. 맞으면 파란색 UI 오버레이로 표시됩니다.",

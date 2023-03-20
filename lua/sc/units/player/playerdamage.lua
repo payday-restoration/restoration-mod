@@ -524,7 +524,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
-				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
+				managers.player:send_message(Message.OnPlayerDodge, nil, attack_data) --Call skills that listen for dodging.
 			end
 			return	
 		end
@@ -611,7 +611,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
-				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
+				managers.player:send_message(Message.OnPlayerDodge, nil, attack_data) --Call skills that listen for dodging.
 			end
 			return	
 		end

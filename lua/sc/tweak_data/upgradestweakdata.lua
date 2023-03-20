@@ -1336,11 +1336,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 2}}
 				--Ace
-					self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
+					self.values.temporary.melee_kill_increase_reload_speed = {
+						{
+							1.25, -- speed increase
+							10 -- duration
+						}
+					}
 
 			--Pumping Iron
 				self.values.player.melee_swing_multiplier = {1.2, 1.5}
-				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5}
+				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5} --Unused
 				
 			--Counter Strike
 				self.values.player.spooc_damage_resist = {
@@ -1674,11 +1679,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2}
-	self.values.player.killshot_close_regen_armor_bonus = {2}
+	self.values.player.killshot_close_regen_armor_bonus = { 
+		{
+			1.5, --armor regen
+			2 --melee kill mult
+		}
+	}
 	self.values.player.killshot_close_panic_chance = {0.25}
 	self.values.player.melee_kill_life_leech = {
 		0.02,
-		0.01 --Copycat
+		0.01 --Copycat, unused
 	}
 	self.killshot_close_panic_range = 900
 	self.on_killshot_cooldown = 5

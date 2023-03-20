@@ -335,6 +335,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if self._on_killshot_t and t < self._on_killshot_t then
 		if self:has_category_upgrade("player", "killshot_regen_armor_bonus") then
 			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction
+			managers.hud:change_cooldown("sociopath", -killshot_cooldown_reduction)
 		end
 		if self._on_killshot_t > t then
 			return
@@ -356,6 +357,10 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	end
 
 	self._on_killshot_t = t + (tweak_data.upgrades.on_killshot_cooldown or 0)
+
+	if self:has_category_upgrade("player", "killshot_regen_armor_bonus") then
+		managers.hud:start_buff("sociopath", (tweak_data.upgrades.on_killshot_cooldown or 0))
+	end
 
 	if _G.IS_VR then
 		local steelsight_multiplier = equipped_unit:base():enter_steelsight_speed_multiplier()
@@ -985,7 +990,7 @@ function PlayerManager:_internal_load()
 	if self:has_category_upgrade("cooldown", "long_dis_revive") then
 		managers.hud:add_skill("long_dis_revive")
 	end
-
+	
 	if self:has_category_upgrade("player", "cocaine_stacking") then
 		self:update_synced_cocaine_stacks_to_peers(0, self:upgrade_value("player", "sync_cocaine_upgrade_level", 1), self:upgrade_level("player", "cocaine_stack_absorption_multiplier", 0))
 		managers.hud:set_info_meter(nil, {

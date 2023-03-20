@@ -99,6 +99,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific skill.",
 		["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
 		["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_sociopathTitleID"] = "Tension and Co. (Sociopath)",
+		["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of these specific skills.",
 		["RestorationModInfo_long_dis_reviveTitleID"] = "Inspire",
 		["RestorationModInfo_long_dis_reviveDescID"] = "Enables or disables tracking of this specific skill.",
 		["RestorationModInfo_messiahTitleID"] = "Messiah",

@@ -310,7 +310,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	local close_combat_sq = tweak_data.upgrades.close_combat_distance * tweak_data.upgrades.close_combat_distance
 	
 	if dist_sq <= close_combat_sq then
-		regen_armor_bonus = regen_armor_bonus + (self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)[1] * ((variant and variant == "melee" and self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)[2]) or 1))
+		regen_armor_bonus = self:has_category_upgrade("player", "killshot_close_regen_armor_bonus") and (regen_armor_bonus + (self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)[1] or 1 * ((variant and variant == "melee" and self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)[2]) or 1)))
 		local socio_panic_available = self._on_killshot_t and t < self._on_killshot_t and self:has_category_upgrade("player", "killshot_close_panic_chance")
 		local panic_chance = (socio_panic_available and (self:upgrade_value("player", "killshot_close_panic_chance", 0) * ((variant and variant == "melee" and 2) or 1)) or 0)
 			+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0) --Add Haunt skill to panic chance.

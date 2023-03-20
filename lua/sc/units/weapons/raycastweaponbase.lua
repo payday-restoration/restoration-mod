@@ -671,7 +671,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		local hit_unit = hit and hit.unit
 		local is_alive = hit_unit and hit_unit:character_damage() and not hit_unit:character_damage():dead()
 		local track_body_expert = nil
-		local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
+		local stacks = (self._automatic_kills_to_damage_max_stacks and math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)) or 0
 		
 		if is_alive and self:fire_mode() == "auto" and self._automatic_kills_to_damage_max_stacks then
 			track_body_expert = true

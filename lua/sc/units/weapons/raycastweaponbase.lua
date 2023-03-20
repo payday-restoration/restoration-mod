@@ -661,17 +661,21 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local hit_result = nil
 	local extra_collisions = self.extra_collisions and self:extra_collisions()
 
+	if self:fire_mode() == "auto" and self._no_cheevo_kills_without_releasing_trigger > 0 then
+		managers.hud:start_buff("body_expertise", (tweak_data.upgrades.automatic_kills_to_damage_reset_t or 0))
+	end
+
 	for _, hit in ipairs(ray_hits) do
 		damage = self:get_damage_falloff(damage, hit, user_unit)
 		hit_result = nil
 		local hit_unit = hit and hit.unit
 		local is_alive = hit_unit and hit_unit:character_damage() and not hit_unit:character_damage():dead()
 		local track_body_expert = nil
+		local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
 		
 		if is_alive and self:fire_mode() == "auto" and self._automatic_kills_to_damage_max_stacks then
 			track_body_expert = true
 			if self._no_cheevo_kills_without_releasing_trigger > 0 then
-				local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
 				damage = damage * (1 + (self._automatic_kills_to_damage_dmg_mult * stacks))
 			end
 		end
@@ -696,6 +700,8 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 				cop_kill_count = cop_kill_count + 1
 				if track_body_expert then
 					self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
+					managers.hud:start_buff("body_expertise", (tweak_data.upgrades.automatic_kills_to_damage_reset_t or 0))
+					managers.hud:set_stacks("body_expertise", (stacks == 0 and 1) or math.min(stacks + 1, self._automatic_kills_to_damage_max_stacks))
 				end
 			end
 

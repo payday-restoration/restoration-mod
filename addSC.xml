@@ -74,6 +74,7 @@
 	<texture			path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_infiltrator" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_sociopath" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_body_expertise" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_long_dis_revive" force="false" load="false"/> <!-- inspire -->
 	<texture			path="guis/textures/pd2/skilltree/info_messiah" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_overkill_damage_multiplier" force="false" load="false"/>

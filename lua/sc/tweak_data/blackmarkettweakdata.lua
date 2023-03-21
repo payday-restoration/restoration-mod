@@ -2534,7 +2534,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].expire_t = 0.625
 			self.melee_weapons[melee_id].repeat_expire_t = 0.575
 			self.melee_weapons[melee_id].melee_damage_delay = 0.125
-			self.melee_weapons[melee_id].anim_speed_mult = 0.775
+			self.melee_weapons[melee_id].anim_speed_mult = 0.71875
 			self.melee_weapons[melee_id].force_play_charge = nil
 			self.melee_weapons[melee_id].anims = {
 			var1_attack = {

@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2" />
+	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet_sc/ene_acc_zeal_swat_heavy_helmet_sc" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
 	</dependencies>
-
+	
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="city_swat" />
-			<var name="_default_weapon_id" value="r870" />
+			<var name="_tweak_table" value="fbi_heavy_swat" />
+			<var name="_default_weapon_id" value="benelli" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
@@ -21,8 +21,8 @@
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+			<var name="_nr_head_gear_objects" value="3" />
+			<var name="_head_gear" value="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet_sc/ene_acc_zeal_swat_heavy_helmet_sc" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
@@ -40,9 +40,13 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_mod_halloween/characters/ene_zeal_city_r870/ene_zeal_city_r870_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>
 	</sounds>
 </unit>
+
+
+
+

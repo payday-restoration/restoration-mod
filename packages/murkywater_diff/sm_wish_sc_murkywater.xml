@@ -122,9 +122,7 @@
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" force="false" load="true"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk" force="false" load="true"/>  
-	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_r870/ene_zeal_city_r870" force="false" load="true"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_r870/ene_zeal_city_r870_husk" force="false" load="true"/> 
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2_husk" force="false" load="true"/> 
 

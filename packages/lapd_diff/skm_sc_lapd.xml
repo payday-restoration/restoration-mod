@@ -384,7 +384,9 @@
 	
 	<!--zeal heavy r870-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>		
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli" load="true"/>
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli_husk" load="true"/>
     <object				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>

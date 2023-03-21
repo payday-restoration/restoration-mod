@@ -2487,9 +2487,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 1
 		end	
 		self.melee_weapons.spatula.anim_speed_mult = 1.3
-		self.melee_weapons.swagger.anim_speed_mult = 1.3
-		self.melee_weapons.selfie.anim_speed_mult = 1.3
 		self.melee_weapons.chac.anim_speed_mult = 1.3
+		self.melee_weapons.iceaxe.anim_speed_mult = 0.95
 		self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
 		self.melee_weapons.iceaxe.make_decal = true
 		self.melee_weapons.iceaxe.make_effect = true

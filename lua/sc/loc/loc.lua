@@ -2024,6 +2024,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_standing_range"] = "Falloff Start",
 		["bm_menu_damage_min"] = "Damage Min",
 		["bm_menu_moving_range"] = "Falloff End",
+
+		["bm_menu_attack_speed"] = "Repeat Delay",
 		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",

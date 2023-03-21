@@ -1433,6 +1433,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_x_tec9"] = "Akimbo T3K Urbans",
 		--Heather
 		["bm_w_sr2"] = "Heather-2M",
+		["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage.##",
 		["bm_w_x_sr2"] = "Akimbo Heather-2Ms",
 		--CMP
 		["bm_w_mp9"] = "CMP-9",

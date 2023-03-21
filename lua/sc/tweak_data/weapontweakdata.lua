@@ -6324,14 +6324,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.supported = true
 				self.pm9.ads_speed = 0.180
 				self.pm9.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 3600,
+					start_dist = 1300,
+					end_dist = 3800,
 					min_mult = 0.3
 				}
 				self.pm9.stats = {
 					damage = 20,
-					spread = 55,
-					recoil = 79,
+					spread = 56,
+					recoil = 81,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 29,
@@ -6342,12 +6342,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
+				self.pm9.reload_speed_multiplier = 1.05
 				self.pm9.stats_modifiers = nil
 				self.pm9.panic_suppression_chance = 0.05
 				self.pm9.timers.reload_exit_empty = 0.55
 				self.pm9.timers.reload_exit_not_empty = 0.55
 
 			--Akimbo Heather
+				self.sr2.categories = {
+					"akimbo",
+					"smg",
+					"pdw"
+				}
+				self.x_sr2.has_description = true
+				self.x_sr2.desc_id = "bm_sr2_sc_desc"
 				self.x_sr2.fire_mode_data.fire_rate = 0.063157894
 				self.x_sr2.CLIP_AMMO_MAX = 60
 				self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
@@ -6355,11 +6363,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sr2.sounds.fire_single = "sr2_fire_single"
 				self.x_sr2.sounds.fire_auto = "sr2_fire"
 				self.x_sr2.sounds.stop_fire = "sr2_stop"
-				self.x_sr2.AMMO_MAX = 180
+				self.x_sr2.AMMO_MAX = 150
 				self.x_sr2.supported = true
 				self.x_sr2.ads_speed = 0.240
 				self.x_sr2.damage_falloff = {
-					start_dist = 1400,
+					start_dist = 900,
 					end_dist = 4000,
 					min_mult = 0.3
 				}
@@ -6378,6 +6386,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.x_sr2.stats_modifiers = nil
+				self.x_sr2.armor_piercing_chance = 0.8
+				self.x_sr2.can_shoot_through_enemy = false
+				self.x_sr2.can_shoot_through_shield = false
+				self.x_sr2.can_shoot_through_wall = false
+				self.x_sr2.hs_mult = 1.5
 				self.x_sr2.panic_suppression_chance = 0.05
 				self.x_sr2.reload_speed_multiplier = 0.75
 				self.x_sr2.timers.reload_not_empty = 2.1
@@ -6760,40 +6773,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cobray.timers.reload_exit_not_empty = 0.6
 				self.cobray.reload_speed_multiplier = 1.25
 
-			--Heather (SR2M)
-				self.sr2.fire_mode_data.fire_rate = 0.063157894
-				self.sr2.CLIP_AMMO_MAX = 30
-				self.sr2.AMMO_MAX = 90
-				self.sr2.kick = {}
-				self.sr2.kick = self.stat_info.kick_tables.even_recoil
-				self.sr2.supported = true
-				self.sr2.ads_speed = 0.240
-				self.sr2.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 4200,
-					min_mult = 0.3
-				}
-				self.sr2.stats = {
-					damage = 20,
-					spread = 60,
-					recoil = 85,
-					spread_moving = 8,
-					zoom = 1,
-					concealment = 29,
-					suppression = 11,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.sr2.stats_modifiers = nil
-				self.sr2.panic_suppression_chance = 0.05
-				self.sr2.reload_speed_multiplier = 1.1
-				self.sr2.timers.reload_not_empty = 2
-				self.sr2.timers.reload_exit_empty = 0.8
-				self.sr2.timers.reload_exit_not_empty = 0.7
-
 			--CMP (MP9)
 				self.mp9.desc_id = "bm_menu_sc_mp9_desc"
 				self.mp9.CLIP_AMMO_MAX = 20
@@ -6827,6 +6806,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp9.timers.reload_exit_empty = 0.6
 				self.mp9.timers.reload_exit_not_empty = 0.85	
 
+			--Heather (SR2M)
+				self.sr2.categories = {
+					"smg",
+					"pdw"
+				}
+				self.sr2.has_description = true
+				self.sr2.desc_id = "bm_sr2_sc_desc"
+				self.sr2.fire_mode_data.fire_rate = 0.063157894
+				self.sr2.CLIP_AMMO_MAX = 30
+				self.sr2.AMMO_MAX = 75
+				self.sr2.kick = {}
+				self.sr2.kick = self.stat_info.kick_tables.even_recoil
+				self.sr2.supported = true
+				self.sr2.ads_speed = 0.240
+				self.sr2.damage_falloff = {
+					start_dist = 900,
+					end_dist = 4000,
+					min_mult = 0.3
+				}
+				self.sr2.stats = {
+					damage = 20,
+					spread = 60,
+					recoil = 85,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 29,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.sr2.armor_piercing_chance = 0.8
+				self.sr2.can_shoot_through_enemy = false
+				self.sr2.can_shoot_through_shield = false
+				self.sr2.can_shoot_through_wall = false
+				self.sr2.hs_mult = 1.5
+				self.sr2.stats_modifiers = nil
+				self.sr2.panic_suppression_chance = 0.05
+				self.sr2.reload_speed_multiplier = 1.02
+				self.sr2.timers.reload_not_empty = 2
+				self.sr2.timers.reload_exit_empty = 0.8
+				self.sr2.timers.reload_exit_not_empty = 0.7
 
 			--Cobra
 				self.scorpion.AMMO_MAX = 75

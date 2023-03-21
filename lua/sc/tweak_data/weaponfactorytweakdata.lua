@@ -18009,6 +18009,34 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 		concealment = -1,
 		reload = 3
 	}
+
+	--Xtendo clip
+	self.parts.wpn_fps_smg_pm9_m_extended = {
+		pcs = {},
+		type = "magazine",
+		name_id = "bm_wp_mac10_m_extended",
+		a_obj = "a_m",
+		dlc = "sc",
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mac10_m_extended",
+		unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_m_standard",
+		third_unit = "units/pd2_dlc_dragon/weapons/wpn_third_smg_baka_pts/wpn_third_smg_baka_m_standard",
+		supported = true,
+		bullet_objects = {
+			amount = 2,
+			prefix = "g_bullet_"
+		},
+		stats = {
+			value = 4, 
+			extra_ammo = 7, 
+			reload = -1, 
+			concealment = -1
+		},
+		custom_stats = { ads_speed_mult = 1.025},
+		animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload"
+		}
+	}
 	
 	--Short Barrel
 	self.parts.wpn_fps_smg_pm9_b_short.pcs = {
@@ -18045,6 +18073,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	self.parts.wpn_fps_smg_pm9_s_tactical.supported = true
 	self.parts.wpn_fps_smg_pm9_s_tactical.stats = deep_clone(stocks.add_fixed_stats)	
 	self.parts.wpn_fps_smg_pm9_s_tactical.custom_stats = deep_clone(stocks.add_fixed_stats)	
+
+
+	table.insert(self.wpn_fps_smg_pm9.uses_parts, "wpn_fps_smg_pm9_m_extended")
+	
+	self.wpn_fps_smg_pm9_npc.uses_parts = deep_clone(self.wpn_fps_smg_pm9.uses_parts)	
 		
 end)
 

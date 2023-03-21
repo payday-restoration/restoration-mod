@@ -2832,7 +2832,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			}
 			self._stats_texts = {}
 			self._rweapon_stats_panel = self._stats_panel:panel()
-			local scale_chart = 0.8 -- STAT CHART SCALING
+			local scale_chart = 0.75 -- STAT CHART SCALING
 			for i, stat in ipairs(self._stats_shown) do
 				panel = self._rweapon_stats_panel:panel({
 					name = "weapon_stats",

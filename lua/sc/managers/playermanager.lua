@@ -305,7 +305,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 	end
 
-	--Sociopath killshot procs (THINGS NOT RELATED TO SOCIOPATH'S COOLDOWNS SHOULD NOT BE BELOW THIS)
 	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
 
 	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
@@ -335,7 +334,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 	end
 
-	
+	--Sociopath killshot cooldown and effects (THINGS NOT EXCLUSIVELY RELATED TO SOCIOPATH'S COOLDOWNS SHOULD NOT BE BELOW THIS)
 	if self._on_killshot_t and t < self._on_killshot_t then
 		if self:has_category_upgrade("player", "killshot_regen_armor_bonus") then
 			self._on_killshot_t = self._on_killshot_t - killshot_cooldown_reduction

@@ -34,7 +34,7 @@
 		<hook file="managers/HUDManagerpd2.lua" source_file="lib/managers/HUDManagerpd2"/>
 		<hook file="managers/GUIDataManager.lua" source_file="core/lib/managers/coreguidatamanager"/>
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
-        <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
+        <hook file="managers/hud/HUDAssaultCorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
         <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>
         <hook file="managers/hud/HUDSkills.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDEffect.lua" source_file="lib/managers/hud/HUDTemp"/>
@@ -49,7 +49,7 @@
 		<hook file="managers/hud/HUDPlayerDowned.lua" source_file="lib/managers/hud/HUDPlayerDowned"/>
 		<hook file="managers/hud/HUDPresenter.lua" source_file="lib/managers/hud/HUDPresenter"/>
 		<hook file="managers/hud/HUDSuspicion.lua" source_file="lib/managers/hud/HUDSuspicion"/>
-		<hook file="managers/hud/hudplayercustody.lua" source_file="lib/managers/hud/HUDPlayerCustody"/>
+		<hook file="managers/hud/HUDPlayerCustody.lua" source_file="lib/managers/hud/HUDPlayerCustody"/>
 		<!--<hook file="managers/hud/HUDStageEndScreen.lua" source_file="lib/managers/hud/HUDStageEndScreen"/>-->
 		<hook file="managers/hud/HUDMissionBriefing.lua" source_file="lib/managers/hud/HUDMissionBriefing"/>
 		<hook file="managers/menu/CircleGUIObject.lua" source_file="lib/managers/menu/CircleGUIObject"/>
@@ -116,8 +116,8 @@
 		<hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"/>
 		<hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
 		<hook file="sc/managers/blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
-		<hook file="sc/managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
-		<hook file="sc/managers/menu/SpecializationGuiNew.lua" source_file="lib/managers/menu/specializationguinew"/>
+		<hook file="sc/managers/menu/menucomponentmanager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
+		<hook file="sc/managers/menu/specializationguinew.lua" source_file="lib/managers/menu/specializationguinew"/>
 		<hook file="sc/tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>

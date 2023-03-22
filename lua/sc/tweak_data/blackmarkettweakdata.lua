@@ -3518,19 +3518,19 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Its' another god damn machete--
 		self.melee_weapons.becker.stats.min_damage = 4.5
 		self.melee_weapons.becker.stats.max_damage = 9.001
-		self.melee_weapons.becker.stats.min_damage_effect = 1.5
-		self.melee_weapons.becker.stats.max_damage_effect = 3.0
+		self.melee_weapons.becker.stats.min_damage_effect = 1.8
+		self.melee_weapons.becker.stats.max_damage_effect = 3.6
 		self.melee_weapons.becker.stats.charge_time = 0.9
 		self.melee_weapons.becker.stats.range = 170
-		self.melee_weapons.becker.stats.concealment = 27
+		self.melee_weapons.becker.stats.concealment = 28
 			--another machete--
 			self.melee_weapons.oxide.stats.min_damage = 4.5
 			self.melee_weapons.oxide.stats.max_damage = 9.001
-			self.melee_weapons.oxide.stats.min_damage_effect = 1.5
-			self.melee_weapons.oxide.stats.max_damage_effect = 3.0
+			self.melee_weapons.oxide.stats.min_damage_effect = 1.8
+			self.melee_weapons.oxide.stats.max_damage_effect = 3.6
 			self.melee_weapons.oxide.stats.charge_time = 0.9
 			self.melee_weapons.oxide.stats.range = 170
-			self.melee_weapons.oxide.stats.concealment = 27
+			self.melee_weapons.oxide.stats.concealment = 28
 		--More Gore--
 		self.melee_weapons.gator.stats.min_damage = 6
 		self.melee_weapons.gator.stats.max_damage = 12.001

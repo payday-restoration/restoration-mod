@@ -5,7 +5,6 @@
 
 	<dependencies>
 		
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet_sc/ene_acc_zeal_swat_helmet_sc" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
@@ -24,10 +23,6 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet_sc/ene_acc_zeal_swat_helmet_sc" />
-			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />

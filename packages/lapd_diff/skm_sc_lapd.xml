@@ -345,10 +345,9 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
 
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_nm" />	
 	
-	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	
-	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_nm" />	
+
 
 	<!--zeal fbi-->
 	<!--zeal fbi m4-->
@@ -542,12 +541,10 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"  load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk"  load="true"/>
 	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>	
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_contour"/>
+
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" />	
-	
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_df" />	
+
 	
 	<!--zeal medic-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" load="true"/>

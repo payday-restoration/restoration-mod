@@ -18756,7 +18756,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	--Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
-	if Global.game_settings.one_down then 
+	if Global and Global.game_settings and Global.game_settings.one_down then
 		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.75, 1}
 	else
 		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.2, 0.5}

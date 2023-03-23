@@ -2332,7 +2332,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_baseballbat
 		melee_anim = {
-			'stick','spoon','spoon_gold',
+			'stick','spoon','spoon_gold','hockey',
 			'freedom'
 		}
 		for i, melee_id in ipairs(melee_anim) do
@@ -2350,7 +2350,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_beardy
 		melee_anim = {
-			'beardy','baseballbat','barbedwire','dingdong','alien_maul','hockey'
+			'beardy','baseballbat','barbedwire','dingdong','alien_maul'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
@@ -2492,6 +2492,38 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
 		self.melee_weapons.iceaxe.make_decal = true
 		self.melee_weapons.iceaxe.make_effect = true
+
+		--melee_happy
+		melee_anim = {
+			'happy'
+		}
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].anim_global_param = "melee_happy"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
+			self.melee_weapons[melee_id].expire_t = 0.625
+			self.melee_weapons[melee_id].repeat_expire_t = 0.575
+			self.melee_weapons[melee_id].melee_damage_delay = 0.125
+			self.melee_weapons[melee_id].anim_speed_mult = 0.74
+			self.melee_weapons[melee_id].force_play_charge = nil
+			self.melee_weapons[melee_id].anims = {
+				var1_attack = {
+					anim = "var2"
+				},		
+				var2_attack = {
+					anim = "var2"
+				},		
+				var3_attack = {
+					anim = "var2"
+				},
+				var4_attack = {
+					anim = "var2"
+				},
+				charge = {
+					anim = "charge"
+				}
+			}
+		end
 		
 		--melee_brick
 		--Pretty much a clone of melee_blunt but the hand hold is wider
@@ -2522,38 +2554,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 0.95
 		end
 		self.melee_weapons.moneybundle.anim_speed_mult = 1.25
-		
-		--melee_happy
-		melee_anim = {
-			'happy'
-		}
-		for i, melee_id in ipairs(melee_anim) do
-			self.melee_weapons[melee_id].anim_global_param = "melee_happy"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
-			self.melee_weapons[melee_id].expire_t = 0.625
-			self.melee_weapons[melee_id].repeat_expire_t = 0.575
-			self.melee_weapons[melee_id].melee_damage_delay = 0.125
-			self.melee_weapons[melee_id].anim_speed_mult = 0.71875
-			self.melee_weapons[melee_id].force_play_charge = nil
-			self.melee_weapons[melee_id].anims = {
-			var1_attack = {
-				anim = "var2"
-			},		
-			var2_attack = {
-				anim = "var2"
-			},		
-			var3_attack = {
-				anim = "var2"
-			},
-			var4_attack = {
-				anim = "var2"
-			},
-			charge = {
-				anim = "charge"
-			}
-		}
-		end
 		
 		--melee_pitchfork
 		melee_anim = {

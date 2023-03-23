@@ -28843,6 +28843,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.value = 0
 			self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
+			self.parts.wpn_fps_ass_akilo_2022_stock_heavy.supported = true
+			self.parts.wpn_fps_ass_akilo_2022_stock_heavy.has_description = false
+			self.parts.wpn_fps_ass_akilo_2022_stock_heavy.stats = {
+				value = 0,
+				spread = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_akilo_2022_stock_heavy.custom_stats = nil
+
 			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.supported = true
 			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.has_description = false
 			self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.stats = { value = 0 }

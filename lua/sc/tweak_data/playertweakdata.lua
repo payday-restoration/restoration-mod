@@ -1,10 +1,6 @@
 function PlayerTweakData:_set_easy()
 	self.damage.automatic_respawn_time = 120
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.40
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.45
-	end
 	self.suspicion.max_value = 6
 	self.suspicion.range_mul = 0.8
 	self.suspicion.buildup_mul = 0.8
@@ -12,11 +8,7 @@ end
 
 function PlayerTweakData:_set_normal()
 	self.damage.automatic_respawn_time = 175
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.40
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.45
-	end
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
@@ -24,22 +16,14 @@ end
 
 function PlayerTweakData:_set_hard()
 	self.damage.automatic_respawn_time = 220
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.40
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.45
-	end
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
 end
 
 function PlayerTweakData:_set_overkill()
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.40
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.45
-	end
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -47,11 +31,7 @@ function PlayerTweakData:_set_overkill()
 end
 
 function PlayerTweakData:_set_overkill_145()
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.40
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.45
-	end
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -69,11 +49,7 @@ function PlayerTweakData:_set_easy_wish()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.30
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.35
-	end
 	self.damage.custody_ammo_drained  = 0.75
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.70,
@@ -88,11 +64,7 @@ function PlayerTweakData:_set_overkill_290()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1.1
 	self.suspicion.buildup_mul = 1.1
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.30
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.35
-	end
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.30
 	}
@@ -124,11 +96,7 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.max_value = 10
 	self.suspicion.range_mul = 1.2
 	self.suspicion.buildup_mul = 1.2
-	if Global.game_settings.one_down then
-	self.damage.MIN_DAMAGE_INTERVAL = 0.20
-	else
 	self.damage.MIN_DAMAGE_INTERVAL = 0.25
-	end
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.3
 	}		

@@ -3,12 +3,12 @@
   <object file="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" />
   <dependencies>
  	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
-	<depends_on bnk="soundbanks/weapon_spas" />
+	<depends_on bnk="soundbanks/weapon_ultima"/>
   </dependencies>
   <extensions>
   	<extension name="unit_data" class="ScriptUnitData" />
     <extension name="base" class="NPCShotgunBase" >
-		<var name="name_id" value="bayou_npc" />
+		<var name="name_id" value="argos_bravo_npc" />
     </extension>
   <extension name="damage" class="UnitDamage" />
   </extensions>

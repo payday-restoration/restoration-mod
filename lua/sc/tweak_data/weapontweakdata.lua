@@ -755,6 +755,11 @@ local crew_wep_preset = {
 		self.swamp_npc.sounds.prefix = "m16_npc"	
 		self.swamp_npc.CLIP_AMMO_MAX = 60
 		
+		--Reaper Bravo Rifle
+		self.ak17_bravo_npc = deep_clone(self.swamp_npc)
+		self.ak17_bravo_npc.sounds.prefix = "flint_npc"	
+		self.ak17_bravo_npc.CLIP_AMMO_MAX = 60		
+		
 		--HK417 (unused?)
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.sounds.prefix = "contraband_npc"
@@ -1120,7 +1125,11 @@ local crew_wep_preset = {
 		self.bayou_npc.DAMAGE = 4.5
 		self.bayou_npc.CLIP_AMMO_MAX = 10
 		self.bayou_npc.alert_size = 2500
-		self.bayou_npc.suppression = 3			
+		self.bayou_npc.suppression = 3	
+
+		--Reaper Bravo Argos
+		self.argos_bravo_npc = deep_clone(self.bayou_npc)
+		self.argos_bravo_npc.sounds.prefix = "ultima_npc"		
 	end
 	
 	function WeaponTweakData:_init_data_swat_van_turret_module_npc()
@@ -1557,6 +1566,10 @@ local crew_wep_preset = {
 		self.m249_bravo_npc = deep_clone(self.hk23_sc_npc)	
 		self.m249_bravo_npc.sounds.prefix = "m249_npc"
 		self.m249_bravo_npc.CLIP_AMMO_MAX = 200
+		
+		--Reaper Bravo LMG--
+		self.rpk74_bravo_npc = deep_clone(self.m249_bravo_npc)	
+		self.rpk74_bravo_npc.sounds.prefix = "rpk_npc"		
 		
 		--Murky Bravo M60
 		self.m60_bravo_npc = deep_clone(self.hk23_sc_npc)

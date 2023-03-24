@@ -1667,6 +1667,20 @@
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
 	<material_config	path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
 	
+	<!-- Reaper Bravo LMG -->
+	<model				path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo" force="false"/>
+	<object				path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo" force="false"/>
+	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo"  load="true"/>
+	
+	<!-- Reaper Bravo AK17 -->
+	<model				path="units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo" force="false"/>
+	<object				path="units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo" force="false"/>
+	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo"  load="true"/>	
+	
+	<!-- Reaper Bravo Argos -->
+	<model				path="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" force="false"/>
+	<object				path="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" force="false"/>
+	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo"  load="true"/>		
 
 	<!-- Bravo Grenades -->
 	<unit				path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>

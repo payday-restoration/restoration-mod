@@ -17217,6 +17217,18 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Dozer RPK
 	table.insert(self.weap_ids, "rpk_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer"))	
+	
+	--Reaper Bravo Rifle
+	table.insert(self.weap_ids, "bravo_ak17")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo"))
+	
+	--Reaper Bravo Shotgun
+	table.insert(self.weap_ids, "bravo_argos")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo"))	
+	
+	--Reaper Bravo RPK74
+	table.insert(self.weap_ids, "bravo_rpk74")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo"))		
 
 end)
 

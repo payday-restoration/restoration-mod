@@ -15533,12 +15533,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.mcx_spear then --RJC9000 and PlayBONK's SIG MCX Spear
-		self.mcx_spear.categories = { "assault_rifle" }
+		self.mcx_spear.categories = { 
+			"assault_rifle",
+			"dmr" 
+		}
 		self.mcx_spear.recategorize = { "dmr_ar" }
+		self.mcx_spear.desc_id = "bm_mcx_spear_sc_desc"
+		self.mcx_spear.has_description = true
 		self.mcx_spear.damage_type = "sniper"
 		self.mcx_spear.tactical_reload = 1
 		self.mcx_spear.CLIP_AMMO_MAX = 20
-		self.mcx_spear.AMMO_MAX = 80
+		self.mcx_spear.AMMO_MAX = 60
 		self.mcx_spear.FIRE_MODE = "auto"
 		self.mcx_spear.CAN_TOGGLE_FIREMODE = true
 		self.mcx_spear.sounds.stop_fire = "g36_stop"
@@ -15555,7 +15560,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.stats = {
 			damage = 45,
 			spread = 83,
-			recoil = 73,
+			recoil = 61,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 21,
@@ -15571,6 +15576,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.can_shoot_through_enemy = true
 		self.mcx_spear.can_shoot_through_wall = false
 		self.mcx_spear.can_shoot_through_shield = false
+		self.mcx_spear.hs_mult = 1.33333
 		self.mcx_spear.armor_piercing_chance = 0.8
 		self.mcx_spear.timers.reload_empty = 3.1
 		self.mcx_spear.timers.reload_exit_empty = 0.9
@@ -15578,7 +15584,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.timers.reload_exit_not_empty = 1.12
 	end
 
-	if self.vk78_commando then --RJC9000 and PlayBONK's SIG MCX Spear
+	if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 		self.vk78_commando.categories = { "assault_rifle" }
 		self.vk78_commando.recategorize = { "dmr_ar" }
 		self.vk78_commando.damage_type = "sniper"

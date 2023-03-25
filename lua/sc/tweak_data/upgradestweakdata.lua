@@ -344,7 +344,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Explosives hurt--
 	self.explosive_bullet.curve_pow = 0.0005
 	self.explosive_bullet.player_dmg_mul = 1
-	self.explosive_bullet.range = 150
+	self.explosive_bullet.range = 200
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -711,8 +711,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.automatic_kills_to_damage_reset_t = 1.5 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
-						4, --stack limit
-						0.125 --dmg mult add
+						3, --stack limit
+						0.16667 --dmg mult add
 					}
 				}
 				--Unused
@@ -760,12 +760,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Overkill
 				self.values.temporary.overkill_damage_multiplier = {
-					{1.5, 2}, --Basic
-					{1.5, 8} --Ace
+					{1.5, 3}, --Basic
+					{1.5, 9} --Ace
 				}
 				--Ace
-					self.values.shotgun.swap_speed_multiplier = {1.5}
-					self.values.saw.swap_speed_multiplier = {1.5}
+					self.values.shotgun.swap_speed_multiplier = {1.6}
+					self.values.saw.swap_speed_multiplier = {1.6}
 			
 		--Juggernaut--
 			--Stun Resistance

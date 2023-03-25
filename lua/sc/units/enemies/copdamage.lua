@@ -501,7 +501,8 @@ function CopDamage:damage_fire(attack_data)
 
 		managers.statistics:killed_by_anyone(data)
 
-		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and alive(attack_data.weapon_unit) and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+		local close_range = attack_data.weapon_unit:base() and ((attack_data.weapon_unit:base():is_category("saw")) or (distance <= 600))
+		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and alive(attack_data.weapon_unit) and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base().is_category and close_range and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
 
@@ -1170,7 +1171,9 @@ function CopDamage:damage_bullet(attack_data)
 			managers.statistics:killed(data)
 			self:_check_damage_achievements(attack_data, head)
 
-			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not weap_base.thrower_unit and weap_base:is_category("shotgun", "saw") then
+
+			local close_range = weap_base and ((weap_base:is_category("saw")) or (distance <= 600))
+			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not weap_base.thrower_unit and close_range and weap_base:is_category("shotgun", "saw") then
 				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end
 
@@ -2317,10 +2320,11 @@ function CopDamage:damage_explosion(attack_data)
 		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
-
+		--[[
 		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
+		]]
 
 		self:chk_killshot(attacker_unit, "explosion", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
 
@@ -2642,9 +2646,11 @@ function CopDamage:damage_simple(attack_data)
 			data.weapon_unit = attack_data.attacker_unit
 		end
 
+		--[[
 		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
+		]]
 
 		self:chk_killshot(attacker_unit, "shock", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
 
@@ -2901,9 +2907,11 @@ function CopDamage:damage_dot(attack_data)
 				managers.money:civilian_killed()
 			end
 
+			--[[
 			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end
+			--]]
 
 			if attack_data and attack_data.weapon_id and not attack_data.weapon_unit then
 				attack_data.name_id = attack_data.weapon_id

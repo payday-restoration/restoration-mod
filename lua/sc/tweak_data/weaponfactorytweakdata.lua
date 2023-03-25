@@ -1015,7 +1015,7 @@ local muzzle_device = {
 						dot_tick_period = 0.5,
 						use_weapon_damage_falloff = true,
 						duration_falloff_end_mult = 0.5,
-						hurt_animation_chance = 0.05
+						hurt_animation_chance = 0.1
 					}
 				}
 			}
@@ -1039,7 +1039,7 @@ local muzzle_device = {
 						dot_tick_period = 0.5,
 						use_weapon_damage_falloff = true,
 						duration_falloff_end_mult = 0.5,
-						hurt_animation_chance = 0.1
+						hurt_animation_chance = 0.2
 					}
 				}
 			}
@@ -1063,7 +1063,7 @@ local muzzle_device = {
 						dot_tick_period = 0.5,
 						use_weapon_damage_falloff = true,
 						duration_falloff_end_mult = 0.5,
-						hurt_animation_chance = 0.15
+						hurt_animation_chance = 0.3
 					}
 				}
 			}
@@ -1077,7 +1077,7 @@ local muzzle_device = {
 				damage = -6
 			},
 			custom_stats = {
-				rof_mult = 0.8,
+				rof_mult = 0.9,
 				falloff_start_mult = 0.8,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0,
@@ -1090,7 +1090,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 2.25,
-					dot_trigger_chance = 15,
+					dot_trigger_chance = 30,
 					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
@@ -1104,7 +1104,7 @@ local muzzle_device = {
 				damage = -15
 			},
 			custom_stats = {
-				rof_mult = 0.8,
+				rof_mult = 0.9,
 				falloff_start_mult = 0.8,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0,
@@ -1117,7 +1117,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 3,
-					dot_trigger_chance = 30,
+					dot_trigger_chance = 40,
 					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
@@ -1143,7 +1143,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 3,
-					dot_trigger_chance = 30,
+					dot_trigger_chance = 40,
 					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
@@ -1170,7 +1170,7 @@ local muzzle_device = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = 4.5,
-					dot_trigger_chance = 40,
+					dot_trigger_chance = 50,
 					dot_length = 2.1,
 					dot_tick_period = 0.5
 				}
@@ -1336,8 +1336,7 @@ local muzzle_device = {
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 
@@ -1359,8 +1358,7 @@ local muzzle_device = {
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 
@@ -1383,8 +1381,7 @@ local muzzle_device = {
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 
@@ -6200,8 +6197,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -9338,8 +9334,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		ignore_statistic = true,
 		rays = 1,
 		block_b_storm = true,	
-		bullet_class = "InstantExplosiveBulletBase",
-		sms = 0.85
+		bullet_class = "InstantExplosiveBulletBase"
 	}
 	
 	--Flechettes
@@ -9396,7 +9391,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
 			dot_damage = 6,
-			dot_trigger_chance = 50,
+			dot_trigger_chance = 80,
 			dot_length = 2.1,
 			dot_tick_period = 0.5
 		}
@@ -9430,7 +9425,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				dot_tick_period = 0.5,
 				use_weapon_damage_falloff = true,
 				duration_falloff_end_mult = 0.5,
-				hurt_animation_chance = 0.20
+				hurt_animation_chance = 0.40
 			}
 		}
 	}
@@ -14127,8 +14122,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				bullet_class = "InstantExplosiveBulletBase",
-				sms = 0.85
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}	
@@ -21509,19 +21503,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--Alternative way of making the default CAR-4 stock piss off instead of putting a "attachment forbids" warning on everything
 	for part_id, i in pairs(self.parts) do
-		if self.parts[part_id] and self.parts[part_id].forbids and table.contains(self.parts[part_id].forbids, "wpn_fps_upg_m4_s_standard_vanilla") then
-			for k, forbid_id in pairs(self.parts[part_id].forbids) do
-				if forbid_id == "wpn_fps_upg_m4_s_standard_vanilla" then
-					self.parts[part_id].forbids[k] = "forbid_dummy"
+		if self.parts[part_id] then
+			if self.parts[part_id].forbids and table.contains(self.parts[part_id].forbids, "wpn_fps_upg_m4_s_standard_vanilla") then
+				for k, forbid_id in pairs(self.parts[part_id].forbids) do
+					if forbid_id == "wpn_fps_upg_m4_s_standard_vanilla" then
+						self.parts[part_id].forbids[k] = "forbid_dummy"
+					end
 				end
+				self.parts[part_id].override = self.parts[part_id].override or {}
+				self.parts[part_id].override.wpn_fps_upg_m4_s_standard_vanilla = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				}
 			end
-			self.parts[part_id].override = self.parts[part_id].override or {}
-			self.parts[part_id].override.wpn_fps_upg_m4_s_standard_vanilla = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-			}
+
+			if self.parts[part_id].forbids and (table.contains(self.parts[part_id].forbids, "wpn_fps_upg_a_dragons_breath") or table.contains(self.parts[part_id].forbids, "wpn_fps_upg_a_explosive")) then
+				if not table.contains(self.parts[part_id].forbids, "wpn_fps_upg_a_dragons_breath") then
+					table.insert(self.parts[part_id].forbids, "wpn_fps_upg_a_dragons_breath")
+				end
+				if not table.contains(self.parts[part_id].forbids, "wpn_fps_upg_a_explosive") then
+					table.insert(self.parts[part_id].forbids, "wpn_fps_upg_a_explosive")
+				end
+				table.insert(self.parts[part_id].forbids, "wpn_fps_upg_a_rip")
+			end
 		end
 	end
+
+
 
 
 
@@ -25188,8 +25196,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase",
-					sms = 0.85
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
 		}		

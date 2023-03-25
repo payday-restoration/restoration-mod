@@ -194,7 +194,7 @@
 	<decal_surfaces default_material="flesh" />
 
 	<effects>
-		<effect_spawner name="es_light" enabled="false" object="e_light" effect="effects/particles/character/cloaker_goggle" />
+		<effect_spawner name="es_light" enabled="false" object="e_light" effect="units/pd2_mod_reapers/effects/character/cloaker_goggle" />
 	</effects>
 
 	<graphics>

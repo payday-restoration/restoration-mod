@@ -18112,12 +18112,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 	self.parts.wpn_fps_snp_qbu88_m_extended.supported = true
 	self.parts.wpn_fps_snp_qbu88_m_extended.stats = {
 		value = 2,
-		extra_ammo = 10,
-		reload = -4,
-		concealment = -2
+		extra_ammo = 5,
+		reload = -3,
+		concealment = -1
 	}
 	self.parts.wpn_fps_snp_qbu88_m_extended.custom_stats = {
-		ads_speed_mult = 1.05
+		ads_speed_mult = 1.025
 	}
 	
 	--Iron Sight

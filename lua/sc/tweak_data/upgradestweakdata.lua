@@ -1647,12 +1647,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
  			10 --Copycat
  		},
- 		cdr = {1 , 3}, --Amount cooldown is reduced on ammo box pickup.
-		{3, 5}, --Amounts healed per level
-		{4, 6},
-		{5, 7},
+ 		cdr = {1 , 4}, --Amount cooldown is reduced on ammo box pickup.
+		{3, 6}, --Amounts healed per level
+		{4, 7},
+		{5, 8},
 
-		{2, 4} --Copycat
+		{2, 5} --Copycat
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
@@ -1690,7 +1690,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.02,
 		0.01 --Copycat, unused
 	}
-	self.killshot_close_panic_range = 900
+	self.killshot_close_panic_range = 1000
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
 	self.on_killshot_cooldown_reduction_melee = 1.5

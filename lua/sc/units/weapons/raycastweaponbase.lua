@@ -1050,6 +1050,14 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		self:_spawn_shell_eject_effect()
 	end
 
+	if self:weapon_tweak_data().muzzleflash_mod then
+		for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+			if alive(self._obj_fire) then
+				self:_spawn_muzzle_effect(from_pos, direction)
+			end
+		end
+	end
+
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
 
 	if self._alert_events and ray_res.rays then

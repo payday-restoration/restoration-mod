@@ -2784,7 +2784,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
 			
-			if tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data and character_unit:character_damage().damage_fire then
+			local charge_fire_check = (tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and true)
+			if tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data and charge_fire_check and character_unit:character_damage().damage_fire then
 				local action_data = {
 					variant = "fire",
 					damage = 0,
@@ -2794,7 +2795,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				}
 
 				character_unit:character_damage():damage_fire(action_data)
-			end			
+			end		
 
 			return defense_data
 		else

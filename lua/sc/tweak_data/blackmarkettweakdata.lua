@@ -3580,27 +3580,27 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--It's a hatchet--
 		self.melee_weapons.bullseye.stats.min_damage = 6
 		self.melee_weapons.bullseye.stats.max_damage = 12.001
-		self.melee_weapons.bullseye.stats.min_damage_effect = 1.5
-		self.melee_weapons.bullseye.stats.max_damage_effect = 3.0
+		self.melee_weapons.bullseye.stats.min_damage_effect = 2.0
+		self.melee_weapons.bullseye.stats.max_damage_effect = 4.0
 		self.melee_weapons.bullseye.stats.charge_time = 1.3
 		self.melee_weapons.bullseye.stats.range = 170
 		self.melee_weapons.bullseye.stats.concealment = 26
 		--Just like the injuns--
 		self.melee_weapons.tomahawk.stats.min_damage = 6
 		self.melee_weapons.tomahawk.stats.max_damage = 12.001
-		self.melee_weapons.tomahawk.stats.min_damage_effect = 2.4
-		self.melee_weapons.tomahawk.stats.max_damage_effect = 4.5
+		self.melee_weapons.tomahawk.stats.min_damage_effect = 3.0
+		self.melee_weapons.tomahawk.stats.max_damage_effect = 6.0
 		self.melee_weapons.tomahawk.stats.charge_time = 1.45
-		self.melee_weapons.tomahawk.stats.range = 180
+		self.melee_weapons.tomahawk.stats.range = 175
 		self.melee_weapons.tomahawk.attack_allowed_expire_t = 0.1
 		self.melee_weapons.tomahawk.stats.concealment = 25
 			--another injun tomahawk	
 			self.melee_weapons.scalper.stats.min_damage = 6
 			self.melee_weapons.scalper.stats.max_damage = 12.001
-			self.melee_weapons.scalper.stats.min_damage_effect = 2.4
-			self.melee_weapons.scalper.stats.max_damage_effect = 4.5
+			self.melee_weapons.scalper.stats.min_damage_effect = 3.0
+			self.melee_weapons.scalper.stats.max_damage_effect = 6.0
 			self.melee_weapons.scalper.stats.charge_time = 1.45
-			self.melee_weapons.scalper.stats.range = 180
+			self.melee_weapons.scalper.stats.range = 175
 			self.melee_weapons.scalper.attack_allowed_expire_t = 0.1
 			self.melee_weapons.scalper.stats.concealment = 25
 		--Reminds me of how HL2 was gonna have an ice axe--
@@ -3617,7 +3617,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.morning.stats.min_damage = 6
 		self.melee_weapons.morning.stats.max_damage = 12.001
 		self.melee_weapons.morning.stats.min_damage_effect = 4.5
-		self.melee_weapons.morning.stats.max_damage_effect = 9.0
+		self.melee_weapons.morning.stats.max_damage_effect = 12.0
 		self.melee_weapons.morning.stats.charge_time = 1.8
 		self.melee_weapons.morning.stats.range = 180
 		self.melee_weapons.morning.stats.concealment = 24
@@ -3644,10 +3644,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.pitchfork.stats.min_damage = 6
 		self.melee_weapons.pitchfork.stats.max_damage = 12.001
 		self.melee_weapons.pitchfork.stats.min_damage_effect = 3.0
-		self.melee_weapons.pitchfork.stats.max_damage_effect = 6.0
+		self.melee_weapons.pitchfork.stats.max_damage_effect = 9.0
 		self.melee_weapons.pitchfork.stats.charge_time = 2.1
-		self.melee_weapons.pitchfork.stats.range = 180
-		self.melee_weapons.pitchfork.stats.concealment = 22
+		self.melee_weapons.pitchfork.stats.range = 175
+		self.melee_weapons.pitchfork.stats.concealment = 23
 		--Manly Miner Men--
 		self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
 		self.melee_weapons.mining_pick.stats.min_damage = 6
@@ -3662,7 +3662,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.beardy.stats.min_damage = 9
 		self.melee_weapons.beardy.stats.max_damage = 18.001
 		self.melee_weapons.beardy.stats.min_damage_effect = 3.0
-		self.melee_weapons.beardy.stats.max_damage_effect = 6.0
+		self.melee_weapons.beardy.stats.max_damage_effect = 9.0
 		self.melee_weapons.beardy.stats.charge_time = 2
 		self.melee_weapons.beardy.stats.range = 220
 		self.melee_weapons.beardy.stats.concealment = 23
@@ -3670,7 +3670,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fireaxe.stats.min_damage = 9
 		self.melee_weapons.fireaxe.stats.max_damage = 18.001
 		self.melee_weapons.fireaxe.stats.min_damage_effect = 3.0
-		self.melee_weapons.fireaxe.stats.max_damage_effect = 6.0
+		self.melee_weapons.fireaxe.stats.max_damage_effect = 9.0
 		self.melee_weapons.fireaxe.stats.charge_time = 1.9
 		self.melee_weapons.fireaxe.stats.range = 200
 		self.melee_weapons.fireaxe.stats.concealment = 25
@@ -3680,9 +3680,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.sandsteel.stats.min_damage = 6
 		self.melee_weapons.sandsteel.stats.max_damage = 12.001
 		self.melee_weapons.sandsteel.stats.min_damage_effect = 1.5
-		self.melee_weapons.sandsteel.stats.max_damage_effect = 3.0
+		self.melee_weapons.sandsteel.stats.max_damage_effect = 4.5
 		self.melee_weapons.sandsteel.stats.charge_time = 1.7
-		self.melee_weapons.sandsteel.stats.charge_bonus_start = 0.99
+		self.melee_weapons.sandsteel.stats.charge_bonus_start = 0.9
 		self.melee_weapons.sandsteel.stats.charge_bonus_speed = 1.75
 		self.melee_weapons.sandsteel.stats.range = 190
 		self.melee_weapons.sandsteel.attack_allowed_expire_t = 0.1
@@ -3692,7 +3692,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.great.stats.min_damage = 9
 		self.melee_weapons.great.stats.max_damage = 18.001
 		self.melee_weapons.great.stats.min_damage_effect = 2.4
-		self.melee_weapons.great.stats.max_damage_effect = 4.5
+		self.melee_weapons.great.stats.max_damage_effect = 6.0
 		self.melee_weapons.great.stats.charge_time = 2.1
 		self.melee_weapons.great.stats.range = 200
 		self.melee_weapons.great.stats.charge_bonus_start = 0.9
@@ -3971,6 +3971,21 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 
 	if self.melee_weapons.therkatana then --Cyberpunk 2077 Thermal Katana
 		self.melee_weapons.therkatana.stats = deep_clone(self.melee_weapons.sandsteel.stats)
+		self.melee_weapons.therkatana.stats.min_damage = 6
+		self.melee_weapons.therkatana.stats.max_damage = 9.001
+		self.melee_weapons.therkatana.stats.min_damage_effect = 1.2
+		self.melee_weapons.therkatana.stats.max_damage_effect = 2.4
+		self.melee_weapons.therkatana.stats.charge_bonus_start = 0.9
+		self.melee_weapons.therkatana.stats.charge_bonus_speed = nil
+		self.melee_weapons.therkatana.stats.charge_bonus_fire = true
+		self.melee_weapons.therkatana.stats.range = 180
+		self.melee_weapons.therkatana.fire_dot_data = {
+			dot_trigger_chance = "100",
+			dot_damage = "2",
+			dot_length = "3.1",
+			dot_trigger_max_distance = "3000",
+			dot_tick_period = "0.5"
+		}	
 	end
 
 	if self.melee_weapons.hfblade then --HF Blade (Katana 1.8x speed, 1/2 damage)
@@ -3978,7 +3993,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.hfblade.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 		self.melee_weapons.hfblade.stats.min_damage = self.melee_weapons.hfblade.stats.min_damage / 2
 		self.melee_weapons.hfblade.stats.max_damage = self.melee_weapons.hfblade.stats.max_damage / 2
-		self.melee_weapons.hfblade.anim_speed_mult = self.melee_weapons.hfblade.anim_speed_mult * 1.8
+		self.melee_weapons.hfblade.anim_speed_mult = self.melee_weapons.hfblade.anim_speed_mult * 1.85
 	end
 
 	if self.melee_weapons.murasama then --HF Murasama (Katana 1.8x speed, 1/2 damage)
@@ -3986,7 +4001,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.murasama.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 		self.melee_weapons.murasama.stats.min_damage = self.melee_weapons.murasama.stats.min_damage / 2
 		self.melee_weapons.murasama.stats.max_damage = self.melee_weapons.murasama.stats.max_damage / 2
-		self.melee_weapons.murasama.anim_speed_mult = self.melee_weapons.murasama.anim_speed_mult * 1.8
+		self.melee_weapons.murasama.anim_speed_mult = self.melee_weapons.murasama.anim_speed_mult * 1.85
 	end
 
 	if self.melee_weapons.invincible then --Pincer Blades (Lucille Bat)

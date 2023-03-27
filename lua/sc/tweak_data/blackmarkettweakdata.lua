@@ -3122,7 +3122,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.barbedwire.stats.max_damage = 12.001
 		self.melee_weapons.barbedwire.stats.min_damage_effect = 6.0
 		self.melee_weapons.barbedwire.stats.max_damage_effect = 12.0
-		self.melee_weapons.barbedwire.stats.charge_time = 2.6
+		self.melee_weapons.barbedwire.stats.charge_time = 2.4
 		self.melee_weapons.barbedwire.stats.range = 200
 		self.melee_weapons.barbedwire.stats.concealment = 22
 		--I get it, it's the hotline--
@@ -3130,7 +3130,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.baseballbat.stats.max_damage = 12.001
 		self.melee_weapons.baseballbat.stats.min_damage_effect = 9.0
 		self.melee_weapons.baseballbat.stats.max_damage_effect = 18.0
-		self.melee_weapons.baseballbat.stats.charge_time = 2.4
+		self.melee_weapons.baseballbat.stats.charge_time = 2.3
 		self.melee_weapons.baseballbat.stats.range = 200
 		self.melee_weapons.baseballbat.stats.concealment = 23
 			--Shephard's cane--
@@ -3139,7 +3139,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.stick.stats.max_damage = 12.001
 			self.melee_weapons.stick.stats.min_damage_effect = 9.0
 			self.melee_weapons.stick.stats.max_damage_effect = 18.0
-			self.melee_weapons.stick.stats.charge_time = 2.4
+			self.melee_weapons.stick.stats.charge_time = 2.3
 			self.melee_weapons.stick.stats.range = 200
 			self.melee_weapons.stick.stats.concealment = 23
 
@@ -3157,7 +3157,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spoon_gold.stats.max_damage = 12.001
 		self.melee_weapons.spoon_gold.stats.min_damage_effect = 6.0
 		self.melee_weapons.spoon_gold.stats.max_damage_effect = 12.0
-		self.melee_weapons.spoon_gold.stats.charge_time = 2.7
+		self.melee_weapons.spoon_gold.stats.charge_time = 2.5
 		self.melee_weapons.spoon_gold.stats.range = 210
 		self.melee_weapons.spoon_gold.stats.concealment = 22
 		--It has a crowbar we can't use--
@@ -3165,7 +3165,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.dingdong.stats.max_damage = 12.001
 		self.melee_weapons.dingdong.stats.min_damage_effect = 9.0
 		self.melee_weapons.dingdong.stats.max_damage_effect = 24.0
-		self.melee_weapons.dingdong.stats.charge_time = 2.7
+		self.melee_weapons.dingdong.stats.charge_time = 2.5
 		self.melee_weapons.dingdong.stats.range = 210
 		self.melee_weapons.dingdong.stats.concealment = 22
 			--Ayy Hammer--
@@ -3174,7 +3174,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.alien_maul.stats.max_damage = 12.001
 			self.melee_weapons.alien_maul.stats.min_damage_effect = 9.0
 			self.melee_weapons.alien_maul.stats.max_damage_effect = 24.0
-			self.melee_weapons.alien_maul.stats.charge_time = 2.7
+			self.melee_weapons.alien_maul.stats.charge_time = 2.5
 			self.melee_weapons.alien_maul.stats.range = 210
 			self.melee_weapons.alien_maul.stats.concealment = 22
 			--WHAT IB WE JUZ USED A SPUUUN :DDDDD--
@@ -3182,7 +3182,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.spoon.stats.max_damage = 12.001
 			self.melee_weapons.spoon.stats.min_damage_effect = 9.0
 			self.melee_weapons.spoon.stats.max_damage_effect = 24.0
-			self.melee_weapons.spoon.stats.charge_time = 2.7
+			self.melee_weapons.spoon.stats.charge_time = 2.5
 			self.melee_weapons.spoon.stats.range = 210
 			self.melee_weapons.spoon.stats.concealment = 22
 		--we postal now--
@@ -3190,7 +3190,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cutters.stats.max_damage = 12.001
 		self.melee_weapons.cutters.stats.min_damage_effect = 9.0
 		self.melee_weapons.cutters.stats.max_damage_effect = 24.0
-		self.melee_weapons.cutters.stats.charge_time = 2.7
+		self.melee_weapons.cutters.stats.charge_time = 2.5
 		self.melee_weapons.cutters.stats.range = 170
 		self.melee_weapons.cutters.stats.concealment = 24
 
@@ -3970,11 +3970,13 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.therkatana then --Cyberpunk 2077 Thermal Katana
+		self.melee_weapons.therkatana.info_id = "bm_melee_2077tkata_info"	
 		self.melee_weapons.therkatana.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 		self.melee_weapons.therkatana.stats.min_damage = 6
 		self.melee_weapons.therkatana.stats.max_damage = 9.001
 		self.melee_weapons.therkatana.stats.min_damage_effect = 1.2
 		self.melee_weapons.therkatana.stats.max_damage_effect = 2.4
+		self.melee_weapons.therkatana.stats.charge_time = 1.5
 		self.melee_weapons.therkatana.stats.charge_bonus_start = 0.9
 		self.melee_weapons.therkatana.stats.charge_bonus_speed = nil
 		self.melee_weapons.therkatana.stats.charge_bonus_fire = true

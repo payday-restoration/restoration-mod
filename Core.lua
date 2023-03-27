@@ -614,6 +614,13 @@ restoration.weapon_categories = {
 	"sub_wpn_cat"
 }
 
+restoration.wepnames = {
+	"resmod_res_names",
+	"resmod_no_nicknames",
+	"dmcwo_reelnames",
+	"resmod_no_renames"
+}
+
 -- restoration.environments_choice_shadow_raid = {
 -- 	"default",
 -- 	"random",

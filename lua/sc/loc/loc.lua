@@ -148,6 +148,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["base_wpn_cat"] = "base skill",
 		["sub_wpn_cat"] = "sub-category & damage tier",
 
+		["RestorationModWepNamesTitleID"] = "Weapon (Re)Names",
+		["RestorationModWepNamesDescID"] = "Change the naming style of weapons and attachments. Requires restart.",
+		["resmod_res_names"] = "Resmod Names (Default)",
+		["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
+		["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
+		["resmod_no_renames"] = "//NOT IMPLEMENTED YET// Vanilla names (or use your own rename mod)",
+
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
 		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
@@ -2341,7 +2348,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
-		--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 		--[[ 
 			WepNames Options
 			1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
@@ -2351,6 +2358,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if weapon_names then
 			if weapon_names == 2 then
 				LocalizationManager:add_localized_strings({	
+
+					["bm_w_pl14"] = "WS-14",
+					["bm_w_g22c"] = "Chimano 22C",
+					["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
+					["bm_w_x_1911"] = "Akimbo Operator IIs",
+					["bm_w_schakal"] = "AMP 45",
+					["bm_w_tecci"] = "SG 416C",
+					["bm_w_x_judge"] = "Akimbo Judges",
+					["bm_w_vhs"] = "HVH-2",
+					["bm_w_contraband"] = "SG 417D"
 	
 				})
 			elseif weapon_names == 3 then
@@ -2961,7 +2978,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 Fragmentation Grenade",
-						["bm_grenade_frag_com"] = "M67 Fragmentation Grenade",
+						["bm_grenade_frag_com"] = "M67 Fragmentation Grenade - OVERKILL Model",
 						["bm_wpn_prj_hur"] = "Kit Rae Aircobra Throwing Axe",
 						["bm_wpn_prj_target"] = "Blazing Arrow Ninja Throwing Knife",
 

@@ -525,6 +525,8 @@
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
 				<divider name="tod_divider" size="15"/>
+				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->

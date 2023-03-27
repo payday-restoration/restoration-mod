@@ -2602,6 +2602,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_par"] = "FN M240B",
 						["bm_wp_par_s_plastic"] = "M240B Stock",
 
+						--M134
+						["bm_w_m134"] = "General Electric M134",
+						["bm_wp_m134_barrel_extreme"] = "Anti-Air Barrel",
+						["bm_wp_m134_barrel_short"] = "Compact Barrel",
+
 					--[[SHOTGUNS]]
 						--Saiga
 						["bm_w_saiga"] = "KC Saiga-12K",
@@ -2632,9 +2637,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_r870_s_nostock"] = "No Stock",
 						["bm_wp_r870_s_nostock_big"] = "No Stock w/Full Length Rail",
 						["bm_wp_r870_s_solid_big"] = "Fixed Stock w/Full Length Rail",
-						--
+						--Loco
 						["bm_w_serbu"] = "Short Remington Model 870",
-						["bm_wp_shorty_m_extended_short"] = "1rnd Extension",
+						["bm_wp_shorty_m_extended_short"] = "1rnd Tube Extension",
 						["bm_wp_r870_s_solid"] = "Fixed Stock",
 						["bm_wp_serbu_s_solid_short"] = "Fixed Stock w/Rail",
 						["bm_wp_serbu_s_nostock_short"] = "No Stock w/Rail",
@@ -2683,6 +2688,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ass_s552_s_standard_green"] = "OD Green Stock",
 						["bm_wp_ass_s552_fg_railed"] = "SIG Railed Handguard",
 						["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
+						--AMCAR
+						["bm_w_amcar"] = "Colt M733 Commando",
 
 						--AUG
 						["bm_w_aug"] = "Steyr AUG A2",
@@ -2698,6 +2705,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
 						 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
 						 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
+						--CAR-4
+						["bm_w_m4"] = "Colt M4A1",
+						--AK74
+						["bm_w_ak74"] = "KC AKS-74",
 						--805
 						["bm_w_hajk"] = "CZ 805 BREN",
 						["bm_wp_hajk_b_short"] = "A2 Barrel",
@@ -2719,6 +2730,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_akmsu_fg_rail"] = "Samson K-Rail",
 						--AKM
 						["bm_w_akm"] = "KC AKMS",
+						["bm_w_akm_gold"] = "Gold Plated AKMS",
 
 					--[[DMRs]]
 						--417
@@ -2792,7 +2804,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						 ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
 
 					--[[SPECIALS]]
-						["bm_w_ray"] = "M202 Flash",
+						["bm_w_ray"] = "M202 FLASH",
+						["bm_w_rpg7"] = "Bazalt RPG-7",
 
 						["bm_w_arblast"] = "Arbalest",
 						["bm_w_frankish"] = "Frankish Bow",
@@ -2913,6 +2926,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 							["bm_wp_upg_ass_m4_upper_reciever_ballos"] = "2A-Arm BALIOS Upper Receiver",
 							["bm_wp_upg_ass_m4_upper_reciever_core"] = "CORE15 Upper Receiver",
 							["bm_wp_upg_ass_m4_lower_reciever_core"] = "CORE15 Lower Receiver",
+							["bm_wp_m4_uupg_b_sd"] = "Suppressed Barrel", 
+							["bm_wp_upg_fg_jp"] = "JPE Modular Handguard",
+							["bm_wp_m4_uupg_fg_lr300"] = "LR300 Handguard",
+							["bm_wp_upg_fg_smr"] = "Geissele Super Modular Rail",
 							["bm_wp_upg_smg_olympic_fg_lr300"] = "Short LR300 Handguard",
 							["bm_wp_upg_ass_m16_fg_stag"] = "Stag Arms Model 8T Handguard",
 							["bm_wp_upg_ass_m4_fg_moe"] = "Magpul MOE SL Handguard",

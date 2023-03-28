@@ -6367,6 +6367,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 	self.parts.wpn_fps_pis_usp_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
 	self.parts.wpn_fps_pis_usp_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
 
+	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_i_tekna")
+	table.insert(self.wpn_fps_pis_usp_npc.uses_parts, "wpn_fps_upg_i_tekna")
+
 end)	
 
 --Chimano Custom
@@ -12111,11 +12114,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_usp", "resmod_x_usp", function(s
 		supported = true,
 		stats = {
 			value = 2,
-			concealment = -2,
-			extra_ammo = 20,
-			spread = -1,
-			recoil = 1,
-			reload = -2
+			concealment = -3,
+			extra_ammo = 24,
+			reload = -3
 		}
 	}
 		
@@ -14631,13 +14632,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_pis_usp_m_big.supported = true
 	self.parts.wpn_fps_pis_usp_m_big.stats = {
 		value = 2,
-		concealment = -2,
-		extra_ammo = 10,
-		recoil = 1,
-		reload = -2
+		concealment = -3,
+		extra_ammo = 12,
+		reload = -3
 	}
 	self.parts.wpn_fps_pis_usp_m_big.custom_stats = {
-		ads_speed_mult = 1.05
+		ads_speed_mult = 1.075
 	}
 	
 	self.parts.wpn_fps_pis_1911_m_big.pcs = {}
@@ -20763,6 +20763,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		has_description = true,
 		custom_stats = {
 			beretta_burst = true,
+			use_auto_kick = true
+		},
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 5,
+			spread = -5,
+			recoil = -8			
+		},
+		internal_part = true,
+		dlc = "sc"
+	}	
+
+	self.parts.wpn_fps_upg_i_tekna = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_tekna",
+		a_obj = "a_body",
+		has_description = true,
+		custom_stats = {
+			tekna_burst = true,
+			rof_mult = 2,
 			use_auto_kick = true
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",

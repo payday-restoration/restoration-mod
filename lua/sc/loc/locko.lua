@@ -149,8 +149,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModWpnCatTitleID"] = "구매 메뉴 구성",
 		["RestorationModWpnCatDescID"] = "블랙마켓 메뉴에서 무기 구매 시 사용하는 무기 정리 방법을 변경합니다. 활성화 할 시 재시작이 필요합니다.",
 			["base_wpn_cat"] = "기본/스킬 카테고리로 나누기",
-			["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",		
-		
+			["sub_wpn_cat"] = "하위/대미지 티어 카테고리로 나누기",
+
+		["RestorationModWepNamesTitleID"] = "무기 (재)이름",
+		["RestorationModWepNamesDescID"] = "무기 및 부착물의 이름 지정 스타일을 변경합니다. 변경할 시 재시작이 필요합니다.",
+		["resmod_res_names"] = "레스토 모드 이름 (기본)",
+		["resmod_no_nicknames"] = "레스토 모드 이름 (별명 없이)",
+		["dmcwo_reelnames"] = "현실 무기 이름 (DMCWO 포트, 아직 작업 중)",
+		["resmod_no_renames"] = "바닐라 이름(또는 다른 이름 바꾸는 모드) (아직 구현되지 않았습니다)",
+			
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
 		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
@@ -1803,7 +1810,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 은폐도에 따라 결정됩니다.",		
 		["bm_melee_katana_info"] = "신사쿠토 카타나는 걸작이지만 새로 단조된 작품이기도 합니다. 이 카타나는 피를 맛본 적이 없고, 진정한 유산이나 역사도 없습니다. 단지 그것을 이루워 줄 수 있는 주인을 기다리고 있을 뿐입니다.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.\n\n지로로 플레이하는 동안, 차지 근거리로 클로커를 죽이면 스폐셜 킬을 발동시킵니다.",
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 \"정의의 도구\"가 아니야.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",
-		["bm_melee_thejobissnotyours_info"] = "이건 네놈의 검 따위가 아니지.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",		
+		["bm_melee_thejobissnotyours_info"] = "이건 네놈의 검 따위가 아니지.\n\n완전 충전 공격을 50% 더 빨리 휘두르며 더 빠른 후속 베기가 가능합니다.",
+		["bm_melee_2077tkata_info"] = "나노 필라멘트로 구성된 가열 칼날입니다.\n추가 기능과 수정 없고 카타나의 가장 순수한 본질로만 이루워져있고 뜨거운 강철을 찢어버립니다.\n\n완전히 충전한 채 공격하면 적을 불태워 3초에 걸쳐 120의 화염 피해를 입힙니다.",		
 		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 10% 감소합니다.", --Buckler Shield
 		["bm_melee_briefcase_info"] = "안에 뭐가 들어있든 간에, 그 서류 가방 자체는 놀랍도록 탄력이 뛰어납니다.\n\n충전하는 동안 받는 원거리 피해가 5% 감소합니다.", --Briefcase		
 		["bm_melee_pitch_info"] = "피치로 찌르고 몇몇 피치들을 찌르십시오.\n\n앞으로 전진하면 전방의 대상에게 0.4초마다 45의 피해를 입히는 전력 질주를 시작합니다. 이것은 스킬로 늘릴 수 있습니다.\n\n전력 질주 중에 적을 맞추면 최대 스태미나의 15%가 소모되고, 치명타가 10%먼큼을 회복합니다.\n\n전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.", --Randal Pitchfork		
@@ -2205,7 +2213,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	})
 
 	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
-		--local weapon_names = restoration.Options:GetValue("OTHER/WepNames")
+		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 		--[[ 
 			WepNames Options
 			1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
@@ -2214,7 +2222,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		]]
 		if weapon_names then
 			if weapon_names == 2 then
-				LocalizationManager:add_localized_strings({	
+				LocalizationManager:add_localized_strings({
+
+					["bm_w_pl14"] = "WS-14",
+					["bm_w_g22c"] = "Chimano 22C",
+					["bm_w_x_g22c"] = "아킴보 Chimano 22Cs",
+					["bm_w_x_1911"] = "아킴보 Operator IIs",
+					["bm_w_schakal"] = "AMP 45",
+					["bm_w_tecci"] = "SG 416C",
+					["bm_w_x_judge"] = "아킴보 Judges",
+					["bm_w_vhs"] = "HVH-2",
+					["bm_w_contraband"] = "SG 417D"				
 	
 				})
 			elseif weapon_names == 3 then
@@ -2222,296 +2240,359 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--[[PISTOLS]]
 						--5/7
-						["bm_w_lemming"] = "FN Five-seveN",
+						["bm_w_lemming"] = "FN 파이브세븐",
+						--Gecko Pistol
+						["bm_w_maxim9"] = "사일랜서코 맥심 9",
+						["bm_w_x_maxim9"] = "아킴보 맥심 9",						
 
 						--Stryk 18
-						["bm_w_glock_18c"] = "Glock 18C",
-						["bm_wp_g18c_co_comp_2"] = "SJC Compensator 9mm",
-
+						["bm_w_glock_18c"] = "글록 18C",
+						["bm_w_x_g18c"] = "아킴보 글록 18C",
+						["bm_wp_g18c_co_comp_2"] = "SJC 9mm용 보정기",
+						--CZ
+						["bm_w_czech"] = "CZ 애큐섀도우 2",
+						["bm_w_x_czech"] = "아킴보 애큐섀도우 2",
+						
+						--APS
+						["bm_w_stech"] = "스테츠킨 APS",
+						["bm_w_x_stech"] = "아킴보 스테츠킨",						
 						--Gruber
-						["bm_w_ppk"] = "Walther PPK",
-						["bm_wp_pis_ppk_g_laser"] = "Crimson Trace Laser Grip",
-						["bm_wp_pis_ppk_b_long"] = "PPKS Slide",
+						["bm_w_ppk"] = "발터 PPK",
+						["bm_wp_pis_ppk_g_laser"] = "크림슨 트레이스 레이저 손잡이",
+						["bm_wp_pis_ppk_b_long"] = "PPKS 슬라이드",
 						--Chimano 88
-						["bm_w_glock_17"] = "Glock 17",
-						["bm_w_x_g17"] = "Akimbo Glock 17s",
+						["bm_w_glock_17"] = "글록 17",
+						["bm_w_x_g17"] = "아킴보 글록 17",
 						--Glock 26
-						["bm_wp_pis_g26"] = "Glock 26",
-						["bm_w_jowi"] = "Akimbo Glock 26s",
-						["bm_wp_g26_body_salient"] = "Stipled Tan Frame",
-						["bm_wp_g26_b_custom"] = "Brushed Metal Slide",
-						["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
-						["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
+						["bm_wp_pis_g26"] = "글록 26",
+						["bm_w_jowi"] = "아킴보 글록 26",
+						["bm_wp_g26_body_salient"] = "스테플드 탠 프레임",
+						["bm_wp_g26_b_custom"] = "손질된 금속 슬라이드",
+						["bm_wp_g26_m_custom"] = "G26 스테폴드 탠 탄창",
 						--Bernetti 9
-						["bm_w_b92fs"] = "Beretta 92FS",
-						["bm_wp_beretta_co_co1"] = "SGS Compensator", --Original name was a reference to the movie "The Professional"
-						["bm_wp_beretta_co_co2"] = "Competition Compensator", --Seems to actually be based off of the Shorty USA Beretta 92 Spring Gun, unsurprising considering some of the guns models 	were based off of airsoft counterparts
-						["bm_wp_beretta_sl_brigadier"] = "Brigadier Elite Slide",
-						["bm_wp_beretta_g_ergo"] = "Wood Ergo Grips",
-						["bm_wp_beretta_m_extended"] = "30rnd 92FS Magazine",
+						["bm_w_b92fs"] = "베레타 92FS",
+						["bm_w_x_b92fs"] = "아킴보 92FS",
+						["bm_wp_beretta_co_co1"] = "SGS 보정기", --Original name was a reference to the movie "The Professional"
+						["bm_wp_beretta_co_co2"] = "콤프테이션 보정기", --Seems to actually be based off of the Shorty USA Beretta 92 Spring Gun, unsurprising considering some of the guns models 	were based off of airsoft counterparts
+						["bm_wp_beretta_sl_brigadier"] = "브리가디어 엘리트 슬라이드",
+						["bm_wp_beretta_g_ergo"] = "우드 에르고 손잡이",
+						["bm_wp_beretta_g_engraved"] = "각인이 새겨진 92FS 손잡이",
+						["bm_wp_beretta_m_extended"] = "30발 92FS 탄창",
 						--PL14
-						["bm_w_pl14"] = "KC PL-14 \"Lebedev\"",
-						["bm_wp_pl14_m_extended"] = "17rnd PL-14 Magazine",
-						["bm_wp_pl14_b_comp"] = "PL-14 Compensator",
+						["bm_w_pl14"] = "칼라시니코프 PL-14 \"레베데프\"",
+						["bm_wp_pl14_m_extended"] = "17발 PL-14 탄창",
+						["bm_wp_pl14_b_comp"] = "PL-14 보정기",
+						--Wick
 						["bm_w_packrat"] = "H&K P30L",
-						["bm_w_x_packrat"] = "Akimbo P30Ls",
-
+						["bm_w_x_packrat"] = "아킴보 P30L",
+						--Hudson
+						["bm_w_holt"] = "허드슨 H9",
+						["bm_w_x_holt"] = "아킴보 H9",
+						--93R
+						["bm_w_beer"] = "베레타 93R",
+						
 						--LEO-40
-						["bm_w_hs2000"] = "SA XD(M)-40",
-						["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
-						["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
-						["bm_wp_hs2000_sl_long"] = "Custom Slide",
+						["bm_w_hs2000"] = "스프링필드 아머리 XD(M)-40",
+						["bm_wp_hs2000_m_extended"] = "22발 XD(M)-40 탄창",
+						["bm_wp_hs2000_sl_custom"] = "보정된 슬라이드",
+						["bm_wp_hs2000_sl_long"] = "커스텀 슬라이드",
 						--Signature 40
 						["bm_w_p226"] = "SIG P226R",
-						["bm_w_x_p226"] = "Akimbo P226Rs",
-						["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
-						["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
-						["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
-						["bm_wp_p226_b_long"] = "Brushed Long Slide",
-						["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+						["bm_w_x_p226"] = "아킴보 P226R",
+						["bm_wp_p226_co_comp_2"] = "SJC .40용 보정기",
+						["bm_wp_p226_m_extended"] = "22발 P226 탄창",
+						["bm_wp_p226_b_equinox"] = "이쿼녹스 듀오톤 슬라이드",
+						["bm_wp_p226_b_long"] = "손질된 긴 슬라이드",
 						--Chimano Custom
-						["bm_w_g22c"] = "Glock 22C",
-						["bm_w_x_g22c"] = "Akimbo Glock 22Cs",
-						["bm_wp_g22c_b_long"] = "Glock 35 Compensated Slide",
+						["bm_w_g22c"] = "글록 22C",
+						["bm_w_x_g22c"] = "아킴보 글록 22C",
+						["bm_wp_g22c_b_long"] = "글록 35 보정된 슬라이드",
 						--Bang...
-						["bm_w_sparrow"] = "IWI Jericho 941 RPL",
-						["bm_wp_sparrow_body_941"] = "IWI Jericho 941F Kit",
-						["bm_wp_sparrow_g_cowboy"] = "Weighted Grip",
-						["bm_wp_sparrow_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
-	
+						["bm_w_sparrow"] = "IWI 제리코 941 RPL",
+						["bm_wp_sparrow_body_941"] = "IWI 제리코 941F 킷",
+						["bm_wp_sparrow_g_cowboy"] = "가중 손잡이",
+						["bm_wp_sparrow_g_cowboy_desc"] = "그 무게을 짊어지고 살아라.",
+						--SUB2000
+						["bm_w_sub2000"] = "켈텍 SUB-2000",
+						["bm_wp_sub2000_fg_gen2"] = "Gen2 총열덮개",
+						["bm_wp_sub2000_fg_railed"] = "레드 라이온 R6 총열덮개",
+						["bm_wp_sub2000_fg_suppressed"] = "소음기가 장착된 쿼드 레일 총열덮개",	
 						--C96
-						["bm_w_c96"] = "Mauser C96",
-						["bm_wp_c96_b_long"] = "Carbine Barrel",
-						["bm_wp_c96_nozzle"] = "DL-44 Muzzle",
-						["bm_wp_c96_sight"] = "Schmidt & Bender 1-8x24 PM Short Dot",
-						["bm_wp_c96_m_extended"] = "20rnd C96 Magazine",
+						["bm_w_c96"] = "마우저 C96",
+						["bm_wp_c96_b_long"] = "카빈 총열",
+						["bm_wp_c96_nozzle"] = "DL-44 머즐",
+						["bm_wp_c96_sight"] = "슈미트 앤 벤더 1-8x24 PM 숄트 닷 조준기",
+						["bm_wp_c96_m_extended"] = "20발 C96 탄창",
 						--Crosskill
-						["bm_w_colt_1911"] = "SA 1911 Operator",
-						["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
-						["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
-						["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
-						["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
-						["bm_wp_1911_g_bling"] = "Wood Grips",
-						["bm_wp_1911_g_engraved"] = "Engraved 1911 Grips",
-						["bm_wp_1911_b_long"] = "Compensated Long Slide",
-						["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
-						["bm_wp_1911_m_extended"] = "12rnd SA 1911 Magazine",
+						["bm_w_colt_1911"] = "스프링필드 아머리 1911 오퍼레이터",
+						["bm_w_x_1911"] = "아킴보 1911 오퍼레이터",
+						["bm_wp_1911_co_2"] = "TCII 보정기", --Not 100% but seems to be based off of it
+						["bm_wp_1911_co_1"] = "클라크 헤비 보정기", --Not 100% but seems to be based off of it
+						["bm_wp_1911_g_ergo"] = "파흐마이어 1911 손잡이",
+						["bm_wp_1911_g_bling"] = "목재 손잡이",
+						["bm_wp_1911_g_engraved"] = "각인이 새겨진 1911 손잡이",
+						["bm_wp_1911_b_long"] = "보정된 긴 슬라이드",
+						["bm_wp_1911_b_vented"] = "보정된 투톤 슬라이드",
+						["bm_wp_1911_m_extended"] = "12발 SA 1911 탄창",
 						--Crosskill Chunky
-						["bm_w_m1911"] = "Colt 1911A1", --Not entirely but its the closest thing
-						["bm_w_x_m1911"] = "Akimbo 1911A1s",
+						["bm_w_m1911"] = "콜트 1911A1", --Not entirely but its the closest thing
+						["bm_w_x_m1911"] = "아킴보 1911A1",
 						--Crosskill Guard
-						["bm_w_shrew"] = "Colt Defender",
-						["bm_w_x_shrew"] = "Akimbo Defenders",
+						["bm_w_shrew"] = "콜트 디펜더",
+						["bm_w_x_shrew"] = "아킴보 디펜더",
 						--Interceptor
-						["bm_w_usp"] = "Heckler & Koch USP Tactical",
-						["bm_w_x_usp"] = "Akimbo H&K USP Tacticals",
-						["bm_wp_usp_co_comp_2"] = "SJC Compensator .45",
-						["bm_wp_pis_usp_b_expert"] = "USP Expert Slide",
-						["bm_wp_pis_usp_b_match"] = "USP Match Slide",
-						["bm_wp_pis_usp_m_extended"] = "20rnd USP Magazine",
-	
+						["bm_w_usp"] = "H&K USP 택티컬",
+						["bm_w_x_usp"] = "아킴보 USP 택티컬",
+						["bm_wp_usp_co_comp_2"] = "SJC .45용 보정기",
+						["bm_wp_pis_usp_b_expert"] = "USP 엑퍼트 슬라이드",
+						["bm_wp_pis_usp_b_match"] = "USP 매치 슬라이드",
+						["bm_wp_pis_usp_m_extended"] = "20발 USP 탄창",
+						--Anubis
+						["bm_w_socom"] = "H&K Mk.23",
+						["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "프로토타입 1단계 LAM",
+						["bm_w_x_socom"] = "아킴보 Mk.23",
+						
+						--Mateba
+						["bm_w_mateba"] = "마테바 2006M",	
 						--Bronco
-						["bm_w_raging_bull"] = "Taurus Raging Bull",
-						["bm_wp_pis_rage_extra"] = "Raging Bull Scope Mount",
-						["bm_wp_rage_b_comp1"] = "S&W V-Compensator",
-						["bm_wp_rage_b_short"] = "Snub Nose Barrel",
-						["bm_wp_rage_b_comp2"] = "S&W Muzzle Compensator",
-						["bm_wp_rage_b_long"] = "Long Barrel",
+						["bm_w_raging_bull"] = "토러스 레이징 불",
+						["bm_w_x_rage"] = "아킴보 레이징 불",
+						["bm_wp_pis_rage_extra"] = "레이징 불 조준기 장착대",
+						["bm_wp_rage_b_comp1"] = "S&W V-보정기",
+						["bm_wp_rage_b_short"] = "스너브 노즈 총열",
+						["bm_wp_rage_b_comp2"] = "S&W 머즐 보정기",
+						["bm_wp_rage_b_long"] = "긴 총열",
 						--Deagle
-						["bm_w_deagle"] = "MRI Desert Eagle Mark XIX", --"IS THAT A M16?"
-						["bm_w_x_deagle"] = "Akimbo Desert Eagles",
-						["bm_wp_deagle_co_short"] = "Desert Eagle Muzzle Brake", --Original name was a reference to the 1990s film "La Femme Nikita" only for the gun's appearance in it, otherwise this is based on the real "DE50MB" Deagle muzzle brake
-						["bm_wp_deagle_co_long"] = "Custom Barrel Weight", --Attachment is a reference to the Boondock Saints
-						["bm_wp_deagle_g_ergo"] = "Pachmayr Grip", --Doesn't exist but it's the same model from the 1911 but enlarged so w/e
-						["bm_wp_deagle_g_bling"] = "Pearl Grips",
-						["bm_wp_deagle_m_extended"] = "12rnd Desert Eagle Magazine",
-						["bm_wp_deagle_b_long"] = "10\" Long Barrel",
+						["bm_w_deagle"] = "MRI 데저트 이글 마크 XIX", --"IS THAT A M16?"
+						["bm_w_x_deagle"] = "아킴보 데저트 이글",
+						["bm_wp_deagle_co_short"] = "데저트 이글 머즐 소염기", --Original name was a reference to the 1990s film "La Femme Nikita" only for the gun's appearance in it, otherwise this is based on the real "DE50MB" Deagle muzzle brake
+						["bm_wp_deagle_co_long"] = "커스텀 중량 총열", --Attachment is a reference to the Boondock Saints
+						["bm_wp_deagle_g_ergo"] = "파흐마이어 손잡이", --Doesn't exist but it's the same model from the 1911 but enlarged so w/e
+						["bm_wp_deagle_g_bling"] = "펄 손잡이",
+						["bm_wp_deagle_m_extended"] = "12발 데저트 이글 탄창",
+						["bm_wp_deagle_b_long"] = "10\" 긴 총열",
+						--SAA
+						["bm_w_peacemaker"] = "콜트 싱글 액션 아미",
+						["bm_wp_peacemaker_barrel_long"] = "12\" 총열",
+						["bm_wp_peacemaker_barrel_short"] = "5.5\" 총열",
+						["bm_wp_peacemaker_handle_bling"] = "각인이 새겨진 SAA 손잡이",
+						["bm_wp_peacemaker_rifle_stock"] = "뼈대 개머리판",
+						--Shatter's Fury
+						["bm_w_shatters_fury"] = "S&W 모델 500",
+
+						--MODS
+						["bm_w_papa320"] = "SIG P320",
+						["bm_w_coltds"] = "콜트 디택트브",
+						["bm_w_amt"] = ".44 오토 맥",
+						["bm_w_p99"] = "발터 P99",
+						["bm_w_hpb"] = "브라우닝 하이파워",						
 
 					--[[SMGs]]
 						--P90
 						["bm_w_p90"] = "FN P90 TR",
-						["bm_wp_p90_b_long"] = "PS90 Barrel",
-						["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
+						["bm_wp_p90_b_long"] = "PS90 총열",
+						["bm_wp_p90_b_civilian"] = "모스 레커 슈라우드 총열",
 						--MP7
 						["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
 
 						--CMP
 						["bm_w_mp9"] = "B&T TP9SF",
-						["bm_w_x_mp9"] = "Akimbo TP9SFs",
-						["bm_wp_mp9_m_extended"] = "30rnd TP9 Magazine",
-						["bm_wp_mp9_s_skel"] = "Steyr TMP Fixed Stock",
-						["bm_wp_mp9_b_suppressed"] = "B&T MP9 QD Suppressor",
+						["bm_w_x_mp9"] = "아킴보 TP9SF",
+						["bm_wp_mp9_m_extended"] = "30발 TP9 탄차 ",
+						["bm_wp_mp9_s_skel"] = "슈타이어 TMP 고정 개머리판",
+						["bm_wp_mp9_b_suppressed"] = "B&T MP9 QD 소음기",
 						--Micro Uzi
-						["bm_w_baka"] = "IWI Micro Uzi",
-						["bm_w_x_baka"] = "Akimbo Micro Uzis",
+						["bm_w_baka"] = "IWI 마이크로 우지",
+						["bm_w_x_baka"] = "아킴보 마이크로 우지",
 						--T3K
-						["bm_w_tec9"] = "Intratec TEC-9",
-						["bm_wp_tec9_b_standard"] = "AB-10 Barrel",
-						["bm_wp_tec9_ns_ext"] = "Pseudo Barrel Extension",
-						["bm_wp_tec9_s_unfolded"] = "Interdynamic MP-9 Wire Stock",
-						["bm_wp_tec9_m_extended"] = "50rnd TEC-9 Magazine",
+						["bm_w_tec9"] = "인트라텍 TEC-9",
+						["bm_wp_tec9_b_standard"] = "AB-10 총열",
+						["bm_wp_tec9_ns_ext"] = "슈도 확장 총열",
+						["bm_wp_tec9_s_unfolded"] = "인터다이나믹 MP-9 와이어 개머리판",
+						["bm_wp_tec9_m_extended"] = "50발 TEC-9 탄창",
 						--Jacket's Piece
-						["bm_w_cobray"] = "Cobray M11/9",
-						["bm_wp_cobray_ns_barrelext"] = "MAC Barrel Extension",
+						["bm_w_cobray"] = "코브레이 M11/9",
+						["bm_wp_cobray_ns_barrelext"] = "MAC 확장 총열",
 						--SR-2M
-						["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
-						["bm_w_x_sr2"] = "Akimbo SR-2Ms",
+						["bm_w_sr2"] = "중앙정밀기계공학연구소 SR-2M \"베레스크\"",
+						["bm_w_x_sr2"] = "아킴보 SR-2M",
+						--Miyaka 9
+						["bm_w_pm9"] = "미네베아 PM-9",
+						--FMG9
+						["bm_w_fmg9"] = "맥풀 FMG-9",						
 
 						--Cobra
-						["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
-						["bm_w_x_scorpion"] = "Akimbo Skorpions",
-						["bm_wp_scorpion_m_extended"] = "Skorpion Dual Magazines",
-						["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
-	
-						--Uzi
-						["bm_w_uzi"] = "IMI Uzi",
-						["bm_w_x_uzi"] = "Akimbo Uzi",
-						["bm_wp_uzi_s_solid"] = "Wooden Stock",
-						["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
-						["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
-						--Pachette
-						["bm_w_sterling"] = "Sterling L2A1",
-						["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
-						["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
-						["bm_wp_sterling_m_short"] = "15rnd L2A1 Magazine",
-						["bm_wp_sterling_m_long"] = "34rnd L2A1 Magazine",
-						--
-						["bm_w_mac10"] = "Ingram M10",
-						["bm_w_x_mac10"] = "Akimbo M10s",
-						["bm_wp_mac10_m_extended"] = "30rnd M10 Magazine",
-						["bm_wp_mac10_body_ris"] = "MAC Rail System", --I'm getting nothing but airsoft results so generic name
-						["bm_wp_mac10_s_skel"] = "Low Mount Skeleton Stock",
-						--Thompson
-						["bm_w_m1928"] = "Auto-Ordnance M1928",
-						["bm_wp_m1928_b_short"] = "Short Barrel",
-						["bm_wp_m1928_fg_discrete"] = "Polymer Foregrip",
-						["bm_wp_m1928_g_discrete"] = "Polymer Pistol Grip",
-						["bm_wp_m1928_s_discrete"] = "Polymer Stock",
-						--MP 40
-						["bm_w_erma"] = "Erma MP 40",
-						--UMP
-						["bm_w_schakal"] = "H&K UMP-45",
-						["bm_wp_schakal_b_civil"] = "USC Barrel",
-						["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
-						["bm_wp_schakal_m_short"] = "15rnd UMP Magazine",
-						["bm_wp_schakal_m_long"] = "45rnd UMP Magazine",
-						--M45
-						["bm_w_m45"] = "Carl Gustaf Kpist M/45",
-						["bm_wp_smg_m45_m_extended"] = "50rnd M/45 Magazine",
-						--Vector
-						["bm_w_polymer"] = "KRISS Vector SMG",
-						["bm_wp_polymer_barrel_precision"] = "CRB Barrel w/Shroud",
-						["bm_wp_polymer_ns_silencer"] = "Defiance HPS 4GSK Suppressor",
-	
+						["bm_w_scorpion"] = "CZ vz. 61 스콜피온",
+						["bm_w_x_scorpion"] = "아킴보 스콜피온",
+						["bm_wp_scorpion_m_extended"] = "스콜피온 두 쌍 탄창",
+						["bm_wp_scorpion_b_suppressed"] = "스콜피온 소음기",
 						--MP5
 						["bm_w_mp5"] = "H&K MP5A2",
-						["bm_w_x_mp5"] = "Akimbo MP5A2s",
-						["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
-						["bm_wp_mp5_fg_mp5a5"] = "MP5 Railed Handguard",
-						["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
-						["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
-						["bm_wp_mp5_s_ring"] = "No Stock",
-						["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
-						["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
+						["bm_w_x_mp5"] = "아킴보 MP5A2",
+						["bm_wp_mp5_fg_m5k"] = "MP5k 삼중 레일 키트",
+						["bm_wp_mp5_fg_mp5a5"] = "MP5 레일 총열덮개",
+						["bm_wp_mp5_fg_mp5sd"] = "MP5SD 킷",
+						["bm_wp_mp5_s_adjust"] = "H&K 수납형 개머리판",
+						["bm_wp_mp5_s_ring"] = "개머리판 제거",
+						["bm_wp_mp5_m_drum"] = "70발 MP5 드럼탄창",
+						["bm_wp_mp5_m_straight"] = "30발 MP5 40/10mm탄 탄창",
 						--MPX
 						["bm_w_shepheard"] = "SIG MPX", 
 						--Vityaz
-						["bm_w_vityaz"] = "KC PP-19 Vityaz-SN",
+						["bm_w_vityaz"] = "칼라시니코프 PP-19 비티아즈-SN",
 						--Bizon
-						["bm_w_coal"] = "KC PP-19 Bizon-2",
+						["bm_w_coal"] = "칼라시니코프 PP-19 비존-2",	
+						--Uzi
+						["bm_w_uzi"] = "IMI 우지",
+						["bm_w_x_uzi"] = "아킴보 우지",
+						["bm_wp_uzi_s_solid"] = "목재 개머리판",
+						["bm_wp_uzi_fg_rail"] = "FAB 방어용 우지 삼중 레일 시스템",
+						["bm_wp_uzi_b_suppressed"] = "2단계 소음기",
+						--Pachette
+						["bm_w_sterling"] = "스텔링 L2A1",
+						["bm_wp_sterling_b_suppressed"] = "L34A1 총열",
+						["bm_wp_sterling_b_e11"] = "블라스테크 E-11 총열",
+						["bm_wp_sterling_m_short"] = "15발 L2A1 탄창",
+						["bm_wp_sterling_m_long"] = "34발 L2A1 탄창",
+						--
+						["bm_w_mac10"] = "잉그램 M10",
+						["bm_w_x_mac10"] = "아킴보 M10",
+						["bm_wp_mac10_m_extended"] = "30발 M10 탄창",
+						["bm_wp_mac10_body_ris"] = "MAC 레일 시스템", --I'm getting nothing but airsoft results so generic name
+						["bm_wp_mac10_s_skel"] = "로우 마운트 스켈레톤 개머리판",
+						--Thompson
+						["bm_w_m1928"] = "오토 오드넌스 M1928",
+						["bm_wp_m1928_b_short"] = "단축 총열",
+						["bm_wp_m1928_fg_discrete"] = "폴리머 포어그립",
+						["bm_wp_m1928_g_discrete"] = "폴리머 권총 손잡이",
+						["bm_wp_m1928_s_discrete"] = "폴리머 개머리판",
+						--MP 40
+						["bm_w_erma"] = "에르마 MP40",
+						--UMP
+						["bm_w_schakal"] = "H&K UMP-45",
+						["bm_wp_schakal_b_civil"] = "USC 총열",
+						["bm_wp_schakal_ns_silencer"] = "잼테크 QD UMP 소음기",
+						["bm_wp_schakal_m_short"] = "15발 UMP 탄창",
+						["bm_wp_schakal_m_long"] = "45발 UMP 탄창",
+						--M45
+						["bm_w_m45"] = "칼 구스타프 M/45 기관단총",
+						["bm_wp_smg_m45_m_extended"] = "50발 M/45 탄창",
+						--Vector
+						["bm_w_polymer"] = "크리스 백터 기관단총",
+						["bm_wp_polymer_barrel_precision"] = "CRB 슈레이더 총열",
+						["bm_wp_polymer_ns_silencer"] = "디파이언드 HPS 4GSK 소음기",
 	
 					--[[MGs]]
 						--416C
 						["bm_w_tecci"] = "H&K HK416-C",
-						["bm_wp_tecci_b_long"] = "Long Barrel",
-						["bm_wp_tecci_ns_special"] = "JPE Recoil Eliminator Muzzle Brake",
+						["bm_wp_tecci_b_long"] = "긴 총열",
+						["bm_wp_tecci_ns_special"] = "JPE 반동 제거 머즐 소염기",
+						--Shuno what it is
+						["bm_w_shuno"] = "엠티 쉘 XM556 마이크로건",						
 
 						--SAW
-						["bm_w_m249"] = "FN M249 Para",
-						["bm_wp_m249_fg_mk46"] = "Mk 46 Handguard",
-						["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
+						["bm_w_m249"] = "FN M249 파라",
+						["bm_wp_m249_fg_mk46"] = "Mk 46 총열덮개",
+						["bm_wp_m249_s_solid"] = "고정형 M249 개머리판",
 
 						--RPK
-						["bm_w_rpk"] = "KC RPK",
-						["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
-						["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
+						["bm_w_rpk"] = "칼라시니코프 RPK",
+						["bm_wp_rpk_fg_standard"] = "폴리머 AK 총열덮개",
+						["bm_wp_rpk_s_standard"] = "폴리머 RPK 개머리판",
 
 						--HK21
 						["bm_w_hk21"] = "H&K HK21E",
-						["bm_wp_hk21_fg_short"] = "Short HK21 Handguard",
-						["bm_wp_hk21_g_ergo"] = "HK21 Ergo Grip",
+						["bm_wp_hk21_fg_short"] = "단축 HK21 총열덮개",
+						["bm_wp_hk21_g_ergo"] = "HK21 에르고 손잡이",
 						--MG42
-						["bm_w_mg42"] = "Mauser Maschinengewehr 42",
-						["bm_wp_mg42_b_mg34"] = "Maschinengewehr 34 Barrel",
+						["bm_w_mg42"] = "마우저 42년식 기관총",
+						["bm_wp_mg42_b_mg34"] = "34년식 기관총 총열",
 						["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
+						--Versteckt-51/HK51B
+						["bm_w_hk51b"] = "볼리머 HK51-B",						
 
 						--M240
 						["bm_w_par"] = "FN M240B",
-						["bm_wp_par_s_plastic"] = "M240B Stock",
+						["bm_wp_par_s_plastic"] = "M240B 개머리판",
+						
+						--M134
+						["bm_w_m134"] = "제너럴 일렉트릭 M134",
+						["bm_wp_m134_barrel_extreme"] = "대공 총열",
+						["bm_wp_m134_barrel_short"] = "단축 총열",						
 
 					--[[SHOTGUNS]]
 						--Saiga
-						["bm_w_saiga"] = "KC Saiga-12K",
-						["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
-						["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
+						["bm_w_saiga"] = "칼라시니코프 사이가-12K",
+						["bm_wp_saiga_fg_lowerrail"] = "울티막 AK 모듈식 레일 포엔드 시스템",
+						["bm_wp_saiga_m_20rnd"] = "20발 MD Arms 사이가 드럼탄창",
 						--AA12
-						["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
-						["bm_wp_aa12_barrel_long"] = "Standard AA12 Barrel",
-						["bm_wp_aa12_mag_drum"] = "20rnd AA-12 Drum",
+						["bm_w_aa12"] = "MPS 자동 돌격 산탄총-12 CQB",
+						["bm_wp_aa12_barrel_long"] = "표준 AA12 총열",
+						["bm_wp_aa12_mag_drum"] = "20발 AA-12 드럼탄창",
 						--Six12
-						["bm_w_rota"] = "Crye Precision Six12",
+						["bm_w_rota"] = "크라이 프리시전 식스12",
 						--M1014
-						["bm_w_benelli"] = "Benelli M4 Super 90",
-						["bm_wp_ben_b_long"] = "Long M4 Barrel",
-						["bm_wp_ben_b_short"] = "NFA M4 Barrel",
-						["bm_wp_ben_s_collapsed"] = "Collapsed M4 Stock",
-						["bm_wp_ben_fg_standard"] = "M4 Tactical Stock",
+						["bm_w_benelli"] = "베넬리 M4 슈퍼 90",
+						["bm_wp_ben_b_long"] = "긴 M4 총열",
+						["bm_wp_ben_b_short"] = "NFA M4 총열",
+						["bm_wp_ben_s_collapsed"] = "순납형 M4 개머리판",
+						["bm_wp_ben_fg_standard"] = "M4 택티컬 개머리판",
 						--SPAS-12
-						["bm_w_spas12"] = "Franchi SPAS-12",
-						["bm_wp_spas12_b_long"] = "8rnd Tube",
+						["bm_w_spas12"] = "프란치 SPAS-12",
+						["bm_wp_spas12_b_long"] = "8발 튜브",
 						--Striker
-						["bm_w_striker"] = "Sentinel Arms Striker",
+						["bm_w_striker"] = "센티널 암즈 스트라이커",
+						--VD-12
+						["bm_w_sko12"] = "스탠다드 매뉴팩처링 SKO-12",
+						--Argos III
+						["bm_w_ultima"] = "바이칼 MP-155 울티마",						
 
 						--870
-						["bm_w_r870"] = "Remington Model 870",
-						["bm_wp_r870_m_extended"] = "2rnd Tube Extension",
-						["bm_wp_r870_fg_wood"] = "Wooden Pump",
-						["bm_wp_r870_s_nostock"] = "No Stock",
-						["bm_wp_r870_s_nostock_big"] = "No Stock w/Full Length Rail",
-						["bm_wp_r870_s_solid_big"] = "Fixed Stock w/Full Length Rail",
-						--
-						["bm_w_serbu"] = "Short Remington Model 870",
-						["bm_wp_shorty_m_extended_short"] = "1rnd Extension",
-						["bm_wp_r870_s_solid"] = "Fixed Stock",
-						["bm_wp_serbu_s_solid_short"] = "Fixed Stock w/Rail",
-						["bm_wp_serbu_s_nostock_short"] = "No Stock w/Rail",
-
+						["bm_w_r870"] = "레밍턴 모델 870",
+						["bm_wp_r870_m_extended"] = "2발 확장 튜브",
+						["bm_wp_r870_fg_wood"] = "목재 펌프",
+						["bm_wp_r870_s_nostock"] = "개머리판 제거",
+						["bm_wp_r870_s_nostock_big"] = "전체 길이 레일이 장착된 개머리판 제거",
+						["bm_wp_r870_s_solid_big"] = "전체 길이 레일이 장착된 고정형 개머리판",
+						--Loco
+						["bm_w_serbu"] = "단축 레밍턴 모델 870",
+						["bm_wp_shorty_m_extended_short"] = "1발 확장 튜브",
+						["bm_wp_r870_s_solid"] = "고정형 개머리판",
+						["bm_wp_serbu_s_solid_short"] = "레일이 장착된 고졍형 개머리판",
+						["bm_wp_serbu_s_nostock_short"] = "레일이 장착된 개머리판 제거",
 						--KSG
-						["bm_w_ksg"] = "Kel-Tec KSG",
-						["bm_wp_ksg_b_long"] = "Long Barrel w/2x 8-Shot Tubes",
-						["bm_wp_ksg_b_short"] = "Patrol Barrel w/2x 6-Shot Tubes",
+						["bm_w_ksg"] = "켈텍 KSG",
+						["bm_wp_ksg_b_long"] = "2개의 8발 튜브가 장착된 긴 총열",
+						["bm_wp_ksg_b_short"] = "2개의 8발 튜브가 장착된 패트롤 총열",
+						
 						--Judge
-						["bm_w_judge"] = "Taurus 4510PLYFS",
+						["bm_w_judge"] = "토러스 4510PLYFS",
+						--M37
+						["bm_w_m37"] = "이치카 모델 37",
+						--NO SHOTGUNS IN THE TRENCHES
+						["bm_w_m1897"] = "윈체스터 모델 1897",
+						--M590
+						["bm_w_m590"] = "모스버그 590",						
 
 						--Mosconi
-						["bm_w_huntsman"] = "Mosconi Coach Gun",
-						["bm_wp_huntsman_b_short"] = "Sawn-Off Barrel",
-						["bm_wp_huntsman_s_short"] = "Sawn-Off Stock",
+						["bm_w_huntsman"] = "모스코니 코치 건",
+						["bm_wp_huntsman_b_short"] = "소드 오프 총열",
+						["bm_wp_huntsman_s_short"] = "소드 오프 개머리판",
 						--725
-						["bm_w_b682"] = "Beretta 682",
-						["bm_wp_b682_b_short"] = "Sawn-Off Barrel",
-						["bm_wp_b682_s_short"] = "Sawn-Off Stock",
-						["bm_wp_b682_s_ammopouch"] = "Ammo Pouch",
+						["bm_w_b682"] = "베레타 682",
+						["bm_wp_b682_b_short"] = "소드 오프 총열",
+						["bm_wp_b682_s_short"] = "소드 오프 개머리판",
+						["bm_wp_b682_s_ammopouch"] = "탄약 주머니",
 						--1887
-						["bm_w_boot"] = "Winchester Model 1887",
-						["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
+						["bm_w_boot"] = "윈체스터 모델 1887",
+						["bm_wp_boot_body_exotic"] = "경화 케이스 1887 리시버",
 
 					--[[ARs]]
 						--FAMAS
-						["bm_w_famas"] = "Nexter FAMAS F1",
-						["bm_wp_famas_b_sniper"] = "G2 Sniper Barrel",
-						["bm_wp_famas_b_short"] = "G2 Commando Barrel",
-						["bm_wp_famas_g_retro"] = "G1 Pistol Grip",
+						["bm_w_famas"] = "넥스터 FAMAS F1",
+						["bm_wp_famas_b_sniper"] = "G2 저격용 총열",
+						["bm_wp_famas_b_short"] = "G2 코만도 총열",
+						["bm_wp_famas_g_retro"] = "G1 권총 손잡이",
 						--VHS
 						["bm_w_vhs"] = "HS Produkt VHS-2",
 						["bm_wp_vhs_b_short"] = "Short Barrel",
@@ -2530,6 +2611,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ass_s552_s_standard_green"] = "OD Green Stock",
 						["bm_wp_ass_s552_fg_railed"] = "SIG Railed Handguard",
 						["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
+						--AMCAR
+						["bm_w_amcar"] = "Colt M733 Commando",						
 
 						--AUG
 						["bm_w_aug"] = "Steyr AUG A2",
@@ -2538,13 +2621,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Boatgun
 						["bm_w_corgi"] = "FN F2000 Tactical TR",
 						--AK12
-						["bm_w_flint"] = "KC AK-12",
+						["bm_w_flint"] = "Kalashnikov Concer AK-12",
 						--Ak5
-						 ["bm_w_ak5"] = "Bofors Ak 5",
-						 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
-						 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
-						 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
-						 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
+						["bm_w_ak5"] = "Bofors Ak 5",
+						["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
+						["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
+						["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
+						["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
+						--CAR-4
+						["bm_w_m4"] = "Colt M4A1",
+						--AK74
+						["bm_w_ak74"] = "Kalashnikov Concer AKS-74",						 
 						--805
 						["bm_w_hajk"] = "CZ 805 BREN",
 						["bm_wp_hajk_b_short"] = "A2 Barrel",
@@ -2565,7 +2652,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_x_akmsu"] = "Akimbo AKMSUs",
 						["bm_wp_akmsu_fg_rail"] = "Samson K-Rail",
 						--AKM
-						["bm_w_akm"] = "KC AKMS",
+						["bm_w_akm"] = "Kalashnikov Concer AKMS",
+						["bm_w_akm_gold"] = "Gold Plated AKMS",
+						--Nipples
+						["bm_w_tkb"] = "Tula Arms TKB-059",
+						--Groza
+						["bm_w_groza"] = "TsKIB SOO Groza-1",						
 
 					--[[DMRs]]
 						--417
@@ -2595,6 +2687,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_galil_s_skeletal"] = "IMI Galil MAR Stock",
 						["bm_wp_galil_s_light"] = "IMI Galatz Skeleton Stock",
 						["bm_wp_galil_s_fab"] = "FAB Defense MG-CP Cheek Pad",
+						--AS VAL
+						["bm_w_asval"] = "Tula Arms AS \"Val\"",
+						["bm_wp_asval_b_proto"] = "Prototype Barrel",
+						["bm_wp_asval_s_solid"] = "VSS Stock",						
 
 						--Raifu
 						["bm_w_g3"] = "H&K G3A3",
@@ -2608,31 +2704,61 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_g3_g_sniper"] = "PSG-1 Wooden Pistol Grip",
 						["bm_wp_g3_s_sniper"] = "PSG-1 Stock",
 						--M308
-						["bm_w_m14"] = "SA M14 DMR",
+						["bm_w_m14"] = "Springfield Armory M14 DMR",
 						["bm_wp_m14_body_ebr"] = "Sage EBR Chassis",
 						["bm_wp_m14_body_jae"] = "JAE 100 G3 Stock",
 						["bm_wp_upg_o_m14_scopemount"] = "Sun Optics USA M14/M1A Scope Mount",
+						--Shak12
+						["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
+						--HCAR
+						["bm_w_hcar"] = "Ohio Ordnance HCAR",						
 
 					--[[SNIPERS]]
 						--Titty
 						["bm_w_tti"] = "Taran Tactical TR-1 AR-10",
+						--QBU88
+						["bm_w_qbu88"] = "Norinco QBU-88",
+						--Icky Vicky
+						["bm_w_victor"] = "SAINT Victor AR-10",
 
+						--R700
+						["bm_w_r700"] = "Remington Model 700P",
+						--Repeater
+						["bm_w_winchester1874"] = "Winchester Model 1873",
+						["bm_wp_winchester_b_long"] = "Long Barrel",
+						["bm_wp_winchester_b_suppressed"] = "Suppressor",
 						--MSR
 						["bm_w_msr"] = "Remington MSR",
 						["bm_wp_snp_msr_ns_suppressor"] = "AAC TiTAN-QD Suppressor",
 						["bm_wp_msr_body_msr"] = "MSR Aluminum Stock & Receiver",
+						--Scunt
+						["bm_w_scout"] = "Steyr Scout",						
 
 						--Drako
-						["bm_w_siltstone"] = "KC SVD",
+						["bm_w_siltstone"] = "Kalashnikov Concern SVD",
+						--WA2000
+						["bm_w_wa2000"] = "Walther WA2000",
+						["bm_wp_wa2000_g_walnut"] = "Walnut Furniture",
+						["bm_wp_wa2000_g_stealth"] = "Black Furniture",
+						["bm_wp_wa2000_g_light"] = "Lightweight Furniture",
+
+						--SBL
+						["bm_w_sbl"] = "Marlin Model 1895SBL",
+						--
+						["bm_w_contender"] = "Thompson Center G2 Contender",						
 
 						--Moist Nugget
 						["bm_w_mosin"] = "Mosin Nagant M91/30",
 						["bm_wp_mosin_b_sniper"] = "Nagant Suppressor",
 						["bm_wp_mosin_body_conceal"] = "Black Polymer Stock",
+						--Model 70
+						["bm_w_model70"] = "Winchester Model 70",						
 						--R93
 						["bm_w_r93"] = "Blaser R93 Tactical 2",
-						["bm_wp_r93_b_suppressed"] = "Harvester Big Bore 338 Suppressor",
+						["bm_wp_r93_b_suppressed"] = "SilencerCo Harvester 338 Suppressor",
 						["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
+						--SRS
+						["bm_w_desertfox"] = "DTA Stealth Recon Scout",						
 
 						--M95
 						["bm_w_m95"] = "Barrett M95",
@@ -2640,11 +2766,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--[[SPECIALS]]
 						["bm_w_ray"] = "M202 Flash",
+						["bm_w_rpg7"] = "Bazalt RPG-7",
 
 						["bm_w_arblast"] = "Arbalest",
 						["bm_w_frankish"] = "Frankish Bow",
 						["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
-
+						["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
+						["bm_wp_elastic_body_tactic"] = "Hoyt Ignite Riser",
+						
 					--Attachments
 
 						--Gadgets
@@ -2760,6 +2889,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 							["bm_wp_upg_ass_m4_upper_reciever_ballos"] = "2A-Arm BALIOS Upper Receiver",
 							["bm_wp_upg_ass_m4_upper_reciever_core"] = "CORE15 Upper Receiver",
 							["bm_wp_upg_ass_m4_lower_reciever_core"] = "CORE15 Lower Receiver",
+							["bm_wp_m4_uupg_b_sd"] = "Suppressed Barrel", 
+							["bm_wp_upg_fg_jp"] = "JPE Modular Handguard",
+							["bm_wp_m4_uupg_fg_lr300"] = "LR300 Handguard",
+							["bm_wp_upg_fg_smr"] = "Geissele Super Modular Rail",							
 							["bm_wp_upg_smg_olympic_fg_lr300"] = "Short LR300 Handguard",
 							["bm_wp_upg_ass_m16_fg_stag"] = "Stag Arms Model 8T Handguard",
 							["bm_wp_upg_ass_m4_fg_moe"] = "Magpul MOE SL Handguard",
@@ -2821,11 +2954,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_melee_cs"] = "Homelite Super 2 Chainsaw",
 						["bm_melee_brick"] = "Motorola DynaTAC 8000X",
 						["bm_melee_sword"] = "Pencil",
-						["bm_melee_oxide"] = "Spetsnaz Survival Machete",
-
+						["bm_melee_oxide"] = "UVSR Taiga-1",
+						["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
+						
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 Fragmentation Grenade",
-						["bm_grenade_frag_com"] = "M67 Fragmentation Grenade",
+						["bm_grenade_frag_com"] = "M67 Fragmentation Grenade (오버킬 모델)",
 						["bm_wpn_prj_hur"] = "Kit Rae Aircobra Throwing Axe",
 						["bm_wpn_prj_target"] = "Blazing Arrow Ninja Throwing Knife",
 

@@ -2021,7 +2021,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			}
 		else
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
-				translation = Vector3(-0.01, 3, -1.1), --CHECK WITHOUT CAP AT SOME POINT
+				translation = Vector3(-0.005, 20.5, -1.46),
 				rotation = Rotation(-0.062, 0.13, 0)
 			}
 		end

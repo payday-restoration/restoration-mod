@@ -2376,13 +2376,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--[[PISTOLS]]
 						--5/7
 						["bm_w_lemming"] = "FN Five-seveN",
+						--Gecko Pistol
+						["bm_w_maxim9"] = "SilencerCo Maxim 9",
+						["bm_w_x_maxim9"] = "Akimbo Maxim 9s",
 
 						--Stryk 18
 						["bm_w_glock_18c"] = "Glock 18C",
+						["bm_w_x_g18c"] = "Akimbo Glock 18Cs",
 						["bm_wp_g18c_co_comp_2"] = "SJC Compensator 9mm",
+						--CZ
+						["bm_w_czech"] = "CZ AccuShadow 2",
+						["bm_w_x_czech"] = "Akimbo AccuShadow 2s",
 
+						--APS
+						["bm_w_stech"] = "Stechkin APS",
+						["bm_w_x_stech"] = "Akimbo Stechkins",
 						--Gruber
-						["bm_w_ppk"] = "Walther PPK",
+						["bm_w_ppk"] = "Walther PPK/S",
 						["bm_wp_pis_ppk_g_laser"] = "Crimson Trace Laser Grip",
 						["bm_wp_pis_ppk_b_long"] = "PPKS Slide",
 						--Chimano 88
@@ -2397,20 +2407,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
 						--Bernetti 9
 						["bm_w_b92fs"] = "Beretta 92FS",
+						["bm_w_x_b92fs"] = "Akimbo 92FSs",
 						["bm_wp_beretta_co_co1"] = "SGS Compensator", --Original name was a reference to the movie "The Professional"
 						["bm_wp_beretta_co_co2"] = "Competition Compensator", --Seems to actually be based off of the Shorty USA Beretta 92 Spring Gun, unsurprising considering some of the guns models 	were based off of airsoft counterparts
 						["bm_wp_beretta_sl_brigadier"] = "Brigadier Elite Slide",
 						["bm_wp_beretta_g_ergo"] = "Wood Ergo Grips",
 						["bm_wp_beretta_m_extended"] = "30rnd 92FS Magazine",
 						--PL14
-						["bm_w_pl14"] = "KC PL-14 \"Lebedev\"",
+						["bm_w_pl14"] = "Kalashnikov Concern PL-14 \"Lebedev\"",
 						["bm_wp_pl14_m_extended"] = "17rnd PL-14 Magazine",
 						["bm_wp_pl14_b_comp"] = "PL-14 Compensator",
+						--Wick
 						["bm_w_packrat"] = "H&K P30L",
 						["bm_w_x_packrat"] = "Akimbo P30Ls",
+						--Hudson
+						["bm_w_holt"] = "Hudson H9",
+						["bm_w_x_holt"] = "Akimbo H9s",
+						--93R
+						["bm_w_beer"] = "Beretta 93R",
 
 						--LEO-40
-						["bm_w_hs2000"] = "SA XD(M)-40",
+						["bm_w_hs2000"] = "Springfield Armory XD(M)-40",
 						["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
 						["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
 						["bm_wp_hs2000_sl_long"] = "Custom Slide",
@@ -2431,7 +2448,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_sparrow_body_941"] = "IWI Jericho 941F Kit",
 						["bm_wp_sparrow_g_cowboy"] = "Weighted Grip",
 						["bm_wp_sparrow_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
-	
+						
+						--SUB2000
+						["bm_w_sub2000"] = "Kel-Tec SUB-2000",
+						["bm_wp_sub2000_fg_gen2"] = "Gen2 Handguard",
+						["bm_wp_sub2000_fg_railed"] = "Red Lion R6 Handguard",
+						["bm_wp_sub2000_fg_suppressed"] = "Quad Rail Handguard w/Suppressor",
 						--C96
 						["bm_w_c96"] = "Mauser C96",
 						["bm_wp_c96_b_long"] = "Carbine Barrel",
@@ -2439,8 +2461,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_c96_sight"] = "Schmidt & Bender 1-8x24 PM Short Dot",
 						["bm_wp_c96_m_extended"] = "20rnd C96 Magazine",
 						--Crosskill
-						["bm_w_colt_1911"] = "SA 1911 Operator",
-						["bm_w_x_colt_1911"] = "Akimbo 1911 Operators",
+						["bm_w_colt_1911"] = "Springfield Armory 1911 Operator",
+						["bm_w_x_1911"] = "Akimbo 1911 Operators",
 						["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
 						["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
 						["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
@@ -2456,15 +2478,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_shrew"] = "Colt Defender",
 						["bm_w_x_shrew"] = "Akimbo Defenders",
 						--Interceptor
-						["bm_w_usp"] = "Heckler & Koch USP Tactical",
-						["bm_w_x_usp"] = "Akimbo H&K USP Tacticals",
+						["bm_w_usp"] = "H&K USP Tactical",
+						["bm_w_x_usp"] = "Akimbo USP Tacticals",
 						["bm_wp_usp_co_comp_2"] = "SJC Compensator .45",
 						["bm_wp_pis_usp_b_expert"] = "USP Expert Slide",
 						["bm_wp_pis_usp_b_match"] = "USP Match Slide",
 						["bm_wp_pis_usp_m_extended"] = "20rnd USP Magazine",
-	
+						--Anubis
+						["bm_w_socom"] = "H&K Mk.23",
+						["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Prototype Phase I LAM",
+						["bm_w_x_socom"] = "Akimbo Mk.23s",
+						
+						--Mateba
+						["bm_w_mateba"] = "Mateba 2006M",
 						--Bronco
 						["bm_w_raging_bull"] = "Taurus Raging Bull",
+						["bm_w_x_rage"] = "Akimbo Raging Bulls",
 						["bm_wp_pis_rage_extra"] = "Raging Bull Scope Mount",
 						["bm_wp_rage_b_comp1"] = "S&W V-Compensator",
 						["bm_wp_rage_b_short"] = "Snub Nose Barrel",
@@ -2479,6 +2508,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_deagle_g_bling"] = "Pearl Grips",
 						["bm_wp_deagle_m_extended"] = "12rnd Desert Eagle Magazine",
 						["bm_wp_deagle_b_long"] = "10\" Long Barrel",
+						--SAA
+						["bm_w_peacemaker"] = "Colt Single Action Army",
+						["bm_wp_peacemaker_barrel_long"] = "12\" Barrel",
+						["bm_wp_peacemaker_barrel_short"] = "5.5\" Barrel",
+						["bm_wp_peacemaker_handle_bling"] = "Engraved SAA Grips",
+						["bm_wp_peacemaker_rifle_stock"] = "Skeletal Stock",
+						--Shatter's Fury
+						["bm_w_shatters_fury"] = "S&W Model 500",
+
+						--MODS
+						["bm_w_papa320"] = "SIG P320",
+						["bm_w_coltds"] = "Colt Detective",
+						["bm_w_amt"] = ".44 Auto Mag",
+						["bm_w_p99"] = "Walther P99",
+						["bm_w_hpb"] = "Browning Hi-Power",
 
 					--[[SMGs]]
 						--P90
@@ -2509,13 +2553,33 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--SR-2M
 						["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
 						["bm_w_x_sr2"] = "Akimbo SR-2Ms",
+						--Miyaka 9
+						["bm_w_pm9"] = "Minebea PM-9",
+						--FMG9
+						["bm_w_fmg9"] = "Magpul FMG-9",
 
 						--Cobra
 						["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
 						["bm_w_x_scorpion"] = "Akimbo Skorpions",
 						["bm_wp_scorpion_m_extended"] = "Skorpion Dual Magazines",
 						["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
-	
+						--MP5
+						["bm_w_mp5"] = "H&K MP5A2",
+						["bm_w_x_mp5"] = "Akimbo MP5A2s",
+						["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
+						["bm_wp_mp5_fg_mp5a5"] = "MP5 Railed Handguard",
+						["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
+						["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
+						["bm_wp_mp5_s_ring"] = "No Stock",
+						["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
+						["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
+						--MPX
+						["bm_w_shepheard"] = "SIG MPX", 
+						--Vityaz
+						["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
+						--Bizon
+						["bm_w_coal"] = "Kalashnikov Concern PP-19 Bizon-2",
+
 						--Uzi
 						["bm_w_uzi"] = "IMI Uzi",
 						["bm_w_x_uzi"] = "Akimbo Uzi",
@@ -2556,28 +2620,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_polymer_barrel_precision"] = "CRB Barrel w/Shroud",
 						["bm_wp_polymer_ns_silencer"] = "Defiance HPS 4GSK Suppressor",
 	
-						--MP5
-						["bm_w_mp5"] = "H&K MP5A2",
-						["bm_w_x_mp5"] = "Akimbo MP5A2s",
-						["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
-						["bm_wp_mp5_fg_mp5a5"] = "MP5 Railed Handguard",
-						["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
-						["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
-						["bm_wp_mp5_s_ring"] = "No Stock",
-						["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
-						["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
-						--MPX
-						["bm_w_shepheard"] = "SIG MPX", 
-						--Vityaz
-						["bm_w_vityaz"] = "KC PP-19 Vityaz-SN",
-						--Bizon
-						["bm_w_coal"] = "KC PP-19 Bizon-2",
-	
 					--[[MGs]]
 						--416C
 						["bm_w_tecci"] = "H&K HK416-C",
 						["bm_wp_tecci_b_long"] = "Long Barrel",
 						["bm_wp_tecci_ns_special"] = "JPE Recoil Eliminator Muzzle Brake",
+						--Shuno what it is
+						["bm_w_shuno"] = "Empty Shell XM556 Microgun",
 
 						--SAW
 						["bm_w_m249"] = "FN M249 Para",
@@ -2585,7 +2634,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
 
 						--RPK
-						["bm_w_rpk"] = "KC RPK",
+						["bm_w_rpk"] = "Kalashnikov Concern RPK",
 						["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
 						["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
 
@@ -2597,6 +2646,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_mg42"] = "Mauser Maschinengewehr 42",
 						["bm_wp_mg42_b_mg34"] = "Maschinengewehr 34 Barrel",
 						["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
+						--Versteckt-51/HK51B
+						["bm_w_hk51b"] = "Vollmer HK51-B",
 
 						--M240
 						["bm_w_par"] = "FN M240B",
@@ -2609,7 +2660,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--[[SHOTGUNS]]
 						--Saiga
-						["bm_w_saiga"] = "KC Saiga-12K",
+						["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 						["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
 						["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
 						--AA12
@@ -2629,6 +2680,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_spas12_b_long"] = "8rnd Tube",
 						--Striker
 						["bm_w_striker"] = "Sentinel Arms Striker",
+						--VD-12
+						["bm_w_sko12"] = "Standard Manufacturing SKO-12",
+						--Argos III
+						["bm_w_ultima"] = "Baikal MP-155 Ultima",
 
 						--870
 						["bm_w_r870"] = "Remington Model 870",
@@ -2643,13 +2698,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_r870_s_solid"] = "Fixed Stock",
 						["bm_wp_serbu_s_solid_short"] = "Fixed Stock w/Rail",
 						["bm_wp_serbu_s_nostock_short"] = "No Stock w/Rail",
-
 						--KSG
 						["bm_w_ksg"] = "Kel-Tec KSG",
 						["bm_wp_ksg_b_long"] = "Long Barrel w/2x 8-Shot Tubes",
 						["bm_wp_ksg_b_short"] = "Patrol Barrel w/2x 6-Shot Tubes",
 						--Judge
 						["bm_w_judge"] = "Taurus 4510PLYFS",
+						--M37
+						["bm_w_m37"] = "Ithaca Model 37",
+						--NO SHOTGUNS IN THE TRENCHES
+						["bm_w_m1897"] = "Winchester Model 1897",
+						--M590
+						["bm_w_m590"] = "Mossberg 590",
 
 						--Mosconi
 						["bm_w_huntsman"] = "Mosconi Coach Gun",
@@ -2698,7 +2758,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Boatgun
 						["bm_w_corgi"] = "FN F2000 Tactical TR",
 						--AK12
-						["bm_w_flint"] = "KC AK-12",
+						["bm_w_flint"] = "Kalashnikov Concern AK-12",
 						--Ak5
 						 ["bm_w_ak5"] = "Bofors Ak 5",
 						 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
@@ -2708,7 +2768,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--CAR-4
 						["bm_w_m4"] = "Colt M4A1",
 						--AK74
-						["bm_w_ak74"] = "KC AKS-74",
+						["bm_w_ak74"] = "Kalashnikov Concern AKS-74",
 						--805
 						["bm_w_hajk"] = "CZ 805 BREN",
 						["bm_wp_hajk_b_short"] = "A2 Barrel",
@@ -2729,8 +2789,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_x_akmsu"] = "Akimbo AKMSUs",
 						["bm_wp_akmsu_fg_rail"] = "Samson K-Rail",
 						--AKM
-						["bm_w_akm"] = "KC AKMS",
+						["bm_w_akm"] = "Kalashnikov Concern AKMS",
 						["bm_w_akm_gold"] = "Gold Plated AKMS",
+						--Nipples
+						["bm_w_tkb"] = "Tula Arms TKB-059",
+						--Groza
+						["bm_w_groza"] = "TsKIB SOO Groza-1",
 
 					--[[DMRs]]
 						--417
@@ -2760,6 +2824,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_galil_s_skeletal"] = "IMI Galil MAR Stock",
 						["bm_wp_galil_s_light"] = "IMI Galatz Skeleton Stock",
 						["bm_wp_galil_s_fab"] = "FAB Defense MG-CP Cheek Pad",
+						--AS VAL
+						["bm_w_asval"] = "Tula Arms AS \"Val\"",
+						["bm_wp_asval_b_proto"] = "Prototype Barrel",
+						["bm_wp_asval_s_solid"] = "VSS Stock",
 
 						--Raifu
 						["bm_w_g3"] = "H&K G3A3",
@@ -2773,43 +2841,75 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_g3_g_sniper"] = "PSG-1 Wooden Pistol Grip",
 						["bm_wp_g3_s_sniper"] = "PSG-1 Stock",
 						--M308
-						["bm_w_m14"] = "SA M14 DMR",
+						["bm_w_m14"] = "Springfield Armory M14 DMR",
 						["bm_wp_m14_body_ebr"] = "Sage EBR Chassis",
 						["bm_wp_m14_body_jae"] = "JAE 100 G3 Stock",
 						["bm_wp_upg_o_m14_scopemount"] = "Sun Optics USA M14/M1A Scope Mount",
+						--Shak12
+						["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
+						--HCAR
+						["bm_w_hcar"] = "Ohio Ordnance HCAR",
 
 					--[[SNIPERS]]
 						--Titty
 						["bm_w_tti"] = "Taran Tactical TR-1 AR-10",
+						--QBU88
+						["bm_w_qbu88"] = "Norinco QBU-88",
+						--Icky Vicky
+						["bm_w_victor"] = "SAINT Victor AR-10",
 
+						--R700
+						["bm_w_r700"] = "Remington Model 700P",
+						--Repeater
+						["bm_w_winchester1874"] = "Winchester Model 1873",
+						["bm_wp_winchester_b_long"] = "Long Barrel",
+						["bm_wp_winchester_b_suppressed"] = "Suppressor",
 						--MSR
 						["bm_w_msr"] = "Remington MSR",
 						["bm_wp_snp_msr_ns_suppressor"] = "AAC TiTAN-QD Suppressor",
 						["bm_wp_msr_body_msr"] = "MSR Aluminum Stock & Receiver",
+						--Scunt
+						["bm_w_scout"] = "Steyr Scout",
 
 						--Drako
-						["bm_w_siltstone"] = "KC SVD",
+						["bm_w_siltstone"] = "Kalashnikov Concern SVD",
+						--WA2000
+						["bm_w_wa2000"] = "Walther WA2000",
+						["bm_wp_wa2000_g_walnut"] = "Walnut Furniture",
+						["bm_wp_wa2000_g_stealth"] = "Black Furniture",
+						["bm_wp_wa2000_g_light"] = "Lightweight Furniture",
 
+						--SBL
+						["bm_w_sbl"] = "Marlin Model 1895SBL",
+						--
+						["bm_w_contender"] = "Thompson Center G2 Contender",
 						--Moist Nugget
 						["bm_w_mosin"] = "Mosin Nagant M91/30",
 						["bm_wp_mosin_b_sniper"] = "Nagant Suppressor",
 						["bm_wp_mosin_body_conceal"] = "Black Polymer Stock",
+						--Model 70
+						["bm_w_model70"] = "Winchester Model 70",
 						--R93
 						["bm_w_r93"] = "Blaser R93 Tactical 2",
-						["bm_wp_r93_b_suppressed"] = "Harvester Big Bore 338 Suppressor",
+						["bm_wp_r93_b_suppressed"] = "SilencerCo Harvester 338 Suppressor",
 						["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
+						--SRS
+						["bm_w_desertfox"] = "DTA Stealth Recon Scout",
 
 						--M95
 						["bm_w_m95"] = "Barrett M95",
 						 ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
 
 					--[[SPECIALS]]
+						--Wat is flash haow do u do it? haow 2 flash cartoonz? ADOEB FLASH... adoeb falsh... CS... 6.... a dobe.... a dobe
 						["bm_w_ray"] = "M202 FLASH",
 						["bm_w_rpg7"] = "Bazalt RPG-7",
 
 						["bm_w_arblast"] = "Arbalest",
 						["bm_w_frankish"] = "Frankish Bow",
 						["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
+						["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
+						["bm_wp_elastic_body_tactic"] = "Hoyt Ignite Riser",
 
 					--Attachments
 
@@ -2991,7 +3091,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_melee_cs"] = "Homelite Super 2 Chainsaw",
 						["bm_melee_brick"] = "Motorola DynaTAC 8000X",
 						["bm_melee_sword"] = "Pencil",
-						["bm_melee_oxide"] = "Spetsnaz Survival Machete",
+						["bm_melee_oxide"] = "UVSR Taiga-1",
 
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 Fragmentation Grenade",

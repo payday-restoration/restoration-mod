@@ -3092,6 +3092,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_melee_brick"] = "Motorola DynaTAC 8000X",
 						["bm_melee_sword"] = "Pencil",
 						["bm_melee_oxide"] = "UVSR Taiga-1",
+						["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
 
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 Fragmentation Grenade",

@@ -7404,14 +7404,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.has_description = true
 			self.m249.CLIP_AMMO_MAX = 200
 			self.m249.AMMO_MAX = 300
-			self.m249.fire_mode_data.fire_rate = 0.08
+			self.m249.fire_mode_data.fire_rate = 0.07692307
 			self.m249.kick = self.stat_info.kick_tables.even_recoil
 			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
 			self.m249.ads_speed = 0.520
 			self.m249.damage_falloff = {
 				start_dist = 2500,
-				end_dist = 7000,
+				end_dist = 7700,
 				min_mult = 0.4166
 			}
 			self.m249.stats = {

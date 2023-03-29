@@ -6390,6 +6390,106 @@ function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 end
 
 
+local function make_cosmetic_data(data, cosmetic_id, unlocked, quality, bonus, equipped)
+	local crafted = managers.blackmarket:get_crafted_category(data.category)[data.prev_node_data and data.prev_node_data.slot]
+	local my_cd = tweak_data.blackmarket.weapon_skins[cosmetic_id]
+	local new_data = {
+		name = cosmetic_id,
+		name_localized = my_cd and my_cd.name_id and managers.localization:text(my_cd.name_id) or managers.localization:text("bm_menu_no_mod"),
+		desc_id = my_cd and my_cd.desc_id,
+		lock_text_id = my_cd and my_cd.lock_id,
+		category = data.category or data.prev_node_data and data.prev_node_data.category,
+		default_blueprint = my_cd and my_cd.default_blueprint,
+		locked_cosmetics = my_cd and my_cd.locked
+	}
+	local bitmap_texture, bg_texture = managers.blackmarket:get_weapon_icon_path(data.prev_node_data.name, {
+		id = cosmetic_id
+	})
+	new_data.bitmap_texture = bitmap_texture
+	new_data.bg_texture = bg_texture
+
+	if not unlocked then
+		new_data.bitmap_locked_color = Color.white
+		new_data.bitmap_locked_blend_mode = "normal"
+		new_data.bitmap_locked_alpha = 0.6
+		new_data.bg_alpha = 0.4
+	end
+
+	new_data.slot = data.slot or data.prev_node_data and data.prev_node_data.slot
+	new_data.global_value = my_cd and my_cd.global_value or "normal"
+	new_data.akimbo_gui_data = tweak_data.weapon[crafted.weapon_id] and tweak_data.weapon[crafted.weapon_id].akimbo_gui_data
+	new_data.cosmetic_id = cosmetic_id
+	new_data.cosmetic_quality = quality
+	new_data.cosmetic_rarity = my_cd and my_cd.rarity or "common"
+	new_data.cosmetic_bonus = bonus
+	new_data.unlocked = unlocked
+	new_data.equipped = equipped
+	new_data.stream = true
+	new_data.lock_texture = not new_data.unlocked
+
+	if new_data.default_blueprint then
+		new_data.comparision_data = managers.blackmarket:get_weapon_stats(new_data.category, new_data.slot, new_data.default_blueprint)
+	end
+
+	if new_data.unlocked then
+		if managers.blackmarket:last_previewed_cosmetic() == cosmetic_id then
+			table.insert(new_data, "wcc_cancel_preview")
+		else
+			table.insert(new_data, "wcc_preview")
+		end
+	end
+
+	if new_data.equipped then
+		table.insert(new_data, "wcc_remove")
+	end
+
+	if new_data.unlocked then
+		if not crafted.previewing and not new_data.equipped then
+			table.insert(new_data, "wcc_equip")
+		end
+
+		if managers.blackmarket:is_previewing_any_mod() then
+			table.insert(new_data, "wm_clear_mod_preview")
+		end
+	else
+		if managers.blackmarket:last_previewed_cosmetic() == cosmetic_id then
+			table.insert(new_data, "wcc_cancel_preview")
+		else
+			table.insert(new_data, "wcc_preview")
+		end
+
+		if not crafted.previewing and not my_cd.is_a_unlockable and managers.menu:is_pc_controller() then
+			table.insert(new_data, "wcc_market")
+		end
+
+		if managers.blackmarket:is_previewing_any_mod() then
+			table.insert(new_data, "wm_clear_mod_preview")
+		end
+
+		local lock_icon = nil
+
+		if managers.dlc:is_content_achievement_locked("weapon_skins", new_data.name) or managers.dlc:is_content_achievement_milestone_locked("weapon_skins", new_data.name) then
+			lock_icon = "guis/textures/pd2/lock_achievement"
+		end
+
+		new_data.mini_icons = new_data.mini_icons or {}
+
+		table.insert(new_data.mini_icons, {
+			stream = true,
+			layer = 2,
+			h = 30,
+			w = 30,
+			blend_mode = "normal",
+			bottom = 1,
+			right = 1,
+			texture = lock_icon or my_cd.is_a_unlockable and "guis/textures/pd2/skilltree/padlock" or "guis/textures/pd2/lock_dlc",
+			color = tweak_data.screen_colors.important_1
+		})
+	end
+
+	return new_data
+end
+
 function BlackMarketGui:populate_weapon_cosmetics(data)
 	local crafted = managers.blackmarket:get_crafted_category(data.category)[data.prev_node_data and data.prev_node_data.slot]
 	local cosmetics_data = tweak_data.blackmarket.weapon_skins

@@ -6388,6 +6388,153 @@ function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 		new_node_data
 	})
 end
+
+
+function BlackMarketGui:populate_weapon_cosmetics(data)
+	local crafted = managers.blackmarket:get_crafted_category(data.category)[data.prev_node_data and data.prev_node_data.slot]
+	local cosmetics_data = tweak_data.blackmarket.weapon_skins
+	local my_cd, new_data, bitmap_texture, bg_texture = nil
+	local inventory_tradable = managers.blackmarket:get_inventory_tradable()
+	local cosmetics_instances = data.on_create_data.instances or {}
+	local all_cosmetics = data.on_create_data.cosmetics or {}
+	local cosmetic_data, cosmetic_id = nil
+	local index_i = 1
+	cosmetic_id = tweak_data.blackmarket.weapon_color_default
+	cosmetic_data = cosmetics_data[cosmetic_id]
+	local unlocked = true
+	local equipped = false
+	local quality = "good"
+	local color_index = 1
+	local pattern_scale = tweak_data.blackmarket.weapon_color_pattern_scale_default
+	local color_texture = nil
+	local equipped_cosmetic_id = crafted and crafted.cosmetics and crafted.cosmetics.id
+	local equipped_tweak = cosmetics_data[equipped_cosmetic_id]
+
+	if equipped_tweak and equipped_tweak.is_a_color_skin then
+		cosmetic_id = equipped_cosmetic_id
+		cosmetic_data = equipped_tweak
+		quality = crafted.cosmetics.quality
+		color_index = crafted.cosmetics.color_index
+		pattern_scale = crafted.cosmetics.pattern_scale
+		equipped = true
+		local dlc = cosmetic_data.dlc or managers.dlc:global_value_to_dlc(cosmetic_data.global_value)
+		local global_value = cosmetic_data.global_value or managers.dlc:dlc_to_global_value(dlc)
+		local dlc_unlocked = not dlc or managers.dlc:is_dlc_unlocked(dlc)
+		local have_color = managers.blackmarket:has_item(global_value, "weapon_skins", equipped_cosmetic_id)
+		unlocked = dlc_unlocked and have_color
+		local guis_catalog = "guis/"
+		local bundle_folder = equipped_tweak.texture_bundle_folder
+
+		if bundle_folder then
+			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
+		end
+
+		color_texture = guis_catalog .. "textures/pd2/blackmarket/icons/weapon_color/" .. cosmetic_id
+	end
+
+	local global_value = cosmetic_data.global_value or "normal"
+	new_data = make_cosmetic_data(data, cosmetic_id, unlocked, quality, nil, equipped)
+	new_data.akimbo_gui_data = nil
+	new_data.name_localized = managers.localization:text("bm_menu_customizable_weapon_color")
+	new_data.is_a_color_skin = true
+	new_data.bitmap_texture = color_texture
+	new_data.cosmetic_color_index = color_index
+	new_data.cosmetic_pattern_scale = pattern_scale
+	new_data.mid_text_no_change_alpha = true
+	new_data.mid_text = {
+		selected_text = new_data.name_localized,
+		selected_color = tweak_data.screen_colors.text
+	}
+	new_data.mid_text.noselected_text = new_data.mid_text.selected_text
+	new_data.mid_text.noselected_color = tweak_data.screen_colors.text
+	new_data.mid_text.font = small_font
+	new_data.mid_text.font_size = small_font_size
+	new_data.mid_text.vertical = "center"
+
+	if equipped then
+		table.insert(new_data, "wcs_customize_color")
+	end
+
+	local equip_index = table.get_vector_index(new_data, "wcc_equip")
+
+	if equip_index then
+		new_data[equip_index] = "wcs_equip"
+	end
+
+	data[index_i] = new_data
+	index_i = index_i + 1
+
+	for _, instance_id in ipairs(cosmetics_instances) do
+		cosmetic_id = inventory_tradable[instance_id].entry
+		my_cd = cosmetics_data[cosmetic_id]
+		local quality = inventory_tradable[instance_id].quality
+		local bonus = inventory_tradable[instance_id].bonus
+		local equipped = crafted and crafted.cosmetics and crafted.cosmetics.instance_id == instance_id
+		new_data = make_cosmetic_data(data, cosmetic_id, true, quality, bonus, equipped)
+		new_data.name = instance_id
+
+		if new_data.cosmetic_bonus then
+			local bonuses = tweak_data.economy:get_bonus_icons(my_cd.bonus)
+			local x = 0
+
+			for _, texture_path in ipairs(bonuses) do
+				new_data.mini_icons = new_data.mini_icons or {}
+
+				table.insert(new_data.mini_icons, {
+					name = "has_bonus",
+					h = 16,
+					layer = 1,
+					w = 16,
+					stream = false,
+					bottom = 0,
+					texture = texture_path,
+					right = x
+				})
+
+				x = x + 17
+			end
+		end
+
+		data[index_i] = new_data
+		index_i = index_i + 1
+	end
+
+	for _, cosm_data in ipairs(all_cosmetics) do
+		cosmetic_id = cosm_data.id
+		cosmetic_data = cosm_data.data
+		my_cd = cosmetics_data[cosmetic_id]
+
+		if not my_cd.is_template then
+			local global_value = my_cd and my_cd.global_value or "normal"
+			local unlocked = managers.blackmarket:get_item_amount(global_value, "weapon_skins", cosmetic_id, true) > 0
+			local equipped = crafted and crafted.cosmetics and crafted.cosmetics.instance_id == cosmetic_id
+			new_data = make_cosmetic_data(data, cosmetic_id, unlocked, "mint", nil, equipped)
+			data[index_i] = new_data
+			index_i = index_i + 1
+		end
+	end
+
+	local total_cosmetics = #cosmetics_instances + #all_cosmetics
+	total_cosmetics = total_cosmetics + 1
+	local new_data = nil
+	local max_items = self:calc_max_items(total_cosmetics, data.override_slots or WEAPON_MODS_SLOTS)
+
+	for i = 1, max_items do
+		if not data[i] then
+			new_data = {
+				name = "empty",
+				name_localized = "",
+				category = data.category,
+				slot = i,
+				unlocked = true,
+				equipped = false
+			}
+			data[i] = new_data
+		end
+	end
+end
+
+
 -- Mod Shop Stuff
 Hooks:RegisterHook("BlackMarketGUIOnPopulateBuyMasks")
 Hooks:RegisterHook("BlackMarketGUIOnPopulateBuyMasksActionList")

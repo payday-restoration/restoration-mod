@@ -333,6 +333,7 @@
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
 	
 	<!--zeal grenadier-->

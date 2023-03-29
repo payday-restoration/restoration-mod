@@ -117,14 +117,14 @@ function MutatorNoTitans:setup(data)
 		is_captain = true
 	}
 	
-	--Have ZEAL Zombie Cloakers act as Hatman's minions on DS
+	--Have "ZEAL" Cloakers act as Hatman's minions on DS
 	tweak_data.group_ai.unit_categories.HVH_Boss_Spooc = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 			},
 			russia = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")				
+				Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1")				
 			},
 			zombie = {
 				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
@@ -133,16 +133,16 @@ function MutatorNoTitans:setup(data)
 				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
 			},
 			federales = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 			},				
 			nypd = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 			},	
 			lapd = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 			},
 			fbi = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 			}		
 		},
 		access = access_type_all,

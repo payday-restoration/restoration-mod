@@ -2959,7 +2959,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_melee_brick"] = "모토로라 다이나택 8000X",
 						["bm_melee_sword"] = "연필",
 						["bm_melee_oxide"] = "UVSR 타이가-1",
-						["bm_melee_selfie"] = "폴라프로 파워폴리 고프로 셀카봉",
+						["bm_melee_selfie"] = "확장 폴라프로 파워폴리 고프로",
 						
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 파편 수류탄",

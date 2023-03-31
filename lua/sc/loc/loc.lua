@@ -4076,7 +4076,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Haunt--
 				["menu_haunt_sc"] = "Haunt",
-				["menu_haunt_desc_sc"] = "BASIC: #{owned}#$basic##\nKilling an enemy within #{skill_color}#18## meters has a #{skill_color}#5%## chance to spread panic in a #{skill_color}#10## meter radius around you for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: #{owned}#$pro##\nEnemy panic chance is increased by an additional #{skill_color}#15%## at all times.",
+				["menu_haunt_desc_sc"] = "BASIC: #{owned}#$basic##\nKilling an enemy within #{skill_color}#18## meters has a #{skill_color}#5%## chance to spread panic in a #{skill_color}#12## meter radius around you for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: #{owned}#$pro##\nEnemy panic chance is increased by an additional #{skill_color}#15%## at all times.",
 
 				--Messiah--
 				["menu_pistol_beta_messiah_sc"] = "Messiah",
@@ -4213,7 +4213,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds. Each kill during cooldown reduces it by ##0.5## seconds; melee kills reduce it by an additional ##1.5## seconds.\n\nYou gain ##5## dodge points.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis shares its cooldown with Tension (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##15## armor; melee kills double the amount.\n\nThis shares its cooldown with Tension (Card 3).\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##10## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis shares its cooldown with Tension (Card 3).\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##12## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis shares its cooldown with Tension (Card 3).\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.",

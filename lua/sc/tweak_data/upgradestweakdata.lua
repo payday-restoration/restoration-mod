@@ -1690,7 +1690,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.02,
 		0.01 --Copycat, unused
 	}
-	self.killshot_close_panic_range = 1000
+	self.killshot_close_panic_range = 1200
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
 	self.on_killshot_cooldown_reduction_melee = 1.5

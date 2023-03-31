@@ -73,7 +73,7 @@ tweak_data.smg = {
 	}
 	tweak_data.lmg = {
 		swap_bonus = 0.8,
-		ads_move_speed_mult = 0.428571, --lowered to 0.3
+		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 5,
 		hipfire_spread_mult = 4.4444
 	}

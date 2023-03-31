@@ -1133,7 +1133,7 @@ end
 --Called when psychoknife kills are performed.
 function PlayerManager:spread_psycho_knife_panic()
 	local pos = self:player_unit():position()
-	local area = 1000
+	local area = 1200
 	local chance = 1
 	local amount = 200
 	local enemies = World:find_units_quick("sphere", pos, area, 12, 21)

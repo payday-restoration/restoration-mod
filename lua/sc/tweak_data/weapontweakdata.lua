@@ -11557,10 +11557,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.saw_secondary.CLIP_AMMO_MAX = 20
 			self.saw_secondary.AMMO_MAX = 20
 			self.saw_secondary.supported = true
-			self.saw_secondary.stats = deep_clone(self.saw.stats)
+			self.saw_secondary.stats = {
+				alert_size = 2,
+				suppression = 8,
+				zoom = 1,
+				spread = 1,
+				recoil = 97,
+				spread_moving = 7,
+				damage = 90,
+				concealment = 20,
+				value = 1,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				reload = 20
+			}
 			self.saw_secondary.stats_modifiers = nil
-			self.saw_secondary.reload_speed_multiplier = deep_clone(self.saw.reload_speed_multiplier)
-			self.saw_secondary.panic_suppression_chance = deep_clone(self.saw.panic_suppression_chance)
+			self.saw_secondary.reload_speed_multiplier = 1.1
+			self.saw_secondary.panic_suppression_chance = 0.05
 			self.saw_secondary.timers = deep_clone(self.saw.timers)
 	
 

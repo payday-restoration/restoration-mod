@@ -1959,9 +1959,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.18 seconds to targets in front of you while charging. This can be increased with skills.\n\nCannot parry enemy attacks.", --Kazaguruma
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals double damage when attacking enemies from behind.",-- Switchblade Knife
-		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic.", -- Psycho Knife
-		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic.", -- Headless Dozer Sword
-			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic.", -- im not gaj
+		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic in a 12 meter radius around you.", -- Psycho Knife
+		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic in a 12 meter radius around you.", -- Headless Dozer Sword
+			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a 12 meter radius around you.", -- im not gaj
 		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharge an attack by at least 90% to perform a thrust, extending range by half a meter.", -- Great Sword
 			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.\n\nCharge an attack by at least 90% to perform a thrust, extending range by half a meter.",
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder

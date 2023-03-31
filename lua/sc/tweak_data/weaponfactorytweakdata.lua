@@ -2141,6 +2141,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.02, 6.8, -0.21),
 				rotation = Rotation(-0.1, 0.08, 0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4_usasoc = {
+				translation = Vector3(-0.005, 5, -0.115),
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
 				translation = Vector3(0.01, 2, -0.2),
@@ -29776,6 +29779,135 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_smg_alpha57_prim_npc.override = deep_clone(self.wpn_fps_smg_alpha57_prim.override)
 		self.wpn_fps_smg_alpha57_prim_npc.uses_parts = deep_clone(self.wpn_fps_smg_alpha57_prim.uses_parts)
 		
+	end
+
+	if self.parts.wpn_fps_ass_m4_usasoc_grip then --RJC9000 and PlayBONK's M4 URGI
+
+		self.parts.wpn_fps_ass_m4_usasoc_grip.stats = { value = 0 }
+		self.parts.wpn_fps_ass_m4_usasoc_grip.custom_stats = nil
+		self.parts.wpn_fps_ass_m4_usasoc_handguard.stats = { value = 0 }
+		self.parts.wpn_fps_ass_m4_usasoc_handguard.custom_stats = nil
+		self.parts.wpn_fps_ass_m4_usasoc_magazine.stats = { value = 0 }
+		self.parts.wpn_fps_ass_m4_usasoc_magazine.custom_stats = nil
+		self.parts.wpn_fps_ass_m4_usasoc_stock.stats = { value = 0 }
+		self.parts.wpn_fps_ass_m4_usasoc_stock.custom_stats = nil
+
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_292.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_292.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_292.stats.value = 0
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_292.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_260.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_260.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_260.stats.value = 0
+		self.parts.wpn_fps_ass_m4_usasoc_barrel_260.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+
+		self.parts.wpn_fps_ass_m4_usasoc_handguard_95.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_handguard_95.stats = {
+			value = 0,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_handguard_dd.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_handguard_dd.stats = {
+			value = 0,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_handguard_kac.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_handguard_kac.stats = {
+			value = 0,
+			spread = -1,
+			recoil = -2,
+			concealment = 2
+		}
+
+		self.parts.wpn_fps_ass_m4_usasoc_grip_dd.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_grip_dd.stats = { 
+			value = 0,
+			recoil = 2,
+			spread = 1,
+			concealment = -2
+		}
+
+		self.parts.wpn_fps_ass_m4_usasoc_stock_dd.supported = true 
+		self.parts.wpn_fps_ass_m4_usasoc_stock_dd.stats = { 
+			value = 0,
+			recoil = -2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_stock_dd.custom_stats = { ads_speed_mult = 0.975 }
+		self.parts.wpn_fps_ass_m4_usasoc_stock_m4ss.supported = true 
+		self.parts.wpn_fps_ass_m4_usasoc_stock_m4ss.stats = { 
+			value = 0
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_stock_m4ss.custom_stats = nil
+		self.parts.wpn_fps_ass_m4_usasoc_stock_moe.supported = true 
+		self.parts.wpn_fps_ass_m4_usasoc_stock_moe.stats = { 
+			value = 0,
+			recoil = -2,
+			spread = 1
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_stock_moe.custom_stats = nil
+
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_20.supported = true 
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_20.stats = {
+			value = 0,
+			concealment = 1,
+			reload = 5,
+			extra_ammo = -10
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_20.custom_stats = { 
+			ads_speed_mult = 0.975
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_xmag.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_xmag.stats = {
+			value = 0,
+			extra_ammo = 10,
+			concealment = -1,
+			reload = -1
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_dd.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_dd.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_dd.stats = {
+			value = 0,
+			concealment = -1,
+			extra_ammo = 2,
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_mike4.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_mike4.stats = {
+			value = 0,
+			concealment = 1,
+			recoil = -2
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_pmag.supported = true
+		self.parts.wpn_fps_ass_m4_usasoc_magazine_pmag.stats = {
+			value = 0,
+			concealment = 1,
+			recoil = -2
+		}
+
+
+
+		self.parts.wpn_fps_ass_m4_usasoc_angled_sight_rmr.supported = true 
+		self.parts.wpn_fps_ass_m4_usasoc_angled_sight_rmr.desc_id = "bm_wp_upg_o_angled_1_1_desc"
+		self.parts.wpn_fps_ass_m4_usasoc_angled_sight_rmr.has_description = true
+		self.parts.wpn_fps_ass_m4_usasoc_angled_sight_rmr.stats = {
+			value = 1,
+			gadget_zoom = 2
+		}
+		self.parts.wpn_fps_ass_m4_usasoc_gadget_mawl.supported = true 
+		self.parts.wpn_fps_ass_m4_usasoc_gadget_mawl.stats = { 
+			value = 0
+		}
+
+		self.wpn_fps_ass_m4_usasoc.override = self.wpn_fps_ass_m4_usasoc.override or {}
+		self.wpn_fps_ass_m4_usasoc.override.wpn_fps_upg_m4_s_standard = {
+			stats = {},
+			custom_stats = {}
+		}
+
 	end
 
 --Resmod Custom Weapon stuff

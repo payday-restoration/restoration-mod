@@ -425,6 +425,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 		local player_state = managers.player:current_state()
 		local equipped_weapon = self._parent_unit:inventory():equipped_unit()
 		local is_akimbo = equipped_weapon and equipped_weapon:base() and equipped_weapon:base().AKIMBO
+		local speen = equipped_weapon and equipped_weapon:base() and equipped_weapon:base():weapon_tweak_data().speen
 		local in_full_steelsight = self._parent_movement_ext._current_state._state_data.in_full_steelsight
 
 		if trans_data.duration < elapsed_t then
@@ -441,7 +442,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			end
 		else
 			local progress = elapsed_t / trans_data.duration
-			local progress_smooth = math.bezier(bezier_values, progress)
+			local progress_smooth = math.bezier(speen and bezier_values2 or bezier_values, progress)
 			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
 			if equipped_weapon and equipped_weapon:base() then
 				local in_second_sight = equipped_weapon:base():is_second_sight_on()
@@ -473,7 +474,10 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 						trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
 						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
 					elseif in_steelsight and in_full_steelsight ~= true then
-						if restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 2 then
+						if speen then
+							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
+							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 36 * prog)
+						elseif restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 2 then
 							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
 						elseif restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 3 then

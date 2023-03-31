@@ -920,6 +920,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		elseif self._trail_effect_pls then
 			self._trail_effect_table.effect = Idstring(self._trail_effect_pls)
 		end 
+		
+		pewpewpewpew = os.date("%m%d")
+		if pewpewpewpew == "0401" then
+			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m")
+			if self._nato then
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
+			elseif self._warsaw then
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
+			end
+		end
     end	
 
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)

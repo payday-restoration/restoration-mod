@@ -15424,6 +15424,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.nova4.timers.reload_not_empty = 2.2
 	end
 
+	if self.m4_usasoc then --RJC9000 and PlayBONK's M4 URGI
+		self.m4_usasoc.categories = { "assault_rifle" }
+		self.m4_usasoc.recategorize = { "heavy_ar" }
+		self.m4_usasoc.damage_type = "assault_rifle"
+		self.m4_usasoc.nato = 1
+		self.m4_usasoc.tactical_reload = 1
+		self.m4_usasoc.CLIP_AMMO_MAX = 30
+		self.m4_usasoc.AMMO_MAX = 150
+		self.m4_usasoc.lock_slide = true
+		self.m4_usasoc.fire_mode_data.fire_rate = 0.08
+		self.m4_usasoc.FIRE_MODE = "auto"
+		self.m4_usasoc.kick = {}
+		self.m4_usasoc.kick = self.stat_info.kick_tables.moderate_kick
+		self.m4_usasoc.supported = true
+		self.m4_usasoc.ads_speed = 0.320
+		self.m4_usasoc.damage_falloff = {
+			start_dist = 1700,
+			end_dist = 6000,
+			min_mult = 0.3333
+		}	
+		self.m4_usasoc.stats = {
+			damage = 30,
+			spread = 81,
+			recoil = 83,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 22,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.m4_usasoc.speen = true
+		self.m4_usasoc.stats_modifiers = nil
+		self.m4_usasoc.panic_suppression_chance = 0.05
+		self.m4_usasoc.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.m4_usasoc.reload_speed_multiplier = 1.08
+		self.m4_usasoc.timers.reload_exit_empty = 0.35
+		self.m4_usasoc.timers.reload_empty = 5.37
+		self.m4_usasoc.timers.reload_exit_not_empty = 0.82
+		self.m4_usasoc.timers.reload_not_empty = 3.38
+	end
+
 	--RJC9000 and PlayBONK's MW2022 AKs
 		if self.akilo_2022 then 
 			self.akilo_2022.warsaw = true

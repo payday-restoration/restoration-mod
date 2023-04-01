@@ -13965,6 +13965,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fazertron.reload_speed_multiplier = 1.05
 		self.fazertron.panic_suppression_chance = 0.05
 		self.fazertron.timers.equip = 1.5
+		self.fazertron.timers.reload_empty = 3.45
+		self.fazertron.timers.reload_exit_empty = 0.5
+		self.fazertron.timers.reload_not_empty = 2.45
+		self.fazertron.timers.reload_exit_not_empty = 0.8
 	end
 
 	if self.g36k then --Pawcio's SCAR-L
@@ -14049,7 +14053,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ar18.timers = deep_clone(self.ak5.timers)
 		self.ar18.panic_suppression_chance = 0.05
 	end
-
 
 	if self.ak12 then --Pawcio's KF2 AK-12 (AK-200 Prototype)	
 		self.ak12.recategorize = { "light_ar" }
@@ -14897,6 +14900,147 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.deckard.timers.reload_exit_not_empty = 0.6
 		self.deckard.panic_suppression_chance = 0.05
 	end
+
+	--Pawcio's GTAV Pack
+		if self.duskrifle then
+			self.duskrifle.categories = {
+				"snp"
+			}
+			self.duskrifle.recategorize = {"heavy_snp"}
+			self.duskrifle.damage_type = "sniper"
+			self.duskrifle.has_description = true
+			self.duskrifle.desc_id = "bm_ap_weapon_sc_desc"
+			self.duskrifle.fire_mode_data.fire_rate = 0.75
+			self.duskrifle.fire_rate_multiplier = 0.625
+			self.duskrifle.CLIP_AMMO_MAX = 5
+			self.duskrifle.AMMO_MAX = 30
+			self.duskrifle.kick = self.stat_info.kick_tables.vertical_kick
+			self.duskrifle.supported = true
+			self.duskrifle.ads_speed = 0.500
+			self.duskrifle.damage_falloff = {
+				start_dist = 5000,
+				end_dist = 9000,
+				min_mult = 0.5
+			}	
+			self.duskrifle.stats = {
+				damage = 120,
+				spread = 100,
+				recoil = 81,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 24,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.duskrifle.stats_modifiers = nil
+			self.duskrifle.armor_piercing_chance = 1
+			self.duskrifle.can_shoot_through_enemy = true
+			self.duskrifle.can_shoot_through_shield = true
+			self.duskrifle.can_shoot_through_wall = true
+			self.duskrifle.panic_suppression_chance = 0.05
+		end
+
+		if self.duskmg then
+			self.duskmg.categories = {"assault_rifle"}
+			self.duskmg.recategorize = {"heavy_ar"}
+			self.duskmg.damage_type = "assault_rifle"
+			self.duskmg.fire_mode_data.fire_rate = 0.133333
+			self.duskmg.CLIP_AMMO_MAX = 60
+			self.duskmg.AMMO_MAX = 120
+			self.duskmg.kick = self.stat_info.kick_tables.vertical_kick
+			self.duskmg.supported = true
+			self.duskmg.ads_speed = 0.200
+			self.duskmg.damage_falloff = {
+				start_dist = 3000,
+				end_dist = 7500,
+				min_mult = 0.3333
+			}	
+			self.duskmg.stats = {
+				damage = 30,
+				spread = 77,
+				recoil = 91,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 24,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.duskmg.stats_modifiers = nil
+			self.duskmg.panic_suppression_chance = 0.05
+			self.duskmg.weapon_movement_penalty = nil
+		end
+
+		if self.duskpistol then
+			self.duskpistol.categories = {"pistol"}
+			self.duskpistol.recategorize = {"heavy_pis"}
+			self.duskpistol.damage_type = "pistol"
+			self.duskpistol.fire_mode_data.fire_rate = 0.266666
+			self.duskpistol.CLIP_AMMO_MAX = 10
+			self.duskpistol.AMMO_MAX = 40
+			self.duskpistol.kick = self.stat_info.kick_tables.vertical_kick
+			self.duskpistol.supported = true
+			self.duskpistol.ads_speed = 0.160
+			self.duskpistol.damage_falloff = {
+				start_dist = 3000,
+				end_dist = 5000,
+				min_mult = 0.2
+			}
+			self.duskpistol.stats = {
+				damage = 45,
+				spread = 85,
+				recoil = 91,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 30,
+				suppression = 11,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.duskpistol.stats_modifiers = nil
+			self.duskpistol.panic_suppression_chance = 0.05
+		end
+
+		if self.riviter then
+			self.riviter.fire_mode_data.fire_rate = 1.5
+			self.riviter.CLIP_AMMO_MAX = 3
+			self.riviter.AMMO_MAX = 8
+			self.riviter.kick = self.stat_info.kick_tables.vertical_kick
+			self.riviter.supported = true
+			self.riviter.ads_speed = 0.500
+			self.riviter.damage_falloff = {
+				start_dist = 3000,
+				end_dist = 9000,
+				min_mult = 1
+			}
+			self.riviter.stats = {
+				damage = 300,
+				spread = 71,
+				recoil = 81,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 10,
+				suppression = 1,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.riviter.stats_modifiers = {damage = 3}
+			self.riviter.turret_instakill = true
+			self.riviter.panic_suppression_chance = 0.05
+		end
 
 
 	if self.coltds then --Mira's Colt Detective

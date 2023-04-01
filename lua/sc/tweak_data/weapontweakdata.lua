@@ -13927,6 +13927,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.super.timers.reload_exit_not_empty = 0.4
 	end
 
+	if self.fazertron then --Pawcio's Calico M960
+		self.fazertron.recategorize = { "light_ar" }
+		self.fazertron.damage_type = "assault_rifle"
+		self.fazertron.terminator = true		
+		self.fazertron.FIRE_MODE = "auto"
+		self.fazertron.CAN_TOGGLE_FIREMODE = true
+		self.fazertron.BURST_FIRE = 5
+		self.fazertron.BURST_DELAY = 0.05
+		self.fazertron.BURST_FIRE_RATE_MULTIPLIER = 1.1875
+		self.fazertron.fire_mode_data.fire_rate = 0.075
+		self.fazertron.AMMO_MAX = 180
+		self.fazertron.CLIP_AMMO_MAX = 60
+		self.fazertron.kick = self.stat_info.kick_tables.even_recoil
+		self.fazertron.supported = true
+		self.fazertron.ads_speed = 0.260
+		self.fazertron.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 5800,
+			min_mult = 0.5
+		}
+		self.fazertron.stats = {
+			damage = 20,
+			spread = 81,
+			recoil = 85,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 25,
+			suppression = 10,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.fazertron.stats_modifiers = nil
+		self.fazertron.reload_speed_multiplier = 1.05
+		self.fazertron.panic_suppression_chance = 0.05
+		self.fazertron.timers.equip = 1.5
+	end
+
 	if self.g36k then --Pawcio's SCAR-L
 		self.g36k.recategorize = { "light_ar" }
 		self.g36k.damage_type = "assault_rifle"

@@ -529,6 +529,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato
 	self._plasma_b = self:weapon_tweak_data().plasma_b
+	self._terminator = self:weapon_tweak_data().terminator
 
 	if not self:is_npc() then
 		local weapon = {
@@ -894,10 +895,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	if self._ammo_data and self._ammo_data.muzzleflash == nil and self._muzzle_effect_table and self._muzzle_effect_pls then
 		self._muzzle_effect_table.effect = Idstring(self._muzzle_effect_pls)
 	end
-	
+
+	local ignore_tracer = nil
     if self._trail_effect_table then
 		if self._starwars == true then
 			self._use_shell_ejection_effect = nil
+			ignore_tracer = true
 			if self._empire then
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
 			elseif self._republic then
@@ -909,8 +912,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			else
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
 			end
+		elseif self._terminator then
+			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t")
+			ignore_tracer = true
 		elseif self._plasma_b then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/plasma_b_trail")
+			ignore_tracer = true
 		elseif self._nato then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/nato_trail")
 		elseif self._warsaw then
@@ -922,7 +929,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end 
 		
 		pewpewpewpew = os.date("%m%d")
-		if pewpewpewpew == "0401" then
+		if pewpewpewpew == "0401" and not ignore_tracer then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m")
 			if self._nato then
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")

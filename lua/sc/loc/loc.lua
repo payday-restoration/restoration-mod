@@ -1986,6 +1986,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
 
+		--Melee Weapons
+		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
+
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
 
@@ -3102,6 +3105,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_melee_sword"] = "Pencil",
 						["bm_melee_oxide"] = "UVSR Taiga-1",
 						["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
+						["bm_melee_twins"] = "Shureido Sai",
 
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 Fragmentation Grenade",

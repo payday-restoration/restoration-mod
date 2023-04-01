@@ -4776,8 +4776,31 @@ function BlackMarketGui:update_info_text()
 	elseif identifier == self.identifiers.melee_weapon then
 		updated_texts[1].text = self._slot_data.name_localized
 
-		if tweak_data.blackmarket.melee_weapons[slot_data.name].info_id then
-			updated_texts[2].text = managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id)
+		updated_texts[2].resource_color = {}
+
+		local has_info_id = tweak_data.blackmarket.melee_weapons[slot_data.name].info_id
+		local swing_arc = tweak_data.blackmarket.melee_weapons[slot_data.name].sphere_cast_radius_add
+
+		if has_info_id or swing_arc then
+			local desc_text = has_info_id and managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id) or ""
+			if swing_arc then
+				if swing_arc >= 40 then
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_4")
+				elseif swing_arc >= 30 then
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_3")
+				elseif swing_arc >= 20 then
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_2")
+				elseif swing_arc >= 10 then
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_1")
+				end
+			end
+
+			for color_id in string.gmatch(desc_text, "#%{(.-)%}#") do
+				table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			end
+			desc_text = desc_text:gsub("#%{(.-)%}#", "##")
+
+			updated_texts[2].text = desc_text
 			updated_texts[2].below_stats = true
 		end
 
@@ -4792,7 +4815,11 @@ function BlackMarketGui:update_info_text()
 
 		-- [[
 		if slot_data.name == "weapon" and (bayonet_damage or (range and range > 0)) then
-			updated_texts[2].resource_color = tweak_data.screen_colors.skill_color
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
 			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
 				managers.localization:text("bm_menu_weapon_bayonet_header") .. 
 				(damage_total and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total) .. "##" or "") .. 
@@ -4835,12 +4862,9 @@ function BlackMarketGui:update_info_text()
 		end
 
 		updated_texts[4].resource_color = {}
-		local desc_text = managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].desc_id)
-
 
 		if slot_data.global_value and slot_data.global_value ~= "normal" then
 			updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-
 			table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
 		end
 

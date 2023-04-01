@@ -2590,6 +2590,11 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 	local active_weapon_stats = active_weapon and melee_entry == "weapon" and managers.weapon_factory:get_stats(active_weapon.factory_id, active_weapon.blueprint)
 	local active_weapon_range = active_weapon_stats and math.max((active_weapon_stats and active_weapon_stats.jab_range or active_weapon_stats.bayonet_range) or 0, 0) or 0
 	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 150
+	local sphere_cast_radius_add = tweak_data.blackmarket.melee_weapons[melee_entry].sphere_cast_radius_add
+	if sphere_cast_radius_add then
+		sphere_cast_radius = sphere_cast_radius + sphere_cast_radius_add
+		range = range - sphere_cast_radius_add
+	end
 	range = range + wtd_base_range + active_weapon_range
 	local charge_bonus_range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_range or 0
 	if self._melee_charge_bonus_range and self._melee_charge_bonus_range == true then

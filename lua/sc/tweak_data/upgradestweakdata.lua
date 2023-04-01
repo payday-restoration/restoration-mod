@@ -355,7 +355,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.
-	self.values.player.body_armor.armor = {
+	--Things marked with --* don't follow the 1,1,1,1,2,1,2 step logic, maybe look into this?
+	self.values.player.body_armor.armor = { --*
 		0, --Suit
 		2, --LBV
 		4, --BV
@@ -365,7 +366,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		18 --ICTV
 	}
 	
-	self.values.player.body_armor.movement = { 
+	self.values.player.body_armor.movement = { --*
 		1, 
 		0.95, 
 		0.9, 
@@ -374,7 +375,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.7, 
 		0.6
 	}
-	self.values.player.body_armor.dodge = {
+	self.values.player.body_armor.dodge = { --*
 		0.2,
 		0.1,
 		0.0,
@@ -392,7 +393,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.05,
 		1.0
 	}
-	self.values.player.body_armor.concealment = {
+	self.values.player.body_armor.concealment = { --*
 		30,
 		25,
 		23,
@@ -430,7 +431,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.12
 	}
 	self.max_deflection = 0.60
-	self.values.player.body_armor.deflection = {
+	self.values.player.body_armor.deflection = { --*
 		0.00,
 		0.05,
 		0.10,
@@ -1698,11 +1699,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
 		{
-			{2.4, 3.0},
-			{2.8, 3.5},
 			{3.2, 4.0},
+			{3.4, 4.25},
 			{3.6, 4.5},
-			{4.0, 5.0},
+			{3.8, 4.75},
+			{4.2, 5.25},
 			{4.4, 5.5},
 			{4.8, 6.0}
 		}
@@ -1743,19 +1744,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		3.6,
 		3.2,
 		2.8,
-		2.4,
 		2.0,
-		1.6
+		1.6,
+		0.8
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
 		1.20,
-		1.175,
-		1.15,
-		1.125,
-		1.10,
-		1.075,
-		1.05	
+		1.18,
+		1.16,
+		1.14,
+		1.1,
+		1.08,
+		1.04
 	}
 
 	--I AM A BAD MOTHERFUCKA--

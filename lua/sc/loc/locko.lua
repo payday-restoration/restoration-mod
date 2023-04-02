@@ -1850,6 +1850,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_slot_lever_info"] = "잭팟 나와줘!\n\n5% 확률로 #{skill_color}#10 배##의 대미지와 넉다운을 줍니다.",
 		["bm_melee_specialist_info"] = "두 배의 칼날, 두 배의 재미.\n\n근접 공격은 뽑힌 동안 첫 번째 공격 이후 매 공격마다 #{skill_color}#두 배##의 피해를 줍니다.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 #{skill_color}#50%## 감소합니다.",
+
+		--Melee Weapons
+		["bm_melee_twins"] = "쌍차", --Plural form is still "sai"
 		
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "데드맨의 곡선",		
@@ -2965,6 +2968,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_melee_sword"] = "연필",
 						["bm_melee_oxide"] = "UVSR 타이가-1",
 						["bm_melee_selfie"] = "확장 폴라프로 파워폴리 고프로",
+						["bm_melee_twins"] = "슈레이드 쌍차",
 						
 					--[[THROWABLES]]
 						["bm_grenade_frag"] = "M67 파편 수류탄",

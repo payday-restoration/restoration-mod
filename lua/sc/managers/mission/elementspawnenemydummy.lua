@@ -3143,7 +3143,7 @@ local zombie_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1"
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1",
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3235,7 +3235,7 @@ local zombie_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3328,7 +3328,7 @@ local zombie_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3420,7 +3420,7 @@ local zombie_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3513,7 +3513,7 @@ local zombie_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
-		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Scripted Spawns Only
 		["units/pd2_dlc_help/characters/ene_zeal_bulldozer_halloween/ene_zeal_bulldozer_halloween"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"

@@ -14,6 +14,7 @@ local america_very_hard = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
@@ -49,6 +50,9 @@ local america_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"
@@ -63,7 +67,8 @@ local america_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -98,6 +103,9 @@ local america_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"
@@ -116,7 +124,8 @@ local america_mayhem = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -150,6 +159,9 @@ local america_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"
@@ -166,7 +178,8 @@ local america_deathwish = {
 		
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc", 				
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -200,7 +213,10 @@ local america_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Security Guards get replaced with GenSec reds
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2",
@@ -236,7 +252,7 @@ local america_zeal = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", 
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -261,7 +277,10 @@ local america_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"] = "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Security Guards get replaced with FTSU Agents
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -295,6 +314,7 @@ local fbi_very_hard = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
@@ -330,6 +350,9 @@ local fbi_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -349,7 +372,8 @@ local fbi_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -384,6 +408,9 @@ local fbi_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -407,7 +434,8 @@ local fbi_mayhem = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -441,6 +469,9 @@ local fbi_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
 		["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -462,7 +493,8 @@ local fbi_deathwish = {
 		
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",				
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -496,7 +528,10 @@ local fbi_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Security Guards get replaced with GenSec reds
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2",
@@ -537,7 +572,7 @@ local fbi_zeal = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", 
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -562,7 +597,10 @@ local fbi_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Security Guards get replaced with FTSU Agents
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -618,6 +656,7 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
@@ -652,7 +691,10 @@ local nypd_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
 		
 		
 		--Murky bois
@@ -697,7 +739,8 @@ local nypd_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
@@ -732,7 +775,10 @@ local nypd_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
@@ -777,7 +823,8 @@ local nypd_mayhem = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
@@ -813,6 +860,9 @@ local nypd_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
@@ -856,6 +906,7 @@ local nypd_deathwish = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
@@ -894,6 +945,9 @@ local nypd_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 
 		--Security Guards get replaced with GenSec reds
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
@@ -951,7 +1005,7 @@ local nypd_zeal = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", 
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -976,7 +1030,10 @@ local nypd_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Security Guards get replaced with FTSU Agents
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -1030,7 +1087,8 @@ local lapd_very_hard = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"]  = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"]  = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
@@ -1064,7 +1122,10 @@ local lapd_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"
 	}	
 local lapd_overkill = {
         --scripted spawns for overkill
@@ -1098,6 +1159,7 @@ local lapd_overkill = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"]  = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"]  = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -1130,7 +1192,10 @@ local lapd_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	}	
 local lapd_mayhem = {
         --scripted spawns for mayhem
@@ -1165,6 +1230,7 @@ local lapd_mayhem = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"]  = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"]  = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -1198,6 +1264,9 @@ local lapd_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	}			
 local lapd_deathwish = {
         --scripted spawns for death wish
@@ -1237,7 +1306,8 @@ local lapd_deathwish = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"]  = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"]  = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -1270,7 +1340,10 @@ local lapd_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 	
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	}		
 	
 local lapd_zeal = {
@@ -1316,7 +1389,7 @@ local lapd_zeal = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --just in case if some map uses vanilla minidozer
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -1341,7 +1414,10 @@ local lapd_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Security Guards get replaced with FTSU Agents
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -1386,6 +1462,7 @@ local federales_very_hard = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
@@ -1422,7 +1499,10 @@ local federales_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",		
 		
 		
 		--Federales Faction
@@ -1497,7 +1577,8 @@ local federales_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
@@ -1535,6 +1616,9 @@ local federales_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		
 		--Federales Faction
@@ -1612,6 +1696,7 @@ local federales_mayhem = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
@@ -1649,6 +1734,9 @@ local federales_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Federales Faction
 		--security
@@ -1724,6 +1812,7 @@ local federales_deathwish = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
@@ -1761,6 +1850,9 @@ local federales_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		
 		--Federales Faction
@@ -1837,7 +1929,7 @@ local federales_zeal = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",  --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
@@ -1875,6 +1967,9 @@ local federales_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", --I want this benelli boy to spawn so badly
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Federales Faction
 		--security
@@ -1939,7 +2034,8 @@ local murkywater_normal_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
@@ -1974,7 +2070,10 @@ local murkywater_normal_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 
 		--Custom Heist Stuff
 		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
@@ -2045,7 +2144,8 @@ local murkywater_mayhem = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
@@ -2081,7 +2181,10 @@ local murkywater_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 
 		--Custom Heist Stuff
 		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
@@ -2152,7 +2255,8 @@ local murkywater_deathwish = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
@@ -2187,7 +2291,10 @@ local murkywater_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 		
 		--Custom Heist Stuff
 		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
@@ -2258,7 +2365,8 @@ local murkywater_hecu = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli", --I want this benelli boy to spawn so badly
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_bex/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
@@ -2293,7 +2401,11 @@ local murkywater_hecu = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli", --I want this benelli boy to spawn so badly
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
+		
 		
 		--Custom Heist Stuff
 		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
@@ -2382,7 +2494,8 @@ local russia_very_hard = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1", 									
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
@@ -2464,7 +2577,10 @@ local russia_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1", 
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1", 
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1"
 
 	}
 local russia_overkill = {
@@ -2494,7 +2610,8 @@ local russia_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2", 							
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
@@ -2576,7 +2693,10 @@ local russia_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1", 
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2"
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 
 	}	
 local russia_mayhem = {
@@ -2607,7 +2727,8 @@ local russia_mayhem = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",							
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
@@ -2687,9 +2808,12 @@ local russia_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker"]  = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2", 
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3", 
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2"
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 
 	}
 local russia_deathwish = {
@@ -2722,7 +2846,8 @@ local russia_deathwish = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3", 			
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
@@ -2804,7 +2929,10 @@ local russia_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2"
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 
 	}
 local russia_drak = {
@@ -2835,7 +2963,8 @@ local russia_drak = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini", --I want this benelli boy to spawn so badly 
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3", 	
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
@@ -2917,7 +3046,10 @@ local russia_drak = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini", --I want this benelli boy to spawn so badly
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 
 	}
 	---------------------------------------------------REAPERS END---------------------------------------------------
@@ -2945,7 +3077,8 @@ local zombie_very_hard = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2",
@@ -3008,6 +3141,9 @@ local zombie_very_hard = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1"
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3033,7 +3169,8 @@ local zombie_overkill = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
@@ -3096,6 +3233,9 @@ local zombie_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3122,7 +3262,8 @@ local zombie_mayhem = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec",
@@ -3182,9 +3323,12 @@ local zombie_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"]  = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker"]  = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3210,7 +3354,8 @@ local zombie_deathwish = {
 		
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",		
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec",
@@ -3273,6 +3418,9 @@ local zombie_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
@@ -3300,7 +3448,7 @@ local zombie_zeal = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer", 
-		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", 
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic",
@@ -3363,6 +3511,9 @@ local zombie_zeal = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
 		
 		--Scripted Spawns Only
 		["units/pd2_dlc_help/characters/ene_zeal_bulldozer_halloween/ene_zeal_bulldozer_halloween"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"

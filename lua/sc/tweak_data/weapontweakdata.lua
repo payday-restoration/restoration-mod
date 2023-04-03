@@ -13471,7 +13471,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hmcar.sounds.charge = "sniper_npc1c_1shot"
 	end
 
-	if self.raygun then --Leather Dann's CoD:Zombies Raygun
+	if self.nckuro then --Zdann and Cpone's Keyboard Warrior
+		self.nckuro.categories = {
+			"grenade_launcher",
+			"gl_pistol"
+		}
+		self.nckuro.use_data.selection_index = 2
+		self.nckuro.CLIP_AMMO_MAX = 30
+		self.nckuro.AMMO_MAX = 60
+		self.nckuro.FIRE_MODE = "single"
+		self.nckuro.BURST_FIRE = 3
+		self.nckuro.BURST_FIRE_RATE_MULTIPLIER = 3
+		self.nckuro.BURST_DELAY = 0.08
+		self.nckuro.fire_mode_data.fire_rate = 0.3
+		self.nckuro.kick = self.stat_info.kick_tables.even_recoil
+		self.nckuro.ads_speed = 0.300
+		self.nckuro.supported = true
+		self.nckuro.stats = {
+			damage = 12,
+			spread = 81,
+			recoil = 81,
+			zoom = 1,
+			concealment = 10,
+			alert_size = 2,
+			suppression = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 10
+		}
+		self.nckuro.stats_modifiers = { damage = 10 }
+		self.nckuro.panic_suppression_chance = 0.05
+		self.nckuro.timers.reload_exit_not_empty = 0.9
+		self.nckuro.timers.reload_exit_empty = 0.9
+	end
+
+	if self.raygun then --Leather Dann, Cpone and VxWolf's CoD:Zombies Raygun
 		self.raygun.categories = {
 			"grenade_launcher",
 			"gl_pistol",
@@ -13479,8 +13514,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.raygun.use_data.selection_index = 2
 		self.raygun.AMMO_MAX = 40
-		self.raygun.supported = true
 		self.raygun.fire_mode_data.fire_rate = 0.33149171270
+		self.raygun.kick = self.stat_info.kick_tables.even_recoil
+		self.raygun.supported = true
 		self.raygun.ads_speed = 0.200
 		self.raygun.stats = {
 			damage = 18,
@@ -13505,15 +13541,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.raygun.timers.reload_exit_empty = 0.7
 	end
 
-	if self.umd_launcher then --Leather Dann's UMD Launcher
+	if self.umd_launcher then --Leather Dann and Cpone's UMD Launcher
 		self.umd_launcher.categories = {
 			"grenade_launcher",
 			"gl_pistol",
 			"raygun"
 		}
 		self.umd_launcher.AMMO_MAX = 6
-		self.umd_launcher.supported = true
+		self.umd_launcher.kick = self.stat_info.kick_tables.even_recoil
 		self.umd_launcher.fire_mode_data.fire_rate = 0.5
+		self.umd_launcher.supported = true
 		self.umd_launcher.ads_speed = 0.200
 		self.umd_launcher.stats = {
 			damage = 60,

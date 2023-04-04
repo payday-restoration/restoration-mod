@@ -1374,7 +1374,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n발사 모드를 전환하면 #{skill_color}#증가된 발사 속도로## #{skill_color}#6발##을 전부 발사합니다.\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n\n#{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#팬링을 하여 발사 속도가 증가시킵니다.##",
 		--CUSTOM HANDGUNS
 		--Browning Hi-Power
 		["bm_w_hpb"] = "Hi-Power 권총",
@@ -1486,7 +1486,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "크기가 축소된 Reinfeld 880 산탄총의 애프터마켓 버전. 은페도를 원하고 손목을 파괴하고 싶은 사람들을 위한 산탄총입니다.",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897 산탄총",
-		["bm_menu_sc_m1897_desc"] = "상징적이고 역사적인 이 작품은 진흙 투성이의 참호에서 치열한 태평양 섬 정글에 이르기까지 모든 것을 보았고 꽤 효과적인 발화점이라는 나쁜 평판을 받았습니다.\n\n대체 발사 모드는 #{important_1}#더 많은 반동과 범위를 희생하는 대신## #{skill_color}#슬램 발사로 연사력을 3배만큼 증가시킵니다.##",
+		["bm_menu_sc_m1897_desc"] = "상징적이고 역사적인 이 작품은 진흙 투성이의 참호에서 치열한 태평양 섬 정글에 이르기까지 모든 것을 보았고 꽤 효과적인 발화점이라는 나쁜 평판을 받았습니다.\n\n발사 모드를 전환하면 #{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가합니다.##",
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "오래된 고전 산탄총의 개선된 버전이고, LEO, 군인, 민간인, 은행 강도 모두에게 괜찮은 선택을 할 수 있는 산탄총입니다.",
 		--R870
@@ -1663,7 +1663,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--QBU88
 		["bm_qbu88_sc_desc"] = "동부 블록에서 영감을 얻은 불펍 저격소총 플랫폼. 많은 사람들처럼, 당신의 의지를 다른 사람들에게 강요하는 데 좋습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",	
 		--Winchester 1874
-		["bm_winchester1874_sc_desc"] = "서부시대를 이긴 총. 총기들 중 성스러운 유물이지만 강력한 .44-40 탄약을 사용하므로 덜 치명적인 소총은 아닙니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_winchester1874_sc_desc"] = "서부시대를 이긴 총. 총기들 중 성스러운 유물이지만 강력한 .44-40 탄약을 사용하므로 덜 치명적인 소총은 아닙니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위를 희생시키는 대신## #{skill_color}#슬램을 하여 발사 속도를 증가시킬 수 있습니다.##",
 		--TTI(TTY)
 		["bm_w_tti"] = "Tecci .308 저격소총",
 		["bm_tti_sc_desc"] = "윅의 개인 총기 중 하나. 온라인 어딘가에는 그가 이 소총으로 3 건을 연습하는 장면이 있다고 합니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1676,7 +1676,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter MK2 저격소총", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_sbl_sc_desc"] = "19세기에 비해 더 큰 슬러그탄을 사용하는 20세기 레버 액션 소총. 45-70탄으로 추가 반동과 추가로 죽어버린 돼지놈들을 기대해보십시오.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위를 희생시키는 대신## #{skill_color}#속사를 하여 발사 속도를 증가시킬 수 있습니다.##",
 		--Contender G2
 		["bm_contender_sc_desc"] = "",			
 		--Model 70
@@ -1753,7 +1753,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "인벤토리에 아직 해당 무기를 가지고 있다면 장비하지 마십시오.\n\n현재 해당 무기의 밸런스를 맞출 방법을 찾을 수 없습니다.",		
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points가## #{important_1}#설치되지 않았습니다.##\n\n해당 부착물은 슬롯의 기본 모양으로 보일 것입니다.",
-		["bm_slamfire_generic_desc"] = "대체 발사 모드는 #{important_1}#더 많은 반동과 범위를 희생하는 대신## #{skill_color}#슬램 발사로 연사력을 3배만큼 증가시킵니다.##",			
+		["bm_slamfire_generic_desc"] = "#{important_1}#반동이 증가하고 유효 범위를 희생시키는 대신## #{skill_color}#슬램을 하여 발사 속도를 증가시킬 수 있습니다.##",
+		["bm_rapidfire_generic_desc"] = "#{important_1}#반동이 증가하고 유효 범위를 희생시키는 대신## #{skill_color}#속사를 하여 발사 속도를 증가시킬 수 있습니다.##",
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통해 피해의 20%를 입힙니다.##",
@@ -2010,6 +2011,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_firemode_auto"] = "자동",
 		["st_menu_firemode_burst"] = "점사",
 		["st_menu_firemode_volley"] = "일제사격",
+			["st_menu_firemode_burst_slamfire"] = "슬램파이어",
+			["st_menu_firemode_burst_fanning"] = "팬링",
+			["st_menu_firemode_burst_rapidfire"] = "속사",
+			["st_menu_firemode_burst_autoburst"] = "자동 점사",		
 		
 		["menu_reticle_dmc_eotech"] = "TECopt 풀",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA 도트",

@@ -14789,7 +14789,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 100,
 			acc = {0.8, 0.9},
 			dmg_mul = 1.25,
-			recoil = {0.4, 0.8},
+			recoil = {0.35, 0.75},
 			mode = {
 				0,
 				3,
@@ -14801,7 +14801,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 500,
 			acc = {0.7, 0.8},
 			dmg_mul = 1.25,
-			recoil = {0.45, 0.8},
+			recoil = {0.35, 0.75},
 			mode = {
 				0,
 				3,
@@ -14837,7 +14837,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2000,
 			acc = {0.4, 0.5},
 			dmg_mul = 1.25,
-			recoil = {0.4, 1.2},
+			recoil = {0.4, 1.0},
 			mode = {
 				3,
 				2,

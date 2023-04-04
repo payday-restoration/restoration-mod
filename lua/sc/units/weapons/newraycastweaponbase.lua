@@ -284,7 +284,11 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	if self:in_burst_mode() then
-		multiplier = multiplier * (self._burst_fire_spread_multiplier or 1)
+		if self._burst_fire_ads_spread_multiplier and current_state:full_steelsight() then
+			multiplier = multiplier * self._burst_fire_ads_spread_multiplier
+		else
+			multiplier = multiplier * (self._burst_fire_spread_multiplier or 1)
+		end
 	end
 
 	spread_area = spread_area * multiplier
@@ -551,6 +555,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
 		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
+		self._burst_fire_ads_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
+		self._burst_fire_range_multiplier = self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.06) or 0.12
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
@@ -1128,7 +1134,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 	if self:in_burst_mode() or self._macno then
 		local no_burst_mult = multiplier
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
-		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
+		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) and not self:weapon_tweak_data().BURST_SLAM then
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
 			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)
@@ -1385,9 +1391,10 @@ end
 
 
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only)
+	local is_rapidfire = self._burst_fire_range_multiplier and self:in_burst_mode()
 	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
-	if (self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or 
-		(managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head) then
+	if not is_rapidfire and ((self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or 
+		(managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head)) then
 		return damage
 	end
 	--Initialize base info.
@@ -1420,6 +1427,11 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 			falloff_end = falloff_end * 1.3
 		end
 	end
+	if is_rapidfire then
+		falloff_start = falloff_start * self._burst_fire_range_multiplier
+		falloff_end = falloff_end * self._burst_fire_range_multiplier
+	end
+
 	--Apply global range multipliers.
 	falloff_start = falloff_start * (1 + 1 - managers.player:get_property("desperado", 1))
 	falloff_end = falloff_end * (1 + 1 - managers.player:get_property("desperado", 1))

@@ -4541,8 +4541,19 @@ function BlackMarketGui:update_info_text()
 						end
 					end
 					if weapon_tweak.BURST_FIRE then
+						local burst_type = nil --weapon_tweak.BURST_TYPE
 						if is_akimbo then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
+						elseif burst_type then
+							if burst_type == "fan" then
+								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_fanning") or managers.localization:to_upper_text("st_menu_firemode_burst_fanning")
+							elseif burst_type == "slam" then
+								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_slamfire") or managers.localization:to_upper_text("st_menu_firemode_burst_slamfire")
+							elseif burst_type == "rapid" then
+								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_rapidfire") or managers.localization:to_upper_text("st_menu_firemode_burst_rapidfire")
+							elseif burst_type == "autoburst" then
+								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_autoburst") or managers.localization:to_upper_text("st_menu_firemode_burst_autoburst")
+							end
 						else
 							firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") or managers.localization:to_upper_text("st_menu_firemode_burst")
 						end

@@ -1408,7 +1408,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC",
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nAlt-fire fans #{skill_color}#6 shots## at an #{skill_color}#increased fire rate.\n\nCan pierce body armor, enemies, shields and thin walls.##",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\nCan pierce body armor, enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 		--CUSTOM PISTOLS
 			--Browning Hi-Power
 			["bm_w_hpb"] = "Hi-Power",
@@ -1564,7 +1564,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897",
-		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nAlt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
+		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nCan be #{skill_color}#slamfired for an increased fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
 		--Mosconi 12g
 		["bm_w_m590"] = "Mosconi Tactical 12G",
 		["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
@@ -1772,7 +1772,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Winchester 1874
 		["bm_w_winchester1874"] = "Repeater 1874",	
-		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
 		--TTI(TTY)
 		["bm_w_tti"] = "Tecci Tactical .308",
 		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
@@ -1788,7 +1788,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
 		--Contender G2
 		["bm_w_contender"] = "Aran G2",
 		["bm_contender_sc_desc"] = "",	
@@ -1884,7 +1884,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_wtfdoido"] = "IF YOU STILL HAVE THIS IN YOUR INVENTORY DO NOT EQUIP.\n\nCURRENTLY CANNOT FIND A WAY TO BALANCE THIS",
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points## is #{important_1}#not installed.##\n\nAttachment will take on the slot's default appearance.",
-		["bm_slamfire_generic_desc"] = "Alt-fire allows for #{skill_color}#slam-firing at 3x the fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
+		["bm_slamfire_generic_desc"] = "Can be #{skill_color}#slamfired for an increased fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
+		["bm_rapidfire_generic_desc"] = "Can be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 20% of its damage through body armor.##",
@@ -2145,6 +2146,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_firemode_semi"] = "SEMI",
 		["st_menu_firemode_auto"] = "AUTO",
 		["st_menu_firemode_burst"] = "BURST",
+			["st_menu_firemode_burst_slamfire"] = "SLAMFIRE",
+			["st_menu_firemode_burst_fanning"] = "FANNING",
+			["st_menu_firemode_burst_rapidfire"] = "RAPIDFIRE",
+			["st_menu_firemode_burst_autoburst"] = "AUTOBURST",
 		["st_menu_firemode_volley"] = "VOLLEY",
 
 		["menu_reticle_dmc_eotech"] = "TECopt Full",

@@ -786,9 +786,12 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						end
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
-
-							if not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow) then
-								self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+							if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
+								if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
+									self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
+								else
+									self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+								end
 							elseif weap_tweak_data.animations.recoil_steelsight then
 								if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
 								else
@@ -2255,8 +2258,8 @@ end
 --Adds burst fire check.
 function PlayerStandard:_check_action_weapon_firemode(t, input)
 	local wbase = self._equipped_unit:base()
-	local is_slamfiring = self._equipped_unit:base():weapon_tweak_data().BURST_SLAM and self._equipped_unit:base():in_burst_mode()
-	if is_slamfiring then
+	local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
+	if burst_hipfire then
 		self:_interupt_action_steelsight(t)
 		if input.btn_steelsight_state then
 			self._steelsight_wanted = true
@@ -2277,8 +2280,8 @@ end
 --Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
 	if alive(self._equipped_unit) and self._equipped_unit:base() then
-		local is_slamfiring = self._equipped_unit:base():weapon_tweak_data().BURST_SLAM and self._equipped_unit:base():in_burst_mode()
-		if is_slamfiring then
+		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
+		if burst_hipfire then
 			self:_interupt_action_steelsight(t)
 		end
 		if self._equipped_unit:base():burst_rounds_remaining() or (self._equipped_unit:base():in_burst_mode() and self._equipped_unit:base()._auto_burst and not self._equipped_unit:base():clip_empty() and self._controller and self._controller:get_input_bool("primary_attack")) then
@@ -2417,9 +2420,9 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
-		local is_slamfiring = self._equipped_unit:base():weapon_tweak_data().BURST_SLAM and self._equipped_unit:base():in_burst_mode()
+		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
 
-		if is_slamfiring or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.3)) then
+		if burst_hipfire or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * 0.3)) then
 			self._steelsight_wanted = true
 			return
 		end

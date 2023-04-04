@@ -560,6 +560,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.06) or 0.12
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
+		if self._lock_burst then
+			self:_set_burst_mode(true, true)
+		end
 		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
 		
 		self._burst_rounds_fired = 0

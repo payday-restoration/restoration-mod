@@ -1182,7 +1182,7 @@ local muzzle_device = {
 			supported = true,
 			stats = {
 				value = 9,
-				total_ammo_mod = -33,
+				total_ammo_mod = -68,
 				damage = 15
 			},
 			custom_stats = {
@@ -1200,7 +1200,7 @@ local muzzle_device = {
 			stats = {
 				value = 9,
 				spread = -5,
-				total_ammo_mod = -25,
+				total_ammo_mod = -52,
 				damage = 15
 			},
 			custom_stats = {
@@ -1217,7 +1217,7 @@ local muzzle_device = {
 			stats = {
 				value = 9,
 				spread = -5,
-				total_ammo_mod = -33,
+				total_ammo_mod = -68,
 				damage = 30
 			},
 			custom_stats = {
@@ -1237,7 +1237,7 @@ local muzzle_device = {
 			stats = {
 				value = 10,
 				concealment = -3,
-				total_ammo_mod = -33,
+				total_ammo_mod = -68,
 				damage = 15,
 				recoil = -20,
 				spread = 12,
@@ -1266,7 +1266,7 @@ local muzzle_device = {
 			stats = {
 				value = 10,
 				concealment = -3,
-				total_ammo_mod = -25,
+				total_ammo_mod = -52,
 				damage = 15,
 				spread = 12,
 				spread_multi = {1, 1},	
@@ -1294,7 +1294,7 @@ local muzzle_device = {
 			stats = {
 				value = 10,
 				concealment = -3,
-				total_ammo_mod = -33,
+				total_ammo_mod = -68,
 				damage = 30,
 				recoil = -20,
 				spread = 12,
@@ -1324,7 +1324,7 @@ local muzzle_device = {
 				value = 10,
 				recoil = -25,
 				spread = 2,
-				total_ammo_mod = -50,
+				total_ammo_mod = -102,
 				concealment = -5,
 				damage = 30
 			},
@@ -1346,7 +1346,7 @@ local muzzle_device = {
 				value = 10,
 				recoil = -25,
 				spread = 2,
-				total_ammo_mod = -50,
+				total_ammo_mod = -102,
 				concealment = -5,
 				damage = 45
 			},
@@ -1367,7 +1367,7 @@ local muzzle_device = {
 			supported = true,
 			stats = {
 				value = 10,
-				total_ammo_mod = -50,
+				total_ammo_mod = -102,
 				recoil = -25,
 				spread = 2,
 				concealment = -5,
@@ -6193,7 +6193,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				spread = 5,
 				concealment = -5,
 				spread_multi = {1, 1},	
-				total_ammo_mod = -50,
+				total_ammo_mod = -102,
 				damage = 90
 			},
 			custom_stats = {
@@ -9274,7 +9274,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_slug.stats = {
 		value = 10,
 		concealment = -3,
-		total_ammo_mod = -25,
+		total_ammo_mod = -52,
 		damage = 30,	
 		recoil = -20,
 		spread = 12,
@@ -9302,7 +9302,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_custom.stats = {
 		value = 9,
 		spread = -5,
-		total_ammo_mod = -25,
+		total_ammo_mod = -52,
 		damage = 30
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
@@ -9325,7 +9325,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_explosive.supported = true
 	self.parts.wpn_fps_upg_a_explosive.stats = {
 		value = 10,
-		total_ammo_mod = -50,
+		total_ammo_mod = -102,
 		damage = 90,
 		recoil = -25,
 		spread = 2,
@@ -9567,7 +9567,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				damage = -42,
 				spread = -20,
 				reload = 1,
-				total_ammo_mod = 230
+				total_ammo_mod = 462
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -9587,7 +9587,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				damage = -48,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = 200
+				total_ammo_mod = 402
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -9607,7 +9607,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				damage = -48,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = 200
+				total_ammo_mod = 402
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -9627,7 +9627,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				damage = -36,
 				spread = -30,
 				reload = 2,
-				total_ammo_mod = 100
+				total_ammo_mod = 202
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -9647,7 +9647,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				damage = -18,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = 100
+				total_ammo_mod = 202
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -9667,7 +9667,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				damage = -36,
 				spread = -30,
 				reload = 2,
-				total_ammo_mod = 100
+				total_ammo_mod = 202
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -11818,7 +11818,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		value = 1,
 		extra_ammo = 10,
 		damage = -30,
-		total_ammo_mod = 50
+		total_ammo_mod = 102
 	}
 	
 	--Sharp Blade
@@ -11829,7 +11829,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		value = 1,
 		extra_ammo = -5,
 		damage = 30,
-		total_ammo_mod = -25
+		total_ammo_mod = -52
 	}
 	
 	--Raptor Polymer Body/Thales F88/90 Stock
@@ -12471,7 +12471,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_plainsrider", "resmod_plainsrider"
 	self.parts.wpn_fps_upg_a_bow_explosion.has_description = true
 	self.parts.wpn_fps_upg_a_bow_explosion.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_upg_a_bow_explosion.supported = true
-	self.parts.wpn_fps_upg_a_bow_explosion.stats = {damage = 60, total_ammo_mod = -50, spread = -6}
+	self.parts.wpn_fps_upg_a_bow_explosion.stats = {damage = 60, total_ammo_mod = -102, spread = -6}
 	self.parts.wpn_fps_upg_a_bow_explosion.custom_stats = {
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "west_arrow_exp",
@@ -13043,7 +13043,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 	self.parts.wpn_fps_upg_a_crossbow_explosion.supported = true
 	self.parts.wpn_fps_upg_a_crossbow_explosion.has_description = true
 	self.parts.wpn_fps_upg_a_crossbow_explosion.desc_id = "bm_w_xbow_exp_desc"
-	self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 60, total_ammo_mod = -35, spread = -12}
+	self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 60, total_ammo_mod = -72, spread = -12}
 	self.parts.wpn_fps_upg_a_crossbow_explosion.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
@@ -13167,7 +13167,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_arblast", "resmod_arblast", functi
 	self.parts.wpn_fps_bow_arblast_m_explosive.supported = true
 	self.parts.wpn_fps_bow_arblast_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_arblast_m_explosive.desc_id = "bm_w_xbow_exp_desc"
-	self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -12}
+	self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -82, spread = -12}
 	self.parts.wpn_fps_bow_arblast_m_explosive.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
@@ -13206,7 +13206,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 	self.parts.wpn_fps_bow_frankish_m_explosive.supported = true
 	self.parts.wpn_fps_bow_frankish_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_frankish_m_explosive.desc_id = "bm_w_xbow_exp_desc"
-	self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -50, spread = -12}
+	self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -102, spread = -12}
 	self.parts.wpn_fps_bow_frankish_m_explosive.custom_stats = {
 		hip_mult = 3,
 		alt_desc = "bm_xbow_exp_sc_desc",
@@ -13226,7 +13226,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_long", "resmod_long", function(sel
 	self.parts.wpn_fps_bow_long_m_explosive.supported = true
 	self.parts.wpn_fps_bow_long_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_long_m_explosive.desc_id = "bm_w_bow_exp_desc"
-	self.parts.wpn_fps_bow_long_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -6}
+	self.parts.wpn_fps_bow_long_m_explosive.stats = {damage = 60, total_ammo_mod = -82, spread = -6}
 	self.parts.wpn_fps_bow_long_m_explosive.custom_stats = {
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "long_arrow_exp",
@@ -14119,7 +14119,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 				spread = 5,
 				concealment = -5,
 				spread_multi = {1, 1},	
-				total_ammo_mod = -50,
+				total_ammo_mod = -102,
 				damage = 90
 			},
 			custom_stats = {
@@ -15552,7 +15552,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.supported = true
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.stats = {
 		damage = 45, 
-		total_ammo_mod = -50, 
+		total_ammo_mod = -102, 
 		spread = -12
 	}
 	self.parts.wpn_fps_bow_ecp_m_arrows_explosive.custom_stats = {
@@ -16354,7 +16354,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_elastic", "resmod_elastic", functi
 	self.parts.wpn_fps_bow_elastic_m_explosive.has_description = true
 	self.parts.wpn_fps_bow_elastic_m_explosive.desc_id = "bm_w_bow_exp_desc"
 	self.parts.wpn_fps_bow_elastic_m_explosive.supported = true
-	self.parts.wpn_fps_bow_elastic_m_explosive.stats = {damage = 60, total_ammo_mod = -40, spread = -6}
+	self.parts.wpn_fps_bow_elastic_m_explosive.stats = {damage = 60, total_ammo_mod = -82, spread = -6}
 	self.parts.wpn_fps_bow_elastic_m_explosive.custom_stats = {
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "elastic_arrow_exp",
@@ -17513,7 +17513,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 			damage = 30,
 			recoil = -6,
 			concealment = -3,
-			total_ammo_mod = -25,
+			total_ammo_mod = -52,
 			suppression = -1
 		},
 		custom_stats = {
@@ -18410,7 +18410,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 	self.parts.wpn_fps_pis_type54_underbarrel.supported = true
 	self.parts.wpn_fps_pis_type54_underbarrel.stats = {
 		value = 8,
-		total_ammo_mod = -25, 
+		total_ammo_mod = -52, 
 		concealment = -4
 	}		
 	
@@ -18440,7 +18440,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_type54", "resmod_x_type54", func
 	self.parts.wpn_fps_pis_x_type54_underbarrel.supported = true
 	self.parts.wpn_fps_pis_x_type54_underbarrel.stats = {
 		value = 8,
-		total_ammo_mod = -25, 
+		total_ammo_mod = -52, 
 		concealment = -4
 	}	
 
@@ -22874,7 +22874,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ks23_ammo_slug.stats = {
 			value = 10,
 			concealment = -3,
-			total_ammo_mod = -25,
+			total_ammo_mod = -52,
 			damage = 30,	
 			recoil = -20,
 			spread = 12,
@@ -24924,7 +24924,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 1,
 			extra_ammo = -5,
 			damage = 30,
-			total_ammo_mod = -25
+			total_ammo_mod = -52
 		}
 
 		--(Compact-5) Package Deal Magazines
@@ -25217,7 +25217,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					spread = 5,
 					concealment = -5,
 					spread_multi = {1, 1},	
-					total_ammo_mod = -50,
+					total_ammo_mod = -102,
 					damage = 90
 				},
 				custom_stats = {
@@ -25907,7 +25907,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.desc_id = "bm_wp_upg_a_custom_desc"
 		self.parts.wpn_fps_upg_mp153_ammo_000_magnum.stats = {
 			value = 9,
-			total_ammo_mod = -25,
+			total_ammo_mod = -52,
 			spread = -5,
 			damage = 15
 		}
@@ -27458,7 +27458,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 10,
 			damage = -30,
 			spread = -10,
-			total_ammo_mod = 33,
+			total_ammo_mod = 68,
 			extra_ammo = 6,
 			recoil = 10,
 			concealment = 5
@@ -27726,7 +27726,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			damage = 150,
 			recoil = -18,
 			concealment = -18,
-			total_ammo_mod = -85,
+			total_ammo_mod = -172,
 			extra_ammo = -4,
 			reload = 7
 		}
@@ -29906,6 +29906,41 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_m4_usasoc.override.wpn_fps_upg_m4_s_standard = {
 			stats = {},
 			custom_stats = {}
+		}
+
+	end
+
+	if self.parts.wpn_fps_upg_fazertron_vg_guard then -->:3's FC3BD Fazertron
+
+		self.parts.wpn_fps_upg_fazertron_vg_guard.supported = true
+		self.parts.wpn_fps_upg_fazertron_vg_guard.stats = {
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_upg_fazertron_ns_booster.supported = true
+		self.parts.wpn_fps_upg_fazertron_ns_booster.stats = {
+			recoil = -4,
+			concealment = -1,
+		}
+		self.parts.wpn_fps_upg_fazertron_ns_booster.custom_stats = {
+			rof_mult = 1.0625
+		}
+
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit.supported = true
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit.keep_damage = true
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit.stats = {
+			damage = 10,
+			recoil = -4,
+			total_ammo_mod = -68
+		}
+
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit_mag.supported = true
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit_mag.stats = {
+			value = 0
+		}
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit_mag.custom_stats = {
+			trail_effect = "_dmc/effects/sterwers_trail_t",
 		}
 
 	end

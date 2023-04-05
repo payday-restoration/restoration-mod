@@ -420,6 +420,7 @@
 	<df_nm				path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head"/>
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_il"/>	
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df"/>
 	<!-- Bravo Guns -->
 	<!--RPK-->
 	<unit_obj			path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo" load="false" force="false"/>

@@ -331,40 +331,6 @@ function DialogManager:queue_dialog(id, ...)
 				escape_time = 900
 			end		
 		end		
-	
-		--generic "that's enough but you can stay for more"--				
-		if id == "play_pln_gen_bfr_06" then
-			if difficulty_index <= 2 then
-				escape_time = 1050
-			elseif difficulty_index == 3 then
-				escape_time = 1020
-			elseif difficulty_index == 4 then
-				escape_time = 990
-			elseif difficulty_index == 5 then
-				escape_time = 960	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 930					
-			else
-				escape_time = 900
-			end		
-		end		
-		
-		--Nightclub--
-		if id == "pln_nightclub_stage1_10" then
-			if difficulty_index <= 2 then
-				escape_time = 1050
-			elseif difficulty_index == 3 then
-				escape_time = 1020
-			elseif difficulty_index == 4 then
-				escape_time = 990
-			elseif difficulty_index == 5 then
-				escape_time = 960	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 930					
-			else
-				escape_time = 900
-			end		
-		end		
 		
 		--Firestarter Day 1--
 		if id == "pln_fs1_09" then
@@ -414,40 +380,6 @@ function DialogManager:queue_dialog(id, ...)
 				escape_time = 330						
 			else
 				escape_time = 300
-			end
-		end	
-	
-		--Goat Simulator Day 1--		
-		if id == "Play_vld_pt1_05b" then
-			if difficulty_index <= 2 then
-				escape_time = 690
-			elseif difficulty_index == 3 then
-				escape_time = 660
-			elseif difficulty_index == 4 then
-				escape_time = 630
-			elseif difficulty_index == 5 then
-				escape_time = 600	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 570						
-			else
-				escape_time = 540
-			end
-		end
-	
-		--Goat Simulator Day 2--		
-		if id == "Play_pln_pt2_16" then
-			if difficulty_index <= 2 then
-				escape_time = 1200 
-			elseif difficulty_index == 3 then
-				escape_time = 1170
-			elseif difficulty_index == 4 then
-				escape_time = 1140
-			elseif difficulty_index == 5 then
-				escape_time = 1080	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 1080						
-			else
-				escape_time = 1050
 			end
 		end
 	
@@ -568,77 +500,7 @@ function DialogManager:queue_dialog(id, ...)
 			else
 				escape_time = 900
 			end		
-		end	
-	
-		--Watchdogs Day 1 IF twitch dies--
-		--when bain says bile is coming
-		if id == "pln_watchdogs_new_stage1_21" then
-			if difficulty_index <= 2 then
-				escape_time = 750
-			elseif difficulty_index == 3 then
-				escape_time = 720
-			elseif difficulty_index == 4 then
-				escape_time = 690
-			elseif difficulty_index == 5 then
-				escape_time = 660	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 630						
-			else
-				escape_time = 600
-			end
 		end
-	
-		--Scarface Mansion--
-		if id == "Play_pln_fri_36" then
-			if difficulty_index <= 2 then
-				escape_time = 750
-			elseif difficulty_index == 3 then
-				escape_time = 720
-			elseif difficulty_index == 4 then
-				escape_time = 690
-			elseif difficulty_index == 5 then
-				escape_time = 660	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 630						
-			else
-				escape_time = 600
-			end	
-		end	
-	
-		--Bomb Dockyard--
-		--PLEASE WORK ALL THE TIME NOW
-		if id == "Play_pln_cr2_35" or id == "Play_pln_cr2_104" then
-			if difficulty_index <= 2 then
-				escape_time = 690
-			elseif difficulty_index == 3 then
-				escape_time = 660
-			elseif difficulty_index == 4 then
-				escape_time = 630
-			elseif difficulty_index == 5 then
-				escape_time = 600	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 570						
-			else
-				escape_time = 540
-			end	
-		end	
-		
-		--White Xmas
-		if id == "Play_vld_cp1_03" or id == "Play_pln_cp1_08" then
-			if difficulty_index <= 2 then
-				escape_time = 660
-			elseif difficulty_index == 3 then
-				escape_time = 540
-			elseif difficulty_index == 4 then
-				escape_time = 510
-			elseif difficulty_index == 5 then
-				escape_time = 480	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 450						
-			else
-				escape_time = 420
-			end	
-		end	
 	
 		--Big Oil Day 1--
 		if id == "pln_bo1_05" then

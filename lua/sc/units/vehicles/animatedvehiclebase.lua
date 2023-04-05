@@ -18,7 +18,7 @@ Hooks:PostHook(AnimatedVehicleBase, "set_enabled", "woohoo_wow", function(self, 
         elseif self._unit:damage():has_sequence("mat_zeals") and difficulty == 8 then
             self._unit:damage():run_sequence_simple("mat_zeals")    
         end
-	elseif faction == "lapd" or faction "fbi" then	 
+	elseif faction == "lapd" or faction == "fbi" then	 
         if self._unit:damage():has_sequence("mat_blueswat") and difficulty < 5 then
             self._unit:damage():run_sequence_simple("mat_blueswat")
         elseif self._unit:damage():has_sequence("mat_fbi")  and difficulty == 5 or difficulty == 6 then

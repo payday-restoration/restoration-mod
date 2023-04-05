@@ -6213,7 +6213,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.peacemaker.stats_modifiers = nil
 				self.peacemaker.panic_suppression_chance = 0.05
-				self.peacemaker.object_damage_mult = 4
+				self.peacemaker.object_damage_mult = 2
 				self.peacemaker.armor_piercing_chance = 1
 				self.peacemaker.can_shoot_through_enemy = true
 				self.peacemaker.can_shoot_through_wall = true
@@ -7443,6 +7443,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.timers.reload_exit_not_empty = 2.5
 			self.m249.panic_suppression_chance = 0.05
 			self.m249.reload_speed_multiplier = 0.75
+	
+		--IM AT SOUP (XXX)
+		--[[
+			self.XXX.categories = {
+				"lmg",
+				"smg"
+			}
+			self.XXX.CLIP_AMMO_MAX = 1
+			self.XXX.AMMO_MAX = 300
+			self.XXX.fire_mode_data.fire_rate = 1
+			self.XXX.kick = self.stat_info.kick_tables.even_recoil
+			self.XXX.supported = true
+			self.XXX.ads_speed = 0.500
+			self.XXX.damage_falloff = {
+				start_dist = 2000,
+				end_dist = 7200,
+				min_mult = 0.4166
+			}
+			self.XXX.stats = {
+				damage = 24,
+				spread = 1,
+				recoil = 1,
+				spread_moving = 5,
+				zoom = 1,
+				concealment = 1,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 9,
+				reload = 20
+			}
+			self.XXX.stats_modifiers = nil
+			self.XXX.panic_suppression_chance = 0.05
+		--]]
 	
 		--RPK
 			self.rpk.desc_id = "bm_rpk_sc_desc"
@@ -9575,7 +9610,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.siltstone.timers.reload_exit_empty = 0.4
 				self.siltstone.timers.reload_exit_not_empty = 0.4
 
-			--Bernetti Rangehitter
+			--Bernetti Rangehitter (Marlin SBL)
 				self.sbl.upgrade_blocks = nil
 				self.sbl.has_description = true
 				self.sbl.desc_id = "bm_sbl_sc_desc"
@@ -9664,7 +9699,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mosin.timers.reload_exit_empty = 1.6
 				self.mosin.timers.reload_exit_not_empty = 1.6
 
-			--Platypus 70
+			--Platypus 70 (Winchester Model 70)
 				self.model70.upgrade_blocks = nil
 				self.model70.has_description = true
 				self.model70.desc_id = "bm_model70_sc_desc"
@@ -9701,6 +9736,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model70.timers.reload_empty = 4.3	
 				self.model70.timers.reload_exit_empty = 0.8
 				self.model70.timers.reload_exit_not_empty = 0.95
+
+			--awoo (XXX)
+			--[[			
+				self.XXX.upgrade_blocks = nil
+				self.XXX.CLIP_AMMO_MAX = 1
+				self.XXX.AMMO_MAX = 30
+				self.XXX.fire_mode_data.fire_rate = 1
+				self.XXX.fire_rate_multiplier = 1
+				self.XXX.kick = self.stat_info.kick_tables.vertical_kick
+				self.XXX.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.XXX.supported = true
+				self.XXX.ads_speed = 0.480
+				self.XXX.damage_falloff = {
+					start_dist = 5500,
+					end_dist = 9000,
+					min_mult = 0.75
+				}
+				self.XXX.stats = {
+					damage = 120,
+					spread = 1,
+					recoil = 1,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 1,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.XXX.armor_piercing_chance = 1
+				self.XXX.stats_modifiers = nil
+				self.XXX.panic_suppression_chance = 0.05
+				self.XXX.timers.reload_exit_empty = 0.85
+				self.XXX.timers.reload_exit_not_empty = 0.95
+			--]]
 
 			--R93 (Blaser R93)
 				self.r93.has_description = true
@@ -10308,6 +10380,38 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m590.timers.shotgun_reload_shell = 0.5666666666666667
 				self.m590.timers.shotgun_reload_exit_not_empty = 0.3
 				self.m590.timers.shotgun_reload_exit_empty = 0.7
+
+			--Smoking Kills (XXXX)
+			--[[
+				self.XXXX.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.XXXX.rays = 9
+				self.XXXX.kick = self.stat_info.kick_tables.vertical_kick
+				self.XXXX.CLIP_AMMO_MAX = 1
+				self.XXXX.AMMO_MAX = 60
+				self.XXXX.supported = true
+				self.XXXX.ads_speed = 0.400
+				self.XXXX.damage_falloff = {
+					start_dist = 700,
+					end_dist = 2600,
+					min_mult = 0.3333
+				}
+				self.XXXX.stats = {
+					damage = 60,
+					spread = 1,
+					recoil = 1,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 1,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}		
+				self.XXXX.stats_modifiers = nil
+				self.XXXX.panic_suppression_chance = 0.05
+			--]]
 
 			--Reinfeld 880 (R870)
 				self.r870.desc_id = "bm_menu_sc_r870_desc"
@@ -11041,7 +11145,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--self.plainsrider.desc_id = "bm_bow_alt_sc_desc"
 				self.plainsrider.kick = self.stat_info.kick_tables.none
 				self.plainsrider.AMMO_MAX = 30
-				self.plainsrider.charge_data.max_t = 0.5
+				self.plainsrider.charge_data.max_t = 0.3
 				self.plainsrider.not_allowed_in_bleedout = false
 				self.plainsrider.supported = true
 				self.plainsrider.ads_speed = 0.200
@@ -11078,7 +11182,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.long.has_description = true
 				self.long.desc_id = "bm_bow_sc_desc"
 				self.long.kick = self.stat_info.kick_tables.none	
-				self.long.charge_data.max_t = 0.6
+				self.long.charge_data.max_t = 0.4
 				self.long.not_allowed_in_bleedout = false
 				self.long.AMMO_MAX = 20
 				self.long.panic_suppression_chance = 0.05
@@ -11104,7 +11208,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.long.timers.reload_empty = self.long.timers.reload_not_empty
 				self.long.timers.reload_exit_not_empty = 0.7
 				self.long.timers.reload_exit_empty = self.long.timers.reload_exit_not_empty
-				self.long.reload_speed_multiplier = 2.8
+				self.long.reload_speed_multiplier = 2.9
 	
 			--DECA Technologies Compound Bow
 				self.elastic.upgrade_blocks = {
@@ -11123,7 +11227,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					equip = 0.85
 				}		
 				self.elastic.kick = self.stat_info.kick_tables.none			
-				self.elastic.charge_data.max_t = 0.7
+				self.elastic.charge_data.max_t = 0.5
 				self.elastic.not_allowed_in_bleedout = false
 				self.elastic.AMMO_MAX = 20
 				self.elastic.panic_suppression_chance = 0.05
@@ -11138,8 +11242,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.elastic.stats = {
 					damage = 90,
-					spread = 96,
-					recoil = 97,
+					spread = 100,
+					recoil = 93,
 					spread_moving = 12,
 					zoom = 1,
 					concealment = 30,
@@ -11155,7 +11259,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.elastic.timers.reload_empty = self.elastic.timers.reload_not_empty
 				self.elastic.timers.reload_exit_not_empty = 0.6
 				self.elastic.timers.reload_exit_empty = self.elastic.timers.reload_exit_not_empty
-				self.elastic.reload_speed_multiplier = 2.4
+				self.elastic.reload_speed_multiplier = 2.5
 
 		--SECONDARIES
 

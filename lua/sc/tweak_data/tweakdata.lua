@@ -672,7 +672,7 @@ velocity = {
 	'frankish_arrow'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 3000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -682,7 +682,7 @@ end
 		'frankish_poison_arrow'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].launch_speed = 3000 * velocity_mult * 0.85
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -692,7 +692,7 @@ end
 		'frankish_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 3500 * velocity_mult * 0.45
+		tweak_data.projectiles[proj_id].launch_speed = 3000 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -730,7 +730,7 @@ velocity = {
 	'ecp_arrow'
 }
 for i, proj_id in ipairs(velocity) do
-	tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult
+	tweak_data.projectiles[proj_id].launch_speed = 9000 * velocity_mult
 	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
@@ -739,7 +739,7 @@ end
 		'ecp_arrow_poison'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.85
+		tweak_data.projectiles[proj_id].launch_speed = 9000 * velocity_mult * 0.85
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -748,7 +748,7 @@ end
 		'ecp_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 8500 * velocity_mult * 0.45
+		tweak_data.projectiles[proj_id].launch_speed = 9000 * velocity_mult * 0.45
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

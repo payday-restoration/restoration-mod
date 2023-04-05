@@ -330,23 +330,6 @@ function DialogManager:queue_dialog(id, ...)
 			else
 				escape_time = 540
 			end
-		end	
-	
-		--The Diamond--
-		if id == "Play_pln_hd1_34" then
-			if difficulty_index <= 2 then
-				escape_time = 1050
-			elseif difficulty_index == 3 then
-				escape_time = 1020
-			elseif difficulty_index == 4 then
-				escape_time = 990
-			elseif difficulty_index == 5 then
-				escape_time = 960	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 930					
-			else
-				escape_time = 900
-			end		
 		end
 	
 		--Big Oil Day 1--
@@ -381,41 +364,7 @@ function DialogManager:queue_dialog(id, ...)
 			else
 				escape_time = 480
 			end		
-		end	
-		
-		--Breaking Ballot--
-		if id == "Play_pln_ed3_18" or id == "Play_pln_ed3_17" then
-			if difficulty_index <= 2 then
-				escape_time = 450 
-			elseif difficulty_index == 3 then
-				escape_time = 420
-			elseif difficulty_index == 4 then
-				escape_time = 390
-			elseif difficulty_index == 5 then
-				escape_time = 360	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 330						
-			else
-				escape_time = 300
-			end
-		end		
-		
-		--Swing Vote--
-		if id == "Play_pln_ed2_14" then
-			if difficulty_index <= 2 then
-				escape_time = 450 
-			elseif difficulty_index == 3 then
-				escape_time = 420
-			elseif difficulty_index == 4 then
-				escape_time = 390
-			elseif difficulty_index == 5 then
-				escape_time = 360	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 330						
-			else
-				escape_time = 300
-			end
-		end					
+		end			
 
 		--Aftershock--
 		if id == "Play_plt_as1_01" then

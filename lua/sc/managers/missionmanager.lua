@@ -43,6 +43,8 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			
 			-- Check if this element is supposed to trigger a point of no return
 			if data.ponr then
+			local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+			local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 				local function set_ponr()
 					local ponr_timer_balance_mul = data.ponr_player_mul and managers.groupai:state():_get_balancing_multiplier(data.ponr_player_mul) or 1
 					managers.groupai:state():set_point_of_no_return_timer(data.ponr * ponr_timer_balance_mul, 0)

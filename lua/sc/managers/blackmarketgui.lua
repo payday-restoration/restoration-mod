@@ -4799,13 +4799,13 @@ function BlackMarketGui:update_info_text()
 		if has_info_id or swing_arc then
 			local desc_text = has_info_id and managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id) or ""
 			if swing_arc then
-				if swing_arc >= 40 then
+				if swing_arc >= 32 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_4")
-				elseif swing_arc >= 30 then
+				elseif swing_arc >= 24 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_3")
-				elseif swing_arc >= 20 then
+				elseif swing_arc >= 16 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_2")
-				elseif swing_arc >= 10 then
+				elseif swing_arc >= 8 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_1")
 				end
 			end

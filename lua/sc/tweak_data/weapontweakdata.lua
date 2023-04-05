@@ -13840,6 +13840,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fp45.timers.reload_exit_empty = 1.3
 	end
 
+	if self.duke1911 then --Pawcio's Duke Nukem 1911
+		self.duke1911.recategorize = {"heavy_pis"}
+		self.duke1911.damage_type = "heavy_pistol"
+		self.duke1911.lock_slide = true
+		self.duke1911.fire_mode_data.fire_rate = 0.15
+		self.duke1911.CLIP_AMMO_MAX = 8
+		self.duke1911.AMMO_MAX = 30
+		self.duke1911.kick = self.stat_info.kick_tables.right_recoil
+		self.duke1911.supported = true
+		self.duke1911.ads_speed = 0.220
+		self.duke1911.damage_falloff = {
+			start_dist = 800,
+			end_dist = 2900,
+			min_mult = 0.25
+		}
+		self.duke1911.stats = {
+			damage = 60,
+			spread = 53,
+			recoil = 71,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 27,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.duke1911.stats_modifiers = nil
+		self.duke1911.panic_suppression_chance = 0.05
+		self.duke1911.timers.reload_not_empty = 2.1
+		self.duke1911.timers.reload_exit_not_empty = 0.6
+		self.duke1911.timers.reload_empty = 2.65
+		self.duke1911.timers.reload_exit_empty = 0.75
+	end
+
 	if self.ppsh then --Pawcio's PPSH
 		self.ppsh.recategorize = {"heavy_smg"}
 		self.ppsh.damage_type = "machine_gun"

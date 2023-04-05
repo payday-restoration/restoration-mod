@@ -12344,6 +12344,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_peacemaker", "resmod_peacemaker", 
 	self.parts.wpn_fps_pis_peacemaker_s_skeletal.stats = deep_clone(stocks.add_fixed_stats)
 	self.parts.wpn_fps_pis_peacemaker_s_skeletal.custom_stats = deep_clone(stocks.add_fixed_stats)
 
+
+	self.wpn_fps_pis_peacemaker.override = self.wpn_fps_pis_peacemaker.override or {}
+	self.wpn_fps_pis_peacemaker.override.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "slide"
+	}
+	self.wpn_fps_pis_peacemaker.override.wpn_fps_upg_ns_pis_typhoon = {
+		a_obj = "a_ns",
+		parent = "slide"
+	}
+
+	table.insert(self.wpn_fps_pis_peacemaker.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_peacemaker.uses_parts, "wpn_fps_upg_ns_pis_typhoon")
+
+	self.wpn_fps_pis_peacemaker_npc.override = deep_clone(self.wpn_fps_pis_peacemaker.override)
+	self.wpn_fps_pis_peacemaker_npc.uses_parts = deep_clone(self.wpn_fps_pis_peacemaker.uses_parts)
+
 end)
 
 --Repeater 1874
@@ -25625,7 +25642,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ass_ns_linear")
 		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ass_ns_surefire")
 		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_firepig")
-		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_stubby")
 		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_tank")
 		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
 		table.insert(self.wpn_fps_snp_musket.uses_parts, "wpn_fps_upg_ns_ass_smg_v6")

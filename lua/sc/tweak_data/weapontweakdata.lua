@@ -8122,7 +8122,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.corgi.stats_modifiers = nil
 				self.corgi.panic_suppression_chance = 0.05
+				self.corgi.timers.reload_empty = 2.85
 				self.corgi.timers.reload_exit_empty = 0.6
+				self.corgi.timers.reload_not_empty = 2.1
 				self.corgi.timers.reload_exit_not_empty = 0.75
 				self.corgi.reload_speed_multiplier = 0.85
 

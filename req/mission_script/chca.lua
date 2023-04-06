@@ -1,4 +1,4 @@
-if Global.game_settings and Global.game_settings.one_down and not managers.groupai:state():whisper_mode() then
+if Global.game_settings and Global.game_settings.one_down then
 ponr_value_1 = 0
 ponr_toggle_1 = false
 

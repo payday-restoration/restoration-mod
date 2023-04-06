@@ -49,7 +49,7 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 					local ponr_timer_balance_mul = data.ponr_player_mul and managers.groupai:state():_get_balancing_multiplier(data.ponr_player_mul) or 1
 					managers.groupai:state():set_point_of_no_return_timer(data.ponr * ponr_timer_balance_mul, 0)
 				end
-
+				
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_ponr_" .. element_id, set_ponr)
 				Hooks:PostHook(element, "client_on_executed", "sh_client_on_executed_ponr_" .. element_id, set_ponr)
 			end

@@ -9088,8 +9088,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.can_shoot_through_enemy = true
 				self.new_m14.can_shoot_through_wall = true
 				self.new_m14.timers.reload_not_empty = 2.60
-				self.new_m14.timers.reload_exit_empty = 0.9
 				self.new_m14.timers.reload_exit_not_empty = 1.1
+				self.new_m14.timers.reload_empty = 3.15
+				self.new_m14.timers.reload_exit_empty = 0.9
+				if BeardLib.Utils:FindMod("Apex M308 Reload") then
+					local empty_timer = 2.35
+					self.new_m14.reload_speed_multiplier = empty_timer / self.new_m14.timers.reload_empty
+					self.new_m14.timers.reload_not_empty = 1.65
+					self.new_m14.timers.reload_exit_not_empty = 0.58
+					self.new_m14.timers.reload_empty = empty_timer
+					self.new_m14.timers.reload_exit_empty = 0.5
+				end
 				self.new_m14.panic_suppression_chance = 0.05
 		
 			--Gewehr 3 (G3A3)

@@ -780,6 +780,7 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].launch_speed = 1800
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

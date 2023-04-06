@@ -3093,8 +3093,8 @@ function WeaponTweakData:_init_stats()
 		standing = 3.5,
 		moving_crouching = 2.5,
 		crouching = 2.5,
-		moving_steelsight = 0.08,
-		steelsight = 0.08,
+		moving_steelsight = 0.075,
+		steelsight = 0.075,
 		bipod = 1,
 		player_turret = 1,
 	}
@@ -8073,7 +8073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 87,
+					recoil = 89,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -9066,7 +9066,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.AMMO_MAX = 60
 				self.new_m14.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.new_m14.supported = true
-				self.new_m14.ads_speed = 0.420
+				self.new_m14.ads_speed = 0.400
 				self.new_m14.damage_falloff = {
 					start_dist = 2200,
 					end_dist = 6600,
@@ -9337,7 +9337,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.winchester1874.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
 				self.winchester1874.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
 				self.winchester1874.BURST_FIRE_SPREAD_MULTIPLIER = 2
-				self.winchester1874.BURST_FIRE_ADS_SPREAD_MULTIPLIER = 18.75
+				self.winchester1874.BURST_FIRE_ADS_SPREAD_MULTIPLIER = 20
 				self.winchester1874.BURST_FIRE_RANGE_MULTIPLIER = 0.33
 				self.winchester1874.CAN_TOGGLE_FIREMODE = false
 				self.winchester1874.kick = self.stat_info.kick_tables.left_kick
@@ -9638,7 +9638,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sbl.AUTO_BURST = true
 				self.sbl.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
 				self.sbl.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
-				self.sbl.BURST_FIRE_ADS_SPREAD_MULTIPLIER = 18.75
+				self.sbl.BURST_FIRE_ADS_SPREAD_MULTIPLIER = 20
 				self.sbl.BURST_FIRE_RANGE_MULTIPLIER = 0.33
 				self.sbl.BURST_FIRE_SPREAD_MULTIPLIER = 2
 				self.sbl.CAN_TOGGLE_FIREMODE = false

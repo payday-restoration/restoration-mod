@@ -113,7 +113,7 @@ local crew_wep_preset = {
 	},
 	sniper_auto = {
 		mag_capacity = 8,
-		fire_rate = 1.2,
+		fire_rate = 1.5,
 		damage = 9.0
 	},
 	sniper_bolt = {
@@ -2471,8 +2471,8 @@ local crew_wep_preset = {
 			self.sko12_crew.hold = "rifle"
 			self.sko12_crew.alert_size = 2500
 			self.sko12_crew.suppression = 3.4
-			self.sko12_crew.rays = 9
 			self.sko12_crew.is_shotgun = true
+			self.sko12_crew.rays = 9
 			self.sko12_crew.FIRE_MODE = "auto"
 		end
 		

@@ -25793,6 +25793,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
 						unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_b_sidewinder"
 					}
+				elseif self.parts[part_id].type == "extra" then
+					self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_o_sidewinder"
+					}
 				elseif self.parts[part_id].type == "lower_reciever" then
 					self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
 						unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_body_sidewinder"

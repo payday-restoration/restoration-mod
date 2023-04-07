@@ -23725,7 +23725,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_amr12_npc.override = deep_clone(self.wpn_fps_shot_amr12.override)	
 			self.wpn_fps_shot_amr12_npc.uses_parts = deep_clone(self.wpn_fps_shot_amr12.uses_parts)	
 	
-
 		--RIFLES
 			--Commando 553
 				--Sniper Grip
@@ -23840,16 +23839,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_aknato_b_long.stats = deep_clone(barrels.long_b2_stats)
 				self.parts.wpn_fps_ass_aknato_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
 
-
 		--Aftermarket Stock
 			self.parts.wpn_fps_pis_lebman_stock.supported = true
 			self.parts.wpn_fps_pis_lebman_stock.stats = deep_clone(stocks.add_fixed_stats)
 			self.parts.wpn_fps_pis_lebman_stock.custom_stats = deep_clone(stocks.add_fixed_stats)
-
-		
-
-
-
 
 		--(Reinfeld) Swat Pump
 		self.parts.wpn_fps_shot_r870_fg_swat.supported = true
@@ -23858,10 +23851,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = 1,
 			concealment = -1
 		}		
-
-
-
-
 
 		--(Goliath 12G) Long Barrel
 		self.parts.wpn_fps_sho_rota_b_longer.supported = true
@@ -24053,8 +24042,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_ass_tecci_s_minicontra")
 		table.insert(self.wpn_fps_smg_olympic_npc.uses_parts, "wpn_fps_ass_tecci_s_minicontra")	
 
-
-
 		--Castigo .44 
 			--Corto Barrel
 			self.parts.wpn_fps_pis_chinchilla_b_short.supported = true
@@ -24098,8 +24085,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = 2,
 				concealment = -1
 			}
-
-
 
 		--(Jacket's Piece) Overdose Magazine
 		self.parts.wpn_fps_smg_cobray_m_extended.supported = true
@@ -24267,8 +24252,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 2	
 		}
 
-
-
 		--AR Parts
 			--Ratnik Stock
 			--Disabled as I don't know how to make it not work on the 870s
@@ -24348,7 +24331,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 3
 			}
 			self.parts.wpn_upg_ak_g_titanium.custom_stats = { ads_speed_mult = 0.95 }
-
 
 		--Spiker 7.62
 			--Long Foregrip
@@ -24622,7 +24604,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_pis_ns_edge.stats = deep_clone(muzzle_device.muzzle_b_stats)
 		self.parts.wpn_fps_upg_pis_ns_edge.custom_stats = nil
 
-
 		--Guerilla .308
 			--Sniper Stock
 			self.parts.wpn_fps_snp_sgs_s_sniper.supported = true
@@ -24670,7 +24651,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -1,
 				reload = 3
 			}
-
 
 		--(KSP 58) Aftermarket Rail
 		self.parts.wpn_fps_lmg_par_rail.supported = true
@@ -25395,6 +25375,68 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rotation = Rotation(0,2.5,0)
 				}
 			}
+	end
+	
+	--Vanilla Mod Pack 23.3 v7
+	if self.parts.wpn_fps_lmg_hcar_body_ww2 then
+		--BAR kit
+		self.parts.wpn_fps_lmg_hcar_body_ww2.supported = true
+		self.parts.wpn_fps_lmg_hcar_body_ww2.stats = {
+			value = 0,
+			recoil = 2,
+		}
+		self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats = {
+			rof_mult = 0.9
+		}
+		self.parts.wpn_fps_lmg_hcar_body_ww2.forbids = nil
+		self.parts.wpn_fps_lmg_hcar_body_ww2.stance_mod = nil
+		self.parts.wpn_fps_lmg_hcar_body_ww2.override = {
+			wpn_fps_lmg_hcar_barrel_standard = {
+				unit = "units/mods/weapons/wpn_fps_lmg_hcar_pts/wpn_fps_lmg_hcar_brl_ww2"
+			},
+			wpn_fps_lmg_hcar_barrel_short = {
+				unit = "units/mods/weapons/wpn_fps_lmg_hcar_pts/wpn_fps_lmg_hcar_brl_ww2"
+			},
+			wpn_fps_lmg_hcar_barrel_dmr = {
+				unit = "units/mods/weapons/wpn_fps_lmg_hcar_pts/wpn_fps_lmg_hcar_brl_ww2"
+			},
+			wpn_fps_lmg_hcar_foregrip = {
+				unit = "units/mods/weapons/wpn_fps_lmg_hcar_pts/wpn_fps_lmg_hcar_fg_ww2"
+			},
+			wpn_fps_lmg_hcar_body_standard = {
+				unit = "units/mods/weapons/wpn_fps_lmg_hcar_pts/wpn_fps_lmg_hcar_body_ww2"
+			},
+			wpn_fps_lmg_hcar_grip = {
+				unit = "units/mods/weapons/wpn_fps_lmg_hcar_pts/wpn_fps_lmg_hcar_g_ww2"
+			},
+			wpn_fps_lmg_hcar_sight = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				stance_mod = {
+					wpn_fps_lmg_hcar = {
+						translation = Vector3(-4.79, -8, 0.82),
+						rotation = Rotation(-0.075, -0.78, -10.5)
+					}
+				}
+			},
+			wpn_fps_upg_o_mbus_pro_front = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_lmg_hcar_stock = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			},
+			wpn_fps_snp_victor_s_adapter = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		}
+		for i, part_id in pairs(self.wpn_fps_lmg_hcar.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "stock" then
+				self.parts.wpn_fps_lmg_hcar_body_ww2.override[part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				}
+			end
+		end
+
+
 	end
 
 	--HX25 Grenade Launcher

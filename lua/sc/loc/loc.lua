@@ -2422,6 +2422,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_g26_b_custom"] = "Brushed Metal Slide",
 						["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
 						["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
+						--Luger
+						["bm_w_breech"] = "Luger P08",
 						--Bernetti 9
 						["bm_w_b92fs"] = "Beretta 92FS",
 						["bm_w_x_b92fs"] = "Akimbo 92FSs",
@@ -2505,7 +2507,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_socom"] = "H&K Mk.23",
 						["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Prototype Phase I LAM",
 						["bm_w_x_socom"] = "Akimbo Mk.23s",
+						--TT-33	
+						["bm_w_type54"] = "Tokarev TT-33",
+						["bm_w_x_type54"] = "Akimbo TT-33s",
 						
+						--Kahn .357
+						["bm_w_korth"] = "Korth NXA",
+						["bm_w_x_korth"] = "Akimbo Korth NXAs",
 						--Mateba
 						["bm_w_mateba"] = "Mateba 2006M",
 						--Bronco
@@ -2573,7 +2581,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Miyaka 9
 						["bm_w_pm9"] = "Minebea PM-9",
 						--FMG9
-						["bm_w_fmg9"] = "Magpul FMG-9",
+						["bm_w_fmg9"] = "Magpul FDC-9",
 
 						--Cobra
 						["bm_w_scorpion"] = "CZ vz. 61 Skorpion",

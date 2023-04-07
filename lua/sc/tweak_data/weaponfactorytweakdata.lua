@@ -25436,6 +25436,237 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 
+		--Korth Exclusive Set
+		self.parts.wpn_fps_pis_korth_body_heat.supported = true
+		self.parts.wpn_fps_pis_korth_body_heat.stats = {value = 0}
+		self.parts.wpn_fps_pis_korth_body_heat.custom_stats = nil
+		self.parts.wpn_fps_pis_korth_body_heat.override = {
+			wpn_fps_pis_korth_b_standard = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
+			},
+			wpn_fps_pis_korth_b_railed = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
+			},
+
+			wpn_fps_pis_korth_body = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_heat"
+			},
+
+			wpn_fps_pis_korth_m_8 = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat"
+			},
+
+			wpn_fps_pis_korth_g_standard = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
+			},
+			wpn_fps_pis_korth_g_ergo = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
+			},
+			wpn_fps_pis_korth_g_houge = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
+			}
+		}
+		self.parts.wpn_fps_pis_korth_body_heat.forbids = {
+			"wpn_fps_upg_fl_pis_m3x",
+			"wpn_fps_upg_fl_pis_crimson",
+			"wpn_fps_upg_fl_pis_x400v",
+			"wpn_fps_upg_fl_pis_laser",
+			"wpn_fps_upg_fl_pis_tlr1",
+			"wpn_fps_upg_fl_pis_perst"
+		}
+		self.parts.wpn_fps_pis_korth_body_heat_akimbo.supported = true
+		self.parts.wpn_fps_pis_korth_body_heat_akimbo.stats = {value = 0}
+		self.parts.wpn_fps_pis_korth_body_heat_akimbo.custom_stats = nil
+		self.parts.wpn_fps_pis_korth_body_heat_akimbo.override = {
+			wpn_fps_pis_korth_b_standard = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
+			},
+			wpn_fps_pis_korth_b_railed = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
+			},
+
+			wpn_fps_pis_korth_body = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_heat"
+			},
+
+			wpn_fps_pis_korth_m_8 = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat"
+			},
+
+			wpn_fps_pis_korth_g_standard = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
+			},
+			wpn_fps_pis_korth_g_ergo = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
+			},
+			wpn_fps_pis_korth_g_houge = {
+				unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
+			}
+		}
+		self.parts.wpn_fps_pis_korth_body_heat_akimbo.forbids = {
+			"wpn_fps_upg_fl_pis_m3x",
+			"wpn_fps_upg_fl_pis_crimson",
+			"wpn_fps_upg_fl_pis_x400v",
+			"wpn_fps_upg_fl_pis_laser",
+			"wpn_fps_upg_fl_pis_tlr1",
+			"wpn_fps_upg_fl_pis_perst"
+		}
+
+		--HK M16
+
+		--[[
+		self.parts.wpn_fps_ass_contraband_body_sayhello_ammo = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			a_obj = "a_body",
+			type = "ammo",
+			name_id = "bm_wp_sayhello_conversionkit",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			internal_part = true,
+			stats = {
+				value = 0
+			},
+			custom_stats = {
+				sounds = {
+					fire = "m16_fire_single",
+					fire_auto = "m16_fire",
+					stop_fire = "m16_stop",
+					fire_single = "m16_fire_single"
+				}
+			}
+		}
+		table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.adds, "wpn_fps_ass_contraband_body_sayhello_ammo" )
+		--]]
+		
+		self.parts.wpn_fps_ass_contraband_body_sayhello.supported = true
+		self.parts.wpn_fps_ass_contraband_body_sayhello.stats = {
+			value = 10,
+			extra_ammo = 10,
+			damage = -15,
+			suppression = 99,
+			total_ammo_mod = 99,
+			spread = -3,
+			recoil = 18,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_contraband_body_sayhello.custom_stats = {
+			alt_desc = "bm_m203_vmp_sc_desc",
+			falloff_start_mult = 1.052631578947,
+			falloff_end_mult = 1.24,
+			damage_min_mult = 0.624414,
+			ammo_pickup_max_mul = 1.607142857,
+			ammo_pickup_min_mul = 1.607142857,
+			alt_ammo_pickup_max_mul = 1.607142857,
+			alt_ammo_pickup_min_mul = 1.607142857,
+			rof_mult = 1.166667,
+			armor_piercing_override = 0
+		}
+		self.parts.wpn_fps_ass_contraband_body_sayhello.keep_damage = true
+		self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
+			wpn_fps_ass_contraband = {
+				translation = Vector3(0, -12.5, -0.905)
+			}
+		}
+		self.parts.wpn_fps_ass_contraband_body_sayhello.forbids = {}
+		self.parts.wpn_fps_ass_contraband_body_sayhello.override = {
+			wpn_fps_ass_contraband_body_standard = {
+				unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_reciever",
+				parent = "exclusive_set",
+				a_obj = "a_lower"
+			},
+			wpn_fps_ass_contraband_fg_standard = {
+				unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_fg_railed",
+				parent = "exclusive_set",
+				a_obj = "a_fg"
+			},
+			wpn_fps_ass_contraband_b_standard = {
+				unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long",
+				parent = "exclusive_set",
+				a_obj = "a_fg"
+			},
+			wpn_fps_ass_contraband_b_long = {
+				unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long",
+				parent = "exclusive_set",
+				a_obj = "a_fg"
+			},
+			wpn_fps_ass_contraband_b_short = {
+				unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_medium",
+				parent = "exclusive_set",
+				a_obj = "a_fg"
+			},
+			wpn_fps_ass_contraband_bolt_standard = {
+				unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_bolt_standard",
+				parent = "exclusive_set",
+				a_obj = "a_bolt"
+			},
+			wpn_fps_ass_contraband_m_standard = {
+				unit = "units/mods/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_body_sayhello_mag"
+			},
+			wpn_fps_ass_contraband_g_standard = {
+				unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_g_standard",
+				parent = "exclusive_set",
+				a_obj = "a_g"
+			},
+			wpn_fps_amcar_uupg_body_upperreciever = {
+				parent = "exclusive_set",
+				a_obj = "a_upper"
+			},
+			wpn_fps_ass_contraband_gl_m203 = {
+				parent = "exclusive_set",
+				a_obj = "a_gl"
+			},
+			wpn_fps_ass_m16_os_frontsight = {
+				parent = "exclusive_set",
+				a_obj = "a_os"
+			},
+			wpn_fps_upg_m4_s_adapter = {
+				parent = "exclusive_set",
+				a_obj = "a_s"
+			},
+
+			wpn_fps_ass_contraband_o_standard = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			},
+			wpn_fps_ass_contraband_ns_standard = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			},
+			wpn_fps_ass_contraband_dh_standard = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			},
+			wpn_fps_addon_ris = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			}
+		}
+
+		for part_id, i in pairs(self.parts) do
+			if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "charm" then
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] = {
+					parent = "exclusive_set",
+					a_obj = "a_charm"
+				}
+			end
+		end
+
+		for i, part_id in pairs(self.wpn_fps_ass_contraband.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type then
+				if self.parts[part_id].type == "grip" then
+					if not self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] then
+						self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] = {
+							parent = "exclusive_set",
+							a_obj = "a_g"
+						}
+					end
+				elseif self.parts[part_id].type == "stock" then
+					self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] = {
+						parent = "exclusive_set",
+						a_obj = "a_s"
+					}
+				elseif self.parts[part_id].type == "sight" then
+					if not table.contains(self.wpn_fps_ass_contraband.default_blueprint, part_id) then
+						table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.forbids, part_id )
+					end
+				end
+			end
+		end
 
 	end
 

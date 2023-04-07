@@ -722,9 +722,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end		
 
 			if stats.croon then
-				self:weapon_tweak_data().AUTO_BURST = true
-				self:weapon_tweak_data().BURST_FIRE = 1
-				self:weapon_tweak_data().BURST_DELAY = 0
+				self:weapon_tweak_data().BURST_USE_AUTO_LOGIC = true
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 200
 			end	
 

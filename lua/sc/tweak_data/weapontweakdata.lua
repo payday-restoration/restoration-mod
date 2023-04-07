@@ -5224,7 +5224,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_usp.kick = self.stat_info.kick_tables.right_recoil
 				self.x_usp.CLIP_AMMO_MAX = 24
 				self.x_usp.AMMO_MAX = 80
-				self.x_usp.fire_mode_data.fire_rate = 0.1090909
+				self.x_usp.fire_mode_data.fire_rate = 0.11538461
 				self.x_usp.supported = true
 				self.x_usp.ads_speed = 0.200
 				self.x_usp.damage_falloff = {
@@ -5292,7 +5292,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54.AMMO_MAX = 80
 				self.x_type54.FIRE_MODE = "single"
 				self.x_type54.fire_mode_data = {}
-				self.x_type54.fire_mode_data.fire_rate = 0.1090909
+				self.x_type54.fire_mode_data.fire_rate = 0.11538461
 				self.x_type54.kick = self.stat_info.kick_tables.left_recoil
 				self.x_type54.supported = true
 				self.x_type54.ads_speed = 0.180
@@ -5748,7 +5748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54.tactical_reload = 1
 				self.type54.FIRE_MODE = "single"
 				self.type54.fire_mode_data = {}
-				self.type54.fire_mode_data.fire_rate = 0.1090909
+				self.type54.fire_mode_data.fire_rate = 0.11538461
 				self.type54.kick = self.stat_info.kick_tables.left_recoil
 				self.type54.supported = true
 				self.type54.ads_speed = 0.180
@@ -5843,7 +5843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.shrew.stats_modifiers = nil
 				self.shrew.panic_suppression_chance = 0.05
-				self.shrew.reload_speed_multiplier = 1.1
+				self.shrew.reload_speed_multiplier = 1.25
 
 			--Interceptor .45
 				self.usp.has_description = true
@@ -5854,7 +5854,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					unequip = 0.5,
 					equip = 0.35
 				}
-				self.usp.fire_mode_data.fire_rate = 0.1090909
+				self.usp.fire_mode_data.fire_rate = 0.11538461
 				self.usp.AMMO_MAX = 40
 				self.usp.kick = self.stat_info.kick_tables.right_recoil
 				self.usp.CLIP_AMMO_MAX = 12
@@ -5888,7 +5888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Crosskill (1911)
 				self.colt_1911.has_description = true
 				self.colt_1911.desc_id = "bm_1911_sc_desc"				
-				self.colt_1911.fire_mode_data.fire_rate = 0.1034482
+				self.colt_1911.fire_mode_data.fire_rate = 0.10714285
 				self.colt_1911.CLIP_AMMO_MAX = 8
 				self.colt_1911.AMMO_MAX = 40
 				self.colt_1911.kick = self.stat_info.kick_tables.even_recoil
@@ -5923,7 +5923,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.has_description = true
 				self.m1911.desc_id = "bm_m1911_sc_desc"				
 				self.m1911.tactical_reload = 1	
-				self.m1911.fire_mode_data.fire_rate = 0.1034482
+				self.m1911.fire_mode_data.fire_rate = 0.10714285
 				self.m1911.CLIP_AMMO_MAX = 7
 				self.m1911.AMMO_MAX = 40
 				self.m1911.kick = self.stat_info.kick_tables.even_recoil
@@ -5950,7 +5950,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m1911.stats_modifiers = nil
 				self.m1911.panic_suppression_chance = 0.05
-				self.m1911.reload_speed_multiplier = 1.1
+				self.m1911.reload_speed_multiplier = 1.15
 				self.m1911.timers.reload_exit_empty = 0.5
 				self.m1911.timers.reload_exit_not_empty = 0.65
 
@@ -12547,7 +12547,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			equip = 0.35
 		}	
 		self.socom.tactical_reload = 1	
-		self.socom.fire_mode_data.fire_rate = 0.1090909
+		self.socom.fire_mode_data.fire_rate = 0.10714285
 		self.socom.CLIP_AMMO_MAX = 12
 		self.socom.AMMO_MAX = 40
 		self.socom.kick = self.stat_info.kick_tables.even_recoil
@@ -12586,7 +12586,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_socom.tactical_reload = 2
 		self.x_socom.BURST_FIRE = 2
 		self.x_socom.BURST_FIRE_RATE_MULTIPLIER = 2
-		self.x_socom.fire_mode_data.fire_rate = 0.1090909
+		self.x_socom.fire_mode_data.fire_rate = 0.10714285
 		self.x_socom.CLIP_AMMO_MAX = 24
 		self.x_socom.AMMO_MAX = 80
 		self.x_socom.kick = self.stat_info.kick_tables.even_recoil

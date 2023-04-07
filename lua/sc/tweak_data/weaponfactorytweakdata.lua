@@ -25536,7 +25536,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.adds, "wpn_fps_ass_contraband_body_sayhello_ammo" )
 		--]]
-		
+
 		self.parts.wpn_fps_ass_contraband_body_sayhello.supported = true
 		self.parts.wpn_fps_ass_contraband_body_sayhello.stats = {
 			value = 10,
@@ -25667,6 +25667,213 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 		end
+
+		--G2 Kit
+		self.parts.wpn_fps_snp_contender_receiver_hunt.supported = true
+		self.parts.wpn_fps_snp_contender_receiver_hunt.stats = {value = 0}
+		self.parts.wpn_fps_snp_contender_receiver_hunt.custom_stats = nil
+		self.parts.wpn_fps_snp_contender_receiver_hunt.forbids = {}
+		self.parts.wpn_fps_snp_contender_receiver_hunt.adds = {"wpn_fps_snp_contender_sight_hunt"}
+		self.parts.wpn_fps_snp_contender_receiver_hunt.override = {
+			wpn_fps_snp_contender_receiver = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_receiver_hunt"
+			},
+
+			wpn_fps_snp_contender_triggerguard = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_trigger_hunt"
+			},
+
+			wpn_fps_snp_contender_barrel_standard = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_barrel_hunt"
+			},
+			wpn_fps_snp_contender_barrel_short = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_barrel_hunt"
+			},
+			wpn_fps_snp_contender_barrel_long = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_barrel_hunt"
+			},
+
+			wpn_fps_snp_contender_frontgrip_short = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_frontgrip_hunt"
+			},
+			wpn_fps_snp_contender_frontgrip_long = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_frontgrip_hunt"
+			},
+
+			wpn_fps_snp_contender_grip_standard = {
+				unit = "units/mods/weapons/wpn_fps_snp_contender_pts/wpn_fps_snp_contender_grip_hunt"
+			},
+			wpn_fps_smg_sr2_o_rail = {
+				parent = "barrel"
+			},
+
+			wpn_fps_upg_contender_o_ironsight = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		}
+		for i, part_id in pairs(self.wpn_fps_snp_contender.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type then
+				if self.parts[part_id].type == "sight" then
+					if not self.parts.wpn_fps_snp_contender_receiver_hunt.override[part_id] then
+						self.parts.wpn_fps_snp_contender_receiver_hunt.override[part_id] = {
+							forbids = {"wpn_fps_snp_contender_sight_hunt"},
+							adds = { "wpn_fps_smg_sr2_o_rail" }
+						}
+					end
+				end
+			end
+		end
+
+		--BS9
+		self.parts.wpn_fps_pis_beretta_body_stonecold.supported = true
+		self.parts.wpn_fps_pis_beretta_body_stonecold.stats = {value = 0}
+		self.parts.wpn_fps_pis_beretta_body_stonecold.custom_stats = nil
+		self.parts.wpn_fps_pis_beretta_body_stonecold.forbids = {}
+		self.parts.wpn_fps_pis_beretta_body_stonecold.override = {
+			wpn_fps_upg_ns_gemberettadummy = {
+				parent = "exclusiveextra",
+				a_obj = "a_ns2"
+			}
+		}
+		for i, part_id in pairs(self.wpn_fps_pis_beretta.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type then
+
+				if self.parts[part_id].type == "lower_reciever" then
+					self.parts.wpn_fps_pis_beretta_body_stonecold.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_beretta_pts/wpn_fps_pis_beretta_body_stonecold"
+					}
+				elseif self.parts[part_id].type == "upper_reciever" then
+					self.parts.wpn_fps_pis_beretta_body_stonecold.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_beretta_pts/wpn_fps_pis_beretta_sl_stonecold"
+					}
+				elseif self.parts[part_id].type == "grip" then
+					self.parts.wpn_fps_pis_beretta_body_stonecold.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_beretta_pts/wpn_fps_pis_beretta_g_stonecold"
+					}
+				elseif self.parts[part_id].type == "barrel_ext" then
+					self.parts.wpn_fps_pis_beretta_body_stonecold.override[part_id] = {
+						unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy",
+						adds = {
+							"wpn_fps_pis_beretta_co_coclassic"
+						}
+					}
+					if self.parts[part_id].perks and table.contains(self.parts[part_id].perks, "silencer") then
+						self.parts.wpn_fps_pis_beretta_body_stonecold.override[part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy",
+							adds = {
+								"wpn_fps_pis_beretta_co_coclassic",
+								"wpn_fps_upg_ns_gemberettadummy"
+							}
+						}
+					end
+				end
+
+			end
+		end
+		self.parts.wpn_fps_upg_ns_gemberettadummy.supported = true
+		self.parts.wpn_fps_upg_ns_gemberettadummy.stats = {value = 0}
+		self.parts.wpn_fps_upg_ns_gemberettadummy.custom_stats = nil
+		self.parts.wpn_fps_upg_ns_gemberettadummy.override = {}
+		self.parts.wpn_fps_pis_beretta_co_coclassic.supported = true
+		self.parts.wpn_fps_pis_beretta_co_coclassic.stats = {value = 0}
+		self.parts.wpn_fps_pis_beretta_co_coclassic.custom_stats = nil
+		self.parts.wpn_fps_pis_beretta_co_coclassic.override = {}
+
+		--1911
+		self.parts.wpn_fps_pis_1911_body_sidewinder.supported = true
+		self.parts.wpn_fps_pis_1911_body_sidewinder.stats = {value = 0}
+		self.parts.wpn_fps_pis_1911_body_sidewinder.custom_stats = nil
+		self.parts.wpn_fps_pis_1911_body_sidewinder.forbids = { "wpn_upg_o_marksmansight_rear" }
+		self.parts.wpn_fps_pis_1911_body_sidewinder.override = {
+			wpn_fps_pis_1911_o_standard = {
+				unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_o_sidewinder"
+			}
+		}
+		for i, part_id in pairs(self.wpn_fps_pis_1911.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type then
+				if self.parts[part_id].type == "slide" then
+					self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_b_sidewinder"
+					}
+				elseif self.parts[part_id].type == "lower_reciever" then
+					self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_body_sidewinder"
+					}
+				elseif self.parts[part_id].type == "grip" then
+					self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_g_sidewinder"
+					}
+				end
+			end
+		end
+
+		--TANNED TITTY
+		self.parts.wpn_fps_snp_tti_body_camelspider.supported = true
+		self.parts.wpn_fps_snp_tti_body_camelspider.stats = {value = 0}
+		self.parts.wpn_fps_snp_tti_body_camelspider.custom_stats = nil
+		self.parts.wpn_fps_snp_tti_body_camelspider.adds = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }
+		self.parts.wpn_fps_snp_tti_body_camelspider.forbids = {}
+		self.parts.wpn_fps_snp_tti_body_camelspider.override = {
+			wpn_fps_snp_tti_body_receiverlower = {
+				unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_lower_camelspider"
+			},
+			wpn_fps_snp_tti_body_receiverupper = {
+				unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_upper_camelspider"
+			},
+			wpn_fps_snp_tti_m_standard = {
+				unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_m_camelspider"
+			},
+			wpn_fps_snp_tti_ns_standard = {
+				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_ns_hera_muzzle"
+			},
+			wpn_fps_snp_tti_ns_hex = {
+				unit = "units/mods/weapons/wpn_fps_upg_ns_pis_cloth/wpn_fps_upg_ns_pis_cloth"
+			},
+			wpn_fps_snp_tti_bolt_standard = {
+				unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_bolt_camelspider"
+			},
+			wpn_fps_addon_ris = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			},
+			wpn_fps_upg_m4_s_adapter = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			}
+		}
+		for i, part_id in pairs(self.wpn_fps_snp_tti.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type then
+				if self.parts[part_id].type == "barrel" then
+					self.parts.wpn_fps_snp_tti_body_camelspider.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_b_camelspider",
+						override = {}
+					}
+				elseif self.parts[part_id].type == "vertical_grip" then
+					self.parts.wpn_fps_snp_tti_body_camelspider.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_cover_camelspider",
+						a_obj="a_fg"
+					}
+				elseif self.parts[part_id].type == "stock" then
+					self.parts.wpn_fps_snp_tti_body_camelspider.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_s_camelspider"
+					}
+					if self.parts[part_id].forbids and table.contains(self.parts[part_id].forbids, "dummy") then
+						self.parts.wpn_fps_snp_tti_body_camelspider.override[part_id] = {
+							unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_g_camelspider",
+							a_obj = "a_g",
+							adds = {"wpn_fps_upg_m4_s_standard_vanilla"}
+						}
+					end
+				elseif self.parts[part_id].type == "foregrip" then
+					self.parts.wpn_fps_snp_tti_body_camelspider.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_fg_camelspider"
+					}
+				elseif self.parts[part_id].type == "grip" then
+					self.parts.wpn_fps_snp_tti_body_camelspider.override[part_id] = {
+						unit = "units/mods/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_g_camelspider"
+					}
+				end
+			end
+		end
+
 
 	end
 

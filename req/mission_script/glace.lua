@@ -1,3 +1,11 @@
+bulldozer = ""
+
+	if tweak_data:difficulty_to_index(difficulty) <= 7 then
+		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		bulldozer = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+	end	
+
 if Global.game_settings and Global.game_settings.one_down then
 ponr_value = 0
 ponr_toggle = false
@@ -28,5 +36,12 @@ return {
 		[100137] = {
 			ponr = ponr_value,
 			enabled = ponr_toggle
-	}
-}
+	},
+	--PDTH's OVK 145+ Throwback (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
+	[100670] = {
+		values = {
+			enemy = bulldozer,	
+			on_executed = { id = 101521, delay = 3 }
+		}
+	}	
+}	

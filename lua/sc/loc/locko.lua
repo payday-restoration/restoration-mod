@@ -160,7 +160,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",
-		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 게임 도중에 토글된 경우 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
+		["RestorationModStaticAimDescID"] = "조준하는 동안 외형적인 흔들림과 드리프트를 활성화/비활성화합니다. 사용하도록 설정하면 \"뷰모델 움직임\" 설정을 재정의합니다. 게임 도중에 변경할 시 다시 시작해야 합니다. 경고: 비활성화 하면 일부 광학 장치를 사용하지 못할 수 있습니다.",
+		["RestorationModViewmodelMovementTitleID"] = "뷰모델 움직임",
+		["RestorationModViewmodelMovementDescID"] = "주변을 둘러볼 때 화면에 무기의 뷰 모델이 어떻게 움직이는지 선택합니다. 조준 도중 이동은 \"조준하는 도중 무기 움직임 없음\"이 활성화된 경우 무시됩니다. 게임 도중에 변경할 시 다시 시작해야 합니다.",
+			["vm_vanilla"] = "바닐라 행동 방식",
+			["vm_drag"] = "무기를 뒤로 끌림",
+			["vm_lead"] = "무기를 앞서게 함",
+			["vm_static"] = "정적 (움직임 없음)",		
 		["RestorationModCarpalTunnelTitleID"] = "반동 자동 복구 활성화",
 		["RestorationModCarpalTunnelDescID"] = "반동 자동 복구 메커니즘이 작동하는 방식을 선택합니다. 활성화된 버전은 다르게 밸런스가 되어 있습니다.",
 			["rr_off"] = "비활성화",
@@ -1617,6 +1623,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",		
 		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입하고## #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입하고## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		--VMP
+		["bm_m203_vmp_sc_desc_pc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_m203_vmp_sc_desc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",		
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
 		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}#완전 통합## 소음기가 장착되었고 #{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",
@@ -2286,6 +2295,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_g26_body_salient"] = "스테플드 탠 프레임",
 						["bm_wp_g26_b_custom"] = "손질된 금속 슬라이드",
 						["bm_wp_g26_m_custom"] = "G26 스테폴드 탠 탄창",
+						--Luger
+						["bm_w_breech"] = "루거 P08",
 						--Bernetti 9
 						["bm_w_b92fs"] = "베레타 92FS",
 						["bm_w_x_b92fs"] = "아킴보 92FS",
@@ -2368,7 +2379,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_socom"] = "H&K Mk.23",
 						["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "프로토타입 1단계 LAM",
 						["bm_w_x_socom"] = "아킴보 Mk.23",
+						--TT-33	
+						["bm_w_type54"] = "토카레프 TT-33",
+						["bm_w_x_type54"] = "아킴보 TT-33s",
 						
+						--Kahn .357
+						["bm_w_korth"] = "코스 NXA",
+						["bm_w_x_korth"] = "아킴보 코스 NXA",
 						--Mateba
 						["bm_w_mateba"] = "마테바 2006M",	
 						--Bronco
@@ -2436,7 +2453,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Miyaka 9
 						["bm_w_pm9"] = "미네베아 PM-9",
 						--FMG9
-						["bm_w_fmg9"] = "맥풀 FMG-9",						
+						["bm_w_fmg9"] = "맥풀 FDC-9",						
 
 						--Cobra
 						["bm_w_scorpion"] = "CZ vz. 61 스콜피온",
@@ -2630,7 +2647,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ass_s552_body_standard_black"] = "블랙 리시버",
 						--AMCAR
 						["bm_w_amcar"] = "콜트 M733 코만도",						
-
+						--BABBY AR
+						["bm_w_olympic"] = "올림픽 암즈 K23B",
+						
 						--AUG
 						["bm_w_aug"] = "슈타이어 AUG A2",
 						["bm_wp_aug_fg_a3"] = "A3 레일",

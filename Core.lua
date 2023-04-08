@@ -598,6 +598,12 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.vm_move = {
+	"vm_vanilla",
+	"vm_drag",
+	"vm_lead",
+	"vm_static",
+}
 restoration.recoil_recover_style = {
 	"rr_off",
 	"rr_per_weapon",

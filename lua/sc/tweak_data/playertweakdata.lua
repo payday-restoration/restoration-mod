@@ -697,10 +697,21 @@ if SystemFS:exists("assets/mod_overrides/Patchett Proper Hold Reload Animations"
 end
 
 local static_aim = restoration.Options:GetValue("OTHER/WeaponHandling/StaticAim")
-if static_aim then
-	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
-		for wep_id, i in pairs(self.stances) do
-			if self.stances[ wep_id ] then
+local vm_move = restoration.Options:GetValue("OTHER/WeaponHandling/ViewmodelMovement") or 2
+Hooks:PostHook(PlayerTweakData, "_init_new_stances", "resmodviwemodeldrag", function(self)
+	for wep_id, i in pairs(self.stances) do
+		if self.stances[ wep_id ] then
+			if vm_move ~= 1 then
+				for stance_id, v in pairs(self.stances[ wep_id ]) do
+					if stance_id == "standard" or stance_id == "crouched" or stance_id == "steelsight" then
+						self.stances[ wep_id ][ stance_id ].vel_overshot.yaw_neg = (vm_move == 2 and -9) or (vm_move == 3 and 9) or (vm_move == 4 and 0)
+						self.stances[ wep_id ][ stance_id ].vel_overshot.yaw_pos = (vm_move == 2 and 9) or (vm_move == 3 and -9) or (vm_move == 4 and 0)
+						self.stances[ wep_id ][ stance_id ].vel_overshot.pitch_neg = (vm_move == 2 and 9 / 1.5) or (vm_move == 3 and -9 / 1.5) or (vm_move == 4 and 0)
+						self.stances[ wep_id ][ stance_id ].vel_overshot.pitch_pos = (vm_move == 2 and -9) or (vm_move == 3 and 9) or (vm_move == 4 and 0)
+					end
+				end
+			end
+			if static_aim then
 				if self.stances[ wep_id ].steelsight then
 					self.stances[ wep_id ].steelsight.shakers.breathing.amplitude = 0
 					self.stances[ wep_id ].steelsight.vel_overshot.yaw_neg = 0
@@ -710,8 +721,8 @@ if static_aim then
 				end
 			end
 		end
-	end)
-end
+	end
+end)
 
 
 if SystemFS:exists("assets/mod_overrides/Crosskill Fixed Scale") then

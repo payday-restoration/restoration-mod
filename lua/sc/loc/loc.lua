@@ -157,7 +157,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
-		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+		["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
+		["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overriden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
+			["vm_vanilla"] = "Vanilla Behavior",
+			["vm_drag"] = "Weapon Drags Behind",
+			["vm_lead"] = "Weapon Leads Ahead",
+			["vm_static"] = "Static (No Movement)",
 		["RestorationModCarpalTunnelTitleID"] = "Recoil Auto-Recovery",
 		["RestorationModCarpalTunnelDescID"] = "Choose how recoil auto-recovery mechanics work. Enabled versions are balanced differently.",
 			["rr_off"] = "Disabled",
@@ -2778,6 +2784,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
 						--AMCAR
 						["bm_w_amcar"] = "Colt M733 Commando",
+						--BABBY AR
+						["bm_w_olympic"] = "Olympic Arms K23B",
 
 						--AUG
 						["bm_w_aug"] = "Steyr AUG A2",

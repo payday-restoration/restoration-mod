@@ -3782,7 +3782,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(self)
 
 	self.parts.wpn_fps_amcar_uupg_body_upperreciever.stance_mod = {
-		wpn_fps_ass_amcar = { translation = Vector3(0, -7, 0) }
+		wpn_fps_ass_amcar = { translation = Vector3(0, -5, 0) }
 	}
 
 	--AMCAR Override Tables
@@ -3866,9 +3866,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	}
 
 	self.parts.wpn_fps_ass_m16_o_handle_sight.stance_mod = {
-		wpn_fps_ass_m16 = { translation = Vector3(0, -7, 0) },
-		wpn_fps_ass_amcar = { translation = Vector3(0, -7, 0) },
-		wpn_fps_smg_olympic = { translation = Vector3(0, -7, 0) }
+		wpn_fps_ass_m16 = { translation = Vector3(0, -4, 0) },
+		wpn_fps_ass_amcar = { translation = Vector3(0, -4, 0) },
+		wpn_fps_smg_olympic = { translation = Vector3(0, -4, 0) }
 	}
 
 	--Overriding these
@@ -19716,7 +19716,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup_emo",
 			stance_mod = {
 				wpn_fps_ass_m16 = {
-					translation = Vector3(0,-4,0.47)
+					translation = Vector3(0,-1,0.47)
 				}
 			}
 		}
@@ -20905,7 +20905,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 				stance_mod = {
 				wpn_fps_ass_m4 = {
-						translation = Vector3(0, -3, -0.45)
+						translation = Vector3(0, 0, -0.45)
 					}
 				}
 			}
@@ -25561,7 +25561,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_contraband_body_sayhello.keep_damage = true
 		self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
 			wpn_fps_ass_contraband = {
-				translation = Vector3(0, -12.5, -0.905)
+				translation = Vector3(0, -9.5, -0.905)
 			}
 		}
 		self.parts.wpn_fps_ass_contraband_body_sayhello.forbids = {}

@@ -38,7 +38,7 @@ return {
 			enabled = ponr_toggle
 	},
 	--PDTH's OVK 145+ Throwback (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
-	[100670] = {
+	[101320] = {
 		values = {
 			enemy = bulldozer,	
 			on_executed = { id = 101521, delay = 3 }

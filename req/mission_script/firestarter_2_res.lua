@@ -1,3 +1,6 @@
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
 if Global.game_settings and Global.game_settings.one_down then
 ponr_value = 0
 ponr_toggle = false

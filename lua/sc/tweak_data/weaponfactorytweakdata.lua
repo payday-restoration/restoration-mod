@@ -13451,7 +13451,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_bipods", "resmod_bipods", function
 	}
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.desc_id = "bm_sc_bipod_desc"
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.supported = true
-	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {value = 5, zoom = 1, concealment = -2}
+	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {value = 5, concealment = -2}
+	self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats = { ads_speed_mult = 1.05 }
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.forbids = {} --g3 various attachments workaround
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.perks = {"bipod"}
 
@@ -17237,6 +17238,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 		falloff_end_mult = 0.925,
 		ads_speed_mult = 0.975
 	}
+	self.parts.wpn_fps_lmg_m60_b_short.forbids = {
+		"wpn_fps_upg_bp_lmg_lionbipod"
+	}
 	
 	--Tactical Foregrip
 	self.parts.wpn_fps_lmg_m60_fg_tactical.pcs = {
@@ -18242,7 +18246,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		rof_mult = 0.666666,
 		ads_speed_mult = 1.20,
 		hip_mult = 1.666666,
-		sms = 0.9,
+		sms = 0.8,
 		alt_desc = "bm_shak12_sc_oden_desc"
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
@@ -30440,6 +30444,128 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_fazertron_rec_laserkit_mag.custom_stats = {
 			trail_effect = "_dmc/effects/sterwers_trail_t",
 		}
+
+	end
+
+	if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^)
+
+		self.parts.wpn_fps_snp_sierra458_ns_scout.supported = true
+		self.parts.wpn_fps_snp_sierra458_ns_scout.stats = {
+			value = 0,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_snp_sierra458_ns_scout.custom_stats = nil
+
+		self.parts.wpn_fps_snp_sierra458_b_old.supported = true
+		self.parts.wpn_fps_snp_sierra458_b_old.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_snp_sierra458_b_old.stats.recoil = 4
+		self.parts.wpn_fps_snp_sierra458_b_old.stats.concealment = -3
+		self.parts.wpn_fps_snp_sierra458_b_old.custom_stats = deep_clone(barrels.long_b1_custom_stats)
+		self.parts.wpn_fps_snp_sierra458_b_old.custom_stats.ads_speed_mult = 1.075
+
+		self.parts.wpn_fps_upg_sierra458_fg_edge.supported = true
+		self.parts.wpn_fps_upg_sierra458_fg_edge.stats = {
+			value = 0,
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_snp_sierra458_fg_mk12.supported = true
+		self.parts.wpn_fps_snp_sierra458_fg_mk12.stats = {
+			value = 0,
+			spread = 2,
+			recoil = 2,
+			concealment = -3
+		}
+
+		self.parts.wpn_fps_upg_sierra458_fg_shepheard.supported = true
+		self.parts.wpn_fps_upg_sierra458_fg_shepheard.stats = {
+			value = 0,
+			spread = -1,
+			recoil = 2
+		}
+
+		self.parts.wpn_fps_snp_sierra458_upper_milspec.supported = true
+		self.parts.wpn_fps_snp_sierra458_upper_milspec.stats = {
+			value = 0,
+			spread = -1,
+			recoil = 2
+		}
+
+		self.parts.wpn_fps_snp_sierra458_lower_milspec.supported = true
+		self.parts.wpn_fps_snp_sierra458_lower_milspec.has_description = false
+		self.parts.wpn_fps_snp_sierra458_lower_milspec.custom_stats = nil
+		self.parts.wpn_fps_snp_sierra458_lower_milspec.perks = nil
+		self.parts.wpn_fps_snp_sierra458_lower_milspec.stats = {
+			value = 0,
+			concealment = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_snp_sierra458_m_bush.supported = true
+		self.parts.wpn_fps_snp_sierra458_m_bush.keep_damage = true
+		self.parts.wpn_fps_snp_sierra458_m_bush.stats = {
+			value = 0,
+			damage = -15,
+		}
+		self.parts.wpn_fps_snp_sierra458_m_bush.custom_stats = {
+			rof_mult = 0.9
+		}
+
+		self.parts.wpn_fps_snp_sierra458_bush_switch.supported = true
+		self.parts.wpn_fps_snp_sierra458_bush_switch.no_cull = true
+		self.parts.wpn_fps_snp_sierra458_bush_switch.custom_stats = {
+			trail_effect = "_dmc/effects/warsaw_trail",
+			bullet_class = "PoisonBulletBase",
+			dot_data = { 
+				type = "poison",
+				custom_data = {
+					dot_damage = 1.5,
+					dot_length = 6.1,
+					dot_tick_period = 0.5,
+					hurt_animation_chance = 0.75
+				}
+			},
+			can_shoot_through_shield = false,
+			can_shoot_through_wall = false,
+			can_shoot_through_enemy = false
+		}
+
+		self.parts.wpn_fps_snp_sierra458_m_d60.supported = true
+		self.parts.wpn_fps_snp_sierra458_m_d60.stats = {
+			value = 0,
+			concealment = -6,
+			extra_ammo = 15,
+			reload = -5
+		}
+		self.parts.wpn_fps_snp_sierra458_m_d60.custom_stats = {
+			ads_speed_mult = 1.15
+		}
+
+		self.parts.wpn_fps_snp_sierra458_m_beowulf.supported = true
+		self.parts.wpn_fps_snp_sierra458_m_beowulf.keep_damage = true
+		self.parts.wpn_fps_snp_sierra458_m_beowulf.stats = {
+			value = 0,
+			recoil = -4,
+		}
+		self.parts.wpn_fps_snp_sierra458_m_beowulf.custom_stats = {
+			ads_speed_mult = 1.05,
+			damage_min_mult = 0.6666667,
+			rof_mult = 0.9,
+			hip_mult = 1.666666,
+			sms = 0.8
+		}
+
+		self.parts.wpn_fps_snp_sierra458_ap_switch.supported = true
+		self.parts.wpn_fps_snp_sierra458_ap_switch.no_cull = true
+		self.parts.wpn_fps_snp_sierra458_ap_switch.custom_stats = {
+			armor_piercing_override = 1,
+			can_shoot_through_shield = true
+		}
+
+		self.wpn_fps_snp_sierra458.adds.wpn_fps_snp_sierra458_m_standard = nil
+		self.wpn_fps_snp_sierra458.adds.wpn_fps_snp_sierra458_m_d60 = nil
 
 	end
 

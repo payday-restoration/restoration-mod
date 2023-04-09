@@ -7415,15 +7415,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.kick = self.stat_info.kick_tables.even_recoil
 			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
-			self.m249.ads_speed = 0.520
+			self.m249.ads_speed = 0.500
 			self.m249.damage_falloff = {
-				start_dist = 2500,
+				start_dist = 2200,
 				end_dist = 7700,
 				min_mult = 0.4166
 			}
 			self.m249.stats = {
 				damage = 24,
-				spread = 63,
+				spread = 58,
 				recoil = 75,
 				spread_moving = 5,
 				zoom = 1,
@@ -7442,7 +7442,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.timers.reload_exit_empty = 1.2
 			self.m249.timers.reload_exit_not_empty = 2.5
 			self.m249.panic_suppression_chance = 0.05
-			self.m249.reload_speed_multiplier = 0.75
+			self.m249.reload_speed_multiplier = 0.78
 	
 		--IM AT SOUP (XXX)
 		--[[
@@ -7493,7 +7493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.BURST_FIRE = false
 			self.rpk.kick = self.stat_info.kick_tables.right_kick
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.500
+			self.rpk.ads_speed = 0.520
 			self.rpk.damage_falloff = {
 				start_dist = 2800,
 				end_dist = 5200,
@@ -7501,7 +7501,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.rpk.stats = {
 				damage = 30,
-				spread = 77,
+				spread = 66,
 				recoil = 77,
 				spread_moving = 5,
 				zoom = 1,
@@ -7518,7 +7518,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.bipod_req_scope = true
 			self.rpk.timers.reload_exit_empty = 1.45
 			self.rpk.timers.reload_exit_not_empty = 0.85
-			self.rpk.reload_speed_multiplier = 0.95
+			self.rpk.reload_speed_multiplier = 0.92
 		
 		--Minigun
 			self.m134.categories = {
@@ -7593,15 +7593,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
-				self.m60.ads_speed = 0.600
+				self.m60.ads_speed = 0.640
 				self.m60.damage_falloff = {
-					start_dist = 2400,
-					end_dist = 5500,
+					start_dist = 1800,
+					end_dist = 5100,
 					min_mult = 0.5
 				}
 				self.m60.stats = {
 					damage = 60,
-					spread = 71,
+					spread = 64,
 					recoil = 67,
 					spread_moving = 5,
 					zoom = 1,
@@ -7615,7 +7615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m60.stats_modifiers = nil
 				self.m60.panic_suppression_chance = 0.05
-				self.m60.reload_speed_multiplier = 0.8
+				self.m60.reload_speed_multiplier = 0.75
 				self.m60.obd = 1
 				self.m60.armor_piercing_chance = 0.2
 				self.m60.timers.reload_exit_empty = 1.4
@@ -7639,15 +7639,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.par.supported = true
-				self.par.ads_speed = 0.600
+				self.par.ads_speed = 0.620
 				self.par.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 5000,
+					start_dist = 1400,
+					end_dist = 4500,
 					min_mult = 0.5
 				}
 				self.par.stats = {
 					damage = 60,
-					spread = 68,
+					spread = 61,
 					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
@@ -7687,13 +7687,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.supported = true
 				self.mg42.ads_speed = 0.600
 				self.mg42.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 5000,
+					start_dist = 1800,
+					end_dist = 4500,
 					min_mult = 0.53333
 				}
 				self.mg42.stats = {
 					damage = 45,
-					spread = 65,
+					spread = 60,
 					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
@@ -7732,12 +7732,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.ads_speed = 0.620
 				self.hk21.damage_falloff = {
 					start_dist = 2200,
-					end_dist = 7100,
+					end_dist = 6500,
 					min_mult = 0.53333
 				}
 				self.hk21.stats = {
 					damage = 45,
-					spread = 66,
+					spread = 61,
 					recoil = 71,
 					spread_moving = 7,
 					zoom = 1,
@@ -7778,13 +7778,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.supported = true
 				self.hk51b.ads_speed = 0.480
 				self.hk51b.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 5200,
+					start_dist = 800,
+					end_dist = 4800,
 					min_mult = 0.53333
 				}
 				self.hk51b.stats = {
 					damage = 45,
-					spread = 60,
+					spread = 55,
 					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
@@ -7818,7 +7818,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ranc_heavy_machine_gun.supported = true
 				self.ranc_heavy_machine_gun.ads_speed = 0.600
 				self.ranc_heavy_machine_gun.damage_falloff = {
-					start_dist = 3000,
+					start_dist = 2000,
 					end_dist = 7500,
 					min_mult = 0.5
 				}
@@ -10105,7 +10105,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ultima.reload_speed_multiplier = 0.7
 				self.ultima.timers.shotgun_reload.not_empty = {
 					reload_enter = 0.4666666666666667,
-					reload_first_shell_offset = 0.25,
+					reload_first_shell_offset = 0.27,
 					reload_shell = 1.08,
 					reload_exit = 1,
 					reload_num = 2
@@ -16475,6 +16475,63 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.omni.timers = deep_clone(self.new_m4.timers)
 	end
 
+	if self.sierra458 then --Tangerine and PlayBONK's FTAC Recon :^)
+		self.sierra458.categories = {
+			"assault_rifle",
+			"dmr"
+		}
+		self.sierra458.recategorize = { "dmr_ar" }
+		self.sierra458.damage_type = "sniper"
+		self.sierra458.upgrade_blocks = nil
+		self.sierra458.desc_id = "bm_ap_armor_80_weapon_sc_desc"
+		self.sierra458.has_description = true
+		self.sierra458.lock_slide = true
+		self.sierra458.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.sierra458.CLIP_AMMO_MAX = 10
+		self.sierra458.tactical_reload = 1
+		self.sierra458.AMMO_MAX = 60
+		self.sierra458.BURST_FIRE = false
+		self.sierra458.CAN_TOGGLE_FIREMODE = true
+		self.sierra458.FIRE_MODE = "single"
+		self.sierra458.fire_mode_data.fire_rate = 0.12
+		self.sierra458.kick = self.stat_info.kick_tables.even_recoil
+		self.sierra458.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
+		self.sierra458.can_shoot_through_enemy = true
+		self.sierra458.can_shoot_through_shield = false
+		self.sierra458.can_shoot_through_wall = true
+		self.sierra458.supported = true
+		self.sierra458.ads_speed = 0.380
+		self.sierra458.damage_falloff = {
+			start_dist = 1800,
+			end_dist = 6000,
+			min_mult = 0.5
+		}
+		self.sierra458.stats = {
+			damage = 60,
+			spread = 87,
+			recoil = 59,
+			zoom = 1,
+			concealment = 21,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.sierra458.armor_piercing_chance = 0.8
+		self.sierra458.stats_modifiers = nil
+		self.sierra458.panic_suppression_chance = 0.05
+		self.sierra458.sounds.fire = "sierra458_fire"
+		self.sierra458.sounds.fire_single = "sierra458_fire"
+		self.sierra458.sounds.fire_auto = "sierra458_fire"
+		self.sierra458.sounds.stop_fire = "scar_stop"
+		self.sierra458.timers.reload_empty = 3.41
+		self.sierra458.timers.reload_exit_empty = 0.5
+		self.sierra458.timers.reload_not_empty = 2.35
+		self.sierra458.timers.reload_exit_not_empty = 0.8
+	end
+
 	if self.f500 then --Silent Enforcer's Fort-500
 		self.f500.recategorize = { "heavy_shot" }
 		self.f500.damage_type = "shotgun"
@@ -16835,6 +16892,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			for i, category in pairs(weap.categories) do
 				if category == "shotgun" then
 					weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+				end
+				if category == "lmg" then
+					if weap.weapon_movement_penalty then
+						weap.rms = (1 + weap.weapon_movement_penalty) / 2
+					end
 				end
 			end
 

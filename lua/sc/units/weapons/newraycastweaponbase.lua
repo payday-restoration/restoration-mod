@@ -268,6 +268,10 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		spread_area = spread_area + moving_spread
 	end
 
+	if current_state:_is_using_bipod() then
+		spread_area = spread_area / 2
+	end
+
 	--Apply skill and stance multipliers to overall spread area.
 	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
 
@@ -874,16 +878,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	for part_id, stats in pairs(custom_stats) do
 		if stats.can_shoot_through_wall then
-			self._can_shoot_through_wall = true
+			self._can_shoot_through_wall = stats.can_shoot_through_wall
 		end
 		if stats.can_shoot_through_enemy then
-			self._can_shoot_through_enemy = true
+			self._can_shoot_through_enemy = stats.can_shoot_through_enemy
 		end
 		if stats.can_shoot_through_shield then
-			self._can_shoot_through_shield = true
+			self._can_shoot_through_shield = stats.can_shoot_through_shield
 		end
 		if stats.can_shoot_through_titan_shield then
-			self._can_shoot_through_titan_shield = true
+			self._can_shoot_through_titan_shield = stats.can_shoot_through_titan_shield
 		end
 		if tweak_data.weapon.factory.parts[part_id].type ~= "ammo" then
 			if stats.ammo_pickup_min_mul then

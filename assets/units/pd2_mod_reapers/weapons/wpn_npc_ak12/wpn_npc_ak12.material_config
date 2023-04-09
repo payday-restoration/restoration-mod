@@ -3,6 +3,9 @@
         <bump_normal_texture file="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_nm"/>
         <diffuse_texture file="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_df"/>
     </material>
+    <material name="optical" version="2" render_template="generic:DIFFUSE_TEXTURE">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_upg_o_t1micro/wpn_third_upg_o_t1micro_df"/>
+    </material>
     <material name="weapon_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
         <diffuse_texture file="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_df"/>
     </material>

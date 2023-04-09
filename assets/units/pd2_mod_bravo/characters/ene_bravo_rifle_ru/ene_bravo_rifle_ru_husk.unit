@@ -15,7 +15,7 @@
         <extension name="unit_data" class="ScriptUnitData" />
         <extension name="base" class="HuskCopBase" >
             <var name="_tweak_table" value="weekend" />
-            <var name="_default_weapon_id" value="bravo_rifle" />
+            <var name="_default_weapon_id" value="bravo_ak17" />
         </extension>
         <extension name="inventory" class="HuskCopInventory" />
         <extension name="brain" class="HuskCopBrain" />

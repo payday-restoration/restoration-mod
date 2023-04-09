@@ -34,5 +34,20 @@ return {
 	[105069] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
+	},
+	[100288] = {
+		values = {
+            sound_event = "earthquake_siren"
+		}
+	},
+	[104193] = {
+		values = {
+            sound_event = "earthquake_siren"
+		}
+	},
+	[106309] = {
+		values = {
+            enabled = false
+		}
 	}
 }

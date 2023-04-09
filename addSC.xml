@@ -134,8 +134,7 @@
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
 
 	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
-	
-	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
+
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
 	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> <!--delayed and balanced the spawns so they won't appear out of nowhere-->

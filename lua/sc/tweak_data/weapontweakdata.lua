@@ -8067,9 +8067,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.ak5.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
 				end
 				self.ak5.supported = true
-				self.ak5.ads_speed = 0.280
+				self.ak5.ads_speed = 0.260
 				self.ak5.damage_falloff = {
-					start_dist = 2400,
+					start_dist = 2600,
 					end_dist = 6600,
 					min_mult = 0.4166
 				}

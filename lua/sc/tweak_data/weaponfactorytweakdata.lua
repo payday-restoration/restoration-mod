@@ -2177,6 +2177,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_musket = {
 				translation = Vector3(0, -10.2, -4.34)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_sierra458 = {
+				translation = Vector3(0, 9, -0.09)
+			}
 
 		--CUSTOM WEAPS THAT NEED REALIGNMENT
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
@@ -2509,6 +2512,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_sgs = {
 		translation = Vector3(-0.013, -25, -1.445)
+	}
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_sierra458 = {
+		translation = Vector3(-0.001, -13.1, -0.85)
 	}
 
 	--Vanilla Shortdot
@@ -10716,6 +10722,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 			damage = -30
 		},
 		custom_stats = {
+			alt_desc = "bm_mosin_tranq_desc",
 			trail_effect = "_dmc/effects/warsaw_trail",
 			bullet_class = "PoisonBulletBase",
 			dot_data = { 
@@ -10724,9 +10731,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 					dot_damage = 1.5,
 					dot_length = 6.1,
 					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.75
+					hurt_animation_chance = 1
 				}
-			}
+			},
+			can_shoot_through_enemy = false
 		}
 	}
 
@@ -30511,6 +30519,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			damage = -15,
 		}
 		self.parts.wpn_fps_snp_sierra458_m_bush.custom_stats = {
+			alt_desc = "bm_w_sierra458_ivy_desc",
 			rof_mult = 0.9
 		}
 
@@ -30523,13 +30532,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				type = "poison",
 				custom_data = {
 					dot_damage = 1.5,
-					dot_length = 6.1,
+					dot_length = 4.1,
 					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.75
+					hurt_animation_chance = 0.6
 				}
 			},
 			can_shoot_through_shield = false,
-			can_shoot_through_wall = false,
 			can_shoot_through_enemy = false
 		}
 
@@ -30551,8 +30559,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -4,
 		}
 		self.parts.wpn_fps_snp_sierra458_m_beowulf.custom_stats = {
+			alt_desc = "bm_w_sierra458_beo_desc",
 			ads_speed_mult = 1.05,
-			damage_min_mult = 0.6666667,
 			rof_mult = 0.9,
 			hip_mult = 1.666666,
 			sms = 0.8
@@ -30563,6 +30571,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_sierra458_ap_switch.custom_stats = {
 			armor_piercing_override = 1,
 			can_shoot_through_shield = true
+		}
+
+
+		self.parts.wpn_fps_upg_sierra458_o_backup.supported = true
+		self.parts.wpn_fps_upg_sierra458_o_backup.stats = { value = 0 }
+		self.parts.wpn_fps_upg_sierra458_o_backup.stance_mod.wpn_fps_snp_sierra458 = {
+			translation = Vector3(0.0125, -3, 0.45),
+			rotation = Rotation(0.055, -0.4, 0)
 		}
 
 		self.wpn_fps_snp_sierra458.adds.wpn_fps_snp_sierra458_m_standard = nil
@@ -31395,6 +31411,39 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "mallninj762init", function(self)
 		}
 	
 		self.parts.wpn_fps_upg_ass_ar47_b_heavy.adds = { "wpn_fps_upg_ass_ar47_b_heavy_gasblock" }	
+	end
+end)
+
+Hooks:PostHook(WeaponFactoryTweakData, "init", "socomstuff_init", function(self)
+	if self.parts.wpn_fps_snp_sierra458_bush_switch then
+		-- vmp support
+		if BeardLib.Utils:FindMod("Vanilla Styled Weapon Mods") then
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_ass_tecci_s_minicontra")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_ass_m4_g_sg")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_ass_m4_s_russian")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_ass_m16_s_op")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_ass_contraband_s_tecci")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_pis_triggermod_slow")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_pis_triggermod_fast")
+		else
+			-- vanilla mod pack not installed
+		end
+	
+		if BeardLib.Utils:FindMod("Vanilla Styled Weapon Mods Legacy") then
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_m4_g_wrap")
+		
+		else
+			-- vanilla mod pack legacy not installed
+		end
+	
+		if BeardLib.Utils:FindMod("AR AK Mods") then
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_upg_m4_s_hera")
+			table.insert(self.wpn_fps_snp_sierra458.uses_parts, "wpn_fps_ass_tecci_s_wire")
+		
+		else
+			-- AR AK mod pack not installed
+		end
 	end
 end)
 

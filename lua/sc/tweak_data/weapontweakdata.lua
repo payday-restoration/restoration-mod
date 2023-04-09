@@ -4830,6 +4830,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.legacy.panic_suppression_chance = 0.05
 				self.legacy.timers.reload_exit_empty = 0.5
 				self.legacy.timers.reload_exit_not_empty = 0.65
+				if BeardLib.Utils:FindMod("m13 reload animations") then
+					self.legacy.lock_slide_alt = true
+				end
 
 			--Holt 9mm (Hudson H9)
 				self.holt.has_description = true
@@ -16486,6 +16489,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.desc_id = "bm_ap_armor_80_weapon_sc_desc"
 		self.sierra458.has_description = true
 		self.sierra458.lock_slide = true
+		self.sierra458.lock_slide_offset = 0.1
 		self.sierra458.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.sierra458.CLIP_AMMO_MAX = 10
 		self.sierra458.tactical_reload = 1
@@ -16526,6 +16530,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.sounds.fire_single = "sierra458_fire"
 		self.sierra458.sounds.fire_auto = "sierra458_fire"
 		self.sierra458.sounds.stop_fire = "scar_stop"
+		self.sierra458.timers.unequip = 0.5
+		self.sierra458.timers.equip = 0.7
 		self.sierra458.timers.reload_empty = 3.41
 		self.sierra458.timers.reload_exit_empty = 0.5
 		self.sierra458.timers.reload_not_empty = 2.35

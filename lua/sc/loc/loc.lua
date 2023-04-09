@@ -159,7 +159,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
 		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
 		["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
-		["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overriden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
+		["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
 			["vm_vanilla"] = "Vanilla Behavior",
 			["vm_drag"] = "Weapon Drags Behind",
 			["vm_lead"] = "Weapon Leads Ahead",
@@ -1769,6 +1769,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
 			["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
 			["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
+			--SIERRA .458
+			["bm_w_sierra458"] = "Sierra .458",
+			["bm_w_sierra458_sc_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+			["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
+			["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
 
 		--MSR
 		["bm_w_msr"] = "Rattlesnake",	
@@ -1811,7 +1817,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_mosin"] = "Nagant",
 		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
+		["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage over time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
 		--Desert Fox
 		["bm_w_desertfox"] = "Desertfox",
 		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",

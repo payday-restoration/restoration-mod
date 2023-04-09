@@ -1661,7 +1661,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_xr2_handle_01_sc"] = "완전 자동 사격 노리쇠",
 		["bm_xr2_handle_01_sc_desc"] = "#{skill_color}#자동 점사를 완전 자동 사격##으로 바꾸는 대신 #{important_1}#점사 발사 속도 증가가 없어집니다.##",
 		["bm_wp_xr2_handle_02_sc"] = "속사 사격 노리쇠",
-		["bm_xr2_handle_02_sc_desc"] = "#{important_1}#점사 중 반동 완화를 대가로## 점사 발사 속도를 #{skill_color}#950##으로 증가시킵니다.\n\n점사 지연과 반자동 발사 속도에는 영향을 받지 않습니다.",		
+		["bm_xr2_handle_02_sc_desc"] = "#{important_1}#점사 중 반동 완화를 대가로## 점사 발사 속도를 #{skill_color}#950##으로 증가시킵니다.\n\n점사 지연과 반자동 발사 속도에는 영향을 받지 않습니다.",
+			--SIERRA .458
+			["bm_w_sierra458"] = "Sierra .458",
+			["bm_w_sierra458_sc_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고, 적과 얇은 벽을 관통할 수 있습니다.##",
+			["bm_w_sierra458_beo_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
+			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = ".458 SOCOM 탄을 #{stats_positive}#독이 발라진 .450 부쉬마스터##탄으로 바꾸어 #{stats_positive}#4초 동안 초당 30의 피해를 입히고 적을 스턴시킬 수 있습니다.##\n\n#{important_1}#이 개조품을 사용하면 여러 적을 관통할 수 없습니다.##",
+			["bm_w_sierra458_ivy_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고, 적과 얇은 벽을 관통할 수 있습니다.## 그리고 #{stats_positive}#시간이 지남에 따라 피해를 입히는 독 탄을 발사합니다.##",		
 		
 
 
@@ -1695,7 +1701,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosin--
 		["bm_mosin_sc_desc"] = "음식은 사치품이지만 여전히 총이 필요할 때 이 저렴하고 고전적인 볼트액션 소총이 있습니다.\n\n이 무기는 한 번에 5발의 탄환으로 재장전되고 #{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, #{item_stage_2}#디 엔드##\n\n#{skill_color}#6초에 걸쳐 초당 30의 피해를 입히고 적을 스턴시킬 수 있는## #{stats_positive}#마취탄##을 발사합니다.",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 망각을 위해, #{item_stage_2}#디 엔드##\n\n#{skill_color}#6초에 걸쳐 초당 30의 피해를 입히고 적을 스턴시킬 수 있는## #{stats_positive}#마취탄##을 발사합니다.\n\n#{important_1}#이 개조품을 사용하면 여러 적을 관통할 수 없습니다.##",
+		["bm_mosin_tranq_desc"] = "음식은 사치품이지만 여전히 총이 필요할 때 이 저렴하고 고전적인 볼트액션 소총이 있습니다.\n\n이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 입히고## #{skill_color}#방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
 		--Desert Fox
 		["bm_desertfox_sc_desc"] = "윅이 러시아 마피아 세이프하우스를 공격할 때 사용한 소형 불펍 저격 플랫폼입니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--R93

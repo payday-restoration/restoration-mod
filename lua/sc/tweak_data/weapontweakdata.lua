@@ -15834,7 +15834,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m4_usasoc.nato = 1
 		self.m4_usasoc.tactical_reload = 1
 		self.m4_usasoc.CLIP_AMMO_MAX = 30
-		self.m4_usasoc.AMMO_MAX = 150
+		self.m4_usasoc.AMMO_MAX = 120
 		self.m4_usasoc.lock_slide = true
 		self.m4_usasoc.fire_mode_data.fire_rate = 0.08
 		self.m4_usasoc.FIRE_MODE = "auto"

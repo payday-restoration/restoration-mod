@@ -30472,6 +30472,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.parts.wpn_fps_snp_sierra458_fg_mk12.supported = true
+		self.parts.wpn_fps_snp_sierra458_fg_mk12.adds = nil
 		self.parts.wpn_fps_snp_sierra458_fg_mk12.stats = {
 			value = 0,
 			spread = 2,

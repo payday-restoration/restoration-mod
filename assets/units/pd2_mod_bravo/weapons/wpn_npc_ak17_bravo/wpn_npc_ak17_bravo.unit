@@ -16,7 +16,7 @@
 	</extensions>
 	
 	<sounds>
-		<soundsource name="root" source="rp_m4" />
-		<default_soundsource source="rp_m4" />
+		<soundsource name="root" source="rp_ak47" />
+		<default_soundsource source="rp_ak47" />
 	</sounds>
 </unit>

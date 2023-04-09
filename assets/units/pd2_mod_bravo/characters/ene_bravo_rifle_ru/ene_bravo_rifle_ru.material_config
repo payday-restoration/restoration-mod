@@ -1,11 +1,17 @@
 <materials version="3" group="ene_akan_medic">
-	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_nm"/>
         <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
+        <self_illumination_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_il"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="megatron"/>		
 	</material>
-	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_nm" mip="4"/>
         <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df" mip="4"/>
+        <self_illumination_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_il"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="megatron"/>		
 	</material>
 	
 

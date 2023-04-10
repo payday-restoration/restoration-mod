@@ -39,5 +39,9 @@ return {
 	[105369] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
+	},
+	[105357] = {
+		ponr = ponr_value,
+		enabled = ponr_toggle
 	}
 }

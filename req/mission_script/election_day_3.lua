@@ -1,6 +1,16 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
+jerome_dude = ""
+
+	if tweak_data:difficulty_to_index(difficulty) <= 6 then
+		jerome_dude = "units/payday2/characters/ene_security_3/ene_security_3"	
+	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
+		jerome_dude = "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		jerome_dude = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
+	end
+
 if Global.game_settings and Global.game_settings.one_down then
 ponr_value = 0
 ponr_toggle = false
@@ -28,12 +38,18 @@ end
 
 return {
 	--Pro Job PONR 
-	[103384] = {
+	[104702] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	},
-	[103386] = {
+	[104701] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
+	},
+	--Shotgun Man in Sec Room
+	[104279] = {
+		values = {
+			enemy = jerome_dude	
+		}
 	}
 }

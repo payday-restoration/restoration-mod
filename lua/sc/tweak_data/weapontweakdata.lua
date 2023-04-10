@@ -3145,7 +3145,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7, 0.25, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 6, 0.3, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -16854,7 +16854,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			--Roughly normalizes swap speeds before additional modifiers are in play
 			if not weap.swap_speed_multiplier then
-				weap.desired_swap_time = 1.5
+				weap.desired_swap_time = 1.4
 				self:get_swap_speed_multiplier(weap)
 			end
 

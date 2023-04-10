@@ -10108,7 +10108,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_b92fs", "resmod_x_b92fs", functi
 		stats = {
 			value = 2,
 			concealment = -1,
-			extra_ammo = 28,
+			extra_ammo = 30,
 			reload = -2
 		}
 	}

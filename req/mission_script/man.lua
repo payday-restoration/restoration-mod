@@ -7,7 +7,7 @@ return {
 	},
 	[101801] = {
 		values = {
-			enabled = false
+			flashlight = false
 		}
 	}
 }	

@@ -882,37 +882,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
-	if difficulty_index <= 2 then
-	self.unit_categories.CS_swat_R870 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc")
-			},
-			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_swat_2/ene_swat_2")
-			},
-			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2")
-			},	
-			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2")
-			},					
-			nypd = {
-				Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2")
-			},
-			lapd = {
-				Idstring("units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2")
-			},
-			fbi = {
-				Idstring("units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc")
-			}		
-		},
-		access = access_type_all
-	}
-	else
 	self.unit_categories.CS_swat_R870 = {
 		unit_types = {
 			america = {
@@ -1094,7 +1063,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
-	end
 	--Used only for CS_Tazer group on Very Hard above
 	self.unit_categories.CS_swat_M4 = {
 		unit_types = {

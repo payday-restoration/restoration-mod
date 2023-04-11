@@ -68,7 +68,11 @@
     <unit				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />	
 	<object				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />	
+	<cooked_physics		path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />
+
+	<!--swat 3-->
+	<unit				path="units/payday2/characters/ene_swat_3/ene_swat_3" load="true"/>
+    <unit				path="units/payday2/characters/ene_swat_3/ene_swat_3_husk" load="true"/>
 	
 	<!--swat heavy 1-->
 	<unit				path="units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc" load="true"/>
@@ -114,7 +118,14 @@
     <unit				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
 	<object				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
+	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />
+
+	<!--fbi swat 3-->
+    <unit				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
+    <unit				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
+	<object				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
+	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
 	
 	<!--fbi heavy 1-->
 	<unit				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" load="true"/>

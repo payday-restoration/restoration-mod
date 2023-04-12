@@ -27,8 +27,8 @@ ponr_toggle = false
 end
 
 return {
-		--Pro Job PONR 
-		[104312] = {
+	--Pro Job PONR
+	[103031] = {
 			ponr = ponr_value,
 			enabled = ponr_toggle
 	},

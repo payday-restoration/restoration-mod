@@ -10318,7 +10318,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"shotgun",
 					"shotgun_pistol"
 				}
-				self.x_judge.fire_mode_data.fire_rate = 0.272727
+				self.x_judge.fire_mode_data.fire_rate = 0.2
 				self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.x_judge.rays = 9
 				self.x_judge.BURST_FIRE = 2
@@ -10326,7 +10326,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_judge.supported = true
 				self.x_judge.ads_speed = 0.280
 				self.x_judge.damage_falloff = {
-					start_dist = 600,
+					start_dist = 500,
 					end_dist = 2600,
 					min_mult = 0.3333
 				}
@@ -10641,7 +10641,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"shotgun",
 					"shotgun_pistol"
 				}
-				self.judge.fire_mode_data.fire_rate = 0.272727
+				self.judge.fire_mode_data.fire_rate = 0.2
 				self.judge.rays = 9
 				self.judge.kick = self.stat_info.kick_tables.left_kick
 				self.judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
@@ -10649,7 +10649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.judge.supported = true
 				self.judge.ads_speed = 0.280
 				self.judge.damage_falloff = {
-					start_dist = 600,
+					start_dist = 500,
 					end_dist = 2600,
 					min_mult = 0.3333
 				}
@@ -16456,14 +16456,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.omni.supported = true
 		self.omni.ads_speed = 0.320
 		self.omni.damage_falloff = {
-			start_dist = 900,
-			end_dist = 3000,
+			start_dist = 1100,
+			end_dist = 3600,
 			min_mult = 0.66667
 		}
 		self.omni.stats = {
 			damage = 30,
 			spread = 49,
-			recoil = 65,
+			recoil = 71,
 			zoom = 1,
 			concealment = 24,
 			suppression = 8,

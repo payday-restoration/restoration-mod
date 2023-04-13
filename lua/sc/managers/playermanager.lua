@@ -1283,7 +1283,7 @@ function PlayerManager:get_hostage_bonus_multiplier(category)
 
 	--No close to hostage boosts.
 
-	return 1 + multiplier * hostages
+	return 1 + (multiplier * hostages)
 end
 
 --Makes *all* converts contribute to hostage skills, rather than just local converts.

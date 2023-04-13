@@ -547,4 +547,15 @@
 			<attr name="redirect" value="std/fatal/enter"/>
 		</target>
 	</tweak>
+	<!-- Bleedout exit fix -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/bleedout/look/exit_to_crh"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/stand/still/idle/look"/>
+		</target>
+	</tweak>
 </tweaks>

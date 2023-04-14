@@ -166,15 +166,5 @@ return {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"
 		}
-	},
-	[103130] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"
-		}
-	},
-	[103134] = {
-		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"
-		}
-	},
+	}
 }

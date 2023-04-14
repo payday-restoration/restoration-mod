@@ -1401,6 +1401,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		health_regen = 4,
 		health = 4,
 		stamina = 4,
+		speed = 4,
 		damage_dampener = 1
 	}
 	self.values.team.health.hostage_multiplier = {1.05}

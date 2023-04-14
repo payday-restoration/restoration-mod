@@ -198,10 +198,6 @@
 
 	<!--ffs ovk, dont load the entire map if you force the players in one area-->
 	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
-
-	<!--5 minute edit-->
-	<mission			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--Changed up the murkies and added some stuff-->
-	<continent			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--lookout choppas-->
 	
 	<mission			path="levels/instances/unique/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
 	

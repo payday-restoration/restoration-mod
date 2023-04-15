@@ -5583,7 +5583,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_rage.AMMO_MAX = 60
 				self.x_rage.kick = self.stat_info.kick_tables.vertical_kick
 				self.x_rage.supported = true
-				self.x_rage.ads_speed = 0.260
+				self.x_rage.ads_speed = 0.240
 				self.x_rage.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 4000,
@@ -5625,7 +5625,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.AMMO_MAX = 60
 				self.x_chinchilla.kick = self.stat_info.kick_tables.vertical_kick
 				self.x_chinchilla.supported = true
-				self.x_chinchilla.ads_speed = 0.240
+				self.x_chinchilla.ads_speed = 0.220
 				self.x_chinchilla.damage_falloff = {
 					start_dist = 1400,
 					end_dist = 4500,
@@ -6073,7 +6073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_raging_bull.AMMO_MAX = 30
 				self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
 				self.new_raging_bull.supported = true
-				self.new_raging_bull.ads_speed = 0.260
+				self.new_raging_bull.ads_speed = 0.240
 				self.new_raging_bull.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 4000,
@@ -6110,7 +6110,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.chinchilla.AMMO_MAX = 30
 				self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick
 				self.chinchilla.supported = true
-				self.chinchilla.ads_speed = 0.240
+				self.chinchilla.ads_speed = 0.220
 				self.chinchilla.damage_falloff = {
 					start_dist = 1400,
 					end_dist = 4500,

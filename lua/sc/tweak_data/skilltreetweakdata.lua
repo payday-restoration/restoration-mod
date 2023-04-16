@@ -1446,7 +1446,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 5},
 				[1] = {
 					upgrades = {
-						"player_taser_malfunction"
+						"player_taser_malfunction",
+						"player_resist_firing_tased"
 					},
 					cost = self.costs.hightier
 				},

@@ -1447,12 +1447,13 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"player_taser_malfunction",
-						"player_resist_firing_tased"
+						"player_resist_firing_tased",
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
+						"player_slowing_bullet_resistance",
 						"player_taser_self_shock",
 						"player_escape_taser_1"
 					},

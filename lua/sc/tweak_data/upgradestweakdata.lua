@@ -1129,6 +1129,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							interval = 1,
 							chance_to_trigger = 0.15
 					}}
+					self.values.player.slowing_bullet_resistance = {{
+							duration = 0.5,
+							power = 0.5
+					}}
 				--Ace
 					self.values.player.taser_self_shock = {
 						true
@@ -3506,6 +3510,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "bullet_shield_knock",
+			category = "player"
+		}
+	}
+	self.definitions.player_slowing_bullet_resistance = {
+		name_id = "menu_player_slowing_bullet_resistance",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "slowing_bullet_resistance",
 			category = "player"
 		}
 	}

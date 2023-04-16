@@ -564,7 +564,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		if slow_data.taunt then
 			attacker_unit:sound():say("post_tasing_taunt")
 		end
-		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power)
+		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 	end
 	
 	return 
@@ -651,7 +651,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 		if slow_data.taunt then
 			attacker_unit:sound():say("post_tasing_taunt")
 		end
-		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power)
+		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 	end
 	
 	return 

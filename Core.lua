@@ -123,6 +123,7 @@ function restoration:Init()
 		mansion_stage1 = restoration.captain_types.spring, --Elmsworth Mansion
 		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.spring, --Constantine Scores (gunrunner)
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
+		bluewave = restoration.captain_types.spring,  --res map bluewave
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
 		jambank = restoration.captain_types.spring, --Botched Bank
@@ -148,7 +149,6 @@ function restoration:Init()
 		ukrainian_job_res = restoration.captain_types.autumn, --Ukrainian Job res edit version
 		hntn = restoration.captain_types.autumn, --harvest and trustee north
 		wetwork = restoration.captain_types.autumn,  --res map package wetworks
-		bluewave = restoration.captain_types.autumn,  --res map bluewave
 		hwu = restoration.captain_types.autumn, --hwUwU (Avalon's Shadow)
 		amsdeal1 = restoration.captain_types.autumn,  --Armsdeal Alleyway
 		Gambling_room = restoration.captain_types.autumn,  --Underground Bargains
@@ -222,6 +222,7 @@ function restoration:Init()
 		"lit2", --California's restoration but Payday 3
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
+		"bluewave", --res map bluewave
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"constantine_butcher_lvl", --Butcher's Bay
 		"glb", --Golden Lotus Bank 

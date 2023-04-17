@@ -3921,7 +3921,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",
-			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n감전과 테이저의 전기 공격을 받아도 더 이상 총을 강제로 쏘지 않으며 #{skill_color}#15%## 확률로 테이저를 넉백시킵니다.\n\n#{risk}#참고: 감전당하고 있을 때의 명중률 및 반동 페널티는 여전히 적용됩니다.##\n\n에이스: #{owned}#$pro##\n테이저의 전기 공격에 당한 직후 #{skill_color}#2##초 안에 상호작용 키를 누르면 반격을 하여 테이저를 역 감전시키고 테이저의 최대 체력의 #{skill_color}#50##만큼 대미지를 줍니다.",
+			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n감전과 테이저의 전기 공격을 받아도 더 이상 총을 강제로 쏘지 않으며 #{skill_color}#15%## 확률로 테이저를 넉백시킵니다.\n\n#{risk}#참고: 감전당하고 있을 때의 명중률 및 반동 페널티는 여전히 적용됩니다.##\n\n에이스: #{owned}#$pro##\n테이저의 전기 공격에 당한 직후 #{skill_color}#2##초 안에 상호작용 키를 누르면 반격을 하여 테이저를 역 감전시키고 테이저의 최대 체력의 #{skill_color}#50##만큼 대미지를 줍니다.\n\n타이탄 테이저, 캡틴 원터스 및 엔지니어 일렉트라 총알 공격의 둔화 효과 및 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
 			
 			--Sneaky Bastard--
 			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 부서질 때마다 한 번만 발생합니다.",			

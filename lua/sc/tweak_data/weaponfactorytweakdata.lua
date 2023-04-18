@@ -23018,85 +23018,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--Gambyt's Toy M16
 	if self.parts.wpn_fps_ass_toym16_b_standard then
 		self.parts.wpn_fps_ass_toym16_b_standard.pcs = nil
-	end
-
-	if self.wpn_fps_smg_owen then 	-- Silent Enforcer's Owen Gun		
-			self.parts.wpn_fps_smg_owen_m_double.supported = true		
-			self.parts.wpn_fps_smg_owen_m_double.stats = {
-					value = 2,
-					spread = -1,
-					concealment = -1,
-					reload = 3
-				}														
-			self.parts.wpn_fps_smg_owen_sling.supported = true														
-			self.parts.wpn_fps_smg_owen_sling.stats = {
-					value = 0
-				}			
-			self.parts.wpn_fps_smg_owen_s_wood.supported = true			
-			self.parts.wpn_fps_smg_owen_s_wood.stats = {
-					value = 2,
-					recoil = 1,
-					concealment = -1
-				}
-			self.parts.wpn_fps_smg_owen_s_no.supported = true
-			self.parts.wpn_fps_smg_owen_s_no.stats = {
-					value = 2,
-					recoil = -2,
-					concealment = 2
-				}							
-			self.parts.wpn_fps_smg_owen_low_window.supported = true							
-			self.parts.wpn_fps_smg_owen_low_window.stats = {
-					value = 1,
-					spread = -1,
-					concealment = 1						
-				}															
-			self.parts.wpn_fps_smg_owen_b_43.supported = true															
-			self.parts.wpn_fps_smg_owen_b_43.stats = {
-					value = 4,
-					spread = -1,
-					recoil = 1,
-				}					
-		end				
-
-	if self.wpn_fps_ass_aek971 then -- Pawcio's AEK 971
-		self.parts.wpn_fps_upg_aek971_stock_pad.supported = true
-		self.parts.wpn_fps_upg_aek971_stock_pad.stats = {
-			value = 1,				
-			recoil = 1,
-			spread = -1
-		}
-		self.parts.wpn_fps_upg_aek971_mag_rpk.supported = true
-		self.parts.wpn_fps_upg_aek971_mag_rpk.stats = {
-			value = 4,
-			extra_ammo = 15,
-			reload = -2,
-			concealment = -1
-		}							
-		self.parts.wpn_fps_upg_aek971_mag_magpul.supported = true							
-		self.parts.wpn_fps_upg_aek971_mag_magpul.stats = {
-			value = 2,
-			spread = -1,
-			concealment = -1,
-			reload = 3
-		}	
-		self.parts.wpn_fps_upg_aek971_mag_magpul.has_description = false														
-		self.parts.wpn_fps_upg_aek971_dtk1.supported = true														
-		self.parts.wpn_fps_upg_aek971_dtk1.stats = {
-			value = 5,
-			suppression = -4,
-			spread = -2,
-			recoil = 2
-		}	
-		self.parts.wpn_fps_upg_aek971_supp_tgp_a.supported = true	
-		self.parts.wpn_fps_upg_aek971_supp_tgp_a.stats = {
-			value = 2,
-			suppression = 12,
-			alert_size = -1,
-			recoil = 1,
-			concealment = -2
-		}	
-				
-	end						
+	end					
 
 	if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
@@ -23152,88 +23074,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end	
 
-	if self.parts.wpn_fps_upg_o_prismatic then --Pawcio's SIGtac CP1
-		self.parts.wpn_fps_upg_o_prismatic.supported = true
-		self.parts.wpn_fps_upg_o_prismatic.stats = {
-			concealment = -3,
-			spread_moving = -3,
-			zoom = 3,
-			value = 5
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_rmr_riser then --Pawcio's Trijicon RMR
-		self.parts.wpn_fps_upg_o_rmr_riser.supported = true
-		self.parts.wpn_fps_upg_o_rmr_riser.stats = {
-			concealment = 0,
-			zoom = 0,
-			value = 0
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_pkas then --Pawcio's PKA-S
-		self.parts.wpn_fps_upg_o_pkas.supported = true
-		self.parts.wpn_fps_upg_o_pkas.desc_id = "bm_wp_upg_o_1_5"		
-		self.parts.wpn_fps_upg_o_pkas.stats = {
-			zoom = 1,
-			value = 5
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_m145 then --Pawcio's ELCAN C79
-		self.parts.wpn_fps_upg_o_m145.supported = true
-		self.parts.wpn_fps_upg_o_m145.desc_id = "bm_wp_upg_o_3_4"
-		self.parts.wpn_fps_upg_o_m145.stats = {
+	if self.parts.wpn_fps_upg_o_c79 then --Pawcio's ELCAN C79
+		self.parts.wpn_fps_upg_o_c79.supported = true
+		self.parts.wpn_fps_upg_o_c79.desc_id = "bm_wp_upg_o_3_4"
+		self.parts.wpn_fps_upg_o_c79.stats = {
 			zoom = 24,
 			value = 8
 		}
-	end
-
-	if self.parts.wpn_fps_upg_o_anpas13d then --Pawcio's ANPAS-13D Night Vision
-		self.parts.wpn_fps_upg_o_anpas13d.supported = true
-		self.parts.wpn_fps_upg_o_anpas13d.stats = {
-			concealment = -3,
-			spread_moving = -3,
-			zoom = 3,
-			value = 5
-		}
-	end
-
-	if self.parts.wpn_fps_upg_o_pn23 then --Silent Enforcer's PN 23 Night
-		self.parts.wpn_fps_upg_o_pn23.supported = true
-		self.parts.wpn_fps_upg_o_pn23.stats = {
-			concealment = -5,
-			spread_moving = -5,
-			zoom = 5,
-			value = 8
-		}
-	end
-
-	if self.parts.wpn_fps_gre_arbiter_o_smart then --Alcat's Arbiter Scope
-		self.parts.wpn_fps_gre_arbiter_o_smart.supported = true
-		self.parts.wpn_fps_gre_arbiter_o_smart.stats = {
-			spread = 2,
-			concealment = -4
-		}
-		self.parts.wpn_fps_gre_arbiter_o_smart.has_description = true
-		self.parts.wpn_fps_gre_arbiter_o_smart.forbids = {"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter"}
-	end		
-
-	if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint Comp M4s Sight
-		self.parts.wpn_fps_upg_o_compm4s.supported = true
-		self.parts.wpn_fps_upg_o_compm4s.stats = {
-				value = 3,
-				zoom = 5
-			}			
+		self.parts.wpn_fps_upg_o_c79.forbids = deep_clone(self.parts.wpn_fps_upg_o_specter.forbids)
+		self.parts.wpn_fps_upg_o_c79.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+		for i, weap in pairs(self.parts.wpn_fps_upg_o_c79.stance_mod) do
+			if weap and weap.translation then
+				weap.translation = weap.translation + Vector3(0.001, -5, 0)
+			end
 		end
-
-
-	if self.parts.wpn_fps_ass_komodo_o_tele then --Alcat's F2000 Sight
-		self.parts.wpn_fps_ass_komodo_o_tele.supported = true
-		self.parts.wpn_fps_ass_komodo_o_tele.stats = {
-			value = 1
-			}			
-		end	
+		for part_id, i in pairs(self.parts) do
+			if self.parts[part_id].override and self.parts[part_id].override.wpn_fps_upg_o_specter and self.parts[part_id].override.wpn_fps_upg_o_specter.stance_mod then
+				self.parts[part_id].override.wpn_fps_upg_o_c79 = deep_clone(self.parts[part_id].override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts[part_id].override.wpn_fps_upg_o_c79.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(-0.005, -5, 0)
+					end
+				end
+			end
+		end
+	end
 
 	if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
 		local iron_sights = {
@@ -23281,12 +23146,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end																										
 	end
 					
-	if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight		
+	if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight
 		self.parts.wpn_fps_upg_o_compm2.supported = true		
 		self.parts.wpn_fps_upg_o_compm2.stats = {
-				value = 3,
-				zoom = 5
-			}		
+			value = 3,
+			zoom = 5
+		}		
 	end				
 
 	if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
@@ -23320,66 +23185,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 8,
 			zoom = 30
 			}															
-		end	
-
-	--Silent Killer Pack Welrod
-	if self.parts.wpn_fps_pis_welrod_a_ap then
-		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
-
-		--Short barrel
-		self.parts.wpn_fps_pis_welrod_b_short.supported = true
-		self.parts.wpn_fps_pis_welrod_b_short.stats = {
-			value = 3,
-			suppression = -1,
-			spread = -1,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
-
-		--Trigger Guard
-		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
-		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
-			value = 1
-		}
-
-		--Illuminated Iron Sights
-		self.parts.wpn_fps_pis_welrod_glow.supported = true
-	end
-
-	--Silent Killer Pack PB
-	if self.parts.wpn_fps_pis_pb_ns_std then
-		self.parts.wpn_fps_pis_pb_ns_std.supported = true
-		self.parts.wpn_fps_pis_pb_ns_std.stats = {
-			value = 4,
-			suppression = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
-	end
-
-	--Silent Killer Pack Max9
-	if self.parts.wpn_fps_pis_max9_b_short then
-		self.parts.wpn_fps_pis_max9_b_short.supported = true
-		self.parts.wpn_fps_pis_max9_b_short.stats = {
-			value = 5,
-			suppression = -1,
-			recoil = -1,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
-
-		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
-		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
-			value = 5,
-			alert_size = 1,
-			suppression = -12,
-			recoil = -1,
-			spread = -1,
-			concealment = 2
-		}
-		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
-	end
+		end
 
 	--Gambyt's Vanilla Mod Pack
 	if self.parts.wpn_fps_ass_flint_b_long then
@@ -25889,8 +25695,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 		end
-
-
 	end
 
 	--HX25 Grenade Launcher

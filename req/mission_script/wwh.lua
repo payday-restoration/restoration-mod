@@ -31,5 +31,14 @@ return {
 	[100914] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
+	},
+	-- Gradually increase difficulty
+	[100810] = {
+		values = {
+			difficulty = 0.25
+		}
+	},
+	[101313] = {
+		difficulty = 1
 	}
 }	

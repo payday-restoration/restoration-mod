@@ -31,5 +31,15 @@ return {
 	[101812] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
+	},
+	-- Disable turret
+	[101035] = {
+		values = {
+			on_executed = {},
+			unit_ids = {
+				102775,
+				102776
+			}
+		}
 	}
 }

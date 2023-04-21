@@ -130,10 +130,10 @@ function MutatorNoTitans:setup(data)
 				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
 			},					
 			murkywater = {
-				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 			},
 			federales = {
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
+				Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
 			},				
 			nypd = {
 				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
@@ -272,9 +272,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")					
-				},
-				omnia = {
-					Idstring("units/pd2_mod_sharks/characters/ene_omnia_taser/ene_omnia_taser")					
 				}				
 			},
 			access = access_type_all,

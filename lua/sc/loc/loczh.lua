@@ -23,6 +23,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["menu_st_spec_24"] = "白板",
         ["menu_st_spec_25"] = "天赋异禀",
         ["bm_menu_drag_handle"] = "拉机柄",
+        ["bm_wp_upg_a_grenade_launcher_hornet"] = "蜂巢榴弹",
         ["bm_menu_gadget_placement"] = "附件位置",
         ["bm_wp_wpn_fps_upg_xr2_fl_lr"] = "左侧",
         ["bm_wp_wpn_fps_upg_xr2_fl_rr"] = "右侧",
@@ -178,7 +179,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModGCGPYPMMSACTitleID"] = "绝对原始模式", -- may need improved
         ["RestorationModGCGPYPMMSACDescID"] = "关闭来自遥远银河系的武器配件以及极低概率出现的汉化彩蛋。\n重启劫案生效。", -- may need improved
         ["RestorationModStaticAimTitleID"] = "瞄准时武器无变向",
-        ["RestorationModStaticAimDescID"] = "勾选以关闭你在瞄准时，武器会随着你屏幕的移动而变向的效果。参考PDTH。\n重启以生效。警告：取消勾选将导致某些选项不可用。",
+        ["RestorationModStaticAimDescID"] = "勾选以关闭你在瞄准时，武器会随着你屏幕的移动而变向的效果，参考PDTH。会替换Viewmodel Movement的效果。\n重启以生效。警告：取消勾选将导致某些选项不可用。",
+       	["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",  --tra
+		["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
+			["vm_vanilla"] = "Vanilla Behavior",
+			["vm_drag"] = "Weapon Drags Behind",
+			["vm_lead"] = "Weapon Leads Ahead",
+			["vm_static"] = "Static (No Movement)",
         ["RestorationModCarpalTunnelTitleID"] = "自动压枪",
         ["RestorationModCarpalTunnelDescID"] = "选择原版中自动压枪机制的效果程度。\n即在完成射击后，准星会自动下移一部分后坐力抬升的角度。",
         ["RestorationModWpnCatTitleID"] = "购买菜单分类方式",
@@ -1487,7 +1494,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Sub 2000
         ["bm_w_sub2000"] = "龋齿10mm手枪口径卡宾枪",
         -- SAA/Peacemaker
-        ["bm_ap_weapon_peacemaker_sc_desc"] = "史上制作的最好的手枪。\n辅助开火可以通过快速煽动击锤进行速射。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
+        ["bm_ap_weapon_peacemaker_sc_desc"] = "史上最伟大的手枪之一。\n辅助开火可以通过快速煽动击锤以#{important_1}#更高的后坐力、更低的有效射程和无法机瞄##为代价#{skill_color}#提高射速##进行速射。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- CUSTOM HANDGUNS
         -- Browning Hi-Power
         ["bm_w_hpb"] = "VF大威力手枪",
@@ -1555,7 +1562,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_serbu_sc_desc"] = "缩小后的售后市场版Reinfeld-880；给那些想要隐蔽性和渴望搞残手腕的人。",
         -- Reinfeld 88
         ["bm_w_m1897"] = "Repeater 1897霰弹枪",
-        ["bm_menu_sc_m1897_desc"] = "这件标志性的历史名枪见证了太平洋岛屿上从泥沟到茂密丛林的几乎一切战斗，也因其火力汹涌而久誉恶名。\n\n辅助射击允许#{skill_color}#快速连点以用3倍射速射击##，代价是#{important_1}#后坐力和子弹散射更大并且无法右键瞄准##。",
+        ["bm_menu_sc_m1897_desc"] = "这件标志性的历史名枪见证了太平洋岛屿上从泥沟到茂密丛林的几乎一切战斗，也因其火力汹涌而久誉恶名。\n\n辅助射击允许快速连点以用#{skill_color}#更快的射速##进行速射，代价是#{important_1}#后坐力和子弹散射更大并且无法右键瞄准##。",
         -- Mosconi 12g
         ["bm_menu_sc_m590_desc"] = "老式经典升级款。是敢死队，士兵们，公民以及银行劫匪这类人好选择。",
         -- R870
@@ -1725,6 +1732,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_w_contraband"] = "Bigger Friend 7.62步枪",
         ["bm_m203_weapon_sc_desc_pc"] = "疤面煞星私人款\"小伙伴\"AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n按下 $BTN_BIPOD 切换到下挂榴弹发射器。",
         ["bm_m203_weapon_sc_desc"] = "疤面煞星私人款\"小伙伴\"AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n按住 $BTN_BIPOD 切换到下挂榴弹发射器。",
+        	--VMP  --tra
+			["bm_m203_vmp_sc_desc_pc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+			["bm_m203_vmp_sc_desc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+		--FAL
+		["bm_w_fal"] = "Falcon 58步枪",	
+		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
         -- ASS VAL
         -- ["bm_w_asval"] = "Valkyria",
         ["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n#{skill_color}#完全消音##并且#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
@@ -1748,21 +1761,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_w_g3hk79"] = "Gewehr-A3 GL79步枪",
         ["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。\n\n装有#{skill_color}#下挂榴弹发射器##，按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
         -- ["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
+        --BO3 XR2
         ["bm_w_xr2"] = "XR-2步枪",
         ["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能#{skill_color}#提升射速##的独特#{skill_color}#三连发速射模式##。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
         ["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
         ["bm_xr2_handle_01_sc_desc"] = "以#{important_1}#失去射速提高##为代价，将三连发速射模式改为#{skill_color}#连发模式##。",
         ["bm_wp_xr2_handle_02_sc"] = "快速开火枪闩",
         ["bm_xr2_handle_02_sc_desc"] = "以#{important_1}#提高后坐力##为代价将三连发速射模式的射速提升到#{skill_color}#950RPM##。\n\n三连发射击间隔时间和半自动射击射速不受影响。",
+        	--SIERRA .458  --tra
+			["bm_w_sierra458"] = "Sierra .458",
+			["bm_w_sierra458_sc_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+			["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
+			["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
 
-        -- MSR
+		--MSR
         ["bm_msr_sc_desc"] = "美国军方钦定的狙击枪。良好的精准度，操控性，甚至隐蔽性使得它成为令人满意的多用途狙击步枪。\n\n能够#{skill_colo穿透敌人，护甲，盾牌以及薄墙壁r}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- R700
         ["bm_r700_sc_desc"] = "响尾蛇的老前任。良好的精准度，操控性，甚至有着比他后辈更远的射程。缺点呢？稀烂的五发弹夹。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- QBU88
         ["bm_qbu88_sc_desc"] = "从东欧集团得到灵感而做出的无托狙击枪，和大多数一样，适合用来强加你的意志给别人。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- Winchester 1874
-        ["bm_winchester1874_sc_desc"] = "打下了美国西部的枪。热兵器中的圣遗物，但并不意味着其致死性不足，只因它强力的.44-40供弹。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
+        ["bm_winchester1874_sc_desc"] = "打下了美国西部的枪。热兵器中的圣遗物，但并不意味着其致死性不足，只因它强力的.44-40供弹。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。\n辅助射击允许以#{important_1}#更高的后坐力##和#{important_1}#更短的有效射程##为代价进行#{skill_color}#射速更高##的速射。",
         -- TTI(TTY)
         ["bm_w_tti"] = "Tecci .308狙击步枪",
         ["bm_tti_sc_desc"] = "威克的私人武器之一。据说网上有个地方有他练习这把枪莫桑比克射击法的片段。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
@@ -1777,7 +1797,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wa2000_sc_desc"] = "这个最负盛名的枪世上只做了几百把；一把专适合顶尖杀手的狙击步枪。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- Rangerhitter
         ["bm_w_sbl"] = "Rangehitter MK2狙击步枪", -- It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-        ["bm_sbl_sc_desc"] = "二十世纪的杠杆设计使其相对十九世纪能供应更大号的枪弹。期待你这边的.45-70子弹带来额外的乐趣和额外的死仔吧。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
+        ["bm_sbl_sc_desc"] = "二十世纪的杠杆设计使其相对十九世纪能供应更大号的枪弹。期待你这边的.45-70子弹带来额外的乐趣和额外的死仔吧。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。\n辅助射击允许以#{important_1}#更高的后坐力##和#{important_1}#更短的有效射程##为代价进行#{skill_color}#射速更高##的速射。",
         -- Contender G2
         ["bm_w_contender"] = "Aran G2狙击步枪",
         ["bm_contender_sc_desc"] = "",
@@ -1789,7 +1809,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Mosin--
         ["bm_mosin_sc_desc"] = "当你食不果腹而仍然需要一把枪，这把廉价又经典的栓动式步枪便应召而来。\n\n这把枪一次装填满5颗子弹，并且能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         ["bm_wp_upg_a_tranq_mosin"] = "镇静弹",
-        ["bm_wp_upg_a_tranq_mosin_desc"] = "#{ghost_color}#忘却##，#{item_stage_2}#结束##。\n\n发射伤害更低的#{stats_positive}#镇静弹##，但命中敌人时能在#{skill_color}#6##秒内每秒造成#{skill_color}#30##点伤害并且能够#{stats_positive}#硬直敌人##。",
+        ["bm_wp_upg_a_tranq_mosin_desc"] = "#{ghost_color}#忘却##，#{item_stage_2}#结束##。\n\n发射伤害更低的#{stats_positive}#镇静弹##，但命中敌人时能在#{skill_color}#6##秒内每秒造成#{skill_color}#30##点伤害并且能够#{stats_positive}#硬直敌人##。\n\n使用后#{important_1}#无法再穿透敌人##。",
+        ["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage over time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",  --tra
         -- Desert Fox
         ["bm_desertfox_sc_desc"] = "威克突击俄罗斯黑帮安全屋时用的紧凑型无托狙击步枪。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- R93
@@ -1843,9 +1864,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- M4/CAR-4
         ["bm_menu_sc_m4_desc"] = "可靠，紧凑，且致命。在现代部队广泛使用的5.56mm步枪。",
 
-        -- SAA/Peacemaker
-        ["bm_ap_weapon_peacemaker_sc_desc"] = "#{heat_warm_color}#有史以来做的最好的手枪##。\n辅助射击能够以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。",
-
         -- Generic weapon descriptions (Keep for custom weapon purposes)--
         ["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
         ["bm_menu_weapon_movement_bonus_info"] = "移动速度提升 ",
@@ -1862,8 +1880,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_menu_weapon_slot_warning_wtfdoido"] = "如果物品栏还有这把枪务必不要使用。\n\n目前依然没有平衡方式。",
         ["empty"] = "",
         ["missing_cap"] = "#{risk}#自定义附件##-#{important_1}#未安装##\n\n附件将使用该栏默认外观。",
-        ["bm_slamfire_generic_desc"] = "辅助射击允许#{skill_color}#快速连点以用3倍射速射击##，代价是#{important_1}#后坐力和子弹散射更大并且无法右键瞄准##。",
-        -- ["bm_lmg_generic_desc"] = "#{important_1}#腰射时大幅降低精准度##",
+        ["bm_slamfire_generic_desc"] = "辅助射击允许快速连点以用#{skill_color}#更快的射速##进行速射，代价是#{important_1}#后坐力和子弹散射更大并且无法右键瞄准##。",
+        ["bm_rapidfire_generic_desc"] = "Can be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",  --tra
         ["bm_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         ["bm_ap_armor_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。",
         ["bm_ap_armor_20_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#20%##的伤害。",
@@ -1926,26 +1944,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["menu_battle_rifle"] = "战斗步枪",
 
         -- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
+        ["bm_melee_swing_arc_1"] = "有#{skill_color}#较宽##的攻击范围。",
+		["bm_melee_swing_arc_2"] = "有#{skill_color}#很宽##的攻击范围。",
+		["bm_melee_swing_arc_3"] = "有#{skill_color}#宽广##的攻击范围。",
+		["bm_melee_swing_arc_4"] = "有#{skill_color}#非常宽广##的攻击范围。",
         ["bm_melee_weapon_info"] = "在武装抢劫中，用枪托殴打受害者通常比直接开枪射击或利器刺击他们更常见。\n\n枪托的最大攻击频率显著受到所用武器的隐匿度影响。",
-        ["bm_melee_katana_info"] = "新作武士刀是一款艺术品，且为全新锻造款。它未曾饱尝鲜血，也未曾留名青史。它只是在等待一个主上来开创这些。\n\n完全蓄力时出刀速度加快50%，允许快速进行后续挥砍。\n\n当扮演治郎时，用此武器蓄力击杀幻影特工可以触发一个独特动画效果。",
-        ["bm_melee_raiden_info"] = "你的手中并无\"正义之器\"。\n\n完全蓄力时出刀速度加快50%，允许快速进行后续挥砍。",
-        ["bm_melee_thejobissnotyours_info"] = "这甚至不是你的剑。\n\n完全蓄力时出刀速度加快50%，允许快速进行后续挥砍。",
-        ["bm_melee_2077tkata_info"] = "这是一把纳米高热刀，其极致精髓体现了传统日本刀剑的威力，没有任何附加功能，也未做任何修改，唯有灼热的钢铁之力。\n\n完全蓄力后攻击可点燃敌人，在3秒内造成120点火焰伤害。",
-        ["bm_melee_buck_info"] = "对抗现代武器仍然十分有效。\n蓄力时减少10%的远程伤害。", -- Buckler Shield
-        ["bm_melee_briefcase_info"] = "不管里面装的什么，手提箱自身有着惊人的弹性。\n\n蓄力时减少10%的远程伤害。", -- Briefcase
-        ["bm_melee_pitch_info"] = "用力叉，再用力叉！\n\n蓄力向前冲锋对前方目标造成每0.4秒45点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗15%的耐力；致命一击只消耗10%。\n\n任何时候都无法格挡敌人攻击。", -- Randal Pitchfork
-        ["bm_melee_charge_info"] = "蓄力向前冲锋对前方目标造成每0.4秒45点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗15%的耐力；致命一击只消耗10%。\n\n任何时候都无法格挡敌人攻击。",
-        ["bm_melee_cs_info"] = "撕裂吧！毁灭吧！\n蓄力时对你面前的敌人每0.25秒造成30点伤害。此属性受到相关技能影响。\n\n无法格挡敌人攻击。", -- ROAMING FR-
-        ["bm_melee_ostry_info"] = "车专口阿车专口阿车专。\n蓄力时对你面前的敌人每0.18秒造成18点伤害。此属性受到相关技能影响。\n\n无法格挡敌人攻击。", -- Kazaguruma
-        ["bm_melee_wing_info"] = "配合伪装一起使用效果更佳。\n从背后攻击敌人造成4倍伤害。", -- Wing Butterfly Knife
-        ["bm_melee_switchblade_info"] = "暴力与致命是我的信条。\n从背后攻击敌人造成2倍伤害。", -- Switchblade Knife
-        ["bm_melee_chef_info"] = "不太确定能不能用来切超市的肉。\n完全蓄力时攻击会造成恐慌效果。", -- Psycho Knife
-        ["bm_melee_headless_sword_info"] = "梦魇打造的剑。\n完全蓄力时攻击会造成恐慌效果。", -- Headless Dozer Sword
-        ["bm_melee_goat_info"] = "\"它太大了，以至于不能称之为剑。巨大、厚实、沉重而又粗野。的确，它就好像一堆生铁。\"\n\n完全蓄力后攻击会散播恐慌。", -- im not gaj
-        ["bm_melee_great_info"] = "试着去刺击，但穿了个洞。\n\n蓄力达到至少90%时进行刺击，使攻击距离提高0.5m。", -- Great Sword
-        ["bm_melee_jebus_info"] = "#{risk}#明暗双生，黑白两道，生死分明！##\n\n这把双刃无容于中庸，必能令敌手唯恐避之不及。\n\n蓄力达到至少90%时进行刺击，使攻击距离提高0.5m。",
-        ["bm_melee_nin_info"] = "发射距离很短但几乎立刻命中的钉子，击杀仍然计入近战击杀数。", -- Pounder
-        ["bm_melee_thebestweapon_info"] = "游戏中最好的武器，没有之一。",
+        ["bm_melee_katana_info"] = "新作武士刀是一款艺术品，且为全新锻造款。它未曾饱尝鲜血，也未曾留名青史。它只是在等待一个主上来开创这些。\n\n完全蓄力时出刀速度加快#{skill_color}#50%##，允许快速进行后续挥砍。\n\n当扮演治郎时，用此武器蓄力击杀幻影特工可以触发一个独特动画效果。",
+        ["bm_melee_raiden_info"] = "你的手中并无\"#{risk}#正义之器##\"。\n\n完全蓄力时出刀速度加快#{skill_color}#50%##，允许快速进行后续挥砍。",
+        ["bm_melee_thejobissnotyours_info"] = "这甚至不是你的剑。\n\n完全蓄力时出刀速度加快#{skill_color}#50%##，允许快速进行后续挥砍。",
+        ["bm_melee_2077tkata_info"] = "这是一把纳米高热刀，其极致精髓体现了传统日本刀剑的威力，没有任何附加功能，也未做任何修改，唯有灼热的钢铁之力。\n\n完全蓄力后攻击可点燃敌人，在#{skill_color}#3##秒内造成#{heat_warm_color}#120##点火焰伤害。",
+        ["bm_melee_buck_info"] = "对抗现代武器仍然十分有效。\n蓄力时减少#{skill_color}#10%##的远程伤害。", -- Buckler Shield
+        ["bm_melee_briefcase_info"] = "不管里面装的什么，手提箱自身有着惊人的弹性。\n\n蓄力时减少#{skill_color}#10%##的远程伤害。", -- Briefcase
+        ["bm_melee_pitch_info"] = "用力叉，再用力叉！\n\n蓄力向前冲锋对前方目标造成每#{skill_color}#0.4##秒#{skill_color}#45##点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗#{important_1}#15%##的耐力；致命一击只消耗#{ghost_color}#10%##。\n\n#{important_1}#任何时候都无法格挡敌人攻击##", -- Randal Pitchfork
+        ["bm_melee_charge_info"] = "蓄力向前冲锋对前方目标造成每#{skill_color}#0.4##秒#{skill_color}#45##点伤害。此属性受到相关技能影响。\n\n冲锋击中敌人时消耗#{important_1}#15%##的耐力；致命一击只消耗#{ghost_color}#10%##。\n\n#{important_1}#任何时候都无法格挡敌人攻击##",
+        ["bm_melee_cs_info"] = "撕裂吧！毁灭吧！\n蓄力时对你面前的敌人每#{skill_color}#0.25##秒造成#{skill_color}#30##点伤害。此属性受到相关技能影响。\n\n#{important_1}#任何时候都无法格挡敌人攻击##", -- ROAMING FR-
+        ["bm_melee_ostry_info"] = "车专口阿车专口阿车专。\n蓄力时对你面前的敌人每#{skill_color}#0.18##秒造成#{skill_color}#18##点伤害。此属性受到相关技能影响。\n\n#{important_1}#任何时候都无法格挡敌人攻击##", -- Kazaguruma
+        ["bm_melee_wing_info"] = "配合伪装一起使用效果更佳。\n从背后攻击敌人造成#{skill_color}#4##倍伤害。", -- Wing Butterfly Knife
+        ["bm_melee_switchblade_info"] = "暴力与致命是我的信条。\n从背后攻击敌人造成#{skill_color}#2##倍伤害。", -- Switchblade Knife
+        ["bm_melee_chef_info"] = "不太确定能不能用来切超市的肉。\n完全蓄力时命中敌人会在附近#{skill_color}#12##米内#{skill_color}#散播恐慌##。", -- Psycho Knife
+        ["bm_melee_headless_sword_info"] = "梦魇打造的剑。\n完全蓄力时命中敌人会在附近#{skill_color}#12##米内#{skill_color}#散播恐慌##。", -- Headless Dozer Sword
+        ["bm_melee_goat_info"] = "\"它太大了，以至于不能称之为剑。巨大、厚实、沉重而又粗野。的确，它就好像一堆生铁。\"\n\n完全蓄力时命中敌人会在附近#{skill_color}#12##米内#{skill_color}#散播恐慌##。", -- im not gaj
+        ["bm_melee_great_info"] = "试着去刺击，但穿了个洞。\n\n蓄力达到至少#{skill_color}#90%##时进行刺击，使攻击距离提高#{skill_color}#0.5m##。", -- Great Sword
+        ["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.\n\n蓄力达到至少#{skill_color}#90%##时进行刺击，使攻击距离提高#{skill_color}#0.5m##", -- Great Sword  --tra
+        ["bm_melee_jebus_info"] = "#{risk}#明暗双生，黑白两道，生死分明！##\n\n这把双刃无容于中庸，必能令敌手唯恐避之不及。\n\n蓄力达到至少#{skill_color}#90%##时进行刺击，使攻击距离提高#{skill_color}#0.5m##。",
+        ["bm_melee_nin_info"] = "#{skill_color}#发射距离很短但几乎立刻命中的钉子##，击杀仍然计入近战击杀数。", -- Pounder
+        ["bm_melee_thebestweapon_info"] = "##{heat_warm_color}##游戏中最好的武器##，没有之一。",
         ["bm_melee_iceaxe_info"] = "爆头伤害增加50%。", -- Icepick
         ["bm_melee_mining_pick_info"] = "爆头伤害增加50%。", -- Gold Fever (Pickaxe)
         ["bm_melee_boxing_gloves_info"] = "丧钟为你而鸣。\n用该武器击杀敌人立刻恢复你的耐力。", -- OVERKILL Boxing Gloves
@@ -1960,6 +1983,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_melee_slot_lever_info"] = "中头彩！\n5%的几率造成10倍伤害并击倒敌人。",
         ["bm_melee_specialist_info"] = "双份匕首，双倍快乐。\n拔刀后的第一次攻击之后的每次攻击都是双倍伤害。", -- Specialist Knives, Talons, Knuckle Daggers, Push Daggers
         ["bm_melee_cleaver_info"] = "上砍雪花盖顶，下砍老树盘根。\n爆头伤害减少50%，对身体和其他部分的伤害增加50%。",
+
+        --Melee Weapons
+		["bm_melee_twins"] = "Sai", --Plural form is still "sai"  --tra what is this
 
         -- CUSTOM MELEE WEAPONS
         ["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
@@ -2013,7 +2039,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_menu_moving_range"] = "衰减末距",
 
         ["bm_menu_attack_speed"] = "攻击间隔",
-        ["bm_menu_impact_delay"] = "攻击后摇",
+        ["bm_menu_impact_delay"] = "攻击前摇",
 
         ["bm_menu_pickup"] = "捡弹量",
         ["bm_menu_ads_speed"] = "瞄准时间",
@@ -2130,6 +2156,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["st_menu_firemode_semi"] = "单发",
         ["st_menu_firemode_auto"] = "连发",
         ["st_menu_firemode_burst"] = "速射",
+        	["st_menu_firemode_burst_slamfire"] = "SLAMFIRE",  --tra SLAMFIRE
+			["st_menu_firemode_burst_fanning"] = "FANNING",  --tra FANNING
+			["st_menu_firemode_burst_rapidfire"] = "RAPIDFIRE",  --tra RAPIDFIRE
+			["st_menu_firemode_burst_autoburst"] = "AUTOBURST",  --tra AUTOBURST
         ["st_menu_firemode_volley"] = "齐射",
 
         ["menu_reticle_dmc_eotech"] = "TECopt 圆准星",
@@ -2401,6 +2431,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_wp_g26_b_custom"] = "Brushed Metal Slide",
                     ["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
                     ["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
+                    --Luger
+					["bm_w_breech"] = "Luger P08",
                     -- Bernetti 9
                     ["bm_w_b92fs"] = "Beretta 92FS",
                     ["bm_w_x_b92fs"] = "Akimbo 92FSs",
@@ -2485,6 +2517,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Prototype Phase I LAM",
                     ["bm_w_x_socom"] = "Akimbo Mk.23s",
 
+                    --TT-33	
+					["bm_w_type54"] = "Tokarev TT-33",
+					["bm_w_x_type54"] = "Akimbo TT-33s",
+						
+					--Kahn .357
+					["bm_w_korth"] = "Korth NXA",
+					["bm_w_x_korth"] = "Akimbo Korth NXAs",
+
                     -- Mateba
                     ["bm_w_mateba"] = "Mateba 2006M",
                     -- Bronco
@@ -2552,7 +2592,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     -- Miyaka 9
                     ["bm_w_pm9"] = "Minebea PM-9",
                     -- FMG9
-                    ["bm_w_fmg9"] = "Magpul FMG-9",
+                    ["bm_w_fmg9"] = "Magpul FDC-9",
 
                     -- Cobra
                     ["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
@@ -2751,6 +2791,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
                     -- AMCAR
                     ["bm_w_amcar"] = "Colt M733 Commando",
+                    --BABBY AR
+					["bm_w_olympic"] = "Olympic Arms K23B",
 
                     -- AUG
                     ["bm_w_aug"] = "Steyr AUG A2",
@@ -3094,6 +3136,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_melee_sword"] = "Pencil",
                     ["bm_melee_oxide"] = "UVSR Taiga-1",
                     ["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
+                    ["bm_melee_twins"] = "Shureido Sai",
 
                     --[[THROWABLES]]
                     ["bm_grenade_frag"] = "M67 Fragmentation Grenade",
@@ -3144,7 +3187,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                 ["bm_w_mg42"] = "Buzzsaw-42重机枪（壕沟战）",
                 -- overwatch
                 ["bm_w_peacemaker"] = "维和者",
-                ["bm_ap_weapon_peacemaker_sc_desc"] = "“#{heat_warm_color}#正义可不会伸张自己##”\n\n辅助射击能够像#{heat_warm_color}#卡西迪##一样以#{skill_color}#更高的射速##连续射击#{skill_color}#6##发子弹。\n\n可以#{skill_color}#穿透护甲，敌人，盾牌以及薄墙壁##。"
+                ["bm_ap_weapon_peacemaker_sc_desc"] = "“#{heat_warm_color}#正义可不会伸张自己##”\n\n\n辅助开火可以通过快速煽动击锤以#{important_1}#更高的后坐力、更低的有效射程和无法机瞄##为代价#{skill_color}#提高射速##进行速射。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
             })
         end
     end
@@ -3179,14 +3222,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
             LocalizationManager:add_localized_strings({
                 ["bm_w_deagle"] = "700块钱的大狙",
                 ["bm_w_m16"] = "9000GP永久",
-                ["bm_melee_great_info"] = "试着去刺击，但穿了个洞。\n\n攒累九成之力，斩出一剑，剑尖即可深入半米远方，视野也得以拓宽。",
-                ["bm_melee_jebus_info"] = "光与暗，黑与白，生与死！\n\n这把双刃无容于中庸，必能令敌手唯恐避之不及。\n\n攒累九成之力，斩出一剑，剑尖即可深入半米远方，视野也得以拓宽。",
+                ["bm_melee_great_info"] = "试着去刺击，但穿了个洞。\n\n攒累#{skill_color}#九成##之力，斩出一剑，剑尖即可深入#{skill_color}#半米##远方，视野也得以拓宽。",
+                ["bm_melee_jebus_info"] = "#{risk}#明暗双生，黑白两道，生死分明！##\n\n这把双刃无容于中庸，必能令敌手唯恐避之不及。\n\n攒累九成之力，斩出一剑，剑尖即可深入半米远方，视野也得以拓宽。",
                 ["bm_sparrow_sc_desc"] = "\n我一定会回来的！",
                 ["bm_m16_sc_desc"] = "我给你一个弹夹，这样你就可以输出了。",
                 ["bm_w_x_type54"] = "十字杀双胞胎",
                 ["bm_akmsu_sc_desc"] = "一支不可被低估的小型步枪，用于击倒#{stat_maxed}#大个子##。这把步枪几乎可以在任何时候都发挥效用。"
             })
         end
+    end
+
+    local getaf = os.date("*t")
+    if getaf.month == 4 and getaf.day == 1 then
+        LocalizationManager:add_localized_strings({
+            ["dialog_err_failed_joining_lobby"] = "你太菜了无法加入游戏。"
+        })
     end
 
 end)
@@ -3232,52 +3282,55 @@ elseif ai_type == m then
     end)
 end
 
-local ModPath_Chin = ModPath
-
 if _G.HopLib then
     local ai_type = tweak_data.levels:get_ai_group_type()
-    local murkywetew = tweak_data.levels.ai_groups.murkywater -- LevelsTweakData.LevelType.Murkywater
+    local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
     local lapd = tweak_data.levels.ai_groups.lapd
     local mex = tweak_data.levels.ai_groups.federales
     local akan = tweak_data.levels.ai_groups.russia
     local nypd = tweak_data.levels.ai_groups.nypd
     local fbi = tweak_data.levels.ai_groups.fbi
     local breins = tweak_data.levels.ai_groups.zombie
+    local oom = tweak_data.levels.ai_groups.omnia
 
-    Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat", function(loc)
-        loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/hoplibkillfeedcompat.json")
+    Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+        loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
     end)
 
     if ai_type == murkywetew then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_murkywetew", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/murkywetew.json")
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
         end)
     elseif ai_type == lapd then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_LAPD", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/lapd.json")
-        end)
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+        end)    
     elseif ai_type == mex then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_mex", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/mex.json")
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")        
         end)
     elseif ai_type == akan then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_akan", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/akan.json")
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")       
         end)
     elseif ai_type == nypd then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_nypd", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/nypd.json")
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")       
         end)
     elseif ai_type == fbi then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_fbi", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/fbi.json")
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")        
         end)
     elseif ai_type == breins then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_breins", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/breins.json")
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")     
         end)
+    elseif ai_type == oom then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_oom", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/omnia.json")  
+        end)    
     end
-end
+ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
     LocalizationManager:add_localized_strings({
@@ -3407,7 +3460,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_new_units_res_19"] = "掷弹兵的武器有能发射催泪瓦斯的下挂件，站在瓦斯中的玩家会持续受到伤害。在\"死刑宣判\"难度下，他装备了更致命的、伤血更快且会迅速清空你耐力的毒气弹。",
         -- Captain Hints
         ["loading_captains_res_title"] = "恢复MOD劫匪小贴士(四季队长)",
-        ["loading_captains_res_1"] = "要击败夏日队长，要先从他的医疗单位入手。夏日队长的队员死亡前，队长几乎是无敌的。而他的左右护法在医疗兵还活着时几乎是无懈可击的。",
+        ["loading_captains_res_1"] = "要击败夏日队长，得先从他的医疗单位入手。夏日队长的队员死亡前，队长几乎是无敌的。而他的左右护法在医疗兵还活着时几乎是无懈可击的。",
         ["loading_captains_res_2"] = "不要靠近夏日队长，否则他会使用他的喷火器迅速把你燃烧殆尽。", -- 夏日队长还装备了一把电击枪以拖慢你的移动。
         ["loading_captains_res_3"] = "春日队长可以承受成吨的伤害，但他并不是无敌的。注意他扔出的手雷，试着放他风筝，他的行动比乌龟还慢。",
         ["loading_captains_res_4"] = "春日队长时不时会扔出一颗高爆手雷。不要长时间靠他太近。",
@@ -3844,7 +3897,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Iron Man
         ["menu_juggernaut_beta_sc"] = "钢铁之躯",
-        ["menu_juggernaut_beta_desc_sc"] = "掌握: #{risk}#$basic##\n解锁 #{skill_color}#改良型复合战术背心## 以供你使用。\n\n近战打盾可以#{skill_color}#击退或推倒盾兵##。\n\n#{important_1}#提示：对冬日队长无效##\n\n专精: #{risk}#$pro##\n现在远程武器射击盾也有几率#{skill_color}#击退或推倒盾兵##，击倒概率取决于武器伤害。\n\n护甲恢复速度加快#{skill_color}#10%##",
+        ["menu_juggernaut_beta_desc_sc"] = "掌握: #{risk}#$basic##\n解锁 #{skill_color}#改良型复合战术背心## 以供你使用。\n\n近战打盾可以#{skill_color}#击退或推倒盾兵##。\n\n#{important_1}#提示：对冬日队长无效##\n\n专精: #{risk}#$pro##\n现在远程武器射击盾也有几率#{skill_color}#击退或推倒盾兵##，击倒概率取决于武器伤害。\n\n护甲恢复速度加快#{skill_color}#10%##。",
 
         -- }
 
@@ -3992,7 +4045,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Shockproof
         ["menu_insulation_beta_sc"] = "绝缘装甲",
-        ["menu_insulation_beta_desc_sc"] = "掌握: #{risk}#$basic##\n被泰瑟警察电击时，你有#{skill_color}#15%##的几率反火并击晕电击你的泰瑟警察\n\n专精: #{risk}#$pro##\n被泰瑟警察电击后的#{skill_color}#2##秒内对它按[互动键]可以立即对电击你的泰瑟警察造成一次反火，并对其造成其血量#{skill_color}#50%##的伤害",
+        ["menu_insulation_beta_desc_sc"] = "掌握: #{risk}#$basic##\n被泰瑟警察电击时，你#{skill_color}#不会被强制开枪##且有#{skill_color}#15%##的几率反火并击晕电击你的泰瑟警察。\n\n提示：被电击时产生的精准和稳定惩罚及抖动幅度不变。\n\n专精: #{risk}#$pro##\n被泰瑟警察电击后的#{skill_color}#2##秒内对它按[互动键]可以立即对电击你的泰瑟警察造成一次反火，并对其造成其血量#{skill_color}#50%##的伤害。\n\n泰坦泰瑟射击你造成的减速效果和时间减少#{skill_color}#50%##。",
 
         -- }
 
@@ -4069,7 +4122,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Mind Blown, formerly Explosive Headshot--
         ["menu_kilmer_sc"] = "脑\"洞\"大开",
-        ["menu_kilmer_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头的同时，被爆头的敌人半径#{skill_color}#4##米内最近的敌人会受到你刚刚爆头伤害#{skill_color}#70%##的擦伤，该效果只能由#{skill_color}#单发射击##和#{skill_color}#速射模式##的突击步枪和狙击步枪触发\n\n被爆头的敌人每离你#{skill_color}#8##米远，就会有一个额外的警察受到该擦伤效果，最多同时擦伤#{skill_color}#3##名敌人\n\n专精: #{risk}#$pro##\n使用突击步枪或狙击步枪爆头产生的伤害#{skill_color}#不受距离衰减影响##\n\n可被擦伤的距离增加#{skill_color}#1##米\n\n被爆头的敌人每离你#{skill_color}#8##米远，擦伤的伤害就额外增加#{skill_color}#10%##，最多额外增加#{skill_color}#100%##",
+        ["menu_kilmer_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头的同时，被爆头的敌人半径#{skill_color}#4##米内最近的敌人会受到你刚刚爆头伤害#{skill_color}#70%##的擦伤，该效果只能由#{skill_color}#单发射击##和#{skill_color}#速射模式##的突击步枪和狙击步枪触发\n\n被爆头的敌人每离你#{skill_color}#8##米远，就会有一个额外的敌人受到该擦伤效果，最多同时擦伤#{skill_color}#3##名敌人\n\n专精: #{risk}#$pro##\n使用突击步枪或狙击步枪爆头产生的伤害#{skill_color}#不受距离衰减影响##\n\n可被擦伤的距离增加#{skill_color}#1##米\n\n被爆头的敌人每离你#{skill_color}#8##米远，擦伤的伤害就额外增加#{skill_color}#10%##，最多额外增加#{skill_color}#100%##",
 
         -- Ammo Efficiency--
         ["menu_single_shot_ammo_return_sc"] = "弹无虚发",
@@ -4125,7 +4178,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Haunt--
         ["menu_haunt_sc"] = "恐惧弥漫",
-        ["menu_haunt_desc_sc"] = "掌握: #{risk}#$basic##\n击杀一名在你半径#{skill_color}#18##米内的敌人有概率在附近#{skill_color}#10##米的敌人中#{skill_color}#散播恐慌##，初始概率为#{skill_color}#5%##，每次倒地会提升该效果触发概率的#{skill_color}#5%##，该效果会随着你倒地次数的恢复而减少。\n\n恐慌会使敌人短暂地失去行动能力\n\n专精: #{risk}#$pro##\n初始概率提高至#{skill_color}#20%##。",
+        ["menu_haunt_desc_sc"] = "掌握: #{risk}#$basic##\n击杀一名在你半径#{skill_color}#18##米内的敌人有概率在附近#{skill_color}#12##米的敌人中#{skill_color}#散播恐慌##，初始概率为#{skill_color}#5%##，每次倒地会提升该效果触发概率的#{skill_color}#5%##，该效果会随着你倒地次数的恢复而减少。\n\n恐慌会使敌人短暂地失去行动能力\n\n专精: #{risk}#$pro##\n初始概率提高至#{skill_color}#20%##。",
 
         -- Messiah--
         ["menu_pistol_beta_messiah_sc"] = "弥赛亚",
@@ -4258,10 +4311,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
         ["menu_deck9_1_sc"] = "非礼勿言",
         ["menu_deck9_1_desc_sc"] = "当你被##18##米内至少##3##名敌人包围时，你受到来自敌人的伤害减少##5%##。",
-        ["menu_deck9_3_desc_sc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1.5##秒。\n\n你的闪避点数增加##5##。",
+        ["menu_deck9_3_desc_sc"] = "击杀一名敌人将为你回复##20##点护甲值。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1.5##秒。\n\n如果某次杀敌把冷却时间减少到0，那么该效果会立刻触发，然后再次进入冷却。\n\n你的闪避点数增加##5##。",
         ["menu_deck9_5_desc_sc"] = "使用近战武器击杀一名敌人将为你回复##2%##的血量。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n你初始携带的尸体袋数量增加##1##。",
         ["menu_deck9_7_desc_sc"] = "击杀一名距你##18##米内的敌人将为你额外回复##15##点护甲值，若是近战击杀则多额外回复##15##点。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n你的闪避点数额外增加##5##。",
-        ["menu_deck9_9_desc_sc"] = "击杀一名距你##18##米内的敌人将有##25%##的几率在附近##10米##的敌人中##散播恐慌##，若是近战击杀则概率额外增加##25%##，恐慌会使敌人短暂地失去行动能力。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+        ["menu_deck9_9_desc_sc"] = "击杀一名距你##18##米内的敌人将有##25%##的几率在附近##12##米的敌人中##散播恐慌##，若是近战击杀则概率额外增加##25%##，恐慌会使敌人短暂地失去行动能力。\n\n这与“##危急情形##”（牌组三）同时计算冷却。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
         -- Grinder--
 
@@ -4422,7 +4475,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
         -- Infiltrator
         ["menu_deck8_mrwi_desc"] = "若在你半径##12##米范围内有一名敌人存在，你受到来自敌人的伤害减少##10%##。\n\n每次使用近战武器成功击中敌人都将在##5##秒内使你的近战武器伤害增加##8%##，该效果可以叠加且最多叠加##5##次，打空失效。\n\n你回路的摄像头，失效的时间增加##20##秒。",
         -- Sociopath
-        ["menu_deck9_mrwi_desc"] = "击杀一名敌人将为你回复护甲值，击杀的敌人若在你周围##18##米内，你回复##15##点护甲值（近战击杀效果##翻倍##），否则回复##20##点。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1.5##秒。\n\n你初始携带的尸体袋数量增加##1##。",
+        ["menu_deck9_mrwi_desc"] = "击杀一名敌人将为你回复护甲值，击杀的敌人若在你周围##18##米内，你回复##15##点护甲值（近战击杀效果##翻倍##），否则回复##20##点。\n\n该效果的冷却时间为##5##秒，每击杀一名敌人可使冷却时间减少##0.5##秒，近战击杀将额外减少##1.5##秒。\n\n如果某次杀敌把冷却时间减少到0，那么该效果会立刻触发，然后再次进入冷却。\n\n你初始携带的尸体袋数量增加##1##。",
         -- Gambler
         ["menu_deck10_mrwi_desc"] = "你捡起一个弹药盒会回复##2##至##5##点血量。\n冷却时间为##10##秒，每捡起一个弹药盒会减少冷却时间##1##至##4##秒。\n\n你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你回答对讲机所需的时间减少##25%##。",
         -- Grinder

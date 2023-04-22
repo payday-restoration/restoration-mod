@@ -2082,6 +2082,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 			["bm_suit_var_loud_suit_gorkasea"] = "Devious Blue",
 			["bm_suit_var_loud_suit_gorkasea_desc"] = "Makes swishing noises like sweatpants. The guards aren't ignoring you because they don't notice you, it's because they're too scared to look.",
+			
+			["bm_suit_var_suit_sunny_default"] = "Casual Business",
+			["bm_suit_var_suit_sunny_default_desc"] = "You feel yourself like an actor of the 90s action movies when wearing this suit.",
+				
+			["bm_suit_var_suit_sunny_skull"] = "Skully Business",
+			["bm_suit_var_suit_sunny_skull_desc"] = "Make others feel fear and run away from a battelfield just by looking at you.",
+				
+			["bm_suit_var_suit_sunny_red"] = "Bloody Business",
+			["bm_suit_var_suit_sunny_red_desc"] = "Now you can walk next to the GenSec guards and and don't be suspicious. Well, almost.",
+				
+			["bm_suit_var_suit_sunny_blue"] = "Digital Business",
+			["bm_suit_var_suit_sunny_blue_desc"] = "While you were hacking the security system - the FBI found your location and already send S.W.A.T. forces. Are you ready to fight?",
+				
+			["bm_suit_var_suit_sunny_green"] = "Greedy Business",
+			["bm_suit_var_suit_sunny_green_desc"] = "No matter on which robbery you are - you're taking all loot.",
+
+			["bm_suit_var_suit_sunny_yellow"] = "Sunshine Business",
+			["bm_suit_var_suit_sunny_yellow_desc"] = "Sunrise. Police chasing you. Shootout.\nWhat could be better?",
 		
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

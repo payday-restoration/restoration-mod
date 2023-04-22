@@ -159,6 +159,12 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_purple"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_red"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_white"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_default"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_red"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_skull"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_blue"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_green"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_yellow"/>
 		
 		
 		<texture path="units/pd2_mod_suits/characters/shared_textures/player_tactical_outfit_blue_df"/>
@@ -357,6 +363,59 @@
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_sydney"/>
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_sydney"/>	
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_joy"/>
-		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_joy"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_joy"/>
+		
+		
+		
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_red_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_joy"/>
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_blue_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_joy"/>
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_green_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_joy"/>
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_yellow_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_joy"/>		
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_skull_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_joy"/>
 	
 </table>

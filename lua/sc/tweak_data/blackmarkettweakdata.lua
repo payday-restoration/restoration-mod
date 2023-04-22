@@ -842,7 +842,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_body_replacement = body_replacement_standard,
 		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit",
-		characters = {}
+		characters = {},
+		material_variations = {}
 	}
 	set_characters_data("suit_sunny", characters_female_big, {
 		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female",
@@ -887,6 +888,223 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	self.player_styles.suit_sunny.characters.bodhi = {
 		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi",
 		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit/bodhi/res_acc_sunny_suit_bodhi",	
+	}
+	
+	-- Color variations
+	self.player_styles.suit_sunny.material_variations.default = {
+		name_id = "bm_suit_var_suit_sunny_default",
+		desc_id = "bm_suit_var_suit_sunny_default_desc"
+	}
+	
+	self.player_styles.suit_sunny.material_variations.red = {
+		name_id = "bm_suit_var_suit_sunny_red",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_red_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red",
+	}
+	
+	self.player_styles.suit_sunny.material_variations.blue = {
+		name_id = "bm_suit_var_suit_sunny_blue",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_blue_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue",
+	}
+	
+	self.player_styles.suit_sunny.material_variations.yellow = {
+		name_id = "bm_suit_var_suit_sunny_yellow",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_yellow_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow",
+	}
+	
+	self.player_styles.suit_sunny.material_variations.green = {
+		name_id = "bm_suit_var_suit_sunny_green",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_green_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green",
+	}
+	
+	self.player_styles.suit_sunny.material_variations.skull = {
+		name_id = "bm_suit_var_suit_sunny_skull",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_skull_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull",
+	}
+	
+	self.player_styles.suit_sunny.characters.chains.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	}
+	}
+	
+	self.player_styles.suit_sunny.characters.bodhi.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	}
+	}
+	
+	self.player_styles.suit_sunny.characters.max.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	}
+	}
+	
+	self.player_styles.suit_sunny.characters.dragon.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	}
+	}
+	
+	self.player_styles.suit_sunny.characters.chico.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	}
+	}
+	
+	self.player_styles.suit_sunny.characters.joy.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	}
+	}
+	
+	self.player_styles.suit_sunny.characters.sydney.material_variations = {
+	skull = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_red_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_blue_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	yellow = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	}
 	}
 
 	--Resmod Prison Suit

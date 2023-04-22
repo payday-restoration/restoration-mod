@@ -332,7 +332,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		},
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit",
-		characters = {}
+		characters = {},
+		material_variations = {}
 	}
 	set_characters_data("loud_suit", characters_male_big, {
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit"
@@ -382,6 +383,452 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	self.player_styles.loud_suit.characters.ecp_female = {
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/res_acc_loud_suit_female_very_thin"
 	
+	}
+	
+-- Color variations
+	self.player_styles.loud_suit.material_variations.default = {
+		name_id = "bm_suit_var_loud_suit_default",
+		desc_id = "bm_suit_var_loud_suit_default_desc"
+	}
+	
+	self.player_styles.loud_suit.material_variations.blue = {
+		name_id = "bm_suit_var_loud_suit_blue",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_blue_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue",
+	}
+	
+	self.player_styles.loud_suit.material_variations.brown = {
+		name_id = "bm_suit_var_loud_suit_brown",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_brown_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown",
+	}
+	
+	self.player_styles.loud_suit.material_variations.gorkaearth = {
+		name_id = "bm_suit_var_loud_suit_gorkaearth",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_gorkaearth_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth",
+	}
+	
+	self.player_styles.loud_suit.material_variations.gorkagreen = {
+		name_id = "bm_suit_var_loud_suit_gorkagreen",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_gorkagreen_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen",
+	}
+	
+	self.player_styles.loud_suit.material_variations.gorkagrey = {
+		name_id = "bm_suit_var_loud_suit_gorkagrey",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_gorkagrey_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey",
+	}
+	
+	self.player_styles.loud_suit.material_variations.gorkapurple = {
+		name_id = "bm_suit_var_loud_suit_gorkapurple",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_gorkapurple_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple",
+	}
+	
+	self.player_styles.loud_suit.material_variations.gorkasea = {
+		name_id = "bm_suit_var_loud_suit_gorkasea",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_gorkasea_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea",
+	}
+	
+	self.player_styles.loud_suit.material_variations.green = {
+		name_id = "bm_suit_var_loud_suit_green",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_green_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green",
+	}
+	
+	self.player_styles.loud_suit.material_variations.purple = {
+		name_id = "bm_suit_var_loud_suit_purple",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_purple_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple",
+	}
+	
+	self.player_styles.loud_suit.material_variations.red = {
+		name_id = "bm_suit_var_loud_suit_red",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_red_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red",
+	}
+	
+	self.player_styles.loud_suit.material_variations.white = {
+		name_id = "bm_suit_var_loud_suit_white",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_loud_suit_white_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white",
+	}
+	
+	
+	self.player_styles.loud_suit.characters.chains.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_chains"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_chains"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_chains"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_chains"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_chains"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_chains"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_chains"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_chains"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_chains"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_chains"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_chains",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_chains"
+	}
+	}
+	
+	self.player_styles.loud_suit.characters.bodhi.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_bodhi"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_bodhi"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_bodhi"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_bodhi"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_bodhi"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_bodhi"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_bodhi"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_bodhi"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_bodhi"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_bodhi"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_bodhi",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_bodhi"
+	}
+	}
+	
+	self.player_styles.loud_suit.characters.max.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_sangres"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_sangres"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_sangres"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_sangres"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_sangres"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_sangres"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_sangres"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_sangres"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_sangres"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_sangres"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_sangres",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_sangres"
+	}
+	}
+	
+	self.player_styles.loud_suit.characters.chico.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_02"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_02"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_02"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_02"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_02"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_02"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_02"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_02"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_02"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_02"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_02"
+	}
+	}
+	
+	self.player_styles.loud_suit.characters.dragon.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_02"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_02"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_02"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_02"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_02"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_02"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_02"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_02"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_02"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_02"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_02",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_02"
+	}
+	}
+	
+	self.player_styles.loud_suit.characters.joy.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_joy"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_joy"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_joy"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_joy"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_joy"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_joy"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_joy"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_joy"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_joy"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_joy"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_joy",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_joy"
+	}
+	}
+	
+	self.player_styles.loud_suit.characters.sydney.material_variations = {
+	blue = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_blue_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_blue_sydney"
+    },
+	brown = {
+        third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_brown_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_brown_sydney"
+    },
+	gorkaearth = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkaearth_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkaearth_sydney"
+	},
+	gorkagreen = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagreen_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagreen_sydney"
+	},
+	gorkagrey = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkagrey_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkagrey_sydney"
+	},
+	gorkapurple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkapurple_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkapurple_sydney"
+	},
+	gorkasea = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_gorkasea_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_gorkasea_sydney"
+	},
+	green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_green_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_green_sydney"
+	},
+	purple = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_purple_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_purple_sydney"
+	},
+	red = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_red_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_red_sydney"
+	},
+	white = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_loud_suit_white_sydney",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_loud_suit_white_sydney"
+	}
 	}
 	
 	--Resmod Sunny-Side Robber

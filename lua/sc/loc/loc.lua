@@ -2046,6 +2046,43 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",
 
 
+		-- Color variations
+			["bm_suit_var_loud_suit_default"] = "Security Breach",
+			["bm_suit_var_loud_suit_default_desc"] = "The code doesn't work! BAIN?",
+			
+			["bm_suit_var_loud_suit_white"] = "Bright White",
+			["bm_suit_var_loud_suit_white_desc"] = "The purpose of a stealth suit is probably lost on you, but you probably plan on going loud anyway.",
+			
+			["bm_suit_var_loud_suit_red"] = "Red Alert",
+			["bm_suit_var_loud_suit_red_desc"] = "Maybe bringing exposives to a stealth heist wasn't a good idea.",
+			
+			["bm_suit_var_loud_suit_green"] = "Night Vision Green",
+			["bm_suit_var_loud_suit_green_desc"] = "The guards won't see you, but you'll see them.",
+			
+			["bm_suit_var_loud_suit_blue"] = "Solid Blue",
+			["bm_suit_var_loud_suit_blue_desc"] = "Does not come with tactical cardboard box.",
+			
+			["bm_suit_var_loud_suit_purple"] = "Unsubtle Purple",
+			["bm_suit_var_loud_suit_purple_desc"] = "It's not going to help you stay hidden, but it's always nice to have the option.",
+			
+			["bm_suit_var_loud_suit_brown"] = "Walnut Brown",
+			["bm_suit_var_loud_suit_brown_desc"] = "Pairs well in muddy environments. These uniforms take quite a bite out of the gang's funds, though, so try to avoid it.",
+			
+			["bm_suit_var_loud_suit_gorkagreen"] = "Forest Tactical",
+			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Maybe it'll help you stay hidden from bears. It probably isn't worth finding out.",
+			
+			["bm_suit_var_loud_suit_gorkaearth"] = "Desert Operator",
+			["bm_suit_var_loud_suit_gorkaearth_desc"] = "Tactical. You live and breathe the word 'tactical.' You tap a magazine on your helmet, check the bolt for jammed casings, smack the empty magazine (not clip) out of your rifle, slap the bolt release, check the bolt again for jammed casings, shortly before getting roundhouse kicked by a Cloaker.",
+			
+			["bm_suit_var_loud_suit_gorkagrey"] = "Two Tone",
+			["bm_suit_var_loud_suit_gorkagrey_desc"] = "Can't decide whether you want to be seen or not? This one's got you covered.",
+			
+			["bm_suit_var_loud_suit_gorkapurple"] = "Surreptitious Purple",
+			["bm_suit_var_loud_suit_gorkapurple_desc"] = "Should keep you camouflaged in particularly purple environments. Where would one find these? Who knows!",
+			
+			["bm_suit_var_loud_suit_gorkasea"] = "Devious Blue",
+			["bm_suit_var_loud_suit_gorkasea_desc"] = "Makes swishing noises like sweatpants. The guards aren't ignoring you because they don't notice you, it's because they're too scared to look.",
+		
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "BUY WEAPON ($price)",

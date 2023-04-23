@@ -165,6 +165,7 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_blue"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_green"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_yellow"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_pink"/>
 		
 		
 		<texture path="units/pd2_mod_suits/characters/shared_textures/player_tactical_outfit_blue_df"/>
@@ -406,7 +407,17 @@
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_bodhi"/>	
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_dragon"/>
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_sydney"/>	
-		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_joy"/>		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_yellow_joy"/> 
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_pink_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_joy"/>		
 		
 		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_skull_df"/>
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull"/>

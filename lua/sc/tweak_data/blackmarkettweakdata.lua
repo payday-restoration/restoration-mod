@@ -936,6 +936,16 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green",
 	}
 	
+	self.player_styles.suit_sunny.material_variations.pink = {
+		name_id = "bm_suit_var_suit_sunny_pink",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_pink_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink",
+	}
+	
 	self.player_styles.suit_sunny.material_variations.skull = {
 		name_id = "bm_suit_var_suit_sunny_skull",
 		unlocked = true,
@@ -966,6 +976,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_chains",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
 	}
 	}
 	
@@ -988,6 +1002,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_bodhi",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
 	}
 	}
@@ -1012,6 +1030,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_sangres",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
 	}
 	}
 	
@@ -1034,6 +1056,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
 	}
 	}
@@ -1058,6 +1084,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
 	}
 	}
 	
@@ -1081,6 +1111,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_joy",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
 	}
 	}
 	
@@ -1103,6 +1137,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	green = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_green_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	pink = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_pink_sydney",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
 	}
 	}

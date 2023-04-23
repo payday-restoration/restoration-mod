@@ -1,0 +1,51 @@
+<table directory="assets">	
+		
+	<!--vanilla unit texture overrides-->	
+	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
+	<texture			path="units/payday2/characters/shared_textures/helmets_city_df" />	
+	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
+	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />	
+	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
+	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>		
+	
+	<!-- gensec tier -->
+	<!--city swat 1-->
+    <unit				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
+	<object				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
+	<material_config	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
+	<material_config	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_contour" />	
+	<cooked_physics		path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
+
+	<!--city swat 3-->
+    <unit				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
+	<object				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
+	<cooked_physics		path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
+	
+	<!--city heavy g36-->
+	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" load="true"/>
+	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk" load="true"/>
+	<model				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />		
+	<object				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />
+	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
+	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_contour" />		
+	<cooked_physics		path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
+	<!-- gensec tier end -->	
+	
+	<!-- specials-->		
+	<!-- skulldozer -->
+    <unit				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+	<object				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
+	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_contour" />	
+	<sequence_manager	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
+	<cooked_physics		path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+
+	<unit_obj			path="units/payday2/characters/ene_bulldozer_3_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+	
+</table>

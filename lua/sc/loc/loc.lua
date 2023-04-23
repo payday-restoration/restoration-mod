@@ -2046,60 +2046,63 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",
 
 
-		-- Color variations
-			["bm_suit_var_loud_suit_default"] = "Security Breach",
-			["bm_suit_var_loud_suit_default_desc"] = "The code doesn't work! BAIN?",
+		-- Color variations - Combat Harness
+			["bm_suit_var_loud_suit_default"] = "Professional Black",
+			["bm_suit_var_loud_suit_default_desc"] = "The two-piece has become somewhat of a brand recognition for the PAYDAY gang. Sharp, fashionable, allows you to blend in with the crowd. Simply iconic. 'Wait the fuck up! What fucking crowd?!', Chains exclaims as the gang drives to hit Murkywater's warehouse once more. He wishes he could have figured it out sooner.",
 			
-			["bm_suit_var_loud_suit_white"] = "Bright White",
-			["bm_suit_var_loud_suit_white_desc"] = "The purpose of a stealth suit is probably lost on you, but you probably plan on going loud anyway.",
+			["bm_suit_var_loud_suit_white"] = "Frosty White",
+			["bm_suit_var_loud_suit_white_desc"] = "Provided by Jimmy for the Boiling Point job, these quickly proved out to be ineffective against harsh conditions of the job. It's not like Jimmy needed one, as he preferred rocking his two-piece anyway.",
 			
-			["bm_suit_var_loud_suit_red"] = "Red Alert",
-			["bm_suit_var_loud_suit_red_desc"] = "Maybe bringing exposives to a stealth heist wasn't a good idea.",
+			["bm_suit_var_loud_suit_red"] = "Uncertain Red",
+			["bm_suit_var_loud_suit_red_desc"] = "Red is an interesting color to see on the battlefield. Either it's a medic, coming to save their teammates' lives, or the most dangerous bastard around. You decide who you'd be.",
 			
-			["bm_suit_var_loud_suit_green"] = "Night Vision Green",
-			["bm_suit_var_loud_suit_green_desc"] = "The guards won't see you, but you'll see them.",
+			["bm_suit_var_loud_suit_green"] = "Poison Green",
+			["bm_suit_var_loud_suit_green_desc"] = "Enough with the Grenadier bullying you. Gemma McShay provided you with a whole arsenal of poison-flavored armaments, so it's time to show these pigs who's the real pest control.",
 			
-			["bm_suit_var_loud_suit_blue"] = "Solid Blue",
-			["bm_suit_var_loud_suit_blue_desc"] = "Does not come with tactical cardboard box.",
+			["bm_suit_var_loud_suit_blue"] = "Police Blue",
+			["bm_suit_var_loud_suit_blue_desc"] = "Why aren't the cops rocking the ICTV, anyway?",
 			
-			["bm_suit_var_loud_suit_purple"] = "Unsubtle Purple",
-			["bm_suit_var_loud_suit_purple_desc"] = "It's not going to help you stay hidden, but it's always nice to have the option.",
+			["bm_suit_var_loud_suit_purple"] = "Fashionable Purple",
+			["bm_suit_var_loud_suit_purple_desc"] = "Hide that one under your ICTV for a subtle touch of fashion in all your tactical nonsense.",
 			
-			["bm_suit_var_loud_suit_brown"] = "Walnut Brown",
-			["bm_suit_var_loud_suit_brown_desc"] = "Pairs well in muddy environments. These uniforms take quite a bite out of the gang's funds, though, so try to avoid it.",
+			["bm_suit_var_loud_suit_brown"] = "Outdoor Brown",
+			["bm_suit_var_loud_suit_brown_desc"] = "Houston really wishes the gang could have stayed in a cozy urban jungle where he is at his best. But alas, there's too much money to be made in the country.",
 			
 			["bm_suit_var_loud_suit_gorkagreen"] = "Forest Tactical",
-			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Maybe it'll help you stay hidden from bears. It probably isn't worth finding out.",
+			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Hides you well in the forest, or among all the money you're moving.",
 			
-			["bm_suit_var_loud_suit_gorkaearth"] = "Desert Operator",
-			["bm_suit_var_loud_suit_gorkaearth_desc"] = "Tactical. You live and breathe the word 'tactical.' You tap a magazine on your helmet, check the bolt for jammed casings, smack the empty magazine (not clip) out of your rifle, slap the bolt release, check the bolt again for jammed casings, shortly before getting roundhouse kicked by a Cloaker.",
+			["bm_suit_var_loud_suit_gorkaearth"] = "Murky Tactical",
+			["bm_suit_var_loud_suit_gorkaearth_desc"] = "Just how many uniforms does Murkywater produce? Could start their own fashion line at this point.",
 			
-			["bm_suit_var_loud_suit_gorkagrey"] = "Two Tone",
-			["bm_suit_var_loud_suit_gorkagrey_desc"] = "Can't decide whether you want to be seen or not? This one's got you covered.",
+			["bm_suit_var_loud_suit_gorkagrey"] = "Urban Tactical",
+			["bm_suit_var_loud_suit_gorkagrey_desc"] = "No reason to don a suit when you walk into a bank now. Your face is all over the news anyway.",
 			
-			["bm_suit_var_loud_suit_gorkapurple"] = "Surreptitious Purple",
-			["bm_suit_var_loud_suit_gorkapurple_desc"] = "Should keep you camouflaged in particularly purple environments. Where would one find these? Who knows!",
+			["bm_suit_var_loud_suit_gorkapurple"] = "Purple Tactical",
+			["bm_suit_var_loud_suit_gorkapurple_desc"] = "You never know when you're going to stage a robbery in a purple jungle.",
 			
-			["bm_suit_var_loud_suit_gorkasea"] = "Devious Blue",
-			["bm_suit_var_loud_suit_gorkasea_desc"] = "Makes swishing noises like sweatpants. The guards aren't ignoring you because they don't notice you, it's because they're too scared to look.",
-			
+			["bm_suit_var_loud_suit_gorkasea"] = "Navy Tactical",
+			["bm_suit_var_loud_suit_gorkasea_desc"] = "Wolf got these back in 2011, when Bain proposed a yacht robbery. Unfortunately, they had to collect dust for almost six years.",
+			-- Color variations - Sunny Side
 			["bm_suit_var_suit_sunny_default"] = "Casual Business",
-			["bm_suit_var_suit_sunny_default_desc"] = "You feel yourself like an actor of the 90s action movies when wearing this suit.",
+			["bm_suit_var_suit_sunny_default_desc"] = "Be the cheesy 90's action movie hero you've always aspired to be.",
 				
-			["bm_suit_var_suit_sunny_skull"] = "Skully Business",
-			["bm_suit_var_suit_sunny_skull_desc"] = "Make others feel fear and run away from a battelfield just by looking at you.",
+			["bm_suit_var_suit_sunny_skull"] = "Deadly Business",
+			["bm_suit_var_suit_sunny_skull_desc"] = "This little paintjob is what earned the Skulldozer his fearsome name. Show that it means nothing to you by reducing it to a simple decoration for your attire.",
 				
 			["bm_suit_var_suit_sunny_red"] = "Bloody Business",
-			["bm_suit_var_suit_sunny_red_desc"] = "Now you can walk next to the GenSec guards and and don't be suspicious. Well, almost.",
+			["bm_suit_var_suit_sunny_red_desc"] = "A Cloaker tied to a chair, the Alabama Razor, 'Troubles Always Inbound' playing... This shirt won't stay clean for long.",
 				
 			["bm_suit_var_suit_sunny_blue"] = "Digital Business",
-			["bm_suit_var_suit_sunny_blue_desc"] = "While you were hacking the security system - the FBI found your location and already send S.W.A.T. forces. Are you ready to fight?",
+			["bm_suit_var_suit_sunny_blue_desc"] = "Hackers are modern day wizards, able to do unimaginable things thanks to their sharp skills...  But hacks don't stop bullets. Ballistic vests do. So don't get too cocky and remember to protect yourself.",
 				
 			["bm_suit_var_suit_sunny_green"] = "Greedy Business",
-			["bm_suit_var_suit_sunny_green_desc"] = "No matter on which robbery you are - you're taking all loot.",
+			["bm_suit_var_suit_sunny_green_desc"] = "No matter the risk, you sweep the place clean out of all the loot. It's not even about money at that point, it's about staying true to yourself.",
 
 			["bm_suit_var_suit_sunny_yellow"] = "Sunshine Business",
-			["bm_suit_var_suit_sunny_yellow_desc"] = "Sunrise. Police chasing you. Shootout.\nWhat could be better?",
+			["bm_suit_var_suit_sunny_yellow_desc"] = "Perfect for a romantic drive under the sun.\nWhile being chased by a dozen of police cars, of course.",
+			
+			["bm_suit_var_suit_sunny_pink"] = "Smooth Business",
+			["bm_suit_var_suit_sunny_pink_desc"] = "Mr. Pink got lucky that Cabot's gang doesn't have color-coded attire.",
 		
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

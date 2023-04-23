@@ -1909,6 +1909,62 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_suit_var_jumpsuit_flatgreen"] = "끈적끈적한 녹색",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "이 복장은 수많은 SWAT 인원들이 사망하고 상당수의 부상자가 발생한 피내린내 나는 젠섹 장갑차 하이스트 사건에 관련된 것으로 추정되는 정신나간 범죄자 3명 중 한 명이 소유했다는 소문이 돌았습니다. 대부분의 증거가 쓰레기 트럭에서 인멸되었고 이 범죄자들의 신원은 여전히 수수께끼에 싸여 있지만 이 복장만은 파괴된 쓰레기 트럭 근처에 남았기 때문에 회수 되었습니다.",
+		
+		
+		-- Color variations
+			["bm_suit_var_loud_suit_default"] = "보안 침투",
+			["bm_suit_var_loud_suit_default_desc"] = "코드가 먹히지 않아! 베인?",
+			
+			["bm_suit_var_loud_suit_white"] = "밝은 흰색",
+			["bm_suit_var_loud_suit_white_desc"] = "이 스텔스 수트의 목적은 아마도 당신에게는 없겠지만, 어차피 라우드로 하실 계획이잖아요?",
+			
+			["bm_suit_var_loud_suit_red"] = "적색 경보",
+			["bm_suit_var_loud_suit_red_desc"] = "스텔스 하이스트에 폭발물을 가져오는 건 그다지 좋은 생각이 아닐 수도 있습니다.",
+			
+			["bm_suit_var_loud_suit_green"] = "나이트 비전 그린",
+			["bm_suit_var_loud_suit_green_desc"] = "경비들은 당신을 볼 수 없지만 당신은 그들을 볼 수 있습니다.",
+			
+			["bm_suit_var_loud_suit_blue"] = "솔리드 블루",
+			["bm_suit_var_loud_suit_blue_desc"] = "전술 골판지 상자는 같이 제공되지 않습니다.",
+			
+			["bm_suit_var_loud_suit_purple"] = "미묘한 보라색",
+			["bm_suit_var_loud_suit_purple_desc"] = "이 복장은 숨는 데 도움이 되지는 않지만 선택권이 있다는 것은 항상 좋은 일입니다.",
+			
+			["bm_suit_var_loud_suit_brown"] = "월넛 브라운",
+			["bm_suit_var_loud_suit_brown_desc"] = "이 폭장은 진흙 투성이 환경에 잘 어울립니다. 하지만 갱단의 자금을 상당히 많이 차지하므로 되도록이면 안 쓰시는게 좋을 겁니다.",
+			
+			["bm_suit_var_loud_suit_gorkagreen"] = "산림 전술",
+			["bm_suit_var_loud_suit_gorkagreen_desc"] = "곰에게서 숨는 데 아마 도움이 될 수도 있겠지만 그걸 알아낼 가치는 없을 것입니다.",
+			
+			["bm_suit_var_loud_suit_gorkaearth"] = "데저트 오퍼레이터",
+			["bm_suit_var_loud_suit_gorkaearth_desc"] = "택티컬. 당신은 '택티컬'이라는 단어로 숨을 쉬고 살고 있습니다. 헬멧에 탄창을 두드리고, 볼트에 끼인 케이싱이 있는지 확인하고, 소총에 빈 탄창(클립은 아닙니다)을 빼내고, 볼트 릴리스를 치고, 클로커에게 걷어차여 구금되기 전에 볼트에 끼인 케이싱이 있는지 다시 확인합니다.",
+			
+			["bm_suit_var_loud_suit_gorkagrey"] = "두 톤",
+			["bm_suit_var_loud_suit_gorkagrey_desc"] = "당신이 숨는건지 아닌지의 여부를 알 수 없다고요? 이건 당신을 숨겨줄 겁니다.",
+			
+			["bm_suit_var_loud_suit_gorkapurple"] = "은밀한 보라색",
+			["bm_suit_var_loud_suit_gorkapurple_desc"] = "보라색 환경에서 위장 상태를 유지시켜 줄 겁니다. 그래서 보라색 환경은 어디서 찾을 수 있나고요? 누군가가 알겠죠!",
+			
+			["bm_suit_var_loud_suit_gorkasea"] = "교활한 파랑색",
+			["bm_suit_var_loud_suit_gorkasea_desc"] = "스웨트 팬츠와 같은 휙휙 소리를 냅니다. 경비원들은 당신을 알아차리지 못해서 무시하는 것이 아니라 당신을 너무 무서워 해서 쳐다보지 못하기 때문입니다.",
+			
+			["bm_suit_var_suit_sunny_default"] = "캐주얼 비즈니스",
+			["bm_suit_var_suit_sunny_default_desc"] = "이 수트를 입으면 마치 90년대 액션 영화의 배우가 된 기분을 느낄 수 있을 것입니다.",
+				
+			["bm_suit_var_suit_sunny_skull"] = "스컬리 비즈니스",
+			["bm_suit_var_suit_sunny_skull_desc"] = "다른 사람들이 당신을 보는 것만으로도 두려움을 느껴 전장에서 도망치게 만드십시오.",
+				
+			["bm_suit_var_suit_sunny_red"] = "블러디 비즈니스",
+			["bm_suit_var_suit_sunny_red_desc"] = "이제 젠섹 경비원 옆을 의심을 받지 않고 지나갈 수 있을 겁니다. 뭐, 거의는 말이죠.",
+				
+			["bm_suit_var_suit_sunny_blue"] = "디지털 비즈니스",
+			["bm_suit_var_suit_sunny_blue_desc"] = "당신이 보안 시스템을 해킹하는 동안 FBI가 당신의 위치를 찾았고 이미 S.W.A.T. 부대를 보낸 상태입니다. 싸울 준비가 되겠죠?",
+				
+			["bm_suit_var_suit_sunny_green"] = "그리디 비즈니스",
+			["bm_suit_var_suit_sunny_green_desc"] = "어떤 강도질을 하든 상관없이 모든 전리품을 가져가세요.",
+
+			["bm_suit_var_suit_sunny_yellow"] = "선샤인 비즈니스",
+			["bm_suit_var_suit_sunny_yellow_desc"] = "해돋이. 당신을 쫓는 경찰. 총격전.\n그보다 더 좋을 수 있을까요?",			
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",

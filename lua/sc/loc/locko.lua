@@ -1952,7 +1952,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_sunny_default_desc"] = "당신이 항상 열망했던 싸꾸려 90년대 액션 영화의 영웅이 되어보십시오.",
 				
 			["bm_suit_var_suit_sunny_skull"] = "치명적인 비즈니스",
-			["bm_suit_var_suit_sunny_skull_desc"] = "이 작은 페인트칠 덕분에 스컬 도저는 무시무시한 이름을 갖게 되었습니다. 그걸 옷차림 단순한 장식으로 축소하여 그것이 당신에게 아무 의미가 없음을 보여주십시오.",
+			["bm_suit_var_suit_sunny_skull_desc"] = "이 작은 페인트칠 덕분에 스컬 도저는 무시무시한 이름을 갖게 되었습니다. 그걸 옷차림에 단순한 장식으로 축소하여 그것이 당신에게 아무 의미가 없음을 보여주십시오.",
 				
 			["bm_suit_var_suit_sunny_red"] = "블러디 비즈니스",
 			["bm_suit_var_suit_sunny_red_desc"] = "의자에 묶인 클로커, 알라바마 면도기, 라디오에서 재생 중인 'Troubles Always Inbound'... 이 셔츠는 오랫동안 깨끗하지 않을겁니다.",

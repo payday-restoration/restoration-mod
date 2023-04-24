@@ -1633,12 +1633,26 @@ function PlayerStandard:_update_melee_timers(t, input)
 	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
 	local moving_forwards = angle and angle <= 15
 	local can_run = self._unit:movement():is_above_stamina_threshold()
-	local max_charge = self:_get_melee_charge_lerp_value(t) >= 0.99
+	local lerp_value = self:_get_melee_charge_lerp_value(t)
+	local max_charge = lerp_value and lerp_value >= 0.99
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then
 		self._unit:movement():_restart_stamina_regen_timer()
 	end
+
+	if self._state_data.meleeing then
+		if lerp_value >= 1 and melee_weapon.special_weapon == "taser" and not self._stop_melee_sound_check then
+			self._stop_melee_sound_check = true
+			self._unit:sound():play("tasered_loop")
+		end
+	else
+		if self._stop_melee_sound_check then
+			self._unit:sound():play("tasered_stop")
+			self._stop_melee_sound_check = nil
+		end
+	end
+
 	--Trigger chainsaw damage and update timer.
 	if self:_is_meleeing() and ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)

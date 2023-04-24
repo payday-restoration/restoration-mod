@@ -21,7 +21,7 @@ tweak_data.ammo.ricochet.autohit = {
 --Swap Speed Multipliers
 --TODO: Move to stat_info
 tweak_data.pistol = {
-	swap_bonus = 1.75,
+	swap_bonus = 1.8,
 	ads_move_speed_mult = 0.8,
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.75
@@ -37,7 +37,7 @@ tweak_data.crossbow = {
 }
 	tweak_data.crossbow_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.75
+		swap_bonus = 1.8
 	}
 
 tweak_data.grenade_launcher = {
@@ -45,7 +45,7 @@ tweak_data.grenade_launcher = {
 }
 	tweak_data.gl_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.75
+		swap_bonus = 1.8
 	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.4, --lowered to 0.2
@@ -63,7 +63,7 @@ tweak_data.shotgun = {
 	}
 
 tweak_data.smg = {
-	swap_bonus = 1.25,
+	swap_bonus = 1.2,
 	ads_move_speed_mult = 0.7,
 	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
@@ -72,7 +72,7 @@ tweak_data.smg = {
 		ads_move_speed_mult = 0.7142857, --lowered to 0.5
 	}
 	tweak_data.lmg = {
-		swap_bonus = 0.8,
+		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
 		hipfire_spread_mult = 4.4444
@@ -81,7 +81,7 @@ tweak_data.smg = {
 			hipfire_spread_mult = 0.5
 		}
 	tweak_data.minigun = {
-		swap_bonus = 0.8,
+		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.428571, --lowered to 0.3
 		moving_spread_mult = 8.3333,
 		hipfire_spread_mult = 4.4444
@@ -108,20 +108,22 @@ tweak_data.snp = {
 
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.5
+	ads_move_speed_mult = 0.5,
+	hipfire_spread_mult = 1.15
 }
 	tweak_data.crb = {
+		hipfire_spread_mult = 0.86956,
 		swap_bonus = 1.1,
 		ads_move_speed_mult = 1.2 --raised to 0.6
 	}
 	tweak_data.dmr = {
-		hipfire_spread_mult = 1.2,
+		hipfire_spread_mult = 1.391304,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.7 --lowered to 0.4
 	}
 
 tweak_data.akimbo = {
-	swap_bonus = 0.8,
+	swap_bonus = 0.85,
 	ads_move_speed_mult = 0.8,
 	hipfire_spread_mult = 1.5
 }

@@ -2148,6 +2148,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_upotte_barrel"] = "Barrel",
 		["bm_menu_upotte_foregrip"] = "Handguard",
 		["bm_menu_upotte_stock"] = "Stock",
+		["bm_menu_jiisuri_stock"] = "Stock",
 		["bm_menu_upotte_grip"] = "Grip",
 
 		["bm_menu_ro_barrel"] = "Barrel",

@@ -2103,6 +2103,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 			["bm_suit_var_suit_sunny_pink"] = "Smooth Business",
 			["bm_suit_var_suit_sunny_pink_desc"] = "Mr. Pink got lucky that Cabot's gang doesn't have color-coded attire.",
+					
+			["bm_suit_var_suit_sunny_hawaii_black"] = "Miami Vacation",
+			["bm_suit_var_suit_sunny_hawaii_black_desc"] = "Wolf bought this stylish shirt way back when he heard that the Dentist is setting the gang up for the 'Hotline Miami' job. Who could have known that it would have nothing to do with Miami?",
+			
+			["bm_suit_var_suit_sunny_hawaii_blue"] = "Cyber Vacation",
+			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Joy is the kind of a person who would go far away for a vacation and just spend all of it playing videogames. 'Kids these days', Dallas thought, as he couldn't get her to enjoy playing pool, gazing at the sea, drinking unhealthy amounts of scotch and other old-fashioned vacation activities.",
+			
+			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Swimming Vacation",
+			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Sydney is an avid swimmer and has always been wondering why the Safehouse doesn't have a pool installed. Well, besides Aldstone having enough duties as is, swimming is not the most cherished hobby of the PAYDAY gang after the Green Bridge.",
+			
+			["bm_suit_var_suit_sunny_hawaii_green"] = "Doghouse Vacation",
+			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Vlad enjoyed his time in Mexico greatly. New lands provided new opportunities, and he managed to expand fairly quickly, until one of his drug operations was hit all of sudden. The Federales were tipped by no one other than Buluc, who would become Vlad's main rival for a while. Good thing the PAYDAY gang is always on call.",
+						
+			["bm_suit_var_suit_sunny_hawaii_orange"] = "Offshore Vacation",
+			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "That's it, you've made it. The White House job completed, all guys defeated, and your offshore spent on the greatest party ever. Where can we even go from here? \nEh, another bank heist won't hurt.",
+			
+			["bm_suit_var_suit_sunny_hawaii_pink"] = "Dancing Vacation",
+			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "Chains doesn't often go on a vacation, but when he does, he lets himself all out. During his vacation around 2016, a video of his sleek dance moves went viral. He had to contact Bain in order to get it erased from the Internet forever.",
+			
+			["bm_suit_var_suit_sunny_security_red"] = "Red Bodyguard",
+			["bm_suit_var_suit_sunny_security_red_desc"] = "An elite member of Sosa's security. Ernesto Sosa thought he had it all. A big mansion, a reliable business and a robust security ensuring his safety. The world is his... Yet, the history is bound to repeat itself.",
+			
+			["bm_suit_var_suit_sunny_security_purple"] = "Purple Bodyguard",
+			["bm_suit_var_suit_sunny_security_purple_desc"] = "An elite member of Sosa's security. 24/7 surveillance by drones and well coordinated guard shifts. Sosa's mansion is impenetrable. If only someone bothered to check the latest batch of yayo...",
 		
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

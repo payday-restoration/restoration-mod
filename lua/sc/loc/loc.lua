@@ -4079,7 +4079,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
-				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst deal #{skill_color}#70%## of the damage dealt to the closest enemy in a #{skill_color}#4## meter radius.\n\nFor every #{skill_color}#8## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#3## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#1## meter.\n\nFor every #{skill_color}#8## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#10%## damage; up to a total of #{skill_color}#100%## of the damage dealt.",
+				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst deal #{skill_color}#70%## of the damage dealt to the closest enemy in a #{skill_color}#4## meter radius.\n\nFor every #{skill_color}#8## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#3## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to semi-auto have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#1## meter.\n\nFor every #{skill_color}#8## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#10%## damage; up to a total of #{skill_color}#100%## of the damage dealt.",
 
 		--[[   GHOST   ]]--
 
@@ -4174,7 +4174,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Akimbo",
-				["menu_akimbo_skill_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Akimbo## weapons gain #{skill_color}#10## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Akimbo## weapons gain #{skill_color}#25%## more total ammo capacity and pickup.",
+				["menu_akimbo_skill_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Akimbo## weapons gain #{skill_color}#10## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Akimbo## weapons gain #{skill_color}#10## accuracy.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Desperado",

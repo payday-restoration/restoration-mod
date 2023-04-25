@@ -9115,7 +9115,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 			local weapon_id = peepee(factory_id)
 			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories then
 
-				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") then
+				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") or table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") then
 					self[ factory_id ].override = self[ factory_id ].override or {}
 					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 						stats = {value = 1, concealment = 1, spread = -1},
@@ -13546,6 +13546,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", functi
 	table.insert(self.wpn_fps_pis_sparrow_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
 	self.wpn_fps_pis_sparrow_npc.uses_parts = deep_clone(self.wpn_fps_pis_sparrow.uses_parts)	
+
+end)
+
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_sparrow", "resmod_x_sparrow", function(self)
+
+	for i, part_id in pairs(self.wpn_fps_pis_x_sparrow.uses_parts) do
+		attachment_list = {
+			"wpn_fps_pis_sparrow_g_cowboy"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_pis_x_sparrow.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+	
+	self.wpn_fps_pis_x_sparrow_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_sparrow.uses_parts)
 
 end)
 

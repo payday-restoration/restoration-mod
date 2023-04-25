@@ -100,6 +100,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"bayonet",
 					"m1928",
 					"sparrow",
+					"x_sparrow",
 					"gator",
 					"pl14"
 				}
@@ -1257,26 +1258,27 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.pistol.move_spread_multiplier = {0.6}
 				
 			--Akimbo
-				self.values.akimbo.recoil_index_addend = {
-					0,
-					10, --Basic
-					10,
-					10,
-					10
-				}
+				--Basic
+					self.values.akimbo.recoil_index_addend = {
+						0,
+						10,
+						10,
+						10,
+						10
+					}
 
 				--Ace
-					self.values.akimbo.extra_ammo_multiplier = {1.25}
-					self.values.akimbo.pick_up_multiplier = {1.25}
+					self.values.akimbo.spread_index_addend = {
+						0,
+						10,
+						10,
+						10,
+						10
+					}
+					--self.values.akimbo.extra_ammo_multiplier = {1.25}
+					--self.values.akimbo.pick_up_multiplier = {1.25}
 
 				--Reserved for future use.
-				self.values.akimbo.spread_index_addend = {
-					0,
-					0,
-					0,
-					0,
-					0
-				}
 
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {

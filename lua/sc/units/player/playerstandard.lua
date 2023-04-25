@@ -1714,6 +1714,10 @@ function PlayerStandard:_interupt_action_melee(t)
 	self._state_data.meleeing = nil	
 	self._state_data.chainsaw_t = nil --Stop chainsaw stuff if also no longer in melee.
 	self._melee_repeat_damage_bonus = nil --Same goes for the melee repeat hitter bonus.
+	if self._stop_melee_sound_check then
+		self._unit:sound():play("tasered_stop")
+		self._stop_melee_sound_check = nil
+	end
 
 	self._unit:sound():play("interupt_melee", nil, false)
 	self:_play_melee_sound(managers.blackmarket:equipped_melee_weapon(), "hit_air", self._melee_attack_var)

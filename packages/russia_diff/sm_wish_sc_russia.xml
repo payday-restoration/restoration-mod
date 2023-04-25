@@ -254,6 +254,8 @@
 	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/maska_il" force="false"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/drak_medic_head_df" force="false"/>
 	
+	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_drak_medic_helmet/ene_acc_drak_medic_helmet" load="true"/>
+	
 	<!-- greendozer -->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<material_config	path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />

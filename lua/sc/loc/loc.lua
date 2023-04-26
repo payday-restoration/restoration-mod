@@ -2130,7 +2130,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 			["bm_suit_var_suit_sunny_security_purple"] = "Purple Bodyguard",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "An elite member of Sosa's security. 24/7 surveillance by drones and well coordinated guard shifts. Sosa's mansion is impenetrable. If only someone bothered to check the latest batch of yayo...",
-		
+		    -- Color variations - Prison Suit
+			["bm_suit_var_suit_prison_default"] = "The Fugitive",
+			["bm_suit_var_suit_prison_default_desc"] = "The robes that have changed Hoxton forever. He was sure he burned this relic of the grim past along with the old safehouse, but somehow it found its way to the new one.",
+			
+			["bm_suit_var_suit_prison_repairman"] = "THE PLACEHOLDER",
+			["bm_suit_var_suit_prison_repairman_desc"] = "DMC I HAVEN'T PLAYED SAINTS ROW 2 PLEASE WRITE THIS ONE YOURSELF",
+			
+			["bm_suit_var_suit_prison_comedy"] = "The Felon",
+			["bm_suit_var_suit_prison_comedy_desc"] = "The robes of Chins of the Paycheck Crew (in)fame. He almost made off with $225 from the Pear Store cash register, but was caught and sent to the custody. Thankfully, Chin's crewmates took one of the PearBooks hostage and managed to trade it for him.",
+			
+			["bm_suit_var_suit_prison_vaultboy"] = "The Dweller",
+			["bm_suit_var_suit_prison_vaultboy_desc"] = "Surprisingly, Bain has never been into 'end of the world' conspiracies, but after the Meltdown heist he started building a small underground bomb shelter. Because you know. War.",
+			
+			["bm_suit_var_suit_prison_janitor"] = "The Janitor",
+			["bm_suit_var_suit_prison_janitor_desc"] = "There are rumors going around the criminal underworld that OMNIA is conducting some top secret experiments. Stuff that would surpass even the likes of the legendary Henry's Rock. Even OMNIA's janitors have to sign a contract and be kept under control.",
+			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "BUY WEAPON ($price)",

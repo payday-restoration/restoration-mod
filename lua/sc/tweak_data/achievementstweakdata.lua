@@ -182,7 +182,7 @@ function AchievementsTweakData:init(tweak_data)
 		"shadow_spooc"
 	}
 	
-	self.enemy_kill_achievements.grand_master_sniper.enemies = {
+	self.enemy_kill_achievements.grand_master_sniper.enemy = {
 		"sniper",
 		"marshal_marksman",
 		"heavy_swat_sniper",

@@ -126,6 +126,10 @@ function AchievementsTweakData:init(tweak_data)
 		"shield",
 		"phalanx_minion",
 		"phalanx_minion_assault",
+		"sniper",
+		"marshal_marksman",
+		"heavy_swat_sniper",
+		"weekend_dmr"
 		"tank",
 		"tank_titan",
 		"tank_titan_assault",
@@ -277,6 +281,10 @@ function AchievementsTweakData:init(tweak_data)
 		"shield",
 		"phalanx_minion",
 		"phalanx_minion_assault",
+		"sniper",
+		"marshal_marksman",
+		"heavy_swat_sniper",
+		"weekend_dmr"
 		"tank",
 		"tank_titan",
 		"tank_titan_assault",
@@ -314,6 +322,8 @@ function AchievementsTweakData:init(tweak_data)
 		"shield",
 		"phalanx_minion",
 		"phalanx_minion_assault",
+		"sniper",
+		"heavy_swat_sniper",
 		"tank",
 		"tank_titan",
 		"tank_titan_assault",
@@ -323,6 +333,24 @@ function AchievementsTweakData:init(tweak_data)
 		"tank_hw_black",
 		"medic",
 		"enforcer_assault"
+	}
+	
+	self.enemy_kill_achievements.cg22_post_objective_2.enemy = {
+		"spooc",
+		"spooc_titan",
+		"spooc_gangster",
+		"shadow_spooc"
+	}
+	
+	self.enemy_kill_achievements.cg22_post_objective_5.enemy = {
+		"tank",
+		"tank_titan",
+		"tank_titan_assault",
+		"tank_mini",
+		"tank_medic",
+		"tank_biker",
+		"tank_hw",
+		"tank_hw_black"
 	}
 	
 	--Lets Titan Snipers count for Martial Law
@@ -454,6 +482,10 @@ function AchievementsTweakData:init(tweak_data)
 		"shield",
 		"phalanx_minion",
 		"phalanx_minion_assault",
+		"sniper",
+		"marshal_marksman",
+		"heavy_swat_sniper",
+		"weekend_dmr",
 		"tank",
 		"tank_titan",
 		"tank_titan_assault",

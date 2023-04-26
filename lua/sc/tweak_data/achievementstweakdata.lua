@@ -401,18 +401,14 @@ function AchievementsTweakData:init(tweak_data)
 		"phalanx_minion_assault"
 	}
 	
-	self.enemy_melee_hit_achievements.steel_4 = {
-		enemy = { 
-			"tank",
-			"tank_hw_black"
-		}
-		enemy_weapon = { 
-			"saiga_dozer",
-			"aa12_dozer"
-		}
-		award = "steel_4",
-		result = "death",
-		melee_id = "great"
+	self.enemy_melee_hit_achievements.steel_4.enemy = {
+		"tank",
+		"tank_hw_black"
+	}
+	
+	self.enemy_melee_hit_achievements.steel_4.enemy_weapon = {
+		"saiga_dozer",
+		"aa12_dozer"
 	}
 	
 	self.enemy_melee_hit_achievements.any_sniper_kills.enemy = {

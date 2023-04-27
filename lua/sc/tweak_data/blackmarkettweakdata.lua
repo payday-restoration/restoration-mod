@@ -1512,7 +1512,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		},
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit",
-		characters = {}
+		characters = {},
+		material_variations = {}
 	}
 	set_characters_data("suit_prison", characters_male_big, {
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
@@ -1528,7 +1529,63 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	}	
 	self.player_styles.suit_prison.characters.jacket = {
 		third_material = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit_jacket"
-	}	
+	}
+	
+	self.player_styles.suit_prison.material_variations.default = {
+		name_id = "bm_suit_var_suit_prison_default",
+		desc_id = "bm_suit_var_suit_prison_default_desc"
+	}
+	
+	self.player_styles.suit_prison.material_variations.repairman = {
+		name_id = "bm_suit_var_suit_prison_repairman",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_prison_repairman_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_prison_suit_repairman",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_prison_suit_repairman",
+	}
+	
+	self.player_styles.suit_prison.material_variations.comedy = {
+		name_id = "bm_suit_var_suit_prison_comedy",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_prison_comedy_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_prison_suit_comedy",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_prison_suit_comedy",
+	}
+	
+	self.player_styles.suit_prison.material_variations.janitor = {
+		name_id = "bm_suit_var_suit_prison_janitor",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_prison_janitor_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_prison_suit_janitor",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_prison_suit_janitor",
+	}
+	
+	self.player_styles.suit_prison.material_variations.subject = {
+		name_id = "bm_suit_var_suit_prison_subject",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_prison_subject_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_prison_suit_subject",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_prison_suit_subject",
+	}
+	
+	self.player_styles.suit_prison.material_variations.vaultboy = {
+		name_id = "bm_suit_var_suit_prison_vaultboy",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_prison_vaultboy_desc",
+		material = "units/pd2_mod_suits/characters/shared_materials/res_acc_fps_prison_suit_vaultboy",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_prison_suit_vaultboy",
+	}
+	
 end)
 
 

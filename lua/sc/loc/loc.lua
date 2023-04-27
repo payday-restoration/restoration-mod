@@ -2146,6 +2146,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_janitor"] = "The Janitor",
 			["bm_suit_var_suit_prison_janitor_desc"] = "There are rumors going around the criminal underworld that OMNIA is conducting some top secret experiments. Stuff that would surpass even the likes of the legendary Henry's Rock. Even OMNIA's janitors have to sign a contract and be kept under control.",
 			
+			["bm_suit_var_suit_prison_subject"] = "The Subject",
+			["bm_suit_var_suit_prison_subject_desc"] = "PLACEHOLDER",
+			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "BUY WEAPON ($price)",

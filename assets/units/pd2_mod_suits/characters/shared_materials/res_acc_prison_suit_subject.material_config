@@ -1,0 +1,8 @@
+<materials version="3" group="tux_male_average">
+	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS" version="2" unique="true">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/civ_male_prisoner_pex/civ_pex_prisoner_body_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/shared_textures/prison_suit_subject_df"/>
+		<variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+	</material>
+</materials>

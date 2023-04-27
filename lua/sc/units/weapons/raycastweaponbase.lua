@@ -224,6 +224,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 
 	local can_shoot_through_wall = setup_data.can_shoot_through_wall
 	local can_shoot_through_shield = setup_data.can_shoot_through_shield
+	local can_shoot_through_titan_shield = setup_data.can_shoot_through_titan_shield
 	local can_shoot_through_enemy = setup_data.can_shoot_through_enemy
 	local wall_mask = setup_data.wall_mask
 	local shield_mask = setup_data.shield_mask

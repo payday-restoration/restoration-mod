@@ -9505,7 +9505,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.timers.reload_exit_empty = 0.7
 				self.msr.timers.reload_exit_not_empty = 0.75
 
-			--awoo (XXX)
+			--Amaroq 900 (AWP)
 				self.awp.upgrade_blocks = nil
 				self.awp.CLIP_AMMO_MAX = 5
 				self.awp.AMMO_MAX = 30

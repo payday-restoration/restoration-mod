@@ -20759,6 +20759,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		concealment = -2
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.custom_stats = {
+		alt_desc = "bm_bazooka_sc_desc",
 		ads_speed_mult = 1.2,
 		hip_mult = 4,
 		alt_ammo_pickup_max_mul = 0.6,
@@ -20774,12 +20775,90 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		falloff_end_mult = 1,
 		damage_min_mult = 0.66667
 	}
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {}
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.override = {
+		wpn_fps_snp_awp_reciever = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_reciever",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_reciever"
+		},
+		wpn_fps_snp_awp_b_standard = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_b_long",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long"
+		},
+		wpn_fps_snp_awp_dh_standard = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_dh_standard",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_dh_standard"
+		},
+		wpn_fps_snp_awp_m_standard = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_m_standard",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_m_standard"
+		},
+		wpn_fps_snp_awp_g_solid = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_g_solid",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_g_solid"
+		},
+		wpn_fps_snp_awp_stock_solid = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_stock_solid",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_stock_solid"
+		},
+		wpn_fps_snp_awp_ext_bipod = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_bipod",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_bipod"
+		},
+		wpn_fps_upg_o_schmidt = {
+			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_bipod",
+			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_upg_o_schmidt_ck_2"
+		},
+		wpn_fps_upg_o_schmidt_magnified = {}
+	}
+
+end)
+--AMAROQ 900 SCOPE
+Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", function(self)
+	self.parts.wpn_fps_upg_o_schmidt.supported = true
+	self.parts.wpn_fps_upg_o_schmidt.stats = {
+		zoom = 30,
+		value = 8
+	}
+	self.parts.wpn_fps_upg_o_schmidt.custom_stats = {
+		big_scope = true
+	}
+	self.parts.wpn_fps_upg_o_schmidt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt.stance_mod) do
+		if weap and i ~= wep_id and weap.translation then
+			weap.translation = weap.translation + Vector3(-0.012, -20, -0.85)
+		end
+	end
+
+	self.parts.wpn_fps_upg_o_schmidt_magnified.supported = true
+	self.parts.wpn_fps_upg_o_schmidt_magnified.stats = {
+		gadget_zoom = 70,
+		value = 1
+	}
+	self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod) do
+		if weap and i ~= wep_id and weap.translation then
+			weap.translation = weap.translation + Vector3(-0.012, -10, -0.85)
+		end
+	end
+
 
 end)
 
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 
+	--Stuff
+	self.parts.wpn_fps_upg_o_schmidt_steelsight.visibility = {
+		{
+			objects = {
+				g_vr_lens = false,
+				g_screen = false,
+				g_vr_phong = false
+			}
+		}
+	}
+	
 	--Dummy weapon part
 	self.parts.resmod_dummy = {
 		type = "custom",

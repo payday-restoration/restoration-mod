@@ -1822,11 +1822,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			translation = Vector3(0, -0.6, -3.785)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_msr = {
-			translation = Vector3(0, -1.5, -3.54)
+			translation = Vector3(0.007, -1.7, -3.53)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
 			translation = Vector3(-0.005, -12, 0.65),
 			rotation = Rotation(0, 0, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_awp = {
+			translation = Vector3(0, 32, 0.76)
 		}
 	
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_wa2000 = {
@@ -20749,9 +20752,11 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.supported = true
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.desc_id = "bm_wp_upg_bazooka_desc"
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.has_description = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.keep_damage = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.stats = {
-		total_ammo_mod = -68,
+		total_ammo_mod = -52,
 		damage = 90,
 		spread = 1,
 		value = 10,
@@ -20762,10 +20767,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		alt_desc = "bm_bazooka_sc_desc",
 		ads_speed_mult = 1.2,
 		hip_mult = 4,
-		alt_ammo_pickup_max_mul = 0.6,
-		alt_ammo_pickup_min_mul = 0.6,
-		ammo_pickup_max_mul = 0.6,
-		ammo_pickup_min_mul = 0.6,
+		alt_ammo_pickup_max_mul = 0.41,
+		alt_ammo_pickup_min_mul = 0.41,
+		ammo_pickup_max_mul = 0.41,
+		ammo_pickup_min_mul = 0.41,
 		rof_mult = 0.65079365,
 		can_shoot_through_enemy = true,
 		can_shoot_through_shield = true,
@@ -20823,10 +20828,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.custom_stats = {
 		big_scope = true
 	}
+	self.parts.wpn_fps_upg_o_schmidt.perks = {
+		"scope"
+	}
 	self.parts.wpn_fps_upg_o_schmidt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(-0.012, -20, -0.85)
+			weap.translation = weap.translation + Vector3(-0.012, -25, -0.81)
 		end
 	end
 
@@ -20838,17 +20846,88 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(-0.012, -10, -0.85)
+			weap.translation = weap.translation + Vector3(-0.012, -15, -0.81)
 		end
 	end
 
+end)
+--CAMPBELL 74 (ChainSAW)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw", function(self)
 
+	self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
+	self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+
+	self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.stats = deep_clone(muzzle_device.supp_rec2_stats)
+	self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+
+	self.parts.wpn_fps_lmg_kacchainsaw_sling.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_sling.stats = {
+		value = 1,
+		spread = 1,
+		concealment = -2
+	}
+	self.parts.wpn_fps_lmg_kacchainsaw_sling.custom_stats = {
+		ads_speed_mult = 0.95,
+	}
+
+	self.parts.wpn_fps_lmg_kacchainsaw_mag_b.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_mag_b.stats = {
+		value = 5,
+		reload = 1,
+		extra_ammo = -100,
+		concealment = 2
+	}
+	self.parts.wpn_fps_lmg_kacchainsaw_mag_b.custom_stats = {
+		ads_speed_mult = 0.95
+	}
+
+	self.parts.wpn_fps_lmg_kacchainsaw_flamethrower.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_flamethrower.stats = {
+		value = 5,
+		total_ammo_mod = -51,
+		concealment = -3
+	}
+	self.parts.wpn_fps_lmg_kacchainsaw_flamethrower.custom_stats = {
+		ads_speed_mult = 1.075
+	}
+
+	self.parts.wpn_fps_lmg_kacchainsaw_adverse = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_kacchainsaw_adverse",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 7,
+			spread = -6,
+			recoil = -10	
+		},
+		custom_stats = {
+			rof_mult = 1.384615,
+			falloff_start_mult = 0.35,
+			falloff_end_mult = 0.65
+		},
+		internal_part = true,
+		dlc = "sc"
+	}
+
+	table.insert(self.wpn_fps_lmg_kacchainsaw.uses_parts, "wpn_fps_lmg_kacchainsaw_adverse")
+
+	self.wpn_fps_lmg_kacchainsaw_npc.uses_parts = deep_clone(self.wpn_fps_lmg_kacchainsaw.uses_parts)
+	
 end)
 
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 
-	--Stuff
+	--disables the VR renderscreen for this scope as it gets in the way of the non-VR view
 	self.parts.wpn_fps_upg_o_schmidt_steelsight.visibility = {
 		{
 			objects = {
@@ -20858,7 +20937,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	
+
 	--Dummy weapon part
 	self.parts.resmod_dummy = {
 		type = "custom",

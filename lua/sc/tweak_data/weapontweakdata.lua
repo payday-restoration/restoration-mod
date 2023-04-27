@@ -3740,7 +3740,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 	
-	recat = { "judge", "x_judge", "m1897", "m590", "r870", "ksg", "m37", "serbu" }
+	recat = { "judge", "x_judge", "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_shot" }
 		self[ wep_id ].damage_type = "shotgun_heavy"
@@ -3813,7 +3813,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = sms_preset.lmg_40
 	end
 
-	recat = { "m249",'kacchainsaw' }
+	recat = { "m249", "kacchainsaw" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_mg" }
 		self[ wep_id ].damage_type = "machine_gun"
@@ -3864,7 +3864,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = sms_preset.mini_60
 	end
 	
-	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "scout", "victor" }
+	recat = { "winchester1874", "qbu88", "msr", "r700", "tti", "scout", "victor", "awp" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_snp" }
 		self[ wep_id ].damage_type = "sniper"
@@ -3888,7 +3888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "pdw"
 	end
 
-	recat = { "flamethrower_mk2", "system" }
+	recat = { "flamethrower_mk2", "system", "kacchainsaw_flamethrower" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].damage_type = "flamethrower"
 	end
@@ -9506,9 +9506,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.timers.reload_exit_not_empty = 0.75
 
 			--Amaroq 900 (AWP)
+				self.awp.desc_id = "bm_awp_sc_desc"
+				self.awp.has_description = true			
 				self.awp.upgrade_blocks = nil
 				self.awp.CLIP_AMMO_MAX = 5
-				self.awp.AMMO_MAX = 30
+				self.awp.AMMO_MAX = 40
 				self.awp.fire_mode_data.fire_rate = 1.4
 				self.awp.fire_rate_multiplier = 1.47
 				self.awp.kick = self.stat_info.kick_tables.vertical_kick
@@ -9538,7 +9540,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.awp.stats_modifiers = nil
 				self.awp.panic_suppression_chance = 0.05
 				self.awp.timers.reload_empty = 3.5
-				self.awp.timers.reload_exit_empty = 0.65
+				self.awp.timers.reload_exit_empty = 0.5
 				self.awp.timers.reload_not_empty = 2.4
 				self.awp.timers.reload_exit_not_empty = 1.1
 	

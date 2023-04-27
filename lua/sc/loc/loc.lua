@@ -1513,6 +1513,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90",
 		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
+		--ChainSAW
+		["bm_w_kacchainsaw"] = "Campbell 74",
+		--["bm_kacchainsaw_sc_desc"] = "",
+		["bm_wp_upg_i_kacchainsaw_adverse"] = "Adverse Gas System",
 		--RPK
 		["bm_w_rpk"] = "RPK",
 		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
@@ -1798,6 +1802,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_scout"] = "Pronghorn",
 		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
+		--AWP
+		["bm_w_awp"] = "Amaroq 900",
+		["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who've thought the original models was built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Allows for piercing titan-shields.##",
+		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300",
 		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",

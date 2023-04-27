@@ -1995,6 +1995,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 				
 			["bm_suit_var_suit_sunny_security_purple"] = "보라색 경호원",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "소사의 경비원의 엘리트 멤버. 매일 감시하는 드론 및 잘 조정된 경비 교대를 가진 소사의 저택은 뚫을 수 없습니다. 누군가 Yayo(코카인)의 최근 배치를 확인하기 위해 귀찮게만 한다면 말이죠...",
+
+		    -- Color variations - Prison Suit
+			["bm_suit_var_suit_prison_default"] = "퓨지티브",
+			["bm_suit_var_suit_prison_default_desc"] = "혹스턴을 영원히 바꿔놓은 로브. 그는 암울한 과거의 유물을 옛 세이프하우스와 함께 불태웠다고 확신했지만, 새로운 복장을 어딘가에서 발견했습니다.",
+			
+			["bm_suit_var_suit_prison_repairman"] = "31일",
+			["bm_suit_var_suit_prison_repairman_desc"] = "누가 스파이 카메라를 설치했는지 궁금한 적이 있습니까?\n\n뭐, 당신은 계속 궁금해 할 수 있지만 적어도 그들이 무엇을 입고 있는지 알게 될 것입니다.",
+			
+			["bm_suit_var_suit_prison_comedy"] = "펠론",
+			["bm_suit_var_suit_prison_comedy_desc"] = "페이채크 (인)프레임의 '체인스' 로브. 그는 페어 상점에 있는 금전 등록기에서 225달러만큼 거의 돈을 벌었지만 경찰에 붙잡혀 구금되었습니다. 고맙게도 체인의 동료가 페어북스 직원 중 한 명을 인질로 잡고 교환했습니다.",
+			
+			["bm_suit_var_suit_prison_vaultboy"] = "거주자",
+			["bm_suit_var_suit_prison_vaultboy_desc"] = "놀랍게도 베인은 '세상의 종말' 음모에 가담한 적이 없지만 멜트다운 하이스트 이후 작은 지하 방공호를 짓기 시작했습니다. 알잖아요? 앞으로 일어날 핵 전쟁을 대비하는거죠.",
+			
+			["bm_suit_var_suit_prison_janitor"] = "청소부",
+			["bm_suit_var_suit_prison_janitor_desc"] = "옴니아가 전설적인 헨리스 락을 능가하는 곳에 일급 비밀 실험을 수행하고 있다는 소문이 범죄 지하 세계를 돌고 있습니다. 옴니아의 청소부도 계약서에 서명하고 그들의 통제를 받아야 합니다.",
 			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",

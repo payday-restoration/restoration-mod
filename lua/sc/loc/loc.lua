@@ -2134,8 +2134,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_default"] = "The Fugitive",
 			["bm_suit_var_suit_prison_default_desc"] = "The robes that have changed Hoxton forever. He was sure he burned this relic of the grim past along with the old safehouse, but somehow it found its way to the new one.",
 			
-			["bm_suit_var_suit_prison_repairman"] = "THE PLACEHOLDER",
-			["bm_suit_var_suit_prison_repairman_desc"] = "DMC I HAVEN'T PLAYED SAINTS ROW 2 PLEASE WRITE THIS ONE YOURSELF",
+			["bm_suit_var_suit_prison_repairman"] = "The 31st",
+			["bm_suit_var_suit_prison_repairman_desc"] = "Ever wondered whose been setting up your spy cameras?\n\nWell, you can keep wondering, but at least you'll know what they're wearing.",
 			
 			["bm_suit_var_suit_prison_comedy"] = "The Felon",
 			["bm_suit_var_suit_prison_comedy_desc"] = "The robes of Chins of the Paycheck Crew (in)fame. He almost made off with $225 from the Pear Store cash register, but was caught and sent to the custody. Thankfully, Chin's crewmates took one of the PearBooks hostage and managed to trade it for him.",

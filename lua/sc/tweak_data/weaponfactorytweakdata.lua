@@ -2497,6 +2497,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_contender = {
 		translation = Vector3(-0.002, -24.5, -4.107)
 	}
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_awp = {
+		translation = Vector3(0, 10, 0)
+	}
 
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m200 = {
 		translation = Vector3(0.005, -20, -4.792)
@@ -20741,6 +20744,39 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tkb", "resmod_chikubi", function(s
 
 end)
 
+
+--AMAROQ 900 (AWP)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
+
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.supported = true
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.keep_damage = true
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.stats = {
+		total_ammo_mod = -68,
+		damage = 90,
+		spread = 1,
+		value = 10,
+		recoil = -6,
+		concealment = -2
+	}
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.custom_stats = {
+		ads_speed_mult = 1.2,
+		hip_mult = 4,
+		alt_ammo_pickup_max_mul = 0.6,
+		alt_ammo_pickup_min_mul = 0.6,
+		ammo_pickup_max_mul = 0.6,
+		ammo_pickup_min_mul = 0.6,
+		rof_mult = 0.65079365,
+		can_shoot_through_enemy = true,
+		can_shoot_through_shield = true,
+		can_shoot_through_wall = true,
+		can_shoot_through_titan_shield = true,
+		falloff_start_mult = 0.769230769,
+		falloff_end_mult = 1,
+		damage_min_mult = 0.66667
+	}
+
+end)
+
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 
@@ -30689,7 +30725,14 @@ for _, part in pairs(self.parts) do
 				if part.cull or not part.no_cull then
 					part.pcs = nil
 					part.stats = { value = 0 }
+					if part.custom_stats and part.custom_stats.sounds then
+					local temp = part.custom_stats.sounds
+						part.custom_stats = {
+							sounds = temp
+						}
+					else
 					part.custom_stats = nil
+					end
 				end
 			else
 				if not part.keep_damage and part.stats then

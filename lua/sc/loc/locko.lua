@@ -1448,6 +1448,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--KSP/M249
 		["bm_w_m249"] = "KSP-90 경기관총",
 		["bm_m249_sc_desc"] = "재장전 할 때 골치가 아프지만 재장전이 필요하기도 전에 모두를 죽일 가능성이 있습니다.",
+		--ChainSAW
+		["bm_w_kacchainsaw"] = "Campbell 74 경기관총",
+		--["bm_kacchainsaw_sc_desc"] = "",
+		["bm_wp_upg_i_kacchainsaw_adverse"] = "유해 가스 시스템",		
 		--RPK
 		["bm_w_rpk"] = "RPK 경기관총",
 		["bm_rpk_sc_desc"] = "총알 호스가 목표물과 조금 더 동부 방식을 원할 때는 이 기관총을 고르는게 좋은 선택입니다.",							
@@ -1685,7 +1689,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Icky Vicky
 		["bm_w_victor"] = "SA North Star 저격소총",		
 		--Scunt
-		["bm_wp_scout_m_extended"] = "스탠드오프 신속 장전 탄창",		
+		["bm_wp_scout_m_extended"] = "스탠드오프 신속 장전 탄창",
+		--AWP
+		["bm_w_awp"] = "Amaroq 900 저격소총",
+		["bm_awp_sc_desc"] = "뛰어난 사거리와 명중률로 유명한 저격 소총입니다. 원래 모델이 세 사람이 헛간에서 만들어졌다고 누가 생각했을까요?\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
+		["bm_wp_upg_bazooka_desc"] = "높은 위험과 높은 보상을 제공하는 이 악명 높은 소총은 시그니처 보고서와 원샷 원킬 정책으로 알아볼 수 있습니다.\n\n#{skill_color}#타이탄 실드를 관통할 수 있게 합니다.##",
+		["bm_bazooka_sc_desc"] = "높은 위험과 높은 보상을 제공하는 이 악명 높은 소총은 시그니처 보고서와 원샷 원킬 정책으로 알아볼 수 있습니다.\n\n#{skill_color}#적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",		
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300 저격소총",
 		["bm_wa2000_sc_desc"] = "최상급 암살자에게 적합한 저격소총인 이 명성 높은 저격소총은 불과 몇 백 개만 만들어졌습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
@@ -1992,7 +2001,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 			["bm_suit_var_suit_sunny_hawaii_red"] = "먼 여행",
 			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "지미는 유전적으로 강화 된 슈퍼 군인 군대에 의해 중단된 멋진 열대 휴가 이야기를 들려주는 걸 좋아합니다. 그의 코카인 유발 동화 중 하나처럼 들리지만 아칸 하이스트 사건 이후에는... 누가 알까요?",
-				
+
+			["bm_suit_var_suit_sunny_payne"] = "Painless Vacation",
+			["bm_suit_var_suit_sunny_payne_desc"] = "PLACEHOLDER",
+			
 			["bm_suit_var_suit_sunny_security_purple"] = "보라색 경호원",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "소사의 경비원의 엘리트 멤버. 매일 감시하는 드론 및 잘 조정된 경비 교대를 가진 소사의 저택은 뚫을 수 없습니다. 누군가 Yayo(코카인)의 최근 배치를 확인하기 위해 귀찮게만 한다면 말이죠...",
 
@@ -2011,6 +2023,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 			["bm_suit_var_suit_prison_janitor"] = "청소부",
 			["bm_suit_var_suit_prison_janitor_desc"] = "옴니아가 전설적인 헨리스 락을 능가하는 곳에 일급 비밀 실험을 수행하고 있다는 소문이 범죄 지하 세계를 돌고 있습니다. 옴니아의 청소부도 계약서에 서명하고 그들의 통제를 받아야 합니다.",
+			
+			["bm_suit_var_suit_prison_subject"] = "The Subject",
+			["bm_suit_var_suit_prison_subject_desc"] = "PLACEHOLDER",			
 			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",

@@ -3591,8 +3591,8 @@ function WeaponTweakData:_init_stats()
 end
 
 local sms_preset = {
-	lmg_40 = 0.9,
-	lmg_48 = 0.85,
+	lmg_40 = 0.92,
+	lmg_48 = 0.88,
 	lmg_60 = 0.8,
 	lmg_90 = 0.75,
 	lmg_120 = 0.7,
@@ -3902,7 +3902,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"peacemaker","model3",
 		"r870","ksg","boot","m37","m1897","m590","supernova",
 		"winchester1874","mosin","m95","r93","msr","model70","r700","sbl","desertfox","scout","awp",
-		"flamethrower_mk2","system","china"
+		"flamethrower_mk2","system","china",
+		"kacchainsaw","kacchainsaw_flamethrower"
 	}
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].always_play_anims = true --Makes weapon ignore the "No recoil anims while ADS" setting when enabled
@@ -7490,6 +7491,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"smg",
 				"wolf_brigade"
 			}
+			self.kacchainsaw.desc_id = "bm_kacchainsaw_sc_desc"
+			self.kacchainsaw.has_description = true
 			self.kacchainsaw.CLIP_AMMO_MAX = 200
 			self.kacchainsaw.AMMO_MAX = 300
 			self.kacchainsaw.fire_mode_data.fire_rate = 0.0923076
@@ -7503,7 +7506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.kacchainsaw.stats = {
 				damage = 24,
-				spread = 30,
+				spread = 26,
 				recoil = 78,
 				spread_moving = 5,
 				zoom = 1,
@@ -7526,7 +7529,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Flamethrower
 			self.kacchainsaw_flamethrower.categories = {
 				"flamethrower",
-				"shotgun"
+				"shotgun",
+				"flamethrower_lmg"
 			}
 			self.kacchainsaw_flamethrower.has_description = true
 			self.kacchainsaw_flamethrower.desc_id = "bm_ap_flamethrower_sc_desc"
@@ -7575,6 +7579,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw_flamethrower.timers.reload_empty = 2.6
 			self.kacchainsaw_flamethrower.timers.reload_exit_empty = 0.8
 			self.kacchainsaw_flamethrower.timers.reload_exit_not_empty = 0.8
+			self.kacchainsaw_flamethrower.weapon_movement_penalty = sms_preset.lmg_48
 			self.kacchainsaw_flamethrower.shake.bypass_global_shake = true
 	
 		--RPK
@@ -7694,8 +7699,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.ads_speed = 0.640
 				self.m60.damage_falloff = {
 					start_dist = 1800,
-					end_dist = 5100,
-					min_mult = 0.5
+					end_dist = 6000,
+					min_mult = 0.4
 				}
 				self.m60.stats = {
 					damage = 60,
@@ -7739,9 +7744,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.supported = true
 				self.par.ads_speed = 0.620
 				self.par.damage_falloff = {
-					start_dist = 1400,
+					start_dist = 1200,
 					end_dist = 4500,
-					min_mult = 0.5
+					min_mult = 0.4
 				}
 				self.par.stats = {
 					damage = 60,

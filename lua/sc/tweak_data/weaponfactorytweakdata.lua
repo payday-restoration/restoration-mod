@@ -20854,6 +20854,14 @@ end)
 --CAMPBELL 74 (ChainSAW)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw", function(self)
 
+	self.parts.wpn_fps_lmg_kacchainsaw_b_short.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_lmg_kacchainsaw_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+	self.parts.wpn_fps_lmg_kacchainsaw_b_long.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_lmg_kacchainsaw_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
 	self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.supported = true
 	self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
 	self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
@@ -20906,13 +20914,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 		supported = true,
 		stats = {
 			value = 7,
-			spread = -6,
-			recoil = -10	
+			spread = -10,
+			recoil = -6
 		},
 		custom_stats = {
 			rof_mult = 1.384615,
-			falloff_start_mult = 0.35,
-			falloff_end_mult = 0.65
+			falloff_start_mult = 0.2,
+			falloff_end_mult = 0.6
 		},
 		internal_part = true,
 		dlc = "sc"

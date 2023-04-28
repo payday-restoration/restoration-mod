@@ -61,6 +61,9 @@ tweak_data.shotgun = {
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
 	}
+		tweak_data.flamethrower_lmg = {
+			ads_move_speed_mult = 0.58333,
+		}
 
 tweak_data.smg = {
 	swap_bonus = 1.2,
@@ -78,7 +81,7 @@ tweak_data.smg = {
 		hipfire_spread_mult = 4.4444
 	}
 		tweak_data.wolf_brigade = {
-			hipfire_spread_mult = 0.5
+			hipfire_spread_mult = 0.55
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.83334,

@@ -657,22 +657,6 @@ function PlayerTweakData:_init_kacchainsaw()
 	pivot_head_rotation = Rotation(-1, -3.4, -5)
 	self.stances.kacchainsaw.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.kacchainsaw.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
-	
-	self.stances.kacchainsaw_flamethrower = deep_clone(self.stances.kacchainsaw)
-	pivot_shoulder_translation = Vector3(10.7056, 4.38842, -0.747177)
-	pivot_shoulder_rotation = Rotation(0.106618, -0.084954, 0.62858)
-	pivot_head_translation = Vector3(11, 9, -3.5)
-	pivot_head_rotation = Rotation(-0.9, -3.4, 10)
-	self.stances.kacchainsaw_flamethrower.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
-	self.stances.kacchainsaw_flamethrower.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
-	pivot_head_translation = Vector3(10, 5, -4.5)
-	pivot_head_rotation = Rotation(-0.9, -3.4, 5)
-	self.stances.kacchainsaw_flamethrower.crouched.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
-	self.stances.kacchainsaw_flamethrower.crouched.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
-	pivot_head_translation = Vector3(7.5, 6, -2)
-	pivot_head_rotation = Rotation(-1, -3.4, 5)
-	self.stances.kacchainsaw_flamethrower.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
-	self.stances.kacchainsaw_flamethrower.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
 

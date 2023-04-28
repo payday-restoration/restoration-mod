@@ -1515,7 +1515,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
 		--ChainSAW
 		["bm_w_kacchainsaw"] = "Campbell 74",
-		--["bm_kacchainsaw_sc_desc"] = "",
+		["bm_kacchainsaw_sc_desc"] = "#{skill_color}#Has improved hipfire capabilties.##",
 		["bm_wp_upg_i_kacchainsaw_adverse"] = "Adverse Gas System",
 		--RPK
 		["bm_w_rpk"] = "RPK",

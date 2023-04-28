@@ -44,6 +44,14 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
+	self.enemy_melee_hit_achievements.steel_4 = {
+		enemy = "tank",
+		enemy_weapon = "saiga_dozer",
+		award = "steel_4",
+		result = "death",
+		melee_id = "great"
+	}
+	
 	self.enemy_kill_achievements.pim_1.enemies = {
 		"sniper",
 		"marshal_marksman",

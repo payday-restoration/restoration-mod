@@ -1026,6 +1026,16 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_cyan",
 	}
 	
+	self.player_styles.suit_sunny.material_variations.payne = {
+		name_id = "bm_suit_var_suit_sunny_payne",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_payne_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne",
+	}
+	
 	self.player_styles.suit_sunny.material_variations.security_red = {
 		name_id = "bm_suit_var_suit_sunny_security_red",
 		unlocked = true,
@@ -1099,6 +1109,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_chains",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
 	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
 	security_red = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_red_chains",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
@@ -1160,6 +1174,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	hawaii_orange = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_bodhi",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
 	},
 	security_red = {
@@ -1225,6 +1243,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_sangres",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
 	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
 	security_red = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_red_sangres",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
@@ -1286,6 +1308,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	hawaii_orange = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
 	},
 	security_red = {
@@ -1351,6 +1377,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
 	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
 	security_red = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_red_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
@@ -1414,6 +1444,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_joy",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
 	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
 	security_red = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_red_joy",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
@@ -1475,6 +1509,10 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	hawaii_orange = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_hawaii_orange_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	payne = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_sydney",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
 	},
 	security_red = {

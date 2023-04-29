@@ -79,3 +79,29 @@ function CopLogicSniper.exit(data, new_logic_name, enter_params)
 		managers.navigation:release_cover(my_data.best_cover[1])
 	end
 end
+
+-- Return to objective position
+Hooks:PostHook(CopLogicSniper, "action_complete_clbk", "sh_action_complete_clbk", function (data, action)
+	local action_type = action:type()
+	local my_data = data.internal_data
+
+	if action_type ~= "hurt" and action_type ~= "dodge" and action_type ~= "act" then
+		return
+	end
+
+	local objective = data.objective
+	if not objective or not objective.pos then
+		return
+	end
+
+	if math.abs(objective.pos.x - data.m_pos.x) < 10 and math.abs(objective.pos.y - data.m_pos.y) < 10 then
+		return
+	end
+
+	my_data.advance_path = {
+		mvector3.copy(data.m_pos),
+		mvector3.copy(objective.pos)
+	}
+
+	CopLogicTravel._chk_request_action_walk_to_advance_pos(data, my_data, objective.haste or "walk", objective.rot)
+end)

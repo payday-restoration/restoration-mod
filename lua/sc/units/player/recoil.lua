@@ -426,6 +426,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 		local equipped_weapon = self._parent_unit:inventory():equipped_unit()
 		local is_akimbo = equipped_weapon and equipped_weapon:base() and equipped_weapon:base().AKIMBO
 		local speen = equipped_weapon and equipped_weapon:base() and equipped_weapon:base():weapon_tweak_data().speen
+		local ignore_transition_styles = equipped_weapon and equipped_weapon:base() and equipped_weapon:base():weapon_tweak_data().ign_ts
 		local in_full_steelsight = self._parent_movement_ext._current_state._state_data.in_full_steelsight
 
 		if trans_data.duration < elapsed_t then
@@ -464,7 +465,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
 
-			if restoration and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") ~= 1 and not is_akimbo then
+			if restoration and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles then
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
 					local prog = (1 - absolute_progress) * (dt * 100)
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then

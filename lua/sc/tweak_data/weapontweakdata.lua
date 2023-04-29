@@ -10504,6 +10504,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.supernova.CLIP_AMMO_MAX = 4
 				self.supernova.AMMO_MAX = 60
 				self.supernova.alt_fire_data = nil --no
+				--[[
+				self.supernova.alt_fire_data = {
+					fire_rate = 0.2,
+					spread_mul = 1.25,
+					damage_mul = 0.75,
+					shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug",
+					recoil_mul = 1,
+					animations = {
+						fire_steelsight = "recoil_steelsight_alt",
+						fire = "recoil_alt"
+				}
+				--]]
 				self.supernova.supported = true
 				self.supernova.ads_speed = 0.360
 				self.supernova.damage_falloff = {
@@ -13784,6 +13796,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.umd_launcher.AMMO_MAX = 6
 		self.umd_launcher.kick = self.stat_info.kick_tables.even_recoil
 		self.umd_launcher.fire_mode_data.fire_rate = 0.5
+		self.umd_launcher.ign_ts = true
 		self.umd_launcher.supported = true
 		self.umd_launcher.ads_speed = 0.200
 		self.umd_launcher.stats = {
@@ -17233,7 +17246,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		crossbow = 0.6,
 		tranq = 0.7,
 		--Custom weapon pickup
-		raygun = 1.25, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
+		raygun = 1.3, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
 	}
 
 	--Get weapon category specific pickup multipliers.

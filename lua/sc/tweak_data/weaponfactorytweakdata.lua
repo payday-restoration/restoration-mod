@@ -20751,6 +20751,81 @@ end)
 --AMAROQ 900 (AWP)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 
+	self.parts.wpn_fps_snp_awp_ns_muzzle.supported = true
+	self.parts.wpn_fps_snp_awp_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+	self.parts.wpn_fps_snp_awp_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+
+	self.parts.wpn_fps_snp_awp_ns_suppressor.supported = true
+	self.parts.wpn_fps_snp_awp_ns_suppressor.supported = true
+	self.parts.wpn_fps_snp_awp_ns_suppressor.has_description = true
+	self.parts.wpn_fps_snp_awp_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
+	self.parts.wpn_fps_snp_awp_ns_suppressor.stats = {
+		value = 2,
+		suppression = 12,
+		alert_size = -1
+	}
+	self.parts.wpn_fps_snp_awp_ns_suppressor.perks = {"silencer"}
+
+	self.parts.wpn_fps_snp_awp_b_long.supported = true
+	self.parts.wpn_fps_snp_awp_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_snp_awp_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+	self.parts.wpn_fps_snp_awp_b_short.supported = true
+	self.parts.wpn_fps_snp_awp_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_snp_awp_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+	self.parts.wpn_fps_snp_awp_dh_speed.supported = true
+	self.parts.wpn_fps_snp_awp_dh_speed.stats = {
+		value = 5,
+		recoil = -6,
+		spread = -3
+	}
+	self.parts.wpn_fps_snp_awp_dh_speed.custom_stats = deep_clone(barrels.short_b3_custom_stats)
+	self.parts.wpn_fps_snp_awp_dh_speed.custom_stats.ads_speed_mult = 1
+	self.parts.wpn_fps_snp_awp_dh_speed.custom_stats.rof_mult = 1.15
+
+	self.parts.wpn_fps_snp_awp_stock_lightweight.supported = true
+	self.parts.wpn_fps_snp_awp_stock_lightweight.stats = deep_clone(stocks.fixed_to_folder_stats)
+	self.parts.wpn_fps_snp_awp_stock_lightweight.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+
+	self.parts.wpn_fps_snp_awp_m_speed.supported = true
+	self.parts.wpn_fps_snp_awp_m_speed.stats = {
+		value = 3,
+		extra_ammo = -2,
+		reload = 5,
+		spread = -1
+	}
+
+	self.parts.wpn_fps_snp_awp_g_granulated.supported = true
+	self.parts.wpn_fps_snp_awp_g_granulated.stats = {
+		value = 1,
+		spread = -1,
+		recoil = 2
+	}
+	self.parts.wpn_fps_snp_awp_g_grainy.supported = true
+	self.parts.wpn_fps_snp_awp_g_grainy.stats = {
+		value = 1,
+		spread = -1,
+		concealment = 1
+	}
+	self.parts.wpn_fps_snp_awp_g_grainy.custom_stats = {
+		ads_speed_mult = 0.975
+	}
+	self.parts.wpn_fps_snp_awp_g_perforated.supported = true
+	self.parts.wpn_fps_snp_awp_g_perforated.stats = {
+		value = 1,
+		spread = 1,
+		concealment = -1
+	}
+
+	self.parts.wpn_fps_snp_awp_ext_shellrack.supported = true
+	self.parts.wpn_fps_snp_awp_ext_shellrack.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 5
+	}
+
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.supported = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.desc_id = "bm_wp_upg_bazooka_desc"
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.has_description = true
@@ -20780,42 +20855,36 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		falloff_end_mult = 1,
 		damage_min_mult = 0.66667
 	}
-	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {}
-	self.parts.wpn_fps_snp_awp_conversion_dragonlore.override = {
-		wpn_fps_snp_awp_reciever = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_reciever",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_reciever"
-		},
-		wpn_fps_snp_awp_b_standard = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_b_long",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long"
-		},
-		wpn_fps_snp_awp_dh_standard = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_dh_standard",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_dh_standard"
-		},
-		wpn_fps_snp_awp_m_standard = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_m_standard",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_m_standard"
-		},
-		wpn_fps_snp_awp_g_solid = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_g_solid",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_g_solid"
-		},
-		wpn_fps_snp_awp_stock_solid = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_stock_solid",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_stock_solid"
-		},
-		wpn_fps_snp_awp_ext_bipod = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_bipod",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_bipod"
-		},
-		wpn_fps_upg_o_schmidt = {
-			third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_bipod",
-			unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_upg_o_schmidt_ck_2"
-		},
-		wpn_fps_upg_o_schmidt_magnified = {}
+	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {
+		"wpn_fps_snp_awp_dh_speed"
 	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_snp_awp.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_b_long",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long"
+				}
+			elseif self.parts[used_part_id].type == "magazine" then
+				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_m_standard",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_m_standard"
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_g_solid",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_g_solid"
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_stock_solid",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_stock_solid",
+					adds = {"wpn_fps_snp_awp_g_solid"}
+				}
+			end
+		end
+	end
 
 end)
 --AMAROQ 900 SCOPE

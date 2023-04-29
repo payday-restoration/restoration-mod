@@ -79,65 +79,76 @@ return {
 				}
 			}
 		},
-		-- Don't kill off enemies in various areas
-		[102154] = {
+		[103639] = {
 			values = {
-				enabled = false
+				rules = {
+					enemy_names = {
+						"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+						"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+						"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+						"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+					}
+				}
 			}
 		},
-		[102155] = {
+		[103640] = {
 			values = {
-				enabled = false
+				rules = {
+					enemy_names = {
+						"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+						"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+						"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+						"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+					}
+				}
 			}
 		},
-		[102162] = {
+		[103641] = {
 			values = {
-				enabled = false
+				rules = {
+					enemy_names = {
+						"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+						"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+						"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+						"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+					}
+				}
 			}
 		},
-		[102160] = {
+		[103642] = {
 			values = {
-				enabled = false
+				rules = {
+					enemy_names = {
+						"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+						"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+						"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+						"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+					}
+				}
 			}
 		},
-		[102170] = {
+		[103643] = {
 			values = {
-				enabled = false
+				rules = {
+					enemy_names = {
+						"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+						"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+						"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+						"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+					}
+				}
 			}
 		},
-		[102167] = {
+		[103644] = {
 			values = {
-				enabled = false
-			}
-		},
-		[102178] = {
-			values = {
-				enabled = false
-			}
-		},
-		[102177] = {
-			values = {
-				enabled = false
-			}
-		},
-		[102186] = {
-			values = {
-				enabled = false
-			}
-		},
-		[102181] = {
-			values = {
-				enabled = false
-			}
-		},
-		[102191] = {
-			values = {
-				enabled = false
-			}
-		},
-		[102189] = {
-			values = {
-				enabled = false
+				rules = {
+					enemy_names = {
+						"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+						"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+						"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+						"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+					}
+				}
 			}
 		}
 }	

@@ -44,12 +44,34 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
+	--Include Transport: Train Heist in I Do What I Do Best, I Take Scores
+	self.complete_heist_achievements.i_take_scores = {
+		stat = "armored_4_stat",
+		mask = "heat",
+		difficulty = overkill_and_above,
+		jobs = {
+			"arm_cro",
+			"arm_und",
+			"arm_hcm",
+			"arm_par",
+			"arm_fac",
+			"arm_for"
+		}
+	}
+	
 	self.enemy_melee_hit_achievements.steel_4 = {
 		enemy = "tank",
 		enemy_weapon = "saiga_dozer",
 		award = "steel_4",
 		result = "death",
 		melee_id = "great"
+	}
+	
+	--Include City SWATs in I Ain't Got Time to Bleed
+	self.enemy_melee_hit_achievements.no_time_to_bleed.enemies = {
+		"fbi_swat",
+		"city_swat",
+		"fbi_heavy_swat"
 	}
 	
 	self.enemy_kill_achievements.man_with_golden_gun = {

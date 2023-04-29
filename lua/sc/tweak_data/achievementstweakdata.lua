@@ -77,6 +77,7 @@ function AchievementsTweakData:init(tweak_data)
 		"phalanx_minion_assault",
 		"sniper",
 		"heavy_swat_sniper",
+		"weekend_dmr",
 		"tank",
 		"tank_titan",
 		"tank_titan_assault",

@@ -52,6 +52,13 @@ function AchievementsTweakData:init(tweak_data)
 		melee_id = "great"
 	}
 	
+	self.enemy_kill_achievements.man_with_golden_gun = {
+		weapon = "akm_gold",
+		stat = "gage3_2_stats",
+		enemy = "tank",
+		enemy_weapon = "m249_dozer"
+	}
+	
 	self.enemy_kill_achievements.pim_1.enemies = {
 		"sniper",
 		"marshal_marksman",

@@ -1450,7 +1450,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m249_sc_desc"] = "재장전 할 때 골치가 아프지만 재장전이 필요하기도 전에 모두를 죽일 가능성이 있습니다.",
 		--ChainSAW
 		["bm_w_kacchainsaw"] = "Campbell 74 경기관총",
-		--["bm_kacchainsaw_sc_desc"] = "",
+		["bm_kacchainsaw_sc_desc"] = "#{skill_color}#지향사격 능력에 특화되어 있습니다.##",
 		["bm_wp_upg_i_kacchainsaw_adverse"] = "유해 가스 시스템",		
 		--RPK
 		["bm_w_rpk"] = "RPK 경기관총",

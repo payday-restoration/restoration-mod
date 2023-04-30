@@ -175,6 +175,7 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_orange"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_green"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_payne"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_vice"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_security_red"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_security_purple"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_default"/>
@@ -525,6 +526,16 @@
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_dragon"/>
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_sydney"/>	
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_payne_joy"/>
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_vice_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_vice_joy"/>
 		
 		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_security_red_df"/>
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_red"/>

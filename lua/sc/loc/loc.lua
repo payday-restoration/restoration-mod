@@ -2137,6 +2137,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_sunny_payne"] = "Painless Vacation",
 			["bm_suit_var_suit_sunny_payne_desc"] = "PLACEHOLDER",
 			
+			["bm_suit_var_suit_sunny_vice"] = "Viceless Vacation",
+			["bm_suit_var_suit_sunny_vice_desc"] = "PLACEHOLDER",
+			
 			["bm_suit_var_suit_sunny_security_red"] = "Red Bodyguard",
 			["bm_suit_var_suit_sunny_security_red_desc"] = "An elite member of Sosa's security. Ernesto Sosa thought he had it all. A big mansion, a reliable business and a robust security ensuring his safety. The world is his... Yet, the history is bound to repeat itself.",
 			

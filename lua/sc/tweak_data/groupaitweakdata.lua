@@ -6263,6 +6263,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end
 	
+	--Reinforce shields, no special cap
+	self.unit_categories.GS_shield_defend = deep_clone(self.unit_categories.GS_shield)
+	self.unit_categories.GS_shield_defend.special_type = nil
+	
 	if difficulty_index <= 3 then
 		self.unit_categories.FBI_tank = {
 			unit_types = {
@@ -12664,6 +12668,25 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	self.enemy_spawn_groups.GS_defend_shields = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "GS_shield_defend",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_defend,
+				rank = 2
+			},					
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				tactics = self._tactics.FBI_defend,
+				rank = 1
+			}
+		}
+	}		
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.FBI_stealth_a = {
 			amount = {2, 3},
@@ -18618,7 +18641,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.4
 			}
 		}	
-	else
+	elseif difficulty_index == 7 then
 		self.besiege.reenforce.groups = {
 			GS_defend_b = {
 				0.6,
@@ -18636,6 +18659,29 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.5
 			}
 		}
+	else
+		self.besiege.reenforce.groups = {
+			GS_defend_b = {
+				0.6,
+				0.2,
+				0.2
+			},
+			GS_defend_c = {
+				0.4,
+				0.5,
+				0.2
+			},
+			GS_defend_d = {
+				0,
+				0.2,
+				0.4
+			},
+			GS_defend_shields = {
+				0,
+				0.1,
+				0.2
+			}		
+		}	
 	end
 	--ditto but for reenforce units
 	self.besiege.reenforce.groups.snowman_boss = {

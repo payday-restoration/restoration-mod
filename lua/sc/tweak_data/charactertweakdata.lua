@@ -437,6 +437,12 @@ function CharacterTweakData:_init_fbi(presets)
 	
 	--Veteran Cop
 	self.fbi_vet = deep_clone(self.fbi)
+	self.fbi_vet.tags = {"law", "custom", "special"}
+	self.fbi_vet.priority_shout = "g29"
+	self.fbi_vet.bot_priority_shout = "g29"
+	self.fbi_vet.priority_shout_max_dis = 3000
+	self.fbi_vet.silent_priority_shout = nil
+	self.fbi_vet.custom_shout = true		
 	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.can_slide_on_suppress = true
 	self.fbi_vet.HEALTH_INIT = 12
@@ -448,7 +454,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.use_animation_on_fire_damage = false
 	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.surrender = nil
-	self.fbi_vet.unintimidateable = true	
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 	   self.fbi_vet.custom_voicework = nil	
 	else   
@@ -512,7 +517,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.surrender = nil
 	self.meme_man.is_special = true
 	self.meme_man.no_asu = true
-	self.meme_man.unintimidateable = true
 	self.meme_man.heal_cooldown = 22.5
 	self.meme_man.rescue_hostages = false
 	self.meme_man.steal_loot = false
@@ -1125,7 +1129,14 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	--Titan SWAT (LMG)
 	self.city_swat_titan = deep_clone(self.city_swat)
+	self.city_swat_titan.tags = {"law", "custom", "special"}
+	self.city_swat_titan.priority_shout = "g29"
+	self.city_swat_titan.bot_priority_shout = "g29"
+	self.city_swat_titan.priority_shout_max_dis = 3000
+	self.city_swat_titan.silent_priority_shout = nil
+	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
+	self.city_swat_titan.dt_suppress = true
 	self.city_swat_titan.speech_prefix_p1 = "null"
 	self.city_swat_titan.speech_prefix_p2 = nil
 	self.city_swat_titan.speech_prefix_count = nil	
@@ -1142,7 +1153,7 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 3.29
+	self.city_swat_titan.headshot_dmg_mul = 2.65
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
@@ -1150,7 +1161,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
-	self.city_swat_titan.unintimidateable = true
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
@@ -1162,6 +1172,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Titan SWAT (Shotgunner)
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 	self.city_swat_titan_assault.marshal_logic = nil
+	self.city_swat_titan_assault.dt_suppress = false
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		
 	--Weekend LMG
@@ -1179,7 +1190,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_p2 = nil
 	self.weekend_lmg.speech_prefix_count = nil
 	self.weekend_lmg.HEALTH_INIT = 28.125
-	self.weekend_lmg.headshot_dmg_mul = 4.1125
+	self.weekend_lmg.headshot_dmg_mul = 3.3125
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
 	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
@@ -5091,7 +5102,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.ARRESTED_TIME = 30
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
-	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	presets.gang_member_damage.respawn_time_penalty = 0
 	presets.gang_member_damage.base_respawn_time_penalty = 5
 	presets.weapon = {}
@@ -17215,7 +17226,16 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	
 	--Reaper Bravo RPK74
 	table.insert(self.weap_ids, "bravo_rpk74")
-	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo"))		
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo"))	
+
+	--Scab Shotgunner!
+	--Concussion rounds AA12
+	table.insert(self.weap_ids, "aa12_conc_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_aa12_conc/wpn_npc_aa12_conc"))	
+
+	--Concussion rounds Saiga
+	table.insert(self.weap_ids, "saiga_conc_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_saiga_conc/wpn_npc_saiga_conc"))		
 
 end)
 
@@ -17267,7 +17287,7 @@ function CharacterTweakData:_set_easy()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 25
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 25
 	self.spa_vip.HEALTH_INIT = 25
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -17333,7 +17353,7 @@ function CharacterTweakData:_set_normal()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 50
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 50
 	self.spa_vip.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
@@ -17465,7 +17485,7 @@ function CharacterTweakData:_set_overkill()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
@@ -17530,7 +17550,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 125
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 125
 	self.spa_vip.HEALTH_INIT = 125
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -17591,7 +17611,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 150
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 150
 	self.spa_vip.HEALTH_INIT = 150
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
@@ -17642,7 +17662,7 @@ function CharacterTweakData:_set_overkill_290()
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 175
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 175
 	self.spa_vip.HEALTH_INIT = 175
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
@@ -17659,6 +17679,9 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.headshot_dmg_mul = 1.5
 	self.city_swat.headshot_dmg_mul = 2.2
 	self.weekend.headshot_dmg_mul = 2.75	
+	self.city_swat_titan.headshot_dmg_mul = 2.5
+	self.city_swat_titan_assault.headshot_dmg_mul = 2.5
+	self.weekend_lmg.headshot_dmg_mul = 3.125
 
 	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(2, 0.915)
@@ -17711,7 +17734,7 @@ function CharacterTweakData:_set_sm_wish()
 		
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.15
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.old_hoxton_mission.HEALTH_INIT = 200
 	self.spa_vip.HEALTH_INIT = 200
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200

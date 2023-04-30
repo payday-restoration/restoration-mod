@@ -567,6 +567,12 @@ function PlayerDamage:damage_bullet(attack_data)
 		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 	end
 	
+	--[[
+	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not self._unit:movement():current_state().driving then
+		self._unit:movement():push(attack_data.push_vel)
+	end	
+	]]--
+	
 	return 
 end
 

@@ -683,42 +683,6 @@ local crew_wep_preset = {
 		self.x_raging_bull_npc.FIRE_MODE = "single"		
 	end
 	
-	--Vanilla Deagle, less lethal
-	function WeaponTweakData:_init_data_deagle_npc()
-		self.deagle_npc = deep_clone(self.raging_bull_npc)
-		self.deagle_npc.DAMAGE = 1.2
-		self.deagle_npc.CLIP_AMMO_MAX = 8
-		self.deagle_npc.sounds.prefix = "deagle_npc"
-		self.deagle_npc.anim_usage = "is_pistol"
-		self.deagle_npc.hold = "pistol"
-		self.deagle_npc.reload = "pistol"	
-	end
-
-	--Marshal Shield Phase 2 Shotgun, less lethal
-	function WeaponTweakData:_init_data_sko12_conc_npc()
-		self.sko12_conc_npc.categories = clone(self.sko12.categories)
-		self.sko12_conc_npc.sounds.prefix = "sko12_npc"
-		self.sko12_conc_npc.use_data.selection_index = 2
-		self.sko12_conc_npc.DAMAGE = 0.1
-		self.sko12_conc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
-		self.sko12_conc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_g2"
-		self.sko12_conc_npc.CLIP_AMMO_MAX = 25
-		self.sko12_conc_npc.NR_CLIPS_MAX = 10
-		self.sko12_conc_npc.hold = "rifle"
-		self.sko12_conc_npc.alert_size = 2500
-		self.sko12_conc_npc.suppression = 1.8
-		self.sko12_conc_npc.FIRE_MODE = "single"
-		self.sko12_conc_npc.bullet_class = "ConcussiveInstantBulletBase"
-		self.sko12_conc_npc.concussion_data = {
-			mul = 0.5,
-			sound_duration = {
-				min = 4,
-				mul = 0.3,
-				additional = 4
-			}
-		}
-	end	
-	
 	function WeaponTweakData:_init_data_m4_npc()
 		--M4
 		self.m4_npc.categories = clone(self.new_m4.categories)
@@ -1108,7 +1072,23 @@ local crew_wep_preset = {
 			
 		self.aa12_npc = deep_clone(self.saiga_npc)	
 		self.aa12_npc.sounds.prefix = "aa12_npc"
-			
+		
+		--Titan Shotgunner AA12, less lethal
+		self.aa12_conc_npc = deep_clone(self.aa12_npc)	
+		self.aa12_conc_npc.DAMAGE = 1
+		self.aa12_conc_npc.bullet_class = "ConcussiveInstantBulletBase"
+		self.aa12_conc_npc.concussion_data = {
+			mul = 0.5,
+			sound_duration = {
+				min = 4,
+				mul = 0.3,
+				additional = 4
+			}
+		}	
+
+		self.saiga_conc_npc = deep_clone(self.aa12_conc_npc)	
+		self.saiga_conc_npc.sounds.prefix = "saiga_npc"
+		
 		self.benelli_npc = deep_clone(self.saiga_npc)
 		self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 		self.benelli_npc.DAMAGE = 4.5
@@ -1132,6 +1112,42 @@ local crew_wep_preset = {
 		self.argos_bravo_npc.sounds.prefix = "ultima_npc"		
 	end
 	
+	--Vanilla Deagle, less lethal
+	function WeaponTweakData:_init_data_deagle_npc()
+		self.deagle_npc = deep_clone(self.raging_bull_npc)
+		self.deagle_npc.DAMAGE = 1.2
+		self.deagle_npc.CLIP_AMMO_MAX = 8
+		self.deagle_npc.sounds.prefix = "deagle_npc"
+		self.deagle_npc.anim_usage = "is_pistol"
+		self.deagle_npc.hold = "pistol"
+		self.deagle_npc.reload = "pistol"	
+	end
+
+	--Marshal Shield Phase 2 Shotgun, less lethal
+	function WeaponTweakData:_init_data_sko12_conc_npc()
+		self.sko12_conc_npc.categories = clone(self.sko12.categories)
+		self.sko12_conc_npc.sounds.prefix = "sko12_npc"
+		self.sko12_conc_npc.use_data.selection_index = 2
+		self.sko12_conc_npc.DAMAGE = 1
+		self.sko12_conc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.sko12_conc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_g2"
+		self.sko12_conc_npc.CLIP_AMMO_MAX = 25
+		self.sko12_conc_npc.NR_CLIPS_MAX = 10
+		self.sko12_conc_npc.hold = "rifle"
+		self.sko12_conc_npc.alert_size = 2500
+		self.sko12_conc_npc.suppression = 1.8
+		self.sko12_conc_npc.FIRE_MODE = "single"
+		self.sko12_conc_npc.bullet_class = "ConcussiveInstantBulletBase"
+		self.sko12_conc_npc.concussion_data = {
+			mul = 0.5,
+			sound_duration = {
+				min = 4,
+				mul = 0.3,
+				additional = 4
+			}
+		}
+	end	
+			
 	function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 		self.swat_van_turret_module.name_id = "debug_sentry_gun"
 		self.swat_van_turret_module.DAMAGE = 2

@@ -1469,6 +1469,10 @@
 	<!--NPC aa12-->
 	<unit_obj			path="units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12" force="true"/>
 	
+	<!--NPC Less Lethal Shotguns-->
+	<unit				path="units/payday2/weapons/wpn_npc_aa12_conc/wpn_npc_aa12_conc" load="true"/>
+	<unit				path="units/payday2/weapons/wpn_npc_saiga_conc/wpn_npc_saiga_conc" load="true"/>
+	
 	<!--Dozer NPC AA12-->
 	<unit_obj			path="units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer" load="false"/>		
 

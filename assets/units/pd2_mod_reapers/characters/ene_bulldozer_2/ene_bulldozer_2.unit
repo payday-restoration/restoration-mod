@@ -9,6 +9,7 @@
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />		
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12" />
 	</dependencies>
 
 	<extensions>
@@ -16,7 +17,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="saiga_dozer" />
+			<var name="_default_weapon_id" value="aa12_dozer" />
 			<var name="_stats_name" value="tank_black" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />

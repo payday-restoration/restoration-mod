@@ -302,7 +302,8 @@ function restoration:Init()
 		"nmh", --No Mercy
 		"bph", --Hell's Island
 		"born", --Biker 1		
-		"fex", --Buluc's Mansion	
+		"fex", --Buluc's Mansion
+		"sah", --Shacklethorne
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
@@ -323,8 +324,7 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
-		"mia_2", --Hotline Miami 2	
-		"sah", --Shacklethorne	
+		"mia_2", --Hotline Miami 2
 		"des",	--Henry's Rock		
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		

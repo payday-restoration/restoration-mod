@@ -1208,7 +1208,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_flashlight"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 손전등을 켜거나 끕니다.",
 		["bm_wp_upg_fl_laser"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 레이저를 켜거나 끕니다.",
 		["bm_wp_upg_fl_dual"] = "#{skill_color}#$BTN_GADGET## 키를 눌러 레이저와 손전등 사이를 전환합니다.",
-		["bm_wp_upg_fl_vmp_marker"] = "조준하는 동안 #{skill_color}#40##미터 내에 있는 경비병과 특수 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 중에만 마킹할 수 있습니다.##",
+		["bm_wp_upg_fl_vmp_marker"] = "조준하는 동안 #{skill_color}#40##미터 내에 있는 경비병과 특수 및 엘리트 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 중에만 마킹할 수 있습니다.##",
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#보조 조준기가 부착된 상태에서 조준하는 동안에는 전환할 수 없습니다.##",	
 
 		["bm_wp_upg_o_angled_desc"] = "조준 도중 #{skill_color}#$BTN_GADGET## 키를 눌러 주 광학 조준기와 각진 기계식 조준기 사이를 전환합니다.",
@@ -2004,6 +2004,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 			["bm_suit_var_suit_sunny_payne"] = "Painless Vacation",
 			["bm_suit_var_suit_sunny_payne_desc"] = "PLACEHOLDER",
+			
+			["bm_suit_var_suit_sunny_vice"] = "Viceless Vacation",
+			["bm_suit_var_suit_sunny_vice_desc"] = "PLACEHOLDER",
 			
 			["bm_suit_var_suit_sunny_security_purple"] = "보라색 경호원",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "소사의 경비원의 엘리트 멤버. 매일 감시하는 드론 및 잘 조정된 경비 교대를 가진 소사의 저택은 뚫을 수 없습니다. 누군가 Yayo(코카인)의 최근 배치를 확인하기 위해 귀찮게만 한다면 말이죠...",
@@ -3997,7 +4000,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   SHINOBI SUBTREE   ]]--
 			--Alert--
 			["menu_jail_workout_sc"] = "경계",
-			["menu_jail_workout_desc_sc"] = "베이직: #{owned}#$basic##\n적 마킹 지속시간을 #{skill_color}#100%##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n경비원과 특수 적을 향해 조준하면 #{skill_color}#40##미터 이내에 있는 경비원과 특수 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 도중에만 마킹할 수 있습니다.##",
+			["menu_jail_workout_desc_sc"] = "베이직: #{owned}#$basic##\n적 마킹 지속시간을 #{skill_color}#100%##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n경비원과 특수 적을 향해 조준하면 #{skill_color}#40##미터 이내에 있는 경비원과 특수 및 엘리트 적을 #{skill_color}#자동으로 마킹합니다.##\n\n#{risk}#참고: 경비원은 스텔스 도중에만 마킹할 수 있습니다.##",
 
 			--Sixth Sense--
 			["menu_chameleon_beta_sc"] = "식스 센스",
@@ -4054,7 +4057,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 적을 비폭발 원거리 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 및 엘리트 적을 비폭발 원거리 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
@@ -4062,7 +4065,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n헤드샷으로 적을 죽이면 회피 미터가 회피의 #{skill_color}#12.5%##만큼 채워집니다.\n\n적을 뒤에서 죽이면 회피 미터가 회피의 #{skill_color}#75%##만큼 채워집니다. 또한 헤드샷 킬을 통해 주어지는 회피와 중첩이 가능합니다.\n\n#{risk}#참고:## #{important_1}#폭발물, 불 또는 지속 피해 효과로 죽이면## #{risk}#회피가 채워지지 않습니다.##",
+			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 및 엘리트 적에게 #{skill_color}#10%##만큼 피해를 더 입힙니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n특수 및 엘리트 적에게 추가로 #{skill_color}#15%##만큼 더 입힙니다.\n\n헤드샷으로 적을 죽이면 회피 미터가 회피의 #{skill_color}#12.5%##만큼 채워집니다.\n\n적을 뒤에서 죽이면 회피 미터가 회피의 #{skill_color}#75%##만큼 채워집니다. 또한 헤드샷 킬을 통해 주어지는 회피와 중첩이 가능합니다.\n\n#{risk}#참고:## #{important_1}#폭발물, 불 또는 지속 피해 효과로 죽이면## #{risk}#회피가 채워지지 않습니다.##",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",

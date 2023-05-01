@@ -2002,11 +2002,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_sunny_hawaii_red"] = "먼 여행",
 			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "지미는 유전적으로 강화 된 슈퍼 군인 군대에 의해 중단된 멋진 열대 휴가 이야기를 들려주는 걸 좋아합니다. 그의 코카인 유발 동화 중 하나처럼 들리지만 아칸 하이스트 사건 이후에는... 누가 알까요?",
 
-			["bm_suit_var_suit_sunny_payne"] = "Painless Vacation",
-			["bm_suit_var_suit_sunny_payne_desc"] = "PLACEHOLDER",
+			["bm_suit_var_suit_sunny_payne"] = "무통 휴가",
+			["bm_suit_var_suit_sunny_payne_desc"] = "울프는 상파울루에서 휴가를 보내는 동안 셔츠를 사고 싶었지만 판매자는 도시를 위해 한 일에 대한 감사의 마음으로 셔츠를 무료로 주었습니다.\n정작 울프는 브라질에 가본 적이 없기 때문에 혼란스러워했지만요.",
 			
-			["bm_suit_var_suit_sunny_vice"] = "Viceless Vacation",
-			["bm_suit_var_suit_sunny_vice_desc"] = "PLACEHOLDER",
+			["bm_suit_var_suit_sunny_vice"] = "악덕스러운 휴가",
+			["bm_suit_var_suit_sunny_vice_desc"] = "모든 악과 죄를 뒤로하고 그냥 쉬십시오.\n\n하지만 FBI는 워싱턴, 샌프란시스코, 텍사스에서 발생한 강도 사건을 잊지 않을 것임을 기억하십시오...",
 			
 			["bm_suit_var_suit_sunny_security_purple"] = "보라색 경호원",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "소사의 경비원의 엘리트 멤버. 매일 감시하는 드론 및 잘 조정된 경비 교대를 가진 소사의 저택은 뚫을 수 없습니다. 누군가 Yayo(코카인)의 최근 배치를 확인하기 위해 귀찮게만 한다면 말이죠...",
@@ -2027,8 +2027,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_janitor"] = "청소부",
 			["bm_suit_var_suit_prison_janitor_desc"] = "옴니아가 전설적인 헨리스 락을 능가하는 곳에 일급 비밀 실험을 수행하고 있다는 소문이 범죄 지하 세계를 돌고 있습니다. 옴니아의 청소부도 계약서에 서명하고 그들의 통제를 받아야 합니다.",
 			
-			["bm_suit_var_suit_prison_subject"] = "The Subject",
-			["bm_suit_var_suit_prison_subject_desc"] = "PLACEHOLDER",			
+			["bm_suit_var_suit_prison_subject"] = "설험체",
+			["bm_suit_var_suit_prison_subject_desc"] = "지미는 보일링 포인트 도중 탈출하기 전에 실험체의 옷을 벗었습니다. '지금 씨발 뭐하는 중이야, 지미?!'라고 묻고 싶었지만 아칸의 용병들과 총격전을 하느라 바빴죠.",			
 			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",

@@ -7626,8 +7626,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 			
 	self.wpn_fps_snp_msr_npc.override = deep_clone(self.wpn_fps_snp_msr.override)
 	self.wpn_fps_snp_msr_npc.uses_parts = deep_clone(self.wpn_fps_snp_msr.uses_parts)
-	--OVK please
-	self.wpn_fps_snp_msr_npc.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr/wpn_fps_snp_msr_npc"
 
 end)	
 

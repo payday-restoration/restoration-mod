@@ -2135,10 +2135,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "Jimmy loves to tell a story of his nice tropical vacation interrupted by an army of genetically enhanced super soldiers. Sounds like one of his coke-induced fairy tales, but after the AKAN heist... Who even knows?",
 			
 			["bm_suit_var_suit_sunny_payne"] = "Painless Vacation",
-			["bm_suit_var_suit_sunny_payne_desc"] = "During vacation in Sao Paulo, Wolf wanted to buy a shirt but the seller gave it for free in gratitude for what he had done for the city.\nWolf was confused because he had never been to Brazil.",
+			["bm_suit_var_suit_sunny_payne_desc"] = "During his vacation to Sao Paulo, Wolf decided to buy this shirt, but was given it for free instead, apparently as a sign of gratitude for what he had done for the city.\nWolf was confused because he had never been to Brazil.",
 			
 			["bm_suit_var_suit_sunny_vice"] = "Viceless Vacation",
-			["bm_suit_var_suit_sunny_vice_desc"] = "Leave all your vices and sins behind and just relax.\n\nBut remember that the FBI will not forget about your robberies in Washington, San Francisco, Texas, ...",
+			["bm_suit_var_suit_sunny_vice_desc"] = "You can't make Sangres wear anything but a flashy shirt no matter the occasion. As the most dangerous criminals gather round, all sharply dressed, Sangres comes in an old, worn out shirt he got on a garage sale in the city of Vice.",
 			
 			["bm_suit_var_suit_sunny_security_red"] = "Red Bodyguard",
 			["bm_suit_var_suit_sunny_security_red_desc"] = "An elite member of Sosa's security. Ernesto Sosa thought he had it all. A big mansion, a reliable business and a robust security ensuring his safety. The world is his... Yet, the history is bound to repeat itself.",
@@ -2162,7 +2162,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_janitor_desc"] = "There are rumors going around the criminal underworld that OMNIA is conducting some top secret experiments. Stuff that would surpass even the likes of the legendary Henry's Rock. Even OMNIA's janitors have to sign a contract and be kept under control.",
 			
 			["bm_suit_var_suit_prison_subject"] = "The Subject",
-			["bm_suit_var_suit_prison_subject_desc"] = "Jimmy pulled suits off the test subjects before escaping from Boiling Point. 'What the fuck are you doing, Jimmy ?!', you would like to ask but you were busy shooting with Akan's mercenaries.",
+			["bm_suit_var_suit_prison_subject_desc"] = "Jimmy got these off the test subjects before escaping from the AKAN's lab. Just in case those fatigues were the secret behind their outstanding abilities. Let's find out.",
 			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

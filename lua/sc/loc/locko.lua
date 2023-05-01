@@ -1692,7 +1692,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_scout_m_extended"] = "스탠드오프 신속 장전 탄창",
 		--AWP
 		["bm_w_awp"] = "Amaroq 900 저격소총",
-		["bm_awp_sc_desc"] = "뛰어난 사거리와 명중률로 유명한 저격 소총입니다. 원래 모델이 세 사람이 헛간에서 만들어졌다고 누가 생각했을까요?\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
+		["bm_awp_sc_desc"] = "뛰어난 사거리와 명중률로 유명한 저격 소총입니다. 원래 모델이 헛간에서 세 사람에 의해 만들어졌다고 누가 생각했을까요?\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
 		["bm_wp_upg_bazooka_desc"] = "높은 위험과 높은 보상을 제공하는 이 악명 높은 소총은 시그니처 보고서와 원샷 원킬 정책으로 알아볼 수 있습니다.\n\n#{skill_color}#타이탄 실드를 관통할 수 있게 합니다.##",
 		["bm_bazooka_sc_desc"] = "높은 위험과 높은 보상을 제공하는 이 악명 높은 소총은 시그니처 보고서와 원샷 원킬 정책으로 알아볼 수 있습니다.\n\n#{skill_color}#적, 방탄복, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",		
 		--WA2000

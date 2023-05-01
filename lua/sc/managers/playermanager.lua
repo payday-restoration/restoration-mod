@@ -1163,7 +1163,7 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 	end
 end
 
---Professional aced extra ammo when killing specials.
+--Professional aced extra ammo when killing specials and elites.
 function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
 	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and variant and variant == "bullet" then
 		local tracker = killed_unit.movement and killed_unit:movement():nav_tracker()

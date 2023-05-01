@@ -1189,7 +1189,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_flashlight"] = "Toggle the flashlight on/off by pressing #{skill_color}#$BTN_GADGET.##",
 		["bm_wp_upg_fl_laser"] = "Toggle the laser on/off by pressing #{skill_color}#$BTN_GADGET.##",
 		["bm_wp_upg_fl_dual"] = "Toggle between the laser and flashlight by pressing #{skill_color}#$BTN_GADGET.##",
-		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Automatically marks## guards and special enemies within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
+		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Automatically marks## guards, special enemies, and elites within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#CANNOT BE TOGGLED WHILE AIMING AS A SECONDARY SIGHT IS ATTACHED.##",
 
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
@@ -4119,7 +4119,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   SHINOBI SUBTREE   ]]--
 				--Alert--
 				["menu_jail_workout_sc"] = "Alert",
-				["menu_jail_workout_desc_sc"] = "BASIC: #{owned}#$basic##\nIncreases the duration of enemy marking by #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nYou will #{skill_color}#automatically mark## guards and special enemies within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
+				["menu_jail_workout_desc_sc"] = "BASIC: #{owned}#$basic##\nIncreases the duration of enemy marking by #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nYou will #{skill_color}#automatically mark## guards, specials, and elite enemies within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 
 				--Sixth Sense--
 				["menu_chameleon_beta_sc"] = "Sixth Sense",
@@ -4176,7 +4176,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "The Professional",
-				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#5%## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#10%## faster.\n\nKilling special enemies with non-explosive ranged weapons will make them drop an extra ammo box.",
+				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#5%## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#10%## faster.\n\nKilling special and elite enemies with non-explosive ranged weapons will make them drop an extra ammo box.",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",

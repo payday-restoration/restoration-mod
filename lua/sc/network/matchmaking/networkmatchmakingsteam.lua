@@ -1,1 +1,1 @@
-NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = "restoration_12.0.6"
+NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = "restoration_12.1"

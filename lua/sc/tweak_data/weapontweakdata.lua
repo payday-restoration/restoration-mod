@@ -10525,7 +10525,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.supernova.fire_rate_multiplier = 1.0333333
 				self.supernova.alt_fire_data = {
 					fire_rate = 0.3099999,
-					range_mul = 0.35,
+					range_mul = 0.4,
 					spread_mul = 3,
 					damage_mul = 1,
 					shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug",

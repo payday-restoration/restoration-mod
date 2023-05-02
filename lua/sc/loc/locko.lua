@@ -1189,7 +1189,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#4x 배율.##",
 		["bm_wp_upg_o_4_irons"] = "보조 기계식 조준기가 있는 중거리 조준경.\n#{risk}#1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
 		["bm_wp_upg_o_4_rds"] = "일체형 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
-		["bm_wp_upg_o_4_rds_mount"] = "상단에 장착된 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
+		["bm_wp_upg_o_4_rds_mount"] = "상단에 장착된 반사식 조준기가 있는 중거리 조준경.\n#{risk}#1.1-4x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
+		["bm_wp_upg_o_4_vari"] = "줌을 변경할 수 있는 조준경.\n#{risk}#4-8x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
 		["bm_wp_upg_o_5"] = "원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_5_range"] = "#{skill_color}#거리 측정기##가 내장된 원거리 조준경.\n#{risk}#5x 배율.##",
 		["bm_wp_upg_o_6"] = "원거리 조준경.\n#{risk}#6x 배율.##",
@@ -1494,6 +1495,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ultima_sc_desc"] = "플라스틱과 알루미늄만큼 현대적인 것은 없으며 휴대폰 충전을 위한 USB 슬롯도 제공됩니다.\n\n한 번에 #{skill_color}#2##발씩 재장전합니다.",				
 		--Loco
 		["bm_serbu_sc_desc"] = "크기가 축소된 Reinfeld 880 산탄총의 애프터마켓 버전. 은페도를 원하고 손목을 파괴하고 싶은 사람들을 위한 산탄총입니다.",
+		--Supernova
+		["bm_supernova_sc_desc"] = "펌프 액션과 반자동 사이를 전환할 수 있는 프랑켄 스미스 산탄총입니다.",		
 		--Reinfeld 88
 		["bm_w_m1897"] = "Repeater 1897 산탄총",
 		["bm_menu_sc_m1897_desc"] = "상징적이고 역사적인 이 작품은 진흙 투성이의 참호에서 치열한 태평양 섬 정글에 이르기까지 모든 것을 보았고 꽤 효과적인 발화점이라는 나쁜 평판을 받았습니다.\n\n발사 모드를 전환하면 #{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가합니다.##",
@@ -2003,10 +2006,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "지미는 유전적으로 강화 된 슈퍼 군인 군대에 의해 중단된 멋진 열대 휴가 이야기를 들려주는 걸 좋아합니다. 그의 코카인 유발 동화 중 하나처럼 들리지만 아칸 하이스트 사건 이후에는... 누가 알까요?",
 
 			["bm_suit_var_suit_sunny_payne"] = "무통 휴가",
-			["bm_suit_var_suit_sunny_payne_desc"] = "울프는 상파울루에서 휴가를 보내는 동안 셔츠를 사고 싶었지만 판매자는 도시를 위해 한 일에 대한 감사의 마음으로 셔츠를 무료로 주었습니다.\n정작 울프는 브라질에 가본 적이 없기 때문에 혼란스러워했지만요.",
+			["bm_suit_var_suit_sunny_payne_desc"] = "상파울루로 휴가를 보내는 동안 울프는 이 셔츠를 사기로 결정했지만 판매자는 그에게 도시를 위해 한 일에 대한 감사의 마음으로 셔츠를 무료로 주었습니다.\n정작 울프는 브라질에 가본 적이 없기 때문에 혼란스러워했지만요.",
 			
 			["bm_suit_var_suit_sunny_vice"] = "악덕스러운 휴가",
-			["bm_suit_var_suit_sunny_vice_desc"] = "모든 악과 죄를 뒤로하고 그냥 쉬십시오.\n\n하지만 FBI는 워싱턴, 샌프란시스코, 텍사스에서 발생한 강도 사건을 잊지 않을 것임을 기억하십시오...",
+			["bm_suit_var_suit_sunny_vice_desc"] = "당신은 상황에 관계없이 상그레스에게 화려한 셔츠 외에는 아무것도 입지 않도록 할 수 없습니다. 가장 위험한 범죄자들이 모두 단정한 옷차림을 하고 모여든다면 상그레스는 바이스 시의 차고 세일에서 얻은 낡고 허술한 셔츠를 입고 등장합니다.",
 			
 			["bm_suit_var_suit_sunny_security_purple"] = "보라색 경호원",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "소사의 경비원의 엘리트 멤버. 매일 감시하는 드론 및 잘 조정된 경비 교대를 가진 소사의 저택은 뚫을 수 없습니다. 누군가 Yayo(코카인)의 최근 배치를 확인하기 위해 귀찮게만 한다면 말이죠...",
@@ -2028,7 +2031,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_janitor_desc"] = "옴니아가 전설적인 헨리스 락을 능가하는 곳에 일급 비밀 실험을 수행하고 있다는 소문이 범죄 지하 세계를 돌고 있습니다. 옴니아의 청소부도 계약서에 서명하고 그들의 통제를 받아야 합니다.",
 			
 			["bm_suit_var_suit_prison_subject"] = "설험체",
-			["bm_suit_var_suit_prison_subject_desc"] = "지미는 보일링 포인트 도중 탈출하기 전에 실험체의 옷을 벗었습니다. '지금 씨발 뭐하는 중이야, 지미?!'라고 묻고 싶었지만 아칸의 용병들과 총격전을 하느라 바빴죠.",			
+			["bm_suit_var_suit_prison_subject_desc"] = "지미는 아칸의 연구실에서 탈출하기 전에 실험체들의 이 복장들을 벗었습니다. 그 피로함이 뛰어난 능력의 비결이었을 때를 대비해서 말이죠. 한 번 알아 봅시다.",			
 			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",
@@ -2729,7 +2732,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Judge
 						["bm_w_judge"] = "토러스 4510PLYFS",
 						--M37
-						["bm_w_m37"] = "이치카 모델 37",
+						["bm_w_m37"] = "이치카 모델 37",				
 						--NO SHOTGUNS IN THE TRENCHES
 						["bm_w_m1897"] = "윈체스터 모델 1897",
 						--M590
@@ -4351,7 +4354,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_9_desc_sc"] = "이제 리치 약병을 쓰러진 상태에서 활성화하여 리치 약병이 끝날 때까지 일시적으로 소생될 수 있습니다.\n\n리치 약병으로 일어서게 되면 약병의 재사용 대기시간을 ##30##초 더 추가합니다.\n\n이제 약병이 활성화되어 있는 동안 피해를 입으면 팀원의 체력이 ##2%##씩 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--CopyCat--
-		["menu_deck23_1_desc"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n참고: 킬은 무기 마다 독립적으로 계산되며 집어넣은 무기에 자동 재장전을 발동 된 후에만 카운터가 재설정됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
+		["menu_deck23_1_desc"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n참고: 킬은 무기마다 별도로 계산되며 집어넣은 무기에 자동 재장전이 발동 된 후에만 카운터가 재설정됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
 		["menu_deck23_1_short"] = "적 ##10명##을 죽이면 집어넣은 무기가 재장전됩니다.\n\n무기를 ##15%##만큼 빠르게 교체할 수 있습니다.",
 		["menu_deck23_1_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
 		["menu_deck23_1_1_short"] = "체력을 ##5%##만큼 얻습니다.",

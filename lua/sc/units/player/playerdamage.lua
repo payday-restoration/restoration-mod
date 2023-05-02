@@ -558,20 +558,57 @@ function PlayerDamage:damage_bullet(attack_data)
 
     managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
-	--Apply slow debuff if bullet has one.
-	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
-		local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
-		if slow_data.taunt then
-			attacker_unit:sound():say("post_tasing_taunt")
+	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
+
+
+		--Apply slow debuff if bullet has one.
+		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
+			local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
+			if slow_data.taunt then
+				attacker_unit:sound():say("post_tasing_taunt")
+			end
+			managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 		end
-		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
-	end
+
+		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
+		--Pain and suffering
+		if distance then
+			if distance < 2000 and tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not self._unit:movement():current_state().driving then
+				local attack_vec = attack_dir:with_z(0.1):normalized() * 600
+				mvector3.multiply(attack_vec, self._melee_push_multiplier * (self._unit:movement():current_state():in_air() and 0.1 or 0.6) )
+				if managers.player:_slow_debuff_mult() > 0.99 then --to avoid overriding T. Taser stun effects
+					managers.player:apply_slow_debuff(0.2, 1, nil, true)
+				end
+				self._unit:movement():push( attack_vec )
 	
-	--[[
-	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not self._unit:movement():current_state().driving then
-		self._unit:movement():push(attack_data.push_vel)
+				local vars = {
+					"player_melee",
+					"player_melee_var2"
+				}
+				self._unit:camera():play_shaker(vars[math.random(#vars)], -0.025)
+				local hor_var = {
+					1,
+					-1
+				}
+				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.5 , hor_var[math.random(#hor_var)] * 0.5, true )
+			end
+
+			if distance < 1000 and tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not self._unit:movement():current_state().driving then
+				local vars = {
+					"melee_hit",
+					"melee_hit_var2"
+				}
+				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.075, 0.5)
+				local hor_var = {
+					1,
+					-1
+				}
+				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.5 , hor_var[math.random(#hor_var)] * 0.5, true )
+			end
+		end
+
 	end	
-	]]--
+	--]]
 	
 	return 
 end

@@ -615,6 +615,9 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 				local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+					force_ads_recoil_anims = nil
+				end
 
 				if weap_base:out_of_ammo() then
 					if input.btn_primary_attack_press then
@@ -773,7 +776,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							1
 						}
 						local random = vars[math.random(#vars)]
-						if self._state_data.in_steelsight and (restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") or weap_base._disable_steelsight_recoil_anim) then
+						local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+						if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
 							self._ext_camera:play_shaker("whizby", random * 0.05 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
 						end
 						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
@@ -786,17 +790,23 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						end
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
+							local state = nil
+
 							if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
 								if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
-									self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
+									state = self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
 								else
-									self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+									state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 								end
 							elseif weap_tweak_data.animations.recoil_steelsight then
-								if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+								if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
 								else
-									self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
+									state = self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
 								end
+							end
+							
+							if state then
+								self._camera_unit:anim_state_machine():set_parameter(state, "alt_weight", self._equipped_unit:base():alt_fire_active() and 1 or 0)
 							end
 						end
 
@@ -898,6 +908,10 @@ function PlayerStandard:_check_stop_shooting()
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 		local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+		if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+			force_ads_recoil_anims = nil
+		end
+
 		if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		else 
@@ -2289,7 +2303,9 @@ function PlayerStandard:_check_action_weapon_firemode(t, input)
 			if wbase:in_burst_mode() then
 				managers.hud:set_teammate_weapon_firemode_burst(self._unit:inventory():equipped_selection())
 			else
-				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), wbase:fire_mode())
+				local base_ext = self._equipped_unit:base()
+
+				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), base_ext:fire_mode(), base_ext:alt_fire_active())
 			end
 		end
 	end
@@ -2515,6 +2531,9 @@ function PlayerStandard:full_steelsight()
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+		force_ads_recoil_anims = nil
+	end
 	local is_turret = managers.player:current_state() and managers.player:current_state() == "player_turret"
 	if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims and not is_turret then
 		self._ext_camera:play_redirect(self:get_animation("idle"))
@@ -2536,6 +2555,9 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+		force_ads_recoil_anims = nil
+	end
 
 	if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
 		if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
@@ -3335,8 +3357,10 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 			self:_stance_entered()
 
 			if alive(self._equipped_unit) then
-				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
-				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), self._equipped_unit:base():fire_mode())
+				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())				
+
+				local base_ext = self._equipped_unit:base()
+				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), base_ext:fire_mode(), base_ext:alt_fire_active())
 			end
 
 			managers.network:session():send_to_peers_synched("sync_underbarrel_switch", self._equipped_unit:base():selection_index(), underbarrel_name_id, underbarrel_state)

@@ -1179,6 +1179,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 	self.city_swat_titan_assault.marshal_logic = nil
 	self.city_swat_titan_assault.dt_suppress = false
+	self.city_swat_titan_assault.dt_sgunner = true
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		
 	--Weekend LMG

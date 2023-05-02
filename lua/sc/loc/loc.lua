@@ -1171,6 +1171,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral reflex sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds_mount"] = "Mid-range scope with a top-mounted reflex sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_vari"] = "Variable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_5"] = "Long-range scope.\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_6"] = "Long-range scope.\n#{risk}#6x magnification.##",
@@ -1569,6 +1570,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_x_sko12"] = "Akimbo VD-12s",	
 		--GSPS
 		["bm_w_m37"] = "GSPS 12G",
+		--Supernova
+		["bm_w_supernova"] = "Deimos",
+		["bm_supernova_sc_desc"] = "A shotgun franken-smithed to be capable of switching between pump-action and semi-auto.",
 		--Loco
 		["bm_w_serbu"] = "Locomotive 12G",
 		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
@@ -1974,7 +1978,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_swing_arc_1"] = "Has a #{skill_color}#wide## swing arc.",
 		["bm_melee_swing_arc_2"] = "Has a #{skill_color}#very wide## swing arc.",
-		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#large## swing arc.",
+		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#very, very wide## swing arc.",
 		["bm_melee_swing_arc_4"] = "Has a #{skill_color}#massive## swing arc.",
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's concealment rating.",
 		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.\n\nAs Jiro, killing a Cloaker with a charged melee attack will trigger a special kill.",
@@ -4462,7 +4466,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--CopyCat--
 		["menu_st_spec_23"] = "Copycat",
-		["menu_deck23_1_desc"] = "Killing ##10## enemies reloads your holstered weapon.\n\nNOTE: kills are counted independently between weapons and the counter only resets once you trigger a reload for your holstered weapon.\n\nYou swap between weapons ##15%## faster.",
+		["menu_deck23_1_desc"] = "Killing ##10## enemies reloads your holstered weapon.\n\nNOTE: Kills are counted separately between weapons and the counter only resets once you trigger a reload for the holstered weapon.\n\nYou swap between weapons ##15%## faster.",
 		["menu_deck23_1_short"] = "Killing ##10## enemies reloads your holstered weapon.\n\nYou swap between weapons ##15%## faster.",
 		["menu_deck23_1_1_desc"] = "You gain ##5%## more health.",
 		["menu_deck23_1_1_short"] = "You gain ##5%## more health.",

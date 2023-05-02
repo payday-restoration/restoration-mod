@@ -1158,6 +1158,7 @@ local muzzle_device = {
 				damage = -15
 			},
 			custom_stats = {
+				alt_rof_mult = 0.9,
 				falloff_start_mult = 0.8,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0,
@@ -1221,6 +1222,7 @@ local muzzle_device = {
 				damage = 30
 			},
 			custom_stats = {
+				--alt_dmg_mult = 0.88889,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0.6666667,
 				ammo_pickup_max_mul = 0.8,
@@ -1899,6 +1901,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_m590 = {
 			translation = Vector3(-0.26, 10.7, -4.25),
 			rotation = Rotation(0, -0.45, 0)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_supernova = {
+			translation = Vector3(0, 9.3, -3.49)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_serbu = {
 			translation = Vector3(0, 6.7, -3.26)
@@ -2586,6 +2591,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_contender = {
 		translation = Vector3(-0, -28.8, -4.212)
+	}
+	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_awp = {
+		translation = Vector3(0.0007, 8.9, -0.1)
 	}
 
 
@@ -9636,7 +9644,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -36,
 				spread = -30,
-				reload = 2,
 				total_ammo_mod = 202
 			},
 			custom_stats = {
@@ -9656,7 +9663,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -18,
 				spread = -30,
-				reload = 1,
 				total_ammo_mod = 202
 			},
 			custom_stats = {
@@ -9676,7 +9682,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			stats = {
 				damage = -36,
 				spread = -30,
-				reload = 2,
 				total_ammo_mod = 202
 			},
 			custom_stats = {
@@ -14575,6 +14580,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_contender = {
 		translation = Vector3(-0.001,-25.5,-4.217)
 	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_awp = {
+		translation = Vector3(0.0007, 8.9, -0.1)
+	}
+
 
 	--Custom wep alignment
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_k31 = {
@@ -20824,37 +20833,61 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		reload = 5
 	}
 
+	self.parts.wpn_fps_snp_awp_o_irons.supported = true
+	self.parts.wpn_fps_snp_awp_o_irons.stats = {
+		value = 1
+	}
+	self.parts.wpn_fps_snp_awp_o_irons.stance_mod = {
+		wpn_fps_snp_awp = {
+			translation = Vector3(0, -5, -0),
+			rotation = Rotation(0, 0, 0)
+		}
+	}
+
+	self.parts.wpn_fps_snp_awp_conversion_wildlands.supported = true
+	self.parts.wpn_fps_snp_awp_conversion_wildlands.stats = {
+		value = 2
+	}
+	self.parts.wpn_fps_snp_awp_conversion_wildlands.forbids = nil
+
+
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.supported = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.desc_id = "bm_wp_upg_bazooka_desc"
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.has_description = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.keep_damage = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.stats = {
-		total_ammo_mod = -52,
+		total_ammo_mod = -102,
 		damage = 90,
 		spread = 1,
 		value = 10,
 		recoil = -6,
-		concealment = -2
+		concealment = -3
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.custom_stats = {
 		alt_desc = "bm_bazooka_sc_desc",
-		ads_speed_mult = 1.2,
-		hip_mult = 4,
-		alt_ammo_pickup_max_mul = 0.41,
-		alt_ammo_pickup_min_mul = 0.41,
-		ammo_pickup_max_mul = 0.41,
-		ammo_pickup_min_mul = 0.41,
+		ads_speed_mult = 1.2105263,
+		hip_mult = 10,
+		ads_moving_mult = 50,
+		alt_ammo_pickup_max_mul = 0.35,
+		alt_ammo_pickup_min_mul = 0.35,
+		ammo_pickup_max_mul = 0.35,
+		ammo_pickup_min_mul = 0.35,
 		rof_mult = 0.65079365,
 		can_shoot_through_enemy = true,
 		can_shoot_through_shield = true,
 		can_shoot_through_wall = true,
 		can_shoot_through_titan_shield = true,
-		falloff_start_mult = 0.769230769,
-		falloff_end_mult = 1,
+		falloff_start_mult = 0.6346153,
+		falloff_end_mult = 0.7142857,
 		damage_min_mult = 0.66667
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {
-		"wpn_fps_snp_awp_dh_speed"
+		"wpn_fps_snp_awp_b_long",
+		"wpn_fps_snp_awp_b_short",
+		"wpn_fps_snp_awp_dh_speed",
+		"wpn_fps_snp_awp_ext_shellrack",
+		"wpn_fps_snp_awp_m_speed",
+		"wpn_fps_snp_awp_stock_lightweight"
 	}
 
 	for k, used_part_id in ipairs(self.wpn_fps_snp_awp.uses_parts) do
@@ -20864,20 +20897,46 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_b_long",
 					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long"
 				}
+
+				self.parts.wpn_fps_snp_awp_conversion_wildlands.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_third_snp_awp_ck_1_b_standard",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_b_standard"
+				}
 			elseif self.parts[used_part_id].type == "magazine" then
 				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
 					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_m_standard",
 					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_m_standard"
+				}
+
+				self.parts.wpn_fps_snp_awp_conversion_wildlands.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_third_snp_awp_ck_1_m_standard",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_m_standard"
 				}
 			elseif self.parts[used_part_id].type == "grip" then
 				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
 					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_g_solid",
 					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_g_solid"
 				}
+
+				self.parts.wpn_fps_snp_awp_conversion_wildlands.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_third_snp_awp_ck_1_g_solid",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_g_solid"
+				}
+			elseif self.parts[used_part_id].type == "bolt" then
+				self.parts.wpn_fps_snp_awp_conversion_wildlands.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_third_snp_awp_ck_1_dh_standard",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_dh_standard"
+				}
 			elseif self.parts[used_part_id].type == "stock" then
 				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
 					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_stock_solid",
 					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_stock_solid",
+					adds = {"wpn_fps_snp_awp_g_solid"}
+				}
+
+				self.parts.wpn_fps_snp_awp_conversion_wildlands.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_third_snp_awp_ck_1_stock_solid",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_stock_solid",
 					adds = {"wpn_fps_snp_awp_g_solid"}
 				}
 			end
@@ -20888,6 +20947,7 @@ end)
 --AMAROQ 900 SCOPE
 Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", function(self)
 	self.parts.wpn_fps_upg_o_schmidt.supported = true
+	self.parts.wpn_fps_upg_o_schmidt.desc_id = "bm_wp_upg_o_4_vari"
 	self.parts.wpn_fps_upg_o_schmidt.stats = {
 		zoom = 30,
 		value = 8
@@ -20901,7 +20961,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(-0.012, -25, -0.81)
+			weap.translation = weap.translation + Vector3(0, -25, -0.8)
 		end
 	end
 
@@ -20913,11 +20973,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(-0.012, -15, -0.81)
+			weap.translation = weap.translation + Vector3(0, -15, -0.8)
 		end
 	end
 
 end)
+
 --CAMPBELL 74 (ChainSAW)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw", function(self)
 
@@ -20997,6 +21058,117 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 
 	self.wpn_fps_lmg_kacchainsaw_npc.uses_parts = deep_clone(self.wpn_fps_lmg_kacchainsaw.uses_parts)
 	
+end)
+
+--Deimos (Supernova)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", function(self)
+
+	self.parts.wpn_fps_sho_supernova_b_short.supported = true
+	self.parts.wpn_fps_sho_supernova_b_short.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_sho_supernova_b_short.custom_stats = deep_clone(barrels.short_b2_custom_stats)
+
+	self.parts.wpn_fps_sho_supernova_b_long.supported = true
+	self.parts.wpn_fps_sho_supernova_b_long.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_sho_supernova_b_long.custom_stats = deep_clone(barrels.long_b2_custom_stats)
+
+	self.parts.wpn_fps_sho_supernova_shell_rack.supported = true
+	self.parts.wpn_fps_sho_supernova_shell_rack.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 3
+	}
+
+	self.parts.wpn_fps_sho_supernova_m_extender.supported = true
+	self.parts.wpn_fps_sho_supernova_m_extender.stats = {
+		extra_ammo = 3,
+		value = 5,
+		concealment = -2
+	}
+	self.parts.wpn_fps_sho_supernova_m_extender.custom_stats = {
+		ads_speed_mult = 1.05
+	}
+	self.parts.wpn_fps_sho_supernova_m_extender.override = nil
+
+	self.parts.wpn_fps_sho_supernova_g_adapter.supported = true
+	self.parts.wpn_fps_sho_supernova_g_adapter.stats = {
+		value = 2,
+		concealment = -1,
+		recoil = 2
+	}
+	self.parts.wpn_fps_sho_supernova_g_adapter.custom_stats = {
+		ads_speed_mult = 1.025
+	}
+
+	self.parts.wpn_fps_sho_supernova_g_raven.supported = true
+	self.parts.wpn_fps_sho_supernova_g_raven.stats = {
+		value = 3,
+		concealment = 1,
+		spread = -1
+	}
+	self.parts.wpn_fps_sho_supernova_g_raven.custom_stats = {
+		ads_speed_mult = 0.975
+	}
+
+	self.parts.wpn_fps_sho_supernova_g_stakeout.supported = true
+	self.parts.wpn_fps_sho_supernova_g_stakeout.stats = deep_clone(stocks.remove_folder_stats)
+	self.parts.wpn_fps_sho_supernova_g_stakeout.custom_stats = deep_clone(stocks.remove_folder_stats)
+
+	self.parts.wpn_fps_sho_supernova_s_collapsed.supported = true
+	self.parts.wpn_fps_sho_supernova_s_collapsed.stats = deep_clone(stocks.fold_folder_stats)
+	self.parts.wpn_fps_sho_supernova_s_collapsed.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+	self.parts.wpn_fps_sho_supernova_s_raven.supported = true
+	self.parts.wpn_fps_sho_supernova_s_raven.stats = deep_clone(stocks.fold_folder_stats)
+	self.parts.wpn_fps_sho_supernova_s_raven.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+	self.parts.wpn_fps_sho_supernova_conversion.supported = true
+	self.parts.wpn_fps_sho_supernova_conversion.stats = {
+		value = 6
+	}
+	self.parts.wpn_fps_sho_supernova_conversion.custom_stats = nil
+	self.parts.wpn_fps_sho_supernova_conversion.forbids = nil
+
+	for k, used_part_id in ipairs(self.wpn_fps_sho_supernova.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_third_sho_supernova_b_conversion",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_fps_sho_supernova_b_conversion"
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_third_sho_supernova_g_conversion",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_fps_sho_supernova_g_conversion"
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				}
+			elseif self.parts[used_part_id].type == "upper_reciever" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				}
+			elseif self.parts[used_part_id].type == "magazine" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				}
+			end
+		end
+	end
+
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_slug = a_slug_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_custom = a_custom_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_custom_free = a_custom_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_rip = a_rip_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
+
+
 end)
 
 --Resmod Custom Content					

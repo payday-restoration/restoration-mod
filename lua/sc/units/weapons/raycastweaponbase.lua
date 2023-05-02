@@ -1394,3 +1394,49 @@ function InstantExplosiveBulletBase:on_collision_client(position, normal, damage
 	managers.explosion:explode_on_client(position, normal, user_unit, damage, self.RANGE, self.CURVE_POW, self.EFFECT_PARAMS)
 end
 
+function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, damage, ...)
+	if col_ray.unit:character_damage().on_concussion then
+		local conc_tweak = alive(weapon_unit) and weapon_unit:base().concussion_tweak and weapon_unit:base():concussion_tweak()
+		local conc_mul = conc_tweak and conc_tweak.mul or tweak_data.character.concussion_multiplier
+		local sound_tweak = conc_tweak and conc_tweak.sound_duration
+		local sound_eff_mul = sound_tweak and sound_tweak.mul or 0.3
+		local distance = mvector3.distance(col_ray.unit:position(), user_unit:position())
+
+		local conc_max_range = conc_tweak and conc_tweak.max_range or 1000
+		if distance < conc_max_range then
+			managers.environment_controller:set_concussion_grenade(col_ray.unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+			col_ray.unit:character_damage():on_concussion(sound_eff_mul, false, sound_tweak)
+		end
+
+	elseif Network:is_server() and col_ray.unit:character_damage().stun_hit then
+		local function can_stun(hit_unit)
+			local brain_ext = hit_unit:brain()
+
+			if brain_ext and brain_ext.is_hostage and brain_ext:is_hostage() then
+				return false
+			end
+
+			local base_ext = hit_unit:base()
+
+			if base_ext and base_ext.char_tweak and base_ext:char_tweak().immune_to_concussion then
+				return false
+			end
+
+			return true
+		end
+
+		if can_stun(col_ray.unit) then
+			local action_data = {
+				variant = "stun",
+				damage = 0,
+				attacker_unit = user_unit,
+				weapon_unit = weapon_unit,
+				col_ray = col_ray
+			}
+
+			col_ray.unit:character_damage():stun_hit(action_data)
+		end
+	end
+
+	return self.super.give_impact_damage(self, col_ray, weapon_unit, user_unit, damage, ...)
+end

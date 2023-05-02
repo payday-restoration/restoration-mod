@@ -426,6 +426,10 @@ function ShotgunBase:fire_rate_multiplier()
 		end
 	end
 	
+	if self._alt_fire_active then
+		multiplier = multiplier * self._alt_rof_mult
+	end
+	
 	if self:can_toggle_firemode() and self:fire_mode() == "single" and not self:in_burst_mode() then
 		multiplier = multiplier * 0.85
 	end

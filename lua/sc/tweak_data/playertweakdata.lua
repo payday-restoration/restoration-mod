@@ -659,6 +659,30 @@ function PlayerTweakData:_init_kacchainsaw()
 	self.stances.kacchainsaw.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+-- Supernova
+local default_init_supernova = PlayerTweakData._init_supernova
+function PlayerTweakData:_init_supernova()
+	default_init_supernova(self)	
+	pivot_shoulder_translation = Vector3(7.5, 16.5, -3.5)
+	pivot_shoulder_rotation = Rotation(0, 0, 0.35)
+	pivot_head_translation = Vector3(-0.84, 18, 1.392)
+	pivot_head_rotation = Rotation(-0.43, 0.21, 0)
+	self.stances.supernova.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.supernova.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
+-- AWP
+local default_init_awp = PlayerTweakData._init_awp
+function PlayerTweakData:_init_awp()
+	default_init_awp(self)	
+	pivot_shoulder_translation = Vector3(8.66059, 40.8349, -3.2711)
+	pivot_shoulder_rotation = Rotation(0.106694, -0.0848914, -3)
+	pivot_head_translation = Vector3(-1.525, 3, -2.255)
+	pivot_head_rotation = Rotation(0.12, -0.07, 0)
+	self.stances.awp.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.awp.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
 
 
 if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then

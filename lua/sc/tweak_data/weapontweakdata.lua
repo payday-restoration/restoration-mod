@@ -103,7 +103,7 @@ local crew_wep_preset = {
 	},
 	shotgun_auto = {
 		mag_capacity = 10,
-		fire_rate = 0.2,
+		fire_rate = 0.13333,
 		damage = 7.5
 	},
 	shotgun_pump = {
@@ -3628,7 +3628,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
@@ -9537,10 +9537,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.awp.kick = self.stat_info.kick_tables.vertical_kick
 				self.awp.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
 				self.awp.supported = true
-				self.awp.ads_speed = 0.400
+				self.awp.ads_speed = 0.380
 				self.awp.damage_falloff = {
-					start_dist = 5200,
-					end_dist = 9800,
+					start_dist = 5000,
+					end_dist = 9600,
 					min_mult = 0.5
 				}
 				self.awp.stats = {
@@ -9549,7 +9549,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 47,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 17,
+					concealment = 19,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -10478,7 +10478,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Mosconi 12G Tactical (Mossberg 590)
 				self.m590.desc_id = "bm_menu_sc_m590_desc"
 				self.m590.has_description = true
-				self.m590.tactical_reload = 1	
 				self.m590.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.m590.rays = 9
 				self.m590.CLIP_AMMO_MAX = 7
@@ -10514,29 +10513,34 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m590.timers.shotgun_reload_exit_empty = 0.7
 
 			--Smoking Kills (Deimos)
+				self.supernova.desc_id = "bm_supernova_sc_desc"
+				self.supernova.has_description = true
 				self.supernova.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.supernova.rays = 9
 				self.supernova.kick = self.stat_info.kick_tables.vertical_kick
 				self.supernova.CLIP_AMMO_MAX = 4
 				self.supernova.AMMO_MAX = 60
-				self.supernova.alt_fire_data = nil --no
-				--[[
+				self.supernova.BURST_FIRE = false
+				self.supernova.fire_mode_data.fire_rate = 0.62
+				self.supernova.fire_rate_multiplier = 1.0333333
 				self.supernova.alt_fire_data = {
-					fire_rate = 0.2,
-					spread_mul = 1.25,
-					damage_mul = 0.75,
+					fire_rate = 0.3099999,
+					range_mul = 0.35,
+					spread_mul = 3,
+					damage_mul = 1,
 					shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug",
-					recoil_mul = 1,
+					recoil_mul = 1.25,
 					animations = {
 						fire_steelsight = "recoil_steelsight_alt",
 						fire = "recoil_alt"
+					},
+					ignore_always_play_anims = true
 				}
-				--]]
 				self.supernova.supported = true
 				self.supernova.ads_speed = 0.360
 				self.supernova.damage_falloff = {
-					start_dist = 700,
-					end_dist = 2800,
+					start_dist = 800,
+					end_dist = 3200,
 					min_mult = 0.3333
 				}
 				self.supernova.stats = {
@@ -10662,6 +10666,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1897.BURST_FIRE_RECOIL_MULTIPLIER = 1.2
 				self.m1897.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
 				self.m1897.BURST_FIRE_SPREAD_MULTIPLIER = 3
+				self.m1897.BURST_FIRE_RANGE_MULTIPLIER = 0.66
 				self.m1897.AMMO_MAX = 60
 				self.m1897.supported = true
 				self.m1897.ads_speed = 0.380
@@ -10747,6 +10752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m37.BURST_FIRE_RECOIL_MULTIPLIER = 1.2
 				self.m37.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
 				self.m37.BURST_FIRE_SPREAD_MULTIPLIER = 3
+				self.m37.BURST_FIRE_RANGE_MULTIPLIER = 0.66
 				self.m37.kick = self.stat_info.kick_tables.right_kick
 				self.m37.panic_suppression_chance = 0.05
 				self.m37.supported = true
@@ -11473,8 +11479,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.gre_m79.supported = true
 				self.gre_m79.ads_speed = 0.360
 				self.gre_m79.damage_falloff = {
-					start_dist = 2200,
-					end_dist = 6000,
+					start_dist = 1400,
+					end_dist = 5500,
 					min_mult = 0.05
 				}
 				self.gre_m79.stats = {
@@ -11516,8 +11522,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m32.supported = true
 				self.m32.ads_speed = 0.460
 				self.m32.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 5000,
+					start_dist = 1100,
+					end_dist = 4800,
 					min_mult = 0.033333
 				}
 				self.m32.stats = {
@@ -11621,7 +11627,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ms3gl.supported = true
 				self.ms3gl.ads_speed = 0.460
 				self.ms3gl.damage_falloff = {
-					start_dist = 1500,
+					start_dist = 1000,
 					end_dist = 4000,
 					min_mult = 0.05
 				}
@@ -11657,8 +11663,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.arbiter.supported = true
 				self.arbiter.ads_speed = 0.460
 				self.arbiter.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 6000,
+					start_dist = 1600,
+					end_dist = 5500,
 					min_mult = 0.03
 				}
 				self.arbiter.stats = {
@@ -11697,8 +11703,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.slap.supported = true
 				self.slap.ads_speed = 0.360
 				self.slap.damage_falloff = {
-					start_dist = 2200,
-					end_dist = 6000,
+					start_dist = 1300,
+					end_dist = 5000,
 					min_mult = 0.05
 				}
 				self.slap.stats = {
@@ -11739,7 +11745,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.china.supported = true
 				self.china.ads_speed = 0.500
 				self.china.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1000,
 					end_dist = 4500,
 					min_mult = 0.033333
 				}

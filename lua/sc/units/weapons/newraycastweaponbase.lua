@@ -262,6 +262,12 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 				hipfire_moving_spread_mult = hipfire_moving_spread_mult * hms_mult
 			end
 			moving_spread = moving_spread * hipfire_moving_spread_mult
+		elseif current_state:full_steelsight() then
+			local ads_moving_spread_mult = 1
+			if self._ads_moving_mult then
+				ads_moving_spread_mult = ads_moving_spread_mult * self._ads_moving_mult
+			end
+			moving_spread = moving_spread * ads_moving_spread_mult
 		end
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
@@ -279,10 +285,10 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		local hipfire_spread_mult = 1
 		for _, category in ipairs(self:weapon_tweak_data().categories) do
 			local hip_mult = tweak_data[category] and tweak_data[category].hipfire_spread_mult or 1
-			if self._hipfire_mult then
-				hip_mult = hip_mult * self._hipfire_mult
-			end
 			hipfire_spread_mult = hipfire_spread_mult * hip_mult
+		end
+		if self._hipfire_mult then
+			hipfire_spread_mult = hipfire_spread_mult * self._hipfire_mult
 		end
 		multiplier = multiplier * hipfire_spread_mult
 	end
@@ -293,6 +299,10 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		else
 			multiplier = multiplier * (self._burst_fire_spread_multiplier or 1)
 		end
+	end
+
+	if self._alt_fire_active and self._alt_fire_data then
+		multiplier = multiplier * (self._alt_fire_data.spread_mul or 1)
 	end
 
 	spread_area = spread_area * multiplier
@@ -597,12 +607,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._duration_falloff_end_mult = 1
 
 		self._rof_mult = 1
+		self._alt_rof_mult = 1
 		self._ads_rof_mult = 1
 		self._hip_rof_mult = 1
+
+		self._alt_dmg_mult = 1
 
 		self._movement_speed_add = 0
 
 		self._hipfire_mult = 1
+		self._ads_moving_mult = 1
 
 		if not self:is_npc() then
 			self._rms = self:weapon_tweak_data().rms
@@ -778,12 +792,20 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.rof_mult then
 				self._rof_mult = self._rof_mult * stats.rof_mult
 			end
+			if stats.alt_rof_mult then
+				self._alt_rof_mult = self._alt_rof_mult * stats.alt_rof_mult
+			end
 			if stats.ads_rof_mult then
 				self._ads_rof_mult = self._ads_rof_mult * stats.ads_rof_mult
 			end
 			if stats.hip_rof_mult then
 				self._hip_rof_mult = self._hip_rof_mult * stats.hip_rof_mult
 			end
+
+			if stats.alt_dmg_mult then
+				self._alt_dmg_mult = self._alt_dmg_mult * stats.alt_dmg_mult
+			end
+
 			if stats.starwars then
 				if restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
 					self._cbfd_to_add_this_check_elsewhere = true
@@ -826,6 +848,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.hip_mult then
 				self._hipfire_mult = self._hipfire_mult * stats.hip_mult
+			end
+			if stats.ads_moving_mult then
+				self._ads_moving_mult = self._ads_moving_mult * stats.ads_moving_mult
 			end
 			if stats.fire2 then
 				self:weapon_tweak_data().sounds.fire2 = stats.fire2
@@ -1167,6 +1192,10 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 		end
 	end
 
+	if self._alt_fire_active then
+		multiplier = multiplier * self._alt_rof_mult
+	end
+
 	if self:can_toggle_firemode() and self:fire_mode() == "single" and not self:in_burst_mode() then
 		multiplier = multiplier * 0.85
 	end
@@ -1437,6 +1466,11 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 		falloff_start = falloff_start * self._burst_fire_range_multiplier
 		falloff_end = falloff_end * self._burst_fire_range_multiplier
 	end
+	
+	if self._alt_fire_active and self._alt_fire_data and self._alt_fire_data.range_mul then
+		falloff_start = falloff_start * self._alt_fire_data.range_mul
+		falloff_end = falloff_end * self._alt_fire_data.range_mul
+	end
 
 	--Apply global range multipliers.
 	falloff_start = falloff_start * (1 + 1 - managers.player:get_property("desperado", 1))
@@ -1588,6 +1622,18 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 			end
 		end
 	end
+end
+function NewRaycastWeaponBase:damage_multiplier()
+	local user_unit = self._setup and self._setup.user_unit
+	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
+	local multiplier = managers.blackmarket:damage_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
+
+	if self._alt_fire_active and self._alt_fire_data then
+		multiplier = multiplier * (self._alt_fire_data.damage_mul or 1)
+		multiplier = multiplier * self._alt_dmg_mult
+	end
+
+	return multiplier
 end
 
 --Fix for reload objects not appearing

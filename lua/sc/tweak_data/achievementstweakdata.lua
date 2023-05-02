@@ -59,6 +59,13 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
+	self.complete_heist_achievements.farm_1 = {
+		spring_alive = true,
+		award = "farm_1",
+		job = "dinner",
+		difficulty = overkill_and_above
+	}
+	
 	self.enemy_melee_hit_achievements.steel_4 = {
 		enemy = "tank",
 		enemy_weapon = "saiga_dozer",

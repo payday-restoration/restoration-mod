@@ -612,35 +612,25 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 end
 
 local mvec_to = Vector3()
-local mvec_right_ax = Vector3()
-local mvec_up_ay = Vector3()
-local mvec_ax = Vector3()
-local mvec_ay = Vector3()
 local mvec_spread_direction = Vector3()
 
 function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	if self:gadget_overrides_weapon_functions() then
 		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	end
-
 	local result = {}
-	local ray_distance = self:weapon_range()
 	local spread_x, spread_y = self:_get_spread(user_unit)
-	spread_y = spread_y or spread_x
-	spread_mul = spread_mul or 1
-
-	mvector3.cross(mvec_right_ax, direction, math.UP)
-	mvector3.normalize(mvec_right_ax)
-	mvector3.cross(mvec_up_ay, direction, mvec_right_ax)
-	mvector3.normalize(mvec_up_ay)
-	mvector3.set(mvec_spread_direction, direction)
-
+	local ray_distance = self:weapon_range()
+	local right = direction:cross(Vector3(0, 0, 1)):normalized()
+	local up = direction:cross(right):normalized()
+	local r = math.random()
 	local theta = math.random() * 360
+	local ax = math.tan(r * spread_x * (spread_mul or 1)) * math.cos(theta)
+	local ay = math.tan(r * (spread_y or spread_x) * (spread_mul or 1)) * math.sin(theta) * -1
 
-	mvector3.multiply(mvec_right_ax, math.rad(math.sin(theta) * math.random() * spread_x * spread_mul))
-	mvector3.multiply(mvec_up_ay, math.rad(math.cos(theta) * math.random() * spread_y * spread_mul))
-	mvector3.add(mvec_spread_direction, mvec_right_ax)
-	mvector3.add(mvec_spread_direction, mvec_up_ay)
+	mvector3.set(mvec_spread_direction, direction)
+	mvector3.add(mvec_spread_direction, right * ax)
+	mvector3.add(mvec_spread_direction, up * ay)
 	mvector3.set(mvec_to, mvec_spread_direction)
 	mvector3.multiply(mvec_to, ray_distance)
 	mvector3.add(mvec_to, from_pos)
@@ -665,10 +655,8 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 			if math.random() < autohit_chance then
 				self._autohit_current = (self._autohit_current + weight) / (1 + weight)
 
-				mvector3.set(mvec_spread_direction, auto_hit_candidate.ray)
-				mvector3.set(mvec_to, mvec_spread_direction)
-				mvector3.multiply(mvec_to, ray_distance)
-				mvector3.add(mvec_to, from_pos)
+				mvector3.set(mvec_to, from_pos)
+				mvector3.add_scaled(mvec_to, auto_hit_candidate.ray, ray_distance)
 
 				ray_hits, hit_enemy = self:_collect_hits(from_pos, mvec_to)
 			end

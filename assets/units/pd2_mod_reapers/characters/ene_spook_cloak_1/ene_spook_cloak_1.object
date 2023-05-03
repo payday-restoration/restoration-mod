@@ -194,7 +194,7 @@
 	<decal_surfaces default_material="flesh" />
 
 	<effects>
-		<effect_spawner name="es_light" enabled="false" object="e_light" effect="units/pd2_mod_reapers/effects/character/cloaker_goggle" />
+		<effect_spawner name="es_light" enabled="false" object="e_light" effect="units/pd2_mod_reapers/effects/particles/character/cloaker_goggle" />
 		<effect_spawner name="shimmer_head" enabled="true" object="Head" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
 		<effect_spawner name="shimmer_shoulder_left" enabled="true" object="LeftShoulder" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
 		<effect_spawner name="shimmer_shoulder_right" enabled="true" object="RightShoulder" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />

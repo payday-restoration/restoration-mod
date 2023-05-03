@@ -885,7 +885,7 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_nm" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_body_df" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/spook_il" />
-	<effect				path="units/pd2_mod_reapers/effects/character/cloaker_goggle" load="true"/>
+	<effect				path="units/pd2_mod_reapers/effects/particles/character/cloaker_goggle" load="true"/>
 	
 
 	<cooked_physics		path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>

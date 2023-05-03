@@ -3118,6 +3118,9 @@ function WeaponTweakData:_init_stats()
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
 	self.stat_info.shotgun_spread_increase = 3.5
 
+	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
+	self.stat_info.hipfire_only_spread_increase = 6.66667
+
 	self.stat_info.base_spread = 10.1 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.1 --How much each point of accuracy reduces spread area.
 	self.stats.spread = {}
@@ -3918,13 +3921,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"peacemaker","model3",
 		"r870","ksg","boot","m37","m1897","m590","supernova",
 		"winchester1874","mosin","m95","r93","msr","model70","r700","sbl","desertfox","scout","awp",
-		"flamethrower_mk2","system","china",
-		"kacchainsaw","kacchainsaw_flamethrower"
+		"flamethrower_mk2","system","kacchainsaw_flamethrower",
+		"kacchainsaw","m134","shuno",
+		"china"
 	}
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].always_play_anims = true --Makes weapon ignore the "No recoil anims while ADS" setting when enabled
 	end
-		
+
+	recat = {
+		"flamethrower_mk2","system","kacchainsaw_flamethrower",
+		"kacchainsaw","m134","shuno"
+	}
+	for i, wep_id in ipairs(recat) do
+		self[ wep_id ].always_hipfire = true
+	end
+
 	--Weapon specific attachment category names
 	self.new_raging_bull.override_mod_type_name = {
 		["slide"] = "barrel",
@@ -7551,7 +7563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw_flamethrower.has_description = true
 			self.kacchainsaw_flamethrower.desc_id = "bm_ap_flamethrower_sc_desc"
 			self.kacchainsaw_flamethrower.rays = 20
-			self.kacchainsaw_flamethrower.CLIP_AMMO_MAX = 20
+			self.kacchainsaw_flamethrower.CLIP_AMMO_MAX = 30
 			self.kacchainsaw_flamethrower.AMMO_MAX = 90
 			self.kacchainsaw_flamethrower.fire_mode_data.fire_rate = 0.1
 			self.kacchainsaw_flamethrower.single_flame_effect_duration = 1
@@ -7570,7 +7582,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw_flamethrower.ads_speed = 0.460
 			self.kacchainsaw_flamethrower.damage_falloff = {
 				start_dist = 300,
-				end_dist = 1200,
+				end_dist = 1100,
 				min_mult = 0,
 			}
 			self.kacchainsaw_flamethrower.stats = {
@@ -7587,7 +7599,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 1,
 				reload = 20
 			}
-			self.kacchainsaw_flamethrower.flame_max_range = 1200
+			self.kacchainsaw_flamethrower.flame_max_range = 1100
 			self.kacchainsaw_flamethrower.stats_modifiers = nil
 			self.kacchainsaw_flamethrower.panic_suppression_chance = 0.05
 			self.kacchainsaw_flamethrower.timers.equip = 2
@@ -11028,7 +11040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.ads_speed = 0.480
 				self.flamethrower_mk2.damage_falloff = {
 					start_dist = 500,
-					end_dist = 1600,
+					end_dist = 1800,
 					min_mult = 0,
 				}
 				self.flamethrower_mk2.stats = {
@@ -11045,7 +11057,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.flamethrower_mk2.flame_max_range = 1600
+				self.flamethrower_mk2.flame_max_range = 1800
 				self.flamethrower_mk2.stats_modifiers = nil
 				self.flamethrower_mk2.panic_suppression_chance = 0.05
 				self.flamethrower_mk2.timers.reload_not_empty = 7.7
@@ -11084,7 +11096,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.ads_speed = 0.420
 				self.system.damage_falloff = {
 					start_dist = 300,
-					end_dist = 1200,
+					end_dist = 1300,
 					min_mult = 0,
 				}
 				self.system.stats = {
@@ -11101,7 +11113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.system.flame_max_range = 1200
+				self.system.flame_max_range = 1300
 				self.system.stats_modifiers = nil
 				self.system.panic_suppression_chance = 0.05
 				self.system.reload_speed_multiplier = 1.2

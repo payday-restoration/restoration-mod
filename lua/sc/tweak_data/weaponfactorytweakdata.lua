@@ -21048,11 +21048,45 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 		custom_stats = {
 			rof_mult = 1.384615,
 			falloff_start_mult = 0.2,
-			falloff_end_mult = 0.6
+			falloff_end_mult = 0.75
 		},
 		internal_part = true,
 		dlc = "sc"
 	}
+
+	self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.supported = true
+	self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.stats = {
+		value = 2
+	}
+	self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.custom_stats = nil
+	self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.forbids = nil
+
+	for k, used_part_id in ipairs(self.wpn_fps_lmg_kacchainsaw.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_lmg_kacchainsaw_pts/wpn_third_lmg_kacchainsaw_b_ck",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_lmg_kacchainsaw_pts/wpn_fps_lmg_kacchainsaw_b_ck"
+				}
+			elseif self.parts[used_part_id].type == "extra" then
+				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {
+					third_unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy",
+					unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+				}
+			elseif self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "magazine" then
+				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_lmg_kacchainsaw_pts/wpn_third_lmg_kacchainsaw_mag_ck",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_lmg_kacchainsaw_pts/wpn_fps_lmg_kacchainsaw_mag_ck"
+				}
+			end
+		end
+	end
+
 
 	table.insert(self.wpn_fps_lmg_kacchainsaw.uses_parts, "wpn_fps_lmg_kacchainsaw_adverse")
 
@@ -21653,7 +21687,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				attachment_list = {
 					"wpn_fps_ass_shak12_ns_muzzle",
 					"wpn_fps_upg_ak_ns_zenitco",
-					"wpn_fps_upg_ak_ns_jmac"
+					"wpn_fps_upg_ak_ns_jmac",
+					"wpn_fps_snp_awp_ns_muzzle"
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) then

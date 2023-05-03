@@ -246,12 +246,12 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
-	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 90, 0)
+	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 80, 0)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
 	if enable_recoil_recover == 1 and self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
-		local degrees_to_move = 90 * dt --Move camera 90 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
+		local degrees_to_move = 80 * dt --Move camera 80 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
 		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
 		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value
 	elseif enable_recoil_recover ~= 1 and self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then

@@ -590,7 +590,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					1,
 					-1
 				}
-				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.5 , hor_var[math.random(#hor_var)] * 0.5, true )
+				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.25 , hor_var[math.random(#hor_var)] * 0.75, true )
 			end
 
 			if distance < 1000 and tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not self._unit:movement():current_state().driving then
@@ -603,7 +603,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					1,
 					-1
 				}
-				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.5 , hor_var[math.random(#hor_var)] * 0.5, true )
+				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.25 , hor_var[math.random(#hor_var)] * 0.75, true )
 			end
 		end
 

@@ -6341,7 +6341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}		
 				self.hailstorm.recoil_values = {
-					{ 90, 60 },
+					{ 80, 60 },
 					5,
 					0.1
 				}
@@ -7452,7 +7452,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.tecci.recoil_values = {
-				{ 90, 60 },
+				{ 80, 60 },
 				7.5,
 				0.6
 			}
@@ -13800,7 +13800,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 10
 		}
 		self.raygun.recoil_values = {
-			{ 90, 60 },
+			{ 80, 60 },
 			8,
 			1
 		}
@@ -13835,7 +13835,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 10
 		}
 		self.umd_launcher.recoil_values = {
-			{ 90, 60 },
+			{ 80, 60 },
 			8,
 			1
 		}
@@ -16448,7 +16448,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}		
 		self.crysis3_typhoon.recoil_values = {
-			{ 90, 60 },
+			{ 80, 60 },
 			5,
 			0.1
 		}
@@ -17079,104 +17079,104 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--YandereDev moment (this isn't run every frame though)
 				if weap.recategorize[1] == "light_pis" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						9,
 						0.7
 					}
 				elseif weap.recategorize[1] == "heavy_pis" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						6,
 						0.6
 					}
 					if weap.recategorize[2] and weap.recategorize[2] == "handcannon" then
 						weap.recoil_values = {
-							{ 90, 60 },
+							{ 80, 60 },
 							3,
 							0.5
 						}
 					end
 				elseif weap.recategorize[1] == "light_shot" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						5,
 						0.4
 					}
 				elseif weap.recategorize[1] == "heavy_shot" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						4,
 						0.3
 					}
 				elseif weap.recategorize[1] == "break_shot" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						3,
 						0.2
 					}
 				elseif weap.recategorize[1] == "light_smg" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						8,
 						0.6
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						7,
 						0.5
 					}
 				elseif weap.recategorize[1] == "light_ar" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						7.5,
 						0.6
 					}
 				elseif weap.recategorize[1] == "heavy_ar" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						6.5,
 						0.4
 					}
 				elseif weap.recategorize[1] == "dmr_ar" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						5.5,
 						0.2
 					}
 				elseif weap.recategorize[1] == "light_mg" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						6,
 						0.3
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						5.5,
 						0.2
 					}
 				elseif weap.recategorize[1] == "miniguns" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						5,
 						0.1
 					}
 				elseif weap.recategorize[1] == "light_snp" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						3,
 						0.1
 					}
 				elseif weap.recategorize[1] == "heavy_snp" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						3,
 						0.1
 					}
 				elseif weap.recategorize[1] == "antim_snp" then
 					weap.recoil_values = {
-						{ 90, 60 },
+						{ 80, 60 },
 						3,
 						0.1
 					}

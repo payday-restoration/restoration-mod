@@ -1623,6 +1623,7 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 		end
 	end
 end
+
 function NewRaycastWeaponBase:damage_multiplier()
 	local user_unit = self._setup and self._setup.user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state

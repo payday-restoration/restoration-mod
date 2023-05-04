@@ -4785,7 +4785,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stech.stats_modifiers = nil
 				self.stech.panic_suppression_chance = 0.05
 				self.stech.timers.reload_exit_empty = 0.7
-				self.stech.timers.reload_exit_not_empty = 0.6
+				self.stech.timers.reload_not_empty = 1.89
+				self.stech.timers.reload_exit_not_empty = 0.7
 			
 			--Gruber Kurz (PPK)
 				self.ppk.has_description = true
@@ -6589,10 +6590,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.coal.stats_modifiers = nil
 				self.coal.panic_suppression_chance = 0.05
+				self.coal.reload_not_empty_speed_multiplier = 1.05
 				self.coal.timers.reload_empty = 4.2
-				self.coal.timers.reload_not_empty = 2.8
 				self.coal.timers.reload_exit_empty = 0.6
-				self.coal.timers.reload_exit_not_empty = 1
+				self.coal.timers.reload_not_empty = 3.1
+				self.coal.timers.reload_exit_not_empty = 0.7
 
 			--Akimbo Cobra
 				self.x_scorpion.CLIP_AMMO_MAX = 40
@@ -8098,9 +8100,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.g36.stats_modifiers = nil
 				self.g36.reload_speed_multiplier = 1.2
+				self.g36.reload_not_empty_speed_multiplier = 1.15
 				self.g36.timers.reload_exit_empty = 0.7
-				self.g36.timers.reload_not_empty = 2.3
-				self.g36.timers.reload_exit_not_empty = 1.2
+				self.g36.timers.reload_not_empty = 2.82
+				self.g36.timers.reload_exit_not_empty = 0.8
 				self.g36.panic_suppression_chance = 0.05
 
 			--Lion's Roar
@@ -8233,7 +8236,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.supported = true
 				self.corgi.ads_speed = 0.260
 				self.corgi.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1800,
 					end_dist = 6200,
 					min_mult = 0.4166
 				}
@@ -10077,6 +10080,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.stats_modifiers = nil
 			self.m95.panic_suppression_chance = 0.05
 			self.m95.timers.reload_exit_empty = 0.85
+			self.m95.timers.reload_not_empty = 3.88
 			self.m95.timers.reload_exit_not_empty = 1.1
 
 
@@ -14361,8 +14365,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.g36k.stats_modifiers = nil
 		self.g36k.reload_speed_multiplier = 1.2
-		self.g36k.timers.reload_not_empty = 2.4
+		self.g36k.reload_not_empty_speed_multiplier = 1.15
 		self.g36k.timers.reload_exit_empty = 0.7
+		self.g36k.timers.reload_not_empty = 2.82
 		self.g36k.timers.reload_exit_not_empty = 0.8
 		self.g36k.sounds = deep_clone(self.g36.sounds)
 		--self.g36k.sounds.fire_single2 = "g36k_fire"

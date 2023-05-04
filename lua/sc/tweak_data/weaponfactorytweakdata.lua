@@ -11732,9 +11732,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 	}
 
 	--Disabling Vertical Grip Mods
-	self.wpn_fps_smg_cobray.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
-	self.wpn_fps_smg_cobray.uses_parts[26] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
-	self.wpn_fps_smg_cobray.uses_parts[27] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"
+	for i, part_id in pairs(self.wpn_fps_smg_cobray.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip",
+			"wpn_fps_upg_vg_ass_smg_stubby",
+			"wpn_fps_upg_vg_ass_smg_afg"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_cobray.uses_parts[i] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
+			end
+		end
+	end	
 	
 	table.insert(self.wpn_fps_smg_cobray.uses_parts, "wpn_fps_smg_mac10_s_skel")
 	table.insert(self.wpn_fps_smg_cobray.uses_parts, "wpn_fps_smg_mac10_s_no")	

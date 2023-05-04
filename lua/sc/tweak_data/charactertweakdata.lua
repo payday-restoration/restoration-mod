@@ -1142,7 +1142,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.silent_priority_shout = nil
 	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
-	self.city_swat_titan.dt_suppress = true
+	self.city_swat_titan.dt_suppress = {
+		range = 1500
+	}
 	self.city_swat_titan.speech_prefix_p1 = "null"
 	self.city_swat_titan.speech_prefix_p2 = nil
 	self.city_swat_titan.speech_prefix_count = nil	
@@ -1178,8 +1180,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Titan SWAT (Shotgunner)
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 	self.city_swat_titan_assault.marshal_logic = nil
-	self.city_swat_titan_assault.dt_suppress = false
-	self.city_swat_titan_assault.dt_sgunner = true
+	self.city_swat_titan_assault.dt_suppress = nil
+	self.city_swat_titan_assault.dt_sgunner = {
+		range = 1000,
+		range_close = 400
+	}
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		
 	--Weekend LMG

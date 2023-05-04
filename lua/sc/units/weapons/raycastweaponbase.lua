@@ -1390,7 +1390,10 @@ function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, us
 		local sound_eff_mul = sound_tweak and sound_tweak.mul or 0.3
 		local distance = mvector3.distance(col_ray.unit:position(), user_unit:position())
 
-		local conc_max_range = conc_tweak and conc_tweak.max_range or 1000
+		local unit_tweak = alive(user_unit) and user_unit.base and user_unit:base() and user_unit:base().char_tweak and user_unit:base():char_tweak()
+		local dt_sgunner_range = unit_tweak and unit_tweak.dt_sgunner and unit_tweak.dt_sgunner.range
+		local conc_max_range = dt_sgunner_range or (conc_tweak and conc_tweak.max_range) or 1000
+
 		if distance < conc_max_range then
 			managers.environment_controller:set_concussion_grenade(col_ray.unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
 			col_ray.unit:character_damage():on_concussion(sound_eff_mul, false, sound_tweak)

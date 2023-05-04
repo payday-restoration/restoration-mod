@@ -1381,6 +1381,15 @@
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_conversion" load="false"/>
+
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_b_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_short" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_long" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle_short" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle_long" load="false"/>
 	
 	<!--PEW PEW PEW-->
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>

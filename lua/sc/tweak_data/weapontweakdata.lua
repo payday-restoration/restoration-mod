@@ -16001,7 +16001,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 1,
 			reload = 20
 		}
-		self.m4_usasoc.speen = true
+		--self.m4_usasoc.speen = true
 		self.m4_usasoc.stats_modifiers = nil
 		self.m4_usasoc.panic_suppression_chance = 0.05
 		self.m4_usasoc.sounds.magazine_empty = "wp_rifle_slide_lock"

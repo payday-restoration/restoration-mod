@@ -95,6 +95,22 @@ function PlayerStandard:_add_unit_to_char_table(char_table, unit, unit_type, ...
 	end
 end
 
+function PlayerStandard:push(vel, override_vel, override_vel_mult, allow_sprint)
+	local override_vel_mult = override_vel_mult or 0
+	if self._unit:mover() then
+		if override_vel then
+			--Scuffed as fuck way of doing this probably but I couldn't find another way to modify only x and y
+			self._last_velocity_xy = self._last_velocity_xy:with_x(self._last_velocity_xy.x * override_vel_mult):with_y(self._last_velocity_xy.y * override_vel_mult)
+		end
+		self._last_velocity_xy = self._last_velocity_xy + vel
+
+		self._unit:mover():set_velocity(self._last_velocity_xy)
+	end
+	if not allow_sprint then
+		self:_interupt_action_running(managers.player:player_timer():time())
+	end
+end
+
 function PlayerStandard:_activate_mover(mover, velocity)
 	self._unit:activate_mover(mover, velocity)
 	
@@ -1981,6 +1997,11 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	self:_shooting_move_speed_timer(t, dt)
 	self:_last_shot_t(t, dt)
+	self:_update_d_scope_t(t, dt)
+
+	if self._hit_in_air and not self._state_data.in_air then
+		self._hit_in_air = nil
+	end
 
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
 	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
@@ -2000,6 +2021,18 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	
 end)
 
+function PlayerStandard:_update_d_scope_t(t, dt, input)
+	if self._d_scope_t then
+		self:_interupt_action_steelsight(t)
+		if self._steelsight_wanted ~= true and self._controller and self._controller:get_input_bool("secondary_attack") then
+			self._steelsight_wanted = true
+		end
+		self._d_scope_t = self._d_scope_t - dt
+		if self._d_scope_t < 0 then
+			self._d_scope_t = nil
+		end
+	end
+end
 
 function PlayerStandard:_last_shot_t(t, dt)
 	local weapon = self._equipped_unit and self._equipped_unit:base()
@@ -2024,7 +2057,7 @@ end
 function PlayerStandard:_shooting_move_speed_timer(t, dt)
 	local weapon = self._equipped_unit and self._equipped_unit:base()
 	if self._shooting and weapon._sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
-		self._shooting_move_speed_t = math.min(0.7, weapon._smt)
+		self._shooting_move_speed_t = math.min(0.75, weapon._smt)
 		--self._shooting_move_speed_wait = weapon._smt * 0.15
 		self._shooting_move_speed_mult = weapon._sms
 	end
@@ -2462,7 +2495,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		end
 	end
 	--Here!
-	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() then
+	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t then
 		self._steelsight_wanted = true
 
 		return

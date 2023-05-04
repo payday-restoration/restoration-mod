@@ -471,6 +471,7 @@ function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 	end
 end
 
+
 --All damage_x functions have been rewritten.
 function PlayerDamage:damage_bullet(attack_data)
 	local attacker_unit = attack_data.attacker_unit
@@ -560,9 +561,13 @@ function PlayerDamage:damage_bullet(attack_data)
 	
 	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
 
+		local driving = self._unit:movement():current_state().driving
+		local in_air = self._unit:movement():current_state():in_air()
+		local hit_in_air = self._unit:movement():current_state()._hit_in_air
+		local on_ladder = self._unit:movement():current_state():on_ladder() 
 
 		--Apply slow debuff if bullet has one.
-		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
+		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not driving then
 			local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
 			if slow_data.taunt then
 				attacker_unit:sound():say("post_tasing_taunt")
@@ -573,13 +578,16 @@ function PlayerDamage:damage_bullet(attack_data)
 		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
 		--Pain and suffering
 		if distance then
-			if distance < 2000 and tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not self._unit:movement():current_state().driving then
-				local attack_vec = attack_dir:with_z(0.1):normalized() * 600
-				mvector3.multiply(attack_vec, self._melee_push_multiplier * (self._unit:movement():current_state():in_air() and 0.1 or 0.6) )
-				if managers.player:_slow_debuff_mult() > 0.99 then --to avoid overriding T. Taser stun effects
-					managers.player:apply_slow_debuff(0.2, 1, nil, true)
+			if tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not driving then
+
+				if distance < 2000 and not on_ladder and not hit_in_air then
+					local attack_vec = attack_dir:with_z(0.1):normalized() * 600
+					mvector3.multiply(attack_vec, 0.5 )
+					self._unit:movement():current_state():push( attack_vec, true, 0.2, true)
+					if in_air then
+						self._unit:movement():current_state()._hit_in_air = true
+					end
 				end
-				self._unit:movement():push( attack_vec )
 	
 				local vars = {
 					"player_melee",
@@ -590,10 +598,23 @@ function PlayerDamage:damage_bullet(attack_data)
 					1,
 					-1
 				}
-				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.25 , hor_var[math.random(#hor_var)] * 0.75, true )
+				local hor_var_lr = hor_var[math.random(#hor_var)] 
+				self._unit:camera()._camera_unit:base():recoil_kick(0.75, 0.5, hor_var_lr * 0.75, hor_var_lr * 1.25, true )
 			end
 
-			if distance < 1000 and tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not self._unit:movement():current_state().driving then
+			if tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and distance < 1000 and alive(self._unit) and not driving then
+				if distance < 500 then
+					self._unit:movement():current_state()._d_scope_t = 0.5
+					if not on_ladder and not hit_in_air then
+						local attack_vec = attack_dir:with_z(0.1):normalized() * 600
+						mvector3.multiply(attack_vec, 1 )
+						self._unit:movement():current_state():push( attack_vec, true, 0.2)
+						if in_air then
+							self._unit:movement():current_state()._hit_in_air = true
+						end
+					end
+				end
+
 				local vars = {
 					"melee_hit",
 					"melee_hit_var2"
@@ -603,7 +624,8 @@ function PlayerDamage:damage_bullet(attack_data)
 					1,
 					-1
 				}
-				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var[math.random(#hor_var)] * 0.25 , hor_var[math.random(#hor_var)] * 0.75, true )
+				local hor_var_lr = hor_var[math.random(#hor_var)] 
+				self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var_lr * 0.5 , hor_var_lr * 0.75, true )
 			end
 		end
 

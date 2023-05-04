@@ -2412,10 +2412,6 @@ local murkywater_hecu = {
 		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun",
 		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
 		["units/pd2_mod_ttr/characters/ene_captain_dozer/ene_captain_dozer"] = "units/pd2_dlc_vip/characters/ene_spring/ene_spring",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 
 		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
 		--swat

@@ -580,7 +580,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		if distance then
 			if tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not driving then
 
-				if distance < 2000 and not on_ladder and not hit_in_air then
+				if distance < 1500 and not on_ladder and not hit_in_air then
 					local attack_vec = attack_dir:with_z(0.1):normalized() * 600
 					mvector3.multiply(attack_vec, 0.5 )
 					self._unit:movement():current_state():push( attack_vec, true, 0.2, true)
@@ -603,7 +603,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 
 			if tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and distance < 1000 and alive(self._unit) and not driving then
-				if distance < 500 then
+				if distance < 400 then
 					self._unit:movement():current_state()._d_scope_t = 0.5
 					if not on_ladder and not hit_in_air then
 						local attack_vec = attack_dir:with_z(0.1):normalized() * 600

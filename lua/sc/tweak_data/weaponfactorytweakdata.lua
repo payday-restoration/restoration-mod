@@ -21070,13 +21070,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 				}
 			elseif self.parts[used_part_id].type == "extra" then
 				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {
-					third_unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy",
-					unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 				}
 			elseif self.parts[used_part_id].type == "barrel_ext" then
 				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy",
+					unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
 				}
 			elseif self.parts[used_part_id].type == "magazine" then
 				self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.override[used_part_id] = {

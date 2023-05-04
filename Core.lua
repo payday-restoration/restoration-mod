@@ -387,6 +387,10 @@ function restoration:Init()
 		"chca",
 		"pent"
 	}
+	--FSB (custom heists)
+	restoration.fsb = {
+		"flatline_lvl"
+		}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	

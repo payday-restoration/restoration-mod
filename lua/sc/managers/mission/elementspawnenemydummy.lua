@@ -2551,19 +2551,6 @@ local russia_very_hard = {
 		
 		--FSB Replacers 
 		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
-		
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"] = "units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"] = "units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",
 		
 		--ZEALS
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1",
@@ -2667,19 +2654,6 @@ local russia_overkill = {
 		
 		--FSB Replacers
 		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"] = "units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"] = "units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1",
 		
 		--ZEALS
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -2784,18 +2758,6 @@ local russia_mayhem = {
 		
 		--FSB Replacers
 		["units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"]  = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"] = "units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"] = "units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"] = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"] = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"] = "units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2",
 		
 		--ZEALS (Will spawn only on Enemy Spawner maps but i don't want these to crash) :)

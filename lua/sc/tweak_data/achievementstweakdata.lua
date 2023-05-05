@@ -96,6 +96,7 @@ function AchievementsTweakData:init(tweak_data)
 	}
 	
 	self.enemy_kill_achievements.pim_3.enemies = {
+		"fbi_vet",
 		"spooc",
 		"spooc_titan",
 		"spooc_gangster",
@@ -106,7 +107,10 @@ function AchievementsTweakData:init(tweak_data)
 		"phalanx_minion_assault",
 		"sniper",
 		"heavy_swat_sniper",
+		"city_swat_titan",
+		"city_swat_titan_assault",
 		"weekend_dmr",
+		"weekend_lmg",
 		"tank",
 		"tank_titan",
 		"tank_titan_assault",

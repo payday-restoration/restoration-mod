@@ -4,7 +4,7 @@
 	<unit_mat			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 	<cooked_physics		path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_df" />
-	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm" />
+	<!--<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm" />-->
 	<texture			path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_gsma" />
     
 	<!--///Prison Suit\\\-->
@@ -178,6 +178,8 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_vice"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_security_red"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_security_purple"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_soprano_green"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_soprano_blue"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_default"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_repairman"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_comedy"/>
@@ -556,6 +558,26 @@
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_dragon"/>
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_sydney"/>	
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_joy"/>
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_soprano_blue_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_joy"/>
+		
+		<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_soprano_green_df"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green"/>
+		
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_chains"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_sangres"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_bodhi"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_dragon"/>
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_sydney"/>	
+		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_joy"/>
 		
 		
 		

@@ -2,6 +2,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_gloves", "ResGloves", function(self,
 	table.insert(self.glove_adapter.player_style_exclude_list, "two_piece_suit")
 	table.insert(self.glove_adapter.player_style_exclude_list, "loud_suit")
 	table.insert(self.glove_adapter.player_style_exclude_list, "suit_sunny")
+	table.insert(self.glove_adapter.player_style_exclude_list, "suit_prison")
 	self.suit_default_gloves.suit_sunny = "heist_default"
 	self.suit_default_gloves.loud_suit = "heist_default"
 	self.suit_default_gloves.poggers = "esport"
@@ -1066,6 +1067,26 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple",
 	}
 	
+	self.player_styles.suit_sunny.material_variations.soprano_green = {
+		name_id = "bm_suit_var_suit_sunny_soprano",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_soprano_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green",
+	}
+	
+	self.player_styles.suit_sunny.material_variations.soprano_blue = {
+		name_id = "bm_suit_var_suit_sunny_soprano",
+		unlocked = true,
+		custom = true,
+		texture_bundle_folder = "mods",
+		desc_id = "bm_suit_var_suit_sunny_soprano_desc",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue",
+	}
+	
 	self.player_styles.suit_sunny.characters.chains.material_variations = {
 	skull = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_chains",
@@ -1133,6 +1154,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_chains",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_chains",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains"
 	}
 	}
@@ -1205,6 +1234,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_bodhi",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_bodhi",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi"
 	}
 	}
 	
@@ -1275,6 +1312,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_sangres",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_sangres",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres"
 	}
 	}
@@ -1347,6 +1392,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
 	}
 	}
 	
@@ -1417,6 +1470,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	},
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_dragon",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_dragon",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
 	}
 	}
@@ -1489,6 +1550,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_joy",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_joy",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy"
 	}
 	}
 	
@@ -1560,6 +1629,14 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	security_purple = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_security_purple_sydney",
 		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	soprano_blue = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue_syndey",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney"
+	},
+	soprano_green = {
+	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_sydney",
+		material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_syndey"
 	}
 	}
 

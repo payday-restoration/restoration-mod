@@ -423,7 +423,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_skm_nightmare_lvl"] = "A laundromat? Are you here to wash away your sins?",
 
 		--custom heists
-		["restoration_level_data_flatline_lvl"] = "10:26 PM, Милосердие Hospital",
+		["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова",
 
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
@@ -2152,6 +2152,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 			["bm_suit_var_suit_sunny_security_purple"] = "Purple Bodyguard",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "An elite member of Sosa's security. 24/7 surveillance by drones and well coordinated guard shifts. Sosa's mansion is impenetrable. If only someone bothered to check the latest batch of yayo...",
+			
+			["bm_suit_var_suit_sunny_soprano"] = "Mafia Business",
+			["bm_suit_var_suit_sunny_soprano_desc"] = "Although the mafia is not even close to the PAYDAY gang, but it is worth paying tribute to them - their style is excellent even in everyday life.",
 		    -- Color variations - Prison Suit
 			["bm_suit_var_suit_prison_default"] = "The Fugitive",
 			["bm_suit_var_suit_prison_default_desc"] = "The robes that have changed Hoxton forever. He was sure he burned this relic of the grim past along with the old safehouse, but somehow it found its way to the new one.",

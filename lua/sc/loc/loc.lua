@@ -422,6 +422,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_lvl_friday"] = "5:00 PM, Shield Mall",
 		["restoration_level_data_skm_nightmare_lvl"] = "A laundromat? Are you here to wash away your sins?",
 
+		--custom heists
+		["restoration_level_data_flatline_lvl"] = "10:26 PM, Милосердие Hospital",
+
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
 		["heist_sin_villa_name"] = "SCORE: Villa Vivaldi",

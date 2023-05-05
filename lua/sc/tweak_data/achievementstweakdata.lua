@@ -103,6 +103,7 @@ function AchievementsTweakData:init(tweak_data)
 		"taser",
 		"taser_titan_reaper",
 		"shield",
+		"boom",
 		"phalanx_minion",
 		"phalanx_minion_assault",
 		"sniper",

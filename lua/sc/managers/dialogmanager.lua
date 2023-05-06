@@ -8,58 +8,7 @@ function DialogManager:queue_dialog(id, ...)
 	--log("SC: Found Event! " .. id)
 			
 	if Global.game_settings and Global.game_settings.one_down then		
-		
-		--Crime and Punishment (custom)--
-        if id == "crime_escorttwo" then
-            if difficulty_index <= 2 then
-                escape_time = 750
-            elseif difficulty_index == 3 then
-                escape_time = 720
-            elseif difficulty_index == 4 then
-                escape_time = 690
-            elseif difficulty_index == 5 then
-                escape_time = 660    
-            elseif difficulty_index == 6 or difficulty_index == 7 then
-                escape_time = 630                        
-            else
-                escape_time = 600
-            end        
-        end
-        
-        --Hunter and Hunted (custom) Day 1--
-        if id == "hunt_roof" then
-            if difficulty_index <= 2 then
-                escape_time = 510
-            elseif difficulty_index == 3 then
-                escape_time = 480
-            elseif difficulty_index == 4 then
-                escape_time = 450
-            elseif difficulty_index == 5 then
-                escape_time = 420    
-            elseif difficulty_index == 6 or difficulty_index == 7 then
-                escape_time = 390                        
-            else
-                escape_time = 360
-            end        
-        end
-
-        --Hunter and Hunted (custom) Day 2--
-        if id == "hunt_grabequip" then
-            if difficulty_index <= 2 then
-                escape_time = 510
-            elseif difficulty_index == 3 then
-                escape_time = 480
-            elseif difficulty_index == 4 then
-                escape_time = 450
-            elseif difficulty_index == 5 then
-                escape_time = 420    
-            elseif difficulty_index == 6 or difficulty_index == 7 then
-                escape_time = 390                        
-            else
-                escape_time = 360
-            end        
-        end
-
+	
         --Triad Takedown Remastered (custom)--
         if id == "ttr_finalhack" then
             if difficulty_index <= 2 then

@@ -223,6 +223,8 @@ function restoration:Init()
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
 		"bluewave", --res map bluewave
+		"ruswl", --Scorched Earth
+		"hunter_departure", --Hunter and Hunted d2
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"constantine_butcher_lvl", --Butcher's Bay
 		"glb", --Golden Lotus Bank 
@@ -279,6 +281,7 @@ function restoration:Init()
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"constantine_clubhouse_lvl", --Smuggler's Den 
+		"crimepunishlvl", --Crime And Punshiment
 		"nft_heist", --EN EF TEE HEIST
 		"branchbank_meth", --Bank Heist: Meth
 		"tj_htsb", --Harvest and Trustee: Southern Branch 
@@ -314,7 +317,6 @@ function restoration:Init()
 		"trop", --Tropical Treasure 
 		"constantine_apartment_lvl", --Concrete Jungle 
 		"constantine_harbor_lvl", --Harboring a Grudge
-		"crimepunishlvl", --Crime And Punshiment
 		"amsdeal1", --Armsdeal Alleyway
 		"constantine_smackdown_lvl", --Smackdown
 		"constantine_restaurant_lvl", --Blood in the Water (Constantine Scores)
@@ -389,8 +391,15 @@ function restoration:Init()
 	}
 	--FSB (custom heists)
 	restoration.fsb = {
-		"flatline_lvl"
-		}
+		"flatline_lvl",
+		"ahopl",
+		"rusdl",
+		"crimepunishlvl",
+		"hunter_party",
+		"hunter_departure",
+		"hunter_fall",
+		"ruswl"
+	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	

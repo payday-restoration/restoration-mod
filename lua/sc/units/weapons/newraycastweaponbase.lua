@@ -906,16 +906,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	end
 
 	for part_id, stats in pairs(custom_stats) do
-		if stats.can_shoot_through_wall then
+		if stats.can_shoot_through_wall ~= nil then
 			self._can_shoot_through_wall = stats.can_shoot_through_wall
 		end
-		if stats.can_shoot_through_enemy then
+		if stats.can_shoot_through_enemy ~= nil then
 			self._can_shoot_through_enemy = stats.can_shoot_through_enemy
 		end
-		if stats.can_shoot_through_shield then
+		if stats.can_shoot_through_shield ~= nil then
 			self._can_shoot_through_shield = stats.can_shoot_through_shield
 		end
-		if stats.can_shoot_through_titan_shield then
+		if stats.can_shoot_through_titan_shield ~= nil then
 			self._can_shoot_through_titan_shield = stats.can_shoot_through_titan_shield
 		end
 		if tweak_data.weapon.factory.parts[part_id].type ~= "ammo" then

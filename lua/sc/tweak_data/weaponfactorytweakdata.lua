@@ -25258,7 +25258,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				},
 	
 				wpn_fps_pis_korth_m_8 = {
-					unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat"
+					unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat",
+					adds = {}
 				},
 	
 				wpn_fps_pis_korth_g_standard = {
@@ -25281,30 +25282,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 	
 			--HK M16
-	
-			--[[
-			self.parts.wpn_fps_ass_contraband_body_sayhello_ammo = {
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				a_obj = "a_body",
-				type = "ammo",
-				name_id = "bm_wp_sayhello_conversionkit",
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				internal_part = true,
-				stats = {
-					value = 0
-				},
-				custom_stats = {
-					sounds = {
-						fire = "m16_fire_single",
-						fire_auto = "m16_fire",
-						stop_fire = "m16_stop",
-						fire_single = "m16_fire_single"
-					}
-				}
-			}
-			table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.adds, "wpn_fps_ass_contraband_body_sayhello_ammo" )
-			--]]
-	
 			self.parts.wpn_fps_ass_contraband_body_sayhello.supported = true
 			self.parts.wpn_fps_ass_contraband_body_sayhello.stats = {
 				value = 10,
@@ -25325,6 +25302,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				ammo_pickup_min_mul = 1.607142857,
 				alt_ammo_pickup_max_mul = 1.607142857,
 				alt_ammo_pickup_min_mul = 1.607142857,
+				can_shoot_through_enemy = false,
 				rof_mult = 1.166667,
 				armor_piercing_override = 0
 			}
@@ -25647,6 +25625,224 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+		end
+
+		--Vanilla Mod Pack 23.3 v8
+		if self.parts.wpn_fps_ass_m4_body_dust then
+
+			self.parts.wpn_fps_ass_m4_body_dust.supported = true
+			self.parts.wpn_fps_ass_m4_body_dust.stats = { value = 0 }
+			self.parts.wpn_fps_ass_m4_body_dust.custom_stats = nil
+			self.parts.wpn_fps_ass_m4_body_dust.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] then
+					if self.parts[used_part_id].type == "upper_reciever" then
+						self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_dust"
+						}
+					elseif self.parts[used_part_id].type == "lower_reciever" then
+						self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_dust"
+						}
+					elseif self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_fg_dust",
+							forbids = {},
+							adds = {},
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "grip" then
+						self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_g_dust"
+						}
+					end
+				end
+			end
+			--These won't get overridden by the above for loop (aren't in the uses_parts list at the time of generation?) so I'm doing it manually here
+			self.parts.wpn_fps_ass_m4_body_dust.override.wpn_fps_upg_m4_fg_hera = {
+				unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_fg_dust",
+				forbids = {},
+				adds = {},
+				override = {}
+			}
+			self.parts.wpn_fps_ass_m4_body_dust.override.wpn_fps_uupg_m4_fg_victorcar = {
+				unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_fg_dust",
+				forbids = {},
+				adds = {},
+				override = {}
+			}
+
+			--A RIGHTEOUS MAN NEVER HAS WEALTH
+			self.parts.wpn_fps_pis_shrew_body_light.supported = true
+			self.parts.wpn_fps_pis_shrew_body_light.stats = { value = 0 }
+			self.parts.wpn_fps_pis_shrew_body_light.custom_stats = nil
+			self.parts.wpn_fps_pis_shrew_body_light.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_pis_shrew.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_shrew_body_light.override[used_part_id] then
+					if self.parts[used_part_id].type == "magazine" then
+						self.parts.wpn_fps_pis_shrew_body_light.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_shrew_pts/wpn_fps_pis_shrew_m_light"
+						}
+					elseif self.parts[used_part_id].type == "grip" then
+						self.parts.wpn_fps_pis_shrew_body_light.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_shrew_pts/wpn_fps_pis_shrew_g_light"
+						}
+					elseif self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_shrew_body_light.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_shrew_pts/wpn_fps_pis_shrew_sl_light"
+						}
+					end
+				end
+			end
+			self.parts.wpn_fps_pis_shrew_body_light_x.supported = true
+			self.parts.wpn_fps_pis_shrew_body_light_x.stats = { value = 0 }
+			self.parts.wpn_fps_pis_shrew_body_light_x.custom_stats = nil
+			self.parts.wpn_fps_pis_shrew_body_light_x.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_pis_x_shrew.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_shrew_body_light_x.override[used_part_id] then
+					if self.parts[used_part_id].type == "magazine" then
+						self.parts.wpn_fps_pis_shrew_body_light_x.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_shrew_pts/wpn_fps_pis_shrew_m_light"
+						}
+					elseif self.parts[used_part_id].type == "grip" then
+						self.parts.wpn_fps_pis_shrew_body_light_x.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_shrew_pts/wpn_fps_pis_shrew_g_light"
+						}
+					elseif self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_shrew_body_light_x.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_shrew_pts/wpn_fps_pis_shrew_sl_light"
+						}
+					end
+				end
+			end
+
+			--Korth Exclusive Set 2
+			self.parts.wpn_fps_pis_korth_body_skill.supported = true
+			self.parts.wpn_fps_pis_korth_body_skill.stats = {value = 0}
+			self.parts.wpn_fps_pis_korth_body_skill.custom_stats = nil
+			self.parts.wpn_fps_pis_korth_body_skill.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_pis_korth.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_korth_body_skill.override[used_part_id] then
+					if self.parts[used_part_id].type == "barrel" then
+						self.parts.wpn_fps_pis_korth_body_skill.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_skill"
+						}
+					elseif self.parts[used_part_id].type == "grip" then
+						self.parts.wpn_fps_pis_korth_body_skill.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_skill"
+						}
+					end
+				end
+			end
+			self.parts.wpn_fps_pis_korth_body_skill.override.wpn_fps_pis_korth_m_8.adds = {}
+
+			self.parts.wpn_fps_pis_m1911_body_killer.supported = true
+			self.parts.wpn_fps_pis_m1911_body_killer.stats = { value = 0, zoom = 20 }
+			self.parts.wpn_fps_pis_m1911_body_killer.custom_stats = {
+				disable_steelsight_recoil_anim = true
+			}
+			self.parts.wpn_fps_pis_m1911_body_killer.stance_mod.wpn_fps_pis_m1911 = {
+				translation =  Vector3(0, -40, -3.37)
+			}
+			self.parts.wpn_fps_pis_m1911_body_killer.forbids = {
+				"wpn_fps_upg_o_rmr",
+				"wpn_fps_upg_o_rms",
+				"wpn_fps_upg_o_rikt"
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_pis_m1911.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_m1911_body_killer.override[used_part_id] then
+					if self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_m1911_body_killer.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_m1911_pts/wpn_fps_pis_m1911_sl_killer"
+						}
+					end
+				end
+			end
+
+			self.parts.wpn_fps_pis_type54_body_wood.supported = true
+			self.parts.wpn_fps_pis_type54_body_wood.stats = { value = 0 }
+
+			self.parts.wpn_fps_pis_chinchilla_body_cascade.supported = true
+			self.parts.wpn_fps_pis_chinchilla_body_cascade.stats = { value = 0 }
+			self.parts.wpn_fps_pis_chinchilla_body_cascade.custom_stats = nil
+			self.parts.wpn_fps_pis_chinchilla_body_cascade.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_pis_chinchilla.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_chinchilla_body_cascade.override[used_part_id] then
+					if self.parts[used_part_id].type == "barrel" then
+						self.parts.wpn_fps_pis_chinchilla_body_cascade.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_b_cascade"
+						}
+					elseif self.parts[used_part_id].type == "grip" then
+						self.parts.wpn_fps_pis_chinchilla_body_cascade.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_g_cascade"
+						}
+					end
+				end
+			end
+
+			self.parts.wpn_fps_pis_packrat_body_sport.supported = true
+			self.parts.wpn_fps_pis_packrat_body_sport.stats = { value = 0 }
+			self.parts.wpn_fps_pis_packrat_body_sport.custom_stats = nil
+			self.parts.wpn_fps_pis_packrat_body_sport.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_pis_packrat.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_packrat_body_sport.override[used_part_id] then
+					if self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_packrat_body_sport.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_sl_sport",
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "magazine" then
+						self.parts.wpn_fps_pis_packrat_body_sport.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_m_sport"
+						}
+					end
+				end
+			end
+			self.parts.wpn_fps_pis_packrat_body_sport.override.wpn_fps_pis_packrat_m_standard = nil
+			self.parts.wpn_fps_pis_packrat_body_sport_x.supported = true
+			self.parts.wpn_fps_pis_packrat_body_sport_x.stats = { value = 0 }
+			self.parts.wpn_fps_pis_packrat_body_sport_x.custom_stats = nil
+			self.parts.wpn_fps_pis_packrat_body_sport_x.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_x_packrat.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_packrat_body_sport_x.override[used_part_id] then
+					if self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_packrat_body_sport_x.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_sl_sport",
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "magazine" then
+						self.parts.wpn_fps_pis_packrat_body_sport_x.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_m_sport"
+						}
+					end
+				end
+			end
+			self.parts.wpn_fps_pis_packrat_body_sport_x.override.wpn_fps_pis_packrat_m_standard = nil
+
+			--self.parts.wpn_fps_pis_g17_body_sport.supported = true
+			--self.parts.wpn_fps_pis_g17_body_sport_x.supported = true
+			--self.parts.wpn_fps_ass_amcar_body_mark.supported = true
+			--self.parts.wpn_fps_ass_tecci_body_infinity.supported = true
+
+			--self.parts.wpn_fps_ass_scar_body_light.supported = true
+			--self.parts.wpn_fps_ass_contraband_body_mpx.supported = true
+			--self.parts.wpn_fps_ass_ak_body_mamba.supported = true
+
+			self.parts.wpn_fps_upg_fl_ass_smg_sho_nano.desc_id = "bm_wp_upg_fl_laser"
+			self.parts.wpn_fps_upg_fl_ass_smg_sho_nano.supported = true
+			self.parts.wpn_fps_upg_fl_ass_smg_sho_nano.stats = {
+				value = 4
+			}
+
+			self.parts.wpn_fps_ass_contraband_body_mpx_sound_dummy.supported = true
+			self.parts.wpn_fps_ass_contraband_body_mpx_sound_dummy.no_cull = true
+			self.parts.wpn_fps_ass_ak_sound_mamba.supported = true
+			self.parts.wpn_fps_ass_ak_sound_mamba.no_cull = true
+			self.parts.wpn_fps_lmg_hcar_sound_ww2.supported = true
+			self.parts.wpn_fps_lmg_hcar_sound_ww2.no_cull = true
+			self.parts.wpn_fps_ass_contraband_body_sayhello_sound_dummy.supported = true
+			self.parts.wpn_fps_ass_contraband_body_sayhello_sound_dummy.no_cull = true
+
 		end
 
 	--Striker mods--

@@ -25651,10 +25651,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							adds = {},
 							override = {}
 						}
-					elseif self.parts[used_part_id].type == "grip" then
-						self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
-							unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_g_dust"
-						}
 					end
 				end
 			end
@@ -25819,10 +25815,122 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 			self.parts.wpn_fps_pis_packrat_body_sport_x.override.wpn_fps_pis_packrat_m_standard = nil
 
-			--self.parts.wpn_fps_pis_g17_body_sport.supported = true
-			--self.parts.wpn_fps_pis_g17_body_sport_x.supported = true
-			--self.parts.wpn_fps_ass_amcar_body_mark.supported = true
-			--self.parts.wpn_fps_ass_tecci_body_infinity.supported = true
+			self.parts.wpn_fps_pis_g17_body_sport.supported = true
+			self.parts.wpn_fps_pis_g17_body_sport.stats = { value = 0 }
+			self.parts.wpn_fps_pis_g17_body_sport.custom_stats = nil
+			self.parts.wpn_fps_pis_g17_body_sport.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_pis_g17.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_g17_body_sport.override[used_part_id] then
+					if self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_g17_body_sport.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_b_sport",
+							override = {}
+						}
+					end
+				end
+			end
+			self.parts.wpn_fps_pis_g17_body_sport_x.supported = true
+			self.parts.wpn_fps_pis_g17_body_sport_x.stats = { value = 0 }
+			self.parts.wpn_fps_pis_g17_body_sport_x.custom_stats = nil
+			self.parts.wpn_fps_pis_g17_body_sport_x.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_pis_x_g17.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_g17_body_sport_x.override[used_part_id] then
+					if self.parts[used_part_id].type == "slide" then
+						self.parts.wpn_fps_pis_g17_body_sport_x.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_b_sport",
+							override = {}
+						}
+					end
+				end
+			end
+
+			self.parts.wpn_fps_ass_amcar_body_mark.supported = true
+			self.parts.wpn_fps_ass_amcar_body_mark.stats = { value = 0 }
+			self.parts.wpn_fps_ass_amcar_body_mark.custom_stats = nil
+			self.parts.wpn_fps_ass_amcar_body_mark.forbids = nil
+			for k, used_part_id in ipairs(self.wpn_fps_ass_amcar.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_ass_amcar_body_mark.override[used_part_id] then
+					if self.parts[used_part_id].type == "barrel" then
+						self.parts.wpn_fps_ass_amcar_body_mark.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_medium",
+							forbids = {},
+							adds = {},
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_amcar_body_mark.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_amcar_pts/wpn_fps_ass_amcar_fg_mark",
+							forbids = {},
+							adds = {},
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "upper_reciever" then
+						self.parts.wpn_fps_ass_amcar_body_mark.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_dust"
+						}
+					elseif self.parts[used_part_id].type == "lower_reciever" then
+						self.parts.wpn_fps_ass_amcar_body_mark.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_ass_amcar_pts/wpn_fps_ass_amcar_lower_mark"
+						}
+					end
+				end
+			end
+
+			self.parts.wpn_fps_ass_tecci_body_infinity.supported = true
+			self.parts.wpn_fps_ass_tecci_body_infinity.stats = { value = 0 }
+			self.parts.wpn_fps_ass_tecci_body_infinity.custom_stats = nil
+			self.parts.wpn_fps_ass_tecci_body_infinity.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_tecci.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] then
+					if self.parts[used_part_id].type == "barrel" then
+						self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short",
+							forbids = {},
+							adds = {},
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_fg_amcar",
+							forbids = {},
+							adds = {},
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "vertical_grip" then
+						self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] = {
+							forbids = {},
+							adds = {},
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "upper_reciever" then
+						self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_body_upperreciever",
+							adds = {}
+						}
+					elseif self.parts[used_part_id].type == "lower_reciever" then
+						self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_reciever",
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "stock" then
+						self.parts.wpn_fps_ass_tecci_body_infinity.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_smg_olympic_pts/wpn_fps_smg_olympic_s_short",
+							override = {}
+						}
+					elseif self.parts[used_part_id].type == "sight" then
+						if not table.contains(self.wpn_fps_ass_tecci.default_blueprint, used_part_id) then
+							table.insert(self.parts.wpn_fps_ass_tecci_body_infinity.forbids, used_part_id )
+						end
+					elseif self.parts[used_part_id].type == "magazine" then
+						if not table.contains(self.wpn_fps_ass_tecci.default_blueprint, used_part_id) then
+							table.insert(self.parts.wpn_fps_ass_tecci_body_infinity.forbids, used_part_id )
+						end
+					end
+				end
+			end
+			self.parts.wpn_fps_ass_tecci_body_infinity.override.wpn_fps_upg_m4_s_adapter = {
+				unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+			}
 
 			--self.parts.wpn_fps_ass_scar_body_light.supported = true
 			--self.parts.wpn_fps_ass_contraband_body_mpx.supported = true
@@ -30219,14 +30327,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = 1,
 			concealment = -1
 		}
-		self.parts.wpn_fps_upg_m4_s_hera.supported = true
-		self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
-		self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
-		for i, part_id in pairs(self.parts.wpn_fps_upg_m4_s_hera.forbids) do
-			if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "stock" then
-				self.parts.wpn_fps_upg_m4_s_hera.forbids[i] = "dummy"
-			end
-		end	
+		self.parts.wpn_fps_upg_m4_s_hera.pcs = nil --problem solved
 		
 		--St. Victor
 		self.parts.wpn_fps_upg_m4_victor_lower.supported = true

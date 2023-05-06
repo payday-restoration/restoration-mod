@@ -1624,7 +1624,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--FAL
 		["bm_fal_sc_desc"] = "자유 진영의 오른팔. 단단한 갑옷을 입은 비겁한 놈들을 제압 할 때 당신이 의지할 수 있는 소총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",
 		--SCAR
-		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",		
+		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",
+		["bm_scarl_sc_desc"] = "미래형 보병 소총... 아니면 아닐지도요. 민간 시장에서는 인기가 있었지만 군사는 또 다른 5.56 소총이 거의 필요하지 않았습니다.",		
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
 		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입힙니다.##",
@@ -1635,7 +1636,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입하고## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--VMP
 		["bm_m203_vmp_sc_desc_pc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
-		["bm_m203_vmp_sc_desc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",		
+		["bm_m203_vmp_sc_desc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_mesa_vmp_sc_desc_pc"] = "훔친 옴니아 배송물에서 나온 흥미로운 제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_mesa_vmp_sc_desc"] = "훔친 옴니아 배송물에서 나온 흥미로운 제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
 		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}#완전 통합## 소음기가 장착되었고 #{skill_color}#방탄복을 관통해 피해의 50%를 입힙니다.##",
@@ -3216,14 +3220,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			-- Trinity
 				-- Supplementary Lesson Department
 				["bm_w_l85a2"] = "마이 네세시티",
-				[	"bm_l85a2_sc_desc"] = "\"#{risk}#페로로님은 어디에?##\"\n\n#{risk}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
-				["bm_w_m4"] = "Et Omnia Vanitas",
-				[	"bm_m4_sc_desc"] = "#{item_stage_2}#\"Vanitas Vanitatum et omnia Vanitas\"##\n\n#{mutators_color}#아즈사##가 아끼는 돌격소총,\n이름에는 #{item_stage_2}#'헛되고 헛되도다 모든 것이 헛되도다'##라고 새겨져 있다.",
+					["bm_l85a2_sc_desc"] = "\"#{risk}#페로로님은 어디에?##\"\n\n#{risk}#히후미##가 항상 갖고 다니는 라이플.\n다른 마음에 드는 굿즈와 마찬가지로 그녀가 외출할 때의 필수품이라는 듯 하다.",	
+					["bm_w_m4"] = "Et Omnia Vanitas",
+					["bm_m4_sc_desc"] = "#{item_stage_2}#\"Vanitas Vanitatum et omnia Vanitas\"##\n\n#{mutators_color}#아즈사##가 아끼는 돌격소총,\n이름에는 #{item_stage_2}#'헛되고 헛되도다 모든 것이 헛되도다'##라고 새겨져 있다.",
 				-- After-School Sweets Club
 				["bm_w_scar"] = "스위트 드라이버",
 					["bm_scar_sc_desc"] = "\"이거라도 받아라!\"\n\n#{skill_color}#요시미##의 전용 라이플.\n키보토스의 스위츠 쟁탈전에서 이기기 위해서는 우선 전투력이 필요하다.",
 				["bm_w_mp5"] = "상큼 민트초코",
-				[	"bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
+					["bm_mp5_sc_desc"] = "\"민트초코 드실래요?\"\n\n#{skill_color}#아이리##의 기관단총.\n그 이름은 단골 가게의 좋아하는 디저트 이름에서 따왔다고 한다.",
 				["bm_w_baka"] = "비욘드 더 루미네이션",
 					--["bm_w_baka_desc"] = "\"감사!\"\n\n#{skill_color}#나츠##의 기관단총.\n사색하는 것을 즐기는 나츠가 마지막 수단으로 꺼내드는 도구이다.",			
 				-- Justice Realization Committee

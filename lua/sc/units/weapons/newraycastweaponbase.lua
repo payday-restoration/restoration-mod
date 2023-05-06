@@ -790,9 +790,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.damage_min_mult then
 				self._damage_min_mult = self._damage_min_mult * stats.damage_min_mult
 			end
-			if stats.armor_piercing_override then
-				self:weapon_tweak_data().armor_piercing_chance = stats.armor_piercing_override
-			end
 			if stats.rof_mult then
 				self._rof_mult = self._rof_mult * stats.rof_mult
 			end
@@ -917,6 +914,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end
 		if stats.can_shoot_through_titan_shield ~= nil then
 			self._can_shoot_through_titan_shield = stats.can_shoot_through_titan_shield
+		end
+		if stats.armor_piercing_override then
+			self._armor_piercing_chance = stats.armor_piercing_override
 		end
 		if tweak_data.weapon.factory.parts[part_id].type ~= "ammo" then
 			if stats.ammo_pickup_min_mul then

@@ -1121,7 +1121,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				}
 				--Ace
-				self.values.player.run_dodge_chance = {0.12}
+				self.values.player.run_dodge_chance = {0.15}
 				self.values.player.zipline_dodge_chance = {0.3}				
 
 			--Shockproof
@@ -1130,10 +1130,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							interval = 1,
 							chance_to_trigger = 0.15
 					}}
-					self.values.player.slowing_bullet_resistance = {{
-							duration = 0.5,
-							power = 0.5
-					}}
+					self.values.player.knockback_resistance = {0.7}
 				--Ace
 					self.values.player.taser_self_shock = {
 						true
@@ -1142,6 +1139,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.escape_taser = {
 						2
 					}
+					self.values.player.slowing_bullet_resistance = {{
+							duration = 0.5,
+							power = 0.5
+					}}
 
 			--Sneaky Bastard
 				--Concealment stuff same as vanilla.
@@ -3521,6 +3522,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "slowing_bullet_resistance",
+			category = "player"
+		}
+	}
+	self.definitions.player_knockback_resistance = {
+		name_id = "menu_player_knockback_resistance",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "knockback_resistance",
 			category = "player"
 		}
 	}

@@ -1448,6 +1448,7 @@ function SkillTreeTweakData:init(tweak_data)
 					upgrades = {
 						"player_taser_malfunction",
 						"player_resist_firing_tased",
+						"player_knockback_resistance"
 					},
 					cost = self.costs.hightier
 				},

@@ -1729,6 +1729,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--VMP
 			["bm_m203_vmp_sc_desc_pc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
 			["bm_m203_vmp_sc_desc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+			["bm_mesa_vmp_sc_desc_pc"] = "Interesting product from a stolen OMNIA shipment.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+			["bm_mesa_vmp_sc_desc"] = "Interesting product from a stolen OMNIA shipment.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
 		--FAL
 		["bm_w_fal"] = "Falcon 58",	
 		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
@@ -1740,7 +1742,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 		--SCAR
 		["bm_w_scar"] = "Eagle Heavy",			
-		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",		
+		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+		["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",		
 		--Galant--
 		["bm_w_ching"] = "M1 Galant",
 		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce enemies and thin walls.##",

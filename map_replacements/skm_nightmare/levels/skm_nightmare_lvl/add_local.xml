@@ -6,10 +6,10 @@
 	<world_sounds path="world_sounds" script_data_type="binary"/>
 	<world_cameras path="world_cameras" script_data_type="binary"/>
 	<massunit path="massunit" reload="true"/>
-	<continent path="safehouse_worldmesh/safehouse_worldmesh" script_data_type="binary"/>
-	<mission path="safehouse_worldmesh/safehouse_worldmesh" script_data_type="binary"/>
 	<continent path="pc_only/pc_only" script_data_type="binary"/>
 	<mission path="pc_only/pc_only" script_data_type="binary"/>
+	<continent path="safehouse_worldmesh/safehouse_worldmesh" script_data_type="binary"/>
+	<mission path="safehouse_worldmesh/safehouse_worldmesh" script_data_type="binary"/>
 	<continent path="shadow_casters/shadow_casters" script_data_type="binary"/>
 	<mission path="shadow_casters/shadow_casters" script_data_type="binary"/>
 	<continent path="prop/prop" script_data_type="binary"/>

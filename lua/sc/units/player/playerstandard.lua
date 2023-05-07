@@ -1998,6 +1998,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_shooting_move_speed_timer(t, dt)
 	self:_last_shot_t(t, dt)
 	self:_update_d_scope_t(t, dt)
+	self:_update_spread_stun_t(t, dt)
 
 	if self._hit_in_air and not self._state_data.in_air then
 		self._hit_in_air = nil
@@ -2030,6 +2031,16 @@ function PlayerStandard:_update_d_scope_t(t, dt, input)
 		self._d_scope_t = self._d_scope_t - dt
 		if self._d_scope_t < 0 then
 			self._d_scope_t = nil
+		end
+	end
+end
+
+
+function PlayerStandard:_update_spread_stun_t(t, dt, input)
+	if self._spread_stun_t then
+		self._spread_stun_t = self._spread_stun_t - dt
+		if self._spread_stun_t < 0 then
+			self._spread_stun_t = nil
 		end
 	end
 end
@@ -2910,7 +2921,7 @@ end
 
 --Now also returns steelsight information. Used for referencing spread values to give steelsight bonuses.
 function PlayerStandard:get_movement_state()
-	if self._state_data.in_steelsight and self._state_data.in_full_steelsight then
+	if not self._spread_stun_t and self._state_data.in_steelsight and self._state_data.in_full_steelsight then
 		return self._moving and "moving_steelsight" or "steelsight"
 	end
 

@@ -581,22 +581,23 @@ function PlayerDamage:damage_bullet(attack_data)
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
 		--Pain and suffering
 		if distance then
+			--Scab Gunner
 			if tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not driving then
 				range = tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress.range
 				if distance < range and not on_ladder and not hit_in_air then
 					local attack_vec = attack_dir:with_z(0.1):normalized() * 600
-					mvector3.multiply(attack_vec, 0.5 * knockback_resistance)
+					mvector3.multiply(attack_vec, 0.6 * knockback_resistance)
 					self._unit:movement():current_state():push(attack_vec, true, 0.2, true)
 					if in_air then
 						self._unit:movement():current_state()._hit_in_air = true
 					end
 				end
-	
 				local vars = {
 					"melee_hit",
 					"melee_hit_var2"
 				}
-				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.025)
+				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
+				self._unit:movement():current_state()._spread_stun_t = 0.5
 				--[[
 				local hor_var = {
 					1,
@@ -607,6 +608,7 @@ function PlayerDamage:damage_bullet(attack_data)
 				--]]
 			end
 
+			--Shotgunner
 			if tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not driving then
 				range = tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner.range
 				if distance < range then
@@ -614,7 +616,8 @@ function PlayerDamage:damage_bullet(attack_data)
 						"melee_hit",
 						"melee_hit_var2"
 					}
-					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.1, 0.5)
+					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
+					self._unit:movement():current_state()._d_scope_t = 0.5
 					--[[
 					local hor_var = {
 						1,
@@ -623,9 +626,9 @@ function PlayerDamage:damage_bullet(attack_data)
 					local hor_var_lr = hor_var[math.random(#hor_var)] 
 					self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var_lr * 0.5 , hor_var_lr * 0.75, true )
 					--]]
+					--[[
 					range = tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner.range_close or 0
 					if distance < range then
-						self._unit:movement():current_state()._d_scope_t = 0.5
 						if not on_ladder and not hit_in_air then
 							local attack_vec = attack_dir:with_z(0.1):normalized() * 600
 							mvector3.multiply(attack_vec, 1 * knockback_resistance)
@@ -635,6 +638,7 @@ function PlayerDamage:damage_bullet(attack_data)
 							end
 						end
 					end
+					--]]
 
 				end
 			end
@@ -833,12 +837,13 @@ function PlayerDamage:damage_melee(attack_data)
 		"melee_hit",
 		"melee_hit_var2"
 	}
-	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * self._melee_push_multiplier, 0.2))
+	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * self._melee_push_multiplier, 0.25))
+	self._unit:movement():current_state()._d_scope_t = 0.6
 	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
 	if not self._bleed_out then
 		mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)
-		self._unit:movement():push(attack_data.push_vel)
+		self._unit:movement():push(attack_data.push_vel * 1.25, true, 0.2, true)
 	end
 	
 	return

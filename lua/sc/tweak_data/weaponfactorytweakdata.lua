@@ -25285,6 +25285,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 			--HK M16
 			self.parts.wpn_fps_ass_contraband_body_sayhello.supported = true
+			self.parts.wpn_fps_ass_contraband_body_sayhello.keep_damage = true
 			self.parts.wpn_fps_ass_contraband_body_sayhello.stats = {
 				value = 10,
 				extra_ammo = 10,
@@ -25308,7 +25309,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				armor_piercing_override = 0,
 				ads_speed_mult = 0.9523809
 			}
-			self.parts.wpn_fps_ass_contraband_body_sayhello.keep_damage = true
 			self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
 				wpn_fps_ass_contraband = {
 					translation = Vector3(0, -9.5, -0.905)
@@ -26018,6 +26018,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 			self.parts.wpn_fps_ass_scar_body_light.supported = true
+			self.parts.wpn_fps_ass_scar_body_light.keep_damage = true
 			self.parts.wpn_fps_ass_scar_body_light.stats = {
 				value = 10,
 				extra_ammo = 10,
@@ -26056,6 +26057,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 			self.parts.wpn_fps_ass_ak_body_mamba.supported = true
+			self.parts.wpn_fps_ass_ak_body_mamba.keep_damage = true
 			self.parts.wpn_fps_ass_ak_body_mamba.stats = {
 				value = 10,
 				damage = -6,

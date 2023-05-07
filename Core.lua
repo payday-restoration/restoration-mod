@@ -303,6 +303,7 @@ function restoration:Init()
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
+		"des",	--Henry's Rock	
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"fex", --Buluc's Mansion
@@ -326,8 +327,7 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
-		"mia_2", --Hotline Miami 2
-		"des",	--Henry's Rock		
+		"mia_2", --Hotline Miami 2	
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	

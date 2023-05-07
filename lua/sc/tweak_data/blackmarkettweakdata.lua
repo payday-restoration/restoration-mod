@@ -1822,6 +1822,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.dada_com.no_cheat_count = true
 	self.projectiles.wpn_gre_electric.no_cheat_count = true
 	self.projectiles.poison_gas_grenade.no_cheat_count = true
+	self.projectiles.sticky_grenade.no_cheat_count = true
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE

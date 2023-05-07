@@ -1718,6 +1718,12 @@
 	<texture			path="guis/textures/pd2/blackmarket/icons/deployables/outline/armor_kit" force="true"/>	
 	<unit				path="units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate_dummy_unit" load="true" />	
 	<texture			path="units/payday2/characters/shared_textures/equipment_armor_bag_df" force="true"/>
+	<!--ordnance_bag icon; new hud icons for toxic, electric and semtex grenade-->
+	<texture			path="guis/dlcs/mxm/textures/pd2/ordnance_bag" />
+	<texture			path="guis/dlcs/mxm/textures/pd2/sticky_grenade" />
+	<texture			path="guis/dlcs/pxp1/textures/pd2/hud_poison_gas_grenade" />
+	<texture			path="guis/dlcs/sawp/textures/pd2/equipment_sawp" />
+	
 	
 	<!--suit inventory icons-->
 	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit"/>

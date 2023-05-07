@@ -450,7 +450,7 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 		beep_fade_speed = 3.5,
 		specular_mul = 0.05,
 		link_to_unit = true,
-		color = Vector3(255, 0, 0)
+		color = Vector3(255, 255, 0)
 	}
 }
 

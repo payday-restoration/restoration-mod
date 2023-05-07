@@ -2480,7 +2480,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_electric_desc"] = "Damage: #{skill_color}#400## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s## \n- #{skill_color}#Electrocutes most enemies## \n\nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "Semtex Grenade",
-		["bm_grenade_sticky_grenade_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#3s## \n- #{risk}#Fuse resets upon sticking## \n\nThrowable explosive compound that will stick to most surfaces, including people!",
+		["bm_grenade_sticky_grenade_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#2.5s## \n\nThrowable explosive compound that will stick to most surfaces, including people!",
 		--Molotov
 		["bm_grenade_molotov_desc"] = "Damage (Fire Pool): #{heat_warm_color}#1200 over 10s##\nDamage (Burn): #{heat_warm_color}#60 over 3 seconds## \nRadius: #{skill_color}#3.75m## \nDuration (Fire Pool): #{skill_color}#10s## \nFuse: #{skill_color}#Impact detonation## \n- Has a #{skill_color}#50%## chance to #{heat_warm_color}#ignite## enemies, causing most to panic. \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
 		--Incendiary

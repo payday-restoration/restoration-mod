@@ -124,6 +124,7 @@
 		<hook file="sc/units/weapons/weaponlaser.lua" source_file="lib/units/weapons/weaponlaser"/>
 		<hook file="sc/tweak_data/groupaitweakdata.lua" source_file="lib/tweak_data/groupaitweakdata"/>
 		<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
+		<hook file="sc/units/weapons/stickygrenade.lua" source_file="lib/units/weapons/grenades/stickygrenade"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 		<hook file="sc/units/weapons/quicksmokegrenade.lua" source_file="lib/units/weapons/grenades/quicksmokegrenade"/>

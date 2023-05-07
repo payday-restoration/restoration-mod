@@ -422,6 +422,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		--custom heists
 		["restoration_level_data_flatline_lvl"] = "오후 10:26 Больница им. Н.И. Пирогова",
+		["restoration_level_data_ahopl"] = "오후 9:06, 유리의 개인 클럽", --A House of Pleasure
+		["restoration_level_data_atocl"] = "오후 7:03, 펜트하우스 파티", --A Touch of Class
+		["restoration_level_data_rusdl"] = "전 10:23, 가넷 그룹 주얼리 스토어", --Cold Stones
+		["restoration_level_data_crimepunishlvl"] = "오후 1:19, 러시아 어딘가의 교정 시설", --Crime and Punishment
+		["restoration_level_data_deadcargol"] = "오후 8:36, 보급 창고 아래 하수도", --Deadly Cargo
+		["restoration_level_data_hunter_party"] = "오후 3:56, 니콜라이의 펜트하우스", --Hunter and Hunted d1
+		["restoration_level_data_hunter_departure"] = "오후 10:13, 알렉산드르의 전용 공항", --Hunger and Hunted d2
+		["restoration_level_data_hunter_fall"] = "오전 1:36, 국제 해역 어딘가", --Hunter and Hunted d3
+		["restoration_level_data_ruswl"] = "오전 11:50, 러시아 어딘가", --Scorched Earth	
 		
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
@@ -4049,11 +4058,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
-			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#12%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
+			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",
-			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n감전과 테이저의 전기 공격을 받아도 더 이상 총을 강제로 쏘지 않으며 #{skill_color}#15%## 확률로 테이저를 넉백시킵니다.\n\n#{risk}#참고: 감전당하고 있을 때의 명중률 및 반동 페널티는 여전히 적용됩니다.##\n\n에이스: #{owned}#$pro##\n테이저의 전기 공격에 당한 직후 #{skill_color}#2##초 안에 상호작용 키를 누르면 반격을 하여 테이저를 역 감전시키고 테이저의 최대 체력의 #{skill_color}#50##만큼 대미지를 줍니다.\n\n타이탄 테이저, 캡틴 원터스 및 엔지니어 일렉트라 총알 공격의 둔화 효과 및 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
+			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n감전과 테이저의 전기 공격을 받아도 더 이상 총을 강제로 쏘지 않으며 #{skill_color}#15%## 확률로 테이저를 넉백시킵니다.\n\n#{risk}#참고: 감전당하고 있을 때의 명중률 및 반동 페널티는 여전히 적용됩니다.##\n\n적의 총격으로 인한 넉백이 #{skill_color}#30%## 감소합니다.\n\n에이스: #{owned}#$pro##\n테이저의 전기 공격에 당한 직후 #{skill_color}#2##초 안에 상호작용 키를 누르면 반격을 하여 테이저를 역 감전시키고 테이저의 최대 체력의 #{skill_color}#50##만큼 대미지를 줍니다.\n\n타이탄 테이저, 캡틴 원터스 및 엔지니어 일렉트라 총알 공격의 둔화 효과 및 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
 			
 			--Sneaky Bastard--
 			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 부서질 때마다 한 번만 발생합니다.",			

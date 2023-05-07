@@ -3122,6 +3122,14 @@ function PlayerStandard:_start_action_reload(t)
 			self._ext_network:send("reload_weapon", empty_reload, speed_multiplier)
 		end
 	end
+
+	--Drop My Mag compatibilty
+	--I might take the time to better integrate this into the reload timers so you're not instantly dropping a mag right when you reload
+	for _, weapon_base in ipairs({ weapon, weapon._second_gun and weapon._second_gun:base() }) do
+		if weapon_base and weapon_base.DMM_can_drop_magazine and weapon_base:DMM_can_drop_magazine() then
+			weapon_base:drop_magazine_object()
+		end
+ 	end
 end
 
 function PlayerStandard:_get_swap_speed_multiplier()

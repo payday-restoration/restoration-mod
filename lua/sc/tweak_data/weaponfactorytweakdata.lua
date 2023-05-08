@@ -20506,6 +20506,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hcar", "resmod_hcar", function(sel
 			end
 		end
 	end	
+	
+	self.parts.wpn_fps_lmg_hcar_ck_switch.supported = true
+	self.parts.wpn_fps_lmg_hcar_ck_switch.no_cull = true
 
 	self.wpn_fps_lmg_hcar.stock_adapter = "wpn_fps_snp_victor_s_adapter"
 	self.wpn_fps_lmg_hcar_npc.stock_adapter = "wpn_fps_snp_victor_s_adapter"

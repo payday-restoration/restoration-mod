@@ -18,6 +18,7 @@ StatisticsManager.special_unit_ids = {
 	"phalanx_vip",
 	"heavy_swat_sniper",
 	"weekend_dmr",
+	"weekend_lmg",
 	"tank_titan",
 	"tank_titan_assault",
 	"spring",

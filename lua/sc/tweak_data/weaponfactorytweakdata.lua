@@ -25101,7 +25101,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				--Modern Foregrip
 				self.parts.wpn_fps_uupg_m4_fg_victorcar.supported = true
 				self.parts.wpn_fps_uupg_m4_fg_victorcar.adds = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }
-				self.parts.wpn_fps_uupg_m4_fg_victorcar.supported = true
+				self.parts.wpn_fps_uupg_m4_fg_victorcar.forbids = {}
 				self.parts.wpn_fps_uupg_m4_fg_victorcar.stats = {
 					value = 5,
 					spread = 1,
@@ -32133,8 +32133,6 @@ if self.wpn_fps_smg_ak5s then
 	self.parts.wpn_fps_smg_thompson_barrel_short.override.wpn_fps_smg_thompson_fg_custom = {unit="units/mods/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fg_custom_short"}
 	
 	table.insert(self.parts.wpn_fps_ass_g36_s_sl8.forbids, "wpn_fps_ass_g36_g_sniper")
-
-	table.insert(self.parts.wpn_fps_m4_upg_fg_mk12.forbids, "wpn_fps_uupg_m4_fg_victorcar")
 
 	table.insert(self.parts.wpn_fps_m4_uupg_b_sd.forbids, "wpn_fps_upg_ns_pis_putnik")
 

@@ -79,57 +79,42 @@ elseif ai_type == r then
 		["units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_reapers/characters/ene_akan_veteran_1/ene_akan_veteran_1",
 		["units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3",
-		
-		["units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"] = "units/pd2_mod_reapers/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2"] = "units/pd2_mod_reapers/characters/ene_akan_veteran_1/ene_akan_veteran_1",
-		["units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2",
-		["units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_3/ene_fbi_3",
-		["units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_2/ene_fbi_2",
 	
 		--Reaper FBI Rifle
 		["units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		
 		--Reaper FBI Shotgun
 		["units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
 		--Reaper FBI UMP
 		["units/pd2_mod_reapers/characters/ene_swat_3/ene_swat_3"] = "units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
 		--Reaper FBI Heavy Rifle
 		["units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		
 		--Reaper FBI Heavy Shotgun
 		["units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
 		--Reaper FBI Shield
 		["units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
-		["units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"] = "units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 		
 		--Reaper Bravo Rifle
 		["units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		
 		["units/pd2_mod_reapers/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
-		["units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",		
+		["units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",	
 		
 		["units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		["units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru",
 		
 		--Reaper Bravo Shotgun
 		["units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		["units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		["units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
-		["units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		
 		["units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",
 		["units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru",

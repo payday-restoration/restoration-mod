@@ -32,10 +32,6 @@
 			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
 				<file :name="civ_male_locke_escort_contour.material_config"/>
 			</group>
-			<group :name="pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/">
-				<file :name="ene_male_marshal_marksman_2.material_config"/>
-				<file :name="ene_male_marshal_marksman_2_contour.material_config"/>
-			</group>
 			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
 				<file :name="ene_sniper_3.unit"/>
 				<file :name="ene_sniper_3_husk.unit"/>
@@ -57,6 +53,15 @@
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
+			</group>
+			<group :name="payday2/weapons/wpn_npc_beretta92/">
+				<file :name="wpn_npc_beretta92.object"/>
+			</group>
+			<!-- Improve navigation data -->
+			<group name="levels/narratives/">
+				<file :name="dentist/hox/stage_2/nav_manager_data.nav_data"/>
+				<file :name="e_framing_frame/stage_1/nav_manager_data.nav_data"/>
+				<file :name="e_framing_frame/stage_3/nav_manager_data.nav_data"/>
 			</group>
 		<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">

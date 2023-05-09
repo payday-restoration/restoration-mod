@@ -21,7 +21,6 @@ function ModifierDozerMinigun:init(data)
 		table.insert(unit_types.nypd, classic_mini_unit_name)
 		table.insert(unit_types.lapd, classic_mini_unit_name)	
 		table.insert(unit_types.fbi, classic_mini_unit_name)
-		table.insert(unit_types.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
 	
 		table.insert(unit_types_black.america, classic_mini_unit_name)
 		table.insert(unit_types_black.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini"))
@@ -31,7 +30,6 @@ function ModifierDozerMinigun:init(data)
 		table.insert(unit_types_black.nypd, classic_mini_unit_name)
 		table.insert(unit_types_black.lapd, classic_mini_unit_name)
 		table.insert(unit_types_black.fbi, classic_mini_unit_name)
-		table.insert(unit_types_black.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
 	else	
 		table.insert(unit_types.america, mini_unit_name)
 		table.insert(unit_types.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini"))
@@ -41,7 +39,6 @@ function ModifierDozerMinigun:init(data)
 		table.insert(unit_types.nypd, mini_unit_name)
 		table.insert(unit_types.lapd, mini_unit_name)
 		table.insert(unit_types.fbi, mini_unit_name)
-		table.insert(unit_types.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
 	
 		table.insert(unit_types_black.america, mini_unit_name)
 		table.insert(unit_types_black.russia, Idstring("units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini"))
@@ -51,7 +48,6 @@ function ModifierDozerMinigun:init(data)
 		table.insert(unit_types_black.nypd, mini_unit_name)
 		table.insert(unit_types_black.lapd, mini_unit_name)		
 		table.insert(unit_types_black.fbi, mini_unit_name)
-		table.insert(unit_types_black.omnia, Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
 	end
 end
 

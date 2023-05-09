@@ -73,6 +73,8 @@
 	<texture			path="guis/textures/pd2/skilltree/info_desperado" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_infiltrator" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_sociopath" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_body_expertise" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_long_dis_revive" force="false" load="false"/> <!-- inspire -->
 	<texture			path="guis/textures/pd2/skilltree/info_messiah" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_overkill_damage_multiplier" force="false" load="false"/>
@@ -132,15 +134,18 @@
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
 
 	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
-	
-	<mission			path="levels/narratives/classics/glace/world/world" force="true" unload="true"/> <!--restores the unused dozer rappel man that is supposed to spawn during the scaffolding defend section on mayhem and above-->
-																										 <!--actually that was cloaker but I replaced him with dozer as a PDTH's OVK 145+ throwback-->
-	
-	<mission			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--disables the police sirens-->	
+
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
-	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> <!--delayed and balanced the spawns so they won't appear out of nowhere-->
+	<!--Henry's Cock edit - a bit more cover, some spawn tweaks, altered turret objective, pro job slightly more evil-->
+	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> 
 	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/des/art/art" force="true" unload="true"/> 
+	<continent			path="levels/narratives/locke/des/art/art" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/des/props/props" force="true" unload="true"/> 
+	<continent			path="levels/narratives/locke/des/props/props" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/locke/des/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/locke/des/nav_manager_data" force="true" unload="true"/>
 	
 	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
 	
@@ -200,10 +205,6 @@
 
 	<!--ffs ovk, dont load the entire map if you force the players in one area-->
 	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
-
-	<!--5 minute edit-->
-	<mission			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--Changed up the murkies and added some stuff-->
-	<continent			path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/> <!--lookout choppas-->
 	
 	<mission			path="levels/instances/unique/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
 	
@@ -736,18 +737,7 @@
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" load="false"/>
-	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>	
-	
-	<!--Biker Guard-->
-	<unit				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" load="true"/>
-	<unit 				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_husk" load="true"/>
-	<cooked_physics 	path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
-	<model 				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" />
-	<object				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
-	<material_config 	path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
-	<material_config 	path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_contour"/>
-	<texture 			path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_body_df"/>
-	<texture			path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_head_df"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
 
 	<!--Headless Dozer-->
 	<object				path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
@@ -901,6 +891,8 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_df" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_head_nm" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/cloaker_body_df" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/spook_il" />
+	<effect				path="units/pd2_mod_reapers/effects/particles/character/cloaker_goggle" load="true"/>
 	
 
 	<cooked_physics		path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
@@ -1396,6 +1388,15 @@
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_conversion" load="false"/>
+
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_b_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_short" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_long" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle_short" load="false"/>
+	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle_long" load="false"/>
 	
 	<!--PEW PEW PEW-->
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>
@@ -1483,6 +1484,10 @@
 	
 	<!--NPC aa12-->
 	<unit_obj			path="units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12" force="true"/>
+	
+	<!--NPC Less Lethal Shotguns-->
+	<unit				path="units/payday2/weapons/wpn_npc_aa12_conc/wpn_npc_aa12_conc" load="true"/>
+	<unit				path="units/payday2/weapons/wpn_npc_saiga_conc/wpn_npc_saiga_conc" load="true"/>
 	
 	<!--Dozer NPC AA12-->
 	<unit_obj			path="units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer" load="false"/>		
@@ -1664,7 +1669,6 @@
 	<model				path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
 	<material_config	path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
-	
 
 	<!-- Bravo Grenades -->
 	<unit				path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
@@ -1721,6 +1725,12 @@
 	<texture			path="guis/textures/pd2/blackmarket/icons/deployables/outline/armor_kit" force="true"/>	
 	<unit				path="units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate_dummy_unit" load="true" />	
 	<texture			path="units/payday2/characters/shared_textures/equipment_armor_bag_df" force="true"/>
+	<!--ordnance_bag icon; new hud icons for toxic, electric and semtex grenade-->
+	<texture			path="guis/dlcs/mxm/textures/pd2/ordnance_bag" />
+	<texture			path="guis/dlcs/mxm/textures/pd2/sticky_grenade" />
+	<texture			path="guis/dlcs/pxp1/textures/pd2/hud_poison_gas_grenade" />
+	<texture			path="guis/dlcs/sawp/textures/pd2/equipment_sawp" />
+	
 	
 	<!--suit inventory icons-->
 	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit"/>

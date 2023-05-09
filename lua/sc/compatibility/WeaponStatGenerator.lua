@@ -39,7 +39,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		--Akimbo weapons get shittier handling.
 		if apply_akimbo_penalties then
 			stats.recoil = stats.recoil - 10
-			stats.spread = stats.spread - 2
+			stats.spread = stats.spread - 10
 		end
 
 		--Adjust ammo on secondaries.
@@ -61,7 +61,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		weap.stats.alert_size = 2
 		weap.stats.suppression = stats.suppression
 		weap.stats.extra_ammo = 101
-		weap.stats.total_ammo_mod = 100
+		weap.stats.total_ammo_mod = 200
 		weap.stats.zoom = weap.stats.zoom or 1
 		weap.stats.value = weap.stats.value or 7
 		weap.swap_speed_multiplier = stats.swap_speed_multiplier

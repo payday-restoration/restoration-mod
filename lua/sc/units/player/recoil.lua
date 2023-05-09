@@ -246,12 +246,12 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
-	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 90, 0)
+	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 80, 0)
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
 	if enable_recoil_recover == 1 and self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
-		local degrees_to_move = 90 * dt --Move camera 90 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
+		local degrees_to_move = 80 * dt --Move camera 80 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
 		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
 		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value
 	elseif enable_recoil_recover ~= 1 and self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then
@@ -425,6 +425,8 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 		local player_state = managers.player:current_state()
 		local equipped_weapon = self._parent_unit:inventory():equipped_unit()
 		local is_akimbo = equipped_weapon and equipped_weapon:base() and equipped_weapon:base().AKIMBO
+		local speen = equipped_weapon and equipped_weapon:base() and equipped_weapon:base():weapon_tweak_data().speen
+		local ignore_transition_styles = equipped_weapon and equipped_weapon:base() and equipped_weapon:base():weapon_tweak_data().ign_ts
 		local in_full_steelsight = self._parent_movement_ext._current_state._state_data.in_full_steelsight
 
 		if trans_data.duration < elapsed_t then
@@ -441,7 +443,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			end
 		else
 			local progress = elapsed_t / trans_data.duration
-			local progress_smooth = math.bezier(bezier_values, progress)
+			local progress_smooth = math.bezier(speen and bezier_values2 or bezier_values, progress)
 			local in_steelsight = self._parent_movement_ext._current_state:in_steelsight()
 			if equipped_weapon and equipped_weapon:base() then
 				local in_second_sight = equipped_weapon:base():is_second_sight_on()
@@ -463,7 +465,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
 
-			if restoration and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") ~= 1 and not is_akimbo then
+			if restoration and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles then
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
 					local prog = (1 - absolute_progress) * (dt * 100)
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then
@@ -473,7 +475,10 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 						trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
 						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
 					elseif in_steelsight and in_full_steelsight ~= true then
-						if restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 2 then
+						if speen then
+							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
+							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 36 * prog)
+						elseif restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 2 then
 							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
 						elseif restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 3 then

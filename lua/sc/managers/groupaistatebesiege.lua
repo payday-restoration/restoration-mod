@@ -1158,10 +1158,10 @@ function GroupAIStateBesiege:_chk_group_use_grenade(assault_area, group, detonat
 
 	local ray_mask = managers.slot:get_mask("world_geometry")
 
-	-- If players camp a specific area for too long, turn a smoke grenade into a teargas grenade instead
+	--Grenadiers use tear gas pre-emptively instead of smoke grenades
 	local use_teargas
-	local can_use_teargas = grenade_user and grenade_user.char_tweak and grenade_user.char_tweak.use_gas and grenade_type == "smoke_grenade" and area and area.criminal_entered_t and table.size(area.neighbours) <= 2
-	if can_use_teargas and math_random() < (self._t - assault_area.criminal_entered_t - 60) / 180 then
+	local can_use_teargas = grenade_user and grenade_user.char_tweak and grenade_user.char_tweak.use_gas and grenade_type == "smoke_grenade"
+	if can_use_teargas then
 		mvec_set(detonate_offset_pos, math.UP)
 		mvec_mul(detonate_offset_pos, 1000)
 		mvec_add(detonate_offset_pos, assault_area.pos)
@@ -1197,8 +1197,6 @@ function GroupAIStateBesiege:_chk_group_use_grenade(assault_area, group, detonat
 
 	local timeout
 	if use_teargas then
-		assault_area.criminal_entered_t = nil
-
 		self:detonate_cs_grenade(detonate_pos, mvec_cpy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)
 
 		timeout = tweak_data.group_ai.cs_grenade_timeout or tweak_data.group_ai.smoke_and_flash_grenade_timeout

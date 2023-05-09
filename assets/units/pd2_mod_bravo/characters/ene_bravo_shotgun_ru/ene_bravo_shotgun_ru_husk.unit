@@ -4,7 +4,7 @@
 	<object file="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
 
 	<dependencies>
-		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" />														
+		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" />														
 		<depends_on unit="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" />			
@@ -14,14 +14,15 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="weekend" />
-			<var name="_default_weapon_id" value="bravo_shotgun" />
+			<var name="_default_weapon_id" value="bravo_argos" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod1" />
+			<var name="_head_gear_object" value="g_helmet_lod" />
+			<var name="_nr_head_gear_objects" value="2" />
 			<var name="_head_gear" value="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

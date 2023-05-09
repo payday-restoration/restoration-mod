@@ -189,9 +189,7 @@
 	
 	<!--city swat 2-->
     <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
-    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>	
-	<unit				path="units/pd2_mod_nypd/characters/ene_city_swat_r870/ene_city_swat_r870" load="true"/>
-    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_r870/ene_city_swat_r870_husk" load="true"/>	
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2" />	
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2" />	
@@ -215,8 +213,6 @@
 	<!--city heavy r870-->
     <unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk" load="true"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_benelli/ene_city_heavy_benelli" load="true"/>
-    <unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_benelli/ene_city_heavy_benelli_husk" load="true"/>
     <object				path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"/>
@@ -337,7 +333,7 @@
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 
-	<!--NYPD Grenadier (Like DC one, but with old crappier gasmask)-->
+	<!-- Grenadier -->
 	<sequence_manager	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
@@ -346,12 +342,6 @@
 	<model				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_grenadier_df" force="false"/>
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/gren_glass_df" force="false"/>
-	
-	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
 	
 	<!-- cloaca -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>
@@ -444,6 +434,8 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
 
 	
@@ -455,6 +447,8 @@
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_red_df" load="true" force="false"/>
 
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
@@ -462,8 +456,10 @@
 	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
 	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_blue_df" load="true" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
 

@@ -8,8 +8,6 @@ ModifierCloakerTearGas.titanhrt = {
 	Idstring("units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"),
 	Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
 	Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
-	Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2"),
-	Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 }

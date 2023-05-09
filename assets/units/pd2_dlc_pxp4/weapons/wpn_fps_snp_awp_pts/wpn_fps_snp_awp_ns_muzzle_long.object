@@ -1,0 +1,7 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_ns_muzzle_long" orientation_object="rp_wpn_fps_snp_awp_ns_muzzle_long" />
+	<graphics>
+		<object name="g_muzzle" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

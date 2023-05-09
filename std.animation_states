@@ -1,5 +1,26 @@
 <?xml version="1.0"?>
 <tweaks>
+	<!-- Restore old dozer punch animation -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/melee"/>
+			<anim name="cbt_rifle_melee"/>
+		</search>
+		<target mode="attributes">
+			<attr name="weight" value="rifle * (1 - tank)"/>
+		</target>
+	</tweak>
+
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/melee"/>
+		</search>
+		<target mode="attach">
+			<anim name="tank_melee" weight="tank"/>
+		</target>
+	</tweak>
 	<!-- Actually set base_need_upd otherwise stand actions end too soon -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -470,6 +491,17 @@
 			<attr name="name" value="std/stand/still/idle/look"/>
 		</target>
 	</tweak>
+	<!-- Revive exit fix -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/interact/revive/exit"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/stand/still/idle/look"/>
+		</target>
+	</tweak>
 	<!-- Upper body blend fixes -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -524,6 +556,27 @@
 		</search>
 		<target mode="attributes">
 			<attr name="redirect" value="std/fatal/to_dead"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state/>
+			<to name="fatal"/>
+		</search>
+		<target mode="attributes" multiple="true">
+			<attr name="redirect" value="std/fatal/enter"/>
+		</target>
+	</tweak>
+	<!-- Bleedout exit fix -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/bleedout/look/exit_to_crh"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/stand/still/idle/look"/>
 		</target>
 	</tweak>
 </tweaks>

@@ -1,28 +1,35 @@
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+if Global.game_settings and Global.game_settings.one_down then
+ponr_value = 0
+ponr_toggle = false
+
+	if tweak_data:difficulty_to_index(difficulty) <= 2 then
+		ponr_value = 1200
+		ponr_toggle = true
+	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
+		ponr_value = 1170
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
+		ponr_value = 1140
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+		ponr_value = 1080
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+		ponr_value = 1080
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		ponr_value = 1050
+		ponr_toggle = true		
+	end
+end
+
 return {
-	--replaces FBI Agents with Ready Team Responders
-	[101412] = {
-		values = {
-			enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-		}
-	},
-	[101413] = {
-		values = {
-			enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-		}
-	},
-	[100344] = {
-		values = {
-			enemy = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
-		}
-	},
-	[101218] = {
-		values = {
-			enemy = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
-		}
-	},
-	[101222] = {
-		values = {
-			enemy = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-		}
+		--Pro Job PONR 
+		[100324] = {
+			ponr = ponr_value,
+			enabled = ponr_toggle
 	}
 }

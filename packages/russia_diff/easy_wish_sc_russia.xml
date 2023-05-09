@@ -233,8 +233,6 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2" />
 	<model				path="units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_city_swat_r870/ene_city_swat_r870" load="true"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_city_swat_r870/ene_city_swat_r870_husk" load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>	
 	
@@ -256,8 +254,6 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
 	<model				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_city_heavy_benelli/ene_city_heavy_benelli"  load="true"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_city_heavy_benelli/ene_city_heavy_benelli_husk"  load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"  load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"  load="true"/>
 	
@@ -663,8 +659,6 @@
 	<!--Generic Bravo Airframe-->	
 	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" load="true"/>
 
-	<!--Bravo SWAT Helmet-->	
-	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_swat_helmet/ene_acc_bravo_akan_swat_helmet" load="true"/>	
 
 	<!--Bravo Rifleman Helmet-->	
 	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63" load="true"/>	
@@ -674,16 +668,12 @@
 	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
 	<model				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru_husk"  load="true"/>		
 	<!--bravo lmg-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
 	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
 	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_husk"  load="true"/>	
 	<!--bravo rifle-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru" />
@@ -698,18 +688,26 @@
 	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
 	<model				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru_husk"  load="true"/>	
 	<!--textures-->	
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_dmr_ru_df"/>
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_ru_df"/>
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_ru_df"/>
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_shotgun_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
+	<df_nm				path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head"/>
+	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_il"/>	
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df"/>
-	
+	<!-- Bravo Guns -->
+	<!--AK17-->
+	<unit_obj			path="units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo" load="false" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12" force="false"/>
+	<texture			path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_df" />
+	<texture			path="units/pd2_mod_reapers/weapons/wpn_npc_ak12/npc_argos_nm" />
+	<!--RPK-->
+	<unit_obj			path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo" load="false" force="false"/>
+	<!--Argos-->
+	<unit_obj			path="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" load="false" force="false"/>
 	<!--bravo end-->
 	
 </table>

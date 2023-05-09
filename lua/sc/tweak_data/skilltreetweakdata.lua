@@ -1446,12 +1446,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 5},
 				[1] = {
 					upgrades = {
-						"player_taser_malfunction"
+						"player_taser_malfunction",
+						"player_resist_firing_tased",
+						"player_knockback_resistance"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
+						"player_slowing_bullet_resistance",
 						"player_taser_self_shock",
 						"player_escape_taser_1"
 					},
@@ -1685,8 +1688,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"akimbo_extra_ammo_multiplier_1",
-						"akimbo_pick_up_multiplier"
+						"akimbo_spread_index_addend_2",
 					},
 					cost = self.costs.hightierpro
 				}	

@@ -215,6 +215,10 @@
 	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
 	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>	
 	
+	<!--LAPD swat m4-->
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3_husk" load="true"/>	
+	
 	<!--swat shield 2-->
 	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"/>
 	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"/>
@@ -243,6 +247,15 @@
     <object				path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	<model				path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	
+	<!--fbi swat 3-->
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>
+    <object				path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
 	
 	<!--fbi heavy r870-->
     <unit				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
@@ -323,10 +336,10 @@
 	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
-
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
 	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_blue_df" load="true" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>

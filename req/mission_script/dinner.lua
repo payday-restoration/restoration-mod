@@ -1,4 +1,37 @@
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+if Global.game_settings and Global.game_settings.one_down then
+ponr_value = 0
+ponr_toggle = false
+
+	if tweak_data:difficulty_to_index(difficulty) <= 2 then
+		ponr_value = 330
+		ponr_toggle = true
+	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
+		ponr_value = 300
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
+		ponr_value = 270
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+		ponr_value = 240
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+		ponr_value = 210
+		ponr_toggle = true	
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		ponr_value = 180
+		ponr_toggle = true		
+	end
+end
+
 return {
+	--Pro Job PONR 
+	[104979] = {
+		ponr = ponr_value,
+		enabled = ponr_toggle
+	},
 	-- Replace bulldozers with their murky counterparts
 	--1st chopper, right after the ambush
 	[103095] = {
@@ -89,13 +122,53 @@ return {
             enemy = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 		}
 	},
-	--some murky replacers
+	--murky shotgunners
 	[103084] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		}
 	},
 	[103086] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101082] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101083] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101827] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101829] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101904] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101906] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101857] = {
+		values = {
+            enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		}
+	},
+	[101852] = {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		}

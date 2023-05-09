@@ -184,12 +184,16 @@ end
 
 function RaycastWeaponBase:_collect_hits(from, to)
 	local setup_data = {
+		stop_on_impact = self._bullet_class and self._bullet_class.stop_on_impact,
 		can_shoot_through_wall = self:can_shoot_through_wall(),
 		can_shoot_through_shield = self:can_shoot_through_shield(),
 		can_shoot_through_titan_shield = self:can_shoot_through_titan_shield(),
 		can_shoot_through_enemy = self:can_shoot_through_enemy(),
 		has_hit_wall = nil,
 		bullet_slotmask = self._bullet_slotmask,
+		enemy_mask = self.enemy_mask,
+		wall_mask = self.wall_vehicle_mask,
+		shield_mask = self.shield_mask,
 		ignore_units = self._setup.ignore_units
 	}
 
@@ -201,17 +205,31 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	setup_data = setup_data or {}
 	local ray_hits = nil
 	local hit_enemy = false
+	local ignore_unit = setup_data.ignore_units or {}
+	local enemy_mask = setup_data.enemy_mask
+	local bullet_slotmask = setup_data.bullet_slotmask or managers.slot:get_mask("bullet_impact_targets")
+
+	if setup_data.stop_on_impact then
+		ray_hits = {}
+		local hit = World:raycast("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit)
+
+		if hit then
+			table.insert(ray_hits, hit)
+
+			hit_enemy = hit.unit:in_slot(enemy_mask)
+		end
+
+		return ray_hits, hit_enemy
+	end
+
 	local can_shoot_through_wall = setup_data.can_shoot_through_wall
 	local can_shoot_through_shield = setup_data.can_shoot_through_shield
 	local can_shoot_through_titan_shield = setup_data.can_shoot_through_titan_shield
 	local can_shoot_through_enemy = setup_data.can_shoot_through_enemy
-	local bullet_slotmask = setup_data.bullet_slotmask or managers.slot:get_mask("bullet_impact_targets")
-	local enemy_mask = managers.slot:get_mask("enemies")
-	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
-	local shield_mask = managers.slot:get_mask("enemy_shield_check")
+	local wall_mask = setup_data.wall_mask
+	local shield_mask = setup_data.shield_mask
 	local ai_vision_ids = Idstring("ai_vision")
 	local bulletproof_ids = Idstring("bulletproof")
-	local ignore_unit = setup_data.ignore_units or {}
 
 	--Just set this immediately.
 	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit, "thickness", 40, "thickness_mask", wall_mask)
@@ -617,9 +635,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	mvector3.multiply(mvec_to, ray_distance)
 	mvector3.add(mvec_to, from_pos)
 
-	local damage = self:_get_current_damage(dmg_mul)
 	local ray_hits, hit_enemy = self:_collect_hits(from_pos, mvec_to)
-	local hit_anyone = false
 	local auto_hit_candidate, suppression_enemies = self:check_autoaim(from_pos, direction)
 
 	if suppression_enemies and self._suppression then
@@ -654,154 +670,94 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	end
 
 	local hit_count = 0
+	local hit_anyone = false
 	local cop_kill_count = 0
 	local hit_through_wall = false
 	local hit_through_shield = false
-	local shield_damage_reduction_applied = false
-	local hit_result = nil
-	local extra_collisions = self.extra_collisions and self:extra_collisions()
+	local is_civ_f = CopDamage.is_civilian
+	local damage = self:_get_current_damage(dmg_mul)
+
+	if self:fire_mode() == "auto" and self._no_cheevo_kills_without_releasing_trigger > 0 then
+		managers.hud:start_buff("body_expertise", (tweak_data.upgrades.automatic_kills_to_damage_reset_t or 0))
+	end
 
 	for _, hit in ipairs(ray_hits) do
-		damage = self:get_damage_falloff(damage, hit, user_unit)
-		hit_result = nil
+		local dmg = self:get_damage_falloff(damage, hit, user_unit)
+
 		local hit_unit = hit and hit.unit
 		local is_alive = hit_unit and hit_unit:character_damage() and not hit_unit:character_damage():dead()
 		local track_body_expert = nil
+		local stacks = (self._automatic_kills_to_damage_max_stacks and math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)) or 0
 		
 		if is_alive and self:fire_mode() == "auto" and self._automatic_kills_to_damage_max_stacks then
 			track_body_expert = true
 			if self._no_cheevo_kills_without_releasing_trigger > 0 then
-				local stacks = math.min(self._no_cheevo_kills_without_releasing_trigger, self._automatic_kills_to_damage_max_stacks)
-				damage = damage * (1 + (self._automatic_kills_to_damage_dmg_mult * stacks))
+				dmg = dmg * (1 + (self._automatic_kills_to_damage_dmg_mult * stacks))
 			end
 		end
-
-		if damage > 0 then
-			hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, damage)
-
-			if extra_collisions then
-				for idx, extra_col_data in ipairs(extra_collisions) do
-					if alive(hit.unit) then
-						extra_col_data.bullet_class:on_collision(hit, self._unit, user_unit, damage * (extra_col_data.dmg_mul or 1))
-					end
-				end
-			end
-		end
-
-		if hit_result and hit_result.type == "death" then
-			local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
-			local is_civilian = unit_type and CopDamage.is_civilian(unit_type)
-
-			if not is_civilian then
-				cop_kill_count = cop_kill_count + 1
-				if track_body_expert then
-					self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
-				end
-			end
-
-			if self:is_category(tweak_data.achievement.easy_as_breathing.weapon_type) and not is_civilian then
-				self._kills_without_releasing_trigger = (self._kills_without_releasing_trigger or 0) + 1
-
-				if tweak_data.achievement.easy_as_breathing.count <= self._kills_without_releasing_trigger then
-					managers.achievment:award(tweak_data.achievement.easy_as_breathing.award)
-				end
-			end
-		end
-
-		if hit_result then
-			hit.damage_result = hit_result
-			hit_anyone = true
-			hit_count = hit_count + 1
-		end
-
+		
 		--[[
 		if self:fire_mode() == "auto" and self._shoot_through_enemy_max_stacks and hit_count <= self._shoot_through_enemy_max_stacks then
 			damage = damage * self._shoot_through_enemy_dmg_mult
 		end
 		--]]
 
-		if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
-			hit_through_wall = true
-			shield_damage_reduction_applied = false
-		elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
-			hit_through_shield = hit_through_shield or alive(hit.unit:parent())
-			shield_damage_reduction_applied = false
-		end
+		if dmg > 0 then
+			local hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, dmg)
 
-		--Damage reduction when shooting through shields.
-		--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
-		if hit_through_shield and not shield_damage_reduction_applied then
-			damage = damage * (self._shield_pierce_damage_mult or 0.5)
-			shield_damage_reduction_applied = true
-		end
+			if hit_result then
+				hit.damage_result = hit_result
+				hit_anyone = true
+				hit_count = hit_count + 1
 
-		if hit_result and hit_result.type == "death" and cop_kill_count > 0 then
-			local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
-			local multi_kill, enemy_pass, obstacle_pass, weapon_pass, weapons_pass, weapon_type_pass = nil
+				if hit_result.type == "death" then
+					local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
+					local is_civilian = unit_type and is_civ_f(unit_type)
 
-			for achievement, achievement_data in pairs(tweak_data.achievement.sniper_kill_achievements) do
-				multi_kill = not achievement_data.multi_kill or cop_kill_count == achievement_data.multi_kill
-				enemy_pass = not achievement_data.enemy or unit_type == achievement_data.enemy
-				obstacle_pass = not achievement_data.obstacle or achievement_data.obstacle == "wall" and hit_through_wall or achievement_data.obstacle == "shield" and hit_through_shield
-				weapon_pass = not achievement_data.weapon or self._name_id == achievement_data.weapon
-				weapons_pass = not achievement_data.weapons or table.contains(achievement_data.weapons, self._name_id)
-				weapon_type_pass = not achievement_data.weapon_type or self:is_category(achievement_data.weapon_type)
+					if not is_civilian then
+						cop_kill_count = cop_kill_count + 1
 
-				if multi_kill and enemy_pass and obstacle_pass and weapon_pass and weapons_pass and weapon_type_pass then
-					if achievement_data.stat then
-						managers.achievment:award_progress(achievement_data.stat)
-					elseif achievement_data.award then
-						managers.achievment:award(achievement_data.award)
-					elseif achievement_data.challenge_stat then
-						managers.challenge:award_progress(achievement_data.challenge_stat)
-					elseif achievement_data.trophy_stat then
-						managers.custom_safehouse:award(achievement_data.trophy_stat)
-					elseif achievement_data.challenge_award then
-						managers.challenge:award(achievement_data.challenge_award)
+						if track_body_expert then
+							self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
+							managers.hud:start_buff("body_expertise", (tweak_data.upgrades.automatic_kills_to_damage_reset_t or 0))
+							managers.hud:set_stacks("body_expertise", (stacks == 0 and 1) or math.min(stacks + 1, self._automatic_kills_to_damage_max_stacks))
+						end
+
 					end
+
+					if self:is_category(tweak_data.achievement.easy_as_breathing.weapon_type) and not is_civilian then
+						self._kills_without_releasing_trigger = (self._kills_without_releasing_trigger or 0) + 1
+
+						if tweak_data.achievement.easy_as_breathing.count <= self._kills_without_releasing_trigger then
+							managers.achievment:award(tweak_data.achievement.easy_as_breathing.award)
+						end
+					end
+
+					hit_through_wall = hit_through_wall or hit.unit:in_slot(self.wall_mask)
+					hit_through_shield = hit_through_shield or hit.unit:in_slot(self.shield_mask) and alive(hit.unit:parent())
+
+					if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
+						hit_through_wall = true
+						shield_damage_reduction_applied = false
+					elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
+						hit_through_shield = hit_through_shield or alive(hit.unit:parent())
+						shield_damage_reduction_applied = false
+					end
+
+					--Damage reduction when shooting through shields.
+					--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
+					if hit_through_shield and not shield_damage_reduction_applied then
+						damage = damage * (self._shield_pierce_damage_mult or 0.5)
+						shield_damage_reduction_applied = true
+					end
+
+					self:_check_kill_achievements(cop_kill_count, unit_type, is_civilian, hit_through_wall, hit_through_shield)
 				end
 			end
 		end
 	end
 
-	if not tweak_data.achievement.tango_4.difficulty or table.contains(tweak_data.achievement.tango_4.difficulty, Global.game_settings.difficulty) then
-		local second_sight_index, has_second_sight = nil
-
-		for index, data in ipairs(self._second_sights or {}) do
-			if data.part_id == "wpn_fps_upg_o_45rds" then
-				second_sight_index = index
-				has_second_sight = true
-
-				break
-			end
-		end
-
-		if has_second_sight and cop_kill_count > 0 and managers.player:player_unit():movement():current_state():in_steelsight() then
-			local second_sight_on = self._second_sight_on and self._second_sight_on > 0 and self._second_sight_on
-
-			if self._tango_4_data then
-				local is_correct_sight = second_sight_on ~= self._tango_4_data.last_second_sight_state and (not second_sight_on or second_sight_on == second_sight_index)
-
-				if is_correct_sight then
-					self._tango_4_data.last_second_sight_state = second_sight_on
-					self._tango_4_data.count = self._tango_4_data.count + 1
-				else
-					self._tango_4_data = nil
-				end
-
-				if self._tango_4_data and tweak_data.achievement.tango_4.count <= self._tango_4_data.count then
-					managers.achievment:_award_achievement(tweak_data.achievement.tango_4, "tango_4")
-				end
-			else
-				self._tango_4_data = {
-					count = 1,
-					last_second_sight_state = second_sight_on
-				}
-			end
-		elseif self._tango_4_data then
-			self._tango_4_data = nil
-		end
-	end
+	self:_check_tango_achievements(cop_kill_count)
 
 	result.hit_enemy = hit_anyone
 
@@ -816,7 +772,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	local furthest_hit = ray_hits[#ray_hits]
 
-	if (furthest_hit and furthest_hit.distance > 200 or not furthest_hit) and alive(self._obj_fire) then
+	if (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
 		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
 
@@ -1042,6 +998,14 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 			self:_spawn_muzzle_effect(from_pos, direction)
 		end
 		self:_spawn_shell_eject_effect()
+	end
+
+	if self:weapon_tweak_data().muzzleflash_mod then
+		for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+			if alive(self._obj_fire) then
+				self:_spawn_muzzle_effect(from_pos, direction)
+			end
+		end
 	end
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
@@ -1418,3 +1382,52 @@ function InstantExplosiveBulletBase:on_collision_client(position, normal, damage
 	managers.explosion:explode_on_client(position, normal, user_unit, damage, self.RANGE, self.CURVE_POW, self.EFFECT_PARAMS)
 end
 
+function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, damage, ...)
+	if col_ray.unit:character_damage().on_concussion then
+		local conc_tweak = alive(weapon_unit) and weapon_unit:base().concussion_tweak and weapon_unit:base():concussion_tweak()
+		local conc_mul = conc_tweak and conc_tweak.mul or tweak_data.character.concussion_multiplier
+		local sound_tweak = conc_tweak and conc_tweak.sound_duration
+		local sound_eff_mul = sound_tweak and sound_tweak.mul or 0.3
+		local distance = mvector3.distance(col_ray.unit:position(), user_unit:position())
+
+		local unit_tweak = alive(user_unit) and user_unit.base and user_unit:base() and user_unit:base().char_tweak and user_unit:base():char_tweak()
+		local dt_sgunner_range = unit_tweak and unit_tweak.dt_sgunner and unit_tweak.dt_sgunner.range
+		local conc_max_range = dt_sgunner_range or (conc_tweak and conc_tweak.max_range) or 1000
+
+		if distance < conc_max_range then
+			managers.environment_controller:set_concussion_grenade(col_ray.unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+			col_ray.unit:character_damage():on_concussion(sound_eff_mul, false, sound_tweak)
+		end
+
+	elseif Network:is_server() and col_ray.unit:character_damage().stun_hit then
+		local function can_stun(hit_unit)
+			local brain_ext = hit_unit:brain()
+
+			if brain_ext and brain_ext.is_hostage and brain_ext:is_hostage() then
+				return false
+			end
+
+			local base_ext = hit_unit:base()
+
+			if base_ext and base_ext.char_tweak and base_ext:char_tweak().immune_to_concussion then
+				return false
+			end
+
+			return true
+		end
+
+		if can_stun(col_ray.unit) then
+			local action_data = {
+				variant = "stun",
+				damage = 0,
+				attacker_unit = user_unit,
+				weapon_unit = weapon_unit,
+				col_ray = col_ray
+			}
+
+			col_ray.unit:character_damage():stun_hit(action_data)
+		end
+	end
+
+	return self.super.give_impact_damage(self, col_ray, weapon_unit, user_unit, damage, ...)
+end

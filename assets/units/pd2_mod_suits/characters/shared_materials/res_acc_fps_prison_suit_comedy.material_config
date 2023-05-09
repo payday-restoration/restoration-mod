@@ -1,0 +1,7 @@
+<materials version="3" group="tstp_acc_fps_traditional">
+	<material name="mtr_arms" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/pd2_mod_suits/characters/shared_textures/fps_prison_suit_comedy_df"/>
+        <bump_normal_texture file="units/pd2_dlc_tstp/characters/shared_textures/tstp_acc_traditional/tstp_acc_traditional_fps_nm"/>
+		<material_texture file="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_gsma"/>
+    </material>
+</materials>

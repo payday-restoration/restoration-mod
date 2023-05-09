@@ -11,7 +11,6 @@ LevelsTweakData.LevelType.Federales = "federales"
 LevelsTweakData.LevelType.NYPD = "nypd"
 LevelsTweakData.LevelType.LAPD = "lapd"
 LevelsTweakData.LevelType.FBI = "fbi"
-LevelsTweakData.LevelType.Omnia = "omnia"
 --///LEVELS\\\--
 Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
@@ -23,7 +22,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	local federales = LevelsTweakData.LevelType.Federales		
 	local lapd = LevelsTweakData.LevelType.LAPD
 	local fbi = LevelsTweakData.LevelType.FBI
-	local omnia = LevelsTweakData.LevelType.Omnia
 	self.ai_groups = {}
 	self.ai_groups.default = america
 	self.ai_groups.america = america
@@ -34,7 +32,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	self.ai_groups.fbi = fbi
-	self.ai_groups.omnia = omnia
 	
 	--Christmas Dozer/Cloaker jingle bells
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
@@ -80,12 +77,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
-	self.mex.package = {"packages/narr_born_1", "packages/job_mex"}
+	self.mex.package = {"packages/miscassets", "packages/job_mex"}
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"
 
-	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets", "packages/narr_born_1"}
-	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets", "packages/narr_born_1"} 
+	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets"}
+	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets"} 
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"	
 
@@ -147,6 +144,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.peta.ai_group_type = fbi
 	self.peta2.ai_group_type = fbi
+	
+	self.sah.ai_group_type = fbi
+	self.sah.flashlights_on = true
 	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
@@ -276,6 +276,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		
 	self.ranc.ai_group_type = lapd
 	self.ranc.player_style = "fighterpilot"
+	
+	--//GENSEC STUFF\\--
+	self.arm_cro.package = {"packages/narr_arm_cro", "packages/gensecmisc"}
+	self.arm_fac.package = {"packages/narr_arm_fac", "packages/gensecmisc"}
+	self.arm_hcm.package = {"packages/narr_arm_hcm", "packages/gensecmisc"}
+	self.arm_par.package = {"packages/narr_arm_par", "packages/gensecmisc"}
+	self.arm_und.package = {"packages/narr_arm_und", "packages/gensecmisc"}
 
 	
 	--///NEW OUTFITS\\\--
@@ -400,7 +407,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.mia2_new.teams = self.mia_2.teams
 
-	self.cane.package = {"packages/cane", "packages/narr_born_1"}
+	self.cane.package = {"packages/cane", "packages/miscassets"}
 	self.cane.player_style = "winter_suit"
 							
 	self.mus.package = {"packages/narr_mus"}

@@ -13,7 +13,6 @@
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer" />
 	</dependencies>
 
 	<extensions>
@@ -21,8 +20,8 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="aa12_dozer" />
-			<var name="_stats_name" value="tank_green" />
+			<var name="_default_weapon_id" value="saiga_dozer" />
+			<var name="_stats_name" value="tank_black" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

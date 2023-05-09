@@ -123,7 +123,7 @@
 	<!--AMCAR-->	
 	<unit				path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
 	
-	<!--Rifle-->
+	<!--SMG-->
 	<object				path="units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1" />
 	<model				path="units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1"/>
@@ -136,7 +136,10 @@
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2" />
 	<model				path="units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2_husk"	  load="true"/>		
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2_husk"	  load="true"/>
+	<!--Rifle-->
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_3/ene_swat_3" load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_3/ene_swat_3_husk" load="true"/>
 	<!--Heavy Rifle-->
 	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1"  />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1"  />
@@ -191,7 +194,14 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
 	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>			
-
+	<!-- UMP Drillar -->
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>
 	<!--FBI Heavy Rifle-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />

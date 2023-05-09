@@ -62,6 +62,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -79,7 +80,6 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
-		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -115,6 +115,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -132,7 +133,6 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
-		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -171,6 +171,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -188,7 +189,6 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
-		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -227,6 +227,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -244,7 +245,6 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
-		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -280,6 +280,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -297,7 +298,6 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		--Recurring spawns
 		"titan_snipers",
-		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -333,6 +333,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -348,8 +349,7 @@ local standard_spawngroups = {
 		--Cloakers
 		"single_spooc",
 		--Recurring spawns
-		"titan_snipers",	
-		"marshal_squad",
+		"titan_snipers",
 		--Event units
 		"snowman_boss"
 	},
@@ -388,6 +388,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"GS_defend_c",
 		"GS_defend_d",
+		"GS_defend_shields",
 		"GS_swats",
 		"GS_Heavys",
 		"GS_heavys_boom",
@@ -404,7 +405,6 @@ local standard_spawngroups = {
 		--"single_spooc"
 		--Recurring spawns
 		"titan_snipers",
-		"marshal_squad",
 		--Event units
 		"snowman_boss"
 	},
@@ -4563,204 +4563,6 @@ local spawnpoint_delays = {
 		},
 		[102890] = {
 			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		}
-	},
-	sah = {
-		[100128] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"] 
-		},
-		[100130] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[100131] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
-		},
-		[100132] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[100133] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[100007] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]	
-		},
-		[100019] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[100692] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[100693] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[100694] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_CS_cops"]
-		},
-		[103307] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[103371] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[103522] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_CS_cops"]
-		},
-		[103662] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[106764] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
-		},
-		[106767] = { 
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[106776] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[106779] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard_no_FBI_spoocs"]
-		},
-		[106826] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard_no_FBI_spoocs"]
-		},
-		[106829] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[106832] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[104086] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[104089] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102667] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102299] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_FBI_spoocs"]
-		},
-		[102303] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc_no_FBI_spoocs"]
-		},
-		[101947] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101952] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101953] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101954] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101919] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101923] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102064] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102068] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101927] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101930] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102069] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102070] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102071] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101935] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102072] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102073] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102074] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102075] = {
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102076] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102077] = { 
-			interval = 15,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[101941] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[103018] = {
-			interval = 10,
-			preferred_spawn_groups = standard_spawngroups["standard"]
-		},
-		[102890] = {
-			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	}

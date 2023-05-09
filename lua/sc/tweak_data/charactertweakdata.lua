@@ -4,6 +4,12 @@ local enemy_melee_damage_good = 6.75
 local enemy_melee_damage_expert = 9
 local enemy_melee_damage_deathwish = 11.25
 local enemy_melee_damage_gang_member = 9
+local enemy_melee_speed = {
+	normal = 1,
+	good = 1,
+	expert = 1,
+	deathwish = 1,
+}
 
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
@@ -156,19 +162,6 @@ function CharacterTweakData:_init_region_fbi()
 		cloaker = "clk",
 		bulldozer = "bdz",
 		medic = "mdc"
-	}
-	self._speech_prefix_p2 = "d"
-end
-function CharacterTweakData:_init_region_omnia()
-	self._default_chatter = "dsp_radio_russian"
-	self._unit_prefixes = {
-		cop = "l",
-		swat = "l",
-		heavy_swat = "l5d",
-		taser = "tsr",
-		cloaker = "clk",
-		bulldozer = "bdz",
-		medic = "nothing"
 	}
 	self._speech_prefix_p2 = "d"
 end
@@ -450,6 +443,12 @@ function CharacterTweakData:_init_fbi(presets)
 	
 	--Veteran Cop
 	self.fbi_vet = deep_clone(self.fbi)
+	self.fbi_vet.tags = {"law", "custom", "special"}
+	self.fbi_vet.priority_shout = "g29"
+	self.fbi_vet.bot_priority_shout = "g29"
+	self.fbi_vet.priority_shout_max_dis = 3000
+	self.fbi_vet.silent_priority_shout = nil
+	self.fbi_vet.custom_shout = true		
 	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.can_slide_on_suppress = true
 	self.fbi_vet.HEALTH_INIT = 12
@@ -461,7 +460,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.use_animation_on_fire_damage = false
 	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.surrender = nil
-	self.fbi_vet.unintimidateable = true	
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 	   self.fbi_vet.custom_voicework = nil	
 	else   
@@ -525,7 +523,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.surrender = nil
 	self.meme_man.is_special = true
 	self.meme_man.no_asu = true
-	self.meme_man.unintimidateable = true
 	self.meme_man.heal_cooldown = 22.5
 	self.meme_man.rescue_hostages = false
 	self.meme_man.steal_loot = false
@@ -595,13 +592,8 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.access = "swat"
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
-	--if restoration and restoration.sonic_mod then 
-	--self.medic.rescue_hostages = true
-	--else
-	--self.medic.rescue_hostages = false
-	--end
 	self.medic.no_arrest = true
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
+	if self:get_ai_group_type() == "murkywater" then
 	    self.medic.custom_voicework = "murky_medic"
 	else	
 	    self.medic.custom_voicework = nil
@@ -727,7 +719,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.weapon = presets.weapon.normal
 	self.swat.detection = presets.detection.normal
 	self.swat.HEALTH_INIT = 8
-	self.swat.headshot_dmg_mul = 2
+	self.swat.headshot_dmg_mul = 3.5
 	self.swat.damage_resistance = presets.damage_resistance.none
 	self.swat.move_speed = presets.move_speed.very_fast
 	self.swat.surrender_break_time = {6, 10}
@@ -754,7 +746,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 	    self.swat.has_alarm_pager = true
 	else
 	    self.swat.has_alarm_pager = false
@@ -825,7 +817,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
 	self.heavy_swat.HEALTH_INIT = 13
-	self.heavy_swat.headshot_dmg_mul = 2.2
+	self.heavy_swat.headshot_dmg_mul = 3.25
 	self.heavy_swat.damage_resistance = presets.damage_resistance.none
 	self.heavy_swat.damage.explosion_damage_mul = 0.75
 	self.heavy_swat.damage.fire_damage_mul = 0.75
@@ -849,7 +841,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.dodge = presets.dodge.heavy
 	self.heavy_swat.no_arrest = false
 	self.heavy_swat.chatter = presets.enemy_chatter.swat
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 	    self.heavy_swat.has_alarm_pager = true
 	else
 	    self.heavy_swat.has_alarm_pager = false
@@ -876,7 +868,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000
 	self.heavy_swat_sniper.weapon = deep_clone(presets.weapon.normal)
 	self.heavy_swat_sniper.HEALTH_INIT = 19.5
-	self.heavy_swat_sniper.headshot_dmg_mul = 2.2
+	self.heavy_swat_sniper.headshot_dmg_mul = 3.25
 	self.heavy_swat_sniper.damage_resistance = presets.damage_resistance.none
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
@@ -910,7 +902,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat_sniper.custom_voicework = "tsniper"
 	end
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 	self.heavy_swat_sniper.yellow_blood = false
 	else
 	self.heavy_swat_sniper.yellow_blood = true
@@ -928,7 +920,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr.speech_prefix_count = nil
 	if self:get_ai_group_type() == "russia" then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
+	elseif self:get_ai_group_type() == "murkywater" then
 		self.weekend_dmr.custom_voicework = "bravo_elite_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend_dmr.custom_voicework = "bravo_elite_mex"
@@ -936,11 +928,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.weekend_dmr.custom_voicework = "bravo_dmr"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 24.375
-	self.weekend_dmr.headshot_dmg_mul = 2.75
+	self.weekend_dmr.headshot_dmg_mul = 4.0625
 	self.weekend_dmr.heal_cooldown = 2.5
 	self.weekend_dmr.marshal_logic = true
 	self.weekend_dmr.can_throw_frag = true
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 		self.weekend_dmr.yellow_blood = true
 	else	
 		self.weekend_dmr.yellow_blood = false
@@ -955,7 +947,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.weapon = deep_clone(presets.weapon.good)
 	self.fbi_swat.detection = presets.detection.normal
 	self.fbi_swat.HEALTH_INIT = 15
-	self.fbi_swat.headshot_dmg_mul = 2.2
+	self.fbi_swat.headshot_dmg_mul = 3
 	self.fbi_swat.damage_resistance = presets.damage_resistance.none
 	self.fbi_swat.move_speed = presets.move_speed.very_fast
 	self.fbi_swat.surrender_break_time = {6, 10}
@@ -1002,7 +994,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.weapon = deep_clone(presets.weapon.normal)
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
-	self.fbi_heavy_swat.headshot_dmg_mul = 1.5
+	self.fbi_heavy_swat.headshot_dmg_mul = 2
 	self.fbi_heavy_swat.damage.explosion_damage_mul = 0.75
 	self.fbi_heavy_swat.damage.fire_damage_mul = 0.75
 	self.fbi_heavy_swat.damage.fire_pool_damage_mul = 0.75	
@@ -1049,7 +1041,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
 	self.city_swat.detection = presets.detection.normal
 	self.city_swat.HEALTH_INIT = 15
-	self.city_swat.headshot_dmg_mul = 2.2
+	self.city_swat.headshot_dmg_mul = 3
 	self.city_swat.damage_resistance = presets.damage_resistance.none
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
@@ -1107,7 +1099,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend = deep_clone(self.city_swat)
 	if self:get_ai_group_type() == "russia" then
 		self.weekend.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
+	elseif self:get_ai_group_type() == "murkywater" then
 		self.weekend.custom_voicework = "bravo_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend.custom_voicework = "bravo_mex"
@@ -1115,21 +1107,16 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.weekend.custom_voicework = "bravo"
 	end	
 	self.weekend.HEALTH_INIT = 18.75
-	self.weekend.headshot_dmg_mul = 2.75
+	self.weekend.headshot_dmg_mul = 3.75
 	self.weekend.speech_prefix_p1 = "null"
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 1.25
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 		self.weekend.yellow_blood = true
 	else	
 		self.weekend.yellow_blood = false
 	end	
-	--if restoration and restoration.sonic_mod then 
-	--self.weekend.rescue_hostages = true
-	--else
-	--self.weekend.rescue_hostages = false
-	--end
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")	
@@ -1140,15 +1127,24 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_guard.yellow_blood = false
 	self.weekend_guard.chatter = presets.enemy_chatter.guard
 	if job == "shoutout_raid" then
-	self.weekend_guard.access = "swat"
+		self.weekend_guard.access = "swat"
 	else
-	self.weekend_guard.access = "security"
+		self.weekend_guard.access = "security"
 	end
 	table.insert(self._enemy_list, "weekend_guard")
 	
 	--Titan SWAT (LMG)
 	self.city_swat_titan = deep_clone(self.city_swat)
+	self.city_swat_titan.tags = {"law", "custom", "special"}
+	self.city_swat_titan.priority_shout = "g29"
+	self.city_swat_titan.bot_priority_shout = "g29"
+	self.city_swat_titan.priority_shout_max_dis = 3000
+	self.city_swat_titan.silent_priority_shout = nil
+	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
+	self.city_swat_titan.dt_suppress = {
+		range = 1500
+	}
 	self.city_swat_titan.speech_prefix_p1 = "null"
 	self.city_swat_titan.speech_prefix_p2 = nil
 	self.city_swat_titan.speech_prefix_count = nil	
@@ -1159,13 +1155,13 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() == "murkywater" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.city_swat_titan.yellow_blood = false
 	else
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 2.2
+	self.city_swat_titan.headshot_dmg_mul = 2.65
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
@@ -1173,7 +1169,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
-	self.city_swat_titan.unintimidateable = true
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
@@ -1185,13 +1180,18 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Titan SWAT (Shotgunner)
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 	self.city_swat_titan_assault.marshal_logic = nil
+	self.city_swat_titan_assault.dt_suppress = nil
+	self.city_swat_titan_assault.dt_sgunner = {
+		range = 1000,
+		range_close = 400
+	}
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		
 	--Weekend LMG
 	self.weekend_lmg = deep_clone(self.city_swat_titan)		
 	if self:get_ai_group_type() == "russia" then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "omnia" then
+	elseif self:get_ai_group_type() == "murkywater" then
 		self.weekend_lmg.custom_voicework = "bravo_elite_murky"	
 	elseif self:get_ai_group_type() == "federales" then
 		self.weekend_lmg.custom_voicework = "bravo_elite_mex"
@@ -1202,15 +1202,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_p2 = nil
 	self.weekend_lmg.speech_prefix_count = nil
 	self.weekend_lmg.HEALTH_INIT = 28.125
-	self.weekend_lmg.headshot_dmg_mul = 2.75	
+	self.weekend_lmg.headshot_dmg_mul = 3.3125
 	self.weekend_lmg.heal_cooldown = 1.875
 	self.weekend_lmg.can_throw_frag = true
-	--if restoration and restoration.sonic_mod then 
-	--self.weekend_lmg.rescue_hostages = true
-	--else
-	--self.weekend_lmg.rescue_hostages = false
-	--end
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" or self:get_ai_group_type() == "omnia" or self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 		self.weekend_lmg.yellow_blood = true
 	else	
 		self.weekend_lmg.yellow_blood = false
@@ -1218,14 +1213,18 @@ function CharacterTweakData:_init_city_swat(presets)
 	table.insert(self._enemy_list, "weekend_lmg")
 	
 	--Weekend LMG (Guard Variant)
-	self.weekend_elite_guard = deep_clone(self.weekend_lmg)			
+	self.weekend_elite_guard = deep_clone(self.weekend_lmg)	
+	self.weekend_elite_guard.tags = {"law", "city_swat"}
+	self.weekend_elite_guard.dt_suppress = nil
+	self.weekend_elite_guard.custom_shout = false
+	self.weekend_elite_guard.silent_priority_shout = "f37"
 	self.weekend_elite_guard.can_throw_frag = false
 	self.weekend_elite_guard.yellow_blood = false
 	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard
 	if job == "shoutout_raid" then
-	self.weekend_elite_guard.access = "swat"
+		self.weekend_elite_guard.access = "swat"
 	else
-	self.weekend_elite_guard.access = "security"
+		self.weekend_elite_guard.access = "security"
 	end
 	table.insert(self._enemy_list, "weekend_elite_guard")
 	
@@ -1575,7 +1574,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
 	self.triad_boss.detection = presets.detection.normal
 	self.triad_boss.HEALTH_INIT = 750
-	self.triad_boss.headshot_dmg_mul = 5.402
+	self.triad_boss.headshot_dmg_mul = 6.65
 	self.triad_boss.damage_resistance = presets.damage_resistance.none
 	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.triad_boss.damage.explosion_damage_mul = 1.25
@@ -1747,7 +1746,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 750
-	self.mobster_boss.headshot_dmg_mul = 5.402
+	self.mobster_boss.headshot_dmg_mul = 6.65
 	self.mobster_boss.damage_resistance = presets.damage_resistance.none
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
@@ -1802,7 +1801,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 750
-	self.biker_boss.headshot_dmg_mul = 5.402
+	self.biker_boss.headshot_dmg_mul = 6.65
 	self.biker_boss.damage_resistance = presets.damage_resistance.none
 	self.biker_boss.damage.explosion_damage_mul = 1.25
 	self.biker_boss.damage.rocket_damage_mul = 1.25
@@ -1900,7 +1899,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.chavez_boss.HEALTH_INIT = 750
-	self.chavez_boss.headshot_dmg_mul = 5.402
+	self.chavez_boss.headshot_dmg_mul = 6.65
 	self.chavez_boss.damage_resistance = presets.damage_resistance.none
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
 	self.chavez_boss.damage.rocket_damage_mul = 1.25
@@ -2024,7 +2023,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 750
-	self.drug_lord_boss.headshot_dmg_mul = 5.402
+	self.drug_lord_boss.headshot_dmg_mul = 6.65
 	self.drug_lord_boss.damage_resistance = presets.damage_resistance.none
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 	self.drug_lord_boss.damage.rocket_damage_mul = 1.25
@@ -2136,7 +2135,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
-	--1320 head health, 400 "real damage" and an extra 920 from their armor plates
+	--1020 head health, 400 "real damage" and an extra 620 from their armor plates
 	self.tank.headshot_dmg_mul = 12.5
 	self.tank.damage_resistance = presets.damage_resistance.none
 	self.tank.move_speed = presets.move_speed.slow
@@ -2222,7 +2221,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 	self.tank_titan.HEALTH_INIT = 750
-	self.tank_titan.headshot_dmg_mul = 5.402
+	self.tank_titan.headshot_dmg_mul = 6.65
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
 	self.tank_titan.priority_shout_max_dis = 3000
@@ -2234,8 +2233,12 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	self.tank_titan.speech_prefix_p1 = "heck"
 	self.tank_titan.speech_prefix_p2 = nil
-	self.tank_titan.speech_prefix_count = nil				
+	self.tank_titan.speech_prefix_count = nil
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	self.tank_titan.yellow_blood = false
+	else
 	self.tank_titan.yellow_blood = true
+	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
@@ -2260,7 +2263,7 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_hw_black.custom_voicework = "tdozer"
 	end
 	--Dozerish head health, lowered to account for no visor so they're about the same head health
-	self.tank_hw_black.headshot_dmg_mul = 5.402
+	self.tank_hw_black.headshot_dmg_mul = 6.65
 	self.tank_hw_black.ignore_headshot = false
 	self.tank_hw_black.melee_anims = nil
 	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"
@@ -3077,7 +3080,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
-	self.taser_titan.yellow_blood = true	
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	self.taser_titan.yellow_blood = false
+	else
+	self.taser_titan.yellow_blood = true
+	end	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 11.25
 	self.taser_titan.slowing_bullets = {
@@ -5111,7 +5118,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.ARRESTED_TIME = 30
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
-	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	presets.gang_member_damage.respawn_time_penalty = 0
 	presets.gang_member_damage.base_respawn_time_penalty = 5
 	presets.weapon = {}
@@ -5140,7 +5147,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_pistol.spread = 20
 	presets.weapon.normal.is_pistol.miss_dis = 40
 	presets.weapon.normal.is_pistol.RELOAD_SPEED = 1
-	presets.weapon.normal.is_pistol.melee_speed = 1
+	presets.weapon.normal.is_pistol.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_pistol.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_pistol.melee_retry_delay = {2, 2}
 	presets.weapon.normal.is_pistol.range = {
@@ -5374,7 +5381,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_rifle.spread = 20
 	presets.weapon.normal.is_rifle.miss_dis = 30
 	presets.weapon.normal.is_rifle.RELOAD_SPEED = 1
-	presets.weapon.normal.is_rifle.melee_speed = 1
+	presets.weapon.normal.is_rifle.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_rifle.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_rifle.tase_distance = 1400
 	presets.weapon.normal.is_rifle.aim_delay_tase = {0.75, 0.75}
@@ -5785,7 +5792,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_shotgun_pump.spread = 15
 	presets.weapon.normal.is_shotgun_pump.miss_dis = 20
 	presets.weapon.normal.is_shotgun_pump.RELOAD_SPEED = 0.25
-	presets.weapon.normal.is_shotgun_pump.melee_speed = 1
+	presets.weapon.normal.is_shotgun_pump.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_shotgun_pump.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {2, 2}
 	presets.weapon.normal.is_shotgun_pump.range = {
@@ -5981,7 +5988,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_smg.spread = 15
 	presets.weapon.normal.is_smg.miss_dis = 20
 	presets.weapon.normal.is_smg.RELOAD_SPEED = 1
-	presets.weapon.normal.is_smg.melee_speed = 1
+	presets.weapon.normal.is_smg.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_smg.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_smg.melee_retry_delay = {2, 2}
 	presets.weapon.normal.is_smg.range = {
@@ -6436,7 +6443,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_revolver.spread = 20
 	presets.weapon.normal.is_revolver.miss_dis = 50
 	presets.weapon.normal.is_revolver.RELOAD_SPEED = 1
-	presets.weapon.normal.is_revolver.melee_speed = 1
+	presets.weapon.normal.is_revolver.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_revolver.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_revolver.melee_retry_delay = {2, 2}
 	presets.weapon.normal.is_revolver.range = {
@@ -7023,7 +7030,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.mini.spread = 20
 	presets.weapon.normal.mini.miss_dis = 40
 	presets.weapon.normal.mini.RELOAD_SPEED = 0.25
-	presets.weapon.normal.mini.melee_speed = 1
+	presets.weapon.normal.mini.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.mini.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.mini.melee_retry_delay = {2, 2}
 	presets.weapon.normal.mini.range = {
@@ -7179,7 +7186,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_sniper.spread = 0
 	presets.weapon.normal.is_sniper.miss_dis = 250
 	presets.weapon.normal.is_sniper.RELOAD_SPEED = 1
-	presets.weapon.normal.is_sniper.melee_speed = presets.weapon.normal.is_rifle.melee_speed
+	presets.weapon.normal.is_sniper.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_sniper.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_sniper.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 	presets.weapon.normal.is_sniper.range = {
@@ -7254,7 +7261,7 @@ function CharacterTweakData:_presets(tweak_data)
 	
 	--M32 handling, normal
 	presets.weapon.normal.is_m32 = deep_clone(presets.weapon.normal.is_shotgun_pump)
-	presets.weapon.normal.is_m32.melee_speed = 1
+	presets.weapon.normal.is_m32.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_m32.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_m32.melee_retry_delay = {2, 2}		
 	presets.weapon.normal.is_m32.autofire_rounds = {25, 50}
@@ -7351,7 +7358,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_pistol.spread = 20
 	presets.weapon.good.is_pistol.miss_dis = 30
 	presets.weapon.good.is_pistol.RELOAD_SPEED = 1
-	presets.weapon.good.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
+	presets.weapon.good.is_pistol.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_pistol.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 	presets.weapon.good.is_pistol.range = presets.weapon.normal.is_pistol.range
@@ -7581,7 +7588,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_rifle.spread = 20
 	presets.weapon.good.is_rifle.miss_dis = 20
 	presets.weapon.good.is_rifle.RELOAD_SPEED = 1
-	presets.weapon.good.is_rifle.melee_speed = 1
+	presets.weapon.good.is_rifle.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_rifle.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_rifle.tase_distance = 1400
 	presets.weapon.good.is_rifle.aim_delay_tase = {0.75, 0.75}
@@ -7992,7 +7999,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_pump.spread = 15
 	presets.weapon.good.is_shotgun_pump.miss_dis = 20
 	presets.weapon.good.is_shotgun_pump.RELOAD_SPEED = 0.25
-	presets.weapon.good.is_shotgun_pump.melee_speed = 1
+	presets.weapon.good.is_shotgun_pump.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_shotgun_pump.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_shotgun_pump.melee_retry_delay = {2, 2}
 	presets.weapon.good.is_shotgun_pump.range = {
@@ -8188,7 +8195,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_mag.spread = 15
 	presets.weapon.good.is_shotgun_mag.miss_dis = 20
 	presets.weapon.good.is_shotgun_mag.RELOAD_SPEED = 0.25
-	presets.weapon.good.is_shotgun_mag.melee_speed = 1
+	presets.weapon.good.is_shotgun_mag.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_shotgun_mag.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_shotgun_mag.melee_retry_delay = {2, 2}
 	presets.weapon.good.is_shotgun_mag.autofire_rounds = {4, 9}
@@ -8403,7 +8410,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_smg.spread = 20
 	presets.weapon.good.is_smg.miss_dis = 20
 	presets.weapon.good.is_smg.RELOAD_SPEED = 1
-	presets.weapon.good.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
+	presets.weapon.good.is_smg.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_smg.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
 	presets.weapon.good.is_smg.range = presets.weapon.normal.is_smg.range
@@ -8854,7 +8861,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_revolver.spread = 20
 	presets.weapon.good.is_revolver.miss_dis = 30
 	presets.weapon.good.is_revolver.RELOAD_SPEED = 1
-	presets.weapon.good.is_revolver.melee_speed = 1
+	presets.weapon.good.is_revolver.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_revolver.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_revolver.melee_retry_delay = {2, 2}
 	presets.weapon.good.is_revolver.range = {
@@ -9238,7 +9245,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.mini.spread = 20
 	presets.weapon.good.mini.miss_dis = 40
 	presets.weapon.good.mini.RELOAD_SPEED = 0.25
-	presets.weapon.good.mini.melee_speed = 1
+	presets.weapon.good.mini.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.mini.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.mini.melee_retry_delay = {2, 2}
 	presets.weapon.good.mini.range = {
@@ -9524,7 +9531,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_pistol.spread = 20
 	presets.weapon.expert.is_pistol.miss_dis = 20
 	presets.weapon.expert.is_pistol.RELOAD_SPEED = 1
-	presets.weapon.expert.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
+	presets.weapon.expert.is_pistol.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_pistol.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 	presets.weapon.expert.is_pistol.range = presets.weapon.normal.is_pistol.range
@@ -9754,7 +9761,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_rifle.spread = 20
 	presets.weapon.expert.is_rifle.miss_dis = 10
 	presets.weapon.expert.is_rifle.RELOAD_SPEED = 1
-	presets.weapon.expert.is_rifle.melee_speed = 1
+	presets.weapon.expert.is_rifle.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_rifle.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_rifle.tase_distance = 1400
 	presets.weapon.expert.is_rifle.aim_delay_tase = {0.75, 0.75}
@@ -10165,7 +10172,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_pump.spread = 15
 	presets.weapon.expert.is_shotgun_pump.miss_dis = 10
 	presets.weapon.expert.is_shotgun_pump.RELOAD_SPEED = 0.25
-	presets.weapon.expert.is_shotgun_pump.melee_speed = 1
+	presets.weapon.expert.is_shotgun_pump.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_shotgun_pump.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.expert.is_shotgun_pump.range = {
@@ -10361,7 +10368,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_mag.spread = 15
 	presets.weapon.expert.is_shotgun_mag.miss_dis = 10
 	presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
-	presets.weapon.expert.is_shotgun_mag.melee_speed = 1
+	presets.weapon.expert.is_shotgun_mag.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_shotgun_mag.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.expert.is_shotgun_mag.range = {
@@ -10572,7 +10579,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_smg.spread = 15
 	presets.weapon.expert.is_smg.miss_dis = 10
 	presets.weapon.expert.is_smg.RELOAD_SPEED = 1
-	presets.weapon.expert.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
+	presets.weapon.expert.is_smg.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_smg.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
 	presets.weapon.expert.is_smg.range = presets.weapon.normal.is_smg.range
@@ -11023,7 +11030,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_revolver.spread = 20
 	presets.weapon.expert.is_revolver.miss_dis = 30
 	presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
-	presets.weapon.expert.is_revolver.melee_speed = 1
+	presets.weapon.expert.is_revolver.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_revolver.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_revolver.melee_retry_delay = {2, 2}
 	presets.weapon.expert.is_revolver.range = {
@@ -11407,7 +11414,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.mini.spread = 20
 	presets.weapon.expert.mini.miss_dis = 40
 	presets.weapon.expert.mini.RELOAD_SPEED = 0.25
-	presets.weapon.expert.mini.melee_speed = 1
+	presets.weapon.expert.mini.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.mini.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.mini.melee_retry_delay = {2, 2}
 	presets.weapon.expert.mini.range = {
@@ -13872,7 +13879,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_pistol.spread = 25
 	presets.weapon.gang_member.is_pistol.miss_dis = 20
 	presets.weapon.gang_member.is_pistol.RELOAD_SPEED = 1.5
-	presets.weapon.gang_member.is_pistol.melee_speed = 3
+	presets.weapon.gang_member.is_pistol.melee_speed = 1
 	presets.weapon.gang_member.is_pistol.melee_dmg = enemy_melee_damage_gang_member
 	presets.weapon.gang_member.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 	presets.weapon.gang_member.is_pistol.range = presets.weapon.normal.is_pistol.range
@@ -14796,7 +14803,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 100,
 			acc = {0.8, 0.9},
 			dmg_mul = 1.25,
-			recoil = {0.4, 0.8},
+			recoil = {0.35, 0.75},
 			mode = {
 				0,
 				3,
@@ -14808,7 +14815,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 500,
 			acc = {0.7, 0.8},
 			dmg_mul = 1.25,
-			recoil = {0.45, 0.8},
+			recoil = {0.35, 0.75},
 			mode = {
 				0,
 				3,
@@ -14844,7 +14851,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2000,
 			acc = {0.4, 0.5},
 			dmg_mul = 1.25,
-			recoil = {0.4, 1.2},
+			recoil = {0.4, 1.0},
 			mode = {
 				3,
 				2,
@@ -17224,6 +17231,27 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Dozer RPK
 	table.insert(self.weap_ids, "rpk_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer"))	
+	
+	--Reaper Bravo Rifle
+	table.insert(self.weap_ids, "bravo_ak17")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo"))
+	
+	--Reaper Bravo Shotgun
+	table.insert(self.weap_ids, "bravo_argos")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo"))	
+	
+	--Reaper Bravo RPK74
+	table.insert(self.weap_ids, "bravo_rpk74")
+	table.insert(self.weap_unit_names, Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo"))	
+
+	--Scab Shotgunner!
+	--Concussion rounds AA12
+	table.insert(self.weap_ids, "aa12_conc_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_aa12_conc/wpn_npc_aa12_conc"))	
+
+	--Concussion rounds Saiga
+	table.insert(self.weap_ids, "saiga_conc_npc")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_saiga_conc/wpn_npc_saiga_conc"))		
 
 end)
 
@@ -17275,7 +17303,7 @@ function CharacterTweakData:_set_easy()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 25
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 25
 	self.spa_vip.HEALTH_INIT = 25
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -17341,7 +17369,7 @@ function CharacterTweakData:_set_normal()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 50
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 50
 	self.spa_vip.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
@@ -17473,7 +17501,7 @@ function CharacterTweakData:_set_overkill()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
@@ -17482,9 +17510,9 @@ end
 
 function CharacterTweakData:_set_overkill_145()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.5, 1)
+		self:_multiply_all_hp(1, 1)
 	else
-		self:_multiply_all_hp(1.5, 1)
+		self:_multiply_all_hp(1, 1)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -17538,7 +17566,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 125
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 125
 	self.spa_vip.HEALTH_INIT = 125
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -17547,9 +17575,9 @@ end
 
 function CharacterTweakData:_set_easy_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 1.1667)
+		self:_multiply_all_hp(1.5, 1)
 	else
-		self:_multiply_all_hp(1.75, 1.1667)
+		self:_multiply_all_hp(1.5, 1)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -17599,7 +17627,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 150
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 150
 	self.spa_vip.HEALTH_INIT = 150
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
@@ -17650,7 +17678,7 @@ function CharacterTweakData:_set_overkill_290()
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 175
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 175
 	self.spa_vip.HEALTH_INIT = 175
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
@@ -17660,14 +17688,23 @@ function CharacterTweakData:_set_overkill_290()
 end
 
 function CharacterTweakData:_set_sm_wish()
-	--if not PackageManager:loaded("packages/zealassets") then
-	--	PackageManager:load("packages/zealassets")
-	--end
+	--Harder heads base
+	self.swat.headshot_dmg_mul = 2
+	self.heavy_swat.headshot_dmg_mul = 2.2
+	self.fbi_swat.headshot_dmg_mul = 2.2
+	self.fbi_heavy_swat.headshot_dmg_mul = 1.5
+	self.city_swat.headshot_dmg_mul = 2.2
+	self.weekend.headshot_dmg_mul = 2.75	
+	self.city_swat_titan.headshot_dmg_mul = 2.5
+	self.city_swat_titan_assault.headshot_dmg_mul = 2.5
+	self.weekend_lmg.headshot_dmg_mul = 3.125
+
 	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(2, 0.915)
 	else
 		self:_multiply_all_hp(2, 0.915)
 	end
+	
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -17683,8 +17720,7 @@ function CharacterTweakData:_set_sm_wish()
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0
 	self.taser.shock_damage = 8.0
-	
-	
+		
 	--Shields get overhealed by LPF/Winters
 	self.shield.overheal_mult = 2
 	self.marshal_shield.overheal_mult = 2
@@ -17714,7 +17750,7 @@ function CharacterTweakData:_set_sm_wish()
 		
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.15
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.old_hoxton_mission.HEALTH_INIT = 200
 	self.spa_vip.HEALTH_INIT = 200
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
@@ -17927,10 +17963,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_city_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_2_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_3_sc")
-		table.insert(char_map.basic.list, "ene_city_swat_r870_sc")
 		table.insert(char_map.basic.list, "ene_city_heavy_g36_sc")
 		table.insert(char_map.basic.list, "ene_city_heavy_r870_sc")	
-		table.insert(char_map.basic.list, "ene_city_heavy_benelli_sc")
 		table.insert(char_map.basic.list, "ene_city_shield")
 		table.insert(char_map.basic.list, "ene_shield_gensec")		
 		table.insert(char_map.basic.list, "ene_sniper_3")
@@ -18028,7 +18062,6 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
-				"ene_zeal_city_r870",
 				"ene_zeal_medic",				
 				"ene_grenadier_1",				
 				"ene_zeal_sniper",
@@ -18041,7 +18074,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_fbi_mp5",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870_sc",
-				"ene_zeal_swat_heavy_benelli_sc"
+				"ene_zeal_swat_heavy_benelli"
 			}
 		}
 	--drm
@@ -18092,7 +18125,6 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
-				"ene_zeal_city_r870",
 				"ene_bulldozer_1",
 				"ene_bulldozer_1_hard",
 				"ene_bulldozer_2",
@@ -18159,7 +18191,6 @@ function CharacterTweakData:character_map()
 				"ene_fbi_swat_3",
 				"ene_fbi_heavy_1",
 				"ene_fbi_heavy_r870",
-				"ene_fbi_heavy_benelli",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_murky_shield_yellow",
@@ -18172,11 +18203,9 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_city_swat_r870",
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
-				"ene_zeal_city_r870",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
 				"ene_zeal_swat_heavy_benelli",
@@ -18208,42 +18237,16 @@ function CharacterTweakData:character_map()
 				"ene_omnia_hrt_3",
 				"ene_omnia_crew",
 				"ene_omnia_crew_2",
-				"ene_security_1",
-				"ene_security_2",
-				"ene_security_3",
-				"ene_security_4",
-				"ene_cop_1",
-				"ene_cop_2",
-				"ene_cop_3",
-				"ene_cop_4",
-				"ene_swat_1",
-				"ene_swat_2",
-				"ene_swat_3",
-				"ene_swat_heavy_1",
-				"ene_swat_heavy_r870",
-				"ene_fbi_swat_1",
-				"ene_fbi_swat_2",
-				"ene_fbi_swat_3",
-				"ene_fbi_heavy_1",
-				"ene_fbi_heavy_r870",
-				"ene_city_swat_1",
-				"ene_city_swat_2",
-				"ene_city_swat_3",
-				"ene_city_heavy_g36",
-				"ene_city_heavy_r870",
 				"ene_omnia_city",
 				"ene_omnia_city_2",
 				"ene_omnia_city_3",
-				"ene_omnia_city_r870",
 				"ene_omnia_heavy",
 				"ene_omnia_heavy_r870",
 				"ene_omnia_heavy_benelli",
 				"ene_bulldozer_1",
-				"ene_bulldozer_1_hard",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
 				"ene_bulldozer_minigun",
-				"ene_bulldozer_medic",
 				"ene_omnia_spook",
 				"ene_grenadier_1",
 				"ene_omnia_medic",
@@ -18268,11 +18271,9 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_city_swat_r870",
 				"ene_shield_gensec",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870",
-				"ene_city_heavy_benelli",
 				"ene_sniper_3",
 				"ene_spook_1",
 				"ene_bulldozer_1",
@@ -18327,7 +18328,6 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_city_swat_r870",
 				"ene_bulldozer_3",
 				"ene_city_shield",
 				"ene_fbi_heavy_1",
@@ -18335,7 +18335,6 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870_sc",
-				"ene_city_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_swat_3",
@@ -18387,14 +18386,12 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
-				"ene_zeal_city_r870",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870_sc",
-				"ene_zeal_swat_heavy_benelli_sc",
+				"ene_zeal_swat_heavy_benelli",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_city_swat_r870",
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_swat_3",
@@ -18427,7 +18424,6 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870_sc",
-				"ene_city_heavy_benelli",
 				"ene_swat_heavy_1_sc",
 				"ene_swat_heavy_r870_sc",
 				"ene_spook_1",
@@ -18461,7 +18457,6 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870",
-				"ene_city_heavy_benelli",
 				"ene_swat_heavy_1",
 				"ene_swat_heavy_r870",
 				"ene_swat_1",
@@ -18485,7 +18480,6 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_city_swat_r870",
 				"ene_bulldozer_1_hard",
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
@@ -18496,7 +18490,6 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
-				"ene_zeal_city_r870",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
 				"ene_zeal_swat_heavy_benelli",

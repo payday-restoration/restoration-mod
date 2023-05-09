@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.0.5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -34,7 +34,7 @@
 		<hook file="managers/HUDManagerpd2.lua" source_file="lib/managers/HUDManagerpd2"/>
 		<hook file="managers/GUIDataManager.lua" source_file="core/lib/managers/coreguidatamanager"/>
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
-        <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
+        <hook file="managers/hud/HUDAssaultCorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
         <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>
         <hook file="managers/hud/HUDSkills.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDEffect.lua" source_file="lib/managers/hud/HUDTemp"/>
@@ -49,7 +49,7 @@
 		<hook file="managers/hud/HUDPlayerDowned.lua" source_file="lib/managers/hud/HUDPlayerDowned"/>
 		<hook file="managers/hud/HUDPresenter.lua" source_file="lib/managers/hud/HUDPresenter"/>
 		<hook file="managers/hud/HUDSuspicion.lua" source_file="lib/managers/hud/HUDSuspicion"/>
-		<hook file="managers/hud/hudplayercustody.lua" source_file="lib/managers/hud/HUDPlayerCustody"/>
+		<hook file="managers/hud/HUDPlayerCustody.lua" source_file="lib/managers/hud/HUDPlayerCustody"/>
 		<!--<hook file="managers/hud/HUDStageEndScreen.lua" source_file="lib/managers/hud/HUDStageEndScreen"/>-->
 		<hook file="managers/hud/HUDMissionBriefing.lua" source_file="lib/managers/hud/HUDMissionBriefing"/>
 		<hook file="managers/menu/CircleGUIObject.lua" source_file="lib/managers/menu/CircleGUIObject"/>
@@ -116,14 +116,15 @@
 		<hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"/>
 		<hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
 		<hook file="sc/managers/blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
-		<hook file="sc/managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
-		<hook file="sc/managers/menu/SpecializationGuiNew.lua" source_file="lib/managers/menu/specializationguinew"/>
+		<hook file="sc/managers/menu/menucomponentmanager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
+		<hook file="sc/managers/menu/specializationguinew.lua" source_file="lib/managers/menu/specializationguinew"/>
 		<hook file="sc/tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
 		<hook file="sc/units/weapons/weaponlaser.lua" source_file="lib/units/weapons/weaponlaser"/>
 		<hook file="sc/tweak_data/groupaitweakdata.lua" source_file="lib/tweak_data/groupaitweakdata"/>
 		<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
+		<hook file="sc/units/weapons/stickygrenade.lua" source_file="lib/units/weapons/grenades/stickygrenade"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 		<hook file="sc/units/weapons/quicksmokegrenade.lua" source_file="lib/units/weapons/grenades/quicksmokegrenade"/>
@@ -367,7 +368,6 @@
 		<hook file="sc/mutators/new/mutatoronlybravos.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorjungleinferno.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatormoredonutsplus.lua" source_file="lib/mutators/basemutator"/>
-		<!--hook file="sc/mutators/new/mutatorsonicmod.lua" source_file="lib/mutators/basemutator"/>
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>
@@ -459,6 +459,8 @@
 					<option type="bool" default_value="true" name="Info_desperado"/>
 					<option type="bool" default_value="true" name="Info_grinder"/>
 					<option type="bool" default_value="true" name="Info_infiltrator"/>
+					<option type="bool" default_value="true" name="Info_sociopath"/>
+					<option type="bool" default_value="true" name="Info_body_expertise"/>
 					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_messiah"/>
 					<option type="bool" default_value="true" name="Info_overkill_damage_multiplier"/>
@@ -509,6 +511,7 @@
 					<divider name="tod_divider" size="15"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
+					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
 					<divider name="tod_divider" size="15"/>
@@ -523,6 +526,8 @@
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
+				<divider name="tod_divider" size="15"/>
+				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
@@ -578,6 +583,8 @@
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
 	<Package id="packages/miscassets" file="addMISC.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/murkywatermisc" file="packages/murkywater_diff/murkywater_misc.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/omniamisc" file="packages/omnia_diff/omnia_misc.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/gensecmisc" file="packages/america_diff/gensec_misc.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/miscassetsmutators" file="addMISCMutators.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/> 
@@ -617,16 +624,7 @@
     <Package id="packages/overkill_145_sc_murkywater" file="packages/murkywater_diff/overkill_145_sc_murkywater.xml"/>
     <Package id="packages/easy_wish_sc_murkywater" file="packages/murkywater_diff/easy_wish_sc_murkywater.xml"/>
     <Package id="packages/overkill_290_sc_murkywater" file="packages/murkywater_diff/overkill_290_sc_murkywater.xml"/>
-    <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/>	
-	
-	<!-- ///DIFF PACKAGES OMNIA\\\ -->
-    <Package id="packages/normal_sc_omnia" file="packages/omnia_diff/normal_sc_omnia.xml"/>
-    <Package id="packages/hard_sc_omnia" file="packages/omnia_diff/hard_sc_omnia.xml"/>
-    <Package id="packages/overkill_sc_omnia" file="packages/omnia_diff/overkill_sc_omnia.xml"/>
-    <Package id="packages/overkill_145_sc_omnia" file="packages/omnia_diff/overkill_145_sc_omnia.xml"/>
-    <Package id="packages/easy_wish_sc_omnia" file="packages/omnia_diff/easy_wish_sc_omnia.xml"/>
-    <Package id="packages/overkill_290_sc_omnia" file="packages/omnia_diff/overkill_290_sc_omnia.xml"/>
-    <Package id="packages/sm_wish_sc_omnia" file="packages/omnia_diff/sm_wish_sc_omnia.xml"/>
+    <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/>
 
 	<!--///DIFF PACKAGES ZOMBIE\\\-->
     <Package id="packages/normal_sc_zombie" file="packages/zombie_diff/normal_sc_zombie.xml"/>
@@ -681,7 +679,6 @@
 	<Package id="packages/skm_sc_russia" file="packages/russia_diff/skm_sc_russia.xml"/>
 	<Package id="packages/skm_sc_zombie" file="packages/zombie_diff/skm_sc_zombie.xml"/>
 	<Package id="packages/skm_sc_murkywater" file="packages/murkywater_diff/skm_sc_murkywater.xml"/>
-	<Package id="packages/skm_sc_omnia" file="packages/murkywater_diff/skm_sc_omnia.xml"/>
     <Package id="packages/skm_sc_federales" file="packages/federales_diff/skm_sc_federales.xml"/>
 	
 </mod>

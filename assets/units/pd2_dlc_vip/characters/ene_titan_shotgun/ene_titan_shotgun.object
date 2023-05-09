@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>

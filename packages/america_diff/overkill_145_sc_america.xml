@@ -68,7 +68,11 @@
     <unit				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />	
 	<object				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />	
+	<cooked_physics		path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" />
+
+	<!--swat 3-->
+	<unit				path="units/payday2/characters/ene_swat_3/ene_swat_3" load="true"/>
+    <unit				path="units/payday2/characters/ene_swat_3/ene_swat_3_husk" load="true"/>
 	
 	<!--swat heavy 1-->
 	<unit				path="units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc" load="true"/>
@@ -236,12 +240,18 @@
 	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_blue_df" load="true" force="false"/>
 
 
 	<!--Titanshield-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
 
 
@@ -268,6 +278,7 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_red_df" load="true" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
 	

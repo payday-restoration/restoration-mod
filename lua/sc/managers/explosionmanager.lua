@@ -302,6 +302,7 @@ function ExplosionManager:_send_alert(params)
 	})
 end
 
+--[[ --Disabled for now as this stuff does not play nice with the scale-up bulldozers
 function ExplosionManager:detect_and_stun(params)
 	local bodies, splinters = self:_generate_hits(params)
 	local hit_units, results = self:_apply_damage(bodies, splinters, params, "stun_hit", "stun", false)
@@ -326,6 +327,7 @@ function ExplosionManager:detect_and_tase(params)
 
 	return hit_units, splinters, results
 end
+]]
 
 function ExplosionManager:units_to_push(units_to_push, from_pos, range)
 	range = math_min(range, 500)
@@ -450,6 +452,7 @@ function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit, c
 			range = range,
 			damage = damage,
 			attacker_unit = user_unit,
+			ignite_character = ignite_character,
 			curve_pow = curve_pow
 		})
 	end

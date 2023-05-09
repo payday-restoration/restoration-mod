@@ -261,6 +261,25 @@ function CopBase:_chk_spawn_gear()
 	end
 end
 
+Hooks:PostHook(CopBase, "post_init", "cloker_blue_night_vision", function (self)
+	local faction = tweak_data.levels:get_ai_group_type()
+    local lights = self._unit:get_objects_by_type(Idstring("light"))
+	if faction == "russia" then
+	if self._tweak_table == "spooc" or self._tweak_table == "spooc_titan" then
+    for k, v in pairs(lights) do
+        v:set_color(Color(hsv_to_rgb(200, 1, 1)))
+		end
+	end
+end
+	if faction == "federales" then
+	if self._tweak_table == "spooc_titan" then
+    for k, v in pairs(lights) do
+        v:set_color(Color(hsv_to_rgb(200, 1, 1)))
+		end
+	end
+end
+end)
+
 local weapons_map = {
 	--Secret Service Bois--
 	[Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1"):key()] = {"m1911_npc", "mp5"},
@@ -279,8 +298,6 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
-	
-	[Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"):key()] = "aa12_npc",
 
 	--Mendoza Weapon Changes
 	[Idstring("units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
@@ -323,8 +340,8 @@ local weapons_map = {
 	
 	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01"):key()] = {"c45", "mac11", "mp5", "r870", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02"):key()] = {"c45", "mac11", "mp5", "r870", "ak47", "raging_bull"},
-	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_03/ene_thug_indoor_03"):key()] = {"c45", "mac11", "mp5", "mossberg", "ak47", "raging_bull"},
-	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_04/ene_thug_indoor_04"):key()] = {"c45", "mac11", "mp5", "mossberg", "ak47", "raging_bull"},
+	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_03/ene_thug_indoor_03"):key()] = {"c45", "mac11", "mp5", "r870", "ak47", "raging_bull"},
+	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_04/ene_thug_indoor_04"):key()] = {"c45", "mac11", "mp5", "r870", "ak47", "raging_bull"},
 	
 	--Border Crossing Guards
 	[Idstring("units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
@@ -347,25 +364,6 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_2/ene_male_triad_penthouse_2"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
-	
-	["man"] = {
-		[Idstring("units/payday2/characters/ene_fbi_office_1/ene_fbi_office_1"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_office_2/ene_fbi_office_2"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_office_3/ene_fbi_office_3"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_office_4/ene_fbi_office_4"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3"):key()] = {"c45", "raging_bull", "m4", "r870"},
-		[Idstring("units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4"):key()] = {"c45", "raging_bull", "m4", "r870"},
-	},
-	[Idstring("units/payday2/characters/ene_fbi_office_1/ene_fbi_office_1"):key()] = "c45",
-	[Idstring("units/payday2/characters/ene_fbi_office_2/ene_fbi_office_2"):key()] = "c45",
-	[Idstring("units/payday2/characters/ene_fbi_office_3/ene_fbi_office_3"):key()] = "c45",
-	[Idstring("units/payday2/characters/ene_fbi_office_4/ene_fbi_office_4"):key()] = "c45",
-	[Idstring("units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1"):key()] = "raging_bull",
-	[Idstring("units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2"):key()] = "raging_bull",
-	[Idstring("units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3"):key()] = "raging_bull",
-	[Idstring("units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4"):key()] = "raging_bull",
 	
 	--Midland Ranch Guards
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1"):key()] = {"c45", "raging_bull", "mac11", "m4", "r870"},
@@ -391,18 +389,18 @@ local weapons_map = {
 	[Idstring("units/payday2/characters/ene_security_7/ene_security_7"):key()] = "r870",
 	[Idstring("units/payday2/characters/ene_security_8/ene_security_8"):key()] = {"m1911_npc", "mp5"},
 	
-	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"):key()] = {"bravo_rifle", "bravo_shotgun", "bravo_lmg", "deagle_guard"},
-	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"):key()] = {"bravo_rifle", "bravo_shotgun", "bravo_lmg", "deagle_guard"},
-	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"):key()] = {"bravo_rifle", "bravo_shotgun", "bravo_lmg", "deagle_guard"},
+	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"):key()] = {"bravo_rifle", "deagle_guard"},
+	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"):key()] = {"bravo_shotgun", "deagle_guard"},
+	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"):key()] = {"bravo_lmg", "deagle_guard"},
 	
 	["shoutout_raid"] = {
-	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"):key()] = {"scar_npc", "benelli", "lmg_titan"},
+	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"):key()] = "scar_npc",
 	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2"):key()] = "benelli",
-	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"):key()] = {"scar_npc", "benelli", "lmg_titan"},
+	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"):key()] = "lmg_titan",
 	},
-	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"):key()] = {"scar_npc", "benelli", "lmg_titan", "deagle_guard"},
+	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1"):key()] = {"scar_npc", "deagle_guard"},
 	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2"):key()] = {"benelli", "deagle_guard"},
-	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"):key()] = {"scar_npc", "benelli", "lmg_titan", "deagle_guard"},
+	[Idstring("units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"):key()] = {"lmg_titan", "deagle_guard"},
 	
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"):key()] = {"m1911_npc", "mp5"},

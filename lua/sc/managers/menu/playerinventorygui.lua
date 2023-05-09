@@ -193,6 +193,34 @@ function PlayerInventoryGui:_get_melee_weapon_stats(name)
 				value = (skill_min + skill_max) / 2,
 				skill_in_effect = skill_min > 0 or skill_max > 0
 			}
+		elseif stat.name == "attack_speed" then
+			local base = tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)
+			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
+			base_stats[stat.name] = {
+				value = base,
+				min_value = base,
+				max_value = base
+			}
+			skill_stats[stat.name] = {
+				min_value = -skill,
+				max_value = -skill,
+				value = -skill,
+				skill_in_effect = base > 0 and skill > 0
+			}
+		elseif stat.name == "impact_delay" then
+			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)) or 0
+			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
+			base_stats[stat.name] = {
+				value = base,
+				min_value = base,
+				max_value = base
+			}
+			skill_stats[stat.name] = {
+				min_value = -skill,
+				max_value = -skill,
+				value = -skill,
+				skill_in_effect = base > 0 and skill > 0
+			}
 		elseif stat.name == "charge_time" then
 			local base = stats_data.charge_time
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
@@ -650,9 +678,9 @@ function PlayerInventoryGui:_update_info_melee(name)
 			value = value / 100
 		end
 		local format_string = "%0." .. tostring(stat.num_decimals or 0) .. "f"
-		local equip_text = value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(value, stat.round_value)) or format_round(value, stat.round_value)
-		local base_text = base and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(base, stat.round_value)) or format_round(base, stat.round_value)
-		local skill_text = skill_stats[stat.name].value and ((stat.name == "range" or stat.name == "charge_time") and format_round_3(skill_stats[stat.name].value, stat.round_value)) or format_round(skill_stats[stat.name].value, stat.round_value)
+		local equip_text = value and ((stat.name == "range" or stat.name == "charge_time" or stat.name == "attack_speed" or stat.name == "impact_delay") and format_round_3(value, stat.round_value)) or format_round(value, stat.round_value)
+		local base_text = base and ((stat.name == "range" or stat.name == "charge_time" or stat.name == "attack_speed" or stat.name == "impact_delay") and format_round_3(base, stat.round_value)) or format_round(base, stat.round_value)
+		local skill_text = skill_stats[stat.name].value and ((stat.name == "range" or stat.name == "charge_time" or stat.name == "attack_speed" or stat.name == "impact_delay") and format_round_3(skill_stats[stat.name].value, stat.round_value)) or format_round(skill_stats[stat.name].value, stat.round_value)
 		local base_min_text = base_min and format_round(base_min, true)
 		local base_max_text = base_max and format_round(base_max, true)
 		local value_min_text = value_min and format_round(value_min, true)
@@ -786,7 +814,19 @@ function PlayerInventoryGui:_update_stats(name)
 			},
 			{
 				inverse = true,
+				name = "attack_speed",
+				num_decimals = 1,
+				suffix = managers.localization:text("menu_seconds_suffix_short")
+			},
+			{
+				inverse = true,
 				name = "charge_time",
+				num_decimals = 1,
+				suffix = managers.localization:text("menu_seconds_suffix_short")
+			},
+			{
+				inverse = true,
+				name = "impact_delay",
 				num_decimals = 1,
 				suffix = managers.localization:text("menu_seconds_suffix_short")
 			},

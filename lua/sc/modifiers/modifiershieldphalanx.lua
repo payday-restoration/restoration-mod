@@ -10,10 +10,6 @@ ModifierShieldPhalanx.shields = {
 	Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),					
 	Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
-	Idstring("units/pd2_mod_omnia/characters/ene_city_shield/ene_city_shield"),
-	Idstring("units/pd2_mod_omnia/characters/ene_shield_1/ene_shield_1"),	
-	Idstring("units/pd2_mod_omnia/characters/ene_shield_2/ene_shield_2"),
-	Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
 }
 
@@ -47,7 +43,8 @@ end
 function ModifierShieldPhalanx:modify_value(id, value)
 	if id == "GroupAIStateBesiege:SpawningUnit" then
 		local is_shield = table.contains(ModifierShieldPhalanx.shields, value)
-		local is_reapershield = table.contains(ModifierShieldPhalanx.reapershields, value)			
+		local is_reapershield = table.contains(ModifierShieldPhalanx.reapershields, value)		
+		local is_zombieshields = table.contains(ModifierShieldPhalanx.zombieshields, value)
 		if is_shield and math.random(0,100) < 15 then
 			return Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 		elseif is_reapershield and math.random(0,100) < 15 then

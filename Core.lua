@@ -123,6 +123,7 @@ function restoration:Init()
 		mansion_stage1 = restoration.captain_types.spring, --Elmsworth Mansion
 		constantine_gunrunnerclubhouse_lvl = restoration.captain_types.spring, --Constantine Scores (gunrunner)
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
+		bluewave = restoration.captain_types.spring,  --res map bluewave
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
 		jambank = restoration.captain_types.spring, --Botched Bank
@@ -148,7 +149,6 @@ function restoration:Init()
 		ukrainian_job_res = restoration.captain_types.autumn, --Ukrainian Job res edit version
 		hntn = restoration.captain_types.autumn, --harvest and trustee north
 		wetwork = restoration.captain_types.autumn,  --res map package wetworks
-		bluewave = restoration.captain_types.autumn,  --res map bluewave
 		hwu = restoration.captain_types.autumn, --hwUwU (Avalon's Shadow)
 		amsdeal1 = restoration.captain_types.autumn,  --Armsdeal Alleyway
 		Gambling_room = restoration.captain_types.autumn,  --Underground Bargains
@@ -189,23 +189,12 @@ function restoration:Init()
 			
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
-	}]]--
-	
-	--Bravo Response only response, not sure if we really want to use this ATM tbh.
-	restoration.bravo_heists = {
-		--"trai"
-	}	
-	
-	if table.contains(restoration.bravo_heists, job) then
-		restoration.always_bravos = true
-	else
-		restoration.always_bravos = false
-	end
+	}]]--	
 	
 	restoration.global_spawn_multiplier = 1
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
-	restoration.sonic_mod = false
+	restoration.always_bravos = false
 		
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {
@@ -233,6 +222,9 @@ function restoration:Init()
 		"lit2", --California's restoration but Payday 3
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
+		"bluewave", --res map bluewave
+		"ruswl", --Scorched Earth
+		"hunter_departure", --Hunter and Hunted d2
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"constantine_butcher_lvl", --Butcher's Bay
 		"glb", --Golden Lotus Bank 
@@ -289,6 +281,7 @@ function restoration:Init()
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_mobsterclub_lvl", --Aurora (Borealis?!) Club
 		"constantine_clubhouse_lvl", --Smuggler's Den 
+		"crimepunishlvl", --Crime And Punshiment
 		"nft_heist", --EN EF TEE HEIST
 		"branchbank_meth", --Bank Heist: Meth
 		"tj_htsb", --Harvest and Trustee: Southern Branch 
@@ -310,9 +303,11 @@ function restoration:Init()
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
+		"des",	--Henry's Rock	
 		"bph", --Hell's Island
 		"born", --Biker 1		
-		"fex", --Buluc's Mansion	
+		"fex", --Buluc's Mansion
+		"sah", --Shacklethorne
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
@@ -323,7 +318,6 @@ function restoration:Init()
 		"trop", --Tropical Treasure 
 		"constantine_apartment_lvl", --Concrete Jungle 
 		"constantine_harbor_lvl", --Harboring a Grudge
-		"crimepunishlvl", --Crime And Punshiment
 		"amsdeal1", --Armsdeal Alleyway
 		"constantine_smackdown_lvl", --Smackdown
 		"constantine_restaurant_lvl", --Blood in the Water (Constantine Scores)
@@ -334,8 +328,6 @@ function restoration:Init()
 		"hvh", --CKR
 		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
-		"sah", --Shacklethorne	
-		"des",	--Henry's Rock		
 		"help", --Prison Nightmare		
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
@@ -397,6 +389,17 @@ function restoration:Init()
 		"chca",
 		"pent"
 	}
+	--FSB (custom heists)
+	restoration.fsb = {
+		"flatline_lvl",
+		"ahopl",
+		"rusdl",
+		"crimepunishlvl",
+		"hunter_party",
+		"hunter_departure",
+		"hunter_fall",
+		"ruswl"
+	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	
@@ -432,11 +435,13 @@ function restoration:Init()
 	SC._path = self.ModPath
 	SC._data = {}
 
+	--[[
 	if SystemFS:exists("mods/DMCWO/mod.txt") then
 		SC._data.sc_player_weapon_toggle = false
 	else
 		SC._data.sc_player_weapon_toggle = true
 	end
+	--]]
 
 end
 
@@ -607,6 +612,12 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.vm_move = {
+	"vm_vanilla",
+	"vm_drag",
+	"vm_lead",
+	"vm_static",
+}
 restoration.recoil_recover_style = {
 	"rr_off",
 	"rr_per_weapon",
@@ -621,6 +632,13 @@ restoration.ads_transition_style = {
 restoration.weapon_categories = {
 	"base_wpn_cat",
 	"sub_wpn_cat"
+}
+
+restoration.wepnames = {
+	"resmod_res_names",
+	"resmod_no_nicknames",
+	"dmcwo_reelnames",
+	"resmod_no_renames"
 }
 
 -- restoration.environments_choice_shadow_raid = {

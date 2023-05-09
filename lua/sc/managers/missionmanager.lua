@@ -47,7 +47,7 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 					local ponr_timer_balance_mul = data.ponr_player_mul and managers.groupai:state():_get_balancing_multiplier(data.ponr_player_mul) or 1
 					managers.groupai:state():set_point_of_no_return_timer(data.ponr * ponr_timer_balance_mul, 0)
 				end
-
+				
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_ponr_" .. element_id, set_ponr)
 				Hooks:PostHook(element, "client_on_executed", "sh_client_on_executed_ponr_" .. element_id, set_ponr)
 			end
@@ -56,6 +56,25 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, function ()
 					managers.game_play_central:set_flashlights_on(data.flashlight)
 				end)
+			end
+			
+			if data.on_executed then
+				for _, v in pairs(data.on_executed) do
+					local new_element = self:get_element_by_id(v.id)
+					if new_element then
+						local val, i = table.find_value(element._values.on_executed, function (val) return val.id == v.id end)
+						if v.remove then
+							if val then
+								table.remove(element._values.on_executed, i)
+							end
+						elseif val then
+							val.delay = v.delay or 0
+							val.delay_rand = v.delay_rand or 0
+						else
+							table.insert(element._values.on_executed, v)
+						end
+					end
+				end
 			end
 
 			if data.func then

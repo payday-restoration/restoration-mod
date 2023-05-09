@@ -310,7 +310,9 @@
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<model				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli_husk"  load="true"/>
 
 	<!--Zeal-->
 	<model				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>

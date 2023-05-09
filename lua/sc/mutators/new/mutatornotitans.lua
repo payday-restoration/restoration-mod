@@ -47,9 +47,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 				}												
 			},
 			access = access_type_all,
@@ -81,9 +78,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 				}				
 			},
 			access = access_type_all,
@@ -116,13 +110,76 @@ function MutatorNoTitans:setup(data)
 			},
 			fbi = {
 				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
-			},
-			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 			}		
 		},
 		access = access_type_all,
 		special_type = "spooc",
+		is_captain = true
+	}
+	
+	--Have "ZEAL" Cloakers act as Hatman's minions on DS
+	tweak_data.group_ai.unit_categories.HVH_Boss_Spooc = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
+			},
+			russia = {
+				Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
+			}		
+		},
+		access = access_type_all,
+		special_type = "spooc",
+		is_captain = true
+	}
+	
+	--OMNIA Tasers replaces their titan counterparts in Spring's squad on DS
+	tweak_data.group_ai.unit_categories.Taser_Titan = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},					
+			russia = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			federales = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			},
+			fbi = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+			}			
+		},
+		access = access_type_all,
+		special_type = "taser",
 		is_captain = true
 	}
 	
@@ -152,9 +209,6 @@ function MutatorNoTitans:setup(data)
 			},
 			fbi = {
 				Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc")				
-			},
-			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")				
 			}			
 		},
 		access = access_type_all
@@ -187,9 +241,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")					
-				},
-				omnia = {
-					Idstring("units/pd2_mod_sharks/characters/ene_omnia_taser/ene_omnia_taser")					
 				}				
 			},
 			access = access_type_all,
@@ -221,9 +272,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc")					
-				},
-				omnia = {
-					Idstring("units/pd2_mod_sharks/characters/ene_omnia_taser/ene_omnia_taser")					
 				}				
 			},
 			access = access_type_all,
@@ -266,10 +314,6 @@ function MutatorNoTitans:setup(data)
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")							
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3")							
 				}			
 			},
 			access = access_type_all
@@ -308,10 +352,6 @@ function MutatorNoTitans:setup(data)
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")					
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3")							
 				}				
 			},
 			access = access_type_all
@@ -345,9 +385,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")						
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3")						
 				}				
 			},
 			access = access_type_all
@@ -378,9 +415,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3")						
 				}			
 			},
 			access = access_type_all
@@ -422,11 +456,7 @@ function MutatorNoTitans:setup(data)
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"),	
 					Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")										
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_mod_omnia/characters/ene_swat_heavy_1/ene_swat_heavy_1")										
-				}				
+				}			
 			},
 			access = access_type_all
 		}
@@ -456,9 +486,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_fbi_swat_1/ene_fbi_swat_1")										
 				}				
 			},
 			access = access_type_all
@@ -491,9 +518,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_city_swat_1/ene_city_swat_1")										
 				}					
 			},
 			access = access_type_all
@@ -524,9 +548,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city")										
 				}				
 			},
 			access = access_type_all
@@ -567,10 +588,6 @@ function MutatorNoTitans:setup(data)
 			fbi = {
 				Idstring("units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"),
 				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
-			},
-			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/pd2_mod_omnia/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
 			}				
 		},
 		access = access_type_all
@@ -610,10 +627,6 @@ function MutatorNoTitans:setup(data)
 				fbi = {
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")		
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_mod_omnia/characters/ene_city_swat_3/ene_city_swat_3")		
 				}					
 			},
 			access = access_type_all
@@ -652,10 +665,6 @@ function MutatorNoTitans:setup(data)
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3")		
 				}				
 			},
 			access = access_type_all
@@ -688,9 +697,6 @@ function MutatorNoTitans:setup(data)
 			},
 			fbi = {
 				Idstring("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc")
-			},
-			omnia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_shield_1/ene_shield_1")
 			}			
 		},
 		access = access_type_all,
@@ -724,9 +730,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")							
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_city_shield/ene_city_shield")							
 				}				
 			},
 			access = access_type_all,
@@ -758,9 +761,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")							
 				}			
 			},
 			access = access_type_all,
@@ -795,9 +795,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1")								
 				}			
 			},
 			access = access_type_all,
@@ -829,9 +826,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc")								
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1")							
 				}				
 			},
 			access = access_type_all,
@@ -866,10 +860,7 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
-				}				
+				}			
 			},
 			access = access_type_all,
 			special_type = "medic"
@@ -900,9 +891,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
 				}				
 			},
 			access = access_type_all,
@@ -934,9 +922,6 @@ function MutatorNoTitans:setup(data)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
 				}			
 			},
 			access = access_type_all,
@@ -971,9 +956,6 @@ function MutatorNoTitans:setup(data)
 			    },
 			    fbi = {
 			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
-			    },
-			    omnia = {
-			    	Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
 			    }			
 		    },
 		    access = access_type_all,
@@ -1005,9 +987,6 @@ function MutatorNoTitans:setup(data)
 			    },
 			    fbi = {
 			    	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1")
-			    },
-			    omnia = {
-			    	Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
 			    }			
 		    },
 		    access = access_type_all,

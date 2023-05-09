@@ -1,4 +1,30 @@
 return {
+	--Fixed snipers being able to spawn only once
+	[100368] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100369] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100370] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100371] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100372] = {
+		values = {
+            trigger_times = 0
+		}
+	},
 	--Bravo Guards
 	[100676] = {
 		values = {

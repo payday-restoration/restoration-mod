@@ -230,9 +230,8 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer_husk" force="false" load="true"/> 
 	
 
-	<!--Murky Tazer Textures-->	
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_nm" force="false"/>
-	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_df" force="false"/>
+	<!--Murky Tazer Textures-->
+	<df_nm				path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/helmets_heavy_taser_atlas_df" force="false"/>
 
 	<!--Murky Grenadier-->
@@ -364,7 +363,9 @@
 	<object				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" force="false" load="true"/>
-	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk" force="false" load="true"/>	
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_benelli/ene_zeal_swat_heavy_benelli_husk" force="false" load="true"/>
 	
 	<!-- shield -->
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="false" load="true"/>
@@ -388,9 +389,11 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-	<material_config				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-<material_config				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>
 	
 	
 

@@ -1,6 +1,7 @@
 StatisticsManager.special_unit_ids = {
 	"shield",
 	"spooc",
+	"spooc_gangster",
 	"tank",
 	"tank_biker",
 	"tank_hw",
@@ -12,20 +13,25 @@ StatisticsManager.special_unit_ids = {
 	"boom_summers",
 	"taser_summers",
 	"medic_summers",
-	"rboom",
 	"medic",
 	"sniper",
 	"phalanx_minion",
 	"phalanx_vip",
 	"heavy_swat_sniper",
 	"weekend_dmr",
+	"weekend_lmg",
 	"tank_titan",
 	"tank_titan_assault",
+	"enforcer",
+	"enforcer_assault",
 	"spring",
 	"headless_hatman",
 	"summers",
 	"omnia_lpf",
 	"hrt_titan",
+	"fbi_vet",
+	"city_swat_titan",
+	"city_swat_titan_assault",
 	"swat_turret",
 	"biker_boss",
 	"chavez_boss",
@@ -76,13 +82,6 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.boom = {
-			count = 0,
-			head_shots = 0,
-			melee = 0,
-			explosion = 0,
-			tied = 0
-		}
-	self._defaults.killed.rboom = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,
@@ -188,13 +187,6 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.city_swat_titan_assault = {
-			count = 0,
-			head_shots = 0,
-			melee = 0,
-			explosion = 0,
-			tied = 0
-		}
-	self._defaults.killed.skeleton_swat_titan = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,
@@ -392,10 +384,12 @@ function StatisticsManager:_bullet_challenges( data )
 	local success, err = pcall(function()
 		managers.challenges_res:count_up( data.type )
 		managers.challenges_res:count_up( data.name )
-		if data.head_shot then
-			managers.challenges_res:count_up( data.type.."_head_shot" )
-		else
-			managers.challenges_res:count_up( data.type.."_body_shot" )
+		if data.type then
+			if data.head_shot then
+				managers.challenges_res:count_up( data.type.."_head_shot" )
+			else
+				managers.challenges_res:count_up( data.type.."_body_shot" )
+			end
 		end
 		--[[if data.attacker_state then
 			if data.attacker_state == "bleed_out" then

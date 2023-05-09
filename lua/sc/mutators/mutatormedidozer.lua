@@ -74,9 +74,6 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
 				}				
 			},
 			access = access_type_all,
@@ -108,9 +105,6 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
 				}				
 			},
 			access = access_type_all,
@@ -142,9 +136,6 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
-				},
-				omnia = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
 				}			
 			},
 			access = access_type_all,

@@ -175,8 +175,8 @@ function CopActionShoot:init(action_desc, common_data)
 					dmg_mul = self._common_data.char_tweak.melee_weapon_dmg_multiplier
 				end
 
-				if self._common_data.char_tweak.melee_weapon_speed then
-					speed = self._common_data.char_tweak.melee_weapon_speed
+				if self._w_usage_tweak.melee_speed then
+					speed = self._w_usage_tweak.melee_speed
 				end
 
 				local melee_weapon_stats = tweak_data.weapon.npc_melee[melee_weapon]

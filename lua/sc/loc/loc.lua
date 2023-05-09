@@ -153,7 +153,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_res_names"] = "Resmod Names (Default)",
 		["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
 		["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
-		["resmod_no_renames"] = "//NOT IMPLEMENTED YET// Vanilla names (or use your own rename mod)",
+		["resmod_no_renames"] = "Vanilla Names (or use your own rename mod) //NOT IMPLEMENTED, SAME AS DEFAULT IF CHOSEN//",
 
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",

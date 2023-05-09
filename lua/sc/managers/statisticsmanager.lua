@@ -21,6 +21,8 @@ StatisticsManager.special_unit_ids = {
 	"weekend_lmg",
 	"tank_titan",
 	"tank_titan_assault",
+	"enforcer",
+	"enforcer_assault",
 	"spring",
 	"headless_hatman",
 	"summers",

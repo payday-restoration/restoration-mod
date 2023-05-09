@@ -57,6 +57,25 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 					managers.game_play_central:set_flashlights_on(data.flashlight)
 				end)
 			end
+			
+			if data.on_executed then
+				for _, v in pairs(data.on_executed) do
+					local new_element = self:get_element_by_id(v.id)
+					if new_element then
+						local val, i = table.find_value(element._values.on_executed, function (val) return val.id == v.id end)
+						if v.remove then
+							if val then
+								table.remove(element._values.on_executed, i)
+							end
+						elseif val then
+							val.delay = v.delay or 0
+							val.delay_rand = v.delay_rand or 0
+						else
+							table.insert(element._values.on_executed, v)
+						end
+					end
+				end
+			end
 
 			if data.func then
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, data.func)

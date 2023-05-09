@@ -3832,13 +3832,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	self.wpn_fps_ass_amcar.default_blueprint[5] = "wpn_fps_m4_uupg_m_std_vanilla"	
 	
 	--AMCAR Part Table
+	self.wpn_fps_ass_amcar.uses_parts[50] = "wpn_fps_m4_uupg_m_std_vanilla"	
+	self.wpn_fps_ass_amcar.uses_parts[51] = "wpn_fps_upg_m4_m_straight"
+
 	for i, part_id in pairs(self.wpn_fps_ass_amcar.uses_parts) do
 		attachment_list = {
 			"wpn_fps_upg_m4_m_straight_vanilla"
 		}
 		for _, remove_id in ipairs(attachment_list) do
 			if part_id == remove_id then
-				self.wpn_fps_ass_amcar.uses_parts[i] = "wpn_fps_m4_uupg_m_std_vanilla"
+				self.wpn_fps_smg_mp9.uses_parts[i] = "wpn_fps_m4_uupg_m_std_vanilla"
 			end
 		end
 		attachment_list = {
@@ -3846,11 +3849,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 		}
 		for _, remove_id in ipairs(attachment_list) do
 			if part_id == remove_id then
-				self.wpn_fps_ass_amcar.uses_parts[i] = "wpn_fps_upg_m4_m_straight"
+				self.wpn_fps_smg_mp9.uses_parts[i] = "wpn_fps_upg_m4_m_straight"
 			end
 		end
 	end	
-
+	
 	
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_ass_m16_s_fixed")

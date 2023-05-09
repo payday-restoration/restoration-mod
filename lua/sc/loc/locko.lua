@@ -2346,7 +2346,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_electric_desc"] = "대미지: #{skill_color}#400## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n- #{skill_color}#대부분의 적들을 감전시킵니다.## \n\n파편 수류탄도 나름 괜찮지만, 뭔가를 지져야 한다면, 이 어여쁜 작은 친구야말로 실용적으로 고압 피해를 가할 수 있는 짐승 같은 녀석입니다.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "셈텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#4m## \n기폭: #{skill_color}#3초## \n- #{risk}#부착 시 기폭 시간 재설정## \n\n사람을 포함한 대부분의 물체 표면에 들러붙는 투척용 폭발물입니다!",
+		["bm_grenade_sticky_grenade_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#4m## \n기폭: #{skill_color}#2.5초## \n\n사람을 포함한 대부분의 물체 표면에 들러붙는 투척용 폭발물입니다!",
 		--Molotov
 		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): #{heat_warm_color}#10초당 1200까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 60씩## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#10초## \n기폭: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n부서지는 병과 인화성 액체와 불붙은 천으로 이루어져 있습니다. 간단하고, 저렴하지만, 매우 효과적입니다. 이걸로 전부 불태워 버리십시오.",
 		--Incendiary

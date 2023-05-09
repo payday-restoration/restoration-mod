@@ -1,6 +1,7 @@
 StatisticsManager.special_unit_ids = {
 	"shield",
 	"spooc",
+	"spooc_gangster",
 	"tank",
 	"tank_biker",
 	"tank_hw",

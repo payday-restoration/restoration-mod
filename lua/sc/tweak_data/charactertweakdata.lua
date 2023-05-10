@@ -1183,7 +1183,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan_assault.dt_suppress = nil
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 1000,
-		range_close = 400
+		range_close = 400 --unused for now
 	}
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		

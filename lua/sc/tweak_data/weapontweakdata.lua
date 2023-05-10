@@ -15439,6 +15439,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.coltds.panic_suppression_chance = 0.05
 	end
 
+	if self.tommy then --Mira's Thompson
+		self.tommy.use_data.selection_index = 2
+		self.tommy.recategorize = {"heavy_smg"}
+		self.tommy.has_description = true
+		self.tommy.has_description = true
+		self.tommy.fire_mode_data.fire_rate = 0.1
+		self.tommy.AMMO_MAX = 60
+		self.tommy.CLIP_AMMO_MAX = 20
+		self.tommy.BURST_FIRE = false									
+		self.tommy.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.tommy.panic_suppression_chance = 0.05
+		self.tommy.supported = true
+		self.tommy.ads_speed = 0.280
+		self.tommy.damage_falloff = {
+			start_dist = 1600,
+			end_dist = 4000,
+			min_mult = 0.3
+		}
+		self.tommy.stats = {
+			damage = 30,
+			spread = 64,
+			recoil = 85,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 23,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.tommy.stats_modifiers = nil
+	end
+
 	if self.smg45 then --Mira's LWRC/Striker 45
 		self.smg45.recategorize = {"heavy_smg"}
 		self.smg45.damage_type = "machine_gun"

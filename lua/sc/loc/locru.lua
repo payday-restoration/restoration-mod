@@ -419,6 +419,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_lvl_friday"] = "17:00, Торговий центр 'Щит'",
 		["restoration_level_data_skm_nightmare_lvl"] = "Прачечная? Хочешь отмыть грехи?",
 
+         --custom heists
+		["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова", --Flatline
+		["restoration_level_data_ahopl"] = "9:06 PM, Yuri's Private Club", --A House of Pleasure
+		["restoration_level_data_atocl"] = "7:03 PM, Penthouse Party", --A Touch of Class
+		["restoration_level_data_rusdl"] = "10:23 AM, Garnet Group Jewelery Store", --Cold Stones
+		["restoration_level_data_crimepunishlvl"] = "1:19 PM, Correctional Facility Somewhere in Russia", --Crime and Punishment
+		["restoration_level_data_deadcargol"] = "8:36 PM, Sewers Under The Depot", --Deadly Cargo
+		["restoration_level_data_hunter_party"] = "3:56 PM, Nikolai's Penthouse", --Hunter and Hunted d1
+		["restoration_level_data_hunter_departure"] = "10:13 PM, Aleksandr's Private Airport", --Hunger and Hunted d2
+		["restoration_level_data_hunter_fall"] = "1:36 AM, Somewhere Over International Waters", --Hunter and Hunted d3
+		["restoration_level_data_ruswl"] = "11:50 AM, Somewhere in Russia", --Scorched Earth
+		
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
 		["heist_sin_villa_name"] = "SCORE: Villa Vivaldi",
@@ -1191,6 +1203,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_irons"] = "Средняя оптика с дополнительной мушкой.\n#{risk}#Увеличение 1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_rds"] = "Средняя оптика со встроенным прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_rds_mount"] = "Средняя оптика с дополнительными прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_4_vari"] = "Оптика с настраиваемым прицелом.\n#{risk}#Увеличение 4-8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_5"] = "Дальнобойная оптика.\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_5_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_6"] = "Дальнобойная оптика.\n#{risk}#Увеличение 6x.##",
@@ -1209,7 +1222,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_flashlight"] = "Фонарик переключается на #{skill_color}#$BTN_GADGET##",
 		["bm_wp_upg_fl_laser"] = "Лазер переключается на #{skill_color}#$BTN_GADGET##",
 		["bm_wp_upg_fl_dual"] = "Переключение между лазером и фонариком на #{skill_color}#$BTN_GADGET##",
-		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Автоматически помечает## охранников и особых врагов на расстоянии #{skill_color}#40## метров при прицеливании.\n\n#{risk}#Охранники помечаются только в стелсе.##",
+		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Автоматически помечает## охранников, особых и титановых врагов на расстоянии #{skill_color}#40## метров при прицеливании.\n\n#{risk}#Охранники помечаются только в стелсе.##",
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#ВО ВРЕМЯ ПРИЦЕЛИВАНИЯ НЕЛЬЗЯ ВКЛЮЧИТЬ ИЗ-ЗА ВТОРОСТЕПЕННОГО ПРИЦЕЛА.##",
 		
 		["bm_wp_upg_o_angled_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы переключиться между оптикой и угловым прицелом.",
@@ -1523,6 +1536,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--KSP/M249
 		["bm_w_m249"] = "КСП 90",
 		["bm_m249_sc_desc"] = "Перезарядка - та ещё задача, но скорее всего к моменту перезарядки все уже будут мертвы.",
+		--ChainSAW
+		["bm_w_kacchainsaw"] = "Кэмпбелл 74",
+		["bm_kacchainsaw_sc_desc"] = "Roaming frothing madness in a machine gun.\n\n#{skill_color}#Лучше стрелять от бедра.##",
+		["bm_wp_upg_i_kacchainsaw_adverse"] = "Прямой отвод",
 		--RPK
 		["bm_w_rpk"] = "РПК",
 		["bm_rpk_sc_desc"] = "Отличный выбор, если любите точные (и восточные) пулемёты.",
@@ -1577,7 +1594,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_sko12"] = "ВД 12",	
 		["bm_w_x_sko12"] = "Парные ВД 12",	
 		--GSPS
-		["bm_w_m37"] = "ДжиЭс 12",		
+		["bm_w_m37"] = "ДжиЭс 12",	
+		--Supernova
+		["bm_w_supernova"] = "Деймос",
+		["bm_supernova_sc_desc"] = "Дробовик-монстр, способный переключаться между помповым и полуавтоматическим режимами.",		
 		--Loco
 		["bm_w_serbu"] = "Локомотив 12",
 		["bm_serbu_sc_desc"] = "Уменьшенная подпольная версия Рейнфилда 880 для любителей скрытности и сломанных запястий.",
@@ -1737,7 +1757,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_fal_sc_desc"] = "Правая рука свободного мира. Ваш выбор, если нужно пробить тяжёлую броню.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",	
 		--SCAR
 		["bm_w_scar"] = "Игл Хэви",	
-		["bm_scar_sc_desc"] = "Боевая винтовка будущего. Совмещает удобность и урон, она стала популярной у морской пехоты и спецназа.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",			
+		["bm_scar_sc_desc"] = "Боевая винтовка будущего. Совмещает удобность и урон, она стала популярной у морской пехоты и спецназа.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",		
+		["bm_scarl_sc_desc"] = "Боевая винтовка будущего... или нет. Она заслужила популярность на гражданском рынке, а вот армия не увидела нужды в еще одной винтовке под 5.56.",			
 		--G3
 		["bm_w_g3"] = "Гевер 3",
 		["bm_g3_sc_desc"] = "Старшая сестра Компакт-5 и Бреннера-21, не уступает по точности снайперским винтовкам.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",	
@@ -1748,6 +1769,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--VMP
 		["bm_m203_vmp_sc_desc_pc"] = "Копия \"Маленького дружка\" Лица со шрамом.\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
 		["bm_m203_vmp_sc_desc"] = "Копия \"Маленького дружка\" Лица со шрамом.\n\nУдерживайте #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
+		["bm_mesa_vmp_sc_desc_pc"] = "Интересный продукт из украденного груза OMNIA.\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
+		["bm_mesa_vmp_sc_desc"] = "Интересный продукт из украденного груза OMNIA.\n\nУдерживайте #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
 		--ASS VAL
 		["bm_w_asval"] = "Валькирия",
 		["bm_asval_sc_desc"] = "Обычным людям нравятся обычные винтовки, но кто-то хочет чего-то особенного.\n\nОбладает #{skill_color}#встроенным глушителем## и #{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
@@ -1810,6 +1833,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_scout"] = "Пронгхорн",
 		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
 		["bm_wp_scout_m_extended"] = "Магазин дуэлянта",	
+		--AWP
+		["bm_w_awp"] = "Амарок 900",
+		["bm_awp_sc_desc"] = "Винтовка, известная дальнобойностью и точностью. Кто бы мог подумать, что ее собрали три энтузиаста в сарае?\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",	
+		["bm_wp_upg_bazooka_desc"] = "Высокий риск - высокая награда. 'Слонобой' известен правилом 'один выстрел - одно убийство'.\n\n#{skill_color}#Позволяет пробивать титановые щиты.##",
+		["bm_bazooka_sc_desc"] = "Высокий риск - высокая награда. 'Слонобой' известен правилом 'один выстрел - одно убийство'.\n\n#{skill_color}#Может пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
         --WA2000
 		["bm_w_wa2000"] = "Лебензаугер .300",
 		["bm_wa2000_sc_desc"] = "Их существует всего несколько сотен. Винтовка для престижного хитмана.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
@@ -2051,7 +2079,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_swing_arc_1"] = "#{skill_color}#Широкая## арка удара.",
 		["bm_melee_swing_arc_2"] = "#{skill_color}#Очень широкая## арка удара.",
-		["bm_melee_swing_arc_3"] = "#{skill_color}#Большая## арка удара.",
+		["bm_melee_swing_arc_3"] = "#{skill_color}#Чрезвычайно широкая## арка удара.",
 		["bm_melee_swing_arc_4"] = "#{skill_color}#Массивная## арка удара.",
 		["bm_melee_weapon_info"] = "Обычно жертв ограбления бьют прикладом, а не стреляют в них.\n\nСкорость удара зависит от Скрытности оружия.",
 		["bm_melee_katana_info"] = "Свежескованная катана, которая ещё не пробовала кровь - она ждёт своего владельца. Кажется, она его нашла.\n\nПолностью заряженные атаки бьют на 50% быстрее, позволяя быстро повторить атаку.\n\nПри игре за Джиро, убийство Клокера имеет особый визуальный эффект.",
@@ -2188,6 +2216,61 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 			["bm_suit_var_suit_sunny_pink"] = "Гладкие дела",
 			["bm_suit_var_suit_sunny_pink_desc"] = "Мистеру Розовому повезло, что в банде Кабота нет цветного дресс-кода.",
+			
+			["bm_suit_var_suit_sunny_hawaii_black"] = "Отпуск в Майами",
+			["bm_suit_var_suit_sunny_hawaii_black_desc"] = "Вульф купил эту стильную рубашку, когда узнал, что Дантист готовит работу под кодовым названием 'Горячая линия Майами'. Кто же знал, что они не поедут в Майами?",
+			
+			["bm_suit_var_suit_sunny_hawaii_blue"] = "Отпуск в видеоиграх",
+			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Джой относится к типу людей, которые уезжают в отпуск далеко-далеко чтобы просто играть там в видеоигры. 'Ну что за поколение', подумал Даллас, когда ему не удалось увлечь её более консервативными развлечениями, такими как игрой в бильярд, наслаждением видами моря и распитием огромного количества скотча.",
+			
+			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Отпуск в бассейне",
+			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Сидни отличный пловец, и всегда хотела бассейн в убежище. Однако, Альдстоуну и так хватает хлопот, да и плавание - не самое любимое развлечение банды после дела на Мосте Грин.",
+			
+			["bm_suit_var_suit_sunny_hawaii_green"] = "Отпуск в притоне",
+			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Влад отлично проводил время в Мексике. Новые земли - это новые возможности, и он расширял свой бизнес, пока однажды одну из его точек не атаковали. Федеральной полиции настучал Булук, который вскоре станет врагом Влада номер один. К счастью, банда PAYDAY всегда под рукой.",
+						
+			["bm_suit_var_suit_sunny_hawaii_orange"] = "Отпуск в оффшорах",
+			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "Вот и всё, вы справились. Белый дом ограблен, все злодеи побеждены, а ваш оффшор потрачен на крупную вечеринку. И куда двигаться теперь?\nЛадно, ещё парочка ограблений банка не повредит.",
+			
+			["bm_suit_var_suit_sunny_hawaii_pink"] = "Отпуск на танцполе",
+			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "Чейнс нечасто уходит в отпуск, но делает это с размахом. В 2016-ом, видео с его зажигательным танцем утекло в сеть. Ему пришлось просить Бейна стереть его оттуда.",
+			
+			["bm_suit_var_suit_sunny_hawaii_red"] = "Отпуск в архипелаге",
+			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "Джимми любит рассказывать, как его далёкий отпуск прервала армия генно-модифицированных супер-солдат. Звучит как очередной кокаиновый бред, но после ограбления АКАНа... Кто знает?",
+			
+			["bm_suit_var_suit_sunny_payne"] = "Отпуск в нуаре",
+			["bm_suit_var_suit_sunny_payne_desc"] = "Во время отпуска в Сан-Пауле, Вульф захотел купить эту рубашку, но получил её бесплатно в знак благодарности за то что оказал отличную службу городу. \nВульф удивился, ведь он никогда не был там раньше.",
+			
+			["bm_suit_var_suit_sunny_vice"] = "Отпуск в пороках",
+			["bm_suit_var_suit_sunny_vice_desc"] = "Сангреса нельзя заставить носить ничего, кроме ярких рубашек. Пока остальные гении преступного мира собираются в деловых костюмах, Сангрес врывается в потрёпанной рубашке, которую он нашёл на гаражной распродаже в городе порока. Выглядит так, будто ей уже больше сорока лет.",
+			
+			["bm_suit_var_suit_sunny_security_red"] = "Красный телохранитель",
+			["bm_suit_var_suit_sunny_security_red_desc"] = "Элитный телохранитель Эрнеста Сосы. У Эрнеста Сосы было всё. Большой особняк, надёждный бизнес и непробиваемая охрана. Мир принадлежит ему... Но как известно, история движется по спирали.",
+			
+			["bm_suit_var_suit_sunny_security_purple"] = "Фиолетовый телохранитель",
+			["bm_suit_var_suit_sunny_security_purple_desc"] = "Элитный телохранитель Эрнеста Сосы. Постоянное наблюдение через дронов и организованная охрана. В особняк Сосы не пробраться. Вот бы ещё кто-нибудь проверил последнюю партию кокаина...",
+			
+			["bm_suit_var_suit_sunny_soprano"] = "Мафиозные дела",
+			["bm_suit_var_suit_sunny_soprano_desc"] = "Мафия не очень близка банде PAYDAY, но их стиль заслуживает уважения.",
+		    -- Color variations - Prison Suit
+			["bm_suit_var_suit_prison_default"] = "Беглец",
+			["bm_suit_var_suit_prison_default_desc"] = "Роба, которая изменила Хокстона навсегда. Он был уверен, что сжёг это напоминание о жутком прошлом вместе со старым убежищем, но каким-то мистическим образом оно оказалось в новом.",
+			
+			["bm_suit_var_suit_prison_repairman"] = "31-ый",
+			["bm_suit_var_suit_prison_repairman_desc"] = "Знаете, кто расставляет шпионские камеры?\n\nЛичности вы никогда не узнаете, но хотя бы можно оценить его одежду.",
+			
+			["bm_suit_var_suit_prison_comedy"] = "Воришка",
+			["bm_suit_var_suit_prison_comedy_desc"] = "Роба Ченса из банды PAYCHECK. Ему почти удалось сбежать с 225 долларами из кассы магазина Pear, но его взяли под стражу. К счастью, его соратники взяли в заложники ноутбук Pear и сумели обменять его на Чинса.",
+			
+			["bm_suit_var_suit_prison_vaultboy"] = "Выживший",
+			["bm_suit_var_suit_prison_vaultboy_desc"] = "К удивлению, Бейн никогда не верил в теории о скором конце света. Но после того, как Влад попросил украсть ядерные боеголовки, он построил себе подземное убежище. Ну вы знаете. Война.",
+			
+			["bm_suit_var_suit_prison_janitor"] = "Уборщик",
+			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы учёные с Утёса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
+			
+			["bm_suit_var_suit_prison_subject"] = "Подопытный",
+			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборотории АКАНа. Вдруг секрет их сверхъестественных способностей таистя в этой робе?",
+			
 			
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
@@ -2505,7 +2588,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_poison_gas_grenade"] = "Граната Manticore-6",
 		["bm_grenade_poison_gas_grenade_desc"] = "Урон: 900 за 30с \nРадиус: 8м \nДлительность: 12с \nДетонация: 1сек после падения \nВраги могут отравиться каждым облаком только один раз\nЩиты, Гренадёры, Бульдозеры и Капитаны не прерываются.\n\nЭто экспериментальное био-оружие выпускает облако ядовитого газа, которое влияет только на особые гены - у банды полный иммунитет. Жертвы почувствуют сильный кашель, головокружение и рвоту. Опасно для всех, кроме самых бронированных врагов.\n\nОружие военного преступника.",
 		["bm_grenade_sticky_grenade"] = "Граната 'Семтекс'",
-		["bm_grenade_sticky_grenade_desc"] = "Урон: 800 \nРадиус: 4м \nДетонация: Три секунды после прилипания \n\nВзрывчатое вещество, которое прилипает к любым поверхностям, включая людей!",
+		["bm_grenade_sticky_grenade_desc"] = "Урон: 800 \nРадиус: 4м \nДетонация: 2.5с \n\nВзрывчатое вещество, которое прилипает к любым поверхностям, включая людей!",
 		["bm_grenade_xmas_snowball_desc"] = "Урон: 240 \nРадиус: 1м \nВремя восстановления: 25с \nДетонация: При попадании \n\nОпустите их в воду, засуньте в морозильник и вот у вас смертоносное оружие. Легко.",
 		
 
@@ -4343,7 +4426,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   SHINOBI SUBTREE   ]]--
 				--Alert--
 				["menu_jail_workout_sc"] = "Меченный",
-				["menu_jail_workout_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВраги остаются помеченными на #{skill_color}#100%## дольше.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно #{skill_color}#автоматически помечать## охранников и особых врагов в #{skill_color}#40## метрах от вас с помощью прицеливания.\n\n#{risk}#Охранники помечаются только до тревоги.##",
+				["menu_jail_workout_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВраги остаются помеченными на #{skill_color}#100%## дольше.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно #{skill_color}#автоматически помечать## охранников, особых и титановых врагов в #{skill_color}#40## метрах от вас с помощью прицеливания.\n\n#{risk}#Охранники помечаются только до тревоги.##",
 
 				--Sixth Sense--
 				["menu_chameleon_beta_sc"] = "Шестое чувство",
@@ -4380,11 +4463,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Подвижная мишень",
-				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#1.5%## быстрее за каждые #{skill_color}#3## очка скрытности ниже #{skill_color}#35##, до максимальных #{skill_color}#15%## скорости.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#1.5%## быстрее за каждое #{skill_color}#1## очко скрытности ниже #{skill_color}#35##, до максимальных #{skill_color}#15%## скорости.\n\nВаш уворот заполняется на #{skill_color}#12%## за каждую секунду бега и на #{skill_color}#30%## за каждую секунду на зиплайне.",
+				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#1.5%## быстрее за каждые #{skill_color}#3## очка скрытности ниже #{skill_color}#35##, до максимальных #{skill_color}#15%## скорости.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#1.5%## быстрее за каждое #{skill_color}#1## очко скрытности ниже #{skill_color}#35##, до максимальных #{skill_color}#15%## скорости.\n\nВаш уворот заполняется на #{skill_color}#15%## за каждую секунду бега и на #{skill_color}#30%## за каждую секунду на зиплайне.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Заземленный",
-				["menu_insulation_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШоковая атака Тазера больше не заставляет вас стрелять и имеет #{skill_color}#15%## шанс отскочить от вас, оглушая Тазера.\n\n#{risk}#Не отменяет штрафов на точность и урон во время шоковой атаки.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВзаимодействие с вражеским Тазером в течение #{skill_color}#2## секунд после шоковой атаки контр-атакует его, нанося #{skill_color}#50%## урона его здоровью.\n\nЗамедление от и длительность атак Титановых Тазеров уменьшена на #{skill_color}#50%.##",
+				["menu_insulation_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШоковая атака Тазера больше не заставляет вас стрелять и имеет #{skill_color}#15%## шанс отскочить от вас, оглушая Тазера.\n\n#{risk}#Не отменяет штрафов на точность и урон во время шоковой атаки.##\n\nТряска от попаданий по вам уменьшена на #{skill_color}#30%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВзаимодействие с вражеским Тазером в течение #{skill_color}#2## секунд после шоковой атаки контр-атакует его, нанося #{skill_color}#50%## урона его здоровью.\n\nЗамедление от и длительность атак Титановых Тазеров уменьшена на #{skill_color}#50%.##",
 
 				--Sneaky Bastard--
 				["menu_jail_diet_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#1## очко уворота за каждые #{skill_color}#3## очка скрытности ниже #{skill_color}#35## до максимальных #{skill_color}#10## уворота.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#1## очко уворота за каждое #{skill_color}#1## очко скрытности ниже #{skill_color}#35## до максимальных #{skill_color}#10## уворота.\n\nКогда ваша броня ломается, уворот от атаки восстанавливает #{skill_color}#2%## вашего здоровья. Это может произойти только один раз, пока ваша броня снова не сломается.",
@@ -4400,7 +4483,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "Профессионал",
-				["menu_silence_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь на #{skill_color}#5%## быстрее, а ваша задержка после бега уменьшена на #{skill_color}#5%##.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонусы на прицеливание и задержку после бега увеличены ещё на #{skill_color}#10%## быстрее.\n\nУбийство особых врагов огнестрельным оружием предоставляет дополнительную пачку патронов.",
+				["menu_silence_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь на #{skill_color}#5%## быстрее, а ваша задержка после бега уменьшена на #{skill_color}#5%##.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонусы на прицеливание и задержку после бега увеличены ещё на #{skill_color}#10%## быстрее.\n\nУбийство особых и титановых врагов огнестрельным оружием предоставляет дополнительную пачку патронов.",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Удар исподтишка",
@@ -4408,7 +4491,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Чистильщик",
-				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#10%## больше урона по особым врагам.\n\n#{risk}#Не действует на ракетомёты и гранатомёты.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносит ещё #{skill_color}#15%## дополнительного урона по особым врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#12.5%##; убийство сзади заполнят её на #{skill_color}#75%##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и при нанесении урона через время## #{risk}#не считаются.##",
+				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#10%## больше урона по особым и титановым врагам.\n\n#{risk}#Не действует на ракетомёты и гранатомёты.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносите ещё #{skill_color}#15%## дополнительного урона по особым и титановым врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#12.5%##; убийство сзади заполнят её на #{skill_color}#75%##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и при нанесении урона через время## #{risk}#не считаются.##",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Подлый прием",

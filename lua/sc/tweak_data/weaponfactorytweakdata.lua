@@ -2116,6 +2116,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.028, 4.2, -0.149),
 				rotation = Rotation(-0.05, 0, -0.075)
 			}
+			
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_tommy = {
+				translation = Vector3(0.045, -15.2, -4.235)
+			}
+
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.135),
@@ -10830,6 +10835,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1928", "resmod_m1928", function(s
 		value = 3,
 		recoil = -2,
 		concealment = 1
+	}
+	self.parts.wpn_fps_smg_thompson_grip_discrete.custom_stats = {
+		ads_speed_mult = 0.975
 	}
 	
 	--Discrete Stock
@@ -31429,6 +31437,78 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_upg_o_ak_taikrail then --FrenchyAU's Functional Taktika AK Dust Cover
+	end
+
+	if self.parts.wpn_fps_smg_tommy_snd_doi then --Mira's Thompson
+
+		self.parts.wpn_fps_smg_tommy_o_std.stance_mod = {
+			wpn_fps_smg_tommy = {
+				translation = Vector3(0.05, 3, -0.02),
+				rotation = Rotation(0.03, 0, 0)
+			}
+		}
+
+		self.parts.wpn_fps_smg_tommy_ns_cutts.supported = true
+		self.parts.wpn_fps_smg_tommy_ns_cutts.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+
+		self.parts.wpn_fps_smg_tommy_b_m1928a1.supported = true
+		self.parts.wpn_fps_smg_tommy_b_m1928a1.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_smg_tommy_body_m1928a1.supported = true
+		self.parts.wpn_fps_smg_tommy_body_m1928a1.stats = {
+			value = 10,
+			recoil = 2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_smg_tommy_body_m1928a1.custom_stats = nil
+
+		self.parts.wpn_fps_smg_tommy_s_nostock.supported = true
+		self.parts.wpn_fps_smg_tommy_s_nostock.stats = deep_clone(stocks.remove_fixed_stats)
+		self.parts.wpn_fps_smg_tommy_s_nostock.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+		self.parts.wpn_fps_smg_tommy_or_simple.supported = true
+		self.parts.wpn_fps_smg_tommy_or_simple.stats = { value = 0 }
+		self.parts.wpn_fps_smg_tommy_or_simple.custom_stats = nil
+
+		self.parts.wpn_fps_smg_tommy_m_30rnd.supported = true
+		self.parts.wpn_fps_smg_tommy_m_30rnd.stats = { 
+			value = 4, 
+			extra_ammo = 10,
+			concealment = -1,
+			reload = -2
+		}
+		self.parts.wpn_fps_smg_tommy_m_30rnd.custom_stats = { 
+			ads_speed_mult = 1.025
+		}
+
+		self.parts.wpn_fps_smg_tommy_m_quick.supported = true
+		self.parts.wpn_fps_smg_tommy_m_quick.stats = { 
+			value = 1, 
+			spread = -1,
+			concealment = -1,
+			reload = 2
+		}
+
+		self.parts.wpn_fps_smg_tommy_m_30cal.supported = true
+		self.parts.wpn_fps_smg_tommy_m_30cal.stats = { 
+			value = 10, 
+			recoil = -6,
+			concealment = -1,
+			reload = -1
+		}
+		self.parts.wpn_fps_smg_tommy_m_30cal.custom_stats = {
+			ads_speed_mult = 1.025,
+			falloff_start_mult = 1.375,
+			falloff_end_mult = 1,
+			damage_min_mult = 1.66667,
+			hip_mult = 2
+		}
+
+
 	end
 
 --Resmod Custom Weapon stuff

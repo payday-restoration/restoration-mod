@@ -8345,7 +8345,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak74.supported = true
 				self.ak74.ads_speed = 0.260
 				self.ak74.damage_falloff = {
-					start_dist = 3300,
+					start_dist = 3500,
 					end_dist = 5800,
 					min_mult = 0.5
 				}
@@ -15443,8 +15443,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tommy.use_data.selection_index = 2
 		self.tommy.recategorize = {"heavy_smg"}
 		self.tommy.has_description = true
-		self.tommy.has_description = true
-		self.tommy.fire_mode_data.fire_rate = 0.1
+		self.tommy.fire_mode_data.fire_rate = 0.085714285
 		self.tommy.AMMO_MAX = 60
 		self.tommy.CLIP_AMMO_MAX = 20
 		self.tommy.BURST_FIRE = false									
@@ -15472,6 +15471,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.tommy.stats_modifiers = nil
+		self.tommy.timers.reload_exit_empty = 0.9
+		self.tommy.timers.reload_exit_not_empty = 0.8
 	end
 
 	if self.smg45 then --Mira's LWRC/Striker 45

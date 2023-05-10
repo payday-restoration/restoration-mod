@@ -156,7 +156,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_res_names"] = "레스토 모드 이름 (기본)",
 		["resmod_no_nicknames"] = "레스토 모드 이름 (별명 없이)",
 		["dmcwo_reelnames"] = "현실 무기 이름 (DMCWO 포트, 아직 작업 중)",
-		["resmod_no_renames"] = "바닐라 이름(또는 다른 이름 바꾸는 모드) (아직 구현되지 않았습니다)",
+		["resmod_no_renames"] = "바닐라 이름(또는 다른 이름 바꾸는 모드) (아직 구현되지 않았고 선택한 경우 기본값과 동일해집니다.)",
 			
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "조준하는 도중 무기 움직임 없음",

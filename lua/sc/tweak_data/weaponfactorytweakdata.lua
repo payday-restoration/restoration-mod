@@ -18755,8 +18755,38 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 				}
 			}
 		}
-	}	
-		
+	}
+
+	self.wpn_fps_pis_maxim9.override = self.wpn_fps_pis_maxim9.override or {}
+	self.wpn_fps_pis_maxim9.override.wpn_fps_upg_i_autofire = {
+		stats = {
+			spread = -3,
+			recoil = -8
+		},
+		custom_stats = {
+			rof_mult = 1.428571428,
+			falloff_start_mult = 0.5,
+			falloff_end_mult = 0.75
+		},
+		override = {
+			wpn_fps_pis_maxim9_a_tranq = {
+				custom_stats = {
+					bullet_class = "PoisonBulletBase",
+					trail_effect = "_dmc/effects/warsaw_trail",
+					dot_data = { 
+						type = "poison",
+						custom_data = {
+							dot_damage = 1.5,
+							dot_length = 1.1,
+							dot_tick_period = 0.5,
+							hurt_animation_chance = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	for i, part_id in pairs(self.wpn_fps_pis_maxim9.uses_parts) do
 		attachment_list = {
 			"wpn_fps_upg_pis_ns_flash",
@@ -18771,6 +18801,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 	end
 	
 	table.insert(self.wpn_fps_pis_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")	
+	table.insert(self.wpn_fps_pis_maxim9.uses_parts, "wpn_fps_upg_i_autofire")
 	
 	self.wpn_fps_pis_maxim9_npc.uses_parts = deep_clone(self.wpn_fps_pis_maxim9.uses_parts)
 	

@@ -4630,6 +4630,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.maxim9.stats_modifiers = nil
 				self.maxim9.panic_suppression_chance = 0.05	
+				self.maxim9.no_auto_anims = true	
+				self.maxim9.sounds.fire = "max9_fire"
+				self.maxim9.sounds.fire_single = "max9_fire"
+				self.maxim9.sounds.fire_auto = "max9_fire"
 				self.maxim9.timers.reload_exit_empty = 0.5
 				self.maxim9.timers.reload_exit_not_empty = 0.65
 
@@ -15448,7 +15452,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tommy.recategorize = {"heavy_smg"}
 		self.tommy.has_description = true
 		self.tommy.fire_mode_data.fire_rate = 0.085714285
-		self.tommy.AMMO_MAX = 60
+		self.tommy.AMMO_MAX = 120
 		self.tommy.CLIP_AMMO_MAX = 20
 		self.tommy.BURST_FIRE = false									
 		self.tommy.kick = self.stat_info.kick_tables.horizontal_recoil

@@ -6213,6 +6213,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.CLIP_AMMO_MAX = 7
 				self.deagle.AMMO_MAX = 20
 				self.deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.deagle.no_auto_anims = true
 				self.deagle.supported = true
 				self.deagle.ads_speed = 0.280
 				self.deagle.damage_falloff = {
@@ -6238,6 +6239,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.armor_piercing_chance = 0.5
 				self.deagle.can_shoot_through_enemy = true
 				self.deagle.panic_suppression_chance = 0.05
+				self.deagle.sounds.fire = "deagle_fire"
+				self.deagle.sounds.fire_single = "deagle_fire"
+				self.deagle.sounds.fire_auto = "deagle_fire"
 				self.deagle.timers.reload_exit_empty = 0.75
 				self.deagle.timers.reload_exit_not_empty = 0.8
 			

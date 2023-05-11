@@ -2116,7 +2116,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.028, 4.2, -0.149),
 				rotation = Rotation(-0.05, 0, -0.075)
 			}
-			
+
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_tommy = {
 				translation = Vector3(0.045, -15.2, -4.235)
 			}
@@ -5498,11 +5498,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		ads_speed_mult = 1.05
 	}
 	
+	self.wpn_fps_pis_deagle.override = self.wpn_fps_pis_deagle.override or {}
+	self.wpn_fps_pis_deagle.override.wpn_fps_upg_i_autofire = {
+		stats = {
+			spread = -3,
+			recoil = -8
+		},
+		custom_stats = {
+			rof_mult = 2.20588235,
+			falloff_start_mult = 0.2,
+			falloff_end_mult = 0.7
+		}			
+	}
+
+	self.wpn_fps_pis_deagle_npc.override = deep_clone(self.wpn_fps_pis_deagle.override)
+
 	--Deagle Additional Parts	
-	--Extra Barrel Extensions
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	
+	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_i_autofire")
+
 	self.wpn_fps_pis_deagle_npc.uses_parts = deep_clone(self.wpn_fps_pis_deagle.uses_parts)
 
 	self.wpn_fps_pis_deagle_primary = nil
@@ -15913,10 +15927,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_icc", "resmod_icc", function(self)
 	--Custom Milled Barrel
 	self.parts.wpn_fps_pis_deagle_b_modern.pcs = {}
 	self.parts.wpn_fps_pis_deagle_b_modern.supported = true
-	self.parts.wpn_fps_pis_deagle_b_modern.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-	self.parts.wpn_fps_pis_deagle_b_modern.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+	self.parts.wpn_fps_pis_deagle_b_modern.stats = {
+		value = 5,
+		spread = -3,
+		recoil = 6
+	}
+	self.parts.wpn_fps_pis_deagle_b_modern.custom_stats = {
+		falloff_start_mult = 0.775,
+		falloff_end_mult = 0.775
+	}
 	self.parts.wpn_fps_pis_deagle_b_modern.forbids = {}
-	
+
 	--Custom Titanium Frame
 	self.parts.wpn_fps_pis_beretta_body_modern.pcs = {}
 	self.parts.wpn_fps_pis_beretta_body_modern.supported = true
@@ -22084,7 +22105,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		end
 	end
-				
+	
+	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel_ext" then
+				table.insert(self.parts.wpn_fps_pis_deagle_b_modern.forbids, used_part_id)
+			end
+		end
+	end
+
 	--Hide Barrel Extensions for the FMG-9's Exclusive kit
 	for i, part_id in pairs(self.wpn_fps_smg_fmg9.uses_parts) do
 		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "barrel_ext" then

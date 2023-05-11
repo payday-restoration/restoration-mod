@@ -2010,7 +2010,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "블라드는 멕시코에서 즐거운 시간을 보냈습니다. 새로운 땅은 새로운 기회를 제공했고, 그의 마약 사업 중 하나가 갑자기 타격을 입을 때까지는 상당히 빠르게 확장했습니다. 연방은 잠시 동안 블라드의 주요 라이벌이 될 불룩에게 이를 비밀리 알려 주었습니다. 다행인 것은 페이데이 갱단이 항상 대기하고 있다는 것입니다.",
 						
 			["bm_suit_var_suit_sunny_hawaii_orange"] = "해외 여행",
-			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "모든 걸 끝냈고 당신은 해내셨습니다. 백악관 작업이 완료되고 모든 적들은 패배했으며 해외 계좌로 사상 최고의 파티를 열었습니다. 이제 여기에서 어디로 갈까요? \n어, 또 다른 은행 하이스트도 나쁘지는 않을 겁니다.",
+			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "모든 걸 끝냈고 당신은 해내셨습니다. 백악관 작업이 완료되고 모든 나쁜 놈들은 패배했으며 해외 계좌로 사상 최고의 파티를 열었습니다. 이제 여기에서 어디로 갈까요? \n어, 또 다른 은행 하이스트도 나쁘지는 않을 겁니다.",
 			
 			["bm_suit_var_suit_sunny_hawaii_pink"] = "댄싱 여행",
 			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "체인스는 자주 휴가를 가지 않지만 그럴 때면 온 힘을 다합니다. 2016년쯤 휴가를 떠난 그의 날렵한 안무 영상이 화제를 모았습니다. 그는 그 영상을 인터넷에서 영원히 지우기 위해 베인에게 연락해야 했습니다.",
@@ -3653,8 +3653,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_minidozers_longdesc"] = "블랙 도저가 생성될 때마다 50%의 확률로 M1014를 들고 있는 불도저로 교체됩니다.\n\n참고: 메딕 도저 뮤테이터도 활성화된 경우 반자동 산탄총 불도저는 33.3%의 확률로 블랙 도저를 교체합니다.",
 
 		["mutator_fatroll"] = "팻 롤",
-		["mutator_fatroll_desc"] = "피해 유예시간을 비활성화 시킵니다.",
-		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원에 대한 피해 유예가 0으로 설정되어 피해가 들어오는 지연이 없어집니다.",
+		["menu_mutator_fatroll"] = "유예 시간 (초 단위)",
+		["mutator_fatroll_desc"] = "피해 유예 시간 값(초 단위)을 설정합니다.",
+		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원의 피해 유예를 다른 값으로 설정합니다. 피해 인스턴스가 특정 지연이 있음을 의미합니다. 최소값은 0초이며, 최대값은 0.25초입니다.",
 		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",

@@ -598,6 +598,7 @@ function PlayerDamage:damage_bullet(attack_data)
 				}
 				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
 				self._unit:movement():current_state()._spread_stun_t = 0.5
+				managers.hud:activate_effect_screen(0.5, {1.0, 0.35, 0.0})
 				--[[
 				local hor_var = {
 					1,
@@ -618,6 +619,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					}
 					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
 					self._unit:movement():current_state()._d_scope_t = 0.5
+					managers.hud:activate_effect_screen(0.8, {0.3, 0.3, 0.3})
 					--[[
 					local hor_var = {
 						1,

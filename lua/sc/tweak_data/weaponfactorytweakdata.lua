@@ -7418,12 +7418,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 				supported = true,
 				stats = {
 					value = 5,
-					concealment = 3,
+					concealment = 2,
 					reload = 4,
 					extra_ammo = -30,
 				},
 				custom_stats = {
-					ads_speed_mult = 0.925
+					ads_speed_mult = 0.95
 				}
 		},
 		wpn_fps_ass_74_body_upperreceiver = {
@@ -21137,9 +21137,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 			recoil = -6
 		},
 		custom_stats = {
-			rof_mult = 1.384615,
-			falloff_start_mult = 0.2,
-			falloff_end_mult = 0.75
+			rof_mult = 1.53846153,
+			falloff_start_mult = 0.19230769,
+			falloff_end_mult = 0.78571428
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -21436,11 +21436,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		custom_stats = {
-			m16_burst = true
+			m16_burst = true,
+			falloff_start_mult = 1,
+			falloff_end_mult = 1
 		},
 		stats = {
 			value = 5,
-			spread = 1
+			spread = 1,
+			recoil = 2
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -21512,10 +21515,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			}
 		},
-		adds = {
-			"fake_a_os"
-		}
+		adds = {}
 	}
+
 	self.parts.wpn_fps_m4_uupg_fg_rail_m4a1 = {
 		pcs = {},
 		type = "exclusive_set",
@@ -21524,13 +21526,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		a_obj = "a_fg",
 		has_description = true,
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_m4_uupg_fg_rail_m4a1",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		unit = "units/payday2/weapons/wpn_fps_ass_aug_pts/wpn_fps_aug_b_medium",
+		third_unit = "units/payday2/weapons/wpn_third_ass_aug_pts/wpn_third_ass_aug_b_medium",
 		supported = true,
 		stats = {
 			value = 0
 		},
-		override = {},
+		visibility = {
+			{
+				objects = {
+					g_medium = false,
+				}
+			}
+		},
+		adds = {
+			"wpn_fps_ass_m4_ns_frontsight"
+		},
+		override = {
+			wpn_fps_ass_m4_ns_frontsight = {
+				parent = "exclusive_set",
+				a_obj = "a_ns"
+			}
+		},
 		forbids = {
 			"wpn_fps_addon_ris",
 			"wpn_fps_upg_m4_o_victor"
@@ -30706,11 +30723,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 2,
 			extra_ammo = -70,
 			spread = -1,
-			concealment = 7,
-			reload = 7
+			concealment = 4,
+			reload = 5
 		}
 		self.parts.wpn_fps_ass_tecci_m_jungle.custom_stats = {
-			ads_speed_mult = 0.85
+			ads_speed_mult = 0.9
 		}
 
 		self.parts.wpn_fps_ass_tecci_m_jungle_m4.supported = true

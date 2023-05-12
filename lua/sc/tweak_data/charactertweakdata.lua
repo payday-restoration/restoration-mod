@@ -1143,7 +1143,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
 	self.city_swat_titan.dt_suppress = {
-		range = 1500
+		range = 1600
 	}
 	self.city_swat_titan.speech_prefix_p1 = "null"
 	self.city_swat_titan.speech_prefix_p2 = nil
@@ -1182,8 +1182,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan_assault.marshal_logic = nil
 	self.city_swat_titan_assault.dt_suppress = nil
 	self.city_swat_titan_assault.dt_sgunner = {
-		range = 1000,
-		range_close = 400 --unused for now
+		range = 800
 	}
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		
@@ -17670,8 +17669,14 @@ function CharacterTweakData:_set_overkill_290()
 	--Titan SWAT stun resistance
 	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan.use_animation_on_fire_damage = false
+	self.city_swat_titan.dt_suppress = {
+		range = 1800
+	}
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
+	self.city_swat_titan_assault.dt_sgunner = {
+		range = 1000
+	}
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
@@ -17810,8 +17815,14 @@ function CharacterTweakData:_set_sm_wish()
 	--Titan SWAT stun resistance
 	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan.use_animation_on_fire_damage = false
+	self.city_swat_titan.dt_suppress = {
+		range = 2000
+	}
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
+	self.city_swat_titan_assault.dt_sgunner = {
+		range = 1200
+	}
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	

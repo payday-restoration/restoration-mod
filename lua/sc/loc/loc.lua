@@ -178,7 +178,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingWindowTitleID"] = "Buffer Fire Input Sensitivity",
 		["RestorationModQueuedShootingWindowDescID"] = "Determines the window of time for your fire input to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
 		["RestorationModQueuedShootingExcludeTitleID"] = "Buffer Inputs Fire Rate Limit",
-		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the firerate (RPM) set by this option.",
+		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",

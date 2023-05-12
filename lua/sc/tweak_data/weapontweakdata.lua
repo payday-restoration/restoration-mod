@@ -87,12 +87,12 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 40,
+		mag_capacity = 50,
 		fire_rate = 0.06666666667,
 		damage = 4.8
 	},
 	assault_rifle = {
-		mag_capacity = 25,
+		mag_capacity = 30,
 		fire_rate = 0.1,
 		damage = 6.0
 	},
@@ -3613,7 +3613,7 @@ local sms_preset = {
 	lmg_40 = 0.92,
 	lmg_48 = 0.88,
 	lmg_60 = 0.8,
-	lmg_90 = 0.75,
+	lmg_90 = 0.76,
 	lmg_120 = 0.7,
 	mini_40 = 0.8,
 	mini_60 = 0.75,
@@ -7446,17 +7446,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"lmg",
 				"smg"
 			}
-			self.tecci.kick = self.stat_info.kick_tables.right_recoil
+			self.tecci.kick = self.stat_info.kick_tables.even_recoil
 			self.tecci.CLIP_AMMO_MAX = 100
 			self.tecci.AMMO_MAX = 360
 			self.tecci.fire_mode_data.fire_rate = 0.0705882
 			self.tecci.CAN_TOGGLE_FIREMODE = true
 			self.tecci.panic_suppression_chance = 0.05
 			self.tecci.supported = true
-			self.tecci.ads_speed = 0.420
+			self.tecci.ads_speed = 0.400
 			self.tecci.damage_falloff = {
-				start_dist = 2100,
-				end_dist = 6300,
+				start_dist = 1800,
+				end_dist = 6000,
 				min_mult = 0.5
 			}
 			self.tecci.stats = {
@@ -7479,6 +7479,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				0.6
 			}
 			self.tecci.stats_modifiers = nil
+			self.tecci.reload_speed_multiplier = 1.02
 			self.tecci.timers.reload_exit_empty = 0.9
 			self.tecci.timers.reload_exit_not_empty = 1.0
 
@@ -7536,7 +7537,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw.fire_mode_data.fire_rate = 0.0923076
 			self.kacchainsaw.kick = self.stat_info.kick_tables.even_recoil
 			self.kacchainsaw.supported = true
-			self.kacchainsaw.ads_speed = 0.480
+			self.kacchainsaw.ads_speed = 0.460
 			self.kacchainsaw.damage_falloff = {
 				start_dist = 2600,
 				end_dist = 7000,
@@ -7558,8 +7559,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.kacchainsaw.stats_modifiers = nil
 			self.kacchainsaw.panic_suppression_chance = 0.05
+			self.kacchainsaw.reload_speed_multiplier = 0.87
 			self.kacchainsaw.timers.equip = 2
-			self.kacchainsaw.reload_speed_multiplier = 0.85
 			self.kacchainsaw.timers.reload_not_empty = 4.92
 			self.kacchainsaw.timers.reload_exit_not_empty = 1.1
 			self.kacchainsaw.timers.reload_empty = 6.4
@@ -7632,7 +7633,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.fire_mode_data.fire_rate = 0.1
 			self.rpk.CAN_TOGGLE_FIREMODE = true
 			self.rpk.BURST_FIRE = false
-			self.rpk.kick = self.stat_info.kick_tables.right_kick
+			self.rpk.kick = self.stat_info.kick_tables.moderate_kick
 			self.rpk.supported = true
 			self.rpk.ads_speed = 0.520
 			self.rpk.damage_falloff = {
@@ -7736,7 +7737,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.supported = true
 				self.m60.ads_speed = 0.640
 				self.m60.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1600,
 					end_dist = 6000,
 					min_mult = 0.4
 				}
@@ -7782,8 +7783,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.supported = true
 				self.par.ads_speed = 0.620
 				self.par.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 4500,
+					start_dist = 1000,
+					end_dist = 4800,
 					min_mult = 0.4
 				}
 				self.par.stats = {

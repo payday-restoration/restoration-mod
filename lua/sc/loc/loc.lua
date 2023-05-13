@@ -4442,9 +4442,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Sweet liquor eases the pain--
 		["menu_deck19_1_desc_sc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n##30%## of the damage taken to your health is applied over ##8## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time.\n\nThe flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##",
-		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##2## seconds for each enemy you kill.",
+		["menu_deck19_3_desc_sc"] = "The cooldown of your flask is reduced by ##2.5## seconds for each enemy you kill.",
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any remaining damage-over-time will be negated.\n\nYou answer pagers ##25%## faster.",
-		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask will be reduced by ##4## seconds for each enemy you kill.",
+		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask is reduced by ##5## seconds for each enemy you kill.",
 		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--

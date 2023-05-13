@@ -1566,10 +1566,9 @@ local crew_wep_preset = {
 		self.hk23_sc_npc.DAMAGE = 2
 		self.hk23_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.hk23_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-		self.hk23_sc_npc.auto.fire_rate = 0.08
 		self.hk23_sc_npc.CLIP_AMMO_MAX = 50
 		self.hk23_sc_npc.NR_CLIPS_MAX = 5
-		self.hk23_sc_npc.auto.fire_rate = 0.075
+		self.hk23_sc_npc.auto.fire_rate = 0.085714285
 		self.hk23_sc_npc.hold = "rifle"
 		self.hk23_sc_npc.alert_size = 2500
 		self.hk23_sc_npc.suppression = 2.4
@@ -1585,7 +1584,7 @@ local crew_wep_preset = {
 		
 		--Reaper Bravo LMG--
 		self.rpk74_bravo_npc = deep_clone(self.m249_bravo_npc)	
-		self.rpk74_bravo_npc.sounds.prefix = "rpk_npc"		
+		self.rpk74_bravo_npc.sounds.prefix = "rpk_npc"
 		
 		--Murky Bravo M60
 		self.m60_bravo_npc = deep_clone(self.hk23_sc_npc)

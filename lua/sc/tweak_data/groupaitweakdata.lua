@@ -7928,18 +7928,18 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "headless_hatman"
 	}	
-	--Headless Titandozers that spawn with boss
+	--Headless Titandozers that spawn with boss on Death Wish
 	self.unit_categories.HVH_Boss_Headless = {
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
-			zombie = {
-				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-			},					
 			russia = {
 				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
+			zombie = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},					
 			murkywater = {
 				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
@@ -7960,18 +7960,83 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank",
 		is_captain = true
 	}
-	--Ghost Titancloakers that spawn with boss
+	--Headless White Titandozers that spawn with boss on Death Sentence
+	self.unit_categories.HVH_Boss_Headless_White = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			russia = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			zombie = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},					
+			murkywater = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			federales = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			fbi = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			}			
+		},
+		access = access_type_all,
+		special_type = "tank",
+		is_captain = true
+	}
+	
+	--Cloakers that spawn with boss on Death Wish
+	self.unit_categories.HVH_Boss_Spooc_Normal = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+			},					
+			russia = {
+				Idstring("units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1")
+			},
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+			},
+			fbi = {
+				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+			}		
+		},
+		access = access_type_all,
+		special_type = "spooc",
+		is_captain = true
+	}
+	--Ghost Titancloakers that spawn with boss on Death Sentence
 	self.unit_categories.HVH_Boss_Spooc = {
 		unit_types = {
 			america = {
 				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
-			},					
 			russia = {
 				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},					
 			murkywater = {
 				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 			},
@@ -7991,8 +8056,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "spooc",
 		is_captain = true
-	}	
-		
+	}
 	--mutator unit categories
 	--BBF
 	if difficulty_index <= 4 then
@@ -14845,7 +14909,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = {3, 3},
 			spawn = {
@@ -14866,8 +14930,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}
 			}
-		}				
-	else
+		}
+	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = {5, 5},
 			spawn = {
@@ -14888,13 +14952,43 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},
 				{
+					unit = "HVH_Boss_Spooc_Normal",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	else
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {5, 5},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless_White",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},
+				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
-				},					
+				}					
 			}
 		}			
 	end	
@@ -17693,7 +17787,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "HVH_Boss_Headless",
+					unit = "HVH_Boss_Headless_White",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,

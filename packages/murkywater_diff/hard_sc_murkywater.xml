@@ -360,7 +360,8 @@
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/swat_heads_atlas_df" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/swat_helmets_atlas_df" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/swat_heavy_df" force="false"/>	
-	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" />
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" 
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/helmets_atlas_murky_df" />
 	
 	<!-- titans	 -->	
 	<!--Titan Shotgunner-->	

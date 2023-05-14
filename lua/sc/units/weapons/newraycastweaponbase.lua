@@ -562,6 +562,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._burst_rounds_remaining = 0
 		self._has_auto = not self._locked_fire_mode and (self:can_toggle_firemode() or self:weapon_tweak_data().FIRE_MODE == "auto")
+		self._auto_fire_range_multiplier = self:weapon_tweak_data().AUTO_FIRE_RANGE_MULTIPLIER
 		
 		self._has_burst_fire = (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
 		
@@ -1431,6 +1432,7 @@ end
 
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only)
 	local is_rapidfire = self._burst_fire_range_multiplier and self:in_burst_mode()
+	local is_fullauto = self._auto_fire_range_multiplier and not self:is_single_shot()
 	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
 	if not self:in_burst_mode() and not is_rapidfire and ((self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or 
 		(managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head)) then
@@ -1466,9 +1468,13 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 			falloff_end = falloff_end * 1.3
 		end
 	end
+
 	if is_rapidfire then
 		falloff_start = falloff_start * self._burst_fire_range_multiplier
 		falloff_end = falloff_end * self._burst_fire_range_multiplier
+	elseif is_fullauto then
+		falloff_start = falloff_start * self._auto_fire_range_multiplier
+		falloff_end = falloff_end * self._auto_fire_range_multiplier
 	end
 	
 	if self._alt_fire_active and self._alt_fire_data and self._alt_fire_data.range_mul then

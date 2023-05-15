@@ -15187,6 +15187,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hx25.kick = self.stat_info.kick_tables.right_kick
 		self.hx25.panic_suppression_chance = 0.05
 		self.hx25.ignore_rays = true --Flag to ignore the default explosive rounds getting hit with a min-damage mult in the menus
+		self.hx25.alt_shotgunraycast = true
 		self.hx25.stats_modifiers = {damage = 10}
 		self.hx25.reload_speed_multiplier = 1.25
 		self.hx25.timers.reload_not_empty = 2.1

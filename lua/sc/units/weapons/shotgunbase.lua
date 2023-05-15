@@ -67,6 +67,7 @@ local mvec_to = Vector3()
 local mvec_direction = Vector3()
 local mvec_spread_direction = Vector3()
 
+
 function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data, ammo_usage)
 	
 	self._volley_recoil_mul = nil
@@ -95,6 +96,28 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 		end
 
 		return result
+	elseif self:weapon_tweak_data().alt_shotgunraycast then
+			local rays = self._rays or 1
+			dmg_mul = dmg_mul / rays
+			local result = {
+				rays = {}
+			}
+	
+			for i = 1, rays do
+				local raycast_res = ShotgunBase.super.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+	
+				if raycast_res.enemies_in_cone then
+					result.enemies_in_cone = result.enemies_in_cone or {}
+	
+					table.map_append(result.enemies_in_cone, raycast_res.enemies_in_cone)
+				end
+	
+				result.hit_enemy = result.hit_enemy or raycast_res.hit_enemy
+	
+				table.list_append(result.rays, raycast_res.rays or {})
+			end
+	
+			return result
 
 	elseif self:weapon_tweak_data().use_newraycast_fire then
 		return ShotgunBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)

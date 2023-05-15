@@ -16811,6 +16811,75 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.f500.timers.shotgun_reload_exit_not_empty = 0.3
 		self.f500.timers.shotgun_reload_exit_empty = 0.7
 	end	
+
+	if self.nothing then --Silent Enforcer's No Wep
+		self.nothing.recategorize = { "wpn_special" }
+		self.nothing.fire_mode_data.fire_rate = 0.8695652
+		self.nothing.CLIP_AMMO_MAX = 0
+		self.nothing.AMMO_MAX = 0
+		self.nothing.supported = true
+		self.nothing.ads_speed = 0.1
+		self.nothing.damage_falloff = {
+			start_dist = 0.1,
+			end_dist = 0,
+			min_mult = 0
+		}
+		self.nothing.stats = {
+			damage = 1,
+			spread = 1,
+			recoil = 101,
+			spread_moving = 1,
+			zoom = 1,
+			concealment = 32,
+			suppression = 1,
+			alert_size = 1,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.nothing.stats_modifiers = nil
+		self.nothing.timers = {
+			reload_not_empty = 0,
+			reload_empty = 0,
+			unequip = 0.001,
+			equip = 0.001
+		}
+	end	
+	if self.nothing2 then
+		self.nothing2.recategorize = { "wpn_special" }
+		self.nothing2.fire_mode_data.fire_rate = 0.8695652
+		self.nothing2.CLIP_AMMO_MAX = 0
+		self.nothing2.AMMO_MAX = 0
+		self.nothing2.supported = true
+		self.nothing2.ads_speed = 0.1
+		self.nothing2.damage_falloff = {
+			start_dist = 0.1,
+			end_dist = 0,
+			min_mult = 0
+		}
+		self.nothing2.stats = {
+			damage = 1,
+			spread = 1,
+			recoil = 101,
+			spread_moving = 1,
+			zoom = 1,
+			concealment = 32,
+			suppression = 1,
+			alert_size = 1,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.nothing2.stats_modifiers = nil
+		self.nothing2.timers = {
+			reload_not_empty = 0,
+			reload_empty = 0,
+			unequip = 0.001,
+			equip = 0.001
+		}
+	end	
 	
 	if self.mg34 then -- Silent Enforcer's MG34
 		self.mg34.recategorize = { "heavy_mg" }

@@ -28,19 +28,15 @@ end
 
 return {
 	--Pro Job PONR 
-	[105367] = {
+	[105356] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	},
-	[105368] = {
+	[105370] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	},
-	[105369] = {
-		ponr = ponr_value,
-		enabled = ponr_toggle
-	},
-	[105357] = {
+	[105359] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	}

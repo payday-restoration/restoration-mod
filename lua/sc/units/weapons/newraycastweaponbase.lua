@@ -565,7 +565,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._auto_fire_range_multiplier = self:weapon_tweak_data().AUTO_FIRE_RANGE_MULTIPLIER
 		
 		self._has_burst_fire = (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
-		
+
 		--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
@@ -577,7 +577,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_fire_ads_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
 		self._burst_fire_range_multiplier = self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
-		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.05) or 0.1
+		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.05) or 0.09
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
 		if self._lock_burst then
 			self:_set_burst_mode(true, true)
@@ -595,7 +595,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	
-	self._hs_mult = self:weapon_tweak_data().hs_mult
+	self._hs_mult = self._hs_mult or self:weapon_tweak_data().hs_mult
 
 	self._shots_fired = 0
 
@@ -659,7 +659,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.funco_chan then
 				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_DELAY = 0.08
+				self:weapon_tweak_data().BURST_DELAY = 0.06
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end	
 			if stats.s7_flexfire then
@@ -737,6 +737,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
 				self:weapon_tweak_data().FIRE_MODE = "single"	
 				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().BURST_DELAY = 0.07
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = burst_mult
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
@@ -761,6 +762,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 			if stats.beer_burst then
 				self:weapon_tweak_data().BURST_FIRE = false
+				self:weapon_tweak_data().BURST_FIRE_DEFAULT = nil
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = nil				
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
 				self:weapon_tweak_data().FIRE_MODE = "auto"	
@@ -776,6 +778,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				end
 			end
 	
+			if stats.hs_mult then		
+				self._hs_mult = (self._hs_mult or 1) * stats.hs_mult
+			end
 			if stats.duration_falloff_start_mult then		
 				self._duration_falloff_start_mult = self._duration_falloff_start_mult * stats.duration_falloff_start_mult
 			end
@@ -939,7 +944,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	end
 
 	local ignore_tracer = nil
-    if self._trail_effect_table then
+	if self._trail_effect_table then
 		if self._starwars == true then
 			self._use_shell_ejection_effect = nil
 			ignore_tracer = true
@@ -979,7 +984,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
 			end
 		end
-    end	
+	end	
+
+	if self._has_burst_fire and self:weapon_tweak_data().BURST_FIRE_DEFAULT then 
+		self:_set_burst_mode(true, true)
+	end
 
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
 	self._fire_rate_multiplier = self._fire_rate_multiplier * self._rof_mult

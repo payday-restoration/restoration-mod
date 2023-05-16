@@ -4412,13 +4412,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.beer.desc_id = "bm_beer_sc_desc"				
 				self.beer.use_data.selection_index = 2
 				self.beer.BURST_FIRE = 3
-				self.beer.BURST_FIRE_RATE_MULTIPLIER = nil
+				self.beer.BURST_FIRE_DEFAULT = true
+				self.beer.BURST_FIRE_RATE_MULTIPLIER = 1.7647058823
 				self.beer.ADAPTIVE_BURST_SIZE = false		
 				self.beer.CAN_TOGGLE_FIREMODE = false
 				self.beer.FIRE_MODE = "single"	
 				self.beer.AMMO_MAX = 150
 				self.beer.CLIP_AMMO_MAX = 15
-				self.beer.fire_mode_data.fire_rate = 0.05454545454
+				self.beer.fire_mode_data.fire_rate = 0.0882352
 				self.beer.kick = self.stat_info.kick_tables.even_recoil
 				self.beer.shake = {
 					fire_multiplier = 0.65,
@@ -8036,6 +8037,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.fire_mode_data.fire_rate = 0.08571428571
 				self.s552.auto.fire_rate = 0.08571428571
 				self.s552.BURST_FIRE = 3
+				self.s552.BURST_DELAY = 0.06
 				self.s552.ADAPTIVE_BURST_SIZE = false															
 				self.s552.kick = self.stat_info.kick_tables.moderate_kick
 				self.s552.AMMO_MAX = 180
@@ -10058,7 +10060,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.desc_id = "bm_m95_sc_desc"
 			self.m95.AMMO_MAX = 10
 			self.m95.fire_mode_data.fire_rate = 1.5
-			self.m95.fire_rate_multiplier = 1
+			self.m95.fire_rate_multiplier = 1.05
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
 			self.m95.ads_speed = 0.560
@@ -15119,7 +15121,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.tactical_reload = 1
 		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.m200.supported = true
-		self.m200.ads_speed = 0.640
+		self.m200.ads_speed = 0.600
 		self.m200.damage_falloff = {
 			start_dist = 4000,
 			end_dist = 15000,
@@ -15131,7 +15133,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 15,
 			spread_moving = 8,
 			zoom = 1,
-			concealment = 13,
+			concealment = 14,
 			suppression = 4,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -15140,7 +15142,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.m200.fire_mode_data.fire_rate = 1.090909
-		self.m200.fire_rate_multiplier = 0.818181
+		self.m200.fire_rate_multiplier = 0.8
 		self.m200.timers = {
 			reload_not_empty = 2.7,
 			reload_empty = 4.3,
@@ -16052,10 +16054,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m4_usasoc.panic_suppression_chance = 0.05
 		self.m4_usasoc.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.m4_usasoc.reload_speed_multiplier = 1.08
-		self.m4_usasoc.timers.reload_exit_empty = 0.35
-		self.m4_usasoc.timers.reload_empty = 5.37
-		self.m4_usasoc.timers.reload_exit_not_empty = 0.82
-		self.m4_usasoc.timers.reload_not_empty = 3.38
+		self.m4_usasoc.timers.reload_exit_empty = 0.85
+		self.m4_usasoc.timers.reload_empty = 3.05
+		self.m4_usasoc.timers.reload_exit_not_empty = 1.15
+		self.m4_usasoc.timers.reload_not_empty = 2.4
 	end
 
 	--RJC9000 and PlayBONK's MW2022 AKs

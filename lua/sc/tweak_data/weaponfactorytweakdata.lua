@@ -20948,7 +20948,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.keep_damage = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.stats = {
 		total_ammo_mod = -102,
-		damage = 90,
+		damage = 30,
 		spread = 1,
 		value = 10,
 		recoil = -6,
@@ -20956,21 +20956,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.custom_stats = {
 		alt_desc = "bm_bazooka_sc_desc",
+		hs_mult = 1.5,
 		ads_speed_mult = 1.2105263,
 		hip_mult = 10,
 		ads_moving_mult = 50,
-		alt_ammo_pickup_max_mul = 0.35,
-		alt_ammo_pickup_min_mul = 0.35,
-		ammo_pickup_max_mul = 0.35,
-		ammo_pickup_min_mul = 0.35,
+		alt_ammo_pickup_max_mul = 0.3,
+		alt_ammo_pickup_min_mul = 0.3,
+		ammo_pickup_max_mul = 0.3,
+		ammo_pickup_min_mul = 0.3,
 		rof_mult = 0.65079365,
 		can_shoot_through_enemy = true,
 		can_shoot_through_shield = true,
 		can_shoot_through_wall = true,
 		can_shoot_through_titan_shield = true,
-		falloff_start_mult = 0.6346153,
-		falloff_end_mult = 0.7142857,
-		damage_min_mult = 0.66667
+		falloff_start_mult = 0.5,
+		falloff_end_mult = 0.9375,
+		damage_min_mult = 1
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {
 		"wpn_fps_snp_awp_b_long",
@@ -21588,7 +21589,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		custom_stats = {
-			beer_burst = true
+			alt_desc = "bm_beer_auto_desc",
+			beer_burst = true,
+			rof_mult = 1.470588235
 		},
 		stats = {
 			value = 5,
@@ -21685,6 +21688,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",			
 		supported = true,			
+		is_a_unlockable = true,			
 		stats = {
 			value = 0,
 			spread = -1,

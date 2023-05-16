@@ -1136,7 +1136,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
-		["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst#{skill_color}# fire rate is #{skill_color}#increased to 950RPM.##",
+		["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst#{skill_color}# fire rate is #{skill_color}#increased to 950 RPM.##",
 		
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
@@ -1367,7 +1367,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_fmg9_sc_desc"] = "A prototype weapon platform that functions as a baby carrier for your STRYK 18c, features futuristic folding technology!",
 		--93R
 		["bm_w_beer"] = "Bernetti 93R",
-		["bm_beer_sc_desc"] = "A borderline fictional piece of select-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.",
+		["bm_beer_sc_desc"] = "A borderline fictional piece of burst-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.\n\nHas a #{skill_color}#1200 RPM## fire rate when on burst-fire.",
+		["bm_beer_auto_desc"] = "A borderline fictional piece of select-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.",
 		--Contractor Pistols 
 		["bm_w_packrat"] = "Contractor M30",
 		["bm_packrat_sc_desc"] = "Wick's choice for its reliability and overall ease of use, said to have been used when he paid The Red Circle a visit.",

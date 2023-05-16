@@ -930,7 +930,8 @@ function CopDamage:damage_bullet(attack_data)
 
 	if not self._damage_reduction_multiplier and head then
 		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult
-		if weapon_hs_mult and not ignore then
+		local is_captain = self._char_tweak.ends_assault_on_death
+		if weapon_hs_mult and not is_captain then
 			damage = damage * weapon_hs_mult
 		end
 		if self._char_tweak.headshot_dmg_mul then

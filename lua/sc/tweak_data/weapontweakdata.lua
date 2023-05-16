@@ -16839,6 +16839,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.nothing.stats_modifiers = nil
+		self.nothing.swap_speed_multiplier = 2
 		self.nothing.timers = {
 			reload_not_empty = 0,
 			reload_empty = 0,
@@ -16873,6 +16874,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.nothing2.stats_modifiers = nil
+		self.nothing2.swap_speed_multiplier = 2
 		self.nothing2.timers = {
 			reload_not_empty = 0,
 			reload_empty = 0,

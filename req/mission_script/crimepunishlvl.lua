@@ -1,5 +1,14 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+angry_fatman = ""
+
+	if tweak_data:difficulty_to_index(difficulty) <= 6 then
+		angry_fatman = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2"
+	elseif tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+		angry_fatman = "units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"	
+	end
+
 if Global.game_settings and Global.game_settings.one_down then
 ponr_value = 0
 ponr_toggle = false
@@ -32,7 +41,7 @@ return {
 	},
 	[101050] = {
 		values = {
-			enemy = "units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
+			enemy = angry_fatman
 		}
 	}
 }

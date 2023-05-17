@@ -1368,7 +1368,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_fmg9"] = "Wasp DS-9 기관권총",		
 		["bm_fmg9_sc_desc"] = "STRYK 18c 권총의 작은 캐리어 역할을 하는 이 프로토타입 무기 플랫폼은 미래 지향적인 접는 기술을 특징으로 합니다!",		
 		--93R
-		["bm_beer_sc_desc"] = "누구의 움직임인지 알아내기 위해 소름이 돋을 것 같은 발사간 조정 하드웨어의 경계선 허구된 조각입니다. 죽든 말든 나와 함께 간다.",
+		["bm_beer_sc_desc"] = "누구의 움직임인지 알아내기 위해 소름이 돋을 것 같은 발사 간 조정이 가능한 하드웨어의 경계선 허구된 조각입니다. 죽든 말든 나와 함께 간다.\n\n점사 시 #{skill_color}#1200 RPM##의 발사 속도를 가집니다.",
+		["bm_beer_auto_desc"] = "누구의 움직임인지 알아내기 위해 소름이 돋을 것 같은 발사 간 조정이 가능한 하드웨어의 경계선 허구된 조각입니다. 죽든 말든 나와 함께 간다.",		
 		--Contractor Pistols
 		["bm_w_packrat"] = "Contractor M30 권총",
 		["bm_packrat_sc_desc"] = "윅이 선택한 이 권총은 신뢰성과 전반적인 사용 편의성이 특징이며 그가 레드 서클을 방문했을 때 사용되었다고 합니다.",

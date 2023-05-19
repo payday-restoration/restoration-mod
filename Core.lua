@@ -237,6 +237,7 @@ function restoration:Init()
 		"ascension_III", --Ascension (project eclipse 3)
 		"RogueCompany", --Rogue Company
 		"battlearena", --Five-G
+		"constantine_train_lvl",
 		"constantine_penthouse_lvl", --Penthouse Crashers (Constantine Scores)
 		"constantine_resort_lvl", --Scarlett Resort (Constantine Scores)
 		"constantine_murkyairport_lvl", --Murky Airport (Constantine Scores)
@@ -399,6 +400,10 @@ function restoration:Init()
 		"hunter_departure",
 		"hunter_fall",
 		"ruswl"
+	}
+	--Cartel (custom heists)
+	restoration.cartel = {
+		"constantine_train_lvl"
 	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

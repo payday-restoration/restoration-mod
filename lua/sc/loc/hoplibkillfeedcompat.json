@@ -183,5 +183,27 @@
   "ene_gang_mobster_clubsecurity" : "Club Security", 
   "ene_gang_mobster_enforcer" : "Mobster Enforcer",
   "ene_gang_mobster_mobboss" : "Mobster Boss",
-  "ene_gang_mobster_vip" : "VIP Mobster"
+  "ene_gang_mobster_vip" : "VIP Mobster",
+  "ene_cartel_scout" : "Valerio Cartel Marksman",
+  "ene_cartel_bulldozer" : "Valerio Cartel Armored Enforcer", 
+  "ene_cartel_commando" : "Valerio Cartel Commander",
+  "ene_cartel_grenadier" : "Valerio Cartel Grenadier Enforcer",
+  "ene_cartel_tazer" : "Valerio Cartel Taser",
+  "ene_cartel_tazer_normal" : "Valerio Cartel Taser",
+  "ene_cartel_shield" : "Valerio Cartel Shield",
+  "ene_cartel_soldier" : "Valerio Cartel Soldier",
+  "ene_cartel_soldier_shotgun" : "Valerio Cartel Soldier",
+  "ene_cartel_soldier_heavy" : "Valerio Cartel Heavy Soldier",
+  "ene_cartel_soldier_heavy_shotgun" : "Valerio Cartel Heavy Soldier",
+  "ene_cartel_soldier_fbi" : "Valerio Cartel Veteran Soldier",
+  "ene_cartel_soldier_fbi_shotgun" : "Valerio Cartel Veteran Soldier",
+  "ene_cartel_soldier_heavy_fbi" : "Valerio Cartel Heavy Veteran Soldier",
+  "ene_cartel_soldier_fbi" : "Valerio Cartel Veteran Soldier",
+  "ene_cartel_soldier_fbi_shotgun" : "Valerio Cartel Veteran Soldier",
+  "ene_cartel_soldier_heavy_fbi" : "Valerio Cartel Heavy Veteran Soldier",
+  "ene_cartel_soldier_heavy_fbi_shotgun" : "Valerio Cartel Heavy Veteran Soldier",
+  "ene_cartel_soldier_city" : "Valerio Cartel Elite Soldier",
+  "ene_cartel_soldier_city_shotgun" : "Valerio Cartel Elite Soldier",
+  "ene_cartel_soldier_heavy_city" : "Valerio Cartel Heavy Elite Soldier"
+
 }

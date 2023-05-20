@@ -401,6 +401,10 @@ function restoration:Init()
 		"hunter_fall",
 		"ruswl"
 	}
+	--GenSec (custom heists)
+	restoration.gensec = {
+		"constantine_penthouse_lvl"
+	}
 	--Cartel (custom heists)
 	restoration.cartel = {
 		"constantine_train_lvl"

@@ -10,7 +10,7 @@ function CopSound:init(unit)
 	if char_tweak.speech_prefix_p1 == "l5d" then
 		self._prefix = (char_tweak.speech_prefix_p1 or "") .. "_"	
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc") then
-		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"		
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_city_guard_1/ene_city_guard_1") or self._unit:name() == Idstring("units/payday2/characters/ene_city_guard_2/ene_city_guard_2") or self._unit:name() == Idstring("units/payday2/characters/ene_city_guard_3/ene_city_guard_3") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"			
 	elseif self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3") then
@@ -31,6 +31,8 @@ function CopSound:init(unit)
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"			
 	elseif self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3") then
 		self._prefix = ("fl1n") .. "_"
+	elseif self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_2/ene_fbi_gensec_2") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_swat_gensec_shield/ene_swat_gensec_shield") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy/ene_fbi_gensec_heavy") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy_r870/ene_fbi_gensec_heavy_r870") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_shield/ene_fbi_gensec_shield") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_marshal_gensec/ene_marshal_gensec") then
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"	
 	--DRAK Titans
 	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser") then
 		self._prefix = ("rtsr") .. "_"	
@@ -85,6 +87,8 @@ function CopSound:init(unit)
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"			
 	elseif self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3_husk") then
 		self._prefix = ("fl1n") .. "_"
+	elseif self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1_husk") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_2/ene_fbi_gensec_2_husk") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_swat_gensec_shield/ene_swat_gensec_shield_husk") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy/ene_fbi_gensec_heavy_husk") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy_r870/ene_fbi_gensec_heavy_r870_husk") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_shield/ene_fbi_gensec_shield_husk") or self._unit:name() == Idstring("units/pd2_mod_ttr/characters/ene_marshal_gensec/ene_marshal_gensec_husk") then
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"	
 	--DRAK Titans husks
 	elseif self._unit:name() == Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk") then
 		self._prefix = ("rtsr") .. "_"	

@@ -448,6 +448,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.bot_priority_shout = "g29"
 	self.fbi_vet.priority_shout_max_dis = 3000
 	self.fbi_vet.silent_priority_shout = nil
+	self.fbi_vet.is_special = true
 	self.fbi_vet.custom_shout = true		
 	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.can_slide_on_suppress = true
@@ -774,6 +775,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.tags = {"law", "custom", "special"}
 	self.hrt_titan.priority_shout = "g29"
 	self.hrt_titan.bot_priority_shout = "g29"
+	self.hrt_titan.is_special = true
 	self.hrt_titan.priority_shout_max_dis = 3000
 	self.hrt_titan.silent_priority_shout = nil
 	self.hrt_titan.custom_shout = true	
@@ -1139,6 +1141,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.priority_shout = "g29"
 	self.city_swat_titan.bot_priority_shout = "g29"
 	self.city_swat_titan.priority_shout_max_dis = 3000
+	self.city_swat_titan.is_special = true
 	self.city_swat_titan.silent_priority_shout = nil
 	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
@@ -1367,6 +1370,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield.spawn_sound_event = "shield_identification"
 	self.marshal_shield.steal_loot = nil
 	self.marshal_shield.no_mutator_weapon_override = true
+	self.marshal_shield.is_special = true
 	table.insert(self._enemy_list, "marshal_shield")
 
 	self.marshal_shield_break = deep_clone(self.marshal_shield)

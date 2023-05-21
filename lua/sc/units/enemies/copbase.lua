@@ -5,6 +5,25 @@ local ids_ik_aim = Idstring("ik_aim")
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
+function CopBase:enable_lpf_buff(state)
+	if alive(self._overheal_unit) then
+		return
+	end
+	
+	local align_obj_name = Idstring("Head")
+	local align_obj = self._unit:get_object(align_obj_name)
+	self._overheal_unit = World:spawn_unit(Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff"), Vector3(), Rotation())	
+
+	self._unit:link(align_obj_name, self._overheal_unit, self._overheal_unit:orientation_object():name())
+end
+
+function CopBase:disable_lpf_buff(state)
+	if alive(self._overheal_unit) then
+		self._overheal_unit:set_slot(0)
+		self._overheal_unit = nil
+	end
+end
+
 function CopBase:enable_asu_laser(state)
 	local weapon = self._unit:inventory():equipped_unit()
 	if weapon then
@@ -32,6 +51,10 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
 	}, callback(self, self, "disable_asu_laser"))	
+	
+	self._unit:character_damage():add_listener("lpf_buff_state" .. tostring(self._unit:key()), {
+		"death"
+	}, callback(self, self, "disable_lpf_buff"))		
 end)
 
 --Yufu Wang Hitbox fix

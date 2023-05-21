@@ -18997,8 +18997,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
 			11,
-			14,
-			17
+			13,
+			15
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -19021,8 +19021,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
 			12,
-			15,
-			18
+			14,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -19045,8 +19045,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
 			13,
-			16,
-			19
+			15,
+			17
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -19069,8 +19069,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
 			14,
-			17,
-			20
+			16,
+			18
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -19093,8 +19093,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
 			15,
-			18,
-			21
+			17,
+			19
 		}
 		self.besiege.assault.force_pool = {
 			100,
@@ -19117,8 +19117,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
 			16,
-			19,
-			22
+			18,
+			20
 		}
 		self.besiege.assault.force_pool = {
 			100,
@@ -19141,8 +19141,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	else
 		self.besiege.assault.force = {
 			18,
-			21,
-			24
+			20,
+			22
 		}
 		self.besiege.assault.force_pool = {
 			150,

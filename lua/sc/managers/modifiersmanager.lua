@@ -4,6 +4,7 @@ local b = tweak_data.levels.ai_groups.federales
 local z = tweak_data.levels.ai_groups.zombie
 local ny = tweak_data.levels.ai_groups.nypd
 local ai_type = tweak_data.levels:get_ai_group_type()
+local job = Global.level_data and Global.level_data.level_id
 
 --this table is for humans. edit this one
 --first item is the unit to be replaced, second is the replacement unit that should spawn instead. 
@@ -435,7 +436,7 @@ local orig_modify = ModifiersManager.modify_value
 function ModifiersManager:modify_value(id, value, ...)
 	local result = orig_modify(self,id,value,...)
 	value = tostring(value)
-	if id == "GroupAIStateBesiege:SpawningUnit" and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then 
+	if id == "GroupAIStateBesiege:SpawningUnit" and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and not table.contains(restoration.alternate_ponr_behavior, job) then 
 --			if unit_table[value] then 
 --				log("ModifiersManagers: Replacing spawn " .. tostring(value) .. " ==> " .. tostring(unit_table[tostring(value)]))
 --			else

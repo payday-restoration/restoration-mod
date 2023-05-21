@@ -7,13 +7,13 @@ ContourExt._types.medic_show = {
 ContourExt._types.omnia_heal = {
 	priority = 1,
 	material_swap_required = true,
-	fadeout = 300000,
+	fadeout = 2,
 	color = Vector3(128, 0, 128)
 }
 ContourExt._types.medic_buff = {
 	priority = 1,
 	material_swap_required = true,
-	fadeout = 300000,
+	fadeout = 2,
 	color = Vector3(255, 140, 0)
 }
 ContourExt._types.deployable_blackout = { --for autumn's deployable disabling ability

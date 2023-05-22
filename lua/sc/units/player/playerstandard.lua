@@ -781,6 +781,11 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 					if fired then
 						self._queue_fire = nil
+
+						if weap_base._descope_on_fire then
+							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
+						end
+						
 						managers.rumble:play("weapon_fire")
 
 						local weap_tweak_data = tweak_data.weapon[weap_base:get_name_id()]

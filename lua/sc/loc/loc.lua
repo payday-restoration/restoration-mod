@@ -1390,7 +1390,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hs2000_sc_desc"] = "Interpol agents, crooked Croatian cops, and international criminals alike will find this compact blaster effective.",
 		--5/7 pistol
 		["bm_w_lemming"] = "Acuto 5/7",
-		["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
+		["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 		--Baby Deagle--
 		["bm_w_sparrow"] = "Sparrow 941",
 		["bm_sparrow_sc_desc"] = "SEE YOU SPACE COWBOY...",
@@ -1501,19 +1501,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Kobus 90--
 		["bm_w_p90"] = "Project-90",
-		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
+		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 		["bm_wp_p90_body_p90_tan"] = "Tan Stock",
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Stock",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 		--Spec Ops
 		["bm_w_mp7"] = "SpecOps-7",
-		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
+		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 		--Tec-9
 		["bm_w_tec9"] = "T3K Urban",
 		["bm_w_x_tec9"] = "Akimbo T3K Urbans",
 		--Heather
 		["bm_w_sr2"] = "Heather-2M",
-		["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage.##",
+		["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
 		["bm_w_x_sr2"] = "Akimbo Heather-2Ms",
 		--CMP
 		["bm_w_mp9"] = "CMP-9",
@@ -1561,7 +1561,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM SMGs
 			--AR57
 			["bm_w_alpha57_prim"] = "FSS Hurricane",
-			["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
+			["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 			--LWRC
 			["bm_w_smg45"] = "FT Striker .45",
 			["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
@@ -1673,6 +1673,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of #{skill_color}#piercing body armor, enemies, shields, titan shields, and walls.##",
 			--MP153
 			["bm_w_mp153"] = "Argos I",
+			--Widowmaker TX
+			["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
+			["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
+			["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Adds a ##{skill_color}#2 round burst-fire## toggle.",
 
 			
 		--S552
@@ -1825,7 +1829,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Custom DMRs
 			--MCX Spear
 			["bm_w_mcx_spear"] = "Signature M7",
-			["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
+			["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 			--["bm_w_xeno"] = "MA14 Surge Rifle",	
 			["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
@@ -1874,8 +1878,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AWP
 		["bm_w_awp"] = "Amaroq 900",
 		["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
-		["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Allows for piercing titan-shields.##",
-		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
+		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300",
 		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
@@ -1905,18 +1909,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",			
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 BMG",
-		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		--Custom Snipers
 			--Guerilla
 			["bm_w_sgs"] = "Guerilla 553R",	
 			--M107
 			["bm_w_m107cq"] = "Mors .50 BMG",
-			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 			["bm_w_m200"] = "TF-141",
-			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 			--S7
-			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
-			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields and thin walls.##",	
+			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields and thin walls.##",	
 			["flexfire_desc"] = "#{important_1}#Can no longer pierce titan-grade shields.##",
 			["oracle_scope"] = "Oracle TechLink Scope",
 			["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5x magnification.##",
@@ -1985,8 +1989,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 20% of its damage through body armor.##",
 		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
-		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage.##",
-		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
+		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",

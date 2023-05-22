@@ -624,6 +624,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._ads_moving_mult = 1
 
 		if not self:is_npc() then
+			self._descope_on_fire = self:weapon_tweak_data().descope_on_fire
 			self._rms = self:weapon_tweak_data().rms
 			self._sms = self:weapon_tweak_data().sms
 			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
@@ -716,12 +717,25 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().LOCK_BURST = true
 			end	
+
+			if stats.wmtx_burst then
+				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
+				self:weapon_tweak_data().BURST_FIRE = 2
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 10
+				self:weapon_tweak_data().BURST_DELAY = 0.5
+				self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER = 0.75
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
+			end		
+
 			if stats.beretta_burst then
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
 			end	
+
 			if stats.type99_stats then
 				--have to do this due to how this thing is set up, can't have both equipped anyways
 				tweak_data.weapon.system.reload_speed_multiplier = 1.13 * 1.1
@@ -744,7 +758,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
 			end		
-
 			if stats.croon then
 				self:weapon_tweak_data().BURST_USE_AUTO_LOGIC = true
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 200
@@ -780,6 +793,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 			if stats.hs_mult then		
 				self._hs_mult = (self._hs_mult or 1) * stats.hs_mult
+			end
+			if stats.descope_on_fire then		
+				self._descope_on_fire = stats.descope_on_fire
 			end
 			if stats.duration_falloff_start_mult then		
 				self._duration_falloff_start_mult = self._duration_falloff_start_mult * stats.duration_falloff_start_mult

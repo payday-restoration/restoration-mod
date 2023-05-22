@@ -13870,8 +13870,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.umd_launcher.timers.reload_exit_empty = 0.7
 	end
 
-
-
 	if self.p99 then --Pawcio's P99
 		self.p99.recategorize = {"light_pis"}
 		self.p99.damage_type = "pistol"
@@ -14117,6 +14115,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mp153.reload_speed_multiplier = 1
 		self.mp153.timers.shotgun_reload_exit_empty = 1.65
 		self.mp153.timers.shotgun_reload_exit_not_empty = 0.75
+	end
+	
+	if self.wmtx then --Pawcio's Widomaker TX
+		self.wmtx.recategorize = { "light_shot" }
+		self.wmtx.damage_type = "shotgun"
+		self.wmtx.damage_type_single_ray = "sniper"
+		self.wmtx.upgrade_blocks = nil
+		self.wmtx.CLIP_AMMO_MAX = 6
+		self.wmtx.AMMO_MAX = 30
+		self.wmtx.rays = 9
+		self.wmtx.CAN_TOGGLE_FIREMODE = false
+		self.wmtx.BURST_FIRE = false
+		self.wmtx.FIRE_MODE = "single"
+		self.wmtx.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.wmtx.kick = self.stat_info.kick_tables.vertical_kick
+		self.wmtx.fire_mode_data.fire_rate = 0.5
+		self.wmtx.panic_suppression_chance = 0.05
+		self.wmtx.supported = true
+		self.wmtx.ads_speed = 0.320
+		self.wmtx.damage_falloff = {
+			start_dist = 600,
+			end_dist = 3500,
+			min_mult = 0.3333
+		}
+		self.wmtx.stats = {
+			damage = 60,
+			spread = 34,
+			recoil = 59,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.wmtx.stats_modifiers = nil
+		self.wmtx.timers.reload_exit_empty = 0.78
+		self.wmtx.timers.reload_empty = 3.27
+		self.wmtx.timers.reload_exit_not_empty = 0.4
+		self.wmtx.timers.reload_not_empty = 2.82
 	end
 	
 	if self.jackhammer then --Pawcio's Jackhammer

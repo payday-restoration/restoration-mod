@@ -363,12 +363,12 @@ function CopMovement:do_omnia(self)
 							end										
 							if enemy:contour() then
 								if overheal_mult > 1 then
-									enemy:contour():add("omnia_heal", true)
+									enemy:contour():add("omnia_heal", false)
 									enemy:contour():flash("omnia_heal", 0.2)
 
 									enemy:base():enable_lpf_buff(true)
 								else
-									enemy:contour():add("medic_heal", true)
+									enemy:contour():add("medic_heal", false)
 									enemy:contour():flash("medic_heal", 0.2)
 								end
 							end		

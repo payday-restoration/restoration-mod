@@ -23532,6 +23532,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 1.075
 				}
 
+				self.wpn_fps_shot_wmtx.override = self.wpn_fps_shot_wmtx.override or {}
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_slug = a_slug_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_custom = a_custom_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_custom_free = a_custom_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_explosive = a_explosive_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_rip = a_rip_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
+
 				table.insert(self.wpn_fps_shot_wmtx.uses_parts, "wpn_fps_shot_wmtx_mag_ext")
 
 

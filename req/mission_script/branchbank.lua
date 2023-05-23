@@ -1,6 +1,16 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
+bulldozer = ""
+
+	if tweak_data:difficulty_to_index(difficulty) <= 6 then
+		bulldozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
+		bulldozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
+	end
+
 if Global.game_settings and Global.game_settings.one_down then
 ponr_value = 0
 ponr_toggle = false
@@ -28,16 +38,27 @@ end
 
 return {
 	--Pro Job PONR 
-	[105356] = {
+	[104452] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	},
-	[105370] = {
+	[104715] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	},
-	[105359] = {
+	[104716] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
+	},
+	--Have Blackdozers spawn on Mayhem from Tear Gas Choppa
+	[101785] = {
+		values = {
+			enemy = bulldozer
+		}
+	},
+	[101786] = {
+		values = {
+			enemy = bulldozer
+		}
 	}
 }

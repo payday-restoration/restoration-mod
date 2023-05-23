@@ -3,20 +3,13 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 gensec_rifle = ""
 gensec_smg = ""
-gensec_heavy = ""
 gensec_dozer = ""
 
 	if tweak_data:difficulty_to_index(difficulty) <= 6 then
 		gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
-		gensec_heavy = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
 		gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
-	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
 		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		gensec_heavy = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		gensec_heavy = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
 		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"	
 	end
 
@@ -73,7 +66,7 @@ return {
 	},
 	[100280] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100282] = {
@@ -98,7 +91,7 @@ return {
 	},
 	[100286] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100287] = {
@@ -128,7 +121,7 @@ return {
 	},
 	[100292] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100293] = {
@@ -143,12 +136,12 @@ return {
 	},
 	[100295] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100296] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100297] = {
@@ -194,12 +187,12 @@ return {
 	},
 	[100526] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100527] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100530] = {
@@ -244,12 +237,12 @@ return {
 	},
 	[100540] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100542] = {
 		values = {
-            enemy = gensec_heavy
+            enemy = gensec_smg
 		}
 	},
 	[100543] = {

@@ -28,7 +28,7 @@ end
 
 return {
 	--Pro Job PONR 
-	[104044] = {
+	[100931] = {
 		ponr = ponr_value,
 		enabled = ponr_toggle
 	}

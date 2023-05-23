@@ -10,7 +10,7 @@ function CopBase:enable_lpf_buff(state)
 		return
 	end
 	
-	local align_obj_name = Idstring("Head")
+	local align_obj_name = Idstring("Spine2")
 	local align_obj = self._unit:get_object(align_obj_name)
 	self._overheal_unit = World:spawn_unit(Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff"), Vector3(), Rotation())	
 

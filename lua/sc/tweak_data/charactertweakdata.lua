@@ -3289,6 +3289,11 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.speech_prefix_count = 2
 	self.civilian.access = "civ_male"
 	self.civilian.intimidateable = true
+	if job == "haunted" then
+	self.civilian.no_civ_penalty = true --they're not real anyway
+	else
+	self.civilian.no_civ_penalty = false
+	end
 	self.civilian.challenges = {type = "civilians"}
 	if job == "nmh" or job == "nmh_res" then
 		self.civilian.calls_in = false
@@ -3317,6 +3322,11 @@ end
 function CharacterTweakData:_init_civilian_mariachi(presets)
 	self.civilian_mariachi = deep_clone(self.civilian)
 end	
+
+function CharacterTweakData:_init_civilian_no_penalty(presets)
+	self.civilian_no_penalty = deep_clone(self.civilian)
+	self.civilian_no_penalty.no_civ_penalty = true
+end
 
 function CharacterTweakData:_init_bank_manager(presets)
 	self.bank_manager = {

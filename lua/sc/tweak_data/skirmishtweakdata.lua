@@ -229,12 +229,12 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 		16,
 		18,
 		18,
-		19,
+		18,
+		20,
 		20,
 		22,
-		24,
-		24,
-		25
+		22,
+		22
 	}
 
 	skirmish_data.recon.force = {

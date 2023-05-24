@@ -7737,7 +7737,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.supported = true
 				self.m60.ads_speed = 0.640
 				self.m60.damage_falloff = {
-					start_dist = 1600,
+					start_dist = 1000,
 					end_dist = 6000,
 					min_mult = 0.4
 				}
@@ -7783,7 +7783,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.supported = true
 				self.par.ads_speed = 0.620
 				self.par.damage_falloff = {
-					start_dist = 1000,
+					start_dist = 600,
 					end_dist = 4800,
 					min_mult = 0.4
 				}
@@ -9385,7 +9385,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.CAN_TOGGLE_FIREMODE = false
 				self.qbu88.kick = self.stat_info.kick_tables.vertical_kick
 				self.qbu88.supported = true
-				self.qbu88.ads_speed = 0.480
+				self.qbu88.ads_speed = 0.460
 				self.qbu88.damage_falloff = {
 					start_dist = 2500,
 					end_dist = 6500,
@@ -9435,7 +9435,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.can_shoot_through_wall = true
 				self.tti.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.tti.supported = true
-				self.tti.ads_speed = 0.520
+				self.tti.ads_speed = 0.500
 				self.tti.damage_falloff = {
 					start_dist = 3300,
 					end_dist = 8000,
@@ -9735,7 +9735,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
 				self.wa2000.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.wa2000.supported = true
-				self.wa2000.ads_speed = 0.460
+				self.wa2000.ads_speed = 0.440
 				self.wa2000.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 7000,
@@ -9777,7 +9777,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.siltstone.kick = self.stat_info.kick_tables.right_kick
 				self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.siltstone.supported = true
-				self.siltstone.ads_speed = 0.500
+				self.siltstone.ads_speed = 0.480
 				self.siltstone.damage_falloff = {
 					start_dist = 2600,
 					end_dist = 6800,

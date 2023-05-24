@@ -2441,6 +2441,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-5.56, -5, -14.78),
 		rotation = Rotation(0, 0, -45)
 	}		
+	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_snp_scout = {
+		translation = Vector3(-2.6, -2, -7.2),
+		rotation = Rotation(0, 0, -45)
+	}
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_amcar = { translation = Vector3(-2.85, 14, -10.4),rotation = Rotation(0.1, 0, -45) }
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_74 = { translation = Vector3(-3.4, 5, -13.5),rotation = Rotation(0, -0, -45) }
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_m4 = { translation = Vector3(-2.85, 14, -10.4),rotation = Rotation(0.1, 0, -45) }
@@ -23521,6 +23525,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_shot_wmtx_mag_ext = deep_clone(self.parts.wpn_fps_shot_wmtx_mag)
 				self.parts.wpn_fps_shot_wmtx_mag_ext.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
 				self.parts.wpn_fps_shot_wmtx_mag_ext.dlc = "sc"
+				self.parts.wpn_fps_shot_wmtx_mag_ext.name_id = "bm_wp_wpn_fps_shot_wmtx_mag_ext"
 				self.parts.wpn_fps_shot_wmtx_mag_ext.pcs = {}
 				self.parts.wpn_fps_shot_wmtx_mag_ext.supported = true
 				self.parts.wpn_fps_shot_wmtx_mag_ext.stats = {

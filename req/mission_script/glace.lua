@@ -1,8 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-bulldozer = ""
-
 	if tweak_data:difficulty_to_index(difficulty) <= 7 then
 		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then

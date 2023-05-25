@@ -1,10 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-gensec_rifle = ""
-gensec_smg = ""
-gensec_dozer = ""
-
 	if tweak_data:difficulty_to_index(difficulty) <= 6 then
 		gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
 		gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"

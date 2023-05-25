@@ -2,23 +2,6 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 --Instead of bad dozer spam following by a random cloaker, Safehouse Nightmare has now proper scripted endless assault that features variety of Zombie Forces
-swat_1 = ""
-swat_2 = ""
-swat_3 = ""
-swat_heavy_1 = ""
-swat_heavy_2 = ""
-taser = ""
-shield = ""
-shield_2 = ""
-bulldozer_1 = ""
-bulldozer_2 = ""
-bulldozer_3 = ""
-spooc = ""
-vault_guardian = ""
-medic = ""
-old_chains = ""
-vet_cop = ""
-	
 --Scripted Spawn List
 	if tweak_data:difficulty_to_index(difficulty) <= 3 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1"
@@ -151,7 +134,7 @@ return {
 	},
 	[101402] = {
 		values = {
-            enemy = taser_2
+            enemy = taser
 		}
 	},
 	[101423] = {
@@ -191,7 +174,7 @@ return {
 	},
 	[101616] = {
 		values = {
-            enemy = taser
+            enemy = taser_2
 		}
 	},
 	--"Cloaker" spawns

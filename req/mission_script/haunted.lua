@@ -1,128 +1,243 @@
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+--Instead of bad dozer spam following by a random cloaker, Safehouse Nightmare has now proper scripted endless assault that features variety of Zombie Forces
+swat_1 = ""
+swat_2 = ""
+swat_3 = ""
+swat_heavy_1 = ""
+swat_heavy_2 = ""
+taser = ""
+shield = ""
+shield_2 = ""
+bulldozer_1 = ""
+bulldozer_2 = ""
+bulldozer_3 = ""
+spooc = ""
+vault_guardian = ""
+medic = ""
+old_chains = ""
+vet_cop = ""
+	
+--Scripted Spawn List
+	if tweak_data:difficulty_to_index(difficulty) <= 3 then
+		swat_1 = "units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1"
+		swat_2 = "units/pd2_mod_halloween/characters/ene_swat_2/ene_swat_2"
+		swat_3 = "units/pd2_mod_halloween/characters/ene_swat_3/ene_swat_3"
+		swat_heavy_1 = "units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
+		swat_heavy_2 = "units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
+		taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		shield = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2"
+		shield_2 = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2"
+		bulldozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		bulldozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		vault_guardian = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
+		medic = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
+		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
+	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
+		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
+		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		swat_3 = "units/pd2_mod_halloween/characters/ene_swat_3/ene_swat_3"
+		swat_heavy_1 = "units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
+		swat_heavy_2 = "units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
+		taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		shield = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1"
+		shield_2 = "units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2"
+		bulldozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		bulldozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		vault_guardian = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
+		medic = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
+		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
+	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
+		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		swat_3 = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"
+		swat_heavy_1 = "units/pd2_mod_halloween/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
+		swat_heavy_2 = "units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
+		taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		shield = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1"
+		shield_2 = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1"
+		bulldozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		bulldozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		vault_guardian = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
+		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
+		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
+		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
+	elseif tweak_data:difficulty_to_index(difficulty) == 6 then
+		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
+		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		swat_3 = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"
+		swat_heavy_1 = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"
+		swat_heavy_2 = "units/pd2_mod_halloween/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
+		taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		shield = "units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1"
+		shield_2 = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"
+		bulldozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		bulldozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		vault_guardian = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"
+		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
+		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
+		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
+		swat_1 = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"
+		swat_2 = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"
+		swat_3 = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"
+		swat_heavy_1 = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"
+		swat_heavy_2 = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"
+		taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
+		shield = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"
+		shield_2 = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"
+		bulldozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"
+		bulldozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1"
+		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+		vault_guardian = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
+		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
+		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		swat_1 = "units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"
+		swat_2 = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"
+		swat_3 = "units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"
+		swat_heavy_1 = "units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
+		swat_heavy_2 = "units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+		taser = "units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"
+		taser_2 = "units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser"
+		shield = "units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"
+		shield_2 = "units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"
+		bulldozer_1 = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"
+		bulldozer_2 = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"
+		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"
+		vault_guardian = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		spooc = "units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"
+		medic = "units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"
+		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+end
+
+
 return {
-	--Titan Spawns
+	--PONR/Restores unused cloaker vault spawn
+	[100546] = {
+	ponr = 240,
+	on_executed = {
+		{ id = 100909, delay = 0 },
+		{ id = 102226, delay = 0 },
+		{ id = 102689, delay = 3 }
+	}
+},
+	--Disables the AI Remover to prevent vault spawn from despawning after few seconds
+	[102690] = {
+		values = {
+            enabled = false
+		}
+	},
+	--Scripted Spawn Rework
+	--"Bulldozer" spawns
 	[100457] = {
 		values = {
-            enemy = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+            enemy = swat_1
 		}
 	},
 	[101402] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
-		}
-	},
-	[102289] = {
-		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
+            enemy = taser_2
 		}
 	},
 	[101423] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
+            enemy = swat_2
 		}
 	},
 	[101433] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+            enemy = vet_cop
 		}
 	},
 	[101441] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
+            enemy = swat_heavy_1
 		}
 	},
 	[101471] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+            enemy = swat_heavy_2
 		}
 	},
 	[101526] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser"
+            enemy = shield_2
 		}
 	},
 	[101553] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
+            enemy = medic
 		}
 	},
 	[101570] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
+            enemy = old_chains
 		}
 	},
 	[101616] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
+            enemy = taser
 		}
 	},
-	[101628] = {
-		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
-		}
-	},
-	[101636] = {
-		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		}
-	},
-	[101646] = {
-		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
-		}
-	},
-	[101657] = {
-		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
-		}
-	},
-	[101661] = {
-		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
-		}
-	},
-	[102689] = {
-		values = {
-            enemy = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
-		}
-	},
+	--"Cloaker" spawns
 	[102700] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+            enemy = bulldozer_1
 		}
 	},
 	[102701] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+            enemy = swat_3
 		}
 	},
 	[102702] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
+            enemy = spooc
 		}
 	},
 	[102703] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+            enemy = bulldozer_2
+		}
+	},
+	[102704] = {
+		values = {
+            enemy = taser
 		}
 	},
 	[102705] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
+            enemy = shield
 		}
 	},
 	[102706] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+            enemy = bulldozer_3
 		}
 	},
-	[102713] = {
+	[102707] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+            enemy = spooc
 		}
 	},
-	[102715] = {
+	[102689] = {
 		values = {
-            enemy = "units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+            enemy = vault_guardian
 		}
 	}
 }

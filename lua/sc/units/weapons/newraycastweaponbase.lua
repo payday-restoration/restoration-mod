@@ -769,7 +769,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().FIRE_MODE = "auto"				
 			end
 			if stats.xr2_rapidfire then
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.11764
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = (self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1.888888) * 1.11764
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.95
 			end		
 	

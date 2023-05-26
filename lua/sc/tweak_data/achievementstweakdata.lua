@@ -33,6 +33,44 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
+	self.complete_heist_achievements.tawp_1 = {
+		mask = "flm",
+		award = "tawp_1",
+		job = "help",
+		difficulty = veryhard_and_above,
+		specials_killed = {
+			{
+			enemies = {
+			"spooc",
+			"spooc_titan"
+			},
+			count = 1
+			}
+		}
+	}
+	
+	self.complete_heist_achievements.trophy_courtesy = {
+		complete_job = true,
+		job = "pbr",
+		trophy_stat = "trophy_courtesy",
+		difficulty = easywish_and_above,
+		killed = {
+			medic = 0,
+			omnia_lpf = 0
+		}
+	}
+	
+	self.complete_heist_achievements.challenge_geneva = {
+		complete_job = true,
+		challenge_award = "challenge_geneva",
+		job = "red2",
+		difficulty = overkill_and_above,
+		killed = {
+			medic = 0,
+			omnia_lpf = 0
+		}
+	}
+	
 	--Turtle Always Wins doesn't check for deployable anymore, as armor kit doesn't exist in resmod.
 	self.complete_heist_achievements.turtle_wins = {
 		timer = 240,

@@ -14079,6 +14079,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ppsh.sounds.fire_single2 = "ppsh41_fire"
 	end
 
+	if self.lewis then --Pawcio's PPSH
+		self.lewis.categories = {
+			"lmg",
+			"smg",
+			"mmg"
+		}
+		self.lewis.recategorize = { "heavy_mg" }
+		self.lewis.damage_type = "machine_gun"
+		self.lewis.sms = sms_preset.lmg_120
+		self.lewis.weapon_movement_penalty = sms_preset.lmg_120
+		self.lewis.fire_mode_data.fire_rate = 0.12
+		self.lewis.CAN_TOGGLE_FIREMODE = true
+		self.lewis.CLIP_AMMO_MAX = 47
+		self.lewis.AMMO_MAX = 120
+		self.lewis.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.lewis.panic_suppression_chance = 0.05
+		self.lewis.supported = true
+		self.lewis.ads_speed = 0.580
+		self.lewis.damage_falloff = {
+			start_dist = 800,
+			end_dist = 4500,
+			min_mult = 0.5
+		}
+		self.lewis.stats = {
+			damage = 60,
+			spread = 61,
+			recoil = 65,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 17,
+			suppression = 5,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.lewis.stats_modifiers = nil
+		self.lewis.panic_suppression_chance = 0.05
+	end
+
 	if self.mp153 then  --Pawcio's MP-153
 		self.mp153.recategorize = { "light_shot" }
 		self.mp153.damage_type = "shotgun"
@@ -14380,7 +14421,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fazertron.timers.reload_exit_not_empty = 0.8
 	end
 
-	if self.g36k then --Pawcio's SCAR-L
+	if self.g36k then --Pawcio's G36K
 		self.g36k.recategorize = { "light_ar" }
 		self.g36k.damage_type = "assault_rifle"
 		self.g36k.tactical_reload = 1
@@ -14425,7 +14466,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g36k.panic_suppression_chance = 0.05
 	end
 
-	if self.ar18 then --Pawcio's SCAR-L
+	if self.ar18 then --Pawcio's AR=18
 		self.ar18.recategorize = { "light_ar" }
 		self.ar18.damage_type = "assault_rifle"
 		self.ar18.tactical_reload = 1

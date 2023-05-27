@@ -7731,7 +7731,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.CLIP_AMMO_MAX = 75
 				self.m60.AMMO_MAX = 120
 				self.m60.fire_mode_data.fire_rate = 0.10909090909
-				self.m60.kick = self.stat_info.kick_tables.moderate_kick
+				self.m60.kick = self.stat_info.kick_tables.even_recoil
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
@@ -7744,10 +7744,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.stats = {
 					damage = 60,
 					spread = 64,
-					recoil = 67,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 17,
+					concealment = 16,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -7776,7 +7776,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.fire_mode_data.fire_rate = 0.096
 				self.par.AMMO_MAX = 120
 				self.par.kick = {}
-				self.par.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.par.kick = self.stat_info.kick_tables.horizontal_right_recoil
 				self.par.panic_suppression_chance = 0.05
 				self.par.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
@@ -7790,10 +7790,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 63,
+					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 16,
+					concealment = 17,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -14087,6 +14087,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.lewis.recategorize = { "heavy_mg" }
 		self.lewis.damage_type = "machine_gun"
+		self.lewis.lock_slide = true
+		self.lewis.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.lewis.sms = sms_preset.lmg_120
 		self.lewis.weapon_movement_penalty = sms_preset.lmg_120
 		self.lewis.fire_mode_data.fire_rate = 0.12
@@ -14094,7 +14096,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.CLIP_AMMO_MAX = 47
 		self.lewis.AMMO_MAX = 120
 		self.lewis.kick = self.stat_info.kick_tables.horizontal_recoil
-		self.lewis.panic_suppression_chance = 0.05
+		self.lewis.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.lewis.supported = true
 		self.lewis.ads_speed = 0.580
 		self.lewis.damage_falloff = {
@@ -14105,10 +14107,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.stats = {
 			damage = 60,
 			spread = 61,
-			recoil = 65,
+			recoil = 59,
 			spread_moving = 5,
 			zoom = 1,
-			concealment = 17,
+			concealment = 18,
 			suppression = 5,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -14117,6 +14119,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.lewis.stats_modifiers = nil
+		self.lewis.reload_speed_multiplier = 0.9
+		self.lewis.timers.reload_not_empty = 2.95
+		self.lewis.timers.reload_exit_not_empty = 1
+		self.lewis.timers.reload_empty = 3.79
+		self.lewis.timers.reload_exit_empty = 1
 		self.lewis.panic_suppression_chance = 0.05
 	end
 

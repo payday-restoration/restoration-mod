@@ -2184,6 +2184,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg34 = {
 				translation = Vector3(-0.004, 13.5, -3.01 ),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_lewis = {
+				translation = Vector3(0.02, 11.3, -0.19)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
 				translation = Vector3(0.0, 2, -4.03)
@@ -17498,46 +17501,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	
 	--[
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_specter")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_specter")	
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_aimpoint")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_docter")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_docter")	
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_eotech")	
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_t1micro")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_cmore")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_cmore")	
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_aimpoint_2")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
-
-	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_cs")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_cs")		
-
-	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_rx30")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_rx30")	
-
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_cs")	
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_rx30")	
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_rx01")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_rx01")		
-	
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_reflex")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_reflex")		
-	
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_uh")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_uh")		
-
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_fc1")		
 	
 	--]]
 		
@@ -23548,10 +23524,92 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 
 				table.insert(self.wpn_fps_shot_wmtx.uses_parts, "wpn_fps_shot_wmtx_mag_ext")
-
-
 			end
 
+			if self.parts.wpn_fps_upg_lewis_barrel2 then -- Pawcio's Louis Pills
+				self.parts.wpn_fps_upg_lewis_barrel2.supported = true
+				self.parts.wpn_fps_upg_lewis_barrel2.stats = {
+					value = 0,
+					spread = 1,
+					recoil = -8,
+					concealment = 3
+				}
+				self.parts.wpn_fps_upg_lewis_barrel2.custom_stats = {
+					ads_speed_mult = 0.925
+				}
+
+				self.parts.wpn_fps_upg_lewis_mag_ext.supported = true --not active
+				self.parts.wpn_fps_upg_lewis_mag_ext.stats = {
+					value = 0,
+					extra_ammo = 50,
+					concealment = -4,
+					reload = -5
+				}
+				self.parts.wpn_fps_upg_lewis_mag_ext.custom_stats = {
+					ads_speed_mult = 1.1
+				}
+
+				self.parts.wpn_fps_upg_lewis_bipod.supported = true
+				self.parts.wpn_fps_upg_lewis_bipod.stats = {value = 0}--deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats)
+				--self.parts.wpn_fps_upg_lewis_bipod.stats.value = 0
+				self.parts.wpn_fps_upg_lewis_bipod.custom_stats = nil--deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats)
+
+				self.parts.wpn_fps_upg_lewis_sight_aa.supported = true
+				self.parts.wpn_fps_upg_lewis_sight_aa.stats = {value = 0}
+				self.parts.wpn_fps_upg_lewis_sight_aa.custom_stats = nil
+
+				self.parts.wpn_fps_upg_lewis_sight_no42.supported = true --not active
+				self.parts.wpn_fps_upg_lewis_sight_no42.stats = {value = 0}
+				self.parts.wpn_fps_upg_lewis_sight_no42.custom_stats = nil
+
+				self.parts.wpn_fps_upg_lewis_sights_vanilia.supported = true
+				self.parts.wpn_fps_upg_lewis_sights_vanilia.stats = {value = 0}
+				self.parts.wpn_fps_upg_lewis_sights_vanilia.custom_stats = nil
+
+				self.wpn_fps_lmg_lewis.override = self.wpn_fps_lmg_lewis.override or {}
+				self.wpn_fps_lmg_lewis.override.wpn_fps_rpg7_sight_adapter = {
+					custom_stats = {
+						big_scope = true
+					}
+				}
+
+				self.wpn_fps_lmg_lewis.adds = { 
+					wpn_fps_upg_o_specter = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_aimpoint = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_docter = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_eotech = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_t1micro = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_cmore = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_acog = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_cs = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_eotech_xps = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_reflex = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_rx01 = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_rx30 = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_uh = { "wpn_fps_rpg7_sight_adapter" },
+					wpn_fps_upg_o_fc1 = { "wpn_fps_rpg7_sight_adapter" }
+				}
+
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_specter")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_aimpoint")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_docter")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_eotech")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_t1micro")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_cmore")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_cs")	
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_rx30")	
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_rx01")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_reflex")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_eotech_xps")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_uh")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_fc1")
+
+				self.wpn_fps_lmg_lewis_npc.adds = deep_clone(self.wpn_fps_lmg_lewis.adds)
+				self.wpn_fps_lmg_lewis_npc.uses_parts = deep_clone(self.wpn_fps_lmg_lewis.uses_parts)
+
+			end
 	--[[ RJC9000'S MODS ]]
 
 	--[[ GAMBYT'S MODS ]]

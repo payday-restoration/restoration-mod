@@ -237,6 +237,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.corp.ai_group_type = nypd
 	
+	--self.deep.ai_group_type = nypd
+	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
 	

@@ -7545,7 +7545,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.kacchainsaw.stats = {
 				damage = 24,
-				spread = 26,
+				spread = 36,
 				recoil = 78,
 				spread_moving = 5,
 				zoom = 1,
@@ -7633,18 +7633,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.fire_mode_data.fire_rate = 0.1
 			self.rpk.CAN_TOGGLE_FIREMODE = true
 			self.rpk.BURST_FIRE = false
-			self.rpk.kick = self.stat_info.kick_tables.moderate_kick
+			self.rpk.kick = self.stat_info.kick_tables.even_recoil
 			self.rpk.supported = true
 			self.rpk.ads_speed = 0.520
 			self.rpk.damage_falloff = {
-				start_dist = 2800,
+				start_dist = 2900,
 				end_dist = 5200,
 				min_mult = 0.6
 			}
 			self.rpk.stats = {
 				damage = 30,
 				spread = 66,
-				recoil = 77,
+				recoil = 73,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 20,

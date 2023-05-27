@@ -132,6 +132,7 @@ function AchievementsTweakData:init(tweak_data)
 		grenade_type = "launcher_frag",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 		}
@@ -143,6 +144,7 @@ function AchievementsTweakData:init(tweak_data)
 		award = "steel_3",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 		}
@@ -217,6 +219,7 @@ function AchievementsTweakData:init(tweak_data)
 		challenge_stat = "any_spooc_kills",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 			
@@ -359,6 +362,7 @@ function AchievementsTweakData:init(tweak_data)
 		weapon = "m95",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 			
@@ -446,6 +450,7 @@ function AchievementsTweakData:init(tweak_data)
 		stat = "gage5_9_stats",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 			
@@ -457,6 +462,7 @@ function AchievementsTweakData:init(tweak_data)
 		stat = "gage5_9_stats",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 			
@@ -513,6 +519,7 @@ function AchievementsTweakData:init(tweak_data)
 	self.enemy_kill_achievements.any_spooc_kills = {
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 		},
@@ -683,6 +690,7 @@ function AchievementsTweakData:init(tweak_data)
 		stat = "cg22_post_objective_2",
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 			
@@ -711,6 +719,7 @@ function AchievementsTweakData:init(tweak_data)
 	self.enemy_melee_hit_achievements.cloak_n_dagger = {
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 		},
@@ -882,6 +891,7 @@ function AchievementsTweakData:init(tweak_data)
 		is_not_civilian = true,
 		enemies = {
 			"spooc",
+			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
 		},

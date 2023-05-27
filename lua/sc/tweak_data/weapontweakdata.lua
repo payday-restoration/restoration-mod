@@ -14092,7 +14092,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.sms = sms_preset.lmg_120
 		self.lewis.weapon_movement_penalty = sms_preset.lmg_120
 		self.lewis.fire_mode_data.fire_rate = 0.12
-		self.lewis.CAN_TOGGLE_FIREMODE = true
+		self.lewis.CAN_TOGGLE_FIREMODE = false
 		self.lewis.CLIP_AMMO_MAX = 47
 		self.lewis.AMMO_MAX = 120
 		self.lewis.kick = self.stat_info.kick_tables.horizontal_recoil

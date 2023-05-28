@@ -20964,6 +20964,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		"wpn_fps_snp_awp_dh_speed",
 		"wpn_fps_snp_awp_ext_shellrack",
 		"wpn_fps_snp_awp_m_speed",
+		"wpn_fps_snp_awp_g_perforated",
+		"wpn_fps_snp_awp_g_grainy",
+		"wpn_fps_snp_awp_g_granulated",
 		"wpn_fps_snp_awp_stock_lightweight"
 	}
 

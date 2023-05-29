@@ -3625,7 +3625,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.osipr then
 	else
-		self["Resmod's custom assets aren't loading. Please check your install of Beardlib."]() --force a crash on boot if custom assets aren't loading. Better to have an early tell vs crashing on failed enemy unit spawns mid-game, right?
+		self["Resmod's custom assets aren't loading. Your copy of Resmod my be corrupt or Beardlib may not be installed correctly."]() --force a crash on boot if custom assets aren't loading. Better to have an early tell vs crashing on failed enemy unit spawns mid-game, right?
 	end
 
 	--self:_init_new_weapon_sync(weapon_data)

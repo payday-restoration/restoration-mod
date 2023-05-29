@@ -24420,6 +24420,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = -2,
 				concealment = 1
 			}
+			self.parts.wpn_fps_smg_mp5_m_custom.custom_stats = nil
 	
 			--Grievky Nozzle
 			self.parts.wpn_fps_upg_ns_ass_smg_russian.supported = true
@@ -25178,6 +25179,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -1,
 				reload = 3
 			}
+			self.parts.wpn_fps_smg_mp5_m_dos.custom_stats = {}
 	
 			self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_dos = {
 				stats = {
@@ -25185,7 +25187,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					spread = -1,
 					concealment = -1,
 					reload = 3
-				}
+				},
+				custom_stats = {}
 			}
 	
 			--(GSPS 12G) High Capacity Barrel

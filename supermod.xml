@@ -48,6 +48,14 @@
 				<file :name="ene_fbi_hvh_3.unit"/>
 				<file :name="ene_fbi_hvh_3_husk.unit"/>
 			</group>
+			<group :name="payday2/characters/ene_fbi_boss_1/">
+				<file :name="ene_fbi_boss_1.unit"/>
+				<file :name="ene_fbi_boss_1_husk.unit"/>
+			</group>
+			<group :name="units/pd2_dlc_flat/characters/">
+				<file :name="npc_chavez/npc_chavez.object"/>
+				<file :name="npc_jamaican/npc_jamaican.object"/>
+			</group>
 			<group :name="pd2_dlc_pent/characters/">
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1.unit"/>
 				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>
@@ -57,11 +65,143 @@
 			<group :name="payday2/weapons/wpn_npc_beretta92/">
 				<file :name="wpn_npc_beretta92.object"/>
 			</group>
-			<!-- Improve navigation data -->
+			<!-- Heist edit stuff -->
 			<group name="levels/narratives/">
+			<!-- Boiling Point -->
+				<file :name="elephant/mad/cover_data.cover_data"/>
+				<file :name="elephant/mad/nav_manager_data.nav_data"/>
+				<file :name="elephant/mad/world/world.mission"/>
+				<file :name="elephant/mad/world/world.continent"/>
+				<file :name="elephant/mad/art2/art2.continent"/>
+				<file :name="elephant/mad/collision/collision.continent"/>
+			<!-- Biker Heist -->
+				<file :name="elephant/born/world/world.mission"/>
+				<file :name="elephant/born/world/world.continent"/>
+				<file :name="elephant/chew/world/world.mission"/>
+			<!-- Bank Heist -->
+				<file :name="h_firestarter/stage_3/world/world.mission"/>
+				<file :name="h_firestarter/stage_3/world/world.continent"/>
+				<file :name="h_firestarter/stage_3/cover_data.cover_data"/>
+				<file :name="h_firestarter/stage_3/nav_manager_data.nav_data"/>
+			<!-- Brooklyn 2/10 -->
+				<file :name="continental/spa/cover_data.cover_data"/>
+				<file :name="continental/spa/nav_manager_data.nav_data"/>
+				<file :name="continental/spa/world/world.continent"/>
+				<file :name="continental/spa/world/world.mission"/>
+				<file :name="continental/spa/regin_art/regin_art.continent"/>
+				<file :name="continental/spa/regin_art/regin_art.mission"/>
+			<!-- Le Brooklyn Bank has got something we need -->
+				<file :name="locke/brb/art/art.continent"/>
+				<file :name="locke/brb/world/world.continent"/>
+				<file :name="locke/brb/props/props.continent"/>
+				<file :name="locke/brb/christmas_props/christmas_props.continent"/>
+			<!-- First World Bank -->	
+				<file :name="classics/red2/world/world.mission"/>
+				<file :name="classics/red2/world/world.continent"/>
+				<file :name="classics/red2/nav_manager_data.nav_data"/>
+				<file :name="classics/red2/cover_data.cover_data"/>
+			<!-- Henry's Rock -->
+				<file :name="locke/des/world/world.mission"/>
+				<file :name="locke/des/world/world.continent"/>
+				<file :name="locke/des/art/art.mission"/>
+				<file :name="locke/des/art/art.continent"/>
+				<file :name="locke/des/props/props.mission"/>
+				<file :name="locke/des/props/props.continent"/>
+				<file :name="locke/des/nav_manager_data.nav_data"/>
+				<file :name="locke/des/cover_data.cover_data"/>
+			<!-- Mountain Master -->
+				<file :name="shayu/pent/world/world.mission"/>
+				<file :name="shayu/pent/world/world.continent"/>
+			<!-- Welcome.....put the money in a table. -->
+				<file :name="classics/flat/world/world.mission"/>
+				<file :name="classics/flat/world/world.continent"/>
+				<file :name="classics/flat/nav_manager_data.nav_data"/>
+				<file :name="classics/flat/cover_data.cover_data"/>
+				<file :name="classics/flat/art_dhruva/art_dhruva.continent"/>
+				<file :name="classics/flat/lights/lights.continent"/>
+				<file :name="classics/flat/collision/collision.continent"/>
+			<!-- San Martin Bank -->
+				<file :name="vlad/bex/nav_manager_data.nav_data"/>
+				<file :name="vlad/bex/world/world.continent"/>
+				<file :name="skm/skm_bex/world/world.continent"/>
+			<!-- The Greatest Heist Of All -->
+				<file :name="locke/vit/art/art.continent"/>
+				<file :name="locke/vit/backdrop/backdrop.continent"/>
+				<file :name="locke/vit/collision/collision.continent"/>
+				<file :name="locke/vit/lights/lights.continent"/>
+				<file :name="locke/vit/props/props.continent"/>
+				<file :name="locke/vit/props1/props1.continent"/>
+				<file :name="locke/vit/world/world.continent"/>
+				<file :name="locke/vit/world/world.mission"/>
+				<file :name="locke/vit/cover_data.cover_data"/>
+				<file :name="locke/vit/nav_manager_data.nav_data"/>
+			<!-- Undercover -->	
+				<file :name="classics/man/world/world.mission"/>
+				<file :name="classics/man/world/world.continent"/>
+				<file :name="classics/man/shadow_caster/shadow_caster.continent"/>
+				<file :name="classics/man/cover_data.cover_data"/>
+				<file :name="classics/man/nav_manager_data.nav_data"/>
+			<!-- Misc Stuff -->	
+				<file :name="classics/dah/world/world.continent"/>
+				<file :name="vlad/pines/world/world.continent"/>
+				<file :name="bain/big/world/world.continent"/>
+				<file :name="mcshay/ranc/world_sounds.world_sounds"/>
+				<file :name="skm/skm_cas/world/world.continent"/>
+				<file :name="e_welcome_to_the_jungle/stage_1/world/world.mission"/>
 				<file :name="dentist/hox/stage_2/nav_manager_data.nav_data"/>
 				<file :name="e_framing_frame/stage_1/nav_manager_data.nav_data"/>
 				<file :name="e_framing_frame/stage_3/nav_manager_data.nav_data"/>
+				<file :name="skm/skm_big2/nav_manager_data.nav_data"/>
+			</group>
+			<!-- Mission instance stuff (unique) -->
+			<group name="levels/instances/unique/">
+			<!-- security rooms -->
+				<file :name="red/red_camera_room/world/world.mission"/>
+				<file :name="chas/chas_security_room/world/world.mission"/>
+				<file :name="sand/sand_security_room/world/world.mission"/>
+				<file :name="tag/tag_security/world/world.mission"/>
+				<file :name="bex/bex_security_room/world/world.mission"/>
+				<file :name="bex/bex_security_room2/world/world.mission"/>
+				<file :name="bex/bex_security_room2/world/world.continent"/>
+				<file :name="mus_security_room/world/world.mission"/>
+				<file :name="vit/vit_security_room/world/world.mission"/>
+				<file :name="are_security_room/world/world.mission"/>
+				<file :name="corp/corp_security_room/world/world.mission"/>
+				<file :name="dah/dah_security_room/world/world.mission"/>
+				<file :name="dah/dah_security_room2/world/world.mission"/>
+				<file :name="dah/dah_security_room3/world/world.mission"/>
+				<file :name="dah/dah_security_room4/world/world.mission"/>
+				<file :name="dah/dah_security_room5/world/world.mission"/>
+				<file :name="fex/fex_security_room_left/world/world.mission"/>
+				<file :name="fex/fex_security_room_right/world/world.mission"/>
+			<!-- SWAT squads -->
+				<file :name="sand/sand_spawn_enemies/world/world.mission"/>
+				<file :name="sand/sand_helicopter_spawn_enemies/world/world.mission"/>
+				<file :name="chca/chca_helicopter_enemies/world/world.mission"/>
+				<file :name="glace/glace_helicopter_dozer/world/world.mission"/>
+				<file :name="glace/glace_helicopter_swat/world/world.mission"/>
+				<file :name="pet_helicopter_swat/world/world.mission"/>
+				<file :name="san_helicopter_4swat/world/world.mission"/>
+				<file :name="shout_helicopter_swat/world/world.mission"/>
+			<!-- Misc Stuff -->
+				<file :name="trai/trai_main_wagon/world/world.mission"/>
+				<file :name="pbr/pbr_plane_cargo/world/world.mission"/>
+				<file :name="pbr/pbr_sewer_enemies/world/world.mission"/>
+				<file :name="pbr/pbr_mountain_surface/world/world.mission"/>
+				<file :name="sah/sah_entrance_detector/world/world.mission"/>
+				<file :name="hlm_random_left003/world/world.mission"/>
+				<file :name="hlm_random_right003/world/world.mission"/>
+				<file :name="kenaz/vault/world/world.continent"/>
+				<file :name="shout_container_normal/world/world.mission"/>
+				<file :name="pent/pent_coke/world/world.continent"/>
+				<file :name="pent/pent_helicopter_extraction/world/world.mission"/>
+				<file :name="pent/pent_security_room/world/world.mission"/>
+				<file :name="pent/pent_security_room_altdoor/world/world.mission"/>
+			</group>
+			<!-- Mission instance stuff (shared) -->
+			<group name="levels/instances/shared/">
+				<file :name="obj_skm/world/world.mission"/>
+				<file :name="skm_negotiator/world/world.mission"/>
 			</group>
 		<!--
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">

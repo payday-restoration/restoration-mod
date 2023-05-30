@@ -15,6 +15,13 @@
 	<!--Pensacola / LAPD Tinted Windows-->
 	<material_config	path="units/pd2_dlc_pal/vehicles/str_vehicle_car_police_pensacola/str_vehicle_car_police_pensacola" force="true" />
 	<material_config	path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />
+	
+	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
+		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
 
 	<!--SFPD Beat Cops-->
 	<unit				path="units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1" load="true" />

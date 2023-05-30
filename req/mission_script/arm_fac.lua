@@ -9,9 +9,9 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"	
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 3 then
+	if tweak_data:difficulty_to_index(difficulty) <= 4 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 or tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 then
+	elseif tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 	elseif tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	

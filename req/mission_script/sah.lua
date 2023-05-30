@@ -49,14 +49,42 @@ return {
 		reinforce = {
 			{
 				name = "auction_room",
-				force = 3,
+				force = 2,
 				position = Vector3(0, 2000, -100)
 			},
 			{
 				name = "outside",
-				force = 3,
+				force = 2,
 				position = Vector3(0, -3300, -50)
 			}
+		},
+		on_executed = {
+			{ id = 100127, delay = 0 },
+			{ id = 103905, delay = 0 },
+			{ id = 103910, delay = 0 },
+			{ id = 103912, delay = 0 },
+			{ id = 103913, delay = 0 }
+		}
+	},
+	-- Disable area report triggers
+	[100140] = {
+		values = {
+			enabled = false
+		}
+	},
+	[106783] = {
+		values = {
+			enabled = false
+		}
+	},
+	[103926] = {
+		values = {
+			enabled = false
+		}
+	},
+	[106784] = {
+		values = {
+			enabled = false
 		}
 	},
 	-- Slow down roof spawns

@@ -45,6 +45,13 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
+	
+	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
+		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
 
 	<!--HoxRev Heavy FBI Swats with helmet pop-->
 	<texture			path="units/payday2/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" force="false"/>

@@ -46,6 +46,10 @@ if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value_2 = 540
 		ponr_toggle_2 = true
 	end
+	
+if tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+		titan_shield_pj = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
+	end	
 end
 
 return {
@@ -65,5 +69,76 @@ return {
 	[101907] = {
 		ponr = ponr_value_2,
 		enabled = ponr_toggle_2
+	},
+	--Replace shields that cover the manhole with titan counterparts on Mayhem-DS PJ
+	[100670] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100670] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100670] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100036] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100039] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100044] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[101848] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[101911] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100642] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100777] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[100795] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[101804] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[101883] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[102098] = {
+		values = {
+            enemy = titan_shield_pj
+		}
 	}
 }

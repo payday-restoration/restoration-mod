@@ -457,18 +457,6 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
-	self.enemy_kill_achievements.kill_streak = {
-		weapon = "galil",
-		stat = "gage5_9_stats",
-		enemies = {
-			"spooc",
-			"spooc_gangster",
-			"autumn", --why not?
-			"spooc_titan"
-			
-		}
-	}
-	
 	self.enemy_kill_achievements.any_sniper_kills = {
 		enemies = {
 			"sniper",

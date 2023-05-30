@@ -249,6 +249,14 @@ function MissionEndState:at_enter(old_state, params)
 	end
 
 	Telemetry:on_end_heist(self._type, total_exp_gained, self._moneythrower_spending_kills)
+
+	-- I'm not sure this is how MSIM should be fixed, but be my guest to properly fix it - it just works.
+	if msim then
+		msim:load()
+		msim:pick_available_props(3)
+		msim.settings.pp = math.min(msim.settings.pp + msim.settings.pprr, 100)
+		msim:save()
+	end
 end
 
 local on_statistics_result_ori = MissionEndState.on_statistics_result

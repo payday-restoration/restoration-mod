@@ -3282,7 +3282,8 @@ function WeaponTweakData:_init_stats()
 				0,
 				0,
 				0
-			}
+			},
+			min_h_recoil = 0
 		},
 
 		--Big, low damage bullet hoses will be around here.
@@ -3304,7 +3305,8 @@ function WeaponTweakData:_init_stats()
 				0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.55 * self.stat_info.stance_recoil_mults.steelsight,
 				0.55 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.65
 		},
 
 		horizontal_left_recoil = {
@@ -3325,7 +3327,8 @@ function WeaponTweakData:_init_stats()
 				0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.65 * self.stat_info.stance_recoil_mults.steelsight,
 				0.45 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.65
 		},
 
 		horizontal_right_recoil = {
@@ -3346,7 +3349,8 @@ function WeaponTweakData:_init_stats()
 				0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.45 * self.stat_info.stance_recoil_mults.steelsight,
 				0.65 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.65
 		},
 
 
@@ -3369,7 +3373,8 @@ function WeaponTweakData:_init_stats()
 				0.45 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.45 * self.stat_info.stance_recoil_mults.steelsight,
 				0.45 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.5
 		},
 
 		left_recoil = {
@@ -3390,7 +3395,8 @@ function WeaponTweakData:_init_stats()
 				0.45 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.7 * self.stat_info.stance_recoil_mults.steelsight,
 				0.3 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.5
 		},
 
 		right_recoil = {
@@ -3411,7 +3417,8 @@ function WeaponTweakData:_init_stats()
 				0.45 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.3 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.5
 		},
 
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
@@ -3433,7 +3440,8 @@ function WeaponTweakData:_init_stats()
 				0.55 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.375 * self.stat_info.stance_recoil_mults.steelsight,
 				0.375 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.35
 		},
 
 		moderate_left_kick = {
@@ -3454,7 +3462,8 @@ function WeaponTweakData:_init_stats()
 				0.5 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.6 * self.stat_info.stance_recoil_mults.steelsight,
 				0.2 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.35
 		},
 
 		moderate_right_kick = {
@@ -3475,7 +3484,8 @@ function WeaponTweakData:_init_stats()
 				0.5 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.2 * self.stat_info.stance_recoil_mults.steelsight,
 				0.6 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.35
 		},
 		
 		the_wolf_brigade = {
@@ -3496,7 +3506,8 @@ function WeaponTweakData:_init_stats()
 				0.5 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
 				-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
 				0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
-			}
+			},
+			min_h_recoil = 0.35
 		},
 
 		--DMRs, Sniper Rifles, and heavy shotguns will be around here.
@@ -3518,7 +3529,8 @@ function WeaponTweakData:_init_stats()
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.225 * self.stat_info.stance_recoil_mults.steelsight,
 				0.225 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.2
 		},
 
 		left_kick = {
@@ -3539,7 +3551,8 @@ function WeaponTweakData:_init_stats()
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.05 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.2
 		},
 
 		right_kick = {
@@ -3560,7 +3573,8 @@ function WeaponTweakData:_init_stats()
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
 				0.05 * self.stat_info.stance_recoil_mults.steelsight,
 				0.4 * self.stat_info.stance_recoil_mults.steelsight
-			}
+			},
+			min_h_recoil = 0.2
 		},
 
 		kick_m2 = { --Why the recoil is multiplied by x10 in playerturret vs just making the kick values 0.2 instead of 0.02 I will never understand
@@ -3581,7 +3595,8 @@ function WeaponTweakData:_init_stats()
 				(0.7 * self.stat_info.stance_recoil_mults.steelsight) / 10,
 				(-0.225 * self.stat_info.stance_recoil_mults.steelsight) / 10,
 				(0.225 * self.stat_info.stance_recoil_mults.steelsight) / 10
-			}
+			},
+			min_h_recoil = 0.2
 		},
 
 		metalstorm_kick = {
@@ -3602,7 +3617,8 @@ function WeaponTweakData:_init_stats()
 				0.7 * self.stat_info.stance_recoil_mults.steelsight * 6,
 				-0.225 * self.stat_info.stance_recoil_mults.steelsight * 6,
 				0.225 * self.stat_info.stance_recoil_mults.steelsight * 6
-			}
+			},
+			min_h_recoil = 0.2
 		}
 	}
 
@@ -7744,7 +7760,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.stats = {
 					damage = 60,
 					spread = 64,
-					recoil = 61,
+					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 16,
@@ -7790,7 +7806,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 57,
+					recoil = 53,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 17,

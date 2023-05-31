@@ -221,7 +221,7 @@ end
 
 --Add more recoil to burn through.
 --Also no longer arbitrarily caps vertical recoil.
-function FPCameraPlayerBase:recoil_kick(up, down, left, right)
+function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil)
 	local player_state = managers.player:current_state()
 	if player_state == "bipod" then
 		up = up * 0.4
@@ -234,7 +234,8 @@ function FPCameraPlayerBase:recoil_kick(up, down, left, right)
 	self._recoil_kick.accumulated = (self._recoil_kick.accumulated or 0) + v
 
 	local h = math.lerp(left, right, math.random() )
-	h =  h < 0 and math.min( left * 0.25 , h ) or math.max( right * 0.25 , h )
+	local min_h_recoil = min_h_recoil or 0.25
+	h =  h < 0 and math.min( left * min_h_recoil , h ) or math.max( right * min_h_recoil , h )
 	self._recoil_kick.h.accumulated = (self._recoil_kick.h.accumulated or 0) + h
 end
 

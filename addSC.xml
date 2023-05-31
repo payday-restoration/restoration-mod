@@ -33,9 +33,6 @@
 	<unit	            path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" load="true"/>
 	<cooked_physics	    path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" />
 	
-	<sequence_manager	path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
-	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
-	
 	<!-- Dark window cop cars with fixed uniforms -->
 	<!--Washington DC-->
 	<material_config	path="units/payday2/vehicles/bnk_vehicle_police_animated/bnk_vehicle_police_animated" force="true" />
@@ -92,6 +89,164 @@
 	<model				path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
+	
+	<!--Tiny Heist Edits that Change like a few things-->
+	<!-- hotline day 2 -->
+	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	
+	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
+	
+	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
+	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
+	<mission			path="levels/instances/unique/pbr/pbr_sewer_enemies/world/world" force="true" unload="true"/> <!--adjusted the dozers cuz fuck the trio of skullys that come on mayhem above-->
+	
+	<!--shotgun man for security rooms-->
+	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/chas/chas_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/sand/sand_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/tag/tag_security/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/bex/bex_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true" /> 
+	<continent			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/mus_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/vit/vit_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/are_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/corp/corp_security_room/world/world" force="true" />
+	<!--so many security rooms (some of them are unused but better replace them all just in case)-->
+	<mission			path="levels/instances/unique/dah/dah_security_room/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room2/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room3/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room4/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/dah/dah_security_room5/world/world" force="true" /> 
+	<!--Buluc's Mansion Security Rooms-->
+	<mission			path="levels/instances/unique/fex/fex_security_room_left/world/world" force="true" /> 
+	<mission			path="levels/instances/unique/fex/fex_security_room_right/world/world" force="true" />
+	
+	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
+	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/art2/art2" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/collision/collision" force="true" unload="true"/>
+	
+	<mission			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--adds a bikerdozer to the bunker, removes swat turret.-->	
+	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
+
+	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
+
+	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
+	
+	<!--Henry's Cock edit - a bit more cover, some spawn tweaks, altered turret objective, pro job slightly more evil-->
+	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> 
+	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/des/art/art" force="true" unload="true"/> 
+	<continent			path="levels/narratives/locke/des/art/art" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/des/props/props" force="true" unload="true"/> 
+	<continent			path="levels/narratives/locke/des/props/props" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/locke/des/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/locke/des/nav_manager_data" force="true" unload="true"/>
+	
+	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
+	
+	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
+	
+	<!--better SWAT squads-->
+	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/glace/glace_helicopter_dozer/world/world" force="true"/>
+	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
+	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
+	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
+	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
+	
+	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
+	
+	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
+	
+	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
+	
+	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->
+	
+	<continent			path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
+	
+	<continent			path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>
+	
+	<cover_data			path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
+	<mission			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
+
+	<continent			path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
+	<continent			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->	
+	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
+	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->
+
+	<!--White House edit-->
+	<continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/backdrop/backdrop" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/collision/collision" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/lights/lights" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/props/props" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/props1/props1" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/locke/vit/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/>
+
+	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>  <!--removes tons of objects underneath the map-->
+	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
+
+	<!--I LOVE GOOOOOOOOOOOOOLD-->
+	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
+
+	<!--ffs ovk, dont load the entire map if you force the players in one area-->
+	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
+	
+	<mission			path="levels/instances/unique/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
+	
+	<!-- mountain master edit -->
+	<mission			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/pent/pent_coke/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pent/pent_helicopter_extraction/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pent/pent_security_room/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pent/pent_security_room_altdoor/world/world" force="true" unload="true"/>
+
+	<!--Brooklyn 2/10-->
+	<cover_data			path="levels/narratives/continental/spa/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/continental/spa/nav_manager_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
+	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
+	
+	<!--First World Bank-->
+	<mission			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/> 
+	<nav_data			path="levels/narratives/classics/red2/nav_manager_data" force="true" unload="true"/>	
+	<cover_data			path="levels/narratives/classics/red2/cover_data" force="true" unload="true"/>
+
+	<!--UNDERCOVER-->
+	<mission			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
+	<continent			path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>	
+	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
+	
+	<sequence_manager	path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
+	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
+	
+	<!--PANIC ROOM-->
+	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>	
+	<cover_data			path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/collision/collision" force="true" unload="true"/>
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	

@@ -410,7 +410,7 @@ function PlayerStandard:_check_use_item(t, input)
 
 	--Here!
 	if action_wanted then
-		local action_forbidden = self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing()
+		local action_forbidden = self._use_item_expire_t or self:_interacting() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing()
 
 		if not action_forbidden and managers.player:can_use_selected_equipment(self._unit) then
 			self:_start_action_use_item(t)
@@ -983,7 +983,7 @@ function PlayerStandard:_check_action_interact(t, input)
 			if (not deploy_cancel and input.btn_interact_press) or (deploy_cancel and input.btn_use_item_press) then
 				self:_interupt_action_interact()
 				return false
-			elseif input.btn_interact_release then
+			else
 				return false
 			end
 		end
@@ -1858,7 +1858,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		bayonet_melee = true
 	end
 	
-	self._melee_charge_bonus_range = false
+	self._melee_charge_bonus_range = nil
 	if charge_lerp_value and charge_lerp_value > charge_bonus_start then
 		self._melee_charge_bonus_range = true
 		speed = math.max(speed, speed * (charge_lerp_value * charge_bonus_speed))
@@ -1901,6 +1901,8 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	end
 
 	self._melee_attack_var = 0
+	self._melee_attack_var_h = nil
+	self._melee_attack_var_charge_h = nil
 
 	if instant_hit then
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
@@ -1941,17 +1943,21 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			self._melee_attack_var = anim_attack_charged_vars and math.random(#anim_attack_charged_vars)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
 			if anim_attack_charged_left_vars and angle and (angle <= 181) and (angle >= 134) then
+				self._melee_attack_var_charge_h = true
 				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
 				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
 			elseif anim_attack_charged_right_vars and angle and (angle <= 45) and (angle >= 0) then
+				self._melee_attack_var_charge_h = true
 				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
 				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
 			end
 		elseif self._stick_move then
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
+				self._melee_attack_var_h = true
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
 			elseif anim_attack_right_vars and angle and (angle <= 45) and (angle >= 0) then
+				self._melee_attack_var_h = true
 				self._melee_attack_var = anim_attack_right_vars and math.random(#anim_attack_right_vars)
 				anim_attack_param = anim_attack_right_vars and anim_attack_right_vars[self._melee_attack_var]
 			end
@@ -2675,23 +2681,29 @@ end
 
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[melee_entry]
+	local range = melee_tweak_data.stats.range or 150
+
 	local weap_base = self._equipped_unit:base()
 	local wtd = weap_base:weapon_tweak_data()
 	local wtd_base_range = wtd and math.max(wtd.jab_range or 0, 0)
 	local active_weapon = self._unit:inventory():equipped_selection() == 1 and managers.blackmarket:equipped_secondary() or managers.blackmarket:equipped_primary()
 	local active_weapon_stats = active_weapon and melee_entry == "weapon" and managers.weapon_factory:get_stats(active_weapon.factory_id, active_weapon.blueprint)
 	local active_weapon_range = active_weapon_stats and math.max((active_weapon_stats and active_weapon_stats.jab_range or active_weapon_stats.bayonet_range) or 0, 0) or 0
-	local range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.range or 150
-	local sphere_cast_radius_add = tweak_data.blackmarket.melee_weapons[melee_entry].sphere_cast_radius_add
+	range = range + wtd_base_range + active_weapon_range
+
+	local has_charged_range = self._melee_charge_bonus_range and self._melee_charge_bonus_range == true
+	local charge_bonus_range = melee_tweak_data.stats.charge_bonus_range or 0
+	if has_charged_range then
+		range = range + charge_bonus_range
+	end
+
+	local sphere_cast_radius_add = (has_charged_range and self._melee_attack_var_charge_h and melee_tweak_data.sphere_cast_radius_add_charged_h) or (self._melee_attack_var_h and melee_tweak_data.sphere_cast_radius_add_h) or melee_tweak_data.sphere_cast_radius_add
 	if sphere_cast_radius_add then
 		sphere_cast_radius = sphere_cast_radius + sphere_cast_radius_add
 		range = range - sphere_cast_radius_add
 	end
-	range = range + wtd_base_range + active_weapon_range
-	local charge_bonus_range = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_range or 0
-	if self._melee_charge_bonus_range and self._melee_charge_bonus_range == true then
-		range = range + charge_bonus_range
-	end
+
 	local from = self._unit:movement():m_head_pos()
 	local to = from + self._unit:movement():m_head_rot():y() * range
 

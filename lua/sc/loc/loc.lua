@@ -2049,6 +2049,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_2"] = "Has a #{skill_color}#very wide## swing arc.",
 		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#very, very wide## swing arc.",
 		["bm_melee_swing_arc_4"] = "Has a #{skill_color}#massive## swing arc.",
+		["bm_melee_swing_arc_h_1"] = "Has a #{skill_color}#wide## swing arc when moving sideways.",
+		["bm_melee_swing_arc_h_2"] = "Has a #{skill_color}#very wide## swing arc when moving sideways.",
+		["bm_melee_swing_arc_h_3"] = "Has a #{skill_color}#very, very wide## swing arc when moving sideways.",
+		["bm_melee_swing_arc_h_4"] = "Has a #{skill_color}#massive## swing arc when moving sideways.",
+		["bm_melee_swing_arc_charge_h_1"] = "Charged attacks have a #{skill_color}#wide## swing arc when moving sideways.",
+		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing arc when moving sideways.",
+		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing arc when moving sideways.",
+		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing arc when moving sideways.",
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's concealment rating.",
 		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.\n\nAs Jiro, killing a Cloaker with a charged melee attack will trigger a special kill.",
 			["bm_melee_raiden_info"] = "This is no #{important_1}#\"tool of justice\"## in your hands.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
@@ -2090,6 +2098,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
+		["bm_melee_revenant_heirloom_info"] = "Attacking with a low charge performs a quick jab with end of the weapon.\n\nAttacking with at least a #{skill_color}#25%## charge performs a sweeping slash.",
 
 		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",
 		["bm_menu_weapon_bayonet_damage"] = "\nADDITIONAL DAMAGE: ##+",

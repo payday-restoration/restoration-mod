@@ -49,16 +49,5 @@ return {
 		values = {
 			amount = 3
 		}
-	},
-	-- fix the invincible guard
-	[105930] = {
-		values = {
-			enabled = false
-		}
-	},
-	[105929] = {
-		values = {
-			enabled = false
-		}
 	}
 }

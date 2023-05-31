@@ -3118,7 +3118,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.shotgun_spread_increase = 3.5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
-	self.stat_info.hipfire_only_spread_increase = 6.66667
+	self.stat_info.hipfire_only_spread_increase = 4.4
 
 	self.stat_info.base_spread = 10.1 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.1 --How much each point of accuracy reduces spread area.
@@ -9092,7 +9092,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.FIRE_MODE = "auto"
 				self.contraband.fire_mode_data.fire_rate = 0.1
 				self.contraband.CAN_TOGGLE_FIREMODE = true
-				self.contraband.kick = self.stat_info.kick_tables.moderate_kick
+				self.contraband.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.contraband.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.contraband.supported = true
 				self.contraband.ads_speed = 0.420

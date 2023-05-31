@@ -25181,6 +25181,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = 3
 				}
 				self.parts.wpn_fps_smg_mp5_m_dos.custom_stats = {}
+				self.parts.wpn_fps_smg_mp5_m_dos_clip.custom_stats = {}
+				self.parts.wpn_fps_smg_mp5_m_dos_bullet.custom_stats = {}
+				self.parts.wpn_fps_smg_mp5_m_dos_bullet_2.custom_stats = {}
 		
 				self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_m_dos = {
 					stats = {

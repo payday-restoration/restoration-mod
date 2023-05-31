@@ -271,6 +271,10 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 			if self._ads_moving_mult then
 				ads_moving_spread_mult = ads_moving_spread_mult * self._ads_moving_mult
 			end
+			for _, category in ipairs(self:weapon_tweak_data().categories) do
+				local adsms_mult = tweak_data[category] and tweak_data[category].ads_moving_spread_mult or 1
+				ads_moving_spread_mult = ads_moving_spread_mult * adsms_mult
+			end
 			moving_spread = moving_spread * ads_moving_spread_mult
 		end
 		--Add moving spread penalty reduction.

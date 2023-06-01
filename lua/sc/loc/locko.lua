@@ -1909,10 +1909,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_swing_arc_1"] = "이 근접 무기는 #{skill_color}#넓은## 스윙 아크를 가지고 있습니다.",
-		["bm_melee_swing_arc_2"] = "이 근접 무기는 #{skill_color}#더 넓은## 스윙 아크를 가지고 있습니다.",
-		["bm_melee_swing_arc_3"] = "이 근접 무기는 #{skill_color}#매우 넓은## 스윙 아크를 가지고 있습니다.",
-		["bm_melee_swing_arc_4"] = "이 근접 무기는 #{skill_color}#엄청나게 넓은## 스윙 아크를 가지고 있습니다.",		
+		["bm_melee_swing_arc_1"] = "#{skill_color}#넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_2"] = "#{skill_color}#더 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_3"] = "#{skill_color}#매우 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_4"] = "#{skill_color}#엄청나게 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_h_1"] = "옆으로 움직일 때 #{skill_color}#넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_h_2"] = "옆으로 움직일 때 #{skill_color}#더 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_h_3"] = "옆으로 움직일 때 #{skill_color}#매우 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_h_4"] = "옆으로 움직일 때 #{skill_color}#엄청나게 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_charge_h_1"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_charge_h_2"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#더 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_charge_h_3"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#매우 넓은## 스윙 아크를 가집니다.",
+		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 아크를 가집니다.",		
 		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 은폐도에 따라 결정됩니다.",		
 		["bm_melee_katana_info"] = "신사쿠토 카타나는 걸작이지만 새로 단조된 작품이기도 합니다. 이 카타나는 피를 맛본 적이 없고, 진정한 유산이나 역사도 없습니다. 단지 그것을 이루워 줄 수 있는 주인을 기다리고 있을 뿐입니다.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.\n\n지로로 플레이하는 동안, 완전 충전 공격으로 클로커를 죽이면 스폐셜 킬을 발동시킵니다.",
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 #{important_1}#\"정의의 도구\"## 따위가 아니야.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
@@ -1954,7 +1962,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "데드맨의 곡선",		
-
+		["bm_melee_revenant_heirloom_info"] = "낮은 충전으로 공격하면 휘두를 때 빠른 잽을 합니다.\n\n최소 #{skill_color}#25%## 충전한 상태로 공격하면 전면 베기를 합니다.",
+		
 		["bm_menu_weapon_bayonet_header"] = "주무기 통계 기준:",
 		["bm_menu_weapon_bayonet_damage"] = "\n추가 대미지: ##+",
 		["bm_menu_weapon_bayonet_damage_base"] = "\n-기본: ##",

@@ -1,12 +1,8 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-	if tweak_data:difficulty_to_index(difficulty) <= 6 then
+	if tweak_data:difficulty_to_index(difficulty) == 6 then
 		bulldozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
-		bulldozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"	
 	end
 
 if Global.game_settings and Global.game_settings.one_down then

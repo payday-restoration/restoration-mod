@@ -4309,13 +4309,19 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.tenderizer.stats.concealment = 26
 
 		--I'M GOIN'TA LIQUIFY YA!--
-		self.melee_weapons.model24.stats.min_damage = 4.5
+		self.melee_weapons.model24.info_id = "bm_melee_erica_info"
+		self.melee_weapons.model24.special_weapon = "caber"
+		self.melee_weapons.model24.explosion_chance = 0.05
+		self.melee_weapons.model24.explosion_curve_pow = 0.5
+		self.melee_weapons.model24.explosion_damage = 60
+		self.melee_weapons.model24.explosion_range = 500
 		self.melee_weapons.model24.stats.max_damage = 9.001
+		self.melee_weapons.model24.stats.min_damage = 4.5
 		self.melee_weapons.model24.stats.min_damage_effect = 9.0
 		self.melee_weapons.model24.stats.max_damage_effect = 18.0
-		self.melee_weapons.model24.stats.charge_time = 1.5
+		self.melee_weapons.model24.stats.charge_time = 1.8
 		self.melee_weapons.model24.stats.range = 170
-		self.melee_weapons.model24.stats.concealment = 26
+		self.melee_weapons.model24.stats.concealment = 25
 
 		--Who's up for rockin the mic?--	
 		self.melee_weapons.microphone.special_weapon = "talk"

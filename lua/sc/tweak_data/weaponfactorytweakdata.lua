@@ -5125,7 +5125,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	--self.wpn_fps_ass_aug.uses_parts[19] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"	
 	self.wpn_fps_ass_aug.uses_parts[20] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
 
-	--table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_upg_o_marksmansight_rear")
+	table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_ass_aug_npc.uses_parts = deep_clone(self.wpn_fps_ass_aug.uses_parts)
 
@@ -23561,9 +23561,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_lewis_sight_aa.stats = {value = 0}
 				self.parts.wpn_fps_upg_lewis_sight_aa.custom_stats = nil
 
-				self.parts.wpn_fps_upg_lewis_sight_no42.supported = true --not active
-				self.parts.wpn_fps_upg_lewis_sight_no42.stats = {value = 0}
-				self.parts.wpn_fps_upg_lewis_sight_no42.custom_stats = nil
+				self.parts.wpn_fps_upg_lewis_sight_zfg42.supported = true
+				self.parts.wpn_fps_upg_lewis_sight_zfg42.has_description = true
+				self.parts.wpn_fps_upg_lewis_sight_zfg42.desc_id = "bm_wp_upg_o_1_5_scope"	
+				self.parts.wpn_fps_upg_lewis_sight_zfg42.stats = {
+					value = 0,
+					zoom = 5
+				}
+				self.parts.wpn_fps_upg_lewis_sight_zfg42.custom_stats = nil
 
 				self.parts.wpn_fps_upg_lewis_sights_vanilia.supported = true
 				self.parts.wpn_fps_upg_lewis_sights_vanilia.stats = {value = 0}

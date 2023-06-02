@@ -301,6 +301,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 
 	--Get hit direction and display it on hud.
 	local attacker_unit = attack_data.attacker_unit
+	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 	if alive(attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 	end
@@ -355,9 +356,9 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 		armor_reduction_multiplier = 1
 	end
 	local health_subtracted = self:_calc_armor_damage(attack_data)
-	
+
 	--Apply health damage.
-	if (attack_data.armor_piercing or variant == "explosion") and not self._unpierceable then
+	if ((attack_data.armor_piercing or variant == "explosion") and not self._unpierceable) or self_damage then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})

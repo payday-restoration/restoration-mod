@@ -2856,7 +2856,37 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 			
 			if charge_lerp_value >= 0.99 then
-				if special_weapon == "taser" then
+				if special_weapon == "caber" then
+					if character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then
+						local explosion_chance = melee_weapon.explosion_chance or 0.05
+						if math.random() <= explosion_chance then
+							local curve_pow = melee_weapon.explosion_curve_pow or 0.5
+							local exp_dmg = melee_weapon.explosion_damage or 60
+							local exp_range = melee_weapon.explosion_range or 500
+							local effect_params = {
+								sound_event = "trip_mine_explode",
+								effect = "effects/payday2/particles/explosions/shapecharger_explosion",
+								on_unit = true,
+								sound_muffle_effect = true,
+								feedback_range = exp_range,
+								camera_shake_max_mul = 2
+							}
+							managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, exp_range, effect_params)
+							managers.explosion:give_local_player_dmg(col_ray.position, exp_range, exp_dmg, self._unit, curve_pow)						
+							managers.explosion:detect_and_give_dmg({
+								hit_pos = col_ray.position,
+								range = exp_range,
+								collision_slotmask = managers.slot:get_mask("explosion_targets"),
+								curve_pow = curve_pow,
+								damage = exp_dmg,
+								player_damage = 0,
+								alert_radius = 2500,
+								ignore_unit = self._unit,
+								user = self._unit
+							})
+						end
+					end
+				elseif special_weapon == "taser" then
 					action_data.variant = "taser_tased"
 				elseif special_weapon == "panic" then
 					managers.player:spread_psycho_knife_panic()

@@ -2045,18 +2045,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_swing_arc_1"] = "Has a #{skill_color}#wide## swing arc.",
-		["bm_melee_swing_arc_2"] = "Has a #{skill_color}#very wide## swing arc.",
-		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#very, very wide## swing arc.",
-		["bm_melee_swing_arc_4"] = "Has a #{skill_color}#massive## swing arc.",
-		["bm_melee_swing_arc_h_1"] = "Has a #{skill_color}#wide## swing arc when moving sideways.",
-		["bm_melee_swing_arc_h_2"] = "Has a #{skill_color}#very wide## swing arc when moving sideways.",
-		["bm_melee_swing_arc_h_3"] = "Has a #{skill_color}#very, very wide## swing arc when moving sideways.",
-		["bm_melee_swing_arc_h_4"] = "Has a #{skill_color}#massive## swing arc when moving sideways.",
-		["bm_melee_swing_arc_charge_h_1"] = "Charged attacks have a #{skill_color}#wide## swing arc when moving sideways.",
-		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing arc when moving sideways.",
-		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing arc when moving sideways.",
-		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing arc when moving sideways.",
+		["bm_melee_swing_arc_1"] = "Has a #{skill_color}#wide## swing radius.",
+		["bm_melee_swing_arc_2"] = "Has a #{skill_color}#very wide## swing radius.",
+		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#very, very wide## swing radius.",
+		["bm_melee_swing_arc_4"] = "Has a #{skill_color}#massive## swing radius.",
+		["bm_melee_swing_arc_h_1"] = "Has a #{skill_color}#wide## swing radius when moving sideways.",
+		["bm_melee_swing_arc_h_2"] = "Has a #{skill_color}#very wide## swing radius when moving sideways.",
+		["bm_melee_swing_arc_h_3"] = "Has a #{skill_color}#very, very wide## swing radius when moving sideways.",
+		["bm_melee_swing_arc_h_4"] = "Has a #{skill_color}#massive## swing radius when moving sideways.",
+		["bm_melee_swing_arc_charge_h_1"] = "Charged attacks have a #{skill_color}#wide## swing radius when moving sideways.",
+		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing radius when moving sideways.",
+		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing radius when moving sideways.",
+		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's concealment rating.",
 		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.\n\nAs Jiro, killing a Cloaker with a charged melee attack will trigger a special kill.",
 			["bm_melee_raiden_info"] = "This is no #{important_1}#\"tool of justice\"## in your hands.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
@@ -2092,6 +2092,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a #{skill_color}#5%## chance to deal #{skill_color}#10x## times the damage and knockdown.",
 		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
+		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#5%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
 
 		--Melee Weapons
 		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
@@ -4148,7 +4149,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",
-				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nYour armor cannot be pierced.\n\nIncreases the armor of the Flak Jacket and Combined Tactical Vest by #{skill_color}#20.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#15%## of your maximum armor.\n\nYour armor recovers #{skill_color}#15%## faster.",
+				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nYour armor cannot be pierced.\n\n#{risk}#NOTE: Does not apply to self-damage.##\n\nIncreases the armor of the Flak Jacket and Combined Tactical Vest by #{skill_color}#20.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#15%## of your maximum armor.\n\nYour armor recovers #{skill_color}#15%## faster.",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

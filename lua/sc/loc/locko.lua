@@ -1909,18 +1909,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_swing_arc_1"] = "#{skill_color}#넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_2"] = "#{skill_color}#더 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_3"] = "#{skill_color}#매우 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_4"] = "#{skill_color}#엄청나게 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_h_1"] = "옆으로 움직일 때 #{skill_color}#넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_h_2"] = "옆으로 움직일 때 #{skill_color}#더 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_h_3"] = "옆으로 움직일 때 #{skill_color}#매우 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_h_4"] = "옆으로 움직일 때 #{skill_color}#엄청나게 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_charge_h_1"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_charge_h_2"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#더 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_charge_h_3"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#매우 넓은## 스윙 아크를 가집니다.",
-		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 아크를 가집니다.",		
+		["bm_melee_swing_arc_1"] = "#{skill_color}#넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_2"] = "#{skill_color}#더 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_3"] = "#{skill_color}#매우 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_4"] = "#{skill_color}#엄청나게 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_h_1"] = "옆으로 움직일 때 #{skill_color}#넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_h_2"] = "옆으로 움직일 때 #{skill_color}#더 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_h_3"] = "옆으로 움직일 때 #{skill_color}#매우 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_h_4"] = "옆으로 움직일 때 #{skill_color}#엄청나게 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_charge_h_1"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_charge_h_2"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#더 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_charge_h_3"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#매우 넓은## 스윙 범위를 가집니다.",
+		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 범위를 가집니다.",		
 		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 은폐도에 따라 결정됩니다.",		
 		["bm_melee_katana_info"] = "신사쿠토 카타나는 걸작이지만 새로 단조된 작품이기도 합니다. 이 카타나는 피를 맛본 적이 없고, 진정한 유산이나 역사도 없습니다. 단지 그것을 이루워 줄 수 있는 주인을 기다리고 있을 뿐입니다.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.\n\n지로로 플레이하는 동안, 완전 충전 공격으로 클로커를 죽이면 스폐셜 킬을 발동시킵니다.",
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 #{important_1}#\"정의의 도구\"## 따위가 아니야.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
@@ -1956,6 +1956,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_slot_lever_info"] = "잭팟 나와줘!\n\n5% 확률로 #{skill_color}#10 배##의 대미지와 넉다운을 줍니다.",
 		["bm_melee_specialist_info"] = "두 배의 칼날, 두 배의 재미.\n\n근접 공격은 뽑힌 동안 첫 번째 공격 이후 매 공격마다 #{skill_color}#두 배##의 피해를 줍니다.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 #{skill_color}#50%## 감소합니다.",
+		["bm_melee_erica_info"] = "정신이 멀쩡한 사람이라면 이걸 던질 것입니다.\n\n완전히 충전하여 살아 있는 적에게 적중 할 시 #{skill_color}#5%## 확률로 폭발하여 충격 지점으로 부터 #{skill_color}#5m## 내에 있는 적들에게 #{risk}#720## 피해를 가합니다.",		
 
 		--Melee Weapons
 		["bm_melee_twins"] = "쌍차", --Plural form is still "sai"
@@ -4027,7 +4028,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletproof--
 			["menu_iron_man_sc"] = "방탄",
-			["menu_iron_man_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 뚫리지 않습니다.\n\n방편복과 복합 전술 조끼의 방탄력을 #{skill_color}#20##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n방탄복이 가득 차 있는 동안 받는 피해가 최대 방탄력의 #{skill_color}#15%##만큼 감소합니다.\n\n방탄복이 #{skill_color}#15%## 더 빨리 회복됩니다.",
+			["menu_iron_man_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 뚫리지 않습니다.\n\n방편복과 복합 전술 조끼의 방탄력을 #{skill_color}#20##만큼 증가시킵니다.\n\n#{risk}#참고: 자가 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄복이 가득 차 있는 동안 받는 피해가 최대 방탄력의 #{skill_color}#15%##만큼 감소합니다.\n\n방탄복이 #{skill_color}#15%## 더 빨리 회복됩니다.",
 
 			--[[   BREACHER SUBTREE   ]]--
 			--Silent Drilling--

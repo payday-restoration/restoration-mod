@@ -1878,6 +1878,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AWP
 		["bm_w_awp"] = "Amaroq 900",
 		["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
 		["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
 		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 		--WA2000

@@ -20970,12 +20970,24 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		"wpn_fps_snp_awp_stock_lightweight"
 	}
 
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless = deep_clone(self.parts.wpn_fps_snp_awp_conversion_dragonlore)
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless.pcs = {}
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless.name_id = "bm_wp_upg_bazooka"
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless.desc_id = "bm_wp_upg_bazooka_desc"
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless.dlc = "sc"
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless.alt_icon = "guis/dlcs/pxp4/textures/pd2/blackmarket/icons/weapons/awp"
+	self.parts.wpn_fps_snp_awp_conversion_dragonloreless.override = {}
+
 	for k, used_part_id in ipairs(self.wpn_fps_snp_awp.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
 			if self.parts[used_part_id].type == "barrel" then
 				self.parts.wpn_fps_snp_awp_conversion_dragonlore.override[used_part_id] = {
 					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_third_snp_awp_ck_2_b_long",
 					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long"
+				}
+				self.parts.wpn_fps_snp_awp_conversion_dragonloreless.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_third_snp_awp_b_long",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/wpn_fps_snp_awp_b_long"
 				}
 
 				self.parts.wpn_fps_snp_awp_conversion_wildlands.override[used_part_id] = {
@@ -21022,6 +21034,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 			end
 		end
 	end
+
+	table.insert(self.wpn_fps_snp_awp.uses_parts, "wpn_fps_snp_awp_conversion_dragonloreless")
+	self.wpn_fps_snp_awp_npc.uses_parts = deep_clone(self.wpn_fps_snp_awp.uses_parts)
 
 end)
 --AMAROQ 900 SCOPE

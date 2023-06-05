@@ -27,9 +27,15 @@ ponr_toggle = false
 end
 
 return {
-		--Pro Job PONR 
-		[101095] = {
-			ponr = ponr_value,
-			enabled = ponr_toggle
+	--Pro Job PONR 
+	[101095] = {
+		ponr = ponr_value,
+		enabled = ponr_toggle
+	},
+	-- restores unused sniper spawn
+	[100370] = {
+		values = {
+			enabled = true
 		}
+	}
 }	

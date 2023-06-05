@@ -250,6 +250,13 @@
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	
+	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
+		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<material_config 	path="units/payday2/characters/ene_security_3/ene_security_3"/>
+		<unit load="true" 	path="units/payday2/characters/ene_security_3/ene_security_3_husk"/>
+	</add>
+	
 	<!-- Gensec Security: Beret Poppin' -->
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk" load="true" force="true" />	

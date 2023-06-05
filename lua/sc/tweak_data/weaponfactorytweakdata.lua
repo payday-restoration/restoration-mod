@@ -7149,7 +7149,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	--HK21 Part Additions
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_ass_g3_s_sniper")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_ass_g3_s_wood")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_specter")
+	--table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_eotech")
@@ -7164,12 +7164,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_uh")		
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_tf90")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_spot")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_bmg")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_poe")
+	--table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_spot")
+	--table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_bmg")
+	--table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_poe")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_health")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_hamr")
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_atibal")
+	--table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_hamr")
+	--table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_smg_mp5_s_adjust")
 
 	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)	
@@ -7326,7 +7326,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 	}
 	
 	--M249 Part Additions
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_specter")
+	--table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_aimpoint")	
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_eotech")
@@ -7341,12 +7341,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_tf90")
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_spot")
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_bmg")
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_poe")
+	--table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_spot")
+	--table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_bmg")
+	--table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_poe")
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_health")
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_hamr")
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_atibal")
+	--table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_hamr")
+	--table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_atibal")
 
 	self.wpn_fps_lmg_m249_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m249.uses_parts)
 	self.wpn_fps_lmg_m249_npc.override = deep_clone(self.wpn_fps_lmg_m249.override)
@@ -7553,7 +7553,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	self.wpn_fps_lmg_rpk.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"		
 	
 	--RPK Part Additions
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_specter")
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_eotech")
@@ -7567,13 +7567,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_eotech_xps")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_spot")
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_bmg")
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_spot")
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_bmg")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_tf90")
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_poe")
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_poe")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_health")
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_hamr")
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_atibal")
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_hamr")
+	--table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_s_psl")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_lmg_rpk_m_ban")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_s_skfoldable")
@@ -10354,7 +10354,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_reciever.adds = {"wpn_fps_lmg_mg42_dummy_mag"}
 
 	--Buzzsaw Part Additions
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_specter")
+	--table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_eotech")
@@ -10369,12 +10369,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_uh")	
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_tf90")
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_spot")
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_bmg")
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_poe")
+	--table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_spot")
+	--table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_bmg")
+	--table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_poe")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_health")
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr")
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal")
+	--table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr")
+	--table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
 
 	self.wpn_fps_lmg_mg42.adds = {}
@@ -13494,7 +13494,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	}
 
 	--M240 Part Additions	
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_specter")	
+	--table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_specter")	
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_eotech")	
@@ -13509,12 +13509,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_tf90")
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_spot")
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_bmg")
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_poe")
+	--table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_spot")
+	--table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_bmg")
+	--table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_poe")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_health")
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_hamr")
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_atibal")
+	--table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_hamr")
+	--table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_atibal")
 
 	self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)		
 end)
@@ -17500,7 +17500,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	}
 	
 	--[
-	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_specter")
+	--table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_docter")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech")
@@ -17514,6 +17514,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech_xps")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_tf90")
+	--table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_poe")
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_health")
 	
 	--]]
 		
@@ -21777,6 +21780,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 			--]]
+			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_c79") and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
+				for i, remove_id in ipairs(self[factory_id].uses_parts) do
+					if remove_id == "wpn_fps_upg_o_c79" then
+						self[factory_id].uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
 
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_g_sniper") then
 				attachment_list = {
@@ -23614,7 +23624,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					wpn_fps_upg_o_fc1 = { "wpn_fps_rpg7_sight_adapter" }
 				}
 
-				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_specter")
+				--table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_specter")
 				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_aimpoint")
 				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_docter")
 				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_eotech")
@@ -23628,6 +23638,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_eotech_xps")
 				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_uh")
 				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_fc1")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_tf90")
+				--table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_poe")
+				table.insert(self.wpn_fps_lmg_lewis.uses_parts, "wpn_fps_upg_o_health")
 
 				self.wpn_fps_lmg_lewis_npc.adds = deep_clone(self.wpn_fps_lmg_lewis.adds)
 				self.wpn_fps_lmg_lewis_npc.uses_parts = deep_clone(self.wpn_fps_lmg_lewis.uses_parts)
@@ -30001,7 +30014,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_lmg_fg42_so_waw.pcs = nil
 
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_specter")
-		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_specter")	
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_aimpoint")	
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_docter")
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_eotech")

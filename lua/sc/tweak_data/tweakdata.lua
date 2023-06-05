@@ -782,12 +782,51 @@ tweak_data.projectiles.dynamite.launch_speed = 150
 tweak_data.projectiles.sticky_grenade.launch_speed = 225
 tweak_data.projectiles.molotov.launch_speed = 200
 velocity = {
-	'wpn_prj_ace','wpn_prj_four','wpn_prj_target',
-	'wpn_prj_hur','wpn_prj_jav','xmas_snowball'
+	'wpn_prj_ace','wpn_prj_four',
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
 		tweak_data.projectiles[proj_id].launch_speed = 1800
+		tweak_data.projectiles[proj_id].adjust_z = 50
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+end
+velocity = {
+	'wpn_prj_target'
+}
+for i, proj_id in ipairs(velocity) do
+	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].launch_speed = 2000
+		tweak_data.projectiles[proj_id].adjust_z = 50
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+end
+velocity = {
+	'wpn_prj_hur'
+}
+for i, proj_id in ipairs(velocity) do
+	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].launch_speed = 1500
+		tweak_data.projectiles[proj_id].adjust_z = 50
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+end
+velocity = {
+	'wpn_prj_jav'
+}
+for i, proj_id in ipairs(velocity) do
+	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].launch_speed = 2000
+		tweak_data.projectiles[proj_id].adjust_z = 50
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+end
+velocity = {
+	'xmas_snowball'
+}
+for i, proj_id in ipairs(velocity) do
+	if tweak_data.projectiles[proj_id] then
+		tweak_data.projectiles[proj_id].launch_speed = 1200
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

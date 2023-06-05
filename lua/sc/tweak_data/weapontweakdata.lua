@@ -3286,7 +3286,7 @@ function WeaponTweakData:_init_stats()
 			min_h_recoil = 0
 		},
 
-		--Big, low damage bullet hoses will be around here.
+		--Bullet hoses will be around here.
 		horizontal_recoil = {
 			standing = {
 				0.5 * self.stat_info.stance_recoil_mults.standing,
@@ -6754,7 +6754,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.can_shoot_through_wall = false
 				self.p90.panic_suppression_chance = 0.05
 				self.p90.hs_mult = 1.33333
-				self.p90.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.p90.kick = self.stat_info.kick_tables.even_recoil
 				self.p90.supported = true
 				self.p90.ads_speed = 0.220
 				self.p90.damage_falloff = {
@@ -7053,7 +7053,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.fire_mode_data.fire_rate = 0.10909090909
 				self.erma.auto.fire_rate = 0.10909090909
 				self.erma.CAN_TOGGLE_FIREMODE = true
-				self.erma.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.erma.kick = self.stat_info.kick_tables.even_recoil
 				self.erma.supported = true
 				self.erma.ads_speed = 0.200
 				self.erma.damage_falloff = {
@@ -7162,7 +7162,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.CAN_TOGGLE_FIREMODE = true
 				self.polymer.BURST_FIRE = 2
 				self.polymer.ADAPTIVE_BURST_SIZE = false													
-				self.polymer.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.polymer.kick = self.stat_info.kick_tables.even_recoil
 				self.polymer.supported = true
 				self.polymer.ads_speed = 0.220
 				self.polymer.damage_falloff = {
@@ -7598,7 +7598,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw_flamethrower.can_shoot_through_enemy = false
 			self.kacchainsaw_flamethrower.can_shoot_through_shield = false
 			self.kacchainsaw_flamethrower.can_shoot_through_wall = false
-			self.kacchainsaw_flamethrower.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.kacchainsaw_flamethrower.kick = self.stat_info.kick_tables.even_recoil
 			self.kacchainsaw_flamethrower.fire_dot_data = {
 				dot_damage = 1.6,
 				dot_trigger_chance = 50,
@@ -7649,7 +7649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.fire_mode_data.fire_rate = 0.1
 			self.rpk.CAN_TOGGLE_FIREMODE = true
 			self.rpk.BURST_FIRE = false
-			self.rpk.kick = self.stat_info.kick_tables.even_recoil
+			self.rpk.kick = self.stat_info.kick_tables.horizontal_recoil
 			self.rpk.supported = true
 			self.rpk.ads_speed = 0.520
 			self.rpk.damage_falloff = {
@@ -7659,8 +7659,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.rpk.stats = {
 				damage = 30,
-				spread = 66,
-				recoil = 73,
+				spread = 68,
+				recoil = 71,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 20,
@@ -7676,7 +7676,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.bipod_req_scope = true
 			self.rpk.timers.reload_exit_empty = 1.45
 			self.rpk.timers.reload_exit_not_empty = 0.85
-			self.rpk.reload_speed_multiplier = 0.92
+			self.rpk.reload_speed_multiplier = 0.9
 		
 		--Minigun
 			self.m134.categories = {
@@ -15563,7 +15563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tommy.AMMO_MAX = 120
 		self.tommy.CLIP_AMMO_MAX = 20
 		self.tommy.BURST_FIRE = false									
-		self.tommy.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.tommy.kick = self.stat_info.kick_tables.even_recoil
 		self.tommy.panic_suppression_chance = 0.05
 		self.tommy.supported = true
 		self.tommy.ads_speed = 0.280

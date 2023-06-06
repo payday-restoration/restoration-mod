@@ -425,7 +425,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		local weapon_stats = tweak_data.weapon.stats
 		local base_zoom = weapon_stats.zoom and weapon_stats.zoom[1]
 		local current_zoom = self:zoom()
-		local percent_reduction = 0.05
+		local percent_reduction = self:weapon_tweak_data().zoom_recoil_reduction or 0.05
 		local zoom_mult = base_zoom and current_zoom and (1 + (((base_zoom / current_zoom) - 1) * percent_reduction))
 		if zoom_mult then
 			mult = mult / zoom_mult

@@ -24,7 +24,6 @@ end
 		vault_guard = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
 	end
 	
-
 return {
 	--security guard instead of beat cop
 	[104001] = {

@@ -88,6 +88,7 @@
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
 		<hook file="sc/network/matchmaking/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
+		<hook file="sc/network/matchmaking/networkmatchmakingepic.lua" source_file="lib/network/matchmaking/networkmatchmakingepic"/>
 		<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="sc/tweak_data/tweakdatapd2.lua" source_file="lib/tweak_data/tweakdatapd2"/>		
 		<hook file="sc/tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>

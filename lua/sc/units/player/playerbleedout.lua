@@ -153,8 +153,10 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 		
 		if SC._converts then
 			for u_key, u_data in pairs(SC._converts) do
-				if not u_data:movement():cool() and not u_data:anim_data().long_dis_interact_disabled then
-					self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, false, false, 100, my_head_pos, cam_fwd)
+				if u_data.movement and u_data:movement() and u_data:movement().cool then
+					if not u_data:movement():cool() and not u_data:movement().long_dis_interact_disabled then
+						self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, false, false, 100, my_head_pos, cam_fwd)
+					end
 				end
 			end
 		end

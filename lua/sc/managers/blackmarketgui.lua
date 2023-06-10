@@ -445,13 +445,20 @@ function BlackMarketGui:choose_weapon_mods_callback(data)
 	local new_node_data = {}
 	local cosmetic_instances = managers.blackmarket:get_cosmetics_instances_by_weapon_id(data.name)
 	local all_cosmetics = managers.blackmarket:get_cosmetics_by_weapon_id(data.name)
+	local bmm = managers.blackmarket
+	local is_tam_f = bmm.is_weapon_skin_tam
+	local all_skins_td = tweak_data.blackmarket.weapon_skins
+	local is_steam = SystemInfo:distribution() == Idstring("STEAM")
+	local cosmetic_td = nil	
 
 	local weapon_id = data.name
 	local weapon_tweak = tweak_data.weapon
 	local has_type_override = weapon_tweak[ weapon_id ] and weapon_tweak[ weapon_id ].override_mod_type_name
 	
 	for id, data in pairs(all_cosmetics) do
-		if managers.blackmarket:is_weapon_skin_tam(id) then
+		cosmetic_td = all_skins_td[id]
+
+		if not is_steam and not cosmetic_td.is_a_color_skin and not cosmetic_td.is_a_unlockable or is_tam_f(bmm, id) then
 			all_cosmetics[id] = nil
 		end
 	end

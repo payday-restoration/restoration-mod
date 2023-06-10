@@ -595,6 +595,8 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	--PEOC Pardons
 	self.take_pardons.timer = 0
 	
+	self.hospital_phone.timer = 0
+	
 	 --these are for indicating that this interaction can be disabled by autumn; should only be used for equipment. (start_sentrygun_repairmode is already done, see above)
 	self.sentry_gun.blackout_vulnerable = true
 	self.sentry_gun_fire_mode.blackout_vulnerable = true

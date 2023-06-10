@@ -374,6 +374,11 @@ function MissionBriefingGui:init(saferect_ws, fullrect_ws, node)
 	self._lobby_mutators_text:set_top(tweak_data.menu.pd2_large_font_size)
 	local mutators_active = managers.mutators:are_mutators_enabled() and managers.mutators:allow_mutators_in_level(managers.job:current_level_id())
 	self._lobby_mutators_text:set_visible(mutators_active)
+	
+	self._lobby_code_text = LobbyCodeMenuComponent:new(self._safe_workspace, self._full_workspace)
+
+	self._lobby_code_text:panel():set_layer(2)	
+	
 	self._enabled = true
 	--self:flash_ready()
 end
@@ -488,9 +493,7 @@ function MissionBriefingGui:mouse_pressed(button, x, y)
 				local peer = managers.network:session() and managers.network:session():peer(peer_id)
 
 				if peer then
-					Steam:overlay_activate("url", tweak_data.gui.fbi_files_webpage .. "/suspect/" .. peer:user_id() .. "/")
-
-					return
+					return peer:overlay_inspect()
 				end
 			end
 		end
@@ -509,12 +512,19 @@ function MissionBriefingGui:mouse_pressed(button, x, y)
 			end
 		end
 	end
+	
 	if self._ready_button:inside(x, y) then
 		self:on_ready_pressed()
 	end
+	
+	if self._lobby_code_text then
+		self._lobby_code_text:mouse_pressed(button, x, y)
+	end	
+	
 	if not self._ready then
 		self._multi_profile_item:mouse_pressed(button, x, y)
 	end
+	
 	return self._selected_item
 end
 
@@ -558,6 +568,15 @@ function MissionBriefingGui:mouse_moved(x, y)
 	if managers.hud._hud_mission_briefing and managers.hud._hud_mission_briefing._backdrop then
 		managers.hud._hud_mission_briefing._backdrop:mouse_moved(x, y)
 	end
+	
+	if self._lobby_code_text then
+		local success, mouse_state = self._lobby_code_text:mouse_moved(x, y)
+
+		if success then
+			return success, mouse_state
+		end
+	end
+	
 	local u, p = self._multi_profile_item:mouse_moved(x, y)
 	return u or false, p or "arrow"
 end

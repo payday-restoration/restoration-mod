@@ -87,7 +87,7 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 50,
+		mag_capacity = 45,
 		fire_rate = 0.06666666667,
 		damage = 4.8
 	},
@@ -97,17 +97,17 @@ local crew_wep_preset = {
 		damage = 6.0
 	},
 	lmg = {
-		mag_capacity = 80,
+		mag_capacity = 100,
 		fire_rate = 0.08,
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 10,
-		fire_rate = 0.13333,
+		mag_capacity = 8,
+		fire_rate = 0.1714285,
 		damage = 7.5
 	},
 	shotgun_pump = {
-		mag_capacity = 6,
+		mag_capacity = 5,
 		fire_rate = 1,
 		damage = 15.0
 	},
@@ -117,7 +117,7 @@ local crew_wep_preset = {
 		damage = 9.0
 	},
 	sniper_bolt = {
-		mag_capacity = 4,
+		mag_capacity = 5,
 		fire_rate = 3,
 		damage = 18.0
 	}

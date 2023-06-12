@@ -10279,7 +10279,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.pcs = {}
 	self.parts.wpn_fps_lmg_mg42_b_vg38.supported = true
 	self.parts.wpn_fps_lmg_mg42_b_vg38.has_description = true
-	self.parts.wpn_fps_lmg_mg42_b_vg38.desc_id = restoration.Options:GetValue("OTHER/GCGPYPMMSAC") and "" or "bm_wp_mg42_b_vg38_desc_sc"
+	self.parts.wpn_fps_lmg_mg42_b_vg38.desc_id = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC") and "" or "bm_wp_mg42_b_vg38_desc_sc"
 	self.parts.wpn_fps_lmg_mg42_b_vg38.stats = {
 		value = 10,
 		recoil = 4,
@@ -10414,7 +10414,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	self.parts.wpn_fps_pis_c96_nozzle.pcs = {}
 	self.parts.wpn_fps_pis_c96_nozzle.supported = true
 	self.parts.wpn_fps_pis_c96_nozzle.has_description = true
-	self.parts.wpn_fps_pis_c96_nozzle.desc_id = restoration.Options:GetValue("OTHER/GCGPYPMMSAC") and "" or "bm_wp_c96_nozzle_desc_sc"
+	self.parts.wpn_fps_pis_c96_nozzle.desc_id = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC") and "" or "bm_wp_c96_nozzle_desc_sc"
 	self.parts.wpn_fps_pis_c96_nozzle.stats = {
 		value = 6,
 		recoil = 4,
@@ -10521,7 +10521,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_b_e11.pcs = {}
 	self.parts.wpn_fps_smg_sterling_b_e11.supported = true
 	self.parts.wpn_fps_smg_sterling_b_e11.has_description = true
-	self.parts.wpn_fps_smg_sterling_b_e11.desc_id = restoration.Options:GetValue("OTHER/GCGPYPMMSAC") and "" or "bm_wp_sterling_b_e11_desc_sc"
+	self.parts.wpn_fps_smg_sterling_b_e11.desc_id = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC") and "" or "bm_wp_sterling_b_e11_desc_sc"
 	self.parts.wpn_fps_smg_sterling_b_e11.stats = {
 		value = 2,
 		recoil = 4,

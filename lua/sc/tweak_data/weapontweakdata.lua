@@ -52,6 +52,7 @@ local damage_set = {
 		"huntsman_crew",
 		"ksg_crew",
 		"boot_crew",
+		"supernova_crew",
 	},
 	sniper_auto = {
 		"m14_crew",
@@ -73,6 +74,7 @@ local damage_set = {
 		"sbl_crew",
 		"desertfox_crew",
 		"r700_crew",
+		"awp_crew",
 	},
 	lmg = {
 		"tecci_crew",
@@ -83,16 +85,17 @@ local damage_set = {
 		"hk51b_crew",
 		"mg42_crew",
 		"m60_crew",
+		"kacchainsaw_crew",
 	}
 }
 local crew_wep_preset = {
 	smg = {
 		mag_capacity = 45,
 		fire_rate = 0.06666666667,
-		damage = 4.8
+		damage = 4.0
 	},
 	assault_rifle = {
-		mag_capacity = 30,
+		mag_capacity = 24,
 		fire_rate = 0.1,
 		damage = 6.0
 	},
@@ -2593,7 +2596,7 @@ local crew_wep_preset = {
 			self.boot_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
 			self.boot_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.boot_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-			self.boot_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+			self.boot_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 			self.boot_crew.auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
 			self.boot_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
 			self.boot_crew.NR_CLIPS_MAX = 5
@@ -2603,6 +2606,25 @@ local crew_wep_preset = {
 			self.boot_crew.is_shotgun = true
 			self.boot_crew.rays = 9
 			self.boot_crew.FIRE_MODE = "single"
+		end
+
+		function WeaponTweakData:_init_data_supernova_crew()
+			self.supernova_crew.categories = clone(self.supernova.categories)
+			self.supernova_crew.sounds.prefix = "supernova_npc"
+			self.supernova_crew.use_data.selection_index = 2
+			self.supernova_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
+			self.supernova_crew.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+			self.supernova_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+			self.supernova_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
+			self.supernova_crew.auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+			self.supernova_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+			self.supernova_crew.NR_CLIPS_MAX = 5
+			self.supernova_crew.hold = "rifle"
+			self.supernova_crew.alert_size = 2500
+			self.supernova_crew.suppression = 3.4
+			self.supernova_crew.is_shotgun = true
+			self.supernova_crew.rays = 9
+			self.supernova_crew.FIRE_MODE = "single"
 		end
 
 	--SNIPERS
@@ -2903,7 +2925,7 @@ local crew_wep_preset = {
 			self.r700_crew.use_data.selection_index = 2
 			self.r700_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
 			self.r700_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
-			self.r700_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+			self.r700_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 			self.r700_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
 			self.r700_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
 			self.r700_crew.NR_CLIPS_MAX = 2
@@ -2911,6 +2933,23 @@ local crew_wep_preset = {
 			self.r700_crew.alert_size = 2500
 			self.r700_crew.suppression = 3.4
 			self.r700_crew.FIRE_MODE = "single"
+		end
+
+		function WeaponTweakData:_init_data_awp_crew()
+			self.awp_crew.categories = clone(self.r700.categories)
+			self.awp_crew.sounds.prefix = "awp_npc"
+			self.awp_crew.use_data.selection_index = 2
+			self.awp_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
+			self.awp_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+			self.awp_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+			self.awp_crew.auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+			self.awp_crew.CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+			self.awp_crew.NR_CLIPS_MAX = 2
+			self.awp_crew.pull_magazine_during_reload = "rifle"
+			self.awp_crew.hold = "rifle"
+			self.awp_crew.alert_size = 2500
+			self.awp_crew.suppression = 3.4
+			self.awp_crew.FIRE_MODE = "single"
 		end
 
 	
@@ -3050,23 +3089,44 @@ local crew_wep_preset = {
 			self.m60_crew.FIRE_MODE = "auto"
 		end
 
-				
-	function WeaponTweakData:_init_data_x_basset_crew()
-		self.x_basset_crew.categories = clone(self.x_basset.categories)
-		self.x_basset_crew.sounds.prefix = "basset_x_npc"
-		self.x_basset_crew.use_data.selection_index = 2
-		self.x_basset_crew.DAMAGE = 1.25
-		self.x_basset_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
-		self.x_basset_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-		self.x_basset_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-		self.x_basset_crew.rays = 6
-		self.x_basset_crew.CLIP_AMMO_MAX = 60
-		self.x_basset_crew.NR_CLIPS_MAX = 5
-		self.x_basset_crew.hold = "akimbo_pistol"
-		self.x_basset_crew.alert_size = 1800
-		self.x_basset_crew.suppression = 2
-		self.x_basset_crew.FIRE_MODE = "auto"
-	end
+		function WeaponTweakData:_init_data_kacchainsaw_crew()
+			self.kacchainsaw_crew.categories = clone(self.kacchainsaw.categories)
+			self.kacchainsaw_crew.sounds.prefix = "m60_npc"
+			self.kacchainsaw_crew.use_data.selection_index = 2
+			self.kacchainsaw_crew.DAMAGE = crew_wep_preset.lmg.damage
+			self.kacchainsaw_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+			self.kacchainsaw_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+			self.kacchainsaw_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
+			self.kacchainsaw_crew.CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+			self.kacchainsaw_crew.NR_CLIPS_MAX = 3
+			self.kacchainsaw_crew.hold = "rifle"
+			self.kacchainsaw_crew.alert_size = 2500
+			self.kacchainsaw_crew.suppression = 2
+			self.kacchainsaw_crew.FIRE_MODE = "auto"
+			self.kacchainsaw_crew.animations = {
+				thq_align_anim = "thq"
+			}
+			self.kacchainsaw_crew.has_fire_animation = true
+			self.kacchainsaw_flamethrower_npc.categories = clone(self.kacchainsaw_flamethrower.categories)
+			self.kacchainsaw_flamethrower_npc.sounds.prefix = "flamethrower_npc"
+			self.kacchainsaw_flamethrower_npc.sounds.fire = "flamethrower_npc_fire"
+			self.kacchainsaw_flamethrower_npc.sounds.stop_fire = "flamethrower_npc_fire_stop"
+			self.kacchainsaw_flamethrower_npc.use_data.selection_index = SELECTION.PRIMARY
+			self.kacchainsaw_flamethrower_npc.DAMAGE = crew_wep_preset.lmg.damage
+			self.kacchainsaw_flamethrower_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+			self.kacchainsaw_flamethrower_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+			self.kacchainsaw_flamethrower_npc.flame_effect = "effects/payday2/particles/explosions/flamethrower_cheap"
+			self.kacchainsaw_flamethrower_npc.flame_max_range = self.kacchainsaw_flamethrower.flame_max_range
+			self.kacchainsaw_flamethrower_npc.single_flame_effect_duration = self.kacchainsaw_flamethrower.single_flame_effect_duration
+			self.kacchainsaw_flamethrower_npc.auto.fire_rate = crew_wep_preset.lmg.fire_rate
+			self.kacchainsaw_flamethrower_npc.CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+			self.kacchainsaw_flamethrower_npc.NR_CLIPS_MAX = self.kacchainsaw_flamethrower.NR_CLIPS_MAX
+			self.kacchainsaw_flamethrower_npc.hold = "rifle"
+			self.kacchainsaw_flamethrower_npc.alert_size = 2500
+			self.kacchainsaw_flamethrower_npc.suppression = 2
+			self.kacchainsaw_flamethrower_npc.FIRE_MODE = "auto"
+		end
+
 
 --Defines most weapon stats via loops for conciseness.
 function WeaponTweakData:_init_stats()

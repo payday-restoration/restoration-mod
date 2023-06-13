@@ -90,13 +90,13 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 45,
-		fire_rate = 0.06666666667,
+		mag_capacity = 50,
+		fire_rate = 0.072727272,
 		damage = 4.0
 	},
 	assault_rifle = {
-		mag_capacity = 24,
-		fire_rate = 0.1,
+		mag_capacity = 25,
+		fire_rate = 0.12,
 		damage = 6.0
 	},
 	lmg = {
@@ -105,21 +105,21 @@ local crew_wep_preset = {
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 8,
+		mag_capacity = 10,
 		fire_rate = 0.1714285,
 		damage = 7.5
 	},
 	shotgun_pump = {
-		mag_capacity = 5,
-		fire_rate = 1,
+		mag_capacity = 7,
+		fire_rate = 0.8571428,
 		damage = 15.0
 	},
 	sniper_auto = {
 		mag_capacity = 8,
-		fire_rate = 1.5,
+		fire_rate = 1.090909,
 		damage = 9.0
 	},
-	sniper_bolt = {
+	sniper_bolt = {	
 		mag_capacity = 5,
 		fire_rate = 3,
 		damage = 18.0
@@ -3091,7 +3091,7 @@ local crew_wep_preset = {
 
 		function WeaponTweakData:_init_data_kacchainsaw_crew()
 			self.kacchainsaw_crew.categories = clone(self.kacchainsaw.categories)
-			self.kacchainsaw_crew.sounds.prefix = "m60_npc"
+			self.kacchainsaw_crew.sounds.prefix = "kac_npc"
 			self.kacchainsaw_crew.use_data.selection_index = 2
 			self.kacchainsaw_crew.DAMAGE = crew_wep_preset.lmg.damage
 			self.kacchainsaw_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
@@ -3111,7 +3111,7 @@ local crew_wep_preset = {
 			self.kacchainsaw_flamethrower_npc.sounds.prefix = "flamethrower_npc"
 			self.kacchainsaw_flamethrower_npc.sounds.fire = "flamethrower_npc_fire"
 			self.kacchainsaw_flamethrower_npc.sounds.stop_fire = "flamethrower_npc_fire_stop"
-			self.kacchainsaw_flamethrower_npc.use_data.selection_index = SELECTION.PRIMARY
+			self.kacchainsaw_flamethrower_npc.use_data.selection_index = 2
 			self.kacchainsaw_flamethrower_npc.DAMAGE = crew_wep_preset.lmg.damage
 			self.kacchainsaw_flamethrower_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 			self.kacchainsaw_flamethrower_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"

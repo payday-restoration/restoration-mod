@@ -17784,7 +17784,7 @@ function WeaponTweakData:_create_table_structure()
 	}
 
 	self.ching_crew = {
-		usage = "rifle",
+		usage = "is_dmr",
 		anim_usage = "is_rifle",
 		sounds = {},
 		use_data = {},
@@ -17792,14 +17792,14 @@ function WeaponTweakData:_create_table_structure()
 
 	}		
 	self.m14_crew = {
-		usage = "rifle",
+		usage = "is_dmr",
 		anim_usage = "is_rifle",
 		sounds = {},
 		use_data = {},
 		auto = {}
 	}	
 	self.g3_crew = {
-		usage = "rifle",
+		usage = "is_dmr",
 		anim_usage = "is_rifle",
 		sounds = {},
 		use_data = {},

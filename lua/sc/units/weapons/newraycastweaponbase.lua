@@ -415,7 +415,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		end
 	end
 	
-	if (self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t) and not self._vulcan_firing then
+	if self._fire_mode == ids_auto and (self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t) and not self._vulcan_firing then
 		return 0
 	end
 
@@ -459,10 +459,10 @@ function NewRaycastWeaponBase:_start_spin()
 		local spin_up_t = self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T
 		local spin_down_t = self:weapon_tweak_data().spin_down_t or NewRaycastWeaponBase._SPIN_DOWN_T
 		self._spin_up_start_t = t
-		if self._spin_down_start_t and NewRaycastWeaponBase._SPIN_DOWN_T > 0 then
+		if self._spin_down_start_t then spin_down_t > 0 then
 			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , spin_down_t) / spin_down_t) * spin_up_t
 		end
-		if self:weapon_tweak_data().sounds.spin_start then
+		if self:weapon_tweak_data().sounds.spin_start and self._fire_mode == ids_auto then
 			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_start or "turret_spin_start")
 		end
 		self._next_spin_animation_t = t
@@ -503,7 +503,7 @@ function NewRaycastWeaponBase:update_spin()
 	
 	if self._spinning and not self._vulcan_firing then
 		local t = self._unit:timer():time()
-		if t >= self._next_spin_animation_t then
+		if t >= self._next_spin_animation_t and self:weapon_tweak_data().spin_up_anims then
 			self:tweak_data_anim_play("fire", self:fire_rate_multiplier())
 			self._next_spin_animation_t = t + (tweak_data.weapon[self._name_id].fire_mode_data and tweak_data.weapon[self._name_id].fire_mode_data.fire_rate or 0) / self:fire_rate_multiplier()
 		end

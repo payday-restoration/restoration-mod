@@ -3698,7 +3698,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590','m45'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
@@ -6933,6 +6933,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.cobray.stats_modifiers = nil
+				self.cobray.sounds.spin_start = "wp_mac10_lever_pull"
+				self.cobray.spin_up_shoot = true
+				self.cobray.spin_up_t = 0.01
+				self.cobray.spin_down_t = 0.0000000001
 				self.cobray.panic_suppression_chance = 0.05
 				self.cobray.timers.reload_empty = 3.9
 				self.cobray.timers.reload_exit_empty = 1
@@ -7104,7 +7108,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.AMMO_MAX = 120
 				self.erma.fire_mode_data.fire_rate = 0.10909090909
 				self.erma.auto.fire_rate = 0.10909090909
-				self.erma.CAN_TOGGLE_FIREMODE = true
+				self.erma.CAN_TOGGLE_FIREMODE = false
 				self.erma.kick = self.stat_info.kick_tables.even_recoil
 				self.erma.supported = true
 				self.erma.ads_speed = 0.200
@@ -7128,6 +7132,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.erma.stats_modifiers = nil
+				self.erma.sounds.spin_start = "wp_mac10_lever_pull"
+				self.erma.spin_up_shoot = true
+				self.erma.spin_up_t = 0.01
+				self.erma.spin_down_t = 0.0000000001
 				self.erma.panic_suppression_chance = 0.05
 				self.erma.timers.reload_exit_empty = 0.6
 				self.erma.timers.reload_exit_not_empty = 0.7
@@ -7161,6 +7169,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_mac10.stats_modifiers = nil
 				self.x_mac10.panic_suppression_chance = 0.05
+				self.x_mac10.sounds.spin_start = "wp_mac10_lever_pull"
+				self.x_mac10.spin_up_shoot = true
+				self.x_mac10.spin_up_t = 0.01
+				self.x_mac10.spin_down_t = 0.0000000001
 				self.x_mac10.reload_speed_multiplier = 0.75
 				self.x_mac10.timers.reload_empty = 3
 				self.x_mac10.timers.reload_not_empty = 2
@@ -7198,6 +7210,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_uzi.stats_modifiers = nil
 				self.x_uzi.panic_suppression_chance = 0.05
+				self.x_uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
+				self.x_uzi.spin_up_shoot = true
+				self.x_uzi.spin_up_t = 0.01
+				self.x_uzi.spin_down_t = 0.0000000001
 				self.x_uzi.reload_speed_multiplier = 0.75
 				self.x_uzi.timers.reload_empty = 3
 				self.x_uzi.timers.reload_not_empty = 2
@@ -7316,9 +7332,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.CLIP_AMMO_MAX = 20
 				self.sterling.AMMO_MAX = 60
 				self.sterling.fire_mode_data.fire_rate = 0.10909090909
-				self.sterling.CAN_TOGGLE_FIREMODE = true
-				self.sterling.auto = {}
-				self.sterling.auto.fire_rate = 0.10909090909
+				self.sterling.CAN_TOGGLE_FIREMODE = false
 				self.sterling.kick = self.stat_info.kick_tables.right_recoil
 				self.sterling.supported = true
 				self.sterling.ads_speed = 0.180
@@ -7342,6 +7356,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.sterling.stats_modifiers = nil
+				self.sterling.sounds.spin_start = "wp_mac10_lever_pull"
+				self.sterling.spin_up_shoot = true
+				self.sterling.spin_up_t = 0.01
+				self.sterling.spin_down_t = 0.0000000001
 				self.sterling.panic_suppression_chance = 0.05
 				self.sterling.reload_speed_multiplier = 1.2
 				self.sterling.timers.reload_exit_empty = 0.6
@@ -7375,6 +7393,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.mac10.stats_modifiers = nil
+				self.mac10.sounds.spin_start = "wp_mac10_lever_pull"
+				self.mac10.spin_up_shoot = true
+				self.mac10.spin_up_t = 0.01
+				self.mac10.spin_down_t = 0.0000000001
 				self.mac10.timers.reload_empty = 2.2
 				self.mac10.timers.reload_not_empty = 1.5
 				self.mac10.timers.reload_exit_empty = 0.8
@@ -7413,6 +7435,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.m1928.stats_modifiers = nil
+				self.m1928.sounds.spin_start = "wp_m1928_lever_release"
+				self.m1928.spin_up_shoot = true
+				self.m1928.spin_up_t = 0.03
+				self.m1928.spin_down_t = 0.00000001
 				self.m1928.timers.reload_not_empty = 3.3
 				self.m1928.timers.reload_exit_not_empty = 1.2
 				self.m1928.timers.reload_empty = 4.0
@@ -7453,6 +7479,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.uzi.stats_modifiers = nil
 				self.uzi.panic_suppression_chance = 0.05
+				self.uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
+				self.uzi.spin_up_shoot = true
+				self.uzi.spin_up_t = 0.01
+				self.uzi.spin_down_t = 0.0000000001
 				self.uzi.reload_speed_multiplier = 1.1
 				self.uzi.timers.reload_not_empty = 1.95
 				self.uzi.timers.reload_empty = 3.6
@@ -7480,7 +7510,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
 			self.shuno.ads_speed = 0.600
-			self.shuno.ads_spool = true
 			self.shuno.damage_falloff = {
 				start_dist = 1800,
 				end_dist = 4500,
@@ -7501,6 +7530,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}		
 			self.shuno.stats_modifiers = nil
+			self.shuno.ads_spool = true
+			self.shuno.spin_up_anims = true
 			self.shuno.timers.equip = 2.35
 			self.shuno.timers.reload_exit_empty = 5
 			self.shuno.timers.reload_exit_not_empty = 5
@@ -7588,6 +7619,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.m249.shell_ejection = "_dmc/effects/shell_lmg_down"
 			self.m249.stats_modifiers = nil
+			self.m249.sounds.spin_start = "wp_m249_lever_release"
+			self.m249.spin_up_shoot = true
+			self.m249.spin_up_t = 0.03
+			self.m249.spin_down_t = 0.00000001
 			self.m249.timers.equip = 1.2
 			self.m249.timers.reload_exit_empty = 1.2
 			self.m249.timers.reload_exit_not_empty = 1.2
@@ -7615,7 +7650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.kacchainsaw.stats = {
 				damage = 24,
-				spread = 36,
+				spread = 43,
 				recoil = 78,
 				spread_moving = 5,
 				zoom = 1,
@@ -7630,6 +7665,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw.stats_modifiers = nil
 			self.kacchainsaw.panic_suppression_chance = 0.05
 			self.kacchainsaw.reload_speed_multiplier = 0.87
+			self.kacchainsaw.sounds.spin_start = "wp_kac_reload_lever_push"
+			self.kacchainsaw.spin_up_shoot = true
+			self.kacchainsaw.spin_up_t = 0.03
+			self.kacchainsaw.spin_down_t = 0.00000001
 			self.kacchainsaw.timers.equip = 2
 			self.kacchainsaw.timers.reload_not_empty = 4.92
 			self.kacchainsaw.timers.reload_exit_not_empty = 1.1
@@ -7757,7 +7796,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 			self.m134.supported = true
 			self.m134.ads_speed = 0.660
-			self.m134.ads_spool = true
 			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
 			self.m134.damage_falloff = {
 				start_dist = 1500,
@@ -7780,6 +7818,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.m134.stats_modifiers = {}
 			self.m134.jab_range = 50
+			self.m134.ads_spool = true
+			self.m134.spin_up_anims = true
 			self.m134.timers.reload_empty = 7
 			self.m134.timers.reload_not_empty = 7
 			self.m134.timers.reload_exit_empty = 2
@@ -7832,7 +7872,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.bipod_req_scope = true
 				self.m60.panic_suppression_chance = 0.05
 				self.m60.reload_speed_multiplier = 0.75
-				self.m60.obd = 1
+				self.m60.sounds.spin_start = "wp_m60_reload_lever_release"
+				self.m60.spin_up_shoot = true
+				self.m60.spin_up_t = 0.06
+				self.m60.spin_down_t = 0.00000001
 				self.m60.armor_piercing_chance = 0.2
 				self.m60.timers.reload_exit_empty = 1.4
 				self.m60.timers.reload_not_empty = 4.7
@@ -7880,6 +7923,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.no_bipod_anims = true
 				self.par.armor_piercing_chance = 0.2
 				self.par.reload_speed_multiplier = 0.775
+				self.par.sounds.spin_start = "wp_m249_lever_release"
+				self.par.spin_up_shoot = true
+				self.par.spin_up_t = 0.06
+				self.par.spin_down_t = 0.00000001
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
 				self.par.timers.reload_exit_empty = 1.325
@@ -7924,6 +7971,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mg42.stats_modifiers = nil
 				self.mg42.panic_suppression_chance = 0.05
+				self.mg42.sounds.spin_start = "wp_mg42_lever_release"
+				self.mg42.spin_up_shoot = true
+				self.mg42.spin_up_t = 0.08
+				self.mg42.spin_down_t = 0.00000001
 				self.mg42.reload_speed_multiplier = 1
 				self.mg42.timers.reload_exit_empty = 1.65
 				self.mg42.timers.reload_exit_not_empty = 1.65
@@ -10289,6 +10340,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.stats_modifiers = nil
 				self.aa12.panic_suppression_chance = 0.05
 				self.aa12.reload_speed_multiplier = 1.175
+				self.aa12.sounds.spin_start = "wp_mac10_lever_pull"
+				self.aa12.spin_up_shoot = true
+				self.aa12.spin_up_t = 0.03
+				self.aa12.spin_down_t = 0.00000001
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
 
@@ -15648,6 +15703,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.tommy.stats_modifiers = nil
+		self.tommy.sounds.spin_start = "wp_m1928_lever_release"
+		self.tommy.spin_up_shoot = true
+		self.tommy.spin_up_t = 0.03
+		self.tommy.spin_down_t = 0.00000001
 		self.tommy.timers.reload_exit_empty = 0.9
 		self.tommy.timers.reload_exit_not_empty = 0.8
 	end

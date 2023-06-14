@@ -357,7 +357,7 @@ function PlayerStandard:_check_action_melee(t, input)
 	end
 
 	--Here!
-	local action_forbidden = not self:_melee_repeat_allowed() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_using_bipod() or self:is_shooting_count() or self:_in_burst()
+	local action_forbidden = not self:_melee_repeat_allowed() or self._use_item_expire_t or self:_changing_weapon() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_using_bipod() or self:is_shooting_count() or self:_in_burst() or self._spin_up_shoot
 
 	if action_forbidden then
 		return
@@ -610,7 +610,7 @@ end
 
 function PlayerStandard:_check_action_primary_attack(t, input)
 	local new_action = nil
-	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release or self._queue_fire
+	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release or self._queue_fire or self._spin_up_shoot
 
 	action_wanted = action_wanted or self:is_shooting_count()
 	action_wanted = action_wanted or self:_is_charging_weapon()
@@ -749,7 +749,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							end
 						end
 					elseif fire_mode == "auto" then
-						if input.btn_primary_attack_state then
+						if self._spin_up_shoot or input.btn_primary_attack_state then
+							self._spin_up_shoot = weap_base:weapon_tweak_data().spin_up_shoot
 							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 						end
 					elseif fire_mode == "burst" then
@@ -781,6 +782,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 					if fired then
 						self._queue_fire = nil
+						self._spin_up_shoot = nil
 
 						if weap_base._descope_on_fire then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
@@ -902,6 +904,9 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 			self._queue_reload_interupt = true
 		end
 		self._queue_fire = nil
+		if not self._equipped_unit:base():weapon_tweak_data().spin_up_shoot then
+			self._spin_up_shoot = nil
+		end
 	end
 
 	if not new_action then
@@ -1377,7 +1382,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if self._shooting and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
 		self._running_wanted = true
 		return
 	end

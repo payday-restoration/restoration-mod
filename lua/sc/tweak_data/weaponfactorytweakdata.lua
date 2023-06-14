@@ -17248,16 +17248,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 		40
 	}
 	self.parts.wpn_fps_lmg_m60_b_short.supported = true
-	self.parts.wpn_fps_lmg_m60_b_short.stats = {
-		spread = -1,
-		concealment = 1,
-		value = 3
-	}
-	self.parts.wpn_fps_lmg_m60_b_short.custom_stats = {
-		falloff_start_mult = 0.925,
-		falloff_end_mult = 0.925,
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_lmg_m60_b_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_lmg_m60_b_short.custom_stats = deep_clone(barrels.short_b3_custom_stats)
 	self.parts.wpn_fps_lmg_m60_b_short.forbids = {
 		"wpn_fps_upg_bp_lmg_lionbipod"
 	}
@@ -17326,91 +17318,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 		}
 	}
 
-	--M60 Part Additions
-	self.wpn_fps_lmg_m60.adds = { 
-		wpn_fps_upg_o_specter = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_aimpoint = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_docter = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_eotech = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_t1micro = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_cmore = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_acog = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_cs = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_eotech_xps = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_reflex = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_rx01 = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_rx30 = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_uh = { "wpn_fps_ass_groza_o_adapter" },
-		wpn_fps_upg_o_fc1 = { "wpn_fps_ass_groza_o_adapter" }
-	}
-
-	self.wpn_fps_lmg_m60.override = {
-		wpn_fps_lmg_m60_body_standard = {
-			adds = {"wpn_fps_lmg_m60_sight_standard"}
-		},
-		wpn_fps_upg_o_specter = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
-		},
-		wpn_fps_upg_o_aimpoint = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
-		},
-		wpn_fps_upg_o_docter = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_eotech = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_t1micro = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_cmore = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
-		},
-		wpn_fps_upg_o_cs = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard", "wpn_fps_upg_o_xpsg33_magnifier", "wpn_fps_upg_o_sig" }
-		},
-		wpn_fps_upg_o_rx30 = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_rx01 = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_reflex = {
-			parent = "upper_reciever",				
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_eotech_xps = {
-			parent = "upper_reciever",		
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_uh = {
-			parent = "upper_reciever",		
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_upg_o_fc1 = {
-			parent = "upper_reciever",
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		},
-		wpn_fps_ass_groza_o_adapter = {
-			parent = "upper_reciever",
-			forbids = { "wpn_fps_lmg_m60_sight_standard" }
-		}
-	}
-	
 	--[
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_aimpoint")
@@ -17427,10 +17334,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_uh")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_tf90")
-	--table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_poe")
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_poe")
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_hamr")
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_health")
-	
 	--]]
+
+	self.wpn_fps_lmg_m60.adds = {}
+	self.wpn_fps_lmg_m60.override = {
+		wpn_fps_lmg_m60_body_standard = {
+			adds = {"wpn_fps_lmg_m60_sight_standard"}
+		}
+	}
+	
+	for i, part_id in pairs(self.wpn_fps_lmg_m60.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then	
+			self.wpn_fps_lmg_m60.override[part_id] = { 
+				parent = "upper_reciever",				
+				forbids = { "wpn_fps_lmg_m60_sight_standard" }
+			}
+			self.wpn_fps_lmg_m60.adds[part_id] = {"wpn_fps_ass_groza_o_adapter"}
+		end
+	end
+	self.wpn_fps_lmg_m60.override.wpn_fps_upg_o_hamr_reddot = { parent = "upper_reciever" }	
+	self.wpn_fps_lmg_m60.override.wpn_fps_upg_o_atibal_reddot = { parent = "upper_reciever" }	
 		
 	self.wpn_fps_lmg_m60_npc.override = deep_clone(self.wpn_fps_lmg_m60.override)			
 	self.wpn_fps_lmg_m60_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m60.uses_parts)			

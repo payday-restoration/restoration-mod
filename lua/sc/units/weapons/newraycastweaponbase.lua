@@ -348,7 +348,7 @@ NewRaycastWeaponBase._SPIN_DOWN_T = 0.75
 
 function NewRaycastWeaponBase:start_shooting(...)
 	start_shooting_original(self, ...)
-	if self._name_id == "m134" or self._name_id == "shuno" then
+	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self:_start_spin()
 	end
 end
@@ -362,14 +362,14 @@ function NewRaycastWeaponBase:stop_shooting(...)
 		self._fire_rate_init_cancel = true
 		self._next_fire_allowed = self._next_fire_allowed + self._burst_delay
 	end
-	if self._name_id == "m134" or self._name_id == "shuno" then
+	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self._vulcan_firing = nil
 		self:_stop_spin()
 	end
 end
 
 function NewRaycastWeaponBase:_fire_sound(...)
-	if (self._name_id ~= "m134" and self._name_id ~= "shuno") or self._vulcan_firing then
+	if (self._name_id ~= "m134" and self._name_id ~= "shuno" or self:weapon_tweak_data().spin_up_t) or self._vulcan_firing then
 		if self._fire_mode == ids_volley and self:weapon_tweak_data().sounds.fire_volley then
 			self:play_tweak_data_sound("fire_volley", "fire")
 			return
@@ -379,7 +379,7 @@ function NewRaycastWeaponBase:_fire_sound(...)
 end
 
 function NewRaycastWeaponBase:trigger_held(...)
-	if self._name_id == "m134" or self._name_id == "shuno" then
+	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self:update_spin()
 		local fired
 		if self._next_fire_allowed <= self._unit:timer():time() then
@@ -415,7 +415,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		end
 	end
 	
-	if (self._name_id == "m134" or self._name_id == "shuno") and not self._vulcan_firing then
+	if (self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t) and not self._vulcan_firing then
 		return 0
 	end
 
@@ -456,9 +456,11 @@ end
 function NewRaycastWeaponBase:_start_spin()
 	if not self._spinning then
 		local t = self._unit:timer():time()
+		local spin_up_t = self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T
+		local spin_down_t = self:weapon_tweak_data().spin_down_t or NewRaycastWeaponBase._SPIN_DOWN_T
 		self._spin_up_start_t = t
 		if self._spin_down_start_t and NewRaycastWeaponBase._SPIN_DOWN_T > 0 then
-			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , NewRaycastWeaponBase._SPIN_DOWN_T) / NewRaycastWeaponBase._SPIN_DOWN_T) * NewRaycastWeaponBase._SPIN_UP_T
+			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , spin_down_t) / spin_down_t) * spin_up_t
 		end
 		if self:weapon_tweak_data().sounds.spin_start then
 			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_start or "turret_spin_start")
@@ -472,9 +474,11 @@ end
 function NewRaycastWeaponBase:_stop_spin()
 	if self._spinning and not self._in_steelsight then
 		local t = self._unit:timer():time()
+		local spin_up_t = self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T
+		local spin_down_t = self:weapon_tweak_data().spin_down_t or NewRaycastWeaponBase._SPIN_DOWN_T
 		self._spin_down_start_t = t
-		if self._spin_up_start_t and NewRaycastWeaponBase._SPIN_UP_T > 0 then
-			self._spin_down_start_t = self._spin_down_start_t - (1 - math.clamp(t - self._spin_up_start_t, 0 , NewRaycastWeaponBase._SPIN_UP_T) / NewRaycastWeaponBase._SPIN_UP_T) * NewRaycastWeaponBase._SPIN_DOWN_T
+		if self._spin_up_start_t and spin_up_t > 0 then
+			self._spin_down_start_t = self._spin_down_start_t - (1 - math.clamp(t - self._spin_up_start_t, 0 , spin_up_t) / spin_up_t) * spin_down_t
 		end
 		if self:weapon_tweak_data().sounds.spin_end then
 			self._sound_fire:post_event(self:weapon_tweak_data().sounds.spin_end or "turret_spin_end")
@@ -489,7 +493,8 @@ end
 function NewRaycastWeaponBase:update_spin()
 	if not self._spin_done and self._spinning then
 		local t = self._unit:timer():time()
-		if (self._spin_up_start_t + NewRaycastWeaponBase._SPIN_UP_T) <= t then
+		local spin_up_t = self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T
+		if (self._spin_up_start_t + spin_up_t) <= t then
 			self._spin_done = true
 			self._spin_up_start_t = nil
 			self._spin_down_start_t = nil

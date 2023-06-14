@@ -7480,6 +7480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
 			self.shuno.ads_speed = 0.600
+			self.shuno.ads_spool = true
 			self.shuno.damage_falloff = {
 				start_dist = 1800,
 				end_dist = 4500,
@@ -7756,6 +7757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 			self.m134.supported = true
 			self.m134.ads_speed = 0.660
+			self.m134.ads_spool = true
 			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
 			self.m134.damage_falloff = {
 				start_dist = 1500,
@@ -7818,7 +7820,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 15,
+					concealment = 14,
 					suppression = 5,
 					alert_size = 2,
 					extra_ammo = 101,

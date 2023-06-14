@@ -13392,107 +13392,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	self.wpn_fps_lmg_par.stock_adapter = "wpn_fps_smg_cobray_s_m4adapter"
 	self.wpn_fps_lmg_par_npc.stock_adapter = "wpn_fps_smg_cobray_s_m4adapter"
 
-	--sorry for the pasghetti! Fix my fucking coding mess!!!!
-	--Hey, can't be any worse than mine :^)
-	self.wpn_fps_lmg_par.override = self.wpn_fps_lmg_par.override or {}
-	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_specter = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_aimpoint = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_docter = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_eotech = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_t1micro = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_cmore = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_aimpoint_2 = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_cs = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_rx30 = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_rx01 = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_reflex = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_eotech_xps = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_sig = {
-		parent = "upper_reciever"
-	}	
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_uh = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_fc1 = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_spot = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_bmg = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_poe = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_health = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_hamr = {
-		parent = "upper_reciever"
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_atibal = {
-		parent = "upper_reciever"
-	}
-
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_standard = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_pts = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_sho_sko12_stock = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_crane = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_mk46 = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_snp_victor_s_mod0 = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_upg_m4_s_ubr = {
-		stats = {},
-		custom_stats = {}
-	}
-	self.wpn_fps_lmg_par.override.wpn_fps_snp_tti_s_vltor = {
-		stats = {},
-		custom_stats = {}
-	}
-
 	--M240 Part Additions	
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_specter")	
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_aimpoint")
@@ -13515,8 +13414,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_health")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_hamr")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_atibal")
-
 	self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)		
+
+	--sorry for the pasghetti! Fix my fucking coding mess!!!!
+	--Hey, can't be any worse than mine :^)
+	self.wpn_fps_lmg_par.override = self.wpn_fps_lmg_par.override or {}
+
+	for i, part_id in pairs(self.wpn_fps_lmg_par.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then	
+			self.wpn_fps_lmg_par.override[part_id] = { parent = "upper_reciever" }	
+		end
+	end
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_hamr_reddot = { parent = "upper_reciever" }	
+	self.wpn_fps_lmg_par.override.wpn_fps_upg_o_atibal_reddot = { parent = "upper_reciever" }	
+
+	self.wpn_fps_lmg_par_npc.override = deep_clone(self.wpn_fps_lmg_par.override)		
 end)
 
 --Bipods
@@ -20677,6 +20589,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_contender", "resmod_contender", fu
 
 	self.wpn_fps_snp_contender.stock_adapter = "wpn_fps_gre_m32_stock_adapter"
 	self.wpn_fps_snp_contender_npc.stock_adapter = "wpn_fps_gre_m32_stock_adapter"
+
+	self.wpn_fps_snp_contender.override.wpn_fps_upg_o_hamr_reddot = { parent = "barrel" }
+	self.wpn_fps_snp_contender.override.wpn_fps_upg_o_atibal_reddot  = { parent = "barrel" }
 
 end)
 

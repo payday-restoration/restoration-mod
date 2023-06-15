@@ -459,7 +459,7 @@ function NewRaycastWeaponBase:_start_spin()
 		local spin_up_t = self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T
 		local spin_down_t = self:weapon_tweak_data().spin_down_t or NewRaycastWeaponBase._SPIN_DOWN_T
 		self._spin_up_start_t = t
-		if self._spin_down_start_t then spin_down_t > 0 then
+		if self._spin_down_start_t and spin_down_t > 0 then
 			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , spin_down_t) / spin_down_t) * spin_up_t
 		end
 		if self:weapon_tweak_data().sounds.spin_start and self._fire_mode == ids_auto then

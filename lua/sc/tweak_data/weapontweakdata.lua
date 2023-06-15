@@ -14251,6 +14251,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.lewis.stats_modifiers = nil
+		self.lewis.sounds.spin_start = "wp_mg42_lever_release"
+		self.lewis.spin_up_shoot = true
+		self.lewis.spin_up_t = 0.06
+		self.lewis.spin_down_t = 0.0000000001
 		self.lewis.reload_speed_multiplier = 0.9
 		self.lewis.timers.reload_not_empty = 2.95
 		self.lewis.timers.reload_exit_not_empty = 1
@@ -16530,6 +16534,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.stoner63a.stats_modifiers = nil
 			self.stoner63a.panic_suppression_chance = 0.05
+			self.stoner63a.sounds.spin_start = "wp_m60_reload_lever_release"
+			self.stoner63a.spin_up_shoot = true
+			self.stoner63a.spin_up_t = 0.03
+			self.stoner63a.spin_down_t = 0.00000001
 			self.stoner63a.reload_speed_multiplier = 0.98
 			self.stoner63a.sms = sms_preset.lmg_48
 			self.stoner63a.weapon_movement_penalty = sms_preset.lmg_48

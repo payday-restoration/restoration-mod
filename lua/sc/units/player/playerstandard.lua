@@ -750,8 +750,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						end
 					elseif fire_mode == "auto" then
 						if self._spin_up_shoot or input.btn_primary_attack_state then
-							self._spin_up_shoot = weap_base:weapon_tweak_data().spin_up_shoot
-							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)		
+							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
 						end
 					elseif fire_mode == "burst" then
 						fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
@@ -783,6 +783,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					if fired then
 						self._queue_fire = nil
 						self._spin_up_shoot = nil
+						self._already_fired = true
 
 						if weap_base._descope_on_fire then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
@@ -910,9 +911,9 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 	end
 
 	if not new_action then
+		self._already_fired = nil
 		self:_check_stop_shooting()
 	end
-
 	return new_action
 end
 

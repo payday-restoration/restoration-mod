@@ -3178,7 +3178,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.shotgun_spread_increase = 3.5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
-	self.stat_info.hipfire_only_spread_increase = 4.4
+	self.stat_info.hipfire_only_spread_increase = 3.33334
 
 	self.stat_info.base_spread = 10.1 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.1 --How much each point of accuracy reduces spread area.
@@ -6935,7 +6935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cobray.stats_modifiers = nil
 				self.cobray.sounds.spin_start = "wp_mac10_lever_pull"
 				self.cobray.spin_up_shoot = true
-				self.cobray.spin_up_t = 0.01
+				self.cobray.spin_up_t = 0.05
 				self.cobray.spin_down_t = 0.0000000001
 				self.cobray.panic_suppression_chance = 0.05
 				self.cobray.timers.reload_empty = 3.9
@@ -7134,7 +7134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.stats_modifiers = nil
 				self.erma.sounds.spin_start = "wp_mac10_lever_pull"
 				self.erma.spin_up_shoot = true
-				self.erma.spin_up_t = 0.01
+				self.erma.spin_up_t = 0.08
 				self.erma.spin_down_t = 0.0000000001
 				self.erma.panic_suppression_chance = 0.05
 				self.erma.timers.reload_exit_empty = 0.6
@@ -7171,7 +7171,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mac10.panic_suppression_chance = 0.05
 				self.x_mac10.sounds.spin_start = "wp_mac10_lever_pull"
 				self.x_mac10.spin_up_shoot = true
-				self.x_mac10.spin_up_t = 0.01
+				self.x_mac10.spin_up_t = 0.05
 				self.x_mac10.spin_down_t = 0.0000000001
 				self.x_mac10.reload_speed_multiplier = 0.75
 				self.x_mac10.timers.reload_empty = 3
@@ -7212,7 +7212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_uzi.panic_suppression_chance = 0.05
 				self.x_uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
 				self.x_uzi.spin_up_shoot = true
-				self.x_uzi.spin_up_t = 0.01
+				self.x_uzi.spin_up_t = 0.08
 				self.x_uzi.spin_down_t = 0.0000000001
 				self.x_uzi.reload_speed_multiplier = 0.75
 				self.x_uzi.timers.reload_empty = 3
@@ -7358,7 +7358,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.stats_modifiers = nil
 				self.sterling.sounds.spin_start = "wp_mac10_lever_pull"
 				self.sterling.spin_up_shoot = true
-				self.sterling.spin_up_t = 0.01
+				self.sterling.spin_up_t = 0.08
 				self.sterling.spin_down_t = 0.0000000001
 				self.sterling.panic_suppression_chance = 0.05
 				self.sterling.reload_speed_multiplier = 1.2
@@ -7395,7 +7395,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mac10.stats_modifiers = nil
 				self.mac10.sounds.spin_start = "wp_mac10_lever_pull"
 				self.mac10.spin_up_shoot = true
-				self.mac10.spin_up_t = 0.01
+				self.mac10.spin_up_t = 0.05
 				self.mac10.spin_down_t = 0.0000000001
 				self.mac10.timers.reload_empty = 2.2
 				self.mac10.timers.reload_not_empty = 1.5
@@ -7437,7 +7437,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1928.stats_modifiers = nil
 				self.m1928.sounds.spin_start = "wp_m1928_lever_release"
 				self.m1928.spin_up_shoot = true
-				self.m1928.spin_up_t = 0.03
+				self.m1928.spin_up_t = 0.05
 				self.m1928.spin_down_t = 0.00000001
 				self.m1928.timers.reload_not_empty = 3.3
 				self.m1928.timers.reload_exit_not_empty = 1.2
@@ -7481,7 +7481,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.panic_suppression_chance = 0.05
 				self.uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
 				self.uzi.spin_up_shoot = true
-				self.uzi.spin_up_t = 0.01
+				self.uzi.spin_up_t = 0.08
 				self.uzi.spin_down_t = 0.0000000001
 				self.uzi.reload_speed_multiplier = 1.1
 				self.uzi.timers.reload_not_empty = 1.95
@@ -7621,7 +7621,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.stats_modifiers = nil
 			self.m249.sounds.spin_start = "wp_m249_lever_release"
 			self.m249.spin_up_shoot = true
-			self.m249.spin_up_t = 0.03
+			self.m249.spin_up_t = 0.08
 			self.m249.spin_down_t = 0.00000001
 			self.m249.timers.equip = 1.2
 			self.m249.timers.reload_exit_empty = 1.2
@@ -7667,7 +7667,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw.reload_speed_multiplier = 0.87
 			self.kacchainsaw.sounds.spin_start = "wp_kac_reload_lever_push"
 			self.kacchainsaw.spin_up_shoot = true
-			self.kacchainsaw.spin_up_t = 0.03
+			self.kacchainsaw.spin_up_t = 0.08
 			self.kacchainsaw.spin_down_t = 0.00000001
 			self.kacchainsaw.timers.equip = 2
 			self.kacchainsaw.timers.reload_not_empty = 4.92
@@ -7874,7 +7874,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.reload_speed_multiplier = 0.75
 				self.m60.sounds.spin_start = "wp_m60_reload_lever_release"
 				self.m60.spin_up_shoot = true
-				self.m60.spin_up_t = 0.06
+				self.m60.spin_up_t = 0.1
 				self.m60.spin_down_t = 0.00000001
 				self.m60.armor_piercing_chance = 0.2
 				self.m60.timers.reload_exit_empty = 1.4
@@ -7925,7 +7925,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.reload_speed_multiplier = 0.775
 				self.par.sounds.spin_start = "wp_m249_lever_release"
 				self.par.spin_up_shoot = true
-				self.par.spin_up_t = 0.06
+				self.par.spin_up_t = 0.1
 				self.par.spin_down_t = 0.00000001
 				self.par.timers.reload_not_empty = 6.3
 				self.par.timers.reload_empty = 6.3
@@ -10342,7 +10342,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.reload_speed_multiplier = 1.175
 				self.aa12.sounds.spin_start = "wp_mac10_lever_pull"
 				self.aa12.spin_up_shoot = true
-				self.aa12.spin_up_t = 0.03
+				self.aa12.spin_up_t = 0.1
 				self.aa12.spin_down_t = 0.00000001
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
@@ -14253,7 +14253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.stats_modifiers = nil
 		self.lewis.sounds.spin_start = "wp_mg42_lever_release"
 		self.lewis.spin_up_shoot = true
-		self.lewis.spin_up_t = 0.06
+		self.lewis.spin_up_t = 0.08
 		self.lewis.spin_down_t = 0.0000000001
 		self.lewis.reload_speed_multiplier = 0.9
 		self.lewis.timers.reload_not_empty = 2.95
@@ -15709,7 +15709,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tommy.stats_modifiers = nil
 		self.tommy.sounds.spin_start = "wp_m1928_lever_release"
 		self.tommy.spin_up_shoot = true
-		self.tommy.spin_up_t = 0.03
+		self.tommy.spin_up_t = 0.08
 		self.tommy.spin_down_t = 0.00000001
 		self.tommy.timers.reload_exit_empty = 0.9
 		self.tommy.timers.reload_exit_not_empty = 0.8
@@ -16536,7 +16536,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.stoner63a.panic_suppression_chance = 0.05
 			self.stoner63a.sounds.spin_start = "wp_m60_reload_lever_release"
 			self.stoner63a.spin_up_shoot = true
-			self.stoner63a.spin_up_t = 0.03
+			self.stoner63a.spin_up_t = 0.08
 			self.stoner63a.spin_down_t = 0.00000001
 			self.stoner63a.reload_speed_multiplier = 0.98
 			self.stoner63a.sms = sms_preset.lmg_48

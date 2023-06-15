@@ -382,9 +382,10 @@ function NewRaycastWeaponBase:trigger_held(...)
 	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self:update_spin()
 		local fired
+		local spin_up_t = self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T
 		if self._next_fire_allowed <= self._unit:timer():time() then
-			self._next_fire_allowed = self._next_fire_allowed + (tweak_data.weapon[self._name_id].fire_mode_data and tweak_data.weapon[self._name_id].fire_mode_data.fire_rate or 0) / self:fire_rate_multiplier()
 			if self._spin_done then
+				self._next_fire_allowed = self._next_fire_allowed + (tweak_data.weapon[self._name_id].fire_mode_data and tweak_data.weapon[self._name_id].fire_mode_data.fire_rate or 0) / self:fire_rate_multiplier() + ((not self:weapon_tweak_data().ads_spool and not self._vulcan_firing and spin_up_t) or 0)
 				fired = self:fire(...)
 				if fired then
 					if not self._vulcan_firing then

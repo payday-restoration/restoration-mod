@@ -9252,6 +9252,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband_m203.kick = self.stat_info.kick_tables.vertical_kick
 				self.contraband_m203.panic_suppression_chance = 0.05
 				self.contraband_m203.ignore_damage_upgrades = true
+				self.contraband_m203.use_stance = nil
 				self.contraband_m203.AMMO_MAX = 6
 				self.contraband_m203.supported = true
 				self.contraband_m203.ads_speed = 0.440
@@ -16768,6 +16769,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.sounds.stop_fire2 = "p90_x_stop"
 		self.crysis3_typhoon.sounds.stop_fire3 = "typhoon_wind_down"
 	end
+
+	if self.iuhTTIPlus then --iuhggiuhhgbnr's SR-25
+		self.iuhTTIPlus.recategorize = { "light_snp" }
+		self.iuhTTIPlus.categories = {
+			"snp",
+			"semi_snp"
+		}
+		self.iuhTTIPlus.lock_slide = true
+		self.iuhTTIPlus.has_description = true
+		self.iuhTTIPlus.desc_id = "bm_ap_weapon_sc_desc"
+		self.iuhTTIPlus.upgrade_blocks = nil
+		self.iuhTTIPlus.tactical_reload = 1
+		self.iuhTTIPlus.CLIP_AMMO_MAX = 20
+		self.iuhTTIPlus.AMMO_MAX = 40 --60
+		self.iuhTTIPlus.FIRE_MODE = "single"
+		self.iuhTTIPlus.CAN_TOGGLE_FIREMODE = false
+		self.iuhTTIPlus.fire_mode_data.fire_rate = 0.193548
+		self.iuhTTIPlus.sms = sms_preset.semi_snp_light
+		self.iuhTTIPlus.kick = self.stat_info.kick_tables.vertical_kick
+		self.iuhTTIPlus.can_shoot_through_enemy = true
+		self.iuhTTIPlus.can_shoot_through_shield = true
+		self.iuhTTIPlus.can_shoot_through_wall = true
+		self.iuhTTIPlus.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.iuhTTIPlus.supported = true
+		self.iuhTTIPlus.ads_speed = 0.540
+		self.iuhTTIPlus.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 7000,
+			min_mult = 0.5
+		}
+		self.iuhTTIPlus.stats = {
+			damage = 60,
+			spread = 82,
+			recoil = 55,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 14, --18,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.iuhTTIPlus.armor_piercing_chance = 1
+		self.iuhTTIPlus.stats_modifiers = nil
+		self.iuhTTIPlus.panic_suppression_chance = 0.05
+		self.iuhTTIPlus.timers = deep_clone(self.contraband.timers)
+	end	
 
 	if self.rsass then --youngrich99 and FrenchyAU's Remington RSASS
 		self.rsass.recategorize = { "light_snp" }
